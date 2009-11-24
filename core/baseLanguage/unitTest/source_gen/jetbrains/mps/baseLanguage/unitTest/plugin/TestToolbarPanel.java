@@ -9,10 +9,10 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.SwingConstants;
-import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.execution.testframework.TestsUIUtil;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import com.intellij.openapi.keymap.KeymapManager;
@@ -20,10 +20,12 @@ import com.intellij.openapi.actionSystem.IdeActions;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 
 public class TestToolbarPanel extends JPanel {
+  private static boolean isTrackRunning;
+  private static boolean isSelectFirstFailed;
+
+  private boolean isHidePassed;
   private TestTree tree;
   private FailedTestOccurenceNavigator navigator;
-  private boolean isTrackRunning = false;
-  private boolean isNeedSelectFailed = false;
 
   public TestToolbarPanel(TestTree tree, FailedTestOccurenceNavigator navigator) {
     super(new BorderLayout());
@@ -48,29 +50,31 @@ public class TestToolbarPanel extends JPanel {
     this.add(toolbarActions.getComponent(), BorderLayout.WEST);
   }
 
-  private AnAction createHidePassedAction() {
+  private ToggleAction createHidePassedAction() {
     return new ToggleAction("Hide Passed", "Hide passed tests", TestsUIUtil.loadIcon("hidePassed")) {
-      private boolean isHidden = false;
-
-      public boolean isSelected(AnActionEvent p0) {
-        return this.isHidden;
+      public void setSelected(AnActionEvent p0, boolean p1) {
+        TestToolbarPanel.this.isHidePassed = p1;
+        TestToolbarPanel.this.tree.hidePassed(p1);
       }
 
-      public void setSelected(AnActionEvent p0, boolean p1) {
-        this.isHidden = p1;
-        TestToolbarPanel.this.tree.hidePassed(p1);
+      public boolean isSelected(AnActionEvent p0) {
+        return TestToolbarPanel.this.isHidePassed;
       }
     };
   }
 
-  private AnAction cteateTrackRunningAction() {
+  private ToggleAction cteateTrackRunningAction() {
     return new ToggleAction("Track Running Test", "Select currently running test in tree", TestsUIUtil.loadIcon("trackTests")) {
-      public boolean isSelected(AnActionEvent p0) {
-        return TestToolbarPanel.this.isTrackRunning;
+      {
+        this.setSelected(null, TestToolbarPanel.isTrackRunning);
       }
 
       public void setSelected(AnActionEvent p0, boolean p1) {
-        TestToolbarPanel.this.isTrackRunning = p1;
+        TestToolbarPanel.isTrackRunning = p1;
+      }
+
+      public boolean isSelected(AnActionEvent p0) {
+        return TestToolbarPanel.isTrackRunning;
       }
     };
   }
@@ -132,14 +136,18 @@ public class TestToolbarPanel extends JPanel {
     };
   }
 
-  private AnAction createSelectFirstFailedAction() {
+  private ToggleAction createSelectFirstFailedAction() {
     return new ToggleAction("Select First Failed Test When Finished", "", TestsUIUtil.loadIcon("selectFirstDefect")) {
-      public boolean isSelected(AnActionEvent p0) {
-        return TestToolbarPanel.this.isNeedSelectFailed;
+      {
+        this.setSelected(null, TestToolbarPanel.isSelectFirstFailed);
       }
 
       public void setSelected(AnActionEvent p0, boolean p1) {
-        TestToolbarPanel.this.isNeedSelectFailed = p1;
+        TestToolbarPanel.isSelectFirstFailed = p1;
+      }
+
+      public boolean isSelected(AnActionEvent p0) {
+        return TestToolbarPanel.isSelectFirstFailed;
       }
     };
   }
@@ -147,16 +155,18 @@ public class TestToolbarPanel extends JPanel {
   private AnAction createRerunFailedTestAction() {
     return new AnAction("Rerun Failed Tests", "Rerun only tests that failed/crached after last run", TestsUIUtil.loadIcon("rerunFailedTests")) {
       public void actionPerformed(AnActionEvent p0) {
-        TestToolbarPanel.this.tree.buildFailedTestTree();
+        if (TestToolbarPanel.this.tree.hasFailedTests()) {
+          TestToolbarPanel.this.tree.buildFailedTestTree();
+        }
       }
     };
   }
 
   public boolean isTrackRunning() {
-    return this.isTrackRunning;
+    return isTrackRunning;
   }
 
   public boolean isNeedSelectFirstFailedTest() {
-    return this.isNeedSelectFailed;
+    return isSelectFirstFailed;
   }
 }

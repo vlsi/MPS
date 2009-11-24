@@ -15,7 +15,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
-import java.util.HashMap;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
 
 public class TestTree extends MPSTree {
@@ -39,8 +40,7 @@ public class TestTree extends MPSTree {
         continue;
       }
       TestCaseTreeNode testCaseTreeNode = new TestCaseTreeNode(this.operationContext, testCase);
-      root.add(testCaseTreeNode);
-      temp.put(testCase, testCaseTreeNode);
+      boolean hasFailedTest = false;
       for (SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
         TestMethodTreeNode oldMethodTreeNode = this.map.get(ITestCase_Behavior.call_getClassName_1216136193905(testCase), ITestMethod_Behavior.call_getTestName_1216136419751(method));
         TestMethodTreeNode newMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
@@ -51,7 +51,9 @@ public class TestTree extends MPSTree {
         if (oldMethodTreeNode == null && !(this.isAllTree)) {
           continue;
         }
-        if (this.isAllTree || !(isPassed(oldMethodTreeNode))) {
+        boolean isFailedMethod = !(isPassed(oldMethodTreeNode));
+        hasFailedTest = hasFailedTest || isFailedMethod;
+        if (this.isAllTree || isFailedMethod) {
           if (methodTreeNode == null) {
             continue;
           }
@@ -61,10 +63,42 @@ public class TestTree extends MPSTree {
           temp.put(testCase, method, oldMethodTreeNode);
         }
       }
+      if (this.isAllTree || hasFailedTest) {
+        root.add(testCaseTreeNode);
+        temp.put(testCase, testCaseTreeNode);
+      } else if (!(this.isRebuilded)) {
+        temp.put(testCase, testCaseTreeNode);
+      }
     }
     this.map = temp;
     this.isRebuilded = true;
     return root;
+  }
+
+  public boolean hasFailedTests() {
+    for (final SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.tests).keySet())) {
+      if ((testCase == null)) {
+        continue;
+      }
+      for (final SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
+        final Wrappers._T<String> className = new Wrappers._T<String>();
+        final Wrappers._T<String> methodName = new Wrappers._T<String>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            className.value = ITestCase_Behavior.call_getClassName_1216136193905(testCase);
+            methodName.value = ITestMethod_Behavior.call_getTestName_1216136419751(method);
+          }
+        });
+        TestMethodTreeNode treeNode = this.map.get(className.value, methodName.value);
+        if ((method == null)) {
+          continue;
+        }
+        if (!(isPassed(treeNode))) {
+          return true;
+        }
+      }
+    }
+    return false;
   }
 
   public IOperationContext getContext() {
@@ -75,6 +109,7 @@ public class TestTree extends MPSTree {
     this.isAllTree = !(hide);
     this.isRebuilded = false;
     this.rebuildNow();
+    this.expandAll();
   }
 
   public void buildFailedTestTree() {
@@ -88,23 +123,6 @@ public class TestTree extends MPSTree {
     this.tests = tests;
     this.isRebuilded = true;
     this.rebuildNow();
-  }
-
-  public Map<SNode, List<SNode>> getFailedTests() {
-    Map<SNode, List<SNode>> temp = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
-    MapSequence.fromMap(temp).putAll(this.tests);
-    for (SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.tests).keySet())) {
-      for (SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
-        TestMethodTreeNode methodTreeNode = this.map.get(ITestCase_Behavior.call_getClassName_1216136193905(testCase), ITestMethod_Behavior.call_getTestName_1216136419751(method));
-        if (isPassed(methodTreeNode)) {
-          ListSequence.fromList(MapSequence.fromMap(temp).get(testCase)).removeElement(method);
-        }
-      }
-      if (ListSequence.fromList(MapSequence.fromMap(temp).get(testCase)).isEmpty()) {
-        MapSequence.fromMap(temp).removeKey(testCase);
-      }
-    }
-    return temp;
   }
 
   public List<String> getMethodName() {
@@ -126,9 +144,17 @@ public class TestTree extends MPSTree {
   }
 
   public void selectFirstDefectNode() {
-    for (SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.tests).keySet())) {
-      for (SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
-        TestMethodTreeNode testMethodTreeNode = this.map.get(ITestCase_Behavior.call_getClassName_1216136193905(testCase), ITestMethod_Behavior.call_getTestName_1216136419751(method));
+    for (final SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.tests).keySet())) {
+      for (final SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
+        final Wrappers._T<String> className = new Wrappers._T<String>();
+        final Wrappers._T<String> methodName = new Wrappers._T<String>();
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            className.value = ITestCase_Behavior.call_getClassName_1216136193905(testCase);
+            methodName.value = ITestMethod_Behavior.call_getTestName_1216136419751(method);
+          }
+        });
+        TestMethodTreeNode testMethodTreeNode = this.map.get(className.value, methodName.value);
         if (isFailed(testMethodTreeNode)) {
           this.setCurrentNode(testMethodTreeNode);
           return;

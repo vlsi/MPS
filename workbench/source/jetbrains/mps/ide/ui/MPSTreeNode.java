@@ -429,6 +429,7 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   public void updateNodePresentationInTree() {
+    if (getTree() == null) return;
     ((DefaultTreeModel) getTree().getModel()).nodeChanged(this);
   }
 
