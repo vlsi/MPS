@@ -15,9 +15,28 @@
  */
 package jetbrains.mps;
 
+import com.intellij.openapi.application.PathMacros;
+
 import java.io.File;
 
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.smodel.ModelAccess;
+
 public class BootstrapTest extends BaseMPSTest {
+
+  public void testCharisma() {
+    TestMain.configureMPS();
+    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        PathMacros.getInstance().setMacro("mps.webr-dnq", "C:/webr-dnq", null);
+        PathMacros.getInstance().setMacro("charisma", "C:/charisma", null);
+      }
+    });
+    assertGenerates(new File("C:/charisma/charisma.mpr"), true);
+  }
+
+
   public void testBaseLanguage() {
     assertGenerates(new File("core/baseLanguage/baseLanguage/baseLanguage.mpr"), true);
   }
