@@ -20307,5 +20307,23 @@
       <link role="concept" targetNodeId="1.4269842503726207156" resolveInfo="LongLiteral" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.ComparisonRule" id="2792650810919436247">
+    <property name="name" value="typevar_comparable_with_classifier_type" />
+    <node role="anotherNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="2792650810919441176">
+      <property name="name" value="typeVariableReference" />
+      <link role="concept" targetNodeId="1.1109283449304" resolveInfo="TypeVariableReference" />
+    </node>
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2792650810919436249">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2792650810919441670">
+        <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="2792650810919441672">
+          <property name="value" value="true" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="2792650810919436251">
+      <property name="name" value="classifierType" />
+      <link role="concept" targetNodeId="1.1107535904670" resolveInfo="ClassifierType" />
+    </node>
+  </node>
 </model>
 

@@ -681,6 +681,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myComparisonRules.add(comparisonRule);
     }
     {
+      ComparisonRule_Runtime comparisonRule = new typevar_comparable_with_classifier_type_ComparisonRule();
+      this.myComparisonRules.add(comparisonRule);
+    }
+    {
       InequationReplacementRule_Runtime eliminationRule = new any_type_subtypeof_wildcard_type_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
