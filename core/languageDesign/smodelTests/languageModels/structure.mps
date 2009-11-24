@@ -75,7 +75,7 @@
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="34342663958604624">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="childSubConcept_0_n" />
-      <property name="sourceCardinality" value="1..n" />
+      <property name="sourceCardinality" value="0..n" />
       <link role="target" targetNodeId="34342663958604621" resolveInfo="ChildSubclass" />
     </node>
   </node>
