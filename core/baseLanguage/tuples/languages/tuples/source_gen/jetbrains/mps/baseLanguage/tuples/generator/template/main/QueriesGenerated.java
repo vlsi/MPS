@@ -49,7 +49,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1238945780409(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral")) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), false) != null);
+    return false && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral")) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), false) != null);
   }
 
   public static boolean baseMappingRule_Condition_1238950442311(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -69,7 +69,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1239702060143(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral")) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"), false) != null);
+    return false && !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral")) && (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "lValue", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType"), false) != null);
   }
 
   public static boolean baseMappingRule_Condition_1239723380635(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

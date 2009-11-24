@@ -10,6 +10,9 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.util.SharedPair;
 import jetbrains.mps.baseLanguage.tuples.shared.GlobalSharedPair;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
@@ -30,13 +33,13 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertEquals("xyz", tpl.bar());
     Assert.assertEquals("ABC", tpl2.foo());
     Assert.assertEquals("XYZ", tpl2.bar());
-    tpl2.assignFrom(tpl);
+    tpl2 = tpl;
     Assert.assertEquals("abc", tpl2.foo());
     Assert.assertEquals("xyz", tpl2.bar());
-    tpl.assignFrom(new Data(tpl.bar(), tpl.foo()));
+    tpl = new Data(tpl.bar(), tpl.foo());
     Assert.assertEquals("abc", tpl.bar());
     Assert.assertEquals("xyz", tpl.foo());
-    tpl2.assignFrom(new Data("abc", "xyz"));
+    tpl2 = new Data("abc", "xyz");
     Assert.assertEquals("abc", tpl2.foo());
     Assert.assertEquals("xyz", tpl2.bar());
   }
@@ -79,7 +82,7 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertFalse(((Object)tpl1) == ((Object)tpl2));
     Assert.assertTrue(MultiTuple.eq(tpl1, tpl2));
     Assert.assertFalse(!(MultiTuple.eq(tpl1, tpl2)));
-    tpl2.assignFrom(new Data(tpl2.bar(), tpl2.foo()));
+    tpl2 = new Data(tpl2.bar(), tpl2.foo());
     Assert.assertFalse(MultiTuple.eq(tpl1, tpl2));
     Assert.assertTrue(!(MultiTuple.eq(tpl1, tpl2)));
   }
@@ -139,6 +142,21 @@ public class NamedTuples_Test extends TestCase {
   public void test_vararg3() throws Exception {
     String string = this.getString(new GlobalSharedPair<String, String>("a", "A"), new GlobalSharedPair<String, String>("b", "B"), new GlobalSharedPair<String, String>("c", "C"));
     Assert.assertEquals("a=A, b=B, c=C", string);
+  }
+
+  public void test_listOfTuples() throws Exception {
+    List<Pair<String, Long>> lot = ListSequence.fromList(new ArrayList<Pair<String, Long>>());
+    ListSequence.fromList(lot).addElement(new Pair<String, Long>("A", 1L));
+    ListSequence.fromList(lot).addElement(new Pair<String, Long>("B", 2L));
+    Assert.assertSame(2, ListSequence.fromList(lot).count());
+    Assert.assertEquals("B", ListSequence.fromList(lot).getElement(1).first());
+  }
+
+  public void test_tupleDecl() throws Exception {
+    Pair<Integer, String> pair;
+    pair = new Pair<Integer, String>(-1, "Z");
+    Assert.assertNotNull(pair);
+    Assert.assertEquals("Z", pair.second());
   }
 
   public String getString(SharedPair<String, String>... tuples) {

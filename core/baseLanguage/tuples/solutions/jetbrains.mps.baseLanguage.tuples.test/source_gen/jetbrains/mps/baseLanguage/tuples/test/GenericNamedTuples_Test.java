@@ -11,7 +11,7 @@ public class GenericNamedTuples_Test extends TestCase {
     Pair<String, Integer> pair = new Pair<String, Integer>("abcd", 1);
     Assert.assertEquals("abcd", pair.first());
     Assert.assertSame(1, pair.second());
-    pair.assignFrom(new Pair<String, Integer>("dbca", 2));
+    pair = new Pair<String, Integer>("dbca", 2);
     Assert.assertEquals("dbca", pair.first());
     Assert.assertSame(2, pair.second());
   }

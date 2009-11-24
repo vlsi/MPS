@@ -9,11 +9,14 @@ import junit.framework.Assert;
 import jetbrains.mps.baseLanguage.tuples.util.A;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class IndexedTuples_Test extends TestCase {
   public void test_empty() throws Exception {
     Tuples._0 empty = MultiTuple.from();
-    empty.assign(MultiTuple.from());
+    empty = MultiTuple.from();
     Tuples._0 emptyToo = MultiTuple.empty0().assign(empty);
   }
 
@@ -88,6 +91,18 @@ public class IndexedTuples_Test extends TestCase {
         return it._1() != true;
       }
     }).count());
+  }
+
+  public void test_listOfTuples() throws Exception {
+    List<Tuples._2<Integer, String>> lot = ListSequence.fromListAndArray(new ArrayList<Tuples._2<Integer, String>>(), MultiTuple.from(1, "A"), MultiTuple.from(2, "B"), MultiTuple.from(3, "C"));
+    Assert.assertSame(3, ListSequence.fromList(lot).count());
+    Assert.assertEquals("B", ListSequence.fromList(lot).getElement(1)._1());
+  }
+
+  public void test_tupleDecl() throws Exception {
+    Tuples._2<String, Long> sit;
+    sit = MultiTuple.from("A", -1L);
+    Assert.assertEquals("A", sit._0());
   }
 
   public Tuples._2<String, Character> toTuple(String s, char c) {

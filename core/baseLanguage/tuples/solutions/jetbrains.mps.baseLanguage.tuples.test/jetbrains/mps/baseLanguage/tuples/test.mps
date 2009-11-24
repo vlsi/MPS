@@ -666,6 +666,129 @@
           </node>
         </node>
       </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="4005114072270948667">
+        <property name="methodName" value="listOfTuples" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4005114072270948668" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4005114072270948669" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4005114072270948670">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4005114072270948671">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4005114072270948672">
+              <property name="name" value="lot" />
+              <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="4005114072270948673">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" id="4005114072270948675">
+                  <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4005114072270948677" />
+                  <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4005114072270948679" />
+                </node>
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4005114072270948681">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="4005114072270948682">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" id="4005114072270948683">
+                    <node role="componentType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4005114072270948684" />
+                    <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="4005114072270948685" />
+                  </node>
+                  <node role="initValue" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="4005114072270948687">
+                    <node role="component" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4005114072270948688">
+                      <property name="value" value="1" />
+                    </node>
+                    <node role="component" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4005114072270948696">
+                      <property name="value" value="A" />
+                    </node>
+                  </node>
+                  <node role="initValue" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="4005114072270948710">
+                    <node role="component" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4005114072270948717">
+                      <property name="value" value="2" />
+                    </node>
+                    <node role="component" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4005114072270948723">
+                      <property name="value" value="B" />
+                    </node>
+                  </node>
+                  <node role="initValue" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="4005114072270948733">
+                    <node role="component" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4005114072270948738">
+                      <property name="value" value="3" />
+                    </node>
+                    <node role="component" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4005114072270948751">
+                      <property name="value" value="C" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="4005114072270948759">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4005114072270948762">
+              <property name="value" value="3" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4005114072270948776">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4005114072270948763">
+                <link role="variableDeclaration" targetNodeId="4005114072270948672" resolveInfo="lot" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="4005114072270948786" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="4005114072270948789">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4005114072270948792">
+              <property name="value" value="B" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression" id="4005114072270948826">
+              <node role="index" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4005114072270948830">
+                <property name="value" value="1" />
+              </node>
+              <node role="tuple" type="jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression" id="4005114072270948806">
+                <node role="index" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4005114072270948810">
+                  <property name="value" value="1" />
+                </node>
+                <node role="list" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4005114072270948793">
+                  <link role="variableDeclaration" targetNodeId="4005114072270948672" resolveInfo="lot" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="3633487734389105383">
+        <property name="methodName" value="tupleDecl" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3633487734389105384" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3633487734389105385" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3633487734389105386">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3633487734389105389">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3633487734389105390">
+              <property name="name" value="sit" />
+              <node role="type" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType" id="3633487734389105391">
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.StringType" id="3633487734389105393" />
+                <node role="componentType" type="jetbrains.mps.baseLanguage.structure.LongType" id="3633487734389105395" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3633487734389105397">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="3633487734389105399">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleLiteral" id="3633487734389105402">
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3633487734389105403">
+                  <property name="value" value="A" />
+                </node>
+                <node role="component" type="jetbrains.mps.baseLanguage.structure.LongLiteral" id="3633487734389105411">
+                  <property name="value" value="-1L" />
+                </node>
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3633487734389105398">
+                <link role="variableDeclaration" targetNodeId="3633487734389105390" resolveInfo="sit" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="4817470067537857321">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4817470067537857324">
+              <property name="value" value="A" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression" id="4817470067537857326">
+              <node role="index" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4817470067537857329">
+                <property name="value" value="0" />
+              </node>
+              <node role="tuple" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4817470067537857325">
+                <link role="variableDeclaration" targetNodeId="3633487734389105390" resolveInfo="sit" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1239714501613">
@@ -2253,6 +2376,168 @@
             </node>
             <node role="actual" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241009797634">
               <link role="variableDeclaration" targetNodeId="1241009797612" resolveInfo="string" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="4817470067537861733">
+        <property name="methodName" value="listOfTuples" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4817470067537861734" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4817470067537861735" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4817470067537861736">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4817470067537861737">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4817470067537861738">
+              <property name="name" value="lot" />
+              <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="4817470067537861739">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType" id="4817470067537861741">
+                  <link role="classifier" targetNodeId="1239977036413" resolveInfo="(first, second) Pair" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="4817470067537861743" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LongType" id="4817470067537861745" />
+                </node>
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4817470067537861747">
+                <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="4817470067537861748">
+                  <node role="elementType" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType" id="4817470067537861749">
+                    <link role="classifier" targetNodeId="1239977036413" resolveInfo="(first, second) Pair" />
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="4817470067537861750" />
+                    <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LongType" id="4817470067537861751" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4817470067537861753">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4817470067537861755">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4817470067537861754">
+                <link role="variableDeclaration" targetNodeId="4817470067537861738" resolveInfo="lot" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="4817470067537861759">
+                <node role="argument" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral" id="4817470067537861763">
+                  <link role="tupleDeclaration" targetNodeId="1239977036413" resolveInfo="(first, second) Pair" />
+                  <node role="componentRef" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference" id="4817470067537861764">
+                    <link role="componentDeclaration" targetNodeId="1239977053138" resolveInfo="first" />
+                    <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4817470067537861772">
+                      <property name="value" value="A" />
+                    </node>
+                  </node>
+                  <node role="componentRef" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference" id="4817470067537861766">
+                    <link role="componentDeclaration" targetNodeId="1239977055868" resolveInfo="second" />
+                    <node role="value" type="jetbrains.mps.baseLanguage.structure.LongLiteral" id="4817470067537861782">
+                      <property name="value" value="1L" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4817470067537861792">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4817470067537861794">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4817470067537861793">
+                <link role="variableDeclaration" targetNodeId="4817470067537861738" resolveInfo="lot" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="4817470067537861798">
+                <node role="argument" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral" id="4817470067537861802">
+                  <link role="tupleDeclaration" targetNodeId="1239977036413" resolveInfo="(first, second) Pair" />
+                  <node role="componentRef" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference" id="4817470067537861803">
+                    <link role="componentDeclaration" targetNodeId="1239977053138" resolveInfo="first" />
+                    <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4817470067537861811">
+                      <property name="value" value="B" />
+                    </node>
+                  </node>
+                  <node role="componentRef" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference" id="4817470067537861805">
+                    <link role="componentDeclaration" targetNodeId="1239977055868" resolveInfo="second" />
+                    <node role="value" type="jetbrains.mps.baseLanguage.structure.LongLiteral" id="4817470067537861825">
+                      <property name="value" value="2L" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertSame" id="4817470067537861835">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4817470067537861838">
+              <property name="value" value="2" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4817470067537861840">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4817470067537861839">
+                <link role="variableDeclaration" targetNodeId="4817470067537861738" resolveInfo="lot" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="4817470067537861844" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="4817470067537861847">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4817470067537861850">
+              <property name="value" value="B" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4817470067537861860">
+              <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression" id="4817470067537861852">
+                <node role="index" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4817470067537861856">
+                  <property name="value" value="1" />
+                </node>
+                <node role="list" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4817470067537861851">
+                  <link role="variableDeclaration" targetNodeId="4817470067537861738" resolveInfo="lot" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="4817470067537861866">
+                <link role="component" targetNodeId="1239977053138" resolveInfo="first" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="4817470067537861870">
+        <property name="methodName" value="tupleDecl" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4817470067537861871" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4817470067537861872" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4817470067537861873">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4817470067537861882">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4817470067537861883">
+              <property name="name" value="pair" />
+              <node role="type" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType" id="4817470067537861884">
+                <link role="classifier" targetNodeId="1239977036413" resolveInfo="(first, second) Pair" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4817470067537861886" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="4817470067537861888" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4817470067537861890">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="4817470067537861892">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral" id="4817470067537861895">
+                <link role="tupleDeclaration" targetNodeId="1239977036413" resolveInfo="(first, second) Pair" />
+                <node role="componentRef" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference" id="4817470067537861896">
+                  <link role="componentDeclaration" targetNodeId="1239977053138" resolveInfo="first" />
+                  <node role="value" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4817470067537861910">
+                    <property name="value" value="-1" />
+                  </node>
+                </node>
+                <node role="componentRef" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference" id="4817470067537861898">
+                  <link role="componentDeclaration" targetNodeId="1239977055868" resolveInfo="second" />
+                  <node role="value" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4817470067537861913">
+                    <property name="value" value="Z" />
+                  </node>
+                </node>
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4817470067537861891">
+                <link role="variableDeclaration" targetNodeId="4817470067537861883" resolveInfo="pair" />
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertInNotNull" id="4817470067537861917">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4817470067537861919">
+              <link role="variableDeclaration" targetNodeId="4817470067537861883" resolveInfo="pair" />
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals" id="4817470067537861921">
+            <node role="expected" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4817470067537861924">
+              <property name="value" value="Z" />
+            </node>
+            <node role="actual" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4817470067537861926">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4817470067537861925">
+                <link role="variableDeclaration" targetNodeId="4817470067537861883" resolveInfo="pair" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation" id="4817470067537861930">
+                <link role="component" targetNodeId="1239977055868" resolveInfo="second" />
+              </node>
             </node>
           </node>
         </node>
