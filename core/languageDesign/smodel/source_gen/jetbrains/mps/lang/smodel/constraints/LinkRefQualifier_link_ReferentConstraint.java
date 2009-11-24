@@ -8,11 +8,8 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import jetbrains.mps.lang.smodel.behavior.ILinkAccessQualifierContainer_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
@@ -33,16 +30,11 @@ public class LinkRefQualifier_link_ReferentConstraint extends BaseNodeReferenceS
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode dotOperand = IOperation_Behavior.call_getOperand_1213877410070(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier")), "jetbrains.mps.baseLanguage.structure.IOperation"));
-    SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(dotOperand), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true);
-    if (nodeType == null) {
-      return null;
+    SNode concept = ILinkAccessQualifierContainer_Behavior.call_getLinkContainer_3542758363529077382(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"));
+    if (concept == null) {
+      concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
     }
-    SNode dotOperandConcept = SLinkOperations.getTarget(nodeType, "concept", false);
-    if (dotOperandConcept == null) {
-      dotOperandConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
-    }
-    List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(dotOperandConcept);
+    List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept);
     // reference only? 
     links = ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {

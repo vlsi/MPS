@@ -5,8 +5,15 @@ package jetbrains.mps.lang.smodel.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class LinkAttributeAccessQualifier_Behavior {
+  private static Class[] PARAMETERS_3542758363529101095 = {SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -20,5 +27,19 @@ public class LinkAttributeAccessQualifier_Behavior {
 
   public static SNode virtual_getTargetConcept_4024382256428848859(SNode thisNode) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "annotationLink", false), "target", false);
+  }
+
+  public static SNode virtual_getLinkContainer_3542758363529077382(SNode thisNode) {
+    // TODO: create IAttributeAccessQualifierContainer interface with abstract method node<SNodeType> .getAttributeContainerType() 
+    SNode attributeContainer = IOperation_Behavior.call_getOperand_1213877410070(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.smodel.structure.AttributeAccessOperation"));
+    return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(attributeContainer), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), true), "concept", false);
+  }
+
+  public static SNode call_getLinkContainer_3542758363529101095(SNode thisNode) {
+    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier"), "virtual_getLinkContainer_3542758363529077382", PARAMETERS_3542758363529101095);
+  }
+
+  public static SNode callSuper_getLinkContainer_3542758363529101095(SNode thisNode, String callerConceptFqName) {
+    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.LinkAttributeAccessQualifier"), callerConceptFqName, "virtual_getLinkContainer_3542758363529077382", PARAMETERS_3542758363529101095);
   }
 }

@@ -319,6 +319,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_Node_GetReferenceOperation_LinkQualifier_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_Node_GetReferenceOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       NonTypesystemRule_Runtime nonTypesystemRule = new check_PropertyAttributeAccessQualifier_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }

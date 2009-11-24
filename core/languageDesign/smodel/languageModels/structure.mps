@@ -2621,6 +2621,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="4024382256428849245">
       <link role="intfc" targetNodeId="4024382256428848843" resolveInfo="ILinkAccess" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3542758363529077388">
+      <link role="intfc" targetNodeId="3542758363529077353" resolveInfo="ILinkAccessQualifierContainer" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1204851882688">
     <property name="package" value="attribute" />
@@ -3293,6 +3296,34 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1217022095863" resolveInfo="returnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="1960721196051541156" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3609773094169249792">
+    <property name="package" value="operation.node" />
+    <property name="name" value="Node_GetReferenceOperation" />
+    <link role="extends" targetNodeId="1138411891628" resolveInfo="SNodeOperation" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3609773094169252180">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="linkQualifier" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="1204848879094" resolveInfo="ILinkAccessQualifier" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3609773094169249794">
+      <property name="value" value="reference" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="3609773094169249889">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763241883" resolveInfo="applicableToNode" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="3609773094169249891">
+      <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" resolveInfo="applicableToLink" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3542758363529117972">
+      <link role="intfc" targetNodeId="3542758363529077353" resolveInfo="ILinkAccessQualifierContainer" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="3542758363529077353">
+    <property name="package" value="attribute" />
+    <property name="name" value="ILinkAccessQualifierContainer" />
   </node>
 </model>
 

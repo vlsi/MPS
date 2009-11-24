@@ -607,4 +607,12 @@ public class SNodeOperations {
     return node.getReferences();
   }
 
+  public static SNode getReference(SNode node, SNode linkDeclaration) {
+    if (node == null || linkDeclaration == null) {
+      return null;
+    }
+    SReference reference = node.getReference(((LinkDeclaration) linkDeclaration.getAdapter()).getRole());
+    return reference == null ? null : reference.getTargetNode();
+  }
+
 }
