@@ -28,16 +28,14 @@ import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.core.compiler.IProblem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.reloading.FileClassPathItem;
+import jetbrains.mps.reloading.*;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.compiler.MPSNameEnvironment;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.javaParser.UIComponents.MyDialog;
 
 import javax.swing.JFileChooser;
@@ -271,7 +269,18 @@ public class JavaCompiler {
         List<IClassPathItem> list = dialog.getChosenClassPaths();
         if (!list.isEmpty()) {
           for (IClassPathItem classpath : list) {
-            myClassPathItem.add(classpath); //todo maybe add them to solution
+            myClassPathItem.add(classpath);
+            ClassPathEntry cpe = new ClassPathEntry();
+            if (classpath instanceof FileClassPathItem) {
+              cpe.setPath(((FileClassPathItem) classpath).getClassPath());
+            } else if (classpath instanceof JarFileClassPathItem) {
+              cpe.setPath(((JarFileClassPathItem)classpath).getFile().getAbsolutePath());
+            } else {
+              cpe = null;
+            }
+            if (cpe != null) {
+              mySolution.getModuleDescriptor().getClassPaths().add(cpe);
+            }
           }
           return true;
         }
