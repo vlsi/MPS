@@ -22,8 +22,10 @@ public class ProgressLine extends JPanel {
   private final ColorProgressBar progressBar = new ColorProgressBar();
   private final JLabel state = new JLabel("Starting...");
   private final ProgressLine.StateInfo stateInfo = new ProgressLine.StateInfo();
+  private int lostMethodCount = 0;
   private boolean testsBuilt = false;
   private List<String> methodName = ListSequence.fromList(new ArrayList<String>());
+  private List<String> currentLostMethods = ListSequence.fromList(new ArrayList<String>());
 
   public ProgressLine() {
     super(new GridLayout(1, 2));
@@ -40,20 +42,37 @@ public class ProgressLine extends JPanel {
     this.stateInfo.setTotal(ListSequence.fromList(this.methodName).count());
   }
 
+  public List<String> getCurrentLostMethods() {
+    List<String> list = ListSequence.fromList(new ArrayList<String>());
+    ListSequence.fromList(list).addSequence(ListSequence.fromList(this.currentLostMethods));
+    ListSequence.fromList(this.currentLostMethods).clear();
+    return list;
+  }
+
   public void onEvent(TestEvent event) {
-    if (!(ListSequence.fromList(this.methodName).contains(event.getTestMethodName()))) {
+    this.onEvent(event.getTestCaseName(), event.getTestMethodName(), event.getToken());
+  }
+
+  public void onEvent(String testClassName, String testMethodName, String token) {
+    if (!(ListSequence.fromList(this.methodName).contains(testMethodName))) {
       return;
     }
-    String token = event.getToken();
     if (token.equals(TestEvent.END_TEST_PREFIX) || token.equals(TestEvent.ERROR_TEST_SUFFIX) || token.equals(TestEvent.FAILURE_TEST_SUFFIX)) {
       this.stateInfo.onComplete();
       if (token.equals(TestEvent.ERROR_TEST_SUFFIX) || token.equals(TestEvent.FAILURE_TEST_SUFFIX)) {
         this.stateInfo.onDefect();
         this.progressBar.setColor(ColorProgressBar.RED);
       }
-      ListSequence.fromList(this.methodName).removeElement(event.getTestMethodName());
+      int indexOfMethod = ListSequence.fromList(this.methodName).indexOf(testMethodName);
+      if (indexOfMethod > this.lostMethodCount) {
+        this.lostMethodCount++;
+        for (int i = 0; i < indexOfMethod; i++) {
+          ListSequence.fromList(this.currentLostMethods).addElement(ListSequence.fromList(this.methodName).getElement(i));
+        }
+      }
+      ListSequence.fromList(this.methodName).removeElement(testMethodName);
     }
-    this.stateInfo.setTestName(event.getTestMethodName(), event.getTestCaseName());
+    this.stateInfo.setTestName(testMethodName, testClassName);
     this.progressBar.setFraction(this.stateInfo.getCompletedPercent());
     this.stateInfo.updateLabel(this.state);
   }
