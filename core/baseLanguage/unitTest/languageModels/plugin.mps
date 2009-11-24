@@ -2556,15 +2556,23 @@
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="4951149158173754822">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4951149158173754828">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4951149158173754825">
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="4951149158173754826">
-                  <link role="fieldDeclaration" targetNodeId="8174031806067720769" resolveInfo="actionToolbar" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="2006872123071054891">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="2006872123071055850">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="2006872123071055853" />
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2006872123071055842">
+                  <link role="variableDeclaration" targetNodeId="1208865065155" resolveInfo="node" />
                 </node>
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4951149158173754827" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4951149158173754832">
-                <link role="baseMethodDeclaration" targetNodeId="8687133559625150050" resolveInfo="isNeedSelectFirstFailedTest" />
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4951149158173754828">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4951149158173754825">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="4951149158173754826">
+                    <link role="fieldDeclaration" targetNodeId="8174031806067720769" resolveInfo="actionToolbar" />
+                  </node>
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4951149158173754827" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4951149158173754832">
+                  <link role="baseMethodDeclaration" targetNodeId="8687133559625150050" resolveInfo="isNeedSelectFirstFailedTest" />
+                </node>
               </node>
             </node>
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="4951149158173754818">
