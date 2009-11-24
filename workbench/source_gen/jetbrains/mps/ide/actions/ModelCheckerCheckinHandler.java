@@ -31,7 +31,6 @@ import org.jetbrains.annotations.NotNull;
 public class ModelCheckerCheckinHandler extends CheckinHandler {
   private Project myProject;
   private CheckinProjectPanel myPanel;
-  private boolean myCheckModels = true;
 
   public ModelCheckerCheckinHandler(Project project, CheckinProjectPanel panel) {
     this.myProject = project;
@@ -50,11 +49,11 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
       }
 
       public void restoreState() {
-        checkModelCheckBox.setSelected(ModelCheckerCheckinHandler.this.myCheckModels);
+        checkModelCheckBox.setSelected(ModelCheckerSettings.getInstance().isCheckBeforeCommit());
       }
 
       public void saveState() {
-        ModelCheckerCheckinHandler.this.myCheckModels = checkModelCheckBox.isSelected();
+        ModelCheckerSettings.getInstance().setCheckBeforeCommit(checkModelCheckBox.isSelected());
       }
 
       public void refresh() {
@@ -64,7 +63,7 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
 
   @Override
   public CheckinHandler.ReturnResult beforeCheckin() {
-    if (!(this.myCheckModels)) {
+    if (!(ModelCheckerSettings.getInstance().isCheckBeforeCommit())) {
       return CheckinHandler.ReturnResult.COMMIT;
     }
 

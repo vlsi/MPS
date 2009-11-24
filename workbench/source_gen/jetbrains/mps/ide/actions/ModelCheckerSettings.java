@@ -126,6 +126,14 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     this.myState.myCheckTypesystem = checkTypesystem;
   }
 
+  public boolean isCheckBeforeCommit() {
+    return this.myState.myCheckBeforeCommit;
+  }
+
+  public void setCheckBeforeCommit(boolean checkBeforeCommit) {
+    this.myState.myCheckBeforeCommit = checkBeforeCommit;
+  }
+
   public static ModelCheckerSettings getInstance() {
     return ApplicationManager.getApplication().getComponent(ModelCheckerSettings.class);
   }
@@ -135,6 +143,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     private boolean myCheckConstraints = true;
     private boolean myCheckScopes = true;
     private boolean myCheckTypesystem = true;
+    private boolean myCheckBeforeCommit = true;
 
     public MyState() {
     }
@@ -169,6 +178,14 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
 
     public void setCheckTypesystem(boolean checkTypesystem) {
       this.myCheckTypesystem = checkTypesystem;
+    }
+
+    public boolean isCheckBeforeCommit() {
+      return this.myCheckBeforeCommit;
+    }
+
+    public void setCheckBeforeCommit(boolean checkBeforeCommit) {
+      this.myCheckBeforeCommit = checkBeforeCommit;
     }
   }
 }
