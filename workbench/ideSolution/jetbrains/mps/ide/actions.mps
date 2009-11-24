@@ -38771,15 +38771,17 @@
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="113082564754700972">
                 <link role="variableDeclaration" targetNodeId="5457007217767351143" resolveInfo="modelDescriptors" />
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="113082564754700973">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="113082564754700974">
-                  <property name="value" value=" models" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="113082564754700975">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="113082564754700976">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7635215049667170426">
+                <link role="baseMethodDeclaration" targetNodeId="76.~NameUtil.formatNumericalString(int,java.lang.String):java.lang.String" resolveInfo="formatNumericalString" />
+                <link role="classConcept" targetNodeId="76.~NameUtil" resolveInfo="NameUtil" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7635215049667170427">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7635215049667170428">
                     <link role="variableDeclaration" targetNodeId="5457007217767351143" resolveInfo="modelDescriptors" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="113082564754700977" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="7635215049667170429" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7635215049667170436">
+                  <property name="value" value="model" />
                 </node>
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="113082564754700978">
@@ -38897,15 +38899,17 @@
                   <link role="variableDeclaration" targetNodeId="5457007217767351208" resolveInfo="modules" />
                 </node>
               </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="113082564754701074">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="113082564754701075">
-                  <property name="value" value=" modules" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="113082564754701076">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="113082564754701077">
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7635215049667170439">
+                <link role="baseMethodDeclaration" targetNodeId="76.~NameUtil.formatNumericalString(int,java.lang.String):java.lang.String" resolveInfo="formatNumericalString" />
+                <link role="classConcept" targetNodeId="76.~NameUtil" resolveInfo="NameUtil" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7635215049667170440">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7635215049667170445">
                     <link role="variableDeclaration" targetNodeId="5457007217767351208" resolveInfo="modules" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="113082564754701078" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="7635215049667170442" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7635215049667170443">
+                  <property name="value" value="module" />
                 </node>
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="113082564754701079">

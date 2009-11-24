@@ -19,6 +19,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.project.IModule;
@@ -98,7 +99,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   }
 
   public ModelCheckerViewer checkModels(List<SModelDescriptor> modelDescriptors, IOperationContext operationContext, boolean showTab) {
-    return ModelCheckerTool_Tool.this.checkSomething(modelDescriptors, ListSequence.fromList(modelDescriptors).count() + " models", Icons.MODEL_ICON, operationContext, showTab);
+    return ModelCheckerTool_Tool.this.checkSomething(modelDescriptors, NameUtil.formatNumericalString(ListSequence.fromList(modelDescriptors).count(), "model"), Icons.MODEL_ICON, operationContext, showTab);
   }
 
   public ModelCheckerViewer checkModule(IModule module, IOperationContext operationContext, boolean showTab) {
@@ -106,7 +107,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   }
 
   public ModelCheckerViewer checkModules(List<IModule> modules, IOperationContext operationContext, boolean showTab) {
-    return ModelCheckerTool_Tool.this.checkSomething(ModelCheckerUtils.getModelDescriptors(modules), ListSequence.fromList(modules).count() + " modules", Icons.MODULE_GROUP_CLOSED, operationContext, showTab);
+    return ModelCheckerTool_Tool.this.checkSomething(ModelCheckerUtils.getModelDescriptors(modules), NameUtil.formatNumericalString(ListSequence.fromList(modules).count(), "module"), Icons.MODULE_GROUP_CLOSED, operationContext, showTab);
   }
 
   public ModelCheckerViewer checkProject(MPSProject mpsProject, IOperationContext operationContext, boolean showTab) {
