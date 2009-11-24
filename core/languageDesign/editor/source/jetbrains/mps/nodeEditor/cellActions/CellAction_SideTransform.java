@@ -106,6 +106,7 @@ public class CellAction_SideTransform extends EditorCellAction {
     context.flushEvents();
 
     EditorCell nodeCell = context.getNodeEditorComponent().findNodeCell(node);
+    assert nodeCell != null : "can't find cell for node " + node.getId() +  " " + node.getModel();
     EditorCell rtHint = nodeCell.getSTHintCell();
     assert rtHint != null : "can't find RT Hint for cell " + nodeCell + " with node " + node.getId() +  " " + node.getModel();
     context.getNodeEditorComponent().changeSelection(rtHint);
