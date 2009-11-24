@@ -280,6 +280,7 @@ public class JavaCompiler {
             }
             if (cpe != null) {
               mySolution.getModuleDescriptor().getClassPaths().add(cpe);
+              mySolution.save();
             }
           }
           return true;
