@@ -5,15 +5,13 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
-import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.structure.structure.LinkMetaclass;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
+import jetbrains.mps.smodel.search.SModelSearchUtil;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
@@ -25,11 +23,12 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.lang.structure.structure.Cardinality;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.PropertySupport;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
@@ -63,12 +62,11 @@ public class ModelCheckerUtils {
     addIssue(results, node, message, CATEGORY_ERROR, null);
   }
 
-  private static boolean isDeclaredLink(SNode concept, String role, boolean child) {
-    LinkDeclaration link = SModelSearchUtil.findLinkDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)), role);
-    if (link == null) {
-      return false;
-    }
-    return link.getMetaClass() == LinkMetaclass.aggregation || !(child);
+  private static boolean isDeclaredLink(SNode linkDeclaration, boolean child) {
+    return ((linkDeclaration != null) && child ?
+      SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference") :
+      SPropertyOperations.hasValue(linkDeclaration, "metaClass", "reference", "reference")
+    );
   }
 
   private static String getMostSpecializedLinkRoleInt(SNode conceptDeclaration, String role) {
@@ -147,9 +145,9 @@ public class ModelCheckerUtils {
               return;
             }
             // Check for unresolved references 
-            for (SReference ref : ListSequence.fromList(node.getReferences())) {
-              if (ref.getTargetNode() == null) {
-                addIssue(results, node, "Unresolved reference: " + ref.getResolveInfo());
+            for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
+              if ((SLinkOperations.getTargetNode(ref) == null)) {
+                addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref));
               }
             }
           }
@@ -164,30 +162,34 @@ public class ModelCheckerUtils {
             SNode concept = SNodeOperations.getConceptDeclaration(node);
 
             // Check links 
-            for (LinkDeclaration linkDeclaration : ListSequence.fromList(SModelSearchUtil.getLinkDeclarations(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept))))) {
-              LinkDeclaration link = SModelUtil_new.getGenuineLinkDeclaration(linkDeclaration);
-              if (link.getSourceCardinality() == Cardinality._1 || link.getSourceCardinality() == Cardinality._1__n) {
-                if (link.getMetaClass() == LinkMetaclass.aggregation) {
-                  if (node.getChildren(link.getRole()).isEmpty()) {
-                    addIssue(results, node, "Cardinality constraint violation in role \"" + link.getRole() + "\"");
+            for (SNode linkDeclaration : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
+              SNode link = LinkDeclaration_Behavior.call_getGenuineLink_1213877254523(linkDeclaration);
+              if (SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1..n", "0..1")) {
+                if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
+                  if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
+                    addIssue(results, node, "Cardinality constraint violation in role \"" + SPropertyOperations.getString(link, "role") + "\"");
                   }
                 } else {
-                  if (node.getReference(link.getRole()) == null) {
-                    addIssue(results, node, "Cardinality constraint violation in role \"" + link.getRole() + "\"");
+                  if ((SNodeOperations.getReference(node, link) == null)) {
+                    addIssue(results, node, "Cardinality constraint violation in role \"" + SPropertyOperations.getString(link, "role") + "\"");
                   }
                 }
               }
             }
 
-            for (String role : SetSequence.fromSet(node.getChildRoles())) {
-              if (!(isDeclaredLink(concept, role, true))) {
-                addIssue(results, node, "Usage of undeclared child role \"" + role + "\"", CATEGORY_WARNING, new ModelCheckerFix.UndeclaredChild(node, role));
+            for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return !(SNodeOperations.isAttribute(it));
+              }
+            })) {
+              if (!(isDeclaredLink(SNodeOperations.getContainingLinkDeclaration(child), true))) {
+                addIssue(results, node, "Usage of undeclared child role \"" + SNodeOperations.getContainingLinkRole(child) + "\"", CATEGORY_WARNING, new ModelCheckerFix.UndeclaredChild(node, SNodeOperations.getContainingLinkRole(child)));
               }
             }
 
-            for (String role : SetSequence.fromSet(node.getReferenceRoles())) {
-              if (!(isDeclaredLink(concept, role, false))) {
-                addIssue(results, node, "Usage of undeclared reference role \"" + role + "\"", CATEGORY_WARNING, new ModelCheckerFix.UndeclaredReference(node, role));
+            for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(node))) {
+              if (!(isDeclaredLink(SLinkOperations.findLinkDeclaration(reference), false))) {
+                addIssue(results, node, "Usage of undeclared reference role \"" + reference + "\"", CATEGORY_WARNING, new ModelCheckerFix.UndeclaredReference(node, SLinkOperations.getRole(reference)));
               }
             }
 
@@ -221,16 +223,16 @@ public class ModelCheckerUtils {
             }
             SNode concept = SNodeOperations.getConceptDeclaration(node);
 
-            for (SReference ref : ListSequence.fromList(node.getReferences())) {
-              if (!(isDeclaredLink(concept, ref.getRole(), false))) {
+            for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
+              if (!(isDeclaredLink(SLinkOperations.findLinkDeclaration(ref), false))) {
                 continue;
               }
-              SNode targetNode = ref.getTargetNode();
+              SNode targetNode = SLinkOperations.getTargetNode(ref);
               if (targetNode == null) {
                 continue;
               }
               try {
-                String specializedLinkRole = getMostSpecializedLinkRole(SNodeOperations.getConceptDeclaration(node), ref.getRole());
+                String specializedLinkRole = getMostSpecializedLinkRole(SNodeOperations.getConceptDeclaration(node), SLinkOperations.getRole(ref));
 
                 IModule thisModelModule = model.getModelDescriptor().getModule();
                 if (checkScope(concept, node, targetNode, specializedLinkRole, operationContext)) {
