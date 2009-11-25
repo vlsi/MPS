@@ -1538,12 +1538,16 @@
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1628427176330222155">
               <link role="classifier" targetNodeId="149.~Locale" resolveInfo="Locale" />
             </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="213802071188755442" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6857488637699642352">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6489343236075007663">
             <link role="classConcept" targetNodeId="150.~String" resolveInfo="String" />
-            <link role="baseMethodDeclaration" targetNodeId="150.~String.format(java.lang.String,java.lang.Object...):java.lang.String" resolveInfo="format" />
+            <link role="baseMethodDeclaration" targetNodeId="150.~String.format(java.util.Locale,java.lang.String,java.lang.Object...):java.lang.String" resolveInfo="format" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="213802071188755444">
+              <link role="variableDeclaration" targetNodeId="1628427176330222154" resolveInfo="l" />
+            </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6489343236075007664">
               <property name="value" value="" />
             </node>
