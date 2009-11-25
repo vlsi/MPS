@@ -22,7 +22,6 @@ public class ProgressLine extends JPanel {
   private final ColorProgressBar progressBar = new ColorProgressBar();
   private final JLabel state = new JLabel("Starting...");
   private final ProgressLine.StateInfo stateInfo = new ProgressLine.StateInfo();
-  private int lostMethodCount = 0;
   private boolean testsBuilt = false;
   private List<String> methodName = ListSequence.fromList(new ArrayList<String>());
   private List<String> currentLostMethods = ListSequence.fromList(new ArrayList<String>());
@@ -63,14 +62,15 @@ public class ProgressLine extends JPanel {
         this.stateInfo.onDefect();
         this.progressBar.setColor(ColorProgressBar.RED);
       }
+      ListSequence.fromList(this.methodName).removeElement(testMethodName);
+      ListSequence.fromList(this.currentLostMethods).clear();
+    } else {
       int indexOfMethod = ListSequence.fromList(this.methodName).indexOf(testMethodName);
-      if (indexOfMethod > this.lostMethodCount) {
-        this.lostMethodCount++;
+      if (indexOfMethod > 0) {
         for (int i = 0; i < indexOfMethod; i++) {
           ListSequence.fromList(this.currentLostMethods).addElement(ListSequence.fromList(this.methodName).getElement(i));
         }
       }
-      ListSequence.fromList(this.methodName).removeElement(testMethodName);
     }
     this.stateInfo.setTestName(testMethodName, testClassName);
     this.progressBar.setFraction(this.stateInfo.getCompletedPercent());
