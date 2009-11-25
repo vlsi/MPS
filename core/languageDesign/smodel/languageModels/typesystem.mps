@@ -10825,5 +10825,29 @@
       <link role="concept" targetNodeId="1.1171500988903" resolveInfo="Node_GetChildrenOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="5708036808576088282">
+    <property name="name" value="typeof_Reference_GetResolveInfo" />
+    <property name="package" value="operation.reference" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5708036808576088283">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="5708036808576088290">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5708036808576088294">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="5708036808576088295">
+            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="5708036808576088297" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5708036808576088293">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="5708036808576088286">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5708036808576088289">
+              <link role="applicableNode" targetNodeId="5708036808576088284" resolveInfo="info" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5708036808576088284">
+      <property name="name" value="info" />
+      <link role="concept" targetNodeId="1.5708036808576088033" resolveInfo="Reference_GetResolveInfo" />
+    </node>
+  </node>
 </model>
 

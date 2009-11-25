@@ -3191,5 +3191,39 @@
       <link role="relationDeclaration" targetNodeId="1.5168775467716640653" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="5708036808576088210">
+    <property name="package" value="operation.reference" />
+    <link role="conceptDeclaration" targetNodeId="1.5708036808576088033" resolveInfo="Reference_GetResolveInfo" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="5708036808576088270">
+      <link role="editorComponent" targetNodeId="1547759872598425693" resolveInfo="AliasComponent" />
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5708036808576088271">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="5708036808576088272" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5708036808576088273">
+        <property name="text" value="Get reference 'resolveInfo' operation" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="5708036808576088274">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="5708036808576088275">
+          <property name="color" value="lightGray" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="5708036808576088276">
+          <property name="color" value="blue" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5708036808576088277">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="5708036808576088278">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5708036808576088279">
+        <property name="text" value="Returns resolve info for this reference" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="5708036808576088280">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="5708036808576088281" />
+      </node>
+    </node>
+  </node>
 </model>
 

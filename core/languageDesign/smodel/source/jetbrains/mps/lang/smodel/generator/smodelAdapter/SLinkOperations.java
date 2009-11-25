@@ -201,4 +201,11 @@ public class SLinkOperations {
     return reference.getRole();
   }
 
+  public static String getResolveInfo(SReference reference) {
+    if (reference == null) {
+      return null;
+    }
+    return reference.getResolveInfo();
+  }
+
 }

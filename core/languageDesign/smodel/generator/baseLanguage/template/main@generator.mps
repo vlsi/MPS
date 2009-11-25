@@ -9681,6 +9681,31 @@
         </node>
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="5708036808576088298">
+      <link role="applicableConcept" targetNodeId="6.5708036808576088033" resolveInfo="Reference_GetResolveInfo" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="5708036808576088300">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2071115835942459030">
+          <link role="baseMethodDeclaration" targetNodeId="2.~SLinkOperations.getResolveInfo(jetbrains.mps.smodel.SReference):java.lang.String" resolveInfo="getResolveInfo" />
+          <link role="classConcept" targetNodeId="2.~SLinkOperations" resolveInfo="SLinkOperations" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="2071115835942461384">
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="2071115835942461386">
+              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="2071115835942461387">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2071115835942461388">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2071115835942461389">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2071115835942461391">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="2071115835942461390" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="2071115835942482748">
+                        <link role="baseMethodDeclaration" targetNodeId="55.1213877410070" resolveInfo="getOperand" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch" id="5079980551111235342">
     <property name="name" value="switch_toLinkDeclaration" />

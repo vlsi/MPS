@@ -3358,5 +3358,17 @@
       <link role="intfc" targetNodeId="3542758363529077353" resolveInfo="ILinkAccessQualifierContainer" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5708036808576088033">
+    <property name="package" value="operation.reference" />
+    <property name="name" value="Reference_GetResolveInfo" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5708036808576088212">
+      <link role="intfc" targetNodeId="1547759872598425074" resolveInfo="IReferenceOperation" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="2071115835942712551">
+      <property name="value" value="resolveInfo" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
