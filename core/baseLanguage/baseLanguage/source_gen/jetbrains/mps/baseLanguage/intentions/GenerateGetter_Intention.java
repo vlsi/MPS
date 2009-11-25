@@ -8,18 +8,17 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class GenerateGetter_Intention extends GenerateIntention {
   public GenerateGetter_Intention() {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Getter";
+    return "Getters";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -31,18 +30,17 @@ public class GenerateGetter_Intention extends GenerateIntention {
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     List<SNode> fields = SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true);
+    if (ListSequence.fromList(fields).isEmpty()) {
+      return false;
+    }
     boolean allGettersImplemented = true;
     for (SNode fieldDeclaration : fields) {
-      final Wrappers._boolean hasCurrentFieldGetter = new Wrappers._boolean(false);
       final String getterName = "get" + NameUtil.capitalize(SPropertyOperations.getString(fieldDeclaration, "name"));
-      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode it) {
-          if (SPropertyOperations.getString(it, "name").equals(getterName) && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).isEmpty()) {
-            hasCurrentFieldGetter.value = true;
-          }
+      if (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode method) {
+          return SPropertyOperations.getString(method, "name").equals(getterName) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty();
         }
-      });
-      if (!(hasCurrentFieldGetter.value)) {
+      })) {
         allGettersImplemented = false;
       }
     }
@@ -53,20 +51,13 @@ public class GenerateGetter_Intention extends GenerateIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     List<SNode> fields = SLinkOperations.getTargets(classConcept, "field", true);
-    if (ListSequence.fromList(fields).isEmpty()) {
-      return;
-    }
     for (SNode field : fields) {
       final String getterName = "get" + NameUtil.capitalize(SPropertyOperations.getString(field, "name"));
-      final Wrappers._boolean getterIsAbsent = new Wrappers._boolean(true);
-      ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode it) {
-          if (SPropertyOperations.getString(it, "name").equals(getterName) && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).isEmpty()) {
-            getterIsAbsent.value = false;
-          }
+      if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode method) {
+          return SPropertyOperations.getString(method, "name").equals(getterName) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty();
         }
-      });
-      if (!(getterIsAbsent.value)) {
+      })) {
         continue;
       }
       SNode getter = SLinkOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");

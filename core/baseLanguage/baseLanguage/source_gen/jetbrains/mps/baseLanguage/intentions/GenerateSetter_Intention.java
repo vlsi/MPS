@@ -8,11 +8,10 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class GenerateSetter_Intention extends GenerateIntention {
@@ -20,7 +19,7 @@ public class GenerateSetter_Intention extends GenerateIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Setter";
+    return "Setters";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -33,18 +32,17 @@ public class GenerateSetter_Intention extends GenerateIntention {
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     List<SNode> fields = SLinkOperations.getTargets(classConcept, "field", true);
+    if (ListSequence.fromList(fields).isEmpty()) {
+      return false;
+    }
     boolean hasAllSetters = true;
     for (SNode field : fields) {
       final String setterName = "set" + NameUtil.capitalize(SPropertyOperations.getString(field, "name"));
-      final Wrappers._boolean hasCurrentFieldSetter = new Wrappers._boolean(false);
-      ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode method) {
-          if (SPropertyOperations.getString(method, "name").equals(setterName)) {
-            hasCurrentFieldSetter.value = true;
-          }
+      if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode method) {
+          return SPropertyOperations.getString(method, "name").equals(setterName) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1;
         }
-      });
-      if (!(hasCurrentFieldSetter.value)) {
+      })) {
         hasAllSetters = false;
       }
     }
@@ -59,15 +57,15 @@ public class GenerateSetter_Intention extends GenerateIntention {
     }
     for (SNode field : fields) {
       final String setterName = "set" + NameUtil.capitalize(SPropertyOperations.getString(field, "name"));
-      final Wrappers._boolean setterIsAbsent = new Wrappers._boolean(true);
-      ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {
-        public void visit(SNode method) {
-          if (SPropertyOperations.getString(method, "name").equals(setterName) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1) {
-            setterIsAbsent.value = false;
-          }
+      boolean setterIsAbsent = true;
+      if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
+        public boolean accept(SNode method) {
+          return SPropertyOperations.getString(method, "name").equals(setterName) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1;
         }
-      });
-      if (!(setterIsAbsent.value)) {
+      })) {
+        setterIsAbsent = false;
+      }
+      if (!(setterIsAbsent)) {
         continue;
       }
       SNode setter = SLinkOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");

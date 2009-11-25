@@ -115,6 +115,10 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       }
     });
   }
+  @Deprecated
+  public Collection<Pair<Intention, SNode>> getAvailableIntentions(final SNode node, final EditorContext context, @Nullable final Computable<Boolean> terminated) {
+   return getAvailableIntentions(node, context, terminated,BaseIntention.class);
+  }
 
   public Collection<Pair<Intention, SNode>> getAvailableIntentions(final SNode node, final EditorContext context, @Nullable final Computable<Boolean> terminated, final Class<? extends Intention> intentionClass) {
     try {
