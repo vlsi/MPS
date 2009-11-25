@@ -1843,30 +1843,12 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="213802071188248622" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="213802071188248623">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="213802071188248629">
-          <property name="left_transfrom_hint" value="true" />
           <link role="baseMethodDeclaration" targetNodeId="213802071188248605" resolveInfo="SuperClass" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="213802071188248630">
             <link role="variableDeclaration" targetNodeId="213802071188248624" resolveInfo="param" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="213802071188387961">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.StatementCommentPart" id="213802071188387962">
-            <node role="commentedStatement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="213802071188387956">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="213802071188387957">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="213802071188387958">
-                  <link role="classifier" targetNodeId="150.~System" />
-                  <link role="variableDeclaration" targetNodeId="150.~System.err" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="213802071188387959">
-                  <link role="baseMethodDeclaration" targetNodeId="152.~PrintStream.println(java.lang.String):void" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="213802071188387960">
-                    <property name="value" value="" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="213802071188387982" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="213802071188248624">
         <property name="name" value="param" />

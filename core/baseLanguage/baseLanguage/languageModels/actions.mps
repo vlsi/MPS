@@ -11576,7 +11576,7 @@
       <property name="side" value="left" />
       <link role="applicableConcept" targetNodeId="1.1068431790191" resolveInfo="Expression" />
       <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="260226996411742137">
-        <link role="concept" targetNodeId="1.1232461062092" resolveInfo="CommentedStatement" />
+        <link role="concept" targetNodeId="1.6329021646629104954" resolveInfo="SingleLineComment" />
         <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" id="260226996411742138">
           <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="260226996411742139">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="260226996411742140">
@@ -11688,11 +11688,120 @@
         </node>
       </node>
     </node>
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="213802071188468761">
+      <property name="side" value="left" />
+      <link role="applicableConcept" targetNodeId="1.1068580123157" resolveInfo="Statement" />
+      <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="213802071188507057">
+        <link role="concept" targetNodeId="1.6329021646629104954" resolveInfo="SingleLineComment" />
+        <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" id="213802071188507059">
+          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="213802071188507062">
+            <property name="text" value="//" />
+          </node>
+          <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="213802071188507066">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="213802071188507067">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="213802071188507068">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="213802071188507069">
+                  <property name="name" value="statement" />
+                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="213802071188507070">
+                    <link role="concept" targetNodeId="1.1068580123157" resolveInfo="Statement" />
+                  </node>
+                  <node role="initializer" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="213802071188507073" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="213802071188507075">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="213802071188507076">
+                  <property name="name" value="result" />
+                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="213802071188507077">
+                    <link role="concept" targetNodeId="1.6329021646629104954" resolveInfo="SingleLineComment" />
+                  </node>
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="213802071188507078">
+                    <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="213802071188507079">
+                      <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="213802071188507080">
+                        <link role="concept" targetNodeId="1.6329021646629104954" resolveInfo="SingleLineComment" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="213802071188507081">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="213802071188507082">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="213802071188507083">
+                    <link role="variableDeclaration" targetNodeId="213802071188507069" resolveInfo="statement" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation" id="213802071188507084">
+                    <node role="replacementNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="213802071188507085">
+                      <link role="variableDeclaration" targetNodeId="213802071188507076" resolveInfo="result" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="213802071188507086">
+                <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="213802071188507087">
+                  <property name="name" value="part" />
+                  <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="213802071188507088">
+                    <link role="concept" targetNodeId="1.6329021646629175143" resolveInfo="StatementCommentPart" />
+                  </node>
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="213802071188507089">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="213802071188507090">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="213802071188507091">
+                        <link role="variableDeclaration" targetNodeId="213802071188507076" resolveInfo="result" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="213802071188507092">
+                        <link role="link" targetNodeId="1.6329021646629175155" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_AddNewChildOperation" id="213802071188507093">
+                      <link role="concept" targetNodeId="1.6329021646629175143" resolveInfo="StatementCommentPart" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="213802071188507094">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="213802071188507095">
+                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="213802071188507096">
+                    <link role="variableDeclaration" targetNodeId="213802071188507069" resolveInfo="statement" />
+                  </node>
+                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="213802071188507097">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="213802071188507098">
+                      <link role="variableDeclaration" targetNodeId="213802071188507087" resolveInfo="part" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="213802071188507099">
+                      <link role="link" targetNodeId="1.6329021646629175144" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="213802071188507100">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="213802071188507101">
+                  <link role="variableDeclaration" targetNodeId="213802071188507076" resolveInfo="result" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction" id="213802071188506547">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="213802071188506548">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="213802071188507042">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="213802071188507051">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="213802071188507052">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="213802071188507053" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="213802071188507054">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="213802071188507055">
+                    <link role="conceptDeclaration" targetNodeId="1.1068580123155" resolveInfo="ExpressionStatement" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
     <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="260226996411742195">
       <property name="side" value="left" />
       <link role="applicableConcept" targetNodeId="1.1068431790189" resolveInfo="Type" />
       <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="260226996411742198">
-        <link role="concept" targetNodeId="1.1232461062092" resolveInfo="CommentedStatement" />
+        <link role="concept" targetNodeId="1.6329021646629104954" resolveInfo="SingleLineComment" />
         <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" id="260226996411742199">
           <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="260226996411742200">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="260226996411742201">
