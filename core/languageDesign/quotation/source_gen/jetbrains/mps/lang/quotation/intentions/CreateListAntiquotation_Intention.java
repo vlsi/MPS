@@ -47,8 +47,11 @@ public class CreateListAntiquotation_Intention extends BaseIntention {
     SModel model = SNodeOperations.getModel(contextNode);
     if (SNodeOperations.isInstanceOf(((SNode)contextNode.getAttribute()), "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
       contextNode.setAttribute(null);
-    } else
-    contextNode.setAttribute(SModelOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.ListAntiquotation", null));
+    } else {
+      SNode listAntiquotation = SModelOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.ListAntiquotation", null);
+      contextNode.setAttribute(listAntiquotation);
+      editorContext.selectWRTFocusPolicy(listAntiquotation);
+    }
   }
 
   public String getLocationString() {

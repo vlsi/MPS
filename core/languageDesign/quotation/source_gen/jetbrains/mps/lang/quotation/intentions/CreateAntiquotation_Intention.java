@@ -48,8 +48,11 @@ public class CreateAntiquotation_Intention extends BaseIntention {
     SModel model = SNodeOperations.getModel(contextNode);
     if (SLinkOperations.getTarget(contextNode, AttributesRolesUtil.childRoleFromAttributeRole("antiquotation"), true) != null) {
       contextNode.setAttribute(null);
-    } else
-    contextNode.setAttribute(SModelOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.Antiquotation", null));
+    } else {
+      SNode antiquotation = SModelOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.Antiquotation", null);
+      contextNode.setAttribute(antiquotation);
+      editorContext.selectWRTFocusPolicy(antiquotation);
+    }
   }
 
   public String getLocationString() {
