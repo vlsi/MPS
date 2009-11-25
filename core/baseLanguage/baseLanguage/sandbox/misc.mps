@@ -1693,6 +1693,13 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.EnumClass" id="1908995137503717943">
     <property name="name" value="EnumConstantsWithMethods" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6807171963179484668">
+      <property name="name" value="foo" />
+      <property name="isAbstract" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6807171963179484669" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6807171963179484670" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6807171963179484671" />
+    </node>
     <node role="enumConstant" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration" id="1908995137503731352">
       <property name="name" value="HELLO" />
       <link role="baseMethodDeclaration" targetNodeId="1908995137503717945" resolveInfo="EnumConstantsWithMethods" />

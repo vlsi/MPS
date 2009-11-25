@@ -21,28 +21,30 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
   public void applyRule(final SNode method, final TypeCheckingContext typeCheckingContext) {
     if (SPropertyOperations.getBoolean(method, "isAbstract")) {
       SNode classifier = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-      do {
-        SNode matchedNode_3 = classifier;
-        {
-          boolean matches_3 = false;
+      if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
+        do {
+          SNode matchedNode_3 = classifier;
           {
-            SNode matchingNode_3 = classifier;
-            if (matchingNode_3 != null) {
-              matches_3 = SModelUtil_new.isAssignableConcept(matchingNode_3.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-            }
-          }
-          if (matches_3) {
-            if ((matchedNode_3 != null) && !(SPropertyOperations.getBoolean(matchedNode_3, "abstractClass"))) {
-              {
-                BaseIntentionProvider intentionProvider = null;
-                IErrorTarget errorTarget = new NodeErrorTarget();
-                IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(method, "abstract method in a non-abstract class", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "840197573389262456", intentionProvider, errorTarget);
+            boolean matches_3 = false;
+            {
+              SNode matchingNode_3 = classifier;
+              if (matchingNode_3 != null) {
+                matches_3 = SModelUtil_new.isAssignableConcept(matchingNode_3.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
               }
             }
-            break;
+            if (matches_3) {
+              if ((matchedNode_3 != null) && !(SPropertyOperations.getBoolean(matchedNode_3, "abstractClass"))) {
+                {
+                  BaseIntentionProvider intentionProvider = null;
+                  IErrorTarget errorTarget = new NodeErrorTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(method, "abstract method in a non-abstract class", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "840197573389262456", intentionProvider, errorTarget);
+                }
+              }
+              break;
+            }
           }
-        }
-      } while(false);
+        } while(false);
+      }
     }
   }
 
