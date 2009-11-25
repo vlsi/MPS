@@ -554,7 +554,14 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     private JList myList = new JList(new DefaultListModel()) {
       @Override
       public Dimension getPreferredScrollableViewportSize() {
-        return getPreferredSize();
+        Dimension preferredSize = getPreferredSize();
+        if (preferredSize.getWidth() < PREFERRED_WIDTH) {
+          preferredSize.width = PREFERRED_WIDTH;
+        }
+        if (preferredSize.getHeight() > PREFERRED_HEIGHT) {
+          preferredSize.height = PREFERRED_HEIGHT;
+        }
+        return preferredSize;
       }
     };
     private PopupWindowPosition myPosition = PopupWindowPosition.BOTTOM;
@@ -609,7 +616,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
       myScroller.getVerticalScrollBar().setFocusable(false);
 
       myList.setFocusable(false);
-      setSize(PREFERRED_WIDTH, PREFERRED_HEIGHT);
+      pack();
     }
 
 
@@ -688,10 +695,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
       setSelectionIndex(oldIndex);
       scrollToSelection();
-
-      setSize(
-        Math.max(PREFERRED_WIDTH, myScroller.getPreferredSize().width),
-        Math.min(PREFERRED_HEIGHT, myScroller.getPreferredSize().height));
+      pack();
 
       if (getPosition() == PopupWindowPosition.TOP) {
         newLocation = new Point(newLocation.x, newLocation.y - getHeight() - myRelativeCell.getHeight());
