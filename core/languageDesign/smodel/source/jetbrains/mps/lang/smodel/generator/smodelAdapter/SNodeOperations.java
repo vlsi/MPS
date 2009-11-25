@@ -618,6 +618,7 @@ public class SNodeOperations {
     if (node == null || linkDeclaration == null) {
       return null;
     }
+    linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
     SReference reference = node.getReference(((LinkDeclaration) linkDeclaration.getAdapter()).getRole());
     return reference == null ? null : reference.getTargetNode();
   }
