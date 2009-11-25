@@ -40,14 +40,14 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     }
   };
 
-  private StubLocation myLocaion;
+  private StubLocation myLocation;
 
   public final void updateModels(@NotNull SModelRoot root, @NotNull IModule module) {
-    myLocaion = new StubLocation(root.getPath(), root.getPrefix(), module);
+    myLocation = new StubLocation(root.getPath(), root.getPrefix(), module);
 
     SModelRepository repository = SModelRepository.getInstance();
 
-    for (SModelDescriptor descriptor : getModelDescriptors(myLocaion)) {
+    for (SModelDescriptor descriptor : getModelDescriptors(myLocation)) {
       if (repository.getModelDescriptor(descriptor.getSModelReference()) == null) {
         repository.registerModelDescriptor(descriptor, module);
 
@@ -107,7 +107,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     boolean wasLoading = model.isLoading();
     model.setLoading(true);
     try {
-      updateModel(myLocaion,modelDescriptor, model);
+      updateModel(myLocation, new ModelInfo(modelDescriptor, model));
     } finally {
       model.setLoading(wasLoading);
     }
@@ -117,7 +117,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
 
   protected abstract Set<SModelDescriptor> getModelDescriptors(StubLocation location);
 
-  protected abstract void updateModel(StubLocation location, SModelDescriptor modelDescriptor, SModel model);
+  protected abstract void updateModel(StubLocation location, ModelInfo modelInfo);
 
   protected abstract Set<Language> getLanguagesToImport();
 }
