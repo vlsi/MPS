@@ -36,11 +36,15 @@ public class GenerateGetter_Intention extends GenerateIntention {
     boolean allGettersImplemented = true;
     for (SNode fieldDeclaration : fields) {
       final String getterName = "get" + NameUtil.capitalize(SPropertyOperations.getString(fieldDeclaration, "name"));
+      boolean fieldHasGetter = false;
       if (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {
-          return SPropertyOperations.getString(method, "name").equals(getterName) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty();
+          return getterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty();
         }
       })) {
+        fieldHasGetter = true;
+      }
+      if (!(fieldHasGetter)) {
         allGettersImplemented = false;
       }
     }
@@ -55,7 +59,7 @@ public class GenerateGetter_Intention extends GenerateIntention {
       final String getterName = "get" + NameUtil.capitalize(SPropertyOperations.getString(field, "name"));
       if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {
-          return SPropertyOperations.getString(method, "name").equals(getterName) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty();
+          return getterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty();
         }
       })) {
         continue;

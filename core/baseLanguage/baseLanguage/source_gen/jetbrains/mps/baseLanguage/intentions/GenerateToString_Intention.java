@@ -5,11 +5,10 @@ package jetbrains.mps.baseLanguage.intentions;
 import jetbrains.mps.intentions.GenerateIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import java.util.Iterator;
@@ -30,15 +29,11 @@ public class GenerateToString_Intention extends GenerateIntention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    final Wrappers._boolean hasToString = new Wrappers._boolean(false);
-    ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).visitAll(new IVisitor<SNode>() {
-      public void visit(SNode method) {
-        if (SPropertyOperations.getString(method, "name").equals("toString") && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty() && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.StringType")) {
-          hasToString.value = true;
-        }
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode method) {
+        return "toString".equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty() && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.StringType");
       }
     });
-    return !(hasToString.value);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

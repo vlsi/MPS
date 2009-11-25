@@ -37,12 +37,16 @@ public class GenerateSetter_Intention extends GenerateIntention {
     }
     boolean hasAllSetters = true;
     for (SNode field : fields) {
+      boolean fieldHasSetter = false;
       final String setterName = "set" + NameUtil.capitalize(SPropertyOperations.getString(field, "name"));
       if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {
-          return SPropertyOperations.getString(method, "name").equals(setterName) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1;
+          return setterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1;
         }
       })) {
+        fieldHasSetter = true;
+      }
+      if (!(fieldHasSetter)) {
         hasAllSetters = false;
       }
     }
@@ -60,7 +64,7 @@ public class GenerateSetter_Intention extends GenerateIntention {
       boolean setterIsAbsent = true;
       if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {
-          return SPropertyOperations.getString(method, "name").equals(setterName) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1;
+          return setterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1;
         }
       })) {
         setterIsAbsent = false;
