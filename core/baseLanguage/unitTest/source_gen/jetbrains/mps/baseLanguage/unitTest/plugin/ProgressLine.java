@@ -29,6 +29,7 @@ public class ProgressLine extends JPanel {
   private final ProgressLine.StateInfo stateInfo = new ProgressLine.StateInfo();
   private boolean testsBuilt = false;
   private List<String> testMethods = ListSequence.fromList(new ArrayList<String>());
+  private List<String> lostMethods = ListSequence.fromList(new ArrayList<String>());
   private List<String> currentLostMethods = ListSequence.fromList(new ArrayList<String>());
 
   public ProgressLine() {
@@ -79,11 +80,15 @@ public class ProgressLine extends JPanel {
       if (indexOfMethod > 0) {
         for (int i = 0; i < indexOfMethod; i++) {
           String currentTestMethod = ListSequence.fromList(this.testMethods).getElement(i);
+          if (ListSequence.fromList(this.lostMethods).contains(currentTestMethod)) {
+            continue;
+          }
           String currentClassName = currentTestMethod.substring(0, currentTestMethod.lastIndexOf("."));
           if (currentClassName.equals(testClassName)) {
             continue;
           }
           ListSequence.fromList(this.currentLostMethods).addElement(currentTestMethod);
+          ListSequence.fromList(this.lostMethods).addElement(currentTestMethod);
         }
       }
     }
