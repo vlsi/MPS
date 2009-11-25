@@ -4,16 +4,11 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 
 public enum JUnitRunTypes {
-  METHOD()
-,
-  NODE()
-,
-  MODEL()
-,
-  MODULE()
-,
-  PROJECT()
-;
+  METHOD(),
+  NODE(),
+  MODEL(),
+  MODULE(),
+  PROJECT();
 
   JUnitRunTypes() {
   }

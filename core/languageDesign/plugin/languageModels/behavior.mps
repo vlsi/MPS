@@ -3008,5 +3008,47 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6547237850567463423" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="7559322914920376280">
+    <property name="package" value="RunConfigs.Create.Creator.Target" />
+    <link role="concept" targetNodeId="1.3856910426407529502" resolveInfo="BaseCreatorTarget" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="7559322914920376281">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7559322914920376282" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7559322914920378168">
+      <property name="name" value="getParameter" />
+      <property name="isVirtual" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7559322914920378169" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7559322914920378171">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7559322914920403258">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="7559322914920403259" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="7559322914920418712">
+        <link role="concept" targetNodeId="6.1107461130800" resolveInfo="Classifier" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="7559322914920403624">
+    <property name="package" value="RunConfigs.Create.Creator.Target" />
+    <link role="concept" targetNodeId="1.3994570451548100919" resolveInfo="NodesCreatorTarget" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7559322914920403627">
+      <property name="name" value="getParameter" />
+      <link role="overriddenMethod" targetNodeId="7559322914920378168" resolveInfo="getParameter" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7559322914920403630">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7559322914920418718">
+          <node role="expression" type="jetbrains.mps.lang.smodel.structure.NodeRefExpression" id="7559322914920418719">
+            <link role="referentNode" targetNodeId="5.~SNode" resolveInfo="SNode" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7559322914920403632" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="7559322914920418713">
+        <link role="concept" targetNodeId="6.1107461130800" resolveInfo="Classifier" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="7559322914920403625">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7559322914920403626" />
+    </node>
+  </node>
 </model>
 

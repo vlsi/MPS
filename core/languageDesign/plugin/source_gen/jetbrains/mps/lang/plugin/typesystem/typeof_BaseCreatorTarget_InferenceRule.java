@@ -17,7 +17,7 @@ public class typeof_BaseCreatorTarget_InferenceRule extends AbstractInferenceRul
   }
 
   public void applyRule(final SNode target, final TypeCheckingContext typeCheckingContext) {
-    if (ListSequence.fromList(SLinkOperations.getConceptLinkTargets(target, "type")).isNotEmpty()) {
+    if (ListSequence.fromList(SLinkOperations.getConceptLinkTargets(target, "type")).count() == 1) {
       {
         SNode _nodeToCheck_1029348928467 = target;
         BaseIntentionProvider intentionProvider = null;

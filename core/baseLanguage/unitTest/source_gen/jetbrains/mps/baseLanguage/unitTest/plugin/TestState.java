@@ -10,22 +10,14 @@ import jetbrains.mps.util.Macros;
 import jetbrains.mps.ide.icons.IconManager;
 
 public enum TestState {
-  NOT_RAN("testNotRan.png")
-,
-  IN_PROGRESS("testInProgress1.png")
-,
-  IGNORED("testIgnored.png")
-,
-  FAILED("testFailed.png")
-,
-  ERROR("testError.png")
-,
-  PASSED("testPassed.png")
-,
-  PAUSED("testPaused.png")
-,
-  TERMINATED("testTerminated.png")
-;
+  NOT_RAN("testNotRan.png"),
+  IN_PROGRESS("testInProgress1.png"),
+  IGNORED("testIgnored.png"),
+  FAILED("testFailed.png"),
+  ERROR("testError.png"),
+  PASSED("testPassed.png"),
+  PAUSED("testPaused.png"),
+  TERMINATED("testTerminated.png");
 
   private Icon icon;
 

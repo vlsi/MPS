@@ -2038,16 +2038,21 @@
             <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="3856910426407530556" />
           </node>
         </node>
-        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3856910426407530517">
-          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3856910426407530512">
-            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="3856910426407530511">
-              <link role="applicableNode" targetNodeId="3856910426407529597" resolveInfo="target" />
-            </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptLinkAccess" id="3856910426407530516">
-              <link role="conceptLinkDeclaration" targetNodeId="4.3856910426407529594" resolveInfo="type" />
-            </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="7392318826504163288">
+          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="7392318826504163292">
+            <property name="value" value="1" />
           </node>
-          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="3856910426407530521" />
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7392318826504163278">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7392318826504163273">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="7392318826504163272">
+                <link role="applicableNode" targetNodeId="3856910426407529597" resolveInfo="target" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SConceptLinkAccess" id="7392318826504163277">
+                <link role="conceptLinkDeclaration" targetNodeId="4.3856910426407529594" resolveInfo="type" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation" id="7392318826504163282" />
+          </node>
         </node>
       </node>
     </node>
