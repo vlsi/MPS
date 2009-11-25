@@ -52,6 +52,19 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation<S
     } else {
       styledText.append("<no name>");
     }
+    if (SNodeOperations.isInstanceOf(methodDeclaration, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
+      SNode classifier = SNodeOperations.getAncestor(methodDeclaration, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+      if (classifier != null && ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).isNotEmpty()) {
+        styledText.append("<");
+        for (SNode param : SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)) {
+          if (SNodeOperations.getIndexInParent(param) > 0) {
+            styledText.append(", ");
+          }
+          styledText.append(BaseConcept_Behavior.call_getPresentation_1213877396640(param));
+        }
+        styledText.append(">");
+      }
+    }
     int argumentIndex = SNodeOperations.getIndexInParent(argument);
     styledText.append("(");
     for (SNode param : SLinkOperations.getTargets(methodDeclaration, "parameter", true)) {
