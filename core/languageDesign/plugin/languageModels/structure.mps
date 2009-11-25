@@ -3641,7 +3641,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5124230653299542673">
-    <property name="package" value="Custom.ApplicationPlugin" />
+    <property name="package" value="Custom.DebugInfo" />
     <property name="name" value="ConceptReference" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5124230653299542674">
@@ -3653,7 +3653,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5124230653299345208">
     <property name="name" value="DebugInfoInitializer" />
-    <property name="package" value="Custom.ApplicationPlugin" />
+    <property name="package" value="Custom.DebugInfo" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5124230653299370499">

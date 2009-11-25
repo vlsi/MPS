@@ -43901,113 +43901,18 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration" id="1587969695316241601">
-    <property name="name" value="DebugInfoInitializer" />
-    <node role="initBlock" type="jetbrains.mps.lang.plugin.structure.ApplicationPluginInitBlock" id="1587969695316310406">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1587969695316310407">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1587969695316322709">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1587969695316322710">
-            <property name="name" value="manager" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1587969695316322711">
-              <link role="classifier" targetNodeId="138.~DebugInfoManager" resolveInfo="DebugInfoManager" />
-            </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2464389921387036696">
-              <link role="baseMethodDeclaration" targetNodeId="138.~DebugInfoManager.getInstance():jetbrains.mps.debug.DebugInfoManager" resolveInfo="getInstance" />
-              <link role="classConcept" targetNodeId="138.~DebugInfoManager" resolveInfo="DebugInfoManager" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1587969695316322716">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1587969695316322718">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1587969695316322717">
-              <link role="variableDeclaration" targetNodeId="1587969695316322710" resolveInfo="manager" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1587969695316322722">
-              <link role="baseMethodDeclaration" targetNodeId="138.~DebugInfoManager.addDebuggableConcept(java.lang.String):void" resolveInfo="addDebuggableConcept" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1587969695316322724">
-                <node role="operand" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1587969695316322723">
-                  <link role="conceptDeclaration" targetNodeId="1.1068580123157" resolveInfo="Statement" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1587969695316322729">
-                  <link role="baseMethodDeclaration" targetNodeId="48.1213877404258" resolveInfo="getFqName" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1587969695316322731">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1587969695316322732">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1587969695316322733">
-              <link role="variableDeclaration" targetNodeId="1587969695316322710" resolveInfo="manager" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1587969695316322734">
-              <link role="baseMethodDeclaration" targetNodeId="138.~DebugInfoManager.addDebuggableConcept(java.lang.String):void" resolveInfo="addDebuggableConcept" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1587969695316322735">
-                <node role="operand" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1587969695316322736">
-                  <link role="conceptDeclaration" targetNodeId="1.1068390468200" resolveInfo="FieldDeclaration" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1587969695316322737">
-                  <link role="baseMethodDeclaration" targetNodeId="48.1213877404258" resolveInfo="getFqName" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1587969695316322739">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1587969695316322740">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1587969695316322741">
-              <link role="variableDeclaration" targetNodeId="1587969695316322710" resolveInfo="manager" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1587969695316322742">
-              <link role="baseMethodDeclaration" targetNodeId="138.~DebugInfoManager.addDebuggableConcept(java.lang.String):void" resolveInfo="addDebuggableConcept" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1587969695316322743">
-                <node role="operand" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1587969695316322744">
-                  <link role="conceptDeclaration" targetNodeId="1.1070462154015" resolveInfo="StaticFieldDeclaration" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1587969695316322745">
-                  <link role="baseMethodDeclaration" targetNodeId="48.1213877404258" resolveInfo="getFqName" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1587969695316322747">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1587969695316322748">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1587969695316322749">
-              <link role="variableDeclaration" targetNodeId="1587969695316322710" resolveInfo="manager" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1587969695316322750">
-              <link role="baseMethodDeclaration" targetNodeId="138.~DebugInfoManager.addDebuggableConcept(java.lang.String):void" resolveInfo="addDebuggableConcept" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1587969695316322751">
-                <node role="operand" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1587969695316322752">
-                  <link role="conceptDeclaration" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1587969695316322753">
-                  <link role="baseMethodDeclaration" targetNodeId="48.1213877404258" resolveInfo="getFqName" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1587969695316322755">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1587969695316322756">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1587969695316322757">
-              <link role="variableDeclaration" targetNodeId="1587969695316322710" resolveInfo="manager" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1587969695316322758">
-              <link role="baseMethodDeclaration" targetNodeId="138.~DebugInfoManager.addDebuggableConcept(java.lang.String):void" resolveInfo="addDebuggableConcept" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1587969695316322759">
-                <node role="operand" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1587969695316322760">
-                  <link role="conceptDeclaration" targetNodeId="1.1137021947720" resolveInfo="ConceptFunction" />
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1587969695316322761">
-                  <link role="baseMethodDeclaration" targetNodeId="48.1213877404258" resolveInfo="getFqName" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
+  <node type="jetbrains.mps.lang.plugin.structure.DebugInfoInitializer" id="5191407547578461866">
+    <node role="conceptsToDebug" type="jetbrains.mps.lang.plugin.structure.ConceptReference" id="5191407547578560720">
+      <link role="declaration" targetNodeId="1.1068580123157" resolveInfo="Statement" />
+    </node>
+    <node role="conceptsToDebug" type="jetbrains.mps.lang.plugin.structure.ConceptReference" id="5191407547578560723">
+      <link role="declaration" targetNodeId="1.1068390468200" resolveInfo="FieldDeclaration" />
+    </node>
+    <node role="conceptsToDebug" type="jetbrains.mps.lang.plugin.structure.ConceptReference" id="5191407547578560725">
+      <link role="declaration" targetNodeId="1.1070462154015" resolveInfo="StaticFieldDeclaration" />
+    </node>
+    <node role="conceptsToDebug" type="jetbrains.mps.lang.plugin.structure.ConceptReference" id="5191407547578560727">
+      <link role="declaration" targetNodeId="1.1068580123132" resolveInfo="BaseMethodDeclaration" />
     </node>
   </node>
 </model>

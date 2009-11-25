@@ -6031,10 +6031,6 @@
       <link role="template" targetNodeId="1215281686832" resolveInfo="GeneratedCustomApplicationPlugin" />
       <link role="labelDeclaration" targetNodeId="7167571922052020427" resolveInfo="map_ApplicationPluginClass" />
     </node>
-    <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="5124230653299824277">
-      <link role="applicableConcept" targetNodeId="1.5124230653299345208" resolveInfo="DebugInfoInitializer" />
-      <link role="template" targetNodeId="5124230653299830223" resolveInfo="DebugInfoInitializer" />
-    </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1206118775178">
       <link role="applicableConcept" targetNodeId="38.1205752633985" resolveInfo="ThisClassifierExpresson" />
       <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1210767206806">
@@ -12360,7 +12356,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration" id="5124230653299830223">
-    <property name="package" value="Custom" />
+    <property name="package" value="Custom.DebugInfo" />
     <property name="name" value="DebugInfoInitializer" />
     <node role="rootTemplateAnnotation$attribute" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation" id="5124230653299830224">
       <link role="applicableConcept" targetNodeId="1.5124230653299345208" resolveInfo="DebugInfoInitializer" />
@@ -12426,6 +12422,14 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1921724414648286019">
+    <property name="package" value="Custom.DebugInfo" />
+    <property name="name" value="DebugInfo" />
+    <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1921724414648327374">
+      <link role="applicableConcept" targetNodeId="1.5124230653299345208" resolveInfo="DebugInfoInitializer" />
+      <link role="template" targetNodeId="5124230653299830223" resolveInfo="DebugInfoInitializer" />
     </node>
   </node>
 </model>

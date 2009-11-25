@@ -57,7 +57,7 @@ public class DebugInfoInitializer_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_5883_1(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concepts to debug:");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "concepts to add debug info:");
     editorCell.setCellId("Constant_5883_1");
     {
       Style style = editorCell.getStyle();

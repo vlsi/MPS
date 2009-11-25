@@ -5281,7 +5281,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="5124230653299542675">
-    <property name="package" value="Custom.ApplicationPlugin" />
+    <property name="package" value="Custom.DebugInfo" />
     <link role="conceptDeclaration" targetNodeId="1.5124230653299542673" resolveInfo="ConceptReference" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="5124230653299542800">
       <link role="relationDeclaration" targetNodeId="1.5124230653299542674" />
@@ -5294,7 +5294,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="5124230653299630702">
-    <property name="package" value="Custom.ApplicationPlugin" />
+    <property name="package" value="Custom.DebugInfo" />
     <link role="conceptDeclaration" targetNodeId="1.5124230653299345208" resolveInfo="DebugInfoInitializer" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5124230653299630704">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5124230653299630707">
@@ -5304,7 +5304,7 @@
         </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5124230653299630723">
-        <property name="text" value="concepts to debug:" />
+        <property name="text" value="concepts to add debug info:" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="5124230653299630724">
           <property name="flag" value="true" />
         </node>
