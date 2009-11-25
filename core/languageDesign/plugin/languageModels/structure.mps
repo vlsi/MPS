@@ -3704,12 +3704,17 @@
     <property name="package" value="RunConfigs.Create.Creator.Target" />
     <property name="name" value="NodesCreatorTarget" />
     <link role="extends" targetNodeId="3856910426407529502" resolveInfo="BaseCreatorTarget" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="441707825122654598">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="concept" />
+      <link role="target" targetNodeId="8.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
     <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="3994570451548100920">
       <link role="conceptLinkDeclaration" targetNodeId="3856910426407529594" resolveInfo="type" />
       <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="3994570451548100922" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3994570451548110929">
-      <property name="value" value="nodes" />
+      <property name="value" value="nlist" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
   </node>

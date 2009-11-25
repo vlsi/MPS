@@ -150,13 +150,20 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(typeNode, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true), "classifier", false);
   }
 
+  public static Object referenceMacro_GetReferent_471524871959771467(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "concept", false) == null ?
+      SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "concept", false) :
+      SLinkOperations.getTarget(_context.getNode(), "concept", false)
+    );
+  }
+
   public static Object referenceMacro_GetReferent_2751171488135057072(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object referenceMacro_GetReferent_3994570451548110947(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "concept", false) == null ?
-      SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "concept", false) :
+      SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "concept", false) :
       SLinkOperations.getTarget(_context.getNode(), "concept", false)
     );
   }

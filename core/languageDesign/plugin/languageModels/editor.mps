@@ -5353,9 +5353,29 @@
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="3994570451548105956">
     <property name="package" value="RunConfigs.Create.Creator.Target" />
     <link role="conceptDeclaration" targetNodeId="1.3994570451548100919" resolveInfo="NodesCreatorTarget" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3994570451548110928">
-      <property name="text" value="nodes" />
-      <link role="styleClass" targetNodeId="17.1186415544875" resolveInfo="KeyWord" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="471524871959771495">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="471524871959771496">
+        <property name="text" value="nlist" />
+        <link role="styleClass" targetNodeId="17.1186415544875" resolveInfo="KeyWord" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="471524871959771497">
+        <property name="text" value="&lt;" />
+        <link role="styleClass" targetNodeId="17.1234958090348" resolveInfo="LeftParenAfterName" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="471524871959771498">
+        <link role="relationDeclaration" targetNodeId="1.3856910426407529508" />
+        <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="471524871959771499">
+          <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="471524871959771500">
+            <property name="readOnly" value="true" />
+            <link role="relationDeclaration" targetNodeId="14.1169194664001" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="471524871959771501">
+        <property name="text" value="&gt;" />
+        <link role="styleClass" targetNodeId="17.1215088010675" resolveInfo="RightParen" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="471524871959771502" />
     </node>
   </node>
 </model>
