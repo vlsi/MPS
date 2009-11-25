@@ -19,7 +19,7 @@ public class typeof_Reference_GetTargetOperation_InferenceRule extends AbstractI
       SNode _nodeToCheck_1029348928467 = operation;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8469340927680549905", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8469340927680549902", true), (SNode)new _Quotations.QuotationClass_135().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8469340927680549902", true), (SNode)new _Quotations.QuotationClass_140().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 

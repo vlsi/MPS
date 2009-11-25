@@ -1386,14 +1386,8 @@
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1171501025862">
     <property name="package" value="operation.node" />
     <link role="conceptDeclaration" targetNodeId="1.1171500988903" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1171501030411">
-      <property name="text" value="children" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398032210">
-        <property name="flag" value="true" />
-      </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1215167858357">
-        <property name="value" value="0.0" />
-      </node>
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="5168775467716640651">
+      <link role="editorComponent" targetNodeId="1206994531943" resolveInfo="ReplaceableAliasAndParms_Comp" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1171999181752">
@@ -3188,6 +3182,13 @@
         <property name="text" value="&gt;" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="3609773094169252182" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="5168775467716640654">
+    <property name="package" value="operation.parameter" />
+    <link role="conceptDeclaration" targetNodeId="1.5168775467716640652" resolveInfo="OperationParm_Link" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="5168775467716640656">
+      <link role="relationDeclaration" targetNodeId="1.5168775467716640653" />
     </node>
   </node>
 </model>

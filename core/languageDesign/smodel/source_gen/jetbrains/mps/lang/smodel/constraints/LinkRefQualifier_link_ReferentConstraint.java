@@ -8,14 +8,15 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.behavior.ILinkAccessQualifierContainer_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.behavior.ILinkAccessQualifierContainer_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 
 public class LinkRefQualifier_link_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public LinkRefQualifier_link_ReferentConstraint() {
@@ -30,15 +31,18 @@ public class LinkRefQualifier_link_ReferentConstraint extends BaseNodeReferenceS
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
+    final SNode qualifierContainer = SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer");
     SNode concept = ILinkAccessQualifierContainer_Behavior.call_getLinkContainer_3542758363529077382(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"));
     if (concept == null) {
       concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
     }
     List<SNode> links = AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept);
-    // reference only? 
     links = ListSequence.fromList(links).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.hasValue(it, "metaClass", "reference", "reference");
+        return (SPropertyOperations.hasValue(it, "metaClass", "reference", "reference") ?
+          SConceptPropertyOperations.getBoolean(qualifierContainer, "accessingReferences") :
+          SConceptPropertyOperations.getBoolean(qualifierContainer, "accessingAggregations")
+        );
       }
     }).toListSequence();
     return links;

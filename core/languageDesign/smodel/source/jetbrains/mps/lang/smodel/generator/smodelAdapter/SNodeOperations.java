@@ -265,6 +265,13 @@ public class SNodeOperations {
     return node.getChildren();
   }
 
+  public static List<SNode> getChildren(SNode node, SNode linkDeclaration) {
+    if (node == null || linkDeclaration == null) {
+      return new ArrayList<SNode>(0);
+    }
+    return node.getChildren(((LinkDeclaration) linkDeclaration.getAdapter()).getRole());
+  }
+
   public static SModel getModel(SNode node) {
     if (node == null) return null;
     return node.getModel();
