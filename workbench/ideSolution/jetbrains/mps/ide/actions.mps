@@ -29227,6 +29227,7 @@
     <property name="description" value="Check model for unresolved references and typesystem rules" />
     <property name="package" value="Menu.ProjectPane.Model.Actions" />
     <property name="outsideCommandExecution" value="true" />
+    <property name="iconPath" value="${solution_descriptor}/icons/modelChecker.png" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1184058066016372946">
       <property name="name" value="model" />
       <link role="key" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
@@ -29421,6 +29422,7 @@
     <property name="outsideCommandExecution" value="true" />
     <property name="caption" value="Check Project" />
     <property name="description" value="Check project for unresolved references and typesystem rules" />
+    <property name="iconPath" value="${solution_descriptor}/icons/modelChecker.png" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="4138166813471636726">
       <property name="name" value="mpsProject" />
       <link role="key" targetNodeId="107.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
@@ -37173,6 +37175,7 @@
     <property name="outsideCommandExecution" value="true" />
     <property name="caption" value="Check [Module]" />
     <property name="description" value="Check [module] for structure and typesystem rules" />
+    <property name="iconPath" value="${solution_descriptor}/icons/modelChecker.png" />
     <node role="constructionParameter" type="jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration" id="5791008470150192713">
       <property name="name" value="moduleType" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="5791008470150192714" />
@@ -37966,6 +37969,7 @@
     <property name="caption" value="Show Model Checker" />
     <property name="outsideCommandExecution" value="false" />
     <property name="isAlwaysVisible" value="true" />
+    <property name="iconPath" value="${solution_descriptor}/icons/modelChecker.png" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="4488055155049676070">
       <property name="name" value="mpsProject" />
       <link role="key" targetNodeId="107.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
@@ -38745,6 +38749,7 @@
     <property name="package" value="Tools" />
     <property name="name" value="ModelCheckerTool" />
     <property name="caption" value="Model Checker" />
+    <property name="icon" value="${solution_descriptor}/icons/modelChecker.png" />
     <node role="methodDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="5457007217767348105">
       <property name="name" value="doRegister" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5457007217767348106" />

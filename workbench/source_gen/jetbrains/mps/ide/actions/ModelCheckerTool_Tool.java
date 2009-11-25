@@ -11,6 +11,7 @@ import jetbrains.mps.ide.findusages.INavigator;
 import javax.swing.JComponent;
 import com.intellij.openapi.vcs.checkin.CheckinHandlerFactory;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.plugins.MacrosUtil;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.MPSProjectHolder;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
@@ -62,7 +63,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   private CheckinHandlerFactory myCheckinHandlerFactory = new ModelCheckerCheckinHandler.MyHandlerFactory();
 
   public ModelCheckerTool_Tool(Project project) {
-    super(project, "Model Checker", -1, IconManager.EMPTY_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Model Checker", -1, IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/modelChecker.png", "jetbrains.mps.ide"), true), ToolWindowAnchor.BOTTOM, true);
   }
 
   public void init(Project project) {
