@@ -7444,6 +7444,7 @@
               <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="8435245205864949478" />
               <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="8435245205864948352">
                 <property name="value" value="}" />
+                <property name="withIndent" value="true" />
               </node>
             </node>
           </node>

@@ -37,7 +37,7 @@ public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
       }
       this.decreaseDepth();
       this.appendNewLine();
-      this.append("}");
+      this.appendWithIndent("}");
     }
   }
 }
