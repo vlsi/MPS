@@ -22,7 +22,7 @@ public class check_HasSuperConstructorCall_NonTypesystemRule extends AbstractNon
 
   public void applyRule(final SNode constructorDeclaration, final TypeCheckingContext typeCheckingContext) {
     List<SNode> statements = SLinkOperations.getTargets(SLinkOperations.getTarget(constructorDeclaration, "body", true), "statement", true);
-    if (ListSequence.fromList(statements).isEmpty() || !(SNodeOperations.isInstanceOf(ListSequence.fromList(statements).first(), "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"))) {
+    if (ListSequence.fromList(statements).isEmpty() || !(SNodeOperations.isInstanceOf(ListSequence.fromList(statements).first(), "jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement"))) {
       SNode classConcept = SNodeOperations.getAncestor(constructorDeclaration, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
       SNode classifierType = SLinkOperations.getTarget(classConcept, "superclass", true);
       SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);

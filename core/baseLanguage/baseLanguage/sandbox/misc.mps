@@ -1803,5 +1803,85 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="213802071188248603">
+    <property name="name" value="SuperClass" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="213802071188248604" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="213802071188248605">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="213802071188248606" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="213802071188248607" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="213802071188248608" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="213802071188248609">
+        <property name="name" value="param" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="213802071188248610" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="213802071188248611">
+    <property name="name" value="SubClass" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="213802071188248612" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="213802071188248613">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="213802071188248614" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="213802071188248615" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="213802071188248616">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" id="213802071188248631">
+          <link role="baseMethodDeclaration" targetNodeId="213802071188248620" resolveInfo="SubClass" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="213802071188248632">
+            <link role="variableDeclaration" targetNodeId="213802071188248618" resolveInfo="param" />
+          </node>
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="213802071188248634">
+            <property name="value" value="" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="213802071188248618">
+        <property name="name" value="param" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="213802071188248619" />
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="213802071188248620">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="213802071188248621" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="213802071188248622" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="213802071188248623">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="213802071188248629">
+          <property name="left_transfrom_hint" value="true" />
+          <link role="baseMethodDeclaration" targetNodeId="213802071188248605" resolveInfo="SuperClass" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="213802071188248630">
+            <link role="variableDeclaration" targetNodeId="213802071188248624" resolveInfo="param" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="213802071188387961">
+          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.StatementCommentPart" id="213802071188387962">
+            <node role="commentedStatement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="213802071188387956">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="213802071188387957">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="213802071188387958">
+                  <link role="classifier" targetNodeId="150.~System" />
+                  <link role="variableDeclaration" targetNodeId="150.~System.err" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="213802071188387959">
+                  <link role="baseMethodDeclaration" targetNodeId="152.~PrintStream.println(java.lang.String):void" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="213802071188387960">
+                    <property name="value" value="" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="213802071188248624">
+        <property name="name" value="param" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="213802071188248625" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="213802071188248626">
+        <property name="name" value="name" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="213802071188248628">
+          <link role="classifier" targetNodeId="150.~String" resolveInfo="String" />
+        </node>
+      </node>
+    </node>
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="213802071188248617">
+      <link role="classifier" targetNodeId="213802071188248603" resolveInfo="SuperClass" />
+    </node>
+  </node>
 </model>
 

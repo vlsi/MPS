@@ -18619,8 +18619,8 @@
                 <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation" id="2782601603365247566" />
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="2782601603365247567">
-                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="2782601603365247568">
-                  <link role="conceptDeclaration" targetNodeId="1.1070475587102" resolveInfo="SuperConstructorInvocation" />
+                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="213802071188265151">
+                  <link role="conceptDeclaration" targetNodeId="1.1241540912639" resolveInfo="ConstructorInvocationStatement" />
                 </node>
               </node>
             </node>
