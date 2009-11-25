@@ -38,6 +38,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.ModuleContext;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -339,6 +340,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
     Map<BaseMigrationScript, MigrationScript> scripts = new com.intellij.util.containers.HashMap<BaseMigrationScript, MigrationScript>();
     for (MigrationScript migrationScript : migrationScripts) {
+      // IOperationContext operationContext = new ModuleContext(language, ...);
+      //it seems that IOperationContext is unnecessary in MigrationScriptUtil.getBaseScriptForNode
       BaseMigrationScript script = MigrationScriptUtil.getBaseScriptForNode(null/*TODO???*/, migrationScript.getNode());
       if (script == null) continue;
       scripts.put(script, migrationScript);

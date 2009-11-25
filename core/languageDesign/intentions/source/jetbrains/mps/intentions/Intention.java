@@ -35,7 +35,7 @@ public interface Intention {
 
   IntentionType getType();
 
-  String getLocationString();
+  String getLocationString();  //todo what is this method for?
 
   SNode getNodeByIntention(); 
 }

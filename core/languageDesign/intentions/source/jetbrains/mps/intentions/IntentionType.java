@@ -22,11 +22,23 @@ import javax.swing.Icon;
 public enum IntentionType {
   NORMAL(Icons.INTENTION, 3),
   MIGRATION(Icons.MIGRATION, 2),
-  QUICKFIX(Icons.QUICKFIX, 1),
+  QUICKFIX(Icons.QUICKFIX, 1), //todo remove
   ERROR(Icons.ERROR_INTENTION, 0);
+
+  private static final IntentionType LOWEST_PRIORITY_TYPE;
 
   private int myPriority;
   private Icon myIcon;
+
+  static {
+    IntentionType result = values()[0];
+    for (IntentionType type : values()) {
+      if (type.getPriority() > result.getPriority()) {
+        result = type;
+      }
+    }
+    LOWEST_PRIORITY_TYPE = result;
+  }
 
   IntentionType(Icon icon, int priority) {
     myIcon = icon;
@@ -42,12 +54,6 @@ public enum IntentionType {
   }
 
   public static IntentionType getLowestPriorityType() {
-    IntentionType result = values()[0];
-    for (IntentionType type : values()) {
-      if (type.getPriority() > result.getPriority()) {
-        result = type;
-      }
-    }
-    return result;
+    return LOWEST_PRIORITY_TYPE;
   }
 }

@@ -66,6 +66,7 @@ public class MigrationScriptUtil {
 
     try {
       Constructor<BaseMigrationScript> constructor = aClass.getConstructor(IOperationContext.class);
+      //todo: it seems that IOperationContext is unnecessary in such constructors - see usages/generator
       return constructor.newInstance(context);
     } catch (InstantiationException e) {
       throw new RuntimeException(e);

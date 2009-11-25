@@ -40,7 +40,7 @@ public class BaseIntentionProvider implements IntentionProvider {
 
   public BaseIntentionProvider(String classFQName) {
     myClassFQName = SModelReference.fromString(NameUtil.namespaceFromLongName(classFQName)).getLongName() +
-      "." + NameUtil.shortNameFromLongName(classFQName);
+      "." + NameUtil.shortNameFromLongName(classFQName);   //without stereotypes, that is.
     myQuickFix = null;
     myQuickFixTaken = false;
   }

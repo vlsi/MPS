@@ -26,7 +26,7 @@ import java.util.ArrayList;
 
 public class MigrationRefactoringAdapter implements Intention {
   private AbstractMigrationRefactoring myRefactoring;
-  private MigrationScript myMigrationScript;
+  private MigrationScript myMigrationScript;  //todo: do we really need migration script i.e. a link to SNode here?
 
   public MigrationRefactoringAdapter(AbstractMigrationRefactoring refactoring, MigrationScript migrationScript) {
     myRefactoring = refactoring;
