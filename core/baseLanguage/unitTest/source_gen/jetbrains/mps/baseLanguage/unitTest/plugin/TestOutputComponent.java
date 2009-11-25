@@ -32,6 +32,14 @@ public class TestOutputComponent {
     return this.component;
   }
 
+  public String getCurrentClassName() {
+    return this.curClass;
+  }
+
+  public String getCurrentMethodName() {
+    return this.curMethod;
+  }
+
   public void filter(String filterClass, String filterMethod) {
     if (!(ObjectUtils.equals(filterClass, this.filterClass)) || !(ObjectUtils.equals(filterMethod, this.filterMethod))) {
       this.filterClass = filterClass;
@@ -41,6 +49,15 @@ public class TestOutputComponent {
         this.append(message);
       }
     }
+  }
+
+  public void appendWithParameters(String testClass, String testMethod, String text, boolean isError, boolean isSystem) {
+    String currentClass = this.curClass;
+    String currentMethod = this.curMethod;
+    this.start(testClass, testMethod);
+    this.append(text, isError, isSystem);
+    this.end(testClass, testMethod);
+    this.start(currentClass, currentMethod);
   }
 
   public void start(String testClass, String testMethod) {
