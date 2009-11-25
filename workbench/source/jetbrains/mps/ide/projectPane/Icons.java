@@ -64,6 +64,8 @@ public class Icons {
   public static final Icon CONSTRAINTS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/constraintsModel.png"));
   public static final Icon DATA_FLOW_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/dataFlowModel.png"));
   public static final Icon TEST_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/testModel.png"));
+  public static final Icon REFACTORINGS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/refactoringsModel.png"));
+  public static final Icon STUBS_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/stubsModel.png"));
   public static final Icon TEXT_GEN_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/textGenModel.png"));
   public static final Icon ACCESSORY_MODEL_ICON = new ImageIcon(Icons.class.getResource("nodes/accessoryModel.png"));
 

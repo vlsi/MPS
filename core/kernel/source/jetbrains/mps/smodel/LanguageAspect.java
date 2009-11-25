@@ -147,6 +147,10 @@ public enum LanguageAspect {
       return Refactoring_Language.MODULE_REFERENCE;
     }
 
+    public Icon getIcon() {
+      return Icons.REFACTORINGS_MODEL_ICON;
+    }
+
     public String getHelpURL() {
       return "";
     }
@@ -252,6 +256,10 @@ public enum LanguageAspect {
   STUBS("stubs") {
     public ModuleReference getMainLanguage() {
       return Stubs_Language.MODULE_REFERENCE;
+    }
+
+    public Icon getIcon() {
+      return Icons.STUBS_MODEL_ICON;
     }
 
     public String getHelpURL() {
