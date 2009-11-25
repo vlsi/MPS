@@ -13,7 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 
 public class GenerateFilesFromModel_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/generate.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/generateFiles.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(GenerateFilesFromModel_Action.class);
 
   private AnAction action;

@@ -22524,7 +22524,7 @@
     <property name="name" value="GenerateFilesFromModel" />
     <property name="outsideCommandExecution" value="true" />
     <property name="caption" value="Generate Files from Current Model" />
-    <property name="iconPath" value="${solution_descriptor}/icons/generate.png" />
+    <property name="iconPath" value="${solution_descriptor}/icons/generateFiles.png" />
     <node role="constructionParameter" type="jetbrains.mps.lang.plugin.structure.ActionConstructionParameterDeclaration" id="954487605981816732">
       <property name="name" value="action" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="954487605981816733" />
