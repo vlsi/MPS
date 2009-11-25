@@ -223,8 +223,7 @@ public class ReferentsCreator {
         if (binding instanceof LocalTypeBinding) {
           isTopLevel = false;
           if (classifier instanceof EnumClass) {
-            LOG.error("Enum constants with methods not implemented");
-            return false;
+            return true;
           }
           AnonymousClass anonymousClass = (AnonymousClass) classifier;
           anonymousClass.setName("");

@@ -1387,8 +1387,28 @@ public class JavaConverterTreeBuilder {
         EnumConstantDeclaration enumConstant = (EnumConstantDeclaration) adapter;
         assert (myCurrentClass instanceof EnumClass);
         AllocationExpression initializer = (AllocationExpression) declaration.initialization;
+        MethodBinding constructorBinding;
+        if (initializer instanceof QualifiedAllocationExpression) {
+          TypeDeclaration anonymousEnumClass = ((QualifiedAllocationExpression) initializer).anonymousType;
+          constructorBinding = ((ConstructorDeclaration) anonymousEnumClass.methods[0]).constructorCall.binding;
+
+          //methods
+          EnumClass enumClassConstantBody = (EnumClass) myTypesProvider.getRaw(anonymousEnumClass.binding);
+          for (InstanceMethodDeclaration imd : enumClassConstantBody.getMethods()) {
+            enumClassConstantBody.removeChild(imd);
+            enumConstant.addMethod(imd);
+          }
+          for (AbstractMethodDeclaration m : anonymousEnumClass.methods) {
+            if (m instanceof ConstructorDeclaration) {
+              continue;
+            }
+            processMethod(m);
+          }
+        } else {
+          constructorBinding = initializer.binding;
+        }
         jetbrains.mps.baseLanguage.structure.ConstructorDeclaration constructor =
-          (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myTypesProvider.getRaw(initializer.binding);
+          (jetbrains.mps.baseLanguage.structure.ConstructorDeclaration) myTypesProvider.getRaw(constructorBinding);
         enumConstant.setConstructor(constructor);
         Expression[] arguments = initializer.arguments;
         if (arguments != null) {
