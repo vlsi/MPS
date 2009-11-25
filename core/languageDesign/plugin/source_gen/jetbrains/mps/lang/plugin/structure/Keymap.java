@@ -7,10 +7,14 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public enum Keymap {
-  Mac_OS_X("Mac OS X", "Mac OS X"),
-  XWin("XWin", "Default for XWin"),
-  GNOME("GNOME", "Default for GNOME"),
-  KDE("KDE", "Default for KDE");
+  Mac_OS_X("Mac OS X", "Mac OS X")
+,
+  XWin("XWin", "Default for XWin")
+,
+  GNOME("GNOME", "Default for GNOME")
+,
+  KDE("KDE", "Default for KDE")
+;
 
   private String myName;
   private String myValue;

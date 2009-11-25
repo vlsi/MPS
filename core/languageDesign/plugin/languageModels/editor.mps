@@ -5350,5 +5350,13 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="485694842828666110" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="3994570451548105956">
+    <property name="package" value="RunConfigs.Create.Creator.Target" />
+    <link role="conceptDeclaration" targetNodeId="1.3994570451548100919" resolveInfo="NodesCreatorTarget" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3994570451548110928">
+      <property name="text" value="nodes" />
+      <link role="styleClass" targetNodeId="17.1186415544875" resolveInfo="KeyWord" />
+    </node>
+  </node>
 </model>
 
