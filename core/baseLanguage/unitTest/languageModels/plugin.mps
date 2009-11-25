@@ -2120,44 +2120,54 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8276198386876691882">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8276198386876691886">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8276198386876691883">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="8276198386876691884">
-                <link role="fieldDeclaration" targetNodeId="1208368159301" resolveInfo="outputComponent" />
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8276198386876691885" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8276198386876691890">
-              <link role="baseMethodDeclaration" targetNodeId="1208775703458" resolveInfo="append" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8276198386876763085">
-                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8276198386876763088">
-                  <property name="value" value="'\n\n" />
-                </node>
-                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8276198386876763081">
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8276198386876763077">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8276198386876763073">
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8276198386876763072">
-                        <property name="value" value="Error: couldn't find method '" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7761573405348760357">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7761573405348760358">
+            <link role="baseMethodDeclaration" targetNodeId="7.~SwingUtilities.invokeLater(java.lang.Runnable):void" resolveInfo="invokeLater" />
+            <link role="classConcept" targetNodeId="7.~SwingUtilities" resolveInfo="SwingUtilities" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="7761573405348760359">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7761573405348760360">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8276198386876691882">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8276198386876691886">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8276198386876691883">
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="8276198386876691884">
+                        <link role="fieldDeclaration" targetNodeId="1208368159301" resolveInfo="outputComponent" />
                       </node>
-                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8276198386876763076">
-                        <link role="variableDeclaration" targetNodeId="355776194438855811" resolveInfo="methodName" />
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8276198386876691885" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8276198386876691890">
+                      <link role="baseMethodDeclaration" targetNodeId="1208775703458" resolveInfo="append" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8276198386876763085">
+                        <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8276198386876763088">
+                          <property name="value" value="'\n\n" />
+                        </node>
+                        <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8276198386876763081">
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8276198386876763077">
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8276198386876763073">
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8276198386876763072">
+                                <property name="value" value="\nError: couldn't find method '" />
+                              </node>
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8276198386876763076">
+                                <link role="variableDeclaration" targetNodeId="355776194438855811" resolveInfo="methodName" />
+                              </node>
+                            </node>
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8276198386876763080">
+                              <property name="value" value="' in '" />
+                            </node>
+                          </node>
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8276198386876763084">
+                            <link role="variableDeclaration" targetNodeId="355776194438855809" resolveInfo="className" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8276198386876691900">
+                        <property name="value" value="true" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8276198386876691902">
+                        <property name="value" value="false" />
                       </node>
                     </node>
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8276198386876763080">
-                      <property name="value" value="' in '" />
-                    </node>
-                  </node>
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8276198386876763084">
-                    <link role="variableDeclaration" targetNodeId="355776194438855809" resolveInfo="className" />
                   </node>
                 </node>
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8276198386876691900">
-                <property name="value" value="true" />
-              </node>
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8276198386876691902">
-                <property name="value" value="false" />
               </node>
             </node>
           </node>
