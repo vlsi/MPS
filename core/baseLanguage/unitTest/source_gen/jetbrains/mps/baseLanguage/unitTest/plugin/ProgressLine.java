@@ -12,6 +12,7 @@ import java.awt.GridLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import jetbrains.mps.util.EqualUtil;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -40,6 +41,22 @@ public class ProgressLine extends JPanel {
     progress.add(this.progressBar, new GridBagConstraints(0, 0, 0, 0, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
     this.testsBuilt = true;
     this.progressBar.setColor(ColorProgressBar.GREEN);
+  }
+
+  private boolean isLastTestCase() {
+    if (ListSequence.fromList(this.testMethods).count() <= 1) {
+      return true;
+    }
+    String testCaseName = null;
+    for (String testMethod : this.testMethods) {
+      String nextTestCaseName = testMethod.substring(0, testMethod.lastIndexOf("."));
+      if (EqualUtil.equals(testCaseName, nextTestCaseName) || testCaseName == null) {
+        testCaseName = nextTestCaseName;
+      } else {
+        return false;
+      }
+    }
+    return true;
   }
 
   public void setTests(Map<SNode, List<SNode>> testsMap) {
@@ -84,7 +101,7 @@ public class ProgressLine extends JPanel {
             continue;
           }
           String currentClassName = currentTestMethod.substring(0, currentTestMethod.lastIndexOf("."));
-          if (currentClassName.equals(testClassName)) {
+          if (currentClassName.equals(testClassName) && !(this.isLastTestCase())) {
             continue;
           }
           ListSequence.fromList(this.currentLostMethods).addElement(currentTestMethod);
