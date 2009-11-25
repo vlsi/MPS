@@ -197,14 +197,24 @@ public class NodeSubstituteChooser implements KeyboardHandler {
             }
 
             public int compare(INodeSubstituteAction i1, INodeSubstituteAction i2) {
+              String s1 = getVisibleMatchingText(i1);
+              String s2 = getVisibleMatchingText(i2);
+              if (s1 != null && !s1.equals(s2)) {
+                if (s1.equals(pattern)) {
+                  return -1;
+                }
+
+                if (s2.equals(pattern)) {
+                  return 1;
+                }
+              }
+
               int p1 = getSortPriority(i1);
               int p2 = getSortPriority(i2);
               if (p1 != p2) {
                 return p1 - p2;
               }
 
-              String s1 = getVisibleMatchingText(i1);
-              String s2 = getVisibleMatchingText(i2);
               boolean null_s1 = (s1 == null || s1.length() == 0);
               boolean null_s2 = (s2 == null || s2.length() == 0);
               if (null_s1 && null_s2) return 0;
@@ -214,14 +224,6 @@ public class NodeSubstituteChooser implements KeyboardHandler {
 
               if (comparisonResult == 0) {
                 return 0;
-              }
-
-              if (s1.startsWith(s2)) {
-                return 1;
-              }
-
-              if (s2.startsWith(s1)) {
-                return -1;
               }
 
               return comparisonResult;
