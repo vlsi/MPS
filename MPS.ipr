@@ -848,6 +848,7 @@
       <module fileurl="file://$PROJECT_DIR$/platform/xml/xml/xml.iml" filepath="$PROJECT_DIR$/platform/xml/xml/xml.iml" group="platform/xml" />
       <module fileurl="file://$PROJECT_DIR$/platform/xmlDeprecated/xmlDeprecated.iml" filepath="$PROJECT_DIR$/platform/xmlDeprecated/xmlDeprecated.iml" group="platform" />
       <module fileurl="file://$PROJECT_DIR$/platform/xml/xmlInternal/xmlInternal.iml" filepath="$PROJECT_DIR$/platform/xml/xmlInternal/xmlInternal.iml" group="platform/xml" />
+      <module fileurl="file://$PROJECT_DIR$/platform/xml/xmlQuery/xmlQuery.iml" filepath="$PROJECT_DIR$/platform/xml/xmlQuery/xmlQuery.iml" group="platform/xml" />
       <module fileurl="file://$PROJECT_DIR$/platform/xml/xmlSchema/xmlSchema.iml" filepath="$PROJECT_DIR$/platform/xml/xmlSchema/xmlSchema.iml" group="platform/xml" />
     </modules>
   </component>
