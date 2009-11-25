@@ -7423,7 +7423,6 @@
                           <link role="variableDeclaration" targetNodeId="8435245205864948322" resolveInfo="imd" />
                         </node>
                       </node>
-                      <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="8435245205864948346" />
                     </node>
                   </node>
                   <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8435245205864948332">
@@ -7457,9 +7456,6 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="8435245205864948306" />
           </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="8435245205864949474">
-          <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="8435245205864949476" />
         </node>
       </node>
     </node>

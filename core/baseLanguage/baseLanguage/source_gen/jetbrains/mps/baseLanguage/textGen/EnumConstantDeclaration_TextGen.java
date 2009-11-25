@@ -34,12 +34,10 @@ public class EnumConstantDeclaration_TextGen extends SNodeTextGen {
       this.increaseDepth();
       for (SNode imd : SLinkOperations.getTargets(node, "method", true)) {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), imd, this.getSNode());
-        this.appendNewLine();
       }
       this.decreaseDepth();
       this.appendNewLine();
       this.append("}");
     }
-    this.appendNewLine();
   }
 }
