@@ -12,6 +12,7 @@
       <languagePath path="${project}/xml.mpl" />
       <languagePath path="${mps_home}/platform/xml/xmlInternal/xmlInternal.mpl" />
       <languagePath path="${mps_home}/platform/xml/xmlSchema/xmlSchema.mpl" />
+      <languagePath path="${mps_home}/platform/xml/xmlQuery/xmlQuery.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
