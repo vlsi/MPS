@@ -19,7 +19,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "equals() and hasCode()";
+    return "equals() and hashCode()";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

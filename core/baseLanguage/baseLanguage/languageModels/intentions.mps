@@ -11317,7 +11317,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5973141109804726333">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5973141109804726336">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5973141109804726338">
-            <property name="value" value="equals() and hasCode()" />
+            <property name="value" value="equals() and hashCode()" />
           </node>
         </node>
       </node>

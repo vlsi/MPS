@@ -806,9 +806,6 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1216128833258">
         <link role="action" targetNodeId="1216128373549" resolveInfo="ShowGenerationTraceback" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5841097256438209230">
-        <link role="action" targetNodeId="1094167071768352873" resolveInfo="ShowGenerationIntentionsMenu" />
-      </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1211230443709" />
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5033107305426769608">
         <link role="action" targetNodeId="5033107305426766812" resolveInfo="FindSpecificNodeUsages" />
@@ -855,8 +852,8 @@
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1215870456938">
         <link role="action" targetNodeId="1215870087530" resolveInfo="CellProperties" />
       </node>
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="5341681982029103227">
-        <link role="action" targetNodeId="1235660080063" resolveInfo="GenerateCode" />
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="3344619950201334531">
+        <link role="action" targetNodeId="1094167071768352873" resolveInfo="ShowGenerationIntentionsMenu" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1216124026098">
         <link role="action" targetNodeId="1216123841989" resolveInfo="ShowCellInExplorer" />
@@ -10707,45 +10704,6 @@
       <link role="key" targetNodeId="107.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1235660080063">
-    <property name="package" value="Menu.EditorPopup.Actions" />
-    <property name="name" value="GenerateCode" />
-    <property name="caption" value="Generate..." />
-    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1235660080064">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235660080065">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1235660261240">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235660262508">
-            <link role="baseMethodDeclaration" targetNodeId="150.~SmartActionsUtil.showActionsMenu(jetbrains.mps.nodeEditor.cells.EditorCell,jetbrains.mps.smodel.IOperationContext):void" resolveInfo="showActionsMenu" />
-            <link role="classConcept" targetNodeId="150.~SmartActionsUtil" resolveInfo="SmartActionsUtil" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235660264509">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1235660264510" />
-              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1235660264511">
-                <link role="member" targetNodeId="1235660127060" resolveInfo="selectedCell" />
-              </node>
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235660273654">
-              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1235660273655" />
-              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1235660273656">
-                <link role="member" targetNodeId="1235660134687" resolveInfo="operationContext" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1235660107473">
-      <property name="keycode" value="VK_INSERT" />
-      <property name="modifiers" value="alt" />
-    </node>
-    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1235660127060">
-      <property name="name" value="selectedCell" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.EDITOR_CELL" resolveInfo="EDITOR_CELL" />
-    </node>
-    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="1235660134687">
-      <property name="name" value="operationContext" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.OPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1236183891533">
     <property name="package" value="Menu.ProjectPane.Model.Actions" />
     <property name="name" value="CopyModelName" />
@@ -20381,7 +20339,7 @@
       </node>
     </node>
     <node role="shortcutChange" type="jetbrains.mps.lang.plugin.structure.SimpleShortcutChange" id="7525319712567874848">
-      <link role="action" targetNodeId="1235660080063" resolveInfo="GenerateCode" />
+      <link role="action" targetNodeId="1094167071768352873" resolveInfo="ShowGenerationIntentionsMenu" />
       <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="7525319712567874849">
         <property name="modifiers" value="ctrl" />
         <property name="keycode" value="VK_N" />
@@ -40386,7 +40344,7 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1094167071768352873">
     <property name="package" value="Menu.EditorPopup.Actions" />
-    <property name="name" value="ShowGenerationIntentionsMenu" />
+    <property name="name" value="GenerationIntentions" />
     <property name="caption" value="Show Generation Intentions Menu" />
     <property name="description" value="Shows the popup menu with available generation intentions" />
     <node role="methodDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1094167071768581597">
@@ -41217,7 +41175,7 @@
     </node>
     <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="1094167071768369490">
       <property name="modifiers" value="alt" />
-      <property name="keycode" value="VK_7" />
+      <property name="keycode" value="VK_INSERT" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" id="1094167071768584252">
       <property name="name" value="selectedNode" />
