@@ -28,12 +28,16 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
+
 public class LocationRule implements GetDataRule {
   @Nullable
   public Object getData(DataProvider dataProvider) {
     Project project = (Project) dataProvider.getData(MPSDataKeys.PROJECT.getName());
     if (project == null) project = ProjectManager.getInstance().getOpenProjects()[0];
     if (project == null) return null;
+    List<SNode> nodes = (List<SNode>) dataProvider.getData(MPSDataKeys.NODES.getName());
+    if (nodes != null && nodes.size() > 1) return new MPSLocation(project, nodes);
     SNode node = (SNode) dataProvider.getData(MPSDataKeys.NODE.getName());
     if (node != null) return new MPSLocation(project, node);
     SModelDescriptor model = (SModelDescriptor) dataProvider.getData(MPSDataKeys.MODEL.getName());
