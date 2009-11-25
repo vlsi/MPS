@@ -3173,13 +3173,42 @@
     </node>
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="3609773094169252181">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3609773094169252184">
-        <property name="text" value="reference&lt;" />
+        <property name="text" value="reference" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="865678424278046544">
+        <property name="text" value="&lt;" />
+        <link role="styleClass" targetNodeId="1227114096626" resolveInfo="operationParameter" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="865678424278046545">
+          <property name="labelName" value="AngleBracet" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="865678424278046561">
+          <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="865678424278046553">
+          <property name="style" value="BOLD" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="865678424278046555">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="865678424278046558">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="3609773094169252191">
         <link role="relationDeclaration" targetNodeId="1.3609773094169252180" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="3609773094169252186">
         <property name="text" value="&gt;" />
+        <link role="styleClass" targetNodeId="1227114096626" resolveInfo="operationParameter" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem" id="865678424278046546">
+          <property name="labelName" value="AngleBracet" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="865678424278046548">
+          <property name="style" value="BOLD" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="865678424278046550">
+          <property name="flag" value="true" />
+        </node>
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="3609773094169252182" />
     </node>
