@@ -12,6 +12,11 @@ import java.awt.GridLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import java.util.Map;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
+import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessAdapter;
@@ -23,7 +28,7 @@ public class ProgressLine extends JPanel {
   private final JLabel state = new JLabel("Starting...");
   private final ProgressLine.StateInfo stateInfo = new ProgressLine.StateInfo();
   private boolean testsBuilt = false;
-  private List<String> methodName = ListSequence.fromList(new ArrayList<String>());
+  private List<String> testMethods = ListSequence.fromList(new ArrayList<String>());
   private List<String> currentLostMethods = ListSequence.fromList(new ArrayList<String>());
 
   public ProgressLine() {
@@ -36,12 +41,16 @@ public class ProgressLine extends JPanel {
     this.progressBar.setColor(ColorProgressBar.GREEN);
   }
 
-  public void setMethods(List<String> methods) {
-    ListSequence.fromList(this.methodName).addSequence(ListSequence.fromList(methods));
-    this.stateInfo.setTotal(ListSequence.fromList(this.methodName).count());
+  public void setTests(Map<SNode, List<SNode>> testsMap) {
+    for (SNode testCase : MapSequence.fromMap(testsMap).keySet()) {
+      for (SNode testMethod : MapSequence.fromMap(testsMap).get(testCase)) {
+        ListSequence.fromList(this.testMethods).addElement(ITestCase_Behavior.call_getClassName_1216136193905(testCase) + '.' + ITestMethod_Behavior.call_getTestName_1216136419751(testMethod));
+      }
+    }
+    this.stateInfo.setTotal(ListSequence.fromList(this.testMethods).count());
   }
 
-  public List<String> getCurrentLostMethods() {
+  public List<String> getCurrentLostTests() {
     List<String> list = ListSequence.fromList(new ArrayList<String>());
     ListSequence.fromList(list).addSequence(ListSequence.fromList(this.currentLostMethods));
     ListSequence.fromList(this.currentLostMethods).clear();
@@ -53,7 +62,8 @@ public class ProgressLine extends JPanel {
   }
 
   public void onEvent(String testClassName, String testMethodName, String token) {
-    if (!(ListSequence.fromList(this.methodName).contains(testMethodName))) {
+    String key = testClassName + '.' + testMethodName;
+    if (!(ListSequence.fromList(this.testMethods).contains(key))) {
       return;
     }
     if (token.equals(TestEvent.END_TEST_PREFIX) || token.equals(TestEvent.ERROR_TEST_SUFFIX) || token.equals(TestEvent.FAILURE_TEST_SUFFIX)) {
@@ -62,13 +72,18 @@ public class ProgressLine extends JPanel {
         this.stateInfo.onDefect();
         this.progressBar.setColor(ColorProgressBar.RED);
       }
-      ListSequence.fromList(this.methodName).removeElement(testMethodName);
+      ListSequence.fromList(this.testMethods).removeElement(key);
       ListSequence.fromList(this.currentLostMethods).clear();
     } else {
-      int indexOfMethod = ListSequence.fromList(this.methodName).indexOf(testMethodName);
+      int indexOfMethod = ListSequence.fromList(this.testMethods).indexOf(key);
       if (indexOfMethod > 0) {
         for (int i = 0; i < indexOfMethod; i++) {
-          ListSequence.fromList(this.currentLostMethods).addElement(ListSequence.fromList(this.methodName).getElement(i));
+          String currentTestMethod = ListSequence.fromList(this.testMethods).getElement(i);
+          String currentClassName = currentTestMethod.substring(0, currentTestMethod.lastIndexOf("."));
+          if (currentClassName.equals(testClassName)) {
+            continue;
+          }
+          ListSequence.fromList(this.currentLostMethods).addElement(currentTestMethod);
         }
       }
     }
