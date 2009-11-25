@@ -15,7 +15,10 @@ public class StubsCreatorDeclaration extends BaseConcept implements IClassifier 
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String LOAD_MODEL_BLOCK = "loadModelBlock";
+  public static final String MODEL_DESCRIPTORS_BLOCK = "modelDescriptorsBlock";
+  public static final String UPDATE_MODEL_BLOCK = "updateModelBlock";
+  public static final String SETTINGS = "settings";
+  public static final String ROOT_DESCRIPTORS_BLOCK = "rootDescriptorsBlock";
 
   public StubsCreatorDeclaration(SNode node) {
     super(node);
@@ -53,12 +56,36 @@ public class StubsCreatorDeclaration extends BaseConcept implements IClassifier 
     this.setProperty(StubsCreatorDeclaration.VIRTUAL_PACKAGE, value);
   }
 
-  public LoadModelBlock getLoadModelBlock() {
-    return (LoadModelBlock)this.getChild(LoadModelBlock.class, StubsCreatorDeclaration.LOAD_MODEL_BLOCK);
+  public ModelDescriptorsBlock getModelDescriptorsBlock() {
+    return (ModelDescriptorsBlock)this.getChild(ModelDescriptorsBlock.class, StubsCreatorDeclaration.MODEL_DESCRIPTORS_BLOCK);
   }
 
-  public void setLoadModelBlock(LoadModelBlock node) {
-    super.setChild(StubsCreatorDeclaration.LOAD_MODEL_BLOCK, node);
+  public void setModelDescriptorsBlock(ModelDescriptorsBlock node) {
+    super.setChild(StubsCreatorDeclaration.MODEL_DESCRIPTORS_BLOCK, node);
+  }
+
+  public UpdateModelBlock getUpdateModelBlock() {
+    return (UpdateModelBlock)this.getChild(UpdateModelBlock.class, StubsCreatorDeclaration.UPDATE_MODEL_BLOCK);
+  }
+
+  public void setUpdateModelBlock(UpdateModelBlock node) {
+    super.setChild(StubsCreatorDeclaration.UPDATE_MODEL_BLOCK, node);
+  }
+
+  public ModelCreationSettings getSettings() {
+    return (ModelCreationSettings)this.getChild(ModelCreationSettings.class, StubsCreatorDeclaration.SETTINGS);
+  }
+
+  public void setSettings(ModelCreationSettings node) {
+    super.setChild(StubsCreatorDeclaration.SETTINGS, node);
+  }
+
+  public RootNodeDescriptorsBlock getRootDescriptorsBlock() {
+    return (RootNodeDescriptorsBlock)this.getChild(RootNodeDescriptorsBlock.class, StubsCreatorDeclaration.ROOT_DESCRIPTORS_BLOCK);
+  }
+
+  public void setRootDescriptorsBlock(RootNodeDescriptorsBlock node) {
+    super.setChild(StubsCreatorDeclaration.ROOT_DESCRIPTORS_BLOCK, node);
   }
 
   public static StubsCreatorDeclaration newInstance(SModel sm, boolean init) {
