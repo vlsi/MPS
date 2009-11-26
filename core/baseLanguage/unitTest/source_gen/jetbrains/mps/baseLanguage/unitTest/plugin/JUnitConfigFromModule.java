@@ -22,7 +22,7 @@ public class JUnitConfigFromModule extends BaseConfigCreator<IModule> implements
     return this.myConfig;
   }
 
-  private void createConfig(IModule parameter) {
+  private void createConfig(final IModule parameter) {
     if (ListSequence.fromList(TestRunUtil.getModuleTests(parameter.getModuleFqName())).isEmpty()) {
       return;
     }

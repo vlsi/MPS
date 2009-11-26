@@ -26,7 +26,7 @@ public class JUnitConfigFromMethods extends BaseConfigCreator<List> implements C
     return this.myConfig;
   }
 
-  private void createConfig(List<SNode> parameter) {
+  private void createConfig(final List<SNode> parameter) {
     JUnitConfigFromMethods.this.setSourceElement(new MPSPsiElement<List>(parameter));
 
     boolean isCompileInMPS = SNodeOperations.getModel(Sequence.fromIterable(parameter).first()).getModelDescriptor().getModule().isCompileInMPS();

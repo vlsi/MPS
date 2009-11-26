@@ -26,7 +26,7 @@ public class JUnitConfigFromClasses extends BaseConfigCreator<List> implements C
     return this.myConfig;
   }
 
-  private void createConfig(List<SNode> parameter) {
+  private void createConfig(final List<SNode> parameter) {
 
     JUnitConfigFromClasses.this.setSourceElement(new MPSPsiElement<List>(parameter));
 

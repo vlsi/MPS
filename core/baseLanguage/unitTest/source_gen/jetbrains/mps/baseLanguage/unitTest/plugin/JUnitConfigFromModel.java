@@ -23,7 +23,7 @@ public class JUnitConfigFromModel extends BaseConfigCreator<SModel> implements C
     return this.myConfig;
   }
 
-  private void createConfig(SModel parameter) {
+  private void createConfig(final SModel parameter) {
     if (ListSequence.fromList(TestRunUtil.getModelTests(parameter)).isEmpty()) {
       return;
     }

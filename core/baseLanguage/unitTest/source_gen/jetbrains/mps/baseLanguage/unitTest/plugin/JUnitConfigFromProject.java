@@ -22,7 +22,7 @@ public class JUnitConfigFromProject extends BaseConfigCreator<MPSProject> implem
     return this.myConfig;
   }
 
-  private void createConfig(MPSProject parameter) {
+  private void createConfig(final MPSProject parameter) {
     if (!(TestRunUtil.containsTest(parameter))) {
       return;
     }
