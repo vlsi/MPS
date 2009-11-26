@@ -243,7 +243,8 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     Set<Intention> disabled = getDisabledIntentions();
 
     for (Pair<Intention, SNode> ip : getAvailableIntentions_delete(node, context, terminated)) {
-      if (!disabled.contains(ip.first)&&intentionClass.isAssignableFrom(ip.getFirst().getClass())){
+      if (!disabled.contains(ip.first)&&intentionClass.isAssignableFrom(ip.getFirst().getClass())){  //todo code style: add spaces between operands and operation sign
+        //why here first and there getFirst()?
         result.add(ip);
       }
     }
