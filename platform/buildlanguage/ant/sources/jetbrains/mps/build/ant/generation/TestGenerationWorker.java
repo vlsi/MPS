@@ -169,7 +169,7 @@ public class TestGenerationWorker extends GeneratorWorker {
       public void run() {
         List<BaseTestConfiguration> testConfigurationList = project.getProjectDescriptor().getTestConfigurations();
         if (testConfigurationList.isEmpty()) {
-          List<String> properties = myWhatToDo.getMPSProjectFiles().get(project);
+          List<String> properties = myWhatToDo.getMPSProjectFiles().get(project.getProjectFile());
           if (properties != null && properties.contains(TestGenerationOnTeamcity.WHOLE_PROJECT)) {
             TestGenerationWorker.super.extractModels(modelDescriptors, project);
           } else {
