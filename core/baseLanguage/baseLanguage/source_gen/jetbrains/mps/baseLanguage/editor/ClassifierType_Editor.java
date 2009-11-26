@@ -51,6 +51,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+      style.set(StyleAttributes.PARAMETERS_INFORMATION, new ClassifierType_ParameterDeclarationQuery());
     }
     editorCell.addEditorCell(this.createConstant_9185_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_9185_0(editorContext, node));

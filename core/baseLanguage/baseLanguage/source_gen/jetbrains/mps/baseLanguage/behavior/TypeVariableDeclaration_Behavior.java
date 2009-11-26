@@ -7,12 +7,17 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import java.util.Set;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TypeVariableDeclaration_Behavior {
+  private static Class[] PARAMETERS_1775412259244835270 = {SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -30,6 +35,26 @@ public class TypeVariableDeclaration_Behavior {
     } else {
       return new _Quotations.QuotationClass_20().createNode();
     }
+  }
+
+  public static String virtual_getPresentation_1213877396640(SNode thisNode) {
+    StringBuffer buff = new StringBuffer();
+    buff.append(SPropertyOperations.getString(thisNode, "name"));
+    if ((SLinkOperations.getTarget(thisNode, "bound", true) != null)) {
+      buff.append(" extends ").append(BaseConcept_Behavior.call_getPresentation_1213877396640(SLinkOperations.getTarget(thisNode, "bound", true)));
+    }
+    for (SNode bound : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "auxBounds", true))) {
+      buff.append(" & ").append(BaseConcept_Behavior.call_getPresentation_1213877396640(bound));
+    }
+    return buff.toString();
+  }
+
+  public static String call_getPresentation_1775412259244835270(SNode thisNode) {
+    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), "virtual_getPresentation_1213877396640", PARAMETERS_1775412259244835270);
+  }
+
+  public static String callSuper_getPresentation_1775412259244835270(SNode thisNode, String callerConceptFqName) {
+    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_1775412259244835270);
   }
 
   public static SNode getTypeWithConcreteUpperBounds_4346214032091504651(SNode inputType, Set<SNode> visitedVars) {

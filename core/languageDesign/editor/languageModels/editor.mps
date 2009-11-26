@@ -9275,7 +9275,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="4531786690998643504">
         <property name="separatorText" value="," />
-        <property name="attractsFocus" value="1" />
+        <property name="attractsFocus" value="2" />
         <link role="relationDeclaration" targetNodeId="2.4531786690998636240" />
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="4531786690998643505" />
         <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4531786690999175821">
