@@ -15,7 +15,6 @@
  */
 package com.intellij.idea;
 
-import com.intellij.ide.license.LicenseManager;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.ide.startupWizard.StartupWizard;
 import com.intellij.openapi.application.ApplicationNamesInfo;
@@ -26,8 +25,6 @@ import com.intellij.openapi.application.impl.ApplicationInfoImpl;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.ui.AppUIUtil;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.IdeMain.TestMode;
 import org.jetbrains.annotations.NonNls;
 
 import javax.swing.JOptionPane;
@@ -65,7 +62,7 @@ public class MainImpl {
       }
       catch (Exception e) {
         // ignore
-      }      
+      }
       ConfigImportHelper.importConfigsTo(PathManager.getConfigPath());
     }
 
@@ -117,21 +114,7 @@ public class MainImpl {
       }
     }
 
-/*
-    if (IdeMain.getTestMode() == TestMode.NO_TEST) {
-      LicenseManager.getInstance().startUp(new LicenseManager.StartupAction() {
-        public void proceed() {
-          startApplication(args);
-        }
-
-        public void cancel() {
-          System.exit(-1);
-        }
-      });
-    }else {
-*/
-      startApplication(args);
-//    }
+    startApplication(args);
   }
 
   private static void startApplication(final String[] args) {
@@ -151,7 +134,7 @@ public class MainImpl {
   }
 
   private static boolean checkStartupPossible() {
-    return checkJdkVersion() && lockSystemFolders();
+    return checkJdkVersion() && ensureNonServerVMVersion() && lockSystemFolders();
   }
 
   private synchronized static boolean lockSystemFolders() {
@@ -220,7 +203,36 @@ public class MainImpl {
     }
 
     showVersionMismatch(version);
+
     return false;
+  }
+
+  private static boolean ensureNonServerVMVersion() {
+    String vmName = System.getProperty("java.vm.name");
+    if (!vmName.toLowerCase().contains("server")) return true;
+
+    if (isHeadless) {
+      Logger LOG = Logger.getInstance(LOG_CATEGORY);
+      LOG.error("MPS can't be started in headless mode under server VM: " + vmName);
+      return false;
+    }
+
+    Object[] choices = {"Exit", "Start MPS"};
+
+    int result = JOptionPane.showOptionDialog(null,
+
+      "<html>MPS was launched under <b>server VM</b>: " + vmName + ".<br>" +
+        "This will result in MPS crash with PermGen space error after some time.<br> " +
+        "<br>" +
+        "Do you want to start MPS under this VM?</html>",
+
+      "Compatibility Error",
+      JOptionPane.YES_NO_OPTION,
+      JOptionPane.ERROR_MESSAGE,
+      null,
+      choices, choices[0]);
+
+    return result != 0;
   }
 
   private static void showVersionMismatch(final String version) {
