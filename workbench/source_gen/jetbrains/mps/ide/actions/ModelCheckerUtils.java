@@ -199,14 +199,12 @@ public class ModelCheckerUtils {
             }
             SNode concept = SNodeOperations.getConceptDeclaration(node);
 
-            for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
-              if (!(isDeclaredLink(SLinkOperations.findLinkDeclaration(ref), false))) {
-                continue;
+            for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
+              public boolean accept(SReference it) {
+                return isDeclaredLink(SLinkOperations.findLinkDeclaration(it), false) && (SLinkOperations.getTargetNode(it) != null);
               }
+            })) {
               SNode targetNode = SLinkOperations.getTargetNode(ref);
-              if (targetNode == null) {
-                continue;
-              }
               try {
                 SNode genuineLinkDeclaration = LinkDeclaration_Behavior.call_getGenuineLink_1213877254523(SLinkOperations.findLinkDeclaration(ref));
 
