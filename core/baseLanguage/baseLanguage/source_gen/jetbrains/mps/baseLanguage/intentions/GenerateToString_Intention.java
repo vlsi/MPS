@@ -29,11 +29,11 @@ public class GenerateToString_Intention extends GenerateIntention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
+    return !(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode method) {
         return "toString".equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty() && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.StringType");
       }
-    });
+    }));
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
@@ -53,7 +53,7 @@ public class GenerateToString_Intention extends GenerateIntention {
       SNode field = fieldIterator.next();
       SNode plusExpression = SLinkOperations.setNewChild(currentPlusExpression, "leftExpression", "jetbrains.mps.baseLanguage.structure.PlusExpression");
       SNode fieldLiteral = SLinkOperations.setNewChild(plusExpression, "leftExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral");
-      SPropertyOperations.set(fieldLiteral, "value", SPropertyOperations.getString(field, "name") + ": ");
+      SPropertyOperations.set(fieldLiteral, "value", SPropertyOperations.getString(field, "name") + "= ");
       SNode dotExpression;
       if (fieldIterator.hasNext()) {
         SNode extraCommaExpression = SLinkOperations.setNewChild(plusExpression, "rightExpression", "jetbrains.mps.baseLanguage.structure.PlusExpression");
@@ -71,6 +71,7 @@ public class GenerateToString_Intention extends GenerateIntention {
     currentPlusExpression = SNodeOperations.cast(SNodeOperations.getParent(currentPlusExpression), "jetbrains.mps.baseLanguage.structure.PlusExpression");
     SNode closingBracketLiteral = SLinkOperations.setNewChild(currentPlusExpression, "rightExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral");
     SPropertyOperations.set(closingBracketLiteral, "value", " }");
+    SLinkOperations.addChild(toStringMethod, "annotation", new _Quotations.QuotationClass_12().createNode());
   }
 
   public String getLocationString() {
