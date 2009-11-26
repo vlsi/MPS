@@ -486,17 +486,13 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     });
   }
 
-  private String getHeaderPart(int count, String name) {
-    return count + " " + ((count > 1)? NameUtil.pluralize(name) : name);
-  }
-
   private void updateHeader() {
     if (hasErrors() || hasWarnings() || hasInfo()) {
       if (getToolWindow() == null) return;
       getToolWindow().setTitle(" ("
-        + getHeaderPart(myErrors, "error") + "/"
-        + getHeaderPart(myWarnings, "warning") + "/"
-        + getHeaderPart(myInfos, "info")
+        + NameUtil.formatNumericalString(myErrors, "error") + "/"
+        + NameUtil.formatNumericalString(myWarnings, "warning") + "/"
+        + NameUtil.formatNumericalString(myInfos, "info")
         + ")");
     }
   }
