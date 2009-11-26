@@ -9373,9 +9373,12 @@
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="8313721352726444113" />
     </node>
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="8313721352726450630">
-      <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="8313721352726875160">
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="7896204543965441282">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="7896204543965441283" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="7896204543965441284">
+        <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="7896204543965441285">
         <property name="flag" value="true" />
       </node>
     </node>

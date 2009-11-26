@@ -209,12 +209,22 @@
                   <node role="base" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="9195559275659804325">
                     <property name="value" value="2" />
                   </node>
-                  <node role="exponent" type="jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction" id="9195559275659804326">
-                    <node role="numerator" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="9195559275659804327">
-                      <property name="value" value="1.0" />
+                  <node role="exponent" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="8313721352727086413">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8313721352727105063">
+                      <property name="value" value="1" />
                     </node>
-                    <node role="denominator" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="9195559275659804328">
-                      <property name="value" value="2" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.MinusExpression" id="8313721352727105069">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8313721352727105077">
+                        <property name="value" value="7" />
+                      </node>
+                      <node role="rightExpression" type="jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction" id="9195559275659804326">
+                        <node role="numerator" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant" id="9195559275659804327">
+                          <property name="value" value="1.0" />
+                        </node>
+                        <node role="denominator" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="9195559275659804328">
+                          <property name="value" value="2" />
+                        </node>
+                      </node>
                     </node>
                   </node>
                 </node>

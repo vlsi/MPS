@@ -12,12 +12,12 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.CellAlign;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.baseLanguage.math.plugin.EmptyCellProvider;
 import jetbrains.mps.baseLanguage.math.plugin.HLineCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.editor.runtime.EditorCell_Empty;
 
 public class DivExpressionFraction_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -33,7 +33,7 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.HORIZONTAL_ALIGN, CellAlign.CENTER);
     }
     editorCell.addEditorCell(this.createRefNode_9055_0(editorContext, node));
-    editorCell.addEditorCell(this.createCustom_9055_1(editorContext, node));
+    editorCell.addEditorCell(this.createCustom_9055_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_9055_1(editorContext, node));
     return editorCell;
   }
@@ -41,53 +41,23 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_9055_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_9055_1");
-    editorCell.addEditorCell(this.createCustom_9055_2(editorContext, node));
+    editorCell.addEditorCell(this.createEmpty_9055_0(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9055_0(editorContext, node));
-    editorCell.addEditorCell(this.createCustom_9055_0(editorContext, node));
+    editorCell.addEditorCell(this.createEmpty_9055_1(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCustom_9055_0(final EditorContext editorContext, final SNode node) {
-    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<EmptyCellProvider>() {
-      public EmptyCellProvider invoke() {
-        return new EmptyCellProvider(node);
-      }
-    }.invoke();
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_9055_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    return editorCell;
-  }
-
-  private EditorCell createCustom_9055_1(final EditorContext editorContext, final SNode node) {
     AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<HLineCellProvider>() {
       public HLineCellProvider invoke() {
         return new HLineCellProvider(node);
       }
     }.invoke();
     EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_9055_1");
+    editorCell.setCellId("Custom_9055_0");
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.BASE_LINE_CELL, true);
-    }
-    return editorCell;
-  }
-
-  private EditorCell createCustom_9055_2(final EditorContext editorContext, final SNode node) {
-    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<EmptyCellProvider>() {
-      public EmptyCellProvider invoke() {
-        return new EmptyCellProvider(node);
-      }
-    }.invoke();
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_9055_2");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     return editorCell;
   }
@@ -125,6 +95,26 @@ public class DivExpressionFraction_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createEmpty_9055_0(EditorContext editorContext, SNode node) {
+    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    editorCell.setCellId("Empty_9055_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createEmpty_9055_1(EditorContext editorContext, SNode node) {
+    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    editorCell.setCellId("Empty_9055_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
     return editorCell;
   }
 }

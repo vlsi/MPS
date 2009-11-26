@@ -9,14 +9,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.baseLanguage.math.plugin.EmptyCellProvider;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.style.ScriptKind;
+import jetbrains.mps.editor.runtime.EditorCell_Empty;
 
 public class PowExpression_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -27,7 +25,7 @@ public class PowExpression_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_3700_0");
     editorCell.addEditorCell(this.createCollection_3700_1(editorContext, node));
-    editorCell.addEditorCell(this.createCustom_3700_0(editorContext, node));
+    editorCell.addEditorCell(this.createEmpty_3700_0(editorContext, node));
     return editorCell;
   }
 
@@ -40,21 +38,6 @@ public class PowExpression_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createRefNode_3700_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3700_1(editorContext, node));
-    return editorCell;
-  }
-
-  private EditorCell createCustom_3700_0(final EditorContext editorContext, final SNode node) {
-    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<EmptyCellProvider>() {
-      public EmptyCellProvider invoke() {
-        return new EmptyCellProvider(node);
-      }
-    }.invoke();
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_3700_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
     return editorCell;
   }
 
@@ -94,6 +77,16 @@ public class PowExpression_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createEmpty_3700_0(EditorContext editorContext, SNode node) {
+    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    editorCell.setCellId("Empty_3700_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
     return editorCell;
   }
 }

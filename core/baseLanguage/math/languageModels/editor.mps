@@ -352,24 +352,12 @@
         </node>
       </node>
       <node role="ifTrueCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="9132212888144678084">
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Custom" id="9132212888144678087">
-          <node role="cellProvider" type="jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider" id="9132212888144678088">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9132212888144678089">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="9132212888144692284">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="9132212888144692285">
-                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="9132212888144692286">
-                    <link role="baseMethodDeclaration" targetNodeId="3.9151122427738655887" resolveInfo="EmptySpace" />
-                    <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="9132212888144692287" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="6510001722512795009">
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="5948968788443111846" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Empty" id="7896204543965588662">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="7896204543965588663">
             <property name="flag" value="true" />
           </node>
         </node>
-        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="5948968788443111846" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="9151122427738542259">
           <link role="relationDeclaration" targetNodeId="1.4815887568697232013" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem" id="9151122427738542261">
@@ -383,39 +371,15 @@
           </node>
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Table" id="1326688792171826475" />
         </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Custom" id="9132212888144678091">
-          <node role="cellProvider" type="jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider" id="9132212888144678092">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9132212888144678093">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="9132212888144678094">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="9132212888144678096">
-                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="9132212888144692281">
-                    <link role="baseMethodDeclaration" targetNodeId="3.9151122427738655887" resolveInfo="EmptySpace" />
-                    <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="9132212888144692282" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="6510001722512795010">
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Empty" id="7896204543965588668">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="7896204543965588669">
             <property name="flag" value="true" />
           </node>
         </node>
       </node>
       <node role="ifFalseCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5948968788443111843">
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Custom" id="5948968788443111848">
-          <node role="cellProvider" type="jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider" id="5948968788443111849">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5948968788443111850">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5948968788443111851">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5948968788443111852">
-                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="5948968788443111853">
-                    <link role="baseMethodDeclaration" targetNodeId="3.9151122427738655887" resolveInfo="EmptyCellProvider" />
-                    <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="5948968788443111854" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="5948968788443111855">
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Empty" id="7896204543965588665">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="7896204543965588666">
             <property name="flag" value="true" />
           </node>
         </node>
@@ -434,20 +398,8 @@
             <property name="tableComponent" value="HORIZONTAL_COLLECTION" />
           </node>
         </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Custom" id="5948968788443111857">
-          <node role="cellProvider" type="jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider" id="5948968788443111858">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5948968788443111859">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5948968788443111860">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5948968788443111861">
-                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="5948968788443111862">
-                    <link role="baseMethodDeclaration" targetNodeId="3.9151122427738655887" resolveInfo="EmptyCellProvider" />
-                    <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="5948968788443111863" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="5948968788443111864">
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Empty" id="7896204543965588671">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="7896204543965588672">
             <property name="flag" value="true" />
           </node>
         </node>
@@ -499,20 +451,8 @@
     <link role="conceptDeclaration" targetNodeId="1.1237100849157" resolveInfo="DivOperationFraction" />
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237103416328">
       <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Custom" id="9151122427738655906">
-        <node role="cellProvider" type="jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider" id="9151122427738655907">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9151122427738655908">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9151122427738655909">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="9151122427738655910">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="9151122427738655912">
-                  <link role="baseMethodDeclaration" targetNodeId="3.9151122427738655887" resolveInfo="EmptySpaceProvider" />
-                  <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="9151122427738655914" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="9151122427738794486">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Empty" id="8313721352726875153">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="8313721352726875155">
           <property name="flag" value="true" />
         </node>
       </node>
@@ -550,20 +490,8 @@
           <property name="align" value="CENTER" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Custom" id="9132212888144340950">
-        <node role="cellProvider" type="jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider" id="9132212888144340951">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9132212888144340952">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9132212888144340953">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="9132212888144340954">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="9132212888144340955">
-                  <link role="baseMethodDeclaration" targetNodeId="3.9151122427738655887" resolveInfo="EmptySpaceProvider" />
-                  <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="9132212888144340956" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="9132212888144340957">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Empty" id="8313721352726875157">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="8313721352726875159">
           <property name="flag" value="true" />
         </node>
       </node>
@@ -973,23 +901,11 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1236427062651">
       <property name="vertical" value="false" />
       <property name="usesBraces" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Custom" id="9132212888144340958">
-        <node role="cellProvider" type="jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider" id="9132212888144340959">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9132212888144340960">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9132212888144340962">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="9132212888144340963">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="9132212888144340964">
-                  <link role="baseMethodDeclaration" targetNodeId="3.9151122427738655887" resolveInfo="EmptySpaceProvider" />
-                  <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="9132212888144340965" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="9132212888144340961">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Empty" id="7896204543965587819">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="7896204543965587820">
           <property name="flag" value="true" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.BaseLineCell" id="9132212888144340975">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.BaseLineCell" id="7896204543965587821">
           <property name="flag" value="true" />
         </node>
       </node>
@@ -1083,23 +999,11 @@
           <property name="flag" value="true" />
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Custom" id="9132212888144340966">
-        <node role="cellProvider" type="jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider" id="9132212888144340967">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9132212888144340968">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9132212888144340970">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="9132212888144340971">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="9132212888144340972">
-                  <link role="baseMethodDeclaration" targetNodeId="3.9151122427738655887" resolveInfo="EmptySpaceProvider" />
-                  <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="9132212888144340973" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="9132212888144340969">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Empty" id="7896204543965587823">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="7896204543965587824">
           <property name="flag" value="true" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.BaseLineCell" id="9132212888144340977">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.BaseLineCell" id="7896204543965587825">
           <property name="flag" value="true" />
         </node>
       </node>
@@ -1164,20 +1068,8 @@
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Superscript" id="963844843315857808" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Custom" id="963844843315857821">
-        <node role="cellProvider" type="jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider" id="963844843315857822">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="963844843315857823">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="963844843315857824">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="963844843315857825">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="963844843315870393">
-                  <link role="baseMethodDeclaration" targetNodeId="3.9151122427738655887" resolveInfo="EmptyCellProvider" />
-                  <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="963844843315870394" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="963844843315870730">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Empty" id="7896204543965588675">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="7896204543965588676">
           <property name="flag" value="true" />
         </node>
       </node>
@@ -2052,20 +1944,8 @@
           </node>
         </node>
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Custom" id="7255837154369796290">
-        <node role="cellProvider" type="jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider" id="7255837154369796291">
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7255837154369796292">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7255837154369796293">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7255837154369796294">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="7255837154369796295">
-                  <link role="baseMethodDeclaration" targetNodeId="3.9151122427738655887" resolveInfo="EmptyCellProvider" />
-                  <node role="actualArgument" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="7255837154369796296" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="7255837154369796297">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Empty" id="7896204543965411427">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="7896204543965411428">
           <property name="flag" value="true" />
         </node>
       </node>

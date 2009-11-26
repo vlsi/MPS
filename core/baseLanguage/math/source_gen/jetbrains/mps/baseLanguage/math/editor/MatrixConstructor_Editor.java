@@ -8,19 +8,17 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.baseLanguage.math.plugin.EmptyCellProvider;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Table;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.DefaultBaseLine;
 import jetbrains.mps.nodeEditor.style.TableComponent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.editor.runtime.EditorCell_Empty;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -63,18 +61,18 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_4845_1(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4845_1");
-    editorCell.addEditorCell(this.createCustom_4845_0(editorContext, node));
+    editorCell.addEditorCell(this.createEmpty_4845_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4845_0(editorContext, node));
-    editorCell.addEditorCell(this.createCustom_4845_1(editorContext, node));
+    editorCell.addEditorCell(this.createEmpty_4845_3(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createCollection_4845_2(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_4845_2");
-    editorCell.addEditorCell(this.createCustom_4845_2(editorContext, node));
+    editorCell.addEditorCell(this.createEmpty_4845_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4845_1(editorContext, node));
-    editorCell.addEditorCell(this.createCustom_4845_3(editorContext, node));
+    editorCell.addEditorCell(this.createEmpty_4845_2(editorContext, node));
     return editorCell;
   }
 
@@ -82,66 +80,6 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "column:");
     editorCell.setCellId("Constant_4845_0");
     editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createCustom_4845_0(final EditorContext editorContext, final SNode node) {
-    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<EmptyCellProvider>() {
-      public EmptyCellProvider invoke() {
-        return new EmptyCellProvider(node);
-      }
-    }.invoke();
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_4845_0");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
-    return editorCell;
-  }
-
-  private EditorCell createCustom_4845_1(final EditorContext editorContext, final SNode node) {
-    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<EmptyCellProvider>() {
-      public EmptyCellProvider invoke() {
-        return new EmptyCellProvider(node);
-      }
-    }.invoke();
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_4845_1");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
-    return editorCell;
-  }
-
-  private EditorCell createCustom_4845_2(final EditorContext editorContext, final SNode node) {
-    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<EmptyCellProvider>() {
-      public EmptyCellProvider invoke() {
-        return new EmptyCellProvider(node);
-      }
-    }.invoke();
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_4845_2");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
-    }
-    return editorCell;
-  }
-
-  private EditorCell createCustom_4845_3(final EditorContext editorContext, final SNode node) {
-    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<EmptyCellProvider>() {
-      public EmptyCellProvider invoke() {
-        return new EmptyCellProvider(node);
-      }
-    }.invoke();
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_4845_3");
-    {
-      Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
-    }
     return editorCell;
   }
 
@@ -188,6 +126,46 @@ public class MatrixConstructor_Editor extends DefaultNodeEditor {
       EditorManager manager = EditorManager.getInstanceFromContext(opContext);
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
+    return editorCell;
+  }
+
+  private EditorCell createEmpty_4845_0(EditorContext editorContext, SNode node) {
+    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    editorCell.setCellId("Empty_4845_0");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createEmpty_4845_1(EditorContext editorContext, SNode node) {
+    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    editorCell.setCellId("Empty_4845_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createEmpty_4845_2(EditorContext editorContext, SNode node) {
+    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    editorCell.setCellId("Empty_4845_2");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
+    return editorCell;
+  }
+
+  private EditorCell createEmpty_4845_3(EditorContext editorContext, SNode node) {
+    EditorCell_Empty editorCell = new EditorCell_Empty(editorContext, node);
+    editorCell.setCellId("Empty_4845_3");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.PUNCTUATION_LEFT, true);
+    }
     return editorCell;
   }
 
