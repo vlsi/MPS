@@ -117,5 +117,15 @@
       <link role="dataType" targetNodeId="2v.1082983041843" resolveInfo="string" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2854075155748534270">
+    <property name="name" value="ReferenceContainerSubConcept" />
+    <link role="extends" targetNodeId="8758390115028851398" resolveInfo="ReferenceContainer" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2854075155748534272">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="specializedRightChild" />
+      <link role="target" targetNodeId="34342663958604621" resolveInfo="ChildSubConcept" />
+      <link role="specializedLink" targetNodeId="8758390115028851401" />
+    </node>
+  </node>
 </model>
 

@@ -332,5 +332,34 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="2854075155748608739">
+    <link role="conceptDeclaration" targetNodeId="1.2854075155748534270" resolveInfo="ReferenceContainerSubConcept" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Block" id="2854075155748608741">
+      <node role="body" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="2854075155748608742">
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="2854075155748608743" />
+        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="2854075155748608751">
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="2854075155748608752">
+            <property name="flag" value="false" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2854075155748608753">
+            <property name="text" value="rightChild:" />
+          </node>
+          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="2854075155748608754">
+            <link role="relationDeclaration" targetNodeId="1.2854075155748534272" />
+            <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="2854075155748608755">
+              <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="2854075155748608756">
+                <property name="readOnly" value="true" />
+                <link role="relationDeclaration" targetNodeId="1.8758390115028851453" resolveInfo="name" />
+              </node>
+            </node>
+          </node>
+          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="2854075155748608757" />
+        </node>
+      </node>
+      <node role="header" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="2854075155748608765">
+        <property name="text" value="referenceContainerSubConcept" />
+      </node>
+    </node>
+  </node>
 </model>
 

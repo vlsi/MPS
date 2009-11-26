@@ -269,6 +269,7 @@ public class SNodeOperations {
     if (node == null || linkDeclaration == null) {
       return new ArrayList<SNode>(0);
     }
+    linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
     return node.getChildren(((LinkDeclaration) linkDeclaration.getAdapter()).getRole());
   }
 
