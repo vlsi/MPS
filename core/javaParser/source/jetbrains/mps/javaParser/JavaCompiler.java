@@ -294,8 +294,7 @@ public class JavaCompiler {
       }
     }
     if (buildAstNow) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        @Override
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {        
         public void run() {
           buildAST();
         }
