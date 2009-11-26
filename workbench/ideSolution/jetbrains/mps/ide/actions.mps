@@ -30557,7 +30557,7 @@
                       </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="5051503573775608082">
                         <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="5051503573775608083">
-                          <property name="name" value="linkDeclaration" />
+                          <property name="name" value="link" />
                         </node>
                         <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="865678424278035680">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="865678424278035659">
@@ -30568,22 +30568,6 @@
                           </node>
                         </node>
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5051503573775608088">
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="865678424278044597">
-                            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="865678424278044598">
-                              <property name="name" value="link" />
-                              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="865678424278044599">
-                                <link role="concept" targetNodeId="93.1071489288298" resolveInfo="LinkDeclaration" />
-                              </node>
-                              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="865678424278044615">
-                                <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="865678424278044616">
-                                  <link role="variable" targetNodeId="5051503573775608083" resolveInfo="linkDeclaration" />
-                                </node>
-                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="865678424278044617">
-                                  <link role="baseMethodDeclaration" targetNodeId="177.1213877254523" resolveInfo="getGenuineLink" />
-                                </node>
-                              </node>
-                            </node>
-                          </node>
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5051503573775608094">
                             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5051503573775608095">
                               <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="5051503573775608096">
@@ -30608,8 +30592,8 @@
                                                 <property name="value" value="Cardinality constraint violation in role \&quot;" />
                                               </node>
                                               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5051503573775608108">
-                                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5051503573775608109">
-                                                  <link role="variableDeclaration" targetNodeId="865678424278044598" resolveInfo="link" />
+                                                <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="2854075155749507890">
+                                                  <link role="variable" targetNodeId="5051503573775608083" resolveInfo="link" />
                                                 </node>
                                                 <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="865678424278046345">
                                                   <link role="property" targetNodeId="93.1071599776563" resolveInfo="role" />
@@ -30628,8 +30612,8 @@
                                         <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetChildrenOperation" id="865678424278046152">
                                           <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier" id="865678424278046169">
                                             <node role="linkQualifier" type="jetbrains.mps.lang.smodel.structure.PoundExpression" id="865678424278046190">
-                                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="865678424278046209">
-                                                <link role="variableDeclaration" targetNodeId="865678424278044598" resolveInfo="link" />
+                                              <node role="expression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="2854075155749507887">
+                                                <link role="variable" targetNodeId="5051503573775608083" resolveInfo="link" />
                                               </node>
                                             </node>
                                           </node>
@@ -30641,8 +30625,8 @@
                                 </node>
                                 <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="865678424278046060">
                                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5051503573775608122">
-                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5051503573775608123">
-                                      <link role="variableDeclaration" targetNodeId="865678424278044598" resolveInfo="link" />
+                                    <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="2854075155749507883">
+                                      <link role="variable" targetNodeId="5051503573775608083" resolveInfo="link" />
                                     </node>
                                     <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="865678424278046027">
                                       <link role="property" targetNodeId="93.1071599937831" resolveInfo="metaClass" />
@@ -30664,8 +30648,8 @@
                                           </node>
                                           <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation" id="865678424278046417">
                                             <node role="linkQualifier" type="jetbrains.mps.lang.smodel.structure.PoundExpression" id="865678424278046432">
-                                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="865678424278046450">
-                                                <link role="variableDeclaration" targetNodeId="865678424278044598" resolveInfo="link" />
+                                              <node role="expression" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="2854075155749707792">
+                                                <link role="variable" targetNodeId="5051503573775608083" resolveInfo="link" />
                                               </node>
                                             </node>
                                           </node>
@@ -30691,8 +30675,8 @@
                                                   <property name="value" value="Cardinality constraint violation in role \&quot;" />
                                                 </node>
                                                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5051503573775608146">
-                                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5051503573775608147">
-                                                    <link role="variableDeclaration" targetNodeId="865678424278044598" resolveInfo="link" />
+                                                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="2854075155749507900">
+                                                    <link role="variable" targetNodeId="5051503573775608083" resolveInfo="link" />
                                                   </node>
                                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="865678424278459984">
                                                     <link role="property" targetNodeId="93.1071599776563" resolveInfo="role" />
@@ -30711,8 +30695,8 @@
                             <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="5051503573775608149">
                               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="865678424278044683">
                                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5051503573775608152">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5051503573775608153">
-                                    <link role="variableDeclaration" targetNodeId="865678424278044598" resolveInfo="link" />
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="2854075155749507885">
+                                    <link role="variable" targetNodeId="5051503573775608083" resolveInfo="link" />
                                   </node>
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="865678424278044681">
                                     <link role="property" targetNodeId="93.1071599893252" resolveInfo="sourceCardinality" />
@@ -30726,8 +30710,8 @@
                               </node>
                               <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="865678424278044671">
                                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5051503573775608156">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5051503573775608157">
-                                    <link role="variableDeclaration" targetNodeId="865678424278044598" resolveInfo="link" />
+                                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="2854075155749507881">
+                                    <link role="variable" targetNodeId="5051503573775608083" resolveInfo="link" />
                                   </node>
                                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="865678424278044653">
                                     <link role="property" targetNodeId="93.1071599893252" resolveInfo="sourceCardinality" />
@@ -32351,7 +32335,7 @@
               <link role="classConcept" targetNodeId="70.~TaskProgressSettings" resolveInfo="TaskProgressSettings" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5792297515476827933">
-              <link role="baseMethodDeclaration" targetNodeId="70.~TaskProgressSettings.getEstimatedTimeMillis(java.lang.String...):long" resolveInfo="getEstimatedTimeMillis" />
+              <link role="baseMethodDeclaration" targetNodeId="70.~TaskProgressSettings.getEstimatedTimeMillis(java.lang.String):long" resolveInfo="getEstimatedTimeMillis" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5792297515476827934">
                 <link role="variableDeclaration" targetNodeId="5792297515476827935" resolveInfo="taskName" />
               </node>

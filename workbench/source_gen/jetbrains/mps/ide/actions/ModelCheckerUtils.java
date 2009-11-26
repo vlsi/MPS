@@ -24,7 +24,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.PropertySupport;
@@ -162,8 +161,7 @@ public class ModelCheckerUtils {
             SNode concept = SNodeOperations.getConceptDeclaration(node);
 
             // Check links 
-            for (SNode linkDeclaration : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
-              SNode link = LinkDeclaration_Behavior.call_getGenuineLink_1213877254523(linkDeclaration);
+            for (SNode link : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
               if (SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1..n", "0..1")) {
                 if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
                   if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
