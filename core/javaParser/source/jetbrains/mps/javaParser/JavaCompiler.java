@@ -294,7 +294,12 @@ public class JavaCompiler {
       }
     }
     if (buildAstNow) {
-      buildAST();
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        @Override
+        public void run() {
+          buildAST();
+        }
+      });
       return false;
     }
     return false;

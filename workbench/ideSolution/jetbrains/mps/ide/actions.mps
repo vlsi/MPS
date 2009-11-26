@@ -27817,6 +27817,7 @@
     <property name="package" value="Menu.ProjectPane.Module.Actions" />
     <property name="name" value="GetSolutionContentsFromSource" />
     <property name="caption" value="Get Solution Contents from Source" />
+    <property name="outsideCommandExecution" value="true" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="5408201126509038597">
       <property name="name" value="module" />
       <link role="key" targetNodeId="107.~MPSDataKeys.MODULE" resolveInfo="MODULE" />

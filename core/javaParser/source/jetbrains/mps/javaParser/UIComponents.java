@@ -10,6 +10,9 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.IFile;
 
 import javax.swing.*;
 import java.util.*;
@@ -97,30 +100,21 @@ public class UIComponents {
     }
 
     private IClassPathItem chooseClasspath(File sourceDir) {
-      JFileChooser fileChooser = new JFileChooser(sourceDir);
-      fileChooser.setFileFilter(new javax.swing.filechooser.FileFilter() {
-        @Override
-        public boolean accept(File f) {
-          return f.isDirectory() || f.getName().endsWith(".jar");
-        }
+      TreeFileChooser treeFileChooser = new TreeFileChooser();
+      treeFileChooser.setExtensionFileFilter(".jar");
+      treeFileChooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
+      treeFileChooser.setInitialFile(new FileSystemFile(sourceDir));
+      treeFileChooser.setTitle("Select Classpath");
+      IFile iFile = treeFileChooser.showDialog(this.getMainComponent());
 
-        @Override
-        public String getDescription() {
-          return "Classpath directory or jar archive";//"Java class " + name;
-        }
-      });
-      fileChooser.setDialogTitle("Select classpath");
-      fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
-      int option = fileChooser.showOpenDialog(null);
-      if (option != JFileChooser.APPROVE_OPTION) {
+      if (iFile == null) {
         return null;
       }
-      File selectedFile = fileChooser.getSelectedFile();
-      if (selectedFile.isDirectory()) {
-        return new FileClassPathItem(selectedFile.getAbsolutePath());
-      } else if (selectedFile.getName().endsWith(".jar")) {
+      if (iFile.isDirectory()) {
+        return new FileClassPathItem(iFile.getAbsolutePath());
+      } else if (iFile.getName().endsWith(".jar")) {
         try {
-          return new JarFileClassPathItem(selectedFile.getAbsolutePath());
+          return new JarFileClassPathItem(iFile);
         } catch (IOException ex) {
           LOG.error(ex);
           return null;

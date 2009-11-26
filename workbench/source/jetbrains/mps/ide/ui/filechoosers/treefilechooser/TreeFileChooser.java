@@ -20,10 +20,12 @@ import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.ide.DataManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -53,6 +55,7 @@ public class TreeFileChooser {
   private int myMode = MODE_FILES;
   private IFileFilter myFileFilter = ALL_FILES_FILTER;
   private IOperationContext myContext = null;
+  private String myTitle = null;
 
   /////////////////////////////
 
@@ -74,6 +77,10 @@ public class TreeFileChooser {
 
   public void setContext(IOperationContext context) {
     myContext = context;
+  }
+
+  public void setTitle(String title) {
+    myTitle = title;
   }
 
   public void setInitialFile(IFile file) {
@@ -113,7 +120,7 @@ public class TreeFileChooser {
         return myFileFilter.accept(new FileSystemFile(file.getPath()));
       }
     };
-    descriptor.setTitle("Select File");
+    descriptor.setTitle(myTitle == null ? "Select File" : myTitle);
     descriptor.setShowFileSystemRoots(true);
 
     FileChooserDialog dialog = FileChooserFactory.getInstance().createFileChooser(descriptor, owner);
