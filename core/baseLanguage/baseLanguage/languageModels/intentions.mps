@@ -12700,10 +12700,9 @@
                                     </node>
                                   </node>
                                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6729722653477719181">
-                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6729722653477719180">
-                                      <link role="variableDeclaration" targetNodeId="2228111217983383516" resolveInfo="p" />
-                                      <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="6729722653477719186">
-                                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6729722653477719188">
+                                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3978864390598425496">
+                                      <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="3978864390598425497">
+                                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3978864390598425499">
                                           <link role="variableDeclaration" targetNodeId="3132138177991031394" resolveInfo="fieldReferenceOperation" />
                                         </node>
                                       </node>
