@@ -166,7 +166,11 @@ public class TypesProvider {
 
   private Foreign getClassifierNodeId(BinaryTypeBinding binaryTypeBinding) {
     return new Foreign(Foreign.ID_PREFIX
-      + NameUtil.shortNameFromLongName(classFqNameFromCompoundName(binaryTypeBinding.compoundName)));
+      + NameUtil.shortNameFromLongName(getClassifierIdPrefix(binaryTypeBinding)));
+  }
+
+  private static String getClassifierIdPrefix(BinaryTypeBinding binaryTypeBinding) {
+    return classFqNameFromCompoundName(binaryTypeBinding.compoundName);
   }
 
   public SReference createMethodReference(MethodBinding binding, String role, SNode sourceNode) {
@@ -199,7 +203,7 @@ public class TypesProvider {
   }
 
   private SModelReference modelReferenceFromBinaryClassBinding(BinaryTypeBinding binaryTypeBinding) {
-    String classFQName = classFqNameFromCompoundName(binaryTypeBinding.compoundName);
+    String classFQName = getClassifierIdPrefix(binaryTypeBinding);
     String packageName = NodeNameUtil.getNamespace(classFQName);
     SModelReference modelReference = StubHelper.uidForPackageInStubs(packageName);
     return modelReference;
@@ -395,7 +399,7 @@ public class TypesProvider {
 
   private SNodeId createMethodId(MethodBinding method, BinaryTypeBinding classBinding) {
     StringBuilder sb = new StringBuilder();
-    sb.append(classBinding.sourceName);
+    sb.append(NameUtil.shortNameFromLongName(getClassifierIdPrefix(classBinding)));
     sb.append('.');
     if (method.isConstructor()) {
       sb.append("<init>");
@@ -414,7 +418,8 @@ public class TypesProvider {
   }
 
   private SNodeId createFieldId(FieldBinding field, BinaryTypeBinding classBinding) {
-    return new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + new String(classBinding.sourceName) + "." + new String(field.name));
+    return new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX +
+      NameUtil.shortNameFromLongName(getClassifierIdPrefix(classBinding)) + "." + new String(field.name));
   }
 
   private static String asString(TypeBinding type) {
@@ -429,7 +434,7 @@ public class TypesProvider {
     }
     if (type instanceof BinaryTypeBinding) {
       // fq class name
-      return classFqNameFromCompoundName(((BinaryTypeBinding) type).compoundName);
+      return getClassifierIdPrefix(((BinaryTypeBinding) type));
     }
     if (type instanceof SourceTypeBinding) {
       // fq class name
