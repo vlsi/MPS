@@ -160,7 +160,7 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.workbench.actions.goTo.index.GoToRootNodeSettings</implementation-class>
+            <implementation-class>jetbrains.mps.ide.PerformanceSettings</implementation-class>
         </component>
 
         <component>
