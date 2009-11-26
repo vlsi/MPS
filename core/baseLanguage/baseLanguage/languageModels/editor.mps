@@ -7883,13 +7883,7 @@
           <property name="attractsFocus" value="2" />
           <link role="relationDeclaration" targetNodeId="17.1170346070688" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1170346086722">
-            <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1170346092162">
-              <property name="readOnly" value="true" />
-              <link role="relationDeclaration" targetNodeId="18.1169194664001" />
-              <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" id="1214321202512">
-                <property name="tag" value="default_RTransform" />
-              </node>
-            </node>
+            <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation" id="7896204543966164445" />
           </node>
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem" id="1220435605146">
             <property name="tag" value="default_RTransform" />

@@ -1292,7 +1292,7 @@ __switch__:
               }
 
               public String getMatchingText(String pattern) {
-                return SPropertyOperations.getString((item), "nestedName") + " {..}";
+                return Classifier_Behavior.call_getNestedNameInContext_8540045600162183880((item), _context.getParentNode()) + " {..}";
               }
 
               public String getVisibleMatchingText(String pattern) {
@@ -1336,7 +1336,11 @@ __switch__:
               }
 
               public String getMatchingText(String pattern) {
-                return (item) + "[]";
+                if (SNodeOperations.isInstanceOf((item), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+                  return Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(SLinkOperations.getTarget(SNodeOperations.cast((item), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), _context.getParentNode()) + "[]";
+                } else {
+                  return (item) + "[]";
+                }
               }
 
               public String getVisibleMatchingText(String pattern) {
