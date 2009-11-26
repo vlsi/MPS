@@ -85,6 +85,10 @@ public class PositionInfo implements Comparable<PositionInfo> {
     return this.myFileName + ":" + (this.myStartLine + 1);
   }
 
+  public int getLineDistance() {
+    return this.myEndLine - this.myStartLine;
+  }
+
   public void saveTo(Element element) {
     element.setAttribute(NODE_ID, this.myNodeId);
     element.setAttribute(FILE_NAME, this.myFileName);
@@ -99,14 +103,14 @@ public class PositionInfo implements Comparable<PositionInfo> {
   }
 
   public int compareTo(PositionInfo p) {
-    if (ObjectUtils.equals(this.myNodeId, p.myNodeId)) {
+    if (ObjectUtils.equals(this.getLineDistance(), p.getLineDistance())) {
       if (ObjectUtils.equals(this.myStartLine, p.myStartLine)) {
         return this.myStartPosition - p.myStartPosition;
       } else {
         return this.myStartLine - p.myStartLine;
       }
     } else {
-      return this.myNodeId.compareTo(p.myNodeId);
+      return this.getLineDistance() - p.getLineDistance();
     }
   }
 }

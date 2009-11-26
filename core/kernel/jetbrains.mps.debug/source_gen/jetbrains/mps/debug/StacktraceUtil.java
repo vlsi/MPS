@@ -27,9 +27,10 @@ import jetbrains.mps.workbench.editors.MPSEditorOpener;
 public class StacktraceUtil {
   private static String STRING_START = "at ";
 
-  public static void appendStacktraceToConsole(ConsoleViewImpl consoleView, String line, ConsoleViewContentType defaultType) {
-    if (!(tryToParseLine(consoleView, line))) {
-      consoleView.print(line, defaultType);
+  public static void appendStacktraceToConsole(ConsoleViewImpl consoleView, String text, ConsoleViewContentType defaultType) {
+    assert text.indexOf("\n") == -1 || text.indexOf("\n") == text.length() - 1;
+    if (!(tryToParseLine(consoleView, text))) {
+      consoleView.print(text, defaultType);
     }
   }
 

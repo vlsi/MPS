@@ -69,14 +69,9 @@ public class DebugInfo {
     if (ListSequence.fromList(resultList).isEmpty()) {
       return null;
     }
-    resultList = ListSequence.fromList(resultList).sort(new ISelector<PositionInfo, Comparable<?>>() {
-      public Comparable<?> select(PositionInfo it) {
-        return it;
-      }
-    }, false).toListSequence();
     Iterable<PositionInfo> sorted = ListSequence.fromList(resultList).sort(new ISelector<PositionInfo, Comparable<?>>() {
       public Comparable<?> select(PositionInfo it) {
-        return it.getEndLine() - it.getStartLine();
+        return it;
       }
     }, true);
     String nodeId = Sequence.fromIterable(sorted).first().getNodeId();

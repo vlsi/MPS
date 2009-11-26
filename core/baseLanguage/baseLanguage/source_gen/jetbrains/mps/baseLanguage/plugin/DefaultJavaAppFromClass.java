@@ -24,7 +24,7 @@ public class DefaultJavaAppFromClass extends BaseConfigCreator<SNode> implements
     return this.myConfig;
   }
 
-  private void createConfig(SNode parameter) {
+  private void createConfig(final SNode parameter) {
     SNode mainMethod = ClassConcept_Behavior.call_getMainMethod_1213877355884(parameter);
 
     if ((mainMethod == null)) {
