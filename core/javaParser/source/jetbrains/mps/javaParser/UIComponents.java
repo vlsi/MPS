@@ -9,6 +9,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 
 import javax.swing.*;
 import java.util.*;
@@ -68,6 +69,7 @@ public class UIComponents {
       JPanel classesList = UiListsFactory.createBoundListPanel(this, "Unresolved Names",
         myUnresolvedFQNames, renderer, null, null);
       JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, panel, classesList);
+      splitPane.setResizeWeight(0.5);
 
       this.setLayout(new BorderLayout());
       this.add(splitPane, BorderLayout.CENTER);
@@ -86,6 +88,12 @@ public class UIComponents {
       }), FlowLayout.LEFT);
       this.add(buttonsPanel, BorderLayout.SOUTH);
       this.setModal(true);
+    }
+
+    @Override
+    public DialogDimensions getDefaultDimensionSettings() {
+      Frame mainFrame = getOperationContext().getMainFrame();
+      return new DialogDimensions(mainFrame.getX() + mainFrame.getWidth()/2, mainFrame.getY() + mainFrame.getHeight()/2, 600, 300);
     }
 
     private IClassPathItem chooseClasspath(File sourceDir) {
@@ -184,15 +192,20 @@ public class UIComponents {
   public static class ClassPathListCellRenderer extends DefaultListCellRenderer {
     public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
       String stringValue;
+      boolean jar = false;
       if (value instanceof FileClassPathItem) {
         stringValue = ((FileClassPathItem) value).getClassPath();
       } else if (value instanceof JarFileClassPathItem) {
+        jar = true;
         stringValue = ((JarFileClassPathItem) value).getFile().getAbsolutePath();
-        setForeground(Color.CYAN);
       } else {
         stringValue = "";
       }
-      return super.getListCellRendererComponent(list, stringValue, index, isSelected, cellHasFocus);
+      Component listCellRendererComponent = super.getListCellRendererComponent(list, stringValue, index, isSelected, cellHasFocus);
+      if (jar) {
+        setForeground(Color.CYAN);
+      }
+      return listCellRendererComponent;
     }
   }
 }
