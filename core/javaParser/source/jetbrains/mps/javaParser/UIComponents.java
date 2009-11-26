@@ -102,7 +102,7 @@ public class UIComponents {
     private IClassPathItem chooseClasspath(File sourceDir) {
       TreeFileChooser treeFileChooser = new TreeFileChooser();
       treeFileChooser.setExtensionFileFilter(".jar");
-      treeFileChooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
+      treeFileChooser.setMode(TreeFileChooser.MODE_FILES_AND_DIRECTORIES);
       treeFileChooser.setInitialFile(new FileSystemFile(sourceDir));
       treeFileChooser.setTitle("Select Classpath");
       IFile iFile = treeFileChooser.showDialog(this.getMainComponent());
