@@ -4595,5 +4595,14 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="8313721352726366579">
+    <property name="package" value="CellModel" />
+    <property name="name" value="CellModel_Empty" />
+    <link role="extends" targetNodeId="1073389214265" resolveInfo="EditorCellModel" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8313721352726450629">
+      <property name="value" value="empty" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

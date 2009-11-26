@@ -9360,5 +9360,25 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="6820251943131810964" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="8313721352726435276">
+    <property name="package" value="CellModel" />
+    <link role="conceptDeclaration" targetNodeId="2.8313721352726366579" resolveInfo="CellModel_Empty" />
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="8313721352726444085">
+      <property name="vertical" value="true" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="8313721352726444086">
+        <link role="editorComponent" targetNodeId="1214476568032" resolveInfo="_CellModel_Common" />
+      </node>
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="8313721352726444112">
+        <property name="flag" value="false" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="8313721352726444113" />
+    </node>
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="8313721352726450630">
+      <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem" id="8313721352726875160">
+        <property name="flag" value="true" />
+      </node>
+    </node>
+  </node>
 </model>
 
