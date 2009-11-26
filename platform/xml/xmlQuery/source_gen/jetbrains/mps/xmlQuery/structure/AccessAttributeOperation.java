@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class AccessAttributeOperation extends XMLNodeOperation {
+public class AccessAttributeOperation extends XMLElementOperation {
   public static final String concept = "jetbrains.mps.xmlQuery.structure.AccessAttributeOperation";
   public static final String ATTRIBUTE_DECLARATION = "attributeDeclaration";
 
