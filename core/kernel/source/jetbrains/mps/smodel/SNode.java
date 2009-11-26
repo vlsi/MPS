@@ -684,7 +684,7 @@ public final class SNode {
         }
       }
     } else {
-      LOG.warning("It's not recommended to access property from its getter (concept = " + getConceptFqName() + " property = " + propertyName + ")", this);
+//      LOG.warning("It's not recommended to access property from its getter (concept = " + getConceptFqName() + " property = " + propertyName + ")", this);
     }
     return propertyValue;
   }
