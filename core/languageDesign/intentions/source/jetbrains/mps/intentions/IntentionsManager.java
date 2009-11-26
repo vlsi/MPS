@@ -116,11 +116,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       }
     });
   }
-  @Deprecated
-  public Collection<Pair<Intention, SNode>> getAvailableIntentions(final SNode node, final EditorContext context, @Nullable final Computable<Boolean> terminated) {
-   return getAvailableIntentions(node, context, terminated,BaseIntention.class);
-  }
-
+  
   public Collection<Pair<Intention, SNode>> getAvailableIntentions(final SNode node, final EditorContext context, @Nullable final Computable<Boolean> terminated, final Class<? extends Intention> intentionClass) {
     try {
       TypeChecker.getInstance().enableGlobalSubtypingCache();
@@ -242,12 +238,12 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     return result;
   }
 
-  public Set<Pair<Intention, SNode>> getEnabledAvailableIntentions(SNode node, EditorContext context, @Nullable Computable<Boolean> terminated) {
+  public Set<Pair<Intention, SNode>> getEnabledAvailableIntentions(SNode node, EditorContext context, @Nullable Computable<Boolean> terminated, Class<? extends Intention> intentionClass) {
     Set<Pair<Intention, SNode>> result = new HashSet<Pair<Intention, SNode>>();
     Set<Intention> disabled = getDisabledIntentions();
 
     for (Pair<Intention, SNode> ip : getAvailableIntentions_delete(node, context, terminated)) {
-      if (!disabled.contains(ip.first)) {
+      if (!disabled.contains(ip.first)&&intentionClass.isAssignableFrom(ip.getFirst().getClass())){
         result.add(ip);
       }
     }

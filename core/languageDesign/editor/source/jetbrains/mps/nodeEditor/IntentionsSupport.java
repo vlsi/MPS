@@ -331,7 +331,7 @@ public class IntentionsSupport {
     SNode node = myEditor.getSelectedNode();
     EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
-      result.addAll(IntentionsManager.getInstance().getEnabledAvailableIntentions(node, editorContext, terminated));
+      result.addAll(IntentionsManager.getInstance().getEnabledAvailableIntentions(node, editorContext, terminated, BaseIntention.class));
     }
     return result;
   }
