@@ -44,7 +44,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 
-public class BaseLibraryManager implements BaseComponent, Configurable, PersistentStateComponent<MyState> {
+public abstract class BaseLibraryManager implements BaseComponent, Configurable, PersistentStateComponent<MyState> {
   private MyState myState = new MyState();
 
   private MPSModuleOwner myOwner;
@@ -156,11 +156,6 @@ public class BaseLibraryManager implements BaseComponent, Configurable, Persiste
       myPreferences = new LibraryManagerPreferences(this);
     }
     return myPreferences;
-  }
-
-  @Nls
-  public String getDisplayName() {
-    return "MPS Library Manager";
   }
 
   @Nullable

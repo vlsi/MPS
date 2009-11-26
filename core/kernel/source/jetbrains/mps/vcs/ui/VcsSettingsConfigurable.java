@@ -34,7 +34,7 @@ public class VcsSettingsConfigurable implements Configurable, SearchableConfigur
 
   @Nls
   public String getDisplayName() {
-    return "Version Control Ide Settings";
+    return "Version Control (IDE)";
   }
 
   public Icon getIcon() {

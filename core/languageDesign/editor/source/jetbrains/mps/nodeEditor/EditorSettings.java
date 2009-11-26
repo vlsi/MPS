@@ -286,7 +286,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
 
   @Nls
   public String getDisplayName() {
-    return "MPS Editor Settings";
+    return "Editor";
   }
 
   @Nullable

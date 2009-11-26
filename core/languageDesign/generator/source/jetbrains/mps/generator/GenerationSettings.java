@@ -73,7 +73,7 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
   @Nls
   public String getDisplayName() {
-    return "Generator Settings";
+    return "Generator";
   }
 
   @Nullable

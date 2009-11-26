@@ -47,7 +47,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
 
   @Nls
   public String getDisplayName() {
-    return "Model Checker Settings";
+    return "Model Checker";
   }
 
   @Nullable

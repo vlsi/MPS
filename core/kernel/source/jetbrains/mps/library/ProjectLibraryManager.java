@@ -25,6 +25,8 @@ import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
 
+import org.jetbrains.annotations.Nls;
+
 @State(
   name = "ProjectLibraryManager",
   storages = {
@@ -42,6 +44,11 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
     myProject = project;
   }
 
+  @Nls
+  public String getDisplayName() {
+    return "Library Manager";
+  }
+  
   public void projectOpened() {
 
   }

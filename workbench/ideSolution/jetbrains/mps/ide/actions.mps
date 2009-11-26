@@ -35386,7 +35386,7 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7947057805336717243">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7947057805336717246">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7947057805336717248">
-            <property name="value" value="Model Checker Settings" />
+            <property name="value" value="Model Checker" />
           </node>
         </node>
       </node>

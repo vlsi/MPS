@@ -78,7 +78,7 @@ public class TypesystemPreferencesComponent implements SearchableConfigurable, P
 
   @Nls
   public String getDisplayName() {
-    return "Typesystem Preferences";
+    return "Typesystem";
   }
 
   @Nullable

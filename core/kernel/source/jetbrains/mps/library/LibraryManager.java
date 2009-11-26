@@ -64,6 +64,11 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     super(repo);
   }
 
+  @Nls
+  public String getDisplayName() {
+    return "Library Manager (IDE)";
+  }
+
   @Override
   protected void onAfterModulesRead() {
     ClassLoaderManager.getInstance().init(LibraryManager.this);
