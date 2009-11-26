@@ -17,6 +17,8 @@ import jetbrains.mps.findUsages.ProxyFindUsagesManager;
 
 import java.awt.GridLayout;
 import java.awt.BorderLayout;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
@@ -61,16 +63,27 @@ public class PerformanceSettings implements PersistentStateComponent<MyState>, C
   }
 
   public JComponent createComponent() {
-    myMainPanel = new JPanel();
-    myMainPanel.setLayout(new BoxLayout(myMainPanel, BoxLayout.Y_AXIS));
+    myMainPanel = new JPanel(new GridBagLayout());
+    GridBagConstraints c = new GridBagConstraints();
+    c.gridx = 0;
+    c.weightx = 1;
+    c.fill = GridBagConstraints.BOTH;
 
     myDefaultGoToRadio = new JRadioButton("Use slow \"Go to\" actions", !myState.isUseFastGoToNode());
     myFastGoToRadio = new JRadioButton("Use default \"Go to\" actions", myState.isUseFastGoToNode());
-    myMainPanel.add(createChoosePanel(myFastGoToRadio, myDefaultGoToRadio, "GoTo actions"));
 
-    myDefaultFindRadio = new JRadioButton("Use slow find usages", !myState.isUseFastFindUsages());
-    myFastFindRadio = new JRadioButton("Use default find usages", myState.isUseFastFindUsages());
-    myMainPanel.add(createChoosePanel(myFastFindRadio, myDefaultFindRadio, "Find actions"));
+    c.gridy = 0;
+    myMainPanel.add(createChoosePanel(myFastGoToRadio, myDefaultGoToRadio, "GoTo actions"), c);
+
+    myDefaultFindRadio = new JRadioButton("Use slow find actions", !myState.isUseFastFindUsages());
+    myFastFindRadio = new JRadioButton("Use default find actions", myState.isUseFastFindUsages());
+
+    c.gridy = 1;
+    myMainPanel.add(createChoosePanel(myFastFindRadio, myDefaultFindRadio, "Find actions"), c);
+
+    c.gridy = 2;
+    c.weighty = 1;
+    myMainPanel.add(new JPanel(), c);
 
     return myMainPanel;
   }
