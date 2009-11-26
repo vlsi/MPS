@@ -88,26 +88,6 @@
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213104841300">
     <link role="concept" targetNodeId="1.1071489288298" resolveInfo="LinkDeclaration" />
-    <node role="property" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" id="2854075155749173892">
-      <link role="applicableProperty" targetNodeId="1.1071599893252" resolveInfo="sourceCardinality" />
-      <node role="propertyGetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" id="2854075155749173893">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2854075155749173894">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2854075155749174184">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2854075155749174191">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2854075155749174186">
-                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="2854075155749174185" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="2854075155749174190">
-                  <link role="baseMethodDeclaration" targetNodeId="24.1213877254523" resolveInfo="getGenuineLink" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="2854075155749174195">
-                <link role="property" targetNodeId="1.1071599893252" resolveInfo="sourceCardinality" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="1213104841301">
       <link role="applicableLink" targetNodeId="1.1071599698500" />
       <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1213104841302">
