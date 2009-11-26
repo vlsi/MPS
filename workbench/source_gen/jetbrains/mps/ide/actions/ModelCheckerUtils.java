@@ -6,16 +6,15 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
@@ -23,12 +22,14 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -65,29 +66,6 @@ public class ModelCheckerUtils {
     return ((linkDeclaration != null) && child ?
       SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference") :
       SPropertyOperations.hasValue(linkDeclaration, "metaClass", "reference", "reference")
-    );
-  }
-
-  private static String getMostSpecializedLinkRoleInt(SNode conceptDeclaration, String role) {
-    for (SNode linkDeclaration : ListSequence.fromList(SLinkOperations.getTargets(conceptDeclaration, "linkDeclaration", true))) {
-      if (SPropertyOperations.getString(linkDeclaration, "role").equals(role)) {
-        return role;
-      }
-      if (SLinkOperations.getTarget(linkDeclaration, "specializedLink", false) != null) {
-        SNode superConcept = SNodeOperations.getAncestor(SLinkOperations.getTarget(linkDeclaration, "specializedLink", false), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", true, false);
-        if (getMostSpecializedLinkRoleInt(superConcept, role) != null) {
-          return SPropertyOperations.getString(linkDeclaration, "role");
-        }
-      }
-    }
-    return null;
-  }
-
-  private static String getMostSpecializedLinkRole(SNode concept, String role) {
-    String result = getMostSpecializedLinkRoleInt(concept, role);
-    return ((result == null) ?
-      role :
-      result
     );
   }
 
@@ -230,13 +208,13 @@ public class ModelCheckerUtils {
                 continue;
               }
               try {
-                String specializedLinkRole = getMostSpecializedLinkRole(SNodeOperations.getConceptDeclaration(node), SLinkOperations.getRole(ref));
+                SNode genuineLinkDeclaration = LinkDeclaration_Behavior.call_getGenuineLink_1213877254523(SLinkOperations.findLinkDeclaration(ref));
 
                 IModule thisModelModule = model.getModelDescriptor().getModule();
-                if (checkScope(concept, node, targetNode, specializedLinkRole, operationContext)) {
-                } else if (checkScope(concept, node, targetNode, specializedLinkRole, new ModuleContext(thisModelModule, operationContext.getMPSProject()))) {
+                if (checkScope(concept, node, targetNode, SPropertyOperations.getString(genuineLinkDeclaration, "role"), operationContext)) {
+                } else if (checkScope(concept, node, targetNode, SPropertyOperations.getString(genuineLinkDeclaration, "role"), new ModuleContext(thisModelModule, operationContext.getMPSProject()))) {
                 } else {
-                  addIssue(results, node, "Reference in role \"" + specializedLinkRole + "\" is out of scope", CATEGORY_WARNING, null);
+                  addIssue(results, node, "Reference in role \"" + SPropertyOperations.getString(genuineLinkDeclaration, "role") + "\" is out of scope", CATEGORY_WARNING, null);
                 }
               } catch (Exception e) {
                 e.printStackTrace();
