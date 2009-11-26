@@ -4,7 +4,10 @@ package jetbrains.mps.xmlQuery.constraints;
 
 import jetbrains.mps.smodel.constraints.BaseNodeReferenceSearchScopeProvider;
 import jetbrains.mps.smodel.constraints.IModelConstraints;
+import jetbrains.mps.smodel.constraints.INodeReferentSetEventHandler;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.SubnodesSearchScope;
@@ -14,16 +17,21 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
-public class XMLElementType_complexType_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
+public class XMLElementType_complexType_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints, INodeReferentSetEventHandler {
   public XMLElementType_complexType_ReferentConstraint() {
   }
 
   public void registerSelf(ModelConstraintsManager manager) {
+    manager.registerNodeReferentSetEventHandler("jetbrains.mps.xmlQuery.structure.XMLElementType", "complexType", this);
     manager.registerNodeReferentSearchScopeProvider("jetbrains.mps.xmlQuery.structure.XMLElementType", "complexType", this);
   }
 
   public void unRegisterSelf(ModelConstraintsManager manager) {
+    manager.unRegisterNodeReferentSetEventHandler("jetbrains.mps.xmlQuery.structure.XMLElementType", "complexType");
     manager.unRegisterNodeReferentSearchScopeProvider("jetbrains.mps.xmlQuery.structure.XMLElementType", "complexType");
+  }
+
+  public void processReferentSetEvent(final SNode referenceNode, final SNode oldReferentNode, final SNode newReferentNode, IScope scope) {
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
