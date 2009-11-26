@@ -37,7 +37,7 @@ public class NodeExplorer_Tool extends GeneratedTool {
     group.add(new CloseAction(NodeExplorer_Tool.this) {
       public void doExecute(AnActionEvent e) {
         super.doExecute(e);
-        myNodeExplorer.clear();
+        NodeExplorer_Tool.this.myNodeExplorer.clear();
       }
     });
     JComponent toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false).getComponent();

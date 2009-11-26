@@ -6765,29 +6765,26 @@
                         </node>
                       </node>
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216658041998">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216658156964">
-                          <node role="expression" type="jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall" id="1216658156965">
-                            <property name="methodName" value="doExecute" />
-                            <node role="returnType" type="jetbrains.mps.baseLanguage.structure.Type" id="1216658156966" />
-                            <node role="instance" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1216658221064">
-                              <property name="name" value="super" />
-                              <node role="type" type="jetbrains.mps.baseLanguage.structure.Type" id="1216658221065" />
-                            </node>
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1216658251144">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8642097139456325257">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall" id="8642097139456325258">
+                            <link role="baseMethodDeclaration" targetNodeId="64.~CloseAction.doExecute(com.intellij.openapi.actionSystem.AnActionEvent):void" resolveInfo="doExecute" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8642097139456325259">
                               <link role="variableDeclaration" targetNodeId="1216658041996" resolveInfo="e" />
                             </node>
                           </node>
                         </node>
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216658259146">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1216658260953">
-                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1216658261628">
-                              <link role="baseMethodDeclaration" targetNodeId="121.~NodeExplorerComponent.clear():void" resolveInfo="clear" />
-                            </node>
-                            <node role="operand" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference" id="1216658449353">
-                              <property name="name" value="myNodeExplorer" />
-                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1216658458120">
-                                <link role="classifier" targetNodeId="121.~NodeExplorerComponent" resolveInfo="NodeExplorerComponent" />
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8642097139456325261">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8642097139456325265">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8642097139456325262">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8642097139456325263">
+                                <link role="classifier" targetNodeId="1216652708472" resolveInfo="NodeExplorer" />
                               </node>
+                              <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="8642097139456325264">
+                                <link role="member" targetNodeId="1216652708481" resolveInfo="myNodeExplorer" />
+                              </node>
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8642097139456325269">
+                              <link role="baseMethodDeclaration" targetNodeId="121.~NodeExplorerComponent.clear():void" resolveInfo="clear" />
                             </node>
                           </node>
                         </node>
