@@ -70,7 +70,6 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
         continue;
       }
       SLinkOperations.setTarget(fieldReferenceOperation, "fieldDeclaration", field, false);
-      Pair<Object, Object> p;
       SNode checkStmt = new _Quotations.QuotationClass_4().createNode(thatReference, fieldReferenceOperation, thisExpression, fieldReferenceOperation);
       SLinkOperations.addChild(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", checkStmt);
     }
