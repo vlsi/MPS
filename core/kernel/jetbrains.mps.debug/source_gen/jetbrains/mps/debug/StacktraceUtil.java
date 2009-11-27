@@ -28,7 +28,9 @@ public class StacktraceUtil {
   private static String STRING_START = "at ";
 
   public static void appendStacktraceToConsole(ConsoleViewImpl consoleView, String text, ConsoleViewContentType defaultType) {
-    assert text.indexOf("\n") == -1 || text.indexOf("\n") == text.length() - 1;
+    if (text.indexOf("\n") == -1 || text.indexOf("\n") == text.length() - 1) {
+      return;
+    }
     if (!(tryToParseLine(consoleView, text))) {
       consoleView.print(text, defaultType);
     }
