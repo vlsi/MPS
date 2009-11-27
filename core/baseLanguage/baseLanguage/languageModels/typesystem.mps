@@ -13962,6 +13962,27 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="8937659523942256701">
           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8937659523942256702">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1472904739618419286">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1472904739618419287">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="1472904739618419302" />
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1472904739618419297">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1472904739618419291">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1472904739618419290">
+                    <link role="variableDeclaration" targetNodeId="8101676149486022512" resolveInfo="program" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1472904739618419295">
+                    <link role="baseMethodDeclaration" targetNodeId="56.~Program.getInstructionsFor(java.lang.Object):java.util.List" resolveInfo="getInstructionsFor" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1472904739618419296">
+                      <link role="variableDeclaration" targetNodeId="8937659523942256705" resolveInfo="var" />
+                    </node>
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1472904739618419301">
+                  <link role="baseMethodDeclaration" targetNodeId="18.~List.isEmpty():boolean" resolveInfo="isEmpty" />
+                </node>
+              </node>
+            </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8937659523942275375">
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8937659523942275376">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8937659523942275396">

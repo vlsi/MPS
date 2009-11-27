@@ -64,16 +64,7 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="6208804448825809379">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6208804448825809380" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6208804448825809381" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6208804448825809382">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4580808751700960862">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4580808751700960863">
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4580808751700960864">
-              <link role="classifier" targetNodeId="31.~List" resolveInfo="List" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.Type" id="4580808751700960865" />
-            </node>
-          </node>
-        </node>
-      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6208804448825809382" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="5626639541500581272">

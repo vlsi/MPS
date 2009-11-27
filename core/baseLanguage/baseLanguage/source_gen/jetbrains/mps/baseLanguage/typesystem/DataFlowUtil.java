@@ -160,6 +160,9 @@ public class DataFlowUtil {
   public static void checkUnusedVariables(final TypeCheckingContext typeCheckingContext, @NotNull SNode statementList, Program program) {
     Set<SNode> usedVariables = DataFlow.getUsedVariables(program, statementList);
     for (SNode var : SNodeOperations.getDescendants(statementList, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", false, new String[]{})) {
+      if (program.getInstructionsFor(var).isEmpty()) {
+        continue;
+      }
       if (!(SNodeOperations.isInstanceOf(SNodeOperations.getParent(var), "jetbrains.mps.baseLanguage.structure.CatchClause")) && SNodeOperations.getAncestor(var, "jetbrains.mps.lang.quotation.structure.Quotation", false, false) == null) {
         if (SLinkOperations.getTarget(var, "initializer", true) == null && !(SetSequence.fromSet(usedVariables).contains(var))) {
           {
