@@ -39,7 +39,7 @@ public class GenerateToString_Intention extends GenerateIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     List<SNode> fields = SLinkOperations.getTargets(classConcept, "field", true);
-    SNode toStringMethod = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_5().createNode());
+    SNode toStringMethod = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_4().createNode());
     SNode returnStatement = SLinkOperations.addNewChild(SLinkOperations.getTarget(toStringMethod, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ReturnStatement");
     SNode returnExpression = SLinkOperations.setNewChild(returnStatement, "expression", "jetbrains.mps.baseLanguage.structure.PlusExpression");
     SNode classNameLiteral = SLinkOperations.setNewChild(returnExpression, "leftExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral");

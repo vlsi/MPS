@@ -92,7 +92,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention {
         }
       });
       if (getterIsAbsent.value) {
-        SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_24().createNode(SLinkOperations.getTarget(field, "type", true), thisExpression, field, getterName));
+        SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_22().createNode(SLinkOperations.getTarget(field, "type", true), thisExpression, field, getterName));
       }
 
       final String setterName = "set" + NameUtil.capitalize(SPropertyOperations.getString(field, "name"));
@@ -107,7 +107,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention {
       if (!(setterIsAbsent.value)) {
         continue;
       }
-      SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_25().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), SPropertyOperations.getString(field, "name"), setterName));
+      SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_23().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), SPropertyOperations.getString(field, "name"), setterName));
     }
   }
 
