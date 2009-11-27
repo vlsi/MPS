@@ -11157,12 +11157,11 @@
                         </node>
                       </node>
                     </node>
-                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="518066704239505879">
-                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="518066704239505878">
-                        <link role="variableDeclaration" targetNodeId="518066704239505873" resolveInfo="thisExpression" />
-                        <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="219009105844696862">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="219009105844702216">
-                            <link role="variableDeclaration" targetNodeId="518066704239505873" resolveInfo="thisExpression" />
+                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="4790460030895142557">
+                      <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4790460030895142570">
+                        <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="4790460030895142572">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4790460030895142577">
+                            <link role="variableDeclaration" targetNodeId="518066704239505873" resolveInfo="thisExp" />
                           </node>
                         </node>
                       </node>
@@ -11188,11 +11187,10 @@
                       </node>
                       <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="518066704239505928">
                         <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="518066704239505929">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="518066704239505930">
-                            <link role="variableDeclaration" targetNodeId="4184563483566785169" resolveInfo="o" />
-                            <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="518066704239509530">
-                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="518066704239509532">
-                                <link role="variableDeclaration" targetNodeId="518066704239505873" resolveInfo="thisExpression" />
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4790460030895142579">
+                            <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="4790460030895142581">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4790460030895142584">
+                                <link role="variableDeclaration" targetNodeId="518066704239505873" resolveInfo="thisExp" />
                               </node>
                             </node>
                           </node>
