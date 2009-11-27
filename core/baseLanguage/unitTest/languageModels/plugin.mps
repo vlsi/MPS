@@ -13333,6 +13333,13 @@
     </node>
     <node role="checkBlock" type="jetbrains.mps.lang.plugin.structure.CheckConfigurationBlock" id="4798874726882928328">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4798874726882928329">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7645293007155484696">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7645293007155484697">
+            <property name="name" value="errorReport" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="7645293007155484698" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="7645293007155484700" />
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4798874726882928334">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4798874726882928335">
             <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement" id="4928802195747792339">
@@ -13342,12 +13349,16 @@
                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4798874726882928337">
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4385949629786364161">
                         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4385949629786364162">
-                          <node role="statement" type="jetbrains.mps.lang.plugin.structure.ReportErrorStatement" id="4385949629786364179">
-                            <node role="error" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4385949629786364180">
-                              <property name="value" value="methods list is empty" />
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7645293007155484704">
+                            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7645293007155484707">
+                              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7645293007155484705">
+                                <link role="variableDeclaration" targetNodeId="7645293007155484697" resolveInfo="errorReport" />
+                              </node>
+                              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7645293007155484711">
+                                <property name="value" value="methods list is empty" />
+                              </node>
                             </node>
                           </node>
-                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4385949629786525871" />
                         </node>
                         <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4385949629786364174">
                           <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4385949629786364166">
@@ -13398,12 +13409,16 @@
                       <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4798874726882928365">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4385949629786364181">
                           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4385949629786364182">
-                            <node role="statement" type="jetbrains.mps.lang.plugin.structure.ReportErrorStatement" id="4385949629786364183">
-                              <node role="error" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4385949629786364184">
-                                <property name="value" value="classes list is empty" />
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7645293007155484718">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7645293007155484721">
+                                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7645293007155484719">
+                                  <link role="variableDeclaration" targetNodeId="7645293007155484697" resolveInfo="errorReport" />
+                                </node>
+                                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7645293007155484725">
+                                  <property name="value" value="classes list is empty" />
+                                </node>
                               </node>
                             </node>
-                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4385949629786525875" />
                           </node>
                           <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4385949629786364185">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4385949629786364186">
@@ -13443,12 +13458,16 @@
                       <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4798874726882928388">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4385949629786327000">
                           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4385949629786327001">
-                            <node role="statement" type="jetbrains.mps.lang.plugin.structure.ReportErrorStatement" id="4385949629786327002">
-                              <node role="error" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4385949629786327003">
-                                <property name="value" value="model is not selected or does not exist" />
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7645293007155484730">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7645293007155484733">
+                                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7645293007155484731">
+                                  <link role="variableDeclaration" targetNodeId="7645293007155484697" resolveInfo="errorReport" />
+                                </node>
+                                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7645293007155484737">
+                                  <property name="value" value="model is not selected or does not exist" />
+                                </node>
                               </node>
                             </node>
-                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4385949629786525879" />
                           </node>
                           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="4385949629786327004">
                             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4385949629786327005" />
@@ -13478,12 +13497,16 @@
                       <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4798874726882928412">
                         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2621228551306753798">
                           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2621228551306753799">
-                            <node role="statement" type="jetbrains.mps.lang.plugin.structure.ReportErrorStatement" id="4798874726882950228">
-                              <node role="error" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4798874726882950229">
-                                <property name="value" value="module is not selected or does not exist" />
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7645293007155484752">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7645293007155484757">
+                                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7645293007155484753">
+                                  <link role="variableDeclaration" targetNodeId="7645293007155484697" resolveInfo="errorReport" />
+                                </node>
+                                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7645293007155484760">
+                                  <property name="value" value="module is not selected or does not exist" />
+                                </node>
                               </node>
                             </node>
-                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4385949629786525883" />
                           </node>
                           <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="5234053624214203208">
                             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5234053624214203211" />
@@ -13505,12 +13528,16 @@
               <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1969840607716869230">
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3281460501247092979">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3281460501247092980">
-                    <node role="statement" type="jetbrains.mps.lang.plugin.structure.ReportErrorStatement" id="3281460501247093050">
-                      <node role="error" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3281460501247093051">
-                        <property name="value" value="can't make" />
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7645293007155484762">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7645293007155484764">
+                        <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7645293007155484763">
+                          <link role="variableDeclaration" targetNodeId="7645293007155484697" resolveInfo="errorReport" />
+                        </node>
+                        <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7645293007155484767">
+                          <property name="value" value="can't make" />
+                        </node>
                       </node>
                     </node>
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4385949629786525886" />
                   </node>
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="3281460501247093039">
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3281460501247093045">
@@ -13624,9 +13651,14 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4798874726882950256">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4798874726882950257">
-            <node role="statement" type="jetbrains.mps.lang.plugin.structure.ReportErrorStatement" id="4798874726883047612">
-              <node role="error" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4798874726883047614">
-                <link role="variableDeclaration" targetNodeId="4798874726883047595" resolveInfo="paramsReport" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7645293007155484768">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7645293007155484770">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7645293007155484773">
+                  <link role="variableDeclaration" targetNodeId="4798874726883047595" resolveInfo="paramsReport" />
+                </node>
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7645293007155484769">
+                  <link role="variableDeclaration" targetNodeId="7645293007155484697" resolveInfo="errorReport" />
+                </node>
               </node>
             </node>
           </node>
@@ -13634,6 +13666,22 @@
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4798874726883047611" />
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4798874726883047607">
               <link role="variableDeclaration" targetNodeId="4798874726883047595" resolveInfo="paramsReport" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="7645293007155484774" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="7645293007155484776">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7645293007155484777">
+            <node role="statement" type="jetbrains.mps.lang.plugin.structure.ReportErrorStatement" id="7645293007155484787">
+              <node role="error" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7645293007155484789">
+                <link role="variableDeclaration" targetNodeId="7645293007155484697" resolveInfo="errorReport" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="7645293007155484781">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="7645293007155484784" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7645293007155484780">
+              <link role="variableDeclaration" targetNodeId="7645293007155484697" resolveInfo="errorReport" />
             </node>
           </node>
         </node>

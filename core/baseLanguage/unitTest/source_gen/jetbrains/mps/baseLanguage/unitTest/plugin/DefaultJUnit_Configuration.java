@@ -8,6 +8,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.plugin.ConfigRunParameters;
@@ -27,7 +28,6 @@ import com.intellij.openapi.actionSystem.AnAction;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.IModule;
@@ -62,38 +62,34 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
   }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
-    final StringBuilder error = new StringBuilder();
+    StringBuilder error = new StringBuilder();
     {
+      final Wrappers._T<String> errorReport = new Wrappers._T<String>(null);
       if (DefaultJUnit_Configuration.this.getStateObject().type != null) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.METHOD) {
               if (ListSequence.fromList(TestRunUtil.getValues(DefaultJUnit_Configuration.this.getStateObject().method, DefaultJUnit_Configuration.this.getStateObject().methods)).isEmpty()) {
-                error.append("methods list is empty").append("\n");
-                return;
+                errorReport.value = "methods list is empty";
               }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.NODE) {
               if (ListSequence.fromList(TestRunUtil.getValues(DefaultJUnit_Configuration.this.getStateObject().node, DefaultJUnit_Configuration.this.getStateObject().nodes)).isEmpty()) {
-                error.append("classes list is empty").append("\n");
-                return;
+                errorReport.value = "classes list is empty";
               }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODEL) {
               if (DefaultJUnit_Configuration.this.getStateObject().model == null) {
-                error.append("model is not selected or does not exist").append("\n");
-                return;
+                errorReport.value = "model is not selected or does not exist";
               }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
               if (DefaultJUnit_Configuration.this.getStateObject().module == null) {
-                error.append("module is not selected or does not exist").append("\n");
-                return;
+                errorReport.value = "module is not selected or does not exist";
               }
             }
           }
         });
         if (DefaultJUnit_Configuration.this.getStateObject().type != JUnitRunTypes.PROJECT) {
           if (!(DefaultJUnit_Configuration.this.getStateObject().compileInMPS) && DefaultJUnit_Configuration.this.getStateObject().myParams != null && DefaultJUnit_Configuration.this.getStateObject().myParams.getMake()) {
-            error.append("can't make").append("\n");
-            return;
+            errorReport.value = "can't make";
           }
         }
       }
@@ -103,7 +99,11 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
       }
       String paramsReport = DefaultJUnit_Configuration.this.getStateObject().myParams.getErrorReport();
       if (paramsReport != null) {
-        error.append(paramsReport).append("\n");
+        errorReport.value = paramsReport;
+      }
+
+      if (errorReport.value != null) {
+        error.append(errorReport.value).append("\n");
       }
     }
     if (error.length() != 0) {
