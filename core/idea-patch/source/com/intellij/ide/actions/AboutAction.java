@@ -32,6 +32,7 @@ import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.util.ImageLoader;
 import com.intellij.util.ui.UIUtil;
+import com.sun.tools.javac.util.Log;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathManager;
 
@@ -52,7 +53,7 @@ import org.jetbrains.annotations.NonNls;
 
 public class AboutAction extends AnAction {
   @NonNls
-    private static final String COMPANY_URL = "http://www.jetbrains.com/";
+  private static final String COMPANY_URL = "http://www.jetbrains.com/";
 
   private static final int TEXT_HEIGHT = 140;
   private static final int TEXT_WIDTH = 398;
@@ -83,10 +84,10 @@ public class AboutAction extends AnAction {
     if (appInfo.showLicenseeInfo()) {
       Image image = ImageLoader.loadFromResource(appInfo.getAboutLogoUrl());
 
-      Image newImage = transform(image);
+      assert image != null;
 
-      final InfoSurface infoSurface = new InfoSurface(newImage);
-      infoSurface.setPreferredSize(new Dimension(newImage.getWidth(null), newImage.getHeight(null)));
+      final InfoSurface infoSurface = new InfoSurface(image);
+      infoSurface.setPreferredSize(new Dimension(image.getWidth(null), image.getHeight(null)));
       mainPanel.add(infoSurface, BorderLayout.NORTH);
       mainPanel.add(new LicensesList(), BorderLayout.CENTER);
       closeListenerOwner = infoSurface;
@@ -141,24 +142,6 @@ public class AboutAction extends AnAction {
     dialog.setVisible(true);
   }
 
-  private static Image transform(Image image) {
-    int w = image.getWidth(null);
-
-    int[] grabbed = new int[w * (IMAGE_HEADER_HEIGHT + TEXT_HEIGHT)];
-    try {
-      new PixelGrabber(image, 0, 0, w, IMAGE_HEADER_HEIGHT, grabbed, 0, w).grabPixels();
-      for (int i = IMAGE_HEADER_HEIGHT; i < IMAGE_HEADER_HEIGHT + TEXT_HEIGHT; i++) {
-        System.arraycopy(grabbed, (IMAGE_HEADER_HEIGHT - 1) * w, grabbed, i * w, w);
-      }
-    } catch (InterruptedException e) {
-      return image;
-    }
-
-
-    MemoryImageSource mis = new MemoryImageSource(w, IMAGE_HEADER_HEIGHT + TEXT_HEIGHT, grabbed, 0, w);
-    return Toolkit.getDefaultToolkit().createImage(mis);
-  }
-
   private static class AboutBoxLine {
     private String myText;
     private boolean myBold;
@@ -207,9 +190,7 @@ public class AboutAction extends AnAction {
     public InfoSurface(Image image) {
       myImage = image;
 
-
-      myAlpha = 0f;
-      setOpaque(true);
+      setOpaque(false);
       //col = new Color(0xfa, 0xfa, 0xfa, 200);
       col = Color.white;
       linkCol = Color.blue;
@@ -265,24 +246,28 @@ public class AboutAction extends AnAction {
       });
     }
 
-    public void render(int w, int h, Graphics2D g2) {
-      AlphaComposite ac = AlphaComposite.getInstance(AlphaComposite.SRC_OVER, myAlpha);
-      g2.setComposite(ac);
+    @Override
+    protected void paintChildren(Graphics g) {
+      super.paintChildren(g);
+      Graphics2D g2 = (Graphics2D) g;
 
-      //noinspection HardCodedStringLiteral
       Font labelFont = UIUtil.getLabelFont();
-      g2.setPaint(col);
-      g2.drawImage(myImage, 0, 0, this);
-      g2.setColor(col);
-      int startX = (int) (-300 * (1.0f - myAlpha) + 1);
-      TextRenderer renderer = new TextRenderer(startX, IMAGE_HEADER_HEIGHT, TEXT_WIDTH, TEXT_HEIGHT, g2);
-      g2.setComposite(AlphaComposite.Src);
-      myFont = labelFont.deriveFont(Font.PLAIN, 10);
-      myBoldFont = labelFont.deriveFont(Font.BOLD, 11);
-      try {
-        renderer.render(5, 0, myLines);
-      } catch (TextRenderer.OverflowException _) {
-        // ignore
+      for (int labelSize = 10; labelSize != 6; labelSize -= 1) {
+        g2.setPaint(col);
+        g2.drawImage(myImage, 0, 0, this);
+
+        g2.setColor(col);
+        TextRenderer renderer = new TextRenderer(2, 145, 398, 120, g2);
+        g2.setComposite(AlphaComposite.Src);
+        myFont = labelFont.deriveFont(Font.PLAIN, labelSize);
+        myBoldFont = labelFont.deriveFont(Font.BOLD, labelSize + 1);
+        try {
+          renderer.render(75, 0, myLines);
+          break;
+        }
+        catch (TextRenderer.OverflowException _) {
+          // ignore
+        }
       }
     }
 
