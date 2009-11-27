@@ -129,7 +129,7 @@ public class NodeEditor implements IEditor {
 
   public MPSEditorState saveState(@NotNull FileEditorStateLevel level) {
     MyFileEditorState result = new MyFileEditorState();
-    if (getEditorContext() != null) {
+    if (getEditorContext() != null && !getEditorContext().getModel().isDisposed()) {
       boolean full = level == FileEditorStateLevel.UNDO || level == FileEditorStateLevel.FULL;
       result.myMemento = getEditorContext().createMemento(full);
       NodeEditorComponent editorComponent = (NodeEditorComponent) getCurrentEditorComponent();

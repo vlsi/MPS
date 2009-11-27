@@ -374,8 +374,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       final boolean[] messagesChangedContainer = {false};
       Runnable runnable = new Runnable() {
         public void run() {
-          SNode node = editor.getEditedNode();
-          if (node == null) return;
+          SNode node = editor.getEditedNode();          
+          if (node == null || node.isDisposed()) return;
           owners[0] = checker.getOwner(node);
           messages.addAll(checker.createMessages(node, editor.getOperationContext(), events, wasCheckedOnce));
           messagesChangedContainer[0] = messagesChangedContainer[0] || checker.messagesChanged();
