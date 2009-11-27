@@ -29795,7 +29795,7 @@
           <link role="constructorDeclaration" targetNodeId="55.~BaseDialog.&lt;init&gt;(java.awt.Frame,java.lang.String)" resolveInfo="BaseDialog" />
           <link role="baseMethodDeclaration" targetNodeId="1225382621199" resolveInfo="IntroduceVariableDialog" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1225114173607">
-            <property name="value" value="Introduce Dield" />
+            <property name="value" value="Introduce Field" />
           </node>
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1225382935984">
             <link role="variableDeclaration" targetNodeId="1225114156851" resolveInfo="frame" />
