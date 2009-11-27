@@ -128,8 +128,10 @@ public class JavaCompiler {
         String pattern;
         if ("".equals(packageNameWithoutPrefix) && myPrefix.endsWith(".")) {
           pattern = myPrefix.substring(0, myPrefix.length() - 1);
-        } else {
+        } else if ("".equals(packageNameWithoutPrefix) || "".equals(myPrefix) || myPrefix.endsWith(".")) {
           pattern = myPrefix + packageNameWithoutPrefix;
+        } else {
+          pattern = myPrefix + "." + packageNameWithoutPrefix;
         }
         if (!((pattern).equals(packageNameFromFile))) {
           LOG.error("package name in a source file does not correpond to file path");

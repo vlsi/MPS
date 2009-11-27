@@ -274,7 +274,7 @@ public class ReferentsCreator {
             //inner class
             isTopLevel = false;
             MemberTypeBinding memberTypeBinding = (MemberTypeBinding) binding;
-            SourceTypeBinding enclosingClass = memberTypeBinding.enclosingType;
+            SourceTypeBinding enclosingClass = memberTypeBinding.enclosingType;   //todo enclosing interface?
             ClassConcept classConcept = (ClassConcept) myReferentsCreator.myBindingMap.get(enclosingClass);
             classifier.setNonStatic(!memberTypeBinding.isStatic());
             classConcept.addStaticInnerClassifiers(classifier);

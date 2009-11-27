@@ -30,6 +30,9 @@
     <entry path="${mps_home}/core/languageDesign/plugin/classes" include="false" />
     <entry path="${mps_home}/core/idea-patch/classes" include="false" />
     <entry path="${mps_home}/core/languageDesign/core/classes" include="false" />
+    <entry path="${mps_home}/core/languageDesign/structure/classes" include="false" />
+    <entry path="${mps_home}/core/languageDesign/behavior/classes" include="false" />
+    <entry path="${mps_home}/core/languageDesign/editor/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath>
     <entry path="${language_descriptor}/runtime/classes" />
