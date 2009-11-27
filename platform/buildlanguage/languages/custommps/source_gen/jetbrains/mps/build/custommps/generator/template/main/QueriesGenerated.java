@@ -207,14 +207,6 @@ public class QueriesGenerated {
     return MPSBuild_Behavior.call_getScriptsFolder_1241536330057(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_8235068106207260973(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSBuild_Behavior.call_getScriptsFolder_1241536330057(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_8235068106207261006(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return MPSBuild_Behavior.call_getScriptsFolder_1241536330057(_context.getNode());
-  }
-
   public static Object referenceMacro_GetReferent_1233931081841(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode output = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "UndeclaredVariableReferenceToVariable");
     if (output == null) {
