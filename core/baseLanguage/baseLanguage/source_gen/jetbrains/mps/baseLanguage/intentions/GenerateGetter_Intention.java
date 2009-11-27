@@ -12,6 +12,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class GenerateGetter_Intention extends GenerateIntention {
   public GenerateGetter_Intention() {
@@ -55,7 +57,7 @@ public class GenerateGetter_Intention extends GenerateIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     List<SNode> fields = SLinkOperations.getTargets(classConcept, "field", true);
-    for (SNode field : fields) {
+    for (final SNode field : fields) {
       final String getterName = "get" + NameUtil.capitalize(SPropertyOperations.getString(field, "name"));
       if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {
@@ -64,15 +66,10 @@ public class GenerateGetter_Intention extends GenerateIntention {
       })) {
         continue;
       }
-      SNode getter = SLinkOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-      SPropertyOperations.set(getter, "name", getterName);
-      SLinkOperations.setTarget(getter, "returnType", SNodeOperations.copyNode(SLinkOperations.getTarget(field, "type", true)), true);
-      SLinkOperations.setNewChild(getter, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-      SNode returnStatement = SLinkOperations.addNewChild(SLinkOperations.getTarget(getter, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ReturnStatement");
-      SNode dotExpression = SLinkOperations.setNewChild(returnStatement, "expression", "jetbrains.mps.baseLanguage.structure.DotExpression");
-      SLinkOperations.setNewChild(dotExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
-      SNode fieldRef = SLinkOperations.setNewChild(dotExpression, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation");
-      SLinkOperations.setTarget(fieldRef, "fieldDeclaration", field, false);
+      // Method creation begins 
+      Pair p;
+      final SNode thisExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
+      SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_15().createNode(SLinkOperations.getTarget(field, "type", true), thisExpression, field, getterName));
     }
   }
 

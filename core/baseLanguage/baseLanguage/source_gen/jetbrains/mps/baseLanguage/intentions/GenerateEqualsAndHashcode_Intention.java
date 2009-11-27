@@ -42,7 +42,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
     final SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     final List<SNode> fields = SLinkOperations.getTargets(classConcept, "field", true);
     final SNode thisExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
-    final SNode equalsDeclaration = new _Quotations.QuotationClass_10().createNode(thisExpression, thisExpression, classConcept, classConcept);
+    final SNode equalsDeclaration = new _Quotations.QuotationClass_9().createNode(thisExpression, thisExpression, classConcept, classConcept);
     SNode thatDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).last(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true);
 
     SNode fieldReferenceOperation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
@@ -56,40 +56,37 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
       SLinkOperations.addChild(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", checkStmt);
     }
     SLinkOperations.addNewChild(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.Statement");
-    SLinkOperations.addChild(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", new _Quotations.QuotationClass_16().createNode());
-    SLinkOperations.addChild(equalsDeclaration, "annotation", new _Quotations.QuotationClass_13().createNode());
+    SLinkOperations.addChild(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", new _Quotations.QuotationClass_20().createNode());
     SLinkOperations.addChild(classConcept, "method", equalsDeclaration);
     // Method equals() is generated, now hashCode method body generation begins 
-    SNode hashCodeDeclaration = SLinkOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-    SPropertyOperations.set(hashCodeDeclaration, "name", "hashCode");
-    SLinkOperations.setNewChild(hashCodeDeclaration, "returnType", "jetbrains.mps.baseLanguage.structure.IntegerType");
+    SNode hashCodeDeclaration = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_19().createNode());
     SNode resultDeclaration = new _Quotations.QuotationClass_5().createNode();
     SNode resultReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(resultReference, "variableDeclaration", SLinkOperations.getTarget(resultDeclaration, "localVariableDeclaration", true), false);
-    SLinkOperations.setNewChild(hashCodeDeclaration, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
     SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", resultDeclaration);
-    for (SNode field : fields) {
+    int i = 239;
+    com.intellij.openapi.util.Pair p;
+    for (final SNode field : fields) {
       SLinkOperations.setTarget(fieldReferenceOperation, "fieldDeclaration", field, false);
-      Pair<Object, Object> p;
       SNode checkStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Statement", null);
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.IntegerType")) {
-        checkStatement = new _Quotations.QuotationClass_7().createNode(fieldReferenceOperation, resultReference, resultReference, resultReference, resultReference);
+        checkStatement = new _Quotations.QuotationClass_18().createNode(resultReference, resultReference, thisExpression, field);
         SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", checkStatement);
       }
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.FloatType")) {
-        checkStatement = new _Quotations.QuotationClass_8().createNode(fieldReferenceOperation, fieldReferenceOperation, resultReference, fieldReferenceOperation, resultReference);
+        checkStatement = new _Quotations.QuotationClass_7().createNode(fieldReferenceOperation, resultReference, fieldReferenceOperation, resultReference);
         SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", checkStatement);
       }
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.StringType")) {
-        checkStatement = new _Quotations.QuotationClass_9().createNode(resultReference, resultReference, fieldReferenceOperation, fieldReferenceOperation, fieldReferenceOperation);
+        checkStatement = new _Quotations.QuotationClass_8().createNode(resultReference, resultReference, fieldReferenceOperation, fieldReferenceOperation, fieldReferenceOperation);
         SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", checkStatement);
       }
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
-        checkStatement = new _Quotations.QuotationClass_14().createNode(resultReference, fieldReferenceOperation, fieldReferenceOperation, fieldReferenceOperation, resultReference);
+        checkStatement = new _Quotations.QuotationClass_12().createNode(resultReference, fieldReferenceOperation, fieldReferenceOperation, fieldReferenceOperation, resultReference);
         SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", checkStatement);
       }
       if (SNodeOperations.isInstanceOf(field, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-        checkStatement = new _Quotations.QuotationClass_15().createNode(resultReference, fieldReferenceOperation, fieldReferenceOperation, fieldReferenceOperation, fieldReferenceOperation, resultReference);
+        checkStatement = new _Quotations.QuotationClass_13().createNode(resultReference, fieldReferenceOperation, fieldReferenceOperation, fieldReferenceOperation, fieldReferenceOperation, resultReference);
       }
     }
     SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", new _Quotations.QuotationClass_6().createNode(resultReference));

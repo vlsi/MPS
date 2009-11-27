@@ -5,13 +5,14 @@ package jetbrains.mps.baseLanguage.intentions;
 import jetbrains.mps.intentions.GenerateIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import com.intellij.openapi.util.Pair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class GenerateSetter_Intention extends GenerateIntention {
@@ -30,27 +31,26 @@ public class GenerateSetter_Intention extends GenerateIntention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    List<SNode> fields = SLinkOperations.getTargets(classConcept, "field", true);
+    List<SNode> fields = SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "field", true);
     if (ListSequence.fromList(fields).isEmpty()) {
       return false;
     }
-    boolean hasAllSetters = true;
-    for (SNode field : fields) {
+    boolean allSettersImplemented = true;
+    for (SNode fieldDeclaration : fields) {
+      final String setterName = "set" + NameUtil.capitalize(SPropertyOperations.getString(fieldDeclaration, "name"));
       boolean fieldHasSetter = false;
-      final String setterName = "set" + NameUtil.capitalize(SPropertyOperations.getString(field, "name"));
-      if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
+      if (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {
-          return setterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count() == 1;
+          return setterName.equals(SPropertyOperations.getString(method, "name"));
         }
       })) {
         fieldHasSetter = true;
       }
       if (!(fieldHasSetter)) {
-        hasAllSetters = false;
+        allSettersImplemented = false;
       }
     }
-    return !(hasAllSetters);
+    return !(allSettersImplemented);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
@@ -59,7 +59,7 @@ public class GenerateSetter_Intention extends GenerateIntention {
     if (ListSequence.fromList(fields).isEmpty()) {
       return;
     }
-    for (SNode field : fields) {
+    for (final SNode field : fields) {
       final String setterName = "set" + NameUtil.capitalize(SPropertyOperations.getString(field, "name"));
       boolean setterIsAbsent = true;
       if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
@@ -72,22 +72,10 @@ public class GenerateSetter_Intention extends GenerateIntention {
       if (!(setterIsAbsent)) {
         continue;
       }
-      SNode setter = SLinkOperations.addNewChild(classConcept, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-      SPropertyOperations.set(setter, "name", setterName);
-      SLinkOperations.setNewChild(setter, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
-      SNode parameterDeclaration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
-      SLinkOperations.setTarget(parameterDeclaration, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(field, "type", true)), true);
-      SPropertyOperations.set(parameterDeclaration, "name", SPropertyOperations.getString(field, "name"));
-      SLinkOperations.addChild(setter, "parameter", parameterDeclaration);
-      SLinkOperations.setNewChild(setter, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-      SNode expressionStatement = SLinkOperations.addNewChild(SLinkOperations.getTarget(setter, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
-      SNode assignmentExpression = SLinkOperations.setNewChild(expressionStatement, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
-      SNode dotExpression = SLinkOperations.setNewChild(assignmentExpression, "lValue", "jetbrains.mps.baseLanguage.structure.DotExpression");
-      SLinkOperations.setNewChild(dotExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
-      SNode fieldRef = SLinkOperations.setNewChild(dotExpression, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation");
-      SLinkOperations.setTarget(fieldRef, "fieldDeclaration", field, false);
-      SNode parameterReference = SLinkOperations.setNewChild(assignmentExpression, "rValue", "jetbrains.mps.baseLanguage.structure.ParameterReference");
-      SLinkOperations.setTarget(parameterReference, "variableDeclaration", parameterDeclaration, false);
+      Pair<String, String> p;
+      final SNode thisExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
+      // Method creation begins 
+      SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_14().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), SPropertyOperations.getString(field, "name"), setterName));
     }
   }
 
