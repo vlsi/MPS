@@ -56,10 +56,10 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
       SLinkOperations.addChild(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", checkStmt);
     }
     SLinkOperations.addNewChild(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.Statement");
-    SLinkOperations.addChild(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", new _Quotations.QuotationClass_20().createNode());
+    SLinkOperations.addChild(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", new _Quotations.QuotationClass_23().createNode());
     SLinkOperations.addChild(classConcept, "method", equalsDeclaration);
     // Method equals() is generated, now hashCode method body generation begins 
-    SNode hashCodeDeclaration = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_19().createNode());
+    SNode hashCodeDeclaration = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_22().createNode());
     SNode resultDeclaration = new _Quotations.QuotationClass_5().createNode();
     SNode resultReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(resultReference, "variableDeclaration", SLinkOperations.getTarget(resultDeclaration, "localVariableDeclaration", true), false);
@@ -70,7 +70,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
       SLinkOperations.setTarget(fieldReferenceOperation, "fieldDeclaration", field, false);
       SNode checkStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Statement", null);
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.IntegerType")) {
-        checkStatement = new _Quotations.QuotationClass_18().createNode(resultReference, resultReference, thisExpression, field);
+        checkStatement = new _Quotations.QuotationClass_21().createNode(resultReference, resultReference, thisExpression, field);
         SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", checkStatement);
       }
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.FloatType")) {
@@ -82,11 +82,11 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
         SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", checkStatement);
       }
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
-        checkStatement = new _Quotations.QuotationClass_12().createNode(resultReference, fieldReferenceOperation, fieldReferenceOperation, fieldReferenceOperation, resultReference);
+        checkStatement = new _Quotations.QuotationClass_14().createNode(resultReference, fieldReferenceOperation, fieldReferenceOperation, fieldReferenceOperation, resultReference);
         SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", checkStatement);
       }
       if (SNodeOperations.isInstanceOf(field, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-        checkStatement = new _Quotations.QuotationClass_13().createNode(resultReference, fieldReferenceOperation, fieldReferenceOperation, fieldReferenceOperation, fieldReferenceOperation, resultReference);
+        checkStatement = new _Quotations.QuotationClass_15().createNode(resultReference, fieldReferenceOperation, fieldReferenceOperation, fieldReferenceOperation, fieldReferenceOperation, resultReference);
       }
     }
     SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", new _Quotations.QuotationClass_6().createNode(resultReference));
