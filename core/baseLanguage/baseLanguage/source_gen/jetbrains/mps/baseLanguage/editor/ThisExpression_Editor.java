@@ -16,7 +16,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.structure.ThisExpression;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
@@ -144,7 +144,7 @@ public class ThisExpression_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition6954_0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "classConcept", false) != null);
+    return node.getReference(ThisExpression.CLASS_CONCEPT) != null;
   }
 
   public static class _Inline6954_0 extends InlineCellProvider {

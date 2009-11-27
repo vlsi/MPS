@@ -2136,15 +2136,21 @@
       <property name="vertical" value="true" />
       <node role="alternationCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="1182954960782">
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1182954960783">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1182955103995">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977956548">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203977963490">
-                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1182955103996" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1182955107601">
-                  <link role="link" targetNodeId="17.1182955020723" />
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1675282048033998686">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1675282048034002386">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1675282048033998693">
+                <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1675282048033998691">
+                  <node role="leftExpression" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="1675282048033998687" />
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1675282048034002384">
+                  <link role="baseMethodDeclaration" targetNodeId="20.~SNode.getReference(java.lang.String):jetbrains.mps.smodel.SReference" resolveInfo="getReference" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1675282048034002390">
+                    <link role="classifier" targetNodeId="68.~ThisExpression" resolveInfo="ThisExpression" />
+                    <link role="variableDeclaration" targetNodeId="68.~ThisExpression.CLASS_CONCEPT" resolveInfo="CLASS_CONCEPT" />
+                  </node>
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1182955109649" />
+              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1675282048034002389" />
             </node>
           </node>
         </node>
