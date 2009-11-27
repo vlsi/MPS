@@ -151,7 +151,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6998207564469074349">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6998207564469074350">
-                <link role="baseMethodDeclaration" targetNodeId="5.~JavaCompiler.&lt;init&gt;(jetbrains.mps.project.Solution,java.io.File)" resolveInfo="JavaCompiler" />
+                <link role="baseMethodDeclaration" targetNodeId="5.~JavaCompiler.&lt;init&gt;(jetbrains.mps.project.IModule,java.io.File,boolean)" resolveInfo="JavaCompiler" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6998207564469074357">
                   <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="6998207564469074358" />
                   <node role="operation" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation" id="6998207564469074359">
@@ -160,6 +160,9 @@
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6998207564469074352">
                   <link role="variableDeclaration" targetNodeId="6998207564469072646" resolveInfo="chosenFile" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="4221660753051801908">
+                  <property name="value" value="true" />
                 </node>
               </node>
             </node>

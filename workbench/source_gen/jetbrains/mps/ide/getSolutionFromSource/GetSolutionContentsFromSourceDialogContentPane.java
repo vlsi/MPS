@@ -176,7 +176,7 @@ public class GetSolutionContentsFromSourceDialogContentPane extends JPanel {
 
   /*package*/ void onOk() {
     File chosenFile = new File(myThis.getSourcePath());
-    JavaCompiler javaCompiler = new JavaCompiler(myThis.getSolution(), chosenFile);
+    JavaCompiler javaCompiler = new JavaCompiler(myThis.getSolution(), chosenFile, true);
     javaCompiler.compile();
   }
 }

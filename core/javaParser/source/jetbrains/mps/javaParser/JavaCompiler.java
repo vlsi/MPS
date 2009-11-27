@@ -31,16 +31,13 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.compiler.MPSNameEnvironment;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.javaParser.UIComponents.MyDialog;
 
-import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
-import javax.swing.JDialog;
 import java.util.*;
 import java.io.*;
 
@@ -59,23 +56,25 @@ public class JavaCompiler {
   private Set<ICompilationUnit> myProcessedCompilationUnits = new HashSet<ICompilationUnit>();
   private List<CompilationUnitDeclaration> myCompilationUnitDeclarations = new ArrayList<CompilationUnitDeclaration>();
   private CompositeClassPathItem myClassPathItem;
-  private Solution mySolution;
+  private IModule myModule;
   private List<CompilationResult> myCompilationResults = new ArrayList<CompilationResult>();
   private File mySourceDir;
   private Map<String, SModel> myPackageFQNamesToModels = new HashMap<String, SModel>();
   private Set<String> myModelsToCreate = new HashSet<String>();
   private String myPrefix = null;
 
-  public JavaCompiler(Solution solution, File sourceDir) {
-    mySolution = solution;
+  public JavaCompiler(IModule module, File sourceDir, boolean setOutputPath) {
+    myModule = module;
     mySourceDir = sourceDir;
-    initClassPathItem(solution);
+    initClassPathItem(module);
     addSourceFromDirectory(mySourceDir, "");
     File generalSourceDirectory = getGeneralSourceDirectory();
     if (generalSourceDirectory != null) {
-      mySolution.getSolutionDescriptor().setOutputPath(generalSourceDirectory.getPath());
+      if (myModule instanceof Solution) {
+        ((Solution) myModule).getSolutionDescriptor().setOutputPath(generalSourceDirectory.getPath());
+      }
     }
-    mySolution.save();
+    myModule.save();
   }
 
   private File getGeneralSourceDirectory() {
@@ -188,8 +187,8 @@ public class JavaCompiler {
     SModelFqName sModelFqName = SModelFqName.fromString(fqName);
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(sModelFqName);
     if (modelDescriptor != null) {
-      if (!mySolution.getOwnModelDescriptors().contains(modelDescriptor)) {
-        LOG.error("model descriptor with fq name " + fqName + " is not owned by module " + mySolution.getModuleFqName());
+      if (!myModule.getOwnModelDescriptors().contains(modelDescriptor)) {
+        LOG.error("model descriptor with fq name " + fqName + " is not owned by module " + myModule.getModuleFqName());
         return;
       }
       myPackageFQNamesToModels.put(fqName, modelDescriptor.getSModel());
@@ -207,7 +206,7 @@ public class JavaCompiler {
 
   private SModel createModel(SModelFqName modelFqName) {
     SModelDescriptor modelDescriptor =
-      mySolution.createModel(modelFqName, mySolution.getSModelRoots().get(0));//todo get model root from UI
+      myModule.createModel(modelFqName, myModule.getSModelRoots().get(0));//todo get model root from UI
     return modelDescriptor.getSModel();
   }
 
@@ -279,8 +278,8 @@ public class JavaCompiler {
               cpe = null;
             }
             if (cpe != null) {
-              mySolution.getModuleDescriptor().getClassPaths().add(cpe);
-              mySolution.save();
+              myModule.getModuleDescriptor().getClassPaths().add(cpe);
+              myModule.save();
             }
           }
           return true;
