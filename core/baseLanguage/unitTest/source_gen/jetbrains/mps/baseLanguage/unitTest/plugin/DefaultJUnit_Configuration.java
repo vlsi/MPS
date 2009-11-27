@@ -70,18 +70,22 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.METHOD) {
               if (ListSequence.fromList(TestRunUtil.getValues(DefaultJUnit_Configuration.this.getStateObject().method, DefaultJUnit_Configuration.this.getStateObject().methods)).isEmpty()) {
                 error.append("methods list is empty").append("\n");
+                return;
               }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.NODE) {
               if (ListSequence.fromList(TestRunUtil.getValues(DefaultJUnit_Configuration.this.getStateObject().node, DefaultJUnit_Configuration.this.getStateObject().nodes)).isEmpty()) {
                 error.append("classes list is empty").append("\n");
+                return;
               }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODEL) {
               if (DefaultJUnit_Configuration.this.getStateObject().model == null) {
                 error.append("model is not selected or does not exist").append("\n");
+                return;
               }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
               if (DefaultJUnit_Configuration.this.getStateObject().module == null) {
                 error.append("module is not selected or does not exist").append("\n");
+                return;
               }
             }
           }
@@ -89,6 +93,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
         if (DefaultJUnit_Configuration.this.getStateObject().type != JUnitRunTypes.PROJECT) {
           if (!(DefaultJUnit_Configuration.this.getStateObject().compileInMPS) && DefaultJUnit_Configuration.this.getStateObject().myParams != null && DefaultJUnit_Configuration.this.getStateObject().myParams.getMake()) {
             error.append("can't make").append("\n");
+            return;
           }
         }
       }

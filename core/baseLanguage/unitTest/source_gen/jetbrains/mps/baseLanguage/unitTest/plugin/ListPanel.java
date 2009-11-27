@@ -24,7 +24,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
-import jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons;
+import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
 import jetbrains.mps.workbench.dialogs.project.components.parts.UiListsFactory;
 import javax.swing.JLabel;
 
@@ -122,8 +122,8 @@ public class ListPanel extends JPanel {
         return ListSequence.fromList(ListPanel.this.values).indexOf(resultNode);
       }
     };
-    AnAction remove = new AnAction("Remove", null, Icons.REMOVE) {
-      public void actionPerformed(AnActionEvent p0) {
+    AnAction remove = new ListRemoveAction(this.list) {
+      protected void doRemove(AnActionEvent p0) {
         for (Object value : ListPanel.this.list.getSelectedValues()) {
           for (SNode node : ListPanel.this.values) {
             if (ListPanel.this.getPresentation(node).equals(value)) {
