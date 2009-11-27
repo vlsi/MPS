@@ -11,8 +11,8 @@ import jetbrains.mps.project.MPSProject;
 import javax.swing.ButtonGroup;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import jetbrains.mps.smodel.SNode;
 import org.jdesktop.beansbinding.AutoBinding;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -41,31 +41,25 @@ public class JUnitConfigEditor extends JPanel {
   private JbRadioButton myIsModel0;
   private JbRadioButton myIsClass0;
   private JbRadioButton myIsMethod0;
-  private JPanel myComponent2;
+  private JPanel myMainPanel0;
   private JPanel myProjectPanel0;
-  private JLabel myComponent3;
-  private JTextField myComponent4;
+  private JLabel myComponent2;
+  private JTextField myComponent3;
   private JPanel myModulePanel0;
-  private JLabel myComponent5;
+  private JLabel myComponent4;
   private ModuleChooserComponent myModuleName0;
   private JPanel myModelPanel0;
-  private JLabel myComponent6;
+  private JLabel myComponent5;
   private ModelChooserComponent myModelName0;
-  private JPanel myTestPanel0;
-  private JLabel myComponent7;
-  private NodeChooserComponent myNodeName0;
-  private JPanel myMethodPanel0;
-  private JLabel myComponent8;
-  private NodeChooserComponent myNodeNameWithMethod0;
-  private JLabel myComponent9;
-  private MethodChooserComponent myMethodName0;
+  private ListPanel myTestCases0;
+  private ListPanel myTestMethods0;
   private JavaConfigOptions myJavaOptions0;
   private MPSProject myProject;
   private ButtonGroup myGroup;
   private SModel myModel;
   private IModule myModule;
-  private SNode myNode;
-  private SNode myMethod;
+  private List<SNode> myNodes;
+  private List<SNode> myMethods;
   public List<AutoBinding> myBindings = ListSequence.fromList(new ArrayList<AutoBinding>());
   private Events myEvents = new Events(null) {
     {
@@ -80,12 +74,18 @@ public class JUnitConfigEditor extends JPanel {
     JUnitConfigEditor component = this;
     myThis.setProject(MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext()));
     myThis.setGroup(new ButtonGroup());
+    myThis.setNodes(new ArrayList<SNode>());
+    myThis.setMethods(new ArrayList<SNode>());
     component.setLayout(new GridBagLayout());
     component.add(this.createComponent0(), LayoutUtil.createFieldConstraints(0));
     component.add(this.createComponent7(), LayoutUtil.createPanelConstraints(1));
-    component.add(this.createComponent25(), LayoutUtil.createPanelConstraints(2));
+    component.add(this.createComponent17(), LayoutUtil.createPanelConstraints(1));
+    component.add(this.createComponent18(), LayoutUtil.createPanelConstraints(1));
+    component.add(this.createComponent19(), LayoutUtil.createPanelConstraints(2));
     this.myEvents.initialize();
     myThis.myJavaOptions0.setMakeBeforeRun(true);
+    myThis.myTestCases0.init(myThis.getNodes(), false);
+    myThis.myTestMethods0.init(myThis.getMethods(), true);
   }
 
   public Events getEvents() {
@@ -200,14 +200,12 @@ public class JUnitConfigEditor extends JPanel {
 
   private JPanel createComponent7() {
     JPanel component = new JPanel();
-    this.myComponent2 = component;
+    this.myMainPanel0 = component;
     component.setBorder(new TitledBorder("Test"));
     component.setLayout(new GridBagLayout());
     component.add(this.createComponent8(), LayoutUtil.createPanelConstraints(0));
     component.add(this.createComponent11(), LayoutUtil.createPanelConstraints(0));
     component.add(this.createComponent14(), LayoutUtil.createPanelConstraints(0));
-    component.add(this.createComponent17(), LayoutUtil.createPanelConstraints(0));
-    component.add(this.createComponent20(), LayoutUtil.createPanelConstraints(0));
     return component;
   }
 
@@ -222,14 +220,14 @@ public class JUnitConfigEditor extends JPanel {
 
   private JLabel createComponent9() {
     JLabel component = new JLabel();
-    this.myComponent3 = component;
+    this.myComponent2 = component;
     component.setText("Project:");
     return component;
   }
 
   private JTextField createComponent10() {
     JTextField component = new JTextField();
-    this.myComponent4 = component;
+    this.myComponent3 = component;
     component.setText(myThis.getProject().getComponent(Project.class).getName());
     component.setEditable(false);
     return component;
@@ -246,7 +244,7 @@ public class JUnitConfigEditor extends JPanel {
 
   private JLabel createComponent12() {
     JLabel component = new JLabel();
-    this.myComponent5 = component;
+    this.myComponent4 = component;
     component.setText("Module:");
     return component;
   }
@@ -273,7 +271,7 @@ public class JUnitConfigEditor extends JPanel {
 
   private JLabel createComponent15() {
     JLabel component = new JLabel();
-    this.myComponent6 = component;
+    this.myComponent5 = component;
     component.setText("Model:");
     return component;
   }
@@ -289,25 +287,10 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JPanel createComponent17() {
-    JPanel component = new JPanel();
-    this.myTestPanel0 = component;
+  private ListPanel createComponent17() {
+    ListPanel component = new ListPanel();
+    this.myTestCases0 = component;
     component.setLayout(new GridBagLayout());
-    component.add(this.createComponent18(), LayoutUtil.createLabelConstraints(0));
-    component.add(this.createComponent19(), LayoutUtil.createPanelConstraints(1));
-    return component;
-  }
-
-  private JLabel createComponent18() {
-    JLabel component = new JLabel();
-    this.myComponent7 = component;
-    component.setText("Class:");
-    return component;
-  }
-
-  private NodeChooserComponent createComponent19() {
-    NodeChooserComponent component = new NodeChooserComponent();
-    this.myNodeName0 = component;
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         myThis.onNodeChange();
@@ -316,45 +299,10 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JPanel createComponent20() {
-    JPanel component = new JPanel();
-    this.myMethodPanel0 = component;
+  private ListPanel createComponent18() {
+    ListPanel component = new ListPanel();
+    this.myTestMethods0 = component;
     component.setLayout(new GridBagLayout());
-    component.add(this.createComponent21(), LayoutUtil.createLabelConstraints(0));
-    component.add(this.createComponent22(), LayoutUtil.createPanelConstraints(1));
-    component.add(this.createComponent23(), LayoutUtil.createLabelConstraints(2));
-    component.add(this.createComponent24(), LayoutUtil.createPanelConstraints(3));
-    return component;
-  }
-
-  private JLabel createComponent21() {
-    JLabel component = new JLabel();
-    this.myComponent8 = component;
-    component.setText("Class:");
-    return component;
-  }
-
-  private NodeChooserComponent createComponent22() {
-    NodeChooserComponent component = new NodeChooserComponent();
-    this.myNodeNameWithMethod0 = component;
-    component.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent event) {
-        myThis.onMainNodeChange();
-      }
-    });
-    return component;
-  }
-
-  private JLabel createComponent23() {
-    JLabel component = new JLabel();
-    this.myComponent9 = component;
-    component.setText("Method");
-    return component;
-  }
-
-  private MethodChooserComponent createComponent24() {
-    MethodChooserComponent component = new MethodChooserComponent();
-    this.myMethodName0 = component;
     component.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         myThis.onMethodChange();
@@ -363,8 +311,14 @@ public class JUnitConfigEditor extends JPanel {
     return component;
   }
 
-  private JavaConfigOptions createComponent25() {
-    JavaConfigOptions component = new JavaConfigOptions();
+  private JavaConfigOptions createComponent19() {
+    JavaConfigOptions component = null;
+   /* try {
+      component = (JavaConfigOptions) this.getClass().getClassLoader().loadClass(JavaConfigOptions.class.getName()).newInstance(); //new JavaConfigOptions();
+    } catch (Throwable t) {
+      t.printStackTrace();
+    }*/
+    component = new JavaConfigOptions();
     this.myJavaOptions0 = component;
     return component;
   }
@@ -385,12 +339,12 @@ public class JUnitConfigEditor extends JPanel {
     return this.myModule;
   }
 
-  public SNode getNode() {
-    return this.myNode;
+  public List<SNode> getNodes() {
+    return this.myNodes;
   }
 
-  public SNode getMethod() {
-    return this.myMethod;
+  public List<SNode> getMethods() {
+    return this.myMethods;
   }
 
   public void setProject(MPSProject newValue) {
@@ -417,16 +371,16 @@ public class JUnitConfigEditor extends JPanel {
     this.firePropertyChange("module", oldValue, newValue);
   }
 
-  public void setNode(SNode newValue) {
-    SNode oldValue = this.myNode;
-    this.myNode = newValue;
-    this.firePropertyChange("node", oldValue, newValue);
+  public void setNodes(List<SNode> newValue) {
+    List<SNode> oldValue = this.myNodes;
+    this.myNodes = newValue;
+    this.firePropertyChange("nodes", oldValue, newValue);
   }
 
-  public void setMethod(SNode newValue) {
-    SNode oldValue = this.myMethod;
-    this.myMethod = newValue;
-    this.firePropertyChange("method", oldValue, newValue);
+  public void setMethods(List<SNode> newValue) {
+    List<SNode> oldValue = this.myMethods;
+    this.myMethods = newValue;
+    this.firePropertyChange("methods", oldValue, newValue);
   }
 
   private void setModuleValue(final String moduleName) {
@@ -445,18 +399,22 @@ public class JUnitConfigEditor extends JPanel {
     });
   }
 
-  private void setNodeValue(final String nodeName) {
+  private void addNodeValue(final String nodeName) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myThis.setNode(TestRunUtil.getTestNode(nodeName));
+        SNode testCase = TestRunUtil.getTestNode(nodeName);
+        ListSequence.fromList(myThis.getNodes()).addElement(testCase);
+        myThis.myTestCases0.addItem(testCase);
       }
     });
   }
 
-  private void setMethodValue(final String nodeName, final String methodName) {
+  private void addMethodValue(final String nodeName, final String methodName) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myThis.setMethod(TestRunUtil.getTestMethod(nodeName, methodName));
+        SNode testMethod = TestRunUtil.getTestMethod(nodeName, methodName);
+        ListSequence.fromList(myThis.getMethods()).addElement(testMethod);
+        myThis.myTestMethods0.addItem(testMethod);
       }
     });
   }
@@ -464,8 +422,20 @@ public class JUnitConfigEditor extends JPanel {
   public void apply(final DefaultJUnit_Configuration config) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        config.getStateObject().method = ITestMethod_Behavior.call_getTestName_1216136419751(myThis.getMethod());
-        config.getStateObject().node = INamedConcept_Behavior.call_getFqName_1213877404258(myThis.getNode());
+        if (ListSequence.fromList(myThis.getMethods()).isNotEmpty()) {
+          config.getStateObject().methods = ListSequence.fromList(new ArrayList<String>());
+          for (SNode testMethod : myThis.getMethods()) {
+            ListSequence.fromList(config.getStateObject().methods).addElement(ITestMethod_Behavior.call_getTestName_1216136419751(testMethod));
+          }
+          config.getStateObject().method = null;
+        }
+        if (ListSequence.fromList(myThis.getNodes()).isNotEmpty()) {
+          config.getStateObject().nodes = ListSequence.fromList(new ArrayList<String>());
+          for (SNode testCase : myThis.getNodes()) {
+            ListSequence.fromList(config.getStateObject().nodes).addElement(INamedConcept_Behavior.call_getFqName_1213877404258(testCase));
+          }
+          config.getStateObject().node = null;
+        }
         config.getStateObject().model = (myThis.getModel() != null ?
           config.getStateObject().model = myThis.getModel().getSModelFqName().toString() :
           null
@@ -480,12 +450,12 @@ public class JUnitConfigEditor extends JPanel {
         if (type != null) {
           config.getStateObject().type = type;
         }
-        if (config.getStateObject().myParams == null) {
-          config.getStateObject().myParams = new ConfigRunParameters();
-        }
-        myThis.myJavaOptions0.apply(config.getStateObject().myParams);
       }
     });
+    if (config.getStateObject().myParams == null) {
+      config.getStateObject().myParams = new ConfigRunParameters();
+    }
+    myThis.myJavaOptions0.apply(config.getStateObject().myParams);
   }
 
   public void reset(final DefaultJUnit_Configuration config) {
@@ -510,30 +480,31 @@ public class JUnitConfigEditor extends JPanel {
     } else {
       myThis.myIsProject0.setSelected(true);
     }
-    if (config.getStateObject().node != null) {
-      myThis.setNodeValue(config.getStateObject().node);
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          String nodeFqName = config.getStateObject().node;
-          myThis.myNodeName0.setText(nodeFqName);
-          myThis.myNodeNameWithMethod0.setText(nodeFqName);
-          myThis.myMethodName0.setTestCase(nodeFqName);
-          if (myThis.getNode() != null && SNodeOperations.getModel(myThis.getNode()) != null) {
-            String modelName = SNodeOperations.getModel(myThis.getNode()).getSModelFqName().toString();
-            myThis.setModelValue(modelName);
-            myThis.myModelName0.setText(modelName);
-            if (SNodeOperations.getModel(myThis.getNode()).getModelDescriptor() != null && SNodeOperations.getModel(myThis.getNode()).getModelDescriptor().getModule() != null) {
-              String moduleName = SNodeOperations.getModel(myThis.getNode()).getModelDescriptor().getModule().getModuleFqName();
-              myThis.setModuleValue(moduleName);
-              myThis.myModuleName0.setText(moduleName);
+    List<String> nodes = TestRunUtil.getValues(config.getStateObject().node, config.getStateObject().nodes);
+    List<String> methods = TestRunUtil.getValues(config.getStateObject().method, config.getStateObject().methods);
+    myThis.setNodes(new ArrayList<SNode>());
+    myThis.setMethods(new ArrayList<SNode>());
+    for (String nodeName : nodes) {
+      myThis.addNodeValue(nodeName);
+      if (ListSequence.fromList(nodes).first().equals(nodeName)) {
+        ModelAccess.instance().runReadAction(new Runnable() {
+          public void run() {
+            if (ListSequence.fromList(myThis.getNodes()).isNotEmpty() && SNodeOperations.getModel(ListSequence.fromList(myThis.getNodes()).first()) != null) {
+              String modelName = SNodeOperations.getModel(ListSequence.fromList(myThis.getNodes()).first()).getSModelFqName().toString();
+              myThis.setModelValue(modelName);
+              myThis.myModelName0.setText(modelName);
+              if (SNodeOperations.getModel(ListSequence.fromList(myThis.getNodes()).first()).getModelDescriptor() != null && SNodeOperations.getModel(ListSequence.fromList(myThis.getNodes()).first()).getModelDescriptor().getModule() != null) {
+                String moduleName = SNodeOperations.getModel(ListSequence.fromList(myThis.getNodes()).first()).getModelDescriptor().getModule().getModuleFqName();
+                myThis.setModuleValue(moduleName);
+                myThis.myModuleName0.setText(moduleName);
+              }
             }
           }
-        }
-      });
-      if (config.getStateObject().method != null) {
-        myThis.setMethodValue(config.getStateObject().node, config.getStateObject().method);
-        myThis.myMethodName0.setText(config.getStateObject().method);
+        });
       }
+    }
+    for (int i = 0; i < ListSequence.fromList(methods).count(); i++) {
+      myThis.addMethodValue(ListSequence.fromList(nodes).getElement(i), ListSequence.fromList(methods).getElement(i));
     }
     if (config.getStateObject().model != null) {
       myThis.setModelValue(config.getStateObject().model);
@@ -557,9 +528,6 @@ public class JUnitConfigEditor extends JPanel {
   }
 
   public void dispose() {
-    myThis.myMethodName0.dispose();
-    myThis.myNodeName0.dispose();
-    myThis.myNodeNameWithMethod0.dispose();
     myThis.myModelName0.dispose();
     myThis.myModuleName0.dispose();
     myThis.myJavaOptions0.dispose();
@@ -569,23 +537,22 @@ public class JUnitConfigEditor extends JPanel {
     myThis.myProjectPanel0.setVisible(false);
     myThis.myModulePanel0.setVisible(false);
     myThis.myModelPanel0.setVisible(false);
-    myThis.myTestPanel0.setVisible(false);
-    myThis.myMethodPanel0.setVisible(false);
+    myThis.myTestCases0.setVisible(false);
+    myThis.myTestMethods0.setVisible(false);
+    myThis.myMainPanel0.setVisible(true);
     if (myThis.myIsModule0.isSelected()) {
       myThis.myModulePanel0.setVisible(true);
     } else if (myThis.myIsModel0.isSelected()) {
       myThis.myModelPanel0.setVisible(true);
     } else if (myThis.myIsClass0.isSelected()) {
-      myThis.myTestPanel0.setVisible(true);
+      myThis.myTestCases0.setVisible(true);
+      myThis.myMainPanel0.setVisible(false);
     } else if (myThis.myIsMethod0.isSelected()) {
-      myThis.myMethodPanel0.setVisible(true);
+      myThis.myTestMethods0.setVisible(true);
+      myThis.myMainPanel0.setVisible(false);
     } else if (myThis.myIsProject0.isSelected()) {
       myThis.myProjectPanel0.setVisible(true);
     }
-  }
-
-  public void setMethodOwner() {
-    myThis.myMethodName0.setTestCase(myThis.myNodeNameWithMethod0.getText());
   }
 
   public void onModelChange() {
@@ -597,15 +564,10 @@ public class JUnitConfigEditor extends JPanel {
   }
 
   public void onNodeChange() {
-    myThis.setNodeValue(myThis.myNodeName0.getText());
-  }
-
-  public void onMainNodeChange() {
-    myThis.setNodeValue(myThis.myNodeNameWithMethod0.getText());
-    myThis.myMethodName0.setTestCase(myThis.myNodeNameWithMethod0.getText());
+    myThis.setNodes((List<SNode>)myThis.myTestCases0.getItems());
   }
 
   public void onMethodChange() {
-    myThis.setMethodValue(myThis.myNodeNameWithMethod0.getText(), myThis.myMethodName0.getText());
+    myThis.setMethods((List<SNode>)myThis.myTestMethods0.getItems());
   }
 }

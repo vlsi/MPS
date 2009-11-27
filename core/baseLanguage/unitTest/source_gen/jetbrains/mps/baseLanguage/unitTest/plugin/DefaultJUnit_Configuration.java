@@ -72,13 +72,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                 error.append("method is not selected or does not exist").append("\n");
               }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.NODE) {
-              if (DefaultJUnit_Configuration.this.getStateObject().node == null) {
-                error.append("node is not selected or does not exist").append("\n");
-              }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODEL) {
-              if (DefaultJUnit_Configuration.this.getStateObject().model == null) {
-                error.append("model is not selected or does not exist").append("\n");
-              }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
               if (DefaultJUnit_Configuration.this.getStateObject().module == null) {
                 error.append("module is not selected or does not exist").append("\n");
@@ -142,9 +136,23 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                 List<SNode> tests = new ArrayList<SNode>();
                 List<SNode> methods = new ArrayList<SNode>();
                 if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.METHOD) {
-                  ListSequence.fromList(methods).addElement(TestRunUtil.getTestMethod(DefaultJUnit_Configuration.this.getStateObject().node, DefaultJUnit_Configuration.this.getStateObject().method));
+                  if (DefaultJUnit_Configuration.this.getStateObject().node != null) {
+                    ListSequence.fromList(methods).addElement(TestRunUtil.getTestMethod(DefaultJUnit_Configuration.this.getStateObject().node, DefaultJUnit_Configuration.this.getStateObject().method));
+                  }
+                  if (DefaultJUnit_Configuration.this.getStateObject().nodes != null) {
+                    for (int i = 0; i < ListSequence.fromList(DefaultJUnit_Configuration.this.getStateObject().nodes).count(); i++) {
+                      ListSequence.fromList(methods).addElement(TestRunUtil.getTestMethod(ListSequence.fromList(DefaultJUnit_Configuration.this.getStateObject().nodes).getElement(i), ListSequence.fromList(DefaultJUnit_Configuration.this.getStateObject().methods).getElement(i)));
+                    }
+                  }
                 } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.NODE) {
-                  ListSequence.fromList(tests).addElement(TestRunUtil.getTestNode(DefaultJUnit_Configuration.this.getStateObject().node));
+                  if (DefaultJUnit_Configuration.this.getStateObject().node != null) {
+                    ListSequence.fromList(tests).addElement(TestRunUtil.getTestNode(DefaultJUnit_Configuration.this.getStateObject().node));
+                  }
+                  if (DefaultJUnit_Configuration.this.getStateObject().nodes != null) {
+                    for (int i = 0; i < ListSequence.fromList(DefaultJUnit_Configuration.this.getStateObject().nodes).count(); i++) {
+                      ListSequence.fromList(tests).addElement(TestRunUtil.getTestNode(ListSequence.fromList(DefaultJUnit_Configuration.this.getStateObject().nodes).getElement(i)));
+                    }
+                  }
                 } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODEL) {
                   ListSequence.fromList(tests).addSequence(ListSequence.fromList(TestRunUtil.getModelTests(TestRunUtil.getModel(DefaultJUnit_Configuration.this.getStateObject().model))));
                 } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
@@ -279,9 +287,11 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
 
   public static class MyState implements Cloneable {
     public String node;
+    public List<String> nodes;
     public String model;
     public String module;
     public String method;
+    public List<String> methods;
     public boolean compileInMPS;
     public JUnitRunTypes type;
     public ConfigRunParameters myParams;

@@ -107,4 +107,15 @@ public class TestRunUtil {
     }
     return null;
   }
+
+  public static List<String> getValues(String simple, List<String> collection) {
+    List<String> result = ListSequence.fromList(new ArrayList<String>());
+    if (simple != null) {
+      ListSequence.fromList(result).addElement(simple);
+    }
+    if (collection != null) {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(collection));
+    }
+    return result;
+  }
 }
