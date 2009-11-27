@@ -542,6 +542,10 @@
       <property name="value" value=":==:" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
     </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6874023476841491121">
+      <property name="value" value="typesystem equation" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1174660718586">
     <property name="name" value="AbstractEquationStatement" />
