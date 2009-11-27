@@ -105,11 +105,12 @@
                   </node>
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230058635648" />
                 </node>
-                <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1932269937152530083">
+                <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1104477524484219573">
                   <property name="isLastPosition" value="true" />
+                  <property name="useLabelSelection" value="true" />
                   <property name="selectionStart" value="12" />
                   <property name="selectionEnd" value="12" />
-                  <property name="cellId" value="property_name" />
+                  <property name="cellId" value="ReferencePresentation_1871_0" />
                 </node>
               </node>
             </node>
