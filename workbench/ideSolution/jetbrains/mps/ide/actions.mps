@@ -30519,36 +30519,12 @@
                                 </node>
                               </node>
                             </node>
-                            <node role="condition" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="5051503573775608149">
-                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="865678424278044683">
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5051503573775608152">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="2854075155749507885">
-                                    <link role="variable" targetNodeId="5051503573775608083" resolveInfo="link" />
-                                  </node>
-                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="865678424278044681">
-                                    <link role="property" targetNodeId="93.1071599893252" resolveInfo="sourceCardinality" />
-                                  </node>
-                                </node>
-                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="865678424278044692">
-                                  <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="865678424278044693">
-                                    <link role="enumMember" targetNodeId="93.1084197782726" />
-                                  </node>
-                                </node>
+                            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5051503573775608156">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="2854075155749507881">
+                                <link role="variable" targetNodeId="5051503573775608083" resolveInfo="link" />
                               </node>
-                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="865678424278044671">
-                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5051503573775608156">
-                                  <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="2854075155749507881">
-                                    <link role="variable" targetNodeId="5051503573775608083" resolveInfo="link" />
-                                  </node>
-                                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="865678424278044653">
-                                    <link role="property" targetNodeId="93.1071599893252" resolveInfo="sourceCardinality" />
-                                  </node>
-                                </node>
-                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="865678424278044676">
-                                  <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="865678424278044677">
-                                    <link role="enumMember" targetNodeId="93.1084197782724" />
-                                  </node>
-                                </node>
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3386205146661408526">
+                                <link role="baseMethodDeclaration" targetNodeId="177.3386205146660812199" resolveInfo="isAtLeastOneCardinality" />
                               </node>
                             </node>
                           </node>
