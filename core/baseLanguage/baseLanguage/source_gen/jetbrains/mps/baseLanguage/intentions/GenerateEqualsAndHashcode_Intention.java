@@ -51,11 +51,14 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
       SLinkOperations.setTarget(fieldRefOperation, "fieldDeclaration", field, false);
       SNode checkStmt;
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-        checkStmt = new _Quotations.QuotationClass_27().createNode(thatRef, fieldRefOperation, thisExp, fieldRefOperation);
+        checkStmt = new _Quotations.QuotationClass_13().createNode(thatRef, fieldRefOperation, thisExp, fieldRefOperation);
+        /*
+          checkStmt = new _Quotations.QuotationClass_27().createNode(thatRef, fieldRefOperation, thisExp, fieldRefOperation);
+        */
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
-        checkStmt = new _Quotations.QuotationClass_12().createNode(thisExp, fieldRefOperation, thatRef, fieldRefOperation);
+        checkStmt = new _Quotations.QuotationClass_11().createNode(thisExp, fieldRefOperation, thatRef, fieldRefOperation);
       } else {
-        checkStmt = new _Quotations.QuotationClass_13().createNode(thatRef, fieldRefOperation, thisExp, fieldRefOperation, thisExp, fieldRefOperation, thatRef, fieldRefOperation);
+        checkStmt = new _Quotations.QuotationClass_12().createNode(thatRef, fieldRefOperation, thisExp, fieldRefOperation, thisExp, fieldRefOperation, thatRef, fieldRefOperation);
       }
       SLinkOperations.addChild(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", checkStmt);
     }
@@ -63,9 +66,8 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
     SLinkOperations.addChild(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", new _Quotations.QuotationClass_26().createNode());
     SLinkOperations.addChild(classConcept, "method", equalsDeclaration);
     // Method equals() is generated, now hashCode method body generation begins  
-    //thisExp = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
     SNode hashCodeDeclaration = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_25().createNode());
-    SNode resultDeclaration = new _Quotations.QuotationClass_10().createNode();
+    SNode resultDeclaration = new _Quotations.QuotationClass_9().createNode();
     SNode resultReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(resultReference, "variableDeclaration", SLinkOperations.getTarget(resultDeclaration, "localVariableDeclaration", true), false);
     SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", resultDeclaration);
@@ -87,7 +89,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
       }
       SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", checkStatement);
     }
-    SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", new _Quotations.QuotationClass_11().createNode(resultReference));
+    SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", new _Quotations.QuotationClass_10().createNode(resultReference));
   }
 
   public String getLocationString() {

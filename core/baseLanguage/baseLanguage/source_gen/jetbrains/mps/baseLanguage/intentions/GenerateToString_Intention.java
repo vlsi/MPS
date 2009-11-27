@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
-import java.util.Iterator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class GenerateToString_Intention extends GenerateIntention {
   public GenerateToString_Intention() {
@@ -37,37 +37,30 @@ public class GenerateToString_Intention extends GenerateIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    final SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     List<SNode> fields = SLinkOperations.getTargets(classConcept, "field", true);
-    SNode toStringMethod = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_4().createNode());
-    SNode returnStatement = SLinkOperations.addNewChild(SLinkOperations.getTarget(toStringMethod, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ReturnStatement");
-    SNode returnExpression = SLinkOperations.setNewChild(returnStatement, "expression", "jetbrains.mps.baseLanguage.structure.PlusExpression");
-    SNode classNameLiteral = SLinkOperations.setNewChild(returnExpression, "leftExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral");
-    SPropertyOperations.set(classNameLiteral, "value", SPropertyOperations.getString(classConcept, "name") + "{");
-    SNode currentPlusExpression = SLinkOperations.setNewChild(returnExpression, "rightExpression", "jetbrains.mps.baseLanguage.structure.PlusExpression");
-    Iterator<SNode> fieldIterator = ListSequence.fromList(fields).iterator();
-    while (fieldIterator.hasNext()) {
-      SNode field = fieldIterator.next();
-      SNode plusExpression = SLinkOperations.setNewChild(currentPlusExpression, "leftExpression", "jetbrains.mps.baseLanguage.structure.PlusExpression");
-      SNode fieldLiteral = SLinkOperations.setNewChild(plusExpression, "leftExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral");
-      SPropertyOperations.set(fieldLiteral, "value", SPropertyOperations.getString(field, "name") + "= ");
-      SNode dotExpression;
-      if (fieldIterator.hasNext()) {
-        SNode extraCommaExpression = SLinkOperations.setNewChild(plusExpression, "rightExpression", "jetbrains.mps.baseLanguage.structure.PlusExpression");
-        SNode commaLiteral = SLinkOperations.setNewChild(extraCommaExpression, "rightExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral");
-        SPropertyOperations.set(commaLiteral, "value", ", ");
-        dotExpression = SLinkOperations.setNewChild(extraCommaExpression, "leftExpression", "jetbrains.mps.baseLanguage.structure.DotExpression");
-      } else {
-        dotExpression = SLinkOperations.setNewChild(plusExpression, "rightExpression", "jetbrains.mps.baseLanguage.structure.DotExpression");
+    final SNode rightmostExpression;
+    if (ListSequence.fromList(fields).isEmpty()) {
+      rightmostExpression = new _Quotations.QuotationClass_5().createNode();
+    } else {
+      SNode firstField = ListSequence.fromList(fields).first();
+      SNode currentExpression = null;
+      for (SNode field : fields) {
+        SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
+        SLinkOperations.setTarget(fieldRef, "fieldDeclaration", field, false);
+        SNode item = new _Quotations.QuotationClass_6().createNode(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), fieldRef, ((field == firstField ?
+          "" :
+          ", "
+        )) + SPropertyOperations.getString(field, "name") + "=");
+        if (field == firstField) {
+          currentExpression = item;
+        } else {
+          currentExpression = new _Quotations.QuotationClass_7().createNode(item, currentExpression);
+        }
       }
-      SLinkOperations.setNewChild(dotExpression, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
-      SNode fieldRef = SLinkOperations.setNewChild(dotExpression, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation");
-      SLinkOperations.setTarget(fieldRef, "fieldDeclaration", field, false);
-      currentPlusExpression = SLinkOperations.setNewChild(currentPlusExpression, "rightExpression", "jetbrains.mps.baseLanguage.structure.PlusExpression");
+      rightmostExpression = new _Quotations.QuotationClass_8().createNode(currentExpression);
     }
-    currentPlusExpression = SNodeOperations.cast(SNodeOperations.getParent(currentPlusExpression), "jetbrains.mps.baseLanguage.structure.PlusExpression");
-    SNode closingBracketLiteral = SLinkOperations.setNewChild(currentPlusExpression, "rightExpression", "jetbrains.mps.baseLanguage.structure.StringLiteral");
-    SPropertyOperations.set(closingBracketLiteral, "value", " }");
+    SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_4().createNode(rightmostExpression, SPropertyOperations.getString(classConcept, "name") + "{"));
   }
 
   public String getLocationString() {
