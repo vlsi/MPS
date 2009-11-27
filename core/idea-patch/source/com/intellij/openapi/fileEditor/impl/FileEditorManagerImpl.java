@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2009 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -35,6 +35,7 @@ import com.intellij.openapi.fileEditor.*;
 import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx;
 import com.intellij.openapi.fileEditor.ex.FileEditorProviderManager;
 import com.intellij.openapi.fileEditor.ex.IdeDocumentHistory;
+import com.intellij.openapi.fileEditor.impl.text.TextEditorImpl;
 import com.intellij.openapi.fileEditor.impl.text.TextEditorProvider;
 import com.intellij.openapi.fileTypes.FileTypeEvent;
 import com.intellij.openapi.fileTypes.FileTypeListener;
@@ -86,8 +87,8 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
   private static final Key<LocalFileSystem.WatchRequest> WATCH_REQUEST_KEY = Key.create("WATCH_REQUEST_KEY");
   private static final Key<Boolean> DUMB_AWARE = Key.create("DUMB_AWARE");
 
-  private static final FileEditor[] EMPTY_EDITOR_ARRAY = new FileEditor[]{};
-  private static final FileEditorProvider[] EMPTY_PROVIDER_ARRAY = new FileEditorProvider[]{};
+  private static final FileEditor[] EMPTY_EDITOR_ARRAY = {};
+  private static final FileEditorProvider[] EMPTY_PROVIDER_ARRAY = {};
 
   private volatile JPanel myPanels;
   private EditorsSplitters mySplitters;
@@ -99,34 +100,15 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
   private final MergingUpdateQueue myQueue = new MergingUpdateQueue("FileEditorManagerUpdateQueue", 50, true, null);
 
   /**
-   * Updates tabs colors
-   */
-  private final MyFileStatusListener myFileStatusListener;
-
-  /**
    * Removes invalid myEditor and updates "modified" status.
    */
-  private final MyEditorPropertyChangeListener myEditorPropertyChangeListener;
-  /**
-   * Updates tabs names
-   */
-  private final MyVirtualFileListener myVirtualFileListener;
-  /**
-   * Extends/cuts number of opened tabs. Also updates location of tabs.
-   */
-  private final MyUISettingsListener myUISettingsListener;
+  private final MyEditorPropertyChangeListener myEditorPropertyChangeListener = new MyEditorPropertyChangeListener();
 
   private final List<EditorDataProvider> myDataProviders = new ArrayList<EditorDataProvider>();
-  private MessageBusConnection myConnection;
 
   public FileEditorManagerImpl(final Project project) {
 /*    ApplicationManager.getApplication().assertIsDispatchThread(); */
     myProject = project;
-
-    myFileStatusListener = new MyFileStatusListener();
-    myEditorPropertyChangeListener = new MyEditorPropertyChangeListener();
-    myVirtualFileListener = new MyVirtualFileListener();
-    myUISettingsListener = new MyUISettingsListener();
     myListenerList = new MessageListenerList<FileEditorManagerListener>(myProject.getMessageBus(), FileEditorManagerListener.FILE_EDITOR_MANAGER);
   }
 
@@ -199,6 +181,7 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
     updateFileColor(file);
     updateFileIcon(file);
     updateFileName(file);
+    updateFileBackgroundColor(file);
   }
 
   /**
@@ -462,25 +445,27 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
     final Ref<Pair<FileEditor[], FileEditorProvider[]>> resHolder = new Ref<Pair<FileEditor[], FileEditorProvider[]>>();
     CommandProcessor.getInstance().executeCommand(myProject, new Runnable() {
       public void run() {
-        resHolder.set(openFileImpl3(window, file, focusEditor, entry));
+        resHolder.set(openFileImpl3(window, file, focusEditor, entry, true));
       }
     }, "", null);
     return resHolder.get();
   }
 
   /**
-   * @param file  to be opened. Unlike openFile method, file can be
-   *              invalid. For example, all file were invalidate and they are being
-   *              removed one by one. If we have removed one invalid file, then another
-   *              invalid file become selected. That's why we do not require that
-   *              passed file is valid.
-   * @param entry map between FileEditorProvider and FileEditorState. If this parameter
-   *              is not <code>null</code> then it's used to restore state for the newly created
+   * @param file    to be opened. Unlike openFile method, file can be
+   *                invalid. For example, all file were invalidate and they are being
+   *                removed one by one. If we have removed one invalid file, then another
+   *                invalid file become selected. That's why we do not require that
+   *                passed file is valid.
+   * @param entry   map between FileEditorProvider and FileEditorState. If this parameter
+   * @param current
    */
   @NotNull
-  @Patch
-  Pair<FileEditor[], FileEditorProvider[]> openFileImpl3(final EditorWindow window, @NotNull final VirtualFile file, final boolean focusEditor,
-                                                         final HistoryEntry entry) {
+  Pair<FileEditor[], FileEditorProvider[]> openFileImpl3(final EditorWindow window,
+                                                         @NotNull final VirtualFile file,
+                                                         final boolean focusEditor,
+                                                         final HistoryEntry entry,
+                                                         boolean current) {
     // Open file
     FileEditor[] editors;
     FileEditorProvider[] providers;
@@ -521,6 +506,9 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
           LOG.assertTrue(provider != null);
           LOG.assertTrue(provider.accept(myProject, file));
           final FileEditor editor = provider.createEditor(myProject, file);
+          if (current && editor instanceof TextEditorImpl) {
+            ((TextEditorImpl) editor).initFolding();
+          }
           editors[i] = editor;
           LOG.assertTrue(editor != null);
           LOG.assertTrue(editor.isValid());
@@ -839,11 +827,7 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
     }
 
     final List<EditorWithProviderComposite> composites = getEditorComposites(file);
-    if (!composites.isEmpty()) {
-      return composites.get(0).getSelectedEditorWithProvider();
-    } else {
-      return null;
-    }
+    return composites.isEmpty() ? null : composites.get(0).getSelectedEditorWithProvider();
   }
 
   @NotNull
@@ -969,15 +953,32 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
     //myFocusWatcher.install(myWindows.getComponent ());
     getSplitters().startListeningFocus();
 
-    myConnection = myProject.getMessageBus().connect();
+    MessageBusConnection connection = myProject.getMessageBus().connect(myProject);
 
     final FileStatusManager fileStatusManager = FileStatusManager.getInstance(myProject);
     if (fileStatusManager != null) {
-      fileStatusManager.addFileStatusListener(myFileStatusListener);
+      /**
+       * Updates tabs colors
+       */
+      final MyFileStatusListener myFileStatusListener = new MyFileStatusListener();
+      fileStatusManager.addFileStatusListener(myFileStatusListener, myProject);
     }
-    myConnection.subscribe(AppTopics.FILE_TYPES, new MyFileTypeListener());
-    VirtualFileManager.getInstance().addVirtualFileListener(myVirtualFileListener);
+    connection.subscribe(AppTopics.FILE_TYPES, new MyFileTypeListener());
+    /**
+     * Updates tabs names
+     */
+    final MyVirtualFileListener myVirtualFileListener = new MyVirtualFileListener();
+    VirtualFileManager.getInstance().addVirtualFileListener(myVirtualFileListener, myProject);
+    /**
+     * Extends/cuts number of opened tabs. Also updates location of tabs.
+     */
+    final MyUISettingsListener myUISettingsListener = new MyUISettingsListener();
     UISettings.getInstance().addUISettingsListener(myUISettingsListener);
+    Disposer.register(myProject, new Disposable() {
+      public void dispose() {
+        UISettings.getInstance().removeUISettingsListener(myUISettingsListener);
+      }
+    });
 
     StartupManager.getInstance(myProject).registerPostStartupActivity(new DumbAwareRunnable() {
       public void run() {
@@ -1004,22 +1005,11 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
         });
       }
     });
-
   }
 
   public void projectClosed() {
     //myFocusWatcher.deinstall(myWindows.getComponent ());
     getSplitters().dispose();
-
-    myConnection.disconnect();
-
-// Remove application level listeners
-    final FileStatusManager fileStatusManager = FileStatusManager.getInstance(myProject);
-    if (fileStatusManager != null) {
-      fileStatusManager.removeFileStatusListener(myFileStatusListener);
-    }
-    VirtualFileManager.getInstance().removeVirtualFileListener(myVirtualFileListener);
-    UISettings.getInstance().removeUISettingsListener(myUISettingsListener);
 
 // Dispose created editors. We do not use use closeEditor method because
 // it fires event and changes history.
@@ -1165,6 +1155,7 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
         if (isFileOpen(file)) {
           updateFileName(file);
           updateFileIcon(file); // file type can change after renaming
+          updateFileBackgroundColor(file);
         }
       } else if (VirtualFile.PROP_WRITABLE.equals(e.getPropertyName()) || VirtualFile.PROP_ENCODING.equals(e.getPropertyName())) {
         updateIconAndStatusbar(e);
@@ -1186,10 +1177,11 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
 
     public void fileMoved(VirtualFileMoveEvent e) {
       final VirtualFile file = e.getFile();
-      final VirtualFile[] selectedFiles = getSelectedFiles();
-      for (final VirtualFile selectedFile : selectedFiles) {
-        if (VfsUtil.isAncestor(file, selectedFile, false)) {
-          updateFileName(selectedFile);
+      final VirtualFile[] openFiles = getOpenFiles();
+      for (final VirtualFile openFile : openFiles) {
+        if (VfsUtil.isAncestor(file, openFile, false)) {
+          updateFileName(openFile);
+          updateFileBackgroundColor(openFile);
         }
       }
     }
@@ -1356,6 +1348,7 @@ private final class MyVirtualFileListener extends VirtualFileAdapter {
         if (isFileOpen(file)) {
           updateFileIcon(file);
           updateFileColor(file);
+          updateFileBackgroundColor(file);
         }
       }
     });

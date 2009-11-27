@@ -319,7 +319,7 @@
           <link role="attributeDeclaration" targetNodeId="2v.353793545802813387" resolveInfo="src" />
           <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239364393190">
             <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393191">
-              <property name="value" value="/idea{build.number}-jdk15.zip" />
+              <property name="value" value="/ideaIU-{build.number}-jdk15.zip" />
             </node>
             <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1239364393192">
               <link role="propertyDeclaration" targetNodeId="1239364393103" resolveInfo="main.url" />
@@ -335,33 +335,6 @@
               </node>
               <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393197">
                 <property name="value" value="/idea-jdk15.zip" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="taskCall" type="jetbrains.mps.build.generictasks.structure.TaskCall" id="1239364393199">
-        <link role="declaration" targetNodeId="2v.353793545802813380" resolveInfo="get" />
-        <node role="atributes" type="jetbrains.mps.build.generictasks.structure.Attribute" id="1239364393200">
-          <link role="attributeDeclaration" targetNodeId="2v.353793545802813387" resolveInfo="src" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239364393201">
-            <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393202">
-              <property name="value" value="/idea{build.number}-dev.zip" />
-            </node>
-            <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1239364393203">
-              <link role="propertyDeclaration" targetNodeId="1239364393103" resolveInfo="main.url" />
-            </node>
-          </node>
-        </node>
-        <node role="atributes" type="jetbrains.mps.build.generictasks.structure.Attribute" id="1239364393204">
-          <link role="attributeDeclaration" targetNodeId="2v.353793545802813381" resolveInfo="dest" />
-          <node role="value" type="jetbrains.mps.buildlanguage.structure.FileName" id="1239364393205">
-            <node role="value" type="jetbrains.mps.buildlanguage.structure.PlusOperation" id="1239364393206">
-              <node role="right" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393207">
-                <property name="value" value="/idea-dev.zip" />
-              </node>
-              <node role="left" type="jetbrains.mps.buildlanguage.structure.PropertyReference" id="1239364393208">
-                <link role="propertyDeclaration" targetNodeId="1239364393116" resolveInfo="tmp" />
               </node>
             </node>
           </node>
@@ -2029,9 +2002,6 @@
       </node>
       <node role="depends" type="jetbrains.mps.buildlanguage.structure.TargetReference" id="1239364393850">
         <link role="targetDeclaration" targetNodeId="1239364393210" resolveInfo="clean.license.classes" />
-      </node>
-      <node role="depends" type="jetbrains.mps.buildlanguage.structure.TargetReference" id="1239364393851">
-        <link role="targetDeclaration" targetNodeId="1239364393778" resolveInfo="unpack.external.sources" />
       </node>
       <node role="taskCall" type="jetbrains.mps.build.generictasks.structure.TaskCall" id="1239364393852">
         <link role="declaration" targetNodeId="2v.353793545802812660" resolveInfo="delete" />

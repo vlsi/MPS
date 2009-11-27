@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2009 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -56,11 +56,13 @@ public class PathsVerifier {
   private final List<Pair<VirtualFile, FilePatch>> myTextPatches;
   private final List<Pair<VirtualFile, FilePatch>> myBinaryPatches;
   private final List<VirtualFile> myWritableFiles;
+  private final BaseMapper myBaseMapper;
 
-  public PathsVerifier(final Project project, final VirtualFile baseDirectory, final List<FilePatch> patches) {
+  public PathsVerifier(final Project project, final VirtualFile baseDirectory, final List<FilePatch> patches, BaseMapper baseMapper) {
     myProject = project;
     myBaseDirectory = baseDirectory;
     myPatches = patches;
+    myBaseMapper = baseMapper;
 
     myMovedFiles = new HashMap<VirtualFile, MovedFileData>();
     myBeforePaths = new ArrayList<FilePath>();
@@ -170,7 +172,7 @@ public class PathsVerifier {
     }
 
     protected boolean check() throws IOException {
-      final VirtualFile beforeFile = PatchApplier.getFile(myBaseDirectory, myBeforeName);
+      final VirtualFile beforeFile = myBaseMapper.getFile(myPatch, myBeforeName);
       // todo maybe deletion may be ok, just warning
       if (! checkExistsAndValid(beforeFile, myBeforeName)) {
         return false;
@@ -232,7 +234,7 @@ public class PathsVerifier {
         setErrorMessage(fileNotFoundMessage(myAfterName));
         return false;
       }
-      final VirtualFile beforeFile = PatchApplier.getFile(myBaseDirectory, myBeforeName);
+      final VirtualFile beforeFile = myBaseMapper.getFile(myPatch, myBeforeName);
       if (! checkExistsAndValid(beforeFile, myBeforeName)) {
         return false;
       }
@@ -263,8 +265,8 @@ public class PathsVerifier {
     }
 
     public boolean canBeApplied() {
-      final VirtualFile beforeFile = PatchApplier.getFile(myBaseDirectory, myBeforeName);
-      final VirtualFile afterFile = PatchApplier.getFile(myBaseDirectory, myAfterName);
+      final VirtualFile beforeFile = myBaseMapper.getFile(myPatch, myBeforeName);
+      final VirtualFile afterFile = myBaseMapper.getFile(myPatch, myAfterName);
       return precheck(beforeFile, afterFile);
     }
 
@@ -284,7 +286,7 @@ public class PathsVerifier {
       // security check to avoid overwriting system files with a patch
       // Next condition was changed from former PathsVerifier, provided by IDEA, to fix
       // http://jetbrains.net/jira/browse/IDEA-22685
-      // The check 
+      // The check
       // (! ExcludedFileIndex.getInstance(myProject).isInContent(file))
       // was removed.
       if ((file == null) ||
@@ -481,5 +483,10 @@ public class PathsVerifier {
       }
       return afterFile;
     }
+  }
+
+  public interface BaseMapper {
+    @Nullable
+    VirtualFile getFile(final FilePatch patch, final String path);
   }
 }

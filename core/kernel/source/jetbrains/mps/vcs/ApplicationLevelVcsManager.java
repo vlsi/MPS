@@ -348,6 +348,10 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
   }
 
   public static class StubChangeListManagerGate implements ChangeListManagerGate {
+    public List<LocalChangeList> getListsCopy() {
+      return null;  //To change body of implemented methods use File | Settings | File Templates.
+    }
+
     @Nullable
     public LocalChangeList findChangeList(String name) {
       return null;
@@ -363,6 +367,18 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
 
     public void editComment(String name, String comment) {
 
+    }
+
+    public void editName(String oldName, String newName) {
+      //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    public void moveChanges(String toList, Collection<Change> changes) {
+      //To change body of implemented methods use File | Settings | File Templates.
+    }
+
+    public void setListsToDisappear(Collection<String> names) {
+      //To change body of implemented methods use File | Settings | File Templates.
     }
   }
 }

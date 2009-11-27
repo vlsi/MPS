@@ -30,7 +30,6 @@ import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.wm.WindowManager;
-import com.intellij.ui.AnimatingSurface;
 import com.intellij.util.ImageLoader;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.util.FileUtil;
@@ -90,11 +89,6 @@ public class AboutAction extends AnAction {
       infoSurface.setPreferredSize(new Dimension(newImage.getWidth(null), newImage.getHeight(null)));
       mainPanel.add(infoSurface, BorderLayout.NORTH);
       mainPanel.add(new LicensesList(), BorderLayout.CENTER);
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          infoSurface.start();
-        }
-      });
       closeListenerOwner = infoSurface;
     } else {
       mainPanel.add(new JLabel(IconLoader.getIcon(appInfo.getAboutLogoUrl())), BorderLayout.NORTH);
@@ -196,7 +190,7 @@ public class AboutAction extends AnAction {
     }
   }
 
-  private static class InfoSurface extends AnimatingSurface {
+  private static class InfoSurface extends JPanel {
     final Color col;
     final Color linkCol;
     static final int UP = 0;
@@ -289,20 +283,6 @@ public class AboutAction extends AnAction {
         renderer.render(5, 0, myLines);
       } catch (TextRenderer.OverflowException _) {
         // ignore
-      }
-    }
-
-    public void reset(int w, int h) {
-    }
-
-    public void step(int w, int h) {
-      if (myAlphaDirection == UP) {
-        if ((myAlpha += 0.2) > .99) {
-          myAlphaDirection = DOWN;
-          myAlpha = 1.0f;
-        }
-      } else if (myAlphaDirection == DOWN) {
-        stop();
       }
     }
 

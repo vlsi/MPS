@@ -21,6 +21,7 @@ import com.intellij.openapi.module.Module;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.logging.Logger;
@@ -127,30 +128,38 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
     if (generatedHash == null) return true;
 
-    Collection<VirtualFile> files = FileBasedIndex.getInstance().getContainingFiles(ModelDigestIndex.NAME,
-      generatedHash,
-      new GlobalSearchScope(project) {
-        @Override
-        public boolean contains(VirtualFile file) {
-          return true;
-        }
+    return checkGenerationRequired(project, generatedHash);
+  }
 
-        @Override
-        public int compare(VirtualFile file1, VirtualFile file2) {
-          return file1.getPath().compareTo(file2.getPath());
-        }
+  private boolean checkGenerationRequired(final Project project, String generatedHash) {
+    try {
+      Collection<VirtualFile> files = FileBasedIndex.getInstance().getContainingFiles(ModelDigestIndex.NAME,
+        generatedHash,
+        new GlobalSearchScope(project) {
+          @Override
+          public boolean contains(VirtualFile file) {
+            return true;
+          }
 
-        @Override
-        public boolean isSearchInModuleContent(@NotNull Module aModule) {
-          return true;
-        }
+          @Override
+          public int compare(VirtualFile file1, VirtualFile file2) {
+            return file1.getPath().compareTo(file2.getPath());
+          }
 
-        @Override
-        public boolean isSearchInLibraries() {
-          return false;
-        }
-      });
-    return files.isEmpty();
+          @Override
+          public boolean isSearchInModuleContent(@NotNull Module aModule) {
+            return true;
+          }
+
+          @Override
+          public boolean isSearchInLibraries() {
+            return false;
+          }
+        });
+      return files.isEmpty();
+    } catch (IndexNotReadyException e) {
+      return false;
+    }
   }
 
   private boolean isEmpty(SModelDescriptor sm) {

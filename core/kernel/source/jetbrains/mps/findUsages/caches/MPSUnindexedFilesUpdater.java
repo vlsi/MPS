@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.findUsages.caches;
 
-import com.intellij.ide.startup.CacheUpdater;
-import com.intellij.ide.startup.FileContent;
+import com.intellij.ide.caches.CacheUpdater;
+import com.intellij.ide.caches.FileContent;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.roots.CollectingContentIterator;
@@ -49,7 +49,7 @@ public class MPSUnindexedFilesUpdater implements CacheUpdater {
   }
 
   public void processFile(final FileContent fileContent) {
-    myIndex.indexFileContent(fileContent);
+    myIndex.indexFileContent(null, fileContent);
   }
 
   private void iterateIndexableFiles(final ContentIterator processor) {

@@ -188,5 +188,10 @@
             <!--<action id="FindInPath" class="com.intellij.find.actions.FindInPathAction"/>-->
             <!--<action id="ReplaceInPath" class="com.intellij.find.actions.ReplaceInPathAction"/>-->
         </group>
+
+        <!--Fixing exeception in ToolWindowContentUi which uses this action-->
+        <action id="ShowContent" class="com.intellij.ide.actions.ShowContentAction"/>
+        <!--Fix another exception, in InternalDecorator this time-->
+        <action id="ToggleContentUiTypeMode" class="com.intellij.ide.actions.ToggleContentUiTypeAction"/>
     </actions>
 </component>

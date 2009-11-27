@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.findUsages;
 
-import com.intellij.ide.startup.FileSystemSynchronizer;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;

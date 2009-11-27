@@ -15,30 +15,32 @@
  */
 package jetbrains.mps.findUsages.caches;
 
-import com.intellij.ide.startup.FileSystemSynchronizer;
 import com.intellij.ide.startup.StartupManagerEx;
+import com.intellij.ide.caches.CacheUpdater;
 import com.intellij.openapi.components.AbstractProjectComponent;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManagerAdapter;
-import com.intellij.openapi.project.ProjectManager;
+import com.intellij.openapi.project.*;
 import com.intellij.openapi.roots.ContentIterator;
+import com.intellij.openapi.roots.ProjectRootManager;
+import com.intellij.openapi.roots.ex.ProjectRootManagerEx;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.IndexableFileSet;
 import jetbrains.mps.make.StartupModuleMaker;
 import jetbrains.mps.smodel.ModelAccess;
 
 import java.util.Set;
+import java.util.Collections;
 
 
 public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent implements IndexableFileSet {
   private final FileBasedIndex myIndex;
   private boolean myFirstUpdate = true;
 
-  public MPSFileBasedIndexProjectHandler(final Project project, FileBasedIndex index, StartupModuleMaker maker) {
+  public MPSFileBasedIndexProjectHandler(final Project project, final ProjectRootManagerEx rootManager, FileBasedIndex index, StartupModuleMaker maker) {
     super(project);
     myIndex = index;
 
@@ -49,7 +51,7 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
       startupManager.registerPreStartupActivity(new Runnable() {
         public void run() {
           updateRoots();
-          startupManager.getFileSystemSynchronizer().registerCacheUpdater(updater);
+          startupManager.registerCacheUpdater(updater);
           myIndex.registerIndexableSet(MPSFileBasedIndexProjectHandler.this);
           ProjectManager projectManager = ProjectManager.getInstance();
           projectManager.addProjectManagerListener(project, new ProjectManagerAdapter() {
@@ -64,9 +66,11 @@ public class MPSFileBasedIndexProjectHandler extends AbstractProjectComponent im
 
   private void updateRoots() {
     if (!myFirstUpdate) {
-      FileSystemSynchronizer synchronizer = new FileSystemSynchronizer();
-      synchronizer.registerCacheUpdater(new MPSUnindexedFilesUpdater(myIndex));
-      synchronizer.executeFileUpdate();
+      boolean ok = ProgressManager.getInstance().runProcessWithProgressSynchronously(new Runnable() {
+        public void run() {
+          DumbServiceImpl.getInstance(myProject).queueCacheUpdate(Collections.<CacheUpdater>singletonList(new MPSUnindexedFilesUpdater(myIndex)));
+        }
+      }, "Updating Caches", true, myProject);
     }
     myFirstUpdate = false;
   }

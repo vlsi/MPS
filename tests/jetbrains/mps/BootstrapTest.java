@@ -29,8 +29,8 @@ public class BootstrapTest extends BaseMPSTest {
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
-        PathMacros.getInstance().setMacro("mps.webr-dnq", "C:/webr-dnq", null);
-        PathMacros.getInstance().setMacro("charisma", "C:/charisma", null);
+        PathMacros.getInstance().setMacro("mps.webr-dnq", "C:/webr-dnq");
+        PathMacros.getInstance().setMacro("charisma", "C:/charisma");
       }
     });
     assertGenerates(new File("C:/charisma/charisma.mpr"), true);

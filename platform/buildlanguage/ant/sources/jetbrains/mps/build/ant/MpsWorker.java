@@ -201,7 +201,7 @@ public abstract class MpsWorker {
       String canonicalPath = PathUtil.getCanonicalPath(macro.get(macroName));
       File file = new File(canonicalPath);
       if (file.exists() && file.isDirectory()) {
-        PathMacros.getInstance().setMacro(macroName, canonicalPath, "");
+        PathMacros.getInstance().setMacro(macroName, canonicalPath);
       }
     }
   }

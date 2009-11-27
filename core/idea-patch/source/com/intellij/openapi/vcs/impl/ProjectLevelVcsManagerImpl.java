@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2009 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -41,6 +41,7 @@ import com.intellij.openapi.vcs.update.ActionInfo;
 import com.intellij.openapi.vcs.update.UpdateInfoTree;
 import com.intellij.openapi.vcs.update.UpdatedFiles;
 import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowAnchor;
@@ -212,7 +213,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
         if (vFile != null) {
           // the original code was return getVcsFor(vFile);
           // I changed it in order to fix MPS-6333 Exception after integrating change into branch
-          // File can be ouside of any mappings but we still want to commit it so we have to find vcs anyway 
+          // File can be ouside of any mappings but we still want to commit it so we have to find vcs anyway
           // MPS Patch begin:
           AbstractVcs vcsFor = getVcsFor(vFile);
           if (vcsFor != null) {
@@ -573,14 +574,14 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
         String className = rootSettingsElement.getAttributeValue(ATTRIBUTE_CLASS);
         AbstractVcs vcsInstance = findVcsByName(mapping.getVcs());
         if (vcsInstance != null && className != null) {
-          try {
-            final Class<?> aClass = vcsInstance.getClass().getClassLoader().loadClass(className);
-            final VcsRootSettings instance = (VcsRootSettings) aClass.newInstance();
-            instance.readExternal(rootSettingsElement);
-            mapping.setRootSettings(instance);
-          }
-          catch (Exception e) {
-            LOG.error("Failed to load VCS root settings class " + className + " for VCS " + vcsInstance.getClass().getName(), e);
+          final VcsRootSettings rootSettings = vcsInstance.createEmptyVcsRootSettings();
+          if (rootSettings != null) {
+            try {
+              rootSettings.readExternal(rootSettingsElement);
+              mapping.setRootSettings(rootSettings);
+            } catch (InvalidDataException e) {
+              LOG.error("Failed to load VCS root settings class " + className + " for VCS " + vcsInstance.getClass().getName(), e);
+            }
           }
         }
       }

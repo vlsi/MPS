@@ -16,8 +16,7 @@
     <get src="${main.url}/platform15/resources.jar" dest="${idea.platform.dir}/resources.jar" />
     <get src="${main.url}/platform15/resources_en.jar" dest="${idea.platform.dir}/resources_en.jar" />
     <get src="${main.url}/sources.zip" dest="${idea.platform.dir}/sources.zip" />
-    <get src="${main.url}/idea{build.number}-jdk15.zip" dest="${tmp}/idea-jdk15.zip" />
-    <get src="${main.url}/idea{build.number}-dev.zip" dest="${tmp}/idea-dev.zip" />
+    <get src="${main.url}/ideaIU-{build.number}-jdk15.zip" dest="${tmp}/idea-jdk15.zip" />
   </target>
   <target name="clean.license.classes" depends="download,replace.libraries">
     <property name="platform.jar" value="${idea.platform.dir}/platform.jar" />
@@ -110,7 +109,7 @@
       <fileset dir="${tmp}/idea/plugins/" includes="ClearCaseIntegration/**, cvsIntegration/**, git4idea/**, PerforceIntegration/**, starteamIntegration/**, svn4idea/**, vssIntegration/**" />
     </copy>
   </target>
-  <target name="clean" depends="upgrade.plugins,download,replace.libraries,unpack.sources,prepare,clean.license.classes,unpack.external.sources">
+  <target name="clean" depends="upgrade.plugins,download,replace.libraries,unpack.sources,prepare,clean.license.classes">
     <delete dir="${tmp}" />
   </target>
 </project>

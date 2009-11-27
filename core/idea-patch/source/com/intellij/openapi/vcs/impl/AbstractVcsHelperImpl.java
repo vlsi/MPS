@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2009 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -55,7 +55,6 @@ import com.intellij.openapi.vcs.versionBrowser.ChangesBrowserSettingsEditor;
 import com.intellij.openapi.vcs.versionBrowser.CommittedChangeList;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
@@ -73,29 +72,22 @@ import com.intellij.util.ui.MessageCategory;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import org.apache.log4j.Level;
 
 import java.awt.*;
 import java.io.*;
 import java.text.MessageFormat;
 import java.util.*;
 import java.util.List;
-import java.util.zip.ZipOutputStream;
 import java.nio.ByteBuffer;
 
-import jetbrains.mps.util.annotation.Patch;
+import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.annotation.Patch;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
-import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
-import jetbrains.mps.vfs.VFileSystem;
 
-/**
- * This class was patched by MPS in order to add backup of conflicted filas before conflict resolving.
- * Changes were made in showMergeDialog method.
- * It was also patched in order to fix multiple merge dialog problem, when MPS and IDEA both displayed merge dialog for the same file.
- */
 public class AbstractVcsHelperImpl extends AbstractVcsHelper {
   private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl");
 
@@ -699,7 +691,8 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
                                       final ChangeBrowserSettings settings,
                                       final int maxCount,
                                       String title) {
-    final RepositoryLocation location = CommittedChangesCache.getInstance(myProject).getLocationCache().getLocation(vcs, new FilePathImpl(root));
+    final RepositoryLocation location = CommittedChangesCache.getInstance(myProject).getLocationCache().getLocation(vcs, new FilePathImpl(root),
+      false);
     openCommittedChangesTab(vcs.getCommittedChangesProvider(), location, settings, maxCount, title);
   }
 

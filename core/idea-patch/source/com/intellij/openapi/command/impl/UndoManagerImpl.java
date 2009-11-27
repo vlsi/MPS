@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2009 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -48,8 +48,8 @@ import org.jetbrains.annotations.TestOnly;
 
 import java.util.*;
 
-import jetbrains.mps.util.annotation.Patch;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
+import jetbrains.mps.util.annotation.Patch;
 
 public class UndoManagerImpl extends UndoManager implements ProjectComponent, ApplicationComponent, Disposable {
   private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.command.impl.UndoManagerImpl");
@@ -81,7 +81,8 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
   private int myCommandTimestamp = 1;
   private final CommandProcessor myCommandProcessor;
   private final StartupManager myStartupManager;
-  private UndoProvider[] myUndoProviders = new UndoProvider[0];
+  @Patch
+  private UndoProvider[] myUndoProviders = new UndoProvider[0]; // fix NPE
 
   public UndoManagerImpl(Application application, CommandProcessor commandProcessor) {
     this(application, null, commandProcessor, null);
@@ -404,17 +405,31 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
 
   private boolean isUndoOrRedoAvailable(Collection<DocumentReference> refs, boolean isUndo) {
     if (isUndo && myMerger.isUndoAvailable(refs)) return true;
-    UndoRedoStacksHolder stackHolder = isUndo ? myUndoStacksHolder : myRedoStacksHolder;
+    UndoRedoStacksHolder stackHolder = getStackHolder(isUndo);
     return stackHolder.hasActions(refs);
+  }
+
+  private UndoRedoStacksHolder getStackHolder(boolean isUndo) {
+    return isUndo ? myUndoStacksHolder : myRedoStacksHolder;
   }
 
   @Override
   @Nullable
   public String formatAvailableUndoAction(FileEditor editor) {
+    return doFormatAvailableUndoRedoAction(editor, true);
+  }
+
+  @Override
+  @Nullable
+  public String formatAvailableRedoAction(FileEditor editor) {
+    return doFormatAvailableUndoRedoAction(editor, false);
+  }
+
+  private String doFormatAvailableUndoRedoAction(FileEditor editor, boolean isUndo) {
     Collection<DocumentReference> refs = getDocRefs(editor);
     if (refs == null) return null;
-    if (myMerger.isUndoAvailable(refs)) return myMerger.getCommandName();
-    return myUndoStacksHolder.getLastAction(refs).getCommandName();
+    if (isUndo && myMerger.isUndoAvailable(refs)) return myMerger.getCommandName();
+    return getStackHolder(isUndo).getLastAction(refs).getCommandName();
   }
 
   @Patch

@@ -179,7 +179,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
         final String caption = usageViewData.myUsagesView.getCaption();
         final Icon icon = usageViewData.myUsagesView.getIcon();
-        StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
+        StartupManager.getInstance(getProject()).runWhenProjectIsInitialized(new Runnable() {
           public void run() {
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
