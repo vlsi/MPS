@@ -32,7 +32,6 @@ import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.util.ImageLoader;
 import com.intellij.util.ui.UIUtil;
-import com.sun.tools.javac.util.Log;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathManager;
 
