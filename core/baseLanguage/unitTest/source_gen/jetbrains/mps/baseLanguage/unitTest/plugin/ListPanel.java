@@ -26,6 +26,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons;
 import jetbrains.mps.workbench.dialogs.project.components.parts.UiListsFactory;
+import javax.swing.JLabel;
 
 public class ListPanel extends JPanel {
   private JList list;
@@ -139,6 +140,10 @@ public class ListPanel extends JPanel {
     };
 
     UiListsFactory.addActionsComponentToPanel("Test", this.list, this, add, remove);
+    this.add(new JLabel((this.isTestMethods ?
+      "Methods" :
+      "Classes"
+    )), BorderLayout.PAGE_START);
     this.list.updateUI();
   }
 }

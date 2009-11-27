@@ -312,13 +312,7 @@ public class JUnitConfigEditor extends JPanel {
   }
 
   private JavaConfigOptions createComponent19() {
-    JavaConfigOptions component = null;
-   /* try {
-      component = (JavaConfigOptions) this.getClass().getClassLoader().loadClass(JavaConfigOptions.class.getName()).newInstance(); //new JavaConfigOptions();
-    } catch (Throwable t) {
-      t.printStackTrace();
-    }*/
-    component = new JavaConfigOptions();
+    JavaConfigOptions component = new JavaConfigOptions();
     this.myJavaOptions0 = component;
     return component;
   }
