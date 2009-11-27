@@ -11,6 +11,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import com.intellij.openapi.actionSystem.DataContext;
@@ -27,7 +28,6 @@ import java.util.List;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.intentions.Intention;
 import java.util.ArrayList;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.intentions.SurroundWithIntention;
 import java.util.Collections;
@@ -71,6 +71,9 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement"))) {
+          node = null;
+        }
       }
       this.selectedNode = node;
     }
@@ -117,13 +120,7 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
   private BaseGroup getIntentionGroup() {
     BaseGroup group = new BaseGroup("");
     List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
-    SNode classConcept;
-    if (SNodeOperations.isInstanceOf(SurroundWithIntentions_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      classConcept = SNodeOperations.cast(SurroundWithIntentions_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    } else {
-      classConcept = SNodeOperations.getAncestor(SurroundWithIntentions_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    }
-    groupItems.addAll(IntentionsManager.getInstance().getAvailableIntentions(classConcept, SurroundWithIntentions_Action.this.editorContext, null, SurroundWithIntention.class));
+    groupItems.addAll(IntentionsManager.getInstance().getAvailableIntentions(SurroundWithIntentions_Action.this.selectedNode, SurroundWithIntentions_Action.this.editorContext, null, SurroundWithIntention.class));
     if (groupItems.isEmpty()) {
       return null;
     }

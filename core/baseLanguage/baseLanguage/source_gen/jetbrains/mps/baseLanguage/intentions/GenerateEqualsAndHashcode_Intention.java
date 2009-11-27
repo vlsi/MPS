@@ -51,10 +51,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
       SLinkOperations.setTarget(fieldRefOperation, "fieldDeclaration", field, false);
       SNode checkStmt;
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-        checkStmt = new _Quotations.QuotationClass_13().createNode(thatRef, fieldRefOperation, thisExp, fieldRefOperation);
-        /*
-          checkStmt = new _Quotations.QuotationClass_27().createNode(thatRef, fieldRefOperation, thisExp, fieldRefOperation);
-        */
+        checkStmt = new _Quotations.QuotationClass_13().createNode(thatRef, fieldRefOperation, fieldRefOperation, thisExp);
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
         checkStmt = new _Quotations.QuotationClass_11().createNode(thisExp, fieldRefOperation, thatRef, fieldRefOperation);
       } else {
@@ -79,13 +76,13 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.IntegerType")) {
         checkStatement = new _Quotations.QuotationClass_24().createNode(resultReference, thisExp, field, plusExpression);
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.FloatType")) {
-        checkStatement = new _Quotations.QuotationClass_28().createNode(resultReference, plusExpression, thisExp, field, thisExp, field);
+        checkStatement = new _Quotations.QuotationClass_27().createNode(resultReference, plusExpression, thisExp, field, thisExp, field);
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.StringType")) {
-        checkStatement = new _Quotations.QuotationClass_29().createNode(resultReference, plusExpression, fieldRefOperation, fieldRefOperation);
+        checkStatement = new _Quotations.QuotationClass_28().createNode(resultReference, plusExpression, fieldRefOperation, fieldRefOperation);
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
-        checkStatement = new _Quotations.QuotationClass_30().createNode(plusExpression, fieldRefOperation, thisExp, fieldRefOperation, resultReference);
+        checkStatement = new _Quotations.QuotationClass_29().createNode(plusExpression, thisExp, fieldRefOperation, thisExp, fieldRefOperation, resultReference);
       } else {
-        checkStatement = new _Quotations.QuotationClass_31().createNode(thisExp, fieldRefOperation, thisExp, plusExpression, resultReference);
+        checkStatement = new _Quotations.QuotationClass_30().createNode(thisExp, fieldRefOperation, thisExp, plusExpression, resultReference);
       }
       SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", checkStatement);
     }
