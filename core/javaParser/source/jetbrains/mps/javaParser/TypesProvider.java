@@ -453,7 +453,12 @@ public class TypesProvider {
     }
     if (type instanceof TypeVariableBinding) {
       TypeVariableBinding typeVariableBinding = (TypeVariableBinding) type;
-      return asString(typeVariableBinding.superclass);
+      ReferenceBinding superclass = typeVariableBinding.superclass;
+      if (JavaCompiler.classNameFromCompoundName(superclass.compoundName).equals("java.lang.Object")
+        && typeVariableBinding.superInterfaces != null && typeVariableBinding.superInterfaces.length > 0) {
+        return asString(typeVariableBinding.superInterfaces[0]);
+      }
+      return asString(superclass);
      /* Binding binding = typeVariableBinding.declaringElement;
       String name = null;
       if (binding instanceof MethodBinding) {

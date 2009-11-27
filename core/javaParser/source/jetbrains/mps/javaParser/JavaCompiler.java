@@ -350,6 +350,18 @@ public class JavaCompiler {
     return result.toString();
   }
 
+  public static String classNameFromCompoundName(char[][] name) {
+    StringBuilder result = new StringBuilder();
+    for (int i = 0; i < name.length; i++) {
+      char[] namePart = name[i];
+      result.append(namePart);
+      if (i < name.length - 1) {
+        result.append('.');
+      }
+    }
+    return result.toString();
+  }
+
   private class MyNameEnvironment extends MPSNameEnvironment {
     protected IClassPathItem getClassPathItem() {
       return myClassPathItem;
