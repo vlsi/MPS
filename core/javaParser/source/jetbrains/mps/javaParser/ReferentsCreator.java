@@ -274,10 +274,14 @@ public class ReferentsCreator {
             //inner class
             isTopLevel = false;
             MemberTypeBinding memberTypeBinding = (MemberTypeBinding) binding;
-            SourceTypeBinding enclosingClass = memberTypeBinding.enclosingType;   //todo enclosing interface?
-            ClassConcept classConcept = (ClassConcept) myReferentsCreator.myBindingMap.get(enclosingClass);
-            classifier.setNonStatic(!memberTypeBinding.isStatic());
-            classConcept.addStaticInnerClassifiers(classifier);
+            SourceTypeBinding enclosingClass = memberTypeBinding.enclosingType;
+            INodeAdapter enclosingClassifier = myReferentsCreator.myBindingMap.get(enclosingClass);
+            if (enclosingClassifier instanceof ClassConcept) {
+              ClassConcept classConcept = (ClassConcept) enclosingClassifier;
+              classifier.setNonStatic(!memberTypeBinding.isStatic());
+              classConcept.addStaticInnerClassifiers(classifier);
+              //todo add static inner classifiers to Interfaces
+            }
           }
         }
 
