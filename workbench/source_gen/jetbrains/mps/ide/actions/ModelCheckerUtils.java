@@ -24,12 +24,12 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -140,7 +140,7 @@ public class ModelCheckerUtils {
 
             // Check links 
             for (SNode link : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(concept))) {
-              if (SPropertyOperations.hasValue(link, "sourceCardinality", "1", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1..n", "0..1")) {
+              if (LinkDeclaration_Behavior.call_isAtLeastOneCardinality_3386205146660812199(link)) {
                 if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
                   if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
                     addIssue(results, node, "Cardinality constraint violation in role \"" + SPropertyOperations.getString(link, "role") + "\"");
