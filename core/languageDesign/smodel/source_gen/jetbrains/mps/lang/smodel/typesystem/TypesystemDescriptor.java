@@ -275,10 +275,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_EnumMember_NameOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_SEnum_MemberForValueOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }

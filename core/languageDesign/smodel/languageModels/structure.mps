@@ -3010,6 +3010,10 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1241015236622">
       <link role="intfc" targetNodeId="1241015185235" resolveInfo="SEnumMemberOperation" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="7775308804414322955">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1217022095863" resolveInfo="returnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.StringType" id="7775308804414322958" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1240930118027">
     <property name="name" value="SEnumOperationInvocation" />
