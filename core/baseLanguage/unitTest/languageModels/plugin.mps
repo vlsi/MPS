@@ -13340,22 +13340,32 @@
                 <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4928802195747792341">
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4798874726882928336">
                     <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4798874726882928337">
-                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4798874726882950129">
-                        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4798874726882950130">
-                          <node role="statement" type="jetbrains.mps.lang.plugin.structure.ReportErrorStatement" id="4798874726882950139">
-                            <node role="error" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4798874726882950140">
-                              <property name="value" value="method is not selected or does not exist" />
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4385949629786364161">
+                        <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4385949629786364162">
+                          <node role="statement" type="jetbrains.mps.lang.plugin.structure.ReportErrorStatement" id="4385949629786364179">
+                            <node role="error" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4385949629786364180">
+                              <property name="value" value="methods list is empty" />
                             </node>
                           </node>
                         </node>
-                        <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="4798874726882950147">
-                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4798874726882950144">
-                            <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="4798874726882950145" />
-                            <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="4798874726882950146">
-                              <link role="member" targetNodeId="145554711892086642" resolveInfo="method" />
+                        <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4385949629786364174">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4385949629786364166">
+                            <link role="baseMethodDeclaration" targetNodeId="7009731661573607713" resolveInfo="getValues" />
+                            <link role="classConcept" targetNodeId="2148145109766353204" resolveInfo="TestRunUtil" />
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4385949629786364167">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="4385949629786364168" />
+                              <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="4385949629786364169">
+                                <link role="member" targetNodeId="145554711892086642" resolveInfo="method" />
+                              </node>
+                            </node>
+                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4385949629786364171">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="4385949629786364172" />
+                              <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="4385949629786364173">
+                                <link role="member" targetNodeId="7009731661573604669" resolveInfo="methods" />
+                              </node>
                             </node>
                           </node>
-                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4798874726882950150" />
+                          <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="4385949629786364178" />
                         </node>
                       </node>
                     </node>
@@ -13384,7 +13394,36 @@
                           </node>
                         </node>
                       </node>
-                      <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4798874726882928365" />
+                      <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4798874726882928365">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4385949629786364181">
+                          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4385949629786364182">
+                            <node role="statement" type="jetbrains.mps.lang.plugin.structure.ReportErrorStatement" id="4385949629786364183">
+                              <node role="error" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4385949629786364184">
+                                <property name="value" value="classes list is empty" />
+                              </node>
+                            </node>
+                          </node>
+                          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4385949629786364185">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4385949629786364186">
+                              <link role="classConcept" targetNodeId="2148145109766353204" resolveInfo="TestRunUtil" />
+                              <link role="baseMethodDeclaration" targetNodeId="7009731661573607713" resolveInfo="getValues" />
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4385949629786364187">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="4385949629786364188" />
+                                <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="4385949629786364194">
+                                  <link role="member" targetNodeId="1104580685292496600" resolveInfo="node" />
+                                </node>
+                              </node>
+                              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4385949629786364190">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="4385949629786364191" />
+                                <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="4385949629786364197">
+                                  <link role="member" targetNodeId="7009731661573604663" resolveInfo="nodes" />
+                                </node>
+                              </node>
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="4385949629786364193" />
+                          </node>
+                        </node>
+                      </node>
                     </node>
                     <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="4798874726882928382">
                       <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="4798874726882928383">
@@ -13399,7 +13438,26 @@
                           </node>
                         </node>
                       </node>
-                      <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4798874726882928388" />
+                      <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4798874726882928388">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4385949629786327000">
+                          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4385949629786327001">
+                            <node role="statement" type="jetbrains.mps.lang.plugin.structure.ReportErrorStatement" id="4385949629786327002">
+                              <node role="error" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4385949629786327003">
+                                <property name="value" value="model is not selected or does not exist" />
+                              </node>
+                            </node>
+                          </node>
+                          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="4385949629786327004">
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4385949629786327005" />
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4385949629786327006">
+                              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="4385949629786327007" />
+                              <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="4385949629786327009">
+                                <link role="member" targetNodeId="1104580685292496602" resolveInfo="model" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
                     </node>
                     <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="4798874726882928406">
                       <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="4798874726882928407">

@@ -9,6 +9,7 @@ import com.intellij.execution.configurations.ConfigurationFactory;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.plugin.ConfigRunParameters;
 import com.intellij.execution.configurations.RunProfileState;
 import org.jetbrains.annotations.NotNull;
@@ -23,7 +24,6 @@ import com.intellij.execution.impl.ConsoleViewImpl;
 import javax.swing.JComponent;
 import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.project.MPSProject;
@@ -68,11 +68,17 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.METHOD) {
-              if (DefaultJUnit_Configuration.this.getStateObject().method == null) {
-                error.append("method is not selected or does not exist").append("\n");
+              if (ListSequence.fromList(TestRunUtil.getValues(DefaultJUnit_Configuration.this.getStateObject().method, DefaultJUnit_Configuration.this.getStateObject().methods)).isEmpty()) {
+                error.append("methods list is empty").append("\n");
               }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.NODE) {
+              if (ListSequence.fromList(TestRunUtil.getValues(DefaultJUnit_Configuration.this.getStateObject().node, DefaultJUnit_Configuration.this.getStateObject().nodes)).isEmpty()) {
+                error.append("classes list is empty").append("\n");
+              }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODEL) {
+              if (DefaultJUnit_Configuration.this.getStateObject().model == null) {
+                error.append("model is not selected or does not exist").append("\n");
+              }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
               if (DefaultJUnit_Configuration.this.getStateObject().module == null) {
                 error.append("module is not selected or does not exist").append("\n");
