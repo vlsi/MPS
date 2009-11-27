@@ -43,6 +43,10 @@ public class GoToTypeErrorGroup_ActionGroup extends GeneratedActionGroup {
     try {
       DataContext context = event.getDataContext();
       SNode node = MPSDataKeys.NODE.getData(context);
+      if (node == null) {
+        GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
+        return;
+      }
       IErrorReporter error = TypeChecker.getInstance().getTypeMessageDontCheck(node);
       if (error == null || error.getRuleId() == null || error.getRuleModel() == null || error.getAdditionalRulesIds().isEmpty()) {
         GoToTypeErrorGroup_ActionGroup.this.disable(event.getPresentation());
