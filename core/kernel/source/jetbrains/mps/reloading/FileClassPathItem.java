@@ -59,7 +59,7 @@ public class FileClassPathItem extends AbstractClassPathItem {
       return null;
     }
 
-    String path = myClassPath + File.separatorChar + name.replace('.', File.separatorChar) + ".class";
+    String path = myClassPath + File.separatorChar + name.replace('.', File.separatorChar) + MPSExtentions.DOT_CLASSFILE;
     IFile file = FileSystem.getFile(path);
     try {
       byte[] result = new byte[(int) file.length()];
@@ -89,61 +89,55 @@ public class FileClassPathItem extends AbstractClassPathItem {
     }
   }
 
-  @NotNull
-  public Set<String> getAvailableClasses(String namespace) {
+  public void collectAvailableClasses(Set<String> classes, String namespace) {
     if (!myAvailableClassesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
     }
 
     Set<String> result = myAvailableClassesCache.get(namespace);
-    if (result == null) {
-      return Collections.emptySet();
+    if (result != null) {
+      classes.addAll(result);
     }
-
-    return Collections.unmodifiableSet(result);
   }
 
-  @NotNull
-  public Set<String> getSubpackages(String namespace) {
+  public void collectSubpackages(Set<String> subpackages, String namespace) {
     if (!mySubpackagesCache.containsKey(namespace)) {
       buildCacheFor(namespace);
     }
 
     Set<String> result = mySubpackagesCache.get(namespace);
-    if (result == null) {
-      return Collections.emptySet();
+    if (result != null) {
+      subpackages.addAll(result);
     }
-
-    return Collections.unmodifiableSet(result);
   }
 
   private void buildCacheFor(String namespace) {
-    Set<String> subpacks = new HashSet<String>(0);
-    Set<String> classes = new HashSet<String>(0);
+    Set<String> subpacks = null;
+    Set<String> classes = null;
     IFile dir = getModelDir(namespace);
 
     List<IFile> files = dir.list();
     if (files != null) {
       for (IFile file : files) {
         String name = file.getName();
-        if (!name.endsWith(MPSExtentions.DOT_CLASSFILE)) { //isDirectory is quite expensive operation
+        if (name.endsWith(MPSExtentions.DOT_CLASSFILE)) { //isDirectory is quite expensive operation
+          if(classes == null) {
+            classes = new HashSet<String>(files.size());
+          }
+          classes.add(name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length()));
+        } else {
           if (file.isDirectory()) {
-            if (namespace.length() > 0) {
-              subpacks.add(namespace + "." + name);
-            } else {
-              subpacks.add(namespace + name);
+            if(subpacks == null) {
+              subpacks = new HashSet<String>();
             }
-          } 
-        }
-
-        if (name.endsWith(".class")) {
-          classes.add(name.substring(0, name.length() - ".class".length()));
+            subpacks.add(namespace.length() > 0 ? namespace + "." + name : name);
+          }
         }
       }
     }
 
-    mySubpackagesCache.put(namespace, subpacks.isEmpty() ? null : subpacks);
-    myAvailableClassesCache.put(namespace, classes.isEmpty() ? null : classes);
+    mySubpackagesCache.put(namespace, subpacks);
+    myAvailableClassesCache.put(namespace, classes);
   }
 
   public long getClassesTimestamp(String namespace) {
@@ -151,7 +145,7 @@ public class FileClassPathItem extends AbstractClassPathItem {
     long result = dir.lastModified();
     if (dir.exists()) {
       for (IFile file : dir.list()) {
-        if (file.getName().endsWith(".class")) {
+        if (file.getName().endsWith(MPSExtentions.DOT_CLASSFILE)) {
           result = Math.max(result, file.lastModified());
         }
       }

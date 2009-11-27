@@ -15,7 +15,10 @@
  */
 package jetbrains.mps.reloading;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.Set;
+import java.util.HashSet;
 
 public abstract class AbstractClassPathItem implements IClassPathItem {
   public long getTimestamp() {
@@ -34,4 +37,22 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
     }
     return result;
   }
+
+  @NotNull
+  public final Set<String> getSubpackages(String namespace) {
+    Set<String> result = new HashSet<String>();
+    collectSubpackages(result, namespace);
+    return result;
+  }
+
+  @NotNull
+  public final Set<String> getAvailableClasses(String namespace) {
+    Set<String> result = new HashSet<String>();
+    collectAvailableClasses(result, namespace);
+    return result;
+  }
+
+  protected abstract void collectSubpackages(Set<String> subpackages, String namespace);
+
+  protected abstract void collectAvailableClasses(Set<String> classes, String namespace);
 }

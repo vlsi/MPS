@@ -23,7 +23,7 @@ import java.util.*;
 /**
  * @author Kostik
  */
-public class CompositeClassPathItem implements IClassPathItem {
+public class CompositeClassPathItem extends AbstractClassPathItem {
   private List<IClassPathItem> myChildren = new ArrayList<IClassPathItem>();
 
   public void add(IClassPathItem item) {
@@ -50,24 +50,24 @@ public class CompositeClassPathItem implements IClassPathItem {
     return null;
   }
 
-  @NotNull
-  public Set<String> getAvailableClasses(String namespace) {
-    Set<String> result = new HashSet<String>(0);
+  public void collectAvailableClasses(Set<String> classes, String namespace) {
     for (IClassPathItem item : myChildren) {
-      result.addAll(item.getAvailableClasses(namespace));
+      if(item instanceof AbstractClassPathItem) {
+        ((AbstractClassPathItem)item).collectAvailableClasses(classes, namespace);
+      } else {
+        classes.addAll(item.getAvailableClasses(namespace));
+      }
     }
-    return result;
   }
 
-  @NotNull
-  public Set<String> getSubpackages(String namespace) {
-    Set<String> result = new HashSet<String>(0);
-
+  public void collectSubpackages(Set<String> subpackages, String namespace) {
     for (IClassPathItem item : myChildren) {
-      result.addAll(item.getSubpackages(namespace));
+      if(item instanceof AbstractClassPathItem) {
+        ((AbstractClassPathItem)item).collectSubpackages(subpackages, namespace);
+      } else {
+        subpackages.addAll(item.getSubpackages(namespace));
+      }
     }
-
-    return result;
   }
 
   public long getClassesTimestamp(String namespace) {

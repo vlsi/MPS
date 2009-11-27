@@ -21,6 +21,7 @@ import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.MPSExtentions;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
@@ -122,14 +123,12 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
     }
   }
 
-  @NotNull
-  public Set<String> getAvailableClasses(String namespace) {
-    return Collections.unmodifiableSet(getClassesSetFor(namespace));
+  public void collectAvailableClasses(Set<String> classes, String namespace) {
+    classes.addAll(getClassesSetFor(namespace));
   }
 
-  @NotNull
-  public Set<String> getSubpackages(String namespace) {
-    return Collections.unmodifiableSet(getSubpackagesSetFor(namespace));
+  public void collectSubpackages(Set<String> subpackages, String namespace) {
+    subpackages.addAll(getSubpackagesSetFor(namespace));
   }
 
   public long getClassesTimestamp(String namespace) {
@@ -142,14 +141,14 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
 
   private Set<String> getClassesSetFor(String pack) {
     if (!myClasses.containsKey(pack)) {
-      myClasses.put(pack, new HashSet<String>(0));
+      myClasses.put(pack, new HashSet<String>());
     }
     return myClasses.get(pack);
   }
 
   private Set<String> getSubpackagesSetFor(String pack) {
     if (!mySubpackages.containsKey(pack)) {
-      mySubpackages.put(pack, new HashSet<String>(0));
+      mySubpackages.put(pack, new HashSet<String>());
     }
     return mySubpackages.get(pack);
   }
@@ -169,14 +168,14 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
       } else {
         String name = entry.getName();
 
-        if (!name.endsWith(".class")) continue;
+        if (!name.endsWith(MPSExtentions.DOT_CLASSFILE)) continue;
 
         int packEnd = name.lastIndexOf('/');
         String pack;
         String className;
         if (packEnd == -1) {
           pack = "";
-          className = name.substring(0, name.length() - ".class".length());
+          className = name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length());
         } else {
           pack = packEnd > 0 ? name.substring(0, packEnd).replace('/', '.') : name;
           className = name.substring(packEnd + 1, name.length() - ".class".length());

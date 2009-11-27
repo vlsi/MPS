@@ -77,16 +77,14 @@ public class RefactoringUtil {
   }
 
   public static Map<IModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(MPSProject project, Language language) {
-    Map<IModule, List<SModel>> result = new LinkedHashMap<IModule, List<SModel>>();
-
-    final Set<Language> langs = new LinkedHashSet<Language>();
-    langs.add(language);
-    langs.addAll(MPSModuleRepository.getInstance().getAllExtendingLanguages(language));
-
-    for (Language l : langs) {
-      result.put(l, getLanguageModelsList(project, l));
+    Set<Language> extendingLangs =  MPSModuleRepository.getInstance().getAllExtendingLanguages(language);
+    Map<IModule, List<SModel>> result = new LinkedHashMap<IModule, List<SModel>>(extendingLangs.size() + 1);
+    result.put(language, getLanguageModelsList(project, language));
+    for (Language l : extendingLangs) {
+      if(!l.equals(language)) {
+        result.put(l, getLanguageModelsList(project, l));
+      }
     }
-
     return result;
   }
 
@@ -97,8 +95,6 @@ public class RefactoringUtil {
   }
 
   public static Map<IModule, List<SModel>> getLanguageModels(MPSProject project, Language language) {
-    Map<IModule, List<SModel>> result = new HashMap<IModule, List<SModel>>();
-    result.put(language, getLanguageModelsList(project, language));
-    return result;
+    return Collections.<IModule, List<SModel>>singletonMap(language, getLanguageModelsList(project, language));
   }
 }

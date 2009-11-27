@@ -27,16 +27,16 @@ import java.util.Map;
 public class ASMAnnotation {
 
   private ASMType myType;
-
-  private Map<String, Object> myValues = new LinkedHashMap<String, Object>();
+  private Map<String, Object> myValues;
 
   public ASMAnnotation(AnnotationNode node) {
     myType = TypeUtil.fromDescriptor(node.desc);
+
     if (node.values != null) {
+      myValues = new LinkedHashMap<String, Object>(node.values.size() / 2);
       for (int i = 0; i < node.values.size() / 2; i += 2) {
         Object key = node.values.get(i * 2);
         Object value = processValue(node.values.get(i * 2 + 1));
-
 
         myValues.put(key.toString(), value);
       }
@@ -71,7 +71,7 @@ public class ASMAnnotation {
   }
 
   public Map<String, Object> getValues() {
-    return Collections.unmodifiableMap(myValues);
+    return myValues == null ? Collections.<String,Object>emptyMap() : Collections.unmodifiableMap(myValues);
   }
 
   public ASMType getType() {
