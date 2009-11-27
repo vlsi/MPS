@@ -143,8 +143,9 @@
                   <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230058635664" />
                 </node>
                 <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.Type" id="1932269937152530084">
-                  <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1932269937152530085">
+                  <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="1472904739617870120">
                     <property name="isLastPosition" value="true" />
+                    <property name="useLabelSelection" value="true" />
                     <property name="selectionStart" value="0" />
                     <property name="selectionEnd" value="0" />
                     <property name="cellId" value="Error_9010_0" />
