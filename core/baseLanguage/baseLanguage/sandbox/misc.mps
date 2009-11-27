@@ -1722,13 +1722,57 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6489343236075097089" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6489343236075097090" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6489343236075097091">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6489343236075099013">
-          <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="6489343236075099014">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5781946779619904638">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="5781946779619904641" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5781946779619904642">
-                <link role="baseMethodDeclaration" targetNodeId="150.~Object.hashCode():int" resolveInfo="hashCode" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1809207813036604236">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1809207813036604237">
+            <property name="name" value="f" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1809207813036604259" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1809207813036604260" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1809207813036604247">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1809207813036604248">
+            <property name="name" value="node" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1809207813036604249">
+              <link role="concept" targetNodeId="138.1068581242866" resolveInfo="LocalVariableReference" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1809207813036604250">
+              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1809207813036604251">
+                <link role="variableDeclaration" targetNodeId="1809207813036604237" resolveInfo="f" />
+                <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1809207813036604252">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1809207813036604253">
+                    <link role="variableDeclaration" targetNodeId="1809207813036604237" resolveInfo="f" />
+                    <node role="referenceAntiquotation$link_attribute$variableDeclaration" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="1809207813036604254">
+                      <property name="label" value="LocalVariableReference" />
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1809207813036604255">
+                        <link role="variableDeclaration" targetNodeId="1809207813036604237" resolveInfo="f" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3876057187276874033">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="3876057187276874035">
+            <node role="rValue" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3876057187276874038">
+              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3876057187276874041">
+                <link role="variableDeclaration" targetNodeId="1809207813036604237" resolveInfo="f" />
+                <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="3876057187276874044">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3876057187276874046">
+                    <link role="variableDeclaration" targetNodeId="1809207813036604237" resolveInfo="f" />
+                    <node role="referenceAntiquotation$link_attribute$variableDeclaration" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="3876057187276874047">
+                      <property name="label" value="LocalVariableReference" />
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3876057187276874049">
+                        <link role="variableDeclaration" targetNodeId="1809207813036604237" resolveInfo="f" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3876057187276874034">
+              <link role="variableDeclaration" targetNodeId="1809207813036604248" resolveInfo="node" />
             </node>
           </node>
         </node>
@@ -1849,6 +1893,12 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="213802071188248603">
     <property name="name" value="SuperClass" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1809207813036590823">
+      <property name="name" value="quot" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1809207813036590824" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1809207813036590825" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1809207813036590826" />
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="213802071188248604" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="213802071188248605">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="213802071188248606" />

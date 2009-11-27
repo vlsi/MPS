@@ -29,10 +29,11 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
     SNode node = baseConcept;
     ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
 
-    if (!(node.isAttribute())) {
-      if (node.getParent() != null && !(node.getParent().isUnknown())) {
-        String role = node.getRole_();
-        LinkDeclaration link = node.getParent().getLinkDeclaration(role);
+    if (node.getParent() != null && !(node.getParent().isUnknown())) {
+
+      String role = node.getRole_();
+      LinkDeclaration link = node.getParent().getLinkDeclaration(role);
+      if (!(node.isAttribute())) {
 
         if (link == null) {
           {
@@ -42,32 +43,35 @@ public class check_Constraints_NonTypesystemRule extends AbstractNonTypesystemRu
           }
           return;
         }
+      }
 
-        boolean canBeChild = cm.canBeChild(node.getConceptFqName(), operationContext, node.getParent(), link.getNode());
-        if (!(canBeChild)) {
+      SNode linkNode = (link == null ?
+        null :
+        link.getNode()
+      );
+      boolean canBeChild = cm.canBeChild(node.getConceptFqName(), operationContext, node.getParent(), linkNode);
+      if (!(canBeChild)) {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Node isn't applicable in the context", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "5622704259074610949", intentionProvider, errorTarget);
           {
-            BaseIntentionProvider intentionProvider = null;
-            IErrorTarget errorTarget = new NodeErrorTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Node isn't applicable in the context", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "5622704259074610949", intentionProvider, errorTarget);
-            {
-              SNode _foreign_34989546 = cm.getCanBeChildBlock(operationContext, node.getConceptFqName());
-              _reporter_2309309498.addAdditionalRuleId(_foreign_34989546.getModel().toString(), _foreign_34989546.getId());
-            }
+            SNode _foreign_34989546 = cm.getCanBeChildBlock(operationContext, node.getConceptFqName());
+            _reporter_2309309498.addAdditionalRuleId(_foreign_34989546.getModel().toString(), _foreign_34989546.getId());
           }
         }
       }
-
-      if (node.isRoot()) {
-        boolean canBeRoot = cm.canBeRoot(operationContext, node.getConceptFqName(), node.getModel());
-        if (!(canBeRoot)) {
+    }
+    if (node.isRoot()) {
+      boolean canBeRoot = cm.canBeRoot(operationContext, node.getConceptFqName(), node.getModel());
+      if (!(canBeRoot)) {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Not rootable concept added as root", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "5622704259074611001", intentionProvider, errorTarget);
           {
-            BaseIntentionProvider intentionProvider = null;
-            IErrorTarget errorTarget = new NodeErrorTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Not rootable concept added as root", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "5622704259074611001", intentionProvider, errorTarget);
-            {
-              SNode _foreign_34989546 = cm.getCanBeRootBlock(operationContext, node.getConceptFqName());
-              _reporter_2309309498.addAdditionalRuleId(_foreign_34989546.getModel().toString(), _foreign_34989546.getId());
-            }
+            SNode _foreign_34989546 = cm.getCanBeRootBlock(operationContext, node.getConceptFqName());
+            _reporter_2309309498.addAdditionalRuleId(_foreign_34989546.getModel().toString(), _foreign_34989546.getId());
           }
         }
       }
