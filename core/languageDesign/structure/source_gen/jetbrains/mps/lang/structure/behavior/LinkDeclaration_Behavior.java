@@ -31,4 +31,9 @@ public class LinkDeclaration_Behavior {
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     return SPropertyOperations.getString(thisNode, "role");
   }
+
+  public static boolean call_isAtLeastOneCardinality_3386205146660812199(SNode thisNode) {
+    SNode genuineLink = LinkDeclaration_Behavior.call_getGenuineLink_1213877254523(thisNode);
+    return SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1", "0..1") || SPropertyOperations.hasValue(genuineLink, "sourceCardinality", "1..n", "0..1");
+  }
 }
