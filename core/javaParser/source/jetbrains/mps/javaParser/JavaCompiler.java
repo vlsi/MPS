@@ -31,6 +31,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.compiler.MPSNameEnvironment;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
@@ -61,20 +62,24 @@ public class JavaCompiler {
   private File mySourceDir;
   private Map<String, SModel> myPackageFQNamesToModels = new HashMap<String, SModel>();
   private Set<String> myModelsToCreate = new HashSet<String>();
+  private SModel myBaseModelToAddSource;
   private String myPrefix = null;
+  boolean mySetOutputPath;
 
   public JavaCompiler(IModule module, File sourceDir, boolean setOutputPath) {
+    this(module, sourceDir, setOutputPath, null);
+  }
+
+  public JavaCompiler(IModule module, File sourceDir, boolean setOutputPath, SModel model) {
     myModule = module;
     mySourceDir = sourceDir;
-    initClassPathItem(module);
-    addSourceFromDirectory(mySourceDir, "");
-    File generalSourceDirectory = getGeneralSourceDirectory();
-    if (generalSourceDirectory != null) {
-      if (myModule instanceof Solution) {
-        ((Solution) myModule).getSolutionDescriptor().setOutputPath(generalSourceDirectory.getPath());
-      }
-    }
-    myModule.save();
+    myBaseModelToAddSource = model;
+    mySetOutputPath = setOutputPath;
+  }
+
+  public static boolean checkBaseModelMatchesSourceDirectory(SModel model, File sourceDir) {
+    String pathPostfix = NameUtil.pathFromNamespace(model.getLongName());
+    return sourceDir.getAbsolutePath().endsWith(pathPostfix);
   }
 
   private File getGeneralSourceDirectory() {
@@ -225,6 +230,23 @@ public class JavaCompiler {
   }
 
   public void compile() {
+    if (myBaseModelToAddSource != null) {
+      if (!checkBaseModelMatchesSourceDirectory(myBaseModelToAddSource, mySourceDir)) {
+        LOG.error("model fq name " + myBaseModelToAddSource.getLongName()
+          + " does not match source directory " + mySourceDir.getAbsolutePath());
+        return;
+      }
+    }
+    initClassPathItem(myModule);
+    addSourceFromDirectory(mySourceDir, "");
+    File generalSourceDirectory = getGeneralSourceDirectory();
+    if (generalSourceDirectory != null) {
+      if (myModule instanceof Solution && mySetOutputPath) {
+        ((Solution) myModule).getSolutionDescriptor().setOutputPath(generalSourceDirectory.getPath());
+      }
+    }
+    myModule.save();
+
     boolean needsRecompilation = true;
     while (needsRecompilation) {
       recompile();

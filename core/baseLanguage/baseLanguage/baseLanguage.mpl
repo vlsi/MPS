@@ -25,6 +25,11 @@
   <classPath>
     <entry path="${language_descriptor}/classes" include="false" />
     <entry path="${mps_home}/core/languageDesign/dataFlow/runtime/classes" include="false" />
+    <entry path="${mps_home}/lib/jdom/jdom.jar" include="false" />
+    <entry path="${mps_home}/lib/jetbrains-ideframework/annotations.jar" include="false" />
+    <entry path="${mps_home}/core/languageDesign/plugin/classes" include="false" />
+    <entry path="${mps_home}/core/idea-patch/classes" include="false" />
+    <entry path="${mps_home}/core/languageDesign/core/classes" include="false" />
   </classPath>
   <languageRuntimeClassPath>
     <entry path="${language_descriptor}/runtime/classes" />

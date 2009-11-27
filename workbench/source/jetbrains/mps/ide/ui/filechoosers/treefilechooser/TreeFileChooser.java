@@ -56,6 +56,7 @@ public class TreeFileChooser {
   private IFileFilter myFileFilter = ALL_FILES_FILTER;
   private IOperationContext myContext = null;
   private String myTitle = null;
+  private boolean myDirectoriesAlwaysVisible = false;
 
   /////////////////////////////
 
@@ -85,6 +86,10 @@ public class TreeFileChooser {
 
   public void setInitialFile(IFile file) {
     ourInitialSelectedFile = file;
+  }
+
+  public void setDirectoriesAreAlwaysVisible(boolean visible) {
+    myDirectoriesAlwaysVisible = visible;
   }
 
   public List<IFile> showMultiSelectionDialog(Component owner) {
@@ -117,6 +122,9 @@ public class TreeFileChooser {
     FileChooserDescriptor descriptor = new FileChooserDescriptor(myMode != MODE_DIRECTORIES, myMode != MODE_FILES, true, true, false, multipleSelection) {
       public boolean isFileVisible(VirtualFile file, boolean showHiddenFiles) {
         if (!super.isFileVisible(file, showHiddenFiles)) return false;
+        if (file.isDirectory() && myDirectoriesAlwaysVisible) {
+          return true;
+        }
         return myFileFilter.accept(new FileSystemFile(file.getPath()));
       }
     };

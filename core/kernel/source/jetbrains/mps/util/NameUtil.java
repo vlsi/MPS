@@ -426,8 +426,9 @@ public class NameUtil {
     return sb.toString();
   }
 
+  //platform-dependent path string
   public static String pathFromNamespace(String namespace) {
-    return namespace.replace('.', '/');
+    return namespace.replace('.', File.separatorChar);
   }
 
   /**
