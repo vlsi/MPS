@@ -577,7 +577,6 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
             // copy logfiles
             File logsDir = new File(PathManager.getLogPath());
             File[] logfiles = logsDir.listFiles(new FilenameFilter() {
-              @Override
               public boolean accept(File dir, String name) {
                 return name.matches("mpsvcs\\.log(\\.1)*") || name.matches("idea\\.log(\\.1)*");
               }
