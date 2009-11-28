@@ -5,4 +5,3 @@
 -XX:MaxPermSize=92m
 -XX:+HeapDumpOnOutOfMemoryError
 -Dfile.encoding=UTF-8
--Dapple.laf.useScreenMenuBar=true
