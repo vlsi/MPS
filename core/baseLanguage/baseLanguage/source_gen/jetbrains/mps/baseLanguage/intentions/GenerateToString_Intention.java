@@ -40,27 +40,26 @@ public class GenerateToString_Intention extends GenerateIntention {
     final SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     List<SNode> fields = SLinkOperations.getTargets(classConcept, "field", true);
     final SNode rightmostExpression;
-    if (ListSequence.fromList(fields).isEmpty()) {
-      rightmostExpression = new _Quotations.QuotationClass_5().createNode();
-    } else {
-      SNode firstField = ListSequence.fromList(fields).first();
-      SNode currentExpression = null;
-      for (SNode field : fields) {
-        SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
-        SLinkOperations.setTarget(fieldRef, "fieldDeclaration", field, false);
-        SNode item = new _Quotations.QuotationClass_6().createNode(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), fieldRef, ((field == firstField ?
-          "" :
-          ", "
-        )) + SPropertyOperations.getString(field, "name") + "=");
-        if (field == firstField) {
-          currentExpression = item;
-        } else {
-          currentExpression = new _Quotations.QuotationClass_7().createNode(item, currentExpression);
-        }
+    SNode firstField = ListSequence.fromList(fields).first();
+    SNode currentExpression = null;
+    for (SNode field : fields) {
+      SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
+      SLinkOperations.setTarget(fieldRef, "fieldDeclaration", field, false);
+      SNode item = new _Quotations.QuotationClass_5().createNode(((field == firstField ?
+        "" :
+        ", "
+      )) + SPropertyOperations.getString(field, "name") + "=");
+      SNode dotExpression = new _Quotations.QuotationClass_32().createNode(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), fieldRef);
+      if (field == firstField) {
+        currentExpression = new _Quotations.QuotationClass_25().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
+        currentExpression = new _Quotations.QuotationClass_34().createNode(dotExpression, currentExpression);
+      } else {
+        currentExpression = new _Quotations.QuotationClass_6().createNode(item, currentExpression);
+        currentExpression = new _Quotations.QuotationClass_33().createNode(dotExpression, currentExpression);
       }
-      rightmostExpression = new _Quotations.QuotationClass_8().createNode(currentExpression);
     }
-    SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_4().createNode(rightmostExpression, SPropertyOperations.getString(classConcept, "name") + "{"));
+    rightmostExpression = new _Quotations.QuotationClass_7().createNode(currentExpression);
+    SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_4().createNode(rightmostExpression));
   }
 
   public String getLocationString() {

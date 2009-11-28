@@ -50,12 +50,12 @@ public class CreateMethodDeclaration_Intention extends BaseIntention {
     SNode classifier = CreateMethodDeclarationUtil.getClassifier(node);
     boolean isSameClassifier = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == classifier;
     final String name = CreateMethodDeclarationUtil.getMethodName(editorContext);
-    SNode method = new _Quotations.QuotationClass_16().createNode(name);
+    SNode method = new _Quotations.QuotationClass_15().createNode(name);
     if (!(isSameClassifier)) {
-      SLinkOperations.setTarget(method, "visibility", new _Quotations.QuotationClass_18().createNode(), true);
+      SLinkOperations.setTarget(method, "visibility", new _Quotations.QuotationClass_17().createNode(), true);
     }
     SLinkOperations.addChild(classifier, "method", method);
-    SNodeOperations.replaceWithAnother(node, new _Quotations.QuotationClass_17().createNode(method));
+    SNodeOperations.replaceWithAnother(node, new _Quotations.QuotationClass_16().createNode(method));
     if (isSameClassifier) {
       editorContext.selectWRTFocusPolicy(method);
     } else {
