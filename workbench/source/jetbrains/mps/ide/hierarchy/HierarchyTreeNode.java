@@ -22,6 +22,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.util.annotation.DisposableCommand;
 import org.jetbrains.annotations.NotNull;
 
 public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
@@ -50,7 +51,11 @@ public class HierarchyTreeNode<T extends INodeAdapter> extends MPSTreeNode {
   }
 
   protected void updatePresentation() {
-    setIcon(IconManager.getIconFor(myNodePointer.getNode()));
+    @DisposableCommand
+    SNode node = myNodePointer.getNode();
+    if (node == null) return;
+
+    setIcon(IconManager.getIconFor(node));
     setNodeIdentifier(calculateNodeIdentifier());
     setAdditionalText(calculateAdditionalText());
     setAutoExpandable(false);
