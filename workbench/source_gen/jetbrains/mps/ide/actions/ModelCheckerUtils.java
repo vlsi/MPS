@@ -15,10 +15,6 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class ModelCheckerUtils {
-  public static final String CATEGORY_ERROR = "Errors";
-  public static final String CATEGORY_WARNING = "Warnings";
-  public static final String CATEGORY_INFO = "Infos";
-
   public static List<SModelDescriptor> getModelDescriptors(SModelDescriptor modelDescriptor) {
     List<SModelDescriptor> modelDescrpitors = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     ListSequence.fromList(modelDescrpitors).addElement(modelDescriptor);

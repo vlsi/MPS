@@ -42,6 +42,10 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.nodeEditor.MessageStatus;
 
 public class ModelChecker {
+  public static final String CATEGORY_ERROR = "Errors";
+  public static final String CATEGORY_WARNING = "Warnings";
+  public static final String CATEGORY_INFO = "Infos";
+
   private SearchResults<ModelCheckerIssue> myResults = new SearchResults<ModelCheckerIssue>();
   private boolean myCancelled = false;
   private IOperationContext myOperationContext;
@@ -113,13 +117,13 @@ public class ModelChecker {
               }
             })) {
               if (!(isDeclaredLink(SNodeOperations.getContainingLinkDeclaration(child), true))) {
-                ModelChecker.this.addIssue(node, "Usage of undeclared child role \"" + SNodeOperations.getContainingLinkRole(child) + "\"", ModelCheckerUtils.CATEGORY_WARNING, new ModelCheckerFix.UndeclaredChild(node, SNodeOperations.getContainingLinkRole(child)));
+                ModelChecker.this.addIssue(node, "Usage of undeclared child role \"" + SNodeOperations.getContainingLinkRole(child) + "\"", CATEGORY_WARNING, new ModelCheckerFix.UndeclaredChild(node, SNodeOperations.getContainingLinkRole(child)));
               }
             }
 
             for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(node))) {
               if (!(isDeclaredLink(SLinkOperations.findLinkDeclaration(reference), false))) {
-                ModelChecker.this.addIssue(node, "Usage of undeclared reference role \"" + reference + "\"", ModelCheckerUtils.CATEGORY_WARNING, new ModelCheckerFix.UndeclaredReference(node, SLinkOperations.getRole(reference)));
+                ModelChecker.this.addIssue(node, "Usage of undeclared reference role \"" + reference + "\"", CATEGORY_WARNING, new ModelCheckerFix.UndeclaredReference(node, SLinkOperations.getRole(reference)));
               }
             }
 
@@ -130,7 +134,7 @@ public class ModelChecker {
               PropertySupport ps = PropertySupport.getPropertySupport(p);
               String value = ps.fromInternalValue(node.getProperty(p.getName()));
               if (!(ps.canSetValue(node, p.getName(), value, ModelChecker.this.myOperationContext.getScope()))) {
-                ModelChecker.this.addIssue(node, "Property constraint violation for property \"" + p.getName() + "\"", ModelCheckerUtils.CATEGORY_WARNING, null);
+                ModelChecker.this.addIssue(node, "Property constraint violation for property \"" + p.getName() + "\"", CATEGORY_WARNING, null);
               }
             }
 
@@ -139,7 +143,7 @@ public class ModelChecker {
                 continue;
               }
               if (!(isDeclaredProperty(concept, name))) {
-                ModelChecker.this.addIssue(node, "Usage of undeclared property \"" + name + "\"", ModelCheckerUtils.CATEGORY_WARNING, new ModelCheckerFix.UndeclaredProperty(node, name));
+                ModelChecker.this.addIssue(node, "Usage of undeclared property \"" + name + "\"", CATEGORY_WARNING, new ModelCheckerFix.UndeclaredProperty(node, name));
               }
             }
           }
@@ -166,7 +170,7 @@ public class ModelChecker {
                 if (checkScope(concept, node, targetNode, SPropertyOperations.getString(genuineLinkDeclaration, "role"), ModelChecker.this.myOperationContext)) {
                 } else if (checkScope(concept, node, targetNode, SPropertyOperations.getString(genuineLinkDeclaration, "role"), new ModuleContext(thisModelModule, ModelChecker.this.myOperationContext.getMPSProject()))) {
                 } else {
-                  ModelChecker.this.addIssue(node, "Reference in role \"" + SPropertyOperations.getString(genuineLinkDeclaration, "role") + "\" is out of scope", ModelCheckerUtils.CATEGORY_WARNING, null);
+                  ModelChecker.this.addIssue(node, "Reference in role \"" + SPropertyOperations.getString(genuineLinkDeclaration, "role") + "\" is out of scope", CATEGORY_WARNING, null);
                 }
               } catch (Exception e) {
                 e.printStackTrace();
@@ -213,7 +217,7 @@ public class ModelChecker {
   }
 
   private void addIssue(SNode node, String message) {
-    addIssue(node, message, ModelCheckerUtils.CATEGORY_ERROR, null);
+    addIssue(node, message, CATEGORY_ERROR, null);
   }
 
   private boolean checkAndUpdateIndicator(String text) {
@@ -264,13 +268,13 @@ public class ModelChecker {
   private static String getResultCategory(MessageStatus messageStatus) {
     switch (messageStatus) {
       case ERROR:
-        return ModelCheckerUtils.CATEGORY_ERROR;
+        return CATEGORY_ERROR;
       case WARNING:
-        return ModelCheckerUtils.CATEGORY_WARNING;
+        return CATEGORY_WARNING;
       case OK:
-        return ModelCheckerUtils.CATEGORY_INFO;
+        return CATEGORY_INFO;
       default:
-        return ModelCheckerUtils.CATEGORY_ERROR;
+        return CATEGORY_ERROR;
     }
   }
 }

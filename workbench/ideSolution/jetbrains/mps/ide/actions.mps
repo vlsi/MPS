@@ -29634,33 +29634,6 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="5792297515476827227">
     <property name="package" value="ModelChecker" />
     <property name="name" value="ModelCheckerUtils" />
-    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="4944380267997293706">
-      <property name="name" value="CATEGORY_ERROR" />
-      <property name="isFinal" value="true" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4944380267997293707" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4944380267997293708" />
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5431298043528600875">
-        <property name="value" value="Errors" />
-      </node>
-    </node>
-    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="4944380267997293712">
-      <property name="name" value="CATEGORY_WARNING" />
-      <property name="isFinal" value="true" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4944380267997293713" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4944380267997293714" />
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5431298043528600902">
-        <property name="value" value="Warnings" />
-      </node>
-    </node>
-    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="4944380267997293718">
-      <property name="name" value="CATEGORY_INFO" />
-      <property name="isFinal" value="true" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4944380267997293719" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="4944380267997293720" />
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5431298043528600920">
-        <property name="value" value="Infos" />
-      </node>
-    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="892171458316474848">
       <property name="name" value="getModelDescriptors" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="892171458316474852">
@@ -30244,8 +30217,8 @@
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4944380267997294398">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="4944380267997294399">
-                  <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-                  <link role="variableDeclaration" targetNodeId="4944380267997293712" resolveInfo="CATEGORY_WARNING" />
+                  <link role="classifier" targetNodeId="5601958918125546720" resolveInfo="ModelChecker" />
+                  <link role="variableDeclaration" targetNodeId="1947025217948029657" resolveInfo="CATEGORY_WARNING" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4944380267997294400">
                   <link role="baseMethodDeclaration" targetNodeId="73.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
@@ -30266,8 +30239,8 @@
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4944380267997294402">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="4944380267997294403">
-                  <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-                  <link role="variableDeclaration" targetNodeId="4944380267997293718" resolveInfo="CATEGORY_OK" />
+                  <link role="classifier" targetNodeId="5601958918125546720" resolveInfo="ModelChecker" />
+                  <link role="variableDeclaration" targetNodeId="1947025217948029661" resolveInfo="CATEGORY_INFO" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4944380267997294404">
                   <link role="baseMethodDeclaration" targetNodeId="73.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
@@ -30279,8 +30252,8 @@
             </node>
             <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4944380267997294389">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="4944380267997294390">
-                <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-                <link role="variableDeclaration" targetNodeId="4944380267997293706" resolveInfo="CATEGORY_ERROR" />
+                <link role="classifier" targetNodeId="5601958918125546720" resolveInfo="ModelChecker" />
+                <link role="variableDeclaration" targetNodeId="1947025217948029653" resolveInfo="CATEGORY_ERROR" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4944380267997294391">
                 <link role="baseMethodDeclaration" targetNodeId="73.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
@@ -31672,7 +31645,7 @@
               <link role="baseMethodDeclaration" targetNodeId="70.~TaskProgressSettings.getInstance():jetbrains.mps.ide.progress.TaskProgressSettings" resolveInfo="getInstance" />
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5601958918125546783">
-              <link role="baseMethodDeclaration" targetNodeId="70.~TaskProgressSettings.getEstimatedTimeMillis(java.lang.String...):long" resolveInfo="getEstimatedTimeMillis" />
+              <link role="baseMethodDeclaration" targetNodeId="70.~TaskProgressSettings.getEstimatedTimeMillis(java.lang.String):long" resolveInfo="getEstimatedTimeMillis" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5601958918125546784">
                 <link role="variableDeclaration" targetNodeId="5601958918125546785" resolveInfo="taskName" />
               </node>
@@ -36753,8 +36726,8 @@
                 <link role="variableDeclaration" targetNodeId="5457007217767351287" resolveInfo="issues" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="113082564754701403">
-                <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-                <link role="variableDeclaration" targetNodeId="4944380267997293712" resolveInfo="CATEGORY_WARNING" />
+                <link role="classifier" targetNodeId="5601958918125546720" resolveInfo="ModelChecker" />
+                <link role="variableDeclaration" targetNodeId="1947025217948029657" resolveInfo="CATEGORY_WARNING" />
               </node>
             </node>
           </node>
@@ -36770,8 +36743,8 @@
                 <link role="variableDeclaration" targetNodeId="5457007217767351287" resolveInfo="issues" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="113082564754701409">
-                <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-                <link role="variableDeclaration" targetNodeId="4944380267997293706" resolveInfo="CATEGORY_ERROR" />
+                <link role="classifier" targetNodeId="5601958918125546720" resolveInfo="ModelChecker" />
+                <link role="variableDeclaration" targetNodeId="1947025217948029653" resolveInfo="CATEGORY_ERROR" />
               </node>
             </node>
           </node>
@@ -36973,8 +36946,8 @@
                 <link role="variableDeclaration" targetNodeId="5457007217767351430" resolveInfo="issues" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="113082564754701391">
-                <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-                <link role="variableDeclaration" targetNodeId="4944380267997293712" resolveInfo="CATEGORY_WARNING" />
+                <link role="classifier" targetNodeId="5601958918125546720" resolveInfo="ModelChecker" />
+                <link role="variableDeclaration" targetNodeId="1947025217948029657" resolveInfo="CATEGORY_WARNING" />
               </node>
             </node>
           </node>
@@ -36990,8 +36963,8 @@
                 <link role="variableDeclaration" targetNodeId="5457007217767351430" resolveInfo="issues" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="113082564754701394">
-                <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-                <link role="variableDeclaration" targetNodeId="4944380267997293706" resolveInfo="CATEGORY_ERROR" />
+                <link role="classifier" targetNodeId="5601958918125546720" resolveInfo="ModelChecker" />
+                <link role="variableDeclaration" targetNodeId="1947025217948029653" resolveInfo="CATEGORY_ERROR" />
               </node>
             </node>
           </node>
@@ -39934,6 +39907,33 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="5601958918125546720">
     <property name="package" value="ModelChecker" />
     <property name="name" value="ModelChecker" />
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1947025217948029653">
+      <property name="name" value="CATEGORY_ERROR" />
+      <property name="isFinal" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1947025217948029654" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1947025217948029655" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1947025217948029656">
+        <property name="value" value="Errors" />
+      </node>
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1947025217948029657">
+      <property name="name" value="CATEGORY_WARNING" />
+      <property name="isFinal" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1947025217948029658" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1947025217948029659" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1947025217948029660">
+        <property name="value" value="Warnings" />
+      </node>
+    </node>
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1947025217948029661">
+      <property name="name" value="CATEGORY_INFO" />
+      <property name="isFinal" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1947025217948029662" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1947025217948029663" />
+      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1947025217948029664">
+        <property name="value" value="Infos" />
+      </node>
+    </node>
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="5601958918125547933">
       <property name="name" value="isDeclaredLink" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="5601958918125547934" />
@@ -40177,9 +40177,8 @@
           </node>
           <node role="defaultBlock" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5601958918125548040">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5601958918125548041">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="5601958918125548082">
-                <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-                <link role="variableDeclaration" targetNodeId="4944380267997293706" resolveInfo="CATEGORY_ERROR" />
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1947025217948029835">
+                <link role="variableDeclaration" targetNodeId="1947025217948029653" resolveInfo="CATEGORY_ERROR" />
               </node>
             </node>
           </node>
@@ -40190,9 +40189,8 @@
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5601958918125548045">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5601958918125548046">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="5601958918125548074">
-                  <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-                  <link role="variableDeclaration" targetNodeId="4944380267997293706" resolveInfo="CATEGORY_ERROR" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1947025217948029823">
+                  <link role="variableDeclaration" targetNodeId="1947025217948029653" resolveInfo="CATEGORY_ERROR" />
                 </node>
               </node>
             </node>
@@ -40204,9 +40202,8 @@
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5601958918125548050">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5601958918125548051">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="5601958918125548076">
-                  <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-                  <link role="variableDeclaration" targetNodeId="4944380267997293712" resolveInfo="CATEGORY_WARNING" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1947025217948029827">
+                  <link role="variableDeclaration" targetNodeId="1947025217948029657" resolveInfo="CATEGORY_WARNING" />
                 </node>
               </node>
             </node>
@@ -40218,9 +40215,8 @@
             </node>
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5601958918125548055">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5601958918125548056">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="5601958918125548080">
-                  <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-                  <link role="variableDeclaration" targetNodeId="4944380267997293718" resolveInfo="CATEGORY_INFO" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1947025217948029831">
+                  <link role="variableDeclaration" targetNodeId="1947025217948029661" resolveInfo="CATEGORY_INFO" />
                 </node>
               </node>
             </node>
@@ -40789,9 +40785,8 @@
                                         <property name="value" value="\&quot;" />
                                       </node>
                                     </node>
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="5601958918125549187">
-                                      <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-                                      <link role="variableDeclaration" targetNodeId="4944380267997293712" resolveInfo="CATEGORY_WARNING" />
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1947025217948029698">
+                                      <link role="variableDeclaration" targetNodeId="1947025217948029657" resolveInfo="CATEGORY_WARNING" />
                                     </node>
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5601958918125549188">
                                       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="5601958918125549189">
@@ -40863,9 +40858,8 @@
                                         <property name="value" value="\&quot;" />
                                       </node>
                                     </node>
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="5601958918125549236">
-                                      <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-                                      <link role="variableDeclaration" targetNodeId="4944380267997293712" resolveInfo="CATEGORY_WARNING" />
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1947025217948029723">
+                                      <link role="variableDeclaration" targetNodeId="1947025217948029657" resolveInfo="CATEGORY_WARNING" />
                                     </node>
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5601958918125549237">
                                       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="5601958918125549238">
@@ -41031,9 +41025,8 @@
                                         </node>
                                       </node>
                                     </node>
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="5601958918125549286">
-                                      <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-                                      <link role="variableDeclaration" targetNodeId="4944380267997293712" resolveInfo="CATEGORY_WARNING" />
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1947025217948029743">
+                                      <link role="variableDeclaration" targetNodeId="1947025217948029657" resolveInfo="CATEGORY_WARNING" />
                                     </node>
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5601958918125549287" />
                                   </node>
@@ -41146,9 +41139,8 @@
                                         <property name="value" value="\&quot;" />
                                       </node>
                                     </node>
-                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="5601958918125549329">
-                                      <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-                                      <link role="variableDeclaration" targetNodeId="4944380267997293712" resolveInfo="CATEGORY_WARNING" />
+                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1947025217948029768">
+                                      <link role="variableDeclaration" targetNodeId="1947025217948029657" resolveInfo="CATEGORY_WARNING" />
                                     </node>
                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="5601958918125549330">
                                       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="5601958918125549331">
@@ -41455,9 +41447,8 @@
                                               </node>
                                             </node>
                                           </node>
-                                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="5601958918125549414">
-                                            <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-                                            <link role="variableDeclaration" targetNodeId="4944380267997293712" resolveInfo="CATEGORY_WARNING" />
+                                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1947025217948029787">
+                                            <link role="variableDeclaration" targetNodeId="1947025217948029657" resolveInfo="CATEGORY_WARNING" />
                                           </node>
                                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5601958918125549415" />
                                         </node>
@@ -41910,9 +41901,8 @@
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5601958918125548884">
               <link role="variableDeclaration" targetNodeId="5601958918125548877" resolveInfo="message" />
             </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="5601958918125548885">
-              <link role="classifier" targetNodeId="5792297515476827227" resolveInfo="ModelCheckerUtils" />
-              <link role="variableDeclaration" targetNodeId="4944380267997293706" resolveInfo="CATEGORY_ERROR" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference" id="1947025217948029806">
+              <link role="variableDeclaration" targetNodeId="1947025217948029653" resolveInfo="CATEGORY_ERROR" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5601958918125548886" />
           </node>
