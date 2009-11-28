@@ -66,8 +66,8 @@
               </node>
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1192798450071">
                 <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1192798450072">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1217631635085">
-                    <link role="conceptDeclaration" targetNodeId="1.1192794744107" resolveInfo="IntentionDeclaration" />
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="8138907379985144148">
+                    <link role="conceptDeclaration" targetNodeId="1.2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
                   </node>
                 </node>
               </node>

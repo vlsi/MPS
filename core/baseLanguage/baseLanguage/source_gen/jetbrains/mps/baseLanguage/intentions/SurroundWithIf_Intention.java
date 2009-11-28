@@ -22,10 +22,9 @@ public class SurroundWithIf_Intention extends SurroundWithIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode ifStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
-    int selectedNodesAmount = selectedNodes.size();
-    selectedNodes.get(selectedNodesAmount - 1).addNextSibling(ifStatement);
+    node.addNextSibling(ifStatement);
     for (SNode selectedNode : selectedNodes) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", true)).addElement(SNodeOperations.cast(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement"));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false));
     }
     editorContext.select(SLinkOperations.getTarget(ifStatement, "condition", true));
   }

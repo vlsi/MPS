@@ -6,10 +6,11 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -37,8 +38,8 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(SurroundWithIntentions_Action.class);
 
-  private SNode selectedNode;
   private EditorContext editorContext;
+  private SNode selectedNode;
 
   public SurroundWithIntentions_Action() {
     super("Show Surround with Intentions Menu", "", ICON);
@@ -51,9 +52,16 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
     return "ctrl alt 2";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    return (SNodeOperations.getAncestor(SurroundWithIntentions_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false) != null);
+  }
+
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "SurroundWithIntentions", t);
@@ -116,7 +124,7 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
   private BaseGroup getIntentionGroup() {
     BaseGroup group = new BaseGroup("");
     List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
-    groupItems.addAll(IntentionsManager.getInstance().getAvailableIntentions(SurroundWithIntentions_Action.this.selectedNode, SurroundWithIntentions_Action.this.editorContext, null, SurroundWithIntention.class));
+    groupItems.addAll(IntentionsManager.getInstance().getAvailableIntentions(SNodeOperations.getAncestor(SurroundWithIntentions_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false), SurroundWithIntentions_Action.this.editorContext, null, SurroundWithIntention.class));
     if (groupItems.isEmpty()) {
       return null;
     }

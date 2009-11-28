@@ -22,9 +22,9 @@ public class SuroundWithTryCatch_Intention extends SurroundWithIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode tryCatchStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TryCatchStatement", null);
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
-    SNodeOperations.insertNextSiblingChild(ListSequence.fromList(selectedNodes).last(), tryCatchStatement);
+    SNodeOperations.insertNextSiblingChild(node, tryCatchStatement);
     for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
-      SLinkOperations.addChild(SLinkOperations.getTarget(tryCatchStatement, "body", true), "statement", SNodeOperations.cast(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement"));
+      SLinkOperations.addChild(SLinkOperations.getTarget(tryCatchStatement, "body", true), "statement", SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false));
     }
     editorContext.select(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(tryCatchStatement, "catchClause", true)).first(), "throwable", true), "type", true));
   }

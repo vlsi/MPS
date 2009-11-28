@@ -21,10 +21,10 @@ public class SurroundWithTryFinally_Intention extends SurroundWithIntention {
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode tryStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TryStatement", null);
-    List<SNode> selectedNode = editorContext.getSelectedNodes();
-    SNodeOperations.insertNextSiblingChild(ListSequence.fromList(selectedNode).last(), tryStatement);
-    for (SNode n : ListSequence.fromList(selectedNode)) {
-      SLinkOperations.addChild(SLinkOperations.getTarget(tryStatement, "body", true), "statement", SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.Statement"));
+    List<SNode> selectedNodes = editorContext.getSelectedNodes();
+    SNodeOperations.insertNextSiblingChild(node, tryStatement);
+    for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
+      SLinkOperations.addChild(SLinkOperations.getTarget(tryStatement, "body", true), "statement", SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false));
     }
     editorContext.select(SLinkOperations.getTarget(tryStatement, "finallyBody", true));
   }

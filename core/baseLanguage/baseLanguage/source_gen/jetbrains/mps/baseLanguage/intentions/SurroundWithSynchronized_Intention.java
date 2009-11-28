@@ -22,9 +22,9 @@ public class SurroundWithSynchronized_Intention extends SurroundWithIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode synchronizedStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SynchronizedStatement", null);
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
-    SNodeOperations.insertNextSiblingChild(ListSequence.fromList(selectedNodes).last(), synchronizedStatement);
-    for (SNode n : ListSequence.fromList(selectedNodes)) {
-      SLinkOperations.addChild(SLinkOperations.getTarget(synchronizedStatement, "block", true), "statement", SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.Statement"));
+    SNodeOperations.insertNextSiblingChild(node, synchronizedStatement);
+    for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
+      SLinkOperations.addChild(SLinkOperations.getTarget(synchronizedStatement, "block", true), "statement", SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false));
     }
     editorContext.select(SLinkOperations.getTarget(synchronizedStatement, "expression", true));
   }

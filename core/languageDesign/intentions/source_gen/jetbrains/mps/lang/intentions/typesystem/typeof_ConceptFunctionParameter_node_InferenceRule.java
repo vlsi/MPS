@@ -17,7 +17,7 @@ public class typeof_ConceptFunctionParameter_node_InferenceRule extends Abstract
   }
 
   public void applyRule(final SNode conceptFunctionParameter_node, final TypeCheckingContext typeCheckingContext) {
-    SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(conceptFunctionParameter_node, "jetbrains.mps.lang.intentions.structure.IntentionDeclaration", false, false), "forConcept", false);
+    SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.getAncestor(conceptFunctionParameter_node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", false, false), "forConcept", false);
     {
       SNode _nodeToCheck_1029348928467 = conceptFunctionParameter_node;
       BaseIntentionProvider intentionProvider = null;

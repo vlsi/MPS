@@ -22,9 +22,9 @@ public class SurroundWithComment_Intention extends SurroundWithIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode commentedBlock = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", null);
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
-    SNodeOperations.insertNextSiblingChild(ListSequence.fromList(selectedNodes).last(), commentedBlock);
-    for (SNode n : ListSequence.fromList(selectedNodes)) {
-      SLinkOperations.addChild(commentedBlock, "statement", SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.Statement"));
+    SNodeOperations.insertNextSiblingChild(node, commentedBlock);
+    for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
+      SLinkOperations.addChild(commentedBlock, "statement", SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false));
     }
     editorContext.select(ListSequence.fromList(SLinkOperations.getTargets(commentedBlock, "statement", true)).last());
   }
