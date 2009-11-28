@@ -59,7 +59,7 @@ public class VcsHelper {
     File tmp = jetbrains.mps.util.FileUtil.createTmpDir();
     AbstractVcsHelperImpl.writeContentsToFile(ModelUtils.modelToBytes(inMemory), modelFile.getName(), tmp, "memory");
     FileUtil.copy(modelFile.toFile(), new File(tmp.getAbsolutePath() + File.separator + modelFile.getName() + "." + "filesystem"));
-    File zipfile = AbstractVcsHelperImpl.getZipFile(modelFile.getPath());
+    File zipfile = ModelUtils.chooseZipFileNameForModelFile(modelFile.getPath());
     jetbrains.mps.util.FileUtil.zip(tmp, zipfile);
 
     jetbrains.mps.util.FileUtil.delete(tmp);

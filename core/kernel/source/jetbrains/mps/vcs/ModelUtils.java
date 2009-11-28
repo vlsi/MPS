@@ -9,6 +9,8 @@ import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.logging.Logger;
 
 import java.io.*;
+import java.util.Calendar;
+import java.util.Date;
 
 import org.jdom.Document;
 import org.jdom.JDOMException;
@@ -114,7 +116,7 @@ public class ModelUtils {
       throw new ReadException(t);
     }
   }
-  
+
   public static SModel readModel(String path) throws JDOMException, IOException {
     final String[] modelNameAndStereotype = getModelNameAndStereotype(path);
     final Document document = JDOMUtil.loadDocument(new FileInputStream(path));
@@ -142,6 +144,20 @@ public class ModelUtils {
       modelStereotype = shortName.substring(index1 + 1);
     }
     return new String[]{modelName, modelStereotype};
+  }
+
+  public static File chooseZipFileNameForModelFile(String modelFilePath) {
+    Calendar cal = Calendar.getInstance();
+    String timestamp = cal.get(Calendar.HOUR_OF_DAY) + "." + cal.get(Calendar.MINUTE) + "." +
+      cal.get(Calendar.DAY_OF_MONTH) + "." + cal.get(Calendar.MONTH) + "." + cal.get(Calendar.YEAR);
+    modelFilePath = modelFilePath + "." + timestamp;
+    File zipfile = new File(modelFilePath + ".zip");
+    int i = 0;
+    while (zipfile.exists()) {
+      zipfile = new File(modelFilePath + "." + i + ".zip");
+      i++;
+    }
+    return zipfile;
   }
 
   public static interface Version {

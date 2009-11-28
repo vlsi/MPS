@@ -83,6 +83,7 @@ import java.nio.ByteBuffer;
 
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.CollectionUtil;
@@ -92,7 +93,9 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 /**
  * This class was patched by MPS in order to add backup of conflicted filas before conflict resolving.
  * Changes were made in showMergeDialog method.
- * It was also patched in order to fix multiple merge dialog problem, when MPS and IDEA both displayed merge dialog for the same file.
+ * It was also patched in order to fix multiple merge dialog problem,
+ * when MPS and IDEA both displayed merge dialog for the same file.
+ * see showMergeDialog method for more details
  */
 public class AbstractVcsHelperImpl extends AbstractVcsHelper {
   private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl");
@@ -631,22 +634,11 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     writeContentsToFile(contents[ModelMergeRequest.CURRENT], file, tmp, "mine");
     writeContentsToFile(contents[ModelMergeRequest.LAST_REVISION], file, tmp, "repository");
     writeMetaInformation(request, file, tmp);
-    File zipfile = getZipFile(file.getPath());
+    File zipfile = ModelUtils.chooseZipFileNameForModelFile(file.getPath());
     FileUtil.zip(tmp, zipfile);
 
     FileUtil.delete(tmp);
 
-    return zipfile;
-  }
-
-  @Patch
-  public static File getZipFile(String path) {
-    File zipfile = new File(path + ".zip");
-    int i = 0;
-    while (zipfile.exists()) {
-      zipfile = new File(path + "." + i + ".zip");
-      i++;
-    }
     return zipfile;
   }
 
