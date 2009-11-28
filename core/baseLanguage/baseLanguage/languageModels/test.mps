@@ -453,9 +453,6 @@
                         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1227876791311">
                           <property name="name" value="a" />
                           <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1227876791312" />
-                          <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="1227876791313">
-                            <property name="value" value="10" />
-                          </node>
                         </node>
                       </node>
                       <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="6389100286634543794" />

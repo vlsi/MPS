@@ -22,6 +22,7 @@ import com.intellij.execution.ExecutionResult;
 import com.intellij.execution.runners.ProgramRunner;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.execution.impl.ConsoleViewImpl;
+import jetbrains.mps.debug.StacktraceUtil;
 import javax.swing.JComponent;
 import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
@@ -98,7 +99,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
       @Nullable
       public ExecutionResult execute(Executor executor, @NotNull ProgramRunner runner) throws ExecutionException {
         Project project = MPSDataKeys.PROJECT.getData(environment.getDataContext());
-        final ConsoleViewImpl consoleView = new ConsoleViewImpl(project, false);
+        final ConsoleViewImpl consoleView = StacktraceUtil.createConsoleView(project);
         JComponent consoleComponent = null;
         Runnable consoleDispose = null;
         final List<AnAction> actions = ListSequence.fromList(new ArrayList<AnAction>());

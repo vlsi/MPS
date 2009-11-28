@@ -4,9 +4,9 @@ package jetbrains.mps.debug;
 
 import com.intellij.execution.impl.ConsoleViewImpl;
 import com.intellij.execution.ui.ConsoleViewContentType;
+import com.intellij.execution.filters.Filter;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNode;
-import javax.swing.SwingUtilities;
 import com.intellij.execution.filters.HyperlinkInfo;
 import com.intellij.openapi.project.Project;
 import java.util.List;
@@ -23,55 +23,44 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import org.jetbrains.annotations.Nullable;
 
 public class StacktraceUtil {
   private static String STRING_START = "at ";
 
-  public static void appendStacktraceToConsole(ConsoleViewImpl consoleView, String text, ConsoleViewContentType defaultType) {
-    if (text.indexOf("\n") == -1 || text.indexOf("\n") == text.length() - 1) {
-      return;
-    }
-    if (!(tryToParseLine(consoleView, text))) {
-      consoleView.print(text, defaultType);
-    }
+  public static void appendStacktraceToConsole(ConsoleViewImpl consoleView, String text, ConsoleViewContentType type) {
+    consoleView.print(text, type);
   }
 
-  private static boolean tryToParseLine(final ConsoleViewImpl consoleView, final String line) {
+  private static Filter.Result tryToParseLine(String line, int offset) {
     if (!(StringUtils.trim(line).startsWith(STRING_START))) {
-      return false;
+      return null;
     }
 
-    final int start = line.indexOf(STRING_START) + STRING_START.length();
+    int start = line.indexOf(STRING_START) + STRING_START.length();
     String tmpStr = line.substring(start);
-    final int parenIndex = tmpStr.indexOf("(");
+    int parenIndex = tmpStr.indexOf("(");
     if (parenIndex == -1) {
-      return false;
+      return null;
     }
 
     String methodName = tmpStr.substring(0, parenIndex);
-    final int closingParenIndex = tmpStr.indexOf(")");
+    int closingParenIndex = tmpStr.indexOf(")");
     if (closingParenIndex == -1) {
-      return false;
+      return null;
     }
 
-    final String position = tmpStr.substring(parenIndex + 1, closingParenIndex);
+    String position = tmpStr.substring(parenIndex + 1, closingParenIndex);
     final SNode nodeToShow = getNodes(methodName, position);
     if (nodeToShow == null) {
-      return false;
+      return null;
     }
 
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        consoleView.print(line.substring(0, start + parenIndex + 1), ConsoleViewContentType.ERROR_OUTPUT);
-        consoleView.printHyperlink(position, new HyperlinkInfo() {
-          public void navigate(Project p0) {
-            StacktraceUtil.showNode(nodeToShow);
-          }
-        });
-        consoleView.print(line.substring(start + closingParenIndex), ConsoleViewContentType.ERROR_OUTPUT);
+    return new Filter.Result(start + parenIndex + 1 + offset, start + closingParenIndex + offset, new HyperlinkInfo() {
+      public void navigate(Project p0) {
+        StacktraceUtil.showNode(nodeToShow);
       }
     });
-    return true;
   }
 
   private static SNode getNodes(String method, final String position) {
@@ -116,5 +105,21 @@ public class StacktraceUtil {
     ProjectOperationContext operationContext = new ProjectOperationContext(project);
     MPSEditorOpener opener = operationContext.getComponent(MPSEditorOpener.class);
     opener.editNode(node, operationContext);
+  }
+
+  public static ConsoleViewImpl createConsoleView(Project project) {
+    ConsoleViewImpl result = new ConsoleViewImpl(project, false);
+    result.addMessageFilter(new StacktraceUtil.StackTraceFilter());
+    return result;
+  }
+
+  public static class StackTraceFilter implements Filter {
+    public StackTraceFilter() {
+    }
+
+    @Nullable
+    public Filter.Result applyFilter(String line, int length) {
+      return tryToParseLine(line, length - line.length());
+    }
   }
 }

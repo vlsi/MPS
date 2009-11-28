@@ -41,20 +41,44 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590591(jetbrains.mps.xmlInternal.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959058f(jetbrains.mps.xmlInternal.constraints)" version="0" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
-  <maxImportIndex value="32" />
+  <maxImportIndex value="33" />
   <import index="10" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="28" modelUID="f:java_stub#javax.swing.event(javax.swing.event@java_stub)" version="-1" />
   <import index="29" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="30" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="31" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="32" modelUID="f:java_stub#java.nio(java.nio@java_stub)" version="-1" />
+  <import index="33" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="6208804448825809377">
     <property name="name" value="ArrayLength" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="909288871967797956">
       <property name="name" value="b" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="909288871967809739" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SModelType" id="2175204175422427794" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="909288871967797958" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="909288871967797959" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="909288871967797959">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2175204175422419718">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2175204175422419719">
+            <property name="name" value="method" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="2175204175422419720">
+              <link role="concept" targetNodeId="33.1202948039474" resolveInfo="InstanceMethodCallOperation" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="2175204175422427796" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2175204175422427792">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2175204175422426987">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2175204175422419724">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="2175204175422419723">
+                <link role="variableDeclaration" targetNodeId="2175204175422419719" resolveInfo="method" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2175204175422426986">
+                <link role="link" targetNodeId="33.1202948736718" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation" id="2175204175422426991" />
+          </node>
+        </node>
+      </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="909288871967809737">
         <property name="name" value="p" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="909288871967809738" />
@@ -69,12 +93,6 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="5626639541500581272">
     <property name="name" value="Test" />
-    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="6219540340002719898">
-      <property name="name" value="f" />
-      <property name="isFinal" value="true" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="6219540340002719899" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6219540340002759352" />
-    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5626639541500581273" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="5626639541500581274">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5626639541500581275" />
