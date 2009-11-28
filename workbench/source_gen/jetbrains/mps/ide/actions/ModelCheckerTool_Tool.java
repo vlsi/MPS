@@ -27,16 +27,6 @@ import jetbrains.mps.project.IModule;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import com.intellij.openapi.ui.DialogWrapper;
-import javax.swing.SwingUtilities;
-import org.jetbrains.annotations.Nullable;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import javax.swing.JCheckBox;
-import java.awt.event.ItemListener;
-import java.awt.event.ItemEvent;
-import javax.swing.JLabel;
-import javax.swing.Action;
 import com.intellij.openapi.vcs.checkin.CheckinHandler;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.lang.plugin.structure.IComponentDisposer;
@@ -128,46 +118,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     int errors = ModelCheckerUtils.getIssueCountForCategory(issues, ModelCheckerUtils.CATEGORY_ERROR);
 
     if (errors != 0) {
-      final String dialogMessage = "Model checker found " + errors + " errors and " + warnings + " warnings. Review them and don't generate models or ignore them?";
-
-      DialogWrapper dialog = new DialogWrapper(ModelCheckerTool_Tool.this.myProject, true) {
-        {
-          this.setTitle("Check Before Generation");
-          this.setButtonsAlignment(SwingUtilities.CENTER);
-          this.init();
-        }
-
-        @Nullable
-        protected JComponent createCenterPanel() {
-          JPanel panel = new JPanel(new BorderLayout());
-
-          JCheckBox checkBox = new JCheckBox("Don't check models before generation");
-          checkBox.addItemListener(new ItemListener() {
-            public void itemStateChanged(ItemEvent ev) {
-              boolean selected = ev.getStateChange() == ItemEvent.SELECTED;
-              GenerationSettings.getInstance().setCheckModelsBeforeGeneration(!(selected));
-            }
-          });
-
-          panel.add(new JLabel(dialogMessage), BorderLayout.CENTER);
-          panel.add(checkBox, BorderLayout.SOUTH);
-          return panel;
-        }
-
-        @Override
-        protected Action getCancelAction() {
-          Action cancelAction = super.getCancelAction();
-          cancelAction.putValue(Action.NAME, "Ignore Errors");
-          return cancelAction;
-        }
-
-        @Override
-        protected Action getOKAction() {
-          Action okAction = super.getOKAction();
-          okAction.putValue(Action.NAME, "Review Errors");
-          return okAction;
-        }
-      };
+      CheckBeforeGenerationDialog dialog = new CheckBeforeGenerationDialog(ModelCheckerTool_Tool.this.myProject, errors, warnings);
       dialog.show();
 
       if (dialog.isOK()) {
