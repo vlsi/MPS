@@ -19,7 +19,6 @@ public class ModelChecker implements IProgressIndicatorAdapter {
   public static final String CATEGORY_INFO = "Infos";
 
   private SearchResults<ModelCheckerIssue> myResults = new SearchResults<ModelCheckerIssue>();
-  private boolean myCancelled = false;
   private IOperationContext myOperationContext;
   private ProgressContext myProgressContext;
 
@@ -45,7 +44,6 @@ public class ModelChecker implements IProgressIndicatorAdapter {
         }
       }
     });
-    this.myCancelled = !(this.myProgressContext.getProgressIndicator().isCanceled());
   }
 
   public SearchResults<ModelCheckerIssue> getSearchResults() {
@@ -53,7 +51,7 @@ public class ModelChecker implements IProgressIndicatorAdapter {
   }
 
   public boolean isCancelled() {
-    return this.myCancelled;
+    return this.myProgressContext.getProgressIndicator().isCanceled();
   }
 
   public IOperationContext getOperationContext() {

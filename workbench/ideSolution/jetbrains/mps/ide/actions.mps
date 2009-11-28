@@ -40176,14 +40176,6 @@
         </node>
       </node>
     </node>
-    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="5601958918125546938">
-      <property name="name" value="myCancelled" />
-      <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5601958918125546943">
-        <property name="value" value="false" />
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="5601958918125546939" />
-      <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="5601958918125546941" />
-    </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="5601958918125546965">
       <property name="name" value="myOperationContext" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="5601958918125546966" />
@@ -40346,34 +40338,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5601958918125548623">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="5601958918125548625">
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5601958918125548628">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="5601958918125548629">
-                <link role="fieldDeclaration" targetNodeId="5601958918125546938" resolveInfo="myCancelled" />
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="5601958918125548630" />
-            </node>
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="5601958918125548614">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5601958918125548615">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5601958918125548616">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5601958918125548620">
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="5601958918125548621">
-                      <link role="fieldDeclaration" targetNodeId="5601958918125546969" resolveInfo="myProgressContext" />
-                    </node>
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="5601958918125548622" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5601958918125548618">
-                    <link role="baseMethodDeclaration" targetNodeId="4425136885333256193" resolveInfo="getProgressIndicator" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5601958918125548619">
-                  <link role="baseMethodDeclaration" targetNodeId="68.~ProgressIndicator.isCanceled():boolean" resolveInfo="isCanceled" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="5601958918125547039">
         <property name="name" value="modelDescriptor" />
@@ -40408,10 +40372,20 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5601958918125546959" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5601958918125546960">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5601958918125546961">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5601958918125546962">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="5601958918125546963" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="5601958918125546964">
-              <link role="fieldDeclaration" targetNodeId="5601958918125546938" resolveInfo="myCancelled" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2491401861782986717">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2491401861782986712">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5601958918125546962">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="5601958918125546963" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="2491401861782986711">
+                  <link role="fieldDeclaration" targetNodeId="5601958918125546969" resolveInfo="myProgressContext" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2491401861782986716">
+                <link role="baseMethodDeclaration" targetNodeId="4425136885333256193" resolveInfo="getProgressIndicator" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2491401861782986721">
+              <link role="baseMethodDeclaration" targetNodeId="68.~ProgressIndicator.isCanceled():boolean" resolveInfo="isCanceled" />
             </node>
           </node>
         </node>
