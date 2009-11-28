@@ -19,17 +19,17 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
+import com.intellij.openapi.progress.ProgressIndicator;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.ModelsHolder;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.project.Project;
-import org.jetbrains.annotations.NotNull;
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
@@ -47,11 +47,9 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
   private String myTabTitle;
   private Icon myTabIcon;
   private Runnable myGenerateRunnable;
-  private Runnable myRecheckRunnable;
   private JButton myGenerateButton;
-  private JButton myRecheckButton;
   private JButton myFixButton;
-  private boolean myAlreadyCheckedSomething;
+  private String myCheckProgressTitle = "Checking...";
 
   public ModelCheckerViewer(MPSProject mpsProject, IOperationContext operationContext) {
     this.myProject = mpsProject;
@@ -65,6 +63,14 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     this.myUsagesView = new UsagesView(mpsProject, viewOptions) {
       public void close() {
         ModelCheckerViewer.this.close();
+      }
+
+      protected String getRerunSearchTooltip() {
+        return "Recheck";
+      }
+
+      protected String getSearchProgressTitle() {
+        return ModelCheckerViewer.this.myCheckProgressTitle;
       }
     };
     this.myUsagesView.setCustomNodeRepresentator(new ModelCheckerViewer.MyNodeRepresentator());
@@ -81,15 +87,6 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     });
     this.myGenerateButton.setVisible(false);
 
-    this.myRecheckButton = new JButton("Recheck");
-    this.myRecheckButton.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent event) {
-        assert ModelCheckerViewer.this.myRecheckRunnable != null;
-        ModelCheckerViewer.this.myRecheckRunnable.run();
-      }
-    });
-    this.myRecheckButton.setVisible(false);
-
     this.myFixButton = new JButton("Perform Quick Fixes");
     this.myFixButton.setToolTipText("Remove all undeclared children and undeclared references");
     this.myFixButton.addActionListener(new ActionListener() {
@@ -99,7 +96,6 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     });
 
     buttonPanel.add(this.myGenerateButton);
-    buttonPanel.add(this.myRecheckButton);
     buttonPanel.add(this.myFixButton);
     this.add(buttonPanel, BorderLayout.SOUTH);
   }
@@ -132,32 +128,28 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
       if (dialogAnswer1 != 0) {
         return;
       }
-      assert ModelCheckerViewer.this.myRecheckRunnable != null;
-      ModelCheckerViewer.this.myRecheckRunnable.run();
+
+      this.runCheck();
     }
   }
 
-  public void checkModelsCore(final List<SModelDescriptor> modelDescriptors, final String taskTargetTitle, final Icon taskIcon) {
-    this.saveRecheckRunnable(new Runnable() {
-      public void run() {
-        ModelCheckerViewer.this.checkModelsCore(modelDescriptors, taskTargetTitle, taskIcon);
-      }
-    });
-
-    if (!(this.myAlreadyCheckedSomething)) {
-      IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder());
-      SearchQuery searchQuery = new SearchQuery(new ModelsHolder(modelDescriptors, this.myOperationContext), ModelCheckerViewer.this.myProject.getScope());
-      ModelCheckerViewer.this.myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(false, false, true));
-    }
-    this.myAlreadyCheckedSomething = true;
-
-    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), "Checking " + taskTargetTitle, true) {
+  private void runCheck() {
+    ProgressManager.getInstance().run(new Task.Modal(this.myProject.getComponent(Project.class), this.myCheckProgressTitle, true) {
       public void run(@NotNull ProgressIndicator indicator) {
         ModelCheckerViewer.this.myUsagesView.run(indicator);
       }
     });
+  }
 
+  public void prepareAndCheck(final List<SModelDescriptor> modelDescriptors, final String taskTargetTitle, final Icon taskIcon) {
+    IResultProvider resultProvider = FindUtils.makeProvider(new ModelCheckerIssueFinder());
+    SearchQuery searchQuery = new SearchQuery(new ModelsHolder(modelDescriptors, this.myOperationContext), ModelCheckerViewer.this.myProject.getScope());
+    ModelCheckerViewer.this.myUsagesView.setRunOptions(resultProvider, searchQuery, new UsagesView.ButtonConfiguration(true, false, true));
+
+    this.myCheckProgressTitle = "Checking " + taskTargetTitle;
     this.setTabProperties(taskTargetTitle, taskIcon);
+
+    this.runCheck();
   }
 
   public void setTabProperties(String title, Icon icon) {
@@ -168,11 +160,6 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
   public void saveGenerationRunnable(Runnable runnable) {
     this.myGenerateRunnable = runnable;
     this.myGenerateButton.setVisible(runnable != null);
-  }
-
-  private void saveRecheckRunnable(Runnable runnable) {
-    this.myRecheckRunnable = runnable;
-    this.myRecheckButton.setVisible(runnable != null);
   }
 
   public void dispose() {

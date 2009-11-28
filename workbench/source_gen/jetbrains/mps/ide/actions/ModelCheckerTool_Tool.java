@@ -86,9 +86,9 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     UsagesViewTracker.unregister(ModelCheckerTool_Tool.this.myNavigateableTool);
   }
 
-  private ModelCheckerViewer checkSomething(final List<SModelDescriptor> modelDescriptors, final String taskTargetTitle, final Icon taskIcon, IOperationContext operationContext, boolean showTab) {
+  private ModelCheckerViewer performCheckingTask(final List<SModelDescriptor> modelDescriptors, final String taskTargetTitle, final Icon taskIcon, IOperationContext operationContext, boolean showTab) {
     ModelCheckerViewer newViewer = ModelCheckerTool_Tool.this.createViewer(operationContext);
-    newViewer.checkModelsCore(modelDescriptors, taskTargetTitle, taskIcon);
+    newViewer.prepareAndCheck(modelDescriptors, taskTargetTitle, taskIcon);
     if (showTab) {
       ModelCheckerTool_Tool.this.showTabWithResults(newViewer);
     }
@@ -96,23 +96,23 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   }
 
   public ModelCheckerViewer checkModel(SModelDescriptor modelDescriptor, IOperationContext operationContext, boolean showTab) {
-    return ModelCheckerTool_Tool.this.checkSomething(ModelCheckerUtils.getModelDescriptors(modelDescriptor), modelDescriptor.getName(), IconManager.getIconFor(modelDescriptor), operationContext, showTab);
+    return ModelCheckerTool_Tool.this.performCheckingTask(ModelCheckerUtils.getModelDescriptors(modelDescriptor), modelDescriptor.getName(), IconManager.getIconFor(modelDescriptor), operationContext, showTab);
   }
 
   public ModelCheckerViewer checkModels(List<SModelDescriptor> modelDescriptors, IOperationContext operationContext, boolean showTab) {
-    return ModelCheckerTool_Tool.this.checkSomething(modelDescriptors, NameUtil.formatNumericalString(ListSequence.fromList(modelDescriptors).count(), "model"), Icons.MODEL_ICON, operationContext, showTab);
+    return ModelCheckerTool_Tool.this.performCheckingTask(modelDescriptors, NameUtil.formatNumericalString(ListSequence.fromList(modelDescriptors).count(), "model"), Icons.MODEL_ICON, operationContext, showTab);
   }
 
   public ModelCheckerViewer checkModule(IModule module, IOperationContext operationContext, boolean showTab) {
-    return ModelCheckerTool_Tool.this.checkSomething(ModelCheckerUtils.getModelDescriptors(module), module.getModuleFqName(), IconManager.getIconFor(module), operationContext, showTab);
+    return ModelCheckerTool_Tool.this.performCheckingTask(ModelCheckerUtils.getModelDescriptors(module), module.getModuleFqName(), IconManager.getIconFor(module), operationContext, showTab);
   }
 
   public ModelCheckerViewer checkModules(List<IModule> modules, IOperationContext operationContext, boolean showTab) {
-    return ModelCheckerTool_Tool.this.checkSomething(ModelCheckerUtils.getModelDescriptors(modules), NameUtil.formatNumericalString(ListSequence.fromList(modules).count(), "module"), Icons.MODULE_GROUP_CLOSED, operationContext, showTab);
+    return ModelCheckerTool_Tool.this.performCheckingTask(ModelCheckerUtils.getModelDescriptors(modules), NameUtil.formatNumericalString(ListSequence.fromList(modules).count(), "module"), Icons.MODULE_GROUP_CLOSED, operationContext, showTab);
   }
 
   public ModelCheckerViewer checkProject(MPSProject mpsProject, IOperationContext operationContext, boolean showTab) {
-    return ModelCheckerTool_Tool.this.checkSomething(ModelCheckerUtils.getModelDescriptors(mpsProject), mpsProject.getProjectDescriptor().getName(), Icons.PROJECT_ICON, operationContext, showTab);
+    return ModelCheckerTool_Tool.this.performCheckingTask(ModelCheckerUtils.getModelDescriptors(mpsProject), mpsProject.getProjectDescriptor().getName(), Icons.PROJECT_ICON, operationContext, showTab);
   }
 
   public boolean checkModelsBeforeGenerationIfNeeded(IOperationContext operationContext, List<SModelDescriptor> modelDescriptors, Runnable regenerationRunnable) {

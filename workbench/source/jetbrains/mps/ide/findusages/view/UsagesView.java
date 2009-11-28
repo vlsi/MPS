@@ -297,7 +297,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
     private void createButtons(ButtonConfiguration buttonConfiguration) {
       DefaultActionGroup actionGroup = new DefaultActionGroup();
       if (buttonConfiguration.isShowRerunButton()) {
-        actionGroup.addAction(new AnAction("Rerun search", "", Icons.RERUN_ICON) {
+        actionGroup.addAction(new AnAction(getRerunSearchTooltip(), "", Icons.RERUN_ICON) {
           public void actionPerformed(AnActionEvent e) {
             assert mySearchQuery != null;
             if (mySearchQuery.getScope() == null) return;
@@ -305,7 +305,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
             if (!(holder instanceof VoidHolder)) {
               if (holder.getObject() == null) return; //object was deleted
             }
-            ProgressManager.getInstance().run(new Modal(myProject.getComponent(Project.class), "Searching", true) {
+            ProgressManager.getInstance().run(new Modal(myProject.getComponent(Project.class), getSearchProgressTitle(), true) {
               public void run(@NotNull final ProgressIndicator indicator) {
                 indicator.setIndeterminate(true);
                 UsagesView.this.run(indicator);
@@ -341,5 +341,13 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
     protected EmptyBorder createBorder() {
       return new EmptyBorder(2, 1, 2, 1);
     }
+  }
+
+  protected String getRerunSearchTooltip() {
+    return "Rerun search";
+  }
+
+  protected String getSearchProgressTitle() {
+    return "Searching";
   }
 }
