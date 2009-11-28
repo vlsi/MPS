@@ -69,7 +69,7 @@ public class GenerateGetter_Intention extends GenerateIntention {
       // Method creation begins 
       Pair p;
       final SNode thisExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
-      SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_21().createNode(SLinkOperations.getTarget(field, "type", true), thisExpression, field, getterName));
+      SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_27().createNode(SLinkOperations.getTarget(field, "type", true), thisExpression, field, getterName));
     }
   }
 
