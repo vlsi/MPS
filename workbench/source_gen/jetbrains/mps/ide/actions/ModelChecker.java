@@ -6,10 +6,9 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -31,22 +30,7 @@ public class ModelChecker {
   }
 
   public void checkModel(final SModelDescriptor modelDescriptor) {
-    ModelCheckerSettings settings = ModelCheckerSettings.getInstance();
-    final List<SpecificChecker> specificCheckers = ListSequence.fromList(new ArrayList<SpecificChecker>());
-
-    ListSequence.fromList(specificCheckers).addElement(new UnavailableConceptsChecker(this));
-    if (settings.isCheckUnresolvedReferences()) {
-      ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker(this));
-    }
-    if (settings.isCheckConstraints()) {
-      ListSequence.fromList(specificCheckers).addElement(new ConstraintsChecker(this));
-    }
-    if (settings.isCheckScopes()) {
-      ListSequence.fromList(specificCheckers).addElement(new ScopesChecker(this));
-    }
-    if (settings.isCheckTypesystem()) {
-      ListSequence.fromList(specificCheckers).addElement(new TypesystemChecker(this));
-    }
+    final List<SpecificChecker> specificCheckers = ModelCheckerSettings.getInstance().getSpecificCheckers(this);
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {

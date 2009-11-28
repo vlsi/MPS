@@ -14,6 +14,9 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import com.intellij.openapi.options.ConfigurationException;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 import com.intellij.openapi.application.ApplicationManager;
 
 @State(name = "ModelCheckerSettings", storages = {@Storage(id = "other", file = "$APP_CONFIG$/modelCheckerSettings.xml")
@@ -92,6 +95,25 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
       this.myPreferences = new ModelCheckerSettingsPreferencesPage(this);
     }
     return this.myPreferences;
+  }
+
+  public List<SpecificChecker> getSpecificCheckers(ModelChecker modelChecker) {
+    List<SpecificChecker> specificCheckers = ListSequence.fromList(new ArrayList<SpecificChecker>());
+
+    ListSequence.fromList(specificCheckers).addElement(new UnavailableConceptsChecker(modelChecker));
+    if (this.isCheckUnresolvedReferences()) {
+      ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker(modelChecker));
+    }
+    if (this.isCheckConstraints()) {
+      ListSequence.fromList(specificCheckers).addElement(new ConstraintsChecker(modelChecker));
+    }
+    if (this.isCheckScopes()) {
+      ListSequence.fromList(specificCheckers).addElement(new ScopesChecker(modelChecker));
+    }
+    if (this.isCheckTypesystem()) {
+      ListSequence.fromList(specificCheckers).addElement(new TypesystemChecker(modelChecker));
+    }
+    return specificCheckers;
   }
 
   public boolean isCheckUnresolvedReferences() {
