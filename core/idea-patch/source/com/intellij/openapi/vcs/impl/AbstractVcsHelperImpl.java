@@ -89,6 +89,11 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.annotation.Patch;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 
+/**
+ * This class was patched by MPS in order to add backup of conflicted filas before conflict resolving.
+ * Changes were made in showMergeDialog method.
+ * It was also patched in order to fix multiple merge dialog problem, when MPS and IDEA both displayed merge dialog for the same file.
+ */
 public class AbstractVcsHelperImpl extends AbstractVcsHelper {
   private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl");
   private static final jetbrains.mps.logging.Logger MPS_LOG = jetbrains.mps.logging.Logger.getLogger(AbstractVcsHelperImpl.class);
