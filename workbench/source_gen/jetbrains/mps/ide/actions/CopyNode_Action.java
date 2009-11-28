@@ -4,6 +4,8 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.util.List;
@@ -17,7 +19,7 @@ import java.util.ArrayList;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 
 public class CopyNode_Action extends GeneratedAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/menu-copy.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(CopyNode_Action.class);
 
   private List<SNode> nodes;

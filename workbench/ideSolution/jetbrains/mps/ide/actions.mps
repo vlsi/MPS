@@ -12675,6 +12675,7 @@
     <property name="package" value="Menu.ProjectPane.Node.Actions" />
     <property name="name" value="CopyNode" />
     <property name="caption" value="Copy" />
+    <property name="iconPath" value="${solution_descriptor}/icons/menu-copy.png" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionParameterDeclaration" id="5033107305426684816">
       <property name="name" value="nodes" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="5033107305426684817" />
@@ -12756,6 +12757,7 @@
     <property name="package" value="Menu.ProjectPane.Node.Actions" />
     <property name="name" value="CutNode" />
     <property name="caption" value="Cut" />
+    <property name="iconPath" value="${solution_descriptor}/icons/menu-cut.png" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="7360913708305936147">
       <property name="name" value="project" />
       <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
@@ -12959,7 +12961,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="7360913708305936158" />
       </node>
     </node>
   </node>
@@ -18956,6 +18957,7 @@
     <property name="caption" value="Paste" />
     <property name="outsideCommandExecution" value="true" />
     <property name="isAlwaysVisible" value="true" />
+    <property name="iconPath" value="${solution_descriptor}/icons/menu-paste.png" />
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="7360913708305957668">
       <property name="name" value="project" />
       <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />

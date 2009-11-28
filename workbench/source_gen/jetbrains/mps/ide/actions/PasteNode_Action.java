@@ -4,6 +4,8 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
@@ -28,7 +30,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 
 public class PasteNode_Action extends GeneratedAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/menu-paste.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(PasteNode_Action.class);
 
   private Project project;
