@@ -405,7 +405,8 @@ public class TestMain {
   }
 
   public static void configureMPS() {
-    System.setProperty("idea.is.internal", System.getProperty("mps.internal"));
+    String mpsInternal = System.getProperty("mps.internal");
+    System.setProperty("idea.is.internal", mpsInternal == null ? "false" : mpsInternal);
     System.setProperty("idea.no.jre.check", "true");
     System.setProperty("idea.load.plugins", "false");
     System.setProperty("idea.platform.prefix", "MPS");
