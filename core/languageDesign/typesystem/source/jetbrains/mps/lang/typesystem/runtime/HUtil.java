@@ -26,6 +26,8 @@ import java.util.HashMap;
 
 public class HUtil {
 
+  //todo: this method can be called from inference rules - by calling behavior methods,
+  // todo: in which there are no typechecking context(
   public static SNode copyIfNecessary(SNode node) {
     if (node != null && (node.getParent() != null || node.isRoot())) {
       // this copies all the atributes, because can be used in migration scripts
