@@ -19,7 +19,7 @@ import com.intellij.ide.Bootstrap;
 
 public class Launcher {
   public static void main(String[] args) {
-    System.setProperty("idea.is.internal", "true");
+    System.setProperty("idea.is.internal", System.getProperty("mps.internal"));
     System.setProperty("idea.no.jre.check", "true");
     System.setProperty("idea.load.plugins", "true");
     System.setProperty("idea.platform.prefix", "MPS");
