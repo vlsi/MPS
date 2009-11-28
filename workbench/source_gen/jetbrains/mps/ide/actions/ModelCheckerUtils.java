@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ModelCheckerUtils {
   public static List<SModelDescriptor> getModelDescriptors(SModelDescriptor modelDescriptor) {
@@ -60,5 +62,12 @@ public class ModelCheckerUtils {
       }
     }
     return issueCount;
+  }
+
+  public static boolean isDeclaredLink(SNode linkDeclaration, boolean child) {
+    return ((linkDeclaration != null) && child ?
+      SPropertyOperations.hasValue(linkDeclaration, "metaClass", "aggregation", "reference") :
+      SPropertyOperations.hasValue(linkDeclaration, "metaClass", "reference", "reference")
+    );
   }
 }
