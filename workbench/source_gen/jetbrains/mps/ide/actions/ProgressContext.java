@@ -6,6 +6,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.ide.progress.TaskProgressSettings;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class ProgressContext {
   private long myStartTime;
@@ -18,7 +20,7 @@ public class ProgressContext {
     this.myTaskNames = taskNames;
     this.myProgressIndicator = progressIndicator;
     this.myStartTime = System.currentTimeMillis();
-    this.myEstimatedTime = ModelCheckerUtils.getEstimatedTimeMillis(taskNames);
+    this.myEstimatedTime = getEstimatedTimeMillis(taskNames);
   }
 
   public ProgressContext(ProgressIndicator progressIndicator, Iterable<String> taskNames) {
@@ -30,7 +32,7 @@ public class ProgressContext {
   }
 
   public void saveEstimatedTime(long subtaskStartTime) {
-    ModelCheckerUtils.addEstimatedTimeMillis(ListSequence.fromList(this.myTaskNames).getElement(this.myCurrentTaskIndex), subtaskStartTime);
+    addEstimatedTimeMillis(ListSequence.fromList(this.myTaskNames).getElement(this.myCurrentTaskIndex), subtaskStartTime);
     this.myCurrentTaskIndex++;
   }
 
@@ -54,5 +56,21 @@ public class ProgressContext {
     List<String> list = ListSequence.fromList(new ArrayList<String>(1));
     ListSequence.fromList(list).setElement(0, element);
     return list;
+  }
+
+  private static long getEstimatedTimeMillis(String taskName) {
+    return TaskProgressSettings.getInstance().getEstimatedTimeMillis(taskName);
+  }
+
+  private static long getEstimatedTimeMillis(Iterable<String> taskNames) {
+    long result = 0;
+    for (String taskName : Sequence.fromIterable(taskNames)) {
+      result += getEstimatedTimeMillis(taskName);
+    }
+    return result;
+  }
+
+  private static void addEstimatedTimeMillis(String taskName, long startTime) {
+    TaskProgressSettings.getInstance().addEstimatedTimeMillis(taskName, System.currentTimeMillis() - startTime);
   }
 }

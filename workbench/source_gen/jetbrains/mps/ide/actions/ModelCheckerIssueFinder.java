@@ -25,19 +25,26 @@ public class ModelCheckerIssueFinder implements IFinder {
 
     ProgressContext progressContext = new ProgressContext(indicator, ListSequence.fromList(modelDescriptors).select(new ISelector<SModelDescriptor, String>() {
       public String select(SModelDescriptor it) {
-        return ModelCheckerUtils.getTaskName(it);
+        return getTaskName(it);
       }
     }));
-    SearchResults<ModelCheckerIssue> results = new SearchResults<ModelCheckerIssue>();
+    ModelChecker modelChecker = new ModelChecker(operationContext, progressContext);
 
     for (SModelDescriptor modelDescriptor : ListSequence.fromList(modelDescriptors)) {
       long modelStartTime = System.currentTimeMillis();
-      if (!(ModelCheckerUtils.checkModel(results, modelDescriptor, operationContext, progressContext))) {
-        return results;
+
+      modelChecker.checkModel(modelDescriptor);
+      if (modelChecker.isCancelled()) {
+        break;
       }
+
       progressContext.saveEstimatedTime(modelStartTime);
     }
 
-    return results;
+    return modelChecker.getSearchResults();
+  }
+
+  private static String getTaskName(SModelDescriptor modelDescriptor) {
+    return modelDescriptor.getName() + "_modelcheck";
   }
 }
