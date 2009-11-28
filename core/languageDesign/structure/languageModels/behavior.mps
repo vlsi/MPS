@@ -4643,6 +4643,21 @@
         <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1232965983315" />
       </node>
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232962485903">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2686057480401041247">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2686057480401041248">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2686057480401041262" />
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2686057480401041258">
+            <link role="classConcept" targetNodeId="10.~EqualUtil" resolveInfo="EqualUtil" />
+            <link role="baseMethodDeclaration" targetNodeId="10.~EqualUtil.equals(java.lang.Object,java.lang.Object):boolean" resolveInfo="equals" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2686057480401041259">
+              <link role="variableDeclaration" targetNodeId="1232962485897" resolveInfo="oldValue" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2686057480401041261">
+              <link role="variableDeclaration" targetNodeId="1232965981688" resolveInfo="newValue" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1232962485904">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1232962485905">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1232962485906">
@@ -4690,10 +4705,10 @@
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="1232962485923">
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1232962485924" />
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1232962485964">
               <link role="variableDeclaration" targetNodeId="1232962485897" resolveInfo="oldValue" />
             </node>
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1232962485924" />
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1232962485926">

@@ -35,6 +35,7 @@ import jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.util.EqualUtil;
 import javax.swing.JOptionPane;
 import jetbrains.mps.smodel.ModelAccess;
 
@@ -495,6 +496,9 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static void commitNameProperty_1232962485892(EditorContext editorContext, String oldValue, final SNode node, final String newValue) {
+    if (EqualUtil.equals(oldValue, newValue)) {
+      return;
+    }
     if (oldValue != null) {
       int result = JOptionPane.showConfirmDialog(editorContext.getNodeEditorComponent(), "Renaming concept can break your model. It's advised to use rename refactoring instead. Are you sure?", "Rename concept", JOptionPane.YES_NO_OPTION);
       if (result == JOptionPane.NO_OPTION) {
