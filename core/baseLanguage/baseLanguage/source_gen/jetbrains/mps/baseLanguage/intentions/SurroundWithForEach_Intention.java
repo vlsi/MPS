@@ -16,15 +16,15 @@ public class SurroundWithForEach_Intention extends SurroundWithIntention {
   }
 
   public String getDescription(SNode p0, EditorContext p1) {
-    return "for Each";
+    return "For Each";
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode forStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
     SNodeOperations.insertNextSiblingChild(ListSequence.fromList(selectedNodes).last(), forStatement);
-    for (SNode n : ListSequence.fromList(selectedNodes)) {
-      SLinkOperations.addChild(SLinkOperations.getTarget(forStatement, "body", true), "statement", SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.Statement"));
+    for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
+      SLinkOperations.addChild(SLinkOperations.getTarget(forStatement, "body", true), "statement", SNodeOperations.cast(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement"));
     }
     editorContext.select(SLinkOperations.getTarget(SLinkOperations.getTarget(forStatement, "variable", true), "type", true));
   }

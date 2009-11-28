@@ -11,7 +11,6 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import com.intellij.openapi.actionSystem.DataContext;
@@ -71,9 +70,6 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
     {
       SNode node = event.getData(MPSDataKeys.NODE);
       if (node != null) {
-        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement"))) {
-          node = null;
-        }
       }
       this.selectedNode = node;
     }

@@ -51,11 +51,11 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
       SLinkOperations.setTarget(fieldRefOperation, "fieldDeclaration", field, false);
       SNode checkStmt;
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-        checkStmt = new _Quotations.QuotationClass_13().createNode(thatRef, fieldRefOperation, fieldRefOperation, thisExp);
+        checkStmt = new _Quotations.QuotationClass_13().createNode(thatRef, SNodeOperations.copyNode(fieldRefOperation), thisExp, SNodeOperations.copyNode(fieldRefOperation));
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
         checkStmt = new _Quotations.QuotationClass_11().createNode(thisExp, fieldRefOperation, thatRef, fieldRefOperation);
       } else {
-        checkStmt = new _Quotations.QuotationClass_12().createNode(thatRef, fieldRefOperation, thisExp, fieldRefOperation, thisExp, fieldRefOperation, thatRef, fieldRefOperation);
+        checkStmt = new _Quotations.QuotationClass_12().createNode(thatRef, SNodeOperations.copyNode(fieldRefOperation), thisExp, fieldRefOperation, thisExp, fieldRefOperation, thatRef, SNodeOperations.copyNode(fieldRefOperation));
       }
       SLinkOperations.addChild(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", checkStmt);
     }
@@ -82,7 +82,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
         checkStatement = new _Quotations.QuotationClass_29().createNode(plusExpression, thisExp, fieldRefOperation, thisExp, fieldRefOperation, resultReference);
       } else {
-        checkStatement = new _Quotations.QuotationClass_30().createNode(thisExp, fieldRefOperation, thisExp, plusExpression, resultReference);
+        checkStatement = new _Quotations.QuotationClass_30().createNode(thisExp, fieldRefOperation, thisExp, fieldRefOperation, plusExpression, resultReference);
       }
       SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", checkStatement);
     }

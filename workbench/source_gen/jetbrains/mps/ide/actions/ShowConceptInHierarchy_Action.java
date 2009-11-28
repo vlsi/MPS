@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 
 public class ShowConceptInHierarchy_Action extends GeneratedAction {
-  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}\\icons\\hierarchyView.png", "jetbrains.mps.ide"), true);
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${solution_descriptor}/icons/hierarchyView.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(ShowConceptInHierarchy_Action.class);
 
   private MPSProject project;
