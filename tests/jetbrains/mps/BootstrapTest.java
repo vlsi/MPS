@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.ModelAccess;
 
 public class BootstrapTest extends BaseMPSTest {
 
-  public void testCharisma() {
+  /*public void testCharisma() {
     TestMain.configureMPS();
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     ModelAccess.instance().runWriteAction(new Runnable() {
@@ -34,7 +34,7 @@ public class BootstrapTest extends BaseMPSTest {
       }
     });
     assertGenerates(new File("C:/charisma/charisma.mpr"), true);
-  }
+  }*/
 
 
   public void testBaseLanguage() {
