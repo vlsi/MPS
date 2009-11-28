@@ -4379,7 +4379,7 @@
     <property name="package" value="Menu.EditorPopup.Actions" />
     <property name="name" value="ShowConceptInHierarchy" />
     <property name="caption" value="Show Concept in Hierarchy" />
-    <property name="iconPath" value="${solution_descriptor}\icons\hierarchyView.png" />
+    <property name="iconPath" value="${solution_descriptor}/icons/hierarchyView.png" />
     <node role="methodDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="2925366645633918951">
       <property name="name" value="getConceptNode" />
       <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="2925366645633918954">
