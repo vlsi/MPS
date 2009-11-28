@@ -4,6 +4,8 @@ package jetbrains.mps.lang.core.plugin;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.plugins.MacrosUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
@@ -20,7 +22,7 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.LanguageUsage
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 
 public class FindLanguageUsages_Action extends GeneratedAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${language_descriptor}/icons/usages.png", "jetbrains.mps.lang.core"), true);
   private static Logger LOG = Logger.getLogger(FindLanguageUsages_Action.class);
 
   private IModule module;

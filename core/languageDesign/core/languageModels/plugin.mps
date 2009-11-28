@@ -42,6 +42,7 @@
     <property name="name" value="FindModelUsages" />
     <property name="caption" value="Find Usages" />
     <property name="executeInNewThread" value="true" />
+    <property name="iconPath" value="${language_descriptor}/icons/usages.png" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1209308509192">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209308509193">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1212510263877">
@@ -151,7 +152,7 @@
                 <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1212510263919">
                   <node role="rValue" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1212510263920">
                     <link role="classConcept" targetNodeId="10.~FindUtils" resolveInfo="FindUtils" />
-                    <link role="baseMethodDeclaration" targetNodeId="10.~FindUtils.makeProvider(java.util.Collection):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="makeProvider" />
+                    <link role="baseMethodDeclaration" targetNodeId="10.~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="makeProvider" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213874720628">
                       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1213874720632">
                         <link role="baseMethodDeclaration" targetNodeId="6.~ModelUsagesFinder.&lt;init&gt;()" resolveInfo="ModelUsagesFinder" />
@@ -255,6 +256,7 @@
     <property name="caption" value="Find Usages" />
     <property name="outsideCommandExecution" value="false" />
     <property name="executeInNewThread" value="true" />
+    <property name="iconPath" value="${language_descriptor}/icons/usages.png" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1209824745372">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209824745373">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1212508818624">
@@ -707,6 +709,7 @@
     <property name="caption" value="Find Concepts Usages" />
     <property name="outsideCommandExecution" value="false" />
     <property name="executeInNewThread" value="true" />
+    <property name="iconPath" value="${language_descriptor}/icons/usages.png" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1225978220760">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225978220761">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1225978220762">
