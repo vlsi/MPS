@@ -23,8 +23,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.application.PathManager;
 import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.diff.*;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
 import com.intellij.openapi.fileTypes.FileType;
@@ -59,6 +59,7 @@ import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentFactory;
 import com.intellij.ui.content.ContentManager;
@@ -90,6 +91,7 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 
 public class AbstractVcsHelperImpl extends AbstractVcsHelper {
   private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl");
+  private static final jetbrains.mps.logging.Logger MPS_LOG = jetbrains.mps.logging.Logger.getLogger(AbstractVcsHelperImpl.class);
 
   private final Project myProject;
 
@@ -563,7 +565,24 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
           try {
             File tmp = FileUtil.createTmpDir();
             ZipUtil.extract(myBackup, tmp, null);
+
+            // copy merge result
             FileUtil.copyFile(new File(file.getPath()), new File(tmp + File.separator + file.getName() + ".result"));
+
+            // copy logfiles
+            File logsDir = new File(PathManager.getLogPath());
+            File[] logfiles = logsDir.listFiles(new FilenameFilter() {
+              @Override
+              public boolean accept(File dir, String name) {
+                return name.matches("mpsvcs\\.log(\\.1)*") || name.matches("idea\\.log(\\.1)*");
+              }
+            });
+            File tmpLogDir = new File(tmp + File.separator + "logs");
+            tmpLogDir.mkdir();
+            for (File logfile : logfiles) {
+              FileUtil.copyFile(logfile, new File(tmpLogDir + File.separator + logfile.getName()));
+            }
+
             FileUtil.zip(tmp, myBackup);
             FileUtil.delete(tmp);
           } catch (IOException e) {
@@ -588,16 +607,15 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
       }
     }
     if (toMerge.isEmpty()) {
-      LOG.debug("It seems that all files were already resolved " + alreadyResolved);
+      MPS_LOG.debug("It seems that all files were already resolved " + alreadyResolved);
       return alreadyResolved;
     }
-    LOG.debug("Showing merge for files " + toMerge);
+    MPS_LOG.debug("Showing merge for files " + toMerge);
     // on the next line originally provider were passed instead of provider decorator
     final MultipleFileMergeDialog fileMergeDialog = new MultipleFileMergeDialog(myProject, toMerge, providerDecorator);
-    // MPS Patch End
     fileMergeDialog.show();
     List<VirtualFile> resolved = CollectionUtil.union(fileMergeDialog.getProcessedFiles(), alreadyResolved);
-    LOG.debug("Merge finished with resolved files " + resolved);
+    MPS_LOG.debug("Merge finished with resolved files " + resolved);
     return resolved;
   }
 
