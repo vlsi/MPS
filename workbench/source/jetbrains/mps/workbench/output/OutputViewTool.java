@@ -44,7 +44,7 @@ public class OutputViewTool extends BaseProjectTool {
   private int myFontSize = 12;
 
   public OutputViewTool(Project project) {
-    super(project, "Output", 4, Icons.OUTPUT_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Output", 6, Icons.OUTPUT_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
   }
 
   public void initComponent() {

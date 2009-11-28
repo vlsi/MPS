@@ -47,7 +47,7 @@ public class InspectorTool extends BaseProjectTool {
   private FileEditor myFileEditor;
 
   public InspectorTool(Project project) {
-    super(project, ID, 5, Icons.INSPECTOR_ICON, ToolWindowAnchor.BOTTOM, true, false);
+    super(project, ID, 2, Icons.INSPECTOR_ICON, ToolWindowAnchor.BOTTOM, true, false);
   }
 
   public void initComponent() {

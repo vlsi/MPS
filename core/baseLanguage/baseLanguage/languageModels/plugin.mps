@@ -1945,7 +1945,6 @@
     <property name="name" value="TodoViewer" />
     <property name="caption" value="TODO" />
     <property name="icon" value="${language_descriptor}\source\jetbrains\mps\baseLanguage\plugin\todo.png" />
-    <property name="number" value="2" />
     <node role="getComponentBlock" type="jetbrains.mps.lang.plugin.structure.GetComponentBlock" id="1214308524982">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214308524983">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1216657147577">
