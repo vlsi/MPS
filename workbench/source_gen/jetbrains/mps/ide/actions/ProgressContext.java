@@ -6,8 +6,8 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.ide.progress.TaskProgressSettings;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.ide.progress.TaskProgressSettings;
 
 public class ProgressContext {
   private long myStartTime;
@@ -24,11 +24,11 @@ public class ProgressContext {
   }
 
   public ProgressContext(ProgressIndicator progressIndicator, Iterable<String> taskNames) {
-    this(progressIndicator, ListSequence.fromListWithValues(new ArrayList<String>(), taskNames));
+    this(progressIndicator, Sequence.fromIterable(taskNames).toListSequence());
   }
 
   public ProgressContext(ProgressIndicator progressIndicator, String taskName) {
-    this(progressIndicator, listFromSingleElement(taskName));
+    this(progressIndicator, Sequence.fromArray(new String[]{taskName}));
   }
 
   public void saveEstimatedTime(long subtaskStartTime) {
@@ -50,12 +50,6 @@ public class ProgressContext {
 
   public ProgressIndicator getProgressIndicator() {
     return this.myProgressIndicator;
-  }
-
-  private static List<String> listFromSingleElement(String element) {
-    List<String> list = ListSequence.fromList(new ArrayList<String>(1));
-    ListSequence.fromList(list).setElement(0, element);
-    return list;
   }
 
   private static long getEstimatedTimeMillis(String taskName) {

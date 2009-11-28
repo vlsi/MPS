@@ -23,7 +23,7 @@ import com.intellij.openapi.application.ApplicationManager;
 })
 public class ModelCheckerSettings implements PersistentStateComponent<ModelCheckerSettings.MyState>, ApplicationComponent, SearchableConfigurable {
   private ModelCheckerSettings.MyState myState = new ModelCheckerSettings.MyState();
-  private ModelCheckerSettingsPreferencesPage myPreferences;
+  private ModelCheckerPreferencesPage myPreferences;
 
   public ModelCheckerSettings() {
   }
@@ -90,9 +90,9 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     return null;
   }
 
-  private ModelCheckerSettingsPreferencesPage getPreferences() {
+  private ModelCheckerPreferencesPage getPreferences() {
     if (this.myPreferences == null) {
-      this.myPreferences = new ModelCheckerSettingsPreferencesPage(this);
+      this.myPreferences = new ModelCheckerPreferencesPage(this);
     }
     return this.myPreferences;
   }
