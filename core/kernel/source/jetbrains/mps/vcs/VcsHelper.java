@@ -34,8 +34,7 @@ public class VcsHelper {
     try {
       File backupFile = doBackup(modelFile, inMemory);
 
-//      return showSimpleDialog(modelFile, inMemory, backupFile);
-        return doRealMerge(modelFile, inMemory);
+      return showSimpleDialog(modelFile, inMemory, backupFile);
     } catch (IOException e) {
       LOG.error(e);
       throw new RuntimeException(e);
@@ -51,13 +50,16 @@ public class VcsHelper {
     String title = "Model " + inMemory + " has conflicting changes.";
     String diskVersion = "Load Disk Version";
     String memoryVersion = "Save Memory Version";
-    String[] options = {diskVersion, memoryVersion};
+    String showMergeDialog = "Show Merge Dialog";
+    String[] options = {diskVersion, memoryVersion, showMergeDialog};
     int result = com.intellij.openapi.ui.Messages.showDialog(message, title, options, 0, com.intellij.openapi.ui.Messages.getQuestionIcon());
     if (result == -1) return showDiskMemoryMerge(modelFile, inMemory);
     if (options[result].equals(diskVersion)) {
       return false;
-    } else {
+    } else if (options[result].equals(memoryVersion)) {
       return true;
+    } else {
+      return doRealMerge(modelFile, inMemory);
     }
   }
 
@@ -137,6 +139,7 @@ public class VcsHelper {
         }
 
         reloadModel(result, file);
+        file.refresh(true, false);
       }
     });
   }
