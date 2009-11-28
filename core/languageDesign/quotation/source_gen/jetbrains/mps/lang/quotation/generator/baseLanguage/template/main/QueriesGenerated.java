@@ -401,7 +401,17 @@ public class QueriesGenerated {
         for (SNode child : SNodeOperations.getChildren(node)) {
           if (!(SNodeOperations.isInstanceOf(child, "jetbrains.mps.lang.quotation.structure.AbstractAntiquotation"))) {
             for (SReference reference : child.getReferences()) {
-              if (SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", reference.getRole()), true) != null) {
+              if (SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromLinkAttributeRole("referenceAntiquotation", reference.getRole()), true) != null || SLinkOperations.getTarget(child, AttributesRolesUtil.childRoleFromAttributeRole("antiquotation"), true) != null) {
+                continue;
+              }
+              boolean hasAntiquotation = false;
+              for (SNode grandChild : SNodeOperations.getChildren(child)) {
+                if (SNodeOperations.isInstanceOf(grandChild, "jetbrains.mps.lang.quotation.structure.Antiquotation") || SNodeOperations.isInstanceOf(grandChild, "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
+                  hasAntiquotation = true;
+                  break;
+                }
+              }
+              if (hasAntiquotation) {
                 continue;
               }
               SNode targetNode = reference.getTargetNode();
