@@ -97,21 +97,21 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
     return this.myPreferences;
   }
 
-  public List<SpecificChecker> getSpecificCheckers(ModelChecker modelChecker) {
+  public List<SpecificChecker> getSpecificCheckers() {
     List<SpecificChecker> specificCheckers = ListSequence.fromList(new ArrayList<SpecificChecker>());
 
-    ListSequence.fromList(specificCheckers).addElement(new UnavailableConceptsChecker(modelChecker));
+    ListSequence.fromList(specificCheckers).addElement(new UnavailableConceptsChecker());
     if (this.isCheckUnresolvedReferences()) {
-      ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker(modelChecker));
+      ListSequence.fromList(specificCheckers).addElement(new UnresolvedReferencesChecker());
     }
     if (this.isCheckConstraints()) {
-      ListSequence.fromList(specificCheckers).addElement(new ConstraintsChecker(modelChecker));
+      ListSequence.fromList(specificCheckers).addElement(new ConstraintsChecker());
     }
     if (this.isCheckScopes()) {
-      ListSequence.fromList(specificCheckers).addElement(new ScopesChecker(modelChecker));
+      ListSequence.fromList(specificCheckers).addElement(new ScopesChecker());
     }
     if (this.isCheckTypesystem()) {
-      ListSequence.fromList(specificCheckers).addElement(new TypesystemChecker(modelChecker));
+      ListSequence.fromList(specificCheckers).addElement(new TypesystemChecker());
     }
     return specificCheckers;
   }

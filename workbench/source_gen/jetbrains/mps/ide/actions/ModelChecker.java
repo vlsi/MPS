@@ -9,12 +9,11 @@ import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.util.TimePresentationUtil;
 
-public class ModelChecker {
+public class ModelChecker implements IProgressIndicatorAdapter {
   public static final String CATEGORY_ERROR = "Errors";
   public static final String CATEGORY_WARNING = "Warnings";
   public static final String CATEGORY_INFO = "Infos";
@@ -30,13 +29,16 @@ public class ModelChecker {
   }
 
   public void checkModel(final SModelDescriptor modelDescriptor) {
-    final List<SpecificChecker> specificCheckers = ModelCheckerSettings.getInstance().getSpecificCheckers(this);
+    final List<SpecificChecker> specificCheckers = ModelCheckerSettings.getInstance().getSpecificCheckers();
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SModel model = modelDescriptor.getSModel();
+
+        ModelChecker.this.myResults = new SearchResults<ModelCheckerIssue>();
         for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers)) {
-          specificChecker.checkModel(model);
+          List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, ModelChecker.this, ModelChecker.this.myOperationContext);
+          ModelChecker.this.myResults.getSearchResults().addAll(specificCheckerResults);
           if (ModelChecker.this.myProgressContext.getProgressIndicator().isCanceled()) {
             break;
           }
@@ -56,15 +58,6 @@ public class ModelChecker {
 
   public IOperationContext getOperationContext() {
     return this.myOperationContext;
-  }
-
-  public void addIssue(SNode node, String message, String category, ModelCheckerFix fix) {
-    ModelCheckerIssue issue = new ModelCheckerIssue(node, message, fix);
-    this.myResults.getSearchResults().add(new SearchResult(issue, node, category));
-  }
-
-  public void addIssue(SNode node, String message) {
-    addIssue(node, message, CATEGORY_ERROR, null);
   }
 
   public boolean checkAndUpdateIndicator(String text) {
