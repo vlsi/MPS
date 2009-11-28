@@ -7867,6 +7867,17 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7625247646995052334">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7625247646995052336">
+            <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="7625247646995052335" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7625247646995052716">
+              <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.selectWRTFocusPolicy(jetbrains.mps.smodel.SNode):void" resolveInfo="selectWRTFocusPolicy" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7625247646995052717">
+                <link role="variableDeclaration" targetNodeId="1230290208525" resolveInfo="smc" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>

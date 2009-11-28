@@ -43,6 +43,7 @@ public class SpecifyClass_Intention extends BaseIntention {
     for (SNode arg : args) {
       SLinkOperations.addChild(smc, "actualArgument", SNodeOperations.detachNode(arg));
     }
+    editorContext.selectWRTFocusPolicy(smc);
   }
 
   public String getLocationString() {
