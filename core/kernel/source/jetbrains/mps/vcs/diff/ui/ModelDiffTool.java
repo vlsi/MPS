@@ -25,19 +25,15 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
+import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.GlobalOperationContext;
 import jetbrains.mps.MPSProjectHolder;
-import org.jdom.Document;
-import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JFrame;
-import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
 public class ModelDiffTool implements DiffTool {
@@ -101,28 +97,8 @@ public class ModelDiffTool implements DiffTool {
     return "";
   }
 
-  public static String[] getModelNameAndStereotype(String modelPath) {
-    int index = modelPath.lastIndexOf("/");
-    String shortName = modelPath;
-    if (index != -1) shortName = modelPath.substring(index + 1);
-    index = shortName.lastIndexOf("\\");
-    if (index != -1) shortName = shortName.substring(index + 1);
-
-    index = shortName.indexOf('.');
-    shortName = (index >= 0) ? shortName.substring(0, index) : shortName;
-    int index1 = shortName.indexOf("@");
-    String modelName = shortName;
-    String modelStereotype = "";
-    if (index1 >= 0) {
-      modelName = shortName.substring(0, index1);
-      modelStereotype = shortName.substring(index1 + 1);
-    }
-
-    return new String[]{modelName, modelStereotype};
-  }
-
   public static SModel readModel(DiffContent content, String path) throws IOException, ReadException {
-    SModel sModel = readModel(content.getBytes(), path);
+    SModel sModel = ModelUtils.readModel(content.getBytes(), path);
     if (content instanceof DocumentContent || content instanceof FileContent) {
       SModelRepository repository = SModelRepository.getInstance();
       final SModelDescriptor sModelDescriptor = repository.getModelDescriptor(sModel.getSModelFqName());
@@ -134,23 +110,6 @@ public class ModelDiffTool implements DiffTool {
       });         
     }
     return sModel;
-  }
-
-  public static SModel readModel(byte[] bytes, String path) throws IOException, ReadException {
-    final String[] modelNameAndStereotype = getModelNameAndStereotype(path);
-    try {
-      if (bytes.length == 0) {
-        return new SModel(SModelReference.fromString(modelNameAndStereotype[0] + "@" + modelNameAndStereotype[1]));
-      }
-      final Document document = JDOMUtil.loadDocument(new ByteArrayInputStream(bytes));
-      return ModelAccess.instance().runReadAction(new Computable<SModel>() {
-        public SModel compute() {
-          return ModelPersistence.readModel(document, modelNameAndStereotype[0], modelNameAndStereotype[1]);
-        }
-      });
-    } catch (Throwable t) {
-      throw new ReadException(t);
-    }
   }
 
   public boolean canShow(DiffRequest request) {

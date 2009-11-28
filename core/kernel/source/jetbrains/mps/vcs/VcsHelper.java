@@ -1,15 +1,12 @@
 package jetbrains.mps.vcs;
 
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.diff.ui.MergeModelsDialog;
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.MPSProjectHolder;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -18,12 +15,7 @@ import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.io.FileUtil;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.OutputStream;
-import java.io.File;
-
-import org.jdom.Document;
+import java.io.*;
 
 import javax.swing.SwingUtilities;
 
@@ -65,7 +57,7 @@ public class VcsHelper {
 
   private static File doBackup(IFile modelFile, SModel inMemory) throws IOException {
     File tmp = jetbrains.mps.util.FileUtil.createTmpDir();
-    AbstractVcsHelperImpl.writeContentsToFile(modelToBytes(inMemory), modelFile.getName(), tmp, "memory");
+    AbstractVcsHelperImpl.writeContentsToFile(ModelUtils.modelToBytes(inMemory), modelFile.getName(), tmp, "memory");
     FileUtil.copy(modelFile.toFile(), new File(tmp.getAbsolutePath() + File.separator + modelFile.getName() + "." + "filesystem"));
     File zipfile = AbstractVcsHelperImpl.getZipFile(modelFile.getPath());
     jetbrains.mps.util.FileUtil.zip(tmp, zipfile);
@@ -80,7 +72,7 @@ public class VcsHelper {
     LOG.assertLog(file != null);
 
     try {
-      final SModel onDisk = ModelDiffTool.readModel(FileUtil.loadFileBytes(VFileSystem.toFile(file)), file.getPath());
+      final SModel onDisk = ModelUtils.readModel(FileUtil.loadFileBytes(VFileSystem.toFile(file)), file.getPath());
       final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
         public MergeModelsDialog compute() {
           MPSProject project = ProjectManager.getInstance().getOpenProjects()[0].getComponent(MPSProjectHolder.class).getMPSProject();
@@ -97,8 +89,8 @@ public class VcsHelper {
 
       if (dialog.getResultModel() != null) {
         SModel result = dialog.getResultModel();
-        byte[] bytes = modelToBytes(result);
-        replaceWithNewModel(bytes, file);
+        byte[] bytes = ModelUtils.modelToBytes(result);
+        ModelUtils.replaceWithNewModelFromBytes(file, bytes);
         return false;
       }
     } catch (IOException e) {
@@ -107,54 +99,5 @@ public class VcsHelper {
       LOG.error(e);
     }
     return true;
-  }
-
-  public static byte[] modelToBytes(final SModel result) throws IOException {
-    Document document = ModelAccess.instance().runReadAction(new Computable<Document>() {
-      public Document compute() {
-        return ModelPersistence.saveModel(result, false);
-      }
-    });
-    ByteArrayOutputStream baos = new ByteArrayOutputStream();
-    JDOMUtil.writeDocument(document, baos);
-    return baos.toByteArray();
-  }
-
-  public static void replaceWithNewModel(final byte[] result, final VirtualFile file) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      public void run() {
-        OutputStream outputStream = null;
-        try {
-          outputStream = file.getOutputStream(this);
-          outputStream.write(result);
-        } catch (IOException e) {
-          LOG.error(e);
-        } finally {
-          if (outputStream != null) {
-            try {
-              outputStream.close();
-            } catch (IOException e) {
-            }
-          }
-        }
-
-        reloadModel(result, file);
-        file.refresh(true, false);
-      }
-    });
-  }
-
-  private static void reloadModel(byte[] result, VirtualFile file) {
-    final SModelDescriptor modelDescriptor = SModelRepository.getInstance().findModel(VFileSystem.toIFile(file));
-    if (modelDescriptor == null) return;
-
-    try {
-      SModel model = ModelDiffTool.readModel(result, file.getPath());
-      modelDescriptor.replaceModel(model);
-    } catch (IOException e) {
-      LOG.error(e);
-    } catch (ReadException e) {
-      LOG.error(e);
-    }
   }
 }

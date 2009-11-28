@@ -15,60 +15,27 @@
  */
 package jetbrains.mps.vcs.diff;
 
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.UnzipUtil;
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
-import jetbrains.mps.vcs.diff.Merger.VERSION;
+import jetbrains.mps.vcs.ModelUtils;
+import jetbrains.mps.vcs.ModelUtils.Version;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 
 import java.io.File;
 import java.io.IOException;
-import java.io.ByteArrayOutputStream;
-import java.io.FileInputStream;
 
 public class MergeTestUtil {
 
   public static SModel[] loadTestModels(File zipfile) throws IOException, ReadException {
-    File tmpdir = FileUtil.createTmpDir();
-    UnzipUtil.unzip(zipfile, tmpdir);
-
-    String zipfilename = zipfile.getName();
-    String name = zipfilename.substring(0, zipfilename.length() - "zip".length());
-    String prefix = tmpdir + File.separator + name;
-
-    SModel[] models = new SModel[TEST_VERSION.values().length];
-    int index = 0;
-
-    for (TEST_VERSION v : TEST_VERSION.values()) {
-      File file = new File(prefix + v.getSuffix());
-
-      ByteArrayOutputStream baos = new ByteArrayOutputStream();
-      FileInputStream fis = new FileInputStream(file);
-      while (true) {
-        int i = fis.read();
-        if (i == -1) {
-          break;
-        }
-        baos.write(i);
-      }
-
-      models[index] = ModelDiffTool.readModel(baos.toByteArray(), file.getAbsolutePath());
-      index++;
-    }
-
-    return models;
+    return ModelUtils.loadZippedModels(zipfile, TEST_VERSION.values());
   }
 
   public static void saveTestModel(final SModel model, final File file) {
     ModelPersistence.saveModel(model, FileSystem.getFile(file));
   }
 
-  public static enum TEST_VERSION {
+  public static enum TEST_VERSION implements Version {
     MYNE,
     BASE,
     REPO,

@@ -26,19 +26,9 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool;
-import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
-import jetbrains.mps.vcs.VcsHelper;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.vcs.ModelUtils;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.io.IOException;
-import java.io.OutputStream;
 
 public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
   private static final Logger LOG = Logger.getLogger(MPSDiffRequestFactory.class);
@@ -72,7 +62,7 @@ public class MPSDiffRequestFactory extends DiffRequestFactoryImpl {
     public void resolved(final byte[] result) {
       ((SimpleContent) getContents()[ORIGINAL]).setBOM(result);
       setResult(DialogWrapper.OK_EXIT_CODE);
-      VcsHelper.replaceWithNewModel(result, myFile);
+      ModelUtils.replaceWithNewModelFromBytes(myFile, result);
     }
   }
 }

@@ -31,7 +31,7 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.JDOMUtil;
-import static jetbrains.mps.vcs.diff.ui.ModelDiffTool.getModelNameAndStereotype;
+import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.*;
@@ -61,9 +61,9 @@ public class TestMergeDialog {
     IdeMain.setTestMode(TestMode.NO_TEST);
     configureMPS();
 
-    final SModel baseModel = readModel(args[0]);
-    final SModel mineModel = readModel(args[1]);
-    final SModel newModel = readModel(args[2]);
+    final SModel baseModel = ModelUtils.readModel(args[0]);
+    final SModel mineModel = ModelUtils.readModel(args[1]);
+    final SModel newModel = ModelUtils.readModel(args[2]);
 
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
@@ -134,13 +134,4 @@ public class TestMergeDialog {
     });
   }
 
-  private static SModel readModel(String path) throws JDOMException, IOException {
-    final String[] modelNameAndStereotype = getModelNameAndStereotype(path);
-    final Document document = JDOMUtil.loadDocument(new FileInputStream(path));
-    return ModelAccess.instance().runReadAction(new Computable<SModel>() {
-      public SModel compute() {
-        return ModelPersistence.readModel(document, modelNameAndStereotype[0], modelNameAndStereotype[1]);
-      }
-    });
-  }
 }

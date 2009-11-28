@@ -20,22 +20,17 @@ import com.intellij.openapi.diff.DiffManager;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.diff.DiffTool;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
-import jetbrains.mps.vcs.VcsHelper;
+import jetbrains.mps.vcs.ModelUtils;
 import jetbrains.mps.vcs.diff.MPSDiffRequestFactory.ModelMergeRequest;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.MPSProjectHolder;
-import org.jdom.Document;
 
 import javax.swing.SwingUtilities;
 import java.io.*;
@@ -70,7 +65,7 @@ public class ModelMergeTool implements DiffTool {
       dialog.showDialog();
 
       if (dialog.getResultModel() != null) {
-        byte[] bytes = VcsHelper.modelToBytes(dialog.getResultModel());
+        byte[] bytes = ModelUtils.modelToBytes(dialog.getResultModel());
         mrequest.resolved(bytes);
       }
     } catch (IOException e) {
