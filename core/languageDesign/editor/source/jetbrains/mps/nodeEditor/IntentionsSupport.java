@@ -142,7 +142,7 @@ public class IntentionsSupport {
               }
               enabledPresent[0] = !getEnabledIntentions(new Computable<Boolean>() {
                 public Boolean compute() {
-                  return interrupted();
+                  return interrupted(); //why so many interrupted() calls? which thread can interrupt this?
                 }
               }).isEmpty();
               finished[0] = true;
@@ -150,11 +150,11 @@ public class IntentionsSupport {
           });
 
           if (!finished[0]) return;
-          if (interrupted()) return;
+          if (interrupted()) return; //why so many interrupted() calls? which thread can interrupt this?
 
           ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
-              if (isInconsistentEditor()) return;
+              if (isInconsistentEditor()) return;  //two same checks
               if (myEditor.getSelectedCell() == null || !enabledPresent[0]) {
                 hideLightBulb();
                 return;
@@ -163,7 +163,7 @@ public class IntentionsSupport {
               adjustLightBulbLocation();
               showLightBulb(new Computable<Boolean>() {
                 public Boolean compute() {
-                  return interrupted();
+                  return interrupted(); //why so many interrupted() calls? which thread can interrupt this?
                 }
               });
             }
