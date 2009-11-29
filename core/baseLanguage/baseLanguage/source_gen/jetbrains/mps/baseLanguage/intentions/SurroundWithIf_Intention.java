@@ -7,9 +7,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class SurroundWithIf_Intention extends SurroundWithIntention {
   public SurroundWithIf_Intention() {
@@ -22,9 +22,9 @@ public class SurroundWithIf_Intention extends SurroundWithIntention {
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode ifStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
-    node.addNextSibling(ifStatement);
-    for (SNode selectedNode : selectedNodes) {
-      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false));
+    SNodeOperations.insertNextSiblingChild(ListSequence.fromList(selectedNodes).last(), ifStatement);
+    for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
+      SLinkOperations.addChild(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
     }
     editorContext.select(SLinkOperations.getTarget(ifStatement, "condition", true));
   }

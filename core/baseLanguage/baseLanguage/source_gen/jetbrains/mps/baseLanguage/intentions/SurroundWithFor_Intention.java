@@ -24,7 +24,7 @@ public class SurroundWithFor_Intention extends SurroundWithIntention {
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
     SNodeOperations.insertNextSiblingChild(node, forStatement);
     for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
-      SLinkOperations.addChild(SLinkOperations.getTarget(forStatement, "body", true), "statement", SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false));
+      SLinkOperations.addChild(SLinkOperations.getTarget(forStatement, "body", true), "statement", SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
     }
     editorContext.select(SLinkOperations.getTarget(SLinkOperations.getTarget(forStatement, "variable", true), "type", true));
   }

@@ -24,7 +24,7 @@ public class SurroundWithWhile_Intention extends SurroundWithIntention {
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
     SNodeOperations.insertNextSiblingChild(node, whileStatement);
     for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
-      SLinkOperations.addChild(SLinkOperations.getTarget(whileStatement, "body", true), "statement", SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false));
+      SLinkOperations.addChild(SLinkOperations.getTarget(whileStatement, "body", true), "statement", SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
     }
     editorContext.select(SLinkOperations.getTarget(whileStatement, "condition", true));
   }

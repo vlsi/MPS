@@ -133,8 +133,12 @@ public abstract class BaseAction extends AnAction {
     p.setVisible(myIsAlwaysVisible);
   }
 
-  protected void enable(Presentation p) {
-    p.setEnabled(true);
+  protected void enable(final Presentation p) {
+    Runnable runnable = new Runnable() {
+      public void run() {
+        p.setEnabled(true);
+      }
+    };
     p.setVisible(true);
   }
 
