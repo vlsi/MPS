@@ -73,6 +73,10 @@ public class GenerateGetter_Intention extends GenerateIntention {
     }
   }
 
+  public boolean executeUI(final SNode node, final EditorContext editorContext) {
+    throw new RuntimeException("NOT IMPLEMENTED");
+  }
+
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }

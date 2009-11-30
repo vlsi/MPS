@@ -78,518 +78,6 @@
   <import index="77" modelUID="r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)" version="-1" />
   <import index="78" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="79" modelUID="r:00000000-0000-4000-0000-011c89590374(jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator)" version="-1" />
-  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
-  <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1096629760203">
-    <property name="name" value="MAPPING_main" />
-    <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1168474141361">
-      <link role="applicableConcept" targetNodeId="38.1071666914219" />
-      <link role="template" targetNodeId="1096630339736" resolveInfo="class_ConceptEditorDeclaration" />
-      <link role="labelDeclaration" targetNodeId="1215475930256" resolveInfo="generatedClass" />
-    </node>
-    <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1168474244566">
-      <link role="applicableConcept" targetNodeId="38.1078938745671" />
-      <link role="template" targetNodeId="1097143944735" resolveInfo="class_EditorComponentDeclaration" />
-      <link role="labelDeclaration" targetNodeId="1215475930256" resolveInfo="generatedClass" />
-    </node>
-    <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="4755152624710527910">
-      <link role="applicableConcept" targetNodeId="38.7667276221847612622" resolveInfo="ParametersInformationQuery" />
-      <link role="template" targetNodeId="4755152624710441322" resolveInfo="class_ParametersInformation" />
-      <link role="labelDeclaration" targetNodeId="1215475930256" resolveInfo="generatedClass" />
-    </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1167334488362">
-      <link role="applicableConcept" targetNodeId="38.1161622981231" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169687142963">
-        <link role="template" targetNodeId="25.1143148725345" />
-      </node>
-    </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1182233982001">
-      <link role="applicableConcept" targetNodeId="38.1182233249301" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1182233997658">
-        <link role="template" targetNodeId="25.1143148725345" />
-      </node>
-    </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="4514257407427105396">
-      <property name="applyToConceptInheritors" value="true" />
-      <link role="applicableConcept" targetNodeId="38.4531786690998636238" resolveInfo="AbstractOperation" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="4514257407427144070">
-        <link role="template" targetNodeId="4514257407427004628" resolveInfo="reduce_AppendTextOperation" />
-      </node>
-    </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="390822997427964776">
-      <link role="applicableConcept" targetNodeId="2v.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="390822997428040643">
-        <link role="template" targetNodeId="79.1205839086351" resolveInfo="reduce_DefaultClassifierMethodDeclaration" />
-      </node>
-    </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="4973721372936702378">
-      <link role="applicableConcept" targetNodeId="2v.1205769149993" resolveInfo="DefaultClassifierMethodCallOperation" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="4973721372936704558">
-        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4973721372936704560">
-          <node role="referenceMacro$link_attribute$baseMethodDeclaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="4973721372936704561">
-            <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="4973721372936704562">
-              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4973721372936704563">
-                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4973721372936704564">
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4973721372936704571">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4973721372936704566">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="4973721372936704565" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4973721372936704570">
-                        <link role="link" targetNodeId="2v.1205769403793" />
-                      </node>
-                    </node>
-                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4973721372936704575">
-                      <link role="property" targetNodeId="46.1169194664001" resolveInfo="name" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4973721372936704576">
-            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro" id="4973721372936704578">
-              <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="4973721372936704581">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4973721372936704582">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4973721372936704583">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4973721372936704584">
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="4973721372936704585">
-                        <link role="link" targetNodeId="2v.1205770614681" />
-                      </node>
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="4973721372936704586" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="8814408727439492263">
-      <link role="applicableConcept" targetNodeId="2v.1205752633985" resolveInfo="ThisClassifierExpression" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="8814408727439494443">
-        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8814408727439494445" />
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1184139536715">
-      <link role="applicableConcept" targetNodeId="38.1088185857835" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1184139546689">
-        <link role="template" targetNodeId="1184139379136" resolveInfo="weave_InlineEditorComponent" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186771925799">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186771925800">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186772055337">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186772056699">
-              <link role="baseMethodDeclaration" targetNodeId="57.1186771518038" />
-              <link role="classConcept" targetNodeId="57.1186771508849" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186772062075" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216919964321" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1184142355281">
-      <link role="applicableConcept" targetNodeId="38.1073390211982" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1184142376412">
-        <link role="template" targetNodeId="1184142154197" resolveInfo="weave_CellModel_RefNodeList_ListHandler" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186772096468">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186772096469">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186772096470">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186772096471">
-              <link role="classConcept" targetNodeId="57.1186771508849" />
-              <link role="baseMethodDeclaration" targetNodeId="57.1186771518038" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186772096472" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216919957742" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270708098">
-      <link role="applicableConcept" targetNodeId="38.1088612959204" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936770">
-        <link role="template" targetNodeId="1097139242515" resolveInfo="weave_CellModel_Alternation" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775463398">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775463399">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775463400">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775463401">
-              <link role="classConcept" targetNodeId="57.1186771508849" />
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775463402" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920633657" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270733492">
-      <link role="applicableConcept" targetNodeId="38.1073389446423" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936771">
-        <link role="template" targetNodeId="1096647705671" resolveInfo="weave_CellModel_Collection" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775466872">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775466873">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775466874">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775466875">
-              <link role="classConcept" targetNodeId="57.1186771508849" />
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775466876" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920602230" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270761245">
-      <link role="applicableConcept" targetNodeId="38.1078939183254" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936772">
-        <link role="template" targetNodeId="1097663873068" resolveInfo="weave_CellModel_Component" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775470222">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775470223">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775470224">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775470225">
-              <link role="classConcept" targetNodeId="57.1186771508849" />
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775470226" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920638673" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270802123">
-      <link role="applicableConcept" targetNodeId="38.1073389577006" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936773">
-        <link role="template" targetNodeId="1097151314077" resolveInfo="weave_CellModel_Constant" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775473791">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775473792">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775473793">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775473794">
-              <link role="classConcept" targetNodeId="57.1186771508849" />
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775473795" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920589901" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270823345">
-      <link role="applicableConcept" targetNodeId="38.1078308402140" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936774">
-        <link role="template" targetNodeId="1097158831835" resolveInfo="weave_CellModel_Custom" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775478203">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775478204">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775478205">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775478206">
-              <link role="classConcept" targetNodeId="57.1186771508849" />
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775478207" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920608059" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270848941">
-      <link role="applicableConcept" targetNodeId="38.1075375595203" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936775">
-        <link role="template" targetNodeId="1097243716762" resolveInfo="weave_CellModel_Error" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775481381">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775481382">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775481383">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775481384">
-              <link role="classConcept" targetNodeId="57.1186771508849" />
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775481385" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920576946" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270867960">
-      <link role="applicableConcept" targetNodeId="38.1139744628335" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936776">
-        <link role="template" targetNodeId="1139748492512" resolveInfo="weave_CellModel_Image" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775485621">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775485622">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775485623">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775485624">
-              <link role="classConcept" targetNodeId="57.1186771508849" />
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775485625" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920621811" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270886760">
-      <link role="applicableConcept" targetNodeId="38.1074767920765" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936777">
-        <link role="template" targetNodeId="1097667551918" resolveInfo="weave_CellModel_ModelAccess" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775488987">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775488988">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775488989">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775488990">
-              <link role="classConcept" targetNodeId="57.1186771508849" />
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775488991" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920628999" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1225906168168">
-      <link role="applicableConcept" targetNodeId="38.1225900081164" resolveInfo="CellModel_ReadOnlyModelAccessor" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1225906198409">
-        <link role="template" targetNodeId="1225901291056" resolveInfo="weave_CellModel_ReadOnlyModelAccessor" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1225906168170">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225906168171">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225906206707">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225906206708">
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" resolveInfo="getGeneratedClassByCellContainer" />
-              <link role="classConcept" targetNodeId="57.1186771508849" resolveInfo="QueriesUtil" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1225906206709" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1225906206710" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1216383064982">
-      <link role="applicableConcept" targetNodeId="38.1216380990741" resolveInfo="CellModel_TransactionalProperty" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1216383075068">
-        <link role="template" targetNodeId="1216382671510" resolveInfo="weave_CellModel_TransactionalProperty" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1216383064984">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216383064985">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216383064986">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1216383064987">
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" resolveInfo="getGeneratedClassByCellContainer" />
-              <link role="classConcept" targetNodeId="57.1186771508849" resolveInfo="QueriesUtil" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1216383064988" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920565678" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270917341">
-      <link role="applicableConcept" targetNodeId="38.1134379236839" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936778">
-        <link role="template" targetNodeId="1134495075165" resolveInfo="weave_CellModel_AttributedPropertyCell" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775493289">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775493290">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775493291">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775493292">
-              <link role="classConcept" targetNodeId="57.1186771508849" />
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775493293" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920551004" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270946172">
-      <link role="applicableConcept" targetNodeId="38.1136564507907" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936779">
-        <link role="template" targetNodeId="1136565058540" resolveInfo="weave_CellModel_AttributedLinkCell" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775497374">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775497375">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775497376">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775497377">
-              <link role="classConcept" targetNodeId="57.1186771508849" />
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775497378" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920583697" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167271006566">
-      <link role="applicableConcept" targetNodeId="38.1149850725784" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936780">
-        <link role="template" targetNodeId="1149851533317" resolveInfo="weave_CellModel_AttributedNodeCell" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775500942">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775500943">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775500944">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775500945">
-              <link role="classConcept" targetNodeId="57.1186771508849" />
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775500946" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920532282" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167271193223">
-      <property name="applyToConceptInheritors" value="true" />
-      <link role="applicableConcept" targetNodeId="38.1140524381322" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936781">
-        <link role="template" targetNodeId="1097659173341" resolveInfo="weave_CellModel_ListWithRole" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775504417">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775504418">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775504419">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775504420">
-              <link role="classConcept" targetNodeId="57.1186771508849" />
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775504421" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920571070" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1198257357676">
-      <property name="applyToConceptInheritors" value="true" />
-      <link role="applicableConcept" targetNodeId="38.1198256887712" resolveInfo="CellModel_Indent" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1198257373690">
-        <link role="template" targetNodeId="1198257250013" resolveInfo="weave_CellModel_Indent" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1198257357678">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198257357679">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198257357680">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1198257357681">
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" resolveInfo="getGeneratedClassByCellContainer" />
-              <link role="classConcept" targetNodeId="57.1186771508849" resolveInfo="QueriesUtil" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1198257357682" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920545347" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="996730828437274997">
-      <property name="applyToConceptInheritors" value="true" />
-      <link role="applicableConcept" targetNodeId="38.1103016434866" resolveInfo="CellModel_JComponent" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="996730828437275005">
-        <link role="template" targetNodeId="996730828437272666" resolveInfo="weave_CellModel_JComponent" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="996730828437274999">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="996730828437275000">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="996730828437275001">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="996730828437275002">
-              <link role="classConcept" targetNodeId="57.1186771508849" resolveInfo="QueriesUtil" />
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" resolveInfo="getGeneratedClassByCellContainer" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="996730828437275003" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="996730828437275004" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167271334168">
-      <property name="applyToConceptInheritors" value="true" />
-      <link role="applicableConcept" targetNodeId="38.1139848536355" />
-      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1167271337341">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1167271337342">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1183063416064">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1167273566630">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227881878">
-                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1167273566632" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1167273566633">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1177556243005">
-                    <link role="conceptDeclaration" targetNodeId="38.1140524381322" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936782">
-        <link role="template" targetNodeId="1139852871567" resolveInfo="weave_CellModel_WithRole" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775509173">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775509174">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775509175">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775509176">
-              <link role="classConcept" targetNodeId="57.1186771508849" />
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775509177" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920615685" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="6100866471087015759">
-      <link role="applicableConcept" targetNodeId="38.625126330682908270" resolveInfo="CellModel_RefererencePresentation" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="6100866471087015767">
-        <link role="template" targetNodeId="625126330683217337" resolveInfo="weave_CellModel_ReferencePresentation" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="6100866471087015761">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6100866471087015762">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6100866471087015763">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6100866471087015764">
-              <link role="classConcept" targetNodeId="57.1186771508849" resolveInfo="QueriesUtil" />
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" resolveInfo="getGeneratedClassByCellContainer" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="6100866471087015765" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="6100866471087015766" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="8313721352726749384">
-      <link role="applicableConcept" targetNodeId="38.8313721352726366579" resolveInfo="CellModel_Empty" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="8313721352726749392">
-        <link role="template" targetNodeId="8313721352726742367" resolveInfo="weave_CellModel_Empty" />
-      </node>
-      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="8313721352726749386">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8313721352726749387">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8313721352726749388">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8313721352726749389">
-              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" resolveInfo="getGeneratedClassByCellContainer" />
-              <link role="classConcept" targetNodeId="57.1186771508849" resolveInfo="QueriesUtil" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="8313721352726749390" />
-              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="8313721352726749391" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1215475930256">
-      <property name="name" value="generatedClass" />
-    </node>
-    <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1215478113304">
-      <property name="name" value="query_method" />
-      <link role="targetConcept" targetNodeId="10.1081236700938" resolveInfo="StaticMethodDeclaration" />
-    </node>
-    <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1215478113347">
-      <property name="name" value="cellFactoryMethod" />
-      <link role="sourceConcept" targetNodeId="38.1073389214265" resolveInfo="EditorCellModel" />
-      <link role="targetConcept" targetNodeId="10.1068580123165" resolveInfo="InstanceMethodDeclaration" />
-    </node>
-    <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1215478114772">
-      <property name="name" value="jcomponent_query_method" />
-    </node>
-    <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1215478114870">
-      <property name="name" value="styleParameter_query_method" />
-      <link role="targetConcept" targetNodeId="10.1081236700938" resolveInfo="StaticMethodDeclaration" />
-    </node>
-    <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1215478114887">
-      <property name="name" value="nodeListHandler" />
-    </node>
-  </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1096630339736">
     <property name="name" value="class_ConceptEditorDeclaration" />
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1096640609211">
@@ -19862,6 +19350,518 @@
         <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="8313721352726742489" />
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8313721352726742490" />
+    </node>
+  </node>
+  <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" />
+  <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1096629760203">
+    <property name="name" value="MAPPING_main" />
+    <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1168474141361">
+      <link role="applicableConcept" targetNodeId="38.1071666914219" />
+      <link role="template" targetNodeId="1096630339736" resolveInfo="class_ConceptEditorDeclaration" />
+      <link role="labelDeclaration" targetNodeId="1215475930256" resolveInfo="generatedClass" />
+    </node>
+    <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="1168474244566">
+      <link role="applicableConcept" targetNodeId="38.1078938745671" />
+      <link role="template" targetNodeId="1097143944735" resolveInfo="class_EditorComponentDeclaration" />
+      <link role="labelDeclaration" targetNodeId="1215475930256" resolveInfo="generatedClass" />
+    </node>
+    <node role="rootMappingRule" type="jetbrains.mps.lang.generator.structure.Root_MappingRule" id="4755152624710527910">
+      <link role="applicableConcept" targetNodeId="38.7667276221847612622" resolveInfo="ParametersInformationQuery" />
+      <link role="template" targetNodeId="4755152624710441322" resolveInfo="class_ParametersInformation" />
+      <link role="labelDeclaration" targetNodeId="1215475930256" resolveInfo="generatedClass" />
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1167334488362">
+      <link role="applicableConcept" targetNodeId="38.1161622981231" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169687142963">
+        <link role="template" targetNodeId="25.1143148725345" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1182233982001">
+      <link role="applicableConcept" targetNodeId="38.1182233249301" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1182233997658">
+        <link role="template" targetNodeId="25.1143148725345" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="4514257407427105396">
+      <property name="applyToConceptInheritors" value="true" />
+      <link role="applicableConcept" targetNodeId="38.4531786690998636238" resolveInfo="AbstractOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="4514257407427144070">
+        <link role="template" targetNodeId="4514257407427004628" resolveInfo="reduce_AppendTextOperation" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="390822997427964776">
+      <link role="applicableConcept" targetNodeId="2v.1205769003971" resolveInfo="DefaultClassifierMethodDeclaration" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="390822997428040643">
+        <link role="template" targetNodeId="79.1205839086351" resolveInfo="reduce_DefaultClassifierMethodDeclaration" />
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="4973721372936702378">
+      <link role="applicableConcept" targetNodeId="2v.1205769149993" resolveInfo="DefaultClassifierMethodCallOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="4973721372936704558">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4973721372936704560">
+          <node role="referenceMacro$link_attribute$baseMethodDeclaration" type="jetbrains.mps.lang.generator.structure.ReferenceMacro" id="4973721372936704561">
+            <node role="referentFunction" type="jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent" id="4973721372936704562">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4973721372936704563">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4973721372936704564">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4973721372936704571">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4973721372936704566">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="4973721372936704565" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4973721372936704570">
+                        <link role="link" targetNodeId="2v.1205769403793" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="4973721372936704575">
+                      <link role="property" targetNodeId="46.1169194664001" resolveInfo="name" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4973721372936704576">
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro" id="4973721372936704578">
+              <node role="sourceNodesQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery" id="4973721372936704581">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4973721372936704582">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4973721372936704583">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4973721372936704584">
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="4973721372936704585">
+                        <link role="link" targetNodeId="2v.1205770614681" />
+                      </node>
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="4973721372936704586" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="8814408727439492263">
+      <link role="applicableConcept" targetNodeId="2v.1205752633985" resolveInfo="ThisClassifierExpression" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="8814408727439494443">
+        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8814408727439494445" />
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1184139536715">
+      <link role="applicableConcept" targetNodeId="38.1088185857835" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1184139546689">
+        <link role="template" targetNodeId="1184139379136" resolveInfo="weave_InlineEditorComponent" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186771925799">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186771925800">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186772055337">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186772056699">
+              <link role="baseMethodDeclaration" targetNodeId="57.1186771518038" />
+              <link role="classConcept" targetNodeId="57.1186771508849" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186772062075" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216919964321" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1184142355281">
+      <link role="applicableConcept" targetNodeId="38.1073390211982" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1184142376412">
+        <link role="template" targetNodeId="1184142154197" resolveInfo="weave_CellModel_RefNodeList_ListHandler" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186772096468">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186772096469">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186772096470">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186772096471">
+              <link role="classConcept" targetNodeId="57.1186771508849" />
+              <link role="baseMethodDeclaration" targetNodeId="57.1186771518038" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186772096472" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216919957742" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270708098">
+      <link role="applicableConcept" targetNodeId="38.1088612959204" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936770">
+        <link role="template" targetNodeId="1097139242515" resolveInfo="weave_CellModel_Alternation" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775463398">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775463399">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775463400">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775463401">
+              <link role="classConcept" targetNodeId="57.1186771508849" />
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775463402" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920633657" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270733492">
+      <link role="applicableConcept" targetNodeId="38.1073389446423" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936771">
+        <link role="template" targetNodeId="1096647705671" resolveInfo="weave_CellModel_Collection" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775466872">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775466873">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775466874">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775466875">
+              <link role="classConcept" targetNodeId="57.1186771508849" />
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775466876" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920602230" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270761245">
+      <link role="applicableConcept" targetNodeId="38.1078939183254" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936772">
+        <link role="template" targetNodeId="1097663873068" resolveInfo="weave_CellModel_Component" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775470222">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775470223">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775470224">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775470225">
+              <link role="classConcept" targetNodeId="57.1186771508849" />
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775470226" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920638673" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270802123">
+      <link role="applicableConcept" targetNodeId="38.1073389577006" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936773">
+        <link role="template" targetNodeId="1097151314077" resolveInfo="weave_CellModel_Constant" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775473791">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775473792">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775473793">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775473794">
+              <link role="classConcept" targetNodeId="57.1186771508849" />
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775473795" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920589901" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270823345">
+      <link role="applicableConcept" targetNodeId="38.1078308402140" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936774">
+        <link role="template" targetNodeId="1097158831835" resolveInfo="weave_CellModel_Custom" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775478203">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775478204">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775478205">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775478206">
+              <link role="classConcept" targetNodeId="57.1186771508849" />
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775478207" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920608059" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270848941">
+      <link role="applicableConcept" targetNodeId="38.1075375595203" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936775">
+        <link role="template" targetNodeId="1097243716762" resolveInfo="weave_CellModel_Error" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775481381">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775481382">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775481383">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775481384">
+              <link role="classConcept" targetNodeId="57.1186771508849" />
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775481385" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920576946" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270867960">
+      <link role="applicableConcept" targetNodeId="38.1139744628335" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936776">
+        <link role="template" targetNodeId="1139748492512" resolveInfo="weave_CellModel_Image" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775485621">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775485622">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775485623">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775485624">
+              <link role="classConcept" targetNodeId="57.1186771508849" />
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775485625" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920621811" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270886760">
+      <link role="applicableConcept" targetNodeId="38.1074767920765" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936777">
+        <link role="template" targetNodeId="1097667551918" resolveInfo="weave_CellModel_ModelAccess" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775488987">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775488988">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775488989">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775488990">
+              <link role="classConcept" targetNodeId="57.1186771508849" />
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775488991" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920628999" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1225906168168">
+      <link role="applicableConcept" targetNodeId="38.1225900081164" resolveInfo="CellModel_ReadOnlyModelAccessor" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1225906198409">
+        <link role="template" targetNodeId="1225901291056" resolveInfo="weave_CellModel_ReadOnlyModelAccessor" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1225906168170">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1225906168171">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1225906206707">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1225906206708">
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" resolveInfo="getGeneratedClassByCellContainer" />
+              <link role="classConcept" targetNodeId="57.1186771508849" resolveInfo="QueriesUtil" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1225906206709" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1225906206710" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1216383064982">
+      <link role="applicableConcept" targetNodeId="38.1216380990741" resolveInfo="CellModel_TransactionalProperty" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1216383075068">
+        <link role="template" targetNodeId="1216382671510" resolveInfo="weave_CellModel_TransactionalProperty" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1216383064984">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1216383064985">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1216383064986">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1216383064987">
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" resolveInfo="getGeneratedClassByCellContainer" />
+              <link role="classConcept" targetNodeId="57.1186771508849" resolveInfo="QueriesUtil" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1216383064988" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920565678" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270917341">
+      <link role="applicableConcept" targetNodeId="38.1134379236839" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936778">
+        <link role="template" targetNodeId="1134495075165" resolveInfo="weave_CellModel_AttributedPropertyCell" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775493289">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775493290">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775493291">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775493292">
+              <link role="classConcept" targetNodeId="57.1186771508849" />
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775493293" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920551004" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167270946172">
+      <link role="applicableConcept" targetNodeId="38.1136564507907" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936779">
+        <link role="template" targetNodeId="1136565058540" resolveInfo="weave_CellModel_AttributedLinkCell" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775497374">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775497375">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775497376">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775497377">
+              <link role="classConcept" targetNodeId="57.1186771508849" />
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775497378" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920583697" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167271006566">
+      <link role="applicableConcept" targetNodeId="38.1149850725784" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936780">
+        <link role="template" targetNodeId="1149851533317" resolveInfo="weave_CellModel_AttributedNodeCell" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775500942">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775500943">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775500944">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775500945">
+              <link role="classConcept" targetNodeId="57.1186771508849" />
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775500946" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920532282" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167271193223">
+      <property name="applyToConceptInheritors" value="true" />
+      <link role="applicableConcept" targetNodeId="38.1140524381322" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936781">
+        <link role="template" targetNodeId="1097659173341" resolveInfo="weave_CellModel_ListWithRole" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775504417">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775504418">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775504419">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775504420">
+              <link role="classConcept" targetNodeId="57.1186771508849" />
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775504421" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920571070" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1198257357676">
+      <property name="applyToConceptInheritors" value="true" />
+      <link role="applicableConcept" targetNodeId="38.1198256887712" resolveInfo="CellModel_Indent" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1198257373690">
+        <link role="template" targetNodeId="1198257250013" resolveInfo="weave_CellModel_Indent" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1198257357678">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1198257357679">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1198257357680">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1198257357681">
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" resolveInfo="getGeneratedClassByCellContainer" />
+              <link role="classConcept" targetNodeId="57.1186771508849" resolveInfo="QueriesUtil" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1198257357682" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920545347" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="996730828437274997">
+      <property name="applyToConceptInheritors" value="true" />
+      <link role="applicableConcept" targetNodeId="38.1103016434866" resolveInfo="CellModel_JComponent" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="996730828437275005">
+        <link role="template" targetNodeId="996730828437272666" resolveInfo="weave_CellModel_JComponent" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="996730828437274999">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="996730828437275000">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="996730828437275001">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="996730828437275002">
+              <link role="classConcept" targetNodeId="57.1186771508849" resolveInfo="QueriesUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" resolveInfo="getGeneratedClassByCellContainer" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="996730828437275003" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="996730828437275004" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="1167271334168">
+      <property name="applyToConceptInheritors" value="true" />
+      <link role="applicableConcept" targetNodeId="38.1139848536355" />
+      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1167271337341">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1167271337342">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1183063416064">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1167273566630">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227881878">
+                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1167273566632" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1167273566633">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1177556243005">
+                    <link role="conceptDeclaration" targetNodeId="38.1140524381322" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1169664936782">
+        <link role="template" targetNodeId="1139852871567" resolveInfo="weave_CellModel_WithRole" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="1186775509173">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1186775509174">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1186775509175">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1186775509176">
+              <link role="classConcept" targetNodeId="57.1186771508849" />
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1186775509177" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="1216920615685" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="6100866471087015759">
+      <link role="applicableConcept" targetNodeId="38.625126330682908270" resolveInfo="CellModel_RefererencePresentation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="6100866471087015767">
+        <link role="template" targetNodeId="625126330683217337" resolveInfo="weave_CellModel_ReferencePresentation" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="6100866471087015761">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6100866471087015762">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6100866471087015763">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6100866471087015764">
+              <link role="classConcept" targetNodeId="57.1186771508849" resolveInfo="QueriesUtil" />
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" resolveInfo="getGeneratedClassByCellContainer" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="6100866471087015765" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="6100866471087015766" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="weavingMappingRule" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule" id="8313721352726749384">
+      <link role="applicableConcept" targetNodeId="38.8313721352726366579" resolveInfo="CellModel_Empty" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="8313721352726749392">
+        <link role="template" targetNodeId="8313721352726742367" resolveInfo="weave_CellModel_Empty" />
+      </node>
+      <node role="contextNodeQuery" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery" id="8313721352726749386">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8313721352726749387">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8313721352726749388">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8313721352726749389">
+              <link role="baseMethodDeclaration" targetNodeId="57.1186773435542" resolveInfo="getGeneratedClassByCellContainer" />
+              <link role="classConcept" targetNodeId="57.1186771508849" resolveInfo="QueriesUtil" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="8313721352726749390" />
+              <node role="actualArgument" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="8313721352726749391" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1215475930256">
+      <property name="name" value="generatedClass" />
+    </node>
+    <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1215478113304">
+      <property name="name" value="query_method" />
+      <link role="targetConcept" targetNodeId="10.1081236700938" resolveInfo="StaticMethodDeclaration" />
+    </node>
+    <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1215478113347">
+      <property name="name" value="cellFactoryMethod" />
+      <link role="sourceConcept" targetNodeId="38.1073389214265" resolveInfo="EditorCellModel" />
+      <link role="targetConcept" targetNodeId="10.1068580123165" resolveInfo="InstanceMethodDeclaration" />
+    </node>
+    <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1215478114772">
+      <property name="name" value="jcomponent_query_method" />
+    </node>
+    <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1215478114870">
+      <property name="name" value="styleParameter_query_method" />
+      <link role="targetConcept" targetNodeId="10.1081236700938" resolveInfo="StaticMethodDeclaration" />
+    </node>
+    <node role="mappingLabel" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration" id="1215478114887">
+      <property name="name" value="nodeListHandler" />
     </node>
   </node>
 </model>

@@ -424,12 +424,41 @@
     <property name="iconPath" value="${language_descriptor}/icons/generate_intention.png" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5180116501957618330">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="executeUI" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="5180116501958013177" resolveInfo="ExecuteUIBlock" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2522969319638198293">
     <property name="name" value="SurroundWithIntentionDeclaration" />
     <property name="iconPath" value="${language_descriptor}/icons/surround_with_intention.png" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5180116501958013177">
+    <property name="name" value="ExecuteUIBlock" />
+    <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="5180116501958013181">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="926291610756260162" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="5180116501958013183">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="2.1194033889146" resolveInfo="ConceptFunctionParameter_editorContext" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="5180116501958013184">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="1192796902958" resolveInfo="ConceptFunctionParameter_node" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5180116501958013178">
+      <property name="value" value="execute UI" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5180116501958013180">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1216468774225" resolveInfo="showName" />
+    </node>
   </node>
 </model>
 

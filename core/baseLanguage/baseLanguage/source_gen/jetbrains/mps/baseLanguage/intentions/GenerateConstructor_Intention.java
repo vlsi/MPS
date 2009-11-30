@@ -11,6 +11,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import javax.swing.SwingUtilities;
+import jetbrains.mps.baseLanguage.plugin.uiActions.StratergyAddMethodDialog;
+import jetbrains.mps.baseLanguage.plugin.uiActions.strategies.AddClassMethodStrategy;
+import jetbrains.mps.ide.actions.ConstructorsToImplementStrategy;
+import jetbrains.mps.ide.actions.ImplementMethodStrategy;
 
 public class GenerateConstructor_Intention extends GenerateIntention {
   public GenerateConstructor_Intention() {
@@ -50,6 +55,17 @@ public class GenerateConstructor_Intention extends GenerateIntention {
       SNode parameterReference = SLinkOperations.setNewChild(assignmentExpression, "rValue", "jetbrains.mps.baseLanguage.structure.ParameterReference");
       SLinkOperations.setTarget(parameterReference, "variableDeclaration", parameterDeclaration, false);
     }
+  }
+
+  public boolean executeUI(final SNode node, final EditorContext editorContext) {
+    /*
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          new StratergyAddMethodDialog(editorContext, editorContext.getOperationContext().getMainFrame(), new AddClassMethodStrategy(node), new ConstructorsToImplementStrategy(), new ImplementMethodStrategy()).showDialog();
+        }
+      });
+    */
+    return true;
   }
 
   public String getLocationString() {

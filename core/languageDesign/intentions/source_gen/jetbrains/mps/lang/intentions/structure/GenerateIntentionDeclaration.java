@@ -9,9 +9,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class GenerateIntentionDeclaration extends BaseIntentionDeclaration {
   public static final String concept = "jetbrains.mps.lang.intentions.structure.GenerateIntentionDeclaration";
+  public static final String EXECUTE_U_I = "executeUI";
 
   public GenerateIntentionDeclaration(SNode node) {
     super(node);
+  }
+
+  public ExecuteUIBlock getExecuteUI() {
+    return (ExecuteUIBlock)this.getChild(ExecuteUIBlock.class, GenerateIntentionDeclaration.EXECUTE_U_I);
+  }
+
+  public void setExecuteUI(ExecuteUIBlock node) {
+    super.setChild(GenerateIntentionDeclaration.EXECUTE_U_I, node);
   }
 
   public static GenerateIntentionDeclaration newInstance(SModel sm, boolean init) {

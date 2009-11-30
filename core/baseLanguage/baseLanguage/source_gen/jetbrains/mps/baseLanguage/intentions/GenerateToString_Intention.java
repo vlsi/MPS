@@ -62,6 +62,10 @@ public class GenerateToString_Intention extends GenerateIntention {
     SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_4().createNode(rightmostExpression));
   }
 
+  public boolean executeUI(final SNode node, final EditorContext editorContext) {
+    throw new RuntimeException("NOT IMPLEMENTED");
+  }
+
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }

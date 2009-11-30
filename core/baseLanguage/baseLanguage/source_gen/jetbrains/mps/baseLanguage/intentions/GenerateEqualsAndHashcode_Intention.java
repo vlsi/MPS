@@ -110,6 +110,10 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
     SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", new _Quotations.QuotationClass_9().createNode(resultReference));
   }
 
+  public boolean executeUI(final SNode node, final EditorContext editorContext) {
+    throw new RuntimeException("NOT IMPLEMENTED");
+  }
+
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }

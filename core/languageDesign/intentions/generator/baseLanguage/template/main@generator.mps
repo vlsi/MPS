@@ -1306,6 +1306,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="926291610756260159">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="926291610756260161">
+            <property name="value" value="true" />
+          </node>
+        </node>
       </node>
       <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="5711848865190532363">
         <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="5711848865190532364">
@@ -1359,6 +1364,11 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="926291610756260156">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="926291610756260158">
+            <property name="value" value="true" />
           </node>
         </node>
       </node>
@@ -1425,6 +1435,49 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="926291610755776040">
+      <property name="name" value="executeUI" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="926291610755776045">
+        <property name="isFinal" value="true" />
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="926291610755776046" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="926291610755776049">
+        <property name="name" value="editorContext" />
+        <property name="isFinal" value="true" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="926291610755776050">
+          <link role="classifier" targetNodeId="10.~EditorContext" resolveInfo="EditorContext" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="926291610755776042" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="926291610755776043">
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="926291610756254811">
+          <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="926291610756254812">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="926291610756254813">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="926291610756260140">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="926291610756260148">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="926291610756260142">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="926291610756260146" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="926291610756260147">
+                      <link role="link" targetNodeId="1.5180116501957618330" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="926291610756260152">
+                    <link role="link" targetNodeId="3.1137022507850" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="926291610756260153">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="926291610756260155">
+            <property name="value" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="926291610755776044" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="5711848865190532419">
       <property name="name" value="getLocationString" />

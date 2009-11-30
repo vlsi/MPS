@@ -143,20 +143,21 @@ public class GenerationIntentions_Action extends GeneratedAction {
         return intention1.getDescription(node1, GenerationIntentions_Action.this.editorContext).compareTo(intention2.getDescription(node2, GenerationIntentions_Action.this.editorContext));
       }
     });
-    int counter = 1;
     for (final Pair<Intention, SNode> pair : groupItems) {
-      BaseAction action = new BaseAction(counter + ". " + pair.getFirst().getDescription(pair.getSecond(), GenerationIntentions_Action.this.editorContext)) {
+      BaseAction action = new BaseAction(pair.getFirst().getDescription(pair.getSecond(), GenerationIntentions_Action.this.editorContext)) {
         protected void doExecute(AnActionEvent p0) {
-          ModelAccess.instance().runCommandInEDT(new Runnable() {
-            public void run() {
-              pair.getFirst().execute(pair.getSecond(), GenerationIntentions_Action.this.editorContext);
-            }
-          });
+          GenerateIntention generateIntention = (GenerateIntention)pair.getFirst();
+          if (generateIntention.executeUI(pair.getSecond(), GenerationIntentions_Action.this.editorContext)) {
+            ModelAccess.instance().runCommandInEDT(new Runnable() {
+              public void run() {
+                pair.getFirst().execute(pair.getSecond(), GenerationIntentions_Action.this.editorContext);
+              }
+            });
+          }
         }
       };
-      action.setExecuteOutsideCommand(true);
+      // <node> 
       group.add(action);
-      counter++;
     }
     return group;
   }
