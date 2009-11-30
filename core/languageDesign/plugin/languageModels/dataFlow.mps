@@ -408,27 +408,43 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="485694842829517373">
-          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="485694842829517374">
-            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="485694842829517375" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="485694842829517377">
-              <link role="link" targetNodeId="1.7953090692945370559" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="6938053545825396484">
+    <property name="package" value="Tool.Operations" />
+    <link role="conceptDeclaration" targetNodeId="1.6938053545825350222" resolveInfo="ToolTab" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="6938053545825396485">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6938053545825396486">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="6938053545825396487">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6938053545825396490">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="6938053545825396489" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6938053545825396494">
+              <link role="link" targetNodeId="1.6938053545825381648" />
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="485694842829517379">
-          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="485694842829517382">
-            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="485694842829517381" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="485694842829517386">
-              <link role="link" targetNodeId="1.7953090692945371849" />
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="6938053545825396496">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6938053545825396499">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="6938053545825396498" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6938053545825396503">
+              <link role="link" targetNodeId="1.6938053545825381649" />
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="485694842829517388">
-          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="485694842829517392">
-            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="485694842829517391" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="485694842829517396">
-              <link role="link" targetNodeId="1.7566788359602201162" />
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="6938053545825396506">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6938053545825396509">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="6938053545825396508" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6938053545825396513">
+              <link role="link" targetNodeId="1.6938053545825381650" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="6938053545825396515">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6938053545825396518">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="6938053545825396517" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6938053545825396522">
+              <link role="link" targetNodeId="1.6938053545825381651" />
             </node>
           </node>
         </node>

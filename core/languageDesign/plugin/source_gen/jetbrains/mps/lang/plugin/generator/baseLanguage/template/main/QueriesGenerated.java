@@ -1218,28 +1218,28 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_8383992355238345812(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "titleExpression", true) == null) ?
+    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "titleExpression", true) == null) ?
       new _Quotations.QuotationClass_8().createNode() :
-      SLinkOperations.getTarget(_context.getNode(), "titleExpression", true)
+      SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "titleExpression", true)
     );
   }
 
   public static SNode sourceNodeQuery_8383992355238345841(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "iconExpression", true) == null) ?
+    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "iconExpression", true) == null) ?
       new _Quotations.QuotationClass_9().createNode() :
-      SLinkOperations.getTarget(_context.getNode(), "iconExpression", true)
+      SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "iconExpression", true)
     );
   }
 
   public static SNode sourceNodeQuery_8383992355238345866(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ((SLinkOperations.getTarget(_context.getNode(), "disposeTabClosure", true) == null) ?
+    return ((SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "disposeTabClosure", true) == null) ?
       new _Quotations.QuotationClass_10().createNode() :
-      SLinkOperations.getTarget(_context.getNode(), "disposeTabClosure", true)
+      SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "disposeTabClosure", true)
     );
   }
 
   public static SNode sourceNodeQuery_8383992355238345892(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "componentExpression", true);
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "tab", true), "componentExpression", true);
   }
 
   public static Iterable sourceNodesQuery_1204045442068(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

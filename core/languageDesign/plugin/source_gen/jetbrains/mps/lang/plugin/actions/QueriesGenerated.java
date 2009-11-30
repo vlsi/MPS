@@ -36,7 +36,7 @@ public class QueriesGenerated {
     return SNodeOperations.getAncestor(_context.getParentNode(), "jetbrains.mps.lang.plugin.structure.ExecuteConfigBlock", true, false) != null;
   }
 
-  public static void nodeFactory_NodeSetup_AddTabOperation_485694842828664422(final IOperationContext operationContext, final NodeSetupContext _context) {
+  public static void nodeFactory_NodeSetup_ToolTab_485694842828664422(final IOperationContext operationContext, final NodeSetupContext _context) {
     SNode disposeTabClosure = SLinkOperations.getTarget(_context.getNewNode(), "disposeTabClosure", true);
     if ((disposeTabClosure == null)) {
       disposeTabClosure = SLinkOperations.setNewChild(_context.getNewNode(), "disposeTabClosure", "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral");

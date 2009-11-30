@@ -4,7 +4,6 @@ package jetbrains.mps.lang.plugin.structure;
 
 import jetbrains.mps.baseLanguage.structure.IOperation;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -14,10 +13,7 @@ public class AddTabOperation extends TabbedToolOperation implements IOperation {
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String COMPONENT_EXPRESSION = "componentExpression";
-  public static final String TITLE_EXPRESSION = "titleExpression";
-  public static final String ICON_EXPRESSION = "iconExpression";
-  public static final String DISPOSE_TAB_CLOSURE = "disposeTabClosure";
+  public static final String TAB = "tab";
 
   public AddTabOperation(SNode node) {
     super(node);
@@ -47,36 +43,12 @@ public class AddTabOperation extends TabbedToolOperation implements IOperation {
     this.setProperty(AddTabOperation.VIRTUAL_PACKAGE, value);
   }
 
-  public Expression getComponentExpression() {
-    return (Expression)this.getChild(Expression.class, AddTabOperation.COMPONENT_EXPRESSION);
+  public ToolTab getTab() {
+    return (ToolTab)this.getChild(ToolTab.class, AddTabOperation.TAB);
   }
 
-  public void setComponentExpression(Expression node) {
-    super.setChild(AddTabOperation.COMPONENT_EXPRESSION, node);
-  }
-
-  public Expression getTitleExpression() {
-    return (Expression)this.getChild(Expression.class, AddTabOperation.TITLE_EXPRESSION);
-  }
-
-  public void setTitleExpression(Expression node) {
-    super.setChild(AddTabOperation.TITLE_EXPRESSION, node);
-  }
-
-  public Expression getIconExpression() {
-    return (Expression)this.getChild(Expression.class, AddTabOperation.ICON_EXPRESSION);
-  }
-
-  public void setIconExpression(Expression node) {
-    super.setChild(AddTabOperation.ICON_EXPRESSION, node);
-  }
-
-  public Expression getDisposeTabClosure() {
-    return (Expression)this.getChild(Expression.class, AddTabOperation.DISPOSE_TAB_CLOSURE);
-  }
-
-  public void setDisposeTabClosure(Expression node) {
-    super.setChild(AddTabOperation.DISPOSE_TAB_CLOSURE, node);
+  public void setTab(ToolTab node) {
+    super.setChild(AddTabOperation.TAB, node);
   }
 
   public static AddTabOperation newInstance(SModel sm, boolean init) {

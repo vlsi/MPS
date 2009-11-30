@@ -3565,27 +3565,9 @@
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7566788359602201160">
       <property name="metaClass" value="aggregation" />
-      <property name="role" value="componentExpression" />
+      <property name="role" value="tab" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7953090692945370559">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="titleExpression" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7953090692945371849">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="iconExpression" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7566788359602201162">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="disposeTabClosure" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+      <link role="target" targetNodeId="6938053545825350222" resolveInfo="ToolTab" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5896642449625987002">
       <property name="value" value="addTab" />
@@ -3715,6 +3697,39 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3994570451548110929">
       <property name="value" value="nlist" />
+      <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6938053545825350222">
+    <property name="package" value="Tool.Operations" />
+    <property name="name" value="ToolTab" />
+    <link role="extends" targetNodeId="6.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6938053545825381648">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="componentExpression" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6938053545825381649">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="titleExpression" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6938053545825381650">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="iconExpression" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6938053545825381651">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="disposeTabClosure" />
+      <property name="sourceCardinality" value="0..1" />
+      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6938053545825379721">
+      <property name="value" value="tab" />
       <link role="conceptPropertyDeclaration" targetNodeId="6.1137473891462" resolveInfo="alias" />
     </node>
   </node>

@@ -13,9 +13,6 @@ public class AddTabOperation_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "componentExpression", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "titleExpression", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "iconExpression", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "disposeTabClosure", true));
+    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "tab", true));
   }
 }
