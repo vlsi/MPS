@@ -20,6 +20,7 @@ import com.intellij.openapi.fileEditor.FileEditorPolicy;
 import com.intellij.openapi.fileEditor.FileEditorProvider;
 import com.intellij.openapi.fileEditor.FileEditorState;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.MPSEditorState;
@@ -29,7 +30,7 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-public class MPSFileNodeEditorProvider implements FileEditorProvider {
+public class MPSFileNodeEditorProvider implements FileEditorProvider, DumbAware {
   private static final Logger LOG = Logger.getLogger(MPSFileNodeEditorProvider.class);
 
   private static final String CLASS = "class";
