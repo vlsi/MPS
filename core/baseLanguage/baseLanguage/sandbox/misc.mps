@@ -1073,6 +1073,38 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4267944454053948025" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8845432118968396911">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8845432118968396912">
+            <property name="name" value="n" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="8845432118968396913">
+              <link role="concept" targetNodeId="138.1068390468198" resolveInfo="ClassConcept" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="8845432118968396915" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8845432118968396917">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8845432118968396930">
+            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="8845432118968396934">
+              <link role="concept" targetNodeId="138.1068390468198" resolveInfo="ClassConcept" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8845432118968396924">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8845432118968396919">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8845432118968396918">
+                    <link role="variableDeclaration" targetNodeId="8845432118968396912" resolveInfo="n" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8845432118968396923">
+                    <link role="link" targetNodeId="138.1165602531693" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8845432118968396929">
+                  <link role="link" targetNodeId="138.1107535924139" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="8845432118968396936">
+              <link role="link" targetNodeId="138.1068390468201" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3293010995237625815" />

@@ -53,7 +53,7 @@ public class TestDebug {
           }
         } else if (e instanceof BreakpointEvent) {
           BreakpointEvent bpe = (BreakpointEvent) e;
-          System.out.println("BREAKPOINT WAS HEAT!");
+          System.out.println("BREAKPOINT WAS HIT!");
           printThreadInfo(bpe.thread());
           machine.suspend();
           break eventProcessingLoop;
@@ -61,7 +61,7 @@ public class TestDebug {
       }
       events.resume();
     }
-    Thread.sleep(10000);
+   // Thread.sleep(10000);
     machine.resume();
   }
 
