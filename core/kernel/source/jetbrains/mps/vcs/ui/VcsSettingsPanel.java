@@ -19,58 +19,122 @@ import com.intellij.openapi.ui.VerticalFlowLayout;
 
 import javax.swing.JCheckBox;
 import javax.swing.JPanel;
+import javax.swing.GroupLayout;
+import javax.swing.ButtonGroup;
 import javax.swing.border.TitledBorder;
 import java.awt.BorderLayout;
 import java.awt.FlowLayout;
 
+import jetbrains.mps.vcs.ui.VcsIdeSettings.VcsRootsDiscoveryPolicy;
+import org.jetbrains.annotations.Nullable;
+
 public class VcsSettingsPanel extends JPanel {
   private final VcsIdeSettings mySettings;
   private final JCheckBox myTextModeDifferenceCheckBox;
-  private final JCheckBox myNotifyWhenChangedOutsideAreMade;
-  private final JCheckBox myAutomaticallyDiscoverVcsRoots;
+  private final EnumPanel myVcsRootsPanel;
 
-  public VcsSettingsPanel(VcsIdeSettings settings) {
+  public VcsSettingsPanel(final VcsIdeSettings settings) {
     super(new VerticalFlowLayout(true, false));
     mySettings = settings;
 
-    JPanel vcsRootsPanel = new JPanel(new BorderLayout());
-    vcsRootsPanel.setBorder(new TitledBorder("Vcs roots"));
-    myAutomaticallyDiscoverVcsRoots = new JCheckBox("Automatically discover vcs roots",
-      mySettings.getAutomaticallyDiscoverVcsRoots());
-    vcsRootsPanel.add(myAutomaticallyDiscoverVcsRoots);
+    myVcsRootsPanel = new EnumPanel(new String[]{VcsRootsDiscoveryPolicy.ADD.name(),
+                                                      VcsRootsDiscoveryPolicy.NOTIFY.name(),
+                                                      VcsRootsDiscoveryPolicy.DO_NOTING.name()},
+                                         new String[]{"Add to project vcs directory mappings",
+                                                      "Show notification",
+                                                      "Do nothing"},
+                                         "When new vcs roots discovered") {
+      @Override
+      public String getSettingsValue() {
+        return settings.getDiscoverVcsRoots();
+      }
 
+      @Override
+      public void setSettingsValue(String value) {
+        settings.setDiscoverVcsRoots(value);
+      }
+    };
 
     JPanel diffPanel = new JPanel(new BorderLayout());
     diffPanel.setBorder(new TitledBorder("Differences view"));
     myTextModeDifferenceCheckBox = new JCheckBox("Use text diff for models", mySettings.getTextModeEnabled());
     diffPanel.add(myTextModeDifferenceCheckBox);
 
-    JPanel notificationsPanel = new JPanel(new BorderLayout());
-    notificationsPanel.setBorder(new TitledBorder("Notifications"));
-    myNotifyWhenChangedOutsideAreMade = new JCheckBox("Show warning when changing model outside of vcs roots",
-      mySettings.getNotifyWhenChangedOutsideAreMade());
-    notificationsPanel.add(myNotifyWhenChangedOutsideAreMade);
-
-    add(vcsRootsPanel);
-    add(notificationsPanel);
+    add(myVcsRootsPanel);
     add(diffPanel);
   }
 
   public boolean isModified() {
-    return (myTextModeDifferenceCheckBox.isSelected() != mySettings.getTextModeEnabled()) ||
-      (myNotifyWhenChangedOutsideAreMade.isSelected() != mySettings.getNotifyWhenChangedOutsideAreMade()) ||
-      (myAutomaticallyDiscoverVcsRoots.isSelected() != mySettings.getAutomaticallyDiscoverVcsRoots());
+    return (myTextModeDifferenceCheckBox.isSelected() != mySettings.getTextModeEnabled()) || myVcsRootsPanel.isModified();
   }
 
   public void reset() {
     myTextModeDifferenceCheckBox.setSelected(mySettings.getTextModeEnabled());
-    myNotifyWhenChangedOutsideAreMade.setSelected(mySettings.getNotifyWhenChangedOutsideAreMade());
-    myAutomaticallyDiscoverVcsRoots.setSelected(mySettings.getAutomaticallyDiscoverVcsRoots());
+    myVcsRootsPanel.reset();
   }
 
   public void apply() {
     mySettings.setTextModeEnabled(myTextModeDifferenceCheckBox.isSelected());
-    mySettings.setNotifyWhenChangedOutsideAreMade(myNotifyWhenChangedOutsideAreMade.isSelected());
-    mySettings.setAutomaticallyDiscoverVcsRoots(myAutomaticallyDiscoverVcsRoots.isSelected());
+    myVcsRootsPanel.apply();
+  }
+
+  private static abstract class EnumPanel extends JPanel {
+    private final String[] myTitles;
+    private final String[] myValues;
+    private final JCheckBox[] myCheckBoxes;
+
+    public EnumPanel(String[] values, String[] titles, @Nullable String panelTitle) {
+      super(new VerticalFlowLayout(true, false));
+      myValues = values;
+      myTitles = titles;
+
+      if (panelTitle != null) {
+        setBorder(new TitledBorder(panelTitle));
+      }
+
+      assert myValues.length == myTitles.length;
+
+      myCheckBoxes = new JCheckBox[myValues.length];
+
+      ButtonGroup group = new ButtonGroup();
+      for (int i = 0; i < myValues.length; i++) {
+        myCheckBoxes[i] = new JCheckBox(myTitles[i], myValues[i].equals(getSettingsValue()));
+        group.add(myCheckBoxes[i]);
+        add(myCheckBoxes[i]);
+      }
+    }
+
+    public abstract String getSettingsValue();
+
+    public abstract void setSettingsValue(String value);
+
+    public void apply() {
+      for (int i = 0; i < myCheckBoxes.length; i++) {
+        if (myCheckBoxes[i].isSelected()) {
+          setSettingsValue(myValues[i]);
+          break;
+        }
+      }
+    }
+
+    public void reset() {
+      String value = getSettingsValue();
+      for (int i = 0; i < myCheckBoxes.length; i++) {
+        if (myValues[i].equals(value)) {
+          myCheckBoxes[i].setSelected(true);
+          break;
+        }
+      }
+    }
+
+    public boolean isModified() {
+      for (int i = 0; i < myCheckBoxes.length; i++) {
+        if (myCheckBoxes[i].isSelected()) {
+          return !getSettingsValue().equals(myValues[i]);
+        }
+      }
+      return true;
+    }
+
   }
 }

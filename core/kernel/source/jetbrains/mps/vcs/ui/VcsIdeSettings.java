@@ -17,8 +17,7 @@ package jetbrains.mps.vcs.ui;
 
 public class VcsIdeSettings {
   private boolean myTextModeEnabled = false;
-  private boolean myNotifyWhenChangedOutsideAreMade = true;
-  private boolean myAutomaticallyDiscoverVcsRoots = true;
+  private String myDiscoverVcsRoots = VcsRootsDiscoveryPolicy.ADD.name();
 
   public boolean getTextModeEnabled() {
     return myTextModeEnabled;
@@ -29,18 +28,48 @@ public class VcsIdeSettings {
   }
 
   public boolean getNotifyWhenChangedOutsideAreMade() {
-    return myNotifyWhenChangedOutsideAreMade;
+    return VcsRootsDiscoveryPolicy.valueOf(myDiscoverVcsRoots).equals(VcsRootsDiscoveryPolicy.NOTIFY);
   }
 
   public void setNotifyWhenChangedOutsideAreMade(boolean notifyWhenChangedOutsideAreMade) {
-    myNotifyWhenChangedOutsideAreMade = notifyWhenChangedOutsideAreMade;
+    if (notifyWhenChangedOutsideAreMade) {
+      myDiscoverVcsRoots = VcsRootsDiscoveryPolicy.ADD.name();
+    } else {
+      myDiscoverVcsRoots = VcsRootsDiscoveryPolicy.DO_NOTING.name();
+    }
   }
 
   public boolean getAutomaticallyDiscoverVcsRoots() {
-    return myAutomaticallyDiscoverVcsRoots;
+    return VcsRootsDiscoveryPolicy.valueOf(myDiscoverVcsRoots).equals(VcsRootsDiscoveryPolicy.ADD);
   }
 
   public void setAutomaticallyDiscoverVcsRoots(boolean automaticallyDiscoverVcsRoots) {
-    myAutomaticallyDiscoverVcsRoots = automaticallyDiscoverVcsRoots;
+    if (automaticallyDiscoverVcsRoots) {
+      myDiscoverVcsRoots = VcsRootsDiscoveryPolicy.ADD.name();
+    } else {
+      myDiscoverVcsRoots = VcsRootsDiscoveryPolicy.DO_NOTING.name();
+    }
+  }
+
+  public String getDiscoverVcsRoots() {
+    return myDiscoverVcsRoots;
+  }
+
+  public void setDiscoverVcsRoots(String discoverVcsRoots) {
+    myDiscoverVcsRoots = discoverVcsRoots;
+  }
+
+  public VcsRootsDiscoveryPolicy getDiscoverVcsRootsSafe() {
+    return VcsRootsDiscoveryPolicy.valueOf(myDiscoverVcsRoots);
+  }
+
+  public void setDiscoverVcsRoots(VcsRootsDiscoveryPolicy discoverVcsRoots) {
+    myDiscoverVcsRoots = discoverVcsRoots.name();
+  }
+
+  public static enum VcsRootsDiscoveryPolicy {
+    ADD,
+    NOTIFY,
+    DO_NOTING
   }
 }

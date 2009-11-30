@@ -20,11 +20,11 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsDirectoryMapping;
-import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.vcs.ui.VcsIdeSettings.VcsRootsDiscoveryPolicy;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -49,7 +49,7 @@ public class VcsRootsManager implements ProjectComponent {
   private final SModelAdapter myGlobalSModelListener = new SModelAdapter() {
     @Override
     public void modelSaved(SModelDescriptor sm) {
-      if (!ApplicationLevelVcsManager.instance().getSettings().getNotifyWhenChangedOutsideAreMade()) {
+      if (ApplicationLevelVcsManager.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.DO_NOTING)) {
         return;
       }
       try {
@@ -66,7 +66,13 @@ public class VcsRootsManager implements ProjectComponent {
         }
         Set<VirtualFile> currentRoots = new HashSet<VirtualFile>(Arrays.asList(myVcsManager.getAllVersionedRoots()));
         if ((root != null) && (!myExcludedRoots.contains(root)) && (!currentRoots.contains(root))) {
-          fireModelOutsideVcsRootsChanged(root, sm);
+          if (ApplicationLevelVcsManager.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.NOTIFY)) {
+            fireModelOutsideVcsRootsChanged(root, sm);
+          } else if (ApplicationLevelVcsManager.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.ADD)) {
+            List<VcsDirectoryMapping> mappings = createMappings(Collections.singletonMap(myVcsManager.findVersioningVcs(root), Collections.singleton(file)));
+            mergeWithCurrentOnes(mappings);
+            myVcsManager.setDirectoryMappings(mappings);
+          }
         }
       } catch (IllegalArgumentException e) {
 //        LOG.error(e);
@@ -80,7 +86,7 @@ public class VcsRootsManager implements ProjectComponent {
   }
 
   public void projectOpened() {
-    if (ApplicationLevelVcsManager.instance().getSettings().getAutomaticallyDiscoverVcsRoots()) {
+    if (!ApplicationLevelVcsManager.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.DO_NOTING)) {
       addDirectoryMappings();
     }
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalSModelListener);
@@ -109,7 +115,6 @@ public class VcsRootsManager implements ProjectComponent {
   }
 
   private void addDirectoryMappings() {
-    final List<VcsDirectoryMapping> vcsMappings = new ArrayList<VcsDirectoryMapping>();
 
     MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     List<IModule> allModules = mpsProject.getModules();
@@ -128,6 +133,18 @@ public class VcsRootsManager implements ProjectComponent {
       }
     }
 
+    final List<VcsDirectoryMapping> vcsMappings = createMappings(vcss);
+    mergeWithCurrentOnes(vcsMappings);
+
+    StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
+      public void run() {
+        myVcsManager.setDirectoryMappings(vcsMappings);
+      }
+    });
+  }
+
+  private List<VcsDirectoryMapping> createMappings(Map<AbstractVcs, Set<VirtualFile>> vcss) {
+    final List<VcsDirectoryMapping> vcsMappings = new ArrayList<VcsDirectoryMapping>();
     for (AbstractVcs vcs : vcss.keySet()) {
       Set<VirtualFile> files = vcss.get(vcs);
       Collection<String> roots = getRoots(files);
@@ -135,7 +152,10 @@ public class VcsRootsManager implements ProjectComponent {
         vcsMappings.add(new VcsDirectoryMapping(path, vcs.getName()));
       }
     }
+    return vcsMappings;
+  }
 
+  private void mergeWithCurrentOnes(List<VcsDirectoryMapping> vcsMappings) {
     for (VcsDirectoryMapping oldMapping : myVcsManager.getDirectoryMappings()) {
       String oldDir = oldMapping.getDirectory();
       boolean matched = false;
@@ -148,12 +168,6 @@ public class VcsRootsManager implements ProjectComponent {
         vcsMappings.add(oldMapping);
       }
     }
-
-    StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
-      public void run() {
-        myVcsManager.setDirectoryMappings(vcsMappings);
-      }
-    });
   }
 
   private void discoverMappingsForFile(Map<AbstractVcs, Set<VirtualFile>> vcss, VirtualFile file) {
