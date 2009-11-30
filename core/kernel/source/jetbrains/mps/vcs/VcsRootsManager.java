@@ -22,11 +22,13 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsDirectoryMapping;
 import com.intellij.openapi.vcs.impl.projectlevelman.AllVcses;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.startup.StartupManager;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -107,7 +109,7 @@ public class VcsRootsManager implements ProjectComponent {
   }
 
   private void addDirectoryMappings() {
-    List<VcsDirectoryMapping> vcsMappings = new ArrayList<VcsDirectoryMapping>();
+    final List<VcsDirectoryMapping> vcsMappings = new ArrayList<VcsDirectoryMapping>();
 
     MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
     List<IModule> allModules = mpsProject.getModules();
@@ -119,29 +121,11 @@ public class VcsRootsManager implements ProjectComponent {
       if (descriptor == null) continue;
       VirtualFile file = VFileSystem.getFile(descriptor.getParent());
 
-      if (file == null) continue;
-
-      AbstractVcs vcs = myVcsManager.findVersioningVcs(file);
-      if (vcs == null) continue;
-
-      while (true) {
-        VirtualFile parent = file.getParent();
-        if (parent == null) {
-          break;
-        }
-
-        if (vcs.isVersionedDirectory(parent)) {
-          file = parent;
-        } else {
-          break;
-        }
+      discoverMappingsForFile(vcss, file);
+      List<SModelRoot> modelRoots = module.getSModelRoots();
+      for (SModelRoot root : modelRoots) {
+        discoverMappingsForFile(vcss, VFileSystem.getFile(root.getPath()));
       }
-      Set<VirtualFile> files = vcss.get(vcs);
-      if (files == null) {
-        files = new HashSet<VirtualFile>();
-        vcss.put(vcs, files);
-      }
-      files.add(file);
     }
 
     for (AbstractVcs vcs : vcss.keySet()) {
@@ -165,7 +149,39 @@ public class VcsRootsManager implements ProjectComponent {
       }
     }
 
-    myVcsManager.setDirectoryMappings(vcsMappings);
+    StartupManager.getInstance(myProject).registerPostStartupActivity(new Runnable() {
+      public void run() {
+        myVcsManager.setDirectoryMappings(vcsMappings);
+      }
+    });
+  }
+
+  private void discoverMappingsForFile(Map<AbstractVcs, Set<VirtualFile>> vcss, VirtualFile file) {
+    if (file == null) return;
+
+    AbstractVcs vcs = myVcsManager.findVersioningVcs(file);
+    if (vcs == null) return;
+
+    VirtualFile parent = file;
+    while (true) {
+      if (parent == null) {
+        break;
+      }
+
+      if (vcs.isVersionedDirectory(parent)) {
+        file = parent;
+        parent = parent.getParent();
+      } else {
+        break;
+      }
+    }
+
+    Set<VirtualFile> files = vcss.get(vcs);
+    if (files == null) {
+      files = new HashSet<VirtualFile>();
+      vcss.put(vcs, files);
+    }
+    files.add(file);
   }
 
   private Collection<String> getRoots(Set<VirtualFile> files) {
