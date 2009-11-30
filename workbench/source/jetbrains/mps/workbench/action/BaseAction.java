@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.action;
 
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.project.DumbAware;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -28,7 +29,7 @@ import java.awt.event.KeyEvent;
 import java.util.HashSet;
 import java.util.Set;
 
-public abstract class BaseAction extends AnAction {
+public abstract class BaseAction extends AnAction implements DumbAware {
   private boolean myIsAlwaysVisible = true;
   private boolean myExecuteOutsideCommand = false;
   private boolean myDisableOnNoProject = true;
@@ -134,11 +135,7 @@ public abstract class BaseAction extends AnAction {
   }
 
   protected void enable(final Presentation p) {
-    Runnable runnable = new Runnable() {
-      public void run() {
-        p.setEnabled(true);
-      }
-    };
+    p.setEnabled(true);
     p.setVisible(true);
   }
 
