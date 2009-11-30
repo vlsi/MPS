@@ -20,6 +20,7 @@
     <orderEntry type="module" module-name="runtime" exported="" />
     <orderEntry type="module" module-name="mps-lite" />
     <orderEntry type="module" module-name="dates" />
+    <orderEntry type="library" name="tools" level="project" />
   </component>
 </module>
 
