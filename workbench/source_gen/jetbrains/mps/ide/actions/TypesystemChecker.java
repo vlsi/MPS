@@ -23,12 +23,12 @@ public class TypesystemChecker extends SpecificChecker {
   public TypesystemChecker() {
   }
 
-  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, IProgressIndicatorAdapter progressIndicatorAdapter, IOperationContext operationContext) {
+  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     TypeChecker tc = TypeChecker.getInstance();
     for (SNode rootNode : ListSequence.fromList(SModelOperations.getRoots(model, null))) {
-      if (!(progressIndicatorAdapter.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for typesystem rules..."))) {
+      if (!(progressContext.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for typesystem rules..."))) {
         break;
       }
       tc.checkRoot(rootNode);

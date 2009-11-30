@@ -17,11 +17,11 @@ public class UnavailableConceptsChecker extends SpecificChecker {
   public UnavailableConceptsChecker() {
   }
 
-  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, IProgressIndicatorAdapter progressIndicatorAdapter, IOperationContext operationContext) {
+  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
-      if (!(progressIndicatorAdapter.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for instances of unavailable concepts..."))) {
+      if (!(progressContext.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for instances of unavailable concepts..."))) {
         break;
       }
       SNode concept = SNodeOperations.getConceptDeclaration(node);

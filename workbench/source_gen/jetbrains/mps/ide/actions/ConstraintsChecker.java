@@ -29,11 +29,11 @@ public class ConstraintsChecker extends SpecificChecker {
   public ConstraintsChecker() {
   }
 
-  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, IProgressIndicatorAdapter progressIndicatorAdapter, IOperationContext operationContext) {
+  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
-      if (!(progressIndicatorAdapter.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for cardinalities and properties constraints..."))) {
+      if (!(progressContext.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for cardinalities and properties constraints..."))) {
         break;
       }
       SNode concept = SNodeOperations.getConceptDeclaration(node);

@@ -18,11 +18,11 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
   public UnresolvedReferencesChecker() {
   }
 
-  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, IProgressIndicatorAdapter progressIndicatorAdapter, IOperationContext operationContext) {
+  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
-      if (!(progressIndicatorAdapter.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for unresolved references..."))) {
+      if (!(progressContext.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for unresolved references..."))) {
         break;
       }
       // Check for unresolved references 

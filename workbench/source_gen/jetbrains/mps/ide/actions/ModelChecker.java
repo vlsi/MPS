@@ -10,10 +10,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.util.TimePresentationUtil;
 
-public class ModelChecker implements IProgressIndicatorAdapter {
+public class ModelChecker {
   public static final String CATEGORY_ERROR = "Errors";
   public static final String CATEGORY_WARNING = "Warnings";
   public static final String CATEGORY_INFO = "Infos";
@@ -36,9 +34,9 @@ public class ModelChecker implements IProgressIndicatorAdapter {
 
         ModelChecker.this.myResults = new SearchResults<ModelCheckerIssue>();
         for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers)) {
-          List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, ModelChecker.this, ModelChecker.this.myOperationContext);
+          List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, ModelChecker.this.myProgressContext, ModelChecker.this.myOperationContext);
           ModelChecker.this.myResults.getSearchResults().addAll(specificCheckerResults);
-          if (ModelChecker.this.myProgressContext.getProgressIndicator().isCanceled()) {
+          if (ModelChecker.this.isCancelled()) {
             break;
           }
         }
@@ -56,27 +54,5 @@ public class ModelChecker implements IProgressIndicatorAdapter {
 
   public IOperationContext getOperationContext() {
     return this.myOperationContext;
-  }
-
-  public boolean checkAndUpdateIndicator(String text) {
-    ProgressIndicator indicator = this.myProgressContext.getProgressIndicator();
-    long estimatedTime = this.myProgressContext.getEstimatedTime();
-    // Return false if operation was cancelled 
-    if (indicator.isCanceled()) {
-      return false;
-    }
-
-    long elapsedTime = System.currentTimeMillis() - this.myProgressContext.getStartTime();
-    String estimatedTimeString = TimePresentationUtil.timeIntervalStringPresentation(estimatedTime);
-    String elapsedTimeString = TimePresentationUtil.timeIntervalStringPresentation(elapsedTime);
-    indicator.setText(text);
-    indicator.setText2("Estimated time: " + estimatedTimeString + ", elapsed time: " + elapsedTimeString);
-    if (elapsedTime < estimatedTime) {
-      indicator.setIndeterminate(false);
-      indicator.setFraction(elapsedTime * 1.0 / estimatedTime);
-    } else {
-      indicator.setIndeterminate(true);
-    }
-    return true;
   }
 }

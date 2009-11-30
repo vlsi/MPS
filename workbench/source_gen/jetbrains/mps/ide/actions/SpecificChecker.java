@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public abstract class SpecificChecker {
-  public abstract List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, IProgressIndicatorAdapter progressIndicatorAdapter, IOperationContext operationContext);
+  public abstract List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext);
 
   protected static void addIssue(List<SearchResult<ModelCheckerIssue>> results, SNode node, String message, String category, ModelCheckerFix fix) {
     ListSequence.fromList(results).addElement(ModelCheckerIssue.getSearchResult(node, message, category, fix));

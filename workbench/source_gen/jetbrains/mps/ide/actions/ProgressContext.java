@@ -7,6 +7,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.util.TimePresentationUtil;
 import jetbrains.mps.ide.progress.TaskProgressSettings;
 
 public class ProgressContext {
@@ -50,6 +51,28 @@ public class ProgressContext {
 
   public ProgressIndicator getProgressIndicator() {
     return this.myProgressIndicator;
+  }
+
+  public boolean checkAndUpdateIndicator(String text) {
+    ProgressIndicator indicator = this.getProgressIndicator();
+    long estimatedTime = this.getEstimatedTime();
+    // Return false if operation was cancelled 
+    if (indicator.isCanceled()) {
+      return false;
+    }
+
+    long elapsedTime = System.currentTimeMillis() - this.getStartTime();
+    String estimatedTimeString = TimePresentationUtil.timeIntervalStringPresentation(estimatedTime);
+    String elapsedTimeString = TimePresentationUtil.timeIntervalStringPresentation(elapsedTime);
+    indicator.setText(text);
+    indicator.setText2("Estimated time: " + estimatedTimeString + ", elapsed time: " + elapsedTimeString);
+    if (elapsedTime < estimatedTime) {
+      indicator.setIndeterminate(false);
+      indicator.setFraction(elapsedTime * 1.0 / estimatedTime);
+    } else {
+      indicator.setIndeterminate(true);
+    }
+    return true;
   }
 
   private static long getEstimatedTimeMillis(String taskName) {
