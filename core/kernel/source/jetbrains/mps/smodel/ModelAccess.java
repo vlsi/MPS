@@ -233,7 +233,7 @@ public class ModelAccess {
   }
 
   public void executeCommand(Runnable r) {
-    CommandProcessor.getInstance().executeCommand(null, r, "name", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
+    CommandProcessor.getInstance().executeCommand(null, r, "", null, UndoConfirmationPolicy.DO_NOT_REQUEST_CONFIRMATION);
   }
 
   public <T> T runWriteActionInCommand(final Computable<T> c) {
