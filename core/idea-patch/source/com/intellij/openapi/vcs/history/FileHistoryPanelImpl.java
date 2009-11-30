@@ -558,6 +558,7 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
   }
 
 
+  @Patch
   private void showDifferences(Project project, VcsFileRevision revision1, VcsFileRevision revision2) {
 
     try {
@@ -586,7 +587,12 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
 
       Charset charset = myFilePath.getCharset();
       FileType fileType = myFilePath.getFileType();
-      diffData.setContentTitles(left.getRevisionNumber().asString(), right.getRevisionNumber().asString());
+      // MPS Patch start
+      // fix IDEA-26378 (about Local version title)
+      String leftTitle = left.getRevisionNumber().asString() + (left instanceof CurrentRevision ? "(" + VcsBundle.message("diff.title.local") + ")" : "");
+      String rightTitle = right.getRevisionNumber().asString() + (right instanceof CurrentRevision ? "(" + VcsBundle.message("diff.title.local") + ")" : "");
+      diffData.setContentTitles(leftTitle, rightTitle);
+      // MPS Patch end
       diffData.setContents(createContent(project, content1, left, doc, charset, fileType),
         createContent(project, content2, right, doc, charset, fileType));
       DiffManager.getInstance().getDiffTool().show(diffData);
