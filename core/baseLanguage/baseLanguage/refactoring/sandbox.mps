@@ -69,6 +69,21 @@
                       </node>
                     </node>
                   </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1525847198352132430">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1525847198352132431">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1525847198352132432">
+                        <link role="variableDeclaration" targetNodeId="2315063335017843392" resolveInfo="o" />
+                        <node role="_attr_$attribute" type="jetbrains.mps.lang.quotation.structure.Antiquotation" id="1525847198352132433">
+                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1525847198352132434">
+                            <link role="variableDeclaration" targetNodeId="2315063335017843358" resolveInfo="te" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1525847198352132435">
+                        <link role="baseMethodDeclaration" targetNodeId="2v.~Object.hashCode():int" resolveInfo="hashCode" />
+                      </node>
+                    </node>
+                  </node>
                 </node>
                 <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="2315063335017843392">
                   <property name="name" value="o" />
