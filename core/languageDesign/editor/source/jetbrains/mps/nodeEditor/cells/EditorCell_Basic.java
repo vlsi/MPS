@@ -743,7 +743,11 @@ public abstract class EditorCell_Basic implements EditorCell {
     } else {
       EditorCell anchorCell = getEditor().findCellWithId(node, anchorId.toString());
 
-      assert anchorCell != null && anchorCell.getParent() != null : "No anchor cell for node " + node.getId() +  " " + node.getModel();
+      if (anchorCell == null) {
+        return null;
+      }
+
+      assert anchorCell.getParent() != null : "No cell parent for node " + node.getId() +  " " + node.getModel();
 
       int indexInParent = anchorCell.getParent().indexOf(anchorCell);
 
