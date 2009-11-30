@@ -29,9 +29,12 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.KeyStroke;
 import javax.swing.AbstractAction;
+import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import java.awt.event.KeyEvent;
@@ -41,9 +44,11 @@ import java.util.*;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.vcs.FileStatus;
+import com.intellij.openapi.util.Computable;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 class ModelChangesTree extends MPSTree {
   private static final String COMMAND_OPEN_NODE_IN_PROJECT = "open_node_in_project";
@@ -408,7 +413,25 @@ class ModelChangesTree extends MPSTree {
 
     public ActionGroup getActionGroup() {
       SNodeId id = getSNode().getSNodeId();
-      return getActionGroupForChanges(myChangesMap.get(id));
+      ActionGroup groupForChanges = getActionGroupForChanges(myChangesMap.get(id));
+      final SNode node = getSNode();
+      if (node != null && node.isRoot()) {
+        BaseAction showRootDiffDialog = new BaseAction("Show Difference In MPS Editor") {
+          @Override
+          protected void doExecute(AnActionEvent e) {
+            doubleClickOnNode(node);
+          }
+        };
+        showRootDiffDialog.setExecuteOutsideCommand(true);
+        DefaultActionGroup group = ActionUtils.groupFromActions(showRootDiffDialog);
+        if (groupForChanges != null) {
+          group.addSeparator();
+          group.addAll(groupForChanges);
+        }
+        return group;
+      } else {
+        return groupForChanges;
+      }
     }
 
     public void doubleClick() {
@@ -417,6 +440,7 @@ class ModelChangesTree extends MPSTree {
     }
   }
 
+  @Nullable
   protected ActionGroup getActionGroupForChanges(List<Change> changes) {
     return null;
   }
