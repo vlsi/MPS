@@ -10,18 +10,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ComplexTypeReference extends BaseConcept {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.ComplexTypeReference";
-  public static final String COMPLEXT_TYPE = "complextType";
+  public static final String COMPLEX_TYPE = "complexType";
 
   public ComplexTypeReference(SNode node) {
     super(node);
   }
 
-  public ComplexType getComplextType() {
-    return (ComplexType)this.getReferent(ComplexType.class, ComplexTypeReference.COMPLEXT_TYPE);
+  public ComplexType getComplexType() {
+    return (ComplexType)this.getReferent(ComplexType.class, ComplexTypeReference.COMPLEX_TYPE);
   }
 
-  public void setComplextType(ComplexType node) {
-    super.setReferent(ComplexTypeReference.COMPLEXT_TYPE, node);
+  public void setComplexType(ComplexType node) {
+    super.setReferent(ComplexTypeReference.COMPLEX_TYPE, node);
   }
 
   public static ComplexTypeReference newInstance(SModel sm, boolean init) {
