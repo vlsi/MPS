@@ -7,16 +7,16 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ILinkAccessQualifierContainer_Behavior {
-  private static Class[] PARAMETERS_3542758363529077382 = {SNode.class};
+  private static Class[] PARAMETERS_2906110183022538642 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
 
-  public static SNode call_getLinkContainer_3542758363529077382(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"), "virtual_getLinkContainer_3542758363529077382", PARAMETERS_3542758363529077382);
+  public static Iterable<SNode> call_getLinkAccessScope_2906110183022538642(SNode thisNode) {
+    return (Iterable<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"), "virtual_getLinkAccessScope_2906110183022538642", PARAMETERS_2906110183022538642);
   }
 
-  public static SNode callSuper_getLinkContainer_3542758363529077382(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"), callerConceptFqName, "virtual_getLinkContainer_3542758363529077382", PARAMETERS_3542758363529077382);
+  public static Iterable<SNode> callSuper_getLinkAccessScope_2906110183022538642(SNode thisNode, String callerConceptFqName) {
+    return (Iterable<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"), callerConceptFqName, "virtual_getLinkAccessScope_2906110183022538642", PARAMETERS_2906110183022538642);
   }
 }

@@ -615,13 +615,12 @@ public class SNodeOperations {
     return node.getReferences();
   }
 
-  public static SNode getReference(SNode node, SNode linkDeclaration) {
+  public static SReference getReference(SNode node, SNode linkDeclaration) {
     if (node == null || linkDeclaration == null) {
       return null;
     }
     linkDeclaration = SModelUtil.getGenuineLinkDeclaration(linkDeclaration);
-    SReference reference = node.getReference(((LinkDeclaration) linkDeclaration.getAdapter()).getRole());
-    return reference == null ? null : reference.getTargetNode();
+    return node.getReference(((LinkDeclaration) linkDeclaration.getAdapter()).getRole());
   }
 
 }

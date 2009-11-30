@@ -2602,9 +2602,6 @@
     <property name="package" value="attribute" />
     <property name="name" value="LinkAttributeAccessQualifier" />
     <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="4228794276713909290">
-      <link role="conceptPropertyDeclaration" targetNodeId="4228794276713909167" resolveInfo="accessingReferences" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1204848911284">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="linkQualifier" />
@@ -3310,7 +3307,7 @@
       <property name="metaClass" value="aggregation" />
       <property name="role" value="linkQualifier" />
       <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1204848879094" resolveInfo="ILinkAccessQualifier" />
+      <link role="target" targetNodeId="5168775467716640652" resolveInfo="OperationParm_LinkQualifier" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3609773094169249794">
       <property name="value" value="reference" />
@@ -3322,24 +3319,14 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="3609773094169249891">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763325919" resolveInfo="applicableToLink" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="4228794276713909293">
-      <link role="conceptPropertyDeclaration" targetNodeId="4228794276713909167" resolveInfo="accessingReferences" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="3542758363529117972">
-      <link role="intfc" targetNodeId="3542758363529077353" resolveInfo="ILinkAccessQualifierContainer" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="8310560509811067921">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1217022095863" resolveInfo="returnType" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SReferenceType" id="8310560509811067923" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="3542758363529077353">
     <property name="package" value="attribute" />
     <property name="name" value="ILinkAccessQualifierContainer" />
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="4228794276713909167">
-      <property name="name" value="accessingReferences" />
-      <property name="inheritable" value="false" />
-    </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="4228794276713909169">
-      <property name="name" value="accessingAggregations" />
-      <property name="inheritable" value="false" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5168775467716640652">
     <property name="package" value="operation.parameter" />
@@ -3354,9 +3341,6 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5168775467716640657">
       <property name="value" value="linkQualifier" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="4228794276713909295">
-      <link role="conceptPropertyDeclaration" targetNodeId="4228794276713909169" resolveInfo="accessingAggregations" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5815925154349132184">
       <link role="intfc" targetNodeId="3542758363529077353" resolveInfo="ILinkAccessQualifierContainer" />

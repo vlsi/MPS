@@ -7,46 +7,19 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class Node_GetReferenceOperation extends SNodeOperation implements ILinkAccessQualifierContainer {
+public class Node_GetReferenceOperation extends SNodeOperation {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation";
-  public static final String SHORT_DESCRIPTION = "shortDescription";
-  public static final String ALIAS = "alias";
-  public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String LINK_QUALIFIER = "linkQualifier";
 
   public Node_GetReferenceOperation(SNode node) {
     super(node);
   }
 
-  public String getShortDescription() {
-    return this.getProperty(Node_GetReferenceOperation.SHORT_DESCRIPTION);
+  public OperationParm_LinkQualifier getLinkQualifier() {
+    return (OperationParm_LinkQualifier)this.getChild(OperationParm_LinkQualifier.class, Node_GetReferenceOperation.LINK_QUALIFIER);
   }
 
-  public void setShortDescription(String value) {
-    this.setProperty(Node_GetReferenceOperation.SHORT_DESCRIPTION, value);
-  }
-
-  public String getAlias() {
-    return this.getProperty(Node_GetReferenceOperation.ALIAS);
-  }
-
-  public void setAlias(String value) {
-    this.setProperty(Node_GetReferenceOperation.ALIAS, value);
-  }
-
-  public String getVirtualPackage() {
-    return this.getProperty(Node_GetReferenceOperation.VIRTUAL_PACKAGE);
-  }
-
-  public void setVirtualPackage(String value) {
-    this.setProperty(Node_GetReferenceOperation.VIRTUAL_PACKAGE, value);
-  }
-
-  public ILinkAccessQualifier getLinkQualifier() {
-    return (ILinkAccessQualifier)this.getChild(ILinkAccessQualifier.class, Node_GetReferenceOperation.LINK_QUALIFIER);
-  }
-
-  public void setLinkQualifier(ILinkAccessQualifier node) {
+  public void setLinkQualifier(OperationParm_LinkQualifier node) {
     super.setChild(Node_GetReferenceOperation.LINK_QUALIFIER, node);
   }
 

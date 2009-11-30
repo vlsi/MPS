@@ -13,7 +13,7 @@ public class supertypesOf_SEnumMemberType_SubtypingRule extends SubtypingRule_Ru
   }
 
   public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_139().createNode(typeCheckingContext);
+    return new _Quotations.QuotationClass_136().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

@@ -14,9 +14,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
@@ -46,7 +46,7 @@ public class ConstraintsChecker extends SpecificChecker {
               addIssue(results, node, "Cardinality constraint violation in role \"" + SPropertyOperations.getString(link, "role") + "\"", ModelChecker.CATEGORY_ERROR, null);
             }
           } else {
-            if ((SNodeOperations.getReference(node, link) == null)) {
+            if ((SLinkOperations.getTargetNode(SNodeOperations.getReference(node, link)) == null)) {
               addIssue(results, node, "Cardinality constraint violation in role \"" + SPropertyOperations.getString(link, "role") + "\"", ModelChecker.CATEGORY_ERROR, null);
             }
           }

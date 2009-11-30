@@ -6,6 +6,4 @@ import jetbrains.mps.smodel.INodeAdapter;
 
 public interface ILinkAccessQualifierContainer extends INodeAdapter {
   public static final String concept = "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer";
-  public static String CPR_AccessingReferences = "accessingReferences";
-  public static String CPR_AccessingAggregations = "accessingAggregations";
 }

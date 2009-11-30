@@ -2284,8 +2284,8 @@
       <link role="applicableConcept" targetNodeId="6.3609773094169249792" resolveInfo="Node_GetReferenceOperation" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="5079980551111213848">
         <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5079980551111213851">
-          <link role="baseMethodDeclaration" targetNodeId="2.~SNodeOperations.getReference(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getReference" />
           <link role="classConcept" targetNodeId="2.~SNodeOperations" resolveInfo="SNodeOperations" />
+          <link role="baseMethodDeclaration" targetNodeId="2.~SNodeOperations.getReference(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SReference" resolveInfo="getReference" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5079980551111213854">
             <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="5079980551111213857">
               <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="5079980551111213858">
@@ -2302,16 +2302,21 @@
               </node>
             </node>
           </node>
-          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5079980551111235347">
-            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.SwitchMacro" id="5079980551111235349">
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="2830134420653517308">
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.SwitchMacro" id="2830134420653517310">
               <link role="templateSwitch" targetNodeId="5079980551111235342" resolveInfo="switch_toLinkDeclaration" />
-              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="5079980551111235350">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5079980551111235351">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5079980551111235352">
-                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5079980551111235354">
-                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="5079980551111235353" />
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5079980551111235358">
-                        <link role="link" targetNodeId="6.3609773094169252180" />
+              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="2830134420653517311">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2830134420653517312">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2830134420653517313">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2830134420653538673">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2830134420653517315">
+                        <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="2830134420653517314" />
+                        <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2830134420653538672">
+                          <link role="link" targetNodeId="6.3609773094169252180" />
+                        </node>
+                      </node>
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2830134420653538677">
+                        <link role="link" targetNodeId="6.5168775467716640653" />
                       </node>
                     </node>
                   </node>
