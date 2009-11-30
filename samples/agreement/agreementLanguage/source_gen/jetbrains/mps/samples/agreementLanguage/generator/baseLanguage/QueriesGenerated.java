@@ -23,9 +23,8 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
 public class QueriesGenerated {
-
   public static boolean createRootRule_Condition_1197658386740(final IOperationContext operationContext, final CreateRootRuleContext _context) {
-    // apply rule if at least one Plan exists in input model
+    // apply rule if at least one Plan exists in input model 
     List<SNode> plans = SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.samples.agreementLanguage.structure.Plan");
     return ListSequence.fromList(plans).isNotEmpty();
   }
@@ -189,7 +188,7 @@ public class QueriesGenerated {
     if ("tax".equals(SPropertyOperations.getString(accountType, "name"))) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "enumConstantDeclaration", false);
     }
-    // error
+    // error 
     return null;
   }
 
@@ -251,14 +250,11 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1197659602870(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> events = SLinkOperations.getTargets(_context.getNode(), "event", true);
-    return ListSequence.fromList(events).translate(new ITranslator2 <SNode, SNode>() {
-
+    return ListSequence.fromList(events).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode event) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _2_postingRule;
               private Iterator<SNode> _2_postingRule_it;
@@ -314,14 +310,11 @@ __switch__:
 
   public static Iterable sourceNodesQuery_1197663295186(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> values = SLinkOperations.getTargets(_context.getNode(), "value", true);
-    return ListSequence.fromList(values).translate(new ITranslator2 <SNode, SNode>() {
-
+    return ListSequence.fromList(values).translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(final SNode value) {
-        return new Iterable <SNode>() {
-
+        return new Iterable<SNode>() {
           public Iterator<SNode> iterator() {
-            return new YieldingIterator <SNode>() {
-
+            return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
               private SNode _2_quantity;
               private Iterator<SNode> _2_quantity_it;
@@ -366,5 +359,4 @@ __switch__:
       }
     }).toListSequence();
   }
-
 }
