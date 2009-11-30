@@ -16,6 +16,7 @@ public class AttributeDeclaration extends AttributeExpression implements INamedC
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String USE_ATTRIBUTE = "useAttribute";
+  public static final String TYPE = "type";
 
   public AttributeDeclaration(SNode node) {
     super(node);
@@ -67,6 +68,14 @@ public class AttributeDeclaration extends AttributeExpression implements INamedC
 
   public void setUseAttribute(UseAttribute node) {
     super.setChild(AttributeDeclaration.USE_ATTRIBUTE, node);
+  }
+
+  public SchemaType getType() {
+    return (SchemaType)this.getChild(SchemaType.class, AttributeDeclaration.TYPE);
+  }
+
+  public void setType(SchemaType node) {
+    super.setChild(AttributeDeclaration.TYPE, node);
   }
 
   public static AttributeDeclaration newInstance(SModel sm, boolean init) {
