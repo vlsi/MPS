@@ -300,5 +300,66 @@
       <property name="name" value="T2" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="2652368873105644283">
+    <property name="name" value="D" />
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2652368873105644284" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="2652368873105644285">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2652368873105644286" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2652368873105644287" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2652368873105644288">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="2652368873105649220">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="2652368873105649221">
+            <property name="name" value="abc" />
+            <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="2652368873105649222">
+              <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2652368873105649271">
+                <link role="classifier" targetNodeId="2652368873105644283" resolveInfo="D" />
+                <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="2652368873105649279">
+                  <link role="typeVariableDeclaration" targetNodeId="2652368873105649258" resolveInfo="T" />
+                </node>
+              </node>
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="2652368873105649224">
+              <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="2652368873105649227">
+                <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2652368873105649295">
+                  <link role="classifier" targetNodeId="2652368873105644283" resolveInfo="D" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="2652368873105649303">
+                    <link role="typeVariableDeclaration" targetNodeId="2652368873105649258" resolveInfo="T" />
+                  </node>
+                </node>
+                <node role="copyFrom" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2652368873105649235">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2652368873105649319">
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="2652368873105649320">
+                      <link role="fieldDeclaration" targetNodeId="2652368873105649307" resolveInfo="xyz" />
+                    </node>
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="2652368873105649321" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.TailListOperation" id="2652368873105649240">
+                    <node role="fromIndex" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="2652368873105649245">
+                      <property name="value" value="2" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="2652368873105649258">
+      <property name="name" value="T" />
+    </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="2652368873105649307">
+      <property name="name" value="xyz" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="2652368873105649308" />
+      <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.LinkedListType" id="2652368873105649375">
+        <node role="elementType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2652368873105649491">
+          <link role="classifier" targetNodeId="2652368873105644283" resolveInfo="D" />
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference" id="2652368873105649496">
+            <link role="typeVariableDeclaration" targetNodeId="2652368873105649258" resolveInfo="T" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
