@@ -139,7 +139,7 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
     SNode nodeWithIntentions;
     if (SurroundWithIntentions_Action.this.nodes != null) {
       nodeWithIntentions = ListSequence.fromList(SurroundWithIntentions_Action.this.nodes).last();
-    } else if (SNodeOperations.isInstanceOf(SurroundWithIntentions_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.Statement")) {
+    } else if (SNodeOperations.isInstanceOf(SurroundWithIntentions_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.Statement") || SNodeOperations.isInstanceOf(SurroundWithIntentions_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
       nodeWithIntentions = SurroundWithIntentions_Action.this.selectedNode;
     } else {
       nodeWithIntentions = SNodeOperations.getAncestor(SurroundWithIntentions_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
@@ -157,9 +157,8 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
         return intention1.getDescription(node1, SurroundWithIntentions_Action.this.editorContext).compareTo(intention2.getDescription(node2, SurroundWithIntentions_Action.this.editorContext));
       }
     });
-    int counter = 1;
     for (final Pair<Intention, SNode> pair : groupItems) {
-      BaseAction action = new BaseAction(counter + ". " + pair.getFirst().getDescription(pair.getSecond(), SurroundWithIntentions_Action.this.editorContext)) {
+      BaseAction action = new BaseAction(pair.getFirst().getDescription(pair.getSecond(), SurroundWithIntentions_Action.this.editorContext)) {
         protected void doExecute(AnActionEvent p0) {
           ModelAccess.instance().runCommandInEDT(new Runnable() {
             public void run() {
@@ -170,7 +169,6 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
       };
       action.setExecuteOutsideCommand(true);
       group.add(action);
-      counter++;
     }
     return group;
   }

@@ -45,7 +45,7 @@ public class GenerateToString_Intention extends GenerateIntention {
     for (SNode field : fields) {
       SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
       SLinkOperations.setTarget(fieldRef, "fieldDeclaration", field, false);
-      SNode item = new _Quotations.QuotationClass_5().createNode(((field == firstField ?
+      SNode item = new _Quotations.QuotationClass_6().createNode(((field == firstField ?
         "" :
         ", "
       )) + SPropertyOperations.getString(field, "name") + "=");
@@ -54,12 +54,12 @@ public class GenerateToString_Intention extends GenerateIntention {
         currentExpression = new _Quotations.QuotationClass_26().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
         currentExpression = new _Quotations.QuotationClass_35().createNode(dotExpression, currentExpression);
       } else {
-        currentExpression = new _Quotations.QuotationClass_6().createNode(item, currentExpression);
+        currentExpression = new _Quotations.QuotationClass_7().createNode(item, currentExpression);
         currentExpression = new _Quotations.QuotationClass_34().createNode(dotExpression, currentExpression);
       }
     }
-    rightmostExpression = new _Quotations.QuotationClass_7().createNode(currentExpression);
-    SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_4().createNode(rightmostExpression));
+    rightmostExpression = new _Quotations.QuotationClass_8().createNode(currentExpression);
+    SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_5().createNode(rightmostExpression));
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext) {
