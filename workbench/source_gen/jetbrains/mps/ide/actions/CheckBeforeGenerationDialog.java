@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.project.Project;
+import javax.swing.SwingUtilities;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
@@ -21,6 +22,9 @@ import javax.swing.Action;
   public CheckBeforeGenerationDialog(Project project, int errors, int warnings) {
     super(project, true);
     this.myDialogMessage = String.format("Model checker found %d errors and %d warnings. " + "Review them and don't generate models or ignore them?", errors, warnings);
+    this.setTitle("Check Before Generation");
+    this.setButtonsAlignment(SwingUtilities.CENTER);
+    this.init();
   }
 
   @Nullable

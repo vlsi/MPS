@@ -40209,6 +40209,37 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6353559893609937253">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6353559893609937254">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6353559893609937255">
+              <link role="baseMethodDeclaration" targetNodeId="135.~DialogWrapper.setTitle(java.lang.String):void" resolveInfo="setTitle" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6353559893609937257">
+                <property name="value" value="Check Before Generation" />
+              </node>
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6353559893609937256" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6353559893609937259">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6353559893609937261">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6353559893609937260" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6353559893609937265">
+              <link role="baseMethodDeclaration" targetNodeId="135.~DialogWrapper.setButtonsAlignment(int):void" resolveInfo="setButtonsAlignment" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="6353559893609937266">
+                <link role="classifier" targetNodeId="72.~SwingUtilities" resolveInfo="SwingUtilities" />
+                <link role="variableDeclaration" targetNodeId="72.~SwingConstants.CENTER" resolveInfo="CENTER" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6353559893609937268">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6353559893609937270">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6353559893609937269" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6353559893609937274">
+              <link role="baseMethodDeclaration" targetNodeId="135.~DialogWrapper.init():void" resolveInfo="init" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="5601958918125347093">
         <property name="name" value="project" />
