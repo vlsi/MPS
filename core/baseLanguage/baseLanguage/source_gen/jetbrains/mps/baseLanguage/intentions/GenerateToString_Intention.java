@@ -49,13 +49,13 @@ public class GenerateToString_Intention extends GenerateIntention {
         "" :
         ", "
       )) + SPropertyOperations.getString(field, "name") + "=");
-      SNode dotExpression = new _Quotations.QuotationClass_32().createNode(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), fieldRef);
+      SNode dotExpression = new _Quotations.QuotationClass_33().createNode(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), fieldRef);
       if (field == firstField) {
-        currentExpression = new _Quotations.QuotationClass_25().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
-        currentExpression = new _Quotations.QuotationClass_34().createNode(dotExpression, currentExpression);
+        currentExpression = new _Quotations.QuotationClass_26().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
+        currentExpression = new _Quotations.QuotationClass_35().createNode(dotExpression, currentExpression);
       } else {
         currentExpression = new _Quotations.QuotationClass_6().createNode(item, currentExpression);
-        currentExpression = new _Quotations.QuotationClass_33().createNode(dotExpression, currentExpression);
+        currentExpression = new _Quotations.QuotationClass_34().createNode(dotExpression, currentExpression);
       }
     }
     rightmostExpression = new _Quotations.QuotationClass_7().createNode(currentExpression);

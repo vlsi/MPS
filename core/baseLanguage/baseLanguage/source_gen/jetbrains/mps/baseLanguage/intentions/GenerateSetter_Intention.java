@@ -75,7 +75,7 @@ public class GenerateSetter_Intention extends GenerateIntention {
       Pair<String, String> p;
       final SNode thisExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
       // Method creation begins 
-      SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_26().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), SPropertyOperations.getString(field, "name"), setterName));
+      SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_27().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), SPropertyOperations.getString(field, "name"), setterName));
     }
   }
 
