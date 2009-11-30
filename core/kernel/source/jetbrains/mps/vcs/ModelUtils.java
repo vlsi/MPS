@@ -4,6 +4,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.UnzipUtil;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import jetbrains.mps.logging.Logger;
@@ -11,6 +12,7 @@ import jetbrains.mps.logging.Logger;
 import java.io.*;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.TreeSet;
 
 import org.jdom.Document;
 import org.jdom.JDOMException;
@@ -20,15 +22,20 @@ import com.intellij.openapi.vfs.VirtualFile;
 public class ModelUtils {
   private static final Logger LOG = Logger.getLogger(ModelUtils.class);
 
-  public static byte[] modelToBytes(final SModel result) throws IOException {
+  public static byte[] modelToBytes(final SModel result) {
     Document document = ModelAccess.instance().runReadAction(new Computable<Document>() {
       public Document compute() {
         return ModelPersistence.saveModel(result, false);
       }
     });
     ByteArrayOutputStream baos = new ByteArrayOutputStream();
-    JDOMUtil.writeDocument(document, baos);
-    return baos.toByteArray();
+    try {
+      JDOMUtil.writeDocument(document, baos);
+      return baos.toByteArray();
+    } catch (IOException e) {
+      LOG.error(e);
+    }
+    return new byte[0];
   }
 
   public static void replaceWithNewModelFromBytes(final VirtualFile modelFile, final byte[] bytesToReplaceWith) {
@@ -97,6 +104,8 @@ public class ModelUtils {
       index++;
     }
 
+    FileUtil.delete(tmpdir);
+
     return models;
   }
 
@@ -158,6 +167,20 @@ public class ModelUtils {
       i++;
     }
     return zipfile;
+  }
+
+  public static File[] findZipFileNameForModelFile(final String modelFilePath) {
+    File parentFile = new File(modelFilePath).getParentFile();
+    File[] files = parentFile.listFiles(new FilenameFilter() {
+      public boolean accept(File dir, String name) {
+        String fullName = dir.getPath() + File.separator + name;
+        return fullName.contains(modelFilePath) && fullName.endsWith(".zip");
+      }
+    });
+    if (files == null) {
+      return new File[0];
+    }
+    return files;
   }
 
   public static interface Version {

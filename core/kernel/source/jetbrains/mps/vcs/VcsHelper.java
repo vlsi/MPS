@@ -1,13 +1,13 @@
 package jetbrains.mps.vcs;
 
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.vfs.*;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vcs.diff.ui.MergeModelsDialog;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
+import jetbrains.mps.vcs.ModelUtils.Version;
 import jetbrains.mps.MPSProjectHolder;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl;
@@ -57,8 +57,8 @@ public class VcsHelper {
 
   private static File doBackup(IFile modelFile, SModel inMemory) throws IOException {
     File tmp = jetbrains.mps.util.FileUtil.createTmpDir();
-    AbstractVcsHelperImpl.writeContentsToFile(ModelUtils.modelToBytes(inMemory), modelFile.getName(), tmp, "memory");
-    FileUtil.copy(modelFile.toFile(), new File(tmp.getAbsolutePath() + File.separator + modelFile.getName() + "." + "filesystem"));
+    AbstractVcsHelperImpl.writeContentsToFile(ModelUtils.modelToBytes(inMemory), modelFile.getName(), tmp, FS_MEMORY_MERGE_VERSION.MEMORY.getSuffix());
+    FileUtil.copy(modelFile.toFile(), new File(tmp.getAbsolutePath() + File.separator + modelFile.getName() + "." + FS_MEMORY_MERGE_VERSION.FILE_SYSTEM.getSuffix()));
     File zipfile = ModelUtils.chooseZipFileNameForModelFile(modelFile.getPath());
     jetbrains.mps.util.FileUtil.zip(tmp, zipfile);
 
@@ -68,36 +68,74 @@ public class VcsHelper {
   }
 
   private static boolean doRealMerge(IFile modelFile, final SModel inMemory) {
-    final VirtualFile file = VFileSystem.getFile(modelFile);
-    LOG.assertLog(file != null);
-
     try {
-      final SModel onDisk = ModelUtils.readModel(FileUtil.loadFileBytes(VFileSystem.toFile(file)), file.getPath());
-      final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
-        public MergeModelsDialog compute() {
-          MPSProject project = ProjectManager.getInstance().getOpenProjects()[0].getComponent(MPSProjectHolder.class).getMPSProject();
-          IOperationContext context = new ModuleContext(inMemory.getModelDescriptor().getModule(), project);
-          return new MergeModelsDialog(context, inMemory, inMemory, onDisk);
-        }
-      });
-      dialog.showDialog();
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          dialog.toFront();
-        }
-      });
-
-      if (dialog.getResultModel() != null) {
-        SModel result = dialog.getResultModel();
-        byte[] bytes = ModelUtils.modelToBytes(result);
-        ModelUtils.replaceWithNewModelFromBytes(file, bytes);
-        return false;
-      }
+      final SModel onDisk = ModelUtils.readModel(FileUtil.loadFileBytes(FileSystem.toFile(modelFile)), modelFile.getPath());
+      return showMergeDialog(inMemory, inMemory, onDisk, modelFile,
+        ProjectManager.getInstance().getOpenProjects()[0].getComponent(MPSProjectHolder.class).getMPSProject());
     } catch (IOException e) {
       LOG.error(e);
     } catch (ReadException e) {
       LOG.error(e);
     }
     return true;
+  }
+
+  public static boolean showMergeDialog(final SModel base, final SModel mine, final SModel repo, IFile modelFile, final MPSProject project) {
+    final VirtualFile file = VFileSystem.getFile(modelFile);
+    LOG.assertLog(file != null);
+
+    final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
+      public MergeModelsDialog compute() {
+        IOperationContext context = new ModuleContext(base.getModelDescriptor().getModule(), project);
+        return new MergeModelsDialog(context, base, mine, repo);
+      }
+    });
+    dialog.showDialog();
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        dialog.toFront();
+      }
+    });
+
+    if (dialog.getResultModel() != null) {
+      SModel result = dialog.getResultModel();
+      byte[] bytes = ModelUtils.modelToBytes(result);
+      ModelUtils.replaceWithNewModelFromBytes(file, bytes);
+      return false;
+    }
+    return true;
+  }
+
+  public static enum FS_MEMORY_MERGE_VERSION implements Version {
+    FILE_SYSTEM,
+    MEMORY;
+
+    public String getSuffix() {
+      switch (this) {
+        case FILE_SYSTEM:
+          return "filesystem";
+        case MEMORY:
+          return "memory";
+      }
+      return "";
+    }
+  }
+
+  public static enum VCS_MERGE_VERSION implements Version {
+    MINE,
+    THEIRS,
+    BASE;
+
+    public String getSuffix() {
+      switch (this) {
+        case MINE:
+          return "mine";
+        case BASE:
+          return "base";
+        case THEIRS:
+          return "repository";
+      }
+      return "";
+    }
   }
 }

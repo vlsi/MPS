@@ -65,7 +65,7 @@ public class TestMergeDialog {
     final SModel mineModel = ModelUtils.readModel(args[1]);
     final SModel newModel = ModelUtils.readModel(args[2]);
 
-    ModelAccess.instance().runWriteAction(new Runnable() {
+    /*ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         LibraryManager manager = LibraryManager.getInstance();
         MyState state = manager.getState();
@@ -81,7 +81,7 @@ public class TestMergeDialog {
         manager.update();
       }
     });
-
+*/
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
         final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {

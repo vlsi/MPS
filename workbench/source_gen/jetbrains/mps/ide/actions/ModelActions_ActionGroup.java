@@ -40,6 +40,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowMappingsPartitioning_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowDifferencesWithModelOnDisk_Action", "jetbrains.mps.ide");
+      ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ReRunMergeFromBackup_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RevertMemoryChanges_Action", "jetbrains.mps.ide");
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.SaveModel_Action", "jetbrains.mps.ide");
