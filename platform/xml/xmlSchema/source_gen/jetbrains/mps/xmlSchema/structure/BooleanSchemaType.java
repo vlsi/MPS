@@ -9,9 +9,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BooleanSchemaType extends SchemaType {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.BooleanSchemaType";
+  public static final String DEFAULT_VALUE = "defaultValue";
 
   public BooleanSchemaType(SNode node) {
     super(node);
+  }
+
+  public boolean getDefaultValue() {
+    return this.getBooleanProperty(BooleanSchemaType.DEFAULT_VALUE);
+  }
+
+  public void setDefaultValue(boolean value) {
+    this.setBooleanProperty(BooleanSchemaType.DEFAULT_VALUE, value);
   }
 
   public static BooleanSchemaType newInstance(SModel sm, boolean init) {

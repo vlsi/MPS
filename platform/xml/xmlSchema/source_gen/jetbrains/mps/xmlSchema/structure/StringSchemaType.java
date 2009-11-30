@@ -9,9 +9,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class StringSchemaType extends SchemaType {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.StringSchemaType";
+  public static final String DEFAULT_VALUE = "defaultValue";
 
   public StringSchemaType(SNode node) {
     super(node);
+  }
+
+  public String getDefaultValue() {
+    return this.getProperty(StringSchemaType.DEFAULT_VALUE);
+  }
+
+  public void setDefaultValue(String value) {
+    this.setProperty(StringSchemaType.DEFAULT_VALUE, value);
   }
 
   public static StringSchemaType newInstance(SModel sm, boolean init) {

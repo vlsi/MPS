@@ -9,9 +9,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class IntegerSchemaType extends SchemaType {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.IntegerSchemaType";
+  public static final String DEFAULT_VALUE = "defaultValue";
 
   public IntegerSchemaType(SNode node) {
     super(node);
+  }
+
+  public int getDefaultValue() {
+    return this.getIntegerProperty(IntegerSchemaType.DEFAULT_VALUE);
+  }
+
+  public void setDefaultValue(int value) {
+    this.setIntegerProperty(IntegerSchemaType.DEFAULT_VALUE, value);
   }
 
   public static IntegerSchemaType newInstance(SModel sm, boolean init) {
