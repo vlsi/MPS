@@ -17,6 +17,7 @@ package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -133,7 +134,20 @@ class MergeResultView extends JPanel {
     }
 
     public ActionGroup getActionGroup() {
-      return null;
+      final SNode node = getSNode();
+      if (node != null && node.isRoot()) {
+        BaseAction showRootDiffDialog = new BaseAction("Show Merge In MPS Editor") {
+          @Override
+          protected void doExecute(AnActionEvent e) {
+            doubleClick();
+          }
+        };
+        showRootDiffDialog.setExecuteOutsideCommand(true);
+        DefaultActionGroup group = ActionUtils.groupFromActions(showRootDiffDialog);
+        return group;
+      } else {
+        return null;
+      }
     }
 
 
@@ -147,7 +161,7 @@ class MergeResultView extends JPanel {
       if (!isRoot[0]) {
         return;
       }
-      final RootMergeDialog dialog = new RootMergeDialog(myContext, myChange1, myChange2, true);      
+      final RootMergeDialog dialog = new RootMergeDialog(myContext, myChange1, myChange2, true);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           dialog.init(getSNode(), myMerger);
