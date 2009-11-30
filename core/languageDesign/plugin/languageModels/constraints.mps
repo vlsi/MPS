@@ -665,12 +665,9 @@
             <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3452826078638187873">
               <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="3452826078638187872" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="3452826078638187877">
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_ConceptList" id="3452826078638188024">
-                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="3452826078638188025">
-                    <link role="concept" targetNodeId="7.162872405267681153" resolveInfo="ApplyEditorBlock" />
-                  </node>
-                  <node role="concept" type="jetbrains.mps.lang.smodel.structure.ConceptReference" id="3452826078638188027">
-                    <link role="concept" targetNodeId="7.162872405267681154" resolveInfo="ResetEditorBlock" />
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="3693243741488324250">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="3693243741488324253">
+                    <link role="conceptDeclaration" targetNodeId="7.162872405267681132" resolveInfo="ConfigurationEditorDeclaration" />
                   </node>
                 </node>
               </node>
