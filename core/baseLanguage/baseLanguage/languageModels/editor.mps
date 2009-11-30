@@ -1651,6 +1651,22 @@
           </node>
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8606350594693654666">
+        <property name="text" value="transient" />
+        <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="8606350594693654667">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8606350594693654668">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8606350594693654669">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8606350594693654670">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="8606350594693654671" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="8606350594693687978">
+                  <link role="property" targetNodeId="17.8606350594693632173" resolveInfo="isTransient" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1217351603902">
         <property name="text" value="final" />
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
@@ -1737,6 +1753,15 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1240250554802">
         <link role="relationDeclaration" targetNodeId="17.1240249534625" resolveInfo="isVolatile" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="8606350594693654665">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8606350594693654663">
+        <property name="text" value="transient" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="8606350594693654664">
+        <link role="relationDeclaration" targetNodeId="17.8606350594693632173" resolveInfo="isTransient" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237647667569" />
     </node>

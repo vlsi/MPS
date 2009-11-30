@@ -48,6 +48,9 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     if (renderingCondition6732_3(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_6732_4(editorContext, node));
     }
+    if (renderingCondition6732_4(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_6732_7(editorContext, node));
+    }
     if (renderingCondition6732_2(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_6732_3(editorContext, node));
     }
@@ -79,6 +82,8 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createRefNodeList_6732_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_6732_5(editorContext, node));
     editorCell.addEditorCell(this.createProperty_6732_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_6732_6(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6732_1(editorContext, node));
     return editorCell;
   }
 
@@ -167,6 +172,21 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createConstant_6732_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "transient");
+    editorCell.setCellId("Constant_6732_6");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_6732_7(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "transient");
+    editorCell.setCellId("Constant_6732_7");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
   private EditorCell createRefNodeList_6732_0(EditorContext editorContext, SNode node) {
     AbstractCellListHandler handler = new FieldDeclaration_Editor.annotationListHandler_6732_0(node, "annotation", editorContext);
     EditorCell_Collection editorCell = handler.createCells(editorContext, new CellLayout_Indent(), false);
@@ -236,6 +256,28 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_isVolatile");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+    }
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_6732_1(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("isTransient");
+    provider.setNoTargetText("<no isTransient>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_isTransient");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -261,6 +303,10 @@ public class FieldDeclaration_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition6732_3(SNode node, EditorContext editorContext, IScope scope) {
     return SPropertyOperations.getBoolean(node, "isVolatile");
+  }
+
+  private static boolean renderingCondition6732_4(SNode node, EditorContext editorContext, IScope scope) {
+    return SPropertyOperations.getBoolean(node, "isTransient");
   }
 
   private static class annotationListHandler_6732_0 extends RefNodeListHandler {

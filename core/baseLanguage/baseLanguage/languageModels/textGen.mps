@@ -7551,6 +7551,21 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8606350594693687979">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8606350594693687980">
+            <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="8606350594693687981">
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="8606350594693687982">
+                <property name="value" value="transient " />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8606350594693687983">
+            <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="8606350594693687984" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="8606350594693687986">
+              <link role="property" targetNodeId="1.8606350594693632173" resolveInfo="isTransient" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1240305392394">
           <node role="part" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="1240305409357">
             <link role="function" targetNodeId="1235584330956" resolveInfo="variableDeclaration" />

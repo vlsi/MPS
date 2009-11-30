@@ -20,6 +20,9 @@ public class FieldDeclaration_TextGen extends SNodeTextGen {
     if (SPropertyOperations.getBoolean(node, "isVolatile")) {
       this.append("volatile ");
     }
+    if (SPropertyOperations.getBoolean(node, "isTransient")) {
+      this.append("transient ");
+    }
     BaseLanguageTextGen.variableDeclaration(node, this);
     this.append(";");
   }

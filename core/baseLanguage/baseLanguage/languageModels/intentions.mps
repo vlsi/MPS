@@ -16304,5 +16304,51 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="8606350594693687997">
+    <property name="name" value="MakeFieldTransient" />
+    <link role="forConcept" targetNodeId="1.1068390468200" resolveInfo="FieldDeclaration" />
+    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="8606350594693687998">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8606350594693687999">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8606350594693688002">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="8606350594693688003">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8606350594693688004">
+              <property name="value" value="Make Field Not Transient" />
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8606350594693688005">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="8606350594693688006" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="8606350594693689248">
+                <link role="property" targetNodeId="1.8606350594693632173" resolveInfo="isTransient" />
+              </node>
+            </node>
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8606350594693688008">
+              <property name="value" value="Make Field Transient" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="8606350594693688000">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8606350594693688001">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8606350594693698834">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="8606350594693698841">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="8606350594693698844">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8606350594693698847">
+                <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="8606350594693698846" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="8606350594693698851">
+                  <link role="property" targetNodeId="1.8606350594693632173" resolveInfo="isTransient" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8606350594693698836">
+              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="8606350594693698835" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="8606350594693698840">
+                <link role="property" targetNodeId="1.8606350594693632173" resolveInfo="isTransient" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

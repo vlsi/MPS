@@ -82,6 +82,12 @@
         </node>
       </node>
     </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="8606350594693935843">
+      <property name="name" value="i" />
+      <property name="isTransient" value="true" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="8606350594693935844" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="8606350594693935846" />
+    </node>
   </node>
 </model>
 

@@ -108,6 +108,10 @@
       <property name="name" value="isVolatile" />
       <link role="dataType" targetNodeId="4.1082983657063" resolveInfo="boolean" />
     </node>
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="8606350594693632173">
+      <property name="name" value="isTransient" />
+      <link role="dataType" targetNodeId="4.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1178285346338">
       <link role="intfc" targetNodeId="1178285077437" resolveInfo="ClassifierMember" />
     </node>
