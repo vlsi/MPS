@@ -58,8 +58,7 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
       synchronized (myLock) {
         for (final TypeCheckingContext typeCheckingContext :
           myNodesToContexts.values().toArray(new TypeCheckingContext[myNodesToContexts.size()])) {
-          if (typeCheckingContext.getNode().shouldHaveBeenDisposed()
-            || typeCheckingContext.getNode().getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
+          if (typeCheckingContext.getNode().getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
             typeCheckingContext.dispose();
             myNodesToContexts.remove(typeCheckingContext.getNode());
           }
