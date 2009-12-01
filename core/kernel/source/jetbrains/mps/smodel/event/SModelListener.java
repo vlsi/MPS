@@ -16,6 +16,7 @@
 package jetbrains.mps.smodel.event;
 
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModel;
 
 /**
  * Author: Sergey Dmitriev
@@ -73,4 +74,6 @@ public interface SModelListener {
   void beforeModelReloaded(SModelDescriptor sm);
 
   void modelReloaded(SModelDescriptor sm);
+
+  void beforeModelDisposed(SModelDescriptor sm);
 }

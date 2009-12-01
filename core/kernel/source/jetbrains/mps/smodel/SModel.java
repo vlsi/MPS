@@ -400,6 +400,17 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
+  void fireBeforeModelDisposed() {
+    if (!canFireEvent()) return;
+    for (SModelListener sModelListener : copyListeners()) {
+      try {
+        sModelListener.beforeModelDisposed(getModelDescriptor());
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
   void firePropertyChangedEvent(@NotNull SNode node,
                                 @NotNull String property,
                                 @Nullable String oldValue,
@@ -1079,6 +1090,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   public void dispose() {
+    fireBeforeModelDisposed();
     myDisposed = true;
     synchronized (myListenersLock) {
       myCommandListeners.clear();
