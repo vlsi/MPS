@@ -3,7 +3,9 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <classPath />
+  <classPath>
+    <entry path="${mps_home}/lib/jdom/jdom.jar" include="false" />
+  </classPath>
   <sourcePath />
 </solution>
 
