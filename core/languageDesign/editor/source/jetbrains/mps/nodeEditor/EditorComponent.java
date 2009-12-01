@@ -99,6 +99,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private static final int SCROLL_GAP = 15;
   public static final boolean USE_NEW_TOOLTIPS = true;
 
+  private final Object myAdditionalPaintersLock = new Object();
+
   public static void turnOnAliasingIfPossible(Graphics2D g) {
     if (EditorSettings.getInstance().isUseAntialiasing()) {
       g.setRenderingHint(RenderingHints.KEY_TEXT_ANTIALIASING,
@@ -743,15 +745,19 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     });
   }
-  
+
   public void addAdditionalPainter(AdditionalPainter additionalPainter) {
-    if (!myAdditionalPainters.contains(additionalPainter)) {
-      myAdditionalPainters.add(additionalPainter);
+    synchronized (myAdditionalPaintersLock) {
+      if (!myAdditionalPainters.contains(additionalPainter)) {
+        myAdditionalPainters.add(additionalPainter);
+      }
     }
   }
 
   public void removeAdditionalPainter(AdditionalPainter additionalPainter) {
-    myAdditionalPainters.remove(additionalPainter);
+    synchronized (myAdditionalPaintersLock) {
+      myAdditionalPainters.remove(additionalPainter);
+    }
   }
 
   public MessagesGutter getMessagesGutter() {
@@ -1759,7 +1765,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         String id2 = mySelectedCell.getCellId();
 
         if(id1!=null)
-        eq = id1.equals(id2);
+          eq = id1.equals(id2);
       }
 
       //if (!eq)
@@ -1908,7 +1914,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
     }
 
-    HashSet<AdditionalPainter> additionalPainters = new HashSet<AdditionalPainter>(myAdditionalPainters);
+    HashSet<AdditionalPainter> additionalPainters;
+    synchronized (myAdditionalPaintersLock) {
+       additionalPainters = new HashSet<AdditionalPainter>(myAdditionalPainters);
+    }
     for (AdditionalPainter additionalPainter : additionalPainters) {
       if (!additionalPainter.paintsAbove()) {
         additionalPainter.paint(g, this);
