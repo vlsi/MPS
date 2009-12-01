@@ -9,7 +9,10 @@ import java.awt.Graphics;
  * Time: 14:57:26
  * To change this template use File | Settings | File Templates.
  */
-public interface AdditionalPainter {
+public interface AdditionalPainter<Item> {
   public void paint(Graphics g, EditorComponent editorComponent);
   public boolean paintsAbove();
+
+  //returns an item which this painter paints. if it paints itself then just return this
+  public Item getItem();
 }

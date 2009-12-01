@@ -131,6 +131,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private boolean myDisposed = false;
 
   private List<AdditionalPainter> myAdditionalPainters = new ArrayList<AdditionalPainter>();
+  private Map<Object, AdditionalPainter> myItemsToAdditionalPainters = new HashMap<Object, AdditionalPainter>();
 
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     public void settingsChanged() {
@@ -750,6 +751,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     synchronized (myAdditionalPaintersLock) {
       if (!myAdditionalPainters.contains(additionalPainter)) {
         myAdditionalPainters.add(additionalPainter);
+        myItemsToAdditionalPainters.put(additionalPainter.getItem(), additionalPainter);
       }
     }
   }
@@ -757,7 +759,32 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public void removeAdditionalPainter(AdditionalPainter additionalPainter) {
     synchronized (myAdditionalPaintersLock) {
       myAdditionalPainters.remove(additionalPainter);
+      myItemsToAdditionalPainters.remove(additionalPainter.getItem());
     }
+  }
+
+  public void removeAdditionalPainterByItem(Object item) {
+    synchronized (myAdditionalPaintersLock) {
+      AdditionalPainter additionalPainter = myItemsToAdditionalPainters.remove(item);
+      if (additionalPainter != null) {
+        myAdditionalPainters.remove(additionalPainter);
+      }
+    }
+  }
+
+  public AdditionalPainter getAdditionalPainterByItem(Object item) {
+    synchronized (myAdditionalPaintersLock) {
+      AdditionalPainter additionalPainter = myItemsToAdditionalPainters.get(item);
+      return additionalPainter;
+    }
+  }
+
+  public List<AdditionalPainter> getAdditionalPainters() {
+    List<AdditionalPainter> result;
+    synchronized (myAdditionalPaintersLock) {
+      result = new ArrayList<AdditionalPainter>(myAdditionalPainters);
+    }
+    return result;
   }
 
   public MessagesGutter getMessagesGutter() {

@@ -197,6 +197,10 @@ public class LeftEditorHighlighter {
     myWidth = width;
   }
 
+  public int getWidth() {
+    return myWidth;
+  }
+
   public void relayout(boolean updateFolding) {
     relayout(updateFolding, true);
   }
