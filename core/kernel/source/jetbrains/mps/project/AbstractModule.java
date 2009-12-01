@@ -108,7 +108,7 @@ public abstract class AbstractModule implements IModule {
 
   public String getModuleFqName() {
     return myModuleReference.getModuleFqName();
-  }  
+  }
 
   @Nullable
   public String getModuleNamespace() {
@@ -592,6 +592,7 @@ public abstract class AbstractModule implements IModule {
   public void updateClassPath() {
     updateClassPathItem();
     releaseJavaStubs();
+    MPSModuleRepository.getInstance().invalidateCaches();
     loadNewStubs();
   }
 
