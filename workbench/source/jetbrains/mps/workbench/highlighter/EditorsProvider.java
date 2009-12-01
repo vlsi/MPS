@@ -32,6 +32,8 @@ public class EditorsProvider {
 
   private List<MPSFileNodeEditor> myEditors = new ArrayList<MPSFileNodeEditor>();
 
+  private List<EditorOpenListener> myEditorOpenListeners = new ArrayList<EditorOpenListener>();
+
   private final Object myLock = new Object();
 
   public EditorsProvider(Project project) {
@@ -40,16 +42,50 @@ public class EditorsProvider {
     manager.addFileEditorManagerListener(new FileEditorManagerListener() {
       public void fileOpened(FileEditorManager source, VirtualFile file) {
         updateInformation();
+        FileEditor selectedEditor = source.getSelectedEditor(file);
+        if (selectedEditor instanceof MPSFileNodeEditor) {
+          MPSFileNodeEditor editor = (MPSFileNodeEditor) selectedEditor;
+          fireEditorOpened(editor.getNodeEditor());
+        }
       }
 
       public void fileClosed(FileEditorManager source, VirtualFile file) {
         updateInformation();
+        FileEditor selectedEditor = source.getSelectedEditor(file);
+        if (selectedEditor instanceof MPSFileNodeEditor) {
+          MPSFileNodeEditor editor = (MPSFileNodeEditor) selectedEditor;
+          fireEditorClosed(editor.getNodeEditor());
+        }
       }
 
       public void selectionChanged(FileEditorManagerEvent event) {
         updateInformation();
       }
     });
+  }
+
+  //todo add synchronization if necessary
+  public void addEditorOpenListener(EditorOpenListener listener) {
+    myEditorOpenListeners.add(listener);
+  }
+
+  //todo add synchronization if necessary
+  public void removeEditorOpenListener(EditorOpenListener listener) {
+    myEditorOpenListeners.remove(listener);
+  }
+
+  //todo add synchronization if necessary
+  private void fireEditorOpened(IEditor editor) {
+    for (EditorOpenListener listener : myEditorOpenListeners) {
+      listener.editorOpened(editor);
+    }
+  }
+
+  //todo add synchronization if necessary
+  private void fireEditorClosed(IEditor editor) {
+    for (EditorOpenListener listener : myEditorOpenListeners) {
+      listener.editorClosed(editor);
+    }
   }
 
   private void updateInformation() {
