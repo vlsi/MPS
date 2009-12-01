@@ -59,10 +59,10 @@ public class CreateMethodDeclaration_Intention extends BaseIntention {
     }
     SNode method = new _Quotations.QuotationClass_17().createNode(type, name);
     if (!(isSameClassifier)) {
-      SLinkOperations.setTarget(method, "visibility", new _Quotations.QuotationClass_19().createNode(), true);
+      SLinkOperations.setTarget(method, "visibility", new _Quotations.QuotationClass_20().createNode(), true);
     }
     SLinkOperations.addChild(classifier, "method", method);
-    SNodeOperations.replaceWithAnother(node, new _Quotations.QuotationClass_18().createNode(method));
+    SNodeOperations.replaceWithAnother(node, new _Quotations.QuotationClass_19().createNode(method));
     if (isSameClassifier) {
       editorContext.selectWRTFocusPolicy(method);
     } else {
