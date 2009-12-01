@@ -128,6 +128,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private boolean myDisposed = false;
 
+  private List<AdditionalPainter> myAdditionalPainters = new ArrayList<AdditionalPainter>();
+
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     public void settingsChanged() {
       rebuildEditorContent();
@@ -1896,6 +1898,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         deepestCell.getHeight() - deepestCell.getTopInset() - deepestCell.getBottomInset());
     }
 
+    HashSet<AdditionalPainter> additionalPainters = new HashSet<AdditionalPainter>(myAdditionalPainters);
+    for (AdditionalPainter additionalPainter : additionalPainters) {
+      if (!additionalPainter.paintsAbove()) {
+        additionalPainter.paint(g, this);
+      }
+    }
 
     EditorSettings setting = EditorSettings.getInstance();
     g.setColor(Color.LIGHT_GRAY);
@@ -1907,6 +1915,13 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       myRootCell.paint(g);
     }
 
+    for (AdditionalPainter additionalPainter : additionalPainters) {
+      if (additionalPainter.paintsAbove()) {
+        additionalPainter.paint(g, this);
+      }
+    }
+
+    //todo: rewrite via additional painters
     for (ChangesBlock block : myHighlightManager.getChangesBlocks()) {
       block.paint(g, getSize());
     }
