@@ -30,6 +30,7 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileContent;
 import com.intellij.util.indexing.UnindexedFilesUpdater;
+import com.intellij.util.text.CharArrayUtil;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
@@ -49,8 +50,8 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 class FastFindUsagesManager extends FindUsagesManager {
-  private static final Pattern REFERENCE_PATTERN = Pattern.compile(" targetNodeId=\"(?:[0-9]+v?\\.)?(.+?)\"");
-  private static final Pattern INSTANCE_PATTERN = Pattern.compile(" type=\"(.+?)\" id=\".+?\"");
+  private static final String TARGET_NODE_ID_PREFIX = "targetNodeId=\"";
+  private static final String TYPE_PREFIX = "type=\"";
 
   @NotNull
   public String getComponentName() {
@@ -61,20 +62,82 @@ class FastFindUsagesManager extends FindUsagesManager {
     IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_FILE_TYPE, new FileTypeIdIndexer() {
       @NotNull
       public Map<IdIndexEntry, Integer> map(FileContent inputData) {
-        String content = inputData.getContentAsText().toString();
-        Matcher matcherNode = REFERENCE_PATTERN.matcher(content);
-        Matcher matcherInstance = INSTANCE_PATTERN.matcher(content);
-        HashMap<IdIndexEntry, Integer> result = new HashMap<IdIndexEntry, Integer>();
-        while (matcherNode.find()) {
-          String node = unescape(matcherNode.group(1));
-          result.put(new IdIndexEntry(node, true), matcherNode.start(1));
+        final CharSequence chars = inputData.getContentAsText();
+        final char[] charsArray = CharArrayUtil.fromSequenceWithoutCopying(chars);
+
+        Map<IdIndexEntry, Integer> result = new HashMap<IdIndexEntry, Integer>();
+        int wordStart = -1;
+        for (int i = 0; i < charsArray.length; i++) {
+          char c = charsArray[i];
+          if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z') {
+            if (wordStart == -1) {
+              wordStart = i;
+            }
+          } else if (wordStart >= 0) {
+            processWord(result, charsArray, wordStart, i - wordStart);
+            wordStart = -1;
+          }
         }
-        while (matcherInstance.find()) {
-          String instance = unescape(matcherInstance.group(1));
-          result.put(new IdIndexEntry(instance, true), matcherInstance.start(1));
+        return result;
+      }
+
+      private void processWord(Map<IdIndexEntry, Integer> result, char[] chars, int offset, int len) {
+        if (chars[offset + len] != '=' || chars[offset] != 't') {
+          return; // optimization: ignore
         }
 
-        return result;
+        if (contains(chars, offset, TARGET_NODE_ID_PREFIX)) {
+          // check pattern "targetNodeId=\"(?:[0-9]+v?\\.)?(.+?)\""
+          offset += TARGET_NODE_ID_PREFIX.length();
+          int end = indexOfQuote(chars, offset);
+          if (end > offset) {
+            int e = offset;
+            while (e < end && chars[e] >= '0' && chars[e] <= '9') {
+              e++;
+            }
+            if (e > offset) {
+              if (e < end && chars[e] == 'v') {
+                e++;
+              }
+              if (e + 1 < end && chars[e] == '.') {
+                offset = e + 1;
+              }
+            }
+            result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
+          }
+        } else if (contains(chars, offset, TYPE_PREFIX)) {
+          // check pattern "type=\"(.+?)\" id=\".+?\""
+          offset += TYPE_PREFIX.length();
+          int end = indexOfQuote(chars, offset);
+          if (end > offset && contains(chars, end + 1, " id=\"")) {
+            // report
+            result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
+          }
+        }
+      }
+
+      private int indexOfQuote(char[] chars, int start) {
+        for (int i = start; i < chars.length; i++) {
+          if (chars[i] == '"') {
+            return i;
+          }
+          if (chars[i] == '\n') {
+            return -1;
+          }
+        }
+        return -1;
+      }
+
+      private boolean contains(char[] chars, int offset, String s) {
+        if (offset + s.length() >= chars.length) {
+          return false;
+        }
+        for (int i = 0; i < s.length(); i++) {
+          if (chars[offset + i] != s.charAt(i)) {
+            return false;
+          }
+        }
+        return true;
       }
 
       private String unescape(String s) {
