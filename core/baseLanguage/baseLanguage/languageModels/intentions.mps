@@ -10424,7 +10424,7 @@
                       </node>
                       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8703532998806615085" />
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8703532998806615086">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8703532998806735327">
+                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4108476169927342806">
                           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8703532998806735332">
                             <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8703532998806735331">
                               <link role="variableDeclaration" targetNodeId="8703532998806735325" resolveInfo="p" />
@@ -13802,7 +13802,7 @@
                           </node>
                           <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8703532998806971207" />
                           <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8703532998806971208">
-                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8703532998806971209">
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4108476169927467592">
                               <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8703532998806971210">
                                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8703532998806971211">
                                   <link role="variableDeclaration" targetNodeId="8703532998806977543" resolveInfo="p" />
