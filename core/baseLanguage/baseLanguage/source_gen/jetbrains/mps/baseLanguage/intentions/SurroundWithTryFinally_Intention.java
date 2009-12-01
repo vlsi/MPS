@@ -15,6 +15,10 @@ public class SurroundWithTryFinally_Intention extends SurroundWithIntention {
   public SurroundWithTryFinally_Intention() {
   }
 
+  public boolean isAvailableInChildNodes() {
+    return true;
+  }
+
   public String getDescription(SNode p0, EditorContext p1) {
     return "Try / Finally";
   }

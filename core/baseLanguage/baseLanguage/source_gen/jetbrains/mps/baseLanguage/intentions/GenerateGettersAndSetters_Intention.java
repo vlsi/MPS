@@ -25,6 +25,10 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention {
     return "Getters and Setters";
   }
 
+  public boolean isAvailableInChildNodes() {
+    return true;
+  }
+
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(this.isApplicableToNode(node, editorContext))) {
       return false;
@@ -92,7 +96,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention {
         }
       });
       if (getterIsAbsent.value) {
-        SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_29().createNode(SLinkOperations.getTarget(field, "type", true), thisExpression, field, getterName));
+        SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_30().createNode(SLinkOperations.getTarget(field, "type", true), thisExpression, field, getterName));
       }
 
       final String setterName = "set" + NameUtil.capitalize(SPropertyOperations.getString(field, "name"));
@@ -107,12 +111,12 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention {
       if (!(setterIsAbsent.value)) {
         continue;
       }
-      SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_30().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), SPropertyOperations.getString(field, "name"), setterName));
+      SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_31().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), SPropertyOperations.getString(field, "name"), setterName));
     }
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext) {
-    throw new RuntimeException("NOT IMPLEMENTED");
+    return true;
   }
 
   public String getLocationString() {

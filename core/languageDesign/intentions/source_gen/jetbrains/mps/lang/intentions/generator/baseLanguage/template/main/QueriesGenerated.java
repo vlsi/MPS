@@ -40,6 +40,14 @@ public class QueriesGenerated {
     return IntentionDeclaration_Behavior.call_isParameterized_1240406910049(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_3425271641149664615(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "isAvailableInChildNodes");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3425271641149664632(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "isAvailableInChildNodes");
+  }
+
   public static Object propertyMacro_GetPropertyValue_5711848865190513478(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BaseIntentionDeclaration_Behavior.call_getGeneratedName_6263518417926802289(_context.getNode());
   }

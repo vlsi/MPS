@@ -21,6 +21,10 @@ public class GenerateToString_Intention extends GenerateIntention {
     return "toString()";
   }
 
+  public boolean isAvailableInChildNodes() {
+    return true;
+  }
+
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(this.isApplicableToNode(node, editorContext))) {
       return false;
@@ -49,13 +53,13 @@ public class GenerateToString_Intention extends GenerateIntention {
         "" :
         ", "
       )) + SPropertyOperations.getString(field, "name") + "=");
-      SNode dotExpression = new _Quotations.QuotationClass_33().createNode(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), fieldRef);
+      SNode dotExpression = new _Quotations.QuotationClass_34().createNode(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), fieldRef);
       if (field == firstField) {
-        currentExpression = new _Quotations.QuotationClass_26().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
-        currentExpression = new _Quotations.QuotationClass_35().createNode(dotExpression, currentExpression);
+        currentExpression = new _Quotations.QuotationClass_27().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
+        currentExpression = new _Quotations.QuotationClass_36().createNode(dotExpression, currentExpression);
       } else {
         currentExpression = new _Quotations.QuotationClass_7().createNode(item, currentExpression);
-        currentExpression = new _Quotations.QuotationClass_34().createNode(dotExpression, currentExpression);
+        currentExpression = new _Quotations.QuotationClass_35().createNode(dotExpression, currentExpression);
       }
     }
     rightmostExpression = new _Quotations.QuotationClass_8().createNode(currentExpression);
@@ -63,7 +67,7 @@ public class GenerateToString_Intention extends GenerateIntention {
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext) {
-    throw new RuntimeException("NOT IMPLEMENTED");
+    return true;
   }
 
   public String getLocationString() {

@@ -12,8 +12,23 @@ public class SurroundWithIfElseClause_Intention extends SurroundWithIntention {
   public SurroundWithIfElseClause_Intention() {
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getDescription(SNode p0, EditorContext p1) {
     return "if (expr){..} else{...}";
+  }
+
+  public boolean isApplicable(final SNode node, final EditorContext editorContext) {
+    if (!(this.isApplicableToNode(node, editorContext))) {
+      return false;
+    }
+    return true;
+  }
+
+  public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
+    return editorContext.getSelectedNodes().size() == 1 && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

@@ -15,6 +15,10 @@ public class SurroundWithWhile_Intention extends SurroundWithIntention {
   public SurroundWithWhile_Intention() {
   }
 
+  public boolean isAvailableInChildNodes() {
+    return true;
+  }
+
   public String getDescription(SNode p0, EditorContext p1) {
     return "While";
   }

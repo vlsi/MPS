@@ -15,6 +15,10 @@ public class TryCatchFinally_Intention extends SurroundWithIntention {
   public TryCatchFinally_Intention() {
   }
 
+  public boolean isAvailableInChildNodes() {
+    return true;
+  }
+
   public String getDescription(SNode p0, EditorContext p1) {
     return "Try / Catch / Finally";
   }

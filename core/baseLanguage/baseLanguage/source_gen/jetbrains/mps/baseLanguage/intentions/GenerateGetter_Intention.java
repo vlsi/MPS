@@ -23,6 +23,10 @@ public class GenerateGetter_Intention extends GenerateIntention {
     return "Getters";
   }
 
+  public boolean isAvailableInChildNodes() {
+    return true;
+  }
+
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(this.isApplicableToNode(node, editorContext))) {
       return false;
@@ -69,12 +73,12 @@ public class GenerateGetter_Intention extends GenerateIntention {
       // Method creation begins 
       Pair p;
       final SNode thisExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
-      SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_28().createNode(SLinkOperations.getTarget(field, "type", true), thisExpression, field, getterName));
+      SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_29().createNode(SLinkOperations.getTarget(field, "type", true), thisExpression, field, getterName));
     }
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext) {
-    throw new RuntimeException("NOT IMPLEMENTED");
+    return true;
   }
 
   public String getLocationString() {

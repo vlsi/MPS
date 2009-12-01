@@ -6,7 +6,6 @@
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
-  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e2(jetbrains.mps.lang.generator.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -44,7 +43,6 @@
   <import index="12" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="13" modelUID="r:00000000-0000-4000-0000-011c8959034e(jetbrains.mps.lang.intentions.behavior)" version="-1" />
   <import index="15" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="16" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1192798704064">
     <property name="name" value="mc_main" />
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1240407857730">
@@ -1097,6 +1095,32 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="5711848865190532260" />
     </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3425271641149664610">
+      <property name="name" value="isAvailableInChildNodes" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3425271641149664611">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3425271641149664612">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3425271641149664613">
+            <property name="value" value="true" />
+            <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="3425271641149664614">
+              <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="3425271641149664615">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3425271641149664616">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3425271641149664617">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3425271641149664618">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="3425271641149664619" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="3425271641149664620">
+                        <link role="property" targetNodeId="1.2522969319638091386" resolveInfo="isAvailableInChildNodes" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3425271641149664621" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3425271641149664622" />
+    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="5711848865190532265">
       <property name="name" value="isApplicable" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="5711848865190532266" />
@@ -1513,9 +1537,7 @@
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="5711848865190532144">
       <property name="name" value="getConcept" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5711848865190532145" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5711848865190532146">
-        <link role="classifier" targetNodeId="15.~String" resolveInfo="String" />
-      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="3425271641149672916" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5711848865190532147">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5711848865190532217">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="5711848865190532218">
@@ -1557,6 +1579,32 @@
     </node>
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5711848865190532159">
       <link role="classifier" targetNodeId="6.~SurroundWithIntention" resolveInfo="SurroundWithIntention" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="3425271641149664627">
+      <property name="name" value="isAvailableInChildNodes" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3425271641149664628">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3425271641149664629">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3425271641149664630">
+            <property name="value" value="true" />
+            <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="3425271641149664631">
+              <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="3425271641149664632">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3425271641149664633">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3425271641149664634">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3425271641149664635">
+                      <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="3425271641149664636" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="7838100131814746241">
+                        <link role="property" targetNodeId="1.2522969319638091386" resolveInfo="isAvailableInChildNodes" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3425271641149664638" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3425271641149664639" />
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="5711848865190532690">
       <property name="name" value="getDescription" />
@@ -1807,6 +1855,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3425271641149672910">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3425271641149672912">
+            <property name="value" value="true" />
+          </node>
+        </node>
       </node>
       <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.IfMacro" id="5711848865190532573">
         <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition" id="5711848865190532574">
@@ -1860,6 +1913,11 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3425271641149672913">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="3425271641149672915">
+            <property name="value" value="true" />
           </node>
         </node>
       </node>

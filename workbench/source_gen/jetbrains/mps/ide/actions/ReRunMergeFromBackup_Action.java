@@ -87,7 +87,7 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
     try {
       File[] backupFiles = ReRunMergeFromBackup_Action.this.getBackupFiles();
       if (backupFiles.length == 0) {
-        Messages.showInfoMessage("Suitable Backup File For Model\n" + ReRunMergeFromBackup_Action.this.model + "\nWas Not Found", "Backup File Not Found");
+        Messages.showInfoMessage("Suitable backup file for model\n" + ReRunMergeFromBackup_Action.this.model + "\nwas not found.", "Backup File Not Found");
         return;
       }
       File latestBackup = backupFiles[0];

@@ -6,15 +6,11 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import java.util.List;
+import jetbrains.mps.nodeEditor.EditorContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import com.intellij.openapi.actionSystem.DataContext;
@@ -27,8 +23,10 @@ import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.ui.awt.RelativePoint;
 import java.awt.Point;
 import jetbrains.mps.workbench.action.BaseGroup;
+import java.util.List;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.intentions.Intention;
+import java.util.ArrayList;
 import jetbrains.mps.intentions.IntentionsManager;
 import jetbrains.mps.intentions.SurroundWithIntention;
 import java.util.Collections;
@@ -39,14 +37,13 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(SurroundWithIntentions_Action.class);
 
-  private EditorContext editorContext;
   private SNode selectedNode;
-  private List<SNode> nodes;
+  private EditorContext editorContext;
 
   public SurroundWithIntentions_Action() {
     super("Show Surround with Intentions Menu", "", ICON);
-    this.setIsAlwaysVisible(true);
-    this.setExecuteOutsideCommand(false);
+    this.setIsAlwaysVisible(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull
@@ -79,23 +76,6 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
     if (this.selectedNode == null) {
       return false;
     }
-    {
-      List<SNode> nodes = event.getData(MPSDataKeys.NODES);
-      boolean error = false;
-      if (nodes != null) {
-        for (SNode node : ListSequence.fromList(nodes)) {
-          if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Statement"))) {
-            error = true;
-            break;
-          }
-        }
-      }
-      if (error || nodes == null) {
-        this.nodes = null;
-      } else {
-        this.nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes);
-      }
-    }
     this.editorContext = event.getData(MPSDataKeys.EDITOR_CONTEXT);
     if (this.editorContext == null) {
       return false;
@@ -117,7 +97,7 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
           ActionGroup group = SurroundWithIntentions_Action.this.getIntentionGroup();
           ListPopup popup = null;
           if (group != null) {
-            popup = JBPopupFactory.getInstance().createActionGroupPopup("Surround with", group, dataContext, JBPopupFactory.ActionSelectionAid.MNEMONICS, false);
+            popup = JBPopupFactory.getInstance().createActionGroupPopup("Surround with", group, dataContext, JBPopupFactory.ActionSelectionAid.ALPHA_NUMBERING, false);
           }
           return popup;
         }
@@ -136,15 +116,7 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
   private BaseGroup getIntentionGroup() {
     BaseGroup group = new BaseGroup("");
     List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
-    SNode nodeWithIntentions;
-    if (SurroundWithIntentions_Action.this.nodes != null) {
-      nodeWithIntentions = ListSequence.fromList(SurroundWithIntentions_Action.this.nodes).last();
-    } else if (SNodeOperations.isInstanceOf(SurroundWithIntentions_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.Statement") || SNodeOperations.isInstanceOf(SurroundWithIntentions_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.Expression")) {
-      nodeWithIntentions = SurroundWithIntentions_Action.this.selectedNode;
-    } else {
-      nodeWithIntentions = SNodeOperations.getAncestor(SurroundWithIntentions_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
-    }
-    groupItems.addAll(IntentionsManager.getInstance().getAvailableIntentions(nodeWithIntentions, SurroundWithIntentions_Action.this.editorContext, null, SurroundWithIntention.class));
+    groupItems.addAll(IntentionsManager.getInstance().getAvailableIntentions(SurroundWithIntentions_Action.this.selectedNode, SurroundWithIntentions_Action.this.editorContext, null, SurroundWithIntention.class));
     if (groupItems.isEmpty()) {
       return null;
     }

@@ -6,13 +6,18 @@ import jetbrains.mps.intentions.SurroundWithIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SurroundWithParenthesis_Intention extends SurroundWithIntention {
   public SurroundWithParenthesis_Intention() {
   }
 
+  public boolean isAvailableInChildNodes() {
+    return true;
+  }
+
   public String getDescription(SNode p0, EditorContext p1) {
-    return "( expr )";
+    return "( expression )";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
@@ -23,7 +28,15 @@ public class SurroundWithParenthesis_Intention extends SurroundWithIntention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return editorContext.getSelectedNodes().size() == 1;
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
+      return false;
+    }
+    if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AssignmentExpression")) {
+      if (SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.AssignmentExpression"), "lValue", true) == node) {
+        return false;
+      }
+    }
+    return true;
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

@@ -15,6 +15,10 @@ public class SurroundWithIfElse_Intention extends SurroundWithIntention {
   public SurroundWithIfElse_Intention() {
   }
 
+  public boolean isAvailableInChildNodes() {
+    return true;
+  }
+
   public String getDescription(SNode p0, EditorContext p1) {
     return "If / Else";
   }

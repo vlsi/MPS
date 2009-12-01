@@ -12,6 +12,10 @@ public class SurroundWithNegation_Intention extends SurroundWithIntention {
   public SurroundWithNegation_Intention() {
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getDescription(SNode p0, EditorContext p1) {
     return "!(expr)";
   }

@@ -25,6 +25,10 @@ public class GenerateConstructor_Intention extends GenerateIntention {
     return "Constructor";
   }
 
+  public boolean isAvailableInChildNodes() {
+    return true;
+  }
+
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {
     if (!(this.isApplicableToNode(node, editorContext))) {
       return false;
@@ -33,7 +37,7 @@ public class GenerateConstructor_Intention extends GenerateIntention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).isEmpty();
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true)).isEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

@@ -15,6 +15,10 @@ public class SurroundWithForEach_Intention extends SurroundWithIntention {
   public SurroundWithForEach_Intention() {
   }
 
+  public boolean isAvailableInChildNodes() {
+    return true;
+  }
+
   public String getDescription(SNode p0, EditorContext p1) {
     return "For Each";
   }

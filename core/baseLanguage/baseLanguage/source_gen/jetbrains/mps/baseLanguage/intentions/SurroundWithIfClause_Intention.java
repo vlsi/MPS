@@ -6,10 +6,15 @@ import jetbrains.mps.intentions.SurroundWithIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class SurroundWithIfClause_Intention extends SurroundWithIntention {
   public SurroundWithIfClause_Intention() {
+  }
+
+  public boolean isAvailableInChildNodes() {
+    return false;
   }
 
   public String getDescription(SNode p0, EditorContext p1) {
@@ -24,7 +29,7 @@ public class SurroundWithIfClause_Intention extends SurroundWithIntention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return editorContext.getSelectedNodes().size() == 1 && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+    return editorContext.getSelectedNodes().size() == 1 && SNodeOperations.isInstanceOf(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.BooleanType");
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

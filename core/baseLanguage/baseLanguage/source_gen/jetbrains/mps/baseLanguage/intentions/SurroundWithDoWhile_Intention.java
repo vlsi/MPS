@@ -15,6 +15,10 @@ public class SurroundWithDoWhile_Intention extends SurroundWithIntention {
   public SurroundWithDoWhile_Intention() {
   }
 
+  public boolean isAvailableInChildNodes() {
+    return true;
+  }
+
   public String getDescription(SNode p0, EditorContext p1) {
     return "Do / While";
   }

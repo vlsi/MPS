@@ -15,6 +15,10 @@ public class SurroundWithBrackets_Intention extends SurroundWithIntention {
   public SurroundWithBrackets_Intention() {
   }
 
+  public boolean isAvailableInChildNodes() {
+    return true;
+  }
+
   public String getDescription(SNode p0, EditorContext p1) {
     return "{ }";
   }

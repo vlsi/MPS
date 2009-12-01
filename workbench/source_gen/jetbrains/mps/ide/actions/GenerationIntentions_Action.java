@@ -10,7 +10,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
@@ -44,7 +43,7 @@ public class GenerationIntentions_Action extends GeneratedAction {
   public GenerationIntentions_Action() {
     super("Show Generation Intentions Menu", "Shows the popup menu with available generation intentions", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull
@@ -52,16 +51,9 @@ public class GenerationIntentions_Action extends GeneratedAction {
     return "alt INSERT";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return (SNodeOperations.getAncestor(GenerationIntentions_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false) != null);
-  }
-
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      {
-        boolean enabled = this.isApplicable(event);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "GenerationIntentions", t);
@@ -105,7 +97,7 @@ public class GenerationIntentions_Action extends GeneratedAction {
           ActionGroup group = GenerationIntentions_Action.this.getIntentionGroup();
           ListPopup popup = null;
           if (group != null) {
-            popup = JBPopupFactory.getInstance().createActionGroupPopup("Generate", group, dataContext, JBPopupFactory.ActionSelectionAid.SPEEDSEARCH, false);
+            popup = JBPopupFactory.getInstance().createActionGroupPopup("Generate", group, dataContext, JBPopupFactory.ActionSelectionAid.NUMBERING, false);
           }
           return popup;
         }
@@ -124,13 +116,7 @@ public class GenerationIntentions_Action extends GeneratedAction {
   private BaseGroup getIntentionGroup() {
     BaseGroup group = new BaseGroup("");
     List<Pair<Intention, SNode>> groupItems = new ArrayList<Pair<Intention, SNode>>();
-    SNode classConcept;
-    if (SNodeOperations.isInstanceOf(GenerationIntentions_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      classConcept = SNodeOperations.cast(GenerationIntentions_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    } else {
-      classConcept = SNodeOperations.getAncestor(GenerationIntentions_Action.this.selectedNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    }
-    groupItems.addAll(IntentionsManager.getInstance().getAvailableIntentions(classConcept, GenerationIntentions_Action.this.editorContext, null, GenerateIntention.class));
+    groupItems.addAll(IntentionsManager.getInstance().getAvailableIntentions(GenerationIntentions_Action.this.selectedNode, GenerationIntentions_Action.this.editorContext, null, GenerateIntention.class));
     if (groupItems.isEmpty()) {
       return null;
     }
@@ -146,17 +132,17 @@ public class GenerationIntentions_Action extends GeneratedAction {
     for (final Pair<Intention, SNode> pair : groupItems) {
       BaseAction action = new BaseAction(pair.getFirst().getDescription(pair.getSecond(), GenerationIntentions_Action.this.editorContext)) {
         protected void doExecute(AnActionEvent p0) {
-          GenerateIntention generateIntention = (GenerateIntention)pair.getFirst();
+          final GenerateIntention generateIntention = (GenerateIntention)pair.getFirst();
           if (generateIntention.executeUI(pair.getSecond(), GenerationIntentions_Action.this.editorContext)) {
             ModelAccess.instance().runCommandInEDT(new Runnable() {
               public void run() {
-                pair.getFirst().execute(pair.getSecond(), GenerationIntentions_Action.this.editorContext);
+                generateIntention.execute(pair.getSecond(), GenerationIntentions_Action.this.editorContext);
               }
             });
           }
         }
       };
-      // <node> 
+      action.setExecuteOutsideCommand(true);
       group.add(action);
     }
     return group;

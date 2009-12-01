@@ -6,6 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.IEditor;
@@ -50,12 +51,18 @@ public class CreateMethodDeclaration_Intention extends BaseIntention {
     SNode classifier = CreateMethodDeclarationUtil.getClassifier(node);
     boolean isSameClassifier = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == classifier;
     final String name = CreateMethodDeclarationUtil.getMethodName(editorContext);
-    SNode method = new _Quotations.QuotationClass_16().createNode(name);
+    SNode type;
+    if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type")) {
+      type = SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type");
+    } else {
+      type = new _Quotations.QuotationClass_13().createNode();
+    }
+    SNode method = new _Quotations.QuotationClass_17().createNode(type, name);
     if (!(isSameClassifier)) {
-      SLinkOperations.setTarget(method, "visibility", new _Quotations.QuotationClass_18().createNode(), true);
+      SLinkOperations.setTarget(method, "visibility", new _Quotations.QuotationClass_19().createNode(), true);
     }
     SLinkOperations.addChild(classifier, "method", method);
-    SNodeOperations.replaceWithAnother(node, new _Quotations.QuotationClass_17().createNode(method));
+    SNodeOperations.replaceWithAnother(node, new _Quotations.QuotationClass_18().createNode(method));
     if (isSameClassifier) {
       editorContext.selectWRTFocusPolicy(method);
     } else {

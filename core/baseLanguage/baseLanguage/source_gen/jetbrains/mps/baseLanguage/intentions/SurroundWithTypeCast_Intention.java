@@ -13,6 +13,10 @@ public class SurroundWithTypeCast_Intention extends SurroundWithIntention {
   public SurroundWithTypeCast_Intention() {
   }
 
+  public boolean isAvailableInChildNodes() {
+    return false;
+  }
+
   public String getDescription(SNode p0, EditorContext p1) {
     return "(Type) expr";
   }
