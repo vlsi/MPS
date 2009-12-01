@@ -92,7 +92,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
     myUsePropertiesAsMacro = usePropertiesAsMacro;
   }
 
-  public void addConfiguredJvmArg(JvmArg jvmArg) {
+  public void addConfiguredJvmArg(Arg jvmArg) {
     if (!myFork) {
       throw new BuildException("Nested jvmarg is only allowed in fork mode.");
     }

@@ -2,7 +2,7 @@ package jetbrains.mps.build.ant;
 
 import org.apache.tools.ant.ProjectComponent;
 
-public class JvmArg extends ProjectComponent {
+public class Arg extends ProjectComponent {
   private String myValue;
 
   public String getValue() {

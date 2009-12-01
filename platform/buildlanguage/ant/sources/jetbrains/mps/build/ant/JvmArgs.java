@@ -10,8 +10,12 @@ public class JvmArgs extends DataType {
   private final List<String> myDefaultArgsPatterns = Arrays.asList("Xss", "Xmx", "MaxPermSize=");
 
 
-  public void addConfiguredArg(JvmArg arg) {
+  public void addConfiguredArg(Arg arg) {
     myArgs.add(arg.getValue());
+  }
+
+  public void addConfiguredJvmArgs(JvmArgs jvmargs){
+    myArgs.addAll(jvmargs.getArgs());
   }
 
   public List<String> getArgs() {
