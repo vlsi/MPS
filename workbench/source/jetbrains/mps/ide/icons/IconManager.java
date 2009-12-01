@@ -18,6 +18,7 @@ package jetbrains.mps.ide.icons;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.GlobalScope;
@@ -84,6 +85,14 @@ public class IconManager {
         }
 
         return result;
+      }
+    });
+  }
+
+  public static Icon getAdditionalIconFor(@NotNull final SNode node) {
+    return ModelAccess.instance().runReadAction(new Computable<Icon>() {
+      public Icon compute() {
+        return BaseConcept_Behavior.call_getAdditionalIcon_5017341185733863694(node);        
       }
     });
   }

@@ -107,7 +107,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
 
     setText(caclulateNodeTextPresentation());
-    setAdditionalIcon(BaseConcept_Behavior.call_getAdditionalIcon_5017341185733863694(myNode));
+    setAdditionalIcon(IconManager.getAdditionalIconFor(myNode));
     setAutoExpandable(myNode != null && !myNode.isRoot());
   }
 
