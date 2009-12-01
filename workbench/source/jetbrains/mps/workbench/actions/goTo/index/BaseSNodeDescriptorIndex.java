@@ -86,7 +86,7 @@ public abstract class BaseSNodeDescriptorIndex extends ScalarIndexExtension<SNod
             SModel model = inputData.getUserData(PARSED_MODEL);
 
             if (model == null) {
-              model = ModelPersistence.readModel(inputData.getContent());
+              model = ModelPersistence.readModel(inputData.getContentAsText());
               if (model != null) {
                 model.setLoading(true);
               }

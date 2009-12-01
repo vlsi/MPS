@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel.persistence.def;
 
+import com.intellij.util.text.CharArrayUtil;
+import com.intellij.util.text.CharSequenceReader;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
@@ -36,8 +38,9 @@ import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.io.ByteArrayInputStream;
+import java.io.CharArrayReader;
 import java.io.IOException;
+import java.io.Reader;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -146,10 +149,13 @@ public class ModelPersistence {
     return model;
   }
 
-  public static SModel readModel(byte[] bytes) throws JDOMException, IOException {
-    Document doc = loadDocument(new ByteArrayInputStream(bytes));
+  public static SModel readModel(CharSequence data) throws JDOMException, IOException {
+    final char[] charsArray = CharArrayUtil.fromSequenceWithoutCopying(data);
+    Reader reader = charsArray != null ? new CharArrayReader(charsArray, 0, data.length()) : new CharSequenceReader(data);
+
+    Document doc = loadDocument(reader);
     int modelPersistenceVersion = getModelPersistenceVersion(doc);
-    Matcher matcher = myModelPattern.matcher(new String(bytes));
+    Matcher matcher = myModelPattern.matcher(data);
     if (!matcher.find()) return null;
     SModelReference modelReference = SModelReference.fromString(matcher.group(1));
     String modelStereotype = modelReference.getStereotype();
