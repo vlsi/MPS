@@ -52,7 +52,6 @@
   <import index="155" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <import index="156" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="157" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
-  <import index="158" modelUID="r:c1b35898-7af6-477d-8634-0fc71606d4ff(jetbrains.mps.lang.structure.generator_new.baseLanguage@5_0)" version="-1" />
   <import index="159" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="7367456871926097103">
     <property name="name" value="OrdinaryWithInnerClass" />
