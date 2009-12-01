@@ -22,6 +22,7 @@ import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vcs.VcsDirectoryMapping;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.vcs.ui.VcsIdeSettings.VcsRootsDiscoveryPolicy;
@@ -49,7 +50,8 @@ public class VcsRootsManager implements ProjectComponent {
   private final SModelAdapter myGlobalSModelListener = new SModelAdapter() {
     @Override
     public void modelSaved(SModelDescriptor sm) {
-      if (ApplicationLevelVcsManager.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.DO_NOTING)) {
+      if (ApplicationLevelVcsManager.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.DO_NOTING) ||
+        ApplicationManager.getApplication().isUnitTestMode()) {
         return;
       }
       try {
@@ -87,7 +89,9 @@ public class VcsRootsManager implements ProjectComponent {
 
   public void projectOpened() {
     if (ApplicationLevelVcsManager.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.ADD)) {
-      addDirectoryMappings();
+      if (!ApplicationManager.getApplication().isUnitTestMode()) {
+        addDirectoryMappings();
+      }
     }
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalSModelListener);
   }
