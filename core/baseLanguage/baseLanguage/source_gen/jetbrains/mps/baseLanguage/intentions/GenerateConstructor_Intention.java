@@ -33,7 +33,8 @@ public class GenerateConstructor_Intention extends GenerateIntention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true)).isEmpty();
+    ListSequence.fromList(SLinkOperations.getTargets(node, "constructor", true)).isEmpty();
+    return true;
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
@@ -59,7 +60,8 @@ public class GenerateConstructor_Intention extends GenerateIntention {
 
   public boolean executeUI(final SNode node, final EditorContext editorContext) {
     SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, null, node);
-    selectFieldsDialog.setVisible(true);
+    selectFieldsDialog.showDialog();
+
     return true;
   }
 

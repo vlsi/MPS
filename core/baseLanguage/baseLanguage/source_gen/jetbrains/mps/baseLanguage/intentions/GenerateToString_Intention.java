@@ -49,25 +49,25 @@ public class GenerateToString_Intention extends GenerateIntention {
     for (SNode field : fields) {
       SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
       SLinkOperations.setTarget(fieldRef, "fieldDeclaration", field, false);
-      SNode item = new _Quotations.QuotationClass_6().createNode(((field == firstField ?
+      SNode item = new _Quotations.QuotationClass_7().createNode(((field == firstField ?
         "" :
         ", "
       )) + SPropertyOperations.getString(field, "name") + "=");
-      SNode dotExpression = new _Quotations.QuotationClass_35().createNode(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), fieldRef);
+      SNode dotExpression = new _Quotations.QuotationClass_36().createNode(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), fieldRef);
       if (field == firstField) {
-        currentExpression = new _Quotations.QuotationClass_28().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
-        currentExpression = new _Quotations.QuotationClass_37().createNode(dotExpression, currentExpression);
+        currentExpression = new _Quotations.QuotationClass_29().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
+        currentExpression = new _Quotations.QuotationClass_38().createNode(dotExpression, currentExpression);
       } else {
-        currentExpression = new _Quotations.QuotationClass_7().createNode(item, currentExpression);
-        currentExpression = new _Quotations.QuotationClass_36().createNode(dotExpression, currentExpression);
+        currentExpression = new _Quotations.QuotationClass_8().createNode(item, currentExpression);
+        currentExpression = new _Quotations.QuotationClass_37().createNode(dotExpression, currentExpression);
       }
     }
     if (ListSequence.fromList(fields).isEmpty()) {
-      rightmostExpression = new _Quotations.QuotationClass_18().createNode(SPropertyOperations.getString(classConcept, "name") + "{}");
+      rightmostExpression = new _Quotations.QuotationClass_19().createNode(SPropertyOperations.getString(classConcept, "name") + "{}");
     } else {
-      rightmostExpression = new _Quotations.QuotationClass_8().createNode(currentExpression);
+      rightmostExpression = new _Quotations.QuotationClass_9().createNode(currentExpression);
     }
-    SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_5().createNode(rightmostExpression));
+    SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_6().createNode(rightmostExpression));
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext) {

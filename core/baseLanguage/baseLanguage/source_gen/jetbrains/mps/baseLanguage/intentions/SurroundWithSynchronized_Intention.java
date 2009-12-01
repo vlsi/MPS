@@ -16,7 +16,7 @@ public class SurroundWithSynchronized_Intention extends SurroundWithIntention {
   }
 
   public boolean isAvailableInChildNodes() {
-    return true;
+    return false;
   }
 
   public String getDescription(SNode p0, EditorContext p1) {

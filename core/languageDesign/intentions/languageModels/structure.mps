@@ -169,12 +169,13 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <maxImportIndex value="10" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
+  <import index="11" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1192794744107">
     <property name="rootable" value="true" />
     <property name="name" value="IntentionDeclaration" />
@@ -424,11 +425,21 @@
     <property name="iconPath" value="${language_descriptor}/icons/generate_intention.png" />
     <property name="rootable" value="true" />
     <link role="extends" targetNodeId="2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
+    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="4359456199356557608">
+      <property name="name" value="isAlwaysVisible" />
+      <link role="dataType" targetNodeId="1.1082983657063" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5180116501957618330">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="executeUI" />
       <property name="sourceCardinality" value="1" />
       <link role="target" targetNodeId="5180116501958013177" resolveInfo="ExecuteUIBlock" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4359456199356557540">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="parameter" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="4359456199357017245" resolveInfo="IntentionContextParameterDeclaration" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="2522969319638198293">
@@ -458,6 +469,31 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5180116501958013180">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1216468774225" resolveInfo="showName" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4359456199357017245">
+    <property name="name" value="IntentionContextParameterDeclaration" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4359456199357188671">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="type" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3.1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="4359456199357188672">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4359456199357025372">
+    <property name="name" value="IntentionContextParamReference" />
+    <link role="extends" targetNodeId="3.1068431790191" resolveInfo="Expression" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1349940517677186262">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="parameterDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="4359456199357017245" resolveInfo="IntentionContextParameterDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1349940517677473350">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1146528679895" resolveInfo="lvalue" />
     </node>
   </node>
 </model>

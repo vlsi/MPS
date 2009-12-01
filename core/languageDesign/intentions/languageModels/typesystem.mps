@@ -234,5 +234,66 @@
       <link role="concept" targetNodeId="1.3618415754251192144" resolveInfo="ConceptFunctionParameter_childNode" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="4359456199357025387">
+    <property name="name" value="typeof_IntentionContextParamRefOperation" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4359456199357025388">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="4359456199357025390">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="4359456199357025391">
+          <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4359456199357025392">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4359456199357025393">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4359456199357025401">
+                <link role="applicableNode" targetNodeId="4359456199357025389" resolveInfo="operation" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1349940517677614838">
+                <link role="link" targetNodeId="1.1349940517677186262" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4359456199357227406">
+              <link role="link" targetNodeId="1.4359456199357188671" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="4359456199357025397">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="4359456199357025398">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="4359456199357025400">
+              <link role="applicableNode" targetNodeId="4359456199357025389" resolveInfo="operation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="4359456199357025389">
+      <property name="name" value="operation" />
+      <link role="concept" targetNodeId="1.4359456199357025372" resolveInfo="IntentionContextParamRefOperation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1349940517677473367">
+    <property name="name" value="typeof_IntentionContextParameterDeclaration" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1349940517677473368">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1349940517677473374">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1349940517677473378">
+          <node role="normalType" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1349940517677473380">
+            <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1349940517677473379">
+              <link role="applicableNode" targetNodeId="1349940517677473369" resolveInfo="declaration" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1349940517677473384">
+              <link role="link" targetNodeId="1.4359456199357188671" />
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1349940517677473377">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1349940517677473371">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1349940517677473373">
+              <link role="applicableNode" targetNodeId="1349940517677473369" resolveInfo="declaration" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1349940517677473369">
+      <property name="name" value="declaration" />
+      <link role="concept" targetNodeId="1.4359456199357017245" resolveInfo="IntentionContextParameterDeclaration" />
+    </node>
+  </node>
 </model>
 

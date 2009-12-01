@@ -55,14 +55,14 @@ public class CreateMethodDeclaration_Intention extends BaseIntention {
     if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type")) {
       type = SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type");
     } else {
-      type = new _Quotations.QuotationClass_13().createNode();
+      type = new _Quotations.QuotationClass_14().createNode();
     }
-    SNode method = new _Quotations.QuotationClass_17().createNode(type, name);
+    SNode method = new _Quotations.QuotationClass_18().createNode(type, name);
     if (!(isSameClassifier)) {
-      SLinkOperations.setTarget(method, "visibility", new _Quotations.QuotationClass_20().createNode(), true);
+      SLinkOperations.setTarget(method, "visibility", new _Quotations.QuotationClass_21().createNode(), true);
     }
     SLinkOperations.addChild(classifier, "method", method);
-    SNodeOperations.replaceWithAnother(node, new _Quotations.QuotationClass_19().createNode(method));
+    SNodeOperations.replaceWithAnother(node, new _Quotations.QuotationClass_20().createNode(method));
     if (isSameClassifier) {
       editorContext.selectWRTFocusPolicy(method);
     } else {

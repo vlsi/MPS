@@ -44,7 +44,7 @@ public class AddMainMethod_Intention extends BaseIntention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode methodNode = new _Quotations.QuotationClass_16().createNode();
+    SNode methodNode = new _Quotations.QuotationClass_17().createNode();
     SLinkOperations.addChild(node, "staticMethod", methodNode);
     editorContext.select(methodNode);
   }

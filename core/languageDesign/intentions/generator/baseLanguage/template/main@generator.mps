@@ -2064,5 +2064,8 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="4359456199357159125">
+    <property name="name" value="MyGenerationIntentionsMap" />
+  </node>
 </model>
 
