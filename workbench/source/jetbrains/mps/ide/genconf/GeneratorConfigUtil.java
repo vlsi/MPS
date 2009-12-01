@@ -43,6 +43,8 @@ public class GeneratorConfigUtil {
       }
     }
 
+    inputModels.addAll(lang.getUtilModels());
+
     // add it from all generators
     List<Generator> list = lang.getGenerators();
     for (Generator generator : list) {
