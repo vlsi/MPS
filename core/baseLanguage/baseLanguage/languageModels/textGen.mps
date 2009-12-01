@@ -1603,6 +1603,7 @@
               <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="3408882292340161435">
                 <property name="value" value="(" />
               </node>
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="3916266371507645017" />
               <node role="part" type="jetbrains.mps.lang.textGen.structure.CollectionAppendPart" id="3408882292340161436">
                 <property name="separator" value=", " />
                 <property name="withSeparator" value="true" />
@@ -1696,6 +1697,7 @@
               </node>
             </node>
           </node>
+          <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="3916266371507687873" />
         </node>
       </node>
     </node>
