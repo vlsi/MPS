@@ -743,6 +743,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       }
     });
   }
+  
+  public void addAdditionalPainter(AdditionalPainter additionalPainter) {
+    if (!myAdditionalPainters.contains(additionalPainter)) {
+      myAdditionalPainters.add(additionalPainter);
+    }
+  }
+
+  public void removeAdditionalPainter(AdditionalPainter additionalPainter) {
+    myAdditionalPainters.remove(additionalPainter);
+  }
 
   public MessagesGutter getMessagesGutter() {
     return myMessagesGutter;
