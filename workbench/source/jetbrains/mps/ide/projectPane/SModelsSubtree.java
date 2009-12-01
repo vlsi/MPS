@@ -66,7 +66,7 @@ public class SModelsSubtree {
         builder.fillNode(rootTreeNode);
       } else {
         MPSTreeNode currentRootNode;
-        if (rootTreeNode instanceof ProjectLanguageTreeNode) {
+        if (rootTreeNode instanceof ProjectLanguageTreeNode || rootTreeNode instanceof TransientModelsTreeNode) {
           currentRootNode = rootTreeNode;
         } else {
           IModule contextModule = operationContext.getModule();
