@@ -42,10 +42,10 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
   }
 
   private SModelListener myModelListener = new SModelAdapter() {
-    public void beforeModelDisposed(SModelDescriptor sm) {
+    public void beforeModelDisposed(SModel sm) {
       synchronized (myLock) {
         for (SNode node : new ArrayList<SNode>(myNodesToContexts.keySet())) {
-          if (sm == node.getModel().getModelDescriptor()) {
+          if (sm == node.getModel()) {
             TypeCheckingContext typeCheckingContext = myNodesToContexts.remove(node);
             if (typeCheckingContext != null) {
               typeCheckingContext.dispose();

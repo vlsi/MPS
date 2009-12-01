@@ -404,7 +404,7 @@ public class SModel implements Iterable<SNode> {
     if (!canFireEvent()) return;
     for (SModelListener sModelListener : copyListeners()) {
       try {
-        sModelListener.beforeModelDisposed(getModelDescriptor());
+        sModelListener.beforeModelDisposed(this);
       } catch (Throwable t) {
         LOG.error(t);
       }
