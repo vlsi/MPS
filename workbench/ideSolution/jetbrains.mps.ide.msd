@@ -28,6 +28,7 @@
     <dependency reexport="false">c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</dependency>
     <dependency reexport="false">b83431fe-5c8f-40bc-8a36-65e25f4dd253(jetbrains.mps.lang.textGen)</dependency>
     <dependency reexport="false">d745e97c-8235-4470-b086-ba3da1f4c03c(jetbrains.mps.quickQueryLanguage)</dependency>
+    <dependency reexport="false">a20a42c8-ea20-45de-bc60-acb92cc25c46(jetbrains.mps.ide.uiLanguage)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)</usedLanguage>
