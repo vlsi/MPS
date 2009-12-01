@@ -86,7 +86,7 @@ public class VcsRootsManager implements ProjectComponent {
   }
 
   public void projectOpened() {
-    if (ApplicationLevelVcsManager.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.ADD)) {
+    if (!ApplicationLevelVcsManager.instance().getSettings().getDiscoverVcsRootsSafe().equals(VcsRootsDiscoveryPolicy.DO_NOTING)) {
       addDirectoryMappings();
     }
     GlobalSModelEventsManager.getInstance().addGlobalModelListener(myGlobalSModelListener);
