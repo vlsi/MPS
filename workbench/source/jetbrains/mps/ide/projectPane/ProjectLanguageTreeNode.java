@@ -185,5 +185,15 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     public boolean isFinalName() {
       return true;
     }
+
+    @Override
+    public String getStereotype() {
+      return SModelStereotype.NONE;
+    }
+
+    @Override
+    public boolean isStrict() {
+      return false;
+    }
   }
 }
