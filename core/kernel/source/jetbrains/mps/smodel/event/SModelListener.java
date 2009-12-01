@@ -75,5 +75,5 @@ public interface SModelListener {
 
   void modelReloaded(SModelDescriptor sm);
 
-  void beforeModelDisposed(SModel sm);
+  void beforeModelDisposed(SModelDescriptor sm);
 }
