@@ -57,6 +57,7 @@ import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.plugin.ParenthesisUtil;
 import jetbrains.mps.nodeEditor.CellSide;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
 import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
 import jetbrains.mps.util.Condition;
@@ -2568,10 +2569,17 @@ __switch__:
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null);
-          SNode cls = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null);
-          for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "actualArgument", true))) {
-            SLinkOperations.addChild(cls, "parameter", arg);
-          }
+          final SNode cls = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null);
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "actualArgument", true)).visitAll(new IVisitor<SNode>() {
+            public void visit(SNode it) {
+              SLinkOperations.addChild(cls, "actualArgument", it);
+            }
+          });
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeParameter", true)).visitAll(new IVisitor<SNode>() {
+            public void visit(SNode it) {
+              SLinkOperations.addChild(cls, "typeParameter", it);
+            }
+          });
           SLinkOperations.setTarget(cls, "classifier", SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getSourceNode(), "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
           SLinkOperations.setTarget(creator, "cls", cls, true);
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), creator);
