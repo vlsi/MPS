@@ -12235,5 +12235,61 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions" id="973073204985267452">
+    <property name="package" value="sideTransforms" />
+    <property name="name" value="returnStatement" />
+    <node role="actionsBuilder" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder" id="973073204985267453">
+      <property name="description" value="adding expression to the empty ReturnStatement" />
+      <link role="applicableConcept" targetNodeId="1.1068581242878" resolveInfo="ReturnStatement" />
+      <node role="part" type="jetbrains.mps.lang.actions.structure.AddMenuPart" id="973073204985267459">
+        <link role="concept" targetNodeId="1.1068581242878" resolveInfo="ReturnStatement" />
+        <node role="part" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart" id="973073204985267467">
+          <node role="handler" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler" id="973073204985267468">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="973073204985267469">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8547191361977940310">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8547191361977940317">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8547191361977940312">
+                    <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="8547191361977940311" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="8547191361977940316">
+                      <link role="link" targetNodeId="1.1068581517676" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation" id="8547191361977940321" />
+                </node>
+              </node>
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="973073204985268012">
+                <node role="expression" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="973073204985268016" />
+              </node>
+            </node>
+          </node>
+          <node role="matchingText" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_String" id="973073204985267471">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="973073204985267472">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="973073204985267981">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8547191361977809732">
+                  <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_pattern" id="973073204985267982" />
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.TrimOperation" id="8547191361977810093" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="precondition" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction" id="973073204985387041">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="973073204985387042">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="973073204985390473">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="973073204985390480">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="973073204985390475">
+                <node role="operand" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode" id="973073204985390474" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="973073204985390479">
+                  <link role="link" targetNodeId="1.1068581517676" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation" id="973073204985390484" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

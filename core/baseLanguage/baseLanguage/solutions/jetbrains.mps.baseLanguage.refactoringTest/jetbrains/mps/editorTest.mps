@@ -5647,5 +5647,268 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="8547191361977403062">
+    <property name="package" value="bugTest.return" />
+    <property name="name" value="ReturnFollowerByVarName" />
+    <property name="description" value="Checking tight transform action on typing variable name after return statement (see http://youtrack.jetbrains.net/issue/MPS-6152)" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="8547191361977426854">
+      <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8547191361977426855">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8547191361977426856">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8547191361977426857">
+            <property name="name" value="var" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="8547191361977426858" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8547191361977460835">
+              <property name="value" value="0" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8547191361977426908">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="8547191361977426909">
+            <property name="isLastPosition" value="true" />
+            <property name="useLabelSelection" value="true" />
+            <property name="selectionStart" value="6" />
+            <property name="selectionEnd" value="6" />
+            <property name="cellId" value="Constant_7565_1" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8547191361977426912">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="8547191361977426913">
+        <property name="keys" value="var" />
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="8547191361977426915">
+      <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8547191361977426916">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8547191361977426917">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8547191361977426918">
+            <property name="name" value="var" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="8547191361977426919" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8547191361977460836">
+              <property name="value" value="0" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8547191361977426923">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8547191361977475770">
+            <link role="variableDeclaration" targetNodeId="8547191361977426918" resolveInfo="var" />
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="8547191361978066636">
+              <property name="isLastPosition" value="true" />
+              <property name="useLabelSelection" value="true" />
+              <property name="selectionStart" value="3" />
+              <property name="selectionEnd" value="3" />
+              <property name="cellId" value="property_name" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="8547191361977486335">
+    <property name="package" value="bugTest.return" />
+    <property name="name" value="ReturnFollowedBySpaceVarName" />
+    <property name="description" value="Checking tight transform action on typing space + variable name after return statement (see http://youtrack.jetbrains.net/issue/MPS-6152)" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="8547191361977497076">
+      <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8547191361977497077">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8547191361977497078">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8547191361977497079">
+            <property name="name" value="var" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="8547191361977497080" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8547191361977497081">
+              <property name="value" value="0" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8547191361977497083">
+          <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="8547191361977497084">
+            <property name="isLastPosition" value="true" />
+            <property name="useLabelSelection" value="true" />
+            <property name="selectionStart" value="6" />
+            <property name="selectionEnd" value="6" />
+            <property name="cellId" value="Constant_7565_1" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="8547191361977497085">
+      <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8547191361977497086">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="8547191361977497087">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="8547191361977497088">
+            <property name="name" value="var" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="8547191361977497089" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8547191361977497090">
+              <property name="value" value="0" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8547191361977638945">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.Expression" id="8547191361977638946">
+            <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="8547191361977780324">
+              <property name="isLastPosition" value="true" />
+              <property name="useLabelSelection" value="true" />
+              <property name="selectionStart" value="0" />
+              <property name="selectionEnd" value="0" />
+              <property name="cellId" value="Custom_6116_0" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8547191361977497095">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="8547191361977497096">
+        <property name="keys" value=" " />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="8547191361978247892">
+    <property name="package" value="bugTest.anonymousClassCreator" />
+    <property name="name" value="DeleteOpenCurlyBrace" />
+    <property name="description" value="Deleting &quot;{&quot; in the beggining of AnonymousClass should transform containing AnonymousClassCreator to ClassCreator (see http://youtrack.jetbrains.net/issue/MPS-6049)" />
+    <node role="nodeToEdit" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8547191361978288727">
+      <property name="name" value="Container" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8547191361978288728" />
+      <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8547191361978288735">
+        <property name="name" value="InnerClass" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8547191361978288736" />
+        <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="8547191361978288737">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8547191361978288738" />
+          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8547191361978288739" />
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8547191361978288740" />
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8547191361978288745">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="8547191361978288746" />
+          </node>
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8547191361978288747">
+            <property name="name" value="st" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="8547191361978288749" />
+          </node>
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8547191361978288750">
+            <property name="name" value="b" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8547191361978288752" />
+          </node>
+        </node>
+        <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="8547191361978288742">
+          <property name="name" value="T1" />
+        </node>
+        <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="8547191361978288743">
+          <property name="name" value="T2" />
+        </node>
+        <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="8547191361978288744">
+          <property name="name" value="T3" />
+        </node>
+      </node>
+      <node role="instanceInitializer" type="jetbrains.mps.baseLanguage.structure.InstanceInitializer" id="8547191361978288753">
+        <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8547191361978288754">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8547191361978288755">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8547191361978288756">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="8547191361978288773">
+                <node role="cls" type="jetbrains.mps.baseLanguage.structure.AnonymousClass" id="8547191361978288774">
+                  <property name="nonStatic" value="true" />
+                  <link role="classifier" targetNodeId="8547191361978288735" resolveInfo="Container.InnerClass" />
+                  <link role="baseMethodDeclaration" targetNodeId="8547191361978288737" resolveInfo="InnerClass" />
+                  <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8547191361978288775" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8547191361978288759">
+                    <property name="value" value="2" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8547191361978288761">
+                    <property name="value" value="x" />
+                  </node>
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8547191361978288763">
+                    <property name="value" value="false" />
+                  </node>
+                  <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8547191361978288765">
+                    <link role="classifier" targetNodeId="1.~Object" resolveInfo="Object" />
+                  </node>
+                  <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8547191361978288770">
+                    <link role="classifier" targetNodeId="1.~Boolean" resolveInfo="Boolean" />
+                  </node>
+                  <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8547191361978288769">
+                    <link role="classifier" targetNodeId="1.~Integer" resolveInfo="Integer" />
+                  </node>
+                  <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="8547191361978506503">
+                    <property name="isLastPosition" value="true" />
+                    <property name="useLabelSelection" value="true" />
+                    <property name="selectionStart" value="1" />
+                    <property name="selectionEnd" value="1" />
+                    <property name="cellId" value="Constant_1871_0" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8547191361978288782">
+      <property name="name" value="Container" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8547191361978288783" />
+      <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="8547191361978288784">
+        <property name="name" value="InnerClass" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8547191361978288785" />
+        <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="8547191361978288786">
+          <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8547191361978288787" />
+          <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8547191361978288788" />
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8547191361978288789" />
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8547191361978288790">
+            <property name="name" value="i" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="8547191361978288791" />
+          </node>
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8547191361978288792">
+            <property name="name" value="st" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="8547191361978288793" />
+          </node>
+          <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8547191361978288794">
+            <property name="name" value="b" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8547191361978288795" />
+          </node>
+        </node>
+        <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="8547191361978288796">
+          <property name="name" value="T1" />
+        </node>
+        <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="8547191361978288797">
+          <property name="name" value="T2" />
+        </node>
+        <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="8547191361978288798">
+          <property name="name" value="T3" />
+        </node>
+      </node>
+      <node role="instanceInitializer" type="jetbrains.mps.baseLanguage.structure.InstanceInitializer" id="8547191361978288799">
+        <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8547191361978288800">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8547191361978288801">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8547191361978288802">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="8547191361978288812">
+                <link role="baseMethodDeclaration" targetNodeId="8547191361978288786" resolveInfo="InnerClass" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8547191361978288809">
+                  <link role="classifier" targetNodeId="1.~Object" resolveInfo="Object" />
+                </node>
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8547191361978288810">
+                  <link role="classifier" targetNodeId="1.~Boolean" resolveInfo="Boolean" />
+                </node>
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8547191361978288811">
+                  <link role="classifier" targetNodeId="1.~Integer" resolveInfo="Integer" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="8547191361978288806">
+                  <property name="value" value="2" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8547191361978288807">
+                  <property name="value" value="x" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8547191361978288808">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8547191361978288813">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="8547191361978288815">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="8547191361978288816">
+          <property name="keycode" value="VK_BACK_SPACE" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
