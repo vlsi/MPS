@@ -1081,6 +1081,14 @@ public class QueriesGenerated {
     return QueriesUtil.getGeneratedClassByAncestor(SLinkOperations.getTarget(_context.getNode(), "query", true), _context);
   }
 
+  public static Object referenceMacro_GetReferent_7597241200646474791(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "functionNode", true), "styleParameter_query_method");
+  }
+
+  public static Object referenceMacro_GetReferent_7597241200646474801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SNodeOperations.cast(QueriesUtil.getGeneratedClassByAncestor(SLinkOperations.getTarget(_context.getNode(), "functionNode", true), _context), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+  }
+
   public static Object referenceMacro_GetReferent_8313721352726742448(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode generatedClass = SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass"), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     return ListSequence.fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();

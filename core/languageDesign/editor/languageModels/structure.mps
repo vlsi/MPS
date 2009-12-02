@@ -4604,5 +4604,33 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7597241200646296617">
+    <property name="package" value="Stylesheet" />
+    <property name="name" value="ReferenceTargetStyleClassItem" />
+    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7597241200646296626">
+      <property name="value" value="reference-target" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7597241200646296618">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="functionNode" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="7597241200646296619" resolveInfo="QueryFunction_SNode" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7597241200646296619">
+    <property name="package" value="QueryFunction.Style" />
+    <property name="name" value="QueryFunction_SNode" />
+    <link role="extends" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="7597241200646296622">
+      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" resolveInfo="conceptFunctionReturnType" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="7597241200646296624" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7597241200646296621">
+      <property name="value" value="snode function" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 

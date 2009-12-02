@@ -118,5 +118,7 @@ public class StyleAttributes {
 
   public static final StyleAttribute<ScriptKind> SCRIPT_KIND = new SimpleStyleAttribute<ScriptKind>("script-kind", ScriptKind.NORMAL);
   public static final StyleAttribute<Integer> ORIGINAL_FONT_SIZE = new SimpleStyleAttribute<Integer>("original-font-size");
-  public static final StyleAttribute<TableComponent> TABLE_COMPONENT = new SimpleStyleAttribute<TableComponent>("table-component", TableComponent.HORIZONTAL_COLLECTION); 
+  public static final StyleAttribute<TableComponent> TABLE_COMPONENT = new SimpleStyleAttribute<TableComponent>("table-component", TableComponent.HORIZONTAL_COLLECTION);
+
+  public static final StyleAttribute<SNode> REFERENCE_TARGET = new SimpleStyleAttribute<SNode>("reference-target");
 }

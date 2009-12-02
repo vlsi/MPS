@@ -35,7 +35,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
   private SNode node;
 
   public GoByCurrentReference_Action() {
-    super("Go By Current Reference", "", ICON);
+    super("Go by Current Reference", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -46,9 +46,6 @@ public class GoByCurrentReference_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    if (GoByCurrentReference_Action.this.node.getReferences().isEmpty()) {
-      return false;
-    }
     SNode targetNode = GoByCurrentReference_Action.this.cell.getSNodeWRTReference();
     if (targetNode == null) {
       return false;

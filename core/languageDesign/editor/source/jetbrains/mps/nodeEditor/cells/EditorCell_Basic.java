@@ -250,6 +250,10 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public SNode getSNodeWRTReference() {
+    SNode target = getStyle().get(StyleAttributes.REFERENCE_TARGET);
+    if (target != null) {
+      return target;
+    }
     SNode node = getSNode();
     SNode operationNode = null;
     LinkDeclaration linkDeclaration = SModelUtil_new.getGenuineLinkDeclaration(getLinkDeclaration());

@@ -9383,5 +9383,22 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="7597241200646296627">
+    <property name="package" value="Stylesheet" />
+    <link role="conceptDeclaration" targetNodeId="2.7597241200646296617" resolveInfo="ReferenceTargetStyleClassItem" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="7597241200646300798">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="7597241200646300799" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="7597241200646300797">
+        <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+        <link role="styleClass" targetNodeId="1194569818117" resolveInfo="item" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="7597241200646300803">
+        <property name="text" value=":" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="7597241200646300804">
+        <link role="relationDeclaration" targetNodeId="2.7597241200646296618" />
+      </node>
+    </node>
+  </node>
 </model>
 
