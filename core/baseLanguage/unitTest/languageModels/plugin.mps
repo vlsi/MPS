@@ -20849,8 +20849,8 @@
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="13814710162798278" />
             </node>
-            <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="13814710162798283">
-              <link role="member" targetNodeId="13814710162785676" resolveInfo="isSelectFirstFailed" />
+            <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="4333446894189065089">
+              <link role="member" targetNodeId="13814710162785679" resolveInfo="isTrackRunning" />
             </node>
           </node>
         </node>

@@ -173,7 +173,7 @@ public class TestToolbarPanel extends JPanel {
   }
 
   public boolean isTrackRunning() {
-    return this.preferences.getStateObject().isSelectFirstFailed;
+    return this.preferences.getStateObject().isTrackRunning;
   }
 
   public boolean isNeedSelectFirstFailedTest() {
