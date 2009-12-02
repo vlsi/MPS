@@ -26,9 +26,10 @@ public class TestTree extends MPSTree {
   private boolean isAllTree = true;
   private boolean isRebuilded = true;
 
-  public TestTree() {
+  public TestTree(boolean isAllTree) {
     this.tests = MapSequence.fromMap(new LinkedHashMap<SNode, List<SNode>>(16, (float)0.75, false));
     this.map = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
+    this.isAllTree = isAllTree;
     this.rebuildLater();
   }
 
