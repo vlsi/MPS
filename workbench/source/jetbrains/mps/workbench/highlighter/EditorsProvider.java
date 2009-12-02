@@ -105,6 +105,10 @@ public class EditorsProvider {
     }
   }
 
+  public List<MPSFileNodeEditor> getEditors() {
+    return myEditors;
+  }
+
   public List<IEditor> getAllEditors() {
     synchronized (myLock) {
       List<IEditor> result = new ArrayList<IEditor>();

@@ -20,6 +20,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.util.containers.HashMap;
 import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.MPSProjectHolder;
@@ -214,7 +215,7 @@ public class ProjectPluginManager implements ProjectComponent, PersistentStateCo
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         EditorsProvider editorsProvider = new EditorsProvider(myProject);
-        for (IEditor editor : editorsProvider.getAllEditors()) {
+        for (FileEditor editor : editorsProvider.getEditors()) {
           if (editor instanceof MPSFileNodeEditor) {
             ((MPSFileNodeEditor) editor).recreateEditor();
           }
