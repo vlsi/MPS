@@ -17187,6 +17187,15 @@
             </node>
           </node>
         </node>
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="7215000199738229149">
+          <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="7215000199738229150">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7215000199738229151">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7215000199738229155">
+                <node role="expression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="7215000199738229156" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="7342618720440049248">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="7342618720440049251">
@@ -17225,6 +17234,15 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="7215000199738229145">
+          <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="7215000199738229146">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7215000199738229147">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7215000199738229152">
+                <node role="expression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="7215000199738229153" />
               </node>
             </node>
           </node>
@@ -17271,6 +17289,15 @@
             </node>
           </node>
         </node>
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="7215000199738229138">
+          <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="7215000199738229139">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7215000199738229140">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7215000199738229141">
+                <node role="expression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="7215000199738229142" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
       <node role="beforeEquations" type="jetbrains.mps.lang.typesystem.structure.InequationReference" id="7138124054060425804">
         <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.LoopMacro" id="7138124054060425806">
@@ -17309,6 +17336,15 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="7215000199738226912">
+          <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="7215000199738226913">
+            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7215000199738226914">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7215000199738229134">
+                <node role="expression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="7215000199738229135" />
               </node>
             </node>
           </node>
