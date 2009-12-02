@@ -47,7 +47,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
 
   public void inspect(SNode node) {
     myInspector.inspectNode(node, getOperationContext());
-    myInspector.getHighlightManager().removeAllChanges(this);
+    removeAllChangesFrom(myInspector);
     myInspector.getHighlightManager().rebuildMessages();
     if (myInspector.getHighlightManager().getMessageFor(node) == null) {
       makeChangeBlocks(myInspector, new ArrayList(myChangeEditorMessages));
@@ -209,7 +209,7 @@ public abstract class DiffEditorComponent extends EditorComponent {
       } else {
         if (block.getY2() < cell.getY()) {
           configureBlock(block);
-          highlightManager.addChanges(component, block);
+          addBlock(component, block);
           block = new ChangesBlock();
         }
       }
@@ -217,7 +217,19 @@ public abstract class DiffEditorComponent extends EditorComponent {
       block.addChange(m, cell);
     }
     if (block != null) {
-      highlightManager.addChanges(component, block);
+      addBlock(component, block);
+    }
+  }
+
+  private void addBlock(EditorComponent component, ChangesBlock block) {
+    block.addTo(component);
+  }
+
+  private void removeAllChangesFrom(EditorComponent component) {
+    for (AdditionalPainter painter: getAdditionalPainters()) {
+      if (painter instanceof ChangesBlock) {
+        ((ChangesBlock) painter).removeFrom(component);        
+      }
     }
   }
 
@@ -229,8 +241,8 @@ public abstract class DiffEditorComponent extends EditorComponent {
       myInspector.getHighlightManager().removeMessage(message);
     }
     myInspector.getHighlightManager().rebuildMessages();
-    getHighlightManager().removeAllChanges(this);
-    myInspector.getHighlightManager().removeAllChanges(myInspector);
+    removeAllChangesFrom(this);
+    removeAllChangesFrom(myInspector);
   }
 
   public SNode getFirtsVisibleNode() {

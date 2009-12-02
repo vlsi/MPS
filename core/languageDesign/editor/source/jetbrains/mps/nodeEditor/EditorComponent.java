@@ -66,7 +66,6 @@ import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
 import jetbrains.mps.util.annotation.UseCarefully;
-import jetbrains.mps.vcs.diff.ui.ChangesBlock;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.ActionPlace;
@@ -1966,11 +1965,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         additionalPainter.paint(g, this);
       }
     }
-
-    //todo: rewrite via additional painters
-    for (ChangesBlock block : myHighlightManager.getChangesBlocks()) {
-      block.paint(g, getSize());
-    }
+    
   }
 
   public Dimension getPreferredSize() {

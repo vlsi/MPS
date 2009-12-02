@@ -17,6 +17,7 @@ package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorComponent;
+import jetbrains.mps.nodeEditor.AdditionalPainter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -28,15 +29,12 @@ import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.util.List;
 import java.util.ArrayList;
-import java.awt.Graphics2D;
-import java.awt.Color;
-import java.awt.Dimension;
-import java.awt.GridLayout;
+import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 
-public class ChangesBlock {
+public class ChangesBlock implements AdditionalPainter<ChangesBlock> {
   private List<ChangeEditorMessage> myChanges = new ArrayList<ChangeEditorMessage>();
   private int y1 = 0;
   private int y2 = 0;
@@ -76,7 +74,8 @@ public class ChangesBlock {
     g.drawLine(0, y2, (int) size.getWidth(), y2);
   }
 
-  public void addTo(JComponent component) {
+  public void addTo(EditorComponent component) {
+    component.addAdditionalPainter(this);
     if (myMenu != null) {
       component.add(myMenu);
       myMenu.setLocation(1, y1 + 1);
@@ -92,10 +91,25 @@ public class ChangesBlock {
   }
 
   public void removeFrom(EditorComponent component) {
+    component.removeAdditionalPainter(this);
     if (myMenu != null) {
       component.remove(myMenu);
     }
   }
 
 
+  @Override
+  public void paint(Graphics g, EditorComponent editorComponent) {
+    paint((Graphics2D)g, editorComponent.getSize());
+  }
+
+  @Override
+  public boolean paintsAbove() {
+    return true;  
+  }
+
+  @Override
+  public ChangesBlock getItem() {
+    return this;
+  }
 }
