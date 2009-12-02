@@ -42,30 +42,20 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
   }
 
   private SModelListener myModelListener = new SModelAdapter() {
-    public void modelReloaded(SModelDescriptor sm) {
+    public void beforeModelDisposed(SModel sm) {
       synchronized (myLock) {
         for (SNode node : new ArrayList<SNode>(myNodesToContexts.keySet())) {
-          if (sm == node.getModel().getModelDescriptor()) {
-            myNodesToContexts.remove(node);
+          if (sm == node.getModel()) {
+            TypeCheckingContext typeCheckingContext = myNodesToContexts.remove(node);
+            if (typeCheckingContext != null) {
+              typeCheckingContext.dispose();
+            }
           }
         }
       }
     }
-  };
-
-  private SModelRepositoryAdapter myModelRepositoryListener = new SModelRepositoryAdapter() {
-    public void modelRemoved(SModelDescriptor modelDescriptor) {
-      synchronized (myLock) {
-        for (final TypeCheckingContext typeCheckingContext :
-          myNodesToContexts.values().toArray(new TypeCheckingContext[myNodesToContexts.size()])) {
-          if (typeCheckingContext.getNode().getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
-            typeCheckingContext.dispose();
-            myNodesToContexts.remove(typeCheckingContext.getNode());
-          }
-        }
-      }
-    }
-  };
+    
+  };  
 
   public NodeTypesComponentsRepository(TypeChecker typeChecker, ClassLoaderManager manager) {
     myTypeChecker = typeChecker;
@@ -123,8 +113,6 @@ public class NodeTypesComponentsRepository implements ApplicationComponent {
           }
           typeCheckingContext = new TypeCheckingContext(root, myTypeChecker);
           myNodesToContexts.put(typeCheckingContext.getNode(), typeCheckingContext);
-          SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
-          SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
           SModel sModel = root.getModel();
           if (!sModel.hasModelListener(myModelListener)) {
             sModel.addWeakSModelListener(myModelListener);
