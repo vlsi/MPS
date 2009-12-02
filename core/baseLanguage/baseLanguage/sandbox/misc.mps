@@ -1198,6 +1198,116 @@
         <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="3115327157610151744" />
       </node>
     </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1808114759012452599">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1808114759012452600" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1808114759012452601" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1808114759012452603">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1808114759012452606">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1808114759012452608">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1808114759012452611">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1808114759012452614" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1808114759012452615">
+                <link role="fieldDeclaration" targetNodeId="8993872298946414358" resolveInfo="myField1" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1808114759012452616">
+              <link role="variableDeclaration" targetNodeId="1808114759012452604" resolveInfo="myField1" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1808114759012452619">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1808114759012452621">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1808114759012452624">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1808114759012452627" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1808114759012452628">
+                <link role="fieldDeclaration" targetNodeId="8993872298946451023" resolveInfo="myField2" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1808114759012452629">
+              <link role="variableDeclaration" targetNodeId="1808114759012452617" resolveInfo="myField2" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1808114759012452632">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1808114759012452634">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1808114759012452637">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1808114759012452640" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1808114759012452641">
+                <link role="fieldDeclaration" targetNodeId="8993872298946451026" resolveInfo="myField3" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1808114759012452642">
+              <link role="variableDeclaration" targetNodeId="1808114759012452630" resolveInfo="myField3" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1808114759012452645">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1808114759012452647">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1808114759012452650">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1808114759012452653" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1808114759012452654">
+                <link role="fieldDeclaration" targetNodeId="2315063335017831583" resolveInfo="myI" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1808114759012452655">
+              <link role="variableDeclaration" targetNodeId="1808114759012452643" resolveInfo="myI" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1808114759012452658">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1808114759012452660">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1808114759012452663">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1808114759012452666" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1808114759012452667">
+                <link role="fieldDeclaration" targetNodeId="8993872298946451029" resolveInfo="myField4" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1808114759012452668">
+              <link role="variableDeclaration" targetNodeId="1808114759012452656" resolveInfo="myField4" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1808114759012452671">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1808114759012452673">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1808114759012452676">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1808114759012452679" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1808114759012452680">
+                <link role="fieldDeclaration" targetNodeId="8993872298946451032" resolveInfo="myField5" />
+              </node>
+            </node>
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1808114759012452681">
+              <link role="variableDeclaration" targetNodeId="1808114759012452669" resolveInfo="myField5" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1808114759012452604">
+        <property name="name" value="myField1" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ByteType" id="1808114759012452605" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1808114759012452617">
+        <property name="name" value="myField2" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ShortType" id="1808114759012452618" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1808114759012452630">
+        <property name="name" value="myField3" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.CharType" id="1808114759012452631" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1808114759012452643">
+        <property name="name" value="myI" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1808114759012452644" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1808114759012452656">
+        <property name="name" value="myField4" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1808114759012452657" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1808114759012452669">
+        <property name="name" value="myField5" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1808114759012452670">
+          <link role="classifier" targetNodeId="150.~Object" resolveInfo="Object" />
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="5258314681672091282">
     <property name="name" value="TestAddComponent" />
