@@ -23,6 +23,7 @@ import com.intellij.util.containers.ConcurrentHashSet;
 import jetbrains.mps.baseLanguage.collections.internal.CursorWithContinuation;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.util.misc.hash.HashSet;
+import jetbrains.mps.logging.Logger;
 
 import javax.swing.SwingUtilities;
 import java.util.concurrent.locks.Lock;
@@ -34,6 +35,7 @@ import java.util.Set;
  * We always first acquire IDEA's lock and only then acquire MPS's lock
  */
 public class ModelAccess {
+  private static final Logger LOG = Logger.getLogger(ModelAccess.class);
   private static final ModelAccess ourInstance = new ModelAccess();
 
   private ReentrantReadWriteLock myReadWriteLock = new ReentrantReadWriteLock();
@@ -42,7 +44,7 @@ public class ModelAccess {
 
 
   public static ModelAccess instance() {
-    return ourInstance;    
+    return ourInstance;
   }
 
   private ModelAccess() {
@@ -271,7 +273,7 @@ public class ModelAccess {
     });
   }
 
-  public void runIndexing(Runnable r) {    
+  public void runIndexing(Runnable r) {
     boolean needToRemove = myIndexingThreads.add(Thread.currentThread());
     try {
       r.run();
@@ -284,12 +286,11 @@ public class ModelAccess {
 
   static void assertLegalRead(SNode node) {
     if (node.isDisposed()) {
-//      throw new IllegalModelAccessError("Accessing disposed node");
-        System.err.println ("CRITICAL: INVALID OPERATION DETECTED");
-        new IllegalModelAccessError("Accessing disposed node").printStackTrace(System.err);
+      //noinspection ThrowableInstanceNeverThrown
+      LOG.error("CRITICAL: INVALID OPERATION DETECTED", new IllegalModelAccessError("Accessing disposed node"));
     }
     ModelAccess modelAccess = ModelAccess.instance();
-    if (!modelAccess.canRead() && !modelAccess.myIndexingThreads.contains(Thread.currentThread())) {      
+    if (!modelAccess.canRead() && !modelAccess.myIndexingThreads.contains(Thread.currentThread())) {
       throw new IllegalModelAccessError("You can read model only inside read actions");
     }
   }
