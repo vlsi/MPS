@@ -13,9 +13,6 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import jetbrains.mps.smodel.search.SubnodesSearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.apache.commons.lang.StringUtils;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class XMLElementType_complexType_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints, INodeReferentSetEventHandler {
   public XMLElementType_complexType_ReferentConstraint() {
@@ -43,11 +40,6 @@ public class XMLElementType_complexType_ReferentConstraint extends BaseNodeRefer
   }
 
   public String getPresentation(final IOperationContext operationContext, final PresentationReferentConstraintContext _context) {
-    String typeName = SPropertyOperations.getString(_context.getParameterNode(), "typeName");
-    if (StringUtils.isEmpty(typeName)) {
-      return SPropertyOperations.getString(SNodeOperations.getAncestor(_context.getParameterNode(), "jetbrains.mps.xmlSchema.structure.ElementWithContent", false, false), "elementName");
-    } else {
-      return "[" + typeName + "]";
-    }
+    return SchemaUtil.complexTypePresentation(_context.getParameterNode());
   }
 }
