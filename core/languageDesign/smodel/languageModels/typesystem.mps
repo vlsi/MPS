@@ -5829,6 +5829,13 @@
         <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.InequationsGroupReference" id="6703419758834350506">
           <link role="group" targetNodeId="2v.1759628044690732300" resolveInfo="priority_3" />
         </node>
+        <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.InequationsGroupReference" id="5817056074924592471">
+          <link role="group" targetNodeId="2v.1759628044690732299" resolveInfo="priority_2" />
+        </node>
+        <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.InequationsGroupReference" id="5817056074924592472">
+          <link role="group" targetNodeId="2v.1759628044690732298" resolveInfo="priority_1" />
+        </node>
+        <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5817056074924592470" />
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1178287490356">

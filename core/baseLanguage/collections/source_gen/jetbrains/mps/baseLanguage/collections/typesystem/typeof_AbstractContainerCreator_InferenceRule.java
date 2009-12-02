@@ -52,7 +52,11 @@ public class typeof_AbstractContainerCreator_InferenceRule extends AbstractInfer
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(creator, "copyFrom", true);
         BaseIntentionProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240918480296", 0, intentionProvider);
-        _info_12389875345.setInequationGroup("default");
+        _info_12389875345.setInequationGroup("priority_4_1759628044690732301");
+        _info_12389875345.addInequationGroupBefore("priority_3_1759628044690732300");
+        _info_12389875345.addInequationGroupBefore("priority_2_1759628044690732299");
+        _info_12389875345.addInequationGroupBefore("priority_1_1759628044690732298");
+        _info_12389875345.addInequationGroupBefore("default");
         typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240918480314", true), (SNode)new _Quotations.QuotationClass_160().createNode(SLinkOperations.getTarget(creator, "elementType", true), typeCheckingContext.getEquationManager().getRepresentator(PARAM_ELEM_TYPE_typevar_9049087841018946828), typeCheckingContext), false, _info_12389875345);
       }
       {

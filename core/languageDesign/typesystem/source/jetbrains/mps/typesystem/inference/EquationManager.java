@@ -1144,12 +1144,26 @@ public class EquationManager {
       return false;
     }
     Set<IWrapper> concreteSubtypes = new HashSet<IWrapper>();
+    boolean hasShallowConcreteSubtypesWithSubtypes = false;
     for (IWrapper subtypeNode : new HashSet<IWrapper>(subtypes.keySet())) {
       if (subtypeNode == null) {
         subtypes.remove(subtypeNode);
         continue;
       }
       int inequationPriority = prioritiesSynthesizer.getInequationSyntheticRank(subtypes.get(subtypeNode));
+/*
+
+      // if subtype node contains type vars and has subtypes, it can become fully concrete then
+      // so don't perform actions with it
+      if (isShallow && subtypeNode.isConcrete() && !isConcrete(subtypeNode)) {
+        Map<IWrapper, EquationInfo> subtypesOfSubtype = mySupertypesToSubtypesMap.get(subtypeNode);
+        if (subtypesOfSubtype != null && !subtypesOfSubtype.isEmpty()) {
+          hasShallowConcreteSubtypesWithSubtypes = true;
+          continue;
+        }
+      }
+*/
+
       if (subtypeNode.isConcrete() && isShallow || isConcrete(subtypeNode)) {
         minPriority[0] = Math.min(minPriority[0], inequationPriority);
         if (inequationPriority <= priority) {
@@ -1157,7 +1171,7 @@ public class EquationManager {
         }
       }
     }
-    if (concreteSubtypes.isEmpty()) return false;
+    if (concreteSubtypes.isEmpty()) return false; // hasShallowConcreteSubtypesWithSubtypes;
 
     Map<IWrapper, EquationInfo> equationInfoMap = new HashMap<IWrapper, EquationInfo>();
     for (IWrapper concreteSubtype : concreteSubtypes) {
@@ -1198,6 +1212,12 @@ public class EquationManager {
   }
 
   private boolean concreteLessThanType(IWrapper concreteType, boolean isWeak, int priority, int[] minPriority, boolean isShallow, InequationsPrioritiesSynthesizer prioritiesSynthesizer) {
+    /*if (isShallow && !isConcrete(concreteType)) {
+      Map<IWrapper, EquationInfo> subtypes = mySupertypesToSubtypesMap.get(concreteType);
+      if (subtypes != null && !subtypes.isEmpty()) {
+        return true;
+      }
+    }*/
     return thisLessThanType(concreteType, isWeak, new IActionPerformer() {
       public void performAction(IWrapper type, Set<IWrapper> concreteSupertypes, Map<IWrapper, EquationInfo> errorInfoMap, boolean isWeak, EquationInfo errorInfo) {
         for (IWrapper supertype : concreteSupertypes) {

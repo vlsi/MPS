@@ -1089,6 +1089,13 @@
                         <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.InequationsGroupReference" id="6703419758834350512">
                           <link role="group" targetNodeId="2v.1759628044690732300" resolveInfo="priority_3" />
                         </node>
+                        <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.InequationsGroupReference" id="5817056074924591704">
+                          <link role="group" targetNodeId="2v.1759628044690732299" resolveInfo="priority_2" />
+                        </node>
+                        <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.InequationsGroupReference" id="5817056074924591706">
+                          <link role="group" targetNodeId="2v.1759628044690732298" resolveInfo="priority_1" />
+                        </node>
+                        <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5817056074924591707" />
                       </node>
                     </node>
                   </node>
@@ -1156,6 +1163,13 @@
                         <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.InequationsGroupReference" id="6703419758834350508">
                           <link role="group" targetNodeId="2v.1759628044690732300" resolveInfo="priority_3" />
                         </node>
+                        <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.InequationsGroupReference" id="5817056074924591709">
+                          <link role="group" targetNodeId="2v.1759628044690732299" resolveInfo="priority_2" />
+                        </node>
+                        <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.InequationsGroupReference" id="5817056074924591711">
+                          <link role="group" targetNodeId="2v.1759628044690732298" resolveInfo="priority_1" />
+                        </node>
+                        <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5817056074924591712" />
                       </node>
                     </node>
                   </node>

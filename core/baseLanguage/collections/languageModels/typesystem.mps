@@ -6657,6 +6657,7 @@
       <link role="concept" targetNodeId="3.1237549269949" resolveInfo="GetEnumeratorOperation" />
     </node>
   </node>
+  <visible index="4" modelUID="r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1237723040301">
     <property name="name" value="typeof_AbstractContainerCreator" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237723040302">
@@ -6774,6 +6775,16 @@
             <property name="name" value="PARAM_ELEM_TYPE" />
           </node>
           <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="1240918480296">
+            <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.InequationsGroupReference" id="5817056074924592469">
+              <link role="group" targetNodeId="4v.1759628044690732300" resolveInfo="priority_3" />
+            </node>
+            <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.InequationsGroupReference" id="5817056074924592465">
+              <link role="group" targetNodeId="4v.1759628044690732299" resolveInfo="priority_2" />
+            </node>
+            <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.InequationsGroupReference" id="5817056074924592466">
+              <link role="group" targetNodeId="4v.1759628044690732298" resolveInfo="priority_1" />
+            </node>
+            <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5817056074924592467" />
             <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1240918480297">
               <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1240918480298">
                 <node role="quotedNode" type="jetbrains.mps.lang.typesystem.structure.JoinType" id="1240918489624">
@@ -6815,7 +6826,9 @@
                 </node>
               </node>
             </node>
-            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5970100369440882753" />
+            <node role="inequationGroup" type="jetbrains.mps.lang.typesystem.structure.InequationsGroupReference" id="4742444522435560366">
+              <link role="group" targetNodeId="4v.1759628044690732301" resolveInfo="priority_4" />
+            </node>
           </node>
           <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="9049087841018946836">
             <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="9049087841018946839">
