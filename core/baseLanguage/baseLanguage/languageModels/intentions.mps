@@ -9868,6 +9868,12 @@
     <property name="package" value="generation" />
     <property name="isAlwaysVisible" value="true" />
     <link role="forConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+    <node role="parameter" type="jetbrains.mps.lang.intentions.structure.IntentionContextParameterDeclaration" id="4754919398689561098">
+      <property name="name" value="fields" />
+      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="4754919398689567702">
+        <link role="elementConcept" targetNodeId="1.1068390468200" resolveInfo="FieldDeclaration" />
+      </node>
+    </node>
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="3868795809789198354">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3868795809789198355">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3868795809789297731">
@@ -10203,11 +10209,6 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="5973141109804726313" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8813156274942968082">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8813156274942968084">
-            <property name="value" value="true" />
-          </node>
-        </node>
       </node>
     </node>
     <node role="executeUI" type="jetbrains.mps.lang.intentions.structure.ExecuteUIBlock" id="926291610755538993">
@@ -10223,7 +10224,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="34.3359340002141444599" resolveInfo="SelectFieldsDialog" />
                 <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="3359340002141630560" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3359340002141630562" />
-                <node role="actualArgument" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="3359340002141630564" />
+                <node role="actualArgument" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="4754919398690188935" />
               </node>
             </node>
           </node>
@@ -10235,6 +10236,21 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3359340002141630577">
               <link role="baseMethodDeclaration" targetNodeId="28.~BaseDialog.showDialog():void" resolveInfo="showDialog" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4754919398690707136">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="6996585211603833219">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6996585211603833224">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6996585211603833223">
+                <link role="variableDeclaration" targetNodeId="3359340002141630554" resolveInfo="selectFieldsDialog" />
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6996585211603833228">
+                <link role="baseMethodDeclaration" targetNodeId="34.4359456199356555549" resolveInfo="getSelectedFields" />
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.lang.intentions.structure.IntentionContextParamReference" id="4754919398690707137">
+              <link role="parameterDeclaration" targetNodeId="4754919398689561098" resolveInfo="fields" />
             </node>
           </node>
         </node>

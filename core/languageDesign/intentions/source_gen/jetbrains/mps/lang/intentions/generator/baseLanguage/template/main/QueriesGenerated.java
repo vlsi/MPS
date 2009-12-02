@@ -22,7 +22,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_5059472413256584809(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "rValue", true), "jetbrains.mps.lang.intentions.structure.IntentionContextParamReference");
+    return !(SNodeOperations.hasRole(_context.getNode(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression", "lValue"));
   }
 
   public static Object propertyMacro_GetPropertyValue_1192802755354(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -55,6 +55,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_3425271641149664632(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "isAvailableInChildNodes");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4754919398689941091(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "parameterDeclaration", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4754919398690612269(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "alias");
   }
 
   public static Object propertyMacro_GetPropertyValue_5711848865190513478(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -195,6 +203,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_3618415754251192135(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_4754919398690612282(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "rValue", true);
   }
 
   public static SNode sourceNodeQuery_4945049520561168189(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
