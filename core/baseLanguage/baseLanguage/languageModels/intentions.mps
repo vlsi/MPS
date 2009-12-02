@@ -9868,12 +9868,6 @@
     <property name="package" value="generation" />
     <property name="isAlwaysVisible" value="true" />
     <link role="forConcept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
-    <node role="parameter" type="jetbrains.mps.lang.intentions.structure.IntentionContextParameterDeclaration" id="4359456199357974822">
-      <property name="name" value="fields" />
-      <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="4359456199357977937">
-        <link role="elementConcept" targetNodeId="1.1068390468200" resolveInfo="FieldDeclaration" />
-      </node>
-    </node>
     <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="3868795809789198354">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3868795809789198355">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3868795809789297731">
@@ -10241,21 +10235,6 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3359340002141630577">
               <link role="baseMethodDeclaration" targetNodeId="28.~BaseDialog.showDialog():void" resolveInfo="showDialog" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1987159543836047762">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1987159543836047764">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1987159543836047768">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1987159543836047767">
-                <link role="variableDeclaration" targetNodeId="3359340002141630554" resolveInfo="selectFieldsDialog" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1987159543836047772">
-                <link role="baseMethodDeclaration" targetNodeId="34.4359456199356555549" resolveInfo="getSelectedFields" />
-              </node>
-            </node>
-            <node role="lValue" type="jetbrains.mps.lang.intentions.structure.IntentionContextParamReference" id="1987159543836047763">
-              <link role="parameterDeclaration" targetNodeId="4359456199357974822" resolveInfo="fields" />
             </node>
           </node>
         </node>

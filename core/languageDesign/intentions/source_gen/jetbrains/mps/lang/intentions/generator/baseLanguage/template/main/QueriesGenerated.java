@@ -89,10 +89,6 @@ public class QueriesGenerated {
     return IntentionDeclaration_Behavior.call_getGeneratedName_1213877237628(_context.getNode());
   }
 
-  public static Object referenceMacro_GetReferent_5059472413256563375(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "parameterDeclaration", false);
-  }
-
   public static boolean ifMacro_Condition_1204743248015(final IOperationContext operationContext, final IfMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "isApplicableFunction", true) != null;
   }
