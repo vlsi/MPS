@@ -32,6 +32,7 @@ import jetbrains.mps.intentions.GenerateIntention;
 import java.util.Collections;
 import java.util.Comparator;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.lang.intentions.structure.IntentionContext;
 
 public class GenerationIntentions_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -133,7 +134,8 @@ public class GenerationIntentions_Action extends GeneratedAction {
       BaseAction action = new BaseAction(pair.getFirst().getDescription(pair.getSecond(), GenerationIntentions_Action.this.editorContext)) {
         protected void doExecute(AnActionEvent p0) {
           final GenerateIntention generateIntention = (GenerateIntention)pair.getFirst();
-          if (generateIntention.executeUI(pair.getSecond(), GenerationIntentions_Action.this.editorContext)) {
+          IntentionContext  intentionContext= new IntentionContext();
+          if (generateIntention.executeUI(pair.getSecond(), GenerationIntentions_Action.this.editorContext,intentionContext)) {
             ModelAccess.instance().runCommandInEDT(new Runnable() {
               public void run() {
                 generateIntention.execute(pair.getSecond(), GenerationIntentions_Action.this.editorContext);

@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.intentions.structure.IntentionContext;
 
 public class GenerateToString_Intention extends GenerateIntention {
   public GenerateToString_Intention() {
@@ -70,7 +71,7 @@ public class GenerateToString_Intention extends GenerateIntention {
     SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_6().createNode(rightmostExpression));
   }
 
-  public boolean executeUI(final SNode node, final EditorContext editorContext) {
+  public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     return true;
   }
 

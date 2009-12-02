@@ -5,6 +5,7 @@
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="13744753-c81f-424a-9c1b-cf8943bf4e86(jetbrains.mps.lang.sharedConcepts)" />
+  <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -97,6 +98,9 @@
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="786327826249385741">
     <link role="concept" targetNodeId="2.4359456199357025372" resolveInfo="IntentionContextParamReference" />
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1987159543836116993">
+    <link role="concept" targetNodeId="2.4359456199357017245" resolveInfo="IntentionContextParameterDeclaration" />
   </node>
 </model>
 

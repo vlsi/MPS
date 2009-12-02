@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.intentions.structure.IntentionContext;
 
 public class GenerateGetter_Intention extends GenerateIntention {
   public GenerateGetter_Intention() {
@@ -77,7 +78,7 @@ public class GenerateGetter_Intention extends GenerateIntention {
     }
   }
 
-  public boolean executeUI(final SNode node, final EditorContext editorContext) {
+  public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     return true;
   }
 

@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.intentions.structure.IntentionContext;
 
 public class GenerateMainMethod_Intention extends GenerateIntention {
   public GenerateMainMethod_Intention() {
@@ -44,7 +45,9 @@ public class GenerateMainMethod_Intention extends GenerateIntention {
     editorContext.select(SLinkOperations.getTarget(methodNode, "body", true));
   }
 
-  public boolean executeUI(final SNode node, final EditorContext editorContext) {
+  
+
+  public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     return true;
   }
 

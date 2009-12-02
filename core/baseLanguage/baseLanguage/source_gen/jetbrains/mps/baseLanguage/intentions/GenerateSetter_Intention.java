@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.intentions.structure.IntentionContext;
 
 public class GenerateSetter_Intention extends GenerateIntention {
   public GenerateSetter_Intention() {
@@ -83,10 +84,10 @@ public class GenerateSetter_Intention extends GenerateIntention {
     }
   }
 
-  public boolean executeUI(final SNode node, final EditorContext editorContext) {
+
+  public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     return true;
   }
-
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }

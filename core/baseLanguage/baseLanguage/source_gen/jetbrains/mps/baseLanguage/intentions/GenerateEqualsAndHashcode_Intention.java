@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.intentions.structure.IntentionContext;
 
 public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
   public GenerateEqualsAndHashcode_Intention() {
@@ -114,10 +115,11 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
     SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", new _Quotations.QuotationClass_11().createNode(resultReference));
   }
 
-  public boolean executeUI(final SNode node, final EditorContext editorContext) {
+
+
+  public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     return true;
   }
-
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
   }

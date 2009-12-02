@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.intentions.structure.IntentionContext;
 import jetbrains.mps.ide.actions.SelectFieldsDialog;
 
 public class GenerateConstructor_Intention extends GenerateIntention {
@@ -58,10 +59,7 @@ public class GenerateConstructor_Intention extends GenerateIntention {
     }
   }
 
-  public boolean executeUI(final SNode node, final EditorContext editorContext) {
-    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, null, node);
-    selectFieldsDialog.showDialog();
-
+  public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     return true;
   }
 

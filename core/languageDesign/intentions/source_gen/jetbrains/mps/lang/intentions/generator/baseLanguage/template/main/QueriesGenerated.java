@@ -168,6 +168,10 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "executeUI", true), "body", true);
   }
 
+  public static SNode sourceNodeQuery_1987159543836046442(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "executeFunction", true), "body", true);
+  }
+
   public static SNode sourceNodeQuery_2011896947621803615(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration"), "queryBlock", true), "paramType", true);
   }
@@ -206,10 +210,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5711848865190532383(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "childFilterFunction", true);
-  }
-
-  public static SNode sourceNodeQuery_5711848865190532411(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "executeFunction", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_5711848865190532565(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

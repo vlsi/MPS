@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.intentions.structure.IntentionContext;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
@@ -115,7 +116,8 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention {
     }
   }
 
-  public boolean executeUI(final SNode node, final EditorContext editorContext) {
+
+  public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     return true;
   }
 

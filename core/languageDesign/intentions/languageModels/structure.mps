@@ -169,13 +169,14 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <maxImportIndex value="11" />
+  <maxImportIndex value="12" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <import index="11" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
+  <import index="12" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1192794744107">
     <property name="rootable" value="true" />
     <property name="name" value="IntentionDeclaration" />
@@ -463,6 +464,9 @@
       <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
       <link role="target" targetNodeId="1192796902958" resolveInfo="ConceptFunctionParameter_node" />
     </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="3573715922178167002">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+    </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5180116501958013178">
       <property name="value" value="execute UI" />
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
@@ -494,6 +498,68 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1349940517677473350">
       <link role="conceptPropertyDeclaration" targetNodeId="3.1146528679895" resolveInfo="lvalue" />
+    </node>
+  </node>
+  <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="6193304124176112948">
+    <property name="name" value="IntentionContext" />
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="6193304124176112954">
+      <property name="name" value="myContextParametersMap" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="6193304124176112955" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6193304124176112957">
+        <link role="classifier" targetNodeId="12.~Map" resolveInfo="Map" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="6193304124176328435" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6193304124176120680">
+          <link role="classifier" targetNodeId="2v.~Object" resolveInfo="Object" />
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6193304124176112949" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="6193304124176112950">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="6193304124176112951" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6193304124176112952" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6193304124176112953">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6193304124176328421">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="6193304124176328425">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6193304124176328428">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6193304124176328430">
+                <link role="baseMethodDeclaration" targetNodeId="12.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="6193304124176328436" />
+                <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6193304124176328434">
+                  <link role="classifier" targetNodeId="2v.~Object" resolveInfo="Object" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6193304124176328422">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="6193304124176328423">
+                <link role="fieldDeclaration" targetNodeId="6193304124176112954" resolveInfo="myContextParametersMap" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6193304124176328424" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6193304124176120681">
+      <property name="name" value="getMyContextParametersMap" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6193304124176120682">
+        <link role="classifier" targetNodeId="12.~Map" resolveInfo="Map" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.StringType" id="6193304124176328437" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6193304124176120684">
+          <link role="classifier" targetNodeId="2v.~Object" resolveInfo="Object" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6193304124176120685" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6193304124176120686">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6193304124176120687">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6193304124176120688">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6193304124176120689" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="6193304124176120690">
+              <link role="fieldDeclaration" targetNodeId="6193304124176112954" resolveInfo="myContextParametersMap" />
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>
