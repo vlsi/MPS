@@ -8,6 +8,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -23,7 +25,12 @@ public class BaseMethodParameterInformationQuery extends ParametersInformation<S
   public Iterable<SNode> getMethods(SNode node, EditorContext editorContext) {
     SNode method = SLinkOperations.getTarget(node, "baseMethodDeclaration", false);
     SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(method), "jetbrains.mps.baseLanguage.structure.IMemberContainer");
-    List<SNode> members = IMemberContainer_Behavior.call_getMembers_1213877531970(classifier);
+    List<SNode> members;
+    if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      members = Classifier_Behavior.call_getVisibleMembers_1213877306257(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.Classifier"), node, IClassifiersSearchScope.ANYTHING);
+    } else {
+      members = IMemberContainer_Behavior.call_getMembers_1213877531970(classifier);
+    }
     List<SNode> methodsToShow = new ArrayList<SNode>();
     for (SNode member : ListSequence.fromList(members)) {
       if (SNodeOperations.isInstanceOf(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration") && ObjectUtils.equals(SPropertyOperations.getString(SNodeOperations.cast(member, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "name"), SPropertyOperations.getString(method, "name"))) {
