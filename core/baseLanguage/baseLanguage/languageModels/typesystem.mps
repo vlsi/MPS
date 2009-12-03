@@ -18723,7 +18723,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="6778605776626937114">
-    <property name="name" value="CheckBianryOpeartionPriority" />
+    <property name="name" value="CheckBinaryOperationPriority" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6778605776626937115">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6778605776626937129">
         <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6778605776626937130">
