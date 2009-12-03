@@ -7284,15 +7284,6 @@
               <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1237463992695">
                 <property name="value" value=";" />
               </node>
-              <node role="part" type="jetbrains.mps.lang.textGen.structure.CollectionAppendPart" id="1237463992696">
-                <property name="withSeparator" value="false" />
-                <node role="list" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236253400893">
-                  <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1236253400516" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1236253403070">
-                    <link role="link" targetNodeId="1.1128555889557" />
-                  </node>
-                </node>
-              </node>
               <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="5609341464643663834" />
               <node role="part" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="5609341464643663836">
                 <link role="function" targetNodeId="3408882292339891837" resolveInfo="body" />

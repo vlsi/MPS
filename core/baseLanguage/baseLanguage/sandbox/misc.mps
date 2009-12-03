@@ -1466,6 +1466,24 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2042640167016562828">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression" id="2042640167016562830">
+            <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2042640167016562834">
+              <property name="value" value="" />
+            </node>
+            <node role="ifFalse" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="2042640167016600390">
+              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="2042640167016600392">
+                <link role="baseMethodDeclaration" targetNodeId="150.~Integer.&lt;init&gt;(int)" resolveInfo="Integer" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="2042640167016600393">
+                  <property name="value" value="1" />
+                </node>
+              </node>
+            </node>
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="2042640167016562829">
+              <property name="value" value="true" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="6239829737863852780">
           <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="6239829737863852781">
             <property name="text" value="todo: Osdsfsd sdsd  sdsdsdsdds tod" />

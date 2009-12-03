@@ -104,5 +104,19 @@
       <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="8606350594693935846" />
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.EnumClass" id="2042640167016934507">
+    <property name="name" value="FooEnum" />
+    <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="2042640167016934513">
+      <property name="name" value="FOO" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="2042640167016934514" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="2042640167016934517" />
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2042640167016934508" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="2042640167016934509">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2042640167016934510" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2042640167016934511" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2042640167016934512" />
+    </node>
+  </node>
 </model>
 

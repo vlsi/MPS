@@ -47,11 +47,6 @@ public class EnumClass_TextGen extends SNodeTextGen {
       }
     }
     this.append(";");
-    if (ListSequence.fromList(SLinkOperations.getTargets(node, "staticField", true)).isNotEmpty()) {
-      for (SNode item : SLinkOperations.getTargets(node, "staticField", true)) {
-        TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), item, this.getSNode());
-      }
-    }
     this.appendNewLine();
     BaseClassConceptTextGen.body(node, this);
     this.decreaseDepth();
