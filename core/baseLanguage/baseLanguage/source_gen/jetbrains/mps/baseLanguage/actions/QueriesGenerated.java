@@ -3118,7 +3118,7 @@ __switch__:
         }
 
         public String getDescriptionText(String pattern) {
-          return "Surrond with parenthesis";
+          return "Surround with parenthesis";
         }
       });
     }

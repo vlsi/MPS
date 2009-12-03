@@ -11059,7 +11059,7 @@
             <property name="text" value=")" />
           </node>
           <node role="descriptionText" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString" id="1240230723627">
-            <property name="text" value="Surrond with parenthesis" />
+            <property name="text" value="Surround with parenthesis" />
           </node>
         </node>
       </node>
