@@ -71,14 +71,8 @@ public class JavaConverterTreeBuilder {
 
 
   public jetbrains.mps.baseLanguage.structure.Expression processExpressionRefl(Expression expression) {
-    /*
-       * Note that we always prefer a JDT-computed constant value to the actual
-       * written expression. (Let's hope JDT is always right.) This means we
-       * don't have to write processExpression methods for the numerous JDT
-       * literal nodes because they ALWAYS have a constant value.
-       */
     jetbrains.mps.baseLanguage.structure.Expression result = null;
-    if (expression != null && expression.constant != null
+    if (expression instanceof Literal && expression.constant != null
       && expression.constant != Constant.NotAConstant) {
       result = (jetbrains.mps.baseLanguage.structure.Expression) dispatchRefl("processConstant", expression.constant);
     }
@@ -190,6 +184,8 @@ public class JavaConverterTreeBuilder {
     result.setValue(NameUtil.convertToMetaString(x.stringValue()));
     return result;
   }
+
+  //---
 
   BinaryOperation processBinaryOperation(Expression left, Expression right, BinaryOperation binaryOperation) {
     binaryOperation.setLeftExpression(processExpressionRefl(left));
