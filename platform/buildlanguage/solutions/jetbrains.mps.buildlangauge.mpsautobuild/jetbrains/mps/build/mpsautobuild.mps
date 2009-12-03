@@ -1940,26 +1940,14 @@
           <node role="atributes" type="jetbrains.mps.build.generictasks.structure.Attribute" id="1239364393829">
             <link role="attributeDeclaration" targetNodeId="2v.353793545802811542" resolveInfo="includes" />
             <node role="value" type="jetbrains.mps.buildlanguage.structure.MultiLineString" id="1239364393830">
-              <node role="stringExpression" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393831">
-                <property name="value" value="ClearCaseIntegration/**, " />
-              </node>
               <node role="stringExpression" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393832">
                 <property name="value" value="cvsIntegration/**, " />
               </node>
               <node role="stringExpression" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393833">
                 <property name="value" value="git4idea/**, " />
               </node>
-              <node role="stringExpression" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393834">
-                <property name="value" value="PerforceIntegration/**, " />
-              </node>
-              <node role="stringExpression" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393835">
-                <property name="value" value="starteamIntegration/**, " />
-              </node>
               <node role="stringExpression" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393836">
                 <property name="value" value="svn4idea/**, " />
-              </node>
-              <node role="stringExpression" type="jetbrains.mps.buildlanguage.structure.StringLiteral" id="1239364393837">
-                <property name="value" value="vssIntegration/**" />
               </node>
             </node>
           </node>
