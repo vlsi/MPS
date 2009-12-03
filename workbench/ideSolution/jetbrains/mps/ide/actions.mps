@@ -43911,7 +43911,9 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4359456199356555196">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4359456199356555201" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="432506280549405305">
+            <link role="variableDeclaration" targetNodeId="4359456199356555335" resolveInfo="fields" />
+          </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="4359456199356552475" />
       </node>
