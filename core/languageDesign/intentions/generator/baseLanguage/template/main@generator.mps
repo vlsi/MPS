@@ -2259,18 +2259,20 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4754919398690612242">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4754919398690612249">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4754919398690612244">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4754919398690612243">
-                  <link role="variableDeclaration" targetNodeId="4754919398689756612" resolveInfo="intentionContext" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4754919398690612248">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2506506516854767904">
                   <link role="baseMethodDeclaration" targetNodeId="1.6193304124176120681" resolveInfo="getMyContextParametersMap" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2506506516854741973">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="2506506516854767901">
+                    <link role="fieldDeclaration" targetNodeId="4754919398689756594" resolveInfo="intentionContext" />
+                  </node>
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="2506506516854741975" />
                 </node>
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4754919398690612253">
                 <link role="baseMethodDeclaration" targetNodeId="17.~Map.put(java.lang.Object,java.lang.Object):java.lang.Object" resolveInfo="put" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="4754919398690612256">
                   <property name="value" value="varName" />
-                  <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="4754919398690612265" />
                   <node role="propertyMacro$property_attribute$value" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="4754919398690612266">
                     <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="4754919398690612269">
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4754919398690612270">
@@ -2286,11 +2288,11 @@
                                   </node>
                                 </node>
                               </node>
-                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2506506516853910205">
+                              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="2506506516854767907">
                                 <link role="link" targetNodeId="1.1349940517677186262" />
                               </node>
                             </node>
-                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="2506506516853910210">
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="2506506516854767908">
                               <link role="property" targetNodeId="2v.1169194664001" resolveInfo="name" />
                             </node>
                           </node>
@@ -2300,7 +2302,6 @@
                   </node>
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="4754919398690612262">
-                  <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="4754919398690612277" />
                   <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="4754919398690612279">
                     <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="4754919398690612282">
                       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4754919398690612283">
@@ -2317,13 +2318,8 @@
                   </node>
                 </node>
               </node>
+              <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="2506506516854365090" />
             </node>
-          </node>
-        </node>
-        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="4754919398689756612">
-          <property name="name" value="intentionContext" />
-          <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4754919398689756613">
-            <link role="classifier" targetNodeId="1.6193304124176112948" resolveInfo="IntentionContext" />
           </node>
         </node>
       </node>

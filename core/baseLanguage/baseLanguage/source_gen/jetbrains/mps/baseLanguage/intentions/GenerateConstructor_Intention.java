@@ -41,10 +41,9 @@ public class GenerateConstructor_Intention extends GenerateIntention {
 
   public void executeIntention(final SNode node, final EditorContext editorContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    List<SNode> fields = SLinkOperations.getTargets(classConcept, "field", true);
     SNode constructor = SLinkOperations.addNewChild(classConcept, "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
     SLinkOperations.setNewChild(constructor, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-    for (SNode field : fields) {
+    for (SNode field : (List<SNode>)this.intentionContext.getMyContextParametersMap().get("selectedFields")) {
       SNode parameterDeclaration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
       SLinkOperations.setTarget(parameterDeclaration, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(field, "type", true)), true);
       SPropertyOperations.set(parameterDeclaration, "name", SPropertyOperations.getString(field, "name"));
@@ -67,6 +66,7 @@ public class GenerateConstructor_Intention extends GenerateIntention {
   public boolean executeUI(final SNode node, final EditorContext editorContext) {
     SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, null, node);
     selectFieldsDialog.showDialog();
+    this.intentionContext.getMyContextParametersMap().put("selectedFields", selectFieldsDialog.getSelectedFields());
     return true;
   }
 
