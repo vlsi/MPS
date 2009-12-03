@@ -13,10 +13,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.ide.DataManager;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.awt.BorderLayout;
 import javax.swing.AbstractListModel;
@@ -55,14 +55,18 @@ public class ListPanel extends JPanel {
 
   private void collectCandidates() {
     final List<SNode> nodesList = new ArrayList<SNode>();
-    MPSProject project = MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext());
-    for (final IModule module : project.getModules()) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          ListSequence.fromList(nodesList).addSequence(ListSequence.fromList(TestRunUtil.getModuleTests(module)));
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        for (IModule module : GlobalScope.getInstance().getVisibleModules()) {
+          for (SModelDescriptor descriptor : module.getOwnModelDescriptors()) {
+            if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
+              continue;
+            }
+            ListSequence.fromList(nodesList).addSequence(ListSequence.fromList(TestRunUtil.getModelTests(descriptor.getSModel())));
+          }
         }
-      });
-    }
+      }
+    });
     if (this.isTestMethods) {
       final List<SNode> methodsList = new ArrayList<SNode>();
       for (final SNode testCase : nodesList) {
