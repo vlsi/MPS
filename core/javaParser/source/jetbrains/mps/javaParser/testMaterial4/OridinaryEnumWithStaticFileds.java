@@ -14,4 +14,8 @@ public enum OridinaryEnumWithStaticFileds {
   public int bar(int y) {
     return FOO + y + FOO;
   }
+
+  public int foo(int a, int b, int c) {
+    return (a + b) * c;
+  }
 }
