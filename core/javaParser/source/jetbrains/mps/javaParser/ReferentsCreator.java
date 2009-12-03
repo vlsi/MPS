@@ -247,6 +247,8 @@ public class ReferentsCreator {
             assert (binding.superclass().isClass() || binding.superclass().isEnum());
             if ("java.lang.Object".equals(new String(superClassBinding.readableName()))) {
               //don't set superclass if it is java.lang.Object
+            } else if (binding.isEnum()) {
+              //don't set superclass if this class is enum
             } else {
               if (classifier instanceof ClassConcept) {
                 ClassConcept classConcept = (ClassConcept) classifier;
