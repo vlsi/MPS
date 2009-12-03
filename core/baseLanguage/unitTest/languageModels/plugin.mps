@@ -1651,53 +1651,6 @@
         </node>
       </node>
     </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1210678757666">
-      <property name="name" value="setToolDividerLocation" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1210678757667" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1210678757668" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210678757669">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210678879925">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210678880768">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210678879926">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1210678879927">
-                <link role="fieldDeclaration" targetNodeId="1210678810416" resolveInfo="toolSplitPane" />
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1210678879928" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210678885193">
-              <link role="baseMethodDeclaration" targetNodeId="7.~JSplitPane.setDividerLocation(int):void" resolveInfo="setDividerLocation" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1210678889578">
-                <link role="variableDeclaration" targetNodeId="1210678783748" resolveInfo="toolDividerLocation" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1210678783748">
-        <property name="name" value="toolDividerLocation" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1210678783749" />
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1210678892236">
-      <property name="name" value="getToolDividerLocation" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1210678894466" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1210678892238" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1210678892239">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1210678906854">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210678907365">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1210678906855">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1210678906856">
-                <link role="fieldDeclaration" targetNodeId="1210678810416" resolveInfo="toolSplitPane" />
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1210678906857" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1210678909577">
-              <link role="baseMethodDeclaration" targetNodeId="7.~JSplitPane.getDividerLocation():int" resolveInfo="getDividerLocation" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1208284311420">
       <property name="name" value="setTestCases" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1208351874063">
