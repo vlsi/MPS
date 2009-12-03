@@ -67,7 +67,6 @@ public class GenerateConstructor_Intention extends GenerateIntention {
   public boolean executeUI(final SNode node, final EditorContext editorContext) {
     SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, null, node);
     selectFieldsDialog.showDialog();
-    selectFieldsDialog.getSelectedFields();
     return true;
   }
 

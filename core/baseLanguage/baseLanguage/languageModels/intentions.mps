@@ -10239,21 +10239,6 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4754919398690707136">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="6996585211603833219">
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6996585211603833224">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6996585211603833223">
-                <link role="variableDeclaration" targetNodeId="3359340002141630554" resolveInfo="selectFieldsDialog" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6996585211603833228">
-                <link role="baseMethodDeclaration" targetNodeId="34.4359456199356555549" resolveInfo="getSelectedFields" />
-              </node>
-            </node>
-            <node role="lValue" type="jetbrains.mps.lang.intentions.structure.IntentionContextParamReference" id="4754919398690707137">
-              <link role="parameterDeclaration" targetNodeId="4754919398689561098" resolveInfo="fields" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="926291610756533797">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="926291610756533799">
             <property name="value" value="true" />

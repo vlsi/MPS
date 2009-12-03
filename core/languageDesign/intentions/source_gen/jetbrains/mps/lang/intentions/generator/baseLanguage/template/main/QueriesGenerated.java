@@ -62,7 +62,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4754919398690612269(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "alias");
+    return SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.lang.intentions.structure.IntentionContextParamReference"), "parameterDeclaration", false), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_5711848865190513478(final IOperationContext operationContext, final PropertyMacroContext _context) {
