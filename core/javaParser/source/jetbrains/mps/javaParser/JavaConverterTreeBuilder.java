@@ -582,8 +582,10 @@ public class JavaConverterTreeBuilder {
       if (instanceExpression == null) {
         ThisExpression thisExpression = ThisExpression.newInstance(myCurrentModel);
         if (myCurrentClass != myTypesProvider.getRaw(declaredClassBinding)) {
-          thisExpression.getNode().addReference(
-            myTypesProvider.createClassifierReference(declaredClassBinding, ThisExpression.CLASS_CONCEPT, thisExpression.getNode()));
+          if (!isSubtype(myCurrentTypeDeclaration.binding, declaredClassBinding)) {
+            thisExpression.getNode().addReference(
+              myTypesProvider.createClassifierReference(declaredClassBinding, ThisExpression.CLASS_CONCEPT, thisExpression.getNode()));
+          }
         }
         instance = thisExpression;
       } else {
@@ -605,6 +607,9 @@ public class JavaConverterTreeBuilder {
   }
 
   private boolean isSubtype(ReferenceBinding subtype, TypeBinding supertype) {
+    if (subtype instanceof ParameterizedTypeBinding) {
+      subtype = ((ParameterizedTypeBinding)subtype).genericType();
+    }
     if (supertype == subtype) {
       return true;
     }
