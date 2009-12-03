@@ -206,6 +206,11 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     SModel model = getSModel();
     model.fireBeforeModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
     myModelFile = newModelFile;
+    updateDiskTimestamp();
     model.fireModelFileChanged(new SModelFileChangedEvent(model, oldFile, newModelFile));
   }
+
+  protected void updateDiskTimestamp() {
+  }
+
 }

@@ -792,4 +792,8 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     myModelFile = file;
   }
 
+  @Override
+  public void updateDiskTimestamp() {
+    myDiskTimestamp = myModelFile.lastModified();
+  }
 }

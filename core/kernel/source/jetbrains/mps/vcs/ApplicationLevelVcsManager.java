@@ -142,6 +142,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
     return false;
   }
 
+  // REFACTOR: move to mps vcs manager
   private boolean isInConflict(@NotNull Project project, final VirtualFile vfile, boolean synchronously) {
     if (MPSVCSManager.getInstance(project).isChangeListManagerInitialized() && !synchronously) {
       return ChangeListManager.getInstance(project).getStatus(vfile).equals(FileStatus.MERGED_WITH_CONFLICTS);
@@ -322,13 +323,19 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
       super(false);
     }
 
-    public void processTask(List<File> tasks) {
-      List<VirtualFile> filesToAdd = new ArrayList<VirtualFile>(tasks.size());
-      for (File f : tasks) {
-        VirtualFile file = VFileSystem.getFile(f);
-        filesToAdd.add(file);
-      }
-      addFilesToVcs(filesToAdd, false);
+    public void processTask(final List<File> tasks) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          List<VirtualFile> filesToAdd = new ArrayList<VirtualFile>(tasks.size());
+          for (File f : tasks) {
+            VirtualFile file = VFileSystem.refreshAndGetFile(f);
+            assert file != null : "Can not find virtual file for " + f;
+            filesToAdd.add(file);
+          }
+          addFilesToVcs(filesToAdd, false);
+        }
+      });
+
     }
   }
 
@@ -370,15 +377,12 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
     }
 
     public void editName(String oldName, String newName) {
-      //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public void moveChanges(String toList, Collection<Change> changes) {
-      //To change body of implemented methods use File | Settings | File Templates.
     }
 
     public void setListsToDisappear(Collection<String> names) {
-      //To change body of implemented methods use File | Settings | File Templates.
     }
   }
 }
