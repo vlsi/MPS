@@ -17,7 +17,8 @@ public class AnnotationInstance_TextGen extends SNodeTextGen {
     } else {
       this.appendWithIndent("@");
     }
-    BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(node, "annotation", false), this);
+    BaseLanguageTextGen.importPart(SLinkOperations.getTarget(node, "annotation", false), this);
+    this.append(this.getReferentResolveInfoOrName("annotation", node));
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).isNotEmpty()) {
       this.append("(");
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).isNotEmpty()) {

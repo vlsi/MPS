@@ -9,7 +9,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StaticFieldReference_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(node, "classifier", false), this);
+    BaseLanguageTextGen.importPart(SLinkOperations.getTarget(node, "classifier", false), this);
+    this.append(this.getReferentResolveInfoOrName("classifier", node));
     this.append(".");
     this.append(this.getReferentResolveInfoOrName("variableDeclaration", SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference")));
   }

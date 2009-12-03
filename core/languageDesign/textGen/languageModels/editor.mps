@@ -1012,7 +1012,7 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1237305872792">
       <property name="vertical" value="false" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237305905767">
-        <property name="text" value="$info{" />
+        <property name="text" value="$resolve{" />
         <link role="styleClass" targetNodeId="1237976670141" resolveInfo="AppendPart" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1237464370886">
           <property name="flag" value="false" />

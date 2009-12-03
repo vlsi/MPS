@@ -185,13 +185,13 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1236701604535">
-                <node role="expression" type="jetbrains.mps.lang.textGen.structure.UtilityMethodCall" id="1236701604536">
-                  <link role="function" targetNodeId="2v.1236686501608" resolveInfo="appendClsName" />
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236701618803">
+              <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1275823045676472279">
+                <node role="part" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="1275823045676472282">
+                  <link role="function" targetNodeId="2v.1237310744896" resolveInfo="internalClassName" />
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1275823045676472283">
                     <link role="variableDeclaration" targetNodeId="1236701413836" resolveInfo="packageName" />
                   </node>
-                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1236701622883">
+                  <node role="parameter" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1275823045676472291">
                     <link role="variableDeclaration" targetNodeId="1236701430575" resolveInfo="className" />
                   </node>
                 </node>
@@ -305,7 +305,7 @@
                 <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1236701926982">
                   <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237981196780">
                     <node role="part" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="1237981202204">
-                      <link role="function" targetNodeId="2v.1234802562412" resolveInfo="classifierName" />
+                      <link role="function" targetNodeId="1236701346032" resolveInfo="className" />
                       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1239964688218">
                         <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="1239964685810">
                           <link role="concept" targetNodeId="3v.1107535904670" resolveInfo="ClassifierType" />

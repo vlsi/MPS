@@ -9,7 +9,8 @@ import jetbrains.mps.textGen.TextGenManager;
 
 public class EnumValueOfExpression_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(node, "enumClass", false), this);
+    BaseLanguageTextGen.importPart(SLinkOperations.getTarget(node, "enumClass", false), this);
+    this.append(this.getReferentResolveInfoOrName("enumClass", node));
     this.append(".");
     this.append("valueOf(");
     TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "value", true), this.getSNode());

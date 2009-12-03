@@ -459,7 +459,7 @@
       <link role="target" targetNodeId="3v.1068431790191" resolveInfo="Expression" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237305314045">
-      <property name="value" value="$info{" />
+      <property name="value" value="$resolve{" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1237477600273">

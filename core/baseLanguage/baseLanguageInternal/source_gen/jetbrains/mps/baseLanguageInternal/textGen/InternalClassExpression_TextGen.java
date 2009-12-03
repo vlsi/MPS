@@ -19,9 +19,9 @@ public class InternalClassExpression_TextGen extends SNodeTextGen {
         SNode icf = SNodeOperations.cast(type, "jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType");
         String pack = NameUtil.namespaceFromLongName(SPropertyOperations.getString(icf, "fqClassName"));
         String name = NameUtil.shortNameFromLongName(SPropertyOperations.getString(icf, "fqClassName"));
-        BaseLanguageTextGen.clsName(pack, name, this);
+        BaseLanguageTextGen.internalClassName(pack, name, this);
       } else {
-        BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), this);
+        BaseLanguageTextGen.internalClassifierName(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), this);
       }
     } else {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), type, this.getSNode());

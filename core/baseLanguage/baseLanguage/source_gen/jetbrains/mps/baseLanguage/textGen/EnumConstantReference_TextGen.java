@@ -8,7 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class EnumConstantReference_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(node, "enumClass", false), this);
+    BaseLanguageTextGen.importPart(SLinkOperations.getTarget(node, "enumClass", false), this);
+    this.append(this.getReferentResolveInfoOrName("enumClass", node));
     this.append(".");
     this.append(this.getReferentResolveInfoOrName("enumConstantDeclaration", node));
   }

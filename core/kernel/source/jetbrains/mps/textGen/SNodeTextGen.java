@@ -127,7 +127,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
       foundError();
       return "???";
     }
-    return targetNode.getName();
+    return targetNode.getResolveInfo();
   }
 
   public String getDeafultNoTextGenErrorText(SNode node) {

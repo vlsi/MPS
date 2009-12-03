@@ -8,7 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ClassCreator_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), this);
+    BaseLanguageTextGen.importPart(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), this);
+    this.append(this.getReferentResolveInfoOrName("baseMethodDeclaration", node));
     BaseLanguageTextGen.typeParameters(SLinkOperations.getTargets(node, "typeParameter", true), this);
     BaseLanguageTextGen.arguments(node, this);
   }

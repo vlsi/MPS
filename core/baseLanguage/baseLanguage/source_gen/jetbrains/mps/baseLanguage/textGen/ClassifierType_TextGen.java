@@ -10,7 +10,8 @@ import jetbrains.mps.textGen.TextGenManager;
 
 public class ClassifierType_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    BaseLanguageTextGen.classifierName(SLinkOperations.getTarget(node, "classifier", false), this);
+    BaseLanguageTextGen.importPart(SLinkOperations.getTarget(node, "classifier", false), this);
+    this.append(this.getReferentResolveInfoOrName("classifier", node));
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
       this.append("<");
       if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isNotEmpty()) {
