@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.textGen;
 
+import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 
@@ -119,18 +121,38 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
       return "<err:no ref for role '" + role + "'>";
     }
 
+    String shortName = null;
+    String packageName = null;
     if (reference instanceof DynamicReference) {
-      return reference.getResolveInfo();
+      shortName = reference.getResolveInfo();
+      if (reference.getTargetSModelReference() != null) {
+        packageName = reference.getTargetSModelReference().getLongName();
+      }
+    } else {
+      SNode targetNode = reference.getTargetNode();
+      if (targetNode == null) {
+        foundError();
+        return "???";
+      }
+      shortName = targetNode.getResolveInfo();
+      packageName = targetNode.getModel().getSModelReference().getLongName();
     }
-    SNode targetNode = reference.getTargetNode();
-    if (targetNode == null) {
-      foundError();
-      return "???";
-    }
-    return targetNode.getResolveInfo();
+    return (isNeedLongName(shortName, packageName)? packageName + '.' + shortName : shortName);
   }
 
   public String getDeafultNoTextGenErrorText(SNode node) {
     return "<!TextGen not found for '" + node.getConceptFqName() + "'!>";
+  }
+
+  boolean isNeedLongName(String shortName, String packageName) {
+    if (shortName == null || packageName == null || packageName.isEmpty()) return false;
+    SetSequence<String> importedNames = (SetSequence<String>) getUserObject(TextGenManager.IMPORT);
+    for (String importedName : importedNames) {
+      if (JavaNameUtil.shortName(importedName).equals(shortName)
+        && !JavaNameUtil.packageName(importedName).equals(packageName)) {
+        return true;
+      }
+    }
+    return false;
   }
 }
