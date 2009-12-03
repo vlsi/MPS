@@ -1379,8 +1379,8 @@ public class JavaConverterTreeBuilder {
       */
       return;
     }
-    if (adapter instanceof FieldDeclaration) {
-      FieldDeclaration field = (FieldDeclaration) adapter;
+    if (adapter instanceof FieldDeclaration || adapter instanceof StaticFieldDeclaration) {
+      VariableDeclaration field = (VariableDeclaration) adapter;
 
       try {
         jetbrains.mps.baseLanguage.structure.Expression initializer = null;
