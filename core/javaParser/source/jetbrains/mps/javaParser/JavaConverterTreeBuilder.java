@@ -1243,7 +1243,11 @@ public class JavaConverterTreeBuilder {
               }
             }*/
             //it was a bad idea
-            processConstructor((ConstructorDeclaration) method);
+            if (x.binding instanceof LocalTypeBinding) {
+              //don't add constructor to AnonymousClass
+            } else {
+              processConstructor((ConstructorDeclaration) method);
+            }
           } else if (method.isClinit()) {
             // nothing to do
             continue;
