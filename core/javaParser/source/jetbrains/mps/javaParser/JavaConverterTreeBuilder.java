@@ -81,11 +81,13 @@ public class JavaConverterTreeBuilder {
       // The expression was not a constant, so use the general logic.
       result = (jetbrains.mps.baseLanguage.structure.Expression) dispatchRefl("processExpression", expression);
     }
-    int parenthesisCount = (expression.bits & ASTNode.ParenthesizedMASK) >> ASTNode.ParenthesizedSHIFT;
-    for (int parenthsCreated = 0; parenthsCreated < parenthesisCount; parenthsCreated++) {
-      ParenthesizedExpression parenthesizedExpression = ParenthesizedExpression.newInstance(myCurrentModel);
-      parenthesizedExpression.setExpression(result);
-      result = parenthesizedExpression;
+    if (expression != null) {
+      int parenthesisCount = (expression.bits & ASTNode.ParenthesizedMASK) >> ASTNode.ParenthesizedSHIFT;
+      for (int parenthsCreated = 0; parenthsCreated < parenthesisCount; parenthsCreated++) {
+        ParenthesizedExpression parenthesizedExpression = ParenthesizedExpression.newInstance(myCurrentModel);
+        parenthesizedExpression.setExpression(result);
+        result = parenthesizedExpression;
+      }
     }
     return result;
   }
@@ -511,13 +513,13 @@ public class JavaConverterTreeBuilder {
   jetbrains.mps.baseLanguage.structure.Expression processExpression(org.eclipse.jdt.internal.compiler.ast.CastExpression x) {
     CastExpression result = CastExpression.newInstance(myCurrentModel);
     result.setExpression(processExpressionRefl(x.expression));
-    
+
     //compiler returns not a type but rather an expression
     if (x.type instanceof SingleNameReference) {
       result.setType(createType((TypeBinding) ((SingleNameReference)x.type).binding));
     } else if (x.type instanceof ArrayTypeReference) {
       result.setType(createType(((ArrayTypeReference)x.type).resolvedType));
-    } 
+    }
 
     return result;
   }
@@ -647,8 +649,8 @@ public class JavaConverterTreeBuilder {
       }
     }
     thisExpression.getNode().addReference(
-        myTypesProvider.createClassifierReference(
-          (ReferenceBinding) currentClass, ThisExpression.CLASS_CONCEPT, thisExpression.getNode()));
+      myTypesProvider.createClassifierReference(
+        (ReferenceBinding) currentClass, ThisExpression.CLASS_CONCEPT, thisExpression.getNode()));
     return thisExpression;
   }
 
