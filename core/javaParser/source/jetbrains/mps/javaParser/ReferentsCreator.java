@@ -422,7 +422,9 @@ public class ReferentsCreator {
         Visibility visibility = getMethodVisibility(b);
         constructorDeclaration.setVisibility(visibility);
         mapParameters(constructorDeclaration, ctorDecl);
-        classConcept.addConstructor(constructorDeclaration);
+        if (!(classConcept instanceof AnonymousClass)) {
+          classConcept.addConstructor(constructorDeclaration);
+        }
         myReferentsCreator.myBindingMap.put(b, constructorDeclaration);
         return true;
       } catch (Throwable e) {
