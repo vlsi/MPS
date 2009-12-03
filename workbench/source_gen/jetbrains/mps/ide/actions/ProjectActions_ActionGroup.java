@@ -4,6 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.workbench.actions.module.GenerateAllModulesInProjectAction;
 
 public class ProjectActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(ProjectActions_ActionGroup.class);
@@ -18,6 +19,8 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
     try {
       ProjectActions_ActionGroup.this.addAnchor(ProjectActions_ActionGroup.LABEL_ID_projectNew);
       ProjectActions_ActionGroup.this.addSeparator();
+      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RegenrateProject_Action", "jetbrains.mps.ide", new GenerateAllModulesInProjectAction(true));
+      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateProject_Action", "jetbrains.mps.ide", new GenerateAllModulesInProjectAction(false));
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CheckProject_Action", "jetbrains.mps.ide");
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MakeProject_Action", "jetbrains.mps.ide");
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RebuildProject_Action", "jetbrains.mps.ide");
