@@ -11,8 +11,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.List;
+import jetbrains.mps.ide.actions.SelectFieldsDialog;
 
 public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
   private IntentionContext intentionContext = new IntentionContext();
@@ -46,7 +47,6 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
 
   public void executeIntention(final SNode node, final EditorContext editorContext) {
     final SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    final List<SNode> fields = SLinkOperations.getTargets(classConcept, "field", true);
     final SNode thisExp = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
     final SNode equalsDeclaration = new _Quotations.QuotationClass_16().createNode(thisExp, thisExp, classConcept, classConcept);
     SNode thatDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(equalsDeclaration, "body", true), "statement", true)).last(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true);
@@ -54,7 +54,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
     SNode thatRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(thatRef, "variableDeclaration", thatDeclaration, false);
     SNode fieldRefOperation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
-    for (SNode field : fields) {
+    for (SNode field : (List<SNode>)this.intentionContext.getMyContextParametersMap().get("selectedFields")) {
       SLinkOperations.setTarget(fieldRefOperation, "fieldDeclaration", field, false);
       SNode checkStmt;
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
@@ -92,7 +92,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
     }
     SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", resultDeclaration);
     int i = 239;
-    for (final SNode field : fields) {
+    for (final SNode field : (List<SNode>)this.intentionContext.getMyContextParametersMap().get("selectedFields")) {
       SLinkOperations.setTarget(fieldRefOperation, "fieldDeclaration", field, false);
       SNode calcStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Statement", null);
       SNode plusExpression = new _Quotations.QuotationClass_28().createNode(resultReference);
@@ -122,6 +122,9 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention {
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext) {
+    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, null, node);
+    selectFieldsDialog.showDialog();
+    this.intentionContext.getMyContextParametersMap().put("selectedFields", selectFieldsDialog.getSelectedFields());
     return true;
   }
 

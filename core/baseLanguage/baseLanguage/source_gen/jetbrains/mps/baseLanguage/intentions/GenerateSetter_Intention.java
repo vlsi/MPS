@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.ide.actions.SelectFieldsDialog;
 
 public class GenerateSetter_Intention extends GenerateIntention {
   private IntentionContext intentionContext = new IntentionContext();
@@ -62,11 +63,7 @@ public class GenerateSetter_Intention extends GenerateIntention {
 
   public void executeIntention(final SNode node, final EditorContext editorContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    List<SNode> fields = SLinkOperations.getTargets(classConcept, "field", true);
-    if (ListSequence.fromList(fields).isEmpty()) {
-      return;
-    }
-    for (final SNode field : fields) {
+    for (final SNode field : (List<SNode>)this.intentionContext.getMyContextParametersMap().get("selectedFields")) {
       final String setterName = "set" + NameUtil.capitalize(SPropertyOperations.getString(field, "name"));
       boolean setterIsAbsent = true;
       if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
@@ -91,6 +88,9 @@ public class GenerateSetter_Intention extends GenerateIntention {
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext) {
+    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, null, node);
+    selectFieldsDialog.showDialog();
+    this.intentionContext.getMyContextParametersMap().put("selectedFields", selectFieldsDialog.getSelectedFields());
     return true;
   }
 
