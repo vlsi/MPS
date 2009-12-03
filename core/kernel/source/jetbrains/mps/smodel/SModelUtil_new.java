@@ -152,7 +152,10 @@ public class SModelUtil_new implements ApplicationComponent {
     assert model != null;
     boolean isNotProjectModel = !ProjectModels.isProjectModel(model.getSModelReference());
     if (isNotProjectModel) {
-      conceptFqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(conceptFqName, scope);
+      String fqName = ModelConstraintsManager.getInstance().getDefaultConcreteConceptFqName(conceptFqName, scope);
+      if (fqName != null) {
+        conceptFqName = fqName;
+      }
     }
 
     // patch: old generated adapters use fqName without word 'structure'
