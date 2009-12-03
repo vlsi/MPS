@@ -81,6 +81,12 @@ public class JavaConverterTreeBuilder {
       // The expression was not a constant, so use the general logic.
       result = (jetbrains.mps.baseLanguage.structure.Expression) dispatchRefl("processExpression", expression);
     }
+    int parenthesisCount = (expression.bits & ASTNode.ParenthesizedMASK) >> ASTNode.ParenthesizedSHIFT;
+    for (int parenthsCreated = 0; parenthsCreated < parenthesisCount; parenthsCreated++) {
+      ParenthesizedExpression parenthesizedExpression = ParenthesizedExpression.newInstance(myCurrentModel);
+      parenthesizedExpression.setExpression(result);
+      result = parenthesizedExpression;
+    }
     return result;
   }
 
