@@ -380,6 +380,7 @@ public class ReferentsCreator {
       field.setIsFinal(binding.isFinal());
       field.setType(type);
       field.setName(new String(binding.name));
+      ((ClassifierMember)field).setVisibility(getFieldVisibility(binding));
       myReferentsCreator.myBindingMap.put(binding, field);
       return field;
     }
@@ -497,6 +498,19 @@ public class ReferentsCreator {
     }
 
     private Visibility getMethodVisibility(MethodBinding b) {
+      SModel model = myReferentsCreator.myCurrentModel;
+      if (b.isPublic()) {
+        return PublicVisibility.newInstance(model);
+      } else if (b.isPrivate()) {
+        return PrivateVisibility.newInstance(model);
+      } else if (b.isProtected()) {
+        return ProtectedVisibility.newInstance(model);
+      } else {
+        return null;
+      }
+    }
+
+    private Visibility getFieldVisibility(FieldBinding b) {
       SModel model = myReferentsCreator.myCurrentModel;
       if (b.isPublic()) {
         return PublicVisibility.newInstance(model);

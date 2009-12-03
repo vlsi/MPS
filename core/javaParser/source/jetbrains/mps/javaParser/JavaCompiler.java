@@ -244,7 +244,8 @@ public class JavaCompiler {
     File generalSourceDirectory = getGeneralSourceDirectory();
     if (generalSourceDirectory != null) {
       if (myModule instanceof Solution && mySetOutputPath) {
-        ((Solution) myModule).getSolutionDescriptor().setOutputPath(generalSourceDirectory.getPath());
+    //    ((Solution) myModule).getSolutionDescriptor().setOutputPath(generalSourceDirectory.getPath());
+      //todo: it is not very convenient
       }
     }
     myModule.save();
