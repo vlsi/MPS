@@ -23,6 +23,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.typesystem.dependencies.InferenceMethod;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Set;
@@ -207,9 +208,13 @@ public class RulesUtil {
       } else {
         conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
       }
-    }
-    if (SNodeOperations.isInstanceOf(conceptDeclaration, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
+    } else if (SNodeOperations.isInstanceOf(conceptDeclaration, "jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable")) {
       conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
+    } else {
+      SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(leftType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType"), false);
+      if (nodeType != null) {
+        conceptDeclaration = SLinkOperations.getTarget(nodeType, "concept", false);
+      }
     }
     if (conceptDeclaration == null) {
       conceptDeclaration = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept");
