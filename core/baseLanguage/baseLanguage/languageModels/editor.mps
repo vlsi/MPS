@@ -4406,6 +4406,42 @@
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237818796463" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1578358025114233722">
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1578358025114233723">
+          <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1578358025114233724">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="1578358025114233725">
+        <property name="separatorText" value=" " />
+        <property name="name" value="staticMethodList" />
+        <property name="vertical" value="false" />
+        <link role="relationDeclaration" targetNodeId="17.2101871847910816112" />
+        <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1578358025114233726">
+          <property name="nullText" value="&lt;&lt;inner classifiers&gt;&gt;" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1578358025114233727">
+            <property name="flag" value="true" />
+          </node>
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="1578358025114233728">
+          <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PositionChildrenStyleClassItem" id="1578358025114233729">
+          <property name="position" value="indented" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem" id="1578358025114233730">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem" id="1578358025114233731">
+          <property name="flag" value="true" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem" id="1578358025114233732">
+          <property name="flag" value="true" />
+        </node>
+        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1578358025114233733" />
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1107796852516">
         <property name="text" value="}" />
         <link role="styleClass" targetNodeId="1215091331565" resolveInfo="RightBrace" />

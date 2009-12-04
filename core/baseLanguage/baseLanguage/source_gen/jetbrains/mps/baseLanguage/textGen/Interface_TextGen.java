@@ -49,6 +49,10 @@ public class Interface_TextGen extends SNodeTextGen {
         }
       }
     }
+    if (ListSequence.fromList(SLinkOperations.getTargets(node, "staticInnerClassifiers", true)).isNotEmpty()) {
+      this.appendNewLine();
+      BaseClassConceptTextGen.innerClassifiers(node, this);
+    }
     this.decreaseDepth();
     this.appendNewLine();
     if (node.isRoot()) {

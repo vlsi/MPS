@@ -4179,6 +4179,26 @@
                 <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1235130033770" />
               </node>
             </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1578358025114152149">
+              <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1578358025114152150">
+                <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1578358025114152151">
+                  <node role="part" type="jetbrains.mps.lang.textGen.structure.NewLineAppendPart" id="1578358025114152152" />
+                  <node role="part" type="jetbrains.mps.lang.textGen.structure.OperationCall" id="1578358025114152153">
+                    <link role="function" targetNodeId="582575223451914811" resolveInfo="innerClassifiers" />
+                    <node role="parameter" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1578358025114157167" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1578358025114152159">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1578358025114152160">
+                  <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1578358025114157166" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1578358025114152162">
+                    <link role="link" targetNodeId="1.2101871847910816112" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsNotEmptyOperation" id="1578358025114152163" />
+              </node>
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237560455264">
