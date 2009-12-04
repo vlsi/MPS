@@ -15,6 +15,7 @@ import com.intellij.ui.content.ContentManager;
 import com.intellij.ui.content.Content;
 
 import javax.swing.Icon;
+import javax.swing.SwingUtilities;
 
 import org.jetbrains.annotations.Nullable;
 
@@ -57,7 +58,11 @@ public abstract class TabbedUsagesTool extends BaseProjectTool implements INavig
     if (forceCloseOnReload()) {
       myReloadHandler = new ReloadAdapter() {
         public void onReload() {
-          myContentManager.removeAllContents(true);
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              myContentManager.removeAllContents(true);
+            }
+          });
         }
       };
       ClassLoaderManager.getInstance().addReloadHandler(myReloadHandler);
