@@ -25,7 +25,6 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   public static final String CONSTRUCTOR = "constructor";
   public static final String STATIC_METHOD = "staticMethod";
   public static final String IMPLEMENTED_INTERFACE = "implementedInterface";
-  public static final String STATIC_INNER_CLASSIFIERS = "staticInnerClassifiers";
   public static final String PROPERTY = "property";
 
   public ClassConcept(SNode node) {
@@ -190,26 +189,6 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
 
   public void insertImplementedInterface(ClassifierType prev, ClassifierType node) {
     this.insertChild(prev, ClassConcept.IMPLEMENTED_INTERFACE, node);
-  }
-
-  public int getStaticInnerClassifiersesCount() {
-    return this.getChildCount(ClassConcept.STATIC_INNER_CLASSIFIERS);
-  }
-
-  public Iterator<Classifier> staticInnerClassifierses() {
-    return this.children(Classifier.class, ClassConcept.STATIC_INNER_CLASSIFIERS);
-  }
-
-  public List<Classifier> getStaticInnerClassifierses() {
-    return this.getChildren(Classifier.class, ClassConcept.STATIC_INNER_CLASSIFIERS);
-  }
-
-  public void addStaticInnerClassifiers(Classifier node) {
-    this.addChild(ClassConcept.STATIC_INNER_CLASSIFIERS, node);
-  }
-
-  public void insertStaticInnerClassifiers(Classifier prev, Classifier node) {
-    this.insertChild(prev, ClassConcept.STATIC_INNER_CLASSIFIERS, node);
   }
 
   public int getPropertiesCount() {

@@ -6944,8 +6944,8 @@
             <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" id="1213877355805">
               <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213877355806">
                 <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1213877355807" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1213877355808">
-                  <link role="link" targetNodeId="1.1178616825527" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="2101871847910816183">
+                  <link role="link" targetNodeId="1.2101871847910816112" />
                 </node>
               </node>
             </node>

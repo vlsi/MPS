@@ -24,6 +24,7 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
   public static final String VISIBILITY = "visibility";
   public static final String STATIC_FIELD = "staticField";
   public static final String METHOD = "method";
+  public static final String STATIC_INNER_CLASSIFIERS = "staticInnerClassifiers";
   public static final String ANNOTATION = "annotation";
 
   public Classifier(SNode node) {
@@ -140,6 +141,26 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
 
   public void insertMethod(InstanceMethodDeclaration prev, InstanceMethodDeclaration node) {
     this.insertChild(prev, Classifier.METHOD, node);
+  }
+
+  public int getStaticInnerClassifiersesCount() {
+    return this.getChildCount(Classifier.STATIC_INNER_CLASSIFIERS);
+  }
+
+  public Iterator<Classifier> staticInnerClassifierses() {
+    return this.children(Classifier.class, Classifier.STATIC_INNER_CLASSIFIERS);
+  }
+
+  public List<Classifier> getStaticInnerClassifierses() {
+    return this.getChildren(Classifier.class, Classifier.STATIC_INNER_CLASSIFIERS);
+  }
+
+  public void addStaticInnerClassifiers(Classifier node) {
+    this.addChild(Classifier.STATIC_INNER_CLASSIFIERS, node);
+  }
+
+  public void insertStaticInnerClassifiers(Classifier prev, Classifier node) {
+    this.insertChild(prev, Classifier.STATIC_INNER_CLASSIFIERS, node);
   }
 
   public int getAnnotationsCount() {

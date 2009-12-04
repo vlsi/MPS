@@ -190,12 +190,6 @@
       <property name="role" value="staticInitializer" />
       <link role="target" targetNodeId="1068580123136" resolveInfo="StatementList" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1178616825527">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="staticInnerClassifiers" />
-      <link role="target" targetNodeId="1107461130800" resolveInfo="Classifier" />
-    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1201374247313">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="property" />
@@ -1305,6 +1299,12 @@
       <property name="role" value="method" />
       <property name="metaClass" value="aggregation" />
       <link role="target" targetNodeId="1068580123165" resolveInfo="InstanceMethodDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="2101871847910816112">
+      <property name="metaClass" value="aggregation" />
+      <property name="sourceCardinality" value="0..n" />
+      <property name="role" value="staticInnerClassifiers" />
+      <link role="target" targetNodeId="1107461130800" resolveInfo="Classifier" />
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1188208561367">
       <link role="intfc" targetNodeId="1188208481402" resolveInfo="Annotable" />

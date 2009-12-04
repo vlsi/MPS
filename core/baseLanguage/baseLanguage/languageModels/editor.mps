@@ -708,7 +708,7 @@
         <property name="separatorText" value=" " />
         <property name="name" value="staticMethodList" />
         <property name="vertical" value="false" />
-        <link role="relationDeclaration" targetNodeId="17.1178616825527" />
+        <link role="relationDeclaration" targetNodeId="17.2101871847910816112" />
         <node role="emptyCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1178616865558">
           <property name="nullText" value="&lt;&lt;inner classifiers&gt;&gt;" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214579834105">
