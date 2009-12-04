@@ -48,6 +48,7 @@ public class RefactoringUtil {
     if (!isApplicableToEntities(refactoring.getUserFriendlyName(), target, entities)) return false;
 
     for (IRefactoring r : getAllRefactorings()) {
+      if (r.getOverridenRefactoringClass() == null) continue;
       if (r.getRefactoringTarget().getTarget() != target.getTarget()) continue;
       if (!isApplicableToEntities(r.getUserFriendlyName(), r.getRefactoringTarget(), entities)) continue;
 
@@ -62,7 +63,7 @@ public class RefactoringUtil {
       String refClassName = refClass.getName();
       String overriddenClassLoader = r.getOverridenRefactoringClass().getClassLoader().toString();
       String refClassLoader = refClass.getClassLoader().toString();
-      assert! overriddenName.equals(refClassName):"overridden: "+ overriddenClassLoader+"; "+"ref: "+ refClassLoader;
+      assert !overriddenName.equals(refClassName) : "overridden: " + overriddenClassLoader + "; " + "ref: " + refClassLoader;
     }
 
     return true;
@@ -74,7 +75,7 @@ public class RefactoringUtil {
       try {
         applicable = target.isApplicable(entity);
       } catch (Throwable t) {
-        LOG.error("An error occured while executing "+refactoringName+".isApplicable(). This refactoring will not be available.",t);
+        LOG.error("An error occured while executing " + refactoringName + ".isApplicable(). This refactoring will not be available.", t);
         applicable = false;
       }
       if (!applicable) {
@@ -85,11 +86,11 @@ public class RefactoringUtil {
   }
 
   public static Map<IModule, List<SModel>> getLanguageAndItsExtendingLanguageModels(MPSProject project, Language language) {
-    Set<Language> extendingLangs =  MPSModuleRepository.getInstance().getAllExtendingLanguages(language);
+    Set<Language> extendingLangs = MPSModuleRepository.getInstance().getAllExtendingLanguages(language);
     Map<IModule, List<SModel>> result = new LinkedHashMap<IModule, List<SModel>>(extendingLangs.size() + 1);
     result.put(language, getLanguageModelsList(project, language));
     for (Language l : extendingLangs) {
-      if(!l.equals(language)) {
+      if (!l.equals(language)) {
         result.put(l, getLanguageModelsList(project, l));
       }
     }
