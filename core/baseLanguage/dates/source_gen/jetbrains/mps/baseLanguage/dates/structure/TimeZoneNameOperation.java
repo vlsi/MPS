@@ -13,15 +13,23 @@ import jetbrains.mps.project.GlobalScope;
 
 public class TimeZoneNameOperation extends BaseConcept implements IOperation {
   public static final String concept = "jetbrains.mps.baseLanguage.dates.structure.TimeZoneNameOperation";
+  public static final String PROPERTY = "property";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
-  public static final String IS_SHORT = "isShort";
   public static final String LOCALE = "locale";
   public static final String INSTANT = "instant";
 
   public TimeZoneNameOperation(SNode node) {
     super(node);
+  }
+
+  public String getProperty() {
+    return this.getProperty(TimeZoneNameOperation.PROPERTY);
+  }
+
+  public void setProperty(String value) {
+    this.setProperty(TimeZoneNameOperation.PROPERTY, value);
   }
 
   public String getShortDescription() {
@@ -46,14 +54,6 @@ public class TimeZoneNameOperation extends BaseConcept implements IOperation {
 
   public void setVirtualPackage(String value) {
     this.setProperty(TimeZoneNameOperation.VIRTUAL_PACKAGE, value);
-  }
-
-  public boolean getIsShort() {
-    return this.getBooleanProperty(TimeZoneNameOperation.IS_SHORT);
-  }
-
-  public void setIsShort(boolean value) {
-    this.setBooleanProperty(TimeZoneNameOperation.IS_SHORT, value);
   }
 
   public Locale getLocale() {
