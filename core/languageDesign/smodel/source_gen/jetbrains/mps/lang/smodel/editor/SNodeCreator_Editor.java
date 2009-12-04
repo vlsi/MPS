@@ -69,7 +69,7 @@ public class SNodeCreator_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_6629_1(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("prototypeNode");
-    provider.setNoTargetText("<no prototypeNode>");
+    provider.setNoTargetText("");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     {

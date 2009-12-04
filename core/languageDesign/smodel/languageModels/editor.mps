@@ -1830,6 +1830,7 @@
         <link role="styleClass" targetNodeId="5.1234958090348" resolveInfo="LeftParenAfterName" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1181943477554">
+        <property name="emptyNoTargetText" value="true" />
         <link role="relationDeclaration" targetNodeId="1.1181937442359" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1217846816034">
           <property name="value" value="0.0" />
