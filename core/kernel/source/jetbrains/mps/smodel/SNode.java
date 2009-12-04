@@ -138,6 +138,7 @@ public final class SNode {
   //do not use this method
   @Deprecated()
   public String getModelName_internal(){
+    if (myModel==null) return "<null>";
     return myModel.getLongName();
   }
 

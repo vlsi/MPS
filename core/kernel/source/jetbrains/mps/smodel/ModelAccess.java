@@ -290,6 +290,7 @@ public class ModelAccess {
       if (!ourErroredModels.contains(node.getModelName_internal())){
         ourErroredModels.add(node.getModelName_internal());
         System.err.println ("CRITICAL: INVALID OPERATION DETECTED");
+        System.err.println ("model: "+node.getModelName_internal());
         new IllegalModelAccessError("Accessing disposed node").printStackTrace(System.err);
       }
     }
