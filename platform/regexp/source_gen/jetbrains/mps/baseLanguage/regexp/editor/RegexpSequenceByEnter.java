@@ -18,9 +18,9 @@ public class RegexpSequenceByEnter extends EditorCellKeyMap {
     this.setApplicableToEveryModel(false);
     EditorCellKeyMapAction action;
     action = new RegexpSequenceByEnter.RegexpSequenceByEnter_Action0();
-    this.putAction("any", "VK_ENTER", action);
+    this.putAction("none", "VK_ENTER", action);
     action = new RegexpSequenceByEnter.RegexpSequenceByEnter_Action1();
-    this.putAction("any", "VK_ENTER", action);
+    this.putAction("none", "VK_ENTER", action);
   }
 
   public static class RegexpSequenceByEnter_Action0 extends EditorCellKeyMapAction {
@@ -65,7 +65,7 @@ public class RegexpSequenceByEnter extends EditorCellKeyMap {
     }
 
     public String getKeyStroke() {
-      return " ENTER";
+      return "none ENTER";
     }
   }
 
@@ -111,7 +111,7 @@ public class RegexpSequenceByEnter extends EditorCellKeyMap {
     }
 
     public String getKeyStroke() {
-      return " ENTER";
+      return "none ENTER";
     }
   }
 }
