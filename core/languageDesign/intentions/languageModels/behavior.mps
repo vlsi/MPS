@@ -96,19 +96,6 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724229" />
     </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1240406910049">
-      <property name="name" value="isParameterized" />
-      <property name="isVirtual" value="true" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240406910050" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1240406912257" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240406910052">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240406919976">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240406921572">
-            <property name="value" value="false" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3745452943050928873">
       <property name="name" value="getDescendantToCheck" />
       <link role="overriddenMethod" targetNodeId="7.3745452943050928880" resolveInfo="getDescendantToCheck" />
@@ -294,7 +281,7 @@
     <link role="concept" targetNodeId="1.1240395258925" resolveInfo="ParameterizedIntentionDeclaration" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1240406951010">
       <property name="name" value="isParameterized" />
-      <link role="overriddenMethod" targetNodeId="1240406910049" resolveInfo="isParameterized" />
+      <link role="overriddenMethod" targetNodeId="6263518417926802310" resolveInfo="isParameterized" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240406951013">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1240406967547">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1240406969768">
@@ -302,8 +289,8 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1240406962811" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1240406962812" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3355120809065040810" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1240396432371">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1240396432372">

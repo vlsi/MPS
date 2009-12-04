@@ -98,6 +98,49 @@
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="786327826249385741">
     <link role="concept" targetNodeId="2.4359456199357025372" resolveInfo="IntentionContextParamReference" />
+    <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="1379737298155043955">
+      <link role="applicableLink" targetNodeId="2.1349940517677186262" />
+      <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1379737298155043974">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1379737298155043975">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1379737298155044542">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1379737298155044548">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1379737298155044543">
+                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1379737298155044552" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1379737298155044545">
+                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1379737298155044546">
+                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1379737298155044547">
+                      <link role="conceptDeclaration" targetNodeId="2.2522969319638198292" resolveInfo="GenerateIntentionDeclaration" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1379737298155044553">
+                <link role="link" targetNodeId="2.4359456199356557540" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="1379737298155043956">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1379737298155043957">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1379737298155043958">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1379737298155043969">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1379737298155043960">
+              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="1379737298155043959" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1379737298155043964">
+                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1379737298155043965">
+                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1379737298155043968">
+                    <link role="conceptDeclaration" targetNodeId="2.2522969319638198292" resolveInfo="GenerateIntentionDeclaration" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="1379737298155043973" />
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1987159543836116993">
     <link role="concept" targetNodeId="2.4359456199357017245" resolveInfo="IntentionContextParameterDeclaration" />

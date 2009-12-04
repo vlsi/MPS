@@ -590,20 +590,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Block" id="5180116501957618333">
       <node role="body" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5180116501957618334">
         <property name="vertical" value="true" />
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5180116501957618335">
-          <property name="vertical" value="false" />
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5180116501957618336">
-            <property name="text" value="error intention :" />
-            <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
-          </node>
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="5180116501957618337">
-            <link role="relationDeclaration" targetNodeId="1.2522969319638091385" resolveInfo="isErrorIntention" />
-          </node>
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="5180116501957618338">
-            <property name="flag" value="false" />
-          </node>
-          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="5180116501957618339" />
-        </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5180116501957618340">
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="5180116501957618341" />
           <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5180116501957618342">
@@ -742,7 +728,7 @@
       <node role="header" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5180116501957618366">
         <property name="vertical" value="false" />
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5180116501957618367">
-          <property name="text" value="intention" />
+          <property name="text" value="generation intention" />
           <link role="styleClass" targetNodeId="2v.1186415544875" resolveInfo="KeyWord" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="5180116501957618368">
@@ -781,6 +767,7 @@
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="4359456199357025386">
             <property name="readOnly" value="true" />
             <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+            <link role="styleClass" targetNodeId="2v.1198595398954" resolveInfo="Field" />
           </node>
         </node>
       </node>
@@ -795,6 +782,7 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="4359456199357188678">
         <link role="relationDeclaration" targetNodeId="2.1169194664001" resolveInfo="name" />
+        <link role="styleClass" targetNodeId="2v.1198595398954" resolveInfo="Field" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="4359456199357188677" />
     </node>

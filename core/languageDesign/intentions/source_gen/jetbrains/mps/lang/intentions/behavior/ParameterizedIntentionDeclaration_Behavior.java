@@ -14,7 +14,7 @@ public class ParameterizedIntentionDeclaration_Behavior {
     ListSequence.fromList(SLinkOperations.getConceptLinkTargets(SLinkOperations.getTarget(thisNode, "descriptionFunction", true), "applicableConceptFunctionParameter")).addElement((SNode)parameter.getConceptDeclarationAdapter().getNode());
   }
 
-  public static boolean virtual_isParameterized_1240406910049(SNode thisNode) {
+  public static boolean virtual_isParameterized_6263518417926802310(SNode thisNode) {
     return true;
   }
 }
