@@ -64,6 +64,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 import jetbrains.mps.util.annotation.Patch;
+import jetbrains.mps.util.CollectionUtil;
 
 public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx implements ProjectComponent, JDOMExternalizable {
   private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl");
@@ -597,7 +598,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
     if (!ApplicationManager.getApplication().isUnitTestMode()) {
       StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
         public void run() {
-          myMappings.setDirectoryMappings(mappingsList);
+          myMappings.setDirectoryMappings(CollectionUtil.union(mappingsList, myMappings.getDirectoryMappings()));
         }
       });
     }
