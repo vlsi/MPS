@@ -53,8 +53,16 @@ public class RefactoringUtil {
 
       //todo {begin} for compatibility. Can be removed when all refactorings are rewritten
       Class refClass = refactoring instanceof OldRefactoringAdapter ? ((OldRefactoringAdapter) refactoring).getRefactoringClass() : refactoring.getClass();
-      if (r.getOverridenRefactoringClass() == refClass) return false;
       //todo {end}
+
+      if (r.getOverridenRefactoringClass() == refClass) return false;
+
+      //check
+      String overriddenName = r.getOverridenRefactoringClass().getName();
+      String refClassName = refClass.getName();
+      String overriddenClassLoader = r.getOverridenRefactoringClass().getClassLoader().toString();
+      String refClassLoader = refClass.getClassLoader().toString();
+      assert! overriddenName.equals(refClassName):"overridden: "+ overriddenClassLoader+"; "+"ref: "+ refClassLoader;
     }
 
     return true;
