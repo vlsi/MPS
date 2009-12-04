@@ -3347,19 +3347,19 @@
                       </node>
                     </node>
                     <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2006872123071116600">
-                      <link role="classifier" targetNodeId="80.~IStereotypeProvider" resolveInfo="IStereotypeProvider" />
+                      <link role="classifier" targetNodeId="80.~StereotypeProvider" resolveInfo="StereotypeProvider" />
                     </node>
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2006872123071116602">
-                  <link role="baseMethodDeclaration" targetNodeId="80.~IStereotypeProvider.getStereotype():java.lang.String" resolveInfo="getStereotype" />
+                  <link role="baseMethodDeclaration" targetNodeId="80.~StereotypeProvider.getStereotype():java.lang.String" resolveInfo="getStereotype" />
                 </node>
               </node>
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="5500129768599897530">
             <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2006872123071116597">
-              <link role="classifier" targetNodeId="80.~IStereotypeProvider" resolveInfo="IStereotypeProvider" />
+              <link role="classifier" targetNodeId="80.~StereotypeProvider" resolveInfo="StereotypeProvider" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5500129768599897532">
               <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="5500129768599897533" />
@@ -3392,19 +3392,19 @@
                       </node>
                     </node>
                     <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2006872123071116618">
-                      <link role="classifier" targetNodeId="80.~IStereotypeProvider" resolveInfo="IStereotypeProvider" />
+                      <link role="classifier" targetNodeId="80.~StereotypeProvider" resolveInfo="StereotypeProvider" />
                     </node>
                   </node>
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2006872123071116627">
-                  <link role="baseMethodDeclaration" targetNodeId="80.~IStereotypeProvider.isStrict():boolean" resolveInfo="isStrict" />
+                  <link role="baseMethodDeclaration" targetNodeId="80.~StereotypeProvider.isStrict():boolean" resolveInfo="isStrict" />
                 </node>
               </node>
             </node>
           </node>
           <node role="condition" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression" id="2006872123071116620">
             <node role="classType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2006872123071116621">
-              <link role="classifier" targetNodeId="80.~IStereotypeProvider" resolveInfo="IStereotypeProvider" />
+              <link role="classifier" targetNodeId="80.~StereotypeProvider" resolveInfo="StereotypeProvider" />
             </node>
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2006872123071116622">
               <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="2006872123071116623" />

@@ -17,7 +17,7 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.IStereotypeProvider;
+import jetbrains.mps.ide.StereotypeProvider;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
@@ -154,7 +154,7 @@ public class SModelsSubtree {
     return shortName.split("\\.").length - 1;
   }
 
-  public static class JavaStubsTreeNode extends TextTreeNode implements IStereotypeProvider {
+  public static class JavaStubsTreeNode extends TextTreeNode implements StereotypeProvider {
     public JavaStubsTreeNode(IOperationContext context) {
       super("java stubs", context);
 
@@ -171,7 +171,7 @@ public class SModelsSubtree {
     }
   }
 
-  public static class TestsTreeNode extends TextTreeNode implements IStereotypeProvider {
+  public static class TestsTreeNode extends TextTreeNode implements StereotypeProvider {
     public TestsTreeNode(IOperationContext context) {
       super("tests", context);
 

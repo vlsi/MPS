@@ -22,7 +22,7 @@ import jetbrains.mps.workbench.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import jetbrains.mps.ide.IStereotypeProvider;
+import jetbrains.mps.ide.StereotypeProvider;
 
 public class NewModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -136,15 +136,15 @@ public class NewModel_Action extends GeneratedAction {
   }
 
   protected String getStereotype() {
-    if (NewModel_Action.this.treeNode instanceof IStereotypeProvider) {
-      return ((IStereotypeProvider)NewModel_Action.this.treeNode).getStereotype();
+    if (NewModel_Action.this.treeNode instanceof StereotypeProvider) {
+      return ((StereotypeProvider)NewModel_Action.this.treeNode).getStereotype();
     }
     return null;
   }
 
   protected boolean isStrict() {
-    if (NewModel_Action.this.treeNode instanceof IStereotypeProvider) {
-      return ((IStereotypeProvider)NewModel_Action.this.treeNode).isStrict();
+    if (NewModel_Action.this.treeNode instanceof StereotypeProvider) {
+      return ((StereotypeProvider)NewModel_Action.this.treeNode).isStrict();
     }
     return false;
   }
