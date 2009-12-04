@@ -402,17 +402,6 @@
         <property name="name" value="projectNew" />
       </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.Separator" id="1204910765604" />
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="4333446894189378191">
-        <link role="action" targetNodeId="4333446894189378159" resolveInfo="RegenrateProject" />
-        <node role="actualParameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4333446894189378192">
-          <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4333446894189378193">
-            <link role="baseMethodDeclaration" targetNodeId="10.~GenerateAllModulesInProjectAction.&lt;init&gt;(boolean)" resolveInfo="GenerateAllModulesInProjectAction" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="4333446894189378194">
-              <property name="value" value="true" />
-            </node>
-          </node>
-        </node>
-      </node>
       <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="4333446894189378189">
         <link role="action" targetNodeId="4333446894189378034" resolveInfo="GenerateProject" />
         <node role="actualParameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4333446894189378195">
@@ -38147,6 +38136,20 @@
                           </node>
                         </node>
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1094167071768584682">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3355120809064927156">
+                            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3355120809064927157">
+                              <property name="name" value="intentionContext" />
+                              <property name="isFinal" value="true" />
+                              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3355120809064927158">
+                                <link role="classifier" targetNodeId="265.~IntentionContext" resolveInfo="IntentionContext" />
+                              </node>
+                              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3355120809064927160">
+                                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3355120809064927161">
+                                  <link role="baseMethodDeclaration" targetNodeId="265.~IntentionContext.&lt;init&gt;()" resolveInfo="IntentionContext" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
                           <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6180717376222045906">
                             <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6180717376222045907">
                               <property name="name" value="generateIntention" />
@@ -38198,7 +38201,7 @@
                                                     <link role="variableDeclaration" targetNodeId="6180717376222045907" resolveInfo="generateIntention" />
                                                   </node>
                                                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="9099429527602742589">
-                                                    <link role="baseMethodDeclaration" targetNodeId="265.~AbstractIntention.execute(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext):void" resolveInfo="execute" />
+                                                    <link role="baseMethodDeclaration" targetNodeId="265.~GenerateIntention.execute(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.intentions.IntentionContext):void" resolveInfo="execute" />
                                                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9099429527602742590">
                                                       <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="9099429527602742591">
                                                         <link role="variableDeclaration" targetNodeId="1094167071768584584" resolveInfo="pair" />
@@ -38214,6 +38217,9 @@
                                                       <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="9099429527602742595">
                                                         <link role="member" targetNodeId="1094167071768437564" resolveInfo="editorContext" />
                                                       </node>
+                                                    </node>
+                                                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3355120809064927173">
+                                                      <link role="variableDeclaration" targetNodeId="3355120809064927157" resolveInfo="intentionContext" />
                                                     </node>
                                                   </node>
                                                 </node>
@@ -38232,7 +38238,7 @@
                                 <link role="variableDeclaration" targetNodeId="6180717376222045907" resolveInfo="generateIntention" />
                               </node>
                               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="9099429527602731317">
-                                <link role="baseMethodDeclaration" targetNodeId="265.~GenerateIntention.executeUI(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext):boolean" resolveInfo="executeUI" />
+                                <link role="baseMethodDeclaration" targetNodeId="265.~GenerateIntention.executeUI(jetbrains.mps.smodel.SNode,jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.intentions.IntentionContext):boolean" resolveInfo="executeUI" />
                                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9099429527602742522">
                                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="9099429527602742521">
                                     <link role="variableDeclaration" targetNodeId="1094167071768584584" resolveInfo="pair" />
@@ -38248,6 +38254,9 @@
                                   <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="9099429527602742547">
                                     <link role="member" targetNodeId="1094167071768437564" resolveInfo="editorContext" />
                                   </node>
+                                </node>
+                                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3355120809064927165">
+                                  <link role="variableDeclaration" targetNodeId="3355120809064927157" resolveInfo="intentionContext" />
                                 </node>
                               </node>
                             </node>

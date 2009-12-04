@@ -10,14 +10,14 @@ import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 
-public class GenerateProject_Action extends GeneratedAction {
+public class RegenerateProject_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GenerateProject_Action.class);
+  protected static Log log = LogFactory.getLog(RegenerateProject_Action.class);
 
   private AnAction action;
 
-  public GenerateProject_Action(AnAction action_par) {
-    super("Generate Modules in Project", "", ICON);
+  public RegenerateProject_Action(AnAction action_par) {
+    super("Regenerate Modules in Project", "", ICON);
     this.action = action_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
@@ -31,10 +31,10 @@ public class GenerateProject_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      GenerateProject_Action.this.action.update(event);
+      RegenerateProject_Action.this.action.update(event);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GenerateProject", t);
+        log.error("User's action doUpdate method failed. Action:" + "RegenerateProject", t);
       }
       this.disable(event.getPresentation());
     }
@@ -50,10 +50,10 @@ public class GenerateProject_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      GenerateProject_Action.this.action.actionPerformed(event);
+      RegenerateProject_Action.this.action.actionPerformed(event);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GenerateProject", t);
+        log.error("User's action execute method failed. Action:" + "RegenerateProject", t);
       }
     }
   }
@@ -61,7 +61,7 @@ public class GenerateProject_Action extends GeneratedAction {
   @NotNull
   public String getActionId() {
     StringBuilder res = new StringBuilder(500);
-    res.append(GenerateProject_Action.class.getName());
+    res.append(RegenerateProject_Action.class.getName());
     res.append("#");
     res.append(action_State((AnAction)this.action));
     res.append("!");
@@ -69,6 +69,6 @@ public class GenerateProject_Action extends GeneratedAction {
   }
 
   public static String action_State(AnAction object) {
-    throw new RuntimeException("NOT IMPLEMENTED");
+    return "";
   }
 }
