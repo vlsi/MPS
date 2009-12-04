@@ -5688,5 +5688,107 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8255250703325737460" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5270353093116090438">
+    <link role="concept" targetNodeId="1.1139535219966" resolveInfo="CellActionMapDeclaration" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5270353093116090439">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5270353093116090440" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5270353093116096517">
+      <property name="name" value="getBaseConcept" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="18.2621449412040133768" resolveInfo="getBaseConcept" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5270353093116096518" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5270353093116096519">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5270353093116096525">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5270353093116096527">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5270353093116096526" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5270353093116096531">
+              <link role="link" targetNodeId="1.1139535219968" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5270353093116096520">
+        <link role="concept" targetNodeId="15.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5270353093116096534">
+    <property name="package" value="CellKeyMap" />
+    <link role="concept" targetNodeId="1.1081293058843" resolveInfo="CellKeyMapDeclaration" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5270353093116096535">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5270353093116096536" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5270353093116096537">
+      <property name="name" value="getBaseConcept" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="18.2621449412040133768" resolveInfo="getBaseConcept" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5270353093116096538" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5270353093116096539">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5270353093116096545">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5270353093116096547">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5270353093116096546" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5270353093116096551">
+              <link role="link" targetNodeId="1.1139445935125" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5270353093116096540">
+        <link role="concept" targetNodeId="15.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5270353093116097657">
+    <property name="package" value="CellMenu" />
+    <link role="concept" targetNodeId="1.1166040637528" resolveInfo="CellMenuComponent" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5270353093116097658">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5270353093116097659" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5270353093116097675">
+      <property name="name" value="getBaseConcept" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="18.2621449412040133768" resolveInfo="getBaseConcept" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5270353093116097676" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5270353093116097677">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5270353093116097683">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5270353093116097685">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5270353093116097684" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5270353093116097689">
+              <link role="link" targetNodeId="1.1166049300910" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5270353093116097678">
+        <link role="concept" targetNodeId="15.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="5270353093116097895">
+    <link role="concept" targetNodeId="1.1078938745671" resolveInfo="EditorComponentDeclaration" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="5270353093116097896">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5270353093116097897" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5270353093116097898">
+      <property name="name" value="getBaseConcept" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="18.2621449412040133768" resolveInfo="getBaseConcept" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5270353093116097899" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5270353093116097900">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5270353093116097906">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5270353093116097908">
+            <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5270353093116097907" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5270353093116097912">
+              <link role="link" targetNodeId="1.1166049300910" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5270353093116097901">
+        <link role="concept" targetNodeId="15.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      </node>
+    </node>
+  </node>
 </model>
 
