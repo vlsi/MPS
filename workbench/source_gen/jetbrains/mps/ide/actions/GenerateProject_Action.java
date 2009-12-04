@@ -69,6 +69,6 @@ public class GenerateProject_Action extends GeneratedAction {
   }
 
   public static String action_State(AnAction object) {
-    throw new RuntimeException("NOT IMPLEMENTED");
+    return "";
   }
 }
