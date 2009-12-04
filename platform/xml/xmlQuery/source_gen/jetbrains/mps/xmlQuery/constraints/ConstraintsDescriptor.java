@@ -12,9 +12,8 @@ public class ConstraintsDescriptor implements IModelConstraints {
   private List<IModelConstraints> myConstraints = ListSequence.fromList(new ArrayList<IModelConstraints>());
 
   public ConstraintsDescriptor() {
+    ListSequence.fromList(this.myConstraints).addElement(new ElementBuilder_elementDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new XMLElementType_schema_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new RootElementBuilder_complexType_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new ChildElementBuilder_elementDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new XMLElementType_complexType_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new AccessChildOperation_elementDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new AccessAttributeOperation_attributeDeclaration_ReferentConstraint());

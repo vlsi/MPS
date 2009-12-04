@@ -4,15 +4,25 @@ package jetbrains.mps.xmlQuery.structure;
 
 import jetbrains.mps.baseLanguage.builders.structure.Builder;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.xmlSchema.structure.ElementDeclaration;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class ElementBuilder extends Builder {
   public static final String concept = "jetbrains.mps.xmlQuery.structure.ElementBuilder";
+  public static final String ELEMENT_DECLARATION = "elementDeclaration";
 
   public ElementBuilder(SNode node) {
     super(node);
+  }
+
+  public ElementDeclaration getElementDeclaration() {
+    return (ElementDeclaration)this.getReferent(ElementDeclaration.class, ElementBuilder.ELEMENT_DECLARATION);
+  }
+
+  public void setElementDeclaration(ElementDeclaration node) {
+    super.setReferent(ElementBuilder.ELEMENT_DECLARATION, node);
   }
 
   public static ElementBuilder newInstance(SModel sm, boolean init) {

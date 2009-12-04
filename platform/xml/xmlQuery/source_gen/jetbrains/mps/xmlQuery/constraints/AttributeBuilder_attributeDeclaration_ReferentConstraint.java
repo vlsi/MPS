@@ -31,7 +31,7 @@ public class AttributeBuilder_attributeDeclaration_ReferentConstraint extends Ba
     SNode contextBuilder = Builder_Behavior.getContextBuilder_7057666463730366732(_context.getEnclosingNode());
     if (contextBuilder == null) {
     } else if (SNodeOperations.isInstanceOf(contextBuilder, "jetbrains.mps.xmlQuery.structure.ElementBuilder")) {
-      return SchemaUtil.getAvailableAttributes(ElementBuilder_Behavior.call_getComplexType_3149278768676788302(SNodeOperations.cast(contextBuilder, "jetbrains.mps.xmlQuery.structure.ElementBuilder")));
+      return SchemaUtil.getAvailableAttributes(ElementBuilder_Behavior.call_getComplexType_1384720974900281910(SNodeOperations.cast(contextBuilder, "jetbrains.mps.xmlQuery.structure.ElementBuilder")));
     }
     return new ArrayList<SNode>();
   }
