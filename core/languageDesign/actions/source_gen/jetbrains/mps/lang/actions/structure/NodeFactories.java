@@ -4,6 +4,7 @@ package jetbrains.mps.lang.actions.structure;
 
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.structure.structure.IConceptAspect;
 import jetbrains.mps.smodel.SNode;
 import java.util.Iterator;
 import java.util.List;
@@ -11,7 +12,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class NodeFactories extends BaseConcept implements INamedConcept {
+public class NodeFactories extends BaseConcept implements INamedConcept, IConceptAspect {
   public static final String concept = "jetbrains.mps.lang.actions.structure.NodeFactories";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";

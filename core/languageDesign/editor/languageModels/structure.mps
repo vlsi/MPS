@@ -977,6 +977,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1210369055138">
       <link role="intfc" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5270353093116097894">
+      <link role="intfc" targetNodeId="1.2621449412040133764" resolveInfo="IConceptAspect" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1078939183254">
     <property name="name" value="CellModel_Component" />
@@ -1045,6 +1048,9 @@
     <property name="package" value="CellKeyMap" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1173470710781">
       <link role="intfc" targetNodeId="3.1169194658468" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5270353093116096533">
+      <link role="intfc" targetNodeId="1.2621449412040133764" resolveInfo="IConceptAspect" />
     </node>
     <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1149937560128">
       <property name="name" value="everyModel" />
@@ -1561,6 +1567,9 @@
     <property name="rootable" value="true" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1173470751204">
       <link role="intfc" targetNodeId="3.1169194658468" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5270353093116090437">
+      <link role="intfc" targetNodeId="1.2621449412040133764" resolveInfo="IConceptAspect" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1139535219968">
       <property name="role" value="applicableConcept" />
@@ -2517,6 +2526,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1210369041997">
       <link role="intfc" targetNodeId="3.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5270353093116097656">
+      <link role="intfc" targetNodeId="1.2621449412040133764" resolveInfo="IConceptAspect" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1166041033436">

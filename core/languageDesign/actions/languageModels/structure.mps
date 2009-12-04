@@ -358,7 +358,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="12" />
+  <maxImportIndex value="13" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -368,6 +368,7 @@
   <import index="9" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="12" modelUID="f:java_stub#jetbrains.mps.lang.actions(jetbrains.mps.lang.actions@java_stub)" version="-1" />
+  <import index="13" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1112056943463">
     <property name="rootable" value="true" />
     <property name="iconPath" value="${language_descriptor}\icons\actions.png" />
@@ -375,6 +376,9 @@
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1173470386323">
       <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5270353093116089660">
+      <link role="intfc" targetNodeId="2.2621449412040133764" resolveInfo="IConceptAspect" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1112058057696">
       <property name="metaClass" value="aggregation" />
@@ -472,6 +476,9 @@
     <link role="extends" targetNodeId="1.1133920641626" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1173470403719">
       <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5270353093116090173">
+      <link role="intfc" targetNodeId="2.2621449412040133764" resolveInfo="IConceptAspect" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1138079416599">
       <property name="metaClass" value="aggregation" />
@@ -613,6 +620,9 @@
     <property name="name" value="NodeFactories" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1173470414329">
       <link role="intfc" targetNodeId="1.1169194658468" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5270353093116089361">
+      <link role="intfc" targetNodeId="2.2621449412040133764" resolveInfo="IConceptAspect" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1158700779049">
       <property name="metaClass" value="aggregation" />
@@ -2206,6 +2216,9 @@
     </node>
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1221135307644">
       <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5270353093116089913">
+      <link role="intfc" targetNodeId="2.2621449412040133764" resolveInfo="IConceptAspect" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1221135321084">
       <property name="metaClass" value="aggregation" />
