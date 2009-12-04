@@ -14,7 +14,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
-import jetbrains.mps.ide.actions.SelectFieldsDialog;
 
 public class GenerateEqualsAndHashcode_Intention extends GenerateIntention implements Intention {
   public GenerateEqualsAndHashcode_Intention() {

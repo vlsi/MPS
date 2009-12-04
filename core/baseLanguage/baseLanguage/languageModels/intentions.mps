@@ -10188,14 +10188,8 @@
     <node role="isApplicableFunction" type="jetbrains.mps.lang.intentions.structure.IsApplicableBlock" id="5973141109804726298">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5973141109804726299">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5973141109804726300">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5973141109804726309">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5973141109804726304">
-              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="5973141109804726301" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="5973141109804726308">
-                <link role="link" targetNodeId="1.1068390468201" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="5973141109804726313" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="9078697818357387315">
+            <property name="value" value="true" />
           </node>
         </node>
       </node>
@@ -10206,11 +10200,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3359340002141630554">
             <property name="name" value="selectFieldsDialog" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3359340002141630555">
-              <link role="classifier" targetNodeId="34.3359340002141299007" resolveInfo="SelectFieldsDialog" />
+              <link role="classifier" targetNodeId="9078697818357715964" resolveInfo="SelectFieldsDialog" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3359340002141630557">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3359340002141630559">
-                <link role="baseMethodDeclaration" targetNodeId="34.3359340002141444599" resolveInfo="SelectFieldsDialog" />
+                <link role="baseMethodDeclaration" targetNodeId="9078697818357715965" resolveInfo="SelectFieldsDialog" />
                 <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="3359340002141630560" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3359340002141630562" />
                 <node role="actualArgument" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="4754919398690188935" />
@@ -10235,7 +10229,7 @@
                 <link role="variableDeclaration" targetNodeId="3359340002141630554" resolveInfo="selectFieldsDialog" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2506506516854246346">
-                <link role="baseMethodDeclaration" targetNodeId="34.4359456199356555549" resolveInfo="getSelectedFields" />
+                <link role="baseMethodDeclaration" targetNodeId="9078697818357715983" resolveInfo="getSelectedFields" />
               </node>
             </node>
             <node role="lValue" type="jetbrains.mps.lang.intentions.structure.IntentionContextParamReference" id="2506506516854231467">
@@ -10664,11 +10658,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6295902294821223230">
             <property name="name" value="selectFieldsDialog" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6295902294821223231">
-              <link role="classifier" targetNodeId="34.3359340002141299007" resolveInfo="SelectFieldsDialog" />
+              <link role="classifier" targetNodeId="9078697818357715964" resolveInfo="SelectFieldsDialog" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6295902294821223232">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6295902294821223233">
-                <link role="baseMethodDeclaration" targetNodeId="34.3359340002141444599" resolveInfo="SelectFieldsDialog" />
+                <link role="baseMethodDeclaration" targetNodeId="9078697818357715965" resolveInfo="SelectFieldsDialog" />
                 <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="6295902294821223234" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6295902294821223235" />
                 <node role="actualArgument" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6295902294821223236" />
@@ -10693,7 +10687,7 @@
                 <link role="variableDeclaration" targetNodeId="6295902294821223230" resolveInfo="selectFieldsDialog" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6295902294821223245">
-                <link role="baseMethodDeclaration" targetNodeId="34.4359456199356555549" resolveInfo="getSelectedFields" />
+                <link role="baseMethodDeclaration" targetNodeId="9078697818357715983" resolveInfo="getSelectedFields" />
               </node>
             </node>
             <node role="lValue" type="jetbrains.mps.lang.intentions.structure.IntentionContextParamReference" id="6295902294821223246">
@@ -11163,11 +11157,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6295902294821223282">
             <property name="name" value="selectFieldsDialog" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6295902294821223283">
-              <link role="classifier" targetNodeId="34.3359340002141299007" resolveInfo="SelectFieldsDialog" />
+              <link role="classifier" targetNodeId="9078697818357715964" resolveInfo="SelectFieldsDialog" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6295902294821223284">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6295902294821223285">
-                <link role="baseMethodDeclaration" targetNodeId="34.3359340002141444599" resolveInfo="SelectFieldsDialog" />
+                <link role="baseMethodDeclaration" targetNodeId="9078697818357715965" resolveInfo="SelectFieldsDialog" />
                 <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="6295902294821223286" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6295902294821223287" />
                 <node role="actualArgument" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6295902294821223288" />
@@ -11192,7 +11186,7 @@
                 <link role="variableDeclaration" targetNodeId="6295902294821223282" resolveInfo="selectFieldsDialog" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6295902294821223297">
-                <link role="baseMethodDeclaration" targetNodeId="34.4359456199356555549" resolveInfo="getSelectedFields" />
+                <link role="baseMethodDeclaration" targetNodeId="9078697818357715983" resolveInfo="getSelectedFields" />
               </node>
             </node>
             <node role="lValue" type="jetbrains.mps.lang.intentions.structure.IntentionContextParamReference" id="6295902294821223298">
@@ -13156,11 +13150,11 @@
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6295902294821224395">
             <property name="name" value="selectFieldsDialog" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6295902294821224396">
-              <link role="classifier" targetNodeId="34.3359340002141299007" resolveInfo="SelectFieldsDialog" />
+              <link role="classifier" targetNodeId="9078697818357715964" resolveInfo="SelectFieldsDialog" />
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6295902294821224397">
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6295902294821224398">
-                <link role="baseMethodDeclaration" targetNodeId="34.3359340002141444599" resolveInfo="SelectFieldsDialog" />
+                <link role="baseMethodDeclaration" targetNodeId="9078697818357715965" resolveInfo="SelectFieldsDialog" />
                 <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="6295902294821224399" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6295902294821224400" />
                 <node role="actualArgument" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6295902294821224401" />
@@ -13185,7 +13179,7 @@
                 <link role="variableDeclaration" targetNodeId="6295902294821224395" resolveInfo="selectFieldsDialog" />
               </node>
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6295902294821224410">
-                <link role="baseMethodDeclaration" targetNodeId="34.4359456199356555549" resolveInfo="getSelectedFields" />
+                <link role="baseMethodDeclaration" targetNodeId="9078697818357715983" resolveInfo="getSelectedFields" />
               </node>
             </node>
             <node role="lValue" type="jetbrains.mps.lang.intentions.structure.IntentionContextParamReference" id="6295902294821224411">
@@ -17370,6 +17364,100 @@
                   </node>
                 </node>
               </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="9078697818357715964">
+    <property name="name" value="SelectFieldsDialog" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="9078697818357715965">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="9078697818357715966" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9078697818357715967" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9078697818357715968">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" id="9078697818357715969">
+          <link role="baseMethodDeclaration" targetNodeId="34.9078697818357582118" resolveInfo="SelectMembersDialog" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="9078697818357715970">
+            <link role="variableDeclaration" targetNodeId="9078697818357715974" resolveInfo="editorContext" />
+          </node>
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="9078697818357715971">
+            <link role="variableDeclaration" targetNodeId="9078697818357715976" resolveInfo="mainFrame" />
+          </node>
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="9078697818357715972">
+            <link role="variableDeclaration" targetNodeId="9078697818357715978" resolveInfo="node" />
+          </node>
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="9078697818357715973">
+            <property name="value" value="fields" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="9078697818357715974">
+        <property name="name" value="editorContext" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="9078697818357715975">
+          <link role="classifier" targetNodeId="6.~EditorContext" resolveInfo="EditorContext" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="9078697818357715976">
+        <property name="name" value="mainFrame" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="9078697818357715977">
+          <link role="classifier" targetNodeId="49.~Frame" resolveInfo="Frame" />
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="9078697818357715978">
+        <property name="name" value="node" />
+        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="9078697818357715979">
+          <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+        </node>
+      </node>
+    </node>
+    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9078697818357715980" />
+    <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="9078697818357715981">
+      <link role="classifier" targetNodeId="34.9078697818357582099" resolveInfo="SelectMembersDialog" />
+      <node role="parameter" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="9078697818357715982">
+        <link role="concept" targetNodeId="1.1068390468200" resolveInfo="FieldDeclaration" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="9078697818357715983">
+      <property name="name" value="getSelectedFields" />
+      <property name="isFinal" value="false" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="9078697818357715984">
+        <link role="elementConcept" targetNodeId="1.1068390468200" resolveInfo="FieldDeclaration" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9078697818357715985">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="9078697818357715986">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9078697818357715987">
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="9078697818357715988">
+              <link role="baseMethodDeclaration" targetNodeId="34.9078697818357582284" resolveInfo="getSelectedMembers" />
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="9078697818357715989" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9078697818357715990" />
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="9078697818357715991">
+      <property name="name" value="getMembers" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.collections.structure.ListType" id="9078697818357715992">
+        <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="9078697818357715993">
+          <link role="concept" targetNodeId="1.1068390468200" resolveInfo="FieldDeclaration" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility" id="9078697818357715994" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9078697818357715995">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="9078697818357715996">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9078697818357715997">
+            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="9078697818357715998">
+              <link role="concept" targetNodeId="1.1068390468198" resolveInfo="ClassConcept" />
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9078697818357715999">
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="9078697818357716000">
+                  <link role="fieldDeclaration" targetNodeId="34.9078697818357582100" resolveInfo="myClassifier" />
+                </node>
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="9078697818357716001" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="9078697818357716002">
+              <link role="link" targetNodeId="1.1068390468199" />
             </node>
           </node>
         </node>

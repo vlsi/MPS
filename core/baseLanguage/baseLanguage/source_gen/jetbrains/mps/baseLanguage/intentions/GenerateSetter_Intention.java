@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.intentions.IntentionContext;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.ide.actions.SelectFieldsDialog;
 
 public class GenerateSetter_Intention extends GenerateIntention implements Intention {
   public GenerateSetter_Intention() {
