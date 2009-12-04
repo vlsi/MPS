@@ -96,12 +96,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   public Set<SModelRoot> collectSModelRoots() {
     Set<SModelRoot> result = new HashSet<SModelRoot>();
-    IFile sourceFile = this.getModelFile();
-    Set<IModule> modelOwners = getModules();
-    for (IModule module : modelOwners) {
+    for (IModule module : getModules()) {
       for (SModelRoot modelRoot : module.getSModelRoots()) {
-        if (this.getSModelFqName().toString().equals(
-          PathManager.getModelUIDString(sourceFile, FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix()))) {
+        String modelFqName = getSModelFqName().toString();
+        String expectedName = PathManager.getModelUIDString(getModelFile(), FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
+        
+        if (modelFqName.equals(expectedName)) {
           result.add(modelRoot);
         }
       }

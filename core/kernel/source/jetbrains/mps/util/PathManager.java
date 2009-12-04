@@ -331,21 +331,26 @@ public class PathManager {
   }
 
   public static String getModelUIDString(IFile modelFile, IFile root, String namespacePrefix) {
-    String modelPath = modelFile.getCanonicalPath();
-    String rootPath = root.getCanonicalPath();
-    if (!modelPath.startsWith(rootPath)) {
-      return null;
-    }
-    int length = rootPath.length();
-    if (rootPath.endsWith(File.separator) || rootPath.endsWith("!")) {
-      length--;
-    }
-    String longName = modelPath.substring(length + 1);
+    String longName = cropModelPath(modelFile, root);
+    if (longName == null) return null;
+
     longName = longName.substring(0, longName.lastIndexOf("."));
     longName = longName.replace(File.separatorChar, '.').replace('/', '.');
     if (namespacePrefix != null && namespacePrefix.length() > 0) {
       longName = namespacePrefix + ((longName.length() > 0) ? "." + longName : "");
     }
     return longName;
+  }
+
+  private static String cropModelPath(IFile modelFile, IFile root) {
+    String modelPath = modelFile.getCanonicalPath();
+    String rootPath = root.getCanonicalPath();
+    if (!modelPath.startsWith(rootPath)) return null;
+
+    int length = rootPath.length();
+    if (rootPath.endsWith(File.separator) || rootPath.endsWith("!")) {
+      length--;
+    }
+    return modelPath.substring(length + 1);
   }
 }
