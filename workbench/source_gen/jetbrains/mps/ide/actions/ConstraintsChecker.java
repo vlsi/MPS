@@ -16,6 +16,7 @@ import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -32,7 +33,7 @@ public class ConstraintsChecker extends SpecificChecker {
   public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
-    for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+    for (final SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
       if (!(progressContext.checkAndUpdateIndicator("Checking " + SModelOperations.getModelName(model) + " for cardinalities and properties constraints..."))) {
         break;
       }
@@ -53,19 +54,33 @@ public class ConstraintsChecker extends SpecificChecker {
         }
       }
 
-      for (SNode child : ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
+      for (final SNode child : ListSequence.fromList(SNodeOperations.getChildren(node)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(SNodeOperations.isAttribute(it));
         }
       })) {
         if (!(ModelCheckerUtils.isDeclaredLink(SNodeOperations.getContainingLinkDeclaration(child), true))) {
-          addIssue(results, node, "Usage of undeclared child role \"" + SNodeOperations.getContainingLinkRole(child) + "\"", ModelChecker.CATEGORY_WARNING, new ModelCheckerFix.UndeclaredChild(node, SNodeOperations.getContainingLinkRole(child)));
+          addIssue(results, node, "Usage of undeclared child role \"" + SNodeOperations.getContainingLinkRole(child) + "\"", ModelChecker.CATEGORY_WARNING, new IModelCheckerFix() {
+            public boolean doFix() {
+              ListSequence.fromList(SNodeOperations.getChildren(node, SNodeOperations.getContainingLinkDeclaration(child))).visitAll(new IVisitor<SNode>() {
+                public void visit(SNode child) {
+                  SNodeOperations.deleteNode(child);
+                }
+              });
+              return true;
+            }
+          });
         }
       }
 
-      for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(node))) {
+      for (final SReference reference : ListSequence.fromList(SNodeOperations.getReferences(node))) {
         if (!(ModelCheckerUtils.isDeclaredLink(SLinkOperations.findLinkDeclaration(reference), false))) {
-          addIssue(results, node, "Usage of undeclared reference role \"" + reference + "\"", ModelChecker.CATEGORY_WARNING, new ModelCheckerFix.UndeclaredReference(node, SLinkOperations.getRole(reference)));
+          addIssue(results, node, "Usage of undeclared reference role \"" + reference + "\"", ModelChecker.CATEGORY_WARNING, new IModelCheckerFix() {
+            public boolean doFix() {
+              node.removeReferent(SLinkOperations.getRole(reference));
+              return true;
+            }
+          });
         }
       }
 
@@ -80,12 +95,17 @@ public class ConstraintsChecker extends SpecificChecker {
         }
       }
 
-      for (String name : SetSequence.fromSet(node.getPropertyNames())) {
+      for (final String name : SetSequence.fromSet(node.getPropertyNames())) {
         if (node.isRoot() && SModelTreeNode.PACK.equals(name)) {
           continue;
         }
         if (!(isDeclaredProperty(concept, name))) {
-          addIssue(results, node, "Usage of undeclared property \"" + name + "\"", ModelChecker.CATEGORY_WARNING, new ModelCheckerFix.UndeclaredProperty(node, name));
+          addIssue(results, node, "Usage of undeclared property \"" + name + "\"", ModelChecker.CATEGORY_WARNING, new IModelCheckerFix() {
+            public boolean doFix() {
+              node.setProperty(name, null, false);
+              return true;
+            }
+          });
         }
       }
     }

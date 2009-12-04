@@ -8,9 +8,9 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 public class ModelCheckerIssue {
   private SNode myNode;
   private String myMessage;
-  private ModelCheckerFix myFix;
+  private IModelCheckerFix myFix;
 
-  public ModelCheckerIssue(SNode node, String message, ModelCheckerFix fix) {
+  public ModelCheckerIssue(SNode node, String message, IModelCheckerFix fix) {
     this.myNode = node;
     this.myMessage = message;
     this.myFix = fix;
@@ -29,7 +29,7 @@ public class ModelCheckerIssue {
   }
 
   public boolean fix() {
-    if (this.myFix != null) {
+    if (this.myFix != null && !(this.myNode.isDeleted())) {
       return this.myFix.doFix();
     } else {
       return false;
@@ -40,7 +40,7 @@ public class ModelCheckerIssue {
     return this.myFix != null;
   }
 
-  public static SearchResult<ModelCheckerIssue> getSearchResult(SNode node, String message, String category, ModelCheckerFix fix) {
+  public static SearchResult<ModelCheckerIssue> getSearchResult(SNode node, String message, String category, IModelCheckerFix fix) {
     ModelCheckerIssue issue = new ModelCheckerIssue(node, message, fix);
     return new SearchResult<ModelCheckerIssue>(issue, node, category);
   }
