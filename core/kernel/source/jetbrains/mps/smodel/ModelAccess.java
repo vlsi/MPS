@@ -28,6 +28,8 @@ import javax.swing.SwingUtilities;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.Set;
+import java.util.List;
+import java.util.ArrayList;
 
 /**
  * We access IDEA locking mechanism here in order to prevent different way of acquiring locks
@@ -35,6 +37,7 @@ import java.util.Set;
  */
 public class ModelAccess {
   private static final ModelAccess ourInstance = new ModelAccess();
+  private static Set<String> ourErroredModels = new java.util.HashSet<String>();
 
   private ReentrantReadWriteLock myReadWriteLock = new ReentrantReadWriteLock();
   private EDTExecutor myEDTExecutor = new EDTExecutor();
@@ -284,9 +287,11 @@ public class ModelAccess {
 
   static void assertLegalRead(SNode node) {
     if (node.isDisposed()) {
-//      throw new IllegalModelAccessError("Accessing disposed node");
+      if (!ourErroredModels.contains(node.getModelName_internal())){
+        ourErroredModels.add(node.getModelName_internal());
         System.err.println ("CRITICAL: INVALID OPERATION DETECTED");
         new IllegalModelAccessError("Accessing disposed node").printStackTrace(System.err);
+      }
     }
     ModelAccess modelAccess = ModelAccess.instance();
     if (!modelAccess.canRead() && !modelAccess.myIndexingThreads.contains(Thread.currentThread())) {      

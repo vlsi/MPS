@@ -135,6 +135,12 @@ public final class SNode {
     myParent.insertChild(this, myRoleInParent, newSibling, true);
   }
 
+  //do not use this method
+  @Deprecated()
+  public String getModelName_internal(){
+    return myModel.getLongName();
+  }
+
   public SModel getModel() {
     ModelAccess.assertLegalRead(this);
 
