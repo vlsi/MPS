@@ -1243,61 +1243,27 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9078697818357715928" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9078697818357715929" />
     </node>
-    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="9078697818357945746">
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="9078697818357945747" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9078697818357945748" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9078697818357945750">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9078697818357945753">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="9078697818357945755">
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9078697818357945758">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="9078697818357945761" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="9078697818357945762">
-                <link role="fieldDeclaration" targetNodeId="8993872298946451026" resolveInfo="myField3" />
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="9078697818358024028">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="9078697818358024029" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="9078697818358024030" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9078697818358024032">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9078697818358024035">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="9078697818358024037">
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9078697818358024040">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="9078697818358024043" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="9078697818358024044">
+                <link role="fieldDeclaration" targetNodeId="8993872298946414358" resolveInfo="myField1" />
               </node>
             </node>
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="9078697818357945763">
-              <link role="variableDeclaration" targetNodeId="9078697818357945751" resolveInfo="myField3" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9078697818357945766">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="9078697818357945768">
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9078697818357945771">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="9078697818357945774" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="9078697818357945775">
-                <link role="fieldDeclaration" targetNodeId="2315063335017831583" resolveInfo="myI" />
-              </node>
-            </node>
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="9078697818357945776">
-              <link role="variableDeclaration" targetNodeId="9078697818357945764" resolveInfo="myI" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9078697818357945779">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="9078697818357945781">
-            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9078697818357945784">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="9078697818357945787" />
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="9078697818357945788">
-                <link role="fieldDeclaration" targetNodeId="8993872298946451029" resolveInfo="myField4" />
-              </node>
-            </node>
-            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="9078697818357945789">
-              <link role="variableDeclaration" targetNodeId="9078697818357945777" resolveInfo="myField4" />
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="9078697818358024045">
+              <link role="variableDeclaration" targetNodeId="9078697818358024033" resolveInfo="myField1" />
             </node>
           </node>
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="9078697818357945751">
-        <property name="name" value="myField3" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.CharType" id="9078697818357945752" />
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="9078697818357945764">
-        <property name="name" value="myI" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="9078697818357945765" />
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="9078697818357945777">
-        <property name="name" value="myField4" />
-        <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="9078697818357945778" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="9078697818358024033">
+        <property name="name" value="myField1" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ByteType" id="9078697818358024034" />
       </node>
     </node>
   </node>

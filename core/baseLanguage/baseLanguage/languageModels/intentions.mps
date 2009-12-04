@@ -10206,7 +10206,17 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3359340002141630559">
                 <link role="baseMethodDeclaration" targetNodeId="9078697818357715965" resolveInfo="SelectFieldsDialog" />
                 <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="3359340002141630560" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3359340002141630562" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5271503632533820049">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5271503632533820044">
+                    <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="5271503632533820043" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5271503632533820048">
+                      <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5271503632533820491">
+                    <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getMainFrame():java.awt.Frame" resolveInfo="getMainFrame" />
+                  </node>
+                </node>
                 <node role="actualArgument" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="4754919398690188935" />
               </node>
             </node>
@@ -10238,8 +10248,13 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="926291610756533797">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="926291610756533799">
-            <property name="value" value="true" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5271503632533820493">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5271503632533820492">
+              <link role="variableDeclaration" targetNodeId="3359340002141630554" resolveInfo="selectFieldsDialog" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5271503632533820497">
+              <link role="baseMethodDeclaration" targetNodeId="34.9078697818357962279" resolveInfo="getAnswer" />
+            </node>
           </node>
         </node>
       </node>
@@ -10664,7 +10679,17 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6295902294821223233">
                 <link role="baseMethodDeclaration" targetNodeId="9078697818357715965" resolveInfo="SelectFieldsDialog" />
                 <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="6295902294821223234" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6295902294821223235" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5271503632533821567">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5271503632533821568">
+                    <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="5271503632533821569" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5271503632533821570">
+                      <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5271503632533821571">
+                    <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getMainFrame():java.awt.Frame" resolveInfo="getMainFrame" />
+                  </node>
+                </node>
                 <node role="actualArgument" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6295902294821223236" />
               </node>
             </node>
@@ -10696,8 +10721,13 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6295902294821223247">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="6295902294821223248">
-            <property name="value" value="true" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5271503632533821611">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5271503632533821610">
+              <link role="variableDeclaration" targetNodeId="6295902294821223230" resolveInfo="selectFieldsDialog" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5271503632533821615">
+              <link role="baseMethodDeclaration" targetNodeId="34.9078697818357962279" resolveInfo="getAnswer" />
+            </node>
           </node>
         </node>
       </node>
@@ -11163,7 +11193,17 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6295902294821223285">
                 <link role="baseMethodDeclaration" targetNodeId="9078697818357715965" resolveInfo="SelectFieldsDialog" />
                 <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="6295902294821223286" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6295902294821223287" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5271503632533821599">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5271503632533821600">
+                    <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="5271503632533821601" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5271503632533821602">
+                      <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5271503632533821603">
+                    <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getMainFrame():java.awt.Frame" resolveInfo="getMainFrame" />
+                  </node>
+                </node>
                 <node role="actualArgument" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6295902294821223288" />
               </node>
             </node>
@@ -11195,8 +11235,13 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6295902294821223299">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="6295902294821223300">
-            <property name="value" value="true" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5271503632533821605">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5271503632533821604">
+              <link role="variableDeclaration" targetNodeId="6295902294821223282" resolveInfo="selectFieldsDialog" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5271503632533821609">
+              <link role="baseMethodDeclaration" targetNodeId="34.9078697818357962279" resolveInfo="getAnswer" />
+            </node>
           </node>
         </node>
       </node>
@@ -13156,7 +13201,17 @@
               <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6295902294821224398">
                 <link role="baseMethodDeclaration" targetNodeId="9078697818357715965" resolveInfo="SelectFieldsDialog" />
                 <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="6295902294821224399" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6295902294821224400" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5271503632533821572">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5271503632533821573">
+                    <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="5271503632533821574" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5271503632533821575">
+                      <link role="baseMethodDeclaration" targetNodeId="6.~EditorContext.getOperationContext():jetbrains.mps.smodel.IOperationContext" resolveInfo="getOperationContext" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5271503632533821576">
+                    <link role="baseMethodDeclaration" targetNodeId="5.~IOperationContext.getMainFrame():java.awt.Frame" resolveInfo="getMainFrame" />
+                  </node>
+                </node>
                 <node role="actualArgument" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="6295902294821224401" />
               </node>
             </node>
@@ -13188,8 +13243,13 @@
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6295902294821224412">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="6295902294821224413">
-            <property name="value" value="true" />
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5271503632533821541">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5271503632533821540">
+              <link role="variableDeclaration" targetNodeId="6295902294821224395" resolveInfo="selectFieldsDialog" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5271503632533821545">
+              <link role="baseMethodDeclaration" targetNodeId="34.9078697818357962279" resolveInfo="getAnswer" />
+            </node>
           </node>
         </node>
       </node>
