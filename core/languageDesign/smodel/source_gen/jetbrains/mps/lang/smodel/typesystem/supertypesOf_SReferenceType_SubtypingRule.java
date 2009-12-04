@@ -8,16 +8,16 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class supertypesOf_SEnumMemberType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  public supertypesOf_SEnumMemberType_SubtypingRule() {
+public class supertypesOf_SReferenceType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+  public supertypesOf_SReferenceType_SubtypingRule() {
   }
 
-  public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_137().createNode(typeCheckingContext);
+  public SNode getSubOrSuperType(SNode referenceType, TypeCheckingContext typeCheckingContext) {
+    return new _Quotations.QuotationClass_122().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.smodel.structure.SEnumMemberType";
+    return "jetbrains.mps.lang.smodel.structure.SReferenceType";
   }
 
   public boolean isApplicable(SNode argument) {

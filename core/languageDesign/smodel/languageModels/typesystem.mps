@@ -10742,5 +10742,22 @@
       <link role="concept" targetNodeId="1.5708036808576088033" resolveInfo="Reference_GetResolveInfo" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule" id="3010989094832023640">
+    <property name="package" value="type" />
+    <property name="name" value="supertypesOf_SReferenceType" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3010989094832023641">
+      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3010989094832023798">
+        <node role="expression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3010989094832023800">
+          <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3010989094832023803">
+            <link role="classifier" targetNodeId="2.~SReference" resolveInfo="SReference" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="3010989094832023643">
+      <property name="name" value="referenceType" />
+      <link role="concept" targetNodeId="1.8758390115029295477" resolveInfo="SReferenceType" />
+    </node>
+  </node>
 </model>
 

@@ -19,7 +19,7 @@ public class typeof_Reference_GetResolveInfo_InferenceRule extends AbstractInfer
       SNode _nodeToCheck_1029348928467 = info;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "5708036808576088290", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "5708036808576088286", true), (SNode)new _Quotations.QuotationClass_133().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "5708036808576088286", true), (SNode)new _Quotations.QuotationClass_134().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 

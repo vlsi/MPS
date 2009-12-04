@@ -435,6 +435,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
+      SubtypingRule_Runtime subtypingRule = new supertypesOf_SReferenceType_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
       ComparisonRule_Runtime comparisonRule = new interface_node_types_are_comparable_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
     }
