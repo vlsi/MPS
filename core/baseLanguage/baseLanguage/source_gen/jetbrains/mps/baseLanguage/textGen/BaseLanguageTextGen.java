@@ -150,7 +150,7 @@ public abstract class BaseLanguageTextGen {
   }
 
   public static void methodCall(SNode methodCall, final SNodeTextGen textGen) {
-    textGen.append(textGen.getReferentResolveInfoOrName("baseMethodDeclaration", methodCall));
+    textGen.append(textGen.getReferentPresentation(SNodeOperations.getReference(methodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"))));
     BaseLanguageTextGen.arguments(methodCall, textGen);
   }
 
