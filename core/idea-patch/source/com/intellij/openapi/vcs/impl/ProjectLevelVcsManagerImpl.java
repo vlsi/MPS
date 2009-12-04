@@ -595,7 +595,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
     // condition was added
     // do not register activity if we are in unit test mode
     if (!ApplicationManager.getApplication().isUnitTestMode()) {
-      StartupManager.getInstance(myProject).registerStartupActivity(new Runnable() {
+      StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
         public void run() {
           myMappings.setDirectoryMappings(mappingsList);
         }
