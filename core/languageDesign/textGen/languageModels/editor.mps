@@ -1185,5 +1185,32 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237808969839" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="6911933836258445311">
+    <property name="package" value="operation.append.part" />
+    <link role="conceptDeclaration" targetNodeId="1.6911933836258445304" resolveInfo="ReferenceAppendPart" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="6911933836258445737">
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="6911933836258445739" />
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="6911933836258445740">
+        <property name="text" value="$ref{" />
+        <link role="styleClass" targetNodeId="1237976670141" resolveInfo="AppendPart" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="6911933836258446087">
+          <property name="flag" value="false" />
+        </node>
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="6911933836258446089">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="6911933836258445742">
+        <link role="relationDeclaration" targetNodeId="1.6911933836258445307" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="6911933836258445744">
+        <property name="text" value="}" />
+        <link role="styleClass" targetNodeId="1237976670141" resolveInfo="AppendPart" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="6911933836258446090">
+          <property name="flag" value="true" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

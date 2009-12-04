@@ -770,5 +770,34 @@
       <link role="concept" targetNodeId="1.1233670071145" resolveInfo="ConceptTextGenDeclaration" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="6911933836258446091">
+    <property name="name" value="typeof_ReferenceAppendPart" />
+    <property name="package" value="operation.append.part" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6911933836258446092">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="6911933836258446103">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="6911933836258446111">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="6911933836258446112">
+            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SReferenceType" id="6911933836258446115" />
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="6911933836258446106">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="6911933836258446095">
+            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6911933836258446098">
+              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6911933836258446097">
+                <link role="applicableNode" targetNodeId="6911933836258446093" resolveInfo="part" />
+              </node>
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6911933836258446102">
+                <link role="link" targetNodeId="1.6911933836258445307" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="6911933836258446093">
+      <property name="name" value="part" />
+      <link role="concept" targetNodeId="1.6911933836258445304" resolveInfo="ReferenceAppendPart" />
+    </node>
+  </node>
 </model>
 

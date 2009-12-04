@@ -24,5 +24,6 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation", new IncreaseDepthOperation_DataFlow());
     manager.register("jetbrains.mps.lang.textGen.structure.IndentBufferOperation", new IndentBufferOperation_DataFlow());
     manager.register("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", new LanguageTextGenDeclaration_DataFlow());
+    manager.register("jetbrains.mps.lang.textGen.structure.ReferenceAppendPart", new ReferenceAppendPart_DataFlow());
   }
 }

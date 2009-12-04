@@ -381,5 +381,21 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="6911933836258446116">
+    <property name="package" value="operation.append.part" />
+    <link role="conceptDeclaration" targetNodeId="1.6911933836258445304" resolveInfo="ReferenceAppendPart" />
+    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="6911933836258446117">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6911933836258446118">
+        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="6911933836258446119">
+          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6911933836258446122">
+            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="6911933836258446121" />
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6911933836258446126">
+              <link role="link" targetNodeId="1.6911933836258445307" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

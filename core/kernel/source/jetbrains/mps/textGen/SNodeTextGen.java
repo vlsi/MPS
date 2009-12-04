@@ -121,6 +121,24 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
       return "<err:no ref for role '" + role + "'>";
     }
 
+    if (reference instanceof DynamicReference) {
+      return reference.getResolveInfo();
+    } else {
+      SNode targetNode = reference.getTargetNode();
+      if (targetNode == null) {
+        foundError();
+        return "???";
+      }
+      return targetNode.getResolveInfo();
+    }
+  }
+
+  public String getReferentPresentation(SReference reference) {
+    if (reference == null) {
+      foundError();
+      return "<err:null reference>";
+    }
+
     String shortName = null;
     String packageName = null;
     if (reference instanceof DynamicReference) {

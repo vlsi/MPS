@@ -466,6 +466,9 @@
       <property name="value" value="resolve info" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473914776" resolveInfo="shortDescription" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="6911933836258445303">
+      <property name="comment" value="replaced by ReferenceAppendPart" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1237305334312">
     <property name="package" value="operation.append.part" />
@@ -567,6 +570,25 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="8931911391946696734">
       <property name="value" value="extension" />
       <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6911933836258445304">
+    <property name="package" value="operation.append.part" />
+    <property name="name" value="ReferenceAppendPart" />
+    <link role="extends" targetNodeId="1237305115734" resolveInfo="AbstractAppendPart" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6911933836258445307">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="reference" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="3v.1068431790191" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6911933836258445308">
+      <property name="value" value="$ref{" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6911933836258445310">
+      <property name="value" value="reference" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473914776" resolveInfo="shortDescription" />
     </node>
   </node>
 </model>

@@ -290,6 +290,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "text", true);
   }
 
+  public static SNode sourceNodeQuery_4340589516981966480(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "reference", true);
+  }
+
+  public static SNode sourceNodeQuery_4340589516982036844(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "reference", true);
+  }
+
   public static SNode sourceNodeQuery_6302490199502034063(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "value", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
   }
