@@ -26,6 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
+import jetbrains.mps.util.annotation.DisposableCommand;
 
 
 class OnReloadingUndoCleaner implements ApplicationComponent {
@@ -52,7 +53,9 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
           for (final Project p : myProjectManager.getOpenProjects()) {
             ApplicationManager.getApplication().invokeLater(new Runnable() {
               public void run() {
-                ((UndoManagerImpl) UndoManager.getInstance(p)).clearUndoRedoQueueInTests(file);
+                if (!p.isDisposed()) {
+                  ((UndoManagerImpl) UndoManager.getInstance(p)).clearUndoRedoQueueInTests(file);
+                }
               }
             }, ModalityState.NON_MODAL);
           }
