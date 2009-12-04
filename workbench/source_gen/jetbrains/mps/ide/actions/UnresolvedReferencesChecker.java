@@ -13,12 +13,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.resolve.Resolver;
 
 public class UnresolvedReferencesChecker extends SpecificChecker {
   public UnresolvedReferencesChecker() {
   }
 
-  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, IOperationContext operationContext) {
+  public List<SearchResult<ModelCheckerIssue>> checkModel(SModel model, ProgressContext progressContext, final IOperationContext operationContext) {
     List<SearchResult<ModelCheckerIssue>> results = ListSequence.fromList(new ArrayList<SearchResult<ModelCheckerIssue>>());
 
     for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
@@ -26,9 +27,13 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
         break;
       }
       // Check for unresolved references 
-      for (SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
+      for (final SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
         if ((SLinkOperations.getTargetNode(ref) == null)) {
-          addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.CATEGORY_ERROR, null);
+          addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.CATEGORY_ERROR, new IModelCheckerFix() {
+            public boolean doFix() {
+              return Resolver.resolve1(ref, operationContext);
+            }
+          });
         }
       }
     }
