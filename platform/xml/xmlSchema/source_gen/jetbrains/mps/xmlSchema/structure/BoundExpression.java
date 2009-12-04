@@ -9,18 +9,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class BoundExpression extends MaxOccursExpression {
   public static final String concept = "jetbrains.mps.xmlSchema.structure.BoundExpression";
-  public static final String VALUE = "value";
+  public static final String MAX_OCCURS = "maxOccurs";
 
   public BoundExpression(SNode node) {
     super(node);
   }
 
-  public int getValue() {
-    return this.getIntegerProperty(BoundExpression.VALUE);
+  public int getMaxOccurs() {
+    return this.getIntegerProperty(BoundExpression.MAX_OCCURS);
   }
 
-  public void setValue(int value) {
-    this.setIntegerProperty(BoundExpression.VALUE, value);
+  public void setMaxOccurs(int value) {
+    this.setIntegerProperty(BoundExpression.MAX_OCCURS, value);
   }
 
   public static BoundExpression newInstance(SModel sm, boolean init) {

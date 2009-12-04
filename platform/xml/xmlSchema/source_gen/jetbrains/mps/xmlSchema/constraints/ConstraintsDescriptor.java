@@ -21,6 +21,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new Declaration_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new Schema_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new AttributeGroup_alias_PropertyConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new BoundExpression_maxOccurs_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ComplexTypeReference_complexType_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new Declaration_DefaultSearchScope());
   }
