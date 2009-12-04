@@ -334,12 +334,13 @@ public class PathManager {
     String longName = cropModelPath(modelFile, root);
     if (longName == null) return null;
 
-    longName = longName.substring(0, longName.lastIndexOf("."));
-    longName = longName.replace(File.separatorChar, '.').replace('/', '.');
+    String namespace = NameUtil.namespaceFromLongName(longName);
+    namespace = namespace.replace(File.separatorChar, '.').replace('/', '.');
+    
     if (namespacePrefix != null && namespacePrefix.length() > 0) {
-      longName = namespacePrefix + ((longName.length() > 0) ? "." + longName : "");
+      namespace = namespacePrefix + ((namespace.length() > 0) ? "." + namespace : "");
     }
-    return longName;
+    return namespace;
   }
 
   private static String cropModelPath(IFile modelFile, IFile root) {
