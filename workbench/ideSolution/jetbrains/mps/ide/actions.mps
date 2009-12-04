@@ -24210,11 +24210,15 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4085963264561916990">
               <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="4085963264561916989" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="4085963264561916994">
-                <link role="baseMethodDeclaration" targetNodeId="177.4085963264561761230" resolveInfo="findActions" />
+                <link role="baseMethodDeclaration" targetNodeId="177.1567570417158062208" resolveInfo="findConceptAspect" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4085963264561916996">
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="4085963264561916997" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1567570417158101632">
+                  <link role="enumConstantDeclaration" targetNodeId="40.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
+                  <link role="enumClass" targetNodeId="40.~LanguageAspect" resolveInfo="LanguageAspect" />
                 </node>
               </node>
             </node>
