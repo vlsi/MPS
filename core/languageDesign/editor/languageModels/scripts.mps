@@ -39,37 +39,6 @@
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)" version="-1" />
-  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1215684869392">
-    <property name="migrationFromBuild" value="dddd" />
-    <property name="title" value="show old rt actions" />
-    <property name="name" value="ShowOldRTActions" />
-    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1215684883315">
-      <property name="description" value="rt actions" />
-      <link role="affectedInstanceConcept" targetNodeId="1.1139535280617" resolveInfo="CellActionMapItem" />
-      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1215684883316">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215684883317" />
-      </node>
-      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1215684909896">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215684909897">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215684911117">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215684923029">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1215684911259">
-                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1215684911118" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="1215684922231">
-                  <link role="property" targetNodeId="1.1139535298778" resolveInfo="actionId" />
-                </node>
-              </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum" id="1215684924976">
-                <node role="value" type="jetbrains.mps.lang.smodel.structure.EnumMemberReference" id="1215684924977">
-                  <link role="enumMember" targetNodeId="1.1139535329028" resolveInfo="right_transform" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1221476747257">
     <property name="name" value="RemoveQueryEnumItem" />
     <property name="title" value="remove enum item &quot;query&quot;" />
@@ -681,67 +650,6 @@
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1234797276127">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1234797277554">
               <property name="value" value="false" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1237472541096">
-    <property name="migrationFromBuild" value="1193" />
-    <property name="name" value="FindNonIndentLayouts" />
-    <property name="title" value="find non indent layouts" />
-    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1237472555297">
-      <property name="description" value="find non indent collections" />
-      <link role="affectedInstanceConcept" targetNodeId="1.1073389446423" resolveInfo="CellModel_Collection" />
-      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1237472555298">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237472555299" />
-      </node>
-      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1237472572315">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237472572316">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237472575194">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1237472601878">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237472601879">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237472601880">
-                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1237472601881" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237472601882">
-                    <link role="link" targetNodeId="1.1106270802874" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1237472601883">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237472601884">
-                    <link role="conceptDeclaration" targetNodeId="1.1237303669825" resolveInfo="CellLayout_Indent" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1237472603902">
-      <property name="description" value="find non indent lists with roles" />
-      <link role="affectedInstanceConcept" targetNodeId="1.1140524381322" resolveInfo="CellModel_ListWithRole" />
-      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="1237472603903">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237472603904" />
-      </node>
-      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="1237472390449">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1237472390450">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237472392779">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1237473222944">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237473222945">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1237473222946">
-                  <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="1237473222947" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1237473222948">
-                    <link role="link" targetNodeId="1.1140524464360" />
-                  </node>
-                </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation" id="1237473222949">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1237473222950">
-                    <link role="conceptDeclaration" targetNodeId="1.1237303669825" resolveInfo="CellLayout_Indent" />
-                  </node>
-                </node>
-              </node>
             </node>
           </node>
         </node>

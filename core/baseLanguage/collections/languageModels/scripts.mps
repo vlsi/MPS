@@ -52,10 +52,10 @@
   <import index="22" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
   <import index="23" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1236765926225">
-    <property name="migrationFromBuild" value="1193" />
     <property name="name" value="MigrationToCollections" />
     <property name="title" value="Migration from List to collections" />
     <property name="category" value="collections" />
+    <property name="migrationFromBuild" value="5070" />
     <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1236765966356">
       <property name="description" value="ListMigration" />
       <link role="affectedInstanceConcept" targetNodeId="11.1107535904670" resolveInfo="ClassifierType" />
@@ -3595,10 +3595,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1238516564139">
-    <property name="migrationFromBuild" value="1193" />
     <property name="name" value="MigrationFromMapsToCollections" />
     <property name="category" value="collections" />
     <property name="title" value="Migration from map to collections" />
+    <property name="migrationFromBuild" value="5070" />
     <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1238516630806">
       <property name="description" value="MapMigration" />
       <link role="affectedInstanceConcept" targetNodeId="11.1107535904670" resolveInfo="ClassifierType" />
