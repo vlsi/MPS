@@ -1307,5 +1307,163 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="4943859628564430280">
+    <property name="migrationFromBuild" value="1193" />
+    <property name="name" value="Replace_ListType_with_collection_operations" />
+    <property name="title" value="Replace deprecated LinkList operations with collections operations" />
+    <property name="category" value="SModel" />
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="4943859628564436177">
+      <property name="description" value="replace 'add All' with nlist&lt;&gt; 'addAll' " />
+      <link role="affectedInstanceConcept" targetNodeId="1.1172244025706" resolveInfo="LinkList_AddAllOperation" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="4943859628564436178">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4943859628564436179">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4943859628564438222">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4943859628564438223">
+              <property name="name" value="addAll" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4943859628564438224">
+                <link role="concept" targetNodeId="11.1160666733551" resolveInfo="AddAllElementsOperation" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4943859628564459733">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="4943859628564459732" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" id="4943859628564459737">
+                  <link role="concept" targetNodeId="11.1160666733551" resolveInfo="AddAllElementsOperation" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4943859628564459634">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="4943859628564459641">
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4943859628564459645">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="4943859628564459644" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4943859628564459649">
+                  <link role="link" targetNodeId="1.1172244025707" />
+                </node>
+              </node>
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4943859628564459636">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4943859628564459635">
+                  <link role="variableDeclaration" targetNodeId="4943859628564438223" resolveInfo="addAll" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4943859628564459640">
+                  <link role="link" targetNodeId="11.1160666822012" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="4943859628564438210">
+      <property name="description" value="replace 'add' with nlist&lt;&gt; 'add' " />
+      <link role="affectedInstanceConcept" targetNodeId="1.1139870260207" resolveInfo="LinkList_AddChildOperation" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="4943859628564438211">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4943859628564438212">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4943859628564459664">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4943859628564459665">
+              <property name="name" value="add" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4943859628564459666">
+                <link role="concept" targetNodeId="11.1160612413312" resolveInfo="AddElementOperation" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4943859628564459726">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="4943859628564459725" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" id="4943859628564459730">
+                  <link role="concept" targetNodeId="11.1160612413312" resolveInfo="AddElementOperation" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4943859628564459672">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="4943859628564459679">
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4943859628564459674">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4943859628564459673">
+                  <link role="variableDeclaration" targetNodeId="4943859628564459665" resolveInfo="add" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4943859628564459678">
+                  <link role="link" targetNodeId="11.1160612519549" />
+                </node>
+              </node>
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4943859628564459683">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="4943859628564459682" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4943859628564459687">
+                  <link role="link" targetNodeId="1.1139870362308" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="4943859628564438213">
+      <property name="description" value="replace 'count' with nlist&lt;&gt; 'size' " />
+      <link role="affectedInstanceConcept" targetNodeId="1.1145468686058" resolveInfo="LinkList_GetCountOperation" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="4943859628564438214">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4943859628564438215">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4943859628564459714">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4943859628564459717">
+              <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="4943859628564459716" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" id="4943859628564459723">
+                <link role="concept" targetNodeId="11.1162935959151" resolveInfo="GetSizeOperation" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="4943859628564438216">
+      <property name="description" value="replace 'insert first' with nlist&lt;&gt; 'addFirst' " />
+      <link role="affectedInstanceConcept" targetNodeId="1.1140029532506" resolveInfo="LinkList_InsertChildFirstOperation" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="4943859628564438217">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4943859628564438218">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="4943859628564459738">
+            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="4943859628564459739">
+              <property name="name" value="addFirst" />
+              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="4943859628564459740">
+                <link role="concept" targetNodeId="11.1227022159410" resolveInfo="AddFirstElementOperation" />
+              </node>
+              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4943859628564459749">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="4943859628564459748" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" id="4943859628564459753">
+                  <link role="concept" targetNodeId="11.1227022159410" resolveInfo="AddFirstElementOperation" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4943859628564459755">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="4943859628564459762">
+              <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4943859628564459757">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4943859628564459756">
+                  <link role="variableDeclaration" targetNodeId="4943859628564459739" resolveInfo="addFirst" />
+                </node>
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4943859628564459761">
+                  <link role="link" targetNodeId="11.1227022622978" />
+                </node>
+              </node>
+              <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4943859628564459766">
+                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="4943859628564459765" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4943859628564459770">
+                  <link role="link" targetNodeId="1.1140029532507" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="4943859628564438219">
+      <property name="description" value="replace 'remove All' with nlist&lt;&gt; 'clear' " />
+      <link role="affectedInstanceConcept" targetNodeId="1.1215103457144" resolveInfo="LinkList_RemoveAllChildrenOperation" />
+      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="4943859628564438220">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4943859628564438221">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4943859628564459776">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4943859628564459778">
+              <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="4943859628564459777" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" id="4943859628564459782">
+                <link role="concept" targetNodeId="11.1227022210526" resolveInfo="ClearAllElementsOperation" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

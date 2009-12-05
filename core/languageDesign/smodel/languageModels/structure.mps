@@ -1214,6 +1214,10 @@
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1139870333260">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763350436" resolveInfo="applicable_to_linkList" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="4943859628564383037">
+      <property name="comment" value="this 'add' operation was replaced with nlist&lt;&gt; 'add' operation from collections laguage" />
+      <property name="build" value="1193" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1140029532506">
     <property name="name" value="LinkList_InsertChildFirstOperation" />
@@ -1235,6 +1239,10 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1140029532510">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763350436" resolveInfo="applicable_to_linkList" />
+    </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="4943859628564383093">
+      <property name="comment" value="this 'insert first' operation was replaced with nlist&lt;&gt; 'addFirst' operation from collections laguage" />
+      <property name="build" value="1193" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1140129518788">
@@ -1648,6 +1656,10 @@
       <link role="conceptLinkDeclaration" targetNodeId="2.1217022095863" resolveInfo="returnType" />
       <node role="target" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1179356605386" />
     </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="4943859628564383057">
+      <property name="comment" value="this 'count' operation was replaced with nlist&lt;&gt; 'size' operation from collections laguage" />
+      <property name="build" value="1193" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1145567426890">
     <property name="name" value="SNodeListCreator" />
@@ -2057,6 +2069,10 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1172244025710">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763350436" resolveInfo="applicable_to_linkList" />
+    </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="4943859628564361193">
+      <property name="comment" value="this 'add all' operation was replaced with nlist&lt;&gt; 'addAll' operation from collections laguage" />
+      <property name="build" value="1193" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1172323065820">
@@ -2798,6 +2814,10 @@
     </node>
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1215103457148">
       <link role="conceptPropertyDeclaration" targetNodeId="1138763350436" resolveInfo="applicable_to_linkList" />
+    </node>
+    <node role="deprecatedNode$attribute" type="jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation" id="4943859628564383100">
+      <property name="comment" value="this 'remove all' operation was replaced with nlist&lt;&gt; 'clear' operation from collections laguage" />
+      <property name="build" value="1193" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1215467301810">
