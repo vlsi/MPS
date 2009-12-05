@@ -1308,7 +1308,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="4943859628564430280">
-    <property name="migrationFromBuild" value="1193" />
+    <property name="migrationFromBuild" value="14333" />
     <property name="name" value="Replace_ListType_with_collection_operations" />
     <property name="title" value="Replace deprecated LinkList operations with collections operations" />
     <property name="category" value="SModel" />
