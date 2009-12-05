@@ -32,7 +32,7 @@
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1237978428015">
     <property name="name" value="OperationCall" />
-    <property name="migrationFromBuild" value="5720" />
+    <property name="migrationFromBuild" value="5270" />
     <property name="title" value="modify operation call" />
     <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1237978442532">
       <property name="description" value="operation call" />

@@ -89,10 +89,10 @@
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)" />
   <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1234198385755">
-    <property name="migrationFromBuild" value="1193" />
     <property name="name" value="HorizontalGapMigration" />
     <property name="category" value="editor language" />
     <property name="title" value="horizontal gap migration" />
+    <property name="migrationFromBuild" value="5070" />
     <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1234791340838">
       <property name="description" value="Padding rigth delete" />
       <link role="affectedInstanceConcept" targetNodeId="1.1215007897487" resolveInfo="PaddingRightStyleClassItem" />
@@ -657,7 +657,6 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1237726848485">
-    <property name="migrationFromBuild" value="1193" />
     <property name="name" value="MigrationToIndentLayout" />
     <property name="category" value="editor language" />
     <property name="title" value="Migration to Indent Layout" />
@@ -1036,10 +1035,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="7055725856389047980">
-    <property name="migrationFromBuild" value="1193" />
     <property name="name" value="GetRidOfConceptsInInlineEditors" />
     <property name="category" value="editor" />
     <property name="title" value="get rid of concepts in inline editors" />
+    <property name="migrationFromBuild" value="5270" />
     <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="7055725856389047981">
       <property name="description" value="remove concepts" />
       <property name="showAsIntention" value="true" />
