@@ -20,7 +20,6 @@ import java.util.*;
 public class RuntimeEnvironment<T> {
   private final Object myLock = new Object();
 
-  private List<RuntimeListener<T>> myListeners = new ArrayList<RuntimeListener<T>>();
   private Map<T, RBundle<T>> myBundles = new HashMap<T, RBundle<T>>();
   private Set<String> myLoadFromParentPrefixes = new HashSet<String>();
 
@@ -77,7 +76,6 @@ public class RuntimeEnvironment<T> {
       for (RBundle<T> bundle : bundles) {
         assert !myBundles.containsKey(bundle.getId());
         myBundles.put(bundle.getId(), bundle);
-        fireBundleAdded(bundle);
       }
 
       return this;
@@ -92,7 +90,6 @@ public class RuntimeEnvironment<T> {
         collectDependencies(bundle, deps);
       }
 
-      List<RBundle> initializedBundles = new ArrayList<RBundle>();
       for (T dep : deps) {
         if (!myBundles.containsKey(dep)) {
           throw new UnsatisfiedDependencyException("Can't satisfy " + Arrays.asList(bundles) + "'s dependency on " + dep);
@@ -100,12 +97,7 @@ public class RuntimeEnvironment<T> {
         RBundle b = myBundles.get(dep);
         if (!b.isInitialized()) {
           b.init(this);
-          initializedBundles.add(b);
         }
-      }
-
-      for (RBundle<T> b : initializedBundles) {
-        fireBundleInitialized(b);
       }
 
       return this;
@@ -139,7 +131,6 @@ public class RuntimeEnvironment<T> {
       for (RBundle<T> b : bundles) {
         b.unload();
         myBundles.remove(b.getId());
-        fireBundleRemoved(b);
       }
 
       return this;
@@ -152,10 +143,6 @@ public class RuntimeEnvironment<T> {
       bundlesToReload.addAll(getBundlesWhichDependOn(bundles));
       for (RBundle<T> db : bundlesToReload) {
         db.reload();
-      }
-
-      for (RBundle<T> b : bundlesToReload) {
-        fireBundleReloaded(b);
       }
 
       return this;
@@ -236,43 +223,5 @@ public class RuntimeEnvironment<T> {
   public RuntimeEnvironment<T> reloadAll() {
     reload(myBundles.values().toArray(new RBundle[myBundles.values().size()]));
     return this;
-  }
-
-  public RuntimeEnvironment<T> addRuntimeListener(RuntimeListener<T> listener) {
-    synchronized (myLock) {
-      myListeners.add(listener);
-      return this;
-    }
-  }
-
-  public RuntimeEnvironment<T> removeRuntimeListener(RuntimeListener<T> listener) {
-    synchronized (myLock) {
-      myListeners.remove(listener);
-      return this;
-    }
-  }
-
-  private void fireBundleAdded(RBundle<T> b) {
-    for (RuntimeListener<T> rl : myListeners) {
-      rl.bundleAdded(b);
-    }
-  }
-
-  private void fireBundleRemoved(RBundle<T> b) {
-    for (RuntimeListener<T> rl : myListeners) {
-      rl.bundleRemoved(b);
-    }
-  }
-
-  private void fireBundleReloaded(RBundle<T> b) {
-    for (RuntimeListener<T> rl : myListeners) {
-      rl.bundleReloaded(b);
-    }
-  }
-
-  private void fireBundleInitialized(RBundle<T> b) {
-    for (RuntimeListener<T> rl : myListeners) {
-      rl.bundleInitialized(b);
-    }
   }
 }
