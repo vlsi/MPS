@@ -23,6 +23,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.IdeFocusManager;
 import com.intellij.openapi.wm.impl.IdeFocusManagerHeadless;
@@ -34,6 +35,7 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.workbench.MPSDataKeys;
 import org.jdom.Element;
 
 import javax.swing.*;
@@ -451,12 +453,23 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       throw new RuntimeException("Rebuild now can be only called from UI thread");
     }
 
-    runRebuildAction(new Runnable() {
+    Runnable r = new Runnable() {
       public void run() {
-        MPSTreeNode root = rebuild();
-        setRootNode(root);
+        runRebuildAction(new Runnable() {
+          public void run() {
+            MPSTreeNode root = rebuild();
+            setRootNode(root);
+          }
+        }, true);
       }
-    }, true);
+    };
+
+    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    if (project != null && DumbService.getInstance(project).isDumb()) {
+      DumbService.getInstance(project).smartInvokeLater(r);
+    }
+
+    r.run();
   }
 
   public void clear() {

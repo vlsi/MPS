@@ -356,17 +356,13 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   }
 
   public boolean generationRequired() {
-    if (getSModelDescriptor() == null) {
-      return false;
-    }
+    if (getSModelDescriptor() == null) return false;
 
-    return ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor(),getOperationContext().getProject());
+    return ModelGenerationStatusManager.getInstance().generationRequiredDumbAware(getSModelDescriptor(),getOperationContext().getProject());
   }
 
   public boolean isPackaged() {
-    if (getSModelDescriptor() == null) {
-      return false;
-    }
+    if (getSModelDescriptor() == null) return false;
 
     return getSModelDescriptor().isPackaged();
   }

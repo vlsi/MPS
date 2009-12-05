@@ -27,6 +27,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelStereotype;
+import com.intellij.openapi.project.DumbService;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   public static ProjectModuleTreeNode createFor(MPSProject project, IModule module) {
@@ -56,11 +57,11 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   protected void updatePresentation() {
     if (getTree() == null) return;
 
-    if (generationRequired()) {
-      setAdditionalText("generation required");
-    } else if (getModule().isPackaged()) {
+    if (getModule().isPackaged()) {
       setAdditionalText("packaged");
-    } else {
+    } else if (generationRequired()) {
+      setAdditionalText("generation required");
+    } else  {
       setAdditionalText(null);
     }
     setText(getModulePresentation());
@@ -91,9 +92,7 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   protected abstract String getModulePresentation();
 
   public boolean generationRequired() {
-    if (getModule().isPackaged()) {
-      return false;
-    }
+    if (DumbService.getInstance(getOperationContext().getProject()).isDumb()) return false;
     return generationRequired(this);
   }
 

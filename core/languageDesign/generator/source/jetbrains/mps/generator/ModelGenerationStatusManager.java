@@ -22,6 +22,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.IndexNotReadyException;
+import com.intellij.openapi.project.DumbService;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.logging.Logger;
@@ -99,6 +100,11 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
   public void disposeComponent() {
     myGlobalEventsManager.removeGlobalModelListener(mySmodelReloadListener);
+  }
+
+  public boolean generationRequiredDumbAware(SModelDescriptor sm, Project project) {
+    if (DumbService.getInstance(project).isDumb()) return false;
+    return generationRequired(sm, project);
   }
 
   public boolean generationRequired(SModelDescriptor sm, Project project) {
