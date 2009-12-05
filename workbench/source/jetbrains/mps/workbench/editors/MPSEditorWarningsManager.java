@@ -22,6 +22,7 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
 import com.intellij.openapi.fileEditor.FileEditorManagerListener;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -109,7 +110,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
           return;
         }
 
-        SModelDescriptor model = smodel.getModelDescriptor();
+        final SModelDescriptor model = smodel.getModelDescriptor();
 
         if (model == null) {
           return;
@@ -123,46 +124,50 @@ public class MPSEditorWarningsManager implements ProjectComponent {
           addWarningPanel(editor, "Warning: node is in packaged model. Your changes won't be saved");
         }
 
-
-        final Set<Language> outdatedLanguages = new HashSet<Language>();
-        for (Language l : model.getSModel().getLanguages(GlobalScope.getInstance())) {
-          Project project = editor.getNodeEditor().getOperationContext().getProject();
-          if (l.getEditorModelDescriptor() != null &&
-            ModelGenerationStatusManager.getInstance().generationRequired(l.getEditorModelDescriptor(), project)) {
-            outdatedLanguages.add(l);
-          }
-        }
-        if (!outdatedLanguages.isEmpty()) {
-          addWarningPanel(editor,
-            "Warning: one or more of the used languages require generation",
-            "Generate",
-            new Runnable() {
-              public void run() {
-                final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-                final List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-                ModelAccess.instance().runReadAction(new Runnable() {
+        final Project project = editor.getNodeEditor().getOperationContext().getProject();
+        DumbService.getInstance(project).smartInvokeLater(new Runnable() {
+          public void run() {
+            final Set<Language> outdatedLanguages = new HashSet<Language>();
+            for (Language l : model.getSModel().getLanguages(GlobalScope.getInstance())) {
+              if (l.getEditorModelDescriptor() != null &&
+                ModelGenerationStatusManager.getInstance().generationRequired(l.getEditorModelDescriptor(), project)) {
+                outdatedLanguages.add(l);
+              }
+            }
+            if (!outdatedLanguages.isEmpty()) {
+              addWarningPanel(editor,
+                "Warning: one or more of the used languages require generation",
+                "Generate",
+                new Runnable() {
                   public void run() {
-                    for (Language l : outdatedLanguages) {
-                      ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
-                      languageConfig.setModuleRef(l.getModuleReference());
-                      languageConfig.setName("tmp");
-                      try {
-                        models.addAll(languageConfig.getGenParams(mpsProject, false).getModelDescriptors());
-                      } catch (IllegalGeneratorConfigurationException e) {
-                        LOG.error(e);
+                    final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+                    final List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+                    ModelAccess.instance().runReadAction(new Runnable() {
+                      public void run() {
+                        for (Language l : outdatedLanguages) {
+                          ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
+                          languageConfig.setModuleRef(l.getModuleReference());
+                          languageConfig.setName("tmp");
+                          try {
+                            models.addAll(languageConfig.getGenParams(mpsProject, false).getModelDescriptors());
+                          } catch (IllegalGeneratorConfigurationException e) {
+                            LOG.error(e);
+                          }
+                        }
                       }
-                    }
+                    });
+
+                    myProject.getComponent(GeneratorManager.class).generateModelsFromDifferentModules(
+                      editor.getNodeEditor().getOperationContext(),
+                      models,
+                      IGenerationType.FILES
+                    );
                   }
                 });
+            }
+          }
+        });
 
-                myProject.getComponent(GeneratorManager.class).generateModelsFromDifferentModules(
-                  editor.getNodeEditor().getOperationContext(),
-                  models,
-                  IGenerationType.FILES
-                );
-              }
-            });
-        }
       }
     });
   }
