@@ -31,9 +31,9 @@
   <import index="1" modelUID="r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)" version="11" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
   <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="1237978428015">
-    <property name="migrationFromBuild" value="1193" />
-    <property name="name" value="modify" />
-    <property name="title" value="modify" />
+    <property name="name" value="OperationCall" />
+    <property name="migrationFromBuild" value="5720" />
+    <property name="title" value="modify operation call" />
     <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="1237978442532">
       <property name="description" value="operation call" />
       <link role="affectedInstanceConcept" targetNodeId="2v.1068580123136" resolveInfo="StatementList" />
@@ -68,7 +68,7 @@
                           <link role="link" targetNodeId="1.1237306115446" />
                         </node>
                       </node>
-                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation" id="1237980884553" />
+                      <node role="operation" type="jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation" id="1737294499102100881" />
                     </node>
                   </node>
                   <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1237980886697">
