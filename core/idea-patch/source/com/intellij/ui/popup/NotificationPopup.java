@@ -28,6 +28,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 
 import jetbrains.mps.util.annotation.Patch;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * See http://jetbrains.net/jira/browse/IDEA-22993
@@ -102,7 +103,9 @@ public class NotificationPopup {
     }
   }
 
-  private IdeFrameImpl findFrame(JComponent owner) {
+  @Nullable
+  private IdeFrameImpl findFrame(@Nullable JComponent owner) {
+    if (owner == null) return null;
     final Window frame = SwingUtilities.getWindowAncestor(owner);
     if (frame instanceof IdeFrameImpl) {
       return (IdeFrameImpl) frame;
