@@ -24,6 +24,8 @@ import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AbstractSNodeList.AggregatedSNodesList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AbstractSNodeList.LinkedSNodesList;
 
 import java.util.Collections;
 import java.util.List;
@@ -86,15 +88,10 @@ public class SLinkOperations {
    * @todo MPS doesn't support multiple references with the same role
    */
   public static List<SNode> getTargets(SNode node, String role, boolean child) {
-    if (node != null) {
-      if (child) {
-        return node.getChildren(role);
-      }
-      List<SNode> list = new ArrayList<SNode>(1);
-      list.add(node.getReferent(role));
-      return list;
+    if (node != null && role != null) {
+      return child ? new AggregatedSNodesList(node, role) : new LinkedSNodesList(node, role);
     }
-    return Collections.EMPTY_LIST;
+    return new ArrayList(0);
   }
 
   public static SNode addNewChild(SNode node, String role, String childConceptFQName) {
