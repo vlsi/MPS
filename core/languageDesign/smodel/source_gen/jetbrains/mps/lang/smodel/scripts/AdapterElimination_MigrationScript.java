@@ -10,17 +10,19 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.baseLanguage.behavior.Interface_Behavior;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.util.NameUtil;
 
 public class AdapterElimination_MigrationScript extends BaseMigrationScript {
   public AdapterElimination_MigrationScript(IOperationContext operationContext) {
     super("findAdapters");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
-        return "findAdapterClassUsagesInVariableDeclarations";
+        return "find adapter class usages in variable declarations";
       }
 
       public String getAdditionalInfo() {
-        return "findAdapterClassUsagesInVariableDeclarations";
+        return "find adapter class usages in variable declarations";
       }
 
       public String getFqNameOfConceptToSearchInstances() {
@@ -34,7 +36,7 @@ public class AdapterElimination_MigrationScript extends BaseMigrationScript {
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
           return false;
         }
-        return ClassConcept_Behavior.call_isDescendant_1213877355812(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_5().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+        return ClassConcept_Behavior.call_isDescendant_1213877355812(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
       }
 
       public void doUpdateInstanceNode(SNode node) {
@@ -46,11 +48,11 @@ public class AdapterElimination_MigrationScript extends BaseMigrationScript {
     });
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
-        return "findAdapterInterfaceUsagesInVariableDeclarations";
+        return "find adapter interface usages in variable declarations";
       }
 
       public String getAdditionalInfo() {
-        return "findAdapterInterfaceUsagesInVariableDeclarations";
+        return "find adapter interface usages in variable declarations";
       }
 
       public String getFqNameOfConceptToSearchInstances() {
@@ -64,7 +66,90 @@ public class AdapterElimination_MigrationScript extends BaseMigrationScript {
         if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"))) {
           return false;
         }
-        return Interface_Behavior.call_isDescendant_1238269307226(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"), SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_6().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"));
+        return Interface_Behavior.call_isDescendant_1238269307226(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"), SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"));
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "find java util refrences";
+      }
+
+      public String getAdditionalInfo() {
+        return "find java util refrences";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.core.structure.BaseConcept";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        for (SReference ref : node.getReferences()) {
+          String targetModelFQName = ref.getTargetSModelReference().getSModelFqName().toString();
+          if (targetModelFQName.endsWith(".structure@java_stub")) {
+            return true;
+          }
+        }
+        return false;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "find adapter class usages";
+      }
+
+      public String getAdditionalInfo() {
+        return "find adapter class usages";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.ClassifierType";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        if ((SLinkOperations.getTarget(node, "classifier", false) == null)) {
+          return false;
+        }
+        String className = NameUtil.nodeFQName(SLinkOperations.getTarget(node, "classifier", false));
+        String namespace = NameUtil.namespaceFromLongName(className);
+        return namespace.endsWith(".structure");
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "find .adapter operations";
+      }
+
+      public String getAdditionalInfo() {
+        return "find .adapter operations";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        return true;
       }
 
       public void doUpdateInstanceNode(SNode node) {
