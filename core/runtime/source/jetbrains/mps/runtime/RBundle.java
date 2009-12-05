@@ -107,4 +107,8 @@ public class RBundle<T> {
   public String toString() {
     return "RBundle " + getId();
   }
+
+  public void classLoaded(String name) {
+    myRuntimeEnvironment.classLoaded(name,myId);
+  }
 }

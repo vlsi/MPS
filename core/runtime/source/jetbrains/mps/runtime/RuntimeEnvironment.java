@@ -24,6 +24,7 @@ public class RuntimeEnvironment<T> {
   private Set<String> myLoadFromParentPrefixes = new HashSet<String>();
 
   private Map<String, Class> myClassesFromParent = new HashMap<String, Class>();
+  private Map<String, T> myLoadedClasses = new HashMap<String, T>();
 
   public RuntimeEnvironment() {
   }
@@ -223,5 +224,27 @@ public class RuntimeEnvironment<T> {
   public RuntimeEnvironment<T> reloadAll() {
     reload(myBundles.values().toArray(new RBundle[myBundles.values().size()]));
     return this;
+  }
+
+  public void classLoaded(String name, T id) {
+    if (myLoadedClasses.containsKey(name)) {
+      T oldLoaderId = myLoadedClasses.get(name);
+      if (!equals(oldLoaderId, id)) {
+        throw new IllegalStateException(
+          "Class \"" + name + "\" was loaded by multiple module classloaders simultaneously.\n" +
+            "Classloaders: \n" +
+            "  " + id.toString() + "\n" +
+            "  " + oldLoaderId.toString()
+        );
+      }
+    } else {
+      myLoadedClasses.put(name, id);
+    }
+  }
+
+  public static boolean equals(Object o1, Object o2) {
+    if (o1 == o2) return true;
+    if (o1 == null || o2 == null) return false;
+    return o1.equals(o2);
   }
 }

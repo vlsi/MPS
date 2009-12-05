@@ -83,7 +83,11 @@ public class BundleClassLoader<T> extends BaseClassLoader {
   }
 
   protected byte[] findClassBytes(String name) {
-    return myBundle.getLocator().find(name);
+    byte[] bytes = myBundle.getLocator().find(name);
+    if (bytes!=null){
+      myBundle.classLoaded(name);
+    }
+    return bytes;
   }
 
   protected URL findResource(String name) {

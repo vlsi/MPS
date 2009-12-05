@@ -35,7 +35,6 @@ abstract class BaseClassLoader extends ClassLoader {
     return null;
   }
 
-
   protected synchronized Class<?> loadClass(String name, boolean resolve) throws ClassNotFoundException {
     Class c = myCache.get(name);
 
@@ -75,12 +74,10 @@ abstract class BaseClassLoader extends ClassLoader {
     return c;
   }
 
-
   private void definePackageIfNecessary(String name) {
     String pack = getNamespace(name);
-    if (getPackage(pack) == null) {
-      definePackage(pack, null, null, null, null, null, null, null);
-    }
+    if (getPackage(pack) != null) return;
+    definePackage(pack, null, null, null, null, null, null, null);
   }
 
   private String getNamespace(String fqName) {
