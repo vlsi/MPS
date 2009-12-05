@@ -3567,32 +3567,5 @@
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5800912818421828063" />
   </node>
-  <node type="jetbrains.mps.lang.script.structure.MigrationScript" id="4289873794715249910">
-    <property name="migrationFromBuild" value="1193" />
-    <property name="name" value="FindSmartAliases" />
-    <property name="category" value="find smart aliases" />
-    <property name="title" value="abc" />
-    <node role="part" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance" id="4289873794715249911">
-      <property name="description" value="find smart aliases" />
-      <link role="affectedInstanceConcept" targetNodeId="1.1071489090640" resolveInfo="ConceptDeclaration" />
-      <node role="affectedInstanceUpdater" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater" id="4289873794715249912">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4289873794715249913" />
-      </node>
-      <node role="affectedInstancePredicate" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate" id="4289873794715312573">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4289873794715312574">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4289873794715312576">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="4289873794715312577">
-              <link role="baseMethodDeclaration" targetNodeId="38.~ReferenceConceptUtil.hasSmartAlias(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration):boolean" resolveInfo="hasSmartAlias" />
-              <link role="classConcept" targetNodeId="38.~ReferenceConceptUtil" resolveInfo="ReferenceConceptUtil" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4289873794715312578">
-                <node role="operand" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node" id="4289873794715312579" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="4289873794715312580" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
 </model>
 
