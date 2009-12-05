@@ -108,30 +108,18 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   }
 
   public boolean generationRequired(SModelDescriptor sm, Project project) {
-    if (sm.isPackaged()) {
-      return false;
+    if (DumbService.getInstance(project).isDumb()){
+      LOG.error("Generation required satus check in dumb mode. Use generationRequiredDumbAware() instead.");
     }
 
-    if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) {
-      return false;
-    }
-
-    if (sm.getModelFile() == null) {
-      return false;
-    }
-
-    if (isDoNotGenerate(sm)) {
-      return false;
-    }
-
+    if (sm.isPackaged()) return false;
+    if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) return false;
+    if (sm.getModelFile() == null) return false;
+    if (isDoNotGenerate(sm)) return false;
     if (SModelRepository.getInstance().isChanged(sm)) return true;
-
-    if (isEmpty(sm)) {
-      return false;
-    }
+    if (isEmpty(sm)) return false;
 
     String generatedHash = getGenerationHash(sm);
-
     if (generatedHash == null) return true;
 
     return checkGenerationRequired(project, generatedHash);
