@@ -68,6 +68,15 @@ public class ClassLoaderManager implements ApplicationComponent {
   }
 
   public void disposeComponent() {
+
+  }
+
+  public void init(LibraryManager libraryManager) {
+    synchronized (myLock) {
+      if (myRuntimeEnvironment == null) {
+        myRuntimeEnvironment = createRuntimeEnvironment(libraryManager);
+      }
+    }
   }
 
   private void addModule(ModuleReference ref) {
@@ -80,16 +89,6 @@ public class ClassLoaderManager implements ApplicationComponent {
 
       RBundle<ModuleReference> bundle = new RBundle<ModuleReference>(ref, module.getBytecodeLocator());
       myRuntimeEnvironment.add(bundle);
-    }
-  }
-
-  public ClassLoader getClassLoaderFor(IModule m) {
-    synchronized (myLock) {
-      RBundle<ModuleReference> result = myRuntimeEnvironment.get(m.getModuleReference());
-      if (result == null) {
-        return null;
-      }
-      return result.getClassLoader();
     }
   }
 
@@ -136,12 +135,17 @@ public class ClassLoaderManager implements ApplicationComponent {
       public void run() {
         synchronized (myLock) {
           if (myRuntimeEnvironment == null) {
-            myRuntimeEnvironment = createRuntimeEnvironment();
+            myRuntimeEnvironment = createRuntimeEnvironment(LibraryManager.getInstance());
           }
 
           Set<ModuleReference> added = new HashSet<ModuleReference>();
           for (IModule m : myRepository.getAllModules()) {
-            if (!containsBundle(m.getModuleReference())) {
+            boolean containsBundle;
+            synchronized (myLock) {
+              containsBundle = myRuntimeEnvironment.get(m.getModuleReference()) != null;
+            }
+
+            if (!containsBundle) {
               addModule(m.getModuleReference());
               added.add(m.getModuleReference());
             }
@@ -178,12 +182,6 @@ public class ClassLoaderManager implements ApplicationComponent {
         }
       }
     });
-  }
-
-  private boolean containsBundle(ModuleReference ref) {
-    synchronized (myLock) {
-      return myRuntimeEnvironment.get(ref) != null;
-    }
   }
 
   private RuntimeEnvironment<ModuleReference> createRuntimeEnvironment(LibraryManager libraryManager) {
@@ -253,18 +251,6 @@ public class ClassLoaderManager implements ApplicationComponent {
         LOG.error(t);
       }
     }
-  }
-
-  public void init(LibraryManager libraryManager) {
-    synchronized (myLock) {
-      if (myRuntimeEnvironment == null) {
-        myRuntimeEnvironment = createRuntimeEnvironment(libraryManager);
-      }
-    }
-  }
-
-  private RuntimeEnvironment<ModuleReference> createRuntimeEnvironment() {
-    return createRuntimeEnvironment(LibraryManager.getInstance());
   }
 }
                                           
