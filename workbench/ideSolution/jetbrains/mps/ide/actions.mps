@@ -34630,7 +34630,7 @@
         <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1422776177683160512">
           <link role="baseMethodDeclaration" targetNodeId="72.~JCheckBox.&lt;init&gt;(java.lang.String)" resolveInfo="JCheckBox" />
           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1422776177683160518">
-            <property name="value" value="Check references for valid scopes" />
+            <property name="value" value="Check references for valid search scopes" />
           </node>
         </node>
       </node>
@@ -40688,7 +40688,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="6062895849032191050">
     <property name="package" value="Model Checker.Specific Checks" />
-    <property name="name" value="ScopesChecker" />
+    <property name="name" value="SearchScopesChecker" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="3619186996280269522">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3619186996280269523" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3619186996280269524" />
@@ -40888,7 +40888,7 @@
                     <link role="baseMethodDeclaration" targetNodeId="3793508159765822072" resolveInfo="checkAndUpdateIndicator" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="6062895849032209379">
                       <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6062895849032209380">
-                        <property name="value" value=" for valid scopes in references..." />
+                        <property name="value" value=" for valid search scopes in references..." />
                       </node>
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="6062895849032209381">
                         <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6062895849032209382">
@@ -41095,7 +41095,7 @@
                               </node>
                               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3619186996280267483">
                                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3619186996280267484">
-                                  <property name="value" value="\&quot; is out of scope" />
+                                  <property name="value" value="\&quot; is out of search scope" />
                                 </node>
                                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3619186996280267485">
                                   <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3619186996280267486">
@@ -41164,7 +41164,7 @@
                               </node>
                             </node>
                             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3619186996280267718">
-                              <property name="value" value="\&quot; during scope checking" />
+                              <property name="value" value="\&quot; during search scope checking" />
                             </node>
                           </node>
                           <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="3619186996280267728">

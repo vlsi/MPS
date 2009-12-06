@@ -108,7 +108,7 @@ public class ModelCheckerSettings implements PersistentStateComponent<ModelCheck
       ListSequence.fromList(specificCheckers).addElement(new ConstraintsChecker());
     }
     if (this.isCheckScopes()) {
-      ListSequence.fromList(specificCheckers).addElement(new ScopesChecker());
+      ListSequence.fromList(specificCheckers).addElement(new SearchScopesChecker());
     }
     if (this.isCheckTypesystem()) {
       ListSequence.fromList(specificCheckers).addElement(new TypesystemChecker());
