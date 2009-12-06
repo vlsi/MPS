@@ -32,7 +32,6 @@ public class ModelChecker {
       public void run() {
         SModel model = modelDescriptor.getSModel();
 
-        ModelChecker.this.myResults = new SearchResults<ModelCheckerIssue>();
         for (SpecificChecker specificChecker : ListSequence.fromList(specificCheckers)) {
           List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, ModelChecker.this.myProgressContext, ModelChecker.this.myOperationContext);
           ModelChecker.this.myResults.getSearchResults().addAll(specificCheckerResults);

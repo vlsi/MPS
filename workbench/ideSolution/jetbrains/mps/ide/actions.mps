@@ -40071,24 +40071,6 @@
                 </node>
               </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="3619186996280217593" />
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3619186996280268510">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="3619186996280268514">
-                  <node role="rValue" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3619186996280268517">
-                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3619186996280268518">
-                      <link role="baseMethodDeclaration" targetNodeId="172.~SearchResults.&lt;init&gt;()" resolveInfo="SearchResults" />
-                      <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3619186996280268519">
-                        <link role="classifier" targetNodeId="5792297515476823756" resolveInfo="ModelCheckerIssue" />
-                      </node>
-                    </node>
-                  </node>
-                  <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3619186996280268511">
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="3619186996280268512">
-                      <link role="fieldDeclaration" targetNodeId="5601958918125546741" resolveInfo="myResults" />
-                    </node>
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="3619186996280268513" />
-                  </node>
-                </node>
-              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="9086878782408029043">
                 <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="9086878782408029044">
                   <property name="name" value="specificChecker" />
