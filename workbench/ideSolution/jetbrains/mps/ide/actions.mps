@@ -16103,11 +16103,13 @@
                 <property name="value" value="true" />
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="8792066268210364594">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8792066268210364599">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4594013193356118261">
-                    <link role="variableDeclaration" targetNodeId="5357294907628571356" resolveInfo="targetNode" />
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8118141292490571141">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="8118141292490571139">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4594013193356118261">
+                      <link role="variableDeclaration" targetNodeId="5357294907628571356" resolveInfo="targetNode" />
+                    </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8792066268210364603">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8118141292490571145">
                     <link role="baseMethodDeclaration" targetNodeId="40.~SNode.isRoot():boolean" resolveInfo="isRoot" />
                   </node>
                 </node>
@@ -20443,7 +20445,7 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5535460359399605855">
-              <link role="baseMethodDeclaration" targetNodeId="67.~Component.setVisible(boolean):void" resolveInfo="setVisible" />
+              <link role="baseMethodDeclaration" targetNodeId="67.~Dialog.setVisible(boolean):void" resolveInfo="setVisible" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5535460359399605856">
                 <property name="value" value="true" />
               </node>
@@ -24134,9 +24136,7 @@
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7669625834619276298">
                     <link role="variableDeclaration" targetNodeId="7669625834619276285" resolveInfo="suffices" />
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7669625834619276303">
-                    <link role="baseMethodDeclaration" targetNodeId="78.~List.isEmpty():boolean" resolveInfo="isEmpty" />
-                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation" id="8118141292490571133" />
                 </node>
               </node>
             </node>
