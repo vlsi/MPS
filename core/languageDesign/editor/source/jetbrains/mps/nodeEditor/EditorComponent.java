@@ -2765,9 +2765,20 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ModelAccess.instance().runReadInEDT(new Runnable() {
         public void run() {
           if (myNode != null) {
-            SNodeId oldId = myNode.getSNodeId();
-            myNode = sm.getSModel().getNodeById(oldId);
+            if (myNode.getModel().getSModelReference().equals(sm.getSModelReference())) {
+              SNodeId oldId = myNode.getSNodeId();
+              myNode = sm.getSModel().getNodeById(oldId);
+            }
           }
+          rebuildEditorContent();
+        }
+      });
+    }
+
+    @Override
+    public void beforeModelDisposed(SModel sm) {
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
           rebuildEditorContent();
         }
       });
