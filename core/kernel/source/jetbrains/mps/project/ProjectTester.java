@@ -129,7 +129,6 @@ public class ProjectTester {
             ((TestCase) instance).run(testResult);
           }
         } catch (Throwable ignored) {
-          ignored.printStackTrace();
         }
       }
     }
