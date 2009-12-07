@@ -1680,6 +1680,35 @@
             <link role="classifier" targetNodeId="3325977160883785002" resolveInfo="BinaryOperations" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="572632429825092818">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="572632429825092819">
+            <property name="name" value="cls" />
+            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="572632429825092820">
+              <link role="concept" targetNodeId="138.1068390468198" resolveInfo="ClassConcept" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="572632429825092822" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="572632429825092824">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="572632429825092826">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="572632429825092825">
+              <link role="variableDeclaration" targetNodeId="572632429825092819" resolveInfo="cls" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="572632429825092830">
+              <link role="link" targetNodeId="138.1165602531693" />
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="572632429825092832">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="572632429825092834">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="572632429825092833">
+              <link role="variableDeclaration" targetNodeId="572632429825092819" resolveInfo="cls" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="572632429825092838">
+              <link role="link" targetNodeId="138.1068390468201" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
