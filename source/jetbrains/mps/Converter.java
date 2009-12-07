@@ -31,7 +31,7 @@ public class Converter {
   private static void convert(final File mprFile) throws Exception {
 
     TestMain.configureMPS();
-    IdeMain.setTestMode(TestMode.CORE_TEST) ;
+    IdeMain.setTestMode(TestMode.CORE_TEST);
 
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {

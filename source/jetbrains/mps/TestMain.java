@@ -68,7 +68,7 @@ public class TestMain {
 
 
   public static void testProject(File projectFile, ProjectRunnable pr) {
-    IdeMain.setTestMode(TestMode.CORE_TEST) ;
+    IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
     final MPSProject project = loadProject(projectFile);
     pr.execute(project);
@@ -117,7 +117,7 @@ public class TestMain {
   }
 
   public static boolean testProjectGenerationForLeaks(File projectFile, int leakThreshold) {
-    IdeMain.setTestMode(TestMode.CORE_TEST) ;
+    IdeMain.setTestMode(TestMode.CORE_TEST);
 
     TestMain.configureMPS();
 
@@ -130,7 +130,7 @@ public class TestMain {
   }
 
   public static boolean testRefactoringTestEnvironment(File projectDirectory) {
-    IdeMain.setTestMode(TestMode.CORE_TEST) ;
+    IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
     File projectFile = new File(projectDirectory, "testRefactoring" + MPSExtentions.DOT_MPS_PROJECT);
     final MPSProject project = loadProject(projectFile);
@@ -181,7 +181,7 @@ public class TestMain {
   }
 
   public static boolean testRefactoringOnProject(final File projectDirectory, final IRefactoringTester refactoringTester) {
-    IdeMain.setTestMode(TestMode.CORE_TEST) ;
+    IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
     final boolean[] b = new boolean[]{true};
 
@@ -278,7 +278,7 @@ public class TestMain {
   }
 
   public static boolean testProjectReloadForLeaks(final File projectFile) {
-    IdeMain.setTestMode(TestMode.CORE_TEST) ;
+    IdeMain.setTestMode(TestMode.CORE_TEST);
 
     return testProjectReloadForLeaks(projectFile, 1000);
   }
@@ -354,7 +354,7 @@ public class TestMain {
    */
   public static TestResult testProject(File projectFile, boolean isRunnable, String[] configurations) {
     com.intellij.openapi.diagnostic.Logger.setFactory(LoggerFactory.getInstance());
-    IdeMain.setTestMode(TestMode.CORE_TEST) ;
+    IdeMain.setTestMode(TestMode.CORE_TEST);
     long start = System.currentTimeMillis();
     configureMPS();
 
@@ -384,7 +384,7 @@ public class TestMain {
           System.out.println(error);
         }
       }
-      
+
       if (result.hasGenerationWarnings()) {
         System.out.println("there were " + result.myGenerationWarnings.size() + " generation warnings");
         for (String warning : result.myGenerationWarnings) {
