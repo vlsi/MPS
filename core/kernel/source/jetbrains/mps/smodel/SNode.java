@@ -1525,6 +1525,7 @@ public final class SNode {
     ModelAccess.assertLegalRead(this);
 
     fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
     return myConceptFqName;
   }
 
