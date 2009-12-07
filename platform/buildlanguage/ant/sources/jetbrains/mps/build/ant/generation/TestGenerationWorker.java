@@ -76,6 +76,8 @@ public class TestGenerationWorker extends GeneratorWorker {
     collectFromModelFiles(models);
     executeTask(project, new GenerationObjects(Collections.EMPTY_SET, modules, models));
 
+    disposeProject(project);
+    projectFile.deleteOnExit();
     dispose();
 
     showStatistic();
@@ -139,22 +141,26 @@ public class TestGenerationWorker extends GeneratorWorker {
       testResult.addListener(new TestListener() {
         @Override
         public void addError(Test test, Throwable t) {
-          System.out.println(myBuildServerMessageFormat.formatTestFailure(test + "", t.getMessage(), MpsWorker.extractStackTrace(t)));
+          System.out.println(myBuildServerMessageFormat.formatTestFailure(myBuildServerMessageFormat.escapeBuildMessage(test + ""),
+            myBuildServerMessageFormat.escapeBuildMessage(t.getMessage()),
+            myBuildServerMessageFormat.escapeBuildMessage(MpsWorker.extractStackTrace(t))));
         }
 
         @Override
         public void addFailure(Test test, AssertionFailedError t) {
-          System.out.println(myBuildServerMessageFormat.formatTestFailure(test + "", t.getMessage(), MpsWorker.extractStackTrace(t)));
+          System.out.println(myBuildServerMessageFormat.formatTestFailure(myBuildServerMessageFormat.escapeBuildMessage(test + ""),
+            myBuildServerMessageFormat.escapeBuildMessage(t.getMessage()),
+            myBuildServerMessageFormat.escapeBuildMessage(MpsWorker.extractStackTrace(t))));
         }
 
         @Override
         public void endTest(Test test) {
-          System.out.println(myBuildServerMessageFormat.formatTestFinish(test + ""));
+          System.out.println(myBuildServerMessageFormat.formatTestFinish(myBuildServerMessageFormat.escapeBuildMessage(test + "")));
         }
 
         @Override
         public void startTest(Test test) {
-          System.out.println(myBuildServerMessageFormat.formatTestStart(test + ""));
+          System.out.println(myBuildServerMessageFormat.formatTestStart(myBuildServerMessageFormat.escapeBuildMessage(test + "")));
         }
       });
       ProjectTester.invokeTests(myGenerationType, outputModels, testResult);

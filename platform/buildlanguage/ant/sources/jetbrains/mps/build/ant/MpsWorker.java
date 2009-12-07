@@ -467,5 +467,9 @@ public abstract class MpsWorker {
     public Set<SModelDescriptor> getModels() {
       return myModels;
     }
+
+    public boolean hasAnythingToGenerate() {
+      return !myModels.isEmpty() || !myProjects.isEmpty() || !myModules.isEmpty();
+    }
   }
 }

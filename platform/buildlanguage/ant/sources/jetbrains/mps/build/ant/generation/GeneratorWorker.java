@@ -48,7 +48,9 @@ public class GeneratorWorker extends MpsWorker {
   }
 
   protected void executeTask(final MPSProject project, GenerationObjects go) {
-    generate(project, go);
+    if (go.hasAnythingToGenerate()) {
+      generate(project, go);
+    }
   }
 
   protected void showStatistic() {

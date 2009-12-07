@@ -9,7 +9,7 @@ public class TeamCityMessageFormat implements IBuildServerMessageFormat {
   private static final String SERVER_TEST_FAILED_PREFIX = "##teamcity[testFailed";
 
   public String escapeBuildMessage(String rawMessage) {
-    return rawMessage.replace("|", "||").replace("'", "|'").replace("\n", "|n").replace("\r", "|r").replace("]", "|]");
+    return rawMessage.replace("|", "||").replace("'", "|'").replace("\n", LINES_SEPARATOR).replace("\r", "|r").replace("]", "|]");
   }
 
   public StringBuffer escapeBuildMessage(StringBuffer message) {
