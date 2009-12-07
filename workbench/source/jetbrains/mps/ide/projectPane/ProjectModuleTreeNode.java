@@ -59,10 +59,8 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
 
     if (getModule().isPackaged()) {
       setAdditionalText("packaged");
-    } else if (generationRequired()) {
-      setAdditionalText("generation required");
     } else {
-      setAdditionalText(null);
+      setAdditionalText(generationRequired().getMessage());
     }
     setText(getModulePresentation());
 
@@ -91,37 +89,43 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
 
   protected abstract String getModulePresentation();
 
-  public boolean generationRequired() {
-    if (DumbService.getInstance(getOperationContext().getProject()).isDumb()) return false;
+  public GenerationStatus generationRequired() {
     return generationRequired(this);
   }
 
-  private boolean generationRequired(MPSTreeNode node) {
-    if (node instanceof SNodeTreeNode) return false;
-    if (node instanceof AccessoriesModelTreeNode) return false;
+  private GenerationStatus generationRequired(MPSTreeNode node) {
+    if (node instanceof SNodeTreeNode) return GenerationStatus.NOT_REQUIRED;
+    if (node instanceof AccessoriesModelTreeNode) return GenerationStatus.NOT_REQUIRED;
 
     if (node instanceof SModelTreeNode) {
       SModelTreeNode smodelTreeNode = (SModelTreeNode) node;
-      if (smodelTreeNode.getGenerationStatus() == GenerationStatus.REQUIRED) return true;
+      GenerationStatus modelGenStatus = smodelTreeNode.getGenerationStatus();
+      if (isInheritableGenStatus(modelGenStatus)) return modelGenStatus;
 
       for (SModelTreeNode child : smodelTreeNode.getChildModelTreeNodes()) {
-        if (generationRequired(child)) return true;
+        GenerationStatus childGenStatus = generationRequired(child);
+        if (isInheritableGenStatus(childGenStatus)) return childGenStatus;
       }
 
-      return false;
+      return GenerationStatus.NOT_REQUIRED;
     }
 
     if (!node.isInitialized()) {
       node.init();
     }
+
     for (int i = 0; i < node.getChildCount(); i++) {
       MPSTreeNode child = (MPSTreeNode) node.getChildAt(i);
-      if (generationRequired(child)) {
-        return true;
-      }
+
+      GenerationStatus childGenStatus = generationRequired(child);
+      if (isInheritableGenStatus(childGenStatus)) return childGenStatus;
     }
 
-    return false;
+    return GenerationStatus.NOT_REQUIRED;
+  }
+
+  private boolean isInheritableGenStatus(GenerationStatus childGenStatus) {
+    return childGenStatus == GenerationStatus.REQUIRED || childGenStatus==GenerationStatus.UPDATING;
   }
 
   public abstract IModule getModule();
