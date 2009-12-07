@@ -18,6 +18,7 @@ package jetbrains.mps.project.structure.project.testconfigurations;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.NoCachesStrategy;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.genconf.GeneratorConfigUtil;
 import jetbrains.mps.project.IModule;
@@ -60,7 +61,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
 
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
       for (SModelDescriptor sm : solution.getOwnModelDescriptors()) {
-        if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, project)) {
+        if (!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(sm, project, NoCachesStrategy.createBuildCachesStrategy())) {
           continue;
         }
 
@@ -83,7 +84,7 @@ public class ModuleTestConfiguration extends BaseTestConfiguration {
       Iterator<SModelDescriptor> it = inputModels.iterator();
       while (it.hasNext()) {
         SModelDescriptor model = it.next();
-        if ((!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model, project)) ||
+        if ((!fullRegeneration && !ModelGenerationStatusManager.getInstance().generationRequired(model, project, NoCachesStrategy.createBuildCachesStrategy())) ||
           ModelGenerationStatusManager.isDoNotGenerate(model)) {
           it.remove();
         }

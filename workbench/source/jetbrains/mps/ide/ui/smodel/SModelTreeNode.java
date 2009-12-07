@@ -17,8 +17,10 @@ package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.NoCachesStrategy;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -358,7 +360,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   public boolean generationRequired() {
     if (getSModelDescriptor() == null) return false;
 
-    return ModelGenerationStatusManager.getInstance().generationRequiredDumbAware(getSModelDescriptor(),getOperationContext().getProject());
+    return ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor(), getOperationContext().getProject(), NoCachesStrategy.createDefaultStrategy(false, null));
   }
 
   public boolean isPackaged() {

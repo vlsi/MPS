@@ -9276,7 +9276,7 @@
                                       <link role="classConcept" targetNodeId="52.~ModelGenerationStatusManager" resolveInfo="ModelGenerationStatusManager" />
                                     </node>
                                     <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1232133232071">
-                                      <link role="baseMethodDeclaration" targetNodeId="52.~ModelGenerationStatusManager.generationRequired(jetbrains.mps.smodel.SModelDescriptor,com.intellij.openapi.project.Project):boolean" resolveInfo="generationRequired" />
+                                      <link role="baseMethodDeclaration" targetNodeId="52.~ModelGenerationStatusManager.generationRequired(jetbrains.mps.smodel.SModelDescriptor,com.intellij.openapi.project.Project,jetbrains.mps.generator.NoCachesStrategy):boolean" resolveInfo="generationRequired" />
                                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1232133232072">
                                         <link role="variableDeclaration" targetNodeId="1232133232073" resolveInfo="it" />
                                       </node>
@@ -9285,6 +9285,10 @@
                                         <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1370449523394358581">
                                           <link role="member" targetNodeId="1370449523394267082" resolveInfo="project" />
                                         </node>
+                                      </node>
+                                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5775779802507394442">
+                                        <link role="baseMethodDeclaration" targetNodeId="52.~NoCachesStrategy.createBuildCachesStrategy():jetbrains.mps.generator.NoCachesStrategy" resolveInfo="createBuildCachesStrategy" />
+                                        <link role="classConcept" targetNodeId="52.~NoCachesStrategy" resolveInfo="NoCachesStrategy" />
                                       </node>
                                     </node>
                                   </node>

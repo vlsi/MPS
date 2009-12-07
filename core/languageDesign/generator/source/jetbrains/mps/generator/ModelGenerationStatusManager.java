@@ -19,7 +19,6 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.DumbService;
@@ -28,21 +27,20 @@ import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.event.SModelFileChangedEvent;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ReadUtil;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
 import jetbrains.mps.generator.fileGenerator.CacheGenerator;
 import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.vfs.IFile;
 
-import java.io.File;
-import java.io.InputStream;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class ModelGenerationStatusManager implements ApplicationComponent {
   public static final String HASH_PREFIX = ".hash.";
@@ -102,16 +100,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     myGlobalEventsManager.removeGlobalModelListener(mySmodelReloadListener);
   }
 
-  public boolean generationRequiredDumbAware(SModelDescriptor sm, Project project) {
-    if (DumbService.getInstance(project).isDumb()) return false;
-    return generationRequired(sm, project);
-  }
-
-  public boolean generationRequired(SModelDescriptor sm, Project project) {
-    if (DumbService.getInstance(project).isDumb()){
-      LOG.error("Generation required satus check in dumb mode. Use generationRequiredDumbAware() instead.");
-    }
-
+  public boolean generationRequired(SModelDescriptor sm, Project project, @Nullable NoCachesStrategy strategy) {
     if (sm.isPackaged()) return false;
     if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) return false;
     if (sm.getModelFile() == null) return false;
@@ -121,6 +110,11 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
     String generatedHash = getGenerationHash(sm);
     if (generatedHash == null) return true;
+
+    if (!DumbService.getInstance(project).isDumb()) {
+      if (strategy == null) throw new AssertionError("NoCachesStrategy should be specified in this case");
+      return strategy.compute(project, sm, generatedHash);
+    }
 
     return checkGenerationRequired(project, generatedHash);
   }
@@ -265,4 +259,5 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
     return generatedFiles;
   }
+
 }

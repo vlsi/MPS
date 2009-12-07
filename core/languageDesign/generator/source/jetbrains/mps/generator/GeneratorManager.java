@@ -230,13 +230,13 @@ public class GeneratorManager {
     ModelGenerationStatusManager statusManager = ModelGenerationStatusManager.getInstance();
     for (Generator g : GenerationPartitioningUtil.getAllPossiblyEngagedGenerators(model.getSModel(), context.getScope())) {
       for (SModelDescriptor sm : g.getOwnModelDescriptors()) {
-        if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm,context.getProject())) {
+        if (SModelStereotype.isUserModel(sm) && statusManager.generationRequired(sm, context.getProject(), NoCachesStrategy.createBuildCachesStrategy())) {
           result.add(sm);
         }
       }
 
       for (SModelDescriptor sm : g.getSourceLanguage().getAspectModelDescriptors()) {
-        if (statusManager.generationRequired(sm,context.getProject())) {
+        if (statusManager.generationRequired(sm, context.getProject(), NoCachesStrategy.createBuildCachesStrategy())) {
           result.add(sm);
         }
       }
@@ -269,10 +269,10 @@ public class GeneratorManager {
    * @return false if canceled
    */
   public boolean generateModels(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
-                                 final IGenerationType generationType,
-                                 final ProgressIndicator progress,
-                                 final IMessageHandler messages,
-                                 final boolean saveTransientModels
+                                final IGenerationType generationType,
+                                final ProgressIndicator progress,
+                                final IMessageHandler messages,
+                                final boolean saveTransientModels
   ) {
     final boolean[] result = new boolean[1];
     ModelAccess.instance().runWriteAction(new Runnable() {

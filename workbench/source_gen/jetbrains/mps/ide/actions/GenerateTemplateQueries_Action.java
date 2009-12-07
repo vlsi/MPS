@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.transformation.TemplateLanguageGenerationUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.NoCachesStrategy;
 
 public class GenerateTemplateQueries_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -95,7 +96,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
           if (!(GenerateTemplateQueries_Action.this.regenerate)) {
             models.value = ListSequence.fromList(models.value).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor it) {
-                return ModelGenerationStatusManager.getInstance().generationRequired(it, GenerateTemplateQueries_Action.this.project);
+                return ModelGenerationStatusManager.getInstance().generationRequired(it, GenerateTemplateQueries_Action.this.project, NoCachesStrategy.createBuildCachesStrategy());
               }
             }).toListSequence();
           }

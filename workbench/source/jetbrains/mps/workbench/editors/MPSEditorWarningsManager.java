@@ -26,10 +26,7 @@ import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IGenerationType;
-import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
-import jetbrains.mps.generator.ModelGenerationStatusManager;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
@@ -132,7 +129,7 @@ public class MPSEditorWarningsManager implements ProjectComponent {
             final Set<Language> outdatedLanguages = new HashSet<Language>();
             for (Language l : model.getSModel().getLanguages(GlobalScope.getInstance())) {
               if (l.getEditorModelDescriptor() != null &&
-                ModelGenerationStatusManager.getInstance().generationRequired(l.getEditorModelDescriptor(), project)) {
+                ModelGenerationStatusManager.getInstance().generationRequired(l.getEditorModelDescriptor(), project, null)) {
                 outdatedLanguages.add(l);
               }
             }
