@@ -17,6 +17,7 @@ package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.lang.structure.structure.Cardinality;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
@@ -30,6 +31,8 @@ import java.util.*;
 import java.util.Map.Entry;
 
 public class DiffBuilder {
+  private static final Logger LOG = Logger.getLogger(DiffBuilder.class);
+
   private SModel myOldModel;
   private SModel myNewModel;
 
@@ -133,10 +136,32 @@ public class DiffBuilder {
 
       assert newNode != null;
       assert oldNode != null;
-      if (!oldNode.getConceptFqName().equals(newNode.getConceptFqName())) {
-        myChanges.add(new ChangeConceptChange(id, newNode.getConceptFqName()));
+      String oldConceptName = oldNode.getConceptFqName();
+      String newConceptName = newNode.getConceptFqName();
+      if (!oldConceptName.equals(newConceptName)) {
+        ModuleReference oldLanguage = oldNode.getConceptLanguage();
+        ModuleReference newLanguage = newNode.getConceptLanguage();
+        if ((newLanguage != null) && (oldLanguage != null) && newLanguage.equals(oldLanguage)) {
+          int oldVersion = getStructureImportVersion(myOldModel, oldLanguage);
+          int newVersion = getStructureImportVersion(myNewModel, newLanguage);
+          if (oldVersion != newVersion) {
+            LOG.debug("Refactoring in language " + oldLanguage + " from " + oldVersion + " to " + newVersion
+              + ".\n" + "Ignoring concept change of node " + id + " from " + oldConceptName + " to " + newConceptName);
+            continue;
+          }
+        }
+        myChanges.add(new ChangeConceptChange(id, newConceptName));
       }
     }
+  }
+
+  private int getStructureImportVersion(SModel model, ModuleReference language) {
+    for (ImportElement el : model.getLanguageAspectModelElements()) {
+      if ((language.getModuleFqName() + ".structure").equals(el.getModelReference().getLongName())) {
+        return el.getUsedVersion();
+      }
+    }
+    return -1;
   }
 
   private void collectAddedLanguageImports() {

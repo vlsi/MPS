@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vcs.diff;
 
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.util.CollectionUtil;
@@ -22,6 +23,7 @@ import jetbrains.mps.util.CollectionUtil;
 import java.util.*;
 
 import static org.junit.Assert.*;
+
 import org.junit.Assert;
 
 public class ModelAssert {
@@ -94,20 +96,51 @@ public class ModelAssert {
   }
 
   private static void assertSameImports(SModel expectedModel, SModel actualModel) {
-    assertListsEqual(expectedModel.getExplicitlyImportedLanguages(),
-      actualModel.getExplicitlyImportedLanguages(),
+    assertListsEqual(expectedModel.getLanguageAspectModelElements(),
+      actualModel.getLanguageAspectModelElements(), new Comparator<ImportElement>() {
+        @Override
+        public int compare(ImportElement import1, ImportElement import2) {
+          if (import1.getModelReference().equals(import2.getModelReference())) {
+            return import1.getUsedVersion() - import2.getUsedVersion();
+          }
+          return 1;
+        }
+      },
       "import");
   }
 
   private static <C> void assertListsEqual(List<C> expectedList, List<C> actualList, String name) {
+    assertListsEqual(expectedList, actualList, new Comparator<C>() {
+      @Override
+      public int compare(C o1, C o2) {
+        return o1.equals(o2) ? 0 : 1;
+      }
+    }, name);
+  }
+
+  private static <C> void assertListsEqual(List<C> expectedList, List<C> actualList, Comparator<C> comparator, String name) {
     for (C expected : expectedList) {
-      if (!actualList.contains(expected)) {
+      boolean found = false;
+      for (C actual : actualList) {
+        if (comparator.compare(actual, expected) == 0) {
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
         fail("Not found expected " + name + " " + expected);
       }
     }
 
     for (C actual : actualList) {
-      if (!expectedList.contains(actual)) {
+      boolean found = false;
+      for (C expected : expectedList) {
+        if (comparator.compare(actual, expected) == 0) {
+          found = true;
+          break;
+        }
+      }
+      if (!found) {
         fail("Not expected " + name + " " + actual);
       }
     }
@@ -146,7 +179,7 @@ public class ModelAssert {
           }
         }
         if (!wasFound) {
-          fail(getErrorString("children", expectedNode, actualNode) + " Expected  child " + expectedChild  + " was not found." +
+          fail(getErrorString("children", expectedNode, actualNode) + " Expected  child " + expectedChild + " was not found." +
             "Expected children are " + expectedChildren + "\n" +
             "Actual children are " + actualChildren + "\n");
         }

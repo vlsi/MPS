@@ -402,7 +402,7 @@ public class Merger {
       }
       myResultModel.addRoot(tmp);
 
-      // colleact changes which are involved in unresolved conflicts
+      // collect changes which are involved in unresolved conflicts
       myUnresolved = new LinkedHashSet<Change>();
       for (Conflict conflict : myConflicts) {
         if (!myExcludedChanges.contains(conflict.getC1()) && !myExcludedChanges.contains(conflict.getC2())) {
