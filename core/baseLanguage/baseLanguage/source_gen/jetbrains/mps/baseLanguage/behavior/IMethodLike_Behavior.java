@@ -4,9 +4,10 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
@@ -19,7 +20,8 @@ public class IMethodLike_Behavior {
   }
 
   public static SNode virtual_getLastStatement_1239354409446(SNode thisNode) {
-    List<SNode> statements = SLinkOperations.getTargets(IMethodLike_Behavior.call_getBody_1239354440022(thisNode), "statement", true);
+    List<SNode> statements = new ArrayList<SNode>();
+    ListSequence.fromList(statements).addSequence(ListSequence.fromList(SLinkOperations.getTargets(IMethodLike_Behavior.call_getBody_1239354440022(thisNode), "statement", true)));
     while (SNodeOperations.getConceptDeclaration(ListSequence.fromList(statements).last()) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement") || SNodeOperations.getConceptDeclaration(ListSequence.fromList(statements).last()) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.RemarkStatement")) {
       ListSequence.fromList(statements).removeLastElement();
     }
