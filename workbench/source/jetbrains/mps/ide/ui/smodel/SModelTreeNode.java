@@ -20,7 +20,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
-import jetbrains.mps.generator.NoCachesStrategy;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -39,6 +38,7 @@ import jetbrains.mps.util.ToStringComparator;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.tree.DefaultTreeModel;
 import java.awt.Color;
@@ -127,15 +127,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       setIcon(Icons.MODEL_ICON);
     }
 
-    if (generationRequired()) {
-      setAdditionalText("generation required");
-    } else if (isPackaged()) {
-      setAdditionalText("packaged");
-    } else if (isDoNotGenerate()) {
-      setAdditionalText("do not generate");
-    } else {
-      setAdditionalText(null);
-    }
+    GenerationStatus generationStatus = getGenerationStatus();
+    setAdditionalText(generationStatus.getMessage());
 
     if (myModelDescriptor != null) {
       setNodeIdentifier(myModelDescriptor.toString());
@@ -357,19 +350,25 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return result;
   }
 
-  public boolean generationRequired() {
-    if (getSModelDescriptor() == null) return false;
+  public GenerationStatus getGenerationStatus() {
+    if (getSModelDescriptor() == null) return GenerationStatus.NOT_REQUIRED;
+    if (isPackaged()) return GenerationStatus.PACKAGED;
+    if (isDoNotGenerate()) return GenerationStatus.DO_NOT_GENERATE;
 
-    return ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor(), getOperationContext().getProject(), NoCachesStrategy.createDefaultStrategy(false, null));
+    Project project = getOperationContext().getProject();
+    if (DumbService.getInstance(project).isDumb()) return GenerationStatus.UPDATING;
+
+    boolean required = ModelGenerationStatusManager.getInstance().generationRequired(getSModelDescriptor(), project, null);
+    return required ? GenerationStatus.REQUIRED : GenerationStatus.NOT_REQUIRED;
   }
 
-  public boolean isPackaged() {
+  private boolean isPackaged() {
     if (getSModelDescriptor() == null) return false;
 
     return getSModelDescriptor().isPackaged();
   }
 
-  public boolean isDoNotGenerate() {
+  private boolean isDoNotGenerate() {
     if (getSModelDescriptor() == null) {
       return false;
     }
@@ -839,6 +838,25 @@ public class SModelTreeNode extends MPSTreeNodeEx {
         index = targetNode.getChildCount();
       }
       treeModel.insertNodeInto(nodeToInsert, targetNode, index);
+    }
+  }
+
+  public static enum GenerationStatus {
+    PACKAGED("packaged"),
+    DO_NOT_GENERATE("do not generate"),
+    UPDATING("updating..."),
+    REQUIRED("generation required"),
+    NOT_REQUIRED(null);
+
+    private String myMessage;
+
+    GenerationStatus(String message) {
+      myMessage = message;
+    }
+
+    @Nullable
+    public String getMessage() {
+      return myMessage;
     }
   }
 

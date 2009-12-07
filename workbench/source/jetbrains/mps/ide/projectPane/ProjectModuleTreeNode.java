@@ -20,13 +20,13 @@ import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode.GenerationStatus;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SModelStereotype;
 import com.intellij.openapi.project.DumbService;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
@@ -102,7 +102,7 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
 
     if (node instanceof SModelTreeNode) {
       SModelTreeNode smodelTreeNode = (SModelTreeNode) node;
-      if (smodelTreeNode.generationRequired()) return true;
+      if (smodelTreeNode.getGenerationStatus() == GenerationStatus.REQUIRED) return true;
 
       for (SModelTreeNode child : smodelTreeNode.getChildModelTreeNodes()) {
         if (generationRequired(child)) return true;
