@@ -100,12 +100,12 @@ public class ChangesBlock implements AdditionalPainter<ChangesBlock> {
 
   @Override
   public void paint(Graphics g, EditorComponent editorComponent) {
-    paint((Graphics2D)g, editorComponent.getSize());
+    paint((Graphics2D) g, editorComponent.getSize());
   }
 
   @Override
   public boolean paintsAbove() {
-    return true;  
+    return true;
   }
 
   @Override

@@ -606,7 +606,7 @@ public abstract class AbstractModule implements IModule {
           LOG.error("Can't load class path item " + s + " in " + this + (file.isDirectory() ? ". Execute make in IDEA." : ""));
         } else {
           IClassPathItem currentItem;
-          if (file.isDirectory()) {            
+          if (file.isDirectory()) {
             currentItem = new FileClassPathItem(s);
           } else {
             currentItem = new JarFileClassPathItem(s);

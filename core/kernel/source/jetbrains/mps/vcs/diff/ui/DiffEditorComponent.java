@@ -226,9 +226,9 @@ public abstract class DiffEditorComponent extends EditorComponent {
   }
 
   private void removeAllChangesFrom(EditorComponent component) {
-    for (AdditionalPainter painter: getAdditionalPainters()) {
+    for (AdditionalPainter painter : getAdditionalPainters()) {
       if (painter instanceof ChangesBlock) {
-        ((ChangesBlock) painter).removeFrom(component);        
+        ((ChangesBlock) painter).removeFrom(component);
       }
     }
   }

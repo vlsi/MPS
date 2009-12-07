@@ -152,14 +152,13 @@ public class ChildSubstituteActionsHelper {
         SModelUtil_new.isAssignableConcept(childConcept, applicableConcept)) {
 
         if (satisfiesPrecondition(actionsBuilder, parentNode,
-              applicableConcept, BaseAdapter.fromAdapter(link),
-              currentChild, wrapped, context)) {
+          applicableConcept, BaseAdapter.fromAdapter(link),
+          currentChild, wrapped, context)) {
           allBuilders.add(actionsBuilder);
         }
       }
     }
 
-        
 
     if (!containsRemoveDefaults(allBuilders)) {
       resultActions.addAll(createPrimaryChildSubstituteActions(parentNode, currentChild, childConcept, childSetter, context));

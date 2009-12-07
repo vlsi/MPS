@@ -45,7 +45,7 @@
         <projectOpenProcessor implementation="com.intellij.platform.PlatformProjectOpenProcessor"/>
 
         <applicationConfigurable implementation="com.intellij.application.options.pathMacros.PathMacroConfigurable"/>
-        <applicationConfigurable implementation="com.intellij.openapi.fileTypes.impl.FileTypeConfigurable"/>        
+        <applicationConfigurable implementation="com.intellij.openapi.fileTypes.impl.FileTypeConfigurable"/>
 
         <applicationService serviceInterface="com.intellij.ui.IconDeferrer"
                             serviceImplementation="com.intellij.ui.DefaultIconDeferrer"/>
@@ -56,9 +56,11 @@
                             serviceImplementation="com.intellij.lang.cacheBuilder.CacheBuilderRegistryImpl"/>
 
         <!--For file selection dialog-->
-        <getDataRule key="context.ProjectFileDirectory" implementationClass="jetbrains.mps.workbench.dataExtraction.fileChooser.ProjectFileRule"/>
+        <getDataRule key="context.ProjectFileDirectory"
+                     implementationClass="jetbrains.mps.workbench.dataExtraction.fileChooser.ProjectFileRule"/>
         <!--For run config creation with action-->
-        <getDataRule key="Location" implementationClass="jetbrains.mps.workbench.dataExtraction.runConfig.LocationRule"/>
+        <getDataRule key="Location"
+                     implementationClass="jetbrains.mps.workbench.dataExtraction.runConfig.LocationRule"/>
 
         <getDataRule key="MPS_MPSProject" implementationClass="jetbrains.mps.workbench.dataExtraction.MPSProjectRule"/>
         <getDataRule key="MPS_Frame" implementationClass="jetbrains.mps.workbench.dataExtraction.FrameRule"/>
@@ -69,7 +71,7 @@
 
         <fileBasedIndex implementation="com.intellij.psi.impl.cache.impl.id.IdIndex"/>
         <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex"/>
-<!--        <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.NamedNodeIndex"/> -->
+        <!--        <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.NamedNodeIndex"/> -->
         <fileBasedIndex implementation="jetbrains.mps.generator.ModelDigestIndex"/>
 
         <syntaxHighlighter key="JAVA" implementationClass="jetbrains.mps.ide.java.JavaFileHighlighter"/>
@@ -80,6 +82,6 @@
         <syntaxHighlighter key="Devkit" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
         <syntaxHighlighter key="MPS Project" implementationClass="com.intellij.ide.highlighter.XmlFileHighlighter"/>
 
-        <editorTabTitleProvider implementation="jetbrains.mps.workbench.editors.EditorTabTitleProviderImpl"  />
+        <editorTabTitleProvider implementation="jetbrains.mps.workbench.editors.EditorTabTitleProviderImpl"/>
     </extensions>
 </idea-plugin>

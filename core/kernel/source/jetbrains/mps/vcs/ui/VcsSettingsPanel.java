@@ -38,12 +38,12 @@ public class VcsSettingsPanel extends JPanel {
     mySettings = settings;
 
     myVcsRootsPanel = new EnumPanel(new String[]{VcsRootsDiscoveryPolicy.ADD.name(),
-                                                      VcsRootsDiscoveryPolicy.NOTIFY.name(),
-                                                      VcsRootsDiscoveryPolicy.DO_NOTING.name()},
-                                         new String[]{"Add to project vcs directory mappings",
-                                                      "Show notification",
-                                                      "Do nothing"},
-                                         "When new vcs roots discovered") {
+      VcsRootsDiscoveryPolicy.NOTIFY.name(),
+      VcsRootsDiscoveryPolicy.DO_NOTING.name()},
+      new String[]{"Add to project vcs directory mappings",
+        "Show notification",
+        "Do nothing"},
+      "When new vcs roots discovered") {
       @Override
       public String getSettingsValue() {
         return settings.getDiscoverVcsRoots();

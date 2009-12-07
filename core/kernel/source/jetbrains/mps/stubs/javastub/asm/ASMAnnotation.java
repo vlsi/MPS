@@ -71,7 +71,7 @@ public class ASMAnnotation {
   }
 
   public Map<String, Object> getValues() {
-    return myValues == null ? Collections.<String,Object>emptyMap() : Collections.unmodifiableMap(myValues);
+    return myValues == null ? Collections.<String, Object>emptyMap() : Collections.unmodifiableMap(myValues);
   }
 
   public ASMType getType() {

@@ -83,7 +83,7 @@ public class ModuleMaker {
 
       Set<IModule> candidates = new DependencyCollector(modules, IModule.class).collect();
       myDependencies = new Dependencies(candidates);
-      
+
       Set<IModule> toCompile = getModulesToCompile(candidates);
 
 
@@ -176,7 +176,7 @@ public class ModuleMaker {
             LOG.warning(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
           } else {
             if (outputtedErrors < MAX_ERRORS) {
-              outputtedErrors++;              
+              outputtedErrors++;
               LOG.error(messageStirng + " (line: " + cp.getSourceLineNumber() + ")", hintObject);
             }
           }

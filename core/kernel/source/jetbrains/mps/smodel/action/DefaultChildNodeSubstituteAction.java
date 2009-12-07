@@ -86,7 +86,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   public int getFontStyleFor(String pattern) {
     if (getParameterObject() instanceof SNode) {
       SNode parameterNode = (SNode) getParameterObject();
-      return NodePresentationUtil.getFontStyle(parameterNode, getSourceNode());      
+      return NodePresentationUtil.getFontStyle(parameterNode, getSourceNode());
     }
     return Font.PLAIN;
   }

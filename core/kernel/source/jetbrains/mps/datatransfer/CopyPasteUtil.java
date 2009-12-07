@@ -274,7 +274,7 @@ public class CopyPasteUtil {
         return PasteNodeData.emptyPasteNodeData(module, model);
       }
     } catch (IllegalStateException e) {
-      return PasteNodeData.emptyPasteNodeData(module, model); 
+      return PasteNodeData.emptyPasteNodeData(module, model);
     }
 
     Transferable content = null;

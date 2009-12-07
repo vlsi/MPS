@@ -65,7 +65,7 @@ public class TextGenManager {
     buffer.putUserObject(PACKAGE_NAME, node.getModel().getLongName());
     appendNodeText(context, buffer, node, null);
     int topLength = buffer.getTopBufferText().split(buffer.getLineSeparator(), -1).length + 2;
-    for (SNode n: positions.keySet()) {
+    for (SNode n : positions.keySet()) {
       PositionInfo position = positions.get(n);
       position.setStartLine(position.getStartLine() + topLength);
       position.setEndLine(position.getEndLine() + topLength);
@@ -204,5 +204,5 @@ public class TextGenManager {
     public Map<String, String> getDependencies() {
       return myDependencies;
     }
-  } 
+  }
 }

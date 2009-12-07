@@ -155,7 +155,7 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
       shortName = targetNode.getResolveInfo();
       packageName = targetNode.getModel().getSModelReference().getLongName();
     }
-    return (isNeedLongName(shortName, packageName)? packageName + '.' + shortName : shortName);
+    return (isNeedLongName(shortName, packageName) ? packageName + '.' + shortName : shortName);
   }
 
   public String getDeafultNoTextGenErrorText(SNode node) {

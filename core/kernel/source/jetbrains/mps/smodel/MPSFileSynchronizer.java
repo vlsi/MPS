@@ -55,8 +55,8 @@ public class MPSFileSynchronizer implements ApplicationComponent {
       public void commandFinished(CommandEvent event) {
         for (IFile vf : myFilesToSynchronize) {
           VFileSystem.refreshFileSynchronously(vf);
-       }
-       myFilesToSynchronize.clear();
+        }
+        myFilesToSynchronize.clear();
       }
     });
   }

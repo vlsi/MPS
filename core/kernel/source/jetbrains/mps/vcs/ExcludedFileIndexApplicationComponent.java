@@ -64,7 +64,7 @@ public class ExcludedFileIndexApplicationComponent implements ApplicationCompone
     FilePath parentPath = path.getParentPath();
     while (true) {
       if (parentPath == null) return false;
-      if (isExcluded(parentPath)) return true;      
+      if (isExcluded(parentPath)) return true;
       parentPath = parentPath.getParentPath();
     }
   }

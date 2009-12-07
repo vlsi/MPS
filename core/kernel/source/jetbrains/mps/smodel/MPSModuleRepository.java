@@ -44,7 +44,7 @@ public class MPSModuleRepository implements ApplicationComponent {
 
   private Map<String, IModule> myFileToModuleMap = new ConcurrentHashMap<String, IModule>();
   private Map<String, IModule> myFqNameToModulesMap = new ConcurrentHashMap<String, IModule>();
-  private Map<ModuleId, IModule> myIdToModuleMap = new ConcurrentHashMap<ModuleId, IModule>();    
+  private Map<ModuleId, IModule> myIdToModuleMap = new ConcurrentHashMap<ModuleId, IModule>();
 
   private Set<IModule> myModules = new LinkedHashSet<IModule>();
 
@@ -155,7 +155,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     }
   }
 
-  public void fireModuleChanged(IModule m) {    
+  public void fireModuleChanged(IModule m) {
     if (!myModules.contains(m)) return;
 
     for (ModuleRepositoryListener l : myModuleListeners) {
@@ -265,7 +265,7 @@ public class MPSModuleRepository implements ApplicationComponent {
   }
 
   public boolean existsModule(ModuleReference ref) {
-    return getModule(ref) != null;    
+    return getModule(ref) != null;
   }
 
   public boolean existsModule(IModule module, MPSModuleOwner owner) {
@@ -442,7 +442,9 @@ public class MPSModuleRepository implements ApplicationComponent {
     if (isExcluded(dirName)) return result;
 
     List<IFile> files = dir.list();
-    if (files == null) { return result; }
+    if (files == null) {
+      return result;
+    }
 
     for (IFile file : files) {
       if (hasModuleExtension(file.getName())) {
@@ -456,7 +458,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     for (IFile childDir : files) {
       if (childDir.getName().endsWith(".svn")) continue;
       if (hasModuleExtension(childDir.getName())) continue;
-      if (excludes.contains(childDir)) continue; 
+      if (excludes.contains(childDir)) continue;
 
       if (childDir.getName().endsWith(AbstractModule.PACKAGE_SUFFIX)) {
         IFile dirInJar = FileSystem.getFile(childDir.getAbsolutePath() + "!/" + AbstractModule.MODULE_DIR);
@@ -634,7 +636,7 @@ public class MPSModuleRepository implements ApplicationComponent {
         result.add(lang);
       }
     }
-    return result;   
+    return result;
   }
 
   public IModule getModuleForModelFile(String path) {

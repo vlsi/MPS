@@ -57,7 +57,7 @@ import org.jetbrains.annotations.Nullable;
   protected final boolean mature() {
     if (!myMature) {
       if (getSourceNode().isRegistered() && getImmatureTargetNode().isRegistered() &&
-          !(getSourceNode().isDisposed()||getImmatureTargetNode().isDisposed())) {
+        !(getSourceNode().isDisposed() || getImmatureTargetNode().isDisposed())) {
         // convert 'young' reference to 'mature'
         makeMature();
       }
@@ -69,7 +69,7 @@ import org.jetbrains.annotations.Nullable;
 
   protected void makeMature() {
     if (!myMature) {
-        ImmatureReferences.getInstance().remove(this);
+      ImmatureReferences.getInstance().remove(this);
     }
     myMature = true;
   }

@@ -28,7 +28,7 @@ public class TextPasteUtil {
     } catch (IllegalStateException e) {
       return false;
     }
-  }  
+  }
 
   public static String getStringFromClipboard() {
     Clipboard cb = Toolkit.getDefaultToolkit().getSystemClipboard();

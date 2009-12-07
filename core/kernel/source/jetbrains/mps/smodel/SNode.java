@@ -137,8 +137,8 @@ public final class SNode {
 
   //do not use this method
   @Deprecated()
-  public String getModelName_internal(){
-    if (myModel==null) return "<null>";
+  public String getModelName_internal() {
+    if (myModel == null) return "<null>";
     return myModel.getLongName();
   }
 
@@ -174,7 +174,6 @@ public final class SNode {
       child.unfreezeRec();
     }
   }
-
 
 
   public boolean isModelLoading() {
@@ -1231,7 +1230,7 @@ public final class SNode {
     return result;
   }
 
-  public void addReference(SReference reference) {    
+  public void addReference(SReference reference) {
     assert reference.getSourceNode() == this;
     insertReferenceAt(myReferences == null ? 0 : myReferences.length, reference);
   }
@@ -1289,7 +1288,7 @@ public final class SNode {
     if (ModelChange.needFireEvents(getModel(), this)) {
       getModel().fireReferenceAddedEvent(reference);
     }
-}
+  }
 
   void removeReferenceAt(final int i) {
     ModelChange.assertLegalNodeChange(this);

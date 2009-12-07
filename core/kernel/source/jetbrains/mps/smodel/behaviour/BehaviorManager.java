@@ -152,7 +152,7 @@ public final class BehaviorManager implements ApplicationComponent {
             for (InterfaceConceptReference reference : references) {
               InterfaceConceptDeclaration intfc = reference.getIntfc();
               if (intfc == null) continue;
-              newFrontier.add(intfc);              
+              newFrontier.add(intfc);
             }
           }
           processed.add(currentConcept);
@@ -161,7 +161,7 @@ public final class BehaviorManager implements ApplicationComponent {
         newFrontier = new ArrayList<AbstractConceptDeclaration>();
       }
 
-    /*  while (concept != null) {
+      /*  while (concept != null) {
         String fqName = NameUtil.nodeFQName(concept);
         String behaviorClass = behaviorClassByConceptFqName(fqName);
 

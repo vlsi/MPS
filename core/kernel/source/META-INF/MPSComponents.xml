@@ -77,7 +77,7 @@
     <xi:include href="/componentSets/WindowManagement.xml" xpointer="xpointer(/components/*)"/>
     <xi:include href="/componentSets/Editor.xml" xpointer="xpointer(/components/*)"/>
     <xi:include href="/componentSets/VCS.xml" xpointer="xpointer(/components/*)"/>
-    <xi:include href="/componentSets/Execution.xml" xpointer="xpointer(/components/*)"/>    
+    <xi:include href="/componentSets/Execution.xml" xpointer="xpointer(/components/*)"/>
 
     <application-components>
         <component>
@@ -539,10 +539,10 @@
 
         <!--project view tool-->
         <!--<component>-->
-            <!--<interface-class>com.intellij.ide.projectView.ProjectView</interface-class>-->
-            <!--<implementation-class>com.intellij.ide.projectView.impl.ProjectViewImpl</implementation-class>-->
-            <!--<option name="workspace" value="true"/>-->
-            <!--<skipForDummyProject/>-->
+        <!--<interface-class>com.intellij.ide.projectView.ProjectView</interface-class>-->
+        <!--<implementation-class>com.intellij.ide.projectView.impl.ProjectViewImpl</implementation-class>-->
+        <!--<option name="workspace" value="true"/>-->
+        <!--<skipForDummyProject/>-->
         <!--</component>-->
 
         <component>

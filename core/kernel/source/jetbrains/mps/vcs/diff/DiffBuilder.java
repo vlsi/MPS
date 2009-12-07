@@ -60,7 +60,7 @@ public class DiffBuilder {
   private void makeChangeGroups() {
     Set<SNodeId> deletedNodes = new HashSet<SNodeId>();
     for (Change change : CollectionUtil.filter(DeleteNodeChange.class, myChanges)) {
-        deletedNodes.add(change.getAffectedNodeId());
+      deletedNodes.add(change.getAffectedNodeId());
     }
     for (Change change : CollectionUtil.filter(DeleteNodeChange.class, myChanges)) {
       SNode deleted = myOldModel.getNodeById(change.getAffectedNodeId());
@@ -191,7 +191,7 @@ public class DiffBuilder {
           SNodeId parentId = sNode.getParent().getSNodeId();
           SNode oldParent = myOldModel.getNodeById(parentId);
           SNodeId oldChildId = null;
-          if (oldParent != null) {            
+          if (oldParent != null) {
             if (oldParent.getChild(role) != null) {
               oldChildId = oldParent.getChild(role).getSNodeId();
             }

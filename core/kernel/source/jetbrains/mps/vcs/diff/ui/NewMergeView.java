@@ -61,7 +61,7 @@ public class NewMergeView extends JPanel {
           @Override
           protected void showConflict(Conflict conflict) {
             SNode node;
-            node= mine.getNodeById(conflict.getC2().getAffectedNodeId());
+            node = mine.getNodeById(conflict.getC2().getAffectedNodeId());
             if (node == null) {
               node = baseModel.getNodeById(conflict.getC2().getAffectedNodeId());
             }
@@ -87,7 +87,7 @@ public class NewMergeView extends JPanel {
       }
     });
 
-    add(panel);    
+    add(panel);
     add(controlsPanel, BorderLayout.PAGE_END);
   }
 
@@ -128,7 +128,7 @@ public class NewMergeView extends JPanel {
   }
 
   public SModel getResultModel() {
-    return myMerger.getResultModel(); 
+    return myMerger.getResultModel();
   }
 
   private class MyChangesTree extends ModelChangesTree {
@@ -138,7 +138,7 @@ public class NewMergeView extends JPanel {
     }
 
     @Override
-    protected void doubleClickOnNode(final SNode node) {      
+    protected void doubleClickOnNode(final SNode node) {
     }
 
     @Override

@@ -107,7 +107,7 @@ public abstract class DefaultScope extends BaseScope {
   }
 
   private void initialize() {
-    if (myInitialized) return;                        
+    if (myInitialized) return;
     if (myInitializationInProgress) return;
 
     myInitializationInProgress = true;
@@ -119,7 +119,7 @@ public abstract class DefaultScope extends BaseScope {
         IModule dependency = MPSModuleRepository.getInstance().getModule(d.getModuleRef());
         if (dependency != null) {
           visibleModules.add(dependency);
-        } 
+        }
       }
     }
 

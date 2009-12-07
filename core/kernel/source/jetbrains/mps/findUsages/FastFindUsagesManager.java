@@ -65,7 +65,7 @@ class FastFindUsagesManager extends FindUsagesManager {
         CharSequence data = inputData.getContentAsText();
         char[] charsArray = CharArrayUtil.fromSequenceWithoutCopying(data);
         int len = data.length();
-        if(charsArray == null) {
+        if (charsArray == null) {
           charsArray = CharArrayUtil.fromSequence(data);
         }
 
@@ -278,7 +278,7 @@ class FastFindUsagesManager extends FindUsagesManager {
       }, new GlobalSearchScope(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext())) {
         @Override
         public boolean contains(VirtualFile file) {
-          return scopeFiles.contains(file);  
+          return scopeFiles.contains(file);
         }
 
         @Override

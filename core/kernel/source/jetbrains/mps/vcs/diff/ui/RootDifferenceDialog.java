@@ -200,7 +200,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
     }
     for (Change change : new ArrayList<Change>(notAppliedChanges)) {
       if (change.getDependences().contains(change.getAffectedNodeId())) {
-        applyChange(notAppliedChanges, change);        
+        applyChange(notAppliedChanges, change);
       }
     }
     changeToApply.apply(myNewModel);

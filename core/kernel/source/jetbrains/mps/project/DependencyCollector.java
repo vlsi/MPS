@@ -37,7 +37,7 @@ public class DependencyCollector<T extends IModule> {
   }
 
   public Set<T> collect() {
-    myResult =  new HashSet<IModule>();
+    myResult = new HashSet<IModule>();
 
     for (IModule s : myStart) {
       if (myResult.add(s)) {

@@ -48,7 +48,7 @@ public class LanguageHierarchyCache implements ApplicationComponent {
 
   private List<CacheChangeListener> myCacheChangeListeners = new ArrayList<CacheChangeListener>(1);
   private CacheReadAccessListener myCacheReadAccessListener = null;
-  
+
 
   private MPSModuleRepository myModuleRepository;
 
@@ -309,7 +309,8 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     void build() {
       for (ConceptDeclaration cd : myLanguage.getConceptDeclarations()) {
         if (!cd.isRoot()) continue;
-        if (!AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(cd.getNode())) continue;
+        if (!AbstractConceptDeclaration_Behavior.call_isDefaultSubstitutable_7429110134803670673(cd.getNode()))
+          continue;
 
         String fqName = NameUtil.nodeFQName(cd);
 
@@ -325,8 +326,8 @@ public class LanguageHierarchyCache implements ApplicationComponent {
     }
 
     Set<String> getSubconcepts(String fqName) {
-      return mySubconcepts.get(fqName);      
-    }   
+      return mySubconcepts.get(fqName);
+    }
   }
 
   public static interface CacheChangeListener {

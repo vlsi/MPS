@@ -135,7 +135,7 @@ public final class CopyUtil {
               staticReference.getResolveInfo()));
           }
         } else if (mapping.containsKey(inputTargetNode)) {
-            outputNode.setReferent(ref.getRole(), mapping.get(inputTargetNode), false);
+          outputNode.setReferent(ref.getRole(), mapping.get(inputTargetNode), false);
         } else {
           outputNode.setReferent(ref.getRole(), inputTargetNode, false);
         }

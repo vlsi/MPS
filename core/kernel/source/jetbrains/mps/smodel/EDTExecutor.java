@@ -103,7 +103,7 @@ class EDTExecutor {
       }
 
       if (r != null) {
-        LaterInvocator.invokeLater(r, ModalityState.NON_MODAL);        
+        LaterInvocator.invokeLater(r, ModalityState.NON_MODAL);
       }
     }
 

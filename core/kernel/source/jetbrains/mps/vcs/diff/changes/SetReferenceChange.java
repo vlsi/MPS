@@ -43,7 +43,7 @@ public class SetReferenceChange extends Change {
       myInternal = true;
       myTargetId = target.getSNodeId();
     }
-  }  
+  }
 
   public String getRole() {
     return myRole;

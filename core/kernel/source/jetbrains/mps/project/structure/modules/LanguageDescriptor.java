@@ -40,7 +40,7 @@ public class LanguageDescriptor extends ModuleDescriptor {
 
   public String getGenPath() {
     return myGenPath;
-  }  
+  }
 
   public void setGenPath(String genPath) {
     myGenPath = genPath;

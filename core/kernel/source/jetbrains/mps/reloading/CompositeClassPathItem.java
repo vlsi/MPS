@@ -52,8 +52,8 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
 
   public void collectAvailableClasses(Set<String> classes, String namespace) {
     for (IClassPathItem item : myChildren) {
-      if(item instanceof AbstractClassPathItem) {
-        ((AbstractClassPathItem)item).collectAvailableClasses(classes, namespace);
+      if (item instanceof AbstractClassPathItem) {
+        ((AbstractClassPathItem) item).collectAvailableClasses(classes, namespace);
       } else {
         classes.addAll(item.getAvailableClasses(namespace));
       }
@@ -62,8 +62,8 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
 
   public void collectSubpackages(Set<String> subpackages, String namespace) {
     for (IClassPathItem item : myChildren) {
-      if(item instanceof AbstractClassPathItem) {
-        ((AbstractClassPathItem)item).collectSubpackages(subpackages, namespace);
+      if (item instanceof AbstractClassPathItem) {
+        ((AbstractClassPathItem) item).collectSubpackages(subpackages, namespace);
       } else {
         subpackages.addAll(item.getSubpackages(namespace));
       }

@@ -95,8 +95,8 @@ public class SNodePointer {
     if (this == o) return true;
     if (o == null || !(o instanceof SNodePointer)) return false;
 
-    SNodePointer np = (SNodePointer)o;
-    return EqualUtil.equals(myModelReference, np.myModelReference) && EqualUtil.equals(myNodeId,np.myNodeId);
+    SNodePointer np = (SNodePointer) o;
+    return EqualUtil.equals(myModelReference, np.myModelReference) && EqualUtil.equals(myNodeId, np.myNodeId);
   }
 
   public int hashCode() {

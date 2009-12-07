@@ -84,7 +84,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
     return myRepository;
   }
 
-  public<M extends IModule> List<M> getModules(Class<M> cls) {
+  public <M extends IModule> List<M> getModules(Class<M> cls) {
     return myRepository.getModules(myOwner, cls);
   }
 
@@ -139,7 +139,6 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
       }
     });
   }
-
 
 
   protected void onAfterModulesRead() {
@@ -200,7 +199,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
     MyState result = new MyState();
     for (Entry<String, Library> entry : state.myLibraries.entrySet()) {
       result.myLibraries.put(entry.getKey(), addMacros(entry.getValue()));
-      
+
     }
     return result;
   }
@@ -217,7 +216,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   private Library addMacros(Library l) {
     Library result = l.copy();
     result.setPath(addMacros(result.getPath()));
-    return result;    
+    return result;
   }
 
   private Library removeMacros(Library l) {
@@ -231,7 +230,7 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
   }
 
   protected String removeMacros(String path) {
-    return Macros.mpsHomeMacros().expandPath(path, (IFile) null);    
+    return Macros.mpsHomeMacros().expandPath(path, (IFile) null);
   }
 
   public static class MyState {
@@ -245,5 +244,5 @@ public abstract class BaseLibraryManager implements BaseComponent, Configurable,
       myLibraries = libraries;
     }
   }
-  
+
 }

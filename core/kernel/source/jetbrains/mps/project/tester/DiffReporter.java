@@ -34,11 +34,11 @@ public class DiffReporter {
     return getDiffReportTitle(nodeFQName, fileName, added, deleted);
   }
 
-private static String getDiffReportTitle(String nodeFQName, String fileName,
-        boolean added, boolean deleted) {
+  private static String getDiffReportTitle(String nodeFQName, String fileName,
+                                           boolean added, boolean deleted) {
     return nodeFQName + ((added) ? " (created)" : ((deleted) ? " (deleted)" : "")) + "\n"
       + "  (file: " + fileName + ")";
-}
+  }
 
   private static String[] getContentAsArray(String content, String separator) {
     return (content != null) ? content.split(separator) : new String[0];
@@ -84,7 +84,7 @@ private static String getDiffReportTitle(String nodeFQName, String fileName,
         if (dotPosition == 0 || dotPosition == -1) {
           continue;
         }
-        String title = getDiffReportTitle((SNode)null, fileName, false, true);
+        String title = getDiffReportTitle((SNode) null, fileName, false, true);
         File file = new File(genType.getOutputDir(outputModel) + File.separator + fileName);
         if (!file.exists() || !file.canRead() || !file.isFile()) {
           continue;

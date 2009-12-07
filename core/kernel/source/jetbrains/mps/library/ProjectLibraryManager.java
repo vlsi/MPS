@@ -48,7 +48,7 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
   public String getDisplayName() {
     return "Library Manager";
   }
-  
+
   public void projectOpened() {
 
   }
@@ -64,6 +64,6 @@ public class ProjectLibraryManager extends BaseLibraryManager implements Project
 
   @Override
   protected String removeMacros(String path) {
-    return Macros.projectDescriptor().expandPath(path, new File(myProject.getPresentableUrl()));    
+    return Macros.projectDescriptor().expandPath(path, new File(myProject.getPresentableUrl()));
   }
 }

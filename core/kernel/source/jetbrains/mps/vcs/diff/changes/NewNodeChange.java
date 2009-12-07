@@ -39,7 +39,6 @@ public abstract class NewNodeChange extends Change {
   }
 
 
-
   public String getNodeRole() {
     return myNodeRole;
   }

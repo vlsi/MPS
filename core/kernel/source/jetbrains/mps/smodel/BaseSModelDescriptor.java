@@ -100,7 +100,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
       for (SModelRoot modelRoot : module.getSModelRoots()) {
         String modelFqName = getSModelFqName().toString();
         String expectedName = PathManager.getModelUIDString(getModelFile(), FileSystem.getFile(modelRoot.getPath()), modelRoot.getPrefix());
-        
+
         if (modelFqName.equals(expectedName)) {
           result.add(modelRoot);
         }

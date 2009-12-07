@@ -45,7 +45,7 @@ public class ModelAccess {
 
 
   public static ModelAccess instance() {
-    return ourInstance;    
+    return ourInstance;
   }
 
   private ModelAccess() {
@@ -274,7 +274,7 @@ public class ModelAccess {
     });
   }
 
-  public void runIndexing(Runnable r) {    
+  public void runIndexing(Runnable r) {
     boolean needToRemove = myIndexingThreads.add(Thread.currentThread());
     try {
       r.run();
@@ -287,15 +287,15 @@ public class ModelAccess {
 
   static void assertLegalRead(SNode node) {
     if (node.isDisposed()) {
-      if (!ourErroredModels.contains(node.getModelName_internal())){
+      if (!ourErroredModels.contains(node.getModelName_internal())) {
         ourErroredModels.add(node.getModelName_internal());
-        System.err.println ("CRITICAL: INVALID OPERATION DETECTED");
-        System.err.println ("model: "+node.getModelName_internal());
+        System.err.println("CRITICAL: INVALID OPERATION DETECTED");
+        System.err.println("model: " + node.getModelName_internal());
         new IllegalModelAccessError("Accessing disposed node").printStackTrace(System.err);
       }
     }
     ModelAccess modelAccess = ModelAccess.instance();
-    if (!modelAccess.canRead() && !modelAccess.myIndexingThreads.contains(Thread.currentThread())) {      
+    if (!modelAccess.canRead() && !modelAccess.myIndexingThreads.contains(Thread.currentThread())) {
       throw new IllegalModelAccessError("You can read model only inside read actions");
     }
   }

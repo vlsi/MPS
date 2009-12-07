@@ -116,6 +116,6 @@ class Dependencies {
   }
 
   public IModule getModule(String fqName) {
-    return myModules.get(fqName);    
+    return myModules.get(fqName);
   }
 }

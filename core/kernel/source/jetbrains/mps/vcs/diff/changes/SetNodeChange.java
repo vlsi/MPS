@@ -52,7 +52,7 @@ public class SetNodeChange extends NewNodeChange {
       if (children.size() > 0) {
         prevNode = children.get(children.size() - 1);
       }
-    }   
+    }
     parent.insertChild(prevNode, getNodeRole(), n);
     return true;
   }

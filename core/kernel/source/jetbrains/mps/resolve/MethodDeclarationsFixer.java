@@ -193,7 +193,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     if (methodDeclarationsGoodParams.size() == 1) {
       newTarget = methodDeclarationsGoodParams.get(0);
     } else {
-      jetbrains.mps.util.Pair<BaseMethodDeclaration,Boolean> pair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethod(methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
+      jetbrains.mps.util.Pair<BaseMethodDeclaration, Boolean> pair = MethodResolveUtil.chooseByParameterTypeReportNoGoodMethod(methodDeclarationsGoodParams, actualArgs, typeByTypeVar);
       newTarget = pair.o1;
       good = pair.o2;
     }

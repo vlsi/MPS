@@ -47,7 +47,7 @@ public abstract class DependencyAwareCache<K, V> {
   protected abstract V calculate(K key);
 
   public void dispose() {
-    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myListener);    
+    GlobalSModelEventsManager.getInstance().removeGlobalCommandListener(myListener);
   }
 
   private class MySModelCommandListener implements SModelCommandListener {

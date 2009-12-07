@@ -202,7 +202,7 @@ public class ProjectTester {
               if (compilationResults.isEmpty()) {
                 System.out.println("Compilation ok");
               }
-              
+
               failedTests.addAll(createTestFailures(generationType, outputModels));
             }
 

@@ -25,7 +25,7 @@ public class IsInstanceCondition implements Condition<SNode> {
   private String myConceptFqName;
 
   public IsInstanceCondition(SNode node) {
-    this((AbstractConceptDeclaration)node.getAdapter());
+    this((AbstractConceptDeclaration) node.getAdapter());
   }
 
   public IsInstanceCondition(AbstractConceptDeclaration conceptDeclaration) {

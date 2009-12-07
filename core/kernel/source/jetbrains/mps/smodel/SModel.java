@@ -47,7 +47,7 @@ public class SModel implements Iterable<SNode> {
   //it should be possible to add listeners from any thread so we use lock here
   //access to other fields is synchronized with ModelAccess
   private final Object myListenersLock = new Object();
-  
+
   private Set<SModelListener> myWeakListeners = new WeakSet<SModelListener>(0);
   private Set<SModelListener> myListeners = new LinkedHashSet<SModelListener>(0);
   private Set<SModelCommandListener> myCommandListeners = new LinkedHashSet<SModelCommandListener>(0);
@@ -400,7 +400,7 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  void fireBeforeModelDisposed() {    
+  void fireBeforeModelDisposed() {
     for (SModelListener sModelListener : copyListeners()) {
       try {
         sModelListener.beforeModelDisposed(this);
@@ -1096,7 +1096,7 @@ public class SModel implements Iterable<SNode> {
       myListeners.clear();
       myWeakListeners.clear();
     }
-    for (SNode sn: myIdToNodeMap.values()) {
+    for (SNode sn : myIdToNodeMap.values()) {
       sn.dispose();
     }
     myIdToNodeMap.clear();

@@ -101,7 +101,7 @@ public class WatchedRoots implements ApplicationComponent {
     for (Library pattern : from) {
       boolean found = false;
       for (Library possibleMatching : what) {
-        if (pattern.getPath().equals(possibleMatching.getPath())){
+        if (pattern.getPath().equals(possibleMatching.getPath())) {
           found = true;
           break;
         }

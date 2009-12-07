@@ -107,7 +107,7 @@ public class ModelDiffTool implements DiffTool {
         public SModel compute() {
           return sModelDescriptor.getSModel();
         }
-      });         
+      });
     }
     return sModel;
   }

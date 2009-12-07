@@ -46,7 +46,7 @@ public class VFileSystem {
         return result;
       }
     }
-      
+
     return getFile(new File(path));
   }
 
@@ -167,15 +167,15 @@ public class VFileSystem {
   }
 
   public static FilePath getFilePath(IFile file) {
-    return getFilePath(file.toFile());   
+    return getFilePath(file.toFile());
   }
 
   public static FilePath getFilePath(String file) {
-    return getFilePath(new File(file));   
+    return getFilePath(new File(file));
   }
 
   public static FilePath getFilePath(VirtualFile file) {
-    return VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);   
+    return VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);
   }
 
   public static FilePath getFilePath(File file) {

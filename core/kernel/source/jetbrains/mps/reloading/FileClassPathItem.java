@@ -81,7 +81,7 @@ public class FileClassPathItem extends AbstractClassPathItem {
 
   public URL getResource(String name) {
     try {
-      IFile resourceFile = FileSystem.getFile(myClassPath + File.separator + name.replace('/', File.separatorChar));      
+      IFile resourceFile = FileSystem.getFile(myClassPath + File.separator + name.replace('/', File.separatorChar));
       if (!resourceFile.exists()) return null;
       return resourceFile.toURL();
     } catch (MalformedURLException e) {
@@ -121,13 +121,13 @@ public class FileClassPathItem extends AbstractClassPathItem {
       for (IFile file : files) {
         String name = file.getName();
         if (name.endsWith(MPSExtentions.DOT_CLASSFILE)) { //isDirectory is quite expensive operation
-          if(classes == null) {
+          if (classes == null) {
             classes = new HashSet<String>(files.size());
           }
           classes.add(name.substring(0, name.length() - MPSExtentions.DOT_CLASSFILE.length()));
         } else {
           if (file.isDirectory()) {
-            if(subpacks == null) {
+            if (subpacks == null) {
               subpacks = new HashSet<String>();
             }
             subpacks.add(namespace.length() > 0 ? namespace + "." + name : name);

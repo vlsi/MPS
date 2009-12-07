@@ -61,7 +61,7 @@ public class TestDebug {
       }
       events.resume();
     }
-   // Thread.sleep(10000);
+    // Thread.sleep(10000);
     machine.resume();
   }
 

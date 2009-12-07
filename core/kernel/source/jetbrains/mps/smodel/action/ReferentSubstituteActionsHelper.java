@@ -58,8 +58,8 @@ import java.util.List;
   }
 
   private static List<INodeSubstituteAction> createActions(
-      SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration,
-      ISearchScope searchScope, IReferencePresentation presentation, final IScope scope) {
+    SNode referenceNode, SNode currentReferent, LinkDeclaration linkDeclaration,
+    ISearchScope searchScope, IReferencePresentation presentation, final IScope scope) {
 
     final AbstractConceptDeclaration referentConcept = linkDeclaration.getTarget();
     if (referentConcept == null) {

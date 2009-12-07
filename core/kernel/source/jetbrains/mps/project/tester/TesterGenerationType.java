@@ -73,10 +73,10 @@ public class TesterGenerationType extends GenerateFilesAndClassesGenerationType 
     SModel outputModel = status.getOutputModel();
     myOutputModelToPath.put(outputModel, outputDir);
     myOutputModelRefToPath.put(outputModel.getSModelReference(), outputDir);
-    List<String> roots = new ArrayList<String> ();
-    myOutputModelRefToRoots.put (outputModel.getSModelReference(), roots);
+    List<String> roots = new ArrayList<String>();
+    myOutputModelRefToRoots.put(outputModel.getSModelReference(), roots);
     for (SNode outputRoot : outputModel.getRoots()) {
-      roots.add(NameUtil.nodeFQName(outputRoot)) ;
+      roots.add(NameUtil.nodeFQName(outputRoot));
       String extension = TextGenManager.instance().getExtension(outputRoot);
       myNodeExtensionMap.put(NameUtil.nodeFQName(outputRoot), extension);
     }
@@ -92,13 +92,13 @@ public class TesterGenerationType extends GenerateFilesAndClassesGenerationType 
   public Collection<SModel> getOutputModels() {
     return myOutputModelToPath.keySet();
   }
-  
-  public Iterable<SModelReference> getOutputModelRefs () {
-      return myOutputModelRefToPath.keySet();
+
+  public Iterable<SModelReference> getOutputModelRefs() {
+    return myOutputModelRefToPath.keySet();
   }
-  
-  public Iterable<String> getRoots (SModelReference ref) {
-      return myOutputModelRefToRoots != null ? myOutputModelRefToRoots.get(ref) : Collections.<String>emptyList();
+
+  public Iterable<String> getRoots(SModelReference ref) {
+    return myOutputModelRefToRoots != null ? myOutputModelRefToRoots.get(ref) : Collections.<String>emptyList();
   }
 
   public String getExtension(SNode outputNode) {
@@ -114,11 +114,11 @@ public class TesterGenerationType extends GenerateFilesAndClassesGenerationType 
     }
     return myNodeExtensionMap.get(outputNode);
   }
-  
-  public String getName (String outputNode, SModelReference outputModel) {
-      return outputNode.substring(outputModel.getLongName().length()+1);
+
+  public String getName(String outputNode, SModelReference outputModel) {
+    return outputNode.substring(outputModel.getLongName().length() + 1);
   }
-  
+
   public File getOutputDir(SModel outputModel) {
     if (myOutputModelToPath.isEmpty()) {
       return null;
@@ -128,12 +128,12 @@ public class TesterGenerationType extends GenerateFilesAndClassesGenerationType 
   }
 
   public File getOutputDir(SModelReference outputModelRef) {
-      if (myOutputModelRefToPath.isEmpty()) {
-        return null;
-      }
-      File outputDir = new File(myOutputModelRefToPath.get(outputModelRef));
-      return FileGenerationUtil.getDefaultOutputDir(outputModelRef, outputDir);
+    if (myOutputModelRefToPath.isEmpty()) {
+      return null;
     }
+    File outputDir = new File(myOutputModelRefToPath.get(outputModelRef));
+    return FileGenerationUtil.getDefaultOutputDir(outputModelRef, outputDir);
+  }
 
   public String getSourceByNode(SNode outputRoot, SModel outputModel) {
     if (getSources().isEmpty()) {
@@ -141,13 +141,13 @@ public class TesterGenerationType extends GenerateFilesAndClassesGenerationType 
     }
     return getSources().get(JavaNameUtil.packageNameForModelUID(outputModel.getSModelReference()) + "." + outputRoot.getName());
   }
-  
+
 
   public String getSourceByNode(String outputRoot, SModelReference outputModel) {
     if (getSources().isEmpty()) {
       return null;
     }
-    return getSources().get(JavaNameUtil.packageNameForModelUID(outputModel) + "." + outputRoot.substring(outputModel.getLongName().length()+1)); // see NameUtil
+    return getSources().get(JavaNameUtil.packageNameForModelUID(outputModel) + "." + outputRoot.substring(outputModel.getLongName().length() + 1)); // see NameUtil
   }
 
   public void clean() {

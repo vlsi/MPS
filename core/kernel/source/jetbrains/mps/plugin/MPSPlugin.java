@@ -78,7 +78,7 @@ public class MPSPlugin {
     }
   }
 
-  public boolean checkIsConnected(){
+  public boolean checkIsConnected() {
     if (myPlugin != null) {
       try {
         myPlugin.getProjectCreator().ping();
@@ -87,7 +87,7 @@ public class MPSPlugin {
       }
     }
 
-    return myPlugin!=null;
+    return myPlugin != null;
   }
 
   public boolean isIDEAPresent() {

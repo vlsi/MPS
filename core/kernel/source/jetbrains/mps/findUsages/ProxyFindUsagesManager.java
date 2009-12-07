@@ -58,7 +58,7 @@ public class ProxyFindUsagesManager extends FindUsagesManager {
   }
 
   private FindUsagesManager getRealManager() {
-    return ourUseFastManager ? myFastFindUsagesManager: myDefaultFindUsagesManager;
+    return ourUseFastManager ? myFastFindUsagesManager : myDefaultFindUsagesManager;
   }
 
   public void initComponent() {
