@@ -94,9 +94,9 @@ public class _QueriesUtil {
   public static String getString_VariableDeclaration_nameInClosureContext(SNode varDecl, ITemplateGenerator generator) {
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(varDecl);
     return ClosuresUtil.getVariableNameInClosureContext(
-            contextOwner,
-            varDecl,
-            generator);
+      contextOwner,
+      varDecl,
+      generator);
   }
 
   /**
@@ -113,7 +113,7 @@ public class _QueriesUtil {
 
     SModel model = generator.getOutputModel();
     if (enclosingClosureOrContextOwner != null &&
-            ClosuresUtil.isClosureContextOwner(BaseAdapter.fromAdapter(enclosingClosureOrContextOwner))) {
+      ClosuresUtil.isClosureContextOwner(BaseAdapter.fromAdapter(enclosingClosureOrContextOwner))) {
       SNode varDeclStmt_output = generator.findOutputNodeByInputNodeAndMappingName(enclosingClosureOrContextOwner.getNode(), ClosuresMappingId.CONTEXT_OWNER__CLOSURE_CONTEXT__VARIABLE_DECL_STMT);
       if (varDeclStmt_output != null) {
         LocalVariableDeclarationStatement varDeclStmt_output_ = (LocalVariableDeclarationStatement) varDeclStmt_output.getAdapter();
