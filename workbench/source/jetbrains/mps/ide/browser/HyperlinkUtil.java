@@ -39,6 +39,9 @@ public final class HyperlinkUtil {
         }
       }
     });
+    // We need this because caret is moves scroll in editor.
+    editorPane.setCaret(null);
+    editorPane.setFocusable(false);
     return editorPane;
   }
 
