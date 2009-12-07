@@ -114,7 +114,8 @@ public class ClassConcept_Behavior {
   }
 
   public static List<SNode> virtual_getOwnMethods_1906502351318572840(SNode thisNode) {
-    List<SNode> baseMethodDeclarations = SLinkOperations.getTargets(thisNode, "method", true);
+    List<SNode> baseMethodDeclarations = new ArrayList<SNode>();
+    ListSequence.fromList(baseMethodDeclarations).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
     ListSequence.fromList(baseMethodDeclarations).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)));
     return baseMethodDeclarations;
   }

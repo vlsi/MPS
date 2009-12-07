@@ -119,7 +119,9 @@ public class Classifier_Behavior {
   }
 
   public static List<SNode> virtual_getOwnMethods_1906502351318572840(SNode thisNode) {
-    return SLinkOperations.getTargets(thisNode, "method", true);
+    List<SNode> result = new ArrayList<SNode>();
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "method", true)));
+    return result;
   }
 
   public static Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
