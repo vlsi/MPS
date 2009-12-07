@@ -92,7 +92,14 @@ public class ProjectTester {
     for (final SModel model : outputModels) {
       ClassLoader classLoader = genType.getCompiler().getClassLoader(model.getClass().getClassLoader());
       for (final SNode outputRoot : model.getRoots()) {
-        if (!outputRoot.isInstanceOfConcept(ClassConcept.concept)) continue;
+        if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            return !outputRoot.isInstanceOfConcept(ClassConcept.concept);
+          }
+        })){
+          continue;
+        }
         try {
           String className = ModelAccess.instance().runReadAction(new Computable<String>(){
             @Override
