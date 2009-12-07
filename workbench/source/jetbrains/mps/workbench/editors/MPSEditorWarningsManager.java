@@ -35,6 +35,7 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
@@ -120,7 +121,8 @@ public class MPSEditorWarningsManager implements ProjectComponent {
           addWarningPanel(editor, "Warning: node is in transient model. Your changes won't be saved.");
         }
 
-        if (model.getModule().isPackaged()) {
+        IModule module = model.getModule();
+        if (module != null && module.isPackaged()) {
           addWarningPanel(editor, "Warning: node is in packaged model. Your changes won't be saved");
         }
 
