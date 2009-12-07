@@ -214,7 +214,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
         if (vFile != null) {
           // the original code was return getVcsFor(vFile);
           // I changed it in order to fix MPS-6333 Exception after integrating change into branch
-          // File can be ouside of any mappings but we still want to commit it so we have to find vcs anyway
+          // File can be outside of any mappings but we still want to commit it so we have to find vcs anyway
           // MPS Patch begin:
           AbstractVcs vcsFor = getVcsFor(vFile);
           if (vcsFor != null) {

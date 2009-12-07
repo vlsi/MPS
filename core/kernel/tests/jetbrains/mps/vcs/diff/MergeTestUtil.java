@@ -28,31 +28,27 @@ import java.io.IOException;
 public class MergeTestUtil {
 
   public static SModel[] loadTestModels(File zipfile) throws IOException, ReadException {
-    return ModelUtils.loadZippedModels(zipfile, TEST_VERSION.values());
+    return ModelUtils.loadZippedModels(zipfile, TestVersion.values());
   }
 
   public static void saveTestModel(final SModel model, final File file) {
     ModelPersistence.saveModel(model, FileSystem.getFile(file));
   }
 
-  public static enum TEST_VERSION implements Version {
-    MYNE,
-    BASE,
-    REPO,
-    EXPECTED;
+  public static enum TestVersion implements Version {
+    MYNE("mine"),
+    BASE("base"),
+    REPO("repository"),
+    EXPECTED("exp");
+
+    private final String mySuffix;
+
+    TestVersion(String suffix) {
+      mySuffix = suffix;
+    }
 
     public String getSuffix() {
-      switch (this) {
-        case MYNE:
-          return "mine";
-        case BASE:
-          return "base";
-        case REPO:
-          return "repository";
-        case EXPECTED:
-          return "exp";
-      }
-      return "";
+      return mySuffix;
     }
   }
 }

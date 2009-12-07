@@ -316,6 +316,7 @@ class ModelChangesTree extends MPSTree {
       }
     }
 
+    @NotNull
     public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
       return new MySNodeTreeNode(node, role, operationContext, condition);
     }

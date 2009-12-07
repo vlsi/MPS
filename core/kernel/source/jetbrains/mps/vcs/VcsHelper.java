@@ -57,8 +57,8 @@ public class VcsHelper {
 
   private static File doBackup(IFile modelFile, SModel inMemory) throws IOException {
     File tmp = jetbrains.mps.util.FileUtil.createTmpDir();
-    AbstractVcsHelperImpl.writeContentsToFile(ModelUtils.modelToBytes(inMemory), modelFile.getName(), tmp, FS_MEMORY_MERGE_VERSION.MEMORY.getSuffix());
-    FileUtil.copy(modelFile.toFile(), new File(tmp.getAbsolutePath() + File.separator + modelFile.getName() + "." + FS_MEMORY_MERGE_VERSION.FILE_SYSTEM.getSuffix()));
+    AbstractVcsHelperImpl.writeContentsToFile(ModelUtils.modelToBytes(inMemory), modelFile.getName(), tmp, FsMemoryMergeVersion.MEMORY.getSuffix());
+    FileUtil.copy(modelFile.toFile(), new File(tmp.getAbsolutePath() + File.separator + modelFile.getName() + "." + FsMemoryMergeVersion.FILE_SYSTEM.getSuffix()));
     File zipfile = ModelUtils.chooseZipFileNameForModelFile(modelFile.getPath());
     jetbrains.mps.util.FileUtil.zip(tmp, zipfile);
 
@@ -106,36 +106,34 @@ public class VcsHelper {
     return true;
   }
 
-  public static enum FS_MEMORY_MERGE_VERSION implements Version {
-    FILE_SYSTEM,
-    MEMORY;
+  public static enum FsMemoryMergeVersion implements Version {
+    FILE_SYSTEM("filesystem"),
+    MEMORY("memory");
+
+    private final String mySuffix;
+
+    FsMemoryMergeVersion(String suffix) {
+      mySuffix = suffix;
+    }
 
     public String getSuffix() {
-      switch (this) {
-        case FILE_SYSTEM:
-          return "filesystem";
-        case MEMORY:
-          return "memory";
-      }
-      return "";
+      return mySuffix;
     }
   }
 
-  public static enum VCS_MERGE_VERSION implements Version {
-    MINE,
-    THEIRS,
-    BASE;
+  public static enum VcsMergeVersion implements Version {
+    MINE("mine"),
+    THEIRS("repository"),
+    BASE("base");
+
+    private final String mySuffix;
+
+    VcsMergeVersion(String suffix) {
+      mySuffix = suffix;
+    }
 
     public String getSuffix() {
-      switch (this) {
-        case MINE:
-          return "mine";
-        case BASE:
-          return "base";
-        case THEIRS:
-          return "repository";
-      }
-      return "";
+      return mySuffix;
     }
   }
 }

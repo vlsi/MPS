@@ -17,7 +17,7 @@ package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.vcs.diff.MergeTestUtil.TEST_VERSION;
+import jetbrains.mps.vcs.diff.MergeTestUtil.TestVersion;
 import jetbrains.mps.vcs.diff.ui.ModelDiffTool.ReadException;
 import junit.framework.TestCase;
 
@@ -52,18 +52,18 @@ public class MergeTestCase extends TestCase {
   }
 
   private SModel getExpected(SModel[] models) {
-    return models[TEST_VERSION.EXPECTED.ordinal()];
+    return models[TestVersion.EXPECTED.ordinal()];
   }
 
   private SModel getRepo(SModel[] models) {
-    return models[TEST_VERSION.REPO.ordinal()];
+    return models[TestVersion.REPO.ordinal()];
   }
 
   private SModel getMyne(SModel[] models) {
-    return models[TEST_VERSION.MYNE.ordinal()];
+    return models[TestVersion.MYNE.ordinal()];
   }
 
   private SModel getBase(SModel[] models) {
-    return models[TEST_VERSION.BASE.ordinal()];
+    return models[TestVersion.BASE.ordinal()];
   }
 }

@@ -24,6 +24,7 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -47,6 +48,7 @@ import java.awt.BorderLayout;
 import java.awt.Frame;
 
 class MergeResultView extends JPanel {
+  private static final Logger LOG = Logger.getLogger(MergeResultView.class);
   private MPSTree myResultTree;
 
   private MPSTree myConflictsAndWarningsTree = new MPSTree() {
@@ -194,6 +196,7 @@ class MergeResultView extends JPanel {
       super.updatePresentation();
     }
 
+    @NotNull
     public SNodeTreeNode createSNodeTreeNode(SNode node, String role, IOperationContext operationContext, Condition<SNode> condition) {
       return new MySNodeTreeNode(node, role, operationContext);
     }
