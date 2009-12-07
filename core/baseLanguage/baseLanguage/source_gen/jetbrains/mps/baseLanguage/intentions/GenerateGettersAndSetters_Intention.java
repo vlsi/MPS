@@ -10,9 +10,8 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionContext;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -58,7 +57,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
     boolean allGettersImplemented = true;
     for (SNode fieldDeclaration : fields) {
       boolean hasCurrentFieldGetter = false;
-      final String getterName = "get" + NameUtil.capitalize(SPropertyOperations.getString(fieldDeclaration, "name"));
+      final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(fieldDeclaration);
       if (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return getterName.equals(SPropertyOperations.getString(it, "name")) && ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).isEmpty();
@@ -76,7 +75,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
     } else {
       boolean hasAllSetters = true;
       for (SNode field : fields) {
-        final String setterName = "set" + NameUtil.capitalize(SPropertyOperations.getString(field, "name"));
+        final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field);
         boolean hasCurrentFieldSetter = false;
         if (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -100,7 +99,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
     Pair p;
     final SNode thisExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
     for (final SNode field : fields) {
-      final String getterName = "get" + NameUtil.capitalize(SPropertyOperations.getString(field, "name"));
+      final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field);
       final Wrappers._boolean getterIsAbsent = new Wrappers._boolean(true);
       ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode it) {
@@ -113,7 +112,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
         SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_32().createNode(SLinkOperations.getTarget(field, "type", true), thisExpression, field, getterName));
       }
 
-      final String setterName = "set" + NameUtil.capitalize(SPropertyOperations.getString(field, "name"));
+      final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field);
       final Wrappers._boolean setterIsAbsent = new Wrappers._boolean(true);
       ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {
         public void visit(SNode method) {

@@ -1180,6 +1180,13 @@
         <link role="classifier" targetNodeId="150.~Object" resolveInfo="Object" />
       </node>
     </node>
+    <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="1352851301410687258">
+      <property name="name" value="mykkk" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1352851301410687259" />
+      <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1352851301410687260">
+        <link role="classifier" targetNodeId="150.~Object" resolveInfo="Object" />
+      </node>
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5766921824837040041" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="5766921824837040042">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5766921824837040043" />
@@ -1354,6 +1361,120 @@
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="2101871847910600263">
         <property name="name" value="myField3" />
         <node role="type" type="jetbrains.mps.baseLanguage.structure.CharType" id="2101871847910600264" />
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1352851301410687234">
+      <property name="name" value="getField1" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ByteType" id="1352851301410687235" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1352851301410687236" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1352851301410687237">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1352851301410687238">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1352851301410687239">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1352851301410687240" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1352851301410687241">
+              <link role="fieldDeclaration" targetNodeId="8993872298946414358" resolveInfo="myField1" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1352851301410687242">
+      <property name="name" value="getField2" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ShortType" id="1352851301410687243" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1352851301410687244" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1352851301410687245">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1352851301410687246">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1352851301410687247">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1352851301410687248" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1352851301410687249">
+              <link role="fieldDeclaration" targetNodeId="8993872298946451023" resolveInfo="myField2" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1352851301410687250">
+      <property name="name" value="getField3" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.CharType" id="1352851301410687251" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1352851301410687252" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1352851301410687253">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1352851301410687254">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1352851301410687255">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1352851301410687256" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1352851301410687257">
+              <link role="fieldDeclaration" targetNodeId="8993872298946451026" resolveInfo="myField3" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1352851301410687261">
+      <property name="name" value="getMy" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1352851301410687262">
+        <link role="classifier" targetNodeId="150.~Object" resolveInfo="Object" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1352851301410687263" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1352851301410687264">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1352851301410687265">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1352851301410687266">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1352851301410687267" />
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1352851301410687268">
+              <link role="fieldDeclaration" targetNodeId="1352851301410687258" resolveInfo="my" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1352851301410778952">
+      <property name="name" value="setMykkk" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1352851301410778953" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1352851301410778954" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1352851301410778955">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1352851301410778956">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1352851301410778957">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1352851301410778958">
+              <link role="variableDeclaration" targetNodeId="1352851301410778962" resolveInfo="mykkk" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1352851301410778959">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1352851301410778960" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1352851301410778961">
+                <link role="fieldDeclaration" targetNodeId="1352851301410687258" resolveInfo="mykkk" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1352851301410778962">
+        <property name="name" value="mykkk" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1352851301410778963">
+          <link role="classifier" targetNodeId="150.~Object" resolveInfo="Object" />
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1352851301410778964">
+      <property name="name" value="setField5" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1352851301410778965" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1352851301410778966" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1352851301410778967">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1352851301410778968">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="1352851301410778969">
+            <node role="rValue" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1352851301410778970">
+              <link role="variableDeclaration" targetNodeId="1352851301410778974" resolveInfo="myField5" />
+            </node>
+            <node role="lValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1352851301410778971">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="1352851301410778972" />
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="1352851301410778973">
+                <link role="fieldDeclaration" targetNodeId="8993872298946451032" resolveInfo="myField5" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1352851301410778974">
+        <property name="name" value="myField5" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1352851301410778975">
+          <link role="classifier" targetNodeId="150.~Object" resolveInfo="Object" />
+        </node>
       </node>
     </node>
   </node>

@@ -10,9 +10,8 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionContext;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -55,7 +54,7 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
     }
     boolean allGettersImplemented = true;
     for (SNode fieldDeclaration : fields) {
-      final String getterName = "get" + NameUtil.capitalize(SPropertyOperations.getString(fieldDeclaration, "name"));
+      final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(fieldDeclaration);
       boolean fieldHasGetter = false;
       if (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {
@@ -75,7 +74,7 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     for (final SNode field : (List<SNode>)intentionContext.getContextParametersMap().get("selectedFields")) {
-      final String getterName = "get" + NameUtil.capitalize(SPropertyOperations.getString(field, "name"));
+      final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field);
       if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {
           return getterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty();
