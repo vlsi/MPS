@@ -111,7 +111,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     String generatedHash = getGenerationHash(sm);
     if (generatedHash == null) return true;
 
-    if (!DumbService.getInstance(project).isDumb()) {
+    if (DumbService.getInstance(project).isDumb()) {
       if (strategy == null) throw new AssertionError("NoCachesStrategy should be specified in this case");
       return strategy.compute(project, sm, generatedHash);
     }
