@@ -109,6 +109,6 @@ public class RBundle<T> {
   }
 
   public void classLoaded(String name) {
-    myRuntimeEnvironment.classLoaded(name,myId);
+    myRuntimeEnvironment.classLoaded(name, myId);
   }
 }

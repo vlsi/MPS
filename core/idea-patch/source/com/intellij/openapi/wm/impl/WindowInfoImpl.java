@@ -37,15 +37,16 @@ import jetbrains.mps.util.annotation.Patch;
  * @author Anton Katilin
  * @author Vladimir Kondratyev
  */
-public final class WindowInfoImpl implements Cloneable,JDOMExternalizable, WindowInfo {
+public final class WindowInfoImpl implements Cloneable, JDOMExternalizable, WindowInfo {
   /**
    * XML tag.
    */
-  @NonNls static final String TAG="window_info";
+  @NonNls
+  static final String TAG = "window_info";
   /**
    * Default window weight.
    */
-  static final float DEFAULT_WEIGHT= 0.33f;
+  static final float DEFAULT_WEIGHT = 0.33f;
   static final float DEFAULT_SIDE_WEIGHT = 0.5f;
 
   private boolean myActive;
@@ -70,22 +71,38 @@ public final class WindowInfoImpl implements Cloneable,JDOMExternalizable, Windo
    * The default value is <code>-1</code>.
    */
   private int myOrder;
-  @NonNls static final String ID_ATTR = "id";
-  @NonNls static final String ACTIVE_ATTR = "active";
-  @NonNls static final String ANCHOR_ATTR = "anchor";
-  @NonNls static final String AUTOHIDE_ATTR = "auto_hide";
-  @NonNls static final String INTERNAL_TYPE_ATTR = "internal_type";
-  @NonNls static final String TYPE_ATTR = "type";
-  @NonNls static final String VISIBLE_ATTR = "visible";
-  @NonNls static final String WEIGHT_ATTR = "weight";
-  @NonNls static final String SIDE_WEIGHT_ATTR = "sideWeight";
-  @NonNls static final String ORDER_ATTR = "order";
-  @NonNls static final String X_ATTR = "x";
-  @NonNls static final String Y_ATTR = "y";
-  @NonNls static final String WIDTH_ATTR = "width";
-  @NonNls static final String HEIGHT_ATTR = "height";
-  @NonNls static final String SIDE_TOOL_ATTR = "side_tool";
-  @NonNls static final String CONTENT_UI_ATTR = "content_ui";
+  @NonNls
+  static final String ID_ATTR = "id";
+  @NonNls
+  static final String ACTIVE_ATTR = "active";
+  @NonNls
+  static final String ANCHOR_ATTR = "anchor";
+  @NonNls
+  static final String AUTOHIDE_ATTR = "auto_hide";
+  @NonNls
+  static final String INTERNAL_TYPE_ATTR = "internal_type";
+  @NonNls
+  static final String TYPE_ATTR = "type";
+  @NonNls
+  static final String VISIBLE_ATTR = "visible";
+  @NonNls
+  static final String WEIGHT_ATTR = "weight";
+  @NonNls
+  static final String SIDE_WEIGHT_ATTR = "sideWeight";
+  @NonNls
+  static final String ORDER_ATTR = "order";
+  @NonNls
+  static final String X_ATTR = "x";
+  @NonNls
+  static final String Y_ATTR = "y";
+  @NonNls
+  static final String WIDTH_ATTR = "width";
+  @NonNls
+  static final String HEIGHT_ATTR = "height";
+  @NonNls
+  static final String SIDE_TOOL_ATTR = "side_tool";
+  @NonNls
+  static final String CONTENT_UI_ATTR = "content_ui";
 
 
   private boolean myWasRead;
@@ -93,43 +110,44 @@ public final class WindowInfoImpl implements Cloneable,JDOMExternalizable, Windo
   /**
    * Creates <code>WindowInfo</code> for tool window with wpecified <code>ID</code>.
    */
-  WindowInfoImpl(final String id){
-    myActive=false;
-    myAnchor=ToolWindowAnchor.LEFT;
-    myAutoHide=false;
-    myFloatingBounds=null;
-    myId=id;
+  WindowInfoImpl(final String id) {
+    myActive = false;
+    myAnchor = ToolWindowAnchor.LEFT;
+    myAutoHide = false;
+    myFloatingBounds = null;
+    myId = id;
     setType(ToolWindowType.DOCKED);
-    myVisible=false;
-    myWeight=DEFAULT_WEIGHT;
+    myVisible = false;
+    myWeight = DEFAULT_WEIGHT;
     mySideWeight = DEFAULT_SIDE_WEIGHT;
-    myOrder=-1;
-    mySplitMode =false;
+    myOrder = -1;
+    mySplitMode = false;
   }
 
   /**
    * Creates copy of <code>WindowInfo</code> object.
    */
   @SuppressWarnings({"EmptyCatchBlock"})
-  public WindowInfoImpl copy(){
-    WindowInfoImpl info=null;
-    try{
-      info=(WindowInfoImpl)clone();
-      if(myFloatingBounds!=null){
-        info.myFloatingBounds=(Rectangle)myFloatingBounds.clone();
+  public WindowInfoImpl copy() {
+    WindowInfoImpl info = null;
+    try {
+      info = (WindowInfoImpl) clone();
+      if (myFloatingBounds != null) {
+        info.myFloatingBounds = (Rectangle) myFloatingBounds.clone();
       }
-    }catch(CloneNotSupportedException ignored){}
+    } catch (CloneNotSupportedException ignored) {
+    }
     return info;
   }
 
   /**
    * Copies all data from the passed <code>WindowInfo</code> into itself.
    */
-  void copyFrom(final WindowInfoImpl info){
+  void copyFrom(final WindowInfoImpl info) {
     myActive = info.myActive;
     myAnchor = info.myAnchor;
     myAutoHide = info.myAutoHide;
-    myFloatingBounds = info.myFloatingBounds == null ? null : (Rectangle)info.myFloatingBounds.clone();
+    myFloatingBounds = info.myFloatingBounds == null ? null : (Rectangle) info.myFloatingBounds.clone();
     myId = info.myId;
     myType = info.myType;
     myInternalType = info.myInternalType;
@@ -143,7 +161,7 @@ public final class WindowInfoImpl implements Cloneable,JDOMExternalizable, Windo
   /**
    * @return tool window's anchor in internal mode.
    */
-  public ToolWindowAnchor getAnchor(){
+  public ToolWindowAnchor getAnchor() {
     return myAnchor;
   }
 
@@ -158,23 +176,23 @@ public final class WindowInfoImpl implements Cloneable,JDOMExternalizable, Windo
   /**
    * @return bound of tool window in floating mode.
    */
-  public Rectangle getFloatingBounds(){
+  public Rectangle getFloatingBounds() {
     return myFloatingBounds;
   }
 
   /**
    * @return <code>ID</code> of the tool window.
    */
-  String getId(){
+  String getId() {
     return myId;
   }
 
   /**
    * @return type of the tool window in internal (docked or sliding) mode. Actually the tool
-   * window can be in floating mode, but this method has sense if you want to know what type
-   * tool window had when it was internal one. The method never returns <code>null</code>.
+   *         window can be in floating mode, but this method has sense if you want to know what type
+   *         tool window had when it was internal one. The method never returns <code>null</code>.
    */
-  ToolWindowType getInternalType(){
+  ToolWindowType getInternalType() {
     return myInternalType;
   }
 
@@ -184,16 +202,16 @@ public final class WindowInfoImpl implements Cloneable,JDOMExternalizable, Windo
    * @see com.intellij.openapi.wm.ToolWindowType#FLOATING
    * @see com.intellij.openapi.wm.ToolWindowType#SLIDING
    */
-  public ToolWindowType getType(){
+  public ToolWindowType getType() {
     return myType;
   }
 
   /**
    * @return internal weight of tool window. "weigth" means how much of internal desktop
-   * area the tool window is occupied. The weight has sense if the tool window is docked or
-   * sliding.
+   *         area the tool window is occupied. The weight has sense if the tool window is docked or
+   *         sliding.
    */
-  float getWeight(){
+  float getWeight() {
     return myWeight;
   }
 
@@ -201,35 +219,35 @@ public final class WindowInfoImpl implements Cloneable,JDOMExternalizable, Windo
     return mySideWeight;
   }
 
-  public int getOrder(){
+  public int getOrder() {
     return myOrder;
   }
 
-  public void setOrder(final int order){
-    myOrder=order;
+  public void setOrder(final int order) {
+    myOrder = order;
   }
 
-  public boolean isActive(){
+  public boolean isActive() {
     return myActive;
   }
 
-  public boolean isAutoHide(){
+  public boolean isAutoHide() {
     return myAutoHide;
   }
 
-  public boolean isDocked(){
-    return ToolWindowType.DOCKED==myType;
+  public boolean isDocked() {
+    return ToolWindowType.DOCKED == myType;
   }
 
-  public boolean isFloating(){
-    return ToolWindowType.FLOATING==myType;
+  public boolean isFloating() {
+    return ToolWindowType.FLOATING == myType;
   }
 
-  public boolean isSliding(){
-    return ToolWindowType.SLIDING==myType;
+  public boolean isSliding() {
+    return ToolWindowType.SLIDING == myType;
   }
 
-  boolean isVisible(){
+  boolean isVisible() {
     return myVisible;
   }
 
@@ -238,35 +256,35 @@ public final class WindowInfoImpl implements Cloneable,JDOMExternalizable, Windo
   }
 
   public void setSplit(final boolean sideTool) {
-    mySplitMode =sideTool;
+    mySplitMode = sideTool;
   }
 
   /**
    * Patched by MPS: .toLowerCase() was added everywhere
    */
   @Patch
-  private static ToolWindowType parseToolWindowType(final String text){
-    if(ToolWindowType.DOCKED.toString().toLowerCase().equals(text.toLowerCase())){
+  private static ToolWindowType parseToolWindowType(final String text) {
+    if (ToolWindowType.DOCKED.toString().toLowerCase().equals(text.toLowerCase())) {
       return ToolWindowType.DOCKED;
-    }else if(ToolWindowType.FLOATING.toString().toLowerCase().equals(text.toLowerCase())){
+    } else if (ToolWindowType.FLOATING.toString().toLowerCase().equals(text.toLowerCase())) {
       return ToolWindowType.FLOATING;
-    }else if(ToolWindowType.SLIDING.toString().toLowerCase().equals(text.toLowerCase())){
+    } else if (ToolWindowType.SLIDING.toString().toLowerCase().equals(text.toLowerCase())) {
       return ToolWindowType.SLIDING;
-    }else{
+    } else {
       throw new IllegalArgumentException();
     }
   }
 
-  private static ToolWindowAnchor parseToolWindowAnchor(final String text){
-    if(ToolWindowAnchor.TOP.toString().equals(text)){
+  private static ToolWindowAnchor parseToolWindowAnchor(final String text) {
+    if (ToolWindowAnchor.TOP.toString().equals(text)) {
       return ToolWindowAnchor.TOP;
-    }else if(ToolWindowAnchor.LEFT.toString().equals(text)){
+    } else if (ToolWindowAnchor.LEFT.toString().equals(text)) {
       return ToolWindowAnchor.LEFT;
-    }else if(ToolWindowAnchor.BOTTOM.toString().equals(text)){
+    } else if (ToolWindowAnchor.BOTTOM.toString().equals(text)) {
       return ToolWindowAnchor.BOTTOM;
-    }else if(ToolWindowAnchor.RIGHT.toString().equals(text)){
+    } else if (ToolWindowAnchor.RIGHT.toString().equals(text)) {
       return ToolWindowAnchor.RIGHT;
-    }else{
+    } else {
       throw new IllegalArgumentException();
     }
   }
@@ -332,102 +350,101 @@ public final class WindowInfoImpl implements Cloneable,JDOMExternalizable, Windo
   /**
    * Sets new anchor.
    */
-  void setAnchor(@NotNull final ToolWindowAnchor anchor){
-    myAnchor=anchor;
+  void setAnchor(@NotNull final ToolWindowAnchor anchor) {
+    myAnchor = anchor;
   }
 
-  void setActive(final boolean active){
-    myActive=active;
+  void setActive(final boolean active) {
+    myActive = active;
   }
 
-  void setAutoHide(final boolean autoHide){
-    myAutoHide=autoHide;
+  void setAutoHide(final boolean autoHide) {
+    myAutoHide = autoHide;
   }
 
-  void setFloatingBounds(final Rectangle floatingBounds){
-    myFloatingBounds=floatingBounds;
+  void setFloatingBounds(final Rectangle floatingBounds) {
+    myFloatingBounds = floatingBounds;
   }
 
-  void setType(@NotNull final ToolWindowType type){
-    if(ToolWindowType.DOCKED==type||ToolWindowType.SLIDING==type){
-      myInternalType=type;
+  void setType(@NotNull final ToolWindowType type) {
+    if (ToolWindowType.DOCKED == type || ToolWindowType.SLIDING == type) {
+      myInternalType = type;
     }
-    myType=type;
+    myType = type;
   }
 
-  void setVisible(final boolean visible){
-    myVisible=visible;
+  void setVisible(final boolean visible) {
+    myVisible = visible;
   }
 
   /**
    * Sets window weight and adjust it to [0..1] range if necessary.
    */
-  void setWeight(float weight){
-    if(weight< 0.0f){
-      weight= 0.0f;
-    }else if(weight>1.0f){
-      weight=1.0f;
+  void setWeight(float weight) {
+    if (weight < 0.0f) {
+      weight = 0.0f;
+    } else if (weight > 1.0f) {
+      weight = 1.0f;
     }
-    myWeight=weight;
+    myWeight = weight;
   }
 
-  void setSideWeight(float weight){
-    if(weight < 0.0f){
+  void setSideWeight(float weight) {
+    if (weight < 0.0f) {
       weight = 0.0f;
-    }
-    else if (weight > 1.0f){
+    } else if (weight > 1.0f) {
       weight = 1.0f;
     }
     mySideWeight = weight;
   }
 
-  public void writeExternal(final Element element){
-    element.setAttribute(ID_ATTR,myId);
-    element.setAttribute(ACTIVE_ATTR,myActive?Boolean.TRUE.toString():Boolean.FALSE.toString());
-    element.setAttribute(ANCHOR_ATTR,myAnchor.toString());
-    element.setAttribute(AUTOHIDE_ATTR,myAutoHide?Boolean.TRUE.toString():Boolean.FALSE.toString());
-    element.setAttribute(INTERNAL_TYPE_ATTR,myInternalType.toString());
-    element.setAttribute(TYPE_ATTR,myType.toString());
-    element.setAttribute(VISIBLE_ATTR,myVisible?Boolean.TRUE.toString():Boolean.FALSE.toString());
-    element.setAttribute(WEIGHT_ATTR,Float.toString(myWeight));
+  public void writeExternal(final Element element) {
+    element.setAttribute(ID_ATTR, myId);
+    element.setAttribute(ACTIVE_ATTR, myActive ? Boolean.TRUE.toString() : Boolean.FALSE.toString());
+    element.setAttribute(ANCHOR_ATTR, myAnchor.toString());
+    element.setAttribute(AUTOHIDE_ATTR, myAutoHide ? Boolean.TRUE.toString() : Boolean.FALSE.toString());
+    element.setAttribute(INTERNAL_TYPE_ATTR, myInternalType.toString());
+    element.setAttribute(TYPE_ATTR, myType.toString());
+    element.setAttribute(VISIBLE_ATTR, myVisible ? Boolean.TRUE.toString() : Boolean.FALSE.toString());
+    element.setAttribute(WEIGHT_ATTR, Float.toString(myWeight));
     element.setAttribute(SIDE_WEIGHT_ATTR, Float.toString(mySideWeight));
-    element.setAttribute(ORDER_ATTR,Integer.toString(myOrder));
+    element.setAttribute(ORDER_ATTR, Integer.toString(myOrder));
     element.setAttribute(SIDE_TOOL_ATTR, Boolean.toString(mySplitMode));
     element.setAttribute(CONTENT_UI_ATTR, myContentUiType.getName());
-    if(myFloatingBounds!=null){
-      element.setAttribute(X_ATTR,Integer.toString(myFloatingBounds.x));
-      element.setAttribute(Y_ATTR,Integer.toString(myFloatingBounds.y));
-      element.setAttribute(WIDTH_ATTR,Integer.toString(myFloatingBounds.width));
-      element.setAttribute(HEIGHT_ATTR,Integer.toString(myFloatingBounds.height));
+    if (myFloatingBounds != null) {
+      element.setAttribute(X_ATTR, Integer.toString(myFloatingBounds.x));
+      element.setAttribute(Y_ATTR, Integer.toString(myFloatingBounds.y));
+      element.setAttribute(WIDTH_ATTR, Integer.toString(myFloatingBounds.width));
+      element.setAttribute(HEIGHT_ATTR, Integer.toString(myFloatingBounds.height));
     }
   }
 
-  public boolean equals(final Object obj){
-    if(!(obj instanceof WindowInfoImpl)){
+  public boolean equals(final Object obj) {
+    if (!(obj instanceof WindowInfoImpl)) {
       return false;
     }
-    final WindowInfoImpl info=(WindowInfoImpl)obj;
+    final WindowInfoImpl info = (WindowInfoImpl) obj;
     return myActive == info.myActive &&
-           myAnchor == info.myAnchor &&
-           myId.equals(info.myId) &&
-           myAutoHide == info.myAutoHide &&
-           Comparing.equal(myFloatingBounds, info.myFloatingBounds) &&
-           myInternalType == info.myInternalType &&
-           myType == info.myType &&
-           myVisible == info.myVisible &&
-           myWeight == info.myWeight &&
-           mySideWeight == info.mySideWeight &&
-           myOrder == info.myOrder &&
-           mySplitMode == info.mySplitMode &&
-          myContentUiType == info.myContentUiType;
+      myAnchor == info.myAnchor &&
+      myId.equals(info.myId) &&
+      myAutoHide == info.myAutoHide &&
+      Comparing.equal(myFloatingBounds, info.myFloatingBounds) &&
+      myInternalType == info.myInternalType &&
+      myType == info.myType &&
+      myVisible == info.myVisible &&
+      myWeight == info.myWeight &&
+      mySideWeight == info.mySideWeight &&
+      myOrder == info.myOrder &&
+      mySplitMode == info.mySplitMode &&
+      myContentUiType == info.myContentUiType;
   }
 
-  public int hashCode(){
-    return myAnchor.hashCode()+myId.hashCode()+myType.hashCode()+myOrder;
+  public int hashCode() {
+    return myAnchor.hashCode() + myId.hashCode() + myType.hashCode() + myOrder;
   }
 
   @SuppressWarnings({"HardCodedStringLiteral"})
-  public String toString(){
+  public String toString() {
     final StringBuilder buffer = new StringBuilder();
     buffer.append(getClass().getName()).append('[');
     buffer.append("myId=").append(myId).append("; ");

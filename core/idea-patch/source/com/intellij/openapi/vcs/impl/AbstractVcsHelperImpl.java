@@ -550,6 +550,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     // we create providerDecorator which does actual backup
     MergeProvider providerDecorator = new MergeProvider() {
       private File myBackup;
+
       @NotNull
       public MergeData loadRevisions(VirtualFile file) throws VcsException {
         MergeData mergeData = provider.loadRevisions(file);

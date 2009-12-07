@@ -237,7 +237,7 @@ public class TestEditorManagerImpl extends FileEditorManagerImpl implements Appl
       EditorFactory.getInstance().releaseEditor(editor);
       myVirtualFile2Editor.remove(file);
     }
-    for (FileEditor fileEditor: myVirtualFile2FileEditor.get(file)) {
+    for (FileEditor fileEditor : myVirtualFile2FileEditor.get(file)) {
       fileEditor.dispose();
     }
     myVirtualFile2FileEditor.remove(file);
@@ -439,7 +439,7 @@ public class TestEditorManagerImpl extends FileEditorManagerImpl implements Appl
     ((IdeDocumentHistoryImpl) IdeDocumentHistory.getInstance(myProject)).onSelectionChanged();
 
     // Make back/forward work
-    IdeDocumentHistory.getInstance(myProject).includeCurrentCommandAsNavigation();    
+    IdeDocumentHistory.getInstance(myProject).includeCurrentCommandAsNavigation();
 
     myVirtualFile2FileEditor.put(file, editors);
 

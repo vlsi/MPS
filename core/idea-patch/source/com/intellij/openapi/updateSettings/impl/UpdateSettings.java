@@ -31,7 +31,7 @@ import org.jdom.Element;
   name = "UpdatesConfigurable",
   storages = {
     @Storage(
-      id ="other",
+      id = "other",
       file = "$APP_CONFIG$/other.xml"
     )}
 )

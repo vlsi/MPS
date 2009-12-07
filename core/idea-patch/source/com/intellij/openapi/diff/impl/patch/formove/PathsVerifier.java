@@ -67,8 +67,8 @@ public class PathsVerifier {
     myMovedFiles = new HashMap<VirtualFile, MovedFileData>();
     myBeforePaths = new ArrayList<FilePath>();
     myCreatedDirectories = new ArrayList<VirtualFile>();
-    myTextPatches = new ArrayList<Pair<VirtualFile,FilePatch>>();
-    myBinaryPatches = new ArrayList<Pair<VirtualFile,FilePatch>>();
+    myTextPatches = new ArrayList<Pair<VirtualFile, FilePatch>>();
+    myBinaryPatches = new ArrayList<Pair<VirtualFile, FilePatch>>();
     myWritableFiles = new ArrayList<VirtualFile>();
   }
 
@@ -115,14 +115,14 @@ public class PathsVerifier {
       final List<CheckPath> checkers = new ArrayList<CheckPath>(myPatches.size());
       for (FilePatch patch : myPatches) {
         final CheckPath checker = getChecker(patch);
-        if (! checker.canBeApplied()) {
+        if (!checker.canBeApplied()) {
           revert(checker.getErrorMessage());
           return false;
         }
         checkers.add(checker);
       }
       for (CheckPath checker : checkers) {
-        if (! checker.check()) {
+        if (!checker.check()) {
           revert(checker.getErrorMessage());
           return false;
         }
@@ -144,7 +144,7 @@ public class PathsVerifier {
     } else if ((afterFileName == null) || (patch.isDeletedFile())) {
       return new CheckDeleted(patch);
     } else {
-      if (! beforeFileName.equals(afterFileName)) {
+      if (!beforeFileName.equals(afterFileName)) {
         return new CheckMoved(patch);
       } else {
         return new CheckModified(patch);
@@ -174,7 +174,7 @@ public class PathsVerifier {
     protected boolean check() throws IOException {
       final VirtualFile beforeFile = myBaseMapper.getFile(myPatch, myBeforeName);
       // todo maybe deletion may be ok, just warning
-      if (! checkExistsAndValid(beforeFile, myBeforeName)) {
+      if (!checkExistsAndValid(beforeFile, myBeforeName)) {
         return false;
       }
       addPatch(myPatch, beforeFile);
@@ -204,7 +204,7 @@ public class PathsVerifier {
         return false;
       }
       final VirtualFile file = createFile(parent, pieces[pieces.length - 1]);
-      if (! checkExistsAndValid(file, myAfterName)) {
+      if (!checkExistsAndValid(file, myAfterName)) {
         return false;
       }
       addPatch(myPatch, file);
@@ -235,7 +235,7 @@ public class PathsVerifier {
         return false;
       }
       final VirtualFile beforeFile = myBaseMapper.getFile(myPatch, myBeforeName);
-      if (! checkExistsAndValid(beforeFile, myBeforeName)) {
+      if (!checkExistsAndValid(beforeFile, myBeforeName)) {
         return false;
       }
       myMovedFiles.put(beforeFile, new MovedFileData(afterFileParent, beforeFile, myPatch.getAfterFileName()));
@@ -271,6 +271,7 @@ public class PathsVerifier {
     }
 
     protected abstract boolean precheck(final VirtualFile beforeFile, final VirtualFile afterFile);
+
     protected abstract boolean check() throws IOException;
 
     protected boolean checkExistsAndValid(final VirtualFile file, final String name) {
@@ -290,7 +291,7 @@ public class PathsVerifier {
       // (! ExcludedFileIndex.getInstance(myProject).isInContent(file))
       // was removed.
       if ((file == null) ||
-          (ProjectLevelVcsManager.getInstance(myProject).getVcsRootFor(file) == null)) {
+        (ProjectLevelVcsManager.getInstance(myProject).getVcsRootFor(file) == null)) {
         setErrorMessage("File to patch found outside content root: " + name);
         return false;
       }
@@ -478,7 +479,7 @@ public class PathsVerifier {
         myCurrent.move(PatchApplier.class, myNewParent);
         afterFile = myCurrent;
       }
-      if (! Comparing.equal(myCurrent.getName(), myNewName)) {
+      if (!Comparing.equal(myCurrent.getName(), myNewName)) {
         afterFile.rename(PatchApplier.class, myNewName);
       }
       return afterFile;

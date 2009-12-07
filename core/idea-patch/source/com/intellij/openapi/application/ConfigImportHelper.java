@@ -18,16 +18,19 @@ import java.util.PropertyResourceBundle;
 public class ConfigImportHelper {
   @NonNls
   private static final String BUILD_NUMBER_FILE = "build.txt";
-  @NonNls private static final String PLUGINS_PATH = "plugins";
-  @NonNls private static final String BIN_FOLDER = "bin";
+  @NonNls
+  private static final String PLUGINS_PATH = "plugins";
+  @NonNls
+  private static final String BIN_FOLDER = "bin";
 
-  private ConfigImportHelper() {}
+  private ConfigImportHelper() {
+  }
 
   public static void importConfigsTo(String newConfigPath) {
     do {
       ImportOldConfigsPanel dlg;
 
-      dlg = new ImportOldConfigsPanel(JOptionPane.getRootFrame());      
+      dlg = new ImportOldConfigsPanel(JOptionPane.getRootFrame());
 
       UIUtil.setToolkitModal(dlg);
       AppUIUtil.updateDialogIcon(dlg);
@@ -51,36 +54,36 @@ public class ConfigImportHelper {
     }
     catch (IOException e) {
       JOptionPane.showMessageDialog(JOptionPane.getRootFrame(),
-                                    ApplicationBundle.message("error.unable.to.import.settings", e.getMessage()),
-                                    ApplicationBundle.message("title.settings.import.failed"), JOptionPane.WARNING_MESSAGE);
+        ApplicationBundle.message("error.unable.to.import.settings", e.getMessage()),
+        ApplicationBundle.message("title.settings.import.failed"), JOptionPane.WARNING_MESSAGE);
     }
   }
 
   public static boolean validateOldConfigDir(final File instHome, final File oldConfigDir) {
     if (oldConfigDir == null) {
       JOptionPane.showMessageDialog(JOptionPane.getRootFrame(),
-                                    ApplicationBundle.message("error.invalid.installation.home", instHome.getAbsolutePath(),
-                                                              ApplicationNamesInfo.getInstance().getFullProductName()));
+        ApplicationBundle.message("error.invalid.installation.home", instHome.getAbsolutePath(),
+          ApplicationNamesInfo.getInstance().getFullProductName()));
       return false;
     }
 
     if (!oldConfigDir.exists()) {
       JOptionPane.showMessageDialog(JOptionPane.getRootFrame(),
-                                    ApplicationBundle.message("error.no.settings.path",
-                                                              oldConfigDir.getAbsolutePath()),
-                                    ApplicationBundle.message("title.settings.import.failed"), JOptionPane.WARNING_MESSAGE);
+        ApplicationBundle.message("error.no.settings.path",
+          oldConfigDir.getAbsolutePath()),
+        ApplicationBundle.message("title.settings.import.failed"), JOptionPane.WARNING_MESSAGE);
       return false;
     }
     return true;
   }
 
-  public static void xcopy(File src, File dest) throws IOException{
+  public static void xcopy(File src, File dest) throws IOException {
     src = src.getCanonicalFile();
     dest = dest.getCanonicalFile();
-    if (!src.isDirectory()){
+    if (!src.isDirectory()) {
       throw new IOException(ApplicationBundle.message("config.import.invalid.directory.error", src.getAbsolutePath()));
     }
-    if (!dest.isDirectory()){
+    if (!dest.isDirectory()) {
       throw new IOException(ApplicationBundle.message("config.import.invalid.directory.error", dest.getAbsolutePath()));
     }
     FileUtil.copyDir(src, dest);
@@ -132,59 +135,59 @@ public class ConfigImportHelper {
   @SuppressWarnings({"HardCodedStringLiteral"})
   @Nullable
   public static String getConfigFromLaxFile(File file) {
-      if (file.getName().endsWith(".properties")) {
-          try {
-            InputStream fis = new BufferedInputStream(new FileInputStream(file));
-            PropertyResourceBundle bundle;
-            try {
-              bundle = new PropertyResourceBundle(fis);
-            }
-            finally {
-              fis.close();
-            }
-            return bundle.getString("idea.config.path");
-          } catch (IOException e) {
-              return null;
-          }
+    if (file.getName().endsWith(".properties")) {
+      try {
+        InputStream fis = new BufferedInputStream(new FileInputStream(file));
+        PropertyResourceBundle bundle;
+        try {
+          bundle = new PropertyResourceBundle(fis);
+        }
+        finally {
+          fis.close();
+        }
+        return bundle.getString("idea.config.path");
+      } catch (IOException e) {
+        return null;
       }
+    }
 
-      String fileContent = getContent(file);
-      String configParam = "idea.config.path=";
-      int idx = fileContent.indexOf(configParam);
-      if (idx == -1) {
-          configParam = "<key>idea.config.path</key>";
-          idx = fileContent.indexOf(configParam);
-          if (idx == -1) return null;
-          idx = fileContent.indexOf("<string>", idx);
-          if (idx == -1) return null;
-          idx += "<string>".length();
-          return fixDirName(fileContent.substring(idx, fileContent.indexOf("</string>", idx)), true);
-      } else {
-          String configDir = "";
-          idx += configParam.length();
-          if (fileContent.length() > idx) {
-              if (fileContent.charAt(idx) == '"') {
-                  idx++;
-                  while ((fileContent.length() > idx) && (fileContent.charAt(idx) != '"') && (fileContent.charAt(idx) != '\n') &&
-                          (fileContent.charAt(idx) != '\r')) {
-                      configDir += fileContent.charAt(idx);
-                      idx++;
-                  }
-              } else {
-                  while ((fileContent.length() > idx) && (!Character.isSpaceChar(fileContent.charAt(idx))) &&
-                          (fileContent.charAt(idx) != '\n') &&
-                          (fileContent.charAt(idx) != '\r')) {
-                      configDir += fileContent.charAt(idx);
-                      idx++;
-                  }
-              }
+    String fileContent = getContent(file);
+    String configParam = "idea.config.path=";
+    int idx = fileContent.indexOf(configParam);
+    if (idx == -1) {
+      configParam = "<key>idea.config.path</key>";
+      idx = fileContent.indexOf(configParam);
+      if (idx == -1) return null;
+      idx = fileContent.indexOf("<string>", idx);
+      if (idx == -1) return null;
+      idx += "<string>".length();
+      return fixDirName(fileContent.substring(idx, fileContent.indexOf("</string>", idx)), true);
+    } else {
+      String configDir = "";
+      idx += configParam.length();
+      if (fileContent.length() > idx) {
+        if (fileContent.charAt(idx) == '"') {
+          idx++;
+          while ((fileContent.length() > idx) && (fileContent.charAt(idx) != '"') && (fileContent.charAt(idx) != '\n') &&
+            (fileContent.charAt(idx) != '\r')) {
+            configDir += fileContent.charAt(idx);
+            idx++;
           }
-          configDir = fixDirName(configDir, true);
-          if (configDir.length() > 0) {
-              configDir = (new File(configDir)).getPath();
+        } else {
+          while ((fileContent.length() > idx) && (!Character.isSpaceChar(fileContent.charAt(idx))) &&
+            (fileContent.charAt(idx) != '\n') &&
+            (fileContent.charAt(idx) != '\r')) {
+            configDir += fileContent.charAt(idx);
+            idx++;
           }
-          return configDir;
+        }
       }
+      configDir = fixDirName(configDir, true);
+      if (configDir.length() > 0) {
+        configDir = (new File(configDir)).getPath();
+      }
+      return configDir;
+    }
   }
 
   @Nullable
@@ -227,7 +230,7 @@ public class ConfigImportHelper {
   public static boolean isInstallationHome(String installationHome) {
     //noinspection HardCodedStringLiteral
     boolean quickTest = new File(new File(installationHome, "lib"), "mps.jar").exists() &&
-                        new File(installationHome, BIN_FOLDER).exists();
+      new File(installationHome, BIN_FOLDER).exists();
     if (!quickTest) return false;
 
     File[] files = getLaunchFilesCandidates(new File(installationHome));
@@ -242,21 +245,21 @@ public class ConfigImportHelper {
     installDirectory = installDirectory.getAbsoluteFile();
 
     File buildTxt = new File(installDirectory, BUILD_NUMBER_FILE);
-    if ((!buildTxt.exists()) || (buildTxt.isDirectory())){
+    if ((!buildTxt.exists()) || (buildTxt.isDirectory())) {
       buildTxt = new File(new File(installDirectory, BIN_FOLDER), BUILD_NUMBER_FILE);
     }
 
-    if (buildTxt.exists() && !buildTxt.isDirectory()){
+    if (buildTxt.exists() && !buildTxt.isDirectory()) {
       int buildNumber = -1;
       String buildNumberText = getContent(buildTxt);
       if (buildNumberText != null) {
-        try{
-          if (buildNumberText.length() > 1){
+        try {
+          if (buildNumberText.length() > 1) {
             buildNumberText = buildNumberText.trim();
             buildNumber = Integer.parseInt(buildNumberText);
           }
         }
-        catch (Exception e){
+        catch (Exception e) {
           // OK
         }
       }
