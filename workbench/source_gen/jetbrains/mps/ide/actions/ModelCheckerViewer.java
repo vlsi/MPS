@@ -17,6 +17,10 @@ import java.awt.event.ActionEvent;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import java.util.Set;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -61,7 +65,6 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     this.setLayout(new BorderLayout());
     ViewOptions viewOptions = new ViewOptions(true, false, false, false, false);
     viewOptions.myCategory = true;
-    viewOptions.myShowPopupMenu = false;
 
     this.myUsagesView = new UsagesView(mpsProject, viewOptions) {
       public void close() {
@@ -91,7 +94,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     this.myGenerateButton.setVisible(false);
 
     this.myFixButton = new JButton("Perform Quick Fixes");
-    this.myFixButton.setToolTipText("Remove all undeclared children and undeclared references");
+    this.myFixButton.setToolTipText("Remove undeclared children and undeclared references, resolve links in included nodes");
     this.myFixButton.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         ModelCheckerViewer.this.performQuickFixes();
@@ -117,22 +120,23 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         // Select all fixable issues 
-        List<ModelCheckerIssue> fixableIssues = ListSequence.fromList(((List<SearchResult<ModelCheckerIssue>>)ModelCheckerViewer.this.getSearchResults().getSearchResults())).select(new ISelector<SearchResult<ModelCheckerIssue>, ModelCheckerIssue>() {
+        final Set<SNodePointer> includedResultNodes = SetSequence.fromSetWithValues(new HashSet<SNodePointer>(), ModelCheckerViewer.this.myUsagesView.getIncludedResultNodes());
+        List<ModelCheckerIssue> issuesToFix = ListSequence.fromList(((List<SearchResult<ModelCheckerIssue>>)ModelCheckerViewer.this.getSearchResults().getSearchResults())).select(new ISelector<SearchResult<ModelCheckerIssue>, ModelCheckerIssue>() {
           public ModelCheckerIssue select(SearchResult<ModelCheckerIssue> sr) {
             return sr.getObject();
           }
         }).where(new IWhereFilter<ModelCheckerIssue>() {
           public boolean accept(ModelCheckerIssue sr) {
-            return sr.isFixable();
+            return SetSequence.fromSet(includedResultNodes).contains(new SNodePointer(sr.getNode())) && sr.isFixable();
           }
         }).toListSequence();
 
         while (true) {
           int fixedBefore = fixedTotal.value;
-          for (ModelCheckerIssue issue : ListSequence.fromListWithValues(new ArrayList<ModelCheckerIssue>(), fixableIssues)) {
+          for (ModelCheckerIssue issue : ListSequence.fromListWithValues(new ArrayList<ModelCheckerIssue>(), issuesToFix)) {
             if (issue.fix()) {
               fixedTotal.value++;
-              ListSequence.fromList(fixableIssues).removeElement(issue);
+              ListSequence.fromList(issuesToFix).removeElement(issue);
             }
           }
           if (fixedBefore == fixedTotal.value) {
