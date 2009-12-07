@@ -56,12 +56,4 @@ public abstract class NoCachesStrategy {
       }
     };
   }
-
-  public static NoCachesStrategy createAssertStrategy() {
-    return new NoCachesStrategy() {
-      public boolean compute(Project project, SModelDescriptor sm, String generatedHash) {
-        throw new AssertionError();
-      }
-    };
-  }
 }
