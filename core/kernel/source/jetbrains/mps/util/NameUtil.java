@@ -88,9 +88,9 @@ public class NameUtil {
         result.append(token);
         inQuoted = !inQuoted;
       } else {
-        if (inQuoted){
+        if (inQuoted) {
           result.append(token);
-        }else{
+        } else {
           result.append(captionPartWithNamingPolicyNoQuoting(token));
         }
       }
@@ -111,7 +111,7 @@ public class NameUtil {
       result.append(wordWithNamingPolicy(st.nextToken())).append(" ");
     }
 
-    if (!s.endsWith(" ")){
+    if (!s.endsWith(" ")) {
       result.delete(result.length() - 1, result.length());
     }
 
@@ -126,12 +126,12 @@ public class NameUtil {
     for (char c : s.toCharArray()) {
       boolean add = (c != ' ' || !space);
       space = (c == ' ');
-      if (add){
-        chars[charNum++]=c;
+      if (add) {
+        chars[charNum++] = c;
       }
     }
 
-    return new String(chars,0,charNum);
+    return new String(chars, 0, charNum);
   }
 
   public static String wordWithNamingPolicy(@NotNull String s) {
@@ -226,7 +226,7 @@ public class NameUtil {
   /**
    * Return numerical string for given quantity of objects and singular form of object name.
    * For example, for <code>(5, "issue")</code> returns <code>"5 issues"</code>.
-   * 
+   *
    * @param quantity quantity of counted objects
    * @param singular singular form of counted objects
    * @return numerical string

@@ -25,7 +25,7 @@ import java.lang.reflect.Method;
 public class MPSMainImpl {
   public static void start(final String[] args) {
     try {
-      LicenseManager.setInstance(new MPSLicenseManager());      
+      LicenseManager.setInstance(new MPSLicenseManager());
 
       Class mainImplCls = MainImpl.class;
       Method method = mainImplCls.getDeclaredMethod("start", String[].class);

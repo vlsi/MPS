@@ -175,7 +175,7 @@ public abstract class Macros {
   }
 
   private static String shrink(String path, String prefix) {
-    assert path.length() >= prefix.length():"path: "+path+"; prefix: "+prefix;
+    assert path.length() >= prefix.length() : "path: " + path + "; prefix: " + prefix;
     String result = path.substring(prefix.length());
 
     if (result.length() == 0) {

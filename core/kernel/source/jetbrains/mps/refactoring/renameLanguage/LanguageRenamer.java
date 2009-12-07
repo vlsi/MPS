@@ -97,7 +97,7 @@ public class LanguageRenamer {
     myLanguage.save();
 
     myProcessor.writeIntoLog(structure.getSModel(), myContext);
-    SModelRepository.getInstance().saveAll(); 
+    SModelRepository.getInstance().saveAll();
   }
 
   private void renameGenerators(String oldFqName) {

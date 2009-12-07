@@ -69,7 +69,7 @@ public class BenchmarkUtil {
         };
 
         for (String item : items.toArray(new String[items.size()])) {
-          v.visit(item);          
+          v.visit(item);
         }
       }
     });

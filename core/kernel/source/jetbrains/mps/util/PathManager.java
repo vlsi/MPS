@@ -336,7 +336,7 @@ public class PathManager {
 
     String namespace = NameUtil.namespaceFromLongName(longName);
     namespace = namespace.replace(File.separatorChar, '.').replace('/', '.');
-    
+
     if (namespacePrefix != null && namespacePrefix.length() > 0) {
       namespace = namespacePrefix + ((namespace.length() > 0) ? "." + namespace : "");
     }
