@@ -1003,7 +1003,40 @@
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="3293010995237625810">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3293010995237625811" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3293010995237625812" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3293010995237625813" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3293010995237625813">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" id="4800098105724780388">
+          <link role="baseMethodDeclaration" targetNodeId="4800098105724743719" resolveInfo="A" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4800098105724780389">
+            <property name="value" value="2" />
+          </node>
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4800098105724780391">
+            <property name="value" value="4" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="4800098105724743719">
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="4800098105724743720" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4800098105724743721" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4800098105724743722">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" id="4800098105724780386">
+          <link role="baseMethodDeclaration" targetNodeId="4800098105724743719" resolveInfo="A" />
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4800098105724780398">
+            <property name="value" value="1" />
+          </node>
+          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="4800098105724780400">
+            <property name="value" value="3" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="4800098105724780384">
+        <property name="name" value="a" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4800098105724780385" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="4800098105724780396">
+        <property name="name" value="a" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="4800098105724780397" />
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="3293010995237625814">
