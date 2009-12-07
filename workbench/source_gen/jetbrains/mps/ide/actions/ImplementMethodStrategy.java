@@ -6,6 +6,7 @@ import javax.swing.JComponent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ImplementMethodStrategy extends BaseMethodUpdateStrategy {
   public ImplementMethodStrategy() {
@@ -23,7 +24,7 @@ public class ImplementMethodStrategy extends BaseMethodUpdateStrategy {
     super.updateMethod(sourceMethod, method);
     SNode defaultReturnExpr = Type_Behavior.call_createDefaultTypeExpression_3359611512358152580(SLinkOperations.getTarget(method, "returnType", true));
     if ((defaultReturnExpr != null)) {
-      SLinkOperations.addChild(SLinkOperations.getTarget(method, "body", true), "statement", this.getReturnStatement(defaultReturnExpr));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(this.getReturnStatement(defaultReturnExpr));
     }
   }
 }

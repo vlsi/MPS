@@ -4,8 +4,8 @@ package jetbrains.mps.ide.actions;
 
 import javax.swing.JCheckBox;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -24,7 +24,7 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
   public void updateMethod(SNode sourceMethod, SNode method) {
     super.updateMethod(sourceMethod, method);
     if (this.myCheckBox.isSelected()) {
-      SLinkOperations.addChild(method, "annotation", new _Quotations.QuotationClass_1().createNode());
+      ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).addElement(new _Quotations.QuotationClass_1().createNode());
     }
 
     Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).select(new ISelector<SNode, SNode>() {
@@ -35,9 +35,9 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
     SNode superCallExpr = new _Quotations.QuotationClass_3().createNode(sourceMethod, Sequence.fromIterable(paramList).toListSequence());
 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
-      SLinkOperations.addChild(SLinkOperations.getTarget(method, "body", true), "statement", new _Quotations.QuotationClass_2().createNode(superCallExpr));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(new _Quotations.QuotationClass_2().createNode(superCallExpr));
     } else {
-      SLinkOperations.addChild(SLinkOperations.getTarget(method, "body", true), "statement", this.getReturnStatement(superCallExpr));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(this.getReturnStatement(superCallExpr));
     }
   }
 

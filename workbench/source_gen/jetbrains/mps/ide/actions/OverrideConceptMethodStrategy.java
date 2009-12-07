@@ -23,9 +23,9 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
     });
     SNode superCallExpr = new _Quotations.QuotationClass_6().createNode(Sequence.fromIterable(paramList).toListSequence(), sourceMethod);
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
-      SLinkOperations.addChild(SLinkOperations.getTarget(method, "body", true), "statement", new _Quotations.QuotationClass_8().createNode(superCallExpr));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(new _Quotations.QuotationClass_8().createNode(superCallExpr));
     } else {
-      SLinkOperations.addChild(SLinkOperations.getTarget(method, "body", true), "statement", this.getReturnStatement(superCallExpr));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(this.getReturnStatement(superCallExpr));
     }
   }
 
