@@ -72,6 +72,9 @@ public abstract class SelectMembersDialog<T extends SNode> extends BaseDialog {
   public DialogDimensionsSettings.DialogDimensions getDefaultDimensionSettings() {
     int width = 200;
     int height = 250;
+    if (this.myFrame == null) {
+      return new DialogDimensionsSettings.DialogDimensions(400, 400, width, height);
+    }
     return new DialogDimensionsSettings.DialogDimensions(this.myFrame.getX() + (this.myFrame.getWidth() - width) / 2, this.myFrame.getY() + (this.myFrame.getHeight() - height) / 2, width, height);
   }
 
