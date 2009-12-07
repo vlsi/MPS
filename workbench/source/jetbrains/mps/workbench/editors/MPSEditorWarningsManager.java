@@ -85,90 +85,94 @@ public class MPSEditorWarningsManager implements ProjectComponent {
   }
 
   private void updateWarnings(@NotNull final MPSFileNodeEditor editor) {
-    ModelAccess.instance().runReadAction(new Runnable() {
+    final Project project = editor.getNodeEditor().getOperationContext().getProject();
+
+    DumbService.getInstance(project).smartInvokeLater(new Runnable() {
       public void run() {
-        if (myWarnings.containsKey(editor)) {
-          for (WarningPanel panel : myWarnings.get(editor)) {
-            myFileEditorManager.removeTopComponent(editor, panel);
-          }
-          myWarnings.remove(editor);
-        }
-        EditorComponent editorComponent = editor.getNodeEditor().getCurrentEditorComponent();
-        if (editorComponent != null && editorComponent.isDisposed()) {
-          return;
-        }
-
-        SNode node = editor.getFile().getNode();
-        if (node == null) {
-          return;
-        }
-        SModel smodel = node.getModel();
-
-        if (smodel == null) {
-          return;
-        }
-
-        final SModelDescriptor model = smodel.getModelDescriptor();
-
-        if (model == null) {
-          return;
-        }
-
-        if (model.isTransient()) {
-          addWarningPanel(editor, "Warning: node is in transient model. Your changes won't be saved.");
-        }
-
-        IModule module = model.getModule();
-        if (module != null && module.isPackaged()) {
-          addWarningPanel(editor, "Warning: node is in packaged model. Your changes won't be saved");
-        }
-
-        final Project project = editor.getNodeEditor().getOperationContext().getProject();
-        DumbService.getInstance(project).smartInvokeLater(new Runnable() {
+        ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            final Set<Language> outdatedLanguages = new HashSet<Language>();
-            for (Language l : model.getSModel().getLanguages(GlobalScope.getInstance())) {
-              if (l.getEditorModelDescriptor() != null &&
-                ModelGenerationStatusManager.getInstance().generationRequired(l.getEditorModelDescriptor(), project, null)) {
-                outdatedLanguages.add(l);
-              }
-            }
-            if (!outdatedLanguages.isEmpty()) {
-              addWarningPanel(editor,
-                "Warning: one or more of the used languages require generation",
-                "Generate",
-                new Runnable() {
-                  public void run() {
-                    final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
-                    final List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-                    ModelAccess.instance().runReadAction(new Runnable() {
-                      public void run() {
-                        for (Language l : outdatedLanguages) {
-                          ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
-                          languageConfig.setModuleRef(l.getModuleReference());
-                          languageConfig.setName("tmp");
-                          try {
-                            models.addAll(languageConfig.getGenParams(mpsProject, false).getModelDescriptors());
-                          } catch (IllegalGeneratorConfigurationException e) {
-                            LOG.error(e);
-                          }
-                        }
-                      }
-                    });
-
-                    myProject.getComponent(GeneratorManager.class).generateModelsFromDifferentModules(
-                      editor.getNodeEditor().getOperationContext(),
-                      models,
-                      IGenerationType.FILES
-                    );
-                  }
-                });
-            }
+            doUpdateWarnings(editor, project);
           }
         });
-
       }
     });
+  }
+
+  private void doUpdateWarnings(final MPSFileNodeEditor editor, Project project) {
+    if (myWarnings.containsKey(editor)) {
+      for (WarningPanel panel : myWarnings.get(editor)) {
+        myFileEditorManager.removeTopComponent(editor, panel);
+      }
+      myWarnings.remove(editor);
+    }
+    EditorComponent editorComponent = editor.getNodeEditor().getCurrentEditorComponent();
+    if (editorComponent != null && editorComponent.isDisposed()) {
+      return;
+    }
+
+    SNode node = editor.getFile().getNode();
+    if (node == null) {
+      return;
+    }
+    SModel smodel = node.getModel();
+
+    if (smodel == null) {
+      return;
+    }
+
+    final SModelDescriptor model = smodel.getModelDescriptor();
+
+    if (model == null) {
+      return;
+    }
+
+    if (model.isTransient()) {
+      addWarningPanel(editor, "Warning: node is in transient model. Your changes won't be saved.");
+    }
+
+    IModule module = model.getModule();
+    if (module != null && module.isPackaged()) {
+      addWarningPanel(editor, "Warning: node is in packaged model. Your changes won't be saved");
+    }
+
+    final Set<Language> outdatedLanguages = new HashSet<Language>();
+    for (Language l : model.getSModel().getLanguages(GlobalScope.getInstance())) {
+      if (l.getEditorModelDescriptor() != null &&
+        ModelGenerationStatusManager.getInstance().generationRequired(l.getEditorModelDescriptor(), project, null)) {
+        outdatedLanguages.add(l);
+      }
+    }
+    if (!outdatedLanguages.isEmpty()) {
+      addWarningPanel(editor,
+        "Warning: one or more of the used languages require generation",
+        "Generate",
+        new Runnable() {
+          public void run() {
+            final MPSProject mpsProject = myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+            final List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                for (Language l : outdatedLanguages) {
+                  ModuleTestConfiguration languageConfig = new ModuleTestConfiguration();
+                  languageConfig.setModuleRef(l.getModuleReference());
+                  languageConfig.setName("tmp");
+                  try {
+                    models.addAll(languageConfig.getGenParams(mpsProject, false).getModelDescriptors());
+                  } catch (IllegalGeneratorConfigurationException e) {
+                    LOG.error(e);
+                  }
+                }
+              }
+            });
+
+            myProject.getComponent(GeneratorManager.class).generateModelsFromDifferentModules(
+              editor.getNodeEditor().getOperationContext(),
+              models,
+              IGenerationType.FILES
+            );
+          }
+        });
+    }
   }
 
   private void updateAllWarnings() {
