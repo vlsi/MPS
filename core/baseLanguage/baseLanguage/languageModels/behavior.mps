@@ -17445,6 +17445,35 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8008512149545173655" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="4800098105724349643">
+      <property name="name" value="getTypesByTypeVars" />
+      <link role="overriddenMethod" targetNodeId="851115533308208851" resolveInfo="getTypesByTypeVars" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4800098105724349646">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="4800098105724354628">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="4800098105724354630">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="4800098105724402343">
+              <link role="baseMethodDeclaration" targetNodeId="8.~HashMap.&lt;init&gt;()" resolveInfo="HashMap" />
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4800098105724402345">
+                <link role="classifier" targetNodeId="27.~TypeVariableDeclaration" resolveInfo="TypeVariableDeclaration" />
+              </node>
+              <node role="typeParameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4800098105724402348">
+                <link role="classifier" targetNodeId="27.~Type" resolveInfo="Type" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4800098105724349647">
+        <link role="classifier" targetNodeId="8.~Map" resolveInfo="Map" />
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4800098105724349648">
+          <link role="classifier" targetNodeId="27.~TypeVariableDeclaration" resolveInfo="TypeVariableDeclaration" />
+        </node>
+        <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4800098105724349649">
+          <link role="classifier" targetNodeId="27.~Type" resolveInfo="Type" />
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4800098105724349650" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="8008512149545173648">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8008512149545173649" />
     </node>

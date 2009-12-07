@@ -8,6 +8,10 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Map;
+import jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration;
+import jetbrains.mps.baseLanguage.structure.Type;
+import java.util.HashMap;
 
 public class ConstructorInvocationStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -20,5 +24,9 @@ public class ConstructorInvocationStatement_Behavior {
       ListSequence.fromList(typeVarRefs).addElement(new _Quotations.QuotationClass_27().createNode(tvd));
     }
     return new _Quotations.QuotationClass_22().createNode(typeVarRefs, concept);
+  }
+
+  public static Map<TypeVariableDeclaration, Type> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
+    return new HashMap<TypeVariableDeclaration, Type>();
   }
 }
