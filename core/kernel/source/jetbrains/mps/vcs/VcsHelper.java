@@ -84,7 +84,7 @@ public class VcsHelper {
     final VirtualFile file = VFileSystem.getFile(modelFile);
     LOG.assertLog(file != null);
 
-    final MergeModelsDialog dialog = ModelAccess.instance().runReadAction(new Computable<MergeModelsDialog>() {
+    final MergeModelsDialog dialog = ModelAccess.instance().runWriteActionInCommand(new Computable<MergeModelsDialog>() {
       public MergeModelsDialog compute() {
         IOperationContext context = new ModuleContext(base.getModelDescriptor().getModule(), project);
         return new MergeModelsDialog(context, base, mine, repo);
