@@ -84,7 +84,7 @@ public class BundleClassLoader<T> extends BaseClassLoader {
 
   protected byte[] findClassBytes(String name) {
     byte[] bytes = myBundle.getLocator().find(name);
-    if (bytes!=null){
+    if (bytes != null) {
       myBundle.classLoaded(name);
     }
     return bytes;
