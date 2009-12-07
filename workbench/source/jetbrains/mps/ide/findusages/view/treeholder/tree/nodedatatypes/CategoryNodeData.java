@@ -40,7 +40,7 @@ public class CategoryNodeData extends BaseStaticNodeData {
   public CategoryNodeData(PathItemRole role, String category, boolean resultsSection,
                           INodeRepresentator nodeRepresentator) {
     super(role, getIconFromRepresentator(nodeRepresentator, category), "<b>" + category + "</b>",
-          "", true, false, resultsSection);
+      "", true, false, resultsSection);
     myCategory = category;
     myNodeRepresentator = nodeRepresentator;
   }

@@ -52,7 +52,7 @@ public class CharismaReporter extends ErrorReportSubmitter {
     } else {
       Response response = blameDialog.getResult();
       assert response != null : "Response must not be null";
-      assert response.isSuccess(): "Responce is not 'cancelled' or 'success'";
+      assert response.isSuccess() : "Responce is not 'cancelled' or 'success'";
       return new SubmittedReportInfo(null, "", SubmissionStatus.NEW_ISSUE);
     }
   }

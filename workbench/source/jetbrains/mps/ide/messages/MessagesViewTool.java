@@ -532,7 +532,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   public INavigator getCurrentNavigateableView() {
     return new INavigator() {
       public void goToNext() {
-        int i = Math.max(0, myList.getSelectedIndex()+1);
+        int i = Math.max(0, myList.getSelectedIndex() + 1);
 
         for (; i < myModel.getSize(); i++) {
           if (tryNavigate(i)) return;
@@ -540,7 +540,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
       }
 
       public void goToPrevious() {
-        int i = Math.min(myModel.getSize() - 1, myList.getSelectedIndex()-1);
+        int i = Math.min(myModel.getSize() - 1, myList.getSelectedIndex() - 1);
 
         for (; i >= 0; i--) {
           if (tryNavigate(i)) return;

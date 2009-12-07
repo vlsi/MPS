@@ -11,5 +11,6 @@ import jetbrains.mps.ide.IEditor;
  */
 public interface EditorOpenListener {
   public void editorOpened(IEditor editor);
+
   public void editorClosed(IEditor editor);
 }

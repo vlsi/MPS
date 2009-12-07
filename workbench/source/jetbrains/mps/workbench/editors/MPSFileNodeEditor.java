@@ -45,7 +45,7 @@ import java.beans.PropertyChangeListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor,DocumentsEditor {
+public class MPSFileNodeEditor extends UserDataHolderBase implements FileEditor, DocumentsEditor {
   private IEditor myNodeEditor;
   private JPanel myComponent = new JPanel(new BorderLayout());
   private Project myProject;

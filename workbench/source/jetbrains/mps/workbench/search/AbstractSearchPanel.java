@@ -102,7 +102,7 @@ public abstract class AbstractSearchPanel extends JPanel {
       }
     });
 
-    this.add(mainPanel, BorderLayout.WEST);    
+    this.add(mainPanel, BorderLayout.WEST);
 
     JPanel tailPanel = new NonOpaquePanel(new BorderLayout(5, 0));
     JPanel tailContainer = new NonOpaquePanel(new BorderLayout(5, 0));

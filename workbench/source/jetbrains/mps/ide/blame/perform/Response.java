@@ -30,7 +30,7 @@ public class Response {
     myMessage = message;
     mySuccess = success;
     myThrowable = throwable;
-    myResponseString  = response;
+    myResponseString = response;
   }
 
   public String getMessage() {

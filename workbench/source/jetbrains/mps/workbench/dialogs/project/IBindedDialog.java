@@ -23,8 +23,12 @@ import javax.swing.JComponent;
 
 public interface IBindedDialog {
   JComponent getMainComponent();
+
   IOperationContext getOperationContext();
+
   IScope getModuleScope();
+
   IScope getProjectScope();
+
   void addBinding(AutoBinding binding);
 }

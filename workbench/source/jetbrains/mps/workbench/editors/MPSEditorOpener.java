@@ -194,8 +194,8 @@ public class MPSEditorOpener implements ProjectComponent {
     assert node.isRegistered() : "You can't edit unregistered node";
 
     if (node.getModel().getModelDescriptor() == null) {
-          return null;
-        }
+      return null;
+    }
 
     //open editor
     SNode containingRoot = node.getContainingRoot();
@@ -207,7 +207,7 @@ public class MPSEditorOpener implements ProjectComponent {
     //open inspector (if no cell is selected in editor, inspector won't be opened)
     DataContext dataContext = DataManager.getInstance().getDataContext(nodeEditor.getCurrentEditorComponent());
     FileEditor fileEditor = MPSDataKeys.FILE_EDITOR.getData(dataContext);
-    getInspector().inspect(node, nodeEditor.getOperationContext(), fileEditor);    
+    getInspector().inspect(node, nodeEditor.getOperationContext(), fileEditor);
 
     //select and its parents in editor and inspector(if exist)
     if (select) {

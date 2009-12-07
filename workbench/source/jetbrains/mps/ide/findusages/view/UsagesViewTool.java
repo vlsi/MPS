@@ -84,7 +84,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   protected void onRemove(int index) {
     myUsageViewsData.remove(index);
   }
-  
+
   //----TOOL STUFF----
 
   public int getPriority() {

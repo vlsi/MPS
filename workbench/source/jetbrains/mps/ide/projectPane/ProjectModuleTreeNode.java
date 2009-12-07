@@ -61,7 +61,7 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
       setAdditionalText("packaged");
     } else if (generationRequired()) {
       setAdditionalText("generation required");
-    } else  {
+    } else {
       setAdditionalText(null);
     }
     setText(getModulePresentation());

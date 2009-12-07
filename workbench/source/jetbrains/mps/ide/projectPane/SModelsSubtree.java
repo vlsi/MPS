@@ -50,7 +50,7 @@ public class SModelsSubtree {
         javaStubs.add(modelDescriptor);
       } else if (SModelStereotype.TESTS.equals(stereotype)) {
         tests.add(modelDescriptor);
-      } else{
+      } else {
         regularModels.add(modelDescriptor);
       }
     }
@@ -71,12 +71,12 @@ public class SModelsSubtree {
         } else {
           IModule contextModule = operationContext.getModule();
           List<SModelRoot> modelRoots = contextModule.getSModelRoots();
-          String namespace = (modelRoots.isEmpty())? "" : contextModule.getSModelRoots().get(0).getPrefix();
+          String namespace = (modelRoots.isEmpty()) ? "" : contextModule.getSModelRoots().get(0).getPrefix();
           if (namespace == null || namespace.length() == 0) {
             namespace = contextModule.getModuleNamespace();
           }
 
-          currentRootNode = new NamespaceTextNode((namespace == null)? "" : namespace, operationContext);
+          currentRootNode = new NamespaceTextNode((namespace == null) ? "" : namespace, operationContext);
         }
         for (SModelTreeNode treeNode : regularModelNodes) {
           currentRootNode.add(treeNode);
@@ -92,12 +92,12 @@ public class SModelsSubtree {
 
       List<SModelTreeNode> testNodes = getRootModelTreeNodes(tests, operationContext);
       for (SModelTreeNode testNode : testNodes) {
-        builder.addNode(testNode);                        
+        builder.addNode(testNode);
       }
 
       TestsTreeNode testsNode = new TestsTreeNode(operationContext);
       builder.fillNode(testsNode);
-      
+
       rootTreeNode.add(testsNode);
     }
 
@@ -126,7 +126,7 @@ public class SModelsSubtree {
         SModelTreeNode treeNode = new SModelTreeNode(sortedModels.get(rootIndex), null, context, countNamePart);
         result.add(treeNode);
         rootIndex = buildChildModels(treeNode, sortedModels, rootIndex);
-      }      
+      }
     }
     return result;
   }

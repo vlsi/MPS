@@ -109,7 +109,7 @@ public class NamespaceTextNode extends TextTreeNode implements StereotypeProvide
     for (MPSTreeNode child : this) {
       if (child instanceof SModelTreeNode) {
         models.add(((SModelTreeNode) child).getSModelDescriptor());
-        for (SModelTreeNode childTreeNode : ((SModelTreeNode)child).getSubfolderSModelTreeNodes()) {
+        for (SModelTreeNode childTreeNode : ((SModelTreeNode) child).getSubfolderSModelTreeNodes()) {
           models.add(childTreeNode.getSModelDescriptor());
         }
       } else if (child instanceof NamespaceTextNode) {

@@ -61,7 +61,7 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
         TreePath path = myHierarchyTree.getSelectionPath();
         HierarchyTreeNode selectedNode = (HierarchyTreeNode) path.getLastPathComponent();
         HierarchyTreeNode<AbstractConceptDeclaration> nextNode = ((HierarchyTreeNode<AbstractConceptDeclaration>) selectedNode.getNextNode());
-        if (nextNode!=null){
+        if (nextNode != null) {
           myHierarchyTree.selectNode(nextNode);
           nextNode.doubleClick();
         }
@@ -71,7 +71,7 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
         TreePath path = myHierarchyTree.getSelectionPath();
         HierarchyTreeNode selectedNode = (HierarchyTreeNode) path.getLastPathComponent();
         HierarchyTreeNode<AbstractConceptDeclaration> nextNode = ((HierarchyTreeNode<AbstractConceptDeclaration>) selectedNode.getPreviousNode());
-        if (nextNode!=null){
+        if (nextNode != null) {
           myHierarchyTree.selectNode(nextNode);
           nextNode.doubleClick();
         }

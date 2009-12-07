@@ -103,7 +103,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
 
     if (getSNode().isUnknown()) {
-      setErrorState(ErrorState.ERROR);     
+      setErrorState(ErrorState.ERROR);
     }
 
     setText(caclulateNodeTextPresentation());

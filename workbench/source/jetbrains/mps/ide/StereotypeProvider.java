@@ -6,5 +6,5 @@ import org.jetbrains.annotations.NotNull;
 public interface StereotypeProvider {
   String getStereotype();
 
-  boolean isStrict(); 
+  boolean isStrict();
 }

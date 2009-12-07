@@ -40,7 +40,7 @@ public class SortUtil {
           return 0;
         }
         int result = compareValues(o.getLongName(), o1.getLongName());
-        return (result == 0)? compareValues(o.getStereotype(), o1.getStereotype()) : result;
+        return (result == 0) ? compareValues(o.getStereotype(), o1.getStereotype()) : result;
       }
     });
     return sortedModels;

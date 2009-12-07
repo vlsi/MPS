@@ -10,7 +10,7 @@ import java.util.HashSet;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
 
-public class GenerateAllModulesInProjectAction extends BaseGenerateAction{
+public class GenerateAllModulesInProjectAction extends BaseGenerateAction {
   public GenerateAllModulesInProjectAction(boolean regenerate) {
     super(regenerate);
   }

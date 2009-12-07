@@ -56,18 +56,18 @@ public class NodeNodeData extends BaseNodeData {
   }
 
   public NodeNodeData(PathItemRole role, SearchResult result, boolean isResultNode, INodeRepresentator nodeRepresentator, boolean resultsSection) {
-      super(
-        role,
-        (isResultNode && nodeRepresentator != null) ? nodeRepresentator.getPresentation(result.getObject()) : snodeRepresentation((SNode) result.getPathObject()),
-        nodeAdditionalInfo((SNode) result.getPathObject()),
-        false,
-        isResultNode,
-        resultsSection
-      );
-      myNodePointer = new SNodePointer((SNode) result.getPathObject());
-    }
+    super(
+      role,
+      (isResultNode && nodeRepresentator != null) ? nodeRepresentator.getPresentation(result.getObject()) : snodeRepresentation((SNode) result.getPathObject()),
+      nodeAdditionalInfo((SNode) result.getPathObject()),
+      false,
+      isResultNode,
+      resultsSection
+    );
+    myNodePointer = new SNodePointer((SNode) result.getPathObject());
+  }
 
-    public NodeNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
+  public NodeNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
   }
 

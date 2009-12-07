@@ -20,6 +20,7 @@ import com.intellij.openapi.wm.ToolWindow;
 
 public interface INavigateableTool {
   int getPriority();
+
   ToolWindow getToolWindow();
 
   INavigator getCurrentNavigateableView();

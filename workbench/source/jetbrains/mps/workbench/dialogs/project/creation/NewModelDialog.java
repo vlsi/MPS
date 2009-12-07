@@ -141,7 +141,7 @@ public class NewModelDialog extends BaseDialog {
         }
 
         ModelRootWrapper wrapper = (ModelRootWrapper) myModelRoots.getSelectedItem();
-        String modelPrefix = wrapper.getNamespace().length() > 0 ? wrapper.getNamespace() + '.': "";
+        String modelPrefix = wrapper.getNamespace().length() > 0 ? wrapper.getNamespace() + '.' : "";
         if (!(modelName.startsWith(modelPrefix))) {
           setErrorText("Model name should have a prefix " + wrapper.getNamespace());
           return null;

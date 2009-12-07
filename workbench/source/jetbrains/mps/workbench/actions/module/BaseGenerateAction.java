@@ -98,16 +98,16 @@ public abstract class BaseGenerateAction extends BaseAction {
     final IOperationContext invocationContext1 = invocationContext;
     //noinspection ConstantConditions
     boolean checkSuccessful = myProject.getPluginManager().getTool(ModelCheckerTool_Tool.class)
-        .checkModelsBeforeGenerationIfNeeded(invocationContext, modelsToGenerate, new Runnable() {
-          public void run() {
-            GeneratorManager generatorManager = myOperationContext.getComponent(GeneratorManager.class);
-            IGenerationType generationType = generatorManager.getDefaultModuleGenerationType();
-            generatorManager.generateModelsFromDifferentModules(
-              invocationContext1,
-              modelsToGenerate,
-              generationType);
-          }
-        });
+      .checkModelsBeforeGenerationIfNeeded(invocationContext, modelsToGenerate, new Runnable() {
+        public void run() {
+          GeneratorManager generatorManager = myOperationContext.getComponent(GeneratorManager.class);
+          IGenerationType generationType = generatorManager.getDefaultModuleGenerationType();
+          generatorManager.generateModelsFromDifferentModules(
+            invocationContext1,
+            modelsToGenerate,
+            generationType);
+        }
+      });
     if (!checkSuccessful) {
       return;
     }

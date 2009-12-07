@@ -251,7 +251,7 @@ public class ActionFactory {
       } else {
         boolean gInGroup = ActionUtils.contains(group, g);
 
-        if (gInGroup){
+        if (gInGroup) {
           String errorMessage =
             "Memory leaks detected: MPS action group " +
               g.getClass().getName() +

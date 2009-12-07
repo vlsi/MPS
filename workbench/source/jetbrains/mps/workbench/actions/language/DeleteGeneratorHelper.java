@@ -77,7 +77,7 @@ public class DeleteGeneratorHelper {
     languageDescriptor.getGenerators().remove(generator.getGeneratorDescriptor());
     sourceLanguage.setLanguageDescriptor(languageDescriptor);
     if (deleteFiles) {
-      LOG.error("DELETE GENERATOR FILES - NOT IMPLEMENTED",new Throwable());
+      LOG.error("DELETE GENERATOR FILES - NOT IMPLEMENTED", new Throwable());
       //todo
     }
     sourceLanguage.save();

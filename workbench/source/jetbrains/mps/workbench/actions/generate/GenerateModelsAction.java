@@ -47,15 +47,15 @@ public abstract class GenerateModelsAction extends BaseAction {
     MPSProject project = myContext.getMPSProject();
     //noinspection ConstantConditions
     boolean checkSuccessful = project.getPluginManager().getTool(ModelCheckerTool_Tool.class)
-        .checkModelsBeforeGenerationIfNeeded(myContext, myModels, new Runnable() {
-          public void run() {
-            myGenManager.generateModelsFromDifferentModules(
-              myContext,
-              myModels,
-              getGenerationType()
-            );
-          }
-        });
+      .checkModelsBeforeGenerationIfNeeded(myContext, myModels, new Runnable() {
+        public void run() {
+          myGenManager.generateModelsFromDifferentModules(
+            myContext,
+            myModels,
+            getGenerationType()
+          );
+        }
+      });
     if (!(checkSuccessful)) {
       return;
     }

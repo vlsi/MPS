@@ -52,7 +52,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
     final BaseAdapter[] adapter = new BaseAdapter[1];
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        myModel =myType.getModel();
+        myModel = myType.getModel();
         adapter[0] = myType.getAdapter();
       }
     });

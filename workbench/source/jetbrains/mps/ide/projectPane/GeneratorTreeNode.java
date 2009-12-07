@@ -92,6 +92,6 @@ class GeneratorTreeNode extends ProjectModuleTreeNode implements StereotypeProvi
   }
 
   public boolean isStrict() {
-    return false; 
+    return false;
   }
 }

@@ -34,7 +34,7 @@ import jetbrains.mps.lang.typesystem.structure.ConceptReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.IEditor;
 
-public class ConceptEditorOpenHelper{
+public class ConceptEditorOpenHelper {
   public static SNode getBaseNode(IOperationContext context, SNode node) {
     if (node == null) return null;
     AbstractConceptDeclaration baseNode = findBaseNodeMultiTab(node);

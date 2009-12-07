@@ -69,7 +69,7 @@ public class DeleteModuleHelper {
   }
 
   private static void safeDelete(Project project, MPSProject mpsProject, IModule module, boolean deleteFiles) {
-    LOG.error("SAFE DELETE MODULE - NOT IMPLEMENTED",new Throwable());
+    LOG.error("SAFE DELETE MODULE - NOT IMPLEMENTED", new Throwable());
   }
 
   private static void reportUnsupportedModuleType(IModule module) {

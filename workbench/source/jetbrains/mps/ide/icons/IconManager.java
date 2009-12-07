@@ -71,7 +71,7 @@ public class IconManager {
           return Icons.UNKNOWN_ICON;
         }
 
-        
+
         if (node.getConceptDeclarationAdapter() instanceof ConceptDeclaration) {
           result = IconManager.getIconFor((ConceptDeclaration) node.getConceptDeclarationAdapter());
         }
@@ -92,7 +92,7 @@ public class IconManager {
   public static Icon getAdditionalIconFor(@NotNull final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
       public Icon compute() {
-        return BaseConcept_Behavior.call_getAdditionalIcon_5017341185733863694(node);        
+        return BaseConcept_Behavior.call_getAdditionalIcon_5017341185733863694(node);
       }
     });
   }

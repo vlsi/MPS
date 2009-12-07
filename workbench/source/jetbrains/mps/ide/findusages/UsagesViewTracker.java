@@ -57,7 +57,7 @@ public class UsagesViewTracker implements ApplicationComponent {
       public int compare(INavigateableTool t1, INavigateableTool t2) {
         boolean v1 = t1.getToolWindow().isVisible();
         boolean v2 = t2.getToolWindow().isVisible();
-        
+
         if (v1 && !v2) return -1;
         if (!v1 && v2) return 1;
 

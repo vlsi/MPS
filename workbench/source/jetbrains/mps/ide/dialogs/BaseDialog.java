@@ -221,7 +221,7 @@ public abstract class BaseDialog extends JDialog {
       } else if (b.name().contains("" + Button.VOID_MNEMONIC_CHAR)) {
         int index = b.name().indexOf(Button.VOID_MNEMONIC_CHAR);
         mnemonic = b.name().charAt(index + 1);
-        name = name.replaceAll("_","");
+        name = name.replaceAll("_", "");
       }
 
       final int mnemonicFin = mnemonic;

@@ -179,7 +179,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
 
                   public void visitPropertyEvent(SModelPropertyEvent event) {
                     if (event.getNode().isDisposed()) {
-                        return;
+                      return;
                     }
                     VirtualFile vf = myVirtualFiles.get(new SNodePointer(event.getNode()));
                     if (event.getNode().isRoot() && vf != null) {
