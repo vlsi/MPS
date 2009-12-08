@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project version="4">
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
@@ -18,7 +18,7 @@
   </component>
   <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${mps_home}/core/languageDesign/smodelTests/solutions/smodelTestsSandbox/smodelTestsSandbox.msd" />
+      <solutionPath path="${mps_home}/core/languageDesign/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains.mps.smodel.test.msd" />
       <solutionPath path="${project}/solutions/samples/smodelLanguage-samples.msd" />
       <solutionPath path="${project}/solutions/sandbox/sandbox.msd" />
       <solutionPath path="${project}/solutions/typetest/smodelLanguage_typetest.msd" />
@@ -33,7 +33,7 @@
     <projectDevkits />
     <genConfs>
       <genConfModule name="smodel language" moduleRef="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-      <genConfModule name="smodelTestsSandbox" moduleRef="smodelTestsSandbox" />
+      <genConfModule name="smodel test" moduleRef="jetbrains.mps.smodel.test" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
@@ -67,7 +67,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$" vcs="svn" />
   </component>
 </project>
 
