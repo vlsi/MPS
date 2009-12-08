@@ -3,9 +3,10 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <classPath>
-    <entry path="${mps_home}/lib/jdom/jdom.jar" include="false" />
-  </classPath>
+  <classPath />
   <sourcePath />
+  <dependencies>
+    <dependency reexport="false">c23193d6-8a59-4f69-84c8-66646c8879e5(org.jdom)</dependency>
+  </dependencies>
 </solution>
 
