@@ -9,8 +9,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.AbstractCellProvider;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 
 public class TextCommentLinePart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -25,22 +28,30 @@ public class TextCommentLinePart_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
-    editorCell.addEditorCell(this.createCustom_9581_0(editorContext, node));
+    editorCell.addEditorCell(this.createModelAccess_9581_0(editorContext, node));
     return editorCell;
   }
 
-  private EditorCell createCustom_9581_0(final EditorContext editorContext, final SNode node) {
-    AbstractCellProvider provider = new _FunctionTypes._return_P0_E0<AbstractCellProvider>() {
-      public AbstractCellProvider invoke() {
-        return new AbstractCellProvider() {
-          public EditorCell createEditorCell(EditorContext editor) {
-            return TextCommentPartCell.create(editorContext, node);
-          }
-        };
+  private EditorCell createModelAccess_9581_0(final EditorContext editorContext, final SNode node) {
+    ModelAccessor modelAccessor = new ModelAccessor() {
+      public String getText() {
+        return SPropertyOperations.getString(node, "text");
       }
-    }.invoke();
-    EditorCell editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("Custom_9581_0");
+
+      public void setText(String text) {
+        SPropertyOperations.set(node, "text", text);
+        TextCommentPartUtil.processCellText(editorContext, node, text);
+      }
+
+      public boolean isValidText(String text) {
+        return true;
+      }
+    };
+    EditorCell_Property editorCell = EditorCell_Property.create(editorContext, modelAccessor, node);
+    editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+    editorCell.setCellId("ModelAccess_9581_0");
+    editorCell.addKeyMap(new TextCommentLinePart_KeyMap());
+    editorCell.setDefaultText("");
     return editorCell;
   }
 }
