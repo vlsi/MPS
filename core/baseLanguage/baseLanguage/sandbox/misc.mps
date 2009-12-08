@@ -1275,14 +1275,25 @@
               </node>
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6359146168314178140" />
             </node>
-            <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="6359146168314178145" />
+            <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation" id="6359146168314823890" />
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="6359146168314729184" />
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6359146168314619295">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6359146168314619296">
             <property name="name" value="a" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6359146168314619297" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.Expression" id="6359146168314619298" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6359146168314729187">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6359146168314729188">
+            <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="6359146168314757755">
+              <link role="baseMethodDeclaration" targetNodeId="6279881570057036944" resolveInfo="TestSequence" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="6359146168314757756" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="6359146168314757758" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="6359146168314757765" />
+            </node>
           </node>
         </node>
       </node>

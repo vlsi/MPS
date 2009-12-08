@@ -590,6 +590,9 @@
       <node role="part" type="jetbrains.mps.lang.actions.structure.ConceptSubstitutePart" id="1201879510556">
         <link role="concept" targetNodeId="1.1176544042499" resolveInfo="Node_TypeOperation" />
       </node>
+      <node role="part" type="jetbrains.mps.lang.actions.structure.ConceptSubstitutePart" id="6359146168314757771">
+        <link role="concept" targetNodeId="1.6359146168314178663" resolveInfo="Node_InferTypeOperation" />
+      </node>
     </node>
   </node>
 </model>
