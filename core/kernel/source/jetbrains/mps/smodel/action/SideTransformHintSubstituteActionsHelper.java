@@ -38,6 +38,9 @@ public class SideTransformHintSubstituteActionsHelper {
 
   public SideTransformHintSubstituteActionsHelper(SNode sourceNode, CellSide side, String transformTag, IOperationContext context) {
     myContext = context;
+    while (sourceNode.isAttribute()) {
+      sourceNode = sourceNode.getParent();
+    }
     mySourceNode = sourceNode;
     myTransformTag = transformTag;
     mySide = side;
