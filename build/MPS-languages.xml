@@ -289,6 +289,16 @@
       <zipfileset dir="core/baseLanguage/baseLanguage/solutions/MPS.Classpath" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
+  <target name="pack.org.jdom0">
+    <mkdir dir="samples/xmlLiterals/solutions/org.jdom/source_gen.caches" />
+    <mkdir dir="samples/xmlLiterals/solutions/org.jdom/test_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/core/baseLanguage/org.jdom.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="samples/xmlLiterals/solutions/org.jdom/org.jdom.msd" prefix="module" />
+      <zipfileset dir="samples/xmlLiterals/solutions/org.jdom/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="samples/xmlLiterals/solutions/org.jdom/test_gen.caches" prefix="test_gen.caches" />
+      <zipfileset dir="samples/xmlLiterals/solutions/org.jdom" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.debug0">
     <mkdir dir="core/kernel/jetbrains.mps.debug/classes_gen" />
     <mkdir dir="core/kernel/jetbrains.mps.debug/classes_gen" />
@@ -437,7 +447,8 @@
   </target>
   <target name="pack.jetbrains.mps.dataFlow.runtime0">
     <mkdir dir="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
-    <mkdir dir="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
+    <mkdir dir="core/languageDesign/dataFlow/classes" />
+    <mkdir dir="core/languageDesign/dataFlow/runtime/classes" />
     <mkdir dir="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/source_gen.caches" />
     <mkdir dir="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/test_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.dataFlow.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -446,7 +457,8 @@
       <zipfileset dir="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/test_gen.caches" prefix="test_gen.caches" />
       <zipfileset dir="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
       <zipfileset dir="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
-      <zipfileset dir="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
+      <zipfileset dir="core/languageDesign/dataFlow/classes" />
+      <zipfileset dir="core/languageDesign/dataFlow/runtime/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mpslite0">
@@ -585,13 +597,11 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.generator.generationContext0">
-    <mkdir dir="core/languageDesign/generator/classes" />
     <mkdir dir="core/languageDesign/generator/source_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.lang.generator.generationContext.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/generator/languages/generationContext/generationContext.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/generator/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="core/languageDesign/generator/languages/generationContext" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/languageDesign/generator/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.test0">
@@ -909,6 +919,30 @@
       <zipfileset dir="platform/xml/xmlSchema/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="platform/xml/xmlSchema" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
       <zipfileset dir="platform/xml/xmlSchema/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.xmlQuery0">
+    <mkdir dir="platform/xml/xmlQuery/classes_gen" />
+    <mkdir dir="platform/xml/xmlQuery/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.xmlQuery.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/xml/xmlQuery/xmlQuery.mpl" prefix="module" />
+      <zipfileset dir="platform/xml/xmlQuery/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/xml/xmlQuery" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/xml/xmlQuery/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.xmlQuery.runtime0">
+    <mkdir dir="platform/xml/xmlQuery/runtime/classes_gen" />
+    <mkdir dir="platform/xml/xmlQuery/runtime/classes_gen" />
+    <mkdir dir="platform/xml/xmlQuery/runtime/source_gen.caches" />
+    <mkdir dir="platform/xml/xmlQuery/runtime/test_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.xmlQuery.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/xml/xmlQuery/runtime/jetbrains.mps.xmlQuery.runtime.msd" prefix="module" />
+      <zipfileset dir="platform/xml/xmlQuery/runtime/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/xml/xmlQuery/runtime/test_gen.caches" prefix="test_gen.caches" />
+      <zipfileset dir="platform/xml/xmlQuery/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/xml/xmlQuery/runtime/classes_gen" />
+      <zipfileset dir="platform/xml/xmlQuery/runtime/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.gtext.runtime0">
