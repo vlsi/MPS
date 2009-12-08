@@ -34,19 +34,19 @@ public class ForeignReferencesConvertor {
     if (regularModel == null) {
       return null;
     }
-    SNode target;
+    INodeAdapter target;
     SModel model = regularModel.getSModel();
     switch (targetKind) {
       case CLASS: {
-        target = getMPSClassById(model, nodeId).getNode();
+        target = getMPSClassById(model, nodeId);
         break;
       }
       case FIELD: {
-        target = getMPSFieldById(model, nodeId).getNode();
+        target = getMPSFieldById(model, nodeId);
         break;
       }
       case METHOD: {
-        target = getMPSMethodById(model, nodeId).getNode();
+        target = getMPSMethodById(model, nodeId);
         break;
       }
       default: {
@@ -56,7 +56,7 @@ public class ForeignReferencesConvertor {
     if (target == null) {
       return SReference.create(role, sourceNode, modelReference, nodeId);
     }
-    return SReference.create(role, sourceNode, target);
+    return SReference.create(role, sourceNode, target.getNode());
 
   }
 
@@ -67,8 +67,14 @@ public class ForeignReferencesConvertor {
   }
 
    private Classifier getMPSClassByIdString(SModel model, String idString) {
+    if (idString.startsWith(Foreign.ID_PREFIX)) {
+      idString = idString.substring(Foreign.ID_PREFIX.length());
+    }
     String className = idString;    //todo inner classes
     INodeAdapter nodeAdapter = model.getRootAdapterByName(className);
+    if (nodeAdapter == null) {
+      return null;
+    }
     if (ourAllowedClassifierConcepts.contains(nodeAdapter.getConceptFQName())) {
       return (Classifier) nodeAdapter;
     } else {
@@ -78,9 +84,6 @@ public class ForeignReferencesConvertor {
 
    private Classifier getMPSClassById(SModel model, SNodeId nodeId) {
     String idString = nodeId.toString();
-    if (idString.startsWith(Foreign.ID_PREFIX)) {
-      idString = idString.substring(Foreign.ID_PREFIX.length());
-    }
     return getMPSClassByIdString(model, idString);
   }
 

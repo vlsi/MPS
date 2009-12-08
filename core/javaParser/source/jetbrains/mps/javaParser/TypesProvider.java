@@ -213,7 +213,9 @@ public class TypesProvider {
 
   private SReference getRegularMPSNodeReferenceFromForeignId(SNode sourceNode, String role, SModelReference modelReference, SNodeId nodeId, FeatureKind targetKind) {
       //foreign only
-      return SReference.create(role, sourceNode, modelReference, nodeId);
+    SReference reference = new ForeignReferencesConvertor().createFromForeignId(sourceNode, role, modelReference, nodeId, targetKind);
+    if (reference != null) return reference;
+    return SReference.create(role, sourceNode, modelReference, nodeId);
 
   }
 
