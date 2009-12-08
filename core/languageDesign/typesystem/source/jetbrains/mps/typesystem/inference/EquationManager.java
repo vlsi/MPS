@@ -71,6 +71,7 @@ public class EquationManager {
   private Map<IWrapper, Set<CopiedTypeWrapper>> myCopiedWrappers = new HashMap<IWrapper, Set<CopiedTypeWrapper>>();
   private Map<VariableWrapper, Set<CopiedTypeWrapper>> myCopiedVars = new HashMap<VariableWrapper, Set<CopiedTypeWrapper>>();
   private Set<CopiedTypeWrapper> myEquatedWithSource = new HashSet<CopiedTypeWrapper>();
+  private boolean myUsesCheckOnly = true;
 
   public EquationManager(TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
     myTypeChecker = typeChecker;
@@ -88,6 +89,10 @@ public class EquationManager {
   public IWrapper getParent(IWrapper type) {
     IWrapper parent = myEquations.get(type);
     return parent;
+  }
+
+  public void setInferenceMode() {
+    myUsesCheckOnly = false;
   }
 
   public void setParent(IWrapper type, IWrapper parent) {
@@ -231,7 +236,7 @@ public class EquationManager {
     }
 
     //if check only
-    if (checkOnly) {
+    if (checkOnly && myUsesCheckOnly) {
       if (subtypeHasNonConcreteVars || supertypeHasNonConcreteVars) {
         if (isWeak) {
           addSubtyping(subtypeRepresentator, supertypeRepresentator, equationInfo, true);

@@ -219,7 +219,7 @@ public class TypeChecker implements ApplicationComponent {
     }
   }
 
-  private SNode getTypeOf_resolveMode(final SNode node, boolean nodeIsNotChecked) {
+  private SNode getTypeOf_resolveMode(final SNode node) {
     if (node == null) return null;
     SNode containingRoot = node.getContainingRoot();
     if (containingRoot == null) return null;
@@ -227,10 +227,9 @@ public class TypeChecker implements ApplicationComponent {
       return myComputedTypesForCompletion.get(node);
     }
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext(node.getContainingRoot());
-    if (nodeIsNotChecked || !isCheckedRoot(containingRoot) || typeCheckingContext == null) {
+    if (!isCheckedRoot(containingRoot) || typeCheckingContext == null) {
       typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(containingRoot);
-      final TypeCheckingContext finalTypeCheckingContext = typeCheckingContext;
-      SNode resultType = finalTypeCheckingContext.computeTypeForResolve(node);
+      SNode resultType = typeCheckingContext.computeTypeForResolve(node);
       if (myComputedTypesForCompletion != null) {
         myComputedTypesForCompletion.put(node, resultType);
       }
@@ -243,6 +242,16 @@ public class TypeChecker implements ApplicationComponent {
     return resultType;
   }
 
+  public SNode getInferredTypeOf(final SNode node) {
+    if (node == null) return null;
+    SNode containingRoot = node.getContainingRoot();
+    if (containingRoot == null) return null;
+    TypeCheckingContext typeCheckingContext =
+      NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(containingRoot);
+    SNode resultType = typeCheckingContext.computeTypeInferenceMode(node);
+    return resultType;
+  }
+
   @Nullable
   public SNode getTypeOf(SNode node) {
     if (node == null) return null;
@@ -251,7 +260,7 @@ public class TypeChecker implements ApplicationComponent {
     }
     TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(node);
     if (context != null && context.isInEditorQueries()) {
-      return getTypeOf_resolveMode(node, true);
+      return getTypeOf_resolveMode(node);
     } else if (myIsGeneration && TypesystemPreferencesComponent.getInstance().isGenerationOptimizationEnabled()) {
       return getTypeOf_generationMode(node);
     } else {

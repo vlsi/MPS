@@ -1267,6 +1267,24 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6359146168314178137">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6359146168314178141">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6359146168314178138">
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="6359146168314178139">
+                <link role="fieldDeclaration" targetNodeId="8993872298946451029" resolveInfo="myField4" />
+              </node>
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6359146168314178140" />
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.typesystem.structure.Node_TypeOperation" id="6359146168314178145" />
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6359146168314619295">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6359146168314619296">
+            <property name="name" value="a" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6359146168314619297" />
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.Expression" id="6359146168314619298" />
+          </node>
+        </node>
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="6279881570057036950">
         <property name="name" value="f1" />

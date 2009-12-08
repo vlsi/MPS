@@ -4825,5 +4825,14 @@
       <link role="styleClass" targetNodeId="1320713984677672377" resolveInfo="InequationsGroupsLabel" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="6359146168314178671">
+    <link role="conceptDeclaration" targetNodeId="1.6359146168314178663" resolveInfo="Node_InferTypeOperation" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="6359146168314178673">
+      <property name="text" value="inferType" />
+    </node>
+    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Component" id="6359146168314178674">
+      <link role="editorComponent" targetNodeId="1176544346178" resolveInfo="_NotInRules_Component" />
+    </node>
+  </node>
 </model>
 

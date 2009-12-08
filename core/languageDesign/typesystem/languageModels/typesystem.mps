@@ -1369,11 +1369,11 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1196099050518">
-    <property name="name" value="check_NodeTypeOperation" />
+    <property name="name" value="check_NodeInferTypeOperation" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196099050519">
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="1196099140505">
         <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1196099149172">
-          <property name="value" value="don't use typeOperation within inference rules" />
+          <property name="value" value="don't use infer type operation within inference rules" />
         </node>
         <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1196099146718">
           <link role="applicableNode" targetNodeId="1196099059193" resolveInfo="typeOfExpression" />
@@ -1390,8 +1390,8 @@
       </node>
     </node>
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1196099059193">
-      <property name="name" value="node_TypeOperation" />
-      <link role="concept" targetNodeId="1.1176544042499" resolveInfo="Node_TypeOperation" />
+      <property name="name" value="operation" />
+      <link role="concept" targetNodeId="1.6359146168314178663" resolveInfo="Node_InferTypeOperation" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="1196178213544">
@@ -3373,6 +3373,32 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1035511193819763972">
       <property name="name" value="typesystemIntention" />
       <link role="concept" targetNodeId="1.1210784285454" resolveInfo="TypesystemIntention" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="6359146168314207367">
+    <property name="name" value="check_NodeTypeOperation" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6359146168314207368">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.AssertStatement" id="6359146168314207369">
+        <node role="errorString" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6359146168314207370">
+          <property name="value" value="don't use typeOperation within inference rules" />
+        </node>
+        <node role="nodeToReport" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6359146168314207371">
+          <link role="applicableNode" targetNodeId="6359146168314207375" resolveInfo="node_TypeOperation" />
+        </node>
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="6359146168314207372">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6359146168314207373">
+            <link role="baseMethodDeclaration" targetNodeId="1196177509288" resolveInfo="withinInferenceItem" />
+            <link role="classConcept" targetNodeId="1186407270695" resolveInfo="RulesUtil" />
+            <node role="actualArgument" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6359146168314207374">
+              <link role="applicableNode" targetNodeId="6359146168314207375" resolveInfo="node_TypeOperation" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="6359146168314207375">
+      <property name="name" value="node_TypeOperation" />
+      <link role="concept" targetNodeId="1.1176544042499" resolveInfo="Node_TypeOperation" />
     </node>
   </node>
 </model>

@@ -1088,6 +1088,12 @@
         <link role="template" targetNodeId="1176544786974" resolveInfo="TypeOperation_to_expression" />
       </node>
     </node>
+    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="6359146168314210129">
+      <link role="applicableConcept" targetNodeId="1.6359146168314178663" resolveInfo="Node_InferTypeOperation" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="6359146168314210131">
+        <link role="template" targetNodeId="6359146168314208085" resolveInfo="InferTypeOperation_to_expression" />
+      </node>
+    </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1176545239088">
       <link role="applicableConcept" targetNodeId="1.1176543928247" />
       <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1176545251125">
@@ -22339,6 +22345,36 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="6359146168314208085">
+    <property name="name" value="InferTypeOperation_to_expression" />
+    <link role="applicableConcept" targetNodeId="1.6359146168314178663" resolveInfo="Node_InferTypeOperation" />
+    <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6359146168314210113">
+      <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6359146168314210114">
+        <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInstance():jetbrains.mps.typesystem.inference.TypeChecker" resolveInfo="getInstance" />
+        <link role="classConcept" targetNodeId="6.~TypeChecker" resolveInfo="TypeChecker" />
+      </node>
+      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6359146168314210115">
+        <link role="baseMethodDeclaration" targetNodeId="6.~TypeChecker.getInferredTypeOf(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode" resolveInfo="getInferredTypeOf" />
+        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6359146168314210116">
+          <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="6359146168314210117">
+            <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="6359146168314210118">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6359146168314210119">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6359146168314210120">
+                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6359146168314210121">
+                    <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="6359146168314210122" />
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6359146168314210123">
+                      <link role="baseMethodDeclaration" targetNodeId="38.1213877508894" resolveInfo="getLeftExpression" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="templateFragment$attribute" type="jetbrains.mps.lang.generator.structure.TemplateFragment" id="6359146168314210124" />
     </node>
   </node>
 </model>

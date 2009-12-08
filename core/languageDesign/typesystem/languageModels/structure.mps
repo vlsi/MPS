@@ -2729,5 +2729,30 @@
       <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6359146168314178663">
+    <property name="name" value="Node_InferTypeOperation" />
+    <link role="extends" targetNodeId="5.1138411891628" resolveInfo="SNodeOperation" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="6359146168314178669">
+      <link role="conceptLinkDeclaration" targetNodeId="2.1217022095863" resolveInfo="returnType" />
+      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="6359146168314178670" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6359146168314178664">
+      <property name="value" value="inferType" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6359146168314178665">
+      <property name="value" value="get inferred type" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6359146168314178666">
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1138763241883" resolveInfo="applicableToNode" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6359146168314178667">
+      <link role="conceptPropertyDeclaration" targetNodeId="5.1138763325919" resolveInfo="applicableToLink" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="6359146168314178668">
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
 </model>
 

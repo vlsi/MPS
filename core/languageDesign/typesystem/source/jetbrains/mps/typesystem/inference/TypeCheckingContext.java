@@ -602,6 +602,17 @@ public class TypeCheckingContext {
     }
   }
 
+  public SNode computeTypeInferenceMode(SNode node) {
+    final NodeTypesComponent temporaryComponent;
+    temporaryComponent = this.createTemporaryTypesComponent();
+    try {
+      return temporaryComponent.computeTypesForNodeInferenceMode(node);
+    } finally {
+      temporaryComponent.dispose(); //in order to prevent memory leaks.
+      this.popTemporaryTypesComponent();
+    }
+  }
+
   public void setOperationContext(IOperationContext context) {
     myOperationContext = context;
   }

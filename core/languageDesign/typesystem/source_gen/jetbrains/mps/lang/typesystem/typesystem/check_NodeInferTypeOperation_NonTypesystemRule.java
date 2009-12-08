@@ -12,20 +12,20 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 
-public class check_NodeTypeOperation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
-  public check_NodeTypeOperation_NonTypesystemRule() {
+public class check_NodeInferTypeOperation_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  public check_NodeInferTypeOperation_NonTypesystemRule() {
   }
 
-  public void applyRule(final SNode node_TypeOperation, final TypeCheckingContext typeCheckingContext) {
-    if (!(!(RulesUtil.withinInferenceItem(node_TypeOperation)))) {
+  public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext) {
+    if (!(!(RulesUtil.withinInferenceItem(operation)))) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node_TypeOperation, "don't use typeOperation within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "6359146168314207369", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(operation, "don't use infer type operation within inference rules", "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1196099140505", intentionProvider, errorTarget);
     }
   }
 
   public String getApplicableConceptFQName() {
-    return "jetbrains.mps.lang.typesystem.structure.Node_TypeOperation";
+    return "jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation";
   }
 
   public boolean isApplicable(SNode argument) {

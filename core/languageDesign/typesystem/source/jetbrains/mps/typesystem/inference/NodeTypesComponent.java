@@ -285,10 +285,10 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   public void computeTypes(boolean refreshTypes) {
-    computeTypes(myRootNode, refreshTypes, true, new ArrayList<SNode>());
+    computeTypes(myRootNode, refreshTypes, true, new ArrayList<SNode>(), false);
   }
 
-  private void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes) {
+  private void computeTypes(SNode nodeToCheck, boolean refreshTypes, boolean forceChildrenCheck, List<SNode> additionalNodes, boolean inferenceMode) {
     assert nodeToCheck.getContainingRoot() == myRootNode;
     try {
       if (!isIncrementalMode() || refreshTypes) {
@@ -305,7 +305,9 @@ public class NodeTypesComponent implements EditorMessageOwner {
         return;
       }
       clearEquationManager();
-
+      if (inferenceMode) {
+        getEquationManager().setInferenceMode();
+      }
       computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes);
       solveInequationsAndExpandTypes();
       performActionsAfterChecking();
@@ -376,11 +378,15 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   public SNode computeTypesForNodeDuringGeneration(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, true);
+    return computeTypesForNode_special(initialNode, true, new ArrayList<SNode>(), false);
   }
 
   public SNode computeTypesForNodeDuringResolving(SNode initialNode) {
-    return computeTypesForNode_special(initialNode, false);
+    return computeTypesForNode_special(initialNode, false, new ArrayList<SNode>(), false);
+  }
+
+  public SNode computeTypesForNodeInferenceMode(SNode initialNode) {
+    return computeTypesForNode_special(initialNode, false, new ArrayList<SNode>(), true);
   }
 
   public InequationSystem computeInequationsForHole(SNode hole, boolean holeIsAType) {
@@ -391,7 +397,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
       myIsSmartCompletion = true;
       myHole = hole;
       myHoleIsAType = holeIsAType;
-      computeTypesForNode_special(hole.getParent(), false, additionalNodes);
+      computeTypesForNode_special(hole.getParent(), false, additionalNodes, false);
       return myHoleTypeWrapper.getInequationSystem();
     } finally {
       myIsSmartCompletion = false;
@@ -414,11 +420,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
     return null;
   }
 
-  private SNode computeTypesForNode_special(SNode initialNode, boolean refreshTypes) {
-    return computeTypesForNode_special(initialNode, refreshTypes, new ArrayList<SNode>());
-  }
-
-  private SNode computeTypesForNode_special(SNode initialNode, boolean refreshTypes, List<SNode> givenAdditionalNodes) {
+  private SNode computeTypesForNode_special(SNode initialNode, boolean refreshTypes, List<SNode> givenAdditionalNodes, boolean inferenceMode) {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
@@ -429,14 +431,14 @@ public class NodeTypesComponent implements EditorMessageOwner {
         if (prevNode != null) {
           additionalNodes.add(prevNode);
         }
-        computeTypes(node, refreshTypes, false, additionalNodes);
+        computeTypes(node, refreshTypes, false, additionalNodes, inferenceMode);
         type = getType(initialNode);
         if (type == null ||
           type.getAdapter() instanceof RuntimeTypeVariable ||
           (type.getAdapter() instanceof RuntimeHoleType && myHoleTypeWrapper.getInequationSystem().isEmpty()) ||
           !type.getAdapter().getDescendants(RuntimeTypeVariable.class).isEmpty()) {
           if (node.isRoot()) {
-            computeTypes(node, refreshTypes, true, new ArrayList<SNode>()); //the last possibility: check the whole root
+            computeTypes(node, refreshTypes, true, new ArrayList<SNode>(), inferenceMode); //the last possibility: check the whole root
             type = getType(initialNode);
             return type;
           }
