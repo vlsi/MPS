@@ -56,36 +56,39 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
 
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     final SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    List<SNode> fields = SLinkOperations.getTargets(classConcept, "field", true);
     final SNode rightmostExpression;
-    SNode firstField = ListSequence.fromList(fields).first();
+    SNode firstField = ListSequence.fromList(((List<SNode>)intentionContext.getContextParametersMap().get("selectedFields"))).first();
     SNode currentExpression = null;
-    for (SNode field : fields) {
+    for (SNode field : ((List<SNode>)intentionContext.getContextParametersMap().get("selectedFields"))) {
       SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
       SLinkOperations.setTarget(fieldRef, "fieldDeclaration", field, false);
-      SNode item = new _Quotations.QuotationClass_7().createNode(((field == firstField ?
+      SNode item = new _Quotations.QuotationClass_6().createNode(((field == firstField ?
         "" :
         ", "
       )) + SPropertyOperations.getString(field, "name") + "=");
       SNode dotExpression = new _Quotations.QuotationClass_36().createNode(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), fieldRef);
       if (field == firstField) {
-        currentExpression = new _Quotations.QuotationClass_29().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
+        currentExpression = new _Quotations.QuotationClass_33().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
         currentExpression = new _Quotations.QuotationClass_38().createNode(dotExpression, currentExpression);
       } else {
-        currentExpression = new _Quotations.QuotationClass_8().createNode(item, currentExpression);
+        currentExpression = new _Quotations.QuotationClass_7().createNode(item, currentExpression);
         currentExpression = new _Quotations.QuotationClass_37().createNode(dotExpression, currentExpression);
       }
     }
-    if (ListSequence.fromList(fields).isEmpty()) {
-      rightmostExpression = new _Quotations.QuotationClass_19().createNode(SPropertyOperations.getString(classConcept, "name") + "{}");
+    if (ListSequence.fromList(((List<SNode>)intentionContext.getContextParametersMap().get("selectedFields"))).isEmpty()) {
+      rightmostExpression = new _Quotations.QuotationClass_18().createNode(SPropertyOperations.getString(classConcept, "name") + "{}");
     } else {
-      rightmostExpression = new _Quotations.QuotationClass_9().createNode(currentExpression);
+      rightmostExpression = new _Quotations.QuotationClass_8().createNode(currentExpression);
     }
-    SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_6().createNode(rightmostExpression));
+    SNode method = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_23().createNode(rightmostExpression));
+    editorContext.select(method);
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
-    return true;
+    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, editorContext.getOperationContext().getMainFrame(), node);
+    selectFieldsDialog.showDialog();
+    intentionContext.getContextParametersMap().put("selectedFields", selectFieldsDialog.getSelectedFields());
+    return selectFieldsDialog.getAnswer();
   }
 
   public String getLocationString() {

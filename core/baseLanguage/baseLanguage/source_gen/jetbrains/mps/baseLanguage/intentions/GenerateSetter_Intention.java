@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionContext;
-import com.intellij.openapi.util.Pair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class GenerateSetter_Intention extends GenerateIntention implements Intention {
@@ -72,7 +71,8 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
 
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    for (final SNode field : (List<SNode>)intentionContext.getContextParametersMap().get("selectedFields")) {
+    SNode lastAdded = null;
+    for (final SNode field : ((List<SNode>)intentionContext.getContextParametersMap().get("selectedFields"))) {
       final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field);
       boolean setterIsAbsent = true;
       if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
@@ -85,10 +85,13 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
       if (!(setterIsAbsent)) {
         continue;
       }
-      Pair<String, String> p;
       final SNode thisExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
       // Method creation begins 
-      SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_30().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), SPropertyOperations.getString(field, "name"), setterName));
+      SNode added = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_20().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), SPropertyOperations.getString(field, "name"), setterName));
+      lastAdded = added;
+    }
+    if (lastAdded != null) {
+      editorContext.select(lastAdded);
     }
   }
 

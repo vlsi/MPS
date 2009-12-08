@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionContext;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -95,10 +94,9 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
 
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    List<SNode> fields = SLinkOperations.getTargets(classConcept, "field", true);
-    Pair p;
     final SNode thisExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
-    for (final SNode field : fields) {
+    SNode lastAdded = null;
+    for (final SNode field : ((List<SNode>)intentionContext.getContextParametersMap().get("selectedFields"))) {
       final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field);
       final Wrappers._boolean getterIsAbsent = new Wrappers._boolean(true);
       ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {
@@ -108,9 +106,10 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
           }
         }
       });
-      if (getterIsAbsent.value) {
-        SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_32().createNode(SLinkOperations.getTarget(field, "type", true), thisExpression, field, getterName));
+      if (!(getterIsAbsent.value)) {
+        continue;
       }
+      lastAdded = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_21().createNode(SLinkOperations.getTarget(field, "type", true), thisExpression, field, getterName));
 
       final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field);
       final Wrappers._boolean setterIsAbsent = new Wrappers._boolean(true);
@@ -124,12 +123,18 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
       if (!(setterIsAbsent.value)) {
         continue;
       }
-      SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_33().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), SPropertyOperations.getString(field, "name"), setterName));
+      lastAdded = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_22().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), SPropertyOperations.getString(field, "name"), setterName));
+    }
+    if (lastAdded != null) {
+      editorContext.select(lastAdded);
     }
   }
 
   public boolean executeUI(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
-    return true;
+    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, editorContext.getOperationContext().getMainFrame(), node);
+    selectFieldsDialog.showDialog();
+    intentionContext.getContextParametersMap().put("selectedFields", selectFieldsDialog.getSelectedFields());
+    return selectFieldsDialog.getAnswer();
   }
 
   public String getLocationString() {

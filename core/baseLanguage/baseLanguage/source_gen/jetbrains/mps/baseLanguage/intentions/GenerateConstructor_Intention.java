@@ -56,7 +56,7 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
 
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    for (SNode selectedSuperConstructor : (List<SNode>)intentionContext.getContextParametersMap().get("selectedConstructors")) {
+    for (SNode selectedSuperConstructor : ((List<SNode>)intentionContext.getContextParametersMap().get("selectedConstructors"))) {
       SNode constructor = SLinkOperations.addNewChild(classConcept, "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
       SLinkOperations.setNewChild(constructor, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
       if (ListSequence.fromList(SLinkOperations.getTargets(selectedSuperConstructor, "parameter", true)).isNotEmpty()) {
@@ -70,7 +70,7 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
           SLinkOperations.setTarget(paramReference, "variableDeclaration", parameter, false);
         }
       }
-      for (SNode field : (List<SNode>)intentionContext.getContextParametersMap().get("selectedFields")) {
+      for (SNode field : ((List<SNode>)intentionContext.getContextParametersMap().get("selectedFields"))) {
         SNode parameterDeclaration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
         SLinkOperations.setTarget(parameterDeclaration, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(field, "type", true)), true);
         SPropertyOperations.set(parameterDeclaration, "name", NameUtil.decapitalize(GenerateGettersAndSettersUtil.getPreparedFieldName(field)));
