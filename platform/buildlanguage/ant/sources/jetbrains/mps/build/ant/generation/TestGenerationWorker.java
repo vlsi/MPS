@@ -1,7 +1,5 @@
 package jetbrains.mps.build.ant.generation;
 
-import jetbrains.mps.build.ant.MpsWorker;
-import junit.framework.*;
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.BuildException;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
@@ -36,6 +34,7 @@ import java.io.*;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.ProjectManager;
+import junit.framework.TestFailure;
 
 public class TestGenerationWorker extends GeneratorWorker {
 
@@ -76,8 +75,6 @@ public class TestGenerationWorker extends GeneratorWorker {
     collectFromModelFiles(models);
     executeTask(project, new GenerationObjects(Collections.EMPTY_SET, modules, models));
 
-    disposeProject(project);
-    projectFile.deleteOnExit();
     dispose();
 
     showStatistic();
@@ -126,7 +123,20 @@ public class TestGenerationWorker extends GeneratorWorker {
       compilationResult = Collections.EMPTY_LIST;
     }
 
-    StringBuffer sb = createDetailedReport(compilationResult, Collections.<TestFailure>emptyList(), diffReports);
+    List<TestFailure> testResults;
+    if (Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.INVOKE_TESTS)) && Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE))) {
+      testResults = ModelAccess.instance().runReadAction(new Computable<List<TestFailure>>() {
+        public List<TestFailure> compute() {
+          return ProjectTester.invokeTests(myGenerationType, outputModels);
+        }
+      });
+    } else {
+      testResults = Collections.EMPTY_LIST;
+    }
+
+    myGenerationType.clean();
+
+    StringBuffer sb = createDetailedReport(compilationResult, testResults, diffReports);
     myMessageHandler.clean();
     if (sb.length() > 0) {
       myTestFailed = true;
@@ -134,43 +144,6 @@ public class TestGenerationWorker extends GeneratorWorker {
       System.out.println("");
     }
     System.out.println(myBuildServerMessageFormat.formatTestFinish(currentTestName));
-
-    // here we invoke generated tests
-    if (invokeTests()) {
-      final TestResult testResult = new TestResult();
-      testResult.addListener(new TestListener() {
-        @Override
-        public void addError(Test test, Throwable t) {
-          System.out.println(myBuildServerMessageFormat.formatTestFailure(myBuildServerMessageFormat.escapeBuildMessage(test + ""),
-            myBuildServerMessageFormat.escapeBuildMessage(t.getMessage()),
-            myBuildServerMessageFormat.escapeBuildMessage(MpsWorker.extractStackTrace(t))));
-        }
-
-        @Override
-        public void addFailure(Test test, AssertionFailedError t) {
-          System.out.println(myBuildServerMessageFormat.formatTestFailure(myBuildServerMessageFormat.escapeBuildMessage(test + ""),
-            myBuildServerMessageFormat.escapeBuildMessage(t.getMessage()),
-            myBuildServerMessageFormat.escapeBuildMessage(MpsWorker.extractStackTrace(t))));
-        }
-
-        @Override
-        public void endTest(Test test) {
-          System.out.println(myBuildServerMessageFormat.formatTestFinish(myBuildServerMessageFormat.escapeBuildMessage(test + "")));
-        }
-
-        @Override
-        public void startTest(Test test) {
-          System.out.println(myBuildServerMessageFormat.formatTestStart(myBuildServerMessageFormat.escapeBuildMessage(test + "")));
-        }
-      });
-      ProjectTester.invokeTests(myGenerationType, outputModels, testResult);
-    }
-
-    myGenerationType.clean();
-  }
-
-  private boolean invokeTests() {
-    return Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.INVOKE_TESTS)) && Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE));
   }
 
   @Override
@@ -251,7 +224,11 @@ public class TestGenerationWorker extends GeneratorWorker {
     if (testFailures.size() > 0) {
       sb.append("Test Failures:\n");
       for (TestFailure failure : testFailures) {
-        formatTestFailure(sb, failure);
+        sb.append("  ");
+        StringWriter writer = new StringWriter();
+        failure.thrownException().printStackTrace(new PrintWriter(writer));
+        sb.append(writer.getBuffer());
+        sb.append("\n");
       }
       sb.append("\n");
     }
@@ -269,14 +246,6 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
 
     return myBuildServerMessageFormat.escapeBuildMessage(sb);
-  }
-
-  private void formatTestFailure(StringBuffer sb, TestFailure failure) {
-    sb.append("  ");
-    StringWriter writer = new StringWriter();
-    failure.thrownException().printStackTrace(new PrintWriter(writer));
-    sb.append(writer.getBuffer());
-    sb.append("\n");
   }
 
   @Override
@@ -302,8 +271,7 @@ public class TestGenerationWorker extends GeneratorWorker {
         new ModuleContext(myModule, myProject),
         generationType,
         new EmptyProgressIndicator(),
-        messageHandler,
-        invokeTests());
+        messageHandler);
     }
 
     @Override

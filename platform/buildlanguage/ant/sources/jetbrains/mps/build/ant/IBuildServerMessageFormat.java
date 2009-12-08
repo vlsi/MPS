@@ -2,7 +2,6 @@ package jetbrains.mps.build.ant;
 
 public interface IBuildServerMessageFormat {
   StringBuffer escapeBuildMessage(StringBuffer message);
-  String escapeBuildMessage(String message);
   String getLinesSeparator();
   String formatTestStart(String testName);
   String formatTestFinish(String testName);
