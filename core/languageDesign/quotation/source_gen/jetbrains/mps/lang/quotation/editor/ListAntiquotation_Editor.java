@@ -10,8 +10,6 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -63,9 +61,6 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_7120_0");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-      style.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return ListAntiquotation_Editor._StyleParameter_QueryFunction_7120_0((cell == null ?
@@ -87,9 +82,6 @@ public class ListAntiquotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_7120_1");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-      style.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return ListAntiquotation_Editor._StyleParameter_QueryFunction_7120_1((cell == null ?

@@ -64,7 +64,6 @@
             </node>
           </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1225888887541" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem" id="1233855764481">
           <property name="flag" value="true" />
         </node>
@@ -104,7 +103,6 @@
             </node>
           </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1225888894374" />
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem" id="1233855783219">
           <property name="flag" value="true" />
         </node>
@@ -270,13 +268,6 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1196350915573">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1196350915574">
         <property name="text" value="*(" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1225889936419">
-          <property name="flag" value="false" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1225889943625" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225889928527">
-          <property name="value" value="0.0" />
-        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399677893">
           <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Color" id="1214399677894">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214399677895">
@@ -313,13 +304,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1196350915580">
         <property name="text" value=")*" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1225889950033" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1225889952395">
-          <property name="flag" value="false" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225890113221">
-          <property name="value" value="0.0" />
-        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678072">
           <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Color" id="1214399678073">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214399678074">
@@ -570,11 +554,6 @@
             </node>
           </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1225889035914">
-          <property name="value" value="0.0" />
-        </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1225889039323" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1225889041028" />
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="6489343236075017070">
         <property name="allowEmptyText" value="true" />
@@ -599,9 +578,6 @@
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1196350915681">
         <property name="text" value=")^" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem" id="1224771654552">
-          <property name="value" value="0.0" />
-        </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678255">
           <node role="query" type="jetbrains.mps.lang.editor.structure.QueryFunction_Color" id="1214399678256">
             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1214399678257">
@@ -614,8 +590,6 @@
             </node>
           </node>
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem" id="1225889047374" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem" id="1225889048611" />
       </node>
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="1237808134565" />
     </node>

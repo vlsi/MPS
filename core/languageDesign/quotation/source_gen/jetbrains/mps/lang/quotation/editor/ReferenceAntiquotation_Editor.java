@@ -12,8 +12,6 @@ import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.AttributeCalculator;
 import java.awt.Color;
-import jetbrains.mps.nodeEditor.style.Padding;
-import jetbrains.mps.nodeEditor.style.Measure;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.smodel.AttributesRolesUtil;
@@ -75,9 +73,6 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-      style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-      style.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -88,7 +83,6 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Constant_6627_1");
     {
       Style style = editorCell.getStyle();
-      style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
       style.set(StyleAttributes.TEXT_COLOR, new AttributeCalculator<Color>() {
         public Color calculate(EditorCell cell) {
           return ReferenceAntiquotation_Editor._StyleParameter_QueryFunction_6627_0((cell == null ?
@@ -100,8 +94,6 @@ public class ReferenceAntiquotation_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
-      style.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
     }
     editorCell.setDefaultText("");
     return editorCell;

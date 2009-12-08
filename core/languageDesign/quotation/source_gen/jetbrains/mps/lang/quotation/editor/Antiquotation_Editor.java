@@ -72,7 +72,6 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.FIRST_POSITION_ALLOWED, false);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
     editorCell.setDefaultText("");
@@ -95,7 +94,6 @@ public class Antiquotation_Editor extends DefaultNodeEditor {
           ));
         }
       });
-      style.set(StyleAttributes.LAST_POSITION_ALLOWED, false);
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
     editorCell.setDefaultText("");
