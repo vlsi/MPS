@@ -20,6 +20,9 @@ public class GenerateGettersAndSettersUtil {
 
   public static String getPreparedFieldName(SNode fieldDeclaration) {
     String rawName = SPropertyOperations.getString(fieldDeclaration, "name");
+    if (rawName == null || rawName.length() == 0) {
+      rawName = "unnamedField";
+    }
     if (rawName.startsWith("my") && rawName.length() > 2 && Character.isUpperCase(rawName.charAt(2))) {
       rawName = rawName.substring(2);
     }
