@@ -4,8 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
-
-import jetbrains.mps.vcs.VcsHelper.VcsMergeVersion;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -99,8 +97,8 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
         }
       }
       try {
-        SModel[] models = ModelUtils.loadZippedModels(latestBackup, VcsMergeVersion.values());
-        ReRunMergeFromBackup_Action.this.doMerge(models[VcsMergeVersion.MINE.ordinal()], models[VcsMergeVersion.BASE.ordinal()], models[VcsMergeVersion.THEIRS.ordinal()]);
+        SModel[] models = ModelUtils.loadZippedModels(latestBackup, VcsHelper.VcsMergeVersion.values());
+        ReRunMergeFromBackup_Action.this.doMerge(models[VcsHelper.VcsMergeVersion.MINE.ordinal()], models[VcsHelper.VcsMergeVersion.BASE.ordinal()], models[VcsHelper.VcsMergeVersion.THEIRS.ordinal()]);
       } catch (FileNotFoundException e) {
         Messages.showErrorDialog("Backup File\n" + latestBackup.getPath() + "\nIs Invalid:\n" + e.getMessage(), "Invalid Backup File");
       }

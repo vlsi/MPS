@@ -55,7 +55,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034f(jetbrains.mps.lang.intentions.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a4(jetbrains.mps.lang.actions.constraints)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
-  <maxImportIndex value="270" />
+  <maxImportIndex value="271" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.workbench.actions.nodes(jetbrains.mps.workbench.actions.nodes@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.workbench.actions.model(jetbrains.mps.workbench.actions.model@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.workbench.actions.language(jetbrains.mps.workbench.actions.language@java_stub)" version="-1" />
@@ -217,6 +217,7 @@
   <import index="266" modelUID="f:java_stub#jetbrains.mps.ide.ui.filechoosers.treefilechooser(jetbrains.mps.ide.ui.filechoosers.treefilechooser@java_stub)" version="-1" />
   <import index="268" modelUID="f:java_stub#jetbrains.mps.vcs(jetbrains.mps.vcs@java_stub)" version="-1" />
   <import index="270" modelUID="f:java_stub#com.intellij.ui.treeStructure(com.intellij.ui.treeStructure@java_stub)" version="-1" />
+  <import index="271" modelUID="f:java_stub#jetbrains.mps.debug.runtime(jetbrains.mps.debug.runtime@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1204991215587">
     <property name="name" value="NodeActions" />
     <property name="package" value="Menu.ProjectPane.Node" />
@@ -44257,6 +44258,71 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3010989094831961438" />
     </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3010989094831961434" />
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="8189837781841078237">
+    <property name="package" value="Menu.EditorPopup.Actions" />
+    <property name="name" value="AddBreakpoint" />
+    <property name="caption" value="Add Breakpoint" />
+    <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="8189837781841078238">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8189837781841078239">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8189837781841205910">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8189837781841278658">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8189837781841277064">
+              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8189837781841205911">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8189837781841205912" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="8189837781841205913">
+                  <link role="member" targetNodeId="8189837781841205909" resolveInfo="project" />
+                </node>
+              </node>
+              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8189837781841278528">
+                <link role="baseMethodDeclaration" targetNodeId="127.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="8189837781841278663">
+                  <link role="classifier" targetNodeId="271.~BreakpointManager" resolveInfo="BreakpointManager" />
+                </node>
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8189837781841278665">
+              <link role="baseMethodDeclaration" targetNodeId="271.~BreakpointManager.addBreakpoint(jetbrains.mps.debug.runtime.MPSBreakpoint):void" resolveInfo="addBreakpoint" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8189837781841278666">
+                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="8189837781841352402">
+                  <link role="baseMethodDeclaration" targetNodeId="271.~MPSBreakpoint.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="MPSBreakpoint" />
+                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8189837781841352406">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8189837781841352404" />
+                    <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="8189837781841352988">
+                      <link role="member" targetNodeId="8189837781841352987" resolveInfo="selectedNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="8189837781841352987">
+      <property name="name" value="selectedNode" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="8189837781841136310">
+      <property name="name" value="editorComponent" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.EDITOR_COMPONENT" resolveInfo="EDITOR_COMPONENT" />
+    </node>
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="8189837781841205909">
+      <property name="name" value="project" />
+      <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="8189837781841352989">
+    <property name="package" value="Menu.EditorPopup" />
+    <property name="name" value="Breakpoints" />
+    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="8189837781841352991">
+      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="8189837781841352992">
+        <link role="action" targetNodeId="8189837781841078237" resolveInfo="AddBreakpoint" />
+      </node>
+    </node>
+    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="8189837781841352993">
+      <link role="modifiedGroup" targetNodeId="1204991231476" resolveInfo="EditorPopup" />
+    </node>
   </node>
 </model>
 

@@ -2,6 +2,7 @@ package jetbrains.mps.debug.runtime;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.BookmarkInfo;
 
 /**
  * Created by IntelliJ IDEA.
@@ -27,5 +28,24 @@ public class MPSBreakpoint {
 
   public SNode getSNode() {
     return myNodePointer.getNode();
+  }
+
+  public BreakpointInfo createBreakpointInfo() {
+    return new BreakpointInfo(myNodePointer.getModelReference().getSModelFqName().toString(),
+      myNodePointer.getNodeId().toString());
+  }
+
+  public static MPSBreakpoint fromBreakpointInfo(BreakpointInfo breakpointInfo) {
+    return new MPSBreakpoint(new SNodePointer(breakpointInfo.myModelReference, breakpointInfo.myNodeId));
+  }
+
+  public static class BreakpointInfo {
+    public String myModelReference;
+    public String myNodeId;
+
+    public BreakpointInfo(String modelReference, String nodeId) {
+      myModelReference = modelReference;
+      myNodeId = nodeId;
+    }
   }
 }
