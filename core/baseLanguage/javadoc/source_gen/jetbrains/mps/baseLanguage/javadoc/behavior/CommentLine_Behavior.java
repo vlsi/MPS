@@ -4,19 +4,21 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.javadoc.editor.NodeCaretPair;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.apache.commons.lang.StringUtils;
 
 public class CommentLine_Behavior {
   public static void init(SNode thisNode) {
     SLinkOperations.addNewChild(thisNode, "part", "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
   }
 
-  public static boolean call_tryMergeToRight_439148907936414403(SNode thisNode, int index) {
+  public static NodeCaretPair call_tryMergeToRight_439148907936414403(SNode thisNode, int index) {
     if (index >= 0 && index + 1 < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).count() && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index + 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
       SNode leftPart = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
+      int offset = SPropertyOperations.getString(leftPart, "text").length();
       SNode rightPart = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "part", true)).getElement(index + 1), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
 
       String text = ((StringUtils.isEmpty(SPropertyOperations.getString(leftPart, "text")) ?
@@ -28,8 +30,8 @@ public class CommentLine_Behavior {
       ));
       SPropertyOperations.set(leftPart, "text", text);
       SNodeOperations.deleteNode(rightPart);
-      return true;
+      return new NodeCaretPair(leftPart, offset);
     }
-    return false;
+    return null;
   }
 }
