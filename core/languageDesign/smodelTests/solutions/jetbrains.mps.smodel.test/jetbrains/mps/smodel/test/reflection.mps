@@ -173,18 +173,6 @@
       <property name="name" value="childContainingLinks" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1433948805480755021" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1433948805480755022">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3133812930279945766">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3133812930279953592">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3133812930279945767">
-              <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3133812930279953591">
-                <link role="baseMethodDeclaration" targetNodeId="6.~Exception.&lt;init&gt;()" resolveInfo="Exception" />
-              </node>
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3133812930279953596">
-              <link role="baseMethodDeclaration" targetNodeId="6.~Throwable.printStackTrace():void" resolveInfo="printStackTrace" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1433948805480825417">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2906110183022478432">
             <link role="baseMethodDeclaration" targetNodeId="3386205146662078808" resolveInfo="assertEquals" />
