@@ -95,8 +95,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
 
-  private static final int SCROLL_GAP = 15;
-  public static final boolean USE_NEW_TOOLTIPS = true;
+  private static final int SCROLL_GAP = 15;  
 
   private final Object myAdditionalPaintersLock = new Object();
 
@@ -467,11 +466,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myIntentionsSupport = new IntentionsSupport(this);
     myAutoValidator = new AutoValidator(this);
 
-    if (USE_NEW_TOOLTIPS) {
-      MPSToolTipManager.getInstance().registerComponent(this);
-    } else {
-      ToolTipManager.sharedInstance().registerComponent(this);
-    }
+    MPSToolTipManager.getInstance().registerComponent(this);
+
     CaretBlinker.getInstance().registerEditor(this);
 
     KeyboardFocusManager.getCurrentKeyboardFocusManager().addPropertyChangeListener("focusOwner", myFocusListener = new PropertyChangeListener() {
@@ -676,54 +672,17 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void showMessageTooltip() {
-    if (USE_NEW_TOOLTIPS) {
-      EditorCell cell = getSelectedCell();
-      if (cell == null) {
-        return;
-      }
-      String text = getMessageTextFor(cell);
-      Point point = new Point(cell.getX(), cell.getY() + cell.getHeight());
-      MPSToolTipManager.getInstance().showToolTip(text, this, point);
-    } else {
-      try {
-        //todo this is a hack but I don't know other way to show tooltip programatically
-        //probably we should create our own tooltip facility instead
-        EditorCell cell = getSelectedCell();
-        if (cell == null) {
-          return;
-        }
-
-        ToolTipManager toolTipManager = ToolTipManager.sharedInstance();
-
-        Field showImmediatelyField = toolTipManager.getClass().getDeclaredField("showImmediately");
-        showImmediatelyField.setAccessible(true);
-        showImmediatelyField.set(toolTipManager, true);
-
-        toolTipManager.mouseMoved(new MouseEvent(
-          this,
-          Event.MOUSE_MOVE, 0, 0,
-          cell.getX(), cell.getY(), 0, false));
-      } catch (Exception e) {
-        LOG.error(e);
-      }
+    EditorCell cell = getSelectedCell();
+    if (cell == null) {
+      return;
     }
+    String text = getMessageTextFor(cell);
+    Point point = new Point(cell.getX(), cell.getY() + cell.getHeight());
+    MPSToolTipManager.getInstance().showToolTip(text, this, point);
   }
 
   public void hideMessageToolTip() {
-    if (USE_NEW_TOOLTIPS) {
-      MPSToolTipManager.getInstance().hideToolTip();
-    } else {
-      try {
-        //todo this is a hack but I don't know other way to show tooltip programatically
-        ToolTipManager toolTipManager = ToolTipManager.sharedInstance();
-        toolTipManager.mousePressed(new MouseEvent(
-          this,
-          Event.MOUSE_MOVE, 0, 0,
-          0, 0, 0, false));
-      } catch (Exception e) {
-        LOG.error(e);
-      }
-    }
+    MPSToolTipManager.getInstance().hideToolTip();
   }
 
   public void editNode(SNode node, IOperationContext operationContext) {

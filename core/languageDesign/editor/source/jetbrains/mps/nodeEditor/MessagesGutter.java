@@ -140,12 +140,7 @@ public class MessagesGutter extends JPanel {
 
   private class MyMessagesGutter extends JPanel {
     public MyMessagesGutter() {
-      if (EditorComponent.USE_NEW_TOOLTIPS) {
-        MPSToolTipManager.getInstance().registerComponent(this);
-      } else {
-        ToolTipManager.sharedInstance().registerComponent(this);
-      }
-
+      MPSToolTipManager.getInstance().registerComponent(this);
 
       addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
