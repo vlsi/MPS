@@ -67,18 +67,23 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
     final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
     fileBasedIndex.processAllKeys(indexName, new Processor<SNodeDescriptor>() {
       public boolean process(SNodeDescriptor s) {
-        if (scope.getModelDescriptor(s.getModelReference()) != null) {
-          if (changedModels.contains(s.getModelReference()) || cm.hasGetter(s.getConceptFqName(), INamedConcept.NAME)) {
-            hasToLoad.add(s.getModelReference());
-          } else {
-            if (!fileBasedIndex.getContainingFiles(indexName, s, new EverythingGlobalScope(getIdeaProject())).isEmpty()) {
-              keys.add(s);
-            }
-          }
+        if (scope.getModelDescriptor(s.getModelReference()) == null) return true;
+
+        if (changedModels.contains(s.getModelReference()) || cm.hasGetter(s.getConceptFqName(), INamedConcept.NAME)) {
+          hasToLoad.add(s.getModelReference());
+        } else {
+          keys.add(s);
         }
+
         return true;
       }
     }, getIdeaProject());
+
+    for (SNodeDescriptor s : keys) {
+      if (!fileBasedIndex.getContainingFiles(indexName, s, new EverythingGlobalScope(getIdeaProject())).isEmpty()) {
+        keys.remove(s);
+      }
+    }
 
     for (SModelReference ref : hasToLoad) {
       SModelDescriptor sm = scope.getModelDescriptor(ref);
