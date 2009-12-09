@@ -18,6 +18,7 @@ package jetbrains.mps.ide.hierarchy;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -95,7 +96,12 @@ public class HierarchyViewTool extends AbstractHierarchyView<AbstractConceptDecl
 
     protected AbstractConceptDeclaration getParent(AbstractConceptDeclaration node) {
       if (node instanceof ConceptDeclaration) {
-        return ((ConceptDeclaration) node).getExtends();
+        ConceptDeclaration concept = ((ConceptDeclaration) node);
+        ConceptDeclaration extendsConcept = concept.getExtends();
+        if (extendsConcept == null && !NameUtil.nodeFQName(concept).equals(BaseConcept.concept)) {
+          extendsConcept = SModelUtil_new.getBaseConcept();
+        }
+        return extendsConcept;
       } else {
         return null;
       }
