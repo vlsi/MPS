@@ -34,7 +34,7 @@ public class GenerationUtils {
         SNode hCollection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
         SLinkOperations.setTarget(hCollection, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
         for (SNode linePart : lineParts) {
-          SLinkOperations.addChild(hCollection, "childCellModel", LinePart_Behavior.call_createCellModel_1238614099938(linePart, partsToLinks));
+          ListSequence.fromList(SLinkOperations.getTargets(hCollection, "childCellModel", true)).addElement(LinePart_Behavior.call_createCellModel_1238614099938(linePart, partsToLinks));
         }
         return hCollection;
       }
@@ -44,9 +44,9 @@ public class GenerationUtils {
       for (SNode line : lines) {
         SNode hCollection = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
         SLinkOperations.setTarget(hCollection, "cellLayout", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", null), true);
-        SLinkOperations.addChild(vCollection, "childCellModel", hCollection);
+        ListSequence.fromList(SLinkOperations.getTargets(vCollection, "childCellModel", true)).addElement(hCollection);
         for (SNode linePart : SLinkOperations.getTargets(line, "linePart", true)) {
-          SLinkOperations.addChild(hCollection, "childCellModel", LinePart_Behavior.call_createCellModel_1238614099938(linePart, partsToLinks));
+          ListSequence.fromList(SLinkOperations.getTargets(hCollection, "childCellModel", true)).addElement(LinePart_Behavior.call_createCellModel_1238614099938(linePart, partsToLinks));
         }
       }
       return vCollection;
@@ -58,8 +58,8 @@ public class GenerationUtils {
     if ((expressionConcept != null)) {
       SNode rtBuilder = new _Quotations.QuotationClass_2().createNode(SNodeOperations.cast(MapSequence.fromMap(linePartsToLinks).get(SLinkOperations.getTarget(binaryOperationConcept, "leftTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), MapSequence.fromMap(conceptsToTargets).get(binaryOperationConcept), expressionConcept);
       SNode ltBuilder = new _Quotations.QuotationClass_3().createNode(SNodeOperations.cast(MapSequence.fromMap(linePartsToLinks).get(SLinkOperations.getTarget(binaryOperationConcept, "rightTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), MapSequence.fromMap(conceptsToTargets).get(binaryOperationConcept), expressionConcept);
-      SLinkOperations.addChild(actions, "actionsBuilder", rtBuilder);
-      SLinkOperations.addChild(actions, "actionsBuilder", ltBuilder);
+      ListSequence.fromList(SLinkOperations.getTargets(actions, "actionsBuilder", true)).addElement(rtBuilder);
+      ListSequence.fromList(SLinkOperations.getTargets(actions, "actionsBuilder", true)).addElement(ltBuilder);
     }
   }
 }

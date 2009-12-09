@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class _Line_Actions extends EditorCellKeyMap {
@@ -149,7 +150,7 @@ public class _Line_Actions extends EditorCellKeyMap {
           SNode currentSibling = sibling;
           sibling = SNodeOperations.cast(SNodeOperations.getNextSibling(sibling), "jetbrains.mpslite.structure.LinePart");
           line.removeChild(currentSibling);
-          SLinkOperations.addChild(nextLine, "linePart", currentSibling);
+          ListSequence.fromList(SLinkOperations.getTargets(nextLine, "linePart", true)).addElement(currentSibling);
         }
       }
     }

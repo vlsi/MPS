@@ -23,7 +23,7 @@ public class ReferencePart_Behavior {
     SNode targetConcept = SLinkOperations.getTarget(linkDeclaration, "target", false);
     if (SConceptOperations.isSubConceptOf(targetConcept, "jetbrains.mps.lang.core.structure.INamedConcept")) {
       SLinkOperations.setTarget(propertyCell, "relationDeclaration", ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.INamedConcept"), "propertyDeclaration", true)).first(), false);
-    } else if (SLinkOperations.getCount(targetConcept, "propertyDeclaration") == 1) {
+    } else if (ListSequence.fromList(SLinkOperations.getTargets(targetConcept, "propertyDeclaration", true)).count() == 1) {
       SLinkOperations.setTarget(propertyCell, "relationDeclaration", ListSequence.fromList(SLinkOperations.getTargets(targetConcept, "propertyDeclaration", true)).first(), false);
     }
     return refCell;
