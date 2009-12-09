@@ -6,7 +6,7 @@
   <classPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">c23193d6-8a59-4f69-84c8-66646c8879e5(org.jdom)</dependency>
+    <dependency reexport="false">37a3367b-1fb2-44d8-aa6b-18075e74e003(MPS.Classpath)</dependency>
   </dependencies>
 </solution>
 
