@@ -15,4 +15,7 @@ public interface AdditionalPainter<Item> {
 
   //returns an item which this painter paints. if it paints itself then just return this
   public Item getItem();
+
+  public void afterAdding(EditorComponent editorComponent);
+  public void beforeRemoval(EditorComponent editorComponent);
 }

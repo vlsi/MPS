@@ -18,6 +18,7 @@ package jetbrains.mps.vcs.diff.ui;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
+import jetbrains.mps.nodeEditor.AbstractAdditionalPainter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -34,7 +35,7 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 
-public class ChangesBlock implements AdditionalPainter<ChangesBlock> {
+public class ChangesBlock extends AbstractAdditionalPainter<ChangesBlock> {
   private List<ChangeEditorMessage> myChanges = new ArrayList<ChangeEditorMessage>();
   private int y1 = 0;
   private int y2 = 0;

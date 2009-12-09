@@ -86,7 +86,6 @@ import java.awt.event.*;
 import java.beans.PropertyChangeEvent;
 import java.beans.PropertyChangeListener;
 import java.lang.ref.WeakReference;
-import java.lang.reflect.Field;
 import java.util.*;
 import java.util.List;
 
@@ -95,7 +94,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public static final String EDITOR_POPUP_MENU_ACTIONS = EditorPopup_ActionGroup.ID;
   public static final String EDITOR_POPUP_MENU_ACTIONS_INTERNAL = EditorInternal_ActionGroup.ID;
 
-  private static final int SCROLL_GAP = 15;  
+  private static final int SCROLL_GAP = 15;
 
   private final Object myAdditionalPaintersLock = new Object();
 
@@ -130,6 +129,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private List<AdditionalPainter> myAdditionalPainters = new ArrayList<AdditionalPainter>();
   private Map<Object, AdditionalPainter> myItemsToAdditionalPainters = new HashMap<Object, AdditionalPainter>();
+
+  private List<LeftMarginMouseListener> myLeftMarginPressListeners = new ArrayList<LeftMarginMouseListener>(0);
 
   private EditorSettingsListener mySettingsListener = new EditorSettingsListener() {
     public void settingsChanged() {
@@ -710,21 +711,27 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       if (!myAdditionalPainters.contains(additionalPainter)) {
         myAdditionalPainters.add(additionalPainter);
         myItemsToAdditionalPainters.put(additionalPainter.getItem(), additionalPainter);
+        additionalPainter.afterAdding(this);
       }
     }
   }
 
   public void removeAdditionalPainter(AdditionalPainter additionalPainter) {
     synchronized (myAdditionalPaintersLock) {
-      myAdditionalPainters.remove(additionalPainter);
-      myItemsToAdditionalPainters.remove(additionalPainter.getItem());
+      if (myAdditionalPainters.contains(additionalPainter)) {
+        additionalPainter.beforeRemoval(this);
+        myAdditionalPainters.remove(additionalPainter);
+        myItemsToAdditionalPainters.remove(additionalPainter.getItem());
+      }
     }
   }
 
   public void removeAdditionalPainterByItem(Object item) {
     synchronized (myAdditionalPaintersLock) {
-      AdditionalPainter additionalPainter = myItemsToAdditionalPainters.remove(item);
+      AdditionalPainter additionalPainter = myItemsToAdditionalPainters.get(item);
       if (additionalPainter != null) {
+        additionalPainter.beforeRemoval(this);
+        myItemsToAdditionalPainters.remove(item);
         myAdditionalPainters.remove(additionalPainter);
       }
     }
@@ -1550,6 +1557,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private void processMousePressed(MouseEvent mouseEvent) {
     requestFocus();
+    processLeftMarginPress(mouseEvent);
     processCoordSelection(mouseEvent);
 
     if (mouseEvent.getButton() == MouseEvent.BUTTON2) {
@@ -1641,6 +1649,22 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
           return;
         }
       });
+    }
+  }
+
+  public void addLeftMarginPressListener(LeftMarginMouseListener listener) {
+    myLeftMarginPressListeners.add(listener);
+  }
+
+  public void removeLeftMarginPressListener(LeftMarginMouseListener listener) {
+    myLeftMarginPressListeners.remove(listener);
+  }
+
+  private void processLeftMarginPress(MouseEvent mouseEvent) {
+    if (mouseEvent.getX() < myLeftHighlighter.getWidth()) {
+      for (LeftMarginMouseListener listener : new ArrayList<LeftMarginMouseListener>(myLeftMarginPressListeners)) {
+        listener.mousePressed(mouseEvent, this);
+      }
     }
   }
 
