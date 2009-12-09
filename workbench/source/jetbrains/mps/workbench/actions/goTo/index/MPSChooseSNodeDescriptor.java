@@ -79,7 +79,8 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       }
     }, getIdeaProject());
 
-    for (SNodeDescriptor s : keys) {
+    Set<SNodeDescriptor> keysCopy = new HashSet<SNodeDescriptor>(keys);
+    for (SNodeDescriptor s : keysCopy) {
       if (!fileBasedIndex.getContainingFiles(indexName, s, new EverythingGlobalScope(getIdeaProject())).isEmpty()) {
         keys.remove(s);
       }
