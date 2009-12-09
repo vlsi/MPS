@@ -124,7 +124,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
         ProcessHandler handler = null;
         {
           final MPSProject mpsproject = MPSDataKeys.MPS_PROJECT.getData(environment.getDataContext());
-          final JUnitTestViewComponent runComponent = new JUnitTestViewComponent(mpsproject, consoleView);
+          final UnitTestViewComponent runComponent = new UnitTestViewComponent(mpsproject, consoleView);
           final Wrappers._T<UnitTestRunner> testRunner = new Wrappers._T<UnitTestRunner>(null);
           try {
             testRunner.value = new UnitTestRunner(runComponent);
@@ -199,8 +199,8 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
           });
 
           if (process.value != null) {
-            JUnitProcessHandler processHandler = new JUnitProcessHandler(runComponent, process.value, testRunner.value.getCommandString());
-            runComponent.onStart(processHandler);
+            UnitTestProcessHandler processHandler = new UnitTestProcessHandler(runComponent, process.value, testRunner.value.getCommandString());
+            runComponent.start(processHandler);
             handler = processHandler;
           }
         }

@@ -38,7 +38,8 @@ public class MyTestListener implements TestListener {
   private void printSyncToken(String tokenPrefix, Test test) {
     TestEvent token = new TestEvent(tokenPrefix, test);
     String out = token.toString();
-    this.out.writeCommand(out);
-    this.err.writeCommand(out);
+    synchronized (this.out) {
+      this.out.writeCommand(out);
+    }
   }
 }

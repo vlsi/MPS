@@ -8,24 +8,37 @@ import java.util.List;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import javax.swing.SwingUtilities;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.debug.StacktraceUtil;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.util.Disposer;
 
-public class TestOutputComponent {
+public class TestOutputComponent implements TestView {
   private JComponent component;
   private ConsoleViewImpl consoleView;
   private List<TestOutputComponent.Message> messages;
-  private String curClass;
-  private String curMethod;
   private String filterClass;
   private String filterMethod;
+  private TestRunState state;
 
-  public TestOutputComponent(Project project, JComponent parentComponent, ConsoleViewImpl console) {
+  public TestOutputComponent(Project project, JComponent parentComponent, ConsoleViewImpl console, TestRunState state) {
     this.messages = ListSequence.fromList(new ArrayList<TestOutputComponent.Message>());
     this.consoleView = console;
     this.component = this.consoleView.getComponent();
+    this.state = state;
+  }
+
+  public void update() {
+    final String test = this.state.getLoseClass();
+    final String method = this.state.getLoseMethod();
+    if (test != null && method != null) {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          TestOutputComponent.this.appendWithParameters(test, method, "\nError: couldn't find method '" + method + "' in '" + test + "'\n\n", true, false);
+        }
+      });
+    }
   }
 
   public JComponent getComponent() {
@@ -33,11 +46,11 @@ public class TestOutputComponent {
   }
 
   public String getCurrentClassName() {
-    return this.curClass;
+    return this.state.getCurrentClass();
   }
 
   public String getCurrentMethodName() {
-    return this.curMethod;
+    return this.state.getCurrentMethod();
   }
 
   public void filter(String filterClass, String filterMethod) {
@@ -52,26 +65,13 @@ public class TestOutputComponent {
   }
 
   public void appendWithParameters(String testClass, String testMethod, String text, boolean isError, boolean isSystem) {
-    String currentClass = this.curClass;
-    String currentMethod = this.curMethod;
-    this.start(testClass, testMethod);
-    this.append(text, isError, isSystem);
-    this.end(testClass, testMethod);
-    this.start(currentClass, currentMethod);
-  }
-
-  public void start(String testClass, String testMethod) {
-    this.curClass = testClass;
-    this.curMethod = testMethod;
-  }
-
-  public void end(String testClass, String testMethod) {
-    this.curClass = null;
-    this.curMethod = null;
+    TestOutputComponent.Message newMessage = new TestOutputComponent.Message(testClass, testMethod, text, isError, isSystem);
+    ListSequence.fromList(this.messages).addElement(newMessage);
+    this.append(newMessage);
   }
 
   public void append(String message, boolean error, boolean internal) {
-    TestOutputComponent.Message newMessage = new TestOutputComponent.Message(this.curClass, this.curMethod, message, error, internal);
+    TestOutputComponent.Message newMessage = new TestOutputComponent.Message(this.getCurrentClassName(), this.getCurrentMethodName(), message, error, internal);
     ListSequence.fromList(this.messages).addElement(newMessage);
     this.append(newMessage);
   }

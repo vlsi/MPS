@@ -7,8 +7,12 @@ import jetbrains.mps.smodel.IOperationContext;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
+import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -18,19 +22,66 @@ import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
+import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.ide.DataManager;
 
-public class TestTree extends MPSTree {
+public class TestTree extends MPSTree implements TestView {
   private IOperationContext operationContext;
   private Map<SNode, List<SNode>> tests;
   private TestNameMap<TestCaseTreeNode, TestMethodTreeNode> map;
   private boolean isAllTree = true;
   private boolean isRebuilded = true;
+  private TestRunState state;
 
-  public TestTree(boolean isAllTree) {
+  public TestTree(TestRunState state, MPSProject project) {
+    this.state = state;
     this.tests = MapSequence.fromMap(new LinkedHashMap<SNode, List<SNode>>(16, (float)0.75, false));
     this.map = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
-    this.isAllTree = isAllTree;
+    this.isAllTree = !(project.getComponent(MPSProjectHolder.class).getMPSProject().getPluginManager().getPrefsComponent(JUnitTestActionOptions_PreferencesComponent.class).getStateObject().isHidePassed);
     this.rebuildLater();
+  }
+
+  public void update() {
+    String loseTest = this.state.getLoseClass();
+    String loseMethod = this.state.getLoseMethod();
+    String test = this.state.getCurrentClass();
+    String method = this.state.getCurrentMethod();
+    if (loseTest != null && loseMethod != null) {
+      TestMethodTreeNode node = this.get(loseTest, loseMethod);
+      if (node != null) {
+        node.setState(TestState.ERROR);
+      }
+    } else {
+      TestMethodTreeNode node = this.get(test, method);
+      if (node != null) {
+        if (TestEvent.START_TEST_PREFIX.equals(this.state.getToken())) {
+          node.setState(TestState.IN_PROGRESS);
+          if (this.getPreferences().getStateObject().isTrackRunning) {
+            this.setCurrentNode(node);
+          }
+        } else if (TestEvent.END_TEST_PREFIX.equals(this.state.getToken())) {
+          TestState state = node.getState();
+          if (state == TestState.IN_PROGRESS) {
+            node.setState(TestState.PASSED);
+            TestMethodRow row = this.state.getTestMethodRow(test, method);
+            if (row != null) {
+              row.setSucceed();
+            }
+          }
+        } else if (TestEvent.FAILURE_TEST_PREFIX.equals(this.state.getToken())) {
+          node.setState(TestState.FAILED);
+        } else if (TestEvent.ERROR_TEST_PREFIX.equals(this.state.getToken())) {
+          node.setState(TestState.ERROR);
+        }
+      }
+      if (node != null && this.getPreferences().getStateObject().isSelectFirstFailed && node.getNextLeaf() == null) {
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            TestTree.this.selectFirstDefectNode();
+          }
+        });
+      }
+    }
   }
 
   public MPSTreeNode rebuild() {
@@ -162,6 +213,10 @@ public class TestTree extends MPSTree {
         }
       }
     }
+  }
+
+  public JUnitTestActionOptions_PreferencesComponent getPreferences() {
+    return MPSDataKeys.MPS_PROJECT.getData(DataManager.getInstance().getDataContext()).getComponent(MPSProjectHolder.class).getMPSProject().getPluginManager().getPrefsComponent(JUnitTestActionOptions_PreferencesComponent.class);
   }
 
   public static boolean isFailed(MPSTreeNode node) {
