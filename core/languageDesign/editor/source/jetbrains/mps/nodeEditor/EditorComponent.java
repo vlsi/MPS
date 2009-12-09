@@ -1790,7 +1790,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         String id1 = newSelectedCell.getCellId();
         String id2 = mySelectedCell.getCellId();
 
-        if(id1!=null)
+        if (id1 != null)
           eq = id1.equals(id2);
       }
 
@@ -1942,7 +1942,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     HashSet<AdditionalPainter> additionalPainters;
     synchronized (myAdditionalPaintersLock) {
-       additionalPainters = new HashSet<AdditionalPainter>(myAdditionalPainters);
+      additionalPainters = new HashSet<AdditionalPainter>(myAdditionalPainters);
     }
     for (AdditionalPainter additionalPainter : additionalPainters) {
       if (!additionalPainter.paintsAbove()) {
@@ -1965,7 +1965,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         additionalPainter.paint(g, this);
       }
     }
-    
+
   }
 
   public Dimension getPreferredSize() {
@@ -2260,9 +2260,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void putCellAndNodesToDependOn(EditorCell cell, Set<SNode> nodes, Set<SNodePointer> refTargets) {
-    for (SNode n:nodes){
-      if (n==null) continue;
-      if ("4413749148913760651".equals(n.getId()) || "Constant_2079_0".equals(cell.getCellId())){
+    for (SNode n : nodes) {
+      if (n == null) continue;
+      if ("4413749148913760651".equals(n.getId()) || "Constant_2079_0".equals(cell.getCellId())) {
         System.out.printf("123");
       }
     }
@@ -2440,10 +2440,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
     if (dataId.equals(MPSDataKeys.CONTEXT_MODULE.getName())) {
       EditorCell rootCell = getRootCell();
-      if (rootCell == null) {
-        return null;
-      }
-      return rootCell.getSNode().getModel().getModelDescriptor().getModule();
+      if (rootCell == null) return null;
+      SNode node = rootCell.getSNode();
+      if (node == null) return null;
+      SModelDescriptor modelDescriptor = node.getModel().getModelDescriptor();
+      if (modelDescriptor == null) return null;
+      return modelDescriptor.getModule();
     }
     if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return getOperationContext();
     if (dataId.equals(MPSDataKeys.EDITOR_CONTEXT.getName())) return createEditorContextForActions();
