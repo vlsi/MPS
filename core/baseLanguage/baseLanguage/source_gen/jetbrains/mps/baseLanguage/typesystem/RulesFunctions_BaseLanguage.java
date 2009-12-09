@@ -389,6 +389,7 @@ __switch__:
             BaseIntentionProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8531167801199654648", 0, intentionProvider);
             _info_12389875345.setInequationGroup("priority_4_1759628044690732301");
+            _info_12389875345.addInequationIdAfter("r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "3254522536313044098");
             _info_12389875345.addInequationGroupBefore("priority_3_1759628044690732300");
             _info_12389875345.addInequationGroupBefore("priority_2_1759628044690732299");
             _info_12389875345.addInequationGroupBefore("priority_1_1759628044690732298");

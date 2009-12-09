@@ -3334,6 +3334,9 @@
                         <link role="group" targetNodeId="2v.1759628044690732298" resolveInfo="priority_1" />
                       </node>
                       <node role="beforeGroups" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference" id="5817056074924590368" />
+                      <node role="afterEquations" type="jetbrains.mps.lang.typesystem.structure.InequationReference" id="6773347515165379744">
+                        <link role="inequation" targetNodeId="3254522536313044098" />
+                      </node>
                     </node>
                   </node>
                   <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="8531167801199654625">
@@ -8826,6 +8829,7 @@
       </node>
       <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement" id="3254522536313044098">
         <property name="inequationPriority" value="0" />
+        <property name="label" value="fieldIsAnObject" />
         <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="3254522536313044102">
           <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3254522536313044103">
             <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3254522536313044106">
