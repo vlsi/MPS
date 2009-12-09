@@ -21,12 +21,20 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.workbench.dialogs.project.creation.NewModelDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.javaParser.JavaCompiler;
+import java.io.File;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.StereotypeProvider;
 
-public class NewModel_Action extends GeneratedAction {
+public class NewModelFromSource_Action extends GeneratedAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(NewModel_Action.class);
+  protected static Log log = LogFactory.getLog(NewModelFromSource_Action.class);
 
   private Frame frame;
   private Project ideaProject;
@@ -35,8 +43,8 @@ public class NewModel_Action extends GeneratedAction {
   private IModule module;
   private TreeNode treeNode;
 
-  public NewModel_Action() {
-    super("Model", "", ICON);
+  public NewModelFromSource_Action() {
+    super("New Model from Source", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -47,7 +55,7 @@ public class NewModel_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    String stereotype = NewModel_Action.this.getStereotype();
+    String stereotype = NewModelFromSource_Action.this.getStereotype();
     if (stereotype == null) {
       return true;
     }
@@ -67,7 +75,7 @@ public class NewModel_Action extends GeneratedAction {
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "NewModel", t);
+        log.error("User's action doUpdate method failed. Action:" + "NewModelFromSource", t);
       }
       this.disable(event.getPresentation());
     }
@@ -107,44 +115,78 @@ public class NewModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      if (NewModel_Action.this.module.getSModelRoots().size() == 0) {
-        JOptionPane.showMessageDialog(NewModel_Action.this.frame, "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
+      if (NewModelFromSource_Action.this.module.getSModelRoots().size() == 0) {
+        JOptionPane.showMessageDialog(NewModelFromSource_Action.this.frame, "Can't create a model in solution with no model roots", "Can't create model", JOptionPane.ERROR_MESSAGE);
       }
       final Wrappers._T<NewModelDialog> dialog = new Wrappers._T<NewModelDialog>();
-      final IOperationContext localContext = NewModel_Action.this.context;
+      final IOperationContext localContext = NewModelFromSource_Action.this.context;
       final IModule localModule = (localContext.getModule() != null ?
         localContext.getModule() :
-        NewModel_Action.this.module
+        NewModelFromSource_Action.this.module
       );
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          String stereotype = NewModel_Action.this.getStereotype();
-          dialog.value = new NewModelDialog(localModule, NewModel_Action.this.getNamespace(), localContext, stereotype, NewModel_Action.this.isStrict());
+          String stereotype = NewModelFromSource_Action.this.getStereotype();
+          dialog.value = new NewModelDialog(localModule, NewModelFromSource_Action.this.getNamespace(), localContext, stereotype, NewModelFromSource_Action.this.isStrict());
         }
       });
       dialog.value.showDialog();
       SModelDescriptor result = dialog.value.getResult();
       if (result != null) {
+        TreeFileChooser treeFileChooser = new TreeFileChooser();
+        treeFileChooser.setDirectoriesAreAlwaysVisible(true);
+        treeFileChooser.setMode(TreeFileChooser.MODE_DIRECTORIES);
+        final SModel sModel = result.getSModel();
+        treeFileChooser.setFileFilter(new IFileFilter() {
+          public boolean accept(IFile file) {
+            return JavaCompiler.checkBaseModelMatchesSourceDirectory(sModel, file.toFile());
+          }
+        });
+        String generatorOutputPath = NewModelFromSource_Action.this.module.getGeneratorOutputPath();
+        File initial = null;
+        File output = new File(generatorOutputPath);
+        if (output.exists()) {
+          initial = output;
+          File sourceRoot = new File(initial.getParentFile(), "source");
+          if (!(sourceRoot.exists())) {
+            sourceRoot = new File(initial.getParentFile(), "src");
+          }
+          initial = sourceRoot;
+          if (sourceRoot.exists()) {
+            File modelSource = new File(sourceRoot, NameUtil.pathFromNamespace(sModel.getLongName()));
+            if (modelSource.exists()) {
+              initial = modelSource;
+            }
+          }
+        }
+        if (initial != null) {
+          treeFileChooser.setInitialFile(new FileSystemFile(initial));
+        }
+        IFile resultFile = treeFileChooser.showDialog(NewModelFromSource_Action.this.frame);
+        if (resultFile != null) {
+          JavaCompiler javaCompiler = new JavaCompiler(NewModelFromSource_Action.this.module, resultFile.toFile(), false, sModel);
+          javaCompiler.compile();
+        }
         SModelDescriptor modelDescriptor = result;
-        ProjectPane.getInstance(NewModel_Action.this.ideaProject).selectModel(modelDescriptor);
+        ProjectPane.getInstance(NewModelFromSource_Action.this.ideaProject).selectModel(modelDescriptor);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "NewModel", t);
+        log.error("User's action execute method failed. Action:" + "NewModelFromSource", t);
       }
     }
   }
 
   protected String getStereotype() {
-    if (NewModel_Action.this.treeNode instanceof StereotypeProvider) {
-      return ((StereotypeProvider)NewModel_Action.this.treeNode).getStereotype();
+    if (NewModelFromSource_Action.this.treeNode instanceof StereotypeProvider) {
+      return ((StereotypeProvider)NewModelFromSource_Action.this.treeNode).getStereotype();
     }
     return null;
   }
 
   protected boolean isStrict() {
-    if (NewModel_Action.this.treeNode instanceof StereotypeProvider) {
-      return ((StereotypeProvider)NewModel_Action.this.treeNode).isStrict();
+    if (NewModelFromSource_Action.this.treeNode instanceof StereotypeProvider) {
+      return ((StereotypeProvider)NewModelFromSource_Action.this.treeNode).isStrict();
     }
     return false;
   }
