@@ -47,8 +47,8 @@ public class GlobalClassPathIndex implements ApplicationComponent {
 
   private final VcsContextFactory myVcsContextFactory;
   private final MPSModuleRepository myModuleRepository;
-  private final Map<FilePath, ArrayList<IModule>> myClassPathIndex = new HashMap<FilePath, ArrayList<IModule>>();
-  private final HashSet<FilePath> myExcludedClassPath = new HashSet<FilePath>();
+  private final Map<String, ArrayList<IModule>> myClassPathIndex = new HashMap<String, ArrayList<IModule>>();
+  private final HashSet<String> myExcludedClassPath = new HashSet<String>();
   private boolean myIsChanged = false;
   private final List<ExclusionChangedListener> myListeners = new ArrayList<ExclusionChangedListener>();
   private final ModuleRepositoryAdapter myModuleRepositoryListener = new ModuleRepositoryAdapter() {
@@ -108,9 +108,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   private void updateClassesGen(IModule module) {
     IFile classesGen = module.getClassesGen();
     if (classesGen == null) return;
-    FilePath classesGenPath = VFileSystem.getFilePath(myVcsContextFactory, classesGen);
-    if (classesGenPath == null) return;
-    myExcludedClassPath.add(classesGenPath);
+    myExcludedClassPath.add(classesGen.getCanonicalPath());
   }
 
 
@@ -122,14 +120,13 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       }
     } else if (item instanceof FileClassPathItem) {
       String classPath = ((FileClassPathItem) item).getClassPath();
-      FilePath classPathFile = VFileSystem.getFilePath(myVcsContextFactory, classPath);
-      if (classPathFile != null && classPathFile.isDirectory()) {
-        dealWithClassPathOnModuleInit(module, classPathFile);
+      if (new File(classPath).isDirectory()) {
+        dealWithClassPathOnModuleInit(module, classPath);
       }
     }
   }
 
-  private void dealWithClassPathOnModuleInit(IModule module, FilePath classPathFile) {
+  private void dealWithClassPathOnModuleInit(IModule module, String classPathFile) {
     ArrayList<IModule> modules = myClassPathIndex.get(classPathFile);
     if (modules == null) {
       modules = new ArrayList<IModule>();
@@ -142,7 +139,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       // should exclude classPath
       for (IModule m : myClassPathIndex.get(classPathFile)) {
         if (m == module) continue;
-        m.excludeClassPath(classPathFile.getPath(), true);
+        m.excludeClassPath(classPathFile, true);
       }
       myExcludedClassPath.add(classPathFile);
       myIsChanged = true;
@@ -150,7 +147,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       // should include classPath
       for (IModule m : myClassPathIndex.get(classPathFile)) {
         if (m == module) continue;
-        m.excludeClassPath(classPathFile.getPath(), false);
+        m.excludeClassPath(classPathFile, false);
       }
       myExcludedClassPath.remove(classPathFile);
       myIsChanged = true;
@@ -169,14 +166,13 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       }
     } else if (item instanceof FileClassPathItem) {
       String classPath = ((FileClassPathItem) item).getClassPath();
-      FilePath classPathFile = VFileSystem.getFilePath(myVcsContextFactory, classPath);
-      if (classPathFile != null && classPathFile.isDirectory()) {
-        dealWithClassPathOnModuleRemove(module, classPathFile);
+      if (new File(classPath).isDirectory()) {
+        dealWithClassPathOnModuleRemove(module, classPath);
       }
     }
   }
 
-  private void dealWithClassPathOnModuleRemove(IModule module, FilePath classPathFile) {
+  private void dealWithClassPathOnModuleRemove(IModule module, String classPathFile) {
     ArrayList<IModule> modules = myClassPathIndex.get(classPathFile);
     if (modules != null) {
       boolean removed = modules.remove(module);
@@ -203,19 +199,18 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       }
     } else if (item instanceof FileClassPathItem) {
       String classPath = ((FileClassPathItem) item).getClassPath();
-      FilePath classPathFile = VFileSystem.getFilePath(myVcsContextFactory, classPath);
-      if (classPathFile != null && classPathFile.isDirectory()) {
-        dealWithClassPathOnModuleAdd(module, classPathFile);
+      if (new File(classPath).isDirectory()) {
+        dealWithClassPathOnModuleAdd(module, classPath);
       }
     }
   }
 
-  private void dealWithClassPathOnModuleAdd(IModule module, FilePath classPathFile) {
+  private void dealWithClassPathOnModuleAdd(IModule module, String classPathFile) {
     if (isClassPathExcludedInModule(module, classPathFile)) {
       // we only need to update this module if classPath is included in other modules
       ArrayList<IModule> modules = myClassPathIndex.get(classPathFile);
       if (!myExcludedClassPath.contains(classPathFile) && (modules != null) && !modules.isEmpty()) {
-        module.excludeClassPath(classPathFile.getPath(), false);
+        module.excludeClassPath(classPathFile, false);
         modules.add(module);
       } else if (modules == null) {
         putModuleInIndex(module, classPathFile);
@@ -233,7 +228,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
         // we only need update all existing modules if the classPath is excluded
         if (myExcludedClassPath.remove(classPathFile)) {
           for (IModule m : modules) {
-            m.excludeClassPath(classPathFile.getPath(), false);
+            m.excludeClassPath(classPathFile, false);
           }
         }
         modules.add(module);
@@ -241,11 +236,11 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     }
   }
 
-  private boolean isClassPathExcludedInModule(IModule module, FilePath classPathFile) {
-    return module.isClassPathExcluded(classPathFile.getPath().replace("/", File.separator));
+  private boolean isClassPathExcludedInModule(IModule module, String classPathFile) {
+    return module.isClassPathExcluded(classPathFile.replace("/", File.separator));
   }
 
-  private void putModuleInIndex(IModule module, FilePath classPathFile) {
+  private void putModuleInIndex(IModule module, String classPathFile) {
     ArrayList<IModule> modules = new ArrayList<IModule>();
     modules.add(module);
     myClassPathIndex.put(classPathFile, modules);
@@ -254,9 +249,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   private void excludeClassesGen(IModule module) {
     IFile classesGen = module.getClassesGen();
     if (classesGen == null) return;
-    FilePath classesGenVirtual = VFileSystem.getFilePath(classesGen);
-    if (classesGenVirtual == null) return;
-    myExcludedClassPath.add(classesGenVirtual);
+    myExcludedClassPath.add(classesGen.getCanonicalPath());
   }
 
   @NotNull
@@ -281,14 +274,18 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   }
 
   public boolean isExcluded(VirtualFile file) {
-    return isExcluded(VFileSystem.getFilePath(file));
+    return isExcluded(file.getPath());
   }
 
   public boolean isExcluded(FilePath filePath) {
+    return isExcluded(filePath.getPath());
+  }
+
+  public boolean isExcluded(String filePath) {
     return myExcludedClassPath.contains(filePath);
   }
 
-  public Set<FilePath> getExcludedClassPath() {
+  public Set<String> getExcludedClassPath() {
     return Collections.unmodifiableSet(myExcludedClassPath);
   }
 
