@@ -289,16 +289,6 @@
       <zipfileset dir="core/baseLanguage/baseLanguage/solutions/MPS.Classpath" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
-  <target name="pack.org.jdom0">
-    <mkdir dir="samples/xmlLiterals/solutions/org.jdom/source_gen.caches" />
-    <mkdir dir="samples/xmlLiterals/solutions/org.jdom/test_gen.caches" />
-    <jar destfile="${deploy.dir}/MPS/core/baseLanguage/org.jdom.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="samples/xmlLiterals/solutions/org.jdom/org.jdom.msd" prefix="module" />
-      <zipfileset dir="samples/xmlLiterals/solutions/org.jdom/source_gen.caches" prefix="source_gen.caches" />
-      <zipfileset dir="samples/xmlLiterals/solutions/org.jdom/test_gen.caches" prefix="test_gen.caches" />
-      <zipfileset dir="samples/xmlLiterals/solutions/org.jdom" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-    </jar>
-  </target>
   <target name="pack.jetbrains.mps.debug0">
     <mkdir dir="core/kernel/jetbrains.mps.debug/classes_gen" />
     <mkdir dir="core/kernel/jetbrains.mps.debug/classes_gen" />
