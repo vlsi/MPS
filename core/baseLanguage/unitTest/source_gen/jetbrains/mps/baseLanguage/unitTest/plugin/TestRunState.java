@@ -77,6 +77,8 @@ public class TestRunState {
       this.loseTest = test;
       this.loseMethod = method;
       this.updateView();
+      this.loseTest = null;
+      this.loseMethod = null;
     }
   }
 
@@ -106,10 +108,6 @@ public class TestRunState {
       }
     }
     return true;
-  }
-
-  public boolean isCompletedTest(String testCase, String testMethod) {
-    return !(ListSequence.fromList(this.testMethods).contains(testCase + '.' + testMethod));
   }
 
   public List<String> getCurrentLostTests(TestEvent event) {

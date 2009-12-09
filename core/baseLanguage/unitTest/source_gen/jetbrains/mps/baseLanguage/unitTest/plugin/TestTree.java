@@ -60,13 +60,10 @@ public class TestTree extends MPSTree implements TestView {
             this.setCurrentNode(node);
           }
         } else if (TestEvent.END_TEST_PREFIX.equals(this.state.getToken())) {
-          TestState state = node.getState();
-          if (state == TestState.IN_PROGRESS) {
-            node.setState(TestState.PASSED);
-            TestMethodRow row = this.state.getTestMethodRow(test, method);
-            if (row != null) {
-              row.setSucceed();
-            }
+          node.setState(TestState.PASSED);
+          TestMethodRow row = this.state.getTestMethodRow(test, method);
+          if (row != null) {
+            row.setSucceed();
           }
         } else if (TestEvent.FAILURE_TEST_PREFIX.equals(this.state.getToken())) {
           node.setState(TestState.FAILED);
