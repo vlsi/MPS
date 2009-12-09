@@ -22,6 +22,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.DumbModeIndicator;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.impl.FakePsiElement;
 import jetbrains.mps.MPSProjectHolder;
@@ -51,6 +53,12 @@ public class GoToNamedNodeAction extends BaseAction {
   public void doExecute(AnActionEvent e) {
     final Project project = e.getData(PlatformDataKeys.PROJECT);
     assert project != null;
+
+    DumbService service = DumbService.getInstance(project);
+    if (service.isDumb()){
+      return;
+    }
+
     final MPSProject mpsProject = project.getComponent(MPSProjectHolder.class).getMPSProject();
 
     ChooseByNamePopup popup;
