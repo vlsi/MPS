@@ -343,7 +343,11 @@ class ModelChangesTree extends MPSTree {
     }
 
     public void doUpdatePresentation() {
-      super.doUpdatePresentation();
+      try {
+        super.doUpdatePresentation();
+      } catch (RuntimeException e){
+        // ignore
+      }
       SNodeId id = getSNode().getSNodeId();
 
       if (myAddedNodes.contains(id)) {
