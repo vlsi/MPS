@@ -53,7 +53,7 @@ import jetbrains.mps.plugins.pluginparts.runconfigs.MPSLocation;
 public class UnitTestViewComponent extends JPanel {
   private static final int DIVIDER_LOCATION = 200;
 
-  public TestRunListener testController;
+  private TestRunListener testController;
   private TestRunState testState;
   private TestOutputComponent outputComponent;
   private TestTree treeComponent;
@@ -170,6 +170,10 @@ public class UnitTestViewComponent extends JPanel {
 
   public String getCurrentMethodName() {
     return this.outputComponent.getCurrentMethodName();
+  }
+
+  public TestRunListener getTestListener() {
+    return this.testController;
   }
 
   public Icon getIcon(String iconName) {
