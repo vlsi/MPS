@@ -1,5 +1,7 @@
 package jetbrains.mps.vcs;
 
+import com.intellij.openapi.vcs.FilePath;
+import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.*;
 import jetbrains.mps.project.MPSProject;
@@ -104,6 +106,38 @@ public class VcsHelper {
       return false;
     }
     return true;
+  }
+
+  public static FilePath getFilePath(IFile file) {
+    return getFilePath(file.toFile());
+  }
+
+  public static FilePath getFilePath(String file) {
+    return getFilePath(new File(file));
+  }
+
+  public static FilePath getFilePath(VirtualFile file) {
+    return VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);
+  }
+
+  public static FilePath getFilePath(File file) {
+    return VcsContextFactory.SERVICE.getInstance().createFilePathOn(file);
+  }
+
+  public static FilePath getFilePath(VcsContextFactory factory, IFile file) {
+    return getFilePath(factory, file.toFile());
+  }
+
+  public static FilePath getFilePath(VcsContextFactory factory, String file) {
+    return getFilePath(factory, new File(file));
+  }
+
+  public static FilePath getFilePath(VcsContextFactory factory, VirtualFile file) {
+    return factory.createFilePathOn(file);
+  }
+
+  public static FilePath getFilePath(VcsContextFactory factory, File file) {
+    return factory.createFilePathOn(file);
   }
 
   public static enum FsMemoryMergeVersion implements Version {

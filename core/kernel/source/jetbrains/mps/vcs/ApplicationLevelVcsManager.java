@@ -347,7 +347,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
     public void processTask(List<File> tasks) {
       List<FilePath> filesToAdd = new ArrayList<FilePath>(tasks.size());
       for (File f : tasks) {
-        FilePath file = VFileSystem.getFilePath(f);
+        FilePath file = VcsHelper.getFilePath(f);
         filesToAdd.add(file);
       }
       removeFilesFromVcs(filesToAdd);
