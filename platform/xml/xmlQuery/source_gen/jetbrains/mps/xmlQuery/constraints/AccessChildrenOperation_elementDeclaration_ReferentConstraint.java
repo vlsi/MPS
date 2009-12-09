@@ -12,6 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
 import jetbrains.mps.xml.actions.ElementUtil;
 
@@ -28,11 +30,18 @@ public class AccessChildrenOperation_elementDeclaration_ReferentConstraint exten
   }
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
-    SNode complexType = SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.xmlQuery.structure.XMLElementType"), "complexType", false);
+    final SNode complexType = SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), "jetbrains.mps.xmlQuery.structure.XMLElementType"), "complexType", false);
     if (complexType == null) {
       return new ArrayList<SNode>();
     }
     SNode elementDeclaration = SNodeOperations.getAncestor(complexType, "jetbrains.mps.xmlSchema.structure.ElementDeclaration", false, false);
+    if (elementDeclaration == null) {
+      elementDeclaration = ListSequence.fromList(SNodeOperations.getDescendants(SNodeOperations.getAncestor(complexType, "jetbrains.mps.xmlSchema.structure.Schema", false, false), "jetbrains.mps.xmlSchema.structure.ElementWithType", false, new String[]{})).findFirst(new IWhereFilter<SNode>() {
+        public boolean accept(SNode ewt) {
+          return SLinkOperations.getTarget(SLinkOperations.getTarget(ewt, "complexTypeReference", true), "complexType", false) == complexType;
+        }
+      });
+    }
     List<SNode> elementDeclarations = ElementUtil.getElementDeclarations(elementDeclaration, _context.getEnclosingNode(), operationContext.getScope());
     return elementDeclarations;
   }
