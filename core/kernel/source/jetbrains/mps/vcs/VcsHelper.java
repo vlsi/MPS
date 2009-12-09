@@ -16,6 +16,7 @@ import com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.io.FileUtil;
+import jetbrains.mps.watching.ModelChangesWatcher;
 
 import java.io.*;
 
@@ -26,12 +27,14 @@ public class VcsHelper {
 
   public static boolean showDiskMemoryMerge(IFile modelFile, final SModel inMemory) {
     try {
+      ModelChangesWatcher.instance().suspendTasksProcessing();
       File backupFile = doBackup(modelFile, inMemory);
-
       return showSimpleDialog(modelFile, inMemory, backupFile);
     } catch (IOException e) {
       LOG.error(e);
       throw new RuntimeException(e);
+    } finally {
+      ModelChangesWatcher.instance().tryToResumeTasksProcessing();
     }
   }
 
