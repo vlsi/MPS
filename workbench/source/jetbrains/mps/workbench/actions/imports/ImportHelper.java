@@ -208,7 +208,7 @@ public class ImportHelper {
 
         @Nullable
         public String getPromptText() {
-          return "Import model that inculdes root:";
+          return "Import model that includes root:";
         }
       };
     } else {
@@ -231,7 +231,7 @@ public class ImportHelper {
 
         @Nullable
         public String getPromptText() {
-          return "Import model that inculdes root:";
+          return "Import model that includes root:";
         }
       };
     }
