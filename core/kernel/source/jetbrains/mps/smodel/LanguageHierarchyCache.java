@@ -24,6 +24,7 @@ import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.nodeEditor.NodeReadAccessCasterInEditor;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.event.SModelCommandListener;
@@ -140,6 +141,8 @@ public class LanguageHierarchyCache implements ApplicationComponent {
             ConceptDeclaration cd = (ConceptDeclaration) declaration;
             if (cd.getExtends() != null) {
               result.add(NameUtil.nodeFQName(cd.getExtends()));
+            } else if (!BaseConcept.concept.equals(NameUtil.nodeFQName(cd))) {
+              result.add(BaseConcept.concept);
             }
             for (InterfaceConceptReference icr : cd.getImplementses()) {
               result.add(NameUtil.nodeFQName(icr.getIntfc()));
@@ -201,6 +204,8 @@ public class LanguageHierarchyCache implements ApplicationComponent {
         if (declaringLanguage != null) {
           collectAncestorNames(NameUtil.nodeFQName(extendedConcept), result);
         }
+      } else if (!BaseConcept.concept.equals(NameUtil.nodeFQName(cd))) {
+        collectAncestorNames(NameUtil.nodeFQName(SModelUtil.getBaseConcept()), result);
       }
 
       for (InterfaceConceptReference icr : cd.getImplementses()) {
