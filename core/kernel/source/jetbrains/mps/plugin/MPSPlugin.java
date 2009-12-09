@@ -16,6 +16,7 @@
 package jetbrains.mps.plugin;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.ThreadUtils;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
@@ -79,6 +80,8 @@ public class MPSPlugin {
   }
 
   public boolean checkIsConnected() {
+    assert !ThreadUtils.isEventDispatchThread();
+
     if (myPlugin != null) {
       try {
         myPlugin.getProjectCreator().ping();

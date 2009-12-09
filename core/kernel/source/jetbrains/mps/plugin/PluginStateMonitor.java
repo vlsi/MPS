@@ -21,6 +21,7 @@ import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.StatusBar;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.plugin.icons.Icons;
+import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -28,6 +29,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import javax.swing.JLabel;
 import javax.swing.Timer;
+import javax.swing.SwingUtilities;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
@@ -80,7 +82,11 @@ public class PluginStateMonitor implements ProjectComponent {
 
     myTimer = new MyTimer(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        tick();
+        new Thread("connection checker") {
+          public void run() {
+            tick();
+          }
+        }.start();
       }
     });
     myTimer.start();
@@ -133,8 +139,13 @@ public class PluginStateMonitor implements ProjectComponent {
     assert myState != state;
 
     myState = state;
-    myLabel.setIcon(myState.getIcon());
-    myLabel.setToolTipText(myState.getHelpText());
+
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        myLabel.setIcon(myState.getIcon());
+        myLabel.setToolTipText(myState.getHelpText());
+      }
+    });
   }
 
   private boolean isConnected() {
