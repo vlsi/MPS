@@ -2111,9 +2111,6 @@
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4403789015609949776">
               <link role="baseMethodDeclaration" targetNodeId="1717728468090418137" resolveInfo="setTests" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4403789015609949777">
-                <link role="variableDeclaration" targetNodeId="1216742567142" resolveInfo="operationContext" />
-              </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="4403789015609949782">
                 <link role="variableDeclaration" targetNodeId="1216742567144" resolveInfo="tests" />
               </node>
@@ -24394,12 +24391,6 @@
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1717728468090418137">
       <property name="name" value="setTests" />
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1717728468090418179">
-        <property name="name" value="operationContext" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1717728468090418180">
-          <link role="classifier" targetNodeId="9.~IOperationContext" resolveInfo="IOperationContext" />
-        </node>
-      </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1717728468090418181">
         <property name="name" value="tests" />
         <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.MapType" id="1717728468090418182">

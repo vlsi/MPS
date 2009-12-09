@@ -8,7 +8,6 @@ import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.IOperationContext;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -81,7 +80,7 @@ public class TestRunState {
     }
   }
 
-  public void setTests(IOperationContext operationContext, Map<SNode, List<SNode>> tests) {
+  public void setTests(Map<SNode, List<SNode>> tests) {
     this.statisticsModel.setTests(tests);
     for (SNode testCase : MapSequence.fromMap(tests).keySet()) {
       for (SNode testMethod : MapSequence.fromMap(tests).get(testCase)) {

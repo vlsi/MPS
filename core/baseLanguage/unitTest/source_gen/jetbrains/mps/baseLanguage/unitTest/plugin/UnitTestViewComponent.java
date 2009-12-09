@@ -212,7 +212,7 @@ public class UnitTestViewComponent extends JPanel {
   }
 
   private void setTestsMap(IOperationContext operationContext, Map<SNode, List<SNode>> tests) {
-    this.testState.setTests(operationContext, tests);
+    this.testState.setTests(tests);
     this.treeComponent.setTests(operationContext, tests);
     this.treeComponent.expandAll();
     SwingUtilities.invokeLater(new Runnable() {
