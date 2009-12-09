@@ -47,5 +47,9 @@ public class MPSBreakpoint {
       myModelReference = modelReference;
       myNodeId = nodeId;
     }
+
+    public BreakpointInfo() {
+
+    }
   }
 }
