@@ -821,6 +821,10 @@ public class QueriesGenerated {
       // fill map 
       for (SNode module : ListSequence.fromList(modules)) {
         IModule imodule = Module_Behavior.call_getModule_1213877515148(module);
+        if (imodule == null) {
+          _context.showErrorMessage(module, "Missing module " + SPropertyOperations.getString(module, "name") + ".");
+          continue;
+        }
         if ((imodule instanceof DevKit) || (!(imodule.isCompileInMPS()))) {
           continue;
         }

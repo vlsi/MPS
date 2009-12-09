@@ -4686,6 +4686,45 @@
                     </node>
                   </node>
                 </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="6744657896245398925">
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6744657896245398926">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6744657896245398943">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6744657896245398945">
+                        <node role="operand" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext" id="6744657896245398944" />
+                        <node role="operation" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage" id="6744657896245398949">
+                          <node role="messageText" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="6744657896245398978">
+                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6744657896245398981">
+                              <property name="value" value="." />
+                            </node>
+                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="6744657896245398953">
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6744657896245398951">
+                                <property name="value" value="Missing module " />
+                              </node>
+                              <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6744657896245398963">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="6744657896245398959">
+                                  <link role="variable" targetNodeId="1217501124751" resolveInfo="module" />
+                                </node>
+                                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="6744657896245398972">
+                                  <link role="property" targetNodeId="4.1169194664001" resolveInfo="name" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="referenceNode" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="6744657896245398952">
+                            <link role="variable" targetNodeId="1217501124751" resolveInfo="module" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="6744657896245398934" />
+                  </node>
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="6744657896245398930">
+                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="6744657896245398933" />
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6744657896245398929">
+                      <link role="variableDeclaration" targetNodeId="1217501142412" resolveInfo="imodule" />
+                    </node>
+                  </node>
+                </node>
                 <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1218652391648">
                   <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218652391649">
                     <node role="statement" type="jetbrains.mps.baseLanguage.structure.ContinueStatement" id="1218652405712" />
