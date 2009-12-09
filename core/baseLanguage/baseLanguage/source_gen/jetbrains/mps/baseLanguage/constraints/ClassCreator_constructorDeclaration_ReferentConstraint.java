@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.constraints.PresentationReferentConstraintContext;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.ConstructorDeclaration_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class ClassCreator_constructorDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ClassCreator_constructorDeclaration_ReferentConstraint() {
@@ -36,6 +37,10 @@ public class ClassCreator_constructorDeclaration_ReferentConstraint extends Base
     if (_context.getInEditor()) {
       return Classifier_Behavior.call_getNestedNameInContext_8540045600162183880(SNodeOperations.cast(SNodeOperations.getParent(_context.getParameterNode()), "jetbrains.mps.baseLanguage.structure.Classifier"), _context.getEnclosingNode());
     }
-    return ConstructorDeclaration_Behavior.call_getPresentationInContext_983626226385657373(_context.getParameterNode(), _context.getEnclosingNode());
+    if (_context.getVisible()) {
+      return ConstructorDeclaration_Behavior.call_getPresentationInContext_983626226385657373(_context.getParameterNode(), _context.getEnclosingNode());
+    } else {
+      return SPropertyOperations.getString(_context.getParameterNode(), "name");
+    }
   }
 }
