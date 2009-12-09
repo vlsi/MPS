@@ -14,7 +14,7 @@ public class Breakpoints_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      Breakpoints_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddBreakpoint_Action", "jetbrains.mps.ide");
+      Breakpoints_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ToggleBreakpoint_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

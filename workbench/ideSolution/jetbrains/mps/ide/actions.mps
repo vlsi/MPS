@@ -44261,8 +44261,8 @@
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="8189837781841078237">
     <property name="package" value="Menu.EditorPopup.Actions" />
-    <property name="name" value="AddBreakpoint" />
-    <property name="caption" value="Add Breakpoint" />
+    <property name="name" value="ToggleBreakpoint" />
+    <property name="caption" value="Toggle Breakpoint" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="8189837781841078238">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8189837781841078239">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8189837781841205910">
@@ -44281,17 +44281,12 @@
                 </node>
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8189837781841278665">
-              <link role="baseMethodDeclaration" targetNodeId="271.~BreakpointManager.addBreakpoint(jetbrains.mps.debug.runtime.MPSBreakpoint):void" resolveInfo="addBreakpoint" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="8189837781841278666">
-                <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="8189837781841352402">
-                  <link role="baseMethodDeclaration" targetNodeId="271.~MPSBreakpoint.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="MPSBreakpoint" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8189837781841352406">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="8189837781841352404" />
-                    <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="8189837781841352988">
-                      <link role="member" targetNodeId="8189837781841352987" resolveInfo="selectedNode" />
-                    </node>
-                  </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2942490346570186797">
+              <link role="baseMethodDeclaration" targetNodeId="271.~BreakpointManager.toggleBreakpoint(jetbrains.mps.smodel.SNode):void" resolveInfo="toggleBreakpoint" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2942490346570297904">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="2942490346570297905" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="2942490346570297906">
+                  <link role="member" targetNodeId="8189837781841352987" resolveInfo="selectedNode" />
                 </node>
               </node>
             </node>
@@ -44310,6 +44305,10 @@
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="8189837781841205909">
       <property name="name" value="project" />
       <link role="key" targetNodeId="100.~PlatformDataKeys.PROJECT" resolveInfo="PROJECT" />
+    </node>
+    <node role="keystroke" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="2942490346570185557">
+      <property name="modifiers" value="ctrl" />
+      <property name="keycode" value="VK_F8" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="8189837781841352989">
