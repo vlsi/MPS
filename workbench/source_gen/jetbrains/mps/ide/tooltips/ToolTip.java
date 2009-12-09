@@ -23,6 +23,8 @@ import jetbrains.mps.util.WindowsUtil;
 
 public class ToolTip {
   public static final Color BACKGROUND_COLOR = new Color(253, 254, 226);
+  private static final int X_OFFSET = 5;
+  private static final int Y_OFFSET = 5;
 
   private ToolTip.MyDialog myDialog;
   private ToolTipData myHintInformation;
@@ -32,6 +34,7 @@ public class ToolTip {
 
   public void show(Frame owner, Point location, ToolTipData hintInformation) {
     this.myHintInformation = hintInformation;
+    location = new Point(location.x + X_OFFSET, location.y + Y_OFFSET);
     this.myDialog = new ToolTip.MyDialog(owner, location, hintInformation);
     this.myDialog.setVisible(true);
   }

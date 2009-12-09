@@ -58,8 +58,8 @@ public class MessagesGutter extends JPanel {
   }
 
   private void validateStatus() {
-    ThreadUtils.runInUIThreadNoWait(new Runnable(){
-      public void run() {            
+    ThreadUtils.runInUIThreadNoWait(new Runnable() {
+      public void run() {
         GutterStatus status = GutterStatus.OK;
         for (EditorMessage message : myMessages) {
           if (message.getStatus() == MessageStatus.WARNING) {
@@ -126,7 +126,7 @@ public class MessagesGutter extends JPanel {
   }
 
   public boolean removeMessages(EditorMessageOwner owner) {
-   boolean removedAnything = false;
+    boolean removedAnything = false;
     for (EditorMessage m : new ArrayList<EditorMessage>(myMessages)) {
       if (myOwners.get(m) == owner) {
         myMessages.remove(m);
@@ -214,11 +214,25 @@ public class MessagesGutter extends JPanel {
             text.append("\n");
           }
           text.append(msg.getMessage());
-         // text.append("(owner: " + msg.getOwner() + ")");
+          // text.append("(owner: " + msg.getOwner() + ")");
         }
         return text.toString();
       }
 
+      return null;
+    }
+
+    @Override
+    public Point getToolTipLocation(MouseEvent event) {
+      int y = event.getY();
+
+      List<EditorMessage> messages = getMessagesAt(y);
+      if (messages.size() > 0) {
+        EditorMessage msg = messages.get(messages.size() - 1);
+        int start = getMessageStart(msg);
+        int height = getMessageHeight(msg);
+        return new Point(event.getX(), start + height / 2);
+      }
       return null;
     }
 
