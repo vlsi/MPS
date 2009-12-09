@@ -16,8 +16,7 @@
 package jetbrains.mps.ide.blame.perform;
 
 public class Query {
-  public static final String ANONYMOUS_LOGIN = "mpsexception";
-  public static final String ANONYMOUS_PASSWORD = "mpsexception";
+  public static final Query ANONYMOUS = new Query("mpsexception", "mpsexception");
 
   private String myUser = "";
   private String myPassword = "";
@@ -25,6 +24,10 @@ public class Query {
   private String myDescription = "";
 
   public Query() {
+  }
+
+  public Query(String user, String password) {
+    this(user, password, null, null);
   }
 
   public Query(String user, String password, String issue, String description) {

@@ -63,7 +63,7 @@ public class Poster {
     return myExecutor.execute(test);
   }
 
-  private static void setTimeouts(HttpClient c) {
+  public static void setTimeouts(HttpClient c) {
     HttpClientParams params = c.getParams();
     params.setConnectionManagerTimeout(TIMEOUT);
     params.setSoTimeout(TIMEOUT);

@@ -110,7 +110,7 @@ public class BlameDialog extends BaseDialog {
       public void actionPerformed(ActionEvent e) {
         Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
         Poster poster = new Poster(project);
-        Query query = new Query(getLogin(), getPassword(), null, null);
+        Query query = createQuery();
 
         Response response = poster.test(query);
         if (response.isSuccess()) {
@@ -121,6 +121,10 @@ public class BlameDialog extends BaseDialog {
         }
       }
     });
+  }
+
+  private Query createQuery() {
+    return myAnonymousRadio.isSelected() ? Query.ANONYMOUS : new Query(myUsername.getText(), myPassword.getText());
   }
 
   private String ex2str(Throwable e) {
@@ -160,14 +164,6 @@ public class BlameDialog extends BaseDialog {
     return myIsCancelled;
   }
 
-  private String getLogin() {
-    return myAnonymousRadio.isSelected() ? Query.ANONYMOUS_LOGIN : myUsername.getText();
-  }
-
-  private String getPassword() {
-    return myAnonymousRadio.isSelected() ? Query.ANONYMOUS_PASSWORD : myPassword.getText();
-  }
-
   @NotNull
   public Response getResult() {
     return myResult;
@@ -197,7 +193,9 @@ public class BlameDialog extends BaseDialog {
 
     Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
     Poster poster = new Poster(project);
-    Query query = new Query(getLogin(), getPassword(), title, description.toString());
+    Query query = createQuery();
+    query.setIssue(title);
+    query.setDescription(description.toString());
     myResult = poster.send(query);
 
     if (!myResult.isSuccess()) {
