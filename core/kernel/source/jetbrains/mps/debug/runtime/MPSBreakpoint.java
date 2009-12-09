@@ -31,7 +31,7 @@ public class MPSBreakpoint {
   }
 
   public BreakpointInfo createBreakpointInfo() {
-    return new BreakpointInfo(myNodePointer.getModelReference().getSModelFqName().toString(),
+    return new BreakpointInfo(myNodePointer.getModelReference().toString(),
       myNodePointer.getNodeId().toString());
   }
 
