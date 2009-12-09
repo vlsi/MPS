@@ -4834,5 +4834,23 @@
       <link role="editorComponent" targetNodeId="1176544346178" resolveInfo="_NotInRules_Component" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="6773347515165533838">
+    <link role="conceptDeclaration" targetNodeId="1.6773347515165533831" resolveInfo="NodeInfo" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="6773347515165547243">
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="6773347515165547246">
+        <property name="text" value="node" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="6773347515165547248">
+        <link role="relationDeclaration" targetNodeId="1.6773347515165533832" resolveInfo="modelId" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="6773347515165547250">
+        <property name="text" value=":" />
+      </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="6773347515165547252">
+        <link role="relationDeclaration" targetNodeId="1.6773347515165533833" resolveInfo="nodeId" />
+      </node>
+      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="6773347515165547245" />
+    </node>
+  </node>
 </model>
 
