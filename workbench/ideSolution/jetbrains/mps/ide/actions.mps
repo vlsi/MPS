@@ -18165,7 +18165,7 @@
                                 </node>
                               </node>
                               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6894430479832202850">
-                                <property name="value" value=".IntelliJIdea80" />
+                                <property name="value" value=".IntelliJIdea90" />
                               </node>
                             </node>
                             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="6894430479832202854">
@@ -18206,7 +18206,7 @@
                       <link role="baseMethodDeclaration" targetNodeId="88.~File.&lt;init&gt;(java.lang.String)" resolveInfo="File" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="6894430479832202881">
                         <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6894430479832202882">
-                          <property name="value" value="IntelliJIDEA80" />
+                          <property name="value" value="IntelliJIdea90" />
                         </node>
                         <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="6894430479832202879">
                           <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="6894430479832202878">

@@ -62,7 +62,7 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
       File pluginFile = new File(new File(PathManager.getHomePath(), "plugin"), "MPSPlugin.jar");
       File targetDir;
       if (!(SystemInfo.isMac)) {
-        targetDir = new File(System.getProperty("user.home") + File.separator + ".IntelliJIdea80" + File.separator + "config" + File.separator + "plugins");
+        targetDir = new File(System.getProperty("user.home") + File.separator + ".IntelliJIdea90" + File.separator + "config" + File.separator + "plugins");
       } else {
         targetDir = new File(System.getProperty("user.home") + File.separator + "Library" + File.separator + "Application Support" + File.separator + "IntelliJIdea90");
       }
