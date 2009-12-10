@@ -1526,28 +1526,6 @@
         </node>
       </node>
     </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="4558549435474031508">
-      <property name="name" value="getConsole" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4558549435474031521">
-        <link role="classifier" targetNodeId="34.~ConsoleViewImpl" resolveInfo="ConsoleViewImpl" />
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="4558549435474031510" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4558549435474031511">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4558549435474031522">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4558549435474031526">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4558549435474031523">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="4558549435474031524">
-                <link role="fieldDeclaration" targetNodeId="1208368159301" resolveInfo="outputComponent" />
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="4558549435474031525" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="4558549435474031546">
-              <link role="baseMethodDeclaration" targetNodeId="4558549435474031532" resolveInfo="getConsole" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="6366506792964646711">
       <property name="name" value="appendWithParameters" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8829210569367336933" />
@@ -1868,7 +1846,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8256878423276547637">
-      <property name="name" value="fromTestCases" />
+      <property name="name" value="addTestCases" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8256878423276547638">
         <property name="name" value="testCases" />
         <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="8256878423276547639">
@@ -1971,7 +1949,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="8256878423276547678">
-      <property name="name" value="fromTestMethods" />
+      <property name="name" value="addTestMethods" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8256878423276547679">
         <property name="name" value="testMethods" />
         <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="8256878423276547680">

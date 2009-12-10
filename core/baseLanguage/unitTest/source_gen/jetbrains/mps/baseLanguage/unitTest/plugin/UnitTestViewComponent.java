@@ -152,10 +152,6 @@ public class UnitTestViewComponent extends JPanel {
     return tablePanel;
   }
 
-  public ConsoleViewImpl getConsole() {
-    return this.outputComponent.getConsole();
-  }
-
   public void appendWithParameters(String className, String methodName, String text, boolean isError, boolean isSystem) {
     if (className != null && methodName != null) {
       this.outputComponent.appendWithParameters(className, methodName, text, isError, isSystem);
@@ -184,12 +180,12 @@ public class UnitTestViewComponent extends JPanel {
 
   public void setTestCaseAndMethod(IOperationContext operationContext, List<SNode> testCases, List<SNode> testMethods) {
     Map<SNode, List<SNode>> tests = MapSequence.fromMap(new LinkedHashMap<SNode, List<SNode>>(16, (float)0.75, false));
-    this.fromTestCases(testCases, tests);
-    this.fromTestMethods(testMethods, tests);
+    this.addTestCases(testCases, tests);
+    this.addTestMethods(testMethods, tests);
     this.setTestsMap(operationContext, tests);
   }
 
-  private Map<SNode, List<SNode>> fromTestCases(List<SNode> testCases, Map<SNode, List<SNode>> tests) {
+  private Map<SNode, List<SNode>> addTestCases(List<SNode> testCases, Map<SNode, List<SNode>> tests) {
     for (SNode testCase : ListSequence.fromList(testCases)) {
       List<SNode> testMethods = new ArrayList<SNode>();
       MapSequence.fromMap(tests).put(testCase, testMethods);
@@ -200,7 +196,7 @@ public class UnitTestViewComponent extends JPanel {
     return tests;
   }
 
-  private Map<SNode, List<SNode>> fromTestMethods(List<SNode> testMethods, Map<SNode, List<SNode>> tests) {
+  private Map<SNode, List<SNode>> addTestMethods(List<SNode> testMethods, Map<SNode, List<SNode>> tests) {
     for (SNode testMethod : ListSequence.fromList(testMethods)) {
       SNode testCase = ITestMethod_Behavior.call_getTestCase_1216134500045(testMethod);
       List<SNode> curTestMethods = MapSequence.fromMap(tests).get(testCase);
