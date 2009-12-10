@@ -1598,6 +1598,11 @@
                           </node>
                         </node>
                         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="842994667883030273">
+                          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="1772246947774001141">
+                            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="1772246947774001142">
+                              <property name="text" value="runtimeClassPath is left for compatibility" />
+                            </node>
+                          </node>
                           <node role="statement" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" id="842994667883030274">
                             <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="842994667883030275">
                               <node role="statement" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement" id="842994667883030276">
@@ -1671,9 +1676,19 @@
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="842994667883030301" />
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="842994667883030302">
-              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="842994667883030303">
-                <property name="text" value="TODO: set timestamp" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1772246947774001144">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1772246947774001146">
+                <link role="baseMethodDeclaration" targetNodeId="2709156219364672177" resolveInfo="setTimestamp" />
+                <link role="classConcept" targetNodeId="842994667883031742" resolveInfo="ModuleDescriptorPersistence_new" />
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1772246947774001147">
+                  <link role="variableDeclaration" targetNodeId="842994667883030173" resolveInfo="descriptor" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1772246947774001149">
+                  <link role="variableDeclaration" targetNodeId="842994667883030315" resolveInfo="file" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1772246947774001151">
+                  <property name="value" value="false" />
+                </node>
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="842994667883030304">
@@ -1690,15 +1705,13 @@
               </node>
             </node>
             <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="842994667883030309">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="842994667883030310">
-                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="842994667883030311">
-                  <property name="text" value="TODO: throw exception" />
-                </node>
-              </node>
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="842994667883030312">
                 <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="842994667883030313">
-                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="842994667883030314">
-                    <link role="baseMethodDeclaration" targetNodeId="2v.~AssertionError.&lt;init&gt;()" />
+                  <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1772246947774001153">
+                    <link role="baseMethodDeclaration" targetNodeId="2709156219364650542" resolveInfo="ModuleReadException_new" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1772246947774001154">
+                      <link role="variableDeclaration" targetNodeId="842994667883030307" resolveInfo="e" />
+                    </node>
                   </node>
                 </node>
               </node>
@@ -2107,18 +2120,31 @@
               </node>
             </node>
             <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="842994667883030488">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="842994667883030489">
-                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="842994667883030490">
-                  <property name="text" value="TODO log" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement" id="1772246947774001156">
+                <property name="severity" value="error" />
+                <property name="hasException" value="true" />
+                <node role="logExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1772246947774001157" />
+                <node role="exception" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1772246947774001158">
+                  <link role="variableDeclaration" targetNodeId="842994667883030486" resolveInfo="e" />
                 </node>
               </node>
             </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="842994667883030491" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="842994667883030492">
-          <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="842994667883030493">
-            <property name="text" value="TODO set timestamp" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1772246947774001160">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1772246947774001162">
+            <link role="baseMethodDeclaration" targetNodeId="2709156219364672177" resolveInfo="setTimestamp" />
+            <link role="classConcept" targetNodeId="842994667883031742" resolveInfo="ModuleDescriptorPersistence_new" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1772246947774001163">
+              <link role="variableDeclaration" targetNodeId="842994667883030494" resolveInfo="descriptor" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1772246947774001165">
+              <link role="variableDeclaration" targetNodeId="842994667883030496" resolveInfo="file" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1772246947774001167">
+              <property name="value" value="true" />
+            </node>
           </node>
         </node>
       </node>
