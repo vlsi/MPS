@@ -44291,11 +44291,11 @@
               </node>
             </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2942490346570186797">
-              <link role="baseMethodDeclaration" targetNodeId="271.~BreakpointManager.toggleBreakpoint(jetbrains.mps.smodel.SNode):void" resolveInfo="toggleBreakpoint" />
+              <link role="baseMethodDeclaration" targetNodeId="271.~BreakpointManager.toggleBreakpoint(jetbrains.mps.nodeEditor.cells.EditorCell):void" resolveInfo="toggleBreakpoint" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2942490346570297904">
                 <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="2942490346570297905" />
-                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="2942490346570297906">
-                  <link role="member" targetNodeId="8189837781841352987" resolveInfo="selectedNode" />
+                <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="7324610696021668006">
+                  <link role="member" targetNodeId="7324610696021668005" resolveInfo="selectedCell" />
                 </node>
               </node>
             </node>
@@ -44303,9 +44303,9 @@
         </node>
       </node>
     </node>
-    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="8189837781841352987">
-      <property name="name" value="selectedNode" />
-      <link role="key" targetNodeId="107.~MPSDataKeys.NODE" resolveInfo="NODE" />
+    <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="7324610696021668005">
+      <property name="name" value="selectedCell" />
+      <link role="key" targetNodeId="107.~MPSDataKeys.EDITOR_CELL" resolveInfo="EDITOR_CELL" />
     </node>
     <node role="parameter" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration" id="8189837781841136310">
       <property name="name" value="editorComponent" />

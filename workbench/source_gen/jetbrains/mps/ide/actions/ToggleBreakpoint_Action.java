@@ -6,7 +6,7 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
@@ -18,7 +18,7 @@ public class ToggleBreakpoint_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(ToggleBreakpoint_Action.class);
 
-  private SNode selectedNode;
+  private EditorCell selectedCell;
   private EditorComponent editorComponent;
   private Project project;
 
@@ -49,8 +49,8 @@ public class ToggleBreakpoint_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
-    this.selectedNode = event.getData(MPSDataKeys.NODE);
-    if (this.selectedNode == null) {
+    this.selectedCell = event.getData(MPSDataKeys.EDITOR_CELL);
+    if (this.selectedCell == null) {
       return false;
     }
     this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
@@ -66,7 +66,7 @@ public class ToggleBreakpoint_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ToggleBreakpoint_Action.this.project.getComponent(BreakpointManager.class).toggleBreakpoint(ToggleBreakpoint_Action.this.selectedNode);
+      ToggleBreakpoint_Action.this.project.getComponent(BreakpointManager.class).toggleBreakpoint(ToggleBreakpoint_Action.this.selectedCell);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ToggleBreakpoint", t);
