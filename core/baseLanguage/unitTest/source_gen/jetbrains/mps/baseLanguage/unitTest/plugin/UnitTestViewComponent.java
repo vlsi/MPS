@@ -193,7 +193,7 @@ public class UnitTestViewComponent extends JPanel {
     for (SNode testCase : ListSequence.fromList(testCases)) {
       List<SNode> testMethods = new ArrayList<SNode>();
       MapSequence.fromMap(tests).put(testCase, testMethods);
-      for (SNode testMethod : ListSequence.fromList(ITestCase_Behavior.call_getTestSet_1216130724401(testCase))) {
+      for (SNode testMethod : ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(testCase))) {
         ListSequence.fromList(testMethods).addElement(testMethod);
       }
     }
