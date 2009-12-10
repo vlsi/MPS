@@ -3,6 +3,9 @@ package jetbrains.mps.debug.runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.BookmarkInfo;
+import jetbrains.mps.debug.PositionInfo;
+import jetbrains.mps.debug.BLDebugInfoCache;
+import jetbrains.mps.debug.DebugInfo;
 
 /**
  * Created by IntelliJ IDEA.
@@ -37,6 +40,18 @@ public class MPSBreakpoint {
 
   public static MPSBreakpoint fromBreakpointInfo(BreakpointInfo breakpointInfo) {
     return new MPSBreakpoint(new SNodePointer(breakpointInfo.myModelReference, breakpointInfo.myNodeId));
+  }
+
+  public PositionInfo getTargetCodePosition() {
+    DebugInfo debugInfo = BLDebugInfoCache.getInstance().get(myNodePointer.getModel());
+    if (debugInfo == null) {
+      return null;
+    }
+    return debugInfo.getPositionForNode(myNodePointer.getNodeId().toString());
+  }
+
+  public boolean isValid() {
+    return getTargetCodePosition() != null;
   }
 
   public static class BreakpointInfo {

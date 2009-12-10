@@ -167,7 +167,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   protected EditorCell mySelectedCell;
   private boolean myCellSwapInProgress;
   private static final int MIN_SHIFT_X = 30;
-  private static final int ADDITIONAL_SHIFT_X = 10;
+  private static final int ADDITIONAL_SHIFT_X = 15;
   private int myShiftX = MIN_SHIFT_X + ADDITIONAL_SHIFT_X;
   private int myShiftY = 10;
 

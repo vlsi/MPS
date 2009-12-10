@@ -12,4 +12,5 @@ import javax.swing.ImageIcon;
  */
 public class Icons {
   public static final Icon BREAKPOINT = new ImageIcon(Icons.class.getResource("db_set_breakpoint.png"));
+  public static final Icon INV_BREAKPOINT = new ImageIcon(Icons.class.getResource("db_invalid_breakpoint.png"));
 }
