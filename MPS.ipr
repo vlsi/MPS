@@ -279,6 +279,11 @@
         <inspection_tool class="SameParameterValue" enabled="false" level="WARNING" enabled_by_default="false" />
         <inspection_tool class="SameReturnValue" enabled="false" level="WARNING" enabled_by_default="false" />
         <inspection_tool class="SimplifiableIfStatement" enabled="false" level="WARNING" enabled_by_default="false" />
+        <inspection_tool class="SpellCheckingInspection" enabled="true" level="TYPO" enabled_by_default="true">
+          <option name="processCode" value="false" />
+          <option name="processLiterals" value="true" />
+          <option name="processComments" value="true" />
+        </inspection_tool>
         <inspection_tool class="StaticVariableNamingConvention" enabled="true" level="WARNING" enabled_by_default="true">
           <option name="checkMutableFinals" value="false" />
           <option name="m_regex" value="our[A-Z][A-Za-z\d]*" />
@@ -733,6 +738,9 @@
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="MPS" />
+  </component>
+  <component name="ProjectDictionaryState">
+    <dictionary name="mihailmuhin" />
   </component>
   <component name="ProjectKey">
     <option name="state" value="http://svn.jetbrains.org/mps/trunk/MPS/MPS.ipr" />
