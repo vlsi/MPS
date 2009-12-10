@@ -54,6 +54,14 @@ public class DefaultFileGenerator implements IFileGenerator {
     }
 
     if (file.exists()) {
+      try {
+        String existingContents = FileUtil.read(file);
+        if(existingContents != null && existingContents.equals(content)) {
+          return file;
+        }
+      } catch(RuntimeException ex) {
+        /* ignore */
+      }
       file.delete();
     }
 
