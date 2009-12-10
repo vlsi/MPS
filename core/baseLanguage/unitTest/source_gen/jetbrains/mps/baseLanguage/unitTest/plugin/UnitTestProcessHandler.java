@@ -5,13 +5,13 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import com.intellij.execution.process.DefaultJavaProcessHandler;
 import java.nio.charset.Charset;
 import com.intellij.execution.process.ProcessAdapter;
+import com.intellij.execution.process.ProcessTerminatedListener;
 import com.intellij.execution.process.ProcessEvent;
 import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
 import javax.swing.SwingUtilities;
-import com.intellij.execution.process.ProcessTerminatedListener;
 
 public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
   private UnitTestViewComponent myComponent;
@@ -35,7 +35,19 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
         }
       }
 
+      private boolean isTerminatedEvent() {
+        for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
+          if (element.getClassName().equals(ProcessTerminatedListener.class.getName())) {
+            return true;
+          }
+        }
+        return false;
+      }
+
       public void onTextAvailable(ProcessEvent event, Key k) {
+        if (this.isTerminatedEvent()) {
+          UnitTestProcessHandler.this.myComponent.getTestListener().onProcessTerminated();
+        }
         final String className = UnitTestProcessHandler.this.myComponent.getCurrentClassName();
         final String methodName = UnitTestProcessHandler.this.myComponent.getCurrentMethodName();
         final boolean error = ProcessOutputTypes.STDERR.equals(k);

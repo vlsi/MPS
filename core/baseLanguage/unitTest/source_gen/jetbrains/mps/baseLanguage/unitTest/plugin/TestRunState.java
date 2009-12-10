@@ -13,7 +13,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
-import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
 
 public class TestRunState {
@@ -76,6 +75,7 @@ public class TestRunState {
     synchronized (lock) {
       this.loseTest = test;
       this.loseMethod = method;
+      this.completedTests++;
       this.updateView();
       this.loseTest = null;
       this.loseMethod = null;
@@ -92,26 +92,8 @@ public class TestRunState {
     this.totalTests = ListSequence.fromList(this.testMethods).count();
   }
 
-  public boolean isLastTestCase() {
-    if (ListSequence.fromList(this.testMethods).count() <= 1) {
-      return true;
-    }
-    String testCaseName = null;
-    synchronized (this.testMethods) {
-      for (String testMethod : this.testMethods) {
-        String nextTestCaseName = testMethod.substring(0, testMethod.lastIndexOf("."));
-        if (EqualUtil.equals(testCaseName, nextTestCaseName) || testCaseName == null) {
-          testCaseName = nextTestCaseName;
-        } else {
-          return false;
-        }
-      }
-    }
-    return true;
-  }
-
-  public List<String> getCurrentLostTests(TestEvent event) {
-    return this.getCurrentLostTests(event.getTestCaseName(), event.getTestMethodName(), event.getToken());
+  public List<String> getUnusedMethods() {
+    return this.testMethods;
   }
 
   public void completeTestEvent(TestEvent event) {
@@ -126,28 +108,6 @@ public class TestRunState {
         }
       }
     }
-  }
-
-  public List<String> getCurrentLostTests(String testClassName, String testMethodName, String token) {
-    List<String> list = ListSequence.fromList(new ArrayList<String>());
-    String key = testClassName + '.' + testMethodName;
-    if (!(token.equals(TestEvent.END_TEST_PREFIX) || token.equals(TestEvent.ERROR_TEST_SUFFIX) || token.equals(TestEvent.FAILURE_TEST_SUFFIX))) {
-      int indexOfMethod = ListSequence.fromList(this.testMethods).indexOf(key);
-      if (indexOfMethod > 0) {
-        for (int i = 0; i < indexOfMethod; i++) {
-          String currentTestMethod = ListSequence.fromList(this.testMethods).getElement(i);
-          if (ListSequence.fromList(list).contains(currentTestMethod)) {
-            continue;
-          }
-          String currentClassName = currentTestMethod.substring(0, currentTestMethod.lastIndexOf("."));
-          if (currentClassName.equals(testClassName) && !(this.isLastTestCase())) {
-            continue;
-          }
-          ListSequence.fromList(list).addElement(currentTestMethod);
-        }
-      }
-    }
-    return list;
   }
 
   public int getTotalTests() {
