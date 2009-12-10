@@ -40,7 +40,7 @@ public class NewModelDialog extends BaseDialog {
   private SModelDescriptor myResult;
   private String myNamespace;
 
-  public NewModelDialog(IModule module, String namespace, IOperationContext context) throws HeadlessException {
+  public NewModelDialog(IModule module, String namespace, IOperationContext context, String stereotype, boolean strict) throws HeadlessException {
     super(context.getMainFrame(), "New Model");
     myContext = context;
     myModule = module;
@@ -49,10 +49,7 @@ public class NewModelDialog extends BaseDialog {
     assert myModule.getSModelRoots().size() > 0 : "Can't create a model in solution with no module roots";
 
     initContentPane();
-  }
 
-  public NewModelDialog(IModule module, String namespace, IOperationContext context, String stereotype, boolean strict) throws HeadlessException {
-    this(module, namespace, context);
     if (stereotype != null) {
       myModelStereotype.setSelectedItem(stereotype);
       myModelStereotype.setEnabled(!strict);
