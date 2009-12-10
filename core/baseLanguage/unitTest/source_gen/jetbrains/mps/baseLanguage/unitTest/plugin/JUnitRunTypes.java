@@ -12,17 +12,4 @@ public enum JUnitRunTypes {
 
   JUnitRunTypes() {
   }
-
-  public static JUnitRunTypes getType(boolean isModule, boolean isModel, boolean isTest, boolean isMethod) {
-    if (isModule) {
-      return JUnitRunTypes.MODULE;
-    } else if (isModel) {
-      return JUnitRunTypes.MODEL;
-    } else if (isTest) {
-      return JUnitRunTypes.NODE;
-    } else if (isMethod) {
-      return JUnitRunTypes.METHOD;
-    }
-    return JUnitRunTypes.PROJECT;
-  }
 }

@@ -13674,6 +13674,89 @@
         <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="3303951263690409802" />
       </node>
     </node>
+    <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="2134602208815511310">
+      <property name="name" value="getType" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="2134602208815535866">
+        <property name="name" value="isModule" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="2134602208815535867" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="2134602208815535868">
+        <property name="name" value="isModel" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="2134602208815535869" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="2134602208815535870">
+        <property name="name" value="isTest" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="2134602208815535871" />
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="2134602208815535872">
+        <property name="name" value="isMethod" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="2134602208815535873" />
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2134602208815535865">
+        <link role="classifier" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2134602208815511312">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2134602208815535874">
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2134602208815535875">
+            <link role="variableDeclaration" targetNodeId="2134602208815535866" resolveInfo="isModule" />
+          </node>
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2134602208815535876">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2134602208815535877">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="2134602208815535878">
+                <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
+                <link role="enumConstantDeclaration" targetNodeId="5068927335440176137" resolveInfo="MODULE" />
+              </node>
+            </node>
+          </node>
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="2134602208815535879">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2134602208815535880">
+              <link role="variableDeclaration" targetNodeId="2134602208815535868" resolveInfo="isModel" />
+            </node>
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2134602208815535881">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2134602208815535882">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="2134602208815535883">
+                  <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
+                  <link role="enumConstantDeclaration" targetNodeId="5068927335440176135" resolveInfo="MODEL" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="2134602208815535884">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2134602208815535885">
+              <link role="variableDeclaration" targetNodeId="2134602208815535870" resolveInfo="isTest" />
+            </node>
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2134602208815535886">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2134602208815535887">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="2134602208815535888">
+                  <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
+                  <link role="enumConstantDeclaration" targetNodeId="5068927335440176133" resolveInfo="NODE" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="2134602208815535889">
+            <node role="condition" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2134602208815535890">
+              <link role="variableDeclaration" targetNodeId="2134602208815535872" resolveInfo="isMethod" />
+            </node>
+            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2134602208815535891">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="2134602208815535892">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="2134602208815535893">
+                  <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
+                  <link role="enumConstantDeclaration" targetNodeId="5068927335440176128" resolveInfo="METHOD" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2134602208815535894">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="2134602208815535895">
+            <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
+            <link role="enumConstantDeclaration" targetNodeId="1969840607716829965" resolveInfo="PROJECT" />
+          </node>
+        </node>
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="2134602208815511318" />
+    </node>
     <node role="componentMethod" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration" id="1930019848839359701">
       <property name="name" value="apply" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1930019848839359704" />
@@ -13977,39 +14060,41 @@
                   <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5068927335440176472">
                     <link role="classifier" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
                   </node>
-                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="8745027459331722184">
-                    <link role="baseMethodDeclaration" targetNodeId="8745027459331722149" resolveInfo="getType" />
-                    <link role="classConcept" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8745027459331722188">
-                      <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="8745027459331722186">
-                        <link role="component" targetNodeId="8666759864083945043" resolveInfo="isModule" />
+                  <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2134602208815535898">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="2134602208815535897" />
+                    <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation" id="2134602208815537935">
+                      <link role="member" targetNodeId="2134602208815511310" resolveInfo="getType" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2134602208815537952">
+                        <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="2134602208815537953">
+                          <link role="component" targetNodeId="8666759864083945043" resolveInfo="isModule" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2134602208815537954">
+                          <link role="baseMethodDeclaration" targetNodeId="7.~AbstractButton.isSelected():boolean" resolveInfo="isSelected" />
+                        </node>
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8745027459331724198">
-                        <link role="baseMethodDeclaration" targetNodeId="7.~AbstractButton.isSelected():boolean" resolveInfo="isSelected" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2134602208815537955">
+                        <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="2134602208815537956">
+                          <link role="component" targetNodeId="1104580685292496820" resolveInfo="isModel" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2134602208815537957">
+                          <link role="baseMethodDeclaration" targetNodeId="7.~AbstractButton.isSelected():boolean" resolveInfo="isSelected" />
+                        </node>
                       </node>
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8745027459331724204">
-                      <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="8745027459331724202">
-                        <link role="component" targetNodeId="1104580685292496820" resolveInfo="isModel" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2134602208815537958">
+                        <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="2134602208815537959">
+                          <link role="component" targetNodeId="1104580685292496823" resolveInfo="isClass" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2134602208815537960">
+                          <link role="baseMethodDeclaration" targetNodeId="7.~AbstractButton.isSelected():boolean" resolveInfo="isSelected" />
+                        </node>
                       </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8745027459331724209">
-                        <link role="baseMethodDeclaration" targetNodeId="7.~AbstractButton.isSelected():boolean" resolveInfo="isSelected" />
-                      </node>
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8745027459331724215">
-                      <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="8745027459331724213">
-                        <link role="component" targetNodeId="1104580685292496823" resolveInfo="isClass" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8745027459331724220">
-                        <link role="baseMethodDeclaration" targetNodeId="7.~AbstractButton.isSelected():boolean" resolveInfo="isSelected" />
-                      </node>
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8745027459331724224">
-                      <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="8745027459331724223">
-                        <link role="component" targetNodeId="1104580685292496826" resolveInfo="isMethod" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8745027459331724229">
-                        <link role="baseMethodDeclaration" targetNodeId="7.~AbstractButton.isSelected():boolean" resolveInfo="isSelected" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2134602208815537961">
+                        <node role="operand" type="jetbrains.mps.uiLanguage.structure.ComponentReference" id="2134602208815537962">
+                          <link role="component" targetNodeId="1104580685292496826" resolveInfo="isMethod" />
+                        </node>
+                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2134602208815537963">
+                          <link role="baseMethodDeclaration" targetNodeId="7.~AbstractButton.isSelected():boolean" resolveInfo="isSelected" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -16968,89 +17053,6 @@
   <node type="jetbrains.mps.baseLanguage.structure.EnumClass" id="5068927335440176122">
     <property name="package" value="run" />
     <property name="name" value="JUnitRunTypes" />
-    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="8745027459331722149">
-      <property name="name" value="getType" />
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8745027459331722175">
-        <property name="name" value="isModule" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8745027459331722176" />
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8745027459331722177">
-        <property name="name" value="isModel" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8745027459331722178" />
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8745027459331722179">
-        <property name="name" value="isTest" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8745027459331722180" />
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="8745027459331722181">
-        <property name="name" value="isMethod" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="8745027459331722182" />
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8745027459331722183">
-        <link role="classifier" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
-      </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="8745027459331722151" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8745027459331722152">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="8745027459331722153">
-          <node role="condition" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8745027459331722154">
-            <link role="variableDeclaration" targetNodeId="8745027459331722175" resolveInfo="isModule" />
-          </node>
-          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8745027459331722155">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8745027459331722156">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="8745027459331722157">
-                <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
-                <link role="enumConstantDeclaration" targetNodeId="5068927335440176137" resolveInfo="MODULE" />
-              </node>
-            </node>
-          </node>
-          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="8745027459331722158">
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8745027459331722159">
-              <link role="variableDeclaration" targetNodeId="8745027459331722177" resolveInfo="isModel" />
-            </node>
-            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8745027459331722160">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8745027459331722161">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="8745027459331722162">
-                  <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
-                  <link role="enumConstantDeclaration" targetNodeId="5068927335440176135" resolveInfo="MODEL" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="8745027459331722163">
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8745027459331722164">
-              <link role="variableDeclaration" targetNodeId="8745027459331722179" resolveInfo="isTest" />
-            </node>
-            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8745027459331722165">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8745027459331722166">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="8745027459331722167">
-                  <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
-                  <link role="enumConstantDeclaration" targetNodeId="5068927335440176133" resolveInfo="TESTCLASS" />
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="elsifClauses" type="jetbrains.mps.baseLanguage.structure.ElsifClause" id="8745027459331722168">
-            <node role="condition" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="8745027459331722169">
-              <link role="variableDeclaration" targetNodeId="8745027459331722181" resolveInfo="isMethod" />
-            </node>
-            <node role="statementList" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8745027459331722170">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8745027459331722171">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="8745027459331722172">
-                  <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
-                  <link role="enumConstantDeclaration" targetNodeId="5068927335440176128" resolveInfo="METHOD" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1969840607717020189">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1969840607717020192">
-            <link role="enumConstantDeclaration" targetNodeId="1969840607716829965" resolveInfo="PROJECT" />
-            <link role="enumClass" targetNodeId="5068927335440176122" resolveInfo="JUnitRunTypes" />
-          </node>
-        </node>
-      </node>
-    </node>
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="5068927335440176129">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="5068927335440176130" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5068927335440176131" />

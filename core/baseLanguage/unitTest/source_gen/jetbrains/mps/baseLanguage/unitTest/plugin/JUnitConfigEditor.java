@@ -413,6 +413,19 @@ public class JUnitConfigEditor extends JPanel {
     });
   }
 
+  private JUnitRunTypes getType(boolean isModule, boolean isModel, boolean isTest, boolean isMethod) {
+    if (isModule) {
+      return JUnitRunTypes.MODULE;
+    } else if (isModel) {
+      return JUnitRunTypes.MODEL;
+    } else if (isTest) {
+      return JUnitRunTypes.NODE;
+    } else if (isMethod) {
+      return JUnitRunTypes.METHOD;
+    }
+    return JUnitRunTypes.PROJECT;
+  }
+
   public void apply(final DefaultJUnit_Configuration config) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
@@ -440,7 +453,7 @@ public class JUnitConfigEditor extends JPanel {
         } else {
           config.getStateObject().module = null;
         }
-        JUnitRunTypes type = JUnitRunTypes.getType(myThis.myIsModule0.isSelected(), myThis.myIsModel0.isSelected(), myThis.myIsClass0.isSelected(), myThis.myIsMethod0.isSelected());
+        JUnitRunTypes type = myThis.getType(myThis.myIsModule0.isSelected(), myThis.myIsModel0.isSelected(), myThis.myIsClass0.isSelected(), myThis.myIsMethod0.isSelected());
         if (type != null) {
           config.getStateObject().type = type;
         }
