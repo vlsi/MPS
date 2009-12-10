@@ -65,6 +65,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
     final ID<SNodeDescriptor, Void> indexName = myIndex.getName();
     final ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
     final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
+    
     fileBasedIndex.processAllKeys(indexName, new Processor<SNodeDescriptor>() {
       public boolean process(SNodeDescriptor s) {
         if (scope.getModelDescriptor(s.getModelReference()) == null) return true;
@@ -81,7 +82,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
 
     Set<SNodeDescriptor> keysCopy = new HashSet<SNodeDescriptor>(keys);
     for (SNodeDescriptor s : keysCopy) {
-      if (!fileBasedIndex.getContainingFiles(indexName, s, new EverythingGlobalScope(getIdeaProject())).isEmpty()) {
+      if (fileBasedIndex.getContainingFiles(indexName, s, new EverythingGlobalScope(getIdeaProject())).isEmpty()) {
         keys.remove(s);
       }
     }
