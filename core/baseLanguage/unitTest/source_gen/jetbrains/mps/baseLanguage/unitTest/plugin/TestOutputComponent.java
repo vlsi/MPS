@@ -9,7 +9,9 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import javax.swing.SwingUtilities;
+import com.intellij.execution.process.ProcessOutputTypes;
 import org.apache.commons.lang.ObjectUtils;
+import com.intellij.openapi.util.Key;
 import jetbrains.mps.debug.StacktraceUtil;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.util.Disposer;
@@ -35,7 +37,7 @@ public class TestOutputComponent implements TestView {
     if (test != null && method != null) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          TestOutputComponent.this.appendWithParameters(test, method, "\nError: couldn't find method '" + method + "' in '" + test + "'\n\n", true, false);
+          TestOutputComponent.this.appendWithParameters(test, method, "\nError: couldn't find method '" + method + "' in '" + test + "'\n\n", ProcessOutputTypes.STDERR);
         }
       });
     }
@@ -64,14 +66,14 @@ public class TestOutputComponent implements TestView {
     }
   }
 
-  public void appendWithParameters(String testClass, String testMethod, String text, boolean isError, boolean isSystem) {
-    TestOutputComponent.Message newMessage = new TestOutputComponent.Message(testClass, testMethod, text, isError, isSystem);
+  public void appendWithParameters(String testClass, String testMethod, String text, Key type) {
+    TestOutputComponent.Message newMessage = new TestOutputComponent.Message(testClass, testMethod, text, type);
     ListSequence.fromList(this.messages).addElement(newMessage);
     this.append(newMessage);
   }
 
-  public void append(String message, boolean error, boolean internal) {
-    TestOutputComponent.Message newMessage = new TestOutputComponent.Message(this.getCurrentClassName(), this.getCurrentMethodName(), message, error, internal);
+  public void append(String message, Key type) {
+    TestOutputComponent.Message newMessage = new TestOutputComponent.Message(this.getCurrentClassName(), this.getCurrentMethodName(), message, type);
     ListSequence.fromList(this.messages).addElement(newMessage);
     this.append(newMessage);
   }
@@ -83,11 +85,11 @@ public class TestOutputComponent implements TestView {
 
   private void append(TestOutputComponent.Message message) {
     if (message.matches(this.filterClass, this.filterMethod)) {
-      if (message.isError()) {
+      if (ProcessOutputTypes.STDERR.equals(message.getType())) {
         StacktraceUtil.appendStacktraceToConsole(this.consoleView, message.getMessage(), ConsoleViewContentType.ERROR_OUTPUT);
-      } else if (message.isInternal()) {
+      } else if (ProcessOutputTypes.SYSTEM.equals(message.getType())) {
         this.consoleView.print(message.getMessage(), ConsoleViewContentType.SYSTEM_OUTPUT);
-      } else {
+      } else if (ProcessOutputTypes.STDOUT.equals(message.getType())) {
         this.consoleView.print(message.getMessage(), ConsoleViewContentType.NORMAL_OUTPUT);
       }
     }
@@ -105,15 +107,13 @@ public class TestOutputComponent implements TestView {
     private String testClass;
     private String testMethod;
     private String message;
-    private boolean error;
-    private boolean internal;
+    private Key type;
 
-    public Message(String testClass, String testMethod, String message, boolean error, boolean internal) {
+    public Message(String testClass, String testMethod, String message, Key types) {
       this.testClass = testClass;
       this.testMethod = testMethod;
       this.message = message;
-      this.error = error;
-      this.internal = internal;
+      this.type = types;
     }
 
     public boolean matches(String testClass, String testMethod) {
@@ -124,12 +124,8 @@ public class TestOutputComponent implements TestView {
       return this.message;
     }
 
-    public boolean isError() {
-      return this.error;
-    }
-
-    public boolean isInternal() {
-      return this.internal;
+    private Key getType() {
+      return this.type;
     }
   }
 }

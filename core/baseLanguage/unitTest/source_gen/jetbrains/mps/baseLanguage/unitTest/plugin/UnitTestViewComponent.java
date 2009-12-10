@@ -25,6 +25,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.JScrollPane;
 import com.intellij.openapi.project.Project;
 import javax.swing.JTable;
+import com.intellij.openapi.util.Key;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.util.Macros;
@@ -152,11 +153,11 @@ public class UnitTestViewComponent extends JPanel {
     return tablePanel;
   }
 
-  public void appendWithParameters(String className, String methodName, String text, boolean isError, boolean isSystem) {
+  public void appendWithParameters(String className, String methodName, String text, Key type) {
     if (className != null && methodName != null) {
-      this.outputComponent.appendWithParameters(className, methodName, text, isError, isSystem);
+      this.outputComponent.appendWithParameters(className, methodName, text, type);
     } else {
-      this.outputComponent.append(text, isError, isSystem);
+      this.outputComponent.append(text, type);
     }
   }
 

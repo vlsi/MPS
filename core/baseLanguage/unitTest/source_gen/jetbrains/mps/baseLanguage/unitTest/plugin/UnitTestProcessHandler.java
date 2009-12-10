@@ -44,14 +44,14 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
         return false;
       }
 
-      public void onTextAvailable(ProcessEvent event, Key k) {
+      public void onTextAvailable(ProcessEvent event, final Key k) {
         if (this.isTerminatedEvent()) {
           UnitTestProcessHandler.this.myComponent.getTestListener().onProcessTerminated();
         }
         final String className = UnitTestProcessHandler.this.myComponent.getCurrentClassName();
         final String methodName = UnitTestProcessHandler.this.myComponent.getCurrentMethodName();
-        final boolean error = ProcessOutputTypes.STDERR.equals(k);
-        final boolean system = ProcessOutputTypes.SYSTEM.equals(k);
+        boolean error = ProcessOutputTypes.STDERR.equals(k);
+        boolean system = ProcessOutputTypes.SYSTEM.equals(k);
         final String text = (error || system ?
           event.getText() :
           this.getLine(event.getText(), this.buffer)
@@ -68,10 +68,10 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
         SwingUtilities.invokeLater(new Runnable() {
           public void run() {
             if (token == null) {
-              component.appendWithParameters(className, methodName, text, error, system);
+              component.appendWithParameters(className, methodName, text, k);
             } else {
               if (testEvent == null) {
-                component.appendWithParameters(className, methodName, text, error, system);
+                component.appendWithParameters(className, methodName, text, k);
                 return;
               }
             }
