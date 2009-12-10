@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.StereotypeProvider;
+import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 
 public class NewModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -135,9 +136,25 @@ public class NewModel_Action extends GeneratedAction {
     }
   }
 
+  private StereotypeProvider getStereotypeProvider() {
+    TreeNode parent = NewModel_Action.this.treeNode.getParent();
+    while (parent != null) {
+      if (parent instanceof StereotypeProvider) {
+        return ((StereotypeProvider)parent);
+      }
+      parent = parent.getParent();
+    }
+    return null;
+  }
+
   protected String getStereotype() {
     if (NewModel_Action.this.treeNode instanceof StereotypeProvider) {
       return ((StereotypeProvider)NewModel_Action.this.treeNode).getStereotype();
+    } else if (NewModel_Action.this.treeNode instanceof NamespaceTextNode) {
+      StereotypeProvider parent = NewModel_Action.this.getStereotypeProvider();
+      if (parent != null) {
+        return parent.getStereotype();
+      }
     }
     return null;
   }
@@ -145,6 +162,11 @@ public class NewModel_Action extends GeneratedAction {
   protected boolean isStrict() {
     if (NewModel_Action.this.treeNode instanceof StereotypeProvider) {
       return ((StereotypeProvider)NewModel_Action.this.treeNode).isStrict();
+    } else if (NewModel_Action.this.treeNode instanceof NamespaceTextNode) {
+      StereotypeProvider parent = NewModel_Action.this.getStereotypeProvider();
+      if (parent != null) {
+        return parent.isStrict();
+      }
     }
     return false;
   }

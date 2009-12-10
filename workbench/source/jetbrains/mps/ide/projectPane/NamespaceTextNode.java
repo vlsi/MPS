@@ -36,7 +36,7 @@ import java.util.List;
 
 import javax.swing.tree.TreeNode;
 
-public class NamespaceTextNode extends TextTreeNode implements StereotypeProvider {
+public class NamespaceTextNode extends TextTreeNode {
   private static final NamespaceNodeBuilder<NamespaceTextNode> BUILDER = new NamespaceNodeBuilder<NamespaceTextNode>() {
     public NamespaceTextNode createNamespaceNode(String text, IOperationContext context) {
       return new NamespaceTextNode(text, context);
@@ -155,28 +155,6 @@ public class NamespaceTextNode extends TextTreeNode implements StereotypeProvide
   }
 
   public boolean isFinalName() {
-    return false;
-  }
-
-  public String getStereotype() {
-    TreeNode parent = getParent();
-    while (parent != null) {
-      if (parent instanceof StereotypeProvider) {
-        return ((StereotypeProvider) parent).getStereotype();
-      }
-      parent = parent.getParent();
-    }
-    return null;
-  }
-
-  public boolean isStrict() {
-    TreeNode parent = getParent();
-    while (parent != null) {
-      if (parent instanceof StereotypeProvider) {
-        return ((StereotypeProvider) parent).isStrict();
-      }
-      parent = parent.getParent();
-    }
     return false;
   }
 }

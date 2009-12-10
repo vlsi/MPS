@@ -19,6 +19,7 @@ import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.StereotypeProvider;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
@@ -169,7 +170,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     }
   }
 
-  public class SModelGroupTreeNode extends NamespaceTextNode {
+  public class SModelGroupTreeNode extends NamespaceTextNode implements StereotypeProvider {
     public SModelGroupTreeNode(IOperationContext context) {
       super("util models", context);
     }
