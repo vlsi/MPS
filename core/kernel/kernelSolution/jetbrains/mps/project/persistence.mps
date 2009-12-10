@@ -7123,9 +7123,12 @@
               </node>
             </node>
             <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="842994667883032498">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="842994667883032499">
-                <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="842994667883032500">
-                  <property name="text" value="TODO: log" />
+              <node role="statement" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement" id="7500439221912782477">
+                <property name="severity" value="error" />
+                <property name="hasException" value="true" />
+                <node role="logExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7500439221912782478" />
+                <node role="exception" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7500439221912782479">
+                  <link role="variableDeclaration" targetNodeId="842994667883032496" resolveInfo="e" />
                 </node>
               </node>
             </node>
