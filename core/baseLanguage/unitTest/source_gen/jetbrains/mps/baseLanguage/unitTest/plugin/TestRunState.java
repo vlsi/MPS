@@ -75,6 +75,7 @@ public class TestRunState {
     synchronized (lock) {
       this.loseTest = test;
       this.loseMethod = method;
+      this.defectTests++;
       this.completedTests++;
       this.updateView();
       this.loseTest = null;

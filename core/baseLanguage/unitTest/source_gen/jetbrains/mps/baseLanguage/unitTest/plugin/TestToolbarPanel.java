@@ -45,7 +45,6 @@ public class TestToolbarPanel extends JPanel {
     actionGroup.addAction(this.createNextOccurrenceAction());
     actionGroup.addAction(this.createPreviousOccurrenceAction());
     actionGroup.addAction(this.createSelectFirstFailedAction());
-    actionGroup.addAction(this.createRerunFailedTestAction());
     ActionToolbar toolbarActions = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, false);
     toolbarActions.setOrientation(SwingConstants.HORIZONTAL);
     this.add(toolbarActions.getComponent(), BorderLayout.WEST);

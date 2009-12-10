@@ -30,7 +30,6 @@ public class TestTree extends MPSTree implements TestView {
   private Map<SNode, List<SNode>> tests;
   private TestNameMap<TestCaseTreeNode, TestMethodTreeNode> map;
   private boolean isAllTree = true;
-  private boolean isRebuilded = true;
   private TestRunState state;
 
   public TestTree(TestRunState state, MPSProject project) {
@@ -58,6 +57,13 @@ public class TestTree extends MPSTree implements TestView {
           });
         }
       }
+      if (this.getPreferences().getStateObject().isHidePassed) {
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            TestTree.this.hidePassed(true);
+          }
+        });
+      }
     } else {
       TestMethodTreeNode node = this.get(test, method);
       if (node != null) {
@@ -77,6 +83,13 @@ public class TestTree extends MPSTree implements TestView {
         } else if (TestEvent.ERROR_TEST_PREFIX.equals(this.state.getToken())) {
           node.setState(TestState.ERROR);
         }
+      }
+      if (this.getPreferences().getStateObject().isHidePassed) {
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            TestTree.this.hidePassed(true);
+          }
+        });
       }
       if (node != null && this.getPreferences().getStateObject().isSelectFirstFailed && node.getNextLeaf() == null) {
         SwingUtilities.invokeLater(new Runnable() {
@@ -100,14 +113,11 @@ public class TestTree extends MPSTree implements TestView {
       for (SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
         TestMethodTreeNode oldMethodTreeNode = this.map.get(ITestCase_Behavior.call_getClassName_1216136193905(testCase), ITestMethod_Behavior.call_getTestName_1216136419751(method));
         TestMethodTreeNode newMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
-        TestMethodTreeNode methodTreeNode = (this.isRebuilded ?
+        TestMethodTreeNode methodTreeNode = (oldMethodTreeNode == null ?
           newMethodTreeNode :
           oldMethodTreeNode
         );
-        if (oldMethodTreeNode == null && !(this.isAllTree)) {
-          continue;
-        }
-        boolean isFailedMethod = !(isPassed(oldMethodTreeNode));
+        boolean isFailedMethod = isFailed(methodTreeNode);
         hasFailedTest = hasFailedTest || isFailedMethod;
         if (this.isAllTree || isFailedMethod) {
           if (methodTreeNode == null) {
@@ -115,19 +125,18 @@ public class TestTree extends MPSTree implements TestView {
           }
           testCaseTreeNode.add(methodTreeNode);
           temp.put(testCase, method, methodTreeNode);
-        } else if (!(this.isRebuilded)) {
-          temp.put(testCase, method, oldMethodTreeNode);
+        } else {
+          temp.put(testCase, method, methodTreeNode);
         }
       }
       if (this.isAllTree || hasFailedTest) {
         root.add(testCaseTreeNode);
         temp.put(testCase, testCaseTreeNode);
-      } else if (!(this.isRebuilded)) {
+      } else {
         temp.put(testCase, testCaseTreeNode);
       }
     }
     this.map = temp;
-    this.isRebuilded = true;
     return root;
   }
 
@@ -163,21 +172,18 @@ public class TestTree extends MPSTree implements TestView {
 
   public void hidePassed(boolean hide) {
     this.isAllTree = !(hide);
-    this.isRebuilded = false;
     this.rebuildNow();
     this.expandAll();
   }
 
   public void buildFailedTestTree() {
     this.isAllTree = false;
-    this.isRebuilded = true;
     this.rebuildNow();
   }
 
   public void setTests(IOperationContext operationContext, Map<SNode, List<SNode>> tests) {
     this.operationContext = operationContext;
     this.tests = tests;
-    this.isRebuilded = true;
     this.rebuildNow();
   }
 
@@ -234,7 +240,7 @@ public class TestTree extends MPSTree implements TestView {
 
   public static boolean isPassed(TestMethodTreeNode method) {
     if (method == null) {
-      return false;
+      return true;
     }
     return method.getState() != null && method.getState().equals(TestState.PASSED);
   }
