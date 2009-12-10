@@ -21,6 +21,7 @@
     <orderEntry type="module" module-name="mps-lite" />
     <orderEntry type="module" module-name="dates" />
     <orderEntry type="library" name="tools" level="project" />
+    <orderEntry type="module" module-name="xmlQuery" />
   </component>
 </module>
 
