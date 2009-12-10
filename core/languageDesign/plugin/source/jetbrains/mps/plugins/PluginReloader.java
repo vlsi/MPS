@@ -24,6 +24,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.plugins.applicationplugins.ApplicationPluginManager;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.runconfigs.RunConfigManager;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -45,7 +46,6 @@ public class PluginReloader implements ApplicationComponent {
     }
   };
   private ProjectManagerAdapter myProjectListener = new ProjectManagerAdapter() {
-    @Override
     public void projectClosing(Project project) {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
@@ -65,9 +65,17 @@ public class PluginReloader implements ApplicationComponent {
     for (Project p : ProjectManager.getInstance().getOpenProjects()) {
       p.getComponent(ProjectPluginManager.class).loadPlugins();
     }
+
+    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+      p.getComponent(RunConfigManager.class).initRunConfigs();
+    }
   }
 
   private void disposePlugins() {
+    for (Project p : ProjectManager.getInstance().getOpenProjects()) {
+      p.getComponent(RunConfigManager.class).disposeRunConfigs();
+    }
+
     for (Project p : ProjectManager.getInstance().getOpenProjects()) {
       p.getComponent(ProjectPluginManager.class).disposePlugins();
     }

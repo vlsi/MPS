@@ -61,26 +61,21 @@ public class RunConfigManager implements ProjectComponent {
   private Element myState = null;
   private Element mySharedState = null;
 
-  private MyReloadListener myReloadListener;
-
   public RunConfigManager(Project project) {
     myProject = project;
   }
 
   public void projectOpened() {
-    myReloadListener = new MyReloadListener();
-    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
+
   }
 
   public void projectClosed() {
-    myReloadListener.dispose();
-    disposeRunConfigs();
-    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
+
   }
 
   //----------------RELOAD STUFF---------------------
 
-  private void initRunConfigs() {
+  public void initRunConfigs() {
     //assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
     if (myProject.isDisposed()) return;
     if (myLoaded) return;
@@ -141,7 +136,7 @@ public class RunConfigManager implements ProjectComponent {
     }
   }
 
-  private void disposeRunConfigs() {
+  public void disposeRunConfigs() {
     //assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
     assert !myProject.isDisposed();
     if (!myLoaded) return;
@@ -302,23 +297,4 @@ public class RunConfigManager implements ProjectComponent {
 
   }
 
-  //--------------RELOADING----------------
-
-  private class MyReloadListener extends ReloadAdapter {
-    private volatile boolean myIsDisposed = false;
-
-    public void onReload() {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          if (myIsDisposed) return;
-          disposeRunConfigs();
-          initRunConfigs();
-        }
-      });
-    }
-
-    public void dispose() {
-      myIsDisposed = true;
-    }
-  }
 }
