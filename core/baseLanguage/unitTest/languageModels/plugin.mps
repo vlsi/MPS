@@ -3305,6 +3305,39 @@
                     </node>
                   </node>
                 </node>
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="7167801372692376235">
+                  <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7167801372692376236">
+                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7167801372692376237">
+                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="7167801372692376238">
+                        <link role="baseMethodDeclaration" targetNodeId="7.~SwingUtilities.invokeLater(java.lang.Runnable):void" resolveInfo="invokeLater" />
+                        <link role="classConcept" targetNodeId="7.~SwingUtilities" resolveInfo="SwingUtilities" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="7167801372692376239">
+                          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7167801372692376240">
+                            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7167801372692376241">
+                              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7167801372692376242">
+                                <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="7167801372692376243" />
+                                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7167801372692376244">
+                                  <link role="baseMethodDeclaration" targetNodeId="4951149158173754856" resolveInfo="selectFirstDefectNode" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7167801372692376250">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7167801372692376251">
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7167801372692376252">
+                        <link role="baseMethodDeclaration" targetNodeId="4403789015609950859" resolveInfo="getPreferences" />
+                      </node>
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="7167801372692376253" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference" id="7167801372692376254">
+                      <link role="member" targetNodeId="13814710162785676" resolveInfo="isSelectFirstFailed" />
+                    </node>
+                  </node>
+                </node>
               </node>
               <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="4403789015609952809">
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="4403789015609952832">
@@ -21065,7 +21098,7 @@
                                   </node>
                                 </node>
                                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7167801372691505489">
-                                  <link role="baseMethodDeclaration" targetNodeId="2.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                                  <link role="baseMethodDeclaration" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
                                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7167801372691818696">
                                     <node role="operand" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="7167801372691505491">
                                       <link role="classifier" targetNodeId="75.~ProcessTerminatedListener" resolveInfo="ProcessTerminatedListener" />

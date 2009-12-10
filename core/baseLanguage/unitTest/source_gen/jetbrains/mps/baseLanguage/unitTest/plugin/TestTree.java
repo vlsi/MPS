@@ -11,8 +11,8 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
 import javax.swing.SwingUtilities;
+import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -50,6 +50,13 @@ public class TestTree extends MPSTree implements TestView {
       TestMethodTreeNode node = this.get(loseTest, loseMethod);
       if (node != null) {
         node.setState(TestState.ERROR);
+        if (this.getPreferences().getStateObject().isSelectFirstFailed) {
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              TestTree.this.selectFirstDefectNode();
+            }
+          });
+        }
       }
     } else {
       TestMethodTreeNode node = this.get(test, method);
