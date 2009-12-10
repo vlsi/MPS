@@ -117,6 +117,7 @@ public interface EditorCell extends Cloneable {
   EditorCell findLeaf(int x, int y, Condition<EditorCell> condition);
   
   EditorCell findCellWeak(int x, int y);
+  EditorCell findCellWeak(int y, Condition<EditorCell> condition);
   EditorCell findCellWeak(int x, int y, Condition<EditorCell> condition);
 
   EditorCell_Collection getParent();

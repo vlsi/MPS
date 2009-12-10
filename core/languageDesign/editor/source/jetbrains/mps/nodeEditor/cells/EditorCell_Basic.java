@@ -549,6 +549,17 @@ public abstract class EditorCell_Basic implements EditorCell {
     return best;
   }
 
+  public EditorCell findCellWeak(int y, Condition<EditorCell> condition) {
+    Set<EditorCell> candidates = new LinkedHashSet<EditorCell>();
+    collectCellsWithY(this, y, candidates, false);
+    for (EditorCell cell : candidates) {
+      if (condition.met(cell)) {
+        return cell;
+      }
+    }
+    return null;
+  }
+
   private EditorCell findClosestHorizontal(int x, Condition<EditorCell> condition, Set<EditorCell> candidates) {
     EditorCell best = null;
     int bestDistance = -1;
@@ -570,7 +581,11 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   private void collectCellsWithY(EditorCell current, int y, Set<EditorCell> cells) {
-    if (y >= current.getY() && y <= current.getY() + current.getHeight() &&  current.isLeaf()) {
+    collectCellsWithY(current, y, cells, true);
+  }
+
+  private void collectCellsWithY(EditorCell current, int y, Set<EditorCell> cells, boolean leafsOnly) {
+    if (y >= current.getY() && y <= current.getY() + current.getHeight() &&  (!leafsOnly || current.isLeaf())) {
       cells.add(current);
     }
 
