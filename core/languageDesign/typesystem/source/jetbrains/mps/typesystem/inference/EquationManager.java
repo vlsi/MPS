@@ -382,7 +382,13 @@ public class EquationManager {
     if (myTypeChecker.getSubtypingManager().isComparableWRTRules(representator1, representator2, this, errorInfo, isWeak)) {
       return;
     }
+    if (myTypeChecker.getSubtypingManager().isSubtypeByReplacementRules(representator1.getNode(), representator2.getNode())) {
+      return;
+    }
     if (myTypeChecker.getSubtypingManager().isSubtype(representator1, representator2, this, errorInfo, isWeak)) {
+      return;
+    }
+    if (myTypeChecker.getSubtypingManager().isSubtypeByReplacementRules(representator2.getNode(), representator1.getNode())) {
       return;
     }
     if (myTypeChecker.getSubtypingManager().isSubtype(representator2, representator1, this, errorInfo, isWeak)) {
