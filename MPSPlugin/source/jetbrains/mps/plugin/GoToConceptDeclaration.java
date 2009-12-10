@@ -21,7 +21,6 @@ import com.intellij.openapi.actionSystem.DataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.*;
-import com.intellij.psi.impl.source.PsiClassReferenceType;
 import com.intellij.psi.search.GlobalSearchScope;
 
 public class GoToConceptDeclaration extends AnAction {
@@ -49,8 +48,8 @@ public class GoToConceptDeclaration extends AnAction {
 
     if (e instanceof PsiTypeElement) {
       PsiTypeElement pte = (PsiTypeElement) e;
-      if (pte.getType() instanceof PsiClassReferenceType) {
-        return ((PsiClassReferenceType) pte.getType()).resolve();
+      if (pte.getType() instanceof PsiClassType) {
+        return ((PsiClassType) pte.getType()).resolve();
       }
     }
 

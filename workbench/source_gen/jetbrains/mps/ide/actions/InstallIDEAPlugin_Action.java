@@ -64,7 +64,7 @@ public class InstallIDEAPlugin_Action extends GeneratedAction {
       if (!(SystemInfo.isMac)) {
         targetDir = new File(System.getProperty("user.home") + File.separator + ".IntelliJIdea80" + File.separator + "config" + File.separator + "plugins");
       } else {
-        targetDir = new File(System.getProperty("user.home") + File.separator + "Library" + File.separator + "Application Support" + File.separator + "IntelliJIDEA80");
+        targetDir = new File(System.getProperty("user.home") + File.separator + "Library" + File.separator + "Application Support" + File.separator + "IntelliJIdea90");
       }
       if (!(targetDir.exists())) {
         targetDir.mkdirs();

@@ -15,24 +15,23 @@
  */
 package jetbrains.mps.plugin;
 
-import com.intellij.javaee.web.facet.WebFacet;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.application.Result;
 import com.intellij.openapi.command.CommandProcessor;
-import com.intellij.openapi.command.WriteCommandAction;
 import com.intellij.openapi.compiler.CompileContext;
 import com.intellij.openapi.compiler.CompileStatusNotification;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.module.*;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.module.ModuleManager;
+import com.intellij.openapi.module.ModuleUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable;
 import com.intellij.openapi.roots.libraries.LibraryTablesRegistrar;
-import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
@@ -43,16 +42,11 @@ import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.peer.PeerFactory;
 import com.intellij.psi.*;
 import com.intellij.psi.search.GlobalSearchScope;
-import com.intellij.psi.search.PsiSearchHelper;
 import com.intellij.psi.search.searches.ClassInheritorsSearch;
-import com.intellij.refactoring.MoveClassesOrPackagesRefactoring;
-import com.intellij.refactoring.MoveDestination;
-import com.intellij.refactoring.RefactoringFactory;
-import com.intellij.refactoring.RenameRefactoring;
 import com.intellij.util.IncorrectOperationException;
-import com.intellij.peer.PeerFactory;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JFrame;
@@ -167,16 +161,17 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
   }
 
   public CompilationResult buildModule(final String path) {
-    final Object lock = new Object() { };
+    final Object lock = new Object() {
+    };
     final CompilationResult[] result = new CompilationResult[1];
-    synchronized(lock) {
+    synchronized (lock) {
       ApplicationManager.getApplication().invokeLater(new Runnable() {
         public void run() {
           ApplicationManager.getApplication().runWriteAction(new Runnable() {
             public void run() {
               Module module = findModule(path);
               if (module == null) {
-                synchronized(lock) {
+                synchronized (lock) {
                   lock.notifyAll();
                 }
                 return;
@@ -189,7 +184,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
                 }
 
                 private void compilationFinished(boolean aborted, int errorsNumber, int warningsNumber) {
-                  synchronized(lock) {
+                  synchronized (lock) {
                     result[0] = new CompilationResult(errorsNumber, warningsNumber, aborted);
                     lock.notifyAll();
                   }
@@ -300,7 +295,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
 
   public String getQueryMethodText(final String namespace, final String name) {
     if (!isQueriesClassExist(namespace)) return null;
-    final String[] result = new String[] { null };
+    final String[] result = new String[]{null};
     executeWriteAction(new Runnable() {
       public void run() {
         PsiClass queries = getQueriesClass(namespace);
@@ -684,7 +679,7 @@ public class ProjectHandler extends UnicastRemoteObject implements ProjectCompon
               if (vfile != null) {
                 try {
                   vfile.delete(this);
-                } catch(IOException ex) {
+                } catch (IOException ex) {
                   ex.printStackTrace();
                 }
               }

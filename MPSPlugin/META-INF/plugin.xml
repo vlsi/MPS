@@ -1,7 +1,7 @@
 <!DOCTYPE idea-plugin PUBLIC "Plugin/DTD" "http://plugins.intellij.net/plugin.dtd">
 <idea-plugin>
   <name>JetBrains MPS Integration</name>
-  <description></description>
+  <description>JetBrains MPS Integration</description>
   <version>1.0</version>
   <vendor>JetBrains</vendor>
   <idea-version since-build="3000"/>
@@ -27,11 +27,11 @@
     <action class="jetbrains.mps.plugin.OpenGeneratedQueriesSourceInMPS" text="Open Generated Query Method Source In MPS" id="MPSPlugin.openGeneratedQuerySource" />
     <group>
       <separator />
-      <reference id="MPSPlugin.findClassUsages" />
-      <reference id="MPSPlugin.findAspectMethodUsages" />
-      <reference id="MPSPlugin.goToConceptDeclaration" />
-      <reference id="MPSPlugin.findMethodUsages" />
-      <reference id="MPSPlugin.openGeneratedQuerySource" />
+      <reference ref="MPSPlugin.findClassUsages" />
+      <reference ref="MPSPlugin.findAspectMethodUsages" />
+      <reference ref="MPSPlugin.goToConceptDeclaration" />
+      <reference ref="MPSPlugin.findMethodUsages" />
+      <reference ref="MPSPlugin.openGeneratedQuerySource" />
       <add-to-group anchor="last" group-id="EditorPopupMenu" />
     </group>
   </actions>

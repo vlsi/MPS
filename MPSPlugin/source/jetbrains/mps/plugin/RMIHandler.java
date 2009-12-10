@@ -17,7 +17,6 @@ package jetbrains.mps.plugin;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.util.FileUtil;
 
 import java.net.InetAddress;
 import java.rmi.RemoteException;
