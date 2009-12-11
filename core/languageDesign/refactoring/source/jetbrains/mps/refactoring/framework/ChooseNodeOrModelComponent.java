@@ -15,22 +15,31 @@
  */
 package jetbrains.mps.refactoring.framework;
 
+import jetbrains.mps.ide.ChooseItemComponent;
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.ide.ChooseItemComponent;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Condition;
 
-import javax.swing.*;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
-import java.awt.*;
-import static java.awt.GridBagConstraints.*;
-import java.util.*;
+import java.awt.Dimension;
+import java.awt.GridBagConstraints;
+import java.awt.GridBagLayout;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Set;
+
+import static java.awt.GridBagConstraints.BOTH;
+import static java.awt.GridBagConstraints.HORIZONTAL;
 
 public class ChooseNodeOrModelComponent extends JPanel implements IChooseComponent<Object> {
   private String myCaption;
@@ -110,19 +119,16 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
   }
 
   private Set<SModelDescriptor> getModelsFrom(IOperationContext context, Condition condition) {
-    Set<SModelDescriptor> models = new HashSet<SModelDescriptor>(context.getMPSProject().getScope().getModelDescriptors());
+    Set<SModelDescriptor> models = new HashSet<SModelDescriptor>(SModelRepository.getInstance().getModelDescriptors());
     for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
       if (!SModelStereotype.isUserModel(model)) {
         models.remove(model);
-      }
-      if (myReturnLoadedModels) {
-        if (!condition.met(model.getSModel())) {
-          models.remove(model);
-        }
-      } else {
-        if (!condition.met(model)) {
-          models.remove(model);
-        }
+      } else if (model.isPackaged()) {
+        models.remove(model);
+      } else if (myReturnLoadedModels && !condition.met(model.getSModel())) {
+        models.remove(model);
+      } else if (!myReturnLoadedModels && !condition.met(model)) {
+        models.remove(model);
       }
     }
     return models;
@@ -169,12 +175,12 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
       throw new InvalidInputValueException(myCaption + ": nothing is selected");
     }
 
-    MPSTreeNode node = (MPSTreeNode)  myTree.getSelectionPath().getLastPathComponent();
+    MPSTreeNode node = (MPSTreeNode) myTree.getSelectionPath().getLastPathComponent();
     if (node instanceof SNodeTreeNode) {
       if (!myMayBeNode) {
         throw new InvalidInputValueException(myCaption + ": selected value should not not be a node");
       }
-      SNode sNode = ((SNodeTreeNode)node).getSNode();
+      SNode sNode = ((SNodeTreeNode) node).getSNode();
       if (myConceptFQName != null && !sNode.isInstanceOfConcept(myConceptFQName)) {
         throw new InvalidInputValueException(myCaption + ": selected node should be an istance of " + myConceptFQName);
       }
@@ -184,7 +190,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
       if (!myMayBeModel) {
         throw new InvalidInputValueException(myCaption + ": selected value should not not be a model");
       }
-      SModelDescriptor modelDescriptor = ((SModelTreeNode)node).getSModelDescriptor();
+      SModelDescriptor modelDescriptor = ((SModelTreeNode) node).getSModelDescriptor();
       if (myReturnLoadedModels) {
         return modelDescriptor.getSModel();
       } else {
@@ -204,7 +210,7 @@ public class ChooseNodeOrModelComponent extends JPanel implements IChooseCompone
 
   public void setInitialValue(Object initialValue) {
     if (myReturnLoadedModels && initialValue instanceof SModel) {
-      initialValue = ((SModel)initialValue).getModelDescriptor();
+      initialValue = ((SModel) initialValue).getModelDescriptor();
     }
     TreeNode treeNode = myTree.findNodeWith(initialValue);
     if (treeNode != null) {
