@@ -37,7 +37,6 @@
   <import index="5" modelUID="f:java_stub#jetbrains.mps.project.structure.model(jetbrains.mps.project.structure.model@java_stub)" version="-1" />
   <import index="6" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="8" modelUID="f:java_stub#jetbrains.mps.project.persistence(jetbrains.mps.project.persistence@java_stub)" version="-1" />
   <import index="9" modelUID="f:java_stub#jetbrains.mps.project.structure.project.testconfigurations(jetbrains.mps.project.structure.project.testconfigurations@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#org.jdom(org.jdom@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.project.structure.modules(jetbrains.mps.project.structure.modules@java_stub)" version="-1" />
@@ -1331,7 +1330,7 @@
   </node>
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="842994667883030151">
-    <property name="name" value="DevkitDescriptorPersistence_new" />
+    <property name="name" value="DevkitDescriptorPersistence" />
     <property name="package" value="classes" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="842994667883030152">
       <property name="name" value="loadDevKitDescriptor" />
@@ -2173,7 +2172,7 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="842994667883030498" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="842994667883030499">
-    <property name="name" value="GeneratorDescriptorPersistence_new" />
+    <property name="name" value="GeneratorDescriptorPersistence" />
     <property name="package" value="classes" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="842994667883030500">
       <property name="name" value="loadGeneratorDescriptor" />
@@ -3780,7 +3779,7 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="842994667883031166" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="842994667883031167">
-    <property name="name" value="LanguageDescriptorPersistence_new" />
+    <property name="name" value="LanguageDescriptorPersistence" />
     <property name="package" value="classes" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="842994667883031168">
       <property name="name" value="loadLanguageDescriptor" />
@@ -5200,7 +5199,7 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="842994667883031741" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="842994667883031742">
-    <property name="name" value="ModuleDescriptorPersistence_new" />
+    <property name="name" value="ModuleDescriptorPersistence" />
     <property name="package" value="classes" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="842994667883031743">
       <property name="name" value="loadDependencies" />
@@ -6385,55 +6384,53 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="2709156219364672178" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2709156219364672179" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2709156219364672180">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock" id="2709156219364680708">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2709156219364672189">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2709156219364672192">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2709156219364672191">
-                <link role="baseMethodDeclaration" targetNodeId="7.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
-                <link role="classConcept" targetNodeId="7.~ModelAccess" resolveInfo="ModelAccess" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2709156219364672196">
-                <link role="baseMethodDeclaration" targetNodeId="7.~ModelAccess.runCommandInEDT(java.lang.Runnable):void" resolveInfo="runCommandInEDT" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="2709156219364672197">
-                  <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2709156219364672198">
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2709156219364672199">
-                      <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2709156219364672202">
-                        <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2709156219364672200">
-                          <link role="variableDeclaration" targetNodeId="2709156219364672181" resolveInfo="descriptor" />
-                        </node>
-                        <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2709156219364672207">
-                          <link role="baseMethodDeclaration" targetNodeId="11.~ModuleDescriptor.setTimestamp(java.lang.String):void" resolveInfo="setTimestamp" />
-                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="2709156219364672214">
-                            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2709156219364672218">
-                              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2709156219364672217">
-                                <link role="variableDeclaration" targetNodeId="2709156219364672183" resolveInfo="file" />
-                              </node>
-                              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2709156219364672223">
-                                <link role="baseMethodDeclaration" targetNodeId="3.~IFile.lastModified():long" resolveInfo="lastModified" />
-                              </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2709156219364672189">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2709156219364672192">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2709156219364672191">
+              <link role="baseMethodDeclaration" targetNodeId="7.~ModelAccess.instance():jetbrains.mps.smodel.ModelAccess" resolveInfo="instance" />
+              <link role="classConcept" targetNodeId="7.~ModelAccess" resolveInfo="ModelAccess" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2709156219364672196">
+              <link role="baseMethodDeclaration" targetNodeId="7.~ModelAccess.runCommandInEDT(java.lang.Runnable):void" resolveInfo="runCommandInEDT" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral" id="2709156219364672197">
+                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2709156219364672198">
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2709156219364672199">
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2709156219364672202">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2709156219364672200">
+                        <link role="variableDeclaration" targetNodeId="2709156219364672181" resolveInfo="descriptor" />
+                      </node>
+                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2709156219364672207">
+                        <link role="baseMethodDeclaration" targetNodeId="11.~ModuleDescriptor.setTimestamp(java.lang.String):void" resolveInfo="setTimestamp" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="2709156219364672214">
+                          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2709156219364672218">
+                            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2709156219364672217">
+                              <link role="variableDeclaration" targetNodeId="2709156219364672183" resolveInfo="file" />
                             </node>
-                            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2709156219364672212">
-                              <property name="value" value="" />
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2709156219364672223">
+                              <link role="baseMethodDeclaration" targetNodeId="3.~IFile.lastModified():long" resolveInfo="lastModified" />
                             </node>
+                          </node>
+                          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="2709156219364672212">
+                            <property name="value" value="" />
                           </node>
                         </node>
                       </node>
                     </node>
-                    <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2709156219364672226">
-                      <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2709156219364672227">
-                        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2709156219364672231">
-                          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2709156219364677619">
-                            <link role="baseMethodDeclaration" targetNodeId="3.~VFileSystem.refreshFileAsynchronously(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolveInfo="refreshFileAsynchronously" />
-                            <link role="classConcept" targetNodeId="3.~VFileSystem" resolveInfo="VFileSystem" />
-                            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2709156219364677620">
-                              <link role="variableDeclaration" targetNodeId="2709156219364672183" resolveInfo="file" />
-                            </node>
+                  </node>
+                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="2709156219364672226">
+                    <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="2709156219364672227">
+                      <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2709156219364672231">
+                        <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="2709156219364677619">
+                          <link role="baseMethodDeclaration" targetNodeId="3.~VFileSystem.refreshFileAsynchronously(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolveInfo="refreshFileAsynchronously" />
+                          <link role="classConcept" targetNodeId="3.~VFileSystem" resolveInfo="VFileSystem" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2709156219364677620">
+                            <link role="variableDeclaration" targetNodeId="2709156219364672183" resolveInfo="file" />
                           </node>
                         </node>
                       </node>
-                      <node role="condition" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2709156219364672230">
-                        <link role="variableDeclaration" targetNodeId="2709156219364672186" resolveInfo="refresh" />
-                      </node>
+                    </node>
+                    <node role="condition" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="2709156219364672230">
+                      <link role="variableDeclaration" targetNodeId="2709156219364672186" resolveInfo="refresh" />
                     </node>
                   </node>
                 </node>
@@ -6462,7 +6459,7 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="842994667883032217" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="842994667883032218">
-    <property name="name" value="ProjectDescriptorPersistence_new" />
+    <property name="name" value="ProjectDescriptorPersistence" />
     <property name="package" value="classes" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="842994667883032219">
       <property name="name" value="saveProjectDescriptorToElement" />
@@ -7955,7 +7952,7 @@
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="842994667883032841" />
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="842994667883032842">
-    <property name="name" value="SolutionDescriptorPersistence_new" />
+    <property name="name" value="SolutionDescriptorPersistence" />
     <property name="package" value="classes" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="842994667883032843">
       <property name="name" value="loadSolutionDescriptor" />
@@ -8416,7 +8413,7 @@
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="842994667883033037">
                 <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="842994667883033038">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="842994667883033039">
-                    <link role="baseMethodDeclaration" targetNodeId="8.~ModuleReadException.&lt;init&gt;(java.lang.Exception)" />
+                    <link role="baseMethodDeclaration" targetNodeId="2709156219364650542" resolveInfo="ModuleReadException" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="842994667883033040">
                       <link role="variableDeclaration" targetNodeId="842994667883033034" resolveInfo="e" />
                     </node>
@@ -8940,7 +8937,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="2709156219364650064">
     <property name="package" value="classes" />
-    <property name="name" value="ModuleReadException_new" />
+    <property name="name" value="ModuleReadException" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="2709156219364650065" />
     <node role="superclass" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="2709156219364650537">
       <link role="classifier" targetNodeId="2v.~RuntimeException" resolveInfo="RuntimeException" />
