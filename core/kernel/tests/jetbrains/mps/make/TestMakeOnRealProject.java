@@ -1,71 +1,70 @@
 package jetbrains.mps.make;
 
+import com.intellij.idea.IdeaTestApplication;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Condition;
-import com.intellij.util.io.ZipUtil;
+import com.intellij.openapi.util.EmptyRunnable;
 import com.intellij.util.FilteringProcessor;
 import com.intellij.util.CommonProcessors.CollectProcessor;
 
 import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
-import java.net.URL;
 import java.util.*;
-import java.lang.reflect.InvocationTargetException;
 
+import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
+import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
+import jetbrains.mps.baseLanguage.textGen.RootDependencies;
+import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.misc.hash.LinkedHashSet;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.TestMain;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.plugin.CompilationResult;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import junit.framework.TestCase;
 
-import javax.swing.SwingUtilities;
-
 public class TestMakeOnRealProject extends TestCase {
-  private MPSProject myProject;
+  private File myTmpDir;
+  private Language myCreatedLanguage;
+  private Solution myCreatedSolution;
+  private MPSModuleOwner myModuleOwner = new MPSModuleOwner() {
+
+  };
 
   public void setUp() throws IOException {
-    myProject = extractTestProject("testMakeProject.zip");
+    createTmpModules();
   }
 
   protected void tearDown() {
-    try {
-      SwingUtilities.invokeAndWait(new Runnable() {
-
-        public void run() {
-          myProject.dispose();
-        }
-      });
-    } catch (Exception e) {
-      e.printStackTrace();
-    } 
-
-    cleanTmpProject(myProject);
+    FileUtil.delete(myTmpDir);
+    ApplicationManager.getApplication().runWriteAction(EmptyRunnable.getInstance());
+    IdeaTestApplication.getInstance(null).setDataProvider(null);
   }
 
   /**
    * Compiles all solutinos in project and check that it is ok.
    */
   private void doSolutionsCompilation() {
-    final List<Solution> projectSolutions = myProject.getProjectSolutions();
     final Set<IModule> toCompile = new LinkedHashSet<IModule>();
-    for (Solution sln : projectSolutions) {
-      toCompile.add(sln);
-    }
+    toCompile.add(myCreatedSolution);
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         CompilationResult result = new ModuleMaker().make(toCompile, new EmptyProgressIndicator());
-        assertTrue("Comiplation is not ok!", result.isOk());
+        assertTrue("Compilation is not ok!", result.isOk());
       }
     });
   }
@@ -78,15 +77,18 @@ public class TestMakeOnRealProject extends TestCase {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (Solution sln : myProject.getProjectSolutions()) {
-          checkModuleCompiled(sln);
-        }
-
-        for (Language language : myProject.getProjectLanguages()) {
-          checkModuleCompiled(language);
-        }
+        checkModuleCompiled(myCreatedSolution);
+        checkModuleCompiled(myCreatedLanguage);
       }
     });
+
+  }
+
+  public void testNothingToCompileAfterCompilation() throws InterruptedException {
+    doSolutionsCompilation();
+
+    ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Collections.EMPTY_SET));
+    assertEquals(0, sources.getFilesToCompile().size());
   }
 
   /**
@@ -97,13 +99,8 @@ public class TestMakeOnRealProject extends TestCase {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        for (Solution sln : myProject.getProjectSolutions()) {
-          checkResurcesCopied(sln);
-        }
-
-        for (Language language : myProject.getProjectLanguages()) {
-          checkResurcesCopied(language);
-        }
+        checkResourcesCopied(myCreatedSolution);
+        checkResourcesCopied(myCreatedLanguage);
       }
     });
   }
@@ -114,23 +111,21 @@ public class TestMakeOnRealProject extends TestCase {
   public void testCompileAfterTouch() throws InterruptedException {
     doSolutionsCompilation();
 
-    Thread.sleep(5);
-
     // select and touch
-    Language lang = myProject.getProjectLanguages().get(0);
+    IModule module = myCreatedSolution;
     String sourcePath = null;
-    for (String path: lang.getSourcePaths()) {
+    for (String path : module.getSourcePaths()) {
       if (path.contains("source_gen")) {
         sourcePath = path;
       }
     }
-    File javaFile = collectSpecificFilesFromDir(new File(sourcePath), "java").get(0);
+    File javaFile = new File(sourcePath, "ExtendsTest.java");
     long time = Math.max(System.currentTimeMillis(), javaFile.lastModified() + 1);
     if (!javaFile.setLastModified(time)) {
       fail("Can't touch the file " + javaFile);
     }
 
-    ModuleSources sources = new ModuleSources(lang, new Dependencies(Collections.EMPTY_SET));
+    ModuleSources sources = new ModuleSources(module, new Dependencies(Collections.EMPTY_SET));
     String className = javaFile.getPath().replace(sourcePath + File.separator, "").replace(File.separator, ".").replace(".java", "");
     JavaFile javaFileForMake = new JavaFile(FileSystem.getFile(javaFile), className);
     Set<JavaFile> filesToCompile = sources.getFilesToCompile();
@@ -138,32 +133,30 @@ public class TestMakeOnRealProject extends TestCase {
     assertTrue(filesToCompile.contains(javaFileForMake));
   }
 
-
+  /*
   public void testCompileAfterDelete() throws InterruptedException {
     doSolutionsCompilation();
 
-    Thread.sleep(5);
-
     // select and touch
-    Language lang = myProject.getProjectLanguages().get(0);
+    IModule module = myCreatedSolution;
     String sourcePath = null;
-    for (String path: lang.getSourcePaths()) {
+   for (String path : module.getSourcePaths()) {
       if (path.contains("source_gen")) {
         sourcePath = path;
       }
     }
-    String pathToStructure = "jetbrains/mps/make/testMake/Language/behavior";
-    File javaFile = collectSpecificFilesFromDir(new File(sourcePath + File.separator + pathToStructure), "java").get(0);
+    File javaFile = new File(sourcePath, "Test.java");
 
     if (!javaFile.delete()) {
       fail("Can't delete the file " + javaFile);
     }
 
-    ModuleSources sources = new ModuleSources(lang, new Dependencies(Arrays.asList((IModule)lang)));        
+    ModuleSources sources = new ModuleSources(module, new Dependencies(Arrays.asList((IModule) module)));
     Set<JavaFile> filesToCompile = sources.getFilesToCompile();
     assertEquals(1, filesToCompile.size());
   }
-    
+  */
+
 
   private void checkModuleCompiled(IModule module) {
     IFile classesGen = module.getClassesGen();
@@ -172,10 +165,10 @@ public class TestMakeOnRealProject extends TestCase {
     for (String path : module.getSourcePaths()) {
       collectSpecificFilesFromDir(new File(path), "java", sources);
     }
-    assertTrue("classes_gen shoud contain one class", sources.size() <= classes.size());
+    assertTrue("classes_gen should contain one class", sources.size() <= classes.size());
   }
 
-  private void checkResurcesCopied(IModule module) {
+  private void checkResourcesCopied(IModule module) {
     IFile classesGen = module.getClassesGen();
     List<File> classes = collectSpecificFilesFromDir(classesGen.toFile(), "txt");
     List<File> sources = new ArrayList<File>();
@@ -199,31 +192,83 @@ public class TestMakeOnRealProject extends TestCase {
     }, new CollectProcessor<File>(classes)));
   }
 
-  private MPSProject extractTestProject(String resource) throws IOException {
-    URL resourceURL = TestMakeOnRealProject.class.getResource(resource);
-    File zipFile = new File(resourceURL.getFile());
-    if (!zipFile.exists()) {
-      throw new RuntimeException("Can't find zip file " + zipFile + ". Check resource path.");
-    }
-
-    File tmpdir = FileUtil.createTmpDir();
-    ZipUtil.extract(zipFile, tmpdir, null);
-
-
-    int i = zipFile.getName().indexOf(".zip");
-    String name = zipFile.getName().substring(0, i);
-    File projectFile = new File(tmpdir.getAbsolutePath() + File.separator + name + File.separator + name + MPSExtentions.DOT_MPS_PROJECT);
-
+  private void createTmpModules() {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     TestMain.configureMPS();
 
-    MPSProject project = TestMain.loadProject(projectFile);
+    myTmpDir = FileUtil.createTmpDir();
 
-    return project;
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        myCreatedLanguage = createNewLanguage();
+        createJavaFiles(myCreatedLanguage);
+        myCreatedSolution = createNewSolution();
+        createJavaFiles(myCreatedSolution);        
+      }
+    });
   }
 
-  private void cleanTmpProject(MPSProject project) {
-    FileUtil.delete(project.getProjectFile().getParentFile().getParentFile());
+  public void createJavaFiles(IModule module) {
+    String path = module.getGeneratorOutputPath();
+    (new File(path)).mkdir();
+    createFile(path, "Test.java", "class Test {}");
+    createFile(path, "ExtendsTest.java", "class ExtendsTest extends Test {}");
+  }
+
+  private void createFile(String path, String fileName, String text) {
+    File file = new File(path, fileName);
+    try {
+      FileWriter writer = new FileWriter(file);
+      writer.append(text);
+      writer.flush();
+      writer.close();
+    } catch (IOException e) {
+      e.printStackTrace();
+    }
+    if (!file.setLastModified(System.currentTimeMillis() - 1000)) {
+      fail("Can't touch the file " + file);
+    }
+  }
+
+  private Language createNewLanguage() {
+    String languageNamespace = "TestLanguage";
+    String descriptorFileName = NameUtil.shortNameFromLongName(languageNamespace);
+    File descriptorFile = new File(new File(myTmpDir, "TestLanguage"), descriptorFileName + MPSExtentions.DOT_LANGUAGE);
+    File dir = descriptorFile.getParentFile();
+    if (!(dir.exists())) {
+      dir.mkdirs();
+    }
+    Language language = Language.createLanguage(languageNamespace, new FileSystemFile(descriptorFile), myModuleOwner);
+    language.save();
+
+    return language;
+  }
+
+  private Solution createNewSolution() {
+    String solutionFileName = myTmpDir.getPath() + File.separator + "TestSolution" + File.separator + "testSolution" + MPSExtentions.DOT_SOLUTION;
+    FileSystemFile solutionFile = new FileSystemFile(solutionFileName);
+
+    IFile dir = solutionFile.getParent();
+    if (!(dir.exists())) {
+      dir.mkdirs();
+    }
+
+    String fileName = solutionFile.getName();
+
+    SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
+    solutionDescriptor.setExternallyVisible(true);
+    String name = fileName.substring(0, fileName.length() - 4);
+    solutionDescriptor.setNamespace(name);
+    solutionDescriptor.getUsedLanguages().add(myCreatedLanguage.getModuleReference());
+
+    ModelRoot modelRoot = new ModelRoot();
+    modelRoot.setPrefix("");
+    modelRoot.setPath(solutionFile.getParent().getAbsolutePath());
+
+    solutionDescriptor.getModelRoots().add(modelRoot);
+    SolutionDescriptorPersistence.saveSolutionDescriptor(solutionFile, solutionDescriptor);
+
+    return Solution.newInstance(solutionFile, myModuleOwner);
   }
 
 }
