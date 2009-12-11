@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ide" uuid="019b622b-0aef-4dd3-86d0-4eef01f3f6bb" extenallyVisible="true" dontLoadClasses="true" compileInMPS="false" java-stubs-enabled="true" generatorOutputPath="${mps_home}/workbench/source_gen">
+<solution name="jetbrains.mps.ide" uuid="019b622b-0aef-4dd3-86d0-4eef01f3f6bb" extenallyVisible="true" dontLoadClasses="true" compileInMPS="false" java-stubs-enabled="false" generatorOutputPath="${mps_home}/workbench/source_gen">
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
@@ -14,6 +14,7 @@
     <dependency reexport="false">985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)</dependency>
     <dependency reexport="false">88f8bc48-a7a1-4edf-93ec-38cb00d0c9d5(jetbrains.mps.debug)</dependency>
     <dependency reexport="false">019b622b-0aef-4dd3-86d0-4eef01f3f6bb(jetbrains.mps.ide)</dependency>
+    <dependency reexport="false">a20a42c8-ea20-45de-bc60-acb92cc25c46(jetbrains.mps.ide.uiLanguage)</dependency>
     <dependency reexport="false">2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)</dependency>
     <dependency reexport="false">aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)</dependency>
     <dependency reexport="false">af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)</dependency>
@@ -28,7 +29,6 @@
     <dependency reexport="false">c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)</dependency>
     <dependency reexport="false">b83431fe-5c8f-40bc-8a36-65e25f4dd253(jetbrains.mps.lang.textGen)</dependency>
     <dependency reexport="false">d745e97c-8235-4470-b086-ba3da1f4c03c(jetbrains.mps.quickQueryLanguage)</dependency>
-    <dependency reexport="false">a20a42c8-ea20-45de-bc60-acb92cc25c46(jetbrains.mps.ide.uiLanguage)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)</usedLanguage>
@@ -36,6 +36,7 @@
     <usedLanguage>760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)</usedLanguage>
     <usedLanguage>df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)</usedLanguage>
     <usedLanguage>a20a42c8-ea20-45de-bc60-acb92cc25c46(jetbrains.mps.ide.uiLanguage)</usedLanguage>
+    <usedLanguage>aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)</usedLanguage>
     <usedLanguage>af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)</usedLanguage>
     <usedLanguage>28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)</usedLanguage>
     <usedLanguage>3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)</usedLanguage>
@@ -43,7 +44,6 @@
     <usedLanguage>7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)</usedLanguage>
     <usedLanguage>d745e97c-8235-4470-b086-ba3da1f4c03c(jetbrains.mps.quickQueryLanguage)</usedLanguage>
     <usedLanguage>5d6bee4c-f891-4a93-a0c9-e2268726ae47(jetbrains.mps.uiLanguage)</usedLanguage>
-    <usedLanguage>aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)</usedLanguage>
   </usedLanguages>
 </solution>
 
