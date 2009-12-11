@@ -6,8 +6,8 @@ import java.util.*;
 
 public class JvmArgs extends DataType {
   private final Set<String> myArgs = new HashSet<String>();
-  private final List<String> myDefaultArgs = Arrays.asList("-Xss1024k", "-Xmx512m", "-XX:MaxPermSize=92m");
-  private final List<String> myDefaultArgsPatterns = Arrays.asList("Xss", "Xmx", "MaxPermSize=");
+  private final List<String> myDefaultArgs = Arrays.asList("-Xss1024k", "-Xmx512m", "-XX:MaxPermSize=92m", "-XX:+HeapDumpOnOutOfMemoryError");
+  private final List<String> myDefaultArgsPatterns = Arrays.asList("Xss", "Xmx", "MaxPermSize=", "HeapDumpOnOutOfMemoryError");
 
 
   public void addConfiguredArg(Arg arg) {
