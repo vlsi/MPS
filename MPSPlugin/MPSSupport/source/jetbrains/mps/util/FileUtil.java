@@ -25,7 +25,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.jar.JarOutputStream;
 import java.util.jar.Manifest;
-import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 /**
@@ -90,58 +89,21 @@ public class FileUtil {
     return new File(System.getProperty("java.io.tmpdir"));
   }
 
-  public static void jar(File dir, Manifest mf, File to) {
-    try {
-      FileOutputStream fos = new FileOutputStream(to);
-      JarOutputStream out = new JarOutputStream(fos, mf);
-      _zip(dir, "", out);
-      out.close();
-      fos.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
+  public static void jar(File dir, final Manifest mf, File to) {
+    new Packer() {
+      protected ZipOutputStream createDeflaterStream(FileOutputStream fos) throws Exception {
+        return new JarOutputStream(fos, mf);
+      }
+    }.pack(dir, to);
   }
 
   @SuppressWarnings({"UnusedDeclaration"})
   public static void zip(File dir, File to) {
-    try {
-      FileOutputStream fos = new FileOutputStream(to);
-      ZipOutputStream out = new ZipOutputStream(fos);
-      _zip(dir, "", out);
-      out.close();
-      fos.close();
-    } catch (IOException e) {
-      e.printStackTrace();
-    }
-  }
-
-  private static void _zip(File base, String prefix, ZipOutputStream out) throws IOException {
-    File current = new File(base.getPath() + File.separator + prefix).getAbsoluteFile();
-
-    if (prefix.length() > 0) {
-      ZipEntry entry = new ZipEntry(prefix);
-      entry.setTime(current.lastModified());
-      out.putNextEntry(entry);
-      if (current.isFile()) {
-        byte[] bytes = new byte[(int) current.length()];
-        FileInputStream is = new FileInputStream(current);
-        ReadUtil.read(bytes, is);
-        is.close();
-        out.write(bytes);
+    new Packer() {
+      protected ZipOutputStream createDeflaterStream(FileOutputStream fos) throws Exception {
+        return new ZipOutputStream(fos);
       }
-      out.closeEntry();
-    }
-
-    if (current.isDirectory()) {
-      for (File file : current.listFiles()) {
-        if (file.isFile()) {
-          _zip(base, prefix + file.getName(), out);
-        }
-        if (file.isDirectory()) {
-          _zip(base, prefix + file.getName() + "/", out);
-        }
-      }
-    }
+    }.pack(dir, to);
   }
 
   public static void copyDir(File what, File to) {
@@ -271,13 +233,17 @@ public class FileUtil {
 
 
   public static void write(File file, String content) {
+    PrintWriter writer = null;
     try {
-      PrintWriter writer = new PrintWriter(new FileWriter(file));
+      writer = new PrintWriter(new FileWriter(file));
       writer.print(content);
       writer.flush();
-      writer.close();
     } catch (IOException e) {
       throw new RuntimeException(e);
+    } finally {
+      if (writer != null) {
+        writer.close();
+      }
     }
   }
 

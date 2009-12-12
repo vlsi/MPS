@@ -149,10 +149,9 @@ public class JDOMUtil {
     try {
       xmlOutputter.output(document, writer);
       writer.close();
-    }
-    catch (NullPointerException ex) {
+    } catch (NullPointerException ex) {
       LOG.error(ex);
-    }
+    } 
   }
 
   public static XMLOutputter createOutputter() {
