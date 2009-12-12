@@ -27,7 +27,8 @@ import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.Content;
 import jetbrains.mps.MPSProjectHolder;
-import jetbrains.mps.ide.findusages.*;
+import jetbrains.mps.ide.findusages.CantLoadSomethingException;
+import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.IResultProvider;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -179,13 +180,9 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
 
         final String caption = usageViewData.myUsagesView.getCaption();
         final Icon icon = usageViewData.myUsagesView.getIcon();
-        StartupManager.getInstance(getProject()).runWhenProjectIsInitialized(new Runnable() {
+        SwingUtilities.invokeLater(new Runnable() {
           public void run() {
-            SwingUtilities.invokeLater(new Runnable() {
-              public void run() {
-                addContent(usageViewData.myUsagesView.getComponent(), caption, icon, true);
-              }
-            });
+            addContent(usageViewData.myUsagesView.getComponent(), caption, icon, true);
           }
         });
       }
@@ -194,15 +191,11 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
     Element defaultViewOptionsXML = element.getChild(DEFAULT_VIEW_OPTIONS);
     myDefaultViewOptions.read(defaultViewOptionsXML, project);
 
-    StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
+    SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            if (getContentManager().getContentCount() == 0) {
-              makeUnavailableLater();
-            }
-          }
-        });
+        if (getContentManager().getContentCount() == 0) {
+          makeUnavailableLater();
+        }
       }
     });
   }
@@ -243,7 +236,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   public void loadState(final Element state) {
     //startup manager is needed cause the contract is that you can't use read and write locks
     //on component load - it can cause a deadlock (MPS-2811) 
-    StartupManager.getInstance(getProject()).registerPostStartupActivity(new Runnable() {
+    StartupManager.getInstance(getProject()).runWhenProjectIsInitialized(new Runnable() {
       public void run() {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
