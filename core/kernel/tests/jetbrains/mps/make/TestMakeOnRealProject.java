@@ -1,10 +1,7 @@
 package jetbrains.mps.make;
 
-import com.intellij.idea.IdeaTestApplication;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Condition;
-import com.intellij.openapi.util.EmptyRunnable;
 import com.intellij.util.FilteringProcessor;
 import com.intellij.util.CommonProcessors.CollectProcessor;
 
@@ -13,10 +10,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.*;
 
-import jetbrains.mps.baseLanguage.textGen.BLDependenciesCache;
-import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
-import jetbrains.mps.baseLanguage.textGen.RootDependencies;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -30,10 +23,7 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.vfs.FileSystemFile;
-import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.*;
 import junit.framework.TestCase;
 
 public class TestMakeOnRealProject extends TestCase {
@@ -45,13 +35,13 @@ public class TestMakeOnRealProject extends TestCase {
   };
 
   public void setUp() throws IOException {
+
     createTmpModules();
   }
 
-  protected void tearDown() {
+  protected void tearDown() throws Exception {
+    ModelAccess.instance().flushEventQueue();    
     FileUtil.delete(myTmpDir);
-    ApplicationManager.getApplication().runWriteAction(EmptyRunnable.getInstance());
-    IdeaTestApplication.getInstance(null).setDataProvider(null);
   }
 
   /**

@@ -20,16 +20,12 @@ import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.command.UndoConfirmationPolicy;
 import com.intellij.openapi.util.Computable;
 import com.intellij.util.containers.ConcurrentHashSet;
-import jetbrains.mps.baseLanguage.collections.internal.CursorWithContinuation;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.util.misc.hash.HashSet;
 
 import javax.swing.SwingUtilities;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantReadWriteLock;
 import java.util.Set;
-import java.util.List;
-import java.util.ArrayList;
 
 /**
  * We access IDEA locking mechanism here in order to prevent different way of acquiring locks
@@ -114,6 +110,10 @@ public class ModelAccess {
     } else {
       return ApplicationManager.getApplication().runReadAction(computable);
     }
+  }
+
+  public void flushEventQueue() {
+    myEDTExecutor.flushEventQueue();
   }
 
   public void runReadInEDT(Runnable r) {

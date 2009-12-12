@@ -56,6 +56,21 @@ class EDTExecutor {
     }
   }
 
+  public void flushEventQueue() {
+    while (true) {
+      try {
+        synchronized (myLock) {
+          if (myToExecuteRead.isEmpty() && myToExecuteCommand.isEmpty()) {
+            return;
+          }
+        }
+        Thread.sleep(10);
+      } catch (InterruptedException e) {
+        e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+      }
+    }
+  }
+
   private class Executor extends Thread {
     private Executor() {
       super("Executor");
