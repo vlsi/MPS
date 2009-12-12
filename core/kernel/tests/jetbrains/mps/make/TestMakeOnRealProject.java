@@ -218,13 +218,21 @@ public class TestMakeOnRealProject {
   private void createFile(String path, String fileName, String text) {
     File file = new File(path, fileName);
     file.getParentFile().mkdirs();
+    FileWriter writer = null;
     try {
-      FileWriter writer = new FileWriter(file);
+      writer = new FileWriter(file);
       writer.append(text);
       writer.flush();
-      writer.close();
     } catch (IOException e) {
       e.printStackTrace();
+    } finally {
+      if (writer != null) {
+        try {
+          writer.close();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
     }
     if (!file.setLastModified(System.currentTimeMillis() - 1000)) {
       Assert.fail("Can't touch the file " + file);
