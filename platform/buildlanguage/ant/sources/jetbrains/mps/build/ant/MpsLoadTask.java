@@ -217,6 +217,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage" + File.separator + "ant"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "uiLanguage"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "xml"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "builders"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "MPSSupport")};
     } else {
@@ -269,7 +270,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
 
     for (File f : children) {
       if (f.isDirectory()) {
-        if (f.getName().equals("classes")) {
+        if (f.getName().equals("classes") || f.getName().equals("classes_gen")) {
           result.add(f);
         } else {
           gatherAllClassesAndJarsUnder(f, result);
