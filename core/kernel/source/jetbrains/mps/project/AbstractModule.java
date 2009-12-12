@@ -18,6 +18,7 @@ package jetbrains.mps.project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
+import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.stubs.BaseStubModelRootManager;
 import jetbrains.mps.stubs.javastub.classpath.JavaStubClassPathModelRootManager;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
@@ -592,6 +593,7 @@ public abstract class AbstractModule implements IModule {
   public void updateClassPath() {
     updateClassPathItem();
     releaseJavaStubs();
+    CleanupManager.getInstance().cleanup();
     MPSModuleRepository.getInstance().invalidateCaches();
     loadNewStubs();
   }
