@@ -12,16 +12,11 @@ public abstract class Packer {
     FileOutputStream fos = null;
     ZipOutputStream out = null;
 
-    try{
+    try {
       fos = new FileOutputStream(to);
       out = createDeflaterStream(fos);
-    } catch (Exception e) {
-      e.printStackTrace();
-    }
-
-    try {
       _zip(dir, "", out);
-    } catch (IOException e) {
+    } catch (Exception e) {
       e.printStackTrace();
     } finally {
       try {
@@ -39,21 +34,33 @@ public abstract class Packer {
 
   protected abstract ZipOutputStream createDeflaterStream(FileOutputStream fos) throws Exception;
 
-  private static void _zip(File base, String prefix, ZipOutputStream out) throws IOException {
+  private static void _zip(File base, String prefix, ZipOutputStream out) {
     File current = new File(base.getPath() + File.separator + prefix).getAbsoluteFile();
 
     if (prefix.length() > 0) {
       ZipEntry entry = new ZipEntry(prefix);
       entry.setTime(current.lastModified());
-      out.putNextEntry(entry);
-      if (current.isFile()) {
-        byte[] bytes = new byte[(int) current.length()];
-        FileInputStream is = new FileInputStream(current);
-        ReadUtil.read(bytes, is);
-        is.close();
-        out.write(bytes);
+      FileInputStream is = null;
+      try {
+        out.putNextEntry(entry);
+        if (current.isFile()) {
+          byte[] bytes = new byte[(int) current.length()];
+          is = new FileInputStream(current);
+          ReadUtil.read(bytes, is);
+          out.write(bytes);
+        }
+        out.closeEntry();
+      } catch (IOException e) {
+        e.printStackTrace();
+      } finally {
+        if (is != null) {
+          try {
+            is.close();
+          } catch (IOException e) {
+            e.printStackTrace();
+          }
+        }
       }
-      out.closeEntry();
     }
 
     if (current.isDirectory()) {
