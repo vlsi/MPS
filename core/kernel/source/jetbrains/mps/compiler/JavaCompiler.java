@@ -87,12 +87,20 @@ public class JavaCompiler {
       if (clsName.startsWith(packName)) {
         String name = clsName.substring(packName.length() + 1);
         File outputFile = new File(outputDir, name + ".class");
+        FileOutputStream output = null;
         try {
-          FileOutputStream output = new FileOutputStream(outputFile);
+          output = new FileOutputStream(outputFile);
           output.write(getClass(clsName));
-          output.close();
         } catch (IOException e) {
           LOG.error(e);
+        } finally {
+          if (output != null) {
+            try {
+              output.close();
+            } catch (IOException e) {
+              LOG.error(e);
+            }
+          }
         }
       } else {
         LOG.warning("WARNING : Class to be put has a wrong package");

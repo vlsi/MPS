@@ -205,12 +205,20 @@ public class ModuleMaker {
           String className = NameUtil.shortNameFromLongName(fqName);
           File output = new File(outputDir, className + ".class");
           if (!classesWithErrors.contains(fqName)) {
+            FileOutputStream os = null;
             try {
-              FileOutputStream os = new FileOutputStream(output);
+              os = new FileOutputStream(output);
               os.write(cf.getBytes());
-              os.close();
             } catch (IOException e) {
               LOG.error("Can't write to " + output.getAbsolutePath());
+            } finally {
+              if (os != null) {
+                try {
+                  os.close();
+                } catch (IOException e) {
+                  LOG.error(e);
+                }
+              }
             }
           } else {
             if (output.exists() && !(output.delete())) {
