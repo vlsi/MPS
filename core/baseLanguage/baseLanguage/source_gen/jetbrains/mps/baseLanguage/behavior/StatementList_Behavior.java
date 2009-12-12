@@ -58,4 +58,16 @@ public class StatementList_Behavior {
   public static List<SNode> virtual_getLocalVariableElements_1238805763253(SNode thisNode) {
     return SLinkOperations.getTargets(thisNode, "statement", true);
   }
+
+  public static Set<SNode> call_uncaughtThrowables_3331512479731115649(SNode thisNode, boolean ignoreMayBeThrowables) {
+    Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
+    StatementList_Behavior.call_collectUncatchedThrowables_5412515780383134474(thisNode, result, ignoreMayBeThrowables);
+    return result;
+  }
+
+  public static void call_collectUncatchedThrowables_5412515780383134474(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
+    for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "statement", true))) {
+      Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383134223(statement, throwables, ignoreMayBeThrowables);
+    }
+  }
 }

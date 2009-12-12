@@ -136,7 +136,7 @@ outer:
           if (ListSequence.fromList(params).count() > index) {
             SNodeOperations.replaceWithAnother(varRef, SNodeOperations.copyNode(ListSequence.fromList(params).getElement(index)));
           } else {
-            SNodeOperations.replaceWithAnother(varRef, new _Quotations.QuotationClass_118().createNode());
+            SNodeOperations.replaceWithAnother(varRef, new _Quotations.QuotationClass_120().createNode());
           }
         }
       }

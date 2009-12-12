@@ -541,6 +541,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_CatchedWasThrown_NonTypesystemRule();
+      this.myNonTypesystemRules.add(nonTypesystemRule);
+    }
+    {
       SubtypingRule_Runtime subtypingRule = new subtyping_classifier_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
@@ -877,8 +881,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
         {
-          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_113().createNode(), "descriptor", false);
-          this.myRightOperandType = new _Quotations.QuotationClass_114().createNode();
+          this.myLeftOperandType = SLinkOperations.getTarget(new _Quotations.QuotationClass_115().createNode(), "descriptor", false);
+          this.myRightOperandType = new _Quotations.QuotationClass_116().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.UnaryMinus";
           this.myLeftTypeIsExact = false;
           this.myRightTypeIsExact = false;
@@ -895,14 +899,14 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOpsProvider_OneTypeSpecified provider = new OverloadedOpsProvider_OneTypeSpecified() {
         {
-          this.myOperandType = new _Quotations.QuotationClass_122().createNode();
+          this.myOperandType = new _Quotations.QuotationClass_124().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myTypeIsExact = false;
           this.myIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new _Quotations.QuotationClass_123().createNode();
+          return new _Quotations.QuotationClass_125().createNode();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);

@@ -74,13 +74,13 @@ public class IMethodCall_Behavior {
   public static SNode call_getConcreteType_8008512149545161843(SNode thisNode, SNode typeVariableReference, SNode coercedClt, SNode methodClassifier) {
     List<SNode> parameters = SLinkOperations.getTargets(coercedClt, "parameter", true);
     if (ListSequence.fromList(parameters).isEmpty()) {
-      return new _Quotations.QuotationClass_29().createNode();
+      return new _Quotations.QuotationClass_30().createNode();
     }
     SNode concreteType;
     if (SNodeOperations.getParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false)) == methodClassifier) {
       concreteType = SNodeOperations.copyNode(ListSequence.fromList(parameters).getElement(SNodeOperations.getIndexInParent(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false))));
     } else {
-      concreteType = new _Quotations.QuotationClass_25().createNode();
+      concreteType = new _Quotations.QuotationClass_26().createNode();
     }
     return concreteType;
   }

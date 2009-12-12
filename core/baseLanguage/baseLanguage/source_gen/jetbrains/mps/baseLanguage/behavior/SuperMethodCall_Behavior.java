@@ -16,8 +16,8 @@ public class SuperMethodCall_Behavior {
     SNode concept = ClassConcept_Behavior.getContextClass_8008512149545173402(thisNode);
     List<SNode> typeVarRefs = new ArrayList<SNode>();
     for (SNode tvd : SLinkOperations.getTargets(concept, "typeVariableDeclaration", true)) {
-      ListSequence.fromList(typeVarRefs).addElement(new _Quotations.QuotationClass_26().createNode(tvd));
+      ListSequence.fromList(typeVarRefs).addElement(new _Quotations.QuotationClass_27().createNode(tvd));
     }
-    return new _Quotations.QuotationClass_23().createNode(typeVarRefs, concept);
+    return new _Quotations.QuotationClass_24().createNode(typeVarRefs, concept);
   }
 }

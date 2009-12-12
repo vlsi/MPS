@@ -2668,5 +2668,8 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="5412515780383134208">
+    <link role="concept" targetNodeId="1.1232461062092" resolveInfo="CommentedStatement" />
+  </node>
 </model>
 

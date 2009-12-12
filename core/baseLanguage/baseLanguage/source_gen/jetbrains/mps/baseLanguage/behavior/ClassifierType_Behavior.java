@@ -128,7 +128,7 @@ public class ClassifierType_Behavior {
   }
 
   public static SNode virtual_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
-    return new _Quotations.QuotationClass_30().createNode();
+    return new _Quotations.QuotationClass_31().createNode();
   }
 
   public static boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {

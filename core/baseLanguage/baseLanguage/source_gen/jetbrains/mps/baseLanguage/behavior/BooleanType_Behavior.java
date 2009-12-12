@@ -21,7 +21,7 @@ public class BooleanType_Behavior {
   }
 
   public static SNode virtual_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
-    return new _Quotations.QuotationClass_31().createNode();
+    return new _Quotations.QuotationClass_32().createNode();
   }
 
   public static SNode call_createDefaultTypeExpression_9011026350741579292(SNode thisNode) {

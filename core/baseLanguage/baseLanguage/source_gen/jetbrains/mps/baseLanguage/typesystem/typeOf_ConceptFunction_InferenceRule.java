@@ -18,6 +18,10 @@ import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import jetbrains.mps.baseLanguage.behavior.StatementList_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 
 public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
@@ -105,14 +109,18 @@ public class typeOf_ConceptFunction_InferenceRule extends AbstractInferenceRule_
         somethingReturned = true;
       }
       if (!(somethingReturned)) {
-        String whatExpected = ((expectedRetType == null) ?
-          "some value" :
-          "" + expectedRetType
-        );
-        {
-          BaseIntentionProvider intentionProvider = null;
-          IErrorTarget errorTarget = new NodeErrorTarget();
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(func, "function should return " + whatExpected, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1179436928064", intentionProvider, errorTarget);
+        Set<SNode> throwables = SetSequence.fromSet(new HashSet());
+        StatementList_Behavior.call_collectUncatchedThrowables_5412515780383134474(IMethodLike_Behavior.call_getBody_1239354440022(func), throwables, true);
+        if (SetSequence.fromSet(throwables).isEmpty()) {
+          String whatExpected = ((expectedRetType == null) ?
+            "some value" :
+            "" + expectedRetType
+          );
+          {
+            BaseIntentionProvider intentionProvider = null;
+            IErrorTarget errorTarget = new NodeErrorTarget();
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(func, "function should return " + whatExpected, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "4313092516462081125", intentionProvider, errorTarget);
+          }
         }
       }
       {
