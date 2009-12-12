@@ -10,6 +10,7 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)" />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
+  <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -1135,8 +1136,54 @@
                   <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220012494072">
                     <link role="classifier" targetNodeId="5.~Exception" resolveInfo="Exception" />
                   </node>
+                  <node role="nodePropertiesMarker$attribute" type="jetbrains.mps.lang.test.structure.NodePropertiesContainer" id="354371747683307892">
+                    <node role="properties" type="jetbrains.mps.lang.test.structure.NodeErrorPropety" id="354371747683307893" />
+                  </node>
                 </node>
                 <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220012491337" />
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="354371747683324358">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="354371747683324359">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="354371747683324366">
+                  <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="354371747683324368">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="354371747683324370">
+                      <link role="baseMethodDeclaration" targetNodeId="5.~RuntimeException.&lt;init&gt;()" resolveInfo="RuntimeException" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="354371747683324360">
+                <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="354371747683324361">
+                  <property name="name" value="e" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="354371747683324362">
+                    <link role="classifier" targetNodeId="5.~Exception" resolveInfo="Exception" />
+                  </node>
+                  <node role="nodePropertiesMarker$attribute" type="jetbrains.mps.lang.test.structure.NodePropertiesContainer" id="354371747683324363">
+                    <node role="properties" type="jetbrains.mps.lang.test.structure.NodeErrorPropety" id="354371747683324364" />
+                  </node>
+                </node>
+                <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="354371747683324365" />
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="354371747683324372">
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="354371747683324373">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="354371747683324380">
+                  <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="354371747683324382">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="354371747683324384">
+                      <link role="baseMethodDeclaration" targetNodeId="5.~Exception.&lt;init&gt;()" resolveInfo="Exception" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="354371747683324375">
+                <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="354371747683324376">
+                  <property name="name" value="e" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="354371747683324379">
+                    <link role="classifier" targetNodeId="5.~Exception" resolveInfo="Exception" />
+                  </node>
+                </node>
+                <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="354371747683324378" />
               </node>
             </node>
           </node>
