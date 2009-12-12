@@ -5622,6 +5622,12 @@
       <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1234780786073">
         <property name="path" value="platform/jetbrains.mps.uiLanguage.runtime.mpsarch.jar" />
       </node>
+      <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="4895947921038725667">
+        <property name="path" value="platform/jetbrains.mps.xmlQuery.mpsarch.jar" />
+      </node>
+      <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="4895947921038725670">
+        <property name="path" value="platform/jetbrains.mps.xmlQuery.runtime.mpsarch.jar" />
+      </node>
       <node role="classPathItem" type="jetbrains.mps.build.distrib.structure.SimplePath" id="1234780786074">
         <property name="path" value="lib/alloy/alloy.jar" />
       </node>
