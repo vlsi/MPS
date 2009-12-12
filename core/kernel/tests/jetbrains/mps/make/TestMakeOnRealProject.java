@@ -25,8 +25,12 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.vfs.*;
 import junit.framework.TestCase;
+import org.junit.After;
+import org.junit.Assert;
+import org.junit.Before;
+import org.junit.Test;
 
-public class TestMakeOnRealProject extends TestCase {
+public class TestMakeOnRealProject {
   private File myTmpDir;
   private Language myCreatedLanguage;
   private Solution myCreatedSolution;
@@ -34,12 +38,14 @@ public class TestMakeOnRealProject extends TestCase {
 
   };
 
-  public void setUp() throws IOException {
 
+  @Before
+  public void setUp() throws IOException {
     createTmpModules();
   }
 
-  protected void tearDown() throws Exception {
+  @After
+  public void tearDown() throws Exception {
     ModelAccess.instance().flushEventQueue();    
     FileUtil.delete(myTmpDir);
   }
@@ -54,7 +60,7 @@ public class TestMakeOnRealProject extends TestCase {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         CompilationResult result = new ModuleMaker().make(toCompile, new EmptyProgressIndicator());
-        assertTrue("Compilation is not ok!", result.isOk());
+        Assert.assertTrue("Compilation is not ok!", result.isOk());
       }
     });
   }
@@ -62,6 +68,7 @@ public class TestMakeOnRealProject extends TestCase {
   /**
    * Checks that solutions and language are compiled (very basic check).
    */
+  @Test
   public void testSolutionAndItsDependency() {
     doSolutionsCompilation();
 
@@ -74,23 +81,24 @@ public class TestMakeOnRealProject extends TestCase {
 
   }
 
+  @Test
   public void testNothingToCompileAfterCompilation() throws InterruptedException {
     doSolutionsCompilation();
 
     ModuleSources sources = new ModuleSources(myCreatedSolution, new Dependencies(Collections.EMPTY_SET));
-    assertEquals(0, sources.getFilesToCompile().size());
+    Assert.assertEquals(0, sources.getFilesToCompile().size());
   }
 
   /**
    * Checks that resources are copied.
    */
+  @Test
   public void testResourcesCopy() {
     doSolutionsCompilation();
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        checkResourcesCopied(myCreatedSolution);
-        checkResourcesCopied(myCreatedLanguage);
+        checkResourcesCopied(myCreatedSolution);        
       }
     });
   }
@@ -98,6 +106,7 @@ public class TestMakeOnRealProject extends TestCase {
   /**
    * Test for correctly scanning for changed sources.
    */
+  @Test
   public void testCompileAfterTouch() throws InterruptedException {
     doSolutionsCompilation();
 
@@ -112,15 +121,15 @@ public class TestMakeOnRealProject extends TestCase {
     File javaFile = new File(sourcePath, "ExtendsTest.java");
     long time = Math.max(System.currentTimeMillis(), javaFile.lastModified() + 1);
     if (!javaFile.setLastModified(time)) {
-      fail("Can't touch the file " + javaFile);
+      Assert.fail("Can't touch the file " + javaFile);
     }
 
     ModuleSources sources = new ModuleSources(module, new Dependencies(Collections.EMPTY_SET));
     String className = javaFile.getPath().replace(sourcePath + File.separator, "").replace(File.separator, ".").replace(".java", "");
     JavaFile javaFileForMake = new JavaFile(FileSystem.getFile(javaFile), className);
     Set<JavaFile> filesToCompile = sources.getFilesToCompile();
-    assertEquals(1, filesToCompile.size());
-    assertTrue(filesToCompile.contains(javaFileForMake));
+    Assert.assertEquals(1, filesToCompile.size());
+    Assert.assertTrue(filesToCompile.contains(javaFileForMake));
   }
 
   /*
@@ -155,17 +164,14 @@ public class TestMakeOnRealProject extends TestCase {
     for (String path : module.getSourcePaths()) {
       collectSpecificFilesFromDir(new File(path), "java", sources);
     }
-    assertTrue("classes_gen should contain one class", sources.size() <= classes.size());
+    Assert.assertTrue("classes_gen should contain one class", sources.size() <= classes.size());
   }
 
   private void checkResourcesCopied(IModule module) {
     IFile classesGen = module.getClassesGen();
     List<File> classes = collectSpecificFilesFromDir(classesGen.toFile(), "txt");
-    List<File> sources = new ArrayList<File>();
-    for (String path : module.getSourcePaths()) {
-      collectSpecificFilesFromDir(new File(path), "txt", sources);
-    }
-    assertTrue("resources should be copied ", sources.size() == classes.size());
+    
+    Assert.assertTrue("resources should be copied ", 1 == classes.size());
   }
 
   private ArrayList<File> collectSpecificFilesFromDir(File file, final String extension) {
@@ -193,20 +199,25 @@ public class TestMakeOnRealProject extends TestCase {
         myCreatedLanguage = createNewLanguage();
         createJavaFiles(myCreatedLanguage);
         myCreatedSolution = createNewSolution();
-        createJavaFiles(myCreatedSolution);        
+        createJavaFiles(myCreatedSolution);
+
+        String generatorOutputPath = myCreatedSolution.getGeneratorOutputPath();
+        String resourcePath = new File(generatorOutputPath).getParentFile() + File.separator + "resources";
+        myCreatedSolution.getModuleDescriptor().getSourcePaths().add(resourcePath);
+        createFile(resourcePath, "res.0.1/test.txt", "test");
       }
     });
   }
 
   public void createJavaFiles(IModule module) {
-    String path = module.getGeneratorOutputPath();
-    (new File(path)).mkdir();
+    String path = module.getGeneratorOutputPath();    
     createFile(path, "Test.java", "class Test {}");
-    createFile(path, "ExtendsTest.java", "class ExtendsTest extends Test {}");
+    createFile(path, "ExtendsTest.java", "class ExtendsTest extends Test {}");    
   }
 
   private void createFile(String path, String fileName, String text) {
     File file = new File(path, fileName);
+    file.getParentFile().mkdirs();
     try {
       FileWriter writer = new FileWriter(file);
       writer.append(text);
@@ -216,7 +227,7 @@ public class TestMakeOnRealProject extends TestCase {
       e.printStackTrace();
     }
     if (!file.setLastModified(System.currentTimeMillis() - 1000)) {
-      fail("Can't touch the file " + file);
+      Assert.fail("Can't touch the file " + file);
     }
   }
 
