@@ -48,6 +48,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.AbstractAction;
 import javax.swing.JPopupMenu;
@@ -433,10 +434,16 @@ public abstract class UsagesTree extends MPSTree {
     if (!myShowPopupMenu) {
       return null;
     }
-    BaseAction inculdeAction = new BaseAction("Include") {
+    BaseAction includeAction = new BaseAction("Include") {
       public void doExecute(AnActionEvent e) {
         setCurrentNodesExclusion(false);
         e.getInputEvent().consume();
+      }
+
+      @NotNull
+      @Override
+      protected String getKeyStroke() {
+        return "INSERT";
       }
     };
     BaseAction excludeAction = new BaseAction("Exclude") {
@@ -444,9 +451,15 @@ public abstract class UsagesTree extends MPSTree {
         setCurrentNodesExclusion(true);
         e.getInputEvent().consume();
       }
+
+      @NotNull
+      @Override
+      protected String getKeyStroke() {
+        return "DELETE";
+      }
     };
 
-    DefaultActionGroup group = ActionUtils.groupFromActions(inculdeAction, excludeAction);
+    DefaultActionGroup group = ActionUtils.groupFromActions(includeAction, excludeAction);
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
