@@ -422,12 +422,12 @@ public abstract class UsagesTree extends MPSTree {
     return getSelectedNodes(UsagesTreeNode.class, null);
   }
 
-  private void setCurrentNodesExclusion(boolean isExculded) {
+  private void setCurrentNodesExclusion(boolean isExcluded) {
     List<DataNode> nodes = new ArrayList<DataNode>();
     for (UsagesTreeNode node : getCurrentNodes()) {
       nodes.add(node.getUserObject());
     }
-    myContents.setExcluded(nodes, isExculded);
+    myContents.setExcluded(nodes, isExcluded);
   }
 
   protected JPopupMenu createPopupMenu(MPSTreeNode node) {
