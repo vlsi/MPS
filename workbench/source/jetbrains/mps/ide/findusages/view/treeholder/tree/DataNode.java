@@ -146,7 +146,7 @@ public class DataNode implements IExternalizeable {
     return Collections.unmodifiableList(myChildren);
   }
 
-  //-------PERSISTANCE--------
+  //-------PERSISTENCE--------
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     Element dataXML = element.getChild(DATA);
