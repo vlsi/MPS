@@ -20,13 +20,20 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
-public class MainNodeData extends BaseStaticNodeData {
+import javax.swing.Icon;
+
+public class MainNodeData extends BaseNodeData {
   public MainNodeData(PathItemRole role) {
-    super(role, null, "", "", true, false, false);
+    super(role, "", "", true, false, false);
   }
 
   public MainNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
+  }
+
+  @Override
+  public Icon getIcon() {
+    return null;
   }
 
   public Object getIdObject() {

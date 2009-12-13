@@ -27,19 +27,19 @@ import org.jdom.Element;
 
 import javax.swing.Icon;
 
-public class CategoryNodeData extends BaseStaticNodeData {
+public class CategoryNodeData extends BaseNodeData {
   private static final String CATEGORY = "category";
   private String myCategory = "";
   private INodeRepresentator myNodeRepresentator;
 
   public CategoryNodeData(PathItemRole role, String category, boolean resultsSection) {
-    super(role, Icons.CLOSED_FOLDER, "<b>" + category + "</b>", "", true, false, resultsSection);
+    super(role, "<b>" + category + "</b>", "", true, false, resultsSection);
     myCategory = category;
   }
 
   public CategoryNodeData(PathItemRole role, String category, boolean resultsSection,
                           INodeRepresentator nodeRepresentator) {
-    super(role, getIconFromRepresentator(nodeRepresentator, category), "<b>" + category + "</b>",
+    super(role, "<b>" + category + "</b>",
       "", true, false, resultsSection);
     myCategory = category;
     myNodeRepresentator = nodeRepresentator;
@@ -47,6 +47,15 @@ public class CategoryNodeData extends BaseStaticNodeData {
 
   public CategoryNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
+  }
+
+  @Override
+  public Icon getIcon() {
+    if (myNodeRepresentator == null) {
+      return Icons.CLOSED_FOLDER;
+    } else {
+      return myNodeRepresentator.getCategoryIcon(myCategory);
+    }
   }
 
   public Object getIdObject() {
@@ -72,14 +81,6 @@ public class CategoryNodeData extends BaseStaticNodeData {
       return super.getText(options) + counter;
     } else {
       return myNodeRepresentator.getCategoryText(options, myCategory, isResultsSection());
-    }
-  }
-
-  private static Icon getIconFromRepresentator(INodeRepresentator nodeRepresentator, String category) {
-    if (nodeRepresentator == null) {
-      return Icons.CLOSED_FOLDER;
-    } else {
-      return nodeRepresentator.getCategoryIcon(category);
     }
   }
 }

@@ -25,16 +25,16 @@ import org.jdom.Element;
 
 import javax.swing.Icon;
 
-public class ResultsNodeData extends BaseStaticNodeData {
+public class ResultsNodeData extends BaseNodeData {
   private static final String CATEGORY_NAME = "results";
   private INodeRepresentator myNodeRepresentator;
 
   public ResultsNodeData(PathItemRole role) {
-    super(role, Icons.USAGES_ICON, CATEGORY_NAME, "", true, false, false);
+    super(role, CATEGORY_NAME, "", true, false, false);
   }
 
   public ResultsNodeData(PathItemRole role, INodeRepresentator nodeRepresentator) {
-    super(role, getIconFromRepresentator(nodeRepresentator), CATEGORY_NAME, "", true, false, false);
+    super(role, CATEGORY_NAME, "", true, false, false);
     myNodeRepresentator = nodeRepresentator;
   }
 
@@ -44,6 +44,15 @@ public class ResultsNodeData extends BaseStaticNodeData {
 
   public Object getIdObject() {
     return CATEGORY_NAME;
+  }
+
+  @Override
+  public Icon getIcon() {
+    if (myNodeRepresentator == null) {
+      return Icons.USAGES_ICON;
+    } else {
+      return myNodeRepresentator.getResultsIcon();
+    }
   }
 
   public String getText(TextOptions options) {
@@ -56,13 +65,5 @@ public class ResultsNodeData extends BaseStaticNodeData {
 
   private static String sizeRepresentation(int size) {
     return "<b>" + Integer.toString(size) + " usage" + (size == 1 ? "" : "s") + "</b>";
-  }
-
-  private static Icon getIconFromRepresentator(INodeRepresentator nodeRepresentator) {
-    if (nodeRepresentator == null) {
-      return Icons.USAGES_ICON;
-    } else {
-      return nodeRepresentator.getResultsIcon();
-    }
   }
 }

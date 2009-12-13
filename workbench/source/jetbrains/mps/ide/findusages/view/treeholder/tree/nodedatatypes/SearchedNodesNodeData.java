@@ -21,15 +21,21 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
-public class SearchedNodesNodeData extends BaseStaticNodeData {
+import javax.swing.Icon;
+
+public class SearchedNodesNodeData extends BaseNodeData {
   public static final String CATEGORY_NAME = "Searched nodes";
 
   public SearchedNodesNodeData(PathItemRole role) {
-    super(role, Icons.SEARCHED_NODES_ICON, CATEGORY_NAME, "", true, false, false);
+    super(role, CATEGORY_NAME, "", true, false, false);
   }
 
   public SearchedNodesNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
+  }
+
+  public Icon getIcon() {
+    return Icons.SEARCHED_NODES_ICON;
   }
 
   public Object getIdObject() {
