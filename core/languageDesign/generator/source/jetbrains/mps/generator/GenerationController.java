@@ -48,22 +48,22 @@ import java.rmi.RemoteException;
 import java.util.*;
 
 public class GenerationController {
-  private static Logger LOG = Logger.getLogger(GenerationController.class);
+  protected static Logger LOG = Logger.getLogger(GenerationController.class);
 
   private static final int TIMER_DELAY = 100; //milliseconds
 
   private GeneratorManager myManager;
-  private GenerationSettings mySettings;
+  protected GenerationSettings mySettings;
   private List<Pair<SModelDescriptor, IOperationContext>> myInputModels;
-  private IGenerationType myGenerationType;
-  private ProgressIndicator myProgress;
+  protected IGenerationType myGenerationType;
+  protected ProgressIndicator myProgress;
   private String myText2;
-  private IMessageHandler myMesssages;
-  private boolean mySaveTransientModels;
+  protected IMessageHandler myMesssages;
+  protected boolean mySaveTransientModels;
 
-  private Map<SModelDescriptor, IOperationContext> myModelsToContexts = new HashMap<SModelDescriptor, IOperationContext>();
-  private List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
-  private Map<IModule, IOperationContext> myModulesToContexts = new HashMap<IModule, IOperationContext>();
+  protected Map<SModelDescriptor, IOperationContext> myModelsToContexts = new HashMap<SModelDescriptor, IOperationContext>();
+  protected List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
+  protected Map<IModule, IOperationContext> myModulesToContexts = new HashMap<IModule, IOperationContext>();
 
   public GenerationController(GeneratorManager generatorManager,
                               GenerationSettings settings,
@@ -195,7 +195,7 @@ public class GenerationController {
     return totalJob;
   }
 
-  private boolean generateModelsInModule(IModule module, List<SModelDescriptor> inputModels, final long totalJob, long startJobTime) throws Exception {
+  protected boolean generateModelsInModule(IModule module, List<SModelDescriptor> inputModels, final long totalJob, long startJobTime) throws Exception {
     boolean currentGenerationOK = true;
 
     IOperationContext invocationContext = myModulesToContexts.get(module);
@@ -290,7 +290,7 @@ public class GenerationController {
     return currentGenerationOK;
   }
 
-  private void prepareOutputFolder(String outputFolder) {
+  protected void prepareOutputFolder(String outputFolder) {
     if (outputFolder != null && !new File(outputFolder).exists()) {
       new File(outputFolder).mkdirs();
       try {
@@ -304,7 +304,7 @@ public class GenerationController {
     }
   }
 
-  private boolean containsTestModels(List<SModelDescriptor> sms) {
+  protected boolean containsTestModels(List<SModelDescriptor> sms) {
     for (SModelDescriptor sm : sms) {
       if (SModelStereotype.isTestModel(sm)) return true;
     }
@@ -402,23 +402,23 @@ public class GenerationController {
     }
   }
 
-  private void checkMonitorCanceled() throws GenerationCanceledException {
+  protected void checkMonitorCanceled() throws GenerationCanceledException {
     if (myProgress.isCanceled()) throw new GenerationCanceledException();
   }
 
-  private void info(String text) {
+  protected void info(String text) {
     myMesssages.handle(new Message(MessageKind.INFORMATION, GenerationController.class, text));
   }
 
-  private void warning(String text) {
+  protected void warning(String text) {
     myMesssages.handle(new Message(MessageKind.WARNING, GenerationController.class, text));
   }
 
-  private void error(String text) {
+  protected void error(String text) {
     myMesssages.handle(new Message(MessageKind.ERROR, GenerationController.class, text));
   }
 
-  private void setText2(String text, long estimatedTime, long startJobTime) {
+  protected void setText2(String text, long estimatedTime, long startJobTime) {
     myText2 = text;
     long elapsedTime = System.currentTimeMillis() - startJobTime;
     String elapsedTimeString = TimePresentationUtil.timeIntervalStringPresentation(elapsedTime);
@@ -431,7 +431,7 @@ public class GenerationController {
     return myText2;
   }
 
-  private static class TaskProgressHelper {
+  protected static class TaskProgressHelper {
     private javax.swing.Timer myTimer;
     private String myTaskName;
     private ProgressIndicator myProgress;

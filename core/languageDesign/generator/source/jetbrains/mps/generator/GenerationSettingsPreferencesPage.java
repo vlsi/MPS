@@ -37,6 +37,7 @@ class GenerationSettingsPreferencesPage {
   private JCheckBox myGenerateRequirementsCheckBox = new JCheckBox("Checking if regeneration of other models is required");
   private JCheckBox myShowErrorsOnlyCheckBox = new JCheckBox("Log errors only (no info and warnings)");
   private JCheckBox myCheckModelsBeforeGenerationCheckBox = new JCheckBox("Check models for errors before generation");
+  private JCheckBox myUseNewGenerator = new JCheckBox("Use new generator (per-root)");
   private GenerationSettings myGenerationSettings;
 
   public GenerationSettingsPreferencesPage(GenerationSettings settings) {
@@ -48,6 +49,7 @@ class GenerationSettingsPreferencesPage {
     optionsPanel.add(myGenerateRequirementsCheckBox);
     optionsPanel.add(myShowErrorsOnlyCheckBox);
     optionsPanel.add(myCheckModelsBeforeGenerationCheckBox);
+    optionsPanel.add(myUseNewGenerator);
 
     myPage = new JPanel(new BorderLayout());
     myPage.setBorder(new EmptyBorder(10, 10, 10, 10));
@@ -75,13 +77,15 @@ class GenerationSettingsPreferencesPage {
     myGenerationSettings.setShowErrorsOnly(myShowErrorsOnlyCheckBox.isSelected());
     myGenerationSettings.setGenerateRequirements(myGenerateRequirementsCheckBox.isSelected());
     myGenerationSettings.setCheckModelsBeforeGeneration(myCheckModelsBeforeGenerationCheckBox.isSelected());
+    myGenerationSettings.setUseNewGenerator(myUseNewGenerator.isSelected());
   }
 
   public boolean isModified() {
     return !(myGenerationSettings.isSaveTransientModels() == mySaveTransientModelsCheckBox.isSelected() &&
            myGenerationSettings.isShowErrorsOnly() == myShowErrorsOnlyCheckBox.isSelected() &&
            myGenerationSettings.isGenerateRequirements() == myGenerateRequirementsCheckBox.isSelected() &&
-           myGenerationSettings.isCheckModelsBeforeGeneration() == myCheckModelsBeforeGenerationCheckBox.isSelected());
+           myGenerationSettings.isCheckModelsBeforeGeneration() == myCheckModelsBeforeGenerationCheckBox.isSelected() &&
+           myGenerationSettings.isUseNewGenerator() == myUseNewGenerator.isSelected());
   }
 
   public void update() {
@@ -89,5 +93,6 @@ class GenerationSettingsPreferencesPage {
     myShowErrorsOnlyCheckBox.setSelected(myGenerationSettings.isShowErrorsOnly());
     myGenerateRequirementsCheckBox.setSelected(myGenerationSettings.isGenerateRequirements());
     myCheckModelsBeforeGenerationCheckBox.setSelected(myGenerationSettings.isCheckModelsBeforeGeneration());
+    myUseNewGenerator.setSelected(myGenerationSettings.isUseNewGenerator());
   }
 }

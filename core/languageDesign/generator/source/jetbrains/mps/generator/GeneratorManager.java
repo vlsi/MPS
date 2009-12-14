@@ -26,6 +26,7 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
+import jetbrains.mps.generator2.GenerationController2;
 import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.logging.Logger;
@@ -283,7 +284,10 @@ public class GeneratorManager {
           project.getComponentSafe(GenerationTracer.class).startTracing();
         }
         fireBeforeGeneration(inputModels);
-        GenerationController gc = new GenerationController(GeneratorManager.this, mySettings, inputModels, generationType, progress, messages, saveTransientModels);
+        GenerationController gc =
+          mySettings.isUseNewGenerator()
+            ? new GenerationController2(GeneratorManager.this, mySettings, inputModels, generationType, progress, messages, saveTransientModels)
+            : new GenerationController(GeneratorManager.this, mySettings, inputModels, generationType, progress, messages, saveTransientModels);
         result[0] = gc.generate();
         project.getComponentSafe(GenerationTracer.class).finishTracing();
         fireAfterGeneration(inputModels);

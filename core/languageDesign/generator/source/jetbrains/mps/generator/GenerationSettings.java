@@ -155,11 +155,20 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myCheckModelsBeforeGeneration = checkModelsBeforeGeneration;
   }
 
+  public boolean isUseNewGenerator() {
+    return myState.myUseNewGenerator;
+  }
+
+  public void setUseNewGenerator(boolean useNewGenerator) {
+    myState.myUseNewGenerator = useNewGenerator;
+  }
+
   public static class MyState {
     private boolean mySaveTransientModels;
     private boolean myShowErrorsOnly;
     private boolean myGenerateRequirements = true;
     private boolean myCheckModelsBeforeGeneration = true;
+    private boolean myUseNewGenerator = false;
 
     public boolean isSaveTransientModels() {
       return mySaveTransientModels;
@@ -191,6 +200,14 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
     public void setCheckModelsBeforeGeneration(boolean checkModelsBeforeGeneration) {
       myCheckModelsBeforeGeneration = checkModelsBeforeGeneration;
+    }
+
+    public boolean isUseNewGenerator() {
+      return myUseNewGenerator;
+    }
+
+    public void setUseNewGenerator(boolean useNewGenerator) {
+      myUseNewGenerator = useNewGenerator;
     }
   }
 }
