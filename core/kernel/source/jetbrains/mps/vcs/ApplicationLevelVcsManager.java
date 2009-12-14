@@ -356,7 +356,7 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
 
   public static class StubChangeListManagerGate implements ChangeListManagerGate {
     public List<LocalChangeList> getListsCopy() {
-      return null;  //To change body of implemented methods use File | Settings | File Templates.
+      return null;
     }
 
     @Nullable

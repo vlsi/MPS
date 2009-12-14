@@ -48,7 +48,9 @@ public class GeneratorWorker extends MpsWorker {
   }
 
   protected void executeTask(final MPSProject project, GenerationObjects go) {
-    generate(project, go);
+    if (go.hasAnythingToGenerate()) {
+      generate(project, go);
+    }
   }
 
   protected void showStatistic() {
@@ -66,7 +68,7 @@ public class GeneratorWorker extends MpsWorker {
 
   private void generate(MPSProject project, GenerationObjects go) {
     StringBuffer s = new StringBuffer("Generating:");
-    for (MPSProject p: go.getProjects()) {
+    for (MPSProject p : go.getProjects()) {
       s.append("\n    ");
       s.append(p);
     }
@@ -84,26 +86,25 @@ public class GeneratorWorker extends MpsWorker {
     List<Cycle> order = computeGenerationOrder(project, go);
 
     for (final Cycle cycle : order) {
-
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          generateModulesCycle(gm, cycle);
-        }
-      });
+      generateModulesCycle(gm, cycle);
     }
   }
 
-  protected void generateModulesCycle(GeneratorManager gm, Cycle cycle) {
-    info("Start " + cycle);
-    cycle.generate(gm, new GenerateFilesGenerationType() {
-      @Override
-      public boolean requiresCompilationAfterGeneration() {
-        return Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE));
+  protected void generateModulesCycle(final GeneratorManager gm, final Cycle cycle) {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      public void run() {
+        info("Start " + cycle);
+        cycle.generate(gm, new GenerateFilesGenerationType() {
+          @Override
+          public boolean requiresCompilationAfterGeneration() {
+            return Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE));
+          }
+        }, myMessageHandler);
+        info("Reloading classes...");
+        ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
+        info("Finished " + cycle);
       }
-    }, myMessageHandler);
-    info("Reloading classes...");
-    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
-    info("Finished " + cycle);
+    });
   }
 
   protected List<Cycle> computeGenerationOrder(MPSProject project, GenerationObjects go) {

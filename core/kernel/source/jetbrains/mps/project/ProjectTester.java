@@ -16,6 +16,7 @@
 package jetbrains.mps.project;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
+import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.plugin.MPSLaunch;
 import jetbrains.mps.generator.GeneratorManager;
@@ -35,14 +36,14 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import junit.framework.TestCase;
-import junit.framework.TestFailure;
+import junit.framework.*;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.PrintWriter;
 import java.io.StringWriter;
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -79,17 +80,33 @@ public class ProjectTester {
   }
 
   private static List<TestFailure> createTestFailures(@NotNull GenerateFilesAndClassesGenerationType genType, List<SModel> models) {
-    return invokeTests(genType, models);
+    List<TestFailure> testFailures = new ArrayList<TestFailure>();
+    junit.framework.TestResult result = new junit.framework.TestResult();
+    invokeTests(genType, models, result);
+    testFailures.addAll(Collections.list(result.failures()));
+    testFailures.addAll(Collections.list(result.errors()));
+    return testFailures;
   }
 
-  public static List<TestFailure> invokeTests(@NotNull GenerateFilesAndClassesGenerationType genType, List<SModel> outputModels) {
-    final List<TestFailure> result = new ArrayList<TestFailure>();
-    for (SModel model : outputModels) {
+  public static void invokeTests(@NotNull GenerateFilesAndClassesGenerationType genType, List<SModel> outputModels, junit.framework.TestResult testResult) {
+    for (final SModel model : outputModels) {
       ClassLoader classLoader = genType.getCompiler().getClassLoader(model.getClass().getClassLoader());
-      for (SNode outputRoot : model.getRoots()) {
-        if (!outputRoot.isInstanceOfConcept(ClassConcept.concept)) continue;
+      for (final SNode outputRoot : model.getRoots()) {
+        if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            return !outputRoot.isInstanceOfConcept(ClassConcept.concept);
+          }
+        })){
+          continue;
+        }
         try {
-          String className = model.getLongName() + "." + outputRoot.getName();
+          String className = ModelAccess.instance().runReadAction(new Computable<String>(){
+            @Override
+            public String compute() {
+              return model.getLongName() + "." + outputRoot.getName();
+            }
+          });
           final Class testClass = Class.forName(className, true, classLoader);
           if (testClass.getAnnotation(classLoader.loadClass(MPSLaunch.class.getName())) != null) continue;
 
@@ -107,20 +124,24 @@ public class ProjectTester {
             final Object instance = testClass.newInstance();
             Method setName = TestCase.class.getMethod("setName", String.class);
             setName.invoke(instance, testMethod.getName());
-            final junit.framework.TestResult testResult = new junit.framework.TestResult();
             ((TestCase) instance).run(testResult);
-            for (TestFailure testError : Collections.list(testResult.errors())) {
-              result.add(testError);
-            }
-            for (TestFailure testFailure : Collections.list(testResult.failures())) {
-              result.add(testFailure);
-            }
           }
         } catch (Throwable ignored) {
         }
       }
     }
-    return result;
+  }
+
+  private static boolean findAnnotationOfClass(Annotation[] annotations, Class annotationClass) {
+    // we do not want to deal with classloader issues here, so doing it plain and simple
+    boolean found = false;
+    for (Annotation a : annotations) {
+      if (a.annotationType().getCanonicalName().equals(annotationClass.getCanonicalName())) {
+        found = true;
+        break;
+      }
+    }
+    return found;
   }
 
   public TestResult testProject() {

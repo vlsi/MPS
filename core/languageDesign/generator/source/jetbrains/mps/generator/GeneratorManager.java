@@ -254,6 +254,18 @@ public class GeneratorManager {
                                 final IGenerationType generationType,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages) {
+    return generateModels(inputModels, invocationContext, generationType, progress, messages, false);
+  }
+
+  /**
+   * @return false if canceled
+   */
+  public boolean generateModels(final List<SModelDescriptor> inputModels,
+                                final IOperationContext invocationContext,
+                                final IGenerationType generationType,
+                                final ProgressIndicator progress,
+                                final IMessageHandler messages,
+                                boolean saveTransientModels) {
     List<Pair<SModelDescriptor, IOperationContext>> inputModelPairs = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
     for (SModelDescriptor model : inputModels) {
       inputModelPairs.add(new Pair<SModelDescriptor, IOperationContext>(model, invocationContext));
@@ -263,7 +275,7 @@ public class GeneratorManager {
       generationType,
       progress,
       messages,
-      false);
+      saveTransientModels);
   }
 
   /**

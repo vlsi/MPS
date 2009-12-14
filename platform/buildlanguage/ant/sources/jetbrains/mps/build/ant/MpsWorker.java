@@ -173,6 +173,7 @@ public abstract class MpsWorker {
   protected abstract void showStatistic();
 
   protected void unloadLoadedStuff(Set<MPSProject> projects) {
+    ModelAccess.instance().flushEventQueue();
     for (final MPSProject project : projects) {
       disposeProject(project);
     }
@@ -466,6 +467,10 @@ public abstract class MpsWorker {
 
     public Set<SModelDescriptor> getModels() {
       return myModels;
+    }
+
+    public boolean hasAnythingToGenerate() {
+      return !myModels.isEmpty() || !myProjects.isEmpty() || !myModules.isEmpty();
     }
   }
 }
