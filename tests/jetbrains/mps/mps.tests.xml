@@ -11,12 +11,12 @@
         <arg value="-Xmx1000m"/>
         <arg value="-XX:MaxPermSize=92m"/>
         <arg value="-XX:+HeapDumpOnOutOfMemoryError"/>
-        <!--<jvmarg value="-Xdebug"/>-->
-        <!--<jvmarg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"/>-->
+        <!--<arg value="-Xdebug"/>-->
+        <!--<arg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"/>-->
     </jvmargs>
 
     <target name="generation.tests">
-        <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="true" loglevel="info">
+        <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="false" loglevel="info">
             <jvmargs refid="mps.args"/>
 
             <!-- Bootstrap tests -->
