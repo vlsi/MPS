@@ -19887,7 +19887,7 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration" id="7597241200646442781">
-    <property name="name" value="ReferenceTargetStyleClassItem" />
+    <property name="name" value="NavigatableNodeStyleClassItem" />
     <property name="package" value="styleSheet.Switch" />
     <link role="applicableConcept" targetNodeId="38.7597241200646296617" resolveInfo="ReferenceTargetStyleClassItem" />
     <node role="contentNode" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="7597241200646473302">
@@ -19904,7 +19904,7 @@
                 <link role="baseMethodDeclaration" targetNodeId="64.~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,jetbrains.mps.nodeEditor.style.AttributeCalculator):void" resolveInfo="set" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="7597241200646473311">
                   <link role="classifier" targetNodeId="64.~StyleAttributes" resolveInfo="StyleAttributes" />
-                  <link role="variableDeclaration" targetNodeId="64.~StyleAttributes.REFERENCE_TARGET" resolveInfo="REFERENCE_TARGET" />
+                  <link role="variableDeclaration" targetNodeId="64.~StyleAttributes.NAVIGATABLE_NODE" resolveInfo="NAVIGATABLE_NODE" />
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="7597241200646473312">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator" id="7597241200646473313">

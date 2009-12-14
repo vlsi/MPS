@@ -4618,10 +4618,10 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="7597241200646296617">
     <property name="package" value="Stylesheet" />
-    <property name="name" value="ReferenceTargetStyleClassItem" />
+    <property name="name" value="NavigatableNodeStyleClassItem" />
     <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
     <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="7597241200646296626">
-      <property name="value" value="reference-target" />
+      <property name="value" value="navigatable-node" />
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="7597241200646296618">

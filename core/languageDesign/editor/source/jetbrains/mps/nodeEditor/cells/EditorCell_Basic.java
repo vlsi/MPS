@@ -250,7 +250,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public SNode getSNodeWRTReference() {
-    SNode target = getStyle().get(StyleAttributes.REFERENCE_TARGET);
+    SNode target = getStyle().get(StyleAttributes.NAVIGATABLE_NODE);
     if (target != null) {
       return target;
     }
