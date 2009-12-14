@@ -44,6 +44,10 @@ public class SuperConstructorInvocation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "super");
     editorCell.setCellId("Constant_6429_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "constructorDeclaration");
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }

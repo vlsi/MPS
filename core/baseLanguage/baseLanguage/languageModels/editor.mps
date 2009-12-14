@@ -3018,6 +3018,9 @@
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1085059604178">
         <property name="text" value="super" />
         <link role="styleClass" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem" id="3622083795213039633">
+          <link role="link" targetNodeId="17.1241540960362" />
+        </node>
       </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1178893571584">
         <property name="text" value="(" />
