@@ -230,6 +230,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.xml.mpsarch.jar"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.xmlSchema.mpsarch.jar"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.xmlQuery.mpsarch.jar"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.xmlQuery.runtime.mpsarch.jar"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "plugin")};
     }
