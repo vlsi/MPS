@@ -162,7 +162,17 @@ public abstract class MpsWorker {
     info(sb.toString());
     CompilationResult result = ModelAccess.instance().runReadAction(new Computable<CompilationResult>() {
       public CompilationResult compute() {
-        return new ModuleMaker().make(toCompile, new EmptyProgressIndicator());
+        return new ModuleMaker().make(toCompile, new EmptyProgressIndicator() {
+          @Override
+          public void setText2(String text) {
+            info("    " + text);
+          }
+
+          @Override
+          public void setText(String text) {
+            info(text);
+          }
+        });
       }
     });
     info(result.toString());
