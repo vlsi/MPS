@@ -39,6 +39,7 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_9826_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_9826_2(editorContext, node));
     editorCell.addEditorCell(this.createConstant_9826_1(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_9826_4(editorContext, node));
     return editorCell;
   }
 
@@ -110,6 +111,13 @@ public class StyleSheetClass_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "style");
     editorCell.setCellId("Constant_9826_3");
     Styles_StyleSheet.getStyle(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_9826_4(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_9826_4");
     editorCell.setDefaultText("");
     return editorCell;
   }

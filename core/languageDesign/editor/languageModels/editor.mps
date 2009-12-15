@@ -6245,6 +6245,7 @@
         <property name="text" value="}" />
         <link role="styleClass" targetNodeId="26.1215091331565" resolveInfo="RightBrace" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="8342478007127257913" />
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="1239878593777" />
     </node>
   </node>
