@@ -57,20 +57,17 @@ public class TestTree extends MPSTree implements TestView {
           });
         }
       }
-      if (this.getPreferences().getStateObject().isHidePassed) {
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            TestTree.this.hidePassed(true);
-          }
-        });
-      }
     } else {
-      TestMethodTreeNode node = this.get(test, method);
+      final TestMethodTreeNode node = this.get(test, method);
       if (node != null) {
         if (TestEvent.START_TEST_PREFIX.equals(this.state.getToken())) {
           node.setState(TestState.IN_PROGRESS);
           if (this.getPreferences().getStateObject().isTrackRunning) {
-            this.setCurrentNode(node);
+            SwingUtilities.invokeLater(new Runnable() {
+              public void run() {
+                TestTree.this.setCurrentNode(node);
+              }
+            });
           }
         } else if (TestEvent.END_TEST_PREFIX.equals(this.state.getToken())) {
           if (TestState.IN_PROGRESS.equals(node.getState())) {
@@ -85,22 +82,23 @@ public class TestTree extends MPSTree implements TestView {
         } else if (TestEvent.ERROR_TEST_PREFIX.equals(this.state.getToken())) {
           node.setState(TestState.ERROR);
         }
-      }
-      if (this.getPreferences().getStateObject().isHidePassed) {
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            TestTree.this.hidePassed(true);
-          }
-        });
-      }
-      if (node != null && this.getPreferences().getStateObject().isSelectFirstFailed && node.getNextLeaf() == null) {
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            TestTree.this.selectFirstDefectNode();
-          }
-        });
+        if (isFailed(node) && this.getPreferences().getStateObject().isSelectFirstFailed && node.getNextLeaf() == null) {
+          SwingUtilities.invokeLater(new Runnable() {
+            public void run() {
+              TestTree.this.selectFirstDefectNode();
+            }
+          });
+        }
       }
     }
+    if (this.getPreferences().getStateObject().isHidePassed) {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          TestTree.this.hidePassed(true);
+        }
+      });
+    }
+
   }
 
   public MPSTreeNode rebuild() {
