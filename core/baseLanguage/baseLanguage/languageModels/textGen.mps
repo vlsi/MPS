@@ -7192,20 +7192,42 @@
     <link role="conceptDeclaration" targetNodeId="1.1184952934362" resolveInfo="DimensionExpression" />
     <node role="textGenBlock" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration" id="1235740038237">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1235740038238">
-        <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237463992357">
-          <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1237463992359">
-            <property name="value" value="[" />
-          </node>
-          <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="1237463992360">
-            <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236183122746">
-              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1236183122338" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1236183125281">
-                <link role="link" targetNodeId="1.1184953288404" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="4999908491046631386">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4999908491046631387">
+            <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="1237463992357">
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1237463992359">
+                <property name="value" value="[" />
+              </node>
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart" id="1237463992360">
+                <node role="value" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1236183122746">
+                  <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="1236183122338" />
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1236183125281">
+                    <link role="link" targetNodeId="1.1184953288404" />
+                  </node>
+                </node>
+              </node>
+              <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1237463992361">
+                <property name="value" value="]" />
               </node>
             </node>
           </node>
-          <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="1237463992361">
-            <property name="value" value="]" />
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4999908491046631396">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4999908491046631391">
+              <node role="operand" type="jetbrains.mps.lang.textGen.structure.NodeParameter" id="4999908491046631390" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="4999908491046631395">
+                <link role="link" targetNodeId="1.1184953288404" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="4999908491046632640" />
+          </node>
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="4999908491046632641">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4999908491046632642">
+              <node role="statement" type="jetbrains.mps.lang.textGen.structure.AppendOperation" id="4999908491046632643">
+                <node role="part" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart" id="4999908491046632645">
+                  <property name="value" value="[]" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
