@@ -56,7 +56,7 @@ public class SModelsSubtree {
     }
 
     SModelNamespaceTreeBuilder builder;
-    List<SModelTreeNode> regularModelNodes = getRootModelTreeNodes(regularModels, operationContext);
+    List<SModelTreeNode> regularModelNodes = getRootModelTreeNodes(regularModels, operationContext, isNeedBuildChildModels(rootTreeNode));
     if (!regularModelNodes.isEmpty()) {
       if (rootTreeNode instanceof ProjectSolutionTreeNode) {
         builder = new SModelNamespaceTreeBuilder();
@@ -66,7 +66,7 @@ public class SModelsSubtree {
         builder.fillNode(rootTreeNode);
       } else {
         MPSTreeNode currentRootNode;
-        if (rootTreeNode instanceof ProjectLanguageTreeNode || rootTreeNode instanceof TransientModelsTreeNode) {
+        if (!isNeedBuildChildModels(rootTreeNode)) {
           currentRootNode = rootTreeNode;
         } else {
           IModule contextModule = operationContext.getModule();
@@ -75,7 +75,6 @@ public class SModelsSubtree {
           if (namespace == null || namespace.length() == 0) {
             namespace = contextModule.getModuleNamespace();
           }
-
           currentRootNode = new NamespaceTextNode((namespace == null) ? "" : namespace, operationContext);
         }
         for (SModelTreeNode treeNode : regularModelNodes) {
@@ -90,7 +89,7 @@ public class SModelsSubtree {
     if (!tests.isEmpty()) {
       builder = new SModelNamespaceTreeBuilder();
 
-      List<SModelTreeNode> testNodes = getRootModelTreeNodes(tests, operationContext);
+      List<SModelTreeNode> testNodes = getRootModelTreeNodes(tests, operationContext, isNeedBuildChildModels(rootTreeNode));
       for (SModelTreeNode testNode : testNodes) {
         builder.addNode(testNode);
       }
@@ -103,7 +102,7 @@ public class SModelsSubtree {
 
     if (!javaStubs.isEmpty()) {
       builder = new SModelNamespaceTreeBuilder();
-      List<SModelTreeNode> javaStubNodes = getRootModelTreeNodes(javaStubs, operationContext);
+      List<SModelTreeNode> javaStubNodes = getRootModelTreeNodes(javaStubs, operationContext, isNeedBuildChildModels(rootTreeNode));
       for (SModelTreeNode treeNode : javaStubNodes) {
         builder.addNode(treeNode);
       }
@@ -115,20 +114,24 @@ public class SModelsSubtree {
     }
   }
 
-  private static List<SModelTreeNode> getRootModelTreeNodes(List<SModelDescriptor> models, IOperationContext context) {
+  private static List<SModelTreeNode> getRootModelTreeNodes(List<SModelDescriptor> models, IOperationContext context, boolean isNeedBuildChildModels) {
     List<SModelTreeNode> result = new ArrayList<SModelTreeNode>();
     List<SModelDescriptor> sortedModels = SortUtil.sortModels(models);
     if (!sortedModels.isEmpty()) {
       int rootIndex = 0;
       while (rootIndex < sortedModels.size()) {
         SModelDescriptor rootModelDescriptor = sortedModels.get(rootIndex);
-        int countNamePart = getCountNamePart(rootModelDescriptor, rootModelDescriptor.getModule().getModuleNamespace());
+        int countNamePart = getCountNamePart(rootModelDescriptor, rootModelDescriptor.getSModelReference().getNamespace());
         SModelTreeNode treeNode = new SModelTreeNode(sortedModels.get(rootIndex), null, context, countNamePart);
         result.add(treeNode);
-        rootIndex = buildChildModels(treeNode, sortedModels, rootIndex);
+        rootIndex = (isNeedBuildChildModels)? buildChildModels(treeNode, sortedModels, rootIndex) : rootIndex + 1;
       }
     }
     return result;
+  }
+
+  private static boolean isNeedBuildChildModels(MPSTreeNode rootTreeNode) {
+    return !(rootTreeNode instanceof ProjectLanguageTreeNode || rootTreeNode instanceof TransientModelsTreeNode);
   }
 
   private static int buildChildModels(SModelTreeNode treeNode, List<SModelDescriptor> candidates, int rootIndex) {
@@ -150,7 +153,7 @@ public class SModelsSubtree {
 
   public static int getCountNamePart(SModelDescriptor md, String baseName) {
     String modelLongName = md.getLongName();
-    String shortName = modelLongName.replace(baseName + '.', "");
+    String shortName = (md.isTransient())? modelLongName : modelLongName.replace(baseName + '.', "");
     return shortName.split("\\.").length - 1;
   }
 
