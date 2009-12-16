@@ -51,6 +51,6 @@ public class BLDependenciesCache extends XmlBasedModelCache<ModelDependencies> {
   }
 
   protected ModelDependencies generateCache(CacheGenerationContext context) {
-    return context.getStatus().getBLDependencies();
+    return context.getBLDependencies();
   }
 }

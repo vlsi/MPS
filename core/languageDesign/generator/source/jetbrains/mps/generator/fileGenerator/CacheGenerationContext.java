@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
+import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
+import jetbrains.mps.debug.DebugInfo;
 import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 import java.io.File;
 
@@ -28,8 +32,20 @@ public class CacheGenerationContext {
     myOutputDir = outputDir;
   }
 
-  public GenerationStatus getStatus() {
-    return myStatus;
+  public SModelDescriptor getOriginalInputModel() {
+    return myStatus.getOriginalInputModel();
+  }
+
+  public SModel getInputModel() {
+    return myStatus.getInputModel();
+  }
+
+  public ModelDependencies getBLDependencies() {
+    return myStatus.getBLDependencies();
+  }
+
+  public DebugInfo getDebugInfo() {
+    return myStatus.getDebugInfo();
   }
 
   public File getOutputDir() {

@@ -35,7 +35,7 @@ public class BLDebugInfoCache extends XmlBasedModelCache<DebugInfo> {
   }
 
   protected DebugInfo generateCache(CacheGenerationContext ctx) {
-    return ctx.getStatus().getDebugInfo();
+    return ctx.getDebugInfo();
   }
 
   public static BLDebugInfoCache getInstance() {

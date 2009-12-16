@@ -216,12 +216,11 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   }
 
   private Set<File> generateHashFile(CacheGenerationContext context) {
-    GenerationStatus status = context.getStatus();
     File outputDir = context.getOutputDir();
 
     Set<File> generatedFiles = new HashSet<File>();
 
-    SModelDescriptor descriptor = status.getOriginalInputModel();
+    SModelDescriptor descriptor = context.getOriginalInputModel();
     IFile file = descriptor.getModelFile();
     assert file != null;
     byte[] content = new byte[(int) file.length()];
@@ -243,7 +242,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
     }
 
     String hash = ModelDigestIndex.hash(content);
-    File result = new File(FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputDir), ModelGenerationStatusManager.HASH_PREFIX + hash);
+    File result = new File(FileGenerationUtil.getDefaultOutputDir(context.getInputModel(), outputDir), ModelGenerationStatusManager.HASH_PREFIX + hash);
     if (!result.exists()) {
       try {
         if (!result.createNewFile()) {
