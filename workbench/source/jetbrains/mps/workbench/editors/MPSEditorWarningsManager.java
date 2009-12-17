@@ -25,6 +25,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.generator.*;
 import jetbrains.mps.ide.IdeMain;
@@ -105,7 +106,11 @@ public class MPSEditorWarningsManager implements ProjectComponent {
       }
       myWarnings.remove(editor);
     }
-    EditorComponent editorComponent = editor.getNodeEditor().getCurrentEditorComponent();
+    IEditor nodeEditor = editor.getNodeEditor();
+    if (nodeEditor == null) {
+      return;
+    }
+    EditorComponent editorComponent = nodeEditor.getCurrentEditorComponent();
     if (editorComponent != null && editorComponent.isDisposed()) {
       return;
     }
