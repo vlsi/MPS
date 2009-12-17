@@ -279,53 +279,7 @@ public class ProjectPane extends AbstractProjectViewPane {
   }
 
   public SelectInTarget createSelectInTarget() {
-    return new SelectInTarget() {
-      private SNode myNode;
-
-      public boolean canSelect(SelectInContext context) {
-        VirtualFile virtualFile = context.getVirtualFile();
-        if (!(virtualFile instanceof MPSNodeVirtualFile)) return false;
-
-        MPSNodeVirtualFile file = (MPSNodeVirtualFile) virtualFile;
-        FileEditor[] editors = FileEditorManager.getInstance(myProject).getEditors(file);
-        if (editors.length != 0) {
-          FileEditor editor = editors[0];
-          if (!(editor instanceof MPSFileNodeEditor)) return false;
-          EditorComponent editorComponent = ((MPSFileNodeEditor) editor).getNodeEditor().getCurrentEditorComponent();
-          if (editorComponent == null) return false;
-          myNode = editorComponent.getEditedNode();
-        } else {
-          myNode = file.getNode();
-        }
-        return true;
-      }
-
-      public void selectIn(final SelectInContext context, boolean requestFocus) {
-        if (myNode == null) return;
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            selectNode(myNode);
-          }
-        });
-        activate(requestFocus);
-      }
-
-      public String getToolWindowId() {
-        return ID;
-      }
-
-      public String getMinorViewId() {
-        return null;
-      }
-
-      public float getWeight() {
-        return 0;
-      }
-
-      public String toString() {
-        return "Logical View";
-      }
-    };
+    return new MySelectInTarget();
   }
 
   public Icon getIcon() {
@@ -357,7 +311,6 @@ public class ProjectPane extends AbstractProjectViewPane {
       }
     });
   }
-
 
   //todo:the same thing for nodes & modules
   protected void onBeforeModelWillBeDeleted(SModelDescriptor sm) {
@@ -1184,6 +1137,52 @@ public class ProjectPane extends AbstractProjectViewPane {
       if (myNeedRebuild) {
         rebuildTree();
         myNeedRebuild = false;
+      }
+    }
+  }
+
+  private class MySelectInTarget implements SelectInTarget {
+    public boolean canSelect(SelectInContext context) {
+      return getNode(context)!=null;
+    }
+
+    public void selectIn(final SelectInContext context, boolean requestFocus) {
+      SNode toSelect = getNode(context);
+      if (toSelect == null) return;
+      selectNode(toSelect);
+      activate(requestFocus);
+    }
+
+    public String getToolWindowId() {
+      return ID;
+    }
+
+    public String getMinorViewId() {
+      return null;
+    }
+
+    public float getWeight() {
+      return 0;
+    }
+
+    public String toString() {
+      return "Logical View";
+    }
+
+    private SNode getNode(SelectInContext context){
+      VirtualFile virtualFile = context.getVirtualFile();
+      if (!(virtualFile instanceof MPSNodeVirtualFile)) return null;
+
+      MPSNodeVirtualFile file = (MPSNodeVirtualFile) virtualFile;
+      FileEditor[] editors = FileEditorManager.getInstance(myProject).getEditors(file);
+      if (editors.length != 0) {
+        FileEditor editor = editors[0];
+        if (!(editor instanceof MPSFileNodeEditor)) return null;
+        EditorComponent editorComponent = ((MPSFileNodeEditor) editor).getNodeEditor().getCurrentEditorComponent();
+        if (editorComponent == null) return null;
+        return editorComponent.getEditedNode();
+      } else {
+        return file.getNode();
       }
     }
   }

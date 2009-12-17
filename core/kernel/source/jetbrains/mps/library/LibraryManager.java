@@ -41,7 +41,6 @@ import java.util.*;
     )}
 )
 public class LibraryManager extends BaseLibraryManager implements ApplicationComponent {
-
   public static LibraryManager getInstance() {
     return ApplicationManager.getApplication().getComponent(LibraryManager.class);
   }
@@ -187,5 +186,4 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
       }
     }
   }
-
 }
