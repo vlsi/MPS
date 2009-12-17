@@ -155,12 +155,12 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="882854394069695316">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="882854394069695325">
             <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="882854394069695322">
-              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="882854394069695318">
+              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5364632142688460936">
                 <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="882854394069695321">
                   <link role="variableDeclaration" targetNodeId="882854394069695314" resolveInfo="testCase" />
                 </node>
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="882854394069695320">
-                  <link role="baseMethodDeclaration" targetNodeId="6.1229278847513" resolveInfo="getSimpleClassName" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="5364632142688460940">
+                  <link role="baseMethodDeclaration" targetNodeId="6.1216136193905" resolveInfo="getClassName" />
                 </node>
               </node>
               <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="882854394069695326">

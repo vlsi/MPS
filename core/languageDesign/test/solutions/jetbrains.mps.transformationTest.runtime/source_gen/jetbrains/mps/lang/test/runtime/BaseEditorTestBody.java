@@ -4,12 +4,12 @@ package jetbrains.mps.lang.test.runtime;
 
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.smodel.SNode;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.lang.reflect.InvocationTargetException;
-import javax.swing.SwingUtilities;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -39,6 +39,19 @@ public class BaseEditorTestBody extends BaseTestBody {
   protected CellReference myFinish;
 
   public IEditor initEditor(final String before, final String after) throws Exception {
+    SwingUtilities.invokeAndWait(new Runnable() {
+      public void run() {
+        try {
+          BaseEditorTestBody.this.initEditor_internal(before, after);
+        } catch (Exception e) {
+          e.printStackTrace();
+        }
+      }
+    });
+    return this.myEditor;
+  }
+
+  private void initEditor_internal(final String before, final String after) throws Exception {
     this.addNodeById(before);
     if (!(after.equals(""))) {
       this.addNodeById(after);
@@ -55,7 +68,6 @@ public class BaseEditorTestBody extends BaseTestBody {
     });
     this.myEditor = BaseEditorTestBody.openEditor(this.myProject, this.myModel, this.myBefore);
     this.myStart.setupSelection(this.myEditor);
-    return this.myEditor;
   }
 
   private CellReference findCellReference(SNode node) {

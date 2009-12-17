@@ -144,11 +144,11 @@ public class QueriesGenerated {
     return KeyMapKeystroke_Behavior.call_getKeyStroke_1213877278942(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_7633582661619145180(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_5364632142688376317(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "nodeToEdit", true).getId();
   }
 
-  public static Object propertyMacro_GetPropertyValue_7633582661619145191(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_5364632142688376328(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (SLinkOperations.getTarget(_context.getNode(), "result", true) != null) {
       return SLinkOperations.getTarget(_context.getNode(), "result", true).getId();
     } else {

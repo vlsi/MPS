@@ -28,6 +28,6 @@ public class TestsUtil {
   }
 
   public static String getTestBodyClassName(SNode testCase) {
-    return ITestCase_Behavior.call_getSimpleClassName_1229278847513(testCase) + "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295();
+    return ITestCase_Behavior.call_getClassName_1216136193905(testCase) + "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295();
   }
 }
