@@ -7,7 +7,6 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -18,23 +17,13 @@ public class TryingToLeftTransformNewExpression_Test extends BaseTransformationT
   @Test
   public void test_TryingToLeftTransformNewExpression() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
-    this.runTest("TryingToLeftTransformNewExpression_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.TryingToLeftTransformNewExpression_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public void testMethod() throws Exception {
-      final IEditor[] editorWrap = new IEditor[1];
-      SwingUtilities.invokeAndWait(new Runnable() {
-        public void run() {
-          try {
-            editorWrap[0] = TestBody.this.initEditor("2907839077756812217", "2907839077756812221");
-          } catch (Exception e) {
-            e.printStackTrace();
-          }
-        }
-      });
-      final IEditor editor = editorWrap[0];
+      final IEditor editor = TestBody.this.initEditor("2907839077756812217", "2907839077756812221");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, " ");
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));

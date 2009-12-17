@@ -19,7 +19,7 @@ public class OneReturnWithNotVariableParameters_Test extends BaseTransformationT
   @Test
   public void test_OneReturnWithNotVariableParameters() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
-    this.runTest("OneReturnWithNotVariableParameters_Test$TestBody", "test_OneReturnWithNotVariableParameters", true);
+    this.runTest("jetbrains.mps.refactoringTest.OneReturnWithNotVariableParameters_Test$TestBody", "test_OneReturnWithNotVariableParameters", true);
   }
 
   @MPSLaunch

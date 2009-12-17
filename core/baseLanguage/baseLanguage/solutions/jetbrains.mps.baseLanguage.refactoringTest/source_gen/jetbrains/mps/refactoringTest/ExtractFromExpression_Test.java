@@ -21,7 +21,7 @@ public class ExtractFromExpression_Test extends BaseTransformationTest {
   @Test
   public void test_extractFromExpression() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
-    this.runTest("ExtractFromExpression_Test$TestBody", "test_extractFromExpression", true);
+    this.runTest("jetbrains.mps.refactoringTest.ExtractFromExpression_Test$TestBody", "test_extractFromExpression", true);
   }
 
   @MPSLaunch

@@ -19,7 +19,7 @@ public class InlineMethodThatChangesParameters_Test extends BaseTransformationTe
   @Test
   public void test_InlineMethodThatChangesParameters() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
-    this.runTest("InlineMethodThatChangesParameters_Test$TestBody", "test_InlineMethodThatChangesParameters", true);
+    this.runTest("jetbrains.mps.refactoringTest.InlineMethodThatChangesParameters_Test$TestBody", "test_InlineMethodThatChangesParameters", true);
   }
 
   @MPSLaunch

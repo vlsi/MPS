@@ -7,7 +7,6 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseEditorTestBody;
 import jetbrains.mps.ide.IEditor;
-import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.EditorComponent;
 
 @MPSLaunch
@@ -15,23 +14,13 @@ public class ReturnFollowerByVarName_Test extends BaseTransformationTest {
   @Test
   public void test_ReturnFollowerByVarName() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
-    this.runTest("ReturnFollowerByVarName_Test$TestBody", "testMethod", false);
+    this.runTest("jetbrains.mps.editorTest.ReturnFollowerByVarName_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
     public void testMethod() throws Exception {
-      final IEditor[] editorWrap = new IEditor[1];
-      SwingUtilities.invokeAndWait(new Runnable() {
-        public void run() {
-          try {
-            editorWrap[0] = TestBody.this.initEditor("8547191361977426854", "8547191361977426915");
-          } catch (Exception e) {
-            e.printStackTrace();
-          }
-        }
-      });
-      final IEditor editor = editorWrap[0];
+      final IEditor editor = TestBody.this.initEditor("8547191361977426854", "8547191361977426915");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "var");
       TestBody.this.finishTest();

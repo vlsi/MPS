@@ -24,7 +24,7 @@ public class ChangeMethodParametersForStatement_Test extends BaseTransformationT
   @Test
   public void test_changeMethodParametersForStatement() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
-    this.runTest("ChangeMethodParametersForStatement_Test$TestBody", "test_changeMethodParametersForStatement", true);
+    this.runTest("jetbrains.mps.refactoringTest.ChangeMethodParametersForStatement_Test$TestBody", "test_changeMethodParametersForStatement", true);
   }
 
   @MPSLaunch

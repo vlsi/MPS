@@ -19,7 +19,7 @@ public class MoveMethodWithMethods_Test extends BaseTransformationTest {
   @Test
   public void test_MoveMethodWithMethods() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
-    this.runTest("MoveMethodWithMethods_Test$TestBody", "test_MoveMethodWithMethods", true);
+    this.runTest("jetbrains.mps.refactoringTest.MoveMethodWithMethods_Test$TestBody", "test_MoveMethodWithMethods", true);
   }
 
   @MPSLaunch

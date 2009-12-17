@@ -21,7 +21,7 @@ public class ExtractFromAnonymous_Test extends BaseTransformationTest {
   @Test
   public void test_ExtractFromAnonymous() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
-    this.runTest("ExtractFromAnonymous_Test$TestBody", "test_ExtractFromAnonymous", true);
+    this.runTest("jetbrains.mps.refactoringTest.ExtractFromAnonymous_Test$TestBody", "test_ExtractFromAnonymous", true);
   }
 
   @MPSLaunch

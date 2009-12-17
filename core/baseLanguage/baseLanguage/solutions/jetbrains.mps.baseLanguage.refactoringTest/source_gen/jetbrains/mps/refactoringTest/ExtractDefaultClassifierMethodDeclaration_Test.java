@@ -21,13 +21,13 @@ public class ExtractDefaultClassifierMethodDeclaration_Test extends BaseTransfor
   @Test
   public void test_extractFromMethod() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
-    this.runTest("ExtractDefaultClassifierMethodDeclaration_Test$TestBody", "test_extractFromMethod", true);
+    this.runTest("jetbrains.mps.refactoringTest.ExtractDefaultClassifierMethodDeclaration_Test$TestBody", "test_extractFromMethod", true);
   }
 
   @Test
   public void test_extractFromExecute() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:4dc6ffb5-4bbb-4773-b0b7-e52989ceb56f(jetbrains.mps.refactoringTest)");
-    this.runTest("ExtractDefaultClassifierMethodDeclaration_Test$TestBody", "test_extractFromExecute", true);
+    this.runTest("jetbrains.mps.refactoringTest.ExtractDefaultClassifierMethodDeclaration_Test$TestBody", "test_extractFromExecute", true);
   }
 
   @MPSLaunch
