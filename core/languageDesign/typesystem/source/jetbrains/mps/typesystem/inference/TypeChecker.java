@@ -227,15 +227,8 @@ public class TypeChecker implements ApplicationComponent {
       return myComputedTypesForCompletion.get(node);
     }
     TypeCheckingContext typeCheckingContext = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext(node.getContainingRoot());
-    if (!isCheckedRoot(containingRoot) || typeCheckingContext == null) {
-      typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(containingRoot);
-      SNode resultType = typeCheckingContext.computeTypeForResolve(node);
-      if (myComputedTypesForCompletion != null) {
-        myComputedTypesForCompletion.put(node, resultType);
-      }
-      return resultType;
-    }
-    SNode resultType = getTypeDontCheck(node);
+    typeCheckingContext = NodeTypesComponentsRepository.getInstance().createTypeCheckingContext(containingRoot);
+    SNode resultType = typeCheckingContext.computeTypeForResolve(node);
     if (myComputedTypesForCompletion != null) {
       myComputedTypesForCompletion.put(node, resultType);
     }
