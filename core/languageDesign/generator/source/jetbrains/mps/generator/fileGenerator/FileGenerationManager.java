@@ -19,6 +19,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -63,6 +64,41 @@ public class FileGenerationManager implements ApplicationComponent {
 
   }
 
+  public boolean handlePartialOutput(IOperationContext context, String rootNodeId,
+                                     GenerationStatus status, File outputRoot, Set<File> result) {
+
+    if (outputRoot == null) throw new RuntimeException("unspecified output path for file generation.");
+
+    if (!status.isOk()) {
+      return false;
+    }
+
+    Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
+
+    boolean ok = true;
+    if (!generateText(context, rootNodeId, status, outputNodeContents)) {
+      return false;
+    }
+
+    Set<File> generatedFiles = generateFiles(status, outputRoot, outputNodeContents);
+    processGeneratedFiles(status, outputRoot, context, generatedFiles, false);
+    result.addAll(generatedFiles);
+
+    return ok;
+  }
+
+  public void handlePartialOutputDone(IOperationContext context, GenerationStatus status,
+                                      File outputRoot, Set<File> generatedFiles) {
+    cleanUp(status.getInputModel(), context, outputRoot, generatedFiles);
+    if(generatedFiles.isEmpty()) {
+      touchOutputDir(status, outputRoot);
+    } else {
+      File cachesOutput = FileGenerationUtil.getCachesOutputDir(outputRoot);
+      Set<File> generatedCaches = generateCaches(status, cachesOutput);
+      processGeneratedFiles(status, cachesOutput, context, generatedCaches, true);
+    }
+  }
+
   public boolean handleOutput(
     IOperationContext context,
     GenerationStatus status,
@@ -76,16 +112,16 @@ public class FileGenerationManager implements ApplicationComponent {
     Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
 
     boolean ok = true;
-    if (!generateText(context, status, outputNodeContents)) {
+    if (!generateText(context, null, status, outputNodeContents)) {
       return false;
     }
 
     Set<File> generatedFiles = generateFiles(status, outputRoot, outputNodeContents);
-    processGeneratedFiles(status, outputRoot, context, generatedFiles);
+    processGeneratedFiles(status, outputRoot, context, generatedFiles, true);
 
     File cachesOutput = FileGenerationUtil.getCachesOutputDir(outputRoot);
     Set<File> generatedCaches = generateCaches(status, cachesOutput);
-    processGeneratedFiles(status, cachesOutput, context, generatedCaches);
+    processGeneratedFiles(status, cachesOutput, context, generatedCaches, true);
 
     return ok;
   }
@@ -107,22 +143,25 @@ public class FileGenerationManager implements ApplicationComponent {
     GenerationStatus status,
     File outputRoot,
     IOperationContext context,
-    Set<File> generatedFiles) {
+    Set<File> generatedFiles,
+    boolean cleanUp) {
 
     MPSVCSManager manager = context.getProject().getComponent(MPSVCSManager.class);
     manager.addFilesToVcs(new ArrayList<File>(generatedFiles), false, false);
 
     refreshGeneratedFiles(generatedFiles);
-    cleanUp(status, context, outputRoot, generatedFiles);
+    if(cleanUp) {
+      cleanUp(status.getInputModel(), context, outputRoot, generatedFiles);
+    }
   }
 
 
   private void cleanUpDefaultOutputDir(GenerationStatus status, File outputDir, IOperationContext context) {
-    cleanUp(status, context, outputDir, new HashSet<File>(0));
+    cleanUp(status.getInputModel(), context, outputDir, new HashSet<File>(0));
   }
 
   private void cleanUp(
-    GenerationStatus status,
+    SModel inputModel,
     IOperationContext context,
     File outputDir,
     Set<File> generatedFiles) {
@@ -131,7 +170,7 @@ public class FileGenerationManager implements ApplicationComponent {
     for (File f : generatedFiles) {
       directories.add(f.getParentFile());
     }
-    directories.add(FileGenerationUtil.getDefaultOutputDir(status.getInputModel(), outputDir));
+    directories.add(FileGenerationUtil.getDefaultOutputDir(inputModel, outputDir));
 
     // clear garbage
     List<File> filesToDelete = new ArrayList<File>();
@@ -165,7 +204,7 @@ public class FileGenerationManager implements ApplicationComponent {
     }
   }
 
-  private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents) {
+  private boolean generateText(IOperationContext context, String rootNodeId, GenerationStatus status, Map<SNode, String> outputNodeContents) {
     boolean hasErrors = false;
     ModelDependencies dependRoot = new ModelDependencies();
     DebugInfo info = new DebugInfo();
@@ -174,7 +213,7 @@ public class FileGenerationManager implements ApplicationComponent {
     for (SNode outputNode : status.getOutputModel().getRoots()) {
       try {
         TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
-        fillDebugInfo(info, outputNode, result);
+        fillDebugInfo(info, rootNodeId, outputNode, result);
         fillDependencies(dependRoot, outputNode, result);
 
         hasErrors |= result.hasErrors();
@@ -186,11 +225,12 @@ public class FileGenerationManager implements ApplicationComponent {
     return !hasErrors;
   }
 
-  private void fillDebugInfo(DebugInfo info, SNode outputNode, TextGenerationResult result) {
+  private void fillDebugInfo(DebugInfo info, String rootNodeId, SNode outputNode, TextGenerationResult result) {
     Map<SNode, PositionInfo> positions = result.getPositions();
     if (positions == null) {
       return;
     }
+    String fileName = outputNode.getName() + ".java";
     for (SNode out : positions.keySet()) {
       SNode input = out;
       while (input != null && !(input.isDisposed()) && (input.getModel().getModelDescriptor() == null || input.getModel().getModelDescriptor().isTransient())) {
@@ -201,8 +241,8 @@ public class FileGenerationManager implements ApplicationComponent {
         PositionInfo positionInfo = result.getPositions().get(out);
         positionInfo.setNodeId(input.getId());
         info.setModel(input.getModel());
-        positionInfo.setFileName(outputNode.getName() + ".java");
-        info.addPosition(positionInfo);
+        positionInfo.setFileName(fileName);
+        info.addPosition(positionInfo, rootNodeId);
       }
     }
   }
