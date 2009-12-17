@@ -15,7 +15,7 @@ public class AnonymousClassTest_Test extends BaseTransformationTest {
   @Test
   public void test_AnonymousClassTest() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
-    this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
+    this.runTest("AnonymousClassTest_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch

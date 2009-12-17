@@ -17,7 +17,7 @@ public class SelectionByShiftArrows_Test extends BaseTransformationTest {
   @Test
   public void test_SelectionByShiftArrows() throws Throwable {
     this.initTest("${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpr", "r:914ee49a-537d-44b2-a5fb-bac87a54743d(jetbrains.mps.editorTest)");
-    this.runTest(this.getClass().getCanonicalName() + "$TestBody", "testMethod", false);
+    this.runTest("SelectionByShiftArrows_Test$TestBody", "testMethod", false);
   }
 
   @MPSLaunch

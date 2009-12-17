@@ -81,7 +81,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1224603580889(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return TestsUtil.getTestBodyClassName(_context.getNode());
+    return TestsUtil.getTestBodyClassName(ITestMethod_Behavior.call_getTestCase_1216134500045(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1224603647998(final IOperationContext operationContext, final PropertyMacroContext _context) {

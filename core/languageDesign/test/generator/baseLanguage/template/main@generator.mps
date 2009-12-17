@@ -727,7 +727,12 @@
                         <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="882854394069695842">
                           <link role="baseMethodDeclaration" targetNodeId="43.882854394069695309" resolveInfo="getTestBodyClassName" />
                           <link role="classConcept" targetNodeId="43.882854394069504727" resolveInfo="TestsUtil" />
-                          <node role="actualArgument" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="882854394069695843" />
+                          <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5364632142688054784">
+                            <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="882854394069695843" />
+                            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="5364632142688054793">
+                              <link role="baseMethodDeclaration" targetNodeId="31.1216134500045" resolveInfo="getTestCase" />
+                            </node>
+                          </node>
                         </node>
                       </node>
                     </node>
