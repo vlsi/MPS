@@ -169,15 +169,16 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
       changeProvider.getChanges(scope, new EmptyChangelistBuilder() {
         @Override
         public void processChangeInList(Change change, @Nullable ChangeList changeList, VcsKey vcsKey) {
-          processChange(change);
+          processChange(change, vcsKey);
         }
 
         @Override
         public void processChangeInList(Change change, String changeListName, VcsKey vcsKey) {
-          processChange(change);
+          processChange(change, vcsKey);
         }
 
-        public void processChange(Change change) {
+        @Override
+        public void processChange(Change change, VcsKey vcsKey) {
           if (change.getFileStatus().equals(FileStatus.MERGED_WITH_CONFLICTS)) {
             ContentRevision contentRevision = change.getAfterRevision();
             if (contentRevision != null) {
