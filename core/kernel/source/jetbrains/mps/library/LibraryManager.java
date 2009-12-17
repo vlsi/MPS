@@ -17,14 +17,9 @@ package jetbrains.mps.library;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
-import com.intellij.openapi.options.Configurable;
-import com.intellij.openapi.options.ConfigurationException;
-import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.util.xmlb.annotations.Transient;
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.*;
@@ -32,12 +27,8 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.vfs.FileSystem;
 import org.jetbrains.annotations.Nls;
-import org.jetbrains.annotations.NonNls;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
-import javax.swing.Icon;
-import javax.swing.JComponent;
+import java.io.File;
 import java.util.*;
 
 
@@ -101,6 +92,13 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     };
     myBootstrapLibrariesOwner = new MPSModuleOwner() {
     };
+
+    String langPath = PathManager.getLanguagesPath();
+    File langDir = new File(langPath);
+    if (!langDir.exists()) {
+      langDir.mkdirs();
+    }
+
     for (Library l : getLibraries()) {
       if (l.isPredefined()) {
         MPSModuleOwner owner = (l.isBootstrap() ? myBootstrapLibrariesOwner : myPredefinedLibrariesOwner);
@@ -149,6 +147,11 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
     result.add(new PredefinedLibrary("mps.samples") {
       public String getPath() {
         return PathManager.getSamplesPath();
+      }
+    });
+    result.add(new PredefinedLibrary("mps.languages") {
+      public String getPath() {
+        return PathManager.getLanguagesPath();
       }
     });
     result.addAll(myCustomBuiltInLibraries.values());

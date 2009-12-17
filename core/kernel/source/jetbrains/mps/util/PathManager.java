@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.util;
 
+import jetbrains.mps.build.SamplesExtractor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
-import jetbrains.mps.build.SamplesExtractor;
 
 import java.io.File;
 import java.io.IOException;
@@ -113,7 +113,6 @@ public class PathManager {
 
   private static boolean isMpsDir(File file) {
     return new File(file, "build.number").exists();
-
   }
 
   public static void setConfigPath(String newConfigPath) {
@@ -165,7 +164,6 @@ public class PathManager {
   }
 
   public static String getWorkbenchPath() {
-
     return getHomePath() + File.separator + "workbench";
   }
 
@@ -187,6 +185,10 @@ public class PathManager {
 
   public static String getVCSPath() {
     return getHomePath() + File.separator + "core" + File.separator + "kernel" + File.separator + "vcs" + File.separator + "generic";
+  }
+
+  public static String getLanguagesPath() {
+    return getUserHome() + File.separator + ".MPS11" + File.separator + "languages";
   }
 
   private static String getAbsolutePath(String path) {
