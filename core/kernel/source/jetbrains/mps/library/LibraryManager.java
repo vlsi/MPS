@@ -187,5 +187,4 @@ public class LibraryManager extends BaseLibraryManager implements ApplicationCom
       }
     }
   }
-
 }

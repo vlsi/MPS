@@ -280,7 +280,7 @@ public class ProjectPane extends AbstractProjectViewPane {
 
   public SelectInTarget createSelectInTarget() {
     return new SelectInTarget() {
-      private SNode myNode;
+      private SNodePointer myNode;
 
       public boolean canSelect(SelectInContext context) {
         VirtualFile virtualFile = context.getVirtualFile();
@@ -293,18 +293,20 @@ public class ProjectPane extends AbstractProjectViewPane {
           if (!(editor instanceof MPSFileNodeEditor)) return false;
           EditorComponent editorComponent = ((MPSFileNodeEditor) editor).getNodeEditor().getCurrentEditorComponent();
           if (editorComponent == null) return false;
-          myNode = editorComponent.getEditedNode();
+          myNode = editorComponent.getEditedNodePointer();
         } else {
-          myNode = file.getNode();
+          myNode = new SNodePointer(file.getNode());
         }
         return true;
       }
 
       public void selectIn(final SelectInContext context, boolean requestFocus) {
-        if (myNode == null) return;
+        if (myNode.getNode() == null) return;
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            selectNode(myNode);
+            SNode node = myNode.getNode();
+            if (node == null) return;
+            selectNode(node);
           }
         });
         activate(requestFocus);
@@ -889,11 +891,6 @@ public class ProjectPane extends AbstractProjectViewPane {
     public boolean met(MPSTreeNode node) {
       //go into namespace nodes
       if (node instanceof NamespaceTextNode) return true;
-/*
-      todo: extract optimal module finding process. Used method only works when there is a single ability of selection
-      //need to go into devkits
-      if (node instanceof ProjectDevKitTreeNode) return true;
-*/
       //need to go into language to find generator modules
       if (node instanceof ProjectLanguageTreeNode) return true;
       //go into runtime section
