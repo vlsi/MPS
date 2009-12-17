@@ -19,6 +19,7 @@ import com.intellij.openapi.application.Application;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
@@ -359,6 +360,24 @@ public class ModelChangesWatcher implements ApplicationComponent {
       HashSet<IReloadListener> listeners = new HashSet<IReloadListener>();
       listeners.addAll(myReloadListeners);
       return listeners;
+    }
+  }
+
+  public void executeUnderBlockedReload(Runnable runnable) {
+    try {
+      suspendTasksProcessing();
+      runnable.run();
+    } finally {
+      tryToResumeTasksProcessing();
+    }
+  }
+
+  public <T> T executeUnderBlockedReload(Computable<T> computable) {
+    try {
+      suspendTasksProcessing();
+      return computable.compute();
+    } finally {
+      tryToResumeTasksProcessing();
     }
   }
 

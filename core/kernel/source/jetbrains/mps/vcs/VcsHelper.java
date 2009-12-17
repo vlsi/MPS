@@ -25,17 +25,20 @@ import javax.swing.SwingUtilities;
 public class VcsHelper {
   private static final Logger LOG = Logger.getLogger(VcsHelper.class);
 
-  public static boolean showDiskMemoryMerge(IFile modelFile, final SModel inMemory) {
-    try {
-      ModelChangesWatcher.instance().suspendTasksProcessing();
-      File backupFile = doBackup(modelFile, inMemory);
-      return showSimpleDialog(modelFile, inMemory, backupFile);
-    } catch (IOException e) {
-      LOG.error(e);
-      throw new RuntimeException(e);
-    } finally {
-      ModelChangesWatcher.instance().tryToResumeTasksProcessing();
-    }
+  public static boolean showDiskMemoryMerge(final IFile modelFile, final SModel inMemory) {
+    return ModelChangesWatcher.instance().executeUnderBlockedReload(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        try {
+          File backupFile = doBackup(modelFile, inMemory);
+          return showSimpleDialog(modelFile, inMemory, backupFile);
+        } catch (IOException e) {
+          LOG.error(e);
+          throw new RuntimeException(e);
+        }
+      }
+    });
+
   }
 
   private static boolean showSimpleDialog(IFile modelFile, SModel inMemory, File backupFile) {

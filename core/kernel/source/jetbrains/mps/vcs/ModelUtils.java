@@ -23,11 +23,7 @@ public class ModelUtils {
   private static final Logger LOG = Logger.getLogger(ModelUtils.class);
 
   public static byte[] modelToBytes(final SModel result) {
-    Document document = ModelAccess.instance().runReadAction(new Computable<Document>() {
-      public Document compute() {
-        return ModelPersistence.saveModel(result, false);
-      }
-    });
+    Document document = modelToDom(result);
     ByteArrayOutputStream baos = new ByteArrayOutputStream();
     try {
       JDOMUtil.writeDocument(document, baos);
@@ -77,6 +73,10 @@ public class ModelUtils {
   }
 
   public static SModel[] loadZippedModels(File zipfile, Version[] versions) throws IOException, ReadException {
+    return loadZippedModels(zipfile, versions, true);
+  }
+
+  public static SModel[] loadZippedModels(File zipfile, Version[] versions, boolean useZipName) throws IOException, ReadException {
     File tmpdir = jetbrains.mps.util.FileUtil.createTmpDir();
     UnzipUtil.unzip(zipfile, tmpdir);
 
@@ -87,8 +87,20 @@ public class ModelUtils {
     SModel[] models = new SModel[versions.length];
     int index = 0;
 
-    for (Version v : versions) {
-      File file = new File(prefix + v.getSuffix());
+    for (final Version v : versions) {
+      File file;
+      if (useZipName) {
+        file = new File(prefix + v.getSuffix());
+      } else {
+        File[] files = tmpdir.listFiles(new FilenameFilter() {
+          @Override
+          public boolean accept(File dir, String name) {
+            return name.endsWith(v.getSuffix());
+          }
+        });
+        LOG.assertLog((files != null) && (files.length == 1));
+        file = files[0];
+      }
 
       ByteArrayOutputStream baos = new ByteArrayOutputStream();
       FileInputStream fis = new FileInputStream(file);
@@ -181,6 +193,20 @@ public class ModelUtils {
       return new File[0];
     }
     return files;
+  }
+
+  public static void writeModel(final SModel model, String modelPath) throws IOException {
+    Document document = modelToDom(model);
+    JDOMUtil.writeDocument(document, modelPath);
+  }
+
+  private static Document modelToDom(final SModel model) {
+    Document document = ModelAccess.instance().runReadAction(new Computable<Document>() {
+      public Document compute() {
+        return ModelPersistence.saveModel(model, false);
+      }
+    });
+    return document;
   }
 
   public static interface Version {
