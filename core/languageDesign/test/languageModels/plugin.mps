@@ -99,7 +99,7 @@
                   <link role="variableDeclaration" targetNodeId="2.~System.out" resolveInfo="out" />
                 </node>
                 <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1224598709258">
-                  <link role="baseMethodDeclaration" targetNodeId="9.~PrintStream.println(java.lang.Object):void" resolveInfo="println" />
+                  <link role="baseMethodDeclaration" targetNodeId="9.~PrintStream.println(java.lang.String):void" resolveInfo="println" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1224598709262">
                     <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1224600464884">
                       <link role="variableDeclaration" targetNodeId="1224600415985" resolveInfo="testName" />

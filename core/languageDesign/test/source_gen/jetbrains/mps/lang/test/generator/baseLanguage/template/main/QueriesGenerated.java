@@ -12,9 +12,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.test.behavior.TestInfo_Behavior;
-import jetbrains.mps.util.Macros;
-import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.lang.test.generator.baseLanguage.template.util.TestsUtil;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import jetbrains.mps.lang.intentions.behavior.IntentionDeclaration_Behavior;
 import jetbrains.mps.lang.plugin.behavior.KeyMapKeystroke_Behavior;
@@ -71,16 +69,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1221570038142(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String projectPath = TestInfo_Behavior.getProjectPath_5097124989038916375(SNodeOperations.getModel(_context.getNode()));
-    if (projectPath != null) {
-      return projectPath;
-    }
-    IOperationContext invocationContext = _context.getInvocationContext();
-    String url = invocationContext.getProject().getPresentableUrl();
-    if (url != null) {
-      return Macros.mpsHomeMacros().shrinkPath(url, (IFile)null);
-    }
-    return "";
+    return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()), operationContext);
   }
 
   public static Object propertyMacro_GetPropertyValue_1221570038189(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -92,7 +81,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1224603580889(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295();
+    return TestsUtil.getTestBodyClassName(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1224603647998(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -136,17 +125,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1229198973224(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String projectPath = TestInfo_Behavior.getProjectPath_5097124989038916375(SNodeOperations.getModel(_context.getNode()));
-    if (projectPath != null) {
-      return projectPath;
-    }
-
-    IOperationContext invocationContext = _context.getInvocationContext();
-    String url = invocationContext.getProject().getPresentableUrl();
-    if (url != null) {
-      return Macros.mpsHomeMacros().shrinkPath(url, (IFile)null);
-    }
-    return "";
+    return TestsUtil.getProjectPath(SNodeOperations.getModel(_context.getNode()), operationContext);
   }
 
   public static Object propertyMacro_GetPropertyValue_1229198973269(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -154,7 +133,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1229198973287(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "$" + NodesTestCase_Behavior.getTestBodyName_1224602741295();
+    return TestsUtil.getTestBodyClassName(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1229211902562(final IOperationContext operationContext, final PropertyMacroContext _context) {
