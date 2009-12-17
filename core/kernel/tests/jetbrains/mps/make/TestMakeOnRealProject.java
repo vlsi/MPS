@@ -31,6 +31,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TestMakeOnRealProject {
+  private static final String TEST_JAVA_FILE = "Test.java";
+
   private File myTmpDir;
   private Language myCreatedLanguage;
   private Solution myCreatedSolution;
@@ -46,7 +48,7 @@ public class TestMakeOnRealProject {
 
   @After
   public void tearDown() throws Exception {
-    ModelAccess.instance().flushEventQueue();    
+    ModelAccess.instance().flushEventQueue();
     FileUtil.delete(myTmpDir);
   }
 
@@ -98,7 +100,7 @@ public class TestMakeOnRealProject {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        checkResourcesCopied(myCreatedSolution);        
+        checkResourcesCopied(myCreatedSolution);
       }
     });
   }
@@ -112,49 +114,33 @@ public class TestMakeOnRealProject {
 
     // select and touch
     IModule module = myCreatedSolution;
-    String sourcePath = null;
-    for (String path : module.getSourcePaths()) {
-      if (path.contains("source_gen")) {
-        sourcePath = path;
-      }
-    }
-    File javaFile = new File(sourcePath, "ExtendsTest.java");
+    
+    File javaFile = new File(module.getGeneratorOutputPath(), TEST_JAVA_FILE);
     long time = Math.max(System.currentTimeMillis(), javaFile.lastModified() + 1);
     if (!javaFile.setLastModified(time)) {
       Assert.fail("Can't touch the file " + javaFile);
     }
 
-    ModuleSources sources = new ModuleSources(module, new Dependencies(Collections.EMPTY_SET));
-    String className = javaFile.getPath().replace(sourcePath + File.separator, "").replace(File.separator, ".").replace(".java", "");
-    JavaFile javaFileForMake = new JavaFile(FileSystem.getFile(javaFile), className);
+    ModuleSources sources = new ModuleSources(module, new Dependencies(Collections.EMPTY_SET));        
     Set<JavaFile> filesToCompile = sources.getFilesToCompile();
     Assert.assertEquals(1, filesToCompile.size());
-    Assert.assertTrue(filesToCompile.contains(javaFileForMake));
   }
 
-  /*
-  public void testCompileAfterDelete() throws InterruptedException {
+  @Test
+  public void testFileDelete() throws InterruptedException {
     doSolutionsCompilation();
 
-    // select and touch
     IModule module = myCreatedSolution;
-    String sourcePath = null;
-   for (String path : module.getSourcePaths()) {
-      if (path.contains("source_gen")) {
-        sourcePath = path;
-      }
-    }
-    File javaFile = new File(sourcePath, "Test.java");
+    File javaFile = new File(module.getGeneratorOutputPath(), TEST_JAVA_FILE);
 
     if (!javaFile.delete()) {
-      fail("Can't delete the file " + javaFile);
+      Assert.fail("Can't delete the file " + javaFile);
     }
 
     ModuleSources sources = new ModuleSources(module, new Dependencies(Arrays.asList((IModule) module)));
-    Set<JavaFile> filesToCompile = sources.getFilesToCompile();
-    assertEquals(1, filesToCompile.size());
+    Set<IFile> filesToDelete = sources.getFilesToDelete();
+    Assert.assertEquals(1, filesToDelete.size());
   }
-  */
 
 
   private void checkModuleCompiled(IModule module) {
@@ -170,7 +156,7 @@ public class TestMakeOnRealProject {
   private void checkResourcesCopied(IModule module) {
     IFile classesGen = module.getClassesGen();
     List<File> classes = collectSpecificFilesFromDir(classesGen.toFile(), "txt");
-    
+
     Assert.assertTrue("resources should be copied ", 1 == classes.size());
   }
 
@@ -198,6 +184,7 @@ public class TestMakeOnRealProject {
       public void run() {
         myCreatedLanguage = createNewLanguage();
         createJavaFiles(myCreatedLanguage);
+
         myCreatedSolution = createNewSolution();
         createJavaFiles(myCreatedSolution);
 
@@ -210,9 +197,8 @@ public class TestMakeOnRealProject {
   }
 
   public void createJavaFiles(IModule module) {
-    String path = module.getGeneratorOutputPath();    
-    createFile(path, "Test.java", "class Test {}");
-    createFile(path, "ExtendsTest.java", "class ExtendsTest extends Test {}");    
+    String path = module.getGeneratorOutputPath();
+    createFile(path, TEST_JAVA_FILE, "class Test {}");
   }
 
   private void createFile(String path, String fileName, String text) {
