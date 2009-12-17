@@ -83,7 +83,9 @@ public class NewSolution_Action extends GeneratedAction {
           NewSolution_Action.this.project.setFolderFor(s, NewSolution_Action.this.folder);
         }
       });
-      ProjectPane.getInstance(NewSolution_Action.this.ideaProject).selectModule(s);
+      ProjectPane projectPane = ProjectPane.getInstance(NewSolution_Action.this.ideaProject);
+      projectPane.rebuildTree();
+      projectPane.selectModule(s);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "NewSolution", t);
