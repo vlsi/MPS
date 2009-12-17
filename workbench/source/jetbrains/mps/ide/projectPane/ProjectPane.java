@@ -1143,7 +1143,7 @@ public class ProjectPane extends AbstractProjectViewPane {
 
   private class MySelectInTarget implements SelectInTarget {
     public boolean canSelect(SelectInContext context) {
-      return getNode(context)!=null;
+      return getNode(context) != null;
     }
 
     public void selectIn(final SelectInContext context, boolean requestFocus) {
@@ -1169,7 +1169,7 @@ public class ProjectPane extends AbstractProjectViewPane {
       return "Logical View";
     }
 
-    private SNode getNode(SelectInContext context){
+    private SNode getNode(SelectInContext context) {
       VirtualFile virtualFile = context.getVirtualFile();
       if (!(virtualFile instanceof MPSNodeVirtualFile)) return null;
 
