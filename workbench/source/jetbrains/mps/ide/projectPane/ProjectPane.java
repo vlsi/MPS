@@ -48,8 +48,8 @@ import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
-import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.RuntimeModulesTreeNode;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AllModelsTreeNode;
+import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.RuntimeModulesTreeNode;
 import jetbrains.mps.ide.projectPane.SModelsSubtree.JavaStubsTreeNode;
 import jetbrains.mps.ide.projectPane.SModelsSubtree.TestsTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -475,25 +475,6 @@ public class ProjectPane extends AbstractProjectViewPane {
     }, false);
   }
 
-  public void doRebuildTree() {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
-      public void run() {
-        if (isDisposed()) {
-          return;
-        }
-        rebuildTreeNow();
-      }
-    });
-  }
-
-  private void rebuildTreeNow() {
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        rebuildTree();
-      }
-    });
-  }
-
   public boolean isDisposed() {
     return myDisposed;
   }
@@ -505,7 +486,12 @@ public class ProjectPane extends AbstractProjectViewPane {
   }
 
   public void rebuild() {
-    doRebuildTree();
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        if (isDisposed()) return;
+        rebuildTree();
+      }
+    });
   }
 
   protected void removeListeners() {
