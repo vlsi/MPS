@@ -8,6 +8,9 @@ import com.sun.jdi.ThreadReference;
 import com.sun.jdi.event.*;
 import jetbrains.mps.logging.Logger;
 
+import java.util.List;
+import java.util.ArrayList;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -20,6 +23,8 @@ public class DebugEventsProcessor {
 
   private BreakpointManager myBreakpointManager;
   private Project myProject;
+
+  private List<DebugProcessListener> myListeners = new ArrayList<DebugProcessListener>();
 
   //todo use proxy instead - if necessary
   private VirtualMachine myVirtualMachine;
@@ -169,6 +174,14 @@ public class DebugEventsProcessor {
         }
       });
     }*/
+  }
+
+  public void addDebugProcessListener(DebugProcessListener listener) {
+    myListeners.add(listener);
+  }
+
+  public void removeDebugProcessListener(DebugProcessListener listener) {
+    myListeners.remove(listener);
   }
 
 
