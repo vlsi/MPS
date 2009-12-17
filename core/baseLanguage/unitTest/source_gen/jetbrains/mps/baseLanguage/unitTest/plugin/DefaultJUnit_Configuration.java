@@ -132,7 +132,6 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             npe.printStackTrace();
           }
 
-          ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), consoleView.createConsoleActions())));
           consoleComponent = runComponent;
           consoleDispose = new Runnable() {
             public void run() {

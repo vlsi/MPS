@@ -15,9 +15,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JComponent;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
-import com.intellij.openapi.actionSystem.AnAction;
-import jetbrains.mps.ide.findusages.view.icons.Icons;
-import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.execution.ui.ConsoleView;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionToolbar;
@@ -93,7 +91,7 @@ public class UnitTestViewComponent extends JPanel {
     this.splitPaneComponent.setRightComponent(rightPanel);
     this.setLayout(new BorderLayout());
     this.add(this.splitPaneComponent, BorderLayout.CENTER);
-    JComponent actions = this.createActionsToolbar();
+    JComponent actions = this.createActionsToolbar(console);
     actions.setMaximumSize(new Dimension(rightPanel.getWidth(), actions.getMaximumSize().height));
     this.add(actions, BorderLayout.LINE_START);
     this.actionToolComponent = new TestToolbarPanel(this.treeComponent, this.testNavigator);
@@ -108,26 +106,8 @@ public class UnitTestViewComponent extends JPanel {
     this.testState.addView(this.outputComponent);
   }
 
-  public JComponent createActionsToolbar() {
-    final TestMethodOccurenceNavigator navigator = new TestMethodOccurenceNavigator(this.treeComponent);
-    AnAction prevAction = new AnAction("Previous Test", "", Icons.PREVIOUS_ICON) {
-      public void actionPerformed(AnActionEvent p0) {
-        if (navigator.hasPreviousOccurence()) {
-          navigator.goPreviousOccurence();
-        }
-      }
-    };
-    AnAction nextAction = new AnAction("Next Test", "", Icons.NEXT_ICON) {
-      public void actionPerformed(AnActionEvent p0) {
-        if (navigator.hasNextOccurence()) {
-          navigator.goNextOccurence();
-        }
-      }
-    };
-    DefaultActionGroup group = new DefaultActionGroup();
-    group.addSeparator();
-    group.add(prevAction);
-    group.add(nextAction);
+  public JComponent createActionsToolbar(ConsoleView console) {
+    DefaultActionGroup group = new DefaultActionGroup(console.createConsoleActions());
     ActionManager manager = ActionManager.getInstance();
     ActionToolbar toolbar = manager.createActionToolbar(ActionPlaces.UNKNOWN, group, false);
     return toolbar.getComponent();
