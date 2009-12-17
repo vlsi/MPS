@@ -54,7 +54,13 @@ public class NodePresentationUtil {
   }
 
   public static int getSortPriority(SNode referenceNode, SNode referentNode) {
-    return isLocalTo(referenceNode, referentNode) ? -1 : 0;
+    if (isLocalTo(referenceNode, referentNode)) {
+      return -2;
+    }
+    if (SModelStereotype.isUserModel(referentNode.getModel())) {
+      return -1;
+    }
+    return 0;
   }
 
   private static IModule toLanguage(IModule m) {

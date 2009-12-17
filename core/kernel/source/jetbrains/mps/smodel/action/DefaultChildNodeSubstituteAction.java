@@ -95,7 +95,7 @@ public class DefaultChildNodeSubstituteAction extends AbstractNodeSubstituteActi
   public int getSortPriority(String pattern) {
     if (getParameterObject() instanceof SNode) {
       SNode parameterNode = (SNode) getParameterObject();
-      return NodePresentationUtil.getSortPriority(parameterNode, getSourceNode());
+      return NodePresentationUtil.getSortPriority(getSourceNode(), parameterNode);
     }
     return 0;
   }
