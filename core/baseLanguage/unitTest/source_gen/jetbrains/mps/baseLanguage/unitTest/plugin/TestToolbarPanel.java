@@ -38,14 +38,14 @@ public class TestToolbarPanel extends JPanel {
 
   private void init() {
     final DefaultActionGroup actionGroup = new DefaultActionGroup();
-    actionGroup.addAction(this.createHidePassedAction());
-    actionGroup.addAction(this.cteateTrackRunningAction());
-    actionGroup.addAction(this.createCollapseAllAction());
-    actionGroup.addAction(this.createExpandAllAction());
-    actionGroup.addAction(this.createNextOccurrenceAction());
-    actionGroup.addAction(this.createPreviousOccurrenceAction());
+    actionGroup.addAll(this.createHidePassedAction(), this.cteateTrackRunningAction());
+    actionGroup.addSeparator();
+    actionGroup.addAll(this.createCollapseAllAction(), this.createExpandAllAction());
+    actionGroup.addSeparator();
+    actionGroup.addAll(this.createNextOccurrenceAction(), this.createPreviousOccurrenceAction());
+    actionGroup.addSeparator();
     actionGroup.addAction(this.createSelectFirstFailedAction());
-    ActionToolbar toolbarActions = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, false);
+    ActionToolbar toolbarActions = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, actionGroup, true);
     toolbarActions.setOrientation(SwingConstants.HORIZONTAL);
     this.add(toolbarActions.getComponent(), BorderLayout.WEST);
   }
