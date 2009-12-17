@@ -2221,16 +2221,6 @@
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215702411265" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215702411266">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1215702411267">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1215702411268">
-            <link role="classConcept" targetNodeId="13.~IdeMain" resolveInfo="IdeMain" />
-            <link role="baseMethodDeclaration" targetNodeId="13.~IdeMain.setTestMode(jetbrains.mps.ide.IdeMain$TestMode):void" resolveInfo="setTestMode" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1237577093784">
-              <link role="enumConstantDeclaration" targetNodeId="13.~IdeMain$TestMode.CORE_TEST" resolveInfo="CORE_TEST" />
-              <link role="enumClass" targetNodeId="13.~IdeMain$TestMode" resolveInfo="IdeMain.TestMode" />
-            </node>
-          </node>
-        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1215702411270">
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215702411271">
             <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1215702411272">

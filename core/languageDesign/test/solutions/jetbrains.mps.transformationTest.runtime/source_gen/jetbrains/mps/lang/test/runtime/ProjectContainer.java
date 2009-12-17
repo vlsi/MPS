@@ -4,7 +4,6 @@ package jetbrains.mps.lang.test.runtime;
 
 import jetbrains.mps.project.MPSProject;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.ide.IdeMain;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.TestMain;
 import java.io.File;
@@ -31,7 +30,6 @@ public class ProjectContainer {
   }
 
   public MPSProject getProject(String name) {
-    IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     if (ObjectUtils.equals(name, this.projectName)) {
       return this.lastProject;
     } else {
