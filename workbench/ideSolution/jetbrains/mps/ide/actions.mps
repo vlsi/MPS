@@ -3733,7 +3733,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration" id="1215905183111">
     <property name="package" value="Menu.ProjectPane.Project.Actions" />
     <property name="name" value="NewDevKit" />
-    <property name="caption" value="New DevKit" />
+    <property name="caption" value="DevKit" />
     <property name="outsideCommandExecution" value="true" />
     <node role="executeFunction" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock" id="1215905183112">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215905397990">

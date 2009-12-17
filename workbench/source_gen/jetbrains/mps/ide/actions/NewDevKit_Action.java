@@ -25,7 +25,7 @@ public class NewDevKit_Action extends GeneratedAction {
   private Project ideaProject;
 
   public NewDevKit_Action() {
-    super("New DevKit", "", ICON);
+    super("DevKit", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

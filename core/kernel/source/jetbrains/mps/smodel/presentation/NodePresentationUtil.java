@@ -31,6 +31,10 @@ public class NodePresentationUtil {
     return getIcon(node.getAdapter(), referent_presentation);
   }
 
+  public static Icon getAdditionalIcon(SNode node) {
+    return IconManager.getAdditionalIconFor(node);
+  }
+
   public static Icon getIcon(INodeAdapter nodeAdapter, boolean referent_presentation) {
     if (nodeAdapter instanceof ConceptDeclaration && !referent_presentation) {
       return IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeAdapter));
