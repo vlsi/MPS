@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor.style;
 
+import jetbrains.mps.nodeEditor.CellMouseHandler;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.CaretPosition;
 import jetbrains.mps.lang.editor.structure._Enum_Measure;
@@ -115,6 +116,7 @@ public class StyleAttributes {
   public static final StyleAttribute<Boolean> INDENT_LAYOUT_NO_WRAP = new SimpleStyleAttribute<Boolean>("indent-layout-no-wrap", false);
 
   public static final StyleAttribute<ParametersInformation> PARAMETERS_INFORMATION = new SimpleStyleAttribute<ParametersInformation>("parameters-information");
+  public static final StyleAttribute<CellMouseHandler> MOUSE_HANDLER = new SimpleStyleAttribute<CellMouseHandler>("mouse-handler");
 
   public static final StyleAttribute<ScriptKind> SCRIPT_KIND = new SimpleStyleAttribute<ScriptKind>("script-kind", ScriptKind.NORMAL);
   public static final StyleAttribute<Integer> ORIGINAL_FONT_SIZE = new SimpleStyleAttribute<Integer>("original-font-size");
