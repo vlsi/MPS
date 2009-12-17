@@ -134,6 +134,25 @@ public class DebugInfo {
     return null;
   }
 
+  public List<String> getRoots() {
+    return SetSequence.fromSet(MapSequence.fromMap(this.myRootToPositions).keySet()).toListSequence();
+  }
+
+  public Set<PositionInfo> getPositions(String rootId) {
+    return MapSequence.fromMap(this.myRootToPositions).get(rootId);
+  }
+
+  public void updateFrom(DebugInfo debugInfo) {
+    for (String rootId : debugInfo.getRoots()) {
+      Set<PositionInfo> pinfo = MapSequence.fromMap(this.myRootToPositions).get(rootId);
+      if (pinfo == null) {
+        pinfo = SetSequence.fromSet(new TreeSet<PositionInfo>());
+        MapSequence.fromMap(this.myRootToPositions).put(rootId, pinfo);
+      }
+      SetSequence.fromSet(pinfo).addSequence(SetSequence.fromSet(debugInfo.getPositions(rootId)));
+    }
+  }
+
   public SModel getModel() {
     return this.myModel;
   }
