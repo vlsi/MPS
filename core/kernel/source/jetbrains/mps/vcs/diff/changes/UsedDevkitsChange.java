@@ -46,9 +46,9 @@ public class UsedDevkitsChange extends Change {
 
   public boolean apply(SModel m) {
     if (myIsDeleted) {
-      m.deleteLanguage(myReference);
+      m.deleteDevKit(myReference);
     } else {
-      m.addLanguage_internal(myReference);
+      m.addDevKit(myReference);
     }
     return true;
   }
