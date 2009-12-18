@@ -45,6 +45,7 @@ public class ModuleTreeNodeComparator implements Comparator<MPSTreeNode> {
         return 1;
       }
     }
+    if (o1.toString() == null || o2.toString() == null) return 0;
     return o1.toString().compareTo(o2.toString());
   }
 }
