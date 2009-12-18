@@ -14,6 +14,6 @@ public class SwitchCase_Behavior {
     if (!(ignoreMayBeThrowables)) {
       Statement_Behavior.collectUncaughtMethodThrowables_5412515780383112967(throwables, SLinkOperations.getTarget(thisNode, "expression", true));
     }
-    StatementList_Behavior.call_collectUncatchedThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "body", true), throwables, ignoreMayBeThrowables);
+    StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "body", true), throwables, ignoreMayBeThrowables);
   }
 }

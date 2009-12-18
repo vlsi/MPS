@@ -23,7 +23,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
 
   public void applyRule(final SNode catchClause, final TypeCheckingContext typeCheckingContext) {
     SNode caughtType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
-    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(new _Quotations.QuotationClass_113().createNode(caughtType, typeCheckingContext), new _Quotations.QuotationClass_114().createNode(typeCheckingContext)))) {
+    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(new _Quotations.QuotationClass_113().createNode(caughtType, typeCheckingContext), new _Quotations.QuotationClass_114().createNode(typeCheckingContext))) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(new _Quotations.QuotationClass_127().createNode(caughtType, typeCheckingContext), new _Quotations.QuotationClass_128().createNode(typeCheckingContext)))) {
       if (SNodeOperations.isInstanceOf(caughtType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
         SNode caught = SLinkOperations.getTarget(SNodeOperations.cast(caughtType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
         boolean found = false;

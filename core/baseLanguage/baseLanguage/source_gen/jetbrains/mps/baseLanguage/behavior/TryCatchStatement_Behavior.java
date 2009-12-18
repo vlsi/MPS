@@ -21,7 +21,7 @@ public class TryCatchStatement_Behavior {
 
   public static void collectUncatchedThrowables_4313092516462065508(Set<SNode> throwables, SNode body, List<SNode> catchClause, boolean ignoreMayBeThrowables) {
     Set<SNode> thrownsFromBody = SetSequence.fromSet(new HashSet());
-    StatementList_Behavior.call_collectUncatchedThrowables_5412515780383134474(body, thrownsFromBody, ignoreMayBeThrowables);
+    StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(body, thrownsFromBody, ignoreMayBeThrowables);
 
     // remove what we have catched 
     for (SNode caatch : ListSequence.fromList(catchClause)) {
@@ -39,7 +39,7 @@ public class TryCatchStatement_Behavior {
 
     // now collect what was thrown in catch blocks 
     for (SNode caatch : ListSequence.fromList(catchClause)) {
-      StatementList_Behavior.call_collectUncatchedThrowables_5412515780383134474(SLinkOperations.getTarget(caatch, "catchBody", true), throwables, ignoreMayBeThrowables);
+      StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(caatch, "catchBody", true), throwables, ignoreMayBeThrowables);
     }
   }
 }

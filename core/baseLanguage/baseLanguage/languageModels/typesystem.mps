@@ -21551,21 +21551,42 @@
         </node>
       </node>
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="3759381730162155262">
-        <node role="condition" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="3759381730162155321">
-          <node role="expression" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" id="3759381730162155274">
-            <node role="subtypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3759381730162155299">
-              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3759381730162155302">
-                <node role="referenceAntiquotation$link_attribute$classifier" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="3759381730162155303">
-                  <property name="label" value="ClassifierType" />
-                  <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3759381730162155305">
-                    <link role="variableDeclaration" targetNodeId="3759381730162155291" resolveInfo="catchedType" />
+        <node role="condition" type="jetbrains.mps.baseLanguage.structure.AndExpression" id="8620077627874516630">
+          <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="3759381730162155321">
+            <node role="expression" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" id="3759381730162155274">
+              <node role="subtypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3759381730162155299">
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3759381730162155302">
+                  <node role="referenceAntiquotation$link_attribute$classifier" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="3759381730162155303">
+                    <property name="label" value="ClassifierType" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3759381730162155305">
+                      <link role="variableDeclaration" targetNodeId="3759381730162155291" resolveInfo="catchedType" />
+                    </node>
                   </node>
                 </node>
               </node>
+              <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3759381730162155317">
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3759381730162155320">
+                  <link role="classifier" targetNodeId="4.~RuntimeException" resolveInfo="RuntimeException" />
+                </node>
+              </node>
             </node>
-            <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="3759381730162155317">
-              <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3759381730162155320">
-                <link role="classifier" targetNodeId="4.~RuntimeException" resolveInfo="RuntimeException" />
+          </node>
+          <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="8620077627874516633">
+            <node role="expression" type="jetbrains.mps.lang.typesystem.structure.IsSubtypeExpression" id="8620077627874516634">
+              <node role="subtypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="8620077627874516635">
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8620077627874516636">
+                  <node role="referenceAntiquotation$link_attribute$classifier" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="8620077627874516637">
+                    <property name="label" value="ClassifierType" />
+                    <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8620077627874516638">
+                      <link role="variableDeclaration" targetNodeId="3759381730162155291" resolveInfo="caughtType" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="supertypeExpression" type="jetbrains.mps.lang.quotation.structure.Quotation" id="8620077627874516639">
+                <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8620077627874524051">
+                  <link role="classifier" targetNodeId="4.~Error" resolveInfo="Error" />
+                </node>
               </node>
             </node>
           </node>

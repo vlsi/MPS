@@ -51,13 +51,13 @@ public class IfStatement_Behavior {
 
   public static void virtual_collectUncaughtMethodThrowables_5412515780383134223(SNode thisNode, Set<SNode> throwables, boolean ignoreMayBeThrowables) {
     if ((SLinkOperations.getTarget(thisNode, "ifTrue", true) != null)) {
-      StatementList_Behavior.call_collectUncatchedThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "ifTrue", true), throwables, ignoreMayBeThrowables);
+      StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "ifTrue", true), throwables, ignoreMayBeThrowables);
     }
     if ((SLinkOperations.getTarget(thisNode, "ifFalseStatement", true) != null)) {
       Statement_Behavior.call_collectUncaughtMethodThrowables_5412515780383134223(SLinkOperations.getTarget(thisNode, "ifFalseStatement", true), throwables, ignoreMayBeThrowables);
     }
     for (SNode elseIfClause : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elsifClauses", true))) {
-      StatementList_Behavior.call_collectUncatchedThrowables_5412515780383134474(SLinkOperations.getTarget(elseIfClause, "statementList", true), throwables, ignoreMayBeThrowables);
+      StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(elseIfClause, "statementList", true), throwables, ignoreMayBeThrowables);
       if (!(ignoreMayBeThrowables)) {
         Statement_Behavior.collectUncaughtMethodThrowables_5412515780383112967(throwables, SLinkOperations.getTarget(elseIfClause, "condition", true));
       }

@@ -19,7 +19,7 @@ public class SwitchStatement_Behavior {
       SwitchCase_Behavior.call_collectUncautchedThrowables_4313092516461872703(casse, throwables, ignoreMayBeThrowables);
     }
     if ((SLinkOperations.getTarget(thisNode, "defaultBlock", true) != null)) {
-      StatementList_Behavior.call_collectUncatchedThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "defaultBlock", true), throwables, ignoreMayBeThrowables);
+      StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "defaultBlock", true), throwables, ignoreMayBeThrowables);
     }
   }
 }

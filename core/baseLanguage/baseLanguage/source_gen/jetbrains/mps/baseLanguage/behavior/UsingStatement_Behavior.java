@@ -17,6 +17,6 @@ public class UsingStatement_Behavior {
         Statement_Behavior.collectUncaughtMethodThrowables_5412515780383112967(throwables, e);
       }
     }
-    StatementList_Behavior.call_collectUncatchedThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "body", true), throwables, ignoreMayBeThrowables);
+    StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(thisNode, "body", true), throwables, ignoreMayBeThrowables);
   }
 }

@@ -4276,7 +4276,7 @@
       </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5412515780383134474">
-      <property name="name" value="collectUncatchedThrowables" />
+      <property name="name" value="collectUncaughtThrowables" />
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="5412515780383134482">
         <property name="name" value="throwables" />
         <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="5412515780383134483">
