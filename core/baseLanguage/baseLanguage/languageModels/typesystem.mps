@@ -21527,11 +21527,11 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule" id="3759381730162150198">
-    <property name="name" value="check_CatchedWasThrown" />
+    <property name="name" value="check_CaughtWasThrown" />
     <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3759381730162150199">
       <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3759381730162155290">
         <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3759381730162155291">
-          <property name="name" value="catchedType" />
+          <property name="name" value="caughtType" />
           <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3759381730162155292">
             <link role="concept" targetNodeId="1.1068431790189" resolveInfo="Type" />
           </node>
@@ -21575,7 +21575,7 @@
             <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3759381730162155373">
               <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="3759381730162155368">
                 <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3759381730162155369">
-                  <property name="name" value="catched" />
+                  <property name="name" value="caught" />
                   <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3759381730162155370">
                     <link role="concept" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
                   </node>
@@ -21694,7 +21694,7 @@
                       </node>
                       <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="3759381730162155457">
                         <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3759381730162155456">
-                          <property name="value" value="Catched exception " />
+                          <property name="value" value="Caught exception " />
                         </node>
                         <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="3759381730162155460">
                           <link role="variableDeclaration" targetNodeId="3759381730162155369" resolveInfo="catched" />
