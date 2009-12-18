@@ -9,8 +9,8 @@ import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -27,7 +27,10 @@ public class TestCaseTreeNode extends MPSTreeNode {
   }
 
   public void updatePresentation() {
-    Icon icon = IconManager.getIconFor(this.testCase);
+    Icon icon = (this.state == null ?
+      IconManager.getIconFor(this.testCase) :
+      this.state.getIcon()
+    );
     if (icon != null) {
       this.setIcon(icon);
     }
@@ -38,6 +41,16 @@ public class TestCaseTreeNode extends MPSTreeNode {
 
   public void setState(TestState state) {
     this.state = state;
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        TestCaseTreeNode.this.updatePresentation();
+        TestCaseTreeNode.this.updateNodePresentationInTree();
+      }
+    });
+  }
+
+  public TestState getState() {
+    return this.state;
   }
 
   public String getClassName() {

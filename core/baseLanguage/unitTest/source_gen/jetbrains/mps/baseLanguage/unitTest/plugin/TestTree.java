@@ -11,13 +11,14 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.MPSProjectHolder;
+import java.util.Arrays;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.smodel.ModelAccess;
@@ -40,47 +41,65 @@ public class TestTree extends MPSTree implements TestView {
     this.rebuildLater();
   }
 
+  private void updateState(TestMethodTreeNode methodNode, TestCaseTreeNode testCaseNode, TestState testState) {
+    methodNode.setState(testState);
+    List<TestState> priorityList = Arrays.asList(TestState.IN_PROGRESS, TestState.PASSED, TestState.FAILED, TestState.ERROR, TestState.TERMINATED);
+    TestState oldState = testCaseNode.getState();
+    if (ListSequence.fromList(priorityList).indexOf(oldState) < ListSequence.fromList(priorityList).indexOf(testState)) {
+      if (TestState.PASSED.equals(testState)) {
+        for (MPSTreeNode method : testCaseNode) {
+          if (!(TestState.PASSED.equals(((TestMethodTreeNode)method).getState()))) {
+            return;
+          }
+        }
+      }
+      testCaseNode.setState(testState);
+    }
+  }
+
   public void update() {
     String loseTest = this.state.getLoseClass();
     String loseMethod = this.state.getLoseMethod();
     String test = this.state.getCurrentClass();
     String method = this.state.getCurrentMethod();
-    final Wrappers._T<TestMethodTreeNode> node = new Wrappers._T<TestMethodTreeNode>();
+    final Wrappers._T<TestMethodTreeNode> methodNode = new Wrappers._T<TestMethodTreeNode>();
     if (loseTest != null && loseMethod != null) {
-      node.value = this.get(loseTest, loseMethod);
-      if (node.value != null) {
-        node.value.setState(TestState.ERROR);
+      methodNode.value = this.get(loseTest, loseMethod);
+      if (methodNode.value != null) {
+        methodNode.value.setState(TestState.ERROR);
       }
     } else {
-      node.value = this.get(test, method);
-      if (node.value != null) {
+      methodNode.value = this.get(test, method);
+      TestCaseTreeNode testCaseNode = this.get(test);
+      if (methodNode.value != null && testCaseNode != null) {
         if (this.state.isTerminated()) {
-          node.value.setState(TestState.TERMINATED);
+          this.updateState(methodNode.value, testCaseNode, TestState.TERMINATED);
         } else if (TestEvent.START_TEST_PREFIX.equals(this.state.getToken())) {
-          node.value.setState(TestState.IN_PROGRESS);
+          this.updateState(methodNode.value, testCaseNode, TestState.IN_PROGRESS);
           if (this.getPreferences().getStateObject().isTrackRunning) {
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
-                TestTree.this.setCurrentNode(node.value);
+                TestTree.this.setCurrentNode(methodNode.value);
               }
             });
           }
         } else if (TestEvent.END_TEST_PREFIX.equals(this.state.getToken())) {
-          if (TestState.IN_PROGRESS.equals(node.value.getState())) {
-            node.value.setState(TestState.PASSED);
+          if (TestState.IN_PROGRESS.equals(methodNode.value.getState())) {
+            this.updateState(methodNode.value, testCaseNode, TestState.PASSED);
             TestMethodRow row = this.state.getTestMethodRow(test, method);
             if (row != null) {
               row.setSucceed();
             }
           }
         } else if (TestEvent.FAILURE_TEST_PREFIX.equals(this.state.getToken())) {
-          node.value.setState(TestState.FAILED);
+          this.updateState(methodNode.value, testCaseNode, TestState.FAILED);
         } else if (TestEvent.ERROR_TEST_PREFIX.equals(this.state.getToken())) {
-          node.value.setState(TestState.ERROR);
+          methodNode.value.setState(TestState.ERROR);
+          this.updateState(methodNode.value, testCaseNode, TestState.ERROR);
         }
       }
     }
-    if (isFailed(node.value) && this.getPreferences().getStateObject().isSelectFirstFailed) {
+    if (isFailed(methodNode.value) && this.getPreferences().getStateObject().isSelectFirstFailed) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           TestTree.this.selectFirstDefectNode();
