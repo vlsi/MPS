@@ -26,27 +26,33 @@ public class ProgressLine extends JPanel implements TestView {
     this.state = testState;
     this.add(this.stateLabel);
     final JPanel progress = new JPanel(new GridBagLayout());
-    this.add(progress);
     progress.add(this.progressBar, new GridBagConstraints(0, 0, 0, 0, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0));
-    this.testsBuilt = true;
     this.progressBar.setColor(ColorProgressBar.GREEN);
+    this.add(progress);
+    this.testsBuilt = true;
   }
 
   public void update() {
-    final int defectedTests = this.state.getDefectTests();
-    final int totalTests = this.state.getTotalTests();
-    final int complitedTests = this.state.getCompletedTests();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        if (defectedTests > 0) {
-          ProgressLine.this.progressBar.setColor(ColorProgressBar.RED);
-        }
-        if (totalTests != 0) {
-          ProgressLine.this.progressBar.setFraction(complitedTests / totalTests);
-        }
+        ProgressLine.this.updateProgressBar();
         ProgressLine.this.updateLabel();
       }
     });
+  }
+
+  private void updateProgressBar() {
+    int defectedTests = this.state.getDefectTests();
+    int totalTests = this.state.getTotalTests();
+    int complitedTests = this.state.getCompletedTests();
+    if (defectedTests > 0) {
+      this.progressBar.setColor(ColorProgressBar.RED);
+    } else if (totalTests > 0) {
+      this.progressBar.setColor(ColorProgressBar.GREEN);
+    }
+    if (totalTests != 0) {
+      this.progressBar.setFraction(complitedTests / totalTests);
+    }
   }
 
   private void updateLabel() {
@@ -65,9 +71,6 @@ public class ProgressLine extends JPanel implements TestView {
   }
 
   public void start(final ProcessHandler processHandler) {
-    if (this.testsBuilt) {
-      return;
-    }
     processHandler.addProcessListener(new ProcessAdapter() {
       @Override
       public void processTerminated(ProcessEvent p0) {

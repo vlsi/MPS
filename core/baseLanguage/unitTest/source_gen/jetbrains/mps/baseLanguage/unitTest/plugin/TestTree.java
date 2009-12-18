@@ -11,15 +11,15 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.MPSProjectHolder;
-import javax.swing.SwingUtilities;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -45,51 +45,45 @@ public class TestTree extends MPSTree implements TestView {
     String loseMethod = this.state.getLoseMethod();
     String test = this.state.getCurrentClass();
     String method = this.state.getCurrentMethod();
+    final Wrappers._T<TestMethodTreeNode> node = new Wrappers._T<TestMethodTreeNode>();
     if (loseTest != null && loseMethod != null) {
-      TestMethodTreeNode node = this.get(loseTest, loseMethod);
-      if (node != null) {
-        node.setState(TestState.ERROR);
-        if (this.getPreferences().getStateObject().isSelectFirstFailed) {
-          SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-              TestTree.this.selectFirstDefectNode();
-            }
-          });
-        }
+      node.value = this.get(loseTest, loseMethod);
+      if (node.value != null) {
+        node.value.setState(TestState.ERROR);
       }
     } else {
-      final TestMethodTreeNode node = this.get(test, method);
-      if (node != null) {
+      node.value = this.get(test, method);
+      if (node.value != null) {
         if (TestEvent.START_TEST_PREFIX.equals(this.state.getToken())) {
-          node.setState(TestState.IN_PROGRESS);
+          node.value.setState(TestState.IN_PROGRESS);
           if (this.getPreferences().getStateObject().isTrackRunning) {
             SwingUtilities.invokeLater(new Runnable() {
               public void run() {
-                TestTree.this.setCurrentNode(node);
+                TestTree.this.setCurrentNode(node.value);
               }
             });
           }
         } else if (TestEvent.END_TEST_PREFIX.equals(this.state.getToken())) {
-          if (TestState.IN_PROGRESS.equals(node.getState())) {
-            node.setState(TestState.PASSED);
+          if (TestState.IN_PROGRESS.equals(node.value.getState())) {
+            node.value.setState(TestState.PASSED);
             TestMethodRow row = this.state.getTestMethodRow(test, method);
             if (row != null) {
               row.setSucceed();
             }
           }
         } else if (TestEvent.FAILURE_TEST_PREFIX.equals(this.state.getToken())) {
-          node.setState(TestState.FAILED);
+          node.value.setState(TestState.FAILED);
         } else if (TestEvent.ERROR_TEST_PREFIX.equals(this.state.getToken())) {
-          node.setState(TestState.ERROR);
-        }
-        if (isFailed(node) && this.getPreferences().getStateObject().isSelectFirstFailed && node.getNextLeaf() == null) {
-          SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-              TestTree.this.selectFirstDefectNode();
-            }
-          });
+          node.value.setState(TestState.ERROR);
         }
       }
+    }
+    if (isFailed(node.value) && this.getPreferences().getStateObject().isSelectFirstFailed) {
+      SwingUtilities.invokeLater(new Runnable() {
+        public void run() {
+          TestTree.this.selectFirstDefectNode();
+        }
+      });
     }
     if (this.getPreferences().getStateObject().isHidePassed) {
       SwingUtilities.invokeLater(new Runnable() {
@@ -98,7 +92,6 @@ public class TestTree extends MPSTree implements TestView {
         }
       });
     }
-
   }
 
   public MPSTreeNode rebuild() {
@@ -230,7 +223,7 @@ public class TestTree extends MPSTree implements TestView {
   }
 
   public static boolean isFailed(MPSTreeNode node) {
-    if (!(node.isLeaf())) {
+    if (node == null || !(node.isLeaf())) {
       return false;
     }
     TestMethodTreeNode leaf = (TestMethodTreeNode)node;
