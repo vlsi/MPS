@@ -35,7 +35,6 @@ import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.KeyStroke;
 import javax.swing.AbstractAction;
-import javax.swing.JPopupMenu;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import java.awt.event.KeyEvent;
@@ -47,7 +46,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.vcs.FileStatus;
-import com.intellij.openapi.util.Computable;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -315,12 +313,16 @@ class ModelChangesTree extends MPSTree {
         }
       }
 
-      List<UsedLanguagesChange> usedLanguagesChanges = CollectionUtil.filter(UsedLanguagesChange.class, myChanges);
-      if (!(usedLanguagesChanges.isEmpty())) {
+      List<Change> modelPropertyChanges = new ArrayList<Change>();
+      modelPropertyChanges.addAll(CollectionUtil.filter(ModelImportChange.class, myChanges));
+      modelPropertyChanges.addAll(CollectionUtil.filter(UsedLanguagesChange.class, myChanges));
+      modelPropertyChanges.addAll(CollectionUtil.filter(UsedDevkitsChange.class, myChanges));
+      modelPropertyChanges.addAll(CollectionUtil.filter(EngagedOnGenerationLanguagesChange.class, myChanges));
+      if (!modelPropertyChanges.isEmpty()) {
         ModelChangesTree.SModelPropertiesTreeNode propertiesNode = new SModelPropertiesTreeNode(getOperationContext());
         getRootNode().add(propertiesNode);
-        for (UsedLanguagesChange change : usedLanguagesChanges) {
-          propertiesNode.add(new UsedLanguagesChangeTreeNode(getOperationContext(), change));
+        for (Change change : modelPropertyChanges) {
+          propertiesNode.add(new ModelPropertyChangeTreeNode(getOperationContext(), change));
         }
       }
     }
@@ -464,8 +466,8 @@ class ModelChangesTree extends MPSTree {
     }
   }
 
-  private class UsedLanguagesChangeTreeNode extends MPSTreeNode {
-    public UsedLanguagesChangeTreeNode(IOperationContext operationContext, UsedLanguagesChange change) {
+  private class ModelPropertyChangeTreeNode extends MPSTreeNode {
+    public ModelPropertyChangeTreeNode(IOperationContext operationContext, Change change) {
       super(operationContext);
 
       setIcon(null);
