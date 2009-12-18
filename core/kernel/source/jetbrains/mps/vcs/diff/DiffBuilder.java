@@ -48,6 +48,7 @@ public class DiffBuilder {
 
   private void collectChanges() {
     collectAddedLanguageImports();
+    collectChangedUsedDevkits();
     collectAddedModelImport();
     collectLanguageAspects();
     collectDeletedNodes();
@@ -176,6 +177,22 @@ public class DiffBuilder {
 
     for (ModuleReference ref : deletedImports) {
       myChanges.add(new UsedLanguagesChange(ref, true));
+    }
+  }
+
+  private void collectChangedUsedDevkits() {
+    List<ModuleReference> oldDevkits = myOldModel.getDevKitRefs();
+    List<ModuleReference> newDevkits = myNewModel.getDevKitRefs();
+
+    Set<ModuleReference> addedDevkits = getDiff(oldDevkits, newDevkits);
+    Set<ModuleReference> deletedDevkits = getDiff(newDevkits, oldDevkits);
+
+    for (ModuleReference ref : addedDevkits) {
+      myChanges.add(new UsedDevkitsChange(ref, false));
+    }
+
+    for (ModuleReference ref : deletedDevkits) {
+      myChanges.add(new UsedDevkitsChange(ref, true));
     }
   }
 
