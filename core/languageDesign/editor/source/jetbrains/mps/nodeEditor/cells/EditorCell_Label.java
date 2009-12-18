@@ -453,12 +453,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   public boolean processMousePressed(MouseEvent e) {
-    if (getStyle().get(StyleAttributes.MOUSE_HANDLER) != null) {
-      CellMouseHandler handler = getStyle().get(StyleAttributes.MOUSE_HANDLER);
-      if (handler.processMousePressed(this, e)) {
-        return true;
-      }
-    }
     myTextLine.setCaretByXCoord(e.getX() - myX);
     myTextLine.resetSelection();
     makePositionValid();

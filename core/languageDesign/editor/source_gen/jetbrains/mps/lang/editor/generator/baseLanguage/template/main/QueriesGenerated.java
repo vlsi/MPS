@@ -659,12 +659,12 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "runInCommand");
   }
 
-  public static Object propertyMacro_GetPropertyValue_4037050687732058514(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "parametersInformation", false));
-  }
-
   public static Object propertyMacro_GetPropertyValue_4755152624710446386(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5102468593878051201(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "parametersInformation", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_5170495790389308440(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -995,14 +995,6 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_3710678335995670754(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode generatedClass = SNodeOperations.cast(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "generatedClass"), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     return ListSequence.fromList(SLinkOperations.getTargets(generatedClass, "constructor", true)).first();
-  }
-
-  public static Object referenceMacro_GetReferent_4037050687732062052(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "query", true), "styleParameter_query_method");
-  }
-
-  public static Object referenceMacro_GetReferent_4037050687732062062(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SNodeOperations.cast(QueriesUtil.getGeneratedClassByAncestor(SLinkOperations.getTarget(_context.getNode(), "query", true), _context), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
 
   public static Object referenceMacro_GetReferent_4098449021143546479(final IOperationContext operationContext, final ReferenceMacroContext _context) {

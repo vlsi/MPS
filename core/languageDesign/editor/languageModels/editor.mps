@@ -9401,22 +9401,5 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="4037050687731764417">
-    <property name="package" value="Stylesheet" />
-    <link role="conceptDeclaration" targetNodeId="2.743659122542833840" resolveInfo="MouseHandlerStyleClassItem" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="4037050687731776655">
-      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="4037050687731776656" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="4037050687732271658">
-        <link role="relationDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-        <link role="styleClass" targetNodeId="1194569818117" resolveInfo="item" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4037050687731776660">
-        <property name="text" value=":" />
-      </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="4037050687731776661">
-        <link role="relationDeclaration" targetNodeId="2.743659122542834189" />
-      </node>
-    </node>
-  </node>
 </model>
 

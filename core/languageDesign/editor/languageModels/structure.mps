@@ -4644,35 +4644,5 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="743659122542833840">
-    <property name="package" value="Stylesheet" />
-    <property name="name" value="MouseHandlerStyleClassItem" />
-    <link role="extends" targetNodeId="1186402475462" resolveInfo="StyleClassItem" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="4037050687732170526">
-      <property name="value" value="mouse-handler" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="743659122542834189">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="query" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="743659122542834190" resolveInfo="QueryFunction_MouseHandler" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="743659122542834190">
-    <property name="package" value="QueryFunction.Style" />
-    <property name="name" value="QueryFunction_MouseHandler" />
-    <link role="extends" targetNodeId="1221059528506" resolveInfo="QueryFunction_StyleParameter" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="743659122542834192">
-      <link role="conceptLinkDeclaration" targetNodeId="4.1137545148427" resolveInfo="conceptFunctionReturnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6112745810035646327">
-        <link role="classifier" targetNodeId="29.~CellMouseHandler" resolveInfo="CellMouseHandler" />
-      </node>
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="743659122542834191">
-      <property name="value" value="mouse handler" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
 </model>
 
