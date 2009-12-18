@@ -134,7 +134,6 @@ public class DevkitDescriptorPersistence {
     try {
       OutputStream os = file.openOutputStream();
       JDOMUtil.writeDocument(new Document(root), os);
-      os.close();
     } catch (Exception e) {
       if (log.isErrorEnabled()) {
         log.error("", e);

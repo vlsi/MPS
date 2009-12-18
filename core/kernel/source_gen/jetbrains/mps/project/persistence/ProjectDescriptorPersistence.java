@@ -121,7 +121,6 @@ public class ProjectDescriptorPersistence {
       FileOutputStream os = new FileOutputStream(file);
       Document doc = new Document(projectElement);
       JDOMUtil.writeDocument(doc, os);
-      os.close();
     } catch (Exception e) {
       if (log.isErrorEnabled()) {
         log.error("", e);

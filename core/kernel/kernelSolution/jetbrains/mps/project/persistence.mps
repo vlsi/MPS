@@ -2109,16 +2109,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="842994667883030481">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="842994667883030482">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="842994667883030483">
-                  <link role="variableDeclaration" targetNodeId="842994667883030470" resolveInfo="os" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="842994667883030484">
-                  <link role="baseMethodDeclaration" targetNodeId="12.~OutputStream.close():void" resolveInfo="close" />
-                </node>
-              </node>
-            </node>
           </node>
           <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="842994667883030485">
             <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="842994667883030486">
@@ -5137,16 +5127,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="842994667883031725">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="842994667883031726">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="842994667883031727">
-                  <link role="variableDeclaration" targetNodeId="842994667883031714" resolveInfo="os" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="842994667883031728">
-                  <link role="baseMethodDeclaration" targetNodeId="12.~OutputStream.close():void" resolveInfo="close" />
-                </node>
-              </node>
-            </node>
           </node>
           <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="842994667883031729">
             <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="842994667883031730">
@@ -7101,16 +7081,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="842994667883032491">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="842994667883032492">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="842994667883032493">
-                  <link role="variableDeclaration" targetNodeId="842994667883032476" resolveInfo="os" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="842994667883032494">
-                  <link role="baseMethodDeclaration" targetNodeId="12.~FileOutputStream.close():void" resolveInfo="close" />
-                </node>
-              </node>
-            </node>
           </node>
           <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="842994667883032495">
             <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="842994667883032496">
@@ -8870,16 +8840,6 @@
                 </node>
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="842994667883033220">
                   <link role="variableDeclaration" targetNodeId="842994667883033210" resolveInfo="os" />
-                </node>
-              </node>
-            </node>
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="842994667883033221">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="842994667883033222">
-                <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="842994667883033223">
-                  <link role="variableDeclaration" targetNodeId="842994667883033210" resolveInfo="os" />
-                </node>
-                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="842994667883033224">
-                  <link role="baseMethodDeclaration" targetNodeId="12.~OutputStream.close():void" resolveInfo="close" />
                 </node>
               </node>
             </node>

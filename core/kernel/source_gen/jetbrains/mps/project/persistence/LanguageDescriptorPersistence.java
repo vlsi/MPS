@@ -208,7 +208,6 @@ public class LanguageDescriptorPersistence {
     try {
       OutputStream os = file.openOutputStream();
       JDOMUtil.writeDocument(new Document(languageElement), os);
-      os.close();
     } catch (Exception e) {
       if (log.isErrorEnabled()) {
         log.error("", e);

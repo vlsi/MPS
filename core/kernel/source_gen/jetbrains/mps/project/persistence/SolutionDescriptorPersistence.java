@@ -148,7 +148,6 @@ public class SolutionDescriptorPersistence {
     try {
       OutputStream os = file.openOutputStream();
       JDOMUtil.writeDocument(new Document(solElem), os);
-      os.close();
     } catch (Exception e) {
       if (log.isErrorEnabled()) {
         log.error("", e);
