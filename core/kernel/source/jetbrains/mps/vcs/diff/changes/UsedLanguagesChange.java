@@ -20,11 +20,11 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.NotNull;
 
-public class ImportLanguageChange extends Change {
+public class UsedLanguagesChange extends Change {
   private final boolean myIsDeleted;
   private final ModuleReference myReference;
 
-  public ImportLanguageChange(@NotNull ModuleReference reference, boolean isDeleted) {
+  public UsedLanguagesChange(@NotNull ModuleReference reference, boolean isDeleted) {
     myIsDeleted = isDeleted;
     myReference = reference;
   }

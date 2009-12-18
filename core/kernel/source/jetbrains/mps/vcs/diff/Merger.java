@@ -476,9 +476,9 @@ public class Merger {
   }
 
   private void applyImportLanguages() {
-    List<ImportLanguageChange> importLanguageChanges = getChanges(ImportLanguageChange.class);
+    List<UsedLanguagesChange> usedLanguagesChanges = getChanges(UsedLanguagesChange.class);
 
-    for (ImportLanguageChange ch : importLanguageChanges) {
+    for (UsedLanguagesChange ch : usedLanguagesChanges) {
       if (isChangeUnResolved(ch)) continue;
       ch.apply(myResultModel);
     }

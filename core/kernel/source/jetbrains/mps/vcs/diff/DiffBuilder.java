@@ -28,7 +28,6 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.*;
-import java.util.Map.Entry;
 
 public class DiffBuilder {
   private static final Logger LOG = Logger.getLogger(DiffBuilder.class);
@@ -172,11 +171,11 @@ public class DiffBuilder {
     Set<ModuleReference> deletedImports = getDiff(newLanguages, oldLanguages);
 
     for (ModuleReference ref : addedImports) {
-      myChanges.add(new ImportLanguageChange(ref, false));
+      myChanges.add(new UsedLanguagesChange(ref, false));
     }
 
     for (ModuleReference ref : deletedImports) {
-      myChanges.add(new ImportLanguageChange(ref, true));
+      myChanges.add(new UsedLanguagesChange(ref, true));
     }
   }
 

@@ -136,10 +136,10 @@ class ModelDifferenceComponent extends JPanel {
   private MPSTreeNode buildChangesTree() {
     TextTreeNode changes = new TextTreeNode("Changes");
 
-    List<ImportLanguageChange> importLanguageChanges = CollectionUtil.filter(ImportLanguageChange.class, myChanges);
-    if (!importLanguageChanges.isEmpty()) {
-      TextTreeNode addImport = new TextTreeNode("Used Languages (" + importLanguageChanges.size() + ")");
-      for (ImportLanguageChange change : importLanguageChanges) {
+    List<UsedLanguagesChange> usedLanguagesChanges = CollectionUtil.filter(UsedLanguagesChange.class, myChanges);
+    if (!usedLanguagesChanges.isEmpty()) {
+      TextTreeNode addImport = new TextTreeNode("Used Languages (" + usedLanguagesChanges.size() + ")");
+      for (UsedLanguagesChange change : usedLanguagesChanges) {
         addImport.add(new ChangeNode(change));
       }
       changes.add(addImport);
