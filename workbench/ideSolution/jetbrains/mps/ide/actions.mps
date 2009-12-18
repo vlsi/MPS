@@ -9317,29 +9317,23 @@
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.lang.plugin.structure.ExecuteWriteActionStatement" id="1229273199897">
-          <node role="commandClosureLiteral" type="jetbrains.mps.lang.plugin.structure.CommandClosureLiteral" id="1229273199898">
-            <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1229273199899">
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229273199900">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229273199901">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229273199902">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1229273199903" />
-                    <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1229273199904">
-                      <link role="member" targetNodeId="1229273199927" resolveInfo="project" />
-                    </node>
-                  </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1229273199905">
-                    <link role="baseMethodDeclaration" targetNodeId="63.~MPSProject.setFolderFor(jetbrains.mps.project.IModule,java.lang.String):void" resolveInfo="setFolderFor" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229273604261">
-                      <link role="variableDeclaration" targetNodeId="1229273577875" resolveInfo="l" />
-                    </node>
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229273199907">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1229273199908" />
-                      <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1229273199909">
-                        <link role="member" targetNodeId="1229273199920" resolveInfo="folder" />
-                      </node>
-                    </node>
-                  </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1229273199900">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229273199901">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229273199902">
+              <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1229273199903" />
+              <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1229273199904">
+                <link role="member" targetNodeId="1229273199927" resolveInfo="project" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1229273199905">
+              <link role="baseMethodDeclaration" targetNodeId="63.~MPSProject.setFolderFor(jetbrains.mps.project.IModule,java.lang.String):void" resolveInfo="setFolderFor" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1229273604261">
+                <link role="variableDeclaration" targetNodeId="1229273577875" resolveInfo="l" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1229273199907">
+                <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1229273199908" />
+                <node role="operation" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation" id="1229273199909">
+                  <link role="member" targetNodeId="1229273199920" resolveInfo="folder" />
                 </node>
               </node>
             </node>

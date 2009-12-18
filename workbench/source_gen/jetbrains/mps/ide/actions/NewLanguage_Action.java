@@ -14,7 +14,6 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.newLanguageDialog.NewLanguageDialog;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class NewLanguage_Action extends GeneratedAction {
@@ -74,15 +73,11 @@ public class NewLanguage_Action extends GeneratedAction {
       NewLanguageDialog dialog = new NewLanguageDialog(NewLanguage_Action.this.frame);
       dialog.setProject(NewLanguage_Action.this.project);
       dialog.showDialog();
-      final Language l = dialog.getResult();
+      Language l = dialog.getResult();
       if (l == null) {
         return;
       }
-      ModelAccess.instance().runWriteAction(new Runnable() {
-        public void run() {
-          NewLanguage_Action.this.project.setFolderFor(l, NewLanguage_Action.this.folder);
-        }
-      });
+      NewLanguage_Action.this.project.setFolderFor(l, NewLanguage_Action.this.folder);
       ProjectPane projectPane = ProjectPane.getInstance(NewLanguage_Action.this.ideaProject);
       projectPane.rebuildTree();
       projectPane.selectModule(l);

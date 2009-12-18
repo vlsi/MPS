@@ -22,18 +22,19 @@ import jetbrains.mps.ide.NewModuleCheckUtil;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystemFile;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.library.LanguageDesign_DevKit;
-import jetbrains.mps.smodel.LanguageAspect;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vfs.VFileSystem;
@@ -226,10 +227,23 @@ public class NewLanguageDialogContentPane extends JPanel {
       return;
     }
     myThis.getDialog().dispose();
+    final Wrappers._T<Language> language = new Wrappers._T<Language>(null);
     ProgressManager.getInstance().run(new Task.Modal(myThis.getProject().getComponent(Project.class), "Creating", false) {
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
-        myThis.createNewLanguage();
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          public void run() {
+            language.value = myThis.createNewLanguage();
+          }
+        });
+      }
+    });
+    ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
+      public void run() {
+        LanguageAspect.STRUCTURE.createNew(language.value, false);
+        LanguageAspect.EDITOR.createNew(language.value, false);
+        LanguageAspect.CONSTRAINTS.createNew(language.value, false);
+        LanguageAspect.TYPESYSTEM.createNew(language.value, false);
       }
     });
   }
@@ -249,7 +263,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     }
   }
 
-  /*package*/ void createNewLanguage() {
+  /*package*/ Language createNewLanguage() {
     String descriptorFileName = NameUtil.shortNameFromLongName(myThis.getLanguageNamespace());
     final File descriptorFile = new File(myThis.getLanguagePath(), descriptorFileName + MPSExtentions.DOT_LANGUAGE);
     File dir = descriptorFile.getParentFile();
@@ -257,27 +271,20 @@ public class NewLanguageDialogContentPane extends JPanel {
       dir.mkdirs();
     }
     final Language language = Language.createLanguage(myThis.getLanguageNamespace(), new FileSystemFile(descriptorFile), myThis.getProject());
-    ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
-      public void run() {
-        LanguageDescriptor languageDescriptor = (LanguageDescriptor)language.getLanguageDescriptor();
-        ModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
-        languageDescriptor.getUsedDevkits().add(devkitRef);
-        languageDescriptor.setCompileInMPS(myThis.getCompileInMPS());
-        LanguageAspect.STRUCTURE.createNew(language, false);
-        LanguageAspect.EDITOR.createNew(language, false);
-        LanguageAspect.CONSTRAINTS.createNew(language, false);
-        LanguageAspect.TYPESYSTEM.createNew(language, false);
-        language.setLanguageDescriptor(languageDescriptor);
-        language.save();
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          public void run() {
-            ApplicationLevelVcsManager.instance().addFileToVcs(VFileSystem.refreshAndGetFile(descriptorFile.getParentFile()), true);
-          }
-        }, ModalityState.NON_MODAL);
-      }
-    });
-    myThis.setResult(language);
+    LanguageDescriptor languageDescriptor = (LanguageDescriptor)language.getLanguageDescriptor();
+    ModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
+    languageDescriptor.getUsedDevkits().add(devkitRef);
+    languageDescriptor.setCompileInMPS(myThis.getCompileInMPS());
+    language.setLanguageDescriptor(languageDescriptor);
+    language.save();
     myThis.getProject().addProjectLanguage(language);
+    myThis.setResult(language);
     // add to vcs 
+    ApplicationManager.getApplication().invokeLater(new Runnable() {
+      public void run() {
+        ApplicationLevelVcsManager.instance().addFileToVcs(VFileSystem.refreshAndGetFile(descriptorFile.getParentFile()), true);
+      }
+    }, ModalityState.NON_MODAL);
+    return language;
   }
 }
