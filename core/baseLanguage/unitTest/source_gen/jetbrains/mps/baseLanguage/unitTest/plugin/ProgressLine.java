@@ -33,39 +33,37 @@ public class ProgressLine extends JPanel implements TestView {
   }
 
   public void update() {
+    final int defectedTests = this.state.getDefectTests();
+    final int totalTests = this.state.getTotalTests();
+    final int complitedTests = this.state.getCompletedTests();
+    final String testName = this.state.getCurrentMethod();
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        ProgressLine.this.updateProgressBar();
-        ProgressLine.this.updateLabel();
+        ProgressLine.this.updateProgressBar(defectedTests, totalTests, complitedTests);
+        ProgressLine.this.updateLabel(defectedTests, totalTests, complitedTests, testName);
       }
     });
   }
 
-  private void updateProgressBar() {
-    int defectedTests = this.state.getDefectTests();
-    int totalTests = this.state.getTotalTests();
-    int complitedTests = this.state.getCompletedTests();
-    if (defectedTests > 0) {
+  private void updateProgressBar(int defected, int total, int complited) {
+    if (defected > 0) {
       this.progressBar.setColor(ColorProgressBar.RED);
-    } else if (totalTests > 0) {
-      this.progressBar.setColor(ColorProgressBar.GREEN);
     }
-    if (totalTests != 0) {
-      this.progressBar.setFraction(complitedTests / totalTests);
+    if (total != 0) {
+      this.progressBar.setFraction((double)complited / (double)total);
     }
   }
 
-  private void updateLabel() {
+  private void updateLabel(int defected, int total, int complited, String testName) {
     StringBuilder sb = new StringBuilder();
-    String testName = this.state.getCurrentMethod();
-    if (this.state.getTotalTests() == this.state.getCompletedTests() || testName == null) {
-      sb.append(" Done: " + this.state.getCompletedTests() + " of " + this.state.getTotalTests() + " ");
+    if (total == complited || testName == null) {
+      sb.append(" Done: " + complited + " of " + total + " ");
       testName = "";
     }
-    if (this.state.getDefectTests() > 0) {
-      sb.append(" Failed: " + this.state.getDefectTests());
+    if (defected > 0) {
+      sb.append(" Failed: " + defected);
     } else if (sb.length() == 0) {
-      sb.append(" Running: " + this.state.getCompletedTests() + " of " + this.state.getTotalTests());
+      sb.append(" Running: " + complited + " of " + total);
     }
     this.stateLabel.setText(sb + "  " + testName);
   }
