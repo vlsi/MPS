@@ -49,6 +49,7 @@ public class DiffBuilder {
   private void collectChanges() {
     collectAddedLanguageImports();
     collectChangedUsedDevkits();
+    collectEngagedOnGenerationLanguages();
     collectAddedModelImport();
     collectLanguageAspects();
     collectDeletedNodes();
@@ -193,6 +194,22 @@ public class DiffBuilder {
 
     for (ModuleReference ref : deletedDevkits) {
       myChanges.add(new UsedDevkitsChange(ref, true));
+    }
+  }
+
+  private void collectEngagedOnGenerationLanguages() {
+    List<ModuleReference> oldLanguages = myOldModel.getEngagedOnGenerationLanguages();
+    List<ModuleReference> newLanguages = myNewModel.getEngagedOnGenerationLanguages();
+
+    Set<ModuleReference> addedImports = getDiff(oldLanguages, newLanguages);
+    Set<ModuleReference> deletedImports = getDiff(newLanguages, oldLanguages);
+
+    for (ModuleReference ref : addedImports) {
+      myChanges.add(new EngagedOnGenerationLanguagesChange(ref, false));
+    }
+
+    for (ModuleReference ref : deletedImports) {
+      myChanges.add(new EngagedOnGenerationLanguagesChange(ref, true));
     }
   }
 
