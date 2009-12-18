@@ -41,7 +41,6 @@ public class TestGenerationWorker extends GeneratorWorker {
 
   private boolean myTestFailed = false;
   private final IBuildServerMessageFormat myBuildServerMessageFormat = getBuildServerMessageFormat();
-  private final Map<BaseTestConfiguration, GenParameters> myTestConfigurations = new LinkedHashMap<BaseTestConfiguration, GenParameters>();
   private final TesterGenerationType myGenerationType = new TesterGenerationType(false);
 
   public static void main(String[] args) {
@@ -100,8 +99,10 @@ public class TestGenerationWorker extends GeneratorWorker {
     String currentTestName = myBuildServerMessageFormat.escapeBuildMessage(new StringBuffer(cycle.toString())).toString();
     System.out.println(myBuildServerMessageFormat.formatTestStart(currentTestName));
 
+    // do generate
     cycle.generate(gm, myGenerationType, myMessageHandler);
 
+    // calculate diff
     List<String> diffReports;
     if (Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
       diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
@@ -115,6 +116,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     final List<SModel> outputModels = new ArrayList<SModel>();
     outputModels.addAll(myGenerationType.getOutputModels());
 
+    // compile
     List<CompilationResult> compilationResult;
     if (Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE))) {
       compilationResult = ModelAccess.instance().runReadAction(new Computable<List<CompilationResult>>() {
@@ -126,7 +128,8 @@ public class TestGenerationWorker extends GeneratorWorker {
       compilationResult = Collections.EMPTY_LIST;
     }
 
-    StringBuffer sb = createDetailedReport(compilationResult, Collections.<TestFailure>emptyList(), diffReports);
+    // create test result report
+    StringBuffer sb = createDetailedReport(compilationResult, diffReports);
     myMessageHandler.clean();
     if (sb.length() > 0) {
       myTestFailed = true;
@@ -135,34 +138,10 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
     System.out.println(myBuildServerMessageFormat.formatTestFinish(currentTestName));
 
-    // here we invoke generated tests
+    // invoke generated tests
     if (invokeTests()) {
       final TestResult testResult = new TestResult();
-      testResult.addListener(new TestListener() {
-        @Override
-        public void addError(Test test, Throwable t) {
-          System.out.println(myBuildServerMessageFormat.formatTestFailure(myBuildServerMessageFormat.escapeBuildMessage(test + ""),
-            myBuildServerMessageFormat.escapeBuildMessage(t.getMessage()),
-            myBuildServerMessageFormat.escapeBuildMessage(MpsWorker.extractStackTrace(t))));
-        }
-
-        @Override
-        public void addFailure(Test test, AssertionFailedError t) {
-          System.out.println(myBuildServerMessageFormat.formatTestFailure(myBuildServerMessageFormat.escapeBuildMessage(test + ""),
-            myBuildServerMessageFormat.escapeBuildMessage(t.getMessage()),
-            myBuildServerMessageFormat.escapeBuildMessage(MpsWorker.extractStackTrace(t))));
-        }
-
-        @Override
-        public void endTest(Test test) {
-          System.out.println(myBuildServerMessageFormat.formatTestFinish(myBuildServerMessageFormat.escapeBuildMessage(test + "")));
-        }
-
-        @Override
-        public void startTest(Test test) {
-          System.out.println(myBuildServerMessageFormat.formatTestStart(myBuildServerMessageFormat.escapeBuildMessage(test + "")));
-        }
-      });
+      testResult.addListener(new MyTestListener());
       ProjectTester.invokeTests(myGenerationType, outputModels, testResult);
     }
 
@@ -205,7 +184,6 @@ public class TestGenerationWorker extends GeneratorWorker {
         } else {
           for (BaseTestConfiguration config : testConfigurationList) {
             GenParameters genParams = config.getGenParams(project, true);
-            myTestConfigurations.put(config, genParams);
             modelDescriptors.addAll(genParams.getModelDescriptors());
           }
         }
@@ -213,7 +191,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     });
   }
 
-  private StringBuffer createDetailedReport(@NotNull List<CompilationResult> compilationResult, List<TestFailure> testFailures, @NotNull List<String> diffReports) {
+  private StringBuffer createDetailedReport(@NotNull List<CompilationResult> compilationResult, @NotNull List<String> diffReports) {
     StringBuffer sb = new StringBuffer();
 
     if (myMessageHandler.getGenerationErrors().size() > 0) {
@@ -248,14 +226,6 @@ public class TestGenerationWorker extends GeneratorWorker {
       sb.append("\n");
     }
 
-    if (testFailures.size() > 0) {
-      sb.append("Test Failures:\n");
-      for (TestFailure failure : testFailures) {
-        formatTestFailure(sb, failure);
-      }
-      sb.append("\n");
-    }
-
     if (Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
       if (diffReports.size() > 0) {
         sb.append("Difference:\n");
@@ -269,14 +239,6 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
 
     return myBuildServerMessageFormat.escapeBuildMessage(sb);
-  }
-
-  private void formatTestFailure(StringBuffer sb, TestFailure failure) {
-    sb.append("  ");
-    StringWriter writer = new StringWriter();
-    failure.thrownException().printStackTrace(new PrintWriter(writer));
-    sb.append(writer.getBuffer());
-    sb.append("\n");
   }
 
   @Override
@@ -309,6 +271,41 @@ public class TestGenerationWorker extends GeneratorWorker {
     @Override
     public String toString() {
       return "generating " + mySModel.getLongName();
+    }
+  }
+
+  private class MyTestListener implements TestListener {
+    @Override
+    public void addError(Test test, Throwable t) {
+      System.out.println(myBuildServerMessageFormat.formatTestFailure(myBuildServerMessageFormat.escapeBuildMessage(getName(test)),
+        myBuildServerMessageFormat.escapeBuildMessage(t.getMessage()),
+        myBuildServerMessageFormat.escapeBuildMessage(MpsWorker.extractStackTrace(t))));
+    }
+
+    @Override
+    public void addFailure(Test test, AssertionFailedError t) {
+      System.out.println(myBuildServerMessageFormat.formatTestFailure(myBuildServerMessageFormat.escapeBuildMessage(getName(test)),
+        myBuildServerMessageFormat.escapeBuildMessage(t.getMessage()),
+        myBuildServerMessageFormat.escapeBuildMessage(MpsWorker.extractStackTrace(t))));
+    }
+
+    @Override
+    public void endTest(Test test) {
+      System.out.println(myBuildServerMessageFormat.formatTestFinish(myBuildServerMessageFormat.escapeBuildMessage(getName(test))));
+    }
+
+    @Override
+    public void startTest(Test test) {
+      System.out.println(myBuildServerMessageFormat.formatTestStart(myBuildServerMessageFormat.escapeBuildMessage(getName(test))));
+    }
+
+    private String getName(Test test) {
+      if (test instanceof TestCase) {
+        TestCase testCase = (TestCase) test;
+        return testCase.getClass().getName() + "." + testCase.getName();
+      } else {
+        return test.toString();
+      }
     }
   }
 }
