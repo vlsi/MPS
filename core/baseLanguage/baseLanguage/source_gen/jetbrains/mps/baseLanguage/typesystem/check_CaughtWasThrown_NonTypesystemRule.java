@@ -27,7 +27,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
   public void applyRule(final SNode catchClause, final TypeCheckingContext typeCheckingContext) {
     final SNode caughtType = SLinkOperations.getTarget(SLinkOperations.getTarget(catchClause, "throwable", true), "type", true);
     if (SNodeOperations.isInstanceOf(caughtType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-      if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new _Quotations.QuotationClass_125().createNode(typeCheckingContext))) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new _Quotations.QuotationClass_126().createNode(typeCheckingContext)))) {
+      if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new _Quotations.QuotationClass_125().createNode(typeCheckingContext))) && !(TypeChecker.getInstance().getSubtypingManager().isSubtype(caughtType, new _Quotations.QuotationClass_126().createNode(typeCheckingContext))) && !(caughtType == new _Quotations.QuotationClass_128().createNode(typeCheckingContext)) && !(caughtType == new _Quotations.QuotationClass_129().createNode(typeCheckingContext))) {
         Set<SNode> thrown = SetSequence.fromSet(new HashSet<SNode>());
         do {
           SNode matchedNode_4 = SNodeOperations.getParent(catchClause);
@@ -67,7 +67,7 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
           {
             BaseIntentionProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(catchClause, "throwable", true), "Caught exception " + caughtType + " never thrown.", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8620077627874697023", intentionProvider, errorTarget);
+            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(SLinkOperations.getTarget(catchClause, "throwable", true), "Caught exception " + caughtType + " is never thrown in the corresponding try block", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8620077627874697023", intentionProvider, errorTarget);
           }
         }
       }

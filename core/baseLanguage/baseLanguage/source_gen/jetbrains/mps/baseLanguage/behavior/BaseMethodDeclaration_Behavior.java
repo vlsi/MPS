@@ -137,11 +137,11 @@ public class BaseMethodDeclaration_Behavior {
     if (!(SPropertyOperations.getString(thisNode, "name").equals(SPropertyOperations.getString(checked, "name")))) {
       return false;
     }
-    if (!(SLinkOperations.getCount(thisNode, "parameter") == SLinkOperations.getCount(checked, "parameter"))) {
+    if (!(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(checked, "parameter", true)).count())) {
       return false;
     }
     boolean same = true;
-    for (int i = 0; i < SLinkOperations.getCount(thisNode, "parameter"); i++) {
+    for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count(); i++) {
       String searchedParamType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(checked, "parameter", true)).getElement(i), "type", true));
       String foundParamType = Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).getElement(i), "type", true));
       if (!(foundParamType.equals(searchedParamType))) {
