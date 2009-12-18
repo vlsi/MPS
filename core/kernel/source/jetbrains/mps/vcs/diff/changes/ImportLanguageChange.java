@@ -35,11 +35,13 @@ public class ImportLanguageChange extends Change {
 
   @Override
   public String toString() {
+    String format;
     if (myIsDeleted) {
-      return "delete import of " + myReference;
+      format = "delete used language %s (%s)";
     } else {
-      return "add import of " + myReference;
+      format = "add used language %s (%s)";
     }
+    return String.format(format, myReference.getModuleFqName(), myReference.getModuleId().toString());
   }
 
   public boolean apply(SModel m) {
