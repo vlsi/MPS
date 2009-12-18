@@ -13325,8 +13325,8 @@
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="9067410637280155738">
       <link role="applicableConcept" targetNodeId="38.7667276221847570194" resolveInfo="ParametersInformationStyleClassItem" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="9067410637280157863">
-        <link role="template" targetNodeId="7667276221847904977" resolveInfo="ParametersInformationStyleClassItem" />
+      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="8710770394764914828">
+        <link role="template" targetNodeId="4037050687732058501" resolveInfo="ParametersInformationStyleClassItem" />
       </node>
     </node>
     <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="4098449021143850232">
