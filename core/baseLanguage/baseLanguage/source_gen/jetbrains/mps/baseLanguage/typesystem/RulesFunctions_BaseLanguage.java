@@ -227,7 +227,7 @@ __switch__:
         BaseIntentionProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7790104442347402833", 0, intentionProvider);
         _info_12389875345.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequation((SNode)instanceType, (SNode)new _Quotations.QuotationClass_126().createNode(params, genericClassifier, typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequation((SNode)instanceType, (SNode)new _Quotations.QuotationClass_124().createNode(params, genericClassifier, typeCheckingContext), false, _info_12389875345);
       }
     }
   }

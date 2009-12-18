@@ -21,7 +21,7 @@ public class typeof_AbstractUnaryNumberOperation_InferenceRule extends AbstractI
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5885703495931979621", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5885703495931979623", true), (SNode)SLinkOperations.getTarget(new _Quotations.QuotationClass_122().createNode(typeCheckingContext), "descriptor", false), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5885703495931979623", true), (SNode)SLinkOperations.getTarget(new _Quotations.QuotationClass_120().createNode(typeCheckingContext), "descriptor", false), false, _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = operation;
