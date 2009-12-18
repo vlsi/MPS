@@ -77,7 +77,12 @@ public abstract class BaseNodeDialog extends BaseDialog {
   protected abstract SNode getNode();
 
   public void showDialog() {
-    myEditorComponent.editNode(getNode());
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        myEditorComponent.editNode(getNode());
+      }
+    });
     super.showDialog();
   }
 
