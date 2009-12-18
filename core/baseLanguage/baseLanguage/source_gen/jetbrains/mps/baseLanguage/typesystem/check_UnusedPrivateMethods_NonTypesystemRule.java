@@ -9,6 +9,12 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.intentions.BaseIntentionProvider;
+import jetbrains.mps.typesystem.inference.IErrorTarget;
+import jetbrains.mps.typesystem.inference.NodeErrorTarget;
+import jetbrains.mps.nodeEditor.IErrorReporter;
 
 public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_UnusedPrivateMethods_NonTypesystemRule() {
@@ -16,8 +22,35 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
 
   public void applyRule(final SNode classifierMember, final TypeCheckingContext typeCheckingContext) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifierMember, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
-      if (SNodeOperations.isInstanceOf(classifierMember, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
-      }
+      do {
+        final SNode matchedNode_5 = classifierMember;
+        {
+          boolean matches_6 = false;
+          {
+            SNode matchingNode_6 = classifierMember;
+            if (matchingNode_6 != null) {
+              matches_6 = SModelUtil_new.isAssignableConcept(matchingNode_6.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+            }
+          }
+          if (matches_6) {
+            {
+              SNode topClassifier = SNodeOperations.getAncestor(matchedNode_5, "jetbrains.mps.baseLanguage.structure.Classifier", true, true);
+              if (!(ListSequence.fromList(SNodeOperations.getDescendants(topClassifier, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})).any(new IWhereFilter<SNode>() {
+                public boolean accept(SNode call) {
+                  return SLinkOperations.getTarget(call, "baseMethodDeclaration", false) == matchedNode_5;
+                }
+              }))) {
+                {
+                  BaseIntentionProvider intentionProvider = null;
+                  IErrorTarget errorTarget = new NodeErrorTarget();
+                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(matchedNode_5, "Private method " + matchedNode_5 + " is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8620077627875160691", intentionProvider, errorTarget);
+                }
+              }
+            }
+            break;
+          }
+        }
+      } while(false);
     }
   }
 
