@@ -893,12 +893,6 @@
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="2542933092629994993">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2542933092629994995">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8174031806067720789">
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation" id="8174031806067720790">
-                <link role="fieldDeclaration" targetNodeId="8174031806067720769" resolveInfo="actionToolbar" />
-              </node>
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="8174031806067720791" />
-            </node>
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="2542933092629994999">
               <link role="baseMethodDeclaration" targetNodeId="5.~Container.add(java.awt.Component,java.lang.Object):void" resolveInfo="add" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="2542933092629995013">
@@ -909,8 +903,11 @@
               </node>
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="2542933092629995043">
                 <link role="classifier" targetNodeId="5.~BorderLayout" resolveInfo="BorderLayout" />
-                <link role="variableDeclaration" targetNodeId="5.~BorderLayout.CENTER" resolveInfo="CENTER" />
+                <link role="variableDeclaration" targetNodeId="5.~BorderLayout.NORTH" resolveInfo="NORTH" />
               </node>
+            </node>
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="892466083792267950">
+              <link role="variableDeclaration" targetNodeId="1208772661159" resolveInfo="rightPanel" />
             </node>
           </node>
         </node>
@@ -929,7 +926,9 @@
                 <link role="variableDeclaration" targetNodeId="5.~BorderLayout.NORTH" resolveInfo="NORTH" />
               </node>
             </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="796456478844434237" />
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="892466083792267949">
+              <link role="variableDeclaration" targetNodeId="2542933092629606353" resolveInfo="leftPanel" />
+            </node>
           </node>
         </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="4403789015609995721">
