@@ -40,4 +40,20 @@ public class ModelImportChange extends Change {
     }
     return false;
   }
+
+  @Override
+  public String toString() {
+    String format;
+    if (myIsDeleted) {
+      format = "delete imported model %s (%s)";
+    } else {
+      format = "add imported model %s (%s)";
+    }
+    return String.format(format, mySModelReference.getLongName(), mySModelReference.getSModelId().toString());
+  }
+
+  @Override
+  public ChangeType getChangeType() {
+    return myIsDeleted ? ChangeType.DELETE : ChangeType.ADD;
+  }
 }
