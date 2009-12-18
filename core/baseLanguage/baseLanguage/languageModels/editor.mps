@@ -2290,6 +2290,7 @@
           <link role="actionMap" targetNodeId="1182955931370" resolveInfo="ThisExpression_ClassConcept_Actions" />
           <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1182955053206">
             <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1182955065205">
+              <property name="readOnly" value="true" />
               <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
               <link role="styleClass" targetNodeId="1215189282959" resolveInfo="ClassName" />
             </node>
@@ -2325,6 +2326,7 @@
         <link role="relationDeclaration" targetNodeId="17.1182955020723" />
         <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="1218739236892">
           <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1218739236893">
+            <property name="readOnly" value="true" />
             <link role="styleClass" targetNodeId="1215189282959" resolveInfo="ClassName" />
             <link role="relationDeclaration" targetNodeId="18.1169194664001" resolveInfo="name" />
           </node>
