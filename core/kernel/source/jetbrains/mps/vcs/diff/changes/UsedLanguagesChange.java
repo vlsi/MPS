@@ -52,4 +52,9 @@ public class UsedLanguagesChange extends Change {
     }
     return true;
   }
+
+  @Override
+  public ChangeType getChangeType() {
+    return myIsDeleted ? ChangeType.DELETE : ChangeType.ADD;
+  }
 }

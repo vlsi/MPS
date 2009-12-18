@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.vcs.diff.ui;
 
+import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -313,6 +314,15 @@ class ModelChangesTree extends MPSTree {
           }
         }
       }
+
+      List<UsedLanguagesChange> usedLanguagesChanges = CollectionUtil.filter(UsedLanguagesChange.class, myChanges);
+      if (!(usedLanguagesChanges.isEmpty())) {
+        ModelChangesTree.SModelPropertiesTreeNode propertiesNode = new SModelPropertiesTreeNode(getOperationContext());
+        getRootNode().add(propertiesNode);
+        for (UsedLanguagesChange change : usedLanguagesChanges) {
+          propertiesNode.add(new UsedLanguagesChangeTreeNode(getOperationContext(), change));
+        }
+      }
     }
 
     @NotNull
@@ -444,8 +454,45 @@ class ModelChangesTree extends MPSTree {
     }
   }
 
+  private class SModelPropertiesTreeNode extends MPSTreeNode {
+    public SModelPropertiesTreeNode(IOperationContext operationContext) {
+      super(operationContext);
+
+      setIcon(Icons.PROPERTIES_ICON);
+      setText("Model Properties");
+      setColor(FileStatus.COLOR_MODIFIED);
+    }
+  }
+
+  private class UsedLanguagesChangeTreeNode extends MPSTreeNode {
+    public UsedLanguagesChangeTreeNode(IOperationContext operationContext, UsedLanguagesChange change) {
+      super(operationContext);
+
+      setIcon(null);
+      setText(change.toString());
+      setColor(getColorForChangeType(change.getChangeType()));
+    }
+
+    @Override
+    public boolean isLeaf() {
+      return true;
+    }
+  }
+
   @Nullable
   protected ActionGroup getActionGroupForChanges(List<Change> changes) {
+    return null;
+  }
+
+  private static Color getColorForChangeType(ChangeType changeType) {
+    switch (changeType) {
+      case ADD:
+        return FileStatus.COLOR_ADDED;
+      case DELETE:
+        return FileStatus.COLOR_MISSING;
+      case CHANGE:
+        return FileStatus.COLOR_MODIFIED;
+    }
     return null;
   }
 }
