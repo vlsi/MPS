@@ -217,6 +217,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "buildlanguage" + File.separator + "ant"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "uiLanguage"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "xml"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "gtext"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "builders"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "MPSSupport")};
@@ -231,6 +232,8 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.xmlSchema.mpsarch.jar"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.xmlQuery.mpsarch.jar"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.xmlQuery.runtime.mpsarch.jar"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.gtext.mpsarch.jar"),
+        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.gtext.runtime.mpsarch.jar"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "plugin")};
     }
