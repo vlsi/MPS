@@ -1,10 +1,7 @@
 package jetbrains.mps.debug.runtime;
 
 import com.intellij.openapi.project.Project;
-import com.sun.jdi.VirtualMachine;
-import com.sun.jdi.InternalException;
-import com.sun.jdi.VMDisconnectedException;
-import com.sun.jdi.ThreadReference;
+import com.sun.jdi.*;
 import com.sun.jdi.event.*;
 import jetbrains.mps.logging.Logger;
 
@@ -43,11 +40,16 @@ public class DebugEventsProcessor {
     if(vm != null) {
       //todo prepare proxy for vm
      // vmAttached();
+      myVirtualMachine = vm;
       myEventThread = new DebuggerEventThread();
     //  ApplicationManager.getApplication().executeOnPooledThread(myEventThread);
       //todo start thread
       new Thread(myEventThread).start();
     }
+  }
+
+  public VirtualMachine getVirtualMachine() {
+    return myVirtualMachine;
   }
 
   private class DebuggerEventThread implements Runnable {

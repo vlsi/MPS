@@ -12,10 +12,10 @@ public interface DebugProcessListener {
   void connectorIsReady();
 
   //executed in manager thread
-  void paused(/*SuspendContext suspendContext*/);
+  void paused(SuspendContext suspendContext);
 
   //executed in manager thread
-  void resumed(/*SuspendContext suspendContext*/);
+  void resumed(SuspendContext suspendContext);
 
   //executed in manager thread
   void processDetached(DebugEventsProcessor process, boolean closedByUser);
