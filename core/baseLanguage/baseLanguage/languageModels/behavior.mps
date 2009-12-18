@@ -18193,22 +18193,13 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7236590470026154816">
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7236590470026154819">
           <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7236590470026154820">
-            <property name="name" value="v" />
+            <property name="name" value="text" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="7236590470026154821" />
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7236590470026154822">
               <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="7236590470026154823" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="7236590470026154853">
                 <link role="property" targetNodeId="1.6329021646629104958" resolveInfo="text" />
               </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="7236590470026154825">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="7236590470026154826">
-            <property name="name" value="isToDo" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="7236590470026154827" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="7236590470026154828">
-              <property name="value" value="false" />
             </node>
           </node>
         </node>
@@ -18220,55 +18211,56 @@
             </node>
           </node>
           <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7236590470026154833">
-            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7236590470026154834">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="7236590470026154835">
-                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7236590470026154836">
-                  <link role="variableDeclaration" targetNodeId="7236590470026154826" resolveInfo="isToDo" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="8620077627874848034">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression" id="8620077627874848036">
+                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8620077627874848040">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8620077627874848039">
+                    <link role="variableDeclaration" targetNodeId="7236590470026154820" resolveInfo="text" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8620077627874848044">
+                    <link role="baseMethodDeclaration" targetNodeId="2.~String.toLowerCase():java.lang.String" resolveInfo="toLowerCase" />
+                  </node>
                 </node>
-                <node role="rValue" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="7236590470026154837">
-                  <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7236590470026154838">
-                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7236590470026154839">
-                      <link role="variableDeclaration" targetNodeId="7236590470026154820" resolveInfo="v" />
-                    </node>
-                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7236590470026154840">
-                      <link role="baseMethodDeclaration" targetNodeId="2.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
-                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7236590470026154841">
-                        <property name="value" value="todo:" />
-                      </node>
+                <node role="lValue" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8620077627874848035">
+                  <link role="variableDeclaration" targetNodeId="7236590470026154820" resolveInfo="text" />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8620077627874848008">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="8620077627874848015">
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8620077627874848016">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8620077627874848017">
+                    <link role="variableDeclaration" targetNodeId="7236590470026154820" resolveInfo="v" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8620077627874848018">
+                    <link role="baseMethodDeclaration" targetNodeId="2.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8620077627874848019">
+                      <property name="value" value="todo" />
                     </node>
                   </node>
-                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.OrExpression" id="7236590470026154842">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7236590470026154843">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7236590470026154844">
-                        <link role="variableDeclaration" targetNodeId="7236590470026154820" resolveInfo="v" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7236590470026154845">
-                        <link role="baseMethodDeclaration" targetNodeId="2.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7236590470026154846">
-                          <property name="value" value="TODO:" />
-                        </node>
-                      </node>
-                    </node>
-                    <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7236590470026154847">
-                      <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7236590470026154848">
-                        <link role="variableDeclaration" targetNodeId="7236590470026154820" resolveInfo="v" />
-                      </node>
-                      <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="7236590470026154849">
-                        <link role="baseMethodDeclaration" targetNodeId="2.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="7236590470026154850">
-                          <property name="value" value="FIX:" />
-                        </node>
-                      </node>
+                </node>
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="8620077627874848020">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="8620077627874848021">
+                    <link role="variableDeclaration" targetNodeId="7236590470026154820" resolveInfo="v" />
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="8620077627874848022">
+                    <link role="baseMethodDeclaration" targetNodeId="2.~String.startsWith(java.lang.String):boolean" resolveInfo="startsWith" />
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="8620077627874848023">
+                      <property name="value" value="fix" />
                     </node>
                   </node>
                 </node>
               </node>
             </node>
           </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7236590470026154851">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7236590470026154852">
-            <link role="variableDeclaration" targetNodeId="7236590470026154826" resolveInfo="isToDo" />
+          <node role="ifFalseStatement" type="jetbrains.mps.baseLanguage.structure.BlockStatement" id="8620077627874848024">
+            <node role="statements" type="jetbrains.mps.baseLanguage.structure.StatementList" id="8620077627874848025">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="8620077627874848026">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="8620077627874848028">
+                  <property name="value" value="false" />
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

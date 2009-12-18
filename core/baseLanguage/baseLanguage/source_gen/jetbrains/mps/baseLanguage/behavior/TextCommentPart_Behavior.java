@@ -10,11 +10,12 @@ public class TextCommentPart_Behavior {
   }
 
   public static boolean virtual_isToDo_7236590470026152831(SNode thisNode) {
-    String v = SPropertyOperations.getString(thisNode, "text");
-    boolean isToDo = false;
-    if (v != null) {
-      isToDo = v.startsWith("TODO:") || v.startsWith("FIX:") || v.startsWith("todo:");
+    String text = SPropertyOperations.getString(thisNode, "text");
+    if (text != null) {
+      text = text.toLowerCase();
+      return text.startsWith("todo") || text.startsWith("fix");
+    } else {
+      return false;
     }
-    return isToDo;
   }
 }
