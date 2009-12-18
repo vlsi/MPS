@@ -11,6 +11,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class QueriesGenerated {
@@ -31,6 +32,11 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1238251595165(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
+    SNode usage = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "exprUsage");
+    if ((usage != null)) {
+      return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
+    } else {
+      return _context.getCopiedOutputNodeForInputNode(ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept", true)).last());
+    }
   }
 }
