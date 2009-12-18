@@ -48,6 +48,8 @@ public class ProgressLine extends JPanel implements TestView {
   private void updateProgressBar(int defected, int total, int complited) {
     if (defected > 0) {
       this.progressBar.setColor(ColorProgressBar.RED);
+    } else if (this.state.isTerminated()) {
+      this.progressBar.setColor(ColorProgressBar.YELLOW);
     }
     if (total != 0) {
       this.progressBar.setFraction((double)complited / (double)total);
@@ -56,7 +58,10 @@ public class ProgressLine extends JPanel implements TestView {
 
   private void updateLabel(int defected, int total, int complited, String testName) {
     StringBuilder sb = new StringBuilder();
-    if (total == complited || testName == null) {
+    if (this.state.isTerminated()) {
+      sb.append(" Terminated: " + complited + " of " + total + " ");
+      testName = "";
+    } else if (total == complited || testName == null) {
       sb.append(" Done: " + complited + " of " + total + " ");
       testName = "";
     }
@@ -78,6 +83,7 @@ public class ProgressLine extends JPanel implements TestView {
               ProgressLine.this.progressBar.setColor(ColorProgressBar.RED);
               ProgressLine.this.progressBar.setFraction(1.0);
               ProgressLine.this.stateLabel.setText("Failed to start");
+            } else if (ProgressLine.this.state.getTotalTests() != ProgressLine.this.state.getCompletedTests()) {
             }
           }
         });

@@ -54,7 +54,9 @@ public class TestTree extends MPSTree implements TestView {
     } else {
       node.value = this.get(test, method);
       if (node.value != null) {
-        if (TestEvent.START_TEST_PREFIX.equals(this.state.getToken())) {
+        if (this.state.isTerminated()) {
+          node.value.setState(TestState.TERMINATED);
+        } else if (TestEvent.START_TEST_PREFIX.equals(this.state.getToken())) {
           node.value.setState(TestState.IN_PROGRESS);
           if (this.getPreferences().getStateObject().isTrackRunning) {
             SwingUtilities.invokeLater(new Runnable() {

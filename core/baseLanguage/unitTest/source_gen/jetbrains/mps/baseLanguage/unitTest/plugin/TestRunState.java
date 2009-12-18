@@ -29,6 +29,7 @@ public class TestRunState {
   private int completedTests = 0;
   private int defectTests = 0;
   private Set<TestView> viewList = SetSequence.fromSet(new HashSet<TestView>());
+  private boolean isTerminated;
 
   public TestRunState(TestStatisticsModel statisticsModel) {
     this.statisticsModel = statisticsModel;
@@ -80,6 +81,13 @@ public class TestRunState {
       this.updateView();
       this.loseTest = null;
       this.loseMethod = null;
+    }
+  }
+
+  public void terminate() {
+    synchronized (lock) {
+      this.isTerminated = true;
+      this.updateView();
     }
   }
 
@@ -145,6 +153,10 @@ public class TestRunState {
 
   public String getLoseClass() {
     return this.loseTest;
+  }
+
+  public boolean isTerminated() {
+    return this.isTerminated;
   }
 
   public TestMethodRow getTestMethodRow(String className, String methodName) {

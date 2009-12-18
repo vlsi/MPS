@@ -46,7 +46,7 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
 
       public void onTextAvailable(ProcessEvent event, final Key k) {
         if (this.isTerminatedEvent()) {
-          UnitTestProcessHandler.this.myComponent.getTestListener().onProcessTerminated();
+          UnitTestProcessHandler.this.myComponent.getTestListener().onProcessTerminated(event.getText());
         }
         final String className = UnitTestProcessHandler.this.myComponent.getCurrentClassName();
         final String methodName = UnitTestProcessHandler.this.myComponent.getCurrentMethodName();
