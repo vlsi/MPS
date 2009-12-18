@@ -13,6 +13,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
 
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new VariableDeclarationReference_var_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new NotEditableVaraileReference_variableDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

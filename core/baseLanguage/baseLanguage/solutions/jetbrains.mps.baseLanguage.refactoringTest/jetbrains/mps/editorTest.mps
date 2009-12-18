@@ -6158,5 +6158,36 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="4965160547087449811">
+    <property name="name" value="EditingNotEditableProperty" />
+    <node role="nodeToEdit" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="4965160547087514302">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock" id="4965160547087514303">
+        <property name="name" value="i" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference" id="4965160547087627105">
+        <link role="variableDeclaration" targetNodeId="4965160547087514303" resolveInfo="i" />
+        <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="4965160547087680913">
+          <property name="isLastPosition" value="true" />
+          <property name="useLabelSelection" value="true" />
+          <property name="selectionStart" value="1" />
+          <property name="selectionEnd" value="1" />
+          <property name="cellId" value="property_name" />
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.lang.editor.editorTest.structure.TestBlockList" id="4965160547087627107">
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock" id="4965160547087627108">
+        <property name="name" value="i" />
+      </node>
+      <node role="statement" type="jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference" id="4965160547087627109">
+        <link role="variableDeclaration" targetNodeId="4965160547087627108" resolveInfo="i" />
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4965160547087680914">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.TypeKeyStatement" id="4965160547087680915">
+        <property name="keys" value="e" />
+      </node>
+    </node>
+  </node>
 </model>
 

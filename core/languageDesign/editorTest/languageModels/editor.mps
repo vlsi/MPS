@@ -310,5 +310,23 @@
       <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent" id="5633355289409964571" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="4965160547087302662">
+    <link role="conceptDeclaration" targetNodeId="1.4965160547087302660" resolveInfo="NotEditableVaraileReference" />
+    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell" id="4965160547087302664">
+      <link role="relationDeclaration" targetNodeId="1.4965160547087302661" />
+      <node role="editorComponent" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent" id="4965160547087302665">
+        <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="4965160547087302667">
+          <property name="readOnly" value="false" />
+          <link role="relationDeclaration" targetNodeId="2v.1169194664001" resolveInfo="name" />
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem" id="4965160547087391735">
+            <property name="color" value="cyan" />
+          </node>
+          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="7518418513047622167">
+            <property name="flag" value="false" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

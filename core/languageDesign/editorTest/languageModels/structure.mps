@@ -292,5 +292,22 @@
       <link role="intfc" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="4965160547087302660">
+    <property name="name" value="NotEditableVaraileReference" />
+    <link role="extends" targetNodeId="2v.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="4965160547087302661">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="variableDeclaration" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2613454275903819473" resolveInfo="VariableDeclarationBlock" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="4965160547087514874">
+      <link role="intfc" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="4965160547087514875">
+      <property name="value" value="{&lt;{variableDeclaration}&gt;} not editable" />
+      <link role="conceptPropertyDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
