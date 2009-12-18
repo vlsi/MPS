@@ -1119,7 +1119,7 @@
   </node>
   <node type="jetbrains.mps.lang.test.structure.NodesTestCase" id="1220012417777">
     <property name="package" value="dataFlow.unusedVariableDeaclaration" />
-    <property name="name" value="UnusedCatchVariable" />
+    <property name="name" value="CatchingUnthrownException" />
     <node role="nodesToCheck" type="jetbrains.mps.lang.test.structure.TestNode" id="1220012458871">
       <node role="nodeToCheck" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1220012464903">
         <property name="name" value="Class" />
