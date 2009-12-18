@@ -112,7 +112,7 @@ public class EditorCell_Property extends EditorCell_Label {
       text = IntelligentInputUtil.trimLeft(text);
     }
 
-    if (isValidText(text)) {
+    if (isValidText(text) && isEditable()) {
       myModelAccessor.setText(text);
     } else {
       getEditorContext().getNodeEditorComponent().requestRelayout();
