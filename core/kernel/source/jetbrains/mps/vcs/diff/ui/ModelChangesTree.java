@@ -124,7 +124,6 @@ class ModelChangesTree extends MPSTree {
 
     myAddedNodes.clear();
     myChangedNodes.clear();
-    myAddedNodes.clear();
     myDeletedNodes.clear();
     myChangedSubtree.clear();
 
