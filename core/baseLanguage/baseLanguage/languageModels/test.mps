@@ -1133,8 +1133,8 @@
               <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="1220012491334">
                 <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220012491335">
                   <property name="name" value="e" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220012494072">
-                    <link role="classifier" targetNodeId="5.~Exception" resolveInfo="Exception" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8512491756795119585">
+                    <link role="classifier" targetNodeId="32.~IOException" resolveInfo="IOException" />
                   </node>
                   <node role="nodePropertiesMarker$attribute" type="jetbrains.mps.lang.test.structure.NodePropertiesContainer" id="354371747683307892">
                     <node role="properties" type="jetbrains.mps.lang.test.structure.NodeErrorPropety" id="354371747683307893" />
@@ -1156,8 +1156,8 @@
               <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="354371747683324360">
                 <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="354371747683324361">
                   <property name="name" value="e" />
-                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="354371747683324362">
-                    <link role="classifier" targetNodeId="5.~Exception" resolveInfo="Exception" />
+                  <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="8512491756795119586">
+                    <link role="classifier" targetNodeId="32.~IOException" resolveInfo="IOException" />
                   </node>
                   <node role="nodePropertiesMarker$attribute" type="jetbrains.mps.lang.test.structure.NodePropertiesContainer" id="354371747683324363">
                     <node role="properties" type="jetbrains.mps.lang.test.structure.NodeErrorPropety" id="354371747683324364" />
