@@ -31,6 +31,7 @@ import java.awt.datatransfer.UnsupportedFlavorException;
 import java.awt.datatransfer.StringSelection;
 import java.io.IOException;
 import java.util.*;
+import java.util.Map.Entry;
 
 public class CopyPasteUtil {
   private static final Logger LOG = Logger.getLogger(CopyPasteUtil.class);
@@ -90,6 +91,14 @@ public class CopyPasteUtil {
       copiedNode.changeModel(fakeModel);
     }
     processReferencesIn(sourceNodesToNewNodes, allReferences);
+
+    Map<SNode, SNode> newNodesToSourceNodes = new HashMap<SNode, SNode>();
+    for(Entry<SNode, SNode> entry : sourceNodesToNewNodes.entrySet()) {
+      newNodesToSourceNodes.put(entry.getValue(), entry.getKey());
+    }
+    for (SNode newNode : result) {
+      CopyPasteRegistry.getInstance().preProcessNode(newNode, newNodesToSourceNodes);
+    }
 
     model.setLoading(false);
     return new PasteNodeData(result, null, module, fakeModel, necessaryLanguages, necessaryModels);

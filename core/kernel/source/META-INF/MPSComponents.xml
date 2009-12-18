@@ -168,6 +168,10 @@
         </component>
 
         <component>
+            <implementation-class>jetbrains.mps.datatransfer.CopyPasteRegistry</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.lang.dataFlow.DataFlowManager</implementation-class>
         </component>
 

@@ -175,9 +175,10 @@ public class NodePaster {
     SNode _anchorNode = anchorNode;
     boolean insertBefore = placeHint == PastePlaceHint.BEFORE_ANCHOR;
     for (SNode pasteNode : myPasteNodes) {
-      pasteTarget.insertChild(_anchorNode, SModelUtil.getGenuineLinkRole(link.getNode()), normalizeForLink(pasteNode, link), insertBefore);
-
-      _anchorNode = pasteNode;
+      SNode nodeToPaste = normalizeForLink(pasteNode, link);
+      pasteTarget.insertChild(_anchorNode, SModelUtil.getGenuineLinkRole(link.getNode()), nodeToPaste, insertBefore);
+      CopyPasteRegistry.getInstance().postProcessNode(nodeToPaste);
+      _anchorNode = nodeToPaste;
       insertBefore = false;
     }
 

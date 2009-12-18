@@ -456,5 +456,25 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="5948027493682790754">
+    <property name="package" value="copyPaste" />
+    <link role="concept" targetNodeId="1.5948027493682789918" resolveInfo="CopyPasteHandlers" />
+    <node role="canBeRoot" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot" id="5948027493682790755">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5948027493682790756">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5948027493682790757">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5948027493682790758">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="5948027493682790759">
+              <link role="enumClass" targetNodeId="8.~LanguageAspect" resolveInfo="LanguageAspect" />
+              <link role="enumConstantDeclaration" targetNodeId="8.~LanguageAspect.ACTIONS" resolveInfo="ACTIONS" />
+            </node>
+            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="5948027493682790760">
+              <link role="baseMethodDeclaration" targetNodeId="8.~LanguageAspect.is(jetbrains.mps.smodel.SModel):boolean" resolveInfo="is" />
+              <node role="actualArgument" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="5948027493682790761" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

@@ -2458,5 +2458,141 @@
       <node role="target" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1235060219675" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="564335015825199468">
+    <property name="name" value="PastePostProcessor" />
+    <property name="package" value="copyPaste" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3887139083693416947">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="postProcessFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="6026743057587433039" resolveInfo="PastePostProcessFunction" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3887139083693413540">
+      <property name="value" value="paste post processor" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="6026743057587410043">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="concept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6026743057587433039">
+    <property name="package" value="copyPaste" />
+    <property name="name" value="PastePostProcessFunction" />
+    <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="3887139083693417101">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="6026743057587447931" resolveInfo="ConceptFunctionParameter_nodeToPastePostProcess" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3887139083693416986">
+      <property name="value" value="paste post process function" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="6026743057587447931">
+    <property name="package" value="conceptFunctionParameters" />
+    <property name="name" value="ConceptFunctionParameter_nodeToPastePostProcess" />
+    <link role="extends" targetNodeId="3.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="6026743057587447941">
+      <property name="value" value="pastedNode" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5457641811178038176">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1199886518837" resolveInfo="dontUseParameterObject" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5948027493682321734">
+    <property name="package" value="copyPaste" />
+    <property name="name" value="CopyPreProcessor" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5948027493682346893">
+      <property name="metaClass" value="reference" />
+      <property name="role" value="concept" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="2.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5948027493682325465">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="preProcessFunction" />
+      <property name="sourceCardinality" value="1" />
+      <link role="target" targetNodeId="5948027493682346911" resolveInfo="PastePreProcessFunction" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5948027493682325293">
+      <property name="value" value="paste pre processor" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5948027493682346911">
+    <property name="package" value="copyPaste" />
+    <property name="name" value="CopyPreProcessFunction" />
+    <link role="extends" targetNodeId="3.1137021947720" resolveInfo="ConceptFunction" />
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="5948027493682405699">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="5948027493682405428" resolveInfo="ConceptFunctionParameter_nodeToCopyPreProcess" />
+    </node>
+    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink" id="5948027493682405752">
+      <link role="conceptLinkDeclaration" targetNodeId="3.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target" targetNodeId="5948027493682405480" resolveInfo="ConceptFunctionParameter_nodeToCopyPreProcessOriginal" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5948027493682356226">
+      <property name="value" value="paste pre process function" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5948027493682405428">
+    <property name="package" value="conceptFunctionParameters" />
+    <property name="name" value="ConceptFunctionParameter_nodeToCopyPreProcess" />
+    <link role="extends" targetNodeId="3.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5948027493682405858">
+      <property name="value" value="copy" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5948027493682405947">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1199886518837" resolveInfo="dontUseParameterObject" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5948027493682405480">
+    <property name="package" value="conceptFunctionParameters" />
+    <property name="name" value="ConceptFunctionParameter_nodeToCopyPreProcessOriginal" />
+    <link role="extends" targetNodeId="3.1107135704075" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5948027493682405805">
+      <property name="value" value="original" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="5948027493682405911">
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1199886518837" resolveInfo="dontUseParameterObject" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="5948027493682789918">
+    <property name="package" value="copyPaste" />
+    <property name="name" value="CopyPasteHandlers" />
+    <property name="rootable" value="true" />
+    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="5948027493682790226">
+      <property name="value" value="copy paste handlers" />
+      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5948027493682790174">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="postProcessor" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="564335015825199468" resolveInfo="PastePostProcessor" />
+    </node>
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="5948027493682790175">
+      <property name="metaClass" value="aggregation" />
+      <property name="role" value="preProcessor" />
+      <property name="sourceCardinality" value="0..n" />
+      <link role="target" targetNodeId="5948027493682321734" resolveInfo="CopyPreProcessor" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5948027493682790019">
+      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="5948027493682790121">
+      <link role="intfc" targetNodeId="2.2621449412040133764" resolveInfo="IConceptAspect" />
+    </node>
+  </node>
 </model>
 

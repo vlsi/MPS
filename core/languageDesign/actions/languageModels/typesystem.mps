@@ -6,6 +6,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
@@ -637,6 +638,126 @@
     <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1235053808084">
       <property name="name" value="parameter" />
       <link role="concept" targetNodeId="1.1235053632692" resolveInfo="SmartActionParameter" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="6026743057587447950">
+    <property name="name" value="typeof_ConceptFunctionParameter_nodeToPastePostProcess" />
+    <property name="package" value="conceptFunctionParameters" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6026743057587447951">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="6026743057587447957">
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="6026743057587447961">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="6026743057587447962">
+            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="6026743057587447964">
+              <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="6026743057587447965">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6026743057587447992">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6026743057587447987">
+                    <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6026743057587447986">
+                      <link role="applicableNode" targetNodeId="6026743057587447952" resolveInfo="process" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6026743057587447991">
+                      <link role="baseMethodDeclaration" targetNodeId="9.6026743057587447970" resolveInfo="getPostProcessor" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="6026743057587447996">
+                    <link role="link" targetNodeId="1.6026743057587410043" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="6026743057587447960">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="6026743057587447954">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="6026743057587447956">
+              <link role="applicableNode" targetNodeId="6026743057587447952" resolveInfo="process" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="6026743057587447952">
+      <property name="name" value="node" />
+      <link role="concept" targetNodeId="1.6026743057587447931" resolveInfo="ConceptFunctionParameter_nodeToPastePostProcess" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="5948027493682405593">
+    <property name="name" value="typeof_ConceptFunctionParameter_nodeToCopyPreProcess" />
+    <property name="package" value="conceptFunctionParameters" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5948027493682405594">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="5948027493682405602">
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5948027493682405605">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="5948027493682405599">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5948027493682405601">
+              <link role="applicableNode" targetNodeId="5948027493682405595" resolveInfo="process" />
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5948027493682405606">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="5948027493682405607">
+            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5948027493682405608">
+              <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="5948027493682405609">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5948027493682405610">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5948027493682405611">
+                    <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5948027493682405612">
+                      <link role="applicableNode" targetNodeId="5948027493682405595" resolveInfo="node" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="5948027493682405616">
+                      <link role="baseMethodDeclaration" targetNodeId="9.5948027493682405569" resolveInfo="getPreProcessor" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5948027493682405617">
+                    <link role="link" targetNodeId="1.5948027493682346893" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5948027493682405595">
+      <property name="name" value="node" />
+      <link role="concept" targetNodeId="1.5948027493682405428" resolveInfo="ConceptFunctionParameter_nodeToCopyPreProcess" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="5948027493682405618">
+    <property name="name" value="typeof_ConceptFunctionParameter_nodeToCopyPreProcessOriginal" />
+    <property name="package" value="conceptFunctionParameters" />
+    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5948027493682405619">
+      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="5948027493682405625">
+        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5948027493682405628">
+          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="5948027493682405622">
+            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5948027493682405624">
+              <link role="applicableNode" targetNodeId="5948027493682405620" resolveInfo="node" />
+            </node>
+          </node>
+        </node>
+        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="5948027493682405629">
+          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="5948027493682405630">
+            <node role="quotedNode" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5948027493682405631">
+              <node role="referenceAntiquotation$link_attribute$concept" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation" id="5948027493682405632">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5948027493682405633">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5948027493682405634">
+                    <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="5948027493682405635">
+                      <link role="applicableNode" targetNodeId="5948027493682405620" resolveInfo="node" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="5948027493682405636">
+                      <link role="baseMethodDeclaration" targetNodeId="9.5948027493682405569" resolveInfo="getPreProcessor" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="5948027493682405637">
+                    <link role="link" targetNodeId="1.5948027493682346893" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="5948027493682405620">
+      <property name="name" value="node" />
+      <link role="concept" targetNodeId="1.5948027493682405480" resolveInfo="ConceptFunctionParameter_nodeToCopyPreProcessOriginal" />
     </node>
   </node>
 </model>
