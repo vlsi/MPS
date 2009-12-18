@@ -5790,5 +5790,62 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="3696012239575646494">
+    <property name="package" value="CellModel" />
+    <link role="concept" targetNodeId="1.3696012239575138270" resolveInfo="CellModel_URL" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="3696012239575646495">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3696012239575646496" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7838995302459026420">
+      <property name="name" value="getRoleForCell" />
+      <property name="isPrivate" value="false" />
+      <link role="overriddenMethod" targetNodeId="1216377898846" resolveInfo="getRoleForCell" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7838995302459026421">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="7838995302459026422">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7838995302459026423">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7838995302459026424">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="7838995302459026425" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7838995302459047782">
+                <link role="link" targetNodeId="1.3696012239575138271" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="7838995302459026427">
+              <link role="property" targetNodeId="16.1169194664001" resolveInfo="name" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="7838995302459026428" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7838995302459026429" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3696012239575646497">
+      <property name="name" value="getOpeningText" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="1220339714057" resolveInfo="getOpeningText" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3696012239575646498" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3696012239575646499">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3696012239575646517">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3696012239575646519">
+            <property name="value" value="{" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="3696012239575646500" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3696012239575646509">
+      <property name="name" value="getClosingText" />
+      <property name="isVirtual" value="true" />
+      <link role="overriddenMethod" targetNodeId="1220339738643" resolveInfo="getClosingText" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3696012239575646510" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3696012239575646511">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3696012239575646520">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="3696012239575646522">
+            <property name="value" value="}" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="3696012239575646512" />
+    </node>
+  </node>
 </model>
 

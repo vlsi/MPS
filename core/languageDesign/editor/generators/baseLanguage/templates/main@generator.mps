@@ -15417,7 +15417,7 @@
                     <link role="variableDeclaration" targetNodeId="1237452593849" resolveInfo="cellWithRole" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3710678335995670701">
-                    <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell.setAction(jetbrains.mps.nodeEditor.CellActionType,jetbrains.mps.nodeEditor.EditorCellAction):void" resolveInfo="setAction" />
+                    <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_Basic.setAction(jetbrains.mps.nodeEditor.CellActionType,jetbrains.mps.nodeEditor.EditorCellAction):void" resolveInfo="setAction" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="3710678335995670702">
                       <link role="enumClass" targetNodeId="11.~CellActionType" resolveInfo="CellActionType" />
                       <link role="enumConstantDeclaration" targetNodeId="11.~CellActionType.DELETE" resolveInfo="DELETE" />
@@ -15492,7 +15492,7 @@
                     <link role="variableDeclaration" targetNodeId="1237452593849" resolveInfo="cellWithRole" />
                   </node>
                   <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="3710678335995670732">
-                    <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell.setSubstituteInfo(jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo):void" resolveInfo="setSubstituteInfo" />
+                    <link role="baseMethodDeclaration" targetNodeId="67.~EditorCell_Basic.setSubstituteInfo(jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo):void" resolveInfo="setSubstituteInfo" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3710678335995670733">
                       <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3710678335995670734">
                         <link role="baseMethodDeclaration" targetNodeId="37.~CompositeSubstituteInfo.&lt;init&gt;(jetbrains.mps.nodeEditor.EditorContext,jetbrains.mps.nodeEditor.cellMenu.CellContext,jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart[])" resolveInfo="CompositeSubstituteInfo" />

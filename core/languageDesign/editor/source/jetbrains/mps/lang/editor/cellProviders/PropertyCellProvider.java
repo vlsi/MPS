@@ -102,6 +102,10 @@ public class PropertyCellProvider extends CellProviderWithRole {
     return new PropertyCellContext(getSNode(), myPropertyDeclaration);
   }
 
+  public String getPropertyName() {
+    return myPropertyName;
+  }
+
   public static String getRoleByRelationDeclaration(BaseConcept relationDeclaration) {
     if (relationDeclaration instanceof PropertyDeclaration) {
       PropertyDeclaration propertyDeclaration = (PropertyDeclaration) relationDeclaration;

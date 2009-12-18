@@ -4644,5 +4644,24 @@
       <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="3696012239575138270">
+    <property name="name" value="CellModel_URL" />
+    <property name="package" value="CellModel" />
+    <link role="extends" targetNodeId="1139848536355" resolveInfo="CellModel_WithRole" />
+    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="3696012239575138271">
+      <property name="sourceCardinality" value="1" />
+      <property name="role" value="propertyDeclaration" />
+      <link role="specializedLink" targetNodeId="1140103550593" />
+      <link role="target" targetNodeId="1.1071489288299" resolveInfo="PropertyDeclaration" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3696012239575138272">
+      <property name="value" value="URL" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473891462" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="3696012239575138273">
+      <property name="value" value="URL property" />
+      <link role="conceptPropertyDeclaration" targetNodeId="3.1137473914776" resolveInfo="shortDescription" />
+    </node>
+  </node>
 </model>
 
