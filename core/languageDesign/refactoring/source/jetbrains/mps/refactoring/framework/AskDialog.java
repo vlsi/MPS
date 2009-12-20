@@ -34,7 +34,7 @@ public class AskDialog extends BaseDialog {
   private IChooseComponent myLastChooser = null;
 
   public AskDialog(final RefactoringContext refactoringContext, IChooser... choosers) throws HeadlessException {
-    super(refactoringContext.getCurrentOperationContext().getMainFrame(), "Input Data for " + refactoringContext.getRefactoring().getUserFriendlyName());
+    super(refactoringContext.getCurrentOperationContext().getMainFrame(), refactoringContext.getRefactoring().getUserFriendlyName());
     myChoosers = new ArrayList<IChooser>(Arrays.asList(choosers));
     myInnerPanel = new JPanel();
     GridBagLayout layout = new GridBagLayout();
