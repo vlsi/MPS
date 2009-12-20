@@ -136,7 +136,7 @@ public class ClassPathTest extends BaseMPSTest {
         conflicts.add(conflict);
       }
     }
-    //assertTrue(getConflictsDescription(conflicts), conflicts.isEmpty());
+    assertTrue(getConflictsDescription(conflicts), conflicts.isEmpty());
   }
 
   private List<String> getAllClasses(IClassPathItem pathItem) {
