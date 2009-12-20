@@ -39,7 +39,7 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class ReferentsCreator {
-  private static Logger LOG = Logger.getLogger(ReferentsCreator.class);
+  private static final Logger LOG = Logger.getLogger(ReferentsCreator.class);
 
   Map<Binding, INodeAdapter> myBindingMap = new HashMap<Binding, INodeAdapter>();
   SModel myCurrentModel;

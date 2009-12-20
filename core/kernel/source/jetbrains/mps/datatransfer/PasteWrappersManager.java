@@ -39,7 +39,7 @@ public class PasteWrappersManager implements ApplicationComponent {
   public static final String PASTE_WRAPPER_CLASS_NAME = "PasteWrappers";
   public static final String PASTE_WRAPPERS_FACTORY_METHOD = "createPasteWrappers";
 
-  private static Logger LOG = Logger.getLogger(PasteWrappersManager.class);
+  private static final Logger LOG = Logger.getLogger(PasteWrappersManager.class);
 
   private ClassLoaderManager myClassLoaderManager;
   private MyReloadHandler myReloadHandler = new MyReloadHandler();

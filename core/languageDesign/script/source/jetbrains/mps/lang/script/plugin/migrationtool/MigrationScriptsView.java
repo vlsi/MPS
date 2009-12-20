@@ -52,7 +52,7 @@ import java.util.Set;
  * Jun 19, 2008
  */
 public abstract class MigrationScriptsView {
-  private static Logger LOG = Logger.getLogger(MigrationScriptsView.class);
+  private static final Logger LOG = Logger.getLogger(MigrationScriptsView.class);
 
   private MigrationScriptFinder myFinder;
   private SearchQuery myQuery;

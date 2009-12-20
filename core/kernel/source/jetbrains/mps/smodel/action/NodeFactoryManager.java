@@ -38,7 +38,7 @@ import java.util.Set;
 import java.util.HashSet;
 
 public class NodeFactoryManager extends NodeFactoryManager_deprecated {
-  private static Logger LOG = Logger.getLogger(NodeFactoryManager.class);
+  private static final Logger LOG = Logger.getLogger(NodeFactoryManager.class);
 
   public static SNode createNode(String conceptFqName, SNode sampleNode, SNode enclosingNode, @Nullable SModel model) {
     AbstractConceptDeclaration conceptDeclaration = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());

@@ -29,7 +29,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 class DefaultFindUsagesManager extends FindUsagesManager {
-  private static Logger LOG = Logger.getLogger(DefaultFindUsagesManager.class);
+  private static final Logger LOG = Logger.getLogger(DefaultFindUsagesManager.class);
 
   private HashMap<AbstractConceptDeclaration, HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>> myConceptsToKnownDescendantsInModelDescriptors = new HashMap<AbstractConceptDeclaration, HashMap<SModelDescriptor, HashSet<AbstractConceptDeclaration>>>();
   private ClassLoaderManager myClassLoaderManager;

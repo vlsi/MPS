@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class DebugEventsProcessor {
-  private static Logger LOG = Logger.getLogger(DebugEventsProcessor.class);
+  private static final Logger LOG = Logger.getLogger(DebugEventsProcessor.class);
 
   private BreakpointManager myBreakpointManager;
   private Project myProject;

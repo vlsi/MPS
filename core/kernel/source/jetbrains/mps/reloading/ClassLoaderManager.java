@@ -37,7 +37,7 @@ import java.util.Set;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class ClassLoaderManager implements ApplicationComponent {
-  private static Logger LOG = Logger.getLogger(ClassLoaderManager.class);
+  private static final Logger LOG = Logger.getLogger(ClassLoaderManager.class);
 
   public static ClassLoaderManager getInstance() {
     return ApplicationManager.getApplication().getComponent(ClassLoaderManager.class);

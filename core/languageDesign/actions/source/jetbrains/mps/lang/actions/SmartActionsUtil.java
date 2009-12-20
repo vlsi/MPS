@@ -39,7 +39,7 @@ import java.awt.Rectangle;
 import java.lang.reflect.Method;
 
 public class SmartActionsUtil {
-  private static Logger LOG = Logger.getLogger(SmartActionsUtil.class);
+  private static final Logger LOG = Logger.getLogger(SmartActionsUtil.class);
 
 
   public static void showActionsMenu(final EditorCell selectedCell, final IOperationContext operationContext) {

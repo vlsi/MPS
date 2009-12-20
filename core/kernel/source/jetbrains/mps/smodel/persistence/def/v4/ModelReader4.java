@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ModelReader4 implements IModelReader {
-  private static Logger LOG = Logger.getLogger(ModelReader4.class);
+  private static final Logger LOG = Logger.getLogger(ModelReader4.class);
 
   protected String getLegacyImportedModelUIDString(Element element) {
     return null;

@@ -23,7 +23,7 @@ import java.net.MalformedURLException;
 
 public class HelpUtil {
 
-  private static Logger LOG = Logger.getLogger(HelpUtil.class);
+  private static final Logger LOG = Logger.getLogger(HelpUtil.class);
 
   static void showInBrowserWindow(String helpPath) {
     try {

@@ -27,7 +27,7 @@ import java.util.*;
 
 public class Substitution {
 
-  private static Logger LOG = Logger.getLogger(Substitution.class);
+  private static final Logger LOG = Logger.getLogger(Substitution.class);
 
   private Map<PatternVariableDeclaration, SNode> myVarsToNodes = new HashMap<PatternVariableDeclaration, SNode>();
   private Map<PatternVariableDeclaration, List<SNode>> myListVarsToNodes = new HashMap<PatternVariableDeclaration, List<SNode>>();

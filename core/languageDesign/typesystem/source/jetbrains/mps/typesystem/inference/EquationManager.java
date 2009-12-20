@@ -36,7 +36,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class EquationManager {
 
-  private static Logger LOG = Logger.getLogger(EquationManager.class);
+  private static final Logger LOG = Logger.getLogger(EquationManager.class);
 
   private static final boolean COLLECT_WHEN_CONCRETES = false;
   private TypeChecker myTypeChecker;

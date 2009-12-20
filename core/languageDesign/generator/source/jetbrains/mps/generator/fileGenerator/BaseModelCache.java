@@ -28,7 +28,7 @@ import jetbrains.mps.vfs.*;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseModelCache<T> implements ApplicationComponent {
-  private static Logger LOG = Logger.getLogger(BaseModelCache.class);
+  private static final Logger LOG = Logger.getLogger(BaseModelCache.class);
 
   private final FileGenerationManager myFileGeneratorManager;
   private final AllCaches myAllCaches;

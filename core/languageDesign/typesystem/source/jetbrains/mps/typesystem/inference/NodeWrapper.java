@@ -31,7 +31,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 public class NodeWrapper extends DefaultAbstractWrapper implements IWrapper {
-  private static Logger LOG = Logger.getLogger(NodeWrapper.class);
+  private static final Logger LOG = Logger.getLogger(NodeWrapper.class);
 
   protected final SNode myNode;
   protected int myHashCode = Integer.MAX_VALUE;

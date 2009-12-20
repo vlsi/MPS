@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.ArrayList;
 
 public class BaseIntentionProvider implements IntentionProvider {
-  private static Logger LOG = Logger.getLogger(IntentionProvider.class);
+  private static final Logger LOG = Logger.getLogger(IntentionProvider.class);
 
   private QuickFix_Runtime myQuickFix;
   private boolean myQuickFixTaken;

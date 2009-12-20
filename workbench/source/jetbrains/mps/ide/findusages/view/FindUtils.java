@@ -42,7 +42,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class FindUtils {
-  private static Logger LOG = Logger.getLogger(FindUtils.class);
+  private static final Logger LOG = Logger.getLogger(FindUtils.class);
 
   public static SearchResults getSearchResults(@Nullable final ProgressIndicator indicator, final Collection<SNode> nodes, final IScope scope, final IFinder... finders) {
     final SearchResults[] results = new SearchResults[1];

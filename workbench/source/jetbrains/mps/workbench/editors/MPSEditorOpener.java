@@ -48,7 +48,7 @@ import javax.swing.SwingUtilities;
 import java.util.*;
 
 public class MPSEditorOpener implements ProjectComponent {
-  private static Logger LOG = Logger.getLogger(MPSEditorOpener.class);
+  private static final Logger LOG = Logger.getLogger(MPSEditorOpener.class);
 
   private Project myProject;
 

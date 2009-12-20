@@ -43,7 +43,7 @@ public class RulesManager {
   private OverloadedOperationsManager myOverloadedOperationsManager;
 
 
-  private static Logger LOG = Logger.getLogger(RulesManager.class);
+  private static final Logger LOG = Logger.getLogger(RulesManager.class);
 
   public RulesManager(TypeChecker typeChecker) {
     myTypeChecker = typeChecker;

@@ -28,7 +28,7 @@ import java.util.List;
 import java.util.Set;
 
 public class MatchingUtil {
-  private static Logger LOG = Logger.getLogger(MatchingUtil.class);
+  private static final Logger LOG = Logger.getLogger(MatchingUtil.class);
 
   public static boolean matchNodes(SNode node1, SNode node2) {
     return matchNodes(node1, node2, IMatchModifier.DEFAULT, true);

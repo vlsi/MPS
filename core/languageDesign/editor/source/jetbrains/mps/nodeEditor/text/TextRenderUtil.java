@@ -25,7 +25,7 @@ import java.util.List;
 
 public class TextRenderUtil {
 
-  private static Logger LOG = Logger.getLogger(TextRenderUtil.class);
+  private static final Logger LOG = Logger.getLogger(TextRenderUtil.class);
 
   public static TextBuilder renderText(NodeRangeSelection nodeRangeSelection) {
     List<EditorCell> cells = nodeRangeSelection.getCells();

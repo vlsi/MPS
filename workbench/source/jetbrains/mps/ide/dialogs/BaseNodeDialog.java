@@ -40,7 +40,7 @@ import javax.swing.JSplitPane;
 import java.awt.HeadlessException;
 
 public abstract class BaseNodeDialog extends BaseDialog {
-  private static Logger LOG = Logger.getLogger(BaseNodeDialog.class);
+  private static final Logger LOG = Logger.getLogger(BaseNodeDialog.class);
 
   private IOperationContext myOperationContext;
   private UIEditorComponent myEditorComponent;

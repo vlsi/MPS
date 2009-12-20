@@ -38,7 +38,7 @@ public class TaskProgressSettings implements PersistentStateComponent<MyState> {
     return ApplicationManager.getApplication().getComponent(TaskProgressSettings.class);
   }
 
-  private static Logger LOG = Logger.getLogger(TaskProgressSettings.class);
+  private static final Logger LOG = Logger.getLogger(TaskProgressSettings.class);
 
   private MyState myState = new MyState();
 

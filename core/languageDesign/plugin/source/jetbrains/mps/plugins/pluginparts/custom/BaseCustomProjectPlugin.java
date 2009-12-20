@@ -19,7 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSProject;
 
 public abstract class BaseCustomProjectPlugin {
-  private static Logger LOG = Logger.getLogger(BaseCustomProjectPlugin.class);
+  private static final Logger LOG = Logger.getLogger(BaseCustomProjectPlugin.class);
   private MPSProject myProject;
 
   public void init(MPSProject project) {

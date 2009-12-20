@@ -27,7 +27,7 @@ import java.net.URISyntaxException;
 import java.net.URL;
 
 public class CommonPaths {
-  private static Logger LOG = Logger.getLogger(CommonPaths.class);
+  private static final Logger LOG = Logger.getLogger(CommonPaths.class);
 
   private static IClassPathItem ourRTJar = null;
   private static IClassPathItem ourMPSJar = null;

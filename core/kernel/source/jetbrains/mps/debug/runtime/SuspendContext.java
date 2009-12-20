@@ -20,7 +20,7 @@ import jetbrains.mps.logging.Logger;
  * To change this template use File | Settings | File Templates.
  */
 public abstract class SuspendContext { //todo: add evaluation and postponed commands - later
-  private static Logger LOG = Logger.getLogger(SuspendContext.class);
+  private static final Logger LOG = Logger.getLogger(SuspendContext.class);
 
    private final DebugEventsProcessor myDebugProcess;
   private final int mySuspendPolicy;

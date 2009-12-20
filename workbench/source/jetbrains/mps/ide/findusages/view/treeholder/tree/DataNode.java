@@ -36,7 +36,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class DataNode implements IExternalizeable {
-  private static Logger LOG = Logger.getLogger(DataNode.class);
+  private static final Logger LOG = Logger.getLogger(DataNode.class);
 
   private static final String CHILDREN = "children";
   private static final String CHILD = "child";

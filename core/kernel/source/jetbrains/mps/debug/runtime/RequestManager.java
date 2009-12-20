@@ -29,7 +29,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
  * To change this template use File | Settings | File Templates.
  */
 public class RequestManager implements DebugProcessListener {
-  private static Logger LOG = Logger.getLogger(RequestManager.class);
+  private static final Logger LOG = Logger.getLogger(RequestManager.class);
 
   private static final Object REQUESTOR = new Object();
   private static final Object CLASS_NAME = new Object();

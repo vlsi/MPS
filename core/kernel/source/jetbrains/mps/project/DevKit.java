@@ -32,7 +32,7 @@ import jetbrains.mps.vfs.IFile;
 import java.util.*;
 
 public class DevKit extends AbstractModule {
-  private static Logger LOG = Logger.getLogger(DevKit.class);
+  private static final Logger LOG = Logger.getLogger(DevKit.class);
 
   public static DevKit newInstance(IFile descriptorFile, MPSModuleOwner moduleOwner) {
     DevKit result = new DevKit();

@@ -18,7 +18,7 @@ import jetbrains.mps.logging.Logger;
  * To change this template use File | Settings | File Templates.
  */
 public class SuspendManager {
-  private static Logger LOG = Logger.getLogger(SuspendManager.class);
+  private static final Logger LOG = Logger.getLogger(SuspendManager.class);
 
 
   private final LinkedList<SuspendContext> myEventContexts  = new LinkedList<SuspendContext>();

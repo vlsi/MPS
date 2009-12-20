@@ -67,7 +67,7 @@ public class JavaConverterTreeBuilder {
   private BaseMethodDeclaration myCurrentMethod;
   private TypesProvider myTypesProvider;
 
-  private static Logger LOG = Logger.getLogger(JavaConverterTreeBuilder.class);
+  private static final Logger LOG = Logger.getLogger(JavaConverterTreeBuilder.class);
 
 
   public jetbrains.mps.baseLanguage.structure.Expression processExpressionRefl(Expression expression) {

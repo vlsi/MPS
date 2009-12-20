@@ -42,7 +42,7 @@ import java.util.Iterator;
  * @author Kostik
  */
 public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iterable<MPSTreeNode> {
-  private static Logger LOG = Logger.getLogger(MPSTreeNode.class);
+  private static final Logger LOG = Logger.getLogger(MPSTreeNode.class);
 
   private IOperationContext myOperationContext;
   private MPSTree myTree;

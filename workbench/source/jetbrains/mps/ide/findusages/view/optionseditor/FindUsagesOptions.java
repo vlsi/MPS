@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Map;
 
 public class FindUsagesOptions implements Cloneable {
-  private static Logger LOG = Logger.getLogger(FindUsagesOptions.class);
+  private static final Logger LOG = Logger.getLogger(FindUsagesOptions.class);
 
   private static final String OPTION = "option";
   private static final String CLASS_NAME = "class_name";

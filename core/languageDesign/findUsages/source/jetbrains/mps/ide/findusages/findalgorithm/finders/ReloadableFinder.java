@@ -28,7 +28,7 @@ import java.lang.ref.WeakReference;
 import com.intellij.openapi.progress.ProgressIndicator;
 
 public class ReloadableFinder implements IInterfacedFinder {
-  private static Logger LOG = Logger.getLogger(ReloadableFinder.class);
+  private static final Logger LOG = Logger.getLogger(ReloadableFinder.class);
 
   private ModuleClassReference<GeneratedFinder> myModuleClassRef;
   private WeakReference<GeneratedFinder> myFinder = new WeakReference<GeneratedFinder>(null);

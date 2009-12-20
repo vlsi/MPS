@@ -35,7 +35,7 @@ import jetbrains.mps.util.InternUtil;
 import com.intellij.openapi.util.Computable;
 
 public class PropertyCellProvider extends CellProviderWithRole {
-  private static Logger LOG = Logger.getLogger(PropertyCellProvider.class);
+  private static final Logger LOG = Logger.getLogger(PropertyCellProvider.class);
 
   private String myPropertyName;
   private PropertyDeclaration myPropertyDeclaration;

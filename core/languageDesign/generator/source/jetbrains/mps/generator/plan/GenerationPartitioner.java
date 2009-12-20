@@ -33,7 +33,7 @@ import java.util.*;
  * Date: Mar 27, 2007
  */
 public class GenerationPartitioner {
-  private static Logger LOG = Logger.getLogger(GenerationPartitioner.class);
+  private static final Logger LOG = Logger.getLogger(GenerationPartitioner.class);
 
   private Map<MappingConfiguration, Map<MappingConfiguration, PriorityData>> myPriorityMap;
   private List<CoherentSetData> myCoherentMappings;

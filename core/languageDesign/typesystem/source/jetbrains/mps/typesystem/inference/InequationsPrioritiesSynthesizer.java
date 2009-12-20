@@ -13,7 +13,7 @@ import java.util.*;
  * To change this template use File | Settings | File Templates.
  */
 public class InequationsPrioritiesSynthesizer {
-  private static Logger LOG = Logger.getLogger(InequationsPrioritiesSynthesizer.class);
+  private static final Logger LOG = Logger.getLogger(InequationsPrioritiesSynthesizer.class);
 
   private Map<EquationInfo, Pair<IWrapper, IWrapper>> myAllInequations = new HashMap<EquationInfo, Pair<IWrapper, IWrapper>>();
   private EquationManager myEquationManager;

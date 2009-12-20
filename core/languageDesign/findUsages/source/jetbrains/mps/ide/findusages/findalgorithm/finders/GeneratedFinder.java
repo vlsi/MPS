@@ -34,7 +34,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public abstract class GeneratedFinder implements IInterfacedFinder {
-  private static Logger LOG = Logger.getLogger(GeneratedFinder.class);
+  private static final Logger LOG = Logger.getLogger(GeneratedFinder.class);
 
   public boolean isApplicable(SNode node) {
     return true;

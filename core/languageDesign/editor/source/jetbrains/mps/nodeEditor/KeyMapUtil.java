@@ -41,7 +41,7 @@ import java.util.*;
  * Sep 28, 2006
  */
 public class KeyMapUtil {
-  private static Logger LOG = Logger.getLogger(KeyMapUtil.class);
+  private static final Logger LOG = Logger.getLogger(KeyMapUtil.class);
 
   /**
    * @return list of pairs: keymapAction/actionCell

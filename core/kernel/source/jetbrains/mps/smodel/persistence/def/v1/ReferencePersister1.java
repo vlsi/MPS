@@ -24,7 +24,7 @@ import org.jdom.Element;
 
 public class ReferencePersister1 implements IReferencePersister {
 
-  private static Logger LOG = Logger.getLogger(ReferencePersister1.class);
+  private static final Logger LOG = Logger.getLogger(ReferencePersister1.class);
 
   protected SNode mySourceNode;
   protected String myRole;

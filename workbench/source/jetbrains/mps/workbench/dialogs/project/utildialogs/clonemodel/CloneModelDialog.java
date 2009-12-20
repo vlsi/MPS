@@ -42,7 +42,7 @@ import javax.swing.*;
 import java.awt.GridBagConstraints;
 
 public class CloneModelDialog extends BaseStretchingBindedDialog {
-  private static Logger LOG = Logger.getLogger(CloneModelDialog.class);
+  private static final Logger LOG = Logger.getLogger(CloneModelDialog.class);
 
   private CloneModelProperties myModelProperties;
   private SModel myCloningModel;

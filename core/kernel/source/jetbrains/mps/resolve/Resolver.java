@@ -43,7 +43,7 @@ import java.util.*;
 
 public class Resolver {
 
-  private static Logger LOG = Logger.getLogger(Resolver.class);
+  private static final Logger LOG = Logger.getLogger(Resolver.class);
 
   /**
    * @return unresolved references

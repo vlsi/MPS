@@ -55,7 +55,7 @@ import java.util.List;
 )
 
 public class EditorSettings implements SearchableConfigurable, PersistentStateComponent<MyState> {
-  private static Logger LOG = Logger.getLogger(EditorSettings.class);
+  private static final Logger LOG = Logger.getLogger(EditorSettings.class);
 
   public static EditorSettings getInstance() {
     return ApplicationManager.getApplication().getComponent(EditorSettings.class);

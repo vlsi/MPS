@@ -39,7 +39,7 @@ import java.util.UUID;
  * Aug 26, 2005
  */
 public class Solution extends AbstractModule {
-  private static Logger LOG = Logger.getLogger(Solution.class);
+  private static final Logger LOG = Logger.getLogger(Solution.class);
 
   private SolutionDescriptor mySolutionDescriptor;
 

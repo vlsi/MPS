@@ -26,7 +26,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 class JarFileDataCache {
-  private static Logger LOG = Logger.getLogger(JarFileDataCache.class);
+  private static final Logger LOG = Logger.getLogger(JarFileDataCache.class);
 
   private static JarFileDataCache ourInstance = new JarFileDataCache();
 

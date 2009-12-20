@@ -46,7 +46,7 @@ import java.io.IOException;
 import java.util.*;
 
 public class ModuleMaker {
-  private static Logger LOG = Logger.getLogger(ModuleMaker.class);
+  private static final Logger LOG = Logger.getLogger(ModuleMaker.class);
 
   private final static int MAX_ERRORS = 100;
 

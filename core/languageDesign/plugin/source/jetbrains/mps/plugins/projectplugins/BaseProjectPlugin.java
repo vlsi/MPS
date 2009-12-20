@@ -40,7 +40,7 @@ import java.util.Collections;
 import java.util.List;
 
 public abstract class BaseProjectPlugin implements MPSEditorOpenHandlerOwner, PersistentStateComponent<PluginState> {
-  private static Logger LOG = Logger.getLogger(BaseProjectPlugin.class);
+  private static final Logger LOG = Logger.getLogger(BaseProjectPlugin.class);
 
   private Project myProject;
 

@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.SNode;
  * Date: Mar 7, 2006
  */
 public class DefaultChildNodeSetter extends AbstractChildNodeSetter {
-  private static Logger LOG = Logger.getLogger(DefaultChildNodeSetter.class);
+  private static final Logger LOG = Logger.getLogger(DefaultChildNodeSetter.class);
 
   LinkDeclaration myLinkDeclaration;
 

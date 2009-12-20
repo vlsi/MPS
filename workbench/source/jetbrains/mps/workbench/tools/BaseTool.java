@@ -41,7 +41,7 @@ import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 
 public abstract class BaseTool {
-  private static Logger LOG = Logger.getLogger(BaseTool.class);
+  private static final Logger LOG = Logger.getLogger(BaseTool.class);
 
   private Project myProject;
   private String myId;

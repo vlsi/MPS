@@ -37,7 +37,7 @@ import javax.swing.Icon;
 import java.util.List;
 
 public class NodeNodeData extends BaseNodeData {
-  private static Logger LOG = Logger.getLogger(NodeNodeData.class);
+  private static final Logger LOG = Logger.getLogger(NodeNodeData.class);
 
   private static final String NODE = "node";
 

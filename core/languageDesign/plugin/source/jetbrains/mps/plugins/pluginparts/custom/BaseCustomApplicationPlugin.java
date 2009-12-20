@@ -18,7 +18,7 @@ package jetbrains.mps.plugins.pluginparts.custom;
 import jetbrains.mps.logging.Logger;
 
 public abstract class BaseCustomApplicationPlugin {
-  private static Logger LOG = Logger.getLogger(BaseCustomProjectPlugin.class);
+  private static final Logger LOG = Logger.getLogger(BaseCustomProjectPlugin.class);
 
   public void init() {
     try {

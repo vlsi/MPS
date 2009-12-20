@@ -31,7 +31,7 @@ import java.util.*;
 
 
 public class GenerationTracer {
-  private static Logger LOG = Logger.getLogger(GenerationTracer.class);
+  private static final Logger LOG = Logger.getLogger(GenerationTracer.class);
 
   private Project myProject;
   private boolean myActive = false;
