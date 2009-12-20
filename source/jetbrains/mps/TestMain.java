@@ -109,10 +109,6 @@ public class TestMain {
     return holder.getMPSProject();
   }
 
-  public static void closeProject(MPSProject project) {
-    ProjectManagerEx.getInstanceEx().closeProject(project.getComponent(Project.class));
-  }
-
   public static boolean testProjectGenerationForLeaks(File projectFile) {
     return testProjectGenerationForLeaks(projectFile, 1000);
   }

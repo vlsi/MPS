@@ -1,5 +1,6 @@
 package jetbrains.mps.classpath;
 
+import com.intellij.ide.IdeEventQueue;
 import com.intellij.idea.LoggerFactory;
 import com.intellij.util.containers.MultiMap;
 import jetbrains.mps.BaseMPSTest;
@@ -76,7 +77,8 @@ public class ClassPathTest extends BaseMPSTest {
   public void testMPSModulesAreNotLoadingSameClasses() throws InvocationTargetException, InterruptedException {
     final MPSProject project = loadProject(MPS_CORE_PROJECT);
     assertNotNull("Can't open project " + MPS_CORE_PROJECT, project);
-
+    waitForEDTTasksToComplete();
+    
     final MultiMap<String, LoadEnvironment> loadedClasses = new MultiMap<String, LoadEnvironment>();
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -115,10 +117,12 @@ public class ClassPathTest extends BaseMPSTest {
       }
     });
 
-    waitForEDTTasksToComplete();
-    SwingUtilities.invokeAndWait(new Runnable() {
+    ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        TestMain.closeProject(project);
+        project.dispose();
+
+        IdeEventQueue.getInstance().flushQueue();
+        System.gc();
       }
     });
     waitForEDTTasksToComplete();
