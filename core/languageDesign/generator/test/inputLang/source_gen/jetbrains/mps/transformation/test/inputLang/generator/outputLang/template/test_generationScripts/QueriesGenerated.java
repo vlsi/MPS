@@ -16,7 +16,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
 public class QueriesGenerated {
-
   public static boolean createRootRule_Condition_1202245164352(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     return QueriesUtil.isTest1(_context.getInputModel());
   }
@@ -52,7 +51,7 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1195509228078(final IOperationContext operationContext, final MappingScriptContext _context) {
-    // test1 only
+    // test1 only 
     if (!(QueriesUtil.isTest1(_context.getModel()))) {
       return;
     }
@@ -64,7 +63,7 @@ public class QueriesGenerated {
   }
 
   public static void mappingScript_CodeBlock_1195510384869(final IOperationContext operationContext, final MappingScriptContext _context) {
-    // test1 only
+    // test1 only 
     Object object = _context.getStepObject("run post-processing");
     if (object == null) {
       return;
@@ -73,5 +72,4 @@ public class QueriesGenerated {
     SNode outputRoot = SModelOperations.createNewRootNode(_context.getModel(), "jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", null);
     SPropertyOperations.set(outputRoot, "name", "created by post-processing script");
   }
-
 }

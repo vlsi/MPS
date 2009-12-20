@@ -10,7 +10,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1206460092545(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "reduceInheritors", "none");
   }
@@ -30,5 +29,4 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1206460249786(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "inputChild", true);
   }
-
 }

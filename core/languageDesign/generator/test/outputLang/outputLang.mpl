@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.transformation.test.outputLang" uuid="157a9668-bf58-417b-893e-53d86388dc56" java-stubs-enabled="false" compileInMPS="false">
   <models>
-    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.transformation.test.outputLang" />
     <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.transformation.test.outputLang" />
+    <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.transformation.test.outputLang" />
   </models>
   <accessoryModels />
   <generators>
@@ -17,9 +17,7 @@
       <mapping-priorities />
     </generator>
   </generators>
-  <classPath>
-    <entry path="${mps_home}/core/languageDesign/generator/classes" include="false" />
-  </classPath>
+  <classPath />
   <languageRuntimeClassPath />
   <sourcePath />
   <extendedLanguages>

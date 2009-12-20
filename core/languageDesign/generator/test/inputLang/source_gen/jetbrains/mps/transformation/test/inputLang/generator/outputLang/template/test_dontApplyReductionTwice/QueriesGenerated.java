@@ -7,9 +7,7 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1209604575152(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.hasValue(_context.getNode(), "useInTest", "dontApplyReductionTwice", "none");
   }
-
 }
