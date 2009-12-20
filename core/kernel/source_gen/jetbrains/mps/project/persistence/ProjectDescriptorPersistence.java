@@ -20,6 +20,9 @@ import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.xmlQuery.runtime.AttributeUtils;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class ProjectDescriptorPersistence {
   protected static Log log = LogFactory.getLog(ProjectDescriptorPersistence.class);
@@ -202,7 +205,12 @@ public class ProjectDescriptorPersistence {
 
     try {
       Document document = JDOMUtil.loadDocument(file);
-      Element projectElement = ((Element)document.getRootElement());
+      List<Element> components = ListSequence.fromListWithValues(new ArrayList<Element>(), ((List<Element>)document.getRootElement().getChildren("component")));
+      Element projectElement = ((Element)ListSequence.fromList(components).findFirst(new IWhereFilter<Element>() {
+        public boolean accept(Element it) {
+          return it.getAttributeValue("name").equals("MPSProject");
+        }
+      }));
 
       loadProjectDescriptorFromElement(descriptor, file, projectElement);
     } catch (Exception e) {

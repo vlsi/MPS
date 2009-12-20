@@ -99,35 +99,36 @@ public abstract class Macros {
   }
 
   protected String expandPath_internal(String path, IFile anchorFile) {
-    IFile result = tryToExpandWith(path, SAMPLES_HOME, PathManager.getSamplesPath());
-    if (result == null) {
-      result = tryToExpandWith(path, MPS_HOME, PathManager.getHomePath());
-      if (result == null) {
-        Set<String> macroNames = PathMacros.getInstance().getAllMacroNames();
-        for (String macro : macroNames) {
-          String prefix = "${" + macro + "}";
-          if (path.startsWith(prefix)) {
-            String relativePath = removePrefix(path, prefix);
-            result = FileSystem.getFile(PathMacros.getInstance().getValue(macro)).child(relativePath);
-            break;
-          }
-        }
+    IFile result = null;
 
-        if (result == null) {
-          if (path.startsWith("${")) {
-            int end = path.indexOf("}");
-            if (end != -1) {
-              LOG.error("Wasn't able to expand path " + path);
-              LOG.error("Please define path variable " + path.substring(2, end) + " in path variables section of settings");
-            }
-            return path;
-          }
-
-          result = FileSystem.getFile(path);
-        }
+    Set<String> macroNames = PathMacros.getInstance().getAllMacroNames();
+    for (String macro : macroNames) {
+      String prefix = "${" + macro + "}";
+      if (path.startsWith(prefix)) {
+        String relativePath = removePrefix(path, prefix);
+        result = FileSystem.getFile(PathMacros.getInstance().getValue(macro)).child(relativePath);
+        break;
       }
     }
-    return result.getCanonicalPath();
+    if (result != null) return result.getCanonicalPath();
+
+    result = tryToExpandWith(path, MPS_HOME, PathManager.getHomePath());
+    if (result != null) return result.getCanonicalPath();
+
+    result = tryToExpandWith(path, SAMPLES_HOME, PathManager.getSamplesPath());
+    if (result != null) return result.getCanonicalPath();
+
+    if (!path.startsWith("${")) {
+      result = FileSystem.getFile(path);
+      return result.getCanonicalPath();
+    }
+
+    int end = path.indexOf("}");
+    if (end != -1) {
+      LOG.error("Wasn't able to expand path " + path);
+      LOG.error("Please define path variable " + path.substring(2, end) + " in path variables section of settings");
+    }
+    return path;
   }
 
   private IFile tryToExpandWith(String path, String macroName, String macroValue) {
