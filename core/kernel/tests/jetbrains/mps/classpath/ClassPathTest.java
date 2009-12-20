@@ -71,7 +71,7 @@ public class ClassPathTest extends BaseMPSTest {
 
     Except: solutions having "don't load classes" enabled, *.jar
 
-    If two modules contain 
+    todo:explanation
   */
   public void testMPSModulesAreNotLoadingSameClasses() throws InvocationTargetException, InterruptedException {
     final MPSProject project = loadProject(MPS_CORE_PROJECT);
@@ -123,7 +123,7 @@ public class ClassPathTest extends BaseMPSTest {
     });
     waitForEDTTasksToComplete();
 
-    List<Conflict> conflicts = new ArrayList<Conflict>();
+    Set<Conflict> conflicts = new HashSet<Conflict>();
     for (String className : loadedClasses.keySet()) {
       Collection<LoadEnvironment> environments = loadedClasses.get(className);
       if (environments.size() > 1) {
@@ -146,7 +146,9 @@ public class ClassPathTest extends BaseMPSTest {
       packages.remove(some);
       packages.addAll(pathItem.getSubpackages(some));
 
-      classNames.addAll(pathItem.getAvailableClasses(some));
+      for (String shortClassName : pathItem.getAvailableClasses(some)) {
+        classNames.add(some + "." + shortClassName);
+      }
     }
 
     return classNames;
@@ -172,7 +174,7 @@ public class ClassPathTest extends BaseMPSTest {
     return project;
   }
 
-  private String getConflictsDescription(List<Conflict> conflicts) {
+  private String getConflictsDescription(Collection<Conflict> conflicts) {
     StringBuilder result = new StringBuilder();
     for (Conflict c : conflicts) {
       result.append(c.toString());
@@ -225,6 +227,22 @@ public class ClassPathTest extends BaseMPSTest {
 
     public void addLoadEnvironments(Collection<LoadEnvironment> loadEnvironments) {
       myLoadEnvironments.addAll(loadEnvironments);
+    }
+
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+
+      Conflict conflict = (Conflict) o;
+
+      if (myLoadEnvironments != null ? !myLoadEnvironments.equals(conflict.myLoadEnvironments) : conflict.myLoadEnvironments != null)
+        return false;
+
+      return true;
+    }
+
+    public int hashCode() {
+      return myLoadEnvironments != null ? myLoadEnvironments.hashCode() : 0;
     }
 
     public String toString() {
