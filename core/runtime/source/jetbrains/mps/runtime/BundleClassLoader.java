@@ -21,7 +21,9 @@ import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
 
-public class BundleClassLoader<T> extends BaseClassLoader {
+public class
+
+  BundleClassLoader<T> extends BaseClassLoader {
   private Map<String, Class> myClassesCache = new HashMap<String, Class>();
   private final Object myLock = new Object();
 
