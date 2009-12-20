@@ -36,7 +36,6 @@ import java.util.*;
  * Jun 18, 2008
  */
 public class MigrationScriptFinder implements IFinder {
-
   private List<SNodePointer> myScripts = new ArrayList<SNodePointer>();
   private IOperationContext myOperationContext;
 

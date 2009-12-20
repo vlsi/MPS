@@ -46,11 +46,10 @@ import java.util.List;
  * Jun 19, 2008
  */
 public class MigrationScriptsTool extends TabbedUsagesTool {
-  private static Logger LOG = Logger.getLogger(MigrationScriptsTool.class);
+  private static final Logger LOG = Logger.getLogger(MigrationScriptsTool.class);
 
   private List<SNodePointer> myScripts;
   private List<MigrationScriptsView> myViews = new ArrayList<MigrationScriptsView>();
-  private ContentManagerAdapter myContentListener;
 
   public MigrationScriptsTool(Project project) {
     super(project, "Migration", -1, null, ToolWindowAnchor.BOTTOM, true);

@@ -20,7 +20,7 @@ import javax.swing.SwingUtilities;
 import org.jetbrains.annotations.Nullable;
 
 public abstract class TabbedUsagesTool extends BaseProjectTool implements INavigateableTool {
-  private static Logger LOG = Logger.getLogger(UsagesViewTool.class);
+  private static final Logger LOG = Logger.getLogger(UsagesViewTool.class);
   private ContentManagerAdapter myContentListener;
   private ReloadAdapter myReloadHandler;
   private ContentManager myContentManager;
