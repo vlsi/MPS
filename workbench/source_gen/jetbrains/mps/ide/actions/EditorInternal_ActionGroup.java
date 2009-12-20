@@ -24,6 +24,7 @@ public class EditorInternal_ActionGroup extends GeneratedActionGroup {
       EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.HighlightCellDependencies_Action", "jetbrains.mps.ide");
       EditorInternal_ActionGroup.this.addAction("jetbrains.mps.baseLanguage.plugin.PrintNodePosition_Action", "jetbrains.mps.baseLanguage");
       EditorInternal_ActionGroup.this.addSeparator();
+      EditorInternal_ActionGroup.this.addAction("jetbrains.mps.ide.actions.LanguagePaths_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }
