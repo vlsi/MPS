@@ -15,10 +15,14 @@
  */
 package jetbrains.mps.reloading;
 
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Set;
+import java.io.IOException;
 import java.util.HashSet;
+import java.util.Set;
 
 public abstract class AbstractClassPathItem implements IClassPathItem {
   public long getTimestamp() {
@@ -55,4 +59,20 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
   protected abstract void collectSubpackages(Set<String> subpackages, String namespace);
 
   protected abstract void collectAvailableClasses(Set<String> classes, String namespace);
+
+  public static IClassPathItem createFromPath(String path, IModule module) throws IOException {
+    IFile file = FileSystem.getFile(path);
+    if (!file.exists())
+      throw new IOException("Can't load class path item " + path + " in " + (module == null ? "" : module.toString()) + (file.isDirectory() ? ". Execute make in IDEA." : ""));
+
+    IClassPathItem currentItem;
+    if (file.isDirectory()) {
+      currentItem = new FileClassPathItem(path);
+    } else {
+      currentItem = new JarFileClassPathItem(path);
+    }
+
+
+    return currentItem;
+  }
 }

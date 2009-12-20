@@ -45,11 +45,8 @@ import org.jdom.JDOMException;
 import java.io.File;
 import java.io.IOException;
 import java.util.LinkedHashSet;
-import java.util.List;
 
 public class TestMain {
-  private static final Logger LOG = Logger.getLogger(TestMain.class);
-
   public static void main(String[] args) {
     if (args.length != 1) {
       System.out.println("Usage : TestMain mpsProject");
@@ -110,6 +107,10 @@ public class TestMain {
     projectManager.openProject(ideaProject);
     MPSProjectHolder holder = ideaProject.getComponent(MPSProjectHolder.class);
     return holder.getMPSProject();
+  }
+
+  public static void closeProject(MPSProject project) {
+    ProjectManagerEx.getInstanceEx().closeProject(project.getComponent(Project.class));
   }
 
   public static boolean testProjectGenerationForLeaks(File projectFile) {

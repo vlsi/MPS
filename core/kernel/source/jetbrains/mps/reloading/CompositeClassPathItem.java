@@ -139,4 +139,13 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     return result;
   }
 
+  public String toString() {
+    StringBuilder result = new StringBuilder("composite class path item:");
+
+    for (IClassPathItem child:myChildren){
+      result.append(child.toString()).append("\n");
+    }
+
+    return result.toString();
+  }
 }

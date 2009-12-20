@@ -19,22 +19,22 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.stubs.BaseStubModelRootManager;
-import jetbrains.mps.stubs.javastub.classpath.JavaStubClassPathModelRootManager;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.stubs.BaseStubModelRootManager;
+import jetbrains.mps.stubs.javastub.classpath.JavaStubClassPathModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.SuspiciousModelIndex;
@@ -601,25 +601,15 @@ public abstract class AbstractModule implements IModule {
   private void updateClassPathItem() {
     CompositeClassPathItem result = new CompositeClassPathItem();
     CompositeClassPathItem javaStubsResult = new CompositeClassPathItem();
-    for (String s : getClassPath()) {
+    for (String path : getClassPath()) {
       try {
-        IFile file = FileSystem.getFile(s);
-        if (!file.exists()) {
-          LOG.error("Can't load class path item " + s + " in " + this + (file.isDirectory() ? ". Execute make in IDEA." : ""));
-        } else {
-          IClassPathItem currentItem;
-          if (file.isDirectory()) {
-            currentItem = new FileClassPathItem(s);
-          } else {
-            currentItem = new JarFileClassPathItem(s);
-          }
+        IClassPathItem pathItem = AbstractClassPathItem.createFromPath(path, this);
 
-          if (!EqualUtil.equals(s, getClassesGen().getPath()) || areJavaStubsEnabled()) {
-            javaStubsResult.add(currentItem);
-          }
-
-          result.add(currentItem);
+        if (!EqualUtil.equals(path, getClassesGen().getPath()) || areJavaStubsEnabled()) {
+          javaStubsResult.add(pathItem);
         }
+
+        result.add(pathItem);
       } catch (IOException e) {
         LOG.error(e);
       }

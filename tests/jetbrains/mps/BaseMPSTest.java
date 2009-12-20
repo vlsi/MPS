@@ -31,7 +31,11 @@ public class BaseMPSTest extends TestCase {
 
   protected void tearDown() throws Exception {
     super.tearDown();
-    for (int i = 0; i < 3; i++) {
+    waitForEDTTasksToComplete();
+  }
+
+  protected void waitForEDTTasksToComplete() {
+    for (int i = 0; i < 5; i++) {
       try {
         SwingUtilities.invokeAndWait(new Runnable() {
           public void run() {

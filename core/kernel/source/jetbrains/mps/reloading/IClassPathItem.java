@@ -25,8 +25,7 @@ import java.util.Set;
 /**
  * @author Kostik
  */
-public interface
-  IClassPathItem {
+public interface IClassPathItem {
   @Nullable
   byte[] getClass(String name);
 
