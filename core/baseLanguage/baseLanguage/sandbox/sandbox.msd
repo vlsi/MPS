@@ -3,10 +3,7 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="jetbrains.mps.baseLanguage.sandbox" />
   </models>
-  <classPath>
-    <entry path="${mps_home}/core/baseLanguage/closures/runtime/classes" include="false" />
-    <entry path="${mps_home}/core/baseLanguage/collections/runtime/classes" include="false" />
-  </classPath>
+  <classPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
