@@ -230,12 +230,12 @@ public class RuntimeEnvironment<T> {
     if (myLoadedClasses.containsKey(name)) {
       T oldLoaderId = myLoadedClasses.get(name);
       if (!equals(oldLoaderId, id)) {
-        throw new IllegalStateException(
-          "Class \"" + name + "\" was loaded by multiple module classloaders simultaneously.\n" +
-            "Classloaders: \n" +
-            "  " + id.toString() + "\n" +
-            "  " + oldLoaderId.toString()
-        );
+        String s = "Class \"" + name + "\" was loaded by multiple module classloaders simultaneously.\n" +
+          "Classloaders: \n" +
+          "  " + id.toString() + "\n" +
+          "  " + oldLoaderId.toString();
+        //throw new IllegalStateException(s);
+        System.out.println(s);
       }
     } else {
       myLoadedClasses.put(name, id);
