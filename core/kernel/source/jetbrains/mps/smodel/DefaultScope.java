@@ -27,7 +27,7 @@ import jetbrains.mps.util.CollectionUtil;
 import java.util.*;
 
 public abstract class DefaultScope extends BaseScope {
-  private static Logger LOG = Logger.getLogger(DefaultScope.class);
+  private static final Logger LOG = Logger.getLogger(DefaultScope.class);
 
   private boolean myInitialized;
   private boolean myInitializationInProgress;

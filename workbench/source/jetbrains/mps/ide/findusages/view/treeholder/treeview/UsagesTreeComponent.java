@@ -38,7 +38,7 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class UsagesTreeComponent extends JPanel implements IChangeListener {
-  private static Logger LOG = Logger.getLogger(UsagesTreeComponent.class);
+  private static final Logger LOG = Logger.getLogger(UsagesTreeComponent.class);
 
   private static final String CONTENTS = "contents";
   private static final String VIEW_OPTIONS = "view_options";

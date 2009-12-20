@@ -39,7 +39,7 @@ import java.util.Collections;
 import java.util.List;
 
 public abstract class BaseSingletabbedTab implements ILazyTab {
-  private static Logger LOG = Logger.getLogger(BaseSingletabbedTab.class);
+  private static final Logger LOG = Logger.getLogger(BaseSingletabbedTab.class);
 
   private SModelRepositoryAdapter myWeakSModelRepositoryListener;
   private SModelListener myListener = new MySModelAdapter();

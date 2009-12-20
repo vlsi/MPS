@@ -22,7 +22,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.EqualUtil;
 
 public class VariableWrapper extends NodeWrapper implements IWrapperListener {
-  private static Logger LOG = Logger.getLogger(VariableWrapper.class);
+  private static final Logger LOG = Logger.getLogger(VariableWrapper.class);
 
   private boolean myIsShallowConcrete = false;
   private IWrapper myShallowConcreteRepresentator = null;

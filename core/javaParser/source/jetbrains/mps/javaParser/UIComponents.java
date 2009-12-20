@@ -37,7 +37,7 @@ import org.jdesktop.observablecollections.ObservableListListener;
  * To change this template use File | Settings | File Templates.
  */
 public class UIComponents {
-  private static Logger LOG = Logger.getLogger(UIComponents.class);
+  private static final Logger LOG = Logger.getLogger(UIComponents.class);
 
   public static MyDialog createClasspathsDialog(final File sourceDir, List<String> classFqNames) {
     IOperationContext data = MPSDataKeys.OPERATION_CONTEXT.getData(DataManager.getInstance().getDataContext());

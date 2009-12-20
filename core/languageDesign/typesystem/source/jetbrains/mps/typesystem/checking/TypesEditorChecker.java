@@ -40,7 +40,7 @@ import com.intellij.openapi.application.ModalityState;
 import org.jetbrains.annotations.Nullable;
 
 public class TypesEditorChecker extends EditorCheckerAdapter {
-  private static Logger LOG = Logger.getLogger(TypesEditorChecker.class);
+  private static final Logger LOG = Logger.getLogger(TypesEditorChecker.class);
 
   public static boolean IMMEDIATE_QFIX_DISABLED = false;
 

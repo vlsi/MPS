@@ -26,7 +26,7 @@ import java.util.*;
 import org.jetbrains.annotations.NotNull;
 
 public class RefactoringNodeMembersAccessModifier implements NodeMemberAccessModifier {
-  private static Logger LOG = Logger.getLogger(RefactoringNodeMembersAccessModifier.class);
+  private static final Logger LOG = Logger.getLogger(RefactoringNodeMembersAccessModifier.class);
 
   private Map<Pair<String, String>, String> myChildrenRolesMap = new HashMap<Pair<String, String>, String>();
   private Map<Pair<String, String>, String> myReferencesRolesMap = new HashMap<Pair<String, String>, String>();

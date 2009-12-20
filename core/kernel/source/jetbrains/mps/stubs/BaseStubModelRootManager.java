@@ -27,7 +27,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 public abstract class BaseStubModelRootManager extends AbstractModelRootManager {
-  private static Logger LOG = Logger.getLogger(BaseStubModelRootManager.class);
+  private static final Logger LOG = Logger.getLogger(BaseStubModelRootManager.class);
 
   private static Map<SModelReference, Long> ourTimestamps = new HashMap<SModelReference, Long>();
 

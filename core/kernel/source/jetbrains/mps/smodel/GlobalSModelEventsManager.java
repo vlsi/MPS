@@ -32,7 +32,7 @@ import java.util.Collections;
 import java.util.List;
 
 public class GlobalSModelEventsManager implements ApplicationComponent {
-  private static Logger LOG = Logger.getLogger(GlobalSModelEventsManager.class);
+  private static final Logger LOG = Logger.getLogger(GlobalSModelEventsManager.class);
 
   public static GlobalSModelEventsManager getInstance() {
     return ApplicationManager.getApplication().getComponent(GlobalSModelEventsManager.class);

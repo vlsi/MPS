@@ -32,7 +32,7 @@ import org.jetbrains.annotations.NotNull;
 import java.awt.HeadlessException;
 
 public abstract class BasePropertiesDialog extends BaseTabbedBindedDialog {
-  private static Logger LOG = Logger.getLogger(BasePropertiesDialog.class);
+  private static final Logger LOG = Logger.getLogger(BasePropertiesDialog.class);
 
   protected BasePropertiesDialog(String text, IOperationContext operationContext) throws HeadlessException {
     super(text, operationContext);

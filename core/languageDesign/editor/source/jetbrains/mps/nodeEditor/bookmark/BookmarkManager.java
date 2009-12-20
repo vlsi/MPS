@@ -52,7 +52,7 @@ import org.jetbrains.annotations.NotNull;
     }
 )
 public class BookmarkManager implements ProjectComponent, PersistentStateComponent<MyState> {
-  private static Logger LOG = Logger.getLogger(BookmarkManager.class);
+  private static final Logger LOG = Logger.getLogger(BookmarkManager.class);
 
   private static Icon[] myBookmarkIcons = new Icon[] {
     Icons.BOOKMARK_0,

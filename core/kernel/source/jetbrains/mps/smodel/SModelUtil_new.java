@@ -42,7 +42,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class SModelUtil_new implements ApplicationComponent {
-  private static Logger LOG = Logger.getLogger(SModelUtil_new.class);
+  private static final Logger LOG = Logger.getLogger(SModelUtil_new.class);
 
   public SModelUtil_new(ClassLoaderManager clManager, GlobalSModelEventsManager meManager) {
     SModelUtil.startListeningOnce(clManager, meManager);

@@ -38,7 +38,7 @@ import java.util.Iterator;
  * To change this template use File | Settings | File Templates.
  */
 public class TypesProvider {
-  private static Logger LOG = Logger.getLogger(TypesProvider.class);
+  private static final Logger LOG = Logger.getLogger(TypesProvider.class);
 
   ReferentsCreator myReferentsCreator;
 

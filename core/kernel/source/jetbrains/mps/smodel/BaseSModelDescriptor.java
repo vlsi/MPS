@@ -33,7 +33,7 @@ import org.jetbrains.annotations.Nullable;
 import java.util.*;
 
 public abstract class BaseSModelDescriptor implements SModelDescriptor {
-  private static Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
+  private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
   protected static volatile long ourStructuralState = 0;
 
   protected SModelReference myModelReference;

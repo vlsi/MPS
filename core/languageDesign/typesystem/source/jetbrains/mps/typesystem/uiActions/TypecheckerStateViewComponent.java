@@ -42,7 +42,7 @@ import com.intellij.openapi.util.Pair;
 import org.jdom.Text;
 
 public class TypecheckerStateViewComponent extends JPanel {
-  private static Logger LOG = Logger.getLogger(TypecheckerStateViewComponent.class);
+  private static final Logger LOG = Logger.getLogger(TypecheckerStateViewComponent.class);
 
   private IOperationContext myOperationContext;
   private EditorsProvider myEditorsProvider;

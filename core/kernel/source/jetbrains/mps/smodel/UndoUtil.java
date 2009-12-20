@@ -26,7 +26,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
 
 public class UndoUtil {
-  private static Logger LOG = Logger.getLogger(UndoUtil.class);
+  private static final Logger LOG = Logger.getLogger(UndoUtil.class);
 
   public static void addUndoableAction(UndoableAction action) {
     DataContext dataContext = DataManager.getInstance().getDataContext();
