@@ -916,7 +916,7 @@
             </node>
             <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1235929414150">
               <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1235929414151">
-                <link role="baseMethodDeclaration" targetNodeId="24.~ComponentManager.getComponent(java.lang.String):com.intellij.openapi.components.BaseComponent" resolveInfo="getComponent" />
+                <link role="baseMethodDeclaration" targetNodeId="24.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1235929414152">
                   <link role="classifier" targetNodeId="18.~UsagesViewTool" resolveInfo="UsagesViewTool" />
                 </node>
@@ -936,7 +936,7 @@
               <link role="baseMethodDeclaration" targetNodeId="18.~UsagesViewTool.findUsages(jetbrains.mps.ide.findusages.model.IResultProvider,jetbrains.mps.ide.findusages.model.SearchQuery,boolean,boolean,boolean,java.lang.String):void" resolveInfo="findUsages" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1235929414158">
                 <link role="classConcept" targetNodeId="18.~FindUtils" resolveInfo="FindUtils" />
-                <link role="baseMethodDeclaration" targetNodeId="18.~FindUtils.makeProvider(java.util.Collection):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="makeProvider" />
+                <link role="baseMethodDeclaration" targetNodeId="18.~FindUtils.makeProvider(jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder...):jetbrains.mps.ide.findusages.model.IResultProvider" resolveInfo="makeProvider" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1235929414159">
                   <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1235929414160">
                     <link role="baseMethodDeclaration" targetNodeId="1219922562113" resolveInfo="QueryFinder" />
@@ -1071,7 +1071,7 @@
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1219405711163">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1219405711164">
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1219405711165">
-              <link role="baseMethodDeclaration" targetNodeId="30.~Component.setSize(java.awt.Dimension):void" resolveInfo="setSize" />
+              <link role="baseMethodDeclaration" targetNodeId="30.~Window.setSize(java.awt.Dimension):void" resolveInfo="setSize" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1219405711166">
                 <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="1219405711167">
                   <link role="baseMethodDeclaration" targetNodeId="30.~Dimension.&lt;init&gt;(int,int)" resolveInfo="Dimension" />
@@ -3653,7 +3653,7 @@
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1220010894088">
             <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_Project" id="3267667135427744557" />
             <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1220010933467">
-              <link role="baseMethodDeclaration" targetNodeId="10.~MPSProject.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
+              <link role="baseMethodDeclaration" targetNodeId="24.~ComponentManager.getComponent(java.lang.Class):java.lang.Object" resolveInfo="getComponent" />
               <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ClassifierClassExpression" id="1220010938469">
                 <link role="classifier" targetNodeId="27.~Project" resolveInfo="Project" />
               </node>
