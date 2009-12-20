@@ -73,6 +73,7 @@ public class SModel implements Iterable<SNode> {
   private RefactoringHistory myRefactoringHistory = new RefactoringHistory();
   private boolean myUsesLog;
   private boolean myRegistrationsForbidden = false;
+  private final SModelVersionsInfo myVersionsInfo = new SModelVersionsInfo();
 
   public SModel(@NotNull SModelReference modelReference) {
     myReference = modelReference;
@@ -1506,6 +1507,11 @@ public class SModel implements Iterable<SNode> {
       }
     }
     return changed;
+  }
+
+  @NotNull
+  public SModelVersionsInfo getVersionsInfo() {
+    return myVersionsInfo;
   }
 
   private boolean changed(ModuleReference ref1, ModuleReference ref2) {

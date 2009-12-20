@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.vcs.diff;
+package jetbrains.mps;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
@@ -167,7 +167,7 @@ public class ModelAssert {
       List<SNode> expectedChildren = expectedNode.getChildren(role);
       List<SNode> actualChildren = actualNode.getChildren(role);
 
-      assertEquals(getErrorString("child count", expectedNode, actualNode), expectedChildren.size(), actualChildren.size());
+      assertEquals(getErrorString("child count for role " + role, expectedNode, actualNode), expectedChildren.size(), actualChildren.size());
 
       for (SNode expectedChild : expectedChildren) {
         boolean wasFound = false;

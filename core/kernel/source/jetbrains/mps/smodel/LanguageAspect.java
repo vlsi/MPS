@@ -301,6 +301,10 @@ public enum LanguageAspect {
     return SModelRepository.getInstance().getModelDescriptor(new SModelReference(l.getNamespace() + "." + myName, null), l);
   }
 
+  public SModelReference get(ModuleReference l) {
+    return new SModelReference(l.getModuleFqName() + "." + myName, null);
+  }
+
   public String getName() {
     return myName;
   }

@@ -155,16 +155,7 @@ public class ModelUtils {
     index = shortName.lastIndexOf("\\");
     if (index != -1) shortName = shortName.substring(index + 1);
 
-    index = shortName.indexOf('.');
-    shortName = (index >= 0) ? shortName.substring(0, index) : shortName;
-    int index1 = shortName.indexOf("@");
-    String modelName = shortName;
-    String modelStereotype = "";
-    if (index1 >= 0) {
-      modelName = shortName.substring(0, index1);
-      modelStereotype = shortName.substring(index1 + 1);
-    }
-    return new String[]{modelName, modelStereotype};
+    return new String[]{ModelPersistence.extractModelName(shortName), ModelPersistence.extractModelStereotype(shortName)};
   }
 
   public static File chooseZipFileNameForModelFile(String modelFilePath) {

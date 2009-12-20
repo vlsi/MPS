@@ -123,16 +123,8 @@ public class ModelPersistence {
     LOG.debug("ModelPersistence readModel from :" + file.getAbsolutePath());
 
     // the model FQ name ...
-    String fileName = file.getName();
-    int index = fileName.indexOf('.');
-    String rawModelName = (index >= 0) ? fileName.substring(0, index) : fileName;
-    String modelName = rawModelName;
-    int index1 = rawModelName.indexOf("@");
-    String modelStereotype = "";
-    if (index1 >= 0) {
-      modelName = rawModelName.substring(0, index1);
-      modelStereotype = rawModelName.substring(index1 + 1);
-    }
+    String modelName = extractModelName(file.getName());
+    String modelStereotype = extractModelStereotype(file.getName());
 
     Document document = loadModelDocument(file);
     int modelPersistenceVersion = getModelPersistenceVersion(document);
@@ -147,6 +139,34 @@ public class ModelPersistence {
       }
     }
     return model;
+  }
+
+  @NotNull
+  public static String extractModelStereotype(String fileName) {
+    String rawModelName = extractRawModelName(fileName);
+    int index1 = rawModelName.indexOf("@");
+    String modelStereotype = "";
+    if (index1 >= 0) {
+      modelStereotype = rawModelName.substring(index1 + 1);
+    }
+    return modelStereotype;
+  }
+
+  @NotNull
+  public static String extractModelName(String fileName) {
+    String rawModelName = extractRawModelName(fileName);
+    String modelName = rawModelName;
+    int index1 = rawModelName.indexOf("@");
+    if (index1 >= 0) {
+      modelName = rawModelName.substring(0, index1);
+    }
+    return modelName;
+  }
+
+  @NotNull
+  private static String extractRawModelName(String fileName) {
+    int index = fileName.indexOf('.');
+    return (index >= 0) ? fileName.substring(0, index) : fileName;
   }
 
   public static SModel readModel(CharSequence data) throws JDOMException, IOException {
