@@ -50,14 +50,14 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
     VirtualFile file = VFileSystem.getFile(ReRunMergeFromBackup_Action.this.model.getModelFile());
     if (file == null) {
       // TODO This debug output was added to inspect MPS-7232 issue 
-      if (log.isErrorEnabled()) {
-        log.error("MPS-7232. model = " + ReRunMergeFromBackup_Action.this.model.getSModelReference());
+      if (log.isWarnEnabled()) {
+        log.warn("MPS-7232. model = " + ReRunMergeFromBackup_Action.this.model.getSModelReference());
       }
-      if (log.isErrorEnabled()) {
-        log.error("MPS-7232. model.getModelFile() = " + ReRunMergeFromBackup_Action.this.model.getModelFile().toString());
+      if (log.isWarnEnabled()) {
+        log.warn("MPS-7232. model.getModelFile() = " + ReRunMergeFromBackup_Action.this.model.getModelFile().toString());
       }
-      if (log.isErrorEnabled()) {
-        log.error("Please report this output to issue tracker: http://youtrack.jetbrains.net/issue/MPS-7232");
+      if (log.isWarnEnabled()) {
+        log.warn("Please report this output to issue tracker: http://youtrack.jetbrains.net/issue/MPS-7232");
       }
 
       return false;

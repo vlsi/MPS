@@ -42808,7 +42808,7 @@
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement" id="1168988535888339998">
-              <property name="severity" value="error" />
+              <property name="severity" value="warn" />
               <node role="logExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1168988535888340000">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1168988535888340001">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1168988535888340002">
@@ -42827,7 +42827,7 @@
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement" id="1168988535888340008">
-              <property name="severity" value="error" />
+              <property name="severity" value="warn" />
               <node role="logExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1168988535888340010">
                 <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1168988535888340011">
                   <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1168988535888340012">
@@ -42851,7 +42851,7 @@
               </node>
             </node>
             <node role="statement" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement" id="1168988535888340028">
-              <property name="severity" value="error" />
+              <property name="severity" value="warn" />
               <node role="logExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1168988535888340029">
                 <property name="value" value="Please report this output to issue tracker: http://youtrack.jetbrains.net/issue/MPS-7232" />
               </node>
