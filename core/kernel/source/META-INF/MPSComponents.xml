@@ -584,6 +584,10 @@
         <component>
             <implementation-class>jetbrains.mps.make.StartupModuleMaker</implementation-class>
         </component>
+
+        <component>
+            <implementation-class>jetbrains.mps.changesmanager.ChangesManager</implementation-class>
+        </component>
     </project-components>
 
 
