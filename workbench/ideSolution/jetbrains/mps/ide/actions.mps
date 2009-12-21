@@ -23016,24 +23016,6 @@
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5829203215232145494">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5829203215232145496">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5829203215232145495">
-                <link role="variableDeclaration" targetNodeId="5829203215232145487" resolveInfo="nodes" />
-              </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation" id="5829203215232145500">
-                <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5829203215232145504">
-                  <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="5829203215232145505" />
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="5829203215232145506">
-                    <link role="baseMethodDeclaration" targetNodeId="177.6409339300305624772" resolveInfo="findEditor" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5829203215232145620">
-                      <link role="variableDeclaration" targetNodeId="5829203215232145602" resolveInfo="scope" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5829203215232145526">
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5829203215232145530">
               <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5829203215232145527">
@@ -23043,9 +23025,13 @@
                 <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5829203215232145571">
                   <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="5829203215232145563" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="5829203215232145582">
-                    <link role="baseMethodDeclaration" targetNodeId="177.5829203215232140936" resolveInfo="findEditorActions" />
+                    <link role="baseMethodDeclaration" targetNodeId="177.1567570417158062208" resolveInfo="findConceptAspectCollection" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5829203215232145630">
                       <link role="variableDeclaration" targetNodeId="5829203215232145602" resolveInfo="scope" />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="8360039740498068859">
+                      <link role="enumConstantDeclaration" targetNodeId="40.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
+                      <link role="enumClass" targetNodeId="40.~LanguageAspect" resolveInfo="LanguageAspect" />
                     </node>
                   </node>
                 </node>
@@ -23084,11 +23070,15 @@
                 <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3590548766499678415">
                   <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="3590548766499678416" />
                   <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3590548766499678417">
-                    <link role="baseMethodDeclaration" targetNodeId="177.6409339300305624772" resolveInfo="findEditor" />
+                    <link role="baseMethodDeclaration" targetNodeId="177.8360039740498068384" resolveInfo="findConceptAspect" />
                     <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="3590548766499678418">
                       <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
                       <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                       <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="3590548766499678419" />
+                    </node>
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="8360039740498085867">
+                      <link role="enumConstantDeclaration" targetNodeId="40.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
+                      <link role="enumClass" targetNodeId="40.~LanguageAspect" resolveInfo="LanguageAspect" />
                     </node>
                   </node>
                 </node>
@@ -23397,11 +23387,15 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6409339300305624950">
               <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="6409339300305624949" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6409339300305624954">
-                <link role="baseMethodDeclaration" targetNodeId="177.6409339300305625141" resolveInfo="findConstraints" />
+                <link role="baseMethodDeclaration" targetNodeId="177.8360039740498068384" resolveInfo="findConceptAspect" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6409339300305624955">
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="6409339300305624956" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="8360039740498069020">
+                  <link role="enumConstantDeclaration" targetNodeId="40.~LanguageAspect.CONSTRAINTS" resolveInfo="CONSTRAINTS" />
+                  <link role="enumClass" targetNodeId="40.~LanguageAspect" resolveInfo="LanguageAspect" />
                 </node>
               </node>
             </node>
@@ -23640,11 +23634,15 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6409339300305624981">
               <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="6409339300305624982" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6409339300305624983">
-                <link role="baseMethodDeclaration" targetNodeId="177.1213877394029" resolveInfo="findBehaviour" />
+                <link role="baseMethodDeclaration" targetNodeId="177.8360039740498068384" resolveInfo="findConceptAspect" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6409339300305624984">
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="6409339300305624985" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="8360039740498069765">
+                  <link role="enumConstantDeclaration" targetNodeId="40.~LanguageAspect.BEHAVIOR" resolveInfo="BEHAVIOR" />
+                  <link role="enumClass" targetNodeId="40.~LanguageAspect" resolveInfo="LanguageAspect" />
                 </node>
               </node>
             </node>
@@ -25487,11 +25485,15 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6409339300305625370">
               <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="6409339300305625369" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6409339300305625374">
-                <link role="baseMethodDeclaration" targetNodeId="177.1213877394143" resolveInfo="findDataFlow" />
+                <link role="baseMethodDeclaration" targetNodeId="177.8360039740498068384" resolveInfo="findConceptAspect" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6409339300305625375">
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="6409339300305625376" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="8360039740498072542">
+                  <link role="enumConstantDeclaration" targetNodeId="40.~LanguageAspect.DATA_FLOW" resolveInfo="DATA_FLOW" />
+                  <link role="enumClass" targetNodeId="40.~LanguageAspect" resolveInfo="LanguageAspect" />
                 </node>
               </node>
             </node>
@@ -26347,11 +26349,15 @@
             <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6409339300305625436">
               <node role="operand" type="jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node" id="6409339300305625435" />
               <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="6409339300305625513">
-                <link role="baseMethodDeclaration" targetNodeId="177.6409339300305625442" resolveInfo="findTextgens" />
+                <link role="baseMethodDeclaration" targetNodeId="177.8360039740498068384" resolveInfo="findConceptAspect" />
                 <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6409339300305625515">
                   <link role="baseMethodDeclaration" targetNodeId="3322169133325856922" resolveInfo="getScope" />
                   <link role="classConcept" targetNodeId="3322169133325856916" resolveInfo="TabHelper" />
                   <node role="actualArgument" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="6409339300305625516" />
+                </node>
+                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="8360039740498072287">
+                  <link role="enumConstantDeclaration" targetNodeId="40.~LanguageAspect.TEXT_GEN" resolveInfo="TEXT_GEN" />
+                  <link role="enumClass" targetNodeId="40.~LanguageAspect" resolveInfo="LanguageAspect" />
                 </node>
               </node>
             </node>

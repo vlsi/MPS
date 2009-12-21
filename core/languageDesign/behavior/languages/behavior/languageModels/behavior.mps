@@ -972,14 +972,21 @@
                 <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="5466054087443746063">
                   <link role="concept" targetNodeId="1.1225194240794" resolveInfo="ConceptBehavior" />
                 </node>
-                <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5466054087443746064">
-                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5466054087443746065">
-                    <link role="variableDeclaration" targetNodeId="5466054087443746058" resolveInfo="concept" />
-                  </node>
-                  <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="5466054087443746066">
-                    <link role="baseMethodDeclaration" targetNodeId="17.1213877394029" resolveInfo="findBehaviour" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5466054087443746067">
-                      <link role="variableDeclaration" targetNodeId="5466054087443746044" resolveInfo="scope" />
+                <node role="initializer" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression" id="8360039740498069924">
+                  <link role="concept" targetNodeId="1.1225194240794" resolveInfo="ConceptBehavior" />
+                  <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5466054087443746064">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="5466054087443746065">
+                      <link role="variableDeclaration" targetNodeId="5466054087443746058" resolveInfo="concept" />
+                    </node>
+                    <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="5466054087443746066">
+                      <link role="baseMethodDeclaration" targetNodeId="17.8360039740498068384" resolveInfo="findConceptAspect" />
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5466054087443746067">
+                        <link role="variableDeclaration" targetNodeId="5466054087443746044" resolveInfo="scope" />
+                      </node>
+                      <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="8360039740498069918">
+                        <link role="enumConstantDeclaration" targetNodeId="11.~LanguageAspect.BEHAVIOR" resolveInfo="BEHAVIOR" />
+                        <link role="enumClass" targetNodeId="11.~LanguageAspect" resolveInfo="LanguageAspect" />
+                      </node>
                     </node>
                   </node>
                 </node>

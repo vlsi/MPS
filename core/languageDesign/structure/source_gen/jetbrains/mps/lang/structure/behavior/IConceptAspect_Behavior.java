@@ -22,7 +22,10 @@ public class IConceptAspect_Behavior {
 
   public static List<SNode> virtual_getBaseConceptCollection_5270353093116013036(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addElement(IConceptAspect_Behavior.call_getBaseConcept_2621449412040133768(thisNode));
+    SNode node = IConceptAspect_Behavior.call_getBaseConcept_2621449412040133768(thisNode);
+    if ((node != null)) {
+      ListSequence.fromList(result).addElement(IConceptAspect_Behavior.call_getBaseConcept_2621449412040133768(thisNode));
+    }
     return result;
   }
 
