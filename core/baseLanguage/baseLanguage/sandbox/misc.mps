@@ -968,29 +968,30 @@
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3592071576955705081" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3592071576955705079" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3592071576955705080">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="6663831120772346304">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="6663831120772346305">
-            <property name="name" value="a" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="6663831120772346306" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6663831120772346322">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="6663831120772346323">
-            <link role="variableDeclaration" targetNodeId="6663831120772346305" resolveInfo="a" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6663831120772346331">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6663831120772346332">
-            <link role="variableDeclaration" targetNodeId="6663831120772346314" resolveInfo="b" />
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6663831120772346316">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6663831120772346317">
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6663831120772346318">
-              <link role="baseMethodDeclaration" targetNodeId="3592071576955705077" resolveInfo="foo" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.Expression" id="6663831120772346327" />
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.TryCatchStatement" id="3382729383756688552">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3382729383756688553">
+            <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="3382729383756688546">
+              <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="3382729383756688547" />
+              <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.Expression" id="3382729383756688548" />
+              <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3382729383756688549">
+                <node role="statement" type="jetbrains.mps.baseLanguage.structure.ThrowStatement" id="3382729383756688561">
+                  <node role="throwable" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="3382729383756688563">
+                    <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="3382729383756726079">
+                      <link role="baseMethodDeclaration" targetNodeId="150.~Exception.&lt;init&gt;()" resolveInfo="Exception" />
+                    </node>
+                  </node>
+                </node>
+              </node>
             </node>
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.ThisExpression" id="6663831120772346319" />
+          </node>
+          <node role="catchClause" type="jetbrains.mps.baseLanguage.structure.CatchClause" id="3382729383756688555">
+            <node role="throwable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="3382729383756688556">
+              <property name="name" value="e" />
+              <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="3382729383756726080">
+                <link role="classifier" targetNodeId="150.~Exception" resolveInfo="Exception" />
+              </node>
+            </node>
+            <node role="catchBody" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3382729383756688558" />
           </node>
         </node>
       </node>

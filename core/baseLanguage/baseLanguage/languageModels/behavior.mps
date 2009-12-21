@@ -19178,5 +19178,50 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4313092516462065719" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="3382729383756582749">
+    <link role="concept" targetNodeId="1.1154032098014" resolveInfo="AbstractLoopStatement" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="3382729383756582750">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3382729383756582751" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3382729383756582752">
+      <property name="name" value="collectUncaughtMethodThrowables" />
+      <link role="overriddenMethod" targetNodeId="5412515780383134223" resolveInfo="collectUncaughtMethodThrowables" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="3382729383756582755">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="3382729383756591198">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3382729383756591205">
+            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="3382729383756591200">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="3382729383756591199" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="3382729383756591204">
+                <link role="link" targetNodeId="1.1154032183016" />
+              </node>
+            </node>
+            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="3382729383756591209">
+              <link role="baseMethodDeclaration" targetNodeId="5412515780383134474" resolveInfo="collectUncaughtThrowables" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3382729383756591210">
+                <link role="variableDeclaration" targetNodeId="3382729383756582756" resolveInfo="throwables" />
+              </node>
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="3382729383756591212">
+                <link role="variableDeclaration" targetNodeId="3382729383756582759" resolveInfo="ignoreMayBeThrowables" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3382729383756582756">
+        <property name="name" value="throwables" />
+        <node role="type" type="jetbrains.mps.baseLanguage.collections.structure.SetType" id="3382729383756582757">
+          <node role="elementType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="3382729383756582758">
+            <link role="concept" targetNodeId="1.1107461130800" resolveInfo="Classifier" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="3382729383756582759">
+        <property name="name" value="ignoreMayBeThrowables" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="3382729383756582760" />
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="3382729383756582761" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3382729383756582762" />
+    </node>
+  </node>
 </model>
 
