@@ -197,7 +197,17 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   public AbstractVcs getVcsFor(@NotNull VirtualFile file) {
     final String vcsName = myMappings.getVcsFor(file);
     if (vcsName == null || vcsName.length() == 0) {
-      return null;
+      // The original code was:
+      // return null;
+      // I changed it to fix MPS-7221. File can be outside of any mappings,
+      // but we still want to add it to VCS correctly
+      // MPS Patch begin:
+      if (file.getParent() == null) {
+        return null;
+      } else {
+        return findVersioningVcs(file.getParent());
+      }
+      // MPS Patch end
     }
     return AllVcses.getInstance(myProject).getByName(vcsName);
   }
