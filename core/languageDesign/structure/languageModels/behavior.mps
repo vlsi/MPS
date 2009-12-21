@@ -1374,94 +1374,6 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="8360039740498071970" />
     </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="6409339300305625028">
-      <property name="name" value="findApplicableTypesystemRules" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6409339300305625029" />
-      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="6409339300305625054">
-        <link role="elementConcept" targetNodeId="22.1174648085619" resolveInfo="AbstractRule" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6409339300305625031">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6409339300305625105">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6409339300305625110">
-            <link role="classConcept" targetNodeId="23.~GoToRulesHelper" resolveInfo="GoToRulesHelper" />
-            <link role="baseMethodDeclaration" targetNodeId="23.~GoToRulesHelper.getHelginsRules(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.smodel.IScope,boolean):java.util.List" resolveInfo="getHelginsRules" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6409339300305625258">
-              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="6409339300305625111" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="6409339300305625262" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6409339300305625113">
-              <link role="variableDeclaration" targetNodeId="6409339300305625055" resolveInfo="scope" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5161861506212415668">
-              <property name="value" value="false" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="6409339300305625055">
-        <property name="name" value="scope" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6409339300305625056">
-          <link role="classifier" targetNodeId="3.~IScope" resolveInfo="IScope" />
-        </node>
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="5161861506212356934">
-      <property name="name" value="findTypesystemRules" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="5161861506212356935" />
-      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="5161861506212356936">
-        <link role="elementConcept" targetNodeId="22.1174648085619" resolveInfo="AbstractRule" />
-      </node>
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5161861506212356937">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="5161861506212356938">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="5161861506212356939">
-            <link role="classConcept" targetNodeId="23.~GoToRulesHelper" resolveInfo="GoToRulesHelper" />
-            <link role="baseMethodDeclaration" targetNodeId="23.~GoToRulesHelper.getHelginsRules(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.smodel.IScope,boolean):java.util.List" resolveInfo="getHelginsRules" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5161861506212356940">
-              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5161861506212356941" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="5161861506212356942" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="5161861506212356943">
-              <link role="variableDeclaration" targetNodeId="5161861506212356944" resolveInfo="scope" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5161861506212415684">
-              <property name="value" value="true" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="5161861506212356944">
-        <property name="name" value="scope" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="5161861506212356945">
-          <link role="classifier" targetNodeId="3.~IScope" resolveInfo="IScope" />
-        </node>
-      </node>
-    </node>
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="6409339300305625383">
-      <property name="name" value="findGeneratorFragments" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6409339300305625384" />
-      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="6409339300305625412" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6409339300305625386">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6409339300305625415">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6409339300305625416">
-            <link role="classConcept" targetNodeId="23.~GoToGenHelper" resolveInfo="GoToGenHelper" />
-            <link role="baseMethodDeclaration" targetNodeId="23.~GoToGenHelper.getGenFragments(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.smodel.IScope):java.util.List" resolveInfo="getGenFragments" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6409339300305625417">
-              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="6409339300305625423" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="6409339300305625419" />
-            </node>
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6409339300305625427">
-              <link role="variableDeclaration" targetNodeId="6409339300305625413" resolveInfo="scope" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="6409339300305625413">
-        <property name="name" value="scope" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6409339300305625414">
-          <link role="classifier" targetNodeId="3.~IScope" resolveInfo="IScope" />
-        </node>
-      </node>
-    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3590548766499750586">
       <property name="name" value="findAdditionalGenerators" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="3590548766499750587" />
@@ -1586,6 +1498,63 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="6409339300305625383">
+      <property name="name" value="findGeneratorFragments" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6409339300305625384" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="6409339300305625412" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6409339300305625386">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6409339300305625415">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6409339300305625416">
+            <link role="classConcept" targetNodeId="23.~GoToGenHelper" resolveInfo="GoToGenHelper" />
+            <link role="baseMethodDeclaration" targetNodeId="23.~GoToGenHelper.getGenFragments(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.smodel.IScope):java.util.List" resolveInfo="getGenFragments" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6409339300305625417">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="6409339300305625423" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="6409339300305625419" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6409339300305625427">
+              <link role="variableDeclaration" targetNodeId="6409339300305625413" resolveInfo="scope" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="6409339300305625413">
+        <property name="name" value="scope" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6409339300305625414">
+          <link role="classifier" targetNodeId="3.~IScope" resolveInfo="IScope" />
+        </node>
+      </node>
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="6409339300305625028">
+      <property name="name" value="findApplicableTypesystemRules" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6409339300305625029" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeListType" id="6409339300305625054">
+        <link role="elementConcept" targetNodeId="22.1174648085619" resolveInfo="AbstractRule" />
+      </node>
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6409339300305625031">
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="6409339300305625105">
+          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="6409339300305625110">
+            <link role="classConcept" targetNodeId="23.~GoToRulesHelper" resolveInfo="GoToRulesHelper" />
+            <link role="baseMethodDeclaration" targetNodeId="23.~GoToRulesHelper.getHelginsRules(jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration,jetbrains.mps.smodel.IScope,boolean):java.util.List" resolveInfo="getHelginsRules" />
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6409339300305625258">
+              <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="6409339300305625111" />
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation" id="6409339300305625262" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="6409339300305625113">
+              <link role="variableDeclaration" targetNodeId="6409339300305625055" resolveInfo="scope" />
+            </node>
+            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5161861506212415668">
+              <property name="value" value="false" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="6409339300305625055">
+        <property name="name" value="scope" />
+        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="6409339300305625056">
+          <link role="classifier" targetNodeId="3.~IScope" resolveInfo="IScope" />
+        </node>
+      </node>
+    </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7754459869734028917">
       <property name="name" value="findAllAspects" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7754459869734028918" />
@@ -1633,24 +1602,6 @@
             <property name="name" value="aspect" />
             <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1871493518332862917">
               <link role="classifier" targetNodeId="3.~LanguageAspect" resolveInfo="LanguageAspect" />
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="7754459869734029052">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7754459869734029057">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="7754459869734029053">
-              <link role="variableDeclaration" targetNodeId="7754459869734028951" resolveInfo="result" />
-            </node>
-            <node role="operation" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation" id="7754459869734029064">
-              <node role="argument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7754459869734029071">
-                <node role="operand" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="7754459869734029072" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="7754459869734029073">
-                  <link role="baseMethodDeclaration" targetNodeId="5161861506212356934" resolveInfo="findTypesystemRules" />
-                  <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="7754459869734029079">
-                    <link role="variableDeclaration" targetNodeId="7754459869734028948" resolveInfo="scope" />
-                  </node>
-                </node>
-              </node>
             </node>
           </node>
         </node>

@@ -13,11 +13,11 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.workbench.actions.nodes.GoToRulesHelper;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.workbench.actions.nodes.GoToGenHelper;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.workbench.actions.nodes.GoToGenHelper;
-import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.workbench.actions.nodes.GoToRulesHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
@@ -90,18 +90,6 @@ public class AbstractConceptDeclaration_Behavior {
     }
   }
 
-  public static List<SNode> call_findApplicableTypesystemRules_6409339300305625028(SNode thisNode, IScope scope) {
-    return GoToRulesHelper.getHelginsRules(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope, false);
-  }
-
-  public static List<SNode> call_findTypesystemRules_5161861506212356934(SNode thisNode, IScope scope) {
-    return GoToRulesHelper.getHelginsRules(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope, true);
-  }
-
-  public static List<SNode> call_findGeneratorFragments_6409339300305625383(SNode thisNode, IScope scope) {
-    return GoToGenHelper.getGenFragments(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope);
-  }
-
   public static List<SNode> call_findAdditionalGenerators_3590548766499750586(SNode thisNode, IScope scope) {
     List<SNode> result = new ArrayList<SNode>();
     Language language = SModelUtil.getDeclaringLanguage(thisNode, scope);
@@ -117,12 +105,19 @@ public class AbstractConceptDeclaration_Behavior {
     return result;
   }
 
+  public static List<SNode> call_findGeneratorFragments_6409339300305625383(SNode thisNode, IScope scope) {
+    return GoToGenHelper.getGenFragments(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope);
+  }
+
+  public static List<SNode> call_findApplicableTypesystemRules_6409339300305625028(SNode thisNode, IScope scope) {
+    return GoToRulesHelper.getHelginsRules(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope, false);
+  }
+
   public static List<SNode> call_findAllAspects_7754459869734028917(SNode thisNode, IScope scope) {
     List<SNode> result = new ArrayList<SNode>();
     for (LanguageAspect aspect : LanguageAspect.values()) {
       ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, scope, aspect));
     }
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findTypesystemRules_5161861506212356934(thisNode, scope)));
     ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(thisNode, scope)));
 
     while (ListSequence.fromList(result).contains(null)) {
