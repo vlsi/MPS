@@ -16,10 +16,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.workbench.actions.nodes.GoToRulesHelper;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.workbench.actions.nodes.GoToIntentionsHelper;
-import jetbrains.mps.workbench.actions.nodes.GoToFindersHelper;
 import jetbrains.mps.workbench.actions.nodes.GoToGenHelper;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -30,6 +26,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.structure.PropertyDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration;
 import jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration;
@@ -101,34 +98,6 @@ public class AbstractConceptDeclaration_Behavior {
     return GoToRulesHelper.getHelginsRules(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope, true);
   }
 
-  public static List<SNode> call_findRefactorings_6855614059849820964(SNode thisNode, IScope scope) {
-    Language language = SModelUtil.getDeclaringLanguage(thisNode, scope);
-    if (language == null) {
-      return new ArrayList<SNode>();
-    }
-    SModelDescriptor refactorings = language.getRefactoringsModelDescriptor();
-    if (refactorings == null) {
-      return new ArrayList<SNode>();
-    }
-    return Sequence.fromIterable(AbstractConceptDeclaration_Behavior.call_findRefactorings_45113684559026434(thisNode, refactorings.getSModel())).toListSequence();
-  }
-
-  public static Iterable<SNode> call_findRefactorings_45113684559026434(final SNode thisNode, SModel model) {
-    return ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.lang.refactoring.structure.Refactoring")).where(new IWhereFilter<SNode>() {
-      public boolean accept(SNode it) {
-        return IConceptAspect_Behavior.call_getBaseConcept_2621449412040133768(it) == thisNode;
-      }
-    });
-  }
-
-  public static List<SNode> call_findIntentions_6409339300305625231(SNode thisNode, IScope scope) {
-    return GoToIntentionsHelper.getIntentions(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope);
-  }
-
-  public static List<SNode> call_findFinders_6409339300305625307(SNode thisNode, IScope scope) {
-    return GoToFindersHelper.getFinders(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope);
-  }
-
   public static List<SNode> call_findGeneratorFragments_6409339300305625383(SNode thisNode, IScope scope) {
     return GoToGenHelper.getGenFragments(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope);
   }
@@ -150,15 +119,11 @@ public class AbstractConceptDeclaration_Behavior {
 
   public static List<SNode> call_findAllAspects_7754459869734028917(SNode thisNode, IScope scope) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, scope, LanguageAspect.EDITOR));
-    ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, scope, LanguageAspect.CONSTRAINTS));
-    ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, scope, LanguageAspect.BEHAVIOR));
+    for (LanguageAspect aspect : LanguageAspect.values()) {
+      ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, scope, aspect));
+    }
     ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findTypesystemRules_5161861506212356934(thisNode, scope)));
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findIntentions_6409339300305625231(thisNode, scope)));
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findFinders_6409339300305625307(thisNode, scope)));
-    ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, scope, LanguageAspect.DATA_FLOW));
     ListSequence.fromList(result).addSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(thisNode, scope)));
-    ListSequence.fromList(result).addElement(AbstractConceptDeclaration_Behavior.call_findConceptAspect_8360039740498068384(thisNode, scope, LanguageAspect.TEXT_GEN));
 
     while (ListSequence.fromList(result).contains(null)) {
       ListSequence.fromList(result).removeElement(null);
