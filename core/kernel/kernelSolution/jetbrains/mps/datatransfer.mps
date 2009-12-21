@@ -115,6 +115,7 @@
     </node>
     <node role="staticField" type="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" id="1622834379618763483">
       <property name="name" value="LOG" />
+      <property name="isFinal" value="true" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="1622834379618763484" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1622834379618763486">
         <link role="classifier" targetNodeId="7.~Logger" resolveInfo="Logger" />
