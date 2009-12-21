@@ -108,6 +108,7 @@ public class VersionUtil {
     return node.getModel().getUsedVersion(targetModelReference);
   }
 
+  //for children's roles version: finds a parent's concept, its version is a version of a role
   public static int getRoleVersion(SNode node) {
     int roleVersion = -1;
     final SNode parent = node.getParent();
