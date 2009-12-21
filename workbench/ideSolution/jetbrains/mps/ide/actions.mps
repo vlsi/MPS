@@ -42777,6 +42777,99 @@
             </node>
           </node>
         </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1168988535888334472">
+          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1168988535888334473">
+            <property name="name" value="file" />
+            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1168988535888334474">
+              <link role="classifier" targetNodeId="184.~VirtualFile" resolveInfo="VirtualFile" />
+            </node>
+            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1168988535888334476">
+              <link role="classConcept" targetNodeId="164.~VFileSystem" resolveInfo="VFileSystem" />
+              <link role="baseMethodDeclaration" targetNodeId="164.~VFileSystem.getFile(jetbrains.mps.vfs.IFile):com.intellij.openapi.vfs.VirtualFile" resolveInfo="getFile" />
+              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1168988535888334477">
+                <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1168988535888334478">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1168988535888334479" />
+                  <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1168988535888334480">
+                    <link role="member" targetNodeId="1124869764929843493" resolveInfo="model" />
+                  </node>
+                </node>
+                <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1168988535888334481">
+                  <link role="baseMethodDeclaration" targetNodeId="40.~SModelDescriptor.getModelFile():jetbrains.mps.vfs.IFile" resolveInfo="getModelFile" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" type="jetbrains.mps.baseLanguage.structure.IfStatement" id="1168988535888334483">
+          <node role="ifTrue" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1168988535888334484">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="1168988535888336186">
+              <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="1168988535888336187">
+                <property name="text" value="TODO This debug output was added to inspect MPS-7232 issue" />
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement" id="1168988535888339998">
+              <property name="severity" value="error" />
+              <node role="logExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1168988535888340000">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1168988535888340001">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1168988535888340002">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1168988535888340003" />
+                    <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1168988535888340004">
+                      <link role="member" targetNodeId="1124869764929843493" resolveInfo="model" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1168988535888340005">
+                    <link role="baseMethodDeclaration" targetNodeId="40.~SModelDescriptor.getSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getSModelReference" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1168988535888340006">
+                  <property name="value" value="MPS-7232. model = " />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement" id="1168988535888340008">
+              <property name="severity" value="error" />
+              <node role="logExpression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1168988535888340010">
+                <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1168988535888340011">
+                  <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1168988535888340012">
+                    <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1168988535888340013">
+                      <node role="operand" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression" id="1168988535888340014" />
+                      <node role="operation" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation" id="1168988535888340015">
+                        <link role="member" targetNodeId="1124869764929843493" resolveInfo="model" />
+                      </node>
+                    </node>
+                    <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1168988535888340016">
+                      <link role="baseMethodDeclaration" targetNodeId="40.~SModelDescriptor.getModelFile():jetbrains.mps.vfs.IFile" resolveInfo="getModelFile" />
+                    </node>
+                  </node>
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1168988535888340017">
+                    <link role="baseMethodDeclaration" targetNodeId="73.~Object.toString():java.lang.String" resolveInfo="toString" />
+                  </node>
+                </node>
+                <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1168988535888340018">
+                  <property name="value" value="MPS-7232. model.getModelFile() = " />
+                </node>
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.logging.structure.LogStatement" id="1168988535888340028">
+              <property name="severity" value="error" />
+              <node role="logExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1168988535888340029">
+                <property name="value" value="Please report this output to issue tracker: http://youtrack.jetbrains.net/issue/MPS-7232" />
+              </node>
+            </node>
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.Statement" id="1168988535888340035" />
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1168988535888340031">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1168988535888340034">
+                <property name="value" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition" type="jetbrains.mps.baseLanguage.structure.EqualsExpression" id="1168988535888336182">
+            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="1168988535888336185" />
+            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1168988535888336181">
+              <link role="variableDeclaration" targetNodeId="1168988535888334473" resolveInfo="file" />
+            </node>
+          </node>
+        </node>
         <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="3950294985348393387">
           <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression" id="3950294985348394953">
             <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="3950294985348394956" />

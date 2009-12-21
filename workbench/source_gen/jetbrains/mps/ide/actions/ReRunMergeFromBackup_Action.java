@@ -12,6 +12,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.workbench.MPSDataKeys;
 import java.io.File;
@@ -44,6 +45,21 @@ public class ReRunMergeFromBackup_Action extends GeneratedAction {
   public boolean isApplicable(AnActionEvent event) {
     ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(ReRunMergeFromBackup_Action.this.project);
     if (manager.getAllVersionedRoots().length == 0) {
+      return false;
+    }
+    VirtualFile file = VFileSystem.getFile(ReRunMergeFromBackup_Action.this.model.getModelFile());
+    if (file == null) {
+      // TODO This debug output was added to inspect MPS-7232 issue 
+      if (log.isErrorEnabled()) {
+        log.error("MPS-7232. model = " + ReRunMergeFromBackup_Action.this.model.getSModelReference());
+      }
+      if (log.isErrorEnabled()) {
+        log.error("MPS-7232. model.getModelFile() = " + ReRunMergeFromBackup_Action.this.model.getModelFile().toString());
+      }
+      if (log.isErrorEnabled()) {
+        log.error("Please report this output to issue tracker: http://youtrack.jetbrains.net/issue/MPS-7232");
+      }
+
       return false;
     }
     return manager.getVcsFor(VFileSystem.getFile(ReRunMergeFromBackup_Action.this.model.getModelFile())) != null;
