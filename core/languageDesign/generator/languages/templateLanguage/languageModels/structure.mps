@@ -372,6 +372,9 @@
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1203350682564">
       <link role="intfc" targetNodeId="6.1194952169813" resolveInfo="IMemberContainer" />
     </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="8360039740498071229">
+      <link role="intfc" targetNodeId="3.2621449412040133764" resolveInfo="IConceptAspect" />
+    </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1167514678247">
       <property name="metaClass" value="aggregation" />
       <property name="role" value="rootMappingRule" />
@@ -446,6 +449,9 @@
     <link role="extends" targetNodeId="2.1133920641626" />
     <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1175152870076">
       <link role="intfc" targetNodeId="2.1169194658468" />
+    </node>
+    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="8360039740498070942">
+      <link role="intfc" targetNodeId="3.2621449412040133764" resolveInfo="IConceptAspect" />
     </node>
     <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1112820671508">
       <property name="role" value="modifiedSwitch" />
