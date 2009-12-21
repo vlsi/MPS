@@ -97,8 +97,11 @@ public class VersionUtil {
     return linkRole;
   }
 
+  //this did not work: a model reference did not equal nothing
   public static int getNodeLanguageVersion(SNode node) {
-    return node.getModel().getUsedVersion(LanguageAspect.STRUCTURE.get(node.getConceptLanguage()));
+    SModelReference reference = LanguageAspect.STRUCTURE.get(node.getConceptLanguage());
+    reference = reference.update();
+    return node.getModel().getUsedVersion(reference);
   }
 
   public static int getReferenceToNodeVersion(SNode node, SModelReference targetModelReference) {
