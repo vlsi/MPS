@@ -33,6 +33,7 @@ import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.WeakSet;
@@ -125,6 +126,23 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
         }
       });
 
+    }
+  }
+
+  public int getSModelPersistenceVersion() {
+    SModel model = getSModel();
+    if (model == null) {
+      return -1;
+    }
+    return model.getPersistenceVersion();
+  }
+
+  public void upgradeModelPersistence(int toVersion) {
+    SModel model = getSModel();
+    if (model != null) {
+      SModel newModel = ModelPersistence.upgradeModelPersistence(model, model.getPersistenceVersion(), toVersion);
+      mySModel = newModel;
+      save();
     }
   }
 

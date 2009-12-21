@@ -13,7 +13,7 @@ public class SModelVersionsInfo {
   private final TObjectIntHashMap<NodeStringPair> myNodePropertiesVersions = new TObjectIntHashMap<NodeStringPair>();
   private final TObjectIntHashMap<NodeStringPair> myNodeLinkRolesVersions = new TObjectIntHashMap<NodeStringPair>();
   private final TObjectIntHashMap<NodeStringPair> myNodeLinkTargetsVersions = new TObjectIntHashMap<NodeStringPair>();
-  private final NodeStringPair myEtalon = new NodeStringPair();
+  private final NodeStringPair myEtalon = new NodeStringPair();   //why a filed?
 
   public void dispose() {
     LOG.assertLog(!myIsDisposed);

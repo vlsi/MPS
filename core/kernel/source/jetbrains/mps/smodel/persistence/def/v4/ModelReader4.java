@@ -43,7 +43,7 @@ public class ModelReader4 implements IModelReader {
     return null;
   }
 
-  protected IReferencePersister createReferencePersister() {
+  protected ReferencePersister4 createReferencePersister() {
     return new ReferencePersister4();
   }
 
@@ -67,6 +67,7 @@ public class ModelReader4 implements IModelReader {
   }
 
   public SModel readModel(Document document, String modelShortName, String stereotype) {
+    SModelVersionsInfo versionsInfo = new SModelVersionsInfo();
     Element rootElement = document.getRootElement();
 
     SModelReference modelReference = SModelReference.fromString(rootElement.getAttributeValue(ModelPersistence.MODEL_UID));
@@ -163,7 +164,7 @@ public class ModelReader4 implements IModelReader {
     List children = rootElement.getChildren(ModelPersistence.NODE);
     for (Object child : children) {
       Element element = (Element) child;
-      SNode snode = readNode(element, model, referenceDescriptors, false);
+      SNode snode = readNode(element, model, referenceDescriptors, false, versionsInfo);
       if (snode != null) {
         model.addRoot(snode);
       }
@@ -201,7 +202,7 @@ public class ModelReader4 implements IModelReader {
   }
 
   public SNode readNode(Element nodeElement, SModel model) {
-    return readNode(nodeElement, model, true, null);
+    return readNode(nodeElement, model, true, null, new SModelVersionsInfo());
   }
 
   @Nullable
@@ -209,9 +210,9 @@ public class ModelReader4 implements IModelReader {
     Element nodeElement,
     SModel model,
     boolean useUIDs,
-    VisibleModelElements visibleModelElements) {
+    VisibleModelElements visibleModelElements, SModelVersionsInfo versionsInfo) {
     List<IReferencePersister> referenceDescriptors = new ArrayList<IReferencePersister>();
-    SNode result = readNode(nodeElement, model, referenceDescriptors, useUIDs);
+    SNode result = readNode(nodeElement, model, referenceDescriptors, useUIDs, versionsInfo);
     for (IReferencePersister referencePersister : referenceDescriptors) {
       referencePersister.createReferenceInModel(model, visibleModelElements);
     }
@@ -223,9 +224,8 @@ public class ModelReader4 implements IModelReader {
     Element nodeElement,
     SModel model,
     List<IReferencePersister> referenceDescriptors,
-    boolean useUIDs
+    boolean useUIDs, SModelVersionsInfo versionsInfo
   ) {
-    SModelVersionsInfo versionsInfo = model.getVersionsInfo();
 
     String rawFqName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
     String conceptFqName = VersionUtil.getConceptFQName(rawFqName);
@@ -250,8 +250,8 @@ public class ModelReader4 implements IModelReader {
     List links = nodeElement.getChildren(ModelPersistence.LINK);
     for (Object link : links) {
       Element linkElement = (Element) link;
-      IReferencePersister referencePersister = createReferencePersister();
-      referencePersister.fillFields(linkElement, node, useUIDs);
+      ReferencePersister4 referencePersister = createReferencePersister();
+      referencePersister.fillFields(linkElement, node, useUIDs, versionsInfo);
       referenceDescriptors.add(referencePersister);
     }
 
@@ -260,7 +260,7 @@ public class ModelReader4 implements IModelReader {
       Element childNodeElement = (Element) childNode1;
       String rawRole = childNodeElement.getAttributeValue(ModelPersistence.ROLE);
       String role = VersionUtil.getRole(rawRole);
-      SNode childNode = readNode(childNodeElement, model, referenceDescriptors, useUIDs);
+      SNode childNode = readNode(childNodeElement, model, referenceDescriptors, useUIDs, versionsInfo);
       if (role == null || childNode == null) {
         LOG.errorWithTrace("Error reading child node in node " + node.getDebugText());
       } else {

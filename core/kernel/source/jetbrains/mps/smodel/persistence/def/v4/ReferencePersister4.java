@@ -34,8 +34,13 @@ public class ReferencePersister4 implements IReferencePersister {
   protected boolean myUseUIDs;
   private boolean myNotImported;
 
+
+  @Override
   public void fillFields(Element linkElement, SNode sourceNode, boolean useUIDs) {
-    final SModelVersionsInfo versionsInfo = sourceNode.getModel().getVersionsInfo();
+    fillFields(linkElement, sourceNode, useUIDs, new SModelVersionsInfo());
+  }
+
+  public void fillFields(Element linkElement, SNode sourceNode, boolean useUIDs, SModelVersionsInfo versionsInfo) {
 
     String role = VersionUtil.getLinkRole(linkElement.getAttributeValue(ModelPersistence.ROLE), sourceNode, versionsInfo);
     String resolveInfo = linkElement.getAttributeValue(ModelPersistence.RESOLVE_INFO);

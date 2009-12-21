@@ -29,6 +29,8 @@ import jetbrains.mps.smodel.persistence.def.v2.ModelReader2;
 import jetbrains.mps.smodel.persistence.def.v2.ModelWriter2;
 import jetbrains.mps.smodel.persistence.def.v3.ModelReader3;
 import jetbrains.mps.smodel.persistence.def.v3.ModelWriter3;
+import jetbrains.mps.smodel.persistence.def.v4.ModelReader4;
+import jetbrains.mps.smodel.persistence.def.v4.ModelWriter4;
 import jetbrains.mps.util.JDOMUtil;
 import static jetbrains.mps.util.JDOMUtil.loadDocument;
 import jetbrains.mps.vfs.IFile;
@@ -103,6 +105,9 @@ public class ModelPersistence {
 
     modelReaders.put(3, new ModelReader3());
     modelWriters.put(3, new ModelWriter3());
+
+    modelReaders.put(4, new ModelReader4());
+    modelWriters.put(4, new ModelWriter4());
   }
 
   @NotNull
@@ -131,6 +136,7 @@ public class ModelPersistence {
     SModel model = modelReaders.get(modelPersistenceVersion).readModel(document, modelName, modelStereotype);
     if (modelPersistenceVersion < currentPersistenceVersion) {
       model = upgradeModelPersistence(model, modelPersistenceVersion);
+      modelPersistenceVersion = currentPersistenceVersion;
       document = saveModel(model, false);
       try {
         JDOMUtil.writeDocument(document, file);
@@ -138,6 +144,7 @@ public class ModelPersistence {
         LOG.error("error while saving model after persistence upgrade " + model.getSModelReference(), e);
       }
     }
+    model.setPersistenceVersion(modelPersistenceVersion);
     return model;
   }
 
@@ -184,15 +191,19 @@ public class ModelPersistence {
   }
 
   private static SModel upgradeModelPersistence(SModel model, int fromVersion) {
+    return upgradeModelPersistence(model, fromVersion, currentPersistenceVersion);
+  }
+
+  public static SModel upgradeModelPersistence(SModel model, int fromVersion, int toVersion) {
     SModelReference reference = model.getSModelReference();
     int version = fromVersion;
-    while (version < currentPersistenceVersion) {
+    while (version < toVersion) {
       IModelWriter writer = modelWriters.get(++version);
       Document document = writer.saveModel(model, false);
       model.dispose();
       model = modelReaders.get(version).readModel(document, reference.getShortName(), reference.getStereotype());
     }
-    LOG.info("persistence upgraded: " + fromVersion + "->" + currentPersistenceVersion + " " + reference);
+    LOG.info("persistence upgraded: " + fromVersion + "->" + toVersion + " " + reference);
     return model;
   }
 
