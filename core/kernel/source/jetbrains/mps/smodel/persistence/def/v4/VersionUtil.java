@@ -4,6 +4,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelVersionsInfo;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jdom.Element;
 
@@ -100,8 +101,8 @@ public class VersionUtil {
     return node.getModel().getUsedVersion(LanguageAspect.STRUCTURE.get(node.getConceptLanguage()));
   }
 
-  public static int getReferenceToNodeVersion(SNode node, SNode target) {
-    return node.getModel().getUsedVersion(target.getModel().getSModelReference());
+  public static int getReferenceToNodeVersion(SNode node, SModelReference targetModelReference) {
+    return node.getModel().getUsedVersion(targetModelReference);
   }
 
   public static int getRoleVersion(SNode node) {
