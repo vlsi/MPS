@@ -373,8 +373,4 @@ public class FileUtil {
     if (parentOfChild == null) return false;
     return isParentUp(parent, parentOfChild);
   }
-
-  public static void main(String[] args) {
-    zip(new File("C:/aaaaa"), new File("C:/temp/test.zip"));
-  }
 }
