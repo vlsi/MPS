@@ -2131,7 +2131,7 @@
     <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5948027493682790679">
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5948027493682790680">
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5948027493682790681">
-          <property name="text" value="paste post processors" />
+          <property name="text" value="copy paste handlers" />
         </node>
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="5948027493682790682">
           <property name="flag" value="false" />
@@ -2147,6 +2147,7 @@
           <property name="flag" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="5948027493682790688">
+          <property name="separatorText" value=" " />
           <link role="relationDeclaration" targetNodeId="1.5948027493682790174" />
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="5948027493682790689" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="5948027493682790690">
@@ -2155,11 +2156,13 @@
         </node>
         <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="5948027493682790691" />
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="6769498721974363979" />
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="5948027493682790692">
         <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="5948027493682790693">
           <property name="flag" value="false" />
         </node>
         <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList" id="5948027493682790694">
+          <property name="separatorText" value=" " />
           <link role="relationDeclaration" targetNodeId="1.5948027493682790175" />
           <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="5948027493682790695" />
           <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="5948027493682790696">
