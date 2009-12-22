@@ -110,10 +110,6 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     myCaretIsVisible = true;
   }
 
-  public void highlightSelectedBrace(boolean selected) {
-    this.getTextLine().highlightSelectedBrace(selected);
-  }
-
   public String getText() {
     return myTextLine.getText();
   }

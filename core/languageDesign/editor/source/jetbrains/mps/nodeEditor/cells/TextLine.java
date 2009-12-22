@@ -78,7 +78,6 @@ public class TextLine {
 
   private boolean myNull;
   private Style myStyle;
-  private boolean myBraceSelected = false;
 
   private int myPaddingLeft;
   private int myPaddingRight;
@@ -124,15 +123,7 @@ public class TextLine {
     myCaretPosition = Math.min(myText.length(), myCaretPosition);
     myStartTextSelectionPosition = myCaretPosition;
     myEndTextSelectionPosition = myCaretPosition;
-  }
-
-  public boolean isBraceSelected() {
-    return myBraceSelected;
-  }
-
-  public void highlightSelectedBrace(boolean braceSelected) {
-    myBraceSelected = braceSelected;
-  }
+  }  
 
   public String getTextBeforeCaret() {
     return myText.substring(0, myCaretPosition);
@@ -303,9 +294,6 @@ public class TextLine {
   public Color getBackgroundColor() {
     if (myShowsErrorColor) {
       return ERROR_COLOR;
-    }
-    if (myBraceSelected) {
-      return new Color(0x99CCFF); 
     }
     return null;
   }
