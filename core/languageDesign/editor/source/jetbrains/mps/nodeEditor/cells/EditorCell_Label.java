@@ -144,6 +144,9 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
               getEditor().leftUnhighlightCell(this);
             }
           }
+          if (!(editorCell instanceof EditorCell_Label)) {
+            return;
+          }
           this.getTextLine().setBraceSelected(selected);
           ((EditorCell_Label) editorCell).getTextLine().setBraceSelected(selected);
         }
