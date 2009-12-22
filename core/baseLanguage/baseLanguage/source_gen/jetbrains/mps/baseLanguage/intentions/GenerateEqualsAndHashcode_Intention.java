@@ -73,7 +73,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
         } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.DoubleType")) {
           checkStmt = new _Quotations.QuotationClass_27().createNode(thatRef, SNodeOperations.copyNode(fieldRefOperation), thisExp, SNodeOperations.copyNode(fieldRefOperation));
         } else {
-          checkStmt = new _Quotations.QuotationClass_14().createNode(thatRef, SNodeOperations.copyNode(fieldRefOperation), thisExp, SNodeOperations.copyNode(fieldRefOperation));
+          checkStmt = new _Quotations.QuotationClass_14().createNode(thisExp, SNodeOperations.copyNode(fieldRefOperation), thatRef, SNodeOperations.copyNode(fieldRefOperation));
         }
       } else if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType")) {
         checkStmt = new _Quotations.QuotationClass_11().createNode(thisExp, SNodeOperations.copyNode(fieldRefOperation), thatRef, SNodeOperations.copyNode(fieldRefOperation));
