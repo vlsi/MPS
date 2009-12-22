@@ -2826,6 +2826,14 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1352851301411029221">
     <property name="name" value="TestSequenceAncestor" />
+    <property name="abstractClass" value="true" />
+    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="7247289363107253114">
+      <property name="name" value="foo" />
+      <property name="isAbstract" value="true" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7247289363107253115" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7247289363107253116" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7247289363107253117" />
+    </node>
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1352851301411029222" />
     <node role="constructor" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" id="1352851301411029223">
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1352851301411029224" />

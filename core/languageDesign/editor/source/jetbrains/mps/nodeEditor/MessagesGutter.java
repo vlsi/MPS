@@ -181,10 +181,7 @@ public class MessagesGutter extends JPanel {
         if (msg == null || !msg.isValid(myEditorComponent)) {
           continue;
         }
-        int start = getMessageStart(msg);
-        int length = getMessageHeight(msg);
-
-        int messageY = start + (length / 2);
+        int messageY = getMessagePosition(msg);
 
         g.setColor(new Color(80, 80, 80, 70));
         g.fillRect(1, messageY, getWidth() - 2, 2);
@@ -193,6 +190,31 @@ public class MessagesGutter extends JPanel {
         g.fillRect(0, messageY - 1, getWidth() - 2, 2);
       }
       //removeLater(messagesToRemove);
+    }
+
+    private int getMessagePosition(EditorMessage msg) {
+      int start = getMessageStart(msg);
+      int length = getMessageHeight(msg);
+
+      int messageY;
+      switch (msg.getLocationOnCell()) {
+        case CENTER: {
+          messageY = start + (length / 2);
+          break;
+        }
+        case BOTTOM: {
+          messageY = start + length;
+          break;
+        }
+        case TOP: {
+          messageY = start;
+          break;
+        }
+        default: {
+          messageY = start + (length/2);
+        }
+      }
+      return messageY;
     }
 
     private int getMessageHeight(EditorMessage msg) {
@@ -229,9 +251,9 @@ public class MessagesGutter extends JPanel {
       List<EditorMessage> messages = getMessagesAt(y);
       if (messages.size() > 0) {
         EditorMessage msg = messages.get(messages.size() - 1);
-        int start = getMessageStart(msg);
-        int height = getMessageHeight(msg);
-        return new Point(event.getX(), start + height / 2);
+        int pos = getMessagePosition(msg);
+
+        return new Point(event.getX(), pos - 30);
       }
       return null;
     }
@@ -241,9 +263,8 @@ public class MessagesGutter extends JPanel {
       Set<EditorMessage> messagesToRemove = new HashSet<EditorMessage>();
       for (EditorMessage msg : myMessages) {
         if (!msg.isValid(myEditorComponent)) continue;
-        int start = getMessageStart(msg);
-        int height = getMessageHeight(msg);
-        if (y >= start && y <= start + height) {
+        int position = getMessagePosition(msg);
+        if (y >= position - 5 && y <= position + 5) {
           result.add(msg);
         }
       }

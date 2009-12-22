@@ -49,6 +49,10 @@ public class DefaultEditorMessage implements EditorMessage {
     myOwner = owner;
   }
 
+  public LocationOnCell getLocationOnCell() {
+    return LocationOnCell.CENTER;
+  }
+
   public DefaultEditorMessage(SNode node, MessageStatus status, Color color, String message, EditorMessageOwner owner) {
     this(node, color, message, owner);
     myStatus = status;
