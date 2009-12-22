@@ -73,12 +73,12 @@ public class Style {
     return (T) myAttributeValues[attribute.getIndex()];
   }
 
-  public<T> void set(StyleAttribute<T> attribute, T value) {
+  public <T> void set(StyleAttribute<T> attribute, T value) {
     myAttributeValues[attribute.getIndex()] = value;
     updateCache(singletonSet(attribute));
   }
 
-  public<T> void set(StyleAttribute<T> attribute, AttributeCalculator<T> valueCalculator) {
+  public <T> void set(StyleAttribute<T> attribute, AttributeCalculator<T> valueCalculator) {
     myAttributeValues[attribute.getIndex()] = valueCalculator;
     updateCache(singletonSet(attribute));
   }
@@ -124,7 +124,7 @@ public class Style {
       Object parentValue = getParentStyle() == null ? null : getParentStyle().get(attribute);
       Object currentValue = myAttributeValues[attribute.getIndex()];
 
-      if (parentValue != null || currentValue != null) {
+      if (parentValue != null || currentValue != null || oldCachedValues[attribute.getIndex()] != null) {
         if (currentValue instanceof AttributeCalculator) {
           currentValue = ((AttributeCalculator) currentValue).calculate(myEditorCell);
         }
