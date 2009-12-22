@@ -17,6 +17,8 @@ package jetbrains.mps.smodel.persistence.def;
 
 import com.intellij.util.text.CharArrayUtil;
 import com.intellij.util.text.CharSequenceReader;
+import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
@@ -31,6 +33,7 @@ import jetbrains.mps.smodel.persistence.def.v3.ModelReader3;
 import jetbrains.mps.smodel.persistence.def.v3.ModelWriter3;
 import jetbrains.mps.smodel.persistence.def.v4.ModelReader4;
 import jetbrains.mps.smodel.persistence.def.v4.ModelWriter4;
+import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.util.JDOMUtil;
 import static jetbrains.mps.util.JDOMUtil.loadDocument;
 import jetbrains.mps.vfs.IFile;
@@ -40,6 +43,7 @@ import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import javax.swing.JOptionPane;
 import java.io.CharArrayReader;
 import java.io.IOException;
 import java.io.Reader;
@@ -89,9 +93,11 @@ public class ModelPersistence {
 
   private static final Map<Integer, IModelReader> modelReaders = new HashMap<Integer, IModelReader>();
   private static final Map<Integer, IModelWriter> modelWriters = new HashMap<Integer, IModelWriter>();
-  private static final int currentPersistenceVersion = 3;
+  private static final int currentApplicationPersistenceVersion = PersistenceSettings.MAX_VERSION;
 
   private static final Pattern myModelPattern = Pattern.compile("model modelUID=\"(.*?)\"");
+
+  private static PersistenceSettings ourPersistenceSettings;
 
   static {
     modelReaders.put(0, new ModelReader0());
@@ -110,6 +116,13 @@ public class ModelPersistence {
     modelWriters.put(4, new ModelWriter4());
   }
 
+  private static PersistenceSettings getPersistenceSettings() {
+    if (ourPersistenceSettings == null) {
+      ourPersistenceSettings = ApplicationManager.getApplication().getComponent(PersistenceSettings.class);
+    }
+    return ourPersistenceSettings;
+  }
+
   @NotNull
   private static Document loadModelDocument(@NotNull IFile file) {
     Document document;
@@ -123,6 +136,36 @@ public class ModelPersistence {
     return document;
   }
 
+  private static int getCurrentPersistenceVersion() {
+    int persistenceVersion = getPersistenceSettings().getUserSelectedPersistenceVersion();
+    if (persistenceVersion == -1) { //undefined by user
+      return currentApplicationPersistenceVersion;
+    }
+    return persistenceVersion;
+  }
+
+  private static boolean needsUpgrade(int modelPersistenceVersion) {
+    if (modelPersistenceVersion < getCurrentPersistenceVersion()) {
+      if (getPersistenceSettings().isUserPersistenceVersionDefined()) {
+        return true; //user already decided to convert models now
+      } else {
+        //undefined persistence version; user may want to upgrade models persistence
+        int option = JOptionPane.showConfirmDialog(null,
+          "Do you want to upgrade your models persistence level from "
+            + modelPersistenceVersion + " to persistence level " + currentApplicationPersistenceVersion + " ?",
+          "Upgrade Model Persistence", JOptionPane.YES_NO_OPTION);
+        if (option == JOptionPane.YES_OPTION) {
+          getPersistenceSettings().setMaxPersistenceVersion();
+          return true;
+        } else if (option == JOptionPane.NO_OPTION) {
+          getPersistenceSettings().setUserPersistenceVersion(modelPersistenceVersion);
+          return false;
+        }
+      }
+    }
+    return false;
+  }
+
   @NotNull
   public static SModel readModel(@NotNull IFile file) {
     LOG.debug("ModelPersistence readModel from :" + file.getAbsolutePath());
@@ -134,9 +177,9 @@ public class ModelPersistence {
     Document document = loadModelDocument(file);
     int modelPersistenceVersion = getModelPersistenceVersion(document);
     SModel model = modelReaders.get(modelPersistenceVersion).readModel(document, modelName, modelStereotype);
-    if (modelPersistenceVersion < currentPersistenceVersion) {
+    if (needsUpgrade(modelPersistenceVersion)) {
       model = upgradeModelPersistence(model, modelPersistenceVersion);
-      modelPersistenceVersion = currentPersistenceVersion;
+      modelPersistenceVersion = currentApplicationPersistenceVersion;
       document = saveModel(model, false);
       try {
         JDOMUtil.writeDocument(document, file);
@@ -191,7 +234,7 @@ public class ModelPersistence {
   }
 
   private static SModel upgradeModelPersistence(SModel model, int fromVersion) {
-    return upgradeModelPersistence(model, fromVersion, currentPersistenceVersion);
+    return upgradeModelPersistence(model, fromVersion, currentApplicationPersistenceVersion);
   }
 
   public static SModel upgradeModelPersistence(SModel model, int fromVersion, int toVersion) {
@@ -226,14 +269,14 @@ public class ModelPersistence {
     @NotNull Document document,
     @NotNull String modelName,
     @NotNull String stereotype) {
-    return modelReaders.get(currentPersistenceVersion).readModel(document, modelName, stereotype);
+    return modelReaders.get(getCurrentPersistenceVersion()).readModel(document, modelName, stereotype);
   }
 
   @Nullable
   public static SNode readNode(
     @NotNull Element nodeElement,
     @NotNull SModel model) {
-    return modelReaders.get(currentPersistenceVersion).readNode(nodeElement, model);
+    return modelReaders.get(getCurrentPersistenceVersion()).readNode(nodeElement, model);
   }
 
   public static void saveModel(@NotNull SModel model, @NotNull IFile file) {
@@ -264,18 +307,21 @@ public class ModelPersistence {
 
   @NotNull
   public static Document saveModel(@NotNull SModel sourceModel, boolean validate) {
-    return modelWriters.get(currentPersistenceVersion).saveModel(sourceModel, validate);
+    //model persistence level update is performed on startup;
+    // here model's persistence level is used, if a model has persistence level bigger than user-selected
+    // (consider BL or third-party models which have a level 4 while user uses level 3 in his application)
+    return modelWriters.get(sourceModel.getPersistenceVersion()).saveModel(sourceModel, validate);
   }
 
   public static void saveNode(Element container, SNode node) {
-    modelWriters.get(currentPersistenceVersion).saveNode(container, node);
+    modelWriters.get(node.getModel().getPersistenceVersion()).saveNode(container, node);
   }
 
   public static boolean needsRecreating(IFile file) {
-    return modelReaders.get(currentPersistenceVersion).needsRecreating(file);
+    return modelReaders.get(getCurrentPersistenceVersion()).needsRecreating(file);
   }
 
   public static SModelReference upgradeModelUID(SModelReference modelReference) {
-    return modelReaders.get(currentPersistenceVersion).upgradeModelUID(modelReference);
+    return modelReaders.get(getCurrentPersistenceVersion()).upgradeModelUID(modelReference);
   }
 }
