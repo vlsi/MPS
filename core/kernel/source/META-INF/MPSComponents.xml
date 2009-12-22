@@ -168,7 +168,7 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.datatransfer.CopyPasteRegistry</implementation-class>
+            <implementation-class>jetbrains.mps.datatransfer.CopyPasteManager</implementation-class>
         </component>
 
         <component>

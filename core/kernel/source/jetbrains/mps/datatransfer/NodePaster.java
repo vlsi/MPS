@@ -177,7 +177,7 @@ public class NodePaster {
     for (SNode pasteNode : myPasteNodes) {
       SNode nodeToPaste = normalizeForLink(pasteNode, link);
       pasteTarget.insertChild(_anchorNode, SModelUtil.getGenuineLinkRole(link.getNode()), nodeToPaste, insertBefore);
-      CopyPasteRegistry.getInstance().postProcessNode(nodeToPaste);
+      CopyPasteManager.getInstance().postProcessNode(nodeToPaste);
       _anchorNode = nodeToPaste;
       insertBefore = false;
     }

@@ -53,7 +53,7 @@
   </node>
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1622834379618551046">
-    <property name="name" value="CopyPasteRegistry" />
+    <property name="name" value="CopyPasteManager" />
     <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1617630891477332988">
       <property name="name" value="getInstance" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="4701737495517332408">
@@ -106,7 +106,7 @@
       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="5948027493682745597" />
     </node>
     <node role="field" type="jetbrains.mps.baseLanguage.structure.FieldDeclaration" id="5948027493682745607">
-      <property name="name" value="isLoaded" />
+      <property name="name" value="myLoaded" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility" id="5948027493682745608" />
       <node role="type" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="5948027493682745622" />
       <node role="initializer" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="5948027493682745624">
@@ -940,7 +940,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1058093769518980128">
     <property name="abstractClass" value="true" />
-    <property name="name" value="AbstractRegistry" />
+    <property name="name" value="AbstractManager" />
     <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1058093769518980217">
       <property name="nonStatic" value="true" />
       <property name="name" value="ReloadHelper" />

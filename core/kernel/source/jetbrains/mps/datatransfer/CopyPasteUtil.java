@@ -97,7 +97,7 @@ public class CopyPasteUtil {
       newNodesToSourceNodes.put(entry.getValue(), entry.getKey());
     }
     for (SNode newNode : result) {
-      CopyPasteRegistry.getInstance().preProcessNode(newNode, newNodesToSourceNodes);
+      CopyPasteManager.getInstance().preProcessNode(newNode, newNodesToSourceNodes);
     }
 
     model.setLoading(false);
