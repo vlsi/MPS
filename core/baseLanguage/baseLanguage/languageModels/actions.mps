@@ -12452,34 +12452,47 @@
                   </node>
                 </node>
               </node>
-              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="600115726757810251">
-                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="600115726757810252">
-                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="600115726757810253">
-                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="600115726757810254">
+              <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="364536634176539419">
+                <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="364536634176539426">
+                  <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="364536634176539424">
+                    <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="364536634176539420">
                       <link role="variableDeclaration" targetNodeId="600115726757810246" resolveInfo="localStatisFieldReference" />
                     </node>
                   </node>
-                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="600115726757810255">
+                  <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="364536634176539430">
                     <link role="baseMethodDeclaration" targetNodeId="19.~SNode.addReference(jetbrains.mps.smodel.SReference):void" resolveInfo="addReference" />
-                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="600115726757810256">
-                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="600115726757810257">
-                        <link role="baseMethodDeclaration" targetNodeId="19.~StaticReference.&lt;init&gt;(java.lang.String,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SModelReference,jetbrains.mps.smodel.SNodeId,java.lang.String)" resolveInfo="StaticReference" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="600115726757810258">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="600115726757810281">
+                    <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="364536634176539431">
+                      <node role="creator" type="jetbrains.mps.baseLanguage.structure.ClassCreator" id="364536634176539433">
+                        <link role="baseMethodDeclaration" targetNodeId="19.~DynamicReference.&lt;init&gt;(java.lang.String,jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SModelReference,java.lang.String)" resolveInfo="DynamicReference" />
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="364536634176539439">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="364536634176539435">
                             <link role="variableDeclaration" targetNodeId="600115726757809750" resolveInfo="staticFieldRef" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation" id="600115726757810260" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation" id="364536634176539443" />
                         </node>
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="600115726757810261">
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="364536634176539445">
                           <link role="variableDeclaration" targetNodeId="600115726757810246" resolveInfo="localStatisFieldReference" />
                         </node>
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="600115726757810262" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.NullLiteral" id="600115726757810263" />
-                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="600115726757810264">
-                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="600115726757810282">
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="364536634176541123">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="364536634176539461">
+                            <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="364536634176539459">
+                              <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="364536634176539454">
+                                <link role="variableDeclaration" targetNodeId="600115726757810246" resolveInfo="localStatisFieldReference" />
+                              </node>
+                            </node>
+                            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="364536634176541122">
+                              <link role="baseMethodDeclaration" targetNodeId="19.~SNode.getModel():jetbrains.mps.smodel.SModel" resolveInfo="getModel" />
+                            </node>
+                          </node>
+                          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="364536634176542704">
+                            <link role="baseMethodDeclaration" targetNodeId="19.~SModel.getSModelReference():jetbrains.mps.smodel.SModelReference" resolveInfo="getSModelReference" />
+                          </node>
+                        </node>
+                        <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="364536634176539449">
+                          <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="364536634176539448">
                             <link role="variableDeclaration" targetNodeId="600115726757809750" resolveInfo="staticFieldRef" />
                           </node>
-                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo" id="600115726757810266" />
+                          <node role="operation" type="jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo" id="364536634176539453" />
                         </node>
                       </node>
                     </node>

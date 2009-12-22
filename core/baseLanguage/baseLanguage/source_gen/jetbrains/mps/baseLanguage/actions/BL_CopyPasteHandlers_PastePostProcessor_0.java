@@ -15,7 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.DynamicReference;
 
 public class BL_CopyPasteHandlers_PastePostProcessor_0 implements PastePostProcessor {
   public SNode getApplicableConcept() {
@@ -36,7 +36,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_0 implements PastePostProce
       }
     }).isNotEmpty()) {
       SNode localStatisFieldReference = SNodeOperations.replaceWithNewChild(pastedNode, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
-      localStatisFieldReference.addReference(new StaticReference(SLinkOperations.getRole(staticFieldRef), localStatisFieldReference, null, null, SLinkOperations.getResolveInfo(staticFieldRef)));
+      localStatisFieldReference.addReference(new DynamicReference(SLinkOperations.getRole(staticFieldRef), localStatisFieldReference, localStatisFieldReference.getModel().getSModelReference(), SLinkOperations.getResolveInfo(staticFieldRef)));
     }
   }
 }
