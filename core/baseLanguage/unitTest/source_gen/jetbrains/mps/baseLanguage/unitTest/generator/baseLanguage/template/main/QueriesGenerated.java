@@ -20,6 +20,10 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_5086493755336418407(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "abstractClass");
+  }
+
   public static boolean ifMacro_Condition_7080278351417154660(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "message", true), "message", true) != null);
   }

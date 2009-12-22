@@ -205,6 +205,20 @@
         </node>
       </node>
     </node>
+    <node role="propertyMacro$property_attribute$abstractClass" type="jetbrains.mps.lang.generator.structure.PropertyMacro" id="5086493755336418404">
+      <node role="propertyValueFunction" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue" id="5086493755336418407">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5086493755336418408">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5086493755336418409">
+            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5086493755336418410">
+              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="5086493755336418411">
+                <link role="property" targetNodeId="3.1075300953594" resolveInfo="abstractClass" />
+              </node>
+              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="5086493755336418412" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1171932074437">
     <property name="name" value="main_unitTest" />

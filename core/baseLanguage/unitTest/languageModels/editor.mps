@@ -195,6 +195,22 @@
           <property name="flag" value="true" />
         </node>
       </node>
+      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="5086493755336393476">
+        <property name="text" value="abstract" />
+        <link role="styleClass" targetNodeId="5.1186415544875" resolveInfo="KeyWord" />
+        <node role="renderingCondition" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition" id="5086493755336393477">
+          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="5086493755336393478">
+            <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="5086493755336397045">
+              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="5086493755336397047">
+                <node role="operand" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node" id="5086493755336397046" />
+                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess" id="5086493755336418403">
+                  <link role="property" targetNodeId="4.1075300953594" resolveInfo="abstractClass" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1171931851752">
         <property name="text" value="test case" />
         <link role="styleClass" targetNodeId="5.1186415544875" resolveInfo="KeyWord" />
