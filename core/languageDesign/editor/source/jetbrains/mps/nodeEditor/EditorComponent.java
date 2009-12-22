@@ -1242,7 +1242,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
       if (selectedCell instanceof EditorCell_Label) {
         EditorCell_Label label = (EditorCell_Label) selectedCell;
-        if (label.getText().length() == 0 || (label instanceof EditorCell_Constant && !label.isEditable() &&
+        if (label.getText().length() == 0 || ((label instanceof EditorCell_Constant || label instanceof EditorCell_Property) && !label.isEditable() &&
           (label.getAction(CellActionType.DELETE) != null || label.getContainingBigCell().getLastLeaf(CellConditions.SELECTABLE) == label))) {
           return CellActionType.DELETE;
         }
