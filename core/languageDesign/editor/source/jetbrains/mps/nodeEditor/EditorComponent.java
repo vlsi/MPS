@@ -211,6 +211,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private SearchPanel mySearchPanel = new SearchPanel(this);
   @SuppressWarnings({"UnusedDeclaration"})
   private ReferenceUnderliner myReferenceUnderliner = new ReferenceUnderliner();
+  private BracesHighlighter myBracesHighlighter = new BracesHighlighter(this);
 
 
   public EditorComponent(IOperationContext operationContext) {
@@ -2743,6 +2744,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public CellTracker getCellTracker() {
     return myCellTracker;
+  }
+
+  public BracesHighlighter getBracesHighlighter() {
+    return myBracesHighlighter;
   }
 
   private class MySimpleModelListener extends SModelAdapter {

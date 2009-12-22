@@ -21,7 +21,6 @@ import com.intellij.util.LocalTimeCounter;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.TextPasteUtil;
-import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.nodeEditor.*;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.NodeSubstitutePatternEditor;
@@ -31,8 +30,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoUtil;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
@@ -47,9 +44,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   protected boolean myNoTextSet;
   protected TextLine myTextLine;
   protected TextLine myNullTextLine;
-  protected boolean myCaretIsVisible = true;
-  private EditorCell_Label myCellWithSelectedBraces;
-  private static final Color BRACES_LEFT_HIGHTLIGHT_COLOR = new Color(107, 142, 178);
+  protected boolean myCaretIsVisible = true;  
 
   protected EditorCell_Label(@NotNull EditorContext editorContext, SNode node, String text) {
     super(editorContext, node);
@@ -108,78 +103,15 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   public void setSelected(boolean selected) {
-    super.setSelected(selected);
-
-    setBracesSelected(selected);
-    if (selected) {
-      updateBracesSelection();
-    } else {
-      if (myCellWithSelectedBraces != null) {
-        myCellWithSelectedBraces.setBracesSelected(false);
-        myCellWithSelectedBraces = null;
-      }
-    }
-
+    super.setSelected(selected);            
     if (!selected && !getEditor().selectionStackContains(this)) {
       myTextLine.resetSelection();
     }
     myCaretIsVisible = true;
   }
 
-  private void setBracesSelected(boolean selected) {
-    final String label = getStyle().get(StyleAttributes.MATCHING_LABEL);
-    if (label != null) {
-      EditorCell validCellForNode = getEditor().getBigValidCellForNode(this.getSNode());
-      if (validCellForNode != null) {
-        EditorCell editorCell = validCellForNode.getFirstDescendant(new Condition<EditorCell>() {
-          public boolean met(EditorCell cell) {
-            return cell != EditorCell_Label.this && cell.getSNode() == EditorCell_Label.this.getSNode() && label.equals(cell.getStyle().get(StyleAttributes.MATCHING_LABEL));
-          }
-        });
-        if (editorCell != null) {
-          if (editorCell.getY() != this.getY()) {
-            if (selected) {
-              getEditor().leftHighlightCells(this, editorCell, BRACES_LEFT_HIGHTLIGHT_COLOR);
-            } else {
-              getEditor().leftUnhighlightCell(this);
-            }
-          }
-          if (!(editorCell instanceof EditorCell_Label)) {
-            return;
-          }
-          this.getTextLine().setBraceSelected(selected);
-          ((EditorCell_Label) editorCell).getTextLine().setBraceSelected(selected);
-        }
-      }
-    }
-  }
-
-  private void updateBracesSelection() {
-    if (myCellWithSelectedBraces != null) {
-      myCellWithSelectedBraces.setBracesSelected(false);
-      myCellWithSelectedBraces = null;
-    }
-    if (getStyle().get(StyleAttributes.MATCHING_LABEL) == null) {
-      if (getCaretPosition() == 0) {
-        EditorCell cell = getPrevLeaf();
-        if (cell instanceof EditorCell_Label) {
-          EditorCell_Label label = (EditorCell_Label) cell;
-          if (label.getBounds().getMaxX() == getBounds().getMinX() && getLeftInset() == 0) {
-            myCellWithSelectedBraces = label;
-            label.setBracesSelected(true);
-          }
-        }
-      } else if (getCaretPosition() == getText().length()) {
-        EditorCell cell = getNextLeaf();
-        if (cell instanceof EditorCell_Label) {
-          EditorCell_Label label = (EditorCell_Label) cell;
-          if (label.getBounds().getMinX() == getBounds().getMaxX() && getRightInset() == 0) {
-            myCellWithSelectedBraces = label;
-            label.setBracesSelected(true);
-          }
-        }
-      }
-    }
+  public void highlightSelectedBrace(boolean selected) {
+    this.getTextLine().highlightSelectedBrace(selected);
   }
 
   public String getText() {
@@ -253,7 +185,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   public void setCaretPosition(int position, boolean selection) {
     assert isCaretPositionAllowed(position);
     myTextLine.setCaretPosition(position, selection);
-    updateBracesSelection();
+    getEditor().getBracesHighlighter().updateBracesSelection(this);
   }
 
   public boolean isCaretPositionAllowed(int position) {
@@ -448,7 +380,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     if (myTextLine.getCaretPosition() == getText().length() && !isLastPositionAllowed() && isCaretPositionAllowed(getText().length() - 1)) {
       setCaretPosition(getText().length() - 1);
     }
-    updateBracesSelection();
+    getEditor().getBracesHighlighter().updateBracesSelection(this);
   }
 
   public int getCaretX() {

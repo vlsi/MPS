@@ -130,7 +130,7 @@ public class TextLine {
     return myBraceSelected;
   }
 
-  public void setBraceSelected(boolean braceSelected) {
+  public void highlightSelectedBrace(boolean braceSelected) {
     myBraceSelected = braceSelected;
   }
 
