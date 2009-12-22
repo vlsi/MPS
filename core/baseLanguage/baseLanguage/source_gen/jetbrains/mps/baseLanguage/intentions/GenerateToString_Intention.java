@@ -66,21 +66,21 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
         "" :
         ", "
       )) + SPropertyOperations.getString(field, "name") + "=");
-      SNode dotExpression = new _Quotations.QuotationClass_36().createNode(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), fieldRef);
+      SNode dotExpression = new _Quotations.QuotationClass_40().createNode(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null), fieldRef);
       if (field == firstField) {
-        currentExpression = new _Quotations.QuotationClass_33().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
-        currentExpression = new _Quotations.QuotationClass_38().createNode(dotExpression, currentExpression);
+        currentExpression = new _Quotations.QuotationClass_32().createNode(SPropertyOperations.getString(classConcept, "name") + "{", item);
+        currentExpression = new _Quotations.QuotationClass_42().createNode(dotExpression, currentExpression);
       } else {
         currentExpression = new _Quotations.QuotationClass_7().createNode(item, currentExpression);
-        currentExpression = new _Quotations.QuotationClass_37().createNode(dotExpression, currentExpression);
+        currentExpression = new _Quotations.QuotationClass_41().createNode(dotExpression, currentExpression);
       }
     }
     if (ListSequence.fromList(((List<SNode>)intentionContext.getContextParametersMap().get("selectedFields"))).isEmpty()) {
-      rightmostExpression = new _Quotations.QuotationClass_18().createNode(SPropertyOperations.getString(classConcept, "name") + "{}");
+      rightmostExpression = new _Quotations.QuotationClass_17().createNode(SPropertyOperations.getString(classConcept, "name") + "{}");
     } else {
       rightmostExpression = new _Quotations.QuotationClass_8().createNode(currentExpression);
     }
-    SNode method = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_23().createNode(rightmostExpression));
+    SNode method = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_22().createNode(rightmostExpression));
     editorContext.select(method);
   }
 
