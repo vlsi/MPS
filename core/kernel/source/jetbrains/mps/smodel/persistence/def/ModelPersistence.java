@@ -180,14 +180,16 @@ public class ModelPersistence {
     if (needsUpgrade(modelPersistenceVersion)) {
       model = upgradeModelPersistence(model, modelPersistenceVersion);
       modelPersistenceVersion = currentApplicationPersistenceVersion;
+      model.setPersistenceVersion(modelPersistenceVersion);
       document = saveModel(model, false);
       try {
         JDOMUtil.writeDocument(document, file);
       } catch (IOException e) {
         LOG.error("error while saving model after persistence upgrade " + model.getSModelReference(), e);
       }
+    } else {
+      model.setPersistenceVersion(modelPersistenceVersion);
     }
-    model.setPersistenceVersion(modelPersistenceVersion);
     return model;
   }
 
