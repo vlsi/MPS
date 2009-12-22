@@ -52,6 +52,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
+      style.set(StyleAttributes.MATCHING_LABEL, "angle-brackets");
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.PUNCTUATION_RIGHT, true);
     }
@@ -65,6 +66,7 @@ public class _GenericDeclaration_TypeVariables_Component extends AbstractCellPro
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
+      style.set(StyleAttributes.MATCHING_LABEL, "angle-brackets");
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
       style.set(StyleAttributes.SELECTABLE, false);
     }
