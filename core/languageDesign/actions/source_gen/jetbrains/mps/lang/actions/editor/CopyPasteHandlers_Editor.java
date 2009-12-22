@@ -20,6 +20,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandlerElementKeyMap;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultReferenceSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 
@@ -34,6 +35,7 @@ public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_2789_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_2789_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2789_2(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_2789_2(editorContext, node));
     editorCell.addEditorCell(this.createCollection_2789_3(editorContext, node));
     return editorCell;
   }
@@ -73,7 +75,7 @@ public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_2789_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "paste post processors");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "copy paste handlers");
     editorCell.setCellId("Constant_2789_0");
     editorCell.setDefaultText("");
     return editorCell;
@@ -82,6 +84,13 @@ public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_2789_1(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_2789_1");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_2789_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
+    editorCell.setCellId("Constant_2789_2");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -158,6 +167,7 @@ public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
         if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, " "));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
@@ -166,7 +176,13 @@ public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
+      {
+        EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), " ");
+        editorCell.setSelectable(false);
+        editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
+        return editorCell;
+      }
     }
   }
 
@@ -200,6 +216,7 @@ public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
         if (elementNode != null) {
           substituteInfoNode = elementNode;
           elementCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(elementNode));
+          elementCell.addKeyMap(new RefNodeListHandlerElementKeyMap(this, " "));
         }
         if (elementCell.getSubstituteInfo() == null || elementCell.getSubstituteInfo() instanceof DefaultReferenceSubstituteInfo) {
           elementCell.setSubstituteInfo(new DefaultChildSubstituteInfo(listOwner, elementNode, super.getLinkDeclaration(), editorContext));
@@ -208,7 +225,13 @@ public class CopyPasteHandlers_Editor extends DefaultNodeEditor {
     }
 
     public EditorCell createSeparatorCell(EditorContext editorContext) {
-      return super.createSeparatorCell(editorContext);
+      {
+        EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, this.getOwner(), " ");
+        editorCell.setSelectable(false);
+        editorCell.getStyle().set(StyleAttributes.LAYOUT_CONSTRAINT, "");
+        editorCell.getStyle().set(StyleAttributes.PUNCTUATION_LEFT, true);
+        return editorCell;
+      }
     }
   }
 }
