@@ -220,6 +220,10 @@
         </component>
 
         <component>
+            <implementation-class>jetbrains.mps.smodel.persistence.PersistenceSettings</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.typesystem.inference.TypeChecker</implementation-class>
         </component>
 

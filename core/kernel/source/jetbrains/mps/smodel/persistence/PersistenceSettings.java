@@ -128,8 +128,9 @@ public class PersistenceSettings implements SearchableConfigurable, PersistentSt
       constraints.weighty = 0;
       constraints.gridx = 0;
       constraints.gridy = 0;
+      constraints.anchor = GridBagConstraints.WEST;
       for (int i = MIN_VERSION; i<= MAX_VERSION; i++) {
-        this.add(myRadioButtons[i - MIN_VERSION]);
+        this.add(myRadioButtons[i - MIN_VERSION], constraints);
         constraints.gridy++;
       }
       constraints.weighty = 1;
