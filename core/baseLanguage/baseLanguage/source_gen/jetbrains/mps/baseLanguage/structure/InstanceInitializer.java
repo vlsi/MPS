@@ -45,7 +45,7 @@ public class InstanceInitializer extends BaseConcept implements ClassifierMember
   }
 
   public StatementList getStatementList() {
-    return (StatementList)this.getChild(StatementList.class, InstanceInitializer.STATEMENT_LIST);
+    return (StatementList) this.getChild(StatementList.class, InstanceInitializer.STATEMENT_LIST);
   }
 
   public void setStatementList(StatementList node) {
@@ -53,7 +53,7 @@ public class InstanceInitializer extends BaseConcept implements ClassifierMember
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, InstanceInitializer.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, InstanceInitializer.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -61,7 +61,7 @@ public class InstanceInitializer extends BaseConcept implements ClassifierMember
   }
 
   public static InstanceInitializer newInstance(SModel sm, boolean init) {
-    return (InstanceInitializer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InstanceInitializer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InstanceInitializer newInstance(SModel sm) {

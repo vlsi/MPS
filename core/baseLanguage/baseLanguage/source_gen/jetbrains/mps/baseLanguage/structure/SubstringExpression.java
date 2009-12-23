@@ -18,7 +18,7 @@ public class SubstringExpression extends Expression {
   }
 
   public Expression getOperand() {
-    return (Expression)this.getChild(Expression.class, SubstringExpression.OPERAND);
+    return (Expression) this.getChild(Expression.class, SubstringExpression.OPERAND);
   }
 
   public void setOperand(Expression node) {
@@ -26,7 +26,7 @@ public class SubstringExpression extends Expression {
   }
 
   public Expression getStartIndex() {
-    return (Expression)this.getChild(Expression.class, SubstringExpression.START_INDEX);
+    return (Expression) this.getChild(Expression.class, SubstringExpression.START_INDEX);
   }
 
   public void setStartIndex(Expression node) {
@@ -34,7 +34,7 @@ public class SubstringExpression extends Expression {
   }
 
   public Expression getEndIndex() {
-    return (Expression)this.getChild(Expression.class, SubstringExpression.END_INDEX);
+    return (Expression) this.getChild(Expression.class, SubstringExpression.END_INDEX);
   }
 
   public void setEndIndex(Expression node) {
@@ -42,7 +42,7 @@ public class SubstringExpression extends Expression {
   }
 
   public static SubstringExpression newInstance(SModel sm, boolean init) {
-    return (SubstringExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SubstringExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SubstringExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SubstringExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SubstringExpression newInstance(SModel sm) {

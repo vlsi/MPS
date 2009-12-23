@@ -62,7 +62,7 @@ public class ConstructorDeclaration extends BaseMethodDeclaration implements Cla
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, ConstructorDeclaration.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, ConstructorDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -70,7 +70,7 @@ public class ConstructorDeclaration extends BaseMethodDeclaration implements Cla
   }
 
   public static ConstructorDeclaration newInstance(SModel sm, boolean init) {
-    return (ConstructorDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstructorDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstructorDeclaration newInstance(SModel sm) {

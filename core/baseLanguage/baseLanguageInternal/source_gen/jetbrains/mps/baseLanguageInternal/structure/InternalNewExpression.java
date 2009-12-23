@@ -30,7 +30,7 @@ public class InternalNewExpression extends BaseMethodCall {
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, InternalNewExpression.TYPE);
+    return (Type) this.getChild(Type.class, InternalNewExpression.TYPE);
   }
 
   public void setType(Type node) {
@@ -58,7 +58,7 @@ public class InternalNewExpression extends BaseMethodCall {
   }
 
   public static InternalNewExpression newInstance(SModel sm, boolean init) {
-    return (InternalNewExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalNewExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalNewExpression newInstance(SModel sm) {

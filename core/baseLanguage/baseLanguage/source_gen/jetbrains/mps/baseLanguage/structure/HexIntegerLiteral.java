@@ -24,7 +24,7 @@ public class HexIntegerLiteral extends IntegerLiteral {
   }
 
   public static HexIntegerLiteral newInstance(SModel sm, boolean init) {
-    return (HexIntegerLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.HexIntegerLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (HexIntegerLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.HexIntegerLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static HexIntegerLiteral newInstance(SModel sm) {

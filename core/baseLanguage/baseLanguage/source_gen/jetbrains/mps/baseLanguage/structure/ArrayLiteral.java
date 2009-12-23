@@ -38,7 +38,7 @@ public class ArrayLiteral extends Expression {
   }
 
   public static ArrayLiteral newInstance(SModel sm, boolean init) {
-    return (ArrayLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ArrayLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ArrayLiteral newInstance(SModel sm) {

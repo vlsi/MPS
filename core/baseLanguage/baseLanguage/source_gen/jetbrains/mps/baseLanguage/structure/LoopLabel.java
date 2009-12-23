@@ -53,7 +53,7 @@ public class LoopLabel extends BaseConcept implements INamedConcept {
   }
 
   public static LoopLabel newInstance(SModel sm, boolean init) {
-    return (LoopLabel)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LoopLabel) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabel", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LoopLabel newInstance(SModel sm) {

@@ -44,7 +44,7 @@ public class ExpressionStatement extends Statement implements IWrapper {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, ExpressionStatement.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, ExpressionStatement.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -52,7 +52,7 @@ public class ExpressionStatement extends Statement implements IWrapper {
   }
 
   public static ExpressionStatement newInstance(SModel sm, boolean init) {
-    return (ExpressionStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExpressionStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExpressionStatement newInstance(SModel sm) {

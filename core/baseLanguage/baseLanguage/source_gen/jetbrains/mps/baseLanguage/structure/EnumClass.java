@@ -38,7 +38,7 @@ public class EnumClass extends ClassConcept {
   }
 
   public static EnumClass newInstance(SModel sm, boolean init) {
-    return (EnumClass)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumClass", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EnumClass) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumClass", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EnumClass newInstance(SModel sm) {

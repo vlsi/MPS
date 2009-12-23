@@ -17,7 +17,7 @@ public class CastExpression extends Expression {
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, CastExpression.TYPE);
+    return (Type) this.getChild(Type.class, CastExpression.TYPE);
   }
 
   public void setType(Type node) {
@@ -25,7 +25,7 @@ public class CastExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, CastExpression.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, CastExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -33,7 +33,7 @@ public class CastExpression extends Expression {
   }
 
   public static CastExpression newInstance(SModel sm, boolean init) {
-    return (CastExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CastExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CastExpression newInstance(SModel sm) {

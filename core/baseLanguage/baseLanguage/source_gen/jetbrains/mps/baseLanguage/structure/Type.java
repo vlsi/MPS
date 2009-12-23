@@ -44,7 +44,7 @@ public class Type extends BaseConcept implements IType {
   }
 
   public static Type newInstance(SModel sm, boolean init) {
-    return (Type)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Type) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Type newInstance(SModel sm) {

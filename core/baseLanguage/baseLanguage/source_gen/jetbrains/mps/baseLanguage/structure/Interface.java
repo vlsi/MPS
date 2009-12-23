@@ -74,7 +74,7 @@ public class Interface extends Classifier implements IBLDeprecatable {
   }
 
   public static Interface newInstance(SModel sm, boolean init) {
-    return (Interface)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Interface", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Interface) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Interface", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Interface newInstance(SModel sm) {

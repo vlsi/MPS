@@ -19,7 +19,7 @@ public class UsingStatement extends Statement {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, UsingStatement.BODY);
+    return (StatementList) this.getChild(StatementList.class, UsingStatement.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -47,7 +47,7 @@ public class UsingStatement extends Statement {
   }
 
   public static UsingStatement newInstance(SModel sm, boolean init) {
-    return (UsingStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UsingStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UsingStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UsingStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UsingStatement newInstance(SModel sm) {

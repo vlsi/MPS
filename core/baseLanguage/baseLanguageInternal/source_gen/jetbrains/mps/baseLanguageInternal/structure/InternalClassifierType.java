@@ -25,7 +25,7 @@ public class InternalClassifierType extends ClassifierType {
   }
 
   public static InternalClassifierType newInstance(SModel sm, boolean init) {
-    return (InternalClassifierType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalClassifierType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalClassifierType newInstance(SModel sm) {

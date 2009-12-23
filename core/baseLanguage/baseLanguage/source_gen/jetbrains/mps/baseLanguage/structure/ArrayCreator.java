@@ -19,7 +19,7 @@ public class ArrayCreator extends AbstractCreator {
   }
 
   public Type getComponentType() {
-    return (Type)this.getChild(Type.class, ArrayCreator.COMPONENT_TYPE);
+    return (Type) this.getChild(Type.class, ArrayCreator.COMPONENT_TYPE);
   }
 
   public void setComponentType(Type node) {
@@ -47,7 +47,7 @@ public class ArrayCreator extends AbstractCreator {
   }
 
   public static ArrayCreator newInstance(SModel sm, boolean init) {
-    return (ArrayCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ArrayCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ArrayCreator newInstance(SModel sm) {

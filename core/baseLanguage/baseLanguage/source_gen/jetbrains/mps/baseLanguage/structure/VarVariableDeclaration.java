@@ -53,7 +53,7 @@ public class VarVariableDeclaration extends Statement implements INamedConcept {
   }
 
   public Expression getInit() {
-    return (Expression)this.getChild(Expression.class, VarVariableDeclaration.INIT);
+    return (Expression) this.getChild(Expression.class, VarVariableDeclaration.INIT);
   }
 
   public void setInit(Expression node) {
@@ -61,7 +61,7 @@ public class VarVariableDeclaration extends Statement implements INamedConcept {
   }
 
   public static VarVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (VarVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VarVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VarVariableDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VarVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VarVariableDeclaration newInstance(SModel sm) {

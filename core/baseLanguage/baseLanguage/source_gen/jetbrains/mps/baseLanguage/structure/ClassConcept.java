@@ -80,7 +80,7 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   }
 
   public ClassifierType getSuperclass() {
-    return (ClassifierType)this.getChild(ClassifierType.class, ClassConcept.SUPERCLASS);
+    return (ClassifierType) this.getChild(ClassifierType.class, ClassConcept.SUPERCLASS);
   }
 
   public void setSuperclass(ClassifierType node) {
@@ -88,7 +88,7 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   }
 
   public InstanceInitializer getInstanceInitializer() {
-    return (InstanceInitializer)this.getChild(InstanceInitializer.class, ClassConcept.INSTANCE_INITIALIZER);
+    return (InstanceInitializer) this.getChild(InstanceInitializer.class, ClassConcept.INSTANCE_INITIALIZER);
   }
 
   public void setInstanceInitializer(InstanceInitializer node) {
@@ -96,7 +96,7 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   }
 
   public StaticInitializer getClassInitializer() {
-    return (StaticInitializer)this.getChild(StaticInitializer.class, ClassConcept.CLASS_INITIALIZER);
+    return (StaticInitializer) this.getChild(StaticInitializer.class, ClassConcept.CLASS_INITIALIZER);
   }
 
   public void setClassInitializer(StaticInitializer node) {
@@ -104,7 +104,7 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   }
 
   public StatementList getStaticInitializer() {
-    return (StatementList)this.getChild(StatementList.class, ClassConcept.STATIC_INITIALIZER);
+    return (StatementList) this.getChild(StatementList.class, ClassConcept.STATIC_INITIALIZER);
   }
 
   public void setStaticInitializer(StatementList node) {
@@ -212,7 +212,7 @@ public class ClassConcept extends Classifier implements IBLDeprecatable {
   }
 
   public static ClassConcept newInstance(SModel sm, boolean init) {
-    return (ClassConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ClassConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ClassConcept newInstance(SModel sm) {

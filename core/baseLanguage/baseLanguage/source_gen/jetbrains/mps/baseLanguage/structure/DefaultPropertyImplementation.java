@@ -17,7 +17,7 @@ public class DefaultPropertyImplementation extends PropertyImplementation {
   }
 
   public DefaultGetAccessor getDefaultGetAccessor() {
-    return (DefaultGetAccessor)this.getChild(DefaultGetAccessor.class, DefaultPropertyImplementation.DEFAULT_GET_ACCESSOR);
+    return (DefaultGetAccessor) this.getChild(DefaultGetAccessor.class, DefaultPropertyImplementation.DEFAULT_GET_ACCESSOR);
   }
 
   public void setDefaultGetAccessor(DefaultGetAccessor node) {
@@ -25,7 +25,7 @@ public class DefaultPropertyImplementation extends PropertyImplementation {
   }
 
   public DefaultSetAccessor getDefaultSetAccessor() {
-    return (DefaultSetAccessor)this.getChild(DefaultSetAccessor.class, DefaultPropertyImplementation.DEFAULT_SET_ACCESSOR);
+    return (DefaultSetAccessor) this.getChild(DefaultSetAccessor.class, DefaultPropertyImplementation.DEFAULT_SET_ACCESSOR);
   }
 
   public void setDefaultSetAccessor(DefaultSetAccessor node) {
@@ -33,7 +33,7 @@ public class DefaultPropertyImplementation extends PropertyImplementation {
   }
 
   public static DefaultPropertyImplementation newInstance(SModel sm, boolean init) {
-    return (DefaultPropertyImplementation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DefaultPropertyImplementation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DefaultPropertyImplementation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DefaultPropertyImplementation newInstance(SModel sm) {

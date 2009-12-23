@@ -15,7 +15,7 @@ public class AnnotationMethodDeclaration extends InstanceMethodDeclaration {
   }
 
   public static AnnotationMethodDeclaration newInstance(SModel sm, boolean init) {
-    return (AnnotationMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AnnotationMethodDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AnnotationMethodDeclaration newInstance(SModel sm) {

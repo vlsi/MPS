@@ -16,7 +16,7 @@ public class ClosureParameterReference extends Expression {
   }
 
   public ClosureParameter getClosureParameter() {
-    return (ClosureParameter)this.getReferent(ClosureParameter.class, ClosureParameterReference.CLOSURE_PARAMETER);
+    return (ClosureParameter) this.getReferent(ClosureParameter.class, ClosureParameterReference.CLOSURE_PARAMETER);
   }
 
   public void setClosureParameter(ClosureParameter node) {
@@ -24,7 +24,7 @@ public class ClosureParameterReference extends Expression {
   }
 
   public static ClosureParameterReference newInstance(SModel sm, boolean init) {
-    return (ClosureParameterReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClosureParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ClosureParameterReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClosureParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ClosureParameterReference newInstance(SModel sm) {

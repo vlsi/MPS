@@ -15,7 +15,7 @@ public class StringBooleanOperation extends BaseStringOperation {
   }
 
   public static StringBooleanOperation newInstance(SModel sm, boolean init) {
-    return (StringBooleanOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringBooleanOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StringBooleanOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringBooleanOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StringBooleanOperation newInstance(SModel sm) {

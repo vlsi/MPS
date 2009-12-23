@@ -18,7 +18,7 @@ public class InternalClassExpression extends Expression {
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, InternalClassExpression.TYPE);
+    return (Type) this.getChild(Type.class, InternalClassExpression.TYPE);
   }
 
   public void setType(Type node) {
@@ -26,7 +26,7 @@ public class InternalClassExpression extends Expression {
   }
 
   public static InternalClassExpression newInstance(SModel sm, boolean init) {
-    return (InternalClassExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalClassExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalClassExpression newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class GetAccessor extends BaseConcept {
   }
 
   public StatementList getStatementList() {
-    return (StatementList)this.getChild(StatementList.class, GetAccessor.STATEMENT_LIST);
+    return (StatementList) this.getChild(StatementList.class, GetAccessor.STATEMENT_LIST);
   }
 
   public void setStatementList(StatementList node) {
@@ -25,7 +25,7 @@ public class GetAccessor extends BaseConcept {
   }
 
   public static GetAccessor newInstance(SModel sm, boolean init) {
-    return (GetAccessor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GetAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetAccessor) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GetAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetAccessor newInstance(SModel sm) {

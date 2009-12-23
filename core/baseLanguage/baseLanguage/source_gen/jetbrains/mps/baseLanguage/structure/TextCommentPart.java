@@ -24,7 +24,7 @@ public class TextCommentPart extends CommentPart {
   }
 
   public static TextCommentPart newInstance(SModel sm, boolean init) {
-    return (TextCommentPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TextCommentPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TextCommentPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TextCommentPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TextCommentPart newInstance(SModel sm) {

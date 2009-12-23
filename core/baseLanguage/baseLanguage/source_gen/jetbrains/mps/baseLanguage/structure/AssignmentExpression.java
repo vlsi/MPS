@@ -42,7 +42,7 @@ public class AssignmentExpression extends BaseAssignmentExpression implements Ty
   }
 
   public static AssignmentExpression newInstance(SModel sm, boolean init) {
-    return (AssignmentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AssignmentExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AssignmentExpression newInstance(SModel sm) {

@@ -25,7 +25,7 @@ public class TrimOperation extends BaseStringOperation {
   }
 
   public static TrimOperation newInstance(SModel sm, boolean init) {
-    return (TrimOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TrimOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TrimOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TrimOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TrimOperation newInstance(SModel sm) {

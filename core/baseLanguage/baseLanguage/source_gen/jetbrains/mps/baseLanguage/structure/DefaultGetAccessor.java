@@ -16,7 +16,7 @@ public class DefaultGetAccessor extends BaseConcept {
   }
 
   public static DefaultGetAccessor newInstance(SModel sm, boolean init) {
-    return (DefaultGetAccessor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DefaultGetAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DefaultGetAccessor) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DefaultGetAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DefaultGetAccessor newInstance(SModel sm) {

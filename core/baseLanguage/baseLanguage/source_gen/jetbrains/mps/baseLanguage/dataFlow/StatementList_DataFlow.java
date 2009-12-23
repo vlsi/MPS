@@ -20,7 +20,7 @@ public class StatementList_DataFlow extends DataFlowBuilder {
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")) {
       SNode bmd = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       for (SNode param : ListSequence.fromList(SLinkOperations.getTargets(bmd, "parameter", true))) {
-        _context.getBuilder().build((SNode)param);
+        _context.getBuilder().build((SNode) param);
       }
     }
     _context.getBuilder().emitNop();
@@ -34,7 +34,7 @@ public class StatementList_DataFlow extends DataFlowBuilder {
       }
     }
     for (SNode s : SLinkOperations.getTargets(_context.getNode(), "statement", true)) {
-      _context.getBuilder().build((SNode)s);
+      _context.getBuilder().build((SNode) s);
       if (s == lastStatement && SNodeOperations.isInstanceOf(s, "jetbrains.mps.baseLanguage.structure.ExpressionStatement") && ExpressionStatement_Behavior.call_canServeAsReturn_1239355137616(SNodeOperations.cast(s, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"))) {
         _context.getBuilder().emitRet();
       }

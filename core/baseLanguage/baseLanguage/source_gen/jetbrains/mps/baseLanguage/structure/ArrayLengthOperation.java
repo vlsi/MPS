@@ -43,7 +43,7 @@ public class ArrayLengthOperation extends BaseConcept implements IOperation {
   }
 
   public static ArrayLengthOperation newInstance(SModel sm, boolean init) {
-    return (ArrayLengthOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ArrayLengthOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLengthOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ArrayLengthOperation newInstance(SModel sm) {

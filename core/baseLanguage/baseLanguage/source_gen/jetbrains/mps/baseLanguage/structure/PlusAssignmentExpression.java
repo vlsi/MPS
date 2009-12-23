@@ -15,7 +15,7 @@ public class PlusAssignmentExpression extends BaseAssignmentExpression {
   }
 
   public static PlusAssignmentExpression newInstance(SModel sm, boolean init) {
-    return (PlusAssignmentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PlusAssignmentExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlusAssignmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PlusAssignmentExpression newInstance(SModel sm) {

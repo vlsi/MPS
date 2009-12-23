@@ -53,7 +53,7 @@ public class BaseVariableDeclaration extends BaseConcept implements IValidIdenti
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, BaseVariableDeclaration.TYPE);
+    return (Type) this.getChild(Type.class, BaseVariableDeclaration.TYPE);
   }
 
   public void setType(Type node) {
@@ -61,7 +61,7 @@ public class BaseVariableDeclaration extends BaseConcept implements IValidIdenti
   }
 
   public static BaseVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (BaseVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseVariableDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseVariableDeclaration newInstance(SModel sm) {

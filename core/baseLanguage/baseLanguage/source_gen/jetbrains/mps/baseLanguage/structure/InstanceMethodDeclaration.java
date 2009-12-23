@@ -62,7 +62,7 @@ public class InstanceMethodDeclaration extends BaseMethodDeclaration implements 
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, InstanceMethodDeclaration.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, InstanceMethodDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -70,7 +70,7 @@ public class InstanceMethodDeclaration extends BaseMethodDeclaration implements 
   }
 
   public static InstanceMethodDeclaration newInstance(SModel sm, boolean init) {
-    return (InstanceMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InstanceMethodDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InstanceMethodDeclaration newInstance(SModel sm) {

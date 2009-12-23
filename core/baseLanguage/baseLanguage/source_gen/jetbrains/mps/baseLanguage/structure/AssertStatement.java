@@ -17,7 +17,7 @@ public class AssertStatement extends Statement {
   }
 
   public Expression getCondition() {
-    return (Expression)this.getChild(Expression.class, AssertStatement.CONDITION);
+    return (Expression) this.getChild(Expression.class, AssertStatement.CONDITION);
   }
 
   public void setCondition(Expression node) {
@@ -25,7 +25,7 @@ public class AssertStatement extends Statement {
   }
 
   public Expression getMessage() {
-    return (Expression)this.getChild(Expression.class, AssertStatement.MESSAGE);
+    return (Expression) this.getChild(Expression.class, AssertStatement.MESSAGE);
   }
 
   public void setMessage(Expression node) {
@@ -33,7 +33,7 @@ public class AssertStatement extends Statement {
   }
 
   public static AssertStatement newInstance(SModel sm, boolean init) {
-    return (AssertStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssertStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AssertStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssertStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AssertStatement newInstance(SModel sm) {

@@ -24,7 +24,7 @@ public class FloatingPointFloatConstant extends Expression {
   }
 
   public static FloatingPointFloatConstant newInstance(SModel sm, boolean init) {
-    return (FloatingPointFloatConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FloatingPointFloatConstant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FloatingPointFloatConstant newInstance(SModel sm) {

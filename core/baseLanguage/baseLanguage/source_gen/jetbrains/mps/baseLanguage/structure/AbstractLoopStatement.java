@@ -54,7 +54,7 @@ public class AbstractLoopStatement extends Statement implements IContainer, ICon
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, AbstractLoopStatement.BODY);
+    return (StatementList) this.getChild(StatementList.class, AbstractLoopStatement.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -62,7 +62,7 @@ public class AbstractLoopStatement extends Statement implements IContainer, ICon
   }
 
   public LoopLabel getLoopLabel() {
-    return (LoopLabel)this.getChild(LoopLabel.class, AbstractLoopStatement.LOOP_LABEL);
+    return (LoopLabel) this.getChild(LoopLabel.class, AbstractLoopStatement.LOOP_LABEL);
   }
 
   public void setLoopLabel(LoopLabel node) {
@@ -70,7 +70,7 @@ public class AbstractLoopStatement extends Statement implements IContainer, ICon
   }
 
   public static AbstractLoopStatement newInstance(SModel sm, boolean init) {
-    return (AbstractLoopStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractLoopStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractLoopStatement newInstance(SModel sm) {

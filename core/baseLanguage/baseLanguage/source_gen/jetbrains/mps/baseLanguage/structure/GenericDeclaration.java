@@ -76,7 +76,7 @@ public class GenericDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public static GenericDeclaration newInstance(SModel sm, boolean init) {
-    return (GenericDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenericDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenericDeclaration newInstance(SModel sm) {

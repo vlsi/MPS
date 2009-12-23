@@ -55,7 +55,7 @@ public class VariableDeclaration extends BaseVariableDeclaration implements HasA
   }
 
   public Expression getInitializer() {
-    return (Expression)this.getChild(Expression.class, VariableDeclaration.INITIALIZER);
+    return (Expression) this.getChild(Expression.class, VariableDeclaration.INITIALIZER);
   }
 
   public void setInitializer(Expression node) {
@@ -83,7 +83,7 @@ public class VariableDeclaration extends BaseVariableDeclaration implements HasA
   }
 
   public static VariableDeclaration newInstance(SModel sm, boolean init) {
-    return (VariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VariableDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VariableDeclaration newInstance(SModel sm) {

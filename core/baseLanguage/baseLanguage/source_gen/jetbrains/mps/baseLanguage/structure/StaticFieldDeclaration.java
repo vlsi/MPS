@@ -62,7 +62,7 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, StaticFieldDeclaration.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, StaticFieldDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -70,7 +70,7 @@ public class StaticFieldDeclaration extends VariableDeclaration implements Class
   }
 
   public static StaticFieldDeclaration newInstance(SModel sm, boolean init) {
-    return (StaticFieldDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StaticFieldDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StaticFieldDeclaration newInstance(SModel sm) {

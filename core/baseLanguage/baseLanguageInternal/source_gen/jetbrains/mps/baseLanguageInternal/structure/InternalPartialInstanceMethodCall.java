@@ -59,7 +59,7 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
   }
 
   public Type getReturnType() {
-    return (Type)this.getChild(Type.class, InternalPartialInstanceMethodCall.RETURN_TYPE);
+    return (Type) this.getChild(Type.class, InternalPartialInstanceMethodCall.RETURN_TYPE);
   }
 
   public void setReturnType(Type node) {
@@ -67,7 +67,7 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
   }
 
   public Expression getInstance() {
-    return (Expression)this.getChild(Expression.class, InternalPartialInstanceMethodCall.INSTANCE);
+    return (Expression) this.getChild(Expression.class, InternalPartialInstanceMethodCall.INSTANCE);
   }
 
   public void setInstance(Expression node) {
@@ -95,7 +95,7 @@ public class InternalPartialInstanceMethodCall extends Expression implements IOp
   }
 
   public static InternalPartialInstanceMethodCall newInstance(SModel sm, boolean init) {
-    return (InternalPartialInstanceMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalPartialInstanceMethodCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalPartialInstanceMethodCall newInstance(SModel sm) {

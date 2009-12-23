@@ -16,7 +16,7 @@ public class AnonymousClassCreator extends AbstractCreator {
   }
 
   public AnonymousClass getCls() {
-    return (AnonymousClass)this.getChild(AnonymousClass.class, AnonymousClassCreator.CLS);
+    return (AnonymousClass) this.getChild(AnonymousClass.class, AnonymousClassCreator.CLS);
   }
 
   public void setCls(AnonymousClass node) {
@@ -24,7 +24,7 @@ public class AnonymousClassCreator extends AbstractCreator {
   }
 
   public static AnonymousClassCreator newInstance(SModel sm, boolean init) {
-    return (AnonymousClassCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AnonymousClassCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AnonymousClassCreator newInstance(SModel sm) {

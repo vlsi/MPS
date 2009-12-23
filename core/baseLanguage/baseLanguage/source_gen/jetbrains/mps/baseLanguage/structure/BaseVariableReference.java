@@ -16,7 +16,7 @@ public class BaseVariableReference extends Expression {
   }
 
   public BaseVariableDeclaration getBaseVariableDeclaration() {
-    return (BaseVariableDeclaration)this.getReferent(BaseVariableDeclaration.class, BaseVariableReference.BASE_VARIABLE_DECLARATION);
+    return (BaseVariableDeclaration) this.getReferent(BaseVariableDeclaration.class, BaseVariableReference.BASE_VARIABLE_DECLARATION);
   }
 
   public void setBaseVariableDeclaration(BaseVariableDeclaration node) {
@@ -24,7 +24,7 @@ public class BaseVariableReference extends Expression {
   }
 
   public static BaseVariableReference newInstance(SModel sm, boolean init) {
-    return (BaseVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseVariableReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseVariableReference newInstance(SModel sm) {

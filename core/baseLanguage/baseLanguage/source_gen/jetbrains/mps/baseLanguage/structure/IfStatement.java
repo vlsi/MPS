@@ -66,7 +66,7 @@ public class IfStatement extends Statement implements IContainsStatementList {
   }
 
   public Expression getCondition() {
-    return (Expression)this.getChild(Expression.class, IfStatement.CONDITION);
+    return (Expression) this.getChild(Expression.class, IfStatement.CONDITION);
   }
 
   public void setCondition(Expression node) {
@@ -74,7 +74,7 @@ public class IfStatement extends Statement implements IContainsStatementList {
   }
 
   public Statement getIfFalseStatement() {
-    return (Statement)this.getChild(Statement.class, IfStatement.IF_FALSE_STATEMENT);
+    return (Statement) this.getChild(Statement.class, IfStatement.IF_FALSE_STATEMENT);
   }
 
   public void setIfFalseStatement(Statement node) {
@@ -82,7 +82,7 @@ public class IfStatement extends Statement implements IContainsStatementList {
   }
 
   public StatementList getIfTrue() {
-    return (StatementList)this.getChild(StatementList.class, IfStatement.IF_TRUE);
+    return (StatementList) this.getChild(StatementList.class, IfStatement.IF_TRUE);
   }
 
   public void setIfTrue(StatementList node) {
@@ -110,7 +110,7 @@ public class IfStatement extends Statement implements IContainsStatementList {
   }
 
   public static IfStatement newInstance(SModel sm, boolean init) {
-    return (IfStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IfStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IfStatement newInstance(SModel sm) {

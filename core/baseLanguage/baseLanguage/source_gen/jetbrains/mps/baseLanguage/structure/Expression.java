@@ -19,7 +19,7 @@ public class Expression extends BaseConcept {
   }
 
   public static Expression newInstance(SModel sm, boolean init) {
-    return (Expression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Expression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Expression newInstance(SModel sm) {

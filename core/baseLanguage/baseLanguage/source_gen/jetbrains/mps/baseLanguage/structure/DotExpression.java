@@ -17,7 +17,7 @@ public class DotExpression extends Expression {
   }
 
   public Expression getOperand() {
-    return (Expression)this.getChild(Expression.class, DotExpression.OPERAND);
+    return (Expression) this.getChild(Expression.class, DotExpression.OPERAND);
   }
 
   public void setOperand(Expression node) {
@@ -25,7 +25,7 @@ public class DotExpression extends Expression {
   }
 
   public IOperation getOperation() {
-    return (IOperation)this.getChild(IOperation.class, DotExpression.OPERATION);
+    return (IOperation) this.getChild(IOperation.class, DotExpression.OPERATION);
   }
 
   public void setOperation(IOperation node) {
@@ -33,7 +33,7 @@ public class DotExpression extends Expression {
   }
 
   public static DotExpression newInstance(SModel sm, boolean init) {
-    return (DotExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DotExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DotExpression newInstance(SModel sm) {

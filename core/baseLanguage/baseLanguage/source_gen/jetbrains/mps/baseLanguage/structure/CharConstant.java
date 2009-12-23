@@ -24,7 +24,7 @@ public class CharConstant extends Expression {
   }
 
   public static CharConstant newInstance(SModel sm, boolean init) {
-    return (CharConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CharConstant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CharConstant newInstance(SModel sm) {

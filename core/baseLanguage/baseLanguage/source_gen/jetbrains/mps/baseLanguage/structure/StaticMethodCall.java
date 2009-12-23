@@ -16,7 +16,7 @@ public class StaticMethodCall extends BaseMethodCall {
   }
 
   public ClassConcept getClassConcept() {
-    return (ClassConcept)this.getReferent(ClassConcept.class, StaticMethodCall.CLASS_CONCEPT);
+    return (ClassConcept) this.getReferent(ClassConcept.class, StaticMethodCall.CLASS_CONCEPT);
   }
 
   public void setClassConcept(ClassConcept node) {
@@ -32,7 +32,7 @@ public class StaticMethodCall extends BaseMethodCall {
   }
 
   public static StaticMethodCall newInstance(SModel sm, boolean init) {
-    return (StaticMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StaticMethodCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StaticMethodCall newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class EnumValueOfExpression extends Expression {
   }
 
   public EnumClass getEnumClass() {
-    return (EnumClass)this.getReferent(EnumClass.class, EnumValueOfExpression.ENUM_CLASS);
+    return (EnumClass) this.getReferent(EnumClass.class, EnumValueOfExpression.ENUM_CLASS);
   }
 
   public void setEnumClass(EnumClass node) {
@@ -25,7 +25,7 @@ public class EnumValueOfExpression extends Expression {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, EnumValueOfExpression.VALUE);
+    return (Expression) this.getChild(Expression.class, EnumValueOfExpression.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -33,7 +33,7 @@ public class EnumValueOfExpression extends Expression {
   }
 
   public static EnumValueOfExpression newInstance(SModel sm, boolean init) {
-    return (EnumValueOfExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EnumValueOfExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumValueOfExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EnumValueOfExpression newInstance(SModel sm) {

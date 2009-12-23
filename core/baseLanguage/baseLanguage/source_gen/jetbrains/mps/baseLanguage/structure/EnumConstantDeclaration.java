@@ -68,7 +68,7 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
   }
 
   public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(BaseMethodDeclaration.class, EnumConstantDeclaration.BASE_METHOD_DECLARATION);
+    return (BaseMethodDeclaration) this.getReferent(BaseMethodDeclaration.class, EnumConstantDeclaration.BASE_METHOD_DECLARATION);
   }
 
   public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
@@ -84,7 +84,7 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, EnumConstantDeclaration.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, EnumConstantDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -132,7 +132,7 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
   }
 
   public static EnumConstantDeclaration newInstance(SModel sm, boolean init) {
-    return (EnumConstantDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EnumConstantDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EnumConstantDeclaration newInstance(SModel sm) {

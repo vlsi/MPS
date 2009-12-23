@@ -25,7 +25,7 @@ public class ContinueStatement extends Statement {
   }
 
   public LoopLabelReference getLoopLabelReference() {
-    return (LoopLabelReference)this.getChild(LoopLabelReference.class, ContinueStatement.LOOP_LABEL_REFERENCE);
+    return (LoopLabelReference) this.getChild(LoopLabelReference.class, ContinueStatement.LOOP_LABEL_REFERENCE);
   }
 
   public void setLoopLabelReference(LoopLabelReference node) {
@@ -33,7 +33,7 @@ public class ContinueStatement extends Statement {
   }
 
   public static ContinueStatement newInstance(SModel sm, boolean init) {
-    return (ContinueStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ContinueStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ContinueStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ContinueStatement newInstance(SModel sm) {

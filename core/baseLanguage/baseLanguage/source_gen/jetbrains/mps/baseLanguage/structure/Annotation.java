@@ -15,7 +15,7 @@ public class Annotation extends Interface {
   }
 
   public static Annotation newInstance(SModel sm, boolean init) {
-    return (Annotation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Annotation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Annotation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Annotation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Annotation newInstance(SModel sm) {

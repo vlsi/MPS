@@ -14,7 +14,7 @@ public class ReturnStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
     if (ReturnStatement_Behavior.call_getReturnJumpTarget_1229351767970(_context.getNode()) != null) {
       _context.getBuilder().emitJump(_context.getBuilder().after(ReturnStatement_Behavior.call_getReturnJumpTarget_1229351767970(_context.getNode())));
     } else {

@@ -16,7 +16,7 @@ public class AbstractUnaryNumberOperation extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, AbstractUnaryNumberOperation.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, AbstractUnaryNumberOperation.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -24,7 +24,7 @@ public class AbstractUnaryNumberOperation extends Expression {
   }
 
   public static AbstractUnaryNumberOperation newInstance(SModel sm, boolean init) {
-    return (AbstractUnaryNumberOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractUnaryNumberOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractUnaryNumberOperation newInstance(SModel sm) {

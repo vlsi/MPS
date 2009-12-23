@@ -20,7 +20,7 @@ public class TryStatement extends Statement {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, TryStatement.BODY);
+    return (StatementList) this.getChild(StatementList.class, TryStatement.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -28,7 +28,7 @@ public class TryStatement extends Statement {
   }
 
   public StatementList getFinallyBody() {
-    return (StatementList)this.getChild(StatementList.class, TryStatement.FINALLY_BODY);
+    return (StatementList) this.getChild(StatementList.class, TryStatement.FINALLY_BODY);
   }
 
   public void setFinallyBody(StatementList node) {
@@ -56,7 +56,7 @@ public class TryStatement extends Statement {
   }
 
   public static TryStatement newInstance(SModel sm, boolean init) {
-    return (TryStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TryStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TryStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TryStatement newInstance(SModel sm) {

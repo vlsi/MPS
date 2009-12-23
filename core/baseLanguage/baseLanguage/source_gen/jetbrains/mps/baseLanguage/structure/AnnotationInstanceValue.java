@@ -18,7 +18,7 @@ public class AnnotationInstanceValue extends BaseConcept {
   }
 
   public AnnotationMethodDeclaration getKey() {
-    return (AnnotationMethodDeclaration)this.getReferent(AnnotationMethodDeclaration.class, AnnotationInstanceValue.KEY);
+    return (AnnotationMethodDeclaration) this.getReferent(AnnotationMethodDeclaration.class, AnnotationInstanceValue.KEY);
   }
 
   public void setKey(AnnotationMethodDeclaration node) {
@@ -26,7 +26,7 @@ public class AnnotationInstanceValue extends BaseConcept {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, AnnotationInstanceValue.VALUE);
+    return (Expression) this.getChild(Expression.class, AnnotationInstanceValue.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -34,7 +34,7 @@ public class AnnotationInstanceValue extends BaseConcept {
   }
 
   public static AnnotationInstanceValue newInstance(SModel sm, boolean init) {
-    return (AnnotationInstanceValue)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AnnotationInstanceValue) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AnnotationInstanceValue newInstance(SModel sm) {

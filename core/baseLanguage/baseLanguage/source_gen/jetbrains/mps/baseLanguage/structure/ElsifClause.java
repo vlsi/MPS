@@ -18,7 +18,7 @@ public class ElsifClause extends BaseConcept {
   }
 
   public Expression getCondition() {
-    return (Expression)this.getChild(Expression.class, ElsifClause.CONDITION);
+    return (Expression) this.getChild(Expression.class, ElsifClause.CONDITION);
   }
 
   public void setCondition(Expression node) {
@@ -26,7 +26,7 @@ public class ElsifClause extends BaseConcept {
   }
 
   public StatementList getStatementList() {
-    return (StatementList)this.getChild(StatementList.class, ElsifClause.STATEMENT_LIST);
+    return (StatementList) this.getChild(StatementList.class, ElsifClause.STATEMENT_LIST);
   }
 
   public void setStatementList(StatementList node) {
@@ -34,7 +34,7 @@ public class ElsifClause extends BaseConcept {
   }
 
   public static ElsifClause newInstance(SModel sm, boolean init) {
-    return (ElsifClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ElsifClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ElsifClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ElsifClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ElsifClause newInstance(SModel sm) {

@@ -24,7 +24,7 @@ public class IntegerConstant extends IntegerLiteral {
   }
 
   public static IntegerConstant newInstance(SModel sm, boolean init) {
-    return (IntegerConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntegerConstant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntegerConstant newInstance(SModel sm) {

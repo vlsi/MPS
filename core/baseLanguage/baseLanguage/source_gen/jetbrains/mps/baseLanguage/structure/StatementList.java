@@ -67,7 +67,7 @@ public class StatementList extends BaseConcept implements IContainer, ILocalVari
   }
 
   public static StatementList newInstance(SModel sm, boolean init) {
-    return (StatementList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StatementList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StatementList newInstance(SModel sm) {

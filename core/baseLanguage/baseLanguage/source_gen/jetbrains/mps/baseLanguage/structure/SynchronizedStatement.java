@@ -17,7 +17,7 @@ public class SynchronizedStatement extends Statement {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, SynchronizedStatement.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, SynchronizedStatement.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -25,7 +25,7 @@ public class SynchronizedStatement extends Statement {
   }
 
   public StatementList getBlock() {
-    return (StatementList)this.getChild(StatementList.class, SynchronizedStatement.BLOCK);
+    return (StatementList) this.getChild(StatementList.class, SynchronizedStatement.BLOCK);
   }
 
   public void setBlock(StatementList node) {
@@ -33,7 +33,7 @@ public class SynchronizedStatement extends Statement {
   }
 
   public static SynchronizedStatement newInstance(SModel sm, boolean init) {
-    return (SynchronizedStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SynchronizedStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SynchronizedStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SynchronizedStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SynchronizedStatement newInstance(SModel sm) {

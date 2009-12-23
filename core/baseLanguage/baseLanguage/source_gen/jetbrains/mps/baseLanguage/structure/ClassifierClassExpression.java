@@ -16,7 +16,7 @@ public class ClassifierClassExpression extends Expression {
   }
 
   public Classifier getClassifier() {
-    return (Classifier)this.getReferent(Classifier.class, ClassifierClassExpression.CLASSIFIER);
+    return (Classifier) this.getReferent(Classifier.class, ClassifierClassExpression.CLASSIFIER);
   }
 
   public void setClassifier(Classifier node) {
@@ -24,7 +24,7 @@ public class ClassifierClassExpression extends Expression {
   }
 
   public static ClassifierClassExpression newInstance(SModel sm, boolean init) {
-    return (ClassifierClassExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ClassifierClassExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ClassifierClassExpression newInstance(SModel sm) {

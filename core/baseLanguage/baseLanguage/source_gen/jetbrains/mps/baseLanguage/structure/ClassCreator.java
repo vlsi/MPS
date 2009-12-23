@@ -47,7 +47,7 @@ public class ClassCreator extends AbstractCreator implements IMethodCall {
   }
 
   public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(BaseMethodDeclaration.class, ClassCreator.BASE_METHOD_DECLARATION);
+    return (BaseMethodDeclaration) this.getReferent(BaseMethodDeclaration.class, ClassCreator.BASE_METHOD_DECLARATION);
   }
 
   public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
@@ -103,7 +103,7 @@ public class ClassCreator extends AbstractCreator implements IMethodCall {
   }
 
   public static ClassCreator newInstance(SModel sm, boolean init) {
-    return (ClassCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ClassCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ClassCreator newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class StaticFieldReference extends VariableReference {
   }
 
   public Classifier getClassifier() {
-    return (Classifier)this.getReferent(Classifier.class, StaticFieldReference.CLASSIFIER);
+    return (Classifier) this.getReferent(Classifier.class, StaticFieldReference.CLASSIFIER);
   }
 
   public void setClassifier(Classifier node) {
@@ -32,7 +32,7 @@ public class StaticFieldReference extends VariableReference {
   }
 
   public static StaticFieldReference newInstance(SModel sm, boolean init) {
-    return (StaticFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StaticFieldReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StaticFieldReference newInstance(SModel sm) {

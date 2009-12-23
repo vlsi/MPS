@@ -24,7 +24,7 @@ public class RemarkStatement extends Statement {
   }
 
   public static RemarkStatement newInstance(SModel sm, boolean init) {
-    return (RemarkStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.RemarkStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RemarkStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.RemarkStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RemarkStatement newInstance(SModel sm) {

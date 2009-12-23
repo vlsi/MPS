@@ -15,7 +15,7 @@ public class PostfixIncrementExpression extends AbstractUnaryNumberOperation {
   }
 
   public static PostfixIncrementExpression newInstance(SModel sm, boolean init) {
-    return (PostfixIncrementExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PostfixIncrementExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PostfixIncrementExpression newInstance(SModel sm) {

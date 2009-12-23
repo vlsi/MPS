@@ -63,7 +63,7 @@ public class ClosureParameter extends BaseConcept implements INamedConcept, IRes
   }
 
   public static ClosureParameter newInstance(SModel sm, boolean init) {
-    return (ClosureParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClosureParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ClosureParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClosureParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ClosureParameter newInstance(SModel sm) {

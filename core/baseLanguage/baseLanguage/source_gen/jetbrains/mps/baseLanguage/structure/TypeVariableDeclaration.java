@@ -75,7 +75,7 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
   }
 
   public Type getBound() {
-    return (Type)this.getChild(Type.class, TypeVariableDeclaration.BOUND);
+    return (Type) this.getChild(Type.class, TypeVariableDeclaration.BOUND);
   }
 
   public void setBound(Type node) {
@@ -103,7 +103,7 @@ public class TypeVariableDeclaration extends BaseConcept implements IValidIdenti
   }
 
   public static TypeVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (TypeVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypeVariableDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypeVariableDeclaration newInstance(SModel sm) {

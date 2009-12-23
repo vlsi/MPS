@@ -43,7 +43,7 @@ public class BaseStringOperation extends BaseConcept implements IOperation {
   }
 
   public static BaseStringOperation newInstance(SModel sm, boolean init) {
-    return (BaseStringOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseStringOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseStringOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseStringOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseStringOperation newInstance(SModel sm) {

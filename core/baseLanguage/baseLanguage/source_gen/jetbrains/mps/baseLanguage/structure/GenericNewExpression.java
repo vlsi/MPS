@@ -16,7 +16,7 @@ public class GenericNewExpression extends Expression {
   }
 
   public AbstractCreator getCreator() {
-    return (AbstractCreator)this.getChild(AbstractCreator.class, GenericNewExpression.CREATOR);
+    return (AbstractCreator) this.getChild(AbstractCreator.class, GenericNewExpression.CREATOR);
   }
 
   public void setCreator(AbstractCreator node) {
@@ -24,7 +24,7 @@ public class GenericNewExpression extends Expression {
   }
 
   public static GenericNewExpression newInstance(SModel sm, boolean init) {
-    return (GenericNewExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenericNewExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenericNewExpression newInstance(SModel sm) {

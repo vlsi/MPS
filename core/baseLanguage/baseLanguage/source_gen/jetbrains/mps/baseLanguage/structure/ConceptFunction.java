@@ -49,7 +49,7 @@ public class ConceptFunction extends BaseConcept implements IMethodLike, IStatem
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, ConceptFunction.BODY);
+    return (StatementList) this.getChild(StatementList.class, ConceptFunction.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -57,7 +57,7 @@ public class ConceptFunction extends BaseConcept implements IMethodLike, IStatem
   }
 
   public static ConceptFunction newInstance(SModel sm, boolean init) {
-    return (ConceptFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConceptFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConceptFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunction newInstance(SModel sm) {

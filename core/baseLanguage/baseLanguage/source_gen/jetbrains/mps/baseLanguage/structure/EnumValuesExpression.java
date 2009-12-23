@@ -16,7 +16,7 @@ public class EnumValuesExpression extends Expression {
   }
 
   public EnumClass getEnumClass() {
-    return (EnumClass)this.getReferent(EnumClass.class, EnumValuesExpression.ENUM_CLASS);
+    return (EnumClass) this.getReferent(EnumClass.class, EnumValuesExpression.ENUM_CLASS);
   }
 
   public void setEnumClass(EnumClass node) {
@@ -24,7 +24,7 @@ public class EnumValuesExpression extends Expression {
   }
 
   public static EnumValuesExpression newInstance(SModel sm, boolean init) {
-    return (EnumValuesExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumValuesExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EnumValuesExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EnumValuesExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EnumValuesExpression newInstance(SModel sm) {

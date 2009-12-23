@@ -43,7 +43,7 @@ public class AbstractOperation extends BaseConcept implements IOperation {
   }
 
   public static AbstractOperation newInstance(SModel sm, boolean init) {
-    return (AbstractOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractOperation newInstance(SModel sm) {

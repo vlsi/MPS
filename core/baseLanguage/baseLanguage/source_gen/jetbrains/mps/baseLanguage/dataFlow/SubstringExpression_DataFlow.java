@@ -13,12 +13,12 @@ public class SubstringExpression_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "operand", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "operand", true));
     if (SLinkOperations.getTarget(_context.getNode(), "startIndex", true) != null) {
-      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "startIndex", true));
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "startIndex", true));
     }
     if (SLinkOperations.getTarget(_context.getNode(), "endIndex", true) != null) {
-      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "endIndex", true));
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "endIndex", true));
     }
   }
 }

@@ -16,7 +16,7 @@ public class VarVariableReference extends Expression {
   }
 
   public VarVariableDeclaration getDeclaration() {
-    return (VarVariableDeclaration)this.getReferent(VarVariableDeclaration.class, VarVariableReference.DECLARATION);
+    return (VarVariableDeclaration) this.getReferent(VarVariableDeclaration.class, VarVariableReference.DECLARATION);
   }
 
   public void setDeclaration(VarVariableDeclaration node) {
@@ -24,7 +24,7 @@ public class VarVariableReference extends Expression {
   }
 
   public static VarVariableReference newInstance(SModel sm, boolean init) {
-    return (VarVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VarVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VarVariableReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VarVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VarVariableReference newInstance(SModel sm) {

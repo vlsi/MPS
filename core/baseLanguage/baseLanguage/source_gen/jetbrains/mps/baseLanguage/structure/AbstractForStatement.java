@@ -16,7 +16,7 @@ public class AbstractForStatement extends AbstractLoopStatement {
   }
 
   public LocalVariableDeclaration getVariable() {
-    return (LocalVariableDeclaration)this.getChild(LocalVariableDeclaration.class, AbstractForStatement.VARIABLE);
+    return (LocalVariableDeclaration) this.getChild(LocalVariableDeclaration.class, AbstractForStatement.VARIABLE);
   }
 
   public void setVariable(LocalVariableDeclaration node) {
@@ -24,7 +24,7 @@ public class AbstractForStatement extends AbstractLoopStatement {
   }
 
   public static AbstractForStatement newInstance(SModel sm, boolean init) {
-    return (AbstractForStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractForStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractForStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractForStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractForStatement newInstance(SModel sm) {

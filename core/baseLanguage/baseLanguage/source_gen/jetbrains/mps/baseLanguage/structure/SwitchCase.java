@@ -18,7 +18,7 @@ public class SwitchCase extends BaseConcept {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, SwitchCase.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, SwitchCase.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -26,7 +26,7 @@ public class SwitchCase extends BaseConcept {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, SwitchCase.BODY);
+    return (StatementList) this.getChild(StatementList.class, SwitchCase.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -34,7 +34,7 @@ public class SwitchCase extends BaseConcept {
   }
 
   public static SwitchCase newInstance(SModel sm, boolean init) {
-    return (SwitchCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SwitchCase", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SwitchCase) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SwitchCase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SwitchCase newInstance(SModel sm) {

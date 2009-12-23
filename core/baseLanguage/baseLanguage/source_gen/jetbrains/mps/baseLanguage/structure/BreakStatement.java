@@ -25,7 +25,7 @@ public class BreakStatement extends Statement {
   }
 
   public LoopLabelReference getLoopLabelReference() {
-    return (LoopLabelReference)this.getChild(LoopLabelReference.class, BreakStatement.LOOP_LABEL_REFERENCE);
+    return (LoopLabelReference) this.getChild(LoopLabelReference.class, BreakStatement.LOOP_LABEL_REFERENCE);
   }
 
   public void setLoopLabelReference(LoopLabelReference node) {
@@ -33,7 +33,7 @@ public class BreakStatement extends Statement {
   }
 
   public static BreakStatement newInstance(SModel sm, boolean init) {
-    return (BreakStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BreakStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BreakStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BreakStatement newInstance(SModel sm) {

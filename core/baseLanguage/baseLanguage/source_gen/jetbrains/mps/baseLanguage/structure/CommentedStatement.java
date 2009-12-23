@@ -16,7 +16,7 @@ public class CommentedStatement extends Statement {
   }
 
   public Statement getStatement() {
-    return (Statement)this.getChild(Statement.class, CommentedStatement.STATEMENT);
+    return (Statement) this.getChild(Statement.class, CommentedStatement.STATEMENT);
   }
 
   public void setStatement(Statement node) {
@@ -24,7 +24,7 @@ public class CommentedStatement extends Statement {
   }
 
   public static CommentedStatement newInstance(SModel sm, boolean init) {
-    return (CommentedStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentedStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CommentedStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentedStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CommentedStatement newInstance(SModel sm) {

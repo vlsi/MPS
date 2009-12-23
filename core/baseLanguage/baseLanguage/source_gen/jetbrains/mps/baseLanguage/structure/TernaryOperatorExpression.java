@@ -18,7 +18,7 @@ public class TernaryOperatorExpression extends Expression {
   }
 
   public Expression getCondition() {
-    return (Expression)this.getChild(Expression.class, TernaryOperatorExpression.CONDITION);
+    return (Expression) this.getChild(Expression.class, TernaryOperatorExpression.CONDITION);
   }
 
   public void setCondition(Expression node) {
@@ -26,7 +26,7 @@ public class TernaryOperatorExpression extends Expression {
   }
 
   public Expression getIfTrue() {
-    return (Expression)this.getChild(Expression.class, TernaryOperatorExpression.IF_TRUE);
+    return (Expression) this.getChild(Expression.class, TernaryOperatorExpression.IF_TRUE);
   }
 
   public void setIfTrue(Expression node) {
@@ -34,7 +34,7 @@ public class TernaryOperatorExpression extends Expression {
   }
 
   public Expression getIfFalse() {
-    return (Expression)this.getChild(Expression.class, TernaryOperatorExpression.IF_FALSE);
+    return (Expression) this.getChild(Expression.class, TernaryOperatorExpression.IF_FALSE);
   }
 
   public void setIfFalse(Expression node) {
@@ -42,7 +42,7 @@ public class TernaryOperatorExpression extends Expression {
   }
 
   public static TernaryOperatorExpression newInstance(SModel sm, boolean init) {
-    return (TernaryOperatorExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TernaryOperatorExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TernaryOperatorExpression newInstance(SModel sm) {

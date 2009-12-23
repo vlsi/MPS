@@ -17,7 +17,7 @@ public class ForStatement extends AbstractForStatement {
   }
 
   public Expression getCondition() {
-    return (Expression)this.getChild(Expression.class, ForStatement.CONDITION);
+    return (Expression) this.getChild(Expression.class, ForStatement.CONDITION);
   }
 
   public void setCondition(Expression node) {
@@ -25,7 +25,7 @@ public class ForStatement extends AbstractForStatement {
   }
 
   public Expression getIteration() {
-    return (Expression)this.getChild(Expression.class, ForStatement.ITERATION);
+    return (Expression) this.getChild(Expression.class, ForStatement.ITERATION);
   }
 
   public void setIteration(Expression node) {
@@ -33,7 +33,7 @@ public class ForStatement extends AbstractForStatement {
   }
 
   public static ForStatement newInstance(SModel sm, boolean init) {
-    return (ForStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ForStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ForStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ForStatement newInstance(SModel sm) {

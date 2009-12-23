@@ -16,7 +16,7 @@ public class ThrowStatement extends Statement {
   }
 
   public Expression getThrowable() {
-    return (Expression)this.getChild(Expression.class, ThrowStatement.THROWABLE);
+    return (Expression) this.getChild(Expression.class, ThrowStatement.THROWABLE);
   }
 
   public void setThrowable(Expression node) {
@@ -24,7 +24,7 @@ public class ThrowStatement extends Statement {
   }
 
   public static ThrowStatement newInstance(SModel sm, boolean init) {
-    return (ThrowStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThrowStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ThrowStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThrowStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ThrowStatement newInstance(SModel sm) {

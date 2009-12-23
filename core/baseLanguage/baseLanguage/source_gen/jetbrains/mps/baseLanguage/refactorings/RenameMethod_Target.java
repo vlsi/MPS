@@ -26,6 +26,6 @@ public class RenameMethod_Target implements IRefactoringTarget {
     if (!(this.isApplicableToEntityType(entity))) {
       return false;
     }
-    return SNodeOperations.isInstanceOf(((SNode)entity), "jetbrains.mps.baseLanguage.structure.IMethodCall") || SNodeOperations.isInstanceOf(((SNode)entity), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+    return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.IMethodCall") || SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
   }
 }

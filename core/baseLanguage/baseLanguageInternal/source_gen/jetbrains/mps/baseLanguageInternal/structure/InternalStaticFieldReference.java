@@ -34,7 +34,7 @@ public class InternalStaticFieldReference extends Expression {
   }
 
   public static InternalStaticFieldReference newInstance(SModel sm, boolean init) {
-    return (InternalStaticFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalStaticFieldReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalStaticFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalStaticFieldReference newInstance(SModel sm) {

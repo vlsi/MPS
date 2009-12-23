@@ -15,7 +15,7 @@ public class VarType extends Type {
   }
 
   public static VarType newInstance(SModel sm, boolean init) {
-    return (VarType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VarType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VarType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VarType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VarType newInstance(SModel sm) {

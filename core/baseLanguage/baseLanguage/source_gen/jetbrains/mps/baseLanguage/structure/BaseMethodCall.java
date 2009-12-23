@@ -46,7 +46,7 @@ public class BaseMethodCall extends Expression implements IMethodCall {
   }
 
   public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(BaseMethodDeclaration.class, BaseMethodCall.BASE_METHOD_DECLARATION);
+    return (BaseMethodDeclaration) this.getReferent(BaseMethodDeclaration.class, BaseMethodCall.BASE_METHOD_DECLARATION);
   }
 
   public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
@@ -74,7 +74,7 @@ public class BaseMethodCall extends Expression implements IMethodCall {
   }
 
   public static BaseMethodCall newInstance(SModel sm, boolean init) {
-    return (BaseMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseMethodCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseMethodCall newInstance(SModel sm) {

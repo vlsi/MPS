@@ -39,7 +39,7 @@ public class InternalStaticMethodCall extends BaseMethodCall {
   }
 
   public Type getReturnType() {
-    return (Type)this.getChild(Type.class, InternalStaticMethodCall.RETURN_TYPE);
+    return (Type) this.getChild(Type.class, InternalStaticMethodCall.RETURN_TYPE);
   }
 
   public void setReturnType(Type node) {
@@ -67,7 +67,7 @@ public class InternalStaticMethodCall extends BaseMethodCall {
   }
 
   public static InternalStaticMethodCall newInstance(SModel sm, boolean init) {
-    return (InternalStaticMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalStaticMethodCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalStaticMethodCall newInstance(SModel sm) {

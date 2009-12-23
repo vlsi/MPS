@@ -16,7 +16,7 @@ public class WhileStatement extends AbstractLoopStatement {
   }
 
   public Expression getCondition() {
-    return (Expression)this.getChild(Expression.class, WhileStatement.CONDITION);
+    return (Expression) this.getChild(Expression.class, WhileStatement.CONDITION);
   }
 
   public void setCondition(Expression node) {
@@ -24,7 +24,7 @@ public class WhileStatement extends AbstractLoopStatement {
   }
 
   public static WhileStatement newInstance(SModel sm, boolean init) {
-    return (WhileStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WhileStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WhileStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WhileStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WhileStatement newInstance(SModel sm) {

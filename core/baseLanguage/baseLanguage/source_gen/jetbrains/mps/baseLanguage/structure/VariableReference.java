@@ -43,7 +43,7 @@ public class VariableReference extends Expression implements TypeAnnotable {
   }
 
   public VariableDeclaration getVariableDeclaration() {
-    return (VariableDeclaration)this.getReferent(VariableDeclaration.class, VariableReference.VARIABLE_DECLARATION);
+    return (VariableDeclaration) this.getReferent(VariableDeclaration.class, VariableReference.VARIABLE_DECLARATION);
   }
 
   public void setVariableDeclaration(VariableDeclaration node) {
@@ -51,7 +51,7 @@ public class VariableReference extends Expression implements TypeAnnotable {
   }
 
   public static VariableReference newInstance(SModel sm, boolean init) {
-    return (VariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VariableReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VariableReference newInstance(SModel sm) {

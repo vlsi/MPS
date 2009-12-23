@@ -15,7 +15,7 @@ public class BinaryCompareOperation extends BinaryOperation {
   }
 
   public static BinaryCompareOperation newInstance(SModel sm, boolean init) {
-    return (BinaryCompareOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryCompareOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BinaryCompareOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BinaryCompareOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BinaryCompareOperation newInstance(SModel sm) {

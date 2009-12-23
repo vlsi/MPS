@@ -43,7 +43,7 @@ public class ReturnStatement extends Statement implements TypeDerivable {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, ReturnStatement.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, ReturnStatement.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -51,7 +51,7 @@ public class ReturnStatement extends Statement implements TypeDerivable {
   }
 
   public static ReturnStatement newInstance(SModel sm, boolean init) {
-    return (ReturnStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReturnStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReturnStatement newInstance(SModel sm) {

@@ -19,7 +19,7 @@ public class ClassifierType extends Type {
   }
 
   public Classifier getClassifier() {
-    return (Classifier)this.getReferent(Classifier.class, ClassifierType.CLASSIFIER);
+    return (Classifier) this.getReferent(Classifier.class, ClassifierType.CLASSIFIER);
   }
 
   public void setClassifier(Classifier node) {
@@ -47,7 +47,7 @@ public class ClassifierType extends Type {
   }
 
   public static ClassifierType newInstance(SModel sm, boolean init) {
-    return (ClassifierType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ClassifierType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ClassifierType newInstance(SModel sm) {

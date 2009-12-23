@@ -24,7 +24,7 @@ public class BooleanConstant extends Expression {
   }
 
   public static BooleanConstant newInstance(SModel sm, boolean init) {
-    return (BooleanConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BooleanConstant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BooleanConstant newInstance(SModel sm) {

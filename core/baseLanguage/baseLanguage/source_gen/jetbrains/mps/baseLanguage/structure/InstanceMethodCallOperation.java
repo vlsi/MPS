@@ -47,7 +47,7 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
   }
 
   public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(BaseMethodDeclaration.class, InstanceMethodCallOperation.BASE_METHOD_DECLARATION);
+    return (BaseMethodDeclaration) this.getReferent(BaseMethodDeclaration.class, InstanceMethodCallOperation.BASE_METHOD_DECLARATION);
   }
 
   public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
@@ -83,7 +83,7 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
   }
 
   public static InstanceMethodCallOperation newInstance(SModel sm, boolean init) {
-    return (InstanceMethodCallOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InstanceMethodCallOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InstanceMethodCallOperation newInstance(SModel sm) {

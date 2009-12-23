@@ -15,7 +15,7 @@ public class NPEEqualsExpression extends BinaryOperation {
   }
 
   public static NPEEqualsExpression newInstance(SModel sm, boolean init) {
-    return (NPEEqualsExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NPEEqualsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NPEEqualsExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NPEEqualsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NPEEqualsExpression newInstance(SModel sm) {

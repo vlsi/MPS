@@ -16,7 +16,7 @@ public class LocalVariableDeclaration_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitNop();
     if ((SLinkOperations.getTarget(_context.getNode(), "initializer", true) != null)) {
-      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "initializer", true));
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "initializer", true));
       _context.getBuilder().emitWrite(_context.getNode(), Expression_Behavior.call_getNullableState_1230540989695(SLinkOperations.getTarget(_context.getNode(), "initializer", true)));
     }
   }

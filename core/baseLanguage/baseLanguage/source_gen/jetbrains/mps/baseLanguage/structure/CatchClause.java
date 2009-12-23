@@ -18,7 +18,7 @@ public class CatchClause extends BaseConcept {
   }
 
   public LocalVariableDeclaration getThrowable() {
-    return (LocalVariableDeclaration)this.getChild(LocalVariableDeclaration.class, CatchClause.THROWABLE);
+    return (LocalVariableDeclaration) this.getChild(LocalVariableDeclaration.class, CatchClause.THROWABLE);
   }
 
   public void setThrowable(LocalVariableDeclaration node) {
@@ -26,7 +26,7 @@ public class CatchClause extends BaseConcept {
   }
 
   public StatementList getCatchBody() {
-    return (StatementList)this.getChild(StatementList.class, CatchClause.CATCH_BODY);
+    return (StatementList) this.getChild(StatementList.class, CatchClause.CATCH_BODY);
   }
 
   public void setCatchBody(StatementList node) {
@@ -34,7 +34,7 @@ public class CatchClause extends BaseConcept {
   }
 
   public static CatchClause newInstance(SModel sm, boolean init) {
-    return (CatchClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CatchClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CatchClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CatchClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CatchClause newInstance(SModel sm) {

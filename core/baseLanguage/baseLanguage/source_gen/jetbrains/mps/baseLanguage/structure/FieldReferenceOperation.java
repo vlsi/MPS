@@ -44,7 +44,7 @@ public class FieldReferenceOperation extends BaseConcept implements IOperation {
   }
 
   public FieldDeclaration getFieldDeclaration() {
-    return (FieldDeclaration)this.getReferent(FieldDeclaration.class, FieldReferenceOperation.FIELD_DECLARATION);
+    return (FieldDeclaration) this.getReferent(FieldDeclaration.class, FieldReferenceOperation.FIELD_DECLARATION);
   }
 
   public void setFieldDeclaration(FieldDeclaration node) {
@@ -52,7 +52,7 @@ public class FieldReferenceOperation extends BaseConcept implements IOperation {
   }
 
   public static FieldReferenceOperation newInstance(SModel sm, boolean init) {
-    return (FieldReferenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FieldReferenceOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FieldReferenceOperation newInstance(SModel sm) {

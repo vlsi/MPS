@@ -23,7 +23,7 @@ public class LocalStaticMethodCall extends BaseMethodCall {
   }
 
   public static LocalStaticMethodCall newInstance(SModel sm, boolean init) {
-    return (LocalStaticMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LocalStaticMethodCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LocalStaticMethodCall newInstance(SModel sm) {

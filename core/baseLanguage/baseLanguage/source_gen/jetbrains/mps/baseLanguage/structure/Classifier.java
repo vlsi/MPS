@@ -96,7 +96,7 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, Classifier.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, Classifier.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -184,7 +184,7 @@ public class Classifier extends GenericDeclaration implements HasAnnotation, IMe
   }
 
   public static Classifier newInstance(SModel sm, boolean init) {
-    return (Classifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Classifier) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Classifier newInstance(SModel sm) {

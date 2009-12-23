@@ -46,7 +46,7 @@ public class ConstructorInvocationStatement extends Statement implements IMethod
   }
 
   public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(BaseMethodDeclaration.class, ConstructorInvocationStatement.BASE_METHOD_DECLARATION);
+    return (BaseMethodDeclaration) this.getReferent(BaseMethodDeclaration.class, ConstructorInvocationStatement.BASE_METHOD_DECLARATION);
   }
 
   public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
@@ -82,7 +82,7 @@ public class ConstructorInvocationStatement extends Statement implements IMethod
   }
 
   public static ConstructorInvocationStatement newInstance(SModel sm, boolean init) {
-    return (ConstructorInvocationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstructorInvocationStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstructorInvocationStatement newInstance(SModel sm) {

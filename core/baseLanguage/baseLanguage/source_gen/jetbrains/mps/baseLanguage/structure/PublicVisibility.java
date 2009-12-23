@@ -15,7 +15,7 @@ public class PublicVisibility extends Visibility {
   }
 
   public static PublicVisibility newInstance(SModel sm, boolean init) {
-    return (PublicVisibility)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PublicVisibility) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PublicVisibility newInstance(SModel sm) {

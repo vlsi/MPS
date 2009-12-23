@@ -52,7 +52,7 @@ public class LocalVariableDeclaration extends VariableDeclaration implements IRe
   }
 
   public static LocalVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (LocalVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LocalVariableDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LocalVariableDeclaration newInstance(SModel sm) {

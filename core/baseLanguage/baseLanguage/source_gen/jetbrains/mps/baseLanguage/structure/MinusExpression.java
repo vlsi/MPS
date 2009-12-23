@@ -15,7 +15,7 @@ public class MinusExpression extends BinaryOperation {
   }
 
   public static MinusExpression newInstance(SModel sm, boolean init) {
-    return (MinusExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MinusExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MinusExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MinusExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MinusExpression newInstance(SModel sm) {

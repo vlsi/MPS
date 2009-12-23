@@ -66,13 +66,13 @@ public class RenameMethod extends BaseRefactoring {
     SNode methodDeclNode = RenameUtil.getMethodDeclaration(refactoringContext.getSelectedNode());
 
     List<SNode> overriding = MethodRefactoringUtils.findOverridingMethods(methodDeclNode, new EmptyProgressIndicator());
-    if (ListSequence.fromList(overriding).isNotEmpty() && ((Boolean)refactoringContext.getParameter("refactorOverriding"))) {
+    if (ListSequence.fromList(overriding).isNotEmpty() && ((Boolean) refactoringContext.getParameter("refactorOverriding"))) {
       for (SNode node : ListSequence.fromList(overriding)) {
-        SPropertyOperations.set(node, "name", ((String)refactoringContext.getParameter("newName")));
+        SPropertyOperations.set(node, "name", ((String) refactoringContext.getParameter("newName")));
       }
     }
 
-    SPropertyOperations.set(methodDeclNode, "name", ((String)refactoringContext.getParameter("newName")));
+    SPropertyOperations.set(methodDeclNode, "name", ((String) refactoringContext.getParameter("newName")));
   }
 
   public static String getKeyStroke_static() {

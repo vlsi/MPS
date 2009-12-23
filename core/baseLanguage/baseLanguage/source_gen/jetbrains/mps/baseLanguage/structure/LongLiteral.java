@@ -24,7 +24,7 @@ public class LongLiteral extends Expression {
   }
 
   public static LongLiteral newInstance(SModel sm, boolean init) {
-    return (LongLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LongLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LongLiteral newInstance(SModel sm) {

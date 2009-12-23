@@ -15,7 +15,7 @@ public class VoidType extends PrimitiveType {
   }
 
   public static VoidType newInstance(SModel sm, boolean init) {
-    return (VoidType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VoidType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VoidType newInstance(SModel sm) {

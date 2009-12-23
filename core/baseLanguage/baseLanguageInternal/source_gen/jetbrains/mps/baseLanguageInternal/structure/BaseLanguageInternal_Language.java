@@ -10,6 +10,6 @@ public class BaseLanguageInternal_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

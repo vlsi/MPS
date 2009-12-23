@@ -53,7 +53,7 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, StaticMethodDeclaration.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, StaticMethodDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -61,7 +61,7 @@ public class StaticMethodDeclaration extends BaseMethodDeclaration implements Cl
   }
 
   public static StaticMethodDeclaration newInstance(SModel sm, boolean init) {
-    return (StaticMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StaticMethodDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StaticMethodDeclaration newInstance(SModel sm) {

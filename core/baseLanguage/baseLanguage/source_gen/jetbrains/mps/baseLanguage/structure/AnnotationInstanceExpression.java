@@ -16,7 +16,7 @@ public class AnnotationInstanceExpression extends Expression {
   }
 
   public AnnotationInstance getAnnotationInstance() {
-    return (AnnotationInstance)this.getChild(AnnotationInstance.class, AnnotationInstanceExpression.ANNOTATION_INSTANCE);
+    return (AnnotationInstance) this.getChild(AnnotationInstance.class, AnnotationInstanceExpression.ANNOTATION_INSTANCE);
   }
 
   public void setAnnotationInstance(AnnotationInstance node) {
@@ -24,7 +24,7 @@ public class AnnotationInstanceExpression extends Expression {
   }
 
   public static AnnotationInstanceExpression newInstance(SModel sm, boolean init) {
-    return (AnnotationInstanceExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AnnotationInstanceExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AnnotationInstanceExpression newInstance(SModel sm) {

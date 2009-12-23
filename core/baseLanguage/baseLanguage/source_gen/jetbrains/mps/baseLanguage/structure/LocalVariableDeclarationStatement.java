@@ -44,7 +44,7 @@ public class LocalVariableDeclarationStatement extends Statement implements IWra
   }
 
   public LocalVariableDeclaration getLocalVariableDeclaration() {
-    return (LocalVariableDeclaration)this.getChild(LocalVariableDeclaration.class, LocalVariableDeclarationStatement.LOCAL_VARIABLE_DECLARATION);
+    return (LocalVariableDeclaration) this.getChild(LocalVariableDeclaration.class, LocalVariableDeclarationStatement.LOCAL_VARIABLE_DECLARATION);
   }
 
   public void setLocalVariableDeclaration(LocalVariableDeclaration node) {
@@ -52,7 +52,7 @@ public class LocalVariableDeclarationStatement extends Statement implements IWra
   }
 
   public static LocalVariableDeclarationStatement newInstance(SModel sm, boolean init) {
-    return (LocalVariableDeclarationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LocalVariableDeclarationStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LocalVariableDeclarationStatement newInstance(SModel sm) {

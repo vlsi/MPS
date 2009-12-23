@@ -38,7 +38,7 @@ public class SingleLineComment extends Statement {
   }
 
   public static SingleLineComment newInstance(SModel sm, boolean init) {
-    return (SingleLineComment)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SingleLineComment) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SingleLineComment newInstance(SModel sm) {

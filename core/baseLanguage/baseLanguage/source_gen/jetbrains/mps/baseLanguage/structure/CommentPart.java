@@ -44,7 +44,7 @@ public class CommentPart extends BaseConcept implements IMetaLevelChanger {
   }
 
   public static CommentPart newInstance(SModel sm, boolean init) {
-    return (CommentPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CommentPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CommentPart newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class BaseAssignmentExpression extends Expression {
   }
 
   public Expression getLValue() {
-    return (Expression)this.getChild(Expression.class, BaseAssignmentExpression.L_VALUE);
+    return (Expression) this.getChild(Expression.class, BaseAssignmentExpression.L_VALUE);
   }
 
   public void setLValue(Expression node) {
@@ -25,7 +25,7 @@ public class BaseAssignmentExpression extends Expression {
   }
 
   public Expression getRValue() {
-    return (Expression)this.getChild(Expression.class, BaseAssignmentExpression.R_VALUE);
+    return (Expression) this.getChild(Expression.class, BaseAssignmentExpression.R_VALUE);
   }
 
   public void setRValue(Expression node) {
@@ -33,7 +33,7 @@ public class BaseAssignmentExpression extends Expression {
   }
 
   public static BaseAssignmentExpression newInstance(SModel sm, boolean init) {
-    return (BaseAssignmentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseAssignmentExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseAssignmentExpression newInstance(SModel sm) {

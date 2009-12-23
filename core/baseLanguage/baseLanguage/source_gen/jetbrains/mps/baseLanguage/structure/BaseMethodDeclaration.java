@@ -77,7 +77,7 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
   }
 
   public Type getReturnType() {
-    return (Type)this.getChild(Type.class, BaseMethodDeclaration.RETURN_TYPE);
+    return (Type) this.getChild(Type.class, BaseMethodDeclaration.RETURN_TYPE);
   }
 
   public void setReturnType(Type node) {
@@ -85,7 +85,7 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, BaseMethodDeclaration.BODY);
+    return (StatementList) this.getChild(StatementList.class, BaseMethodDeclaration.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -153,7 +153,7 @@ public class BaseMethodDeclaration extends GenericDeclaration implements IValidI
   }
 
   public static BaseMethodDeclaration newInstance(SModel sm, boolean init) {
-    return (BaseMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseMethodDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseMethodDeclaration newInstance(SModel sm) {

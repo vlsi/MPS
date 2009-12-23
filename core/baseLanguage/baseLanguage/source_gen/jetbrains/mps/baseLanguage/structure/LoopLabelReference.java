@@ -17,7 +17,7 @@ public class LoopLabelReference extends BaseConcept {
   }
 
   public LoopLabel getLoopLabel() {
-    return (LoopLabel)this.getReferent(LoopLabel.class, LoopLabelReference.LOOP_LABEL);
+    return (LoopLabel) this.getReferent(LoopLabel.class, LoopLabelReference.LOOP_LABEL);
   }
 
   public void setLoopLabel(LoopLabel node) {
@@ -25,7 +25,7 @@ public class LoopLabelReference extends BaseConcept {
   }
 
   public static LoopLabelReference newInstance(SModel sm, boolean init) {
-    return (LoopLabelReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabelReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LoopLabelReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LoopLabelReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LoopLabelReference newInstance(SModel sm) {

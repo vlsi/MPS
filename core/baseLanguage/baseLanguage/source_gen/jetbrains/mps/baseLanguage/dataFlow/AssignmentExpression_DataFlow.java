@@ -16,14 +16,14 @@ public class AssignmentExpression_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "rValue", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "rValue", true));
     SNode variable = SLinkOperations.getTarget(_context.getNode(), "lValue", true);
     if (SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
       if (!(SNodeOperations.isInstanceOf(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableReference")) || LocalVariableReference_Behavior.call_isVariableDefinedInThisMethod_1225456272518(SNodeOperations.cast(variable, "jetbrains.mps.baseLanguage.structure.LocalVariableReference"))) {
         _context.getBuilder().emitWrite(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), Expression_Behavior.call_getNullableState_1230540989695(SLinkOperations.getTarget(_context.getNode(), "rValue", true)));
       }
     } else {
-      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "lValue", true));
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "lValue", true));
     }
   }
 }

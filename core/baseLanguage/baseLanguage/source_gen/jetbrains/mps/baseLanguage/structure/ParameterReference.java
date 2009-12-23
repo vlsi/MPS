@@ -23,7 +23,7 @@ public class ParameterReference extends VariableReference {
   }
 
   public static ParameterReference newInstance(SModel sm, boolean init) {
-    return (ParameterReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParameterReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParameterReference newInstance(SModel sm) {

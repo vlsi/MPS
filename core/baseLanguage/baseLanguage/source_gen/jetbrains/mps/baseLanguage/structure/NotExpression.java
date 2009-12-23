@@ -16,7 +16,7 @@ public class NotExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, NotExpression.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, NotExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -24,7 +24,7 @@ public class NotExpression extends Expression {
   }
 
   public static NotExpression newInstance(SModel sm, boolean init) {
-    return (NotExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NotExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NotExpression newInstance(SModel sm) {

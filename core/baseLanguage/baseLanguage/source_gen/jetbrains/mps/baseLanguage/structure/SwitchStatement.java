@@ -30,7 +30,7 @@ public class SwitchStatement extends Statement {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, SwitchStatement.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, SwitchStatement.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -38,7 +38,7 @@ public class SwitchStatement extends Statement {
   }
 
   public StatementList getDefaultBlock() {
-    return (StatementList)this.getChild(StatementList.class, SwitchStatement.DEFAULT_BLOCK);
+    return (StatementList) this.getChild(StatementList.class, SwitchStatement.DEFAULT_BLOCK);
   }
 
   public void setDefaultBlock(StatementList node) {
@@ -46,7 +46,7 @@ public class SwitchStatement extends Statement {
   }
 
   public LoopLabel getSwitchLabel() {
-    return (LoopLabel)this.getChild(LoopLabel.class, SwitchStatement.SWITCH_LABEL);
+    return (LoopLabel) this.getChild(LoopLabel.class, SwitchStatement.SWITCH_LABEL);
   }
 
   public void setSwitchLabel(LoopLabel node) {
@@ -74,7 +74,7 @@ public class SwitchStatement extends Statement {
   }
 
   public static SwitchStatement newInstance(SModel sm, boolean init) {
-    return (SwitchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SwitchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SwitchStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SwitchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SwitchStatement newInstance(SModel sm) {

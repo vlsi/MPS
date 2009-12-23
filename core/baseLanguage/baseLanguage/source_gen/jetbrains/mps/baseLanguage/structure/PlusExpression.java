@@ -15,7 +15,7 @@ public class PlusExpression extends BinaryOperation {
   }
 
   public static PlusExpression newInstance(SModel sm, boolean init) {
-    return (PlusExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlusExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PlusExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlusExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PlusExpression newInstance(SModel sm) {

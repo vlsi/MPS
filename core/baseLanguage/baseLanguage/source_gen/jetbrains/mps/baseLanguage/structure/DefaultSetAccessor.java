@@ -17,7 +17,7 @@ public class DefaultSetAccessor extends BaseConcept {
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, DefaultSetAccessor.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, DefaultSetAccessor.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -25,7 +25,7 @@ public class DefaultSetAccessor extends BaseConcept {
   }
 
   public static DefaultSetAccessor newInstance(SModel sm, boolean init) {
-    return (DefaultSetAccessor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DefaultSetAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DefaultSetAccessor) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DefaultSetAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DefaultSetAccessor newInstance(SModel sm) {

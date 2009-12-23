@@ -65,7 +65,7 @@ public class Property extends BaseConcept implements ClassifierMember, INamedCon
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, Property.TYPE);
+    return (Type) this.getChild(Type.class, Property.TYPE);
   }
 
   public void setType(Type node) {
@@ -73,7 +73,7 @@ public class Property extends BaseConcept implements ClassifierMember, INamedCon
   }
 
   public PropertyImplementation getPropertyImplementation() {
-    return (PropertyImplementation)this.getChild(PropertyImplementation.class, Property.PROPERTY_IMPLEMENTATION);
+    return (PropertyImplementation) this.getChild(PropertyImplementation.class, Property.PROPERTY_IMPLEMENTATION);
   }
 
   public void setPropertyImplementation(PropertyImplementation node) {
@@ -81,7 +81,7 @@ public class Property extends BaseConcept implements ClassifierMember, INamedCon
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, Property.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, Property.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -89,7 +89,7 @@ public class Property extends BaseConcept implements ClassifierMember, INamedCon
   }
 
   public static Property newInstance(SModel sm, boolean init) {
-    return (Property)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Property", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Property) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Property", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Property newInstance(SModel sm) {

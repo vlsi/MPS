@@ -19,7 +19,7 @@ public class MakeFieldFinal_Target implements IRefactoringTarget {
   }
 
   public boolean isApplicableToEntityType(final Object entity) {
-    return SNodeOperations.isInstanceOf(((SNode)entity), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+    return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.baseLanguage.structure.FieldDeclaration");
   }
 
   public boolean isApplicable(final Object entity) {

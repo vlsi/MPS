@@ -15,7 +15,7 @@ public class ByteType extends PrimitiveType {
   }
 
   public static ByteType newInstance(SModel sm, boolean init) {
-    return (ByteType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ByteType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ByteType newInstance(SModel sm) {

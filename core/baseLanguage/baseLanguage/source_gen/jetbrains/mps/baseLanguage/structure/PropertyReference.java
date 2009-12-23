@@ -44,7 +44,7 @@ public class PropertyReference extends BaseConcept implements IOperation {
   }
 
   public Property getProperty() {
-    return (Property)this.getReferent(Property.class, PropertyReference.PROPERTY);
+    return (Property) this.getReferent(Property.class, PropertyReference.PROPERTY);
   }
 
   public void setProperty(Property node) {
@@ -52,7 +52,7 @@ public class PropertyReference extends BaseConcept implements IOperation {
   }
 
   public static PropertyReference newInstance(SModel sm, boolean init) {
-    return (PropertyReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PropertyReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PropertyReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyReference newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class LessThanOrEqualsExpression extends BinaryCompareOperation {
   }
 
   public static LessThanOrEqualsExpression newInstance(SModel sm, boolean init) {
-    return (LessThanOrEqualsExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LessThanOrEqualsExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LessThanOrEqualsExpression newInstance(SModel sm) {

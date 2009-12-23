@@ -44,7 +44,7 @@ public class ConceptFunctionParameter extends Expression implements IParameter {
   }
 
   public static ConceptFunctionParameter newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class ArrayAccessExpression extends Expression {
   }
 
   public Expression getArray() {
-    return (Expression)this.getChild(Expression.class, ArrayAccessExpression.ARRAY);
+    return (Expression) this.getChild(Expression.class, ArrayAccessExpression.ARRAY);
   }
 
   public void setArray(Expression node) {
@@ -25,7 +25,7 @@ public class ArrayAccessExpression extends Expression {
   }
 
   public Expression getIndex() {
-    return (Expression)this.getChild(Expression.class, ArrayAccessExpression.INDEX);
+    return (Expression) this.getChild(Expression.class, ArrayAccessExpression.INDEX);
   }
 
   public void setIndex(Expression node) {
@@ -33,7 +33,7 @@ public class ArrayAccessExpression extends Expression {
   }
 
   public static ArrayAccessExpression newInstance(SModel sm, boolean init) {
-    return (ArrayAccessExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ArrayAccessExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayAccessExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ArrayAccessExpression newInstance(SModel sm) {

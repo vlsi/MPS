@@ -16,7 +16,7 @@ public class TypeVariableReference extends Type {
   }
 
   public TypeVariableDeclaration getTypeVariableDeclaration() {
-    return (TypeVariableDeclaration)this.getReferent(TypeVariableDeclaration.class, TypeVariableReference.TYPE_VARIABLE_DECLARATION);
+    return (TypeVariableDeclaration) this.getReferent(TypeVariableDeclaration.class, TypeVariableReference.TYPE_VARIABLE_DECLARATION);
   }
 
   public void setTypeVariableDeclaration(TypeVariableDeclaration node) {
@@ -24,7 +24,7 @@ public class TypeVariableReference extends Type {
   }
 
   public static TypeVariableReference newInstance(SModel sm, boolean init) {
-    return (TypeVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypeVariableReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypeVariableReference newInstance(SModel sm) {

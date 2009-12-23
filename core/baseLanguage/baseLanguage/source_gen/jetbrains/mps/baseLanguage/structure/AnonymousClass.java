@@ -49,7 +49,7 @@ public class AnonymousClass extends ClassConcept implements IMethodCall {
   }
 
   public Classifier getClassifier() {
-    return (Classifier)this.getReferent(Classifier.class, AnonymousClass.CLASSIFIER);
+    return (Classifier) this.getReferent(Classifier.class, AnonymousClass.CLASSIFIER);
   }
 
   public void setClassifier(Classifier node) {
@@ -57,7 +57,7 @@ public class AnonymousClass extends ClassConcept implements IMethodCall {
   }
 
   public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(BaseMethodDeclaration.class, AnonymousClass.BASE_METHOD_DECLARATION);
+    return (BaseMethodDeclaration) this.getReferent(BaseMethodDeclaration.class, AnonymousClass.BASE_METHOD_DECLARATION);
   }
 
   public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
@@ -133,7 +133,7 @@ public class AnonymousClass extends ClassConcept implements IMethodCall {
   }
 
   public static AnonymousClass newInstance(SModel sm, boolean init) {
-    return (AnonymousClass)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AnonymousClass) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AnonymousClass newInstance(SModel sm) {

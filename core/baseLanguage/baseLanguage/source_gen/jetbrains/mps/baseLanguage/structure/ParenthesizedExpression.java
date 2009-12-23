@@ -16,7 +16,7 @@ public class ParenthesizedExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, ParenthesizedExpression.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, ParenthesizedExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -24,7 +24,7 @@ public class ParenthesizedExpression extends Expression {
   }
 
   public static ParenthesizedExpression newInstance(SModel sm, boolean init) {
-    return (ParenthesizedExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParenthesizedExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParenthesizedExpression newInstance(SModel sm) {

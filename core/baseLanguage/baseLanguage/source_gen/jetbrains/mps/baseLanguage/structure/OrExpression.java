@@ -15,7 +15,7 @@ public class OrExpression extends BinaryOperation {
   }
 
   public static OrExpression newInstance(SModel sm, boolean init) {
-    return (OrExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.OrExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OrExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.OrExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OrExpression newInstance(SModel sm) {

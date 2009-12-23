@@ -26,7 +26,7 @@ public class ExtractToConstantExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, ExtractToConstantExpression.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, ExtractToConstantExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -34,7 +34,7 @@ public class ExtractToConstantExpression extends Expression {
   }
 
   public static ExtractToConstantExpression newInstance(SModel sm, boolean init) {
-    return (ExtractToConstantExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExtractToConstantExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExtractToConstantExpression newInstance(SModel sm) {
