@@ -81,7 +81,7 @@ public class EditorCellModel_Behavior {
     }
     Class<MPSColors> classColors = MPSColors.class;
     try {
-      return (Color)classColors.getField(SPropertyOperations.getString_def(firstItem, "color", null)).get(null);
+      return (Color) classColors.getField(SPropertyOperations.getString_def(firstItem, "color", null)).get(null);
     } catch (Throwable t) {
       t.printStackTrace();
       return null;
@@ -130,7 +130,7 @@ public class EditorCellModel_Behavior {
     }
     Class<MPSFonts> classFonts = MPSFonts.class;
     try {
-      return (Integer)classFonts.getField(SPropertyOperations.getString_def(firstItem, "style", "PLAIN")).get(null);
+      return (Integer) classFonts.getField(SPropertyOperations.getString_def(firstItem, "style", "PLAIN")).get(null);
     } catch (Throwable t) {
       t.printStackTrace();
       return EditorCellModel_Behavior.call_getDefaultFontStyle_1221472292001(thisNode);
@@ -213,42 +213,42 @@ public class EditorCellModel_Behavior {
   }
 
   public static String call_createCellId_1216737839993(SNode thisNode, TemplateQueryContext gc) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_createCellId_1216737839993", PARAMETERS_1216737839993, gc);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_createCellId_1216737839993", PARAMETERS_1216737839993, gc);
   }
 
   public static String call_getOpeningText_1220339714057(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_getOpeningText_1220339714057", PARAMETERS_1220339714057);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_getOpeningText_1220339714057", PARAMETERS_1220339714057);
   }
 
   public static String call_getClosingText_1220339738643(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_getClosingText_1220339738643", PARAMETERS_1220339738643);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_getClosingText_1220339738643", PARAMETERS_1220339738643);
   }
 
   public static int call_getDefaultFontStyle_1221472292001(SNode thisNode) {
-    return (Integer)BehaviorManager.getInstance().invoke(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_getDefaultFontStyle_1221472292001", PARAMETERS_1221472292001);
+    return (Integer) BehaviorManager.getInstance().invoke(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_getDefaultFontStyle_1221472292001", PARAMETERS_1221472292001);
   }
 
   public static boolean call_isCellIdInitialized_1229948571177(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_isCellIdInitialized_1229948571177", PARAMETERS_1229948571177);
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), "virtual_isCellIdInitialized_1229948571177", PARAMETERS_1229948571177);
   }
 
   public static String callSuper_createCellId_1216737839993(SNode thisNode, String callerConceptFqName, TemplateQueryContext gc) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), callerConceptFqName, "virtual_createCellId_1216737839993", PARAMETERS_1216737839993, gc);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), callerConceptFqName, "virtual_createCellId_1216737839993", PARAMETERS_1216737839993, gc);
   }
 
   public static String callSuper_getOpeningText_1220339714057(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), callerConceptFqName, "virtual_getOpeningText_1220339714057", PARAMETERS_1220339714057);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), callerConceptFqName, "virtual_getOpeningText_1220339714057", PARAMETERS_1220339714057);
   }
 
   public static String callSuper_getClosingText_1220339738643(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), callerConceptFqName, "virtual_getClosingText_1220339738643", PARAMETERS_1220339738643);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), callerConceptFqName, "virtual_getClosingText_1220339738643", PARAMETERS_1220339738643);
   }
 
   public static int callSuper_getDefaultFontStyle_1221472292001(SNode thisNode, String callerConceptFqName) {
-    return (Integer)BehaviorManager.getInstance().invokeSuper(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), callerConceptFqName, "virtual_getDefaultFontStyle_1221472292001", PARAMETERS_1221472292001);
+    return (Integer) BehaviorManager.getInstance().invokeSuper(Integer.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), callerConceptFqName, "virtual_getDefaultFontStyle_1221472292001", PARAMETERS_1221472292001);
   }
 
   public static boolean callSuper_isCellIdInitialized_1229948571177(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), callerConceptFqName, "virtual_isCellIdInitialized_1229948571177", PARAMETERS_1229948571177);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.EditorCellModel"), callerConceptFqName, "virtual_isCellIdInitialized_1229948571177", PARAMETERS_1229948571177);
   }
 }

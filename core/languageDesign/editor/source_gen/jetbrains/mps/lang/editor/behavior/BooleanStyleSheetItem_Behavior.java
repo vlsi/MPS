@@ -19,7 +19,7 @@ public class BooleanStyleSheetItem_Behavior {
     IModule module = thisNode.getModel().getModelDescriptor().getModule();
     if (module != null && ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "attributeConstant")).isNotEmpty()) {
       Object attribute = Expression_Behavior.call_eval_1213877519769(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "attributeConstant")).first(), module);
-      SPropertyOperations.set(thisNode, "flag", "" + !(((StyleAttribute<Boolean>)attribute).combine(null, null)));
+      SPropertyOperations.set(thisNode, "flag", "" + !(((StyleAttribute<Boolean>) attribute).combine(null, null)));
     }
   }
 
@@ -28,10 +28,10 @@ public class BooleanStyleSheetItem_Behavior {
   }
 
   public static boolean call_useQuery_1223387362946(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), "virtual_useQuery_1223387362946", PARAMETERS_1223387362946);
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), "virtual_useQuery_1223387362946", PARAMETERS_1223387362946);
   }
 
   public static boolean callSuper_useQuery_1223387362946(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), callerConceptFqName, "virtual_useQuery_1223387362946", PARAMETERS_1223387362946);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem"), callerConceptFqName, "virtual_useQuery_1223387362946", PARAMETERS_1223387362946);
   }
 }

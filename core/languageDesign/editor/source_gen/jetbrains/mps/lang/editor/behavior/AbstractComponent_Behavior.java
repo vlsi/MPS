@@ -18,10 +18,10 @@ public class AbstractComponent_Behavior {
   }
 
   public static SNode call_getConceptDeclaration_7055725856388417603(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractComponent"), "virtual_getConceptDeclaration_7055725856388417603", PARAMETERS_7055725856388417603);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractComponent"), "virtual_getConceptDeclaration_7055725856388417603", PARAMETERS_7055725856388417603);
   }
 
   public static SNode callSuper_getConceptDeclaration_7055725856388417603(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractComponent"), callerConceptFqName, "virtual_getConceptDeclaration_7055725856388417603", PARAMETERS_7055725856388417603);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.AbstractComponent"), callerConceptFqName, "virtual_getConceptDeclaration_7055725856388417603", PARAMETERS_7055725856388417603);
   }
 }

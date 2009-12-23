@@ -60,7 +60,7 @@ public class ImportAntStuff_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      Language language = ((Language)ImportAntStuff_Action.this.module);
+      Language language = ((Language) ImportAntStuff_Action.this.module);
       ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getGenerated(language), Generator.Modes.CORE);
       ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getOptional(language), Generator.Modes.NODEPS);
       ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getOptional(language), Generator.Modes.JUNIT);

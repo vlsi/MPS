@@ -18,10 +18,10 @@ public class CellMenuComponent_Behavior {
   }
 
   public static SNode call_getBaseConcept_5270353093116097675(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellMenuComponent"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_5270353093116097675);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellMenuComponent"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_5270353093116097675);
   }
 
   public static SNode callSuper_getBaseConcept_5270353093116097675(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellMenuComponent"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_5270353093116097675);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellMenuComponent"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_5270353093116097675);
   }
 }

@@ -44,7 +44,7 @@ public class SurrondWithHorizontalCollection_Intention extends BaseIntention imp
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return ListSequence.fromList(((List<SNode>)editorContext.getSelectedNodes())).isNotEmpty();
+    return ListSequence.fromList(((List<SNode>) editorContext.getSelectedNodes())).isNotEmpty();
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

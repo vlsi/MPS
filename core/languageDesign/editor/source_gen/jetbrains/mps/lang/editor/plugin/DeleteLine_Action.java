@@ -64,7 +64,7 @@ public class DeleteLine_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       if (DeleteLine_Action.this.currentCell instanceof EditorCell_Collection) {
-        EditorCell_Collection collection = (EditorCell_Collection)DeleteLine_Action.this.currentCell;
+        EditorCell_Collection collection = (EditorCell_Collection) DeleteLine_Action.this.currentCell;
         List<EditorCell_Collection> cells = ListSequence.fromList(new ArrayList<EditorCell_Collection>());
         List<EditorCell_Collection> newFrontier = ListSequence.fromList(new ArrayList<EditorCell_Collection>());
         ListSequence.fromList(cells).addElement(collection);
@@ -75,7 +75,7 @@ public class DeleteLine_Action extends GeneratedAction {
             }
             for (EditorCell cell : cellCollection) {
               if (cell instanceof EditorCell_Collection) {
-                ListSequence.fromList(newFrontier).addElement((EditorCell_Collection)cell);
+                ListSequence.fromList(newFrontier).addElement((EditorCell_Collection) cell);
               }
             }
           }

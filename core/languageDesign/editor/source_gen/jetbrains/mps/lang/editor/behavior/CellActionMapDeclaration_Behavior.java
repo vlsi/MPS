@@ -18,10 +18,10 @@ public class CellActionMapDeclaration_Behavior {
   }
 
   public static SNode call_getBaseConcept_5270353093116096517(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_5270353093116096517);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_5270353093116096517);
   }
 
   public static SNode callSuper_getBaseConcept_5270353093116096517(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_5270353093116096517);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.editor.structure.CellActionMapDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_5270353093116096517);
   }
 }
