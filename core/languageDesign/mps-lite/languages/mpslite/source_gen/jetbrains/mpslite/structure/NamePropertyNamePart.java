@@ -15,7 +15,7 @@ public class NamePropertyNamePart extends PropertyPart {
   }
 
   public static NamePropertyNamePart newInstance(SModel sm, boolean init) {
-    return (NamePropertyNamePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.NamePropertyNamePart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NamePropertyNamePart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.NamePropertyNamePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NamePropertyNamePart newInstance(SModel sm) {

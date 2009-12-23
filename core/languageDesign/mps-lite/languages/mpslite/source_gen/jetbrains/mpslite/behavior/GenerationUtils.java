@@ -54,7 +54,7 @@ public class GenerationUtils {
   }
 
   public static void fillBinarySideTransformActions(SNode binaryOperationConcept, SNode actions, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> linePartsToLinks) {
-    SNode expressionConcept = (SNode)MapSequence.fromMap(conceptsToTargets).get(SLinkOperations.getTarget(SNodeOperations.getAncestor(binaryOperationConcept, "jetbrains.mpslite.structure.ConceptContainer", false, false), "expressionConcept", true));
+    SNode expressionConcept = (SNode) MapSequence.fromMap(conceptsToTargets).get(SLinkOperations.getTarget(SNodeOperations.getAncestor(binaryOperationConcept, "jetbrains.mpslite.structure.ConceptContainer", false, false), "expressionConcept", true));
     if ((expressionConcept != null)) {
       SNode rtBuilder = new _Quotations.QuotationClass_2().createNode(SNodeOperations.cast(MapSequence.fromMap(linePartsToLinks).get(SLinkOperations.getTarget(binaryOperationConcept, "leftTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), MapSequence.fromMap(conceptsToTargets).get(binaryOperationConcept), expressionConcept);
       SNode ltBuilder = new _Quotations.QuotationClass_3().createNode(SNodeOperations.cast(MapSequence.fromMap(linePartsToLinks).get(SLinkOperations.getTarget(binaryOperationConcept, "rightTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), MapSequence.fromMap(conceptsToTargets).get(binaryOperationConcept), expressionConcept);

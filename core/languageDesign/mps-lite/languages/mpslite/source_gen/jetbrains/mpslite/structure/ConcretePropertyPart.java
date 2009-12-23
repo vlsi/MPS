@@ -62,7 +62,7 @@ public class ConcretePropertyPart extends PropertyPart implements INamedConcept 
   }
 
   public static ConcretePropertyPart newInstance(SModel sm, boolean init) {
-    return (ConcretePropertyPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ConcretePropertyPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConcretePropertyPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ConcretePropertyPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConcretePropertyPart newInstance(SModel sm) {

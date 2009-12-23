@@ -15,7 +15,7 @@ public class PropertyPart extends LinePart {
   }
 
   public static PropertyPart newInstance(SModel sm, boolean init) {
-    return (PropertyPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.PropertyPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.PropertyPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyPart newInstance(SModel sm) {

@@ -24,7 +24,7 @@ public class ReferencePart extends LinePart {
   }
 
   public static ReferencePart newInstance(SModel sm, boolean init) {
-    return (ReferencePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ReferencePart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReferencePart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ReferencePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReferencePart newInstance(SModel sm) {

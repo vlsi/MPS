@@ -15,7 +15,7 @@ public class IndentLinePart extends LinePart {
   }
 
   public static IndentLinePart newInstance(SModel sm, boolean init) {
-    return (IndentLinePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.IndentLinePart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IndentLinePart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.IndentLinePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IndentLinePart newInstance(SModel sm) {

@@ -71,7 +71,7 @@ public class StatementConcept extends BaseConcept implements IMPSLiteConcept {
   }
 
   public AbstractConceptReference getExtends() {
-    return (AbstractConceptReference)this.getChild(AbstractConceptReference.class, StatementConcept.EXTENDS);
+    return (AbstractConceptReference) this.getChild(AbstractConceptReference.class, StatementConcept.EXTENDS);
   }
 
   public void setExtends(AbstractConceptReference node) {
@@ -79,7 +79,7 @@ public class StatementConcept extends BaseConcept implements IMPSLiteConcept {
   }
 
   public static StatementConcept newInstance(SModel sm, boolean init) {
-    return (StatementConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.StatementConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StatementConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.StatementConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StatementConcept newInstance(SModel sm) {

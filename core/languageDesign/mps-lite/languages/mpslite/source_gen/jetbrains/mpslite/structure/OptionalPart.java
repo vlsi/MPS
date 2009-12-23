@@ -38,7 +38,7 @@ public class OptionalPart extends LinePart {
   }
 
   public static OptionalPart newInstance(SModel sm, boolean init) {
-    return (OptionalPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.OptionalPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OptionalPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.OptionalPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OptionalPart newInstance(SModel sm) {

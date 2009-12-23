@@ -42,7 +42,7 @@ public class ChildPart extends LinePart {
   }
 
   public static ChildPart newInstance(SModel sm, boolean init) {
-    return (ChildPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ChildPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ChildPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ChildPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ChildPart newInstance(SModel sm) {

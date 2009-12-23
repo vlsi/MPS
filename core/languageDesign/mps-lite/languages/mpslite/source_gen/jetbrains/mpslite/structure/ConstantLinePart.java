@@ -24,7 +24,7 @@ public class ConstantLinePart extends LinePart {
   }
 
   public static ConstantLinePart newInstance(SModel sm, boolean init) {
-    return (ConstantLinePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ConstantLinePart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstantLinePart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ConstantLinePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstantLinePart newInstance(SModel sm) {

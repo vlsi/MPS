@@ -15,7 +15,7 @@ public class BlockBodyPart extends ChildPart {
   }
 
   public static BlockBodyPart newInstance(SModel sm, boolean init) {
-    return (BlockBodyPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.BlockBodyPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BlockBodyPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.BlockBodyPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BlockBodyPart newInstance(SModel sm) {

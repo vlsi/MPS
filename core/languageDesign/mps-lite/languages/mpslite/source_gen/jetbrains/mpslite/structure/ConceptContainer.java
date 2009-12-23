@@ -21,7 +21,7 @@ public class ConceptContainer extends BaseConcept {
   }
 
   public StatementConcept getStatementConcept() {
-    return (StatementConcept)this.getChild(StatementConcept.class, ConceptContainer.STATEMENT_CONCEPT);
+    return (StatementConcept) this.getChild(StatementConcept.class, ConceptContainer.STATEMENT_CONCEPT);
   }
 
   public void setStatementConcept(StatementConcept node) {
@@ -29,7 +29,7 @@ public class ConceptContainer extends BaseConcept {
   }
 
   public ExpressionConcept getExpressionConcept() {
-    return (ExpressionConcept)this.getChild(ExpressionConcept.class, ConceptContainer.EXPRESSION_CONCEPT);
+    return (ExpressionConcept) this.getChild(ExpressionConcept.class, ConceptContainer.EXPRESSION_CONCEPT);
   }
 
   public void setExpressionConcept(ExpressionConcept node) {
@@ -57,7 +57,7 @@ public class ConceptContainer extends BaseConcept {
   }
 
   public static ConceptContainer newInstance(SModel sm, boolean init) {
-    return (ConceptContainer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ConceptContainer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptContainer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ConceptContainer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptContainer newInstance(SModel sm) {

@@ -23,7 +23,7 @@ public class MPSLiteConceptReference extends AbstractConceptReference {
   }
 
   public static MPSLiteConceptReference newInstance(SModel sm, boolean init) {
-    return (MPSLiteConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.MPSLiteConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MPSLiteConceptReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.MPSLiteConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MPSLiteConceptReference newInstance(SModel sm) {

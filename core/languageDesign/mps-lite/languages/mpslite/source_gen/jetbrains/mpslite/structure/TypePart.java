@@ -15,7 +15,7 @@ public class TypePart extends ChildPart {
   }
 
   public static TypePart newInstance(SModel sm, boolean init) {
-    return (TypePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.TypePart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypePart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.TypePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypePart newInstance(SModel sm) {

@@ -10,6 +10,6 @@ public class Mpslite_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("3fe6ec39-7405-4314-abfd-5964c9c40e6b(jetbrains.mpslite)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

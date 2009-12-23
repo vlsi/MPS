@@ -60,7 +60,7 @@ public class LinePart_Actions extends EditorCellKeyMap {
       if (SNodeOperations.isInstanceOf(selectedNode, "jetbrains.mpslite.structure.ConstantLinePart")) {
         EditorCell editorCell = editorContext.getNodeEditorComponent().getDeepestSelectedCell();
         if (editorCell instanceof EditorCell_Label) {
-          EditorCell_Label label = (EditorCell_Label)editorCell;
+          EditorCell_Label label = (EditorCell_Label) editorCell;
           String textBC = label.getTextBeforeCaret();
           String textAC = label.getTextAfterCaret();
           SNode nextLinePart = SNodeOperations.insertNewNextSiblingChild(selectedNode, "jetbrains.mpslite.structure.ConstantLinePart");

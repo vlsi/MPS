@@ -71,7 +71,7 @@ public class FeatureAccessConcept extends BaseConcept implements IMPSLiteConcept
   }
 
   public AbstractConceptReference getExtends() {
-    return (AbstractConceptReference)this.getChild(AbstractConceptReference.class, FeatureAccessConcept.EXTENDS);
+    return (AbstractConceptReference) this.getChild(AbstractConceptReference.class, FeatureAccessConcept.EXTENDS);
   }
 
   public void setExtends(AbstractConceptReference node) {
@@ -79,7 +79,7 @@ public class FeatureAccessConcept extends BaseConcept implements IMPSLiteConcept
   }
 
   public static FeatureAccessConcept newInstance(SModel sm, boolean init) {
-    return (FeatureAccessConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.FeatureAccessConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FeatureAccessConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.FeatureAccessConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FeatureAccessConcept newInstance(SModel sm) {

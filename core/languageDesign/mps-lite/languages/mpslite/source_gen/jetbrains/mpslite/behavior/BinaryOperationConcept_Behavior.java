@@ -17,7 +17,7 @@ public class BinaryOperationConcept_Behavior {
   }
 
   public static void virtual_fillConcept_1239891562930(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    SNode conceptDeclaration = ((SNode)concept);
+    SNode conceptDeclaration = ((SNode) concept);
     SNode leftLink = SLinkOperations.addNewChild(conceptDeclaration, "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SNode rightLink = SLinkOperations.addNewChild(conceptDeclaration, "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SLinkOperations.setTarget(leftLink, "target", AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(thisNode, "leftTarget", true), conceptsToTargets), false);

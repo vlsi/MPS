@@ -101,7 +101,7 @@ public class BinaryOperationConcept extends BaseConcept implements IMPSLiteConce
   }
 
   public AbstractConceptReference getLeftTarget() {
-    return (AbstractConceptReference)this.getChild(AbstractConceptReference.class, BinaryOperationConcept.LEFT_TARGET);
+    return (AbstractConceptReference) this.getChild(AbstractConceptReference.class, BinaryOperationConcept.LEFT_TARGET);
   }
 
   public void setLeftTarget(AbstractConceptReference node) {
@@ -109,7 +109,7 @@ public class BinaryOperationConcept extends BaseConcept implements IMPSLiteConce
   }
 
   public AbstractConceptReference getRightTarget() {
-    return (AbstractConceptReference)this.getChild(AbstractConceptReference.class, BinaryOperationConcept.RIGHT_TARGET);
+    return (AbstractConceptReference) this.getChild(AbstractConceptReference.class, BinaryOperationConcept.RIGHT_TARGET);
   }
 
   public void setRightTarget(AbstractConceptReference node) {
@@ -117,7 +117,7 @@ public class BinaryOperationConcept extends BaseConcept implements IMPSLiteConce
   }
 
   public AbstractConceptReference getExpressionConcept() {
-    return (AbstractConceptReference)this.getChild(AbstractConceptReference.class, BinaryOperationConcept.EXPRESSION_CONCEPT);
+    return (AbstractConceptReference) this.getChild(AbstractConceptReference.class, BinaryOperationConcept.EXPRESSION_CONCEPT);
   }
 
   public void setExpressionConcept(AbstractConceptReference node) {
@@ -125,7 +125,7 @@ public class BinaryOperationConcept extends BaseConcept implements IMPSLiteConce
   }
 
   public AbstractConceptReference getExtends() {
-    return (AbstractConceptReference)this.getChild(AbstractConceptReference.class, BinaryOperationConcept.EXTENDS);
+    return (AbstractConceptReference) this.getChild(AbstractConceptReference.class, BinaryOperationConcept.EXTENDS);
   }
 
   public void setExtends(AbstractConceptReference node) {
@@ -133,7 +133,7 @@ public class BinaryOperationConcept extends BaseConcept implements IMPSLiteConce
   }
 
   public static BinaryOperationConcept newInstance(SModel sm, boolean init) {
-    return (BinaryOperationConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.BinaryOperationConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BinaryOperationConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.BinaryOperationConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BinaryOperationConcept newInstance(SModel sm) {

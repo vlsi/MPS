@@ -72,7 +72,7 @@ public class BlockConcept extends BaseConcept implements IMPSLiteConcept {
   }
 
   public LineList getConcreteSyntax() {
-    return (LineList)this.getChild(LineList.class, BlockConcept.CONCRETE_SYNTAX);
+    return (LineList) this.getChild(LineList.class, BlockConcept.CONCRETE_SYNTAX);
   }
 
   public void setConcreteSyntax(LineList node) {
@@ -80,7 +80,7 @@ public class BlockConcept extends BaseConcept implements IMPSLiteConcept {
   }
 
   public AbstractConceptReference getExtends() {
-    return (AbstractConceptReference)this.getChild(AbstractConceptReference.class, BlockConcept.EXTENDS);
+    return (AbstractConceptReference) this.getChild(AbstractConceptReference.class, BlockConcept.EXTENDS);
   }
 
   public void setExtends(AbstractConceptReference node) {
@@ -88,7 +88,7 @@ public class BlockConcept extends BaseConcept implements IMPSLiteConcept {
   }
 
   public static BlockConcept newInstance(SModel sm, boolean init) {
-    return (BlockConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.BlockConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BlockConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.BlockConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BlockConcept newInstance(SModel sm) {

@@ -53,7 +53,7 @@ public class ConcreteChildPart extends ChildPart implements INamedConcept {
   }
 
   public AbstractConceptReference getConceptReference() {
-    return (AbstractConceptReference)this.getChild(AbstractConceptReference.class, ConcreteChildPart.CONCEPT_REFERENCE);
+    return (AbstractConceptReference) this.getChild(AbstractConceptReference.class, ConcreteChildPart.CONCEPT_REFERENCE);
   }
 
   public void setConceptReference(AbstractConceptReference node) {
@@ -61,7 +61,7 @@ public class ConcreteChildPart extends ChildPart implements INamedConcept {
   }
 
   public static ConcreteChildPart newInstance(SModel sm, boolean init) {
-    return (ConcreteChildPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ConcreteChildPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConcreteChildPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.ConcreteChildPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConcreteChildPart newInstance(SModel sm) {

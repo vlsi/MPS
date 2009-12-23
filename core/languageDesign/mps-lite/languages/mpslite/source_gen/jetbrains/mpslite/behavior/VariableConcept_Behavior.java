@@ -26,7 +26,7 @@ public class VariableConcept_Behavior {
   }
 
   public static void virtual_fillConcept_1239891562930(SNode thisNode, SNode concept, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    SNode conceptDeclaration = ((SNode)MapSequence.fromMap(conceptsToTargets).get(thisNode));
+    SNode conceptDeclaration = ((SNode) MapSequence.fromMap(conceptsToTargets).get(thisNode));
     SNode typeLink = SLinkOperations.addNewChild(conceptDeclaration, "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SPropertyOperations.set(typeLink, "metaClass", "aggregation");
     SPropertyOperations.set(typeLink, "sourceCardinality", "1");
@@ -58,7 +58,7 @@ public class VariableConcept_Behavior {
     SPropertyOperations.set(referenceDeclaration, "sourceCardinality", "1");
     SPropertyOperations.set(referenceDeclaration, "role", "declaration");
     SLinkOperations.setTarget(referenceDeclaration, "target", MapSequence.fromMap(conceptsToTargets).get(thisNode), false);
-    SLinkOperations.setTarget(additionalConcept, "extends", (SNode)MapSequence.fromMap(conceptsToTargets).get(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.ConceptContainer", false, false), "expressionConcept", true)), false);
+    SLinkOperations.setTarget(additionalConcept, "extends", (SNode) MapSequence.fromMap(conceptsToTargets).get(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.ConceptContainer", false, false), "expressionConcept", true)), false);
     MapSequence.fromMap(partsToLinks).put(SLinkOperations.getTarget(thisNode, "reference", true), referenceDeclaration);
     return additionalConcept;
   }

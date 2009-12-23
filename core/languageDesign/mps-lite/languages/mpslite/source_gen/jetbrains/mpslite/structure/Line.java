@@ -39,7 +39,7 @@ public class Line extends BaseConcept {
   }
 
   public static Line newInstance(SModel sm, boolean init) {
-    return (Line)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.Line", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Line) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.Line", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Line newInstance(SModel sm) {

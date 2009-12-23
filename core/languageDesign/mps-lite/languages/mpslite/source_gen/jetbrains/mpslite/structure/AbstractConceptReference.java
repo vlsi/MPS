@@ -18,7 +18,7 @@ public class AbstractConceptReference extends BaseConcept {
   }
 
   public INamedConcept getConceptDeclaration() {
-    return (INamedConcept)this.getReferent(INamedConcept.class, AbstractConceptReference.CONCEPT_DECLARATION);
+    return (INamedConcept) this.getReferent(INamedConcept.class, AbstractConceptReference.CONCEPT_DECLARATION);
   }
 
   public void setConceptDeclaration(INamedConcept node) {
@@ -26,7 +26,7 @@ public class AbstractConceptReference extends BaseConcept {
   }
 
   public static AbstractConceptReference newInstance(SModel sm, boolean init) {
-    return (AbstractConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.AbstractConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractConceptReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.AbstractConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractConceptReference newInstance(SModel sm) {

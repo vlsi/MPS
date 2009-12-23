@@ -62,11 +62,11 @@ public class QueriesGenerated {
     }
     // extends 
     for (SNode conceptDeclaration : allConcepts) {
-      SLinkOperations.setTarget(((SNode)MapSequence.fromMap(conceptsToTargets).get(conceptDeclaration)), "extends", ((SNode)AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(conceptDeclaration, "extends", true), conceptsToTargets)), false);
+      SLinkOperations.setTarget(((SNode) MapSequence.fromMap(conceptsToTargets).get(conceptDeclaration)), "extends", ((SNode) AbstractConceptReference_Behavior.call_getConcept_1238594571574(SLinkOperations.getTarget(conceptDeclaration, "extends", true), conceptsToTargets)), false);
     }
     // inner concept structure 
     for (SNode conceptDeclaration : allConcepts) {
-      IMPSLiteConcept_Behavior.call_fillConcept_1239891562930(conceptDeclaration, ((SNode)MapSequence.fromMap(conceptsToTargets).get(conceptDeclaration)), conceptsToTargets, partsToLinkDeclarations);
+      IMPSLiteConcept_Behavior.call_fillConcept_1239891562930(conceptDeclaration, ((SNode) MapSequence.fromMap(conceptsToTargets).get(conceptDeclaration)), conceptsToTargets, partsToLinkDeclarations);
     }
     // editor 
     SModel editorModel = language.getEditorModelDescriptor().getSModel();

@@ -72,7 +72,7 @@ public class MPSLiteConceptDeclaration extends BaseConcept implements IMPSLiteCo
   }
 
   public LineList getLineList() {
-    return (LineList)this.getChild(LineList.class, MPSLiteConceptDeclaration.LINE_LIST);
+    return (LineList) this.getChild(LineList.class, MPSLiteConceptDeclaration.LINE_LIST);
   }
 
   public void setLineList(LineList node) {
@@ -80,7 +80,7 @@ public class MPSLiteConceptDeclaration extends BaseConcept implements IMPSLiteCo
   }
 
   public AbstractConceptReference getExtends() {
-    return (AbstractConceptReference)this.getChild(AbstractConceptReference.class, MPSLiteConceptDeclaration.EXTENDS);
+    return (AbstractConceptReference) this.getChild(AbstractConceptReference.class, MPSLiteConceptDeclaration.EXTENDS);
   }
 
   public void setExtends(AbstractConceptReference node) {
@@ -88,7 +88,7 @@ public class MPSLiteConceptDeclaration extends BaseConcept implements IMPSLiteCo
   }
 
   public static MPSLiteConceptDeclaration newInstance(SModel sm, boolean init) {
-    return (MPSLiteConceptDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.MPSLiteConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MPSLiteConceptDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.MPSLiteConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MPSLiteConceptDeclaration newInstance(SModel sm) {

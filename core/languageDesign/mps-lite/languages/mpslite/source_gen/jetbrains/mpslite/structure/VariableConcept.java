@@ -95,7 +95,7 @@ public class VariableConcept extends BaseConcept implements IMPSLiteConcept {
   }
 
   public AbstractConceptReference getTypeConcept() {
-    return (AbstractConceptReference)this.getChild(AbstractConceptReference.class, VariableConcept.TYPE_CONCEPT);
+    return (AbstractConceptReference) this.getChild(AbstractConceptReference.class, VariableConcept.TYPE_CONCEPT);
   }
 
   public void setTypeConcept(AbstractConceptReference node) {
@@ -103,7 +103,7 @@ public class VariableConcept extends BaseConcept implements IMPSLiteConcept {
   }
 
   public BaseConcept getReference() {
-    return (BaseConcept)this.getChild(BaseConcept.class, VariableConcept.REFERENCE);
+    return (BaseConcept) this.getChild(BaseConcept.class, VariableConcept.REFERENCE);
   }
 
   public void setReference(BaseConcept node) {
@@ -111,7 +111,7 @@ public class VariableConcept extends BaseConcept implements IMPSLiteConcept {
   }
 
   public LineList getConcreteSyntax() {
-    return (LineList)this.getChild(LineList.class, VariableConcept.CONCRETE_SYNTAX);
+    return (LineList) this.getChild(LineList.class, VariableConcept.CONCRETE_SYNTAX);
   }
 
   public void setConcreteSyntax(LineList node) {
@@ -119,7 +119,7 @@ public class VariableConcept extends BaseConcept implements IMPSLiteConcept {
   }
 
   public AbstractConceptReference getExtends() {
-    return (AbstractConceptReference)this.getChild(AbstractConceptReference.class, VariableConcept.EXTENDS);
+    return (AbstractConceptReference) this.getChild(AbstractConceptReference.class, VariableConcept.EXTENDS);
   }
 
   public void setExtends(AbstractConceptReference node) {
@@ -147,7 +147,7 @@ public class VariableConcept extends BaseConcept implements IMPSLiteConcept {
   }
 
   public static VariableConcept newInstance(SModel sm, boolean init) {
-    return (VariableConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.VariableConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VariableConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mpslite.structure.VariableConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VariableConcept newInstance(SModel sm) {
