@@ -16,11 +16,7 @@
 package jetbrains.mps.findUsages;
 
 import com.intellij.ide.DataManager;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
-import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.vfs.VirtualFileFilter;
 import com.intellij.openapi.module.Module;
 import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
@@ -29,7 +25,6 @@ import com.intellij.psi.impl.cache.impl.id.IdTableBuilding;
 import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileContent;
-import com.intellij.util.indexing.UnindexedFilesUpdater;
 import com.intellij.util.text.CharArrayUtil;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
@@ -46,8 +41,6 @@ import org.jetbrains.annotations.NotNull;
 import org.apache.commons.lang.StringEscapeUtils;
 
 import java.util.*;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 class FastFindUsagesManager extends FindUsagesManager {
   private static final String TARGET_NODE_ID_PREFIX = "targetNodeId=\"";
@@ -93,7 +86,7 @@ class FastFindUsagesManager extends FindUsagesManager {
         if (contains(chars, charsLength, offset, TARGET_NODE_ID_PREFIX)) {
           // check pattern "targetNodeId=\"(?:[0-9]+v?\\.)?(.+?)\""
           offset += TARGET_NODE_ID_PREFIX.length();
-          int end = indexOfQuote(chars, charsLength, offset);
+          int end = indexOfQuoteAndVersionColon(chars, charsLength, offset)[0];
           if (end > offset) {
             int e = offset;
             while (e < end && chars[e] >= '0' && chars[e] <= '9') {
@@ -112,17 +105,22 @@ class FastFindUsagesManager extends FindUsagesManager {
         } else if (contains(chars, charsLength, offset, TYPE_PREFIX)) {
           // check pattern "type=\"(.+?)\" id=\".+?\""
           offset += TYPE_PREFIX.length();
-          int end = indexOfQuote(chars, charsLength, offset);
-          if (end > offset && contains(chars, charsLength, end + 1, " id=\"")) {
+          int[] indices = indexOfQuoteAndVersionColon(chars, charsLength, offset);
+          int end = indices[0];
+          int qend = indices[1];
+          if (end > offset && contains(chars, charsLength, qend + 1, " id=\"")) {
             // report
             result.put(new IdIndexEntry(unescape(new String(chars, offset, end - offset)), true), offset);
           }
         }
       }
 
-      private int indexOfQuote(char[] chars, int charsLength, int start) {
+      private int indexOfQuoteOrVersionColon(char[] chars, int charsLength, int start) {
         for (int i = start; i < charsLength; i++) {
           if (chars[i] == '"') {
+            return i;
+          }
+          if (chars[i] == ':' && (i+1 < charsLength) && chars[i+1] >= '0' && chars[i+1] <= '9') {
             return i;
           }
           if (chars[i] == '\n') {
@@ -130,6 +128,25 @@ class FastFindUsagesManager extends FindUsagesManager {
           }
         }
         return -1;
+      }
+
+      // result[0] - first index; result[1] - index of quote
+      private int[] indexOfQuoteAndVersionColon(char[] chars, int charsLength, int start) {
+        int[] result = {-1, -1};
+        for (int i = start; i < charsLength; i++) {
+          if (chars[i] == '"') {
+            if (result[0] == -1) result[0] = i;
+            result[1] = i;
+            return result;
+          }
+          if (chars[i] == ':' && (i+1 < charsLength) && chars[i+1] >= '0' && chars[i+1] <= '9') {
+            result[0] = i;
+          }
+          if (chars[i] == '\n') {
+            return new int[]{-1, -1};
+          }
+        }
+        return new int[]{-1, -1};
       }
 
       private boolean contains(char[] chars, int charsLength, int offset, String s) {
