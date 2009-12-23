@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2009 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.intellij.ide.projectView.impl;
 
 import com.intellij.ProjectTopics;
@@ -47,7 +48,9 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.fileEditor.*;
+import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx;
 import com.intellij.openapi.module.Module;
+import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.*;
 import com.intellij.openapi.roots.ui.configuration.actions.ModuleDeleteProvider;
@@ -59,11 +62,11 @@ import com.intellij.openapi.ui.popup.PopupChooserBuilder;
 import com.intellij.openapi.util.*;
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
+import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.wm.ToolWindow;
 import com.intellij.openapi.wm.ToolWindowId;
 import com.intellij.openapi.wm.ToolWindowManager;
-import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.ex.ToolWindowManagerAdapter;
 import com.intellij.openapi.wm.ex.ToolWindowManagerEx;
 import com.intellij.psi.*;
@@ -207,8 +210,8 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
   private final MessageBusConnection myConnection;
   private JPanel myTopPanel;
   private ActionToolbar myToolBar;
-  private Map<String, Element> myUninitializedPaneState = new HashMap<String, Element>();
-  private Map<String, SelectInTarget> mySelectInTargets = new HashMap<String, SelectInTarget>();
+  private final Map<String, Element> myUninitializedPaneState = new HashMap<String, Element>();
+  private final Map<String, SelectInTarget> mySelectInTargets = new HashMap<String, SelectInTarget>();
 
   public ProjectViewImpl(Project project, final FileEditorManager fileEditorManager, final ToolWindowManagerEx toolWindowManager) {
     myProject = project;
@@ -278,7 +281,9 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
     myActionGroupPanel = new JPanel(new BorderLayout());
 
     myLabel = new JLabel("View as:");
-    myLabel.setDisplayedMnemonic('a');
+    if (!SystemInfo.isMac) { // See IDEADEV-41315
+      myLabel.setDisplayedMnemonic('a');
+    }
     myCombo = new ComboBox();
     myCombo.setBorder(BorderFactory.createEmptyBorder(0, 4, 0, 0));
     myLabel.setLabelFor(myCombo);
@@ -442,8 +447,6 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
       })) {
         newPane.select(selectedPsiElement, virtualFile, true);
       }
-    } else if (selectedModule != null) {
-      newPane.select(selectedModule, selectedModule.getModuleFile(), true);
     }
     myAutoScrollToSourceHandler.onMouseClicked(newPane.myTree);
     installLabelFocusListener();
@@ -682,8 +685,10 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
     final AbstractProjectViewPane viewPane = getCurrentProjectViewPane();
     if (viewPane != null && viewPane instanceof AbstractProjectViewPSIPane) {
       return ((AbstractProjectViewPSIPane) viewPane).selectCB(element, file, requestFocus);
+    } else {
+      select(element, file, requestFocus);
+      return new ActionCallback.Done();
     }
-    return new ActionCallback.Rejected();
   }
 
   public void dispose() {
@@ -765,7 +770,7 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
   }
 
 
-  private class PaneOptionAction extends ToggleAction {
+  private class PaneOptionAction extends ToggleAction implements DumbAware {
     private final Map<String, Boolean> myOptionsMap;
     private final boolean myOptionDefaultValue;
 
@@ -901,11 +906,6 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
 
   }
 
-  @NotNull
-  public String getComponentName() {
-    return "ProjectView";
-  }
-
   private final class MyPanel extends JPanel implements DataProvider {
     MyPanel() {
       super(new BorderLayout());
@@ -948,6 +948,17 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
         }
         PsiElement[] elements = currentProjectViewPane.getSelectedPSIElements();
         return elements.length == 0 ? null : elements;
+      }
+      if (DataConstants.VIRTUAL_FILE_ARRAY.equals(dataId)) {
+        PsiElement[] psiElements = (PsiElement[]) getData(DataConstants.PSI_ELEMENT_ARRAY);
+        if (psiElements == null) return null;
+        Set<VirtualFile> files = new LinkedHashSet<VirtualFile>();
+        for (PsiElement element : psiElements) {
+          if (element instanceof PsiFileSystemItem) {
+            files.add(((PsiFileSystemItem) element).getVirtualFile());
+          }
+        }
+        return files.size() > 0 ? VfsUtil.toVirtualFileArray(files) : null;
       }
       if (DataConstantsEx.TARGET_PSI_ELEMENT.equals(dataId)) {
         return null;
@@ -995,7 +1006,15 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
       }
       if (DataConstants.MODULE_CONTEXT.equals(dataId)) {
         Object selected = getSelectedNodeElement();
-        return selected instanceof Module ? selected : null;
+        if (selected instanceof Module) {
+          return !((Module) selected).isDisposed() ? selected : null;
+        } else if (selected instanceof PsiDirectory) {
+          return moduleByContentRoot(((PsiDirectory) selected).getVirtualFile());
+        } else if (selected instanceof VirtualFile) {
+          return moduleByContentRoot((VirtualFile) selected);
+        } else {
+          return null;
+        }
       }
 
       if (DataConstants.MODULE_CONTEXT_ARRAY.equals(dataId)) {
@@ -1087,14 +1106,32 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
         } else if (element instanceof ModuleGroup) {
           Collection<Module> modules = ((ModuleGroup) element).modulesInGroup(myProject, true);
           result.addAll(modules);
+        } else if (element instanceof PsiDirectory) {
+          Module module = moduleByContentRoot(((PsiDirectory) element).getVirtualFile());
+          if (module != null) result.add(module);
+        } else if (element instanceof VirtualFile) {
+          Module module = moduleByContentRoot((VirtualFile) element);
+          if (module != null) result.add(module);
         }
       }
+
       if (result.isEmpty()) {
         return null;
       } else {
         return result.toArray(new Module[result.size()]);
       }
     }
+  }
+
+  private Module moduleByContentRoot(VirtualFile file) {
+    if (ProjectRootsUtil.isModuleContentRoot(file, myProject)) {
+      Module module = ProjectRootManager.getInstance(myProject).getFileIndex().getModuleForFile(file);
+      if (module != null && !module.isDisposed()) {
+        return module;
+      }
+    }
+
+    return null;
   }
 
   private <T> List<T> getSelectedElements(Class<T> klass) {
@@ -1113,15 +1150,21 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
 
   private final class MyIdeView implements IdeView {
     public void selectElement(PsiElement element) {
-      selectPsiElement(element, true);
+      selectPsiElement(element, false);
+      boolean requestFocus = true;
       if (element != null) {
         final boolean isDirectory = element instanceof PsiDirectory;
         if (!isDirectory) {
           Editor editor = EditorHelper.openInEditor(element);
           if (editor != null) {
             ToolWindowManager.getInstance(myProject).activateEditorComponent();
+            requestFocus = false;
           }
         }
+      }
+
+      if (requestFocus) {
+        selectPsiElement(element, true);
       }
     }
 
@@ -1357,7 +1400,7 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
   }
 
   private class HideEmptyMiddlePackagesAction extends PaneOptionAction {
-    public HideEmptyMiddlePackagesAction() {
+    private HideEmptyMiddlePackagesAction() {
       super(myHideEmptyPackages, "", "", null, ourHideEmptyPackagesDefaults);
     }
 
@@ -1434,14 +1477,13 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
 
   private class MyAutoScrollFromSourceHandler extends AutoScrollFromSourceHandler {
     private final Alarm myAlarm = new Alarm(myProject);
-    private FileEditorManagerAdapter myEditorManagerListener;
 
-    public MyAutoScrollFromSourceHandler() {
+    private MyAutoScrollFromSourceHandler() {
       super(ProjectViewImpl.this.myProject, ProjectViewImpl.this);
     }
 
     public void install() {
-      myEditorManagerListener = new FileEditorManagerAdapter() {
+      FileEditorManagerAdapter myEditorManagerListener = new FileEditorManagerAdapter() {
         public void selectionChanged(final FileEditorManagerEvent event) {
           final FileEditor newEditor = event.getNewEditor();
           myAlarm.cancelAllRequests();
@@ -1452,30 +1494,67 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
                 if (newEditor instanceof TextEditor) {
                   Editor editor = ((TextEditor) newEditor).getEditor();
                   selectElementAtCaretNotLosingFocus(editor);
+                } else if (newEditor != null) {
+                  final VirtualFile file = FileEditorManagerEx.getInstanceEx(myProject).getFile(newEditor);
+                  if (file != null) {
+                    final PsiFile psiFile = PsiManager.getInstance(myProject).findFile(file);
+                    if (psiFile != null) {
+                      final SelectInTarget target = mySelectInTargets.get(getCurrentViewId());
+                      if (target != null) {
+                        final MySelectInContext selectInContext = new MySelectInContext(psiFile, null) {
+                          @Override
+                          public Object getSelectorInFile() {
+                            return psiFile;
+                          }
+                        };
+
+                        if (target.canSelect(selectInContext)) {
+                          target.selectIn(selectInContext, false);
+                        }
+                      }
+                    }
+                  }
                 }
               }
             }
           }, 300, ModalityState.NON_MODAL);
         }
       };
-      myFileEditorManager.addFileEditorManagerListener(myEditorManagerListener);
+      myFileEditorManager.addFileEditorManagerListener(myEditorManagerListener, this);
     }
 
     public void scrollFromSource() {
-      final FileEditor[] editors = FileEditorManager.getInstance(myProject).getSelectedEditors();
+      final FileEditorManager fileEditorManager = FileEditorManager.getInstance(myProject);
+      final FileEditor[] editors = fileEditorManager.getSelectedEditors();
       for (FileEditor fileEditor : editors) {
         if (fileEditor instanceof TextEditor) {
           Editor editor = ((TextEditor) fileEditor).getEditor();
-          selectElementAtCaretNotLosingFocus(editor);
+          selectElementAtCaret(editor);
+          return;
+        }
+      }
+      final VirtualFile[] selectedFiles = fileEditorManager.getSelectedFiles();
+      if (selectedFiles.length > 0) {
+        final PsiFile file = PsiManager.getInstance(myProject).findFile(selectedFiles[0]);
+        if (file != null) {
+          scrollFromFile(file, null);
         }
       }
     }
 
     private void selectElementAtCaretNotLosingFocus(final Editor editor) {
       if (IJSwingUtilities.hasFocus(getCurrentProjectViewPane().getComponentToFocus())) return;
+      selectElementAtCaret(editor);
+    }
+
+    private void selectElementAtCaret(Editor editor) {
       final PsiFile file = PsiDocumentManager.getInstance(myProject).getPsiFile(editor.getDocument());
       if (file == null) return;
 
+      scrollFromFile(file, editor);
+    }
+
+    private void scrollFromFile(PsiFile file, @Nullable Editor editor) {
       final MySelectInContext selectInContext = new MySelectInContext(file, editor);
 
       final SelectInTarget target = mySelectInTargets.get(getCurrentViewId());
@@ -1485,9 +1564,6 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
     }
 
     public void dispose() {
-      if (myEditorManagerListener != null) {
-        myFileEditorManager.removeFileEditorManagerListener(myEditorManagerListener);
-      }
     }
 
     protected boolean isAutoScrollMode() {
@@ -1506,9 +1582,10 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
 
     private class MySelectInContext implements SelectInContext {
       private final PsiFile myPsiFile;
+      @Nullable
       private final Editor myEditor;
 
-      public MySelectInContext(final PsiFile psiFile, Editor editor) {
+      private MySelectInContext(final PsiFile psiFile, @Nullable Editor editor) {
         myPsiFile = psiFile;
         myEditor = editor;
       }
@@ -1532,9 +1609,12 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
       }
 
       private PsiElement getPsiElement() {
-        final int offset = myEditor.getCaretModel().getOffset();
-        PsiDocumentManager.getInstance(myProject).commitAllDocuments();
-        PsiElement e = getPsiFile().findElementAt(offset);
+        PsiElement e = null;
+        if (myEditor != null) {
+          final int offset = myEditor.getCaretModel().getOffset();
+          PsiDocumentManager.getInstance(myProject).commitAllDocuments();
+          e = getPsiFile().findElementAt(offset);
+        }
         if (e == null) {
           e = getPsiFile();
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2009 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -37,7 +37,7 @@ import com.intellij.openapi.util.IconLoader;
 import com.intellij.util.containers.ContainerUtil;
 import org.jetbrains.annotations.NonNls;
 
-import javax.swing.Icon;
+import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import java.util.*;
 
@@ -315,15 +315,6 @@ public class ActionsTreeUtil {
       public int compare(String id1, String id2) {
         return getTextToCompare(id1).compareToIgnoreCase(getTextToCompare(id2));
       }
-
-      private String getTextToCompare(String id) {
-        AnAction action = actionManager.getActionOrStub(id);
-        if (action == null) {
-          return id;
-        }
-        String text = action.getTemplatePresentation().getText();
-        return text != null ? text : id;
-      }
     });
 
     Group group = new Group(KeyMapBundle.message("other.group.title"), OTHER_ICON, OTHER_ICON);
@@ -331,6 +322,15 @@ public class ActionsTreeUtil {
       if (filtered == null || filtered.value(actionManager.getActionOrStub(id))) group.addActionId(id);
     }
     return group;
+  }
+
+  private static String getTextToCompare(String id) {
+    AnAction action = ActionManager.getInstance().getActionOrStub(id);
+    if (action == null) {
+      return id;
+    }
+    String text = action.getTemplatePresentation().getText();
+    return text != null ? text : id;
   }
 
   private static void filterOtherActionsGroup(ArrayList<String> actions) {

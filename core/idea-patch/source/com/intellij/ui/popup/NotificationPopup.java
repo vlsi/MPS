@@ -52,7 +52,7 @@ public class NotificationPopup {
       if (clickHandler != null) {
         throw new UnsupportedOperationException("Click handler is not supported in frameless mode");
       }
-      final FramelessNotificationPopup popup = new FramelessNotificationPopup(owner, content, backgroud, useDefaultPreferredSize);
+      final FramelessNotificationPopup popup = new FramelessNotificationPopup(owner, content, backgroud, useDefaultPreferredSize, null);
 
       myImpl = new Impl() {
         public void addListener(JBPopupListener listener) {

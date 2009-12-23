@@ -18,6 +18,10 @@ package com.intellij.ide.actions;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.BaseAction;
 
+/**
+ * SEVEREPATCH
+ * This action does nothing and is invisible.
+ */
 public class HelpTopicsAction extends BaseAction {
 
   @Override

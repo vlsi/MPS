@@ -34,6 +34,7 @@ import java.awt.EventQueue;
 import java.util.Arrays;
 import java.util.List;
 
+// SEVERE PATCH
 @SuppressWarnings({"HardCodedStringLiteral", "UseOfSystemOutOrSystemErr"})
 public class MainImpl {
   final static String APPLICATION_NAME = "idea";

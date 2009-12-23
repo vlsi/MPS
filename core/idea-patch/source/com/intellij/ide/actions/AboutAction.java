@@ -50,13 +50,14 @@ import java.util.Properties;
 
 import org.jetbrains.annotations.NonNls;
 
+/**
+ * SEVEREPATCH
+ * Do not touch unless MPS about does not work.
+ */
 public class AboutAction extends AnAction {
   @NonNls
   private static final String COMPANY_URL = "http://www.jetbrains.com/";
 
-  private static final int TEXT_HEIGHT = 140;
-  private static final int TEXT_WIDTH = 398;
-  private static final int IMAGE_HEADER_HEIGHT = 150;
   private static final int LICENSES_HEIGHT = 200;
 
   public void update(AnActionEvent e) {

@@ -260,7 +260,7 @@ public final class WindowInfoImpl implements Cloneable, JDOMExternalizable, Wind
   }
 
   /**
-   * Patched by MPS: .toLowerCase() was added everywhere
+   * Patched by MPS: .toLowerCase() was added everywhere.
    */
   @Patch
   private static ToolWindowType parseToolWindowType(final String text) {

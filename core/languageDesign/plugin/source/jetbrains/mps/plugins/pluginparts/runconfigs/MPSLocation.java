@@ -16,6 +16,7 @@
 package jetbrains.mps.plugins.pluginparts.runconfigs;
 
 import com.intellij.execution.Location;
+import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.PsiElement;
 import org.jetbrains.annotations.NotNull;
@@ -42,6 +43,11 @@ public class MPSLocation<T> extends Location {
   @NotNull
   public Project getProject() {
     return myProject;
+  }
+
+  @Override
+  public Module getModule() {
+    return null;
   }
 
   @NotNull

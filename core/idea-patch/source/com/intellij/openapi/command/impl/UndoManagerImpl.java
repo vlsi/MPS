@@ -263,7 +263,7 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
     clearUndoRedoQueue(DocumentReferenceManager.getInstance().create(file));
   }
 
-  public void compact() {
+  protected void compact() {
     if (myCurrentOperationState == NONE && myCommandTimestamp % COMMAND_TO_RUN_COMPACT == 0) {
       doCompact();
     }
@@ -316,6 +316,8 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
   }
 
   public void undoableActionPerformed(UndoableAction action) {
+    ApplicationManager.getApplication().assertIsDispatchThread();
+
     if (myCurrentOperationState != NONE) return;
 
     if (myCommandLevel == 0) {
@@ -332,6 +334,7 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
 
   @Override
   public void nonundoableActionPerformed(final DocumentReference ref, final boolean isGlobal) {
+    ApplicationManager.getApplication().assertIsDispatchThread();
     undoableActionPerformed(new NonUndoableAction(ref, isGlobal));
   }
 
@@ -344,13 +347,17 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
   }
 
   public void undo(@Nullable FileEditor editor) {
+    ApplicationManager.getApplication().assertIsDispatchThread();
     LOG.assertTrue(isUndoAvailable(editor));
+
     myCurrentOperationState = UNDO;
     undoOrRedo(editor);
   }
 
   public void redo(@Nullable FileEditor editor) {
+    ApplicationManager.getApplication().assertIsDispatchThread();
     LOG.assertTrue(isRedoAvailable(editor));
+
     myCurrentOperationState = REDO;
     undoOrRedo(editor);
   }
@@ -382,12 +389,16 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
   }
 
   public boolean isUndoAvailable(@Nullable FileEditor editor) {
+    ApplicationManager.getApplication().assertIsDispatchThread();
+
     Collection<DocumentReference> refs = getDocRefs(editor);
     if (refs == null) return false;
     return isUndoOrRedoAvailable(refs, true);
   }
 
   public boolean isRedoAvailable(@Nullable FileEditor editor) {
+    ApplicationManager.getApplication().assertIsDispatchThread();
+
     Collection<DocumentReference> refs = getDocRefs(editor);
     if (refs == null) return false;
     return isUndoOrRedoAvailable(refs, false);

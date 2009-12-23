@@ -12,6 +12,8 @@ import javax.swing.*;
 import java.io.*;
 import java.util.PropertyResourceBundle;
 
+// TODO add Patch annotations
+// TODO do we need this patch at all?
 /**
  * @author max
  */

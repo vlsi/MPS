@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ex.ApplicationInfoEx;
 
 import java.util.Date;
 
+// TODO add Patch annotations
 public abstract class LicenseManager {
   static {
   }

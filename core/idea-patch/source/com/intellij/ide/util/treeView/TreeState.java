@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2009 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,7 +24,7 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JTree;
+import javax.swing.*;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
@@ -276,6 +276,14 @@ public class TreeState implements JDOMExternalizable {
   }
 
   private void applyExpanded(final TreeFacade tree, final Object root) {
+    tree.getIntialized().doWhenDone(new Runnable() {
+      public void run() {
+        _applyExpanded(tree, root);
+      }
+    });
+  }
+
+  private void _applyExpanded(TreeFacade tree, Object root) {
     if (!(root instanceof DefaultMutableTreeNode)) {
       return;
     }
@@ -423,6 +431,8 @@ public class TreeState implements JDOMExternalizable {
   }
 
   interface TreeFacade {
+    ActionCallback getIntialized();
+
     ActionCallback expand(DefaultMutableTreeNode node);
   }
 
@@ -443,6 +453,10 @@ public class TreeState implements JDOMExternalizable {
       myTree.expandPath(new TreePath(node.getPath()));
       return new ActionCallback.Done();
     }
+
+    public ActionCallback getIntialized() {
+      return new ActionCallback.Done();
+    }
   }
 
   static class BuilderFacade implements TreeFacade {
@@ -451,6 +465,10 @@ public class TreeState implements JDOMExternalizable {
 
     BuilderFacade(AbstractTreeBuilder builder) {
       myBuilder = builder;
+    }
+
+    public ActionCallback getIntialized() {
+      return myBuilder.getIntialized();
     }
 
     public ActionCallback expand(DefaultMutableTreeNode node) {

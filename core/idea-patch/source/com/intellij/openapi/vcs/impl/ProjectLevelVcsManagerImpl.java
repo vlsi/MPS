@@ -27,6 +27,7 @@ import com.intellij.openapi.editor.markup.TextAttributes;
 import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.project.DumbAwareRunnable;
+import com.intellij.openapi.project.DumbService;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.startup.StartupManager;
 import com.intellij.openapi.util.*;
@@ -82,6 +83,8 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   private ContentManager myContentManager;
   private EditorAdapter myEditorAdapter;
 
+  private final VcsInitialization myInitialization;
+
   @NonNls
   private static final String ELEMENT_MAPPING = "mapping";
   @NonNls
@@ -118,9 +121,10 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
 
     myDefaultVcsRootPolicy = DefaultVcsRootPolicy.getInstance(project);
 
-    myMappings = new NewMappings(myProject, myEventDispatcher);
-    myMappingsToRoots = new MappingsToRoots(myMappings, myProject);
     myBackgroundableActionHandlerMap = new HashMap<VcsBackgroundableActions, BackgroundableActionEnabledHandler>();
+    myInitialization = new VcsInitialization(myProject);
+    myMappings = new NewMappings(myProject, myEventDispatcher, this);
+    myMappingsToRoots = new MappingsToRoots(myMappings, myProject);
   }
 
   public void initComponent() {
@@ -194,6 +198,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
   }
 
   @Nullable
+  @Patch
   public AbstractVcs getVcsFor(@NotNull VirtualFile file) {
     final String vcsName = myMappings.getVcsFor(file);
     if (vcsName == null || vcsName.length() == 0) {
@@ -218,7 +223,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
     return ApplicationManager.getApplication().runReadAction(new Computable<AbstractVcs>() {
       @Nullable
       public AbstractVcs compute() {
-        if (!myProject.isInitialized()) return null;
+        if ((!ApplicationManager.getApplication().isUnitTestMode()) && (!myProject.isInitialized())) return null;
         if (myProject.isDisposed()) throw new ProcessCanceledException();
         VirtualFile vFile = ChangesUtil.findValidParent(file);
         if (vFile != null) {
@@ -540,7 +545,7 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
     for (AbstractVcs vcs : vcses) {
       Collections.addAll(vFiles, getRootsUnderVcs(vcs));
     }
-    return vFiles.toArray(new VirtualFile[vFiles.size()]);
+    return VfsUtil.toVirtualFileArray(vFiles);
   }
 
   @NotNull
@@ -676,6 +681,14 @@ public class ProjectLevelVcsManagerImpl extends ProjectLevelVcsManagerEx impleme
       myBackgroundableActionHandlerMap.put(action, result);
     }
     return result;
+  }
+
+  public void addInitializationRequest(final VcsInitObject vcsInitObject, final Runnable runnable) {
+    ApplicationManager.getApplication().runReadAction(new Runnable() {
+      public void run() {
+        myInitialization.add(vcsInitObject, runnable);
+      }
+    });
   }
 
   /*

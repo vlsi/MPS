@@ -28,7 +28,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 
-
+// TODO add Patch annotations
 public class IconUtil {
 
   private IconUtil() {

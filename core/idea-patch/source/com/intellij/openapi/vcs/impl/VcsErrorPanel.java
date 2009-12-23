@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2009 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ class VcsErrorViewPanel extends NewErrorTreeViewPanel {
 
   /* File was patched in order to fix
    * MPS-2352 can​'​t copy '​Error: svn: .​.. ' text from (​idea) messages
-   * Two mehods were added: addExtraPopupMenuActions and getErrorData. 
+   * Two methods were added: addExtraPopupMenuActions and getErrorData.
    */
 
   @Patch

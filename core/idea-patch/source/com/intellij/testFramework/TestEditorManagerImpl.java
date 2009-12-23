@@ -48,6 +48,7 @@ import java.util.Map;
 
 // My version
 
+// TODO add Patch annotations
 @NonNls
 public class TestEditorManagerImpl extends FileEditorManagerImpl implements ApplicationComponent, ProjectComponent {
   private static final Logger LOG = Logger.getInstance("#com.intellij.idea.test.TestEditorManagerImpl");

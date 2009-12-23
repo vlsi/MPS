@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2009 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,19 +29,21 @@ import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.openapi.util.Ref;
 import com.intellij.openapi.util.SystemInfo;
+import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.ui.awt.RelativePoint;
 import com.intellij.util.ui.EmptyIcon;
+import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.Icon;
+import javax.swing.*;
 import javax.swing.filechooser.FileSystemView;
 import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 
-//a workaround for IDEA bug - if there is no real file for some virtual file, IDEA tries to open it as anormal file
+//a workaround for IDEA bug - if there is no real file for some virtual file, IDEA tries to open it as a normal file
 public class ShowFilePathAction extends AnAction {
 
   private static final Logger LOG = Logger.getInstance("#com.intellij.ide.actions.ShowFilePathAction");
@@ -91,6 +93,10 @@ public class ShowFilePathAction extends AnAction {
       final int index = files.size() == 0 ? 0 : files.size();
       files.add(index, eachParent);
       fileUrls.add(index, getPresentableUrl(eachParent));
+      if (eachParent.getParent() == null && eachParent.getFileSystem() instanceof JarFileSystem) {
+        eachParent = JarFileSystem.getInstance().getVirtualFileForJar(eachParent);
+        if (eachParent == null) break;
+      }
       eachParent = eachParent.getParent();
     }
 
@@ -151,6 +157,7 @@ public class ShowFilePathAction extends AnAction {
           open.set(selectedIoFile);
         }
         ApplicationManager.getApplication().executeOnPooledThread(new Runnable() {
+          @Patch
           public void run() {
             if (open.get().exists()) {
               open(open.get(), toSelect.get());
@@ -187,7 +194,7 @@ public class ShowFilePathAction extends AnAction {
         desktopObject.getClass().getMethod("open", File.class).invoke(desktopObject, ioFile);
       }
       catch (Exception e) {
-        LOG.error(e);
+        LOG.debug(e);
       }
     } else {
       throw new UnsupportedOperationException();

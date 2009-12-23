@@ -24,8 +24,8 @@ import com.intellij.openapi.command.CommandProcessor;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.diff.*;
 import com.intellij.openapi.editor.Document;
-import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
+import com.intellij.openapi.fileEditor.OpenFileDescriptor;
 import com.intellij.openapi.fileEditor.impl.LoadTextUtil;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.progress.ProcessCanceledException;
@@ -108,7 +108,8 @@ import jetbrains.mps.util.annotation.Patch;
 
 /**
  * This file was added to idea-patch in order to fix http://jetbrains.net/jira/browse/IDEA-22299
- * TODO remove, when issue would be fixed
+ * It is NOT fixed, despite its status.
+ * Also fixes IDEA-26378.
  * author: lesya
  */
 public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends ChangeBrowserSettings> extends PanelWithActionsAndCloseButton implements FileHistoryPanel {
@@ -873,7 +874,6 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
 
     @Patch
     private void refreshFile(VcsFileRevision revision) {
-      Runnable refresh = null;
       final VirtualFile vf = getVirtualFile();
       if (vf == null) {
         final LocalHistoryAction action = startLocalHistoryAction(revision);
@@ -891,8 +891,12 @@ public class FileHistoryPanelImpl<S extends CommittedChangeList, U extends Chang
           }, "Refreshing files...", false, myProject);
         }
       } else {
-        // this line was added in order to fix http://jetbrains.net/jira/browse/IDEA-22299
-        // just adding file.refresh did not help
+        // This line was added in order to fix http://jetbrains.net/jira/browse/IDEA-22299
+        // Action loads contents to the memory but does not save it to the disk.
+        // IDEA uses its own vfs, so it sees the new contents.
+        // We in MPS do not use vfs so we do not.
+        // That is why we save document here.
+        // They do not need this, so they probably would never fix this :(
         FileDocumentManager.getInstance().saveDocument(FileDocumentManager.getInstance().getDocument(vf));
       }
     }

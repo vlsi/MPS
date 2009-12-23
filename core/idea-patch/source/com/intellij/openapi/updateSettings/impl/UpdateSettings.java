@@ -35,6 +35,7 @@ import org.jdom.Element;
       file = "$APP_CONFIG$/other.xml"
     )}
 )
+// TODO add Patch annotations
 public class UpdateSettings implements PersistentStateComponent<Element> {
   private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.updateSettings.impl.UpdateSettings");
 

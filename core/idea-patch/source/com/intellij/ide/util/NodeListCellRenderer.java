@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2009 JetBrains s.r.o.
+ * Copyright 2000-2009 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,28 +16,28 @@
 package com.intellij.ide.util;
 
 import com.intellij.ide.ui.UISettings;
+import com.intellij.openapi.ui.popup.PopupChooserBuilder;
 import com.intellij.psi.PsiElement;
 import com.intellij.ui.ColoredListCellRenderer;
 import com.intellij.ui.ListSpeedSearch;
 import com.intellij.ui.SimpleTextAttributes;
+import com.intellij.util.Function;
 import com.intellij.util.ui.UIUtil;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Component;
-import java.awt.Font;
+import java.awt.*;
 import java.util.Comparator;
 
 //copied from PsiElementListCellRenderer in IDEA, patched for nodes
+// TODO if so, this class should not be here, in idea-patch
 public abstract class NodeListCellRenderer<T> extends JPanel implements ListCellRenderer {
   protected NodeListCellRenderer() {
     super(new BorderLayout());
   }
 
   private class LeftRenderer extends ColoredListCellRenderer {
-    private String myModuleName;
+    private final String myModuleName;
 
     public LeftRenderer(final String moduleName) {
       myModuleName = moduleName;
@@ -124,6 +124,22 @@ public abstract class NodeListCellRenderer<T> extends JPanel implements ListCell
     };
   }
 
+  public void installSpeedSearch(PopupChooserBuilder builder) {
+    builder.setFilteringEnabled(new Function<Object, String>() {
+      public String fun(Object o) {
+        if (o instanceof PsiElement) {
+          return NodeListCellRenderer.this.getElementText((T) o);
+        } else {
+          return o.toString();
+        }
+      }
+    });
+  }
+
+  /**
+   * User {@link #installSpeedSearch(com.intellij.openapi.ui.popup.PopupChooserBuilder)} instead
+   */
+  @Deprecated
   public void installSpeedSearch(JList list) {
     new ListSpeedSearch(list) {
       protected String getElementText(Object o) {

@@ -40,6 +40,7 @@ import com.intellij.ui.content.Content;
 import com.intellij.ui.content.ContentManagerAdapter;
 import com.intellij.ui.content.ContentManagerEvent;
 import com.intellij.ui.content.tabs.PinToolwindowTabAction;
+import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
@@ -53,9 +54,10 @@ import java.util.Map;
 /**
  * @author dyoma
  */
-public class RunContentBuilder implements LogConsoleManager, Disposable  {
+public class RunContentBuilder implements LogConsoleManager, Disposable {
   private static final Icon DEFAULT_RERUN_ICON = IconLoader.getIcon("/actions/refreshUsages.png");
-  @NonNls private static final String JAVA_RUNNER = "JavaRunner";
+  @NonNls
+  private static final String JAVA_RUNNER = "JavaRunner";
 
   private final ProgramRunner myRunner;
   private final Project myProject;
@@ -91,7 +93,7 @@ public class RunContentBuilder implements LogConsoleManager, Disposable  {
     myEnvironment = env;
     final RunProfile profile = env.getRunProfile();
     if (profile instanceof RunConfigurationBase) {
-      myManager.registerFileMatcher((RunConfigurationBase)profile);
+      myManager.registerFileMatcher((RunConfigurationBase) profile);
     }
   }
 
@@ -117,8 +119,8 @@ public class RunContentBuilder implements LogConsoleManager, Disposable  {
     final RunProfile profile = myEnvironment.getRunProfile();
 
     final ExecutionConsole console = myExecutionResult.getExecutionConsole();
-    final String runnerType = console instanceof ExecutionConsoleEx?
-                              JAVA_RUNNER +"." + ((ExecutionConsoleEx)console).getExecutionConsoleId(): JAVA_RUNNER;
+    final String runnerType = console instanceof ExecutionConsoleEx ?
+      JAVA_RUNNER + "." + ((ExecutionConsoleEx) console).getExecutionConsoleId() : JAVA_RUNNER;
     myUi = RunnerLayoutUi.Factory.getInstance(myProject).create(runnerType, myExecutor.getId(), profile.getName(), this);
     myUi.getOptions().setMoveToGridActionEnabled(false).setMinimizeActionEnabled(false);
 
@@ -128,13 +130,12 @@ public class RunContentBuilder implements LogConsoleManager, Disposable  {
 
     if (console != null) {
       if (console instanceof ExecutionConsoleEx) {
-        ((ExecutionConsoleEx)console).buildUi(myUi);
-      }
-      else {
+        ((ExecutionConsoleEx) console).buildUi(myUi);
+      } else {
         buildConsoleUiDefault(console);
       }
       if (profile instanceof RunConfigurationBase) {
-        myManager.initLogConsoles((RunConfigurationBase)profile, myExecutionResult.getProcessHandler());
+        myManager.initLogConsoles((RunConfigurationBase) profile, myExecutionResult.getProcessHandler());
       }
     }
     MyRunContentDescriptor contentDescriptor = new MyRunContentDescriptor(profile, myExecutionResult, myReuseProhibited, myUi.getComponent(), this);
@@ -146,22 +147,22 @@ public class RunContentBuilder implements LogConsoleManager, Disposable  {
   private void buildConsoleUiDefault(final ExecutionConsole console) {
     DefaultActionGroup consoleActions = new DefaultActionGroup();
     if (console instanceof ConsoleView) {
-      AnAction[] actions = ((ConsoleView)console).createConsoleActions();
-      for (AnAction goaction: actions) {
+      AnAction[] actions = ((ConsoleView) console).createConsoleActions();
+      for (AnAction goaction : actions) {
         consoleActions.add(goaction);
       }
     }
 
     final Content consoleContent = myUi.createContent("Console", console.getComponent(), "Console",
-                                                      IconLoader.getIcon("/debugger/console.png"),
-                                                      console.getPreferredFocusableComponent());
+      IconLoader.getIcon("/debugger/console.png"),
+      console.getPreferredFocusableComponent());
 
     consoleContent.setActions(consoleActions, ActionPlaces.UNKNOWN, console.getComponent());
     myUi.addContent(consoleContent, 0, PlaceInGrid.bottom, false);
   }
 
   public void addLogConsole(final String name, final String path, final long skippedContent) {
-    final LogConsoleImpl log = new LogConsoleImpl(myProject, new File(path), skippedContent, name, false){
+    final LogConsoleImpl log = new LogConsoleImpl(myProject, new File(path), skippedContent, name, false) {
       public boolean isActive() {
         final Content content = myUi.findContent(path);
         return content != null && content.isSelected();
@@ -185,11 +186,16 @@ public class RunContentBuilder implements LogConsoleManager, Disposable  {
   public void removeLogConsole(final String path) {
     final Content content = myUi.findContent(path);
     if (content != null) {
-      final LogConsoleImpl log = (LogConsoleImpl)content.getComponent();
+      final LogConsoleImpl log = (LogConsoleImpl) content.getComponent();
       removeAdditionalTabComponent(log);
     }
   }
 
+  /*
+   * Patched by MPS in order to remove IDEA help button
+   * see MPS-7153
+   */
+  @Patch
   private ActionGroup createActionToolbar(final RunContentDescriptor contentDescriptor, final JComponent component) {
     final DefaultActionGroup actionGroup = new DefaultActionGroup();
 
@@ -198,7 +204,7 @@ public class RunContentBuilder implements LogConsoleManager, Disposable  {
     actionGroup.add(restartAction);
 
     if (myExecutionResult instanceof DefaultExecutionResult) {
-      final AnAction[] actions = ((DefaultExecutionResult)myExecutionResult).getRestartActions();
+      final AnAction[] actions = ((DefaultExecutionResult) myExecutionResult).getRestartActions();
       if (actions != null) {
         actionGroup.addAll(actions);
         if (actions.length > 0) {
@@ -210,7 +216,7 @@ public class RunContentBuilder implements LogConsoleManager, Disposable  {
     final AnAction stopAction = ActionManager.getInstance().getAction(IdeActions.ACTION_STOP_PROGRAM);
     actionGroup.add(stopAction);
     if (myExecutionResult instanceof DefaultExecutionResult) {
-      actionGroup.addAll(((DefaultExecutionResult)myExecutionResult).getAdditionalStopActions());
+      actionGroup.addAll(((DefaultExecutionResult) myExecutionResult).getAdditionalStopActions());
     }
 
     actionGroup.addAll(myExecutionResult.getActions());
@@ -218,8 +224,7 @@ public class RunContentBuilder implements LogConsoleManager, Disposable  {
     for (final AnAction anAction : myRunnerActions) {
       if (anAction != null) {
         actionGroup.add(anAction);
-      }
-      else {
+      } else {
         actionGroup.addSeparator();
       }
     }
@@ -229,6 +234,9 @@ public class RunContentBuilder implements LogConsoleManager, Disposable  {
     actionGroup.addSeparator();
     actionGroup.add(PinToolwindowTabAction.getPinAction());
     actionGroup.add(new CloseAction(myExecutor, contentDescriptor, myProject));
+// MPS Patch start
+//    actionGroup.add(new ContextHelpAction(myExecutor.getHelpId()));
+// MPS Patch end
     return actionGroup;
   }
 
@@ -241,20 +249,19 @@ public class RunContentBuilder implements LogConsoleManager, Disposable  {
    */
   public RunContentDescriptor showRunContent(final RunContentDescriptor reuseContent) {
     final RunContentDescriptor descriptor = createDescriptor();
-    if(reuseContent != null) descriptor.setAttachedContent(reuseContent.getAttachedContent());
+    if (reuseContent != null) descriptor.setAttachedContent(reuseContent.getAttachedContent());
     return descriptor;
   }
 
   public void addAdditionalTabComponent(final AdditionalTabComponent tabComponent, final String id) {
-    final Content content = myUi.createContent(id, (ComponentWithActions)tabComponent, tabComponent.getTabTitle(),
-                                               IconLoader.getIcon("/debugger/console.png"), tabComponent.getPreferredFocusableComponent());
-
+    final Content content = myUi.createContent(id, (ComponentWithActions) tabComponent, tabComponent.getTabTitle(),
+      IconLoader.getIcon("/debugger/console.png"), tabComponent.getPreferredFocusableComponent());
 
 
     myUi.addContent(content);
     myAdditionalContent.put(tabComponent, content);
 
-    myDisposeables.add(new Disposable(){
+    myDisposeables.add(new Disposable() {
       public void dispose() {
         if (!myUi.isDisposed()) {
           removeAdditionalTabComponent(tabComponent);
@@ -270,14 +277,14 @@ public class RunContentBuilder implements LogConsoleManager, Disposable  {
     myUi.removeContent(content, true);
   }
 
-  private class MyRunContentDescriptor extends RunContentDescriptor {
+  private static class MyRunContentDescriptor extends RunContentDescriptor {
     private final boolean myReuseProhibited;
-    private final Disposable[] myAdditionalDisposables;
+    private final Disposable myAdditionalDisposable;
 
-    public MyRunContentDescriptor(final RunProfile profile, final ExecutionResult executionResult, final boolean reuseProhibited, final JComponent component, final Disposable... additionalDisposables) {
-      super(executionResult.getExecutionConsole(), executionResult.getProcessHandler(), component, profile.getName());
+    public MyRunContentDescriptor(final RunProfile profile, final ExecutionResult executionResult, final boolean reuseProhibited, final JComponent component, @NotNull Disposable additionalDisposable) {
+      super(executionResult.getExecutionConsole(), executionResult.getProcessHandler(), component, profile.getName(), profile.getIcon());
       myReuseProhibited = reuseProhibited;
-      myAdditionalDisposables = additionalDisposables;
+      myAdditionalDisposable = additionalDisposable;
     }
 
     public boolean isContentReuseProhibited() {
@@ -285,9 +292,7 @@ public class RunContentBuilder implements LogConsoleManager, Disposable  {
     }
 
     public void dispose() {
-      for (final Disposable disposable : myAdditionalDisposables) {
-        Disposer.dispose(disposable);
-      }
+      Disposer.dispose(myAdditionalDisposable);
       super.dispose();
     }
   }

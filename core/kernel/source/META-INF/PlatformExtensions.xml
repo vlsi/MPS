@@ -108,6 +108,11 @@
     <!--MPS Patch: do not know why this is commented out-->
     <!--<applicationService serviceInterface="com.intellij.util.InstanceofCheckerGenerator"
                         serviceImplementation="com.intellij.util.InstanceofCheckerGeneratorImpl"/>-->
+    <applicationService serviceInterface="com.intellij.internal.psiView.PsiViewerSettings"
+                        serviceImplementation="com.intellij.internal.psiView.PsiViewerSettings"/>
+
+    <applicationService serviceInterface="com.intellij.openapi.keymap.impl.DefaultKeymap"
+                        serviceImplementation="com.intellij.openapi.keymap.impl.DefaultKeymap"/>
 
     <projectService serviceInterface="com.intellij.openapi.vfs.ReadonlyStatusHandler"
                     serviceImplementation="com.intellij.openapi.vcs.readOnlyHandler.ReadonlyStatusHandlerImpl"/>
@@ -140,6 +145,9 @@
     <projectService serviceInterface="com.intellij.openapi.project.DumbService"
                     serviceImplementation="com.intellij.openapi.project.DumbServiceImpl"/>
 
+    <projectService serviceInterface="com.intellij.psi.util.CachedValuesManager"
+                    serviceImplementation="com.intellij.util.CachedValuesManagerImpl"/>
+
     <projectService serviceInterface="com.intellij.openapi.vcs.impl.projectlevelman.AllVcsesI"
                     serviceImplementation="com.intellij.openapi.vcs.impl.projectlevelman.AllVcses"/>
 
@@ -158,7 +166,7 @@
     <!-- Customizations -->
     <applicationConfigurable implementation="com.intellij.ide.ui.customization.CustomizationConfigurable"/>
 
-    <!-- Web Browser-->
+    <!-- Web Browser -->
     <applicationConfigurable implementation="com.intellij.ide.BrowserSettings"/>
 
     <!--MPS Patch: MPS application vcs settings-->
@@ -195,13 +203,16 @@
     <fileEditorProvider implementation="com.intellij.openapi.fileEditor.impl.http.HttpFileEditorProvider"/>
     <componentConfigurationMerger
             implementation="com.intellij.openapi.vcs.changes.shelf.ShelfManagerConfigurationMerger"/>
-    <editorActionHandler action="EditorEscape" implementationClass="com.intellij.codeInsight.hint.EscapeHandler"/>
+    <editorActionHandler action="EditorEscape" implementationClass="com.intellij.codeInsight.hint.EscapeHandler"
+                         id="hide-hints"/>
     <ComponentRoamingType component="ChangeListManager" type="DISABLED"/>
     <ComponentRoamingType component="RestoreUpdateTree" type="DISABLED"/>
     <ComponentRoamingType component="PropertiesComponent" type="DISABLED"/>
 
     <progressFunComponentProvider implementation="com.intellij.featureStatistics.ProgressFunProvider"/>
+    <bundledKeymapProvider implementation="com.intellij.openapi.keymap.impl.DefaultBundledKeymaps"/>
     <!--MPS Patch: we do not need javaee configurable-->
     <!--<projectConfigurable implementation="com.intellij.javaee.ExternalResourceConfigurable"/>-->
+    <!--This was commented out for unknown reason also-->
     <!-- <checkinHandlerFactory implementation="com.intellij.openapi.vcs.CheckRemoteStatusCheckinHandlerFactory"/> -->
 </extensions>

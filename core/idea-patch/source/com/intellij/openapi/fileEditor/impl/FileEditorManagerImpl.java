@@ -278,10 +278,17 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
     return null;
   }
 
-  public void createSplitter(final int orientation) {
-    final EditorWindow currentWindow = getSplitters().getCurrentWindow();
-    if (currentWindow != null) {
-      currentWindow.split(orientation);
+  public void createSplitter(final int orientation, @Nullable final EditorWindow window) {
+    // window was available from action event, for example when invoked from the tab menu of an editor that is not the 'current'
+    if (window != null) {
+      window.split(orientation);
+    }
+    // otherwise we'll split the current window, if any
+    else {
+      final EditorWindow currentWindow = getSplitters().getCurrentWindow();
+      if (currentWindow != null) {
+        currentWindow.split(orientation);
+      }
     }
   }
 
@@ -499,6 +506,8 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
       }
       newEditorCreated = true;
 
+      getProject().getMessageBus().syncPublisher(FileEditorManagerListener.Before.FILE_EDITOR_MANAGER).beforeFileOpened(this, file);
+
       editors = new FileEditor[providers.length];
       for (int i = 0; i < providers.length; i++) {
         try {
@@ -506,17 +515,17 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
           LOG.assertTrue(provider != null);
           LOG.assertTrue(provider.accept(myProject, file));
           final FileEditor editor = provider.createEditor(myProject, file);
-          if (current && editor instanceof TextEditorImpl) {
-            ((TextEditorImpl) editor).initFolding();
-          }
-          editors[i] = editor;
           LOG.assertTrue(editor != null);
           LOG.assertTrue(editor.isValid());
-
+          editors[i] = editor;
           // Register PropertyChangeListener into editor
           editor.addPropertyChangeListener(myEditorPropertyChangeListener);
           editor.putUserData(DUMB_AWARE, provider instanceof DumbAware);
-        }
+
+          if (current && editor instanceof TextEditorImpl) {
+            ((TextEditorImpl)editor).initFolding();
+          }
+       }
         catch (Exception e) {
           LOG.error(e);
         }
@@ -624,7 +633,7 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
     final FileEditorProvider selectedProvider = composite.getSelectedEditorWithProvider().getSecond();
 
     for (int i = 0; i < editorProviders.length; i++) {
-      if (editorProviders[i].getEditorTypeId().equals(fileEditorProviderId) && !selectedProvider.equals(editorProviders[i])) {
+      if (editorProviders[i].getEditorTypeId().equals(fileEditorProviderId) &&  !selectedProvider.equals(editorProviders[i])) {
         composite.setSelectedEditor(i);
         composite.getSelectedEditor().selectNotify();
       }
@@ -1025,7 +1034,7 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
 
   public void initComponent() { /* really do nothing */ }
 
-  public void disposeComponent() { /* really do nothing */ }
+  public void disposeComponent() { /* really do nothing */  }
 
 //JDOMExternalizable methods
 
