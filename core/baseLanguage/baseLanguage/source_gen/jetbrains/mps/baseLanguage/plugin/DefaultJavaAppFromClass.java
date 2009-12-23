@@ -47,10 +47,10 @@ public class DefaultJavaAppFromClass extends BaseConfigCreator<SNode> implements
 
   @Override
   public DefaultJavaAppFromClass clone() {
-    return ((DefaultJavaAppFromClass)super.clone());
+    return ((DefaultJavaAppFromClass) super.clone());
   }
 
   protected boolean isApplicable(final Object element) {
-    return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode)element), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode) element), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
 }

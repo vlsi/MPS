@@ -55,8 +55,8 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
 
   public RunConfiguration clone() {
     try {
-      DefaultJavaApplication_Configuration result = ((DefaultJavaApplication_Configuration)super.clone());
-      result.myState = ((DefaultJavaApplication_Configuration.MyState)this.myState.clone());
+      DefaultJavaApplication_Configuration result = ((DefaultJavaApplication_Configuration) super.clone());
+      result.myState = ((DefaultJavaApplication_Configuration.MyState) this.myState.clone());
       return result;
     } catch (CloneNotSupportedException e) {
       return null;
@@ -212,7 +212,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
   }
 
   public void readExternal(Element e) throws InvalidDataException {
-    XmlSerializer.deserializeInto(this.myState, ((Element)e.getChildren().get(0)));
+    XmlSerializer.deserializeInto(this.myState, ((Element) e.getChildren().get(0)));
   }
 
   public DefaultJavaApplication_Configuration.MyState getStateObject() {
@@ -254,9 +254,9 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
     }
 
     public Object clone() throws CloneNotSupportedException {
-      DefaultJavaApplication_Configuration.MyState object = (DefaultJavaApplication_Configuration.MyState)super.clone();
+      DefaultJavaApplication_Configuration.MyState object = (DefaultJavaApplication_Configuration.MyState) super.clone();
       if (this.parameters != null) {
-        object.parameters = (ConfigRunParameters)this.parameters.clone();
+        object.parameters = (ConfigRunParameters) this.parameters.clone();
       }
       return object;
     }

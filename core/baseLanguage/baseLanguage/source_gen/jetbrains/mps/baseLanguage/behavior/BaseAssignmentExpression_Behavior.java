@@ -21,10 +21,10 @@ public class BaseAssignmentExpression_Behavior {
   }
 
   public static boolean call_isReadAsignment_1215696236033(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "virtual_isReadAsignment_1215696236033", PARAMETERS_1215696236033);
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), "virtual_isReadAsignment_1215696236033", PARAMETERS_1215696236033);
   }
 
   public static boolean callSuper_isReadAsignment_1215696236033(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), callerConceptFqName, "virtual_isReadAsignment_1215696236033", PARAMETERS_1215696236033);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.BaseAssignmentExpression"), callerConceptFqName, "virtual_isReadAsignment_1215696236033", PARAMETERS_1215696236033);
   }
 }

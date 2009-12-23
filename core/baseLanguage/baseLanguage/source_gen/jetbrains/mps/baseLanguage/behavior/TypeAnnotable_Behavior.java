@@ -17,10 +17,10 @@ public class TypeAnnotable_Behavior {
   }
 
   public static SNode call_getTypeAnnotation_1233920952262(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeAnnotable"), "virtual_getTypeAnnotation_1233920952262", PARAMETERS_1233920952262);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeAnnotable"), "virtual_getTypeAnnotation_1233920952262", PARAMETERS_1233920952262);
   }
 
   public static SNode callSuper_getTypeAnnotation_1233920952262(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeAnnotable"), callerConceptFqName, "virtual_getTypeAnnotation_1233920952262", PARAMETERS_1233920952262);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeAnnotable"), callerConceptFqName, "virtual_getTypeAnnotation_1233920952262", PARAMETERS_1233920952262);
   }
 }

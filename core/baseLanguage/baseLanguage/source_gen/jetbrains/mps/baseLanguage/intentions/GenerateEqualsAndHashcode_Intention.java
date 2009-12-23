@@ -64,7 +64,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
     SNode thatRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(thatRef, "variableDeclaration", thatDeclaration, false);
     SNode fieldRefOperation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
-    for (SNode field : (List<SNode>)((List<SNode>)intentionContext.getContextParametersMap().get("selectedFields"))) {
+    for (SNode field : (List<SNode>) ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
       SLinkOperations.setTarget(fieldRefOperation, "fieldDeclaration", field, false);
       SNode checkStmt;
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(field, "type", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
@@ -103,7 +103,7 @@ public class GenerateEqualsAndHashcode_Intention extends GenerateIntention imple
       SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", tempDeclaration);
     }
     SLinkOperations.addChild(SLinkOperations.getTarget(hashCodeDeclaration, "body", true), "statement", resultDeclaration);
-    for (final SNode field : ((List<SNode>)intentionContext.getContextParametersMap().get("selectedFields"))) {
+    for (final SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
       SLinkOperations.setTarget(fieldRefOperation, "fieldDeclaration", field, false);
       SNode calcStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Statement", null);
       SNode mulExpression = new _Quotations.QuotationClass_31().createNode(resultReference);

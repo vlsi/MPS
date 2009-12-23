@@ -11,10 +11,10 @@ public class MakeInnerClassStatic_QuickFix extends QuickFix_Runtime {
   }
 
   public String getDescription() {
-    return "Make '" + SPropertyOperations.getString(((SNode)MakeInnerClassStatic_QuickFix.this.getField("innerClass")[0]), "name") + "' static";
+    return "Make '" + SPropertyOperations.getString(((SNode) MakeInnerClassStatic_QuickFix.this.getField("innerClass")[0]), "name") + "' static";
   }
 
   public void execute(SNode node) {
-    SPropertyOperations.set(((SNode)MakeInnerClassStatic_QuickFix.this.getField("innerClass")[0]), "nonStatic", "" + false);
+    SPropertyOperations.set(((SNode) MakeInnerClassStatic_QuickFix.this.getField("innerClass")[0]), "nonStatic", "" + false);
   }
 }

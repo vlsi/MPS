@@ -59,12 +59,12 @@ public class ClassConcept_Behavior {
 
   public static List<SNode> call_getMethodsToImplement_1221637841398(SNode thisNode) {
     List<SNode> methods = new ArrayList<SNode>();
-    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(thisNode)), IClassifiersSearchScope.INSTANCE_METHOD);
+    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((ClassConcept) SNodeOperations.getAdapter(thisNode)), IClassifiersSearchScope.INSTANCE_METHOD);
     // todo do not show already implemented methods 
-    for (SNode method : ((List<SNode>)scope.getNodes())) {
+    for (SNode method : ((List<SNode>) scope.getNodes())) {
       boolean isOverridden = false;
-      List<SNode> overridenMethods = BaseAdapter.toNodes(scope.getOverriddenMethods(((InstanceMethodDeclaration)SNodeOperations.getAdapter(method))));
-      for (SNode overridingMethod : ((List<SNode>)overridenMethods)) {
+      List<SNode> overridenMethods = BaseAdapter.toNodes(scope.getOverriddenMethods(((InstanceMethodDeclaration) SNodeOperations.getAdapter(method))));
+      for (SNode overridingMethod : ((List<SNode>) overridenMethods)) {
         isOverridden = isOverridden || (SNodeOperations.isInstanceOf(overridingMethod, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") && SConceptPropertyOperations.getBoolean(SNodeOperations.cast(overridingMethod, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "abstract"));
       }
       if (isOverridden) {
@@ -84,9 +84,9 @@ public class ClassConcept_Behavior {
 
   public static List<SNode> call_getMethodsToOverride_6603209858471717101(SNode thisNode) {
     List<SNode> methods = new ArrayList<SNode>();
-    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(thisNode)), IClassifiersSearchScope.INSTANCE_METHOD);
+    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((ClassConcept) SNodeOperations.getAdapter(thisNode)), IClassifiersSearchScope.INSTANCE_METHOD);
     List<SNode> methodDeclarations = BaseAdapter.toNodes(scope.getAdapters(InstanceMethodDeclaration.class));
-    for (SNode method : ((List<SNode>)methodDeclarations)) {
+    for (SNode method : ((List<SNode>) methodDeclarations)) {
       SNode cls = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       if (cls == thisNode) {
         continue;
@@ -121,11 +121,11 @@ public class ClassConcept_Behavior {
   }
 
   public static SNode call_getSuperclass_1240936569950(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getSuperclass_1240936569950", PARAMETERS_1240936569950);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "virtual_getSuperclass_1240936569950", PARAMETERS_1240936569950);
   }
 
   public static SNode callSuper_getSuperclass_1240936569950(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_getSuperclass_1240936569950", PARAMETERS_1240936569950);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept"), callerConceptFqName, "virtual_getSuperclass_1240936569950", PARAMETERS_1240936569950);
   }
 
   public static SNode getContextClass_8008512149545173402(SNode expr) {
@@ -136,7 +136,7 @@ public class ClassConcept_Behavior {
       ListSequence.fromList(args).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "parameter", true)));
       ListSequence.fromList(args).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "actualArgument", true)));
       for (SNode param : args) {
-        if (ListSequence.fromList(SNodeOperations.getDescendants(param, null, true, new String[]{})).contains(((SNode)expr))) {
+        if (ListSequence.fromList(SNodeOperations.getDescendants(param, null, true, new String[]{})).contains(((SNode) expr))) {
           contextNode = parent;
           break;
         }

@@ -25,7 +25,7 @@ public class CreateMethodDeclarationUtil {
     if (!(selectedCell instanceof EditorCell_Label)) {
       return null;
     }
-    EditorCell_Label editorCell = ((EditorCell_Label)editorContext.getSelectedCell());
+    EditorCell_Label editorCell = ((EditorCell_Label) editorContext.getSelectedCell());
     if (!(editorCell.isErrorState())) {
       return null;
     }

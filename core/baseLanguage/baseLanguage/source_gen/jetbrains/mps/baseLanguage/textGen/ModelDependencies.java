@@ -40,7 +40,7 @@ public class ModelDependencies {
 
   public static ModelDependencies fromXml(Element root) {
     ModelDependencies result = new ModelDependencies();
-    for (Element e : ((List<Element>)root.getChildren(DEPENDENCY))) {
+    for (Element e : ((List<Element>) root.getChildren(DEPENDENCY))) {
       result.addDependencies(new RootDependencies(e));
     }
     return result;

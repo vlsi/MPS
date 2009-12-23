@@ -50,11 +50,11 @@ public class TypeVariableDeclaration_Behavior {
   }
 
   public static String call_getPresentation_1775412259244835270(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), "virtual_getPresentation_1213877396640", PARAMETERS_1775412259244835270);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), "virtual_getPresentation_1213877396640", PARAMETERS_1775412259244835270);
   }
 
   public static String callSuper_getPresentation_1775412259244835270(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_1775412259244835270);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_1775412259244835270);
   }
 
   public static SNode getTypeWithConcreteUpperBounds_4346214032091504651(SNode inputType, Set<SNode> visitedVars) {

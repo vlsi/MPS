@@ -30,7 +30,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
         BaseIntentionProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1215105338790", 0, intentionProvider);
         _info_12389875345.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequation((SNode)throwsItem, (SNode)new _Quotations.QuotationClass_76().createNode(typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequation((SNode) throwsItem, (SNode) new _Quotations.QuotationClass_76().createNode(typeCheckingContext), false, _info_12389875345);
       }
     }
     // ========== 
@@ -74,7 +74,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
             BaseIntentionProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "" + expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185363921400", 0, intentionProvider);
             _info_12389875345.setInequationGroup("default");
-            typeCheckingContext.createLessThanInequation((SNode)returnType, (SNode)expectedRetType, false, _info_12389875345);
+            typeCheckingContext.createLessThanInequation((SNode) returnType, (SNode) expectedRetType, false, _info_12389875345);
           }
         }
       }
@@ -90,7 +90,7 @@ public class typeOf_BaseMethodDeclaration_InferenceRule extends AbstractInferenc
           BaseIntentionProvider intentionProvider = null;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1185363855090", 0, intentionProvider);
           _info_12389875345.setInequationGroup("default");
-          typeCheckingContext.createLessThanInequation((SNode)returnType, (SNode)expectedRetType, false, _info_12389875345);
+          typeCheckingContext.createLessThanInequation((SNode) returnType, (SNode) expectedRetType, false, _info_12389875345);
         }
       }
     }

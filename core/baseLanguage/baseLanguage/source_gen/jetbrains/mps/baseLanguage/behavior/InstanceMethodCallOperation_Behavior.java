@@ -54,11 +54,11 @@ public class InstanceMethodCallOperation_Behavior {
 
   public static Map<TypeVariableDeclaration, Type> virtual_getTypesByTypeVars_851115533308208851(SNode thisNode) {
     SNode instanceType = IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode);
-    return MethodResolveUtil.getTypesByTypeVars(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))), ((ClassifierType)SNodeOperations.getAdapter(instanceType)).getParameters());
+    return MethodResolveUtil.getTypesByTypeVars(((Classifier) SNodeOperations.getAdapter(SLinkOperations.getTarget(instanceType, "classifier", false))), ((ClassifierType) SNodeOperations.getAdapter(instanceType)).getParameters());
   }
 
   public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    List<BaseMethodDeclaration> methods = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(SLinkOperations.getTarget(IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode), "classifier", false))), IClassifiersSearchScope.INSTANCE_METHOD).getMethodsByName(methodName);
+    List<BaseMethodDeclaration> methods = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(SLinkOperations.getTarget(IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode), "classifier", false))), IClassifiersSearchScope.INSTANCE_METHOD).getMethodsByName(methodName);
     List<SNode> result = new ArrayList<SNode>();
     for (BaseMethodDeclaration bmd : methods) {
       SNode node = bmd.getNode();

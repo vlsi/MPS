@@ -40,7 +40,7 @@ public class RefactorAnonymousClasses_MigrationScript extends BaseMigrationScrip
         new MethodDeclarationsFixer().testAndFixMethodCall(node, map);
         SNode target = map.get(node);
         if (target != null) {
-          SLinkOperations.setTarget(node, "baseMethodDeclaration", (SNode)target, false);
+          SLinkOperations.setTarget(node, "baseMethodDeclaration", (SNode) target, false);
         }
       }
 

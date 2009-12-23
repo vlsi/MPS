@@ -29,7 +29,7 @@ public class check_LocalStaticMethodCall_NonTypesystemRule extends AbstractNonTy
     List<SNode> containers = SNodeOperations.getAncestors(call, "jetbrains.mps.baseLanguage.structure.ClassConcept", false);
     Set<SNode> containersAndParentClasses = SetSequence.fromSet(new HashSet<SNode>());
     for (SNode classConcept : containers) {
-      List<SNode> classifiers = ((List<SNode>)BaseAdapter.toNodes(new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(classConcept))).getClassifiers()));
+      List<SNode> classifiers = ((List<SNode>) BaseAdapter.toNodes(new ClassifierAndSuperClassifiersScope(((ClassConcept) SNodeOperations.getAdapter(classConcept))).getClassifiers()));
       for (SNode classifier : classifiers) {
         SetSequence.fromSet(containersAndParentClasses).addElement(classifier);
       }

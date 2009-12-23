@@ -21,7 +21,7 @@ public class check_InnerClassesCantHaveStaticFields_NonTypesystemRule extends Ab
 
   public void applyRule(final SNode staticFieldDeclaration, final TypeCheckingContext typeCheckingContext) {
     if (SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(staticFieldDeclaration)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      SNode classConcept = (SNode)SNodeOperations.getParent(staticFieldDeclaration);
+      SNode classConcept = (SNode) SNodeOperations.getParent(staticFieldDeclaration);
       if (Classifier_Behavior.call_isInner_521412098689998677(classConcept) && !(Classifier_Behavior.call_isStatic_521412098689998668(classConcept))) {
         {
           BaseIntentionProvider intentionProvider = null;

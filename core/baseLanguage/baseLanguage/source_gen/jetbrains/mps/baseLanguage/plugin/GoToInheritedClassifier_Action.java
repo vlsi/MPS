@@ -135,7 +135,7 @@ public class GoToInheritedClassifier_Action extends GeneratedAction {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           Rectangle cellBounds = GoToInheritedClassifier_Action.this.editorContext.getSelectedCell().getBounds();
-          Point point = new Point(((int)cellBounds.getMinX()), ((int)cellBounds.getMaxY()));
+          Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
           RelativePoint relPpoint = new RelativePoint(GoToInheritedClassifier_Action.this.editorComponent, point);
           GoToHelper.showInheritedClassesMenu(nodes, relPpoint, GoToInheritedClassifier_Action.this.project);
         }

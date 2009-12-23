@@ -30,7 +30,7 @@ public class RootDependencies implements Comparable<RootDependencies> {
 
   public RootDependencies(Element element) {
     this.myClassName = element.getAttribute(CLASS_NAME).getValue();
-    for (Element e : ((List<Element>)element.getChildren(DEPEND_CLASS))) {
+    for (Element e : ((List<Element>) element.getChildren(DEPEND_CLASS))) {
       if (e == null) {
         continue;
       }

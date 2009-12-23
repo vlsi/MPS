@@ -14,10 +14,10 @@ public class ILocalVariableElementList_Behavior {
   }
 
   public static List<SNode> call_getLocalVariableElements_1238805763253(SNode thisNode) {
-    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"), "virtual_getLocalVariableElements_1238805763253", PARAMETERS_1238805763253);
+    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"), "virtual_getLocalVariableElements_1238805763253", PARAMETERS_1238805763253);
   }
 
   public static List<SNode> callSuper_getLocalVariableElements_1238805763253(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"), callerConceptFqName, "virtual_getLocalVariableElements_1238805763253", PARAMETERS_1238805763253);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ILocalVariableElementList"), callerConceptFqName, "virtual_getLocalVariableElements_1238805763253", PARAMETERS_1238805763253);
   }
 }

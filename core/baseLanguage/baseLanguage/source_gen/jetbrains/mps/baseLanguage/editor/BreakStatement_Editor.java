@@ -194,7 +194,7 @@ __switch__:
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((String)parameterObject, node, model, scope, operationContext);
+      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext);
     }
 
     public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {

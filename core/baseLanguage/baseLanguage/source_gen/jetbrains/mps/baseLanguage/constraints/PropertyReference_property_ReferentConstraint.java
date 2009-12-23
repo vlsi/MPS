@@ -39,7 +39,7 @@ public class PropertyReference_property_ReferentConstraint extends BaseNodeRefer
       return null;
     }
     List<SNode> resultProperties = new ArrayList<SNode>();
-    List<SNode> classifiers = ((List<SNode>)new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(opClassifier))).getClassifierNodes());
+    List<SNode> classifiers = ((List<SNode>) new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(opClassifier))).getClassifierNodes());
     for (SNode classifier : ListSequence.fromList(classifiers)) {
       if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         SNode classConcept = SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");

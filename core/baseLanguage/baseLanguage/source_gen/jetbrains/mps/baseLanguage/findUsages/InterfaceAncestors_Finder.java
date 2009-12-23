@@ -37,7 +37,7 @@ public class InterfaceAncestors_Finder extends GeneratedFinder {
     }
     SNode current = node;
     for (SNode ancestor : ListSequence.fromList(SLinkOperations.getTargets(current, "extendedInterface", true))) {
-      SNode ancestorNode = (SNode)SLinkOperations.getTarget(ancestor, "classifier", false);
+      SNode ancestorNode = (SNode) SLinkOperations.getTarget(ancestor, "classifier", false);
       ListSequence.fromList(_results).addElement(ancestorNode);
       for (SNode ancestorAncestor : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.baseLanguage.findUsages.InterfaceAncestors_Finder", ancestorNode, scope, indicator))) {
         ListSequence.fromList(_results).addElement(ancestorAncestor);

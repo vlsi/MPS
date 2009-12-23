@@ -16,10 +16,10 @@ public class BinaryExpressionPriority_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    if (SLinkOperations.getTarget(((SNode)BinaryExpressionPriority_QuickFix.this.getField("parent")[0]), "leftExpression", true) == ((SNode)BinaryExpressionPriority_QuickFix.this.getField("child")[0])) {
-      ParenthesisUtil.rotateTree(((SNode)BinaryExpressionPriority_QuickFix.this.getField("child")[0]), ((SNode)BinaryExpressionPriority_QuickFix.this.getField("parent")[0]), false);
-    } else if (SLinkOperations.getTarget(((SNode)BinaryExpressionPriority_QuickFix.this.getField("parent")[0]), "rightExpression", true) == ((SNode)BinaryExpressionPriority_QuickFix.this.getField("child")[0])) {
-      ParenthesisUtil.rotateTree(((SNode)BinaryExpressionPriority_QuickFix.this.getField("child")[0]), ((SNode)BinaryExpressionPriority_QuickFix.this.getField("parent")[0]), true);
+    if (SLinkOperations.getTarget(((SNode) BinaryExpressionPriority_QuickFix.this.getField("parent")[0]), "leftExpression", true) == ((SNode) BinaryExpressionPriority_QuickFix.this.getField("child")[0])) {
+      ParenthesisUtil.rotateTree(((SNode) BinaryExpressionPriority_QuickFix.this.getField("child")[0]), ((SNode) BinaryExpressionPriority_QuickFix.this.getField("parent")[0]), false);
+    } else if (SLinkOperations.getTarget(((SNode) BinaryExpressionPriority_QuickFix.this.getField("parent")[0]), "rightExpression", true) == ((SNode) BinaryExpressionPriority_QuickFix.this.getField("child")[0])) {
+      ParenthesisUtil.rotateTree(((SNode) BinaryExpressionPriority_QuickFix.this.getField("child")[0]), ((SNode) BinaryExpressionPriority_QuickFix.this.getField("parent")[0]), true);
     }
   }
 }

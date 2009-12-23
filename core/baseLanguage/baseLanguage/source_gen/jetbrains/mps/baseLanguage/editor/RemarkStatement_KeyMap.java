@@ -53,7 +53,7 @@ public class RemarkStatement_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      EditorCell_Label label = (EditorCell_Label)editorContext.getContextCell();
+      EditorCell_Label label = (EditorCell_Label) editorContext.getContextCell();
       int caretPostion = label.getCaretPosition();
       String text = SPropertyOperations.getString(node, "value");
       SPropertyOperations.set(node, "value", text.substring(0, caretPostion));

@@ -23,7 +23,7 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1170198286262(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     SNode parent = SNodeOperations.getParent(_context.getNode());
     if (ClosuresUtil.isClosureContextOwner(parent)) {
-      return ClosuresUtil.hasVariablesUsedInClosure(parent, ((TemplateQueryContext)_context).getGenerator());
+      return ClosuresUtil.hasVariablesUsedInClosure(parent, ((TemplateQueryContext) _context).getGenerator());
     }
     return false;
   }
@@ -36,7 +36,7 @@ public class QueriesGenerated {
     SNode var = SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false);
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(var);
     if (contextOwner != null) {
-      return ClosuresUtil.isVariableUsedInClosure(contextOwner, var, ((TemplateQueryContext)_context).getGenerator());
+      return ClosuresUtil.isVariableUsedInClosure(contextOwner, var, ((TemplateQueryContext) _context).getGenerator());
     }
     return false;
   }
@@ -45,7 +45,7 @@ public class QueriesGenerated {
     SNode var = SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false);
     SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(var);
     if (contextOwner != null) {
-      return ClosuresUtil.isVariableUsedInClosure(contextOwner, var, ((TemplateQueryContext)_context).getGenerator());
+      return ClosuresUtil.isVariableUsedInClosure(contextOwner, var, ((TemplateQueryContext) _context).getGenerator());
     }
     return false;
   }
@@ -55,7 +55,7 @@ public class QueriesGenerated {
     if (SLinkOperations.getTarget(var, "initializer", true) != null) {
       SNode contextOwner = ClosuresUtil.findEnclosingClosureContextOwner(var);
       if (contextOwner != null) {
-        return ClosuresUtil.isVariableUsedInClosure(contextOwner, var, ((TemplateQueryContext)_context).getGenerator());
+        return ClosuresUtil.isVariableUsedInClosure(contextOwner, var, ((TemplateQueryContext) _context).getGenerator());
       }
     }
     return false;
@@ -63,17 +63,17 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1170282061477(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     if (!(SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.baseLanguage.structure.Closure"))) {
-      return ClosuresUtil.hasVariablesUsedInClosure(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+      return ClosuresUtil.hasVariablesUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
     }
     return false;
   }
 
   public static boolean baseMappingRule_Condition_1170282608160(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return ClosuresUtil.hasVariablesUsedInClosure(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    return ClosuresUtil.hasVariablesUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static Object propertyMacro_GetPropertyValue_1170347597854(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _QueriesUtil.getString_VariableDeclaration_nameInClosureContext(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    return _QueriesUtil.getString_VariableDeclaration_nameInClosureContext(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static Object propertyMacro_GetPropertyValue_1170707207731(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -89,15 +89,15 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170287949033(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.find_EnclosingContextOwner_ClosureContext_generatedClass(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    return _QueriesUtil.find_EnclosingContextOwner_ClosureContext_generatedClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static Object referenceMacro_GetReferent_1170288297219(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.find_EnclosingContextOwner_ClosureContext_generatedClass(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    return _QueriesUtil.find_EnclosingContextOwner_ClosureContext_generatedClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static Object referenceMacro_GetReferent_1170288676089(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.find_Closure_generatedClosureAdapter_constructor(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    return _QueriesUtil.find_Closure_generatedClosureAdapter_constructor(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static Object referenceMacro_GetReferent_1170293907670(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -105,11 +105,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170294467354(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.find_ContextOwner_ClosureContext_generatedClass(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    return _QueriesUtil.find_ContextOwner_ClosureContext_generatedClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static Object referenceMacro_GetReferent_1170295049904(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.find_ContextOwner_ClosureContext_generatedClass_constructor(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    return _QueriesUtil.find_ContextOwner_ClosureContext_generatedClass_constructor(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static Object referenceMacro_GetReferent_1170295650824(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -117,11 +117,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170348563863(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    return _QueriesUtil.resolve_VariableDeclStmt_Variable_ClosureContext_generatedField(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static Object referenceMacro_GetReferent_1170350646244(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _QueriesUtil.resolve_VariableReference_Variable_ClosureContext_generatedField(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    return _QueriesUtil.resolve_VariableReference_Variable_ClosureContext_generatedField(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static SNode sourceNodeQuery_1170294125679(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -137,11 +137,11 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1185917871131(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return QueriesUtil.createClassType_forClosure_enclosingClass(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    return QueriesUtil.createClassType_forClosure_enclosingClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static SNode sourceNodeQuery_1185918144604(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return QueriesUtil.createClassType_forClosure_enclosingClass(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    return QueriesUtil.createClassType_forClosure_enclosingClass(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static SNode sourceNodeQuery_1196118817337(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -153,23 +153,23 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1170295259476(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
-    return (List<SNode>)list;
+    List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
+    return (List<SNode>) list;
   }
 
   public static Iterable sourceNodesQuery_1170347169279(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> list = _QueriesUtil.getList_ContextOwner_VariablesUsedInClosure(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
-    return (List<SNode>)list;
+    List<SNode> list = _QueriesUtil.getList_ContextOwner_VariablesUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
+    return (List<SNode>) list;
   }
 
   public static Iterable sourceNodesQuery_1170347696338(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
-    return (List<SNode>)list;
+    List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
+    return (List<SNode>) list;
   }
 
   public static Iterable sourceNodesQuery_1170347787985(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
-    return (List<SNode>)list;
+    List<SNode> list = _QueriesUtil.getList_ContextOwner_ifMethod_ParmsUsedInClosure(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
+    return (List<SNode>) list;
   }
 
   public static Iterable sourceNodesQuery_1170874089896(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -177,15 +177,15 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_1170898169592(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    return _QueriesUtil.create_closureContextObject(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    return _QueriesUtil.create_closureContextObject(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1170899386077(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    return _QueriesUtil.create_closureContextObject(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    return _QueriesUtil.create_closureContextObject(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static SNode mapSrcMacro_mapper_1196117121002(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    return _QueriesUtil.create_closureContextObject(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    return _QueriesUtil.create_closureContextObject(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1186782271334(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {

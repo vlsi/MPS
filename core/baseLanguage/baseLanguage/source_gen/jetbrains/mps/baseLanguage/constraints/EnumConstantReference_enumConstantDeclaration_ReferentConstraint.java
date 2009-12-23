@@ -27,6 +27,6 @@ public class EnumConstantReference_enumConstantDeclaration_ReferentConstraint ex
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     // constants declared in the specified class 
-    return new ClassifierVisibleStaticMembersScope(((EnumClass)SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getReferenceNode(), "enumClass", false))), _context.getReferenceNode(), IClassifiersSearchScope.ENUM_CONSTANT);
+    return new ClassifierVisibleStaticMembersScope(((EnumClass) SNodeOperations.getAdapter(SLinkOperations.getTarget(_context.getReferenceNode(), "enumClass", false))), _context.getReferenceNode(), IClassifiersSearchScope.ENUM_CONSTANT);
   }
 }

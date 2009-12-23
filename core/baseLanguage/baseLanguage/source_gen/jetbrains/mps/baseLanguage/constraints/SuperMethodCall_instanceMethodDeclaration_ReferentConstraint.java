@@ -26,6 +26,6 @@ public class SuperMethodCall_instanceMethodDeclaration_ReferentConstraint extend
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     SNode enclosingClass = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", true, false);
-    return new SuperMethodCall_InstanceMethodScope(((ClassifierType)SNodeOperations.getAdapter(ClassConcept_Behavior.call_getSuperclass_1240936569950(enclosingClass))), _context.getEnclosingNode());
+    return new SuperMethodCall_InstanceMethodScope(((ClassifierType) SNodeOperations.getAdapter(ClassConcept_Behavior.call_getSuperclass_1240936569950(enclosingClass))), _context.getEnclosingNode());
   }
 }

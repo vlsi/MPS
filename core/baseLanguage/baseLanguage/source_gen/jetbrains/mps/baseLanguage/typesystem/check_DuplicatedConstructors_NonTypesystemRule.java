@@ -26,7 +26,7 @@ public class check_DuplicatedConstructors_NonTypesystemRule extends AbstractNonT
     if (ListSequence.fromList(constructors).count() > 1) {
       List<BaseMethodDeclaration> adapters = new ArrayList<BaseMethodDeclaration>();
       for (SNode constructor : constructors) {
-        adapters.add(((ConstructorDeclaration)SNodeOperations.getAdapter(constructor)));
+        adapters.add(((ConstructorDeclaration) SNodeOperations.getAdapter(constructor)));
       }
       for (SNode constructor : constructors) {
         RulesFunctions_BaseLanguage.checkDuplicates(typeCheckingContext, constructor, classConcept, adapters);

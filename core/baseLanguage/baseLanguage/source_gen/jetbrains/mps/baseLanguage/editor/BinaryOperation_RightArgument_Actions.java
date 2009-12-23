@@ -43,7 +43,7 @@ public class BinaryOperation_RightArgument_Actions {
         EditorCell lastLeaf = cell.getLastLeaf(CellConditions.SELECTABLE);
         editor.changeSelection(lastLeaf);
         if (lastLeaf instanceof EditorCell_Label) {
-          ((EditorCell_Label)lastLeaf).end();
+          ((EditorCell_Label) lastLeaf).end();
         }
       }
     }

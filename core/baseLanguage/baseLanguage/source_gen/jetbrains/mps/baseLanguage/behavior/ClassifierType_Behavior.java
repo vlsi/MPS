@@ -54,7 +54,7 @@ public class ClassifierType_Behavior {
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     String classifierName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "classifier", false), "name");
     String shortName = NameUtil.shortNameFromLongName(classifierName);
-    return ((List<String>)NameUtil.splitByCamels(NameUtil.decapitalize(shortName)));
+    return ((List<String>) NameUtil.splitByCamels(NameUtil.decapitalize(shortName)));
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
@@ -136,10 +136,10 @@ public class ClassifierType_Behavior {
   }
 
   public static SNode call_createDefaultTypeExpression_9011026350741578236(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_9011026350741578236);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_9011026350741578236);
   }
 
   public static SNode callSuper_createDefaultTypeExpression_9011026350741578236(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType"), callerConceptFqName, "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_9011026350741578236);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType"), callerConceptFqName, "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_9011026350741578236);
   }
 }

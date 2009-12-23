@@ -77,8 +77,8 @@ public class MethodHierarchy_KeyMap extends EditorCellKeyMap {
       SNode method = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", true, false);
       SNode declClassifier = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       if ((declClassifier != null)) {
-        ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(declClassifier)), IClassifiersSearchScope.INSTANCE_METHOD);
-        List<BaseMethodDeclaration> list = scope.getOverriddenMethods(((InstanceMethodDeclaration)SNodeOperations.getAdapter(method)));
+        ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(declClassifier)), IClassifiersSearchScope.INSTANCE_METHOD);
+        List<BaseMethodDeclaration> list = scope.getOverriddenMethods(((InstanceMethodDeclaration) SNodeOperations.getAdapter(method)));
         SNode overriden = SNodeOperations.cast(BaseAdapter.fromAdapter(ListSequence.fromList(list).first()), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
         if (overriden != null) {
           IOperationContext context = editorContext.getOperationContext();

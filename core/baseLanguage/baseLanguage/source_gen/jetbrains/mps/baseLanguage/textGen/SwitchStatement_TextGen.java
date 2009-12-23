@@ -29,7 +29,7 @@ public class SwitchStatement_TextGen extends SNodeTextGen {
       this.appendNewLine();
       this.appendWithIndent("case ");
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(sc, "expression", true), "jetbrains.mps.baseLanguage.structure.EnumConstantReference")) {
-        SNode enumConstant = (SNode)SLinkOperations.getTarget(sc, "expression", true);
+        SNode enumConstant = (SNode) SLinkOperations.getTarget(sc, "expression", true);
         this.append(SPropertyOperations.getString(SLinkOperations.getTarget(enumConstant, "enumConstantDeclaration", false), "name"));
       } else {
         TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(sc, "expression", true), this.getSNode());

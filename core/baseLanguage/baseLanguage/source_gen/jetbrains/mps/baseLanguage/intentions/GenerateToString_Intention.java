@@ -57,9 +57,9 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     final SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     final SNode rightmostExpression;
-    SNode firstField = ListSequence.fromList(((List<SNode>)intentionContext.getContextParametersMap().get("selectedFields"))).first();
+    SNode firstField = ListSequence.fromList(((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))).first();
     SNode currentExpression = null;
-    for (SNode field : ((List<SNode>)intentionContext.getContextParametersMap().get("selectedFields"))) {
+    for (SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
       SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
       SLinkOperations.setTarget(fieldRef, "fieldDeclaration", field, false);
       SNode item = new _Quotations.QuotationClass_6().createNode(((field == firstField ?
@@ -75,7 +75,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
         currentExpression = new _Quotations.QuotationClass_41().createNode(dotExpression, currentExpression);
       }
     }
-    if (ListSequence.fromList(((List<SNode>)intentionContext.getContextParametersMap().get("selectedFields"))).isEmpty()) {
+    if (ListSequence.fromList(((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))).isEmpty()) {
       rightmostExpression = new _Quotations.QuotationClass_17().createNode(SPropertyOperations.getString(classConcept, "name") + "{}");
     } else {
       rightmostExpression = new _Quotations.QuotationClass_8().createNode(currentExpression);

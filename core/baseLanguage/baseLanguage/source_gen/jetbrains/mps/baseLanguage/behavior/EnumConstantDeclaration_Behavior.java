@@ -30,18 +30,18 @@ public class EnumConstantDeclaration_Behavior {
   }
 
   public static boolean call_isStatic_8986964027630472402(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630472402);
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630472402);
   }
 
   public static Icon call_getAdditionalIcon_8884554759541376072(SNode thisNode) {
-    return (Icon)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541376072);
+    return (Icon) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541376072);
   }
 
   public static boolean callSuper_isStatic_8986964027630472402(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), callerConceptFqName, "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630472402);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), callerConceptFqName, "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630472402);
   }
 
   public static Icon callSuper_getAdditionalIcon_8884554759541376072(SNode thisNode, String callerConceptFqName) {
-    return (Icon)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541376072);
+    return (Icon) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541376072);
   }
 }

@@ -31,11 +31,11 @@ public class SmartActions_Generated {
   public SmartAction_Runtime getGenerateCodeAction_1235058531184(IOperationContext operationContext) {
     return new SmartAction_Runtime(operationContext) {
       public void execute(final EditorCell selectedCell) {
-        SNode ancestor = SNodeOperations.getAncestor(((SNode)selectedCell.getSNode()), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-        if (((List<SNode>)(getSmartActionContext()).get("fields")[0]) == null) {
+        SNode ancestor = SNodeOperations.getAncestor(((SNode) selectedCell.getSNode()), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+        if (((List<SNode>) (getSmartActionContext()).get("fields")[0]) == null) {
           return;
         }
-        for (SNode field : ((List<SNode>)(getSmartActionContext()).get("fields")[0])) {
+        for (SNode field : ((List<SNode>) (getSmartActionContext()).get("fields")[0])) {
           SNode getter = SLinkOperations.addNewChild(ancestor, "method", "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
           SPropertyOperations.set(getter, "name", "get" + NameUtil.capitalize(SPropertyOperations.getString(field, "name")));
           SLinkOperations.setTarget(getter, "returnType", SNodeOperations.copyNode(SLinkOperations.getTarget(field, "type", true)), true);
@@ -55,9 +55,9 @@ public class SmartActions_Generated {
             {
               MPSTree tree = new MPSTree() {
                 protected MPSTreeNode rebuild() {
-                  MPSTreeNodeEx root = new SimpleSNodeTreeNode(((SNode)(getSmartActionContext()).get("classConcept")[0]), ((IOperationContext)(getSmartActionContext()).get("operationContext")[0]));
-                  for (SNode field : SLinkOperations.getTargets(((SNode)(getSmartActionContext()).get("classConcept")[0]), "field", true)) {
-                    SimpleSNodeTreeNode treeNode = new SimpleSNodeTreeNode(field, ((IOperationContext)(getSmartActionContext()).get("operationContext")[0]));
+                  MPSTreeNodeEx root = new SimpleSNodeTreeNode(((SNode) (getSmartActionContext()).get("classConcept")[0]), ((IOperationContext) (getSmartActionContext()).get("operationContext")[0]));
+                  for (SNode field : SLinkOperations.getTargets(((SNode) (getSmartActionContext()).get("classConcept")[0]), "field", true)) {
+                    SimpleSNodeTreeNode treeNode = new SimpleSNodeTreeNode(field, ((IOperationContext) (getSmartActionContext()).get("operationContext")[0]));
                     root.add(treeNode);
                   }
                   return root;
@@ -84,11 +84,11 @@ public class SmartActions_Generated {
               if (paths != null) {
                 (getSmartActionContext()).get("fields")[0] = new ArrayList<SNode>();
                 for (TreePath path : paths) {
-                  MPSTreeNode node = (MPSTreeNode)path.getLastPathComponent();
+                  MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
                   if (node instanceof MPSTreeNodeEx) {
-                    SNode snode = ((MPSTreeNodeEx)node).getSNode();
+                    SNode snode = ((MPSTreeNodeEx) node).getSNode();
                     if (SNodeOperations.isInstanceOf(snode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
-                      ListSequence.fromList(((List<SNode>)(getSmartActionContext()).get("fields")[0])).addElement(SNodeOperations.cast(snode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
+                      ListSequence.fromList(((List<SNode>) (getSmartActionContext()).get("fields")[0])).addElement(SNodeOperations.cast(snode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"));
                     }
                   }
                 }

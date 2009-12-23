@@ -21,7 +21,7 @@ public class check_InnerClassesCantHaveStaticInitializer_NonTypesystemRule exten
 
   public void applyRule(final SNode staticInitializer, final TypeCheckingContext typeCheckingContext) {
     if (SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(staticInitializer)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      SNode classConcept = (SNode)SNodeOperations.getParent(staticInitializer);
+      SNode classConcept = (SNode) SNodeOperations.getParent(staticInitializer);
       if (Classifier_Behavior.call_isInner_521412098689998677(classConcept) && !(Classifier_Behavior.call_isStatic_521412098689998668(classConcept))) {
         {
           BaseIntentionProvider intentionProvider = null;

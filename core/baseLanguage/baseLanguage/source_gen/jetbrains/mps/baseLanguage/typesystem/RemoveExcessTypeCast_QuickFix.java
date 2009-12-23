@@ -16,6 +16,6 @@ public class RemoveExcessTypeCast_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    SNodeOperations.replaceWithAnother(((SNode)RemoveExcessTypeCast_QuickFix.this.getField("castExpr")[0]), SLinkOperations.getTarget(((SNode)RemoveExcessTypeCast_QuickFix.this.getField("castExpr")[0]), "expression", true));
+    SNodeOperations.replaceWithAnother(((SNode) RemoveExcessTypeCast_QuickFix.this.getField("castExpr")[0]), SLinkOperations.getTarget(((SNode) RemoveExcessTypeCast_QuickFix.this.getField("castExpr")[0]), "expression", true));
   }
 }

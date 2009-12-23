@@ -24,7 +24,7 @@ public class check_StaticMethodScope_NonTypesystemRule extends AbstractNonTypesy
   }
 
   public void applyRule(final SNode staticMethodCall, final TypeCheckingContext typeCheckingContext) {
-    List<SNode> staticMethods = (List<SNode>)new ClassifierVisibleStaticMembersScope(((ClassConcept)SNodeOperations.getAdapter(SLinkOperations.getTarget(staticMethodCall, "classConcept", false))), staticMethodCall, IClassifiersSearchScope.STATIC_METHOD).getNodes();
+    List<SNode> staticMethods = (List<SNode>) new ClassifierVisibleStaticMembersScope(((ClassConcept) SNodeOperations.getAdapter(SLinkOperations.getTarget(staticMethodCall, "classConcept", false))), staticMethodCall, IClassifiersSearchScope.STATIC_METHOD).getNodes();
     if (!(ListSequence.fromList(staticMethods).contains(SLinkOperations.getTarget(staticMethodCall, "baseMethodDeclaration", false)))) {
       {
         BaseIntentionProvider intentionProvider = null;

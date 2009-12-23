@@ -17,10 +17,10 @@ public class IStatementListContainer_Behavior {
   }
 
   public static boolean call_isExecuteSynchronous_1230212745736(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), "virtual_isExecuteSynchronous_1230212745736", PARAMETERS_1230212745736);
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), "virtual_isExecuteSynchronous_1230212745736", PARAMETERS_1230212745736);
   }
 
   public static boolean callSuper_isExecuteSynchronous_1230212745736(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), callerConceptFqName, "virtual_isExecuteSynchronous_1230212745736", PARAMETERS_1230212745736);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStatementListContainer"), callerConceptFqName, "virtual_isExecuteSynchronous_1230212745736", PARAMETERS_1230212745736);
   }
 }

@@ -18,10 +18,10 @@ public class InstanceInitializer_Behavior {
   }
 
   public static Icon call_getAdditionalIcon_8884554759541377996(SNode thisNode) {
-    return (Icon)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541377996);
+    return (Icon) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541377996);
   }
 
   public static Icon callSuper_getAdditionalIcon_8884554759541377996(SNode thisNode, String callerConceptFqName) {
-    return (Icon)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541377996);
+    return (Icon) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.InstanceInitializer"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541377996);
   }
 }

@@ -18,8 +18,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesUtil {
   public static List<SNode> replaceNodeMenu_parameterObjects(SNode classifier, SNode contextNode) {
-    ISearchScope searchScope = new ClassifierVisibleStaticMembersScope(((Classifier)SNodeOperations.getAdapter(classifier)), contextNode, IClassifiersSearchScope.STATIC_MEMBER);
-    List<SNode> members = (List<SNode>)searchScope.getNodes();
+    ISearchScope searchScope = new ClassifierVisibleStaticMembersScope(((Classifier) SNodeOperations.getAdapter(classifier)), contextNode, IClassifiersSearchScope.STATIC_MEMBER);
+    List<SNode> members = (List<SNode>) searchScope.getNodes();
     List<SNode> result = ListSequence.fromList(members).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") || SNodeOperations.isInstanceOf(it, "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration");
@@ -46,7 +46,7 @@ public class QueriesUtil {
       }
       for (SNode attribute : ListSequence.fromList(oldNode.getAllAttributes())) {
         String role = oldNode.getRoleOf(attribute);
-        newNode.addChild(role, SNodeOperations.copyNode(((SNode)attribute)));
+        newNode.addChild(role, SNodeOperations.copyNode(((SNode) attribute)));
       }
       return newNode;
     }

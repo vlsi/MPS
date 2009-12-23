@@ -22,7 +22,7 @@ public class check_DuplicateMethods_NonTypesystemRule extends AbstractNonTypesys
 
   public void applyRule(final SNode classifier, final TypeCheckingContext typeCheckingContext) {
     List<SNode> ownMethods = Classifier_Behavior.call_getOwnMethods_1906502351318572840(classifier);
-    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier)SNodeOperations.getAdapter(classifier)), IClassifiersSearchScope.INSTANCE_METHOD | IClassifiersSearchScope.STATIC_METHOD);
+    ClassifierAndSuperClassifiersScope scope = new ClassifierAndSuperClassifiersScope(((Classifier) SNodeOperations.getAdapter(classifier)), IClassifiersSearchScope.INSTANCE_METHOD | IClassifiersSearchScope.STATIC_METHOD);
     for (SNode ownMethod : ownMethods) {
       List<BaseMethodDeclaration> namesakes = scope.getMethodsByName(SPropertyOperations.getString(ownMethod, "name"));
       if (namesakes.size() < 2) {

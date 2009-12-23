@@ -67,7 +67,7 @@ public class ClosuresUtil {
     if (getClosureContextData(node, generator) == null) {
       // init ClosureContextData 
       GenerationSessionContext sessionContext = generator.getGeneratorSessionContext();
-      Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>)sessionContext.getTransientObject(CLOSURE_CONTEXT_DATA));
+      Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>) sessionContext.getTransientObject(CLOSURE_CONTEXT_DATA));
       if (closureContexts == null) {
         closureContexts = MapSequence.fromMap(new HashMap<SNode, ClosuresUtil.ClosureContextData>());
         sessionContext.putTransientObject(CLOSURE_CONTEXT_DATA, closureContexts);
@@ -150,7 +150,7 @@ public class ClosuresUtil {
 
   private static ClosuresUtil.ClosureContextData getClosureContextData(SNode contextOwner, ITemplateGenerator generator) {
     GenerationSessionContext sessionContext = generator.getGeneratorSessionContext();
-    Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>)sessionContext.getTransientObject(CLOSURE_CONTEXT_DATA));
+    Map<SNode, ClosuresUtil.ClosureContextData> closureContexts = ((Map<SNode, ClosuresUtil.ClosureContextData>) sessionContext.getTransientObject(CLOSURE_CONTEXT_DATA));
     if (closureContexts == null) {
       return null;
     }

@@ -96,7 +96,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     final SNode thisExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
     SNode lastAdded = null;
-    for (final SNode field : ((List<SNode>)intentionContext.getContextParametersMap().get("selectedFields"))) {
+    for (final SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
       final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field);
       final Wrappers._boolean getterIsAbsent = new Wrappers._boolean(true);
       ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).visitAll(new IVisitor<SNode>() {

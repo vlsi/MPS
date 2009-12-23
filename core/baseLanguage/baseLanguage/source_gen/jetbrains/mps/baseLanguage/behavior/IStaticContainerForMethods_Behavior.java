@@ -14,10 +14,10 @@ public class IStaticContainerForMethods_Behavior {
   }
 
   public static IStaticContainerProcessor call_getStaticContainerProcessor_1222174378300(SNode thisNode, SNode node) {
-    return (IStaticContainerProcessor)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods"), "virtual_getStaticContainerProcessor_1222174378300", PARAMETERS_1222174378300, node);
+    return (IStaticContainerProcessor) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods"), "virtual_getStaticContainerProcessor_1222174378300", PARAMETERS_1222174378300, node);
   }
 
   public static IStaticContainerProcessor callSuper_getStaticContainerProcessor_1222174378300(SNode thisNode, String callerConceptFqName, SNode node) {
-    return (IStaticContainerProcessor)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods"), callerConceptFqName, "virtual_getStaticContainerProcessor_1222174378300", PARAMETERS_1222174378300, node);
+    return (IStaticContainerProcessor) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IStaticContainerForMethods"), callerConceptFqName, "virtual_getStaticContainerProcessor_1222174378300", PARAMETERS_1222174378300, node);
   }
 }

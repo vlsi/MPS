@@ -17,10 +17,10 @@ public class ClassifierMember_Behavior {
   }
 
   public static boolean call_isStatic_8986964027630462944(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630462944);
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630462944);
   }
 
   public static boolean callSuper_isStatic_8986964027630462944(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630462944);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), callerConceptFqName, "virtual_isStatic_8986964027630462944", PARAMETERS_8986964027630462944);
   }
 }

@@ -148,7 +148,7 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
           Rectangle cellBounds = GoToOverridingMethod_Action.this.editorContext.getSelectedCell().getBounds();
-          Point point = new Point(((int)cellBounds.getMinX()), ((int)cellBounds.getMaxY()));
+          Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
           RelativePoint relPpoint = new RelativePoint(GoToOverridingMethod_Action.this.editorComponent, point);
           GoToHelper.showOverridingMethodsMenu(SetSequence.fromSet(nodes).toListSequence(), relPpoint, GoToOverridingMethod_Action.this.project);
         }
@@ -163,7 +163,7 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
     StringBuilder res = new StringBuilder(500);
     res.append(GoToOverridingMethod_Action.class.getName());
     res.append("#");
-    res.append(finderClasses_State((List<String>)this.finderClasses));
+    res.append(finderClasses_State((List<String>) this.finderClasses));
     res.append("!");
     return res.toString();
   }

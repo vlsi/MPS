@@ -38,9 +38,9 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
     }
 
     if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(pastedNode), "jetbrains.mps.baseLanguage.structure.DotExpression")) {
-      SNode parentDotExpression = (SNode)SNodeOperations.getParent(pastedNode);
+      SNode parentDotExpression = (SNode) SNodeOperations.getParent(pastedNode);
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(parentDotExpression, "operation", true), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation")) {
-        SNode fieldReferenceOperation = (SNode)SLinkOperations.getTarget(parentDotExpression, "operation", true);
+        SNode fieldReferenceOperation = (SNode) SLinkOperations.getTarget(parentDotExpression, "operation", true);
         SReference fieldDeclarationReference = SNodeOperations.getReference(fieldReferenceOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", "fieldDeclaration"));
 
         // External reference 

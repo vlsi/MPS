@@ -17,7 +17,7 @@ public class LocalStaticMethodCall_Behavior {
   }
 
   public static List<SNode> virtual_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String methodName) {
-    List<BaseMethodDeclaration> methods = new ClassifierAndSuperClassifiersScope(((ClassConcept)SNodeOperations.getAdapter(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false))), IClassifiersSearchScope.STATIC_METHOD).getMethodsByName(methodName);
+    List<BaseMethodDeclaration> methods = new ClassifierAndSuperClassifiersScope(((ClassConcept) SNodeOperations.getAdapter(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false))), IClassifiersSearchScope.STATIC_METHOD).getMethodsByName(methodName);
     List<SNode> result = new ArrayList<SNode>();
     for (BaseMethodDeclaration bmd : methods) {
       SNode node = bmd.getNode();

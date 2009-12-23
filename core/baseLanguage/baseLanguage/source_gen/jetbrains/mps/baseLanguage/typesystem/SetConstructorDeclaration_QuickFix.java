@@ -15,6 +15,6 @@ public class SetConstructorDeclaration_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    SLinkOperations.setTarget(((SNode)SetConstructorDeclaration_QuickFix.this.getField("constructorInvocation")[0]), "baseMethodDeclaration", ((SNode)SetConstructorDeclaration_QuickFix.this.getField("constructorDeclaration")[0]), false);
+    SLinkOperations.setTarget(((SNode) SetConstructorDeclaration_QuickFix.this.getField("constructorInvocation")[0]), "baseMethodDeclaration", ((SNode) SetConstructorDeclaration_QuickFix.this.getField("constructorDeclaration")[0]), false);
   }
 }

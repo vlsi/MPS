@@ -21,10 +21,10 @@ public class CommentPart_Behavior {
   }
 
   public static boolean call_isToDo_7236590470026152831(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.CommentPart"), "virtual_isToDo_7236590470026152831", PARAMETERS_7236590470026152831);
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.CommentPart"), "virtual_isToDo_7236590470026152831", PARAMETERS_7236590470026152831);
   }
 
   public static boolean callSuper_isToDo_7236590470026152831(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.CommentPart"), callerConceptFqName, "virtual_isToDo_7236590470026152831", PARAMETERS_7236590470026152831);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.CommentPart"), callerConceptFqName, "virtual_isToDo_7236590470026152831", PARAMETERS_7236590470026152831);
   }
 }

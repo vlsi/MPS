@@ -22,18 +22,18 @@ public class TypeDerivable_Behavior {
   }
 
   public static SNode call_deriveType_1213877435747(SNode thisNode, SNode expression) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", PARAMETERS_1213877435747, expression);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_1213877435747", PARAMETERS_1213877435747, expression);
   }
 
   public static SNode call_deriveType_4555537781928374706(SNode thisNode, SNode expression, SNode link) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_4555537781928374706", PARAMETERS_4555537781928374706, expression, link);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeDerivable"), "virtual_deriveType_4555537781928374706", PARAMETERS_4555537781928374706, expression, link);
   }
 
   public static SNode callSuper_deriveType_1213877435747(SNode thisNode, String callerConceptFqName, SNode expression) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeDerivable"), callerConceptFqName, "virtual_deriveType_1213877435747", PARAMETERS_1213877435747, expression);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeDerivable"), callerConceptFqName, "virtual_deriveType_1213877435747", PARAMETERS_1213877435747, expression);
   }
 
   public static SNode callSuper_deriveType_4555537781928374706(SNode thisNode, String callerConceptFqName, SNode expression, SNode link) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeDerivable"), callerConceptFqName, "virtual_deriveType_4555537781928374706", PARAMETERS_4555537781928374706, expression, link);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.TypeDerivable"), callerConceptFqName, "virtual_deriveType_4555537781928374706", PARAMETERS_4555537781928374706, expression, link);
   }
 }

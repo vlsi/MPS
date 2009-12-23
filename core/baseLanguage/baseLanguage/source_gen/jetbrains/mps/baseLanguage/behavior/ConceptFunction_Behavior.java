@@ -43,7 +43,7 @@ public class ConceptFunction_Behavior {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionParameter")));
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "applicableConceptFunctionParameter")));
-    return (List<SNode>)result;
+    return (List<SNode>) result;
   }
 
   public static boolean call_isReturnOnly_3745452943050787634(SNode thisNode) {
@@ -59,34 +59,34 @@ public class ConceptFunction_Behavior {
   }
 
   public static boolean call_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_usesParameterObjectFor_1213877374432", PARAMETERS_1213877374432, parameter);
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_usesParameterObjectFor_1213877374432", PARAMETERS_1213877374432, parameter);
   }
 
   public static SNode call_getExpectedReturnType_1213877374441(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_1213877374441);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getExpectedReturnType_1213877374441", PARAMETERS_1213877374441);
   }
 
   public static List<SNode> call_getParameters_1213877374450(SNode thisNode) {
-    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getParameters_1213877374450", PARAMETERS_1213877374450);
+    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getParameters_1213877374450", PARAMETERS_1213877374450);
   }
 
   public static String call_getName_1216468837268(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getName_1216468837268", PARAMETERS_1216468837268);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), "virtual_getName_1216468837268", PARAMETERS_1216468837268);
   }
 
   public static boolean callSuper_usesParameterObjectFor_1213877374432(SNode thisNode, String callerConceptFqName, SNode parameter) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_usesParameterObjectFor_1213877374432", PARAMETERS_1213877374432, parameter);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_usesParameterObjectFor_1213877374432", PARAMETERS_1213877374432, parameter);
   }
 
   public static SNode callSuper_getExpectedReturnType_1213877374441(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_1213877374441);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getExpectedReturnType_1213877374441", PARAMETERS_1213877374441);
   }
 
   public static List<SNode> callSuper_getParameters_1213877374450(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getParameters_1213877374450", PARAMETERS_1213877374450);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getParameters_1213877374450", PARAMETERS_1213877374450);
   }
 
   public static String callSuper_getName_1216468837268(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getName_1216468837268", PARAMETERS_1216468837268);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ConceptFunction"), callerConceptFqName, "virtual_getName_1216468837268", PARAMETERS_1216468837268);
   }
 }

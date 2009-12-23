@@ -24,7 +24,7 @@ public class subtypesOfUpperBoundType_InequationReplacementRule extends Abstract
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220443995701", 0, intentionProvider);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
         _info_12389875345.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), (SNode)SLinkOperations.getTarget(supertype, "bound", true), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), (SNode) SLinkOperations.getTarget(supertype, "bound", true), false, _info_12389875345);
       }
     } else {
       {
@@ -33,7 +33,7 @@ public class subtypesOfUpperBoundType_InequationReplacementRule extends Abstract
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1220444030637", 0, intentionProvider);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
         _info_12389875345.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequation((SNode)subtype, (SNode)SLinkOperations.getTarget(supertype, "bound", true), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequation((SNode) subtype, (SNode) SLinkOperations.getTarget(supertype, "bound", true), false, _info_12389875345);
       }
     }
   }
@@ -41,9 +41,9 @@ public class subtypesOfUpperBoundType_InequationReplacementRule extends Abstract
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
     boolean result_14532009 = true;
     if (SNodeOperations.isInstanceOf(subtype, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
-      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode)SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), (SNode)SLinkOperations.getTarget(supertype, "bound", true), true);
+      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(SNodeOperations.cast(subtype, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true), (SNode) SLinkOperations.getTarget(supertype, "bound", true), true);
     } else {
-      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode)subtype, (SNode)SLinkOperations.getTarget(supertype, "bound", true), true);
+      result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) subtype, (SNode) SLinkOperations.getTarget(supertype, "bound", true), true);
     }
     return result_14532009;
   }

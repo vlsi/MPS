@@ -21,7 +21,7 @@ public class check_InnerClassesCantHaveStaticMethods_NonTypesystemRule extends A
 
   public void applyRule(final SNode staticMethodDeclaration, final TypeCheckingContext typeCheckingContext) {
     if (SNodeOperations.getConceptDeclaration(SNodeOperations.getParent(staticMethodDeclaration)) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept")) {
-      SNode classConcept = (SNode)SNodeOperations.getParent(staticMethodDeclaration);
+      SNode classConcept = (SNode) SNodeOperations.getParent(staticMethodDeclaration);
       if (Classifier_Behavior.call_isInner_521412098689998677(classConcept) && !(Classifier_Behavior.call_isStatic_521412098689998668(classConcept))) {
         {
           BaseIntentionProvider intentionProvider = null;

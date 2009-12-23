@@ -169,7 +169,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     }
 
     public SNode createReplacementNode(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      return this.createReplacementNode_impl((SNode)parameterObject, node, model, scope, operationContext);
+      return this.createReplacementNode_impl((SNode) parameterObject, node, model, scope, operationContext);
     }
 
     public SNode createReplacementNode_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {

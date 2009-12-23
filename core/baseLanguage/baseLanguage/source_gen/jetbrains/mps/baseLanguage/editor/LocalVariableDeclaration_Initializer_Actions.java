@@ -41,7 +41,7 @@ public class LocalVariableDeclaration_Initializer_Actions {
       EditorCell lastSelectable = nodeCell.getLastLeaf(CellConditions.SELECTABLE);
       editor.changeSelection(lastSelectable);
       if (lastSelectable instanceof EditorCell_Label) {
-        ((EditorCell_Label)lastSelectable).end();
+        ((EditorCell_Label) lastSelectable).end();
       }
     }
   }
