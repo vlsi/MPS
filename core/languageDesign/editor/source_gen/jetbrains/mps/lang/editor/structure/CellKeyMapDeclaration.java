@@ -68,7 +68,7 @@ public class CellKeyMapDeclaration extends BaseConcept implements INamedConcept,
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, CellKeyMapDeclaration.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, CellKeyMapDeclaration.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {
@@ -96,7 +96,7 @@ public class CellKeyMapDeclaration extends BaseConcept implements INamedConcept,
   }
 
   public static CellKeyMapDeclaration newInstance(SModel sm, boolean init) {
-    return (CellKeyMapDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellKeyMapDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellKeyMapDeclaration newInstance(SModel sm) {

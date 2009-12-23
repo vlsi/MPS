@@ -15,7 +15,7 @@ public class CellLayout_VerticalGrid extends CellLayout_Vertical {
   }
 
   public static CellLayout_VerticalGrid newInstance(SModel sm, boolean init) {
-    return (CellLayout_VerticalGrid)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellLayout_VerticalGrid) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellLayout_VerticalGrid", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellLayout_VerticalGrid newInstance(SModel sm) {

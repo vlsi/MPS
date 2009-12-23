@@ -34,7 +34,7 @@ public class CellKeyMapKeystroke extends BaseConcept {
   }
 
   public static CellKeyMapKeystroke newInstance(SModel sm, boolean init) {
-    return (CellKeyMapKeystroke)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellKeyMapKeystroke) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellKeyMapKeystroke newInstance(SModel sm) {

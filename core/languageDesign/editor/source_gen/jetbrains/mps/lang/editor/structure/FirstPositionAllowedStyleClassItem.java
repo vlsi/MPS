@@ -15,7 +15,7 @@ public class FirstPositionAllowedStyleClassItem extends BooleanStyleSheetItem {
   }
 
   public static FirstPositionAllowedStyleClassItem newInstance(SModel sm, boolean init) {
-    return (FirstPositionAllowedStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FirstPositionAllowedStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.FirstPositionAllowedStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FirstPositionAllowedStyleClassItem newInstance(SModel sm) {

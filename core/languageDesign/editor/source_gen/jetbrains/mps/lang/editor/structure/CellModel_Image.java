@@ -34,7 +34,7 @@ public class CellModel_Image extends EditorCellModel {
   }
 
   public QueryFunction_ImagePath getImagePathProvider() {
-    return (QueryFunction_ImagePath)this.getChild(QueryFunction_ImagePath.class, CellModel_Image.IMAGE_PATH_PROVIDER);
+    return (QueryFunction_ImagePath) this.getChild(QueryFunction_ImagePath.class, CellModel_Image.IMAGE_PATH_PROVIDER);
   }
 
   public void setImagePathProvider(QueryFunction_ImagePath node) {
@@ -42,7 +42,7 @@ public class CellModel_Image extends EditorCellModel {
   }
 
   public static CellModel_Image newInstance(SModel sm, boolean init) {
-    return (CellModel_Image)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Image", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_Image) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Image", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_Image newInstance(SModel sm) {

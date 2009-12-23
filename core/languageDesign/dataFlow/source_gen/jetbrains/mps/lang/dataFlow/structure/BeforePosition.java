@@ -15,7 +15,7 @@ public class BeforePosition extends RelativePosition {
   }
 
   public static BeforePosition newInstance(SModel sm, boolean init) {
-    return (BeforePosition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.BeforePosition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BeforePosition) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.BeforePosition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BeforePosition newInstance(SModel sm) {

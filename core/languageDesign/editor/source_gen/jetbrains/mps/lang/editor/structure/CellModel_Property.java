@@ -24,7 +24,7 @@ public class CellModel_Property extends CellModel_WithRole {
   }
 
   public static CellModel_Property newInstance(SModel sm, boolean init) {
-    return (CellModel_Property)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Property", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_Property) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Property", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_Property newInstance(SModel sm) {

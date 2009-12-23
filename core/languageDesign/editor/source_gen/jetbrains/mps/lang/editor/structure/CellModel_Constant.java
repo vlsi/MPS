@@ -33,7 +33,7 @@ public class CellModel_Constant extends CellModel_AbstractLabel {
   }
 
   public static CellModel_Constant newInstance(SModel sm, boolean init) {
-    return (CellModel_Constant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Constant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_Constant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Constant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_Constant newInstance(SModel sm) {

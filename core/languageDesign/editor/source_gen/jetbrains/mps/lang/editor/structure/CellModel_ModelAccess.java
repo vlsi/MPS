@@ -25,7 +25,7 @@ public class CellModel_ModelAccess extends CellModel_AbstractLabel {
   }
 
   public ModelAccessor getModelAcessor() {
-    return (ModelAccessor)this.getChild(ModelAccessor.class, CellModel_ModelAccess.MODEL_ACESSOR);
+    return (ModelAccessor) this.getChild(ModelAccessor.class, CellModel_ModelAccess.MODEL_ACESSOR);
   }
 
   public void setModelAcessor(ModelAccessor node) {
@@ -33,7 +33,7 @@ public class CellModel_ModelAccess extends CellModel_AbstractLabel {
   }
 
   public static CellModel_ModelAccess newInstance(SModel sm, boolean init) {
-    return (CellModel_ModelAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_ModelAccess", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_ModelAccess) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_ModelAccess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_ModelAccess newInstance(SModel sm) {

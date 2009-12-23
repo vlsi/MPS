@@ -16,7 +16,7 @@ public class CellActionMap_FunctionParm_selectedNode extends ConceptFunctionPara
   }
 
   public static CellActionMap_FunctionParm_selectedNode newInstance(SModel sm, boolean init) {
-    return (CellActionMap_FunctionParm_selectedNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellActionMap_FunctionParm_selectedNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellActionMap_FunctionParm_selectedNode newInstance(SModel sm) {

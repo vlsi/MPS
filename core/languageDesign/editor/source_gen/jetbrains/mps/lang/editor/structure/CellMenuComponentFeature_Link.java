@@ -24,7 +24,7 @@ public class CellMenuComponentFeature_Link extends CellMenuComponentFeature {
   }
 
   public static CellMenuComponentFeature_Link newInstance(SModel sm, boolean init) {
-    return (CellMenuComponentFeature_Link)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuComponentFeature_Link) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Link", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuComponentFeature_Link newInstance(SModel sm) {

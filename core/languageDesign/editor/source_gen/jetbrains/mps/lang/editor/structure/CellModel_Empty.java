@@ -15,7 +15,7 @@ public class CellModel_Empty extends EditorCellModel {
   }
 
   public static CellModel_Empty newInstance(SModel sm, boolean init) {
-    return (CellModel_Empty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Empty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_Empty) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Empty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_Empty newInstance(SModel sm) {

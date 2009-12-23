@@ -16,7 +16,7 @@ public class CellMenuPart_ReplaceChild_Group_Query extends ConceptFunction {
   }
 
   public static CellMenuPart_ReplaceChild_Group_Query newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_ReplaceChild_Group_Query)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_ReplaceChild_Group_Query) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group_Query", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_ReplaceChild_Group_Query newInstance(SModel sm) {

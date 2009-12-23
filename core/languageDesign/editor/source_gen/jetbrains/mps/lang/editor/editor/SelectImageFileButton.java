@@ -39,7 +39,7 @@ public class SelectImageFileButton extends JButton {
       public void actionPerformed(ActionEvent e) {
         Component root = SwingUtilities.getRoot(SelectImageFileButton.this);
         if (root instanceof Frame) {
-          Frame frame = (Frame)root;
+          Frame frame = (Frame) root;
           TreeFileChooser chooser = new TreeFileChooser();
           if (baseFile != null && baseFile.exists()) {
             chooser.setInitialFile(new FileSystemFile(baseFile.getAbsolutePath()));

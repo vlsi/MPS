@@ -35,7 +35,7 @@ public class CellModel_Block extends EditorCellModel {
   }
 
   public EditorCellModel getHeader() {
-    return (EditorCellModel)this.getChild(EditorCellModel.class, CellModel_Block.HEADER);
+    return (EditorCellModel) this.getChild(EditorCellModel.class, CellModel_Block.HEADER);
   }
 
   public void setHeader(EditorCellModel node) {
@@ -43,7 +43,7 @@ public class CellModel_Block extends EditorCellModel {
   }
 
   public EditorCellModel getBody() {
-    return (EditorCellModel)this.getChild(EditorCellModel.class, CellModel_Block.BODY);
+    return (EditorCellModel) this.getChild(EditorCellModel.class, CellModel_Block.BODY);
   }
 
   public void setBody(EditorCellModel node) {
@@ -51,7 +51,7 @@ public class CellModel_Block extends EditorCellModel {
   }
 
   public static CellModel_Block newInstance(SModel sm, boolean init) {
-    return (CellModel_Block)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Block", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_Block) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Block", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_Block newInstance(SModel sm) {

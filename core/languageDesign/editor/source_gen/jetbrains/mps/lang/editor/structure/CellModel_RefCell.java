@@ -25,7 +25,7 @@ public class CellModel_RefCell extends CellModel_WithRole {
   }
 
   public InlineEditorComponent getEditorComponent() {
-    return (InlineEditorComponent)this.getChild(InlineEditorComponent.class, CellModel_RefCell.EDITOR_COMPONENT);
+    return (InlineEditorComponent) this.getChild(InlineEditorComponent.class, CellModel_RefCell.EDITOR_COMPONENT);
   }
 
   public void setEditorComponent(InlineEditorComponent node) {
@@ -33,7 +33,7 @@ public class CellModel_RefCell extends CellModel_WithRole {
   }
 
   public static CellModel_RefCell newInstance(SModel sm, boolean init) {
-    return (CellModel_RefCell)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_RefCell", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_RefCell) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_RefCell", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_RefCell newInstance(SModel sm) {

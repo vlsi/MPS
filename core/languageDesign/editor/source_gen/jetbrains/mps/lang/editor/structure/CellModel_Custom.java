@@ -16,7 +16,7 @@ public class CellModel_Custom extends EditorCellModel {
   }
 
   public QueryFunction_CellProvider getCellProvider() {
-    return (QueryFunction_CellProvider)this.getChild(QueryFunction_CellProvider.class, CellModel_Custom.CELL_PROVIDER);
+    return (QueryFunction_CellProvider) this.getChild(QueryFunction_CellProvider.class, CellModel_Custom.CELL_PROVIDER);
   }
 
   public void setCellProvider(QueryFunction_CellProvider node) {
@@ -24,7 +24,7 @@ public class CellModel_Custom extends EditorCellModel {
   }
 
   public static CellModel_Custom newInstance(SModel sm, boolean init) {
-    return (CellModel_Custom)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Custom", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_Custom) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Custom", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_Custom newInstance(SModel sm) {

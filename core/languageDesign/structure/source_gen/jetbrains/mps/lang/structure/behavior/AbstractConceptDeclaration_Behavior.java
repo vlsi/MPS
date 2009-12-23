@@ -106,11 +106,11 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static List<SNode> call_findGeneratorFragments_6409339300305625383(SNode thisNode, IScope scope) {
-    return GoToGenHelper.getGenFragments(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope);
+    return GoToGenHelper.getGenFragments(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)), scope);
   }
 
   public static List<SNode> call_findApplicableTypesystemRules_6409339300305625028(SNode thisNode, IScope scope) {
-    return GoToRulesHelper.getHelginsRules(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), scope, false);
+    return GoToRulesHelper.getHelginsRules(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)), scope, false);
   }
 
   public static List<SNode> call_findAllAspects_7754459869734028917(SNode thisNode, IScope scope) {
@@ -211,12 +211,12 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static SNode call_findLinkDeclaration_1213877394467(SNode thisNode, String role) {
-    return SNodeOperations.cast(BaseAdapter.fromAdapter(SModelSearchUtil.findLinkDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), role)), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    return SNodeOperations.cast(BaseAdapter.fromAdapter(SModelSearchUtil.findLinkDeclaration(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)), role)), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
   }
 
   public static List<SNode> call_getLinkDeclarations_1213877394480(SNode thisNode) {
-    List<LinkDeclaration> links = SModelSearchUtil.getLinkDeclarations(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)));
-    return (List<SNode>)BaseAdapter.toNodes(links);
+    List<LinkDeclaration> links = SModelSearchUtil.getLinkDeclarations(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)));
+    return (List<SNode>) BaseAdapter.toNodes(links);
   }
 
   public static List<SNode> call_getReferenceLinkDeclarations_1213877394496(SNode thisNode) {
@@ -238,23 +238,23 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static List<SNode> call_getPropertyDeclarations_1213877394546(SNode thisNode) {
-    List<PropertyDeclaration> properties = SModelSearchUtil.getPropertyDeclarations(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)));
-    return (List<SNode>)BaseAdapter.toNodes(properties);
+    List<PropertyDeclaration> properties = SModelSearchUtil.getPropertyDeclarations(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)));
+    return (List<SNode>) BaseAdapter.toNodes(properties);
   }
 
   public static SNode call_findPropertyDeclaration_1219835742593(SNode thisNode, String name) {
-    PropertyDeclaration p = SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)), name);
+    PropertyDeclaration p = SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)), name);
     return SNodeOperations.cast(BaseAdapter.fromAdapter(p), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
   }
 
   public static List<SNode> call_getConceptPropertyDeclarations_1213877394562(SNode thisNode) {
-    List<ConceptPropertyDeclaration> list = SModelSearchUtil.getConceptPropertyDeclarations(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)));
-    return (List<SNode>)BaseAdapter.toNodes(list);
+    List<ConceptPropertyDeclaration> list = SModelSearchUtil.getConceptPropertyDeclarations(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)));
+    return (List<SNode>) BaseAdapter.toNodes(list);
   }
 
   public static List<SNode> call_getConceptLinkDeclarations_1213877394578(SNode thisNode) {
-    List<ConceptLinkDeclaration> list = SModelSearchUtil.getConceptLinkDeclarations(((AbstractConceptDeclaration)SNodeOperations.getAdapter(thisNode)));
-    return (List<SNode>)BaseAdapter.toNodes(list);
+    List<ConceptLinkDeclaration> list = SModelSearchUtil.getConceptLinkDeclarations(((AbstractConceptDeclaration) SNodeOperations.getAdapter(thisNode)));
+    return (List<SNode>) BaseAdapter.toNodes(list);
   }
 
   public static SNode call_specializeLink_4304720797559012132(SNode thisNode, SNode link, SNode targetConcept) {
@@ -288,11 +288,11 @@ public class AbstractConceptDeclaration_Behavior {
   }
 
   public static List<SNode> call_getImmediateSuperconcepts_1222430305282(SNode thisNode) {
-    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282);
+    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282);
   }
 
   public static List<SNode> callSuper_getImmediateSuperconcepts_1222430305282(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), callerConceptFqName, "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), callerConceptFqName, "virtual_getImmediateSuperconcepts_1222430305282", PARAMETERS_1222430305282);
   }
 
   public static void commitNameProperty_1232962485892(EditorContext editorContext, String oldValue, final SNode node, final String newValue) {

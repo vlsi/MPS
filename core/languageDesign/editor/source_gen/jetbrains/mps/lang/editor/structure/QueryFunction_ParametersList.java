@@ -16,7 +16,7 @@ public class QueryFunction_ParametersList extends ConceptFunction {
   }
 
   public static QueryFunction_ParametersList newInstance(SModel sm, boolean init) {
-    return (QueryFunction_ParametersList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_ParametersList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_ParametersList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_ParametersList newInstance(SModel sm) {

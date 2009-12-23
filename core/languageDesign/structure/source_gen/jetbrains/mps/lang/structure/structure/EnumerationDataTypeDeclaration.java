@@ -48,7 +48,7 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
   }
 
   public PrimitiveDataTypeDeclaration getMemberDataType() {
-    return (PrimitiveDataTypeDeclaration)this.getReferent(PrimitiveDataTypeDeclaration.class, EnumerationDataTypeDeclaration.MEMBER_DATA_TYPE);
+    return (PrimitiveDataTypeDeclaration) this.getReferent(PrimitiveDataTypeDeclaration.class, EnumerationDataTypeDeclaration.MEMBER_DATA_TYPE);
   }
 
   public void setMemberDataType(PrimitiveDataTypeDeclaration node) {
@@ -56,7 +56,7 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
   }
 
   public EnumerationMemberDeclaration getDefaultMember() {
-    return (EnumerationMemberDeclaration)this.getReferent(EnumerationMemberDeclaration.class, EnumerationDataTypeDeclaration.DEFAULT_MEMBER);
+    return (EnumerationMemberDeclaration) this.getReferent(EnumerationMemberDeclaration.class, EnumerationDataTypeDeclaration.DEFAULT_MEMBER);
   }
 
   public void setDefaultMember(EnumerationMemberDeclaration node) {
@@ -84,7 +84,7 @@ public class EnumerationDataTypeDeclaration extends DataTypeDeclaration {
   }
 
   public static EnumerationDataTypeDeclaration newInstance(SModel sm, boolean init) {
-    return (EnumerationDataTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EnumerationDataTypeDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EnumerationDataTypeDeclaration newInstance(SModel sm) {

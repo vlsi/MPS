@@ -54,7 +54,7 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept, I
   }
 
   public DataTypeDeclaration getDataType() {
-    return (DataTypeDeclaration)this.getReferent(DataTypeDeclaration.class, PropertyDeclaration.DATA_TYPE);
+    return (DataTypeDeclaration) this.getReferent(DataTypeDeclaration.class, PropertyDeclaration.DATA_TYPE);
   }
 
   public void setDataType(DataTypeDeclaration node) {
@@ -62,7 +62,7 @@ public class PropertyDeclaration extends BaseConcept implements INamedConcept, I
   }
 
   public static PropertyDeclaration newInstance(SModel sm, boolean init) {
-    return (PropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyDeclaration newInstance(SModel sm) {

@@ -28,7 +28,7 @@ public class CellModel_RefNodeList extends CellModel_ListWithRole {
   }
 
   public CellActionMapDeclaration getElementActionMap() {
-    return (CellActionMapDeclaration)this.getReferent(CellActionMapDeclaration.class, CellModel_RefNodeList.ELEMENT_ACTION_MAP);
+    return (CellActionMapDeclaration) this.getReferent(CellActionMapDeclaration.class, CellModel_RefNodeList.ELEMENT_ACTION_MAP);
   }
 
   public void setElementActionMap(CellActionMapDeclaration node) {
@@ -44,7 +44,7 @@ public class CellModel_RefNodeList extends CellModel_ListWithRole {
   }
 
   public CellMenuDescriptor getElementMenuDescriptor() {
-    return (CellMenuDescriptor)this.getChild(CellMenuDescriptor.class, CellModel_RefNodeList.ELEMENT_MENU_DESCRIPTOR);
+    return (CellMenuDescriptor) this.getChild(CellMenuDescriptor.class, CellModel_RefNodeList.ELEMENT_MENU_DESCRIPTOR);
   }
 
   public void setElementMenuDescriptor(CellMenuDescriptor node) {
@@ -52,7 +52,7 @@ public class CellModel_RefNodeList extends CellModel_ListWithRole {
   }
 
   public QueryFunction_NodeListFilter getFilter() {
-    return (QueryFunction_NodeListFilter)this.getChild(QueryFunction_NodeListFilter.class, CellModel_RefNodeList.FILTER);
+    return (QueryFunction_NodeListFilter) this.getChild(QueryFunction_NodeListFilter.class, CellModel_RefNodeList.FILTER);
   }
 
   public void setFilter(QueryFunction_NodeListFilter node) {
@@ -60,7 +60,7 @@ public class CellModel_RefNodeList extends CellModel_ListWithRole {
   }
 
   public static CellModel_RefNodeList newInstance(SModel sm, boolean init) {
-    return (CellModel_RefNodeList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_RefNodeList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_RefNodeList newInstance(SModel sm) {

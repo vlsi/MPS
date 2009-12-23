@@ -10,6 +10,6 @@ public class Editor_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

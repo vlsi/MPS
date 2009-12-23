@@ -16,7 +16,7 @@ public class QueryFunction_NodeFactory extends ConceptFunction {
   }
 
   public static QueryFunction_NodeFactory newInstance(SModel sm, boolean init) {
-    return (QueryFunction_NodeFactory)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_NodeFactory) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_NodeFactory", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_NodeFactory newInstance(SModel sm) {

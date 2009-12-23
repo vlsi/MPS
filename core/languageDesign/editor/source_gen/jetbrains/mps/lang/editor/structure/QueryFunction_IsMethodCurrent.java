@@ -16,7 +16,7 @@ public class QueryFunction_IsMethodCurrent extends ConceptFunction {
   }
 
   public static QueryFunction_IsMethodCurrent newInstance(SModel sm, boolean init) {
-    return (QueryFunction_IsMethodCurrent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_IsMethodCurrent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_IsMethodCurrent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_IsMethodCurrent newInstance(SModel sm) {

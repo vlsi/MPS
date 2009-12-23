@@ -19,7 +19,7 @@ public class ModelAccessor extends BaseConcept {
   }
 
   public QueryFunction_ModelAccess_Getter getGetter() {
-    return (QueryFunction_ModelAccess_Getter)this.getChild(QueryFunction_ModelAccess_Getter.class, ModelAccessor.GETTER);
+    return (QueryFunction_ModelAccess_Getter) this.getChild(QueryFunction_ModelAccess_Getter.class, ModelAccessor.GETTER);
   }
 
   public void setGetter(QueryFunction_ModelAccess_Getter node) {
@@ -27,7 +27,7 @@ public class ModelAccessor extends BaseConcept {
   }
 
   public QueryFunction_ModelAccess_Setter getSetter() {
-    return (QueryFunction_ModelAccess_Setter)this.getChild(QueryFunction_ModelAccess_Setter.class, ModelAccessor.SETTER);
+    return (QueryFunction_ModelAccess_Setter) this.getChild(QueryFunction_ModelAccess_Setter.class, ModelAccessor.SETTER);
   }
 
   public void setSetter(QueryFunction_ModelAccess_Setter node) {
@@ -35,7 +35,7 @@ public class ModelAccessor extends BaseConcept {
   }
 
   public QueryFunction_ModelAccess_Validator getValidator() {
-    return (QueryFunction_ModelAccess_Validator)this.getChild(QueryFunction_ModelAccess_Validator.class, ModelAccessor.VALIDATOR);
+    return (QueryFunction_ModelAccess_Validator) this.getChild(QueryFunction_ModelAccess_Validator.class, ModelAccessor.VALIDATOR);
   }
 
   public void setValidator(QueryFunction_ModelAccess_Validator node) {
@@ -43,7 +43,7 @@ public class ModelAccessor extends BaseConcept {
   }
 
   public static ModelAccessor newInstance(SModel sm, boolean init) {
-    return (ModelAccessor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ModelAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ModelAccessor) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ModelAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ModelAccessor newInstance(SModel sm) {

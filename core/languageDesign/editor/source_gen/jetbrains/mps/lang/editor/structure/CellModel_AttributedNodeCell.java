@@ -15,7 +15,7 @@ public class CellModel_AttributedNodeCell extends EditorCellModel {
   }
 
   public static CellModel_AttributedNodeCell newInstance(SModel sm, boolean init) {
-    return (CellModel_AttributedNodeCell)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_AttributedNodeCell) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_AttributedNodeCell", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_AttributedNodeCell newInstance(SModel sm) {

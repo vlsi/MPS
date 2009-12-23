@@ -15,7 +15,7 @@ public class CellModel_AttributedLinkCell extends EditorCellModel {
   }
 
   public static CellModel_AttributedLinkCell newInstance(SModel sm, boolean init) {
-    return (CellModel_AttributedLinkCell)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_AttributedLinkCell) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_AttributedLinkCell", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_AttributedLinkCell newInstance(SModel sm) {

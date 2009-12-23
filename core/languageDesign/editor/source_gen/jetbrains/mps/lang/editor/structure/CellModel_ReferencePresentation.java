@@ -15,7 +15,7 @@ public class CellModel_ReferencePresentation extends EditorCellModel {
   }
 
   public static CellModel_ReferencePresentation newInstance(SModel sm, boolean init) {
-    return (CellModel_ReferencePresentation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_ReferencePresentation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_ReferencePresentation newInstance(SModel sm) {

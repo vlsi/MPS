@@ -43,7 +43,7 @@ public class QueryMethodIdEditorProviderExpression extends Expression {
   }
 
   public PropertyDeclaration getQueryIdProperty() {
-    return (PropertyDeclaration)this.getReferent(PropertyDeclaration.class, QueryMethodIdEditorProviderExpression.QUERY_ID_PROPERTY);
+    return (PropertyDeclaration) this.getReferent(PropertyDeclaration.class, QueryMethodIdEditorProviderExpression.QUERY_ID_PROPERTY);
   }
 
   public void setQueryIdProperty(PropertyDeclaration node) {
@@ -51,7 +51,7 @@ public class QueryMethodIdEditorProviderExpression extends Expression {
   }
 
   public Type getReturnType() {
-    return (Type)this.getChild(Type.class, QueryMethodIdEditorProviderExpression.RETURN_TYPE);
+    return (Type) this.getChild(Type.class, QueryMethodIdEditorProviderExpression.RETURN_TYPE);
   }
 
   public void setReturnType(Type node) {
@@ -99,7 +99,7 @@ public class QueryMethodIdEditorProviderExpression extends Expression {
   }
 
   public static QueryMethodIdEditorProviderExpression newInstance(SModel sm, boolean init) {
-    return (QueryMethodIdEditorProviderExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryMethodIdEditorProviderExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryMethodIdEditorProviderExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryMethodIdEditorProviderExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryMethodIdEditorProviderExpression newInstance(SModel sm) {

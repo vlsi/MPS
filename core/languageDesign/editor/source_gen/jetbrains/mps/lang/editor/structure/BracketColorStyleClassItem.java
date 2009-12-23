@@ -15,7 +15,7 @@ public class BracketColorStyleClassItem extends ColorStyleClassItem {
   }
 
   public static BracketColorStyleClassItem newInstance(SModel sm, boolean init) {
-    return (BracketColorStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BracketColorStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.BracketColorStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BracketColorStyleClassItem newInstance(SModel sm) {

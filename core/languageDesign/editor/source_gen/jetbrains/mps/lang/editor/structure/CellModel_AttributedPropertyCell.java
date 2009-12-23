@@ -15,7 +15,7 @@ public class CellModel_AttributedPropertyCell extends EditorCellModel {
   }
 
   public static CellModel_AttributedPropertyCell newInstance(SModel sm, boolean init) {
-    return (CellModel_AttributedPropertyCell)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_AttributedPropertyCell) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_AttributedPropertyCell", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_AttributedPropertyCell newInstance(SModel sm) {

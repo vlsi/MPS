@@ -18,7 +18,7 @@ public class AbstractComponent extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getConceptDeclaration() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, AbstractComponent.CONCEPT_DECLARATION);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, AbstractComponent.CONCEPT_DECLARATION);
   }
 
   public void setConceptDeclaration(AbstractConceptDeclaration node) {
@@ -26,7 +26,7 @@ public class AbstractComponent extends BaseConcept {
   }
 
   public static AbstractComponent newInstance(SModel sm, boolean init) {
-    return (AbstractComponent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractComponent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractComponent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractComponent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractComponent newInstance(SModel sm) {

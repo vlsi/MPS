@@ -43,7 +43,7 @@ public class EnumerationMemberDeclaration extends BaseConcept {
   }
 
   public static EnumerationMemberDeclaration newInstance(SModel sm, boolean init) {
-    return (EnumerationMemberDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EnumerationMemberDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EnumerationMemberDeclaration newInstance(SModel sm) {

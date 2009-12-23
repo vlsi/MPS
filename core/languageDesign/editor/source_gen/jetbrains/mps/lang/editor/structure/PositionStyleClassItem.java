@@ -25,7 +25,7 @@ public class PositionStyleClassItem extends StyleClassItem {
   }
 
   public static PositionStyleClassItem newInstance(SModel sm, boolean init) {
-    return (PositionStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.PositionStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PositionStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.PositionStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PositionStyleClassItem newInstance(SModel sm) {

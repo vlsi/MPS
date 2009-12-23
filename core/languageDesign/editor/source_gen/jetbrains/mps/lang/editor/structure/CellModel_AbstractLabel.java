@@ -29,7 +29,7 @@ public class CellModel_AbstractLabel extends EditorCellModel {
   }
 
   public QueryFunction_Color getCellForegroundFunction() {
-    return (QueryFunction_Color)this.getChild(QueryFunction_Color.class, CellModel_AbstractLabel.CELL_FOREGROUND_FUNCTION);
+    return (QueryFunction_Color) this.getChild(QueryFunction_Color.class, CellModel_AbstractLabel.CELL_FOREGROUND_FUNCTION);
   }
 
   public void setCellForegroundFunction(QueryFunction_Color node) {
@@ -37,7 +37,7 @@ public class CellModel_AbstractLabel extends EditorCellModel {
   }
 
   public QueryFunction_Color getTextForegroundEmptyFunction() {
-    return (QueryFunction_Color)this.getChild(QueryFunction_Color.class, CellModel_AbstractLabel.TEXT_FOREGROUND_EMPTY_FUNCTION);
+    return (QueryFunction_Color) this.getChild(QueryFunction_Color.class, CellModel_AbstractLabel.TEXT_FOREGROUND_EMPTY_FUNCTION);
   }
 
   public void setTextForegroundEmptyFunction(QueryFunction_Color node) {
@@ -45,7 +45,7 @@ public class CellModel_AbstractLabel extends EditorCellModel {
   }
 
   public QueryFunction_Color getTextBackgroundFunction() {
-    return (QueryFunction_Color)this.getChild(QueryFunction_Color.class, CellModel_AbstractLabel.TEXT_BACKGROUND_FUNCTION);
+    return (QueryFunction_Color) this.getChild(QueryFunction_Color.class, CellModel_AbstractLabel.TEXT_BACKGROUND_FUNCTION);
   }
 
   public void setTextBackgroundFunction(QueryFunction_Color node) {
@@ -53,7 +53,7 @@ public class CellModel_AbstractLabel extends EditorCellModel {
   }
 
   public QueryFunction_Color getTextBgColorSelectedFunction() {
-    return (QueryFunction_Color)this.getChild(QueryFunction_Color.class, CellModel_AbstractLabel.TEXT_BG_COLOR_SELECTED_FUNCTION);
+    return (QueryFunction_Color) this.getChild(QueryFunction_Color.class, CellModel_AbstractLabel.TEXT_BG_COLOR_SELECTED_FUNCTION);
   }
 
   public void setTextBgColorSelectedFunction(QueryFunction_Color node) {
@@ -61,7 +61,7 @@ public class CellModel_AbstractLabel extends EditorCellModel {
   }
 
   public static CellModel_AbstractLabel newInstance(SModel sm, boolean init) {
-    return (CellModel_AbstractLabel)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_AbstractLabel) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_AbstractLabel", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_AbstractLabel newInstance(SModel sm) {

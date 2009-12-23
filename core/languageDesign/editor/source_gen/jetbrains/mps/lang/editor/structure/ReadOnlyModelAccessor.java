@@ -17,7 +17,7 @@ public class ReadOnlyModelAccessor extends BaseConcept {
   }
 
   public QueryFunction_ModelAccess_Getter getGetter() {
-    return (QueryFunction_ModelAccess_Getter)this.getChild(QueryFunction_ModelAccess_Getter.class, ReadOnlyModelAccessor.GETTER);
+    return (QueryFunction_ModelAccess_Getter) this.getChild(QueryFunction_ModelAccess_Getter.class, ReadOnlyModelAccessor.GETTER);
   }
 
   public void setGetter(QueryFunction_ModelAccess_Getter node) {
@@ -25,7 +25,7 @@ public class ReadOnlyModelAccessor extends BaseConcept {
   }
 
   public static ReadOnlyModelAccessor newInstance(SModel sm, boolean init) {
-    return (ReadOnlyModelAccessor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReadOnlyModelAccessor) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReadOnlyModelAccessor newInstance(SModel sm) {

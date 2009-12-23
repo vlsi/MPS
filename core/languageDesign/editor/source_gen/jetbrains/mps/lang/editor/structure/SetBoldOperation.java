@@ -15,7 +15,7 @@ public class SetBoldOperation extends AbstractStyledTextOperation {
   }
 
   public static SetBoldOperation newInstance(SModel sm, boolean init) {
-    return (SetBoldOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.SetBoldOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SetBoldOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.SetBoldOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SetBoldOperation newInstance(SModel sm) {

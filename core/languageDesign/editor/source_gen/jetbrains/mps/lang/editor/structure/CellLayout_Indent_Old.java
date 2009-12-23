@@ -15,7 +15,7 @@ public class CellLayout_Indent_Old extends CellLayout {
   }
 
   public static CellLayout_Indent_Old newInstance(SModel sm, boolean init) {
-    return (CellLayout_Indent_Old)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellLayout_Indent_Old", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellLayout_Indent_Old) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellLayout_Indent_Old", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellLayout_Indent_Old newInstance(SModel sm) {

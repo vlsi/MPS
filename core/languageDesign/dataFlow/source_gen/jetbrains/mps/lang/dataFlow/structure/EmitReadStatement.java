@@ -15,7 +15,7 @@ public class EmitReadStatement extends BaseEmitVariableStatement {
   }
 
   public static EmitReadStatement newInstance(SModel sm, boolean init) {
-    return (EmitReadStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitReadStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EmitReadStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitReadStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EmitReadStatement newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class QueryFunction_Boolean extends QueryFunction_StyleParameter {
   }
 
   public static QueryFunction_Boolean newInstance(SModel sm, boolean init) {
-    return (QueryFunction_Boolean)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_Boolean", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_Boolean) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_Boolean", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_Boolean newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class StyledTextType extends Type {
   }
 
   public static StyledTextType newInstance(SModel sm, boolean init) {
-    return (StyledTextType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyledTextType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StyledTextType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyledTextType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StyledTextType newInstance(SModel sm) {

@@ -58,7 +58,7 @@ public class CellKeyMapItem extends BaseConcept {
   }
 
   public CellKeyMap_IsApplicableFunction getIsApplicableFunction() {
-    return (CellKeyMap_IsApplicableFunction)this.getChild(CellKeyMap_IsApplicableFunction.class, CellKeyMapItem.IS_APPLICABLE_FUNCTION);
+    return (CellKeyMap_IsApplicableFunction) this.getChild(CellKeyMap_IsApplicableFunction.class, CellKeyMapItem.IS_APPLICABLE_FUNCTION);
   }
 
   public void setIsApplicableFunction(CellKeyMap_IsApplicableFunction node) {
@@ -66,7 +66,7 @@ public class CellKeyMapItem extends BaseConcept {
   }
 
   public CellKeyMap_ExecuteFunction getExecuteFunction() {
-    return (CellKeyMap_ExecuteFunction)this.getChild(CellKeyMap_ExecuteFunction.class, CellKeyMapItem.EXECUTE_FUNCTION);
+    return (CellKeyMap_ExecuteFunction) this.getChild(CellKeyMap_ExecuteFunction.class, CellKeyMapItem.EXECUTE_FUNCTION);
   }
 
   public void setExecuteFunction(CellKeyMap_ExecuteFunction node) {
@@ -94,7 +94,7 @@ public class CellKeyMapItem extends BaseConcept {
   }
 
   public static CellKeyMapItem newInstance(SModel sm, boolean init) {
-    return (CellKeyMapItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMapItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellKeyMapItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMapItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellKeyMapItem newInstance(SModel sm) {

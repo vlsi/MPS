@@ -27,6 +27,6 @@ public class ConceptLink_conceptLinkDeclaration_ReferentConstraint extends BaseN
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     // concept links declared in hierarchy of enclosing concept 
     SNode enclosingConcept = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration", true, false);
-    return new ConceptAndSuperConceptsScope(((ConceptDeclaration)SNodeOperations.getAdapter(enclosingConcept)));
+    return new ConceptAndSuperConceptsScope(((ConceptDeclaration) SNodeOperations.getAdapter(enclosingConcept)));
   }
 }

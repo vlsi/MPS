@@ -63,7 +63,7 @@ public class EditorCellModel extends BaseConcept implements IStyleContainer {
   }
 
   public CellActionMapDeclaration getActionMap() {
-    return (CellActionMapDeclaration)this.getReferent(CellActionMapDeclaration.class, EditorCellModel.ACTION_MAP);
+    return (CellActionMapDeclaration) this.getReferent(CellActionMapDeclaration.class, EditorCellModel.ACTION_MAP);
   }
 
   public void setActionMap(CellActionMapDeclaration node) {
@@ -71,7 +71,7 @@ public class EditorCellModel extends BaseConcept implements IStyleContainer {
   }
 
   public CellKeyMapDeclaration getKeyMap() {
-    return (CellKeyMapDeclaration)this.getReferent(CellKeyMapDeclaration.class, EditorCellModel.KEY_MAP);
+    return (CellKeyMapDeclaration) this.getReferent(CellKeyMapDeclaration.class, EditorCellModel.KEY_MAP);
   }
 
   public void setKeyMap(CellKeyMapDeclaration node) {
@@ -79,7 +79,7 @@ public class EditorCellModel extends BaseConcept implements IStyleContainer {
   }
 
   public StyleSheetClass getStyleClass() {
-    return (StyleSheetClass)this.getReferent(StyleSheetClass.class, EditorCellModel.STYLE_CLASS);
+    return (StyleSheetClass) this.getReferent(StyleSheetClass.class, EditorCellModel.STYLE_CLASS);
   }
 
   public void setStyleClass(StyleSheetClass node) {
@@ -87,7 +87,7 @@ public class EditorCellModel extends BaseConcept implements IStyleContainer {
   }
 
   public QueryFunction_NodeCondition getRenderingCondition() {
-    return (QueryFunction_NodeCondition)this.getChild(QueryFunction_NodeCondition.class, EditorCellModel.RENDERING_CONDITION);
+    return (QueryFunction_NodeCondition) this.getChild(QueryFunction_NodeCondition.class, EditorCellModel.RENDERING_CONDITION);
   }
 
   public void setRenderingCondition(QueryFunction_NodeCondition node) {
@@ -95,7 +95,7 @@ public class EditorCellModel extends BaseConcept implements IStyleContainer {
   }
 
   public CellMenuDescriptor getMenuDescriptor() {
-    return (CellMenuDescriptor)this.getChild(CellMenuDescriptor.class, EditorCellModel.MENU_DESCRIPTOR);
+    return (CellMenuDescriptor) this.getChild(CellMenuDescriptor.class, EditorCellModel.MENU_DESCRIPTOR);
   }
 
   public void setMenuDescriptor(CellMenuDescriptor node) {
@@ -103,7 +103,7 @@ public class EditorCellModel extends BaseConcept implements IStyleContainer {
   }
 
   public QueryFunction_Color getCellBackgroundFunction() {
-    return (QueryFunction_Color)this.getChild(QueryFunction_Color.class, EditorCellModel.CELL_BACKGROUND_FUNCTION);
+    return (QueryFunction_Color) this.getChild(QueryFunction_Color.class, EditorCellModel.CELL_BACKGROUND_FUNCTION);
   }
 
   public void setCellBackgroundFunction(QueryFunction_Color node) {
@@ -111,7 +111,7 @@ public class EditorCellModel extends BaseConcept implements IStyleContainer {
   }
 
   public QueryFunction_NodeCondition getFocusPolicyApplicable() {
-    return (QueryFunction_NodeCondition)this.getChild(QueryFunction_NodeCondition.class, EditorCellModel.FOCUS_POLICY_APPLICABLE);
+    return (QueryFunction_NodeCondition) this.getChild(QueryFunction_NodeCondition.class, EditorCellModel.FOCUS_POLICY_APPLICABLE);
   }
 
   public void setFocusPolicyApplicable(QueryFunction_NodeCondition node) {
@@ -139,7 +139,7 @@ public class EditorCellModel extends BaseConcept implements IStyleContainer {
   }
 
   public static EditorCellModel newInstance(SModel sm, boolean init) {
-    return (EditorCellModel)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.EditorCellModel", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EditorCellModel) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.EditorCellModel", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EditorCellModel newInstance(SModel sm) {

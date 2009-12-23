@@ -16,7 +16,7 @@ public class CellMenuPart_Generic_Group_Handler extends ConceptFunction {
   }
 
   public static CellMenuPart_Generic_Group_Handler newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_Generic_Group_Handler)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_Generic_Group_Handler) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_Generic_Group_Handler newInstance(SModel sm) {

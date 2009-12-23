@@ -17,7 +17,7 @@ public class ReferenceConceptLink extends ConceptLink {
   }
 
   public BaseConcept getTarget() {
-    return (BaseConcept)this.getReferent(BaseConcept.class, ReferenceConceptLink.TARGET);
+    return (BaseConcept) this.getReferent(BaseConcept.class, ReferenceConceptLink.TARGET);
   }
 
   public void setTarget(BaseConcept node) {
@@ -33,7 +33,7 @@ public class ReferenceConceptLink extends ConceptLink {
   }
 
   public static ReferenceConceptLink newInstance(SModel sm, boolean init) {
-    return (ReferenceConceptLink)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ReferenceConceptLink", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReferenceConceptLink) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ReferenceConceptLink", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReferenceConceptLink newInstance(SModel sm) {

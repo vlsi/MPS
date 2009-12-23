@@ -15,7 +15,7 @@ public class CellLayout_Vertical extends CellLayout {
   }
 
   public static CellLayout_Vertical newInstance(SModel sm, boolean init) {
-    return (CellLayout_Vertical)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellLayout_Vertical) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellLayout_Vertical", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellLayout_Vertical newInstance(SModel sm) {

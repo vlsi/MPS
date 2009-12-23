@@ -54,7 +54,7 @@ public class ConceptEditorDeclaration extends BaseEditorComponent implements INa
   }
 
   public EditorCellModel getInspectedCellModel() {
-    return (EditorCellModel)this.getChild(EditorCellModel.class, ConceptEditorDeclaration.INSPECTED_CELL_MODEL);
+    return (EditorCellModel) this.getChild(EditorCellModel.class, ConceptEditorDeclaration.INSPECTED_CELL_MODEL);
   }
 
   public void setInspectedCellModel(EditorCellModel node) {
@@ -62,7 +62,7 @@ public class ConceptEditorDeclaration extends BaseEditorComponent implements INa
   }
 
   public static ConceptEditorDeclaration newInstance(SModel sm, boolean init) {
-    return (ConceptEditorDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptEditorDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptEditorDeclaration newInstance(SModel sm) {

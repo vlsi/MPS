@@ -57,7 +57,7 @@ public class HelpHelper {
       return false;
     }
     if (module instanceof Language) {
-      Language language = ((Language)module);
+      Language language = ((Language) module);
       LanguageAspect aspect = language.getAspectForModel(model);
       if (aspect == null) {
         return false;
@@ -70,7 +70,7 @@ public class HelpHelper {
 
   public static void showHelpForAspect(IModule contextModule, SModelDescriptor contextModel) {
     if (contextModule instanceof Language) {
-      Language language = ((Language)contextModule);
+      Language language = ((Language) contextModule);
       LanguageAspect aspect = language.getAspectForModel(contextModel);
       BrowserUtil.launchBrowser(aspect.getHelpURL());
     } else {

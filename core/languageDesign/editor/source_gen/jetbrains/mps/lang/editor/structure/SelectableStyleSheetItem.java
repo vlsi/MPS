@@ -15,7 +15,7 @@ public class SelectableStyleSheetItem extends BooleanStyleSheetItem {
   }
 
   public static SelectableStyleSheetItem newInstance(SModel sm, boolean init) {
-    return (SelectableStyleSheetItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SelectableStyleSheetItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SelectableStyleSheetItem newInstance(SModel sm) {

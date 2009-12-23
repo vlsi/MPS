@@ -27,7 +27,7 @@ public class CellModel_TransactionalProperty extends CellModel_AbstractLabel {
   }
 
   public PropertyDeclaration getProperty() {
-    return (PropertyDeclaration)this.getReferent(PropertyDeclaration.class, CellModel_TransactionalProperty.PROPERTY);
+    return (PropertyDeclaration) this.getReferent(PropertyDeclaration.class, CellModel_TransactionalProperty.PROPERTY);
   }
 
   public void setProperty(PropertyDeclaration node) {
@@ -35,7 +35,7 @@ public class CellModel_TransactionalProperty extends CellModel_AbstractLabel {
   }
 
   public TransactionalPropertyHandler getHandlerBlock() {
-    return (TransactionalPropertyHandler)this.getChild(TransactionalPropertyHandler.class, CellModel_TransactionalProperty.HANDLER_BLOCK);
+    return (TransactionalPropertyHandler) this.getChild(TransactionalPropertyHandler.class, CellModel_TransactionalProperty.HANDLER_BLOCK);
   }
 
   public void setHandlerBlock(TransactionalPropertyHandler node) {
@@ -43,7 +43,7 @@ public class CellModel_TransactionalProperty extends CellModel_AbstractLabel {
   }
 
   public static CellModel_TransactionalProperty newInstance(SModel sm, boolean init) {
-    return (CellModel_TransactionalProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_TransactionalProperty) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_TransactionalProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_TransactionalProperty newInstance(SModel sm) {

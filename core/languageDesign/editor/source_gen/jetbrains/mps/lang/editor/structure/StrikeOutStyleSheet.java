@@ -15,7 +15,7 @@ public class StrikeOutStyleSheet extends BooleanStyleSheetItem {
   }
 
   public static StrikeOutStyleSheet newInstance(SModel sm, boolean init) {
-    return (StrikeOutStyleSheet)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StrikeOutStyleSheet) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StrikeOutStyleSheet", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StrikeOutStyleSheet newInstance(SModel sm) {

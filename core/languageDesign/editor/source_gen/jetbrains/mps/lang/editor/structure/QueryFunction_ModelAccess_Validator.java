@@ -16,7 +16,7 @@ public class QueryFunction_ModelAccess_Validator extends ConceptFunction {
   }
 
   public static QueryFunction_ModelAccess_Validator newInstance(SModel sm, boolean init) {
-    return (QueryFunction_ModelAccess_Validator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_ModelAccess_Validator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_ModelAccess_Validator newInstance(SModel sm) {

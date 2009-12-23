@@ -15,7 +15,7 @@ public class LastPositionAllowedStyleClassItem extends BooleanStyleSheetItem {
   }
 
   public static LastPositionAllowedStyleClassItem newInstance(SModel sm, boolean init) {
-    return (LastPositionAllowedStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LastPositionAllowedStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.LastPositionAllowedStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LastPositionAllowedStyleClassItem newInstance(SModel sm) {

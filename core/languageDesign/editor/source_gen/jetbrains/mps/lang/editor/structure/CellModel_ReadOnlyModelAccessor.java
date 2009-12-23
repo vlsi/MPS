@@ -16,7 +16,7 @@ public class CellModel_ReadOnlyModelAccessor extends CellModel_AbstractLabel {
   }
 
   public ReadOnlyModelAccessor getModelAccessor() {
-    return (ReadOnlyModelAccessor)this.getChild(ReadOnlyModelAccessor.class, CellModel_ReadOnlyModelAccessor.MODEL_ACCESSOR);
+    return (ReadOnlyModelAccessor) this.getChild(ReadOnlyModelAccessor.class, CellModel_ReadOnlyModelAccessor.MODEL_ACCESSOR);
   }
 
   public void setModelAccessor(ReadOnlyModelAccessor node) {
@@ -24,7 +24,7 @@ public class CellModel_ReadOnlyModelAccessor extends CellModel_AbstractLabel {
   }
 
   public static CellModel_ReadOnlyModelAccessor newInstance(SModel sm, boolean init) {
-    return (CellModel_ReadOnlyModelAccessor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_ReadOnlyModelAccessor) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_ReadOnlyModelAccessor newInstance(SModel sm) {

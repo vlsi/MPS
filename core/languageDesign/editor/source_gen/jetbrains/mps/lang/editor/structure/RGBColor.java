@@ -52,7 +52,7 @@ public class RGBColor extends BaseConcept implements IQueryFunction_Color {
   }
 
   public static RGBColor newInstance(SModel sm, boolean init) {
-    return (RGBColor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.RGBColor", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RGBColor) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.RGBColor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RGBColor newInstance(SModel sm) {

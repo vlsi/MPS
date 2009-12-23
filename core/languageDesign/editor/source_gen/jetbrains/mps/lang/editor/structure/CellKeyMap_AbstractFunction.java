@@ -16,7 +16,7 @@ public class CellKeyMap_AbstractFunction extends ConceptFunction {
   }
 
   public static CellKeyMap_AbstractFunction newInstance(SModel sm, boolean init) {
-    return (CellKeyMap_AbstractFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellKeyMap_AbstractFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMap_AbstractFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellKeyMap_AbstractFunction newInstance(SModel sm) {

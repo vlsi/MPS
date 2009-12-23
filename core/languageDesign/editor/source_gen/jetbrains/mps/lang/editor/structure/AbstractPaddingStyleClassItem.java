@@ -25,7 +25,7 @@ public class AbstractPaddingStyleClassItem extends FloatStyleClassItem {
   }
 
   public static AbstractPaddingStyleClassItem newInstance(SModel sm, boolean init) {
-    return (AbstractPaddingStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractPaddingStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractPaddingStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractPaddingStyleClassItem newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class QueryFunction_NodeCondition extends ConceptFunction {
   }
 
   public static QueryFunction_NodeCondition newInstance(SModel sm, boolean init) {
-    return (QueryFunction_NodeCondition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_NodeCondition) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_NodeCondition newInstance(SModel sm) {

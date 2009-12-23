@@ -16,7 +16,7 @@ public class BuilderBlock extends ConceptFunction {
   }
 
   public static BuilderBlock newInstance(SModel sm, boolean init) {
-    return (BuilderBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.BuilderBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BuilderBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.BuilderBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BuilderBlock newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class CellMenuPart_Abstract extends BaseConcept {
   }
 
   public static CellMenuPart_Abstract newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_Abstract)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_Abstract) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_Abstract newInstance(SModel sm) {

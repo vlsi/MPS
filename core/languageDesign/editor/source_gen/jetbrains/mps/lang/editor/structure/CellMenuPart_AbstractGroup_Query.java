@@ -16,7 +16,7 @@ public class CellMenuPart_AbstractGroup_Query extends ConceptFunction {
   }
 
   public static CellMenuPart_AbstractGroup_Query newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_AbstractGroup_Query)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_AbstractGroup_Query) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_AbstractGroup_Query newInstance(SModel sm) {

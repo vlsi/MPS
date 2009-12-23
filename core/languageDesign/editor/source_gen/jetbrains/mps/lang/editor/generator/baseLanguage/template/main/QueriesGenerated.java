@@ -636,7 +636,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1767562947360483777(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode relationDeclaration = SLinkOperations.getTarget(_context.getNode(), "relationDeclaration", false);
-    return RefNodeListHandler.getRoleByRelationDeclaration(((BaseConcept)SNodeOperations.getAdapter(relationDeclaration)));
+    return RefNodeListHandler.getRoleByRelationDeclaration(((BaseConcept) SNodeOperations.getAdapter(relationDeclaration)));
   }
 
   public static Object propertyMacro_GetPropertyValue_2487769997674780509(final IOperationContext operationContext, final PropertyMacroContext _context) {

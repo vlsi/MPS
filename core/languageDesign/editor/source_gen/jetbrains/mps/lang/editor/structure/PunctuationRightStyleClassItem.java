@@ -15,7 +15,7 @@ public class PunctuationRightStyleClassItem extends BooleanStyleSheetItem {
   }
 
   public static PunctuationRightStyleClassItem newInstance(SModel sm, boolean init) {
-    return (PunctuationRightStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PunctuationRightStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PunctuationRightStyleClassItem newInstance(SModel sm) {

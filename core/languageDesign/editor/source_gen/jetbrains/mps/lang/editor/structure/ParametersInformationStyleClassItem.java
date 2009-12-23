@@ -16,7 +16,7 @@ public class ParametersInformationStyleClassItem extends StyleClassItem {
   }
 
   public ParametersInformationQuery getParametersInformation() {
-    return (ParametersInformationQuery)this.getReferent(ParametersInformationQuery.class, ParametersInformationStyleClassItem.PARAMETERS_INFORMATION);
+    return (ParametersInformationQuery) this.getReferent(ParametersInformationQuery.class, ParametersInformationStyleClassItem.PARAMETERS_INFORMATION);
   }
 
   public void setParametersInformation(ParametersInformationQuery node) {
@@ -24,7 +24,7 @@ public class ParametersInformationStyleClassItem extends StyleClassItem {
   }
 
   public static ParametersInformationStyleClassItem newInstance(SModel sm, boolean init) {
-    return (ParametersInformationStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParametersInformationStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ParametersInformationStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParametersInformationStyleClassItem newInstance(SModel sm) {

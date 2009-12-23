@@ -15,7 +15,7 @@ public class PaddingLeftStyleClassItem extends AbstractPaddingStyleClassItem {
   }
 
   public static PaddingLeftStyleClassItem newInstance(SModel sm, boolean init) {
-    return (PaddingLeftStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PaddingLeftStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PaddingLeftStyleClassItem newInstance(SModel sm) {

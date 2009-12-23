@@ -25,7 +25,7 @@ public class BooleanStyleSheetItem extends StyleClassItem {
   }
 
   public QueryFunction_Boolean getQuery() {
-    return (QueryFunction_Boolean)this.getChild(QueryFunction_Boolean.class, BooleanStyleSheetItem.QUERY);
+    return (QueryFunction_Boolean) this.getChild(QueryFunction_Boolean.class, BooleanStyleSheetItem.QUERY);
   }
 
   public void setQuery(QueryFunction_Boolean node) {
@@ -33,7 +33,7 @@ public class BooleanStyleSheetItem extends StyleClassItem {
   }
 
   public static BooleanStyleSheetItem newInstance(SModel sm, boolean init) {
-    return (BooleanStyleSheetItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BooleanStyleSheetItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.BooleanStyleSheetItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BooleanStyleSheetItem newInstance(SModel sm) {

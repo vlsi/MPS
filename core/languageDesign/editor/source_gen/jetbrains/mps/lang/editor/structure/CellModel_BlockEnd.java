@@ -24,7 +24,7 @@ public class CellModel_BlockEnd extends EditorCellModel {
   }
 
   public static CellModel_BlockEnd newInstance(SModel sm, boolean init) {
-    return (CellModel_BlockEnd)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_BlockEnd", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_BlockEnd) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_BlockEnd", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_BlockEnd newInstance(SModel sm) {

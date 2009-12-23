@@ -15,7 +15,7 @@ public class CellLayout_Horizontal extends CellLayout {
   }
 
   public static CellLayout_Horizontal newInstance(SModel sm, boolean init) {
-    return (CellLayout_Horizontal)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellLayout_Horizontal) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellLayout_Horizontal", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellLayout_Horizontal newInstance(SModel sm) {

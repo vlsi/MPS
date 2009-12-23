@@ -48,7 +48,7 @@ public class RenameProperty extends BaseLoggableRefactoring {
     SNode concept = SNodeOperations.getAncestor(refactoringContext.getSelectedNode(), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
     String newPropName = SNodeOperations.getModel(concept).getSModelFqName() + "." + SPropertyOperations.getString(concept, "name");
     
-    refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), newPropName, ((String)refactoringContext.getParameter("newName")));;
+    refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), newPropName, ((String) refactoringContext.getParameter("newName")));;
   }
 
   public List<SModel> getModelsToGenerate(final RefactoringContext refactoringContext) {

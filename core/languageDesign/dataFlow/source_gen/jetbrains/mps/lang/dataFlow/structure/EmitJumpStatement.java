@@ -15,7 +15,7 @@ public class EmitJumpStatement extends BaseEmitJumpStatement {
   }
 
   public static EmitJumpStatement newInstance(SModel sm, boolean init) {
-    return (EmitJumpStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EmitJumpStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EmitJumpStatement newInstance(SModel sm) {

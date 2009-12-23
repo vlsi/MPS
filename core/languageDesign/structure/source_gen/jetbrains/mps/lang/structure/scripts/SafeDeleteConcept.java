@@ -68,7 +68,7 @@ public class SafeDeleteConcept extends BaseGeneratedRefactoring {
 
     SearchResults searchResults = new SearchResults();
     searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), refactoringContext.getSelectedNode(), GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
-    for (SNode aspect : ListSequence.fromList(((List<SNode>)((List)refactoringContext.getParameter("nodeAspects"))))) {
+    for (SNode aspect : ListSequence.fromList(((List<SNode>) ((List) refactoringContext.getParameter("nodeAspects"))))) {
       searchResults.addAll(FindUtils.getSearchResults(new EmptyProgressIndicator(), aspect, GlobalScope.getInstance(), "jetbrains.mps.lang.structure.findUsages.NodeAndDescendantsUsages_Finder"));
     }
 
@@ -77,7 +77,7 @@ public class SafeDeleteConcept extends BaseGeneratedRefactoring {
 
     for (SearchResult<SNode> searchResult : searchResultsCopy) {
       SNode containingRoot = searchResult.getObject().getContainingRoot();
-      if (((List)refactoringContext.getParameter("nodeAspects")).contains(containingRoot)) {
+      if (((List) refactoringContext.getParameter("nodeAspects")).contains(containingRoot)) {
         searchResults.remove(searchResult);
       }
     }
@@ -86,14 +86,14 @@ public class SafeDeleteConcept extends BaseGeneratedRefactoring {
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    for (SNode aspectNode : ((List<SNode>)((List)refactoringContext.getParameter("nodeAspects")))) {
+    for (SNode aspectNode : ((List<SNode>) ((List) refactoringContext.getParameter("nodeAspects")))) {
       SNodeOperations.deleteNode(aspectNode);
     }
     SNodeOperations.deleteNode(refactoringContext.getSelectedNode());
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float)0.75, false));
+    Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float) 0.75, false));
     Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
     if (sourceLanguage != null) {
       MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));

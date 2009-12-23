@@ -15,7 +15,7 @@ public class CellLayout_Flow extends CellLayout {
   }
 
   public static CellLayout_Flow newInstance(SModel sm, boolean init) {
-    return (CellLayout_Flow)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellLayout_Flow", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellLayout_Flow) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellLayout_Flow", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellLayout_Flow newInstance(SModel sm) {

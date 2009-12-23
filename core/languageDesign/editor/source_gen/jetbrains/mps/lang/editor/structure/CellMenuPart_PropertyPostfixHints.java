@@ -16,7 +16,7 @@ public class CellMenuPart_PropertyPostfixHints extends CellMenuPart_Abstract {
   }
 
   public CellMenuPart_PropertyPostfixHints_GetPostfixes getPostfixesFunction() {
-    return (CellMenuPart_PropertyPostfixHints_GetPostfixes)this.getChild(CellMenuPart_PropertyPostfixHints_GetPostfixes.class, CellMenuPart_PropertyPostfixHints.POSTFIXES_FUNCTION);
+    return (CellMenuPart_PropertyPostfixHints_GetPostfixes) this.getChild(CellMenuPart_PropertyPostfixHints_GetPostfixes.class, CellMenuPart_PropertyPostfixHints.POSTFIXES_FUNCTION);
   }
 
   public void setPostfixesFunction(CellMenuPart_PropertyPostfixHints_GetPostfixes node) {
@@ -24,7 +24,7 @@ public class CellMenuPart_PropertyPostfixHints extends CellMenuPart_Abstract {
   }
 
   public static CellMenuPart_PropertyPostfixHints newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_PropertyPostfixHints)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_PropertyPostfixHints) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_PropertyPostfixHints newInstance(SModel sm) {

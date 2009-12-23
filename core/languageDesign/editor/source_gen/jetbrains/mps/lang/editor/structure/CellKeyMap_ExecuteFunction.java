@@ -15,7 +15,7 @@ public class CellKeyMap_ExecuteFunction extends CellKeyMap_AbstractFunction {
   }
 
   public static CellKeyMap_ExecuteFunction newInstance(SModel sm, boolean init) {
-    return (CellKeyMap_ExecuteFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellKeyMap_ExecuteFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellKeyMap_ExecuteFunction newInstance(SModel sm) {

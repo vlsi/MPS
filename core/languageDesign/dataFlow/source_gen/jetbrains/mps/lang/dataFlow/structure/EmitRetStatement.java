@@ -15,7 +15,7 @@ public class EmitRetStatement extends EmitStatement {
   }
 
   public static EmitRetStatement newInstance(SModel sm, boolean init) {
-    return (EmitRetStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitRetStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EmitRetStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitRetStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EmitRetStatement newInstance(SModel sm) {

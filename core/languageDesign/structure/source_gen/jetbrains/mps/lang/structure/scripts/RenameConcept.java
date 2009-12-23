@@ -64,11 +64,11 @@ public class RenameConcept extends BaseGeneratedRefactoring {
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), SNodeOperations.getModel(refactoringContext.getSelectedNode()).getSModelFqName() + "." + ((String)refactoringContext.getParameter("newName")), ((String)refactoringContext.getParameter("newName")));
+    refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), SNodeOperations.getModel(refactoringContext.getSelectedNode()).getSModelFqName() + "." + ((String) refactoringContext.getParameter("newName")), ((String) refactoringContext.getParameter("newName")));
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float)0.75, false));
+    Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float) 0.75, false));
     Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
     if (sourceLanguage != null) {
       MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));

@@ -15,7 +15,7 @@ public class CellMenuPart_ReplaceChildPrimary extends CellMenuPart_Abstract {
   }
 
   public static CellMenuPart_ReplaceChildPrimary newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_ReplaceChildPrimary)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_ReplaceChildPrimary) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChildPrimary", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_ReplaceChildPrimary newInstance(SModel sm) {

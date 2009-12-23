@@ -42,7 +42,7 @@ public class QueryFunction_Color extends QueryFunction_StyleParameter implements
   }
 
   public static QueryFunction_Color newInstance(SModel sm, boolean init) {
-    return (QueryFunction_Color)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_Color", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_Color) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_Color", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_Color newInstance(SModel sm) {

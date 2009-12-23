@@ -25,7 +25,7 @@ public class MatchingLabelStyleClassItem extends StyleClassItem {
   }
 
   public QueryFunction_String getQuery() {
-    return (QueryFunction_String)this.getChild(QueryFunction_String.class, MatchingLabelStyleClassItem.QUERY);
+    return (QueryFunction_String) this.getChild(QueryFunction_String.class, MatchingLabelStyleClassItem.QUERY);
   }
 
   public void setQuery(QueryFunction_String node) {
@@ -33,7 +33,7 @@ public class MatchingLabelStyleClassItem extends StyleClassItem {
   }
 
   public static MatchingLabelStyleClassItem newInstance(SModel sm, boolean init) {
-    return (MatchingLabelStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchingLabelStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatchingLabelStyleClassItem newInstance(SModel sm) {

@@ -25,7 +25,7 @@ public class DefaultBaseLine extends StyleClassItem {
   }
 
   public static DefaultBaseLine newInstance(SModel sm, boolean init) {
-    return (DefaultBaseLine)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.DefaultBaseLine", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DefaultBaseLine) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.DefaultBaseLine", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DefaultBaseLine newInstance(SModel sm) {

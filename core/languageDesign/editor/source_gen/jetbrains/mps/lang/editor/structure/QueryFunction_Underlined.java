@@ -15,7 +15,7 @@ public class QueryFunction_Underlined extends QueryFunction_StyleParameter {
   }
 
   public static QueryFunction_Underlined newInstance(SModel sm, boolean init) {
-    return (QueryFunction_Underlined)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_Underlined", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_Underlined) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_Underlined", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_Underlined newInstance(SModel sm) {

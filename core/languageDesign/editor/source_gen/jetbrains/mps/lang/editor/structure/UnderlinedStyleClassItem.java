@@ -26,7 +26,7 @@ public class UnderlinedStyleClassItem extends StyleClassItem {
   }
 
   public QueryFunction_Underlined getQuery() {
-    return (QueryFunction_Underlined)this.getChild(QueryFunction_Underlined.class, UnderlinedStyleClassItem.QUERY);
+    return (QueryFunction_Underlined) this.getChild(QueryFunction_Underlined.class, UnderlinedStyleClassItem.QUERY);
   }
 
   public void setQuery(QueryFunction_Underlined node) {
@@ -34,7 +34,7 @@ public class UnderlinedStyleClassItem extends StyleClassItem {
   }
 
   public static UnderlinedStyleClassItem newInstance(SModel sm, boolean init) {
-    return (UnderlinedStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UnderlinedStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.UnderlinedStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UnderlinedStyleClassItem newInstance(SModel sm) {

@@ -27,7 +27,7 @@ public class CellModel_Alternation extends EditorCellModel {
   }
 
   public QueryFunction_NodeCondition getAlternationCondition() {
-    return (QueryFunction_NodeCondition)this.getChild(QueryFunction_NodeCondition.class, CellModel_Alternation.ALTERNATION_CONDITION);
+    return (QueryFunction_NodeCondition) this.getChild(QueryFunction_NodeCondition.class, CellModel_Alternation.ALTERNATION_CONDITION);
   }
 
   public void setAlternationCondition(QueryFunction_NodeCondition node) {
@@ -35,7 +35,7 @@ public class CellModel_Alternation extends EditorCellModel {
   }
 
   public EditorCellModel getIfTrueCellModel() {
-    return (EditorCellModel)this.getChild(EditorCellModel.class, CellModel_Alternation.IF_TRUE_CELL_MODEL);
+    return (EditorCellModel) this.getChild(EditorCellModel.class, CellModel_Alternation.IF_TRUE_CELL_MODEL);
   }
 
   public void setIfTrueCellModel(EditorCellModel node) {
@@ -43,7 +43,7 @@ public class CellModel_Alternation extends EditorCellModel {
   }
 
   public EditorCellModel getIfFalseCellModel() {
-    return (EditorCellModel)this.getChild(EditorCellModel.class, CellModel_Alternation.IF_FALSE_CELL_MODEL);
+    return (EditorCellModel) this.getChild(EditorCellModel.class, CellModel_Alternation.IF_FALSE_CELL_MODEL);
   }
 
   public void setIfFalseCellModel(EditorCellModel node) {
@@ -51,7 +51,7 @@ public class CellModel_Alternation extends EditorCellModel {
   }
 
   public static CellModel_Alternation newInstance(SModel sm, boolean init) {
-    return (CellModel_Alternation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Alternation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_Alternation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Alternation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_Alternation newInstance(SModel sm) {

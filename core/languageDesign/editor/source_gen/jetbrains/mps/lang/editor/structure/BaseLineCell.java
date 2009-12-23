@@ -15,7 +15,7 @@ public class BaseLineCell extends BooleanStyleSheetItem {
   }
 
   public static BaseLineCell newInstance(SModel sm, boolean init) {
-    return (BaseLineCell)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.BaseLineCell", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseLineCell) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.BaseLineCell", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseLineCell newInstance(SModel sm) {

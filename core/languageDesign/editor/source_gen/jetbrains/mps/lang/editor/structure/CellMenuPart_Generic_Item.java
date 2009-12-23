@@ -25,7 +25,7 @@ public class CellMenuPart_Generic_Item extends CellMenuPart_Abstract {
   }
 
   public CellMenuPart_Generic_Item_Handler getHandlerFunction() {
-    return (CellMenuPart_Generic_Item_Handler)this.getChild(CellMenuPart_Generic_Item_Handler.class, CellMenuPart_Generic_Item.HANDLER_FUNCTION);
+    return (CellMenuPart_Generic_Item_Handler) this.getChild(CellMenuPart_Generic_Item_Handler.class, CellMenuPart_Generic_Item.HANDLER_FUNCTION);
   }
 
   public void setHandlerFunction(CellMenuPart_Generic_Item_Handler node) {
@@ -33,7 +33,7 @@ public class CellMenuPart_Generic_Item extends CellMenuPart_Abstract {
   }
 
   public static CellMenuPart_Generic_Item newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_Generic_Item)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_Generic_Item) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_Generic_Item newInstance(SModel sm) {

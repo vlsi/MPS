@@ -15,7 +15,7 @@ public class IndentLayoutOnNewLineStyleClassItem extends BooleanStyleSheetItem {
   }
 
   public static IndentLayoutOnNewLineStyleClassItem newInstance(SModel sm, boolean init) {
-    return (IndentLayoutOnNewLineStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IndentLayoutOnNewLineStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutOnNewLineStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IndentLayoutOnNewLineStyleClassItem newInstance(SModel sm) {

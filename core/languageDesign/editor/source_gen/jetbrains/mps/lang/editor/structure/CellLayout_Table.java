@@ -15,7 +15,7 @@ public class CellLayout_Table extends CellLayout {
   }
 
   public static CellLayout_Table newInstance(SModel sm, boolean init) {
-    return (CellLayout_Table)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellLayout_Table", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellLayout_Table) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellLayout_Table", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellLayout_Table newInstance(SModel sm) {

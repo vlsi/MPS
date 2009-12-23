@@ -15,7 +15,7 @@ public class EditableStyleClassItem extends BooleanStyleSheetItem {
   }
 
   public static EditableStyleClassItem newInstance(SModel sm, boolean init) {
-    return (EditableStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.EditableStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EditableStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.EditableStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EditableStyleClassItem newInstance(SModel sm) {

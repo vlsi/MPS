@@ -15,7 +15,7 @@ public class InlineEditorComponent extends BaseEditorComponent {
   }
 
   public static InlineEditorComponent newInstance(SModel sm, boolean init) {
-    return (InlineEditorComponent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.InlineEditorComponent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InlineEditorComponent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.InlineEditorComponent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InlineEditorComponent newInstance(SModel sm) {

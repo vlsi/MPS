@@ -15,7 +15,7 @@ public class HorizontalGapStyleClassItem extends AbstractPaddingStyleClassItem {
   }
 
   public static HorizontalGapStyleClassItem newInstance(SModel sm, boolean init) {
-    return (HorizontalGapStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (HorizontalGapStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.HorizontalGapStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static HorizontalGapStyleClassItem newInstance(SModel sm) {

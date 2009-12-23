@@ -15,6 +15,6 @@ public class fix_Braces_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    SPropertyOperations.set(((SNode)fix_Braces_QuickFix.this.getField("collectionCell")[0]), "usesBraces", "" + false);
+    SPropertyOperations.set(((SNode) fix_Braces_QuickFix.this.getField("collectionCell")[0]), "usesBraces", "" + false);
   }
 }

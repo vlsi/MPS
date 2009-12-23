@@ -16,7 +16,7 @@ public class CellActionMap_ExecuteFunction extends ConceptFunction {
   }
 
   public static CellActionMap_ExecuteFunction newInstance(SModel sm, boolean init) {
-    return (CellActionMap_ExecuteFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellActionMap_ExecuteFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellActionMap_ExecuteFunction newInstance(SModel sm) {

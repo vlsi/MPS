@@ -16,7 +16,7 @@ public class CellMenuPart_PropertyValues extends CellMenuPart_Abstract {
   }
 
   public CellMenuPart_PropertyValues_GetValues getValuesFunction() {
-    return (CellMenuPart_PropertyValues_GetValues)this.getChild(CellMenuPart_PropertyValues_GetValues.class, CellMenuPart_PropertyValues.VALUES_FUNCTION);
+    return (CellMenuPart_PropertyValues_GetValues) this.getChild(CellMenuPart_PropertyValues_GetValues.class, CellMenuPart_PropertyValues.VALUES_FUNCTION);
   }
 
   public void setValuesFunction(CellMenuPart_PropertyValues_GetValues node) {
@@ -24,7 +24,7 @@ public class CellMenuPart_PropertyValues extends CellMenuPart_Abstract {
   }
 
   public static CellMenuPart_PropertyValues newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_PropertyValues)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_PropertyValues) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_PropertyValues newInstance(SModel sm) {

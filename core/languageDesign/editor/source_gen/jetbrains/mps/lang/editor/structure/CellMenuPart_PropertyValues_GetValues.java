@@ -16,7 +16,7 @@ public class CellMenuPart_PropertyValues_GetValues extends ConceptFunction {
   }
 
   public static CellMenuPart_PropertyValues_GetValues newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_PropertyValues_GetValues)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_PropertyValues_GetValues) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyValues_GetValues", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_PropertyValues_GetValues newInstance(SModel sm) {

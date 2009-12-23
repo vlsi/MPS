@@ -16,7 +16,7 @@ public class CellMenuPart_PropertyPostfixHints_GetPostfixes extends ConceptFunct
   }
 
   public static CellMenuPart_PropertyPostfixHints_GetPostfixes newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_PropertyPostfixHints_GetPostfixes)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_PropertyPostfixHints_GetPostfixes) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_PropertyPostfixHints_GetPostfixes", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_PropertyPostfixHints_GetPostfixes newInstance(SModel sm) {

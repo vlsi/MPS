@@ -54,7 +54,7 @@ public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept
   }
 
   public AbstractConceptDeclaration getTargetType() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, ConceptLinkDeclaration.TARGET_TYPE);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, ConceptLinkDeclaration.TARGET_TYPE);
   }
 
   public void setTargetType(AbstractConceptDeclaration node) {
@@ -62,7 +62,7 @@ public class ConceptLinkDeclaration extends BaseConcept implements INamedConcept
   }
 
   public static ConceptLinkDeclaration newInstance(SModel sm, boolean init) {
-    return (ConceptLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptLinkDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptLinkDeclaration newInstance(SModel sm) {

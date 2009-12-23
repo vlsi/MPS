@@ -55,7 +55,7 @@ public class CellModel_Collection extends EditorCellModel {
   }
 
   public CellLayout getCellLayout() {
-    return (CellLayout)this.getChild(CellLayout.class, CellModel_Collection.CELL_LAYOUT);
+    return (CellLayout) this.getChild(CellLayout.class, CellModel_Collection.CELL_LAYOUT);
   }
 
   public void setCellLayout(CellLayout node) {
@@ -83,7 +83,7 @@ public class CellModel_Collection extends EditorCellModel {
   }
 
   public static CellModel_Collection newInstance(SModel sm, boolean init) {
-    return (CellModel_Collection)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Collection", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_Collection) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Collection", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_Collection newInstance(SModel sm) {

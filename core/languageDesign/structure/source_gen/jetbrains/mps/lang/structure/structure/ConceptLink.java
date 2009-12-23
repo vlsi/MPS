@@ -17,7 +17,7 @@ public class ConceptLink extends BaseConcept {
   }
 
   public ConceptLinkDeclaration getConceptLinkDeclaration() {
-    return (ConceptLinkDeclaration)this.getReferent(ConceptLinkDeclaration.class, ConceptLink.CONCEPT_LINK_DECLARATION);
+    return (ConceptLinkDeclaration) this.getReferent(ConceptLinkDeclaration.class, ConceptLink.CONCEPT_LINK_DECLARATION);
   }
 
   public void setConceptLinkDeclaration(ConceptLinkDeclaration node) {
@@ -25,7 +25,7 @@ public class ConceptLink extends BaseConcept {
   }
 
   public static ConceptLink newInstance(SModel sm, boolean init) {
-    return (ConceptLink)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptLink", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptLink) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptLink", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptLink newInstance(SModel sm) {

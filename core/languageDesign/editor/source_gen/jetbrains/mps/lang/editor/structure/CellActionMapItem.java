@@ -36,7 +36,7 @@ public class CellActionMapItem extends BaseConcept {
   }
 
   public CellActionMap_ExecuteFunction getExecuteFunction() {
-    return (CellActionMap_ExecuteFunction)this.getChild(CellActionMap_ExecuteFunction.class, CellActionMapItem.EXECUTE_FUNCTION);
+    return (CellActionMap_ExecuteFunction) this.getChild(CellActionMap_ExecuteFunction.class, CellActionMapItem.EXECUTE_FUNCTION);
   }
 
   public void setExecuteFunction(CellActionMap_ExecuteFunction node) {
@@ -44,7 +44,7 @@ public class CellActionMapItem extends BaseConcept {
   }
 
   public static CellActionMapItem newInstance(SModel sm, boolean init) {
-    return (CellActionMapItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMapItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellActionMapItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMapItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellActionMapItem newInstance(SModel sm) {

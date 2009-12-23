@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_node extends ConceptFunctionParameter {
   }
 
   public static ConceptFunctionParameter_node newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_node)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_node) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_node newInstance(SModel sm) {

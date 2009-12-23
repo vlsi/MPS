@@ -30,7 +30,7 @@ public class CellMenuPart_AbstractGroup extends CellMenuPart_Abstract {
   }
 
   public Type getParameterObjectType() {
-    return (Type)this.getChild(Type.class, CellMenuPart_AbstractGroup.PARAMETER_OBJECT_TYPE);
+    return (Type) this.getChild(Type.class, CellMenuPart_AbstractGroup.PARAMETER_OBJECT_TYPE);
   }
 
   public void setParameterObjectType(Type node) {
@@ -38,7 +38,7 @@ public class CellMenuPart_AbstractGroup extends CellMenuPart_Abstract {
   }
 
   public CellMenuPart_AbstractGroup_MatchingText getMatchingTextFunction() {
-    return (CellMenuPart_AbstractGroup_MatchingText)this.getChild(CellMenuPart_AbstractGroup_MatchingText.class, CellMenuPart_AbstractGroup.MATCHING_TEXT_FUNCTION);
+    return (CellMenuPart_AbstractGroup_MatchingText) this.getChild(CellMenuPart_AbstractGroup_MatchingText.class, CellMenuPart_AbstractGroup.MATCHING_TEXT_FUNCTION);
   }
 
   public void setMatchingTextFunction(CellMenuPart_AbstractGroup_MatchingText node) {
@@ -46,7 +46,7 @@ public class CellMenuPart_AbstractGroup extends CellMenuPart_Abstract {
   }
 
   public CellMenuPart_AbstractGroup_DescriptionText getDescriptionTextFunction() {
-    return (CellMenuPart_AbstractGroup_DescriptionText)this.getChild(CellMenuPart_AbstractGroup_DescriptionText.class, CellMenuPart_AbstractGroup.DESCRIPTION_TEXT_FUNCTION);
+    return (CellMenuPart_AbstractGroup_DescriptionText) this.getChild(CellMenuPart_AbstractGroup_DescriptionText.class, CellMenuPart_AbstractGroup.DESCRIPTION_TEXT_FUNCTION);
   }
 
   public void setDescriptionTextFunction(CellMenuPart_AbstractGroup_DescriptionText node) {
@@ -54,7 +54,7 @@ public class CellMenuPart_AbstractGroup extends CellMenuPart_Abstract {
   }
 
   public static CellMenuPart_AbstractGroup newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_AbstractGroup)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_AbstractGroup) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_AbstractGroup newInstance(SModel sm) {

@@ -25,7 +25,7 @@ public class SideTransformAnchorTagStyleClassItem extends StyleClassItem {
   }
 
   public static SideTransformAnchorTagStyleClassItem newInstance(SModel sm, boolean init) {
-    return (SideTransformAnchorTagStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SideTransformAnchorTagStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SideTransformAnchorTagStyleClassItem newInstance(SModel sm) {

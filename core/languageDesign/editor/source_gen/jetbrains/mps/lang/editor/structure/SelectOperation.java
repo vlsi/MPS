@@ -21,7 +21,7 @@ public class SelectOperation extends SNodeOperation {
   }
 
   public Expression getEditorContext() {
-    return (Expression)this.getChild(Expression.class, SelectOperation.EDITOR_CONTEXT);
+    return (Expression) this.getChild(Expression.class, SelectOperation.EDITOR_CONTEXT);
   }
 
   public void setEditorContext(Expression node) {
@@ -49,7 +49,7 @@ public class SelectOperation extends SNodeOperation {
   }
 
   public static SelectOperation newInstance(SModel sm, boolean init) {
-    return (SelectOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SelectOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SelectOperation newInstance(SModel sm) {

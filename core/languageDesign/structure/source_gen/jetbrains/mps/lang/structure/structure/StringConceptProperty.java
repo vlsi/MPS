@@ -32,7 +32,7 @@ public class StringConceptProperty extends ConceptProperty {
   }
 
   public static StringConceptProperty newInstance(SModel sm, boolean init) {
-    return (StringConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.StringConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StringConceptProperty) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.StringConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StringConceptProperty newInstance(SModel sm) {

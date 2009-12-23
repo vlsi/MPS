@@ -84,7 +84,7 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
   }
 
   public AbstractConceptDeclaration getSource() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, AnnotationLinkDeclaration.SOURCE);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, AnnotationLinkDeclaration.SOURCE);
   }
 
   public void setSource(AbstractConceptDeclaration node) {
@@ -92,7 +92,7 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
   }
 
   public AbstractConceptDeclaration getTarget() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, AnnotationLinkDeclaration.TARGET);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, AnnotationLinkDeclaration.TARGET);
   }
 
   public void setTarget(AbstractConceptDeclaration node) {
@@ -100,7 +100,7 @@ public class AnnotationLinkDeclaration extends BaseConcept implements INamedConc
   }
 
   public static AnnotationLinkDeclaration newInstance(SModel sm, boolean init) {
-    return (AnnotationLinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AnnotationLinkDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.AnnotationLinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AnnotationLinkDeclaration newInstance(SModel sm) {

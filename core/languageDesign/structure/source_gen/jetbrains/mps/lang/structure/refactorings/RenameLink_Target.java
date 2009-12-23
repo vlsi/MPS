@@ -19,7 +19,7 @@ public class RenameLink_Target implements IRefactoringTarget {
   }
 
   public boolean isApplicableToEntityType(final Object entity) {
-    return SNodeOperations.isInstanceOf(((SNode)entity), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
+    return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
   }
 
   public boolean isApplicable(final Object entity) {

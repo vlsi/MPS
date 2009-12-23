@@ -16,7 +16,7 @@ public class QueryFunction_ModelAccess_Setter extends ConceptFunction {
   }
 
   public static QueryFunction_ModelAccess_Setter newInstance(SModel sm, boolean init) {
-    return (QueryFunction_ModelAccess_Setter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_ModelAccess_Setter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_ModelAccess_Setter newInstance(SModel sm) {

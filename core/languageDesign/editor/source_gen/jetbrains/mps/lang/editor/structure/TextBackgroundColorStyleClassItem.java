@@ -15,7 +15,7 @@ public class TextBackgroundColorStyleClassItem extends ColorStyleClassItem {
   }
 
   public static TextBackgroundColorStyleClassItem newInstance(SModel sm, boolean init) {
-    return (TextBackgroundColorStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TextBackgroundColorStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TextBackgroundColorStyleClassItem newInstance(SModel sm) {

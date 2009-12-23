@@ -15,7 +15,7 @@ public class DrawBracketsStyleClassItem extends BooleanStyleSheetItem {
   }
 
   public static DrawBracketsStyleClassItem newInstance(SModel sm, boolean init) {
-    return (DrawBracketsStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DrawBracketsStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.DrawBracketsStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DrawBracketsStyleClassItem newInstance(SModel sm) {

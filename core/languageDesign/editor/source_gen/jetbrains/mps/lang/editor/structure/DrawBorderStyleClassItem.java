@@ -15,7 +15,7 @@ public class DrawBorderStyleClassItem extends BooleanStyleSheetItem {
   }
 
   public static DrawBorderStyleClassItem newInstance(SModel sm, boolean init) {
-    return (DrawBorderStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DrawBorderStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.DrawBorderStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DrawBorderStyleClassItem newInstance(SModel sm) {

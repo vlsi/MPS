@@ -19,7 +19,7 @@ public class RenameProperty_Target implements IRefactoringTarget {
   }
 
   public boolean isApplicableToEntityType(final Object entity) {
-    return SNodeOperations.isInstanceOf(((SNode)entity), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+    return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
   }
 
   public boolean isApplicable(final Object entity) {

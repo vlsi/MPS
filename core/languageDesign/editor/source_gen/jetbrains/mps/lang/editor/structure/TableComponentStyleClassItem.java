@@ -25,7 +25,7 @@ public class TableComponentStyleClassItem extends StyleClassItem {
   }
 
   public static TableComponentStyleClassItem newInstance(SModel sm, boolean init) {
-    return (TableComponentStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TableComponentStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.TableComponentStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TableComponentStyleClassItem newInstance(SModel sm) {

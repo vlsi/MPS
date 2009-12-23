@@ -17,7 +17,7 @@ public class CellMenuPart_ReplaceChild_Group extends CellMenuPart_AbstractGroup 
   }
 
   public CellMenuPart_ReplaceChild_Group_Query getParametersFunction() {
-    return (CellMenuPart_ReplaceChild_Group_Query)this.getChild(CellMenuPart_ReplaceChild_Group_Query.class, CellMenuPart_ReplaceChild_Group.PARAMETERS_FUNCTION);
+    return (CellMenuPart_ReplaceChild_Group_Query) this.getChild(CellMenuPart_ReplaceChild_Group_Query.class, CellMenuPart_ReplaceChild_Group.PARAMETERS_FUNCTION);
   }
 
   public void setParametersFunction(CellMenuPart_ReplaceChild_Group_Query node) {
@@ -25,7 +25,7 @@ public class CellMenuPart_ReplaceChild_Group extends CellMenuPart_AbstractGroup 
   }
 
   public CellMenuPart_ReplaceChild_Group_Create getCreateFunction() {
-    return (CellMenuPart_ReplaceChild_Group_Create)this.getChild(CellMenuPart_ReplaceChild_Group_Create.class, CellMenuPart_ReplaceChild_Group.CREATE_FUNCTION);
+    return (CellMenuPart_ReplaceChild_Group_Create) this.getChild(CellMenuPart_ReplaceChild_Group_Create.class, CellMenuPart_ReplaceChild_Group.CREATE_FUNCTION);
   }
 
   public void setCreateFunction(CellMenuPart_ReplaceChild_Group_Create node) {
@@ -33,7 +33,7 @@ public class CellMenuPart_ReplaceChild_Group extends CellMenuPart_AbstractGroup 
   }
 
   public static CellMenuPart_ReplaceChild_Group newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_ReplaceChild_Group)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_ReplaceChild_Group) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Group", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_ReplaceChild_Group newInstance(SModel sm) {

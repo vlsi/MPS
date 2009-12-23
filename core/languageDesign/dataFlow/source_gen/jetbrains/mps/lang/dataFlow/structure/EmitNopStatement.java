@@ -15,7 +15,7 @@ public class EmitNopStatement extends EmitStatement {
   }
 
   public static EmitNopStatement newInstance(SModel sm, boolean init) {
-    return (EmitNopStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitNopStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EmitNopStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitNopStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EmitNopStatement newInstance(SModel sm) {

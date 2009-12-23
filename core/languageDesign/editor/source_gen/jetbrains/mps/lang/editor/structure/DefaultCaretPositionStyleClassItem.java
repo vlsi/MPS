@@ -25,7 +25,7 @@ public class DefaultCaretPositionStyleClassItem extends StyleClassItem {
   }
 
   public static DefaultCaretPositionStyleClassItem newInstance(SModel sm, boolean init) {
-    return (DefaultCaretPositionStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DefaultCaretPositionStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.DefaultCaretPositionStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DefaultCaretPositionStyleClassItem newInstance(SModel sm) {

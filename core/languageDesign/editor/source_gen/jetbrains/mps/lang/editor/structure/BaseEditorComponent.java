@@ -16,7 +16,7 @@ public class BaseEditorComponent extends AbstractComponent {
   }
 
   public EditorCellModel getCellModel() {
-    return (EditorCellModel)this.getChild(EditorCellModel.class, BaseEditorComponent.CELL_MODEL);
+    return (EditorCellModel) this.getChild(EditorCellModel.class, BaseEditorComponent.CELL_MODEL);
   }
 
   public void setCellModel(EditorCellModel node) {
@@ -24,7 +24,7 @@ public class BaseEditorComponent extends AbstractComponent {
   }
 
   public static BaseEditorComponent newInstance(SModel sm, boolean init) {
-    return (BaseEditorComponent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.BaseEditorComponent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseEditorComponent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.BaseEditorComponent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseEditorComponent newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class CellMenuPart_ReplaceChild_CustomChildConcept_Query extends ConceptF
   }
 
   public static CellMenuPart_ReplaceChild_CustomChildConcept_Query newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_ReplaceChild_CustomChildConcept_Query)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_ReplaceChild_CustomChildConcept_Query) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_CustomChildConcept_Query", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_ReplaceChild_CustomChildConcept_Query newInstance(SModel sm) {

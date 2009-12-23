@@ -70,7 +70,7 @@ public class AbstractStyledTextOperation extends BaseConcept implements IOperati
   }
 
   public static AbstractStyledTextOperation newInstance(SModel sm, boolean init) {
-    return (AbstractStyledTextOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractStyledTextOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractStyledTextOperation newInstance(SModel sm) {

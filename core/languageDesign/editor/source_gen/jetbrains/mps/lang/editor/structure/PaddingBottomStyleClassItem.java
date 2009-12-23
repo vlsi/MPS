@@ -15,7 +15,7 @@ public class PaddingBottomStyleClassItem extends AbstractPaddingStyleClassItem {
   }
 
   public static PaddingBottomStyleClassItem newInstance(SModel sm, boolean init) {
-    return (PaddingBottomStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PaddingBottomStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingBottomStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PaddingBottomStyleClassItem newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class QueryFunction_MethodPresentation extends ConceptFunction {
   }
 
   public static QueryFunction_MethodPresentation newInstance(SModel sm, boolean init) {
-    return (QueryFunction_MethodPresentation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_MethodPresentation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_MethodPresentation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_MethodPresentation newInstance(SModel sm) {

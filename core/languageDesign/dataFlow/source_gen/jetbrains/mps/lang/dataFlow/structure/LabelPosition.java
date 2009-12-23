@@ -16,7 +16,7 @@ public class LabelPosition extends Position {
   }
 
   public EmitLabelStatement getLabel() {
-    return (EmitLabelStatement)this.getReferent(EmitLabelStatement.class, LabelPosition.LABEL);
+    return (EmitLabelStatement) this.getReferent(EmitLabelStatement.class, LabelPosition.LABEL);
   }
 
   public void setLabel(EmitLabelStatement node) {
@@ -24,7 +24,7 @@ public class LabelPosition extends Position {
   }
 
   public static LabelPosition newInstance(SModel sm, boolean init) {
-    return (LabelPosition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.LabelPosition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LabelPosition) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.LabelPosition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LabelPosition newInstance(SModel sm) {

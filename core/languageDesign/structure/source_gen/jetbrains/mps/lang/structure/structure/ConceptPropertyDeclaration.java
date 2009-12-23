@@ -62,7 +62,7 @@ public class ConceptPropertyDeclaration extends BaseConcept implements INamedCon
   }
 
   public static ConceptPropertyDeclaration newInstance(SModel sm, boolean init) {
-    return (ConceptPropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptPropertyDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptPropertyDeclaration newInstance(SModel sm) {

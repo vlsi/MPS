@@ -190,7 +190,7 @@ public class AbstractConceptDeclaration extends BaseConcept implements INamedCon
   }
 
   public static AbstractConceptDeclaration newInstance(SModel sm, boolean init) {
-    return (AbstractConceptDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractConceptDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractConceptDeclaration newInstance(SModel sm) {

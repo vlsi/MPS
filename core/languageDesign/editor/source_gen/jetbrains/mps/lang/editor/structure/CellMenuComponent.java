@@ -55,7 +55,7 @@ public class CellMenuComponent extends AbstractComponent implements INamedConcep
   }
 
   public CellMenuComponentFeature getApplicableFeature() {
-    return (CellMenuComponentFeature)this.getChild(CellMenuComponentFeature.class, CellMenuComponent.APPLICABLE_FEATURE);
+    return (CellMenuComponentFeature) this.getChild(CellMenuComponentFeature.class, CellMenuComponent.APPLICABLE_FEATURE);
   }
 
   public void setApplicableFeature(CellMenuComponentFeature node) {
@@ -63,7 +63,7 @@ public class CellMenuComponent extends AbstractComponent implements INamedConcep
   }
 
   public CellMenuDescriptor getMenuDescriptor() {
-    return (CellMenuDescriptor)this.getChild(CellMenuDescriptor.class, CellMenuComponent.MENU_DESCRIPTOR);
+    return (CellMenuDescriptor) this.getChild(CellMenuDescriptor.class, CellMenuComponent.MENU_DESCRIPTOR);
   }
 
   public void setMenuDescriptor(CellMenuDescriptor node) {
@@ -71,7 +71,7 @@ public class CellMenuComponent extends AbstractComponent implements INamedConcep
   }
 
   public static CellMenuComponent newInstance(SModel sm, boolean init) {
-    return (CellMenuComponent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuComponent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuComponent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuComponent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuComponent newInstance(SModel sm) {

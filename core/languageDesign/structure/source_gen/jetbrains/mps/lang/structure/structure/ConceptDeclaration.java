@@ -37,7 +37,7 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
   }
 
   public ConceptDeclaration getExtends() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, ConceptDeclaration.EXTENDS);
+    return (ConceptDeclaration) this.getReferent(ConceptDeclaration.class, ConceptDeclaration.EXTENDS);
   }
 
   public void setExtends(ConceptDeclaration node) {
@@ -65,7 +65,7 @@ public class ConceptDeclaration extends AbstractConceptDeclaration {
   }
 
   public static ConceptDeclaration newInstance(SModel sm, boolean init) {
-    return (ConceptDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptDeclaration newInstance(SModel sm) {

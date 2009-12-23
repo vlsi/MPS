@@ -16,7 +16,7 @@ public class Position extends BaseConcept {
   }
 
   public static Position newInstance(SModel sm, boolean init) {
-    return (Position)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.Position", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Position) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.Position", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Position newInstance(SModel sm) {

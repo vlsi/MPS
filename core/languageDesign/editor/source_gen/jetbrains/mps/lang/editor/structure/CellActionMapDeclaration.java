@@ -59,7 +59,7 @@ public class CellActionMapDeclaration extends BaseConcept implements INamedConce
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, CellActionMapDeclaration.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, CellActionMapDeclaration.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {
@@ -87,7 +87,7 @@ public class CellActionMapDeclaration extends BaseConcept implements INamedConce
   }
 
   public static CellActionMapDeclaration newInstance(SModel sm, boolean init) {
-    return (CellActionMapDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellActionMapDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellActionMapDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellActionMapDeclaration newInstance(SModel sm) {

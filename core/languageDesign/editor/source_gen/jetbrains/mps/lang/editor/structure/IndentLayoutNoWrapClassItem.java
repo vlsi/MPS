@@ -15,7 +15,7 @@ public class IndentLayoutNoWrapClassItem extends BooleanStyleSheetItem {
   }
 
   public static IndentLayoutNoWrapClassItem newInstance(SModel sm, boolean init) {
-    return (IndentLayoutNoWrapClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IndentLayoutNoWrapClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNoWrapClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IndentLayoutNoWrapClassItem newInstance(SModel sm) {

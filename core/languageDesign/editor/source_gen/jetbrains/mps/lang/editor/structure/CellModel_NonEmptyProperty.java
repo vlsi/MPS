@@ -15,7 +15,7 @@ public class CellModel_NonEmptyProperty extends CellModel_Property {
   }
 
   public static CellModel_NonEmptyProperty newInstance(SModel sm, boolean init) {
-    return (CellModel_NonEmptyProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_NonEmptyProperty) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_NonEmptyProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_NonEmptyProperty newInstance(SModel sm) {

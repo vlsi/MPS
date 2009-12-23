@@ -16,7 +16,7 @@ public class NavigatableNodeStyleClassItem extends StyleClassItem {
   }
 
   public QueryFunction_SNode getFunctionNode() {
-    return (QueryFunction_SNode)this.getChild(QueryFunction_SNode.class, NavigatableNodeStyleClassItem.FUNCTION_NODE);
+    return (QueryFunction_SNode) this.getChild(QueryFunction_SNode.class, NavigatableNodeStyleClassItem.FUNCTION_NODE);
   }
 
   public void setFunctionNode(QueryFunction_SNode node) {
@@ -24,7 +24,7 @@ public class NavigatableNodeStyleClassItem extends StyleClassItem {
   }
 
   public static NavigatableNodeStyleClassItem newInstance(SModel sm, boolean init) {
-    return (NavigatableNodeStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NavigatableNodeStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.NavigatableNodeStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NavigatableNodeStyleClassItem newInstance(SModel sm) {

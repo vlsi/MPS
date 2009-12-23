@@ -17,7 +17,7 @@ public class StyleClassItem extends BaseConcept {
   }
 
   public static StyleClassItem newInstance(SModel sm, boolean init) {
-    return (StyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StyleClassItem newInstance(SModel sm) {

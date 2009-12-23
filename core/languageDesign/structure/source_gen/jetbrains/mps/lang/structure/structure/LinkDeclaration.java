@@ -74,7 +74,7 @@ public class LinkDeclaration extends BaseConcept implements IStructureDeprecatab
   }
 
   public LinkDeclaration getSpecializedLink() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, LinkDeclaration.SPECIALIZED_LINK);
+    return (LinkDeclaration) this.getReferent(LinkDeclaration.class, LinkDeclaration.SPECIALIZED_LINK);
   }
 
   public void setSpecializedLink(LinkDeclaration node) {
@@ -82,7 +82,7 @@ public class LinkDeclaration extends BaseConcept implements IStructureDeprecatab
   }
 
   public AbstractConceptDeclaration getTarget() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, LinkDeclaration.TARGET);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, LinkDeclaration.TARGET);
   }
 
   public void setTarget(AbstractConceptDeclaration node) {
@@ -90,7 +90,7 @@ public class LinkDeclaration extends BaseConcept implements IStructureDeprecatab
   }
 
   public static LinkDeclaration newInstance(SModel sm, boolean init) {
-    return (LinkDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinkDeclaration newInstance(SModel sm) {

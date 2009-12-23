@@ -25,7 +25,7 @@ public class AggregationConceptLink extends ConceptLink {
   }
 
   public BaseConcept getTarget() {
-    return (BaseConcept)this.getChild(BaseConcept.class, AggregationConceptLink.TARGET);
+    return (BaseConcept) this.getChild(BaseConcept.class, AggregationConceptLink.TARGET);
   }
 
   public void setTarget(BaseConcept node) {
@@ -33,7 +33,7 @@ public class AggregationConceptLink extends ConceptLink {
   }
 
   public static AggregationConceptLink newInstance(SModel sm, boolean init) {
-    return (AggregationConceptLink)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.AggregationConceptLink", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AggregationConceptLink) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.AggregationConceptLink", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AggregationConceptLink newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class QueryFunction_FontStyle extends QueryFunction_StyleParameter {
   }
 
   public static QueryFunction_FontStyle newInstance(SModel sm, boolean init) {
-    return (QueryFunction_FontStyle)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_FontStyle) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_FontStyle", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_FontStyle newInstance(SModel sm) {

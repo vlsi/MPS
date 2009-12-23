@@ -15,7 +15,7 @@ public class AppendTextOperation extends AbstractStyledTextOperation {
   }
 
   public static AppendTextOperation newInstance(SModel sm, boolean init) {
-    return (AppendTextOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.AppendTextOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AppendTextOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.AppendTextOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AppendTextOperation newInstance(SModel sm) {

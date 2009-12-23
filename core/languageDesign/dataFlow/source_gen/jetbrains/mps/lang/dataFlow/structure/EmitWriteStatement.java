@@ -17,7 +17,7 @@ public class EmitWriteStatement extends BaseEmitVariableStatement {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, EmitWriteStatement.VALUE);
+    return (Expression) this.getChild(Expression.class, EmitWriteStatement.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -25,7 +25,7 @@ public class EmitWriteStatement extends BaseEmitVariableStatement {
   }
 
   public static EmitWriteStatement newInstance(SModel sm, boolean init) {
-    return (EmitWriteStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EmitWriteStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitWriteStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EmitWriteStatement newInstance(SModel sm) {

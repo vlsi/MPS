@@ -18,7 +18,7 @@ public class EmitVariableValueIs extends EmitStatement {
   }
 
   public Expression getVariable() {
-    return (Expression)this.getChild(Expression.class, EmitVariableValueIs.VARIABLE);
+    return (Expression) this.getChild(Expression.class, EmitVariableValueIs.VARIABLE);
   }
 
   public void setVariable(Expression node) {
@@ -26,7 +26,7 @@ public class EmitVariableValueIs extends EmitStatement {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, EmitVariableValueIs.VALUE);
+    return (Expression) this.getChild(Expression.class, EmitVariableValueIs.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -34,7 +34,7 @@ public class EmitVariableValueIs extends EmitStatement {
   }
 
   public static EmitVariableValueIs newInstance(SModel sm, boolean init) {
-    return (EmitVariableValueIs)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitVariableValueIs", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EmitVariableValueIs) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitVariableValueIs", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EmitVariableValueIs newInstance(SModel sm) {

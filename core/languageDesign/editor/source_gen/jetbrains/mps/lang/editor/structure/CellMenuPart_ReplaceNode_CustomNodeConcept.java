@@ -17,7 +17,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept extends CellMenuPart_Abs
   }
 
   public ConceptDeclaration getReplacementConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, CellMenuPart_ReplaceNode_CustomNodeConcept.REPLACEMENT_CONCEPT);
+    return (ConceptDeclaration) this.getReferent(ConceptDeclaration.class, CellMenuPart_ReplaceNode_CustomNodeConcept.REPLACEMENT_CONCEPT);
   }
 
   public void setReplacementConcept(ConceptDeclaration node) {
@@ -25,7 +25,7 @@ public class CellMenuPart_ReplaceNode_CustomNodeConcept extends CellMenuPart_Abs
   }
 
   public static CellMenuPart_ReplaceNode_CustomNodeConcept newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_ReplaceNode_CustomNodeConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_ReplaceNode_CustomNodeConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_CustomNodeConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_ReplaceNode_CustomNodeConcept newInstance(SModel sm) {

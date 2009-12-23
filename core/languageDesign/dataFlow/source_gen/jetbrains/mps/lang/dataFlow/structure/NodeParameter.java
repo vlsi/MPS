@@ -16,7 +16,7 @@ public class NodeParameter extends ConceptFunctionParameter {
   }
 
   public static NodeParameter newInstance(SModel sm, boolean init) {
-    return (NodeParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.NodeParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.NodeParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeParameter newInstance(SModel sm) {

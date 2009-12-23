@@ -17,7 +17,7 @@ public class ConceptProperty extends BaseConcept {
   }
 
   public ConceptPropertyDeclaration getConceptPropertyDeclaration() {
-    return (ConceptPropertyDeclaration)this.getReferent(ConceptPropertyDeclaration.class, ConceptProperty.CONCEPT_PROPERTY_DECLARATION);
+    return (ConceptPropertyDeclaration) this.getReferent(ConceptPropertyDeclaration.class, ConceptProperty.CONCEPT_PROPERTY_DECLARATION);
   }
 
   public void setConceptPropertyDeclaration(ConceptPropertyDeclaration node) {
@@ -25,7 +25,7 @@ public class ConceptProperty extends BaseConcept {
   }
 
   public static ConceptProperty newInstance(SModel sm, boolean init) {
-    return (ConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptProperty) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptProperty newInstance(SModel sm) {

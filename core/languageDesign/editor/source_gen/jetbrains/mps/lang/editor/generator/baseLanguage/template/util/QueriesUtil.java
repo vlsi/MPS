@@ -121,7 +121,7 @@ __switch__:
 
   public static String getUnicName(String name, SNode root, TemplateQueryContext context) {
     SNode bigCell = root;
-    Set<String> namesSet = ((Set<String>)context.getStepObject(bigCell));
+    Set<String> namesSet = ((Set<String>) context.getStepObject(bigCell));
     if (namesSet == null) {
       namesSet = SetSequence.fromSet(new HashSet<String>());
       context.putStepObject(bigCell, namesSet);

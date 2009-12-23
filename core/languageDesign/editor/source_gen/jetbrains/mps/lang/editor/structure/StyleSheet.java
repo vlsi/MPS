@@ -76,7 +76,7 @@ public class StyleSheet extends BaseConcept implements INamedConcept {
   }
 
   public static StyleSheet newInstance(SModel sm, boolean init) {
-    return (StyleSheet)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleSheet", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StyleSheet) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.StyleSheet", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StyleSheet newInstance(SModel sm) {

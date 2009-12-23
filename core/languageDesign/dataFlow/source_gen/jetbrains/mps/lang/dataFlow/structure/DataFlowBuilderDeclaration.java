@@ -57,7 +57,7 @@ public class DataFlowBuilderDeclaration extends BaseConcept implements INamedCon
   }
 
   public AbstractConceptDeclaration getConceptDeclaration() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, DataFlowBuilderDeclaration.CONCEPT_DECLARATION);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, DataFlowBuilderDeclaration.CONCEPT_DECLARATION);
   }
 
   public void setConceptDeclaration(AbstractConceptDeclaration node) {
@@ -65,7 +65,7 @@ public class DataFlowBuilderDeclaration extends BaseConcept implements INamedCon
   }
 
   public BuilderBlock getBuilderBlock() {
-    return (BuilderBlock)this.getChild(BuilderBlock.class, DataFlowBuilderDeclaration.BUILDER_BLOCK);
+    return (BuilderBlock) this.getChild(BuilderBlock.class, DataFlowBuilderDeclaration.BUILDER_BLOCK);
   }
 
   public void setBuilderBlock(BuilderBlock node) {
@@ -73,7 +73,7 @@ public class DataFlowBuilderDeclaration extends BaseConcept implements INamedCon
   }
 
   public static DataFlowBuilderDeclaration newInstance(SModel sm, boolean init) {
-    return (DataFlowBuilderDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DataFlowBuilderDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DataFlowBuilderDeclaration newInstance(SModel sm) {

@@ -26,7 +26,7 @@ public class ColorStyleClassItem extends StyleClassItem {
   }
 
   public IQueryFunction_Color getQuery() {
-    return (IQueryFunction_Color)this.getChild(IQueryFunction_Color.class, ColorStyleClassItem.QUERY);
+    return (IQueryFunction_Color) this.getChild(IQueryFunction_Color.class, ColorStyleClassItem.QUERY);
   }
 
   public void setQuery(IQueryFunction_Color node) {
@@ -34,7 +34,7 @@ public class ColorStyleClassItem extends StyleClassItem {
   }
 
   public static ColorStyleClassItem newInstance(SModel sm, boolean init) {
-    return (ColorStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ColorStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ColorStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ColorStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ColorStyleClassItem newInstance(SModel sm) {

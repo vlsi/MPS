@@ -15,7 +15,7 @@ public class QueryFunction_Integer extends QueryFunction_StyleParameter {
   }
 
   public static QueryFunction_Integer newInstance(SModel sm, boolean init) {
-    return (QueryFunction_Integer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_Integer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_Integer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_Integer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_Integer newInstance(SModel sm) {

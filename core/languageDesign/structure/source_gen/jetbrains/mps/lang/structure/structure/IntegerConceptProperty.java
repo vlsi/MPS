@@ -32,7 +32,7 @@ public class IntegerConceptProperty extends ConceptProperty {
   }
 
   public static IntegerConceptProperty newInstance(SModel sm, boolean init) {
-    return (IntegerConceptProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.IntegerConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntegerConceptProperty) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.IntegerConceptProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntegerConceptProperty newInstance(SModel sm) {

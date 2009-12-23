@@ -53,7 +53,7 @@ public class CellModel_WithRole extends CellModel_AbstractLabel {
   }
 
   public BaseConcept getRelationDeclaration() {
-    return (BaseConcept)this.getReferent(BaseConcept.class, CellModel_WithRole.RELATION_DECLARATION);
+    return (BaseConcept) this.getReferent(BaseConcept.class, CellModel_WithRole.RELATION_DECLARATION);
   }
 
   public void setRelationDeclaration(BaseConcept node) {
@@ -61,7 +61,7 @@ public class CellModel_WithRole extends CellModel_AbstractLabel {
   }
 
   public static CellModel_WithRole newInstance(SModel sm, boolean init) {
-    return (CellModel_WithRole)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_WithRole", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_WithRole) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_WithRole", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_WithRole newInstance(SModel sm) {

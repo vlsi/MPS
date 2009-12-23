@@ -16,7 +16,7 @@ public class CellMenuPart_CellMenuComponent extends CellMenuPart_Abstract {
   }
 
   public CellMenuComponent getCellMenuComponent() {
-    return (CellMenuComponent)this.getReferent(CellMenuComponent.class, CellMenuPart_CellMenuComponent.CELL_MENU_COMPONENT);
+    return (CellMenuComponent) this.getReferent(CellMenuComponent.class, CellMenuPart_CellMenuComponent.CELL_MENU_COMPONENT);
   }
 
   public void setCellMenuComponent(CellMenuComponent node) {
@@ -24,7 +24,7 @@ public class CellMenuPart_CellMenuComponent extends CellMenuPart_Abstract {
   }
 
   public static CellMenuPart_CellMenuComponent newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_CellMenuComponent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_CellMenuComponent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_CellMenuComponent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_CellMenuComponent newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class AfterPosition extends RelativePosition {
   }
 
   public static AfterPosition newInstance(SModel sm, boolean init) {
-    return (AfterPosition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.AfterPosition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AfterPosition) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.AfterPosition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AfterPosition newInstance(SModel sm) {

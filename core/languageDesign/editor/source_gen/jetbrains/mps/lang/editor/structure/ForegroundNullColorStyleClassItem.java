@@ -15,7 +15,7 @@ public class ForegroundNullColorStyleClassItem extends ColorStyleClassItem {
   }
 
   public static ForegroundNullColorStyleClassItem newInstance(SModel sm, boolean init) {
-    return (ForegroundNullColorStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ForegroundNullColorStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ForegroundNullColorStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ForegroundNullColorStyleClassItem newInstance(SModel sm) {

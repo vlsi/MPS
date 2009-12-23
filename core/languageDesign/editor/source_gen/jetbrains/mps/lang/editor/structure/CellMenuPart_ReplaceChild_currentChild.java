@@ -16,7 +16,7 @@ public class CellMenuPart_ReplaceChild_currentChild extends ConceptFunctionParam
   }
 
   public static CellMenuPart_ReplaceChild_currentChild newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_ReplaceChild_currentChild)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_ReplaceChild_currentChild) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_currentChild", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_ReplaceChild_currentChild newInstance(SModel sm) {

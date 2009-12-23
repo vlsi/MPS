@@ -16,7 +16,7 @@ public class QueryFunction_CellProvider extends ConceptFunction {
   }
 
   public static QueryFunction_CellProvider newInstance(SModel sm, boolean init) {
-    return (QueryFunction_CellProvider)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_CellProvider) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_CellProvider", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_CellProvider newInstance(SModel sm) {

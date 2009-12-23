@@ -87,10 +87,10 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    List<SNode> nodes = (List<SNode>)refactoringContext.getSelectedNodes();
+    List<SNode> nodes = (List<SNode>) refactoringContext.getSelectedNodes();
     refactoringContext.setParameter("sourceModel", SNodeOperations.getModel(ListSequence.fromList(refactoringContext.getSelectedNodes()).first()).getModelDescriptor());
-    Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("sourceModel")));
-    Language targetLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("targetModel")));
+    Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor) refactoringContext.getParameter("sourceModel")));
+    Language targetLanguage = Language.getLanguageFor(((SModelDescriptor) refactoringContext.getParameter("targetModel")));
     List<SNode> editors = new ArrayList<SNode>();
     List<SNode> behaviors = new ArrayList<SNode>();
     List<SNode> constraints = new ArrayList<SNode>();
@@ -137,9 +137,9 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
     }
     // refactoring itself 
     for (SNode node : nodes) {
-      refactoringContext.changeFeatureName(node, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
+      refactoringContext.changeFeatureName(node, ((SModelDescriptor) refactoringContext.getParameter("targetModel")).getSModelFqName().toString() + "." + SPropertyOperations.getString(node, "name"), SPropertyOperations.getString(node, "name"));
     }
-    refactoringContext.moveNodesToModel(nodes, ((SModelDescriptor)refactoringContext.getParameter("targetModel")).getSModel());
+    refactoringContext.moveNodesToModel(nodes, ((SModelDescriptor) refactoringContext.getParameter("targetModel")).getSModel());
     if (ListSequence.fromList(editors).isNotEmpty()) {
       refactoringContext.computeCaches();
       refactoringContext.updateModelWithMaps(editorModelDescriptor.getSModel());
@@ -192,12 +192,12 @@ public class MoveConcepts extends BaseGeneratedRefactoring {
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float)0.75, false));
-    Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("sourceModel")));
+    Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float) 0.75, false));
+    Language sourceLanguage = Language.getLanguageFor(((SModelDescriptor) refactoringContext.getParameter("sourceModel")));
     if (sourceLanguage != null) {
       MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
     }
-    Language targetLanguage = Language.getLanguageFor(((SModelDescriptor)refactoringContext.getParameter("targetModel")));
+    Language targetLanguage = Language.getLanguageFor(((SModelDescriptor) refactoringContext.getParameter("targetModel")));
     if (targetLanguage != null) {
       MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), targetLanguage));
     }

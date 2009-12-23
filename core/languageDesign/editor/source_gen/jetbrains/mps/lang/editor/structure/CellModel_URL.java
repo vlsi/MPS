@@ -24,7 +24,7 @@ public class CellModel_URL extends CellModel_WithRole {
   }
 
   public static CellModel_URL newInstance(SModel sm, boolean init) {
-    return (CellModel_URL)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_URL", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_URL) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_URL", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_URL newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class CellModel_Indent extends EditorCellModel {
   }
 
   public static CellModel_Indent newInstance(SModel sm, boolean init) {
-    return (CellModel_Indent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Indent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_Indent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Indent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_Indent newInstance(SModel sm) {

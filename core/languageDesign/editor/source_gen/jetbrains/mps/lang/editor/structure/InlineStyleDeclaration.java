@@ -47,7 +47,7 @@ public class InlineStyleDeclaration extends BaseConcept implements IStyleContain
   }
 
   public StyleSheetClass getParentClass() {
-    return (StyleSheetClass)this.getReferent(StyleSheetClass.class, InlineStyleDeclaration.PARENT_CLASS);
+    return (StyleSheetClass) this.getReferent(StyleSheetClass.class, InlineStyleDeclaration.PARENT_CLASS);
   }
 
   public void setParentClass(StyleSheetClass node) {
@@ -75,7 +75,7 @@ public class InlineStyleDeclaration extends BaseConcept implements IStyleContain
   }
 
   public static InlineStyleDeclaration newInstance(SModel sm, boolean init) {
-    return (InlineStyleDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.InlineStyleDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InlineStyleDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.InlineStyleDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InlineStyleDeclaration newInstance(SModel sm) {

@@ -25,7 +25,7 @@ public class LayoutConstraintStyleClassItem extends StyleClassItem {
   }
 
   public static LayoutConstraintStyleClassItem newInstance(SModel sm, boolean init) {
-    return (LayoutConstraintStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LayoutConstraintStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.LayoutConstraintStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LayoutConstraintStyleClassItem newInstance(SModel sm) {

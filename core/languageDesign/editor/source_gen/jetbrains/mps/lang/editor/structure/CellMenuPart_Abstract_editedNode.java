@@ -16,7 +16,7 @@ public class CellMenuPart_Abstract_editedNode extends ConceptFunctionParameter {
   }
 
   public static CellMenuPart_Abstract_editedNode newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_Abstract_editedNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_Abstract_editedNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_Abstract_editedNode newInstance(SModel sm) {

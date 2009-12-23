@@ -15,7 +15,7 @@ public class CellMenuPart_ReferentPrimary extends CellMenuPart_Abstract {
   }
 
   public static CellMenuPart_ReferentPrimary newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_ReferentPrimary)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_ReferentPrimary) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReferentPrimary", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_ReferentPrimary newInstance(SModel sm) {

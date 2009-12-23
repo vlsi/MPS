@@ -25,7 +25,7 @@ public class ScriptKindClassItem extends StyleClassItem {
   }
 
   public static ScriptKindClassItem newInstance(SModel sm, boolean init) {
-    return (ScriptKindClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ScriptKindClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ScriptKindClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ScriptKindClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ScriptKindClassItem newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class QueryFunction_MatchingNode extends ConceptFunction {
   }
 
   public static QueryFunction_MatchingNode newInstance(SModel sm, boolean init) {
-    return (QueryFunction_MatchingNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_MatchingNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_MatchingNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_MatchingNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_MatchingNode newInstance(SModel sm) {

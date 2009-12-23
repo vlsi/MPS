@@ -17,7 +17,7 @@ public class InterfaceConceptReference extends BaseConcept {
   }
 
   public InterfaceConceptDeclaration getIntfc() {
-    return (InterfaceConceptDeclaration)this.getReferent(InterfaceConceptDeclaration.class, InterfaceConceptReference.INTFC);
+    return (InterfaceConceptDeclaration) this.getReferent(InterfaceConceptDeclaration.class, InterfaceConceptReference.INTFC);
   }
 
   public void setIntfc(InterfaceConceptDeclaration node) {
@@ -25,7 +25,7 @@ public class InterfaceConceptReference extends BaseConcept {
   }
 
   public static InterfaceConceptReference newInstance(SModel sm, boolean init) {
-    return (InterfaceConceptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.InterfaceConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InterfaceConceptReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.InterfaceConceptReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InterfaceConceptReference newInstance(SModel sm) {

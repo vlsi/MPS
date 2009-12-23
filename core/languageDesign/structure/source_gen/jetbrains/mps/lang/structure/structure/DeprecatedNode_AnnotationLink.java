@@ -11,6 +11,6 @@ public class DeprecatedNode_AnnotationLink {
   }
 
   public static DeprecatedNodeAnnotation getDeprecatedNode(IStructureDeprecatable source) {
-    return (DeprecatedNodeAnnotation)source.getAttribute(DeprecatedNode_AnnotationLink.DEPRECATED_NODE);
+    return (DeprecatedNodeAnnotation) source.getAttribute(DeprecatedNode_AnnotationLink.DEPRECATED_NODE);
   }
 }

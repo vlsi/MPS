@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_editorContext extends ConceptFunctionParam
   }
 
   public static ConceptFunctionParameter_editorContext newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_editorContext)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_editorContext) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_editorContext newInstance(SModel sm) {

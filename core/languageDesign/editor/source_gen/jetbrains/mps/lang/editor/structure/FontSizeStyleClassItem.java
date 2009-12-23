@@ -25,7 +25,7 @@ public class FontSizeStyleClassItem extends StyleClassItem {
   }
 
   public QueryFunction_Integer getQuery() {
-    return (QueryFunction_Integer)this.getChild(QueryFunction_Integer.class, FontSizeStyleClassItem.QUERY);
+    return (QueryFunction_Integer) this.getChild(QueryFunction_Integer.class, FontSizeStyleClassItem.QUERY);
   }
 
   public void setQuery(QueryFunction_Integer node) {
@@ -33,7 +33,7 @@ public class FontSizeStyleClassItem extends StyleClassItem {
   }
 
   public static FontSizeStyleClassItem newInstance(SModel sm, boolean init) {
-    return (FontSizeStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FontSizeStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.FontSizeStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FontSizeStyleClassItem newInstance(SModel sm) {

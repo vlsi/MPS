@@ -16,7 +16,7 @@ public class BaseEmitJumpStatement extends EmitStatement {
   }
 
   public Position getJumpTo() {
-    return (Position)this.getChild(Position.class, BaseEmitJumpStatement.JUMP_TO);
+    return (Position) this.getChild(Position.class, BaseEmitJumpStatement.JUMP_TO);
   }
 
   public void setJumpTo(Position node) {
@@ -24,7 +24,7 @@ public class BaseEmitJumpStatement extends EmitStatement {
   }
 
   public static BaseEmitJumpStatement newInstance(SModel sm, boolean init) {
-    return (BaseEmitJumpStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseEmitJumpStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.BaseEmitJumpStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseEmitJumpStatement newInstance(SModel sm) {

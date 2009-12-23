@@ -16,7 +16,7 @@ public class CellKeyMap_FunctionParm_keyEvent extends ConceptFunctionParameter {
   }
 
   public static CellKeyMap_FunctionParm_keyEvent newInstance(SModel sm, boolean init) {
-    return (CellKeyMap_FunctionParm_keyEvent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_keyEvent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellKeyMap_FunctionParm_keyEvent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_keyEvent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellKeyMap_FunctionParm_keyEvent newInstance(SModel sm) {

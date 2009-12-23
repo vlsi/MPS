@@ -17,7 +17,7 @@ public class EmitCodeForStatement extends EmitStatement {
   }
 
   public Expression getCodeFor() {
-    return (Expression)this.getChild(Expression.class, EmitCodeForStatement.CODE_FOR);
+    return (Expression) this.getChild(Expression.class, EmitCodeForStatement.CODE_FOR);
   }
 
   public void setCodeFor(Expression node) {
@@ -25,7 +25,7 @@ public class EmitCodeForStatement extends EmitStatement {
   }
 
   public static EmitCodeForStatement newInstance(SModel sm, boolean init) {
-    return (EmitCodeForStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EmitCodeForStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EmitCodeForStatement newInstance(SModel sm) {

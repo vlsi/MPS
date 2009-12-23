@@ -15,7 +15,7 @@ public class AutoDeletableStyleClassItem extends BooleanStyleSheetItem {
   }
 
   public static AutoDeletableStyleClassItem newInstance(SModel sm, boolean init) {
-    return (AutoDeletableStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AutoDeletableStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.AutoDeletableStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AutoDeletableStyleClassItem newInstance(SModel sm) {

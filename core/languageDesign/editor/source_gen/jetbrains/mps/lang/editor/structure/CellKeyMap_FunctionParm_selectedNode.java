@@ -16,7 +16,7 @@ public class CellKeyMap_FunctionParm_selectedNode extends ConceptFunctionParamet
   }
 
   public static CellKeyMap_FunctionParm_selectedNode newInstance(SModel sm, boolean init) {
-    return (CellKeyMap_FunctionParm_selectedNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellKeyMap_FunctionParm_selectedNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellKeyMap_FunctionParm_selectedNode newInstance(SModel sm) {

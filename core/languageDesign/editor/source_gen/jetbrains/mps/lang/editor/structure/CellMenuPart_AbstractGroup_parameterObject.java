@@ -16,7 +16,7 @@ public class CellMenuPart_AbstractGroup_parameterObject extends ConceptFunctionP
   }
 
   public static CellMenuPart_AbstractGroup_parameterObject newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_AbstractGroup_parameterObject)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_AbstractGroup_parameterObject) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_AbstractGroup_parameterObject newInstance(SModel sm) {

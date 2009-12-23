@@ -16,7 +16,7 @@ public class QueryFunction_NodeListFilter extends ConceptFunction {
   }
 
   public static QueryFunction_NodeListFilter newInstance(SModel sm, boolean init) {
-    return (QueryFunction_NodeListFilter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_NodeListFilter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.QueryFunction_NodeListFilter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_NodeListFilter newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class CellLayout_Superscript extends CellLayout {
   }
 
   public static CellLayout_Superscript newInstance(SModel sm, boolean init) {
-    return (CellLayout_Superscript)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellLayout_Superscript", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellLayout_Superscript) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellLayout_Superscript", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellLayout_Superscript newInstance(SModel sm) {

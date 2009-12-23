@@ -53,7 +53,7 @@ public class EditorComponentDeclaration extends BaseEditorComponent implements I
   }
 
   public static EditorComponentDeclaration newInstance(SModel sm, boolean init) {
-    return (EditorComponentDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EditorComponentDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EditorComponentDeclaration newInstance(SModel sm) {

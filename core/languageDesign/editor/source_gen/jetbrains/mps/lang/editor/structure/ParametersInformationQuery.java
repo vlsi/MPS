@@ -65,7 +65,7 @@ public class ParametersInformationQuery extends BaseConcept implements INamedCon
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, ParametersInformationQuery.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, ParametersInformationQuery.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {
@@ -73,7 +73,7 @@ public class ParametersInformationQuery extends BaseConcept implements INamedCon
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, ParametersInformationQuery.TYPE);
+    return (Type) this.getChild(Type.class, ParametersInformationQuery.TYPE);
   }
 
   public void setType(Type node) {
@@ -81,7 +81,7 @@ public class ParametersInformationQuery extends BaseConcept implements INamedCon
   }
 
   public QueryFunction_ParametersList getMethods() {
-    return (QueryFunction_ParametersList)this.getChild(QueryFunction_ParametersList.class, ParametersInformationQuery.METHODS);
+    return (QueryFunction_ParametersList) this.getChild(QueryFunction_ParametersList.class, ParametersInformationQuery.METHODS);
   }
 
   public void setMethods(QueryFunction_ParametersList node) {
@@ -89,7 +89,7 @@ public class ParametersInformationQuery extends BaseConcept implements INamedCon
   }
 
   public QueryFunction_MethodPresentation getPresentation() {
-    return (QueryFunction_MethodPresentation)this.getChild(QueryFunction_MethodPresentation.class, ParametersInformationQuery.PRESENTATION);
+    return (QueryFunction_MethodPresentation) this.getChild(QueryFunction_MethodPresentation.class, ParametersInformationQuery.PRESENTATION);
   }
 
   public void setPresentation(QueryFunction_MethodPresentation node) {
@@ -97,7 +97,7 @@ public class ParametersInformationQuery extends BaseConcept implements INamedCon
   }
 
   public QueryFunction_IsMethodCurrent getIsMethodCurrent() {
-    return (QueryFunction_IsMethodCurrent)this.getChild(QueryFunction_IsMethodCurrent.class, ParametersInformationQuery.IS_METHOD_CURRENT);
+    return (QueryFunction_IsMethodCurrent) this.getChild(QueryFunction_IsMethodCurrent.class, ParametersInformationQuery.IS_METHOD_CURRENT);
   }
 
   public void setIsMethodCurrent(QueryFunction_IsMethodCurrent node) {
@@ -125,7 +125,7 @@ public class ParametersInformationQuery extends BaseConcept implements INamedCon
   }
 
   public static ParametersInformationQuery newInstance(SModel sm, boolean init) {
-    return (ParametersInformationQuery)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ParametersInformationQuery", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParametersInformationQuery) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ParametersInformationQuery", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParametersInformationQuery newInstance(SModel sm) {

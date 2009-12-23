@@ -17,7 +17,7 @@ public class CaretPositionParameter extends SelectParameter {
   }
 
   public Expression getPosition() {
-    return (Expression)this.getChild(Expression.class, CaretPositionParameter.POSITION);
+    return (Expression) this.getChild(Expression.class, CaretPositionParameter.POSITION);
   }
 
   public void setPosition(Expression node) {
@@ -25,7 +25,7 @@ public class CaretPositionParameter extends SelectParameter {
   }
 
   public static CaretPositionParameter newInstance(SModel sm, boolean init) {
-    return (CaretPositionParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CaretPositionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CaretPositionParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CaretPositionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CaretPositionParameter newInstance(SModel sm) {

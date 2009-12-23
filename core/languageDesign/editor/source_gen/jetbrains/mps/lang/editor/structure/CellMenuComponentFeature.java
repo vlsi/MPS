@@ -17,7 +17,7 @@ public class CellMenuComponentFeature extends BaseConcept {
   }
 
   public BaseConcept getRelationDeclaration() {
-    return (BaseConcept)this.getReferent(BaseConcept.class, CellMenuComponentFeature.RELATION_DECLARATION);
+    return (BaseConcept) this.getReferent(BaseConcept.class, CellMenuComponentFeature.RELATION_DECLARATION);
   }
 
   public void setRelationDeclaration(BaseConcept node) {
@@ -25,7 +25,7 @@ public class CellMenuComponentFeature extends BaseConcept {
   }
 
   public static CellMenuComponentFeature newInstance(SModel sm, boolean init) {
-    return (CellMenuComponentFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuComponentFeature) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuComponentFeature newInstance(SModel sm) {

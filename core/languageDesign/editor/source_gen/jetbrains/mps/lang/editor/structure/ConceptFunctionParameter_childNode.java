@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_childNode extends ConceptFunctionParameter
   }
 
   public static ConceptFunctionParameter_childNode newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_childNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_childNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_childNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_childNode newInstance(SModel sm) {

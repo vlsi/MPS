@@ -71,7 +71,7 @@ public class DeprecatedNodeAnnotation extends BaseConcept implements INamedConce
   }
 
   public static DeprecatedNodeAnnotation newInstance(SModel sm, boolean init) {
-    return (DeprecatedNodeAnnotation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DeprecatedNodeAnnotation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DeprecatedNodeAnnotation newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class SelectParameter extends BaseConcept {
   }
 
   public static SelectParameter newInstance(SModel sm, boolean init) {
-    return (SelectParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SelectParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SelectParameter newInstance(SModel sm) {

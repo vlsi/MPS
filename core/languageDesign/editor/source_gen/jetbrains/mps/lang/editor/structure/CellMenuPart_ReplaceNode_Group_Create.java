@@ -16,7 +16,7 @@ public class CellMenuPart_ReplaceNode_Group_Create extends ConceptFunction {
   }
 
   public static CellMenuPart_ReplaceNode_Group_Create newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_ReplaceNode_Group_Create)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_ReplaceNode_Group_Create) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceNode_Group_Create", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_ReplaceNode_Group_Create newInstance(SModel sm) {

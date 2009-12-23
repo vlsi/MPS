@@ -15,7 +15,7 @@ public class CellKeyMap_IsApplicableFunction extends CellKeyMap_AbstractFunction
   }
 
   public static CellKeyMap_IsApplicableFunction newInstance(SModel sm, boolean init) {
-    return (CellKeyMap_IsApplicableFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellKeyMap_IsApplicableFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellKeyMap_IsApplicableFunction newInstance(SModel sm) {

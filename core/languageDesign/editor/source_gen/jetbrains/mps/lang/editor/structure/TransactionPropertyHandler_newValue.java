@@ -16,7 +16,7 @@ public class TransactionPropertyHandler_newValue extends ConceptFunctionParamete
   }
 
   public static TransactionPropertyHandler_newValue newInstance(SModel sm, boolean init) {
-    return (TransactionPropertyHandler_newValue)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TransactionPropertyHandler_newValue) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.TransactionPropertyHandler_newValue", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TransactionPropertyHandler_newValue newInstance(SModel sm) {

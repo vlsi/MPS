@@ -16,7 +16,7 @@ public class TransactionalPropertyHandler extends ConceptFunction {
   }
 
   public static TransactionalPropertyHandler newInstance(SModel sm, boolean init) {
-    return (TransactionalPropertyHandler)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TransactionalPropertyHandler) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.TransactionalPropertyHandler", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TransactionalPropertyHandler newInstance(SModel sm) {

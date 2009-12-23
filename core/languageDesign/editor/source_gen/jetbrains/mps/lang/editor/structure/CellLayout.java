@@ -16,7 +16,7 @@ public class CellLayout extends BaseConcept {
   }
 
   public static CellLayout newInstance(SModel sm, boolean init) {
-    return (CellLayout)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellLayout", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellLayout) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellLayout", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellLayout newInstance(SModel sm) {

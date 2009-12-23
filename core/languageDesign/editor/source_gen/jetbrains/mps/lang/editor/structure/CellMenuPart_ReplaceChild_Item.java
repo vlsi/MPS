@@ -34,7 +34,7 @@ public class CellMenuPart_ReplaceChild_Item extends CellMenuPart_Abstract {
   }
 
   public CellMenuPart_ReplaceChild_Item_Create getCreateFunction() {
-    return (CellMenuPart_ReplaceChild_Item_Create)this.getChild(CellMenuPart_ReplaceChild_Item_Create.class, CellMenuPart_ReplaceChild_Item.CREATE_FUNCTION);
+    return (CellMenuPart_ReplaceChild_Item_Create) this.getChild(CellMenuPart_ReplaceChild_Item_Create.class, CellMenuPart_ReplaceChild_Item.CREATE_FUNCTION);
   }
 
   public void setCreateFunction(CellMenuPart_ReplaceChild_Item_Create node) {
@@ -42,7 +42,7 @@ public class CellMenuPart_ReplaceChild_Item extends CellMenuPart_Abstract {
   }
 
   public static CellMenuPart_ReplaceChild_Item newInstance(SModel sm, boolean init) {
-    return (CellMenuPart_ReplaceChild_Item)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuPart_ReplaceChild_Item) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuPart_ReplaceChild_Item", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuPart_ReplaceChild_Item newInstance(SModel sm) {

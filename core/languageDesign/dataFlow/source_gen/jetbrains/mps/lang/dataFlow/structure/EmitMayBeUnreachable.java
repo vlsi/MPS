@@ -17,7 +17,7 @@ public class EmitMayBeUnreachable extends Statement {
   }
 
   public EmitStatement getEmitStatement() {
-    return (EmitStatement)this.getChild(EmitStatement.class, EmitMayBeUnreachable.EMIT_STATEMENT);
+    return (EmitStatement) this.getChild(EmitStatement.class, EmitMayBeUnreachable.EMIT_STATEMENT);
   }
 
   public void setEmitStatement(EmitStatement node) {
@@ -25,7 +25,7 @@ public class EmitMayBeUnreachable extends Statement {
   }
 
   public static EmitMayBeUnreachable newInstance(SModel sm, boolean init) {
-    return (EmitMayBeUnreachable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EmitMayBeUnreachable) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EmitMayBeUnreachable newInstance(SModel sm) {

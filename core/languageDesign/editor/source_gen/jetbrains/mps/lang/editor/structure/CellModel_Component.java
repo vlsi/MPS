@@ -16,7 +16,7 @@ public class CellModel_Component extends EditorCellModel {
   }
 
   public EditorComponentDeclaration getEditorComponent() {
-    return (EditorComponentDeclaration)this.getReferent(EditorComponentDeclaration.class, CellModel_Component.EDITOR_COMPONENT);
+    return (EditorComponentDeclaration) this.getReferent(EditorComponentDeclaration.class, CellModel_Component.EDITOR_COMPONENT);
   }
 
   public void setEditorComponent(EditorComponentDeclaration node) {
@@ -24,7 +24,7 @@ public class CellModel_Component extends EditorCellModel {
   }
 
   public static CellModel_Component newInstance(SModel sm, boolean init) {
-    return (CellModel_Component)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Component", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellModel_Component) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Component", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellModel_Component newInstance(SModel sm) {

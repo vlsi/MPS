@@ -26,7 +26,7 @@ public class FontStyleStyleClassItem extends StyleClassItem {
   }
 
   public QueryFunction_FontStyle getQuery() {
-    return (QueryFunction_FontStyle)this.getChild(QueryFunction_FontStyle.class, FontStyleStyleClassItem.QUERY);
+    return (QueryFunction_FontStyle) this.getChild(QueryFunction_FontStyle.class, FontStyleStyleClassItem.QUERY);
   }
 
   public void setQuery(QueryFunction_FontStyle node) {
@@ -34,7 +34,7 @@ public class FontStyleStyleClassItem extends StyleClassItem {
   }
 
   public static FontStyleStyleClassItem newInstance(SModel sm, boolean init) {
-    return (FontStyleStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FontStyleStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FontStyleStyleClassItem newInstance(SModel sm) {

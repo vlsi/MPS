@@ -24,7 +24,7 @@ public class CellMenuComponentFeature_Property extends CellMenuComponentFeature 
   }
 
   public static CellMenuComponentFeature_Property newInstance(SModel sm, boolean init) {
-    return (CellMenuComponentFeature_Property)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellMenuComponentFeature_Property) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellMenuComponentFeature_Property", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellMenuComponentFeature_Property newInstance(SModel sm) {

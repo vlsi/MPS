@@ -54,7 +54,7 @@ public class MovePropertyUp extends BaseGeneratedRefactoring {
     if (concept == null) {
       return false;
     }
-    return ((SNode)refactoringContext.getParameter("targetConcept")) != concept && SConceptOperations.isSuperConceptOf(((SNode)refactoringContext.getParameter("targetConcept")), NameUtil.nodeFQName(concept));
+    return ((SNode) refactoringContext.getParameter("targetConcept")) != concept && SConceptOperations.isSuperConceptOf(((SNode) refactoringContext.getParameter("targetConcept")), NameUtil.nodeFQName(concept));
   }
 
   public boolean isApplicableWRTConcept(SNode node) {
@@ -63,24 +63,24 @@ public class MovePropertyUp extends BaseGeneratedRefactoring {
 
   public void doRefactor(final RefactoringContext refactoringContext) {
     /*
-      SNode propertyToMerge = RefUtil.findPropertyToMerge(((SNode)refactoringContext.getParameter("targetConcept")), refactoringContext.getSelectedNode());
+      SNode propertyToMerge = RefUtil.findPropertyToMerge(((SNode) refactoringContext.getParameter("targetConcept")), refactoringContext.getSelectedNode());
       if ((propertyToMerge != null)) {
         refactoringContext.replaceRefsToNodeWithNode(refactoringContext.getSelectedNode(), propertyToMerge);
       } else {
-        refactoringContext.moveNodeToNode(refactoringContext.getSelectedNode(), refactoringContext.getSelectedNode().getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
+        refactoringContext.moveNodeToNode(refactoringContext.getSelectedNode(), refactoringContext.getSelectedNode().getRole_(), ((SNode) refactoringContext.getParameter("targetConcept")));
       }
     */
-    refactoringContext.moveNodeToNode(refactoringContext.getSelectedNode(), refactoringContext.getSelectedNode().getRole_(), ((SNode)refactoringContext.getParameter("targetConcept")));
-    refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(((SNode)refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(refactoringContext.getSelectedNode(), "name"));
+    refactoringContext.moveNodeToNode(refactoringContext.getSelectedNode(), refactoringContext.getSelectedNode().getRole_(), ((SNode) refactoringContext.getParameter("targetConcept")));
+    refactoringContext.changeFeatureName(refactoringContext.getSelectedNode(), SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getSModelFqName() + "." + SPropertyOperations.getString(((SNode) refactoringContext.getParameter("targetConcept")), "name"), SPropertyOperations.getString(refactoringContext.getSelectedNode(), "name"));
   }
 
   public Map<IModule, List<SModel>> getModelsToGenerate(final RefactoringContext refactoringContext) {
-    Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float)0.75, false));
+    Map<IModule, List<SModel>> result = MapSequence.fromMap(new LinkedHashMap<IModule, List<SModel>>(16, (float) 0.75, false));
     Language sourceLanguage = Language.getLanguageFor(SNodeOperations.getModel(refactoringContext.getSelectedNode()).getModelDescriptor());
     if (sourceLanguage != null) {
       MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), sourceLanguage));
     }
-    Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(((SNode)refactoringContext.getParameter("targetConcept"))).getModelDescriptor());
+    Language targetLanguage = Language.getLanguageFor(SNodeOperations.getModel(((SNode) refactoringContext.getParameter("targetConcept"))).getModelDescriptor());
     if (targetLanguage != null) {
       MapSequence.fromMap(result).putAll(RefactoringUtil.getLanguageAndItsExtendingLanguageModels(refactoringContext.getSelectedMPSProject(), targetLanguage));
     }

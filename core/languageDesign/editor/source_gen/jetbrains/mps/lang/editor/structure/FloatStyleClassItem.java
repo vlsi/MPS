@@ -24,7 +24,7 @@ public class FloatStyleClassItem extends StyleClassItem {
   }
 
   public static FloatStyleClassItem newInstance(SModel sm, boolean init) {
-    return (FloatStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.FloatStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FloatStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.FloatStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FloatStyleClassItem newInstance(SModel sm) {

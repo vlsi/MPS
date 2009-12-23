@@ -17,7 +17,7 @@ public class NavigatableReferenceStyleClassItem extends StyleClassItem {
   }
 
   public LinkDeclaration getLink() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, NavigatableReferenceStyleClassItem.LINK);
+    return (LinkDeclaration) this.getReferent(LinkDeclaration.class, NavigatableReferenceStyleClassItem.LINK);
   }
 
   public void setLink(LinkDeclaration node) {
@@ -25,7 +25,7 @@ public class NavigatableReferenceStyleClassItem extends StyleClassItem {
   }
 
   public static NavigatableReferenceStyleClassItem newInstance(SModel sm, boolean init) {
-    return (NavigatableReferenceStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NavigatableReferenceStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NavigatableReferenceStyleClassItem newInstance(SModel sm) {

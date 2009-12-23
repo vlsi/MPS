@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_StyledText extends ConceptFunctionParamete
   }
 
   public static ConceptFunctionParameter_StyledText newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_StyledText)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_StyledText) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_StyledText", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_StyledText newInstance(SModel sm) {

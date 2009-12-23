@@ -15,7 +15,7 @@ public class PunctuationLeftStyleClassItem extends BooleanStyleSheetItem {
   }
 
   public static PunctuationLeftStyleClassItem newInstance(SModel sm, boolean init) {
-    return (PunctuationLeftStyleClassItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PunctuationLeftStyleClassItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PunctuationLeftStyleClassItem newInstance(SModel sm) {
