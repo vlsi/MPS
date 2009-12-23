@@ -21,6 +21,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -129,13 +132,13 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
         }
       });
 
-      final List<SNode> nodes = new ArrayList<SNode>();
+      final Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
       ProgressManager.getInstance().run(new Task.Modal(GoToOverridingMethod_Action.this.project, "Searching...", true) {
         public void run(@NotNull final ProgressIndicator p) {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               for (String finder : ListSequence.fromList(finders)) {
-                ListSequence.fromList(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finder, GoToOverridingMethod_Action.this.methodNode, GlobalScope.getInstance(), p)));
+                SetSequence.fromSet(nodes).addSequence(ListSequence.fromList(FindUtils.executeFinder(finder, GoToOverridingMethod_Action.this.methodNode, GlobalScope.getInstance(), p)));
               }
             }
           });
@@ -147,7 +150,7 @@ public class GoToOverridingMethod_Action extends GeneratedAction {
           Rectangle cellBounds = GoToOverridingMethod_Action.this.editorContext.getSelectedCell().getBounds();
           Point point = new Point(((int)cellBounds.getMinX()), ((int)cellBounds.getMaxY()));
           RelativePoint relPpoint = new RelativePoint(GoToOverridingMethod_Action.this.editorComponent, point);
-          GoToHelper.showOverridingMethodsMenu(nodes, relPpoint, GoToOverridingMethod_Action.this.project);
+          GoToHelper.showOverridingMethodsMenu(SetSequence.fromSet(nodes).toListSequence(), relPpoint, GoToOverridingMethod_Action.this.project);
         }
       });
     } catch (Throwable t) {

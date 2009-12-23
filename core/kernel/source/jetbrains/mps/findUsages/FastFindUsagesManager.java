@@ -276,22 +276,18 @@ class FastFindUsagesManager extends FindUsagesManager {
           return true;
         }
       }, new GlobalSearchScope(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext())) {
-        @Override
         public boolean contains(VirtualFile file) {
           return scopeFiles.contains(file);
         }
 
-        @Override
         public int compare(VirtualFile file1, VirtualFile file2) {
           return file1.getPath().compareTo(file2.getPath());
         }
 
-        @Override
         public boolean isSearchInModuleContent(@NotNull Module aModule) {
           return true;
         }
 
-        @Override
         public boolean isSearchInLibraries() {
           return false;
         }
