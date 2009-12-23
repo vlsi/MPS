@@ -17,6 +17,7 @@ package jetbrains.mps.workbench.search;
 
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.SystemInfo;
+import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.components.panels.NonOpaquePanel;
 import jetbrains.mps.ide.ui.CompletionTextField;
 import jetbrains.mps.workbench.search.icons.Icons;
@@ -164,6 +165,16 @@ public abstract class AbstractSearchPanel extends JPanel {
     }, KeyStroke.getKeyStroke("ESCAPE"), WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
   }
 
+  protected void setInitialText(final String initialText) {
+    final String text = initialText != null ? initialText : "";
+    if (text.indexOf("\n") >= 0) {
+      myIsRegex.setSelected(true);
+      myText.setText(StringUtil.escapeToRegexp(text));
+    } else {
+      myText.setText(text);
+    }
+  }
+
   protected Pattern getPattern() {
     if (myIsRegex.isSelected()) {
       return SearchConditions.containsRegexp(myText.getText(), myIsCaseSensitive.isSelected());
@@ -192,8 +203,6 @@ public abstract class AbstractSearchPanel extends JPanel {
   }
 
   public void activate() {
-    String clipboardString = TextPasteUtil.getStringFromClipboard();
-    this.myText.setText((clipboardString != null)? clipboardString : "");
     if (getSearchHistory() != null && getSearchHistory().getSearches().size() != 0) {
       for (int i = getSearchHistory().getSearches().size() - 1; i >= 0; i--) {
         myText.addValue(getSearchHistory().getSearches().get(i));

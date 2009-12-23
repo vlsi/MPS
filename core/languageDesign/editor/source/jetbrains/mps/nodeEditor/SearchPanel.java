@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
+import jetbrains.mps.nodeEditor.text.TextRenderUtil;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.nodeEditor.cells.*;
@@ -253,6 +254,11 @@ public class SearchPanel extends AbstractSearchPanel {
     myText.setBackground(Color.white);
     revalidate();
     myEditor.requestFocus();
+  }
+
+  public void activate() {
+    setInitialText(TextRenderUtil.getTextBuilderForSelectedCellsOfEditor(myEditor).getText());
+    super.activate();
   }
 
   private class SearchPanelEditorMessage extends DefaultEditorMessage {
