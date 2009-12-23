@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory>
     <refactoringContext modelVersion="4">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
@@ -68,118 +68,118 @@
   <maxImportIndex value="3" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1196259557930">
-    <property name="name" value="ComplexType" />
-    <link role="extends" targetNodeId="2.1164118113764" resolveInfo="PrimitiveType" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1196259984903">
-      <property name="value" value="complex" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1196259557930">
+    <property name="name:0" value="ComplexType" />
+    <link role="extends:0" targetNodeId="2.1164118113764:3" resolveInfo="PrimitiveType" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1196259984903">
+      <property name="value:0" value="complex" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1196260743057">
-    <property name="name" value="ReExpression" />
-    <link role="extends" targetNodeId="1196260832413" resolveInfo="ComplexExpression" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1196261016993">
-      <property name="value" value="re" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1196260743057">
+    <property name="name:0" value="ReExpression" />
+    <link role="extends:0" targetNodeId="1196260832413:4" resolveInfo="ComplexExpression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1196261016993">
+      <property name="value:0" value="re" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1196418742461">
-      <link role="conceptLinkDeclaration" targetNodeId="1196418498814" resolveInfo="returnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1196418744322" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1196260832413">
-    <property name="name" value="SingleComplexExpression" />
-    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    <node role="conceptLinkDeclaration" type="jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration" id="1196418498814">
-      <property name="name" value="returnType" />
-      <link role="targetType" targetNodeId="2.1068431790189" resolveInfo="Type" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1196260892801">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="complexExpression" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1196261076958">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" resolveInfo="abstract" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1196418742461">
+      <link role="conceptLinkDeclaration:0" targetNodeId="1196418498814:4" resolveInfo="returnType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.DoubleType:3" id="1196418744322" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1196263843100">
-    <property name="name" value="ArgExpression" />
-    <link role="extends" targetNodeId="1196260832413" resolveInfo="ComplexExpression" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1196263863976">
-      <property name="value" value="arg" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1196260832413">
+    <property name="name:0" value="SingleComplexExpression" />
+    <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    <node role="conceptLinkDeclaration:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLinkDeclaration:0" id="1196418498814">
+      <property name="name:0" value="returnType" />
+      <link role="targetType:0" targetNodeId="2.1068431790189:3" resolveInfo="Type" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1196418763947">
-      <link role="conceptLinkDeclaration" targetNodeId="1196418498814" resolveInfo="returnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1196418767636" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1196260892801">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="complexExpression" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1196264034207">
-    <property name="name" value="AbsExpression" />
-    <link role="extends" targetNodeId="1196260832413" resolveInfo="ComplexExpression" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1196264055958">
-      <property name="value" value="abs" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1196418772512">
-      <link role="conceptLinkDeclaration" targetNodeId="1196418498814" resolveInfo="returnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1196418775186" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1196261076958">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473854053:0" resolveInfo="abstract" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1196261859224">
-    <property name="name" value="ImExpression" />
-    <link role="extends" targetNodeId="1196260832413" resolveInfo="ComplexExpression" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1196418637000">
-      <link role="conceptLinkDeclaration" targetNodeId="1196418498814" resolveInfo="returnType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.DoubleType" id="1196418645565" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1196263843100">
+    <property name="name:0" value="ArgExpression" />
+    <link role="extends:0" targetNodeId="1196260832413:4" resolveInfo="ComplexExpression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1196263863976">
+      <property name="value:0" value="arg" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1196261893938">
-      <property name="value" value="im" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1196418881524">
-    <property name="name" value="ConjugateComplexExpression" />
-    <link role="extends" targetNodeId="1196260832413" resolveInfo="SingleComplexExpression" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1196418940099">
-      <link role="conceptLinkDeclaration" targetNodeId="1196418498814" resolveInfo="returnType" />
-      <node role="target" type="jetbrains.mps.samples.complex.structure.ComplexType" id="1196419204127" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1196419247698">
-      <property name="value" value="conj" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1196418763947">
+      <link role="conceptLinkDeclaration:0" targetNodeId="1196418498814:4" resolveInfo="returnType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.DoubleType:3" id="1196418767636" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1196421957108">
-    <property name="name" value="DegreeComplexExpression" />
-    <link role="extends" targetNodeId="1196260832413" resolveInfo="SingleComplexExpression" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1196422043474">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="degree" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1179362310214" resolveInfo="IntegerLiteral" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1196264034207">
+    <property name="name:0" value="AbsExpression" />
+    <link role="extends:0" targetNodeId="1196260832413:4" resolveInfo="ComplexExpression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1196264055958">
+      <property name="value:0" value="abs" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1196421987391">
-      <link role="conceptLinkDeclaration" targetNodeId="1196418498814" resolveInfo="returnType" />
-      <node role="target" type="jetbrains.mps.samples.complex.structure.ComplexType" id="1196422002159" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1196422008098">
-      <property name="value" value="deg" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1196418772512">
+      <link role="conceptLinkDeclaration:0" targetNodeId="1196418498814:4" resolveInfo="returnType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.DoubleType:3" id="1196418775186" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1196434001121">
-    <property name="name" value="ImaginaryUnit" />
-    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1196434710307">
-      <property name="value" value="i" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1196261859224">
+    <property name="name:0" value="ImExpression" />
+    <link role="extends:0" targetNodeId="1196260832413:4" resolveInfo="ComplexExpression" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1196418637000">
+      <link role="conceptLinkDeclaration:0" targetNodeId="1196418498814:4" resolveInfo="returnType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.DoubleType:3" id="1196418645565" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1196436438637">
-      <property name="value" value="complex imaginary unit" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" resolveInfo="short_description" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1196261893938">
+      <property name="value:0" value="im" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1196418881524">
+    <property name="name:0" value="ConjugateComplexExpression" />
+    <link role="extends:0" targetNodeId="1196260832413:4" resolveInfo="SingleComplexExpression" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1196418940099">
+      <link role="conceptLinkDeclaration:0" targetNodeId="1196418498814:4" resolveInfo="returnType" />
+      <node role="target:0" type="jetbrains.mps.samples.complex.structure.ComplexType:4" id="1196419204127" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1196419247698">
+      <property name="value:0" value="conj" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1196421957108">
+    <property name="name:0" value="DegreeComplexExpression" />
+    <link role="extends:0" targetNodeId="1196260832413:4" resolveInfo="SingleComplexExpression" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1196422043474">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="degree" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2.1179362310214:3" resolveInfo="IntegerLiteral" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1196421987391">
+      <link role="conceptLinkDeclaration:0" targetNodeId="1196418498814:4" resolveInfo="returnType" />
+      <node role="target:0" type="jetbrains.mps.samples.complex.structure.ComplexType:4" id="1196422002159" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1196422008098">
+      <property name="value:0" value="deg" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1196434001121">
+    <property name="name:0" value="ImaginaryUnit" />
+    <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1196434710307">
+      <property name="value:0" value="i" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1196436438637">
+      <property name="value:0" value="complex imaginary unit" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="short_description" />
     </node>
   </node>
 </model>

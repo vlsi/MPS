@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c895904cc(jetbrains.mps.build.dependency.constraints)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
@@ -29,17 +29,17 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895904cf(jetbrains.mps.build.dependency.structure)" version="0" />
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1224776365671">
-    <link role="concept" targetNodeId="1.1224775496043" resolveInfo="ProjectDescriptionReference" />
-    <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="1224776369526">
-      <link role="applicableLink" targetNodeId="1.1224775730869" />
-      <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1224776378344">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1224776378345">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1224776422011">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1224776422913">
-              <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model" id="1224776422012" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation" id="1224776432680">
-                <link role="concept" targetNodeId="1.1216745453338" resolveInfo="ProjectDescription" />
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1224776365671">
+    <link role="concept:8" targetNodeId="1.1224775496043:0" resolveInfo="ProjectDescriptionReference" />
+    <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1224776369526">
+      <link role="applicableLink:8" targetNodeId="1.1224775730869:0" />
+      <node role="searchScopeFactory:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory:8" id="1224776378344">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1224776378345">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1224776422011">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1224776422913">
+              <node role="operand:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model:0" id="1224776422012" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Model_RootsOperation:16" id="1224776432680">
+                <link role="concept:16" targetNodeId="1.1216745453338:0" resolveInfo="ProjectDescription" />
               </node>
             </node>
           </node>

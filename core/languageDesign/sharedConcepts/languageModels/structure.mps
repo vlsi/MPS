@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory>
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
@@ -60,135 +60,135 @@
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1161622665029">
-    <property name="name" value="ConceptFunctionParameter_model" />
-    <link role="extends" targetNodeId="2.1107135704075" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1161622665030">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" />
-      <node role="target" type="jetbrains.mps.lang.smodel.structure.SModelType" id="1161622665031" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1161622665029">
+    <property name="name:0" value="ConceptFunctionParameter_model" />
+    <link role="extends:0" targetNodeId="2.1107135704075:3" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1161622665030">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" />
+      <node role="target:0" type="jetbrains.mps.lang.smodel.structure.SModelType:16" id="1161622665031" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1161622665032">
-      <property name="value" value="model" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1161622665032">
+      <property name="value:0" value="model" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1161622665033">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1161622665033">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1161622753914">
-    <property name="name" value="ConceptFunctionParameter_operationContext" />
-    <link role="extends" targetNodeId="2.1107135704075" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1161622753915">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1161622753916">
-        <link role="classifier" targetNodeId="4.~IOperationContext" resolveInfo="IOperationContext" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1161622753914">
+    <property name="name:0" value="ConceptFunctionParameter_operationContext" />
+    <link role="extends:0" targetNodeId="2.1107135704075:3" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1161622753915">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1161622753916">
+        <link role="classifier:3" targetNodeId="4.~IOperationContext" resolveInfo="IOperationContext" />
       </node>
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1161622753917">
-      <property name="value" value="operationContext" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1161622753917">
+      <property name="value:0" value="operationContext" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1161622753918">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1161622753918">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1161622878565">
-    <property name="name" value="ConceptFunctionParameter_scope" />
-    <link role="extends" targetNodeId="2.1107135704075" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1161622878566">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1161622878567">
-        <link role="classifier" targetNodeId="4.~IScope" resolveInfo="IScope" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1161622878565">
+    <property name="name:0" value="ConceptFunctionParameter_scope" />
+    <link role="extends:0" targetNodeId="2.1107135704075:3" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1161622878566">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1161622878567">
+        <link role="classifier:3" targetNodeId="4.~IScope" resolveInfo="IScope" />
       </node>
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1161622878568">
-      <property name="value" value="scope" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1161622878568">
+      <property name="value:0" value="scope" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1161622878569">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1161807239261">
-    <property name="name" value="Options_DefaultCustom" />
-    <property name="memberIdentifierPolicy" value="custom" />
-    <link role="memberDataType" targetNodeId="1.1082983041843" />
-    <link role="defaultMember" targetNodeId="1161807239262" resolveInfo="default_" />
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1161807239262">
-      <property name="externalValue" value="default_" />
-      <property name="javaIdentifier" value="default_" />
-    </node>
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1161807432013">
-      <property name="externalValue" value="custom_" />
-      <property name="internalValue" value="custom" />
-      <property name="javaIdentifier" value="custom_" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1161622878569">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1165007009656">
-    <property name="name" value="NodePresentationOptions" />
-    <property name="memberIdentifierPolicy" value="custom" />
-    <link role="memberDataType" targetNodeId="1.1082983041843" />
-    <link role="defaultMember" targetNodeId="1165007009657" resolveInfo="default_" />
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1165007009657">
-      <property name="externalValue" value="default" />
-      <property name="javaIdentifier" value="default_" />
+  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="1161807239261">
+    <property name="name:0" value="Options_DefaultCustom" />
+    <property name="memberIdentifierPolicy:0" value="custom" />
+    <link role="memberDataType:0" targetNodeId="1.1082983041843:0" />
+    <link role="defaultMember:0" targetNodeId="1161807239262:0" resolveInfo="default_" />
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1161807239262">
+      <property name="externalValue:0" value="default_" />
+      <property name="javaIdentifier:0" value="default_" />
     </node>
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1165007068491">
-      <property name="externalValue" value="referent" />
-      <property name="internalValue" value="default_referent" />
-      <property name="javaIdentifier" value="referent_" />
-    </node>
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1165007009658">
-      <property name="externalValue" value="custom" />
-      <property name="internalValue" value="custom" />
-      <property name="javaIdentifier" value="custom_" />
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1161807432013">
+      <property name="externalValue:0" value="custom_" />
+      <property name="internalValue:0" value="custom" />
+      <property name="javaIdentifier:0" value="custom_" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1177964585679">
-    <property name="name" value="Options_DefaultTrue" />
-    <property name="memberIdentifierPolicy" value="custom" />
-    <link role="memberDataType" targetNodeId="1.1082983041843" />
-    <link role="defaultMember" targetNodeId="1177964585680" resolveInfo="default_" />
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1177964585680">
-      <property name="externalValue" value="default" />
-      <property name="javaIdentifier" value="default_" />
+  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="1165007009656">
+    <property name="name:0" value="NodePresentationOptions" />
+    <property name="memberIdentifierPolicy:0" value="custom" />
+    <link role="memberDataType:0" targetNodeId="1.1082983041843:0" />
+    <link role="defaultMember:0" targetNodeId="1165007009657:0" resolveInfo="default_" />
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1165007009657">
+      <property name="externalValue:0" value="default" />
+      <property name="javaIdentifier:0" value="default_" />
     </node>
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1177964653995">
-      <property name="externalValue" value="true" />
-      <property name="internalValue" value="true" />
-      <property name="javaIdentifier" value="true_" />
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1165007068491">
+      <property name="externalValue:0" value="referent" />
+      <property name="internalValue:0" value="default_referent" />
+      <property name="javaIdentifier:0" value="referent_" />
+    </node>
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1165007009658">
+      <property name="externalValue:0" value="custom" />
+      <property name="internalValue:0" value="custom" />
+      <property name="javaIdentifier:0" value="custom_" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1194033889146">
-    <property name="name" value="ConceptFunctionParameter_editorContext" />
-    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1194033889147">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1194033923853">
-        <link role="classifier" targetNodeId="3.~EditorContext" resolveInfo="EditorContext" />
+  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="1177964585679">
+    <property name="name:0" value="Options_DefaultTrue" />
+    <property name="memberIdentifierPolicy:0" value="custom" />
+    <link role="memberDataType:0" targetNodeId="1.1082983041843:0" />
+    <link role="defaultMember:0" targetNodeId="1177964585680:0" resolveInfo="default_" />
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1177964585680">
+      <property name="externalValue:0" value="default" />
+      <property name="javaIdentifier:0" value="default_" />
+    </node>
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1177964653995">
+      <property name="externalValue:0" value="true" />
+      <property name="internalValue:0" value="true" />
+      <property name="javaIdentifier:0" value="true_" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1194033889146">
+    <property name="name:0" value="ConceptFunctionParameter_editorContext" />
+    <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1194033889147">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1194033923853">
+        <link role="classifier:3" targetNodeId="3.~EditorContext" resolveInfo="EditorContext" />
       </node>
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1194033889149">
-      <property name="value" value="editorContext" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1194033889149">
+      <property name="value:0" value="editorContext" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1194033889150">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1194033889150">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1206467714548">
-    <property name="name" value="ConceptFunctionParameter_node" />
-    <link role="extends" targetNodeId="2.1107135704075" resolveInfo="ConceptFunctionParameter" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1206467714551">
-      <property name="value" value="node" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" resolveInfo="alias" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1206467714548">
+    <property name="name:0" value="ConceptFunctionParameter_node" />
+    <link role="extends:0" targetNodeId="2.1107135704075:3" resolveInfo="ConceptFunctionParameter" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1206467714551">
+      <property name="value:0" value="node" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1206467714552">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1206467714552">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
     </node>
-    <node role="conceptLink" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink" id="1206467744334">
-      <link role="conceptLinkDeclaration" targetNodeId="2.1137545963098" resolveInfo="conceptFunctionParameterType" />
-      <node role="target" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1206467758055" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1206467744334">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
+      <node role="target:0" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1206467758055" />
     </node>
   </node>
 </model>

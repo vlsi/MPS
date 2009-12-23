@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -29,42 +29,42 @@
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.ide.ui.smodel(jetbrains.mps.ide.ui.smodel@java_stub)" version="-1" />
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213104856219">
-    <link role="concept" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="property" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" id="1213104856596">
-      <link role="applicableProperty" targetNodeId="1.1193676396447" resolveInfo="virtualPackage" />
-      <node role="propertyGetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" id="1213104856597">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104856598">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213104856599">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104856600">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1213104856601">
-                <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1213104856602" />
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104856219">
+    <link role="concept:8" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="1213104856596">
+      <link role="applicableProperty:8" targetNodeId="1.1193676396447:0" resolveInfo="virtualPackage" />
+      <node role="propertyGetter:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter:8" id="1213104856597">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213104856598">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1213104856599">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213104856600">
+              <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1213104856601">
+                <node role="leftExpression:16" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node:8" id="1213104856602" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213104856603">
-                <link role="baseMethodDeclaration" targetNodeId="3.~SNode.getProperty(java.lang.String):java.lang.String" resolveInfo="getProperty" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="1213104856604">
-                  <link role="classifier" targetNodeId="4.~SModelTreeNode" resolveInfo="SModelTreeNode" />
-                  <link role="variableDeclaration" targetNodeId="4.~SModelTreeNode.PACK" resolveInfo="PACK" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1213104856603">
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~SNode.getProperty(java.lang.String):java.lang.String" resolveInfo="getProperty" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1213104856604">
+                  <link role="classifier:3" targetNodeId="4.~SModelTreeNode" resolveInfo="SModelTreeNode" />
+                  <link role="variableDeclaration:3" targetNodeId="4.~SModelTreeNode.PACK" resolveInfo="PACK" />
                 </node>
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node role="propertySetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter" id="6895093993902376992">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="6895093993902376993">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="6895093993902376994">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="6895093993902376995">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="6895093993902376996">
-                <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="6895093993902376997" />
+      <node role="propertySetter:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter:8" id="6895093993902376992">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6895093993902376993">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6895093993902376994">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6895093993902376995">
+              <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="6895093993902376996">
+                <node role="leftExpression:16" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node:8" id="6895093993902376997" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="6895093993902376998">
-                <link role="baseMethodDeclaration" targetNodeId="3.~SNode.setProperty(java.lang.String,java.lang.String):void" resolveInfo="setProperty" />
-                <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference" id="6895093993902376999">
-                  <link role="classifier" targetNodeId="4.~SModelTreeNode" resolveInfo="SModelTreeNode" />
-                  <link role="variableDeclaration" targetNodeId="4.~SModelTreeNode.PACK" resolveInfo="PACK" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6895093993902376998">
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~SNode.setProperty(java.lang.String,java.lang.String):void" resolveInfo="setProperty" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="6895093993902376999">
+                  <link role="classifier:3" targetNodeId="4.~SModelTreeNode" resolveInfo="SModelTreeNode" />
+                  <link role="variableDeclaration:3" targetNodeId="4.~SModelTreeNode.PACK" resolveInfo="PACK" />
                 </node>
-                <node role="actualArgument" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue" id="6895093993902379618" />
+                <node role="actualArgument:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_propertyValue:8" id="6895093993902379618" />
               </node>
             </node>
           </node>
@@ -72,29 +72,29 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1213104856824">
-    <link role="concept" targetNodeId="1.1196978630214" resolveInfo="IResolveInfo" />
-    <node role="property" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint" id="1213104856825">
-      <link role="applicableProperty" targetNodeId="1.1196978656277" resolveInfo="resolveInfo" />
-      <node role="propertyGetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter" id="1213104856826">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104856827">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213104856828">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1213104856829">
-              <node role="operand" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression" id="1213104856830">
-                <node role="leftExpression" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node" id="1213104856831" />
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104856824">
+    <link role="concept:8" targetNodeId="1.1196978630214:0" resolveInfo="IResolveInfo" />
+    <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="1213104856825">
+      <link role="applicableProperty:8" targetNodeId="1.1196978656277:0" resolveInfo="resolveInfo" />
+      <node role="propertyGetter:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter:8" id="1213104856826">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213104856827">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1213104856828">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1213104856829">
+              <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1213104856830">
+                <node role="leftExpression:16" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node:8" id="1213104856831" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1213104856832">
-                <link role="baseMethodDeclaration" targetNodeId="3.~SNode.getName():java.lang.String" resolveInfo="getName" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1213104856832">
+                <link role="baseMethodDeclaration:3" targetNodeId="3.~SNode.getName():java.lang.String" resolveInfo="getName" />
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node role="propertySetter" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter" id="1213104856833">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213104856834">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.SingleLineComment" id="7376433222636454277">
-            <node role="commentPart" type="jetbrains.mps.baseLanguage.structure.TextCommentPart" id="7376433222636454278">
-              <property name="text" value="nothing - resolveInfo is read-only" />
+      <node role="propertySetter:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertySetter:8" id="1213104856833">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213104856834">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="7376433222636454277">
+            <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="7376433222636454278">
+              <property name="text:3" value="nothing - resolveInfo is read-only" />
             </node>
           </node>
         </node>

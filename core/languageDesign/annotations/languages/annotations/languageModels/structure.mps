@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory>
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
@@ -38,28 +38,28 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959033d(jetbrains.mps.lang.annotations.structure)" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1136027476087">
-    <property name="name" value="AttributeConcept" />
-    <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1136027476088">
-      <property name="role" value="attributedNode" />
-      <link role="target" targetNodeId="1.1133920641626" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1136027476087">
+    <property name="name:0" value="AttributeConcept" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1136027476088">
+      <property name="role:0" value="attributedNode" />
+      <link role="target:0" targetNodeId="1.1133920641626:0" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1136027498483">
-    <property name="name" value="LinkAttributeConcept" />
-    <link role="extends" targetNodeId="1136027476087" resolveInfo="AttributeConcept" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1136027498484">
-      <property name="name" value="linkRole" />
-      <link role="dataType" targetNodeId="1.1082983041843" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1136027498483">
+    <property name="name:0" value="LinkAttributeConcept" />
+    <link role="extends:0" targetNodeId="1136027476087:0" resolveInfo="AttributeConcept" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1136027498484">
+      <property name="name:0" value="linkRole" />
+      <link role="dataType:0" targetNodeId="1.1082983041843:0" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1136027498485">
-    <property name="name" value="PropertyAttributeConcept" />
-    <link role="extends" targetNodeId="1136027476087" resolveInfo="AttributeConcept" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1136027498486">
-      <property name="name" value="propertyName" />
-      <link role="dataType" targetNodeId="1.1082983041843" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1136027498485">
+    <property name="name:0" value="PropertyAttributeConcept" />
+    <link role="extends:0" targetNodeId="1136027476087:0" resolveInfo="AttributeConcept" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1136027498486">
+      <property name="name:0" value="propertyName" />
+      <link role="dataType:0" targetNodeId="1.1082983041843:0" />
     </node>
   </node>
 </model>

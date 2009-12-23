@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c89590284(jetbrains.mps.lang.core.editor)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
@@ -29,18 +29,18 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1133921100033">
-    <link role="conceptDeclaration" targetNodeId="1.1133920641626" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1133921115694">
-      <property name="nullText" value="&lt;abstract concept&gt;" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem" id="1214398031997">
-        <property name="flag" value="true" />
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1133921100033">
+    <link role="conceptDeclaration:32" targetNodeId="1.1133920641626:0" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1133921115694">
+      <property name="nullText:32" value="&lt;abstract concept&gt;" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem:32" id="1214398031997">
+        <property name="flag:32" value="true" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1214399678662">
-        <property name="color" value="lightGray" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="1214399678662">
+        <property name="color:32" value="lightGray" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1223039491227">
-        <property name="style" value="BOLD" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="1223039491227">
+        <property name="style:32" value="BOLD" />
       </node>
     </node>
   </node>

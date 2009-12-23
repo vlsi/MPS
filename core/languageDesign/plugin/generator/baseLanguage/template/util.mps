@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c8959036a(jetbrains.mps.lang.plugin.generator.baseLanguage.template.util)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -28,120 +28,120 @@
   <maxImportIndex value="10" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="10" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1213878920295">
-    <property name="name" value="PluginNameUtils" />
-    <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213878920562" />
-    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1218029277052">
-      <property name="name" value="getModuleShortName" />
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1218029309183">
-        <property name="name" value="module" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1218029309184">
-          <link role="classifier" targetNodeId="5.~IModule" resolveInfo="IModule" />
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1213878920295">
+    <property name="name:3" value="PluginNameUtils" />
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1213878920562" />
+    <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1218029277052">
+      <property name="name:3" value="getModuleShortName" />
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1218029309183">
+        <property name="name:3" value="module" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1218029309184">
+          <link role="classifier:3" targetNodeId="5.~IModule" resolveInfo="IModule" />
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192526351" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1218029277054" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1218029277055">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1218029314781">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1218029314782">
-            <property name="name" value="moduleUID" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192518875" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1218029314800">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1218029314801">
-                <link role="variableDeclaration" targetNodeId="1218029309183" resolveInfo="module" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225192526351" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1218029277054" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1218029277055">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1218029314781">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1218029314782">
+            <property name="name:3" value="moduleUID" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225192518875" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1218029314800">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1218029314801">
+                <link role="variableDeclaration:3" targetNodeId="1218029309183" resolveInfo="module" />
               </node>
-              <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1218029314802">
-                <link role="baseMethodDeclaration" targetNodeId="5.~IModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1218029314803">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1218029314804">
-            <property name="name" value="shortName" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192525202" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218029314806">
-              <link role="classConcept" targetNodeId="10.~NameUtil" resolveInfo="NameUtil" />
-              <link role="baseMethodDeclaration" targetNodeId="10.~NameUtil.shortNameFromLongName(java.lang.String):java.lang.String" resolveInfo="shortNameFromLongName" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218029314807">
-                <link role="variableDeclaration" targetNodeId="1218029314782" resolveInfo="moduleUID" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1218029314802">
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~IModule.getModuleUID():java.lang.String" resolveInfo="getModuleUID" />
               </node>
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1218029314808">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1218029314809">
-            <property name="name" value="normalShortName" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192519347" />
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218029314811">
-              <link role="baseMethodDeclaration" targetNodeId="10.~NameUtil.toValidIdentifier(java.lang.String):java.lang.String" resolveInfo="toValidIdentifier" />
-              <link role="classConcept" targetNodeId="10.~NameUtil" resolveInfo="NameUtil" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218029314812">
-                <link role="variableDeclaration" targetNodeId="1218029314804" resolveInfo="shortName" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1218029314803">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1218029314804">
+            <property name="name:3" value="shortName" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225192525202" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1218029314806">
+              <link role="classConcept:3" targetNodeId="10.~NameUtil" resolveInfo="NameUtil" />
+              <link role="baseMethodDeclaration:3" targetNodeId="10.~NameUtil.shortNameFromLongName(java.lang.String):java.lang.String" resolveInfo="shortNameFromLongName" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1218029314807">
+                <link role="variableDeclaration:3" targetNodeId="1218029314782" resolveInfo="moduleUID" />
               </node>
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1218029320798">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1218029320801">
-            <link role="baseMethodDeclaration" targetNodeId="10.~NameUtil.capitalize(java.lang.String):java.lang.String" resolveInfo="capitalize" />
-            <link role="classConcept" targetNodeId="10.~NameUtil" resolveInfo="NameUtil" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1218029320802">
-              <link role="variableDeclaration" targetNodeId="1218029314809" resolveInfo="normalShortName" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1218029314808">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1218029314809">
+            <property name="name:3" value="normalShortName" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225192519347" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1218029314811">
+              <link role="baseMethodDeclaration:3" targetNodeId="10.~NameUtil.toValidIdentifier(java.lang.String):java.lang.String" resolveInfo="toValidIdentifier" />
+              <link role="classConcept:3" targetNodeId="10.~NameUtil" resolveInfo="NameUtil" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1218029314812">
+                <link role="variableDeclaration:3" targetNodeId="1218029314804" resolveInfo="shortName" />
+              </node>
             </node>
           </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1218029320798">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1218029320801">
+            <link role="baseMethodDeclaration:3" targetNodeId="10.~NameUtil.capitalize(java.lang.String):java.lang.String" resolveInfo="capitalize" />
+            <link role="classConcept:3" targetNodeId="10.~NameUtil" resolveInfo="NameUtil" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1218029320802">
+              <link role="variableDeclaration:3" targetNodeId="1218029314809" resolveInfo="normalShortName" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1213879030228">
+      <property name="name:3" value="getPluginName" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225192523487" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1213879030230" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213879030231">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1213879243298">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1218029331382">
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="1218029334791">
+              <link role="baseMethodDeclaration:3" targetNodeId="1218029277052" resolveInfo="getModuleShortName" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1218029339636">
+                <link role="variableDeclaration:3" targetNodeId="1213879060592" resolveInfo="module" />
+              </node>
+            </node>
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1213879243300">
+              <property name="value:3" value="_ProjectPlugin" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1213879060592">
+        <property name="name:3" value="module" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1213879060593">
+          <link role="classifier:3" targetNodeId="5.~IModule" resolveInfo="IModule" />
         </node>
       </node>
     </node>
-    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1213879030228">
-      <property name="name" value="getPluginName" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192523487" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1213879030230" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213879030231">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213879243298">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1218029331382">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1218029334791">
-              <link role="baseMethodDeclaration" targetNodeId="1218029277052" resolveInfo="getModuleShortName" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1218029339636">
-                <link role="variableDeclaration" targetNodeId="1213879060592" resolveInfo="module" />
+    <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1215266534764">
+      <property name="name:3" value="getApplicationPluginName" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225192522756" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1215266534766" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1215266534767">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1218029344763">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1218029355472">
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="1218029344765">
+              <link role="baseMethodDeclaration:3" targetNodeId="1218029277052" resolveInfo="getModuleShortName" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1218029344766">
+                <link role="variableDeclaration:3" targetNodeId="1215266534789" resolveInfo="module" />
               </node>
             </node>
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1213879243300">
-              <property name="value" value="_ProjectPlugin" />
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1218029356038">
+              <property name="value:3" value="_ApplicationPlugin" />
             </node>
           </node>
         </node>
       </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1213879060592">
-        <property name="name" value="module" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1213879060593">
-          <link role="classifier" targetNodeId="5.~IModule" resolveInfo="IModule" />
-        </node>
-      </node>
-    </node>
-    <node role="staticMethod" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" id="1215266534764">
-      <property name="name" value="getApplicationPluginName" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType" id="1225192522756" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1215266534766" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1215266534767">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1218029344763">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.PlusExpression" id="1218029355472">
-            <node role="leftExpression" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall" id="1218029344765">
-              <link role="baseMethodDeclaration" targetNodeId="1218029277052" resolveInfo="getModuleShortName" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.ParameterReference" id="1218029344766">
-                <link role="variableDeclaration" targetNodeId="1215266534789" resolveInfo="module" />
-              </node>
-            </node>
-            <node role="rightExpression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="1218029356038">
-              <property name="value" value="_ApplicationPlugin" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration" id="1215266534789">
-        <property name="name" value="module" />
-        <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1215266534790">
-          <link role="classifier" targetNodeId="5.~IModule" resolveInfo="IModule" />
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1215266534789">
+        <property name="name:3" value="module" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1215266534790">
+          <link role="classifier:3" targetNodeId="5.~IModule" resolveInfo="IModule" />
         </node>
       </node>
     </node>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
@@ -34,24 +34,24 @@
   <import index="2" modelUID="r:6fb1beb5-17d5-44c1-a541-c95672dc4233(jetbrains.mps.dataFlow.runtime)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1230552150899">
-    <link role="concept" targetNodeId="1.1173996401517" resolveInfo="InternalNewExpression" />
+    <link role="concept" targetNodeId="1.1173996401517:1" resolveInfo="InternalNewExpression" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230552157527">
       <property name="name" value="getNullableState" />
       <link role="overriddenMethod" targetNodeId="2v.1230540989695" resolveInfo="getNullableState" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230552157529">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1230552552733">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference" id="1230553259698">
-            <link role="enumConstantDeclaration" targetNodeId="2.1230550705523" resolveInfo="NOT_NULL" />
-            <link role="enumClass" targetNodeId="2.1230466569958" resolveInfo="NullableVariableState" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230552157529">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1230552552733">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="1230553259698">
+            <link role="enumConstantDeclaration:3" targetNodeId="2.1230550705523" resolveInfo="NOT_NULL" />
+            <link role="enumClass:3" targetNodeId="2.1230466569958" resolveInfo="NullableVariableState" />
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1230552163467">
-        <link role="classifier" targetNodeId="2.1230466569958" resolveInfo="NullableVariableState" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1230552163467">
+        <link role="classifier:3" targetNodeId="2.1230466569958" resolveInfo="NullableVariableState" />
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1230552150900">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1230552150901" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1230552150901" />
     </node>
   </node>
 </model>

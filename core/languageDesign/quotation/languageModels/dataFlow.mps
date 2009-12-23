@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c89590348(jetbrains.mps.lang.quotation.dataFlow)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.lang.dataFlow)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
@@ -27,44 +27,44 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
-  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1207243664442">
-    <link role="conceptDeclaration" targetNodeId="1.1196350785110" resolveInfo="AbstractAntiquotation" />
-    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1207243664443">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207243664444">
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1207243732321">
-          <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207243735324">
-            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1207243734542" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1207243736561">
-              <link role="link" targetNodeId="1.1196350785111" />
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1207243664442">
+    <link role="conceptDeclaration:0" targetNodeId="1.1196350785110:0" resolveInfo="AbstractAntiquotation" />
+    <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1207243664443">
+      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1207243664444">
+        <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="1207243732321">
+          <node role="codeFor:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1207243735324">
+            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1207243734542" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1207243736561">
+              <link role="link:16" targetNodeId="1.1196350785111:0" />
             </node>
           </node>
         </node>
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="1207243772639">
-    <link role="conceptDeclaration" targetNodeId="1.1196350785113" resolveInfo="Quotation" />
-    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="1207243772640">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207243772641">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ForeachStatement" id="1207243785969">
-          <node role="iterable" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1207243801529">
-            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="1207243800963" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation" id="1207243804154">
-              <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1207243814925">
-                <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1217631635188">
-                  <link role="conceptDeclaration" targetNodeId="1.1196350785110" resolveInfo="AbstractAntiquotation" />
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1207243772639">
+    <link role="conceptDeclaration:0" targetNodeId="1.1196350785113:0" resolveInfo="Quotation" />
+    <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1207243772640">
+      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1207243772641">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="1207243785969">
+          <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1207243801529">
+            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1207243800963" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetDescendantsOperation:16" id="1207243804154">
+              <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1207243814925">
+                <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1217631635188">
+                  <link role="conceptDeclaration:16" targetNodeId="1.1196350785110:0" resolveInfo="AbstractAntiquotation" />
                 </node>
               </node>
             </node>
           </node>
-          <node role="variable" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1207243785971">
-            <property name="name" value="antiquotation" />
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1207243792117" />
+          <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1207243785971">
+            <property name="name:3" value="antiquotation" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1207243792117" />
           </node>
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1207243785973">
-            <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="1207243820006">
-              <node role="codeFor" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1207243965037">
-                <link role="variableDeclaration" targetNodeId="1207243785971" resolveInfo="antiquotation" />
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1207243785973">
+            <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="1207243820006">
+              <node role="codeFor:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1207243965037">
+                <link role="variableDeclaration:3" targetNodeId="1207243785971" resolveInfo="antiquotation" />
               </node>
             </node>
           </node>

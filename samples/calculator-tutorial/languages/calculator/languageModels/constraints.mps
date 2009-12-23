@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:ac9571c5-26be-4fef-b5fd-705a2c38e949(jetbrains.mps.calculator.constraints)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -30,37 +30,37 @@
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:87765d2d-a756-4883-9acc-6a42e5bf6c23(jetbrains.mps.calculator.structure)" version="-1" />
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="1241364804758">
-    <link role="concept" targetNodeId="1.1241363083334" resolveInfo="InputFieldReference" />
-    <node role="referent" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint" id="1241364811072">
-      <link role="applicableLink" targetNodeId="1.1241363105304" />
-      <node role="searchScopeFactory" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory" id="1241364816355">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241364816356">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1241364841508">
-            <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1241364841509">
-              <property name="name" value="calc" />
-              <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1241364841510">
-                <link role="concept" targetNodeId="1.1241362555920" resolveInfo="Calcualtor" />
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1241364804758">
+    <link role="concept:8" targetNodeId="1.1241363083334" resolveInfo="InputFieldReference" />
+    <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1241364811072">
+      <link role="applicableLink:8" targetNodeId="1.1241363105304" />
+      <node role="searchScopeFactory:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory:8" id="1241364816355">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241364816356">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1241364841508">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1241364841509">
+              <property name="name:3" value="calc" />
+              <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1241364841510">
+                <link role="concept:16" targetNodeId="1.1241362555920" resolveInfo="Calcualtor" />
               </node>
-              <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241364841511">
-                <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode" id="1241364841512" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="1241364841513">
-                  <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="1241364841514">
-                    <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="1241364841515">
-                      <link role="conceptDeclaration" targetNodeId="1.1241362555920" resolveInfo="Calcualtor" />
+              <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241364841511">
+                <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode:8" id="1241364841512" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="1241364841513">
+                  <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="1241364841514">
+                    <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1241364841515">
+                      <link role="conceptDeclaration:16" targetNodeId="1.1241362555920" resolveInfo="Calcualtor" />
                     </node>
                   </node>
                 </node>
               </node>
             </node>
           </node>
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1241364844907">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1241364848739">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1241364848347">
-                <link role="variableDeclaration" targetNodeId="1241364841509" resolveInfo="calc" />
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1241364844907">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1241364848739">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1241364848347">
+                <link role="variableDeclaration:3" targetNodeId="1241364841509" resolveInfo="calc" />
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="1241364850290">
-                <link role="link" targetNodeId="1.1241362671336" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="1241364850290">
+                <link role="link:16" targetNodeId="1.1241362671336" />
               </node>
             </node>
           </node>

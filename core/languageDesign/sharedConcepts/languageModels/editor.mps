@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c895902bb(jetbrains.mps.lang.sharedConcepts.editor)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
@@ -28,30 +28,30 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <maxImportIndex value="0" />
-  <node type="jetbrains.mps.lang.editor.structure.StyleSheet" id="1203541329669">
-    <property name="name" value="SharedStyles" />
-    <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1203541368202">
-      <property name="name" value="ReferenceDecorated" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1203541368203">
-        <property name="color" value="DARK_BLUE" />
+  <node type="jetbrains.mps.lang.editor.structure.StyleSheet:32" id="1203541329669">
+    <property name="name:32" value="SharedStyles" />
+    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="1203541368202">
+      <property name="name:32" value="ReferenceDecorated" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="1203541368203">
+        <property name="color:32" value="DARK_BLUE" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1203541368204">
-        <property name="style" value="ITALIC" />
-      </node>
-    </node>
-    <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1203541385314">
-      <property name="name" value="ReferenceOnConcept" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1203541509378">
-        <property name="color" value="DARK_MAGENTA" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="1203541368204">
+        <property name="style:32" value="ITALIC" />
       </node>
     </node>
-    <node role="styleClass" type="jetbrains.mps.lang.editor.structure.StyleSheetClass" id="1221170124867">
-      <property name="name" value="ReferenceOnConceptualFeature" />
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem" id="1221170124868">
-        <property name="color" value="DARK_MAGENTA" />
+    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="1203541385314">
+      <property name="name:32" value="ReferenceOnConcept" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="1203541509378">
+        <property name="color:32" value="DARK_MAGENTA" />
       </node>
-      <node role="styleItem" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem" id="1221170145073">
-        <property name="style" value="ITALIC" />
+    </node>
+    <node role="styleClass:32" type="jetbrains.mps.lang.editor.structure.StyleSheetClass:32" id="1221170124867">
+      <property name="name:32" value="ReferenceOnConceptualFeature" />
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.ForegroundColorStyleClassItem:32" id="1221170124868">
+        <property name="color:32" value="DARK_MAGENTA" />
+      </node>
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.FontStyleStyleClassItem:32" id="1221170145073">
+        <property name="style:32" value="ITALIC" />
       </node>
     </node>
   </node>

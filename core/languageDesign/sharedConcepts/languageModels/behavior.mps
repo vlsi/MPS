@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c895902b9(jetbrains.mps.lang.sharedConcepts.behavior)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
@@ -28,23 +28,23 @@
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877217441">
-    <link role="concept" targetNodeId="1.1161622753914" resolveInfo="ConceptFunctionParameter_operationContext" />
+    <link role="concept" targetNodeId="1.1161622753914:0" resolveInfo="ConceptFunctionParameter_operationContext" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877217442">
       <property name="name" value="getFromParameterObject" />
       <property name="isPrivate" value="false" />
       <link role="overriddenMethod" targetNodeId="2.1213877522908" resolveInfo="getFromParameterObject" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877217443">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="1213877217444">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.BooleanConstant" id="1213877217445">
-            <property name="value" value="false" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877217443">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1213877217444">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1213877217445">
+            <property name="value:3" value="false" />
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType" id="1213877217446" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724785" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1213877217446" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724785" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877217447">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877217448" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877217448" />
     </node>
   </node>
 </model>

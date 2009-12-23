@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:ee466c3b-c879-435f-9e8d-bb261ada44ed(jetbrains.mps.lang.editor.dataFlow)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="7fa12e9c-b949-4976-b4fa-19accbc320b4(jetbrains.mps.lang.dataFlow)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -35,26 +35,26 @@
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
-  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration" id="4531786690998643506">
-    <property name="package" value="MethodParameters" />
-    <link role="conceptDeclaration" targetNodeId="1.4531786690998636238" resolveInfo="AbstractOperation" />
-    <node role="builderBlock" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock" id="4531786690998643507">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4531786690998643508">
-        <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitNopStatement" id="4531786690998643509" />
-        <node role="statement" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement" id="4531786690998643511">
-          <node role="variable" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable" id="4531786690998643512">
-            <property name="name" value="argument" />
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="4531786690998643506">
+    <property name="package:0" value="MethodParameters" />
+    <link role="conceptDeclaration:0" targetNodeId="1.4531786690998636238:32" resolveInfo="AbstractOperation" />
+    <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="4531786690998643507">
+      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4531786690998643508">
+        <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitNopStatement:0" id="4531786690998643509" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="4531786690998643511">
+          <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="4531786690998643512">
+            <property name="name:7" value="argument" />
           </node>
-          <node role="inputSequence" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="4531786690998643518">
-            <node role="operand" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter" id="4531786690998643516" />
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess" id="4531786690998643523">
-              <link role="link" targetNodeId="1.4531786690998636240" />
+          <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4531786690998643518">
+            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="4531786690998643516" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="4531786690998643523">
+              <link role="link:16" targetNodeId="1.4531786690998636240:32" />
             </node>
           </node>
-          <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="4531786690998643514">
-            <node role="statement" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement" id="4531786690998643525">
-              <node role="codeFor" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference" id="4531786690998643527">
-                <link role="variable" targetNodeId="4531786690998643512" resolveInfo="argument" />
+          <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4531786690998643514">
+            <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="4531786690998643525">
+              <node role="codeFor:0" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="4531786690998643527">
+                <link role="variable:7" targetNodeId="4531786690998643512" resolveInfo="argument" />
               </node>
             </node>
           </node>

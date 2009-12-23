@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:72bb9003-2e78-47b7-bc17-a076da8bd9a5(jetbrains.mps.build.custommpsInternal.editor)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -34,101 +34,101 @@
   <import index="1" modelUID="r:3440a6a7-d645-4c49-b3b3-9d0c36859a49(jetbrains.mps.build.custommpsInternal.structure)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904d5(jetbrains.mps.build.packaging.editor)" version="-1" />
   <import index="4" modelUID="r:e349d949-52e2-480e-b3d2-1f6a387b356a(jetbrains.mps.build.custommps.editor)" version="-1" />
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1239995796833">
-    <link role="conceptDeclaration" targetNodeId="1.1239995796746" resolveInfo="CreateIfNotExists" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1239995796834">
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1239995796835">
-        <property name="text" value="if" />
-        <link role="styleClass" targetNodeId="3.1203598923024" resolveInfo="keyword" />
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1239995796833">
+    <link role="conceptDeclaration:32" targetNodeId="1.1239995796746" resolveInfo="CreateIfNotExists" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1239995796834">
+      <property name="vertical:32" value="false" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1239995796835">
+        <property name="text:32" value="if" />
+        <link role="styleClass:32" targetNodeId="3.1203598923024" resolveInfo="keyword" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1239995796836">
-        <link role="relationDeclaration" targetNodeId="1.1239995796748" resolveInfo="artifactName" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1239995796836">
+        <link role="relationDeclaration:32" targetNodeId="1.1239995796748" resolveInfo="artifactName" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1239995796837">
-        <property name="text" value="not exists" />
-        <link role="styleClass" targetNodeId="3.1203598923024" resolveInfo="keyword" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1239995796837">
+        <property name="text:32" value="not exists" />
+        <link role="styleClass:32" targetNodeId="3.1203598923024" resolveInfo="keyword" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="1239995796838">
-        <link role="relationDeclaration" targetNodeId="1.1239995796747" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1239995796838">
+        <link role="relationDeclaration:32" targetNodeId="1.1239995796747" />
       </node>
-      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1239995796839" />
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1239995796839" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1240033962790">
-    <link role="conceptDeclaration" targetNodeId="1.1240033962436" resolveInfo="UndeclaredVariableReference" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240033962791">
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1240033962792">
-        <link role="styleClass" targetNodeId="4.1233937712403" resolveInfo="undeclaredVaribale" />
-        <link role="relationDeclaration" targetNodeId="1.1240318544266" resolveInfo="name" />
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1240033962790">
+    <link role="conceptDeclaration:32" targetNodeId="1.1240033962436" resolveInfo="UndeclaredVariableReference" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1240033962791">
+      <property name="vertical:32" value="false" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1240033962792">
+        <link role="styleClass:32" targetNodeId="4.1233937712403" resolveInfo="undeclaredVaribale" />
+        <link role="relationDeclaration:32" targetNodeId="1.1240318544266" resolveInfo="name" />
       </node>
-      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1240033962793" />
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1240033962793" />
     </node>
-    <node role="inspectedCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="1240033962794">
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1240033962795">
-        <property name="text" value="ant name" />
-        <link role="styleClass" targetNodeId="3.1203598923024" resolveInfo="keyword" />
+    <node role="inspectedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1240033962794">
+      <property name="vertical:32" value="false" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1240033962795">
+        <property name="text:32" value="ant name" />
+        <link role="styleClass:32" targetNodeId="3.1203598923024" resolveInfo="keyword" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Property" id="1240033962796">
-        <link role="relationDeclaration" targetNodeId="1.1240033962441" resolveInfo="antName" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1240033962796">
+        <link role="relationDeclaration:32" targetNodeId="1.1240033962441" resolveInfo="antName" />
       </node>
-      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="1240033962797" />
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1240033962797" />
     </node>
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="4435815598243878840">
-    <property name="package" value="projectComponents.conditions" />
-    <link role="conceptDeclaration" targetNodeId="1.4435815598243878832" resolveInfo="IfProjectComponent" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="4435815598243878841">
-      <property name="vertical" value="false" />
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty" id="4435815598243878842">
-        <link role="relationDeclaration" targetNodeId="2v.1137473891462" resolveInfo="alias" />
-        <link role="styleClass" targetNodeId="3.1203598953979" resolveInfo="projectComponent" />
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="4435815598243878840">
+    <property name="package:32" value="projectComponents.conditions" />
+    <link role="conceptDeclaration:32" targetNodeId="1.4435815598243878832" resolveInfo="IfProjectComponent" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4435815598243878841">
+      <property name="vertical:32" value="false" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="4435815598243878842">
+        <link role="relationDeclaration:32" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+        <link role="styleClass:32" targetNodeId="3.1203598953979" resolveInfo="projectComponent" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="4435815598243878843">
-        <link role="relationDeclaration" targetNodeId="1.4435815598243878833" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4435815598243878843">
+        <link role="relationDeclaration:32" targetNodeId="1.4435815598243878833" />
       </node>
-      <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="4435815598243878844">
-        <property name="vertical" value="true" />
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="4435815598243878845">
-          <property name="flag" value="false" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4435815598243878844">
+        <property name="vertical:32" value="true" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="4435815598243878845">
+          <property name="flag:32" value="false" />
         </node>
-        <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="4435815598243878846">
-          <property name="flag" value="false" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="4435815598243878846">
+          <property name="flag:32" value="false" />
         </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="4435815598243878847">
-          <property name="vertical" value="false" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="4435815598243878848">
-            <property name="flag" value="false" />
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4435815598243878847">
+          <property name="vertical:32" value="false" />
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="4435815598243878848">
+            <property name="flag:32" value="false" />
           </node>
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4435815598243878849">
-            <property name="text" value="then" />
-            <link role="styleClass" targetNodeId="3.1203598923024" resolveInfo="keyword" />
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4435815598243878849">
+            <property name="text:32" value="then" />
+            <link role="styleClass:32" targetNodeId="3.1203598923024" resolveInfo="keyword" />
           </node>
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="4435815598243878850">
-            <link role="relationDeclaration" targetNodeId="1.4435815598243878834" />
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4435815598243878850">
+            <link role="relationDeclaration:32" targetNodeId="1.4435815598243878834" />
           </node>
-          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="4435815598243878851" />
+          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="4435815598243878851" />
         </node>
-        <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Collection" id="4435815598243878852">
-          <property name="vertical" value="false" />
-          <node role="styleItem" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem" id="4435815598243878853">
-            <property name="flag" value="false" />
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4435815598243878852">
+          <property name="vertical:32" value="false" />
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="4435815598243878853">
+            <property name="flag:32" value="false" />
           </node>
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="4435815598243878854">
-            <property name="text" value="else" />
-            <link role="styleClass" targetNodeId="3.1203598923024" resolveInfo="keyword" />
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4435815598243878854">
+            <property name="text:32" value="else" />
+            <link role="styleClass:32" targetNodeId="3.1203598923024" resolveInfo="keyword" />
           </node>
-          <node role="childCellModel" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode" id="4435815598243878855">
-            <link role="relationDeclaration" targetNodeId="1.4435815598243878835" />
+          <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4435815598243878855">
+            <link role="relationDeclaration:32" targetNodeId="1.4435815598243878835" />
           </node>
-          <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="4435815598243878856" />
+          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="4435815598243878856" />
         </node>
-        <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical" id="4435815598243878857" />
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="4435815598243878857" />
       </node>
-      <node role="cellLayout" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal" id="4435815598243878858" />
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="4435815598243878858" />
     </node>
   </node>
 </model>

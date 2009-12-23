@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:522aace3-e88f-4df7-82be-4ab3d6ccd8bc(jetbrains.mps.samples.xmlLiterals.constraints)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -32,47 +32,47 @@
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:a9473eef-c3e7-4713-b3b3-57facda6958d(jetbrains.mps.samples.xmlLiterals.structure)" version="-1" />
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="9152904044274469613">
-    <link role="concept" targetNodeId="1.9152904044274469601" resolveInfo="TextMacro" />
-    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="9152904044274469614">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9152904044274469615">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9152904044274484469">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9152904044274484482">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9152904044274484471">
-              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="9152904044274484470" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="9152904044274484475">
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="9152904044274484476">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="9152904044274484479">
-                    <link role="conceptDeclaration" targetNodeId="1.9152904044274328259" resolveInfo="XmlLiteral" />
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="9152904044274469613">
+    <link role="concept:8" targetNodeId="1.9152904044274469601" resolveInfo="TextMacro" />
+    <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="9152904044274469614">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9152904044274469615">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="9152904044274484469">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9152904044274484482">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9152904044274484471">
+              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode:8" id="9152904044274484470" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="9152904044274484475">
+                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="9152904044274484476">
+                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="9152904044274484479">
+                    <link role="conceptDeclaration:16" targetNodeId="1.9152904044274328259" resolveInfo="XmlLiteral" />
                   </node>
                 </node>
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="9152904044274484481" />
+                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion:16" id="9152904044274484481" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="9152904044274485658" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="9152904044274485658" />
           </node>
         </node>
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints" id="9152904044274518160">
-    <link role="concept" targetNodeId="1.9152904044274518122" resolveInfo="ElementMacro" />
-    <node role="canBeChild" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild" id="9152904044274518161">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="9152904044274518162">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9152904044274518163">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9152904044274518164">
-            <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="9152904044274518165">
-              <node role="operand" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode" id="9152904044274518166" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation" id="9152904044274518167">
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept" id="9152904044274518168">
-                  <node role="conceptArgument" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference" id="9152904044274518169">
-                    <link role="conceptDeclaration" targetNodeId="1.9152904044274328259" resolveInfo="XmlLiteral" />
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="9152904044274518160">
+    <link role="concept:8" targetNodeId="1.9152904044274518122" resolveInfo="ElementMacro" />
+    <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="9152904044274518161">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9152904044274518162">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="9152904044274518163">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9152904044274518164">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9152904044274518165">
+              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode:8" id="9152904044274518166" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="9152904044274518167">
+                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="9152904044274518168">
+                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="9152904044274518169">
+                    <link role="conceptDeclaration:16" targetNodeId="1.9152904044274328259" resolveInfo="XmlLiteral" />
                   </node>
                 </node>
-                <node role="parameter" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion" id="9152904044274518170" />
+                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion:16" id="9152904044274518170" />
               </node>
             </node>
-            <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation" id="9152904044274518171" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="9152904044274518171" />
           </node>
         </node>
       </node>

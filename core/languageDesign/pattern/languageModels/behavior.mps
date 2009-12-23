@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
@@ -31,41 +31,41 @@
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877200307">
-    <link role="concept" targetNodeId="1.1136720037779" resolveInfo="PatternVariableDeclaration" />
+    <link role="concept" targetNodeId="1.1136720037779:0" resolveInfo="PatternVariableDeclaration" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877200308">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877200309" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877200309" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877241295">
-    <link role="concept" targetNodeId="1.1136720037781" resolveInfo="PropertyPatternVariableDeclaration" />
+    <link role="concept" targetNodeId="1.1136720037781:0" resolveInfo="PropertyPatternVariableDeclaration" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877241296">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877241297" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877241297" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877344249">
-    <link role="concept" targetNodeId="1.1137418540378" resolveInfo="LinkPatternVariableDeclaration" />
+    <link role="concept" targetNodeId="1.1137418540378:0" resolveInfo="LinkPatternVariableDeclaration" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877344250">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877344251" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877344251" />
     </node>
   </node>
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="534621188390792429">
-    <link role="concept" targetNodeId="1.1136720037777" resolveInfo="PatternExpression" />
+    <link role="concept" targetNodeId="1.1136720037777:0" resolveInfo="PatternExpression" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="201537367881178490">
       <property name="name" value="getMetaLevelChange" />
       <link role="overriddenMethod" targetNodeId="2v.201537367881074474" resolveInfo="getMetaLevelChange" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="201537367881178493">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ReturnStatement" id="201537367881178498">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.IntegerConstant" id="201537367881178500">
-            <property name="value" value="-1" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="201537367881178493">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="201537367881178498">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="201537367881178500">
+            <property name="value:3" value="-1" />
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="201537367881178496" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="201537367881178497" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="201537367881178496" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="201537367881178497" />
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="534621188390792430">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="534621188390792431" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="534621188390792431" />
     </node>
   </node>
 </model>

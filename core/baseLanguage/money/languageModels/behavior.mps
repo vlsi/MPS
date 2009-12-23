@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c895903f3(jetbrains.mps.baseLanguage.money.behavior)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -32,58 +32,58 @@
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877266178">
-    <link role="concept" targetNodeId="1.1186667651178" resolveInfo="MoneyLiteral" />
+    <link role="concept" targetNodeId="1.1186667651178:0" resolveInfo="MoneyLiteral" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877266179">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877266180" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877266180" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877287607">
-    <link role="concept" targetNodeId="1.1186669599053" resolveInfo="MoneyType" />
+    <link role="concept" targetNodeId="1.1186669599053:0" resolveInfo="MoneyType" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877287608">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877287609" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877287609" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877287610">
       <property name="name" value="getAbstractCreator" />
       <property name="isPrivate" value="false" />
       <link role="overriddenMethod" targetNodeId="3.1213877337340" resolveInfo="getAbstractCreator" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877287611">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1213877287612">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1213877287613">
-            <property name="name" value="creator" />
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213877287614">
-              <link role="concept" targetNodeId="1.1187340310888" resolveInfo="MoneyCreator" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877287611">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1213877287612">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1213877287613">
+            <property name="name:3" value="creator" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1213877287614">
+              <link role="concept:16" targetNodeId="1.1187340310888:0" resolveInfo="MoneyCreator" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="1213877287615">
-              <node role="creator" type="jetbrains.mps.lang.smodel.structure.SNodeCreator" id="1213877287616">
-                <node role="createdType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213877287617">
-                  <link role="concept" targetNodeId="1.1187340310888" resolveInfo="MoneyCreator" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1213877287615">
+              <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="1213877287616">
+                <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1213877287617">
+                  <link role="concept:16" targetNodeId="1.1187340310888:0" resolveInfo="MoneyCreator" />
                 </node>
               </node>
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1213877287618">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1213877287619">
-            <link role="variableDeclaration" targetNodeId="1213877287613" resolveInfo="creator" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1213877287618">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1213877287619">
+            <link role="variableDeclaration:3" targetNodeId="1213877287613" resolveInfo="creator" />
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="1213877287620">
-        <link role="concept" targetNodeId="4.1145552809883" resolveInfo="AbstractCreator" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1213877287620">
+        <link role="concept:16" targetNodeId="4.1145552809883:3" resolveInfo="AbstractCreator" />
       </node>
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1219155724260" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724260" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877300004">
-    <link role="concept" targetNodeId="1.1187357945755" resolveInfo="MoneyGetCurrencyMethodCall" />
+    <link role="concept" targetNodeId="1.1187357945755:0" resolveInfo="MoneyGetCurrencyMethodCall" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877300005">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877300006" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877300006" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877315451">
-    <link role="concept" targetNodeId="1.1187340310888" resolveInfo="MoneyCreator" />
+    <link role="concept" targetNodeId="1.1187340310888:0" resolveInfo="MoneyCreator" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877315452">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1213877315453" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877315453" />
     </node>
   </node>
 </model>

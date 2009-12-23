@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:1ed054af-f407-4447-a858-616e33563f48(jetbrains.mps.lang.behavior.plugin)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
@@ -48,23 +48,23 @@
   <import index="14" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" />
-  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration" id="1910641662758447420">
-    <property name="name" value="BehaviourPopup" />
-    <node role="contents" type="jetbrains.mps.lang.plugin.structure.ElementListContents" id="1910641662758482648">
-      <node role="reference" type="jetbrains.mps.lang.plugin.structure.ActionInstance" id="1910641662758482649">
-        <link role="action" targetNodeId="2v.8596238429278788966" resolveInfo="GoToOverridingMethod" />
-        <node role="actualParameter" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression" id="6198841441434452339">
-          <node role="creator" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit" id="6198841441434470973">
-            <node role="elementType" type="jetbrains.mps.baseLanguage.structure.StringType" id="6198841441434470975" />
-            <node role="initValue" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="6198841441434470977">
-              <property name="value" value="jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder" />
+  <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1910641662758447420">
+    <property name="name:23" value="BehaviourPopup" />
+    <node role="contents:23" type="jetbrains.mps.lang.plugin.structure.ElementListContents:23" id="1910641662758482648">
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="1910641662758482649">
+        <link role="action:23" targetNodeId="2v.8596238429278788966" resolveInfo="GoToOverridingMethod" />
+        <node role="actualParameter:23" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6198841441434452339">
+          <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="6198841441434470973">
+            <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="6198841441434470975" />
+            <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6198841441434470977">
+              <property name="value:3" value="jetbrains.mps.lang.behavior.findUsages.OverridingMethods_Finder" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node role="modifier" type="jetbrains.mps.lang.plugin.structure.ModificationStatement" id="1910641662758482647">
-      <link role="modifiedGroup" targetNodeId="3v.1204991231476" resolveInfo="EditorPopup" />
+    <node role="modifier:23" type="jetbrains.mps.lang.plugin.structure.ModificationStatement:23" id="1910641662758482647">
+      <link role="modifiedGroup:23" targetNodeId="3v.1204991231476" resolveInfo="EditorPopup" />
     </node>
   </node>
 </model>

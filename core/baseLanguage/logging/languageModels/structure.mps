@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory>
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
@@ -35,73 +35,73 @@
   <maxImportIndex value="2" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1167227138527">
-    <property name="name" value="LogStatement" />
-    <link role="extends" targetNodeId="2.1068580123157" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1178200211465">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473994950" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1167227138527">
+    <property name="name:0" value="LogStatement" />
+    <link role="extends:0" targetNodeId="2.1068580123157:3" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1178200211465">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473994950:0" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1167227463056">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="logExpression" />
-      <link role="target" targetNodeId="2.1068431790191" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1167227463056">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="sourceCardinality:0" value="1" />
+      <property name="role:0" value="logExpression" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1167227561449">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="exception" />
-      <link role="target" targetNodeId="2.1068431790191" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1167227561449">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="exception" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1167228628751">
-      <property name="name" value="hasException" />
-      <link role="dataType" targetNodeId="1.1082983657063" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1167228628751">
+      <property name="name:0" value="hasException" />
+      <link role="dataType:0" targetNodeId="1.1082983657063:0" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1167245565795">
-      <property name="name" value="severity" />
-      <link role="dataType" targetNodeId="1167245107475" resolveInfo="Severity" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration" id="1167245107475">
-    <property name="name" value="Severity" />
-    <link role="memberDataType" targetNodeId="1.1082983041843" />
-    <link role="defaultMember" targetNodeId="1167245288119" resolveInfo="debug" />
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1167245107476">
-      <property name="internalValue" value="fatal" />
-      <property name="externalValue" value="fatal" />
-    </node>
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1167245252932">
-      <property name="internalValue" value="error" />
-      <property name="externalValue" value="error" />
-    </node>
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1167245264682">
-      <property name="internalValue" value="warn" />
-      <property name="externalValue" value="warn" />
-    </node>
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1167245288119">
-      <property name="internalValue" value="debug" />
-      <property name="externalValue" value="debug" />
-    </node>
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1169477928086">
-      <property name="internalValue" value="info" />
-      <property name="externalValue" value="info" />
-    </node>
-    <node role="member" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration" id="1167245293010">
-      <property name="internalValue" value="trace" />
-      <property name="externalValue" value="trace" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1167245565795">
+      <property name="name:0" value="severity" />
+      <link role="dataType:0" targetNodeId="1167245107475:0" resolveInfo="Severity" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1168401810208">
-    <property name="name" value="PrintStatement" />
-    <link role="extends" targetNodeId="2.1068580123157" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1168401864803">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="textExpression" />
-      <link role="target" targetNodeId="2.1068431790191" />
+  <node type="jetbrains.mps.lang.structure.structure.EnumerationDataTypeDeclaration:0" id="1167245107475">
+    <property name="name:0" value="Severity" />
+    <link role="memberDataType:0" targetNodeId="1.1082983041843:0" />
+    <link role="defaultMember:0" targetNodeId="1167245288119:0" resolveInfo="debug" />
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1167245107476">
+      <property name="internalValue:0" value="fatal" />
+      <property name="externalValue:0" value="fatal" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1168401970510">
-      <property name="value" value="print" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1167245252932">
+      <property name="internalValue:0" value="error" />
+      <property name="externalValue:0" value="error" />
+    </node>
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1167245264682">
+      <property name="internalValue:0" value="warn" />
+      <property name="externalValue:0" value="warn" />
+    </node>
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1167245288119">
+      <property name="internalValue:0" value="debug" />
+      <property name="externalValue:0" value="debug" />
+    </node>
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1169477928086">
+      <property name="internalValue:0" value="info" />
+      <property name="externalValue:0" value="info" />
+    </node>
+    <node role="member:0" type="jetbrains.mps.lang.structure.structure.EnumerationMemberDeclaration:0" id="1167245293010">
+      <property name="internalValue:0" value="trace" />
+      <property name="externalValue:0" value="trace" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1168401810208">
+    <property name="name:0" value="PrintStatement" />
+    <link role="extends:0" targetNodeId="2.1068580123157:3" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1168401864803">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <property name="role:0" value="textExpression" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1168401970510">
+      <property name="value:0" value="print" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
     </node>
   </node>
 </model>

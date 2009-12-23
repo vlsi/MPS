@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c89590436(jetbrains.mps.samples.readerConfigLanguage.structure)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory>
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
@@ -38,54 +38,54 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1116534870455">
-    <property name="rootable" value="true" />
-    <property name="name" value="ReaderConfiguration" />
-    <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1175153786600">
-      <link role="intfc" targetNodeId="1.1169194658468" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1116534870455">
+    <property name="rootable:0" value="true" />
+    <property name="name:0" value="ReaderConfiguration" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1175153786600">
+      <link role="intfc:0" targetNodeId="1.1169194658468:0" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1116535202619">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="mapping" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1116534914096" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1116534914096">
-    <property name="name" value="Mapping" />
-    <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1175153780615">
-      <link role="intfc" targetNodeId="1.1169194658468" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1116535614925">
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="field" />
-      <property name="metaClass" value="aggregation" />
-      <link role="target" targetNodeId="1116534962441" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1116534988614">
-      <property name="name" value="code" />
-      <link role="dataType" targetNodeId="1.1082983041843" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1116534997224">
-      <property name="name" value="targetClass" />
-      <link role="dataType" targetNodeId="1.1082983041843" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1116535202619">
+      <property name="sourceCardinality:0" value="0..n" />
+      <property name="role:0" value="mapping" />
+      <property name="metaClass:0" value="aggregation" />
+      <link role="target:0" targetNodeId="1116534914096:0" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1116534962441">
-    <property name="name" value="Field" />
-    <link role="extends" targetNodeId="1.1133920641626" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1175153775082">
-      <link role="intfc" targetNodeId="1.1169194658468" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1116534914096">
+    <property name="name:0" value="Mapping" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1175153780615">
+      <link role="intfc:0" targetNodeId="1.1169194658468:0" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1116535027491">
-      <property name="name" value="start" />
-      <link role="dataType" targetNodeId="1.1082983657062" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1116535614925">
+      <property name="sourceCardinality:0" value="0..n" />
+      <property name="role:0" value="field" />
+      <property name="metaClass:0" value="aggregation" />
+      <link role="target:0" targetNodeId="1116534962441:0" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1116535032695">
-      <property name="name" value="end" />
-      <link role="dataType" targetNodeId="1.1082983657062" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1116534988614">
+      <property name="name:0" value="code" />
+      <link role="dataType:0" targetNodeId="1.1082983041843:0" />
+    </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1116534997224">
+      <property name="name:0" value="targetClass" />
+      <link role="dataType:0" targetNodeId="1.1082983041843:0" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1116534962441">
+    <property name="name:0" value="Field" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1175153775082">
+      <link role="intfc:0" targetNodeId="1.1169194658468:0" />
+    </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1116535027491">
+      <property name="name:0" value="start" />
+      <link role="dataType:0" targetNodeId="1.1082983657062:0" />
+    </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1116535032695">
+      <property name="name:0" value="end" />
+      <link role="dataType:0" targetNodeId="1.1082983657062:0" />
     </node>
   </node>
 </model>

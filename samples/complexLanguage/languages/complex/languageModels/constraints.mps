@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c89590422(jetbrains.mps.samples.complex.constraints)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="af65afd8-f0dd-4942-87d9-63a55f2a9db1(jetbrains.mps.lang.behavior)" />
@@ -28,9 +28,9 @@
   <maxImportIndex value="2" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c89590425(jetbrains.mps.samples.complex.structure)" version="4" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1196418686441">
-    <link role="concept" targetNodeId="2.1196260832413" resolveInfo="SingleComplexExpression" />
+    <link role="concept" targetNodeId="2.1196260832413:4" resolveInfo="SingleComplexExpression" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1196418686442">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1196418686443" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1196418686443" />
     </node>
   </node>
 </model>

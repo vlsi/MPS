@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:5c2005a8-261b-4759-9059-c2decf025b8a(jetbrains.mps.baseLanguage.regexp.intentions)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="d7a92d38-f7db-40d0-8431-763b0c3c9f20(jetbrains.mps.lang.intentions)" />
   <language namespace="daafa647-f1f7-4b0b-b096-69cd7c8408c0(jetbrains.mps.baseLanguage.regexp)" />
@@ -39,49 +39,49 @@
   <maxImportIndex value="2" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590518(jetbrains.mps.baseLanguage.regexp.structure)" version="0" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
-  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration" id="305848682816615072">
-    <property name="name" value="convertToNamed" />
-    <link role="forConcept" targetNodeId="1.1174491169200" resolveInfo="ParensRegexp" />
-    <node role="descriptionFunction" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock" id="305848682816615073">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="305848682816615074">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="305848682816636323">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StringLiteral" id="305848682816636324">
-            <property name="value" value="Convert parentheses to named capturing group" />
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="305848682816615072">
+    <property name="name:8" value="convertToNamed" />
+    <link role="forConcept:8" targetNodeId="1.1174491169200:0" resolveInfo="ParensRegexp" />
+    <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="305848682816615073">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="305848682816615074">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="305848682816636323">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="305848682816636324">
+            <property name="value:3" value="Convert parentheses to named capturing group" />
           </node>
         </node>
       </node>
     </node>
-    <node role="executeFunction" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock" id="305848682816615075">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="305848682816615076">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="305848682817096248">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="305848682817096249">
-            <property name="name" value="n" />
-            <node role="type" type="jetbrains.mps.lang.smodel.structure.SNodeType" id="305848682817096250">
-              <link role="concept" targetNodeId="1.1174564062919" resolveInfo="MatchParensRegexp" />
+    <node role="executeFunction:8" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock:8" id="305848682816615075">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="305848682816615076">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="305848682817096248">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="305848682817096249">
+            <property name="name:3" value="n" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="305848682817096250">
+              <link role="concept:16" targetNodeId="1.1174564062919:0" resolveInfo="MatchParensRegexp" />
             </node>
-            <node role="initializer" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="305848682817096257">
-              <node role="operand" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node" id="305848682817096258" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation" id="305848682817096259">
-                <link role="concept" targetNodeId="1.1174564062919" resolveInfo="MatchParensRegexp" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="305848682817096257">
+              <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="305848682817096258" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation:16" id="305848682817096259">
+                <link role="concept:16" targetNodeId="1.1174564062919:0" resolveInfo="MatchParensRegexp" />
               </node>
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="305848682817096658">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="305848682817096660">
-            <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="305848682817096659" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="305848682817096664">
-              <link role="baseMethodDeclaration" targetNodeId="2.~EditorContext.flushEvents():void" resolveInfo="flushEvents" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="305848682817096658">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="305848682817096660">
+            <node role="operand:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext:0" id="305848682817096659" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="305848682817096664">
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~EditorContext.flushEvents():void" resolveInfo="flushEvents" />
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="305848682817096269">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="305848682817096271">
-            <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext" id="305848682817096270" />
-            <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="305848682817096655">
-              <link role="baseMethodDeclaration" targetNodeId="2.~EditorContext.selectWRTFocusPolicy(jetbrains.mps.smodel.SNode):void" resolveInfo="selectWRTFocusPolicy" />
-              <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="305848682817096656">
-                <link role="variableDeclaration" targetNodeId="305848682817096249" resolveInfo="n" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="305848682817096269">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="305848682817096271">
+            <node role="operand:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_editorContext:0" id="305848682817096270" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="305848682817096655">
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~EditorContext.selectWRTFocusPolicy(jetbrains.mps.smodel.SNode):void" resolveInfo="selectWRTFocusPolicy" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="305848682817096656">
+                <link role="variableDeclaration:3" targetNodeId="305848682817096249" resolveInfo="n" />
               </node>
             </node>
           </node>

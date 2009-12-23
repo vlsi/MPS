@@ -35,7 +35,7 @@ import org.jetbrains.annotations.NonNls;
 )
 public class PersistenceSettings implements SearchableConfigurable, PersistentStateComponent<MyState> {
   public static final int MIN_VERSION = 3;
-  public static final int MAX_VERSION = 3;
+  public static final int MAX_VERSION = 4;
 
 
   private MyPreferencesPage myPreferencesPage;

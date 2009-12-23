@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c89590454(jetbrains.mps.samples.matrixLanguage.structure)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959028c(jetbrains.mps.lang.structure.constraints)" version="11" />
@@ -29,202 +29,202 @@
   <maxImportIndex value="17" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1209978821264">
-    <property name="name" value="MatrixType" />
-    <link role="extends" targetNodeId="2.1068431790189" resolveInfo="Type" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210159684238">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="scalarType" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1209978821264">
+    <property name="name:0" value="MatrixType" />
+    <link role="extends:0" targetNodeId="2.1068431790189:3" resolveInfo="Type" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210159684238">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="scalarType" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2.1068431790189:3" resolveInfo="Type" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1209978830955">
-      <property name="value" value="matrix" />
-      <link role="conceptPropertyDeclaration" targetNodeId="10.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1209987469663">
-    <property name="name" value="MatrixLiteral" />
-    <property name="package" value="literal" />
-    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1209987497704">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="row" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1209987479015" resolveInfo="MatrixRow" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210161158423">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="scalarType" />
-      <link role="target" targetNodeId="2.1068431790189" resolveInfo="Type" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1209987615332">
-      <property name="value" value="new matrix" />
-      <link role="conceptPropertyDeclaration" targetNodeId="10.1137473891462" resolveInfo="alias" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1209978830955">
+      <property name="value:0" value="matrix" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="10.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1209987479015">
-    <property name="name" value="MatrixRow" />
-    <property name="package" value="literal" />
-    <link role="extends" targetNodeId="10.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1209987483934">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="items" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1209987469663">
+    <property name="name:0" value="MatrixLiteral" />
+    <property name="package:0" value="literal" />
+    <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1209987497704">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="row" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="1209987479015:0" resolveInfo="MatrixRow" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210161158423">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="sourceCardinality:0" value="1" />
+      <property name="role:0" value="scalarType" />
+      <link role="target:0" targetNodeId="2.1068431790189:3" resolveInfo="Type" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1209987615332">
+      <property name="value:0" value="new matrix" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="10.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1209989472341">
-    <property name="name" value="DeterminantExpression" />
-    <property name="package" value="expressions" />
-    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1209989620759">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="literal" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1209989865267">
-      <property name="value" value="determinant" />
-      <link role="conceptPropertyDeclaration" targetNodeId="10.1137473891462" resolveInfo="alias" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1209987479015">
+    <property name="name:0" value="MatrixRow" />
+    <property name="package:0" value="literal" />
+    <link role="extends:0" targetNodeId="10.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1209987483934">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="items" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1209999461920">
-    <property name="name" value="TransposeExpression" />
-    <property name="package" value="expressions" />
-    <link role="extends" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1209999493205">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="matrix" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1209989472341">
+    <property name="name:0" value="DeterminantExpression" />
+    <property name="package:0" value="expressions" />
+    <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1209989620759">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="sourceCardinality:0" value="1" />
+      <property name="role:0" value="literal" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1209999655052">
-      <property name="value" value="matrix transpose" />
-      <link role="conceptPropertyDeclaration" targetNodeId="10.1137473891462" resolveInfo="alias" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1210001631678">
-    <property name="name" value="MatrixMultExpression" />
-    <property name="package" value="binOp" />
-    <link role="extends" targetNodeId="2.1081773326031" resolveInfo="BinaryOperation" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1210001654154">
-      <property name="value" value="*M" />
-      <link role="conceptPropertyDeclaration" targetNodeId="10.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1210149302284">
-      <property name="value" value="3" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1166617629900" resolveInfo="priority" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1209989865267">
+      <property name="value:0" value="determinant" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="10.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1210149734003">
-    <property name="name" value="MatrixAddExpression" />
-    <property name="package" value="binOp" />
-    <link role="extends" targetNodeId="2.1081773326031" resolveInfo="BinaryOperation" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1210149787843">
-      <property name="value" value="+M" />
-      <link role="conceptPropertyDeclaration" targetNodeId="10.1137473891462" resolveInfo="alias" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1209999461920">
+    <property name="name:0" value="TransposeExpression" />
+    <property name="package:0" value="expressions" />
+    <link role="extends:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1209999493205">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="matrix" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1210149819834">
-      <property name="value" value="2" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1166617629900" resolveInfo="priority" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1210151336184">
-    <property name="name" value="MatrixSubExpression" />
-    <property name="package" value="binOp" />
-    <link role="extends" targetNodeId="2.1081773326031" resolveInfo="BinaryOperation" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1210151359709">
-      <property name="value" value="-M" />
-      <link role="conceptPropertyDeclaration" targetNodeId="10.1137473891462" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1210151366543">
-      <property name="value" value="2" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1166617629900" resolveInfo="priority" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1209999655052">
+      <property name="value:0" value="matrix transpose" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="10.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1210151722509">
-    <property name="name" value="MatrixDivExpression" />
-    <property name="package" value="binOp" />
-    <link role="extends" targetNodeId="2.1081773326031" resolveInfo="BinaryOperation" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1210151747682">
-      <property name="value" value="/M" />
-      <link role="conceptPropertyDeclaration" targetNodeId="10.1137473891462" resolveInfo="alias" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210001631678">
+    <property name="name:0" value="MatrixMultExpression" />
+    <property name="package:0" value="binOp" />
+    <link role="extends:0" targetNodeId="2.1081773326031:3" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1210001654154">
+      <property name="value:0" value="*M" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="10.1137473891462:0" resolveInfo="alias" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty" id="1210151755195">
-      <property name="value" value="3" />
-      <link role="conceptPropertyDeclaration" targetNodeId="2.1166617629900" resolveInfo="priority" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1210234754876">
-    <property name="name" value="ForEachMatrixElement" />
-    <property name="package" value="for" />
-    <link role="extends" targetNodeId="2.1154032098014" resolveInfo="AbstractLoopStatement" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210234807362">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="row" />
-      <link role="target" targetNodeId="1210234858018" resolveInfo="MarixIndexVariable" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210234892102">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="column" />
-      <link role="target" targetNodeId="1210234858018" resolveInfo="MarixIndexVariable" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210234933941">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="element" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1210234982684" resolveInfo="MatrixElemntVariable" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210234913397">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="matrix" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2.1068431790191" resolveInfo="Expression" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1210234777562">
-      <property name="value" value="for each matrix element" />
-      <link role="conceptPropertyDeclaration" targetNodeId="10.1137473891462" resolveInfo="alias" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty:0" id="1210149302284">
+      <property name="value:0" value="3" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1166617629900:3" resolveInfo="priority" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1210234858018">
-    <property name="name" value="MatrixIndexVariableDeclaration" />
-    <property name="package" value="for" />
-    <link role="extends" targetNodeId="2.1068431474542" resolveInfo="VariableDeclaration" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1210247161275">
-      <link role="intfc" targetNodeId="10.1169194658468" resolveInfo="INamedConcept" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210149734003">
+    <property name="name:0" value="MatrixAddExpression" />
+    <property name="package:0" value="binOp" />
+    <link role="extends:0" targetNodeId="2.1081773326031:3" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1210149787843">
+      <property name="value:0" value="+M" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="10.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty:0" id="1210149819834">
+      <property name="value:0" value="2" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1166617629900:3" resolveInfo="priority" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1210234982684">
-    <property name="name" value="MatrixElementVariableDeclaration" />
-    <property name="package" value="for" />
-    <link role="extends" targetNodeId="2.1068431474542" resolveInfo="VariableDeclaration" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1210238030796">
-      <link role="intfc" targetNodeId="10.1169194658468" resolveInfo="INamedConcept" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210151336184">
+    <property name="name:0" value="MatrixSubExpression" />
+    <property name="package:0" value="binOp" />
+    <link role="extends:0" targetNodeId="2.1081773326031:3" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1210151359709">
+      <property name="value:0" value="-M" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="10.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty:0" id="1210151366543">
+      <property name="value:0" value="2" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1166617629900:3" resolveInfo="priority" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1210238040066">
-    <property name="package" value="for" />
-    <property name="name" value="MatrixElementVariableReference" />
-    <link role="extends" targetNodeId="2.1068498886296" resolveInfo="VariableReference" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210238053057">
-      <property name="role" value="matrixElementDeclaration" />
-      <link role="target" targetNodeId="1210234982684" resolveInfo="MatrixElementVariable" />
-      <link role="specializedLink" targetNodeId="2.1068581517664" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210151722509">
+    <property name="name:0" value="MatrixDivExpression" />
+    <property name="package:0" value="binOp" />
+    <link role="extends:0" targetNodeId="2.1081773326031:3" resolveInfo="BinaryOperation" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1210151747682">
+      <property name="value:0" value="/M" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="10.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.IntegerConceptProperty:0" id="1210151755195">
+      <property name="value:0" value="3" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2.1166617629900:3" resolveInfo="priority" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1210239099519">
-    <property name="package" value="for" />
-    <property name="name" value="MatrixIndexVariableRefirence" />
-    <link role="extends" targetNodeId="2.1068498886296" resolveInfo="VariableReference" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1210239136142">
-      <property name="role" value="indexVariable" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1210234858018" resolveInfo="MatrixIndexVariableDeclaration" />
-      <link role="specializedLink" targetNodeId="2.1068581517664" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210234754876">
+    <property name="name:0" value="ForEachMatrixElement" />
+    <property name="package:0" value="for" />
+    <link role="extends:0" targetNodeId="2.1154032098014:3" resolveInfo="AbstractLoopStatement" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210234807362">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="sourceCardinality:0" value="1" />
+      <property name="role:0" value="row" />
+      <link role="target:0" targetNodeId="1210234858018:0" resolveInfo="MarixIndexVariable" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210234892102">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="sourceCardinality:0" value="1" />
+      <property name="role:0" value="column" />
+      <link role="target:0" targetNodeId="1210234858018:0" resolveInfo="MarixIndexVariable" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210234933941">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="element" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1210234982684:0" resolveInfo="MatrixElemntVariable" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210234913397">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="matrix" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1210234777562">
+      <property name="value:0" value="for each matrix element" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="10.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210234858018">
+    <property name="name:0" value="MatrixIndexVariableDeclaration" />
+    <property name="package:0" value="for" />
+    <link role="extends:0" targetNodeId="2.1068431474542:3" resolveInfo="VariableDeclaration" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1210247161275">
+      <link role="intfc:0" targetNodeId="10.1169194658468:0" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210234982684">
+    <property name="name:0" value="MatrixElementVariableDeclaration" />
+    <property name="package:0" value="for" />
+    <link role="extends:0" targetNodeId="2.1068431474542:3" resolveInfo="VariableDeclaration" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1210238030796">
+      <link role="intfc:0" targetNodeId="10.1169194658468:0" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210238040066">
+    <property name="package:0" value="for" />
+    <property name="name:0" value="MatrixElementVariableReference" />
+    <link role="extends:0" targetNodeId="2.1068498886296:3" resolveInfo="VariableReference" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210238053057">
+      <property name="role:0" value="matrixElementDeclaration" />
+      <link role="target:0" targetNodeId="1210234982684:0" resolveInfo="MatrixElementVariable" />
+      <link role="specializedLink:0" targetNodeId="2.1068581517664:3" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1210239099519">
+    <property name="package:0" value="for" />
+    <property name="name:0" value="MatrixIndexVariableRefirence" />
+    <link role="extends:0" targetNodeId="2.1068498886296:3" resolveInfo="VariableReference" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1210239136142">
+      <property name="role:0" value="indexVariable" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1210234858018:0" resolveInfo="MatrixIndexVariableDeclaration" />
+      <link role="specializedLink:0" targetNodeId="2.1068581517664:3" />
     </node>
   </node>
 </model>

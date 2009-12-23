@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:98c80041-f30b-4e64-af53-df11b8bcf9a8(jetbrains.mps.langBeta.editor)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
@@ -29,16 +29,16 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <maxImportIndex value="2" />
   <import index="1" modelUID="r:8ed9ad5d-86a5-496f-b126-fcb4264fafe7(jetbrains.mps.langBeta.structure)" version="-1" />
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1237225647473">
-    <link role="conceptDeclaration" targetNodeId="1.1237225647456" resolveInfo="AlphaConcept" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237225647474">
-      <property name="text" value="alpha concept" />
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1237225647473">
+    <link role="conceptDeclaration:32" targetNodeId="1.1237225647456" resolveInfo="AlphaConcept" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1237225647474">
+      <property name="text:32" value="alpha concept" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration" id="1237226783303">
-    <link role="conceptDeclaration" targetNodeId="1.1237226783270" resolveInfo="GammaConcept" />
-    <node role="cellModel" type="jetbrains.mps.lang.editor.structure.CellModel_Constant" id="1237226783304">
-      <property name="text" value="gammaConcept" />
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1237226783303">
+    <link role="conceptDeclaration:32" targetNodeId="1.1237226783270" resolveInfo="GammaConcept" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1237226783304">
+      <property name="text:32" value="gammaConcept" />
     </node>
   </node>
 </model>

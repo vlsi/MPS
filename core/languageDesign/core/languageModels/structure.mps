@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory>
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
@@ -47,80 +47,80 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="25" />
-  <node type="jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration" id="1082983041843">
-    <property name="name" value="string" />
+  <node type="jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration:0" id="1082983041843">
+    <property name="name:0" value="string" />
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration" id="1082983657062">
-    <property name="name" value="integer" />
+  <node type="jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration:0" id="1082983657062">
+    <property name="name:0" value="integer" />
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration" id="1082983657063">
-    <property name="name" value="boolean" />
+  <node type="jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration:0" id="1082983657063">
+    <property name="name:0" value="boolean" />
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1133920641626">
-    <property name="name" value="BaseConcept" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1156234966388">
-      <property name="name" value="shortDescription" />
-      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1133920641626">
+    <property name="name:0" value="BaseConcept" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1156234966388">
+      <property name="name:0" value="shortDescription" />
+      <link role="dataType:0" targetNodeId="1082983041843:0" resolveInfo="string" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1156235010670">
-      <property name="name" value="alias" />
-      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1156235010670">
+      <property name="name:0" value="alias" />
+      <link role="dataType:0" targetNodeId="1082983041843:0" resolveInfo="string" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1193676396447">
-      <property name="name" value="virtualPackage" />
-      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1193676396447">
+      <property name="name:0" value="virtualPackage" />
+      <link role="dataType:0" targetNodeId="1082983041843:0" resolveInfo="string" />
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1137473854053">
-      <property name="name" value="abstract" />
+    <node role="conceptPropertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration:0" id="1137473854053">
+      <property name="name:0" value="abstract" />
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1137473891462">
-      <property name="name" value="alias" />
+    <node role="conceptPropertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration:0" id="1137473891462">
+      <property name="name:0" value="alias" />
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1137473914776">
-      <property name="name" value="shortDescription" />
+    <node role="conceptPropertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration:0" id="1137473914776">
+      <property name="name:0" value="shortDescription" />
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="1137473994950">
-      <property name="name" value="dontSubstituteByDefault" />
-      <property name="inheritable" value="true" />
+    <node role="conceptPropertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration:0" id="1137473994950">
+      <property name="name:0" value="dontSubstituteByDefault" />
+      <property name="inheritable:0" value="true" />
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration" id="1218562853918">
-      <property name="name" value="deprecated104" />
+    <node role="conceptPropertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.StringConceptPropertyDeclaration:0" id="1218562853918">
+      <property name="name:0" value="deprecated104" />
     </node>
-    <node role="conceptPropertyDeclaration" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration" id="6293714305936158372">
-      <property name="name" value="substituteInAmbigousPosition" />
+    <node role="conceptPropertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration:0" id="6293714305936158372">
+      <property name="name:0" value="substituteInAmbigousPosition" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1133922314101">
-      <link role="conceptPropertyDeclaration" targetNodeId="1137473854053" resolveInfo="abstract" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1169194658468">
-    <property name="name" value="INamedConcept" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1169194664001">
-      <property name="name" value="name" />
-      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1133922314101">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1137473854053:0" resolveInfo="abstract" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1196978630214">
-    <property name="name" value="IResolveInfo" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1196978656277">
-      <property name="name" value="resolveInfo" />
-      <link role="dataType" targetNodeId="1082983041843" resolveInfo="string" />
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1169194658468">
+    <property name="name:0" value="INamedConcept" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1169194664001">
+      <property name="name:0" value="name" />
+      <link role="dataType:0" targetNodeId="1082983041843:0" resolveInfo="string" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1221647093812">
-    <property name="name" value="IWrapper" />
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1196978630214">
+    <property name="name:0" value="IResolveInfo" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1196978656277">
+      <property name="name:0" value="resolveInfo" />
+      <link role="dataType:0" targetNodeId="1082983041843:0" resolveInfo="string" />
+    </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1224608834445">
-    <property name="name" value="IDeprecatable" />
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1221647093812">
+    <property name="name:0" value="IWrapper" />
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1233160296597">
-    <property name="name" value="IContainer" />
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1224608834445">
+    <property name="name:0" value="IDeprecatable" />
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="1234971358450">
-    <property name="name" value="IType" />
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1233160296597">
+    <property name="name:0" value="IContainer" />
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration" id="201537367881071930">
-    <property name="name" value="IMetaLevelChanger" />
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1234971358450">
+    <property name="name:0" value="IType" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="201537367881071930">
+    <property name="name:0" value="IMetaLevelChanger" />
   </node>
 </model>
 

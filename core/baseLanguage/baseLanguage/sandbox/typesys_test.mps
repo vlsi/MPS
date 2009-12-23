@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c8959039e(jetbrains.mps.baseLanguage.sandbox.typesys_test)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -29,46 +29,46 @@
   <maxImportIndex value="8" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="8" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
-  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="1220367719401">
-    <property name="name" value="MySequence" />
-    <node role="staticInnerClassifiers" type="jetbrains.mps.baseLanguage.structure.Annotation" id="6249138306853355652">
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="6249138306853355653" />
+  <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1220367719401">
+    <property name="name:3" value="MySequence" />
+    <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.Annotation:3" id="6249138306853355652">
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6249138306853355653" />
     </node>
-    <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" id="1220541864956">
-      <property name="name" value="debugForStatement" />
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="1220541864957" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="1220541864958" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1220541864959">
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1220541864960">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220541864961">
-            <property name="name" value="nums" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220541864962">
-              <link role="classifier" targetNodeId="3.~Iterable" resolveInfo="Iterable" />
-              <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ClassifierType" id="1220541864963">
-                <link role="classifier" targetNodeId="3.~Integer" resolveInfo="Integer" />
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1220541864956">
+      <property name="name:3" value="debugForStatement" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1220541864957" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1220541864958" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1220541864959">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1220541864960">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1220541864961">
+            <property name="name:3" value="nums" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1220541864962">
+              <link role="classifier:3" targetNodeId="3.~Iterable" resolveInfo="Iterable" />
+              <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1220541864963">
+                <link role="classifier:3" targetNodeId="3.~Integer" resolveInfo="Integer" />
               </node>
             </node>
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" id="1220543017096">
-          <node role="localVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration" id="1220543017097">
-            <property name="name" value="ints" />
-            <node role="type" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1220543079230" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1220543017096">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1220543017097">
+            <property name="name:3" value="ints" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1220543079230" />
           </node>
         </node>
-        <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1220541864964">
-          <node role="expression" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall" id="1220541864966">
-            <link role="classConcept" targetNodeId="8.~Sequence" resolveInfo="Sequence" />
-            <link role="baseMethodDeclaration" targetNodeId="8.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
-            <node role="actualArgument" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference" id="1220541864967">
-              <link role="variableDeclaration" targetNodeId="1220541864961" resolveInfo="nums" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1220541864964">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1220541864966">
+            <link role="classConcept:3" targetNodeId="8.~Sequence" resolveInfo="Sequence" />
+            <link role="baseMethodDeclaration:3" targetNodeId="8.~Sequence.fromIterable(java.lang.Iterable):jetbrains.mps.internal.collections.runtime.ISequence" resolveInfo="fromIterable" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1220541864967">
+              <link role="variableDeclaration:3" targetNodeId="1220541864961" resolveInfo="nums" />
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node role="typeVariableDeclaration" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration" id="1220367719450">
-      <property name="name" value="T" />
+    <node role="typeVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="1220367719450">
+      <property name="name:3" value="T" />
     </node>
   </node>
 </model>

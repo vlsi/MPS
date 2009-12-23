@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:896f64dd-7cfe-4bc4-b401-38e2a027e9ae(jetbrains.mps.build.custommps.structure)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -33,47 +33,47 @@
   <maxImportIndex value="1" />
   <visible index="2" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233149592028">
-    <property name="name" value="MPSBuild" />
-    <link role="extends" targetNodeId="2v.1203598300291" resolveInfo="AbstractProjectComponent" />
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1233149869651">
-      <link role="intfc" targetNodeId="2v.1203617883391" resolveInfo="ICompositeComponent" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1233149592028">
+    <property name="name:0" value="MPSBuild" />
+    <link role="extends:0" targetNodeId="2v.1203598300291:7" resolveInfo="AbstractProjectComponent" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1233149869651">
+      <link role="intfc:0" targetNodeId="2v.1203617883391:7" resolveInfo="ICompositeComponent" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1240832859448">
-      <link role="intfc" targetNodeId="2v.1240832649054" resolveInfo="INotBuildableComponent" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1240832859448">
+      <link role="intfc:0" targetNodeId="2v.1240832649054:7" resolveInfo="INotBuildableComponent" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233150001577">
-      <property name="value" value="mps-build" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1233150001577">
+      <property name="value:0" value="mps-build" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1237394818532">
-      <link role="conceptPropertyDeclaration" targetNodeId="2v.1233309050521" resolveInfo="acceptFiles" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1237394818532">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1233309050521:7" resolveInfo="acceptFiles" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1234290845440">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="pathToBuildToolsZip" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="2v.1220973916698" resolveInfo="Path" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1234290845440">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="pathToBuildToolsZip" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="2v.1220973916698:7" resolveInfo="Path" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1237897943794">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="licencePath" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="2v.1220973916698" resolveInfo="Path" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1237897943794">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="licencePath" />
+      <property name="sourceCardinality:0" value="0..1" />
+      <link role="target:0" targetNodeId="2v.1220973916698:7" resolveInfo="Path" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1233679247700">
-    <property name="name" value="LibraryFolder" />
-    <link role="extends" targetNodeId="2v.1203598512427" resolveInfo="Folder" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1233679274643">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="libraryName" />
-      <property name="sourceCardinality" value="0..1" />
-      <link role="target" targetNodeId="2v.1205339194346" resolveInfo="IStringExpression" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1233679247700">
+    <property name="name:0" value="LibraryFolder" />
+    <link role="extends:0" targetNodeId="2v.1203598512427:7" resolveInfo="Folder" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1233679274643">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="libraryName" />
+      <property name="sourceCardinality:0" value="0..1" />
+      <link role="target:0" targetNodeId="2v.1205339194346:7" resolveInfo="IStringExpression" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1233679617947">
-      <property name="value" value="library" />
-      <link role="conceptPropertyDeclaration" targetNodeId="3v.1137473891462" resolveInfo="alias" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1233679617947">
+      <property name="value:0" value="library" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3v.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
 </model>

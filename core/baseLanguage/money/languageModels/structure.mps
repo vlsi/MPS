@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c895903f7(jetbrains.mps.baseLanguage.money.structure)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory>
     <refactoringContext modelVersion="0">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
@@ -56,89 +56,89 @@
   <maxImportIndex value="4" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1186667651178">
-    <property name="name" value="MoneyLiteral" />
-    <link role="extends" targetNodeId="3.1068431790191" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1186667945792">
-      <property name="name" value="currency" />
-      <link role="dataType" targetNodeId="1.1082983041843" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186667651178">
+    <property name="name:0" value="MoneyLiteral" />
+    <link role="extends:0" targetNodeId="3.1068431790191:3" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1186667945792">
+      <property name="name:0" value="currency" />
+      <link role="dataType:0" targetNodeId="1.1082983041843:0" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1186667962877">
-      <property name="name" value="amount" />
-      <link role="dataType" targetNodeId="1186668138191" resolveInfo="BigDecimal" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration" id="1186668138191">
-    <property name="name" value="BigDecimal" />
-    <property name="constraint" value="[0-9]+(.[0-9]+)?" />
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1186669599053">
-    <property name="name" value="MoneyType" />
-    <link role="extends" targetNodeId="3.1068431790189" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1187337490505">
-      <property name="value" value="Money" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1186667962877">
+      <property name="name:0" value="amount" />
+      <link role="dataType:0" targetNodeId="1186668138191:0" resolveInfo="BigDecimal" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1187340310888">
-    <property name="name" value="MoneyCreator" />
-    <link role="extends" targetNodeId="3.1145552809883" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1187701438357">
-      <property name="value" value="Money" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
-    </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1187701456812">
-      <property name="value" value="money type constructor" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473914776" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1187344039345">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="amount" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="3.1068431790191" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1187344093002">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="currency" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="3.1068431790191" />
+  <node type="jetbrains.mps.lang.structure.structure.ConstrainedDataTypeDeclaration:0" id="1186668138191">
+    <property name="name:0" value="BigDecimal" />
+    <property name="constraint:0" value="[0-9]+(.[0-9]+)?" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1186669599053">
+    <property name="name:0" value="MoneyType" />
+    <link role="extends:0" targetNodeId="3.1068431790189:3" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1187337490505">
+      <property name="value:0" value="Money" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1187357857395">
-    <property name="name" value="MoneyMethodCall" />
-    <link role="extends" targetNodeId="3.1068431790191" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1187358164451">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="instance" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="3.1068431790191" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1187340310888">
+    <property name="name:0" value="MoneyCreator" />
+    <link role="extends:0" targetNodeId="3.1145552809883:3" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1187701438357">
+      <property name="value:0" value="Money" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
     </node>
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty" id="1187357981803">
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473854053" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1187701456812">
+      <property name="value:0" value="money type constructor" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" />
     </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1187357875552">
-    <property name="name" value="MoneyGetAmountMethodCall" />
-    <link role="extends" targetNodeId="1187357857395" resolveInfo="MoneyMethodCall" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1187703277035">
-      <property name="value" value=". amount" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1187344039345">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="amount" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="3.1068431790191:3" />
     </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1187357945755">
-    <property name="name" value="MoneyGetCurrencyMethodCall" />
-    <link role="extends" targetNodeId="1187357857395" resolveInfo="MoneyMethodCall" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1187703261658">
-      <property name="value" value=". currency" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1187344093002">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="currency" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="3.1068431790191:3" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1187617584208">
-    <property name="name" value="MoneyIsZeroMethodCall" />
-    <link role="extends" targetNodeId="1187357857395" resolveInfo="MoneyMethodCall" />
-    <node role="conceptProperty" type="jetbrains.mps.lang.structure.structure.StringConceptProperty" id="1187703292974">
-      <property name="value" value=". isZero" />
-      <link role="conceptPropertyDeclaration" targetNodeId="1.1137473891462" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1187357857395">
+    <property name="name:0" value="MoneyMethodCall" />
+    <link role="extends:0" targetNodeId="3.1068431790191:3" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1187358164451">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="instance" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="3.1068431790191:3" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1187357981803">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473854053:0" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1187357875552">
+    <property name="name:0" value="MoneyGetAmountMethodCall" />
+    <link role="extends:0" targetNodeId="1187357857395:0" resolveInfo="MoneyMethodCall" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1187703277035">
+      <property name="value:0" value=". amount" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1187357945755">
+    <property name="name:0" value="MoneyGetCurrencyMethodCall" />
+    <link role="extends:0" targetNodeId="1187357857395:0" resolveInfo="MoneyMethodCall" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1187703261658">
+      <property name="value:0" value=". currency" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1187617584208">
+    <property name="name:0" value="MoneyIsZeroMethodCall" />
+    <link role="extends:0" targetNodeId="1187357857395:0" resolveInfo="MoneyMethodCall" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1187703292974">
+      <property name="value:0" value=". isZero" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" />
     </node>
   </node>
 </model>

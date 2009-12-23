@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c8959042e(jetbrains.mps.samples.secretCompartmentLanguage.structure)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory>
     <refactoringContext modelVersion="1">
       <refactoring refactoringClass="jetbrains.mps.refactoring.renameLanguage.LanguageRenamer$MyRefactoring" />
@@ -54,126 +54,126 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197149564476">
-    <property name="name" value="StateMachine" />
-    <property name="rootable" value="true" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1197239402593">
-      <property name="role" value="startState" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1197170590231" resolveInfo="State" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1197149564476">
+    <property name="name:0" value="StateMachine" />
+    <property name="rootable:0" value="true" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1197239402593">
+      <property name="role:0" value="startState" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1197170590231:1" resolveInfo="State" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1197169554182">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="event" />
-      <property name="sourceCardinality" value="0..n" />
-      <link role="target" targetNodeId="1197169363230" resolveInfo="Event" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1197169554182">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="event" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="1197169363230:1" resolveInfo="Event" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1197223095983">
-      <property name="metaClass" value="aggregation" />
-      <property name="role" value="state" />
-      <property name="sourceCardinality" value="1..n" />
-      <link role="target" targetNodeId="1197170590231" resolveInfo="State" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1197223095983">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="state" />
+      <property name="sourceCardinality:0" value="1..n" />
+      <link role="target:0" targetNodeId="1197170590231:1" resolveInfo="State" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1197166618707">
-      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1197166618707">
+      <link role="intfc:0" targetNodeId="1.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1197166557152">
-      <property name="name" value="stateMachineName" />
-      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197169363230">
-    <property name="name" value="Event" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1197169389356">
-      <property name="name" value="eventName" />
-      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1197169394841">
-      <property name="name" value="code" />
-      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1197240874081">
-      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1197166557152">
+      <property name="name:0" value="stateMachineName" />
+      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197170590231">
-    <property name="name" value="State" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1197240451739">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="transition" />
-      <link role="target" targetNodeId="1197240155690" resolveInfo="Transition" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1197169363230">
+    <property name="name:0" value="Event" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1197169389356">
+      <property name="name:0" value="eventName" />
+      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
     </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1197170631630">
-      <property name="name" value="stateName" />
-      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1197169394841">
+      <property name="name:0" value="code" />
+      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
     </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1197239522298">
-      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1197240874081">
+      <link role="intfc:0" targetNodeId="1.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197240155690">
-    <property name="name" value="Transition" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1197240182332">
-      <property name="role" value="trigger" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1197169363230" resolveInfo="Event" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1197170590231">
+    <property name="name:0" value="State" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1197240451739">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <property name="role:0" value="transition" />
+      <link role="target:0" targetNodeId="1197240155690:1" resolveInfo="Transition" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1197240188973">
-      <property name="role" value="target" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1197170590231" resolveInfo="State" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1197170631630">
+      <property name="name:0" value="stateName" />
+      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
     </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197246912613">
-    <property name="name" value="StateMachineTest" />
-    <property name="rootable" value="true" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1197252952541">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="testMethod" />
-      <link role="target" targetNodeId="1197252718474" resolveInfo="StateMachineTestMethod" />
-    </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1197247793411">
-      <property name="sourceCardinality" value="1" />
-      <property name="role" value="stateMachine" />
-      <link role="target" targetNodeId="1197149564476" resolveInfo="StateMachine" />
-    </node>
-    <node role="implements" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference" id="1197248073061">
-      <link role="intfc" targetNodeId="1.1169194658468" resolveInfo="INamedConcept" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1197239522298">
+      <link role="intfc:0" targetNodeId="1.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197252718474">
-    <property name="name" value="StateMachineTestMethod" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1197255818559">
-      <property name="metaClass" value="aggregation" />
-      <property name="sourceCardinality" value="0..n" />
-      <property name="role" value="handleEvent" />
-      <link role="target" targetNodeId="1197255776563" resolveInfo="HandleEvent" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1197240155690">
+    <property name="name:0" value="Transition" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1197240182332">
+      <property name="role:0" value="trigger" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1197169363230:1" resolveInfo="Event" />
     </node>
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1197255224363">
-      <property name="role" value="finalState" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1197170590231" resolveInfo="State" />
-    </node>
-    <node role="propertyDeclaration" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration" id="1197252760325">
-      <property name="name" value="methodName" />
-      <link role="dataType" targetNodeId="1.1082983041843" resolveInfo="string" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1197240188973">
+      <property name="role:0" value="target" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1197170590231:1" resolveInfo="State" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration" id="1197255776563">
-    <property name="name" value="HandleEvent" />
-    <link role="extends" targetNodeId="1.1133920641626" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration" type="jetbrains.mps.lang.structure.structure.LinkDeclaration" id="1197255783048">
-      <property name="role" value="event" />
-      <property name="sourceCardinality" value="1" />
-      <link role="target" targetNodeId="1197169363230" resolveInfo="Event" />
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1197246912613">
+    <property name="name:0" value="StateMachineTest" />
+    <property name="rootable:0" value="true" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1197252952541">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <property name="role:0" value="testMethod" />
+      <link role="target:0" targetNodeId="1197252718474:1" resolveInfo="StateMachineTestMethod" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1197247793411">
+      <property name="sourceCardinality:0" value="1" />
+      <property name="role:0" value="stateMachine" />
+      <link role="target:0" targetNodeId="1197149564476:1" resolveInfo="StateMachine" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1197248073061">
+      <link role="intfc:0" targetNodeId="1.1169194658468:0" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1197252718474">
+    <property name="name:0" value="StateMachineTestMethod" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1197255818559">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <property name="role:0" value="handleEvent" />
+      <link role="target:0" targetNodeId="1197255776563:1" resolveInfo="HandleEvent" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1197255224363">
+      <property name="role:0" value="finalState" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1197170590231:1" resolveInfo="State" />
+    </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1197252760325">
+      <property name="name:0" value="methodName" />
+      <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1197255776563">
+    <property name="name:0" value="HandleEvent" />
+    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1197255783048">
+      <property name="role:0" value="event" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1197169363230:1" resolveInfo="Event" />
     </node>
   </node>
 </model>
