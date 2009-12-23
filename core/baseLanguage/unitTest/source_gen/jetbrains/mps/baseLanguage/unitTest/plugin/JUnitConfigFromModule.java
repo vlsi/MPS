@@ -47,7 +47,7 @@ public class JUnitConfigFromModule extends BaseConfigCreator<IModule> implements
 
   @Override
   public JUnitConfigFromModule clone() {
-    return ((JUnitConfigFromModule)super.clone());
+    return ((JUnitConfigFromModule) super.clone());
   }
 
   protected boolean isApplicable(final Object element) {

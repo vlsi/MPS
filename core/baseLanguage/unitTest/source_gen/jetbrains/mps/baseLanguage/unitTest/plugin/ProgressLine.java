@@ -52,7 +52,7 @@ public class ProgressLine extends JPanel implements TestView {
       this.progressBar.setColor(ColorProgressBar.YELLOW);
     }
     if (total != 0) {
-      this.progressBar.setFraction((double)complited / (double)total);
+      this.progressBar.setFraction((double) complited / (double) total);
     }
   }
 

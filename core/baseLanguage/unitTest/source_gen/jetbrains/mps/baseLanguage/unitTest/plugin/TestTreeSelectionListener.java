@@ -25,10 +25,10 @@ public class TestTreeSelectionListener implements TreeSelectionListener {
     if (path != null) {
       Object node = path.getLastPathComponent();
       if (node instanceof TestCaseTreeNode) {
-        TestCaseTreeNode n = (TestCaseTreeNode)node;
+        TestCaseTreeNode n = (TestCaseTreeNode) node;
         className = n.getClassName();
       } else if (node instanceof TestMethodTreeNode) {
-        TestMethodTreeNode n = (TestMethodTreeNode)node;
+        TestMethodTreeNode n = (TestMethodTreeNode) node;
         className = n.getClassName();
         methodName = n.getMethodName();
       }

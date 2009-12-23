@@ -571,10 +571,10 @@ public class JUnitConfigEditor extends JPanel {
   }
 
   public void onNodeChange() {
-    myThis.setNodes((List<SNode>)myThis.myTestCases0.getItems());
+    myThis.setNodes((List<SNode>) myThis.myTestCases0.getItems());
   }
 
   public void onMethodChange() {
-    myThis.setMethods((List<SNode>)myThis.myTestMethods0.getItems());
+    myThis.setMethods((List<SNode>) myThis.myTestMethods0.getItems());
   }
 }

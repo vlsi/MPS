@@ -41,10 +41,10 @@ public class JUnitConfigFromClass extends BaseConfigCreator<SNode> implements Cl
 
   @Override
   public JUnitConfigFromClass clone() {
-    return ((JUnitConfigFromClass)super.clone());
+    return ((JUnitConfigFromClass) super.clone());
   }
 
   protected boolean isApplicable(final Object element) {
-    return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode)element), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
+    return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode) element), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
   }
 }

@@ -47,7 +47,7 @@ public class JUnitConfigFromProject extends BaseConfigCreator<MPSProject> implem
 
   @Override
   public JUnitConfigFromProject clone() {
-    return ((JUnitConfigFromProject)super.clone());
+    return ((JUnitConfigFromProject) super.clone());
   }
 
   protected boolean isApplicable(final Object element) {

@@ -27,7 +27,7 @@ public abstract class BaseTestOccurenceNavigator implements OccurenceNavigator, 
     boolean founded = false;
     DefaultMutableTreeNode node = this.testTree.getCurrentNode();
     do {
-      MPSTreeNode temp = (MPSTreeNode)(next ?
+      MPSTreeNode temp = (MPSTreeNode) (next ?
         node.getNextNode() :
         node.getPreviousNode()
       );

@@ -35,7 +35,7 @@ public class TestTree extends MPSTree implements TestView {
 
   public TestTree(TestRunState state, MPSProject project) {
     this.state = state;
-    this.tests = MapSequence.fromMap(new LinkedHashMap<SNode, List<SNode>>(16, (float)0.75, false));
+    this.tests = MapSequence.fromMap(new LinkedHashMap<SNode, List<SNode>>(16, (float) 0.75, false));
     this.map = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
     this.isAllTree = !(project.getComponent(MPSProjectHolder.class).getMPSProject().getPluginManager().getPrefsComponent(JUnitTestActionOptions_PreferencesComponent.class).getStateObject().isHidePassed);
     this.rebuildLater();
@@ -48,7 +48,7 @@ public class TestTree extends MPSTree implements TestView {
     if (ListSequence.fromList(priorityList).indexOf(oldState) < ListSequence.fromList(priorityList).indexOf(testState)) {
       if (TestState.PASSED.equals(testState)) {
         for (MPSTreeNode method : testCaseNode) {
-          if (!(TestState.PASSED.equals(((TestMethodTreeNode)method).getState()))) {
+          if (!(TestState.PASSED.equals(((TestMethodTreeNode) method).getState()))) {
             return;
           }
         }
@@ -117,6 +117,7 @@ public class TestTree extends MPSTree implements TestView {
 
   public MPSTreeNode rebuild() {
     MPSTreeNode root = new TextTreeNode("Tests");
+    this.setRootVisible(false);
     TestNameMap<TestCaseTreeNode, TestMethodTreeNode> temp = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
     for (SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.tests).keySet())) {
       if ((testCase == null)) {
@@ -247,7 +248,7 @@ public class TestTree extends MPSTree implements TestView {
     if (node == null || !(node.isLeaf())) {
       return false;
     }
-    TestMethodTreeNode leaf = (TestMethodTreeNode)node;
+    TestMethodTreeNode leaf = (TestMethodTreeNode) node;
     TestState state = leaf.getState();
     return state.equals(TestState.ERROR) || state.equals(TestState.FAILED);
   }

@@ -61,15 +61,15 @@ public class JUnitConfigFromMethods extends BaseConfigCreator<List> implements C
 
   @Override
   public JUnitConfigFromMethods clone() {
-    return ((JUnitConfigFromMethods)super.clone());
+    return ((JUnitConfigFromMethods) super.clone());
   }
 
   protected boolean isApplicable(final Object element) {
     if (!(element instanceof List)) {
       return false;
     }
-    for (Object obj : (List)element) {
-      if (!(obj instanceof SNode && SNodeOperations.isInstanceOf(((SNode)obj), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"))) {
+    for (Object obj : (List) element) {
+      if (!(obj instanceof SNode && SNodeOperations.isInstanceOf(((SNode) obj), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod"))) {
         return false;
       }
     }

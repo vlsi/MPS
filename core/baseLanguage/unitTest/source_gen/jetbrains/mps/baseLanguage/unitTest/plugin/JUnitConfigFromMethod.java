@@ -42,10 +42,10 @@ public class JUnitConfigFromMethod extends BaseConfigCreator<SNode> implements C
 
   @Override
   public JUnitConfigFromMethod clone() {
-    return ((JUnitConfigFromMethod)super.clone());
+    return ((JUnitConfigFromMethod) super.clone());
   }
 
   protected boolean isApplicable(final Object element) {
-    return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode)element), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod");
+    return element instanceof SNode && SNodeOperations.isInstanceOf(((SNode) element), "jetbrains.mps.baseLanguage.unitTest.structure.ITestMethod");
   }
 }

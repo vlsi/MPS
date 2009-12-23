@@ -3850,6 +3850,17 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7719232434616839375">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7719232434616839376">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7719232434616839377">
+              <link role="baseMethodDeclaration:3" targetNodeId="7.~JTree.setRootVisible(boolean):void" resolveInfo="setRootVisible" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7719232434616839379">
+                <property name="value:3" value="false" />
+              </node>
+            </node>
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="7719232434616839378" />
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1852781369259609551">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1852781369259609552">
             <property name="name:3" value="temp" />

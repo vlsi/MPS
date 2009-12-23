@@ -16,7 +16,7 @@ public class FailedTestOccurenceNavigator extends BaseTestOccurenceNavigator {
       return false;
     }
     while (true) {
-      TestMethodTreeNode leaf = (TestMethodTreeNode)(next ?
+      TestMethodTreeNode leaf = (TestMethodTreeNode) (next ?
         node.getNextLeaf() :
         node.getPreviousLeaf()
       );

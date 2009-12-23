@@ -114,7 +114,7 @@ public class ListPanel extends JPanel {
           ListPanel.this.collectCandidates();
         }
         ListSequence.fromList(ListPanel.this.candidates).removeSequence(ListSequence.fromList(ListPanel.this.values));
-        final SNode resultNode = (SNode)CommonChoosers.showDialogNodeChooser(ListPanel.this, ListPanel.this.candidates);
+        final SNode resultNode = (SNode) CommonChoosers.showDialogNodeChooser(ListPanel.this, ListPanel.this.candidates);
         if (resultNode == null) {
           return -1;
         }

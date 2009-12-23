@@ -26,7 +26,7 @@ public class TestRunUtil {
     if (testNodeName == null) {
       return null;
     }
-    return (SNode)SModelUtil.findNodeByFQName(testNodeName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), GlobalScope.getInstance());
+    return (SNode) SModelUtil.findNodeByFQName(testNodeName, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"), GlobalScope.getInstance());
   }
 
   public static SNode getTestMethod(String testNodeName, String testMethodName) {

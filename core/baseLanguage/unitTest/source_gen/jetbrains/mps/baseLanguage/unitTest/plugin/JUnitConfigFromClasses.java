@@ -55,15 +55,15 @@ public class JUnitConfigFromClasses extends BaseConfigCreator<List> implements C
 
   @Override
   public JUnitConfigFromClasses clone() {
-    return ((JUnitConfigFromClasses)super.clone());
+    return ((JUnitConfigFromClasses) super.clone());
   }
 
   protected boolean isApplicable(final Object element) {
     if (!(element instanceof List)) {
       return false;
     }
-    for (Object obj : (List)element) {
-      if (!(obj instanceof SNode && SNodeOperations.isInstanceOf(((SNode)obj), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
+    for (Object obj : (List) element) {
+      if (!(obj instanceof SNode && SNodeOperations.isInstanceOf(((SNode) obj), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))) {
         return false;
       }
     }

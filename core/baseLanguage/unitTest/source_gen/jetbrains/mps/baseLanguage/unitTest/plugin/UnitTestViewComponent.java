@@ -155,7 +155,7 @@ public class UnitTestViewComponent extends JPanel {
   }
 
   public void setTestCaseAndMethod(IOperationContext operationContext, List<SNode> testCases, List<SNode> testMethods) {
-    Map<SNode, List<SNode>> tests = MapSequence.fromMap(new LinkedHashMap<SNode, List<SNode>>(16, (float)0.75, false));
+    Map<SNode, List<SNode>> tests = MapSequence.fromMap(new LinkedHashMap<SNode, List<SNode>>(16, (float) 0.75, false));
     this.addTestCases(testCases, tests);
     this.addTestMethods(testMethods, tests);
     this.setTestsMap(operationContext, tests);

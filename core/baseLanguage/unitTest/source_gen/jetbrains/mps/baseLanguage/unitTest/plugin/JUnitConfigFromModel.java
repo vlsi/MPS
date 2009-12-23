@@ -48,7 +48,7 @@ public class JUnitConfigFromModel extends BaseConfigCreator<SModel> implements C
 
   @Override
   public JUnitConfigFromModel clone() {
-    return ((JUnitConfigFromModel)super.clone());
+    return ((JUnitConfigFromModel) super.clone());
   }
 
   protected boolean isApplicable(final Object element) {

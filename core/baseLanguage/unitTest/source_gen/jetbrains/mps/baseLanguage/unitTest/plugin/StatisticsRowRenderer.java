@@ -64,7 +64,7 @@ public class StatisticsRowRenderer implements TableCellRenderer {
   }
 
   public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column) {
-    TestStatisticsRow rowValue = (TestStatisticsRow)value;
+    TestStatisticsRow rowValue = (TestStatisticsRow) value;
     JComponent result = null;
     boolean keepForeground = false;
     JComponent adjustFont = null;

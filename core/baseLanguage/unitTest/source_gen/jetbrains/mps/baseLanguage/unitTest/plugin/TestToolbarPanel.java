@@ -96,10 +96,10 @@ public class TestToolbarPanel extends JPanel {
 
       public void actionPerformed(AnActionEvent p0) {
         MPSTreeNode root = TestToolbarPanel.this.tree.getRootNode();
-        MPSTreeNode child = (MPSTreeNode)root.getFirstChild();
+        MPSTreeNode child = (MPSTreeNode) root.getFirstChild();
         while (child != null) {
           TestToolbarPanel.this.tree.collapseAll(child);
-          child = (MPSTreeNode)child.getNextSibling();
+          child = (MPSTreeNode) child.getNextSibling();
         }
       }
     };
