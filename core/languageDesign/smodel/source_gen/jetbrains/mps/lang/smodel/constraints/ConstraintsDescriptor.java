@@ -20,7 +20,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new SLinkAccess_link_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new Node_IsRoleOperation_linkInParent_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new StaticConceptMethodCall_concept_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new StaticConceptMethodCall_methodDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new SLinkListAccess_link_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new LinkAttributeAccessQualifier_annotationLink_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new EnumMemberReference_enumMember_ReferentConstraint());

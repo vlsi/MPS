@@ -13,6 +13,7 @@
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="81f0abb8-d71e-4d13-a0c1-d2291fbb28b7(jetbrains.mps.lang.editor.editorTest)" />
   <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
+  <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590382(jetbrains.mps.lang.test.constraints)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -51,7 +52,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:1a7fc406-f263-498c-a126-51036fe6a9da(jetbrains.mps.lang.editor.editorTest.structure)" version="5" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <maxImportIndex value="34" />
+  <maxImportIndex value="36" />
   <import index="1" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cellMenu(jetbrains.mps.nodeEditor.cellMenu@java_stub)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)" version="-1" />
@@ -77,6 +78,8 @@
   <import index="32" modelUID="f:java_stub#com.intellij.openapi.command.undo(com.intellij.openapi.command.undo@java_stub)" version="-1" />
   <import index="33" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="34" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
+  <import index="35" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
+  <import index="36" modelUID="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="1230058635633">
     <property name="name" value="AnonymousClassTest" />
     <property name="package" value="bugTest" />
@@ -7087,6 +7090,71 @@
           <property name="keycode" value="VK_V" />
           <property name="modifiers" value="ctrl" />
         </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.test.structure.EditorTestCase" id="7075734325385824176">
+    <property name="package" value="bugTest.conceptBehavior" />
+    <property name="name" value="StaticBehaviorMethodWithParameters_completion" />
+    <property name="description" value="Checking completion of static concept behavior method with parameters (http://youtrack.jetbrains.net/issue/MPS-6512)" />
+    <node role="nodeToEdit" type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="7075734325385964912">
+      <link role="concept" targetNodeId="35.1138411891628" resolveInfo="SNodeOperation" />
+      <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7075734325385964915">
+        <property name="name" value="test" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7075734325385964919" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7075734325385964918" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7075734325385964932">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9066272936957379538">
+            <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="9066272936957379540">
+              <link role="concept" targetNodeId="35.1138411891628" resolveInfo="SNodeOperation" />
+              <link role="baseMethodDeclaration" targetNodeId="36.1213877508847" resolveInfo="getLeftNodeConcept" />
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="9066272936957379541">
+                <property name="isLastPosition" value="true" />
+                <property name="useLabelSelection" value="true" />
+                <property name="selectionStart" value="18" />
+                <property name="selectionEnd" value="18" />
+                <property name="cellId" value="property_name_1" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="7075734325385964913">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7075734325385964914" />
+      </node>
+    </node>
+    <node role="code" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7075734325385964935">
+      <node role="statement" type="jetbrains.mps.lang.test.structure.PressKeyStatement" id="7075734325385964941">
+        <node role="keyStrokes" type="jetbrains.mps.lang.plugin.structure.KeyMapKeystroke" id="7075734325385964942">
+          <property name="modifiers" value="ctrl" />
+          <property name="keycode" value="VK_SPACE" />
+        </node>
+      </node>
+    </node>
+    <node role="result" type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="7075734325385964943">
+      <link role="concept" targetNodeId="35.1138411891628" resolveInfo="SNodeOperation" />
+      <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7075734325385964944">
+        <property name="name" value="test" />
+        <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType" id="7075734325385964945" />
+        <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7075734325385964946" />
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7075734325385964947">
+          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="9066272936957371430">
+            <node role="expression" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall" id="9066272936957379534">
+              <link role="concept" targetNodeId="35.1138411891628" resolveInfo="SNodeOperation" />
+              <link role="baseMethodDeclaration" targetNodeId="36.1213877508847" resolveInfo="getLeftNodeConcept" />
+              <node role="testNode$attribute" type="jetbrains.mps.lang.test.structure.AnonymousCellAnnotation" id="9066272936957387643">
+                <property name="isLastPosition" value="true" />
+                <property name="useLabelSelection" value="true" />
+                <property name="selectionStart" value="0" />
+                <property name="selectionEnd" value="0" />
+                <property name="cellId" value="Constant_4497_1" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="7075734325385964951">
+        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7075734325385964952" />
       </node>
     </node>
   </node>
