@@ -39,7 +39,7 @@ public class ControlFlowGraph<T extends IInstruction<T>> {
 
   public void buildBlocks() {
     for (IInstruction<T> instruction : this.myProgram.getInstructions()) {
-      this.myBlocks.add(this.myGraphCreator.createBlock((T)instruction, MARGIN_X, 0, 0, 0));
+      this.myBlocks.add(this.myGraphCreator.createBlock((T) instruction, MARGIN_X, 0, 0, 0));
     }
     ControlFlowGraph.this.relayout();
   }

@@ -23,7 +23,7 @@ public class MPSProgramBuilder extends StructuralProgramBuilder<SNode> {
     if (node == null) {
       return;
     }
-    SNode snode = (SNode)node;
+    SNode snode = (SNode) node;
     List<AbstractConceptDeclaration> conceptAndSuperConcepts = SModelUtil_new.getConceptAndSuperConcepts(snode.getConceptDeclarationAdapter());
     for (AbstractConceptDeclaration concept : conceptAndSuperConcepts) {
       DataFlowBuilder builder = this.myDataFlowManager.getBuilderFor(NameUtil.nodeFQName(concept));

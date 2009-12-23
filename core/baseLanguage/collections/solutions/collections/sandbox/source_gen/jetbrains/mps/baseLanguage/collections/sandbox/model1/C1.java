@@ -8,9 +8,8 @@ import java.util.ArrayList;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
-/* package */class C1 {
-
-  /* package */void bbb() {
+/*package*/ class C1 {
+  /*package*/ void bbb() {
     List<String> ls1 = ListSequence.fromList(new ArrayList<String>());
     List<String> ls2 = ListSequence.fromListAndArray(new ArrayList<String>(), "aaa", "ddd");
     List<Map<String, String>> ls3 = ListSequence.fromList(new ArrayList<Map<String, String>>());
@@ -25,5 +24,4 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
       b = "";
     }
   }
-
 }

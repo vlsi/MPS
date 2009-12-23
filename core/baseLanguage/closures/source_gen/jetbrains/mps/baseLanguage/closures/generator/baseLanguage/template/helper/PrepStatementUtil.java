@@ -222,7 +222,7 @@ public class PrepStatementUtil {
         SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label") :
         SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label")
       )) {
-        Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(genContext, node);
+        Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(genContext, node);
         brLabel = labels[labels.length - 1];
         break;
       }
@@ -237,7 +237,7 @@ public class PrepStatementUtil {
     SNode node = cstmt;
     while (((node = SNodeOperations.getAncestorWhereConceptInList(node, new String[]{"jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"}, false, false)) != null)) {
       if (lbl == SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label") || (lbl != null && lbl.equals(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label")))) {
-        Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(genContext, node);
+        Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(genContext, node);
         conLabel = labels[1];
         break;
       }
@@ -276,13 +276,13 @@ public class PrepStatementUtil {
       while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(topIfStmt), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
         topIfStmt = SNodeOperations.cast(SNodeOperations.getParent(topIfStmt), "jetbrains.mps.baseLanguage.structure.IfStatement");
       }
-      Integer[] parentLabels = (Integer[])Values.CLOSURE_DATA.get(genContext, topIfStmt);
+      Integer[] parentLabels = (Integer[]) Values.CLOSURE_DATA.get(genContext, topIfStmt);
       if (parentLabels != null) {
         return parentLabels[parentLabels.length - 1];
       }
     } else if ((SNodeOperations.getNextSibling(cstmt) == null) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(cstmt), "jetbrains.mps.baseLanguage.structure.StatementList")) {
       SNode sn = SNodeOperations.getParent(cstmt);
-      Integer[] parentLabels = (Integer[])Values.CLOSURE_DATA.get(genContext, sn);
+      Integer[] parentLabels = (Integer[]) Values.CLOSURE_DATA.get(genContext, sn);
       if (parentLabels != null) {
         return parentLabels[parentLabels.length - 1];
       }

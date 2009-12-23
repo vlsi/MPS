@@ -24,7 +24,7 @@ import java.lang.management.ManagementFactory;
 
 public class PrimList_Test extends TestCase {
   public void test_primLists() throws Exception {
-    List<Byte> lb = ListSequence.fromListAndArray(new TByteArrayListDecorator(new TByteArrayList()), (byte)13);
+    List<Byte> lb = ListSequence.fromListAndArray(new TByteArrayListDecorator(new TByteArrayList()), (byte) 13);
     List<Double> ld = ListSequence.fromList(new TDoubleArrayListDecorator(new TDoubleArrayList()));
     List<Float> lf = ListSequence.fromList(new TFloatArrayListDecorator(new TFloatArrayList()));
     List<Integer> li = ListSequence.fromList(new TIntArrayListDecorator(new TIntArrayList()));
@@ -40,9 +40,9 @@ public class PrimList_Test extends TestCase {
 
   public void test_byteList() throws Exception {
     List<Byte> lb = ListSequence.fromList(new TByteArrayListDecorator(new TByteArrayList()));
-    ListSequence.fromList(lb).addElement((byte)0);
-    ListSequence.fromList(lb).addElement((byte)-1);
-    ListSequence.fromList(lb).addElement((byte)256);
+    ListSequence.fromList(lb).addElement((byte) 0);
+    ListSequence.fromList(lb).addElement((byte) -1);
+    ListSequence.fromList(lb).addElement((byte) 256);
     Assert.assertSame(3, ListSequence.fromList(lb).count());
     Assert.assertSame(ListSequence.fromList(lb).getElement(0), ListSequence.fromList(lb).getElement(2));
   }
@@ -55,7 +55,7 @@ public class PrimList_Test extends TestCase {
       ListSequence.fromList(liPrim).addElement(i);
     }
     long mem2 = this.getUsedMem();
-    Assert.assertEquals((int)100000, (int)ListSequence.fromList(liPrim).count());
+    Assert.assertEquals((int) 100000, (int) ListSequence.fromList(liPrim).count());
     ListSequence.fromList(liPrim).clear();
     long mem3 = this.getUsedMem();
     for (int i = 200000; i < 300000; i++) {
@@ -63,7 +63,7 @@ public class PrimList_Test extends TestCase {
     }
     long mem4 = this.getUsedMem();
     Assert.assertTrue(3 * (mem2 - mem1) < (mem4 - mem3));
-    Assert.assertEquals((int)100000, (int)ListSequence.fromList(liBox).count());
+    Assert.assertEquals((int) 100000, (int) ListSequence.fromList(liBox).count());
   }
 
   private long getUsedMem() {

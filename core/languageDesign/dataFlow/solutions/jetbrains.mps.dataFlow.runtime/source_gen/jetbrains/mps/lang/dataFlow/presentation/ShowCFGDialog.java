@@ -37,11 +37,11 @@ public class ShowCFGDialog extends JDialog {
     this.myControlFlowGraph = new ControlFlowGraph<InstructionWrapper>(new ProgramWrapper(p), new GraphCreator(), this.myComponent);
     this.myControlFlowGraph.addBlockListener(new IBlockListener<InstructionWrapper>() {
       public void mousePressed(MouseEvent event, IInstruction<InstructionWrapper> instruction) {
-        InstructionWrapper instructionWrapper = (InstructionWrapper)instruction;
+        InstructionWrapper instructionWrapper = (InstructionWrapper) instruction;
         Instruction cfgInstruction = instructionWrapper.getInstruction();
         Object source = cfgInstruction.getSource();
         if (source instanceof SNode) {
-          SNode node = (SNode)source;
+          SNode node = (SNode) source;
           operationContext.getComponent(MPSEditorOpener.class).editNode(node, operationContext);
         }
       }

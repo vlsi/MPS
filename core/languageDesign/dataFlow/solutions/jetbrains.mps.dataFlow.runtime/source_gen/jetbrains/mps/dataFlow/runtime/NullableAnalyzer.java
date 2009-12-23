@@ -25,7 +25,7 @@ public class NullableAnalyzer<T> implements DataFlowAnalyzer<Map<T, NullableVari
   public Map<T, NullableVariableState> initial(Program p) {
     Map<T, NullableVariableState> result = MapSequence.fromMap(new HashMap<T, NullableVariableState>());
     for (Object var : ListSequence.fromList(p.getVariables())) {
-      MapSequence.fromMap(result).put(((T)var), NullableVariableState.NOT_INIT);
+      MapSequence.fromMap(result).put(((T) var), NullableVariableState.NOT_INIT);
     }
     return result;
   }
@@ -33,7 +33,7 @@ public class NullableAnalyzer<T> implements DataFlowAnalyzer<Map<T, NullableVari
   public Map<T, NullableVariableState> merge(Program program, List<Map<T, NullableVariableState>> values) {
     Map<T, NullableVariableState> result = this.initial(program);
     for (Object var : ListSequence.fromList(program.getVariables())) {
-      T variable = (T)var;
+      T variable = (T) var;
       for (Map<T, NullableVariableState> value : ListSequence.fromList(values)) {
         MapSequence.fromMap(result).put(variable, MapSequence.fromMap(result).get(variable).merge(MapSequence.fromMap(value).get(variable)));
       }
@@ -45,9 +45,9 @@ public class NullableAnalyzer<T> implements DataFlowAnalyzer<Map<T, NullableVari
     Map<T, NullableVariableState> result = MapSequence.fromMap(new HashMap<T, NullableVariableState>());
     MapSequence.fromMap(result).putAll(input);
     if (state.getInstruction() instanceof WriteInstruction) {
-      WriteInstruction write = (WriteInstruction)state.getInstruction();
-      NullableVariableState value = ((NullableVariableState)write.getValue());
-      T variable = (T)write.getVariable();
+      WriteInstruction write = (WriteInstruction) state.getInstruction();
+      NullableVariableState value = ((NullableVariableState) write.getValue());
+      T variable = (T) write.getVariable();
       if (value == null) {
         MapSequence.fromMap(result).put(variable, NullableVariableState.UNKNOWN);
       } else {
@@ -55,9 +55,9 @@ public class NullableAnalyzer<T> implements DataFlowAnalyzer<Map<T, NullableVari
       }
     }
     if (state.getInstruction() instanceof VariableValueInstruction) {
-      VariableValueInstruction varValue = (VariableValueInstruction)state.getInstruction();
+      VariableValueInstruction varValue = (VariableValueInstruction) state.getInstruction();
       NullableVariableState value = varValue.getValue();
-      T variable = (T)varValue.getVariable();
+      T variable = (T) varValue.getVariable();
       if (value != null) {
         MapSequence.fromMap(result).put(variable, value);
       }

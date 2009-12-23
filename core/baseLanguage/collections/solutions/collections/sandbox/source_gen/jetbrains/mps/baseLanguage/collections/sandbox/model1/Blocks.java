@@ -11,18 +11,15 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.StopIteratingException;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 
-/* package */class Blocks {
+/*package*/ class Blocks {
   private static int I;
 
-  /* package */void aaa() {
-    Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure <String>() {
-
+  /*package*/ void aaa() {
+    Iterable<String> ss = Sequence.fromClosure(new ISequenceClosure<String>() {
       public Iterable<String> iterable() {
-        return new Iterable <String>() {
-
+        return new Iterable<String>() {
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
-
+            return new YieldingIterator<String>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -64,20 +61,16 @@ __switch__:
         };
       }
     });
-    Sequence.fromIterable(ss).select(new ISelector <String, String>() {
-
+    Sequence.fromIterable(ss).select(new ISelector<String, String>() {
       public String select(String s) {
         return "a";
       }
     });
-    Sequence.fromIterable(ss).translate(new ITranslator2 <String, String>() {
-
+    Sequence.fromIterable(ss).translate(new ITranslator2<String, String>() {
       public Iterable<String> translate(final String in) {
-        return new Iterable <String>() {
-
+        return new Iterable<String>() {
           public Iterator<String> iterator() {
-            return new YieldingIterator <String>() {
-
+            return new YieldingIterator<String>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -120,8 +113,7 @@ __switch__:
         };
       }
     });
-    Sequence.fromIterable(ss).visitAll(new IVisitor <String>() {
-
+    Sequence.fromIterable(ss).visitAll(new IVisitor<String>() {
       public void visit(String s) {
 __skip__:
         do {
@@ -131,5 +123,4 @@ __skip__:
       }
     });
   }
-
 }

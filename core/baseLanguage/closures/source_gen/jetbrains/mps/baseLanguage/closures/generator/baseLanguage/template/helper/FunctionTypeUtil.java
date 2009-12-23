@@ -48,7 +48,7 @@ public class FunctionTypeUtil {
     SNode ntype = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(expr), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
     assert ntype != null;
     List<SNode> targets = FunctionTypeUtil.getAdaptableClassifierTypeTargets(SNodeOperations.cast(ntype, "jetbrains.mps.baseLanguage.structure.ClassifierType"), generator);
-    String trgFQname = (String)Values.PREP_DATA.get(genContext, expr);
+    String trgFQname = (String) Values.PREP_DATA.get(genContext, expr);
     SNode trg = null;
     for (SNode ct : targets) {
       if (trgFQname.equals(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ct, "classifier", false)))) {
@@ -181,7 +181,7 @@ with_meet:
     if (!(ListSequence.fromList(allAdaptable).contains(adaptable))) {
       ListSequence.fromList(allAdaptable).addElement(adaptable);
     }
-    List<SNode> trgList = (List<SNode>)genContext.getStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))));
+    List<SNode> trgList = (List<SNode>) genContext.getStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))));
     if (trgList == null) {
       trgList = ListSequence.fromList(new ArrayList<SNode>());
       genContext.putStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))), trgList);
@@ -201,10 +201,10 @@ with_meet:
   }
 
   public static List<SNode> getAllAdaptableClassifierTypes(TemplateQueryContext genContext) {
-    return (List<SNode>)genContext.getStepObject(Keys.ALL_NEEDS_ADAPTED);
+    return (List<SNode>) genContext.getStepObject(Keys.ALL_NEEDS_ADAPTED);
   }
 
   public static List<SNode> getAdaptableClassifierTypeTargets(SNode adaptable, ITemplateGenerator generator) {
-    return (List<SNode>)generator.getGeneratorSessionContext().getStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))));
+    return (List<SNode>) generator.getGeneratorSessionContext().getStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))));
   }
 }

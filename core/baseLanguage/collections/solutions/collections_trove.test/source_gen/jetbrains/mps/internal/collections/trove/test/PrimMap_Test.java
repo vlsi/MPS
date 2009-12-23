@@ -30,13 +30,13 @@ import gnu.trove.TShortShortHashMap;
 public class PrimMap_Test extends Util_Test {
   public void test_byteByte() throws Exception {
     Map<Byte, Byte> mbb = MapSequence.fromMap(new TByteByteHashMapDecorator(new TByteByteHashMap()));
-    MapSequence.fromMap(mbb).put((byte)1, (byte)2);
+    MapSequence.fromMap(mbb).put((byte) 1, (byte) 2);
     Assert.assertSame(1, MapSequence.fromMap(mbb).count());
   }
 
   public void test_byteObject() throws Exception {
     Map<Byte, Object> mbo = MapSequence.fromMap(new TByteObjectHashMapDecorator(new TByteObjectHashMap<Object>()));
-    MapSequence.fromMap(mbo).put((byte)255, this);
+    MapSequence.fromMap(mbo).put((byte) 255, this);
     Assert.assertSame(1, MapSequence.fromMap(mbo).count());
   }
 
@@ -54,8 +54,8 @@ public class PrimMap_Test extends Util_Test {
 
   public void test_floatFloat() throws Exception {
     Map<Float, Float> mff = MapSequence.fromMap(new TFloatFloatHashMapDecorator(new TFloatFloatHashMap()));
-    MapSequence.fromMap(mff).put((float)1.0, (float)2.0);
-    MapSequence.fromMap(mff).put((float)2.0, (float)1.0);
+    MapSequence.fromMap(mff).put((float) 1.0, (float) 2.0);
+    MapSequence.fromMap(mff).put((float) 2.0, (float) 1.0);
     this.assertIterableEqualsIgnoreOrder(MapSequence.fromMap(mff).keySet(), MapSequence.fromMap(mff).values());
   }
 
@@ -66,9 +66,9 @@ public class PrimMap_Test extends Util_Test {
         MapSequence.fromMap(mii).put((y << 8) + x, x * y);
       }
     }
-    Assert.assertEquals((Integer)(1 << 16), (Integer)MapSequence.fromMap(mii).count());
-    Assert.assertEquals((Integer)(42 * 13), (Integer)MapSequence.fromMap(mii).get((42 << 8) + 13));
-    Assert.assertEquals((Integer)(42 * 13), (Integer)MapSequence.fromMap(mii).get((13 << 8) + 42));
+    Assert.assertEquals((Integer) (1 << 16), (Integer) MapSequence.fromMap(mii).count());
+    Assert.assertEquals((Integer) (42 * 13), (Integer) MapSequence.fromMap(mii).get((42 << 8) + 13));
+    Assert.assertEquals((Integer) (42 * 13), (Integer) MapSequence.fromMap(mii).get((13 << 8) + 42));
   }
 
   public void test_longLong() throws Exception {
@@ -79,7 +79,7 @@ public class PrimMap_Test extends Util_Test {
 
   public void test_shortShort() throws Exception {
     Map<Short, Short> mss = MapSequence.fromMap(new TShortShortHashMapDecorator(new TShortShortHashMap()));
-    MapSequence.fromMap(mss).put((short)2, (short)1);
-    Assert.assertSame((short)1, MapSequence.fromMap(mss).get((short)2));
+    MapSequence.fromMap(mss).put((short) 2, (short) 1);
+    Assert.assertSame((short) 1, MapSequence.fromMap(mss).get((short) 2));
   }
 }

@@ -30,12 +30,12 @@ import gnu.trove.TShortHashSet;
 public class PrimSet_Test extends Util_Test {
   public void test_byteSet() throws Exception {
     Set<Byte> bs = SetSequence.fromSet(new TByteHashSetDecorator(new TByteHashSet()));
-    SetSequence.fromSet(bs).addElement((byte)192);
-    SetSequence.fromSet(bs).addElement((byte)168);
-    SetSequence.fromSet(bs).addElement((byte)1);
-    SetSequence.fromSet(bs).addElement((byte)1);
+    SetSequence.fromSet(bs).addElement((byte) 192);
+    SetSequence.fromSet(bs).addElement((byte) 168);
+    SetSequence.fromSet(bs).addElement((byte) 1);
+    SetSequence.fromSet(bs).addElement((byte) 1);
     Assert.assertSame(3, SetSequence.fromSet(bs).count());
-    Assert.assertEquals(SetSequence.fromSetAndArray(new HashSet<Byte>(), (byte)192, (byte)168, (byte)1), bs);
+    Assert.assertEquals(SetSequence.fromSetAndArray(new HashSet<Byte>(), (byte) 192, (byte) 168, (byte) 1), bs);
   }
 
   public void test_doubleSet() throws Exception {
@@ -117,15 +117,15 @@ __switch__:
     });
     this.assertIterableEqualsAsSet(this.input5(), SetSequence.fromSet(ls).select(new ISelector<Long, Integer>() {
       public Integer select(Long l) {
-        return (int)(long)l;
+        return (int) (long) l;
       }
     }));
   }
 
   public void test_shortSet() throws Exception {
     Set<Short> shs = SetSequence.fromSet(new TShortHashSetDecorator(new TShortHashSet()));
-    SetSequence.fromSet(shs).addElement((short)65535);
-    SetSequence.fromSet(shs).addElement((short)-1);
+    SetSequence.fromSet(shs).addElement((short) 65535);
+    SetSequence.fromSet(shs).addElement((short) -1);
     Assert.assertSame(1, SetSequence.fromSet(shs).count());
   }
 }

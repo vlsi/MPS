@@ -33,13 +33,13 @@ public class DataFlow {
     Set<SNode> unreachableNodes = new HashSet<SNode>();
     for (Instruction i : unreachable) {
       if (!(DataFlow.mayBeUnreachable(i)) && i.getSource() != null) {
-        SNode unreachableNode = (SNode)i.getSource();
+        SNode unreachableNode = (SNode) i.getSource();
         if (unreachableNode.isInstanceOfConcept(Statement.concept)) {
-          unreachableNodes.add((SNode)i.getSource());
+          unreachableNodes.add((SNode) i.getSource());
         } else {
           if (unreachableNode.isInstanceOfConcept(StatementList.concept)) {
             if (!(unreachableNode.getParent().isInstanceOfConcept(Statement.concept))) {
-              unreachableNodes.add((SNode)i.getSource());
+              unreachableNodes.add((SNode) i.getSource());
             }
           } else {
             INodeAdapter adapter = BaseAdapter.fromNode(unreachableNode);
@@ -55,7 +55,7 @@ public class DataFlow {
     Set<Instruction> expectedReturns = program.getExpectedReturns();
     Set<SNode> result = new HashSet<SNode>();
     for (Instruction instr : expectedReturns) {
-      result.add((SNode)instr.getSource());
+      result.add((SNode) instr.getSource());
     }
     return result;
   }
@@ -63,7 +63,7 @@ public class DataFlow {
   public static Set<SNode> getUninitializedReads(Program program) {
     Set<SNode> reads = new HashSet<SNode>();
     for (ReadInstruction read : program.getUninitializedReads()) {
-      reads.add((SNode)read.getSource());
+      reads.add((SNode) read.getSource());
     }
     return reads;
   }
@@ -72,7 +72,7 @@ public class DataFlow {
     Set<SNode> readVars = new HashSet<SNode>();
     for (Instruction i : program.getInstructions()) {
       if (i instanceof ReadInstruction) {
-        readVars.add((SNode)((ReadInstruction)i).getVariable());
+        readVars.add((SNode) ((ReadInstruction) i).getVariable());
       }
     }
     return readVars;
@@ -85,7 +85,7 @@ public class DataFlow {
   public static Set<SNode> getUnusedAssignments(Program program) {
     Set<SNode> unusedAssignments = new HashSet<SNode>();
     for (WriteInstruction write : program.getUnusedAssignments()) {
-      unusedAssignments.add((SNode)write.getSource());
+      unusedAssignments.add((SNode) write.getSource());
     }
     return unusedAssignments;
   }

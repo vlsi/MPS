@@ -48,14 +48,14 @@ public class WrappersUtils {
     Program prg = DataFlowManager.getInstance().buildProgramFor(start);
     for (Instruction ins : prg.getInstructions()) {
       if (ins instanceof ReadInstruction) {
-        ReadInstruction ri = ((ReadInstruction)ins);
-        SNode var = (SNode)ri.getVariable();
+        ReadInstruction ri = ((ReadInstruction) ins);
+        SNode var = (SNode) ri.getVariable();
         if (!(MapSequence.fromMap(resMap).containsKey(var))) {
           MapSequence.fromMap(resMap).put(var, 0);
         }
       } else if (ins instanceof WriteInstruction) {
-        WriteInstruction wi = ((WriteInstruction)ins);
-        SNode var = (SNode)wi.getVariable();
+        WriteInstruction wi = ((WriteInstruction) ins);
+        SNode var = (SNode) wi.getVariable();
         int writes = (MapSequence.fromMap(resMap).containsKey(var) ?
           MapSequence.fromMap(resMap).get(var) :
           0

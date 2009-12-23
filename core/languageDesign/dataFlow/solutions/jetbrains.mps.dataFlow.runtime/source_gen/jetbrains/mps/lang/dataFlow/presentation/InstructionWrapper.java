@@ -43,7 +43,7 @@ public class InstructionWrapper implements IInstruction<InstructionWrapper> {
 
   public boolean equals(Object obj) {
     if (obj instanceof InstructionWrapper) {
-      return (this.myInstruction.equals(((InstructionWrapper)obj).myInstruction));
+      return (this.myInstruction.equals(((InstructionWrapper) obj).myInstruction));
     }
     return false;
   }

@@ -7,17 +7,13 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 
-/* package */class ClosuresInClassWithGenerics <T1, T2> {
-
-  /* package */void aaa() {
-    Iterable<T2> ss = Sequence.fromClosure(new ISequenceClosure <T2>() {
-
+/*package*/ class ClosuresInClassWithGenerics<T1, T2> {
+  /*package*/ void aaa() {
+    Iterable<T2> ss = Sequence.fromClosure(new ISequenceClosure<T2>() {
       public Iterable<T2> iterable() {
-        return new Iterable <T2>() {
-
+        return new Iterable<T2>() {
           public Iterator<T2> iterator() {
-            return new YieldingIterator <T2>() {
-
+            return new YieldingIterator<T2>() {
               private int __CP__ = 0;
 
               protected boolean moveToNext() {
@@ -37,7 +33,7 @@ __switch__:
                       break;
                     case 4:
                       this.__CP__ = 5;
-                      this.yield((T2)"s");
+                      this.yield((T2) "s");
                       return true;
                     case 2:
                       this.__CP__ = 4;
@@ -60,5 +56,4 @@ __switch__:
       }
     });
   }
-
 }

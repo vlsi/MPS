@@ -258,8 +258,8 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1216995176832(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    SNode trg = FunctionTypeUtil.getAdaptableTarget(_context, _context.getNode(), ((TemplateQueryContext)_context).getGenerator());
-    SNode adaptable = (SNode)Values.ADAPTABLE.get(_context, trg);
+    SNode trg = FunctionTypeUtil.getAdaptableTarget(_context, _context.getNode(), ((TemplateQueryContext) _context).getGenerator());
+    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, trg);
     return (adaptable != null);
   }
 
@@ -408,48 +408,48 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1201019320624(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    return (String)Values.CLOSURE_DATA.get(_context, sn);
+    return (String) Values.CLOSURE_DATA.get(_context, sn);
   }
 
   public static Object propertyMacro_GetPropertyValue_1201023446586(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201023446649(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[3];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201023446682(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[4];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201023446713(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[1];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201023446743(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[3];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201024123512(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201025995317(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[1];
   }
 
@@ -467,55 +467,55 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1201093772964(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = SLinkOperations.getTarget(_context.getNode(), "variable", true);
-    return (String)Values.CLOSURE_DATA.get(_context, sn);
+    return (String) Values.CLOSURE_DATA.get(_context, sn);
   }
 
   public static Object propertyMacro_GetPropertyValue_1201093988343(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (String)Values.CLOSURE_DATA.get(_context, SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false));
+    return (String) Values.CLOSURE_DATA.get(_context, SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false));
   }
 
   public static Object propertyMacro_GetPropertyValue_1201094822855(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[2];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201095804027(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, _context.getNode());
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, _context.getNode());
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201190969333(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[1];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201191004478(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201204858049(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return (String)Values.CLOSURE_DATA.get(_context, _context.getNode());
+    return (String) Values.CLOSURE_DATA.get(_context, _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1201275380390(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201275443501(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[1];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201275469014(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[(labels[2] != -1 ?
       2 :
       3
@@ -524,125 +524,125 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1201291955078(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201291955110(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[2];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201291955141(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[3];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201292912731(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[1];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201292912754(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201292912793(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[2];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201358206156(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201358206210(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[1];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201358206242(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[3];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201358206273(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[2];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201358877325(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = SLinkOperations.getTarget(_context.getNode(), "variable", true);
-    String varName = (String)Values.CLOSURE_DATA.get(_context, sn);
+    String varName = (String) Values.CLOSURE_DATA.get(_context, sn);
     return varName + "_it";
   }
 
   public static Object propertyMacro_GetPropertyValue_1201359082835(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = SLinkOperations.getTarget(_context.getNode(), "variable", true);
-    String varName = (String)Values.CLOSURE_DATA.get(_context, sn);
+    String varName = (String) Values.CLOSURE_DATA.get(_context, sn);
     return varName + "_it";
   }
 
   public static Object propertyMacro_GetPropertyValue_1201359122203(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = SLinkOperations.getTarget(_context.getNode(), "variable", true);
-    return (String)Values.CLOSURE_DATA.get(_context, sn);
+    return (String) Values.CLOSURE_DATA.get(_context, sn);
   }
 
   public static Object propertyMacro_GetPropertyValue_1201359158800(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = SLinkOperations.getTarget(_context.getNode(), "variable", true);
-    String varName = (String)Values.CLOSURE_DATA.get(_context, sn);
+    String varName = (String) Values.CLOSURE_DATA.get(_context, sn);
     return varName + "_it";
   }
 
   public static Object propertyMacro_GetPropertyValue_1201359405039(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    String varName = (String)Values.CLOSURE_DATA.get(_context, sn);
+    String varName = (String) Values.CLOSURE_DATA.get(_context, sn);
     return varName + "_it";
   }
 
   public static Object propertyMacro_GetPropertyValue_1201382497207(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201382561130(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = SLinkOperations.getTarget(_context.getNode(), "body", true);
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201382704160(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = SLinkOperations.getTarget(_context.getNode(), "defaultBlock", true);
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201390868590(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, _context.getNode());
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, _context.getNode());
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201390896232(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, _context.getNode());
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, _context.getNode());
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1201781007670(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode adaptable = (SNode)Values.ADAPTABLE.get(_context, _context.getNode());
+    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, _context.getNode());
     String adapterName = FunctionTypeUtil.getAdapterName(adaptable, _context.getNode());
-    Map<String, List<SNode>> adaptersMultiMap = (Map<String, List<SNode>>)_context.getStepObject("adapters_map");
+    Map<String, List<SNode>> adaptersMultiMap = (Map<String, List<SNode>>) _context.getStepObject("adapters_map");
     List<SNode> adaptersList = MapSequence.fromMap(adaptersMultiMap).get(adapterName);
     int idx = ListSequence.fromList(adaptersList).indexOf(adaptable);
     return (idx > 0 ?
@@ -652,9 +652,9 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1201781007872(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode adaptable = (SNode)Values.ADAPTABLE.get(_context, _context.getNode());
+    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, _context.getNode());
     String adapterName = FunctionTypeUtil.getAdapterName(adaptable, _context.getNode());
-    Map<String, List<SNode>> adaptersMultiMap = (Map<String, List<SNode>>)_context.getStepObject("adapters_map");
+    Map<String, List<SNode>> adaptersMultiMap = (Map<String, List<SNode>>) _context.getStepObject("adapters_map");
     List<SNode> adaptersList = MapSequence.fromMap(adaptersMultiMap).get(adapterName);
     int idx = ListSequence.fromList(adaptersList).indexOf(adaptable);
     return (idx > 0 ?
@@ -677,7 +677,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1202752759917(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode adaptable = (SNode)Values.ADAPTABLE.get(_context, _context.getNode());
+    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, _context.getNode());
     List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(adaptable, "classifier", false), "method", true);
     return SPropertyOperations.getString(ListSequence.fromList(mds).getElement(0), "name");
   }
@@ -689,7 +689,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1203245282594(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     if (ct == null) {
       ct = FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
     }
@@ -702,7 +702,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1203250798068(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     if (ct == null) {
       ct = FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"));
     }
@@ -719,7 +719,7 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1209330086337(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[0];
   }
 
@@ -761,54 +761,54 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1228820677249(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[0];
   }
 
   public static Object propertyMacro_GetPropertyValue_1228820677287(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = SLinkOperations.getTarget(_context.getNode(), "variable", true);
-    String varName = (String)Values.CLOSURE_DATA.get(_context, sn);
+    String varName = (String) Values.CLOSURE_DATA.get(_context, sn);
     return varName + "_idx";
   }
 
   public static Object propertyMacro_GetPropertyValue_1228820677312(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[1];
   }
 
   public static Object propertyMacro_GetPropertyValue_1228820677368(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[3];
   }
 
   public static Object propertyMacro_GetPropertyValue_1228820677446(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     return labels[2];
   }
 
   public static Object propertyMacro_GetPropertyValue_1228822442185(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = SLinkOperations.getTarget(_context.getNode(), "variable", true);
-    String varName = (String)Values.CLOSURE_DATA.get(_context, sn);
+    String varName = (String) Values.CLOSURE_DATA.get(_context, sn);
     return varName + "_idx";
   }
 
   public static Object propertyMacro_GetPropertyValue_1228827778374(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = SLinkOperations.getTarget(_context.getNode(), "variable", true);
-    return (String)Values.CLOSURE_DATA.get(_context, sn);
+    return (String) Values.CLOSURE_DATA.get(_context, sn);
   }
 
   public static Object propertyMacro_GetPropertyValue_1228828011715(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = SLinkOperations.getTarget(_context.getNode(), "variable", true);
-    String varName = (String)Values.CLOSURE_DATA.get(_context, sn);
+    String varName = (String) Values.CLOSURE_DATA.get(_context, sn);
     return varName + "_idx";
   }
 
   public static Object propertyMacro_GetPropertyValue_1228830321715(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode sn = _context.getNode();
-    String varName = (String)Values.CLOSURE_DATA.get(_context, sn);
+    String varName = (String) Values.CLOSURE_DATA.get(_context, sn);
     return varName + "_idx";
   }
 
@@ -1030,7 +1030,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1199624866931(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     if (ct != null) {
       return SLinkOperations.getTarget(ct, "classifier", false);
     }
@@ -1039,7 +1039,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1201044570620(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     if (ct != null) {
       return SLinkOperations.getTarget(ct, "classifier", false);
     }
@@ -1051,12 +1051,12 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1202752545212(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode adaptable = (SNode)Values.ADAPTABLE.get(_context, _context.getNode());
+    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, _context.getNode());
     return SLinkOperations.getTarget(adaptable, "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_1202752641712(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode adaptable = (SNode)Values.ADAPTABLE.get(_context, _context.getNode());
+    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, _context.getNode());
     return SLinkOperations.getTarget(adaptable, "classifier", false);
   }
 
@@ -1072,12 +1072,12 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1203682419133(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     if (ct == null || !(Values.RETURN_TYPE.isSet(_context, ct))) {
       return SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false);
     } else {
       Object retClassifier = Values.RETURN_TYPE.get(_context, ct);
-      return SLinkOperations.getTarget(((SNode)retClassifier), "classifier", false);
+      return SLinkOperations.getTarget(((SNode) retClassifier), "classifier", false);
     }
   }
 
@@ -1102,7 +1102,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1216995176870(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode trg = FunctionTypeUtil.getAdaptableTarget(_context, _context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    SNode trg = FunctionTypeUtil.getAdaptableTarget(_context, _context.getNode(), ((TemplateQueryContext) _context).getGenerator());
     if ((trg != null)) {
       SNode cc = _context.getOutputNodeByInputNodeAndMappingLabel(trg, "classifierType_adapter");
       List<SNode> cds = SLinkOperations.getTargets(cc, "constructor", true);
@@ -1556,18 +1556,18 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1201421585183(final IOperationContext operationContext, final IfMacroContext _context) {
-    List<SNode> stmts = (List<SNode>)Values.CHUNK_OF_STATEMENTS.get(_context, _context.getNode());
+    List<SNode> stmts = (List<SNode>) Values.CHUNK_OF_STATEMENTS.get(_context, _context.getNode());
     return ListSequence.fromList(stmts).count() == 0 || !(SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ContinueStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
   }
 
   public static boolean ifMacro_Condition_1201421814921(final IOperationContext operationContext, final IfMacroContext _context) {
-    List<SNode> stmts = (List<SNode>)Values.CHUNK_OF_STATEMENTS.get(_context, _context.getNode());
+    List<SNode> stmts = (List<SNode>) Values.CHUNK_OF_STATEMENTS.get(_context, _context.getNode());
     return ListSequence.fromList(stmts).count() == 0 || !(SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.BreakStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ContinueStatement") || SNodeOperations.isInstanceOf(ListSequence.fromList(stmts).getElement(ListSequence.fromList(stmts).count() - 1), "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
   }
 
   public static boolean ifMacro_Condition_1203249920933(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     return ct == null;
   }
 
@@ -1578,7 +1578,7 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1203250587999(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     return ct == null;
   }
 
@@ -1589,37 +1589,37 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1203250752443(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     return ct == null;
   }
 
   public static boolean ifMacro_Condition_1203250784283(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     return ct == null;
   }
 
   public static boolean ifMacro_Condition_1203251514451(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     return ct == null;
   }
 
   public static boolean ifMacro_Condition_1203267949368(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     return ct != null;
   }
 
   public static boolean ifMacro_Condition_1203268216179(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     return ct != null;
   }
 
   public static boolean ifMacro_Condition_1215429196709(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     return ct == null;
   }
 
@@ -1629,13 +1629,13 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1215457391282(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     return ct == null;
   }
 
   public static boolean ifMacro_Condition_1215457429074(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     return ct != null;
   }
 
@@ -1851,7 +1851,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1199624915150(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     if (ct != null) {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
       if (ListSequence.fromList(imds).count() > 0) {
@@ -1970,7 +1970,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1202818062914(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode cl = (SNode)Values.LITERAL.get(_context, _context.getNode());
+    SNode cl = (SNode) Values.LITERAL.get(_context, _context.getNode());
     return SLinkOperations.getTarget(cl, "body", true);
   }
 
@@ -1992,7 +1992,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1203251634844(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     if (ct != null) {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
       if (ListSequence.fromList(imds).count() > 0) {
@@ -2377,7 +2377,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1201187449746(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode sn = _context.getNode();
-    Integer[] labels = (Integer[])Values.CLOSURE_DATA.get(_context, sn);
+    Integer[] labels = (Integer[]) Values.CLOSURE_DATA.get(_context, sn);
     int BEGIN = labels[0];
     int END = labels[1];
     List<SNode> results = ListSequence.fromList(new ArrayList<SNode>());
@@ -2397,7 +2397,7 @@ public class QueriesGenerated {
       if ((lastStmt != null)) {
         cstmt = StatementListUtil.nextSibling(lastStmt);
       } else {
-        List<SNode> allstmts = (List<SNode>)SLinkOperations.getTargets(_context.getNode(), "statement", true);
+        List<SNode> allstmts = (List<SNode>) SLinkOperations.getTargets(_context.getNode(), "statement", true);
         cstmt = (ListSequence.fromList(allstmts).count() > 0 ?
           ListSequence.fromList(allstmts).getElement(0) :
           null
@@ -2405,7 +2405,7 @@ public class QueriesGenerated {
       }
       stmts = null;
       if ((cstmt != null)) {
-        labels = (Integer[])Values.CLOSURE_DATA.get(_context, cstmt);
+        labels = (Integer[]) Values.CLOSURE_DATA.get(_context, cstmt);
         endLabel = (labels != null ?
           labels[0] :
           -1
@@ -2417,7 +2417,7 @@ public class QueriesGenerated {
             cstmt = lastStmt;
             lastStmt = StatementListUtil.nextSibling(lastStmt);
           } else {
-            labels = (Integer[])Values.CLOSURE_DATA.get(_context, cstmt);
+            labels = (Integer[]) Values.CLOSURE_DATA.get(_context, cstmt);
             BEGIN = (labels != null ?
               labels[labels.length - 1] :
               -1
@@ -2493,7 +2493,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1201783317579(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return FunctionTypeUtil.getAdaptableClassifierTypeTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassifierType"), ((TemplateQueryContext)_context).getGenerator());
+    return FunctionTypeUtil.getAdaptableClassifierTypeTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassifierType"), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static Iterable sourceNodesQuery_1202148923827(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -2515,12 +2515,12 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1202761732426(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SNode adaptable = (SNode)Values.ADAPTABLE.get(_context, _context.getNode());
+    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, _context.getNode());
     return SLinkOperations.getTargets(adaptable, "parameter", true);
   }
 
   public static Iterable sourceNodesQuery_1202761755981(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    SNode adaptable = (SNode)Values.ADAPTABLE.get(_context, _context.getNode());
+    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, _context.getNode());
     return SLinkOperations.getTargets(adaptable, "parameter", true);
   }
 
@@ -2528,7 +2528,7 @@ public class QueriesGenerated {
     List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "method", true);
     int idx = 0;
     List<SNode> ptypes = SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
-    SNode cl = (SNode)Values.LITERAL.get(_context, _context.getNode());
+    SNode cl = (SNode) Values.LITERAL.get(_context, _context.getNode());
     List<SNode> litParams = SLinkOperations.getTargets(cl, "parameter", true);
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode pdecl : SLinkOperations.getTargets(ListSequence.fromList(mds).getElement(0), "parameter", true)) {
@@ -2566,7 +2566,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1203268050251(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode pt : SLinkOperations.getTargets(ct, "parameter", true)) {
       ListSequence.fromList(res).addElement(pt);
@@ -2576,7 +2576,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1203268224153(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode pt : SLinkOperations.getTargets(ct, "parameter", true)) {
       ListSequence.fromList(res).addElement(pt);
@@ -2586,12 +2586,12 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1203686370624(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     if (true || ct == null || !(Values.RETURN_TYPE.isSet(_context, ct))) {
       return ListSequence.fromListAndArray(new ArrayList<SNode>(), FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedSequenceParameterReturnType_1213877405260(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.FunctionType"))));
     } else {
       Object retClassifier = Values.RETURN_TYPE.get(_context, ct);
-      return SLinkOperations.getTargets(((SNode)retClassifier), "parameter", true);
+      return SLinkOperations.getTargets(((SNode) retClassifier), "parameter", true);
     }
   }
 
@@ -2601,7 +2601,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1215429255567(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     if (ct != null) {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
       if (ListSequence.fromList(imds).count() > 0) {
@@ -2627,7 +2627,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1215457425734(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> paramDecls = SLinkOperations.getTargets(_context.getNode(), "parameter", true);
     SNode literal = _context.getNode();
-    SNode ct = (SNode)Values.LITERAL_TARGET.get(_context, literal);
+    SNode ct = (SNode) Values.LITERAL_TARGET.get(_context, literal);
     if (ct != null) {
       List<SNode> imds = SLinkOperations.getTargets(SLinkOperations.getTarget(ct, "classifier", false), "method", true);
       if (ListSequence.fromList(imds).count() > 0) {
@@ -2774,7 +2774,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1226054358909(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return (List<SNode>)Values.CHUNK_OF_STATEMENTS.get(_context, _context.getNode());
+    return (List<SNode>) Values.CHUNK_OF_STATEMENTS.get(_context, _context.getNode());
   }
 
   public static Iterable sourceNodesQuery_1229880126045(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -3731,11 +3731,11 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1216995117212(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return ((TemplateQueryContext)_context).getGenerator().getOutputModel().getRootByName("_Adapters");
+    return ((TemplateQueryContext) _context).getGenerator().getOutputModel().getRootByName("_Adapters");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1216995140837(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return ((TemplateQueryContext)_context).getGenerator().getOutputModel().getRootByName("_Adapters");
+    return ((TemplateQueryContext) _context).getGenerator().getOutputModel().getRootByName("_Adapters");
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1228828839352(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
@@ -3745,7 +3745,7 @@ public class QueriesGenerated {
   public static void mappingScript_CodeBlock_1201011417446(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode cl : SModelOperations.getNodes(_context.getModel(), "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral")) {
       if (ClosureLiteralUtil.hasYieldStatement(cl)) {
-        PrepStatementUtil.prepStatementList(_context, SLinkOperations.getTarget(cl, "body", true), ((TemplateQueryContext)_context).getGenerator());
+        PrepStatementUtil.prepStatementList(_context, SLinkOperations.getTarget(cl, "body", true), ((TemplateQueryContext) _context).getGenerator());
       }
     }
   }
