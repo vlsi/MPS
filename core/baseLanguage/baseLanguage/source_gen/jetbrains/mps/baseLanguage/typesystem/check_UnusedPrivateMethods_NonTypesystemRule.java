@@ -34,16 +34,21 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
           }
           if (matches_6) {
             {
-              SNode topClassifier = SNodeOperations.getAncestor(matchedNode_5, "jetbrains.mps.baseLanguage.structure.Classifier", true, true);
-              if (!(ListSequence.fromList(SNodeOperations.getDescendants(topClassifier, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})).any(new IWhereFilter<SNode>() {
-                public boolean accept(SNode call) {
-                  return SLinkOperations.getTarget(call, "baseMethodDeclaration", false) == matchedNode_5;
+              SNode topClassifier = SNodeOperations.getAncestor(matchedNode_5, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+              if (topClassifier != null) {
+                while (SNodeOperations.getAncestor(topClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null) {
+                  topClassifier = SNodeOperations.getAncestor(topClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
                 }
-              }))) {
-                {
-                  BaseIntentionProvider intentionProvider = null;
-                  IErrorTarget errorTarget = new NodeErrorTarget();
-                  IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(matchedNode_5, "Private method " + matchedNode_5 + " is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8620077627875160691", intentionProvider, errorTarget);
+                if (!(ListSequence.fromList(SNodeOperations.getDescendants(topClassifier, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})).any(new IWhereFilter<SNode>() {
+                  public boolean accept(SNode call) {
+                    return SLinkOperations.getTarget(call, "baseMethodDeclaration", false) == matchedNode_5;
+                  }
+                }))) {
+                  {
+                    BaseIntentionProvider intentionProvider = null;
+                    IErrorTarget errorTarget = new NodeErrorTarget();
+                    IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(matchedNode_5, "Private method " + matchedNode_5 + " is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8101436443850399677", intentionProvider, errorTarget);
+                  }
                 }
               }
             }
