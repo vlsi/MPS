@@ -660,7 +660,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private HighlighterMessage getHighlighterMessageFor(EditorCell cell) {
     EditorCell parent = cell;
     while (parent != null) {
-      if (cell.getBounds().getMaxY() < parent.getBounds().getMaxY()) {
+      if (cell.getBounds().getMaxY() < parent.getBounds().getMaxY() && parent.getSNode() != cell.getSNode()) {
         return null;
       }
       List<HighlighterMessage> messages = parent.getMessages(HighlighterMessage.class);
