@@ -53,7 +53,7 @@ public class VariableDeclarationBlock extends BaseConcept implements INamedConce
   }
 
   public static VariableDeclarationBlock newInstance(SModel sm, boolean init) {
-    return (VariableDeclarationBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VariableDeclarationBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VariableDeclarationBlock newInstance(SModel sm) {

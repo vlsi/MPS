@@ -45,7 +45,7 @@ public class BinaryExpression extends BaseConcept implements IBaseTestBlock {
   }
 
   public IBaseTestBlock getLeft() {
-    return (IBaseTestBlock)this.getChild(IBaseTestBlock.class, BinaryExpression.LEFT);
+    return (IBaseTestBlock) this.getChild(IBaseTestBlock.class, BinaryExpression.LEFT);
   }
 
   public void setLeft(IBaseTestBlock node) {
@@ -53,7 +53,7 @@ public class BinaryExpression extends BaseConcept implements IBaseTestBlock {
   }
 
   public IBaseTestBlock getRight() {
-    return (IBaseTestBlock)this.getChild(IBaseTestBlock.class, BinaryExpression.RIGHT);
+    return (IBaseTestBlock) this.getChild(IBaseTestBlock.class, BinaryExpression.RIGHT);
   }
 
   public void setRight(IBaseTestBlock node) {
@@ -61,7 +61,7 @@ public class BinaryExpression extends BaseConcept implements IBaseTestBlock {
   }
 
   public static BinaryExpression newInstance(SModel sm, boolean init) {
-    return (BinaryExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BinaryExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.BinaryExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BinaryExpression newInstance(SModel sm) {

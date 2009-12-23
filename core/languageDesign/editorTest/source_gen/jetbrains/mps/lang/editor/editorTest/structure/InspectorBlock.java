@@ -44,7 +44,7 @@ public class InspectorBlock extends BaseConcept implements IBaseTestBlock {
   }
 
   public IBaseTestBlock getBlock() {
-    return (IBaseTestBlock)this.getChild(IBaseTestBlock.class, InspectorBlock.BLOCK);
+    return (IBaseTestBlock) this.getChild(IBaseTestBlock.class, InspectorBlock.BLOCK);
   }
 
   public void setBlock(IBaseTestBlock node) {
@@ -52,7 +52,7 @@ public class InspectorBlock extends BaseConcept implements IBaseTestBlock {
   }
 
   public static InspectorBlock newInstance(SModel sm, boolean init) {
-    return (InspectorBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InspectorBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.InspectorBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InspectorBlock newInstance(SModel sm) {

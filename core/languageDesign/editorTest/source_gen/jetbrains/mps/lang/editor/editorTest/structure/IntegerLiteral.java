@@ -52,7 +52,7 @@ public class IntegerLiteral extends BaseConcept implements IBaseTestBlock {
   }
 
   public static IntegerLiteral newInstance(SModel sm, boolean init) {
-    return (IntegerLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntegerLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.IntegerLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntegerLiteral newInstance(SModel sm) {

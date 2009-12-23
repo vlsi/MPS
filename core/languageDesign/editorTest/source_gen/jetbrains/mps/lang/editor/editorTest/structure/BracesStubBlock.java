@@ -43,7 +43,7 @@ public class BracesStubBlock extends BaseConcept implements IBaseTestBlock {
   }
 
   public static BracesStubBlock newInstance(SModel sm, boolean init) {
-    return (BracesStubBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BracesStubBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.BracesStubBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BracesStubBlock newInstance(SModel sm) {

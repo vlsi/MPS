@@ -44,7 +44,7 @@ public class AttractsFocusBlock extends BaseConcept implements IBaseTestBlock {
   }
 
   public IBaseTestBlock getChild() {
-    return (IBaseTestBlock)this.getChild(IBaseTestBlock.class, AttractsFocusBlock.CHILD);
+    return (IBaseTestBlock) this.getChild(IBaseTestBlock.class, AttractsFocusBlock.CHILD);
   }
 
   public void setChild(IBaseTestBlock node) {
@@ -52,7 +52,7 @@ public class AttractsFocusBlock extends BaseConcept implements IBaseTestBlock {
   }
 
   public static AttractsFocusBlock newInstance(SModel sm, boolean init) {
-    return (AttractsFocusBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AttractsFocusBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.AttractsFocusBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AttractsFocusBlock newInstance(SModel sm) {

@@ -43,7 +43,7 @@ public class StubBlock extends BaseConcept implements IBaseTestBlock {
   }
 
   public static StubBlock newInstance(SModel sm, boolean init) {
-    return (StubBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.StubBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StubBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.StubBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StubBlock newInstance(SModel sm) {

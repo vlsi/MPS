@@ -52,7 +52,7 @@ public class NonEmptyProperty extends BaseConcept implements IBaseTestBlock {
   }
 
   public static NonEmptyProperty newInstance(SModel sm, boolean init) {
-    return (NonEmptyProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NonEmptyProperty) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.NonEmptyProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NonEmptyProperty newInstance(SModel sm) {

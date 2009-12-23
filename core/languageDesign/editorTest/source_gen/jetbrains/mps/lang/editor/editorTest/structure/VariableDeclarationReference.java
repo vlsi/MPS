@@ -44,7 +44,7 @@ public class VariableDeclarationReference extends BaseConcept implements IBaseTe
   }
 
   public VariableDeclarationBlock getVar() {
-    return (VariableDeclarationBlock)this.getReferent(VariableDeclarationBlock.class, VariableDeclarationReference.VAR);
+    return (VariableDeclarationBlock) this.getReferent(VariableDeclarationBlock.class, VariableDeclarationReference.VAR);
   }
 
   public void setVar(VariableDeclarationBlock node) {
@@ -52,7 +52,7 @@ public class VariableDeclarationReference extends BaseConcept implements IBaseTe
   }
 
   public static VariableDeclarationReference newInstance(SModel sm, boolean init) {
-    return (VariableDeclarationReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VariableDeclarationReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.VariableDeclarationReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VariableDeclarationReference newInstance(SModel sm) {

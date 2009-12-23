@@ -66,7 +66,7 @@ public class TestBlockList extends BaseConcept implements IBaseTestBlock {
   }
 
   public static TestBlockList newInstance(SModel sm, boolean init) {
-    return (TestBlockList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TestBlockList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.TestBlockList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TestBlockList newInstance(SModel sm) {

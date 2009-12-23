@@ -42,7 +42,7 @@ public class BracesBlock extends TestBlockList implements IBaseTestBlock {
   }
 
   public static BracesBlock newInstance(SModel sm, boolean init) {
-    return (BracesBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BracesBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.BracesBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BracesBlock newInstance(SModel sm) {

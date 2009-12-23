@@ -16,7 +16,7 @@ public class ReferenceAnnotataion extends BaseConcept {
   }
 
   public static ReferenceAnnotataion newInstance(SModel sm, boolean init) {
-    return (ReferenceAnnotataion)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReferenceAnnotataion) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.ReferenceAnnotataion", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReferenceAnnotataion newInstance(SModel sm) {

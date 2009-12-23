@@ -44,7 +44,7 @@ public class NotEditableVaraileReference extends BaseConcept implements IBaseTes
   }
 
   public VariableDeclarationBlock getVariableDeclaration() {
-    return (VariableDeclarationBlock)this.getReferent(VariableDeclarationBlock.class, NotEditableVaraileReference.VARIABLE_DECLARATION);
+    return (VariableDeclarationBlock) this.getReferent(VariableDeclarationBlock.class, NotEditableVaraileReference.VARIABLE_DECLARATION);
   }
 
   public void setVariableDeclaration(VariableDeclarationBlock node) {
@@ -52,7 +52,7 @@ public class NotEditableVaraileReference extends BaseConcept implements IBaseTes
   }
 
   public static NotEditableVaraileReference newInstance(SModel sm, boolean init) {
-    return (NotEditableVaraileReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NotEditableVaraileReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.editorTest.structure.NotEditableVaraileReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NotEditableVaraileReference newInstance(SModel sm) {
