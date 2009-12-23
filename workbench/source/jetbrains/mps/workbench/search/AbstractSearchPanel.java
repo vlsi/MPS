@@ -20,6 +20,7 @@ import com.intellij.openapi.util.SystemInfo;
 import com.intellij.ui.components.panels.NonOpaquePanel;
 import jetbrains.mps.ide.ui.CompletionTextField;
 import jetbrains.mps.workbench.search.icons.Icons;
+import jetbrains.mps.datatransfer.TextPasteUtil;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -191,6 +192,8 @@ public abstract class AbstractSearchPanel extends JPanel {
   }
 
   public void activate() {
+    String clipboardString = TextPasteUtil.getStringFromClipboard();
+    this.myText.setText((clipboardString != null)? clipboardString : "");
     if (getSearchHistory() != null && getSearchHistory().getSearches().size() != 0) {
       for (int i = getSearchHistory().getSearches().size() - 1; i >= 0; i--) {
         myText.addValue(getSearchHistory().getSearches().get(i));
