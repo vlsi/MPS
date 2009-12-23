@@ -108,11 +108,8 @@ public class SModelVersionsInfo {
   }
 
   private static class NodeStringPair {
-    private SNode myNode;
-    private String myString;
-
-    private NodeStringPair() {
-    }
+    private final SNode myNode;
+    private final String myString;
 
     public NodeStringPair(@NotNull SNode node, @NotNull String s) {
       myNode = node;
@@ -137,11 +134,6 @@ public class SModelVersionsInfo {
       int result = myNode.hashCode();
       result = 31 * result + myString.hashCode();
       return result;
-    }
-
-    public void fill(@NotNull SNode node, @NotNull String propertyName) {
-      myNode = node;
-      myString = propertyName;
     }
   }
 }

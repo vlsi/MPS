@@ -39,9 +39,7 @@ import jetbrains.mps.util.annotation.Patch;
 /*
 * This class was copied from same IDEA class
 * to fix http://jetbrains.net/jira/browse/IDEA-22685
-* See method CheckPath.checkModificationValid fot futher information
-*
-* TODO: do not forget to remove this class
+* See method CheckPath.checkModificationValid fot further information
 * */
 public class PathsVerifier {
   // in

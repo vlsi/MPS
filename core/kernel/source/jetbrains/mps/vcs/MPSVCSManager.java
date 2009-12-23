@@ -16,11 +16,12 @@
 package jetbrains.mps.vcs;
 
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.*;
+import com.intellij.openapi.vcs.actions.VcsContextFactory;
+import com.intellij.openapi.vcs.changes.*;
 import com.intellij.openapi.vcs.impl.ProjectLevelVcsManagerImpl;
-import com.intellij.openapi.vcs.changes.ChangeListAdapter;
-import com.intellij.openapi.vcs.changes.ChangeListManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.generator.CompilationListener;
 import jetbrains.mps.generator.GenerationListener;
@@ -35,6 +36,7 @@ import jetbrains.mps.watching.ModelChangesWatcher;
 import jetbrains.mps.watching.ModelChangesWatcher.DataCreationListener;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.io.IOException;
@@ -140,6 +142,36 @@ public class MPSVCSManager implements ProjectComponent {
     if (files.size() == 0 || (!isProjectUnderVcs())) return;
     myAddOperationScheduler.invokeLater(new AddOperation(files, myManager, myProject,
       myAddOption, recursive, silently));
+  }
+
+  boolean isInConflict(final VirtualFile vfile, boolean synchronously) {
+    if (isChangeListManagerInitialized() && !synchronously) {
+      return ChangeListManager.getInstance(myProject).getStatus(vfile).equals(FileStatus.MERGED_WITH_CONFLICTS);
+    }
+
+    ensureVcssInitialized();
+    AbstractVcs vcs = myManager.getVcsFor(vfile);
+
+    if (vcs == null) {
+      return false;
+    }
+
+    VcsDirtyScopeImpl scope = new VcsDirtyScopeImpl(vcs, myProject);
+    scope.addDirtyFile(VcsContextFactory.SERVICE.getInstance().createFilePathOn(vfile));
+    ChangeProvider changeProvider = vcs.getChangeProvider();
+
+    if (changeProvider == null) {
+      return false;
+    }
+
+    final MyEmptyChangelistBuilder builder = new MyEmptyChangelistBuilder(vfile);
+    try {
+      changeProvider.getChanges(scope, builder, new EmptyProgressIndicator(), new StubChangeListManagerGate());
+    } catch (VcsException e) {
+      LOG.error(e);
+    }
+
+    return builder.isInConflict();
   }
 
   private void perform(final VcsOperation operation) {
@@ -275,6 +307,73 @@ public class MPSVCSManager implements ProjectComponent {
 
     @Override
     public void modelAdded(SModelDescriptor modelDescriptor) {
+    }
+  }
+
+  public static class StubChangeListManagerGate implements ChangeListManagerGate {
+    public List<LocalChangeList> getListsCopy() {
+      return null;
+    }
+
+    @Nullable
+    public LocalChangeList findChangeList(String name) {
+      return null;
+    }
+
+    public LocalChangeList addChangeList(String name, String comment) {
+      return null;
+    }
+
+    public LocalChangeList findOrCreateList(String name, String comment) {
+      return null;
+    }
+
+    public void editComment(String name, String comment) {
+
+    }
+
+    public void editName(String oldName, String newName) {
+    }
+
+    public void moveChanges(String toList, Collection<Change> changes) {
+    }
+
+    public void setListsToDisappear(Collection<String> names) {
+    }
+  }
+
+  private static class MyEmptyChangelistBuilder extends EmptyChangelistBuilder {
+    private final VirtualFile myVirtualFile;
+    private boolean myIsMergedWithConflict;
+
+    public MyEmptyChangelistBuilder(VirtualFile vfile) {
+      myVirtualFile = vfile;
+    }
+
+    @Override
+    public void processChangeInList(Change change, @Nullable ChangeList changeList, VcsKey vcsKey) {
+      processChange(change, vcsKey);
+    }
+
+    @Override
+    public void processChangeInList(Change change, String changeListName, VcsKey vcsKey) {
+      processChange(change, vcsKey);
+    }
+
+    @Override
+    public void processChange(Change change, VcsKey vcsKey) {
+      if (change.getFileStatus().equals(FileStatus.MERGED_WITH_CONFLICTS)) {
+        ContentRevision contentRevision = change.getAfterRevision();
+        if (contentRevision != null) {
+          if (contentRevision.getFile().getPresentableUrl().equals(myVirtualFile.getPresentableUrl())) {
+            myIsMergedWithConflict = true;
+          }
+        }
+      }
+    }
+
+    public boolean isInConflict() {
+      return myIsMergedWithConflict;
     }
   }
 }

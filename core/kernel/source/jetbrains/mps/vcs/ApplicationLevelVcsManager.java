@@ -133,68 +133,13 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
     VirtualFile vfile = VFileSystem.getFile(ifile);
     if ((vfile != null) && (vfile.exists())) {
       for (Project project : myProjectManager.getOpenProjects()) {
-        boolean isInConflict = isInConflict(project, vfile, synchronously);
+        boolean isInConflict = MPSVCSManager.getInstance(project).isInConflict(vfile, synchronously);
         if (isInConflict) {
           return true;
         }
       }
     }
     return false;
-  }
-
-  // REFACTOR: move to mps vcs manager
-  private boolean isInConflict(@NotNull Project project, final VirtualFile vfile, boolean synchronously) {
-    if (MPSVCSManager.getInstance(project).isChangeListManagerInitialized() && !synchronously) {
-      return ChangeListManager.getInstance(project).getStatus(vfile).equals(FileStatus.MERGED_WITH_CONFLICTS);
-    }
-
-    ProjectLevelVcsManager manager = ProjectLevelVcsManager.getInstance(project);
-    MPSVCSManager.getInstance(project).ensureVcssInitialized();
-    AbstractVcs vcs = manager.getVcsFor(vfile);
-
-    if (vcs == null) {
-      return false;
-    }
-
-    VcsDirtyScopeImpl scope = new VcsDirtyScopeImpl(vcs, project); // TODO don't use Impl classes
-    scope.addDirtyFile(VcsContextFactory.SERVICE.getInstance().createFilePathOn(vfile));
-    ChangeProvider changeProvider = vcs.getChangeProvider();
-
-    if (changeProvider == null) {
-      return false;
-    }
-
-    final boolean[] result = new boolean[1];
-    try {
-      changeProvider.getChanges(scope, new EmptyChangelistBuilder() {
-        @Override
-        public void processChangeInList(Change change, @Nullable ChangeList changeList, VcsKey vcsKey) {
-          processChange(change, vcsKey);
-        }
-
-        @Override
-        public void processChangeInList(Change change, String changeListName, VcsKey vcsKey) {
-          processChange(change, vcsKey);
-        }
-
-        @Override
-        public void processChange(Change change, VcsKey vcsKey) {
-          if (change.getFileStatus().equals(FileStatus.MERGED_WITH_CONFLICTS)) {
-            ContentRevision contentRevision = change.getAfterRevision();
-            if (contentRevision != null) {
-              if (contentRevision.getFile().getPresentableUrl().equals(vfile.getPresentableUrl())) {
-                result[0] = true;
-              }
-            }
-          }
-        }
-      }, new EmptyProgressIndicator(), new StubChangeListManagerGate());
-
-    } catch (VcsException e) {
-      LOG.error(e);
-    }
-
-    return result[0];
   }
 
   public void addFilesToVcs(List<VirtualFile> files, boolean recursive) {
@@ -352,38 +297,6 @@ public class ApplicationLevelVcsManager implements ApplicationComponent, Persist
         filesToAdd.add(file);
       }
       removeFilesFromVcs(filesToAdd);
-    }
-  }
-
-  public static class StubChangeListManagerGate implements ChangeListManagerGate {
-    public List<LocalChangeList> getListsCopy() {
-      return null;
-    }
-
-    @Nullable
-    public LocalChangeList findChangeList(String name) {
-      return null;
-    }
-
-    public LocalChangeList addChangeList(String name, String comment) {
-      return null;
-    }
-
-    public LocalChangeList findOrCreateList(String name, String comment) {
-      return null;
-    }
-
-    public void editComment(String name, String comment) {
-
-    }
-
-    public void editName(String oldName, String newName) {
-    }
-
-    public void moveChanges(String toList, Collection<Change> changes) {
-    }
-
-    public void setListsToDisappear(Collection<String> names) {
     }
   }
 }
