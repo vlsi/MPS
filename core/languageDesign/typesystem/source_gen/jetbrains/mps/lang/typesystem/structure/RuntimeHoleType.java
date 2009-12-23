@@ -16,7 +16,7 @@ public class RuntimeHoleType extends BaseConcept {
   }
 
   public static RuntimeHoleType newInstance(SModel sm, boolean init) {
-    return (RuntimeHoleType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RuntimeHoleType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RuntimeHoleType newInstance(SModel sm) {

@@ -53,7 +53,7 @@ public class ApplicableNodeCondition extends BaseConcept implements INamedConcep
   }
 
   public static ApplicableNodeCondition newInstance(SModel sm, boolean init) {
-    return (ApplicableNodeCondition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ApplicableNodeCondition) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ApplicableNodeCondition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ApplicableNodeCondition newInstance(SModel sm) {

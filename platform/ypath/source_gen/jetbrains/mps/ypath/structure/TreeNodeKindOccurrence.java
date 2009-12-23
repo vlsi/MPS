@@ -17,7 +17,7 @@ public class TreeNodeKindOccurrence extends BaseConcept {
   }
 
   public TreeNodeKind getNodeKind() {
-    return (TreeNodeKind)this.getReferent(TreeNodeKind.class, TreeNodeKindOccurrence.NODE_KIND);
+    return (TreeNodeKind) this.getReferent(TreeNodeKind.class, TreeNodeKindOccurrence.NODE_KIND);
   }
 
   public void setNodeKind(TreeNodeKind node) {
@@ -25,7 +25,7 @@ public class TreeNodeKindOccurrence extends BaseConcept {
   }
 
   public static TreeNodeKindOccurrence newInstance(SModel sm, boolean init) {
-    return (TreeNodeKindOccurrence)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKindOccurrence", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TreeNodeKindOccurrence) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKindOccurrence", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TreeNodeKindOccurrence newInstance(SModel sm) {

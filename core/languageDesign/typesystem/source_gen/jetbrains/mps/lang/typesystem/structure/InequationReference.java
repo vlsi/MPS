@@ -17,7 +17,7 @@ public class InequationReference extends BaseConcept {
   }
 
   public AbstractInequationStatement getInequation() {
-    return (AbstractInequationStatement)this.getReferent(AbstractInequationStatement.class, InequationReference.INEQUATION);
+    return (AbstractInequationStatement) this.getReferent(AbstractInequationStatement.class, InequationReference.INEQUATION);
   }
 
   public void setInequation(AbstractInequationStatement node) {
@@ -25,7 +25,7 @@ public class InequationReference extends BaseConcept {
   }
 
   public static InequationReference newInstance(SModel sm, boolean init) {
-    return (InequationReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.InequationReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InequationReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.InequationReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InequationReference newInstance(SModel sm) {

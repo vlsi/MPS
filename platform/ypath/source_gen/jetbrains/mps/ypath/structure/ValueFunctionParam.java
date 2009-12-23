@@ -16,7 +16,7 @@ public class ValueFunctionParam extends ConceptFunctionParameter {
   }
 
   public static ValueFunctionParam newInstance(SModel sm, boolean init) {
-    return (ValueFunctionParam)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ValueFunctionParam", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ValueFunctionParam) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ValueFunctionParam", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ValueFunctionParam newInstance(SModel sm) {

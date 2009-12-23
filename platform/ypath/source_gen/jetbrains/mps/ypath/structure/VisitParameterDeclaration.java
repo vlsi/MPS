@@ -16,7 +16,7 @@ public class VisitParameterDeclaration extends VariableDeclaration {
   }
 
   public static VisitParameterDeclaration newInstance(SModel sm, boolean init) {
-    return (VisitParameterDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VisitParameterDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VisitParameterDeclaration newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class BufferParameter extends AbstractTextGenParameter {
   }
 
   public static BufferParameter newInstance(SModel sm, boolean init) {
-    return (BufferParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.BufferParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BufferParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.BufferParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BufferParameter newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class RightOperandType_parameter extends ConceptFunctionParameter {
   }
 
   public static RightOperandType_parameter newInstance(SModel sm, boolean init) {
-    return (RightOperandType_parameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RightOperandType_parameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RightOperandType_parameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RightOperandType_parameter newInstance(SModel sm) {

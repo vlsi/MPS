@@ -53,7 +53,7 @@ public class InequationsGroup extends BaseConcept implements INamedConcept {
   }
 
   public static InequationsGroup newInstance(SModel sm, boolean init) {
-    return (InequationsGroup)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.InequationsGroup", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InequationsGroup) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.InequationsGroup", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InequationsGroup newInstance(SModel sm) {

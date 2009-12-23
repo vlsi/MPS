@@ -16,7 +16,7 @@ public class OverloadedOperatorTypeFunction extends ConceptFunction {
   }
 
   public static OverloadedOperatorTypeFunction newInstance(SModel sm, boolean init) {
-    return (OverloadedOperatorTypeFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OverloadedOperatorTypeFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OverloadedOperatorTypeFunction newInstance(SModel sm) {

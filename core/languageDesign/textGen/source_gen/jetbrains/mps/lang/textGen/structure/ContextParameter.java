@@ -15,7 +15,7 @@ public class ContextParameter extends AbstractTextGenParameter {
   }
 
   public static ContextParameter newInstance(SModel sm, boolean init) {
-    return (ContextParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.ContextParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ContextParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.ContextParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ContextParameter newInstance(SModel sm) {

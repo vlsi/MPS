@@ -42,7 +42,7 @@ public class RuntimeErrorType extends RuntimeTypeVariable {
   }
 
   public static RuntimeErrorType newInstance(SModel sm, boolean init) {
-    return (RuntimeErrorType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeErrorType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RuntimeErrorType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeErrorType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RuntimeErrorType newInstance(SModel sm) {

@@ -64,7 +64,7 @@ public class SliceWithNode_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       TypecheckerStateView view = SliceWithNode_Action.this.project.getComponent(TypecheckerStateView.class);
-      TypecheckerStateViewComponent component = (TypecheckerStateViewComponent)view.getComponent();
+      TypecheckerStateViewComponent component = (TypecheckerStateViewComponent) view.getComponent();
       component.sliceWithNode(SliceWithNode_Action.this.n);
       view.openToolLater(true);
     } catch (Throwable t) {

@@ -44,7 +44,7 @@ public class TreePathOperation extends BaseConcept implements IOperation {
   }
 
   public static TreePathOperation newInstance(SModel sm, boolean init) {
-    return (TreePathOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TreePathOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TreePathOperation newInstance(SModel sm) {

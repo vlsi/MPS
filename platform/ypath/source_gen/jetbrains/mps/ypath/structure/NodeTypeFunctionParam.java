@@ -16,7 +16,7 @@ public class NodeTypeFunctionParam extends ConceptFunctionParameter {
   }
 
   public static NodeTypeFunctionParam newInstance(SModel sm, boolean init) {
-    return (NodeTypeFunctionParam)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.NodeTypeFunctionParam", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeTypeFunctionParam) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.NodeTypeFunctionParam", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeTypeFunctionParam newInstance(SModel sm) {

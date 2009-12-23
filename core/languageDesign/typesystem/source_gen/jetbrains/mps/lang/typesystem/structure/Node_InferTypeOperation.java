@@ -16,7 +16,7 @@ public class Node_InferTypeOperation extends SNodeOperation {
   }
 
   public static Node_InferTypeOperation newInstance(SModel sm, boolean init) {
-    return (Node_InferTypeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_InferTypeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_InferTypeOperation newInstance(SModel sm) {

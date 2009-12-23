@@ -16,7 +16,7 @@ public class TypeClause extends BaseConcept {
   }
 
   public static TypeClause newInstance(SModel sm, boolean init) {
-    return (TypeClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypeClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypeClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypeClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypeClause newInstance(SModel sm) {

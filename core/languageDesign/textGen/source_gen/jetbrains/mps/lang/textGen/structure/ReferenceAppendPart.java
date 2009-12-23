@@ -17,7 +17,7 @@ public class ReferenceAppendPart extends AbstractAppendPart {
   }
 
   public Expression getReference() {
-    return (Expression)this.getChild(Expression.class, ReferenceAppendPart.REFERENCE);
+    return (Expression) this.getChild(Expression.class, ReferenceAppendPart.REFERENCE);
   }
 
   public void setReference(Expression node) {
@@ -25,7 +25,7 @@ public class ReferenceAppendPart extends AbstractAppendPart {
   }
 
   public static ReferenceAppendPart newInstance(SModel sm, boolean init) {
-    return (ReferenceAppendPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.ReferenceAppendPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReferenceAppendPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.ReferenceAppendPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReferenceAppendPart newInstance(SModel sm) {

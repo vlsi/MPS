@@ -35,7 +35,7 @@ public class CollectionAppendPart extends AbstractAppendPart {
   }
 
   public Expression getList() {
-    return (Expression)this.getChild(Expression.class, CollectionAppendPart.LIST);
+    return (Expression) this.getChild(Expression.class, CollectionAppendPart.LIST);
   }
 
   public void setList(Expression node) {
@@ -43,7 +43,7 @@ public class CollectionAppendPart extends AbstractAppendPart {
   }
 
   public static CollectionAppendPart newInstance(SModel sm, boolean init) {
-    return (CollectionAppendPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.CollectionAppendPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CollectionAppendPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.CollectionAppendPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CollectionAppendPart newInstance(SModel sm) {

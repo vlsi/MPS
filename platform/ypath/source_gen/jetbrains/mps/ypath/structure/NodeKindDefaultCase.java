@@ -15,7 +15,7 @@ public class NodeKindDefaultCase extends NodeKindCase {
   }
 
   public static NodeKindDefaultCase newInstance(SModel sm, boolean init) {
-    return (NodeKindDefaultCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.NodeKindDefaultCase", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeKindDefaultCase) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.NodeKindDefaultCase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeKindDefaultCase newInstance(SModel sm) {

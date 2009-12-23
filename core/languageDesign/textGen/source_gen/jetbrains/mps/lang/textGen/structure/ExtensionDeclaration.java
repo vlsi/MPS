@@ -16,7 +16,7 @@ public class ExtensionDeclaration extends ConceptFunction {
   }
 
   public static ExtensionDeclaration newInstance(SModel sm, boolean init) {
-    return (ExtensionDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.ExtensionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExtensionDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.ExtensionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExtensionDeclaration newInstance(SModel sm) {

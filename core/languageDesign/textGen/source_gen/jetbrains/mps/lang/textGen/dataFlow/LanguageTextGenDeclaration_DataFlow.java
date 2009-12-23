@@ -16,10 +16,10 @@ public class LanguageTextGenDeclaration_DataFlow extends DataFlowBuilder {
     _context.getBuilder().emitWrite(_context.getNode());
     _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "baseTextGen", false));
     for (SNode declaration : SLinkOperations.getTargets(_context.getNode(), "function", true)) {
-      _context.getBuilder().build((SNode)declaration);
+      _context.getBuilder().build((SNode) declaration);
     }
     for (SNode node : SLinkOperations.getTargets(_context.getNode(), "operation", true)) {
-      _context.getBuilder().build((SNode)node);
+      _context.getBuilder().build((SNode) node);
     }
   }
 }

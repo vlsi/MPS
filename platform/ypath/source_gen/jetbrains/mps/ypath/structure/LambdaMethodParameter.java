@@ -16,7 +16,7 @@ public class LambdaMethodParameter extends ClosureParameter {
   }
 
   public static LambdaMethodParameter newInstance(SModel sm, boolean init) {
-    return (LambdaMethodParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.LambdaMethodParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LambdaMethodParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.LambdaMethodParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LambdaMethodParameter newInstance(SModel sm) {

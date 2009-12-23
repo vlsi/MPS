@@ -53,7 +53,7 @@ public class ListVarDeclaration extends Statement implements INamedConcept {
   }
 
   public static ListVarDeclaration newInstance(SModel sm, boolean init) {
-    return (ListVarDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ListVarDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ListVarDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ListVarDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ListVarDeclaration newInstance(SModel sm) {

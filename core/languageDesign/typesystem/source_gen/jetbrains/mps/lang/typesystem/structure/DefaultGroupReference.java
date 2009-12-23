@@ -16,7 +16,7 @@ public class DefaultGroupReference extends BaseConcept {
   }
 
   public static DefaultGroupReference newInstance(SModel sm, boolean init) {
-    return (DefaultGroupReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.DefaultGroupReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DefaultGroupReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.DefaultGroupReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DefaultGroupReference newInstance(SModel sm) {

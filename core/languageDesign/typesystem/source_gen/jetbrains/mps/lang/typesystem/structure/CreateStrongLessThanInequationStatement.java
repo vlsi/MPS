@@ -15,7 +15,7 @@ public class CreateStrongLessThanInequationStatement extends AbstractInequationS
   }
 
   public static CreateStrongLessThanInequationStatement newInstance(SModel sm, boolean init) {
-    return (CreateStrongLessThanInequationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CreateStrongLessThanInequationStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CreateStrongLessThanInequationStatement newInstance(SModel sm) {

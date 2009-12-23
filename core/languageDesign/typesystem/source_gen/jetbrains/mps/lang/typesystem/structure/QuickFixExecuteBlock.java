@@ -16,7 +16,7 @@ public class QuickFixExecuteBlock extends ConceptFunction {
   }
 
   public static QuickFixExecuteBlock newInstance(SModel sm, boolean init) {
-    return (QuickFixExecuteBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QuickFixExecuteBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QuickFixExecuteBlock newInstance(SModel sm) {

@@ -126,7 +126,7 @@ public class QueriesGenerated {
           });
         }
       };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
+      Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {

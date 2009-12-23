@@ -19,7 +19,7 @@ public class SimpleRule_Literal extends SimpleRule {
   }
 
   public ConceptReference getConceptReference() {
-    return (ConceptReference)this.getChild(ConceptReference.class, SimpleRule_Literal.CONCEPT_REFERENCE);
+    return (ConceptReference) this.getChild(ConceptReference.class, SimpleRule_Literal.CONCEPT_REFERENCE);
   }
 
   public void setConceptReference(ConceptReference node) {
@@ -27,7 +27,7 @@ public class SimpleRule_Literal extends SimpleRule {
   }
 
   public BaseConcept getType() {
-    return (BaseConcept)this.getChild(BaseConcept.class, SimpleRule_Literal.TYPE);
+    return (BaseConcept) this.getChild(BaseConcept.class, SimpleRule_Literal.TYPE);
   }
 
   public void setType(BaseConcept node) {
@@ -35,7 +35,7 @@ public class SimpleRule_Literal extends SimpleRule {
   }
 
   public static SimpleRule_Literal newInstance(SModel sm, boolean init) {
-    return (SimpleRule_Literal)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SimpleRule_Literal", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleRule_Literal) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SimpleRule_Literal", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleRule_Literal newInstance(SModel sm) {

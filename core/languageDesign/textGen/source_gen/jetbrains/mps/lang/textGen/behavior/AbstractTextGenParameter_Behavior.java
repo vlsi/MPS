@@ -36,10 +36,10 @@ public class AbstractTextGenParameter_Behavior {
   }
 
   public static String call_getGetterName_1234885318469(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"), "virtual_getGetterName_1234885318469", PARAMETERS_1234885318469);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"), "virtual_getGetterName_1234885318469", PARAMETERS_1234885318469);
   }
 
   public static String callSuper_getGetterName_1234885318469(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"), callerConceptFqName, "virtual_getGetterName_1234885318469", PARAMETERS_1234885318469);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter"), callerConceptFqName, "virtual_getGetterName_1234885318469", PARAMETERS_1234885318469);
   }
 }

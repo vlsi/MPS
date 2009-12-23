@@ -16,7 +16,7 @@ public class Node_TypeOperation extends SNodeOperation {
   }
 
   public static Node_TypeOperation newInstance(SModel sm, boolean init) {
-    return (Node_TypeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Node_TypeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_TypeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Node_TypeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_TypeOperation newInstance(SModel sm) {

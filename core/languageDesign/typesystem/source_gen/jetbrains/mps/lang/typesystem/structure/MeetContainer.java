@@ -17,7 +17,7 @@ public class MeetContainer extends BaseConcept {
   }
 
   public MeetType getMeetType() {
-    return (MeetType)this.getChild(MeetType.class, MeetContainer.MEET_TYPE);
+    return (MeetType) this.getChild(MeetType.class, MeetContainer.MEET_TYPE);
   }
 
   public void setMeetType(MeetType node) {
@@ -25,7 +25,7 @@ public class MeetContainer extends BaseConcept {
   }
 
   public static MeetContainer newInstance(SModel sm, boolean init) {
-    return (MeetContainer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MeetContainer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MeetContainer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MeetContainer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MeetContainer newInstance(SModel sm) {

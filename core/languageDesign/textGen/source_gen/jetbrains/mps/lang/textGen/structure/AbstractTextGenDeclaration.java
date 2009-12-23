@@ -53,7 +53,7 @@ public class AbstractTextGenDeclaration extends BaseConcept implements IValidIde
   }
 
   public static AbstractTextGenDeclaration newInstance(SModel sm, boolean init) {
-    return (AbstractTextGenDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractTextGenDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.AbstractTextGenDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractTextGenDeclaration newInstance(SModel sm) {

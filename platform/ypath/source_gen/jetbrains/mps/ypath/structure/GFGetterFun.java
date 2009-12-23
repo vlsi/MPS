@@ -43,7 +43,7 @@ public class GFGetterFun extends ConceptFunction implements IDesignFunction {
   }
 
   public static GFGetterFun newInstance(SModel sm, boolean init) {
-    return (GFGetterFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GFGetterFun", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GFGetterFun) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GFGetterFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GFGetterFun newInstance(SModel sm) {

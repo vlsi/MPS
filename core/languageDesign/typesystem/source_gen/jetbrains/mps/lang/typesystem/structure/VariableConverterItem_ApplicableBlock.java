@@ -16,7 +16,7 @@ public class VariableConverterItem_ApplicableBlock extends ConceptFunction {
   }
 
   public static VariableConverterItem_ApplicableBlock newInstance(SModel sm, boolean init) {
-    return (VariableConverterItem_ApplicableBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VariableConverterItem_ApplicableBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.VariableConverterItem_ApplicableBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VariableConverterItem_ApplicableBlock newInstance(SModel sm) {

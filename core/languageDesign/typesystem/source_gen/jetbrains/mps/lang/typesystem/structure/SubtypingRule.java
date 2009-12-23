@@ -15,7 +15,7 @@ public class SubtypingRule extends AbstractSubtypingRule {
   }
 
   public static SubtypingRule newInstance(SModel sm, boolean init) {
-    return (SubtypingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SubtypingRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SubtypingRule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SubtypingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SubtypingRule newInstance(SModel sm) {

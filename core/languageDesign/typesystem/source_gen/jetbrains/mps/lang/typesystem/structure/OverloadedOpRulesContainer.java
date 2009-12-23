@@ -76,7 +76,7 @@ public class OverloadedOpRulesContainer extends BaseConcept implements INamedCon
   }
 
   public static OverloadedOpRulesContainer newInstance(SModel sm, boolean init) {
-    return (OverloadedOpRulesContainer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OverloadedOpRulesContainer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OverloadedOpRulesContainer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OverloadedOpRulesContainer newInstance(SModel sm) {

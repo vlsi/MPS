@@ -17,7 +17,7 @@ public class ReferenceMessageTarget extends MessageTarget {
   }
 
   public LinkDeclaration getLinkDeclaration() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, ReferenceMessageTarget.LINK_DECLARATION);
+    return (LinkDeclaration) this.getReferent(LinkDeclaration.class, ReferenceMessageTarget.LINK_DECLARATION);
   }
 
   public void setLinkDeclaration(LinkDeclaration node) {
@@ -25,7 +25,7 @@ public class ReferenceMessageTarget extends MessageTarget {
   }
 
   public static ReferenceMessageTarget newInstance(SModel sm, boolean init) {
-    return (ReferenceMessageTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReferenceMessageTarget) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ReferenceMessageTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReferenceMessageTarget newInstance(SModel sm) {

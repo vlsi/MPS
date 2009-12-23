@@ -15,7 +15,7 @@ public class KindBlock extends LambdaMethod {
   }
 
   public static KindBlock newInstance(SModel sm, boolean init) {
-    return (KindBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.KindBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (KindBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.KindBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static KindBlock newInstance(SModel sm) {

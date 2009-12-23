@@ -39,7 +39,7 @@ public class InequationsGroupsRegistry extends BaseConcept {
   }
 
   public static InequationsGroupsRegistry newInstance(SModel sm, boolean init) {
-    return (InequationsGroupsRegistry)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.InequationsGroupsRegistry", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InequationsGroupsRegistry) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.InequationsGroupsRegistry", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InequationsGroupsRegistry newInstance(SModel sm) {

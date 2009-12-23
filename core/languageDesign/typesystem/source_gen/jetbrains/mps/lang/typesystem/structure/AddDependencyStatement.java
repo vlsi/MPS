@@ -18,7 +18,7 @@ public class AddDependencyStatement extends Statement {
   }
 
   public Expression getDependency() {
-    return (Expression)this.getChild(Expression.class, AddDependencyStatement.DEPENDENCY);
+    return (Expression) this.getChild(Expression.class, AddDependencyStatement.DEPENDENCY);
   }
 
   public void setDependency(Expression node) {
@@ -26,7 +26,7 @@ public class AddDependencyStatement extends Statement {
   }
 
   public static AddDependencyStatement newInstance(SModel sm, boolean init) {
-    return (AddDependencyStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AddDependencyStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AddDependencyStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AddDependencyStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AddDependencyStatement newInstance(SModel sm) {

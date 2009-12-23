@@ -15,7 +15,7 @@ public class WhereBlock extends LambdaMethod {
   }
 
   public static WhereBlock newInstance(SModel sm, boolean init) {
-    return (WhereBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.WhereBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WhereBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.WhereBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WhereBlock newInstance(SModel sm) {

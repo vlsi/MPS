@@ -16,7 +16,7 @@ public class QuickFixDescriptionBlock extends ConceptFunction {
   }
 
   public static QuickFixDescriptionBlock newInstance(SModel sm, boolean init) {
-    return (QuickFixDescriptionBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QuickFixDescriptionBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.QuickFixDescriptionBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QuickFixDescriptionBlock newInstance(SModel sm) {

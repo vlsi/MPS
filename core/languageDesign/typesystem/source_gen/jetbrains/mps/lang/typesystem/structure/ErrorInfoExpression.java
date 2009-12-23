@@ -16,7 +16,7 @@ public class ErrorInfoExpression extends Expression {
   }
 
   public static ErrorInfoExpression newInstance(SModel sm, boolean init) {
-    return (ErrorInfoExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ErrorInfoExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ErrorInfoExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ErrorInfoExpression newInstance(SModel sm) {

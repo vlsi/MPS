@@ -55,7 +55,7 @@ public class AbstractRule extends BaseConcept implements INamedConcept, IConcept
   }
 
   public ApplicableNodeCondition getApplicableNode() {
-    return (ApplicableNodeCondition)this.getChild(ApplicableNodeCondition.class, AbstractRule.APPLICABLE_NODE);
+    return (ApplicableNodeCondition) this.getChild(ApplicableNodeCondition.class, AbstractRule.APPLICABLE_NODE);
   }
 
   public void setApplicableNode(ApplicableNodeCondition node) {
@@ -63,7 +63,7 @@ public class AbstractRule extends BaseConcept implements INamedConcept, IConcept
   }
 
   public static AbstractRule newInstance(SModel sm, boolean init) {
-    return (AbstractRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractRule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractRule newInstance(SModel sm) {

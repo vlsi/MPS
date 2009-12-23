@@ -21,7 +21,7 @@ public class SimpleRule_ProcedureCall extends SimpleRule {
   }
 
   public LinkDeclaration getActualArgumentsLink() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, SimpleRule_ProcedureCall.ACTUAL_ARGUMENTS_LINK);
+    return (LinkDeclaration) this.getReferent(LinkDeclaration.class, SimpleRule_ProcedureCall.ACTUAL_ARGUMENTS_LINK);
   }
 
   public void setActualArgumentsLink(LinkDeclaration node) {
@@ -29,7 +29,7 @@ public class SimpleRule_ProcedureCall extends SimpleRule {
   }
 
   public LinkDeclaration getProcedureDeclaration() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, SimpleRule_ProcedureCall.PROCEDURE_DECLARATION);
+    return (LinkDeclaration) this.getReferent(LinkDeclaration.class, SimpleRule_ProcedureCall.PROCEDURE_DECLARATION);
   }
 
   public void setProcedureDeclaration(LinkDeclaration node) {
@@ -37,7 +37,7 @@ public class SimpleRule_ProcedureCall extends SimpleRule {
   }
 
   public LinkDeclaration getParametersLink() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, SimpleRule_ProcedureCall.PARAMETERS_LINK);
+    return (LinkDeclaration) this.getReferent(LinkDeclaration.class, SimpleRule_ProcedureCall.PARAMETERS_LINK);
   }
 
   public void setParametersLink(LinkDeclaration node) {
@@ -45,7 +45,7 @@ public class SimpleRule_ProcedureCall extends SimpleRule {
   }
 
   public ConceptReference getConceptReference() {
-    return (ConceptReference)this.getChild(ConceptReference.class, SimpleRule_ProcedureCall.CONCEPT_REFERENCE);
+    return (ConceptReference) this.getChild(ConceptReference.class, SimpleRule_ProcedureCall.CONCEPT_REFERENCE);
   }
 
   public void setConceptReference(ConceptReference node) {
@@ -53,7 +53,7 @@ public class SimpleRule_ProcedureCall extends SimpleRule {
   }
 
   public static SimpleRule_ProcedureCall newInstance(SModel sm, boolean init) {
-    return (SimpleRule_ProcedureCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SimpleRule_ProcedureCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleRule_ProcedureCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SimpleRule_ProcedureCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleRule_ProcedureCall newInstance(SModel sm) {

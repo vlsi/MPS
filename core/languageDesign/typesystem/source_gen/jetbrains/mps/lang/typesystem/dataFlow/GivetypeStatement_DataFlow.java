@@ -13,7 +13,7 @@ public class GivetypeStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "typeExpression", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "termExpression", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "typeExpression", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "termExpression", true));
   }
 }

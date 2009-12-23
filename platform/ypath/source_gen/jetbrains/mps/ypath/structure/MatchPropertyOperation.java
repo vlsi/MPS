@@ -18,7 +18,7 @@ public class MatchPropertyOperation extends MatchKindOperation {
   }
 
   public TreeNodeKindProperty getProperty() {
-    return (TreeNodeKindProperty)this.getReferent(TreeNodeKindProperty.class, MatchPropertyOperation.PROPERTY);
+    return (TreeNodeKindProperty) this.getReferent(TreeNodeKindProperty.class, MatchPropertyOperation.PROPERTY);
   }
 
   public void setProperty(TreeNodeKindProperty node) {
@@ -26,7 +26,7 @@ public class MatchPropertyOperation extends MatchKindOperation {
   }
 
   public Expression getMatchExpression() {
-    return (Expression)this.getChild(Expression.class, MatchPropertyOperation.MATCH_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, MatchPropertyOperation.MATCH_EXPRESSION);
   }
 
   public void setMatchExpression(Expression node) {
@@ -34,7 +34,7 @@ public class MatchPropertyOperation extends MatchKindOperation {
   }
 
   public static MatchPropertyOperation newInstance(SModel sm, boolean init) {
-    return (MatchPropertyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.MatchPropertyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchPropertyOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.MatchPropertyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatchPropertyOperation newInstance(SModel sm) {

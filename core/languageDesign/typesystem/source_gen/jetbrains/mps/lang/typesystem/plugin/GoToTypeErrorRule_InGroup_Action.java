@@ -78,9 +78,9 @@ public class GoToTypeErrorRule_InGroup_Action extends GeneratedAction {
     StringBuilder res = new StringBuilder(500);
     res.append(GoToTypeErrorRule_InGroup_Action.class.getName());
     res.append("#");
-    res.append(errorId_State((Pair<String, String>)this.errorId));
+    res.append(errorId_State((Pair<String, String>) this.errorId));
     res.append("!");
-    res.append(((Object)this.immediate).toString());
+    res.append(((Object) this.immediate).toString());
     res.append("!");
     return res.toString();
   }

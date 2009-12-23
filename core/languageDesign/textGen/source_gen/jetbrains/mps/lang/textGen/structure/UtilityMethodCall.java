@@ -20,7 +20,7 @@ public class UtilityMethodCall extends Expression {
   }
 
   public UtilityMethodDeclaration getFunction() {
-    return (UtilityMethodDeclaration)this.getReferent(UtilityMethodDeclaration.class, UtilityMethodCall.FUNCTION);
+    return (UtilityMethodDeclaration) this.getReferent(UtilityMethodDeclaration.class, UtilityMethodCall.FUNCTION);
   }
 
   public void setFunction(UtilityMethodDeclaration node) {
@@ -48,7 +48,7 @@ public class UtilityMethodCall extends Expression {
   }
 
   public static UtilityMethodCall newInstance(SModel sm, boolean init) {
-    return (UtilityMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.UtilityMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UtilityMethodCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.UtilityMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UtilityMethodCall newInstance(SModel sm) {

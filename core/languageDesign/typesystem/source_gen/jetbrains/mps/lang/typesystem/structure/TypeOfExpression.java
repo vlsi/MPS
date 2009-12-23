@@ -26,7 +26,7 @@ public class TypeOfExpression extends Expression {
   }
 
   public Expression getTerm() {
-    return (Expression)this.getChild(Expression.class, TypeOfExpression.TERM);
+    return (Expression) this.getChild(Expression.class, TypeOfExpression.TERM);
   }
 
   public void setTerm(Expression node) {
@@ -34,7 +34,7 @@ public class TypeOfExpression extends Expression {
   }
 
   public static TypeOfExpression newInstance(SModel sm, boolean init) {
-    return (TypeOfExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypeOfExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypeOfExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypeOfExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypeOfExpression newInstance(SModel sm) {

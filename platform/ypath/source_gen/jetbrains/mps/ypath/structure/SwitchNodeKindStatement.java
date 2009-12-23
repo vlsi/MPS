@@ -20,7 +20,7 @@ public class SwitchNodeKindStatement extends Statement {
   }
 
   public TreePathAdapterExpression getNodeExpression() {
-    return (TreePathAdapterExpression)this.getChild(TreePathAdapterExpression.class, SwitchNodeKindStatement.NODE_EXPRESSION);
+    return (TreePathAdapterExpression) this.getChild(TreePathAdapterExpression.class, SwitchNodeKindStatement.NODE_EXPRESSION);
   }
 
   public void setNodeExpression(TreePathAdapterExpression node) {
@@ -48,7 +48,7 @@ public class SwitchNodeKindStatement extends Statement {
   }
 
   public static SwitchNodeKindStatement newInstance(SModel sm, boolean init) {
-    return (SwitchNodeKindStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.SwitchNodeKindStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SwitchNodeKindStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.SwitchNodeKindStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SwitchNodeKindStatement newInstance(SModel sm) {

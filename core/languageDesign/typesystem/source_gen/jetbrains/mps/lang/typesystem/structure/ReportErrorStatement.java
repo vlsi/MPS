@@ -49,7 +49,7 @@ public class ReportErrorStatement extends Statement implements MessageStatement 
   }
 
   public Expression getErrorString() {
-    return (Expression)this.getChild(Expression.class, ReportErrorStatement.ERROR_STRING);
+    return (Expression) this.getChild(Expression.class, ReportErrorStatement.ERROR_STRING);
   }
 
   public void setErrorString(Expression node) {
@@ -57,7 +57,7 @@ public class ReportErrorStatement extends Statement implements MessageStatement 
   }
 
   public Expression getNodeToReport() {
-    return (Expression)this.getChild(Expression.class, ReportErrorStatement.NODE_TO_REPORT);
+    return (Expression) this.getChild(Expression.class, ReportErrorStatement.NODE_TO_REPORT);
   }
 
   public void setNodeToReport(Expression node) {
@@ -65,7 +65,7 @@ public class ReportErrorStatement extends Statement implements MessageStatement 
   }
 
   public TypesystemIntention getHelginsIntention() {
-    return (TypesystemIntention)this.getChild(TypesystemIntention.class, ReportErrorStatement.HELGINS_INTENTION);
+    return (TypesystemIntention) this.getChild(TypesystemIntention.class, ReportErrorStatement.HELGINS_INTENTION);
   }
 
   public void setHelginsIntention(TypesystemIntention node) {
@@ -73,7 +73,7 @@ public class ReportErrorStatement extends Statement implements MessageStatement 
   }
 
   public MessageTarget getMessageTarget() {
-    return (MessageTarget)this.getChild(MessageTarget.class, ReportErrorStatement.MESSAGE_TARGET);
+    return (MessageTarget) this.getChild(MessageTarget.class, ReportErrorStatement.MESSAGE_TARGET);
   }
 
   public void setMessageTarget(MessageTarget node) {
@@ -81,7 +81,7 @@ public class ReportErrorStatement extends Statement implements MessageStatement 
   }
 
   public Expression getForeignMessageSource() {
-    return (Expression)this.getChild(Expression.class, ReportErrorStatement.FOREIGN_MESSAGE_SOURCE);
+    return (Expression) this.getChild(Expression.class, ReportErrorStatement.FOREIGN_MESSAGE_SOURCE);
   }
 
   public void setForeignMessageSource(Expression node) {
@@ -89,7 +89,7 @@ public class ReportErrorStatement extends Statement implements MessageStatement 
   }
 
   public static ReportErrorStatement newInstance(SModel sm, boolean init) {
-    return (ReportErrorStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ReportErrorStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReportErrorStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ReportErrorStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReportErrorStatement newInstance(SModel sm) {

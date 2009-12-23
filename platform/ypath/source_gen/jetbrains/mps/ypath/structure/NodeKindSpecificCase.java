@@ -16,7 +16,7 @@ public class NodeKindSpecificCase extends NodeKindCase {
   }
 
   public TreeNodeKind getTreeNodeKind() {
-    return (TreeNodeKind)this.getReferent(TreeNodeKind.class, NodeKindSpecificCase.TREE_NODE_KIND);
+    return (TreeNodeKind) this.getReferent(TreeNodeKind.class, NodeKindSpecificCase.TREE_NODE_KIND);
   }
 
   public void setTreeNodeKind(TreeNodeKind node) {
@@ -24,7 +24,7 @@ public class NodeKindSpecificCase extends NodeKindCase {
   }
 
   public static NodeKindSpecificCase newInstance(SModel sm, boolean init) {
-    return (NodeKindSpecificCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.NodeKindSpecificCase", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeKindSpecificCase) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.NodeKindSpecificCase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeKindSpecificCase newInstance(SModel sm) {

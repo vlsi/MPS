@@ -16,7 +16,7 @@ public class ComparisonRule extends AbstractSubtypingRule {
   }
 
   public ApplicableNodeCondition getAnotherNode() {
-    return (ApplicableNodeCondition)this.getChild(ApplicableNodeCondition.class, ComparisonRule.ANOTHER_NODE);
+    return (ApplicableNodeCondition) this.getChild(ApplicableNodeCondition.class, ComparisonRule.ANOTHER_NODE);
   }
 
   public void setAnotherNode(ApplicableNodeCondition node) {
@@ -24,7 +24,7 @@ public class ComparisonRule extends AbstractSubtypingRule {
   }
 
   public static ComparisonRule newInstance(SModel sm, boolean init) {
-    return (ComparisonRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ComparisonRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComparisonRule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ComparisonRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComparisonRule newInstance(SModel sm) {

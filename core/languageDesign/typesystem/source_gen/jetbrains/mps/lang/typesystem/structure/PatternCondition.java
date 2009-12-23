@@ -17,7 +17,7 @@ public class PatternCondition extends ApplicableNodeCondition {
   }
 
   public PatternExpression getPattern() {
-    return (PatternExpression)this.getChild(PatternExpression.class, PatternCondition.PATTERN);
+    return (PatternExpression) this.getChild(PatternExpression.class, PatternCondition.PATTERN);
   }
 
   public void setPattern(PatternExpression node) {
@@ -25,7 +25,7 @@ public class PatternCondition extends ApplicableNodeCondition {
   }
 
   public static PatternCondition newInstance(SModel sm, boolean init) {
-    return (PatternCondition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.PatternCondition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PatternCondition) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.PatternCondition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PatternCondition newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class QuickFixArgumentReference extends Expression {
   }
 
   public QuickFixArgument getQuickFixArgument() {
-    return (QuickFixArgument)this.getReferent(QuickFixArgument.class, QuickFixArgumentReference.QUICK_FIX_ARGUMENT);
+    return (QuickFixArgument) this.getReferent(QuickFixArgument.class, QuickFixArgumentReference.QUICK_FIX_ARGUMENT);
   }
 
   public void setQuickFixArgument(QuickFixArgument node) {
@@ -25,7 +25,7 @@ public class QuickFixArgumentReference extends Expression {
   }
 
   public static QuickFixArgumentReference newInstance(SModel sm, boolean init) {
-    return (QuickFixArgumentReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QuickFixArgumentReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.QuickFixArgumentReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QuickFixArgumentReference newInstance(SModel sm) {

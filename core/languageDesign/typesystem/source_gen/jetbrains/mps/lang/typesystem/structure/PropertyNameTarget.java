@@ -17,7 +17,7 @@ public class PropertyNameTarget extends MessageTarget {
   }
 
   public Expression getPropertyName() {
-    return (Expression)this.getChild(Expression.class, PropertyNameTarget.PROPERTY_NAME);
+    return (Expression) this.getChild(Expression.class, PropertyNameTarget.PROPERTY_NAME);
   }
 
   public void setPropertyName(Expression node) {
@@ -25,7 +25,7 @@ public class PropertyNameTarget extends MessageTarget {
   }
 
   public static PropertyNameTarget newInstance(SModel sm, boolean init) {
-    return (PropertyNameTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.PropertyNameTarget", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyNameTarget) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.PropertyNameTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyNameTarget newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class SimpleTextGenOperation extends Statement {
   }
 
   public static SimpleTextGenOperation newInstance(SModel sm, boolean init) {
-    return (SimpleTextGenOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleTextGenOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.SimpleTextGenOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleTextGenOperation newInstance(SModel sm) {

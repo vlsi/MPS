@@ -17,7 +17,7 @@ public class VisitNodesStatement extends Statement {
   }
 
   public VisitBlock getVisitBlock() {
-    return (VisitBlock)this.getChild(VisitBlock.class, VisitNodesStatement.VISIT_BLOCK);
+    return (VisitBlock) this.getChild(VisitBlock.class, VisitNodesStatement.VISIT_BLOCK);
   }
 
   public void setVisitBlock(VisitBlock node) {
@@ -25,7 +25,7 @@ public class VisitNodesStatement extends Statement {
   }
 
   public static VisitNodesStatement newInstance(SModel sm, boolean init) {
-    return (VisitNodesStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitNodesStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VisitNodesStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitNodesStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VisitNodesStatement newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class Processed extends BaseConcept {
   }
 
   public static Processed newInstance(SModel sm, boolean init) {
-    return (Processed)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Processed", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Processed) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Processed", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Processed newInstance(SModel sm) {

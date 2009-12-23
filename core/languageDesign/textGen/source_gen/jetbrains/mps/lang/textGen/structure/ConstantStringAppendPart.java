@@ -33,7 +33,7 @@ public class ConstantStringAppendPart extends AbstractAppendPart {
   }
 
   public static ConstantStringAppendPart newInstance(SModel sm, boolean init) {
-    return (ConstantStringAppendPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstantStringAppendPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstantStringAppendPart newInstance(SModel sm) {

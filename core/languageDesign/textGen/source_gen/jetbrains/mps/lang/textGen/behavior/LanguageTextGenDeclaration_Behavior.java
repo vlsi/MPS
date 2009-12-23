@@ -20,7 +20,7 @@ public class LanguageTextGenDeclaration_Behavior {
     }
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "applicableHiddenParameter")));
-    return (List<SNode>)result;
+    return (List<SNode>) result;
   }
 
   public static List<SNode> virtual_getAvailableOperations_1234781444746(SNode thisNode) {
@@ -55,7 +55,7 @@ public class LanguageTextGenDeclaration_Behavior {
     if ((SLinkOperations.getTarget(node, "baseTextGen", false) == null) || !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "baseTextGen", false), "jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration"))) {
       return list;
     } else {
-      return LanguageTextGenDeclaration_Behavior.call_getBaseTextGenComponents_1234781318244(thisNode, list, (SNode)SLinkOperations.getTarget(node, "baseTextGen", false));
+      return LanguageTextGenDeclaration_Behavior.call_getBaseTextGenComponents_1234781318244(thisNode, list, (SNode) SLinkOperations.getTarget(node, "baseTextGen", false));
     }
   }
 

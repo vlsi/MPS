@@ -15,6 +15,6 @@ public class ConceptTextGenDeclaration_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitWrite(_context.getNode());
     _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "conceptDeclaration", false));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "textGenBlock", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "textGenBlock", true));
   }
 }

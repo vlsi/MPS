@@ -15,7 +15,7 @@ public class UtilityMethodCall_DataFlow extends DataFlowBuilder {
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitRead(SLinkOperations.getTarget(_context.getNode(), "function", false));
     for (SNode arg : SLinkOperations.getTargets(_context.getNode(), "parameter", true)) {
-      _context.getBuilder().build((SNode)arg);
+      _context.getBuilder().build((SNode) arg);
     }
   }
 }

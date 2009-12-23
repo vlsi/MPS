@@ -26,7 +26,7 @@ public class NodeAppendPart extends AbstractAppendPart {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, NodeAppendPart.VALUE);
+    return (Expression) this.getChild(Expression.class, NodeAppendPart.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -34,7 +34,7 @@ public class NodeAppendPart extends AbstractAppendPart {
   }
 
   public static NodeAppendPart newInstance(SModel sm, boolean init) {
-    return (NodeAppendPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.NodeAppendPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeAppendPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.NodeAppendPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeAppendPart newInstance(SModel sm) {

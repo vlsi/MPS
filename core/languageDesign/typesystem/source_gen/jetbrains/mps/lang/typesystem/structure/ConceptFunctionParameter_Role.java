@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_Role extends ConceptFunctionParameter {
   }
 
   public static ConceptFunctionParameter_Role newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_Role)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_Role) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_Role", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_Role newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class InfoAppendPart extends AbstractAppendPart {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, InfoAppendPart.VALUE);
+    return (Expression) this.getChild(Expression.class, InfoAppendPart.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -25,7 +25,7 @@ public class InfoAppendPart extends AbstractAppendPart {
   }
 
   public static InfoAppendPart newInstance(SModel sm, boolean init) {
-    return (InfoAppendPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.InfoAppendPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InfoAppendPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.InfoAppendPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InfoAppendPart newInstance(SModel sm) {

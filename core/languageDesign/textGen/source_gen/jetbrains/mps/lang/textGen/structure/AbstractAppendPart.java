@@ -16,7 +16,7 @@ public class AbstractAppendPart extends BaseConcept {
   }
 
   public static AbstractAppendPart newInstance(SModel sm, boolean init) {
-    return (AbstractAppendPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.AbstractAppendPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractAppendPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.AbstractAppendPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractAppendPart newInstance(SModel sm) {

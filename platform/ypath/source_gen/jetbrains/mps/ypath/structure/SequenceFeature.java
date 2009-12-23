@@ -83,7 +83,7 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
   }
 
   public IFeature getOpposite() {
-    return (IFeature)this.getReferent(IFeature.class, SequenceFeature.OPPOSITE);
+    return (IFeature) this.getReferent(IFeature.class, SequenceFeature.OPPOSITE);
   }
 
   public void setOpposite(IFeature node) {
@@ -91,7 +91,7 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
   }
 
   public FeatureSequenceFun getSequenceFunction() {
-    return (FeatureSequenceFun)this.getChild(FeatureSequenceFun.class, SequenceFeature.SEQUENCE_FUNCTION);
+    return (FeatureSequenceFun) this.getChild(FeatureSequenceFun.class, SequenceFeature.SEQUENCE_FUNCTION);
   }
 
   public void setSequenceFunction(FeatureSequenceFun node) {
@@ -99,7 +99,7 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
   }
 
   public FeatureSizeFun getSizeFunction() {
-    return (FeatureSizeFun)this.getChild(FeatureSizeFun.class, SequenceFeature.SIZE_FUNCTION);
+    return (FeatureSizeFun) this.getChild(FeatureSizeFun.class, SequenceFeature.SIZE_FUNCTION);
   }
 
   public void setSizeFunction(FeatureSizeFun node) {
@@ -107,7 +107,7 @@ public class SequenceFeature extends BaseConcept implements INamedConcept, IFeat
   }
 
   public static SequenceFeature newInstance(SModel sm, boolean init) {
-    return (SequenceFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.SequenceFeature", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SequenceFeature) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.SequenceFeature", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SequenceFeature newInstance(SModel sm) {

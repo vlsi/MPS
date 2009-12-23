@@ -42,7 +42,7 @@ public class ParamFeatureSequenceFun extends FeatureSequenceFun implements IPara
   }
 
   public static ParamFeatureSequenceFun newInstance(SModel sm, boolean init) {
-    return (ParamFeatureSequenceFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamFeatureSequenceFun", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParamFeatureSequenceFun) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamFeatureSequenceFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParamFeatureSequenceFun newInstance(SModel sm) {

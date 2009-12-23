@@ -20,7 +20,7 @@ public class OperationCall extends AbstractAppendPart {
   }
 
   public OperationDeclaration getFunction() {
-    return (OperationDeclaration)this.getReferent(OperationDeclaration.class, OperationCall.FUNCTION);
+    return (OperationDeclaration) this.getReferent(OperationDeclaration.class, OperationCall.FUNCTION);
   }
 
   public void setFunction(OperationDeclaration node) {
@@ -48,7 +48,7 @@ public class OperationCall extends AbstractAppendPart {
   }
 
   public static OperationCall newInstance(SModel sm, boolean init) {
-    return (OperationCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.OperationCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OperationCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.OperationCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OperationCall newInstance(SModel sm) {

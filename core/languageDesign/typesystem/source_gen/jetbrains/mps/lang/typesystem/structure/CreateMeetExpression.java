@@ -21,7 +21,7 @@ public class CreateMeetExpression extends Expression {
   }
 
   public ConceptDeclaration getConceptOfInstance() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, CreateMeetExpression.CONCEPT_OF_INSTANCE);
+    return (ConceptDeclaration) this.getReferent(ConceptDeclaration.class, CreateMeetExpression.CONCEPT_OF_INSTANCE);
   }
 
   public void setConceptOfInstance(ConceptDeclaration node) {
@@ -49,7 +49,7 @@ public class CreateMeetExpression extends Expression {
   }
 
   public static CreateMeetExpression newInstance(SModel sm, boolean init) {
-    return (CreateMeetExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.CreateMeetExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CreateMeetExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.CreateMeetExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CreateMeetExpression newInstance(SModel sm) {

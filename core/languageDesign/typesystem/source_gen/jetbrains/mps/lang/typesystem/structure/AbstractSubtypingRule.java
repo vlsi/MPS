@@ -26,7 +26,7 @@ public class AbstractSubtypingRule extends AbstractRule {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, AbstractSubtypingRule.BODY);
+    return (StatementList) this.getChild(StatementList.class, AbstractSubtypingRule.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -34,7 +34,7 @@ public class AbstractSubtypingRule extends AbstractRule {
   }
 
   public static AbstractSubtypingRule newInstance(SModel sm, boolean init) {
-    return (AbstractSubtypingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractSubtypingRule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractSubtypingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractSubtypingRule newInstance(SModel sm) {

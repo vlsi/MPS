@@ -85,7 +85,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public IFeature getOpposite() {
-    return (IFeature)this.getReferent(IFeature.class, ParamListFeature.OPPOSITE);
+    return (IFeature) this.getReferent(IFeature.class, ParamListFeature.OPPOSITE);
   }
 
   public void setOpposite(IFeature node) {
@@ -93,7 +93,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public Type getParameterType() {
-    return (Type)this.getChild(Type.class, ParamListFeature.PARAMETER_TYPE);
+    return (Type) this.getChild(Type.class, ParamListFeature.PARAMETER_TYPE);
   }
 
   public void setParameterType(Type node) {
@@ -101,7 +101,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public ParameterQueryFun getParameterQueryFunction() {
-    return (ParameterQueryFun)this.getChild(ParameterQueryFun.class, ParamListFeature.PARAMETER_QUERY_FUNCTION);
+    return (ParameterQueryFun) this.getChild(ParameterQueryFun.class, ParamListFeature.PARAMETER_QUERY_FUNCTION);
   }
 
   public void setParameterQueryFunction(ParameterQueryFun node) {
@@ -109,7 +109,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public TargetTypeFun getTargetTypeFunction() {
-    return (TargetTypeFun)this.getChild(TargetTypeFun.class, ParamListFeature.TARGET_TYPE_FUNCTION);
+    return (TargetTypeFun) this.getChild(TargetTypeFun.class, ParamListFeature.TARGET_TYPE_FUNCTION);
   }
 
   public void setTargetTypeFunction(TargetTypeFun node) {
@@ -117,7 +117,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public ToStringFun getToStringFunction() {
-    return (ToStringFun)this.getChild(ToStringFun.class, ParamListFeature.TO_STRING_FUNCTION);
+    return (ToStringFun) this.getChild(ToStringFun.class, ParamListFeature.TO_STRING_FUNCTION);
   }
 
   public void setToStringFunction(ToStringFun node) {
@@ -125,7 +125,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public GFCardinalParamFun getCardinal() {
-    return (GFCardinalParamFun)this.getChild(GFCardinalParamFun.class, ParamListFeature.CARDINAL);
+    return (GFCardinalParamFun) this.getChild(GFCardinalParamFun.class, ParamListFeature.CARDINAL);
   }
 
   public void setCardinal(GFCardinalParamFun node) {
@@ -133,7 +133,7 @@ public class ParamListFeature extends ListFeature implements IParamFeature {
   }
 
   public static ParamListFeature newInstance(SModel sm, boolean init) {
-    return (ParamListFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamListFeature", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParamListFeature) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamListFeature", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParamListFeature newInstance(SModel sm) {

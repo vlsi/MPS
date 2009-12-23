@@ -13,8 +13,8 @@ public class InequationReplacementRule_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "applicableNode", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "applicableNode", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "supertypeNode", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
   }
 }

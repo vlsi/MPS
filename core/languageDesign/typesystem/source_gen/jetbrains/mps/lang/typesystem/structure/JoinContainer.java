@@ -17,7 +17,7 @@ public class JoinContainer extends BaseConcept {
   }
 
   public JoinType getJoinType() {
-    return (JoinType)this.getChild(JoinType.class, JoinContainer.JOIN_TYPE);
+    return (JoinType) this.getChild(JoinType.class, JoinContainer.JOIN_TYPE);
   }
 
   public void setJoinType(JoinType node) {
@@ -25,7 +25,7 @@ public class JoinContainer extends BaseConcept {
   }
 
   public static JoinContainer newInstance(SModel sm, boolean init) {
-    return (JoinContainer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinContainer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (JoinContainer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinContainer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static JoinContainer newInstance(SModel sm) {

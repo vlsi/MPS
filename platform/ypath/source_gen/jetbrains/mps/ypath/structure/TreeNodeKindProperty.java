@@ -63,7 +63,7 @@ public class TreeNodeKindProperty extends BaseConcept implements INamedConcept {
   }
 
   public PropertyGetter getGetter() {
-    return (PropertyGetter)this.getChild(PropertyGetter.class, TreeNodeKindProperty.GETTER);
+    return (PropertyGetter) this.getChild(PropertyGetter.class, TreeNodeKindProperty.GETTER);
   }
 
   public void setGetter(PropertyGetter node) {
@@ -71,7 +71,7 @@ public class TreeNodeKindProperty extends BaseConcept implements INamedConcept {
   }
 
   public static TreeNodeKindProperty newInstance(SModel sm, boolean init) {
-    return (TreeNodeKindProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKindProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TreeNodeKindProperty) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKindProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TreeNodeKindProperty newInstance(SModel sm) {

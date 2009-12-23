@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_var extends ConceptFunctionParameter {
   }
 
   public static ConceptFunctionParameter_var newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_var)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_var) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_var", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_var newInstance(SModel sm) {

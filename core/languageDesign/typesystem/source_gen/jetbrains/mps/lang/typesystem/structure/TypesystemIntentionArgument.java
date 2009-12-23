@@ -19,7 +19,7 @@ public class TypesystemIntentionArgument extends BaseConcept {
   }
 
   public QuickFixArgument getQuickFixArgument() {
-    return (QuickFixArgument)this.getReferent(QuickFixArgument.class, TypesystemIntentionArgument.QUICK_FIX_ARGUMENT);
+    return (QuickFixArgument) this.getReferent(QuickFixArgument.class, TypesystemIntentionArgument.QUICK_FIX_ARGUMENT);
   }
 
   public void setQuickFixArgument(QuickFixArgument node) {
@@ -27,7 +27,7 @@ public class TypesystemIntentionArgument extends BaseConcept {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, TypesystemIntentionArgument.VALUE);
+    return (Expression) this.getChild(Expression.class, TypesystemIntentionArgument.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -35,7 +35,7 @@ public class TypesystemIntentionArgument extends BaseConcept {
   }
 
   public static TypesystemIntentionArgument newInstance(SModel sm, boolean init) {
-    return (TypesystemIntentionArgument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypesystemIntentionArgument) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemIntentionArgument", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypesystemIntentionArgument newInstance(SModel sm) {

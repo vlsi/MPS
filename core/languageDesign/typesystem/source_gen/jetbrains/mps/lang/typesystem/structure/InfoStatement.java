@@ -49,7 +49,7 @@ public class InfoStatement extends Statement implements MessageStatement {
   }
 
   public Expression getInfoText() {
-    return (Expression)this.getChild(Expression.class, InfoStatement.INFO_TEXT);
+    return (Expression) this.getChild(Expression.class, InfoStatement.INFO_TEXT);
   }
 
   public void setInfoText(Expression node) {
@@ -57,7 +57,7 @@ public class InfoStatement extends Statement implements MessageStatement {
   }
 
   public Expression getNodeToReport() {
-    return (Expression)this.getChild(Expression.class, InfoStatement.NODE_TO_REPORT);
+    return (Expression) this.getChild(Expression.class, InfoStatement.NODE_TO_REPORT);
   }
 
   public void setNodeToReport(Expression node) {
@@ -65,7 +65,7 @@ public class InfoStatement extends Statement implements MessageStatement {
   }
 
   public TypesystemIntention getHelginsIntention() {
-    return (TypesystemIntention)this.getChild(TypesystemIntention.class, InfoStatement.HELGINS_INTENTION);
+    return (TypesystemIntention) this.getChild(TypesystemIntention.class, InfoStatement.HELGINS_INTENTION);
   }
 
   public void setHelginsIntention(TypesystemIntention node) {
@@ -73,7 +73,7 @@ public class InfoStatement extends Statement implements MessageStatement {
   }
 
   public MessageTarget getMessageTarget() {
-    return (MessageTarget)this.getChild(MessageTarget.class, InfoStatement.MESSAGE_TARGET);
+    return (MessageTarget) this.getChild(MessageTarget.class, InfoStatement.MESSAGE_TARGET);
   }
 
   public void setMessageTarget(MessageTarget node) {
@@ -81,7 +81,7 @@ public class InfoStatement extends Statement implements MessageStatement {
   }
 
   public Expression getForeignMessageSource() {
-    return (Expression)this.getChild(Expression.class, InfoStatement.FOREIGN_MESSAGE_SOURCE);
+    return (Expression) this.getChild(Expression.class, InfoStatement.FOREIGN_MESSAGE_SOURCE);
   }
 
   public void setForeignMessageSource(Expression node) {
@@ -89,7 +89,7 @@ public class InfoStatement extends Statement implements MessageStatement {
   }
 
   public static InfoStatement newInstance(SModel sm, boolean init) {
-    return (InfoStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.InfoStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InfoStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.InfoStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InfoStatement newInstance(SModel sm) {

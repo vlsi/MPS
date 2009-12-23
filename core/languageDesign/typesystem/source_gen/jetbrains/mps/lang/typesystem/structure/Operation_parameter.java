@@ -16,7 +16,7 @@ public class Operation_parameter extends ConceptFunctionParameter {
   }
 
   public static Operation_parameter newInstance(SModel sm, boolean init) {
-    return (Operation_parameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Operation_parameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Operation_parameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Operation_parameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Operation_parameter newInstance(SModel sm) {

@@ -43,7 +43,7 @@ public class ToStringFun extends ConceptFunction implements IDesignFunction {
   }
 
   public static ToStringFun newInstance(SModel sm, boolean init) {
-    return (ToStringFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ToStringFun", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ToStringFun) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ToStringFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ToStringFun newInstance(SModel sm) {

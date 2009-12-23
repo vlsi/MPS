@@ -16,7 +16,7 @@ public class UtilityMethodDeclaration extends BaseMethodDeclaration {
   }
 
   public static UtilityMethodDeclaration newInstance(SModel sm, boolean init) {
-    return (UtilityMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UtilityMethodDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.UtilityMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UtilityMethodDeclaration newInstance(SModel sm) {

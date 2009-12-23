@@ -16,7 +16,7 @@ public class GenerateTextDeclaration extends ConceptFunction {
   }
 
   public static GenerateTextDeclaration newInstance(SModel sm, boolean init) {
-    return (GenerateTextDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerateTextDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerateTextDeclaration newInstance(SModel sm) {

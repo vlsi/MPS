@@ -17,7 +17,7 @@ public class MatchKindOperation extends TreePathOperation {
   }
 
   public TreeNodeKind getNodeKind() {
-    return (TreeNodeKind)this.getReferent(TreeNodeKind.class, MatchKindOperation.NODE_KIND);
+    return (TreeNodeKind) this.getReferent(TreeNodeKind.class, MatchKindOperation.NODE_KIND);
   }
 
   public void setNodeKind(TreeNodeKind node) {
@@ -25,7 +25,7 @@ public class MatchKindOperation extends TreePathOperation {
   }
 
   public TreeNodeKindOccurrence getNodeKindOccurrence() {
-    return (TreeNodeKindOccurrence)this.getChild(TreeNodeKindOccurrence.class, MatchKindOperation.NODE_KIND_OCCURRENCE);
+    return (TreeNodeKindOccurrence) this.getChild(TreeNodeKindOccurrence.class, MatchKindOperation.NODE_KIND_OCCURRENCE);
   }
 
   public void setNodeKindOccurrence(TreeNodeKindOccurrence node) {
@@ -33,7 +33,7 @@ public class MatchKindOperation extends TreePathOperation {
   }
 
   public static MatchKindOperation newInstance(SModel sm, boolean init) {
-    return (MatchKindOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.MatchKindOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchKindOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.MatchKindOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatchKindOperation newInstance(SModel sm) {

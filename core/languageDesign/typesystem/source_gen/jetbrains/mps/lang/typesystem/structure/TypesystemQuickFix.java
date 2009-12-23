@@ -58,7 +58,7 @@ public class TypesystemQuickFix extends BaseConcept implements INamedConcept {
   }
 
   public QuickFixExecuteBlock getExecuteBlock() {
-    return (QuickFixExecuteBlock)this.getChild(QuickFixExecuteBlock.class, TypesystemQuickFix.EXECUTE_BLOCK);
+    return (QuickFixExecuteBlock) this.getChild(QuickFixExecuteBlock.class, TypesystemQuickFix.EXECUTE_BLOCK);
   }
 
   public void setExecuteBlock(QuickFixExecuteBlock node) {
@@ -66,7 +66,7 @@ public class TypesystemQuickFix extends BaseConcept implements INamedConcept {
   }
 
   public QuickFixDescriptionBlock getDescriptionBlock() {
-    return (QuickFixDescriptionBlock)this.getChild(QuickFixDescriptionBlock.class, TypesystemQuickFix.DESCRIPTION_BLOCK);
+    return (QuickFixDescriptionBlock) this.getChild(QuickFixDescriptionBlock.class, TypesystemQuickFix.DESCRIPTION_BLOCK);
   }
 
   public void setDescriptionBlock(QuickFixDescriptionBlock node) {
@@ -94,7 +94,7 @@ public class TypesystemQuickFix extends BaseConcept implements INamedConcept {
   }
 
   public static TypesystemQuickFix newInstance(SModel sm, boolean init) {
-    return (TypesystemQuickFix)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypesystemQuickFix) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypesystemQuickFix newInstance(SModel sm) {

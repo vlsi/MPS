@@ -18,7 +18,7 @@ public class FoundErrorOperation extends Statement {
   }
 
   public Expression getText() {
-    return (Expression)this.getChild(Expression.class, FoundErrorOperation.TEXT);
+    return (Expression) this.getChild(Expression.class, FoundErrorOperation.TEXT);
   }
 
   public void setText(Expression node) {
@@ -26,7 +26,7 @@ public class FoundErrorOperation extends Statement {
   }
 
   public static FoundErrorOperation newInstance(SModel sm, boolean init) {
-    return (FoundErrorOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.FoundErrorOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FoundErrorOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.FoundErrorOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FoundErrorOperation newInstance(SModel sm) {

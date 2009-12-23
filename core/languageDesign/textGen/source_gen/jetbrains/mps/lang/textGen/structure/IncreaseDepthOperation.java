@@ -15,7 +15,7 @@ public class IncreaseDepthOperation extends SimpleTextGenOperation {
   }
 
   public static IncreaseDepthOperation newInstance(SModel sm, boolean init) {
-    return (IncreaseDepthOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IncreaseDepthOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.IncreaseDepthOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IncreaseDepthOperation newInstance(SModel sm) {

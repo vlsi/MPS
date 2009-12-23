@@ -13,10 +13,10 @@ public class CoerceStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "nodeToCoerce", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "pattern", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "nodeToCoerce", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "pattern", true));
     _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "endOfTrue"));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
     if ((SLinkOperations.getTarget(_context.getNode(), "elseClause", true) != null)) {
       _context.getBuilder().emitMayBeUnreachable(new Runnable() {
         public void run() {
@@ -26,7 +26,7 @@ public class CoerceStatement_DataFlow extends DataFlowBuilder {
     }
     _context.getBuilder().emitLabel("endOfTrue");
     if ((SLinkOperations.getTarget(_context.getNode(), "elseClause", true) != null)) {
-      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "elseClause", true));
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "elseClause", true));
     }
   }
 }

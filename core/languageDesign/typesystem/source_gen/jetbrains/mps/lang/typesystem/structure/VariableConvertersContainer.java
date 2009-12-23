@@ -39,7 +39,7 @@ public class VariableConvertersContainer extends BaseConcept {
   }
 
   public static VariableConvertersContainer newInstance(SModel sm, boolean init) {
-    return (VariableConvertersContainer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VariableConvertersContainer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.VariableConvertersContainer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VariableConvertersContainer newInstance(SModel sm) {

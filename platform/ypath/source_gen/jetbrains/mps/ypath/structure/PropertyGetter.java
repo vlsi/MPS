@@ -15,7 +15,7 @@ public class PropertyGetter extends LambdaMethod {
   }
 
   public static PropertyGetter newInstance(SModel sm, boolean init) {
-    return (PropertyGetter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.PropertyGetter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyGetter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.PropertyGetter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyGetter newInstance(SModel sm) {

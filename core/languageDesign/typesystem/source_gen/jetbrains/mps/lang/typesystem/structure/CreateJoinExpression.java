@@ -21,7 +21,7 @@ public class CreateJoinExpression extends Expression {
   }
 
   public ConceptDeclaration getConceptOfInstance() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, CreateJoinExpression.CONCEPT_OF_INSTANCE);
+    return (ConceptDeclaration) this.getReferent(ConceptDeclaration.class, CreateJoinExpression.CONCEPT_OF_INSTANCE);
   }
 
   public void setConceptOfInstance(ConceptDeclaration node) {
@@ -49,7 +49,7 @@ public class CreateJoinExpression extends Expression {
   }
 
   public static CreateJoinExpression newInstance(SModel sm, boolean init) {
-    return (CreateJoinExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.CreateJoinExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CreateJoinExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.CreateJoinExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CreateJoinExpression newInstance(SModel sm) {

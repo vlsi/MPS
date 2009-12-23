@@ -15,7 +15,7 @@ public class CreateGreaterThanInequationStatement extends AbstractInequationStat
   }
 
   public static CreateGreaterThanInequationStatement newInstance(SModel sm, boolean init) {
-    return (CreateGreaterThanInequationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CreateGreaterThanInequationStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.CreateGreaterThanInequationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CreateGreaterThanInequationStatement newInstance(SModel sm) {

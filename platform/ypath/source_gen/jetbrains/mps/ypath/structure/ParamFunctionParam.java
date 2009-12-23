@@ -43,7 +43,7 @@ public class ParamFunctionParam extends ConceptFunctionParameter implements IFun
   }
 
   public static ParamFunctionParam newInstance(SModel sm, boolean init) {
-    return (ParamFunctionParam)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamFunctionParam", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParamFunctionParam) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamFunctionParam", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParamFunctionParam newInstance(SModel sm) {

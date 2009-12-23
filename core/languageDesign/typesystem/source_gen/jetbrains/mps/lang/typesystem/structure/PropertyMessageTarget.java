@@ -17,7 +17,7 @@ public class PropertyMessageTarget extends MessageTarget {
   }
 
   public PropertyDeclaration getPropertyDeclaration() {
-    return (PropertyDeclaration)this.getReferent(PropertyDeclaration.class, PropertyMessageTarget.PROPERTY_DECLARATION);
+    return (PropertyDeclaration) this.getReferent(PropertyDeclaration.class, PropertyMessageTarget.PROPERTY_DECLARATION);
   }
 
   public void setPropertyDeclaration(PropertyDeclaration node) {
@@ -25,7 +25,7 @@ public class PropertyMessageTarget extends MessageTarget {
   }
 
   public static PropertyMessageTarget newInstance(SModel sm, boolean init) {
-    return (PropertyMessageTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyMessageTarget) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.PropertyMessageTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyMessageTarget newInstance(SModel sm) {

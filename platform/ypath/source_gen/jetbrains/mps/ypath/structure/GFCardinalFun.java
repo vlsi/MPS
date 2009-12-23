@@ -43,7 +43,7 @@ public class GFCardinalFun extends ConceptFunction implements IDesignFunction {
   }
 
   public static GFCardinalFun newInstance(SModel sm, boolean init) {
-    return (GFCardinalFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GFCardinalFun", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GFCardinalFun) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GFCardinalFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GFCardinalFun newInstance(SModel sm) {

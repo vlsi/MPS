@@ -34,7 +34,7 @@ public class NodeInfo extends BaseConcept {
   }
 
   public static NodeInfo newInstance(SModel sm, boolean init) {
-    return (NodeInfo)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.NodeInfo", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeInfo) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.NodeInfo", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeInfo newInstance(SModel sm) {

@@ -18,7 +18,7 @@ public class WithIndentOperation extends Statement {
   }
 
   public StatementList getList() {
-    return (StatementList)this.getChild(StatementList.class, WithIndentOperation.LIST);
+    return (StatementList) this.getChild(StatementList.class, WithIndentOperation.LIST);
   }
 
   public void setList(StatementList node) {
@@ -26,7 +26,7 @@ public class WithIndentOperation extends Statement {
   }
 
   public static WithIndentOperation newInstance(SModel sm, boolean init) {
-    return (WithIndentOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.WithIndentOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WithIndentOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.WithIndentOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WithIndentOperation newInstance(SModel sm) {

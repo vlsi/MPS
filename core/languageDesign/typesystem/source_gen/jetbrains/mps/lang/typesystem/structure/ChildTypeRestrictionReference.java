@@ -17,7 +17,7 @@ public class ChildTypeRestrictionReference extends Expression {
   }
 
   public ChildTypeRestriction getTypeRestriction() {
-    return (ChildTypeRestriction)this.getReferent(ChildTypeRestriction.class, ChildTypeRestrictionReference.TYPE_RESTRICTION);
+    return (ChildTypeRestriction) this.getReferent(ChildTypeRestriction.class, ChildTypeRestrictionReference.TYPE_RESTRICTION);
   }
 
   public void setTypeRestriction(ChildTypeRestriction node) {
@@ -25,7 +25,7 @@ public class ChildTypeRestrictionReference extends Expression {
   }
 
   public static ChildTypeRestrictionReference newInstance(SModel sm, boolean init) {
-    return (ChildTypeRestrictionReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ChildTypeRestrictionReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ChildTypeRestrictionReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ChildTypeRestrictionReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ChildTypeRestrictionReference newInstance(SModel sm) {

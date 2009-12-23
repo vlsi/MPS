@@ -13,12 +13,12 @@ public class MatchStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
     for (SNode item : SLinkOperations.getTargets(_context.getNode(), "item", true)) {
-      _context.getBuilder().build((SNode)item);
+      _context.getBuilder().build((SNode) item);
     }
     if (SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true) != null) {
-      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true));
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "ifFalseStatement", true));
     }
   }
 }

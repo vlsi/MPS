@@ -33,7 +33,7 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
             SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(tpoe, "operand", true);
             BaseIntentionProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1186145347351", 0, intentionProvider);
-            typeCheckingContext.createEquation((SNode)typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005), (SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1186145352982", true), _info_12389875345);
+            typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1186145352982", true), _info_12389875345);
           }
           {
             final SNode _representatorVar0 = typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005);
@@ -50,7 +50,7 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
                     SNode _nodeToCheck_1029348928467 = tpoe;
                     BaseIntentionProvider intentionProvider = null;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595143", 0, intentionProvider);
-                    typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595148", true), (SNode)new _Quotations.QuotationClass_1().createNode(targetType, typeCheckingContext), _info_12389875345);
+                    typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595148", true), (SNode) new _Quotations.QuotationClass_1().createNode(targetType, typeCheckingContext), _info_12389875345);
                   }
                 }
               }
@@ -64,7 +64,7 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
             SNode _nodeToCheck_1029348928467 = tpoe;
             BaseIntentionProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595324", 0, intentionProvider);
-            typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595329", true), (SNode)SLinkOperations.getTarget(treePath, "treePathType", true), _info_12389875345);
+            typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595329", true), (SNode) SLinkOperations.getTarget(treePath, "treePathType", true), _info_12389875345);
           }
         } else
         if (!(false)) {
@@ -78,7 +78,7 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
         SNode _nodeToCheck_1029348928467 = tpoe;
         BaseIntentionProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1184588384882", 0, intentionProvider);
-        typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1184588387870", true), (SNode)typeCheckingContext.typeOf(SLinkOperations.getTarget(tpoe, "operand", true), "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1184588395631", true), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1184588387870", true), (SNode) typeCheckingContext.typeOf(SLinkOperations.getTarget(tpoe, "operand", true), "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1184588395631", true), _info_12389875345);
       }
     }
   }

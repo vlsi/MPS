@@ -14,7 +14,7 @@ public class TypesystemIntention_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode argument : SLinkOperations.getTargets(_context.getNode(), "actualArgument", true)) {
-      _context.getBuilder().build((SNode)argument);
+      _context.getBuilder().build((SNode) argument);
     }
   }
 }

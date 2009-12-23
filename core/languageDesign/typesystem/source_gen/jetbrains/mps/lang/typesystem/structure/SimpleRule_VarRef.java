@@ -19,7 +19,7 @@ public class SimpleRule_VarRef extends SimpleRule {
   }
 
   public LinkDeclaration getLink() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, SimpleRule_VarRef.LINK);
+    return (LinkDeclaration) this.getReferent(LinkDeclaration.class, SimpleRule_VarRef.LINK);
   }
 
   public void setLink(LinkDeclaration node) {
@@ -27,7 +27,7 @@ public class SimpleRule_VarRef extends SimpleRule {
   }
 
   public ConceptReference getConceptReference() {
-    return (ConceptReference)this.getChild(ConceptReference.class, SimpleRule_VarRef.CONCEPT_REFERENCE);
+    return (ConceptReference) this.getChild(ConceptReference.class, SimpleRule_VarRef.CONCEPT_REFERENCE);
   }
 
   public void setConceptReference(ConceptReference node) {
@@ -35,7 +35,7 @@ public class SimpleRule_VarRef extends SimpleRule {
   }
 
   public static SimpleRule_VarRef newInstance(SModel sm, boolean init) {
-    return (SimpleRule_VarRef)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SimpleRule_VarRef", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleRule_VarRef) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SimpleRule_VarRef", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleRule_VarRef newInstance(SModel sm) {

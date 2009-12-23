@@ -18,7 +18,7 @@ public class WhereOperation extends TreePathOperation {
   }
 
   public WhereBlock getWhereBlock() {
-    return (WhereBlock)this.getChild(WhereBlock.class, WhereOperation.WHERE_BLOCK);
+    return (WhereBlock) this.getChild(WhereBlock.class, WhereOperation.WHERE_BLOCK);
   }
 
   public void setWhereBlock(WhereBlock node) {
@@ -26,7 +26,7 @@ public class WhereOperation extends TreePathOperation {
   }
 
   public Expression getFilter() {
-    return (Expression)this.getChild(Expression.class, WhereOperation.FILTER);
+    return (Expression) this.getChild(Expression.class, WhereOperation.FILTER);
   }
 
   public void setFilter(Expression node) {
@@ -34,7 +34,7 @@ public class WhereOperation extends TreePathOperation {
   }
 
   public static WhereOperation newInstance(SModel sm, boolean init) {
-    return (WhereOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.WhereOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WhereOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.WhereOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WhereOperation newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class SimpleRule extends BaseConcept {
   }
 
   public static SimpleRule newInstance(SModel sm, boolean init) {
-    return (SimpleRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SimpleRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleRule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SimpleRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleRule newInstance(SModel sm) {

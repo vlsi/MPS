@@ -20,7 +20,7 @@ public class Dependency extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getTargetConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, Dependency.TARGET_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, Dependency.TARGET_CONCEPT);
   }
 
   public void setTargetConcept(AbstractConceptDeclaration node) {
@@ -28,7 +28,7 @@ public class Dependency extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getSourceConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, Dependency.SOURCE_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, Dependency.SOURCE_CONCEPT);
   }
 
   public void setSourceConcept(AbstractConceptDeclaration node) {
@@ -36,7 +36,7 @@ public class Dependency extends BaseConcept {
   }
 
   public FindSourceBlock getFindSourceBlock() {
-    return (FindSourceBlock)this.getChild(FindSourceBlock.class, Dependency.FIND_SOURCE_BLOCK);
+    return (FindSourceBlock) this.getChild(FindSourceBlock.class, Dependency.FIND_SOURCE_BLOCK);
   }
 
   public void setFindSourceBlock(FindSourceBlock node) {
@@ -44,7 +44,7 @@ public class Dependency extends BaseConcept {
   }
 
   public static Dependency newInstance(SModel sm, boolean init) {
-    return (Dependency)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Dependency", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Dependency) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.Dependency", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Dependency newInstance(SModel sm) {

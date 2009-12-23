@@ -13,16 +13,16 @@ public class AbstractEquationStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "leftExpression", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "rightExpression", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "leftExpression", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "rightExpression", true));
     if ((SLinkOperations.getTarget(_context.getNode(), "errorString", true) != null)) {
-      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "errorString", true));
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "errorString", true));
     }
     if ((SLinkOperations.getTarget(_context.getNode(), "nodeToCheck", true) != null)) {
-      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "nodeToCheck", true));
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "nodeToCheck", true));
     }
     if ((SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true) != null)) {
-      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true));
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "helginsIntention", true));
     }
   }
 }

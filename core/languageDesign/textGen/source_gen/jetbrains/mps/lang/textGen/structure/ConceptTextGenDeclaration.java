@@ -47,7 +47,7 @@ public class ConceptTextGenDeclaration extends AbstractTextGenDeclaration implem
   }
 
   public AbstractConceptDeclaration getConceptDeclaration() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, ConceptTextGenDeclaration.CONCEPT_DECLARATION);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, ConceptTextGenDeclaration.CONCEPT_DECLARATION);
   }
 
   public void setConceptDeclaration(AbstractConceptDeclaration node) {
@@ -55,7 +55,7 @@ public class ConceptTextGenDeclaration extends AbstractTextGenDeclaration implem
   }
 
   public ExtensionDeclaration getExtension() {
-    return (ExtensionDeclaration)this.getChild(ExtensionDeclaration.class, ConceptTextGenDeclaration.EXTENSION);
+    return (ExtensionDeclaration) this.getChild(ExtensionDeclaration.class, ConceptTextGenDeclaration.EXTENSION);
   }
 
   public void setExtension(ExtensionDeclaration node) {
@@ -63,7 +63,7 @@ public class ConceptTextGenDeclaration extends AbstractTextGenDeclaration implem
   }
 
   public GenerateTextDeclaration getTextGenBlock() {
-    return (GenerateTextDeclaration)this.getChild(GenerateTextDeclaration.class, ConceptTextGenDeclaration.TEXT_GEN_BLOCK);
+    return (GenerateTextDeclaration) this.getChild(GenerateTextDeclaration.class, ConceptTextGenDeclaration.TEXT_GEN_BLOCK);
   }
 
   public void setTextGenBlock(GenerateTextDeclaration node) {
@@ -71,7 +71,7 @@ public class ConceptTextGenDeclaration extends AbstractTextGenDeclaration implem
   }
 
   public static ConceptTextGenDeclaration newInstance(SModel sm, boolean init) {
-    return (ConceptTextGenDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptTextGenDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptTextGenDeclaration newInstance(SModel sm) {

@@ -21,7 +21,7 @@ public class ConceptClauseLinkInfo extends BaseConcept {
   }
 
   public LinkDeclaration getLinkDeclaration() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, ConceptClauseLinkInfo.LINK_DECLARATION);
+    return (LinkDeclaration) this.getReferent(LinkDeclaration.class, ConceptClauseLinkInfo.LINK_DECLARATION);
   }
 
   public void setLinkDeclaration(LinkDeclaration node) {
@@ -29,7 +29,7 @@ public class ConceptClauseLinkInfo extends BaseConcept {
   }
 
   public Expression getTargetNode() {
-    return (Expression)this.getChild(Expression.class, ConceptClauseLinkInfo.TARGET_NODE);
+    return (Expression) this.getChild(Expression.class, ConceptClauseLinkInfo.TARGET_NODE);
   }
 
   public void setTargetNode(Expression node) {
@@ -37,7 +37,7 @@ public class ConceptClauseLinkInfo extends BaseConcept {
   }
 
   public Expression getChildIndex() {
-    return (Expression)this.getChild(Expression.class, ConceptClauseLinkInfo.CHILD_INDEX);
+    return (Expression) this.getChild(Expression.class, ConceptClauseLinkInfo.CHILD_INDEX);
   }
 
   public void setChildIndex(Expression node) {
@@ -45,7 +45,7 @@ public class ConceptClauseLinkInfo extends BaseConcept {
   }
 
   public static ConceptClauseLinkInfo newInstance(SModel sm, boolean init) {
-    return (ConceptClauseLinkInfo)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptClauseLinkInfo) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ConceptClauseLinkInfo", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptClauseLinkInfo newInstance(SModel sm) {

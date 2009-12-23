@@ -42,7 +42,7 @@ public class GFCardinalParamFun extends GFCardinalFun implements IParamFeatureFu
   }
 
   public static GFCardinalParamFun newInstance(SModel sm, boolean init) {
-    return (GFCardinalParamFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GFCardinalParamFun", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GFCardinalParamFun) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GFCardinalParamFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GFCardinalParamFun newInstance(SModel sm) {

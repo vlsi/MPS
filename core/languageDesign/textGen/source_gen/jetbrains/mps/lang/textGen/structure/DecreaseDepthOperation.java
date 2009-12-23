@@ -15,7 +15,7 @@ public class DecreaseDepthOperation extends SimpleTextGenOperation {
   }
 
   public static DecreaseDepthOperation newInstance(SModel sm, boolean init) {
-    return (DecreaseDepthOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DecreaseDepthOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.DecreaseDepthOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DecreaseDepthOperation newInstance(SModel sm) {

@@ -18,7 +18,7 @@ public class VariableConverterItem extends BaseConcept {
   }
 
   public VariableConverterItem_ApplicableBlock getApplicableBlock() {
-    return (VariableConverterItem_ApplicableBlock)this.getChild(VariableConverterItem_ApplicableBlock.class, VariableConverterItem.APPLICABLE_BLOCK);
+    return (VariableConverterItem_ApplicableBlock) this.getChild(VariableConverterItem_ApplicableBlock.class, VariableConverterItem.APPLICABLE_BLOCK);
   }
 
   public void setApplicableBlock(VariableConverterItem_ApplicableBlock node) {
@@ -26,7 +26,7 @@ public class VariableConverterItem extends BaseConcept {
   }
 
   public VariableConverterItem_ConvertBlock getConvertBlock() {
-    return (VariableConverterItem_ConvertBlock)this.getChild(VariableConverterItem_ConvertBlock.class, VariableConverterItem.CONVERT_BLOCK);
+    return (VariableConverterItem_ConvertBlock) this.getChild(VariableConverterItem_ConvertBlock.class, VariableConverterItem.CONVERT_BLOCK);
   }
 
   public void setConvertBlock(VariableConverterItem_ConvertBlock node) {
@@ -34,7 +34,7 @@ public class VariableConverterItem extends BaseConcept {
   }
 
   public static VariableConverterItem newInstance(SModel sm, boolean init) {
-    return (VariableConverterItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.VariableConverterItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VariableConverterItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.VariableConverterItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VariableConverterItem newInstance(SModel sm) {

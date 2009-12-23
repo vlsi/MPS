@@ -49,7 +49,7 @@ public class WarningStatement extends Statement implements MessageStatement {
   }
 
   public Expression getWarningText() {
-    return (Expression)this.getChild(Expression.class, WarningStatement.WARNING_TEXT);
+    return (Expression) this.getChild(Expression.class, WarningStatement.WARNING_TEXT);
   }
 
   public void setWarningText(Expression node) {
@@ -57,7 +57,7 @@ public class WarningStatement extends Statement implements MessageStatement {
   }
 
   public Expression getNodeToReport() {
-    return (Expression)this.getChild(Expression.class, WarningStatement.NODE_TO_REPORT);
+    return (Expression) this.getChild(Expression.class, WarningStatement.NODE_TO_REPORT);
   }
 
   public void setNodeToReport(Expression node) {
@@ -65,7 +65,7 @@ public class WarningStatement extends Statement implements MessageStatement {
   }
 
   public TypesystemIntention getHelginsIntention() {
-    return (TypesystemIntention)this.getChild(TypesystemIntention.class, WarningStatement.HELGINS_INTENTION);
+    return (TypesystemIntention) this.getChild(TypesystemIntention.class, WarningStatement.HELGINS_INTENTION);
   }
 
   public void setHelginsIntention(TypesystemIntention node) {
@@ -73,7 +73,7 @@ public class WarningStatement extends Statement implements MessageStatement {
   }
 
   public MessageTarget getMessageTarget() {
-    return (MessageTarget)this.getChild(MessageTarget.class, WarningStatement.MESSAGE_TARGET);
+    return (MessageTarget) this.getChild(MessageTarget.class, WarningStatement.MESSAGE_TARGET);
   }
 
   public void setMessageTarget(MessageTarget node) {
@@ -81,7 +81,7 @@ public class WarningStatement extends Statement implements MessageStatement {
   }
 
   public Expression getForeignMessageSource() {
-    return (Expression)this.getChild(Expression.class, WarningStatement.FOREIGN_MESSAGE_SOURCE);
+    return (Expression) this.getChild(Expression.class, WarningStatement.FOREIGN_MESSAGE_SOURCE);
   }
 
   public void setForeignMessageSource(Expression node) {
@@ -89,7 +89,7 @@ public class WarningStatement extends Statement implements MessageStatement {
   }
 
   public static WarningStatement newInstance(SModel sm, boolean init) {
-    return (WarningStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.WarningStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WarningStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.WarningStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WarningStatement newInstance(SModel sm) {

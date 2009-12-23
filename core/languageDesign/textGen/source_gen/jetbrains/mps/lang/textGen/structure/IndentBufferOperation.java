@@ -15,7 +15,7 @@ public class IndentBufferOperation extends SimpleTextGenOperation {
   }
 
   public static IndentBufferOperation newInstance(SModel sm, boolean init) {
-    return (IndentBufferOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.IndentBufferOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IndentBufferOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.IndentBufferOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IndentBufferOperation newInstance(SModel sm) {

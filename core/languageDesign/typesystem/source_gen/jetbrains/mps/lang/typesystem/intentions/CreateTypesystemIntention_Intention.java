@@ -43,7 +43,7 @@ public class CreateTypesystemIntention_Intention extends BaseIntention implement
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (editorContext.getSelectedCell().getLinkDeclaration() != ((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.typesystem.structure.MessageStatement", "helginsIntention")))) {
+    if (editorContext.getSelectedCell().getLinkDeclaration() != ((LinkDeclaration) SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.typesystem.structure.MessageStatement", "helginsIntention")))) {
       return false;
     }
     return SLinkOperations.getTarget(node, "helginsIntention", true) == null;

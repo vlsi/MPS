@@ -17,7 +17,7 @@ public class FromOperation extends TreePathOperation {
   }
 
   public Expression getFromExpression() {
-    return (Expression)this.getChild(Expression.class, FromOperation.FROM_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, FromOperation.FROM_EXPRESSION);
   }
 
   public void setFromExpression(Expression node) {
@@ -25,7 +25,7 @@ public class FromOperation extends TreePathOperation {
   }
 
   public static FromOperation newInstance(SModel sm, boolean init) {
-    return (FromOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.FromOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FromOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.FromOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FromOperation newInstance(SModel sm) {

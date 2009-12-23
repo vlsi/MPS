@@ -43,7 +43,7 @@ public class ExpressionFunctionParam extends ConceptFunctionParameter implements
   }
 
   public static ExpressionFunctionParam newInstance(SModel sm, boolean init) {
-    return (ExpressionFunctionParam)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ExpressionFunctionParam", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExpressionFunctionParam) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ExpressionFunctionParam", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExpressionFunctionParam newInstance(SModel sm) {

@@ -18,7 +18,7 @@ public class NodeKindCase extends BaseConcept {
   }
 
   public StatementList getStatementList() {
-    return (StatementList)this.getChild(StatementList.class, NodeKindCase.STATEMENT_LIST);
+    return (StatementList) this.getChild(StatementList.class, NodeKindCase.STATEMENT_LIST);
   }
 
   public void setStatementList(StatementList node) {
@@ -26,7 +26,7 @@ public class NodeKindCase extends BaseConcept {
   }
 
   public static NodeKindCase newInstance(SModel sm, boolean init) {
-    return (NodeKindCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.NodeKindCase", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeKindCase) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.NodeKindCase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeKindCase newInstance(SModel sm) {

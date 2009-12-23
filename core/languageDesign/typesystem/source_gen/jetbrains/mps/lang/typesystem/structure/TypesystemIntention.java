@@ -29,7 +29,7 @@ public class TypesystemIntention extends BaseConcept {
   }
 
   public TypesystemQuickFix getQuickFix() {
-    return (TypesystemQuickFix)this.getReferent(TypesystemQuickFix.class, TypesystemIntention.QUICK_FIX);
+    return (TypesystemQuickFix) this.getReferent(TypesystemQuickFix.class, TypesystemIntention.QUICK_FIX);
   }
 
   public void setQuickFix(TypesystemQuickFix node) {
@@ -57,7 +57,7 @@ public class TypesystemIntention extends BaseConcept {
   }
 
   public static TypesystemIntention newInstance(SModel sm, boolean init) {
-    return (TypesystemIntention)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemIntention", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypesystemIntention) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemIntention", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypesystemIntention newInstance(SModel sm) {

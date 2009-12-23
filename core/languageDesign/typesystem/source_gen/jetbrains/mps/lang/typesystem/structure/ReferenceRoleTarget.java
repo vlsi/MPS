@@ -17,7 +17,7 @@ public class ReferenceRoleTarget extends MessageTarget {
   }
 
   public Expression getReferenceRole() {
-    return (Expression)this.getChild(Expression.class, ReferenceRoleTarget.REFERENCE_ROLE);
+    return (Expression) this.getChild(Expression.class, ReferenceRoleTarget.REFERENCE_ROLE);
   }
 
   public void setReferenceRole(Expression node) {
@@ -25,7 +25,7 @@ public class ReferenceRoleTarget extends MessageTarget {
   }
 
   public static ReferenceRoleTarget newInstance(SModel sm, boolean init) {
-    return (ReferenceRoleTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReferenceRoleTarget) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ReferenceRoleTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReferenceRoleTarget newInstance(SModel sm) {

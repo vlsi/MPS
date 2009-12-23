@@ -15,7 +15,7 @@ public class ChildrenBlock extends LambdaMethod {
   }
 
   public static ChildrenBlock newInstance(SModel sm, boolean init) {
-    return (ChildrenBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ChildrenBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ChildrenBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ChildrenBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ChildrenBlock newInstance(SModel sm) {

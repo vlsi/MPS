@@ -16,7 +16,7 @@ public class OperationContextExpression extends Expression {
   }
 
   public static OperationContextExpression newInstance(SModel sm, boolean init) {
-    return (OperationContextExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OperationContextExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OperationContextExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OperationContextExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OperationContextExpression newInstance(SModel sm) {

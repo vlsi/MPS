@@ -16,7 +16,7 @@ public class MessageTarget extends BaseConcept {
   }
 
   public static MessageTarget newInstance(SModel sm, boolean init) {
-    return (MessageTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MessageTarget", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MessageTarget) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MessageTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MessageTarget newInstance(SModel sm) {

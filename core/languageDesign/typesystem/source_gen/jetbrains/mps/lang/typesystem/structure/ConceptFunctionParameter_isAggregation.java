@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_isAggregation extends ConceptFunctionParam
   }
 
   public static ConceptFunctionParameter_isAggregation newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_isAggregation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_isAggregation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ConceptFunctionParameter_isAggregation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_isAggregation newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class LeftOperandType_parameter extends ConceptFunctionParameter {
   }
 
   public static LeftOperandType_parameter newInstance(SModel sm, boolean init) {
-    return (LeftOperandType_parameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LeftOperandType_parameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.LeftOperandType_parameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LeftOperandType_parameter newInstance(SModel sm) {

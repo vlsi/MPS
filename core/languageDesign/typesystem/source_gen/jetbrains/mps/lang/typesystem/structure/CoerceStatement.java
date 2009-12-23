@@ -22,7 +22,7 @@ public class CoerceStatement extends Statement {
   }
 
   public ApplicableNodeCondition getPattern() {
-    return (ApplicableNodeCondition)this.getChild(ApplicableNodeCondition.class, CoerceStatement.PATTERN);
+    return (ApplicableNodeCondition) this.getChild(ApplicableNodeCondition.class, CoerceStatement.PATTERN);
   }
 
   public void setPattern(ApplicableNodeCondition node) {
@@ -30,7 +30,7 @@ public class CoerceStatement extends Statement {
   }
 
   public Expression getNodeToCoerce() {
-    return (Expression)this.getChild(Expression.class, CoerceStatement.NODE_TO_COERCE);
+    return (Expression) this.getChild(Expression.class, CoerceStatement.NODE_TO_COERCE);
   }
 
   public void setNodeToCoerce(Expression node) {
@@ -38,7 +38,7 @@ public class CoerceStatement extends Statement {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, CoerceStatement.BODY);
+    return (StatementList) this.getChild(StatementList.class, CoerceStatement.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -46,7 +46,7 @@ public class CoerceStatement extends Statement {
   }
 
   public StatementList getElseClause() {
-    return (StatementList)this.getChild(StatementList.class, CoerceStatement.ELSE_CLAUSE);
+    return (StatementList) this.getChild(StatementList.class, CoerceStatement.ELSE_CLAUSE);
   }
 
   public void setElseClause(StatementList node) {
@@ -54,7 +54,7 @@ public class CoerceStatement extends Statement {
   }
 
   public static CoerceStatement newInstance(SModel sm, boolean init) {
-    return (CoerceStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.CoerceStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CoerceStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.CoerceStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CoerceStatement newInstance(SModel sm) {

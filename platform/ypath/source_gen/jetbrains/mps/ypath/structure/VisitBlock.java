@@ -18,7 +18,7 @@ public class VisitBlock extends LambdaMethod {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, VisitBlock.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, VisitBlock.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -26,7 +26,7 @@ public class VisitBlock extends LambdaMethod {
   }
 
   public VisitParameterDeclarationList getVisitParameterDeclarationList() {
-    return (VisitParameterDeclarationList)this.getChild(VisitParameterDeclarationList.class, VisitBlock.VISIT_PARAMETER_DECLARATION_LIST);
+    return (VisitParameterDeclarationList) this.getChild(VisitParameterDeclarationList.class, VisitBlock.VISIT_PARAMETER_DECLARATION_LIST);
   }
 
   public void setVisitParameterDeclarationList(VisitParameterDeclarationList node) {
@@ -34,7 +34,7 @@ public class VisitBlock extends LambdaMethod {
   }
 
   public static VisitBlock newInstance(SModel sm, boolean init) {
-    return (VisitBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VisitBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.VisitBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VisitBlock newInstance(SModel sm) {

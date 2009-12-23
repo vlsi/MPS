@@ -16,7 +16,7 @@ public class IsReplacementRuleApplicable_ConceptFunction extends ConceptFunction
   }
 
   public static IsReplacementRuleApplicable_ConceptFunction newInstance(SModel sm, boolean init) {
-    return (IsReplacementRuleApplicable_ConceptFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IsReplacementRuleApplicable_ConceptFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.IsReplacementRuleApplicable_ConceptFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IsReplacementRuleApplicable_ConceptFunction newInstance(SModel sm) {

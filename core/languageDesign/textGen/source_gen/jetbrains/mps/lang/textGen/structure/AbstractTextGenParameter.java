@@ -16,7 +16,7 @@ public class AbstractTextGenParameter extends ConceptFunctionParameter {
   }
 
   public static AbstractTextGenParameter newInstance(SModel sm, boolean init) {
-    return (AbstractTextGenParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractTextGenParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.AbstractTextGenParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractTextGenParameter newInstance(SModel sm) {

@@ -26,7 +26,7 @@ public class AbstractCheckingRule extends AbstractRule {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, AbstractCheckingRule.BODY);
+    return (StatementList) this.getChild(StatementList.class, AbstractCheckingRule.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -34,7 +34,7 @@ public class AbstractCheckingRule extends AbstractRule {
   }
 
   public static AbstractCheckingRule newInstance(SModel sm, boolean init) {
-    return (AbstractCheckingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractCheckingRule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractCheckingRule newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class NewLineAppendPart extends AbstractAppendPart {
   }
 
   public static NewLineAppendPart newInstance(SModel sm, boolean init) {
-    return (NewLineAppendPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.NewLineAppendPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NewLineAppendPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.NewLineAppendPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NewLineAppendPart newInstance(SModel sm) {

@@ -54,7 +54,7 @@ public class OverloadedOperatorTypeRule extends AbstractOverloadedOpsTypeRule {
   }
 
   public Expression getLeftOperandType() {
-    return (Expression)this.getChild(Expression.class, OverloadedOperatorTypeRule.LEFT_OPERAND_TYPE);
+    return (Expression) this.getChild(Expression.class, OverloadedOperatorTypeRule.LEFT_OPERAND_TYPE);
   }
 
   public void setLeftOperandType(Expression node) {
@@ -62,7 +62,7 @@ public class OverloadedOperatorTypeRule extends AbstractOverloadedOpsTypeRule {
   }
 
   public Expression getRightOperandType() {
-    return (Expression)this.getChild(Expression.class, OverloadedOperatorTypeRule.RIGHT_OPERAND_TYPE);
+    return (Expression) this.getChild(Expression.class, OverloadedOperatorTypeRule.RIGHT_OPERAND_TYPE);
   }
 
   public void setRightOperandType(Expression node) {
@@ -70,7 +70,7 @@ public class OverloadedOperatorTypeRule extends AbstractOverloadedOpsTypeRule {
   }
 
   public static OverloadedOperatorTypeRule newInstance(SModel sm, boolean init) {
-    return (OverloadedOperatorTypeRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OverloadedOperatorTypeRule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OverloadedOperatorTypeRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OverloadedOperatorTypeRule newInstance(SModel sm) {

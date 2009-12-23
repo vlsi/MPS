@@ -14,6 +14,6 @@ public class OperationDeclaration_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitWrite(_context.getNode());
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
   }
 }

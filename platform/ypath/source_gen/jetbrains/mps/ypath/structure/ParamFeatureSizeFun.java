@@ -42,7 +42,7 @@ public class ParamFeatureSizeFun extends FeatureSizeFun implements IParamFeature
   }
 
   public static ParamFeatureSizeFun newInstance(SModel sm, boolean init) {
-    return (ParamFeatureSizeFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamFeatureSizeFun", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParamFeatureSizeFun) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamFeatureSizeFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParamFeatureSizeFun newInstance(SModel sm) {

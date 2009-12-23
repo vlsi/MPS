@@ -22,7 +22,7 @@ public class MatchStatement extends Statement {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, MatchStatement.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, MatchStatement.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -30,7 +30,7 @@ public class MatchStatement extends Statement {
   }
 
   public Statement getIfFalseStatement() {
-    return (Statement)this.getChild(Statement.class, MatchStatement.IF_FALSE_STATEMENT);
+    return (Statement) this.getChild(Statement.class, MatchStatement.IF_FALSE_STATEMENT);
   }
 
   public void setIfFalseStatement(Statement node) {
@@ -58,7 +58,7 @@ public class MatchStatement extends Statement {
   }
 
   public static MatchStatement newInstance(SModel sm, boolean init) {
-    return (MatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatchStatement newInstance(SModel sm) {

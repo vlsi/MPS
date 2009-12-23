@@ -18,7 +18,7 @@ public class TreePathAdapterExpression extends Expression {
   }
 
   public TreePathAspect getTreepathAspect() {
-    return (TreePathAspect)this.getReferent(TreePathAspect.class, TreePathAdapterExpression.TREEPATH_ASPECT);
+    return (TreePathAspect) this.getReferent(TreePathAspect.class, TreePathAdapterExpression.TREEPATH_ASPECT);
   }
 
   public void setTreepathAspect(TreePathAspect node) {
@@ -26,7 +26,7 @@ public class TreePathAdapterExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, TreePathAdapterExpression.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, TreePathAdapterExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -34,7 +34,7 @@ public class TreePathAdapterExpression extends Expression {
   }
 
   public static TreePathAdapterExpression newInstance(SModel sm, boolean init) {
-    return (TreePathAdapterExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAdapterExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TreePathAdapterExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAdapterExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TreePathAdapterExpression newInstance(SModel sm) {

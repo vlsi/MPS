@@ -82,7 +82,7 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
   }
 
   public IFeature getOpposite() {
-    return (IFeature)this.getReferent(IFeature.class, GenericFeature.OPPOSITE);
+    return (IFeature) this.getReferent(IFeature.class, GenericFeature.OPPOSITE);
   }
 
   public void setOpposite(IFeature node) {
@@ -90,7 +90,7 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
   }
 
   public GFGetterFun getGetter() {
-    return (GFGetterFun)this.getChild(GFGetterFun.class, GenericFeature.GETTER);
+    return (GFGetterFun) this.getChild(GFGetterFun.class, GenericFeature.GETTER);
   }
 
   public void setGetter(GFGetterFun node) {
@@ -98,7 +98,7 @@ public class GenericFeature extends BaseConcept implements IGenericFeature, INam
   }
 
   public static GenericFeature newInstance(SModel sm, boolean init) {
-    return (GenericFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeature", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenericFeature) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GenericFeature", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenericFeature newInstance(SModel sm) {

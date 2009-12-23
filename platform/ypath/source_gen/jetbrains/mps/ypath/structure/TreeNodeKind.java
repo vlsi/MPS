@@ -57,7 +57,7 @@ public class TreeNodeKind extends BaseConcept implements INamedConcept {
   }
 
   public KindBlock getTrigger() {
-    return (KindBlock)this.getChild(KindBlock.class, TreeNodeKind.TRIGGER);
+    return (KindBlock) this.getChild(KindBlock.class, TreeNodeKind.TRIGGER);
   }
 
   public void setTrigger(KindBlock node) {
@@ -85,7 +85,7 @@ public class TreeNodeKind extends BaseConcept implements INamedConcept {
   }
 
   public static TreeNodeKind newInstance(SModel sm, boolean init) {
-    return (TreeNodeKind)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKind", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TreeNodeKind) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKind", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TreeNodeKind newInstance(SModel sm) {

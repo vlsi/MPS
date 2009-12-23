@@ -21,7 +21,7 @@ public class LanguageTextGenDeclaration extends AbstractTextGenDeclaration {
   }
 
   public LanguageTextGenDeclaration getBaseTextGen() {
-    return (LanguageTextGenDeclaration)this.getReferent(LanguageTextGenDeclaration.class, LanguageTextGenDeclaration.BASE_TEXT_GEN);
+    return (LanguageTextGenDeclaration) this.getReferent(LanguageTextGenDeclaration.class, LanguageTextGenDeclaration.BASE_TEXT_GEN);
   }
 
   public void setBaseTextGen(LanguageTextGenDeclaration node) {
@@ -69,7 +69,7 @@ public class LanguageTextGenDeclaration extends AbstractTextGenDeclaration {
   }
 
   public static LanguageTextGenDeclaration newInstance(SModel sm, boolean init) {
-    return (LanguageTextGenDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LanguageTextGenDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.LanguageTextGenDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LanguageTextGenDeclaration newInstance(SModel sm) {

@@ -10,6 +10,6 @@ public class TextGen_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("b83431fe-5c8f-40bc-8a36-65e25f4dd253(jetbrains.mps.lang.textGen)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

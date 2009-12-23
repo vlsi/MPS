@@ -16,7 +16,7 @@ public class InequationsGroupReference extends DefaultGroupReference {
   }
 
   public InequationsGroup getGroup() {
-    return (InequationsGroup)this.getReferent(InequationsGroup.class, InequationsGroupReference.GROUP);
+    return (InequationsGroup) this.getReferent(InequationsGroup.class, InequationsGroupReference.GROUP);
   }
 
   public void setGroup(InequationsGroup node) {
@@ -24,7 +24,7 @@ public class InequationsGroupReference extends DefaultGroupReference {
   }
 
   public static InequationsGroupReference newInstance(SModel sm, boolean init) {
-    return (InequationsGroupReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.InequationsGroupReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InequationsGroupReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.InequationsGroupReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InequationsGroupReference newInstance(SModel sm) {

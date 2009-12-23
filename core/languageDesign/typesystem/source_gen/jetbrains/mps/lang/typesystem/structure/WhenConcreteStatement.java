@@ -67,7 +67,7 @@ public class WhenConcreteStatement extends Statement implements Closureoid {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, WhenConcreteStatement.BODY);
+    return (StatementList) this.getChild(StatementList.class, WhenConcreteStatement.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -75,7 +75,7 @@ public class WhenConcreteStatement extends Statement implements Closureoid {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(Expression.class, WhenConcreteStatement.ARGUMENT);
+    return (Expression) this.getChild(Expression.class, WhenConcreteStatement.ARGUMENT);
   }
 
   public void setArgument(Expression node) {
@@ -83,7 +83,7 @@ public class WhenConcreteStatement extends Statement implements Closureoid {
   }
 
   public WhenConcreteVariableDeclaration getArgumentRepresentator() {
-    return (WhenConcreteVariableDeclaration)this.getChild(WhenConcreteVariableDeclaration.class, WhenConcreteStatement.ARGUMENT_REPRESENTATOR);
+    return (WhenConcreteVariableDeclaration) this.getChild(WhenConcreteVariableDeclaration.class, WhenConcreteStatement.ARGUMENT_REPRESENTATOR);
   }
 
   public void setArgumentRepresentator(WhenConcreteVariableDeclaration node) {
@@ -91,7 +91,7 @@ public class WhenConcreteStatement extends Statement implements Closureoid {
   }
 
   public static WhenConcreteStatement newInstance(SModel sm, boolean init) {
-    return (WhenConcreteStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WhenConcreteStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.WhenConcreteStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WhenConcreteStatement newInstance(SModel sm) {

@@ -18,7 +18,7 @@ public class PatternVariableReference extends Expression {
   }
 
   public PatternVariableDeclaration getPatternVarDecl() {
-    return (PatternVariableDeclaration)this.getReferent(PatternVariableDeclaration.class, PatternVariableReference.PATTERN_VAR_DECL);
+    return (PatternVariableDeclaration) this.getReferent(PatternVariableDeclaration.class, PatternVariableReference.PATTERN_VAR_DECL);
   }
 
   public void setPatternVarDecl(PatternVariableDeclaration node) {
@@ -26,7 +26,7 @@ public class PatternVariableReference extends Expression {
   }
 
   public static PatternVariableReference newInstance(SModel sm, boolean init) {
-    return (PatternVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.PatternVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PatternVariableReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.PatternVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PatternVariableReference newInstance(SModel sm) {

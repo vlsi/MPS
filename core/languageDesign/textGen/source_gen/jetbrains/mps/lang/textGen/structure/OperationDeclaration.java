@@ -25,7 +25,7 @@ public class OperationDeclaration extends BaseMethodDeclaration {
   }
 
   public static OperationDeclaration newInstance(SModel sm, boolean init) {
-    return (OperationDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.OperationDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OperationDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.textGen.structure.OperationDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OperationDeclaration newInstance(SModel sm) {

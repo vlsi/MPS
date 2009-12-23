@@ -10,6 +10,6 @@ public class Ypath_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("d4e445fa-e1ac-4fc8-8d3b-e62b05d0ea4c(jetbrains.mps.ypath)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

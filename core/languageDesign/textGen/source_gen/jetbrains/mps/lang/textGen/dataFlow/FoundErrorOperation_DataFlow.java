@@ -13,6 +13,6 @@ public class FoundErrorOperation_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "text", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "text", true));
   }
 }

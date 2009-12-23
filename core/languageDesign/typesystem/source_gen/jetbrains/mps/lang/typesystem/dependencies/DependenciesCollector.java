@@ -124,7 +124,7 @@ public class DependenciesCollector {
                       }
                       List<SNode> list = CollectionUtil.filter(SNodeOperations.getParent(nodeStatement).getChildren(), new Condition() {
                         public boolean met(Object p0) {
-                          return SNodeOperations.isInstanceOf(((SNode)p0), "jetbrains.mps.baseLanguage.structure.Statement");
+                          return SNodeOperations.isInstanceOf(((SNode) p0), "jetbrains.mps.baseLanguage.structure.Statement");
                         }
                       });
                       if (ListSequence.fromList(list).indexOf(nodeStatement) <= ListSequence.fromList(list).indexOf(usageStatement)) {

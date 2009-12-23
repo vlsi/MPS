@@ -16,7 +16,7 @@ public class IndexFunctionParam extends ConceptFunctionParameter {
   }
 
   public static IndexFunctionParam newInstance(SModel sm, boolean init) {
-    return (IndexFunctionParam)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.IndexFunctionParam", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IndexFunctionParam) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.IndexFunctionParam", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IndexFunctionParam newInstance(SModel sm) {

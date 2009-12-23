@@ -83,7 +83,7 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
   }
 
   public IFeature getOpposite() {
-    return (IFeature)this.getReferent(IFeature.class, ListFeature.OPPOSITE);
+    return (IFeature) this.getReferent(IFeature.class, ListFeature.OPPOSITE);
   }
 
   public void setOpposite(IFeature node) {
@@ -91,7 +91,7 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
   }
 
   public FeatureGetFun getGetFunction() {
-    return (FeatureGetFun)this.getChild(FeatureGetFun.class, ListFeature.GET_FUNCTION);
+    return (FeatureGetFun) this.getChild(FeatureGetFun.class, ListFeature.GET_FUNCTION);
   }
 
   public void setGetFunction(FeatureGetFun node) {
@@ -99,7 +99,7 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
   }
 
   public FeatureSizeFun getSizeFunction() {
-    return (FeatureSizeFun)this.getChild(FeatureSizeFun.class, ListFeature.SIZE_FUNCTION);
+    return (FeatureSizeFun) this.getChild(FeatureSizeFun.class, ListFeature.SIZE_FUNCTION);
   }
 
   public void setSizeFunction(FeatureSizeFun node) {
@@ -107,7 +107,7 @@ public class ListFeature extends BaseConcept implements INamedConcept, IFeature 
   }
 
   public static ListFeature newInstance(SModel sm, boolean init) {
-    return (ListFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ListFeature", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ListFeature) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ListFeature", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ListFeature newInstance(SModel sm) {

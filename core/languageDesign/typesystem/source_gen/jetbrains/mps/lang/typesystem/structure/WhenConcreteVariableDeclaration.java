@@ -16,7 +16,7 @@ public class WhenConcreteVariableDeclaration extends VariableDeclaration {
   }
 
   public static WhenConcreteVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (WhenConcreteVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WhenConcreteVariableDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.WhenConcreteVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WhenConcreteVariableDeclaration newInstance(SModel sm) {

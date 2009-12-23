@@ -21,6 +21,6 @@ public class GenericParamFeature_writable_PropertyConstraint implements IModelCo
   }
 
   public void execPropertySet(final SNode node, final String propertyName, final String propertyValue, final IScope scope) {
-    //  nothing to do, read-only property
+    //  nothing to do, read-only property 
   }
 }

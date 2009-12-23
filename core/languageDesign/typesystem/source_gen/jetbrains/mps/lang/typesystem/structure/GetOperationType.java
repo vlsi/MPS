@@ -19,7 +19,7 @@ public class GetOperationType extends Expression {
   }
 
   public Expression getOperation() {
-    return (Expression)this.getChild(Expression.class, GetOperationType.OPERATION);
+    return (Expression) this.getChild(Expression.class, GetOperationType.OPERATION);
   }
 
   public void setOperation(Expression node) {
@@ -27,7 +27,7 @@ public class GetOperationType extends Expression {
   }
 
   public Expression getLeftOperandType() {
-    return (Expression)this.getChild(Expression.class, GetOperationType.LEFT_OPERAND_TYPE);
+    return (Expression) this.getChild(Expression.class, GetOperationType.LEFT_OPERAND_TYPE);
   }
 
   public void setLeftOperandType(Expression node) {
@@ -35,7 +35,7 @@ public class GetOperationType extends Expression {
   }
 
   public Expression getRightOperandType() {
-    return (Expression)this.getChild(Expression.class, GetOperationType.RIGHT_OPERAND_TYPE);
+    return (Expression) this.getChild(Expression.class, GetOperationType.RIGHT_OPERAND_TYPE);
   }
 
   public void setRightOperandType(Expression node) {
@@ -43,7 +43,7 @@ public class GetOperationType extends Expression {
   }
 
   public static GetOperationType newInstance(SModel sm, boolean init) {
-    return (GetOperationType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.GetOperationType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetOperationType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.GetOperationType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetOperationType newInstance(SModel sm) {

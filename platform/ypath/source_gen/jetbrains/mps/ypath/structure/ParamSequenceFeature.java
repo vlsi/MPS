@@ -85,7 +85,7 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
   }
 
   public IFeature getOpposite() {
-    return (IFeature)this.getReferent(IFeature.class, ParamSequenceFeature.OPPOSITE);
+    return (IFeature) this.getReferent(IFeature.class, ParamSequenceFeature.OPPOSITE);
   }
 
   public void setOpposite(IFeature node) {
@@ -93,7 +93,7 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
   }
 
   public Type getParameterType() {
-    return (Type)this.getChild(Type.class, ParamSequenceFeature.PARAMETER_TYPE);
+    return (Type) this.getChild(Type.class, ParamSequenceFeature.PARAMETER_TYPE);
   }
 
   public void setParameterType(Type node) {
@@ -101,7 +101,7 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
   }
 
   public ParameterQueryFun getParameterQueryFunction() {
-    return (ParameterQueryFun)this.getChild(ParameterQueryFun.class, ParamSequenceFeature.PARAMETER_QUERY_FUNCTION);
+    return (ParameterQueryFun) this.getChild(ParameterQueryFun.class, ParamSequenceFeature.PARAMETER_QUERY_FUNCTION);
   }
 
   public void setParameterQueryFunction(ParameterQueryFun node) {
@@ -109,7 +109,7 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
   }
 
   public TargetTypeFun getTargetTypeFunction() {
-    return (TargetTypeFun)this.getChild(TargetTypeFun.class, ParamSequenceFeature.TARGET_TYPE_FUNCTION);
+    return (TargetTypeFun) this.getChild(TargetTypeFun.class, ParamSequenceFeature.TARGET_TYPE_FUNCTION);
   }
 
   public void setTargetTypeFunction(TargetTypeFun node) {
@@ -117,7 +117,7 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
   }
 
   public ToStringFun getToStringFunction() {
-    return (ToStringFun)this.getChild(ToStringFun.class, ParamSequenceFeature.TO_STRING_FUNCTION);
+    return (ToStringFun) this.getChild(ToStringFun.class, ParamSequenceFeature.TO_STRING_FUNCTION);
   }
 
   public void setToStringFunction(ToStringFun node) {
@@ -125,7 +125,7 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
   }
 
   public GFCardinalParamFun getCardinal() {
-    return (GFCardinalParamFun)this.getChild(GFCardinalParamFun.class, ParamSequenceFeature.CARDINAL);
+    return (GFCardinalParamFun) this.getChild(GFCardinalParamFun.class, ParamSequenceFeature.CARDINAL);
   }
 
   public void setCardinal(GFCardinalParamFun node) {
@@ -149,7 +149,7 @@ public class ParamSequenceFeature extends SequenceFeature implements IFeature, I
   }
 
   public static ParamSequenceFeature newInstance(SModel sm, boolean init) {
-    return (ParamSequenceFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamSequenceFeature", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParamSequenceFeature) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.ParamSequenceFeature", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParamSequenceFeature newInstance(SModel sm) {

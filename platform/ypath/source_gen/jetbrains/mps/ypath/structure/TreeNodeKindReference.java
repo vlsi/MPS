@@ -18,7 +18,7 @@ public class TreeNodeKindReference extends Expression {
   }
 
   public TreePathAspect getTreePathAspect() {
-    return (TreePathAspect)this.getReferent(TreePathAspect.class, TreeNodeKindReference.TREE_PATH_ASPECT);
+    return (TreePathAspect) this.getReferent(TreePathAspect.class, TreeNodeKindReference.TREE_PATH_ASPECT);
   }
 
   public void setTreePathAspect(TreePathAspect node) {
@@ -26,7 +26,7 @@ public class TreeNodeKindReference extends Expression {
   }
 
   public TreeNodeKind getTreeNodeKind() {
-    return (TreeNodeKind)this.getReferent(TreeNodeKind.class, TreeNodeKindReference.TREE_NODE_KIND);
+    return (TreeNodeKind) this.getReferent(TreeNodeKind.class, TreeNodeKindReference.TREE_NODE_KIND);
   }
 
   public void setTreeNodeKind(TreeNodeKind node) {
@@ -34,7 +34,7 @@ public class TreeNodeKindReference extends Expression {
   }
 
   public static TreeNodeKindReference newInstance(SModel sm, boolean init) {
-    return (TreeNodeKindReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKindReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TreeNodeKindReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreeNodeKindReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TreeNodeKindReference newInstance(SModel sm) {

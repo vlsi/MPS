@@ -20,7 +20,7 @@ public class MultipleForeachLoopVariable extends BaseConcept {
   }
 
   public LocalVariableDeclaration getVariable() {
-    return (LocalVariableDeclaration)this.getChild(LocalVariableDeclaration.class, MultipleForeachLoopVariable.VARIABLE);
+    return (LocalVariableDeclaration) this.getChild(LocalVariableDeclaration.class, MultipleForeachLoopVariable.VARIABLE);
   }
 
   public void setVariable(LocalVariableDeclaration node) {
@@ -28,7 +28,7 @@ public class MultipleForeachLoopVariable extends BaseConcept {
   }
 
   public Expression getIterable() {
-    return (Expression)this.getChild(Expression.class, MultipleForeachLoopVariable.ITERABLE);
+    return (Expression) this.getChild(Expression.class, MultipleForeachLoopVariable.ITERABLE);
   }
 
   public void setIterable(Expression node) {
@@ -36,7 +36,7 @@ public class MultipleForeachLoopVariable extends BaseConcept {
   }
 
   public static MultipleForeachLoopVariable newInstance(SModel sm, boolean init) {
-    return (MultipleForeachLoopVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MultipleForeachLoopVariable) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MultipleForeachLoopVariable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MultipleForeachLoopVariable newInstance(SModel sm) {

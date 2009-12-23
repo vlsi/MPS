@@ -19,7 +19,7 @@ public class GivetypeStatement extends Statement {
   }
 
   public Expression getTypeExpression() {
-    return (Expression)this.getChild(Expression.class, GivetypeStatement.TYPE_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, GivetypeStatement.TYPE_EXPRESSION);
   }
 
   public void setTypeExpression(Expression node) {
@@ -27,7 +27,7 @@ public class GivetypeStatement extends Statement {
   }
 
   public Expression getTermExpression() {
-    return (Expression)this.getChild(Expression.class, GivetypeStatement.TERM_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, GivetypeStatement.TERM_EXPRESSION);
   }
 
   public void setTermExpression(Expression node) {
@@ -35,7 +35,7 @@ public class GivetypeStatement extends Statement {
   }
 
   public static GivetypeStatement newInstance(SModel sm, boolean init) {
-    return (GivetypeStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.GivetypeStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GivetypeStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.GivetypeStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GivetypeStatement newInstance(SModel sm) {

@@ -19,7 +19,7 @@ public class MatchStatementItem extends BaseConcept {
   }
 
   public ApplicableNodeCondition getCondition() {
-    return (ApplicableNodeCondition)this.getChild(ApplicableNodeCondition.class, MatchStatementItem.CONDITION);
+    return (ApplicableNodeCondition) this.getChild(ApplicableNodeCondition.class, MatchStatementItem.CONDITION);
   }
 
   public void setCondition(ApplicableNodeCondition node) {
@@ -27,7 +27,7 @@ public class MatchStatementItem extends BaseConcept {
   }
 
   public StatementList getIfTrue() {
-    return (StatementList)this.getChild(StatementList.class, MatchStatementItem.IF_TRUE);
+    return (StatementList) this.getChild(StatementList.class, MatchStatementItem.IF_TRUE);
   }
 
   public void setIfTrue(StatementList node) {
@@ -35,7 +35,7 @@ public class MatchStatementItem extends BaseConcept {
   }
 
   public static MatchStatementItem newInstance(SModel sm, boolean init) {
-    return (MatchStatementItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MatchStatementItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchStatementItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MatchStatementItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatchStatementItem newInstance(SModel sm) {

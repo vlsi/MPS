@@ -16,7 +16,7 @@ public class FeatureSizeFun extends ConceptFunction {
   }
 
   public static FeatureSizeFun newInstance(SModel sm, boolean init) {
-    return (FeatureSizeFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.FeatureSizeFun", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FeatureSizeFun) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.FeatureSizeFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FeatureSizeFun newInstance(SModel sm) {

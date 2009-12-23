@@ -88,7 +88,7 @@ public class GenericParamFeature extends BaseConcept implements IGenericFeature,
   }
 
   public IFeature getOpposite() {
-    return (IFeature)this.getReferent(IFeature.class, GenericParamFeature.OPPOSITE);
+    return (IFeature) this.getReferent(IFeature.class, GenericParamFeature.OPPOSITE);
   }
 
   public void setOpposite(IFeature node) {
@@ -96,7 +96,7 @@ public class GenericParamFeature extends BaseConcept implements IGenericFeature,
   }
 
   public GFGetterFun getGetter() {
-    return (GFGetterFun)this.getChild(GFGetterFun.class, GenericParamFeature.GETTER);
+    return (GFGetterFun) this.getChild(GFGetterFun.class, GenericParamFeature.GETTER);
   }
 
   public void setGetter(GFGetterFun node) {
@@ -104,7 +104,7 @@ public class GenericParamFeature extends BaseConcept implements IGenericFeature,
   }
 
   public Type getParameterType() {
-    return (Type)this.getChild(Type.class, GenericParamFeature.PARAMETER_TYPE);
+    return (Type) this.getChild(Type.class, GenericParamFeature.PARAMETER_TYPE);
   }
 
   public void setParameterType(Type node) {
@@ -112,7 +112,7 @@ public class GenericParamFeature extends BaseConcept implements IGenericFeature,
   }
 
   public ParameterQueryFun getParameterQueryFunction() {
-    return (ParameterQueryFun)this.getChild(ParameterQueryFun.class, GenericParamFeature.PARAMETER_QUERY_FUNCTION);
+    return (ParameterQueryFun) this.getChild(ParameterQueryFun.class, GenericParamFeature.PARAMETER_QUERY_FUNCTION);
   }
 
   public void setParameterQueryFunction(ParameterQueryFun node) {
@@ -120,7 +120,7 @@ public class GenericParamFeature extends BaseConcept implements IGenericFeature,
   }
 
   public TargetTypeFun getTargetTypeFunction() {
-    return (TargetTypeFun)this.getChild(TargetTypeFun.class, GenericParamFeature.TARGET_TYPE_FUNCTION);
+    return (TargetTypeFun) this.getChild(TargetTypeFun.class, GenericParamFeature.TARGET_TYPE_FUNCTION);
   }
 
   public void setTargetTypeFunction(TargetTypeFun node) {
@@ -128,7 +128,7 @@ public class GenericParamFeature extends BaseConcept implements IGenericFeature,
   }
 
   public ToStringFun getToStringFunction() {
-    return (ToStringFun)this.getChild(ToStringFun.class, GenericParamFeature.TO_STRING_FUNCTION);
+    return (ToStringFun) this.getChild(ToStringFun.class, GenericParamFeature.TO_STRING_FUNCTION);
   }
 
   public void setToStringFunction(ToStringFun node) {
@@ -136,7 +136,7 @@ public class GenericParamFeature extends BaseConcept implements IGenericFeature,
   }
 
   public GFCardinalParamFun getCardinal() {
-    return (GFCardinalParamFun)this.getChild(GFCardinalParamFun.class, GenericParamFeature.CARDINAL);
+    return (GFCardinalParamFun) this.getChild(GFCardinalParamFun.class, GenericParamFeature.CARDINAL);
   }
 
   public void setCardinal(GFCardinalParamFun node) {
@@ -144,7 +144,7 @@ public class GenericParamFeature extends BaseConcept implements IGenericFeature,
   }
 
   public static GenericParamFeature newInstance(SModel sm, boolean init) {
-    return (GenericParamFeature)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GenericParamFeature", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenericParamFeature) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GenericParamFeature", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenericParamFeature newInstance(SModel sm) {

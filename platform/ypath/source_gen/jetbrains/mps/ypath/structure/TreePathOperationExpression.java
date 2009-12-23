@@ -43,7 +43,7 @@ public class TreePathOperationExpression extends DotExpression implements ITreeP
   }
 
   public static TreePathOperationExpression newInstance(SModel sm, boolean init) {
-    return (TreePathOperationExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TreePathOperationExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathOperationExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TreePathOperationExpression newInstance(SModel sm) {

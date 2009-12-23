@@ -454,7 +454,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1194972375104(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode rule = SNodeOperations.getAncestor(((SNode)_context.getNode().getReferent("leaf")), "jetbrains.mps.lang.typesystem.structure.InferenceRule", false, false);
+    SNode rule = SNodeOperations.getAncestor(((SNode) _context.getNode().getReferent("leaf")), "jetbrains.mps.lang.typesystem.structure.InferenceRule", false, false);
     SNode conceptDeclaration;
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rule, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference")) {
       SNode conceptReference = SNodeOperations.cast(SLinkOperations.getTarget(rule, "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.ConceptReference");
@@ -1556,7 +1556,7 @@ public class QueriesGenerated {
     if (ListSequence.fromList(statementList).isEmpty()) {
       return true;
     }
-    return !(SNodeOperations.isInstanceOf(((SNode)ListSequence.fromList(statementList).getElement(ListSequence.fromList(statementList).count() - 1)), "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
+    return !(SNodeOperations.isInstanceOf(((SNode) ListSequence.fromList(statementList).getElement(ListSequence.fromList(statementList).count() - 1)), "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
   }
 
   public static boolean ifMacro_Condition_1178874415141(final IOperationContext operationContext, final IfMacroContext _context) {

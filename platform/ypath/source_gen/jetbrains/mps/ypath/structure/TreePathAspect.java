@@ -64,7 +64,7 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, IVisib
   }
 
   public IFeature getDefaultFeature() {
-    return (IFeature)this.getReferent(IFeature.class, TreePathAspect.DEFAULT_FEATURE);
+    return (IFeature) this.getReferent(IFeature.class, TreePathAspect.DEFAULT_FEATURE);
   }
 
   public void setDefaultFeature(IFeature node) {
@@ -72,7 +72,7 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, IVisib
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, TreePathAspect.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, TreePathAspect.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -80,7 +80,7 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, IVisib
   }
 
   public TreePathType getTreePathType() {
-    return (TreePathType)this.getChild(TreePathType.class, TreePathAspect.TREE_PATH_TYPE);
+    return (TreePathType) this.getChild(TreePathType.class, TreePathAspect.TREE_PATH_TYPE);
   }
 
   public void setTreePathType(TreePathType node) {
@@ -88,7 +88,7 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, IVisib
   }
 
   public ParentBlock getParentBlock() {
-    return (ParentBlock)this.getChild(ParentBlock.class, TreePathAspect.PARENT_BLOCK);
+    return (ParentBlock) this.getChild(ParentBlock.class, TreePathAspect.PARENT_BLOCK);
   }
 
   public void setParentBlock(ParentBlock node) {
@@ -96,7 +96,7 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, IVisib
   }
 
   public ChildrenBlock getChildrenBlock() {
-    return (ChildrenBlock)this.getChild(ChildrenBlock.class, TreePathAspect.CHILDREN_BLOCK);
+    return (ChildrenBlock) this.getChild(ChildrenBlock.class, TreePathAspect.CHILDREN_BLOCK);
   }
 
   public void setChildrenBlock(ChildrenBlock node) {
@@ -144,7 +144,7 @@ public class TreePathAspect extends BaseConcept implements INamedConcept, IVisib
   }
 
   public static TreePathAspect newInstance(SModel sm, boolean init) {
-    return (TreePathAspect)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAspect", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TreePathAspect) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAspect", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TreePathAspect newInstance(SModel sm) {

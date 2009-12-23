@@ -42,7 +42,7 @@ public class GFGetterParamFun extends GFGetterFun implements IParamFeatureFun, I
   }
 
   public static GFGetterParamFun newInstance(SModel sm, boolean init) {
-    return (GFGetterParamFun)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GFGetterParamFun", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GFGetterParamFun) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.GFGetterParamFun", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GFGetterParamFun newInstance(SModel sm) {

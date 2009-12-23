@@ -55,7 +55,7 @@ public class QuickFixArgument extends BaseConcept implements INamedConcept {
   }
 
   public Type getArgumentType() {
-    return (Type)this.getChild(Type.class, QuickFixArgument.ARGUMENT_TYPE);
+    return (Type) this.getChild(Type.class, QuickFixArgument.ARGUMENT_TYPE);
   }
 
   public void setArgumentType(Type node) {
@@ -63,7 +63,7 @@ public class QuickFixArgument extends BaseConcept implements INamedConcept {
   }
 
   public static QuickFixArgument newInstance(SModel sm, boolean init) {
-    return (QuickFixArgument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.QuickFixArgument", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QuickFixArgument) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.QuickFixArgument", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QuickFixArgument newInstance(SModel sm) {

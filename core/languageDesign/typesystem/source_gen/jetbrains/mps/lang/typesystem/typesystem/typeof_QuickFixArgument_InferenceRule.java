@@ -20,7 +20,7 @@ public class typeof_QuickFixArgument_InferenceRule extends AbstractInferenceRule
       SNode _nodeToCheck_1029348928467 = argument;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1220965298968", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1220965293122", true), (SNode)SLinkOperations.getTarget(argument, "argumentType", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1220965293122", true), (SNode) SLinkOperations.getTarget(argument, "argumentType", true), _info_12389875345);
     }
   }
 

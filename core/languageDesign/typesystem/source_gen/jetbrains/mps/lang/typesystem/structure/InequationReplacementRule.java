@@ -17,7 +17,7 @@ public class InequationReplacementRule extends AbstractSubtypingRule {
   }
 
   public ApplicableNodeCondition getSupertypeNode() {
-    return (ApplicableNodeCondition)this.getChild(ApplicableNodeCondition.class, InequationReplacementRule.SUPERTYPE_NODE);
+    return (ApplicableNodeCondition) this.getChild(ApplicableNodeCondition.class, InequationReplacementRule.SUPERTYPE_NODE);
   }
 
   public void setSupertypeNode(ApplicableNodeCondition node) {
@@ -25,7 +25,7 @@ public class InequationReplacementRule extends AbstractSubtypingRule {
   }
 
   public IsReplacementRuleApplicable_ConceptFunction getIsApplicableClause() {
-    return (IsReplacementRuleApplicable_ConceptFunction)this.getChild(IsReplacementRuleApplicable_ConceptFunction.class, InequationReplacementRule.IS_APPLICABLE_CLAUSE);
+    return (IsReplacementRuleApplicable_ConceptFunction) this.getChild(IsReplacementRuleApplicable_ConceptFunction.class, InequationReplacementRule.IS_APPLICABLE_CLAUSE);
   }
 
   public void setIsApplicableClause(IsReplacementRuleApplicable_ConceptFunction node) {
@@ -33,7 +33,7 @@ public class InequationReplacementRule extends AbstractSubtypingRule {
   }
 
   public static InequationReplacementRule newInstance(SModel sm, boolean init) {
-    return (InequationReplacementRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InequationReplacementRule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.InequationReplacementRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InequationReplacementRule newInstance(SModel sm) {

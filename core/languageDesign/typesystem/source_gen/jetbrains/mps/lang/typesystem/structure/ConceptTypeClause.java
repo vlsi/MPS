@@ -20,7 +20,7 @@ public class ConceptTypeClause extends TypeClause {
   }
 
   public ConceptDeclaration getMatchingConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, ConceptTypeClause.MATCHING_CONCEPT);
+    return (ConceptDeclaration) this.getReferent(ConceptDeclaration.class, ConceptTypeClause.MATCHING_CONCEPT);
   }
 
   public void setMatchingConcept(ConceptDeclaration node) {
@@ -48,7 +48,7 @@ public class ConceptTypeClause extends TypeClause {
   }
 
   public static ConceptTypeClause newInstance(SModel sm, boolean init) {
-    return (ConceptTypeClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptTypeClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.ConceptTypeClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptTypeClause newInstance(SModel sm) {

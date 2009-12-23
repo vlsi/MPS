@@ -41,7 +41,7 @@ public class AbstractInequationStatement extends AbstractEquationStatement {
   }
 
   public DefaultGroupReference getInequationGroup() {
-    return (DefaultGroupReference)this.getChild(DefaultGroupReference.class, AbstractInequationStatement.INEQUATION_GROUP);
+    return (DefaultGroupReference) this.getChild(DefaultGroupReference.class, AbstractInequationStatement.INEQUATION_GROUP);
   }
 
   public void setInequationGroup(DefaultGroupReference node) {
@@ -129,7 +129,7 @@ public class AbstractInequationStatement extends AbstractEquationStatement {
   }
 
   public static AbstractInequationStatement newInstance(SModel sm, boolean init) {
-    return (AbstractInequationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractInequationStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractInequationStatement newInstance(SModel sm) {

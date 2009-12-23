@@ -21,7 +21,7 @@ public class AbstractOverloadedOpsTypeRule extends BaseConcept {
   }
 
   public OverloadedOperatorTypeFunction getFunction() {
-    return (OverloadedOperatorTypeFunction)this.getChild(OverloadedOperatorTypeFunction.class, AbstractOverloadedOpsTypeRule.FUNCTION);
+    return (OverloadedOperatorTypeFunction) this.getChild(OverloadedOperatorTypeFunction.class, AbstractOverloadedOpsTypeRule.FUNCTION);
   }
 
   public void setFunction(OverloadedOperatorTypeFunction node) {
@@ -49,7 +49,7 @@ public class AbstractOverloadedOpsTypeRule extends BaseConcept {
   }
 
   public static AbstractOverloadedOpsTypeRule newInstance(SModel sm, boolean init) {
-    return (AbstractOverloadedOpsTypeRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractOverloadedOpsTypeRule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.AbstractOverloadedOpsTypeRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractOverloadedOpsTypeRule newInstance(SModel sm) {

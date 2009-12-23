@@ -16,7 +16,7 @@ public class SimpleRule_Annotated_Parameter extends Expression {
   }
 
   public static SimpleRule_Annotated_Parameter newInstance(SModel sm, boolean init) {
-    return (SimpleRule_Annotated_Parameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SimpleRule_Annotated_Parameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleRule_Annotated_Parameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.SimpleRule_Annotated_Parameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleRule_Annotated_Parameter newInstance(SModel sm) {
