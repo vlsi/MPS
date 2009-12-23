@@ -37,7 +37,10 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * @author Kostik
@@ -339,6 +342,7 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
     IFile oldFile = sm.getModelFile();
     SModelRoot root = sm.getSModelRoot();
     IFile newFile = createFileForModelUID(root, modelFqName);
+    newFile.getParent().mkdirs();
     newFile.createNewFile();
     ((BaseSModelDescriptor) sm).changeModelFile(newFile);
     sm.save();
