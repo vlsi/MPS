@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c8959028a(jetbrains.mps.lang.structure.actions)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
@@ -29,24 +29,24 @@
   <maxImportIndex value="5" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
-  <node type="jetbrains.mps.lang.actions.structure.NodeFactories" id="1163111159679">
-    <property name="name" value="STRL_node_factories" />
-    <node role="nodeFactory" type="jetbrains.mps.lang.actions.structure.NodeFactory" id="1163111194508">
-      <property name="description" value="extends BaseConcept by default" />
-      <link role="applicableConcept" targetNodeId="1.1071489090640" />
-      <node role="setupFunction" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction" id="1163111194509">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1163111194510">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1163111233683">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721647937">
-              <node role="operand" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1203721648362">
-                <node role="operand" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode" id="1163111233684" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="1163111284519">
-                  <link role="link" targetNodeId="1.1071489389519" />
+  <node type="jetbrains.mps.lang.actions.structure.NodeFactories:23" id="1163111159679">
+    <property name="name:23" value="STRL_node_factories" />
+    <node role="nodeFactory:23" type="jetbrains.mps.lang.actions.structure.NodeFactory:23" id="1163111194508">
+      <property name="description:23" value="extends BaseConcept by default" />
+      <link role="applicableConcept:23" targetNodeId="1.1071489090640:0" />
+      <node role="setupFunction:23" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction:23" id="1163111194509">
+        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1163111194510">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1163111233683">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1203721647937">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1203721648362">
+                <node role="operand:3" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_NewNode:23" id="1163111233684" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1163111284519">
+                  <link role="link:16" targetNodeId="1.1071489389519:0" />
                 </node>
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation" id="1163111305396">
-                <node role="linkTarget" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression" id="1194562679502">
-                  <link role="conceptDeclaration" targetNodeId="5.1133920641626" resolveInfo="BaseConcept" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation:16" id="1163111305396">
+                <node role="linkTarget:16" type="jetbrains.mps.lang.smodel.structure.ConceptRefExpression:16" id="1194562679502">
+                  <link role="conceptDeclaration:16" targetNodeId="5.1133920641626:0" resolveInfo="BaseConcept" />
                 </node>
               </node>
             </node>

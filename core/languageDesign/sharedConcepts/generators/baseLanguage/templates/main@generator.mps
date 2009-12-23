@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c895902bd(jetbrains.mps.lang.sharedConcepts.generator.baseLanguage.template.main@generator)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -30,39 +30,39 @@
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
-  <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1161623876737">
-    <property name="name" value="mc_conceptFunctionParameters" />
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1172253909667">
-      <link role="applicableConcept" targetNodeId="2.1161622665029" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1172254031565">
-        <link role="template" targetNodeId="1.1143148725345" />
+  <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1161623876737">
+    <property name="name:2" value="mc_conceptFunctionParameters" />
+    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1172253909667">
+      <link role="applicableConcept:2" targetNodeId="2.1161622665029:0" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1172254031565">
+        <link role="template:2" targetNodeId="1.1143148725345" />
       </node>
     </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1172253943044">
-      <link role="applicableConcept" targetNodeId="2.1161622753914" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1172254035301">
-        <link role="template" targetNodeId="1.1143148725345" />
+    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1172253943044">
+      <link role="applicableConcept:2" targetNodeId="2.1161622753914:0" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1172254035301">
+        <link role="template:2" targetNodeId="1.1143148725345" />
       </node>
     </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1194033942228">
-      <link role="applicableConcept" targetNodeId="2.1194033889146" resolveInfo="ConceptFunctionParameter_editorContext" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1194033955886">
-        <link role="template" targetNodeId="1.1143148725345" resolveInfo="reduce_ConceptFunctionParm_to_MethodParameterReference_by_Alias" />
+    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1194033942228">
+      <link role="applicableConcept:2" targetNodeId="2.1194033889146:0" resolveInfo="ConceptFunctionParameter_editorContext" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1194033955886">
+        <link role="template:2" targetNodeId="1.1143148725345" resolveInfo="reduce_ConceptFunctionParm_to_MethodParameterReference_by_Alias" />
       </node>
     </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1172253951374">
-      <link role="applicableConcept" targetNodeId="2.1161622878565" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference" id="1172254039755">
-        <link role="template" targetNodeId="1.1143148725345" />
+    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1172253951374">
+      <link role="applicableConcept:2" targetNodeId="2.1161622878565:0" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1172254039755">
+        <link role="template:2" targetNodeId="1.1143148725345" />
       </node>
-      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1199881492477">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199881492478">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199881507907">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.NotExpression" id="1199881533447">
-              <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227838223">
-                <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1199881533449" />
-                <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1199881533450">
-                  <link role="baseMethodDeclaration" targetNodeId="6.1213877522908" resolveInfo="getFromParameterObject" />
+      <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="1199881492477">
+        <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1199881492478">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1199881507907">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1199881533447">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1204227838223">
+                <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1199881533449" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1199881533450">
+                  <link role="baseMethodDeclaration:16" targetNodeId="6.1213877522908" resolveInfo="getFromParameterObject" />
                 </node>
               </node>
             </node>
@@ -70,25 +70,25 @@
         </node>
       </node>
     </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1199881537811">
-      <link role="applicableConcept" targetNodeId="2.1161622878565" resolveInfo="ConceptFunctionParameter_scope" />
-      <node role="conditionFunction" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition" id="1199881537813">
-        <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1199881537814">
-          <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1199881537815">
-            <node role="expression" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1204227849331">
-              <node role="operand" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1199881537818" />
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall" id="1199881537819">
-                <link role="baseMethodDeclaration" targetNodeId="6.1213877522908" resolveInfo="getFromParameterObject" />
+    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1199881537811">
+      <link role="applicableConcept:2" targetNodeId="2.1161622878565:0" resolveInfo="ConceptFunctionParameter_scope" />
+      <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition:2" id="1199881537813">
+        <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1199881537814">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1199881537815">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1204227849331">
+              <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1199881537818" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1199881537819">
+                <link role="baseMethodDeclaration:16" targetNodeId="6.1213877522908" resolveInfo="getFromParameterObject" />
               </node>
             </node>
           </node>
         </node>
       </node>
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1199881546102">
-        <node role="templateNode" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="1208985903610">
-          <node role="operand" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext" id="1199881597555" />
-          <node role="operation" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation" id="1208985903611">
-            <link role="baseMethodDeclaration" targetNodeId="4.~IOperationContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1199881546102">
+        <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1208985903610">
+          <node role="operand:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext:0" id="1199881597555" />
+          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1208985903611">
+            <link role="baseMethodDeclaration:3" targetNodeId="4.~IOperationContext.getScope():jetbrains.mps.smodel.IScope" resolveInfo="getScope" />
           </node>
         </node>
       </node>
