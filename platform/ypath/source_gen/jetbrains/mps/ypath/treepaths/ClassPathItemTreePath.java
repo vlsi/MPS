@@ -32,7 +32,7 @@ public class ClassPathItemTreePath extends TreePath<IClassPathItem> {
   private static class Children {
     public static Iterable<IClassPathItem> children(IClassPathItem node) {
       if (node instanceof CompositeClassPathItem) {
-        return ((CompositeClassPathItem)node).getChildren();
+        return ((CompositeClassPathItem) node).getChildren();
       } else {
         return ListSequence.fromList(new ArrayList<IClassPathItem>());
       }

@@ -19,7 +19,7 @@ public class ModelCheckerIssueFinder implements IFinder {
 
   public SearchResults find(SearchQuery searchQuery, ProgressIndicator indicator) {
     assert searchQuery.getObjectHolder() instanceof ModelsHolder;
-    ModelsHolder modelsHolder = (ModelsHolder)searchQuery.getObjectHolder();
+    ModelsHolder modelsHolder = (ModelsHolder) searchQuery.getObjectHolder();
     List<SModelDescriptor> modelDescriptors = modelsHolder.getObject();
     IOperationContext operationContext = modelsHolder.getOperationContext();
 

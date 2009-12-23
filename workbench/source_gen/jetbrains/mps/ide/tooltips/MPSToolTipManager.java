@@ -45,7 +45,7 @@ public class MPSToolTipManager implements ApplicationComponent {
   }
 
   private void mouseMoved(MouseEvent event) {
-    JComponent component = (JComponent)event.getComponent();
+    JComponent component = (JComponent) event.getComponent();
     Point point = component.getToolTipLocation(event);
     if (point == null) {
       point = event.getPoint();
@@ -62,7 +62,7 @@ public class MPSToolTipManager implements ApplicationComponent {
     while (component.getParent() != null) {
       component = component.getParent();
     }
-    return (Frame)component;
+    return (Frame) component;
   }
 
   public void showToolTip(ToolTipData data, JComponent component, Point point) {

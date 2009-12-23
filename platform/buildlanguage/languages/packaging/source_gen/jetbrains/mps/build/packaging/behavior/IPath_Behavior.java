@@ -14,10 +14,10 @@ public class IPath_Behavior {
   }
 
   public static File call_getFile_1233322718999(SNode thisNode) {
-    return (File)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPath"), "virtual_getFile_1233322718999", PARAMETERS_1233322718999);
+    return (File) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPath"), "virtual_getFile_1233322718999", PARAMETERS_1233322718999);
   }
 
   public static File callSuper_getFile_1233322718999(SNode thisNode, String callerConceptFqName) {
-    return (File)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPath"), callerConceptFqName, "virtual_getFile_1233322718999", PARAMETERS_1233322718999);
+    return (File) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IPath"), callerConceptFqName, "virtual_getFile_1233322718999", PARAMETERS_1233322718999);
   }
 }

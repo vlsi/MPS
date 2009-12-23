@@ -27,7 +27,7 @@ public class TreePathAspectUtil {
       if (sequencetype != null && !(SNodeOperations.isInstanceOf(expType.value, "jetbrains.mps.lang.smodel.structure.SNodeType"))) {
         expType.value = SLinkOperations.getTarget(sequencetype, "elementType", true);
       }
-      SNode concept = (SNode)SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAspect");
+      SNode concept = (SNode) SConceptOperations.findConceptDeclaration("jetbrains.mps.ypath.structure.TreePathAspect");
       Iterable<SNode> instances = SModelOperations.getRootsIncludingImported(SNodeOperations.getModel(expression), scope, "jetbrains.mps.ypath.structure.TreePathAspect");
       ListSequence.fromList(treePathAspects).addSequence(Sequence.fromIterable(instances).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {

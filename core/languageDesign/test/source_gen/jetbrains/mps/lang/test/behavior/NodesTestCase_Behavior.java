@@ -46,7 +46,7 @@ public class NodesTestCase_Behavior {
     ClassLoader classLoader = UrlClassLoader.class.getClassLoader();
     Class cls = classLoader.getClass();
     try {
-      List<URL> urls = ((List<URL>)cls.getMethod("getUrls", new Class[0]).invoke(classLoader, new Object[0]));
+      List<URL> urls = ((List<URL>) cls.getMethod("getUrls", new Class[0]).invoke(classLoader, new Object[0]));
       for (URL url : urls) {
         ListSequence.fromList(result).addElement(url.getFile());
       }

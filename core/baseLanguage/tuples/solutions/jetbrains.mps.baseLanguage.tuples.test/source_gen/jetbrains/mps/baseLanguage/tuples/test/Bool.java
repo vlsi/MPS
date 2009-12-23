@@ -24,6 +24,6 @@ public class Bool extends MultiTuple._1<Boolean> {
 
   @SuppressWarnings(value = "unchecked")
   public Bool assignFrom(Tuples._1<Boolean> from) {
-    return (Bool)super.assign(from);
+    return (Bool) super.assign(from);
   }
 }

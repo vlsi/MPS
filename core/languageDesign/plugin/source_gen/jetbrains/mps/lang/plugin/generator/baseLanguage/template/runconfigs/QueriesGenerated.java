@@ -64,7 +64,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6135182812223258861(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SConceptPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(RunConfigCreator_Behavior.call_getFunction_5528847031674340387(((SNode)SNodeOperations.getContainingRoot(_context.getNode()))), "applicableConceptFunctionParameter")).first(), "alias");
+    return SConceptPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(RunConfigCreator_Behavior.call_getFunction_5528847031674340387(((SNode) SNodeOperations.getContainingRoot(_context.getNode()))), "applicableConceptFunctionParameter")).first(), "alias");
   }
 
   public static Object propertyMacro_GetPropertyValue_7840798570674830541(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -83,7 +83,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7840798570674908516(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule module = ((TemplateQueryContext)_context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
+    IModule module = ((TemplateQueryContext) _context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
     return (module == null ?
       null :
       module.getModuleFqName()

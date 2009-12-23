@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SearchScopeOperations;
 
 public class SearchScope {
-
   public ISearchScope getSearchScope(SNode methodCall, IOperationContext context) {
     ISearchScope scope = SNodeOperations.getReferentSearchScope(methodCall, "instanceMethodDeclaration", context);
     return scope;
@@ -19,5 +18,4 @@ public class SearchScope {
     ISearchScope scope = SNodeOperations.getReferentSearchScope(methodCall, "instanceMethodDeclaration", context);
     return SearchScopeOperations.containsNode(scope, methodDeclaration);
   }
-
 }

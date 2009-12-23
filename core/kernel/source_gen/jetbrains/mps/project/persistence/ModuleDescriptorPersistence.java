@@ -45,7 +45,7 @@ public class ModuleDescriptorPersistence {
     }).toListSequence());
 
     if (descriptor instanceof LanguageDescriptor) {
-      LanguageDescriptor ld = (LanguageDescriptor)descriptor;
+      LanguageDescriptor ld = (LanguageDescriptor) descriptor;
       ld.getRuntimeModules().addAll(loadDependenciesList(ListSequence.fromList(AttributeUtils.elementChildren(root, "runtime")).first()));
     }
   }
@@ -81,7 +81,7 @@ public class ModuleDescriptorPersistence {
     }
 
     if (descriptor instanceof LanguageDescriptor) {
-      LanguageDescriptor ld = (LanguageDescriptor)descriptor;
+      LanguageDescriptor ld = (LanguageDescriptor) descriptor;
       if (!(ld.getRuntimeModules().isEmpty())) {
         Element result_9364_9 = new Element("runtime");
         saveDependencyList(result_9364_9, ld.getRuntimeModules());
@@ -175,7 +175,7 @@ public class ModuleDescriptorPersistence {
     // This method has no usages, probably it can be removed 
     try {
       Document document = JDOMUtil.loadDocument(file);
-      return ((Element)document.getRootElement()).getAttributeValue("namespace");
+      return ((Element) document.getRootElement()).getAttributeValue("namespace");
     } catch (Exception e) {
       throw new RuntimeException(e);
     }

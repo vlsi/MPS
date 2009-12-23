@@ -151,22 +151,22 @@ public class GeneratorDescriptorPersistence {
       result_9427_23.addContent(result_9427_25);
     } else if (mappingRef instanceof MappingConfig_SimpleRef) {
       Element result_9427_26 = new Element("mapping-node");
-      String result_9427_27 = ((MappingConfig_SimpleRef)mappingRef).getModelUID();
+      String result_9427_27 = ((MappingConfig_SimpleRef) mappingRef).getModelUID();
       result_9427_26.setAttribute("modelUID", "" + result_9427_27);
-      String result_9427_28 = ((MappingConfig_SimpleRef)mappingRef).getNodeID();
+      String result_9427_28 = ((MappingConfig_SimpleRef) mappingRef).getNodeID();
       result_9427_26.setAttribute("nodeID", "" + result_9427_28);
       result_9427_23.addContent(result_9427_26);
     } else if (mappingRef instanceof MappingConfig_ExternalRef) {
       Element result_9427_29 = new Element("generator");
-      String result_9427_30 = ((MappingConfig_ExternalRef)mappingRef).getGenerator().toString();
+      String result_9427_30 = ((MappingConfig_ExternalRef) mappingRef).getGenerator().toString();
       result_9427_29.setAttribute("generatorUID", "" + result_9427_30);
       result_9427_23.addContent(result_9427_29);
       Element result_9427_31 = new Element("external-mapping");
-      saveGeneratorMappingConfigRef(((MappingConfig_ExternalRef)mappingRef).getMappingConfig(), result_9427_31);
+      saveGeneratorMappingConfigRef(((MappingConfig_ExternalRef) mappingRef).getMappingConfig(), result_9427_31);
       result_9427_23.addContent(result_9427_31);
     } else if (mappingRef instanceof MappingConfig_RefSet) {
       Element result_9427_32 = new Element("mapping-set");
-      for (MappingConfig_AbstractRef mappingRefInner : ListSequence.fromList(((MappingConfig_RefSet)mappingRef).getMappingConfigs())) {
+      for (MappingConfig_AbstractRef mappingRefInner : ListSequence.fromList(((MappingConfig_RefSet) mappingRef).getMappingConfigs())) {
         Element result_9427_33 = new Element("mapping-set-element");
         saveGeneratorMappingConfigRef(mappingRefInner, result_9427_33);
         result_9427_32.addContent(result_9427_33);

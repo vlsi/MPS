@@ -25,7 +25,7 @@ public class IndexedTuples_Test extends TestCase {
     Assert.assertSame(1, pair._0());
     Assert.assertEquals("a", pair._1());
     Tuples._2<Integer, String> anotherPair = MultiTuple.<Integer, String>empty2().assign(pair);
-    Assert.assertFalse(((Object)anotherPair) == ((Object)pair));
+    Assert.assertFalse(((Object) anotherPair) == ((Object) pair));
     Assert.assertTrue(MultiTuple.eq(anotherPair, pair));
     Assert.assertEquals(pair, anotherPair);
     Assert.assertSame(1, anotherPair._0());

@@ -40,7 +40,7 @@ public class RenameNamespace_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return RenameNamespace_Action.this.treeNode instanceof NamespaceTextNode && RenameNamespace_Action.this.getProjectPane() != null && !(((NamespaceTextNode)RenameNamespace_Action.this.treeNode).isFinalName());
+    return RenameNamespace_Action.this.treeNode instanceof NamespaceTextNode && RenameNamespace_Action.this.getProjectPane() != null && !(((NamespaceTextNode) RenameNamespace_Action.this.treeNode).isFinalName());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -83,7 +83,7 @@ public class RenameNamespace_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      NamespaceTextNode node = ((NamespaceTextNode)RenameNamespace_Action.this.treeNode);
+      NamespaceTextNode node = ((NamespaceTextNode) RenameNamespace_Action.this.treeNode);
       String newFolder = JOptionPane.showInputDialog(RenameNamespace_Action.this.frame, "Enter New Folder", node.getName());
       if (newFolder == null) {
         return;

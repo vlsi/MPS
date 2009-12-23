@@ -70,9 +70,9 @@ public class OptimizeImportsInGlobalScope_Action extends GeneratedAction {
           public void run() {
             OptimizeImportsHelper helper = new OptimizeImportsHelper(OptimizeImportsInGlobalScope_Action.this.context);
             if (module instanceof Solution) {
-              report.value = helper.optimizeSolutionImports(((Solution)module));
+              report.value = helper.optimizeSolutionImports(((Solution) module));
             } else if (module instanceof Language) {
-              report.value = helper.optimizeLanguageImports(((Language)module));
+              report.value = helper.optimizeLanguageImports(((Language) module));
             }
             module.save();
             SModelRepository.getInstance().saveAll();

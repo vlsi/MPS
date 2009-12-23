@@ -56,7 +56,7 @@ public class Ide_ProjectPlugin extends BaseProjectPlugin {
         IModule mainModule = mainModelDescriptor.getModule();
 
         if (mainModule instanceof Generator) {
-          mainModule = ((Generator)mainModule).getSourceLanguage();
+          mainModule = ((Generator) mainModule).getSourceLanguage();
         }
 
         if (baseModule != mainModule) {

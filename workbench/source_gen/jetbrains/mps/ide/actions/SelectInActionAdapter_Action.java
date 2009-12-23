@@ -62,7 +62,7 @@ public class SelectInActionAdapter_Action extends GeneratedAction {
     StringBuilder res = new StringBuilder(500);
     res.append(SelectInActionAdapter_Action.class.getName());
     res.append("#");
-    res.append(selectInAction_State((AnAction)this.selectInAction));
+    res.append(selectInAction_State((AnAction) this.selectInAction));
     res.append("!");
     return res.toString();
   }

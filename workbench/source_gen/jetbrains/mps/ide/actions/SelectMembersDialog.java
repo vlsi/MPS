@@ -63,7 +63,7 @@ public abstract class SelectMembersDialog<T extends SNode> extends BaseDialog {
   private void disposeTrue() {
     this.myAnswer = true;
     for (MPSTreeNode selectedNode : this.myTree.getSelectedNodes(MPSNodeInSelectDialog.class, null)) {
-      ListSequence.fromList(this.mySelectedMembers).addElement(((MPSNodeInSelectDialog<T>)selectedNode).getNode());
+      ListSequence.fromList(this.mySelectedMembers).addElement(((MPSNodeInSelectDialog<T>) selectedNode).getNode());
     }
     this.dispose();
   }

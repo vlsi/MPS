@@ -377,7 +377,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1241263972248(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (String)Values.RVALUE.get(_context.getNode());
+    return (String) Values.RVALUE.get(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_1823663182164521237(final IOperationContext operationContext, final ReferenceMacroContext _context) {

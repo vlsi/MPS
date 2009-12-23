@@ -56,12 +56,12 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((Pair)parameterObject, node, model, scope, operationContext);
+      this.handleAction_impl((Pair) parameterObject, node, model, scope, operationContext);
     }
 
     public void handleAction_impl(Pair parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNode fe = (SNode)parameterObject.o1;
-      SNode pw = (SNode)parameterObject.o2;
+      SNode fe = (SNode) parameterObject.o1;
+      SNode pw = (SNode) parameterObject.o2;
       SLinkOperations.setTarget(node, "paramObject", pw, true);
       SLinkOperations.setTarget(node, "usedFeature", fe, false);
     }
@@ -71,12 +71,12 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
     }
 
     public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((Pair)parameterObject);
+      return this.getMatchingText_internal((Pair) parameterObject);
     }
 
     public String getMatchingText_internal(Pair parameterObject) {
-      SNode fe = (SNode)parameterObject.o1;
-      SNode pw = (SNode)parameterObject.o2;
+      SNode fe = (SNode) parameterObject.o1;
+      SNode pw = (SNode) parameterObject.o2;
       if ((fe == null)) {
         return "*";
       } else
@@ -88,11 +88,11 @@ public class menu_SubstituteFeatureAndParameter extends AbstractCellMenuComponen
     }
 
     public String getDescriptionText(Object parameterObject) {
-      return this.getDescriptionText_internal((Pair)parameterObject);
+      return this.getDescriptionText_internal((Pair) parameterObject);
     }
 
     public String getDescriptionText_internal(Pair parameterObject) {
-      SNode fe = (SNode)parameterObject.o1;
+      SNode fe = (SNode) parameterObject.o1;
       if ((fe == null)) {
         return "all features";
       } else

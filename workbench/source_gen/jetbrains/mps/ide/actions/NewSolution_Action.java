@@ -98,7 +98,7 @@ public class NewSolution_Action extends GeneratedAction {
     StringBuilder res = new StringBuilder(500);
     res.append(NewSolution_Action.class.getName());
     res.append("#");
-    res.append(folder_State((String)this.folder));
+    res.append(folder_State((String) this.folder));
     res.append("!");
     return res.toString();
   }

@@ -136,7 +136,7 @@ public class GoToEditorDeclaration_Action extends GeneratedAction {
       final Wrappers._T<ConceptDeclaration> conceptDeclaration = new Wrappers._T<ConceptDeclaration>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          conceptDeclaration.value = ((ConceptDeclaration)GoToEditorDeclaration_Action.this.node.getConceptDeclarationAdapter());
+          conceptDeclaration.value = ((ConceptDeclaration) GoToEditorDeclaration_Action.this.node.getConceptDeclarationAdapter());
         }
       });
       SModelDescriptor editorModel = GoToEditorDeclarationHelper.getOrCreateEditorAspect(l.value, conceptDeclaration.value, GoToEditorDeclaration_Action.this.scope);

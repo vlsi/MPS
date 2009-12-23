@@ -30,7 +30,7 @@ public class LanguageDescriptorPersistence {
 
     try {
       Document document = JDOMUtil.loadDocument(file);
-      final Element languageElement = ((Element)document.getRootElement());
+      final Element languageElement = ((Element) document.getRootElement());
 
       descriptor = new _FunctionTypes._return_P0_E0<LanguageDescriptor>() {
         public LanguageDescriptor invoke() {

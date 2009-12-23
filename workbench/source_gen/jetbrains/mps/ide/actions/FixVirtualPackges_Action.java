@@ -69,7 +69,7 @@ public class FixVirtualPackges_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      Language language = (Language)FixVirtualPackges_Action.this.module;
+      Language language = (Language) FixVirtualPackges_Action.this.module;
       SModel structure = language.getStructureModelDescriptor().getSModel();
       List<SNode> concepts = SModelOperations.getRoots(structure, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
       for (SNode concept : concepts) {

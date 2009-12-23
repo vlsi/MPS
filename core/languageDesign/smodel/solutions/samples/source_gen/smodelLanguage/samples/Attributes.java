@@ -10,7 +10,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Attributes {
-
   public void accessToNodeAttribute_1(SNode node) {
     List<SNode> macros = SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true);
     SNode firstMacro = ListSequence.fromList(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true)).first();
@@ -46,5 +45,4 @@ public class Attributes {
     List<SNode> nodes = SNodeOperations.getAllAttributes(node);
     SNode firstNode = ListSequence.fromList(SNodeOperations.getAllAttributes(node)).first();
   }
-
 }

@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ConceptProperties {
-
   public void stringConceptProperty(SNode node) {
     boolean hasAlias = SConceptPropertyOperations.getString(node, "alias") != null;
     String alias = SConceptPropertyOperations.getString(node, "alias");
@@ -30,5 +29,4 @@ public class ConceptProperties {
   public void m1(SNode node) {
     SConceptPropertyOperations.getString(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), "alias");
   }
-
 }

@@ -87,7 +87,7 @@ public class LanguagesStep extends AbstractStep {
     int childCount = node.getChildCount();
     for (int i = 0; i < childCount; i++) {
       N data = node.getData();
-      CheckBoxNode<N> child = (CheckBoxNode<N>)node.getChildAt(i);
+      CheckBoxNode<N> child = (CheckBoxNode<N>) node.getChildAt(i);
       NodeData childData = child.getData();
       data.addChildren(childData);
       childData.setParent(data);
@@ -167,7 +167,7 @@ public class LanguagesStep extends AbstractStep {
       NodeData data = node.getData();
       String namespace = "";
       if (data instanceof ModuleData) {
-        ModuleData moduleData = (ModuleData)data;
+        ModuleData moduleData = (ModuleData) data;
         namespace = this.myMpsProject.getFolderFor(moduleData.getModule());
       }
       if (namespace == null) {

@@ -142,7 +142,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((Boolean)parameterObject, node, model, scope, operationContext);
+      this.handleAction_impl((Boolean) parameterObject, node, model, scope, operationContext);
     }
 
     public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -154,7 +154,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     }
 
     public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((Boolean)parameterObject);
+      return this.getMatchingText_internal((Boolean) parameterObject);
     }
 
     public String getMatchingText_internal(Boolean parameterObject) {
@@ -165,7 +165,7 @@ public class TreeNodeKindProperty_Editor extends DefaultNodeEditor {
     }
 
     public String getDescriptionText(Object parameterObject) {
-      return this.getDescriptionText_internal((Boolean)parameterObject);
+      return this.getDescriptionText_internal((Boolean) parameterObject);
     }
 
     public String getDescriptionText_internal(Boolean parameterObject) {

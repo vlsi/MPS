@@ -67,8 +67,8 @@ public class DeleteReferenceAction_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       TreeNode parent = DeleteReferenceAction_Action.this.node.getParent();
-      ReferencesTreeNode refsNode = (ReferencesTreeNode)parent;
-      ReferenceTreeNode refNode = (ReferenceTreeNode)DeleteReferenceAction_Action.this.node;
+      ReferencesTreeNode refsNode = (ReferencesTreeNode) parent;
+      ReferenceTreeNode refNode = (ReferenceTreeNode) DeleteReferenceAction_Action.this.node;
       refsNode.getSNode().removeReference(refNode.getRef());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

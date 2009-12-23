@@ -96,7 +96,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       HierarchyViewTool tool = ShowConceptInHierarchy_Action.this.context.getComponent(HierarchyViewTool.class);
-      tool.showItemInHierarchy(((AbstractConceptDeclaration)SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.getConceptNode())), ShowConceptInHierarchy_Action.this.context);
+      tool.showItemInHierarchy(((AbstractConceptDeclaration) SNodeOperations.getAdapter(ShowConceptInHierarchy_Action.this.getConceptNode())), ShowConceptInHierarchy_Action.this.context);
       tool.openToolLater(true);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -124,7 +124,7 @@ public class ShowConceptInHierarchy_Action extends GeneratedAction {
     if (!(ShowConceptInHierarchy_Action.this.editor instanceof TabbedEditor)) {
       return null;
     }
-    TabbedEditor tabbedEditor = (TabbedEditor)ShowConceptInHierarchy_Action.this.editor;
+    TabbedEditor tabbedEditor = (TabbedEditor) ShowConceptInHierarchy_Action.this.editor;
     SNode editedNode = (tabbedEditor).getEditedNode();
     if (!(SNodeOperations.isInstanceOf(editedNode, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"))) {
       return null;

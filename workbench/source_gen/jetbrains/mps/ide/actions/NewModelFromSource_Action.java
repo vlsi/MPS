@@ -179,14 +179,14 @@ public class NewModelFromSource_Action extends GeneratedAction {
 
   protected String getStereotype() {
     if (NewModelFromSource_Action.this.treeNode instanceof StereotypeProvider) {
-      return ((StereotypeProvider)NewModelFromSource_Action.this.treeNode).getStereotype();
+      return ((StereotypeProvider) NewModelFromSource_Action.this.treeNode).getStereotype();
     }
     return null;
   }
 
   protected boolean isStrict() {
     if (NewModelFromSource_Action.this.treeNode instanceof StereotypeProvider) {
-      return ((StereotypeProvider)NewModelFromSource_Action.this.treeNode).isStrict();
+      return ((StereotypeProvider) NewModelFromSource_Action.this.treeNode).isStrict();
     }
     return false;
   }

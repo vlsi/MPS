@@ -42,7 +42,7 @@ public class CloneModel_Action extends GeneratedAction {
     }
     IModule module = CloneModel_Action.this.model.getModule();
     if (module instanceof Language) {
-      Language language = (Language)module;
+      Language language = (Language) module;
       return language.getAspectForModel(CloneModel_Action.this.model) == null;
     } else {
       return true;

@@ -31,7 +31,7 @@ public class ModelCheckerUtils {
       }
     }
     if (module instanceof Language) {
-      Language language = (Language)module;
+      Language language = (Language) module;
       for (Generator generator : ListSequence.fromList(language.getGenerators())) {
         ListSequence.fromList(modelDescrpitors).addSequence(ListSequence.fromList(getModelDescriptors(generator)));
       }

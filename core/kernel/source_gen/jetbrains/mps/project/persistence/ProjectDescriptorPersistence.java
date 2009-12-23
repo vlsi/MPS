@@ -80,7 +80,7 @@ public class ProjectDescriptorPersistence {
         Element result_9913_13 = new Element("genConfs");
         for (BaseTestConfiguration tc : ListSequence.fromList(descriptor.getTestConfigurations())) {
           if (tc instanceof ModelsTestConfiguration) {
-            ModelsTestConfiguration mgc = (ModelsTestConfiguration)tc;
+            ModelsTestConfiguration mgc = (ModelsTestConfiguration) tc;
             Element result_9913_14 = new Element("genConfModels");
             if (mgc.getName() != null) {
               String result_9913_15 = mgc.getName();
@@ -97,7 +97,7 @@ public class ProjectDescriptorPersistence {
             result_9913_13.addContent(result_9913_14);
           }
           if (tc instanceof ModuleTestConfiguration) {
-            ModuleTestConfiguration sgc = (ModuleTestConfiguration)tc;
+            ModuleTestConfiguration sgc = (ModuleTestConfiguration) tc;
             Element result_9913_19 = new Element("genConfModule");
             if (sgc.getName() != null) {
               String result_9913_20 = sgc.getName();
@@ -205,8 +205,8 @@ public class ProjectDescriptorPersistence {
 
     try {
       Document document = JDOMUtil.loadDocument(file);
-      List<Element> components = ListSequence.fromListWithValues(new ArrayList<Element>(), ((List<Element>)document.getRootElement().getChildren("component")));
-      Element projectElement = ((Element)ListSequence.fromList(components).findFirst(new IWhereFilter<Element>() {
+      List<Element> components = ListSequence.fromListWithValues(new ArrayList<Element>(), ((List<Element>) document.getRootElement().getChildren("component")));
+      Element projectElement = ((Element) ListSequence.fromList(components).findFirst(new IWhereFilter<Element>() {
         public boolean accept(Element it) {
           return it.getAttributeValue("name").equals("MPSProject");
         }

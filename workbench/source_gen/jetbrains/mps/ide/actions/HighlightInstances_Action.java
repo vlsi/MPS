@@ -89,7 +89,7 @@ public class HighlightInstances_Action extends GeneratedAction {
     try {
       NodeHighlightManager highlightManager = HighlightInstances_Action.this.editorComponent.getHighlightManager();
       EditorMessageOwner messageOwner = HighlightInstances_Action.this.editorComponent.getHighlightMessagesOwner();
-      for (SNode ref : SetSequence.fromSet(HighlightInstances_Action.this.model.findInstances(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(HighlightInstances_Action.this.node))), HighlightInstances_Action.this.scope))) {
+      for (SNode ref : SetSequence.fromSet(HighlightInstances_Action.this.model.findInstances(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(HighlightInstances_Action.this.node))), HighlightInstances_Action.this.scope))) {
         if (ref.getContainingRoot() == HighlightInstances_Action.this.editorComponent.getRootCell().getSNode().getContainingRoot()) {
           highlightManager.mark(ref, HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);
         }

@@ -62,7 +62,7 @@ public class GoToAction_Action extends GeneratedAction {
     StringBuilder res = new StringBuilder(500);
     res.append(GoToAction_Action.class.getName());
     res.append("#");
-    res.append(action_State((AnAction)this.action));
+    res.append(action_State((AnAction) this.action));
     res.append("!");
     return res.toString();
   }

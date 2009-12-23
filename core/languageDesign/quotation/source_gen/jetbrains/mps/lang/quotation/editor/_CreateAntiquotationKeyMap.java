@@ -141,7 +141,7 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
         return;
       }
       SModel model = SNodeOperations.getModel(contextNode);
-      if (SNodeOperations.isInstanceOf(((SNode)contextNode.getAttribute()), "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
+      if (SNodeOperations.isInstanceOf(((SNode) contextNode.getAttribute()), "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
         contextNode.setAttribute(null);
       } else
       contextNode.setAttribute(SModelOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.ListAntiquotation", null));
@@ -272,8 +272,8 @@ public class _CreateAntiquotationKeyMap extends EditorCellKeyMap {
       if (!(selectedCell instanceof EditorCell_Property)) {
         return;
       }
-      EditorCell_Property editorCell_Property = (EditorCell_Property)selectedCell;
-      String propertyName = ((PropertyAccessor)editorCell_Property.getModelAccessor()).getPropertyName();
+      EditorCell_Property editorCell_Property = (EditorCell_Property) selectedCell;
+      String propertyName = ((PropertyAccessor) editorCell_Property.getModelAccessor()).getPropertyName();
       if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation")) {
         SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.lang.core.structure.BaseConcept");
         assert attributedNode != null;

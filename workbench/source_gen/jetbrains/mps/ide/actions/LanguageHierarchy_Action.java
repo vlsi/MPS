@@ -72,11 +72,11 @@ public class LanguageHierarchy_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      Language language = (Language)LanguageHierarchy_Action.this.module;
+      Language language = (Language) LanguageHierarchy_Action.this.module;
       MPSLanguageVirtualFile file = MPSLanguagesVirtualFileSystem.getInstance().getFileFor(language);
       FileEditorManager editorManager = FileEditorManager.getInstance(LanguageHierarchy_Action.this.project);
       FileEditor[] res = editorManager.openFile(file, true);
-      MPSLanguageEditor languageEditor = (MPSLanguageEditor)res[0];
+      MPSLanguageEditor languageEditor = (MPSLanguageEditor) res[0];
       languageEditor.getComponent().requestFocus();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

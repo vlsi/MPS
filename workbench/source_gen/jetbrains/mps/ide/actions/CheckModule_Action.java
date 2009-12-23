@@ -99,7 +99,7 @@ public class CheckModule_Action extends GeneratedAction {
     StringBuilder res = new StringBuilder(500);
     res.append(CheckModule_Action.class.getName());
     res.append("#");
-    res.append(moduleType_State((String)this.moduleType));
+    res.append(moduleType_State((String) this.moduleType));
     res.append("!");
     return res.toString();
   }

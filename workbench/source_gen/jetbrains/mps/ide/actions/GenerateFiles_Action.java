@@ -77,7 +77,7 @@ public class GenerateFiles_Action extends GeneratedAction {
     try {
       IOperationContext projectContext = GenerateFiles_Action.this.project.createOperationContext();
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-      for (SModelDescriptor model : ListSequence.fromList(((NamespaceTextNode)GenerateFiles_Action.this.ppNode).getModelsUnder())) {
+      for (SModelDescriptor model : ListSequence.fromList(((NamespaceTextNode) GenerateFiles_Action.this.ppNode).getModelsUnder())) {
         if (!(model.isTransient()) && model instanceof DefaultSModelDescriptor) {
           models.add(model);
         }

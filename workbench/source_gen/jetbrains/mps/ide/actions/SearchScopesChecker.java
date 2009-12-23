@@ -62,7 +62,7 @@ public class SearchScopesChecker extends SpecificChecker {
   }
 
   private static boolean checkScope(SNode concept, SNode node, SNode targetNode, SNode linkDeclaration, IOperationContext operationContext) {
-    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, node, ((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)), ((LinkDeclaration)SNodeOperations.getAdapter(linkDeclaration)), operationContext);
+    SearchScopeStatus status = ModelConstraintsUtil.getSearchScope(null, node, ((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)), ((LinkDeclaration) SNodeOperations.getAdapter(linkDeclaration)), operationContext);
     if (status.isOk() && !(status.isDefault())) {
       List<SNode> nodes = status.getSearchScope().getNodes();
       if (!(ListSequence.fromList(nodes).contains(targetNode))) {

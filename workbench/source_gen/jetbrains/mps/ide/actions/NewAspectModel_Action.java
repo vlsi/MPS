@@ -45,7 +45,7 @@ public class NewAspectModel_Action extends GeneratedAction {
       event.getPresentation().setText("New " + NameUtil.capitalize(NewAspectModel_Action.this.aspect.getName()) + " Aspect");
       event.getPresentation().setIcon(NewAspectModel_Action.this.aspect.getIcon());
       if (NewAspectModel_Action.this.module instanceof Language) {
-        NewAspectModel_Action.this.setEnabledState(event.getPresentation(), NewAspectModel_Action.this.aspect.get(((Language)NewAspectModel_Action.this.module)) == null);
+        NewAspectModel_Action.this.setEnabledState(event.getPresentation(), NewAspectModel_Action.this.aspect.get(((Language) NewAspectModel_Action.this.module)) == null);
       } else {
         NewAspectModel_Action.this.setEnabledState(event.getPresentation(), false);
       }
@@ -79,7 +79,7 @@ public class NewAspectModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      final SModelDescriptor modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language)NewAspectModel_Action.this.module));
+      final SModelDescriptor modelDescriptor = NewAspectModel_Action.this.aspect.createNew(((Language) NewAspectModel_Action.this.module));
       // we need it since tree is updated later 
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
@@ -98,7 +98,7 @@ public class NewAspectModel_Action extends GeneratedAction {
     StringBuilder res = new StringBuilder(500);
     res.append(NewAspectModel_Action.class.getName());
     res.append("#");
-    res.append(aspect_State((LanguageAspect)this.aspect));
+    res.append(aspect_State((LanguageAspect) this.aspect));
     res.append("!");
     return res.toString();
   }

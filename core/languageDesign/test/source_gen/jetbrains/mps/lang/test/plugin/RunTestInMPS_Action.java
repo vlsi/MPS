@@ -102,7 +102,7 @@ public class RunTestInMPS_Action extends GeneratedAction {
       final String testName = ITestMethod_Behavior.call_getTestName_1216136419751(test);
       System.out.println("Test " + className + "." + testName);
       final Class c = RunTestInMPS_Action.this.model.getModelDescriptor().getModule().getClass(ITestCase_Behavior.call_getClassName_1216136193905(ITestMethod_Behavior.call_getTestCase_1216134500045(test)));
-      final BaseTransformationTest testClass = (BaseTransformationTest)c.newInstance();
+      final BaseTransformationTest testClass = (BaseTransformationTest) c.newInstance();
       testClass.setProject(RunTestInMPS_Action.this.project);
       testClass.setModelDescriptor(RunTestInMPS_Action.this.model.getModelDescriptor());
       Thread thread = new Thread(new Runnable() {

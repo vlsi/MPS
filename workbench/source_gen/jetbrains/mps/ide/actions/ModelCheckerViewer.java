@@ -121,7 +121,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
       public void run() {
         // Select all fixable issues 
         final Set<SNodePointer> includedResultNodes = SetSequence.fromSetWithValues(new HashSet<SNodePointer>(), ModelCheckerViewer.this.myUsagesView.getIncludedResultNodes());
-        List<ModelCheckerIssue> issuesToFix = ListSequence.fromList(((List<SearchResult<ModelCheckerIssue>>)ModelCheckerViewer.this.getSearchResults().getSearchResults())).select(new ISelector<SearchResult<ModelCheckerIssue>, ModelCheckerIssue>() {
+        List<ModelCheckerIssue> issuesToFix = ListSequence.fromList(((List<SearchResult<ModelCheckerIssue>>) ModelCheckerViewer.this.getSearchResults().getSearchResults())).select(new ISelector<SearchResult<ModelCheckerIssue>, ModelCheckerIssue>() {
           public ModelCheckerIssue select(SearchResult<ModelCheckerIssue> sr) {
             return sr.getObject();
           }

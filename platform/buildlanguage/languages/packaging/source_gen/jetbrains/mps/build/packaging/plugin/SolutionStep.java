@@ -59,7 +59,7 @@ public class SolutionStep extends TwoOptionsStep<IModule> {
   }
 
   protected void setVariant(IModule m) {
-    this.myGenerator.setSolution((Solution)m);
+    this.myGenerator.setSolution((Solution) m);
   }
 
   protected String getTextFieldName() {

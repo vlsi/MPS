@@ -8,10 +8,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 
 public class TypeCast {
-
   public void cast_node_to_SNode(SNode ifStatement) {
     SNode nodeObject1 = ifStatement;
-    SNode nodeObject2 = (SNode)SLinkOperations.getTarget(ifStatement, "condition", true);
+    SNode nodeObject2 = (SNode) SLinkOperations.getTarget(ifStatement, "condition", true);
     SNode nodeObject3 = SLinkOperations.getTarget(ifStatement, "condition", true);
     SNode expression = SNodeOperations.cast(nodeObject3, "jetbrains.mps.baseLanguage.structure.Expression");
   }
@@ -38,7 +37,6 @@ public class TypeCast {
   public void cast_children_to_List(SNode statements) {
     List list1 = SLinkOperations.getTargets(statements, "statement", true);
     List<SNode> list2 = SLinkOperations.getTargets(statements, "statement", true);
-    List<SNode> list3 = (List<SNode>)SLinkOperations.getTargets(statements, "statement", true);
+    List<SNode> list3 = (List<SNode>) SLinkOperations.getTargets(statements, "statement", true);
   }
-
 }

@@ -23,7 +23,7 @@ public class DevkitDescriptorPersistence {
   public static DevkitDescriptor loadDevKitDescriptor(final IFile file) {
     try {
       Document document = JDOMUtil.loadDocument(file);
-      final Element root = ((Element)document.getRootElement());
+      final Element root = ((Element) document.getRootElement());
       DevkitDescriptor descriptor = new _FunctionTypes._return_P0_E0<DevkitDescriptor>() {
         public DevkitDescriptor invoke() {
           DevkitDescriptor result_1953_0 = new DevkitDescriptor();

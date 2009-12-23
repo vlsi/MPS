@@ -72,7 +72,7 @@ public class DevkitProperties_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      final DevKit devkit = ((DevKit)DevkitProperties_Action.this.module);
+      final DevKit devkit = ((DevKit) DevkitProperties_Action.this.module);
       final Wrappers._T<DevKitPropertiesDialog> dialog = new Wrappers._T<DevKitPropertiesDialog>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

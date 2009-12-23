@@ -227,7 +227,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1208965283805(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule module = ((TemplateQueryContext)_context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
+    IModule module = ((TemplateQueryContext) _context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
     return (module == null ?
       null :
       module.getModuleFqName()
@@ -247,10 +247,10 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1212583749804(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule originalModule = ((TemplateQueryContext)_context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
+    IModule originalModule = ((TemplateQueryContext) _context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
     assert originalModule != null;
     if (originalModule instanceof Generator) {
-      originalModule = ((Generator)originalModule).getSourceLanguage();
+      originalModule = ((Generator) originalModule).getSourceLanguage();
     }
     return PluginNameUtils.getPluginName(originalModule);
   }
@@ -264,10 +264,10 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1215266495353(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule originalModule = ((TemplateQueryContext)_context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
+    IModule originalModule = ((TemplateQueryContext) _context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
     assert originalModule != null;
     if (originalModule instanceof Generator) {
-      originalModule = ((Generator)originalModule).getSourceLanguage();
+      originalModule = ((Generator) originalModule).getSourceLanguage();
     }
     return PluginNameUtils.getApplicationPluginName(originalModule);
   }
@@ -329,7 +329,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1217679691887(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    IModule module = ((TemplateQueryContext)_context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
+    IModule module = ((TemplateQueryContext) _context).getGenerator().getGeneratorSessionContext().getInvocationContext().getModule();
     return (module == null ?
       null :
       module.getModuleUID()

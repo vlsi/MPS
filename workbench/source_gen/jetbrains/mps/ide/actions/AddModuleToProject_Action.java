@@ -67,7 +67,7 @@ public class AddModuleToProject_Action extends GeneratedAction {
     try {
       for (IModule module : ListSequence.fromList(AddModuleToProject_Action.this.modules)) {
         if (module instanceof Language) {
-          AddModuleToProject_Action.this.mpsProject.addProjectLanguage(((Language)module));
+          AddModuleToProject_Action.this.mpsProject.addProjectLanguage(((Language) module));
         } else if (module instanceof Solution) {
           IFile file = module.getDescriptorFile();
           assert file != null;

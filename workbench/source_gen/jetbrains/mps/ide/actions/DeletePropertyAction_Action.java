@@ -67,8 +67,8 @@ public class DeletePropertyAction_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       TreeNode parent = DeletePropertyAction_Action.this.node.getParent();
-      PropertiesTreeNode propsNode = (PropertiesTreeNode)parent;
-      PropertyTreeNode propNode = (PropertyTreeNode)DeletePropertyAction_Action.this.node;
+      PropertiesTreeNode propsNode = (PropertiesTreeNode) parent;
+      PropertyTreeNode propNode = (PropertyTreeNode) DeletePropertyAction_Action.this.node;
       propsNode.getSNode().setProperty(propNode.getProperty(), "");
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

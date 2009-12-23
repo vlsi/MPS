@@ -32,6 +32,6 @@ public class Data extends MultiTuple._2<String, String> {
 
   @SuppressWarnings(value = "unchecked")
   public Data assignFrom(Tuples._2<String, String> from) {
-    return (Data)super.assign(from);
+    return (Data) super.assign(from);
   }
 }

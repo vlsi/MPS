@@ -55,7 +55,7 @@ public class SModelUtil {
     meManager.addGlobalModelListener(new SModelAdapter() {
       public void rootRemoved(SModelRootEvent p0) {
         if (Language.getModelAspect(p0.getModelDescriptor()) == LanguageAspect.STRUCTURE) {
-          if (SNodeOperations.isInstanceOf(((SNode)p0.getRoot()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
+          if (SNodeOperations.isInstanceOf(((SNode) p0.getRoot()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
             MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).clear();
             MapSequence.fromMap(SModelUtil.myConceptToLanguage).clear();
           }
@@ -64,7 +64,7 @@ public class SModelUtil {
 
       public void propertyChanged(SModelPropertyEvent p0) {
         if (Language.getModelAspect(p0.getModelDescriptor()) == LanguageAspect.STRUCTURE) {
-          if (SNodeOperations.isInstanceOf(((SNode)p0.getNode()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
+          if (SNodeOperations.isInstanceOf(((SNode) p0.getNode()), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
             if (p0.getPropertyName().equals("name")) {
               String modelName = p0.getNode().getModel().getLongName();
               String newName = modelName + "." + p0.getNewPropertyValue();
@@ -115,7 +115,7 @@ public class SModelUtil {
         }
         String conceptName = NameUtil.shortNameFromLongName(conceptFQName);
         AbstractConceptDeclaration resultAdapter = language.findConceptDeclaration(conceptName);
-        SNode result = ((SNode)BaseAdapter.fromAdapter(resultAdapter));
+        SNode result = ((SNode) BaseAdapter.fromAdapter(resultAdapter));
         MapSequence.fromMap(SModelUtil.myFQNameToConcepDecl).put(conceptFQName, result);
         return result;
       }
@@ -138,7 +138,7 @@ public class SModelUtil {
     if (l != null) {
       return l;
     }
-    String languageNamespace = NameUtil.namespaceFromConcept(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)));
+    String languageNamespace = NameUtil.namespaceFromConcept(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)));
     if (languageNamespace == null) {
       return null;
     }
@@ -168,8 +168,8 @@ public class SModelUtil {
     Set<SNode> result = SetSequence.fromSet(new LinkedHashSet<SNode>());
     for (SNode superConcept : ListSequence.fromList(getDirectSuperConcepts(concept))) {
       if (SNodeOperations.isInstanceOf(superConcept, "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration") && !(SetSequence.fromSet(result).contains(superConcept))) {
-        for (AbstractConceptDeclaration adapter : ListSequence.fromList(new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(superConcept))).getConcepts())) {
-          SetSequence.fromSet(result).addElement((SNode)adapter.getNode());
+        for (AbstractConceptDeclaration adapter : ListSequence.fromList(new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(superConcept))).getConcepts())) {
+          SetSequence.fromSet(result).addElement((SNode) adapter.getNode());
         }
       }
     }
@@ -179,7 +179,7 @@ public class SModelUtil {
   public static List<SNode> getDirectSuperConcepts(SNode concept) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-      SNode conceptDecl = (SNode)concept;
+      SNode conceptDecl = (SNode) concept;
       SNode extended = SLinkOperations.getTarget(conceptDecl, "extends", false);
       if (extended != null) {
         ListSequence.fromList(result).addElement(extended);
@@ -190,7 +190,7 @@ public class SModelUtil {
         }
       }
     } else {
-      SNode intConceptDecl = (SNode)concept;
+      SNode intConceptDecl = (SNode) concept;
       for (SNode ref : ListSequence.fromList(SLinkOperations.getTargets(intConceptDecl, "extends", true))) {
         if (SLinkOperations.getTarget(ref, "intfc", false) != null) {
           ListSequence.fromList(result).addElement(SLinkOperations.getTarget(ref, "intfc", false));

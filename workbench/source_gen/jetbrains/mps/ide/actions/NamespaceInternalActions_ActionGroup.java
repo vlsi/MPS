@@ -48,7 +48,7 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
       Project project = MPSDataKeys.PROJECT.getData(dataContext);
       DefaultMutableTreeNode selectedNode = ProjectPane.getInstance(project).getSelectedNode();
       assert selectedNode instanceof NamespaceTextNode;
-      NamespaceTextNode node = (NamespaceTextNode)selectedNode;
+      NamespaceTextNode node = (NamespaceTextNode) selectedNode;
       DefaultActionGroup newGroup = node.createNewGroup();
       if (newGroup != null) {
         NamespaceInternalActions_ActionGroup.this.add(newGroup);

@@ -80,7 +80,7 @@ public class ModelCheckerCheckinHandler extends CheckinHandler {
     List<SModelDescriptor> filteredModelDescriptors = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     for (SModelDescriptor modelDescriptor : ListSequence.fromList(allModelDescriptors)) {
       if (modelDescriptor.getModelFile() instanceof FileSystemFile) {
-        File file = ((FileSystemFile)modelDescriptor.getModelFile()).getFile();
+        File file = ((FileSystemFile) modelDescriptor.getModelFile()).getFile();
         if (SetSequence.fromSet(filesSet).contains(file)) {
           ListSequence.fromList(filteredModelDescriptors).addElement(modelDescriptor);
         }

@@ -64,7 +64,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
         ApplicationManager.getApplication().invokeLater(new Runnable() {
           public void run() {
             final Wrappers._T<Runnable> runnable = new Wrappers._T<Runnable>();
-            final Solution solution = (Solution)descriptor.getModule();
+            final Solution solution = (Solution) descriptor.getModule();
             ModelAccess.instance().runWriteAction(new Runnable() {
               public void run() {
                 for (ModuleReference ref : ListSequence.fromList(moduleReferencesToAdd)) {
@@ -192,9 +192,9 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
   public static SNode createComponent(NodeData data, SModel targetSModel) {
     if (data instanceof ModuleData) {
-      return PackagingLanguageGenerator.createModule(((ModuleData)data).getModule());
+      return PackagingLanguageGenerator.createModule(((ModuleData) data).getModule());
     } else if (data instanceof NamespaceData) {
-      String namespace = ((NamespaceData)data).getText();
+      String namespace = ((NamespaceData) data).getText();
       return PackagingLanguageGenerator.createFolder(namespace);
     }
     return null;

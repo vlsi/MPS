@@ -74,7 +74,7 @@ public class RenameLanguage_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      new RenameLanguageDialog(RenameLanguage_Action.this.frame, RenameLanguage_Action.this.project, ((Language)RenameLanguage_Action.this.module)).showDialog();
+      new RenameLanguageDialog(RenameLanguage_Action.this.frame, RenameLanguage_Action.this.project, ((Language) RenameLanguage_Action.this.module)).showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameLanguage", t);

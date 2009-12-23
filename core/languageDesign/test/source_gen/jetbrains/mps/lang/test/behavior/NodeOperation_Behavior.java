@@ -34,7 +34,7 @@ public class NodeOperation_Behavior {
   }
 
   public static String call_getName_1217435265700(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_getName_1217435265700", PARAMETERS_1217435265700);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), "virtual_getName_1217435265700", PARAMETERS_1217435265700);
   }
 
   public static void call_perform_1215601182156(SNode thisNode, SNode node) {
@@ -42,7 +42,7 @@ public class NodeOperation_Behavior {
   }
 
   public static String callSuper_getName_1217435265700(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_getName_1217435265700", PARAMETERS_1217435265700);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.test.structure.NodeOperation"), callerConceptFqName, "virtual_getName_1217435265700", PARAMETERS_1217435265700);
   }
 
   public static void callSuper_perform_1215601182156(SNode thisNode, String callerConceptFqName, SNode node) {

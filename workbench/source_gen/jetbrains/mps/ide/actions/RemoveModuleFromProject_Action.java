@@ -111,13 +111,13 @@ public class RemoveModuleFromProject_Action extends GeneratedAction {
         return;
       }
       if (module instanceof Language) {
-        RemoveModuleFromProject_Action.this.mpsproject.removeProjectLanguage((Language)module);
+        RemoveModuleFromProject_Action.this.mpsproject.removeProjectLanguage((Language) module);
       } else
       if (module instanceof Solution) {
-        RemoveModuleFromProject_Action.this.mpsproject.removeProjectSolution((Solution)module);
+        RemoveModuleFromProject_Action.this.mpsproject.removeProjectSolution((Solution) module);
       } else
       if (module instanceof DevKit) {
-        RemoveModuleFromProject_Action.this.mpsproject.removeProjectDevKit((DevKit)module);
+        RemoveModuleFromProject_Action.this.mpsproject.removeProjectDevKit((DevKit) module);
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

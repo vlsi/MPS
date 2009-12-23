@@ -53,18 +53,18 @@ public class IMacroHolder_Behavior {
   }
 
   public static String call_getPath_1234976932856(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), "virtual_getPath_1234976932856", PARAMETERS_1234976932856);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), "virtual_getPath_1234976932856", PARAMETERS_1234976932856);
   }
 
   public static List<String> call_getAllMacroNames_1234975567387(SNode thisNode, boolean addBasedir) {
-    return (List<String>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), "virtual_getAllMacroNames_1234975567387", PARAMETERS_1234975567387, addBasedir);
+    return (List<String>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), "virtual_getAllMacroNames_1234975567387", PARAMETERS_1234975567387, addBasedir);
   }
 
   public static String callSuper_getPath_1234976932856(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), callerConceptFqName, "virtual_getPath_1234976932856", PARAMETERS_1234976932856);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), callerConceptFqName, "virtual_getPath_1234976932856", PARAMETERS_1234976932856);
   }
 
   public static List<String> callSuper_getAllMacroNames_1234975567387(SNode thisNode, String callerConceptFqName, boolean addBasedir) {
-    return (List<String>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), callerConceptFqName, "virtual_getAllMacroNames_1234975567387", PARAMETERS_1234975567387, addBasedir);
+    return (List<String>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.build.packaging.structure.IMacroHolder"), callerConceptFqName, "virtual_getAllMacroNames_1234975567387", PARAMETERS_1234975567387, addBasedir);
   }
 }

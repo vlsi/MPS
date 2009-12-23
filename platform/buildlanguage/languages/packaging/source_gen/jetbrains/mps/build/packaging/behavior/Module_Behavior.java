@@ -120,13 +120,13 @@ public class Module_Behavior {
   }
 
   public static List<SNode> call_getClassPath_1213877515083(SNode thisNode) {
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ((AbstractModule)Module_Behavior.call_getModule_1213877515148(thisNode)).getClassPath(), true);
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getClassPath(), true);
   }
 
   public static List<SNode> call_getRuntimeClassPath_1213877515098(SNode thisNode) {
     IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
     if (module instanceof Language) {
-      return ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, ((Language)module).getLanguageRuntimeClassPathItems(), true)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPath_1213877515083(thisNode))).toListSequence();
+      return ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, ((Language) module).getLanguageRuntimeClassPathItems(), true)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPath_1213877515083(thisNode))).toListSequence();
     }
     return new ArrayList<SNode>();
   }
@@ -185,7 +185,7 @@ public class Module_Behavior {
 
   public static String extractModuleProperName_1235487584035(IModule module) {
     if (module instanceof Solution) {
-      Solution solution = (Solution)module;
+      Solution solution = (Solution) module;
       if (!(solution.isExternallyVisible())) {
         return Module_Behavior.replaceBadCharacters_1235487831795(solution.getSolutionDescriptor().getNamespace());
       }

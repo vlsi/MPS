@@ -62,7 +62,7 @@ public abstract class AbstractManager implements ApplicationComponent {
         Class postProcessorClass = this.myLanguage.getClass(this.myClassName);
         if (postProcessorClass != null) {
           try {
-            this.myInstance = (T)postProcessorClass.newInstance();
+            this.myInstance = (T) postProcessorClass.newInstance();
           } catch (InstantiationException ex) {
             this.myLog.error(ex);
           } catch (IllegalAccessException ex) {

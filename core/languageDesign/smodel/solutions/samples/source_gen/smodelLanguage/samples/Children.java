@@ -14,13 +14,12 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Children {
-
   public void accessToChildren_1(SNode statementList) {
     BaseConcept_Behavior.call_getPresentation_1213877396640(statementList);
     int count1 = SLinkOperations.getCount(statementList, "statement");
     List<SNode> statements = SLinkOperations.getTargets(statementList, "statement", true);
     int count2 = ListSequence.fromList(statements).count();
-    int count3 = ((List<SNode>)statements).size();
+    int count3 = ((List<SNode>) statements).size();
     List<SNode> removedStatements = SLinkOperations.removeAllChildren(statementList, "statement");
   }
 
@@ -28,16 +27,16 @@ public class Children {
     SLinkOperations.addNewChild(statementList1, "statement", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
     SLinkOperations.addNewChild(statementList1, "statement", "jetbrains.mps.baseLanguage.structure.IfStatement");
     SLinkOperations.addNewChild(statementList1, "statement", "jetbrains.mps.baseLanguage.structure.ReturnStatement");
-    for(SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
+    for (SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
       SLinkOperations.addChild(statementList2, "statement", SNodeOperations.copyNode(statement));
     }
-    for(SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
+    for (SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
       SLinkOperations.addChild(statementList2, "statement", SNodeOperations.copyNode(statement));
     }
-    for(SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
+    for (SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
       SLinkOperations.addChild(statementList2, "statement", SNodeOperations.copyNode(statement));
     }
-    for(SNode statement : ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true))) {
+    for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true))) {
       SLinkOperations.addChild(statementList2, "statement", ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).first());
     }
   }
@@ -46,8 +45,7 @@ public class Children {
     List<SNode> children1 = SNodeOperations.getDescendants(SLinkOperations.getTarget(statement, "expression", true), null, false, new String[]{});
     List<SNode> children2 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{});
     List<SNode> children3 = SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", true, new String[]{});
-    Iterable<SNode> children4 = ListSequence.fromList(SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{})).where(new IWhereFilter <SNode>() {
-
+    Iterable<SNode> children4 = ListSequence.fromList(SNodeOperations.getDescendants(statement, "jetbrains.mps.baseLanguage.structure.BooleanConstant", false, new String[]{})).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getBoolean(it, "value") == true;
       }
@@ -66,5 +64,4 @@ public class Children {
     List<SNode> children1 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant","jetbrains.mps.baseLanguage.structure.IntegerConstant"}, false, new String[]{});
     List<SNode> children2 = SNodeOperations.getDescendantsWhereConceptInList(SLinkOperations.getTarget(statement, "expression", true), new String[]{"jetbrains.mps.baseLanguage.structure.BooleanConstant","jetbrains.mps.baseLanguage.structure.IntegerConstant"}, true, new String[]{});
   }
-
 }

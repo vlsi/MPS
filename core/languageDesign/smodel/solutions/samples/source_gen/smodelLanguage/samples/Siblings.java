@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
 
 public class Siblings {
-
   public void nextSibling(SNode statement) {
     SNode next1 = SNodeOperations.getNextSibling(statement);
     SNode next2 = SNodeOperations.cast(SNodeOperations.getNextSibling(statement), "jetbrains.mps.baseLanguage.structure.Statement");
@@ -23,5 +22,4 @@ public class Siblings {
   public void allSiblings(SNode statement) {
     List<SNode> siblings_inclusive = SNodeOperations.getAllSiblings(statement, true);
   }
-
 }

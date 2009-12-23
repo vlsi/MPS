@@ -117,12 +117,12 @@ public class NewRuntimeModule_Action extends GeneratedAction {
               if (module == null) {
                 return;
               }
-              Language language = (Language)NewRuntimeModule_Action.this.contextModule;
+              Language language = (Language) NewRuntimeModule_Action.this.contextModule;
               Dependency dependency = new Dependency();
               dependency.setModuleRef(module.getModuleReference());
               language.getLanguageDescriptor().getRuntimeModules().add(dependency);
               language.save();
-              ((MPSTreeNode)NewRuntimeModule_Action.this.treeNode).getTree().rebuildLater();
+              ((MPSTreeNode) NewRuntimeModule_Action.this.treeNode).getTree().rebuildLater();
             }
           };
         }
@@ -130,7 +130,7 @@ public class NewRuntimeModule_Action extends GeneratedAction {
       ChooseByNamePopup popup = ChooseByNamePopup.createPopup(NewRuntimeModule_Action.this.project, baseSolutionModel, new FakePsiContext());
       popup.invoke(new ChooseByNamePopupComponent.Callback() {
         public void elementChosen(Object p0) {
-          ((NavigationItem)p0).navigate(true);
+          ((NavigationItem) p0).navigate(true);
         }
       }, ModalityState.current(), true);
     } catch (Throwable t) {

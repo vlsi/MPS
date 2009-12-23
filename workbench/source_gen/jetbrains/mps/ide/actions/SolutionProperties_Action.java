@@ -72,7 +72,7 @@ public class SolutionProperties_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      final Solution solution = (Solution)SolutionProperties_Action.this.module;
+      final Solution solution = (Solution) SolutionProperties_Action.this.module;
       final Wrappers._T<SolutionPropertiesDialog> dialog = new Wrappers._T<SolutionPropertiesDialog>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

@@ -9,7 +9,7 @@ import jetbrains.mps.refactoring.framework.GenericRefactoringAction;
 
 public class RefactoringHelper {
   public static BaseAction getActionForRefactoring(IRefactoring refactoring) {
-    BaseAction action = ((BaseAction)ActionFactory.getInstance().acquireRegisteredAction(GenericRefactoringAction.class.getName(), "jetbrains.mps.ide", refactoring));
+    BaseAction action = ((BaseAction) ActionFactory.getInstance().acquireRegisteredAction(GenericRefactoringAction.class.getName(), "jetbrains.mps.ide", refactoring));
     return action;
   }
 }

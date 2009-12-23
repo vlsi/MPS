@@ -25,7 +25,7 @@ public class FeatureUtil {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.ypath");
 
   public static SNode getterExpression(SNode feature, SNode srcExpr, Object param, ITemplateGenerator generator) {
-    IGenericParameterizedFeatureDesign gfd = (IGenericParameterizedFeatureDesign)getFeatureDesign(feature);
+    IGenericParameterizedFeatureDesign gfd = (IGenericParameterizedFeatureDesign) getFeatureDesign(feature);
     if (gfd != null) {
       try {
         SNode expr = gfd.getterExpression(srcExpr, param, generator);
@@ -38,7 +38,7 @@ public class FeatureUtil {
   }
 
   public static SNode getterExpression(SNode feature, SNode srcExpr, ITemplateGenerator generator) {
-    IGenericFeatureDesign gfd = (IGenericFeatureDesign)getFeatureDesign(feature);
+    IGenericFeatureDesign gfd = (IGenericFeatureDesign) getFeatureDesign(feature);
     if (gfd != null) {
       try {
         SNode expr = gfd.getterExpression(srcExpr, generator);
@@ -51,7 +51,7 @@ public class FeatureUtil {
   }
 
   public static boolean isSingleTargetCardinality(SNode feature, Object param) {
-    IGenericParameterizedFeatureDesign gfd = (IGenericParameterizedFeatureDesign)getFeatureDesign(feature);
+    IGenericParameterizedFeatureDesign gfd = (IGenericParameterizedFeatureDesign) getFeatureDesign(feature);
     if (gfd != null) {
       try {
         return gfd.isSingleTargetCardinality(param);
@@ -63,7 +63,7 @@ public class FeatureUtil {
   }
 
   public static SNode getTargetType(SNode feature, SNode nodeType, Object param) {
-    IParameterizedFeatureDesign fd = (IParameterizedFeatureDesign)getFeatureDesign(feature);
+    IParameterizedFeatureDesign fd = (IParameterizedFeatureDesign) getFeatureDesign(feature);
     if (fd != null) {
       try {
         return fd.getTargetType(param, nodeType);
@@ -75,7 +75,7 @@ public class FeatureUtil {
   }
 
   public static List<SNode> getParameterObjects(SNode feature, SNode nodeType) {
-    final IParameterizedFeatureDesign fd = (IParameterizedFeatureDesign)getFeatureDesign(feature);
+    final IParameterizedFeatureDesign fd = (IParameterizedFeatureDesign) getFeatureDesign(feature);
     if (fd != null) {
       Iterable<Object> params = fd.getParameters(nodeType);
       if (Sequence.fromIterable(params).isNotEmpty()) {
@@ -83,10 +83,10 @@ public class FeatureUtil {
           public SNode select(Object it) {
             SNode param = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.ParameterWrapper", null);
             if (it instanceof SNode) {
-              SLinkOperations.setTarget(param, "paramRef", (SNode)it, false);
+              SLinkOperations.setTarget(param, "paramRef", (SNode) it, false);
             } else
             if (it instanceof String) {
-              SPropertyOperations.set(param, "paramValue", (String)it);
+              SPropertyOperations.set(param, "paramValue", (String) it);
             }
             SPropertyOperations.set(param, "name", fd.parameterToString(it));
             return param;

@@ -60,13 +60,13 @@ public class AnonymousCellAnnotation_Behavior {
   public static void call_assertEditor_6268941039745719581(SNode thisNode, IEditor editor, SNode node, Map<SNode, SNode> map, Map<SNode, SNode> nodeToCopy) {
     EditorComponent component = editor.getCurrentEditorComponent();
     if (SPropertyOperations.getBoolean(thisNode, "isInInspector")) {
-      component = ((NodeEditorComponent)component).getInspector();
+      component = ((NodeEditorComponent) component).getInspector();
     }
     Assert.assertSame(node, MapSequence.fromMap(map).get(component.getSelectedCell().getSNode()));
     EditorCell selectedCell = component.getSelectedCell();
     Assert.assertEquals(selectedCell.getCellId(), SPropertyOperations.getString(thisNode, "cellId"));
     if (selectedCell instanceof EditorCell_Label) {
-      EditorCell_Label label = (EditorCell_Label)selectedCell;
+      EditorCell_Label label = (EditorCell_Label) selectedCell;
       Assert.assertEquals(SPropertyOperations.getInteger(thisNode, "selectionStart"), label.getSelectionStart());
       Assert.assertEquals(SPropertyOperations.getInteger(thisNode, "selectionEnd"), label.getSelectionEnd());
     }
@@ -79,7 +79,7 @@ public class AnonymousCellAnnotation_Behavior {
 
   public static void call_setupCaretAndSelection_9114978211826243747(SNode thisNode, EditorCell cellWithId) {
     if (cellWithId instanceof EditorCell_Label) {
-      EditorCell_Label label = (EditorCell_Label)cellWithId;
+      EditorCell_Label label = (EditorCell_Label) cellWithId;
       label.setCaretPosition(AnonymousCellAnnotation_Behavior.call_getCaretPosition_6268941039745717986(thisNode, label));
       label.setSelectionStart(SPropertyOperations.getInteger(thisNode, "selectionStart"));
       label.setSelectionEnd(SPropertyOperations.getInteger(thisNode, "selectionEnd"));

@@ -79,7 +79,7 @@ public class NamedTuples_Test extends TestCase {
   public void test_equalsOperator() throws Exception {
     Data tpl1 = new Data().assignFrom(this.getData());
     Data tpl2 = new Data().assignFrom(this.getData());
-    Assert.assertFalse(((Object)tpl1) == ((Object)tpl2));
+    Assert.assertFalse(((Object) tpl1) == ((Object) tpl2));
     Assert.assertTrue(MultiTuple.eq(tpl1, tpl2));
     Assert.assertFalse(!(MultiTuple.eq(tpl1, tpl2)));
     tpl2 = new Data(tpl2.bar(), tpl2.foo());
@@ -106,7 +106,7 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertSame(1, p.first());
     Assert.assertEquals("a", p.second());
     Pair<Integer, String> pp = new Pair<Integer, String>().assignFrom(p);
-    Assert.assertFalse(((Object)p) == ((Object)pp));
+    Assert.assertFalse(((Object) p) == ((Object) pp));
     Assert.assertSame(1, pp.first());
     Assert.assertEquals("a", pp.second());
   }
@@ -124,7 +124,7 @@ public class NamedTuples_Test extends TestCase {
     Assert.assertSame(1, p.first());
     Assert.assertEquals("a", p.second());
     SharedPair<Integer, String> pp = new SharedPair<Integer, String>().assignFrom(p);
-    Assert.assertFalse(((Object)p) == ((Object)pp));
+    Assert.assertFalse(((Object) p) == ((Object) pp));
     Assert.assertSame(1, pp.first());
     Assert.assertEquals("a", pp.second());
   }

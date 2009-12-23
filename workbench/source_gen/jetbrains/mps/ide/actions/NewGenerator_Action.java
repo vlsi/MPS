@@ -81,7 +81,7 @@ public class NewGenerator_Action extends GeneratedAction {
       final NewGeneratorDialog[] dialog = new NewGeneratorDialog[1];
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          dialog[0] = new NewGeneratorDialog(localFrame, ((Language)NewGenerator_Action.this.module));
+          dialog[0] = new NewGeneratorDialog(localFrame, ((Language) NewGenerator_Action.this.module));
         }
       });
       dialog[0].showDialog();

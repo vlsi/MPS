@@ -6,7 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Properties {
-
   public void stringProperty(SNode clazz) {
     boolean hasName = SPropertyOperations.getString(clazz, "name") != null;
     String name = SPropertyOperations.getString(clazz, "name");
@@ -97,5 +96,4 @@ public class Properties {
     SPropertyOperations.set(cellModel, "attractsFocus", "" + (SPropertyOperations.getInteger_def(cellModel, "attractsFocus", "0")));
     SPropertyOperations.set(cellModel, "attractsFocus", "" + (10));
   }
-
 }

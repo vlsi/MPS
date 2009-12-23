@@ -7,7 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Conditions {
-
   public void checkTypeOfNode(SNode node) {
     boolean b = SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IfStatement");
     boolean b2 = SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.IfStatement"), "condition", true), "jetbrains.mps.baseLanguage.structure.BooleanConstant");
@@ -24,5 +23,4 @@ public class Conditions {
     }
     return (node == null) || (node != null);
   }
-
 }

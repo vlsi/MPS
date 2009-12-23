@@ -47,7 +47,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     public INavigator getCurrentNavigateableView() {
       JComponent component = ModelCheckerTool_Tool.this.getSelectedTab();
       assert component instanceof ModelCheckerViewer;
-      return (ModelCheckerViewer)component;
+      return (ModelCheckerViewer) component;
     }
   };
   private CheckinHandlerFactory myCheckinHandlerFactory = new ModelCheckerCheckinHandler.MyHandlerFactory();

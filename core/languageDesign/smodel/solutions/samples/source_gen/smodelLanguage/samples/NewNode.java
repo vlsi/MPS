@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
 
 public class NewNode {
-
   public void newNode1(SModel model) {
     SNode newClass = SModelOperations.createNewRootNode(model, "jetbrains.mps.baseLanguage.structure.ClassConcept", null);
     SLinkOperations.addNewChild(newClass, "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
@@ -31,5 +30,4 @@ public class NewNode {
     SNode ifStatement2 = SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")), null);
     SNode ifStatement3 = SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement")), sample);
   }
-
 }

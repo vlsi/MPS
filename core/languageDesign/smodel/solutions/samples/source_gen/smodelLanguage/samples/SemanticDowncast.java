@@ -8,22 +8,20 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 
 public class SemanticDowncast {
-
   public void invoke_getID_method_1(SNode ifStatement) {
-    String id_verbose = ((SNode)ifStatement).getId();
+    String id_verbose = ((SNode) ifStatement).getId();
     String id_briefly = ifStatement.getId();
   }
 
   public void invoke_getID_method_2(SNode ifStatement) {
-    String id_verbose = ((SNode)((SNode)SLinkOperations.getTarget(ifStatement, "condition", true))).getId();
+    String id_verbose = ((SNode) ((SNode) SLinkOperations.getTarget(ifStatement, "condition", true))).getId();
     String id_better = SLinkOperations.getTarget(ifStatement, "condition", true).getId();
   }
 
   public void countChildren(SNode methodCall) {
-    int count_verbose_not_efficient = ListSequence.fromList(((List<SNode>)SLinkOperations.getTargets(methodCall, "actualArgument", true))).count();
+    int count_verbose_not_efficient = ListSequence.fromList(((List<SNode>) SLinkOperations.getTargets(methodCall, "actualArgument", true))).count();
     int count_not_efficient = ListSequence.fromList(SLinkOperations.getTargets(methodCall, "actualArgument", true)).count();
     int count_not_efficient2 = SLinkOperations.getTargets(methodCall, "actualArgument", true).size();
     int count_best = SLinkOperations.getCount(methodCall, "actualArgument");
   }
-
 }

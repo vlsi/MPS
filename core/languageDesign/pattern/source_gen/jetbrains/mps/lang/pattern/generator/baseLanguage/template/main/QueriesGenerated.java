@@ -231,15 +231,15 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_3444116434173865706(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (String)_context.getNode().getUserObject("childRole_uniqueName");
+    return (String) _context.getNode().getUserObject("childRole_uniqueName");
   }
 
   public static Object referenceMacro_GetReferent_3444116434173865740(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (String)_context.getNode().getUserObject("childRole_uniqueName");
+    return (String) _context.getNode().getUserObject("childRole_uniqueName");
   }
 
   public static Object referenceMacro_GetReferent_3444116434173865776(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return (String)_context.getNode().getUserObject("childRole_uniqueName");
+    return (String) _context.getNode().getUserObject("childRole_uniqueName");
   }
 
   public static boolean ifMacro_Condition_1190931376948(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -278,7 +278,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1190931377744(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(((SNode)_context.getNode().getAttribute()), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration");
+    return SNodeOperations.isInstanceOf(((SNode) _context.getNode().getAttribute()), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration");
   }
 
   public static boolean ifMacro_Condition_1190931377771(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -298,7 +298,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1190931377908(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SNodeOperations.isInstanceOf(((SNode)_context.getNode().getAttribute()), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration");
+    return SNodeOperations.isInstanceOf(((SNode) _context.getNode().getAttribute()), "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration");
   }
 
   public static boolean ifMacro_Condition_1190931377983(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -354,7 +354,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1190931377097(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (String propertyName : _context.getNode().getPropertyNames()) {
-      if (SNodeOperations.isInstanceOf(((SNode)_context.getNode().getPropertyAttribute(propertyName)), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")) {
+      if (SNodeOperations.isInstanceOf(((SNode) _context.getNode().getPropertyAttribute(propertyName)), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")) {
         continue;
       }
       String propertyValue = _context.getNode().getProperty(propertyName);
@@ -369,7 +369,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1190931377192(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (String propertyName : _context.getNode().getPropertyNames()) {
-      if (SNodeOperations.isInstanceOf(((SNode)_context.getNode().getPropertyAttribute(propertyName)), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")) {
+      if (SNodeOperations.isInstanceOf(((SNode) _context.getNode().getPropertyAttribute(propertyName)), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")) {
         SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
         propertyNode.setProperty("propertyName", propertyName);
         propertyNode.setReferent("mainNode", _context.getNode());
@@ -385,7 +385,7 @@ public class QueriesGenerated {
     ListSequence.fromList(referencetRoles).addSequence(SetSequence.fromSet(_context.getNode().getReferenceRoles()));
     Collections.sort(referencetRoles);
     for (String referentRole : referencetRoles) {
-      if (SNodeOperations.isInstanceOf(((SNode)_context.getNode().getLinkAttribute(referentRole)), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration")) {
+      if (SNodeOperations.isInstanceOf(((SNode) _context.getNode().getLinkAttribute(referentRole)), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration")) {
         continue;
       }
       SNode referenceNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
@@ -402,7 +402,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1190931377535(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     List<SNode> result = new ArrayList<SNode>();
     for (String referentRole : _context.getNode().getReferenceRoles()) {
-      if (SNodeOperations.isInstanceOf(((SNode)_context.getNode().getLinkAttribute(referentRole)), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration")) {
+      if (SNodeOperations.isInstanceOf(((SNode) _context.getNode().getLinkAttribute(referentRole)), "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration")) {
         SNode linkNode = SModelOperations.createNewNode(_context.getOutputModel(), "jetbrains.mps.lang.core.structure.BaseConcept", null);
         linkNode.setProperty("referentRole", referentRole);
         linkNode.setReferent("mainNode", _context.getNode());
@@ -415,7 +415,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1190931377752(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode mainNode = _context.getNode().getReferent("mainNode");
     String role = _context.getNode().getProperty("childRole");
-    String childRole = (String)_context.getNode().getUserObject("childRole_uniqueName");
+    String childRole = (String) _context.getNode().getUserObject("childRole_uniqueName");
     for (SNode ch : mainNode.getChildren(role)) {
       ch.putUserObject("childRole_uniqueName", childRole);
     }
@@ -427,7 +427,7 @@ public class QueriesGenerated {
     SNode mainNode = _context.getNode().getReferent("mainNode");
     String role = _context.getNode().getProperty("childRole");
     SNode ch = mainNode.getChildren(role).get(0);
-    String childRole = (String)_context.getNode().getUserObject("childRole_uniqueName");
+    String childRole = (String) _context.getNode().getUserObject("childRole_uniqueName");
     ch.putUserObject("childRole_uniqueName", childRole);
     ListSequence.fromList(result).addElement(ch);
     return result;

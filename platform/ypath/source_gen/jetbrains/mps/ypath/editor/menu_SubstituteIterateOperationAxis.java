@@ -60,13 +60,13 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((Triplet)parameterObject, node, model, scope, operationContext);
+      this.handleAction_impl((Triplet) parameterObject, node, model, scope, operationContext);
     }
 
     public void handleAction_impl(Triplet parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      TraversalAxis axis = (TraversalAxis)parameterObject.first();
-      SNode feat = (SNode)parameterObject.second();
-      SNode pw = (SNode)parameterObject.third();
+      TraversalAxis axis = (TraversalAxis) parameterObject.first();
+      SNode feat = (SNode) parameterObject.second();
+      SNode pw = (SNode) parameterObject.third();
       SPropertyOperations.set(node, "axis", axis.getValue());
       SLinkOperations.setTarget(node, "usedFeature", feat, false);
       SLinkOperations.setTarget(node, "paramObject", pw, true);
@@ -77,13 +77,13 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
     }
 
     public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((Triplet)parameterObject);
+      return this.getMatchingText_internal((Triplet) parameterObject);
     }
 
     public String getMatchingText_internal(Triplet parameterObject) {
-      TraversalAxis axis = (TraversalAxis)parameterObject.first();
-      SNode feat = (SNode)parameterObject.second();
-      SNode pw = (SNode)parameterObject.third();
+      TraversalAxis axis = (TraversalAxis) parameterObject.first();
+      SNode feat = (SNode) parameterObject.second();
+      SNode pw = (SNode) parameterObject.third();
       String suffix = "";
       if ((feat == null)) {
         suffix = " *";
@@ -101,13 +101,13 @@ public class menu_SubstituteIterateOperationAxis extends AbstractCellMenuCompone
     }
 
     public String getDescriptionText(Object parameterObject) {
-      return this.getDescriptionText_internal((Triplet)parameterObject);
+      return this.getDescriptionText_internal((Triplet) parameterObject);
     }
 
     public String getDescriptionText_internal(Triplet parameterObject) {
-      TraversalAxis axis = (TraversalAxis)parameterObject.first();
-      SNode feat = (SNode)parameterObject.second();
-      SNode pw = (SNode)parameterObject.third();
+      TraversalAxis axis = (TraversalAxis) parameterObject.first();
+      SNode feat = (SNode) parameterObject.second();
+      SNode pw = (SNode) parameterObject.third();
       String suffix = "";
       if ((feat == null)) {
         suffix = "all";

@@ -85,7 +85,7 @@ public class ConstraintsChecker extends SpecificChecker {
       }
 
       // Check properties 
-      ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)));
+      ConceptAndSuperConceptsScope chs = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)));
       List<PropertyDeclaration> props = chs.getAdapters(PropertyDeclaration.class);
       for (PropertyDeclaration p : ListSequence.fromList(props)) {
         PropertySupport ps = PropertySupport.getPropertySupport(p);
@@ -114,7 +114,7 @@ public class ConstraintsChecker extends SpecificChecker {
   }
 
   private static boolean isDeclaredProperty(SNode concept, String name) {
-    PropertyDeclaration propertyDeclaration = SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)), name);
+    PropertyDeclaration propertyDeclaration = SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)), name);
     return propertyDeclaration != null;
   }
 }

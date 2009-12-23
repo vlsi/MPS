@@ -66,8 +66,8 @@ public class CreatePropertyAntiquotation_Intention extends BaseIntention impleme
     if (!(selectedCell instanceof EditorCell_Property)) {
       return;
     }
-    EditorCell_Property editorCell_Property = (EditorCell_Property)selectedCell;
-    String propertyName = ((PropertyAccessor)editorCell_Property.getModelAccessor()).getPropertyName();
+    EditorCell_Property editorCell_Property = (EditorCell_Property) selectedCell;
+    String propertyName = ((PropertyAccessor) editorCell_Property.getModelAccessor()).getPropertyName();
     if (SNodeOperations.isInstanceOf(contextNode, "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation")) {
       SNode attributedNode = SNodeOperations.cast(SNodeOperations.getParent(contextNode), "jetbrains.mps.lang.core.structure.BaseConcept");
       assert attributedNode != null;

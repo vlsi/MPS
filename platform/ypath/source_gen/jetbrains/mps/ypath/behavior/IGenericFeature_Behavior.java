@@ -15,18 +15,18 @@ public class IGenericFeature_Behavior {
   }
 
   public static boolean call_isSingleCardinality_1213877249147(SNode thisNode, SNode param) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ypath.structure.IGenericFeature"), "virtual_isSingleCardinality_1213877249147", PARAMETERS_1213877249147, param);
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ypath.structure.IGenericFeature"), "virtual_isSingleCardinality_1213877249147", PARAMETERS_1213877249147, param);
   }
 
   public static SNode call_getterExpression_1213877249152(SNode thisNode, SNode srcExpr, SNode param, ITemplateGenerator generator) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ypath.structure.IGenericFeature"), "virtual_getterExpression_1213877249152", PARAMETERS_1213877249152, srcExpr, param, generator);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ypath.structure.IGenericFeature"), "virtual_getterExpression_1213877249152", PARAMETERS_1213877249152, srcExpr, param, generator);
   }
 
   public static boolean callSuper_isSingleCardinality_1213877249147(SNode thisNode, String callerConceptFqName, SNode param) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ypath.structure.IGenericFeature"), callerConceptFqName, "virtual_isSingleCardinality_1213877249147", PARAMETERS_1213877249147, param);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ypath.structure.IGenericFeature"), callerConceptFqName, "virtual_isSingleCardinality_1213877249147", PARAMETERS_1213877249147, param);
   }
 
   public static SNode callSuper_getterExpression_1213877249152(SNode thisNode, String callerConceptFqName, SNode srcExpr, SNode param, ITemplateGenerator generator) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ypath.structure.IGenericFeature"), callerConceptFqName, "virtual_getterExpression_1213877249152", PARAMETERS_1213877249152, srcExpr, param, generator);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.ypath.structure.IGenericFeature"), callerConceptFqName, "virtual_getterExpression_1213877249152", PARAMETERS_1213877249152, srcExpr, param, generator);
   }
 }

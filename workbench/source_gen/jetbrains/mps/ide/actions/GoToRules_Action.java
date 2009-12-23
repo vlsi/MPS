@@ -82,7 +82,7 @@ public class GoToRules_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      GoToRulesHelper.go(GoToRules_Action.this.frame, GoToRules_Action.this.cell, GoToRules_Action.this.context, ((AbstractConceptDeclaration)SNodeOperations.getAdapter(GoToRules_Action.this.node)));
+      GoToRulesHelper.go(GoToRules_Action.this.frame, GoToRules_Action.this.cell, GoToRules_Action.this.context, ((AbstractConceptDeclaration) SNodeOperations.getAdapter(GoToRules_Action.this.node)));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GoToRules", t);

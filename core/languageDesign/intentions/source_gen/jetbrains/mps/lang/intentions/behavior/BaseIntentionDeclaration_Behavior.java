@@ -53,18 +53,18 @@ public class BaseIntentionDeclaration_Behavior {
   }
 
   public static boolean call_isParameterized_6263518417926802310(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "virtual_isParameterized_6263518417926802310", PARAMETERS_6263518417926802310);
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "virtual_isParameterized_6263518417926802310", PARAMETERS_6263518417926802310);
   }
 
   public static SNode call_getBaseConcept_6263518417926802384(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_6263518417926802384);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_6263518417926802384);
   }
 
   public static boolean callSuper_isParameterized_6263518417926802310(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), callerConceptFqName, "virtual_isParameterized_6263518417926802310", PARAMETERS_6263518417926802310);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), callerConceptFqName, "virtual_isParameterized_6263518417926802310", PARAMETERS_6263518417926802310);
   }
 
   public static SNode callSuper_getBaseConcept_6263518417926802384(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_6263518417926802384);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_6263518417926802384);
   }
 }

@@ -32,6 +32,6 @@ public class Tuple<AAA> extends MultiTuple._2<Integer, AAA> {
 
   @SuppressWarnings(value = "unchecked")
   public Tuple assignFrom(Tuples._2<Integer, AAA> from) {
-    return (Tuple)super.assign(from);
+    return (Tuple) super.assign(from);
   }
 }

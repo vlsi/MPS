@@ -92,7 +92,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
       final Wrappers._T<List<SModelDescriptor>> models = new Wrappers._T<List<SModelDescriptor>>(ListSequence.fromList(new ArrayList<SModelDescriptor>()));
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          ListSequence.fromList(models.value).addSequence(ListSequence.fromList(TemplateLanguageGenerationUtil.getGeneratorModels((Generator)GenerateTemplateQueries_Action.this.module)));
+          ListSequence.fromList(models.value).addSequence(ListSequence.fromList(TemplateLanguageGenerationUtil.getGeneratorModels((Generator) GenerateTemplateQueries_Action.this.module)));
           if (!(GenerateTemplateQueries_Action.this.regenerate)) {
             models.value = ListSequence.fromList(models.value).where(new IWhereFilter<SModelDescriptor>() {
               public boolean accept(SModelDescriptor it) {
@@ -115,7 +115,7 @@ public class GenerateTemplateQueries_Action extends GeneratedAction {
     StringBuilder res = new StringBuilder(500);
     res.append(GenerateTemplateQueries_Action.class.getName());
     res.append("#");
-    res.append(((Object)this.regenerate).toString());
+    res.append(((Object) this.regenerate).toString());
     res.append("!");
     return res.toString();
   }

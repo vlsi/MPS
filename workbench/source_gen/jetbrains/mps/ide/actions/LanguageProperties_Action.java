@@ -72,7 +72,7 @@ public class LanguageProperties_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      final Language language = (Language)LanguageProperties_Action.this.module;
+      final Language language = (Language) LanguageProperties_Action.this.module;
       final Wrappers._T<LanguagePropertiesDialog> dialog = new Wrappers._T<LanguagePropertiesDialog>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

@@ -47,12 +47,12 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((Pair)parameterObject, node, model, scope, operationContext);
+      this.handleAction_impl((Pair) parameterObject, node, model, scope, operationContext);
     }
 
     public void handleAction_impl(Pair parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SNode fe = (SNode)parameterObject.o1;
-      Boolean mu = (Boolean)parameterObject.o2;
+      SNode fe = (SNode) parameterObject.o1;
+      Boolean mu = (Boolean) parameterObject.o2;
       IFeature_Behavior.call_setOpposite_1213877499629(node, fe, mu);
     }
 
@@ -61,12 +61,12 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
     }
 
     public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((Pair)parameterObject);
+      return this.getMatchingText_internal((Pair) parameterObject);
     }
 
     public String getMatchingText_internal(Pair parameterObject) {
-      SNode fe = (SNode)parameterObject.o1;
-      Boolean mu = (Boolean)parameterObject.o2;
+      SNode fe = (SNode) parameterObject.o1;
+      Boolean mu = (Boolean) parameterObject.o2;
       return (mu ?
         "<-> " + SPropertyOperations.getString(fe, "name") :
         "<-  " + SPropertyOperations.getString(fe, "name")
@@ -74,12 +74,12 @@ public class menu_FeatureSetOpposite extends AbstractCellMenuComponent {
     }
 
     public String getDescriptionText(Object parameterObject) {
-      return this.getDescriptionText_internal((Pair)parameterObject);
+      return this.getDescriptionText_internal((Pair) parameterObject);
     }
 
     public String getDescriptionText_internal(Pair parameterObject) {
-      SNode fe = (SNode)parameterObject.o1;
-      Boolean mu = (Boolean)parameterObject.o2;
+      SNode fe = (SNode) parameterObject.o1;
+      Boolean mu = (Boolean) parameterObject.o2;
       return (mu ?
         "set mutual opposite feature" :
         "set opposite feature"

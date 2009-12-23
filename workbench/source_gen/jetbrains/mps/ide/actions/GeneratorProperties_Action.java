@@ -70,7 +70,7 @@ public class GeneratorProperties_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      final Generator generator = (Generator)GeneratorProperties_Action.this.module;
+      final Generator generator = (Generator) GeneratorProperties_Action.this.module;
       GeneratorPropertiesDialog dialog = new GeneratorPropertiesDialog(GeneratorProperties_Action.this.project, generator);
       dialog.showDialog();
     } catch (Throwable t) {

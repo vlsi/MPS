@@ -140,7 +140,7 @@ public class NewModel_Action extends GeneratedAction {
     TreeNode parent = NewModel_Action.this.treeNode.getParent();
     while (parent != null) {
       if (parent instanceof StereotypeProvider) {
-        return ((StereotypeProvider)parent);
+        return ((StereotypeProvider) parent);
       }
       parent = parent.getParent();
     }
@@ -149,7 +149,7 @@ public class NewModel_Action extends GeneratedAction {
 
   protected String getStereotype() {
     if (NewModel_Action.this.treeNode instanceof StereotypeProvider) {
-      return ((StereotypeProvider)NewModel_Action.this.treeNode).getStereotype();
+      return ((StereotypeProvider) NewModel_Action.this.treeNode).getStereotype();
     } else if (NewModel_Action.this.treeNode instanceof NamespaceTextNode) {
       StereotypeProvider parent = NewModel_Action.this.getStereotypeProvider();
       if (parent != null) {
@@ -161,7 +161,7 @@ public class NewModel_Action extends GeneratedAction {
 
   protected boolean isStrict() {
     if (NewModel_Action.this.treeNode instanceof StereotypeProvider) {
-      return ((StereotypeProvider)NewModel_Action.this.treeNode).isStrict();
+      return ((StereotypeProvider) NewModel_Action.this.treeNode).isStrict();
     } else if (NewModel_Action.this.treeNode instanceof NamespaceTextNode) {
       StereotypeProvider parent = NewModel_Action.this.getStereotypeProvider();
       if (parent != null) {

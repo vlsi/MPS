@@ -26,7 +26,7 @@ public class SolutionDescriptorPersistence {
     try {
       Document document = JDOMUtil.loadDocument(file);
       Element rootElement = document.getRootElement();
-      final Element solutionElement = (Element)rootElement;
+      final Element solutionElement = (Element) rootElement;
 
       assert solutionElement != null;
 

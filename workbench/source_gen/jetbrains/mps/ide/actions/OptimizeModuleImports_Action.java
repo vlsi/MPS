@@ -78,9 +78,9 @@ public class OptimizeModuleImports_Action extends GeneratedAction {
         public void run() {
           OptimizeImportsHelper helper = new OptimizeImportsHelper(OptimizeModuleImports_Action.this.context);
           if (OptimizeModuleImports_Action.this.module instanceof Solution) {
-            report.value = helper.optimizeSolutionImports(((Solution)OptimizeModuleImports_Action.this.module));
+            report.value = helper.optimizeSolutionImports(((Solution) OptimizeModuleImports_Action.this.module));
           } else if (OptimizeModuleImports_Action.this.module instanceof Language) {
-            report.value = helper.optimizeLanguageImports(((Language)OptimizeModuleImports_Action.this.module));
+            report.value = helper.optimizeLanguageImports(((Language) OptimizeModuleImports_Action.this.module));
           }
         }
       });

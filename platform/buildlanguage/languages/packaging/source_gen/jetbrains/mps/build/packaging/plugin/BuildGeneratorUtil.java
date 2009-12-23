@@ -57,7 +57,7 @@ public class BuildGeneratorUtil {
         }
       });
       if (module instanceof Solution) {
-        solution = (Solution)module;
+        solution = (Solution) module;
       } else if (module == null) {
         solution = BuildGeneratorUtil.createSolutionFromFile(mpsProject, solutionFile);
       } else {

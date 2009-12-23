@@ -42,7 +42,7 @@ public class CheckBoxTree<N extends NodeData> extends JPanel {
       return;
     }
     Object lastPathComponent = path.getLastPathComponent();
-    CheckBoxNode<N> cbNode = (CheckBoxNode)lastPathComponent;
+    CheckBoxNode<N> cbNode = (CheckBoxNode) lastPathComponent;
     boolean isChecked = this.isChecked(cbNode);
     this.checkNodeRecursively(cbNode, !(isChecked));
     if (isChecked) {
@@ -55,7 +55,7 @@ public class CheckBoxTree<N extends NodeData> extends JPanel {
     this.checkNode(checkBoxNode, check);
     int childCount = checkBoxNode.getChildCount();
     for (int i = 0; i < childCount; i++) {
-      this.checkNodeRecursively((CheckBoxNode<N>)checkBoxNode.getChildAt(i), check);
+      this.checkNodeRecursively((CheckBoxNode<N>) checkBoxNode.getChildAt(i), check);
     }
   }
 
@@ -64,7 +64,7 @@ public class CheckBoxTree<N extends NodeData> extends JPanel {
   }
 
   public void uncheckParents(CheckBoxNode<N> cbNode) {
-    CheckBoxNode<N> parent = (CheckBoxNode<N>)cbNode.getParent();
+    CheckBoxNode<N> parent = (CheckBoxNode<N>) cbNode.getParent();
     if (parent == null) {
       return;
     }

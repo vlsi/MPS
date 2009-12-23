@@ -271,7 +271,7 @@ public class NewLanguageDialogContentPane extends JPanel {
       dir.mkdirs();
     }
     final Language language = Language.createLanguage(myThis.getLanguageNamespace(), new FileSystemFile(descriptorFile), myThis.getProject());
-    LanguageDescriptor languageDescriptor = (LanguageDescriptor)language.getLanguageDescriptor();
+    LanguageDescriptor languageDescriptor = (LanguageDescriptor) language.getLanguageDescriptor();
     ModuleReference devkitRef = LanguageDesign_DevKit.MODULE_REFERENCE;
     languageDescriptor.getUsedDevkits().add(devkitRef);
     languageDescriptor.setCompileInMPS(myThis.getCompileInMPS());

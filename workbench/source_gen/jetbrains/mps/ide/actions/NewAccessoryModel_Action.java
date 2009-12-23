@@ -76,7 +76,7 @@ public class NewAccessoryModel_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      final Language language = ((Language)NewAccessoryModel_Action.this.module);
+      final Language language = ((Language) NewAccessoryModel_Action.this.module);
       final Wrappers._T<String> languageNamespace = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

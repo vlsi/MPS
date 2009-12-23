@@ -65,7 +65,7 @@ public class AddCellAnnotation_Intention extends BaseIntention implements Intent
       SPropertyOperations.set(newAnnotation, "isInInspector", "" + true);
     }
     if (contextCell instanceof EditorCell_Label) {
-      EditorCell_Label label = (EditorCell_Label)contextCell;
+      EditorCell_Label label = (EditorCell_Label) contextCell;
       int caretPosition = label.getCaretPosition();
       if (caretPosition == label.getText().length()) {
         SPropertyOperations.set(newAnnotation, "isLastPosition", "" + true);

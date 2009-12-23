@@ -90,7 +90,7 @@ public class GenerationIntentions_Action extends GeneratedAction {
       int x = selectedCell.getX();
       int y = selectedCell.getY();
       if (selectedCell instanceof EditorCell_Label) {
-        y += ((EditorCell_Label)selectedCell).getHeight();
+        y += ((EditorCell_Label) selectedCell).getHeight();
       }
       final DataContext dataContext = DataManager.getInstance().getDataContext(GenerationIntentions_Action.this.editorContext.getNodeEditorComponent(), x, y);
       ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {
@@ -134,7 +134,7 @@ public class GenerationIntentions_Action extends GeneratedAction {
       BaseAction action = new BaseAction(pair.getFirst().getDescription(pair.getSecond(), GenerationIntentions_Action.this.editorContext)) {
         protected void doExecute(AnActionEvent p0) {
           final IntentionContext intentionContext = new IntentionContext();
-          final GenerateIntention generateIntention = (GenerateIntention)pair.getFirst();
+          final GenerateIntention generateIntention = (GenerateIntention) pair.getFirst();
           if (generateIntention.executeUI(pair.getSecond(), GenerationIntentions_Action.this.editorContext, intentionContext)) {
             ModelAccess.instance().runCommandInEDT(new Runnable() {
               public void run() {

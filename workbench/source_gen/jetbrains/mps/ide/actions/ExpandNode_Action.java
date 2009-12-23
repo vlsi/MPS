@@ -69,7 +69,7 @@ public class ExpandNode_Action extends GeneratedAction {
       if (path == null) {
         return;
       }
-      tree.expandAll((MPSTreeNode)path.getLastPathComponent());
+      tree.expandAll((MPSTreeNode) path.getLastPathComponent());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ExpandNode", t);

@@ -32,6 +32,6 @@ public class Pair<S, T> extends MultiTuple._2<S, T> {
 
   @SuppressWarnings(value = "unchecked")
   public Pair assignFrom(Tuples._2<S, T> from) {
-    return (Pair)super.assign(from);
+    return (Pair) super.assign(from);
   }
 }

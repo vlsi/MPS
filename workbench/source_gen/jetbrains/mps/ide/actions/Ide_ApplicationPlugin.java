@@ -90,8 +90,8 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void insertGroupIntoAnother(String toId, String whatId, String labelName) {
-    DefaultActionGroup gTo = (DefaultActionGroup)ActionManager.getInstance().getAction(toId);
-    DefaultActionGroup gWhat = (DefaultActionGroup)ActionManager.getInstance().getAction(whatId);
+    DefaultActionGroup gTo = (DefaultActionGroup) ActionManager.getInstance().getAction(toId);
+    DefaultActionGroup gWhat = (DefaultActionGroup) ActionManager.getInstance().getAction(whatId);
     if (gTo == null || gWhat == null) {
       return;
     }

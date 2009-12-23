@@ -10,7 +10,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.List;
 
 public class Child_Referent_Parent {
-
   public void accessToChildNode_1(SNode ifStatement) {
     SNode condition = SLinkOperations.getTarget(ifStatement, "condition", true);
     SNodeOperations.deleteNode(condition);
@@ -87,5 +86,4 @@ public class Child_Referent_Parent {
   public void accessToAncestorNodes_2(SNode expression) {
     List<SNode> allAncestor_If_or_WhileStatements = SNodeOperations.getAncestorsWhereConceptInList(expression, new String[]{"jetbrains.mps.baseLanguage.structure.IfStatement","jetbrains.mps.baseLanguage.structure.WhileStatement"}, true);
   }
-
 }

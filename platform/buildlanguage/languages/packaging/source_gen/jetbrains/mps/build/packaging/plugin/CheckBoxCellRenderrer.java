@@ -28,7 +28,7 @@ public class CheckBoxCellRenderrer extends JPanel implements TreeCellRenderer {
   }
 
   public Component getTreeCellRendererComponent(JTree tree, Object value, boolean isSelected, boolean expanded, boolean leaf, int row, boolean hasFocus) {
-    CheckBoxNode node = ((CheckBoxNode)value);
+    CheckBoxNode node = ((CheckBoxNode) value);
     this.myLabel.setText(node.getNodeText());
     this.myLabel.setIcon(node.getIconNonFinal(expanded));
     this.myCheckBox.setSelected(node.isChecked());

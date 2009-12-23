@@ -40,7 +40,7 @@ public class CheckBoxNode<N extends NodeData> extends MPSTreeNode {
 
   private void createChildren() {
     for (NodeData childNode : this.myData.getChildren()) {
-      this.add(new CheckBoxNode<N>((N)childNode, true));
+      this.add(new CheckBoxNode<N>((N) childNode, true));
     }
   }
 

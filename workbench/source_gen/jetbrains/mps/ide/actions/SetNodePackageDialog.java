@@ -38,7 +38,7 @@ public class SetNodePackageDialog extends BaseDialog {
     this.myCbPackage.setModel(new DefaultComboBoxModel(ListSequence.fromList(existingPackages).toGenericArray(String.class)));
     this.myCbPackage.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent e) {
-        SetNodePackageDialog.this.myPackage = ((String)SetNodePackageDialog.this.myCbPackage.getSelectedItem());
+        SetNodePackageDialog.this.myPackage = ((String) SetNodePackageDialog.this.myCbPackage.getSelectedItem());
       }
     });
     this.myCbPackage.getEditor().getEditorComponent().addKeyListener(new KeyAdapter() {
@@ -68,7 +68,7 @@ public class SetNodePackageDialog extends BaseDialog {
   }
 
   private void updatePackage() {
-    String pack = ((String)this.myCbPackage.getEditor().getItem());
+    String pack = ((String) this.myCbPackage.getEditor().getItem());
     if (pack != null && pack.length() == 0) {
       pack = null;
     }

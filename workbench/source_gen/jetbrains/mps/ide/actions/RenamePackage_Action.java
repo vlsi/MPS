@@ -75,7 +75,7 @@ public class RenamePackage_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Wrappers._T<Set<SNode>> nodes = new Wrappers._T<Set<SNode>>();
-      final PackageNode treeNode = (PackageNode)RenamePackage_Action.this.ppNode;
+      final PackageNode treeNode = (PackageNode) RenamePackage_Action.this.ppNode;
       final String name = treeNode.getPackage();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

@@ -89,7 +89,7 @@ public class SurroundWithIntentions_Action extends GeneratedAction {
       int x = selectedCell.getX();
       int y = selectedCell.getY();
       if (selectedCell instanceof EditorCell_Label) {
-        y += ((EditorCell_Label)selectedCell).getHeight();
+        y += ((EditorCell_Label) selectedCell).getHeight();
       }
       final DataContext dataContext = DataManager.getInstance().getDataContext(SurroundWithIntentions_Action.this.editorContext.getNodeEditorComponent(), x, y);
       ListPopup popup = ModelAccess.instance().runReadAction(new Computable<ListPopup>() {

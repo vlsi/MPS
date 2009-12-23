@@ -72,7 +72,7 @@ public class FileTreePath extends TreePath<File> {
       if (matchValue != null) {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            File node = (File)n;
+            File node = (File) n;
             String actualValue = FileTreePath.FILE_relativeName_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
@@ -80,13 +80,13 @@ public class FileTreePath extends TreePath<File> {
       } else {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            File node = (File)n;
+            File node = (File) n;
             String actualValue = FileTreePath.FILE_relativeName_Property.Getter.getValue(node);
             return actualValue == null;
           }
         };
       }
-      return (IFilter<File>)filter;
+      return (IFilter<File>) filter;
     }
 
     private static class Getter {
@@ -102,7 +102,7 @@ public class FileTreePath extends TreePath<File> {
       if (matchValue != null) {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            File node = (File)n;
+            File node = (File) n;
             String actualValue = FileTreePath.FILE_extension_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
@@ -110,13 +110,13 @@ public class FileTreePath extends TreePath<File> {
       } else {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            File node = (File)n;
+            File node = (File) n;
             String actualValue = FileTreePath.FILE_extension_Property.Getter.getValue(node);
             return actualValue == null;
           }
         };
       }
-      return (IFilter<File>)filter;
+      return (IFilter<File>) filter;
     }
 
     private static class Getter {

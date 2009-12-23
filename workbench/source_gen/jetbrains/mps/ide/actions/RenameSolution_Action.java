@@ -68,7 +68,7 @@ public class RenameSolution_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      new RenameSolutionDialog(RenameSolution_Action.this.frame, ((Solution)RenameSolution_Action.this.module)).showDialog();
+      new RenameSolutionDialog(RenameSolution_Action.this.frame, ((Solution) RenameSolution_Action.this.module)).showDialog();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameSolution", t);

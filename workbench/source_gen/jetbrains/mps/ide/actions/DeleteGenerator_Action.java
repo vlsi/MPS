@@ -86,7 +86,7 @@ public class DeleteGenerator_Action extends GeneratedAction {
       }
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          Generator generator = ((Generator)DeleteGenerator_Action.this.module);
+          Generator generator = ((Generator) DeleteGenerator_Action.this.module);
           Language sourceLanguage = generator.getSourceLanguage();
           int genIndex = sourceLanguage.getGenerators().indexOf(generator);
           GeneratorDescriptor genToDelete = sourceLanguage.getLanguageDescriptor().getGenerators().get(genIndex);

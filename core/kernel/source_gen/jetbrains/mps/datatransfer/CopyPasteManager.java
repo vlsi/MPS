@@ -68,7 +68,7 @@ public class CopyPasteManager extends AbstractManager {
     this.load();
     AbstractManager.Descriptor<CopyPreProcessor> descriptor = MapSequence.fromMap(this.myPreProcessors).get(concept);
     return (descriptor == null ?
-      (CopyPreProcessor)null :
+      (CopyPreProcessor) null :
       descriptor.getInstance()
     );
   }
@@ -77,7 +77,7 @@ public class CopyPasteManager extends AbstractManager {
     this.load();
     AbstractManager.Descriptor<PastePostProcessor> descriptor = MapSequence.fromMap(this.myPostProcessors).get(concept);
     return (descriptor == null ?
-      (PastePostProcessor)null :
+      (PastePostProcessor) null :
       descriptor.getInstance()
     );
   }

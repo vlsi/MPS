@@ -102,7 +102,7 @@ public class GenerateModel_Action extends GeneratedAction {
     StringBuilder res = new StringBuilder(500);
     res.append(GenerateModel_Action.class.getName());
     res.append("#");
-    res.append(generationType_State((IGenerationType)this.generationType));
+    res.append(generationType_State((IGenerationType) this.generationType));
     res.append("!");
     return res.toString();
   }
