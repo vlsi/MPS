@@ -56,8 +56,10 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
 
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    SNode constructorDeclaration = null;
     for (SNode selectedSuperConstructor : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedConstructors"))) {
       SNode constructor = SLinkOperations.addNewChild(classConcept, "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+      constructorDeclaration = constructor;
       SLinkOperations.setNewChild(constructor, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
       if (ListSequence.fromList(SLinkOperations.getTargets(selectedSuperConstructor, "parameter", true)).isNotEmpty()) {
         SNode invocation = SLinkOperations.addNewChild(SLinkOperations.getTarget(constructor, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation");
@@ -84,6 +86,9 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
         SNode parameterReference = SLinkOperations.setNewChild(assignmentExpression, "rValue", "jetbrains.mps.baseLanguage.structure.ParameterReference");
         SLinkOperations.setTarget(parameterReference, "variableDeclaration", parameterDeclaration, false);
       }
+    }
+    if (constructorDeclaration != null) {
+      editorContext.select(constructorDeclaration);
     }
   }
 
@@ -113,10 +118,24 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
       }
       intentionContext.getContextParametersMap().put("selectedConstructors", selectConstructorsDialog.getSelectedMembers());
     }
-    SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, frame, node);
-    selectFieldsDialog.showDialog();
-    intentionContext.getContextParametersMap().put("selectedFields", selectFieldsDialog.getSelectedFields());
-    return selectFieldsDialog.getAnswer();
+    final Wrappers._boolean needsShowFieldsDialog = new Wrappers._boolean(false);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        if (ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isNotEmpty()) {
+          needsShowFieldsDialog.value = true;
+        } else {
+          intentionContext.getContextParametersMap().put("selectedFields", new ArrayList<SNode>());
+        }
+      }
+    });
+    if (needsShowFieldsDialog.value) {
+      SelectFieldsDialog selectFieldsDialog = new SelectFieldsDialog(editorContext, frame, node);
+      selectFieldsDialog.showDialog();
+      intentionContext.getContextParametersMap().put("selectedFields", selectFieldsDialog.getSelectedFields());
+      return selectFieldsDialog.getAnswer();
+    } else {
+      return true;
+    }
   }
 
   public String getLocationString() {
