@@ -15,7 +15,7 @@ public class Concept_GetDirectSuperConcepts extends SNodeOperation {
   }
 
   public static Concept_GetDirectSuperConcepts newInstance(SModel sm, boolean init) {
-    return (Concept_GetDirectSuperConcepts)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Concept_GetDirectSuperConcepts) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_GetDirectSuperConcepts", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Concept_GetDirectSuperConcepts newInstance(SModel sm) {

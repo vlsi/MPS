@@ -28,10 +28,10 @@ public class SNodeTypeCastExpression_Behavior {
   }
 
   public static String call_getPresentation_2749027262099690841(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), "virtual_getPresentation_1213877396640", PARAMETERS_2749027262099690841);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), "virtual_getPresentation_1213877396640", PARAMETERS_2749027262099690841);
   }
 
   public static String callSuper_getPresentation_2749027262099690841(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_2749027262099690841);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_2749027262099690841);
   }
 }

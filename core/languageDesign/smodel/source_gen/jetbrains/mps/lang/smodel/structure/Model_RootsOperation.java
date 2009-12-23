@@ -17,7 +17,7 @@ public class Model_RootsOperation extends SNodeOperation {
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, Model_RootsOperation.CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, Model_RootsOperation.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {
@@ -25,7 +25,7 @@ public class Model_RootsOperation extends SNodeOperation {
   }
 
   public static Model_RootsOperation newInstance(SModel sm, boolean init) {
-    return (Model_RootsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Model_RootsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Model_RootsOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Model_RootsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Model_RootsOperation newInstance(SModel sm) {

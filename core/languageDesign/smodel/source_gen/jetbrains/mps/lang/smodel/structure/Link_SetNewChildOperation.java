@@ -17,7 +17,7 @@ public class Link_SetNewChildOperation extends SNodeOperation {
   }
 
   public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, Link_SetNewChildOperation.CONCEPT);
+    return (ConceptDeclaration) this.getReferent(ConceptDeclaration.class, Link_SetNewChildOperation.CONCEPT);
   }
 
   public void setConcept(ConceptDeclaration node) {
@@ -25,7 +25,7 @@ public class Link_SetNewChildOperation extends SNodeOperation {
   }
 
   public static Link_SetNewChildOperation newInstance(SModel sm, boolean init) {
-    return (Link_SetNewChildOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Link_SetNewChildOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Link_SetNewChildOperation newInstance(SModel sm) {

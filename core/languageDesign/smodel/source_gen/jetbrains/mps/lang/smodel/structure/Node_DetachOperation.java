@@ -15,7 +15,7 @@ public class Node_DetachOperation extends SNodeOperation {
   }
 
   public static Node_DetachOperation newInstance(SModel sm, boolean init) {
-    return (Node_DetachOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_DetachOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_DetachOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_DetachOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_DetachOperation newInstance(SModel sm) {

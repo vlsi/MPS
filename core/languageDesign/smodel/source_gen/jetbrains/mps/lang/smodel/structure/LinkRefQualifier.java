@@ -45,7 +45,7 @@ public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifie
   }
 
   public LinkDeclaration getLink() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, LinkRefQualifier.LINK);
+    return (LinkDeclaration) this.getReferent(LinkDeclaration.class, LinkRefQualifier.LINK);
   }
 
   public void setLink(LinkDeclaration node) {
@@ -53,7 +53,7 @@ public class LinkRefQualifier extends BaseConcept implements ILinkAccessQualifie
   }
 
   public static LinkRefQualifier newInstance(SModel sm, boolean init) {
-    return (LinkRefQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkRefQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkRefQualifier) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkRefQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinkRefQualifier newInstance(SModel sm) {

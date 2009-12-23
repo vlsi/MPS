@@ -16,7 +16,7 @@ public class EqualsStructurallyExpression extends BinaryOperation {
   }
 
   public static EqualsStructurallyExpression newInstance(SModel sm, boolean init) {
-    return (EqualsStructurallyExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EqualsStructurallyExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.EqualsStructurallyExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EqualsStructurallyExpression newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class SearchScopeType extends Type {
   }
 
   public static SearchScopeType newInstance(SModel sm, boolean init) {
-    return (SearchScopeType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SearchScopeType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SearchScopeType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SearchScopeType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SearchScopeType newInstance(SModel sm) {

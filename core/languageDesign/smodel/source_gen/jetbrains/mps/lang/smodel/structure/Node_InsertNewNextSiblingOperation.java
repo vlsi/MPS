@@ -17,7 +17,7 @@ public class Node_InsertNewNextSiblingOperation extends SNodeOperation {
   }
 
   public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, Node_InsertNewNextSiblingOperation.CONCEPT);
+    return (ConceptDeclaration) this.getReferent(ConceptDeclaration.class, Node_InsertNewNextSiblingOperation.CONCEPT);
   }
 
   public void setConcept(ConceptDeclaration node) {
@@ -25,7 +25,7 @@ public class Node_InsertNewNextSiblingOperation extends SNodeOperation {
   }
 
   public static Node_InsertNewNextSiblingOperation newInstance(SModel sm, boolean init) {
-    return (Node_InsertNewNextSiblingOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_InsertNewNextSiblingOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_InsertNewNextSiblingOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_InsertNewNextSiblingOperation newInstance(SModel sm) {

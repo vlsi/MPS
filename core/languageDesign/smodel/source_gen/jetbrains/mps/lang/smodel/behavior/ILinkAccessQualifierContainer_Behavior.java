@@ -13,10 +13,10 @@ public class ILinkAccessQualifierContainer_Behavior {
   }
 
   public static Iterable<SNode> call_getLinkAccessScope_2906110183022538642(SNode thisNode) {
-    return (Iterable<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"), "virtual_getLinkAccessScope_2906110183022538642", PARAMETERS_2906110183022538642);
+    return (Iterable<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"), "virtual_getLinkAccessScope_2906110183022538642", PARAMETERS_2906110183022538642);
   }
 
   public static Iterable<SNode> callSuper_getLinkAccessScope_2906110183022538642(SNode thisNode, String callerConceptFqName) {
-    return (Iterable<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"), callerConceptFqName, "virtual_getLinkAccessScope_2906110183022538642", PARAMETERS_2906110183022538642);
+    return (Iterable<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.ILinkAccessQualifierContainer"), callerConceptFqName, "virtual_getLinkAccessScope_2906110183022538642", PARAMETERS_2906110183022538642);
   }
 }

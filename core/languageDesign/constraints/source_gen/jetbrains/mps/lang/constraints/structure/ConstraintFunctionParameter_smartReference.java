@@ -16,7 +16,7 @@ public class ConstraintFunctionParameter_smartReference extends ConceptFunctionP
   }
 
   public static ConstraintFunctionParameter_smartReference newInstance(SModel sm, boolean init) {
-    return (ConstraintFunctionParameter_smartReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_smartReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstraintFunctionParameter_smartReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_smartReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstraintFunctionParameter_smartReference newInstance(SModel sm) {

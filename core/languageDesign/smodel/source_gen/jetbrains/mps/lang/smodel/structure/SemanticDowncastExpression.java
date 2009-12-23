@@ -17,7 +17,7 @@ public class SemanticDowncastExpression extends Expression {
   }
 
   public Expression getLeftExpression() {
-    return (Expression)this.getChild(Expression.class, SemanticDowncastExpression.LEFT_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, SemanticDowncastExpression.LEFT_EXPRESSION);
   }
 
   public void setLeftExpression(Expression node) {
@@ -25,7 +25,7 @@ public class SemanticDowncastExpression extends Expression {
   }
 
   public static SemanticDowncastExpression newInstance(SModel sm, boolean init) {
-    return (SemanticDowncastExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SemanticDowncastExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SemanticDowncastExpression newInstance(SModel sm) {

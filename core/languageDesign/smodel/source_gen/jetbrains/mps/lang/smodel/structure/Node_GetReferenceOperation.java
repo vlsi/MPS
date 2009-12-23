@@ -16,7 +16,7 @@ public class Node_GetReferenceOperation extends SNodeOperation {
   }
 
   public OperationParm_LinkQualifier getLinkQualifier() {
-    return (OperationParm_LinkQualifier)this.getChild(OperationParm_LinkQualifier.class, Node_GetReferenceOperation.LINK_QUALIFIER);
+    return (OperationParm_LinkQualifier) this.getChild(OperationParm_LinkQualifier.class, Node_GetReferenceOperation.LINK_QUALIFIER);
   }
 
   public void setLinkQualifier(OperationParm_LinkQualifier node) {
@@ -24,7 +24,7 @@ public class Node_GetReferenceOperation extends SNodeOperation {
   }
 
   public static Node_GetReferenceOperation newInstance(SModel sm, boolean init) {
-    return (Node_GetReferenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_GetReferenceOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_GetReferenceOperation newInstance(SModel sm) {

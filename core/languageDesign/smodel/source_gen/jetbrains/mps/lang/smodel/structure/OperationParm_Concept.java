@@ -16,7 +16,7 @@ public class OperationParm_Concept extends AbstractOperationParameter {
   }
 
   public IRefConceptArg getConceptArgument() {
-    return (IRefConceptArg)this.getChild(IRefConceptArg.class, OperationParm_Concept.CONCEPT_ARGUMENT);
+    return (IRefConceptArg) this.getChild(IRefConceptArg.class, OperationParm_Concept.CONCEPT_ARGUMENT);
   }
 
   public void setConceptArgument(IRefConceptArg node) {
@@ -24,7 +24,7 @@ public class OperationParm_Concept extends AbstractOperationParameter {
   }
 
   public static OperationParm_Concept newInstance(SModel sm, boolean init) {
-    return (OperationParm_Concept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Concept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OperationParm_Concept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Concept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OperationParm_Concept newInstance(SModel sm) {

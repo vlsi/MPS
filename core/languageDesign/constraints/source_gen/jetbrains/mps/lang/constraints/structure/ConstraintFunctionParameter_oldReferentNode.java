@@ -16,7 +16,7 @@ public class ConstraintFunctionParameter_oldReferentNode extends ConceptFunction
   }
 
   public static ConstraintFunctionParameter_oldReferentNode newInstance(SModel sm, boolean init) {
-    return (ConstraintFunctionParameter_oldReferentNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_oldReferentNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstraintFunctionParameter_oldReferentNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_oldReferentNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstraintFunctionParameter_oldReferentNode newInstance(SModel sm) {

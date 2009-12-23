@@ -16,7 +16,7 @@ public class Concept_IsSubConceptOfOperation extends SNodeOperation {
   }
 
   public IRefConceptArg getConceptArgument() {
-    return (IRefConceptArg)this.getChild(IRefConceptArg.class, Concept_IsSubConceptOfOperation.CONCEPT_ARGUMENT);
+    return (IRefConceptArg) this.getChild(IRefConceptArg.class, Concept_IsSubConceptOfOperation.CONCEPT_ARGUMENT);
   }
 
   public void setConceptArgument(IRefConceptArg node) {
@@ -24,7 +24,7 @@ public class Concept_IsSubConceptOfOperation extends SNodeOperation {
   }
 
   public static Concept_IsSubConceptOfOperation newInstance(SModel sm, boolean init) {
-    return (Concept_IsSubConceptOfOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Concept_IsSubConceptOfOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_IsSubConceptOfOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Concept_IsSubConceptOfOperation newInstance(SModel sm) {

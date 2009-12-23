@@ -17,7 +17,7 @@ public class LinkList_InsertChildFirstOperation extends SNodeOperation {
   }
 
   public Expression getChildNode() {
-    return (Expression)this.getChild(Expression.class, LinkList_InsertChildFirstOperation.CHILD_NODE);
+    return (Expression) this.getChild(Expression.class, LinkList_InsertChildFirstOperation.CHILD_NODE);
   }
 
   public void setChildNode(Expression node) {
@@ -25,7 +25,7 @@ public class LinkList_InsertChildFirstOperation extends SNodeOperation {
   }
 
   public static LinkList_InsertChildFirstOperation newInstance(SModel sm, boolean init) {
-    return (LinkList_InsertChildFirstOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkList_InsertChildFirstOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinkList_InsertChildFirstOperation newInstance(SModel sm) {

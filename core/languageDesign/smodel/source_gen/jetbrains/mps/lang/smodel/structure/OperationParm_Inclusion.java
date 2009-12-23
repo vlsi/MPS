@@ -15,7 +15,7 @@ public class OperationParm_Inclusion extends AbstractOperationParameter {
   }
 
   public static OperationParm_Inclusion newInstance(SModel sm, boolean init) {
-    return (OperationParm_Inclusion)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OperationParm_Inclusion) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OperationParm_Inclusion newInstance(SModel sm) {

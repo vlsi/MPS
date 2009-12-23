@@ -16,7 +16,7 @@ public class ConstraintFunctionParameter_referenceNode extends ConceptFunctionPa
   }
 
   public static ConstraintFunctionParameter_referenceNode newInstance(SModel sm, boolean init) {
-    return (ConstraintFunctionParameter_referenceNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstraintFunctionParameter_referenceNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_referenceNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstraintFunctionParameter_referenceNode newInstance(SModel sm) {

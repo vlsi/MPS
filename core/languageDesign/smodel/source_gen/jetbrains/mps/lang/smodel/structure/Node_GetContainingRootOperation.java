@@ -15,7 +15,7 @@ public class Node_GetContainingRootOperation extends SNodeOperation {
   }
 
   public static Node_GetContainingRootOperation newInstance(SModel sm, boolean init) {
-    return (Node_GetContainingRootOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_GetContainingRootOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_GetContainingRootOperation newInstance(SModel sm) {

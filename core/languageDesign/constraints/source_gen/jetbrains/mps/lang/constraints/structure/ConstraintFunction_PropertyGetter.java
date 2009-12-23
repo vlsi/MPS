@@ -16,7 +16,7 @@ public class ConstraintFunction_PropertyGetter extends ConceptFunction {
   }
 
   public static ConstraintFunction_PropertyGetter newInstance(SModel sm, boolean init) {
-    return (ConstraintFunction_PropertyGetter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstraintFunction_PropertyGetter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstraintFunction_PropertyGetter newInstance(SModel sm) {

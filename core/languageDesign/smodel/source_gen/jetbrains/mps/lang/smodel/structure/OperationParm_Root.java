@@ -15,7 +15,7 @@ public class OperationParm_Root extends AbstractOperationParameter {
   }
 
   public static OperationParm_Root newInstance(SModel sm, boolean init) {
-    return (OperationParm_Root)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Root", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OperationParm_Root) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Root", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OperationParm_Root newInstance(SModel sm) {

@@ -45,7 +45,7 @@ public class PoundExpression extends BaseConcept implements IPropertyAccessQuali
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, PoundExpression.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, PoundExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -53,7 +53,7 @@ public class PoundExpression extends BaseConcept implements IPropertyAccessQuali
   }
 
   public static PoundExpression newInstance(SModel sm, boolean init) {
-    return (PoundExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.PoundExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PoundExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.PoundExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PoundExpression newInstance(SModel sm) {

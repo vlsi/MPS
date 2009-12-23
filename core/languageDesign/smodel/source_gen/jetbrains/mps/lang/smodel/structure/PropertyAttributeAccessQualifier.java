@@ -46,7 +46,7 @@ public class PropertyAttributeAccessQualifier extends BaseConcept implements IAt
   }
 
   public AnnotationLinkDeclaration getAnnotationLink() {
-    return (AnnotationLinkDeclaration)this.getReferent(AnnotationLinkDeclaration.class, PropertyAttributeAccessQualifier.ANNOTATION_LINK);
+    return (AnnotationLinkDeclaration) this.getReferent(AnnotationLinkDeclaration.class, PropertyAttributeAccessQualifier.ANNOTATION_LINK);
   }
 
   public void setAnnotationLink(AnnotationLinkDeclaration node) {
@@ -54,7 +54,7 @@ public class PropertyAttributeAccessQualifier extends BaseConcept implements IAt
   }
 
   public IPropertyAccessQualifier getPropertyQualifier() {
-    return (IPropertyAccessQualifier)this.getChild(IPropertyAccessQualifier.class, PropertyAttributeAccessQualifier.PROPERTY_QUALIFIER);
+    return (IPropertyAccessQualifier) this.getChild(IPropertyAccessQualifier.class, PropertyAttributeAccessQualifier.PROPERTY_QUALIFIER);
   }
 
   public void setPropertyQualifier(IPropertyAccessQualifier node) {
@@ -62,7 +62,7 @@ public class PropertyAttributeAccessQualifier extends BaseConcept implements IAt
   }
 
   public static PropertyAttributeAccessQualifier newInstance(SModel sm, boolean init) {
-    return (PropertyAttributeAccessQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyAttributeAccessQualifier) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.PropertyAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyAttributeAccessQualifier newInstance(SModel sm) {

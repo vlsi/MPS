@@ -16,7 +16,7 @@ public class ConstraintFunction_ReferentSearchScope_AbstractBase extends Concept
   }
 
   public static ConstraintFunction_ReferentSearchScope_AbstractBase newInstance(SModel sm, boolean init) {
-    return (ConstraintFunction_ReferentSearchScope_AbstractBase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstraintFunction_ReferentSearchScope_AbstractBase) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_AbstractBase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstraintFunction_ReferentSearchScope_AbstractBase newInstance(SModel sm) {

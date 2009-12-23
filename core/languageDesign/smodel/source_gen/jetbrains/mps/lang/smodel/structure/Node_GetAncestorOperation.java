@@ -15,7 +15,7 @@ public class Node_GetAncestorOperation extends SNodeOperation {
   }
 
   public static Node_GetAncestorOperation newInstance(SModel sm, boolean init) {
-    return (Node_GetAncestorOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_GetAncestorOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_GetAncestorOperation newInstance(SModel sm) {

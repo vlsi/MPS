@@ -16,7 +16,7 @@ public class ConstraintFunction_CanBeARoot extends ConceptFunction {
   }
 
   public static ConstraintFunction_CanBeARoot newInstance(SModel sm, boolean init) {
-    return (ConstraintFunction_CanBeARoot)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstraintFunction_CanBeARoot) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstraintFunction_CanBeARoot newInstance(SModel sm) {

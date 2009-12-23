@@ -17,7 +17,7 @@ public class Property_HasValue_Simple extends SNodeOperation {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, Property_HasValue_Simple.VALUE);
+    return (Expression) this.getChild(Expression.class, Property_HasValue_Simple.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -25,7 +25,7 @@ public class Property_HasValue_Simple extends SNodeOperation {
   }
 
   public static Property_HasValue_Simple newInstance(SModel sm, boolean init) {
-    return (Property_HasValue_Simple)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Property_HasValue_Simple) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Property_HasValue_Simple", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Property_HasValue_Simple newInstance(SModel sm) {

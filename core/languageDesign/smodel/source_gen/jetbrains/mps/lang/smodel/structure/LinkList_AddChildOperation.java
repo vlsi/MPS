@@ -17,7 +17,7 @@ public class LinkList_AddChildOperation extends SNodeOperation {
   }
 
   public Expression getChildNode() {
-    return (Expression)this.getChild(Expression.class, LinkList_AddChildOperation.CHILD_NODE);
+    return (Expression) this.getChild(Expression.class, LinkList_AddChildOperation.CHILD_NODE);
   }
 
   public void setChildNode(Expression node) {
@@ -25,7 +25,7 @@ public class LinkList_AddChildOperation extends SNodeOperation {
   }
 
   public static LinkList_AddChildOperation newInstance(SModel sm, boolean init) {
-    return (LinkList_AddChildOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkList_AddChildOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinkList_AddChildOperation newInstance(SModel sm) {

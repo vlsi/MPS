@@ -549,7 +549,7 @@ public class ConceptConstraints_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition4286_3(SNode node, EditorContext editorContext, IScope scope) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.getBoolean(((SNode)SLinkOperations.getTarget(node, "concept", false)), "rootable");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration") && SPropertyOperations.getBoolean(((SNode) SLinkOperations.getTarget(node, "concept", false)), "rootable");
   }
 
   private static boolean renderingCondition4286_4(SNode node, EditorContext editorContext, IScope scope) {

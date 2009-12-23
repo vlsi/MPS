@@ -18,7 +18,7 @@ public class NodeRefExpression extends Expression {
   }
 
   public INamedConcept getReferentNode() {
-    return (INamedConcept)this.getReferent(INamedConcept.class, NodeRefExpression.REFERENT_NODE);
+    return (INamedConcept) this.getReferent(INamedConcept.class, NodeRefExpression.REFERENT_NODE);
   }
 
   public void setReferentNode(INamedConcept node) {
@@ -26,7 +26,7 @@ public class NodeRefExpression extends Expression {
   }
 
   public static NodeRefExpression newInstance(SModel sm, boolean init) {
-    return (NodeRefExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.NodeRefExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeRefExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.NodeRefExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeRefExpression newInstance(SModel sm) {

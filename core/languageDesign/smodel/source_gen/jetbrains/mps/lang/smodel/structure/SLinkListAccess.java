@@ -44,7 +44,7 @@ public class SLinkListAccess extends SNodeOperation implements ILinkAccess {
   }
 
   public LinkDeclaration getLink() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, SLinkListAccess.LINK);
+    return (LinkDeclaration) this.getReferent(LinkDeclaration.class, SLinkListAccess.LINK);
   }
 
   public void setLink(LinkDeclaration node) {
@@ -52,7 +52,7 @@ public class SLinkListAccess extends SNodeOperation implements ILinkAccess {
   }
 
   public static SLinkListAccess newInstance(SModel sm, boolean init) {
-    return (SLinkListAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkListAccess", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SLinkListAccess) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkListAccess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SLinkListAccess newInstance(SModel sm) {

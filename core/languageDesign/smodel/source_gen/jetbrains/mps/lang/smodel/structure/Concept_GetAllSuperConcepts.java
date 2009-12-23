@@ -15,7 +15,7 @@ public class Concept_GetAllSuperConcepts extends SNodeOperation {
   }
 
   public static Concept_GetAllSuperConcepts newInstance(SModel sm, boolean init) {
-    return (Concept_GetAllSuperConcepts)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Concept_GetAllSuperConcepts) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_GetAllSuperConcepts", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Concept_GetAllSuperConcepts newInstance(SModel sm) {

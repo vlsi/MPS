@@ -21,7 +21,7 @@ public class NodePropertyConstraint extends BaseConcept {
   }
 
   public PropertyDeclaration getApplicableProperty() {
-    return (PropertyDeclaration)this.getReferent(PropertyDeclaration.class, NodePropertyConstraint.APPLICABLE_PROPERTY);
+    return (PropertyDeclaration) this.getReferent(PropertyDeclaration.class, NodePropertyConstraint.APPLICABLE_PROPERTY);
   }
 
   public void setApplicableProperty(PropertyDeclaration node) {
@@ -29,7 +29,7 @@ public class NodePropertyConstraint extends BaseConcept {
   }
 
   public ConstraintFunction_PropertyGetter getPropertyGetter() {
-    return (ConstraintFunction_PropertyGetter)this.getChild(ConstraintFunction_PropertyGetter.class, NodePropertyConstraint.PROPERTY_GETTER);
+    return (ConstraintFunction_PropertyGetter) this.getChild(ConstraintFunction_PropertyGetter.class, NodePropertyConstraint.PROPERTY_GETTER);
   }
 
   public void setPropertyGetter(ConstraintFunction_PropertyGetter node) {
@@ -37,7 +37,7 @@ public class NodePropertyConstraint extends BaseConcept {
   }
 
   public ConstraintFunction_PropertySetter getPropertySetter() {
-    return (ConstraintFunction_PropertySetter)this.getChild(ConstraintFunction_PropertySetter.class, NodePropertyConstraint.PROPERTY_SETTER);
+    return (ConstraintFunction_PropertySetter) this.getChild(ConstraintFunction_PropertySetter.class, NodePropertyConstraint.PROPERTY_SETTER);
   }
 
   public void setPropertySetter(ConstraintFunction_PropertySetter node) {
@@ -45,7 +45,7 @@ public class NodePropertyConstraint extends BaseConcept {
   }
 
   public ConstraintFunction_PropertyValidator getPropertyValidator() {
-    return (ConstraintFunction_PropertyValidator)this.getChild(ConstraintFunction_PropertyValidator.class, NodePropertyConstraint.PROPERTY_VALIDATOR);
+    return (ConstraintFunction_PropertyValidator) this.getChild(ConstraintFunction_PropertyValidator.class, NodePropertyConstraint.PROPERTY_VALIDATOR);
   }
 
   public void setPropertyValidator(ConstraintFunction_PropertyValidator node) {
@@ -53,7 +53,7 @@ public class NodePropertyConstraint extends BaseConcept {
   }
 
   public static NodePropertyConstraint newInstance(SModel sm, boolean init) {
-    return (NodePropertyConstraint)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodePropertyConstraint) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodePropertyConstraint newInstance(SModel sm) {

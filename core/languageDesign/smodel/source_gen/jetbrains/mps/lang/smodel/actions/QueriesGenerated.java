@@ -150,7 +150,7 @@ public class QueriesGenerated {
           return result;
         }
       };
-      appTypesInfo = (ApplicableTypesInfo)calc.calculate();
+      appTypesInfo = (ApplicableTypesInfo) calc.calculate();
     }
     return result;
   }
@@ -159,14 +159,14 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall");
-      SNode childConcept = (SNode)_context.getChildConcept();
+      SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
             return StaticConceptMethodCall_Behavior.getClassifiersWithStaticMethods_1213877485028(_context.getModel(), operationContext.getScope(), _context.getParentNode());
           }
         };
-        Iterable<SNode> queryResult = (Iterable)calc.calculate();
+        Iterable<SNode> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -200,13 +200,13 @@ public class QueriesGenerated {
     {
       Calculable calc = new Calculable() {
         public Object calculate() {
-          return ((List<SNode>)SLinkOperations.getConceptLinkTargets(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "applicableParameter"));
+          return ((List<SNode>) SLinkOperations.getConceptLinkTargets(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "applicableParameter"));
         }
       };
-      Iterable queryResult = (Iterable)calc.calculate();
+      Iterable queryResult = (Iterable) calc.calculate();
       if (queryResult != null) {
         for (Object item : queryResult) {
-          List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((SNode)item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+          List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((SNode) item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
           ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
         }
       }
@@ -325,7 +325,7 @@ public class QueriesGenerated {
           return SNodeOperations.getParent(_context.getSourceNode());
         }
       };
-      SNode node = (SNode)calc.calculate();
+      SNode node = (SNode) calc.calculate();
       ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext)));
     }
     return result;
@@ -339,7 +339,7 @@ public class QueriesGenerated {
           return SNodeOperations.getParent(_context.getSourceNode());
         }
       };
-      SNode node = (SNode)calc.calculate();
+      SNode node = (SNode) calc.calculate();
       ListSequence.fromList(result).addSequence(ListSequence.fromList(ModelActions.createRightTransformHintSubstituteActions(node, CellSide.RIGHT, _context.getTransformationTag(), operationContext)));
     }
     return result;
@@ -376,7 +376,7 @@ public class QueriesGenerated {
           return result;
         }
       };
-      appTypesInfo = (ApplicableTypesInfo)calc.calculate();
+      appTypesInfo = (ApplicableTypesInfo) calc.calculate();
     }
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while (actions.hasNext()) {
@@ -385,7 +385,7 @@ public class QueriesGenerated {
       SNode applicableConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeOperation");
       Condition cond = new Condition() {
         public boolean met(Object object) {
-          SNode parameterOp = (SNode)concept;
+          SNode parameterOp = (SNode) concept;
           SNode leftExpression = SLinkOperations.getTarget(SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
           SNode leftOperation = null;
           if (SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.baseLanguage.structure.DotExpression")) {
@@ -469,7 +469,7 @@ public class QueriesGenerated {
           return result;
         }
       };
-      appTypesInfo = (ApplicableTypesInfo)calc.calculate();
+      appTypesInfo = (ApplicableTypesInfo) calc.calculate();
     }
     Iterator<INodeSubstituteAction> actions = _context.getActions();
     while (actions.hasNext()) {

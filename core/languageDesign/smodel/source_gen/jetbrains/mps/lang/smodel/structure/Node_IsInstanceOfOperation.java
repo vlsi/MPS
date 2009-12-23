@@ -16,7 +16,7 @@ public class Node_IsInstanceOfOperation extends SNodeOperation {
   }
 
   public IRefConceptArg getConceptArgument() {
-    return (IRefConceptArg)this.getChild(IRefConceptArg.class, Node_IsInstanceOfOperation.CONCEPT_ARGUMENT);
+    return (IRefConceptArg) this.getChild(IRefConceptArg.class, Node_IsInstanceOfOperation.CONCEPT_ARGUMENT);
   }
 
   public void setConceptArgument(IRefConceptArg node) {
@@ -24,7 +24,7 @@ public class Node_IsInstanceOfOperation extends SNodeOperation {
   }
 
   public static Node_IsInstanceOfOperation newInstance(SModel sm, boolean init) {
-    return (Node_IsInstanceOfOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_IsInstanceOfOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_IsInstanceOfOperation newInstance(SModel sm) {

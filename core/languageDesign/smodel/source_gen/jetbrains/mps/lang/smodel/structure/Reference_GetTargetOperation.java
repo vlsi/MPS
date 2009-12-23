@@ -43,7 +43,7 @@ public class Reference_GetTargetOperation extends BaseConcept implements IRefere
   }
 
   public static Reference_GetTargetOperation newInstance(SModel sm, boolean init) {
-    return (Reference_GetTargetOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Reference_GetTargetOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Reference_GetTargetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Reference_GetTargetOperation newInstance(SModel sm) {

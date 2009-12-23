@@ -43,7 +43,7 @@ public class AllAttributesQualifier extends BaseConcept implements IAttributeAcc
   }
 
   public static AllAttributesQualifier newInstance(SModel sm, boolean init) {
-    return (AllAttributesQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.AllAttributesQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AllAttributesQualifier) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.AllAttributesQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AllAttributesQualifier newInstance(SModel sm) {

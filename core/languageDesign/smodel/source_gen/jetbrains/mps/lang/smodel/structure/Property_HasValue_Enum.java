@@ -16,7 +16,7 @@ public class Property_HasValue_Enum extends SNodeOperation {
   }
 
   public EnumMemberReference getValue() {
-    return (EnumMemberReference)this.getChild(EnumMemberReference.class, Property_HasValue_Enum.VALUE);
+    return (EnumMemberReference) this.getChild(EnumMemberReference.class, Property_HasValue_Enum.VALUE);
   }
 
   public void setValue(EnumMemberReference node) {
@@ -24,7 +24,7 @@ public class Property_HasValue_Enum extends SNodeOperation {
   }
 
   public static Property_HasValue_Enum newInstance(SModel sm, boolean init) {
-    return (Property_HasValue_Enum)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Property_HasValue_Enum) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Property_HasValue_Enum", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Property_HasValue_Enum newInstance(SModel sm) {

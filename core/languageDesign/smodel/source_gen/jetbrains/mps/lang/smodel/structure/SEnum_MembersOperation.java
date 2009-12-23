@@ -43,7 +43,7 @@ public class SEnum_MembersOperation extends BaseConcept implements SEnumOperatio
   }
 
   public static SEnum_MembersOperation newInstance(SModel sm, boolean init) {
-    return (SEnum_MembersOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SEnum_MembersOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SEnum_MembersOperation newInstance(SModel sm) {

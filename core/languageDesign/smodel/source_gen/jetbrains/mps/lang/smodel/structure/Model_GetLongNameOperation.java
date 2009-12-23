@@ -15,7 +15,7 @@ public class Model_GetLongNameOperation extends SNodeOperation {
   }
 
   public static Model_GetLongNameOperation newInstance(SModel sm, boolean init) {
-    return (Model_GetLongNameOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Model_GetLongNameOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Model_GetLongNameOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Model_GetLongNameOperation newInstance(SModel sm) {

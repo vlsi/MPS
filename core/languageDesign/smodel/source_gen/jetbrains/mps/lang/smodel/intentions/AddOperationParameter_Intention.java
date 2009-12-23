@@ -53,7 +53,7 @@ public class AddOperationParameter_Intention extends BaseIntention implements In
   public void execute(final SNode node, final EditorContext editorContext) {
     List<SNode> applicableParms = SLinkOperations.getConceptLinkTargets(node, "applicableParameter");
     if (ListSequence.fromList(applicableParms).count() == 1) {
-      SLinkOperations.addChild(node, "parameter", SConceptOperations.createNewNode(NameUtil.nodeFQName(((SNode)ListSequence.fromList(applicableParms).first())), null));
+      SLinkOperations.addChild(node, "parameter", SConceptOperations.createNewNode(NameUtil.nodeFQName(((SNode) ListSequence.fromList(applicableParms).first())), null));
     } else {
       SLinkOperations.addNewChild(node, "parameter", "jetbrains.mps.lang.smodel.structure.AbstractOperationParameter");
     }

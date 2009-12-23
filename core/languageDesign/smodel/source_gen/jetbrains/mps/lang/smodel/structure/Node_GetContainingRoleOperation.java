@@ -15,7 +15,7 @@ public class Node_GetContainingRoleOperation extends SNodeOperation {
   }
 
   public static Node_GetContainingRoleOperation newInstance(SModel sm, boolean init) {
-    return (Node_GetContainingRoleOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_GetContainingRoleOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetContainingRoleOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_GetContainingRoleOperation newInstance(SModel sm) {

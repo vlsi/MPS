@@ -20,7 +20,7 @@ public class LinkRefExpression extends Expression {
   }
 
   public AbstractConceptDeclaration getConceptDeclaration() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, LinkRefExpression.CONCEPT_DECLARATION);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, LinkRefExpression.CONCEPT_DECLARATION);
   }
 
   public void setConceptDeclaration(AbstractConceptDeclaration node) {
@@ -28,7 +28,7 @@ public class LinkRefExpression extends Expression {
   }
 
   public LinkDeclaration getLinkDeclaration() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, LinkRefExpression.LINK_DECLARATION);
+    return (LinkDeclaration) this.getReferent(LinkDeclaration.class, LinkRefExpression.LINK_DECLARATION);
   }
 
   public void setLinkDeclaration(LinkDeclaration node) {
@@ -36,7 +36,7 @@ public class LinkRefExpression extends Expression {
   }
 
   public static LinkRefExpression newInstance(SModel sm, boolean init) {
-    return (LinkRefExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkRefExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkRefExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkRefExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinkRefExpression newInstance(SModel sm) {

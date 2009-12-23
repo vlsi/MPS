@@ -16,7 +16,7 @@ public class ConstraintFunctionParameter_visible extends ConceptFunctionParamete
   }
 
   public static ConstraintFunctionParameter_visible newInstance(SModel sm, boolean init) {
-    return (ConstraintFunctionParameter_visible)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstraintFunctionParameter_visible) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_visible", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstraintFunctionParameter_visible newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class Node_GetNextSiblingOperation extends SNodeOperation {
   }
 
   public static Node_GetNextSiblingOperation newInstance(SModel sm, boolean init) {
-    return (Node_GetNextSiblingOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_GetNextSiblingOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetNextSiblingOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_GetNextSiblingOperation newInstance(SModel sm) {

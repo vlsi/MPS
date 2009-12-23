@@ -46,7 +46,7 @@ public class SLinkImplicitSelect extends BaseConcept implements IOperation {
   }
 
   public LinkDeclaration getLink() {
-    return (LinkDeclaration)this.getReferent(LinkDeclaration.class, SLinkImplicitSelect.LINK);
+    return (LinkDeclaration) this.getReferent(LinkDeclaration.class, SLinkImplicitSelect.LINK);
   }
 
   public void setLink(LinkDeclaration node) {
@@ -54,7 +54,7 @@ public class SLinkImplicitSelect extends BaseConcept implements IOperation {
   }
 
   public static SLinkImplicitSelect newInstance(SModel sm, boolean init) {
-    return (SLinkImplicitSelect)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SLinkImplicitSelect) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SLinkImplicitSelect newInstance(SModel sm) {

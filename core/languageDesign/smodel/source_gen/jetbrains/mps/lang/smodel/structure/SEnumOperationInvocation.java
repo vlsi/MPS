@@ -19,7 +19,7 @@ public class SEnumOperationInvocation extends Expression {
   }
 
   public EnumerationDataTypeDeclaration getEnumDeclaration() {
-    return (EnumerationDataTypeDeclaration)this.getReferent(EnumerationDataTypeDeclaration.class, SEnumOperationInvocation.ENUM_DECLARATION);
+    return (EnumerationDataTypeDeclaration) this.getReferent(EnumerationDataTypeDeclaration.class, SEnumOperationInvocation.ENUM_DECLARATION);
   }
 
   public void setEnumDeclaration(EnumerationDataTypeDeclaration node) {
@@ -27,7 +27,7 @@ public class SEnumOperationInvocation extends Expression {
   }
 
   public SEnumOperation getOperation() {
-    return (SEnumOperation)this.getChild(SEnumOperation.class, SEnumOperationInvocation.OPERATION);
+    return (SEnumOperation) this.getChild(SEnumOperation.class, SEnumOperationInvocation.OPERATION);
   }
 
   public void setOperation(SEnumOperation node) {
@@ -35,7 +35,7 @@ public class SEnumOperationInvocation extends Expression {
   }
 
   public static SEnumOperationInvocation newInstance(SModel sm, boolean init) {
-    return (SEnumOperationInvocation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SEnumOperationInvocation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SEnumOperationInvocation newInstance(SModel sm) {

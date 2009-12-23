@@ -43,7 +43,7 @@ public class Reference_GetResolveInfo extends BaseConcept implements IReferenceO
   }
 
   public static Reference_GetResolveInfo newInstance(SModel sm, boolean init) {
-    return (Reference_GetResolveInfo)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Reference_GetResolveInfo) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Reference_GetResolveInfo", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Reference_GetResolveInfo newInstance(SModel sm) {

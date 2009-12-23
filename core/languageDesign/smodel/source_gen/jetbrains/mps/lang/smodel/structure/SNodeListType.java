@@ -18,7 +18,7 @@ public class SNodeListType extends Type {
   }
 
   public AbstractConceptDeclaration getElementConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, SNodeListType.ELEMENT_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, SNodeListType.ELEMENT_CONCEPT);
   }
 
   public void setElementConcept(AbstractConceptDeclaration node) {
@@ -26,7 +26,7 @@ public class SNodeListType extends Type {
   }
 
   public static SNodeListType newInstance(SModel sm, boolean init) {
-    return (SNodeListType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SNodeListType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SNodeListType newInstance(SModel sm) {

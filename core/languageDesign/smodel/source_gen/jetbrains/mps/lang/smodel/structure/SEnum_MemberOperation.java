@@ -45,7 +45,7 @@ public class SEnum_MemberOperation extends BaseConcept implements SEnumOperation
   }
 
   public EnumerationMemberDeclaration getMember() {
-    return (EnumerationMemberDeclaration)this.getReferent(EnumerationMemberDeclaration.class, SEnum_MemberOperation.MEMBER);
+    return (EnumerationMemberDeclaration) this.getReferent(EnumerationMemberDeclaration.class, SEnum_MemberOperation.MEMBER);
   }
 
   public void setMember(EnumerationMemberDeclaration node) {
@@ -53,7 +53,7 @@ public class SEnum_MemberOperation extends BaseConcept implements SEnumOperation
   }
 
   public static SEnum_MemberOperation newInstance(SModel sm, boolean init) {
-    return (SEnum_MemberOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SEnum_MemberOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SEnum_MemberOperation newInstance(SModel sm) {

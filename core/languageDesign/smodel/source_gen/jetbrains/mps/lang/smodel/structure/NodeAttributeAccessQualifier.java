@@ -45,7 +45,7 @@ public class NodeAttributeAccessQualifier extends BaseConcept implements IAttrib
   }
 
   public AnnotationLinkDeclaration getAnnotationLink() {
-    return (AnnotationLinkDeclaration)this.getReferent(AnnotationLinkDeclaration.class, NodeAttributeAccessQualifier.ANNOTATION_LINK);
+    return (AnnotationLinkDeclaration) this.getReferent(AnnotationLinkDeclaration.class, NodeAttributeAccessQualifier.ANNOTATION_LINK);
   }
 
   public void setAnnotationLink(AnnotationLinkDeclaration node) {
@@ -53,7 +53,7 @@ public class NodeAttributeAccessQualifier extends BaseConcept implements IAttrib
   }
 
   public static NodeAttributeAccessQualifier newInstance(SModel sm, boolean init) {
-    return (NodeAttributeAccessQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeAttributeAccessQualifier) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.NodeAttributeAccessQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeAttributeAccessQualifier newInstance(SModel sm) {

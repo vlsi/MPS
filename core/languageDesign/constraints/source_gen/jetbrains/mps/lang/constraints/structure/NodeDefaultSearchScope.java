@@ -27,7 +27,7 @@ public class NodeDefaultSearchScope extends BaseConcept {
   }
 
   public ConstraintFunction_ReferentSearchScope_Factory getSearchScopeFactory() {
-    return (ConstraintFunction_ReferentSearchScope_Factory)this.getChild(ConstraintFunction_ReferentSearchScope_Factory.class, NodeDefaultSearchScope.SEARCH_SCOPE_FACTORY);
+    return (ConstraintFunction_ReferentSearchScope_Factory) this.getChild(ConstraintFunction_ReferentSearchScope_Factory.class, NodeDefaultSearchScope.SEARCH_SCOPE_FACTORY);
   }
 
   public void setSearchScopeFactory(ConstraintFunction_ReferentSearchScope_Factory node) {
@@ -35,7 +35,7 @@ public class NodeDefaultSearchScope extends BaseConcept {
   }
 
   public ConstraintFunction_ReferentSearchScope_Presentation getPresentation() {
-    return (ConstraintFunction_ReferentSearchScope_Presentation)this.getChild(ConstraintFunction_ReferentSearchScope_Presentation.class, NodeDefaultSearchScope.PRESENTATION);
+    return (ConstraintFunction_ReferentSearchScope_Presentation) this.getChild(ConstraintFunction_ReferentSearchScope_Presentation.class, NodeDefaultSearchScope.PRESENTATION);
   }
 
   public void setPresentation(ConstraintFunction_ReferentSearchScope_Presentation node) {
@@ -43,7 +43,7 @@ public class NodeDefaultSearchScope extends BaseConcept {
   }
 
   public static NodeDefaultSearchScope newInstance(SModel sm, boolean init) {
-    return (NodeDefaultSearchScope)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeDefaultSearchScope) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.NodeDefaultSearchScope", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeDefaultSearchScope newInstance(SModel sm) {

@@ -43,7 +43,7 @@ public class Reference_GetRoleOperation extends BaseConcept implements IReferenc
   }
 
   public static Reference_GetRoleOperation newInstance(SModel sm, boolean init) {
-    return (Reference_GetRoleOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Reference_GetRoleOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Reference_GetRoleOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Reference_GetRoleOperation newInstance(SModel sm) {

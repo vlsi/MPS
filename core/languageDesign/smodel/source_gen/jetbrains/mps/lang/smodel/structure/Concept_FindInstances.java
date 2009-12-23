@@ -17,7 +17,7 @@ public class Concept_FindInstances extends SNodeOperation {
   }
 
   public Expression getScope() {
-    return (Expression)this.getChild(Expression.class, Concept_FindInstances.SCOPE);
+    return (Expression) this.getChild(Expression.class, Concept_FindInstances.SCOPE);
   }
 
   public void setScope(Expression node) {
@@ -25,7 +25,7 @@ public class Concept_FindInstances extends SNodeOperation {
   }
 
   public static Concept_FindInstances newInstance(SModel sm, boolean init) {
-    return (Concept_FindInstances)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_FindInstances", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Concept_FindInstances) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_FindInstances", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Concept_FindInstances newInstance(SModel sm) {

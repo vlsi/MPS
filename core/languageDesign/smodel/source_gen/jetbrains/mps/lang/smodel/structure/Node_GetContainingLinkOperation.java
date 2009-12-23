@@ -15,7 +15,7 @@ public class Node_GetContainingLinkOperation extends SNodeOperation {
   }
 
   public static Node_GetContainingLinkOperation newInstance(SModel sm, boolean init) {
-    return (Node_GetContainingLinkOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_GetContainingLinkOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetContainingLinkOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_GetContainingLinkOperation newInstance(SModel sm) {

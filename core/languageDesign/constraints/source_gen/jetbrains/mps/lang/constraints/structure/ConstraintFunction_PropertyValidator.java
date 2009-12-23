@@ -16,7 +16,7 @@ public class ConstraintFunction_PropertyValidator extends ConceptFunction {
   }
 
   public static ConstraintFunction_PropertyValidator newInstance(SModel sm, boolean init) {
-    return (ConstraintFunction_PropertyValidator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstraintFunction_PropertyValidator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyValidator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstraintFunction_PropertyValidator newInstance(SModel sm) {

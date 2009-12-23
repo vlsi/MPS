@@ -15,7 +15,7 @@ public class Property_RemoveOperation extends SNodeOperation {
   }
 
   public static Property_RemoveOperation newInstance(SModel sm, boolean init) {
-    return (Property_RemoveOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Property_RemoveOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Property_RemoveOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Property_RemoveOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Property_RemoveOperation newInstance(SModel sm) {

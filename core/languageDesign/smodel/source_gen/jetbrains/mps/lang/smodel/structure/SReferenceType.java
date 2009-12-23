@@ -16,7 +16,7 @@ public class SReferenceType extends Type {
   }
 
   public static SReferenceType newInstance(SModel sm, boolean init) {
-    return (SReferenceType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SReferenceType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SReferenceType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SReferenceType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SReferenceType newInstance(SModel sm) {

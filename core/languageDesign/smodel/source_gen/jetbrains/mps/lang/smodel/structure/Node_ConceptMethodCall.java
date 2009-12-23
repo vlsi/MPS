@@ -50,7 +50,7 @@ public class Node_ConceptMethodCall extends SNodeOperation implements IMethodCal
   }
 
   public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(BaseMethodDeclaration.class, Node_ConceptMethodCall.BASE_METHOD_DECLARATION);
+    return (BaseMethodDeclaration) this.getReferent(BaseMethodDeclaration.class, Node_ConceptMethodCall.BASE_METHOD_DECLARATION);
   }
 
   public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
@@ -86,7 +86,7 @@ public class Node_ConceptMethodCall extends SNodeOperation implements IMethodCal
   }
 
   public static Node_ConceptMethodCall newInstance(SModel sm, boolean init) {
-    return (Node_ConceptMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_ConceptMethodCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_ConceptMethodCall newInstance(SModel sm) {

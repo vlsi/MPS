@@ -16,7 +16,7 @@ public class ConstraintFunctionParameter_parentNode extends ConceptFunctionParam
   }
 
   public static ConstraintFunctionParameter_parentNode newInstance(SModel sm, boolean init) {
-    return (ConstraintFunctionParameter_parentNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstraintFunctionParameter_parentNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_parentNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstraintFunctionParameter_parentNode newInstance(SModel sm) {

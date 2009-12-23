@@ -16,7 +16,7 @@ public class ConceptParameter_ReferentSearchScope_enclosingNode extends ConceptF
   }
 
   public static ConceptParameter_ReferentSearchScope_enclosingNode newInstance(SModel sm, boolean init) {
-    return (ConceptParameter_ReferentSearchScope_enclosingNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptParameter_ReferentSearchScope_enclosingNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConceptParameter_ReferentSearchScope_enclosingNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptParameter_ReferentSearchScope_enclosingNode newInstance(SModel sm) {

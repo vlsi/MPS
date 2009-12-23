@@ -16,7 +16,7 @@ public class ConstraintFunctionParameter_childConcept extends ConceptFunctionPar
   }
 
   public static ConstraintFunctionParameter_childConcept newInstance(SModel sm, boolean init) {
-    return (ConstraintFunctionParameter_childConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstraintFunctionParameter_childConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_childConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstraintFunctionParameter_childConcept newInstance(SModel sm) {

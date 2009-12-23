@@ -63,11 +63,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1168979597371(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return QueriesUtil.isProperty_hasValueEnum_notNullDefaultValue(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    return QueriesUtil.isProperty_hasValueEnum_notNullDefaultValue(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static boolean baseMappingRule_Condition_1168979716443(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return QueriesUtil.isProperty_hasValueEnum_nullDefaultValue(_context.getNode(), ((TemplateQueryContext)_context).getGenerator());
+    return QueriesUtil.isProperty_hasValueEnum_nullDefaultValue(_context.getNode(), ((TemplateQueryContext) _context).getGenerator());
   }
 
   public static boolean baseMappingRule_Condition_1171323169610(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

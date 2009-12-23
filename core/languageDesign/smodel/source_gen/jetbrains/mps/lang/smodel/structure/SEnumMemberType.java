@@ -18,7 +18,7 @@ public class SEnumMemberType extends Type {
   }
 
   public EnumerationDataTypeDeclaration getEnum() {
-    return (EnumerationDataTypeDeclaration)this.getReferent(EnumerationDataTypeDeclaration.class, SEnumMemberType.ENUM);
+    return (EnumerationDataTypeDeclaration) this.getReferent(EnumerationDataTypeDeclaration.class, SEnumMemberType.ENUM);
   }
 
   public void setEnum(EnumerationDataTypeDeclaration node) {
@@ -26,7 +26,7 @@ public class SEnumMemberType extends Type {
   }
 
   public static SEnumMemberType newInstance(SModel sm, boolean init) {
-    return (SEnumMemberType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SEnumMemberType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SEnumMemberType newInstance(SModel sm) {

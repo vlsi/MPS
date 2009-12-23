@@ -15,7 +15,7 @@ public class Node_CopyOperation extends SNodeOperation {
   }
 
   public static Node_CopyOperation newInstance(SModel sm, boolean init) {
-    return (Node_CopyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_CopyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_CopyOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_CopyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_CopyOperation newInstance(SModel sm) {

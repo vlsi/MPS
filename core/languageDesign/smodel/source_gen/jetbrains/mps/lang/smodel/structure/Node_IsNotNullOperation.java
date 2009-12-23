@@ -15,7 +15,7 @@ public class Node_IsNotNullOperation extends SNodeOperation {
   }
 
   public static Node_IsNotNullOperation newInstance(SModel sm, boolean init) {
-    return (Node_IsNotNullOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_IsNotNullOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_IsNotNullOperation newInstance(SModel sm) {

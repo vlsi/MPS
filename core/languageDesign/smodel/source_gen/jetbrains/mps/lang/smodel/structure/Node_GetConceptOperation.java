@@ -15,7 +15,7 @@ public class Node_GetConceptOperation extends SNodeOperation {
   }
 
   public static Node_GetConceptOperation newInstance(SModel sm, boolean init) {
-    return (Node_GetConceptOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_GetConceptOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetConceptOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_GetConceptOperation newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class LinkList_RemoveAllChildrenOperation extends SNodeOperation {
   }
 
   public static LinkList_RemoveAllChildrenOperation newInstance(SModel sm, boolean init) {
-    return (LinkList_RemoveAllChildrenOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkList_RemoveAllChildrenOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinkList_RemoveAllChildrenOperation newInstance(SModel sm) {

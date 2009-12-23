@@ -46,7 +46,7 @@ public class SearchScope_ContainsOperation extends BaseConcept implements IOpera
   }
 
   public Expression getNodeToCheck() {
-    return (Expression)this.getChild(Expression.class, SearchScope_ContainsOperation.NODE_TO_CHECK);
+    return (Expression) this.getChild(Expression.class, SearchScope_ContainsOperation.NODE_TO_CHECK);
   }
 
   public void setNodeToCheck(Expression node) {
@@ -54,7 +54,7 @@ public class SearchScope_ContainsOperation extends BaseConcept implements IOpera
   }
 
   public static SearchScope_ContainsOperation newInstance(SModel sm, boolean init) {
-    return (SearchScope_ContainsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SearchScope_ContainsOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SearchScope_ContainsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SearchScope_ContainsOperation newInstance(SModel sm) {

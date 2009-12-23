@@ -45,7 +45,7 @@ public class PropertyRefQualifier extends BaseConcept implements IPropertyAccess
   }
 
   public PropertyDeclaration getProperty() {
-    return (PropertyDeclaration)this.getReferent(PropertyDeclaration.class, PropertyRefQualifier.PROPERTY);
+    return (PropertyDeclaration) this.getReferent(PropertyDeclaration.class, PropertyRefQualifier.PROPERTY);
   }
 
   public void setProperty(PropertyDeclaration node) {
@@ -53,7 +53,7 @@ public class PropertyRefQualifier extends BaseConcept implements IPropertyAccess
   }
 
   public static PropertyRefQualifier newInstance(SModel sm, boolean init) {
-    return (PropertyRefQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.PropertyRefQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyRefQualifier) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.PropertyRefQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyRefQualifier newInstance(SModel sm) {

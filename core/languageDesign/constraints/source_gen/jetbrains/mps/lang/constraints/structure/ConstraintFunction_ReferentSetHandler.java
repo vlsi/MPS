@@ -16,7 +16,7 @@ public class ConstraintFunction_ReferentSetHandler extends ConceptFunction {
   }
 
   public static ConstraintFunction_ReferentSetHandler newInstance(SModel sm, boolean init) {
-    return (ConstraintFunction_ReferentSetHandler)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstraintFunction_ReferentSetHandler) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSetHandler", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstraintFunction_ReferentSetHandler newInstance(SModel sm) {

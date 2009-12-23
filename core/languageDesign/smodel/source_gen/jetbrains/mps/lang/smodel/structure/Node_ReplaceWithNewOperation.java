@@ -17,7 +17,7 @@ public class Node_ReplaceWithNewOperation extends SNodeOperation {
   }
 
   public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, Node_ReplaceWithNewOperation.CONCEPT);
+    return (ConceptDeclaration) this.getReferent(ConceptDeclaration.class, Node_ReplaceWithNewOperation.CONCEPT);
   }
 
   public void setConcept(ConceptDeclaration node) {
@@ -25,7 +25,7 @@ public class Node_ReplaceWithNewOperation extends SNodeOperation {
   }
 
   public static Node_ReplaceWithNewOperation newInstance(SModel sm, boolean init) {
-    return (Node_ReplaceWithNewOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_ReplaceWithNewOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ReplaceWithNewOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_ReplaceWithNewOperation newInstance(SModel sm) {

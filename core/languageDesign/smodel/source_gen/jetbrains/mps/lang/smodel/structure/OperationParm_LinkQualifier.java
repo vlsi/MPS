@@ -43,7 +43,7 @@ public class OperationParm_LinkQualifier extends AbstractOperationParameter impl
   }
 
   public ILinkAccessQualifier getLinkQualifier() {
-    return (ILinkAccessQualifier)this.getChild(ILinkAccessQualifier.class, OperationParm_LinkQualifier.LINK_QUALIFIER);
+    return (ILinkAccessQualifier) this.getChild(ILinkAccessQualifier.class, OperationParm_LinkQualifier.LINK_QUALIFIER);
   }
 
   public void setLinkQualifier(ILinkAccessQualifier node) {
@@ -51,7 +51,7 @@ public class OperationParm_LinkQualifier extends AbstractOperationParameter impl
   }
 
   public static OperationParm_LinkQualifier newInstance(SModel sm, boolean init) {
-    return (OperationParm_LinkQualifier)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OperationParm_LinkQualifier) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_LinkQualifier", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OperationParm_LinkQualifier newInstance(SModel sm) {

@@ -43,7 +43,7 @@ public class Reference_GetLinkDeclarationOperation extends BaseConcept implement
   }
 
   public static Reference_GetLinkDeclarationOperation newInstance(SModel sm, boolean init) {
-    return (Reference_GetLinkDeclarationOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Reference_GetLinkDeclarationOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Reference_GetLinkDeclarationOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Reference_GetLinkDeclarationOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Reference_GetLinkDeclarationOperation newInstance(SModel sm) {

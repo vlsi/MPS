@@ -17,7 +17,7 @@ public class Node_ReplaceWithAnotherOperation extends SNodeOperation {
   }
 
   public Expression getReplacementNode() {
-    return (Expression)this.getChild(Expression.class, Node_ReplaceWithAnotherOperation.REPLACEMENT_NODE);
+    return (Expression) this.getChild(Expression.class, Node_ReplaceWithAnotherOperation.REPLACEMENT_NODE);
   }
 
   public void setReplacementNode(Expression node) {
@@ -25,7 +25,7 @@ public class Node_ReplaceWithAnotherOperation extends SNodeOperation {
   }
 
   public static Node_ReplaceWithAnotherOperation newInstance(SModel sm, boolean init) {
-    return (Node_ReplaceWithAnotherOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_ReplaceWithAnotherOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_ReplaceWithAnotherOperation newInstance(SModel sm) {

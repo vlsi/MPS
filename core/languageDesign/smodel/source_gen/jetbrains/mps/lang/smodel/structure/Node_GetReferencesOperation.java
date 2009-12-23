@@ -15,7 +15,7 @@ public class Node_GetReferencesOperation extends SNodeOperation {
   }
 
   public static Node_GetReferencesOperation newInstance(SModel sm, boolean init) {
-    return (Node_GetReferencesOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_GetReferencesOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetReferencesOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_GetReferencesOperation newInstance(SModel sm) {

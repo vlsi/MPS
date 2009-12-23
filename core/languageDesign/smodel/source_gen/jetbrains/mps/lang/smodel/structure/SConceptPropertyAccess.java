@@ -17,7 +17,7 @@ public class SConceptPropertyAccess extends SNodeOperation {
   }
 
   public ConceptPropertyDeclaration getConceptProperty() {
-    return (ConceptPropertyDeclaration)this.getReferent(ConceptPropertyDeclaration.class, SConceptPropertyAccess.CONCEPT_PROPERTY);
+    return (ConceptPropertyDeclaration) this.getReferent(ConceptPropertyDeclaration.class, SConceptPropertyAccess.CONCEPT_PROPERTY);
   }
 
   public void setConceptProperty(ConceptPropertyDeclaration node) {
@@ -25,7 +25,7 @@ public class SConceptPropertyAccess extends SNodeOperation {
   }
 
   public static SConceptPropertyAccess newInstance(SModel sm, boolean init) {
-    return (SConceptPropertyAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SConceptPropertyAccess) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SConceptPropertyAccess newInstance(SModel sm) {

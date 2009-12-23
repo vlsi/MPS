@@ -19,7 +19,7 @@ public class Model_CreateNewNodeOperation extends SNodeOperation {
   }
 
   public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, Model_CreateNewNodeOperation.CONCEPT);
+    return (ConceptDeclaration) this.getReferent(ConceptDeclaration.class, Model_CreateNewNodeOperation.CONCEPT);
   }
 
   public void setConcept(ConceptDeclaration node) {
@@ -27,7 +27,7 @@ public class Model_CreateNewNodeOperation extends SNodeOperation {
   }
 
   public Expression getPrototypeNode() {
-    return (Expression)this.getChild(Expression.class, Model_CreateNewNodeOperation.PROTOTYPE_NODE);
+    return (Expression) this.getChild(Expression.class, Model_CreateNewNodeOperation.PROTOTYPE_NODE);
   }
 
   public void setPrototypeNode(Expression node) {
@@ -35,7 +35,7 @@ public class Model_CreateNewNodeOperation extends SNodeOperation {
   }
 
   public static Model_CreateNewNodeOperation newInstance(SModel sm, boolean init) {
-    return (Model_CreateNewNodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Model_CreateNewNodeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Model_CreateNewNodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Model_CreateNewNodeOperation newInstance(SModel sm) {

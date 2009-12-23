@@ -16,7 +16,7 @@ public class Concept_IsExactlyOperation extends SNodeOperation {
   }
 
   public IRefConceptArg getConceptArgument() {
-    return (IRefConceptArg)this.getChild(IRefConceptArg.class, Concept_IsExactlyOperation.CONCEPT_ARGUMENT);
+    return (IRefConceptArg) this.getChild(IRefConceptArg.class, Concept_IsExactlyOperation.CONCEPT_ARGUMENT);
   }
 
   public void setConceptArgument(IRefConceptArg node) {
@@ -24,7 +24,7 @@ public class Concept_IsExactlyOperation extends SNodeOperation {
   }
 
   public static Concept_IsExactlyOperation newInstance(SModel sm, boolean init) {
-    return (Concept_IsExactlyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Concept_IsExactlyOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_IsExactlyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Concept_IsExactlyOperation newInstance(SModel sm) {

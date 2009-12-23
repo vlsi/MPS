@@ -19,7 +19,7 @@ public class Model_NodesIncludingImportedOperation extends SNodeOperation {
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, Model_NodesIncludingImportedOperation.CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, Model_NodesIncludingImportedOperation.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {
@@ -27,7 +27,7 @@ public class Model_NodesIncludingImportedOperation extends SNodeOperation {
   }
 
   public Expression getScope() {
-    return (Expression)this.getChild(Expression.class, Model_NodesIncludingImportedOperation.SCOPE);
+    return (Expression) this.getChild(Expression.class, Model_NodesIncludingImportedOperation.SCOPE);
   }
 
   public void setScope(Expression node) {
@@ -35,7 +35,7 @@ public class Model_NodesIncludingImportedOperation extends SNodeOperation {
   }
 
   public static Model_NodesIncludingImportedOperation newInstance(SModel sm, boolean init) {
-    return (Model_NodesIncludingImportedOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Model_NodesIncludingImportedOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Model_NodesIncludingImportedOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Model_NodesIncludingImportedOperation newInstance(SModel sm) {

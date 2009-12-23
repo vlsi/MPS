@@ -15,7 +15,7 @@ public class Concept_GetHierarchy extends SNodeOperation {
   }
 
   public static Concept_GetHierarchy newInstance(SModel sm, boolean init) {
-    return (Concept_GetHierarchy)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Concept_GetHierarchy) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_GetHierarchy", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Concept_GetHierarchy newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class ConstraintFunction_CanBeAChild extends ConceptFunction {
   }
 
   public static ConstraintFunction_CanBeAChild newInstance(SModel sm, boolean init) {
-    return (ConstraintFunction_CanBeAChild)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstraintFunction_CanBeAChild) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstraintFunction_CanBeAChild newInstance(SModel sm) {

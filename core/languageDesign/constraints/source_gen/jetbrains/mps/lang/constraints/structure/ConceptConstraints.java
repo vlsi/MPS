@@ -66,7 +66,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, ConceptConstraints.CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, ConceptConstraints.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {
@@ -74,7 +74,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
   }
 
   public ConceptDeclaration getDefaultConcreteConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, ConceptConstraints.DEFAULT_CONCRETE_CONCEPT);
+    return (ConceptDeclaration) this.getReferent(ConceptDeclaration.class, ConceptConstraints.DEFAULT_CONCRETE_CONCEPT);
   }
 
   public void setDefaultConcreteConcept(ConceptDeclaration node) {
@@ -82,7 +82,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
   }
 
   public NodeDefaultSearchScope getDefaultScope() {
-    return (NodeDefaultSearchScope)this.getChild(NodeDefaultSearchScope.class, ConceptConstraints.DEFAULT_SCOPE);
+    return (NodeDefaultSearchScope) this.getChild(NodeDefaultSearchScope.class, ConceptConstraints.DEFAULT_SCOPE);
   }
 
   public void setDefaultScope(NodeDefaultSearchScope node) {
@@ -90,7 +90,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
   }
 
   public ConstraintFunction_CanBeAChild getCanBeChild() {
-    return (ConstraintFunction_CanBeAChild)this.getChild(ConstraintFunction_CanBeAChild.class, ConceptConstraints.CAN_BE_CHILD);
+    return (ConstraintFunction_CanBeAChild) this.getChild(ConstraintFunction_CanBeAChild.class, ConceptConstraints.CAN_BE_CHILD);
   }
 
   public void setCanBeChild(ConstraintFunction_CanBeAChild node) {
@@ -98,7 +98,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
   }
 
   public ConstraintFunction_CanBeARoot getCanBeRoot() {
-    return (ConstraintFunction_CanBeARoot)this.getChild(ConstraintFunction_CanBeARoot.class, ConceptConstraints.CAN_BE_ROOT);
+    return (ConstraintFunction_CanBeARoot) this.getChild(ConstraintFunction_CanBeARoot.class, ConceptConstraints.CAN_BE_ROOT);
   }
 
   public void setCanBeRoot(ConstraintFunction_CanBeARoot node) {
@@ -106,7 +106,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
   }
 
   public ConstraintFunction_CanBeAParent getCanBeParent() {
-    return (ConstraintFunction_CanBeAParent)this.getChild(ConstraintFunction_CanBeAParent.class, ConceptConstraints.CAN_BE_PARENT);
+    return (ConstraintFunction_CanBeAParent) this.getChild(ConstraintFunction_CanBeAParent.class, ConceptConstraints.CAN_BE_PARENT);
   }
 
   public void setCanBeParent(ConstraintFunction_CanBeAParent node) {
@@ -154,7 +154,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
   }
 
   public static ConceptConstraints newInstance(SModel sm, boolean init) {
-    return (ConceptConstraints)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConceptConstraints", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptConstraints) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConceptConstraints", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptConstraints newInstance(SModel sm) {

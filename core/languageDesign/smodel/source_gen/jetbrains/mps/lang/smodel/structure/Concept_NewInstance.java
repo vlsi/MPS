@@ -17,7 +17,7 @@ public class Concept_NewInstance extends SNodeOperation {
   }
 
   public Expression getPrototypeNode() {
-    return (Expression)this.getChild(Expression.class, Concept_NewInstance.PROTOTYPE_NODE);
+    return (Expression) this.getChild(Expression.class, Concept_NewInstance.PROTOTYPE_NODE);
   }
 
   public void setPrototypeNode(Expression node) {
@@ -25,7 +25,7 @@ public class Concept_NewInstance extends SNodeOperation {
   }
 
   public static Concept_NewInstance newInstance(SModel sm, boolean init) {
-    return (Concept_NewInstance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_NewInstance", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Concept_NewInstance) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Concept_NewInstance", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Concept_NewInstance newInstance(SModel sm) {

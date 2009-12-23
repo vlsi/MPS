@@ -17,7 +17,7 @@ public class Link_SetTargetOperation extends SNodeOperation {
   }
 
   public Expression getLinkTarget() {
-    return (Expression)this.getChild(Expression.class, Link_SetTargetOperation.LINK_TARGET);
+    return (Expression) this.getChild(Expression.class, Link_SetTargetOperation.LINK_TARGET);
   }
 
   public void setLinkTarget(Expression node) {
@@ -25,7 +25,7 @@ public class Link_SetTargetOperation extends SNodeOperation {
   }
 
   public static Link_SetTargetOperation newInstance(SModel sm, boolean init) {
-    return (Link_SetTargetOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Link_SetTargetOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Link_SetTargetOperation newInstance(SModel sm) {

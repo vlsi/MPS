@@ -45,7 +45,7 @@ public class SEnum_MemberForNameOperation extends BaseConcept implements SEnumOp
   }
 
   public Expression getNameExpression() {
-    return (Expression)this.getChild(Expression.class, SEnum_MemberForNameOperation.NAME_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, SEnum_MemberForNameOperation.NAME_EXPRESSION);
   }
 
   public void setNameExpression(Expression node) {
@@ -53,7 +53,7 @@ public class SEnum_MemberForNameOperation extends BaseConcept implements SEnumOp
   }
 
   public static SEnum_MemberForNameOperation newInstance(SModel sm, boolean init) {
-    return (SEnum_MemberForNameOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SEnum_MemberForNameOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnum_MemberForNameOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SEnum_MemberForNameOperation newInstance(SModel sm) {

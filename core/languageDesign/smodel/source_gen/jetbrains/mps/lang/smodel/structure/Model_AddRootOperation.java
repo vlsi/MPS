@@ -17,7 +17,7 @@ public class Model_AddRootOperation extends SNodeOperation {
   }
 
   public Expression getNodeArgument() {
-    return (Expression)this.getChild(Expression.class, Model_AddRootOperation.NODE_ARGUMENT);
+    return (Expression) this.getChild(Expression.class, Model_AddRootOperation.NODE_ARGUMENT);
   }
 
   public void setNodeArgument(Expression node) {
@@ -25,7 +25,7 @@ public class Model_AddRootOperation extends SNodeOperation {
   }
 
   public static Model_AddRootOperation newInstance(SModel sm, boolean init) {
-    return (Model_AddRootOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Model_AddRootOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Model_AddRootOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Model_AddRootOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Model_AddRootOperation newInstance(SModel sm) {

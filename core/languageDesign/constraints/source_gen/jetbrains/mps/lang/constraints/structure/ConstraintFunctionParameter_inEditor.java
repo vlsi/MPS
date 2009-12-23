@@ -16,7 +16,7 @@ public class ConstraintFunctionParameter_inEditor extends ConceptFunctionParamet
   }
 
   public static ConstraintFunctionParameter_inEditor newInstance(SModel sm, boolean init) {
-    return (ConstraintFunctionParameter_inEditor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstraintFunctionParameter_inEditor) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_inEditor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstraintFunctionParameter_inEditor newInstance(SModel sm) {

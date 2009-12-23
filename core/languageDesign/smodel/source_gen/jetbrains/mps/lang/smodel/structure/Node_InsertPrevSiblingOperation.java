@@ -17,7 +17,7 @@ public class Node_InsertPrevSiblingOperation extends SNodeOperation {
   }
 
   public Expression getInsertedNode() {
-    return (Expression)this.getChild(Expression.class, Node_InsertPrevSiblingOperation.INSERTED_NODE);
+    return (Expression) this.getChild(Expression.class, Node_InsertPrevSiblingOperation.INSERTED_NODE);
   }
 
   public void setInsertedNode(Expression node) {
@@ -25,7 +25,7 @@ public class Node_InsertPrevSiblingOperation extends SNodeOperation {
   }
 
   public static Node_InsertPrevSiblingOperation newInstance(SModel sm, boolean init) {
-    return (Node_InsertPrevSiblingOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_InsertPrevSiblingOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_InsertPrevSiblingOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_InsertPrevSiblingOperation newInstance(SModel sm) {

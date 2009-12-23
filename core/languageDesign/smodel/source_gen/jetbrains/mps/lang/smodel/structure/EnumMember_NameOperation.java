@@ -43,7 +43,7 @@ public class EnumMember_NameOperation extends BaseConcept implements SEnumMember
   }
 
   public static EnumMember_NameOperation newInstance(SModel sm, boolean init) {
-    return (EnumMember_NameOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EnumMember_NameOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.EnumMember_NameOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EnumMember_NameOperation newInstance(SModel sm) {

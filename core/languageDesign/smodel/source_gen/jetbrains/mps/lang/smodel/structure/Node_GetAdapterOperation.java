@@ -15,7 +15,7 @@ public class Node_GetAdapterOperation extends SNodeOperation {
   }
 
   public static Node_GetAdapterOperation newInstance(SModel sm, boolean init) {
-    return (Node_GetAdapterOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Node_GetAdapterOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetAdapterOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Node_GetAdapterOperation newInstance(SModel sm) {

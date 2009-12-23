@@ -45,7 +45,7 @@ public class RefConcept_Reference extends BaseConcept implements IRefConceptArg 
   }
 
   public AbstractConceptDeclaration getConceptDeclaration() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, RefConcept_Reference.CONCEPT_DECLARATION);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, RefConcept_Reference.CONCEPT_DECLARATION);
   }
 
   public void setConceptDeclaration(AbstractConceptDeclaration node) {
@@ -53,7 +53,7 @@ public class RefConcept_Reference extends BaseConcept implements IRefConceptArg 
   }
 
   public static RefConcept_Reference newInstance(SModel sm, boolean init) {
-    return (RefConcept_Reference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RefConcept_Reference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RefConcept_Reference newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class ConstraintFunctionParameter_linkTarget extends ConceptFunctionParam
   }
 
   public static ConstraintFunctionParameter_linkTarget newInstance(SModel sm, boolean init) {
-    return (ConstraintFunctionParameter_linkTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkTarget", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConstraintFunctionParameter_linkTarget) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunctionParameter_linkTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConstraintFunctionParameter_linkTarget newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class Property_SetOperation extends SNodeOperation {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, Property_SetOperation.VALUE);
+    return (Expression) this.getChild(Expression.class, Property_SetOperation.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -25,7 +25,7 @@ public class Property_SetOperation extends SNodeOperation {
   }
 
   public static Property_SetOperation newInstance(SModel sm, boolean init) {
-    return (Property_SetOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Property_SetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Property_SetOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Property_SetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Property_SetOperation newInstance(SModel sm) {

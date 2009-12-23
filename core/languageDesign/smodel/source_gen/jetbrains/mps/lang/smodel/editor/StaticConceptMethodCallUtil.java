@@ -36,7 +36,7 @@ public class StaticConceptMethodCallUtil {
     });
     for (SNode attribute : ListSequence.fromList(existingNode.getAllAttributes())) {
       String role = existingNode.getRoleOf(attribute);
-      staticConceptMethodCall.addChild(role, SNodeOperations.copyNode(((SNode)attribute)));
+      staticConceptMethodCall.addChild(role, SNodeOperations.copyNode(((SNode) attribute)));
     }
     return staticConceptMethodCall;
   }

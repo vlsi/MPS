@@ -45,7 +45,7 @@ public class SEnum_MemberForValueOperation extends BaseConcept implements SEnumO
   }
 
   public Expression getValueExpression() {
-    return (Expression)this.getChild(Expression.class, SEnum_MemberForValueOperation.VALUE_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, SEnum_MemberForValueOperation.VALUE_EXPRESSION);
   }
 
   public void setValueExpression(Expression node) {
@@ -53,7 +53,7 @@ public class SEnum_MemberForValueOperation extends BaseConcept implements SEnumO
   }
 
   public static SEnum_MemberForValueOperation newInstance(SModel sm, boolean init) {
-    return (SEnum_MemberForValueOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SEnum_MemberForValueOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnum_MemberForValueOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SEnum_MemberForValueOperation newInstance(SModel sm) {
