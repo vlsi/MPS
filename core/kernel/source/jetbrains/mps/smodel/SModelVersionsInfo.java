@@ -13,7 +13,6 @@ public class SModelVersionsInfo {
   private final TObjectIntHashMap<NodeStringPair> myNodePropertiesVersions = new TObjectIntHashMap<NodeStringPair>();
   private final TObjectIntHashMap<NodeStringPair> myNodeLinkRolesVersions = new TObjectIntHashMap<NodeStringPair>();
   private final TObjectIntHashMap<NodeStringPair> myNodeLinkTargetsVersions = new TObjectIntHashMap<NodeStringPair>();
-  private final NodeStringPair myEtalon = new NodeStringPair();   //why a filed?
 
   public void dispose() {
     LOG.assertLog(!myIsDisposed);
@@ -35,9 +34,9 @@ public class SModelVersionsInfo {
   public int getPropertyVersion(SNode node, String propertyName) {
     LOG.assertLog(!myIsDisposed);
 
-    myEtalon.fill(node, propertyName);
-    if (myNodePropertiesVersions.containsKey(myEtalon)) {
-      return myNodePropertiesVersions.get(myEtalon);
+    NodeStringPair key = new NodeStringPair(node, propertyName);
+    if (myNodePropertiesVersions.containsKey(key)) {
+      return myNodePropertiesVersions.get(key);
     }
     return -1;
   }
@@ -84,9 +83,9 @@ public class SModelVersionsInfo {
   public int getLinkRoleVersion(SNode node, String linkRole) {
     LOG.assertLog(!myIsDisposed);
 
-    myEtalon.fill(node, linkRole);
-    if (myNodeLinkRolesVersions.containsKey(myEtalon)) {
-      return myNodeLinkRolesVersions.get(myEtalon);
+    NodeStringPair key = new NodeStringPair(node, linkRole);
+    if (myNodeLinkRolesVersions.containsKey(key)) {
+      return myNodeLinkRolesVersions.get(key);
     }
     return -1;
   }
@@ -101,9 +100,9 @@ public class SModelVersionsInfo {
   public int getLinkTargetIdVersion(SNode node, String linkRole) {
     LOG.assertLog(!myIsDisposed);
 
-    myEtalon.fill(node, linkRole);
-    if (myNodeLinkTargetsVersions.containsKey(myEtalon)) {
-      return myNodeLinkTargetsVersions.get(myEtalon);
+    NodeStringPair key = new NodeStringPair(node, linkRole);
+    if (myNodeLinkTargetsVersions.containsKey(key)) {
+      return myNodeLinkTargetsVersions.get(key);
     }
     return -1;
   }
