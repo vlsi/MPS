@@ -10,6 +10,6 @@ public class XmlLiterals_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("a1896bc3-4f5b-4a31-b78b-b65514f8d0e5(jetbrains.mps.samples.xmlLiterals)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

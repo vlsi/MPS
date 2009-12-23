@@ -16,7 +16,7 @@ public class MatrixDivExpression extends BinaryOperation {
   }
 
   public static MatrixDivExpression newInstance(SModel sm, boolean init) {
-    return (MatrixDivExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixDivExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixDivExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixDivExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixDivExpression newInstance(SModel sm) {

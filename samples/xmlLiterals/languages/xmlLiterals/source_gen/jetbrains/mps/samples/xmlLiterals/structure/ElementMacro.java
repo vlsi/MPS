@@ -18,7 +18,7 @@ public class ElementMacro extends Content {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, ElementMacro.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, ElementMacro.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -26,7 +26,7 @@ public class ElementMacro extends Content {
   }
 
   public static ElementMacro newInstance(SModel sm, boolean init) {
-    return (ElementMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.xmlLiterals.structure.ElementMacro", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ElementMacro) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.xmlLiterals.structure.ElementMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ElementMacro newInstance(SModel sm) {

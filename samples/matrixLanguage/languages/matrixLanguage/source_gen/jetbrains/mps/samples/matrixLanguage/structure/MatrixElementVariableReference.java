@@ -24,7 +24,7 @@ public class MatrixElementVariableReference extends VariableReference {
   }
 
   public static MatrixElementVariableReference newInstance(SModel sm, boolean init) {
-    return (MatrixElementVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixElementVariableReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixElementVariableReference newInstance(SModel sm) {

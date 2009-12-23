@@ -73,7 +73,7 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      Language language = ((Language)CheckLangForJavaStubModels_Action.this.module);
+      Language language = ((Language) CheckLangForJavaStubModels_Action.this.module);
       Set<String> langStubModels = SetSequence.fromSet(new HashSet<String>());
       Set<String> otherStubModels = SetSequence.fromSet(new HashSet<String>());
       for (SModelDescriptor md : SetSequence.fromSet(language.getAspectModelDescriptors())) {

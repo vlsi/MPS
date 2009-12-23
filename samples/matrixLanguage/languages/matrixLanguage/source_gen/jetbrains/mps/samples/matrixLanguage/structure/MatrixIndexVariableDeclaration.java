@@ -53,7 +53,7 @@ public class MatrixIndexVariableDeclaration extends VariableDeclaration implemen
   }
 
   public static MatrixIndexVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (MatrixIndexVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixIndexVariableDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixIndexVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixIndexVariableDeclaration newInstance(SModel sm) {

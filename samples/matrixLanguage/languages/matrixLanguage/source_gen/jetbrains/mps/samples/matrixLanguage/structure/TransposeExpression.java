@@ -17,7 +17,7 @@ public class TransposeExpression extends Expression {
   }
 
   public Expression getMatrix() {
-    return (Expression)this.getChild(Expression.class, TransposeExpression.MATRIX);
+    return (Expression) this.getChild(Expression.class, TransposeExpression.MATRIX);
   }
 
   public void setMatrix(Expression node) {
@@ -25,7 +25,7 @@ public class TransposeExpression extends Expression {
   }
 
   public static TransposeExpression newInstance(SModel sm, boolean init) {
-    return (TransposeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.TransposeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TransposeExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.TransposeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TransposeExpression newInstance(SModel sm) {

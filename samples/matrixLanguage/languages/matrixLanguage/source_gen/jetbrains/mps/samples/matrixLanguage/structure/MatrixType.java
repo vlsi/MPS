@@ -17,7 +17,7 @@ public class MatrixType extends Type {
   }
 
   public Type getScalarType() {
-    return (Type)this.getChild(Type.class, MatrixType.SCALAR_TYPE);
+    return (Type) this.getChild(Type.class, MatrixType.SCALAR_TYPE);
   }
 
   public void setScalarType(Type node) {
@@ -25,7 +25,7 @@ public class MatrixType extends Type {
   }
 
   public static MatrixType newInstance(SModel sm, boolean init) {
-    return (MatrixType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixType newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class DeterminantExpression extends Expression {
   }
 
   public Expression getLiteral() {
-    return (Expression)this.getChild(Expression.class, DeterminantExpression.LITERAL);
+    return (Expression) this.getChild(Expression.class, DeterminantExpression.LITERAL);
   }
 
   public void setLiteral(Expression node) {
@@ -25,7 +25,7 @@ public class DeterminantExpression extends Expression {
   }
 
   public static DeterminantExpression newInstance(SModel sm, boolean init) {
-    return (DeterminantExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.DeterminantExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DeterminantExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.DeterminantExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DeterminantExpression newInstance(SModel sm) {

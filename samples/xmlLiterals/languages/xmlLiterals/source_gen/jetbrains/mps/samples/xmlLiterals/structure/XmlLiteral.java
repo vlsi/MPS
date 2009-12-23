@@ -18,7 +18,7 @@ public class XmlLiteral extends Expression {
   }
 
   public BaseElement getElement() {
-    return (BaseElement)this.getChild(BaseElement.class, XmlLiteral.ELEMENT);
+    return (BaseElement) this.getChild(BaseElement.class, XmlLiteral.ELEMENT);
   }
 
   public void setElement(BaseElement node) {
@@ -26,7 +26,7 @@ public class XmlLiteral extends Expression {
   }
 
   public static XmlLiteral newInstance(SModel sm, boolean init) {
-    return (XmlLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (XmlLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.xmlLiterals.structure.XmlLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static XmlLiteral newInstance(SModel sm) {

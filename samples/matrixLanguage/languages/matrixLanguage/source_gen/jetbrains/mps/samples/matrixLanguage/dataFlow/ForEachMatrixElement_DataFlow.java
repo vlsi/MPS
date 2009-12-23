@@ -13,12 +13,12 @@ public class ForEachMatrixElement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "matrix", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "matrix", true));
     _context.getBuilder().emitLabel("start");
     _context.getBuilder().emitWrite(SLinkOperations.getTarget(_context.getNode(), "element", true));
     _context.getBuilder().emitWrite(SLinkOperations.getTarget(_context.getNode(), "column", true));
     _context.getBuilder().emitWrite(SLinkOperations.getTarget(_context.getNode(), "row", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "body", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "body", true));
     _context.getBuilder().emitIfJump(_context.getBuilder().label(_context.getNode(), "start"));
   }
 }

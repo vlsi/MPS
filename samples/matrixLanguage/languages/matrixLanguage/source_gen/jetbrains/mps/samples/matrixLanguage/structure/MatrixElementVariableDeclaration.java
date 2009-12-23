@@ -53,7 +53,7 @@ public class MatrixElementVariableDeclaration extends VariableDeclaration implem
   }
 
   public static MatrixElementVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (MatrixElementVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixElementVariableDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixElementVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixElementVariableDeclaration newInstance(SModel sm) {

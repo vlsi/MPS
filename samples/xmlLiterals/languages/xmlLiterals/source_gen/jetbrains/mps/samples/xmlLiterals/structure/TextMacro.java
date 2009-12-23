@@ -18,7 +18,7 @@ public class TextMacro extends BaseText {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, TextMacro.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, TextMacro.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -26,7 +26,7 @@ public class TextMacro extends BaseText {
   }
 
   public static TextMacro newInstance(SModel sm, boolean init) {
-    return (TextMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.xmlLiterals.structure.TextMacro", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TextMacro) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.xmlLiterals.structure.TextMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TextMacro newInstance(SModel sm) {

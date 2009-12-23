@@ -40,7 +40,7 @@ public class MatrixRow extends BaseConcept {
   }
 
   public static MatrixRow newInstance(SModel sm, boolean init) {
-    return (MatrixRow)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixRow", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixRow) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixRow", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixRow newInstance(SModel sm) {

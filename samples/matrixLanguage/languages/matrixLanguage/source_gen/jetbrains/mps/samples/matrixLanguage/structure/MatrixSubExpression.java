@@ -16,7 +16,7 @@ public class MatrixSubExpression extends BinaryOperation {
   }
 
   public static MatrixSubExpression newInstance(SModel sm, boolean init) {
-    return (MatrixSubExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixSubExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixSubExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixSubExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixSubExpression newInstance(SModel sm) {

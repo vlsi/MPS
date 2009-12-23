@@ -21,7 +21,7 @@ public class ForEachMatrixElement extends AbstractLoopStatement {
   }
 
   public MatrixIndexVariableDeclaration getRow() {
-    return (MatrixIndexVariableDeclaration)this.getChild(MatrixIndexVariableDeclaration.class, ForEachMatrixElement.ROW);
+    return (MatrixIndexVariableDeclaration) this.getChild(MatrixIndexVariableDeclaration.class, ForEachMatrixElement.ROW);
   }
 
   public void setRow(MatrixIndexVariableDeclaration node) {
@@ -29,7 +29,7 @@ public class ForEachMatrixElement extends AbstractLoopStatement {
   }
 
   public MatrixIndexVariableDeclaration getColumn() {
-    return (MatrixIndexVariableDeclaration)this.getChild(MatrixIndexVariableDeclaration.class, ForEachMatrixElement.COLUMN);
+    return (MatrixIndexVariableDeclaration) this.getChild(MatrixIndexVariableDeclaration.class, ForEachMatrixElement.COLUMN);
   }
 
   public void setColumn(MatrixIndexVariableDeclaration node) {
@@ -37,7 +37,7 @@ public class ForEachMatrixElement extends AbstractLoopStatement {
   }
 
   public MatrixElementVariableDeclaration getElement() {
-    return (MatrixElementVariableDeclaration)this.getChild(MatrixElementVariableDeclaration.class, ForEachMatrixElement.ELEMENT);
+    return (MatrixElementVariableDeclaration) this.getChild(MatrixElementVariableDeclaration.class, ForEachMatrixElement.ELEMENT);
   }
 
   public void setElement(MatrixElementVariableDeclaration node) {
@@ -45,7 +45,7 @@ public class ForEachMatrixElement extends AbstractLoopStatement {
   }
 
   public Expression getMatrix() {
-    return (Expression)this.getChild(Expression.class, ForEachMatrixElement.MATRIX);
+    return (Expression) this.getChild(Expression.class, ForEachMatrixElement.MATRIX);
   }
 
   public void setMatrix(Expression node) {
@@ -53,7 +53,7 @@ public class ForEachMatrixElement extends AbstractLoopStatement {
   }
 
   public static ForEachMatrixElement newInstance(SModel sm, boolean init) {
-    return (ForEachMatrixElement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ForEachMatrixElement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.ForEachMatrixElement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ForEachMatrixElement newInstance(SModel sm) {

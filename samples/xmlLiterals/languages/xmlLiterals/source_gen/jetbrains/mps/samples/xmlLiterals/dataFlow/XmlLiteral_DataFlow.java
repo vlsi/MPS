@@ -18,10 +18,10 @@ public class XmlLiteral_DataFlow extends DataFlowBuilder {
     List<SNode> items = SNodeOperations.getDescendantsWhereConceptInList(_context.getNode(), new String[]{"jetbrains.mps.samples.xmlLiterals.structure.ElementMacro","jetbrains.mps.samples.xmlLiterals.structure.TextMacro"}, false, new String[]{});
     for (SNode item : items) {
       if (SNodeOperations.isInstanceOf(item, "jetbrains.mps.samples.xmlLiterals.structure.ElementMacro")) {
-        _context.getBuilder().build((SNode)SLinkOperations.getTarget(SNodeOperations.cast(item, "jetbrains.mps.samples.xmlLiterals.structure.ElementMacro"), "expression", true));
+        _context.getBuilder().build((SNode) SLinkOperations.getTarget(SNodeOperations.cast(item, "jetbrains.mps.samples.xmlLiterals.structure.ElementMacro"), "expression", true));
       }
       if (SNodeOperations.isInstanceOf(item, "jetbrains.mps.samples.xmlLiterals.structure.TextMacro")) {
-        _context.getBuilder().build((SNode)SLinkOperations.getTarget(SNodeOperations.cast(item, "jetbrains.mps.samples.xmlLiterals.structure.TextMacro"), "expression", true));
+        _context.getBuilder().build((SNode) SLinkOperations.getTarget(SNodeOperations.cast(item, "jetbrains.mps.samples.xmlLiterals.structure.TextMacro"), "expression", true));
       }
     }
   }

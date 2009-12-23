@@ -14,7 +14,7 @@ public class MatrixLiteral_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode r : SLinkOperations.getTargets(_context.getNode(), "row", true)) {
-      _context.getBuilder().build((SNode)r);
+      _context.getBuilder().build((SNode) r);
     }
   }
 }
