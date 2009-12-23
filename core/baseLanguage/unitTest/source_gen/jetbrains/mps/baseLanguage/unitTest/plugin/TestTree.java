@@ -65,12 +65,13 @@ public class TestTree extends MPSTree implements TestView {
     final Wrappers._T<TestMethodTreeNode> methodNode = new Wrappers._T<TestMethodTreeNode>();
     if (loseTest != null && loseMethod != null) {
       methodNode.value = this.get(loseTest, loseMethod);
-      if (methodNode.value != null) {
-        methodNode.value.setState(TestState.ERROR);
+      TestCaseTreeNode testCaseNode = this.get(loseTest);
+      if (methodNode.value != null && testCaseNode != null) {
+        this.updateState(methodNode.value, testCaseNode, TestState.ERROR);
       }
     } else {
-      methodNode.value = this.get(test, method);
       TestCaseTreeNode testCaseNode = this.get(test);
+      methodNode.value = this.get(test, method);
       if (methodNode.value != null && testCaseNode != null) {
         if (this.state.isTerminated()) {
           this.updateState(methodNode.value, testCaseNode, TestState.TERMINATED);
