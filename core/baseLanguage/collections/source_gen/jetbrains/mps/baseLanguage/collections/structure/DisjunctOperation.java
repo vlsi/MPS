@@ -15,7 +15,7 @@ public class DisjunctOperation extends BinaryOperation {
   }
 
   public static DisjunctOperation newInstance(SModel sm, boolean init) {
-    return (DisjunctOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DisjunctOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DisjunctOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DisjunctOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DisjunctOperation newInstance(SModel sm) {

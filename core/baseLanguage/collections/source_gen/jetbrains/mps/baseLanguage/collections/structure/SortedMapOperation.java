@@ -15,7 +15,7 @@ public class SortedMapOperation extends MapOperation {
   }
 
   public static SortedMapOperation newInstance(SModel sm, boolean init) {
-    return (SortedMapOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SortedMapOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SortedMapOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SortedMapOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SortedMapOperation newInstance(SModel sm) {

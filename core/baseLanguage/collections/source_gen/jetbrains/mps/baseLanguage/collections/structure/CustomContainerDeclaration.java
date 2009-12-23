@@ -62,7 +62,7 @@ public class CustomContainerDeclaration extends GenericDeclaration implements IN
   }
 
   public Type getContainerType() {
-    return (Type)this.getChild(Type.class, CustomContainerDeclaration.CONTAINER_TYPE);
+    return (Type) this.getChild(Type.class, CustomContainerDeclaration.CONTAINER_TYPE);
   }
 
   public void setContainerType(Type node) {
@@ -70,7 +70,7 @@ public class CustomContainerDeclaration extends GenericDeclaration implements IN
   }
 
   public ClassifierType getRuntimeType() {
-    return (ClassifierType)this.getChild(ClassifierType.class, CustomContainerDeclaration.RUNTIME_TYPE);
+    return (ClassifierType) this.getChild(ClassifierType.class, CustomContainerDeclaration.RUNTIME_TYPE);
   }
 
   public void setRuntimeType(ClassifierType node) {
@@ -78,7 +78,7 @@ public class CustomContainerDeclaration extends GenericDeclaration implements IN
   }
 
   public Expression getFactory() {
-    return (Expression)this.getChild(Expression.class, CustomContainerDeclaration.FACTORY);
+    return (Expression) this.getChild(Expression.class, CustomContainerDeclaration.FACTORY);
   }
 
   public void setFactory(Expression node) {
@@ -86,7 +86,7 @@ public class CustomContainerDeclaration extends GenericDeclaration implements IN
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, CustomContainerDeclaration.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, CustomContainerDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -94,7 +94,7 @@ public class CustomContainerDeclaration extends GenericDeclaration implements IN
   }
 
   public static CustomContainerDeclaration newInstance(SModel sm, boolean init) {
-    return (CustomContainerDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CustomContainerDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.CustomContainerDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CustomContainerDeclaration newInstance(SModel sm) {

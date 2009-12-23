@@ -15,7 +15,7 @@ public class GetIndexOfOperation extends SingleArgumentSequenceOperation {
   }
 
   public static GetIndexOfOperation newInstance(SModel sm, boolean init) {
-    return (GetIndexOfOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetIndexOfOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetIndexOfOperation newInstance(SModel sm) {

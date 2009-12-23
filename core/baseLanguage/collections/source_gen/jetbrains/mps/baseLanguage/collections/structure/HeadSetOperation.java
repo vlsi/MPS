@@ -17,7 +17,7 @@ public class HeadSetOperation extends SortedSetOperation {
   }
 
   public Expression getToElement() {
-    return (Expression)this.getChild(Expression.class, HeadSetOperation.TO_ELEMENT);
+    return (Expression) this.getChild(Expression.class, HeadSetOperation.TO_ELEMENT);
   }
 
   public void setToElement(Expression node) {
@@ -25,7 +25,7 @@ public class HeadSetOperation extends SortedSetOperation {
   }
 
   public static HeadSetOperation newInstance(SModel sm, boolean init) {
-    return (HeadSetOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HeadSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (HeadSetOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HeadSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static HeadSetOperation newInstance(SModel sm) {

@@ -39,7 +39,7 @@ public class InvokeExpression extends Expression {
   }
 
   public static InvokeExpression newInstance(SModel sm, boolean init) {
-    return (InvokeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.InvokeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InvokeExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.InvokeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InvokeExpression newInstance(SModel sm) {

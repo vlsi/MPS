@@ -22,7 +22,7 @@ public class typeof_TakeOperation_InferenceRule extends AbstractInferenceRule_Ru
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184847269142", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184847262796", true), (SNode)new _Quotations.QuotationClass_5().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184847262796", true), (SNode) new _Quotations.QuotationClass_5().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
 

@@ -17,7 +17,7 @@ public class SetType extends Type {
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(Type.class, SetType.ELEMENT_TYPE);
+    return (Type) this.getChild(Type.class, SetType.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {
@@ -25,7 +25,7 @@ public class SetType extends Type {
   }
 
   public static SetType newInstance(SModel sm, boolean init) {
-    return (SetType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SetType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SetType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SetType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SetType newInstance(SModel sm) {

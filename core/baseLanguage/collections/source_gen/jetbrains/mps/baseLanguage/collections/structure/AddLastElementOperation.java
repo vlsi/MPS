@@ -42,7 +42,7 @@ public class AddLastElementOperation extends SingleArgumentSequenceOperation imp
   }
 
   public static AddLastElementOperation newInstance(SModel sm, boolean init) {
-    return (AddLastElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AddLastElementOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AddLastElementOperation newInstance(SModel sm) {

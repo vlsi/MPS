@@ -15,7 +15,7 @@ public class AlsoSortOperation extends SortOperation {
   }
 
   public static AlsoSortOperation newInstance(SModel sm, boolean init) {
-    return (AlsoSortOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AlsoSortOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AlsoSortOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AlsoSortOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AlsoSortOperation newInstance(SModel sm) {

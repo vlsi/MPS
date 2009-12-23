@@ -42,7 +42,7 @@ public class PeekOperation extends NoArgumentsSequenceOperation implements IStac
   }
 
   public static PeekOperation newInstance(SModel sm, boolean init) {
-    return (PeekOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PeekOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PeekOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PeekOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PeekOperation newInstance(SModel sm) {

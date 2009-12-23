@@ -26,10 +26,10 @@ public class DequeType_Behavior {
   }
 
   public static List<SNode> call_getAbstractCreators_7602110602933345651(SNode thisNode, SModel targetModel) {
-    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.DequeType"), "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345651, targetModel);
+    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.DequeType"), "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345651, targetModel);
   }
 
   public static List<SNode> callSuper_getAbstractCreators_7602110602933345651(SNode thisNode, String callerConceptFqName, SModel targetModel) {
-    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.DequeType"), callerConceptFqName, "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345651, targetModel);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.DequeType"), callerConceptFqName, "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345651, targetModel);
   }
 }

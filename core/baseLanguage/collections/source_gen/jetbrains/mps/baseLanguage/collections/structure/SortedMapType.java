@@ -15,7 +15,7 @@ public class SortedMapType extends MapType {
   }
 
   public static SortedMapType newInstance(SModel sm, boolean init) {
-    return (SortedMapType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SortedMapType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SortedMapType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SortedMapType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SortedMapType newInstance(SModel sm) {

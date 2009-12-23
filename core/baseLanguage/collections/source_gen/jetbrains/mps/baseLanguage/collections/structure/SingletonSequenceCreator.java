@@ -20,7 +20,7 @@ public class SingletonSequenceCreator extends AbstractCreator {
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(Type.class, SingletonSequenceCreator.ELEMENT_TYPE);
+    return (Type) this.getChild(Type.class, SingletonSequenceCreator.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {
@@ -28,7 +28,7 @@ public class SingletonSequenceCreator extends AbstractCreator {
   }
 
   public Expression getSingletonValue() {
-    return (Expression)this.getChild(Expression.class, SingletonSequenceCreator.SINGLETON_VALUE);
+    return (Expression) this.getChild(Expression.class, SingletonSequenceCreator.SINGLETON_VALUE);
   }
 
   public void setSingletonValue(Expression node) {
@@ -36,7 +36,7 @@ public class SingletonSequenceCreator extends AbstractCreator {
   }
 
   public static SingletonSequenceCreator newInstance(SModel sm, boolean init) {
-    return (SingletonSequenceCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SingletonSequenceCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SingletonSequenceCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SingletonSequenceCreator newInstance(SModel sm) {

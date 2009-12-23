@@ -15,7 +15,7 @@ public class LinkedHashSetCreator extends HashSetCreator {
   }
 
   public static LinkedHashSetCreator newInstance(SModel sm, boolean init) {
-    return (LinkedHashSetCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkedHashSetCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinkedHashSetCreator newInstance(SModel sm) {

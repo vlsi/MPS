@@ -18,7 +18,7 @@ public class MappingType extends Type {
   }
 
   public Type getKeyType() {
-    return (Type)this.getChild(Type.class, MappingType.KEY_TYPE);
+    return (Type) this.getChild(Type.class, MappingType.KEY_TYPE);
   }
 
   public void setKeyType(Type node) {
@@ -26,7 +26,7 @@ public class MappingType extends Type {
   }
 
   public Type getValueType() {
-    return (Type)this.getChild(Type.class, MappingType.VALUE_TYPE);
+    return (Type) this.getChild(Type.class, MappingType.VALUE_TYPE);
   }
 
   public void setValueType(Type node) {
@@ -34,7 +34,7 @@ public class MappingType extends Type {
   }
 
   public static MappingType newInstance(SModel sm, boolean init) {
-    return (MappingType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MappingType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MappingType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MappingType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MappingType newInstance(SModel sm) {

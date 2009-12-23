@@ -15,7 +15,7 @@ public class HashSetCreator extends AbstractContainerCreator {
   }
 
   public static HashSetCreator newInstance(SModel sm, boolean init) {
-    return (HashSetCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (HashSetCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static HashSetCreator newInstance(SModel sm) {

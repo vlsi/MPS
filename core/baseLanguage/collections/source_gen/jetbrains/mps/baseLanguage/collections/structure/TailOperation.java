@@ -15,7 +15,7 @@ public class TailOperation extends ChunkOperation {
   }
 
   public static TailOperation newInstance(SModel sm, boolean init) {
-    return (TailOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TailOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TailOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TailOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TailOperation newInstance(SModel sm) {

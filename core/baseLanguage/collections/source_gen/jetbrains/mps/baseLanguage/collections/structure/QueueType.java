@@ -15,7 +15,7 @@ public class QueueType extends AbstractContainerType {
   }
 
   public static QueueType newInstance(SModel sm, boolean init) {
-    return (QueueType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.QueueType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueueType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.QueueType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueueType newInstance(SModel sm) {

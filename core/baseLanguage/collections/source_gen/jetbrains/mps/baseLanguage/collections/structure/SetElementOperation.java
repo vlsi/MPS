@@ -45,7 +45,7 @@ public class SetElementOperation extends SequenceOperation implements IListOpera
   }
 
   public Expression getIndex() {
-    return (Expression)this.getChild(Expression.class, SetElementOperation.INDEX);
+    return (Expression) this.getChild(Expression.class, SetElementOperation.INDEX);
   }
 
   public void setIndex(Expression node) {
@@ -53,7 +53,7 @@ public class SetElementOperation extends SequenceOperation implements IListOpera
   }
 
   public Expression getElement() {
-    return (Expression)this.getChild(Expression.class, SetElementOperation.ELEMENT);
+    return (Expression) this.getChild(Expression.class, SetElementOperation.ELEMENT);
   }
 
   public void setElement(Expression node) {
@@ -61,7 +61,7 @@ public class SetElementOperation extends SequenceOperation implements IListOpera
   }
 
   public static SetElementOperation newInstance(SModel sm, boolean init) {
-    return (SetElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SetElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SetElementOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SetElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SetElementOperation newInstance(SModel sm) {

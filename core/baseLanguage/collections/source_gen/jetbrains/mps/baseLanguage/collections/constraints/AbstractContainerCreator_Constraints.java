@@ -31,7 +31,7 @@ public class AbstractContainerCreator_Constraints {
         }
       }).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode cl) {
-          return (SNode)SLinkOperations.getTarget(SNodeOperations.cast(cl, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false);
+          return (SNode) SLinkOperations.getTarget(SNodeOperations.cast(cl, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false);
         }
       });
       return Sequence.fromIterable(avlbFor).isEmpty() || Sequence.fromIterable(avlbFor).any(new IWhereFilter<SNode>() {

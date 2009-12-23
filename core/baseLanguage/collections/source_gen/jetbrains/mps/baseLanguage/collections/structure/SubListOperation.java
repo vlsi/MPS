@@ -45,7 +45,7 @@ public class SubListOperation extends SequenceOperation implements IListOperatio
   }
 
   public Expression getFromIndex() {
-    return (Expression)this.getChild(Expression.class, SubListOperation.FROM_INDEX);
+    return (Expression) this.getChild(Expression.class, SubListOperation.FROM_INDEX);
   }
 
   public void setFromIndex(Expression node) {
@@ -53,7 +53,7 @@ public class SubListOperation extends SequenceOperation implements IListOperatio
   }
 
   public Expression getUpToIndex() {
-    return (Expression)this.getChild(Expression.class, SubListOperation.UP_TO_INDEX);
+    return (Expression) this.getChild(Expression.class, SubListOperation.UP_TO_INDEX);
   }
 
   public void setUpToIndex(Expression node) {
@@ -61,7 +61,7 @@ public class SubListOperation extends SequenceOperation implements IListOperatio
   }
 
   public static SubListOperation newInstance(SModel sm, boolean init) {
-    return (SubListOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SubListOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SubListOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SubListOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SubListOperation newInstance(SModel sm) {

@@ -39,7 +39,7 @@ public class ControlAbstractionContainer extends Classifier {
   }
 
   public static ControlAbstractionContainer newInstance(SModel sm, boolean init) {
-    return (ControlAbstractionContainer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ControlAbstractionContainer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionContainer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ControlAbstractionContainer newInstance(SModel sm) {

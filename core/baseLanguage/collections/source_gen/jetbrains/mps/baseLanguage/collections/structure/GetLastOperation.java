@@ -15,7 +15,7 @@ public class GetLastOperation extends NoArgumentsSequenceOperation {
   }
 
   public static GetLastOperation newInstance(SModel sm, boolean init) {
-    return (GetLastOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetLastOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetLastOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetLastOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetLastOperation newInstance(SModel sm) {

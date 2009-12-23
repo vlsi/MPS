@@ -15,7 +15,7 @@ public class AbstractSetOperation extends SequenceOperation {
   }
 
   public static AbstractSetOperation newInstance(SModel sm, boolean init) {
-    return (AbstractSetOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractSetOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractSetOperation newInstance(SModel sm) {

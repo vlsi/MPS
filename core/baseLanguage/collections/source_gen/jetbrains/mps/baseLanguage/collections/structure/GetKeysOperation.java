@@ -15,7 +15,7 @@ public class GetKeysOperation extends MapOperation {
   }
 
   public static GetKeysOperation newInstance(SModel sm, boolean init) {
-    return (GetKeysOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetKeysOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetKeysOperation newInstance(SModel sm) {

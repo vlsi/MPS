@@ -15,7 +15,7 @@ public class GetSizeOperation extends NoArgumentsSequenceOperation {
   }
 
   public static GetSizeOperation newInstance(SModel sm, boolean init) {
-    return (GetSizeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetSizeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetSizeOperation newInstance(SModel sm) {

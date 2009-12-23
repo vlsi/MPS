@@ -20,7 +20,7 @@ public class CompactInvokeFunctionExpression extends Expression {
   }
 
   public Expression getFunction() {
-    return (Expression)this.getChild(Expression.class, CompactInvokeFunctionExpression.FUNCTION);
+    return (Expression) this.getChild(Expression.class, CompactInvokeFunctionExpression.FUNCTION);
   }
 
   public void setFunction(Expression node) {
@@ -48,7 +48,7 @@ public class CompactInvokeFunctionExpression extends Expression {
   }
 
   public static CompactInvokeFunctionExpression newInstance(SModel sm, boolean init) {
-    return (CompactInvokeFunctionExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CompactInvokeFunctionExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CompactInvokeFunctionExpression newInstance(SModel sm) {

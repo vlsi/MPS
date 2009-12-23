@@ -17,7 +17,7 @@ public class ContainsValueOperation extends MapOperation {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, ContainsValueOperation.VALUE);
+    return (Expression) this.getChild(Expression.class, ContainsValueOperation.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -25,7 +25,7 @@ public class ContainsValueOperation extends MapOperation {
   }
 
   public static ContainsValueOperation newInstance(SModel sm, boolean init) {
-    return (ContainsValueOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ContainsValueOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ContainsValueOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ContainsValueOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ContainsValueOperation newInstance(SModel sm) {

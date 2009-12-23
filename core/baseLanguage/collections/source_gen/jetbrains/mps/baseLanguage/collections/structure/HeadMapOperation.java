@@ -17,7 +17,7 @@ public class HeadMapOperation extends SortedMapOperation {
   }
 
   public Expression getToKey() {
-    return (Expression)this.getChild(Expression.class, HeadMapOperation.TO_KEY);
+    return (Expression) this.getChild(Expression.class, HeadMapOperation.TO_KEY);
   }
 
   public void setToKey(Expression node) {
@@ -25,7 +25,7 @@ public class HeadMapOperation extends SortedMapOperation {
   }
 
   public static HeadMapOperation newInstance(SModel sm, boolean init) {
-    return (HeadMapOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (HeadMapOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HeadMapOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static HeadMapOperation newInstance(SModel sm) {

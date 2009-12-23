@@ -15,7 +15,7 @@ public class LinkedListType extends ListType {
   }
 
   public static LinkedListType newInstance(SModel sm, boolean init) {
-    return (LinkedListType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedListType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkedListType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedListType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinkedListType newInstance(SModel sm) {

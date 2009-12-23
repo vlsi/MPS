@@ -15,7 +15,7 @@ public class SortedSetOperation extends AbstractSetOperation {
   }
 
   public static SortedSetOperation newInstance(SModel sm, boolean init) {
-    return (SortedSetOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SortedSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SortedSetOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SortedSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SortedSetOperation newInstance(SModel sm) {

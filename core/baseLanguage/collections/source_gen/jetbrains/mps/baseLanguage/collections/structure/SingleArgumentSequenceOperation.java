@@ -17,7 +17,7 @@ public class SingleArgumentSequenceOperation extends SequenceOperation {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(Expression.class, SingleArgumentSequenceOperation.ARGUMENT);
+    return (Expression) this.getChild(Expression.class, SingleArgumentSequenceOperation.ARGUMENT);
   }
 
   public void setArgument(Expression node) {
@@ -25,7 +25,7 @@ public class SingleArgumentSequenceOperation extends SequenceOperation {
   }
 
   public static SingleArgumentSequenceOperation newInstance(SModel sm, boolean init) {
-    return (SingleArgumentSequenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SingleArgumentSequenceOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SingleArgumentSequenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SingleArgumentSequenceOperation newInstance(SModel sm) {

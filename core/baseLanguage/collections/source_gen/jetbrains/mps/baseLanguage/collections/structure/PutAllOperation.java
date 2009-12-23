@@ -17,7 +17,7 @@ public class PutAllOperation extends MapOperation {
   }
 
   public Expression getMap() {
-    return (Expression)this.getChild(Expression.class, PutAllOperation.MAP);
+    return (Expression) this.getChild(Expression.class, PutAllOperation.MAP);
   }
 
   public void setMap(Expression node) {
@@ -25,7 +25,7 @@ public class PutAllOperation extends MapOperation {
   }
 
   public static PutAllOperation newInstance(SModel sm, boolean init) {
-    return (PutAllOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PutAllOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PutAllOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PutAllOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PutAllOperation newInstance(SModel sm) {

@@ -42,7 +42,7 @@ public class ClearAllElementsOperation extends NoArgumentsSequenceOperation impl
   }
 
   public static ClearAllElementsOperation newInstance(SModel sm, boolean init) {
-    return (ClearAllElementsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ClearAllElementsOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ClearAllElementsOperation newInstance(SModel sm) {

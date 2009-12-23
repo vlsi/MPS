@@ -15,7 +15,7 @@ public class ExcludeOperation extends BinaryOperation {
   }
 
   public static ExcludeOperation newInstance(SModel sm, boolean init) {
-    return (ExcludeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ExcludeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExcludeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ExcludeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExcludeOperation newInstance(SModel sm) {

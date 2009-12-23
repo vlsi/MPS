@@ -16,7 +16,7 @@ public class UnboundClosureParameterDeclaration extends ParameterDeclaration {
   }
 
   public static UnboundClosureParameterDeclaration newInstance(SModel sm, boolean init) {
-    return (UnboundClosureParameterDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UnboundClosureParameterDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.UnboundClosureParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UnboundClosureParameterDeclaration newInstance(SModel sm) {

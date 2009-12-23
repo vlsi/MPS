@@ -17,7 +17,7 @@ public class SequenceType extends Type {
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(Type.class, SequenceType.ELEMENT_TYPE);
+    return (Type) this.getChild(Type.class, SequenceType.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {
@@ -25,7 +25,7 @@ public class SequenceType extends Type {
   }
 
   public static SequenceType newInstance(SModel sm, boolean init) {
-    return (SequenceType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SequenceType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SequenceType newInstance(SModel sm) {

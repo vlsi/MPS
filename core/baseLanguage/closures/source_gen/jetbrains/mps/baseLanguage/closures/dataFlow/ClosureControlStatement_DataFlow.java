@@ -13,9 +13,9 @@ public class ClosureControlStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "controlClosure", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "controlClosure", true));
     for (SNode ap : SLinkOperations.getTargets(_context.getNode(), "actualParameter", true)) {
-      _context.getBuilder().build((SNode)ap);
+      _context.getBuilder().build((SNode) ap);
     }
   }
 }

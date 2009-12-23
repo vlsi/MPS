@@ -15,7 +15,7 @@ public class NoArgumentsSequenceOperation extends SequenceOperation {
   }
 
   public static NoArgumentsSequenceOperation newInstance(SModel sm, boolean init) {
-    return (NoArgumentsSequenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NoArgumentsSequenceOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.NoArgumentsSequenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NoArgumentsSequenceOperation newInstance(SModel sm) {

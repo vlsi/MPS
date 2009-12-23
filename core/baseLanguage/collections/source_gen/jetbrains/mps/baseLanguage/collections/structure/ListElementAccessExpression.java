@@ -18,7 +18,7 @@ public class ListElementAccessExpression extends Expression {
   }
 
   public Expression getList() {
-    return (Expression)this.getChild(Expression.class, ListElementAccessExpression.LIST);
+    return (Expression) this.getChild(Expression.class, ListElementAccessExpression.LIST);
   }
 
   public void setList(Expression node) {
@@ -26,7 +26,7 @@ public class ListElementAccessExpression extends Expression {
   }
 
   public Expression getIndex() {
-    return (Expression)this.getChild(Expression.class, ListElementAccessExpression.INDEX);
+    return (Expression) this.getChild(Expression.class, ListElementAccessExpression.INDEX);
   }
 
   public void setIndex(Expression node) {
@@ -34,7 +34,7 @@ public class ListElementAccessExpression extends Expression {
   }
 
   public static ListElementAccessExpression newInstance(SModel sm, boolean init) {
-    return (ListElementAccessExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ListElementAccessExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ListElementAccessExpression newInstance(SModel sm) {

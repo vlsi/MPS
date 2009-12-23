@@ -17,7 +17,7 @@ public class RemoveAllSetElementsOperation extends AbstractSetOperation {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(Expression.class, RemoveAllSetElementsOperation.ARGUMENT);
+    return (Expression) this.getChild(Expression.class, RemoveAllSetElementsOperation.ARGUMENT);
   }
 
   public void setArgument(Expression node) {
@@ -25,7 +25,7 @@ public class RemoveAllSetElementsOperation extends AbstractSetOperation {
   }
 
   public static RemoveAllSetElementsOperation newInstance(SModel sm, boolean init) {
-    return (RemoveAllSetElementsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RemoveAllSetElementsOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RemoveAllSetElementsOperation newInstance(SModel sm) {

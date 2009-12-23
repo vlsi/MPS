@@ -17,7 +17,7 @@ public class ComparatorSortOperation extends InternalSequenceOperation {
   }
 
   public Expression getAscending() {
-    return (Expression)this.getChild(Expression.class, ComparatorSortOperation.ASCENDING);
+    return (Expression) this.getChild(Expression.class, ComparatorSortOperation.ASCENDING);
   }
 
   public void setAscending(Expression node) {
@@ -33,7 +33,7 @@ public class ComparatorSortOperation extends InternalSequenceOperation {
   }
 
   public static ComparatorSortOperation newInstance(SModel sm, boolean init) {
-    return (ComparatorSortOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComparatorSortOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ComparatorSortOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComparatorSortOperation newInstance(SModel sm) {

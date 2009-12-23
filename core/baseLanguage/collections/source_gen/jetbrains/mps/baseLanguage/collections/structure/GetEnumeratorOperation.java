@@ -15,7 +15,7 @@ public class GetEnumeratorOperation extends NoArgumentsSequenceOperation {
   }
 
   public static GetEnumeratorOperation newInstance(SModel sm, boolean init) {
-    return (GetEnumeratorOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetEnumeratorOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetEnumeratorOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetEnumeratorOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetEnumeratorOperation newInstance(SModel sm) {

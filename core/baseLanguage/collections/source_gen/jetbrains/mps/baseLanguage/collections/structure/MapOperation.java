@@ -44,7 +44,7 @@ public class MapOperation extends BaseConcept implements IOperation {
   }
 
   public static MapOperation newInstance(SModel sm, boolean init) {
-    return (MapOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MapOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MapOperation newInstance(SModel sm) {

@@ -44,7 +44,7 @@ public class SequenceOperation extends BaseConcept implements IOperation {
   }
 
   public static SequenceOperation newInstance(SModel sm, boolean init) {
-    return (SequenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SequenceOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SequenceOperation newInstance(SModel sm) {

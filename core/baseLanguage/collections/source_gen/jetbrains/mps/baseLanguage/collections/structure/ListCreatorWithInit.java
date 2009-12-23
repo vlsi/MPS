@@ -15,7 +15,7 @@ public class ListCreatorWithInit extends AbstractContainerCreator {
   }
 
   public static ListCreatorWithInit newInstance(SModel sm, boolean init) {
-    return (ListCreatorWithInit)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ListCreatorWithInit) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ListCreatorWithInit newInstance(SModel sm) {

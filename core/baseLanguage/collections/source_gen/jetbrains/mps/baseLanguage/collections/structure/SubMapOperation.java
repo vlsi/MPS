@@ -18,7 +18,7 @@ public class SubMapOperation extends SortedMapOperation {
   }
 
   public Expression getFromKey() {
-    return (Expression)this.getChild(Expression.class, SubMapOperation.FROM_KEY);
+    return (Expression) this.getChild(Expression.class, SubMapOperation.FROM_KEY);
   }
 
   public void setFromKey(Expression node) {
@@ -26,7 +26,7 @@ public class SubMapOperation extends SortedMapOperation {
   }
 
   public Expression getToKey() {
-    return (Expression)this.getChild(Expression.class, SubMapOperation.TO_KEY);
+    return (Expression) this.getChild(Expression.class, SubMapOperation.TO_KEY);
   }
 
   public void setToKey(Expression node) {
@@ -34,7 +34,7 @@ public class SubMapOperation extends SortedMapOperation {
   }
 
   public static SubMapOperation newInstance(SModel sm, boolean init) {
-    return (SubMapOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SubMapOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SubMapOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SubMapOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SubMapOperation newInstance(SModel sm) {

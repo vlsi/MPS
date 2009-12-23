@@ -18,7 +18,7 @@ public class SubSetOperation extends SortedSetOperation {
   }
 
   public Expression getFromElement() {
-    return (Expression)this.getChild(Expression.class, SubSetOperation.FROM_ELEMENT);
+    return (Expression) this.getChild(Expression.class, SubSetOperation.FROM_ELEMENT);
   }
 
   public void setFromElement(Expression node) {
@@ -26,7 +26,7 @@ public class SubSetOperation extends SortedSetOperation {
   }
 
   public Expression getToElement() {
-    return (Expression)this.getChild(Expression.class, SubSetOperation.TO_ELEMENT);
+    return (Expression) this.getChild(Expression.class, SubSetOperation.TO_ELEMENT);
   }
 
   public void setToElement(Expression node) {
@@ -34,7 +34,7 @@ public class SubSetOperation extends SortedSetOperation {
   }
 
   public static SubSetOperation newInstance(SModel sm, boolean init) {
-    return (SubSetOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SubSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SubSetOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SubSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SubSetOperation newInstance(SModel sm) {

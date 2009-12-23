@@ -42,7 +42,7 @@ public class ReverseOperation extends NoArgumentsSequenceOperation implements IL
   }
 
   public static ReverseOperation newInstance(SModel sm, boolean init) {
-    return (ReverseOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ReverseOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReverseOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ReverseOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReverseOperation newInstance(SModel sm) {

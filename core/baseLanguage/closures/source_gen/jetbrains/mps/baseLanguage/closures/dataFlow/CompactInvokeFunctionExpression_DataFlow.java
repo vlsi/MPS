@@ -13,9 +13,9 @@ public class CompactInvokeFunctionExpression_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "function", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "function", true));
     for (SNode p : SLinkOperations.getTargets(_context.getNode(), "parameter", true)) {
-      _context.getBuilder().build((SNode)p);
+      _context.getBuilder().build((SNode) p);
     }
   }
 }

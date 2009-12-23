@@ -15,7 +15,7 @@ public class TreeSetCreator extends HashSetCreator {
   }
 
   public static TreeSetCreator newInstance(SModel sm, boolean init) {
-    return (TreeSetCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TreeSetCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TreeSetCreator newInstance(SModel sm) {

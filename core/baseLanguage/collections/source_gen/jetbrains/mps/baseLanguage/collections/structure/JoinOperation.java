@@ -17,7 +17,7 @@ public class JoinOperation extends SequenceOperation {
   }
 
   public Expression getDelimiter() {
-    return (Expression)this.getChild(Expression.class, JoinOperation.DELIMITER);
+    return (Expression) this.getChild(Expression.class, JoinOperation.DELIMITER);
   }
 
   public void setDelimiter(Expression node) {
@@ -25,7 +25,7 @@ public class JoinOperation extends SequenceOperation {
   }
 
   public static JoinOperation newInstance(SModel sm, boolean init) {
-    return (JoinOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.JoinOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (JoinOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.JoinOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static JoinOperation newInstance(SModel sm) {

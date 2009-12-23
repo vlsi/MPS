@@ -17,7 +17,7 @@ public class ContainsKeyOperation extends MapOperation {
   }
 
   public Expression getKey() {
-    return (Expression)this.getChild(Expression.class, ContainsKeyOperation.KEY);
+    return (Expression) this.getChild(Expression.class, ContainsKeyOperation.KEY);
   }
 
   public void setKey(Expression node) {
@@ -25,7 +25,7 @@ public class ContainsKeyOperation extends MapOperation {
   }
 
   public static ContainsKeyOperation newInstance(SModel sm, boolean init) {
-    return (ContainsKeyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ContainsKeyOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ContainsKeyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ContainsKeyOperation newInstance(SModel sm) {

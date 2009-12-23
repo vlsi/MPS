@@ -15,7 +15,7 @@ public class IsEmptyOperation extends NoArgumentsSequenceOperation {
   }
 
   public static IsEmptyOperation newInstance(SModel sm, boolean init) {
-    return (IsEmptyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IsEmptyOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.IsEmptyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IsEmptyOperation newInstance(SModel sm) {

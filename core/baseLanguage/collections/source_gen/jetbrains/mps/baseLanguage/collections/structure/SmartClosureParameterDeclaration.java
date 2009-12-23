@@ -16,7 +16,7 @@ public class SmartClosureParameterDeclaration extends UnboundClosureParameterDec
   }
 
   public static SmartClosureParameterDeclaration newInstance(SModel sm, boolean init) {
-    return (SmartClosureParameterDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SmartClosureParameterDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SmartClosureParameterDeclaration newInstance(SModel sm) {

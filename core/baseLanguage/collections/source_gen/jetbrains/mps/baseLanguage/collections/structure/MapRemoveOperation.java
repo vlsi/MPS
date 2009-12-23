@@ -17,7 +17,7 @@ public class MapRemoveOperation extends MapOperation {
   }
 
   public Expression getKey() {
-    return (Expression)this.getChild(Expression.class, MapRemoveOperation.KEY);
+    return (Expression) this.getChild(Expression.class, MapRemoveOperation.KEY);
   }
 
   public void setKey(Expression node) {
@@ -25,7 +25,7 @@ public class MapRemoveOperation extends MapOperation {
   }
 
   public static MapRemoveOperation newInstance(SModel sm, boolean init) {
-    return (MapRemoveOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MapRemoveOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MapRemoveOperation newInstance(SModel sm) {

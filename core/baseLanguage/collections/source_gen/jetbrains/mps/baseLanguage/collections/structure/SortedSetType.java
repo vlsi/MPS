@@ -15,7 +15,7 @@ public class SortedSetType extends SetType {
   }
 
   public static SortedSetType newInstance(SModel sm, boolean init) {
-    return (SortedSetType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SortedSetType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SortedSetType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SortedSetType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SortedSetType newInstance(SModel sm) {

@@ -42,7 +42,7 @@ public class RemoveLastElementOperation extends NoArgumentsSequenceOperation imp
   }
 
   public static RemoveLastElementOperation newInstance(SModel sm, boolean init) {
-    return (RemoveLastElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveLastElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RemoveLastElementOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveLastElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RemoveLastElementOperation newInstance(SModel sm) {

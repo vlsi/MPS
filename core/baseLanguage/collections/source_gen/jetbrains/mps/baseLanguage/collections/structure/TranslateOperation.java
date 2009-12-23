@@ -24,7 +24,7 @@ public class TranslateOperation extends InternalSequenceOperation {
   }
 
   public static TranslateOperation newInstance(SModel sm, boolean init) {
-    return (TranslateOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TranslateOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TranslateOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TranslateOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TranslateOperation newInstance(SModel sm) {

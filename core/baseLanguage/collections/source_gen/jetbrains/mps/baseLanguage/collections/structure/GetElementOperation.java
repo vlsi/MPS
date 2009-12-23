@@ -42,7 +42,7 @@ public class GetElementOperation extends SingleArgumentSequenceOperation impleme
   }
 
   public static GetElementOperation newInstance(SModel sm, boolean init) {
-    return (GetElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetElementOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetElementOperation newInstance(SModel sm) {

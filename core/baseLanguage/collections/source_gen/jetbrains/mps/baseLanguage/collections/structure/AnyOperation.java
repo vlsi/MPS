@@ -24,7 +24,7 @@ public class AnyOperation extends InternalSequenceOperation {
   }
 
   public static AnyOperation newInstance(SModel sm, boolean init) {
-    return (AnyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AnyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AnyOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AnyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AnyOperation newInstance(SModel sm) {

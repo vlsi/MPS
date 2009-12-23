@@ -54,7 +54,7 @@ public class ForEachVariable extends BaseConcept implements INamedConcept, IVali
   }
 
   public static ForEachVariable newInstance(SModel sm, boolean init) {
-    return (ForEachVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ForEachVariable", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ForEachVariable) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ForEachVariable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ForEachVariable newInstance(SModel sm) {

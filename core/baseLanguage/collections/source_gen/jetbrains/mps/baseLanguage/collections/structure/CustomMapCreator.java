@@ -16,7 +16,7 @@ public class CustomMapCreator extends HashMapCreator {
   }
 
   public CustomContainerDeclaration getContainerDeclaration() {
-    return (CustomContainerDeclaration)this.getReferent(CustomContainerDeclaration.class, CustomMapCreator.CONTAINER_DECLARATION);
+    return (CustomContainerDeclaration) this.getReferent(CustomContainerDeclaration.class, CustomMapCreator.CONTAINER_DECLARATION);
   }
 
   public void setContainerDeclaration(CustomContainerDeclaration node) {
@@ -24,7 +24,7 @@ public class CustomMapCreator extends HashMapCreator {
   }
 
   public static CustomMapCreator newInstance(SModel sm, boolean init) {
-    return (CustomMapCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CustomMapCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CustomMapCreator newInstance(SModel sm) {

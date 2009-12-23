@@ -17,7 +17,7 @@ public class AbstractContainerType extends Type {
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(Type.class, AbstractContainerType.ELEMENT_TYPE);
+    return (Type) this.getChild(Type.class, AbstractContainerType.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {
@@ -25,7 +25,7 @@ public class AbstractContainerType extends Type {
   }
 
   public static AbstractContainerType newInstance(SModel sm, boolean init) {
-    return (AbstractContainerType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractContainerType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractContainerType newInstance(SModel sm) {

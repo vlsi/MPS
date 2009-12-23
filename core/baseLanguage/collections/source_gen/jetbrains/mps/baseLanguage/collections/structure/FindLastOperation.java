@@ -24,7 +24,7 @@ public class FindLastOperation extends InternalSequenceOperation {
   }
 
   public static FindLastOperation newInstance(SModel sm, boolean init) {
-    return (FindLastOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.FindLastOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FindLastOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.FindLastOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FindLastOperation newInstance(SModel sm) {

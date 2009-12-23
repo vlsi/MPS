@@ -42,7 +42,7 @@ public class AddElementOperation extends SingleArgumentSequenceOperation impleme
   }
 
   public static AddElementOperation newInstance(SModel sm, boolean init) {
-    return (AddElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AddElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AddElementOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AddElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AddElementOperation newInstance(SModel sm) {

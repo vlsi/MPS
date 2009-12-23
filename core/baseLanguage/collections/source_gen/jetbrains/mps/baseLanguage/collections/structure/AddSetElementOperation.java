@@ -17,7 +17,7 @@ public class AddSetElementOperation extends AbstractSetOperation {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(Expression.class, AddSetElementOperation.ARGUMENT);
+    return (Expression) this.getChild(Expression.class, AddSetElementOperation.ARGUMENT);
   }
 
   public void setArgument(Expression node) {
@@ -25,7 +25,7 @@ public class AddSetElementOperation extends AbstractSetOperation {
   }
 
   public static AddSetElementOperation newInstance(SModel sm, boolean init) {
-    return (AddSetElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AddSetElementOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AddSetElementOperation newInstance(SModel sm) {

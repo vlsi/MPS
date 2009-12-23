@@ -17,7 +17,7 @@ public class InternalSequenceOperation extends SequenceOperation {
   }
 
   public Expression getClosure() {
-    return (Expression)this.getChild(Expression.class, InternalSequenceOperation.CLOSURE);
+    return (Expression) this.getChild(Expression.class, InternalSequenceOperation.CLOSURE);
   }
 
   public void setClosure(Expression node) {
@@ -25,7 +25,7 @@ public class InternalSequenceOperation extends SequenceOperation {
   }
 
   public static InternalSequenceOperation newInstance(SModel sm, boolean init) {
-    return (InternalSequenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InternalSequenceOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.InternalSequenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InternalSequenceOperation newInstance(SModel sm) {

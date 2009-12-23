@@ -42,7 +42,7 @@ public class RemoveElementOperation extends SingleArgumentSequenceOperation impl
   }
 
   public static RemoveElementOperation newInstance(SModel sm, boolean init) {
-    return (RemoveElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RemoveElementOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RemoveElementOperation newInstance(SModel sm) {

@@ -44,7 +44,7 @@ public class AbstractMappingOperation extends BaseConcept implements IOperation 
   }
 
   public static AbstractMappingOperation newInstance(SModel sm, boolean init) {
-    return (AbstractMappingOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractMappingOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractMappingOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractMappingOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractMappingOperation newInstance(SModel sm) {

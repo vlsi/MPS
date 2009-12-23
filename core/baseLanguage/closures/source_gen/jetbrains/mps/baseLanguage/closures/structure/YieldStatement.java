@@ -18,7 +18,7 @@ public class YieldStatement extends Statement {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, YieldStatement.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, YieldStatement.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -26,7 +26,7 @@ public class YieldStatement extends Statement {
   }
 
   public static YieldStatement newInstance(SModel sm, boolean init) {
-    return (YieldStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.YieldStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (YieldStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.YieldStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static YieldStatement newInstance(SModel sm) {

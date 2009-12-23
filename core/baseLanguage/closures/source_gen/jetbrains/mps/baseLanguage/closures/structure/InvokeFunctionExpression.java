@@ -48,7 +48,7 @@ public class InvokeFunctionExpression extends Expression implements IDeprecatabl
   }
 
   public Expression getFunction() {
-    return (Expression)this.getChild(Expression.class, InvokeFunctionExpression.FUNCTION);
+    return (Expression) this.getChild(Expression.class, InvokeFunctionExpression.FUNCTION);
   }
 
   public void setFunction(Expression node) {
@@ -76,7 +76,7 @@ public class InvokeFunctionExpression extends Expression implements IDeprecatabl
   }
 
   public static InvokeFunctionExpression newInstance(SModel sm, boolean init) {
-    return (InvokeFunctionExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InvokeFunctionExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InvokeFunctionExpression newInstance(SModel sm) {

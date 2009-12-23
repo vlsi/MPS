@@ -18,7 +18,7 @@ public class MapElement extends Expression {
   }
 
   public Expression getMap() {
-    return (Expression)this.getChild(Expression.class, MapElement.MAP);
+    return (Expression) this.getChild(Expression.class, MapElement.MAP);
   }
 
   public void setMap(Expression node) {
@@ -26,7 +26,7 @@ public class MapElement extends Expression {
   }
 
   public Expression getKey() {
-    return (Expression)this.getChild(Expression.class, MapElement.KEY);
+    return (Expression) this.getChild(Expression.class, MapElement.KEY);
   }
 
   public void setKey(Expression node) {
@@ -34,7 +34,7 @@ public class MapElement extends Expression {
   }
 
   public static MapElement newInstance(SModel sm, boolean init) {
-    return (MapElement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapElement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MapElement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapElement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MapElement newInstance(SModel sm) {

@@ -24,7 +24,7 @@ public class SelectOperation extends InternalSequenceOperation {
   }
 
   public static SelectOperation newInstance(SModel sm, boolean init) {
-    return (SelectOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SelectOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SelectOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SelectOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SelectOperation newInstance(SModel sm) {

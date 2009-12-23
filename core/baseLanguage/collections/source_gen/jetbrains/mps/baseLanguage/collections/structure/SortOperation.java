@@ -17,7 +17,7 @@ public class SortOperation extends InternalSequenceOperation {
   }
 
   public Expression getAscending() {
-    return (Expression)this.getChild(Expression.class, SortOperation.ASCENDING);
+    return (Expression) this.getChild(Expression.class, SortOperation.ASCENDING);
   }
 
   public void setAscending(Expression node) {
@@ -33,7 +33,7 @@ public class SortOperation extends InternalSequenceOperation {
   }
 
   public static SortOperation newInstance(SModel sm, boolean init) {
-    return (SortOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SortOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SortOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SortOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SortOperation newInstance(SModel sm) {

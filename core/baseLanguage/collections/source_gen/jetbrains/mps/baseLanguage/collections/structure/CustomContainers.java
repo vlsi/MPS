@@ -76,7 +76,7 @@ public class CustomContainers extends BaseConcept implements INamedConcept {
   }
 
   public static CustomContainers newInstance(SModel sm, boolean init) {
-    return (CustomContainers)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.CustomContainers", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CustomContainers) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.CustomContainers", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CustomContainers newInstance(SModel sm) {

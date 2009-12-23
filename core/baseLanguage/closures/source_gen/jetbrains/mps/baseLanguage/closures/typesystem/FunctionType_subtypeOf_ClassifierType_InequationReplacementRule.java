@@ -54,7 +54,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
               _info_12389875345.addInequationGroupBefore("priority_2_1759628044690732299");
               _info_12389875345.addInequationGroupBefore("priority_1_1759628044690732298");
               _info_12389875345.addInequationGroupBefore("default");
-              typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(subtype, "resultType", true), (SNode)retType, false, _info_12389875345);
+              typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(subtype, "resultType", true), (SNode) retType, false, _info_12389875345);
             }
           }
           {
@@ -81,7 +81,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
                 _info_12389875345.addInequationGroupBefore("priority_2_1759628044690732299");
                 _info_12389875345.addInequationGroupBefore("priority_1_1759628044690732298");
                 _info_12389875345.addInequationGroupBefore("default");
-                typeCheckingContext.createLessThanInequation((SNode)ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), (SNode)fpt, false, _info_12389875345);
+                typeCheckingContext.createLessThanInequation((SNode) ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), (SNode) fpt, false, _info_12389875345);
               }
             }
           }
@@ -120,7 +120,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
           if (SLinkOperations.getCount(subtype, "parameterType") == SLinkOperations.getCount(md, "parameter")) {
             SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype);
             if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
-              result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode)SLinkOperations.getTarget(subtype, "resultType", true), (SNode)retType, true);
+              result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "resultType", true), (SNode) retType, true);
             }
             {
               SNode fpt;
@@ -136,7 +136,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
                 }
                 fpt = fpt_iterator.next();
                 mpt = mpt_iterator.next();
-                result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode)ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), (SNode)fpt, true);
+                result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(mpt, "type", true), supertype), (SNode) fpt, true);
               }
             }
             return result_14532009;

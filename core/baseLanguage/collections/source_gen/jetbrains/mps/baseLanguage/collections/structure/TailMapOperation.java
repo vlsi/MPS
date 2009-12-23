@@ -17,7 +17,7 @@ public class TailMapOperation extends SortedMapOperation {
   }
 
   public Expression getFromKey() {
-    return (Expression)this.getChild(Expression.class, TailMapOperation.FROM_KEY);
+    return (Expression) this.getChild(Expression.class, TailMapOperation.FROM_KEY);
   }
 
   public void setFromKey(Expression node) {
@@ -25,7 +25,7 @@ public class TailMapOperation extends SortedMapOperation {
   }
 
   public static TailMapOperation newInstance(SModel sm, boolean init) {
-    return (TailMapOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TailMapOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TailMapOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TailMapOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TailMapOperation newInstance(SModel sm) {

@@ -42,7 +42,7 @@ public class RemoveAllElementsOperation extends SingleArgumentSequenceOperation 
   }
 
   public static RemoveAllElementsOperation newInstance(SModel sm, boolean init) {
-    return (RemoveAllElementsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RemoveAllElementsOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RemoveAllElementsOperation newInstance(SModel sm) {

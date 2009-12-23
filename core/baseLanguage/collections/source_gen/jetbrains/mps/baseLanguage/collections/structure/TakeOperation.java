@@ -17,7 +17,7 @@ public class TakeOperation extends SequenceOperation {
   }
 
   public Expression getElementsToTake() {
-    return (Expression)this.getChild(Expression.class, TakeOperation.ELEMENTS_TO_TAKE);
+    return (Expression) this.getChild(Expression.class, TakeOperation.ELEMENTS_TO_TAKE);
   }
 
   public void setElementsToTake(Expression node) {
@@ -25,7 +25,7 @@ public class TakeOperation extends SequenceOperation {
   }
 
   public static TakeOperation newInstance(SModel sm, boolean init) {
-    return (TakeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TakeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TakeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TakeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TakeOperation newInstance(SModel sm) {

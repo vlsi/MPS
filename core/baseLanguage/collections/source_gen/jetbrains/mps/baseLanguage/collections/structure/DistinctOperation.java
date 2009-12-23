@@ -15,7 +15,7 @@ public class DistinctOperation extends NoArgumentsSequenceOperation {
   }
 
   public static DistinctOperation newInstance(SModel sm, boolean init) {
-    return (DistinctOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DistinctOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DistinctOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DistinctOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DistinctOperation newInstance(SModel sm) {

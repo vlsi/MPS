@@ -37,10 +37,10 @@ public class MapType_Behavior {
   }
 
   public static List<SNode> call_getAbstractCreators_7602110602933345772(SNode thisNode, SModel targetModel) {
-    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.MapType"), "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345772, targetModel);
+    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.MapType"), "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345772, targetModel);
   }
 
   public static List<SNode> callSuper_getAbstractCreators_7602110602933345772(SNode thisNode, String callerConceptFqName, SModel targetModel) {
-    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.MapType"), callerConceptFqName, "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345772, targetModel);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.MapType"), callerConceptFqName, "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345772, targetModel);
   }
 }

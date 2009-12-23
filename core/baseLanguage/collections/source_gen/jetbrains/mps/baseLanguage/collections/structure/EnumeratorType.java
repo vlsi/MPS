@@ -17,7 +17,7 @@ public class EnumeratorType extends Type {
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(Type.class, EnumeratorType.ELEMENT_TYPE);
+    return (Type) this.getChild(Type.class, EnumeratorType.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {
@@ -25,7 +25,7 @@ public class EnumeratorType extends Type {
   }
 
   public static EnumeratorType newInstance(SModel sm, boolean init) {
-    return (EnumeratorType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.EnumeratorType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EnumeratorType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.EnumeratorType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EnumeratorType newInstance(SModel sm) {

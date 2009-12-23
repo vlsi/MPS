@@ -15,7 +15,7 @@ public class PriorityQueueCreator extends AbstractContainerCreator {
   }
 
   public static PriorityQueueCreator newInstance(SModel sm, boolean init) {
-    return (PriorityQueueCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PriorityQueueCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PriorityQueueCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PriorityQueueCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PriorityQueueCreator newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class ClearSetOperation extends AbstractSetOperation {
   }
 
   public static ClearSetOperation newInstance(SModel sm, boolean init) {
-    return (ClearSetOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ClearSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ClearSetOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ClearSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ClearSetOperation newInstance(SModel sm) {

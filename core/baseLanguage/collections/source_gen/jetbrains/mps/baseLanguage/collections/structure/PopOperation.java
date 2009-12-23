@@ -42,7 +42,7 @@ public class PopOperation extends NoArgumentsSequenceOperation implements IStack
   }
 
   public static PopOperation newInstance(SModel sm, boolean init) {
-    return (PopOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PopOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PopOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PopOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PopOperation newInstance(SModel sm) {

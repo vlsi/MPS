@@ -15,7 +15,7 @@ public class ToListOperation extends NoArgumentsSequenceOperation {
   }
 
   public static ToListOperation newInstance(SModel sm, boolean init) {
-    return (ToListOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ToListOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ToListOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ToListOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ToListOperation newInstance(SModel sm) {

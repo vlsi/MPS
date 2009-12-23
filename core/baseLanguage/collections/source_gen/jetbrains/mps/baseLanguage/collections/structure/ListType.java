@@ -17,7 +17,7 @@ public class ListType extends Type {
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(Type.class, ListType.ELEMENT_TYPE);
+    return (Type) this.getChild(Type.class, ListType.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {
@@ -25,7 +25,7 @@ public class ListType extends Type {
   }
 
   public static ListType newInstance(SModel sm, boolean init) {
-    return (ListType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ListType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ListType newInstance(SModel sm) {

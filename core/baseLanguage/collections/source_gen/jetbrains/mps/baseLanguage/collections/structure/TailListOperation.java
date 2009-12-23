@@ -44,7 +44,7 @@ public class TailListOperation extends SequenceOperation implements IListOperati
   }
 
   public Expression getFromIndex() {
-    return (Expression)this.getChild(Expression.class, TailListOperation.FROM_INDEX);
+    return (Expression) this.getChild(Expression.class, TailListOperation.FROM_INDEX);
   }
 
   public void setFromIndex(Expression node) {
@@ -52,7 +52,7 @@ public class TailListOperation extends SequenceOperation implements IListOperati
   }
 
   public static TailListOperation newInstance(SModel sm, boolean init) {
-    return (TailListOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TailListOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TailListOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TailListOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TailListOperation newInstance(SModel sm) {

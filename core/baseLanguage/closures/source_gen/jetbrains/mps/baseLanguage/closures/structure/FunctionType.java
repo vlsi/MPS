@@ -22,7 +22,7 @@ public class FunctionType extends Type {
   }
 
   public Type getResultType() {
-    return (Type)this.getChild(Type.class, FunctionType.RESULT_TYPE);
+    return (Type) this.getChild(Type.class, FunctionType.RESULT_TYPE);
   }
 
   public void setResultType(Type node) {
@@ -70,7 +70,7 @@ public class FunctionType extends Type {
   }
 
   public static FunctionType newInstance(SModel sm, boolean init) {
-    return (FunctionType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FunctionType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FunctionType newInstance(SModel sm) {

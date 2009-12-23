@@ -15,7 +15,7 @@ public class StackType extends AbstractContainerType {
   }
 
   public static StackType newInstance(SModel sm, boolean init) {
-    return (StackType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.StackType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StackType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.StackType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StackType newInstance(SModel sm) {

@@ -13,7 +13,7 @@ public class SubListOperation_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "fromIndex", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "upToIndex", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "fromIndex", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "upToIndex", true));
   }
 }

@@ -16,7 +16,7 @@ public class AllConstant extends IntegerConstant {
   }
 
   public static AllConstant newInstance(SModel sm, boolean init) {
-    return (AllConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AllConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AllConstant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AllConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AllConstant newInstance(SModel sm) {

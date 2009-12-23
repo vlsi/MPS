@@ -13,6 +13,6 @@ public class BinaryOperation_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "rightExpression", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "rightExpression", true));
   }
 }

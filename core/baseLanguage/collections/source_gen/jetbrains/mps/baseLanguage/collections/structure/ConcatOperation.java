@@ -15,7 +15,7 @@ public class ConcatOperation extends BinaryOperation {
   }
 
   public static ConcatOperation newInstance(SModel sm, boolean init) {
-    return (ConcatOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ConcatOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConcatOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ConcatOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConcatOperation newInstance(SModel sm) {

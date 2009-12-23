@@ -15,7 +15,7 @@ public class TreeMapCreator extends HashMapCreator {
   }
 
   public static TreeMapCreator newInstance(SModel sm, boolean init) {
-    return (TreeMapCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TreeMapCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TreeMapCreator newInstance(SModel sm) {

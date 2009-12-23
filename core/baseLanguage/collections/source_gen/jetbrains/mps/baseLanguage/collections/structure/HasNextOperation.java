@@ -15,7 +15,7 @@ public class HasNextOperation extends AbstractIteratorOperation {
   }
 
   public static HasNextOperation newInstance(SModel sm, boolean init) {
-    return (HasNextOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HasNextOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (HasNextOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HasNextOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static HasNextOperation newInstance(SModel sm) {

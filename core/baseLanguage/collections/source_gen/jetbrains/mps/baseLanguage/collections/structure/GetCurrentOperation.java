@@ -15,7 +15,7 @@ public class GetCurrentOperation extends AbstractEnumeratorOperation {
   }
 
   public static GetCurrentOperation newInstance(SModel sm, boolean init) {
-    return (GetCurrentOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetCurrentOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetCurrentOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetCurrentOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetCurrentOperation newInstance(SModel sm) {

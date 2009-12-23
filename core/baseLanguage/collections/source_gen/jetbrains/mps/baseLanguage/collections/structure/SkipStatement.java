@@ -16,7 +16,7 @@ public class SkipStatement extends Statement {
   }
 
   public static SkipStatement newInstance(SModel sm, boolean init) {
-    return (SkipStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SkipStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SkipStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SkipStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SkipStatement newInstance(SModel sm) {

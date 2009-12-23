@@ -22,13 +22,13 @@ public class containerIterator_subtrypeOf_containerIterator_InequationReplacemen
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240151505426", 0, intentionProvider);
       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(subtype, "elementType", true), (SNode)SLinkOperations.getTarget(supertype, "elementType", true), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true), false, _info_12389875345);
     }
   }
 
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
     boolean result_14532009 = true;
-    result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode)SLinkOperations.getTarget(subtype, "elementType", true), (SNode)SLinkOperations.getTarget(supertype, "elementType", true), true);
+    result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true), true);
     return result_14532009;
   }
 

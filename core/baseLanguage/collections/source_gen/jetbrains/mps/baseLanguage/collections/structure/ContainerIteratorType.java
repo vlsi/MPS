@@ -15,7 +15,7 @@ public class ContainerIteratorType extends IteratorType {
   }
 
   public static ContainerIteratorType newInstance(SModel sm, boolean init) {
-    return (ContainerIteratorType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ContainerIteratorType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ContainerIteratorType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ContainerIteratorType newInstance(SModel sm) {

@@ -42,7 +42,7 @@ public class PushOperation extends SingleArgumentSequenceOperation implements IS
   }
 
   public static PushOperation newInstance(SModel sm, boolean init) {
-    return (PushOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PushOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PushOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PushOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PushOperation newInstance(SModel sm) {

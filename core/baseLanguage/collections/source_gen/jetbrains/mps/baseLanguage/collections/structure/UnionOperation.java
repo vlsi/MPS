@@ -15,7 +15,7 @@ public class UnionOperation extends BinaryOperation {
   }
 
   public static UnionOperation newInstance(SModel sm, boolean init) {
-    return (UnionOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.UnionOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UnionOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.UnionOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UnionOperation newInstance(SModel sm) {

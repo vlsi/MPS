@@ -15,7 +15,7 @@ public class MapClearOperation extends MapOperation {
   }
 
   public static MapClearOperation newInstance(SModel sm, boolean init) {
-    return (MapClearOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapClearOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MapClearOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapClearOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MapClearOperation newInstance(SModel sm) {

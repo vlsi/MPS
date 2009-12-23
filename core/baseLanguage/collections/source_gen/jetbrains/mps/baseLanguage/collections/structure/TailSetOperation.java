@@ -17,7 +17,7 @@ public class TailSetOperation extends SortedSetOperation {
   }
 
   public Expression getFromElement() {
-    return (Expression)this.getChild(Expression.class, TailSetOperation.FROM_ELEMENT);
+    return (Expression) this.getChild(Expression.class, TailSetOperation.FROM_ELEMENT);
   }
 
   public void setFromElement(Expression node) {
@@ -25,7 +25,7 @@ public class TailSetOperation extends SortedSetOperation {
   }
 
   public static TailSetOperation newInstance(SModel sm, boolean init) {
-    return (TailSetOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TailSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TailSetOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TailSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TailSetOperation newInstance(SModel sm) {

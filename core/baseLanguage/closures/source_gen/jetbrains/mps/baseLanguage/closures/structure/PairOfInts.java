@@ -34,7 +34,7 @@ public class PairOfInts extends BaseConcept {
   }
 
   public static PairOfInts newInstance(SModel sm, boolean init) {
-    return (PairOfInts)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PairOfInts) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PairOfInts newInstance(SModel sm) {

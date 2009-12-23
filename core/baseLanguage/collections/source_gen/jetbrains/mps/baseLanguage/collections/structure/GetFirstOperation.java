@@ -15,7 +15,7 @@ public class GetFirstOperation extends NoArgumentsSequenceOperation {
   }
 
   public static GetFirstOperation newInstance(SModel sm, boolean init) {
-    return (GetFirstOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetFirstOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetFirstOperation newInstance(SModel sm) {

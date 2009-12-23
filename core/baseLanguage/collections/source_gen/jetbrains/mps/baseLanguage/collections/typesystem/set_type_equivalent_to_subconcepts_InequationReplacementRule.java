@@ -33,7 +33,7 @@ public class set_type_equivalent_to_subconcepts_InequationReplacementRule extend
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1241473625701", 0, intentionProvider);
       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-      typeCheckingContext.createEquation((SNode)SLinkOperations.getTarget(subtype, "elementType", true), (SNode)SLinkOperations.getTarget(supertype, "elementType", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true), _info_12389875345);
     }
   }
 
@@ -42,7 +42,7 @@ public class set_type_equivalent_to_subconcepts_InequationReplacementRule extend
     if (!(SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(subtype), NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(supertype))))) {
       result_14532009 = false;
     }
-    result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode)SLinkOperations.getTarget(subtype, "elementType", true), (SNode)SLinkOperations.getTarget(supertype, "elementType", true));
+    result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true));
     return result_14532009;
   }
 

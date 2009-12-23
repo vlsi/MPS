@@ -17,7 +17,7 @@ public class SkipOperation extends SequenceOperation {
   }
 
   public Expression getElementsToSkip() {
-    return (Expression)this.getChild(Expression.class, SkipOperation.ELEMENTS_TO_SKIP);
+    return (Expression) this.getChild(Expression.class, SkipOperation.ELEMENTS_TO_SKIP);
   }
 
   public void setElementsToSkip(Expression node) {
@@ -25,7 +25,7 @@ public class SkipOperation extends SequenceOperation {
   }
 
   public static SkipOperation newInstance(SModel sm, boolean init) {
-    return (SkipOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SkipOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SkipOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SkipOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SkipOperation newInstance(SModel sm) {

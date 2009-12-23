@@ -65,7 +65,7 @@ public class ControlAbstractionDeclaration extends GenericDeclaration implements
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, ControlAbstractionDeclaration.BODY);
+    return (StatementList) this.getChild(StatementList.class, ControlAbstractionDeclaration.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -73,7 +73,7 @@ public class ControlAbstractionDeclaration extends GenericDeclaration implements
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, ControlAbstractionDeclaration.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, ControlAbstractionDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -121,7 +121,7 @@ public class ControlAbstractionDeclaration extends GenericDeclaration implements
   }
 
   public static ControlAbstractionDeclaration newInstance(SModel sm, boolean init) {
-    return (ControlAbstractionDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ControlAbstractionDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ControlAbstractionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ControlAbstractionDeclaration newInstance(SModel sm) {

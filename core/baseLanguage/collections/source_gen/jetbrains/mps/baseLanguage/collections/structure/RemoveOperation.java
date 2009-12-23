@@ -15,7 +15,7 @@ public class RemoveOperation extends AbstractIteratorOperation {
   }
 
   public static RemoveOperation newInstance(SModel sm, boolean init) {
-    return (RemoveOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RemoveOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RemoveOperation newInstance(SModel sm) {

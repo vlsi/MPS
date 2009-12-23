@@ -19,7 +19,7 @@ public class MapEntry extends BaseConcept {
   }
 
   public Expression getKey() {
-    return (Expression)this.getChild(Expression.class, MapEntry.KEY);
+    return (Expression) this.getChild(Expression.class, MapEntry.KEY);
   }
 
   public void setKey(Expression node) {
@@ -27,7 +27,7 @@ public class MapEntry extends BaseConcept {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, MapEntry.VALUE);
+    return (Expression) this.getChild(Expression.class, MapEntry.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -35,7 +35,7 @@ public class MapEntry extends BaseConcept {
   }
 
   public static MapEntry newInstance(SModel sm, boolean init) {
-    return (MapEntry)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapEntry", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MapEntry) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapEntry", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MapEntry newInstance(SModel sm) {

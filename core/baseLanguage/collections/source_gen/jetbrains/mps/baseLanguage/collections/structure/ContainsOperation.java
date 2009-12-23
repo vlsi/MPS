@@ -15,7 +15,7 @@ public class ContainsOperation extends SingleArgumentSequenceOperation {
   }
 
   public static ContainsOperation newInstance(SModel sm, boolean init) {
-    return (ContainsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ContainsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ContainsOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ContainsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ContainsOperation newInstance(SModel sm) {

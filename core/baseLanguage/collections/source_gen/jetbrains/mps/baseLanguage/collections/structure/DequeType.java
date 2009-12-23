@@ -15,7 +15,7 @@ public class DequeType extends QueueType {
   }
 
   public static DequeType newInstance(SModel sm, boolean init) {
-    return (DequeType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DequeType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DequeType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DequeType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DequeType newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class ToIteratorOperation extends NoArgumentsSequenceOperation {
   }
 
   public static ToIteratorOperation newInstance(SModel sm, boolean init) {
-    return (ToIteratorOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ToIteratorOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ToIteratorOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ToIteratorOperation newInstance(SModel sm) {

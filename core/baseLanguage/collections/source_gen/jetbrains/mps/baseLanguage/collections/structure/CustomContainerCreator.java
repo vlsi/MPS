@@ -16,7 +16,7 @@ public class CustomContainerCreator extends AbstractContainerCreator {
   }
 
   public CustomContainerDeclaration getContainerDeclaration() {
-    return (CustomContainerDeclaration)this.getReferent(CustomContainerDeclaration.class, CustomContainerCreator.CONTAINER_DECLARATION);
+    return (CustomContainerDeclaration) this.getReferent(CustomContainerDeclaration.class, CustomContainerCreator.CONTAINER_DECLARATION);
   }
 
   public void setContainerDeclaration(CustomContainerDeclaration node) {
@@ -24,7 +24,7 @@ public class CustomContainerCreator extends AbstractContainerCreator {
   }
 
   public static CustomContainerCreator newInstance(SModel sm, boolean init) {
-    return (CustomContainerCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CustomContainerCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CustomContainerCreator newInstance(SModel sm) {

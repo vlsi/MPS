@@ -23,7 +23,7 @@ public class typeof_MapClearOperation_InferenceRule extends AbstractInferenceRul
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1208542413610", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1208542413612", true), (SNode)new _Quotations.QuotationClass_53().createNode(typeCheckingContext.getEquationManager().getRepresentator(VALUE_typevar_1208542413609), typeCheckingContext.getEquationManager().getRepresentator(KEY_typevar_1208542413607), typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1208542413612", true), (SNode) new _Quotations.QuotationClass_53().createNode(typeCheckingContext.getEquationManager().getRepresentator(VALUE_typevar_1208542413609), typeCheckingContext.getEquationManager().getRepresentator(KEY_typevar_1208542413607), typeCheckingContext), false, _info_12389875345);
     }
   }
 

@@ -17,7 +17,7 @@ public class IteratorType extends Type {
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(Type.class, IteratorType.ELEMENT_TYPE);
+    return (Type) this.getChild(Type.class, IteratorType.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {
@@ -25,7 +25,7 @@ public class IteratorType extends Type {
   }
 
   public static IteratorType newInstance(SModel sm, boolean init) {
-    return (IteratorType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.IteratorType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IteratorType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.IteratorType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IteratorType newInstance(SModel sm) {

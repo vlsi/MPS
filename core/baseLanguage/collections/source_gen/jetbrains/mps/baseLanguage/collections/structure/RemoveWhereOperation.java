@@ -51,7 +51,7 @@ public class RemoveWhereOperation extends InternalSequenceOperation implements I
   }
 
   public static RemoveWhereOperation newInstance(SModel sm, boolean init) {
-    return (RemoveWhereOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveWhereOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RemoveWhereOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveWhereOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RemoveWhereOperation newInstance(SModel sm) {

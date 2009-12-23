@@ -17,7 +17,7 @@ public class DowncastExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, DowncastExpression.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, DowncastExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -25,7 +25,7 @@ public class DowncastExpression extends Expression {
   }
 
   public static DowncastExpression newInstance(SModel sm, boolean init) {
-    return (DowncastExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DowncastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DowncastExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DowncastExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DowncastExpression newInstance(SModel sm) {

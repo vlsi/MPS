@@ -23,7 +23,7 @@ public class ClosureControlStatement extends Statement {
   }
 
   public StaticMethodDeclaration getControlMethod() {
-    return (StaticMethodDeclaration)this.getReferent(StaticMethodDeclaration.class, ClosureControlStatement.CONTROL_METHOD);
+    return (StaticMethodDeclaration) this.getReferent(StaticMethodDeclaration.class, ClosureControlStatement.CONTROL_METHOD);
   }
 
   public void setControlMethod(StaticMethodDeclaration node) {
@@ -31,7 +31,7 @@ public class ClosureControlStatement extends Statement {
   }
 
   public ControlClosureLiteral getControlClosure() {
-    return (ControlClosureLiteral)this.getChild(ControlClosureLiteral.class, ClosureControlStatement.CONTROL_CLOSURE);
+    return (ControlClosureLiteral) this.getChild(ControlClosureLiteral.class, ClosureControlStatement.CONTROL_CLOSURE);
   }
 
   public void setControlClosure(ControlClosureLiteral node) {
@@ -59,7 +59,7 @@ public class ClosureControlStatement extends Statement {
   }
 
   public static ClosureControlStatement newInstance(SModel sm, boolean init) {
-    return (ClosureControlStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ClosureControlStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureControlStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ClosureControlStatement newInstance(SModel sm) {

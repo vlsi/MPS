@@ -20,7 +20,7 @@ public class SequenceCreator extends AbstractCreator {
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(Type.class, SequenceCreator.ELEMENT_TYPE);
+    return (Type) this.getChild(Type.class, SequenceCreator.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {
@@ -28,7 +28,7 @@ public class SequenceCreator extends AbstractCreator {
   }
 
   public ClosureLiteral getInitializer() {
-    return (ClosureLiteral)this.getChild(ClosureLiteral.class, SequenceCreator.INITIALIZER);
+    return (ClosureLiteral) this.getChild(ClosureLiteral.class, SequenceCreator.INITIALIZER);
   }
 
   public void setInitializer(ClosureLiteral node) {
@@ -36,7 +36,7 @@ public class SequenceCreator extends AbstractCreator {
   }
 
   public static SequenceCreator newInstance(SModel sm, boolean init) {
-    return (SequenceCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SequenceCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SequenceCreator newInstance(SModel sm) {

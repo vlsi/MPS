@@ -10,6 +10,6 @@ public class Closures_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

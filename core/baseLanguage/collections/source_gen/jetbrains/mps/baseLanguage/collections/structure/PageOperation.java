@@ -18,7 +18,7 @@ public class PageOperation extends SequenceOperation {
   }
 
   public Expression getFromElement() {
-    return (Expression)this.getChild(Expression.class, PageOperation.FROM_ELEMENT);
+    return (Expression) this.getChild(Expression.class, PageOperation.FROM_ELEMENT);
   }
 
   public void setFromElement(Expression node) {
@@ -26,7 +26,7 @@ public class PageOperation extends SequenceOperation {
   }
 
   public Expression getToElement() {
-    return (Expression)this.getChild(Expression.class, PageOperation.TO_ELEMENT);
+    return (Expression) this.getChild(Expression.class, PageOperation.TO_ELEMENT);
   }
 
   public void setToElement(Expression node) {
@@ -34,7 +34,7 @@ public class PageOperation extends SequenceOperation {
   }
 
   public static PageOperation newInstance(SModel sm, boolean init) {
-    return (PageOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PageOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PageOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PageOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PageOperation newInstance(SModel sm) {

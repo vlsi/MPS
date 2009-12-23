@@ -15,7 +15,7 @@ public class CutOperation extends ChunkOperation {
   }
 
   public static CutOperation newInstance(SModel sm, boolean init) {
-    return (CutOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.CutOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CutOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.CutOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CutOperation newInstance(SModel sm) {

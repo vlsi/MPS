@@ -15,7 +15,7 @@ public class KeyAccessOperation extends AbstractMappingOperation {
   }
 
   public static KeyAccessOperation newInstance(SModel sm, boolean init) {
-    return (KeyAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.KeyAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (KeyAccessOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.KeyAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static KeyAccessOperation newInstance(SModel sm) {

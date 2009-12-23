@@ -37,7 +37,7 @@ public class mapWithTypeVars_subtypeOf_map_InequationReplacementRule extends Abs
         BaseIntentionProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1434634659123763982", 0, intentionProvider);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-        typeCheckingContext.createEquation((SNode)SLinkOperations.getTarget(subtype, "keyType", true), (SNode)SLinkOperations.getTarget(supertype, "keyType", true), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) SLinkOperations.getTarget(subtype, "keyType", true), (SNode) SLinkOperations.getTarget(supertype, "keyType", true), _info_12389875345);
       }
     }
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "valueType", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
@@ -46,7 +46,7 @@ public class mapWithTypeVars_subtypeOf_map_InequationReplacementRule extends Abs
         BaseIntentionProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1434634659123764077", 0, intentionProvider);
         _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-        typeCheckingContext.createEquation((SNode)SLinkOperations.getTarget(subtype, "valueType", true), (SNode)SLinkOperations.getTarget(supertype, "valueType", true), _info_12389875345);
+        typeCheckingContext.createEquation((SNode) SLinkOperations.getTarget(subtype, "valueType", true), (SNode) SLinkOperations.getTarget(supertype, "valueType", true), _info_12389875345);
       }
     }
   }
@@ -54,10 +54,10 @@ public class mapWithTypeVars_subtypeOf_map_InequationReplacementRule extends Abs
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
     boolean result_14532009 = true;
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "keyType", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
-      result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode)SLinkOperations.getTarget(subtype, "keyType", true), (SNode)SLinkOperations.getTarget(supertype, "keyType", true));
+      result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) SLinkOperations.getTarget(subtype, "keyType", true), (SNode) SLinkOperations.getTarget(supertype, "keyType", true));
     }
     if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(subtype, "valueType", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"))) {
-      result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode)SLinkOperations.getTarget(subtype, "valueType", true), (SNode)SLinkOperations.getTarget(supertype, "valueType", true));
+      result_14532009 = result_14532009 && MatchingUtil.matchNodes((SNode) SLinkOperations.getTarget(subtype, "valueType", true), (SNode) SLinkOperations.getTarget(supertype, "valueType", true));
     }
     return result_14532009;
   }

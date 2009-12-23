@@ -15,7 +15,7 @@ public class LinkedListCreator extends AbstractContainerCreator {
   }
 
   public static LinkedListCreator newInstance(SModel sm, boolean init) {
-    return (LinkedListCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkedListCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinkedListCreator newInstance(SModel sm) {

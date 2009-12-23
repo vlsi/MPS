@@ -33,10 +33,10 @@ public class CustomContainerCreator_Behavior {
   }
 
   public static SNode call_createType_1331913329176106428(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), "virtual_createType_1237722437229", PARAMETERS_1331913329176106428);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), "virtual_createType_1237722437229", PARAMETERS_1331913329176106428);
   }
 
   public static SNode callSuper_createType_1331913329176106428(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), callerConceptFqName, "virtual_createType_1237722437229", PARAMETERS_1331913329176106428);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator"), callerConceptFqName, "virtual_createType_1237722437229", PARAMETERS_1331913329176106428);
   }
 }

@@ -15,7 +15,7 @@ public class ToArrayOperation extends NoArgumentsSequenceOperation {
   }
 
   public static ToArrayOperation newInstance(SModel sm, boolean init) {
-    return (ToArrayOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ToArrayOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ToArrayOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ToArrayOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ToArrayOperation newInstance(SModel sm) {

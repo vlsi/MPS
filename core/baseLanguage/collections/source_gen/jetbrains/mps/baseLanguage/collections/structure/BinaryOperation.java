@@ -17,7 +17,7 @@ public class BinaryOperation extends SequenceOperation {
   }
 
   public Expression getRightExpression() {
-    return (Expression)this.getChild(Expression.class, BinaryOperation.RIGHT_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, BinaryOperation.RIGHT_EXPRESSION);
   }
 
   public void setRightExpression(Expression node) {
@@ -25,7 +25,7 @@ public class BinaryOperation extends SequenceOperation {
   }
 
   public static BinaryOperation newInstance(SModel sm, boolean init) {
-    return (BinaryOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.BinaryOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BinaryOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.BinaryOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BinaryOperation newInstance(SModel sm) {

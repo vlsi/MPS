@@ -15,7 +15,7 @@ public class ControlClosureLiteral extends UnrestrictedClosureLiteral {
   }
 
   public static ControlClosureLiteral newInstance(SModel sm, boolean init) {
-    return (ControlClosureLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ControlClosureLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ControlClosureLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ControlClosureLiteral newInstance(SModel sm) {

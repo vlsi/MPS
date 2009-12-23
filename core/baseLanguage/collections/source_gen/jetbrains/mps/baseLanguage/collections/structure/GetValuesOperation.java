@@ -15,7 +15,7 @@ public class GetValuesOperation extends MapOperation {
   }
 
   public static GetValuesOperation newInstance(SModel sm, boolean init) {
-    return (GetValuesOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetValuesOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetValuesOperation newInstance(SModel sm) {

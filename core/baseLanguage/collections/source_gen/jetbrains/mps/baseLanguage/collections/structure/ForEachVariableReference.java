@@ -17,7 +17,7 @@ public class ForEachVariableReference extends Expression {
   }
 
   public ForEachVariable getVariable() {
-    return (ForEachVariable)this.getReferent(ForEachVariable.class, ForEachVariableReference.VARIABLE);
+    return (ForEachVariable) this.getReferent(ForEachVariable.class, ForEachVariableReference.VARIABLE);
   }
 
   public void setVariable(ForEachVariable node) {
@@ -25,7 +25,7 @@ public class ForEachVariableReference extends Expression {
   }
 
   public static ForEachVariableReference newInstance(SModel sm, boolean init) {
-    return (ForEachVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ForEachVariableReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ForEachVariableReference newInstance(SModel sm) {

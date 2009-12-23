@@ -44,7 +44,7 @@ public class HeadListOperation extends SequenceOperation implements IListOperati
   }
 
   public Expression getUpToIndex() {
-    return (Expression)this.getChild(Expression.class, HeadListOperation.UP_TO_INDEX);
+    return (Expression) this.getChild(Expression.class, HeadListOperation.UP_TO_INDEX);
   }
 
   public void setUpToIndex(Expression node) {
@@ -52,7 +52,7 @@ public class HeadListOperation extends SequenceOperation implements IListOperati
   }
 
   public static HeadListOperation newInstance(SModel sm, boolean init) {
-    return (HeadListOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HeadListOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (HeadListOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HeadListOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static HeadListOperation newInstance(SModel sm) {

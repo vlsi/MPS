@@ -52,7 +52,7 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, ClosureLiteral.BODY);
+    return (StatementList) this.getChild(StatementList.class, ClosureLiteral.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -80,7 +80,7 @@ public class ClosureLiteral extends Expression implements IStatementListContaine
   }
 
   public static ClosureLiteral newInstance(SModel sm, boolean init) {
-    return (ClosureLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ClosureLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ClosureLiteral newInstance(SModel sm) {

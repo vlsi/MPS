@@ -25,7 +25,7 @@ public class StringPropertyHolder extends BaseConcept {
   }
 
   public static StringPropertyHolder newInstance(SModel sm, boolean init) {
-    return (StringPropertyHolder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StringPropertyHolder) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.StringPropertyHolder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StringPropertyHolder newInstance(SModel sm) {

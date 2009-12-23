@@ -15,7 +15,7 @@ public class MappingsSetOperation extends MapOperation {
   }
 
   public static MappingsSetOperation newInstance(SModel sm, boolean init) {
-    return (MappingsSetOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MappingsSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MappingsSetOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MappingsSetOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MappingsSetOperation newInstance(SModel sm) {

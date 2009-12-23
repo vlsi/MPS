@@ -23,7 +23,7 @@ public class HashMapCreator extends AbstractCreator {
   }
 
   public Type getKeyType() {
-    return (Type)this.getChild(Type.class, HashMapCreator.KEY_TYPE);
+    return (Type) this.getChild(Type.class, HashMapCreator.KEY_TYPE);
   }
 
   public void setKeyType(Type node) {
@@ -31,7 +31,7 @@ public class HashMapCreator extends AbstractCreator {
   }
 
   public Type getValueType() {
-    return (Type)this.getChild(Type.class, HashMapCreator.VALUE_TYPE);
+    return (Type) this.getChild(Type.class, HashMapCreator.VALUE_TYPE);
   }
 
   public void setValueType(Type node) {
@@ -39,7 +39,7 @@ public class HashMapCreator extends AbstractCreator {
   }
 
   public MapInitializer getInitializer() {
-    return (MapInitializer)this.getChild(MapInitializer.class, HashMapCreator.INITIALIZER);
+    return (MapInitializer) this.getChild(MapInitializer.class, HashMapCreator.INITIALIZER);
   }
 
   public void setInitializer(MapInitializer node) {
@@ -47,7 +47,7 @@ public class HashMapCreator extends AbstractCreator {
   }
 
   public Expression getInitSize() {
-    return (Expression)this.getChild(Expression.class, HashMapCreator.INIT_SIZE);
+    return (Expression) this.getChild(Expression.class, HashMapCreator.INIT_SIZE);
   }
 
   public void setInitSize(Expression node) {
@@ -55,7 +55,7 @@ public class HashMapCreator extends AbstractCreator {
   }
 
   public static HashMapCreator newInstance(SModel sm, boolean init) {
-    return (HashMapCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (HashMapCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static HashMapCreator newInstance(SModel sm) {

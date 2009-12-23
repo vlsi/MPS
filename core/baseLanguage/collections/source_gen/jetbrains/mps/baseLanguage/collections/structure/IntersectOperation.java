@@ -15,7 +15,7 @@ public class IntersectOperation extends BinaryOperation {
   }
 
   public static IntersectOperation newInstance(SModel sm, boolean init) {
-    return (IntersectOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.IntersectOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntersectOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.IntersectOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntersectOperation newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class UnrestrictedFunctionType extends FunctionType {
   }
 
   public Type getTerminateType() {
-    return (Type)this.getChild(Type.class, UnrestrictedFunctionType.TERMINATE_TYPE);
+    return (Type) this.getChild(Type.class, UnrestrictedFunctionType.TERMINATE_TYPE);
   }
 
   public void setTerminateType(Type node) {
@@ -25,7 +25,7 @@ public class UnrestrictedFunctionType extends FunctionType {
   }
 
   public static UnrestrictedFunctionType newInstance(SModel sm, boolean init) {
-    return (UnrestrictedFunctionType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UnrestrictedFunctionType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UnrestrictedFunctionType newInstance(SModel sm) {

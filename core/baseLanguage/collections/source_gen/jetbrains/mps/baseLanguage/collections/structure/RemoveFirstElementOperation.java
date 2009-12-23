@@ -42,7 +42,7 @@ public class RemoveFirstElementOperation extends NoArgumentsSequenceOperation im
   }
 
   public static RemoveFirstElementOperation newInstance(SModel sm, boolean init) {
-    return (RemoveFirstElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RemoveFirstElementOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.RemoveFirstElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RemoveFirstElementOperation newInstance(SModel sm) {

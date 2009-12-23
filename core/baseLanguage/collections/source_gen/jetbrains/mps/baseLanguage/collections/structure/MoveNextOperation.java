@@ -15,7 +15,7 @@ public class MoveNextOperation extends AbstractEnumeratorOperation {
   }
 
   public static MoveNextOperation newInstance(SModel sm, boolean init) {
-    return (MoveNextOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MoveNextOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MoveNextOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MoveNextOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MoveNextOperation newInstance(SModel sm) {

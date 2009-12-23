@@ -16,7 +16,7 @@ public class StopStatement extends Statement {
   }
 
   public static StopStatement newInstance(SModel sm, boolean init) {
-    return (StopStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.StopStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StopStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.StopStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StopStatement newInstance(SModel sm) {

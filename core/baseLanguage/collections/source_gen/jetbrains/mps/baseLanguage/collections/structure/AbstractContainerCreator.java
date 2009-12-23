@@ -26,7 +26,7 @@ public class AbstractContainerCreator extends AbstractCreator {
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(Type.class, AbstractContainerCreator.ELEMENT_TYPE);
+    return (Type) this.getChild(Type.class, AbstractContainerCreator.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {
@@ -34,7 +34,7 @@ public class AbstractContainerCreator extends AbstractCreator {
   }
 
   public Expression getCopyFrom() {
-    return (Expression)this.getChild(Expression.class, AbstractContainerCreator.COPY_FROM);
+    return (Expression) this.getChild(Expression.class, AbstractContainerCreator.COPY_FROM);
   }
 
   public void setCopyFrom(Expression node) {
@@ -42,7 +42,7 @@ public class AbstractContainerCreator extends AbstractCreator {
   }
 
   public Expression getInitSize() {
-    return (Expression)this.getChild(Expression.class, AbstractContainerCreator.INIT_SIZE);
+    return (Expression) this.getChild(Expression.class, AbstractContainerCreator.INIT_SIZE);
   }
 
   public void setInitSize(Expression node) {
@@ -70,7 +70,7 @@ public class AbstractContainerCreator extends AbstractCreator {
   }
 
   public static AbstractContainerCreator newInstance(SModel sm, boolean init) {
-    return (AbstractContainerCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractContainerCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractContainerCreator newInstance(SModel sm) {

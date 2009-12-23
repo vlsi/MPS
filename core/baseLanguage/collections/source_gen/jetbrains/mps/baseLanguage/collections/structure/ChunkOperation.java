@@ -17,7 +17,7 @@ public class ChunkOperation extends SequenceOperation {
   }
 
   public Expression getLength() {
-    return (Expression)this.getChild(Expression.class, ChunkOperation.LENGTH);
+    return (Expression) this.getChild(Expression.class, ChunkOperation.LENGTH);
   }
 
   public void setLength(Expression node) {
@@ -25,7 +25,7 @@ public class ChunkOperation extends SequenceOperation {
   }
 
   public static ChunkOperation newInstance(SModel sm, boolean init) {
-    return (ChunkOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ChunkOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ChunkOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ChunkOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ChunkOperation newInstance(SModel sm) {

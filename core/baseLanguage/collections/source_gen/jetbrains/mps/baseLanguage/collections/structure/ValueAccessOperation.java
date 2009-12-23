@@ -15,7 +15,7 @@ public class ValueAccessOperation extends AbstractMappingOperation {
   }
 
   public static ValueAccessOperation newInstance(SModel sm, boolean init) {
-    return (ValueAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ValueAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ValueAccessOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ValueAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ValueAccessOperation newInstance(SModel sm) {
