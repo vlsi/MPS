@@ -48,12 +48,12 @@ public class FindLanguageConceptsUsages_Action extends GeneratedAction {
     if (!(FindLanguageConceptsUsages_Action.this.module instanceof Language)) {
       return false;
     }
-    Language language = (Language)FindLanguageConceptsUsages_Action.this.module;
+    Language language = (Language) FindLanguageConceptsUsages_Action.this.module;
     SModelDescriptor structureModelDescriptor = language.getStructureModelDescriptor();
     if (structureModelDescriptor == null) {
       return false;
     }
-    if (ListSequence.fromList(((List<SNode>)structureModelDescriptor.getSModel().getRoots())).isEmpty()) {
+    if (ListSequence.fromList(((List<SNode>) structureModelDescriptor.getSModel().getRoots())).isEmpty()) {
       return false;
     }
     return true;

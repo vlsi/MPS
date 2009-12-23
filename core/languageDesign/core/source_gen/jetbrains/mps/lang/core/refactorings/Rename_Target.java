@@ -19,7 +19,7 @@ public class Rename_Target implements IRefactoringTarget {
   }
 
   public boolean isApplicableToEntityType(final Object entity) {
-    return SNodeOperations.isInstanceOf(((SNode)entity), "jetbrains.mps.lang.core.structure.INamedConcept");
+    return SNodeOperations.isInstanceOf(((SNode) entity), "jetbrains.mps.lang.core.structure.INamedConcept");
   }
 
   public boolean isApplicable(final Object entity) {

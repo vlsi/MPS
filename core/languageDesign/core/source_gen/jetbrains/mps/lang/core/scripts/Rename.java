@@ -56,7 +56,7 @@ public class Rename extends BaseGeneratedRefactoring {
   }
 
   public void doRefactor(final RefactoringContext refactoringContext) {
-    SPropertyOperations.set(refactoringContext.getSelectedNode(), "name", ((String)refactoringContext.getParameter("newName")));
+    SPropertyOperations.set(refactoringContext.getSelectedNode(), "name", ((String) refactoringContext.getParameter("newName")));
   }
 
   public boolean isOneTargetOnly() {

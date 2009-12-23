@@ -34,7 +34,7 @@ public class ShowNodeMessages_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return !(ListSequence.fromList(((List<EditorMessage>)ShowNodeMessages_Action.this.editorComponent.getHighlightManager().getMessagesFor(ShowNodeMessages_Action.this.node))).isEmpty());
+    return !(ListSequence.fromList(((List<EditorMessage>) ShowNodeMessages_Action.this.editorComponent.getHighlightManager().getMessagesFor(ShowNodeMessages_Action.this.node))).isEmpty());
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

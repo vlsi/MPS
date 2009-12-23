@@ -49,7 +49,7 @@ public class BaseConcept extends BaseAdapter {
   }
 
   public static BaseConcept newInstance(SModel sm, boolean init) {
-    return (BaseConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseConcept newInstance(SModel sm) {

@@ -10,6 +10,6 @@ public class Core_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

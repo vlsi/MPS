@@ -57,10 +57,10 @@ public class MoveNodes extends BaseGeneratedRefactoring {
   }
 
   public boolean isApplicable(RefactoringContext refactoringContext) {
-    if (((Object)refactoringContext.getParameter("target")) instanceof SNode) {
-      SNode targetNode = ((SNode)((Object)refactoringContext.getParameter("target")));
+    if (((Object) refactoringContext.getParameter("target")) instanceof SNode) {
+      SNode targetNode = ((SNode) ((Object) refactoringContext.getParameter("target")));
       SNode concept = SNodeOperations.getConceptDeclaration(targetNode);
-      ConceptAndSuperConceptsScope superConceptsScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(concept)));
+      ConceptAndSuperConceptsScope superConceptsScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(concept)));
       List<LinkDeclaration> linkDeclarations = superConceptsScope.getLinkDeclarationsExcludingOverridden();
       Iterable<SNode> childLinkDeclarations = ListSequence.fromList(linkDeclarations).where(new IWhereFilter<LinkDeclaration>() {
         public boolean accept(LinkDeclaration it) {
@@ -91,7 +91,7 @@ public class MoveNodes extends BaseGeneratedRefactoring {
       }
       return true;
     }
-    if (((Object)refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
+    if (((Object) refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
       for (SNode node : refactoringContext.getSelectedNodes()) {
         if (!(SPropertyOperations.getBoolean(SNodeOperations.getConceptDeclaration(node), "rootable"))) {
           return false;
@@ -122,12 +122,12 @@ public class MoveNodes extends BaseGeneratedRefactoring {
     List<SNode> nodes = refactoringContext.getSelectedNodes();
     SModel targetModel = null;
     List<SNode> movedNodes = null;
-    if (((Object)refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
-      targetModel = ((SModelDescriptor)((Object)refactoringContext.getParameter("target"))).getSModel();
+    if (((Object) refactoringContext.getParameter("target")) instanceof SModelDescriptor) {
+      targetModel = ((SModelDescriptor) ((Object) refactoringContext.getParameter("target"))).getSModel();
       movedNodes = refactoringContext.moveNodesToModel(nodes, targetModel);
     }
-    if (((Object)refactoringContext.getParameter("target")) instanceof SNode) {
-      SNode targetNode = (SNode)((Object)refactoringContext.getParameter("target"));
+    if (((Object) refactoringContext.getParameter("target")) instanceof SNode) {
+      SNode targetNode = (SNode) ((Object) refactoringContext.getParameter("target"));
       movedNodes = refactoringContext.moveNodesToNode(nodes, ListSequence.fromList(nodes).first().getRole_(), targetNode);
       targetModel = SNodeOperations.getModel(targetNode);
     }
@@ -147,7 +147,7 @@ public class MoveNodes extends BaseGeneratedRefactoring {
   }
 
   public List<SNode> getNodesToOpen(final RefactoringContext refactoringContext) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), ((SNode)refactoringContext.getParameter("nodeToOpen")));
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), ((SNode) refactoringContext.getParameter("nodeToOpen")));
   }
 
   public boolean doesUpdateModel() {

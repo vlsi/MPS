@@ -46,7 +46,7 @@ public class Rename extends BaseRefactoring {
   }
 
   public void refactor(final RefactoringContext refactoringContext) {
-    SPropertyOperations.set(refactoringContext.getSelectedNode(), "name", ((String)refactoringContext.getParameter("newName")));
+    SPropertyOperations.set(refactoringContext.getSelectedNode(), "name", ((String) refactoringContext.getParameter("newName")));
   }
 
   public SearchResults getAffectedNodes(final RefactoringContext refactoringContext) {
