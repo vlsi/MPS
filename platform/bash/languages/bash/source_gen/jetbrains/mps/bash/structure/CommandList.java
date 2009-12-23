@@ -18,7 +18,7 @@ public class CommandList extends InputLine {
   }
 
   public HeadCommandList getHead() {
-    return (HeadCommandList)this.getChild(HeadCommandList.class, CommandList.HEAD);
+    return (HeadCommandList) this.getChild(HeadCommandList.class, CommandList.HEAD);
   }
 
   public void setHead(HeadCommandList node) {
@@ -26,7 +26,7 @@ public class CommandList extends InputLine {
   }
 
   public CommandTerminator getTerminator() {
-    return (CommandTerminator)this.getChild(CommandTerminator.class, CommandList.TERMINATOR);
+    return (CommandTerminator) this.getChild(CommandTerminator.class, CommandList.TERMINATOR);
   }
 
   public void setTerminator(CommandTerminator node) {
@@ -34,7 +34,7 @@ public class CommandList extends InputLine {
   }
 
   public CommentedText getComment() {
-    return (CommentedText)this.getChild(CommentedText.class, CommandList.COMMENT);
+    return (CommentedText) this.getChild(CommentedText.class, CommandList.COMMENT);
   }
 
   public void setComment(CommentedText node) {
@@ -42,7 +42,7 @@ public class CommandList extends InputLine {
   }
 
   public static CommandList newInstance(SModel sm, boolean init) {
-    return (CommandList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CommandList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CommandList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CommandList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CommandList newInstance(SModel sm) {

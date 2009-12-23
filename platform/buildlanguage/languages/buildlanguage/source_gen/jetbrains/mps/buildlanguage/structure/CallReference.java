@@ -17,7 +17,7 @@ public class CallReference extends PropertyValueExpression {
   }
 
   public AbstractCall getCall() {
-    return (AbstractCall)this.getReferent(AbstractCall.class, CallReference.CALL);
+    return (AbstractCall) this.getReferent(AbstractCall.class, CallReference.CALL);
   }
 
   public void setCall(AbstractCall node) {
@@ -25,7 +25,7 @@ public class CallReference extends PropertyValueExpression {
   }
 
   public static CallReference newInstance(SModel sm, boolean init) {
-    return (CallReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.CallReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CallReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.CallReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CallReference newInstance(SModel sm) {

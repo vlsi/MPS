@@ -39,7 +39,7 @@ public class WordList extends BaseConcept {
   }
 
   public static WordList newInstance(SModel sm, boolean init) {
-    return (WordList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.WordList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WordList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.WordList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WordList newInstance(SModel sm) {

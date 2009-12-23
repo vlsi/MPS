@@ -10,6 +10,6 @@ public class Distrib_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

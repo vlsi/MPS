@@ -17,7 +17,7 @@ public class OptionWithParamReference extends ExternalOptionReference {
   }
 
   public OptionWithParam getOptionWithParam() {
-    return (OptionWithParam)this.getReferent(OptionWithParam.class, OptionWithParamReference.OPTION_WITH_PARAM);
+    return (OptionWithParam) this.getReferent(OptionWithParam.class, OptionWithParamReference.OPTION_WITH_PARAM);
   }
 
   public void setOptionWithParam(OptionWithParam node) {
@@ -25,7 +25,7 @@ public class OptionWithParamReference extends ExternalOptionReference {
   }
 
   public GeneralizedWord getWord() {
-    return (GeneralizedWord)this.getChild(GeneralizedWord.class, OptionWithParamReference.WORD);
+    return (GeneralizedWord) this.getChild(GeneralizedWord.class, OptionWithParamReference.WORD);
   }
 
   public void setWord(GeneralizedWord node) {
@@ -33,7 +33,7 @@ public class OptionWithParamReference extends ExternalOptionReference {
   }
 
   public static OptionWithParamReference newInstance(SModel sm, boolean init) {
-    return (OptionWithParamReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OptionWithParamReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OptionWithParamReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OptionWithParamReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OptionWithParamReference newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class WordExpression extends ArithmeticExpression {
   }
 
   public GeneralizedWord getWord() {
-    return (GeneralizedWord)this.getChild(GeneralizedWord.class, WordExpression.WORD);
+    return (GeneralizedWord) this.getChild(GeneralizedWord.class, WordExpression.WORD);
   }
 
   public void setWord(GeneralizedWord node) {
@@ -25,7 +25,7 @@ public class WordExpression extends ArithmeticExpression {
   }
 
   public static WordExpression newInstance(SModel sm, boolean init) {
-    return (WordExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.WordExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WordExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.WordExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WordExpression newInstance(SModel sm) {

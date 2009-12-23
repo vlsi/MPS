@@ -15,7 +15,7 @@ public class NewerThan extends BinaryConditionalExpression {
   }
 
   public static NewerThan newInstance(SModel sm, boolean init) {
-    return (NewerThan)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.NewerThan", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NewerThan) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.NewerThan", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NewerThan newInstance(SModel sm) {

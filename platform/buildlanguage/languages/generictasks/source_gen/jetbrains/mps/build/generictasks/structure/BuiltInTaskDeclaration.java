@@ -104,7 +104,7 @@ public class BuiltInTaskDeclaration extends BaseConcept implements ITaskDeclarat
   }
 
   public TaskReference getParentRef() {
-    return (TaskReference)this.getChild(TaskReference.class, BuiltInTaskDeclaration.PARENT_REF);
+    return (TaskReference) this.getChild(TaskReference.class, BuiltInTaskDeclaration.PARENT_REF);
   }
 
   public void setParentRef(TaskReference node) {
@@ -192,7 +192,7 @@ public class BuiltInTaskDeclaration extends BaseConcept implements ITaskDeclarat
   }
 
   public static BuiltInTaskDeclaration newInstance(SModel sm, boolean init) {
-    return (BuiltInTaskDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.generictasks.structure.BuiltInTaskDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BuiltInTaskDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.generictasks.structure.BuiltInTaskDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BuiltInTaskDeclaration newInstance(SModel sm) {

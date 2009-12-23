@@ -10,6 +10,6 @@ public class Bash_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("4a1e4a24-105b-44ed-959c-6586fc957db3(jetbrains.mps.bash)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

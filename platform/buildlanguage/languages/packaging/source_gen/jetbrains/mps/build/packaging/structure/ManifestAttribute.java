@@ -76,7 +76,7 @@ public class ManifestAttribute extends BaseConcept implements INamedConcept {
   }
 
   public static ManifestAttribute newInstance(SModel sm, boolean init) {
-    return (ManifestAttribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.ManifestAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ManifestAttribute) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.ManifestAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ManifestAttribute newInstance(SModel sm) {

@@ -54,7 +54,7 @@ public class PropertyDeclaration extends BaseConcept implements IProjectComponen
   }
 
   public PropertyType getType() {
-    return (PropertyType)this.getChild(PropertyType.class, PropertyDeclaration.TYPE);
+    return (PropertyType) this.getChild(PropertyType.class, PropertyDeclaration.TYPE);
   }
 
   public void setType(PropertyType node) {
@@ -62,7 +62,7 @@ public class PropertyDeclaration extends BaseConcept implements IProjectComponen
   }
 
   public PropertyValueExpression getPropertyValue() {
-    return (PropertyValueExpression)this.getChild(PropertyValueExpression.class, PropertyDeclaration.PROPERTY_VALUE);
+    return (PropertyValueExpression) this.getChild(PropertyValueExpression.class, PropertyDeclaration.PROPERTY_VALUE);
   }
 
   public void setPropertyValue(PropertyValueExpression node) {
@@ -70,7 +70,7 @@ public class PropertyDeclaration extends BaseConcept implements IProjectComponen
   }
 
   public static PropertyDeclaration newInstance(SModel sm, boolean init) {
-    return (PropertyDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PropertyDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyDeclaration newInstance(SModel sm) {

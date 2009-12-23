@@ -25,7 +25,7 @@ public class Echo extends File {
   }
 
   public IStringExpression getMessage() {
-    return (IStringExpression)this.getChild(IStringExpression.class, Echo.MESSAGE);
+    return (IStringExpression) this.getChild(IStringExpression.class, Echo.MESSAGE);
   }
 
   public void setMessage(IStringExpression node) {
@@ -33,7 +33,7 @@ public class Echo extends File {
   }
 
   public static Echo newInstance(SModel sm, boolean init) {
-    return (Echo)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Echo", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Echo) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Echo", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Echo newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class StickyBitConditionalExpression extends UnaryConditionalExpression {
   }
 
   public static StickyBitConditionalExpression newInstance(SModel sm, boolean init) {
-    return (StickyBitConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.StickyBitConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StickyBitConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.StickyBitConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StickyBitConditionalExpression newInstance(SModel sm) {

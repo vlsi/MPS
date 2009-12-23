@@ -18,7 +18,7 @@ public class HeadCommandList extends BaseConcept {
   }
 
   public HeadPipeline getBase() {
-    return (HeadPipeline)this.getChild(HeadPipeline.class, HeadCommandList.BASE);
+    return (HeadPipeline) this.getChild(HeadPipeline.class, HeadCommandList.BASE);
   }
 
   public void setBase(HeadPipeline node) {
@@ -26,7 +26,7 @@ public class HeadCommandList extends BaseConcept {
   }
 
   public FollowingCommandList getFollowing() {
-    return (FollowingCommandList)this.getChild(FollowingCommandList.class, HeadCommandList.FOLLOWING);
+    return (FollowingCommandList) this.getChild(FollowingCommandList.class, HeadCommandList.FOLLOWING);
   }
 
   public void setFollowing(FollowingCommandList node) {
@@ -34,7 +34,7 @@ public class HeadCommandList extends BaseConcept {
   }
 
   public static HeadCommandList newInstance(SModel sm, boolean init) {
-    return (HeadCommandList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.HeadCommandList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (HeadCommandList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.HeadCommandList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static HeadCommandList newInstance(SModel sm) {

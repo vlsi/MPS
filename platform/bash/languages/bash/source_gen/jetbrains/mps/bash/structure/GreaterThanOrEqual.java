@@ -15,7 +15,7 @@ public class GreaterThanOrEqual extends BinaryConditionalExpression {
   }
 
   public static GreaterThanOrEqual newInstance(SModel sm, boolean init) {
-    return (GreaterThanOrEqual)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.GreaterThanOrEqual", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GreaterThanOrEqual) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.GreaterThanOrEqual", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GreaterThanOrEqual newInstance(SModel sm) {

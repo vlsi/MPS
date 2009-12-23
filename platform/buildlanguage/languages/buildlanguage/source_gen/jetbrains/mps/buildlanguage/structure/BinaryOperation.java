@@ -18,7 +18,7 @@ public class BinaryOperation extends PropertyValueExpression {
   }
 
   public PropertyValueExpression getLeft() {
-    return (PropertyValueExpression)this.getChild(PropertyValueExpression.class, BinaryOperation.LEFT);
+    return (PropertyValueExpression) this.getChild(PropertyValueExpression.class, BinaryOperation.LEFT);
   }
 
   public void setLeft(PropertyValueExpression node) {
@@ -26,7 +26,7 @@ public class BinaryOperation extends PropertyValueExpression {
   }
 
   public PropertyValueExpression getRight() {
-    return (PropertyValueExpression)this.getChild(PropertyValueExpression.class, BinaryOperation.RIGHT);
+    return (PropertyValueExpression) this.getChild(PropertyValueExpression.class, BinaryOperation.RIGHT);
   }
 
   public void setRight(PropertyValueExpression node) {
@@ -34,7 +34,7 @@ public class BinaryOperation extends PropertyValueExpression {
   }
 
   public static BinaryOperation newInstance(SModel sm, boolean init) {
-    return (BinaryOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.BinaryOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BinaryOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.BinaryOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BinaryOperation newInstance(SModel sm) {

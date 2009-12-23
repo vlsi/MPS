@@ -44,7 +44,7 @@ public class VariableReference extends BaseConcept implements IStringExpression 
   }
 
   public Variable getVariable() {
-    return (Variable)this.getReferent(Variable.class, VariableReference.VARIABLE);
+    return (Variable) this.getReferent(Variable.class, VariableReference.VARIABLE);
   }
 
   public void setVariable(Variable node) {
@@ -52,7 +52,7 @@ public class VariableReference extends BaseConcept implements IStringExpression 
   }
 
   public static VariableReference newInstance(SModel sm, boolean init) {
-    return (VariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.VariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VariableReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.VariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VariableReference newInstance(SModel sm) {

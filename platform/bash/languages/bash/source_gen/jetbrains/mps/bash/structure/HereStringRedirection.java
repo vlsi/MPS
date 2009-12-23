@@ -43,7 +43,7 @@ public class HereStringRedirection extends Redirection implements IToWordRedirec
   }
 
   public GeneralizedWord getWord() {
-    return (GeneralizedWord)this.getChild(GeneralizedWord.class, HereStringRedirection.WORD);
+    return (GeneralizedWord) this.getChild(GeneralizedWord.class, HereStringRedirection.WORD);
   }
 
   public void setWord(GeneralizedWord node) {
@@ -51,7 +51,7 @@ public class HereStringRedirection extends Redirection implements IToWordRedirec
   }
 
   public static HereStringRedirection newInstance(SModel sm, boolean init) {
-    return (HereStringRedirection)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.HereStringRedirection", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (HereStringRedirection) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.HereStringRedirection", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static HereStringRedirection newInstance(SModel sm) {

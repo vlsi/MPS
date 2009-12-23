@@ -15,7 +15,7 @@ public class UserIdConditionalExpression extends UnaryConditionalExpression {
   }
 
   public static UserIdConditionalExpression newInstance(SModel sm, boolean init) {
-    return (UserIdConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.UserIdConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UserIdConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.UserIdConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UserIdConditionalExpression newInstance(SModel sm) {

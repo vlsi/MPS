@@ -15,7 +15,7 @@ public class BuckCommandSubstitution extends BaseCommandSubstitution {
   }
 
   public static BuckCommandSubstitution newInstance(SModel sm, boolean init) {
-    return (BuckCommandSubstitution)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BuckCommandSubstitution", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BuckCommandSubstitution) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BuckCommandSubstitution", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BuckCommandSubstitution newInstance(SModel sm) {

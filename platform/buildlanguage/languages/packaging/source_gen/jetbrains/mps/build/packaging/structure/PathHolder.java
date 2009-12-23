@@ -27,7 +27,7 @@ public class PathHolder extends BaseConcept {
   }
 
   public Macro getMacro() {
-    return (Macro)this.getReferent(Macro.class, PathHolder.MACRO);
+    return (Macro) this.getReferent(Macro.class, PathHolder.MACRO);
   }
 
   public void setMacro(Macro node) {
@@ -35,7 +35,7 @@ public class PathHolder extends BaseConcept {
   }
 
   public Module getModule() {
-    return (Module)this.getReferent(Module.class, PathHolder.MODULE);
+    return (Module) this.getReferent(Module.class, PathHolder.MODULE);
   }
 
   public void setModule(Module node) {
@@ -43,7 +43,7 @@ public class PathHolder extends BaseConcept {
   }
 
   public static PathHolder newInstance(SModel sm, boolean init) {
-    return (PathHolder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathHolder", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PathHolder) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathHolder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PathHolder newInstance(SModel sm) {

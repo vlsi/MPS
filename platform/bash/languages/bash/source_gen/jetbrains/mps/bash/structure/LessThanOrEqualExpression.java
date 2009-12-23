@@ -15,7 +15,7 @@ public class LessThanOrEqualExpression extends BinaryArithmeticExpression {
   }
 
   public static LessThanOrEqualExpression newInstance(SModel sm, boolean init) {
-    return (LessThanOrEqualExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LessThanOrEqualExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LessThanOrEqualExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LessThanOrEqualExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LessThanOrEqualExpression newInstance(SModel sm) {

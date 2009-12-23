@@ -15,7 +15,7 @@ public class BracketGrouping extends GroupingCommand {
   }
 
   public static BracketGrouping newInstance(SModel sm, boolean init) {
-    return (BracketGrouping)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BracketGrouping", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BracketGrouping) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BracketGrouping", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BracketGrouping newInstance(SModel sm) {

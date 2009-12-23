@@ -43,7 +43,7 @@ public class CommentedCommandList extends InputLine implements IComment {
   }
 
   public CommandList getCommandList() {
-    return (CommandList)this.getChild(CommandList.class, CommentedCommandList.COMMAND_LIST);
+    return (CommandList) this.getChild(CommandList.class, CommentedCommandList.COMMAND_LIST);
   }
 
   public void setCommandList(CommandList node) {
@@ -51,7 +51,7 @@ public class CommentedCommandList extends InputLine implements IComment {
   }
 
   public static CommentedCommandList newInstance(SModel sm, boolean init) {
-    return (CommentedCommandList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CommentedCommandList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CommentedCommandList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CommentedCommandList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CommentedCommandList newInstance(SModel sm) {

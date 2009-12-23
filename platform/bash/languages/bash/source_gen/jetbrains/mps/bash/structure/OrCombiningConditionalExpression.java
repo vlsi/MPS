@@ -15,7 +15,7 @@ public class OrCombiningConditionalExpression extends CombiningConditionalExpres
   }
 
   public static OrCombiningConditionalExpression newInstance(SModel sm, boolean init) {
-    return (OrCombiningConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OrCombiningConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OrCombiningConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OrCombiningConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OrCombiningConditionalExpression newInstance(SModel sm) {

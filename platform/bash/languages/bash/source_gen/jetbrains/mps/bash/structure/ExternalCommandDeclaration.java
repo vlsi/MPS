@@ -76,7 +76,7 @@ public class ExternalCommandDeclaration extends BaseConcept implements INamedCon
   }
 
   public static ExternalCommandDeclaration newInstance(SModel sm, boolean init) {
-    return (ExternalCommandDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ExternalCommandDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExternalCommandDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ExternalCommandDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExternalCommandDeclaration newInstance(SModel sm) {

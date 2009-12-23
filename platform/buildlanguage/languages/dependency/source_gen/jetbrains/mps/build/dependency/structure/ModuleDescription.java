@@ -58,7 +58,7 @@ public class ModuleDescription extends BaseConcept implements INamedConcept {
   }
 
   public PathHolder getClasses() {
-    return (PathHolder)this.getChild(PathHolder.class, ModuleDescription.CLASSES);
+    return (PathHolder) this.getChild(PathHolder.class, ModuleDescription.CLASSES);
   }
 
   public void setClasses(PathHolder node) {
@@ -106,7 +106,7 @@ public class ModuleDescription extends BaseConcept implements INamedConcept {
   }
 
   public static ModuleDescription newInstance(SModel sm, boolean init) {
-    return (ModuleDescription)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.dependency.structure.ModuleDescription", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ModuleDescription) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.dependency.structure.ModuleDescription", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ModuleDescription newInstance(SModel sm) {

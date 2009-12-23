@@ -39,7 +39,7 @@ public class Manifest extends BaseConcept {
   }
 
   public static Manifest newInstance(SModel sm, boolean init) {
-    return (Manifest)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Manifest", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Manifest) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Manifest", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Manifest newInstance(SModel sm) {

@@ -45,7 +45,7 @@ public class Path extends PropertyValueExpression implements IPath {
   }
 
   public MacroReference getMacro() {
-    return (MacroReference)this.getChild(MacroReference.class, Path.MACRO);
+    return (MacroReference) this.getChild(MacroReference.class, Path.MACRO);
   }
 
   public void setMacro(MacroReference node) {
@@ -53,7 +53,7 @@ public class Path extends PropertyValueExpression implements IPath {
   }
 
   public CompositePathComponent getCompositePathComponent() {
-    return (CompositePathComponent)this.getChild(CompositePathComponent.class, Path.COMPOSITE_PATH_COMPONENT);
+    return (CompositePathComponent) this.getChild(CompositePathComponent.class, Path.COMPOSITE_PATH_COMPONENT);
   }
 
   public void setCompositePathComponent(CompositePathComponent node) {
@@ -61,7 +61,7 @@ public class Path extends PropertyValueExpression implements IPath {
   }
 
   public static Path newInstance(SModel sm, boolean init) {
-    return (Path)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Path", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Path) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Path", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Path newInstance(SModel sm) {

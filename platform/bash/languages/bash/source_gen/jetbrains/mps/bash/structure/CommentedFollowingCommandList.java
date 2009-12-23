@@ -43,7 +43,7 @@ public class CommentedFollowingCommandList extends AbstractFollowingCommandList 
   }
 
   public FollowingCommandList getCommand() {
-    return (FollowingCommandList)this.getChild(FollowingCommandList.class, CommentedFollowingCommandList.COMMAND);
+    return (FollowingCommandList) this.getChild(FollowingCommandList.class, CommentedFollowingCommandList.COMMAND);
   }
 
   public void setCommand(FollowingCommandList node) {
@@ -51,7 +51,7 @@ public class CommentedFollowingCommandList extends AbstractFollowingCommandList 
   }
 
   public static CommentedFollowingCommandList newInstance(SModel sm, boolean init) {
-    return (CommentedFollowingCommandList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CommentedFollowingCommandList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CommentedFollowingCommandList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CommentedFollowingCommandList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CommentedFollowingCommandList newInstance(SModel sm) {

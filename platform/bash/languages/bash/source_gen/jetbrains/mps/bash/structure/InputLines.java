@@ -39,7 +39,7 @@ public class InputLines extends BaseConcept {
   }
 
   public static InputLines newInstance(SModel sm, boolean init) {
-    return (InputLines)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.InputLines", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InputLines) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.InputLines", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InputLines newInstance(SModel sm) {

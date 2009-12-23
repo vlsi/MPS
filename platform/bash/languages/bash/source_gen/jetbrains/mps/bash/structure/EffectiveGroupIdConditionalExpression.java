@@ -15,7 +15,7 @@ public class EffectiveGroupIdConditionalExpression extends UnaryConditionalExpre
   }
 
   public static EffectiveGroupIdConditionalExpression newInstance(SModel sm, boolean init) {
-    return (EffectiveGroupIdConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.EffectiveGroupIdConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EffectiveGroupIdConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.EffectiveGroupIdConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EffectiveGroupIdConditionalExpression newInstance(SModel sm) {

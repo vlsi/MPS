@@ -53,7 +53,7 @@ public class NonExistingPath extends BaseConcept implements IPath {
   }
 
   public MacroReference getMacro() {
-    return (MacroReference)this.getChild(MacroReference.class, NonExistingPath.MACRO);
+    return (MacroReference) this.getChild(MacroReference.class, NonExistingPath.MACRO);
   }
 
   public void setMacro(MacroReference node) {
@@ -61,7 +61,7 @@ public class NonExistingPath extends BaseConcept implements IPath {
   }
 
   public static NonExistingPath newInstance(SModel sm, boolean init) {
-    return (NonExistingPath)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.NonExistingPath", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NonExistingPath) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.NonExistingPath", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NonExistingPath newInstance(SModel sm) {

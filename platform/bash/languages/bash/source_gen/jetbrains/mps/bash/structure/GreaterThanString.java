@@ -15,7 +15,7 @@ public class GreaterThanString extends BinaryConditionalExpression {
   }
 
   public static GreaterThanString newInstance(SModel sm, boolean init) {
-    return (GreaterThanString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.GreaterThanString", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GreaterThanString) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.GreaterThanString", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GreaterThanString newInstance(SModel sm) {

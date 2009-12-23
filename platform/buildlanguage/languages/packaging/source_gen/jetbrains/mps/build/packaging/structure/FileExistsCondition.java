@@ -44,7 +44,7 @@ public class FileExistsCondition extends BaseConcept implements ICondition {
   }
 
   public NonExistingPath getPathToCheck() {
-    return (NonExistingPath)this.getChild(NonExistingPath.class, FileExistsCondition.PATH_TO_CHECK);
+    return (NonExistingPath) this.getChild(NonExistingPath.class, FileExistsCondition.PATH_TO_CHECK);
   }
 
   public void setPathToCheck(NonExistingPath node) {
@@ -52,7 +52,7 @@ public class FileExistsCondition extends BaseConcept implements ICondition {
   }
 
   public static FileExistsCondition newInstance(SModel sm, boolean init) {
-    return (FileExistsCondition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.FileExistsCondition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FileExistsCondition) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.FileExistsCondition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FileExistsCondition newInstance(SModel sm) {

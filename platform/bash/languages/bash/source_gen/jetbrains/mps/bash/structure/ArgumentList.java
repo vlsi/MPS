@@ -15,7 +15,7 @@ public class ArgumentList extends ExternalOptionDeclaration {
   }
 
   public static ArgumentList newInstance(SModel sm, boolean init) {
-    return (ArgumentList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ArgumentList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ArgumentList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ArgumentList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ArgumentList newInstance(SModel sm) {

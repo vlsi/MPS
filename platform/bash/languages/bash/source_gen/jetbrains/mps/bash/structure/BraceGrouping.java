@@ -15,7 +15,7 @@ public class BraceGrouping extends GroupingCommand {
   }
 
   public static BraceGrouping newInstance(SModel sm, boolean init) {
-    return (BraceGrouping)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BraceGrouping", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BraceGrouping) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BraceGrouping", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BraceGrouping newInstance(SModel sm) {

@@ -14,7 +14,7 @@ import jetbrains.mps.MPSProjectHolder;
 
 public class AntRunner {
   public static void runAntScript(MPSProject mpsProject, final SNode antScript, File file, BaseTool buildTool) {
-    BuildScriptRunnerComponent component = (BuildScriptRunnerComponent)buildTool.getComponent();
+    BuildScriptRunnerComponent component = (BuildScriptRunnerComponent) buildTool.getComponent();
     component.clean();
     BuildScriptRunner runner = new BuildScriptRunner(component);
     final Wrappers._T<SNodePointer> pointer = new Wrappers._T<SNodePointer>();

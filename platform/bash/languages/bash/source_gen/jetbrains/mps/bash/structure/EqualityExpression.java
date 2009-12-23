@@ -15,7 +15,7 @@ public class EqualityExpression extends BinaryArithmeticExpression {
   }
 
   public static EqualityExpression newInstance(SModel sm, boolean init) {
-    return (EqualityExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.EqualityExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EqualityExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.EqualityExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EqualityExpression newInstance(SModel sm) {

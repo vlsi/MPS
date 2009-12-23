@@ -56,7 +56,7 @@ public class AbstractCall extends BaseConcept implements IProjectComponent, ICom
   }
 
   public PropertyValueExpression getInternalText() {
-    return (PropertyValueExpression)this.getChild(PropertyValueExpression.class, AbstractCall.INTERNAL_TEXT);
+    return (PropertyValueExpression) this.getChild(PropertyValueExpression.class, AbstractCall.INTERNAL_TEXT);
   }
 
   public void setInternalText(PropertyValueExpression node) {
@@ -84,7 +84,7 @@ public class AbstractCall extends BaseConcept implements IProjectComponent, ICom
   }
 
   public static AbstractCall newInstance(SModel sm, boolean init) {
-    return (AbstractCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.AbstractCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.AbstractCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractCall newInstance(SModel sm) {

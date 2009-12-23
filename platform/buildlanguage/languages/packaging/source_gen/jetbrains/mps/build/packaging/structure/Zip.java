@@ -91,7 +91,7 @@ public class Zip extends AbstractProjectComponent implements ICompositeComponent
   }
 
   public Delete getDelete() {
-    return (Delete)this.getChild(Delete.class, Zip.DELETE);
+    return (Delete) this.getChild(Delete.class, Zip.DELETE);
   }
 
   public void setDelete(Delete node) {
@@ -119,7 +119,7 @@ public class Zip extends AbstractProjectComponent implements ICompositeComponent
   }
 
   public static Zip newInstance(SModel sm, boolean init) {
-    return (Zip)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Zip", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Zip) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Zip", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Zip newInstance(SModel sm) {

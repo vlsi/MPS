@@ -78,7 +78,7 @@ public class MPSBuild extends AbstractProjectComponent implements ICompositeComp
   }
 
   public Path getPathToBuildToolsZip() {
-    return (Path)this.getChild(Path.class, MPSBuild.PATH_TO_BUILD_TOOLS_ZIP);
+    return (Path) this.getChild(Path.class, MPSBuild.PATH_TO_BUILD_TOOLS_ZIP);
   }
 
   public void setPathToBuildToolsZip(Path node) {
@@ -86,7 +86,7 @@ public class MPSBuild extends AbstractProjectComponent implements ICompositeComp
   }
 
   public Path getLicencePath() {
-    return (Path)this.getChild(Path.class, MPSBuild.LICENCE_PATH);
+    return (Path) this.getChild(Path.class, MPSBuild.LICENCE_PATH);
   }
 
   public void setLicencePath(Path node) {
@@ -114,7 +114,7 @@ public class MPSBuild extends AbstractProjectComponent implements ICompositeComp
   }
 
   public static MPSBuild newInstance(SModel sm, boolean init) {
-    return (MPSBuild)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommps.structure.MPSBuild", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MPSBuild) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommps.structure.MPSBuild", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MPSBuild newInstance(SModel sm) {

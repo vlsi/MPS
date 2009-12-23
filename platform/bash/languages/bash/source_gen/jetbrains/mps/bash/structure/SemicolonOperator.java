@@ -15,7 +15,7 @@ public class SemicolonOperator extends FollowingCommandList {
   }
 
   public static SemicolonOperator newInstance(SModel sm, boolean init) {
-    return (SemicolonOperator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SemicolonOperator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SemicolonOperator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SemicolonOperator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SemicolonOperator newInstance(SModel sm) {

@@ -18,7 +18,7 @@ public class ConditionalOperation extends ArithmeticExpression {
   }
 
   public ArithmeticExpression getTestExpression() {
-    return (ArithmeticExpression)this.getChild(ArithmeticExpression.class, ConditionalOperation.TEST_EXPRESSION);
+    return (ArithmeticExpression) this.getChild(ArithmeticExpression.class, ConditionalOperation.TEST_EXPRESSION);
   }
 
   public void setTestExpression(ArithmeticExpression node) {
@@ -26,7 +26,7 @@ public class ConditionalOperation extends ArithmeticExpression {
   }
 
   public ArithmeticExpression getIfTrue() {
-    return (ArithmeticExpression)this.getChild(ArithmeticExpression.class, ConditionalOperation.IF_TRUE);
+    return (ArithmeticExpression) this.getChild(ArithmeticExpression.class, ConditionalOperation.IF_TRUE);
   }
 
   public void setIfTrue(ArithmeticExpression node) {
@@ -34,7 +34,7 @@ public class ConditionalOperation extends ArithmeticExpression {
   }
 
   public ArithmeticExpression getIfFalse() {
-    return (ArithmeticExpression)this.getChild(ArithmeticExpression.class, ConditionalOperation.IF_FALSE);
+    return (ArithmeticExpression) this.getChild(ArithmeticExpression.class, ConditionalOperation.IF_FALSE);
   }
 
   public void setIfFalse(ArithmeticExpression node) {
@@ -42,7 +42,7 @@ public class ConditionalOperation extends ArithmeticExpression {
   }
 
   public static ConditionalOperation newInstance(SModel sm, boolean init) {
-    return (ConditionalOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ConditionalOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConditionalOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ConditionalOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConditionalOperation newInstance(SModel sm) {

@@ -42,7 +42,7 @@ public class QuotesCommandSubstitution extends BaseCommandSubstitution implement
   }
 
   public static QuotesCommandSubstitution newInstance(SModel sm, boolean init) {
-    return (QuotesCommandSubstitution)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.QuotesCommandSubstitution", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QuotesCommandSubstitution) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.QuotesCommandSubstitution", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QuotesCommandSubstitution newInstance(SModel sm) {

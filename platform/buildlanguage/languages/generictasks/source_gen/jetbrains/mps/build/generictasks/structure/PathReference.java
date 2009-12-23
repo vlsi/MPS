@@ -16,7 +16,7 @@ public class PathReference extends CallReference {
   }
 
   public static PathReference newInstance(SModel sm, boolean init) {
-    return (PathReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.generictasks.structure.PathReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PathReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.generictasks.structure.PathReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PathReference newInstance(SModel sm) {

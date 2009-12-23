@@ -15,7 +15,7 @@ public class UnaryMinusExpression extends UnaryArithmeticExpression {
   }
 
   public static UnaryMinusExpression newInstance(SModel sm, boolean init) {
-    return (UnaryMinusExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.UnaryMinusExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UnaryMinusExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.UnaryMinusExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UnaryMinusExpression newInstance(SModel sm) {

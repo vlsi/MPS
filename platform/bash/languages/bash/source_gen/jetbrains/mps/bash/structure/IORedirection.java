@@ -52,7 +52,7 @@ public class IORedirection extends Redirection implements IToWordRedirection {
   }
 
   public GeneralizedWord getWord() {
-    return (GeneralizedWord)this.getChild(GeneralizedWord.class, IORedirection.WORD);
+    return (GeneralizedWord) this.getChild(GeneralizedWord.class, IORedirection.WORD);
   }
 
   public void setWord(GeneralizedWord node) {
@@ -60,7 +60,7 @@ public class IORedirection extends Redirection implements IToWordRedirection {
   }
 
   public static IORedirection newInstance(SModel sm, boolean init) {
-    return (IORedirection)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.IORedirection", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IORedirection) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.IORedirection", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IORedirection newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class SizeConditionalExpression extends UnaryConditionalExpression {
   }
 
   public static SizeConditionalExpression newInstance(SModel sm, boolean init) {
-    return (SizeConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SizeConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SizeConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SizeConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SizeConditionalExpression newInstance(SModel sm) {

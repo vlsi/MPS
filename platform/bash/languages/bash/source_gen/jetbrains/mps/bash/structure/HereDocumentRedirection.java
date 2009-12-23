@@ -27,7 +27,7 @@ public class HereDocumentRedirection extends Redirection {
   }
 
   public SimpleWord getWord() {
-    return (SimpleWord)this.getChild(SimpleWord.class, HereDocumentRedirection.WORD);
+    return (SimpleWord) this.getChild(SimpleWord.class, HereDocumentRedirection.WORD);
   }
 
   public void setWord(SimpleWord node) {
@@ -35,7 +35,7 @@ public class HereDocumentRedirection extends Redirection {
   }
 
   public GeneralizedWord getHeredocument() {
-    return (GeneralizedWord)this.getChild(GeneralizedWord.class, HereDocumentRedirection.HEREDOCUMENT);
+    return (GeneralizedWord) this.getChild(GeneralizedWord.class, HereDocumentRedirection.HEREDOCUMENT);
   }
 
   public void setHeredocument(GeneralizedWord node) {
@@ -43,7 +43,7 @@ public class HereDocumentRedirection extends Redirection {
   }
 
   public SimpleWord getDelimiter() {
-    return (SimpleWord)this.getChild(SimpleWord.class, HereDocumentRedirection.DELIMITER);
+    return (SimpleWord) this.getChild(SimpleWord.class, HereDocumentRedirection.DELIMITER);
   }
 
   public void setDelimiter(SimpleWord node) {
@@ -51,7 +51,7 @@ public class HereDocumentRedirection extends Redirection {
   }
 
   public static HereDocumentRedirection newInstance(SModel sm, boolean init) {
-    return (HereDocumentRedirection)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.HereDocumentRedirection", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (HereDocumentRedirection) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.HereDocumentRedirection", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static HereDocumentRedirection newInstance(SModel sm) {

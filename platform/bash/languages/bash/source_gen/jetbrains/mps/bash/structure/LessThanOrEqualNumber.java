@@ -15,7 +15,7 @@ public class LessThanOrEqualNumber extends BinaryConditionalExpression {
   }
 
   public static LessThanOrEqualNumber newInstance(SModel sm, boolean init) {
-    return (LessThanOrEqualNumber)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LessThanOrEqualNumber", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LessThanOrEqualNumber) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LessThanOrEqualNumber", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LessThanOrEqualNumber newInstance(SModel sm) {

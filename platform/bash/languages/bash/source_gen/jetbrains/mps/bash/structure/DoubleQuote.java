@@ -15,7 +15,7 @@ public class DoubleQuote extends QuotedWord {
   }
 
   public static DoubleQuote newInstance(SModel sm, boolean init) {
-    return (DoubleQuote)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.DoubleQuote", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DoubleQuote) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.DoubleQuote", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DoubleQuote newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class SubExpression extends BinaryArithmeticExpression {
   }
 
   public static SubExpression newInstance(SModel sm, boolean init) {
-    return (SubExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SubExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SubExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SubExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SubExpression newInstance(SModel sm) {

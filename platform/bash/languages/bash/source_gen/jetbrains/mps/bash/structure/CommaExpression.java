@@ -15,7 +15,7 @@ public class CommaExpression extends BinaryArithmeticExpression {
   }
 
   public static CommaExpression newInstance(SModel sm, boolean init) {
-    return (CommaExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CommaExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CommaExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CommaExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CommaExpression newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class ImportPropertiesFromFile extends AbstractImportProperties {
   }
 
   public PropertyValueExpression getPropertyFile() {
-    return (PropertyValueExpression)this.getChild(PropertyValueExpression.class, ImportPropertiesFromFile.PROPERTY_FILE);
+    return (PropertyValueExpression) this.getChild(PropertyValueExpression.class, ImportPropertiesFromFile.PROPERTY_FILE);
   }
 
   public void setPropertyFile(PropertyValueExpression node) {
@@ -24,7 +24,7 @@ public class ImportPropertiesFromFile extends AbstractImportProperties {
   }
 
   public static ImportPropertiesFromFile newInstance(SModel sm, boolean init) {
-    return (ImportPropertiesFromFile)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.ImportPropertiesFromFile", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ImportPropertiesFromFile) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.ImportPropertiesFromFile", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ImportPropertiesFromFile newInstance(SModel sm) {

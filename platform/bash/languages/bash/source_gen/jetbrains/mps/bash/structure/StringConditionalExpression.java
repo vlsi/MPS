@@ -16,7 +16,7 @@ public class StringConditionalExpression extends ConditionalExpression {
   }
 
   public GeneralizedWord getString() {
-    return (GeneralizedWord)this.getChild(GeneralizedWord.class, StringConditionalExpression.STRING);
+    return (GeneralizedWord) this.getChild(GeneralizedWord.class, StringConditionalExpression.STRING);
   }
 
   public void setString(GeneralizedWord node) {
@@ -24,7 +24,7 @@ public class StringConditionalExpression extends ConditionalExpression {
   }
 
   public static StringConditionalExpression newInstance(SModel sm, boolean init) {
-    return (StringConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.StringConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StringConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.StringConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StringConditionalExpression newInstance(SModel sm) {

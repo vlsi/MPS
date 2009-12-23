@@ -45,7 +45,7 @@ public class QuotedWord extends BaseConcept implements IGeneralizedWordUnit, ICo
   }
 
   public GeneralizedWord getWord() {
-    return (GeneralizedWord)this.getChild(GeneralizedWord.class, QuotedWord.WORD);
+    return (GeneralizedWord) this.getChild(GeneralizedWord.class, QuotedWord.WORD);
   }
 
   public void setWord(GeneralizedWord node) {
@@ -53,7 +53,7 @@ public class QuotedWord extends BaseConcept implements IGeneralizedWordUnit, ICo
   }
 
   public static QuotedWord newInstance(SModel sm, boolean init) {
-    return (QuotedWord)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.QuotedWord", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QuotedWord) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.QuotedWord", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QuotedWord newInstance(SModel sm) {

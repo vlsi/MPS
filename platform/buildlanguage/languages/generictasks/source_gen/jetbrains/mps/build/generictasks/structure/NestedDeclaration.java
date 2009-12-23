@@ -38,7 +38,7 @@ public class NestedDeclaration extends TaskReference {
   }
 
   public static NestedDeclaration newInstance(SModel sm, boolean init) {
-    return (NestedDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.generictasks.structure.NestedDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NestedDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.generictasks.structure.NestedDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NestedDeclaration newInstance(SModel sm) {

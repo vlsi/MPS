@@ -70,7 +70,7 @@ public class OptionWithParam extends ExternalOptionDeclaration implements ISymbo
   }
 
   public static OptionWithParam newInstance(SModel sm, boolean init) {
-    return (OptionWithParam)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OptionWithParam", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OptionWithParam) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OptionWithParam", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OptionWithParam newInstance(SModel sm) {

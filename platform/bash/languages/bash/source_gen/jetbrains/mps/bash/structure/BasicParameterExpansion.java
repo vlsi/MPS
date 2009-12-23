@@ -43,7 +43,7 @@ public class BasicParameterExpansion extends ArithmeticExpression implements IGe
   }
 
   public VariableNameDeclaration getVariable() {
-    return (VariableNameDeclaration)this.getReferent(VariableNameDeclaration.class, BasicParameterExpansion.VARIABLE);
+    return (VariableNameDeclaration) this.getReferent(VariableNameDeclaration.class, BasicParameterExpansion.VARIABLE);
   }
 
   public void setVariable(VariableNameDeclaration node) {
@@ -51,7 +51,7 @@ public class BasicParameterExpansion extends ArithmeticExpression implements IGe
   }
 
   public static BasicParameterExpansion newInstance(SModel sm, boolean init) {
-    return (BasicParameterExpansion)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BasicParameterExpansion", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BasicParameterExpansion) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BasicParameterExpansion", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BasicParameterExpansion newInstance(SModel sm) {

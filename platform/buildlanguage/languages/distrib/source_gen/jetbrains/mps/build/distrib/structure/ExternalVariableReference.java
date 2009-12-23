@@ -46,7 +46,7 @@ public class ExternalVariableReference extends PropertyValueExpression implement
   }
 
   public Variable getVariable() {
-    return (Variable)this.getReferent(Variable.class, ExternalVariableReference.VARIABLE);
+    return (Variable) this.getReferent(Variable.class, ExternalVariableReference.VARIABLE);
   }
 
   public void setVariable(Variable node) {
@@ -54,7 +54,7 @@ public class ExternalVariableReference extends PropertyValueExpression implement
   }
 
   public static ExternalVariableReference newInstance(SModel sm, boolean init) {
-    return (ExternalVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.ExternalVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExternalVariableReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.ExternalVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExternalVariableReference newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class NewModuleReference extends BaseConcept {
   }
 
   public Module getModule() {
-    return (Module)this.getReferent(Module.class, NewModuleReference.MODULE);
+    return (Module) this.getReferent(Module.class, NewModuleReference.MODULE);
   }
 
   public void setModule(Module node) {
@@ -25,7 +25,7 @@ public class NewModuleReference extends BaseConcept {
   }
 
   public static NewModuleReference newInstance(SModel sm, boolean init) {
-    return (NewModuleReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.NewModuleReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NewModuleReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.NewModuleReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NewModuleReference newInstance(SModel sm) {

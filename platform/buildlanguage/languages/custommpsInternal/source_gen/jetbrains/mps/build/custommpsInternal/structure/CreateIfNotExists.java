@@ -26,7 +26,7 @@ public class CreateIfNotExists extends AbstractProjectComponent {
   }
 
   public AbstractProjectComponent getCreate() {
-    return (AbstractProjectComponent)this.getChild(AbstractProjectComponent.class, CreateIfNotExists.CREATE);
+    return (AbstractProjectComponent) this.getChild(AbstractProjectComponent.class, CreateIfNotExists.CREATE);
   }
 
   public void setCreate(AbstractProjectComponent node) {
@@ -34,7 +34,7 @@ public class CreateIfNotExists extends AbstractProjectComponent {
   }
 
   public static CreateIfNotExists newInstance(SModel sm, boolean init) {
-    return (CreateIfNotExists)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommpsInternal.structure.CreateIfNotExists", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CreateIfNotExists) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommpsInternal.structure.CreateIfNotExists", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CreateIfNotExists newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class FunctionCallCommand extends AbstractCommand {
   }
 
   public FunctionDeclaration getFunction() {
-    return (FunctionDeclaration)this.getReferent(FunctionDeclaration.class, FunctionCallCommand.FUNCTION);
+    return (FunctionDeclaration) this.getReferent(FunctionDeclaration.class, FunctionCallCommand.FUNCTION);
   }
 
   public void setFunction(FunctionDeclaration node) {
@@ -25,7 +25,7 @@ public class FunctionCallCommand extends AbstractCommand {
   }
 
   public WordList getParams() {
-    return (WordList)this.getChild(WordList.class, FunctionCallCommand.PARAMS);
+    return (WordList) this.getChild(WordList.class, FunctionCallCommand.PARAMS);
   }
 
   public void setParams(WordList node) {
@@ -33,7 +33,7 @@ public class FunctionCallCommand extends AbstractCommand {
   }
 
   public static FunctionCallCommand newInstance(SModel sm, boolean init) {
-    return (FunctionCallCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.FunctionCallCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FunctionCallCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.FunctionCallCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FunctionCallCommand newInstance(SModel sm) {

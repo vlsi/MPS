@@ -15,7 +15,7 @@ public class StringEnum extends Enum {
   }
 
   public static StringEnum newInstance(SModel sm, boolean init) {
-    return (StringEnum)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.StringEnum", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StringEnum) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.StringEnum", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StringEnum newInstance(SModel sm) {

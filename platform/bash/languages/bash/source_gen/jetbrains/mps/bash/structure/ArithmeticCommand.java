@@ -43,7 +43,7 @@ public class ArithmeticCommand extends AbstractCommand implements ICompoundComma
   }
 
   public ArithmeticExpression getExpression() {
-    return (ArithmeticExpression)this.getChild(ArithmeticExpression.class, ArithmeticCommand.EXPRESSION);
+    return (ArithmeticExpression) this.getChild(ArithmeticExpression.class, ArithmeticCommand.EXPRESSION);
   }
 
   public void setExpression(ArithmeticExpression node) {
@@ -51,7 +51,7 @@ public class ArithmeticCommand extends AbstractCommand implements ICompoundComma
   }
 
   public static ArithmeticCommand newInstance(SModel sm, boolean init) {
-    return (ArithmeticCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ArithmeticCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ArithmeticCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ArithmeticCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ArithmeticCommand newInstance(SModel sm) {

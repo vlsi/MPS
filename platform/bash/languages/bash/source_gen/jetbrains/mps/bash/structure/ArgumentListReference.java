@@ -38,7 +38,7 @@ public class ArgumentListReference extends ExternalOptionReference {
   }
 
   public static ArgumentListReference newInstance(SModel sm, boolean init) {
-    return (ArgumentListReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ArgumentListReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ArgumentListReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ArgumentListReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ArgumentListReference newInstance(SModel sm) {

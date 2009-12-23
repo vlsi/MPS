@@ -25,7 +25,7 @@ public class Module extends AbstractProjectComponent {
   }
 
   public ModuleCycle getCycle() {
-    return (ModuleCycle)this.getReferent(ModuleCycle.class, Module.CYCLE);
+    return (ModuleCycle) this.getReferent(ModuleCycle.class, Module.CYCLE);
   }
 
   public void setCycle(ModuleCycle node) {
@@ -33,7 +33,7 @@ public class Module extends AbstractProjectComponent {
   }
 
   public static Module newInstance(SModel sm, boolean init) {
-    return (Module)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Module", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Module) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Module", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Module newInstance(SModel sm) {

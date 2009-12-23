@@ -15,7 +15,7 @@ public class InequalityExpression extends BinaryArithmeticExpression {
   }
 
   public static InequalityExpression newInstance(SModel sm, boolean init) {
-    return (InequalityExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.InequalityExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InequalityExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.InequalityExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InequalityExpression newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class IntegerEnum extends Enum {
   }
 
   public static IntegerEnum newInstance(SModel sm, boolean init) {
-    return (IntegerEnum)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.IntegerEnum", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntegerEnum) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.IntegerEnum", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntegerEnum newInstance(SModel sm) {

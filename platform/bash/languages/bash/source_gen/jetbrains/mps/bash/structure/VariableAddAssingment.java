@@ -15,7 +15,7 @@ public class VariableAddAssingment extends BaseVariableAssingment {
   }
 
   public static VariableAddAssingment newInstance(SModel sm, boolean init) {
-    return (VariableAddAssingment)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.VariableAddAssingment", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VariableAddAssingment) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.VariableAddAssingment", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VariableAddAssingment newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class ExecTestConditionalExpression extends UnaryConditionalExpression {
   }
 
   public static ExecTestConditionalExpression newInstance(SModel sm, boolean init) {
-    return (ExecTestConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ExecTestConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExecTestConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ExecTestConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExecTestConditionalExpression newInstance(SModel sm) {

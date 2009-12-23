@@ -33,7 +33,7 @@ public class BasedIntegerLiteral extends IntegerLiteral {
   }
 
   public static BasedIntegerLiteral newInstance(SModel sm, boolean init) {
-    return (BasedIntegerLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BasedIntegerLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BasedIntegerLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BasedIntegerLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BasedIntegerLiteral newInstance(SModel sm) {

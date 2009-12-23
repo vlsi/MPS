@@ -38,7 +38,7 @@ public class Replace extends File {
   }
 
   public static Replace newInstance(SModel sm, boolean init) {
-    return (Replace)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Replace", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Replace) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Replace", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Replace newInstance(SModel sm) {

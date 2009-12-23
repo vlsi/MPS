@@ -15,7 +15,7 @@ public class SingleQuote extends QuotedWord {
   }
 
   public static SingleQuote newInstance(SModel sm, boolean init) {
-    return (SingleQuote)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SingleQuote", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SingleQuote) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SingleQuote", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SingleQuote newInstance(SModel sm) {

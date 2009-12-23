@@ -21,7 +21,7 @@ public class DigitalSignatureWindowsConfiguration extends BaseConcept {
   }
 
   public IPath getPathToExecutable() {
-    return (IPath)this.getChild(IPath.class, DigitalSignatureWindowsConfiguration.PATH_TO_EXECUTABLE);
+    return (IPath) this.getChild(IPath.class, DigitalSignatureWindowsConfiguration.PATH_TO_EXECUTABLE);
   }
 
   public void setPathToExecutable(IPath node) {
@@ -49,7 +49,7 @@ public class DigitalSignatureWindowsConfiguration extends BaseConcept {
   }
 
   public static DigitalSignatureWindowsConfiguration newInstance(SModel sm, boolean init) {
-    return (DigitalSignatureWindowsConfiguration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DigitalSignatureWindowsConfiguration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.DigitalSignatureWindowsConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DigitalSignatureWindowsConfiguration newInstance(SModel sm) {

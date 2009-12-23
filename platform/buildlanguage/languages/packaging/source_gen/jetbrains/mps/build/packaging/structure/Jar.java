@@ -16,7 +16,7 @@ public class Jar extends Zip {
   }
 
   public Manifest getManifest() {
-    return (Manifest)this.getChild(Manifest.class, Jar.MANIFEST);
+    return (Manifest) this.getChild(Manifest.class, Jar.MANIFEST);
   }
 
   public void setManifest(Manifest node) {
@@ -24,7 +24,7 @@ public class Jar extends Zip {
   }
 
   public static Jar newInstance(SModel sm, boolean init) {
-    return (Jar)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Jar", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Jar) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Jar", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Jar newInstance(SModel sm) {

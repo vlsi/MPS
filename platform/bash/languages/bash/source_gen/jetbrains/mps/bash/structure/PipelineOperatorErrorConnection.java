@@ -15,7 +15,7 @@ public class PipelineOperatorErrorConnection extends FollowingPipeline {
   }
 
   public static PipelineOperatorErrorConnection newInstance(SModel sm, boolean init) {
-    return (PipelineOperatorErrorConnection)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PipelineOperatorErrorConnection", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PipelineOperatorErrorConnection) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PipelineOperatorErrorConnection", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PipelineOperatorErrorConnection newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class MinusAssingmentExpression extends BaseAssingmentExpression {
   }
 
   public static MinusAssingmentExpression newInstance(SModel sm, boolean init) {
-    return (MinusAssingmentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.MinusAssingmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MinusAssingmentExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.MinusAssingmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MinusAssingmentExpression newInstance(SModel sm) {

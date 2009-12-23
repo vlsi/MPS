@@ -15,7 +15,7 @@ public class OtherSymlinkConditionalExpression extends UnaryConditionalExpressio
   }
 
   public static OtherSymlinkConditionalExpression newInstance(SModel sm, boolean init) {
-    return (OtherSymlinkConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OtherSymlinkConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OtherSymlinkConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OtherSymlinkConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OtherSymlinkConditionalExpression newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class NotCommand extends AbstractCommand {
   }
 
   public AbstractCommand getCommand() {
-    return (AbstractCommand)this.getChild(AbstractCommand.class, NotCommand.COMMAND);
+    return (AbstractCommand) this.getChild(AbstractCommand.class, NotCommand.COMMAND);
   }
 
   public void setCommand(AbstractCommand node) {
@@ -24,7 +24,7 @@ public class NotCommand extends AbstractCommand {
   }
 
   public static NotCommand newInstance(SModel sm, boolean init) {
-    return (NotCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.NotCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NotCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.NotCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NotCommand newInstance(SModel sm) {

@@ -26,7 +26,7 @@ public class WindowsConfig extends SystemSpecificConfig {
   }
 
   public IPath getLicense() {
-    return (IPath)this.getChild(IPath.class, WindowsConfig.LICENSE);
+    return (IPath) this.getChild(IPath.class, WindowsConfig.LICENSE);
   }
 
   public void setLicense(IPath node) {
@@ -34,7 +34,7 @@ public class WindowsConfig extends SystemSpecificConfig {
   }
 
   public IPath getPathToNsisZipFile() {
-    return (IPath)this.getChild(IPath.class, WindowsConfig.PATH_TO_NSIS_ZIP_FILE);
+    return (IPath) this.getChild(IPath.class, WindowsConfig.PATH_TO_NSIS_ZIP_FILE);
   }
 
   public void setPathToNsisZipFile(IPath node) {
@@ -42,7 +42,7 @@ public class WindowsConfig extends SystemSpecificConfig {
   }
 
   public IPath getApplicationIcon() {
-    return (IPath)this.getChild(IPath.class, WindowsConfig.APPLICATION_ICON);
+    return (IPath) this.getChild(IPath.class, WindowsConfig.APPLICATION_ICON);
   }
 
   public void setApplicationIcon(IPath node) {
@@ -50,7 +50,7 @@ public class WindowsConfig extends SystemSpecificConfig {
   }
 
   public IPath getHomepageIcon() {
-    return (IPath)this.getChild(IPath.class, WindowsConfig.HOMEPAGE_ICON);
+    return (IPath) this.getChild(IPath.class, WindowsConfig.HOMEPAGE_ICON);
   }
 
   public void setHomepageIcon(IPath node) {
@@ -58,7 +58,7 @@ public class WindowsConfig extends SystemSpecificConfig {
   }
 
   public IPath getInstallerIcon() {
-    return (IPath)this.getChild(IPath.class, WindowsConfig.INSTALLER_ICON);
+    return (IPath) this.getChild(IPath.class, WindowsConfig.INSTALLER_ICON);
   }
 
   public void setInstallerIcon(IPath node) {
@@ -66,7 +66,7 @@ public class WindowsConfig extends SystemSpecificConfig {
   }
 
   public IPath getUninstallerIcon() {
-    return (IPath)this.getChild(IPath.class, WindowsConfig.UNINSTALLER_ICON);
+    return (IPath) this.getChild(IPath.class, WindowsConfig.UNINSTALLER_ICON);
   }
 
   public void setUninstallerIcon(IPath node) {
@@ -74,7 +74,7 @@ public class WindowsConfig extends SystemSpecificConfig {
   }
 
   public IPath getEmbeddedJrePath() {
-    return (IPath)this.getChild(IPath.class, WindowsConfig.EMBEDDED_JRE_PATH);
+    return (IPath) this.getChild(IPath.class, WindowsConfig.EMBEDDED_JRE_PATH);
   }
 
   public void setEmbeddedJrePath(IPath node) {
@@ -82,7 +82,7 @@ public class WindowsConfig extends SystemSpecificConfig {
   }
 
   public AbstractPath getSettingsDir() {
-    return (AbstractPath)this.getChild(AbstractPath.class, WindowsConfig.SETTINGS_DIR);
+    return (AbstractPath) this.getChild(AbstractPath.class, WindowsConfig.SETTINGS_DIR);
   }
 
   public void setSettingsDir(AbstractPath node) {
@@ -90,7 +90,7 @@ public class WindowsConfig extends SystemSpecificConfig {
   }
 
   public AbstractPath getExamplesDir() {
-    return (AbstractPath)this.getChild(AbstractPath.class, WindowsConfig.EXAMPLES_DIR);
+    return (AbstractPath) this.getChild(AbstractPath.class, WindowsConfig.EXAMPLES_DIR);
   }
 
   public void setExamplesDir(AbstractPath node) {
@@ -98,7 +98,7 @@ public class WindowsConfig extends SystemSpecificConfig {
   }
 
   public DigitalSignatureWindowsConfiguration getSignatureConfiguration() {
-    return (DigitalSignatureWindowsConfiguration)this.getChild(DigitalSignatureWindowsConfiguration.class, WindowsConfig.SIGNATURE_CONFIGURATION);
+    return (DigitalSignatureWindowsConfiguration) this.getChild(DigitalSignatureWindowsConfiguration.class, WindowsConfig.SIGNATURE_CONFIGURATION);
   }
 
   public void setSignatureConfiguration(DigitalSignatureWindowsConfiguration node) {
@@ -106,7 +106,7 @@ public class WindowsConfig extends SystemSpecificConfig {
   }
 
   public static WindowsConfig newInstance(SModel sm, boolean init) {
-    return (WindowsConfig)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.WindowsConfig", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WindowsConfig) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.WindowsConfig", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WindowsConfig newInstance(SModel sm) {

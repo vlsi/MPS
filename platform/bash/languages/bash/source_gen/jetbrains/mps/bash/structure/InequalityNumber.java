@@ -15,7 +15,7 @@ public class InequalityNumber extends BinaryConditionalExpression {
   }
 
   public static InequalityNumber newInstance(SModel sm, boolean init) {
-    return (InequalityNumber)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.InequalityNumber", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InequalityNumber) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.InequalityNumber", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InequalityNumber newInstance(SModel sm) {

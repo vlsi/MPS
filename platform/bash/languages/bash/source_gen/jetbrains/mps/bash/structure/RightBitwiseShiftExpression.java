@@ -15,7 +15,7 @@ public class RightBitwiseShiftExpression extends BinaryArithmeticExpression {
   }
 
   public static RightBitwiseShiftExpression newInstance(SModel sm, boolean init) {
-    return (RightBitwiseShiftExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.RightBitwiseShiftExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RightBitwiseShiftExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.RightBitwiseShiftExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RightBitwiseShiftExpression newInstance(SModel sm) {

@@ -10,6 +10,6 @@ public class Generictasks_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

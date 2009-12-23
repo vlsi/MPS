@@ -17,7 +17,7 @@ public class FollowingCommandList extends AbstractFollowingCommandList {
   }
 
   public HeadCommandList getBaseCommand() {
-    return (HeadCommandList)this.getChild(HeadCommandList.class, FollowingCommandList.BASE_COMMAND);
+    return (HeadCommandList) this.getChild(HeadCommandList.class, FollowingCommandList.BASE_COMMAND);
   }
 
   public void setBaseCommand(HeadCommandList node) {
@@ -25,7 +25,7 @@ public class FollowingCommandList extends AbstractFollowingCommandList {
   }
 
   public static FollowingCommandList newInstance(SModel sm, boolean init) {
-    return (FollowingCommandList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.FollowingCommandList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FollowingCommandList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.FollowingCommandList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FollowingCommandList newInstance(SModel sm) {

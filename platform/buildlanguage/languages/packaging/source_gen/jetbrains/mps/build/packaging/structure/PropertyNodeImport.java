@@ -17,7 +17,7 @@ public class PropertyNodeImport extends PropertiesImport {
   }
 
   public PropertyNode getPropertyNode() {
-    return (PropertyNode)this.getReferent(PropertyNode.class, PropertyNodeImport.PROPERTY_NODE);
+    return (PropertyNode) this.getReferent(PropertyNode.class, PropertyNodeImport.PROPERTY_NODE);
   }
 
   public void setPropertyNode(PropertyNode node) {
@@ -25,7 +25,7 @@ public class PropertyNodeImport extends PropertiesImport {
   }
 
   public static PropertyNodeImport newInstance(SModel sm, boolean init) {
-    return (PropertyNodeImport)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PropertyNodeImport", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyNodeImport) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PropertyNodeImport", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyNodeImport newInstance(SModel sm) {

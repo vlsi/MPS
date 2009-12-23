@@ -45,7 +45,7 @@ public class BinaryArithmeticExpression extends ArithmeticExpression implements 
   }
 
   public ArithmeticExpression getLeftExpression() {
-    return (ArithmeticExpression)this.getChild(ArithmeticExpression.class, BinaryArithmeticExpression.LEFT_EXPRESSION);
+    return (ArithmeticExpression) this.getChild(ArithmeticExpression.class, BinaryArithmeticExpression.LEFT_EXPRESSION);
   }
 
   public void setLeftExpression(ArithmeticExpression node) {
@@ -53,7 +53,7 @@ public class BinaryArithmeticExpression extends ArithmeticExpression implements 
   }
 
   public ArithmeticExpression getRightExpression() {
-    return (ArithmeticExpression)this.getChild(ArithmeticExpression.class, BinaryArithmeticExpression.RIGHT_EXPRESSION);
+    return (ArithmeticExpression) this.getChild(ArithmeticExpression.class, BinaryArithmeticExpression.RIGHT_EXPRESSION);
   }
 
   public void setRightExpression(ArithmeticExpression node) {
@@ -61,7 +61,7 @@ public class BinaryArithmeticExpression extends ArithmeticExpression implements 
   }
 
   public static BinaryArithmeticExpression newInstance(SModel sm, boolean init) {
-    return (BinaryArithmeticExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BinaryArithmeticExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BinaryArithmeticExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BinaryArithmeticExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BinaryArithmeticExpression newInstance(SModel sm) {

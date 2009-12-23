@@ -52,7 +52,7 @@ public class CommentedText extends BaseConcept implements IComment {
   }
 
   public static CommentedText newInstance(SModel sm, boolean init) {
-    return (CommentedText)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CommentedText", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CommentedText) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CommentedText", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CommentedText newInstance(SModel sm) {

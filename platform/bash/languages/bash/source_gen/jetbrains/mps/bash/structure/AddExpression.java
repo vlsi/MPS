@@ -15,7 +15,7 @@ public class AddExpression extends BinaryArithmeticExpression {
   }
 
   public static AddExpression newInstance(SModel sm, boolean init) {
-    return (AddExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AddExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AddExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AddExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AddExpression newInstance(SModel sm) {

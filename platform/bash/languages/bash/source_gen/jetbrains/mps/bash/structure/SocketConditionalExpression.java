@@ -15,7 +15,7 @@ public class SocketConditionalExpression extends UnaryConditionalExpression {
   }
 
   public static SocketConditionalExpression newInstance(SModel sm, boolean init) {
-    return (SocketConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SocketConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SocketConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SocketConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SocketConditionalExpression newInstance(SModel sm) {

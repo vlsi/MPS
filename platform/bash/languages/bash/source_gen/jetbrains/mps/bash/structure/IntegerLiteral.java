@@ -15,7 +15,7 @@ public class IntegerLiteral extends ArithmeticExpression {
   }
 
   public static IntegerLiteral newInstance(SModel sm, boolean init) {
-    return (IntegerLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.IntegerLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntegerLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.IntegerLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntegerLiteral newInstance(SModel sm) {

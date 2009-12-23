@@ -43,7 +43,7 @@ public class ConditionalCommand extends AbstractCommand implements ICompoundComm
   }
 
   public ConditionalExpression getConditionalExpression() {
-    return (ConditionalExpression)this.getChild(ConditionalExpression.class, ConditionalCommand.CONDITIONAL_EXPRESSION);
+    return (ConditionalExpression) this.getChild(ConditionalExpression.class, ConditionalCommand.CONDITIONAL_EXPRESSION);
   }
 
   public void setConditionalExpression(ConditionalExpression node) {
@@ -51,7 +51,7 @@ public class ConditionalCommand extends AbstractCommand implements ICompoundComm
   }
 
   public static ConditionalCommand newInstance(SModel sm, boolean init) {
-    return (ConditionalCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ConditionalCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConditionalCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ConditionalCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConditionalCommand newInstance(SModel sm) {

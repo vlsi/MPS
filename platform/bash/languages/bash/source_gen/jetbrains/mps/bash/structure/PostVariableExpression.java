@@ -15,7 +15,7 @@ public class PostVariableExpression extends WordExpression {
   }
 
   public static PostVariableExpression newInstance(SModel sm, boolean init) {
-    return (PostVariableExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PostVariableExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PostVariableExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PostVariableExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PostVariableExpression newInstance(SModel sm) {

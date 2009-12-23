@@ -15,7 +15,7 @@ public class MulExpression extends BinaryArithmeticExpression {
   }
 
   public static MulExpression newInstance(SModel sm, boolean init) {
-    return (MulExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.MulExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MulExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.MulExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MulExpression newInstance(SModel sm) {

@@ -53,7 +53,7 @@ public class PropertyReference extends PropertyValueExpression implements INamed
   }
 
   public PropertyDeclaration getPropertyDeclaration() {
-    return (PropertyDeclaration)this.getReferent(PropertyDeclaration.class, PropertyReference.PROPERTY_DECLARATION);
+    return (PropertyDeclaration) this.getReferent(PropertyDeclaration.class, PropertyReference.PROPERTY_DECLARATION);
   }
 
   public void setPropertyDeclaration(PropertyDeclaration node) {
@@ -61,7 +61,7 @@ public class PropertyReference extends PropertyValueExpression implements INamed
   }
 
   public static PropertyReference newInstance(SModel sm, boolean init) {
-    return (PropertyReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PropertyReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PropertyReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyReference newInstance(SModel sm) {

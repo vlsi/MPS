@@ -38,7 +38,7 @@ public class OptionSetReference extends ExternalOptionReference {
   }
 
   public static OptionSetReference newInstance(SModel sm, boolean init) {
-    return (OptionSetReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OptionSetReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OptionSetReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OptionSetReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OptionSetReference newInstance(SModel sm) {

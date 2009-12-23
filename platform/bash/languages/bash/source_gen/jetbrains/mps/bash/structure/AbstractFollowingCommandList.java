@@ -16,7 +16,7 @@ public class AbstractFollowingCommandList extends BaseConcept {
   }
 
   public static AbstractFollowingCommandList newInstance(SModel sm, boolean init) {
-    return (AbstractFollowingCommandList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AbstractFollowingCommandList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractFollowingCommandList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AbstractFollowingCommandList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractFollowingCommandList newInstance(SModel sm) {

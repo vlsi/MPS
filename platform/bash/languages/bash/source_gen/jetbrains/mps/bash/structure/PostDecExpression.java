@@ -15,7 +15,7 @@ public class PostDecExpression extends PostVariableExpression {
   }
 
   public static PostDecExpression newInstance(SModel sm, boolean init) {
-    return (PostDecExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PostDecExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PostDecExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PostDecExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PostDecExpression newInstance(SModel sm) {

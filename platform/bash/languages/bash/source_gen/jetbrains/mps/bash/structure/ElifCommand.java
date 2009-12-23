@@ -18,7 +18,7 @@ public class ElifCommand extends BaseConcept {
   }
 
   public AbstractCommand getTestCommand() {
-    return (AbstractCommand)this.getChild(AbstractCommand.class, ElifCommand.TEST_COMMAND);
+    return (AbstractCommand) this.getChild(AbstractCommand.class, ElifCommand.TEST_COMMAND);
   }
 
   public void setTestCommand(AbstractCommand node) {
@@ -26,7 +26,7 @@ public class ElifCommand extends BaseConcept {
   }
 
   public InputLines getCommands() {
-    return (InputLines)this.getChild(InputLines.class, ElifCommand.COMMANDS);
+    return (InputLines) this.getChild(InputLines.class, ElifCommand.COMMANDS);
   }
 
   public void setCommands(InputLines node) {
@@ -34,7 +34,7 @@ public class ElifCommand extends BaseConcept {
   }
 
   public static ElifCommand newInstance(SModel sm, boolean init) {
-    return (ElifCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ElifCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ElifCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ElifCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ElifCommand newInstance(SModel sm) {

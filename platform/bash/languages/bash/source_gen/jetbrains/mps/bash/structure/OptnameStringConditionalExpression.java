@@ -15,7 +15,7 @@ public class OptnameStringConditionalExpression extends UnaryConditionalExpressi
   }
 
   public static OptnameStringConditionalExpression newInstance(SModel sm, boolean init) {
-    return (OptnameStringConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OptnameStringConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OptnameStringConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OptnameStringConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OptnameStringConditionalExpression newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class PostProcessingTask extends AbstractProjectComponent {
   }
 
   public static PostProcessingTask newInstance(SModel sm, boolean init) {
-    return (PostProcessingTask)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PostProcessingTask", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PostProcessingTask) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PostProcessingTask", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PostProcessingTask newInstance(SModel sm) {

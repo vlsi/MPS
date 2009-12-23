@@ -15,7 +15,7 @@ public class InequalityStrings extends BinaryConditionalExpression {
   }
 
   public static InequalityStrings newInstance(SModel sm, boolean init) {
-    return (InequalityStrings)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.InequalityStrings", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InequalityStrings) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.InequalityStrings", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InequalityStrings newInstance(SModel sm) {

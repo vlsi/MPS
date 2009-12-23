@@ -15,7 +15,7 @@ public class LogicalOrExpression extends BinaryArithmeticExpression {
   }
 
   public static LogicalOrExpression newInstance(SModel sm, boolean init) {
-    return (LogicalOrExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LogicalOrExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LogicalOrExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LogicalOrExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LogicalOrExpression newInstance(SModel sm) {

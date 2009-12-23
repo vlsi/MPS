@@ -15,7 +15,7 @@ public class GreaterThanExpression extends BinaryArithmeticExpression {
   }
 
   public static GreaterThanExpression newInstance(SModel sm, boolean init) {
-    return (GreaterThanExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.GreaterThanExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GreaterThanExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.GreaterThanExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GreaterThanExpression newInstance(SModel sm) {

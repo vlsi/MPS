@@ -16,7 +16,7 @@ public class WhileLoopCommand extends AbstractLoopCommand {
   }
 
   public AbstractCommand getTestCommand() {
-    return (AbstractCommand)this.getChild(AbstractCommand.class, WhileLoopCommand.TEST_COMMAND);
+    return (AbstractCommand) this.getChild(AbstractCommand.class, WhileLoopCommand.TEST_COMMAND);
   }
 
   public void setTestCommand(AbstractCommand node) {
@@ -24,7 +24,7 @@ public class WhileLoopCommand extends AbstractLoopCommand {
   }
 
   public static WhileLoopCommand newInstance(SModel sm, boolean init) {
-    return (WhileLoopCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.WhileLoopCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WhileLoopCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.WhileLoopCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WhileLoopCommand newInstance(SModel sm) {

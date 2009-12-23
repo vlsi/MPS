@@ -15,7 +15,7 @@ public class AndCombiningComditionalExpression extends CombiningConditionalExpre
   }
 
   public static AndCombiningComditionalExpression newInstance(SModel sm, boolean init) {
-    return (AndCombiningComditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AndCombiningComditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AndCombiningComditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AndCombiningComditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AndCombiningComditionalExpression newInstance(SModel sm) {

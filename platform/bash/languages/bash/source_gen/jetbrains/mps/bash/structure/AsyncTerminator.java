@@ -15,7 +15,7 @@ public class AsyncTerminator extends CommandTerminator {
   }
 
   public static AsyncTerminator newInstance(SModel sm, boolean init) {
-    return (AsyncTerminator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AsyncTerminator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AsyncTerminator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AsyncTerminator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AsyncTerminator newInstance(SModel sm) {

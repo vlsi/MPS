@@ -102,7 +102,7 @@ public class Module_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((IModule)parameterObject, node, model, scope, operationContext);
+      this.handleAction_impl((IModule) parameterObject, node, model, scope, operationContext);
     }
 
     public void handleAction_impl(IModule parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -115,7 +115,7 @@ public class Module_Editor extends DefaultNodeEditor {
     }
 
     public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((IModule)parameterObject);
+      return this.getMatchingText_internal((IModule) parameterObject);
     }
 
     public String getMatchingText_internal(IModule parameterObject) {

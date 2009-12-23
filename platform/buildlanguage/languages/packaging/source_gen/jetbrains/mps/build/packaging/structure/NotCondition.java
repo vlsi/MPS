@@ -44,7 +44,7 @@ public class NotCondition extends BaseConcept implements ICondition {
   }
 
   public ICondition getCondition() {
-    return (ICondition)this.getChild(ICondition.class, NotCondition.CONDITION);
+    return (ICondition) this.getChild(ICondition.class, NotCondition.CONDITION);
   }
 
   public void setCondition(ICondition node) {
@@ -52,7 +52,7 @@ public class NotCondition extends BaseConcept implements ICondition {
   }
 
   public static NotCondition newInstance(SModel sm, boolean init) {
-    return (NotCondition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.NotCondition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NotCondition) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.NotCondition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NotCondition newInstance(SModel sm) {

@@ -61,7 +61,7 @@ public class Option extends BaseConcept implements ISymbolConcept, IDescribedCon
   }
 
   public static Option newInstance(SModel sm, boolean init) {
-    return (Option)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.Option", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Option) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.Option", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Option newInstance(SModel sm) {

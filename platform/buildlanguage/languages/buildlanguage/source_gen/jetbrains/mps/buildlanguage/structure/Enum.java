@@ -40,7 +40,7 @@ public class Enum extends BaseConcept {
   }
 
   public static Enum newInstance(SModel sm, boolean init) {
-    return (Enum)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.Enum", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Enum) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.Enum", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Enum newInstance(SModel sm) {

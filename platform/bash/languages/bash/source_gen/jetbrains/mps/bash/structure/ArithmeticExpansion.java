@@ -44,7 +44,7 @@ public class ArithmeticExpansion extends BaseConcept implements IGeneralizedWord
   }
 
   public ArithmeticExpression getExpression() {
-    return (ArithmeticExpression)this.getChild(ArithmeticExpression.class, ArithmeticExpansion.EXPRESSION);
+    return (ArithmeticExpression) this.getChild(ArithmeticExpression.class, ArithmeticExpansion.EXPRESSION);
   }
 
   public void setExpression(ArithmeticExpression node) {
@@ -52,7 +52,7 @@ public class ArithmeticExpansion extends BaseConcept implements IGeneralizedWord
   }
 
   public static ArithmeticExpansion newInstance(SModel sm, boolean init) {
-    return (ArithmeticExpansion)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ArithmeticExpansion", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ArithmeticExpansion) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ArithmeticExpansion", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ArithmeticExpansion newInstance(SModel sm) {

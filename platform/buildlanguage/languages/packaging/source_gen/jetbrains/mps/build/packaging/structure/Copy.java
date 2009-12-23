@@ -34,7 +34,7 @@ public class Copy extends AbstractProjectComponent {
   }
 
   public Path getSourcePath() {
-    return (Path)this.getChild(Path.class, Copy.SOURCE_PATH);
+    return (Path) this.getChild(Path.class, Copy.SOURCE_PATH);
   }
 
   public void setSourcePath(Path node) {
@@ -42,7 +42,7 @@ public class Copy extends AbstractProjectComponent {
   }
 
   public static Copy newInstance(SModel sm, boolean init) {
-    return (Copy)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Copy", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Copy) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Copy", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Copy newInstance(SModel sm) {

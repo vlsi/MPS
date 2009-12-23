@@ -18,7 +18,7 @@ public class BaseVariableAssingment extends AbstractCommand {
   }
 
   public LValue getLvalue() {
-    return (LValue)this.getChild(LValue.class, BaseVariableAssingment.LVALUE);
+    return (LValue) this.getChild(LValue.class, BaseVariableAssingment.LVALUE);
   }
 
   public void setLvalue(LValue node) {
@@ -26,7 +26,7 @@ public class BaseVariableAssingment extends AbstractCommand {
   }
 
   public GeneralizedWord getValue() {
-    return (GeneralizedWord)this.getChild(GeneralizedWord.class, BaseVariableAssingment.VALUE);
+    return (GeneralizedWord) this.getChild(GeneralizedWord.class, BaseVariableAssingment.VALUE);
   }
 
   public void setValue(GeneralizedWord node) {
@@ -34,7 +34,7 @@ public class BaseVariableAssingment extends AbstractCommand {
   }
 
   public static BaseVariableAssingment newInstance(SModel sm, boolean init) {
-    return (BaseVariableAssingment)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BaseVariableAssingment", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseVariableAssingment) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BaseVariableAssingment", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseVariableAssingment newInstance(SModel sm) {

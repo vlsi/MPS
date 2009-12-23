@@ -45,7 +45,7 @@ public class GroupingCommand extends AbstractCommand implements ICompoundCommand
   }
 
   public InputLines getCommands() {
-    return (InputLines)this.getChild(InputLines.class, GroupingCommand.COMMANDS);
+    return (InputLines) this.getChild(InputLines.class, GroupingCommand.COMMANDS);
   }
 
   public void setCommands(InputLines node) {
@@ -53,7 +53,7 @@ public class GroupingCommand extends AbstractCommand implements ICompoundCommand
   }
 
   public static GroupingCommand newInstance(SModel sm, boolean init) {
-    return (GroupingCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.GroupingCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GroupingCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.GroupingCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GroupingCommand newInstance(SModel sm) {

@@ -43,7 +43,7 @@ public class AbstractLoopCommand extends AbstractCommand implements ICompoundCom
   }
 
   public InputLines getCommands() {
-    return (InputLines)this.getChild(InputLines.class, AbstractLoopCommand.COMMANDS);
+    return (InputLines) this.getChild(InputLines.class, AbstractLoopCommand.COMMANDS);
   }
 
   public void setCommands(InputLines node) {
@@ -51,7 +51,7 @@ public class AbstractLoopCommand extends AbstractCommand implements ICompoundCom
   }
 
   public static AbstractLoopCommand newInstance(SModel sm, boolean init) {
-    return (AbstractLoopCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AbstractLoopCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractLoopCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AbstractLoopCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractLoopCommand newInstance(SModel sm) {

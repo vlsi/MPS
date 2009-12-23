@@ -19,7 +19,7 @@ public class ForeachCommand extends AbstractLoopCommand {
   }
 
   public VariableNameDeclaration getVariable() {
-    return (VariableNameDeclaration)this.getChild(VariableNameDeclaration.class, ForeachCommand.VARIABLE);
+    return (VariableNameDeclaration) this.getChild(VariableNameDeclaration.class, ForeachCommand.VARIABLE);
   }
 
   public void setVariable(VariableNameDeclaration node) {
@@ -47,7 +47,7 @@ public class ForeachCommand extends AbstractLoopCommand {
   }
 
   public static ForeachCommand newInstance(SModel sm, boolean init) {
-    return (ForeachCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ForeachCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ForeachCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ForeachCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ForeachCommand newInstance(SModel sm) {

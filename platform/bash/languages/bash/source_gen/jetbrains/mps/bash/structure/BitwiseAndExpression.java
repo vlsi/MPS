@@ -15,7 +15,7 @@ public class BitwiseAndExpression extends BinaryArithmeticExpression {
   }
 
   public static BitwiseAndExpression newInstance(SModel sm, boolean init) {
-    return (BitwiseAndExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BitwiseAndExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BitwiseAndExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BitwiseAndExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BitwiseAndExpression newInstance(SModel sm) {

@@ -43,7 +43,7 @@ public class OutputErrorRedirection extends Redirection implements IToWordRedire
   }
 
   public GeneralizedWord getWord() {
-    return (GeneralizedWord)this.getChild(GeneralizedWord.class, OutputErrorRedirection.WORD);
+    return (GeneralizedWord) this.getChild(GeneralizedWord.class, OutputErrorRedirection.WORD);
   }
 
   public void setWord(GeneralizedWord node) {
@@ -51,7 +51,7 @@ public class OutputErrorRedirection extends Redirection implements IToWordRedire
   }
 
   public static OutputErrorRedirection newInstance(SModel sm, boolean init) {
-    return (OutputErrorRedirection)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OutputErrorRedirection", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OutputErrorRedirection) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OutputErrorRedirection", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OutputErrorRedirection newInstance(SModel sm) {

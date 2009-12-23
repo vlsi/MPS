@@ -15,7 +15,7 @@ public class DuplicateOutputFileDiscriptor extends IORedirection {
   }
 
   public static DuplicateOutputFileDiscriptor newInstance(SModel sm, boolean init) {
-    return (DuplicateOutputFileDiscriptor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.DuplicateOutputFileDiscriptor", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DuplicateOutputFileDiscriptor) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.DuplicateOutputFileDiscriptor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DuplicateOutputFileDiscriptor newInstance(SModel sm) {

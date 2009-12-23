@@ -69,7 +69,7 @@ public class AntRunnerPreferences_PreferencesComponent extends BaseProjectPrefsC
           public void run() {
             SModel sModel = descriptor.getSModel();
             for (SNode root : ListSequence.fromList(sModel.getRoots())) {
-              if (SNodeOperations.isInstanceOf(((SNode)root), "jetbrains.mps.buildlanguage.structure.IAntScript")) {
+              if (SNodeOperations.isInstanceOf(((SNode) root), "jetbrains.mps.buildlanguage.structure.IAntScript")) {
                 SNodePointer pointer = new SNodePointer(root);
                 String pointerString = BuildTableModel.pointerToString(pointer);
                 if (!(MapSequence.fromMap(AntRunnerPreferences_PreferencesComponent.this.getStateObject().data).containsKey(pointerString))) {

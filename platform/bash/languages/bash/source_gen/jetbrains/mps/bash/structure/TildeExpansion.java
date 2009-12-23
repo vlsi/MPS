@@ -43,7 +43,7 @@ public class TildeExpansion extends BaseConcept implements IGeneralizedWordUnit,
   }
 
   public static TildeExpansion newInstance(SModel sm, boolean init) {
-    return (TildeExpansion)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.TildeExpansion", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TildeExpansion) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.TildeExpansion", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TildeExpansion newInstance(SModel sm) {

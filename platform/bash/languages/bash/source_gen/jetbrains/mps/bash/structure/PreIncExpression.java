@@ -15,7 +15,7 @@ public class PreIncExpression extends PreVariableExpression {
   }
 
   public static PreIncExpression newInstance(SModel sm, boolean init) {
-    return (PreIncExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PreIncExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PreIncExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PreIncExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PreIncExpression newInstance(SModel sm) {

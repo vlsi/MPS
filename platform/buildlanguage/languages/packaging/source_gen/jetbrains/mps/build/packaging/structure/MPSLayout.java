@@ -82,7 +82,7 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
   }
 
   public BaseDirPath getBaseDirectory() {
-    return (BaseDirPath)this.getChild(BaseDirPath.class, MPSLayout.BASE_DIRECTORY);
+    return (BaseDirPath) this.getChild(BaseDirPath.class, MPSLayout.BASE_DIRECTORY);
   }
 
   public void setBaseDirectory(BaseDirPath node) {
@@ -90,7 +90,7 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
   }
 
   public PropertiesImport getPropertyFile() {
-    return (PropertiesImport)this.getChild(PropertiesImport.class, MPSLayout.PROPERTY_FILE);
+    return (PropertiesImport) this.getChild(PropertiesImport.class, MPSLayout.PROPERTY_FILE);
   }
 
   public void setPropertyFile(PropertiesImport node) {
@@ -218,7 +218,7 @@ public class MPSLayout extends BaseConcept implements ILayoutComponent, INamedCo
   }
 
   public static MPSLayout newInstance(SModel sm, boolean init) {
-    return (MPSLayout)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MPSLayout", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MPSLayout) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MPSLayout", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MPSLayout newInstance(SModel sm) {

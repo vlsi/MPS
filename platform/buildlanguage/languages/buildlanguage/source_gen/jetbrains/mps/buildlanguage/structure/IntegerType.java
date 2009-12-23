@@ -15,7 +15,7 @@ public class IntegerType extends PropertyType {
   }
 
   public static IntegerType newInstance(SModel sm, boolean init) {
-    return (IntegerType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.IntegerType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntegerType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.IntegerType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntegerType newInstance(SModel sm) {

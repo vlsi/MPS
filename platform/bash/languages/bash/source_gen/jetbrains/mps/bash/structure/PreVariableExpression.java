@@ -15,7 +15,7 @@ public class PreVariableExpression extends WordExpression {
   }
 
   public static PreVariableExpression newInstance(SModel sm, boolean init) {
-    return (PreVariableExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PreVariableExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PreVariableExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PreVariableExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PreVariableExpression newInstance(SModel sm) {

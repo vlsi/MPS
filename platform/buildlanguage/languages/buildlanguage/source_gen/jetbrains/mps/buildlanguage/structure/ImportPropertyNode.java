@@ -53,7 +53,7 @@ public class ImportPropertyNode extends AbstractImportProperties implements IPro
   }
 
   public PropertyNode getPropertyNode() {
-    return (PropertyNode)this.getReferent(PropertyNode.class, ImportPropertyNode.PROPERTY_NODE);
+    return (PropertyNode) this.getReferent(PropertyNode.class, ImportPropertyNode.PROPERTY_NODE);
   }
 
   public void setPropertyNode(PropertyNode node) {
@@ -61,7 +61,7 @@ public class ImportPropertyNode extends AbstractImportProperties implements IPro
   }
 
   public static ImportPropertyNode newInstance(SModel sm, boolean init) {
-    return (ImportPropertyNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.ImportPropertyNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ImportPropertyNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.ImportPropertyNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ImportPropertyNode newInstance(SModel sm) {

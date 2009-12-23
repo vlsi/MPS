@@ -15,7 +15,7 @@ public class LogicalNegationExpression extends UnaryArithmeticExpression {
   }
 
   public static LogicalNegationExpression newInstance(SModel sm, boolean init) {
-    return (LogicalNegationExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LogicalNegationExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LogicalNegationExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LogicalNegationExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LogicalNegationExpression newInstance(SModel sm) {

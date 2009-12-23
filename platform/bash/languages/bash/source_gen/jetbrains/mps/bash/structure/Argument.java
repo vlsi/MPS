@@ -61,7 +61,7 @@ public class Argument extends ExternalOptionDeclaration implements INamedConcept
   }
 
   public static Argument newInstance(SModel sm, boolean init) {
-    return (Argument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.Argument", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Argument) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.Argument", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Argument newInstance(SModel sm) {

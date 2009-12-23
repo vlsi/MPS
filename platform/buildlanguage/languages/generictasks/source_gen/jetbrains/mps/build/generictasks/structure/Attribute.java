@@ -19,7 +19,7 @@ public class Attribute extends BaseConcept {
   }
 
   public AttributeDeclaration getAttributeDeclaration() {
-    return (AttributeDeclaration)this.getReferent(AttributeDeclaration.class, Attribute.ATTRIBUTE_DECLARATION);
+    return (AttributeDeclaration) this.getReferent(AttributeDeclaration.class, Attribute.ATTRIBUTE_DECLARATION);
   }
 
   public void setAttributeDeclaration(AttributeDeclaration node) {
@@ -27,7 +27,7 @@ public class Attribute extends BaseConcept {
   }
 
   public PropertyValueExpression getValue() {
-    return (PropertyValueExpression)this.getChild(PropertyValueExpression.class, Attribute.VALUE);
+    return (PropertyValueExpression) this.getChild(PropertyValueExpression.class, Attribute.VALUE);
   }
 
   public void setValue(PropertyValueExpression node) {
@@ -35,7 +35,7 @@ public class Attribute extends BaseConcept {
   }
 
   public static Attribute newInstance(SModel sm, boolean init) {
-    return (Attribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.generictasks.structure.Attribute", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Attribute) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.generictasks.structure.Attribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Attribute newInstance(SModel sm) {

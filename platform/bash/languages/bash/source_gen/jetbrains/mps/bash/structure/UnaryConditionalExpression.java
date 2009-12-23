@@ -17,7 +17,7 @@ public class UnaryConditionalExpression extends ConditionalExpression {
   }
 
   public GeneralizedWord getWord() {
-    return (GeneralizedWord)this.getChild(GeneralizedWord.class, UnaryConditionalExpression.WORD);
+    return (GeneralizedWord) this.getChild(GeneralizedWord.class, UnaryConditionalExpression.WORD);
   }
 
   public void setWord(GeneralizedWord node) {
@@ -25,7 +25,7 @@ public class UnaryConditionalExpression extends ConditionalExpression {
   }
 
   public static UnaryConditionalExpression newInstance(SModel sm, boolean init) {
-    return (UnaryConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.UnaryConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UnaryConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.UnaryConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UnaryConditionalExpression newInstance(SModel sm) {

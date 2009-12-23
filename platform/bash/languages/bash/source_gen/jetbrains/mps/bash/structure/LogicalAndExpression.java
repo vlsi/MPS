@@ -15,7 +15,7 @@ public class LogicalAndExpression extends BinaryArithmeticExpression {
   }
 
   public static LogicalAndExpression newInstance(SModel sm, boolean init) {
-    return (LogicalAndExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LogicalAndExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LogicalAndExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LogicalAndExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LogicalAndExpression newInstance(SModel sm) {

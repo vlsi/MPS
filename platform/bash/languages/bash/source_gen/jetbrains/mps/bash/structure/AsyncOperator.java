@@ -15,7 +15,7 @@ public class AsyncOperator extends FollowingCommandList {
   }
 
   public static AsyncOperator newInstance(SModel sm, boolean init) {
-    return (AsyncOperator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AsyncOperator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AsyncOperator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AsyncOperator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AsyncOperator newInstance(SModel sm) {

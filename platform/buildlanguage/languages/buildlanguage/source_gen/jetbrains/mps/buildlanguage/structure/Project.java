@@ -62,7 +62,7 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
   }
 
   public TargetReference getDefault() {
-    return (TargetReference)this.getChild(TargetReference.class, Project.DEFAULT);
+    return (TargetReference) this.getChild(TargetReference.class, Project.DEFAULT);
   }
 
   public void setDefault(TargetReference node) {
@@ -70,7 +70,7 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
   }
 
   public FileName getBasedir() {
-    return (FileName)this.getChild(FileName.class, Project.BASEDIR);
+    return (FileName) this.getChild(FileName.class, Project.BASEDIR);
   }
 
   public void setBasedir(FileName node) {
@@ -178,7 +178,7 @@ public class Project extends BaseConcept implements INamedConcept, IPropertyHold
   }
 
   public static Project newInstance(SModel sm, boolean init) {
-    return (Project)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.Project", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Project) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.Project", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Project newInstance(SModel sm) {

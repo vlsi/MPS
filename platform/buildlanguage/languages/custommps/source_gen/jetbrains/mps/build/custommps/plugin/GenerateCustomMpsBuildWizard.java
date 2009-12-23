@@ -11,7 +11,7 @@ public class GenerateCustomMpsBuildWizard extends GenerateBuildWizard {
   }
 
   public void initWizard() {
-    this.addStep(new BuildToolsStep(((CustomMPSBuildGenerator)this.myGenerator), this.myErrorHandler));
+    this.addStep(new BuildToolsStep(((CustomMPSBuildGenerator) this.myGenerator), this.myErrorHandler));
     super.initWizard();
   }
 }

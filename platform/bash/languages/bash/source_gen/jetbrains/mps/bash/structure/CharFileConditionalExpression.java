@@ -15,7 +15,7 @@ public class CharFileConditionalExpression extends UnaryConditionalExpression {
   }
 
   public static CharFileConditionalExpression newInstance(SModel sm, boolean init) {
-    return (CharFileConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CharFileConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CharFileConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CharFileConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CharFileConditionalExpression newInstance(SModel sm) {

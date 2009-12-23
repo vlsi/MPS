@@ -16,7 +16,7 @@ public class Redirection extends BaseConcept {
   }
 
   public static Redirection newInstance(SModel sm, boolean init) {
-    return (Redirection)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.Redirection", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Redirection) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.Redirection", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Redirection newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class BracketExpression extends ArithmeticExpression {
   }
 
   public ArithmeticExpression getExpression() {
-    return (ArithmeticExpression)this.getChild(ArithmeticExpression.class, BracketExpression.EXPRESSION);
+    return (ArithmeticExpression) this.getChild(ArithmeticExpression.class, BracketExpression.EXPRESSION);
   }
 
   public void setExpression(ArithmeticExpression node) {
@@ -24,7 +24,7 @@ public class BracketExpression extends ArithmeticExpression {
   }
 
   public static BracketExpression newInstance(SModel sm, boolean init) {
-    return (BracketExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BracketExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BracketExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BracketExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BracketExpression newInstance(SModel sm) {

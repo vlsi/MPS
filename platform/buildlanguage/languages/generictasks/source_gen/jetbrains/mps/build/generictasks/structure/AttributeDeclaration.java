@@ -78,7 +78,7 @@ public class AttributeDeclaration extends BaseConcept implements INamedConcept, 
   }
 
   public PropertyValueExpression getDefault() {
-    return (PropertyValueExpression)this.getChild(PropertyValueExpression.class, AttributeDeclaration.DEFAULT);
+    return (PropertyValueExpression) this.getChild(PropertyValueExpression.class, AttributeDeclaration.DEFAULT);
   }
 
   public void setDefault(PropertyValueExpression node) {
@@ -86,7 +86,7 @@ public class AttributeDeclaration extends BaseConcept implements INamedConcept, 
   }
 
   public PropertyType getAttributeType() {
-    return (PropertyType)this.getChild(PropertyType.class, AttributeDeclaration.ATTRIBUTE_TYPE);
+    return (PropertyType) this.getChild(PropertyType.class, AttributeDeclaration.ATTRIBUTE_TYPE);
   }
 
   public void setAttributeType(PropertyType node) {
@@ -94,7 +94,7 @@ public class AttributeDeclaration extends BaseConcept implements INamedConcept, 
   }
 
   public Enum getEnum() {
-    return (Enum)this.getChild(Enum.class, AttributeDeclaration.ENUM);
+    return (Enum) this.getChild(Enum.class, AttributeDeclaration.ENUM);
   }
 
   public void setEnum(Enum node) {
@@ -102,7 +102,7 @@ public class AttributeDeclaration extends BaseConcept implements INamedConcept, 
   }
 
   public static AttributeDeclaration newInstance(SModel sm, boolean init) {
-    return (AttributeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.generictasks.structure.AttributeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AttributeDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.generictasks.structure.AttributeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AttributeDeclaration newInstance(SModel sm) {

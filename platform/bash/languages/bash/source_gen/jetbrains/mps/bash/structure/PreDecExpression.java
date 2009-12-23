@@ -15,7 +15,7 @@ public class PreDecExpression extends PreVariableExpression {
   }
 
   public static PreDecExpression newInstance(SModel sm, boolean init) {
-    return (PreDecExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PreDecExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PreDecExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PreDecExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PreDecExpression newInstance(SModel sm) {

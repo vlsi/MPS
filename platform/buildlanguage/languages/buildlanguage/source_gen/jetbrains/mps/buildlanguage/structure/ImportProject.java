@@ -16,7 +16,7 @@ public class ImportProject extends AbstractImportProject {
   }
 
   public Project getProject() {
-    return (Project)this.getReferent(Project.class, ImportProject.PROJECT);
+    return (Project) this.getReferent(Project.class, ImportProject.PROJECT);
   }
 
   public void setProject(Project node) {
@@ -24,7 +24,7 @@ public class ImportProject extends AbstractImportProject {
   }
 
   public static ImportProject newInstance(SModel sm, boolean init) {
-    return (ImportProject)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.ImportProject", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ImportProject) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.ImportProject", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ImportProject newInstance(SModel sm) {

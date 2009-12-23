@@ -96,7 +96,7 @@ public class BuildTableModel implements TableModel {
 
   public void setValueAt(Object value, int row, int column) {
     assert column == 2;
-    MapSequence.fromMap(this.myCommandLines).put(ListSequence.fromList(this.mySNodes).getElement(row), (String)value);
+    MapSequence.fromMap(this.myCommandLines).put(ListSequence.fromList(this.mySNodes).getElement(row), (String) value);
     this.notifyListeners();
   }
 

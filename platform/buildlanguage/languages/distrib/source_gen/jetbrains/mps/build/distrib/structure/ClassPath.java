@@ -39,7 +39,7 @@ public class ClassPath extends BaseConcept {
   }
 
   public static ClassPath newInstance(SModel sm, boolean init) {
-    return (ClassPath)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.ClassPath", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ClassPath) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.ClassPath", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ClassPath newInstance(SModel sm) {

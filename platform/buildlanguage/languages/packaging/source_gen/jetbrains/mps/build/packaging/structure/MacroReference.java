@@ -34,7 +34,7 @@ public class MacroReference extends BaseConcept {
   }
 
   public static MacroReference newInstance(SModel sm, boolean init) {
-    return (MacroReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MacroReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MacroReference newInstance(SModel sm) {

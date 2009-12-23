@@ -58,7 +58,7 @@ public class AbstractProjectComponent extends BaseConcept implements INamedConce
   }
 
   public IStringExpression getTitle() {
-    return (IStringExpression)this.getChild(IStringExpression.class, AbstractProjectComponent.TITLE);
+    return (IStringExpression) this.getChild(IStringExpression.class, AbstractProjectComponent.TITLE);
   }
 
   public void setTitle(IStringExpression node) {
@@ -86,7 +86,7 @@ public class AbstractProjectComponent extends BaseConcept implements INamedConce
   }
 
   public static AbstractProjectComponent newInstance(SModel sm, boolean init) {
-    return (AbstractProjectComponent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.AbstractProjectComponent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractProjectComponent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.AbstractProjectComponent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractProjectComponent newInstance(SModel sm) {

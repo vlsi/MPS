@@ -73,7 +73,7 @@ public class Folder extends AbstractProjectComponent implements ICompositeCompon
   }
 
   public Path getSourcePath() {
-    return (Path)this.getChild(Path.class, Folder.SOURCE_PATH);
+    return (Path) this.getChild(Path.class, Folder.SOURCE_PATH);
   }
 
   public void setSourcePath(Path node) {
@@ -101,7 +101,7 @@ public class Folder extends AbstractProjectComponent implements ICompositeCompon
   }
 
   public static Folder newInstance(SModel sm, boolean init) {
-    return (Folder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Folder", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Folder) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Folder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Folder newInstance(SModel sm) {

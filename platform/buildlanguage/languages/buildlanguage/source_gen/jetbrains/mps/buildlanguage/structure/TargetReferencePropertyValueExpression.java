@@ -52,7 +52,7 @@ public class TargetReferencePropertyValueExpression extends PropertyValueExpress
   }
 
   public TargetDeclaration getDeclaration() {
-    return (TargetDeclaration)this.getReferent(TargetDeclaration.class, TargetReferencePropertyValueExpression.DECLARATION);
+    return (TargetDeclaration) this.getReferent(TargetDeclaration.class, TargetReferencePropertyValueExpression.DECLARATION);
   }
 
   public void setDeclaration(TargetDeclaration node) {
@@ -60,7 +60,7 @@ public class TargetReferencePropertyValueExpression extends PropertyValueExpress
   }
 
   public static TargetReferencePropertyValueExpression newInstance(SModel sm, boolean init) {
-    return (TargetReferencePropertyValueExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.TargetReferencePropertyValueExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TargetReferencePropertyValueExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.TargetReferencePropertyValueExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TargetReferencePropertyValueExpression newInstance(SModel sm) {

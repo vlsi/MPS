@@ -15,7 +15,7 @@ public class ExpExpression extends BinaryArithmeticExpression {
   }
 
   public static ExpExpression newInstance(SModel sm, boolean init) {
-    return (ExpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ExpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExpExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ExpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExpExpression newInstance(SModel sm) {

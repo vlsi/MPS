@@ -15,7 +15,7 @@ public class ModAssingmentExpression extends BaseAssingmentExpression {
   }
 
   public static ModAssingmentExpression newInstance(SModel sm, boolean init) {
-    return (ModAssingmentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ModAssingmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ModAssingmentExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ModAssingmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ModAssingmentExpression newInstance(SModel sm) {

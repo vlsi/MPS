@@ -61,7 +61,7 @@ public class StringLiteral extends PropertyValueExpression implements INamedConc
   }
 
   public static StringLiteral newInstance(SModel sm, boolean init) {
-    return (StringLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.StringLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StringLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.StringLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StringLiteral newInstance(SModel sm) {

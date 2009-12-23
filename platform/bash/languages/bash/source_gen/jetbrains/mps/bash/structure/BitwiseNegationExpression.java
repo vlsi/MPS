@@ -15,7 +15,7 @@ public class BitwiseNegationExpression extends UnaryArithmeticExpression {
   }
 
   public static BitwiseNegationExpression newInstance(SModel sm, boolean init) {
-    return (BitwiseNegationExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BitwiseNegationExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BitwiseNegationExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BitwiseNegationExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BitwiseNegationExpression newInstance(SModel sm) {

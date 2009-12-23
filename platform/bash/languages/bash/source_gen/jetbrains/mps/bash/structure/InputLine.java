@@ -16,7 +16,7 @@ public class InputLine extends BaseConcept {
   }
 
   public static InputLine newInstance(SModel sm, boolean init) {
-    return (InputLine)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.InputLine", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InputLine) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.InputLine", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InputLine newInstance(SModel sm) {

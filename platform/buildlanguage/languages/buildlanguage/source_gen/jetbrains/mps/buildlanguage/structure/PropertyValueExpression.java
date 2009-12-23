@@ -43,7 +43,7 @@ public class PropertyValueExpression extends BaseConcept implements ISource {
   }
 
   public static PropertyValueExpression newInstance(SModel sm, boolean init) {
-    return (PropertyValueExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PropertyValueExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyValueExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.PropertyValueExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyValueExpression newInstance(SModel sm) {

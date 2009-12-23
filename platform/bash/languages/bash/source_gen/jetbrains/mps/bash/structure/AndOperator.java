@@ -15,7 +15,7 @@ public class AndOperator extends FollowingCommandList {
   }
 
   public static AndOperator newInstance(SModel sm, boolean init) {
-    return (AndOperator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AndOperator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AndOperator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AndOperator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AndOperator newInstance(SModel sm) {

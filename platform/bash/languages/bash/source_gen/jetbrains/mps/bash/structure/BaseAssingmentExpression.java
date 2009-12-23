@@ -18,7 +18,7 @@ public class BaseAssingmentExpression extends ArithmeticExpression {
   }
 
   public LValue getLValue() {
-    return (LValue)this.getChild(LValue.class, BaseAssingmentExpression.L_VALUE);
+    return (LValue) this.getChild(LValue.class, BaseAssingmentExpression.L_VALUE);
   }
 
   public void setLValue(LValue node) {
@@ -26,7 +26,7 @@ public class BaseAssingmentExpression extends ArithmeticExpression {
   }
 
   public ArithmeticExpression getRValue() {
-    return (ArithmeticExpression)this.getChild(ArithmeticExpression.class, BaseAssingmentExpression.R_VALUE);
+    return (ArithmeticExpression) this.getChild(ArithmeticExpression.class, BaseAssingmentExpression.R_VALUE);
   }
 
   public void setRValue(ArithmeticExpression node) {
@@ -34,7 +34,7 @@ public class BaseAssingmentExpression extends ArithmeticExpression {
   }
 
   public static BaseAssingmentExpression newInstance(SModel sm, boolean init) {
-    return (BaseAssingmentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BaseAssingmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseAssingmentExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BaseAssingmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseAssingmentExpression newInstance(SModel sm) {

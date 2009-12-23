@@ -79,7 +79,7 @@ public class PropertyNode extends BaseConcept implements INamedConcept, IPropert
   }
 
   public static PropertyNode newInstance(SModel sm, boolean init) {
-    return (PropertyNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.property.structure.PropertyNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.property.structure.PropertyNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyNode newInstance(SModel sm) {

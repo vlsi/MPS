@@ -52,7 +52,7 @@ public class VariableNameDeclaration extends LValue implements INamedConcept {
   }
 
   public static VariableNameDeclaration newInstance(SModel sm, boolean init) {
-    return (VariableNameDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.VariableNameDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VariableNameDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.VariableNameDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VariableNameDeclaration newInstance(SModel sm) {

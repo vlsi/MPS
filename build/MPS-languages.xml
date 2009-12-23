@@ -462,13 +462,11 @@
     </jar>
   </target>
   <target name="pack.jetbrains.mps.nanoj0">
-    <mkdir dir="core/languageDesign/mps-lite/classes" />
     <mkdir dir="core/languageDesign/mps-lite/languages/nanoj/source_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/core/languageDesign/jetbrains.mps.nanoj.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
       <zipfileset file="core/languageDesign/mps-lite/languages/nanoj/nanoj.mpl" prefix="module" />
       <zipfileset dir="core/languageDesign/mps-lite/languages/nanoj/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="core/languageDesign/mps-lite/languages/nanoj" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/languageDesign/mps-lite/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.lang.pattern0">
@@ -647,7 +645,6 @@
   <target name="pack.ypath.main0">
     <mkdir dir="platform/ypath/solutions/main/classes_gen" />
     <mkdir dir="platform/ypath/solutions/main/classes_gen" />
-    <mkdir dir="platform/ypath/solutions/classes" />
     <mkdir dir="platform/ypath/solutions/main/source_gen.caches" />
     <mkdir dir="platform/ypath/solutions/main/test_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/platform/ypath.main.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -657,13 +654,11 @@
       <zipfileset dir="platform/ypath/solutions/main" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
       <zipfileset dir="platform/ypath/solutions/main/classes_gen" />
       <zipfileset dir="platform/ypath/solutions/main/classes_gen" />
-      <zipfileset dir="platform/ypath/solutions/classes" />
     </jar>
   </target>
   <target name="pack.ypath.test0">
     <mkdir dir="platform/ypath/solutions/test/classes_gen" />
     <mkdir dir="platform/ypath/solutions/test/classes_gen" />
-    <mkdir dir="platform/ypath/solutions/classes" />
     <mkdir dir="platform/ypath/solutions/test/source_gen.caches" />
     <mkdir dir="platform/ypath/solutions/test/test_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/platform/ypath.test.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -673,7 +668,6 @@
       <zipfileset dir="platform/ypath/solutions/test" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
       <zipfileset dir="platform/ypath/solutions/test/classes_gen" />
       <zipfileset dir="platform/ypath/solutions/test/classes_gen" />
-      <zipfileset dir="platform/ypath/solutions/classes" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.ypath0">

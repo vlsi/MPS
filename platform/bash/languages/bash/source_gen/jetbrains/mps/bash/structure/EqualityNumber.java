@@ -15,7 +15,7 @@ public class EqualityNumber extends BinaryConditionalExpression {
   }
 
   public static EqualityNumber newInstance(SModel sm, boolean init) {
-    return (EqualityNumber)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.EqualityNumber", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EqualityNumber) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.EqualityNumber", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EqualityNumber newInstance(SModel sm) {

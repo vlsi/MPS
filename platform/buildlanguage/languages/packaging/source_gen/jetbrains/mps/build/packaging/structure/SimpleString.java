@@ -52,7 +52,7 @@ public class SimpleString extends BaseConcept implements IStringExpression {
   }
 
   public static SimpleString newInstance(SModel sm, boolean init) {
-    return (SimpleString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.SimpleString", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleString) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.SimpleString", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleString newInstance(SModel sm) {

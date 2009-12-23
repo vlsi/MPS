@@ -18,7 +18,7 @@ public class FollowingPipeline extends BaseConcept {
   }
 
   public HeadPipeline getBasePipeline() {
-    return (HeadPipeline)this.getChild(HeadPipeline.class, FollowingPipeline.BASE_PIPELINE);
+    return (HeadPipeline) this.getChild(HeadPipeline.class, FollowingPipeline.BASE_PIPELINE);
   }
 
   public void setBasePipeline(HeadPipeline node) {
@@ -26,7 +26,7 @@ public class FollowingPipeline extends BaseConcept {
   }
 
   public static FollowingPipeline newInstance(SModel sm, boolean init) {
-    return (FollowingPipeline)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.FollowingPipeline", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FollowingPipeline) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.FollowingPipeline", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FollowingPipeline newInstance(SModel sm) {

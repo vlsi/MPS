@@ -10,6 +10,6 @@ public class Packaging_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

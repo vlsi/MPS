@@ -15,7 +15,7 @@ public class AbstractCommand extends Command {
   }
 
   public static AbstractCommand newInstance(SModel sm, boolean init) {
-    return (AbstractCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AbstractCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AbstractCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractCommand newInstance(SModel sm) {

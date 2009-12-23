@@ -15,7 +15,7 @@ public class DivAssingmentExpression extends BaseAssingmentExpression {
   }
 
   public static DivAssingmentExpression newInstance(SModel sm, boolean init) {
-    return (DivAssingmentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.DivAssingmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DivAssingmentExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.DivAssingmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DivAssingmentExpression newInstance(SModel sm) {

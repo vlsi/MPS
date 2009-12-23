@@ -71,7 +71,7 @@ public class MPSBuild_Behavior {
     Set<IModule> modulesInClasspath = SetSequence.fromSet(new HashSet<IModule>());
     for (IModule module : ListSequence.fromList(modulesList)) {
       if (module instanceof Language) {
-        Language language = (Language)module;
+        Language language = (Language) module;
         SetSequence.fromSet(modulesInClasspath).addElement(language);
         SetSequence.fromSet(modulesInClasspath).addSequence(ListSequence.fromList(language.getRuntimeDependOnModules()));
       }
@@ -82,7 +82,7 @@ public class MPSBuild_Behavior {
       SPropertyOperations.set(path, "path", prefix + "/" + moduleProperName + "." + AbstractModule.PACKAGE_SUFFIX);
       ListSequence.fromList(paths).addElement(path);
       if (module instanceof Language) {
-        Language language = (Language)module;
+        Language language = (Language) module;
         List<String> runtimeCP = language.getLanguageRuntimeClassPathItems();
         ListSequence.fromList(runtimeCP).removeSequence(ListSequence.fromList(language.getClassPath()));
         if (!(ListSequence.fromList(runtimeCP).isEmpty())) {

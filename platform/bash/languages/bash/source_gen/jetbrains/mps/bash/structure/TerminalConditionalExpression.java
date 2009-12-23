@@ -15,7 +15,7 @@ public class TerminalConditionalExpression extends UnaryConditionalExpression {
   }
 
   public static TerminalConditionalExpression newInstance(SModel sm, boolean init) {
-    return (TerminalConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.TerminalConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TerminalConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.TerminalConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TerminalConditionalExpression newInstance(SModel sm) {

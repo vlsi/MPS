@@ -15,7 +15,7 @@ public class RegularFileConditionalExpression extends UnaryConditionalExpression
   }
 
   public static RegularFileConditionalExpression newInstance(SModel sm, boolean init) {
-    return (RegularFileConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.RegularFileConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RegularFileConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.RegularFileConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RegularFileConditionalExpression newInstance(SModel sm) {

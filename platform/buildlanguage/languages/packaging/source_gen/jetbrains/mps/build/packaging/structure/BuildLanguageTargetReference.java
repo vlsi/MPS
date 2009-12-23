@@ -18,7 +18,7 @@ public class BuildLanguageTargetReference extends BaseConcept {
   }
 
   public TargetDeclaration getTargetDeclaration() {
-    return (TargetDeclaration)this.getReferent(TargetDeclaration.class, BuildLanguageTargetReference.TARGET_DECLARATION);
+    return (TargetDeclaration) this.getReferent(TargetDeclaration.class, BuildLanguageTargetReference.TARGET_DECLARATION);
   }
 
   public void setTargetDeclaration(TargetDeclaration node) {
@@ -26,7 +26,7 @@ public class BuildLanguageTargetReference extends BaseConcept {
   }
 
   public static BuildLanguageTargetReference newInstance(SModel sm, boolean init) {
-    return (BuildLanguageTargetReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BuildLanguageTargetReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.BuildLanguageTargetReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BuildLanguageTargetReference newInstance(SModel sm) {

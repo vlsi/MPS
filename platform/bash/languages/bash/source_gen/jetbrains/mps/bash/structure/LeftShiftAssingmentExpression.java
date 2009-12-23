@@ -15,7 +15,7 @@ public class LeftShiftAssingmentExpression extends BaseAssingmentExpression {
   }
 
   public static LeftShiftAssingmentExpression newInstance(SModel sm, boolean init) {
-    return (LeftShiftAssingmentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LeftShiftAssingmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LeftShiftAssingmentExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LeftShiftAssingmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LeftShiftAssingmentExpression newInstance(SModel sm) {

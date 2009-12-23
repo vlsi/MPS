@@ -16,7 +16,7 @@ public class ArithmeticExpression extends BaseConcept {
   }
 
   public static ArithmeticExpression newInstance(SModel sm, boolean init) {
-    return (ArithmeticExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ArithmeticExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ArithmeticExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ArithmeticExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ArithmeticExpression newInstance(SModel sm) {

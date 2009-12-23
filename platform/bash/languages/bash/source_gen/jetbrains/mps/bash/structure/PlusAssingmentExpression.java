@@ -15,7 +15,7 @@ public class PlusAssingmentExpression extends BaseAssingmentExpression {
   }
 
   public static PlusAssingmentExpression newInstance(SModel sm, boolean init) {
-    return (PlusAssingmentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PlusAssingmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PlusAssingmentExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PlusAssingmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PlusAssingmentExpression newInstance(SModel sm) {

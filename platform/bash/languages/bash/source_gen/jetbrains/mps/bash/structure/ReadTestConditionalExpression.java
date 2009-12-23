@@ -15,7 +15,7 @@ public class ReadTestConditionalExpression extends UnaryConditionalExpression {
   }
 
   public static ReadTestConditionalExpression newInstance(SModel sm, boolean init) {
-    return (ReadTestConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ReadTestConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReadTestConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ReadTestConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReadTestConditionalExpression newInstance(SModel sm) {

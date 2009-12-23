@@ -16,7 +16,7 @@ public class MPSModule extends Module {
   }
 
   public static MPSModule newInstance(SModel sm, boolean init) {
-    return (MPSModule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommpsInternal.structure.MPSModule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MPSModule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommpsInternal.structure.MPSModule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MPSModule newInstance(SModel sm) {

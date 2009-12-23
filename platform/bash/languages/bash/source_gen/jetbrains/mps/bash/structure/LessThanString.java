@@ -15,7 +15,7 @@ public class LessThanString extends BinaryConditionalExpression {
   }
 
   public static LessThanString newInstance(SModel sm, boolean init) {
-    return (LessThanString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LessThanString", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LessThanString) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LessThanString", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LessThanString newInstance(SModel sm) {

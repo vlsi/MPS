@@ -48,7 +48,7 @@ public class IfCommand extends AbstractCommand implements ICompoundCommand {
   }
 
   public AbstractCommand getTestCommand() {
-    return (AbstractCommand)this.getChild(AbstractCommand.class, IfCommand.TEST_COMMAND);
+    return (AbstractCommand) this.getChild(AbstractCommand.class, IfCommand.TEST_COMMAND);
   }
 
   public void setTestCommand(AbstractCommand node) {
@@ -56,7 +56,7 @@ public class IfCommand extends AbstractCommand implements ICompoundCommand {
   }
 
   public InputLines getIfTrue() {
-    return (InputLines)this.getChild(InputLines.class, IfCommand.IF_TRUE);
+    return (InputLines) this.getChild(InputLines.class, IfCommand.IF_TRUE);
   }
 
   public void setIfTrue(InputLines node) {
@@ -64,7 +64,7 @@ public class IfCommand extends AbstractCommand implements ICompoundCommand {
   }
 
   public InputLines getIfFalse() {
-    return (InputLines)this.getChild(InputLines.class, IfCommand.IF_FALSE);
+    return (InputLines) this.getChild(InputLines.class, IfCommand.IF_FALSE);
   }
 
   public void setIfFalse(InputLines node) {
@@ -92,7 +92,7 @@ public class IfCommand extends AbstractCommand implements ICompoundCommand {
   }
 
   public static IfCommand newInstance(SModel sm, boolean init) {
-    return (IfCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.IfCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IfCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.IfCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IfCommand newInstance(SModel sm) {

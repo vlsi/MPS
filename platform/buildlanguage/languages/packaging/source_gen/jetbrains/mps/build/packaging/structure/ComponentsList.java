@@ -74,7 +74,7 @@ public class ComponentsList extends AbstractProjectComponent implements IAbstrac
   }
 
   public static ComponentsList newInstance(SModel sm, boolean init) {
-    return (ComponentsList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.ComponentsList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComponentsList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.ComponentsList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComponentsList newInstance(SModel sm) {

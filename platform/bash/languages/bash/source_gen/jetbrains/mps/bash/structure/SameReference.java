@@ -15,7 +15,7 @@ public class SameReference extends BinaryConditionalExpression {
   }
 
   public static SameReference newInstance(SModel sm, boolean init) {
-    return (SameReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SameReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SameReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SameReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SameReference newInstance(SModel sm) {

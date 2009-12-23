@@ -16,7 +16,7 @@ public class LValue extends BaseConcept {
   }
 
   public static LValue newInstance(SModel sm, boolean init) {
-    return (LValue)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LValue", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LValue) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LValue", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LValue newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class AbstractImportProject extends BaseConcept {
   }
 
   public static AbstractImportProject newInstance(SModel sm, boolean init) {
-    return (AbstractImportProject)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.AbstractImportProject", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractImportProject) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.AbstractImportProject", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractImportProject newInstance(SModel sm) {

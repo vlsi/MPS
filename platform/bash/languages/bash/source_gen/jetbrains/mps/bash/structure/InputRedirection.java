@@ -15,7 +15,7 @@ public class InputRedirection extends IORedirection {
   }
 
   public static InputRedirection newInstance(SModel sm, boolean init) {
-    return (InputRedirection)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.InputRedirection", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InputRedirection) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.InputRedirection", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InputRedirection newInstance(SModel sm) {

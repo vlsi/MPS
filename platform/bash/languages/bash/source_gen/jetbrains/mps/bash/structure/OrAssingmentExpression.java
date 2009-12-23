@@ -15,7 +15,7 @@ public class OrAssingmentExpression extends BaseAssingmentExpression {
   }
 
   public static OrAssingmentExpression newInstance(SModel sm, boolean init) {
-    return (OrAssingmentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OrAssingmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OrAssingmentExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OrAssingmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OrAssingmentExpression newInstance(SModel sm) {

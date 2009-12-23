@@ -15,7 +15,7 @@ public class StringType extends PropertyType {
   }
 
   public static StringType newInstance(SModel sm, boolean init) {
-    return (StringType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.StringType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StringType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.StringType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StringType newInstance(SModel sm) {

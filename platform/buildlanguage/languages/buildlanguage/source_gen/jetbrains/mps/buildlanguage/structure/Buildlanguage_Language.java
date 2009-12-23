@@ -10,6 +10,6 @@ public class Buildlanguage_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("0b608d44-1308-418d-8715-22d040c3b3cc(jetbrains.mps.buildlanguage)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

@@ -135,7 +135,7 @@ public class TargetDeclaration extends BaseConcept implements IProjectComponent,
   }
 
   public static TargetDeclaration newInstance(SModel sm, boolean init) {
-    return (TargetDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.TargetDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TargetDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.TargetDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TargetDeclaration newInstance(SModel sm) {

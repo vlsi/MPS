@@ -15,7 +15,7 @@ public class PipeConditionalExpression extends UnaryConditionalExpression {
   }
 
   public static PipeConditionalExpression newInstance(SModel sm, boolean init) {
-    return (PipeConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PipeConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PipeConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PipeConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PipeConditionalExpression newInstance(SModel sm) {

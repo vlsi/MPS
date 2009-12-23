@@ -75,7 +75,7 @@ public class BuildScriptRunnerComponent extends JPanel implements DataProvider {
       }
 
       public void update(AnActionEvent e) {
-        BuildScriptRunnerComponent.BuildState state = ((BuildScriptRunnerComponent.BuildState)e.getData(DataKey.create(BuildScriptRunnerComponent.BUILD_STATE_CONSTANT)));
+        BuildScriptRunnerComponent.BuildState state = ((BuildScriptRunnerComponent.BuildState) e.getData(DataKey.create(BuildScriptRunnerComponent.BUILD_STATE_CONSTANT)));
         if (state != null) {
           e.getPresentation().setEnabled(state.equals(BuildScriptRunnerComponent.BuildState.RUNNING));
         }

@@ -17,7 +17,7 @@ public class OptionReference extends BaseConcept {
   }
 
   public Option getOption() {
-    return (Option)this.getReferent(Option.class, OptionReference.OPTION);
+    return (Option) this.getReferent(Option.class, OptionReference.OPTION);
   }
 
   public void setOption(Option node) {
@@ -25,7 +25,7 @@ public class OptionReference extends BaseConcept {
   }
 
   public static OptionReference newInstance(SModel sm, boolean init) {
-    return (OptionReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OptionReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OptionReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OptionReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OptionReference newInstance(SModel sm) {

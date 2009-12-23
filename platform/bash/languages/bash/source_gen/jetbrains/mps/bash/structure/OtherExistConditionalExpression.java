@@ -15,7 +15,7 @@ public class OtherExistConditionalExpression extends UnaryConditionalExpression 
   }
 
   public static OtherExistConditionalExpression newInstance(SModel sm, boolean init) {
-    return (OtherExistConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OtherExistConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OtherExistConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OtherExistConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OtherExistConditionalExpression newInstance(SModel sm) {

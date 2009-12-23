@@ -15,7 +15,7 @@ public class BitwiseXorExpression extends BinaryArithmeticExpression {
   }
 
   public static BitwiseXorExpression newInstance(SModel sm, boolean init) {
-    return (BitwiseXorExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BitwiseXorExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BitwiseXorExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BitwiseXorExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BitwiseXorExpression newInstance(SModel sm) {

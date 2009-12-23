@@ -17,7 +17,7 @@ public class ConfigurationReference extends BaseConcept {
   }
 
   public Configuration getConfiguration() {
-    return (Configuration)this.getReferent(Configuration.class, ConfigurationReference.CONFIGURATION);
+    return (Configuration) this.getReferent(Configuration.class, ConfigurationReference.CONFIGURATION);
   }
 
   public void setConfiguration(Configuration node) {
@@ -25,7 +25,7 @@ public class ConfigurationReference extends BaseConcept {
   }
 
   public static ConfigurationReference newInstance(SModel sm, boolean init) {
-    return (ConfigurationReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.ConfigurationReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConfigurationReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.ConfigurationReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConfigurationReference newInstance(SModel sm) {

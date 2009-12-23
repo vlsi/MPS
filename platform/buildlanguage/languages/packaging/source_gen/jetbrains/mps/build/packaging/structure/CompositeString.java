@@ -45,7 +45,7 @@ public class CompositeString extends BaseConcept implements IStringExpression {
   }
 
   public IStringExpression getLeft() {
-    return (IStringExpression)this.getChild(IStringExpression.class, CompositeString.LEFT);
+    return (IStringExpression) this.getChild(IStringExpression.class, CompositeString.LEFT);
   }
 
   public void setLeft(IStringExpression node) {
@@ -53,7 +53,7 @@ public class CompositeString extends BaseConcept implements IStringExpression {
   }
 
   public IStringExpression getRight() {
-    return (IStringExpression)this.getChild(IStringExpression.class, CompositeString.RIGHT);
+    return (IStringExpression) this.getChild(IStringExpression.class, CompositeString.RIGHT);
   }
 
   public void setRight(IStringExpression node) {
@@ -61,7 +61,7 @@ public class CompositeString extends BaseConcept implements IStringExpression {
   }
 
   public static CompositeString newInstance(SModel sm, boolean init) {
-    return (CompositeString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.CompositeString", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CompositeString) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.CompositeString", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CompositeString newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class BitwiseOrExpression extends BinaryArithmeticExpression {
   }
 
   public static BitwiseOrExpression newInstance(SModel sm, boolean init) {
-    return (BitwiseOrExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BitwiseOrExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BitwiseOrExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BitwiseOrExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BitwiseOrExpression newInstance(SModel sm) {

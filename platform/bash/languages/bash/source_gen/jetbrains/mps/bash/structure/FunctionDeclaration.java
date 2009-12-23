@@ -56,7 +56,7 @@ public class FunctionDeclaration extends AbstractCommand implements INamedConcep
   }
 
   public ICompoundCommand getCommand() {
-    return (ICompoundCommand)this.getChild(ICompoundCommand.class, FunctionDeclaration.COMMAND);
+    return (ICompoundCommand) this.getChild(ICompoundCommand.class, FunctionDeclaration.COMMAND);
   }
 
   public void setCommand(ICompoundCommand node) {
@@ -84,7 +84,7 @@ public class FunctionDeclaration extends AbstractCommand implements INamedConcep
   }
 
   public static FunctionDeclaration newInstance(SModel sm, boolean init) {
-    return (FunctionDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.FunctionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FunctionDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.FunctionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FunctionDeclaration newInstance(SModel sm) {

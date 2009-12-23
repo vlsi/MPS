@@ -15,7 +15,7 @@ public class AppendingOutputRedirection extends IORedirection {
   }
 
   public static AppendingOutputRedirection newInstance(SModel sm, boolean init) {
-    return (AppendingOutputRedirection)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AppendingOutputRedirection", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AppendingOutputRedirection) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.AppendingOutputRedirection", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AppendingOutputRedirection newInstance(SModel sm) {

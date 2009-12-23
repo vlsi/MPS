@@ -24,7 +24,7 @@ public class Delete extends PostProcessingTask {
   }
 
   public static Delete newInstance(SModel sm, boolean init) {
-    return (Delete)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Delete", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Delete) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Delete", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Delete newInstance(SModel sm) {

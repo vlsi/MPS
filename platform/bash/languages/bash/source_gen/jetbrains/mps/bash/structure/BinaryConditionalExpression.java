@@ -18,7 +18,7 @@ public class BinaryConditionalExpression extends ConditionalExpression {
   }
 
   public GeneralizedWord getLeft() {
-    return (GeneralizedWord)this.getChild(GeneralizedWord.class, BinaryConditionalExpression.LEFT);
+    return (GeneralizedWord) this.getChild(GeneralizedWord.class, BinaryConditionalExpression.LEFT);
   }
 
   public void setLeft(GeneralizedWord node) {
@@ -26,7 +26,7 @@ public class BinaryConditionalExpression extends ConditionalExpression {
   }
 
   public GeneralizedWord getRight() {
-    return (GeneralizedWord)this.getChild(GeneralizedWord.class, BinaryConditionalExpression.RIGHT);
+    return (GeneralizedWord) this.getChild(GeneralizedWord.class, BinaryConditionalExpression.RIGHT);
   }
 
   public void setRight(GeneralizedWord node) {
@@ -34,7 +34,7 @@ public class BinaryConditionalExpression extends ConditionalExpression {
   }
 
   public static BinaryConditionalExpression newInstance(SModel sm, boolean init) {
-    return (BinaryConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BinaryConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BinaryConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BinaryConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BinaryConditionalExpression newInstance(SModel sm) {

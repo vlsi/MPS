@@ -17,7 +17,7 @@ public class UnaryArithmeticExpression extends ArithmeticExpression {
   }
 
   public ArithmeticExpression getExpression() {
-    return (ArithmeticExpression)this.getChild(ArithmeticExpression.class, UnaryArithmeticExpression.EXPRESSION);
+    return (ArithmeticExpression) this.getChild(ArithmeticExpression.class, UnaryArithmeticExpression.EXPRESSION);
   }
 
   public void setExpression(ArithmeticExpression node) {
@@ -25,7 +25,7 @@ public class UnaryArithmeticExpression extends ArithmeticExpression {
   }
 
   public static UnaryArithmeticExpression newInstance(SModel sm, boolean init) {
-    return (UnaryArithmeticExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.UnaryArithmeticExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UnaryArithmeticExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.UnaryArithmeticExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UnaryArithmeticExpression newInstance(SModel sm) {

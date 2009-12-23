@@ -16,7 +16,7 @@ public class PropertyFileImport extends PropertiesImport {
   }
 
   public Path getFile() {
-    return (Path)this.getChild(Path.class, PropertyFileImport.FILE);
+    return (Path) this.getChild(Path.class, PropertyFileImport.FILE);
   }
 
   public void setFile(Path node) {
@@ -24,7 +24,7 @@ public class PropertyFileImport extends PropertiesImport {
   }
 
   public static PropertyFileImport newInstance(SModel sm, boolean init) {
-    return (PropertyFileImport)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PropertyFileImport", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyFileImport) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PropertyFileImport", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyFileImport newInstance(SModel sm) {

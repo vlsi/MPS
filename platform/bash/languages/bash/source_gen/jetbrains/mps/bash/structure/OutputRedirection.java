@@ -24,7 +24,7 @@ public class OutputRedirection extends IORedirection {
   }
 
   public static OutputRedirection newInstance(SModel sm, boolean init) {
-    return (OutputRedirection)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OutputRedirection", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OutputRedirection) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OutputRedirection", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OutputRedirection newInstance(SModel sm) {

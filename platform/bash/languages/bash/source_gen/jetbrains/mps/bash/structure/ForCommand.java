@@ -18,7 +18,7 @@ public class ForCommand extends AbstractLoopCommand {
   }
 
   public ArithmeticExpression getAccord() {
-    return (ArithmeticExpression)this.getChild(ArithmeticExpression.class, ForCommand.ACCORD);
+    return (ArithmeticExpression) this.getChild(ArithmeticExpression.class, ForCommand.ACCORD);
   }
 
   public void setAccord(ArithmeticExpression node) {
@@ -26,7 +26,7 @@ public class ForCommand extends AbstractLoopCommand {
   }
 
   public ArithmeticExpression getCondition() {
-    return (ArithmeticExpression)this.getChild(ArithmeticExpression.class, ForCommand.CONDITION);
+    return (ArithmeticExpression) this.getChild(ArithmeticExpression.class, ForCommand.CONDITION);
   }
 
   public void setCondition(ArithmeticExpression node) {
@@ -34,7 +34,7 @@ public class ForCommand extends AbstractLoopCommand {
   }
 
   public ArithmeticExpression getIteration() {
-    return (ArithmeticExpression)this.getChild(ArithmeticExpression.class, ForCommand.ITERATION);
+    return (ArithmeticExpression) this.getChild(ArithmeticExpression.class, ForCommand.ITERATION);
   }
 
   public void setIteration(ArithmeticExpression node) {
@@ -42,7 +42,7 @@ public class ForCommand extends AbstractLoopCommand {
   }
 
   public static ForCommand newInstance(SModel sm, boolean init) {
-    return (ForCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ForCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ForCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ForCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ForCommand newInstance(SModel sm) {

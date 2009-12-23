@@ -62,7 +62,7 @@ public class UndeclaredVariableReference extends BaseConcept implements IStringE
   }
 
   public static UndeclaredVariableReference newInstance(SModel sm, boolean init) {
-    return (UndeclaredVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UndeclaredVariableReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommpsInternal.structure.UndeclaredVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UndeclaredVariableReference newInstance(SModel sm) {

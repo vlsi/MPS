@@ -18,7 +18,7 @@ public class SystemSpecificConfig extends BaseConcept {
   }
 
   public static SystemSpecificConfig newInstance(SModel sm, boolean init) {
-    return (SystemSpecificConfig)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.SystemSpecificConfig", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SystemSpecificConfig) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.SystemSpecificConfig", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SystemSpecificConfig newInstance(SModel sm) {

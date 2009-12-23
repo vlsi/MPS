@@ -43,7 +43,7 @@ public class VariableReference extends LValue implements IGeneralizedWordUnit {
   }
 
   public VariableNameDeclaration getVariable() {
-    return (VariableNameDeclaration)this.getReferent(VariableNameDeclaration.class, VariableReference.VARIABLE);
+    return (VariableNameDeclaration) this.getReferent(VariableNameDeclaration.class, VariableReference.VARIABLE);
   }
 
   public void setVariable(VariableNameDeclaration node) {
@@ -51,7 +51,7 @@ public class VariableReference extends LValue implements IGeneralizedWordUnit {
   }
 
   public static VariableReference newInstance(SModel sm, boolean init) {
-    return (VariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.VariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VariableReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.VariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VariableReference newInstance(SModel sm) {

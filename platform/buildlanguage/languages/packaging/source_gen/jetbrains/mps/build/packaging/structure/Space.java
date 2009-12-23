@@ -43,7 +43,7 @@ public class Space extends BaseConcept implements IStringExpression {
   }
 
   public static Space newInstance(SModel sm, boolean init) {
-    return (Space)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Space", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Space) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Space", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Space newInstance(SModel sm) {

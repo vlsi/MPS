@@ -16,7 +16,7 @@ public class File extends AbstractProjectComponent {
   }
 
   public Path getSourcePath() {
-    return (Path)this.getChild(Path.class, File.SOURCE_PATH);
+    return (Path) this.getChild(Path.class, File.SOURCE_PATH);
   }
 
   public void setSourcePath(Path node) {
@@ -24,7 +24,7 @@ public class File extends AbstractProjectComponent {
   }
 
   public static File newInstance(SModel sm, boolean init) {
-    return (File)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.File", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (File) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.File", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static File newInstance(SModel sm) {

@@ -18,7 +18,7 @@ public class CombiningConditionalExpression extends ConditionalExpression {
   }
 
   public ConditionalExpression getLeft() {
-    return (ConditionalExpression)this.getChild(ConditionalExpression.class, CombiningConditionalExpression.LEFT);
+    return (ConditionalExpression) this.getChild(ConditionalExpression.class, CombiningConditionalExpression.LEFT);
   }
 
   public void setLeft(ConditionalExpression node) {
@@ -26,7 +26,7 @@ public class CombiningConditionalExpression extends ConditionalExpression {
   }
 
   public ConditionalExpression getRight() {
-    return (ConditionalExpression)this.getChild(ConditionalExpression.class, CombiningConditionalExpression.RIGHT);
+    return (ConditionalExpression) this.getChild(ConditionalExpression.class, CombiningConditionalExpression.RIGHT);
   }
 
   public void setRight(ConditionalExpression node) {
@@ -34,7 +34,7 @@ public class CombiningConditionalExpression extends ConditionalExpression {
   }
 
   public static CombiningConditionalExpression newInstance(SModel sm, boolean init) {
-    return (CombiningConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CombiningConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CombiningConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CombiningConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CombiningConditionalExpression newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class LastReadConditionalExpression extends UnaryConditionalExpression {
   }
 
   public static LastReadConditionalExpression newInstance(SModel sm, boolean init) {
-    return (LastReadConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LastReadConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LastReadConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.LastReadConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LastReadConditionalExpression newInstance(SModel sm) {

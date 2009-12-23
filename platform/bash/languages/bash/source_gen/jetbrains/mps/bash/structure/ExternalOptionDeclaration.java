@@ -16,7 +16,7 @@ public class ExternalOptionDeclaration extends BaseConcept {
   }
 
   public static ExternalOptionDeclaration newInstance(SModel sm, boolean init) {
-    return (ExternalOptionDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ExternalOptionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExternalOptionDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ExternalOptionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExternalOptionDeclaration newInstance(SModel sm) {

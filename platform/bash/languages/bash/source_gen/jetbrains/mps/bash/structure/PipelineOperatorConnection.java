@@ -15,7 +15,7 @@ public class PipelineOperatorConnection extends FollowingPipeline {
   }
 
   public static PipelineOperatorConnection newInstance(SModel sm, boolean init) {
-    return (PipelineOperatorConnection)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PipelineOperatorConnection", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PipelineOperatorConnection) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PipelineOperatorConnection", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PipelineOperatorConnection newInstance(SModel sm) {

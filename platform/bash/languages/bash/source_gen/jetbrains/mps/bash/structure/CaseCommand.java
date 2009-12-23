@@ -46,7 +46,7 @@ public class CaseCommand extends AbstractCommand implements ICompoundCommand {
   }
 
   public GeneralizedWord getWord() {
-    return (GeneralizedWord)this.getChild(GeneralizedWord.class, CaseCommand.WORD);
+    return (GeneralizedWord) this.getChild(GeneralizedWord.class, CaseCommand.WORD);
   }
 
   public void setWord(GeneralizedWord node) {
@@ -74,7 +74,7 @@ public class CaseCommand extends AbstractCommand implements ICompoundCommand {
   }
 
   public static CaseCommand newInstance(SModel sm, boolean init) {
-    return (CaseCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CaseCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CaseCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CaseCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CaseCommand newInstance(SModel sm) {

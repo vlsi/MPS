@@ -118,7 +118,7 @@ public class ProjectDescription extends BaseConcept implements INamedConcept {
   }
 
   public static ProjectDescription newInstance(SModel sm, boolean init) {
-    return (ProjectDescription)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.dependency.structure.ProjectDescription", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ProjectDescription) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.dependency.structure.ProjectDescription", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ProjectDescription newInstance(SModel sm) {

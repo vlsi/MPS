@@ -16,7 +16,7 @@ public class Command extends BaseConcept {
   }
 
   public static Command newInstance(SModel sm, boolean init) {
-    return (Command)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.Command", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Command) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.Command", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Command newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class OrOperator extends FollowingCommandList {
   }
 
   public static OrOperator newInstance(SModel sm, boolean init) {
-    return (OrOperator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OrOperator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OrOperator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OrOperator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OrOperator newInstance(SModel sm) {

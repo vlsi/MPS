@@ -16,7 +16,7 @@ public class ConditionalExpression extends BaseConcept {
   }
 
   public static ConditionalExpression newInstance(SModel sm, boolean init) {
-    return (ConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConditionalExpression newInstance(SModel sm) {

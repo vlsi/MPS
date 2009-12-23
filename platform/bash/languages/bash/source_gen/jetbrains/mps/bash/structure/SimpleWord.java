@@ -52,7 +52,7 @@ public class SimpleWord extends BaseConcept implements IGeneralizedWordUnit {
   }
 
   public static SimpleWord newInstance(SModel sm, boolean init) {
-    return (SimpleWord)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SimpleWord", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleWord) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SimpleWord", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleWord newInstance(SModel sm) {

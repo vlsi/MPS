@@ -39,7 +39,7 @@ public class GeneralizedWord extends BaseConcept {
   }
 
   public static GeneralizedWord newInstance(SModel sm, boolean init) {
-    return (GeneralizedWord)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.GeneralizedWord", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GeneralizedWord) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.GeneralizedWord", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GeneralizedWord newInstance(SModel sm) {

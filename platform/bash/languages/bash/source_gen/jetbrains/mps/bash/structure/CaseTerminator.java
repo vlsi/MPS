@@ -17,7 +17,7 @@ public class CaseTerminator extends BaseConcept {
   }
 
   public static CaseTerminator newInstance(SModel sm, boolean init) {
-    return (CaseTerminator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CaseTerminator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CaseTerminator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CaseTerminator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CaseTerminator newInstance(SModel sm) {

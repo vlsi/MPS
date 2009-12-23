@@ -24,7 +24,7 @@ public class DecimalConstant extends IntegerLiteral {
   }
 
   public static DecimalConstant newInstance(SModel sm, boolean init) {
-    return (DecimalConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.DecimalConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DecimalConstant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.DecimalConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DecimalConstant newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class ReadingWritingRedirection extends IORedirection {
   }
 
   public static ReadingWritingRedirection newInstance(SModel sm, boolean init) {
-    return (ReadingWritingRedirection)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ReadingWritingRedirection", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReadingWritingRedirection) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ReadingWritingRedirection", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReadingWritingRedirection newInstance(SModel sm) {

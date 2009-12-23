@@ -64,7 +64,7 @@ public class FileAssociation extends BaseConcept implements INamedConcept {
   }
 
   public IPath getIcon() {
-    return (IPath)this.getChild(IPath.class, FileAssociation.ICON);
+    return (IPath) this.getChild(IPath.class, FileAssociation.ICON);
   }
 
   public void setIcon(IPath node) {
@@ -72,7 +72,7 @@ public class FileAssociation extends BaseConcept implements INamedConcept {
   }
 
   public static FileAssociation newInstance(SModel sm, boolean init) {
-    return (FileAssociation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.FileAssociation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FileAssociation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.FileAssociation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FileAssociation newInstance(SModel sm) {

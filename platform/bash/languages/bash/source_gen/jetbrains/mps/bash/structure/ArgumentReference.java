@@ -17,7 +17,7 @@ public class ArgumentReference extends ExternalOptionReference {
   }
 
   public Argument getArg() {
-    return (Argument)this.getReferent(Argument.class, ArgumentReference.ARG);
+    return (Argument) this.getReferent(Argument.class, ArgumentReference.ARG);
   }
 
   public void setArg(Argument node) {
@@ -25,7 +25,7 @@ public class ArgumentReference extends ExternalOptionReference {
   }
 
   public GeneralizedWord getValue() {
-    return (GeneralizedWord)this.getChild(GeneralizedWord.class, ArgumentReference.VALUE);
+    return (GeneralizedWord) this.getChild(GeneralizedWord.class, ArgumentReference.VALUE);
   }
 
   public void setValue(GeneralizedWord node) {
@@ -33,7 +33,7 @@ public class ArgumentReference extends ExternalOptionReference {
   }
 
   public static ArgumentReference newInstance(SModel sm, boolean init) {
-    return (ArgumentReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ArgumentReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ArgumentReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ArgumentReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ArgumentReference newInstance(SModel sm) {

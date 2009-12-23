@@ -17,7 +17,7 @@ public class ProjectDescriptionReference extends ImportProject {
   }
 
   public ProjectDescription getDescription() {
-    return (ProjectDescription)this.getReferent(ProjectDescription.class, ProjectDescriptionReference.DESCRIPTION);
+    return (ProjectDescription) this.getReferent(ProjectDescription.class, ProjectDescriptionReference.DESCRIPTION);
   }
 
   public void setDescription(ProjectDescription node) {
@@ -25,7 +25,7 @@ public class ProjectDescriptionReference extends ImportProject {
   }
 
   public static ProjectDescriptionReference newInstance(SModel sm, boolean init) {
-    return (ProjectDescriptionReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.dependency.structure.ProjectDescriptionReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ProjectDescriptionReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.dependency.structure.ProjectDescriptionReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ProjectDescriptionReference newInstance(SModel sm) {

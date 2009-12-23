@@ -15,7 +15,7 @@ public class GroupIdConditionalExpression extends UnaryConditionalExpression {
   }
 
   public static GroupIdConditionalExpression newInstance(SModel sm, boolean init) {
-    return (GroupIdConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.GroupIdConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GroupIdConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.GroupIdConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GroupIdConditionalExpression newInstance(SModel sm) {

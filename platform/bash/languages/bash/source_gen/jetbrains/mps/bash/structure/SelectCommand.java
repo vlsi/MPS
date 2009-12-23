@@ -45,7 +45,7 @@ public class SelectCommand extends AbstractCommand implements ICompoundCommand {
   }
 
   public VariableNameDeclaration getVariable() {
-    return (VariableNameDeclaration)this.getChild(VariableNameDeclaration.class, SelectCommand.VARIABLE);
+    return (VariableNameDeclaration) this.getChild(VariableNameDeclaration.class, SelectCommand.VARIABLE);
   }
 
   public void setVariable(VariableNameDeclaration node) {
@@ -53,7 +53,7 @@ public class SelectCommand extends AbstractCommand implements ICompoundCommand {
   }
 
   public WordList getWords() {
-    return (WordList)this.getChild(WordList.class, SelectCommand.WORDS);
+    return (WordList) this.getChild(WordList.class, SelectCommand.WORDS);
   }
 
   public void setWords(WordList node) {
@@ -61,7 +61,7 @@ public class SelectCommand extends AbstractCommand implements ICompoundCommand {
   }
 
   public InputLines getCommands() {
-    return (InputLines)this.getChild(InputLines.class, SelectCommand.COMMANDS);
+    return (InputLines) this.getChild(InputLines.class, SelectCommand.COMMANDS);
   }
 
   public void setCommands(InputLines node) {
@@ -69,7 +69,7 @@ public class SelectCommand extends AbstractCommand implements ICompoundCommand {
   }
 
   public static SelectCommand newInstance(SModel sm, boolean init) {
-    return (SelectCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SelectCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SelectCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SelectCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SelectCommand newInstance(SModel sm) {

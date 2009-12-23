@@ -15,7 +15,7 @@ public class BlockFileConditionalExpression extends UnaryConditionalExpression {
   }
 
   public static BlockFileConditionalExpression newInstance(SModel sm, boolean init) {
-    return (BlockFileConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BlockFileConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BlockFileConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BlockFileConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BlockFileConditionalExpression newInstance(SModel sm) {

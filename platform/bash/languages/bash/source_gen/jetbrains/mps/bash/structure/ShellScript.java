@@ -57,7 +57,7 @@ public class ShellScript extends BaseConcept implements INamedConcept {
   }
 
   public InputLines getCommands() {
-    return (InputLines)this.getChild(InputLines.class, ShellScript.COMMANDS);
+    return (InputLines) this.getChild(InputLines.class, ShellScript.COMMANDS);
   }
 
   public void setCommands(InputLines node) {
@@ -85,7 +85,7 @@ public class ShellScript extends BaseConcept implements INamedConcept {
   }
 
   public static ShellScript newInstance(SModel sm, boolean init) {
-    return (ShellScript)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ShellScript", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ShellScript) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ShellScript", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ShellScript newInstance(SModel sm) {

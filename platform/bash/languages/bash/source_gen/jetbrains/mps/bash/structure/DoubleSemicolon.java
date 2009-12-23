@@ -15,7 +15,7 @@ public class DoubleSemicolon extends CaseTerminator {
   }
 
   public static DoubleSemicolon newInstance(SModel sm, boolean init) {
-    return (DoubleSemicolon)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.DoubleSemicolon", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DoubleSemicolon) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.DoubleSemicolon", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DoubleSemicolon newInstance(SModel sm) {

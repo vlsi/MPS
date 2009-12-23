@@ -39,7 +39,7 @@ public class ModuleCycle extends BaseConcept {
   }
 
   public static ModuleCycle newInstance(SModel sm, boolean init) {
-    return (ModuleCycle)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.ModuleCycle", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ModuleCycle) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.ModuleCycle", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ModuleCycle newInstance(SModel sm) {

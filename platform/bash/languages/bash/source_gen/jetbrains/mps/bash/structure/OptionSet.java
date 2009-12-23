@@ -38,7 +38,7 @@ public class OptionSet extends ExternalOptionDeclaration {
   }
 
   public static OptionSet newInstance(SModel sm, boolean init) {
-    return (OptionSet)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OptionSet", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OptionSet) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.OptionSet", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OptionSet newInstance(SModel sm) {

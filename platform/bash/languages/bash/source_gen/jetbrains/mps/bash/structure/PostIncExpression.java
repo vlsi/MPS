@@ -15,7 +15,7 @@ public class PostIncExpression extends PostVariableExpression {
   }
 
   public static PostIncExpression newInstance(SModel sm, boolean init) {
-    return (PostIncExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PostIncExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PostIncExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.PostIncExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PostIncExpression newInstance(SModel sm) {

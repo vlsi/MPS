@@ -53,7 +53,7 @@ public class Role extends BaseConcept implements INamedConcept {
   }
 
   public static Role newInstance(SModel sm, boolean init) {
-    return (Role)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.Role", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Role) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.Role", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Role newInstance(SModel sm) {

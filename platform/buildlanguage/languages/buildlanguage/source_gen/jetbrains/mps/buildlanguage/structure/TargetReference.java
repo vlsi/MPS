@@ -17,7 +17,7 @@ public class TargetReference extends BaseConcept {
   }
 
   public TargetDeclaration getTargetDeclaration() {
-    return (TargetDeclaration)this.getReferent(TargetDeclaration.class, TargetReference.TARGET_DECLARATION);
+    return (TargetDeclaration) this.getReferent(TargetDeclaration.class, TargetReference.TARGET_DECLARATION);
   }
 
   public void setTargetDeclaration(TargetDeclaration node) {
@@ -25,7 +25,7 @@ public class TargetReference extends BaseConcept {
   }
 
   public static TargetReference newInstance(SModel sm, boolean init) {
-    return (TargetReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.TargetReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TargetReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.TargetReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TargetReference newInstance(SModel sm) {

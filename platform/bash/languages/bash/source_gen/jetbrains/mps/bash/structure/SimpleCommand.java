@@ -53,7 +53,7 @@ public class SimpleCommand extends AbstractCommand implements INamedConcept {
   }
 
   public WordList getParamList() {
-    return (WordList)this.getChild(WordList.class, SimpleCommand.PARAM_LIST);
+    return (WordList) this.getChild(WordList.class, SimpleCommand.PARAM_LIST);
   }
 
   public void setParamList(WordList node) {
@@ -61,7 +61,7 @@ public class SimpleCommand extends AbstractCommand implements INamedConcept {
   }
 
   public static SimpleCommand newInstance(SModel sm, boolean init) {
-    return (SimpleCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SimpleCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SimpleCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleCommand newInstance(SModel sm) {

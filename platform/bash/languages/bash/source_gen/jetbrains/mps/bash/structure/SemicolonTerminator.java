@@ -15,7 +15,7 @@ public class SemicolonTerminator extends CommandTerminator {
   }
 
   public static SemicolonTerminator newInstance(SModel sm, boolean init) {
-    return (SemicolonTerminator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SemicolonTerminator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SemicolonTerminator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.SemicolonTerminator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SemicolonTerminator newInstance(SModel sm) {

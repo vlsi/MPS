@@ -66,7 +66,7 @@ public class TaskCall extends AbstractCall implements INamedConcept {
   }
 
   public ITaskDeclaration getDeclaration() {
-    return (ITaskDeclaration)this.getReferent(ITaskDeclaration.class, TaskCall.DECLARATION);
+    return (ITaskDeclaration) this.getReferent(ITaskDeclaration.class, TaskCall.DECLARATION);
   }
 
   public void setDeclaration(ITaskDeclaration node) {
@@ -94,7 +94,7 @@ public class TaskCall extends AbstractCall implements INamedConcept {
   }
 
   public static TaskCall newInstance(SModel sm, boolean init) {
-    return (TaskCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.generictasks.structure.TaskCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TaskCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.generictasks.structure.TaskCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TaskCall newInstance(SModel sm) {

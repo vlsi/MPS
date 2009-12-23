@@ -17,7 +17,7 @@ public class TaskReference extends BaseConcept {
   }
 
   public ITaskDeclaration getDeclaration() {
-    return (ITaskDeclaration)this.getReferent(ITaskDeclaration.class, TaskReference.DECLARATION);
+    return (ITaskDeclaration) this.getReferent(ITaskDeclaration.class, TaskReference.DECLARATION);
   }
 
   public void setDeclaration(ITaskDeclaration node) {
@@ -25,7 +25,7 @@ public class TaskReference extends BaseConcept {
   }
 
   public static TaskReference newInstance(SModel sm, boolean init) {
-    return (TaskReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.generictasks.structure.TaskReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TaskReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.generictasks.structure.TaskReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TaskReference newInstance(SModel sm) {

@@ -38,7 +38,7 @@ public class TaskInterfaceDeclaration extends BuiltInTaskDeclaration {
   }
 
   public static TaskInterfaceDeclaration newInstance(SModel sm, boolean init) {
-    return (TaskInterfaceDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.generictasks.structure.TaskInterfaceDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TaskInterfaceDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.generictasks.structure.TaskInterfaceDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TaskInterfaceDeclaration newInstance(SModel sm) {

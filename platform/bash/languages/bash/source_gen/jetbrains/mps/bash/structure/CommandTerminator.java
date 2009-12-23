@@ -17,7 +17,7 @@ public class CommandTerminator extends BaseConcept {
   }
 
   public static CommandTerminator newInstance(SModel sm, boolean init) {
-    return (CommandTerminator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CommandTerminator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CommandTerminator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CommandTerminator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CommandTerminator newInstance(SModel sm) {

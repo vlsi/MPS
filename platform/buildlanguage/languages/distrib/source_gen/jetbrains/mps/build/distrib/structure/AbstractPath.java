@@ -16,7 +16,7 @@ public class AbstractPath extends BaseConcept {
   }
 
   public static AbstractPath newInstance(SModel sm, boolean init) {
-    return (AbstractPath)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.AbstractPath", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractPath) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.AbstractPath", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractPath newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class UntilLoopCommand extends AbstractLoopCommand {
   }
 
   public AbstractCommand getTestCommand() {
-    return (AbstractCommand)this.getChild(AbstractCommand.class, UntilLoopCommand.TEST_COMMAND);
+    return (AbstractCommand) this.getChild(AbstractCommand.class, UntilLoopCommand.TEST_COMMAND);
   }
 
   public void setTestCommand(AbstractCommand node) {
@@ -24,7 +24,7 @@ public class UntilLoopCommand extends AbstractLoopCommand {
   }
 
   public static UntilLoopCommand newInstance(SModel sm, boolean init) {
-    return (UntilLoopCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.UntilLoopCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UntilLoopCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.UntilLoopCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UntilLoopCommand newInstance(SModel sm) {

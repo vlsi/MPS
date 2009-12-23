@@ -16,7 +16,7 @@ public class MacOsFileAssociation extends FileAssociation {
   }
 
   public Role getRole() {
-    return (Role)this.getChild(Role.class, MacOsFileAssociation.ROLE);
+    return (Role) this.getChild(Role.class, MacOsFileAssociation.ROLE);
   }
 
   public void setRole(Role node) {
@@ -24,7 +24,7 @@ public class MacOsFileAssociation extends FileAssociation {
   }
 
   public static MacOsFileAssociation newInstance(SModel sm, boolean init) {
-    return (MacOsFileAssociation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.MacOsFileAssociation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MacOsFileAssociation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.MacOsFileAssociation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MacOsFileAssociation newInstance(SModel sm) {

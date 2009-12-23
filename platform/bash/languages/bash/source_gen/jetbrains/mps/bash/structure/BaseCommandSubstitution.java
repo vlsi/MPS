@@ -46,7 +46,7 @@ public class BaseCommandSubstitution extends BaseConcept implements IGeneralized
   }
 
   public CommandList getCommand() {
-    return (CommandList)this.getChild(CommandList.class, BaseCommandSubstitution.COMMAND);
+    return (CommandList) this.getChild(CommandList.class, BaseCommandSubstitution.COMMAND);
   }
 
   public void setCommand(CommandList node) {
@@ -54,7 +54,7 @@ public class BaseCommandSubstitution extends BaseConcept implements IGeneralized
   }
 
   public static BaseCommandSubstitution newInstance(SModel sm, boolean init) {
-    return (BaseCommandSubstitution)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BaseCommandSubstitution", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseCommandSubstitution) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BaseCommandSubstitution", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseCommandSubstitution newInstance(SModel sm) {

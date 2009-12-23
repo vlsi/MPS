@@ -19,7 +19,7 @@ public class RedirectedCommand extends AbstractCommand {
   }
 
   public AbstractCommand getCommand() {
-    return (AbstractCommand)this.getChild(AbstractCommand.class, RedirectedCommand.COMMAND);
+    return (AbstractCommand) this.getChild(AbstractCommand.class, RedirectedCommand.COMMAND);
   }
 
   public void setCommand(AbstractCommand node) {
@@ -47,7 +47,7 @@ public class RedirectedCommand extends AbstractCommand {
   }
 
   public static RedirectedCommand newInstance(SModel sm, boolean init) {
-    return (RedirectedCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.RedirectedCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RedirectedCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.RedirectedCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RedirectedCommand newInstance(SModel sm) {

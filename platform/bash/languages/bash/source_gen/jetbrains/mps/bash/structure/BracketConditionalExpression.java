@@ -16,7 +16,7 @@ public class BracketConditionalExpression extends ConditionalExpression {
   }
 
   public ConditionalExpression getExpression() {
-    return (ConditionalExpression)this.getChild(ConditionalExpression.class, BracketConditionalExpression.EXPRESSION);
+    return (ConditionalExpression) this.getChild(ConditionalExpression.class, BracketConditionalExpression.EXPRESSION);
   }
 
   public void setExpression(ConditionalExpression node) {
@@ -24,7 +24,7 @@ public class BracketConditionalExpression extends ConditionalExpression {
   }
 
   public static BracketConditionalExpression newInstance(SModel sm, boolean init) {
-    return (BracketConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BracketConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BracketConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.BracketConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BracketConditionalExpression newInstance(SModel sm) {

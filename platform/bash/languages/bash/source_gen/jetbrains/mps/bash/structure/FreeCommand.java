@@ -38,7 +38,7 @@ public class FreeCommand extends AbstractCommand {
   }
 
   public static FreeCommand newInstance(SModel sm, boolean init) {
-    return (FreeCommand)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.FreeCommand", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FreeCommand) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.FreeCommand", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FreeCommand newInstance(SModel sm) {

@@ -18,7 +18,7 @@ public class LibraryFolder extends Folder {
   }
 
   public IStringExpression getLibraryName() {
-    return (IStringExpression)this.getChild(IStringExpression.class, LibraryFolder.LIBRARY_NAME);
+    return (IStringExpression) this.getChild(IStringExpression.class, LibraryFolder.LIBRARY_NAME);
   }
 
   public void setLibraryName(IStringExpression node) {
@@ -26,7 +26,7 @@ public class LibraryFolder extends Folder {
   }
 
   public static LibraryFolder newInstance(SModel sm, boolean init) {
-    return (LibraryFolder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommps.structure.LibraryFolder", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LibraryFolder) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommps.structure.LibraryFolder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LibraryFolder newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class EqualityStrings extends BinaryConditionalExpression {
   }
 
   public static EqualityStrings newInstance(SModel sm, boolean init) {
-    return (EqualityStrings)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.EqualityStrings", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EqualityStrings) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.EqualityStrings", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EqualityStrings newInstance(SModel sm) {

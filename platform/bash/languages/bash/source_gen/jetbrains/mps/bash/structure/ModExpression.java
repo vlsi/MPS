@@ -15,7 +15,7 @@ public class ModExpression extends BinaryArithmeticExpression {
   }
 
   public static ModExpression newInstance(SModel sm, boolean init) {
-    return (ModExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ModExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ModExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ModExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ModExpression newInstance(SModel sm) {

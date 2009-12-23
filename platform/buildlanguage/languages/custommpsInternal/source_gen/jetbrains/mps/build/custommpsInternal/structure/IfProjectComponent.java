@@ -58,7 +58,7 @@ public class IfProjectComponent extends AbstractProjectComponent implements IAbs
   }
 
   public ICondition getCondition() {
-    return (ICondition)this.getChild(ICondition.class, IfProjectComponent.CONDITION);
+    return (ICondition) this.getChild(ICondition.class, IfProjectComponent.CONDITION);
   }
 
   public void setCondition(ICondition node) {
@@ -66,7 +66,7 @@ public class IfProjectComponent extends AbstractProjectComponent implements IAbs
   }
 
   public AbstractProjectComponent getIfTrue() {
-    return (AbstractProjectComponent)this.getChild(AbstractProjectComponent.class, IfProjectComponent.IF_TRUE);
+    return (AbstractProjectComponent) this.getChild(AbstractProjectComponent.class, IfProjectComponent.IF_TRUE);
   }
 
   public void setIfTrue(AbstractProjectComponent node) {
@@ -74,7 +74,7 @@ public class IfProjectComponent extends AbstractProjectComponent implements IAbs
   }
 
   public AbstractProjectComponent getIfFaulse() {
-    return (AbstractProjectComponent)this.getChild(AbstractProjectComponent.class, IfProjectComponent.IF_FAULSE);
+    return (AbstractProjectComponent) this.getChild(AbstractProjectComponent.class, IfProjectComponent.IF_FAULSE);
   }
 
   public void setIfFaulse(AbstractProjectComponent node) {
@@ -82,7 +82,7 @@ public class IfProjectComponent extends AbstractProjectComponent implements IAbs
   }
 
   public static IfProjectComponent newInstance(SModel sm, boolean init) {
-    return (IfProjectComponent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommpsInternal.structure.IfProjectComponent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IfProjectComponent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.custommpsInternal.structure.IfProjectComponent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IfProjectComponent newInstance(SModel sm) {

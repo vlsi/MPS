@@ -15,7 +15,7 @@ public class DirectoryConditionalExpression extends UnaryConditionalExpression {
   }
 
   public static DirectoryConditionalExpression newInstance(SModel sm, boolean init) {
-    return (DirectoryConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.DirectoryConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DirectoryConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.DirectoryConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DirectoryConditionalExpression newInstance(SModel sm) {

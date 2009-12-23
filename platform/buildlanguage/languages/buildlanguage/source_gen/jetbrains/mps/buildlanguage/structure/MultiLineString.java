@@ -75,7 +75,7 @@ public class MultiLineString extends PropertyValueExpression implements INamedCo
   }
 
   public static MultiLineString newInstance(SModel sm, boolean init) {
-    return (MultiLineString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.MultiLineString", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MultiLineString) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.MultiLineString", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MultiLineString newInstance(SModel sm) {

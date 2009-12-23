@@ -19,7 +19,7 @@ public class ExternalCommandCall extends AbstractCommand {
   }
 
   public ExternalCommandDeclaration getDeclaration() {
-    return (ExternalCommandDeclaration)this.getReferent(ExternalCommandDeclaration.class, ExternalCommandCall.DECLARATION);
+    return (ExternalCommandDeclaration) this.getReferent(ExternalCommandDeclaration.class, ExternalCommandCall.DECLARATION);
   }
 
   public void setDeclaration(ExternalCommandDeclaration node) {
@@ -47,7 +47,7 @@ public class ExternalCommandCall extends AbstractCommand {
   }
 
   public static ExternalCommandCall newInstance(SModel sm, boolean init) {
-    return (ExternalCommandCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ExternalCommandCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExternalCommandCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.ExternalCommandCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExternalCommandCall newInstance(SModel sm) {

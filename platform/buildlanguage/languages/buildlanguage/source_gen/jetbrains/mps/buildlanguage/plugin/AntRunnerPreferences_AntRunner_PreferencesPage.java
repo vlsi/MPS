@@ -36,18 +36,18 @@ public class AntRunnerPreferences_AntRunner_PreferencesPage extends BasePrefsPag
   }
 
   private void commit(Project project, AntRunnerPreferencesPage component) {
-    ((AntRunnerPreferences_PreferencesComponent)AntRunnerPreferences_AntRunner_PreferencesPage.this.getPrefsComponent()).getStateObject().data = ((AntRunnerPreferencesPage)component).getState();
+    ((AntRunnerPreferences_PreferencesComponent) AntRunnerPreferences_AntRunner_PreferencesPage.this.getPrefsComponent()).getStateObject().data = ((AntRunnerPreferencesPage) component).getState();
   }
 
   public JComponent createComponent() {
     if (this.myComponent == null) {
-      this.myComponent = new AntRunnerPreferencesPage(((AntRunnerPreferences_PreferencesComponent)AntRunnerPreferences_AntRunner_PreferencesPage.this.getPrefsComponent()).getStateObject().data);
+      this.myComponent = new AntRunnerPreferencesPage(((AntRunnerPreferences_PreferencesComponent) AntRunnerPreferences_AntRunner_PreferencesPage.this.getPrefsComponent()).getStateObject().data);
     }
     return this.myComponent;
   }
 
   private boolean isModified(Project project, AntRunnerPreferencesPage component) {
-    return ((AntRunnerPreferencesPage)component).isModified();
+    return ((AntRunnerPreferencesPage) component).isModified();
   }
 
   public void disposeUIResources() {
@@ -61,6 +61,6 @@ public class AntRunnerPreferences_AntRunner_PreferencesPage extends BasePrefsPag
   }
 
   private void reset(Project project, AntRunnerPreferencesPage component) {
-    ((AntRunnerPreferencesPage)component).updateState(((AntRunnerPreferences_PreferencesComponent)AntRunnerPreferences_AntRunner_PreferencesPage.this.getPrefsComponent()).getStateObject().data);
+    ((AntRunnerPreferencesPage) component).updateState(((AntRunnerPreferences_PreferencesComponent) AntRunnerPreferences_AntRunner_PreferencesPage.this.getPrefsComponent()).getStateObject().data);
   }
 }

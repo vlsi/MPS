@@ -21,7 +21,7 @@ public class MacConfig extends SystemSpecificConfig {
   }
 
   public IPath getIconPath() {
-    return (IPath)this.getChild(IPath.class, MacConfig.ICON_PATH);
+    return (IPath) this.getChild(IPath.class, MacConfig.ICON_PATH);
   }
 
   public void setIconPath(IPath node) {
@@ -29,7 +29,7 @@ public class MacConfig extends SystemSpecificConfig {
   }
 
   public IPath getJavaApplicationStubPath() {
-    return (IPath)this.getChild(IPath.class, MacConfig.JAVA_APPLICATION_STUB_PATH);
+    return (IPath) this.getChild(IPath.class, MacConfig.JAVA_APPLICATION_STUB_PATH);
   }
 
   public void setJavaApplicationStubPath(IPath node) {
@@ -57,7 +57,7 @@ public class MacConfig extends SystemSpecificConfig {
   }
 
   public static MacConfig newInstance(SModel sm, boolean init) {
-    return (MacConfig)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.MacConfig", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MacConfig) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.MacConfig", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MacConfig newInstance(SModel sm) {

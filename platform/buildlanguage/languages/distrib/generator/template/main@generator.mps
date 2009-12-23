@@ -5923,8 +5923,11 @@
                         <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="1234545169128">
                           <property name="name:7" value="ext" />
                         </node>
-                        <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1234545175500">
-                          <link role="variableDeclaration:3" targetNodeId="1234545164165" resolveInfo="extensions" />
+                        <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3809693334688540003">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3809693334688540001">
+                            <link role="variableDeclaration:3" targetNodeId="1234545164165" resolveInfo="extensions" />
+                          </node>
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AsSequenceOperation:7" id="3809693334688540008" />
                         </node>
                         <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1234545169130">
                           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1234545220426">
@@ -6376,7 +6379,7 @@
             <property name="name:0" value="string" />
             <node role="content:0" type="jetbrains.mps.xml.deprecated.structure.Text:0" id="1234426829216">
               <property name="name:0" value="" />
-              <property name="text:0" value="1.5+" />
+              <property name="text:0" value="1.6+" />
             </node>
           </node>
           <node role="content:0" type="jetbrains.mps.xml.deprecated.structure.Element:0" id="1234426837562">

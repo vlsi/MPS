@@ -21,7 +21,7 @@ public class CaseClause extends BaseConcept {
   }
 
   public InputLines getCommand() {
-    return (InputLines)this.getChild(InputLines.class, CaseClause.COMMAND);
+    return (InputLines) this.getChild(InputLines.class, CaseClause.COMMAND);
   }
 
   public void setCommand(InputLines node) {
@@ -29,7 +29,7 @@ public class CaseClause extends BaseConcept {
   }
 
   public CaseTerminator getTerminator() {
-    return (CaseTerminator)this.getChild(CaseTerminator.class, CaseClause.TERMINATOR);
+    return (CaseTerminator) this.getChild(CaseTerminator.class, CaseClause.TERMINATOR);
   }
 
   public void setTerminator(CaseTerminator node) {
@@ -57,7 +57,7 @@ public class CaseClause extends BaseConcept {
   }
 
   public static CaseClause newInstance(SModel sm, boolean init) {
-    return (CaseClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CaseClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CaseClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.CaseClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CaseClause newInstance(SModel sm) {

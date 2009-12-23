@@ -15,7 +15,7 @@ public class NonZeroStringConditionalExpression extends UnaryConditionalExpressi
   }
 
   public static NonZeroStringConditionalExpression newInstance(SModel sm, boolean init) {
-    return (NonZeroStringConditionalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.NonZeroStringConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NonZeroStringConditionalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.NonZeroStringConditionalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NonZeroStringConditionalExpression newInstance(SModel sm) {

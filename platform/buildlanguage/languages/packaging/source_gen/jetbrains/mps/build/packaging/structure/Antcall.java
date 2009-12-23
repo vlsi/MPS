@@ -78,7 +78,7 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
   }
 
   public Project getProject() {
-    return (Project)this.getReferent(Project.class, Antcall.PROJECT);
+    return (Project) this.getReferent(Project.class, Antcall.PROJECT);
   }
 
   public void setProject(Project node) {
@@ -86,7 +86,7 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
   }
 
   public TargetDeclaration getTargetDeclaration() {
-    return (TargetDeclaration)this.getReferent(TargetDeclaration.class, Antcall.TARGET_DECLARATION);
+    return (TargetDeclaration) this.getReferent(TargetDeclaration.class, Antcall.TARGET_DECLARATION);
   }
 
   public void setTargetDeclaration(TargetDeclaration node) {
@@ -94,7 +94,7 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
   }
 
   public BuildLanguageTargetReference getTargetReference() {
-    return (BuildLanguageTargetReference)this.getChild(BuildLanguageTargetReference.class, Antcall.TARGET_REFERENCE);
+    return (BuildLanguageTargetReference) this.getChild(BuildLanguageTargetReference.class, Antcall.TARGET_REFERENCE);
   }
 
   public void setTargetReference(BuildLanguageTargetReference node) {
@@ -102,7 +102,7 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
   }
 
   public Delete getDelete() {
-    return (Delete)this.getChild(Delete.class, Antcall.DELETE);
+    return (Delete) this.getChild(Delete.class, Antcall.DELETE);
   }
 
   public void setDelete(Delete node) {
@@ -130,7 +130,7 @@ public class Antcall extends AbstractProjectComponent implements ICompositeCompo
   }
 
   public static Antcall newInstance(SModel sm, boolean init) {
-    return (Antcall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Antcall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Antcall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Antcall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Antcall newInstance(SModel sm) {

@@ -110,7 +110,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public Configuration getBuildScriptConfiguration() {
-    return (Configuration)this.getReferent(Configuration.class, DistribConfiguration.BUILD_SCRIPT_CONFIGURATION);
+    return (Configuration) this.getReferent(Configuration.class, DistribConfiguration.BUILD_SCRIPT_CONFIGURATION);
   }
 
   public void setBuildScriptConfiguration(Configuration node) {
@@ -118,7 +118,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public Folder getProjectFolder() {
-    return (Folder)this.getReferent(Folder.class, DistribConfiguration.PROJECT_FOLDER);
+    return (Folder) this.getReferent(Folder.class, DistribConfiguration.PROJECT_FOLDER);
   }
 
   public void setProjectFolder(Folder node) {
@@ -126,7 +126,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public IStringExpression getShortName() {
-    return (IStringExpression)this.getChild(IStringExpression.class, DistribConfiguration.SHORT_NAME);
+    return (IStringExpression) this.getChild(IStringExpression.class, DistribConfiguration.SHORT_NAME);
   }
 
   public void setShortName(IStringExpression node) {
@@ -134,7 +134,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public IStringExpression getLongName() {
-    return (IStringExpression)this.getChild(IStringExpression.class, DistribConfiguration.LONG_NAME);
+    return (IStringExpression) this.getChild(IStringExpression.class, DistribConfiguration.LONG_NAME);
   }
 
   public void setLongName(IStringExpression node) {
@@ -142,7 +142,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public IStringExpression getReleaseVersion() {
-    return (IStringExpression)this.getChild(IStringExpression.class, DistribConfiguration.RELEASE_VERSION);
+    return (IStringExpression) this.getChild(IStringExpression.class, DistribConfiguration.RELEASE_VERSION);
   }
 
   public void setReleaseVersion(IStringExpression node) {
@@ -150,7 +150,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public IStringExpression getBuildVersion() {
-    return (IStringExpression)this.getChild(IStringExpression.class, DistribConfiguration.BUILD_VERSION);
+    return (IStringExpression) this.getChild(IStringExpression.class, DistribConfiguration.BUILD_VERSION);
   }
 
   public void setBuildVersion(IStringExpression node) {
@@ -158,7 +158,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public IStringExpression getCompany() {
-    return (IStringExpression)this.getChild(IStringExpression.class, DistribConfiguration.COMPANY);
+    return (IStringExpression) this.getChild(IStringExpression.class, DistribConfiguration.COMPANY);
   }
 
   public void setCompany(IStringExpression node) {
@@ -166,7 +166,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public IStringExpression getWebSite() {
-    return (IStringExpression)this.getChild(IStringExpression.class, DistribConfiguration.WEB_SITE);
+    return (IStringExpression) this.getChild(IStringExpression.class, DistribConfiguration.WEB_SITE);
   }
 
   public void setWebSite(IStringExpression node) {
@@ -174,7 +174,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public ClassPath getClassPath() {
-    return (ClassPath)this.getChild(ClassPath.class, DistribConfiguration.CLASS_PATH);
+    return (ClassPath) this.getChild(ClassPath.class, DistribConfiguration.CLASS_PATH);
   }
 
   public void setClassPath(ClassPath node) {
@@ -182,7 +182,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public AbstractPath getStartupDirectory() {
-    return (AbstractPath)this.getChild(AbstractPath.class, DistribConfiguration.STARTUP_DIRECTORY);
+    return (AbstractPath) this.getChild(AbstractPath.class, DistribConfiguration.STARTUP_DIRECTORY);
   }
 
   public void setStartupDirectory(AbstractPath node) {
@@ -190,7 +190,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public AbstractPath getVmOptionsDir() {
-    return (AbstractPath)this.getChild(AbstractPath.class, DistribConfiguration.VM_OPTIONS_DIR);
+    return (AbstractPath) this.getChild(AbstractPath.class, DistribConfiguration.VM_OPTIONS_DIR);
   }
 
   public void setVmOptionsDir(AbstractPath node) {
@@ -238,7 +238,7 @@ public class DistribConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public static DistribConfiguration newInstance(SModel sm, boolean init) {
-    return (DistribConfiguration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.DistribConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DistribConfiguration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.distrib.structure.DistribConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DistribConfiguration newInstance(SModel sm) {

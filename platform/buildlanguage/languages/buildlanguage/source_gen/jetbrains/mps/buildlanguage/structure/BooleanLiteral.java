@@ -24,7 +24,7 @@ public class BooleanLiteral extends PropertyValueExpression {
   }
 
   public static BooleanLiteral newInstance(SModel sm, boolean init) {
-    return (BooleanLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.BooleanLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BooleanLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.BooleanLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BooleanLiteral newInstance(SModel sm) {

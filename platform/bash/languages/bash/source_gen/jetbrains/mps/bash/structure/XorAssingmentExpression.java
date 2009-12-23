@@ -15,7 +15,7 @@ public class XorAssingmentExpression extends BaseAssingmentExpression {
   }
 
   public static XorAssingmentExpression newInstance(SModel sm, boolean init) {
-    return (XorAssingmentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.XorAssingmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (XorAssingmentExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.bash.structure.XorAssingmentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static XorAssingmentExpression newInstance(SModel sm) {

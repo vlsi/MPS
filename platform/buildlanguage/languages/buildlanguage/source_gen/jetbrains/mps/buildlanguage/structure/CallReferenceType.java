@@ -15,7 +15,7 @@ public class CallReferenceType extends PropertyType {
   }
 
   public static CallReferenceType newInstance(SModel sm, boolean init) {
-    return (CallReferenceType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.CallReferenceType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CallReferenceType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.buildlanguage.structure.CallReferenceType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CallReferenceType newInstance(SModel sm) {
