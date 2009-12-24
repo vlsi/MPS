@@ -22,8 +22,8 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 public class Sequence_Test extends Util_Test {
   public void test_sequenceMethods() throws Exception {
     ISequence<Integer> input = Sequence.fromIterable(this.input5());
-    Assert.assertEquals(((Integer)1), input.first());
-    Assert.assertEquals(((Integer)5), input.last());
+    Assert.assertEquals(((Integer) 1), input.first());
+    Assert.assertEquals(((Integer) 5), input.last());
     Assert.assertEquals(5, input.count());
     for (Integer i : this.input5()) {
       Assert.assertEquals(true, input.contains(i));
@@ -273,8 +273,8 @@ __switch__:
 
   public void test_sequenceOperations() throws Exception {
     Iterable<Integer> input = this.input5();
-    Assert.assertEquals(((Integer)1), Sequence.fromIterable(input).first());
-    Assert.assertEquals(((Integer)5), Sequence.fromIterable(input).last());
+    Assert.assertEquals(((Integer) 1), Sequence.fromIterable(input).first());
+    Assert.assertEquals(((Integer) 5), Sequence.fromIterable(input).last());
     Assert.assertEquals(5, Sequence.fromIterable(input).count());
     for (Integer i : this.input5()) {
       Assert.assertEquals(true, Sequence.fromIterable(input).contains(i));
@@ -299,7 +299,7 @@ __switch__:
     String[] sarr = new String[]{"A","B","C"};
     Object[] oarr = new Object[]{"A","B","C"};
     List list = Arrays.asList(oarr);
-    List<String> slist = ((List<String>)list);
+    List<String> slist = ((List<String>) list);
     String[] toarray = ListSequence.fromList(slist).toGenericArray(String.class);
     for (String s : toarray) {
       Assert.assertTrue(s instanceof String);

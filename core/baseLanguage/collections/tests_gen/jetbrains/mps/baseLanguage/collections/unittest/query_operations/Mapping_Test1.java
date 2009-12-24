@@ -179,7 +179,7 @@ __switch__:
                         return false;
                       case 2:
                         this.__CP__ = 1;
-                        this.yield((String)null);
+                        this.yield((String) null);
                         return true;
                       case 0:
                         this.__CP__ = 2;
@@ -215,7 +215,7 @@ __switch__:
                         return false;
                       case 2:
                         this.__CP__ = 1;
-                        this.yield((String)null);
+                        this.yield((String) null);
                         return true;
                       case 0:
                         this.__CP__ = 2;

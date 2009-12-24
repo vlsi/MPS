@@ -112,7 +112,7 @@ __switch__:
       List<String> list = ListSequence.fromListAndArray(new ArrayList<String>(), "1", "2", "3");
       Iterable<String> empty = ListSequence.fromList(list).select(new ISelector<String, String>() {
         public String select(String it) {
-          return (String)null;
+          return (String) null;
         }
       });
       Assert.assertTrue(Sequence.fromIterable(empty).isEmpty());
@@ -120,7 +120,7 @@ __switch__:
       List<String> list = ListSequence.fromListAndArray(new ArrayList<String>(), "1", "2", "3");
       Iterable<String> empty = ListSequence.fromList(list).select(new ISelector<String, String>() {
         public String select(String it) {
-          return (String)null;
+          return (String) null;
         }
       });
       Assert.assertSame(3, Sequence.fromIterable(empty).count());

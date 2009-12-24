@@ -22,7 +22,7 @@ public class NullValues_Test extends Util_Test {
       Iterable<Integer> input = this.input5();
       this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).select(new ISelector<Integer, Integer>() {
         public Integer select(Integer it) {
-          return (Integer)null;
+          return (Integer) null;
         }
       }));
       this.assertIterableEquals(this.expectEmpty(), Sequence.fromIterable(input).translate(new ITranslator2<Integer, Integer>() {
@@ -42,7 +42,7 @@ __switch__:
                         return false;
                       case 2:
                         this.__CP__ = 1;
-                        this.yield((Integer)null);
+                        this.yield((Integer) null);
                         return true;
                       case 0:
                         this.__CP__ = 2;
@@ -62,7 +62,7 @@ __switch__:
       Iterable<Integer> input = this.input5();
       Iterable<Integer> seqOfNulls = Sequence.fromIterable(input).select(new ISelector<Integer, Integer>() {
         public Integer select(Integer it) {
-          return (Integer)null;
+          return (Integer) null;
         }
       });
       Assert.assertSame(Sequence.fromIterable(input).count(), Sequence.fromIterable(seqOfNulls).count());
@@ -88,11 +88,11 @@ __switch__:
                         return false;
                       case 2:
                         this.__CP__ = 3;
-                        this.yield((Integer)null);
+                        this.yield((Integer) null);
                         return true;
                       case 3:
                         this.__CP__ = 1;
-                        this.yield((Integer)null);
+                        this.yield((Integer) null);
                         return true;
                       case 0:
                         this.__CP__ = 2;
@@ -141,7 +141,7 @@ __switch__:
       ListSequence.fromList(list5).removeSequence(Sequence.fromIterable(this.input5()));
       Assert.assertSame(0, ListSequence.fromList(list5).count());
       Assert.assertTrue(ListSequence.fromList(list5).isEmpty());
-      Assert.assertSame(1, ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), (Integer)null)).count());
+      Assert.assertSame(1, ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), (Integer) null)).count());
       Assert.assertSame(2, ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), null, null)).count());
       Assert.assertSame(3, ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<Integer>(), null, null)).addSequence(Sequence.fromIterable(Sequence.fromArray(new Integer[]{null}))).count());
       final Integer nullvalue = null;
@@ -163,11 +163,11 @@ __switch__:
                         return false;
                       case 2:
                         this.__CP__ = 3;
-                        this.yield((Integer)null);
+                        this.yield((Integer) null);
                         return true;
                       case 3:
                         this.__CP__ = 4;
-                        this.yield((Integer)null);
+                        this.yield((Integer) null);
                         return true;
                       case 4:
                         this.__CP__ = 1;

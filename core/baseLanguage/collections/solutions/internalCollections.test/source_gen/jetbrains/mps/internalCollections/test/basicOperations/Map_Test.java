@@ -29,7 +29,7 @@ import java.util.WeakHashMap;
 public class Map_Test extends Util_Test {
   public void test_initSize() throws Exception {
     Map<Integer, String> hm = MapSequence.fromMap(new HashMap<Integer, String>(10));
-    Map<Integer, String> lhm = MapSequence.fromMap(new LinkedHashMap<Integer, String>(20, (float)0.75, false));
+    Map<Integer, String> lhm = MapSequence.fromMap(new LinkedHashMap<Integer, String>(20, (float) 0.75, false));
     SortedMap<Integer, String> sm = SortedMapSequence.fromMap(new TreeMap<Integer, String>());
   }
 
@@ -92,7 +92,7 @@ public class Map_Test extends Util_Test {
     Assert.assertSame('1', MapSequence.fromMap(ascii).get(49));
     Iterable<Integer> keys = MapSequence.fromMap(ascii).keySet();
     for (int k : Sequence.fromIterable(keys)) {
-      Assert.assertEquals(Character.valueOf((char)k), MapSequence.fromMap(ascii).get(k));
+      Assert.assertEquals(Character.valueOf((char) k), MapSequence.fromMap(ascii).get(k));
     }
   }
 
@@ -157,7 +157,7 @@ public class Map_Test extends Util_Test {
     Assert.assertSame(3, Sequence.fromIterable(seq).count());
     Assert.assertTrue(Sequence.fromIterable(seq).isNotEmpty());
     Assert.assertFalse(Sequence.fromIterable(seq).isEmpty());
-    Map<String, Integer> test2 = MapSequence.<String, Integer>fromMapAndKeysArray(new LinkedHashMap<String, Integer>(16, (float)0.75, false), "b", "a", "c").withValues(2, 1, 3);
+    Map<String, Integer> test2 = MapSequence.<String, Integer>fromMapAndKeysArray(new LinkedHashMap<String, Integer>(16, (float) 0.75, false), "b", "a", "c").withValues(2, 1, 3);
     Iterable<IMapping<String, Integer>> seq2 = MapSequence.fromMap(test2);
     this.assertIterableEqualsIgnoreOrder(seq, seq2);
   }
@@ -186,7 +186,7 @@ public class Map_Test extends Util_Test {
     Map<Integer, String> mis = MapSequence.<Integer, String>fromMapAndKeysArray(new HashMap<Integer, String>(), 1, 2, 3).withValues("a", "b", "c");
     SetSequence.fromSet(MapSequence.fromMap(mis).mappingsSet()).toListSequence().visitAll(new IVisitor<IMapping<Integer, String>>() {
       public void visit(IMapping<Integer, String> m) {
-        m.value(String.valueOf((char)('A' - 1 + m.key())));
+        m.value(String.valueOf((char) ('A' - 1 + m.key())));
       }
     });
     this.assertIterableEqualsIgnoreOrder(Sequence.fromIterable(ArrayUtils.fromCharacterArray("ABC".toCharArray())).select(new ISelector<Character, String>() {

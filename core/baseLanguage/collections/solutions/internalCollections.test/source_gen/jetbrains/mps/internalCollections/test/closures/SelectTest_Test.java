@@ -34,7 +34,7 @@ public class SelectTest_Test extends Util_Test {
     ISequence<Integer> seq = Sequence.fromIterable(input);
     ISequence<String> test = seq.select(new ISelector<Integer, String>() {
       public String select(Integer it) {
-        return Character.valueOf((char)it.intValue()).toString();
+        return Character.valueOf((char) it.intValue()).toString();
       }
     });
     this.assertIterableEquals(Arrays.asList("a", "b", "c", "d", "e"), test.toIterable());

@@ -39,7 +39,7 @@ __switch__:
                       return true;
                     case 4:
                       this.__CP__ = 1;
-                      this.yield((Integer)30);
+                      this.yield((Integer) 30);
                       return true;
                     case 0:
                       this.__CP__ = 2;

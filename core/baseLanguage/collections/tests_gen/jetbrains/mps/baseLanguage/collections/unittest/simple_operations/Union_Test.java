@@ -28,15 +28,15 @@ __switch__:
                       return false;
                     case 2:
                       this.__CP__ = 3;
-                      this.yield((Integer)1);
+                      this.yield((Integer) 1);
                       return true;
                     case 3:
                       this.__CP__ = 4;
-                      this.yield((Integer)2);
+                      this.yield((Integer) 2);
                       return true;
                     case 4:
                       this.__CP__ = 1;
-                      this.yield((Integer)3);
+                      this.yield((Integer) 3);
                       return true;
                     case 0:
                       this.__CP__ = 2;
@@ -69,15 +69,15 @@ __switch__:
                       return false;
                     case 2:
                       this.__CP__ = 3;
-                      this.yield((Integer)2);
+                      this.yield((Integer) 2);
                       return true;
                     case 3:
                       this.__CP__ = 4;
-                      this.yield((Integer)3);
+                      this.yield((Integer) 3);
                       return true;
                     case 4:
                       this.__CP__ = 1;
-                      this.yield((Integer)4);
+                      this.yield((Integer) 4);
                       return true;
                     case 0:
                       this.__CP__ = 2;

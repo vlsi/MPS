@@ -141,7 +141,7 @@ public class List_Test extends Util_Test {
     oos.close();
     ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
     ObjectInputStream ois = new ObjectInputStream(bais);
-    List<String> copy = (List<String>)ois.readObject();
+    List<String> copy = (List<String>) ois.readObject();
     Assert.assertFalse(test == copy);
     Assert.assertEquals(test, copy);
   }

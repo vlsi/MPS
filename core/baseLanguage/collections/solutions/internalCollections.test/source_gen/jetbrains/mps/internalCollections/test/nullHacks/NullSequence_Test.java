@@ -44,7 +44,7 @@ public class NullSequence_Test extends Util_Test {
       Iterable<Integer> input = this.input5();
       Iterable<String> nullSeq = Sequence.fromIterable(input).translate(new ITranslator2<Integer, String>() {
         public Iterable<String> translate(Integer it) {
-          return ((ISequence<String>)null);
+          return ((ISequence<String>) null);
         }
       });
       Assert.assertEquals(0, Sequence.fromIterable(nullSeq).count());
