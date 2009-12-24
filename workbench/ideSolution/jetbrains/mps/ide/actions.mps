@@ -11523,7 +11523,7 @@
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1241020019659">
     <property name="package:23" value="Menu.ProjectPane.Module.Actions" />
     <property name="name:23" value="AddModuleToProject" />
-    <property name="caption:23" value="Add To Project" />
+    <property name="caption:23" value="Add to Project" />
     <property name="isAlwaysVisible:23" value="true" />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1241020122227">
       <property name="name:23" value="modules" />
@@ -11690,6 +11690,59 @@
                 </node>
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="updateBlock:23" type="jetbrains.mps.lang.plugin.structure.IsApplicableBlock:23" id="8918545961567366044">
+      <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8918545961567366045">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="8918545961567433997">
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8918545961567433998">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8918545961567434030">
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8918545961567434031">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8918545961567434094">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="8918545961567434100">
+                    <property name="value:3" value="false" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8918545961567434076">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8918545961567434063">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8918545961567434056">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="8918545961567434057" />
+                    <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="8918545961567434058">
+                      <link role="member:23" targetNodeId="1241020205868" resolveInfo="mpsProject" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8918545961567434071">
+                    <link role="baseMethodDeclaration:3" targetNodeId="63.~MPSProject.getModules():java.util.List" resolveInfo="getModules" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8918545961567434084">
+                  <link role="baseMethodDeclaration:3" targetNodeId="78.~List.contains(java.lang.Object):boolean" resolveInfo="contains" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8918545961567434089">
+                    <link role="variableDeclaration:3" targetNodeId="8918545961567434001" resolveInfo="module" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8918545961567434001">
+            <property name="name:3" value="module" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8918545961567434006">
+              <link role="classifier:3" targetNodeId="63.~IModule" resolveInfo="IModule" />
+            </node>
+          </node>
+          <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8918545961567434045">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="8918545961567434046" />
+            <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="8918545961567434047">
+              <link role="member:23" targetNodeId="1241020122227" resolveInfo="modules" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="8918545961567434110">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="8918545961567434116">
+            <property name="value:3" value="true" />
           </node>
         </node>
       </node>

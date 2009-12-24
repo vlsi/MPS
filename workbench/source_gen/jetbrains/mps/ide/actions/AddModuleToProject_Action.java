@@ -26,7 +26,7 @@ public class AddModuleToProject_Action extends GeneratedAction {
   private MPSProject mpsProject;
 
   public AddModuleToProject_Action() {
-    super("Add To Project", "", ICON);
+    super("Add to Project", "", ICON);
     this.setIsAlwaysVisible(true);
     this.setExecuteOutsideCommand(false);
   }
@@ -36,9 +36,21 @@ public class AddModuleToProject_Action extends GeneratedAction {
     return "";
   }
 
+  public boolean isApplicable(AnActionEvent event) {
+    for (IModule module : AddModuleToProject_Action.this.modules) {
+      if (AddModuleToProject_Action.this.mpsProject.getModules().contains(module)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        boolean enabled = this.isApplicable(event);
+        this.setEnabledState(event.getPresentation(), enabled);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "AddModuleToProject", t);
