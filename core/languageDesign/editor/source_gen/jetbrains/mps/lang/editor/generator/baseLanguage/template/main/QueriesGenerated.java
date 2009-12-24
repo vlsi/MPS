@@ -35,9 +35,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.generator.template.IfMacroContext;
+import jetbrains.mps.lang.structure.behavior.PropertyDeclaration_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.lang.editor.behavior.StyleClassItem_Behavior;
+import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -1310,6 +1312,18 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "extendedClass", true) != null);
   }
 
+  public static boolean ifMacro_Condition_3297276508416729808(final IOperationContext operationContext, final IfMacroContext _context) {
+    return PropertyDeclaration_Behavior.call_isPrimitiveBoolean_1229468962965(SLinkOperations.getTarget(_context.getNode(), "property", false));
+  }
+
+  public static boolean ifMacro_Condition_3297276508416729812(final IOperationContext operationContext, final IfMacroContext _context) {
+    return PropertyDeclaration_Behavior.call_isPrimitiveInteger_1229468978693(SLinkOperations.getTarget(_context.getNode(), "property", false));
+  }
+
+  public static boolean ifMacro_Condition_3297276508416729816(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(PropertyDeclaration_Behavior.call_isPrimitiveBoolean_1229468962965(SLinkOperations.getTarget(_context.getNode(), "property", false))) && !(PropertyDeclaration_Behavior.call_isPrimitiveInteger_1229468978693(SLinkOperations.getTarget(_context.getNode(), "property", false)));
+  }
+
   public static boolean ifMacro_Condition_3710678335995670581(final IOperationContext operationContext, final IfMacroContext _context) {
     return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.editor.structure.CellModel_RefCell");
   }
@@ -1642,10 +1656,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "imagePathProvider", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_2487769997674780525(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "handlerBlock", true), "body", true);
-  }
-
   public static SNode sourceNodeQuery_3031123562487795361(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "modelAcessor", true), "getter", true), "body", true);
   }
@@ -1660,6 +1670,18 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_3031123562488321479(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "cellProvider", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_3297276508416442730(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "handlerBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_3297276508416497773(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "property", false), "dataType", false));
+  }
+
+  public static SNode sourceNodeQuery_3297276508416540907(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "property", false), "dataType", false));
   }
 
   public static SNode sourceNodeQuery_4755152624710446344(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

@@ -3694,10 +3694,6 @@
       <property name="value:0" value="oldValue" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473891462:0" resolveInfo="alias" />
     </node>
-    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1216381142494">
-      <link role="conceptLinkDeclaration:0" targetNodeId="4.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
-      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225191493539" />
-    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1216381148013">
     <property name="package:0" value="QueryFunction" />
@@ -3709,10 +3705,6 @@
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1216383773966">
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
-    </node>
-    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="1216381148015">
-      <link role="conceptLinkDeclaration:0" targetNodeId="4.1137545963098:3" resolveInfo="conceptFunctionParameterType" />
-      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225191502754" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1216560327200">
