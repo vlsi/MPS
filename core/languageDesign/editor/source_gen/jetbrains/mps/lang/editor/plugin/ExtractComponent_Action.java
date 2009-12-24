@@ -11,14 +11,6 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import javax.swing.JOptionPane;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.behavior.AbstractComponent_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class ExtractComponent_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -73,23 +65,7 @@ public class ExtractComponent_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      final SNode container = SNodeOperations.getAncestor(ExtractComponent_Action.this.node, "jetbrains.mps.lang.editor.structure.BaseEditorComponent", false, false);
-      final String componentName = JOptionPane.showInputDialog(ExtractComponent_Action.this.editorContext.getNodeEditorComponent(), "Enter a component name:", "");
-      if (componentName == null) {
-        return;
-      }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          SModel model = SNodeOperations.getModel(ExtractComponent_Action.this.node);
-          SNode component = SModelOperations.createNewRootNode(model, "jetbrains.mps.lang.editor.structure.EditorComponentDeclaration", null);
-          SPropertyOperations.set(component, "name", componentName);
-          SLinkOperations.setTarget(component, "conceptDeclaration", AbstractComponent_Behavior.call_getConceptDeclaration_7055725856388417603(container), false);
-          SLinkOperations.setTarget(component, "cellModel", SNodeOperations.copyNode(ExtractComponent_Action.this.node), true);
-          SNode toReplace = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Component", null);
-          SLinkOperations.setTarget(toReplace, "editorComponent", component, false);
-          SNodeOperations.replaceWithAnother(ExtractComponent_Action.this.node, toReplace);
-        }
-      });
+      ExtractComponentUtil.extractComponent(ExtractComponent_Action.this.node, ExtractComponent_Action.this.editorContext);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ExtractComponent", t);
     }
