@@ -48,7 +48,7 @@ public class DOM_NG extends TreePath<Node> {
       if (matchValue != null) {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            Node node = (Node)n;
+            Node node = (Node) n;
             String actualValue = DOM_NG.ELEMENT_tag_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
@@ -56,18 +56,18 @@ public class DOM_NG extends TreePath<Node> {
       } else {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            Node node = (Node)n;
+            Node node = (Node) n;
             String actualValue = DOM_NG.ELEMENT_tag_Property.Getter.getValue(node);
             return actualValue == null;
           }
         };
       }
-      return (IFilter<Node>)filter;
+      return (IFilter<Node>) filter;
     }
 
     private static class Getter {
       public static String getValue(Node e) {
-        return ((Element)e).getTagName();
+        return ((Element) e).getTagName();
       }
     }
   }

@@ -190,7 +190,7 @@ __switch__:
     }
 
     public Iterable<Node> sequence() {
-      final NodeList els = ((Element)this.thisNode).getElementsByTagName(this.param);
+      final NodeList els = ((Element) this.thisNode).getElementsByTagName(this.param);
       return Sequence.fromClosure(new ISequenceClosure<Node>() {
         public Iterable<Node> iterable() {
           return new Iterable<Node>() {
@@ -248,7 +248,7 @@ __switch__:
     }
 
     public int size() {
-      return ((Element)this.thisNode).getElementsByTagName(this.param).getLength();
+      return ((Element) this.thisNode).getElementsByTagName(this.param).getLength();
     }
   }
 

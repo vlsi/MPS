@@ -56,7 +56,7 @@ public class TryFeatures extends TreePath<Node> {
       if (matchValue != null) {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            Node node = (Node)n;
+            Node node = (Node) n;
             String actualValue = TryFeatures.foo_BAR_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
@@ -64,13 +64,13 @@ public class TryFeatures extends TreePath<Node> {
       } else {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            Node node = (Node)n;
+            Node node = (Node) n;
             String actualValue = TryFeatures.foo_BAR_Property.Getter.getValue(node);
             return actualValue == null;
           }
         };
       }
-      return (IFilter<Node>)filter;
+      return (IFilter<Node>) filter;
     }
 
     private static class Getter {
@@ -86,7 +86,7 @@ public class TryFeatures extends TreePath<Node> {
       if (matchValue != null) {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            Node node = (Node)n;
+            Node node = (Node) n;
             String actualValue = TryFeatures.foo_BAZ_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
@@ -94,13 +94,13 @@ public class TryFeatures extends TreePath<Node> {
       } else {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            Node node = (Node)n;
+            Node node = (Node) n;
             String actualValue = TryFeatures.foo_BAZ_Property.Getter.getValue(node);
             return actualValue == null;
           }
         };
       }
-      return (IFilter<Node>)filter;
+      return (IFilter<Node>) filter;
     }
 
     private static class Getter {

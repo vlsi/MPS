@@ -72,7 +72,7 @@ public class File_TreePath extends TreePath<File> {
       if (matchValue != null) {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            File node = (File)n;
+            File node = (File) n;
             String actualValue = File_TreePath.FILE_name_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
@@ -80,13 +80,13 @@ public class File_TreePath extends TreePath<File> {
       } else {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            File node = (File)n;
+            File node = (File) n;
             String actualValue = File_TreePath.FILE_name_Property.Getter.getValue(node);
             return actualValue == null;
           }
         };
       }
-      return (IFilter<File>)filter;
+      return (IFilter<File>) filter;
     }
 
     private static class Getter {
