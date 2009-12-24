@@ -420,11 +420,7 @@ public class MPSProject implements ModelOwner, MPSModuleOwner {
     if (getComponent(Project.class) != null) {
       final Project project = getComponentSafe(Project.class);
       if (IdeMain.getTestMode() == TestMode.CORE_TEST) {
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          public void run() {
-            ProjectUtil.closeProject(project);
-          }
-        });
+        ProjectUtil.closeProject(project);
       }
     }
     myDisposed = true;
