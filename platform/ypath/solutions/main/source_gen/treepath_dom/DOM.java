@@ -33,9 +33,9 @@ public class DOM extends TreePath<Node> {
     public static Iterable<Node> children(Node node) {
       Iterable<Node> children = new NodeListIterableAdapter(node.getChildNodes());
       if (node instanceof Element) {
-        return (Iterable<Node>)new ChainedIterable(new NamedNodeMapIterableAdapter(node.getAttributes()), children);
+        return (Iterable<Node>) new ChainedIterable(new NamedNodeMapIterableAdapter(node.getAttributes()), children);
       }
-      return (Iterable<Node>)children;
+      return (Iterable<Node>) children;
     }
   }
 
@@ -81,7 +81,7 @@ public class DOM extends TreePath<Node> {
       if (matchValue != null) {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            Node node = (Node)n;
+            Node node = (Node) n;
             String actualValue = DOM.ELEMENT_tag_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
@@ -89,18 +89,18 @@ public class DOM extends TreePath<Node> {
       } else {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            Node node = (Node)n;
+            Node node = (Node) n;
             String actualValue = DOM.ELEMENT_tag_Property.Getter.getValue(node);
             return actualValue == null;
           }
         };
       }
-      return (IFilter<Node>)filter;
+      return (IFilter<Node>) filter;
     }
 
     private static class Getter {
       public static String getValue(Node e) {
-        return ((Element)e).getTagName();
+        return ((Element) e).getTagName();
       }
     }
   }
@@ -111,7 +111,7 @@ public class DOM extends TreePath<Node> {
       if (matchValue != null) {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            Node node = (Node)n;
+            Node node = (Node) n;
             String actualValue = DOM.ATTR_name_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
@@ -119,18 +119,18 @@ public class DOM extends TreePath<Node> {
       } else {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            Node node = (Node)n;
+            Node node = (Node) n;
             String actualValue = DOM.ATTR_name_Property.Getter.getValue(node);
             return actualValue == null;
           }
         };
       }
-      return (IFilter<Node>)filter;
+      return (IFilter<Node>) filter;
     }
 
     private static class Getter {
       public static String getValue(Node a) {
-        return ((Attr)a).getName();
+        return ((Attr) a).getName();
       }
     }
   }
@@ -141,7 +141,7 @@ public class DOM extends TreePath<Node> {
       if (matchValue != null) {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            Node node = (Node)n;
+            Node node = (Node) n;
             String actualValue = DOM.ATTR_value_Property.Getter.getValue(node);
             return matchValue.equals(actualValue);
           }
@@ -149,18 +149,18 @@ public class DOM extends TreePath<Node> {
       } else {
         filter = new IFilter() {
           public boolean accept(Object n) {
-            Node node = (Node)n;
+            Node node = (Node) n;
             String actualValue = DOM.ATTR_value_Property.Getter.getValue(node);
             return actualValue == null;
           }
         };
       }
-      return (IFilter<Node>)filter;
+      return (IFilter<Node>) filter;
     }
 
     private static class Getter {
       public static String getValue(Node a) {
-        return ((Attr)a).getValue();
+        return ((Attr) a).getValue();
       }
     }
   }
