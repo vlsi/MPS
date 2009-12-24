@@ -152,9 +152,10 @@ public class ModelPersistence {
       return false;
     }
     if (modelPersistenceVersion < getCurrentPersistenceVersion()) {
-      if (getPersistenceSettings().isUserPersistenceVersionDefined() || ApplicationManager.getApplication().isUnitTestMode()) {
+      if (getPersistenceSettings().isUserPersistenceVersionDefined() /*|| ApplicationManager.getApplication().isUnitTestMode()*/) {
         return true; //user already decided to convert models now
       } else {
+        return true;
         //undefined persistence version; user may want to upgrade models persistence
 //        int option = JOptionPane.showConfirmDialog(null,
 //          "Do you want to upgrade your models persistence level from "
