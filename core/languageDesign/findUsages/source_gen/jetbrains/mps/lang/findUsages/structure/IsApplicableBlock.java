@@ -16,7 +16,7 @@ public class IsApplicableBlock extends ConceptFunction {
   }
 
   public static IsApplicableBlock newInstance(SModel sm, boolean init) {
-    return (IsApplicableBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.IsApplicableBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IsApplicableBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.IsApplicableBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IsApplicableBlock newInstance(SModel sm) {

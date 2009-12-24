@@ -18,7 +18,7 @@ public class ResultStatement extends Statement {
   }
 
   public Expression getFoundNode() {
-    return (Expression)this.getChild(Expression.class, ResultStatement.FOUND_NODE);
+    return (Expression) this.getChild(Expression.class, ResultStatement.FOUND_NODE);
   }
 
   public void setFoundNode(Expression node) {
@@ -26,7 +26,7 @@ public class ResultStatement extends Statement {
   }
 
   public static ResultStatement newInstance(SModel sm, boolean init) {
-    return (ResultStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.ResultStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ResultStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.ResultStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ResultStatement newInstance(SModel sm) {

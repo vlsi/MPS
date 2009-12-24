@@ -19,7 +19,7 @@ public class typeof_PropertyPatternVariableDeclaration_InferenceRule extends Abs
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202488174301", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202488170860", true), (SNode)new _Quotations.QuotationClass_2().createNode(typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590343(jetbrains.mps.lang.pattern.typesystem)", "1202488170860", true), (SNode) new _Quotations.QuotationClass_2().createNode(typeCheckingContext), _info_12389875345);
     }
   }
 

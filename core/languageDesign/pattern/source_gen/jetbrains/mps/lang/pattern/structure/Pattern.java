@@ -16,7 +16,7 @@ public class Pattern extends AttributeConcept {
   }
 
   public static Pattern newInstance(SModel sm, boolean init) {
-    return (Pattern)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.Pattern", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Pattern) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.Pattern", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Pattern newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class WildcardPattern extends Pattern {
   }
 
   public static WildcardPattern newInstance(SModel sm, boolean init) {
-    return (WildcardPattern)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.WildcardPattern", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WildcardPattern) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.WildcardPattern", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WildcardPattern newInstance(SModel sm) {

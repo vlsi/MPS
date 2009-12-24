@@ -103,7 +103,7 @@ public class MigrationScript extends BaseConcept implements INamedConcept {
   }
 
   public static MigrationScript newInstance(SModel sm, boolean init) {
-    return (MigrationScript)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.script.structure.MigrationScript", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MigrationScript) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.script.structure.MigrationScript", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MigrationScript newInstance(SModel sm) {

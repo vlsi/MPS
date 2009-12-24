@@ -48,8 +48,8 @@ public class CreatePropertyPatternVariable_Intention extends BaseIntention imple
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    EditorCell_Property cell = (EditorCell_Property)editorContext.getSelectedCell();
-    String propertyName = ((PropertyAccessor)cell.getModelAccessor()).getPropertyName();
+    EditorCell_Property cell = (EditorCell_Property) editorContext.getSelectedCell();
+    String propertyName = ((PropertyAccessor) cell.getModelAccessor()).getPropertyName();
     cell.getSNode().setPropertyAttribute(propertyName, SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", null));
   }
 

@@ -16,7 +16,7 @@ public class ModelDescriptorsBlock extends ConceptFunction {
   }
 
   public static ModelDescriptorsBlock newInstance(SModel sm, boolean init) {
-    return (ModelDescriptorsBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.ModelDescriptorsBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ModelDescriptorsBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.ModelDescriptorsBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ModelDescriptorsBlock newInstance(SModel sm) {

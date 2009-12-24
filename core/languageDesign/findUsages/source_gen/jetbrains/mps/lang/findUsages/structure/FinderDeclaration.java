@@ -73,7 +73,7 @@ public class FinderDeclaration extends AbstractFinderDeclaration implements INam
   }
 
   public IsVisibleBlock getIsVisibleBlock() {
-    return (IsVisibleBlock)this.getChild(IsVisibleBlock.class, FinderDeclaration.IS_VISIBLE_BLOCK);
+    return (IsVisibleBlock) this.getChild(IsVisibleBlock.class, FinderDeclaration.IS_VISIBLE_BLOCK);
   }
 
   public void setIsVisibleBlock(IsVisibleBlock node) {
@@ -81,7 +81,7 @@ public class FinderDeclaration extends AbstractFinderDeclaration implements INam
   }
 
   public static FinderDeclaration newInstance(SModel sm, boolean init) {
-    return (FinderDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.FinderDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FinderDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.FinderDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FinderDeclaration newInstance(SModel sm) {

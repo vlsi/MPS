@@ -19,7 +19,7 @@ public class ReferenceContainer extends BaseConcept {
   }
 
   public Root getRoot() {
-    return (Root)this.getReferent(Root.class, ReferenceContainer.ROOT);
+    return (Root) this.getReferent(Root.class, ReferenceContainer.ROOT);
   }
 
   public void setRoot(Root node) {
@@ -27,7 +27,7 @@ public class ReferenceContainer extends BaseConcept {
   }
 
   public Child getLeftChild() {
-    return (Child)this.getReferent(Child.class, ReferenceContainer.LEFT_CHILD);
+    return (Child) this.getReferent(Child.class, ReferenceContainer.LEFT_CHILD);
   }
 
   public void setLeftChild(Child node) {
@@ -35,7 +35,7 @@ public class ReferenceContainer extends BaseConcept {
   }
 
   public Child getRightChild() {
-    return (Child)this.getReferent(Child.class, ReferenceContainer.RIGHT_CHILD);
+    return (Child) this.getReferent(Child.class, ReferenceContainer.RIGHT_CHILD);
   }
 
   public void setRightChild(Child node) {
@@ -43,7 +43,7 @@ public class ReferenceContainer extends BaseConcept {
   }
 
   public static ReferenceContainer newInstance(SModel sm, boolean init) {
-    return (ReferenceContainer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReferenceContainer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReferenceContainer newInstance(SModel sm) {

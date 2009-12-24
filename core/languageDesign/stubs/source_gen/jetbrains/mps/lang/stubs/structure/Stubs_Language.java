@@ -10,6 +10,6 @@ public class Stubs_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("ef703a71-a5a3-42af-b53c-ddced816ad5c(jetbrains.mps.lang.stubs)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

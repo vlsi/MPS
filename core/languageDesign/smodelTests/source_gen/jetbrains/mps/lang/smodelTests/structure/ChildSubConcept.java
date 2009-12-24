@@ -23,7 +23,7 @@ public class ChildSubConcept extends Child {
   }
 
   public static ChildSubConcept newInstance(SModel sm, boolean init) {
-    return (ChildSubConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodelTests.structure.ChildSubConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ChildSubConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodelTests.structure.ChildSubConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ChildSubConcept newInstance(SModel sm) {

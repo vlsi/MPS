@@ -39,7 +39,7 @@ public class ModelCreationSettings extends BaseConcept {
   }
 
   public static ModelCreationSettings newInstance(SModel sm, boolean init) {
-    return (ModelCreationSettings)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.ModelCreationSettings", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ModelCreationSettings) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.ModelCreationSettings", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ModelCreationSettings newInstance(SModel sm) {

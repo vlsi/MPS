@@ -101,9 +101,9 @@ public class RunMigrationScripts_Action extends GeneratedAction {
     StringBuilder res = new StringBuilder(500);
     res.append(RunMigrationScripts_Action.class.getName());
     res.append("#");
-    res.append(scripts_State((List<MigrationScript>)this.scripts));
+    res.append(scripts_State((List<MigrationScript>) this.scripts));
     res.append("!");
-    res.append(((Object)this.selectionOnly).toString());
+    res.append(((Object) this.selectionOnly).toString());
     res.append("!");
     return res.toString();
   }

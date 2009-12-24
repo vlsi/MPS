@@ -16,7 +16,7 @@ public class StubLocation_ConceptFunctionParameter extends ConceptFunctionParame
   }
 
   public static StubLocation_ConceptFunctionParameter newInstance(SModel sm, boolean init) {
-    return (StubLocation_ConceptFunctionParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.StubLocation_ConceptFunctionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StubLocation_ConceptFunctionParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.StubLocation_ConceptFunctionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StubLocation_ConceptFunctionParameter newInstance(SModel sm) {

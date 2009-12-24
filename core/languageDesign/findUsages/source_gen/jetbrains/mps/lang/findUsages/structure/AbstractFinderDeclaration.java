@@ -22,7 +22,7 @@ public class AbstractFinderDeclaration extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getForConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, AbstractFinderDeclaration.FOR_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, AbstractFinderDeclaration.FOR_CONCEPT);
   }
 
   public void setForConcept(AbstractConceptDeclaration node) {
@@ -30,7 +30,7 @@ public class AbstractFinderDeclaration extends BaseConcept {
   }
 
   public IsApplicableBlock getIsApplicableFunction() {
-    return (IsApplicableBlock)this.getChild(IsApplicableBlock.class, AbstractFinderDeclaration.IS_APPLICABLE_FUNCTION);
+    return (IsApplicableBlock) this.getChild(IsApplicableBlock.class, AbstractFinderDeclaration.IS_APPLICABLE_FUNCTION);
   }
 
   public void setIsApplicableFunction(IsApplicableBlock node) {
@@ -38,7 +38,7 @@ public class AbstractFinderDeclaration extends BaseConcept {
   }
 
   public FindBlock getFindFunction() {
-    return (FindBlock)this.getChild(FindBlock.class, AbstractFinderDeclaration.FIND_FUNCTION);
+    return (FindBlock) this.getChild(FindBlock.class, AbstractFinderDeclaration.FIND_FUNCTION);
   }
 
   public void setFindFunction(FindBlock node) {
@@ -46,7 +46,7 @@ public class AbstractFinderDeclaration extends BaseConcept {
   }
 
   public SearchedNodesBlock getSearchedNodesBlock() {
-    return (SearchedNodesBlock)this.getChild(SearchedNodesBlock.class, AbstractFinderDeclaration.SEARCHED_NODES_BLOCK);
+    return (SearchedNodesBlock) this.getChild(SearchedNodesBlock.class, AbstractFinderDeclaration.SEARCHED_NODES_BLOCK);
   }
 
   public void setSearchedNodesBlock(SearchedNodesBlock node) {
@@ -54,7 +54,7 @@ public class AbstractFinderDeclaration extends BaseConcept {
   }
 
   public CategorizeBlock getCategorizeBlock() {
-    return (CategorizeBlock)this.getChild(CategorizeBlock.class, AbstractFinderDeclaration.CATEGORIZE_BLOCK);
+    return (CategorizeBlock) this.getChild(CategorizeBlock.class, AbstractFinderDeclaration.CATEGORIZE_BLOCK);
   }
 
   public void setCategorizeBlock(CategorizeBlock node) {
@@ -62,7 +62,7 @@ public class AbstractFinderDeclaration extends BaseConcept {
   }
 
   public static AbstractFinderDeclaration newInstance(SModel sm, boolean init) {
-    return (AbstractFinderDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractFinderDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.AbstractFinderDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractFinderDeclaration newInstance(SModel sm) {

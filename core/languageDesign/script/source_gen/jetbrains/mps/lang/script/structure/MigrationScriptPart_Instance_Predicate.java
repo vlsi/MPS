@@ -16,7 +16,7 @@ public class MigrationScriptPart_Instance_Predicate extends ConceptFunction {
   }
 
   public static MigrationScriptPart_Instance_Predicate newInstance(SModel sm, boolean init) {
-    return (MigrationScriptPart_Instance_Predicate)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MigrationScriptPart_Instance_Predicate) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MigrationScriptPart_Instance_Predicate newInstance(SModel sm) {

@@ -25,7 +25,7 @@ public class LanguageRef extends BaseConcept {
   }
 
   public static LanguageRef newInstance(SModel sm, boolean init) {
-    return (LanguageRef)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.LanguageRef", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LanguageRef) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.LanguageRef", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LanguageRef newInstance(SModel sm) {

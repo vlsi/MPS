@@ -25,7 +25,7 @@ public class NamedConcept extends BaseConcept {
   }
 
   public static NamedConcept newInstance(SModel sm, boolean init) {
-    return (NamedConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodelTests.structure.NamedConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NamedConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodelTests.structure.NamedConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NamedConcept newInstance(SModel sm) {

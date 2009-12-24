@@ -16,7 +16,7 @@ public class SearchedNodesBlock extends ConceptFunction {
   }
 
   public static SearchedNodesBlock newInstance(SModel sm, boolean init) {
-    return (SearchedNodesBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SearchedNodesBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.SearchedNodesBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SearchedNodesBlock newInstance(SModel sm) {

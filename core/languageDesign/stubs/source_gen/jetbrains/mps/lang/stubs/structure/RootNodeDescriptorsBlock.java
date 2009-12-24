@@ -16,7 +16,7 @@ public class RootNodeDescriptorsBlock extends ConceptFunction {
   }
 
   public static RootNodeDescriptorsBlock newInstance(SModel sm, boolean init) {
-    return (RootNodeDescriptorsBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.RootNodeDescriptorsBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RootNodeDescriptorsBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.RootNodeDescriptorsBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RootNodeDescriptorsBlock newInstance(SModel sm) {

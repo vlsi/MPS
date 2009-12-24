@@ -45,7 +45,7 @@ public class PatternExpression extends BaseConcept implements IMetaLevelChanger 
   }
 
   public BaseConcept getPatternNode() {
-    return (BaseConcept)this.getChild(BaseConcept.class, PatternExpression.PATTERN_NODE);
+    return (BaseConcept) this.getChild(BaseConcept.class, PatternExpression.PATTERN_NODE);
   }
 
   public void setPatternNode(BaseConcept node) {
@@ -53,7 +53,7 @@ public class PatternExpression extends BaseConcept implements IMetaLevelChanger 
   }
 
   public static PatternExpression newInstance(SModel sm, boolean init) {
-    return (PatternExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.PatternExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PatternExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.PatternExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PatternExpression newInstance(SModel sm) {

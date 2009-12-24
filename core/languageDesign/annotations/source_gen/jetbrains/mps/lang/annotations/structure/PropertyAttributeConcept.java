@@ -24,7 +24,7 @@ public class PropertyAttributeConcept extends AttributeConcept {
   }
 
   public static PropertyAttributeConcept newInstance(SModel sm, boolean init) {
-    return (PropertyAttributeConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.annotations.structure.PropertyAttributeConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyAttributeConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.annotations.structure.PropertyAttributeConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyAttributeConcept newInstance(SModel sm) {

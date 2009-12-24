@@ -16,7 +16,7 @@ public class IsVisibleBlock extends ConceptFunction {
   }
 
   public static IsVisibleBlock newInstance(SModel sm, boolean init) {
-    return (IsVisibleBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.IsVisibleBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IsVisibleBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.IsVisibleBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IsVisibleBlock newInstance(SModel sm) {

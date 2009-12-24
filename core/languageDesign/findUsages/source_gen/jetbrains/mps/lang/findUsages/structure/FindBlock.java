@@ -16,7 +16,7 @@ public class FindBlock extends ConceptFunction {
   }
 
   public static FindBlock newInstance(SModel sm, boolean init) {
-    return (FindBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.FindBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FindBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.FindBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FindBlock newInstance(SModel sm) {

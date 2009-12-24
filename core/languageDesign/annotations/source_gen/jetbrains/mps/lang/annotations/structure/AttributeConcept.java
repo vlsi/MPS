@@ -17,18 +17,18 @@ public class AttributeConcept extends BaseConcept {
   }
 
   public BaseConcept getAttributedNode_internal() {
-    return (BaseConcept)this.getParent();
+    return (BaseConcept) this.getParent();
   }
 
   public BaseConcept getReferent(String role) {
     if ("attributedNode".equals(role)) {
       return this.getAttributedNode_internal();
     } else
-    return (BaseConcept)super.getReferent(role);
+    return (BaseConcept) super.getReferent(role);
   }
 
   public BaseConcept getAttributedNode() {
-    return (BaseConcept)this.getReferent(BaseConcept.class, AttributeConcept.ATTRIBUTED_NODE);
+    return (BaseConcept) this.getReferent(BaseConcept.class, AttributeConcept.ATTRIBUTED_NODE);
   }
 
   public void setAttributedNode(BaseConcept node) {
@@ -36,7 +36,7 @@ public class AttributeConcept extends BaseConcept {
   }
 
   public static AttributeConcept newInstance(SModel sm, boolean init) {
-    return (AttributeConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.annotations.structure.AttributeConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AttributeConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.annotations.structure.AttributeConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AttributeConcept newInstance(SModel sm) {

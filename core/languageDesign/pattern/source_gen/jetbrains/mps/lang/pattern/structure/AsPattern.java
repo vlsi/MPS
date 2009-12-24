@@ -15,7 +15,7 @@ public class AsPattern extends PatternVariableDeclaration {
   }
 
   public static AsPattern newInstance(SModel sm, boolean init) {
-    return (AsPattern)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.AsPattern", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AsPattern) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.AsPattern", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AsPattern newInstance(SModel sm) {

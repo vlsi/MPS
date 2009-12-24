@@ -24,7 +24,7 @@ public class LinkAttributeConcept extends AttributeConcept {
   }
 
   public static LinkAttributeConcept newInstance(SModel sm, boolean init) {
-    return (LinkAttributeConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.annotations.structure.LinkAttributeConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkAttributeConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.annotations.structure.LinkAttributeConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinkAttributeConcept newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class MigrationScriptPart_node extends ConceptFunctionParameter {
   }
 
   public static MigrationScriptPart_node newInstance(SModel sm, boolean init) {
-    return (MigrationScriptPart_node)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.script.structure.MigrationScriptPart_node", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MigrationScriptPart_node) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.script.structure.MigrationScriptPart_node", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MigrationScriptPart_node newInstance(SModel sm) {

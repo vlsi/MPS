@@ -23,7 +23,7 @@ public class ReferenceContainerSubConcept extends ReferenceContainer {
   }
 
   public static ReferenceContainerSubConcept newInstance(SModel sm, boolean init) {
-    return (ReferenceContainerSubConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReferenceContainerSubConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodelTests.structure.ReferenceContainerSubConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReferenceContainerSubConcept newInstance(SModel sm) {

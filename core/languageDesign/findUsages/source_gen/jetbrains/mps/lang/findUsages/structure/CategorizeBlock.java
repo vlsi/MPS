@@ -16,7 +16,7 @@ public class CategorizeBlock extends ConceptFunction {
   }
 
   public static CategorizeBlock newInstance(SModel sm, boolean init) {
-    return (CategorizeBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.CategorizeBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CategorizeBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.CategorizeBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CategorizeBlock newInstance(SModel sm) {

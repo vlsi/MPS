@@ -10,6 +10,6 @@ public class SmodelTests_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("b02ae39f-4c16-4545-8dfa-88df16804e7e(jetbrains.mps.lang.smodelTests)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

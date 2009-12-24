@@ -57,7 +57,7 @@ public class StubsCreatorDeclaration extends BaseConcept implements IClassifier 
   }
 
   public ModelDescriptorsBlock getModelDescriptorsBlock() {
-    return (ModelDescriptorsBlock)this.getChild(ModelDescriptorsBlock.class, StubsCreatorDeclaration.MODEL_DESCRIPTORS_BLOCK);
+    return (ModelDescriptorsBlock) this.getChild(ModelDescriptorsBlock.class, StubsCreatorDeclaration.MODEL_DESCRIPTORS_BLOCK);
   }
 
   public void setModelDescriptorsBlock(ModelDescriptorsBlock node) {
@@ -65,7 +65,7 @@ public class StubsCreatorDeclaration extends BaseConcept implements IClassifier 
   }
 
   public UpdateModelBlock getUpdateModelBlock() {
-    return (UpdateModelBlock)this.getChild(UpdateModelBlock.class, StubsCreatorDeclaration.UPDATE_MODEL_BLOCK);
+    return (UpdateModelBlock) this.getChild(UpdateModelBlock.class, StubsCreatorDeclaration.UPDATE_MODEL_BLOCK);
   }
 
   public void setUpdateModelBlock(UpdateModelBlock node) {
@@ -73,7 +73,7 @@ public class StubsCreatorDeclaration extends BaseConcept implements IClassifier 
   }
 
   public ModelCreationSettings getSettings() {
-    return (ModelCreationSettings)this.getChild(ModelCreationSettings.class, StubsCreatorDeclaration.SETTINGS);
+    return (ModelCreationSettings) this.getChild(ModelCreationSettings.class, StubsCreatorDeclaration.SETTINGS);
   }
 
   public void setSettings(ModelCreationSettings node) {
@@ -81,7 +81,7 @@ public class StubsCreatorDeclaration extends BaseConcept implements IClassifier 
   }
 
   public RootNodeDescriptorsBlock getRootDescriptorsBlock() {
-    return (RootNodeDescriptorsBlock)this.getChild(RootNodeDescriptorsBlock.class, StubsCreatorDeclaration.ROOT_DESCRIPTORS_BLOCK);
+    return (RootNodeDescriptorsBlock) this.getChild(RootNodeDescriptorsBlock.class, StubsCreatorDeclaration.ROOT_DESCRIPTORS_BLOCK);
   }
 
   public void setRootDescriptorsBlock(RootNodeDescriptorsBlock node) {
@@ -89,7 +89,7 @@ public class StubsCreatorDeclaration extends BaseConcept implements IClassifier 
   }
 
   public static StubsCreatorDeclaration newInstance(SModel sm, boolean init) {
-    return (StubsCreatorDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StubsCreatorDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StubsCreatorDeclaration newInstance(SModel sm) {

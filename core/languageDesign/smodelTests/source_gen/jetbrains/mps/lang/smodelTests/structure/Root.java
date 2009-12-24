@@ -80,7 +80,7 @@ public class Root extends NamedConcept {
   }
 
   public static Root newInstance(SModel sm, boolean init) {
-    return (Root)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Root) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodelTests.structure.Root", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Root newInstance(SModel sm) {

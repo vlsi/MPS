@@ -15,7 +15,7 @@ public class ListPattern extends AsPattern {
   }
 
   public static ListPattern newInstance(SModel sm, boolean init) {
-    return (ListPattern)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.ListPattern", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ListPattern) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.ListPattern", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ListPattern newInstance(SModel sm) {

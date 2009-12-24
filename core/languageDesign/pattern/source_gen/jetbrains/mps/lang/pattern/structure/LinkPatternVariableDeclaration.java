@@ -62,7 +62,7 @@ public class LinkPatternVariableDeclaration extends LinkAttributeConcept impleme
   }
 
   public static LinkPatternVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (LinkPatternVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkPatternVariableDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinkPatternVariableDeclaration newInstance(SModel sm) {

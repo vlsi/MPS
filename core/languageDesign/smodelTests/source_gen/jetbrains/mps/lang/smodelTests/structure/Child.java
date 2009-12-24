@@ -21,7 +21,7 @@ public class Child extends NamedConcept {
   }
 
   public GrandChild getGrandChild_0_1() {
-    return (GrandChild)this.getChild(GrandChild.class, Child.GRAND_CHILD_0_1);
+    return (GrandChild) this.getChild(GrandChild.class, Child.GRAND_CHILD_0_1);
   }
 
   public void setGrandChild_0_1(GrandChild node) {
@@ -29,7 +29,7 @@ public class Child extends NamedConcept {
   }
 
   public GrandChild getGrandChild_1() {
-    return (GrandChild)this.getChild(GrandChild.class, Child.GRAND_CHILD_1);
+    return (GrandChild) this.getChild(GrandChild.class, Child.GRAND_CHILD_1);
   }
 
   public void setGrandChild_1(GrandChild node) {
@@ -77,7 +77,7 @@ public class Child extends NamedConcept {
   }
 
   public static Child newInstance(SModel sm, boolean init) {
-    return (Child)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodelTests.structure.Child", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Child) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodelTests.structure.Child", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Child newInstance(SModel sm) {

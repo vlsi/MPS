@@ -16,7 +16,7 @@ public class GrandChild extends BaseConcept {
   }
 
   public static GrandChild newInstance(SModel sm, boolean init) {
-    return (GrandChild)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodelTests.structure.GrandChild", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GrandChild) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodelTests.structure.GrandChild", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GrandChild newInstance(SModel sm) {

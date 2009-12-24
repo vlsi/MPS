@@ -206,8 +206,8 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
     }
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
-      EditorCell_Property cell = (EditorCell_Property)editorContext.getSelectedCell();
-      String propertyName = ((PropertyAccessor)cell.getModelAccessor()).getPropertyName();
+      EditorCell_Property cell = (EditorCell_Property) editorContext.getSelectedCell();
+      String propertyName = ((PropertyAccessor) cell.getModelAccessor()).getPropertyName();
       node.setPropertyAttribute(propertyName, SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration", null));
     }
 
@@ -365,7 +365,7 @@ public class _PatternExpression_KeyMap extends EditorCellKeyMap {
         return;
       }
       SModel model = SNodeOperations.getModel(contextNode);
-      if (SNodeOperations.isInstanceOf(((SNode)contextNode.getAttribute()), "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
+      if (SNodeOperations.isInstanceOf(((SNode) contextNode.getAttribute()), "jetbrains.mps.lang.quotation.structure.ListAntiquotation")) {
         contextNode.setAttribute(null);
       } else
       contextNode.setAttribute(SModelOperations.createNewNode(model, "jetbrains.mps.lang.quotation.structure.ListAntiquotation", null));

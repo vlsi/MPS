@@ -16,7 +16,7 @@ public class CheckCancelledStatusStatement extends Statement {
   }
 
   public static CheckCancelledStatusStatement newInstance(SModel sm, boolean init) {
-    return (CheckCancelledStatusStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CheckCancelledStatusStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.findUsages.structure.CheckCancelledStatusStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CheckCancelledStatusStatement newInstance(SModel sm) {

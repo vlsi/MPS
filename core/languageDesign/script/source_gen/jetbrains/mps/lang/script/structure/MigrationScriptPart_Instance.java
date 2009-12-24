@@ -38,7 +38,7 @@ public class MigrationScriptPart_Instance extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getAffectedInstanceConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, MigrationScriptPart_Instance.AFFECTED_INSTANCE_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, MigrationScriptPart_Instance.AFFECTED_INSTANCE_CONCEPT);
   }
 
   public void setAffectedInstanceConcept(AbstractConceptDeclaration node) {
@@ -46,7 +46,7 @@ public class MigrationScriptPart_Instance extends BaseConcept {
   }
 
   public MigrationScriptPart_Instance_Predicate getAffectedInstancePredicate() {
-    return (MigrationScriptPart_Instance_Predicate)this.getChild(MigrationScriptPart_Instance_Predicate.class, MigrationScriptPart_Instance.AFFECTED_INSTANCE_PREDICATE);
+    return (MigrationScriptPart_Instance_Predicate) this.getChild(MigrationScriptPart_Instance_Predicate.class, MigrationScriptPart_Instance.AFFECTED_INSTANCE_PREDICATE);
   }
 
   public void setAffectedInstancePredicate(MigrationScriptPart_Instance_Predicate node) {
@@ -54,7 +54,7 @@ public class MigrationScriptPart_Instance extends BaseConcept {
   }
 
   public MigrationScriptPart_Instance_Updater getAffectedInstanceUpdater() {
-    return (MigrationScriptPart_Instance_Updater)this.getChild(MigrationScriptPart_Instance_Updater.class, MigrationScriptPart_Instance.AFFECTED_INSTANCE_UPDATER);
+    return (MigrationScriptPart_Instance_Updater) this.getChild(MigrationScriptPart_Instance_Updater.class, MigrationScriptPart_Instance.AFFECTED_INSTANCE_UPDATER);
   }
 
   public void setAffectedInstanceUpdater(MigrationScriptPart_Instance_Updater node) {
@@ -62,7 +62,7 @@ public class MigrationScriptPart_Instance extends BaseConcept {
   }
 
   public static MigrationScriptPart_Instance newInstance(SModel sm, boolean init) {
-    return (MigrationScriptPart_Instance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MigrationScriptPart_Instance) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MigrationScriptPart_Instance newInstance(SModel sm) {
