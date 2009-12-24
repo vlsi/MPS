@@ -10,6 +10,6 @@ public class Complex_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("ff24ab03-965e-4d15-9aed-52dc276658f4(jetbrains.mps.samples.complex)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

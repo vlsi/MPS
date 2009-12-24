@@ -16,7 +16,7 @@ public class ComplexType extends PrimitiveType {
   }
 
   public static ComplexType newInstance(SModel sm, boolean init) {
-    return (ComplexType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ComplexType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComplexType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ComplexType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComplexType newInstance(SModel sm) {

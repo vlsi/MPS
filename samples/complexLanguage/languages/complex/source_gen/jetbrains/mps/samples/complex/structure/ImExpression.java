@@ -15,7 +15,7 @@ public class ImExpression extends SingleComplexExpression {
   }
 
   public static ImExpression newInstance(SModel sm, boolean init) {
-    return (ImExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ImExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ImExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ImExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ImExpression newInstance(SModel sm) {

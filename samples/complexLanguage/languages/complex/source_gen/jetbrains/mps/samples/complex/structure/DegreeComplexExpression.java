@@ -17,7 +17,7 @@ public class DegreeComplexExpression extends SingleComplexExpression {
   }
 
   public IntegerLiteral getDegree() {
-    return (IntegerLiteral)this.getChild(IntegerLiteral.class, DegreeComplexExpression.DEGREE);
+    return (IntegerLiteral) this.getChild(IntegerLiteral.class, DegreeComplexExpression.DEGREE);
   }
 
   public void setDegree(IntegerLiteral node) {
@@ -25,7 +25,7 @@ public class DegreeComplexExpression extends SingleComplexExpression {
   }
 
   public static DegreeComplexExpression newInstance(SModel sm, boolean init) {
-    return (DegreeComplexExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.DegreeComplexExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DegreeComplexExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.DegreeComplexExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DegreeComplexExpression newInstance(SModel sm) {

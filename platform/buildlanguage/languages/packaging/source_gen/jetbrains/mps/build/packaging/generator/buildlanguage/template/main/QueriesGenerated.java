@@ -817,7 +817,7 @@ public class QueriesGenerated {
         continue;
       }
       List<SNode> modules = SNodeOperations.getDescendants(layout, "jetbrains.mps.build.packaging.structure.Module", false, new String[]{});
-      Map<IModule, List<SNode>> map = MapSequence.fromMap(new LinkedHashMap<IModule, List<SNode>>(16, (float)0.75, false));
+      Map<IModule, List<SNode>> map = MapSequence.fromMap(new LinkedHashMap<IModule, List<SNode>>(16, (float) 0.75, false));
       // fill map 
       for (SNode module : ListSequence.fromList(modules)) {
         IModule imodule = Module_Behavior.call_getModule_1213877515148(module);

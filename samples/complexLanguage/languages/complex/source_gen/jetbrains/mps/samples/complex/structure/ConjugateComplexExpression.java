@@ -15,7 +15,7 @@ public class ConjugateComplexExpression extends SingleComplexExpression {
   }
 
   public static ConjugateComplexExpression newInstance(SModel sm, boolean init) {
-    return (ConjugateComplexExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ConjugateComplexExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConjugateComplexExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ConjugateComplexExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConjugateComplexExpression newInstance(SModel sm) {

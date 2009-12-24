@@ -16,7 +16,7 @@ public class ImaginaryUnit extends Expression {
   }
 
   public static ImaginaryUnit newInstance(SModel sm, boolean init) {
-    return (ImaginaryUnit)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ImaginaryUnit", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ImaginaryUnit) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ImaginaryUnit", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ImaginaryUnit newInstance(SModel sm) {

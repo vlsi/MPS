@@ -15,7 +15,7 @@ public class AbsExpression extends SingleComplexExpression {
   }
 
   public static AbsExpression newInstance(SModel sm, boolean init) {
-    return (AbsExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.AbsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbsExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.AbsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbsExpression newInstance(SModel sm) {

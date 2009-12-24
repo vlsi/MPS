@@ -15,7 +15,7 @@ public class ArgExpression extends SingleComplexExpression {
   }
 
   public static ArgExpression newInstance(SModel sm, boolean init) {
-    return (ArgExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ArgExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ArgExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ArgExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ArgExpression newInstance(SModel sm) {

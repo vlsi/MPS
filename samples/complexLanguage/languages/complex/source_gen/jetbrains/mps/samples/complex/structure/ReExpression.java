@@ -15,7 +15,7 @@ public class ReExpression extends SingleComplexExpression {
   }
 
   public static ReExpression newInstance(SModel sm, boolean init) {
-    return (ReExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ReExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReExpression newInstance(SModel sm) {

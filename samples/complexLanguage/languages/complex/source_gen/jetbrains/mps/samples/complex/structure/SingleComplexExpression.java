@@ -18,7 +18,7 @@ public class SingleComplexExpression extends Expression {
   }
 
   public Expression getComplexExpression() {
-    return (Expression)this.getChild(Expression.class, SingleComplexExpression.COMPLEX_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, SingleComplexExpression.COMPLEX_EXPRESSION);
   }
 
   public void setComplexExpression(Expression node) {
@@ -26,7 +26,7 @@ public class SingleComplexExpression extends Expression {
   }
 
   public static SingleComplexExpression newInstance(SModel sm, boolean init) {
-    return (SingleComplexExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.SingleComplexExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SingleComplexExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.SingleComplexExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SingleComplexExpression newInstance(SModel sm) {
