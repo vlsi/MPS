@@ -19,7 +19,10 @@ import com.intellij.util.text.CharArrayUtil;
 import com.intellij.util.text.CharSequenceReader;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
@@ -145,6 +148,9 @@ public class ModelPersistence {
   }
 
   private static boolean needsUpgrade(int modelPersistenceVersion) {
+    if (IdeMain.getTestMode() != TestMode.NO_TEST) {
+      return false;
+    }
     if (modelPersistenceVersion < getCurrentPersistenceVersion()) {
       if (getPersistenceSettings().isUserPersistenceVersionDefined() || ApplicationManager.getApplication().isUnitTestMode()) {
         return true; //user already decided to convert models now
