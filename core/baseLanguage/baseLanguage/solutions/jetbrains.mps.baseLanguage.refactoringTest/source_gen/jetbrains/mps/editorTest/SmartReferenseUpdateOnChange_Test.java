@@ -27,7 +27,8 @@ public class SmartReferenseUpdateOnChange_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("2345623147105495371", "2345623147105495377");
       final EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
@@ -35,10 +36,9 @@ public class SmartReferenseUpdateOnChange_Test extends BaseTransformationTest {
         public void run() {
           SNode testNode = SNodeOperations.cast(TestBody.this.getNodeById("2345623147105496859"), "jetbrains.mps.baseLanguage.structure.ClassifierType");
           EditorCell editorCell = editorComponent.findCellWithId(testNode, "ReferencePresentation_9185_0");
-          Assert.assertEquals("SmartReferenseUpdat", ((EditorCell_Label)editorCell).getText());
+          Assert.assertEquals("SmartReferenseUpdat", ((EditorCell_Label) editorCell).getText());
         }
       });
-      TestBody.this.finishTest();
     }
   }
 }

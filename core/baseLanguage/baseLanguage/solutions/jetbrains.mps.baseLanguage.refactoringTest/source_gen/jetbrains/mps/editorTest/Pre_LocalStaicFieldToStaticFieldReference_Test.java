@@ -21,7 +21,8 @@ public class Pre_LocalStaicFieldToStaticFieldReference_Test extends BaseTransfor
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("6769498721974583568", "6769498721974638214");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl C"));
@@ -38,7 +39,6 @@ public class Pre_LocalStaicFieldToStaticFieldReference_Test extends BaseTransfor
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl V"));
-      TestBody.this.finishTest();
     }
   }
 }

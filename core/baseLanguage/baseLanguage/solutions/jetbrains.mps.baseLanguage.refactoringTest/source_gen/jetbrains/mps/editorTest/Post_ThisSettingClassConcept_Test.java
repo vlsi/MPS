@@ -21,7 +21,8 @@ public class Post_ThisSettingClassConcept_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("654795966042500703", "654795966042593528");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl C"));
@@ -29,7 +30,6 @@ public class Post_ThisSettingClassConcept_Test extends BaseTransformationTest {
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DOWN"));
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl V"));
-      TestBody.this.finishTest();
     }
   }
 }

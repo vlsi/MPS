@@ -21,12 +21,12 @@ public class RestoringSThintCell_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("6615429292103589154", "6615429292103589158");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "+");
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE", " BACK_SPACE"));
-      TestBody.this.finishTest();
     }
   }
 }

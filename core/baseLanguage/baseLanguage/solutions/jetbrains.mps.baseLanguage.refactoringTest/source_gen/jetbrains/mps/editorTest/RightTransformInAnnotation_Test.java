@@ -19,11 +19,11 @@ public class RightTransformInAnnotation_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1230224846076", "1230225066152");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "+1");
-      TestBody.this.finishTest();
     }
   }
 }

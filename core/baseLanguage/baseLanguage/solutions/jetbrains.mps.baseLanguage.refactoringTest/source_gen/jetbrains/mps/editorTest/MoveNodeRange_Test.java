@@ -24,7 +24,8 @@ public class MoveNodeRange_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("7247887419163198992", "7247887419163198996");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "shift DOWN"));
@@ -35,7 +36,6 @@ public class MoveNodeRange_Test extends BaseTransformationTest {
           actionListener.actionPerformed(null);
         }
       });
-      TestBody.this.finishTest();
     }
   }
 }

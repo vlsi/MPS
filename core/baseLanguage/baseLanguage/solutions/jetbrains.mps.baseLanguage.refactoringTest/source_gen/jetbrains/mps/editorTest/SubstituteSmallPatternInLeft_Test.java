@@ -21,13 +21,13 @@ public class SubstituteSmallPatternInLeft_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1574561129028803924", "1574561129028803928");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "t");
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " LEFT"));
       BaseEditorTestBody.typeString(editorComponent, "--");
-      TestBody.this.finishTest();
     }
   }
 }

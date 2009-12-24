@@ -21,13 +21,13 @@ public class IntelligentInputWithSubstitutionChooser_Test extends BaseTransforma
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("3294454325389407451", "3294454325389407455");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "C");
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
       BaseEditorTestBody.typeString(editorComponent, "olor.BLACK");
-      TestBody.this.finishTest();
     }
   }
 }

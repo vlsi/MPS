@@ -21,11 +21,11 @@ public class PressingBackspaseInFirstPosition_Test extends BaseTransformationTes
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1195975797953576231", "1195975797953580249");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
-      TestBody.this.finishTest();
     }
   }
 }

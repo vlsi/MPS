@@ -26,7 +26,8 @@ public class DefaultCellInfoTest_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("5560058483159205760", "5560058483159208304");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       IOperationContext operationContext = editor.getCurrentEditorComponent().getOperationContext();
@@ -38,7 +39,6 @@ public class DefaultCellInfoTest_Test extends BaseTransformationTest {
       });
       inspector.setSelectionDontClearStack(editorCell, false);
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " LEFT"));
-      TestBody.this.finishTest();
     }
   }
 }

@@ -19,11 +19,11 @@ public class AssociativityProblem_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("707974323667245243", "707974323667246377");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "1-2+3");
-      TestBody.this.finishTest();
     }
   }
 }

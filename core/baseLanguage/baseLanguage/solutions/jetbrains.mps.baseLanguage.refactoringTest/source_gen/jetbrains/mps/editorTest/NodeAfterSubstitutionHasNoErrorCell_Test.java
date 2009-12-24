@@ -21,12 +21,12 @@ public class NodeAfterSubstitutionHasNoErrorCell_Test extends BaseTransformation
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("3727822333335546447", "8664476900639779216");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
       BaseEditorTestBody.typeString(editorComponent, "stub@");
-      TestBody.this.finishTest();
     }
   }
 }

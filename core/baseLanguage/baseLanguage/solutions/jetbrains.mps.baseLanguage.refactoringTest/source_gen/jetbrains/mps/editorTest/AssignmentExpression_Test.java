@@ -21,12 +21,12 @@ public class AssignmentExpression_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1231771186867", "1231771253577");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE"));
       BaseEditorTestBody.typeString(editorComponent, "-");
-      TestBody.this.finishTest();
     }
   }
 }

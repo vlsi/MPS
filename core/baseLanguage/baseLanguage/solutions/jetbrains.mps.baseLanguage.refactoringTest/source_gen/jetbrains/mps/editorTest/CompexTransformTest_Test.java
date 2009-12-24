@@ -21,7 +21,8 @@ public class CompexTransformTest_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1236013323503", "1236013384899");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " BACK_SPACE", " BACK_SPACE"));
@@ -29,7 +30,6 @@ public class CompexTransformTest_Test extends BaseTransformationTest {
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " LEFT"));
       BaseEditorTestBody.typeString(editorComponent, "!");
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " LEFT"));
-      TestBody.this.finishTest();
     }
   }
 }

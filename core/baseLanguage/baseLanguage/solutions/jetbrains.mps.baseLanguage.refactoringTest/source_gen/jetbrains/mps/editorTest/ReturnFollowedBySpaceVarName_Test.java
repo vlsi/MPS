@@ -19,11 +19,11 @@ public class ReturnFollowedBySpaceVarName_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("8547191361977497076", "8547191361977497085");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, " ");
-      TestBody.this.finishTest();
     }
   }
 }

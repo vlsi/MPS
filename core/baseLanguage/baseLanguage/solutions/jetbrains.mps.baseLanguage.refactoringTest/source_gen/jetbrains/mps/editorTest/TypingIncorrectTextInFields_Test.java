@@ -19,11 +19,11 @@ public class TypingIncorrectTextInFields_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1622243561473153891", "1622243561473155032");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "1234");
-      TestBody.this.finishTest();
     }
   }
 }

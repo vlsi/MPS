@@ -19,12 +19,12 @@ public class InsertPrevSiblingOperation_Focus_Test extends BaseTransformationTes
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1835794636205189194", "1835794636205189199");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "node.add next-sibling");
       BaseEditorTestBody.typeString(editorComponent, "new");
-      TestBody.this.finishTest();
     }
   }
 }

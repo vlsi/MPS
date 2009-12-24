@@ -19,11 +19,11 @@ public class AddingTypeParameterToConstructor_Test extends BaseTransformationTes
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1883175908513199132", "1883175908513199136");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "<");
-      TestBody.this.finishTest();
     }
   }
 }

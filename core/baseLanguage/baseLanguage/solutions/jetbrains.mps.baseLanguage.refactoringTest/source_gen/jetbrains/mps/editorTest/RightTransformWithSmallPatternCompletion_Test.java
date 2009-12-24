@@ -19,11 +19,11 @@ public class RightTransformWithSmallPatternCompletion_Test extends BaseTransform
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1231856205436", "1231856215769");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "inta");
-      TestBody.this.finishTest();
     }
   }
 }

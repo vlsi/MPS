@@ -22,7 +22,8 @@ public class MovingNode_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1452412866770394613", "1452412866770394617");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       final IEditor editorVar = editor;
@@ -32,7 +33,6 @@ public class MovingNode_Test extends BaseTransformationTest {
           actionListener.actionPerformed(null);
         }
       });
-      TestBody.this.finishTest();
     }
   }
 }

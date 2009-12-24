@@ -19,11 +19,11 @@ public class SelectionOfWrappedCell_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("7428162988804758596", "7428162988805013914");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "myVar");
-      TestBody.this.finishTest();
     }
   }
 }

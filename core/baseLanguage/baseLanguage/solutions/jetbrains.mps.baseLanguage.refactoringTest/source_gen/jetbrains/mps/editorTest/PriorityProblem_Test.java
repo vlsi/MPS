@@ -19,11 +19,11 @@ public class PriorityProblem_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("6778605776625982935", "6778605776625982939");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, ">4+5&&true");
-      TestBody.this.finishTest();
     }
   }
 }

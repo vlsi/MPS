@@ -19,11 +19,11 @@ public class CaretInStaticMethodCall_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("4497978391706445231", "4497978391706445241");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "method");
-      TestBody.this.finishTest();
     }
   }
 }

@@ -19,11 +19,11 @@ public class SubstitudeAmbigousActions_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("4439253381394558444", "4439253381394559643");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "method");
-      TestBody.this.finishTest();
     }
   }
 }

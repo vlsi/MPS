@@ -19,11 +19,11 @@ public class AddingParameterWithEnter_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("3891087596588955390", "3891087596588955395");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "int");
-      TestBody.this.finishTest();
     }
   }
 }

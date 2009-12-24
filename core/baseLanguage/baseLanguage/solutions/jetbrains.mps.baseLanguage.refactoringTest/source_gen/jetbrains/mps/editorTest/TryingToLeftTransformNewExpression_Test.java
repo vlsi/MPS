@@ -22,7 +22,8 @@ public class TryingToLeftTransformNewExpression_Test extends BaseTransformationT
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("2907839077756812217", "2907839077756812221");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, " ");
@@ -30,7 +31,6 @@ public class TryingToLeftTransformNewExpression_Test extends BaseTransformationT
       Assert.assertTrue(editorComponent.getNodeSubstituteChooser().isVisible());
       editorComponent.getNodeSubstituteChooser().setVisible(false);
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " UP"));
-      TestBody.this.finishTest();
     }
   }
 }

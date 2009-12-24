@@ -21,12 +21,12 @@ public class SelectionByShiftArrows_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("5109488425462005079", "5109488425462005083");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "shift UP"));
       BaseEditorTestBody.typeString(editorComponent, "2");
-      TestBody.this.finishTest();
     }
   }
 }

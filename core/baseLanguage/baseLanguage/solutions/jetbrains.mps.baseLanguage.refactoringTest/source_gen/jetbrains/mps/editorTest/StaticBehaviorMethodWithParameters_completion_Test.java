@@ -21,11 +21,11 @@ public class StaticBehaviorMethodWithParameters_completion_Test extends BaseTran
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("7075734325385964912", "7075734325385964943");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl SPACE"));
-      TestBody.this.finishTest();
     }
   }
 }

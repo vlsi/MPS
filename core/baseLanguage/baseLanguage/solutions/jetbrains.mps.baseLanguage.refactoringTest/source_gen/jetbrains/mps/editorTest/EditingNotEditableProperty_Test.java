@@ -19,11 +19,11 @@ public class EditingNotEditableProperty_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("4965160547087514302", "4965160547087627107");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "e");
-      TestBody.this.finishTest();
     }
   }
 }

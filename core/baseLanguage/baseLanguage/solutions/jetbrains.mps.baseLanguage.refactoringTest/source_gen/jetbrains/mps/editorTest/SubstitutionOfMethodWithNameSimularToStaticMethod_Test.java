@@ -20,12 +20,12 @@ public class SubstitutionOfMethodWithNameSimularToStaticMethod_Test extends Base
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("7164702912147697389", "7164702912147697395");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "tmp");
       Assert.assertTrue(editorComponent.getNodeSubstituteChooser().isVisible());
-      TestBody.this.finishTest();
     }
   }
 }

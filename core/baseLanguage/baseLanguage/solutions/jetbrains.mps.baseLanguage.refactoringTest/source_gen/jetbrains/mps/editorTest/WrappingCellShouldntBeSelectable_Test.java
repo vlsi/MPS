@@ -21,11 +21,11 @@ public class WrappingCellShouldntBeSelectable_Test extends BaseTransformationTes
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("2322823743453985857", "2322823743453985861");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), "ctrl UP", "ctrl UP"));
-      TestBody.this.finishTest();
     }
   }
 }

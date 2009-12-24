@@ -21,14 +21,14 @@ public class DeleteOverridenMethodInBehavior_Test extends BaseTransformationTest
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1232554649248", "1232555746044");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " RIGHT"));
       for (int i = 0; i < 5; i++) {
         BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " DELETE"));
       }
-      TestBody.this.finishTest();
     }
   }
 }

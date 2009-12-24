@@ -21,12 +21,12 @@ public class DotExpression_Test extends BaseTransformationTest {
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("1238501603819", "1238501652125");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.pressKeys(editorComponent, ListSequence.fromListAndArray(new ArrayList<String>(), " ENTER"));
       BaseEditorTestBody.typeString(editorComponent, "o.toString");
-      TestBody.this.finishTest();
     }
   }
 }

@@ -19,11 +19,11 @@ public class PerformLeftTransformWithNoLeftTransformActions_Test extends BaseTra
 
   @MPSLaunch
   public static class TestBody extends BaseEditorTestBody {
-    public void testMethod() throws Exception {
+    @Override
+    public void testMethodImpl() throws Exception {
       final IEditor editor = TestBody.this.initEditor("8976921645732305714", "6212382567349237212");
       EditorComponent editorComponent = editor.getCurrentEditorComponent();
       BaseEditorTestBody.typeString(editorComponent, "+");
-      TestBody.this.finishTest();
     }
   }
 }
