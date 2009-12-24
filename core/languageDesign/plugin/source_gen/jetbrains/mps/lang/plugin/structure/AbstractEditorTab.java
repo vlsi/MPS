@@ -18,6 +18,7 @@ public class AbstractEditorTab extends BaseConcept implements IClassifier, IChec
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String INIT_BLOCK = "initBlock";
+  public static final String ASK_BLOCK = "askBlock";
   public static final String CREATE_BLOCK = "createBlock";
 
   public AbstractEditorTab(SNode node) {
@@ -78,6 +79,14 @@ public class AbstractEditorTab extends BaseConcept implements IClassifier, IChec
 
   public void setInitBlock(InitTabBlock node) {
     super.setChild(AbstractEditorTab.INIT_BLOCK, node);
+  }
+
+  public AskBlock getAskBlock() {
+    return (AskBlock) this.getChild(AskBlock.class, AbstractEditorTab.ASK_BLOCK);
+  }
+
+  public void setAskBlock(AskBlock node) {
+    super.setChild(AbstractEditorTab.ASK_BLOCK, node);
   }
 
   public CreateBlock getCreateBlock() {

@@ -27,5 +27,6 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.lang.plugin.structure.AddStatement", new AddStatement_DataFlow());
     manager.register("jetbrains.mps.lang.plugin.structure.AddTabOperation", new AddTabOperation_DataFlow());
     manager.register("jetbrains.mps.lang.plugin.structure.ToolTab", new ToolTab_DataFlow());
+    manager.register("jetbrains.mps.lang.plugin.structure.AskStatement", new AskStatement_DataFlow());
   }
 }

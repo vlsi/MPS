@@ -467,5 +467,29 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="5158570261711860781">
+    <property name="package:0" value="EditorTab.Methods" />
+    <link role="conceptDeclaration:0" targetNodeId="1.5703381818026462228:23" resolveInfo="AskStatement" />
+    <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="5158570261711860782">
+      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5158570261711860783">
+        <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="5158570261712309218">
+          <node role="codeFor:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5158570261712309221">
+            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="5158570261712309220" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5158570261712309225">
+              <link role="link:16" targetNodeId="1.5703381818026464830:23" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="5158570261712309227">
+          <node role="codeFor:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5158570261712309230">
+            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="5158570261712309229" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5158570261712309234">
+              <link role="link:16" targetNodeId="1.5703381818026464829:23" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

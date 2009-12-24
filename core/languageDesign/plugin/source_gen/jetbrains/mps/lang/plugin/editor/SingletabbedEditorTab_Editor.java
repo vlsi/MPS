@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.BlockCells;
 
 public class SingletabbedEditorTab_Editor extends DefaultNodeEditor {
@@ -49,7 +50,10 @@ public class SingletabbedEditorTab_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_0728_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0728_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_0728_4(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_0728_2(editorContext, node));
+    if (renderingCondition0728_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_0728_2(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createRefNode_0728_3(editorContext, node));
     return editorCell;
   }
 
@@ -74,7 +78,7 @@ public class SingletabbedEditorTab_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createCollection_0728_4(editorContext, node));
     editorCell.addEditorCell(this.createCollection_0728_5(editorContext, node));
-    if (renderingCondition0728_1(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition0728_2(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_0728_6(editorContext, node));
     }
     return editorCell;
@@ -88,7 +92,7 @@ public class SingletabbedEditorTab_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createCollection_0728_0(editorContext, node));
-    if (renderingCondition0728_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+    if (renderingCondition0728_1(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createConstant_0728_5(editorContext, node));
     }
     return editorCell;
@@ -245,6 +249,23 @@ public class SingletabbedEditorTab_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_0728_2(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("askBlock");
+    provider.setNoTargetText("<ask by default>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_0728_3(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("createBlock");
     provider.setNoTargetText("<can't create node from this tab>");
     EditorCell editorCell;
@@ -261,10 +282,14 @@ public class SingletabbedEditorTab_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition0728_0(SNode node, EditorContext editorContext, IScope scope) {
-    return BlockCells.useBraces();
+    return (SLinkOperations.getTarget(node, "createBlock", true) != null);
   }
 
   private static boolean renderingCondition0728_1(SNode node, EditorContext editorContext, IScope scope) {
+    return BlockCells.useBraces();
+  }
+
+  private static boolean renderingCondition0728_2(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
 }
