@@ -338,6 +338,10 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     {
       ModelAccessor modelAccessor = new TransactionalPropertyAccessor(node, "name", false, true, editorContext) {
         public void doCommit(final String oldValue, final String newValue) {
+          this.doCommitImpl(oldValue, newValue);
+        }
+
+        public void doCommitImpl(final String oldValue, final String newValue) {
           AbstractConceptDeclaration_Behavior.commitNameProperty_1232962485892(editorContext, oldValue, node, newValue);
         }
       };
