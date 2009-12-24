@@ -15,7 +15,7 @@ public class DateTimeZonePropertyFormatConfiguration extends DateTimePropertyCon
   }
 
   public static DateTimeZonePropertyFormatConfiguration newInstance(SModel sm, boolean init) {
-    return (DateTimeZonePropertyFormatConfiguration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeZonePropertyFormatConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimeZonePropertyFormatConfiguration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeZonePropertyFormatConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimeZonePropertyFormatConfiguration newInstance(SModel sm) {

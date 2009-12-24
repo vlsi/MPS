@@ -32,7 +32,7 @@ public class MultiTuple {
       return true;
     }
     if (that instanceof MultiTuple) {
-      return Arrays.deepEquals(this.values, ((MultiTuple)that).values);
+      return Arrays.deepEquals(this.values, ((MultiTuple) that).values);
     }
     return false;
   }
@@ -178,12 +178,12 @@ public class MultiTuple {
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0(T0 value) {
-      return (T0)this.set(0, value);
+      return (T0) this.set(0, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0() {
-      return (T0)this.get(0);
+      return (T0) this.get(0);
     }
 
     public Tuples._1<T0> assign(Tuples._1<? extends T0> from) {
@@ -203,22 +203,22 @@ public class MultiTuple {
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0(T0 value) {
-      return (T0)this.set(0, value);
+      return (T0) this.set(0, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T1 _1(T1 value) {
-      return (T1)this.set(1, value);
+      return (T1) this.set(1, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0() {
-      return (T0)this.get(0);
+      return (T0) this.get(0);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T1 _1() {
-      return (T1)this.get(1);
+      return (T1) this.get(1);
     }
 
     public Tuples._2<T0, T1> assign(Tuples._2<? extends T0, ? extends T1> from) {
@@ -238,32 +238,32 @@ public class MultiTuple {
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0(T0 value) {
-      return (T0)this.set(0, value);
+      return (T0) this.set(0, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T1 _1(T1 value) {
-      return (T1)this.set(1, value);
+      return (T1) this.set(1, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T2 _2(T2 value) {
-      return (T2)this.set(2, value);
+      return (T2) this.set(2, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0() {
-      return (T0)this.get(0);
+      return (T0) this.get(0);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T1 _1() {
-      return (T1)this.get(1);
+      return (T1) this.get(1);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T2 _2() {
-      return (T2)this.get(2);
+      return (T2) this.get(2);
     }
 
     public Tuples._3<T0, T1, T2> assign(Tuples._3<? extends T0, ? extends T1, ? extends T2> from) {
@@ -283,42 +283,42 @@ public class MultiTuple {
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0(T0 value) {
-      return (T0)this.set(0, value);
+      return (T0) this.set(0, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T1 _1(T1 value) {
-      return (T1)this.set(1, value);
+      return (T1) this.set(1, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T2 _2(T2 value) {
-      return (T2)this.set(2, value);
+      return (T2) this.set(2, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T3 _3(T3 value) {
-      return (T3)this.set(3, value);
+      return (T3) this.set(3, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0() {
-      return (T0)this.get(0);
+      return (T0) this.get(0);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T1 _1() {
-      return (T1)this.get(1);
+      return (T1) this.get(1);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T2 _2() {
-      return (T2)this.get(2);
+      return (T2) this.get(2);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T3 _3() {
-      return (T3)this.get(3);
+      return (T3) this.get(3);
     }
 
     public Tuples._4<T0, T1, T2, T3> assign(Tuples._4<? extends T0, ? extends T1, ? extends T2, ? extends T3> from) {
@@ -338,52 +338,52 @@ public class MultiTuple {
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0(T0 value) {
-      return (T0)this.set(0, value);
+      return (T0) this.set(0, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T1 _1(T1 value) {
-      return (T1)this.set(1, value);
+      return (T1) this.set(1, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T2 _2(T2 value) {
-      return (T2)this.set(2, value);
+      return (T2) this.set(2, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T3 _3(T3 value) {
-      return (T3)this.set(3, value);
+      return (T3) this.set(3, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T4 _4(T4 value) {
-      return (T4)this.set(4, value);
+      return (T4) this.set(4, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0() {
-      return (T0)this.get(0);
+      return (T0) this.get(0);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T1 _1() {
-      return (T1)this.get(1);
+      return (T1) this.get(1);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T2 _2() {
-      return (T2)this.get(2);
+      return (T2) this.get(2);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T3 _3() {
-      return (T3)this.get(3);
+      return (T3) this.get(3);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T4 _4() {
-      return (T4)this.get(4);
+      return (T4) this.get(4);
     }
 
     public Tuples._5<T0, T1, T2, T3, T4> assign(Tuples._5<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4> from) {
@@ -403,62 +403,62 @@ public class MultiTuple {
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0(T0 value) {
-      return (T0)this.set(0, value);
+      return (T0) this.set(0, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T1 _1(T1 value) {
-      return (T1)this.set(1, value);
+      return (T1) this.set(1, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T2 _2(T2 value) {
-      return (T2)this.set(2, value);
+      return (T2) this.set(2, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T3 _3(T3 value) {
-      return (T3)this.set(3, value);
+      return (T3) this.set(3, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T4 _4(T4 value) {
-      return (T4)this.set(4, value);
+      return (T4) this.set(4, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T5 _5(T5 value) {
-      return (T5)this.set(5, value);
+      return (T5) this.set(5, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0() {
-      return (T0)this.get(0);
+      return (T0) this.get(0);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T1 _1() {
-      return (T1)this.get(1);
+      return (T1) this.get(1);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T2 _2() {
-      return (T2)this.get(2);
+      return (T2) this.get(2);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T3 _3() {
-      return (T3)this.get(3);
+      return (T3) this.get(3);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T4 _4() {
-      return (T4)this.get(4);
+      return (T4) this.get(4);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T5 _5() {
-      return (T5)this.get(5);
+      return (T5) this.get(5);
     }
 
     public Tuples._6<T0, T1, T2, T3, T4, T5> assign(Tuples._6<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5> from) {
@@ -478,72 +478,72 @@ public class MultiTuple {
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0(T0 value) {
-      return (T0)this.set(0, value);
+      return (T0) this.set(0, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T1 _1(T1 value) {
-      return (T1)this.set(1, value);
+      return (T1) this.set(1, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T2 _2(T2 value) {
-      return (T2)this.set(2, value);
+      return (T2) this.set(2, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T3 _3(T3 value) {
-      return (T3)this.set(3, value);
+      return (T3) this.set(3, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T4 _4(T4 value) {
-      return (T4)this.set(4, value);
+      return (T4) this.set(4, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T5 _5(T5 value) {
-      return (T5)this.set(5, value);
+      return (T5) this.set(5, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T6 _6(T6 value) {
-      return (T6)this.set(6, value);
+      return (T6) this.set(6, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0() {
-      return (T0)this.get(0);
+      return (T0) this.get(0);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T1 _1() {
-      return (T1)this.get(1);
+      return (T1) this.get(1);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T2 _2() {
-      return (T2)this.get(2);
+      return (T2) this.get(2);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T3 _3() {
-      return (T3)this.get(3);
+      return (T3) this.get(3);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T4 _4() {
-      return (T4)this.get(4);
+      return (T4) this.get(4);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T5 _5() {
-      return (T5)this.get(5);
+      return (T5) this.get(5);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T6 _6() {
-      return (T6)this.get(6);
+      return (T6) this.get(6);
     }
 
     public Tuples._7<T0, T1, T2, T3, T4, T5, T6> assign(Tuples._7<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6> from) {
@@ -563,82 +563,82 @@ public class MultiTuple {
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0(T0 value) {
-      return (T0)this.set(0, value);
+      return (T0) this.set(0, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T1 _1(T1 value) {
-      return (T1)this.set(1, value);
+      return (T1) this.set(1, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T2 _2(T2 value) {
-      return (T2)this.set(2, value);
+      return (T2) this.set(2, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T3 _3(T3 value) {
-      return (T3)this.set(3, value);
+      return (T3) this.set(3, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T4 _4(T4 value) {
-      return (T4)this.set(4, value);
+      return (T4) this.set(4, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T5 _5(T5 value) {
-      return (T5)this.set(5, value);
+      return (T5) this.set(5, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T6 _6(T6 value) {
-      return (T6)this.set(6, value);
+      return (T6) this.set(6, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T7 _7(T7 value) {
-      return (T7)this.set(7, value);
+      return (T7) this.set(7, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0() {
-      return (T0)this.get(0);
+      return (T0) this.get(0);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T1 _1() {
-      return (T1)this.get(1);
+      return (T1) this.get(1);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T2 _2() {
-      return (T2)this.get(2);
+      return (T2) this.get(2);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T3 _3() {
-      return (T3)this.get(3);
+      return (T3) this.get(3);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T4 _4() {
-      return (T4)this.get(4);
+      return (T4) this.get(4);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T5 _5() {
-      return (T5)this.get(5);
+      return (T5) this.get(5);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T6 _6() {
-      return (T6)this.get(6);
+      return (T6) this.get(6);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T7 _7() {
-      return (T7)this.get(7);
+      return (T7) this.get(7);
     }
 
     public Tuples._8<T0, T1, T2, T3, T4, T5, T6, T7> assign(Tuples._8<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7> from) {
@@ -658,92 +658,92 @@ public class MultiTuple {
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0(T0 value) {
-      return (T0)this.set(0, value);
+      return (T0) this.set(0, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T1 _1(T1 value) {
-      return (T1)this.set(1, value);
+      return (T1) this.set(1, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T2 _2(T2 value) {
-      return (T2)this.set(2, value);
+      return (T2) this.set(2, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T3 _3(T3 value) {
-      return (T3)this.set(3, value);
+      return (T3) this.set(3, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T4 _4(T4 value) {
-      return (T4)this.set(4, value);
+      return (T4) this.set(4, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T5 _5(T5 value) {
-      return (T5)this.set(5, value);
+      return (T5) this.set(5, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T6 _6(T6 value) {
-      return (T6)this.set(6, value);
+      return (T6) this.set(6, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T7 _7(T7 value) {
-      return (T7)this.set(7, value);
+      return (T7) this.set(7, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T8 _8(T8 value) {
-      return (T8)this.set(8, value);
+      return (T8) this.set(8, value);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T0 _0() {
-      return (T0)this.get(0);
+      return (T0) this.get(0);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T1 _1() {
-      return (T1)this.get(1);
+      return (T1) this.get(1);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T2 _2() {
-      return (T2)this.get(2);
+      return (T2) this.get(2);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T3 _3() {
-      return (T3)this.get(3);
+      return (T3) this.get(3);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T4 _4() {
-      return (T4)this.get(4);
+      return (T4) this.get(4);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T5 _5() {
-      return (T5)this.get(5);
+      return (T5) this.get(5);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T6 _6() {
-      return (T6)this.get(6);
+      return (T6) this.get(6);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T7 _7() {
-      return (T7)this.get(7);
+      return (T7) this.get(7);
     }
 
     @SuppressWarnings(value = "unchecked")
     public T8 _8() {
-      return (T8)this.get(8);
+      return (T8) this.get(8);
     }
 
     public Tuples._9<T0, T1, T2, T3, T4, T5, T6, T7, T8> assign(Tuples._9<? extends T0, ? extends T1, ? extends T2, ? extends T3, ? extends T4, ? extends T5, ? extends T6, ? extends T7, ? extends T8> from) {

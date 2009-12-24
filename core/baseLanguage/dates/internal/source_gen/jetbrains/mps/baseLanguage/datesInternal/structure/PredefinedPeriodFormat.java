@@ -63,7 +63,7 @@ public class PredefinedPeriodFormat extends BaseConcept implements IPeriodFormat
   }
 
   public StaticMethodCall getFormatter() {
-    return (StaticMethodCall)this.getChild(StaticMethodCall.class, PredefinedPeriodFormat.FORMATTER);
+    return (StaticMethodCall) this.getChild(StaticMethodCall.class, PredefinedPeriodFormat.FORMATTER);
   }
 
   public void setFormatter(StaticMethodCall node) {
@@ -71,7 +71,7 @@ public class PredefinedPeriodFormat extends BaseConcept implements IPeriodFormat
   }
 
   public static PredefinedPeriodFormat newInstance(SModel sm, boolean init) {
-    return (PredefinedPeriodFormat)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.PredefinedPeriodFormat", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PredefinedPeriodFormat) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.PredefinedPeriodFormat", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PredefinedPeriodFormat newInstance(SModel sm) {

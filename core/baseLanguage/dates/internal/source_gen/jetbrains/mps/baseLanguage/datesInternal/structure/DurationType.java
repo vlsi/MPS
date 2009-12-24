@@ -55,7 +55,7 @@ public class DurationType extends BaseConcept implements INamedConcept {
   }
 
   public StaticMethodCall getJodaDurationFieldType() {
-    return (StaticMethodCall)this.getChild(StaticMethodCall.class, DurationType.JODA_DURATION_FIELD_TYPE);
+    return (StaticMethodCall) this.getChild(StaticMethodCall.class, DurationType.JODA_DURATION_FIELD_TYPE);
   }
 
   public void setJodaDurationFieldType(StaticMethodCall node) {
@@ -63,7 +63,7 @@ public class DurationType extends BaseConcept implements INamedConcept {
   }
 
   public static DurationType newInstance(SModel sm, boolean init) {
-    return (DurationType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DurationType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DurationType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DurationType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DurationType newInstance(SModel sm) {

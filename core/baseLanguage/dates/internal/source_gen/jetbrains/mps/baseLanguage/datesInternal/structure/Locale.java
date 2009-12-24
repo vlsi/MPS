@@ -55,7 +55,7 @@ public class Locale extends BaseConcept implements INamedConcept {
   }
 
   public Expression getJavaLocale() {
-    return (Expression)this.getChild(Expression.class, Locale.JAVA_LOCALE);
+    return (Expression) this.getChild(Expression.class, Locale.JAVA_LOCALE);
   }
 
   public void setJavaLocale(Expression node) {
@@ -63,7 +63,7 @@ public class Locale extends BaseConcept implements INamedConcept {
   }
 
   public static Locale newInstance(SModel sm, boolean init) {
-    return (Locale)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.Locale", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Locale) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.Locale", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Locale newInstance(SModel sm) {

@@ -102,7 +102,7 @@ public class FormatTokenSettings extends BaseConcept {
   }
 
   public static FormatTokenSettings newInstance(SModel sm, boolean init) {
-    return (FormatTokenSettings)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.FormatTokenSettings", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FormatTokenSettings) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.FormatTokenSettings", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FormatTokenSettings newInstance(SModel sm) {

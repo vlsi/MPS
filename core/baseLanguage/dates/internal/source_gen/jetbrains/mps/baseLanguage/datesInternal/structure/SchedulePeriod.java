@@ -107,7 +107,7 @@ public class SchedulePeriod extends BaseConcept implements INamedConcept {
   }
 
   public static SchedulePeriod newInstance(SModel sm, boolean init) {
-    return (SchedulePeriod)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.SchedulePeriod", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SchedulePeriod) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.SchedulePeriod", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SchedulePeriod newInstance(SModel sm) {

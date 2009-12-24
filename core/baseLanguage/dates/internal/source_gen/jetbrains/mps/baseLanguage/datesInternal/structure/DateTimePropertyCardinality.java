@@ -71,7 +71,7 @@ public class DateTimePropertyCardinality extends BaseConcept implements INamedCo
   }
 
   public static DateTimePropertyCardinality newInstance(SModel sm, boolean init) {
-    return (DateTimePropertyCardinality)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyCardinality", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimePropertyCardinality) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyCardinality", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimePropertyCardinality newInstance(SModel sm) {

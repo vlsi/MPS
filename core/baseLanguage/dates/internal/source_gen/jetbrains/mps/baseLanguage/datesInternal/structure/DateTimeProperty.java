@@ -77,7 +77,7 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
   }
 
   public StaticMethodDeclaration getJodaDateTimeFieldType() {
-    return (StaticMethodDeclaration)this.getReferent(StaticMethodDeclaration.class, DateTimeProperty.JODA_DATE_TIME_FIELD_TYPE);
+    return (StaticMethodDeclaration) this.getReferent(StaticMethodDeclaration.class, DateTimeProperty.JODA_DATE_TIME_FIELD_TYPE);
   }
 
   public void setJodaDateTimeFieldType(StaticMethodDeclaration node) {
@@ -85,7 +85,7 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
   }
 
   public StaticMethodDeclaration getJodaPeriodType() {
-    return (StaticMethodDeclaration)this.getReferent(StaticMethodDeclaration.class, DateTimeProperty.JODA_PERIOD_TYPE);
+    return (StaticMethodDeclaration) this.getReferent(StaticMethodDeclaration.class, DateTimeProperty.JODA_PERIOD_TYPE);
   }
 
   public void setJodaPeriodType(StaticMethodDeclaration node) {
@@ -93,7 +93,7 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
   }
 
   public StaticMethodDeclaration getJodaDurationType() {
-    return (StaticMethodDeclaration)this.getReferent(StaticMethodDeclaration.class, DateTimeProperty.JODA_DURATION_TYPE);
+    return (StaticMethodDeclaration) this.getReferent(StaticMethodDeclaration.class, DateTimeProperty.JODA_DURATION_TYPE);
   }
 
   public void setJodaDurationType(StaticMethodDeclaration node) {
@@ -101,7 +101,7 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
   }
 
   public InstanceMethodDeclaration getPeriodFormatMethod() {
-    return (InstanceMethodDeclaration)this.getReferent(InstanceMethodDeclaration.class, DateTimeProperty.PERIOD_FORMAT_METHOD);
+    return (InstanceMethodDeclaration) this.getReferent(InstanceMethodDeclaration.class, DateTimeProperty.PERIOD_FORMAT_METHOD);
   }
 
   public void setPeriodFormatMethod(InstanceMethodDeclaration node) {
@@ -109,7 +109,7 @@ public class DateTimeProperty extends BaseConcept implements INamedConcept {
   }
 
   public static DateTimeProperty newInstance(SModel sm, boolean init) {
-    return (DateTimeProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimeProperty) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimeProperty newInstance(SModel sm) {

@@ -32,6 +32,6 @@ public class SharedPair<F, S> extends MultiTuple._2<F, S> {
 
   @SuppressWarnings(value = "unchecked")
   public SharedPair assignFrom(Tuples._2<F, S> from) {
-    return (SharedPair)super.assign(from);
+    return (SharedPair) super.assign(from);
   }
 }

@@ -63,7 +63,7 @@ public class PredefinedDateFormat extends BaseConcept implements IDateFormat {
   }
 
   public StaticMethodCall getFormatter() {
-    return (StaticMethodCall)this.getChild(StaticMethodCall.class, PredefinedDateFormat.FORMATTER);
+    return (StaticMethodCall) this.getChild(StaticMethodCall.class, PredefinedDateFormat.FORMATTER);
   }
 
   public void setFormatter(StaticMethodCall node) {
@@ -71,7 +71,7 @@ public class PredefinedDateFormat extends BaseConcept implements IDateFormat {
   }
 
   public static PredefinedDateFormat newInstance(SModel sm, boolean init) {
-    return (PredefinedDateFormat)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.PredefinedDateFormat", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PredefinedDateFormat) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.PredefinedDateFormat", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PredefinedDateFormat newInstance(SModel sm) {

@@ -81,7 +81,7 @@ public class DateTimePropertyFormatType extends BaseConcept implements INamedCon
   }
 
   public DateTimePropertyCardinality getDateTimePropertyCardinality() {
-    return (DateTimePropertyCardinality)this.getReferent(DateTimePropertyCardinality.class, DateTimePropertyFormatType.DATE_TIME_PROPERTY_CARDINALITY);
+    return (DateTimePropertyCardinality) this.getReferent(DateTimePropertyCardinality.class, DateTimePropertyFormatType.DATE_TIME_PROPERTY_CARDINALITY);
   }
 
   public void setDateTimePropertyCardinality(DateTimePropertyCardinality node) {
@@ -89,7 +89,7 @@ public class DateTimePropertyFormatType extends BaseConcept implements INamedCon
   }
 
   public static DateTimePropertyFormatType newInstance(SModel sm, boolean init) {
-    return (DateTimePropertyFormatType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyFormatType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimePropertyFormatType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyFormatType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimePropertyFormatType newInstance(SModel sm) {

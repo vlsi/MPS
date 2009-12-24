@@ -80,7 +80,7 @@ public class Month extends BaseConcept implements INamedConcept {
   }
 
   public static Month newInstance(SModel sm, boolean init) {
-    return (Month)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.Month", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Month) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.Month", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Month newInstance(SModel sm) {

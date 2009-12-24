@@ -16,7 +16,7 @@ public class DateTimeIntPropertyFormatConfiguration extends DateTimePropertyConf
   }
 
   public DateTimeProperty getDateTimeProperty() {
-    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, DateTimeIntPropertyFormatConfiguration.DATE_TIME_PROPERTY);
+    return (DateTimeProperty) this.getReferent(DateTimeProperty.class, DateTimeIntPropertyFormatConfiguration.DATE_TIME_PROPERTY);
   }
 
   public void setDateTimeProperty(DateTimeProperty node) {
@@ -24,7 +24,7 @@ public class DateTimeIntPropertyFormatConfiguration extends DateTimePropertyConf
   }
 
   public static DateTimeIntPropertyFormatConfiguration newInstance(SModel sm, boolean init) {
-    return (DateTimeIntPropertyFormatConfiguration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeIntPropertyFormatConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimeIntPropertyFormatConfiguration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeIntPropertyFormatConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimeIntPropertyFormatConfiguration newInstance(SModel sm) {

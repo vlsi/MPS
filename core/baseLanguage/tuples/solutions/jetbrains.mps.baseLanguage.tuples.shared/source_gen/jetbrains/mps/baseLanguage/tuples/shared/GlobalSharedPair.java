@@ -32,6 +32,6 @@ public class GlobalSharedPair<A, B> extends MultiTuple._2<A, B> {
 
   @SuppressWarnings(value = "unchecked")
   public GlobalSharedPair assignFrom(Tuples._2<A, B> from) {
-    return (GlobalSharedPair)super.assign(from);
+    return (GlobalSharedPair) super.assign(from);
   }
 }

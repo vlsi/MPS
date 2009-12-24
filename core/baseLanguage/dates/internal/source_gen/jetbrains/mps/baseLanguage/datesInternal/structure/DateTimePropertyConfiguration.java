@@ -76,7 +76,7 @@ public class DateTimePropertyConfiguration extends BaseConcept implements INamed
   }
 
   public static DateTimePropertyConfiguration newInstance(SModel sm, boolean init) {
-    return (DateTimePropertyConfiguration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimePropertyConfiguration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimePropertyConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimePropertyConfiguration newInstance(SModel sm) {

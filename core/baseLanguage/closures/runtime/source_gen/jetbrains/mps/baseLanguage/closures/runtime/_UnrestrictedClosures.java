@@ -15,14 +15,14 @@ public class _UnrestrictedClosures {
       if (this.result == null) {
         throw new IllegalStateException("No last result: closure was never invoked");
       }
-      Result<T, R> tmp = ((Result<T, R>)this.result);
+      Result<T, R> tmp = ((Result<T, R>) this.result);
       this.result = null;
       return tmp;
     }
 
     @SuppressWarnings(value = "unchecked")
     protected Result<T, R> getLastResult() {
-      return ((Result<T, R>)this.result);
+      return ((Result<T, R>) this.result);
     }
 
     protected void setLastResult(Result<? extends T, ? extends R> result) {

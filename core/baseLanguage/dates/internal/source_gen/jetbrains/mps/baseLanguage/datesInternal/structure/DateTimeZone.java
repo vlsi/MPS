@@ -71,7 +71,7 @@ public class DateTimeZone extends BaseConcept implements INamedConcept {
   }
 
   public static DateTimeZone newInstance(SModel sm, boolean init) {
-    return (DateTimeZone)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeZone", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimeZone) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.datesInternal.structure.DateTimeZone", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimeZone newInstance(SModel sm) {

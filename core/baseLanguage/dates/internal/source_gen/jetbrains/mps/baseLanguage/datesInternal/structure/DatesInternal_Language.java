@@ -10,6 +10,6 @@ public class DatesInternal_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("1991585e-225e-4371-977a-68a7888adae2(jetbrains.mps.baseLanguage.datesInternal)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }
