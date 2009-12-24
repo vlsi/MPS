@@ -15,7 +15,7 @@ public class NodeUnreachable extends NodeProperty {
   }
 
   public static NodeUnreachable newInstance(SModel sm, boolean init) {
-    return (NodeUnreachable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeUnreachable", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeUnreachable) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeUnreachable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeUnreachable newInstance(SModel sm) {

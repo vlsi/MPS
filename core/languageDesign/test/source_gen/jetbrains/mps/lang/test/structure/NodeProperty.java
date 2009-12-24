@@ -16,7 +16,7 @@ public class NodeProperty extends BaseConcept {
   }
 
   public static NodeProperty newInstance(SModel sm, boolean init) {
-    return (NodeProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeProperty) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeProperty newInstance(SModel sm) {

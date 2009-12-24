@@ -53,7 +53,7 @@ public class TestNodeAnnotation extends BaseConcept implements INamedConcept, IN
   }
 
   public static TestNodeAnnotation newInstance(SModel sm, boolean init) {
-    return (TestNodeAnnotation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.TestNodeAnnotation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TestNodeAnnotation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.TestNodeAnnotation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TestNodeAnnotation newInstance(SModel sm) {

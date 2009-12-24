@@ -17,7 +17,7 @@ public class VariableInialized extends NodeProperty {
   }
 
   public LocalVariableReference getVar() {
-    return (LocalVariableReference)this.getChild(LocalVariableReference.class, VariableInialized.VAR);
+    return (LocalVariableReference) this.getChild(LocalVariableReference.class, VariableInialized.VAR);
   }
 
   public void setVar(LocalVariableReference node) {
@@ -25,7 +25,7 @@ public class VariableInialized extends NodeProperty {
   }
 
   public static VariableInialized newInstance(SModel sm, boolean init) {
-    return (VariableInialized)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.VariableInialized", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VariableInialized) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.VariableInialized", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VariableInialized newInstance(SModel sm) {

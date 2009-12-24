@@ -114,12 +114,12 @@ public class SubtreeChecker {
             Assert.assertTrue(SetSequence.fromSet(unreachable).contains(instruction));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.VariableInialized")) {
-            Set<Object> vars = (Set<Object>)initialized.get(instruction);
+            Set<Object> vars = (Set<Object>) initialized.get(instruction);
             SNode var = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.VariableInialized"), "var", true);
             Assert.assertTrue(SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
           }
           if (SNodeOperations.isInstanceOf(property, "jetbrains.mps.lang.test.structure.VariableLive")) {
-            Set<Object> vars = (Set<Object>)live.get(instruction);
+            Set<Object> vars = (Set<Object>) live.get(instruction);
             SNode var = SLinkOperations.getTarget(SNodeOperations.cast(property, "jetbrains.mps.lang.test.structure.VariableInialized"), "var", true);
             Assert.assertTrue(SetSequence.fromSet(vars).contains(SLinkOperations.getTarget(var, "variableDeclaration", false)));
           }

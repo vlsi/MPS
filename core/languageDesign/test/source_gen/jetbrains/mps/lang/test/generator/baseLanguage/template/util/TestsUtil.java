@@ -22,7 +22,7 @@ public class TestsUtil {
     }
     String url = operationContext.getProject().getPresentableUrl();
     if (url != null) {
-      return Macros.mpsHomeMacros().shrinkPath(url, (IFile)null);
+      return Macros.mpsHomeMacros().shrinkPath(url, (IFile) null);
     }
     return "";
   }

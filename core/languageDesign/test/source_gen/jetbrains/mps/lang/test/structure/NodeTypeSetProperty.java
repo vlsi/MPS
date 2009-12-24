@@ -39,7 +39,7 @@ public class NodeTypeSetProperty extends NodeProperty {
   }
 
   public static NodeTypeSetProperty newInstance(SModel sm, boolean init) {
-    return (NodeTypeSetProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeTypeSetProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeTypeSetProperty) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeTypeSetProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeTypeSetProperty newInstance(SModel sm) {

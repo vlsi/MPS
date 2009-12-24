@@ -15,7 +15,7 @@ public class AssertEquals extends BinaryAssert {
   }
 
   public static AssertEquals newInstance(SModel sm, boolean init) {
-    return (AssertEquals)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AssertEquals) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertEquals", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AssertEquals newInstance(SModel sm) {

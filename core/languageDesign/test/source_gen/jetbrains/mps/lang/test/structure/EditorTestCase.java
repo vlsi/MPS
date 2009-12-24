@@ -68,7 +68,7 @@ public class EditorTestCase extends BaseConcept implements INamedConcept, ITestM
   }
 
   public BaseConcept getNodeToEdit() {
-    return (BaseConcept)this.getChild(BaseConcept.class, EditorTestCase.NODE_TO_EDIT);
+    return (BaseConcept) this.getChild(BaseConcept.class, EditorTestCase.NODE_TO_EDIT);
   }
 
   public void setNodeToEdit(BaseConcept node) {
@@ -76,7 +76,7 @@ public class EditorTestCase extends BaseConcept implements INamedConcept, ITestM
   }
 
   public BaseConcept getResult() {
-    return (BaseConcept)this.getChild(BaseConcept.class, EditorTestCase.RESULT);
+    return (BaseConcept) this.getChild(BaseConcept.class, EditorTestCase.RESULT);
   }
 
   public void setResult(BaseConcept node) {
@@ -84,7 +84,7 @@ public class EditorTestCase extends BaseConcept implements INamedConcept, ITestM
   }
 
   public StatementList getCode() {
-    return (StatementList)this.getChild(StatementList.class, EditorTestCase.CODE);
+    return (StatementList) this.getChild(StatementList.class, EditorTestCase.CODE);
   }
 
   public void setCode(StatementList node) {
@@ -92,7 +92,7 @@ public class EditorTestCase extends BaseConcept implements INamedConcept, ITestM
   }
 
   public static EditorTestCase newInstance(SModel sm, boolean init) {
-    return (EditorTestCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.EditorTestCase", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EditorTestCase) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.EditorTestCase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EditorTestCase newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class TestNode extends BaseConcept {
   }
 
   public BaseConcept getNodeToCheck() {
-    return (BaseConcept)this.getChild(BaseConcept.class, TestNode.NODE_TO_CHECK);
+    return (BaseConcept) this.getChild(BaseConcept.class, TestNode.NODE_TO_CHECK);
   }
 
   public void setNodeToCheck(BaseConcept node) {
@@ -25,7 +25,7 @@ public class TestNode extends BaseConcept {
   }
 
   public static TestNode newInstance(SModel sm, boolean init) {
-    return (TestNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.TestNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TestNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.TestNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TestNode newInstance(SModel sm) {

@@ -18,7 +18,7 @@ public class Message extends BaseConcept {
   }
 
   public Expression getMessage() {
-    return (Expression)this.getChild(Expression.class, Message.MESSAGE);
+    return (Expression) this.getChild(Expression.class, Message.MESSAGE);
   }
 
   public void setMessage(Expression node) {
@@ -26,7 +26,7 @@ public class Message extends BaseConcept {
   }
 
   public static Message newInstance(SModel sm, boolean init) {
-    return (Message)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.Message", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Message) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.Message", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Message newInstance(SModel sm) {

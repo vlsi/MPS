@@ -62,7 +62,7 @@ public class BTestCase extends ClassConcept implements ITestCase {
   }
 
   public TestMethodList getTestMethodList() {
-    return (TestMethodList)this.getChild(TestMethodList.class, BTestCase.TEST_METHOD_LIST);
+    return (TestMethodList) this.getChild(TestMethodList.class, BTestCase.TEST_METHOD_LIST);
   }
 
   public void setTestMethodList(TestMethodList node) {
@@ -70,7 +70,7 @@ public class BTestCase extends ClassConcept implements ITestCase {
   }
 
   public static BTestCase newInstance(SModel sm, boolean init) {
-    return (BTestCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BTestCase) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BTestCase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BTestCase newInstance(SModel sm) {

@@ -52,7 +52,7 @@ public class TestMethod extends InstanceMethodDeclaration implements ITestMethod
   }
 
   public static TestMethod newInstance(SModel sm, boolean init) {
-    return (TestMethod)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TestMethod) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TestMethod newInstance(SModel sm) {

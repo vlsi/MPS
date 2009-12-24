@@ -12,6 +12,6 @@ public class TestNode_AnnotationLink {
   }
 
   public static INodeAnnotattion getTestNode(BaseConcept source) {
-    return (INodeAnnotattion)source.getAttribute(TestNode_AnnotationLink.TEST_NODE);
+    return (INodeAnnotattion) source.getAttribute(TestNode_AnnotationLink.TEST_NODE);
   }
 }

@@ -17,7 +17,7 @@ public class AssertType extends AbstractNodeAssert {
   }
 
   public Type getTypeToCheck() {
-    return (Type)this.getChild(Type.class, AssertType.TYPE_TO_CHECK);
+    return (Type) this.getChild(Type.class, AssertType.TYPE_TO_CHECK);
   }
 
   public void setTypeToCheck(Type node) {
@@ -25,7 +25,7 @@ public class AssertType extends AbstractNodeAssert {
   }
 
   public static AssertType newInstance(SModel sm, boolean init) {
-    return (AssertType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.AssertType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AssertType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.AssertType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AssertType newInstance(SModel sm) {

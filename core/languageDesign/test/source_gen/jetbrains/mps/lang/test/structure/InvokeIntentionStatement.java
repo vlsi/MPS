@@ -18,7 +18,7 @@ public class InvokeIntentionStatement extends Statement {
   }
 
   public IntentionDeclaration getIntention() {
-    return (IntentionDeclaration)this.getReferent(IntentionDeclaration.class, InvokeIntentionStatement.INTENTION);
+    return (IntentionDeclaration) this.getReferent(IntentionDeclaration.class, InvokeIntentionStatement.INTENTION);
   }
 
   public void setIntention(IntentionDeclaration node) {
@@ -26,7 +26,7 @@ public class InvokeIntentionStatement extends Statement {
   }
 
   public static InvokeIntentionStatement newInstance(SModel sm, boolean init) {
-    return (InvokeIntentionStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.InvokeIntentionStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InvokeIntentionStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.InvokeIntentionStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InvokeIntentionStatement newInstance(SModel sm) {

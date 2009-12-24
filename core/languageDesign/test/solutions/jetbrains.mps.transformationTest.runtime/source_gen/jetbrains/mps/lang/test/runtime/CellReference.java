@@ -38,7 +38,7 @@ public class CellReference {
   }
 
   public void setupSelection(IEditor editor) {
-    NodeEditorComponent editorComponent = ((NodeEditorComponent)editor.getCurrentEditorComponent());
+    NodeEditorComponent editorComponent = ((NodeEditorComponent) editor.getCurrentEditorComponent());
     AnonymousCellAnnotation_Behavior.call_setupSelection_6268941039745707957(this.myAnnotation, editorComponent, this.myNode, this.myMap);
   }
 

@@ -40,7 +40,7 @@ public class PressKeyStatement extends Statement {
   }
 
   public static PressKeyStatement newInstance(SModel sm, boolean init) {
-    return (PressKeyStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.PressKeyStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PressKeyStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.PressKeyStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PressKeyStatement newInstance(SModel sm) {

@@ -121,7 +121,7 @@ public class NodesTestCase extends BaseConcept implements ITestCase, INamedConce
   }
 
   public static NodesTestCase newInstance(SModel sm, boolean init) {
-    return (NodesTestCase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodesTestCase) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestCase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodesTestCase newInstance(SModel sm) {

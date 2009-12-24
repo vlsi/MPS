@@ -46,7 +46,7 @@ public class AssertIsNull extends Statement implements MessageHolder {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, AssertIsNull.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, AssertIsNull.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -54,7 +54,7 @@ public class AssertIsNull extends Statement implements MessageHolder {
   }
 
   public Message getMessage() {
-    return (Message)this.getChild(Message.class, AssertIsNull.MESSAGE);
+    return (Message) this.getChild(Message.class, AssertIsNull.MESSAGE);
   }
 
   public void setMessage(Message node) {
@@ -62,7 +62,7 @@ public class AssertIsNull extends Statement implements MessageHolder {
   }
 
   public static AssertIsNull newInstance(SModel sm, boolean init) {
-    return (AssertIsNull)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AssertIsNull) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertIsNull", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AssertIsNull newInstance(SModel sm) {

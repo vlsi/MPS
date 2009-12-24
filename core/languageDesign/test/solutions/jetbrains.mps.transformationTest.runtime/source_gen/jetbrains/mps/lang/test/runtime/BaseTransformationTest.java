@@ -35,7 +35,7 @@ public class BaseTransformationTest extends TestCase {
   public void initTest(String projectName, final String model) throws Exception {
     IdeMain.setTestMode(IdeMain.TestMode.CORE_TEST);
     TestMain.configureMPS();
-    this.myProject = myContainer.getProject(Macros.mpsHomeMacros().expandPath(projectName, ((IFile)null)));
+    this.myProject = myContainer.getProject(Macros.mpsHomeMacros().expandPath(projectName, ((IFile) null)));
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {

@@ -15,7 +15,7 @@ public class CheckNodeDataflow extends AbstractNodeAssert {
   }
 
   public static CheckNodeDataflow newInstance(SModel sm, boolean init) {
-    return (CheckNodeDataflow)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.CheckNodeDataflow", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CheckNodeDataflow) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.CheckNodeDataflow", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CheckNodeDataflow newInstance(SModel sm) {

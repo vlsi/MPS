@@ -61,7 +61,7 @@ public class AssertMatch extends Statement {
   }
 
   public static AssertMatch newInstance(SModel sm, boolean init) {
-    return (AssertMatch)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.AssertMatch", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AssertMatch) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.AssertMatch", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AssertMatch newInstance(SModel sm) {

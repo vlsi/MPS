@@ -16,7 +16,7 @@ public class MockAnnotation extends BaseConcept {
   }
 
   public static MockAnnotation newInstance(SModel sm, boolean init) {
-    return (MockAnnotation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.MockAnnotation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MockAnnotation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.MockAnnotation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MockAnnotation newInstance(SModel sm) {

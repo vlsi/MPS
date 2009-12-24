@@ -17,7 +17,7 @@ public class VariableLive extends NodeProperty {
   }
 
   public LocalVariableReference getVar() {
-    return (LocalVariableReference)this.getChild(LocalVariableReference.class, VariableLive.VAR);
+    return (LocalVariableReference) this.getChild(LocalVariableReference.class, VariableLive.VAR);
   }
 
   public void setVar(LocalVariableReference node) {
@@ -25,7 +25,7 @@ public class VariableLive extends NodeProperty {
   }
 
   public static VariableLive newInstance(SModel sm, boolean init) {
-    return (VariableLive)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.VariableLive", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VariableLive) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.VariableLive", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VariableLive newInstance(SModel sm) {

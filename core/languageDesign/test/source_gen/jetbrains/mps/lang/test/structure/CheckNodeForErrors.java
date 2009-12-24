@@ -15,7 +15,7 @@ public class CheckNodeForErrors extends AbstractNodeAssert {
   }
 
   public static CheckNodeForErrors newInstance(SModel sm, boolean init) {
-    return (CheckNodeForErrors)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.CheckNodeForErrors", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CheckNodeForErrors) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.CheckNodeForErrors", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CheckNodeForErrors newInstance(SModel sm) {

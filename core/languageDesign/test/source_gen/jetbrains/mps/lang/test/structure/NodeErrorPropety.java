@@ -15,7 +15,7 @@ public class NodeErrorPropety extends NodeProperty {
   }
 
   public static NodeErrorPropety newInstance(SModel sm, boolean init) {
-    return (NodeErrorPropety)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeErrorPropety", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeErrorPropety) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeErrorPropety", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeErrorPropety newInstance(SModel sm) {

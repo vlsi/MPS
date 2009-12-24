@@ -118,7 +118,7 @@ public class AnonymousCellAnnotation extends BaseConcept implements INamedConcep
   }
 
   public BaseConcept getNodeRangeSelectionStart() {
-    return (BaseConcept)this.getReferent(BaseConcept.class, AnonymousCellAnnotation.NODE_RANGE_SELECTION_START);
+    return (BaseConcept) this.getReferent(BaseConcept.class, AnonymousCellAnnotation.NODE_RANGE_SELECTION_START);
   }
 
   public void setNodeRangeSelectionStart(BaseConcept node) {
@@ -126,7 +126,7 @@ public class AnonymousCellAnnotation extends BaseConcept implements INamedConcep
   }
 
   public BaseConcept getNodeRangeSelectionEnd() {
-    return (BaseConcept)this.getReferent(BaseConcept.class, AnonymousCellAnnotation.NODE_RANGE_SELECTION_END);
+    return (BaseConcept) this.getReferent(BaseConcept.class, AnonymousCellAnnotation.NODE_RANGE_SELECTION_END);
   }
 
   public void setNodeRangeSelectionEnd(BaseConcept node) {
@@ -134,7 +134,7 @@ public class AnonymousCellAnnotation extends BaseConcept implements INamedConcep
   }
 
   public static AnonymousCellAnnotation newInstance(SModel sm, boolean init) {
-    return (AnonymousCellAnnotation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AnonymousCellAnnotation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AnonymousCellAnnotation newInstance(SModel sm) {

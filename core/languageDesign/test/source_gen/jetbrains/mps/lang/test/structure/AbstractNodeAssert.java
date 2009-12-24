@@ -18,7 +18,7 @@ public class AbstractNodeAssert extends Statement {
   }
 
   public Expression getNodeToCheck() {
-    return (Expression)this.getChild(Expression.class, AbstractNodeAssert.NODE_TO_CHECK);
+    return (Expression) this.getChild(Expression.class, AbstractNodeAssert.NODE_TO_CHECK);
   }
 
   public void setNodeToCheck(Expression node) {
@@ -26,7 +26,7 @@ public class AbstractNodeAssert extends Statement {
   }
 
   public static AbstractNodeAssert newInstance(SModel sm, boolean init) {
-    return (AbstractNodeAssert)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.AbstractNodeAssert", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractNodeAssert) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.AbstractNodeAssert", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractNodeAssert newInstance(SModel sm) {

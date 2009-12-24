@@ -12,6 +12,6 @@ public class MockAnnotation_AnnotationLink {
   }
 
   public static MockAnnotation getMockAnnotation(BaseConcept source) {
-    return (MockAnnotation)source.getAttribute(MockAnnotation_AnnotationLink.MOCK_ANNOTATION);
+    return (MockAnnotation) source.getAttribute(MockAnnotation_AnnotationLink.MOCK_ANNOTATION);
   }
 }

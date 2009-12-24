@@ -16,7 +16,7 @@ public class SwitchToInspector extends Statement {
   }
 
   public static SwitchToInspector newInstance(SModel sm, boolean init) {
-    return (SwitchToInspector)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.SwitchToInspector", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SwitchToInspector) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.SwitchToInspector", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SwitchToInspector newInstance(SModel sm) {

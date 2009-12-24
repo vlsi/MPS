@@ -54,7 +54,7 @@ public class NodesTestMethod extends BaseMethodDeclaration implements INamedConc
   }
 
   public static NodesTestMethod newInstance(SModel sm, boolean init) {
-    return (NodesTestMethod)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestMethod", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodesTestMethod) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodesTestMethod", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodesTestMethod newInstance(SModel sm) {

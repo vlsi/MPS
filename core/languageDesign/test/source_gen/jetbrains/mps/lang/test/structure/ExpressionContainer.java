@@ -18,7 +18,7 @@ public class ExpressionContainer extends Statement {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, ExpressionContainer.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, ExpressionContainer.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -26,7 +26,7 @@ public class ExpressionContainer extends Statement {
   }
 
   public static ExpressionContainer newInstance(SModel sm, boolean init) {
-    return (ExpressionContainer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.ExpressionContainer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExpressionContainer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.ExpressionContainer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExpressionContainer newInstance(SModel sm) {

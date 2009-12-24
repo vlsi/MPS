@@ -17,7 +17,7 @@ public class NodeTypeProperty extends NodeProperty {
   }
 
   public BaseConcept getType() {
-    return (BaseConcept)this.getChild(BaseConcept.class, NodeTypeProperty.TYPE);
+    return (BaseConcept) this.getChild(BaseConcept.class, NodeTypeProperty.TYPE);
   }
 
   public void setType(BaseConcept node) {
@@ -25,7 +25,7 @@ public class NodeTypeProperty extends NodeProperty {
   }
 
   public static NodeTypeProperty newInstance(SModel sm, boolean init) {
-    return (NodeTypeProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeTypeProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeTypeProperty) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeTypeProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeTypeProperty newInstance(SModel sm) {

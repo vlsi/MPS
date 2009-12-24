@@ -44,7 +44,7 @@ public class EditorOperation extends BaseConcept implements IOperation {
   }
 
   public static EditorOperation newInstance(SModel sm, boolean init) {
-    return (EditorOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.EditorOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EditorOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.EditorOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EditorOperation newInstance(SModel sm) {

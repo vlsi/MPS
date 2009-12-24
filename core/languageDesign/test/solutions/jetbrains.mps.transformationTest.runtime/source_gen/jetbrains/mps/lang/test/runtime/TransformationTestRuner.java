@@ -23,7 +23,7 @@ public class TransformationTestRuner extends TestRunner {
     try {
       SwingUtilities.invokeAndWait(new Runnable() {
         public void run() {
-          ((ApplicationImpl)ApplicationManager.getApplication()).exit(true);
+          ((ApplicationImpl) ApplicationManager.getApplication()).exit(true);
         }
       });
     } catch (Exception e) {

@@ -44,7 +44,7 @@ public class Fail extends Statement implements MessageHolder {
   }
 
   public Message getMessage() {
-    return (Message)this.getChild(Message.class, Fail.MESSAGE);
+    return (Message) this.getChild(Message.class, Fail.MESSAGE);
   }
 
   public void setMessage(Message node) {
@@ -52,7 +52,7 @@ public class Fail extends Statement implements MessageHolder {
   }
 
   public static Fail newInstance(SModel sm, boolean init) {
-    return (Fail)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.Fail", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Fail) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.Fail", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Fail newInstance(SModel sm) {

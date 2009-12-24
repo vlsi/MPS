@@ -39,7 +39,7 @@ public class TestMethodList extends BaseConcept {
   }
 
   public static TestMethodList newInstance(SModel sm, boolean init) {
-    return (TestMethodList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TestMethodList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TestMethodList newInstance(SModel sm) {

@@ -25,7 +25,7 @@ public class TypeKeyStatement extends Statement {
   }
 
   public static TypeKeyStatement newInstance(SModel sm, boolean init) {
-    return (TypeKeyStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.TypeKeyStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypeKeyStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.TypeKeyStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypeKeyStatement newInstance(SModel sm) {

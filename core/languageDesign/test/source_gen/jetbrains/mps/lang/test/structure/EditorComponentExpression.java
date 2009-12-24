@@ -16,7 +16,7 @@ public class EditorComponentExpression extends Expression {
   }
 
   public static EditorComponentExpression newInstance(SModel sm, boolean init) {
-    return (EditorComponentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.EditorComponentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EditorComponentExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.EditorComponentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EditorComponentExpression newInstance(SModel sm) {

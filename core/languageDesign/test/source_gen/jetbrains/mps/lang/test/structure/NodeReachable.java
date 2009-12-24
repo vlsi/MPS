@@ -15,7 +15,7 @@ public class NodeReachable extends NodeProperty {
   }
 
   public static NodeReachable newInstance(SModel sm, boolean init) {
-    return (NodeReachable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeReachable", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeReachable) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeReachable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeReachable newInstance(SModel sm) {

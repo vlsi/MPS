@@ -15,7 +15,7 @@ public class CheckDataFlowOperation extends NodeOperation {
   }
 
   public static CheckDataFlowOperation newInstance(SModel sm, boolean init) {
-    return (CheckDataFlowOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.CheckDataFlowOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CheckDataFlowOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.CheckDataFlowOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CheckDataFlowOperation newInstance(SModel sm) {

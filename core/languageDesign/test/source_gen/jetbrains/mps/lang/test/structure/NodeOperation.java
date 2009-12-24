@@ -44,7 +44,7 @@ public class NodeOperation extends BaseConcept implements ITestMethod {
   }
 
   public static NodeOperation newInstance(SModel sm, boolean init) {
-    return (NodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeOperation newInstance(SModel sm) {

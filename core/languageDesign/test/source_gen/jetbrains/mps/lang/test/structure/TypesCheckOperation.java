@@ -42,7 +42,7 @@ public class TypesCheckOperation extends NodeOperation {
   }
 
   public static TypesCheckOperation newInstance(SModel sm, boolean init) {
-    return (TypesCheckOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.TypesCheckOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypesCheckOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.TypesCheckOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypesCheckOperation newInstance(SModel sm) {

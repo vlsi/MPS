@@ -25,7 +25,7 @@ public class TestInfo extends BaseConcept {
   }
 
   public static TestInfo newInstance(SModel sm, boolean init) {
-    return (TestInfo)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TestInfo) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.TestInfo", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TestInfo newInstance(SModel sm) {

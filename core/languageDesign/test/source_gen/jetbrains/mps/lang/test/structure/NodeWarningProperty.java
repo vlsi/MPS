@@ -15,7 +15,7 @@ public class NodeWarningProperty extends NodeProperty {
   }
 
   public static NodeWarningProperty newInstance(SModel sm, boolean init) {
-    return (NodeWarningProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeWarningProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeWarningProperty) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.NodeWarningProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeWarningProperty newInstance(SModel sm) {

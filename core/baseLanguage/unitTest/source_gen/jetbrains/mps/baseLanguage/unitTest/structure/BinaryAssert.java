@@ -47,7 +47,7 @@ public class BinaryAssert extends Statement implements MessageHolder {
   }
 
   public Expression getExpected() {
-    return (Expression)this.getChild(Expression.class, BinaryAssert.EXPECTED);
+    return (Expression) this.getChild(Expression.class, BinaryAssert.EXPECTED);
   }
 
   public void setExpected(Expression node) {
@@ -55,7 +55,7 @@ public class BinaryAssert extends Statement implements MessageHolder {
   }
 
   public Expression getActual() {
-    return (Expression)this.getChild(Expression.class, BinaryAssert.ACTUAL);
+    return (Expression) this.getChild(Expression.class, BinaryAssert.ACTUAL);
   }
 
   public void setActual(Expression node) {
@@ -63,7 +63,7 @@ public class BinaryAssert extends Statement implements MessageHolder {
   }
 
   public Message getMessage() {
-    return (Message)this.getChild(Message.class, BinaryAssert.MESSAGE);
+    return (Message) this.getChild(Message.class, BinaryAssert.MESSAGE);
   }
 
   public void setMessage(Message node) {
@@ -71,7 +71,7 @@ public class BinaryAssert extends Statement implements MessageHolder {
   }
 
   public static BinaryAssert newInstance(SModel sm, boolean init) {
-    return (BinaryAssert)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BinaryAssert) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.BinaryAssert", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BinaryAssert newInstance(SModel sm) {

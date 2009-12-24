@@ -46,7 +46,7 @@ public class AssertTrue extends Statement implements MessageHolder {
   }
 
   public Expression getCondition() {
-    return (Expression)this.getChild(Expression.class, AssertTrue.CONDITION);
+    return (Expression) this.getChild(Expression.class, AssertTrue.CONDITION);
   }
 
   public void setCondition(Expression node) {
@@ -54,7 +54,7 @@ public class AssertTrue extends Statement implements MessageHolder {
   }
 
   public Message getMessage() {
-    return (Message)this.getChild(Message.class, AssertTrue.MESSAGE);
+    return (Message) this.getChild(Message.class, AssertTrue.MESSAGE);
   }
 
   public void setMessage(Message node) {
@@ -62,7 +62,7 @@ public class AssertTrue extends Statement implements MessageHolder {
   }
 
   public static AssertTrue newInstance(SModel sm, boolean init) {
-    return (AssertTrue)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AssertTrue) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertTrue", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AssertTrue newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class TestNodeReference extends Expression {
   }
 
   public TestNodeAnnotation getDeclaration() {
-    return (TestNodeAnnotation)this.getReferent(TestNodeAnnotation.class, TestNodeReference.DECLARATION);
+    return (TestNodeAnnotation) this.getReferent(TestNodeAnnotation.class, TestNodeReference.DECLARATION);
   }
 
   public void setDeclaration(TestNodeAnnotation node) {
@@ -25,7 +25,7 @@ public class TestNodeReference extends Expression {
   }
 
   public static TestNodeReference newInstance(SModel sm, boolean init) {
-    return (TestNodeReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.TestNodeReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TestNodeReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.TestNodeReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TestNodeReference newInstance(SModel sm) {

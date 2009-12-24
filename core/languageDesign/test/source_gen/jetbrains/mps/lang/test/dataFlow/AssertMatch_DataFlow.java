@@ -14,10 +14,10 @@ public class AssertMatch_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode before : SLinkOperations.getTargets(_context.getNode(), "before", true)) {
-      _context.getBuilder().build((SNode)before);
+      _context.getBuilder().build((SNode) before);
     }
     for (SNode after : SLinkOperations.getTargets(_context.getNode(), "after", true)) {
-      _context.getBuilder().build((SNode)after);
+      _context.getBuilder().build((SNode) after);
     }
   }
 }

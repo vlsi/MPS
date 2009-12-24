@@ -16,7 +16,7 @@ public class ProjectExpression extends Expression {
   }
 
   public static ProjectExpression newInstance(SModel sm, boolean init) {
-    return (ProjectExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.ProjectExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ProjectExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.ProjectExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ProjectExpression newInstance(SModel sm) {

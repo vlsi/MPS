@@ -15,7 +15,7 @@ public class SimpleNodeTest extends NodesTestMethod {
   }
 
   public static SimpleNodeTest newInstance(SModel sm, boolean init) {
-    return (SimpleNodeTest)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.SimpleNodeTest", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleNodeTest) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.test.structure.SimpleNodeTest", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleNodeTest newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class AssertSame extends BinaryAssert {
   }
 
   public static AssertSame newInstance(SModel sm, boolean init) {
-    return (AssertSame)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertSame", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AssertSame) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.AssertSame", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AssertSame newInstance(SModel sm) {
