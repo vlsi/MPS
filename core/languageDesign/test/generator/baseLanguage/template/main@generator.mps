@@ -1545,7 +1545,7 @@
     <node role="staticInnerClassifiers:3" type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1229211902360">
       <property name="name:3" value="TestBody" />
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1229211902361">
-        <property name="name:3" value="testMethod" />
+        <property name="name:3" value="testMethodImpl" />
         <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1229211902362" />
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1229212105053" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1229268854047">
@@ -1673,19 +1673,12 @@
               </node>
             </node>
           </node>
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7633582661619145134">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7633582661619145135">
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7633582661619145136">
-                <link role="baseMethodDeclaration:3" targetNodeId="26.1229266873280" resolveInfo="finishTest" />
-              </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="7633582661619145137">
-                <link role="classConcept:3" targetNodeId="1229211902360" resolveInfo="TestBody" />
-              </node>
-            </node>
-          </node>
         </node>
         <node role="throwsItem:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1229269595058">
           <link role="classifier:3" targetNodeId="2.~Exception" resolveInfo="Exception" />
+        </node>
+        <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="4840161274939429617">
+          <link role="annotation:3" targetNodeId="2.~Override" resolveInfo="Override" />
         </node>
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1229211902559" />

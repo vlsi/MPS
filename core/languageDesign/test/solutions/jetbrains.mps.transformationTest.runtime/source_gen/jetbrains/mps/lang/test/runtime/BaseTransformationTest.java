@@ -99,7 +99,7 @@ public class BaseTransformationTest extends TestCase {
   private Throwable tryToRunTest(Class clazz, String methodName, Object obj) {
     Throwable exception = null;
     try {
-      clazz.getDeclaredMethod(methodName).invoke(obj);
+      clazz.getMethod(methodName).invoke(obj);
     } catch (NoSuchMethodException e) {
       e.printStackTrace();
     } catch (IllegalAccessException e) {

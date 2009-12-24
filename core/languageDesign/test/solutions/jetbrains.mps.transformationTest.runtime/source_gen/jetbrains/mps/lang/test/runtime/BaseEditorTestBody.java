@@ -98,6 +98,17 @@ public class BaseEditorTestBody extends BaseTestBody {
     });
   }
 
+  public void testMethod() throws Exception {
+    try {
+      this.testMethodImpl();
+    } finally {
+      this.finishTest();
+    }
+  }
+
+  public void testMethodImpl() throws Exception {
+  }
+
   public static void invokeIntention(final String name, final IEditor editor, final SNode node) throws Exception {
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
