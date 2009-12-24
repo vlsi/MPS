@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:2b2539c5-00c8-487d-9567-ecc2b9274c7b(jetbrains.mps.baseLanguage.unitTest.typesystem)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)" />
@@ -30,32 +30,32 @@
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
-  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="7080278351417151336">
-    <property name="name" value="typeof_Message" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="7080278351417151337">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="7080278351417153293">
-        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7080278351417153296">
-          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="7080278351417153285">
-            <node role="term" type="jetbrains.mps.baseLanguage.structure.DotExpression" id="7080278351417153288">
-              <node role="operand" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="7080278351417153287">
-                <link role="applicableNode" targetNodeId="7080278351417151338" resolveInfo="message" />
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="7080278351417151336">
+    <property name="name:3" value="typeof_Message" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7080278351417151337">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="7080278351417153293">
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="7080278351417153296">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="7080278351417153285">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7080278351417153288">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="7080278351417153287">
+                <link role="applicableNode:3" targetNodeId="7080278351417151338" resolveInfo="message" />
               </node>
-              <node role="operation" type="jetbrains.mps.lang.smodel.structure.SLinkAccess" id="7080278351417153292">
-                <link role="link" targetNodeId="1.1172073511101" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7080278351417153292">
+                <link role="link:16" targetNodeId="1.1172073511101" />
               </node>
             </node>
           </node>
         </node>
-        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="7080278351417153301">
-          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="7080278351417153302">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.StringType" id="7080278351417153304" />
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="7080278351417153301">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="7080278351417153302">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="7080278351417153304" />
           </node>
         </node>
       </node>
     </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="7080278351417151338">
-      <property name="name" value="message" />
-      <link role="concept" targetNodeId="1.1172073500303" resolveInfo="Message" />
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="7080278351417151338">
+      <property name="name:3" value="message" />
+      <link role="concept:3" targetNodeId="1.1172073500303" resolveInfo="Message" />
     </node>
   </node>
 </model>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:e9b803f0-b5ff-41a1-beee-90fa2b21e3da(jetbrains.mps.sampleXML.generator.template.main@generator)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
@@ -29,8 +29,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590340(jetbrains.mps.lang.pattern.constraints)" version="2" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="2" />
-  <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1225240292353">
-    <property name="name" value="mc_empty" />
+  <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1225240292353">
+    <property name="name:2" value="mc_empty" />
   </node>
 </model>
 

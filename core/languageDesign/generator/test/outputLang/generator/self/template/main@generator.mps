@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -25,19 +25,19 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <maxImportIndex value="3" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590605(jetbrains.mps.transformation.test.outputLang.structure)" version="-1" />
-  <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration" id="1209603916390">
-    <property name="name" value="main" />
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1209604172327">
-      <link role="applicableConcept" targetNodeId="1.1209604028561" resolveInfo="OutputNode_forDontApplyReductionTwice_test" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1209604206699">
-        <node role="templateNode" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1209604217076">
+  <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1209603916390">
+    <property name="name:2" value="main" />
+    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1209604172327">
+      <link role="applicableConcept:2" targetNodeId="1.1209604028561" resolveInfo="OutputNode_forDontApplyReductionTwice_test" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1209604206699">
+        <node role="templateNode:2" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1209604217076">
           <property name="text" value="wrapper created by reduction 1" />
           <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1209604251671">
-            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1209604320454">
-              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1209604320455">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209604320456">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209660466337">
-                    <node role="expression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1209660466338" />
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1209604320454">
+              <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1209604320455">
+                <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1209604320456">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1209660466337">
+                    <node role="expression:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1209660466338" />
                   </node>
                 </node>
               </node>
@@ -46,17 +46,17 @@
         </node>
       </node>
     </node>
-    <node role="reductionMappingRule" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule" id="1209662301915">
-      <link role="applicableConcept" targetNodeId="1.1209604028561" resolveInfo="OutputNode_forDontApplyReductionTwice_test" />
-      <node role="ruleConsequence" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence" id="1209662301916">
-        <node role="templateNode" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1209662301917">
+    <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1209662301915">
+      <link role="applicableConcept:2" targetNodeId="1.1209604028561" resolveInfo="OutputNode_forDontApplyReductionTwice_test" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1209662301916">
+        <node role="templateNode:2" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1209662301917">
           <property name="text" value="wrapper created by reduction 2" />
           <node role="outputChild" type="jetbrains.mps.transformation.test.outputLang.structure.OutputNode" id="1209662301918">
-            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro" id="1209662301919">
-              <node role="sourceNodeQuery" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery" id="1209662301920">
-                <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1209662301921">
-                  <node role="statement" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement" id="1209662301922">
-                    <node role="expression" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode" id="1209662301923" />
+            <node role="nodeMacro$attribute" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1209662301919">
+              <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1209662301920">
+                <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1209662301921">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1209662301922">
+                    <node role="expression:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1209662301923" />
                   </node>
                 </node>
               </node>

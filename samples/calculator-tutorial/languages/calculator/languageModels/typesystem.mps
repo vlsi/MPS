@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <model modelUID="r:450e06fb-ac8b-4ea9-abbf-87478c21328b(jetbrains.mps.calculator.typesystem)">
-  <persistence version="3" />
+  <persistence version="4" />
   <refactoringHistory />
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
@@ -26,27 +26,27 @@
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="1" />
   <import index="1" modelUID="r:87765d2d-a756-4883-9acc-6a42e5bf6c23(jetbrains.mps.calculator.structure)" version="-1" />
-  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule" id="1241364865026">
-    <property name="name" value="typeof_InputFieldReference" />
-    <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList" id="1241364865027">
-      <node role="statement" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement" id="1241364869216">
-        <node role="leftExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1241364873813">
-          <node role="normalType" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression" id="1241364873814">
-            <node role="term" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference" id="1241364874801">
-              <link role="applicableNode" targetNodeId="1241364865028" resolveInfo="reference" />
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1241364865026">
+    <property name="name:3" value="typeof_InputFieldReference" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1241364865027">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="1241364869216">
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1241364873813">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="1241364873814">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1241364874801">
+              <link role="applicableNode:3" targetNodeId="1241364865028" resolveInfo="reference" />
             </node>
           </node>
         </node>
-        <node role="rightExpression" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause" id="1241364883333">
-          <node role="normalType" type="jetbrains.mps.lang.quotation.structure.Quotation" id="1241364883334">
-            <node role="quotedNode" type="jetbrains.mps.baseLanguage.structure.IntegerType" id="1241364890790" />
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="1241364883333">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1241364883334">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1241364890790" />
           </node>
         </node>
       </node>
     </node>
-    <node role="applicableNode" type="jetbrains.mps.lang.typesystem.structure.ConceptReference" id="1241364865028">
-      <property name="name" value="reference" />
-      <link role="concept" targetNodeId="1.1241363083334" resolveInfo="InputFieldReference" />
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1241364865028">
+      <property name="name:3" value="reference" />
+      <link role="concept:3" targetNodeId="1.1241363083334" resolveInfo="InputFieldReference" />
     </node>
   </node>
 </model>
