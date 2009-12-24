@@ -16,7 +16,7 @@ public class GetNodeBlock extends ConceptFunction {
   }
 
   public static GetNodeBlock newInstance(SModel sm, boolean init) {
-    return (GetNodeBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetNodeBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetNodeBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetNodeBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetNodeBlock newInstance(SModel sm) {

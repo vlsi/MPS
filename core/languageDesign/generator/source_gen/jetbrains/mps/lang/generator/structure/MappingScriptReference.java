@@ -17,7 +17,7 @@ public class MappingScriptReference extends BaseConcept {
   }
 
   public MappingScript getMappingScript() {
-    return (MappingScript)this.getReferent(MappingScript.class, MappingScriptReference.MAPPING_SCRIPT);
+    return (MappingScript) this.getReferent(MappingScript.class, MappingScriptReference.MAPPING_SCRIPT);
   }
 
   public void setMappingScript(MappingScript node) {
@@ -25,7 +25,7 @@ public class MappingScriptReference extends BaseConcept {
   }
 
   public static MappingScriptReference newInstance(SModel sm, boolean init) {
-    return (MappingScriptReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingScriptReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MappingScriptReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingScriptReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MappingScriptReference newInstance(SModel sm) {

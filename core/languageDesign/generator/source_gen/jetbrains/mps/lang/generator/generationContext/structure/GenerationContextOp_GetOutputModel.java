@@ -15,7 +15,7 @@ public class GenerationContextOp_GetOutputModel extends GenerationContextOp_Base
   }
 
   public static GenerationContextOp_GetOutputModel newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_GetOutputModel)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_GetOutputModel) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputModel", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_GetOutputModel newInstance(SModel sm) {

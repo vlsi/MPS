@@ -20,7 +20,7 @@ public class FunctionType extends BaseConcept {
   }
 
   public BaseConcept getResult() {
-    return (BaseConcept)this.getChild(BaseConcept.class, FunctionType.RESULT);
+    return (BaseConcept) this.getChild(BaseConcept.class, FunctionType.RESULT);
   }
 
   public void setResult(BaseConcept node) {
@@ -48,7 +48,7 @@ public class FunctionType extends BaseConcept {
   }
 
   public static FunctionType newInstance(SModel sm, boolean init) {
-    return (FunctionType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.FunctionType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FunctionType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.FunctionType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FunctionType newInstance(SModel sm) {

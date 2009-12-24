@@ -28,7 +28,7 @@ public class ConceptMethodDeclaration_Menu extends AbstractCellMenuComponent {
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((SNode)parameterObject, node, model, scope, operationContext);
+      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext);
     }
 
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {

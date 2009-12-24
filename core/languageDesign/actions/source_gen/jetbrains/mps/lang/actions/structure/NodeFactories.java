@@ -77,7 +77,7 @@ public class NodeFactories extends BaseConcept implements INamedConcept, IConcep
   }
 
   public static NodeFactories newInstance(SModel sm, boolean init) {
-    return (NodeFactories)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeFactories", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeFactories) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeFactories", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeFactories newInstance(SModel sm) {

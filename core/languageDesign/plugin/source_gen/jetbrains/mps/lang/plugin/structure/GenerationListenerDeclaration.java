@@ -56,7 +56,7 @@ public class GenerationListenerDeclaration extends BaseConcept implements INamed
   }
 
   public BeforeGenerationBlock getBeforeGenerationBlock() {
-    return (BeforeGenerationBlock)this.getChild(BeforeGenerationBlock.class, GenerationListenerDeclaration.BEFORE_GENERATION_BLOCK);
+    return (BeforeGenerationBlock) this.getChild(BeforeGenerationBlock.class, GenerationListenerDeclaration.BEFORE_GENERATION_BLOCK);
   }
 
   public void setBeforeGenerationBlock(BeforeGenerationBlock node) {
@@ -64,7 +64,7 @@ public class GenerationListenerDeclaration extends BaseConcept implements INamed
   }
 
   public OnModelsGeneratedBlock getModelsGeneratedBlock() {
-    return (OnModelsGeneratedBlock)this.getChild(OnModelsGeneratedBlock.class, GenerationListenerDeclaration.MODELS_GENERATED_BLOCK);
+    return (OnModelsGeneratedBlock) this.getChild(OnModelsGeneratedBlock.class, GenerationListenerDeclaration.MODELS_GENERATED_BLOCK);
   }
 
   public void setModelsGeneratedBlock(OnModelsGeneratedBlock node) {
@@ -72,7 +72,7 @@ public class GenerationListenerDeclaration extends BaseConcept implements INamed
   }
 
   public AfterGenerationBlock getAfterGenerationBlock() {
-    return (AfterGenerationBlock)this.getChild(AfterGenerationBlock.class, GenerationListenerDeclaration.AFTER_GENERATION_BLOCK);
+    return (AfterGenerationBlock) this.getChild(AfterGenerationBlock.class, GenerationListenerDeclaration.AFTER_GENERATION_BLOCK);
   }
 
   public void setAfterGenerationBlock(AfterGenerationBlock node) {
@@ -80,7 +80,7 @@ public class GenerationListenerDeclaration extends BaseConcept implements INamed
   }
 
   public static GenerationListenerDeclaration newInstance(SModel sm, boolean init) {
-    return (GenerationListenerDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GenerationListenerDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationListenerDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GenerationListenerDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationListenerDeclaration newInstance(SModel sm) {

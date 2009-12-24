@@ -15,7 +15,7 @@ public class ScopeExpression extends AbstractUIArgumentExpression {
   }
 
   public static ScopeExpression newInstance(SModel sm, boolean init) {
-    return (ScopeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ScopeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ScopeExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ScopeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ScopeExpression newInstance(SModel sm) {

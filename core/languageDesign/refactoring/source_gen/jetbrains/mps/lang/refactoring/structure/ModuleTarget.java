@@ -17,7 +17,7 @@ public class ModuleTarget extends RefactoringTarget {
   }
 
   public ClassifierType getModuleType() {
-    return (ClassifierType)this.getChild(ClassifierType.class, ModuleTarget.MODULE_TYPE);
+    return (ClassifierType) this.getChild(ClassifierType.class, ModuleTarget.MODULE_TYPE);
   }
 
   public void setModuleType(ClassifierType node) {
@@ -25,7 +25,7 @@ public class ModuleTarget extends RefactoringTarget {
   }
 
   public static ModuleTarget newInstance(SModel sm, boolean init) {
-    return (ModuleTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ModuleTarget", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ModuleTarget) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ModuleTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ModuleTarget newInstance(SModel sm) {

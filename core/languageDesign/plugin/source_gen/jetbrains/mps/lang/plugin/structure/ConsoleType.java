@@ -16,7 +16,7 @@ public class ConsoleType extends Type {
   }
 
   public static ConsoleType newInstance(SModel sm, boolean init) {
-    return (ConsoleType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConsoleType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConsoleType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConsoleType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConsoleType newInstance(SModel sm) {

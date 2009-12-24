@@ -16,7 +16,7 @@ public class LoopMacro extends SourceSubstituteMacro {
   }
 
   public SourceSubstituteMacro_SourceNodesQuery getSourceNodesQuery() {
-    return (SourceSubstituteMacro_SourceNodesQuery)this.getChild(SourceSubstituteMacro_SourceNodesQuery.class, LoopMacro.SOURCE_NODES_QUERY);
+    return (SourceSubstituteMacro_SourceNodesQuery) this.getChild(SourceSubstituteMacro_SourceNodesQuery.class, LoopMacro.SOURCE_NODES_QUERY);
   }
 
   public void setSourceNodesQuery(SourceSubstituteMacro_SourceNodesQuery node) {
@@ -24,7 +24,7 @@ public class LoopMacro extends SourceSubstituteMacro {
   }
 
   public static LoopMacro newInstance(SModel sm, boolean init) {
-    return (LoopMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.LoopMacro", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LoopMacro) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.LoopMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LoopMacro newInstance(SModel sm) {

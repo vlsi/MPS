@@ -11,7 +11,7 @@ public class PastePostProcessor_Behavior {
   }
 
   public static String call_getClassName_5457641811177522085(SNode thisNode) {
-    SNode parent = (SNode)SNodeOperations.getParent(thisNode);
+    SNode parent = (SNode) SNodeOperations.getParent(thisNode);
     return SPropertyOperations.getString(parent, "name") + "_PastePostProcessor_" + SNodeOperations.getIndexInParent(thisNode);
   }
 }

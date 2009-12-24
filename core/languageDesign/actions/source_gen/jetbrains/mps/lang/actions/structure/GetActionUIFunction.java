@@ -16,7 +16,7 @@ public class GetActionUIFunction extends ConceptFunction {
   }
 
   public static GetActionUIFunction newInstance(SModel sm, boolean init) {
-    return (GetActionUIFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.GetActionUIFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetActionUIFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.GetActionUIFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetActionUIFunction newInstance(SModel sm) {

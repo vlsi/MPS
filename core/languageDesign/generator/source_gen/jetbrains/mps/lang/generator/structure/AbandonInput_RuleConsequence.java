@@ -15,7 +15,7 @@ public class AbandonInput_RuleConsequence extends RuleConsequence {
   }
 
   public static AbandonInput_RuleConsequence newInstance(SModel sm, boolean init) {
-    return (AbandonInput_RuleConsequence)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbandonInput_RuleConsequence) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.AbandonInput_RuleConsequence", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbandonInput_RuleConsequence newInstance(SModel sm) {

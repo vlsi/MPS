@@ -17,7 +17,7 @@ public class MPSParameterType extends BaseConcept {
   }
 
   public static MPSParameterType newInstance(SModel sm, boolean init) {
-    return (MPSParameterType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.MPSParameterType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MPSParameterType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.MPSParameterType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MPSParameterType newInstance(SModel sm) {

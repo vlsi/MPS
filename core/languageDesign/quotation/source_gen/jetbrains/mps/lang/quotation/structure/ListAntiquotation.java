@@ -15,7 +15,7 @@ public class ListAntiquotation extends AbstractAntiquotation {
   }
 
   public static ListAntiquotation newInstance(SModel sm, boolean init) {
-    return (ListAntiquotation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.quotation.structure.ListAntiquotation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ListAntiquotation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.quotation.structure.ListAntiquotation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ListAntiquotation newInstance(SModel sm) {

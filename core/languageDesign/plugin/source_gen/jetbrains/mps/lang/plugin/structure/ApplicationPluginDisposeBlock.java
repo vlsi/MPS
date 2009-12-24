@@ -16,7 +16,7 @@ public class ApplicationPluginDisposeBlock extends ConceptFunction {
   }
 
   public static ApplicationPluginDisposeBlock newInstance(SModel sm, boolean init) {
-    return (ApplicationPluginDisposeBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ApplicationPluginDisposeBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ApplicationPluginDisposeBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ApplicationPluginDisposeBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ApplicationPluginDisposeBlock newInstance(SModel sm) {

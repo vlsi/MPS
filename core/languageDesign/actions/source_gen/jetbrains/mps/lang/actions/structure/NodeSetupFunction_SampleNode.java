@@ -16,7 +16,7 @@ public class NodeSetupFunction_SampleNode extends ConceptFunctionParameter {
   }
 
   public static NodeSetupFunction_SampleNode newInstance(SModel sm, boolean init) {
-    return (NodeSetupFunction_SampleNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeSetupFunction_SampleNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeSetupFunction_SampleNode newInstance(SModel sm) {

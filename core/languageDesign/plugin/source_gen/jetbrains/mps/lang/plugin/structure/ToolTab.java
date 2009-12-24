@@ -21,7 +21,7 @@ public class ToolTab extends BaseConcept {
   }
 
   public Expression getComponentExpression() {
-    return (Expression)this.getChild(Expression.class, ToolTab.COMPONENT_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, ToolTab.COMPONENT_EXPRESSION);
   }
 
   public void setComponentExpression(Expression node) {
@@ -29,7 +29,7 @@ public class ToolTab extends BaseConcept {
   }
 
   public Expression getTitleExpression() {
-    return (Expression)this.getChild(Expression.class, ToolTab.TITLE_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, ToolTab.TITLE_EXPRESSION);
   }
 
   public void setTitleExpression(Expression node) {
@@ -37,7 +37,7 @@ public class ToolTab extends BaseConcept {
   }
 
   public Expression getIconExpression() {
-    return (Expression)this.getChild(Expression.class, ToolTab.ICON_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, ToolTab.ICON_EXPRESSION);
   }
 
   public void setIconExpression(Expression node) {
@@ -45,7 +45,7 @@ public class ToolTab extends BaseConcept {
   }
 
   public Expression getDisposeTabClosure() {
-    return (Expression)this.getChild(Expression.class, ToolTab.DISPOSE_TAB_CLOSURE);
+    return (Expression) this.getChild(Expression.class, ToolTab.DISPOSE_TAB_CLOSURE);
   }
 
   public void setDisposeTabClosure(Expression node) {
@@ -53,7 +53,7 @@ public class ToolTab extends BaseConcept {
   }
 
   public static ToolTab newInstance(SModel sm, boolean init) {
-    return (ToolTab)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToolTab", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ToolTab) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToolTab", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ToolTab newInstance(SModel sm) {

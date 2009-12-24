@@ -16,7 +16,7 @@ public class TemplateFunctionParameter_templatePropertyValue extends ConceptFunc
   }
 
   public static TemplateFunctionParameter_templatePropertyValue newInstance(SModel sm, boolean init) {
-    return (TemplateFunctionParameter_templatePropertyValue)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TemplateFunctionParameter_templatePropertyValue) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templatePropertyValue", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TemplateFunctionParameter_templatePropertyValue newInstance(SModel sm) {

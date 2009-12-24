@@ -16,7 +16,7 @@ public class CommandClosureLiteral extends ClosureLiteral {
   }
 
   public static CommandClosureLiteral newInstance(SModel sm, boolean init) {
-    return (CommandClosureLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CommandClosureLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CommandClosureLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CommandClosureLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CommandClosureLiteral newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class GenerationContextOp_GetTemplateNode extends GenerationContextOp_Bas
   }
 
   public static GenerationContextOp_GetTemplateNode newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_GetTemplateNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetTemplateNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_GetTemplateNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetTemplateNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_GetTemplateNode newInstance(SModel sm) {

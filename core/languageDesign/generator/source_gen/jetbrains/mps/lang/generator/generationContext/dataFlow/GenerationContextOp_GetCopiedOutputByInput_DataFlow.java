@@ -13,6 +13,6 @@ public class GenerationContextOp_GetCopiedOutputByInput_DataFlow extends DataFlo
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "inputNode", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "inputNode", true));
   }
 }

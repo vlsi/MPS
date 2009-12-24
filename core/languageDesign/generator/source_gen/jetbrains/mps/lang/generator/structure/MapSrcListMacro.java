@@ -18,7 +18,7 @@ public class MapSrcListMacro extends SourceSubstituteMacro {
   }
 
   public SourceSubstituteMacro_SourceNodesQuery getSourceNodesQuery() {
-    return (SourceSubstituteMacro_SourceNodesQuery)this.getChild(SourceSubstituteMacro_SourceNodesQuery.class, MapSrcListMacro.SOURCE_NODES_QUERY);
+    return (SourceSubstituteMacro_SourceNodesQuery) this.getChild(SourceSubstituteMacro_SourceNodesQuery.class, MapSrcListMacro.SOURCE_NODES_QUERY);
   }
 
   public void setSourceNodesQuery(SourceSubstituteMacro_SourceNodesQuery node) {
@@ -26,7 +26,7 @@ public class MapSrcListMacro extends SourceSubstituteMacro {
   }
 
   public MapSrcMacro_MapperFunction getMapperFunction() {
-    return (MapSrcMacro_MapperFunction)this.getChild(MapSrcMacro_MapperFunction.class, MapSrcListMacro.MAPPER_FUNCTION);
+    return (MapSrcMacro_MapperFunction) this.getChild(MapSrcMacro_MapperFunction.class, MapSrcListMacro.MAPPER_FUNCTION);
   }
 
   public void setMapperFunction(MapSrcMacro_MapperFunction node) {
@@ -34,7 +34,7 @@ public class MapSrcListMacro extends SourceSubstituteMacro {
   }
 
   public MapSrcMacro_PostMapperFunction getPostMapperFunction() {
-    return (MapSrcMacro_PostMapperFunction)this.getChild(MapSrcMacro_PostMapperFunction.class, MapSrcListMacro.POST_MAPPER_FUNCTION);
+    return (MapSrcMacro_PostMapperFunction) this.getChild(MapSrcMacro_PostMapperFunction.class, MapSrcListMacro.POST_MAPPER_FUNCTION);
   }
 
   public void setPostMapperFunction(MapSrcMacro_PostMapperFunction node) {
@@ -42,7 +42,7 @@ public class MapSrcListMacro extends SourceSubstituteMacro {
   }
 
   public static MapSrcListMacro newInstance(SModel sm, boolean init) {
-    return (MapSrcListMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MapSrcListMacro", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MapSrcListMacro) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MapSrcListMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MapSrcListMacro newInstance(SModel sm) {

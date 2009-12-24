@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_link extends ConceptFunctionParameter {
   }
 
   public static ConceptFunctionParameter_link newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_link)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_link", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_link) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_link", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_link newInstance(SModel sm) {

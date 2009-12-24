@@ -64,7 +64,7 @@ public class ActionDataParameterDeclaration extends BaseConcept implements IMemb
   }
 
   public StaticFieldDeclaration getKey() {
-    return (StaticFieldDeclaration)this.getReferent(StaticFieldDeclaration.class, ActionDataParameterDeclaration.KEY);
+    return (StaticFieldDeclaration) this.getReferent(StaticFieldDeclaration.class, ActionDataParameterDeclaration.KEY);
   }
 
   public void setKey(StaticFieldDeclaration node) {
@@ -72,7 +72,7 @@ public class ActionDataParameterDeclaration extends BaseConcept implements IMemb
   }
 
   public static ActionDataParameterDeclaration newInstance(SModel sm, boolean init) {
-    return (ActionDataParameterDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ActionDataParameterDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ActionDataParameterDeclaration newInstance(SModel sm) {

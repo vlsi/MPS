@@ -18,7 +18,7 @@ public class InlineSwitch_Case extends BaseConcept {
   }
 
   public BaseMappingRule_Condition getConditionFunction() {
-    return (BaseMappingRule_Condition)this.getChild(BaseMappingRule_Condition.class, InlineSwitch_Case.CONDITION_FUNCTION);
+    return (BaseMappingRule_Condition) this.getChild(BaseMappingRule_Condition.class, InlineSwitch_Case.CONDITION_FUNCTION);
   }
 
   public void setConditionFunction(BaseMappingRule_Condition node) {
@@ -26,7 +26,7 @@ public class InlineSwitch_Case extends BaseConcept {
   }
 
   public RuleConsequence getCaseConsequence() {
-    return (RuleConsequence)this.getChild(RuleConsequence.class, InlineSwitch_Case.CASE_CONSEQUENCE);
+    return (RuleConsequence) this.getChild(RuleConsequence.class, InlineSwitch_Case.CASE_CONSEQUENCE);
   }
 
   public void setCaseConsequence(RuleConsequence node) {
@@ -34,7 +34,7 @@ public class InlineSwitch_Case extends BaseConcept {
   }
 
   public static InlineSwitch_Case newInstance(SModel sm, boolean init) {
-    return (InlineSwitch_Case)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineSwitch_Case", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InlineSwitch_Case) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineSwitch_Case", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InlineSwitch_Case newInstance(SModel sm) {

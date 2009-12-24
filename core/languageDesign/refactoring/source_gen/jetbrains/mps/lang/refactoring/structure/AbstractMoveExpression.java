@@ -45,7 +45,7 @@ public class AbstractMoveExpression extends Expression implements RefactoringAct
   }
 
   public Expression getWhatToMove() {
-    return (Expression)this.getChild(Expression.class, AbstractMoveExpression.WHAT_TO_MOVE);
+    return (Expression) this.getChild(Expression.class, AbstractMoveExpression.WHAT_TO_MOVE);
   }
 
   public void setWhatToMove(Expression node) {
@@ -53,7 +53,7 @@ public class AbstractMoveExpression extends Expression implements RefactoringAct
   }
 
   public Expression getDestination() {
-    return (Expression)this.getChild(Expression.class, AbstractMoveExpression.DESTINATION);
+    return (Expression) this.getChild(Expression.class, AbstractMoveExpression.DESTINATION);
   }
 
   public void setDestination(Expression node) {
@@ -61,7 +61,7 @@ public class AbstractMoveExpression extends Expression implements RefactoringAct
   }
 
   public static AbstractMoveExpression newInstance(SModel sm, boolean init) {
-    return (AbstractMoveExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractMoveExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.AbstractMoveExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractMoveExpression newInstance(SModel sm) {

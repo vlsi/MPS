@@ -45,7 +45,7 @@ public class UpdateGroupBlock extends BaseConcept implements GroupContents {
   }
 
   public UpdateGroupFunction getUpdateFunction() {
-    return (UpdateGroupFunction)this.getChild(UpdateGroupFunction.class, UpdateGroupBlock.UPDATE_FUNCTION);
+    return (UpdateGroupFunction) this.getChild(UpdateGroupFunction.class, UpdateGroupBlock.UPDATE_FUNCTION);
   }
 
   public void setUpdateFunction(UpdateGroupFunction node) {
@@ -53,7 +53,7 @@ public class UpdateGroupBlock extends BaseConcept implements GroupContents {
   }
 
   public EnumerateChildrenFunction getEnumerateFunction() {
-    return (EnumerateChildrenFunction)this.getChild(EnumerateChildrenFunction.class, UpdateGroupBlock.ENUMERATE_FUNCTION);
+    return (EnumerateChildrenFunction) this.getChild(EnumerateChildrenFunction.class, UpdateGroupBlock.ENUMERATE_FUNCTION);
   }
 
   public void setEnumerateFunction(EnumerateChildrenFunction node) {
@@ -61,7 +61,7 @@ public class UpdateGroupBlock extends BaseConcept implements GroupContents {
   }
 
   public static UpdateGroupBlock newInstance(SModel sm, boolean init) {
-    return (UpdateGroupBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.UpdateGroupBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UpdateGroupBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.UpdateGroupBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UpdateGroupBlock newInstance(SModel sm) {

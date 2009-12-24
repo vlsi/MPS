@@ -49,7 +49,7 @@ public class NewTemplateInWeavingRule_Intention extends BaseIntention implements
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (editorContext.getSelectedCell().getLinkDeclaration() != ((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.Weaving_MappingRule", "ruleConsequence")))) {
+    if (editorContext.getSelectedCell().getLinkDeclaration() != ((LinkDeclaration) SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.Weaving_MappingRule", "ruleConsequence")))) {
       return false;
     }
     return SLinkOperations.getTarget(node, "ruleConsequence", true) == null || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "ruleConsequence", true)), "jetbrains.mps.lang.generator.structure.RuleConsequence");

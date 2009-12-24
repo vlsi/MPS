@@ -73,7 +73,7 @@ public class MappingScript extends BaseConcept implements INamedConcept {
   }
 
   public MappingScript_CodeBlock getCodeBlock() {
-    return (MappingScript_CodeBlock)this.getChild(MappingScript_CodeBlock.class, MappingScript.CODE_BLOCK);
+    return (MappingScript_CodeBlock) this.getChild(MappingScript_CodeBlock.class, MappingScript.CODE_BLOCK);
   }
 
   public void setCodeBlock(MappingScript_CodeBlock node) {
@@ -81,7 +81,7 @@ public class MappingScript extends BaseConcept implements INamedConcept {
   }
 
   public static MappingScript newInstance(SModel sm, boolean init) {
-    return (MappingScript)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingScript", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MappingScript) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingScript", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MappingScript newInstance(SModel sm) {

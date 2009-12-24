@@ -18,7 +18,7 @@ public class GenerationContextOp_CreateUniqueName extends GenerationContextOp_Ba
   }
 
   public Expression getBaseName() {
-    return (Expression)this.getChild(Expression.class, GenerationContextOp_CreateUniqueName.BASE_NAME);
+    return (Expression) this.getChild(Expression.class, GenerationContextOp_CreateUniqueName.BASE_NAME);
   }
 
   public void setBaseName(Expression node) {
@@ -26,7 +26,7 @@ public class GenerationContextOp_CreateUniqueName extends GenerationContextOp_Ba
   }
 
   public Expression getContextNode() {
-    return (Expression)this.getChild(Expression.class, GenerationContextOp_CreateUniqueName.CONTEXT_NODE);
+    return (Expression) this.getChild(Expression.class, GenerationContextOp_CreateUniqueName.CONTEXT_NODE);
   }
 
   public void setContextNode(Expression node) {
@@ -34,7 +34,7 @@ public class GenerationContextOp_CreateUniqueName extends GenerationContextOp_Ba
   }
 
   public static GenerationContextOp_CreateUniqueName newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_CreateUniqueName)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_CreateUniqueName) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_CreateUniqueName newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class InitTabBlock extends ConceptFunction {
   }
 
   public static InitTabBlock newInstance(SModel sm, boolean init) {
-    return (InitTabBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.InitTabBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InitTabBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.InitTabBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InitTabBlock newInstance(SModel sm) {

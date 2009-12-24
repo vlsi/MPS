@@ -16,7 +16,7 @@ public class ConceptConstructorDeclaration extends ConceptFunction {
   }
 
   public static ConceptConstructorDeclaration newInstance(SModel sm, boolean init) {
-    return (ConceptConstructorDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptConstructorDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptConstructorDeclaration newInstance(SModel sm) {

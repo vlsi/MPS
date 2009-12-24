@@ -16,7 +16,7 @@ public class NodeSubstitutePreconditionFunction extends ConceptFunction {
   }
 
   public static NodeSubstitutePreconditionFunction newInstance(SModel sm, boolean init) {
-    return (NodeSubstitutePreconditionFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeSubstitutePreconditionFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeSubstitutePreconditionFunction newInstance(SModel sm) {

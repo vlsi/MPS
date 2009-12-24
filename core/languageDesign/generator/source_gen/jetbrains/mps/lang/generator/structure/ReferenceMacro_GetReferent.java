@@ -15,7 +15,7 @@ public class ReferenceMacro_GetReferent extends TemplateQueryBase {
   }
 
   public static ReferenceMacro_GetReferent newInstance(SModel sm, boolean init) {
-    return (ReferenceMacro_GetReferent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReferenceMacro_GetReferent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReferenceMacro_GetReferent newInstance(SModel sm) {

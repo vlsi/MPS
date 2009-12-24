@@ -17,7 +17,7 @@ public class NodeTarget extends RefactoringTarget {
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, NodeTarget.CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, NodeTarget.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {
@@ -25,7 +25,7 @@ public class NodeTarget extends RefactoringTarget {
   }
 
   public static NodeTarget newInstance(SModel sm, boolean init) {
-    return (NodeTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.NodeTarget", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeTarget) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.NodeTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeTarget newInstance(SModel sm) {

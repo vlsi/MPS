@@ -33,7 +33,7 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, NodeSubstituteActionsBuilder.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {
@@ -41,7 +41,7 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   }
 
   public NodeSubstitutePreconditionFunction getPrecondition() {
-    return (NodeSubstitutePreconditionFunction)this.getChild(NodeSubstitutePreconditionFunction.class, NodeSubstituteActionsBuilder.PRECONDITION);
+    return (NodeSubstitutePreconditionFunction) this.getChild(NodeSubstitutePreconditionFunction.class, NodeSubstituteActionsBuilder.PRECONDITION);
   }
 
   public void setPrecondition(NodeSubstitutePreconditionFunction node) {
@@ -49,7 +49,7 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   }
 
   public QueryFunction_Substitute_CommonInitializer getCommonInitializer() {
-    return (QueryFunction_Substitute_CommonInitializer)this.getChild(QueryFunction_Substitute_CommonInitializer.class, NodeSubstituteActionsBuilder.COMMON_INITIALIZER);
+    return (QueryFunction_Substitute_CommonInitializer) this.getChild(QueryFunction_Substitute_CommonInitializer.class, NodeSubstituteActionsBuilder.COMMON_INITIALIZER);
   }
 
   public void setCommonInitializer(QueryFunction_Substitute_CommonInitializer node) {
@@ -97,7 +97,7 @@ public class NodeSubstituteActionsBuilder extends BaseConcept {
   }
 
   public static NodeSubstituteActionsBuilder newInstance(SModel sm, boolean init) {
-    return (NodeSubstituteActionsBuilder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeSubstituteActionsBuilder) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeSubstituteActionsBuilder newInstance(SModel sm) {

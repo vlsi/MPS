@@ -19,7 +19,7 @@ public class PropertyRefExpression extends Expression {
   }
 
   public PropertyDeclaration getPropertyDeclaration() {
-    return (PropertyDeclaration)this.getReferent(PropertyDeclaration.class, PropertyRefExpression.PROPERTY_DECLARATION);
+    return (PropertyDeclaration) this.getReferent(PropertyDeclaration.class, PropertyRefExpression.PROPERTY_DECLARATION);
   }
 
   public void setPropertyDeclaration(PropertyDeclaration node) {
@@ -27,7 +27,7 @@ public class PropertyRefExpression extends Expression {
   }
 
   public Expression getNodeExpr() {
-    return (Expression)this.getChild(Expression.class, PropertyRefExpression.NODE_EXPR);
+    return (Expression) this.getChild(Expression.class, PropertyRefExpression.NODE_EXPR);
   }
 
   public void setNodeExpr(Expression node) {
@@ -35,7 +35,7 @@ public class PropertyRefExpression extends Expression {
   }
 
   public static PropertyRefExpression newInstance(SModel sm, boolean init) {
-    return (PropertyRefExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PropertyRefExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyRefExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PropertyRefExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyRefExpression newInstance(SModel sm) {

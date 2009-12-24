@@ -47,7 +47,7 @@ public class ChangeFeatureNameOperation extends Statement implements Refactoring
   }
 
   public Expression getFeature() {
-    return (Expression)this.getChild(Expression.class, ChangeFeatureNameOperation.FEATURE);
+    return (Expression) this.getChild(Expression.class, ChangeFeatureNameOperation.FEATURE);
   }
 
   public void setFeature(Expression node) {
@@ -55,7 +55,7 @@ public class ChangeFeatureNameOperation extends Statement implements Refactoring
   }
 
   public Expression getNewConceptFQName() {
-    return (Expression)this.getChild(Expression.class, ChangeFeatureNameOperation.NEW_CONCEPT_F_Q_NAME);
+    return (Expression) this.getChild(Expression.class, ChangeFeatureNameOperation.NEW_CONCEPT_F_Q_NAME);
   }
 
   public void setNewConceptFQName(Expression node) {
@@ -63,7 +63,7 @@ public class ChangeFeatureNameOperation extends Statement implements Refactoring
   }
 
   public Expression getNewFeatureName() {
-    return (Expression)this.getChild(Expression.class, ChangeFeatureNameOperation.NEW_FEATURE_NAME);
+    return (Expression) this.getChild(Expression.class, ChangeFeatureNameOperation.NEW_FEATURE_NAME);
   }
 
   public void setNewFeatureName(Expression node) {
@@ -71,7 +71,7 @@ public class ChangeFeatureNameOperation extends Statement implements Refactoring
   }
 
   public static ChangeFeatureNameOperation newInstance(SModel sm, boolean init) {
-    return (ChangeFeatureNameOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ChangeFeatureNameOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ChangeFeatureNameOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ChangeFeatureNameOperation newInstance(SModel sm) {

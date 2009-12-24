@@ -16,7 +16,7 @@ public class SuperNodeExpression extends Expression {
   }
 
   public static SuperNodeExpression newInstance(SModel sm, boolean init) {
-    return (SuperNodeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.SuperNodeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SuperNodeExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.SuperNodeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SuperNodeExpression newInstance(SModel sm) {

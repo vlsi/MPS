@@ -16,7 +16,7 @@ public class RunModuleConfigCreator extends RunConfigCreator {
   }
 
   public CreateModuleRunConfigBlock getCreateModuleRunConfigBlock() {
-    return (CreateModuleRunConfigBlock)this.getChild(CreateModuleRunConfigBlock.class, RunModuleConfigCreator.CREATE_MODULE_RUN_CONFIG_BLOCK);
+    return (CreateModuleRunConfigBlock) this.getChild(CreateModuleRunConfigBlock.class, RunModuleConfigCreator.CREATE_MODULE_RUN_CONFIG_BLOCK);
   }
 
   public void setCreateModuleRunConfigBlock(CreateModuleRunConfigBlock node) {
@@ -24,7 +24,7 @@ public class RunModuleConfigCreator extends RunConfigCreator {
   }
 
   public static RunModuleConfigCreator newInstance(SModel sm, boolean init) {
-    return (RunModuleConfigCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RunModuleConfigCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RunModuleConfigCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RunModuleConfigCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RunModuleConfigCreator newInstance(SModel sm) {

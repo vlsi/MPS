@@ -17,7 +17,7 @@ public class GroupType extends BaseClassifierType {
   }
 
   public ActionGroupDeclaration getActionGroup() {
-    return (ActionGroupDeclaration)this.getReferent(ActionGroupDeclaration.class, GroupType.ACTION_GROUP);
+    return (ActionGroupDeclaration) this.getReferent(ActionGroupDeclaration.class, GroupType.ACTION_GROUP);
   }
 
   public void setActionGroup(ActionGroupDeclaration node) {
@@ -25,7 +25,7 @@ public class GroupType extends BaseClassifierType {
   }
 
   public static GroupType newInstance(SModel sm, boolean init) {
-    return (GroupType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GroupType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GroupType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GroupType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GroupType newInstance(SModel sm) {

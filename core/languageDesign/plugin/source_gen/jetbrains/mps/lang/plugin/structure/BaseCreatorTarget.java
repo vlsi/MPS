@@ -17,7 +17,7 @@ public class BaseCreatorTarget extends BaseConcept {
   }
 
   public static BaseCreatorTarget newInstance(SModel sm, boolean init) {
-    return (BaseCreatorTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.BaseCreatorTarget", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseCreatorTarget) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.BaseCreatorTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseCreatorTarget newInstance(SModel sm) {

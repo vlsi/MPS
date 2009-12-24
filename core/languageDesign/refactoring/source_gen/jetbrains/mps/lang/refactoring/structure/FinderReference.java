@@ -55,7 +55,7 @@ public class FinderReference extends BaseConcept implements IResolveInfo {
   }
 
   public FinderDeclaration getFinderDeclaration() {
-    return (FinderDeclaration)this.getReferent(FinderDeclaration.class, FinderReference.FINDER_DECLARATION);
+    return (FinderDeclaration) this.getReferent(FinderDeclaration.class, FinderReference.FINDER_DECLARATION);
   }
 
   public void setFinderDeclaration(FinderDeclaration node) {
@@ -63,7 +63,7 @@ public class FinderReference extends BaseConcept implements IResolveInfo {
   }
 
   public static FinderReference newInstance(SModel sm, boolean init) {
-    return (FinderReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.FinderReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FinderReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.FinderReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FinderReference newInstance(SModel sm) {

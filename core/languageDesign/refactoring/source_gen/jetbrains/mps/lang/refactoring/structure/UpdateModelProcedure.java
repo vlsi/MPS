@@ -18,7 +18,7 @@ public class UpdateModelProcedure extends Statement {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(Expression.class, UpdateModelProcedure.ARGUMENT);
+    return (Expression) this.getChild(Expression.class, UpdateModelProcedure.ARGUMENT);
   }
 
   public void setArgument(Expression node) {
@@ -26,7 +26,7 @@ public class UpdateModelProcedure extends Statement {
   }
 
   public static UpdateModelProcedure newInstance(SModel sm, boolean init) {
-    return (UpdateModelProcedure)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UpdateModelProcedure) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.UpdateModelProcedure", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UpdateModelProcedure newInstance(SModel sm) {

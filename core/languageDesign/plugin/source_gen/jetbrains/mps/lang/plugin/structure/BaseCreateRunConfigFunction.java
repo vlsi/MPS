@@ -16,7 +16,7 @@ public class BaseCreateRunConfigFunction extends ConceptFunction {
   }
 
   public static BaseCreateRunConfigFunction newInstance(SModel sm, boolean init) {
-    return (BaseCreateRunConfigFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.BaseCreateRunConfigFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseCreateRunConfigFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.BaseCreateRunConfigFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseCreateRunConfigFunction newInstance(SModel sm) {

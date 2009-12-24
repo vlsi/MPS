@@ -20,7 +20,7 @@ public class typeof_IntentionContextParamRefOperation_InferenceRule extends Abst
       SNode _nodeToCheck_1029348928467 = operation;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)", "4359456199357025390", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)", "4359456199357025398", true), (SNode)SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "parameterDeclaration", false), "type", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)", "4359456199357025398", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "parameterDeclaration", false), "type", true), _info_12389875345);
     }
   }
 

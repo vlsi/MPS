@@ -15,7 +15,7 @@ public class DropRootRule_Condition extends TemplateQueryBase {
   }
 
   public static DropRootRule_Condition newInstance(SModel sm, boolean init) {
-    return (DropRootRule_Condition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.DropRootRule_Condition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DropRootRule_Condition) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.DropRootRule_Condition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DropRootRule_Condition newInstance(SModel sm) {

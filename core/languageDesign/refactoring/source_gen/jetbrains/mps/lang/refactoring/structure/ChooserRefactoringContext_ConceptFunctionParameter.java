@@ -16,7 +16,7 @@ public class ChooserRefactoringContext_ConceptFunctionParameter extends ConceptF
   }
 
   public static ChooserRefactoringContext_ConceptFunctionParameter newInstance(SModel sm, boolean init) {
-    return (ChooserRefactoringContext_ConceptFunctionParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ChooserRefactoringContext_ConceptFunctionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ChooserRefactoringContext_ConceptFunctionParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ChooserRefactoringContext_ConceptFunctionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ChooserRefactoringContext_ConceptFunctionParameter newInstance(SModel sm) {

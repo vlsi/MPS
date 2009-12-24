@@ -77,7 +77,7 @@ public class Refactoring extends BaseConcept implements INamedConcept, IConceptA
   }
 
   public Refactoring getOverrides() {
-    return (Refactoring)this.getReferent(Refactoring.class, Refactoring.OVERRIDES);
+    return (Refactoring) this.getReferent(Refactoring.class, Refactoring.OVERRIDES);
   }
 
   public void setOverrides(Refactoring node) {
@@ -85,7 +85,7 @@ public class Refactoring extends BaseConcept implements INamedConcept, IConceptA
   }
 
   public RefactoringTarget getTarget() {
-    return (RefactoringTarget)this.getChild(RefactoringTarget.class, Refactoring.TARGET);
+    return (RefactoringTarget) this.getChild(RefactoringTarget.class, Refactoring.TARGET);
   }
 
   public void setTarget(RefactoringTarget node) {
@@ -93,7 +93,7 @@ public class Refactoring extends BaseConcept implements INamedConcept, IConceptA
   }
 
   public KeyMapKeystroke getKeystroke() {
-    return (KeyMapKeystroke)this.getChild(KeyMapKeystroke.class, Refactoring.KEYSTROKE);
+    return (KeyMapKeystroke) this.getChild(KeyMapKeystroke.class, Refactoring.KEYSTROKE);
   }
 
   public void setKeystroke(KeyMapKeystroke node) {
@@ -101,7 +101,7 @@ public class Refactoring extends BaseConcept implements INamedConcept, IConceptA
   }
 
   public InitClause getInitBlock() {
-    return (InitClause)this.getChild(InitClause.class, Refactoring.INIT_BLOCK);
+    return (InitClause) this.getChild(InitClause.class, Refactoring.INIT_BLOCK);
   }
 
   public void setInitBlock(InitClause node) {
@@ -109,7 +109,7 @@ public class Refactoring extends BaseConcept implements INamedConcept, IConceptA
   }
 
   public DoRefactorClause getDoRefactorBlock() {
-    return (DoRefactorClause)this.getChild(DoRefactorClause.class, Refactoring.DO_REFACTOR_BLOCK);
+    return (DoRefactorClause) this.getChild(DoRefactorClause.class, Refactoring.DO_REFACTOR_BLOCK);
   }
 
   public void setDoRefactorBlock(DoRefactorClause node) {
@@ -117,7 +117,7 @@ public class Refactoring extends BaseConcept implements INamedConcept, IConceptA
   }
 
   public ModelsToGenerateClause getModelsToGenerateBlock() {
-    return (ModelsToGenerateClause)this.getChild(ModelsToGenerateClause.class, Refactoring.MODELS_TO_GENERATE_BLOCK);
+    return (ModelsToGenerateClause) this.getChild(ModelsToGenerateClause.class, Refactoring.MODELS_TO_GENERATE_BLOCK);
   }
 
   public void setModelsToGenerateBlock(ModelsToGenerateClause node) {
@@ -125,7 +125,7 @@ public class Refactoring extends BaseConcept implements INamedConcept, IConceptA
   }
 
   public DoWhenDoneClause getDoWhenDoneBlock() {
-    return (DoWhenDoneClause)this.getChild(DoWhenDoneClause.class, Refactoring.DO_WHEN_DONE_BLOCK);
+    return (DoWhenDoneClause) this.getChild(DoWhenDoneClause.class, Refactoring.DO_WHEN_DONE_BLOCK);
   }
 
   public void setDoWhenDoneBlock(DoWhenDoneClause node) {
@@ -133,7 +133,7 @@ public class Refactoring extends BaseConcept implements INamedConcept, IConceptA
   }
 
   public AffectedNodesClause getAffectedNodesBlock() {
-    return (AffectedNodesClause)this.getChild(AffectedNodesClause.class, Refactoring.AFFECTED_NODES_BLOCK);
+    return (AffectedNodesClause) this.getChild(AffectedNodesClause.class, Refactoring.AFFECTED_NODES_BLOCK);
   }
 
   public void setAffectedNodesBlock(AffectedNodesClause node) {
@@ -141,7 +141,7 @@ public class Refactoring extends BaseConcept implements INamedConcept, IConceptA
   }
 
   public UpdateModelClause getUpdateModelBlock() {
-    return (UpdateModelClause)this.getChild(UpdateModelClause.class, Refactoring.UPDATE_MODEL_BLOCK);
+    return (UpdateModelClause) this.getChild(UpdateModelClause.class, Refactoring.UPDATE_MODEL_BLOCK);
   }
 
   public void setUpdateModelBlock(UpdateModelClause node) {
@@ -189,7 +189,7 @@ public class Refactoring extends BaseConcept implements INamedConcept, IConceptA
   }
 
   public static Refactoring newInstance(SModel sm, boolean init) {
-    return (Refactoring)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.Refactoring", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Refactoring) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.Refactoring", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Refactoring newInstance(SModel sm) {

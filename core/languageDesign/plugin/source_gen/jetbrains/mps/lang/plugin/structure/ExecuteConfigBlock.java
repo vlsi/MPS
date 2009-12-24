@@ -16,7 +16,7 @@ public class ExecuteConfigBlock extends ConceptFunction {
   }
 
   public static ExecuteConfigBlock newInstance(SModel sm, boolean init) {
-    return (ExecuteConfigBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ExecuteConfigBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExecuteConfigBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ExecuteConfigBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExecuteConfigBlock newInstance(SModel sm) {

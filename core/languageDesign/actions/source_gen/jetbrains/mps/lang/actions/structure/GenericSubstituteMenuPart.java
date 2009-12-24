@@ -16,7 +16,7 @@ public class GenericSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public QueryFunction_GenericSubstituteMenuPart getQuery() {
-    return (QueryFunction_GenericSubstituteMenuPart)this.getChild(QueryFunction_GenericSubstituteMenuPart.class, GenericSubstituteMenuPart.QUERY);
+    return (QueryFunction_GenericSubstituteMenuPart) this.getChild(QueryFunction_GenericSubstituteMenuPart.class, GenericSubstituteMenuPart.QUERY);
   }
 
   public void setQuery(QueryFunction_GenericSubstituteMenuPart node) {
@@ -24,7 +24,7 @@ public class GenericSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public static GenericSubstituteMenuPart newInstance(SModel sm, boolean init) {
-    return (GenericSubstituteMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenericSubstituteMenuPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.GenericSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenericSubstituteMenuPart newInstance(SModel sm) {

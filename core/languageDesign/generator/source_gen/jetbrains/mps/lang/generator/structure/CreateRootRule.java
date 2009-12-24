@@ -20,7 +20,7 @@ public class CreateRootRule extends BaseConcept {
   }
 
   public INamedConcept getTemplateNode() {
-    return (INamedConcept)this.getReferent(INamedConcept.class, CreateRootRule.TEMPLATE_NODE);
+    return (INamedConcept) this.getReferent(INamedConcept.class, CreateRootRule.TEMPLATE_NODE);
   }
 
   public void setTemplateNode(INamedConcept node) {
@@ -28,7 +28,7 @@ public class CreateRootRule extends BaseConcept {
   }
 
   public MappingLabelDeclaration getLabel() {
-    return (MappingLabelDeclaration)this.getReferent(MappingLabelDeclaration.class, CreateRootRule.LABEL);
+    return (MappingLabelDeclaration) this.getReferent(MappingLabelDeclaration.class, CreateRootRule.LABEL);
   }
 
   public void setLabel(MappingLabelDeclaration node) {
@@ -36,7 +36,7 @@ public class CreateRootRule extends BaseConcept {
   }
 
   public CreateRootRule_Condition getConditionFunction() {
-    return (CreateRootRule_Condition)this.getChild(CreateRootRule_Condition.class, CreateRootRule.CONDITION_FUNCTION);
+    return (CreateRootRule_Condition) this.getChild(CreateRootRule_Condition.class, CreateRootRule.CONDITION_FUNCTION);
   }
 
   public void setConditionFunction(CreateRootRule_Condition node) {
@@ -44,7 +44,7 @@ public class CreateRootRule extends BaseConcept {
   }
 
   public static CreateRootRule newInstance(SModel sm, boolean init) {
-    return (CreateRootRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.CreateRootRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CreateRootRule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.CreateRootRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CreateRootRule newInstance(SModel sm) {

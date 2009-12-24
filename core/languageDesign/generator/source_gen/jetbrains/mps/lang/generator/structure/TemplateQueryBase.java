@@ -16,7 +16,7 @@ public class TemplateQueryBase extends ConceptFunction {
   }
 
   public static TemplateQueryBase newInstance(SModel sm, boolean init) {
-    return (TemplateQueryBase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateQueryBase", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TemplateQueryBase) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateQueryBase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TemplateQueryBase newInstance(SModel sm) {

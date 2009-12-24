@@ -16,7 +16,7 @@ public class PreferencePageResetBlock extends ConceptFunction {
   }
 
   public static PreferencePageResetBlock newInstance(SModel sm, boolean init) {
-    return (PreferencePageResetBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PreferencePageResetBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PreferencePageResetBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PreferencePageResetBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PreferencePageResetBlock newInstance(SModel sm) {

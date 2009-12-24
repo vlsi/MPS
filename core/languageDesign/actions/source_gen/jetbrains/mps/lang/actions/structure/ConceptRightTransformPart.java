@@ -18,7 +18,7 @@ public class ConceptRightTransformPart extends MenuBuilderPart {
   }
 
   public ConceptDeclaration getConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, ConceptRightTransformPart.CONCEPT);
+    return (ConceptDeclaration) this.getReferent(ConceptDeclaration.class, ConceptRightTransformPart.CONCEPT);
   }
 
   public void setConcept(ConceptDeclaration node) {
@@ -26,7 +26,7 @@ public class ConceptRightTransformPart extends MenuBuilderPart {
   }
 
   public QueryFunction_SideTransform_ConceptHandler getHandler() {
-    return (QueryFunction_SideTransform_ConceptHandler)this.getChild(QueryFunction_SideTransform_ConceptHandler.class, ConceptRightTransformPart.HANDLER);
+    return (QueryFunction_SideTransform_ConceptHandler) this.getChild(QueryFunction_SideTransform_ConceptHandler.class, ConceptRightTransformPart.HANDLER);
   }
 
   public void setHandler(QueryFunction_SideTransform_ConceptHandler node) {
@@ -34,7 +34,7 @@ public class ConceptRightTransformPart extends MenuBuilderPart {
   }
 
   public static ConceptRightTransformPart newInstance(SModel sm, boolean init) {
-    return (ConceptRightTransformPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptRightTransformPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptRightTransformPart newInstance(SModel sm) {

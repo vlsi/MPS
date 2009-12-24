@@ -16,7 +16,7 @@ public class AffectedNodesClause extends ConceptFunction {
   }
 
   public static AffectedNodesClause newInstance(SModel sm, boolean init) {
-    return (AffectedNodesClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.AffectedNodesClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AffectedNodesClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.AffectedNodesClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AffectedNodesClause newInstance(SModel sm) {

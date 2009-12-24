@@ -16,7 +16,7 @@ public class DoWhenDoneClause extends ConceptFunction {
   }
 
   public static DoWhenDoneClause newInstance(SModel sm, boolean init) {
-    return (DoWhenDoneClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DoWhenDoneClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.DoWhenDoneClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DoWhenDoneClause newInstance(SModel sm) {

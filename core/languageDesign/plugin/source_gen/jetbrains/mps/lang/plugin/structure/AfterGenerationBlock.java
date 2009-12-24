@@ -16,7 +16,7 @@ public class AfterGenerationBlock extends ConceptFunction {
   }
 
   public static AfterGenerationBlock newInstance(SModel sm, boolean init) {
-    return (AfterGenerationBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.AfterGenerationBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AfterGenerationBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.AfterGenerationBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AfterGenerationBlock newInstance(SModel sm) {

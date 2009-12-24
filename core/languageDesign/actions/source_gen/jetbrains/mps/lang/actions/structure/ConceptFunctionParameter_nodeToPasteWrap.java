@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_nodeToPasteWrap extends ConceptFunctionPar
   }
 
   public static ConceptFunctionParameter_nodeToPasteWrap newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_nodeToPasteWrap)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPasteWrap", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_nodeToPasteWrap) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPasteWrap", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_nodeToPasteWrap newInstance(SModel sm) {

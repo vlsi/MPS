@@ -17,7 +17,7 @@ public class MoveNodesToNodeExpression extends AbstractMoveNodesExpression {
   }
 
   public Expression getRoleInTarget() {
-    return (Expression)this.getChild(Expression.class, MoveNodesToNodeExpression.ROLE_IN_TARGET);
+    return (Expression) this.getChild(Expression.class, MoveNodesToNodeExpression.ROLE_IN_TARGET);
   }
 
   public void setRoleInTarget(Expression node) {
@@ -25,7 +25,7 @@ public class MoveNodesToNodeExpression extends AbstractMoveNodesExpression {
   }
 
   public static MoveNodesToNodeExpression newInstance(SModel sm, boolean init) {
-    return (MoveNodesToNodeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MoveNodesToNodeExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.MoveNodesToNodeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MoveNodesToNodeExpression newInstance(SModel sm) {

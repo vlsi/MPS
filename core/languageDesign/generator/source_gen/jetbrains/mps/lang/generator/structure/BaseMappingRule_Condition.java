@@ -15,7 +15,7 @@ public class BaseMappingRule_Condition extends TemplateQueryBase {
   }
 
   public static BaseMappingRule_Condition newInstance(SModel sm, boolean init) {
-    return (BaseMappingRule_Condition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseMappingRule_Condition) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.BaseMappingRule_Condition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseMappingRule_Condition newInstance(SModel sm) {

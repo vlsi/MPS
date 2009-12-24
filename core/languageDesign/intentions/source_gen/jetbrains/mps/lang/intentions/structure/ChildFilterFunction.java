@@ -43,7 +43,7 @@ public class ChildFilterFunction extends ConceptFunction implements ChildFilterB
   }
 
   public static ChildFilterFunction newInstance(SModel sm, boolean init) {
-    return (ChildFilterFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.ChildFilterFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ChildFilterFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.ChildFilterFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ChildFilterFunction newInstance(SModel sm) {

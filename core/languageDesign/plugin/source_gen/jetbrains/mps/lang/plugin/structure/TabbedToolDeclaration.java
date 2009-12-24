@@ -15,7 +15,7 @@ public class TabbedToolDeclaration extends BaseToolDeclaration {
   }
 
   public static TabbedToolDeclaration newInstance(SModel sm, boolean init) {
-    return (TabbedToolDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TabbedToolDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.TabbedToolDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TabbedToolDeclaration newInstance(SModel sm) {

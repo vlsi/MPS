@@ -12,6 +12,6 @@ public class TemplateFragment_AnnotationLink {
   }
 
   public static TemplateFragment getTemplateFragment(BaseConcept source) {
-    return (TemplateFragment)source.getAttribute(TemplateFragment_AnnotationLink.TEMPLATE_FRAGMENT);
+    return (TemplateFragment) source.getAttribute(TemplateFragment_AnnotationLink.TEMPLATE_FRAGMENT);
   }
 }

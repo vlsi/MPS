@@ -44,7 +44,7 @@ public class ThisNodeExpression extends Expression implements IThisExpression {
   }
 
   public static ThisNodeExpression newInstance(SModel sm, boolean init) {
-    return (ThisNodeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.ThisNodeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ThisNodeExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.ThisNodeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ThisNodeExpression newInstance(SModel sm) {

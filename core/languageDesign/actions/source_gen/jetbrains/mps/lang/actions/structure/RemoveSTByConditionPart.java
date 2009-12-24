@@ -16,7 +16,7 @@ public class RemoveSTByConditionPart extends MenuBuilderPart {
   }
 
   public QueryFunction_ST_RemoveBy_Condition getCondition() {
-    return (QueryFunction_ST_RemoveBy_Condition)this.getChild(QueryFunction_ST_RemoveBy_Condition.class, RemoveSTByConditionPart.CONDITION);
+    return (QueryFunction_ST_RemoveBy_Condition) this.getChild(QueryFunction_ST_RemoveBy_Condition.class, RemoveSTByConditionPart.CONDITION);
   }
 
   public void setCondition(QueryFunction_ST_RemoveBy_Condition node) {
@@ -24,7 +24,7 @@ public class RemoveSTByConditionPart extends MenuBuilderPart {
   }
 
   public static RemoveSTByConditionPart newInstance(SModel sm, boolean init) {
-    return (RemoveSTByConditionPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RemoveSTByConditionPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RemoveSTByConditionPart newInstance(SModel sm) {

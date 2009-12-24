@@ -16,7 +16,7 @@ public class PropertyRefType extends Type {
   }
 
   public static PropertyRefType newInstance(SModel sm, boolean init) {
-    return (PropertyRefType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PropertyRefType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyRefType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PropertyRefType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyRefType newInstance(SModel sm) {

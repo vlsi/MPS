@@ -15,7 +15,7 @@ public class DoUpdateBlock extends UpdateBlock {
   }
 
   public static DoUpdateBlock newInstance(SModel sm, boolean init) {
-    return (DoUpdateBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.DoUpdateBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DoUpdateBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.DoUpdateBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DoUpdateBlock newInstance(SModel sm) {

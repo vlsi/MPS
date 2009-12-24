@@ -16,7 +16,7 @@ public class CreateRunConfigBlock extends ConceptFunction {
   }
 
   public static CreateRunConfigBlock newInstance(SModel sm, boolean init) {
-    return (CreateRunConfigBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CreateRunConfigBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CreateRunConfigBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CreateRunConfigBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CreateRunConfigBlock newInstance(SModel sm) {

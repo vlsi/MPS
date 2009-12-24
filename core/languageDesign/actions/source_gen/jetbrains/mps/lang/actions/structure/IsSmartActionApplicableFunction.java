@@ -16,7 +16,7 @@ public class IsSmartActionApplicableFunction extends ConceptFunction {
   }
 
   public static IsSmartActionApplicableFunction newInstance(SModel sm, boolean init) {
-    return (IsSmartActionApplicableFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.IsSmartActionApplicableFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IsSmartActionApplicableFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.IsSmartActionApplicableFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IsSmartActionApplicableFunction newInstance(SModel sm) {

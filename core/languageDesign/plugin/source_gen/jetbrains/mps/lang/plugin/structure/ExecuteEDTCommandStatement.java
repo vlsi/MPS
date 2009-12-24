@@ -15,7 +15,7 @@ public class ExecuteEDTCommandStatement extends BaseExecuteCommandStatement {
   }
 
   public static ExecuteEDTCommandStatement newInstance(SModel sm, boolean init) {
-    return (ExecuteEDTCommandStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ExecuteEDTCommandStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExecuteEDTCommandStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ExecuteEDTCommandStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExecuteEDTCommandStatement newInstance(SModel sm) {

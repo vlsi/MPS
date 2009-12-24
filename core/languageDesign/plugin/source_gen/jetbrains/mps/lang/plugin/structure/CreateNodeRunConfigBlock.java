@@ -15,7 +15,7 @@ public class CreateNodeRunConfigBlock extends BaseCreateRunConfigFunction {
   }
 
   public static CreateNodeRunConfigBlock newInstance(SModel sm, boolean init) {
-    return (CreateNodeRunConfigBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CreateNodeRunConfigBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CreateNodeRunConfigBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CreateNodeRunConfigBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CreateNodeRunConfigBlock newInstance(SModel sm) {

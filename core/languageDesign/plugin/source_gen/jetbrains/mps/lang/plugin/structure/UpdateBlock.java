@@ -16,7 +16,7 @@ public class UpdateBlock extends ConceptFunction {
   }
 
   public static UpdateBlock newInstance(SModel sm, boolean init) {
-    return (UpdateBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.UpdateBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UpdateBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.UpdateBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UpdateBlock newInstance(SModel sm) {

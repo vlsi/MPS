@@ -16,7 +16,7 @@ public class DisposeEditorBlock extends ConceptFunction {
   }
 
   public static DisposeEditorBlock newInstance(SModel sm, boolean init) {
-    return (DisposeEditorBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.DisposeEditorBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DisposeEditorBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.DisposeEditorBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DisposeEditorBlock newInstance(SModel sm) {

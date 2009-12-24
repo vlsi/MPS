@@ -57,7 +57,7 @@ public class TemplateDeclaration extends BaseConcept implements INamedConcept, I
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, TemplateDeclaration.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, TemplateDeclaration.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {
@@ -65,7 +65,7 @@ public class TemplateDeclaration extends BaseConcept implements INamedConcept, I
   }
 
   public BaseConcept getContentNode() {
-    return (BaseConcept)this.getChild(BaseConcept.class, TemplateDeclaration.CONTENT_NODE);
+    return (BaseConcept) this.getChild(BaseConcept.class, TemplateDeclaration.CONTENT_NODE);
   }
 
   public void setContentNode(BaseConcept node) {
@@ -73,7 +73,7 @@ public class TemplateDeclaration extends BaseConcept implements INamedConcept, I
   }
 
   public static TemplateDeclaration newInstance(SModel sm, boolean init) {
-    return (TemplateDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TemplateDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TemplateDeclaration newInstance(SModel sm) {

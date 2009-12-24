@@ -54,7 +54,7 @@ public class FooConcept extends BaseConcept implements INamedConcept {
   }
 
   public BarConcept getBar() {
-    return (BarConcept)this.getReferent(BarConcept.class, FooConcept.BAR);
+    return (BarConcept) this.getReferent(BarConcept.class, FooConcept.BAR);
   }
 
   public void setBar(BarConcept node) {
@@ -62,7 +62,7 @@ public class FooConcept extends BaseConcept implements INamedConcept {
   }
 
   public static FooConcept newInstance(SModel sm, boolean init) {
-    return (FooConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.FooConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FooConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.FooConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FooConcept newInstance(SModel sm) {

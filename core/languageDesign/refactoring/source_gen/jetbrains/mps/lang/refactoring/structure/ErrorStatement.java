@@ -18,7 +18,7 @@ public class ErrorStatement extends Statement {
   }
 
   public Expression getError() {
-    return (Expression)this.getChild(Expression.class, ErrorStatement.ERROR);
+    return (Expression) this.getChild(Expression.class, ErrorStatement.ERROR);
   }
 
   public void setError(Expression node) {
@@ -26,7 +26,7 @@ public class ErrorStatement extends Statement {
   }
 
   public static ErrorStatement newInstance(SModel sm, boolean init) {
-    return (ErrorStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ErrorStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ErrorStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ErrorStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ErrorStatement newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class ConceptFunctionParameter_node extends ConceptFunctionParameter_Crea
   }
 
   public static ConceptFunctionParameter_node newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_node)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_node) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_node", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_node newInstance(SModel sm) {

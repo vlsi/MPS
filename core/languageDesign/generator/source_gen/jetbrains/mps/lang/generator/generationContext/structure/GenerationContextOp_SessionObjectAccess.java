@@ -15,7 +15,7 @@ public class GenerationContextOp_SessionObjectAccess extends GenerationContextOp
   }
 
   public static GenerationContextOp_SessionObjectAccess newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_SessionObjectAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_SessionObjectAccess) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_SessionObjectAccess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_SessionObjectAccess newInstance(SModel sm) {

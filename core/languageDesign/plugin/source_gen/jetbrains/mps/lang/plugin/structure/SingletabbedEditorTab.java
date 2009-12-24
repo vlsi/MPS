@@ -16,7 +16,7 @@ public class SingletabbedEditorTab extends AbstractEditorTab {
   }
 
   public GetNodeBlock getGetNodeBlock() {
-    return (GetNodeBlock)this.getChild(GetNodeBlock.class, SingletabbedEditorTab.GET_NODE_BLOCK);
+    return (GetNodeBlock) this.getChild(GetNodeBlock.class, SingletabbedEditorTab.GET_NODE_BLOCK);
   }
 
   public void setGetNodeBlock(GetNodeBlock node) {
@@ -24,7 +24,7 @@ public class SingletabbedEditorTab extends AbstractEditorTab {
   }
 
   public static SingletabbedEditorTab newInstance(SModel sm, boolean init) {
-    return (SingletabbedEditorTab)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.SingletabbedEditorTab", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SingletabbedEditorTab) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.SingletabbedEditorTab", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SingletabbedEditorTab newInstance(SModel sm) {

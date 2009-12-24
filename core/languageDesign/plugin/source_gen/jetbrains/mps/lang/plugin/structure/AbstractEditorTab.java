@@ -73,7 +73,7 @@ public class AbstractEditorTab extends BaseConcept implements IClassifier, IChec
   }
 
   public InitTabBlock getInitBlock() {
-    return (InitTabBlock)this.getChild(InitTabBlock.class, AbstractEditorTab.INIT_BLOCK);
+    return (InitTabBlock) this.getChild(InitTabBlock.class, AbstractEditorTab.INIT_BLOCK);
   }
 
   public void setInitBlock(InitTabBlock node) {
@@ -81,7 +81,7 @@ public class AbstractEditorTab extends BaseConcept implements IClassifier, IChec
   }
 
   public CreateBlock getCreateBlock() {
-    return (CreateBlock)this.getChild(CreateBlock.class, AbstractEditorTab.CREATE_BLOCK);
+    return (CreateBlock) this.getChild(CreateBlock.class, AbstractEditorTab.CREATE_BLOCK);
   }
 
   public void setCreateBlock(CreateBlock node) {
@@ -89,7 +89,7 @@ public class AbstractEditorTab extends BaseConcept implements IClassifier, IChec
   }
 
   public static AbstractEditorTab newInstance(SModel sm, boolean init) {
-    return (AbstractEditorTab)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.AbstractEditorTab", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractEditorTab) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.AbstractEditorTab", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractEditorTab newInstance(SModel sm) {

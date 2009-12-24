@@ -18,7 +18,7 @@ public class RequiredUserEnteredArgument extends RequiredAdditionalArgument {
   }
 
   public FilterArgumentClause getFilterClause() {
-    return (FilterArgumentClause)this.getChild(FilterArgumentClause.class, RequiredUserEnteredArgument.FILTER_CLAUSE);
+    return (FilterArgumentClause) this.getChild(FilterArgumentClause.class, RequiredUserEnteredArgument.FILTER_CLAUSE);
   }
 
   public void setFilterClause(FilterArgumentClause node) {
@@ -26,7 +26,7 @@ public class RequiredUserEnteredArgument extends RequiredAdditionalArgument {
   }
 
   public ChooseComponentClause getChooseComponentClause() {
-    return (ChooseComponentClause)this.getChild(ChooseComponentClause.class, RequiredUserEnteredArgument.CHOOSE_COMPONENT_CLAUSE);
+    return (ChooseComponentClause) this.getChild(ChooseComponentClause.class, RequiredUserEnteredArgument.CHOOSE_COMPONENT_CLAUSE);
   }
 
   public void setChooseComponentClause(ChooseComponentClause node) {
@@ -34,7 +34,7 @@ public class RequiredUserEnteredArgument extends RequiredAdditionalArgument {
   }
 
   public InitialValueClause getInitialValue() {
-    return (InitialValueClause)this.getChild(InitialValueClause.class, RequiredUserEnteredArgument.INITIAL_VALUE);
+    return (InitialValueClause) this.getChild(InitialValueClause.class, RequiredUserEnteredArgument.INITIAL_VALUE);
   }
 
   public void setInitialValue(InitialValueClause node) {
@@ -42,7 +42,7 @@ public class RequiredUserEnteredArgument extends RequiredAdditionalArgument {
   }
 
   public static RequiredUserEnteredArgument newInstance(SModel sm, boolean init) {
-    return (RequiredUserEnteredArgument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RequiredUserEnteredArgument) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RequiredUserEnteredArgument newInstance(SModel sm) {

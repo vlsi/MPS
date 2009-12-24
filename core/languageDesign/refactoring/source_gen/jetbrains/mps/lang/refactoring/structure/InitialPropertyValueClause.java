@@ -16,7 +16,7 @@ public class InitialPropertyValueClause extends ConceptFunction {
   }
 
   public static InitialPropertyValueClause newInstance(SModel sm, boolean init) {
-    return (InitialPropertyValueClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.InitialPropertyValueClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InitialPropertyValueClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.InitialPropertyValueClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InitialPropertyValueClause newInstance(SModel sm) {

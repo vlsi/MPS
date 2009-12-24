@@ -53,7 +53,7 @@ public class BarConcept extends BaseConcept implements INamedConcept {
   }
 
   public static BarConcept newInstance(SModel sm, boolean init) {
-    return (BarConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.BarConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BarConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.BarConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BarConcept newInstance(SModel sm) {

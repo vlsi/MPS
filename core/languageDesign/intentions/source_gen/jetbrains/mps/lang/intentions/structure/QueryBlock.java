@@ -18,7 +18,7 @@ public class QueryBlock extends ConceptFunction {
   }
 
   public Type getParamType() {
-    return (Type)this.getChild(Type.class, QueryBlock.PARAM_TYPE);
+    return (Type) this.getChild(Type.class, QueryBlock.PARAM_TYPE);
   }
 
   public void setParamType(Type node) {
@@ -26,7 +26,7 @@ public class QueryBlock extends ConceptFunction {
   }
 
   public static QueryBlock newInstance(SModel sm, boolean init) {
-    return (QueryBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.QueryBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.QueryBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryBlock newInstance(SModel sm) {

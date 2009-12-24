@@ -67,7 +67,7 @@ public class PreferencePage extends BaseConcept implements INamedConcept, ICheck
   }
 
   public Expression getComponent() {
-    return (Expression)this.getChild(Expression.class, PreferencePage.COMPONENT);
+    return (Expression) this.getChild(Expression.class, PreferencePage.COMPONENT);
   }
 
   public void setComponent(Expression node) {
@@ -75,7 +75,7 @@ public class PreferencePage extends BaseConcept implements INamedConcept, ICheck
   }
 
   public PreferencePageIsModifiedBlock getIsModifiedBlock() {
-    return (PreferencePageIsModifiedBlock)this.getChild(PreferencePageIsModifiedBlock.class, PreferencePage.IS_MODIFIED_BLOCK);
+    return (PreferencePageIsModifiedBlock) this.getChild(PreferencePageIsModifiedBlock.class, PreferencePage.IS_MODIFIED_BLOCK);
   }
 
   public void setIsModifiedBlock(PreferencePageIsModifiedBlock node) {
@@ -83,7 +83,7 @@ public class PreferencePage extends BaseConcept implements INamedConcept, ICheck
   }
 
   public PreferencePageResetBlock getResetBlock() {
-    return (PreferencePageResetBlock)this.getChild(PreferencePageResetBlock.class, PreferencePage.RESET_BLOCK);
+    return (PreferencePageResetBlock) this.getChild(PreferencePageResetBlock.class, PreferencePage.RESET_BLOCK);
   }
 
   public void setResetBlock(PreferencePageResetBlock node) {
@@ -91,7 +91,7 @@ public class PreferencePage extends BaseConcept implements INamedConcept, ICheck
   }
 
   public PreferencePageCommitBlock getCommitBlock() {
-    return (PreferencePageCommitBlock)this.getChild(PreferencePageCommitBlock.class, PreferencePage.COMMIT_BLOCK);
+    return (PreferencePageCommitBlock) this.getChild(PreferencePageCommitBlock.class, PreferencePage.COMMIT_BLOCK);
   }
 
   public void setCommitBlock(PreferencePageCommitBlock node) {
@@ -99,7 +99,7 @@ public class PreferencePage extends BaseConcept implements INamedConcept, ICheck
   }
 
   public static PreferencePage newInstance(SModel sm, boolean init) {
-    return (PreferencePage)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PreferencePage", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PreferencePage) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PreferencePage", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PreferencePage newInstance(SModel sm) {

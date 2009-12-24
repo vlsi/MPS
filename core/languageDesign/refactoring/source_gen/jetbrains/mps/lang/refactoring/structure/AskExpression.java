@@ -39,7 +39,7 @@ public class AskExpression extends Expression {
   }
 
   public static AskExpression newInstance(SModel sm, boolean init) {
-    return (AskExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.AskExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AskExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.AskExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AskExpression newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class BaseClassifierType extends Type {
   }
 
   public static BaseClassifierType newInstance(SModel sm, boolean init) {
-    return (BaseClassifierType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseClassifierType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseClassifierType newInstance(SModel sm) {

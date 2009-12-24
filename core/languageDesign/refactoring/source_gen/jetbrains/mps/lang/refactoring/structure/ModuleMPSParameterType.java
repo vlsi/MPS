@@ -15,7 +15,7 @@ public class ModuleMPSParameterType extends MPSParameterType {
   }
 
   public static ModuleMPSParameterType newInstance(SModel sm, boolean init) {
-    return (ModuleMPSParameterType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ModuleMPSParameterType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ModuleMPSParameterType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ModuleMPSParameterType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ModuleMPSParameterType newInstance(SModel sm) {

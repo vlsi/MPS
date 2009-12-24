@@ -16,7 +16,7 @@ public class RefactoringParameterChooser extends BaseConcept {
   }
 
   public static RefactoringParameterChooser newInstance(SModel sm, boolean init) {
-    return (RefactoringParameterChooser)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RefactoringParameterChooser", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RefactoringParameterChooser) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RefactoringParameterChooser", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RefactoringParameterChooser newInstance(SModel sm) {

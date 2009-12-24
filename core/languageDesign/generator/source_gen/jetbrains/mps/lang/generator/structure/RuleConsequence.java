@@ -16,7 +16,7 @@ public class RuleConsequence extends BaseConcept {
   }
 
   public static RuleConsequence newInstance(SModel sm, boolean init) {
-    return (RuleConsequence)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.RuleConsequence", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RuleConsequence) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.RuleConsequence", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RuleConsequence newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class GenerationContextOp_ShowErrorMessage extends GenerationContextOp_Sh
   }
 
   public static GenerationContextOp_ShowErrorMessage newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_ShowErrorMessage)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_ShowErrorMessage) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowErrorMessage", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_ShowErrorMessage newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class ActionType extends BaseClassifierType {
   }
 
   public ActionDeclaration getAction() {
-    return (ActionDeclaration)this.getReferent(ActionDeclaration.class, ActionType.ACTION);
+    return (ActionDeclaration) this.getReferent(ActionDeclaration.class, ActionType.ACTION);
   }
 
   public void setAction(ActionDeclaration node) {
@@ -25,7 +25,7 @@ public class ActionType extends BaseClassifierType {
   }
 
   public static ActionType newInstance(SModel sm, boolean init) {
-    return (ActionType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ActionType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ActionType newInstance(SModel sm) {

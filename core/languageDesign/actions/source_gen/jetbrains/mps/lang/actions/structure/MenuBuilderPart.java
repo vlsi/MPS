@@ -16,7 +16,7 @@ public class MenuBuilderPart extends BaseConcept {
   }
 
   public static MenuBuilderPart newInstance(SModel sm, boolean init) {
-    return (MenuBuilderPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.MenuBuilderPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MenuBuilderPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.MenuBuilderPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MenuBuilderPart newInstance(SModel sm) {

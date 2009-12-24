@@ -15,7 +15,7 @@ public class CreateModelRunConfigBlock extends BaseCreateRunConfigFunction {
   }
 
   public static CreateModelRunConfigBlock newInstance(SModel sm, boolean init) {
-    return (CreateModelRunConfigBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CreateModelRunConfigBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CreateModelRunConfigBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CreateModelRunConfigBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CreateModelRunConfigBlock newInstance(SModel sm) {

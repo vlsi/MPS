@@ -16,7 +16,7 @@ public class QueryFunction_GenericSubstituteMenuPart extends ConceptFunction {
   }
 
   public static QueryFunction_GenericSubstituteMenuPart newInstance(SModel sm, boolean init) {
-    return (QueryFunction_GenericSubstituteMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_GenericSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_GenericSubstituteMenuPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_GenericSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_GenericSubstituteMenuPart newInstance(SModel sm) {

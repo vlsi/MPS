@@ -55,7 +55,7 @@ public class StaticConceptMethodDeclaration extends BaseMethodDeclaration implem
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, StaticConceptMethodDeclaration.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, StaticConceptMethodDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -63,7 +63,7 @@ public class StaticConceptMethodDeclaration extends BaseMethodDeclaration implem
   }
 
   public static StaticConceptMethodDeclaration newInstance(SModel sm, boolean init) {
-    return (StaticConceptMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StaticConceptMethodDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StaticConceptMethodDeclaration newInstance(SModel sm) {

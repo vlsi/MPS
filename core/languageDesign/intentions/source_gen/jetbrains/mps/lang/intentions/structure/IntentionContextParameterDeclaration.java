@@ -55,7 +55,7 @@ public class IntentionContextParameterDeclaration extends BaseConcept implements
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, IntentionContextParameterDeclaration.TYPE);
+    return (Type) this.getChild(Type.class, IntentionContextParameterDeclaration.TYPE);
   }
 
   public void setType(Type node) {
@@ -63,7 +63,7 @@ public class IntentionContextParameterDeclaration extends BaseConcept implements
   }
 
   public static IntentionContextParameterDeclaration newInstance(SModel sm, boolean init) {
-    return (IntentionContextParameterDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionContextParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntentionContextParameterDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionContextParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntentionContextParameterDeclaration newInstance(SModel sm) {

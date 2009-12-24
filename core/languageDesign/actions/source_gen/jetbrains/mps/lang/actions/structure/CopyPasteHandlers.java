@@ -98,7 +98,7 @@ public class CopyPasteHandlers extends BaseConcept implements INamedConcept, ICo
   }
 
   public static CopyPasteHandlers newInstance(SModel sm, boolean init) {
-    return (CopyPasteHandlers)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.CopyPasteHandlers", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CopyPasteHandlers) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.CopyPasteHandlers", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CopyPasteHandlers newInstance(SModel sm) {

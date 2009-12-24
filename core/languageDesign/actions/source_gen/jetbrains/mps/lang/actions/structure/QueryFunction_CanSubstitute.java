@@ -16,7 +16,7 @@ public class QueryFunction_CanSubstitute extends ConceptFunction {
   }
 
   public static QueryFunction_CanSubstitute newInstance(SModel sm, boolean init) {
-    return (QueryFunction_CanSubstitute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_CanSubstitute", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_CanSubstitute) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_CanSubstitute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_CanSubstitute newInstance(SModel sm) {

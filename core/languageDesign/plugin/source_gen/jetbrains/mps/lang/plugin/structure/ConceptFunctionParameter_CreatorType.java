@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_CreatorType extends ConceptFunctionParamet
   }
 
   public static ConceptFunctionParameter_CreatorType newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_CreatorType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_CreatorType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_CreatorType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_CreatorType newInstance(SModel sm) {

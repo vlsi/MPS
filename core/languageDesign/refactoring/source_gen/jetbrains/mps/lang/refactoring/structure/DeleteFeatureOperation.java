@@ -45,7 +45,7 @@ public class DeleteFeatureOperation extends Statement implements RefactoringActi
   }
 
   public Expression getFeature() {
-    return (Expression)this.getChild(Expression.class, DeleteFeatureOperation.FEATURE);
+    return (Expression) this.getChild(Expression.class, DeleteFeatureOperation.FEATURE);
   }
 
   public void setFeature(Expression node) {
@@ -53,7 +53,7 @@ public class DeleteFeatureOperation extends Statement implements RefactoringActi
   }
 
   public static DeleteFeatureOperation newInstance(SModel sm, boolean init) {
-    return (DeleteFeatureOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DeleteFeatureOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.DeleteFeatureOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DeleteFeatureOperation newInstance(SModel sm) {

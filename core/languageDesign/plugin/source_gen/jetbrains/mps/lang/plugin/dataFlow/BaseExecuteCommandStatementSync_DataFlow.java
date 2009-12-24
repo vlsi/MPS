@@ -13,6 +13,6 @@ public class BaseExecuteCommandStatementSync_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true), "body", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "commandClosureLiteral", true), "body", true));
   }
 }

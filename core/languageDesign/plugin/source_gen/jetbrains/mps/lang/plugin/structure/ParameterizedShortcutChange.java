@@ -15,7 +15,7 @@ public class ParameterizedShortcutChange extends ShortcutChange {
   }
 
   public static ParameterizedShortcutChange newInstance(SModel sm, boolean init) {
-    return (ParameterizedShortcutChange)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParameterizedShortcutChange) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ParameterizedShortcutChange", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParameterizedShortcutChange newInstance(SModel sm) {

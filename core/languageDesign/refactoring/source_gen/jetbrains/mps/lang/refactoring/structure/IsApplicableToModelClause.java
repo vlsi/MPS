@@ -16,7 +16,7 @@ public class IsApplicableToModelClause extends ConceptFunction {
   }
 
   public static IsApplicableToModelClause newInstance(SModel sm, boolean init) {
-    return (IsApplicableToModelClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IsApplicableToModelClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.IsApplicableToModelClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IsApplicableToModelClause newInstance(SModel sm) {

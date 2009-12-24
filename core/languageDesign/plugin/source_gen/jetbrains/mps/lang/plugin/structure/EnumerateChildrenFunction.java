@@ -16,7 +16,7 @@ public class EnumerateChildrenFunction extends ConceptFunction {
   }
 
   public static EnumerateChildrenFunction newInstance(SModel sm, boolean init) {
-    return (EnumerateChildrenFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.EnumerateChildrenFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EnumerateChildrenFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.EnumerateChildrenFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EnumerateChildrenFunction newInstance(SModel sm) {

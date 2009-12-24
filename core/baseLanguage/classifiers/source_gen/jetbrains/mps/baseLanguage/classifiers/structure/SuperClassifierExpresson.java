@@ -16,7 +16,7 @@ public class SuperClassifierExpresson extends Expression {
   }
 
   public static SuperClassifierExpresson newInstance(SModel sm, boolean init) {
-    return (SuperClassifierExpresson)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.SuperClassifierExpresson", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SuperClassifierExpresson) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.SuperClassifierExpresson", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SuperClassifierExpresson newInstance(SModel sm) {

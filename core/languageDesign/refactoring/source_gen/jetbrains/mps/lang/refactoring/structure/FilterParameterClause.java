@@ -16,7 +16,7 @@ public class FilterParameterClause extends ConceptFunction {
   }
 
   public static FilterParameterClause newInstance(SModel sm, boolean init) {
-    return (FilterParameterClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.FilterParameterClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FilterParameterClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.FilterParameterClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FilterParameterClause newInstance(SModel sm) {

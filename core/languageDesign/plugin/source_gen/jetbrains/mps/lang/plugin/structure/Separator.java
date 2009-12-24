@@ -43,7 +43,7 @@ public class Separator extends BaseConcept implements ActionGroupMember {
   }
 
   public static Separator newInstance(SModel sm, boolean init) {
-    return (Separator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.Separator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Separator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.Separator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Separator newInstance(SModel sm) {

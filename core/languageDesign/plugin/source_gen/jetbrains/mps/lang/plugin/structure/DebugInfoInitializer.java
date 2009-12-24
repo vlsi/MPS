@@ -39,7 +39,7 @@ public class DebugInfoInitializer extends BaseConcept {
   }
 
   public static DebugInfoInitializer newInstance(SModel sm, boolean init) {
-    return (DebugInfoInitializer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.DebugInfoInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DebugInfoInitializer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.DebugInfoInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DebugInfoInitializer newInstance(SModel sm) {

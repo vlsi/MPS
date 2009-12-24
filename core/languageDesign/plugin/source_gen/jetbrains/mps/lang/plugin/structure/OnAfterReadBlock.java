@@ -16,7 +16,7 @@ public class OnAfterReadBlock extends ConceptFunction {
   }
 
   public static OnAfterReadBlock newInstance(SModel sm, boolean init) {
-    return (OnAfterReadBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.OnAfterReadBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OnAfterReadBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.OnAfterReadBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OnAfterReadBlock newInstance(SModel sm) {

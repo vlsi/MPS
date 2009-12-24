@@ -16,7 +16,7 @@ public class SideTransformHintSubstitutePreconditionFunction extends ConceptFunc
   }
 
   public static SideTransformHintSubstitutePreconditionFunction newInstance(SModel sm, boolean init) {
-    return (SideTransformHintSubstitutePreconditionFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SideTransformHintSubstitutePreconditionFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SideTransformHintSubstitutePreconditionFunction newInstance(SModel sm) {

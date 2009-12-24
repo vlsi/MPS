@@ -10,6 +10,6 @@ public class Generator_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("b401a680-8325-4110-8fd3-84331ff25bef(jetbrains.mps.lang.generator)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

@@ -16,7 +16,7 @@ public class DismissTopMappingRule extends RuleConsequence {
   }
 
   public GeneratorMessage getGeneratorMessage() {
-    return (GeneratorMessage)this.getChild(GeneratorMessage.class, DismissTopMappingRule.GENERATOR_MESSAGE);
+    return (GeneratorMessage) this.getChild(GeneratorMessage.class, DismissTopMappingRule.GENERATOR_MESSAGE);
   }
 
   public void setGeneratorMessage(GeneratorMessage node) {
@@ -24,7 +24,7 @@ public class DismissTopMappingRule extends RuleConsequence {
   }
 
   public static DismissTopMappingRule newInstance(SModel sm, boolean init) {
-    return (DismissTopMappingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.DismissTopMappingRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DismissTopMappingRule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.DismissTopMappingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DismissTopMappingRule newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class PrintStatement_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode textExpression : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "textExpression", true))) {
-      _context.getBuilder().build((SNode)textExpression);
+      _context.getBuilder().build((SNode) textExpression);
     }
   }
 }

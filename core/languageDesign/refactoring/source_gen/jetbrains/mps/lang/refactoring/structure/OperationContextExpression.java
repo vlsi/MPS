@@ -15,7 +15,7 @@ public class OperationContextExpression extends AbstractUIArgumentExpression {
   }
 
   public static OperationContextExpression newInstance(SModel sm, boolean init) {
-    return (OperationContextExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.OperationContextExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OperationContextExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.OperationContextExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OperationContextExpression newInstance(SModel sm) {

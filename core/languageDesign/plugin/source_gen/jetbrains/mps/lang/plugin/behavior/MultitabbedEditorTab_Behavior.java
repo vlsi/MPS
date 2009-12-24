@@ -17,10 +17,10 @@ public class MultitabbedEditorTab_Behavior {
   }
 
   public static SNode call_createType_144706109457735808(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab"), "virtual_createType_1213877527970", PARAMETERS_144706109457735808);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab"), "virtual_createType_1213877527970", PARAMETERS_144706109457735808);
   }
 
   public static SNode callSuper_createType_144706109457735808(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_144706109457735808);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab"), callerConceptFqName, "virtual_createType_1213877527970", PARAMETERS_144706109457735808);
   }
 }

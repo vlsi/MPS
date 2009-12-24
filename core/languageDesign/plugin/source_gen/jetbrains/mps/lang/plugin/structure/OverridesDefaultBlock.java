@@ -16,7 +16,7 @@ public class OverridesDefaultBlock extends ConceptFunction {
   }
 
   public static OverridesDefaultBlock newInstance(SModel sm, boolean init) {
-    return (OverridesDefaultBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.OverridesDefaultBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OverridesDefaultBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.OverridesDefaultBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OverridesDefaultBlock newInstance(SModel sm) {

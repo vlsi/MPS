@@ -74,7 +74,7 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration implements I
   }
 
   public ConceptMethodDeclaration getOverriddenMethod() {
-    return (ConceptMethodDeclaration)this.getReferent(ConceptMethodDeclaration.class, ConceptMethodDeclaration.OVERRIDDEN_METHOD);
+    return (ConceptMethodDeclaration) this.getReferent(ConceptMethodDeclaration.class, ConceptMethodDeclaration.OVERRIDDEN_METHOD);
   }
 
   public void setOverriddenMethod(ConceptMethodDeclaration node) {
@@ -82,7 +82,7 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration implements I
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, ConceptMethodDeclaration.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, ConceptMethodDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -90,7 +90,7 @@ public class ConceptMethodDeclaration extends BaseMethodDeclaration implements I
   }
 
   public static ConceptMethodDeclaration newInstance(SModel sm, boolean init) {
-    return (ConceptMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptMethodDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptMethodDeclaration newInstance(SModel sm) {

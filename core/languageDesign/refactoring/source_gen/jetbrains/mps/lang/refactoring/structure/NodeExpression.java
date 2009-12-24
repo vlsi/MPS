@@ -15,7 +15,7 @@ public class NodeExpression extends AbstractUIArgumentExpression {
   }
 
   public static NodeExpression newInstance(SModel sm, boolean init) {
-    return (NodeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.NodeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.NodeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeExpression newInstance(SModel sm) {

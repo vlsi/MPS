@@ -20,7 +20,7 @@ public class SimpleItemSubstitutePart extends SubstituteMenuPart {
   }
 
   public ISubstitute_String getMatchingText() {
-    return (ISubstitute_String)this.getChild(ISubstitute_String.class, SimpleItemSubstitutePart.MATCHING_TEXT);
+    return (ISubstitute_String) this.getChild(ISubstitute_String.class, SimpleItemSubstitutePart.MATCHING_TEXT);
   }
 
   public void setMatchingText(ISubstitute_String node) {
@@ -28,7 +28,7 @@ public class SimpleItemSubstitutePart extends SubstituteMenuPart {
   }
 
   public ISubstitute_String getDescriptionText() {
-    return (ISubstitute_String)this.getChild(ISubstitute_String.class, SimpleItemSubstitutePart.DESCRIPTION_TEXT);
+    return (ISubstitute_String) this.getChild(ISubstitute_String.class, SimpleItemSubstitutePart.DESCRIPTION_TEXT);
   }
 
   public void setDescriptionText(ISubstitute_String node) {
@@ -36,7 +36,7 @@ public class SimpleItemSubstitutePart extends SubstituteMenuPart {
   }
 
   public QueryFunction_SubstituteIcon getIcon() {
-    return (QueryFunction_SubstituteIcon)this.getChild(QueryFunction_SubstituteIcon.class, SimpleItemSubstitutePart.ICON);
+    return (QueryFunction_SubstituteIcon) this.getChild(QueryFunction_SubstituteIcon.class, SimpleItemSubstitutePart.ICON);
   }
 
   public void setIcon(QueryFunction_SubstituteIcon node) {
@@ -44,7 +44,7 @@ public class SimpleItemSubstitutePart extends SubstituteMenuPart {
   }
 
   public QueryFunction_CanSubstitute getCanSubstitute() {
-    return (QueryFunction_CanSubstitute)this.getChild(QueryFunction_CanSubstitute.class, SimpleItemSubstitutePart.CAN_SUBSTITUTE);
+    return (QueryFunction_CanSubstitute) this.getChild(QueryFunction_CanSubstitute.class, SimpleItemSubstitutePart.CAN_SUBSTITUTE);
   }
 
   public void setCanSubstitute(QueryFunction_CanSubstitute node) {
@@ -52,7 +52,7 @@ public class SimpleItemSubstitutePart extends SubstituteMenuPart {
   }
 
   public QueryFunction_Substitute_Handler getHandler() {
-    return (QueryFunction_Substitute_Handler)this.getChild(QueryFunction_Substitute_Handler.class, SimpleItemSubstitutePart.HANDLER);
+    return (QueryFunction_Substitute_Handler) this.getChild(QueryFunction_Substitute_Handler.class, SimpleItemSubstitutePart.HANDLER);
   }
 
   public void setHandler(QueryFunction_Substitute_Handler node) {
@@ -60,7 +60,7 @@ public class SimpleItemSubstitutePart extends SubstituteMenuPart {
   }
 
   public static SimpleItemSubstitutePart newInstance(SModel sm, boolean init) {
-    return (SimpleItemSubstitutePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleItemSubstitutePart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SimpleItemSubstitutePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleItemSubstitutePart newInstance(SModel sm) {

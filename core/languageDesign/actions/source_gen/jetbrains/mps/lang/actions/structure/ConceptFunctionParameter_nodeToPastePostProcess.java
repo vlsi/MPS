@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_nodeToPastePostProcess extends ConceptFunc
   }
 
   public static ConceptFunctionParameter_nodeToPastePostProcess newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_nodeToPastePostProcess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPastePostProcess", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_nodeToPastePostProcess) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToPastePostProcess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_nodeToPastePostProcess newInstance(SModel sm) {

@@ -46,7 +46,7 @@ public class PersistentPropertyReference extends BaseConcept implements IMemberO
   }
 
   public IMember getMember() {
-    return (IMember)this.getReferent(IMember.class, PersistentPropertyReference.MEMBER);
+    return (IMember) this.getReferent(IMember.class, PersistentPropertyReference.MEMBER);
   }
 
   public void setMember(IMember node) {
@@ -62,7 +62,7 @@ public class PersistentPropertyReference extends BaseConcept implements IMemberO
   }
 
   public static PersistentPropertyReference newInstance(SModel sm, boolean init) {
-    return (PersistentPropertyReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PersistentPropertyReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PersistentPropertyReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PersistentPropertyReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PersistentPropertyReference newInstance(SModel sm) {

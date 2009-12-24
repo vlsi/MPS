@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_OutputRootDir extends ConceptFunctionParam
   }
 
   public static ConceptFunctionParameter_OutputRootDir newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_OutputRootDir)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootDir", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_OutputRootDir) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootDir", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_OutputRootDir newInstance(SModel sm) {

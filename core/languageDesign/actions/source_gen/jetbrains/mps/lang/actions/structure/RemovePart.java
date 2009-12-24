@@ -17,7 +17,7 @@ public class RemovePart extends MenuBuilderPart {
   }
 
   public ConceptDeclaration getConceptToRemove() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, RemovePart.CONCEPT_TO_REMOVE);
+    return (ConceptDeclaration) this.getReferent(ConceptDeclaration.class, RemovePart.CONCEPT_TO_REMOVE);
   }
 
   public void setConceptToRemove(ConceptDeclaration node) {
@@ -25,7 +25,7 @@ public class RemovePart extends MenuBuilderPart {
   }
 
   public static RemovePart newInstance(SModel sm, boolean init) {
-    return (RemovePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.RemovePart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RemovePart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.RemovePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RemovePart newInstance(SModel sm) {

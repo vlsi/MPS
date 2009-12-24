@@ -15,7 +15,7 @@ public class MergeNodeWithAnotherNodeExpression extends AbstractMoveNodeExpressi
   }
 
   public static MergeNodeWithAnotherNodeExpression newInstance(SModel sm, boolean init) {
-    return (MergeNodeWithAnotherNodeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MergeNodeWithAnotherNodeExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.MergeNodeWithAnotherNodeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MergeNodeWithAnotherNodeExpression newInstance(SModel sm) {

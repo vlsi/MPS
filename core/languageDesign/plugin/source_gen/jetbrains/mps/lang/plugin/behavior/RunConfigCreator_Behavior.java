@@ -22,18 +22,18 @@ public class RunConfigCreator_Behavior {
   }
 
   public static SNode call_getCreatorTypeParameter_5528847031674330314(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.RunConfigCreator"), "virtual_getCreatorTypeParameter_5528847031674330314", PARAMETERS_5528847031674330314);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.RunConfigCreator"), "virtual_getCreatorTypeParameter_5528847031674330314", PARAMETERS_5528847031674330314);
   }
 
   public static SNode call_getFunction_5528847031674340387(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.RunConfigCreator"), "virtual_getFunction_5528847031674340387", PARAMETERS_5528847031674340387);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.RunConfigCreator"), "virtual_getFunction_5528847031674340387", PARAMETERS_5528847031674340387);
   }
 
   public static SNode callSuper_getCreatorTypeParameter_5528847031674330314(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.RunConfigCreator"), callerConceptFqName, "virtual_getCreatorTypeParameter_5528847031674330314", PARAMETERS_5528847031674330314);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.RunConfigCreator"), callerConceptFqName, "virtual_getCreatorTypeParameter_5528847031674330314", PARAMETERS_5528847031674330314);
   }
 
   public static SNode callSuper_getFunction_5528847031674340387(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.RunConfigCreator"), callerConceptFqName, "virtual_getFunction_5528847031674340387", PARAMETERS_5528847031674340387);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.RunConfigCreator"), callerConceptFqName, "virtual_getFunction_5528847031674340387", PARAMETERS_5528847031674340387);
   }
 }

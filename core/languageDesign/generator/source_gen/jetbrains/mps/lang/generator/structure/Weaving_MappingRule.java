@@ -17,7 +17,7 @@ public class Weaving_MappingRule extends BaseMappingRule {
   }
 
   public RuleConsequence getRuleConsequence() {
-    return (RuleConsequence)this.getChild(RuleConsequence.class, Weaving_MappingRule.RULE_CONSEQUENCE);
+    return (RuleConsequence) this.getChild(RuleConsequence.class, Weaving_MappingRule.RULE_CONSEQUENCE);
   }
 
   public void setRuleConsequence(RuleConsequence node) {
@@ -25,7 +25,7 @@ public class Weaving_MappingRule extends BaseMappingRule {
   }
 
   public Weaving_MappingRule_ContextNodeQuery getContextNodeQuery() {
-    return (Weaving_MappingRule_ContextNodeQuery)this.getChild(Weaving_MappingRule_ContextNodeQuery.class, Weaving_MappingRule.CONTEXT_NODE_QUERY);
+    return (Weaving_MappingRule_ContextNodeQuery) this.getChild(Weaving_MappingRule_ContextNodeQuery.class, Weaving_MappingRule.CONTEXT_NODE_QUERY);
   }
 
   public void setContextNodeQuery(Weaving_MappingRule_ContextNodeQuery node) {
@@ -33,7 +33,7 @@ public class Weaving_MappingRule extends BaseMappingRule {
   }
 
   public static Weaving_MappingRule newInstance(SModel sm, boolean init) {
-    return (Weaving_MappingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.Weaving_MappingRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Weaving_MappingRule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.Weaving_MappingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Weaving_MappingRule newInstance(SModel sm) {

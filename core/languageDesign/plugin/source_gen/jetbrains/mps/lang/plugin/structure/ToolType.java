@@ -17,7 +17,7 @@ public class ToolType extends BaseClassifierType {
   }
 
   public BaseToolDeclaration getTool() {
-    return (BaseToolDeclaration)this.getReferent(BaseToolDeclaration.class, ToolType.TOOL);
+    return (BaseToolDeclaration) this.getReferent(BaseToolDeclaration.class, ToolType.TOOL);
   }
 
   public void setTool(BaseToolDeclaration node) {
@@ -25,7 +25,7 @@ public class ToolType extends BaseClassifierType {
   }
 
   public static ToolType newInstance(SModel sm, boolean init) {
-    return (ToolType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToolType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ToolType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToolType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ToolType newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class TemplateFunctionParameter_parentOutputNode extends ConceptFunctionP
   }
 
   public static TemplateFunctionParameter_parentOutputNode newInstance(SModel sm, boolean init) {
-    return (TemplateFunctionParameter_parentOutputNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TemplateFunctionParameter_parentOutputNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_parentOutputNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TemplateFunctionParameter_parentOutputNode newInstance(SModel sm) {

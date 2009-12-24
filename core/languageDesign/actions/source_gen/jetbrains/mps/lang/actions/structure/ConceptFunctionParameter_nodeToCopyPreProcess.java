@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_nodeToCopyPreProcess extends ConceptFuncti
   }
 
   public static ConceptFunctionParameter_nodeToCopyPreProcess newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_nodeToCopyPreProcess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_nodeToCopyPreProcess) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_nodeToCopyPreProcess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_nodeToCopyPreProcess newInstance(SModel sm) {

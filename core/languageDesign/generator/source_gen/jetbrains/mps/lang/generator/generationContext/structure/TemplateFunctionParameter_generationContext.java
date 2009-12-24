@@ -16,7 +16,7 @@ public class TemplateFunctionParameter_generationContext extends ConceptFunction
   }
 
   public static TemplateFunctionParameter_generationContext newInstance(SModel sm, boolean init) {
-    return (TemplateFunctionParameter_generationContext)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TemplateFunctionParameter_generationContext) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TemplateFunctionParameter_generationContext newInstance(SModel sm) {

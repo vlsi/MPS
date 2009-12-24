@@ -15,7 +15,7 @@ public class NodeMPSParameterType extends MPSParameterType {
   }
 
   public static NodeMPSParameterType newInstance(SModel sm, boolean init) {
-    return (NodeMPSParameterType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.NodeMPSParameterType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeMPSParameterType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.NodeMPSParameterType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeMPSParameterType newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class GetModelsToGenerateClause extends ConceptFunction {
   }
 
   public static GetModelsToGenerateClause newInstance(SModel sm, boolean init) {
-    return (GetModelsToGenerateClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.GetModelsToGenerateClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetModelsToGenerateClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.GetModelsToGenerateClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetModelsToGenerateClause newInstance(SModel sm) {

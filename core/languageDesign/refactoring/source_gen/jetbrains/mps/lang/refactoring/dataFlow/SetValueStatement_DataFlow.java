@@ -15,6 +15,6 @@ public class SetValueStatement_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     _context.getBuilder().emitWrite(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.refactoring.structure.RefactoringParameter", false, false));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "value", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "value", true));
   }
 }

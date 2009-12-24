@@ -44,7 +44,7 @@ public class ProjectOperation extends BaseConcept implements IOperation {
   }
 
   public static ProjectOperation newInstance(SModel sm, boolean init) {
-    return (ProjectOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ProjectOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ProjectOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ProjectOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ProjectOperation newInstance(SModel sm) {

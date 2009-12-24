@@ -15,7 +15,7 @@ public class GenerationContextOp_GetOriginalInputModel extends GenerationContext
   }
 
   public static GenerationContextOp_GetOriginalInputModel newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_GetOriginalInputModel)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_GetOriginalInputModel) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalInputModel", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_GetOriginalInputModel newInstance(SModel sm) {

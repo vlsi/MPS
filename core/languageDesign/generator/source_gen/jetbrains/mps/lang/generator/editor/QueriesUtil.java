@@ -160,9 +160,9 @@ public class QueriesUtil {
 
   public static String getEditedPropertyName(EditorCell cell) {
     if (cell instanceof EditorCell_Property) {
-      ModelAccessor modelAccessor = ((EditorCell_Property)cell).getModelAccessor();
+      ModelAccessor modelAccessor = ((EditorCell_Property) cell).getModelAccessor();
       if (modelAccessor instanceof PropertyAccessor) {
-        String propertyName = ((PropertyAccessor)modelAccessor).getPropertyName();
+        String propertyName = ((PropertyAccessor) modelAccessor).getPropertyName();
         return propertyName;
       }
     }

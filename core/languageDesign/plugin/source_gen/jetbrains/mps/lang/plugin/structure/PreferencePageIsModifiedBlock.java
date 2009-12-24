@@ -16,7 +16,7 @@ public class PreferencePageIsModifiedBlock extends ConceptFunction {
   }
 
   public static PreferencePageIsModifiedBlock newInstance(SModel sm, boolean init) {
-    return (PreferencePageIsModifiedBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PreferencePageIsModifiedBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PreferencePageIsModifiedBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PreferencePageIsModifiedBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PreferencePageIsModifiedBlock newInstance(SModel sm) {

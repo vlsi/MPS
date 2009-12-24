@@ -17,7 +17,7 @@ public class WeaveEach_RuleConsequence extends RuleConsequence {
   }
 
   public TemplateDeclaration getTemplate() {
-    return (TemplateDeclaration)this.getReferent(TemplateDeclaration.class, WeaveEach_RuleConsequence.TEMPLATE);
+    return (TemplateDeclaration) this.getReferent(TemplateDeclaration.class, WeaveEach_RuleConsequence.TEMPLATE);
   }
 
   public void setTemplate(TemplateDeclaration node) {
@@ -25,7 +25,7 @@ public class WeaveEach_RuleConsequence extends RuleConsequence {
   }
 
   public SourceSubstituteMacro_SourceNodesQuery getSourceNodesQuery() {
-    return (SourceSubstituteMacro_SourceNodesQuery)this.getChild(SourceSubstituteMacro_SourceNodesQuery.class, WeaveEach_RuleConsequence.SOURCE_NODES_QUERY);
+    return (SourceSubstituteMacro_SourceNodesQuery) this.getChild(SourceSubstituteMacro_SourceNodesQuery.class, WeaveEach_RuleConsequence.SOURCE_NODES_QUERY);
   }
 
   public void setSourceNodesQuery(SourceSubstituteMacro_SourceNodesQuery node) {
@@ -33,7 +33,7 @@ public class WeaveEach_RuleConsequence extends RuleConsequence {
   }
 
   public static WeaveEach_RuleConsequence newInstance(SModel sm, boolean init) {
-    return (WeaveEach_RuleConsequence)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WeaveEach_RuleConsequence) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.WeaveEach_RuleConsequence", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WeaveEach_RuleConsequence newInstance(SModel sm) {

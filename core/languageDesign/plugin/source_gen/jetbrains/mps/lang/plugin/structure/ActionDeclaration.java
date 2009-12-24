@@ -117,7 +117,7 @@ public class ActionDeclaration extends BaseConcept implements IClassifier, IChec
   }
 
   public UpdateBlock getUpdateBlock() {
-    return (UpdateBlock)this.getChild(UpdateBlock.class, ActionDeclaration.UPDATE_BLOCK);
+    return (UpdateBlock) this.getChild(UpdateBlock.class, ActionDeclaration.UPDATE_BLOCK);
   }
 
   public void setUpdateBlock(UpdateBlock node) {
@@ -125,7 +125,7 @@ public class ActionDeclaration extends BaseConcept implements IClassifier, IChec
   }
 
   public ExecuteBlock getExecuteFunction() {
-    return (ExecuteBlock)this.getChild(ExecuteBlock.class, ActionDeclaration.EXECUTE_FUNCTION);
+    return (ExecuteBlock) this.getChild(ExecuteBlock.class, ActionDeclaration.EXECUTE_FUNCTION);
   }
 
   public void setExecuteFunction(ExecuteBlock node) {
@@ -133,7 +133,7 @@ public class ActionDeclaration extends BaseConcept implements IClassifier, IChec
   }
 
   public KeyMapKeystroke getKeystroke() {
-    return (KeyMapKeystroke)this.getChild(KeyMapKeystroke.class, ActionDeclaration.KEYSTROKE);
+    return (KeyMapKeystroke) this.getChild(KeyMapKeystroke.class, ActionDeclaration.KEYSTROKE);
   }
 
   public void setKeystroke(KeyMapKeystroke node) {
@@ -221,7 +221,7 @@ public class ActionDeclaration extends BaseConcept implements IClassifier, IChec
   }
 
   public static ActionDeclaration newInstance(SModel sm, boolean init) {
-    return (ActionDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ActionDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ActionDeclaration newInstance(SModel sm) {

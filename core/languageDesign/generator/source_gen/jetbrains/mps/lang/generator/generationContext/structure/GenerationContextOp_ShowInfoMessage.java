@@ -15,7 +15,7 @@ public class GenerationContextOp_ShowInfoMessage extends GenerationContextOp_Sho
   }
 
   public static GenerationContextOp_ShowInfoMessage newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_ShowInfoMessage)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_ShowInfoMessage) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowInfoMessage", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_ShowInfoMessage newInstance(SModel sm) {

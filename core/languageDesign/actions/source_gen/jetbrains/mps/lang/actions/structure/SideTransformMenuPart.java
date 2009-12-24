@@ -15,7 +15,7 @@ public class SideTransformMenuPart extends MenuPart {
   }
 
   public static SideTransformMenuPart newInstance(SModel sm, boolean init) {
-    return (SideTransformMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SideTransformMenuPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SideTransformMenuPart newInstance(SModel sm) {

@@ -55,7 +55,7 @@ public class SmartActionParameter extends BaseConcept implements INamedConcept {
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, SmartActionParameter.TYPE);
+    return (Type) this.getChild(Type.class, SmartActionParameter.TYPE);
   }
 
   public void setType(Type node) {
@@ -63,7 +63,7 @@ public class SmartActionParameter extends BaseConcept implements INamedConcept {
   }
 
   public static SmartActionParameter newInstance(SModel sm, boolean init) {
-    return (SmartActionParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SmartActionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SmartActionParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SmartActionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SmartActionParameter newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_MPSProject extends ConceptFunctionParamete
   }
 
   public static ConceptFunctionParameter_MPSProject newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_MPSProject)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_MPSProject) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_MPSProject", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_MPSProject newInstance(SModel sm) {

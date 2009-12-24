@@ -45,7 +45,7 @@ public class ActionListStatement extends Statement implements ExecuteSpecific {
   }
 
   public Expression getActions() {
-    return (Expression)this.getChild(Expression.class, ActionListStatement.ACTIONS);
+    return (Expression) this.getChild(Expression.class, ActionListStatement.ACTIONS);
   }
 
   public void setActions(Expression node) {
@@ -53,7 +53,7 @@ public class ActionListStatement extends Statement implements ExecuteSpecific {
   }
 
   public static ActionListStatement newInstance(SModel sm, boolean init) {
-    return (ActionListStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionListStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ActionListStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionListStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ActionListStatement newInstance(SModel sm) {

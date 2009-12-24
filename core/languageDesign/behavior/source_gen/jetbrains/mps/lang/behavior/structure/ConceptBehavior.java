@@ -76,7 +76,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, ConceptBehavior.CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, ConceptBehavior.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {
@@ -84,7 +84,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public ConceptDeclaration getDefaultConcreteConcept() {
-    return (ConceptDeclaration)this.getReferent(ConceptDeclaration.class, ConceptBehavior.DEFAULT_CONCRETE_CONCEPT);
+    return (ConceptDeclaration) this.getReferent(ConceptDeclaration.class, ConceptBehavior.DEFAULT_CONCRETE_CONCEPT);
   }
 
   public void setDefaultConcreteConcept(ConceptDeclaration node) {
@@ -92,7 +92,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public ConceptConstructorDeclaration getConstructor() {
-    return (ConceptConstructorDeclaration)this.getChild(ConceptConstructorDeclaration.class, ConceptBehavior.CONSTRUCTOR);
+    return (ConceptConstructorDeclaration) this.getChild(ConceptConstructorDeclaration.class, ConceptBehavior.CONSTRUCTOR);
   }
 
   public void setConstructor(ConceptConstructorDeclaration node) {
@@ -100,7 +100,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public NodeDefaultSearchScope getDefaultScope() {
-    return (NodeDefaultSearchScope)this.getChild(NodeDefaultSearchScope.class, ConceptBehavior.DEFAULT_SCOPE);
+    return (NodeDefaultSearchScope) this.getChild(NodeDefaultSearchScope.class, ConceptBehavior.DEFAULT_SCOPE);
   }
 
   public void setDefaultScope(NodeDefaultSearchScope node) {
@@ -108,7 +108,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public ConstraintFunction_CanBeAChild getCanBeAChild() {
-    return (ConstraintFunction_CanBeAChild)this.getChild(ConstraintFunction_CanBeAChild.class, ConceptBehavior.CAN_BE_A_CHILD);
+    return (ConstraintFunction_CanBeAChild) this.getChild(ConstraintFunction_CanBeAChild.class, ConceptBehavior.CAN_BE_A_CHILD);
   }
 
   public void setCanBeAChild(ConstraintFunction_CanBeAChild node) {
@@ -116,7 +116,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public ConstraintFunction_CanBeAParent getCanBeAParent() {
-    return (ConstraintFunction_CanBeAParent)this.getChild(ConstraintFunction_CanBeAParent.class, ConceptBehavior.CAN_BE_A_PARENT);
+    return (ConstraintFunction_CanBeAParent) this.getChild(ConstraintFunction_CanBeAParent.class, ConceptBehavior.CAN_BE_A_PARENT);
   }
 
   public void setCanBeAParent(ConstraintFunction_CanBeAParent node) {
@@ -204,7 +204,7 @@ public class ConceptBehavior extends BaseConcept implements INamedConcept, IMemb
   }
 
   public static ConceptBehavior newInstance(SModel sm, boolean init) {
-    return (ConceptBehavior)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptBehavior", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptBehavior) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptBehavior", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptBehavior newInstance(SModel sm) {

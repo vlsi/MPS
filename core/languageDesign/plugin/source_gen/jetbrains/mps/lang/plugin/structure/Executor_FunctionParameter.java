@@ -16,7 +16,7 @@ public class Executor_FunctionParameter extends ConceptFunctionParameter {
   }
 
   public static Executor_FunctionParameter newInstance(SModel sm, boolean init) {
-    return (Executor_FunctionParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.Executor_FunctionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Executor_FunctionParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.Executor_FunctionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Executor_FunctionParameter newInstance(SModel sm) {

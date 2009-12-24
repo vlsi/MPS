@@ -64,7 +64,7 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
   }
 
   public ClassConcept getExtendedClass() {
-    return (ClassConcept)this.getReferent(ClassConcept.class, FileGeneratorDeclaration.EXTENDED_CLASS);
+    return (ClassConcept) this.getReferent(ClassConcept.class, FileGeneratorDeclaration.EXTENDED_CLASS);
   }
 
   public void setExtendedClass(ClassConcept node) {
@@ -72,7 +72,7 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
   }
 
   public GenerateFileBlock getGenerateBlock() {
-    return (GenerateFileBlock)this.getChild(GenerateFileBlock.class, FileGeneratorDeclaration.GENERATE_BLOCK);
+    return (GenerateFileBlock) this.getChild(GenerateFileBlock.class, FileGeneratorDeclaration.GENERATE_BLOCK);
   }
 
   public void setGenerateBlock(GenerateFileBlock node) {
@@ -80,7 +80,7 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
   }
 
   public IsDefaultBlock getIsDefaultBlock() {
-    return (IsDefaultBlock)this.getChild(IsDefaultBlock.class, FileGeneratorDeclaration.IS_DEFAULT_BLOCK);
+    return (IsDefaultBlock) this.getChild(IsDefaultBlock.class, FileGeneratorDeclaration.IS_DEFAULT_BLOCK);
   }
 
   public void setIsDefaultBlock(IsDefaultBlock node) {
@@ -88,7 +88,7 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
   }
 
   public OverridesDefaultBlock getOverridesDefaultBlock() {
-    return (OverridesDefaultBlock)this.getChild(OverridesDefaultBlock.class, FileGeneratorDeclaration.OVERRIDES_DEFAULT_BLOCK);
+    return (OverridesDefaultBlock) this.getChild(OverridesDefaultBlock.class, FileGeneratorDeclaration.OVERRIDES_DEFAULT_BLOCK);
   }
 
   public void setOverridesDefaultBlock(OverridesDefaultBlock node) {
@@ -136,7 +136,7 @@ public class FileGeneratorDeclaration extends BaseConcept implements IClassifier
   }
 
   public static FileGeneratorDeclaration newInstance(SModel sm, boolean init) {
-    return (FileGeneratorDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FileGeneratorDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FileGeneratorDeclaration newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class QueryFunction_SubstituteVariableInitializer extends ConceptFunction
   }
 
   public static QueryFunction_SubstituteVariableInitializer newInstance(SModel sm, boolean init) {
-    return (QueryFunction_SubstituteVariableInitializer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteVariableInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_SubstituteVariableInitializer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteVariableInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_SubstituteVariableInitializer newInstance(SModel sm) {

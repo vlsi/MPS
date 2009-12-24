@@ -16,7 +16,7 @@ public class ToStringParameter extends ConceptFunctionParameter {
   }
 
   public static ToStringParameter newInstance(SModel sm, boolean init) {
-    return (ToStringParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToStringParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ToStringParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToStringParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ToStringParameter newInstance(SModel sm) {

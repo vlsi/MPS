@@ -30,7 +30,7 @@ public class CustomParameterChooser extends RefactoringParameterChooser {
   }
 
   public Type getEntityType() {
-    return (Type)this.getChild(Type.class, CustomParameterChooser.ENTITY_TYPE);
+    return (Type) this.getChild(Type.class, CustomParameterChooser.ENTITY_TYPE);
   }
 
   public void setEntityType(Type node) {
@@ -38,7 +38,7 @@ public class CustomParameterChooser extends RefactoringParameterChooser {
   }
 
   public Expression getMainComponent() {
-    return (Expression)this.getChild(Expression.class, CustomParameterChooser.MAIN_COMPONENT);
+    return (Expression) this.getChild(Expression.class, CustomParameterChooser.MAIN_COMPONENT);
   }
 
   public void setMainComponent(Expression node) {
@@ -46,7 +46,7 @@ public class CustomParameterChooser extends RefactoringParameterChooser {
   }
 
   public Expression getFocusedComponent() {
-    return (Expression)this.getChild(Expression.class, CustomParameterChooser.FOCUSED_COMPONENT);
+    return (Expression) this.getChild(Expression.class, CustomParameterChooser.FOCUSED_COMPONENT);
   }
 
   public void setFocusedComponent(Expression node) {
@@ -54,7 +54,7 @@ public class CustomParameterChooser extends RefactoringParameterChooser {
   }
 
   public CommitClause getCommitBlock() {
-    return (CommitClause)this.getChild(CommitClause.class, CustomParameterChooser.COMMIT_BLOCK);
+    return (CommitClause) this.getChild(CommitClause.class, CustomParameterChooser.COMMIT_BLOCK);
   }
 
   public void setCommitBlock(CommitClause node) {
@@ -62,7 +62,7 @@ public class CustomParameterChooser extends RefactoringParameterChooser {
   }
 
   public static CustomParameterChooser newInstance(SModel sm, boolean init) {
-    return (CustomParameterChooser)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CustomParameterChooser) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CustomParameterChooser newInstance(SModel sm) {

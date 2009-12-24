@@ -17,7 +17,7 @@ public class FileGeneratorType extends BaseClassifierType {
   }
 
   public FileGeneratorDeclaration getGenerator() {
-    return (FileGeneratorDeclaration)this.getReferent(FileGeneratorDeclaration.class, FileGeneratorType.GENERATOR);
+    return (FileGeneratorDeclaration) this.getReferent(FileGeneratorDeclaration.class, FileGeneratorType.GENERATOR);
   }
 
   public void setGenerator(FileGeneratorDeclaration node) {
@@ -25,7 +25,7 @@ public class FileGeneratorType extends BaseClassifierType {
   }
 
   public static FileGeneratorType newInstance(SModel sm, boolean init) {
-    return (FileGeneratorType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.FileGeneratorType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FileGeneratorType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.FileGeneratorType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FileGeneratorType newInstance(SModel sm) {

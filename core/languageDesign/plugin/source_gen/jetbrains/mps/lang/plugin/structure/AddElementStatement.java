@@ -18,7 +18,7 @@ public class AddElementStatement extends Statement {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, AddElementStatement.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, AddElementStatement.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -26,7 +26,7 @@ public class AddElementStatement extends Statement {
   }
 
   public static AddElementStatement newInstance(SModel sm, boolean init) {
-    return (AddElementStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.AddElementStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AddElementStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.AddElementStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AddElementStatement newInstance(SModel sm) {

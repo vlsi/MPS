@@ -46,7 +46,7 @@ public class ProcessStatement extends Statement implements ExecuteSpecific {
   }
 
   public Expression getProcess() {
-    return (Expression)this.getChild(Expression.class, ProcessStatement.PROCESS);
+    return (Expression) this.getChild(Expression.class, ProcessStatement.PROCESS);
   }
 
   public void setProcess(Expression node) {
@@ -54,7 +54,7 @@ public class ProcessStatement extends Statement implements ExecuteSpecific {
   }
 
   public Expression getCommand() {
-    return (Expression)this.getChild(Expression.class, ProcessStatement.COMMAND);
+    return (Expression) this.getChild(Expression.class, ProcessStatement.COMMAND);
   }
 
   public void setCommand(Expression node) {
@@ -62,7 +62,7 @@ public class ProcessStatement extends Statement implements ExecuteSpecific {
   }
 
   public static ProcessStatement newInstance(SModel sm, boolean init) {
-    return (ProcessStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ProcessStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ProcessStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ProcessStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ProcessStatement newInstance(SModel sm) {

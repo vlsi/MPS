@@ -43,7 +43,7 @@ public class QueryFunction_SubstituteString extends ConceptFunction implements I
   }
 
   public static QueryFunction_SubstituteString newInstance(SModel sm, boolean init) {
-    return (QueryFunction_SubstituteString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_SubstituteString) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteString", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_SubstituteString newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class IfMacro_Condition extends TemplateQueryBase {
   }
 
   public static IfMacro_Condition newInstance(SModel sm, boolean init) {
-    return (IfMacro_Condition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.IfMacro_Condition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IfMacro_Condition) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.IfMacro_Condition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IfMacro_Condition newInstance(SModel sm) {

@@ -13,9 +13,9 @@ public class LogStatement_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "logExpression", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "logExpression", true));
     if (SLinkOperations.getTarget(_context.getNode(), "exception", true) != null) {
-      _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "exception", true));
+      _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "exception", true));
     }
   }
 }

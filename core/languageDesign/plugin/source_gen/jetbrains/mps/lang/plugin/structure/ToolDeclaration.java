@@ -18,7 +18,7 @@ public class ToolDeclaration extends BaseToolDeclaration {
   }
 
   public ProjectPluginInitBlock getInitBlock() {
-    return (ProjectPluginInitBlock)this.getChild(ProjectPluginInitBlock.class, ToolDeclaration.INIT_BLOCK);
+    return (ProjectPluginInitBlock) this.getChild(ProjectPluginInitBlock.class, ToolDeclaration.INIT_BLOCK);
   }
 
   public void setInitBlock(ProjectPluginInitBlock node) {
@@ -26,7 +26,7 @@ public class ToolDeclaration extends BaseToolDeclaration {
   }
 
   public ProjectPluginDisposeBlock getDisposeBlock() {
-    return (ProjectPluginDisposeBlock)this.getChild(ProjectPluginDisposeBlock.class, ToolDeclaration.DISPOSE_BLOCK);
+    return (ProjectPluginDisposeBlock) this.getChild(ProjectPluginDisposeBlock.class, ToolDeclaration.DISPOSE_BLOCK);
   }
 
   public void setDisposeBlock(ProjectPluginDisposeBlock node) {
@@ -34,7 +34,7 @@ public class ToolDeclaration extends BaseToolDeclaration {
   }
 
   public GetComponentBlock getGetComponentBlock() {
-    return (GetComponentBlock)this.getChild(GetComponentBlock.class, ToolDeclaration.GET_COMPONENT_BLOCK);
+    return (GetComponentBlock) this.getChild(GetComponentBlock.class, ToolDeclaration.GET_COMPONENT_BLOCK);
   }
 
   public void setGetComponentBlock(GetComponentBlock node) {
@@ -42,7 +42,7 @@ public class ToolDeclaration extends BaseToolDeclaration {
   }
 
   public static ToolDeclaration newInstance(SModel sm, boolean init) {
-    return (ToolDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToolDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ToolDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToolDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ToolDeclaration newInstance(SModel sm) {

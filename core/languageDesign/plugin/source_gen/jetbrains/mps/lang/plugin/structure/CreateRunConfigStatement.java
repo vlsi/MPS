@@ -23,7 +23,7 @@ public class CreateRunConfigStatement extends Statement {
   }
 
   public RunConfigurationDeclaration getRunConfig() {
-    return (RunConfigurationDeclaration)this.getReferent(RunConfigurationDeclaration.class, CreateRunConfigStatement.RUN_CONFIG);
+    return (RunConfigurationDeclaration) this.getReferent(RunConfigurationDeclaration.class, CreateRunConfigStatement.RUN_CONFIG);
   }
 
   public void setRunConfig(RunConfigurationDeclaration node) {
@@ -31,7 +31,7 @@ public class CreateRunConfigStatement extends Statement {
   }
 
   public Expression getConfigName() {
-    return (Expression)this.getChild(Expression.class, CreateRunConfigStatement.CONFIG_NAME);
+    return (Expression) this.getChild(Expression.class, CreateRunConfigStatement.CONFIG_NAME);
   }
 
   public void setConfigName(Expression node) {
@@ -39,7 +39,7 @@ public class CreateRunConfigStatement extends Statement {
   }
 
   public Expression getSuggestedName() {
-    return (Expression)this.getChild(Expression.class, CreateRunConfigStatement.SUGGESTED_NAME);
+    return (Expression) this.getChild(Expression.class, CreateRunConfigStatement.SUGGESTED_NAME);
   }
 
   public void setSuggestedName(Expression node) {
@@ -67,7 +67,7 @@ public class CreateRunConfigStatement extends Statement {
   }
 
   public static CreateRunConfigStatement newInstance(SModel sm, boolean init) {
-    return (CreateRunConfigStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CreateRunConfigStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CreateRunConfigStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CreateRunConfigStatement newInstance(SModel sm) {

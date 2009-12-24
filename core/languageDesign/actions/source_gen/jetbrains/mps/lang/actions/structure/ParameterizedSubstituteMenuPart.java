@@ -22,7 +22,7 @@ public class ParameterizedSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, ParameterizedSubstituteMenuPart.TYPE);
+    return (Type) this.getChild(Type.class, ParameterizedSubstituteMenuPart.TYPE);
   }
 
   public void setType(Type node) {
@@ -30,7 +30,7 @@ public class ParameterizedSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public QueryFunction_ParameterizedSubstitute_Query getQuery() {
-    return (QueryFunction_ParameterizedSubstitute_Query)this.getChild(QueryFunction_ParameterizedSubstitute_Query.class, ParameterizedSubstituteMenuPart.QUERY);
+    return (QueryFunction_ParameterizedSubstitute_Query) this.getChild(QueryFunction_ParameterizedSubstitute_Query.class, ParameterizedSubstituteMenuPart.QUERY);
   }
 
   public void setQuery(QueryFunction_ParameterizedSubstitute_Query node) {
@@ -38,7 +38,7 @@ public class ParameterizedSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public QueryFunction_ParameterizedSubstitute_String getMatchingText() {
-    return (QueryFunction_ParameterizedSubstitute_String)this.getChild(QueryFunction_ParameterizedSubstitute_String.class, ParameterizedSubstituteMenuPart.MATCHING_TEXT);
+    return (QueryFunction_ParameterizedSubstitute_String) this.getChild(QueryFunction_ParameterizedSubstitute_String.class, ParameterizedSubstituteMenuPart.MATCHING_TEXT);
   }
 
   public void setMatchingText(QueryFunction_ParameterizedSubstitute_String node) {
@@ -46,7 +46,7 @@ public class ParameterizedSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public QueryFunction_ParameterizedSubstitute_String getDescriptionText() {
-    return (QueryFunction_ParameterizedSubstitute_String)this.getChild(QueryFunction_ParameterizedSubstitute_String.class, ParameterizedSubstituteMenuPart.DESCRIPTION_TEXT);
+    return (QueryFunction_ParameterizedSubstitute_String) this.getChild(QueryFunction_ParameterizedSubstitute_String.class, ParameterizedSubstituteMenuPart.DESCRIPTION_TEXT);
   }
 
   public void setDescriptionText(QueryFunction_ParameterizedSubstitute_String node) {
@@ -54,7 +54,7 @@ public class ParameterizedSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public QueryFunction_ParameterizedSubstitute_Icon getIcon() {
-    return (QueryFunction_ParameterizedSubstitute_Icon)this.getChild(QueryFunction_ParameterizedSubstitute_Icon.class, ParameterizedSubstituteMenuPart.ICON);
+    return (QueryFunction_ParameterizedSubstitute_Icon) this.getChild(QueryFunction_ParameterizedSubstitute_Icon.class, ParameterizedSubstituteMenuPart.ICON);
   }
 
   public void setIcon(QueryFunction_ParameterizedSubstitute_Icon node) {
@@ -62,7 +62,7 @@ public class ParameterizedSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public QueryFunction_ParameterizedSubstitute_Handler getHandler() {
-    return (QueryFunction_ParameterizedSubstitute_Handler)this.getChild(QueryFunction_ParameterizedSubstitute_Handler.class, ParameterizedSubstituteMenuPart.HANDLER);
+    return (QueryFunction_ParameterizedSubstitute_Handler) this.getChild(QueryFunction_ParameterizedSubstitute_Handler.class, ParameterizedSubstituteMenuPart.HANDLER);
   }
 
   public void setHandler(QueryFunction_ParameterizedSubstitute_Handler node) {
@@ -70,7 +70,7 @@ public class ParameterizedSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public static ParameterizedSubstituteMenuPart newInstance(SModel sm, boolean init) {
-    return (ParameterizedSubstituteMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParameterizedSubstituteMenuPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ParameterizedSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParameterizedSubstituteMenuPart newInstance(SModel sm) {

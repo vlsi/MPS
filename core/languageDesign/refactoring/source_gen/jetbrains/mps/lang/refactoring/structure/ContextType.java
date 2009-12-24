@@ -16,7 +16,7 @@ public class ContextType extends Type {
   }
 
   public static ContextType newInstance(SModel sm, boolean init) {
-    return (ContextType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ContextType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ContextType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ContextType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ContextType newInstance(SModel sm) {

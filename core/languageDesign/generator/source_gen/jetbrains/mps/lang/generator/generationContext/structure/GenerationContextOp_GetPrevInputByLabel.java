@@ -26,7 +26,7 @@ public class GenerationContextOp_GetPrevInputByLabel extends GenerationContextOp
   }
 
   public MappingLabelDeclaration getLabel() {
-    return (MappingLabelDeclaration)this.getReferent(MappingLabelDeclaration.class, GenerationContextOp_GetPrevInputByLabel.LABEL);
+    return (MappingLabelDeclaration) this.getReferent(MappingLabelDeclaration.class, GenerationContextOp_GetPrevInputByLabel.LABEL);
   }
 
   public void setLabel(MappingLabelDeclaration node) {
@@ -34,7 +34,7 @@ public class GenerationContextOp_GetPrevInputByLabel extends GenerationContextOp
   }
 
   public static GenerationContextOp_GetPrevInputByLabel newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_GetPrevInputByLabel)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_GetPrevInputByLabel) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetPrevInputByLabel", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_GetPrevInputByLabel newInstance(SModel sm) {

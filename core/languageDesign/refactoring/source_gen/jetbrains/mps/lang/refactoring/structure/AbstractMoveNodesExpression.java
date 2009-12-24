@@ -15,7 +15,7 @@ public class AbstractMoveNodesExpression extends AbstractMoveExpression {
   }
 
   public static AbstractMoveNodesExpression newInstance(SModel sm, boolean init) {
-    return (AbstractMoveNodesExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractMoveNodesExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.AbstractMoveNodesExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractMoveNodesExpression newInstance(SModel sm) {

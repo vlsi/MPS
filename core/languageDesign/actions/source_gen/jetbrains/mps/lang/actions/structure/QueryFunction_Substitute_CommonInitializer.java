@@ -16,7 +16,7 @@ public class QueryFunction_Substitute_CommonInitializer extends ConceptFunction 
   }
 
   public static QueryFunction_Substitute_CommonInitializer newInstance(SModel sm, boolean init) {
-    return (QueryFunction_Substitute_CommonInitializer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_CommonInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_Substitute_CommonInitializer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_Substitute_CommonInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_Substitute_CommonInitializer newInstance(SModel sm) {

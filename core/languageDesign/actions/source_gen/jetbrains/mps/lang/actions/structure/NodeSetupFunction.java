@@ -16,7 +16,7 @@ public class NodeSetupFunction extends ConceptFunction {
   }
 
   public static NodeSetupFunction newInstance(SModel sm, boolean init) {
-    return (NodeSetupFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeSetupFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeSetupFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeSetupFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeSetupFunction newInstance(SModel sm) {

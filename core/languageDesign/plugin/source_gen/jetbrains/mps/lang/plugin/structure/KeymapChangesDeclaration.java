@@ -86,7 +86,7 @@ public class KeymapChangesDeclaration extends BaseConcept implements INamedConce
   }
 
   public static KeymapChangesDeclaration newInstance(SModel sm, boolean init) {
-    return (KeymapChangesDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (KeymapChangesDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static KeymapChangesDeclaration newInstance(SModel sm) {

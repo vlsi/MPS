@@ -16,7 +16,7 @@ public class ToolInstanceExpression extends Expression {
   }
 
   public static ToolInstanceExpression newInstance(SModel sm, boolean init) {
-    return (ToolInstanceExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToolInstanceExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ToolInstanceExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToolInstanceExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ToolInstanceExpression newInstance(SModel sm) {

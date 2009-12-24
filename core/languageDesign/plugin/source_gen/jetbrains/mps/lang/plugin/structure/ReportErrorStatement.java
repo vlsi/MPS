@@ -18,7 +18,7 @@ public class ReportErrorStatement extends Statement {
   }
 
   public Expression getError() {
-    return (Expression)this.getChild(Expression.class, ReportErrorStatement.ERROR);
+    return (Expression) this.getChild(Expression.class, ReportErrorStatement.ERROR);
   }
 
   public void setError(Expression node) {
@@ -26,7 +26,7 @@ public class ReportErrorStatement extends Statement {
   }
 
   public static ReportErrorStatement newInstance(SModel sm, boolean init) {
-    return (ReportErrorStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ReportErrorStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReportErrorStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ReportErrorStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReportErrorStatement newInstance(SModel sm) {

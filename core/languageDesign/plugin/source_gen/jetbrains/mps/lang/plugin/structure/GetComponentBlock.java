@@ -16,7 +16,7 @@ public class GetComponentBlock extends ConceptFunction {
   }
 
   public static GetComponentBlock newInstance(SModel sm, boolean init) {
-    return (GetComponentBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetComponentBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetComponentBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetComponentBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetComponentBlock newInstance(SModel sm) {

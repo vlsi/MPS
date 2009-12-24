@@ -16,7 +16,7 @@ public class CommitClause extends ConceptFunction {
   }
 
   public static CommitClause newInstance(SModel sm, boolean init) {
-    return (CommitClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.CommitClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CommitClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.CommitClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CommitClause newInstance(SModel sm) {

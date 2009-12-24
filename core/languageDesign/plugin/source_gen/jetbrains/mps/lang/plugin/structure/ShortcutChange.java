@@ -17,7 +17,7 @@ public class ShortcutChange extends BaseConcept {
   }
 
   public ActionDeclaration getAction() {
-    return (ActionDeclaration)this.getReferent(ActionDeclaration.class, ShortcutChange.ACTION);
+    return (ActionDeclaration) this.getReferent(ActionDeclaration.class, ShortcutChange.ACTION);
   }
 
   public void setAction(ActionDeclaration node) {
@@ -25,7 +25,7 @@ public class ShortcutChange extends BaseConcept {
   }
 
   public static ShortcutChange newInstance(SModel sm, boolean init) {
-    return (ShortcutChange)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ShortcutChange", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ShortcutChange) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ShortcutChange", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ShortcutChange newInstance(SModel sm) {

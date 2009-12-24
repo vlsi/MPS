@@ -13,6 +13,6 @@ public class NodeMacro_AnnotationLink {
   }
 
   public static List<NodeMacro> getNodeMacros(BaseConcept source) {
-    return (List<NodeMacro>)source.getAttributes(NodeMacro_AnnotationLink.NODE_MACRO);
+    return (List<NodeMacro>) source.getAttributes(NodeMacro_AnnotationLink.NODE_MACRO);
   }
 }

@@ -18,7 +18,7 @@ public class SetValueStatement extends Statement {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, SetValueStatement.VALUE);
+    return (Expression) this.getChild(Expression.class, SetValueStatement.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -26,7 +26,7 @@ public class SetValueStatement extends Statement {
   }
 
   public static SetValueStatement newInstance(SModel sm, boolean init) {
-    return (SetValueStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.SetValueStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SetValueStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.SetValueStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SetValueStatement newInstance(SModel sm) {

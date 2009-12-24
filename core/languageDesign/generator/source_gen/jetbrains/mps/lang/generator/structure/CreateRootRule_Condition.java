@@ -15,7 +15,7 @@ public class CreateRootRule_Condition extends TemplateQueryBase {
   }
 
   public static CreateRootRule_Condition newInstance(SModel sm, boolean init) {
-    return (CreateRootRule_Condition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.CreateRootRule_Condition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CreateRootRule_Condition) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.CreateRootRule_Condition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CreateRootRule_Condition newInstance(SModel sm) {

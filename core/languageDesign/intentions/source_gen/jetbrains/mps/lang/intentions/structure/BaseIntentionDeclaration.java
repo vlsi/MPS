@@ -79,7 +79,7 @@ public class BaseIntentionDeclaration extends BaseConcept implements INamedConce
   }
 
   public AbstractConceptDeclaration getForConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, BaseIntentionDeclaration.FOR_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, BaseIntentionDeclaration.FOR_CONCEPT);
   }
 
   public void setForConcept(AbstractConceptDeclaration node) {
@@ -87,7 +87,7 @@ public class BaseIntentionDeclaration extends BaseConcept implements INamedConce
   }
 
   public DescriptionBlock getDescriptionFunction() {
-    return (DescriptionBlock)this.getChild(DescriptionBlock.class, BaseIntentionDeclaration.DESCRIPTION_FUNCTION);
+    return (DescriptionBlock) this.getChild(DescriptionBlock.class, BaseIntentionDeclaration.DESCRIPTION_FUNCTION);
   }
 
   public void setDescriptionFunction(DescriptionBlock node) {
@@ -95,7 +95,7 @@ public class BaseIntentionDeclaration extends BaseConcept implements INamedConce
   }
 
   public ChildFilterBlock getChildFilterFunction() {
-    return (ChildFilterBlock)this.getChild(ChildFilterBlock.class, BaseIntentionDeclaration.CHILD_FILTER_FUNCTION);
+    return (ChildFilterBlock) this.getChild(ChildFilterBlock.class, BaseIntentionDeclaration.CHILD_FILTER_FUNCTION);
   }
 
   public void setChildFilterFunction(ChildFilterBlock node) {
@@ -103,7 +103,7 @@ public class BaseIntentionDeclaration extends BaseConcept implements INamedConce
   }
 
   public IsApplicableBlock getIsApplicableFunction() {
-    return (IsApplicableBlock)this.getChild(IsApplicableBlock.class, BaseIntentionDeclaration.IS_APPLICABLE_FUNCTION);
+    return (IsApplicableBlock) this.getChild(IsApplicableBlock.class, BaseIntentionDeclaration.IS_APPLICABLE_FUNCTION);
   }
 
   public void setIsApplicableFunction(IsApplicableBlock node) {
@@ -111,7 +111,7 @@ public class BaseIntentionDeclaration extends BaseConcept implements INamedConce
   }
 
   public ExecuteBlock getExecuteFunction() {
-    return (ExecuteBlock)this.getChild(ExecuteBlock.class, BaseIntentionDeclaration.EXECUTE_FUNCTION);
+    return (ExecuteBlock) this.getChild(ExecuteBlock.class, BaseIntentionDeclaration.EXECUTE_FUNCTION);
   }
 
   public void setExecuteFunction(ExecuteBlock node) {
@@ -119,7 +119,7 @@ public class BaseIntentionDeclaration extends BaseConcept implements INamedConce
   }
 
   public static BaseIntentionDeclaration newInstance(SModel sm, boolean init) {
-    return (BaseIntentionDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseIntentionDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseIntentionDeclaration newInstance(SModel sm) {

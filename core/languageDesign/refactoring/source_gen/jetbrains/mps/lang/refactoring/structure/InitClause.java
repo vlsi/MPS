@@ -16,7 +16,7 @@ public class InitClause extends ConceptFunction {
   }
 
   public static InitClause newInstance(SModel sm, boolean init) {
-    return (InitClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.InitClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InitClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.InitClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InitClause newInstance(SModel sm) {

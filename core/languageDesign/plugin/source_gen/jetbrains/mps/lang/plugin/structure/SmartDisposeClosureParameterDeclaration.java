@@ -16,7 +16,7 @@ public class SmartDisposeClosureParameterDeclaration extends UnboundClosureParam
   }
 
   public static SmartDisposeClosureParameterDeclaration newInstance(SModel sm, boolean init) {
-    return (SmartDisposeClosureParameterDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SmartDisposeClosureParameterDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.SmartDisposeClosureParameterDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SmartDisposeClosureParameterDeclaration newInstance(SModel sm) {

@@ -44,7 +44,7 @@ public class RefactoringParameterReference extends Expression implements Refacto
   }
 
   public RefactoringParameter getRefactoringParameter() {
-    return (RefactoringParameter)this.getReferent(RefactoringParameter.class, RefactoringParameterReference.REFACTORING_PARAMETER);
+    return (RefactoringParameter) this.getReferent(RefactoringParameter.class, RefactoringParameterReference.REFACTORING_PARAMETER);
   }
 
   public void setRefactoringParameter(RefactoringParameter node) {
@@ -52,7 +52,7 @@ public class RefactoringParameterReference extends Expression implements Refacto
   }
 
   public static RefactoringParameterReference newInstance(SModel sm, boolean init) {
-    return (RefactoringParameterReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RefactoringParameterReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RefactoringParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RefactoringParameterReference newInstance(SModel sm) {

@@ -27,7 +27,7 @@ public class RefactoringTarget extends BaseConcept {
   }
 
   public ConceptFunction getIsApplicableBlock() {
-    return (ConceptFunction)this.getChild(ConceptFunction.class, RefactoringTarget.IS_APPLICABLE_BLOCK);
+    return (ConceptFunction) this.getChild(ConceptFunction.class, RefactoringTarget.IS_APPLICABLE_BLOCK);
   }
 
   public void setIsApplicableBlock(ConceptFunction node) {
@@ -35,7 +35,7 @@ public class RefactoringTarget extends BaseConcept {
   }
 
   public static RefactoringTarget newInstance(SModel sm, boolean init) {
-    return (RefactoringTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RefactoringTarget", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RefactoringTarget) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RefactoringTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RefactoringTarget newInstance(SModel sm) {

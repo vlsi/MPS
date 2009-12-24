@@ -22,7 +22,7 @@ public class typeof_ConceptFunctionParameter_nodeToWrap_InferenceRule extends Ab
       SNode _nodeToCheck_1029348928467 = nodeToWrap;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1223982503213", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1223982503218", true), (SNode)new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(menu, "wrappedConcept", false), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "1223982503218", true), (SNode) new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(menu, "wrappedConcept", false), typeCheckingContext), _info_12389875345);
     }
   }
 

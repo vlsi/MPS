@@ -15,7 +15,7 @@ public class MapSrcMacro_MapperFunction extends TemplateQueryBase {
   }
 
   public static MapSrcMacro_MapperFunction newInstance(SModel sm, boolean init) {
-    return (MapSrcMacro_MapperFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MapSrcMacro_MapperFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MapSrcMacro_MapperFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MapSrcMacro_MapperFunction newInstance(SModel sm) {

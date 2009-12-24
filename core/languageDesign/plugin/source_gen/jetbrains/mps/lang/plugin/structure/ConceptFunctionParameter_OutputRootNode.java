@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_OutputRootNode extends ConceptFunctionPara
   }
 
   public static ConceptFunctionParameter_OutputRootNode newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_OutputRootNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_OutputRootNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OutputRootNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_OutputRootNode newInstance(SModel sm) {

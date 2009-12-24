@@ -16,7 +16,7 @@ public class ChooseComponentClause extends ConceptFunction {
   }
 
   public static ChooseComponentClause newInstance(SModel sm, boolean init) {
-    return (ChooseComponentClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ChooseComponentClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ChooseComponentClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ChooseComponentClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ChooseComponentClause newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_EditorCell extends ConceptFunctionParamete
   }
 
   public static ConceptFunctionParameter_EditorCell newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_EditorCell)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_EditorCell) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_EditorCell", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_EditorCell newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class ExecuteWriteActionStatement extends BaseExecuteCommandStatementSync
   }
 
   public static ExecuteWriteActionStatement newInstance(SModel sm, boolean init) {
-    return (ExecuteWriteActionStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ExecuteWriteActionStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExecuteWriteActionStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ExecuteWriteActionStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExecuteWriteActionStatement newInstance(SModel sm) {

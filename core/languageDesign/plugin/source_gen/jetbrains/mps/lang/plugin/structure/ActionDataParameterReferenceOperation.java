@@ -46,7 +46,7 @@ public class ActionDataParameterReferenceOperation extends BaseConcept implement
   }
 
   public IMember getMember() {
-    return (IMember)this.getReferent(IMember.class, ActionDataParameterReferenceOperation.MEMBER);
+    return (IMember) this.getReferent(IMember.class, ActionDataParameterReferenceOperation.MEMBER);
   }
 
   public void setMember(IMember node) {
@@ -62,7 +62,7 @@ public class ActionDataParameterReferenceOperation extends BaseConcept implement
   }
 
   public static ActionDataParameterReferenceOperation newInstance(SModel sm, boolean init) {
-    return (ActionDataParameterReferenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ActionDataParameterReferenceOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ActionDataParameterReferenceOperation newInstance(SModel sm) {

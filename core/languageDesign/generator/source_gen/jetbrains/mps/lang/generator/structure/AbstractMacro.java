@@ -25,7 +25,7 @@ public class AbstractMacro extends BaseConcept {
   }
 
   public static AbstractMacro newInstance(SModel sm, boolean init) {
-    return (AbstractMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.AbstractMacro", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractMacro) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.AbstractMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractMacro newInstance(SModel sm) {

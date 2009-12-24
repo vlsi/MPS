@@ -16,7 +16,7 @@ public class QueryFunction_ActionType extends ConceptFunction {
   }
 
   public static QueryFunction_ActionType newInstance(SModel sm, boolean init) {
-    return (QueryFunction_ActionType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_ActionType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_ActionType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_ActionType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_ActionType newInstance(SModel sm) {

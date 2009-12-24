@@ -17,7 +17,7 @@ public class GetGroupOperation extends Expression {
   }
 
   public ActionGroupDeclaration getGroup() {
-    return (ActionGroupDeclaration)this.getReferent(ActionGroupDeclaration.class, GetGroupOperation.GROUP);
+    return (ActionGroupDeclaration) this.getReferent(ActionGroupDeclaration.class, GetGroupOperation.GROUP);
   }
 
   public void setGroup(ActionGroupDeclaration node) {
@@ -25,7 +25,7 @@ public class GetGroupOperation extends Expression {
   }
 
   public static GetGroupOperation newInstance(SModel sm, boolean init) {
-    return (GetGroupOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetGroupOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetGroupOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetGroupOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetGroupOperation newInstance(SModel sm) {

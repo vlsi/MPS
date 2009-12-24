@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_wrapped extends ConceptFunctionParameter {
   }
 
   public static ConceptFunctionParameter_wrapped newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_wrapped)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_wrapped", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_wrapped) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_wrapped", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_wrapped newInstance(SModel sm) {

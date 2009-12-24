@@ -16,7 +16,7 @@ public class QueryFunction_STVariableInitializer extends ConceptFunction {
   }
 
   public static QueryFunction_STVariableInitializer newInstance(SModel sm, boolean init) {
-    return (QueryFunction_STVariableInitializer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_STVariableInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_STVariableInitializer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_STVariableInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_STVariableInitializer newInstance(SModel sm) {

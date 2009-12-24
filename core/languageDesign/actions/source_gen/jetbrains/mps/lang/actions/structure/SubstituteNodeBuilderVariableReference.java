@@ -24,7 +24,7 @@ public class SubstituteNodeBuilderVariableReference extends VariableReference {
   }
 
   public static SubstituteNodeBuilderVariableReference newInstance(SModel sm, boolean init) {
-    return (SubstituteNodeBuilderVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SubstituteNodeBuilderVariableReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SubstituteNodeBuilderVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SubstituteNodeBuilderVariableReference newInstance(SModel sm) {

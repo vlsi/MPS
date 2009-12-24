@@ -48,7 +48,7 @@ public class DefaultClassifierMethodCallOperation extends BaseConcept implements
   }
 
   public IMember getMember() {
-    return (IMember)this.getReferent(IMember.class, DefaultClassifierMethodCallOperation.MEMBER);
+    return (IMember) this.getReferent(IMember.class, DefaultClassifierMethodCallOperation.MEMBER);
   }
 
   public void setMember(IMember node) {
@@ -84,7 +84,7 @@ public class DefaultClassifierMethodCallOperation extends BaseConcept implements
   }
 
   public static DefaultClassifierMethodCallOperation newInstance(SModel sm, boolean init) {
-    return (DefaultClassifierMethodCallOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DefaultClassifierMethodCallOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DefaultClassifierMethodCallOperation newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class InterfaceExtentionPoint extends GroupAnchor {
   }
 
   public Expression getPointID() {
-    return (Expression)this.getChild(Expression.class, InterfaceExtentionPoint.POINT_I_D);
+    return (Expression) this.getChild(Expression.class, InterfaceExtentionPoint.POINT_I_D);
   }
 
   public void setPointID(Expression node) {
@@ -25,7 +25,7 @@ public class InterfaceExtentionPoint extends GroupAnchor {
   }
 
   public static InterfaceExtentionPoint newInstance(SModel sm, boolean init) {
-    return (InterfaceExtentionPoint)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InterfaceExtentionPoint) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.InterfaceExtentionPoint", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InterfaceExtentionPoint newInstance(SModel sm) {

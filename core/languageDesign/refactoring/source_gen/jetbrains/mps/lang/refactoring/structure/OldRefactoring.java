@@ -107,7 +107,7 @@ public class OldRefactoring extends BaseConcept implements INamedConcept {
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, OldRefactoring.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, OldRefactoring.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {
@@ -115,7 +115,7 @@ public class OldRefactoring extends BaseConcept implements INamedConcept {
   }
 
   public OldRefactoring getOverrides() {
-    return (OldRefactoring)this.getReferent(OldRefactoring.class, OldRefactoring.OVERRIDES);
+    return (OldRefactoring) this.getReferent(OldRefactoring.class, OldRefactoring.OVERRIDES);
   }
 
   public void setOverrides(OldRefactoring node) {
@@ -123,7 +123,7 @@ public class OldRefactoring extends BaseConcept implements INamedConcept {
   }
 
   public CellKeyMapKeystroke getKeystroke() {
-    return (CellKeyMapKeystroke)this.getChild(CellKeyMapKeystroke.class, OldRefactoring.KEYSTROKE);
+    return (CellKeyMapKeystroke) this.getChild(CellKeyMapKeystroke.class, OldRefactoring.KEYSTROKE);
   }
 
   public void setKeystroke(CellKeyMapKeystroke node) {
@@ -131,7 +131,7 @@ public class OldRefactoring extends BaseConcept implements INamedConcept {
   }
 
   public IsApplicableClause getIsApplicableClause() {
-    return (IsApplicableClause)this.getChild(IsApplicableClause.class, OldRefactoring.IS_APPLICABLE_CLAUSE);
+    return (IsApplicableClause) this.getChild(IsApplicableClause.class, OldRefactoring.IS_APPLICABLE_CLAUSE);
   }
 
   public void setIsApplicableClause(IsApplicableClause node) {
@@ -139,7 +139,7 @@ public class OldRefactoring extends BaseConcept implements INamedConcept {
   }
 
   public IsApplicableToModelClause getIsApplicableToModelClause() {
-    return (IsApplicableToModelClause)this.getChild(IsApplicableToModelClause.class, OldRefactoring.IS_APPLICABLE_TO_MODEL_CLAUSE);
+    return (IsApplicableToModelClause) this.getChild(IsApplicableToModelClause.class, OldRefactoring.IS_APPLICABLE_TO_MODEL_CLAUSE);
   }
 
   public void setIsApplicableToModelClause(IsApplicableToModelClause node) {
@@ -147,7 +147,7 @@ public class OldRefactoring extends BaseConcept implements INamedConcept {
   }
 
   public AffectedNodesClause getAffectedNodesClause() {
-    return (AffectedNodesClause)this.getChild(AffectedNodesClause.class, OldRefactoring.AFFECTED_NODES_CLAUSE);
+    return (AffectedNodesClause) this.getChild(AffectedNodesClause.class, OldRefactoring.AFFECTED_NODES_CLAUSE);
   }
 
   public void setAffectedNodesClause(AffectedNodesClause node) {
@@ -155,7 +155,7 @@ public class OldRefactoring extends BaseConcept implements INamedConcept {
   }
 
   public DoRefactorClause getDoRefactorClause() {
-    return (DoRefactorClause)this.getChild(DoRefactorClause.class, OldRefactoring.DO_REFACTOR_CLAUSE);
+    return (DoRefactorClause) this.getChild(DoRefactorClause.class, OldRefactoring.DO_REFACTOR_CLAUSE);
   }
 
   public void setDoRefactorClause(DoRefactorClause node) {
@@ -163,7 +163,7 @@ public class OldRefactoring extends BaseConcept implements INamedConcept {
   }
 
   public GetModelsToGenerateClause getGetModelsToGenerateClause() {
-    return (GetModelsToGenerateClause)this.getChild(GetModelsToGenerateClause.class, OldRefactoring.GET_MODELS_TO_GENERATE_CLAUSE);
+    return (GetModelsToGenerateClause) this.getChild(GetModelsToGenerateClause.class, OldRefactoring.GET_MODELS_TO_GENERATE_CLAUSE);
   }
 
   public void setGetModelsToGenerateClause(GetModelsToGenerateClause node) {
@@ -171,7 +171,7 @@ public class OldRefactoring extends BaseConcept implements INamedConcept {
   }
 
   public GetModelsToUpdateClause getGetModelsToUpdateClause() {
-    return (GetModelsToUpdateClause)this.getChild(GetModelsToUpdateClause.class, OldRefactoring.GET_MODELS_TO_UPDATE_CLAUSE);
+    return (GetModelsToUpdateClause) this.getChild(GetModelsToUpdateClause.class, OldRefactoring.GET_MODELS_TO_UPDATE_CLAUSE);
   }
 
   public void setGetModelsToUpdateClause(GetModelsToUpdateClause node) {
@@ -179,7 +179,7 @@ public class OldRefactoring extends BaseConcept implements INamedConcept {
   }
 
   public NodesToOpenClause getNodesToOpenClause() {
-    return (NodesToOpenClause)this.getChild(NodesToOpenClause.class, OldRefactoring.NODES_TO_OPEN_CLAUSE);
+    return (NodesToOpenClause) this.getChild(NodesToOpenClause.class, OldRefactoring.NODES_TO_OPEN_CLAUSE);
   }
 
   public void setNodesToOpenClause(NodesToOpenClause node) {
@@ -187,7 +187,7 @@ public class OldRefactoring extends BaseConcept implements INamedConcept {
   }
 
   public UpdateModelClause getUpdateModelClause() {
-    return (UpdateModelClause)this.getChild(UpdateModelClause.class, OldRefactoring.UPDATE_MODEL_CLAUSE);
+    return (UpdateModelClause) this.getChild(UpdateModelClause.class, OldRefactoring.UPDATE_MODEL_CLAUSE);
   }
 
   public void setUpdateModelClause(UpdateModelClause node) {
@@ -235,7 +235,7 @@ public class OldRefactoring extends BaseConcept implements INamedConcept {
   }
 
   public static OldRefactoring newInstance(SModel sm, boolean init) {
-    return (OldRefactoring)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.OldRefactoring", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OldRefactoring) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.OldRefactoring", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OldRefactoring newInstance(SModel sm) {

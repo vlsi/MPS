@@ -21,7 +21,7 @@ public class ConfigurationEditorDeclaration extends BaseConcept {
   }
 
   public Expression getEditor() {
-    return (Expression)this.getChild(Expression.class, ConfigurationEditorDeclaration.EDITOR);
+    return (Expression) this.getChild(Expression.class, ConfigurationEditorDeclaration.EDITOR);
   }
 
   public void setEditor(Expression node) {
@@ -29,7 +29,7 @@ public class ConfigurationEditorDeclaration extends BaseConcept {
   }
 
   public ApplyEditorBlock getApplyBlock() {
-    return (ApplyEditorBlock)this.getChild(ApplyEditorBlock.class, ConfigurationEditorDeclaration.APPLY_BLOCK);
+    return (ApplyEditorBlock) this.getChild(ApplyEditorBlock.class, ConfigurationEditorDeclaration.APPLY_BLOCK);
   }
 
   public void setApplyBlock(ApplyEditorBlock node) {
@@ -37,7 +37,7 @@ public class ConfigurationEditorDeclaration extends BaseConcept {
   }
 
   public ResetEditorBlock getResetBlock() {
-    return (ResetEditorBlock)this.getChild(ResetEditorBlock.class, ConfigurationEditorDeclaration.RESET_BLOCK);
+    return (ResetEditorBlock) this.getChild(ResetEditorBlock.class, ConfigurationEditorDeclaration.RESET_BLOCK);
   }
 
   public void setResetBlock(ResetEditorBlock node) {
@@ -45,7 +45,7 @@ public class ConfigurationEditorDeclaration extends BaseConcept {
   }
 
   public DisposeEditorBlock getDisposeBlock() {
-    return (DisposeEditorBlock)this.getChild(DisposeEditorBlock.class, ConfigurationEditorDeclaration.DISPOSE_BLOCK);
+    return (DisposeEditorBlock) this.getChild(DisposeEditorBlock.class, ConfigurationEditorDeclaration.DISPOSE_BLOCK);
   }
 
   public void setDisposeBlock(DisposeEditorBlock node) {
@@ -53,7 +53,7 @@ public class ConfigurationEditorDeclaration extends BaseConcept {
   }
 
   public static ConfigurationEditorDeclaration newInstance(SModel sm, boolean init) {
-    return (ConfigurationEditorDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConfigurationEditorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConfigurationEditorDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConfigurationEditorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConfigurationEditorDeclaration newInstance(SModel sm) {

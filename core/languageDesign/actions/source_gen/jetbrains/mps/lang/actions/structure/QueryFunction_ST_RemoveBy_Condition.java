@@ -16,7 +16,7 @@ public class QueryFunction_ST_RemoveBy_Condition extends ConceptFunction {
   }
 
   public static QueryFunction_ST_RemoveBy_Condition newInstance(SModel sm, boolean init) {
-    return (QueryFunction_ST_RemoveBy_Condition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_ST_RemoveBy_Condition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_ST_RemoveBy_Condition) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_ST_RemoveBy_Condition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_ST_RemoveBy_Condition newInstance(SModel sm) {

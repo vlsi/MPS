@@ -20,7 +20,7 @@ public class typeof_DefaultClassifierFieldAccessOperation_InferenceRule extends 
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1214001485999", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1214001479715", true), (SNode)SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "member", false), "type", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590371(jetbrains.mps.baseLanguage.classifiers.typesystem)", "1214001479715", true), (SNode) SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "member", false), "type", true), _info_12389875345);
     }
   }
 

@@ -16,7 +16,7 @@ public class IsDefaultBlock extends ConceptFunction {
   }
 
   public static IsDefaultBlock newInstance(SModel sm, boolean init) {
-    return (IsDefaultBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.IsDefaultBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IsDefaultBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.IsDefaultBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IsDefaultBlock newInstance(SModel sm) {

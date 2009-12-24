@@ -16,7 +16,7 @@ public class ConceptsSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public QueryFunction_ParameterizedSubstitute_Query getQuery() {
-    return (QueryFunction_ParameterizedSubstitute_Query)this.getChild(QueryFunction_ParameterizedSubstitute_Query.class, ConceptsSubstituteMenuPart.QUERY);
+    return (QueryFunction_ParameterizedSubstitute_Query) this.getChild(QueryFunction_ParameterizedSubstitute_Query.class, ConceptsSubstituteMenuPart.QUERY);
   }
 
   public void setQuery(QueryFunction_ParameterizedSubstitute_Query node) {
@@ -24,7 +24,7 @@ public class ConceptsSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public static ConceptsSubstituteMenuPart newInstance(SModel sm, boolean init) {
-    return (ConceptsSubstituteMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptsSubstituteMenuPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptsSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptsSubstituteMenuPart newInstance(SModel sm) {

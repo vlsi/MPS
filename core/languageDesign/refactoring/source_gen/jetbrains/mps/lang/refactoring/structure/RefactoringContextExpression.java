@@ -16,7 +16,7 @@ public class RefactoringContextExpression extends Expression {
   }
 
   public static RefactoringContextExpression newInstance(SModel sm, boolean init) {
-    return (RefactoringContextExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RefactoringContextExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RefactoringContextExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RefactoringContextExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RefactoringContextExpression newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class BooleanMPSParameterType extends MPSParameterType {
   }
 
   public static BooleanMPSParameterType newInstance(SModel sm, boolean init) {
-    return (BooleanMPSParameterType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.BooleanMPSParameterType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BooleanMPSParameterType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.BooleanMPSParameterType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BooleanMPSParameterType newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_childSetter extends ConceptFunctionParamet
   }
 
   public static ConceptFunctionParameter_childSetter newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_childSetter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childSetter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_childSetter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_childSetter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_childSetter newInstance(SModel sm) {

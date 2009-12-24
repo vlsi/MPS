@@ -17,10 +17,10 @@ public class BaseCreatorTarget_Behavior {
   }
 
   public static SNode call_getParameter_7559322914920378168(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.BaseCreatorTarget"), "virtual_getParameter_7559322914920378168", PARAMETERS_7559322914920378168);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.BaseCreatorTarget"), "virtual_getParameter_7559322914920378168", PARAMETERS_7559322914920378168);
   }
 
   public static SNode callSuper_getParameter_7559322914920378168(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.BaseCreatorTarget"), callerConceptFqName, "virtual_getParameter_7559322914920378168", PARAMETERS_7559322914920378168);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.plugin.structure.BaseCreatorTarget"), callerConceptFqName, "virtual_getParameter_7559322914920378168", PARAMETERS_7559322914920378168);
   }
 }

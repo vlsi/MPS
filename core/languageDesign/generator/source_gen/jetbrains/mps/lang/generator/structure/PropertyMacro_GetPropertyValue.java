@@ -15,7 +15,7 @@ public class PropertyMacro_GetPropertyValue extends TemplateQueryBase {
   }
 
   public static PropertyMacro_GetPropertyValue newInstance(SModel sm, boolean init) {
-    return (PropertyMacro_GetPropertyValue)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyMacro_GetPropertyValue) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyMacro_GetPropertyValue newInstance(SModel sm) {

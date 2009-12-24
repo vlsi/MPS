@@ -18,7 +18,7 @@ public class GenerationContextOp_ShowMessageBase extends GenerationContextOp_Bas
   }
 
   public Expression getMessageText() {
-    return (Expression)this.getChild(Expression.class, GenerationContextOp_ShowMessageBase.MESSAGE_TEXT);
+    return (Expression) this.getChild(Expression.class, GenerationContextOp_ShowMessageBase.MESSAGE_TEXT);
   }
 
   public void setMessageText(Expression node) {
@@ -26,7 +26,7 @@ public class GenerationContextOp_ShowMessageBase extends GenerationContextOp_Bas
   }
 
   public Expression getReferenceNode() {
-    return (Expression)this.getChild(Expression.class, GenerationContextOp_ShowMessageBase.REFERENCE_NODE);
+    return (Expression) this.getChild(Expression.class, GenerationContextOp_ShowMessageBase.REFERENCE_NODE);
   }
 
   public void setReferenceNode(Expression node) {
@@ -34,7 +34,7 @@ public class GenerationContextOp_ShowMessageBase extends GenerationContextOp_Bas
   }
 
   public static GenerationContextOp_ShowMessageBase newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_ShowMessageBase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_ShowMessageBase) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowMessageBase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_ShowMessageBase newInstance(SModel sm) {

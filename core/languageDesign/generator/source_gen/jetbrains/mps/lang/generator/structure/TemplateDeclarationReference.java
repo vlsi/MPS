@@ -16,7 +16,7 @@ public class TemplateDeclarationReference extends RuleConsequence {
   }
 
   public TemplateDeclaration getTemplate() {
-    return (TemplateDeclaration)this.getReferent(TemplateDeclaration.class, TemplateDeclarationReference.TEMPLATE);
+    return (TemplateDeclaration) this.getReferent(TemplateDeclaration.class, TemplateDeclarationReference.TEMPLATE);
   }
 
   public void setTemplate(TemplateDeclaration node) {
@@ -24,7 +24,7 @@ public class TemplateDeclarationReference extends RuleConsequence {
   }
 
   public static TemplateDeclarationReference newInstance(SModel sm, boolean init) {
-    return (TemplateDeclarationReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TemplateDeclarationReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TemplateDeclarationReference newInstance(SModel sm) {

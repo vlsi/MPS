@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_strictly extends ConceptFunctionParameter 
   }
 
   public static ConceptFunctionParameter_strictly newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_strictly)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_strictly", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_strictly) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_strictly", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_strictly newInstance(SModel sm) {

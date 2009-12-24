@@ -15,7 +15,7 @@ public class ModelDescriptorOperation extends ContextMemberOperation {
   }
 
   public static ModelDescriptorOperation newInstance(SModel sm, boolean init) {
-    return (ModelDescriptorOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ModelDescriptorOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ModelDescriptorOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ModelDescriptorOperation newInstance(SModel sm) {

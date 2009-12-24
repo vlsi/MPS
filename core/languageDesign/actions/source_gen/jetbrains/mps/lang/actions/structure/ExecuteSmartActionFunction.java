@@ -16,7 +16,7 @@ public class ExecuteSmartActionFunction extends ConceptFunction {
   }
 
   public static ExecuteSmartActionFunction newInstance(SModel sm, boolean init) {
-    return (ExecuteSmartActionFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ExecuteSmartActionFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExecuteSmartActionFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ExecuteSmartActionFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExecuteSmartActionFunction newInstance(SModel sm) {

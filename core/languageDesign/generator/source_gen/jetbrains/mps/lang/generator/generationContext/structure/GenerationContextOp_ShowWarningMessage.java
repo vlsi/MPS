@@ -15,7 +15,7 @@ public class GenerationContextOp_ShowWarningMessage extends GenerationContextOp_
   }
 
   public static GenerationContextOp_ShowWarningMessage newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_ShowWarningMessage)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_ShowWarningMessage) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_ShowWarningMessage", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_ShowWarningMessage newInstance(SModel sm) {

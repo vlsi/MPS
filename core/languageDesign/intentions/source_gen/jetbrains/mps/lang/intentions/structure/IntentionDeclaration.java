@@ -15,7 +15,7 @@ public class IntentionDeclaration extends BaseIntentionDeclaration {
   }
 
   public static IntentionDeclaration newInstance(SModel sm, boolean init) {
-    return (IntentionDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntentionDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntentionDeclaration newInstance(SModel sm) {

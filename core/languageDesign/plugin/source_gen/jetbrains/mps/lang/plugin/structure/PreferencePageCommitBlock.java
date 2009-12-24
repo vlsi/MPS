@@ -16,7 +16,7 @@ public class PreferencePageCommitBlock extends ConceptFunction {
   }
 
   public static PreferencePageCommitBlock newInstance(SModel sm, boolean init) {
-    return (PreferencePageCommitBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PreferencePageCommitBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PreferencePageCommitBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PreferencePageCommitBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PreferencePageCommitBlock newInstance(SModel sm) {

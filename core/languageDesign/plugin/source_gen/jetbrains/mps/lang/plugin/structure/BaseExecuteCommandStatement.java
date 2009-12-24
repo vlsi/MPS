@@ -17,7 +17,7 @@ public class BaseExecuteCommandStatement extends Statement {
   }
 
   public CommandClosureLiteral getCommandClosureLiteral() {
-    return (CommandClosureLiteral)this.getChild(CommandClosureLiteral.class, BaseExecuteCommandStatement.COMMAND_CLOSURE_LITERAL);
+    return (CommandClosureLiteral) this.getChild(CommandClosureLiteral.class, BaseExecuteCommandStatement.COMMAND_CLOSURE_LITERAL);
   }
 
   public void setCommandClosureLiteral(CommandClosureLiteral node) {
@@ -25,7 +25,7 @@ public class BaseExecuteCommandStatement extends Statement {
   }
 
   public static BaseExecuteCommandStatement newInstance(SModel sm, boolean init) {
-    return (BaseExecuteCommandStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseExecuteCommandStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseExecuteCommandStatement newInstance(SModel sm) {

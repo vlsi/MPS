@@ -17,7 +17,7 @@ public class GenerationContextOp_UserObjectAccessBase extends GenerationContextO
   }
 
   public Expression getUserKey() {
-    return (Expression)this.getChild(Expression.class, GenerationContextOp_UserObjectAccessBase.USER_KEY);
+    return (Expression) this.getChild(Expression.class, GenerationContextOp_UserObjectAccessBase.USER_KEY);
   }
 
   public void setUserKey(Expression node) {
@@ -25,7 +25,7 @@ public class GenerationContextOp_UserObjectAccessBase extends GenerationContextO
   }
 
   public static GenerationContextOp_UserObjectAccessBase newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_UserObjectAccessBase)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_UserObjectAccessBase) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_UserObjectAccessBase", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_UserObjectAccessBase newInstance(SModel sm) {

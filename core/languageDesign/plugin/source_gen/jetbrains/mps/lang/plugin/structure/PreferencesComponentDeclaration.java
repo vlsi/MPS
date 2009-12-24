@@ -59,7 +59,7 @@ public class PreferencesComponentDeclaration extends BaseConcept implements ICla
   }
 
   public OnAfterReadBlock getAfterReadBlock() {
-    return (OnAfterReadBlock)this.getChild(OnAfterReadBlock.class, PreferencesComponentDeclaration.AFTER_READ_BLOCK);
+    return (OnAfterReadBlock) this.getChild(OnAfterReadBlock.class, PreferencesComponentDeclaration.AFTER_READ_BLOCK);
   }
 
   public void setAfterReadBlock(OnAfterReadBlock node) {
@@ -67,7 +67,7 @@ public class PreferencesComponentDeclaration extends BaseConcept implements ICla
   }
 
   public OnBeforeWriteBlock getBeforeWriteBlock() {
-    return (OnBeforeWriteBlock)this.getChild(OnBeforeWriteBlock.class, PreferencesComponentDeclaration.BEFORE_WRITE_BLOCK);
+    return (OnBeforeWriteBlock) this.getChild(OnBeforeWriteBlock.class, PreferencesComponentDeclaration.BEFORE_WRITE_BLOCK);
   }
 
   public void setBeforeWriteBlock(OnBeforeWriteBlock node) {
@@ -115,7 +115,7 @@ public class PreferencesComponentDeclaration extends BaseConcept implements ICla
   }
 
   public static PreferencesComponentDeclaration newInstance(SModel sm, boolean init) {
-    return (PreferencesComponentDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PreferencesComponentDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PreferencesComponentDeclaration newInstance(SModel sm) {

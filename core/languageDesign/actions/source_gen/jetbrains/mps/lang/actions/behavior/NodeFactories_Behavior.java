@@ -25,10 +25,10 @@ public class NodeFactories_Behavior {
   }
 
   public static List<SNode> call_getBaseConceptCollection_5270353093116089378(SNode thisNode) {
-    return (List<SNode>)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.NodeFactories"), "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_5270353093116089378);
+    return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.NodeFactories"), "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_5270353093116089378);
   }
 
   public static List<SNode> callSuper_getBaseConceptCollection_5270353093116089378(SNode thisNode, String callerConceptFqName) {
-    return (List<SNode>)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.NodeFactories"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_5270353093116089378);
+    return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.NodeFactories"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_5270353093116089378);
   }
 }

@@ -17,7 +17,7 @@ public class NodeCreatorTarget extends BaseCreatorTarget {
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, NodeCreatorTarget.CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, NodeCreatorTarget.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {
@@ -25,7 +25,7 @@ public class NodeCreatorTarget extends BaseCreatorTarget {
   }
 
   public static NodeCreatorTarget newInstance(SModel sm, boolean init) {
-    return (NodeCreatorTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.NodeCreatorTarget", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeCreatorTarget) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.NodeCreatorTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeCreatorTarget newInstance(SModel sm) {

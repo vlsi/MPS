@@ -28,7 +28,7 @@ public class GenerateIntentionDeclaration extends BaseIntentionDeclaration {
   }
 
   public ExecuteUIBlock getExecuteUI() {
-    return (ExecuteUIBlock)this.getChild(ExecuteUIBlock.class, GenerateIntentionDeclaration.EXECUTE_U_I);
+    return (ExecuteUIBlock) this.getChild(ExecuteUIBlock.class, GenerateIntentionDeclaration.EXECUTE_U_I);
   }
 
   public void setExecuteUI(ExecuteUIBlock node) {
@@ -56,7 +56,7 @@ public class GenerateIntentionDeclaration extends BaseIntentionDeclaration {
   }
 
   public static GenerateIntentionDeclaration newInstance(SModel sm, boolean init) {
-    return (GenerateIntentionDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.GenerateIntentionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerateIntentionDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.GenerateIntentionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerateIntentionDeclaration newInstance(SModel sm) {

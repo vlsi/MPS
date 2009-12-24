@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_currentTargetNode extends ConceptFunctionP
   }
 
   public static ConceptFunctionParameter_currentTargetNode newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_currentTargetNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_currentTargetNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_currentTargetNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_currentTargetNode newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class ModelTarget extends RefactoringTarget {
   }
 
   public static ModelTarget newInstance(SModel sm, boolean init) {
-    return (ModelTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ModelTarget", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ModelTarget) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ModelTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ModelTarget newInstance(SModel sm) {

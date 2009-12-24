@@ -16,7 +16,7 @@ public class QueryFunction_SideTransform_Handler extends ConceptFunction {
   }
 
   public static QueryFunction_SideTransform_Handler newInstance(SModel sm, boolean init) {
-    return (QueryFunction_SideTransform_Handler)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_SideTransform_Handler) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_SideTransform_Handler newInstance(SModel sm) {

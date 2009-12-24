@@ -13,8 +13,8 @@ public class CustomParameterChooser_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "mainComponent", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "focusedComponent", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "commitBlock", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "mainComponent", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "focusedComponent", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "commitBlock", true));
   }
 }

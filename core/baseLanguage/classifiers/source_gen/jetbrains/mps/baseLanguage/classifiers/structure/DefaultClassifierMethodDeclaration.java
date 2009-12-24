@@ -55,7 +55,7 @@ public class DefaultClassifierMethodDeclaration extends BaseMethodDeclaration im
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, DefaultClassifierMethodDeclaration.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, DefaultClassifierMethodDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -63,7 +63,7 @@ public class DefaultClassifierMethodDeclaration extends BaseMethodDeclaration im
   }
 
   public static DefaultClassifierMethodDeclaration newInstance(SModel sm, boolean init) {
-    return (DefaultClassifierMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DefaultClassifierMethodDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DefaultClassifierMethodDeclaration newInstance(SModel sm) {

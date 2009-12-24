@@ -15,7 +15,7 @@ public class RemoveDefaultsPart extends MenuBuilderPart {
   }
 
   public static RemoveDefaultsPart newInstance(SModel sm, boolean init) {
-    return (RemoveDefaultsPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.RemoveDefaultsPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RemoveDefaultsPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.RemoveDefaultsPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RemoveDefaultsPart newInstance(SModel sm) {

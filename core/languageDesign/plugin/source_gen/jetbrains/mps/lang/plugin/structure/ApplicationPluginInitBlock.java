@@ -16,7 +16,7 @@ public class ApplicationPluginInitBlock extends ConceptFunction {
   }
 
   public static ApplicationPluginInitBlock newInstance(SModel sm, boolean init) {
-    return (ApplicationPluginInitBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ApplicationPluginInitBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ApplicationPluginInitBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ApplicationPluginInitBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ApplicationPluginInitBlock newInstance(SModel sm) {

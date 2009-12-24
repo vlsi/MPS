@@ -13,10 +13,10 @@ public class MPSParameterType_Behavior {
   }
 
   public static SNode call_getCreatorMethod_4413749148913760555(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.MPSParameterType"), "virtual_getCreatorMethod_4413749148913760555", PARAMETERS_4413749148913760555);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.MPSParameterType"), "virtual_getCreatorMethod_4413749148913760555", PARAMETERS_4413749148913760555);
   }
 
   public static SNode callSuper_getCreatorMethod_4413749148913760555(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.MPSParameterType"), callerConceptFqName, "virtual_getCreatorMethod_4413749148913760555", PARAMETERS_4413749148913760555);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.MPSParameterType"), callerConceptFqName, "virtual_getCreatorMethod_4413749148913760555", PARAMETERS_4413749148913760555);
   }
 }

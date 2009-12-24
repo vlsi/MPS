@@ -16,7 +16,7 @@ public class ToStringConceptFunction extends ConceptFunction {
   }
 
   public static ToStringConceptFunction newInstance(SModel sm, boolean init) {
-    return (ToStringConceptFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToStringConceptFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ToStringConceptFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToStringConceptFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ToStringConceptFunction newInstance(SModel sm) {

@@ -18,7 +18,7 @@ public class RunConfigMainNodeStatement extends Statement {
   }
 
   public Expression getContextItem() {
-    return (Expression)this.getChild(Expression.class, RunConfigMainNodeStatement.CONTEXT_ITEM);
+    return (Expression) this.getChild(Expression.class, RunConfigMainNodeStatement.CONTEXT_ITEM);
   }
 
   public void setContextItem(Expression node) {
@@ -26,7 +26,7 @@ public class RunConfigMainNodeStatement extends Statement {
   }
 
   public static RunConfigMainNodeStatement newInstance(SModel sm, boolean init) {
-    return (RunConfigMainNodeStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RunConfigMainNodeStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RunConfigMainNodeStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RunConfigMainNodeStatement newInstance(SModel sm) {

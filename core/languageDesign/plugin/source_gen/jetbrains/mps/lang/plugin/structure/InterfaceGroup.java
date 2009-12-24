@@ -17,7 +17,7 @@ public class InterfaceGroup extends ActionGroupDeclaration {
   }
 
   public Expression getGroupID() {
-    return (Expression)this.getChild(Expression.class, InterfaceGroup.GROUP_I_D);
+    return (Expression) this.getChild(Expression.class, InterfaceGroup.GROUP_I_D);
   }
 
   public void setGroupID(Expression node) {
@@ -25,7 +25,7 @@ public class InterfaceGroup extends ActionGroupDeclaration {
   }
 
   public static InterfaceGroup newInstance(SModel sm, boolean init) {
-    return (InterfaceGroup)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.InterfaceGroup", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InterfaceGroup) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.InterfaceGroup", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InterfaceGroup newInstance(SModel sm) {

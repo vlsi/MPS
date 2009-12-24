@@ -26,7 +26,7 @@ public class GenerationContextOp_GetOutputByLabel extends GenerationContextOp_Ba
   }
 
   public MappingLabelDeclaration getLabel() {
-    return (MappingLabelDeclaration)this.getReferent(MappingLabelDeclaration.class, GenerationContextOp_GetOutputByLabel.LABEL);
+    return (MappingLabelDeclaration) this.getReferent(MappingLabelDeclaration.class, GenerationContextOp_GetOutputByLabel.LABEL);
   }
 
   public void setLabel(MappingLabelDeclaration node) {
@@ -34,7 +34,7 @@ public class GenerationContextOp_GetOutputByLabel extends GenerationContextOp_Ba
   }
 
   public static GenerationContextOp_GetOutputByLabel newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_GetOutputByLabel)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_GetOutputByLabel) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOutputByLabel", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_GetOutputByLabel newInstance(SModel sm) {

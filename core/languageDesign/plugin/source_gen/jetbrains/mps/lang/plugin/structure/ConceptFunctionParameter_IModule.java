@@ -15,7 +15,7 @@ public class ConceptFunctionParameter_IModule extends ConceptFunctionParameter_C
   }
 
   public static ConceptFunctionParameter_IModule newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_IModule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_IModule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_IModule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_IModule newInstance(SModel sm) {

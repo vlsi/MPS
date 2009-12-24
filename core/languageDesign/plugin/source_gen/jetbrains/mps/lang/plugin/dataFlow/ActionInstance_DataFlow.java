@@ -14,7 +14,7 @@ public class ActionInstance_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode expression : SLinkOperations.getTargets(_context.getNode(), "actualParameter", true)) {
-      _context.getBuilder().build((SNode)expression);
+      _context.getBuilder().build((SNode) expression);
     }
   }
 }

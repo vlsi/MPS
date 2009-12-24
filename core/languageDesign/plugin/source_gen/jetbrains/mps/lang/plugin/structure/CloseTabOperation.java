@@ -17,7 +17,7 @@ public class CloseTabOperation extends TabbedToolOperation {
   }
 
   public Expression getComponentExpression() {
-    return (Expression)this.getChild(Expression.class, CloseTabOperation.COMPONENT_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, CloseTabOperation.COMPONENT_EXPRESSION);
   }
 
   public void setComponentExpression(Expression node) {
@@ -25,7 +25,7 @@ public class CloseTabOperation extends TabbedToolOperation {
   }
 
   public static CloseTabOperation newInstance(SModel sm, boolean init) {
-    return (CloseTabOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CloseTabOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CloseTabOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CloseTabOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CloseTabOperation newInstance(SModel sm) {

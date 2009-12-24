@@ -20,7 +20,7 @@ public class typeof_IntentionContextParameterDeclaration_InferenceRule extends A
       SNode _nodeToCheck_1029348928467 = declaration;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)", "1349940517677473374", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)", "1349940517677473371", true), (SNode)SLinkOperations.getTarget(declaration, "type", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590351(jetbrains.mps.lang.intentions.typesystem)", "1349940517677473371", true), (SNode) SLinkOperations.getTarget(declaration, "type", true), _info_12389875345);
     }
   }
 

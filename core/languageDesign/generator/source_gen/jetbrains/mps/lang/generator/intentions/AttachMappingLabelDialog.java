@@ -52,12 +52,12 @@ public class AttachMappingLabelDialog extends BaseDialog {
     namePanel.add(nameCombo, c);
     nameCombo.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent p0) {
-        AttachMappingLabelDialog.this.myResultLabelName = (String)nameCombo.getSelectedItem();
+        AttachMappingLabelDialog.this.myResultLabelName = (String) nameCombo.getSelectedItem();
       }
     });
     if (ListSequence.fromList(this.myExistingLabels).isNotEmpty()) {
       nameCombo.setSelectedItem(ListSequence.fromList(this.myExistingLabels).first());
-      JTextField textField = ((JTextField)nameCombo.getEditor().getEditorComponent());
+      JTextField textField = ((JTextField) nameCombo.getEditor().getEditorComponent());
       textField.setSelectionStart(0);
       textField.setSelectionEnd(ListSequence.fromList(this.myExistingLabels).first().length());
     }

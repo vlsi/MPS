@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_PreferencePage_component extends ConceptFu
   }
 
   public static ConceptFunctionParameter_PreferencePage_component newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_PreferencePage_component)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_PreferencePage_component) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_PreferencePage_component", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_PreferencePage_component newInstance(SModel sm) {

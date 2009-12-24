@@ -17,7 +17,7 @@ public class SwitchMacro extends SourceSubstituteMacro {
   }
 
   public TemplateSwitch getTemplateSwitch() {
-    return (TemplateSwitch)this.getReferent(TemplateSwitch.class, SwitchMacro.TEMPLATE_SWITCH);
+    return (TemplateSwitch) this.getReferent(TemplateSwitch.class, SwitchMacro.TEMPLATE_SWITCH);
   }
 
   public void setTemplateSwitch(TemplateSwitch node) {
@@ -25,7 +25,7 @@ public class SwitchMacro extends SourceSubstituteMacro {
   }
 
   public SourceSubstituteMacro_SourceNodeQuery getSourceNodeQuery() {
-    return (SourceSubstituteMacro_SourceNodeQuery)this.getChild(SourceSubstituteMacro_SourceNodeQuery.class, SwitchMacro.SOURCE_NODE_QUERY);
+    return (SourceSubstituteMacro_SourceNodeQuery) this.getChild(SourceSubstituteMacro_SourceNodeQuery.class, SwitchMacro.SOURCE_NODE_QUERY);
   }
 
   public void setSourceNodeQuery(SourceSubstituteMacro_SourceNodeQuery node) {
@@ -33,7 +33,7 @@ public class SwitchMacro extends SourceSubstituteMacro {
   }
 
   public static SwitchMacro newInstance(SModel sm, boolean init) {
-    return (SwitchMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.SwitchMacro", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SwitchMacro) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.SwitchMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SwitchMacro newInstance(SModel sm) {

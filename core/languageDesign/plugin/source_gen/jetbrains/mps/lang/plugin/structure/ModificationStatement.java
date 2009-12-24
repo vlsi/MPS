@@ -18,7 +18,7 @@ public class ModificationStatement extends BaseConcept {
   }
 
   public ActionGroupDeclaration getModifiedGroup() {
-    return (ActionGroupDeclaration)this.getReferent(ActionGroupDeclaration.class, ModificationStatement.MODIFIED_GROUP);
+    return (ActionGroupDeclaration) this.getReferent(ActionGroupDeclaration.class, ModificationStatement.MODIFIED_GROUP);
   }
 
   public void setModifiedGroup(ActionGroupDeclaration node) {
@@ -26,7 +26,7 @@ public class ModificationStatement extends BaseConcept {
   }
 
   public GroupAnchor getPoint() {
-    return (GroupAnchor)this.getReferent(GroupAnchor.class, ModificationStatement.POINT);
+    return (GroupAnchor) this.getReferent(GroupAnchor.class, ModificationStatement.POINT);
   }
 
   public void setPoint(GroupAnchor node) {
@@ -34,7 +34,7 @@ public class ModificationStatement extends BaseConcept {
   }
 
   public static ModificationStatement newInstance(SModel sm, boolean init) {
-    return (ModificationStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ModificationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ModificationStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ModificationStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ModificationStatement newInstance(SModel sm) {

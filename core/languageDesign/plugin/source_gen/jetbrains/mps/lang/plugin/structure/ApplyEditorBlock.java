@@ -16,7 +16,7 @@ public class ApplyEditorBlock extends ConceptFunction {
   }
 
   public static ApplyEditorBlock newInstance(SModel sm, boolean init) {
-    return (ApplyEditorBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ApplyEditorBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ApplyEditorBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ApplyEditorBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ApplyEditorBlock newInstance(SModel sm) {

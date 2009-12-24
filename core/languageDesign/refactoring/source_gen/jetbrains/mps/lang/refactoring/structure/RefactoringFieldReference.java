@@ -51,7 +51,7 @@ public class RefactoringFieldReference extends BaseVariableReference implements 
   }
 
   public static RefactoringFieldReference newInstance(SModel sm, boolean init) {
-    return (RefactoringFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RefactoringFieldReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RefactoringFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RefactoringFieldReference newInstance(SModel sm) {

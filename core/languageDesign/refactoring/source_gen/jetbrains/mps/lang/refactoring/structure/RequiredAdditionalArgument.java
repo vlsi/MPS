@@ -64,7 +64,7 @@ public class RequiredAdditionalArgument extends BaseConcept implements INamedCon
   }
 
   public Type getArgumentType() {
-    return (Type)this.getChild(Type.class, RequiredAdditionalArgument.ARGUMENT_TYPE);
+    return (Type) this.getChild(Type.class, RequiredAdditionalArgument.ARGUMENT_TYPE);
   }
 
   public void setArgumentType(Type node) {
@@ -72,7 +72,7 @@ public class RequiredAdditionalArgument extends BaseConcept implements INamedCon
   }
 
   public static RequiredAdditionalArgument newInstance(SModel sm, boolean init) {
-    return (RequiredAdditionalArgument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RequiredAdditionalArgument) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgument", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RequiredAdditionalArgument newInstance(SModel sm) {

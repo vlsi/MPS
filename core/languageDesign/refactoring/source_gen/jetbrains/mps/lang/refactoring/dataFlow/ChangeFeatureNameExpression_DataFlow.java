@@ -13,8 +13,8 @@ public class ChangeFeatureNameExpression_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "feature", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "newConceptFQName", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "newFeatureName", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "feature", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "newConceptFQName", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "newFeatureName", true));
   }
 }

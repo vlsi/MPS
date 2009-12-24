@@ -15,7 +15,7 @@ public class GetSelectedTabOperation extends TabbedToolOperation {
   }
 
   public static GetSelectedTabOperation newInstance(SModel sm, boolean init) {
-    return (GetSelectedTabOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetSelectedTabOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetSelectedTabOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetSelectedTabOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetSelectedTabOperation newInstance(SModel sm) {

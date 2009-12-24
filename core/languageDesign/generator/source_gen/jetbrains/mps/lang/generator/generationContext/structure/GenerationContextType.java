@@ -16,7 +16,7 @@ public class GenerationContextType extends Type {
   }
 
   public static GenerationContextType newInstance(SModel sm, boolean init) {
-    return (GenerationContextType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextType newInstance(SModel sm) {

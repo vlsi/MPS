@@ -28,7 +28,7 @@ public class Root_MappingRule extends BaseMappingRule {
   }
 
   public INamedConcept getTemplate() {
-    return (INamedConcept)this.getReferent(INamedConcept.class, Root_MappingRule.TEMPLATE);
+    return (INamedConcept) this.getReferent(INamedConcept.class, Root_MappingRule.TEMPLATE);
   }
 
   public void setTemplate(INamedConcept node) {
@@ -36,7 +36,7 @@ public class Root_MappingRule extends BaseMappingRule {
   }
 
   public static Root_MappingRule newInstance(SModel sm, boolean init) {
-    return (Root_MappingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.Root_MappingRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Root_MappingRule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.Root_MappingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Root_MappingRule newInstance(SModel sm) {

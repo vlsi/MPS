@@ -16,7 +16,7 @@ public class RunNodeConfigCreator extends RunConfigCreator {
   }
 
   public CreateNodeRunConfigBlock getCreateNodeRunConfigBlock() {
-    return (CreateNodeRunConfigBlock)this.getChild(CreateNodeRunConfigBlock.class, RunNodeConfigCreator.CREATE_NODE_RUN_CONFIG_BLOCK);
+    return (CreateNodeRunConfigBlock) this.getChild(CreateNodeRunConfigBlock.class, RunNodeConfigCreator.CREATE_NODE_RUN_CONFIG_BLOCK);
   }
 
   public void setCreateNodeRunConfigBlock(CreateNodeRunConfigBlock node) {
@@ -24,7 +24,7 @@ public class RunNodeConfigCreator extends RunConfigCreator {
   }
 
   public static RunNodeConfigCreator newInstance(SModel sm, boolean init) {
-    return (RunNodeConfigCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RunNodeConfigCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RunNodeConfigCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RunNodeConfigCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RunNodeConfigCreator newInstance(SModel sm) {

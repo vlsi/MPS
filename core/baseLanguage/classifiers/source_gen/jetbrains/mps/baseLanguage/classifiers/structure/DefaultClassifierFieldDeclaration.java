@@ -52,7 +52,7 @@ public class DefaultClassifierFieldDeclaration extends FieldDeclaration implemen
   }
 
   public static DefaultClassifierFieldDeclaration newInstance(SModel sm, boolean init) {
-    return (DefaultClassifierFieldDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DefaultClassifierFieldDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DefaultClassifierFieldDeclaration newInstance(SModel sm) {

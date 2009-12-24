@@ -15,7 +15,7 @@ public class ExecuteCommandStatement extends BaseExecuteCommandStatementSync {
   }
 
   public static ExecuteCommandStatement newInstance(SModel sm, boolean init) {
-    return (ExecuteCommandStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExecuteCommandStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ExecuteCommandStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExecuteCommandStatement newInstance(SModel sm) {

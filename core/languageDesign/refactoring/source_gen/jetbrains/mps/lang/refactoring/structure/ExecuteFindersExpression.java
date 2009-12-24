@@ -21,7 +21,7 @@ public class ExecuteFindersExpression extends Expression {
   }
 
   public Expression getSearchNode() {
-    return (Expression)this.getChild(Expression.class, ExecuteFindersExpression.SEARCH_NODE);
+    return (Expression) this.getChild(Expression.class, ExecuteFindersExpression.SEARCH_NODE);
   }
 
   public void setSearchNode(Expression node) {
@@ -29,7 +29,7 @@ public class ExecuteFindersExpression extends Expression {
   }
 
   public Expression getSearchScope() {
-    return (Expression)this.getChild(Expression.class, ExecuteFindersExpression.SEARCH_SCOPE);
+    return (Expression) this.getChild(Expression.class, ExecuteFindersExpression.SEARCH_SCOPE);
   }
 
   public void setSearchScope(Expression node) {
@@ -57,7 +57,7 @@ public class ExecuteFindersExpression extends Expression {
   }
 
   public static ExecuteFindersExpression newInstance(SModel sm, boolean init) {
-    return (ExecuteFindersExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExecuteFindersExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ExecuteFindersExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExecuteFindersExpression newInstance(SModel sm) {

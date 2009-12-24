@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_AnActionEvent extends ConceptFunctionParam
   }
 
   public static ConceptFunctionParameter_AnActionEvent newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_AnActionEvent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_AnActionEvent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_AnActionEvent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_AnActionEvent newInstance(SModel sm) {

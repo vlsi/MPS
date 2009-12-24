@@ -17,7 +17,7 @@ public class MultitabbedEditorTab extends AbstractEditorTab {
   }
 
   public GetNodesBlock getGetNodesBlock() {
-    return (GetNodesBlock)this.getChild(GetNodesBlock.class, MultitabbedEditorTab.GET_NODES_BLOCK);
+    return (GetNodesBlock) this.getChild(GetNodesBlock.class, MultitabbedEditorTab.GET_NODES_BLOCK);
   }
 
   public void setGetNodesBlock(GetNodesBlock node) {
@@ -25,7 +25,7 @@ public class MultitabbedEditorTab extends AbstractEditorTab {
   }
 
   public GetInnerTabCaptionBlock getGetInnerTabNameBlock() {
-    return (GetInnerTabCaptionBlock)this.getChild(GetInnerTabCaptionBlock.class, MultitabbedEditorTab.GET_INNER_TAB_NAME_BLOCK);
+    return (GetInnerTabCaptionBlock) this.getChild(GetInnerTabCaptionBlock.class, MultitabbedEditorTab.GET_INNER_TAB_NAME_BLOCK);
   }
 
   public void setGetInnerTabNameBlock(GetInnerTabCaptionBlock node) {
@@ -33,7 +33,7 @@ public class MultitabbedEditorTab extends AbstractEditorTab {
   }
 
   public static MultitabbedEditorTab newInstance(SModel sm, boolean init) {
-    return (MultitabbedEditorTab)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MultitabbedEditorTab) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MultitabbedEditorTab newInstance(SModel sm) {

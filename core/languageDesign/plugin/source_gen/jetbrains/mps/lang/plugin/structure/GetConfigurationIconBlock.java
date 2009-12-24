@@ -16,7 +16,7 @@ public class GetConfigurationIconBlock extends ConceptFunction {
   }
 
   public static GetConfigurationIconBlock newInstance(SModel sm, boolean init) {
-    return (GetConfigurationIconBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetConfigurationIconBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetConfigurationIconBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetConfigurationIconBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetConfigurationIconBlock newInstance(SModel sm) {

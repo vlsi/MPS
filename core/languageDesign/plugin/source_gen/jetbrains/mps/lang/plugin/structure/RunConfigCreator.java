@@ -54,7 +54,7 @@ public class RunConfigCreator extends BaseConcept implements INamedConcept {
   }
 
   public RunConfigurationTypeDeclaration getRcType() {
-    return (RunConfigurationTypeDeclaration)this.getReferent(RunConfigurationTypeDeclaration.class, RunConfigCreator.RC_TYPE);
+    return (RunConfigurationTypeDeclaration) this.getReferent(RunConfigurationTypeDeclaration.class, RunConfigCreator.RC_TYPE);
   }
 
   public void setRcType(RunConfigurationTypeDeclaration node) {
@@ -62,7 +62,7 @@ public class RunConfigCreator extends BaseConcept implements INamedConcept {
   }
 
   public static RunConfigCreator newInstance(SModel sm, boolean init) {
-    return (RunConfigCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RunConfigCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RunConfigCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RunConfigCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RunConfigCreator newInstance(SModel sm) {

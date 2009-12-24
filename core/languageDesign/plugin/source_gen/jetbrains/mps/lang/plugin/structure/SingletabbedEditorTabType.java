@@ -16,7 +16,7 @@ public class SingletabbedEditorTabType extends BaseClassifierType {
   }
 
   public static SingletabbedEditorTabType newInstance(SModel sm, boolean init) {
-    return (SingletabbedEditorTabType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.SingletabbedEditorTabType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SingletabbedEditorTabType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.SingletabbedEditorTabType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SingletabbedEditorTabType newInstance(SModel sm) {

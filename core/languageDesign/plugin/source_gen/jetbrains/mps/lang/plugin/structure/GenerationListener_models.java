@@ -16,7 +16,7 @@ public class GenerationListener_models extends ConceptFunctionParameter {
   }
 
   public static GenerationListener_models newInstance(SModel sm, boolean init) {
-    return (GenerationListener_models)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GenerationListener_models", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationListener_models) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GenerationListener_models", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationListener_models newInstance(SModel sm) {

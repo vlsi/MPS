@@ -19,7 +19,7 @@ public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public AbstractConceptDeclaration getWrappedConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, WrapperSubstituteMenuPart.WRAPPED_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, WrapperSubstituteMenuPart.WRAPPED_CONCEPT);
   }
 
   public void setWrappedConcept(AbstractConceptDeclaration node) {
@@ -27,7 +27,7 @@ public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public QueryFunction_SubstituteWrapper getWrapperBlock() {
-    return (QueryFunction_SubstituteWrapper)this.getChild(QueryFunction_SubstituteWrapper.class, WrapperSubstituteMenuPart.WRAPPER_BLOCK);
+    return (QueryFunction_SubstituteWrapper) this.getChild(QueryFunction_SubstituteWrapper.class, WrapperSubstituteMenuPart.WRAPPER_BLOCK);
   }
 
   public void setWrapperBlock(QueryFunction_SubstituteWrapper node) {
@@ -35,7 +35,7 @@ public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public QueryFunction_ReturnSmallPart getReturnSmallPart() {
-    return (QueryFunction_ReturnSmallPart)this.getChild(QueryFunction_ReturnSmallPart.class, WrapperSubstituteMenuPart.RETURN_SMALL_PART);
+    return (QueryFunction_ReturnSmallPart) this.getChild(QueryFunction_ReturnSmallPart.class, WrapperSubstituteMenuPart.RETURN_SMALL_PART);
   }
 
   public void setReturnSmallPart(QueryFunction_ReturnSmallPart node) {
@@ -43,7 +43,7 @@ public class WrapperSubstituteMenuPart extends SubstituteMenuPart {
   }
 
   public static WrapperSubstituteMenuPart newInstance(SModel sm, boolean init) {
-    return (WrapperSubstituteMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WrapperSubstituteMenuPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.WrapperSubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WrapperSubstituteMenuPart newInstance(SModel sm) {

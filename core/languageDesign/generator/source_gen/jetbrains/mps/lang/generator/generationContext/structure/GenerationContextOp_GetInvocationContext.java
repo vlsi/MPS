@@ -15,7 +15,7 @@ public class GenerationContextOp_GetInvocationContext extends GenerationContextO
   }
 
   public static GenerationContextOp_GetInvocationContext newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_GetInvocationContext)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInvocationContext", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_GetInvocationContext) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetInvocationContext", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_GetInvocationContext newInstance(SModel sm) {

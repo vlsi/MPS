@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_operationContext extends ConceptFunctionPa
   }
 
   public static ConceptFunctionParameter_operationContext newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_operationContext)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_operationContext) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_operationContext newInstance(SModel sm) {

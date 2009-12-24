@@ -16,7 +16,7 @@ public class NodeMacro extends AbstractMacro {
   }
 
   public MappingLabelDeclaration getMappingLabel() {
-    return (MappingLabelDeclaration)this.getReferent(MappingLabelDeclaration.class, NodeMacro.MAPPING_LABEL);
+    return (MappingLabelDeclaration) this.getReferent(MappingLabelDeclaration.class, NodeMacro.MAPPING_LABEL);
   }
 
   public void setMappingLabel(MappingLabelDeclaration node) {
@@ -24,7 +24,7 @@ public class NodeMacro extends AbstractMacro {
   }
 
   public static NodeMacro newInstance(SModel sm, boolean init) {
-    return (NodeMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeMacro) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.NodeMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeMacro newInstance(SModel sm) {

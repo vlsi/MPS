@@ -16,7 +16,7 @@ public class CreateRunConfigBlockParameter extends ConceptFunctionParameter {
   }
 
   public static CreateRunConfigBlockParameter newInstance(SModel sm, boolean init) {
-    return (CreateRunConfigBlockParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CreateRunConfigBlockParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CreateRunConfigBlockParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CreateRunConfigBlockParameter newInstance(SModel sm) {

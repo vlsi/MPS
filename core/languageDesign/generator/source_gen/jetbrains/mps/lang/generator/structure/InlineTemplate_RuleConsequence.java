@@ -17,7 +17,7 @@ public class InlineTemplate_RuleConsequence extends RuleConsequence {
   }
 
   public BaseConcept getTemplateNode() {
-    return (BaseConcept)this.getChild(BaseConcept.class, InlineTemplate_RuleConsequence.TEMPLATE_NODE);
+    return (BaseConcept) this.getChild(BaseConcept.class, InlineTemplate_RuleConsequence.TEMPLATE_NODE);
   }
 
   public void setTemplateNode(BaseConcept node) {
@@ -25,7 +25,7 @@ public class InlineTemplate_RuleConsequence extends RuleConsequence {
   }
 
   public static InlineTemplate_RuleConsequence newInstance(SModel sm, boolean init) {
-    return (InlineTemplate_RuleConsequence)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InlineTemplate_RuleConsequence) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InlineTemplate_RuleConsequence newInstance(SModel sm) {

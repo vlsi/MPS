@@ -22,7 +22,7 @@ public class ParameterizedSideTransformMenuPart extends SideTransformMenuPart {
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, ParameterizedSideTransformMenuPart.TYPE);
+    return (Type) this.getChild(Type.class, ParameterizedSideTransformMenuPart.TYPE);
   }
 
   public void setType(Type node) {
@@ -30,7 +30,7 @@ public class ParameterizedSideTransformMenuPart extends SideTransformMenuPart {
   }
 
   public QueryFunction_ParameterizedSideTransform_Query getQuery() {
-    return (QueryFunction_ParameterizedSideTransform_Query)this.getChild(QueryFunction_ParameterizedSideTransform_Query.class, ParameterizedSideTransformMenuPart.QUERY);
+    return (QueryFunction_ParameterizedSideTransform_Query) this.getChild(QueryFunction_ParameterizedSideTransform_Query.class, ParameterizedSideTransformMenuPart.QUERY);
   }
 
   public void setQuery(QueryFunction_ParameterizedSideTransform_Query node) {
@@ -38,7 +38,7 @@ public class ParameterizedSideTransformMenuPart extends SideTransformMenuPart {
   }
 
   public ISideTransform_String getMatchingText() {
-    return (ISideTransform_String)this.getChild(ISideTransform_String.class, ParameterizedSideTransformMenuPart.MATCHING_TEXT);
+    return (ISideTransform_String) this.getChild(ISideTransform_String.class, ParameterizedSideTransformMenuPart.MATCHING_TEXT);
   }
 
   public void setMatchingText(ISideTransform_String node) {
@@ -46,7 +46,7 @@ public class ParameterizedSideTransformMenuPart extends SideTransformMenuPart {
   }
 
   public ISideTransform_String getDescriptionText() {
-    return (ISideTransform_String)this.getChild(ISideTransform_String.class, ParameterizedSideTransformMenuPart.DESCRIPTION_TEXT);
+    return (ISideTransform_String) this.getChild(ISideTransform_String.class, ParameterizedSideTransformMenuPart.DESCRIPTION_TEXT);
   }
 
   public void setDescriptionText(ISideTransform_String node) {
@@ -54,7 +54,7 @@ public class ParameterizedSideTransformMenuPart extends SideTransformMenuPart {
   }
 
   public QueryFunction_SideTransform_Icon getIcon() {
-    return (QueryFunction_SideTransform_Icon)this.getChild(QueryFunction_SideTransform_Icon.class, ParameterizedSideTransformMenuPart.ICON);
+    return (QueryFunction_SideTransform_Icon) this.getChild(QueryFunction_SideTransform_Icon.class, ParameterizedSideTransformMenuPart.ICON);
   }
 
   public void setIcon(QueryFunction_SideTransform_Icon node) {
@@ -62,7 +62,7 @@ public class ParameterizedSideTransformMenuPart extends SideTransformMenuPart {
   }
 
   public QueryFunction_ParameterizedSideTransform_Handler getHandler() {
-    return (QueryFunction_ParameterizedSideTransform_Handler)this.getChild(QueryFunction_ParameterizedSideTransform_Handler.class, ParameterizedSideTransformMenuPart.HANDLER);
+    return (QueryFunction_ParameterizedSideTransform_Handler) this.getChild(QueryFunction_ParameterizedSideTransform_Handler.class, ParameterizedSideTransformMenuPart.HANDLER);
   }
 
   public void setHandler(QueryFunction_ParameterizedSideTransform_Handler node) {
@@ -70,7 +70,7 @@ public class ParameterizedSideTransformMenuPart extends SideTransformMenuPart {
   }
 
   public static ParameterizedSideTransformMenuPart newInstance(SModel sm, boolean init) {
-    return (ParameterizedSideTransformMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParameterizedSideTransformMenuPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParameterizedSideTransformMenuPart newInstance(SModel sm) {

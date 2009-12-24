@@ -15,7 +15,7 @@ public class SourceSubstituteMacro extends NodeMacro {
   }
 
   public static SourceSubstituteMacro newInstance(SModel sm, boolean init) {
-    return (SourceSubstituteMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SourceSubstituteMacro) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SourceSubstituteMacro newInstance(SModel sm) {

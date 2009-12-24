@@ -27,7 +27,7 @@ public class MPSParameterChooser extends RefactoringParameterChooser {
   }
 
   public MPSParameterType getParamType() {
-    return (MPSParameterType)this.getChild(MPSParameterType.class, MPSParameterChooser.PARAM_TYPE);
+    return (MPSParameterType) this.getChild(MPSParameterType.class, MPSParameterChooser.PARAM_TYPE);
   }
 
   public void setParamType(MPSParameterType node) {
@@ -35,7 +35,7 @@ public class MPSParameterChooser extends RefactoringParameterChooser {
   }
 
   public FilterParameterClause getFilterBlock() {
-    return (FilterParameterClause)this.getChild(FilterParameterClause.class, MPSParameterChooser.FILTER_BLOCK);
+    return (FilterParameterClause) this.getChild(FilterParameterClause.class, MPSParameterChooser.FILTER_BLOCK);
   }
 
   public void setFilterBlock(FilterParameterClause node) {
@@ -43,7 +43,7 @@ public class MPSParameterChooser extends RefactoringParameterChooser {
   }
 
   public InitialPropertyValueClause getInitialValueBlock() {
-    return (InitialPropertyValueClause)this.getChild(InitialPropertyValueClause.class, MPSParameterChooser.INITIAL_VALUE_BLOCK);
+    return (InitialPropertyValueClause) this.getChild(InitialPropertyValueClause.class, MPSParameterChooser.INITIAL_VALUE_BLOCK);
   }
 
   public void setInitialValueBlock(InitialPropertyValueClause node) {
@@ -51,7 +51,7 @@ public class MPSParameterChooser extends RefactoringParameterChooser {
   }
 
   public static MPSParameterChooser newInstance(SModel sm, boolean init) {
-    return (MPSParameterChooser)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.MPSParameterChooser", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MPSParameterChooser) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.MPSParameterChooser", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MPSParameterChooser newInstance(SModel sm) {

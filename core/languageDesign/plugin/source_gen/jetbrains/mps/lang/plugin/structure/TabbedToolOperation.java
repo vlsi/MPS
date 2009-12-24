@@ -44,7 +44,7 @@ public class TabbedToolOperation extends BaseConcept implements IOperation {
   }
 
   public static TabbedToolOperation newInstance(SModel sm, boolean init) {
-    return (TabbedToolOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.TabbedToolOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TabbedToolOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.TabbedToolOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TabbedToolOperation newInstance(SModel sm) {

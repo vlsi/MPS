@@ -21,7 +21,7 @@ public class typeof_ConceptFunctionParameter_nodeToCopyPreProcessOriginal_Infere
       SNode _nodeToCheck_1029348928467 = node;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "5948027493682405625", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "5948027493682405622", true), (SNode)new _Quotations.QuotationClass_7().createNode(SLinkOperations.getTarget(ConceptFunctionParameter_nodeToCopyPreProcess_Behavior.call_getPreProcessor_5948027493682405569(node), "concept", false), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "5948027493682405622", true), (SNode) new _Quotations.QuotationClass_7().createNode(SLinkOperations.getTarget(ConceptFunctionParameter_nodeToCopyPreProcess_Behavior.call_getPreProcessor_5948027493682405569(node), "concept", false), typeCheckingContext), _info_12389875345);
     }
   }
 

@@ -15,7 +15,7 @@ public class SurroundWithIntentionDeclaration extends BaseIntentionDeclaration {
   }
 
   public static SurroundWithIntentionDeclaration newInstance(SModel sm, boolean init) {
-    return (SurroundWithIntentionDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SurroundWithIntentionDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SurroundWithIntentionDeclaration newInstance(SModel sm) {

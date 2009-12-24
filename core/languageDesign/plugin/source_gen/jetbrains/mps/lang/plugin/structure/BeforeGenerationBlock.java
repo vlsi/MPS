@@ -16,7 +16,7 @@ public class BeforeGenerationBlock extends ConceptFunction {
   }
 
   public static BeforeGenerationBlock newInstance(SModel sm, boolean init) {
-    return (BeforeGenerationBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.BeforeGenerationBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BeforeGenerationBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.BeforeGenerationBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BeforeGenerationBlock newInstance(SModel sm) {

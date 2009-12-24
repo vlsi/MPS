@@ -18,7 +18,7 @@ public class RootTemplateAnnotation extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, RootTemplateAnnotation.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, RootTemplateAnnotation.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {
@@ -26,7 +26,7 @@ public class RootTemplateAnnotation extends BaseConcept {
   }
 
   public static RootTemplateAnnotation newInstance(SModel sm, boolean init) {
-    return (RootTemplateAnnotation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RootTemplateAnnotation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RootTemplateAnnotation newInstance(SModel sm) {

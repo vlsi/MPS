@@ -234,7 +234,7 @@ public class MappingConfiguration extends BaseConcept implements INamedConcept, 
   }
 
   public static MappingConfiguration newInstance(SModel sm, boolean init) {
-    return (MappingConfiguration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MappingConfiguration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MappingConfiguration newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_UserArgument extends ConceptFunctionParame
   }
 
   public static ConceptFunctionParameter_UserArgument newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_UserArgument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_UserArgument", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_UserArgument) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ConceptFunctionParameter_UserArgument", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_UserArgument newInstance(SModel sm) {

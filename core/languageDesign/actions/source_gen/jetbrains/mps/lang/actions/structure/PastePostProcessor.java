@@ -19,7 +19,7 @@ public class PastePostProcessor extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, PastePostProcessor.CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, PastePostProcessor.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {
@@ -27,7 +27,7 @@ public class PastePostProcessor extends BaseConcept {
   }
 
   public PastePostProcessFunction getPostProcessFunction() {
-    return (PastePostProcessFunction)this.getChild(PastePostProcessFunction.class, PastePostProcessor.POST_PROCESS_FUNCTION);
+    return (PastePostProcessFunction) this.getChild(PastePostProcessFunction.class, PastePostProcessor.POST_PROCESS_FUNCTION);
   }
 
   public void setPostProcessFunction(PastePostProcessFunction node) {
@@ -35,7 +35,7 @@ public class PastePostProcessor extends BaseConcept {
   }
 
   public static PastePostProcessor newInstance(SModel sm, boolean init) {
-    return (PastePostProcessor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.PastePostProcessor", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PastePostProcessor) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.PastePostProcessor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PastePostProcessor newInstance(SModel sm) {

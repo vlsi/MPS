@@ -54,7 +54,7 @@ public class RefactoringParameter extends BaseConcept implements INamedConcept, 
   }
 
   public RefactoringParameterChooser getChooser() {
-    return (RefactoringParameterChooser)this.getChild(RefactoringParameterChooser.class, RefactoringParameter.CHOOSER);
+    return (RefactoringParameterChooser) this.getChild(RefactoringParameterChooser.class, RefactoringParameter.CHOOSER);
   }
 
   public void setChooser(RefactoringParameterChooser node) {
@@ -62,7 +62,7 @@ public class RefactoringParameter extends BaseConcept implements INamedConcept, 
   }
 
   public static RefactoringParameter newInstance(SModel sm, boolean init) {
-    return (RefactoringParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RefactoringParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RefactoringParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RefactoringParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RefactoringParameter newInstance(SModel sm) {

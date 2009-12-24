@@ -16,7 +16,7 @@ public class GetInnerTabCaptionBlock extends ConceptFunction {
   }
 
   public static GetInnerTabCaptionBlock newInstance(SModel sm, boolean init) {
-    return (GetInnerTabCaptionBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetInnerTabCaptionBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetInnerTabCaptionBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetInnerTabCaptionBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetInnerTabCaptionBlock newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class ApplicationPluginType extends BaseClassifierType {
   }
 
   public ApplicationPluginDeclaration getPlugin() {
-    return (ApplicationPluginDeclaration)this.getReferent(ApplicationPluginDeclaration.class, ApplicationPluginType.PLUGIN);
+    return (ApplicationPluginDeclaration) this.getReferent(ApplicationPluginDeclaration.class, ApplicationPluginType.PLUGIN);
   }
 
   public void setPlugin(ApplicationPluginDeclaration node) {
@@ -25,7 +25,7 @@ public class ApplicationPluginType extends BaseClassifierType {
   }
 
   public static ApplicationPluginType newInstance(SModel sm, boolean init) {
-    return (ApplicationPluginType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ApplicationPluginType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ApplicationPluginType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ApplicationPluginType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ApplicationPluginType newInstance(SModel sm) {

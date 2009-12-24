@@ -17,7 +17,7 @@ public class IntentionContextParamReference extends Expression {
   }
 
   public IntentionContextParameterDeclaration getParameterDeclaration() {
-    return (IntentionContextParameterDeclaration)this.getReferent(IntentionContextParameterDeclaration.class, IntentionContextParamReference.PARAMETER_DECLARATION);
+    return (IntentionContextParameterDeclaration) this.getReferent(IntentionContextParameterDeclaration.class, IntentionContextParamReference.PARAMETER_DECLARATION);
   }
 
   public void setParameterDeclaration(IntentionContextParameterDeclaration node) {
@@ -25,7 +25,7 @@ public class IntentionContextParamReference extends Expression {
   }
 
   public static IntentionContextParamReference newInstance(SModel sm, boolean init) {
-    return (IntentionContextParamReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionContextParamReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntentionContextParamReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionContextParamReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntentionContextParamReference newInstance(SModel sm) {

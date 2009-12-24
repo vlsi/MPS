@@ -17,7 +17,7 @@ public class MenuPart extends BaseConcept {
   }
 
   public QueryFunction_ActionType getActionType() {
-    return (QueryFunction_ActionType)this.getChild(QueryFunction_ActionType.class, MenuPart.ACTION_TYPE);
+    return (QueryFunction_ActionType) this.getChild(QueryFunction_ActionType.class, MenuPart.ACTION_TYPE);
   }
 
   public void setActionType(QueryFunction_ActionType node) {
@@ -25,7 +25,7 @@ public class MenuPart extends BaseConcept {
   }
 
   public static MenuPart newInstance(SModel sm, boolean init) {
-    return (MenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.MenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MenuPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.MenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MenuPart newInstance(SModel sm) {

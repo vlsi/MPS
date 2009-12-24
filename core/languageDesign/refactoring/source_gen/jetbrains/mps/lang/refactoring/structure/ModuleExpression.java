@@ -15,7 +15,7 @@ public class ModuleExpression extends AbstractUIArgumentExpression {
   }
 
   public static ModuleExpression newInstance(SModel sm, boolean init) {
-    return (ModuleExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ModuleExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ModuleExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ModuleExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ModuleExpression newInstance(SModel sm) {

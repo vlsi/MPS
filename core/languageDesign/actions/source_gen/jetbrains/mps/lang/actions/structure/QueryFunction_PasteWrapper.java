@@ -16,7 +16,7 @@ public class QueryFunction_PasteWrapper extends ConceptFunction {
   }
 
   public static QueryFunction_PasteWrapper newInstance(SModel sm, boolean init) {
-    return (QueryFunction_PasteWrapper)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_PasteWrapper", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_PasteWrapper) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_PasteWrapper", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_PasteWrapper newInstance(SModel sm) {

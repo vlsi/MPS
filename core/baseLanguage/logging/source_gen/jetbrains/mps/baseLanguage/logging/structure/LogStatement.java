@@ -38,7 +38,7 @@ public class LogStatement extends Statement {
   }
 
   public Expression getLogExpression() {
-    return (Expression)this.getChild(Expression.class, LogStatement.LOG_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, LogStatement.LOG_EXPRESSION);
   }
 
   public void setLogExpression(Expression node) {
@@ -46,7 +46,7 @@ public class LogStatement extends Statement {
   }
 
   public Expression getException() {
-    return (Expression)this.getChild(Expression.class, LogStatement.EXCEPTION);
+    return (Expression) this.getChild(Expression.class, LogStatement.EXCEPTION);
   }
 
   public void setException(Expression node) {
@@ -54,7 +54,7 @@ public class LogStatement extends Statement {
   }
 
   public static LogStatement newInstance(SModel sm, boolean init) {
-    return (LogStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.logging.structure.LogStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LogStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.logging.structure.LogStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LogStatement newInstance(SModel sm) {

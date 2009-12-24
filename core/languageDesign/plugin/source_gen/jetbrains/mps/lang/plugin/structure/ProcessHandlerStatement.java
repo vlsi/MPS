@@ -45,7 +45,7 @@ public class ProcessHandlerStatement extends Statement implements ExecuteSpecifi
   }
 
   public Expression getProcessHandler() {
-    return (Expression)this.getChild(Expression.class, ProcessHandlerStatement.PROCESS_HANDLER);
+    return (Expression) this.getChild(Expression.class, ProcessHandlerStatement.PROCESS_HANDLER);
   }
 
   public void setProcessHandler(Expression node) {
@@ -53,7 +53,7 @@ public class ProcessHandlerStatement extends Statement implements ExecuteSpecifi
   }
 
   public static ProcessHandlerStatement newInstance(SModel sm, boolean init) {
-    return (ProcessHandlerStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ProcessHandlerStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ProcessHandlerStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ProcessHandlerStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ProcessHandlerStatement newInstance(SModel sm) {

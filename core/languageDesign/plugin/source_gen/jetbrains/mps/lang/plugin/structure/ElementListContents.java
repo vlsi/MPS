@@ -66,7 +66,7 @@ public class ElementListContents extends BaseConcept implements GroupContents {
   }
 
   public static ElementListContents newInstance(SModel sm, boolean init) {
-    return (ElementListContents)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ElementListContents", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ElementListContents) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ElementListContents", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ElementListContents newInstance(SModel sm) {

@@ -59,7 +59,7 @@ public class TabbedEditorDeclaration extends BaseConcept implements INamedConcep
   }
 
   public AbstractConceptDeclaration getMainConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, TabbedEditorDeclaration.MAIN_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, TabbedEditorDeclaration.MAIN_CONCEPT);
   }
 
   public void setMainConcept(AbstractConceptDeclaration node) {
@@ -67,7 +67,7 @@ public class TabbedEditorDeclaration extends BaseConcept implements INamedConcep
   }
 
   public GetBaseNodeBlock getGetMainConceptBlock() {
-    return (GetBaseNodeBlock)this.getChild(GetBaseNodeBlock.class, TabbedEditorDeclaration.GET_MAIN_CONCEPT_BLOCK);
+    return (GetBaseNodeBlock) this.getChild(GetBaseNodeBlock.class, TabbedEditorDeclaration.GET_MAIN_CONCEPT_BLOCK);
   }
 
   public void setGetMainConceptBlock(GetBaseNodeBlock node) {
@@ -95,7 +95,7 @@ public class TabbedEditorDeclaration extends BaseConcept implements INamedConcep
   }
 
   public static TabbedEditorDeclaration newInstance(SModel sm, boolean init) {
-    return (TabbedEditorDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TabbedEditorDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TabbedEditorDeclaration newInstance(SModel sm) {

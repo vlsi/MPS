@@ -15,7 +15,7 @@ public class MapSrcMacro_PostMapperFunction extends TemplateQueryBase {
   }
 
   public static MapSrcMacro_PostMapperFunction newInstance(SModel sm, boolean init) {
-    return (MapSrcMacro_PostMapperFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MapSrcMacro_PostMapperFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MapSrcMacro_PostMapperFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MapSrcMacro_PostMapperFunction newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class MappingScript_CodeBlock extends TemplateQueryBase {
   }
 
   public static MappingScript_CodeBlock newInstance(SModel sm, boolean init) {
-    return (MappingScript_CodeBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MappingScript_CodeBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MappingScript_CodeBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MappingScript_CodeBlock newInstance(SModel sm) {

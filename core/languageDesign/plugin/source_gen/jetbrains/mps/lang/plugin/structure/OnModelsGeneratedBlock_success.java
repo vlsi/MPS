@@ -16,7 +16,7 @@ public class OnModelsGeneratedBlock_success extends ConceptFunctionParameter {
   }
 
   public static OnModelsGeneratedBlock_success newInstance(SModel sm, boolean init) {
-    return (OnModelsGeneratedBlock_success)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.OnModelsGeneratedBlock_success", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OnModelsGeneratedBlock_success) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.OnModelsGeneratedBlock_success", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OnModelsGeneratedBlock_success newInstance(SModel sm) {

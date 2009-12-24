@@ -16,7 +16,7 @@ public class OnBeforeWriteBlock extends ConceptFunction {
   }
 
   public static OnBeforeWriteBlock newInstance(SModel sm, boolean init) {
-    return (OnBeforeWriteBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.OnBeforeWriteBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OnBeforeWriteBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.OnBeforeWriteBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OnBeforeWriteBlock newInstance(SModel sm) {

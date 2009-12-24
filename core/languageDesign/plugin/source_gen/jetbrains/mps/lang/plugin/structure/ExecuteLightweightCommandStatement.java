@@ -15,7 +15,7 @@ public class ExecuteLightweightCommandStatement extends BaseExecuteCommandStatem
   }
 
   public static ExecuteLightweightCommandStatement newInstance(SModel sm, boolean init) {
-    return (ExecuteLightweightCommandStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExecuteLightweightCommandStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ExecuteLightweightCommandStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExecuteLightweightCommandStatement newInstance(SModel sm) {

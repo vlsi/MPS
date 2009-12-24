@@ -47,7 +47,7 @@ public class NewTemplateInInlineSwitchCase_Intention extends BaseIntention imple
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    if (editorContext.getSelectedCell().getLinkDeclaration() != ((LinkDeclaration)SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.InlineSwitch_Case", "caseConsequence")))) {
+    if (editorContext.getSelectedCell().getLinkDeclaration() != ((LinkDeclaration) SNodeOperations.getAdapter(SLinkOperations.findLinkDeclaration("jetbrains.mps.lang.generator.structure.InlineSwitch_Case", "caseConsequence")))) {
       return false;
     }
     return SLinkOperations.getTarget(node, "caseConsequence", true) == null || SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(node, "caseConsequence", true)), "jetbrains.mps.lang.generator.structure.RuleConsequence");

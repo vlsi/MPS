@@ -15,7 +15,7 @@ public class SubstituteMenuPart extends MenuPart {
   }
 
   public static SubstituteMenuPart newInstance(SModel sm, boolean init) {
-    return (SubstituteMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SubstituteMenuPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SubstituteMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SubstituteMenuPart newInstance(SModel sm) {

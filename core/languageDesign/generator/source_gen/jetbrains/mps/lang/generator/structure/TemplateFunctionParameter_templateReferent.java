@@ -16,7 +16,7 @@ public class TemplateFunctionParameter_templateReferent extends ConceptFunctionP
   }
 
   public static TemplateFunctionParameter_templateReferent newInstance(SModel sm, boolean init) {
-    return (TemplateFunctionParameter_templateReferent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templateReferent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TemplateFunctionParameter_templateReferent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_templateReferent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TemplateFunctionParameter_templateReferent newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class SmartActionParameterReference extends Expression {
   }
 
   public SmartActionParameter getSmartActionParameter() {
-    return (SmartActionParameter)this.getReferent(SmartActionParameter.class, SmartActionParameterReference.SMART_ACTION_PARAMETER);
+    return (SmartActionParameter) this.getReferent(SmartActionParameter.class, SmartActionParameterReference.SMART_ACTION_PARAMETER);
   }
 
   public void setSmartActionParameter(SmartActionParameter node) {
@@ -25,7 +25,7 @@ public class SmartActionParameterReference extends Expression {
   }
 
   public static SmartActionParameterReference newInstance(SModel sm, boolean init) {
-    return (SmartActionParameterReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SmartActionParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SmartActionParameterReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SmartActionParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SmartActionParameterReference newInstance(SModel sm) {

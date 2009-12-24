@@ -15,7 +15,7 @@ public class TemplateFragment_ContextNodeQuery extends TemplateQueryBase {
   }
 
   public static TemplateFragment_ContextNodeQuery newInstance(SModel sm, boolean init) {
-    return (TemplateFragment_ContextNodeQuery)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TemplateFragment_ContextNodeQuery) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment_ContextNodeQuery", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TemplateFragment_ContextNodeQuery newInstance(SModel sm) {

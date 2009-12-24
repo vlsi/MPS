@@ -17,7 +17,7 @@ public class PrimitiveTypeRef extends BaseConcept {
   }
 
   public PrimitiveTypeDescriptor getDescriptor() {
-    return (PrimitiveTypeDescriptor)this.getReferent(PrimitiveTypeDescriptor.class, PrimitiveTypeRef.DESCRIPTOR);
+    return (PrimitiveTypeDescriptor) this.getReferent(PrimitiveTypeDescriptor.class, PrimitiveTypeRef.DESCRIPTOR);
   }
 
   public void setDescriptor(PrimitiveTypeDescriptor node) {
@@ -25,7 +25,7 @@ public class PrimitiveTypeRef extends BaseConcept {
   }
 
   public static PrimitiveTypeRef newInstance(SModel sm, boolean init) {
-    return (PrimitiveTypeRef)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PrimitiveTypeRef) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PrimitiveTypeRef newInstance(SModel sm) {

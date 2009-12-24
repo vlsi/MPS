@@ -38,10 +38,10 @@ public class BaseMappingRule_Behavior {
   }
 
   public static SNode call_getTemplateType_1213877498511(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "virtual_getTemplateType_1213877498511", PARAMETERS_1213877498511);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), "virtual_getTemplateType_1213877498511", PARAMETERS_1213877498511);
   }
 
   public static SNode callSuper_getTemplateType_1213877498511(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), callerConceptFqName, "virtual_getTemplateType_1213877498511", PARAMETERS_1213877498511);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.BaseMappingRule"), callerConceptFqName, "virtual_getTemplateType_1213877498511", PARAMETERS_1213877498511);
   }
 }

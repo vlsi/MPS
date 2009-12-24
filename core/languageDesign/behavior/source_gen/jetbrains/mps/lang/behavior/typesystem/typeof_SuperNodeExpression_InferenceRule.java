@@ -22,17 +22,17 @@ public class typeof_SuperNodeExpression_InferenceRule extends AbstractInferenceR
     SNode concept = SLinkOperations.getTarget(behaviour, "concept", false);
     SNode result;
     if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
-      SNode cd = ((SNode)concept);
+      SNode cd = ((SNode) concept);
       result = SLinkOperations.getTarget(cd, "extends", false);
     } else {
-      SNode icd = ((SNode)concept);
+      SNode icd = ((SNode) concept);
       result = SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(icd, "extends", true)).first(), "intfc", false);
     }
     {
       SNode _nodeToCheck_1029348928467 = nodeToCheck;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "1225195239813", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "1225195239815", true), (SNode)new _Quotations.QuotationClass_0().createNode(result, typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f7f8a091-d98d-402d-85c4-5f05cb2b8c61(jetbrains.mps.lang.behavior.typesystem)", "1225195239815", true), (SNode) new _Quotations.QuotationClass_0().createNode(result, typeCheckingContext), _info_12389875345);
     }
   }
 

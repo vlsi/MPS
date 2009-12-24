@@ -16,7 +16,7 @@ public class ComponentReference extends Expression {
   }
 
   public static ComponentReference newInstance(SModel sm, boolean init) {
-    return (ComponentReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ComponentReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComponentReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ComponentReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComponentReference newInstance(SModel sm) {

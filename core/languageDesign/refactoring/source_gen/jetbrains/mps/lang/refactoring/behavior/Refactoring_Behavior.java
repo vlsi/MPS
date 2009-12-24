@@ -25,10 +25,10 @@ public class Refactoring_Behavior {
   }
 
   public static SNode call_getBaseConcept_4205271146524200392(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.Refactoring"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_4205271146524200392);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.Refactoring"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_4205271146524200392);
   }
 
   public static SNode callSuper_getBaseConcept_4205271146524200392(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.Refactoring"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_4205271146524200392);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.Refactoring"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_4205271146524200392);
   }
 }

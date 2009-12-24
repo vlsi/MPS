@@ -18,7 +18,7 @@ public class TemplateFragment extends BaseConcept {
   }
 
   public MappingLabelDeclaration getLabelDeclaration() {
-    return (MappingLabelDeclaration)this.getReferent(MappingLabelDeclaration.class, TemplateFragment.LABEL_DECLARATION);
+    return (MappingLabelDeclaration) this.getReferent(MappingLabelDeclaration.class, TemplateFragment.LABEL_DECLARATION);
   }
 
   public void setLabelDeclaration(MappingLabelDeclaration node) {
@@ -26,7 +26,7 @@ public class TemplateFragment extends BaseConcept {
   }
 
   public TemplateFragment_ContextNodeQuery getContextNodeQuery() {
-    return (TemplateFragment_ContextNodeQuery)this.getChild(TemplateFragment_ContextNodeQuery.class, TemplateFragment.CONTEXT_NODE_QUERY);
+    return (TemplateFragment_ContextNodeQuery) this.getChild(TemplateFragment_ContextNodeQuery.class, TemplateFragment.CONTEXT_NODE_QUERY);
   }
 
   public void setContextNodeQuery(TemplateFragment_ContextNodeQuery node) {
@@ -34,7 +34,7 @@ public class TemplateFragment extends BaseConcept {
   }
 
   public static TemplateFragment newInstance(SModel sm, boolean init) {
-    return (TemplateFragment)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TemplateFragment) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFragment", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TemplateFragment newInstance(SModel sm) {

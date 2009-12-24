@@ -52,7 +52,7 @@ public class SideTransform_SimpleString extends BaseConcept implements ISideTran
   }
 
   public static SideTransform_SimpleString newInstance(SModel sm, boolean init) {
-    return (SideTransform_SimpleString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransform_SimpleString", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SideTransform_SimpleString) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransform_SimpleString", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SideTransform_SimpleString newInstance(SModel sm) {

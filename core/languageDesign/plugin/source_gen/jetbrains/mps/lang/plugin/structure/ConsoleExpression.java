@@ -43,7 +43,7 @@ public class ConsoleExpression extends Expression implements ExecuteSpecific {
   }
 
   public static ConsoleExpression newInstance(SModel sm, boolean init) {
-    return (ConsoleExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConsoleExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConsoleExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConsoleExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConsoleExpression newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class CopySrcListMacro extends SourceSubstituteMacro {
   }
 
   public SourceSubstituteMacro_SourceNodesQuery getSourceNodesQuery() {
-    return (SourceSubstituteMacro_SourceNodesQuery)this.getChild(SourceSubstituteMacro_SourceNodesQuery.class, CopySrcListMacro.SOURCE_NODES_QUERY);
+    return (SourceSubstituteMacro_SourceNodesQuery) this.getChild(SourceSubstituteMacro_SourceNodesQuery.class, CopySrcListMacro.SOURCE_NODES_QUERY);
   }
 
   public void setSourceNodesQuery(SourceSubstituteMacro_SourceNodesQuery node) {
@@ -24,7 +24,7 @@ public class CopySrcListMacro extends SourceSubstituteMacro {
   }
 
   public static CopySrcListMacro newInstance(SModel sm, boolean init) {
-    return (CopySrcListMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.CopySrcListMacro", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CopySrcListMacro) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.CopySrcListMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CopySrcListMacro newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class PropertyAntiquotation extends AbstractAntiquotation {
   }
 
   public static PropertyAntiquotation newInstance(SModel sm, boolean init) {
-    return (PropertyAntiquotation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PropertyAntiquotation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PropertyAntiquotation newInstance(SModel sm) {

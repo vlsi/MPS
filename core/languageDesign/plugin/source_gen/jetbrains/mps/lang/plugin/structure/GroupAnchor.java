@@ -53,7 +53,7 @@ public class GroupAnchor extends BaseConcept implements INamedConcept, ActionGro
   }
 
   public static GroupAnchor newInstance(SModel sm, boolean init) {
-    return (GroupAnchor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GroupAnchor", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GroupAnchor) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GroupAnchor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GroupAnchor newInstance(SModel sm) {

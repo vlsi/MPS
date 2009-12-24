@@ -16,7 +16,7 @@ public class UpdateGroupFunction extends ConceptFunction {
   }
 
   public static UpdateGroupFunction newInstance(SModel sm, boolean init) {
-    return (UpdateGroupFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.UpdateGroupFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UpdateGroupFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.UpdateGroupFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UpdateGroupFunction newInstance(SModel sm) {

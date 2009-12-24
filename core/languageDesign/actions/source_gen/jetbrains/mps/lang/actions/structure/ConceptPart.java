@@ -20,7 +20,7 @@ public class ConceptPart extends MenuBuilderPart {
   }
 
   public AbstractConceptDeclaration getConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, ConceptPart.CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, ConceptPart.CONCEPT);
   }
 
   public void setConcept(AbstractConceptDeclaration node) {
@@ -48,7 +48,7 @@ public class ConceptPart extends MenuBuilderPart {
   }
 
   public static ConceptPart newInstance(SModel sm, boolean init) {
-    return (ConceptPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptPart newInstance(SModel sm) {

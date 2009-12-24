@@ -18,7 +18,7 @@ public class MapSrcNodeMacro extends SourceSubstituteMacro {
   }
 
   public SourceSubstituteMacro_SourceNodeQuery getSourceNodeQuery() {
-    return (SourceSubstituteMacro_SourceNodeQuery)this.getChild(SourceSubstituteMacro_SourceNodeQuery.class, MapSrcNodeMacro.SOURCE_NODE_QUERY);
+    return (SourceSubstituteMacro_SourceNodeQuery) this.getChild(SourceSubstituteMacro_SourceNodeQuery.class, MapSrcNodeMacro.SOURCE_NODE_QUERY);
   }
 
   public void setSourceNodeQuery(SourceSubstituteMacro_SourceNodeQuery node) {
@@ -26,7 +26,7 @@ public class MapSrcNodeMacro extends SourceSubstituteMacro {
   }
 
   public MapSrcMacro_MapperFunction getMapperFunction() {
-    return (MapSrcMacro_MapperFunction)this.getChild(MapSrcMacro_MapperFunction.class, MapSrcNodeMacro.MAPPER_FUNCTION);
+    return (MapSrcMacro_MapperFunction) this.getChild(MapSrcMacro_MapperFunction.class, MapSrcNodeMacro.MAPPER_FUNCTION);
   }
 
   public void setMapperFunction(MapSrcMacro_MapperFunction node) {
@@ -34,7 +34,7 @@ public class MapSrcNodeMacro extends SourceSubstituteMacro {
   }
 
   public MapSrcMacro_PostMapperFunction getPostMapperFunction() {
-    return (MapSrcMacro_PostMapperFunction)this.getChild(MapSrcMacro_PostMapperFunction.class, MapSrcNodeMacro.POST_MAPPER_FUNCTION);
+    return (MapSrcMacro_PostMapperFunction) this.getChild(MapSrcMacro_PostMapperFunction.class, MapSrcNodeMacro.POST_MAPPER_FUNCTION);
   }
 
   public void setPostMapperFunction(MapSrcMacro_PostMapperFunction node) {
@@ -42,7 +42,7 @@ public class MapSrcNodeMacro extends SourceSubstituteMacro {
   }
 
   public static MapSrcNodeMacro newInstance(SModel sm, boolean init) {
-    return (MapSrcNodeMacro)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MapSrcNodeMacro) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.MapSrcNodeMacro", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MapSrcNodeMacro newInstance(SModel sm) {

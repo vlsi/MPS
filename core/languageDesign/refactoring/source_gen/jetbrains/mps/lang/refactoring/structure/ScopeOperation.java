@@ -15,7 +15,7 @@ public class ScopeOperation extends ContextMemberOperation {
   }
 
   public static ScopeOperation newInstance(SModel sm, boolean init) {
-    return (ScopeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ScopeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ScopeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ScopeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ScopeOperation newInstance(SModel sm) {

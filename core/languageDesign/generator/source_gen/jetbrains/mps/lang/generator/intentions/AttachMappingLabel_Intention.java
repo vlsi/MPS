@@ -95,7 +95,7 @@ public class AttachMappingLabel_Intention extends BaseIntention implements Inten
     IModule module = operationContext.getModule();
     List<SNode> mappings;
     if (module instanceof Generator) {
-      mappings = (List<SNode>)BaseAdapter.toNodes(((Generator)module).getOwnMappings());
+      mappings = (List<SNode>) BaseAdapter.toNodes(((Generator) module).getOwnMappings());
     } else {
       mappings = SModelOperations.getRoots(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.MappingConfiguration");
     }

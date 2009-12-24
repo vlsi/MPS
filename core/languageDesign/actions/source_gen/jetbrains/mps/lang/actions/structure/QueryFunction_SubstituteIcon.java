@@ -16,7 +16,7 @@ public class QueryFunction_SubstituteIcon extends ConceptFunction {
   }
 
   public static QueryFunction_SubstituteIcon newInstance(SModel sm, boolean init) {
-    return (QueryFunction_SubstituteIcon)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteIcon", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_SubstituteIcon) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteIcon", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_SubstituteIcon newInstance(SModel sm) {

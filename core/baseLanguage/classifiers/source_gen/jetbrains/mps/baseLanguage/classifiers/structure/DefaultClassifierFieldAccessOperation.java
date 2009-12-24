@@ -44,7 +44,7 @@ public class DefaultClassifierFieldAccessOperation extends BaseConcept implement
   }
 
   public IMember getMember() {
-    return (IMember)this.getReferent(IMember.class, DefaultClassifierFieldAccessOperation.MEMBER);
+    return (IMember) this.getReferent(IMember.class, DefaultClassifierFieldAccessOperation.MEMBER);
   }
 
   public void setMember(IMember node) {
@@ -60,7 +60,7 @@ public class DefaultClassifierFieldAccessOperation extends BaseConcept implement
   }
 
   public static DefaultClassifierFieldAccessOperation newInstance(SModel sm, boolean init) {
-    return (DefaultClassifierFieldAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DefaultClassifierFieldAccessOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierFieldAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DefaultClassifierFieldAccessOperation newInstance(SModel sm) {

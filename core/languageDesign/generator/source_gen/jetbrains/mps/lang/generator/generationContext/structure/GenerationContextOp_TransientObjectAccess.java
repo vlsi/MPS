@@ -15,7 +15,7 @@ public class GenerationContextOp_TransientObjectAccess extends GenerationContext
   }
 
   public static GenerationContextOp_TransientObjectAccess newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_TransientObjectAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_TransientObjectAccess) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_TransientObjectAccess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_TransientObjectAccess newInstance(SModel sm) {

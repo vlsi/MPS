@@ -15,7 +15,7 @@ public class NodeOperation extends ContextMemberOperation {
   }
 
   public static NodeOperation newInstance(SModel sm, boolean init) {
-    return (NodeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.NodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.NodeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeOperation newInstance(SModel sm) {

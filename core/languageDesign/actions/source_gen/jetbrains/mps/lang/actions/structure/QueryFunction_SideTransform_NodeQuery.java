@@ -16,7 +16,7 @@ public class QueryFunction_SideTransform_NodeQuery extends ConceptFunction {
   }
 
   public static QueryFunction_SideTransform_NodeQuery newInstance(SModel sm, boolean init) {
-    return (QueryFunction_SideTransform_NodeQuery)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_SideTransform_NodeQuery) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_NodeQuery", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_SideTransform_NodeQuery newInstance(SModel sm) {

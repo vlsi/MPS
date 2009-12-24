@@ -16,7 +16,7 @@ public class IsApplicableToNodeClause extends ConceptFunction {
   }
 
   public static IsApplicableToNodeClause newInstance(SModel sm, boolean init) {
-    return (IsApplicableToNodeClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IsApplicableToNodeClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.IsApplicableToNodeClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IsApplicableToNodeClause newInstance(SModel sm) {

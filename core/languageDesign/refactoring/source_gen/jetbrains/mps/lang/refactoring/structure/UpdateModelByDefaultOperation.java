@@ -16,7 +16,7 @@ public class UpdateModelByDefaultOperation extends Statement {
   }
 
   public static UpdateModelByDefaultOperation newInstance(SModel sm, boolean init) {
-    return (UpdateModelByDefaultOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UpdateModelByDefaultOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.UpdateModelByDefaultOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UpdateModelByDefaultOperation newInstance(SModel sm) {

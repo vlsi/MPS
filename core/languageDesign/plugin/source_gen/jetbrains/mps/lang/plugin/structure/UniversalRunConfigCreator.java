@@ -56,7 +56,7 @@ public class UniversalRunConfigCreator extends BaseConcept implements INamedConc
   }
 
   public RunConfigurationTypeDeclaration getRcType() {
-    return (RunConfigurationTypeDeclaration)this.getReferent(RunConfigurationTypeDeclaration.class, UniversalRunConfigCreator.RC_TYPE);
+    return (RunConfigurationTypeDeclaration) this.getReferent(RunConfigurationTypeDeclaration.class, UniversalRunConfigCreator.RC_TYPE);
   }
 
   public void setRcType(RunConfigurationTypeDeclaration node) {
@@ -64,7 +64,7 @@ public class UniversalRunConfigCreator extends BaseConcept implements INamedConc
   }
 
   public BaseCreatorTarget getTarget() {
-    return (BaseCreatorTarget)this.getChild(BaseCreatorTarget.class, UniversalRunConfigCreator.TARGET);
+    return (BaseCreatorTarget) this.getChild(BaseCreatorTarget.class, UniversalRunConfigCreator.TARGET);
   }
 
   public void setTarget(BaseCreatorTarget node) {
@@ -72,7 +72,7 @@ public class UniversalRunConfigCreator extends BaseConcept implements INamedConc
   }
 
   public CreateRunConfigBlock getCreateBlock() {
-    return (CreateRunConfigBlock)this.getChild(CreateRunConfigBlock.class, UniversalRunConfigCreator.CREATE_BLOCK);
+    return (CreateRunConfigBlock) this.getChild(CreateRunConfigBlock.class, UniversalRunConfigCreator.CREATE_BLOCK);
   }
 
   public void setCreateBlock(CreateRunConfigBlock node) {
@@ -80,7 +80,7 @@ public class UniversalRunConfigCreator extends BaseConcept implements INamedConc
   }
 
   public static UniversalRunConfigCreator newInstance(SModel sm, boolean init) {
-    return (UniversalRunConfigCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UniversalRunConfigCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.UniversalRunConfigCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UniversalRunConfigCreator newInstance(SModel sm) {

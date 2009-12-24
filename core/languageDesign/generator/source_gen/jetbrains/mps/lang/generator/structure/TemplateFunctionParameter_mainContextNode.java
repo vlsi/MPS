@@ -16,7 +16,7 @@ public class TemplateFunctionParameter_mainContextNode extends ConceptFunctionPa
   }
 
   public static TemplateFunctionParameter_mainContextNode newInstance(SModel sm, boolean init) {
-    return (TemplateFunctionParameter_mainContextNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TemplateFunctionParameter_mainContextNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_mainContextNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TemplateFunctionParameter_mainContextNode newInstance(SModel sm) {

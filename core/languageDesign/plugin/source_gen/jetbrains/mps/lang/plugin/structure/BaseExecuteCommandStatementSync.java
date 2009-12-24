@@ -15,7 +15,7 @@ public class BaseExecuteCommandStatementSync extends BaseExecuteCommandStatement
   }
 
   public static BaseExecuteCommandStatementSync newInstance(SModel sm, boolean init) {
-    return (BaseExecuteCommandStatementSync)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatementSync", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseExecuteCommandStatementSync) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.BaseExecuteCommandStatementSync", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseExecuteCommandStatementSync newInstance(SModel sm) {

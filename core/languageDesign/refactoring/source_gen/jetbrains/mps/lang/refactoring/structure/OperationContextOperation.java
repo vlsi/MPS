@@ -15,7 +15,7 @@ public class OperationContextOperation extends ContextMemberOperation {
   }
 
   public static OperationContextOperation newInstance(SModel sm, boolean init) {
-    return (OperationContextOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.OperationContextOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OperationContextOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.OperationContextOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OperationContextOperation newInstance(SModel sm) {

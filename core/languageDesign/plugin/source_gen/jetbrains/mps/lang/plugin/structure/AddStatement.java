@@ -17,7 +17,7 @@ public class AddStatement extends Statement {
   }
 
   public ActionGroupMember getItem() {
-    return (ActionGroupMember)this.getChild(ActionGroupMember.class, AddStatement.ITEM);
+    return (ActionGroupMember) this.getChild(ActionGroupMember.class, AddStatement.ITEM);
   }
 
   public void setItem(ActionGroupMember node) {
@@ -25,7 +25,7 @@ public class AddStatement extends Statement {
   }
 
   public static AddStatement newInstance(SModel sm, boolean init) {
-    return (AddStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.AddStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AddStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.AddStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AddStatement newInstance(SModel sm) {

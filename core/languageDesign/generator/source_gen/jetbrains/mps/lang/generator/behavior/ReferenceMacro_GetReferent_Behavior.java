@@ -20,7 +20,7 @@ public class ReferenceMacro_GetReferent_Behavior {
     SNode referenceMacro = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.generator.structure.ReferenceMacro", false, false);
     SNode attributedNode = SNodeOperations.getParent(referenceMacro);
     String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(referenceMacro.getRole_());
-    ConceptAndSuperConceptsScope linkSearchScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(attributedNode))));
+    ConceptAndSuperConceptsScope linkSearchScope = new ConceptAndSuperConceptsScope(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(attributedNode))));
     LinkDeclaration link_ = linkSearchScope.getMostSpecificLinkDeclarationByRole(linkRole);
     SNode link = SNodeOperations.cast(BaseAdapter.fromAdapter(link_), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SNode targetConcept = SLinkOperations.getTarget(link, "target", false);

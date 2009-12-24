@@ -16,7 +16,7 @@ public class CreateBlock extends ConceptFunction {
   }
 
   public static CreateBlock newInstance(SModel sm, boolean init) {
-    return (CreateBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CreateBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CreateBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CreateBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CreateBlock newInstance(SModel sm) {

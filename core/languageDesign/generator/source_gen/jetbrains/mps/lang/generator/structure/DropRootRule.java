@@ -19,7 +19,7 @@ public class DropRootRule extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, DropRootRule.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, DropRootRule.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {
@@ -27,7 +27,7 @@ public class DropRootRule extends BaseConcept {
   }
 
   public DropRootRule_Condition getConditionFunction() {
-    return (DropRootRule_Condition)this.getChild(DropRootRule_Condition.class, DropRootRule.CONDITION_FUNCTION);
+    return (DropRootRule_Condition) this.getChild(DropRootRule_Condition.class, DropRootRule.CONDITION_FUNCTION);
   }
 
   public void setConditionFunction(DropRootRule_Condition node) {
@@ -35,7 +35,7 @@ public class DropRootRule extends BaseConcept {
   }
 
   public static DropRootRule newInstance(SModel sm, boolean init) {
-    return (DropRootRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.DropRootRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DropRootRule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.DropRootRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DropRootRule newInstance(SModel sm) {

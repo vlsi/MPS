@@ -17,7 +17,7 @@ public class RequiredAdditionalArgumentReference extends Expression {
   }
 
   public RequiredAdditionalArgument getArgument() {
-    return (RequiredAdditionalArgument)this.getReferent(RequiredAdditionalArgument.class, RequiredAdditionalArgumentReference.ARGUMENT);
+    return (RequiredAdditionalArgument) this.getReferent(RequiredAdditionalArgument.class, RequiredAdditionalArgumentReference.ARGUMENT);
   }
 
   public void setArgument(RequiredAdditionalArgument node) {
@@ -25,7 +25,7 @@ public class RequiredAdditionalArgumentReference extends Expression {
   }
 
   public static RequiredAdditionalArgumentReference newInstance(SModel sm, boolean init) {
-    return (RequiredAdditionalArgumentReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RequiredAdditionalArgumentReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RequiredAdditionalArgumentReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RequiredAdditionalArgumentReference newInstance(SModel sm) {

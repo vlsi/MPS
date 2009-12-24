@@ -16,7 +16,7 @@ public class SurroundWithAction extends BaseConcept {
   }
 
   public static SurroundWithAction newInstance(SModel sm, boolean init) {
-    return (SurroundWithAction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SurroundWithAction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SurroundWithAction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SurroundWithAction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SurroundWithAction newInstance(SModel sm) {

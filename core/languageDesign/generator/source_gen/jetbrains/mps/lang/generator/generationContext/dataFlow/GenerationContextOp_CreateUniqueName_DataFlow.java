@@ -13,7 +13,7 @@ public class GenerationContextOp_CreateUniqueName_DataFlow extends DataFlowBuild
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "baseName", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "contextNode", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "baseName", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "contextNode", true));
   }
 }

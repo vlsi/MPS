@@ -15,7 +15,7 @@ public class ReferenceAntiquotation extends AbstractAntiquotation {
   }
 
   public static ReferenceAntiquotation newInstance(SModel sm, boolean init) {
-    return (ReferenceAntiquotation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReferenceAntiquotation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReferenceAntiquotation newInstance(SModel sm) {

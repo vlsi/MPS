@@ -77,7 +77,7 @@ public class NodeSubstituteActions extends BaseConcept implements INamedConcept,
   }
 
   public static NodeSubstituteActions newInstance(SModel sm, boolean init) {
-    return (NodeSubstituteActions)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeSubstituteActions", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeSubstituteActions) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeSubstituteActions", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeSubstituteActions newInstance(SModel sm) {

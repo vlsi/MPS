@@ -31,7 +31,7 @@ public class GenerateCodeAction extends BaseConcept {
   }
 
   public IsSmartActionApplicableFunction getIsApplicable() {
-    return (IsSmartActionApplicableFunction)this.getChild(IsSmartActionApplicableFunction.class, GenerateCodeAction.IS_APPLICABLE);
+    return (IsSmartActionApplicableFunction) this.getChild(IsSmartActionApplicableFunction.class, GenerateCodeAction.IS_APPLICABLE);
   }
 
   public void setIsApplicable(IsSmartActionApplicableFunction node) {
@@ -39,7 +39,7 @@ public class GenerateCodeAction extends BaseConcept {
   }
 
   public GetActionUIFunction getGetActionUI() {
-    return (GetActionUIFunction)this.getChild(GetActionUIFunction.class, GenerateCodeAction.GET_ACTION_U_I);
+    return (GetActionUIFunction) this.getChild(GetActionUIFunction.class, GenerateCodeAction.GET_ACTION_U_I);
   }
 
   public void setGetActionUI(GetActionUIFunction node) {
@@ -47,7 +47,7 @@ public class GenerateCodeAction extends BaseConcept {
   }
 
   public ExecuteSmartActionFunction getExecuteSmartAction() {
-    return (ExecuteSmartActionFunction)this.getChild(ExecuteSmartActionFunction.class, GenerateCodeAction.EXECUTE_SMART_ACTION);
+    return (ExecuteSmartActionFunction) this.getChild(ExecuteSmartActionFunction.class, GenerateCodeAction.EXECUTE_SMART_ACTION);
   }
 
   public void setExecuteSmartAction(ExecuteSmartActionFunction node) {
@@ -75,7 +75,7 @@ public class GenerateCodeAction extends BaseConcept {
   }
 
   public static GenerateCodeAction newInstance(SModel sm, boolean init) {
-    return (GenerateCodeAction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.GenerateCodeAction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerateCodeAction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.GenerateCodeAction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerateCodeAction newInstance(SModel sm) {

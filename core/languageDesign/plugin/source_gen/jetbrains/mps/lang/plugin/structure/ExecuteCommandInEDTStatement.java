@@ -15,7 +15,7 @@ public class ExecuteCommandInEDTStatement extends BaseExecuteCommandStatement {
   }
 
   public static ExecuteCommandInEDTStatement newInstance(SModel sm, boolean init) {
-    return (ExecuteCommandInEDTStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ExecuteCommandInEDTStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExecuteCommandInEDTStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ExecuteCommandInEDTStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExecuteCommandInEDTStatement newInstance(SModel sm) {

@@ -66,7 +66,7 @@ public class ActionsStatement extends Statement implements ExecuteSpecific {
   }
 
   public static ActionsStatement newInstance(SModel sm, boolean init) {
-    return (ActionsStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionsStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ActionsStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionsStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ActionsStatement newInstance(SModel sm) {

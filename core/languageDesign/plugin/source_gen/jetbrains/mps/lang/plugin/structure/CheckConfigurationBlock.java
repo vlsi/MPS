@@ -16,7 +16,7 @@ public class CheckConfigurationBlock extends ConceptFunction {
   }
 
   public static CheckConfigurationBlock newInstance(SModel sm, boolean init) {
-    return (CheckConfigurationBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CheckConfigurationBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CheckConfigurationBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.CheckConfigurationBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CheckConfigurationBlock newInstance(SModel sm) {

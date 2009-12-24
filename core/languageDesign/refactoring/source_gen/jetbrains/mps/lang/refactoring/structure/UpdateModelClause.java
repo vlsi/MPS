@@ -16,7 +16,7 @@ public class UpdateModelClause extends ConceptFunction {
   }
 
   public static UpdateModelClause newInstance(SModel sm, boolean init) {
-    return (UpdateModelClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.UpdateModelClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UpdateModelClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.UpdateModelClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UpdateModelClause newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class QueryFunction_ParameterizedSubstitute_Handler extends ConceptFuncti
   }
 
   public static QueryFunction_ParameterizedSubstitute_Handler newInstance(SModel sm, boolean init) {
-    return (QueryFunction_ParameterizedSubstitute_Handler)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_ParameterizedSubstitute_Handler) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_ParameterizedSubstitute_Handler", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_ParameterizedSubstitute_Handler newInstance(SModel sm) {

@@ -45,7 +45,7 @@ public class ThisClassifierExpression extends Expression implements IThisExpress
   }
 
   public IClassifier getClassifier() {
-    return (IClassifier)this.getReferent(IClassifier.class, ThisClassifierExpression.CLASSIFIER);
+    return (IClassifier) this.getReferent(IClassifier.class, ThisClassifierExpression.CLASSIFIER);
   }
 
   public void setClassifier(IClassifier node) {
@@ -53,7 +53,7 @@ public class ThisClassifierExpression extends Expression implements IThisExpress
   }
 
   public static ThisClassifierExpression newInstance(SModel sm, boolean init) {
-    return (ThisClassifierExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ThisClassifierExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ThisClassifierExpression newInstance(SModel sm) {

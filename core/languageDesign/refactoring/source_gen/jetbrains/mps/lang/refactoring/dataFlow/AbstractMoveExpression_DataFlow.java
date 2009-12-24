@@ -13,7 +13,7 @@ public class AbstractMoveExpression_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "whatToMove", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "destination", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "whatToMove", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "destination", true));
   }
 }

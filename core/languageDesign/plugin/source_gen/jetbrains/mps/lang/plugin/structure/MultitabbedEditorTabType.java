@@ -16,7 +16,7 @@ public class MultitabbedEditorTabType extends BaseClassifierType {
   }
 
   public static MultitabbedEditorTabType newInstance(SModel sm, boolean init) {
-    return (MultitabbedEditorTabType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.MultitabbedEditorTabType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MultitabbedEditorTabType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.MultitabbedEditorTabType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MultitabbedEditorTabType newInstance(SModel sm) {

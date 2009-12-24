@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_OriginalInputNode extends ConceptFunctionP
   }
 
   public static ConceptFunctionParameter_OriginalInputNode newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_OriginalInputNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OriginalInputNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_OriginalInputNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ConceptFunctionParameter_OriginalInputNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_OriginalInputNode newInstance(SModel sm) {

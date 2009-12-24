@@ -19,7 +19,7 @@ public class PropertyMacro_GetPropertyValue_Behavior {
     SNode propertyMacro = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.generator.structure.PropertyMacro", false, false);
     SNode attributedNode = SNodeOperations.getParent(propertyMacro);
     String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(propertyMacro.getRole_());
-    PropertyDeclaration property_ = SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration)SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(attributedNode))), propertyName);
+    PropertyDeclaration property_ = SModelSearchUtil.findPropertyDeclaration(((AbstractConceptDeclaration) SNodeOperations.getAdapter(SNodeOperations.getConceptDeclaration(attributedNode))), propertyName);
     if (property_ != null) {
       SNode property = SNodeOperations.cast(property_.getNode(), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
       SNode dataType = SLinkOperations.getTarget(property, "dataType", false);

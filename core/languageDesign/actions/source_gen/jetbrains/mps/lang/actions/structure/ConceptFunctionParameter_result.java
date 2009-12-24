@@ -16,7 +16,7 @@ public class ConceptFunctionParameter_result extends ConceptFunctionParameter {
   }
 
   public static ConceptFunctionParameter_result newInstance(SModel sm, boolean init) {
-    return (ConceptFunctionParameter_result)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConceptFunctionParameter_result) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConceptFunctionParameter_result newInstance(SModel sm) {

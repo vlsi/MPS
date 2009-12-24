@@ -15,7 +15,7 @@ public class GenerationContextOp_GetScope extends GenerationContextOp_Base {
   }
 
   public static GenerationContextOp_GetScope newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_GetScope)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_GetScope) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetScope", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_GetScope newInstance(SModel sm) {

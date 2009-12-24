@@ -16,7 +16,7 @@ public class DescriptionBlock extends ConceptFunction {
   }
 
   public static DescriptionBlock newInstance(SModel sm, boolean init) {
-    return (DescriptionBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.DescriptionBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DescriptionBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.DescriptionBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DescriptionBlock newInstance(SModel sm) {

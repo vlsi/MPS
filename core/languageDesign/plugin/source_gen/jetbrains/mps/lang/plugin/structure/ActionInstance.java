@@ -48,7 +48,7 @@ public class ActionInstance extends BaseConcept implements ActionGroupMember {
   }
 
   public ActionDeclaration getAction() {
-    return (ActionDeclaration)this.getReferent(ActionDeclaration.class, ActionInstance.ACTION);
+    return (ActionDeclaration) this.getReferent(ActionDeclaration.class, ActionInstance.ACTION);
   }
 
   public void setAction(ActionDeclaration node) {
@@ -76,7 +76,7 @@ public class ActionInstance extends BaseConcept implements ActionGroupMember {
   }
 
   public static ActionInstance newInstance(SModel sm, boolean init) {
-    return (ActionInstance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionInstance", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ActionInstance) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionInstance", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ActionInstance newInstance(SModel sm) {

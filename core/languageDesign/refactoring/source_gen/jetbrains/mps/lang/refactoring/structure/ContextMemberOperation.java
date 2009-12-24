@@ -44,7 +44,7 @@ public class ContextMemberOperation extends BaseConcept implements IOperation {
   }
 
   public static ContextMemberOperation newInstance(SModel sm, boolean init) {
-    return (ContextMemberOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ContextMemberOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ContextMemberOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ContextMemberOperation newInstance(SModel sm) {

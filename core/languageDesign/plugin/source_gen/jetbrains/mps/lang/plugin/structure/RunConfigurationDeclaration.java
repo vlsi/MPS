@@ -80,7 +80,7 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
   }
 
   public RunConfigurationTypeDeclaration getConfigType() {
-    return (RunConfigurationTypeDeclaration)this.getReferent(RunConfigurationTypeDeclaration.class, RunConfigurationDeclaration.CONFIG_TYPE);
+    return (RunConfigurationTypeDeclaration) this.getReferent(RunConfigurationTypeDeclaration.class, RunConfigurationDeclaration.CONFIG_TYPE);
   }
 
   public void setConfigType(RunConfigurationTypeDeclaration node) {
@@ -88,7 +88,7 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
   }
 
   public ConfigurationEditorDeclaration getEditor() {
-    return (ConfigurationEditorDeclaration)this.getChild(ConfigurationEditorDeclaration.class, RunConfigurationDeclaration.EDITOR);
+    return (ConfigurationEditorDeclaration) this.getChild(ConfigurationEditorDeclaration.class, RunConfigurationDeclaration.EDITOR);
   }
 
   public void setEditor(ConfigurationEditorDeclaration node) {
@@ -96,7 +96,7 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
   }
 
   public GetConfigurationIconBlock getIconBlock() {
-    return (GetConfigurationIconBlock)this.getChild(GetConfigurationIconBlock.class, RunConfigurationDeclaration.ICON_BLOCK);
+    return (GetConfigurationIconBlock) this.getChild(GetConfigurationIconBlock.class, RunConfigurationDeclaration.ICON_BLOCK);
   }
 
   public void setIconBlock(GetConfigurationIconBlock node) {
@@ -104,7 +104,7 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
   }
 
   public CheckConfigurationBlock getCheckBlock() {
-    return (CheckConfigurationBlock)this.getChild(CheckConfigurationBlock.class, RunConfigurationDeclaration.CHECK_BLOCK);
+    return (CheckConfigurationBlock) this.getChild(CheckConfigurationBlock.class, RunConfigurationDeclaration.CHECK_BLOCK);
   }
 
   public void setCheckBlock(CheckConfigurationBlock node) {
@@ -112,7 +112,7 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
   }
 
   public ExecuteConfigBlock getExecuteBlock() {
-    return (ExecuteConfigBlock)this.getChild(ExecuteConfigBlock.class, RunConfigurationDeclaration.EXECUTE_BLOCK);
+    return (ExecuteConfigBlock) this.getChild(ExecuteConfigBlock.class, RunConfigurationDeclaration.EXECUTE_BLOCK);
   }
 
   public void setExecuteBlock(ExecuteConfigBlock node) {
@@ -140,7 +140,7 @@ public class RunConfigurationDeclaration extends BaseConcept implements INamedCo
   }
 
   public static RunConfigurationDeclaration newInstance(SModel sm, boolean init) {
-    return (RunConfigurationDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RunConfigurationDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RunConfigurationDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RunConfigurationDeclaration newInstance(SModel sm) {

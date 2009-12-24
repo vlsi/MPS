@@ -19,7 +19,7 @@ public class RunConfigPropertyInstance extends BaseConcept {
   }
 
   public PersistentPropertyDeclaration getProperty() {
-    return (PersistentPropertyDeclaration)this.getReferent(PersistentPropertyDeclaration.class, RunConfigPropertyInstance.PROPERTY);
+    return (PersistentPropertyDeclaration) this.getReferent(PersistentPropertyDeclaration.class, RunConfigPropertyInstance.PROPERTY);
   }
 
   public void setProperty(PersistentPropertyDeclaration node) {
@@ -27,7 +27,7 @@ public class RunConfigPropertyInstance extends BaseConcept {
   }
 
   public Expression getPropertyValue() {
-    return (Expression)this.getChild(Expression.class, RunConfigPropertyInstance.PROPERTY_VALUE);
+    return (Expression) this.getChild(Expression.class, RunConfigPropertyInstance.PROPERTY_VALUE);
   }
 
   public void setPropertyValue(Expression node) {
@@ -35,7 +35,7 @@ public class RunConfigPropertyInstance extends BaseConcept {
   }
 
   public static RunConfigPropertyInstance newInstance(SModel sm, boolean init) {
-    return (RunConfigPropertyInstance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RunConfigPropertyInstance) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RunConfigPropertyInstance", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RunConfigPropertyInstance newInstance(SModel sm) {

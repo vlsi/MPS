@@ -16,7 +16,7 @@ public class QueryFunction_SubstituteWrapper extends ConceptFunction {
   }
 
   public static QueryFunction_SubstituteWrapper newInstance(SModel sm, boolean init) {
-    return (QueryFunction_SubstituteWrapper)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteWrapper", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryFunction_SubstituteWrapper) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SubstituteWrapper", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryFunction_SubstituteWrapper newInstance(SModel sm) {

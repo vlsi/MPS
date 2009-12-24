@@ -43,7 +43,7 @@ public class RefactoringField extends BaseVariableDeclaration implements Refacto
   }
 
   public static RefactoringField newInstance(SModel sm, boolean init) {
-    return (RefactoringField)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RefactoringField", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RefactoringField) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.RefactoringField", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RefactoringField newInstance(SModel sm) {

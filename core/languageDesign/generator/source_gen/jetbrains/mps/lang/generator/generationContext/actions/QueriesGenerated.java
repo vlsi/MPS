@@ -82,10 +82,10 @@ public class QueriesGenerated {
           }).toListSequence();
         }
       };
-      Iterable queryResult = (Iterable)calc.calculate();
+      Iterable queryResult = (Iterable) calc.calculate();
       if (queryResult != null) {
         for (Object item : queryResult) {
-          List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((SNode)item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
+          List<INodeSubstituteAction> defaultActions = ChildSubstituteActionsHelper.createDefaultActions((SNode) item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext);
           ListSequence.fromList(result).addSequence(ListSequence.fromList(defaultActions));
         }
       }

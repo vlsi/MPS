@@ -16,7 +16,7 @@ public class TemplateFunctionParameter_sourceNode extends ConceptFunctionParamet
   }
 
   public static TemplateFunctionParameter_sourceNode newInstance(SModel sm, boolean init) {
-    return (TemplateFunctionParameter_sourceNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TemplateFunctionParameter_sourceNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TemplateFunctionParameter_sourceNode newInstance(SModel sm) {

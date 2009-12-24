@@ -47,7 +47,7 @@ public class Quotation extends Expression implements IMetaLevelChanger {
   }
 
   public BaseConcept getQuotedNode() {
-    return (BaseConcept)this.getChild(BaseConcept.class, Quotation.QUOTED_NODE);
+    return (BaseConcept) this.getChild(BaseConcept.class, Quotation.QUOTED_NODE);
   }
 
   public void setQuotedNode(BaseConcept node) {
@@ -55,7 +55,7 @@ public class Quotation extends Expression implements IMetaLevelChanger {
   }
 
   public Expression getModelToCreate() {
-    return (Expression)this.getChild(Expression.class, Quotation.MODEL_TO_CREATE);
+    return (Expression) this.getChild(Expression.class, Quotation.MODEL_TO_CREATE);
   }
 
   public void setModelToCreate(Expression node) {
@@ -63,7 +63,7 @@ public class Quotation extends Expression implements IMetaLevelChanger {
   }
 
   public static Quotation newInstance(SModel sm, boolean init) {
-    return (Quotation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.quotation.structure.Quotation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Quotation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.quotation.structure.Quotation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Quotation newInstance(SModel sm) {

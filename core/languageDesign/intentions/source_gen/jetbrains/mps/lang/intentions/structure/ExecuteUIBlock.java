@@ -16,7 +16,7 @@ public class ExecuteUIBlock extends ConceptFunction {
   }
 
   public static ExecuteUIBlock newInstance(SModel sm, boolean init) {
-    return (ExecuteUIBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.ExecuteUIBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExecuteUIBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.ExecuteUIBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExecuteUIBlock newInstance(SModel sm) {

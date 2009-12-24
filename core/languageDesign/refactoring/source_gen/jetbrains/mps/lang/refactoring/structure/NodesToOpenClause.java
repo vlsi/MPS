@@ -16,7 +16,7 @@ public class NodesToOpenClause extends ConceptFunction {
   }
 
   public static NodesToOpenClause newInstance(SModel sm, boolean init) {
-    return (NodesToOpenClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.NodesToOpenClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodesToOpenClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.NodesToOpenClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodesToOpenClause newInstance(SModel sm) {

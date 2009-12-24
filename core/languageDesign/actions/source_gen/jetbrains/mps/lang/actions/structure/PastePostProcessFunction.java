@@ -16,7 +16,7 @@ public class PastePostProcessFunction extends ConceptFunction {
   }
 
   public static PastePostProcessFunction newInstance(SModel sm, boolean init) {
-    return (PastePostProcessFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.PastePostProcessFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PastePostProcessFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.PastePostProcessFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PastePostProcessFunction newInstance(SModel sm) {

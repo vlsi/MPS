@@ -17,7 +17,7 @@ public class PreferencesComponentType extends BaseClassifierType {
   }
 
   public PreferencesComponentDeclaration getComponentDeclaration() {
-    return (PreferencesComponentDeclaration)this.getReferent(PreferencesComponentDeclaration.class, PreferencesComponentType.COMPONENT_DECLARATION);
+    return (PreferencesComponentDeclaration) this.getReferent(PreferencesComponentDeclaration.class, PreferencesComponentType.COMPONENT_DECLARATION);
   }
 
   public void setComponentDeclaration(PreferencesComponentDeclaration node) {
@@ -25,7 +25,7 @@ public class PreferencesComponentType extends BaseClassifierType {
   }
 
   public static PreferencesComponentType newInstance(SModel sm, boolean init) {
-    return (PreferencesComponentType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PreferencesComponentType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PreferencesComponentType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.PreferencesComponentType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PreferencesComponentType newInstance(SModel sm) {

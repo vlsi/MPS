@@ -16,7 +16,7 @@ public class GetToolOperation extends ProjectOperation {
   }
 
   public BaseToolDeclaration getTool() {
-    return (BaseToolDeclaration)this.getReferent(BaseToolDeclaration.class, GetToolOperation.TOOL);
+    return (BaseToolDeclaration) this.getReferent(BaseToolDeclaration.class, GetToolOperation.TOOL);
   }
 
   public void setTool(BaseToolDeclaration node) {
@@ -24,7 +24,7 @@ public class GetToolOperation extends ProjectOperation {
   }
 
   public static GetToolOperation newInstance(SModel sm, boolean init) {
-    return (GetToolOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetToolOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetToolOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetToolOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetToolOperation newInstance(SModel sm) {

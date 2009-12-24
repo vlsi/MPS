@@ -15,7 +15,7 @@ public class AddMenuPart extends ConceptPart {
   }
 
   public static AddMenuPart newInstance(SModel sm, boolean init) {
-    return (AddMenuPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.AddMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AddMenuPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.AddMenuPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AddMenuPart newInstance(SModel sm) {

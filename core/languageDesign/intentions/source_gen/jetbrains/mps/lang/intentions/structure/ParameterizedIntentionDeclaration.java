@@ -16,7 +16,7 @@ public class ParameterizedIntentionDeclaration extends IntentionDeclaration {
   }
 
   public QueryBlock getQueryBlock() {
-    return (QueryBlock)this.getChild(QueryBlock.class, ParameterizedIntentionDeclaration.QUERY_BLOCK);
+    return (QueryBlock) this.getChild(QueryBlock.class, ParameterizedIntentionDeclaration.QUERY_BLOCK);
   }
 
   public void setQueryBlock(QueryBlock node) {
@@ -24,7 +24,7 @@ public class ParameterizedIntentionDeclaration extends IntentionDeclaration {
   }
 
   public static ParameterizedIntentionDeclaration newInstance(SModel sm, boolean init) {
-    return (ParameterizedIntentionDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParameterizedIntentionDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParameterizedIntentionDeclaration newInstance(SModel sm) {

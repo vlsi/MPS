@@ -46,7 +46,7 @@ public class ExecutionConsoleStatement extends Statement implements ExecuteSpeci
   }
 
   public Expression getConsoleComponent() {
-    return (Expression)this.getChild(Expression.class, ExecutionConsoleStatement.CONSOLE_COMPONENT);
+    return (Expression) this.getChild(Expression.class, ExecutionConsoleStatement.CONSOLE_COMPONENT);
   }
 
   public void setConsoleComponent(Expression node) {
@@ -54,7 +54,7 @@ public class ExecutionConsoleStatement extends Statement implements ExecuteSpeci
   }
 
   public DisposeConsoleBlock getDisposeBlock() {
-    return (DisposeConsoleBlock)this.getChild(DisposeConsoleBlock.class, ExecutionConsoleStatement.DISPOSE_BLOCK);
+    return (DisposeConsoleBlock) this.getChild(DisposeConsoleBlock.class, ExecutionConsoleStatement.DISPOSE_BLOCK);
   }
 
   public void setDisposeBlock(DisposeConsoleBlock node) {
@@ -62,7 +62,7 @@ public class ExecutionConsoleStatement extends Statement implements ExecuteSpeci
   }
 
   public static ExecutionConsoleStatement newInstance(SModel sm, boolean init) {
-    return (ExecutionConsoleStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ExecutionConsoleStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExecutionConsoleStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ExecutionConsoleStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExecutionConsoleStatement newInstance(SModel sm) {

@@ -80,7 +80,7 @@ public class RunConfigurationTypeDeclaration extends BaseConcept implements INam
   }
 
   public static RunConfigurationTypeDeclaration newInstance(SModel sm, boolean init) {
-    return (RunConfigurationTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RunConfigurationTypeDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.RunConfigurationTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RunConfigurationTypeDeclaration newInstance(SModel sm) {

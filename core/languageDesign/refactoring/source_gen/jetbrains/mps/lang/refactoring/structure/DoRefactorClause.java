@@ -16,7 +16,7 @@ public class DoRefactorClause extends ConceptFunction {
   }
 
   public static DoRefactorClause newInstance(SModel sm, boolean init) {
-    return (DoRefactorClause)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.DoRefactorClause", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DoRefactorClause) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.DoRefactorClause", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DoRefactorClause newInstance(SModel sm) {

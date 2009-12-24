@@ -15,7 +15,7 @@ public class ModelCreatorTarget extends BaseCreatorTarget {
   }
 
   public static ModelCreatorTarget newInstance(SModel sm, boolean init) {
-    return (ModelCreatorTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ModelCreatorTarget", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ModelCreatorTarget) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ModelCreatorTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ModelCreatorTarget newInstance(SModel sm) {

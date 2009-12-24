@@ -15,7 +15,7 @@ public class ProjectCreatorTarget extends BaseCreatorTarget {
   }
 
   public static ProjectCreatorTarget newInstance(SModel sm, boolean init) {
-    return (ProjectCreatorTarget)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ProjectCreatorTarget", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ProjectCreatorTarget) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ProjectCreatorTarget", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ProjectCreatorTarget newInstance(SModel sm) {

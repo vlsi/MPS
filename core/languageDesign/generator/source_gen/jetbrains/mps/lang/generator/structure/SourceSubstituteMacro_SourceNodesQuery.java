@@ -15,7 +15,7 @@ public class SourceSubstituteMacro_SourceNodesQuery extends TemplateQueryBase {
   }
 
   public static SourceSubstituteMacro_SourceNodesQuery newInstance(SModel sm, boolean init) {
-    return (SourceSubstituteMacro_SourceNodesQuery)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SourceSubstituteMacro_SourceNodesQuery) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SourceSubstituteMacro_SourceNodesQuery newInstance(SModel sm) {

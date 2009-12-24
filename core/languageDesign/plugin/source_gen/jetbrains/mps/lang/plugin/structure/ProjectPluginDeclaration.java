@@ -59,7 +59,7 @@ public class ProjectPluginDeclaration extends BaseConcept implements IClassifier
   }
 
   public ProjectPluginInitBlock getInitBlock() {
-    return (ProjectPluginInitBlock)this.getChild(ProjectPluginInitBlock.class, ProjectPluginDeclaration.INIT_BLOCK);
+    return (ProjectPluginInitBlock) this.getChild(ProjectPluginInitBlock.class, ProjectPluginDeclaration.INIT_BLOCK);
   }
 
   public void setInitBlock(ProjectPluginInitBlock node) {
@@ -67,7 +67,7 @@ public class ProjectPluginDeclaration extends BaseConcept implements IClassifier
   }
 
   public ProjectPluginDisposeBlock getDisposeBlock() {
-    return (ProjectPluginDisposeBlock)this.getChild(ProjectPluginDisposeBlock.class, ProjectPluginDeclaration.DISPOSE_BLOCK);
+    return (ProjectPluginDisposeBlock) this.getChild(ProjectPluginDisposeBlock.class, ProjectPluginDeclaration.DISPOSE_BLOCK);
   }
 
   public void setDisposeBlock(ProjectPluginDisposeBlock node) {
@@ -95,7 +95,7 @@ public class ProjectPluginDeclaration extends BaseConcept implements IClassifier
   }
 
   public static ProjectPluginDeclaration newInstance(SModel sm, boolean init) {
-    return (ProjectPluginDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ProjectPluginDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ProjectPluginDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ProjectPluginDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ProjectPluginDeclaration newInstance(SModel sm) {

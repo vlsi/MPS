@@ -28,7 +28,7 @@ public class NodeFactory extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, NodeFactory.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, NodeFactory.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {
@@ -36,7 +36,7 @@ public class NodeFactory extends BaseConcept {
   }
 
   public NodeSetupFunction getSetupFunction() {
-    return (NodeSetupFunction)this.getChild(NodeSetupFunction.class, NodeFactory.SETUP_FUNCTION);
+    return (NodeSetupFunction) this.getChild(NodeSetupFunction.class, NodeFactory.SETUP_FUNCTION);
   }
 
   public void setSetupFunction(NodeSetupFunction node) {
@@ -44,7 +44,7 @@ public class NodeFactory extends BaseConcept {
   }
 
   public static NodeFactory newInstance(SModel sm, boolean init) {
-    return (NodeFactory)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeFactory", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NodeFactory) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.NodeFactory", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NodeFactory newInstance(SModel sm) {

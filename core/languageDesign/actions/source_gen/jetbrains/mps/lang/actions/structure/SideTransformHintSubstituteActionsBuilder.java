@@ -53,7 +53,7 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getApplicableConcept() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, SideTransformHintSubstituteActionsBuilder.APPLICABLE_CONCEPT);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, SideTransformHintSubstituteActionsBuilder.APPLICABLE_CONCEPT);
   }
 
   public void setApplicableConcept(AbstractConceptDeclaration node) {
@@ -61,7 +61,7 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
   }
 
   public SideTransformHintSubstitutePreconditionFunction getPrecondition() {
-    return (SideTransformHintSubstitutePreconditionFunction)this.getChild(SideTransformHintSubstitutePreconditionFunction.class, SideTransformHintSubstituteActionsBuilder.PRECONDITION);
+    return (SideTransformHintSubstitutePreconditionFunction) this.getChild(SideTransformHintSubstitutePreconditionFunction.class, SideTransformHintSubstituteActionsBuilder.PRECONDITION);
   }
 
   public void setPrecondition(SideTransformHintSubstitutePreconditionFunction node) {
@@ -69,7 +69,7 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
   }
 
   public QueryFunction_ST_CommonInitializer getCommonInitializer() {
-    return (QueryFunction_ST_CommonInitializer)this.getChild(QueryFunction_ST_CommonInitializer.class, SideTransformHintSubstituteActionsBuilder.COMMON_INITIALIZER);
+    return (QueryFunction_ST_CommonInitializer) this.getChild(QueryFunction_ST_CommonInitializer.class, SideTransformHintSubstituteActionsBuilder.COMMON_INITIALIZER);
   }
 
   public void setCommonInitializer(QueryFunction_ST_CommonInitializer node) {
@@ -117,7 +117,7 @@ public class SideTransformHintSubstituteActionsBuilder extends BaseConcept {
   }
 
   public static SideTransformHintSubstituteActionsBuilder newInstance(SModel sm, boolean init) {
-    return (SideTransformHintSubstituteActionsBuilder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SideTransformHintSubstituteActionsBuilder) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SideTransformHintSubstituteActionsBuilder newInstance(SModel sm) {

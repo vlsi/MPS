@@ -16,7 +16,7 @@ public class Reduction_MappingRule extends BaseMappingRule {
   }
 
   public RuleConsequence getRuleConsequence() {
-    return (RuleConsequence)this.getChild(RuleConsequence.class, Reduction_MappingRule.RULE_CONSEQUENCE);
+    return (RuleConsequence) this.getChild(RuleConsequence.class, Reduction_MappingRule.RULE_CONSEQUENCE);
   }
 
   public void setRuleConsequence(RuleConsequence node) {
@@ -24,7 +24,7 @@ public class Reduction_MappingRule extends BaseMappingRule {
   }
 
   public static Reduction_MappingRule newInstance(SModel sm, boolean init) {
-    return (Reduction_MappingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Reduction_MappingRule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Reduction_MappingRule newInstance(SModel sm) {

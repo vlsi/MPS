@@ -52,7 +52,7 @@ public class Substitute_SimpleString extends BaseConcept implements ISubstitute_
   }
 
   public static Substitute_SimpleString newInstance(SModel sm, boolean init) {
-    return (Substitute_SimpleString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.Substitute_SimpleString", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Substitute_SimpleString) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.Substitute_SimpleString", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Substitute_SimpleString newInstance(SModel sm) {

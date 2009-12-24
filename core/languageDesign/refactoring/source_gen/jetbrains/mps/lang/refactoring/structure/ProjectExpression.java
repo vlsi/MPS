@@ -15,7 +15,7 @@ public class ProjectExpression extends AbstractUIArgumentExpression {
   }
 
   public static ProjectExpression newInstance(SModel sm, boolean init) {
-    return (ProjectExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ProjectExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ProjectExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ProjectExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ProjectExpression newInstance(SModel sm) {

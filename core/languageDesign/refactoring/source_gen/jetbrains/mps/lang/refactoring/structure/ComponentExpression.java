@@ -16,7 +16,7 @@ public class ComponentExpression extends Expression {
   }
 
   public static ComponentExpression newInstance(SModel sm, boolean init) {
-    return (ComponentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ComponentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComponentExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ComponentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComponentExpression newInstance(SModel sm) {

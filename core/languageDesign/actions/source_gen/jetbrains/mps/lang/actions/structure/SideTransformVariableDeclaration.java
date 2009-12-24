@@ -17,7 +17,7 @@ public class SideTransformVariableDeclaration extends VariableDeclaration {
   }
 
   public QueryFunction_STVariableInitializer getInitializerBlock() {
-    return (QueryFunction_STVariableInitializer)this.getChild(QueryFunction_STVariableInitializer.class, SideTransformVariableDeclaration.INITIALIZER_BLOCK);
+    return (QueryFunction_STVariableInitializer) this.getChild(QueryFunction_STVariableInitializer.class, SideTransformVariableDeclaration.INITIALIZER_BLOCK);
   }
 
   public void setInitializerBlock(QueryFunction_STVariableInitializer node) {
@@ -25,7 +25,7 @@ public class SideTransformVariableDeclaration extends VariableDeclaration {
   }
 
   public static SideTransformVariableDeclaration newInstance(SModel sm, boolean init) {
-    return (SideTransformVariableDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SideTransformVariableDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformVariableDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SideTransformVariableDeclaration newInstance(SModel sm) {

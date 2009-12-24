@@ -16,7 +16,7 @@ public class GetPreferencesComponentOperation extends ProjectOperation {
   }
 
   public PreferencesComponentDeclaration getComponentDeclaration() {
-    return (PreferencesComponentDeclaration)this.getReferent(PreferencesComponentDeclaration.class, GetPreferencesComponentOperation.COMPONENT_DECLARATION);
+    return (PreferencesComponentDeclaration) this.getReferent(PreferencesComponentDeclaration.class, GetPreferencesComponentOperation.COMPONENT_DECLARATION);
   }
 
   public void setComponentDeclaration(PreferencesComponentDeclaration node) {
@@ -24,7 +24,7 @@ public class GetPreferencesComponentOperation extends ProjectOperation {
   }
 
   public static GetPreferencesComponentOperation newInstance(SModel sm, boolean init) {
-    return (GetPreferencesComponentOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetPreferencesComponentOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GetPreferencesComponentOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GetPreferencesComponentOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GetPreferencesComponentOperation newInstance(SModel sm) {

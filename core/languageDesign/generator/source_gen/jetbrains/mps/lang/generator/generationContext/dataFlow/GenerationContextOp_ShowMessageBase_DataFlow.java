@@ -13,7 +13,7 @@ public class GenerationContextOp_ShowMessageBase_DataFlow extends DataFlowBuilde
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "messageText", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "referenceNode", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "messageText", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "referenceNode", true));
   }
 }

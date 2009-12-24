@@ -16,7 +16,7 @@ public class Environment_FunctionParameter extends ConceptFunctionParameter {
   }
 
   public static Environment_FunctionParameter newInstance(SModel sm, boolean init) {
-    return (Environment_FunctionParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.Environment_FunctionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Environment_FunctionParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.Environment_FunctionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Environment_FunctionParameter newInstance(SModel sm) {

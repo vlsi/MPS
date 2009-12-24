@@ -34,7 +34,7 @@ public class KeyMapKeystroke extends BaseConcept {
   }
 
   public static KeyMapKeystroke newInstance(SModel sm, boolean init) {
-    return (KeyMapKeystroke)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.KeyMapKeystroke", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (KeyMapKeystroke) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.KeyMapKeystroke", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static KeyMapKeystroke newInstance(SModel sm) {

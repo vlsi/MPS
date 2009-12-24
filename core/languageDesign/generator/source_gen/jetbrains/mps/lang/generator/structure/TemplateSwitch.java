@@ -60,7 +60,7 @@ public class TemplateSwitch extends BaseConcept implements INamedConcept, IConce
   }
 
   public TemplateSwitch getModifiedSwitch() {
-    return (TemplateSwitch)this.getReferent(TemplateSwitch.class, TemplateSwitch.MODIFIED_SWITCH);
+    return (TemplateSwitch) this.getReferent(TemplateSwitch.class, TemplateSwitch.MODIFIED_SWITCH);
   }
 
   public void setModifiedSwitch(TemplateSwitch node) {
@@ -68,7 +68,7 @@ public class TemplateSwitch extends BaseConcept implements INamedConcept, IConce
   }
 
   public RuleConsequence getDefaultConsequence() {
-    return (RuleConsequence)this.getChild(RuleConsequence.class, TemplateSwitch.DEFAULT_CONSEQUENCE);
+    return (RuleConsequence) this.getChild(RuleConsequence.class, TemplateSwitch.DEFAULT_CONSEQUENCE);
   }
 
   public void setDefaultConsequence(RuleConsequence node) {
@@ -76,7 +76,7 @@ public class TemplateSwitch extends BaseConcept implements INamedConcept, IConce
   }
 
   public GeneratorMessage getNullInputMessage() {
-    return (GeneratorMessage)this.getChild(GeneratorMessage.class, TemplateSwitch.NULL_INPUT_MESSAGE);
+    return (GeneratorMessage) this.getChild(GeneratorMessage.class, TemplateSwitch.NULL_INPUT_MESSAGE);
   }
 
   public void setNullInputMessage(GeneratorMessage node) {
@@ -104,7 +104,7 @@ public class TemplateSwitch extends BaseConcept implements INamedConcept, IConce
   }
 
   public static TemplateSwitch newInstance(SModel sm, boolean init) {
-    return (TemplateSwitch)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateSwitch", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TemplateSwitch) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.TemplateSwitch", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TemplateSwitch newInstance(SModel sm) {

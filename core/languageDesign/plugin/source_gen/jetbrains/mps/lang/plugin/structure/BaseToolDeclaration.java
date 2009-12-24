@@ -88,7 +88,7 @@ public class BaseToolDeclaration extends BaseConcept implements IClassifier, ICh
   }
 
   public InitBlock getToolInitBlock() {
-    return (InitBlock)this.getChild(InitBlock.class, BaseToolDeclaration.TOOL_INIT_BLOCK);
+    return (InitBlock) this.getChild(InitBlock.class, BaseToolDeclaration.TOOL_INIT_BLOCK);
   }
 
   public void setToolInitBlock(InitBlock node) {
@@ -96,7 +96,7 @@ public class BaseToolDeclaration extends BaseConcept implements IClassifier, ICh
   }
 
   public DisposeBlock getToolDisposeBlock() {
-    return (DisposeBlock)this.getChild(DisposeBlock.class, BaseToolDeclaration.TOOL_DISPOSE_BLOCK);
+    return (DisposeBlock) this.getChild(DisposeBlock.class, BaseToolDeclaration.TOOL_DISPOSE_BLOCK);
   }
 
   public void setToolDisposeBlock(DisposeBlock node) {
@@ -144,7 +144,7 @@ public class BaseToolDeclaration extends BaseConcept implements IClassifier, ICh
   }
 
   public static BaseToolDeclaration newInstance(SModel sm, boolean init) {
-    return (BaseToolDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.BaseToolDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseToolDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.BaseToolDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseToolDeclaration newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class CopyPreProcessFunction extends ConceptFunction {
   }
 
   public static CopyPreProcessFunction newInstance(SModel sm, boolean init) {
-    return (CopyPreProcessFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.CopyPreProcessFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CopyPreProcessFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.CopyPreProcessFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CopyPreProcessFunction newInstance(SModel sm) {

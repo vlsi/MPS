@@ -18,7 +18,7 @@ public class AskBooleanExpression extends Expression {
   }
 
   public RefactoringParameter getParameter() {
-    return (RefactoringParameter)this.getReferent(RefactoringParameter.class, AskBooleanExpression.PARAMETER);
+    return (RefactoringParameter) this.getReferent(RefactoringParameter.class, AskBooleanExpression.PARAMETER);
   }
 
   public void setParameter(RefactoringParameter node) {
@@ -26,7 +26,7 @@ public class AskBooleanExpression extends Expression {
   }
 
   public Expression getText() {
-    return (Expression)this.getChild(Expression.class, AskBooleanExpression.TEXT);
+    return (Expression) this.getChild(Expression.class, AskBooleanExpression.TEXT);
   }
 
   public void setText(Expression node) {
@@ -34,7 +34,7 @@ public class AskBooleanExpression extends Expression {
   }
 
   public static AskBooleanExpression newInstance(SModel sm, boolean init) {
-    return (AskBooleanExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.AskBooleanExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AskBooleanExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.AskBooleanExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AskBooleanExpression newInstance(SModel sm) {

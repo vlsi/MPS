@@ -59,7 +59,7 @@ public class ApplicationPluginDeclaration extends BaseConcept implements IClassi
   }
 
   public ApplicationPluginInitBlock getInitBlock() {
-    return (ApplicationPluginInitBlock)this.getChild(ApplicationPluginInitBlock.class, ApplicationPluginDeclaration.INIT_BLOCK);
+    return (ApplicationPluginInitBlock) this.getChild(ApplicationPluginInitBlock.class, ApplicationPluginDeclaration.INIT_BLOCK);
   }
 
   public void setInitBlock(ApplicationPluginInitBlock node) {
@@ -67,7 +67,7 @@ public class ApplicationPluginDeclaration extends BaseConcept implements IClassi
   }
 
   public ApplicationPluginDisposeBlock getDisposeBlock() {
-    return (ApplicationPluginDisposeBlock)this.getChild(ApplicationPluginDisposeBlock.class, ApplicationPluginDeclaration.DISPOSE_BLOCK);
+    return (ApplicationPluginDisposeBlock) this.getChild(ApplicationPluginDisposeBlock.class, ApplicationPluginDeclaration.DISPOSE_BLOCK);
   }
 
   public void setDisposeBlock(ApplicationPluginDisposeBlock node) {
@@ -95,7 +95,7 @@ public class ApplicationPluginDeclaration extends BaseConcept implements IClassi
   }
 
   public static ApplicationPluginDeclaration newInstance(SModel sm, boolean init) {
-    return (ApplicationPluginDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ApplicationPluginDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ApplicationPluginDeclaration newInstance(SModel sm) {

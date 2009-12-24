@@ -55,7 +55,7 @@ public class AbstractAntiquotation extends BaseConcept implements IMetaLevelChan
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, AbstractAntiquotation.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, AbstractAntiquotation.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -63,7 +63,7 @@ public class AbstractAntiquotation extends BaseConcept implements IMetaLevelChan
   }
 
   public static AbstractAntiquotation newInstance(SModel sm, boolean init) {
-    return (AbstractAntiquotation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractAntiquotation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractAntiquotation newInstance(SModel sm) {

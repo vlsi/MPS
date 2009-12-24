@@ -43,7 +43,7 @@ public class SimpleActionPlace extends BaseConcept implements ActionPlaceSpecifi
   }
 
   public static SimpleActionPlace newInstance(SModel sm, boolean init) {
-    return (SimpleActionPlace)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.SimpleActionPlace", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleActionPlace) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.SimpleActionPlace", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleActionPlace newInstance(SModel sm) {

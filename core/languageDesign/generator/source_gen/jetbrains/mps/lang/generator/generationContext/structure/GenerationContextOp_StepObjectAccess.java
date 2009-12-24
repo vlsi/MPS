@@ -15,7 +15,7 @@ public class GenerationContextOp_StepObjectAccess extends GenerationContextOp_Us
   }
 
   public static GenerationContextOp_StepObjectAccess newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_StepObjectAccess)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_StepObjectAccess) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_StepObjectAccess", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_StepObjectAccess newInstance(SModel sm) {

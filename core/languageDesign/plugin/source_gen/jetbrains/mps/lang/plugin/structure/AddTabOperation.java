@@ -44,7 +44,7 @@ public class AddTabOperation extends TabbedToolOperation implements IOperation {
   }
 
   public ToolTab getTab() {
-    return (ToolTab)this.getChild(ToolTab.class, AddTabOperation.TAB);
+    return (ToolTab) this.getChild(ToolTab.class, AddTabOperation.TAB);
   }
 
   public void setTab(ToolTab node) {
@@ -52,7 +52,7 @@ public class AddTabOperation extends TabbedToolOperation implements IOperation {
   }
 
   public static AddTabOperation newInstance(SModel sm, boolean init) {
-    return (AddTabOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.AddTabOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AddTabOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.AddTabOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AddTabOperation newInstance(SModel sm) {

@@ -22,7 +22,7 @@ public class typeof_SetValueStatement_InferenceRule extends AbstractInferenceRul
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "5934994956485884241", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "5934994956485884233", true), (SNode)SLinkOperations.getTarget(SNodeOperations.getAncestor(statement, "jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", false, false), "entityType", true), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590316(jetbrains.mps.lang.refactoring.typesystem)", "5934994956485884233", true), (SNode) SLinkOperations.getTarget(SNodeOperations.getAncestor(statement, "jetbrains.mps.lang.refactoring.structure.CustomParameterChooser", false, false), "entityType", true), false, _info_12389875345);
     }
   }
 

@@ -49,7 +49,7 @@ public class QueriesGenerated {
           }
         }
       };
-      contextClassifier = (SNode)calc.calculate();
+      contextClassifier = (SNode) calc.calculate();
     }
     {
       Calculable calc = new Calculable() {
@@ -57,18 +57,18 @@ public class QueriesGenerated {
           return ListSequence.fromList(SNodeOperations.getAncestorsWhereConceptInList(_context.getParentNode(), new String[]{"jetbrains.mps.baseLanguage.classifiers.structure.IClassifier","jetbrains.mps.baseLanguage.classifiers.structure.IClassifierPart","jetbrains.mps.baseLanguage.structure.Classifier"}, true)).count() > 1;
         }
       };
-      multipleClassifiers = (Boolean)calc.calculate();
+      multipleClassifiers = (Boolean) calc.calculate();
     }
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression");
-      SNode childConcept = (SNode)_context.getChildConcept();
+      SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
             return IClassifier_Behavior.call_getMembers_1213877528020(contextClassifier, _context.getParentNode());
           }
         };
-        Iterable<SNode> queryResult = (Iterable)calc.calculate();
+        Iterable<SNode> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
@@ -98,7 +98,7 @@ public class QueriesGenerated {
           return ThisClassifierExpression_Behavior.call_getPossibleClassifiers_1219068414643(_context.getSourceNode());
         }
       };
-      Iterable<SNode> parameterObjects = (Iterable<SNode>)calculable.calculate();
+      Iterable<SNode> parameterObjects = (Iterable<SNode>) calculable.calculate();
       assert parameterObjects != null;
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {

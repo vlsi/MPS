@@ -16,7 +16,7 @@ public class ResetEditorBlock extends ConceptFunction {
   }
 
   public static ResetEditorBlock newInstance(SModel sm, boolean init) {
-    return (ResetEditorBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ResetEditorBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ResetEditorBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ResetEditorBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ResetEditorBlock newInstance(SModel sm) {

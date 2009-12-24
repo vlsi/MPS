@@ -13,6 +13,6 @@ public class GenerationContextOp_UserObjectAccessBase_DataFlow extends DataFlowB
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "userKey", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "userKey", true));
   }
 }

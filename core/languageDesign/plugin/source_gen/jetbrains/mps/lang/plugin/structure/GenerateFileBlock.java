@@ -16,7 +16,7 @@ public class GenerateFileBlock extends ConceptFunction {
   }
 
   public static GenerateFileBlock newInstance(SModel sm, boolean init) {
-    return (GenerateFileBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GenerateFileBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerateFileBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.GenerateFileBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerateFileBlock newInstance(SModel sm) {

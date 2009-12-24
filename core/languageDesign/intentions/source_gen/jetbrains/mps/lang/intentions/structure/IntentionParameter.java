@@ -16,7 +16,7 @@ public class IntentionParameter extends Expression {
   }
 
   public static IntentionParameter newInstance(SModel sm, boolean init) {
-    return (IntentionParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntentionParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.intentions.structure.IntentionParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntentionParameter newInstance(SModel sm) {

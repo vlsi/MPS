@@ -16,7 +16,7 @@ public class DisposeConsoleBlock extends ClosureLiteral {
   }
 
   public static DisposeConsoleBlock newInstance(SModel sm, boolean init) {
-    return (DisposeConsoleBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.DisposeConsoleBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DisposeConsoleBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.DisposeConsoleBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DisposeConsoleBlock newInstance(SModel sm) {

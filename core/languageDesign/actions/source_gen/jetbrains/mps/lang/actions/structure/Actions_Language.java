@@ -10,6 +10,6 @@ public class Actions_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

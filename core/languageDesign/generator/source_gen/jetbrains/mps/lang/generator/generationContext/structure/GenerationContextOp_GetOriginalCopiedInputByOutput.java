@@ -17,7 +17,7 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput extends Generati
   }
 
   public Expression getOutputNode() {
-    return (Expression)this.getChild(Expression.class, GenerationContextOp_GetOriginalCopiedInputByOutput.OUTPUT_NODE);
+    return (Expression) this.getChild(Expression.class, GenerationContextOp_GetOriginalCopiedInputByOutput.OUTPUT_NODE);
   }
 
   public void setOutputNode(Expression node) {
@@ -25,7 +25,7 @@ public class GenerationContextOp_GetOriginalCopiedInputByOutput extends Generati
   }
 
   public static GenerationContextOp_GetOriginalCopiedInputByOutput newInstance(SModel sm, boolean init) {
-    return (GenerationContextOp_GetOriginalCopiedInputByOutput)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GenerationContextOp_GetOriginalCopiedInputByOutput) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GenerationContextOp_GetOriginalCopiedInputByOutput newInstance(SModel sm) {

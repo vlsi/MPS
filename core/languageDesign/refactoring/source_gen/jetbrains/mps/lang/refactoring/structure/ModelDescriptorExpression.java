@@ -15,7 +15,7 @@ public class ModelDescriptorExpression extends AbstractUIArgumentExpression {
   }
 
   public static ModelDescriptorExpression newInstance(SModel sm, boolean init) {
-    return (ModelDescriptorExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ModelDescriptorExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ModelDescriptorExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.refactoring.structure.ModelDescriptorExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ModelDescriptorExpression newInstance(SModel sm) {

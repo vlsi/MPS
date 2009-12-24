@@ -15,7 +15,7 @@ public class Weaving_MappingRule_ContextNodeQuery extends TemplateQueryBase {
   }
 
   public static Weaving_MappingRule_ContextNodeQuery newInstance(SModel sm, boolean init) {
-    return (Weaving_MappingRule_ContextNodeQuery)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Weaving_MappingRule_ContextNodeQuery) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Weaving_MappingRule_ContextNodeQuery newInstance(SModel sm) {

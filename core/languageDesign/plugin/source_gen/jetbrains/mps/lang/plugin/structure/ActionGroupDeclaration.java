@@ -103,7 +103,7 @@ public class ActionGroupDeclaration extends BaseConcept implements INamedConcept
   }
 
   public GroupContents getContents() {
-    return (GroupContents)this.getChild(GroupContents.class, ActionGroupDeclaration.CONTENTS);
+    return (GroupContents) this.getChild(GroupContents.class, ActionGroupDeclaration.CONTENTS);
   }
 
   public void setContents(GroupContents node) {
@@ -131,7 +131,7 @@ public class ActionGroupDeclaration extends BaseConcept implements INamedConcept
   }
 
   public static ActionGroupDeclaration newInstance(SModel sm, boolean init) {
-    return (ActionGroupDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ActionGroupDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ActionGroupDeclaration newInstance(SModel sm) {
