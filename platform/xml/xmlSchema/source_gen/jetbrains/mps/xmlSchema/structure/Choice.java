@@ -17,7 +17,7 @@ public class Choice extends GroupExpression {
   }
 
   public TypeExpressionList getTypeExpressionList() {
-    return (TypeExpressionList)this.getChild(TypeExpressionList.class, Choice.TYPE_EXPRESSION_LIST);
+    return (TypeExpressionList) this.getChild(TypeExpressionList.class, Choice.TYPE_EXPRESSION_LIST);
   }
 
   public void setTypeExpressionList(TypeExpressionList node) {
@@ -25,7 +25,7 @@ public class Choice extends GroupExpression {
   }
 
   public OccursAttribute getOccursAttribute() {
-    return (OccursAttribute)this.getChild(OccursAttribute.class, Choice.OCCURS_ATTRIBUTE);
+    return (OccursAttribute) this.getChild(OccursAttribute.class, Choice.OCCURS_ATTRIBUTE);
   }
 
   public void setOccursAttribute(OccursAttribute node) {
@@ -33,7 +33,7 @@ public class Choice extends GroupExpression {
   }
 
   public static Choice newInstance(SModel sm, boolean init) {
-    return (Choice)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.Choice", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Choice) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.Choice", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Choice newInstance(SModel sm) {

@@ -47,7 +47,7 @@ public class AttributeGroup extends Declaration {
   }
 
   public static AttributeGroup newInstance(SModel sm, boolean init) {
-    return (AttributeGroup)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.AttributeGroup", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AttributeGroup) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.AttributeGroup", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AttributeGroup newInstance(SModel sm) {

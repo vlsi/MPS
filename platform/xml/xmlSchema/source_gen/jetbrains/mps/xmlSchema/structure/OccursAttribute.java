@@ -26,7 +26,7 @@ public class OccursAttribute extends BaseConcept {
   }
 
   public MaxOccursExpression getMaxOccurs() {
-    return (MaxOccursExpression)this.getChild(MaxOccursExpression.class, OccursAttribute.MAX_OCCURS);
+    return (MaxOccursExpression) this.getChild(MaxOccursExpression.class, OccursAttribute.MAX_OCCURS);
   }
 
   public void setMaxOccurs(MaxOccursExpression node) {
@@ -34,7 +34,7 @@ public class OccursAttribute extends BaseConcept {
   }
 
   public static OccursAttribute newInstance(SModel sm, boolean init) {
-    return (OccursAttribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.OccursAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OccursAttribute) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.OccursAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OccursAttribute newInstance(SModel sm) {

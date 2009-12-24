@@ -85,7 +85,7 @@ public class Schema extends BaseConcept implements INamedConcept {
   }
 
   public ElementReference getRootElementReference() {
-    return (ElementReference)this.getChild(ElementReference.class, Schema.ROOT_ELEMENT_REFERENCE);
+    return (ElementReference) this.getChild(ElementReference.class, Schema.ROOT_ELEMENT_REFERENCE);
   }
 
   public void setRootElementReference(ElementReference node) {
@@ -93,7 +93,7 @@ public class Schema extends BaseConcept implements INamedConcept {
   }
 
   public NamespaceDeclaration getDefaultNamespaceDeclaration() {
-    return (NamespaceDeclaration)this.getChild(NamespaceDeclaration.class, Schema.DEFAULT_NAMESPACE_DECLARATION);
+    return (NamespaceDeclaration) this.getChild(NamespaceDeclaration.class, Schema.DEFAULT_NAMESPACE_DECLARATION);
   }
 
   public void setDefaultNamespaceDeclaration(NamespaceDeclaration node) {
@@ -121,7 +121,7 @@ public class Schema extends BaseConcept implements INamedConcept {
   }
 
   public static Schema newInstance(SModel sm, boolean init) {
-    return (Schema)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.Schema", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Schema) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.Schema", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Schema newInstance(SModel sm) {

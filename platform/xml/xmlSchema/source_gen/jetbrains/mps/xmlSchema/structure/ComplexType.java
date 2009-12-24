@@ -26,7 +26,7 @@ public class ComplexType extends Declaration {
   }
 
   public TypeExpressionList getTypeExpressionList() {
-    return (TypeExpressionList)this.getChild(TypeExpressionList.class, ComplexType.TYPE_EXPRESSION_LIST);
+    return (TypeExpressionList) this.getChild(TypeExpressionList.class, ComplexType.TYPE_EXPRESSION_LIST);
   }
 
   public void setTypeExpressionList(TypeExpressionList node) {
@@ -34,7 +34,7 @@ public class ComplexType extends Declaration {
   }
 
   public MixedAttribute getMixedAttribute() {
-    return (MixedAttribute)this.getChild(MixedAttribute.class, ComplexType.MIXED_ATTRIBUTE);
+    return (MixedAttribute) this.getChild(MixedAttribute.class, ComplexType.MIXED_ATTRIBUTE);
   }
 
   public void setMixedAttribute(MixedAttribute node) {
@@ -42,7 +42,7 @@ public class ComplexType extends Declaration {
   }
 
   public static ComplexType newInstance(SModel sm, boolean init) {
-    return (ComplexType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ComplexType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComplexType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ComplexType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComplexType newInstance(SModel sm) {

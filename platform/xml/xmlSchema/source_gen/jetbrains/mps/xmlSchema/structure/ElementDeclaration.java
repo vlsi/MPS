@@ -24,7 +24,7 @@ public class ElementDeclaration extends Declaration {
   }
 
   public static ElementDeclaration newInstance(SModel sm, boolean init) {
-    return (ElementDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ElementDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ElementDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ElementDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ElementDeclaration newInstance(SModel sm) {

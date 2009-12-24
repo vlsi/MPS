@@ -17,7 +17,7 @@ public class ContentItem extends BaseConcept {
   }
 
   public ComplexTypeReference getComplexTypeReference() {
-    return (ComplexTypeReference)this.getChild(ComplexTypeReference.class, ContentItem.COMPLEX_TYPE_REFERENCE);
+    return (ComplexTypeReference) this.getChild(ComplexTypeReference.class, ContentItem.COMPLEX_TYPE_REFERENCE);
   }
 
   public void setComplexTypeReference(ComplexTypeReference node) {
@@ -25,7 +25,7 @@ public class ContentItem extends BaseConcept {
   }
 
   public static ContentItem newInstance(SModel sm, boolean init) {
-    return (ContentItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ContentItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ContentItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ContentItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ContentItem newInstance(SModel sm) {

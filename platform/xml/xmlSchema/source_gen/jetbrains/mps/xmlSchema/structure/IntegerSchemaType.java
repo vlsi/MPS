@@ -24,7 +24,7 @@ public class IntegerSchemaType extends SchemaType {
   }
 
   public static IntegerSchemaType newInstance(SModel sm, boolean init) {
-    return (IntegerSchemaType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.IntegerSchemaType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntegerSchemaType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.IntegerSchemaType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntegerSchemaType newInstance(SModel sm) {

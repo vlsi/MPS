@@ -25,7 +25,7 @@ public class EntityDeclaration extends BaseConcept {
   }
 
   public static EntityDeclaration newInstance(SModel sm, boolean init) {
-    return (EntityDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.EntityDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EntityDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.EntityDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EntityDeclaration newInstance(SModel sm) {

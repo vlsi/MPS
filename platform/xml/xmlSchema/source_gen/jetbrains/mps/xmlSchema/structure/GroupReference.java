@@ -16,7 +16,7 @@ public class GroupReference extends TypeExpression {
   }
 
   public GroupDeclaration getGroupDeclaration() {
-    return (GroupDeclaration)this.getReferent(GroupDeclaration.class, GroupReference.GROUP_DECLARATION);
+    return (GroupDeclaration) this.getReferent(GroupDeclaration.class, GroupReference.GROUP_DECLARATION);
   }
 
   public void setGroupDeclaration(GroupDeclaration node) {
@@ -24,7 +24,7 @@ public class GroupReference extends TypeExpression {
   }
 
   public static GroupReference newInstance(SModel sm, boolean init) {
-    return (GroupReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.GroupReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GroupReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.GroupReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GroupReference newInstance(SModel sm) {

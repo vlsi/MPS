@@ -27,7 +27,7 @@ public class SimpleAttribute extends BaseAttribute {
   }
 
   public BaseText getValue() {
-    return (BaseText)this.getChild(BaseText.class, SimpleAttribute.VALUE);
+    return (BaseText) this.getChild(BaseText.class, SimpleAttribute.VALUE);
   }
 
   public void setValue(BaseText node) {
@@ -35,7 +35,7 @@ public class SimpleAttribute extends BaseAttribute {
   }
 
   public static SimpleAttribute newInstance(SModel sm, boolean init) {
-    return (SimpleAttribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.SimpleAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleAttribute) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.SimpleAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleAttribute newInstance(SModel sm) {

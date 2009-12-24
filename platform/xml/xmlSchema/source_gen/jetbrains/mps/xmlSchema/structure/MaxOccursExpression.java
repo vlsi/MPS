@@ -16,7 +16,7 @@ public class MaxOccursExpression extends BaseConcept {
   }
 
   public static MaxOccursExpression newInstance(SModel sm, boolean init) {
-    return (MaxOccursExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.MaxOccursExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MaxOccursExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.MaxOccursExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MaxOccursExpression newInstance(SModel sm) {

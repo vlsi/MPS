@@ -18,7 +18,7 @@ public class SimpleElement extends BaseElement {
   }
 
   public BaseText getElementName() {
-    return (BaseText)this.getChild(BaseText.class, SimpleElement.ELEMENT_NAME);
+    return (BaseText) this.getChild(BaseText.class, SimpleElement.ELEMENT_NAME);
   }
 
   public void setElementName(BaseText node) {
@@ -26,7 +26,7 @@ public class SimpleElement extends BaseElement {
   }
 
   public static SimpleElement newInstance(SModel sm, boolean init) {
-    return (SimpleElement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.SimpleElement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleElement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.SimpleElement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleElement newInstance(SModel sm) {

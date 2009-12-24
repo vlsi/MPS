@@ -26,7 +26,7 @@ public class DocumentTypeDeclaration extends BaseConcept {
   }
 
   public ExternalId getExternalId() {
-    return (ExternalId)this.getChild(ExternalId.class, DocumentTypeDeclaration.EXTERNAL_ID);
+    return (ExternalId) this.getChild(ExternalId.class, DocumentTypeDeclaration.EXTERNAL_ID);
   }
 
   public void setExternalId(ExternalId node) {
@@ -34,7 +34,7 @@ public class DocumentTypeDeclaration extends BaseConcept {
   }
 
   public static DocumentTypeDeclaration newInstance(SModel sm, boolean init) {
-    return (DocumentTypeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.DocumentTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DocumentTypeDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.DocumentTypeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DocumentTypeDeclaration newInstance(SModel sm) {

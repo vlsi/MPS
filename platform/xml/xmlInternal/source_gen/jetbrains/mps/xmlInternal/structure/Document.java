@@ -19,7 +19,7 @@ public class Document extends BaseConcept {
   }
 
   public Prolog getProlog() {
-    return (Prolog)this.getChild(Prolog.class, Document.PROLOG);
+    return (Prolog) this.getChild(Prolog.class, Document.PROLOG);
   }
 
   public void setProlog(Prolog node) {
@@ -27,7 +27,7 @@ public class Document extends BaseConcept {
   }
 
   public BaseElement getRootElement() {
-    return (BaseElement)this.getChild(BaseElement.class, Document.ROOT_ELEMENT);
+    return (BaseElement) this.getChild(BaseElement.class, Document.ROOT_ELEMENT);
   }
 
   public void setRootElement(BaseElement node) {
@@ -35,7 +35,7 @@ public class Document extends BaseConcept {
   }
 
   public static Document newInstance(SModel sm, boolean init) {
-    return (Document)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.Document", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Document) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.Document", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Document newInstance(SModel sm) {

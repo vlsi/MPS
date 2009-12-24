@@ -24,7 +24,7 @@ public class BooleanSchemaType extends SchemaType {
   }
 
   public static BooleanSchemaType newInstance(SModel sm, boolean init) {
-    return (BooleanSchemaType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.BooleanSchemaType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BooleanSchemaType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.BooleanSchemaType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BooleanSchemaType newInstance(SModel sm) {

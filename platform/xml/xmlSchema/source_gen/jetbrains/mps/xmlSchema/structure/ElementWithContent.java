@@ -16,7 +16,7 @@ public class ElementWithContent extends ElementDeclaration {
   }
 
   public ComplexType getComplexType() {
-    return (ComplexType)this.getChild(ComplexType.class, ElementWithContent.COMPLEX_TYPE);
+    return (ComplexType) this.getChild(ComplexType.class, ElementWithContent.COMPLEX_TYPE);
   }
 
   public void setComplexType(ComplexType node) {
@@ -24,7 +24,7 @@ public class ElementWithContent extends ElementDeclaration {
   }
 
   public static ElementWithContent newInstance(SModel sm, boolean init) {
-    return (ElementWithContent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ElementWithContent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ElementWithContent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ElementWithContent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ElementWithContent newInstance(SModel sm) {

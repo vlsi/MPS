@@ -25,7 +25,7 @@ public class GroupDeclaration extends Declaration {
   }
 
   public GroupExpression getGroupExpression() {
-    return (GroupExpression)this.getChild(GroupExpression.class, GroupDeclaration.GROUP_EXPRESSION);
+    return (GroupExpression) this.getChild(GroupExpression.class, GroupDeclaration.GROUP_EXPRESSION);
   }
 
   public void setGroupExpression(GroupExpression node) {
@@ -33,7 +33,7 @@ public class GroupDeclaration extends Declaration {
   }
 
   public static GroupDeclaration newInstance(SModel sm, boolean init) {
-    return (GroupDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.GroupDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GroupDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.GroupDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GroupDeclaration newInstance(SModel sm) {

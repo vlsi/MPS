@@ -34,7 +34,7 @@ public class NamespaceAttribute extends BaseAttribute {
   }
 
   public static NamespaceAttribute newInstance(SModel sm, boolean init) {
-    return (NamespaceAttribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.NamespaceAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NamespaceAttribute) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.NamespaceAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NamespaceAttribute newInstance(SModel sm) {

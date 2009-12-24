@@ -60,7 +60,7 @@ public class DeclarationBlock extends BaseConcept {
   }
 
   public static DeclarationBlock newInstance(SModel sm, boolean init) {
-    return (DeclarationBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.DeclarationBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DeclarationBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.DeclarationBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DeclarationBlock newInstance(SModel sm) {

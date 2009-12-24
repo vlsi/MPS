@@ -17,7 +17,7 @@ public class Prolog extends BaseConcept {
   }
 
   public DocumentTypeDeclaration getDocumentTypeDeclaration() {
-    return (DocumentTypeDeclaration)this.getChild(DocumentTypeDeclaration.class, Prolog.DOCUMENT_TYPE_DECLARATION);
+    return (DocumentTypeDeclaration) this.getChild(DocumentTypeDeclaration.class, Prolog.DOCUMENT_TYPE_DECLARATION);
   }
 
   public void setDocumentTypeDeclaration(DocumentTypeDeclaration node) {
@@ -25,7 +25,7 @@ public class Prolog extends BaseConcept {
   }
 
   public static Prolog newInstance(SModel sm, boolean init) {
-    return (Prolog)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.Prolog", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Prolog) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.Prolog", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Prolog newInstance(SModel sm) {

@@ -21,7 +21,7 @@ public class EntityBlock extends BaseConcept {
   }
 
   public Comment getComment() {
-    return (Comment)this.getChild(Comment.class, EntityBlock.COMMENT);
+    return (Comment) this.getChild(Comment.class, EntityBlock.COMMENT);
   }
 
   public void setComment(Comment node) {
@@ -49,7 +49,7 @@ public class EntityBlock extends BaseConcept {
   }
 
   public static EntityBlock newInstance(SModel sm, boolean init) {
-    return (EntityBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.EntityBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EntityBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.EntityBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EntityBlock newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class ComplexContent extends TypeExpression {
   }
 
   public ContentItem getContentItem() {
-    return (ContentItem)this.getChild(ContentItem.class, ComplexContent.CONTENT_ITEM);
+    return (ContentItem) this.getChild(ContentItem.class, ComplexContent.CONTENT_ITEM);
   }
 
   public void setContentItem(ContentItem node) {
@@ -24,7 +24,7 @@ public class ComplexContent extends TypeExpression {
   }
 
   public static ComplexContent newInstance(SModel sm, boolean init) {
-    return (ComplexContent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ComplexContent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComplexContent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ComplexContent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComplexContent newInstance(SModel sm) {

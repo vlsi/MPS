@@ -16,7 +16,7 @@ public class SchemaType extends BaseConcept {
   }
 
   public static SchemaType newInstance(SModel sm, boolean init) {
-    return (SchemaType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.SchemaType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SchemaType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.SchemaType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SchemaType newInstance(SModel sm) {

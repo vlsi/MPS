@@ -63,7 +63,7 @@ public class AttributeDeclaration extends AttributeExpression implements INamedC
   }
 
   public UseAttribute getUseAttribute() {
-    return (UseAttribute)this.getChild(UseAttribute.class, AttributeDeclaration.USE_ATTRIBUTE);
+    return (UseAttribute) this.getChild(UseAttribute.class, AttributeDeclaration.USE_ATTRIBUTE);
   }
 
   public void setUseAttribute(UseAttribute node) {
@@ -71,7 +71,7 @@ public class AttributeDeclaration extends AttributeExpression implements INamedC
   }
 
   public SchemaType getType() {
-    return (SchemaType)this.getChild(SchemaType.class, AttributeDeclaration.TYPE);
+    return (SchemaType) this.getChild(SchemaType.class, AttributeDeclaration.TYPE);
   }
 
   public void setType(SchemaType node) {
@@ -79,7 +79,7 @@ public class AttributeDeclaration extends AttributeExpression implements INamedC
   }
 
   public static AttributeDeclaration newInstance(SModel sm, boolean init) {
-    return (AttributeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.AttributeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AttributeDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.AttributeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AttributeDeclaration newInstance(SModel sm) {

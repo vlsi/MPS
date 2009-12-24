@@ -16,7 +16,7 @@ public class TypeExpression extends BaseConcept {
   }
 
   public static TypeExpression newInstance(SModel sm, boolean init) {
-    return (TypeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.TypeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypeExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.TypeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypeExpression newInstance(SModel sm) {

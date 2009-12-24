@@ -16,7 +16,7 @@ public class Sequence extends GroupExpression {
   }
 
   public TypeExpressionList getTypeExpressionList() {
-    return (TypeExpressionList)this.getChild(TypeExpressionList.class, Sequence.TYPE_EXPRESSION_LIST);
+    return (TypeExpressionList) this.getChild(TypeExpressionList.class, Sequence.TYPE_EXPRESSION_LIST);
   }
 
   public void setTypeExpressionList(TypeExpressionList node) {
@@ -24,7 +24,7 @@ public class Sequence extends GroupExpression {
   }
 
   public static Sequence newInstance(SModel sm, boolean init) {
-    return (Sequence)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.Sequence", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Sequence) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.Sequence", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Sequence newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class AttributeGroupReference extends AttributeExpression {
   }
 
   public AttributeGroup getAttributeGroup() {
-    return (AttributeGroup)this.getReferent(AttributeGroup.class, AttributeGroupReference.ATTRIBUTE_GROUP);
+    return (AttributeGroup) this.getReferent(AttributeGroup.class, AttributeGroupReference.ATTRIBUTE_GROUP);
   }
 
   public void setAttributeGroup(AttributeGroup node) {
@@ -24,7 +24,7 @@ public class AttributeGroupReference extends AttributeExpression {
   }
 
   public static AttributeGroupReference newInstance(SModel sm, boolean init) {
-    return (AttributeGroupReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.AttributeGroupReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AttributeGroupReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.AttributeGroupReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AttributeGroupReference newInstance(SModel sm) {

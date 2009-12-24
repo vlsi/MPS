@@ -16,7 +16,7 @@ public class ExternalId extends BaseConcept {
   }
 
   public static ExternalId newInstance(SModel sm, boolean init) {
-    return (ExternalId)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.ExternalId", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExternalId) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.ExternalId", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExternalId newInstance(SModel sm) {

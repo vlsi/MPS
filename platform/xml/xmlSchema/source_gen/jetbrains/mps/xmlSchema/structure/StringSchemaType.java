@@ -24,7 +24,7 @@ public class StringSchemaType extends SchemaType {
   }
 
   public static StringSchemaType newInstance(SModel sm, boolean init) {
-    return (StringSchemaType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.StringSchemaType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StringSchemaType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.StringSchemaType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StringSchemaType newInstance(SModel sm) {

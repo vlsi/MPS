@@ -16,7 +16,7 @@ public class MixedAttribute extends BaseConcept {
   }
 
   public static MixedAttribute newInstance(SModel sm, boolean init) {
-    return (MixedAttribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.MixedAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MixedAttribute) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.MixedAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MixedAttribute newInstance(SModel sm) {

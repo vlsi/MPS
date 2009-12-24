@@ -15,7 +15,7 @@ public class SimpleContent extends TypeExpression {
   }
 
   public static SimpleContent newInstance(SModel sm, boolean init) {
-    return (SimpleContent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.SimpleContent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleContent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.SimpleContent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleContent newInstance(SModel sm) {

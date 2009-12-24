@@ -18,7 +18,7 @@ public class ContentStatement extends Statement {
   }
 
   public Content getContent() {
-    return (Content)this.getChild(Content.class, ContentStatement.CONTENT);
+    return (Content) this.getChild(Content.class, ContentStatement.CONTENT);
   }
 
   public void setContent(Content node) {
@@ -26,7 +26,7 @@ public class ContentStatement extends Statement {
   }
 
   public static ContentStatement newInstance(SModel sm, boolean init) {
-    return (ContentStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.ContentStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ContentStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.ContentStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ContentStatement newInstance(SModel sm) {

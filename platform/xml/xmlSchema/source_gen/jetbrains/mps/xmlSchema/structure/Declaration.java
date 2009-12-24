@@ -52,7 +52,7 @@ public class Declaration extends TypeExpression implements INamedConcept {
   }
 
   public static Declaration newInstance(SModel sm, boolean init) {
-    return (Declaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.Declaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Declaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.Declaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Declaration newInstance(SModel sm) {

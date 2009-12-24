@@ -16,7 +16,7 @@ public class ElementReference extends TypeExpression {
   }
 
   public ElementDeclaration getElementDeclaration() {
-    return (ElementDeclaration)this.getReferent(ElementDeclaration.class, ElementReference.ELEMENT_DECLARATION);
+    return (ElementDeclaration) this.getReferent(ElementDeclaration.class, ElementReference.ELEMENT_DECLARATION);
   }
 
   public void setElementDeclaration(ElementDeclaration node) {
@@ -24,7 +24,7 @@ public class ElementReference extends TypeExpression {
   }
 
   public static ElementReference newInstance(SModel sm, boolean init) {
-    return (ElementReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ElementReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ElementReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ElementReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ElementReference newInstance(SModel sm) {

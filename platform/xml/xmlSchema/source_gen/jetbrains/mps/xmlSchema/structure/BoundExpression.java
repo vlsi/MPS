@@ -24,7 +24,7 @@ public class BoundExpression extends MaxOccursExpression {
   }
 
   public static BoundExpression newInstance(SModel sm, boolean init) {
-    return (BoundExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.BoundExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BoundExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.BoundExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BoundExpression newInstance(SModel sm) {

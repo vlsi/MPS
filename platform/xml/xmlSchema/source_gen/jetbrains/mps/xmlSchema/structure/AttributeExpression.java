@@ -15,7 +15,7 @@ public class AttributeExpression extends TypeExpression {
   }
 
   public static AttributeExpression newInstance(SModel sm, boolean init) {
-    return (AttributeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.AttributeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AttributeExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.AttributeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AttributeExpression newInstance(SModel sm) {

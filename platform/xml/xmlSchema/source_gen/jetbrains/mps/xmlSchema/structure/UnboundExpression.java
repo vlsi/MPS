@@ -15,7 +15,7 @@ public class UnboundExpression extends MaxOccursExpression {
   }
 
   public static UnboundExpression newInstance(SModel sm, boolean init) {
-    return (UnboundExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.UnboundExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UnboundExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.UnboundExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UnboundExpression newInstance(SModel sm) {

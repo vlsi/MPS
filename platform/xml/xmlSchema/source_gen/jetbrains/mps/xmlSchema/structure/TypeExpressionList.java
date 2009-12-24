@@ -48,7 +48,7 @@ public class TypeExpressionList extends BaseConcept {
   }
 
   public static TypeExpressionList newInstance(SModel sm, boolean init) {
-    return (TypeExpressionList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.TypeExpressionList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypeExpressionList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.TypeExpressionList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypeExpressionList newInstance(SModel sm) {

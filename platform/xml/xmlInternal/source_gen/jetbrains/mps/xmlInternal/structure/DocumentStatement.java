@@ -17,7 +17,7 @@ public class DocumentStatement extends Statement {
   }
 
   public Document getDocument() {
-    return (Document)this.getChild(Document.class, DocumentStatement.DOCUMENT);
+    return (Document) this.getChild(Document.class, DocumentStatement.DOCUMENT);
   }
 
   public void setDocument(Document node) {
@@ -25,7 +25,7 @@ public class DocumentStatement extends Statement {
   }
 
   public static DocumentStatement newInstance(SModel sm, boolean init) {
-    return (DocumentStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.DocumentStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DocumentStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlInternal.structure.DocumentStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DocumentStatement newInstance(SModel sm) {

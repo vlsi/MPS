@@ -10,6 +10,6 @@ public class XmlInternal_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("64f62b28-36e3-4052-9f72-f616211ae615(jetbrains.mps.xmlInternal)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

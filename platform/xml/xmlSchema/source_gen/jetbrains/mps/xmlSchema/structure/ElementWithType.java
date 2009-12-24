@@ -17,7 +17,7 @@ public class ElementWithType extends ElementDeclaration {
   }
 
   public ComplexTypeReference getComplexTypeReference() {
-    return (ComplexTypeReference)this.getChild(ComplexTypeReference.class, ElementWithType.COMPLEX_TYPE_REFERENCE);
+    return (ComplexTypeReference) this.getChild(ComplexTypeReference.class, ElementWithType.COMPLEX_TYPE_REFERENCE);
   }
 
   public void setComplexTypeReference(ComplexTypeReference node) {
@@ -25,7 +25,7 @@ public class ElementWithType extends ElementDeclaration {
   }
 
   public OccursAttribute getOccursAttribute() {
-    return (OccursAttribute)this.getChild(OccursAttribute.class, ElementWithType.OCCURS_ATTRIBUTE);
+    return (OccursAttribute) this.getChild(OccursAttribute.class, ElementWithType.OCCURS_ATTRIBUTE);
   }
 
   public void setOccursAttribute(OccursAttribute node) {
@@ -33,7 +33,7 @@ public class ElementWithType extends ElementDeclaration {
   }
 
   public static ElementWithType newInstance(SModel sm, boolean init) {
-    return (ElementWithType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ElementWithType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ElementWithType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.ElementWithType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ElementWithType newInstance(SModel sm) {

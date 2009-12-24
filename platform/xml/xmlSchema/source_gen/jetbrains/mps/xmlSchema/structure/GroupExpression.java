@@ -15,7 +15,7 @@ public class GroupExpression extends TypeExpression {
   }
 
   public static GroupExpression newInstance(SModel sm, boolean init) {
-    return (GroupExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.GroupExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GroupExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlSchema.structure.GroupExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GroupExpression newInstance(SModel sm) {
