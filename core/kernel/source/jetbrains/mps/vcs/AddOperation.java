@@ -34,7 +34,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager.StubChangeListManagerGate;
+import jetbrains.mps.vcs.MPSVCSManager.StubChangeListManagerGate;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
