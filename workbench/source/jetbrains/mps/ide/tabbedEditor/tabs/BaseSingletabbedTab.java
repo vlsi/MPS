@@ -18,10 +18,11 @@ package jetbrains.mps.ide.tabbedEditor.tabs;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowManager;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.actions.TabHelper;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -31,6 +32,7 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 
 import javax.swing.JComponent;
@@ -173,11 +175,14 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
   }
 
   public void create() {
+    if (!canCreate()) return;
+    if (!askCreate()) return;
+
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SNode node = createLoadableNode();
-
         if (node == null) return;
+
         node.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
       }
     });

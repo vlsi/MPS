@@ -35,6 +35,8 @@ public interface ILazyTab {
 
   boolean canCreate();
 
+  boolean askCreate();
+
   void create();
 
   int getCurrentTab();

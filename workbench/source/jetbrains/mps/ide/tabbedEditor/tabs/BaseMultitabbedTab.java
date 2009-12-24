@@ -189,12 +189,15 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   }
 
   public void create() {
+    if (!canCreate()) return;
+    if (!askCreate()) return;
+
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         Pair<SNode, IOperationContext> nodeAndContext = createLoadableNode(true);
-        if (nodeAndContext != null) {
-          nodeAndContext.o1.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
-        }
+        if (nodeAndContext == null) return;
+
+        nodeAndContext.o1.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
       }
     });
   }
