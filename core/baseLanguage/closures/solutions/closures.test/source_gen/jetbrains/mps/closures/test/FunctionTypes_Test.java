@@ -29,12 +29,12 @@ public class FunctionTypes_Test extends TestCase {
     });
     this.accept_Integer(new _FunctionTypes._return_P0_E0<Integer>() {
       public Integer invoke() {
-        return (Integer)1;
+        return (Integer) 1;
       }
     });
     this.accept_Number(new _FunctionTypes._return_P0_E0<Number>() {
       public Number invoke() {
-        return (Integer)1;
+        return (Integer) 1;
       }
     });
   }

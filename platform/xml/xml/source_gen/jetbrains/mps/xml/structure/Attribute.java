@@ -18,7 +18,7 @@ public class Attribute extends BaseAttribute {
   }
 
   public AttributeDeclaration getAttributeDeclaration() {
-    return (AttributeDeclaration)this.getReferent(AttributeDeclaration.class, Attribute.ATTRIBUTE_DECLARATION);
+    return (AttributeDeclaration) this.getReferent(AttributeDeclaration.class, Attribute.ATTRIBUTE_DECLARATION);
   }
 
   public void setAttributeDeclaration(AttributeDeclaration node) {
@@ -26,7 +26,7 @@ public class Attribute extends BaseAttribute {
   }
 
   public BaseText getValue() {
-    return (BaseText)this.getChild(BaseText.class, Attribute.VALUE);
+    return (BaseText) this.getChild(BaseText.class, Attribute.VALUE);
   }
 
   public void setValue(BaseText node) {
@@ -34,7 +34,7 @@ public class Attribute extends BaseAttribute {
   }
 
   public static Attribute newInstance(SModel sm, boolean init) {
-    return (Attribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.Attribute", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Attribute) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.Attribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Attribute newInstance(SModel sm) {

@@ -19,7 +19,7 @@ public class BaseElement extends Content {
   }
 
   public ContentList getContentList() {
-    return (ContentList)this.getChild(ContentList.class, BaseElement.CONTENT_LIST);
+    return (ContentList) this.getChild(ContentList.class, BaseElement.CONTENT_LIST);
   }
 
   public void setContentList(ContentList node) {
@@ -47,7 +47,7 @@ public class BaseElement extends Content {
   }
 
   public static BaseElement newInstance(SModel sm, boolean init) {
-    return (BaseElement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.BaseElement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseElement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.BaseElement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseElement newInstance(SModel sm) {

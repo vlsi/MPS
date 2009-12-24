@@ -16,7 +16,7 @@ public class CDATA extends Content {
   }
 
   public ContentList getContentList() {
-    return (ContentList)this.getChild(ContentList.class, CDATA.CONTENT_LIST);
+    return (ContentList) this.getChild(ContentList.class, CDATA.CONTENT_LIST);
   }
 
   public void setContentList(ContentList node) {
@@ -24,7 +24,7 @@ public class CDATA extends Content {
   }
 
   public static CDATA newInstance(SModel sm, boolean init) {
-    return (CDATA)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.CDATA", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CDATA) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.CDATA", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CDATA newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class EntityReference extends BaseText {
   }
 
   public EntityDeclaration getEntityDeclaration() {
-    return (EntityDeclaration)this.getReferent(EntityDeclaration.class, EntityReference.ENTITY_DECLARATION);
+    return (EntityDeclaration) this.getReferent(EntityDeclaration.class, EntityReference.ENTITY_DECLARATION);
   }
 
   public void setEntityDeclaration(EntityDeclaration node) {
@@ -25,7 +25,7 @@ public class EntityReference extends BaseText {
   }
 
   public static EntityReference newInstance(SModel sm, boolean init) {
-    return (EntityReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.EntityReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EntityReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.EntityReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EntityReference newInstance(SModel sm) {

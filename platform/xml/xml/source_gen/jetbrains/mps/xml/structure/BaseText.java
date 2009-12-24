@@ -15,7 +15,7 @@ public class BaseText extends Content {
   }
 
   public static BaseText newInstance(SModel sm, boolean init) {
-    return (BaseText)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.BaseText", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseText) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.BaseText", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseText newInstance(SModel sm) {

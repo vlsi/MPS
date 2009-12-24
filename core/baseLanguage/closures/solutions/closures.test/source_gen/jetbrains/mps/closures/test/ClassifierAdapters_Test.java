@@ -156,7 +156,7 @@ __switch__:
       Assert.assertEquals(exp, i);
       exp++;
     }
-    Assert.assertEquals(exp, (Integer)4);
+    Assert.assertEquals(exp, (Integer) 4);
   }
 
   public void test_instanceMethodCall() throws Exception {

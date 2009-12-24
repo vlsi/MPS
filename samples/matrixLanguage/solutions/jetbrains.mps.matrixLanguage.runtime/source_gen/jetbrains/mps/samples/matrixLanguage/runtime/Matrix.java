@@ -17,7 +17,7 @@ public class Matrix<ScalarType> {
   }
 
   public Matrix clone() {
-    ScalarType[][] copy = ((ScalarType[][])new Object[this.values.length][this.values[0].length]);
+    ScalarType[][] copy = ((ScalarType[][]) new Object[this.values.length][this.values[0].length]);
     for (int i = 0; i < this.values.length; i++) {
       for (int j = 0; j < this.values[0].length; j++) {
         copy[i][j] = this.values[i][j];
@@ -27,7 +27,7 @@ public class Matrix<ScalarType> {
   }
 
   public Matrix<ScalarType> mult(ScalarType v) {
-    ScalarType[][] result = ((ScalarType[][])new Object[this.values.length][this.values[0].length]);
+    ScalarType[][] result = ((ScalarType[][]) new Object[this.values.length][this.values[0].length]);
     for (int i = 0; i < this.values.length; i++) {
       for (int j = 0; j < this.values[i].length; j++) {
         result[i][j] = this.operations.mult(this.values[i][j], v);
@@ -37,7 +37,7 @@ public class Matrix<ScalarType> {
   }
 
   public Matrix<ScalarType> div(ScalarType v) {
-    ScalarType[][] result = ((ScalarType[][])new Object[this.values.length][this.values[0].length]);
+    ScalarType[][] result = ((ScalarType[][]) new Object[this.values.length][this.values[0].length]);
     v = this.operations.multiplicativeInverse(v);
     for (int i = 0; i < this.values.length; i++) {
       for (int j = 0; j < this.values[i].length; j++) {
@@ -49,7 +49,7 @@ public class Matrix<ScalarType> {
 
   public Matrix<ScalarType> add(Matrix<ScalarType> m) {
     this.ChechSizeEquals(m);
-    ScalarType[][] result = ((ScalarType[][])new Object[this.values.length][this.values[0].length]);
+    ScalarType[][] result = ((ScalarType[][]) new Object[this.values.length][this.values[0].length]);
     for (int i = 0; i < this.values.length; i++) {
       for (int j = 0; j < this.values[i].length; j++) {
         result[i][j] = this.operations.add(this.values[i][j], m.values[i][j]);
@@ -60,7 +60,7 @@ public class Matrix<ScalarType> {
 
   public Matrix<ScalarType> sub(Matrix<ScalarType> m) {
     this.ChechSizeEquals(m);
-    ScalarType[][] result = ((ScalarType[][])new Object[this.values.length][this.values[0].length]);
+    ScalarType[][] result = ((ScalarType[][]) new Object[this.values.length][this.values[0].length]);
     for (int i = 0; i < this.values.length; i++) {
       for (int j = 0; j < this.values[i].length; j++) {
         result[i][j] = this.operations.add(this.values[i][j], this.operations.addittiveInverse(m.values[i][j]));
@@ -82,7 +82,7 @@ public class Matrix<ScalarType> {
     if (this.getColumnsNumber() != m.getRowsNumber()) {
       throw new BadMatrixDimensionException();
     }
-    ScalarType[][] result = ((ScalarType[][])new Object[this.getRowsNumber()][m.getColumnsNumber()]);
+    ScalarType[][] result = ((ScalarType[][]) new Object[this.getRowsNumber()][m.getColumnsNumber()]);
     for (int i = 0; i < this.getRowsNumber(); i++) {
       for (int j = 0; j < m.getColumnsNumber(); j++) {
         ScalarType sum = null;
@@ -101,7 +101,7 @@ public class Matrix<ScalarType> {
   }
 
   public Matrix<ScalarType> transpose() {
-    ScalarType[][] result = ((ScalarType[][])new Object[this.values[0].length][this.values.length]);
+    ScalarType[][] result = ((ScalarType[][]) new Object[this.values[0].length][this.values.length]);
     for (int i = 0; i < this.values.length; i++) {
       for (int j = 0; j < this.values[i].length; j++) {
         result[j][i] = this.values[i][j];

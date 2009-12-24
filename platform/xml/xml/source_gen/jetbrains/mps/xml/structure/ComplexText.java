@@ -38,7 +38,7 @@ public class ComplexText extends BaseText {
   }
 
   public static ComplexText newInstance(SModel sm, boolean init) {
-    return (ComplexText)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.ComplexText", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComplexText) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.ComplexText", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComplexText newInstance(SModel sm) {

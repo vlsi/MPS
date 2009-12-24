@@ -16,7 +16,7 @@ public class BaseAttribute extends BaseConcept {
   }
 
   public static BaseAttribute newInstance(SModel sm, boolean init) {
-    return (BaseAttribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.BaseAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseAttribute) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.structure.BaseAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseAttribute newInstance(SModel sm) {
