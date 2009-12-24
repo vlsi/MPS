@@ -156,18 +156,18 @@ public class ModelPersistence {
         return true; //user already decided to convert models now
       } else {
         //undefined persistence version; user may want to upgrade models persistence
-        int option = JOptionPane.showConfirmDialog(null,
-          "Do you want to upgrade your models persistence level from "
-            + modelPersistenceVersion + " to persistence level " + currentApplicationPersistenceVersion + " ?",
-          "Upgrade Model Persistence", JOptionPane.YES_NO_OPTION);
-        if (option == JOptionPane.YES_OPTION) {
-          getPersistenceSettings().setMaxPersistenceVersion();
-          return true;
-        } else if (option == JOptionPane.NO_OPTION) {
-          getPersistenceSettings().setUserPersistenceVersion(modelPersistenceVersion);
-          return false;
-        }
-      }
+//        int option = JOptionPane.showConfirmDialog(null,
+//          "Do you want to upgrade your models persistence level from "
+//            + modelPersistenceVersion + " to persistence level " + currentApplicationPersistenceVersion + " ?",
+//          "Upgrade Model Persistence", JOptionPane.YES_NO_OPTION);
+//        if (option == JOptionPane.YES_OPTION) {
+//          getPersistenceSettings().setMaxPersistenceVersion();
+//          return true;
+//        } else if (option == JOptionPane.NO_OPTION) {
+//          getPersistenceSettings().setUserPersistenceVersion(modelPersistenceVersion);
+//          return false;
+//        }
+//      }        
     }
     return false;
   }
