@@ -22,7 +22,7 @@ public class InlineFormatDateTimeExpression extends Expression {
   }
 
   public Locale getLocale() {
-    return (Locale)this.getReferent(Locale.class, InlineFormatDateTimeExpression.LOCALE);
+    return (Locale) this.getReferent(Locale.class, InlineFormatDateTimeExpression.LOCALE);
   }
 
   public void setLocale(Locale node) {
@@ -30,7 +30,7 @@ public class InlineFormatDateTimeExpression extends Expression {
   }
 
   public Expression getDatetime() {
-    return (Expression)this.getChild(Expression.class, InlineFormatDateTimeExpression.DATETIME);
+    return (Expression) this.getChild(Expression.class, InlineFormatDateTimeExpression.DATETIME);
   }
 
   public void setDatetime(Expression node) {
@@ -58,7 +58,7 @@ public class InlineFormatDateTimeExpression extends Expression {
   }
 
   public static InlineFormatDateTimeExpression newInstance(SModel sm, boolean init) {
-    return (InlineFormatDateTimeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.InlineFormatDateTimeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InlineFormatDateTimeExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.InlineFormatDateTimeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InlineFormatDateTimeExpression newInstance(SModel sm) {

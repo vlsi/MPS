@@ -16,7 +16,7 @@ public class PeriodFormatToken extends BaseConcept {
   }
 
   public static PeriodFormatToken newInstance(SModel sm, boolean init) {
-    return (PeriodFormatToken)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PeriodFormatToken) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PeriodFormatToken newInstance(SModel sm) {

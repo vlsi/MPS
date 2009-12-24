@@ -15,7 +15,7 @@ public class AbsDateTimeMinusOperation extends DateTimeMinusOperation {
   }
 
   public static AbsDateTimeMinusOperation newInstance(SModel sm, boolean init) {
-    return (AbsDateTimeMinusOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.AbsDateTimeMinusOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbsDateTimeMinusOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.AbsDateTimeMinusOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbsDateTimeMinusOperation newInstance(SModel sm) {

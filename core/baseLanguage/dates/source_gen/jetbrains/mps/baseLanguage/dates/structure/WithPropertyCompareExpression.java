@@ -21,7 +21,7 @@ public class WithPropertyCompareExpression extends Expression {
   }
 
   public DateTimeProperty getDatetimeProperty() {
-    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, WithPropertyCompareExpression.DATETIME_PROPERTY);
+    return (DateTimeProperty) this.getReferent(DateTimeProperty.class, WithPropertyCompareExpression.DATETIME_PROPERTY);
   }
 
   public void setDatetimeProperty(DateTimeProperty node) {
@@ -29,7 +29,7 @@ public class WithPropertyCompareExpression extends Expression {
   }
 
   public BinaryOperation getOperation() {
-    return (BinaryOperation)this.getChild(BinaryOperation.class, WithPropertyCompareExpression.OPERATION);
+    return (BinaryOperation) this.getChild(BinaryOperation.class, WithPropertyCompareExpression.OPERATION);
   }
 
   public void setOperation(BinaryOperation node) {
@@ -37,7 +37,7 @@ public class WithPropertyCompareExpression extends Expression {
   }
 
   public static WithPropertyCompareExpression newInstance(SModel sm, boolean init) {
-    return (WithPropertyCompareExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.WithPropertyCompareExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (WithPropertyCompareExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.WithPropertyCompareExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static WithPropertyCompareExpression newInstance(SModel sm) {

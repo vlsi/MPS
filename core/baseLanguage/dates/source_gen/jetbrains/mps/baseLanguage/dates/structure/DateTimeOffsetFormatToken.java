@@ -20,7 +20,7 @@ public class DateTimeOffsetFormatToken extends FormatToken {
   }
 
   public Expression getReferenceTime() {
-    return (Expression)this.getChild(Expression.class, DateTimeOffsetFormatToken.REFERENCE_TIME);
+    return (Expression) this.getChild(Expression.class, DateTimeOffsetFormatToken.REFERENCE_TIME);
   }
 
   public void setReferenceTime(Expression node) {
@@ -48,7 +48,7 @@ public class DateTimeOffsetFormatToken extends FormatToken {
   }
 
   public static DateTimeOffsetFormatToken newInstance(SModel sm, boolean init) {
-    return (DateTimeOffsetFormatToken)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeOffsetFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimeOffsetFormatToken) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeOffsetFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimeOffsetFormatToken newInstance(SModel sm) {

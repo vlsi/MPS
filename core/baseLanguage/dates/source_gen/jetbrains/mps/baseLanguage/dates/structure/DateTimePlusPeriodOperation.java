@@ -18,7 +18,7 @@ public class DateTimePlusPeriodOperation extends Expression {
   }
 
   public Expression getLeftValue() {
-    return (Expression)this.getChild(Expression.class, DateTimePlusPeriodOperation.LEFT_VALUE);
+    return (Expression) this.getChild(Expression.class, DateTimePlusPeriodOperation.LEFT_VALUE);
   }
 
   public void setLeftValue(Expression node) {
@@ -26,7 +26,7 @@ public class DateTimePlusPeriodOperation extends Expression {
   }
 
   public Expression getRightValue() {
-    return (Expression)this.getChild(Expression.class, DateTimePlusPeriodOperation.RIGHT_VALUE);
+    return (Expression) this.getChild(Expression.class, DateTimePlusPeriodOperation.RIGHT_VALUE);
   }
 
   public void setRightValue(Expression node) {
@@ -34,7 +34,7 @@ public class DateTimePlusPeriodOperation extends Expression {
   }
 
   public static DateTimePlusPeriodOperation newInstance(SModel sm, boolean init) {
-    return (DateTimePlusPeriodOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimePlusPeriodOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimePlusPeriodOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimePlusPeriodOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimePlusPeriodOperation newInstance(SModel sm) {

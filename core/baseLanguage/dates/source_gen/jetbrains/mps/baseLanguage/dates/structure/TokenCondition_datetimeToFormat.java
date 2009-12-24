@@ -16,7 +16,7 @@ public class TokenCondition_datetimeToFormat extends ConceptFunctionParameter {
   }
 
   public static TokenCondition_datetimeToFormat newInstance(SModel sm, boolean init) {
-    return (TokenCondition_datetimeToFormat)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TokenCondition_datetimeToFormat", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TokenCondition_datetimeToFormat) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TokenCondition_datetimeToFormat", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TokenCondition_datetimeToFormat newInstance(SModel sm) {

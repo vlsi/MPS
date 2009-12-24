@@ -43,7 +43,7 @@ public class PeriodSeparatorFormatToken extends PeriodFormatToken {
   }
 
   public static PeriodSeparatorFormatToken newInstance(SModel sm, boolean init) {
-    return (PeriodSeparatorFormatToken)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodSeparatorFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PeriodSeparatorFormatToken) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodSeparatorFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PeriodSeparatorFormatToken newInstance(SModel sm) {

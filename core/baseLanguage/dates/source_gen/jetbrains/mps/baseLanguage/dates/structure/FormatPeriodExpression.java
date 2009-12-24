@@ -49,7 +49,7 @@ public class FormatPeriodExpression extends Expression implements TypeDerivable 
   }
 
   public IPeriodFormat getFormat() {
-    return (IPeriodFormat)this.getReferent(IPeriodFormat.class, FormatPeriodExpression.FORMAT);
+    return (IPeriodFormat) this.getReferent(IPeriodFormat.class, FormatPeriodExpression.FORMAT);
   }
 
   public void setFormat(IPeriodFormat node) {
@@ -57,7 +57,7 @@ public class FormatPeriodExpression extends Expression implements TypeDerivable 
   }
 
   public Locale getLocale() {
-    return (Locale)this.getReferent(Locale.class, FormatPeriodExpression.LOCALE);
+    return (Locale) this.getReferent(Locale.class, FormatPeriodExpression.LOCALE);
   }
 
   public void setLocale(Locale node) {
@@ -65,7 +65,7 @@ public class FormatPeriodExpression extends Expression implements TypeDerivable 
   }
 
   public Expression getPeriod() {
-    return (Expression)this.getChild(Expression.class, FormatPeriodExpression.PERIOD);
+    return (Expression) this.getChild(Expression.class, FormatPeriodExpression.PERIOD);
   }
 
   public void setPeriod(Expression node) {
@@ -73,7 +73,7 @@ public class FormatPeriodExpression extends Expression implements TypeDerivable 
   }
 
   public static FormatPeriodExpression newInstance(SModel sm, boolean init) {
-    return (FormatPeriodExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.FormatPeriodExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FormatPeriodExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.FormatPeriodExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FormatPeriodExpression newInstance(SModel sm) {

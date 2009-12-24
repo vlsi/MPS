@@ -16,7 +16,7 @@ public class DateTimeWithTZType extends Type {
   }
 
   public static DateTimeWithTZType newInstance(SModel sm, boolean init) {
-    return (DateTimeWithTZType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeWithTZType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimeWithTZType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeWithTZType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimeWithTZType newInstance(SModel sm) {

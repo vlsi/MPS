@@ -15,7 +15,7 @@ public class MinDateTimeOperation extends MathDateTimeOperation {
   }
 
   public static MinDateTimeOperation newInstance(SModel sm, boolean init) {
-    return (MinDateTimeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.MinDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MinDateTimeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.MinDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MinDateTimeOperation newInstance(SModel sm) {

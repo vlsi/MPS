@@ -15,7 +15,7 @@ public class CeilingDateTimeOperation extends RoundDateTimeOperation {
   }
 
   public static CeilingDateTimeOperation newInstance(SModel sm, boolean init) {
-    return (CeilingDateTimeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.CeilingDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CeilingDateTimeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.CeilingDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CeilingDateTimeOperation newInstance(SModel sm) {

@@ -44,7 +44,7 @@ public class TimeZoneIdOperation extends BaseConcept implements IOperation {
   }
 
   public static TimeZoneIdOperation newInstance(SModel sm, boolean init) {
-    return (TimeZoneIdOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TimeZoneIdOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TimeZoneIdOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TimeZoneIdOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TimeZoneIdOperation newInstance(SModel sm) {

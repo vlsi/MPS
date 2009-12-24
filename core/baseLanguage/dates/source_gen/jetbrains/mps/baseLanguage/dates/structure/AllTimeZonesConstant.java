@@ -16,7 +16,7 @@ public class AllTimeZonesConstant extends Expression {
   }
 
   public static AllTimeZonesConstant newInstance(SModel sm, boolean init) {
-    return (AllTimeZonesConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.AllTimeZonesConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AllTimeZonesConstant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.AllTimeZonesConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AllTimeZonesConstant newInstance(SModel sm) {

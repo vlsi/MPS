@@ -25,7 +25,7 @@ public class TimeZoneIDExpression extends Expression {
   }
 
   public static TimeZoneIDExpression newInstance(SModel sm, boolean init) {
-    return (TimeZoneIDExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TimeZoneIDExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TimeZoneIDExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TimeZoneIDExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TimeZoneIDExpression newInstance(SModel sm) {

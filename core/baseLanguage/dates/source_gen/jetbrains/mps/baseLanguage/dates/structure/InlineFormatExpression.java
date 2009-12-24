@@ -31,7 +31,7 @@ public class InlineFormatExpression extends UnaryDateTimeOperation {
   }
 
   public Locale getLocale() {
-    return (Locale)this.getReferent(Locale.class, InlineFormatExpression.LOCALE);
+    return (Locale) this.getReferent(Locale.class, InlineFormatExpression.LOCALE);
   }
 
   public void setLocale(Locale node) {
@@ -39,7 +39,7 @@ public class InlineFormatExpression extends UnaryDateTimeOperation {
   }
 
   public Expression getZone() {
-    return (Expression)this.getChild(Expression.class, InlineFormatExpression.ZONE);
+    return (Expression) this.getChild(Expression.class, InlineFormatExpression.ZONE);
   }
 
   public void setZone(Expression node) {
@@ -67,7 +67,7 @@ public class InlineFormatExpression extends UnaryDateTimeOperation {
   }
 
   public static InlineFormatExpression newInstance(SModel sm, boolean init) {
-    return (InlineFormatExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.InlineFormatExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InlineFormatExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.InlineFormatExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InlineFormatExpression newInstance(SModel sm) {

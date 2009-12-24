@@ -17,7 +17,7 @@ public class UnaryDateTimeOperation extends Expression {
   }
 
   public Expression getDatetime() {
-    return (Expression)this.getChild(Expression.class, UnaryDateTimeOperation.DATETIME);
+    return (Expression) this.getChild(Expression.class, UnaryDateTimeOperation.DATETIME);
   }
 
   public void setDatetime(Expression node) {
@@ -25,7 +25,7 @@ public class UnaryDateTimeOperation extends Expression {
   }
 
   public static UnaryDateTimeOperation newInstance(SModel sm, boolean init) {
-    return (UnaryDateTimeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.UnaryDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UnaryDateTimeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.UnaryDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UnaryDateTimeOperation newInstance(SModel sm) {

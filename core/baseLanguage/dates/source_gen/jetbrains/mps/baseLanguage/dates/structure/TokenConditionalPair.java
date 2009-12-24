@@ -19,7 +19,7 @@ public class TokenConditionalPair extends BaseConcept {
   }
 
   public IDateFormat getFormat() {
-    return (IDateFormat)this.getReferent(IDateFormat.class, TokenConditionalPair.FORMAT);
+    return (IDateFormat) this.getReferent(IDateFormat.class, TokenConditionalPair.FORMAT);
   }
 
   public void setFormat(IDateFormat node) {
@@ -27,7 +27,7 @@ public class TokenConditionalPair extends BaseConcept {
   }
 
   public TokenCondition getCondition() {
-    return (TokenCondition)this.getChild(TokenCondition.class, TokenConditionalPair.CONDITION);
+    return (TokenCondition) this.getChild(TokenCondition.class, TokenConditionalPair.CONDITION);
   }
 
   public void setCondition(TokenCondition node) {
@@ -35,7 +35,7 @@ public class TokenConditionalPair extends BaseConcept {
   }
 
   public static TokenConditionalPair newInstance(SModel sm, boolean init) {
-    return (TokenConditionalPair)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TokenConditionalPair", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TokenConditionalPair) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TokenConditionalPair", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TokenConditionalPair newInstance(SModel sm) {

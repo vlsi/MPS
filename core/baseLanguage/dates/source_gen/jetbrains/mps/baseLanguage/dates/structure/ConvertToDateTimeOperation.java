@@ -44,7 +44,7 @@ public class ConvertToDateTimeOperation extends BaseConcept implements IOperatio
   }
 
   public static ConvertToDateTimeOperation newInstance(SModel sm, boolean init) {
-    return (ConvertToDateTimeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ConvertToDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConvertToDateTimeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ConvertToDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConvertToDateTimeOperation newInstance(SModel sm) {

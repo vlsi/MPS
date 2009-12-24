@@ -75,7 +75,7 @@ public class ConditionalFormatToken extends FormatToken implements INamedConcept
   }
 
   public static ConditionalFormatToken newInstance(SModel sm, boolean init) {
-    return (ConditionalFormatToken)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ConditionalFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConditionalFormatToken) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ConditionalFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConditionalFormatToken newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class PeriodReferenceFormatToken extends PeriodFormatToken {
   }
 
   public IPeriodFormat getFormat() {
-    return (IPeriodFormat)this.getReferent(IPeriodFormat.class, PeriodReferenceFormatToken.FORMAT);
+    return (IPeriodFormat) this.getReferent(IPeriodFormat.class, PeriodReferenceFormatToken.FORMAT);
   }
 
   public void setFormat(IPeriodFormat node) {
@@ -25,7 +25,7 @@ public class PeriodReferenceFormatToken extends PeriodFormatToken {
   }
 
   public static PeriodReferenceFormatToken newInstance(SModel sm, boolean init) {
-    return (PeriodReferenceFormatToken)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodReferenceFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PeriodReferenceFormatToken) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodReferenceFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PeriodReferenceFormatToken newInstance(SModel sm) {

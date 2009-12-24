@@ -57,7 +57,7 @@ public class TimeZoneNameOperation extends BaseConcept implements IOperation {
   }
 
   public Locale getLocale() {
-    return (Locale)this.getReferent(Locale.class, TimeZoneNameOperation.LOCALE);
+    return (Locale) this.getReferent(Locale.class, TimeZoneNameOperation.LOCALE);
   }
 
   public void setLocale(Locale node) {
@@ -65,7 +65,7 @@ public class TimeZoneNameOperation extends BaseConcept implements IOperation {
   }
 
   public Expression getInstant() {
-    return (Expression)this.getChild(Expression.class, TimeZoneNameOperation.INSTANT);
+    return (Expression) this.getChild(Expression.class, TimeZoneNameOperation.INSTANT);
   }
 
   public void setInstant(Expression node) {
@@ -73,7 +73,7 @@ public class TimeZoneNameOperation extends BaseConcept implements IOperation {
   }
 
   public static TimeZoneNameOperation newInstance(SModel sm, boolean init) {
-    return (TimeZoneNameOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TimeZoneNameOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TimeZoneNameOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TimeZoneNameOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TimeZoneNameOperation newInstance(SModel sm) {

@@ -19,7 +19,7 @@ public class PeriodInPropertyExpression extends Expression {
   }
 
   public DateTimeProperty getDatetimeProperty() {
-    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, PeriodInPropertyExpression.DATETIME_PROPERTY);
+    return (DateTimeProperty) this.getReferent(DateTimeProperty.class, PeriodInPropertyExpression.DATETIME_PROPERTY);
   }
 
   public void setDatetimeProperty(DateTimeProperty node) {
@@ -27,7 +27,7 @@ public class PeriodInPropertyExpression extends Expression {
   }
 
   public Expression getDatetime() {
-    return (Expression)this.getChild(Expression.class, PeriodInPropertyExpression.DATETIME);
+    return (Expression) this.getChild(Expression.class, PeriodInPropertyExpression.DATETIME);
   }
 
   public void setDatetime(Expression node) {
@@ -35,7 +35,7 @@ public class PeriodInPropertyExpression extends Expression {
   }
 
   public static PeriodInPropertyExpression newInstance(SModel sm, boolean init) {
-    return (PeriodInPropertyExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodInPropertyExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PeriodInPropertyExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodInPropertyExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PeriodInPropertyExpression newInstance(SModel sm) {

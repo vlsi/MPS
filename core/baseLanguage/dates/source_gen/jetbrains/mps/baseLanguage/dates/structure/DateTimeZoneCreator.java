@@ -18,7 +18,7 @@ public class DateTimeZoneCreator extends AbstractCreator {
   }
 
   public Expression getString() {
-    return (Expression)this.getChild(Expression.class, DateTimeZoneCreator.STRING);
+    return (Expression) this.getChild(Expression.class, DateTimeZoneCreator.STRING);
   }
 
   public void setString(Expression node) {
@@ -26,7 +26,7 @@ public class DateTimeZoneCreator extends AbstractCreator {
   }
 
   public static DateTimeZoneCreator newInstance(SModel sm, boolean init) {
-    return (DateTimeZoneCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeZoneCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimeZoneCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeZoneCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimeZoneCreator newInstance(SModel sm) {

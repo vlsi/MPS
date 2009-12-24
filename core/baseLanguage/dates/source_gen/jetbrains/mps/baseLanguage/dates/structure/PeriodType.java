@@ -16,7 +16,7 @@ public class PeriodType extends PrimitiveType {
   }
 
   public static PeriodType newInstance(SModel sm, boolean init) {
-    return (PeriodType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PeriodType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PeriodType newInstance(SModel sm) {

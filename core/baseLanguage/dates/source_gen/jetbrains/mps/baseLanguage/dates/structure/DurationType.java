@@ -16,7 +16,7 @@ public class DurationType extends Type {
   }
 
   public static DurationType newInstance(SModel sm, boolean init) {
-    return (DurationType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DurationType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DurationType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DurationType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DurationType newInstance(SModel sm) {

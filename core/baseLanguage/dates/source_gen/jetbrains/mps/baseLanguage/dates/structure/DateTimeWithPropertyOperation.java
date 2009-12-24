@@ -19,7 +19,7 @@ public class DateTimeWithPropertyOperation extends UnaryDateTimeOperation {
   }
 
   public DateTimeProperty getDateTimeProperty() {
-    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, DateTimeWithPropertyOperation.DATE_TIME_PROPERTY);
+    return (DateTimeProperty) this.getReferent(DateTimeProperty.class, DateTimeWithPropertyOperation.DATE_TIME_PROPERTY);
   }
 
   public void setDateTimeProperty(DateTimeProperty node) {
@@ -27,7 +27,7 @@ public class DateTimeWithPropertyOperation extends UnaryDateTimeOperation {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, DateTimeWithPropertyOperation.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, DateTimeWithPropertyOperation.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -35,7 +35,7 @@ public class DateTimeWithPropertyOperation extends UnaryDateTimeOperation {
   }
 
   public static DateTimeWithPropertyOperation newInstance(SModel sm, boolean init) {
-    return (DateTimeWithPropertyOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeWithPropertyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimeWithPropertyOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeWithPropertyOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimeWithPropertyOperation newInstance(SModel sm) {

@@ -92,7 +92,7 @@ public class TimeConstant extends Expression implements TypeDerivable {
   }
 
   public Month getMonth() {
-    return (Month)this.getReferent(Month.class, TimeConstant.MONTH);
+    return (Month) this.getReferent(Month.class, TimeConstant.MONTH);
   }
 
   public void setMonth(Month node) {
@@ -100,7 +100,7 @@ public class TimeConstant extends Expression implements TypeDerivable {
   }
 
   public Expression getTimezone() {
-    return (Expression)this.getChild(Expression.class, TimeConstant.TIMEZONE);
+    return (Expression) this.getChild(Expression.class, TimeConstant.TIMEZONE);
   }
 
   public void setTimezone(Expression node) {
@@ -108,7 +108,7 @@ public class TimeConstant extends Expression implements TypeDerivable {
   }
 
   public static TimeConstant newInstance(SModel sm, boolean init) {
-    return (TimeConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TimeConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TimeConstant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TimeConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TimeConstant newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class ConvertToJodaDateTimeOperation extends DateTimeOperation {
   }
 
   public static ConvertToJodaDateTimeOperation newInstance(SModel sm, boolean init) {
-    return (ConvertToJodaDateTimeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ConvertToJodaDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConvertToJodaDateTimeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ConvertToJodaDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConvertToJodaDateTimeOperation newInstance(SModel sm) {

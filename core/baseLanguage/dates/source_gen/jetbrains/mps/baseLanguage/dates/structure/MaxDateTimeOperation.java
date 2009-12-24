@@ -15,7 +15,7 @@ public class MaxDateTimeOperation extends MathDateTimeOperation {
   }
 
   public static MaxDateTimeOperation newInstance(SModel sm, boolean init) {
-    return (MaxDateTimeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.MaxDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MaxDateTimeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.MaxDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MaxDateTimeOperation newInstance(SModel sm) {

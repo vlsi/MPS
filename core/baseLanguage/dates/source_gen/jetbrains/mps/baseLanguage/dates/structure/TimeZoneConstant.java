@@ -16,7 +16,7 @@ public class TimeZoneConstant extends Expression {
   }
 
   public static TimeZoneConstant newInstance(SModel sm, boolean init) {
-    return (TimeZoneConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TimeZoneConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TimeZoneConstant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TimeZoneConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TimeZoneConstant newInstance(SModel sm) {

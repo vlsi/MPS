@@ -49,7 +49,7 @@ public class FormatDateTimeExpression extends Expression implements TypeDerivabl
   }
 
   public IDateFormat getDateFormat() {
-    return (IDateFormat)this.getReferent(IDateFormat.class, FormatDateTimeExpression.DATE_FORMAT);
+    return (IDateFormat) this.getReferent(IDateFormat.class, FormatDateTimeExpression.DATE_FORMAT);
   }
 
   public void setDateFormat(IDateFormat node) {
@@ -57,7 +57,7 @@ public class FormatDateTimeExpression extends Expression implements TypeDerivabl
   }
 
   public Locale getLocale() {
-    return (Locale)this.getReferent(Locale.class, FormatDateTimeExpression.LOCALE);
+    return (Locale) this.getReferent(Locale.class, FormatDateTimeExpression.LOCALE);
   }
 
   public void setLocale(Locale node) {
@@ -65,7 +65,7 @@ public class FormatDateTimeExpression extends Expression implements TypeDerivabl
   }
 
   public Expression getDatetime() {
-    return (Expression)this.getChild(Expression.class, FormatDateTimeExpression.DATETIME);
+    return (Expression) this.getChild(Expression.class, FormatDateTimeExpression.DATETIME);
   }
 
   public void setDatetime(Expression node) {
@@ -73,7 +73,7 @@ public class FormatDateTimeExpression extends Expression implements TypeDerivabl
   }
 
   public static FormatDateTimeExpression newInstance(SModel sm, boolean init) {
-    return (FormatDateTimeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.FormatDateTimeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FormatDateTimeExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.FormatDateTimeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FormatDateTimeExpression newInstance(SModel sm) {

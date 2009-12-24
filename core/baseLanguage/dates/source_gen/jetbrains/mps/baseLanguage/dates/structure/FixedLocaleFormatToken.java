@@ -19,7 +19,7 @@ public class FixedLocaleFormatToken extends FormatToken {
   }
 
   public Locale getLocale() {
-    return (Locale)this.getReferent(Locale.class, FixedLocaleFormatToken.LOCALE);
+    return (Locale) this.getReferent(Locale.class, FixedLocaleFormatToken.LOCALE);
   }
 
   public void setLocale(Locale node) {
@@ -27,7 +27,7 @@ public class FixedLocaleFormatToken extends FormatToken {
   }
 
   public IDateFormat getDateFormat() {
-    return (IDateFormat)this.getReferent(IDateFormat.class, FixedLocaleFormatToken.DATE_FORMAT);
+    return (IDateFormat) this.getReferent(IDateFormat.class, FixedLocaleFormatToken.DATE_FORMAT);
   }
 
   public void setDateFormat(IDateFormat node) {
@@ -35,7 +35,7 @@ public class FixedLocaleFormatToken extends FormatToken {
   }
 
   public static FixedLocaleFormatToken newInstance(SModel sm, boolean init) {
-    return (FixedLocaleFormatToken)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.FixedLocaleFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FixedLocaleFormatToken) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.FixedLocaleFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FixedLocaleFormatToken newInstance(SModel sm) {

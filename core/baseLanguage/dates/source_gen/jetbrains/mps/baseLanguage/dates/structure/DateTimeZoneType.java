@@ -16,7 +16,7 @@ public class DateTimeZoneType extends Type {
   }
 
   public static DateTimeZoneType newInstance(SModel sm, boolean init) {
-    return (DateTimeZoneType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeZoneType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimeZoneType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeZoneType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimeZoneType newInstance(SModel sm) {

@@ -24,7 +24,7 @@ public class PeriodLiteralFormatToken extends PeriodFormatToken {
   }
 
   public static PeriodLiteralFormatToken newInstance(SModel sm, boolean init) {
-    return (PeriodLiteralFormatToken)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodLiteralFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PeriodLiteralFormatToken) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodLiteralFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PeriodLiteralFormatToken newInstance(SModel sm) {

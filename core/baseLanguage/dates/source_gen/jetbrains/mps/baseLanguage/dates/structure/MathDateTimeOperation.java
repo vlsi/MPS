@@ -18,7 +18,7 @@ public class MathDateTimeOperation extends Expression {
   }
 
   public Expression getLeftExpression() {
-    return (Expression)this.getChild(Expression.class, MathDateTimeOperation.LEFT_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, MathDateTimeOperation.LEFT_EXPRESSION);
   }
 
   public void setLeftExpression(Expression node) {
@@ -26,7 +26,7 @@ public class MathDateTimeOperation extends Expression {
   }
 
   public Expression getRightExpression() {
-    return (Expression)this.getChild(Expression.class, MathDateTimeOperation.RIGHT_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, MathDateTimeOperation.RIGHT_EXPRESSION);
   }
 
   public void setRightExpression(Expression node) {
@@ -34,7 +34,7 @@ public class MathDateTimeOperation extends Expression {
   }
 
   public static MathDateTimeOperation newInstance(SModel sm, boolean init) {
-    return (MathDateTimeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.MathDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MathDateTimeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.MathDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MathDateTimeOperation newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class DefaultTimeZoneConstant extends TimeZoneConstant {
   }
 
   public static DefaultTimeZoneConstant newInstance(SModel sm, boolean init) {
-    return (DefaultTimeZoneConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DefaultTimeZoneConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DefaultTimeZoneConstant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DefaultTimeZoneConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DefaultTimeZoneConstant newInstance(SModel sm) {

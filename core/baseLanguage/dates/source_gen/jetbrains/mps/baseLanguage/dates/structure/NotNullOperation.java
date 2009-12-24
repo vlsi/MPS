@@ -15,7 +15,7 @@ public class NotNullOperation extends DateTimeOperation {
   }
 
   public static NotNullOperation newInstance(SModel sm, boolean init) {
-    return (NotNullOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.NotNullOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NotNullOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.NotNullOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NotNullOperation newInstance(SModel sm) {

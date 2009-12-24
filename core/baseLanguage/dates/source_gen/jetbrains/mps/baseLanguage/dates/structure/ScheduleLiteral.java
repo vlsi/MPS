@@ -66,7 +66,7 @@ public class ScheduleLiteral extends Expression {
   }
 
   public SchedulePeriod getSchedulePeriod() {
-    return (SchedulePeriod)this.getReferent(SchedulePeriod.class, ScheduleLiteral.SCHEDULE_PERIOD);
+    return (SchedulePeriod) this.getReferent(SchedulePeriod.class, ScheduleLiteral.SCHEDULE_PERIOD);
   }
 
   public void setSchedulePeriod(SchedulePeriod node) {
@@ -74,7 +74,7 @@ public class ScheduleLiteral extends Expression {
   }
 
   public Month getMonth() {
-    return (Month)this.getReferent(Month.class, ScheduleLiteral.MONTH);
+    return (Month) this.getReferent(Month.class, ScheduleLiteral.MONTH);
   }
 
   public void setMonth(Month node) {
@@ -82,7 +82,7 @@ public class ScheduleLiteral extends Expression {
   }
 
   public static ScheduleLiteral newInstance(SModel sm, boolean init) {
-    return (ScheduleLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ScheduleLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ScheduleLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ScheduleLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ScheduleLiteral newInstance(SModel sm) {

@@ -76,7 +76,7 @@ public class DateFormatsTable extends BaseConcept implements INamedConcept {
   }
 
   public static DateFormatsTable newInstance(SModel sm, boolean init) {
-    return (DateFormatsTable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateFormatsTable", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateFormatsTable) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateFormatsTable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateFormatsTable newInstance(SModel sm) {

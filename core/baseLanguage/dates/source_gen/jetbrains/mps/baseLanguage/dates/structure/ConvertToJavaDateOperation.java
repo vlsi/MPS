@@ -15,7 +15,7 @@ public class ConvertToJavaDateOperation extends DateTimeOperation {
   }
 
   public static ConvertToJavaDateOperation newInstance(SModel sm, boolean init) {
-    return (ConvertToJavaDateOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ConvertToJavaDateOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConvertToJavaDateOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ConvertToJavaDateOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConvertToJavaDateOperation newInstance(SModel sm) {

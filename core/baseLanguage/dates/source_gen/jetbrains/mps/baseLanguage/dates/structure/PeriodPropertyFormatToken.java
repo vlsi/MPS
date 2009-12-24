@@ -72,7 +72,7 @@ public class PeriodPropertyFormatToken extends PeriodFormatToken {
   }
 
   public DateTimeProperty getProperty() {
-    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, PeriodPropertyFormatToken.PROPERTY);
+    return (DateTimeProperty) this.getReferent(DateTimeProperty.class, PeriodPropertyFormatToken.PROPERTY);
   }
 
   public void setProperty(DateTimeProperty node) {
@@ -80,7 +80,7 @@ public class PeriodPropertyFormatToken extends PeriodFormatToken {
   }
 
   public static PeriodPropertyFormatToken newInstance(SModel sm, boolean init) {
-    return (PeriodPropertyFormatToken)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodPropertyFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PeriodPropertyFormatToken) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodPropertyFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PeriodPropertyFormatToken newInstance(SModel sm) {

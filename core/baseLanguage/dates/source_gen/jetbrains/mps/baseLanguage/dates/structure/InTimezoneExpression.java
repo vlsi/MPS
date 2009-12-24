@@ -46,7 +46,7 @@ public class InTimezoneExpression extends Expression implements TypeDerivable {
   }
 
   public Expression getDatetime() {
-    return (Expression)this.getChild(Expression.class, InTimezoneExpression.DATETIME);
+    return (Expression) this.getChild(Expression.class, InTimezoneExpression.DATETIME);
   }
 
   public void setDatetime(Expression node) {
@@ -54,7 +54,7 @@ public class InTimezoneExpression extends Expression implements TypeDerivable {
   }
 
   public Expression getTimezone() {
-    return (Expression)this.getChild(Expression.class, InTimezoneExpression.TIMEZONE);
+    return (Expression) this.getChild(Expression.class, InTimezoneExpression.TIMEZONE);
   }
 
   public void setTimezone(Expression node) {
@@ -62,7 +62,7 @@ public class InTimezoneExpression extends Expression implements TypeDerivable {
   }
 
   public static InTimezoneExpression newInstance(SModel sm, boolean init) {
-    return (InTimezoneExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.InTimezoneExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InTimezoneExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.InTimezoneExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InTimezoneExpression newInstance(SModel sm) {

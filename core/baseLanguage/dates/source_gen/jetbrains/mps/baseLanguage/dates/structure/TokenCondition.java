@@ -16,7 +16,7 @@ public class TokenCondition extends ConceptFunction {
   }
 
   public static TokenCondition newInstance(SModel sm, boolean init) {
-    return (TokenCondition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TokenCondition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TokenCondition) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TokenCondition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TokenCondition newInstance(SModel sm) {

@@ -50,7 +50,7 @@ public class FormatExpression extends Expression implements TypeDerivable {
   }
 
   public IDateFormat getDateFormat() {
-    return (IDateFormat)this.getReferent(IDateFormat.class, FormatExpression.DATE_FORMAT);
+    return (IDateFormat) this.getReferent(IDateFormat.class, FormatExpression.DATE_FORMAT);
   }
 
   public void setDateFormat(IDateFormat node) {
@@ -58,7 +58,7 @@ public class FormatExpression extends Expression implements TypeDerivable {
   }
 
   public Locale getLocale() {
-    return (Locale)this.getReferent(Locale.class, FormatExpression.LOCALE);
+    return (Locale) this.getReferent(Locale.class, FormatExpression.LOCALE);
   }
 
   public void setLocale(Locale node) {
@@ -66,7 +66,7 @@ public class FormatExpression extends Expression implements TypeDerivable {
   }
 
   public Expression getDateExpression() {
-    return (Expression)this.getChild(Expression.class, FormatExpression.DATE_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, FormatExpression.DATE_EXPRESSION);
   }
 
   public void setDateExpression(Expression node) {
@@ -74,7 +74,7 @@ public class FormatExpression extends Expression implements TypeDerivable {
   }
 
   public Expression getZone() {
-    return (Expression)this.getChild(Expression.class, FormatExpression.ZONE);
+    return (Expression) this.getChild(Expression.class, FormatExpression.ZONE);
   }
 
   public void setZone(Expression node) {
@@ -82,7 +82,7 @@ public class FormatExpression extends Expression implements TypeDerivable {
   }
 
   public static FormatExpression newInstance(SModel sm, boolean init) {
-    return (FormatExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.FormatExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FormatExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.FormatExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FormatExpression newInstance(SModel sm) {

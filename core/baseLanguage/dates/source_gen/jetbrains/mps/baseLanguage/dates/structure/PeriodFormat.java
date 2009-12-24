@@ -95,7 +95,7 @@ public class PeriodFormat extends BaseConcept implements IPeriodFormat {
   }
 
   public static PeriodFormat newInstance(SModel sm, boolean init) {
-    return (PeriodFormat)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodFormat", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PeriodFormat) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.PeriodFormat", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PeriodFormat newInstance(SModel sm) {

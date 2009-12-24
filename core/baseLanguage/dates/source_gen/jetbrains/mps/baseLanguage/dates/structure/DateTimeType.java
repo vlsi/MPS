@@ -16,7 +16,7 @@ public class DateTimeType extends Type {
   }
 
   public static DateTimeType newInstance(SModel sm, boolean init) {
-    return (DateTimeType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimeType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimeType newInstance(SModel sm) {

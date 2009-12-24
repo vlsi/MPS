@@ -51,7 +51,7 @@ public class ParseDateTimeExpression extends Expression implements TypeDerivable
   }
 
   public IDateFormat getDateFormat() {
-    return (IDateFormat)this.getReferent(IDateFormat.class, ParseDateTimeExpression.DATE_FORMAT);
+    return (IDateFormat) this.getReferent(IDateFormat.class, ParseDateTimeExpression.DATE_FORMAT);
   }
 
   public void setDateFormat(IDateFormat node) {
@@ -59,7 +59,7 @@ public class ParseDateTimeExpression extends Expression implements TypeDerivable
   }
 
   public Locale getLocale() {
-    return (Locale)this.getReferent(Locale.class, ParseDateTimeExpression.LOCALE);
+    return (Locale) this.getReferent(Locale.class, ParseDateTimeExpression.LOCALE);
   }
 
   public void setLocale(Locale node) {
@@ -67,7 +67,7 @@ public class ParseDateTimeExpression extends Expression implements TypeDerivable
   }
 
   public Expression getSource() {
-    return (Expression)this.getChild(Expression.class, ParseDateTimeExpression.SOURCE);
+    return (Expression) this.getChild(Expression.class, ParseDateTimeExpression.SOURCE);
   }
 
   public void setSource(Expression node) {
@@ -75,7 +75,7 @@ public class ParseDateTimeExpression extends Expression implements TypeDerivable
   }
 
   public Expression getZone() {
-    return (Expression)this.getChild(Expression.class, ParseDateTimeExpression.ZONE);
+    return (Expression) this.getChild(Expression.class, ParseDateTimeExpression.ZONE);
   }
 
   public void setZone(Expression node) {
@@ -83,7 +83,7 @@ public class ParseDateTimeExpression extends Expression implements TypeDerivable
   }
 
   public Expression getDefault() {
-    return (Expression)this.getChild(Expression.class, ParseDateTimeExpression.DEFAULT);
+    return (Expression) this.getChild(Expression.class, ParseDateTimeExpression.DEFAULT);
   }
 
   public void setDefault(Expression node) {
@@ -91,7 +91,7 @@ public class ParseDateTimeExpression extends Expression implements TypeDerivable
   }
 
   public static ParseDateTimeExpression newInstance(SModel sm, boolean init) {
-    return (ParseDateTimeExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ParseDateTimeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParseDateTimeExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ParseDateTimeExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParseDateTimeExpression newInstance(SModel sm) {

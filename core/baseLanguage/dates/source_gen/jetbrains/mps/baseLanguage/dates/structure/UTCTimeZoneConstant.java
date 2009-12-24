@@ -15,7 +15,7 @@ public class UTCTimeZoneConstant extends TimeZoneConstant {
   }
 
   public static UTCTimeZoneConstant newInstance(SModel sm, boolean init) {
-    return (UTCTimeZoneConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.UTCTimeZoneConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UTCTimeZoneConstant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.UTCTimeZoneConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UTCTimeZoneConstant newInstance(SModel sm) {

@@ -19,7 +19,7 @@ public class DateTimePropertyFormatToken extends FormatToken {
   }
 
   public DateTimePropertyConfiguration getDateTimePropertyFormatConfiguration() {
-    return (DateTimePropertyConfiguration)this.getReferent(DateTimePropertyConfiguration.class, DateTimePropertyFormatToken.DATE_TIME_PROPERTY_FORMAT_CONFIGURATION);
+    return (DateTimePropertyConfiguration) this.getReferent(DateTimePropertyConfiguration.class, DateTimePropertyFormatToken.DATE_TIME_PROPERTY_FORMAT_CONFIGURATION);
   }
 
   public void setDateTimePropertyFormatConfiguration(DateTimePropertyConfiguration node) {
@@ -27,7 +27,7 @@ public class DateTimePropertyFormatToken extends FormatToken {
   }
 
   public DateTimePropertyFormatType getDateTimePropertyFormatType() {
-    return (DateTimePropertyFormatType)this.getReferent(DateTimePropertyFormatType.class, DateTimePropertyFormatToken.DATE_TIME_PROPERTY_FORMAT_TYPE);
+    return (DateTimePropertyFormatType) this.getReferent(DateTimePropertyFormatType.class, DateTimePropertyFormatToken.DATE_TIME_PROPERTY_FORMAT_TYPE);
   }
 
   public void setDateTimePropertyFormatType(DateTimePropertyFormatType node) {
@@ -35,7 +35,7 @@ public class DateTimePropertyFormatToken extends FormatToken {
   }
 
   public static DateTimePropertyFormatToken newInstance(SModel sm, boolean init) {
-    return (DateTimePropertyFormatToken)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimePropertyFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimePropertyFormatToken) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimePropertyFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimePropertyFormatToken newInstance(SModel sm) {

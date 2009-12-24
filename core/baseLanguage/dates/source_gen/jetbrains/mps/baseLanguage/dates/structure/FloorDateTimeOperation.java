@@ -15,7 +15,7 @@ public class FloorDateTimeOperation extends RoundDateTimeOperation {
   }
 
   public static FloorDateTimeOperation newInstance(SModel sm, boolean init) {
-    return (FloorDateTimeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.FloorDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FloorDateTimeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.FloorDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FloorDateTimeOperation newInstance(SModel sm) {

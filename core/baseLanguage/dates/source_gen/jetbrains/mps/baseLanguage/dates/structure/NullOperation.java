@@ -15,7 +15,7 @@ public class NullOperation extends DateTimeOperation {
   }
 
   public static NullOperation newInstance(SModel sm, boolean init) {
-    return (NullOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.NullOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NullOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.NullOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NullOperation newInstance(SModel sm) {

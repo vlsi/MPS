@@ -31,7 +31,7 @@ public class DateTimeCompareOperation extends Expression {
   }
 
   public DateTimeProperty getDatetimeProperty() {
-    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, DateTimeCompareOperation.DATETIME_PROPERTY);
+    return (DateTimeProperty) this.getReferent(DateTimeProperty.class, DateTimeCompareOperation.DATETIME_PROPERTY);
   }
 
   public void setDatetimeProperty(DateTimeProperty node) {
@@ -39,7 +39,7 @@ public class DateTimeCompareOperation extends Expression {
   }
 
   public Expression getOp1() {
-    return (Expression)this.getChild(Expression.class, DateTimeCompareOperation.OP1);
+    return (Expression) this.getChild(Expression.class, DateTimeCompareOperation.OP1);
   }
 
   public void setOp1(Expression node) {
@@ -47,7 +47,7 @@ public class DateTimeCompareOperation extends Expression {
   }
 
   public Expression getOp2() {
-    return (Expression)this.getChild(Expression.class, DateTimeCompareOperation.OP2);
+    return (Expression) this.getChild(Expression.class, DateTimeCompareOperation.OP2);
   }
 
   public void setOp2(Expression node) {
@@ -55,7 +55,7 @@ public class DateTimeCompareOperation extends Expression {
   }
 
   public static DateTimeCompareOperation newInstance(SModel sm, boolean init) {
-    return (DateTimeCompareOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeCompareOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DateTimeCompareOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.DateTimeCompareOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DateTimeCompareOperation newInstance(SModel sm) {

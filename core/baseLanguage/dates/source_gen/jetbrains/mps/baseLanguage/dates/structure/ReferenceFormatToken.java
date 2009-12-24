@@ -17,7 +17,7 @@ public class ReferenceFormatToken extends FormatToken {
   }
 
   public IDateFormat getDateFormat() {
-    return (IDateFormat)this.getReferent(IDateFormat.class, ReferenceFormatToken.DATE_FORMAT);
+    return (IDateFormat) this.getReferent(IDateFormat.class, ReferenceFormatToken.DATE_FORMAT);
   }
 
   public void setDateFormat(IDateFormat node) {
@@ -25,7 +25,7 @@ public class ReferenceFormatToken extends FormatToken {
   }
 
   public static ReferenceFormatToken newInstance(SModel sm, boolean init) {
-    return (ReferenceFormatToken)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ReferenceFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReferenceFormatToken) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ReferenceFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReferenceFormatToken newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class RoundDateTimeOperation extends UnaryDateTimeOperation {
   }
 
   public DateTimeProperty getPrecision() {
-    return (DateTimeProperty)this.getReferent(DateTimeProperty.class, RoundDateTimeOperation.PRECISION);
+    return (DateTimeProperty) this.getReferent(DateTimeProperty.class, RoundDateTimeOperation.PRECISION);
   }
 
   public void setPrecision(DateTimeProperty node) {
@@ -25,7 +25,7 @@ public class RoundDateTimeOperation extends UnaryDateTimeOperation {
   }
 
   public static RoundDateTimeOperation newInstance(SModel sm, boolean init) {
-    return (RoundDateTimeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.RoundDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RoundDateTimeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.RoundDateTimeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RoundDateTimeOperation newInstance(SModel sm) {

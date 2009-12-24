@@ -24,7 +24,7 @@ public class ParseExpression extends Expression {
   }
 
   public IDateFormat getDateFormat() {
-    return (IDateFormat)this.getReferent(IDateFormat.class, ParseExpression.DATE_FORMAT);
+    return (IDateFormat) this.getReferent(IDateFormat.class, ParseExpression.DATE_FORMAT);
   }
 
   public void setDateFormat(IDateFormat node) {
@@ -32,7 +32,7 @@ public class ParseExpression extends Expression {
   }
 
   public Locale getLocale() {
-    return (Locale)this.getReferent(Locale.class, ParseExpression.LOCALE);
+    return (Locale) this.getReferent(Locale.class, ParseExpression.LOCALE);
   }
 
   public void setLocale(Locale node) {
@@ -40,7 +40,7 @@ public class ParseExpression extends Expression {
   }
 
   public Expression getSource() {
-    return (Expression)this.getChild(Expression.class, ParseExpression.SOURCE);
+    return (Expression) this.getChild(Expression.class, ParseExpression.SOURCE);
   }
 
   public void setSource(Expression node) {
@@ -48,7 +48,7 @@ public class ParseExpression extends Expression {
   }
 
   public Expression getZone() {
-    return (Expression)this.getChild(Expression.class, ParseExpression.ZONE);
+    return (Expression) this.getChild(Expression.class, ParseExpression.ZONE);
   }
 
   public void setZone(Expression node) {
@@ -56,7 +56,7 @@ public class ParseExpression extends Expression {
   }
 
   public Expression getDefault() {
-    return (Expression)this.getChild(Expression.class, ParseExpression.DEFAULT);
+    return (Expression) this.getChild(Expression.class, ParseExpression.DEFAULT);
   }
 
   public void setDefault(Expression node) {
@@ -64,7 +64,7 @@ public class ParseExpression extends Expression {
   }
 
   public static ParseExpression newInstance(SModel sm, boolean init) {
-    return (ParseExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ParseExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParseExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ParseExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParseExpression newInstance(SModel sm) {

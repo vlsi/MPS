@@ -16,7 +16,7 @@ public class NowExpression extends Expression {
   }
 
   public static NowExpression newInstance(SModel sm, boolean init) {
-    return (NowExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.NowExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NowExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.NowExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NowExpression newInstance(SModel sm) {

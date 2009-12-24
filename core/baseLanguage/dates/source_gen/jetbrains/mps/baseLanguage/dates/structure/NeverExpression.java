@@ -16,7 +16,7 @@ public class NeverExpression extends Expression {
   }
 
   public static NeverExpression newInstance(SModel sm, boolean init) {
-    return (NeverExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.NeverExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NeverExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.NeverExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NeverExpression newInstance(SModel sm) {

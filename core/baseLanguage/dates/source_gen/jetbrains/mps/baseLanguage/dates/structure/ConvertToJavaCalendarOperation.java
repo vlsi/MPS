@@ -15,7 +15,7 @@ public class ConvertToJavaCalendarOperation extends DateTimeOperation {
   }
 
   public static ConvertToJavaCalendarOperation newInstance(SModel sm, boolean init) {
-    return (ConvertToJavaCalendarOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ConvertToJavaCalendarOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConvertToJavaCalendarOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ConvertToJavaCalendarOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConvertToJavaCalendarOperation newInstance(SModel sm) {

@@ -44,7 +44,7 @@ public class ConvertToDurationOperation extends BaseConcept implements IOperatio
   }
 
   public static ConvertToDurationOperation newInstance(SModel sm, boolean init) {
-    return (ConvertToDurationOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ConvertToDurationOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConvertToDurationOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.ConvertToDurationOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConvertToDurationOperation newInstance(SModel sm) {

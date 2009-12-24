@@ -25,7 +25,7 @@ public class TimeZoneOffsetExpression extends Expression {
   }
 
   public static TimeZoneOffsetExpression newInstance(SModel sm, boolean init) {
-    return (TimeZoneOffsetExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TimeZoneOffsetExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TimeZoneOffsetExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TimeZoneOffsetExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TimeZoneOffsetExpression newInstance(SModel sm) {

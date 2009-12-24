@@ -24,7 +24,7 @@ public class LiteralFormatToken extends FormatToken {
   }
 
   public static LiteralFormatToken newInstance(SModel sm, boolean init) {
-    return (LiteralFormatToken)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.LiteralFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LiteralFormatToken) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.LiteralFormatToken", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LiteralFormatToken newInstance(SModel sm) {

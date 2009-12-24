@@ -17,7 +17,7 @@ public class TimeZoneFromString extends Expression {
   }
 
   public Expression getString() {
-    return (Expression)this.getChild(Expression.class, TimeZoneFromString.STRING);
+    return (Expression) this.getChild(Expression.class, TimeZoneFromString.STRING);
   }
 
   public void setString(Expression node) {
@@ -25,7 +25,7 @@ public class TimeZoneFromString extends Expression {
   }
 
   public static TimeZoneFromString newInstance(SModel sm, boolean init) {
-    return (TimeZoneFromString)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TimeZoneFromString", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TimeZoneFromString) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.dates.structure.TimeZoneFromString", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TimeZoneFromString newInstance(SModel sm) {
