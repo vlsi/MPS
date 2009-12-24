@@ -34,6 +34,7 @@ import jetbrains.mps.workbench.search.SearchHistoryComponent;
 import java.awt.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 
 public class SearchPanel extends AbstractSearchPanel {
@@ -153,28 +154,26 @@ public class SearchPanel extends AbstractSearchPanel {
     final List<EditorCell_Label> cells = allCells();
     List<Integer> startCellPosition = new ArrayList<Integer>();
     List<Integer> endCellPosition = new ArrayList<Integer>();
-    StringBuilder sourceBuilder = new StringBuilder();
-    boolean doubleSpace = false;
+    String content = myEditor.getRootCell().renderText().getText();
+    int current = 0;
+    List<EditorCell> emptyCells = new ArrayList<EditorCell>();
     for (EditorCell_Label cell : cells) {
-      boolean punctuationLeft = cell.getStyle().get(StyleAttributes.PUNCTUATION_LEFT);
-      boolean punctuationRight = cell.getStyle().get(StyleAttributes.PUNCTUATION_RIGHT);
-      if (!punctuationLeft && !doubleSpace) {
-        sourceBuilder.append(" ");
+      if (cell.getRenderedText().isEmpty()) {
+        emptyCells.add(cell);
       }
-      startCellPosition.add(sourceBuilder.length());
-      sourceBuilder.append(cell.getRenderedText());
-      endCellPosition.add(sourceBuilder.length());
-      if (!punctuationRight) {
-        sourceBuilder.append(" ");
-        doubleSpace = true;
-      } else {
-        doubleSpace = false;
-      }
+    }
+    cells.removeAll(emptyCells);
+    for (EditorCell_Label cell : cells) {
+      String contentPart = content.substring(current);
+      int start = contentPart.indexOf(cell.getRenderedText()) + current;
+      startCellPosition.add(start);
+      current = start + cell.getRenderedText().length();
+      endCellPosition.add(current);
     }
     List<Integer> resultIndex = new ArrayList<Integer>();
     List<Integer> startHighlightPosition = new ArrayList<Integer>();
     List<Integer> endHighlightPosition = new ArrayList<Integer>();
-    Matcher matcher = getPattern().matcher(sourceBuilder.toString());
+    Matcher matcher = getPattern().matcher(content);
     int index = 0;
     boolean needChangeSelection, selected = false;
     while (matcher.find()) {
@@ -188,38 +187,20 @@ public class SearchPanel extends AbstractSearchPanel {
       }
       EditorCell_Label currentCell = cells.get(index);
       myCells.add(currentCell);
-      EditorCell_Collection parentCell = currentCell.getParent();
-      CellLayout cellLayout = (parentCell != null)? parentCell.getCellLayout() : null;
-      int highlightLength = 0;
+
       needChangeSelection = index >= cells.indexOf(myEditor.getSelectedCell());
       if (needChangeSelection && !selected) {
         myEditor.changeSelection(cells.get(index));
         selected = true;
       }
-      if (!(needChangeSelection && myCells.size() > 100)) {
-        while (index < startCellPosition.size() && startCellPosition.get(index) < matcher.end()) {
-          resultIndex.add(index);
-          startHighlightPosition.add(Math.max(0, matcher.start() - startCellPosition.get(index)));
-          endHighlightPosition.add(Math.min(matcher.end(), endCellPosition.get(index)) - startCellPosition.get(index));
-          highlightLength++;
-          index++;
-        }
-        index--;
-      }
-      if ((cellLayout instanceof CellLayout_Horizontal
-        && !cellLayout.equals(cells.get(index).getParent().getCellLayout()))
-        || cellLayout == null) {
-        if (!needChangeSelection && myCells.size() > 100) {
-          for (int i = 0; i < highlightLength; i++) {
-            resultIndex.remove(resultIndex.size() - 1);
-            startHighlightPosition.remove(startHighlightPosition.size() - 1);
-            endHighlightPosition.remove(endHighlightPosition.size() - 1);
-          }
-        }
-        if (cellLayout != null) {
-          myCells.remove(myCells.size() - 1);
-        }
-      }
+
+      do {
+        resultIndex.add(index);
+        startHighlightPosition.add(Math.max(0, matcher.start() - startCellPosition.get(index)));
+        endHighlightPosition.add(Math.min(matcher.end(), endCellPosition.get(index)) - startCellPosition.get(index));
+        index++;
+      } while (index < cells.size() && startCellPosition.get(index) < matcher.end());
+      index--;
     }
     myOwner = new EditorMessageOwner() {};
     if (!myCells.isEmpty() && myCells.size() <= 100) {
@@ -229,18 +210,18 @@ public class SearchPanel extends AbstractSearchPanel {
 
   private void highlight(final List<Integer> resultIndex, final List<Integer> startPosition,
                          final List<Integer> endPosition, final List<EditorCell_Label> cells) {
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          myHighlightManager = myEditor.getHighlightManager();
-          List<EditorMessage> messages = new ArrayList<EditorMessage>();
-          for (int i = 0; i < resultIndex.size(); i++) {
-            Integer index = resultIndex.get(i);
-            messages.add(new SearchPanelEditorMessage(cells.get(index),
-              startPosition.get(i), endPosition.get(i)));
-          }
-          myHighlightManager.mark(messages);
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myHighlightManager = myEditor.getHighlightManager();
+        List<EditorMessage> messages = new ArrayList<EditorMessage>();
+        for (int i = 0; i < resultIndex.size(); i++) {
+          Integer index = resultIndex.get(i);
+          messages.add(new SearchPanelEditorMessage(cells.get(index),
+            startPosition.get(i), endPosition.get(i)));
         }
-      });
+        myHighlightManager.mark(messages);
+      }
+    });
   }
 
   public void deactivate() {
