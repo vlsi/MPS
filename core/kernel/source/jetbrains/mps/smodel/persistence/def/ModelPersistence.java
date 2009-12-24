@@ -146,7 +146,7 @@ public class ModelPersistence {
 
   private static boolean needsUpgrade(int modelPersistenceVersion) {
     if (modelPersistenceVersion < getCurrentPersistenceVersion()) {
-      if (getPersistenceSettings().isUserPersistenceVersionDefined()) {
+      if (getPersistenceSettings().isUserPersistenceVersionDefined() || ApplicationManager.getApplication().isUnitTestMode()) {
         return true; //user already decided to convert models now
       } else {
         //undefined persistence version; user may want to upgrade models persistence
