@@ -19,11 +19,14 @@ public class check_InnerClassesCantHaveStaticInnerClasses_NonTypesystemRule exte
   }
 
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext) {
-    if (Classifier_Behavior.call_isStatic_521412098689998668(classConcept) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(classConcept), "jetbrains.mps.baseLanguage.structure.Classifier") && Classifier_Behavior.call_isInner_521412098689998677(SNodeOperations.cast(SNodeOperations.getParent(classConcept), "jetbrains.mps.baseLanguage.structure.Classifier"))) {
-      {
-        BaseIntentionProvider intentionProvider = null;
-        IErrorTarget errorTarget = new NodeErrorTarget();
-        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classConcept, "Inner classes can't have static declarations", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6935810692634700346", intentionProvider, errorTarget);
+    if (Classifier_Behavior.call_isStatic_521412098689998668(classConcept) && SNodeOperations.isInstanceOf(SNodeOperations.getParent(classConcept), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+      SNode classifier = SNodeOperations.cast(SNodeOperations.getParent(classConcept), "jetbrains.mps.baseLanguage.structure.Classifier");
+      if (Classifier_Behavior.call_isInner_521412098689998677(classifier) && !(Classifier_Behavior.call_isStatic_521412098689998668(classifier))) {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classConcept, "Inner classes can't have static declarations", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6935810692634700346", intentionProvider, errorTarget);
+        }
       }
     }
   }

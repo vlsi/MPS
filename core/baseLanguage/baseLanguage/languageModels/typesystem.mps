@@ -19410,52 +19410,77 @@
     <property name="name:3" value="check_InnerClassesCantHaveStaticInnerClasses" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6935810692634693778">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6935810692634700297">
-        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="6935810692634700322">
-          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6935810692634700341">
-            <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="6935810692634700339">
-              <link role="concept:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
-              <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6935810692634700326">
-                <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6935810692634700325">
-                  <link role="applicableNode:3" targetNodeId="6935810692634693780" resolveInfo="classConcept" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="6935810692634700330" />
-              </node>
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="6935810692634700308">
+          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6935810692634700303">
+            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6935810692634700302">
+              <link role="applicableNode:3" targetNodeId="6935810692634693780" resolveInfo="classConcept" />
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="6935810692634700345">
-              <link role="baseMethodDeclaration:16" targetNodeId="37.521412098689998677" resolveInfo="isInner" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="6935810692634700307">
+              <link role="baseMethodDeclaration:16" targetNodeId="37.521412098689998668" resolveInfo="isStatic" />
             </node>
           </node>
-          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="6935810692634700308">
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6935810692634700303">
-              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6935810692634700302">
+          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6935810692634700317">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6935810692634700312">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6935810692634700311">
                 <link role="applicableNode:3" targetNodeId="6935810692634693780" resolveInfo="classConcept" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="6935810692634700307">
-                <link role="baseMethodDeclaration:16" targetNodeId="37.521412098689998668" resolveInfo="isStatic" />
-              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="6935810692634700316" />
             </node>
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6935810692634700317">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6935810692634700312">
-                <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6935810692634700311">
-                  <link role="applicableNode:3" targetNodeId="6935810692634693780" resolveInfo="classConcept" />
-                </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="6935810692634700316" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="6935810692634700335">
-                <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="6935810692634700338">
-                  <link role="conceptDeclaration:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
-                </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="6935810692634700335">
+              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="6935810692634700338">
+                <link role="conceptDeclaration:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
               </node>
             </node>
           </node>
         </node>
         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6935810692634700299">
-          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="6935810692634700346">
-            <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6935810692634700349">
-              <property name="value:3" value="Inner classes can't have static declarations" />
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2165915795312751490">
+            <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2165915795312751491">
+              <property name="name:3" value="classifier" />
+              <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="2165915795312751492">
+                <link role="concept:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
+              </node>
+              <node role="initializer:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="2165915795312751493">
+                <link role="concept:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
+                <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2165915795312751494">
+                  <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2165915795312751495">
+                    <link role="applicableNode:3" targetNodeId="6935810692634693780" resolveInfo="classConcept" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="2165915795312751496" />
+                </node>
+              </node>
             </node>
-            <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6935810692634700350">
-              <link role="applicableNode:3" targetNodeId="6935810692634693780" resolveInfo="classConcept" />
+          </node>
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2165915795312751456">
+            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2165915795312751457">
+              <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="6935810692634700346">
+                <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6935810692634700349">
+                  <property name="value:3" value="Inner classes can't have static declarations" />
+                </node>
+                <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6935810692634700350">
+                  <link role="applicableNode:3" targetNodeId="6935810692634693780" resolveInfo="classConcept" />
+                </node>
+              </node>
+            </node>
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="2165915795312751467">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="2165915795312751460">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2165915795312751461">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2165915795312751498">
+                    <link role="variableDeclaration:3" targetNodeId="2165915795312751491" resolveInfo="classifier" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="2165915795312751466">
+                    <link role="baseMethodDeclaration:16" targetNodeId="37.521412098689998668" resolveInfo="isStatic" />
+                  </node>
+                </node>
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2165915795312751470">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2165915795312751497">
+                  <link role="variableDeclaration:3" targetNodeId="2165915795312751491" resolveInfo="classifier" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="2165915795312751475">
+                  <link role="baseMethodDeclaration:16" targetNodeId="37.521412098689998677" resolveInfo="isInner" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
