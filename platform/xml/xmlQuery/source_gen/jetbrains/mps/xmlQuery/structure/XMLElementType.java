@@ -20,7 +20,7 @@ public class XMLElementType extends Type {
   }
 
   public Schema getSchema() {
-    return (Schema)this.getReferent(Schema.class, XMLElementType.SCHEMA);
+    return (Schema) this.getReferent(Schema.class, XMLElementType.SCHEMA);
   }
 
   public void setSchema(Schema node) {
@@ -28,7 +28,7 @@ public class XMLElementType extends Type {
   }
 
   public ComplexType getComplexType() {
-    return (ComplexType)this.getReferent(ComplexType.class, XMLElementType.COMPLEX_TYPE);
+    return (ComplexType) this.getReferent(ComplexType.class, XMLElementType.COMPLEX_TYPE);
   }
 
   public void setComplexType(ComplexType node) {
@@ -36,7 +36,7 @@ public class XMLElementType extends Type {
   }
 
   public static XMLElementType newInstance(SModel sm, boolean init) {
-    return (XMLElementType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.XMLElementType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (XMLElementType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.XMLElementType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static XMLElementType newInstance(SModel sm) {

@@ -18,7 +18,7 @@ public class ElementBuilder extends Builder {
   }
 
   public ElementDeclaration getElementDeclaration() {
-    return (ElementDeclaration)this.getReferent(ElementDeclaration.class, ElementBuilder.ELEMENT_DECLARATION);
+    return (ElementDeclaration) this.getReferent(ElementDeclaration.class, ElementBuilder.ELEMENT_DECLARATION);
   }
 
   public void setElementDeclaration(ElementDeclaration node) {
@@ -26,7 +26,7 @@ public class ElementBuilder extends Builder {
   }
 
   public static ElementBuilder newInstance(SModel sm, boolean init) {
-    return (ElementBuilder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.ElementBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ElementBuilder) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.ElementBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ElementBuilder newInstance(SModel sm) {

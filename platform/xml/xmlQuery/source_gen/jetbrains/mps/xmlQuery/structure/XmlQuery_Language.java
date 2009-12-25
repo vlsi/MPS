@@ -10,6 +10,6 @@ public class XmlQuery_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("a8fdde77-2e6c-41f6-ac79-8e9b6449c271(jetbrains.mps.xmlQuery)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

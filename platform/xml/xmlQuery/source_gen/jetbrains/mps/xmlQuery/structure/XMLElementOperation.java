@@ -44,7 +44,7 @@ public class XMLElementOperation extends BaseConcept implements IOperation {
   }
 
   public static XMLElementOperation newInstance(SModel sm, boolean init) {
-    return (XMLElementOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.XMLElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (XMLElementOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.XMLElementOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static XMLElementOperation newInstance(SModel sm) {

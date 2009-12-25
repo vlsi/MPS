@@ -20,7 +20,7 @@ public class AttributeBuilder extends Builder {
   }
 
   public AttributeDeclaration getAttributeDeclaration() {
-    return (AttributeDeclaration)this.getReferent(AttributeDeclaration.class, AttributeBuilder.ATTRIBUTE_DECLARATION);
+    return (AttributeDeclaration) this.getReferent(AttributeDeclaration.class, AttributeBuilder.ATTRIBUTE_DECLARATION);
   }
 
   public void setAttributeDeclaration(AttributeDeclaration node) {
@@ -28,7 +28,7 @@ public class AttributeBuilder extends Builder {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, AttributeBuilder.VALUE);
+    return (Expression) this.getChild(Expression.class, AttributeBuilder.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -36,7 +36,7 @@ public class AttributeBuilder extends Builder {
   }
 
   public static AttributeBuilder newInstance(SModel sm, boolean init) {
-    return (AttributeBuilder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.AttributeBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AttributeBuilder) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.AttributeBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AttributeBuilder newInstance(SModel sm) {

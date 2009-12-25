@@ -17,7 +17,7 @@ public class AccessChildrenOperation extends XMLElementOperation {
   }
 
   public ElementDeclaration getElementDeclaration() {
-    return (ElementDeclaration)this.getReferent(ElementDeclaration.class, AccessChildrenOperation.ELEMENT_DECLARATION);
+    return (ElementDeclaration) this.getReferent(ElementDeclaration.class, AccessChildrenOperation.ELEMENT_DECLARATION);
   }
 
   public void setElementDeclaration(ElementDeclaration node) {
@@ -25,7 +25,7 @@ public class AccessChildrenOperation extends XMLElementOperation {
   }
 
   public static AccessChildrenOperation newInstance(SModel sm, boolean init) {
-    return (AccessChildrenOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.AccessChildrenOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AccessChildrenOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.AccessChildrenOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AccessChildrenOperation newInstance(SModel sm) {

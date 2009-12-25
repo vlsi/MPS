@@ -17,7 +17,7 @@ public class AccessArbitraryAttributeOperation extends XMLElementOperation {
   }
 
   public Expression getAttributeNameExpression() {
-    return (Expression)this.getChild(Expression.class, AccessArbitraryAttributeOperation.ATTRIBUTE_NAME_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, AccessArbitraryAttributeOperation.ATTRIBUTE_NAME_EXPRESSION);
   }
 
   public void setAttributeNameExpression(Expression node) {
@@ -25,7 +25,7 @@ public class AccessArbitraryAttributeOperation extends XMLElementOperation {
   }
 
   public static AccessArbitraryAttributeOperation newInstance(SModel sm, boolean init) {
-    return (AccessArbitraryAttributeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.AccessArbitraryAttributeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AccessArbitraryAttributeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.AccessArbitraryAttributeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AccessArbitraryAttributeOperation newInstance(SModel sm) {

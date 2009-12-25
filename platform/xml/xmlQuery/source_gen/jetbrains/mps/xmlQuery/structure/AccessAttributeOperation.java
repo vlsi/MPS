@@ -17,7 +17,7 @@ public class AccessAttributeOperation extends XMLElementOperation {
   }
 
   public AttributeDeclaration getAttributeDeclaration() {
-    return (AttributeDeclaration)this.getReferent(AttributeDeclaration.class, AccessAttributeOperation.ATTRIBUTE_DECLARATION);
+    return (AttributeDeclaration) this.getReferent(AttributeDeclaration.class, AccessAttributeOperation.ATTRIBUTE_DECLARATION);
   }
 
   public void setAttributeDeclaration(AttributeDeclaration node) {
@@ -25,7 +25,7 @@ public class AccessAttributeOperation extends XMLElementOperation {
   }
 
   public static AccessAttributeOperation newInstance(SModel sm, boolean init) {
-    return (AccessAttributeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.AccessAttributeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AccessAttributeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.AccessAttributeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AccessAttributeOperation newInstance(SModel sm) {

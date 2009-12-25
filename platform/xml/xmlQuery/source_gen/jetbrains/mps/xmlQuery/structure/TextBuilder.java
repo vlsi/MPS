@@ -18,7 +18,7 @@ public class TextBuilder extends Builder {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, TextBuilder.VALUE);
+    return (Expression) this.getChild(Expression.class, TextBuilder.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -26,7 +26,7 @@ public class TextBuilder extends Builder {
   }
 
   public static TextBuilder newInstance(SModel sm, boolean init) {
-    return (TextBuilder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.TextBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TextBuilder) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.TextBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TextBuilder newInstance(SModel sm) {

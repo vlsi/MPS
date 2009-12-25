@@ -17,7 +17,7 @@ public class AccessArbitraryChildrenOperation extends XMLElementOperation {
   }
 
   public Expression getChildNameExpression() {
-    return (Expression)this.getChild(Expression.class, AccessArbitraryChildrenOperation.CHILD_NAME_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, AccessArbitraryChildrenOperation.CHILD_NAME_EXPRESSION);
   }
 
   public void setChildNameExpression(Expression node) {
@@ -25,7 +25,7 @@ public class AccessArbitraryChildrenOperation extends XMLElementOperation {
   }
 
   public static AccessArbitraryChildrenOperation newInstance(SModel sm, boolean init) {
-    return (AccessArbitraryChildrenOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.AccessArbitraryChildrenOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AccessArbitraryChildrenOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.AccessArbitraryChildrenOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AccessArbitraryChildrenOperation newInstance(SModel sm) {

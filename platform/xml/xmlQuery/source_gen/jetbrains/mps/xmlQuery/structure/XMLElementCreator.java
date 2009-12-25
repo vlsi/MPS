@@ -17,7 +17,7 @@ public class XMLElementCreator extends AbstractCreator {
   }
 
   public XMLElementType getType() {
-    return (XMLElementType)this.getChild(XMLElementType.class, XMLElementCreator.TYPE);
+    return (XMLElementType) this.getChild(XMLElementType.class, XMLElementCreator.TYPE);
   }
 
   public void setType(XMLElementType node) {
@@ -25,7 +25,7 @@ public class XMLElementCreator extends AbstractCreator {
   }
 
   public static XMLElementCreator newInstance(SModel sm, boolean init) {
-    return (XMLElementCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.XMLElementCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (XMLElementCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.XMLElementCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static XMLElementCreator newInstance(SModel sm) {

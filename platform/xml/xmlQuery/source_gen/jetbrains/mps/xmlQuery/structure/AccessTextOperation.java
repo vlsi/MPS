@@ -15,7 +15,7 @@ public class AccessTextOperation extends XMLElementOperation {
   }
 
   public static AccessTextOperation newInstance(SModel sm, boolean init) {
-    return (AccessTextOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.AccessTextOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AccessTextOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlQuery.structure.AccessTextOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AccessTextOperation newInstance(SModel sm) {
