@@ -57,7 +57,7 @@ public class SimpleBuilderProperty extends BaseConcept implements INamedConcept 
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, SimpleBuilderProperty.TYPE);
+    return (Type) this.getChild(Type.class, SimpleBuilderProperty.TYPE);
   }
 
   public void setType(Type node) {
@@ -65,7 +65,7 @@ public class SimpleBuilderProperty extends BaseConcept implements INamedConcept 
   }
 
   public Statement getSet() {
-    return (Statement)this.getChild(Statement.class, SimpleBuilderProperty.SET);
+    return (Statement) this.getChild(Statement.class, SimpleBuilderProperty.SET);
   }
 
   public void setSet(Statement node) {
@@ -73,7 +73,7 @@ public class SimpleBuilderProperty extends BaseConcept implements INamedConcept 
   }
 
   public static SimpleBuilderProperty newInstance(SModel sm, boolean init) {
-    return (SimpleBuilderProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleBuilderProperty) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleBuilderProperty newInstance(SModel sm) {

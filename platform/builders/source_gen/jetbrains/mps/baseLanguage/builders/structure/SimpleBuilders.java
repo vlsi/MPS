@@ -57,7 +57,7 @@ public class SimpleBuilders extends BaseConcept implements INamedConcept {
   }
 
   public SimpleBuilders getExtendsBuilder() {
-    return (SimpleBuilders)this.getReferent(SimpleBuilders.class, SimpleBuilders.EXTENDS_BUILDER);
+    return (SimpleBuilders) this.getReferent(SimpleBuilders.class, SimpleBuilders.EXTENDS_BUILDER);
   }
 
   public void setExtendsBuilder(SimpleBuilders node) {
@@ -85,7 +85,7 @@ public class SimpleBuilders extends BaseConcept implements INamedConcept {
   }
 
   public static SimpleBuilders newInstance(SModel sm, boolean init) {
-    return (SimpleBuilders)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleBuilders) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleBuilders newInstance(SModel sm) {

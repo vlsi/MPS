@@ -20,7 +20,7 @@ public class SimpleBuilderExtensionDeclaration extends BaseSimpleBuilderDeclarat
   }
 
   public SimpleBuilderDeclaration getExtended() {
-    return (SimpleBuilderDeclaration)this.getReferent(SimpleBuilderDeclaration.class, SimpleBuilderExtensionDeclaration.EXTENDED);
+    return (SimpleBuilderDeclaration) this.getReferent(SimpleBuilderDeclaration.class, SimpleBuilderExtensionDeclaration.EXTENDED);
   }
 
   public void setExtended(SimpleBuilderDeclaration node) {
@@ -68,7 +68,7 @@ public class SimpleBuilderExtensionDeclaration extends BaseSimpleBuilderDeclarat
   }
 
   public static SimpleBuilderExtensionDeclaration newInstance(SModel sm, boolean init) {
-    return (SimpleBuilderExtensionDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleBuilderExtensionDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderExtensionDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleBuilderExtensionDeclaration newInstance(SModel sm) {

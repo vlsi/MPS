@@ -83,34 +83,34 @@ public class SimpleBuilder_Behavior {
   }
 
   public static SNode call_getResultType_7288041816793071817(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_getResultType_7057666463730718251", PARAMETERS_7288041816793071817);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_getResultType_7057666463730718251", PARAMETERS_7288041816793071817);
   }
 
   public static boolean call_isLeaf_7288041816793416227(SNode thisNode) {
-    return (Boolean)BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_isLeaf_7057666463730595159", PARAMETERS_7288041816793416227);
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_isLeaf_7057666463730595159", PARAMETERS_7288041816793416227);
   }
 
   public static SNode call_getCreatorExpression_7288041816793071813(SNode thisNode, SNode parentRef) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_7288041816793071813, parentRef);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_7288041816793071813, parentRef);
   }
 
   public static SNode call_getAttachStatement_7288041816793075493(SNode thisNode, SNode childBuilder, SNode parentRef, SNode childRef) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_getAttachStatement_7288041816792215495", PARAMETERS_7288041816793075493, childBuilder, parentRef, childRef);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), "virtual_getAttachStatement_7288041816792215495", PARAMETERS_7288041816793075493, childBuilder, parentRef, childRef);
   }
 
   public static SNode callSuper_getResultType_7288041816793071817(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), callerConceptFqName, "virtual_getResultType_7057666463730718251", PARAMETERS_7288041816793071817);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), callerConceptFqName, "virtual_getResultType_7057666463730718251", PARAMETERS_7288041816793071817);
   }
 
   public static boolean callSuper_isLeaf_7288041816793416227(SNode thisNode, String callerConceptFqName) {
-    return (Boolean)BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), callerConceptFqName, "virtual_isLeaf_7057666463730595159", PARAMETERS_7288041816793416227);
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), callerConceptFqName, "virtual_isLeaf_7057666463730595159", PARAMETERS_7288041816793416227);
   }
 
   public static SNode callSuper_getCreatorExpression_7288041816793071813(SNode thisNode, String callerConceptFqName, SNode parentRef) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_7288041816793071813, parentRef);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), callerConceptFqName, "virtual_getCreatorExpression_7057666463730727863", PARAMETERS_7288041816793071813, parentRef);
   }
 
   public static SNode callSuper_getAttachStatement_7288041816793075493(SNode thisNode, String callerConceptFqName, SNode childBuilder, SNode parentRef, SNode childRef) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), callerConceptFqName, "virtual_getAttachStatement_7288041816792215495", PARAMETERS_7288041816793075493, childBuilder, parentRef, childRef);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder"), callerConceptFqName, "virtual_getAttachStatement_7288041816792215495", PARAMETERS_7288041816793075493, childBuilder, parentRef, childRef);
   }
 }

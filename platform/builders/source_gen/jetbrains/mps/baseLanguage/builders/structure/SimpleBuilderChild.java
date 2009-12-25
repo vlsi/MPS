@@ -19,7 +19,7 @@ public class SimpleBuilderChild extends BaseConcept {
   }
 
   public SimpleBuilderDeclaration getChild() {
-    return (SimpleBuilderDeclaration)this.getReferent(SimpleBuilderDeclaration.class, SimpleBuilderChild.CHILD);
+    return (SimpleBuilderDeclaration) this.getReferent(SimpleBuilderDeclaration.class, SimpleBuilderChild.CHILD);
   }
 
   public void setChild(SimpleBuilderDeclaration node) {
@@ -27,7 +27,7 @@ public class SimpleBuilderChild extends BaseConcept {
   }
 
   public Statement getAttachStatement() {
-    return (Statement)this.getChild(Statement.class, SimpleBuilderChild.ATTACH_STATEMENT);
+    return (Statement) this.getChild(Statement.class, SimpleBuilderChild.ATTACH_STATEMENT);
   }
 
   public void setAttachStatement(Statement node) {
@@ -35,7 +35,7 @@ public class SimpleBuilderChild extends BaseConcept {
   }
 
   public static SimpleBuilderChild newInstance(SModel sm, boolean init) {
-    return (SimpleBuilderChild)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleBuilderChild) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleBuilderChild newInstance(SModel sm) {

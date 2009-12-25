@@ -16,7 +16,7 @@ public class BaseSimpleBuilderDeclaration extends BaseConcept {
   }
 
   public static BaseSimpleBuilderDeclaration newInstance(SModel sm, boolean init) {
-    return (BaseSimpleBuilderDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseSimpleBuilderDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseSimpleBuilderDeclaration newInstance(SModel sm) {

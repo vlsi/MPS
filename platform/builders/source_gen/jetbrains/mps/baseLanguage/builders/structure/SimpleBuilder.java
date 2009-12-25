@@ -20,7 +20,7 @@ public class SimpleBuilder extends Builder {
   }
 
   public SimpleBuilderDeclaration getDeclaration() {
-    return (SimpleBuilderDeclaration)this.getReferent(SimpleBuilderDeclaration.class, SimpleBuilder.DECLARATION);
+    return (SimpleBuilderDeclaration) this.getReferent(SimpleBuilderDeclaration.class, SimpleBuilder.DECLARATION);
   }
 
   public void setDeclaration(SimpleBuilderDeclaration node) {
@@ -48,7 +48,7 @@ public class SimpleBuilder extends Builder {
   }
 
   public static SimpleBuilder newInstance(SModel sm, boolean init) {
-    return (SimpleBuilder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleBuilder) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleBuilder newInstance(SModel sm) {

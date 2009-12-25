@@ -55,7 +55,7 @@ public class SimpleBuilderParameter extends BaseConcept implements INamedConcept
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, SimpleBuilderParameter.TYPE);
+    return (Type) this.getChild(Type.class, SimpleBuilderParameter.TYPE);
   }
 
   public void setType(Type node) {
@@ -63,7 +63,7 @@ public class SimpleBuilderParameter extends BaseConcept implements INamedConcept
   }
 
   public static SimpleBuilderParameter newInstance(SModel sm, boolean init) {
-    return (SimpleBuilderParameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleBuilderParameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleBuilderParameter newInstance(SModel sm) {

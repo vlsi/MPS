@@ -15,7 +15,7 @@ public class SimpleBuilderParentExpression extends SimpleBuilderExpression {
   }
 
   public static SimpleBuilderParentExpression newInstance(SModel sm, boolean init) {
-    return (SimpleBuilderParentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleBuilderParentExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleBuilderParentExpression newInstance(SModel sm) {

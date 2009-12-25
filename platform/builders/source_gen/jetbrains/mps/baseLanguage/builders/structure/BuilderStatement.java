@@ -46,7 +46,7 @@ public class BuilderStatement extends Statement implements BuilderContainer {
   }
 
   public Builder getBuilder() {
-    return (Builder)this.getChild(Builder.class, BuilderStatement.BUILDER);
+    return (Builder) this.getChild(Builder.class, BuilderStatement.BUILDER);
   }
 
   public void setBuilder(Builder node) {
@@ -54,7 +54,7 @@ public class BuilderStatement extends Statement implements BuilderContainer {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, BuilderStatement.BODY);
+    return (StatementList) this.getChild(StatementList.class, BuilderStatement.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -62,7 +62,7 @@ public class BuilderStatement extends Statement implements BuilderContainer {
   }
 
   public static BuilderStatement newInstance(SModel sm, boolean init) {
-    return (BuilderStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.BuilderStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BuilderStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.BuilderStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BuilderStatement newInstance(SModel sm) {

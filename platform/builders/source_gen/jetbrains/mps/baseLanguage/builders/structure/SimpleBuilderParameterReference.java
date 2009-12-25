@@ -17,7 +17,7 @@ public class SimpleBuilderParameterReference extends Expression {
   }
 
   public SimpleBuilderParameter getParameter() {
-    return (SimpleBuilderParameter)this.getReferent(SimpleBuilderParameter.class, SimpleBuilderParameterReference.PARAMETER);
+    return (SimpleBuilderParameter) this.getReferent(SimpleBuilderParameter.class, SimpleBuilderParameterReference.PARAMETER);
   }
 
   public void setParameter(SimpleBuilderParameter node) {
@@ -25,7 +25,7 @@ public class SimpleBuilderParameterReference extends Expression {
   }
 
   public static SimpleBuilderParameterReference newInstance(SModel sm, boolean init) {
-    return (SimpleBuilderParameterReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleBuilderParameterReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleBuilderParameterReference newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class AsTypeBuilder extends Builder {
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, AsTypeBuilder.TYPE);
+    return (Type) this.getChild(Type.class, AsTypeBuilder.TYPE);
   }
 
   public void setType(Type node) {
@@ -25,7 +25,7 @@ public class AsTypeBuilder extends Builder {
   }
 
   public static AsTypeBuilder newInstance(SModel sm, boolean init) {
-    return (AsTypeBuilder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AsTypeBuilder) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.AsTypeBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AsTypeBuilder newInstance(SModel sm) {

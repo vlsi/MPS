@@ -49,7 +49,7 @@ public class AsBuilderStatement extends Statement implements IContainsStatementL
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, AsBuilderStatement.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, AsBuilderStatement.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -57,7 +57,7 @@ public class AsBuilderStatement extends Statement implements IContainsStatementL
   }
 
   public Builder getBuilder() {
-    return (Builder)this.getChild(Builder.class, AsBuilderStatement.BUILDER);
+    return (Builder) this.getChild(Builder.class, AsBuilderStatement.BUILDER);
   }
 
   public void setBuilder(Builder node) {
@@ -65,7 +65,7 @@ public class AsBuilderStatement extends Statement implements IContainsStatementL
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, AsBuilderStatement.BODY);
+    return (StatementList) this.getChild(StatementList.class, AsBuilderStatement.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -73,7 +73,7 @@ public class AsBuilderStatement extends Statement implements IContainsStatementL
   }
 
   public static AsBuilderStatement newInstance(SModel sm, boolean init) {
-    return (AsBuilderStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AsBuilderStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.AsBuilderStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AsBuilderStatement newInstance(SModel sm) {

@@ -89,7 +89,7 @@ public class SimpleBuilderDeclaration extends BaseSimpleBuilderDeclaration imple
   }
 
   public SimpleBuilderDeclaration getExtends() {
-    return (SimpleBuilderDeclaration)this.getReferent(SimpleBuilderDeclaration.class, SimpleBuilderDeclaration.EXTENDS);
+    return (SimpleBuilderDeclaration) this.getReferent(SimpleBuilderDeclaration.class, SimpleBuilderDeclaration.EXTENDS);
   }
 
   public void setExtends(SimpleBuilderDeclaration node) {
@@ -97,7 +97,7 @@ public class SimpleBuilderDeclaration extends BaseSimpleBuilderDeclaration imple
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, SimpleBuilderDeclaration.TYPE);
+    return (Type) this.getChild(Type.class, SimpleBuilderDeclaration.TYPE);
   }
 
   public void setType(Type node) {
@@ -105,7 +105,7 @@ public class SimpleBuilderDeclaration extends BaseSimpleBuilderDeclaration imple
   }
 
   public Expression getCreator() {
-    return (Expression)this.getChild(Expression.class, SimpleBuilderDeclaration.CREATOR);
+    return (Expression) this.getChild(Expression.class, SimpleBuilderDeclaration.CREATOR);
   }
 
   public void setCreator(Expression node) {
@@ -173,7 +173,7 @@ public class SimpleBuilderDeclaration extends BaseSimpleBuilderDeclaration imple
   }
 
   public static SimpleBuilderDeclaration newInstance(SModel sm, boolean init) {
-    return (SimpleBuilderDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleBuilderDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleBuilderDeclaration newInstance(SModel sm) {

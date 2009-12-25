@@ -18,7 +18,7 @@ public class SimpleBuilderPropertyBuilder extends Builder {
   }
 
   public SimpleBuilderProperty getDeclaration() {
-    return (SimpleBuilderProperty)this.getReferent(SimpleBuilderProperty.class, SimpleBuilderPropertyBuilder.DECLARATION);
+    return (SimpleBuilderProperty) this.getReferent(SimpleBuilderProperty.class, SimpleBuilderPropertyBuilder.DECLARATION);
   }
 
   public void setDeclaration(SimpleBuilderProperty node) {
@@ -26,7 +26,7 @@ public class SimpleBuilderPropertyBuilder extends Builder {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, SimpleBuilderPropertyBuilder.VALUE);
+    return (Expression) this.getChild(Expression.class, SimpleBuilderPropertyBuilder.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -34,7 +34,7 @@ public class SimpleBuilderPropertyBuilder extends Builder {
   }
 
   public static SimpleBuilderPropertyBuilder newInstance(SModel sm, boolean init) {
-    return (SimpleBuilderPropertyBuilder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleBuilderPropertyBuilder) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleBuilderPropertyBuilder newInstance(SModel sm) {

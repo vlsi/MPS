@@ -15,7 +15,7 @@ public class SimpleBuilderPropertyValue extends SimpleBuilderPropertyExpression 
   }
 
   public static SimpleBuilderPropertyValue newInstance(SModel sm, boolean init) {
-    return (SimpleBuilderPropertyValue)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SimpleBuilderPropertyValue) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderPropertyValue", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SimpleBuilderPropertyValue newInstance(SModel sm) {

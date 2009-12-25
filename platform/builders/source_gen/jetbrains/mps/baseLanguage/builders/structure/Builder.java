@@ -17,7 +17,7 @@ public class Builder extends BaseConcept {
   }
 
   public static Builder newInstance(SModel sm, boolean init) {
-    return (Builder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.Builder", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Builder) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.Builder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Builder newInstance(SModel sm) {

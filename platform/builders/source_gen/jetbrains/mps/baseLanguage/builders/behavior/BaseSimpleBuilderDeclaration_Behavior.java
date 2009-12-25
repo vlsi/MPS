@@ -13,10 +13,10 @@ public class BaseSimpleBuilderDeclaration_Behavior {
   }
 
   public static SNode call_getContextDeclaration_6254726786820551255(SNode thisNode) {
-    return (SNode)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration"), "virtual_getContextDeclaration_6254726786820551255", PARAMETERS_6254726786820551255);
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration"), "virtual_getContextDeclaration_6254726786820551255", PARAMETERS_6254726786820551255);
   }
 
   public static SNode callSuper_getContextDeclaration_6254726786820551255(SNode thisNode, String callerConceptFqName) {
-    return (SNode)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration"), callerConceptFqName, "virtual_getContextDeclaration_6254726786820551255", PARAMETERS_6254726786820551255);
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BaseSimpleBuilderDeclaration"), callerConceptFqName, "virtual_getContextDeclaration_6254726786820551255", PARAMETERS_6254726786820551255);
   }
 }

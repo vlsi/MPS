@@ -19,7 +19,7 @@ public class BeanPropertyBuilder extends Builder {
   }
 
   public InstanceMethodDeclaration getSetter() {
-    return (InstanceMethodDeclaration)this.getReferent(InstanceMethodDeclaration.class, BeanPropertyBuilder.SETTER);
+    return (InstanceMethodDeclaration) this.getReferent(InstanceMethodDeclaration.class, BeanPropertyBuilder.SETTER);
   }
 
   public void setSetter(InstanceMethodDeclaration node) {
@@ -27,7 +27,7 @@ public class BeanPropertyBuilder extends Builder {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, BeanPropertyBuilder.VALUE);
+    return (Expression) this.getChild(Expression.class, BeanPropertyBuilder.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -35,7 +35,7 @@ public class BeanPropertyBuilder extends Builder {
   }
 
   public static BeanPropertyBuilder newInstance(SModel sm, boolean init) {
-    return (BeanPropertyBuilder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BeanPropertyBuilder) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.BeanPropertyBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BeanPropertyBuilder newInstance(SModel sm) {

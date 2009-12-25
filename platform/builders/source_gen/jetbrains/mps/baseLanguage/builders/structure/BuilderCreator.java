@@ -46,7 +46,7 @@ public class BuilderCreator extends AbstractCreator implements BuilderContainer 
   }
 
   public Builder getBuilder() {
-    return (Builder)this.getChild(Builder.class, BuilderCreator.BUILDER);
+    return (Builder) this.getChild(Builder.class, BuilderCreator.BUILDER);
   }
 
   public void setBuilder(Builder node) {
@@ -54,7 +54,7 @@ public class BuilderCreator extends AbstractCreator implements BuilderContainer 
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, BuilderCreator.BODY);
+    return (StatementList) this.getChild(StatementList.class, BuilderCreator.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -62,7 +62,7 @@ public class BuilderCreator extends AbstractCreator implements BuilderContainer 
   }
 
   public static BuilderCreator newInstance(SModel sm, boolean init) {
-    return (BuilderCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BuilderCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.BuilderCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BuilderCreator newInstance(SModel sm) {

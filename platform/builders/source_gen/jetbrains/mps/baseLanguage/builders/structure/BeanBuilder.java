@@ -50,7 +50,7 @@ public class BeanBuilder extends Builder implements IMethodCall {
   }
 
   public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(BaseMethodDeclaration.class, BeanBuilder.BASE_METHOD_DECLARATION);
+    return (BaseMethodDeclaration) this.getReferent(BaseMethodDeclaration.class, BeanBuilder.BASE_METHOD_DECLARATION);
   }
 
   public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
@@ -86,7 +86,7 @@ public class BeanBuilder extends Builder implements IMethodCall {
   }
 
   public static BeanBuilder newInstance(SModel sm, boolean init) {
-    return (BeanBuilder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BeanBuilder) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BeanBuilder newInstance(SModel sm) {
