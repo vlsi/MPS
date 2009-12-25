@@ -22,4 +22,5 @@ public class Icons {
   public static final Icon HIERARCHY_VIEW_ICON = new ImageIcon(Icons.class.getResource("classHierarchyView.png"));
   public static final Icon METHOD_ICON = new ImageIcon(Icons.class.getResource("methodNew.png"));
   public static final Icon SHOW_VIEWER_ICON = new ImageIcon(Icons.class.getResource("showViewer.png"));
+  public static final Icon SORT_ALPHABETICALLY_ICON = new ImageIcon(Icons.class.getResource("sortAlpha.png"));
 }
