@@ -16,7 +16,7 @@ public class RemoveListenerOperation extends BinaryOperation {
   }
 
   public static RemoveListenerOperation newInstance(SModel sm, boolean init) {
-    return (RemoveListenerOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.RemoveListenerOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RemoveListenerOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.RemoveListenerOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RemoveListenerOperation newInstance(SModel sm) {

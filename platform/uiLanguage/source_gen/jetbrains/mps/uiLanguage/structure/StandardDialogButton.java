@@ -36,7 +36,7 @@ public class StandardDialogButton extends BaseConcept {
   }
 
   public Expression getHandler() {
-    return (Expression)this.getChild(Expression.class, StandardDialogButton.HANDLER);
+    return (Expression) this.getChild(Expression.class, StandardDialogButton.HANDLER);
   }
 
   public void setHandler(Expression node) {
@@ -44,7 +44,7 @@ public class StandardDialogButton extends BaseConcept {
   }
 
   public static StandardDialogButton newInstance(SModel sm, boolean init) {
-    return (StandardDialogButton)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.StandardDialogButton", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StandardDialogButton) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.StandardDialogButton", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StandardDialogButton newInstance(SModel sm) {

@@ -45,7 +45,7 @@ public class LayoutConstraint extends BaseConcept implements IComponentPart {
   }
 
   public Expression getConstraint() {
-    return (Expression)this.getChild(Expression.class, LayoutConstraint.CONSTRAINT);
+    return (Expression) this.getChild(Expression.class, LayoutConstraint.CONSTRAINT);
   }
 
   public void setConstraint(Expression node) {
@@ -53,7 +53,7 @@ public class LayoutConstraint extends BaseConcept implements IComponentPart {
   }
 
   public static LayoutConstraint newInstance(SModel sm, boolean init) {
-    return (LayoutConstraint)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.LayoutConstraint", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LayoutConstraint) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.LayoutConstraint", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LayoutConstraint newInstance(SModel sm) {

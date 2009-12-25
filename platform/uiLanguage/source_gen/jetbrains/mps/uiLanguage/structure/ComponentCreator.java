@@ -17,7 +17,7 @@ public class ComponentCreator extends AbstractCreator {
   }
 
   public ComponentDeclaration getComponentDeclaration() {
-    return (ComponentDeclaration)this.getReferent(ComponentDeclaration.class, ComponentCreator.COMPONENT_DECLARATION);
+    return (ComponentDeclaration) this.getReferent(ComponentDeclaration.class, ComponentCreator.COMPONENT_DECLARATION);
   }
 
   public void setComponentDeclaration(ComponentDeclaration node) {
@@ -25,7 +25,7 @@ public class ComponentCreator extends AbstractCreator {
   }
 
   public static ComponentCreator newInstance(SModel sm, boolean init) {
-    return (ComponentCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComponentCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComponentCreator newInstance(SModel sm) {

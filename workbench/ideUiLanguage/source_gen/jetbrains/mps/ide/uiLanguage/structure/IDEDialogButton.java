@@ -36,7 +36,7 @@ public class IDEDialogButton extends BaseConcept {
   }
 
   public Expression getHandler() {
-    return (Expression)this.getChild(Expression.class, IDEDialogButton.HANDLER);
+    return (Expression) this.getChild(Expression.class, IDEDialogButton.HANDLER);
   }
 
   public void setHandler(Expression node) {
@@ -44,7 +44,7 @@ public class IDEDialogButton extends BaseConcept {
   }
 
   public static IDEDialogButton newInstance(SModel sm, boolean init) {
-    return (IDEDialogButton)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IDEDialogButton) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.IDEDialogButton", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IDEDialogButton newInstance(SModel sm) {

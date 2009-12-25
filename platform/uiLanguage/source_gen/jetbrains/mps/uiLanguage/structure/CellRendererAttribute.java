@@ -45,7 +45,7 @@ public class CellRendererAttribute extends BaseConcept implements IComponentPart
   }
 
   public Expression getRenderer() {
-    return (Expression)this.getChild(Expression.class, CellRendererAttribute.RENDERER);
+    return (Expression) this.getChild(Expression.class, CellRendererAttribute.RENDERER);
   }
 
   public void setRenderer(Expression node) {
@@ -53,7 +53,7 @@ public class CellRendererAttribute extends BaseConcept implements IComponentPart
   }
 
   public static CellRendererAttribute newInstance(SModel sm, boolean init) {
-    return (CellRendererAttribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.CellRendererAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CellRendererAttribute) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.CellRendererAttribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CellRendererAttribute newInstance(SModel sm) {

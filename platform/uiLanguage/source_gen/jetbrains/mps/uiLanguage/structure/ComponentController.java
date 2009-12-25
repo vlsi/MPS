@@ -63,7 +63,7 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
   }
 
   public ComponentDeclaration getComponent() {
-    return (ComponentDeclaration)this.getReferent(ComponentDeclaration.class, ComponentController.COMPONENT);
+    return (ComponentDeclaration) this.getReferent(ComponentDeclaration.class, ComponentController.COMPONENT);
   }
 
   public void setComponent(ComponentDeclaration node) {
@@ -71,7 +71,7 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
   }
 
   public AfterConstructionBlock getAfterConstruction() {
-    return (AfterConstructionBlock)this.getChild(AfterConstructionBlock.class, ComponentController.AFTER_CONSTRUCTION);
+    return (AfterConstructionBlock) this.getChild(AfterConstructionBlock.class, ComponentController.AFTER_CONSTRUCTION);
   }
 
   public void setAfterConstruction(AfterConstructionBlock node) {
@@ -79,7 +79,7 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
   }
 
   public BeforeConstructionBlock getBeforeConstruction() {
-    return (BeforeConstructionBlock)this.getChild(BeforeConstructionBlock.class, ComponentController.BEFORE_CONSTRUCTION);
+    return (BeforeConstructionBlock) this.getChild(BeforeConstructionBlock.class, ComponentController.BEFORE_CONSTRUCTION);
   }
 
   public void setBeforeConstruction(BeforeConstructionBlock node) {
@@ -147,7 +147,7 @@ public class ComponentController extends BaseConcept implements INamedConcept, I
   }
 
   public static ComponentController newInstance(SModel sm, boolean init) {
-    return (ComponentController)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentController", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComponentController) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentController", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComponentController newInstance(SModel sm) {

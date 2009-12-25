@@ -69,7 +69,7 @@ public class IDEDialog extends BaseConcept implements IComponentInstance {
   }
 
   public DialogDimensions getDimensions() {
-    return (DialogDimensions)this.getChild(DialogDimensions.class, IDEDialog.DIMENSIONS);
+    return (DialogDimensions) this.getChild(DialogDimensions.class, IDEDialog.DIMENSIONS);
   }
 
   public void setDimensions(DialogDimensions node) {
@@ -77,7 +77,7 @@ public class IDEDialog extends BaseConcept implements IComponentInstance {
   }
 
   public IComponentInstance getContentPane() {
-    return (IComponentInstance)this.getChild(IComponentInstance.class, IDEDialog.CONTENT_PANE);
+    return (IComponentInstance) this.getChild(IComponentInstance.class, IDEDialog.CONTENT_PANE);
   }
 
   public void setContentPane(IComponentInstance node) {
@@ -125,7 +125,7 @@ public class IDEDialog extends BaseConcept implements IComponentInstance {
   }
 
   public static IDEDialog newInstance(SModel sm, boolean init) {
-    return (IDEDialog)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.IDEDialog", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IDEDialog) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.IDEDialog", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IDEDialog newInstance(SModel sm) {

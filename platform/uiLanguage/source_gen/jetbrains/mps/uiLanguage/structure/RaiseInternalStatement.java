@@ -18,7 +18,7 @@ public class RaiseInternalStatement extends Statement {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(Expression.class, RaiseInternalStatement.ARGUMENT);
+    return (Expression) this.getChild(Expression.class, RaiseInternalStatement.ARGUMENT);
   }
 
   public void setArgument(Expression node) {
@@ -26,7 +26,7 @@ public class RaiseInternalStatement extends Statement {
   }
 
   public static RaiseInternalStatement newInstance(SModel sm, boolean init) {
-    return (RaiseInternalStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.RaiseInternalStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RaiseInternalStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.RaiseInternalStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RaiseInternalStatement newInstance(SModel sm) {

@@ -46,7 +46,7 @@ public class AttributeReferenceOperation extends BaseConcept implements IMemberO
   }
 
   public IMember getMember() {
-    return (IMember)this.getReferent(IMember.class, AttributeReferenceOperation.MEMBER);
+    return (IMember) this.getReferent(IMember.class, AttributeReferenceOperation.MEMBER);
   }
 
   public void setMember(IMember node) {
@@ -62,7 +62,7 @@ public class AttributeReferenceOperation extends BaseConcept implements IMemberO
   }
 
   public static AttributeReferenceOperation newInstance(SModel sm, boolean init) {
-    return (AttributeReferenceOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AttributeReferenceOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AttributeReferenceOperation newInstance(SModel sm) {

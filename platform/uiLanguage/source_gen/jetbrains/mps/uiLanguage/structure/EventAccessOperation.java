@@ -46,7 +46,7 @@ public class EventAccessOperation extends BaseConcept implements IMemberOperatio
   }
 
   public IMember getMember() {
-    return (IMember)this.getReferent(IMember.class, EventAccessOperation.MEMBER);
+    return (IMember) this.getReferent(IMember.class, EventAccessOperation.MEMBER);
   }
 
   public void setMember(IMember node) {
@@ -62,7 +62,7 @@ public class EventAccessOperation extends BaseConcept implements IMemberOperatio
   }
 
   public static EventAccessOperation newInstance(SModel sm, boolean init) {
-    return (EventAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.EventAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EventAccessOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.EventAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EventAccessOperation newInstance(SModel sm) {

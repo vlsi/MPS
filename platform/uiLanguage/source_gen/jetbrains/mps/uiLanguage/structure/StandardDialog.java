@@ -48,7 +48,7 @@ public class StandardDialog extends BaseConcept implements IComponentInstance {
   }
 
   public IComponentInstance getRootComponent() {
-    return (IComponentInstance)this.getChild(IComponentInstance.class, StandardDialog.ROOT_COMPONENT);
+    return (IComponentInstance) this.getChild(IComponentInstance.class, StandardDialog.ROOT_COMPONENT);
   }
 
   public void setRootComponent(IComponentInstance node) {
@@ -96,7 +96,7 @@ public class StandardDialog extends BaseConcept implements IComponentInstance {
   }
 
   public static StandardDialog newInstance(SModel sm, boolean init) {
-    return (StandardDialog)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.StandardDialog", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StandardDialog) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.StandardDialog", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StandardDialog newInstance(SModel sm) {

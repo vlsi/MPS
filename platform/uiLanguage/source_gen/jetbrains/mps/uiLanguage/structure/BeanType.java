@@ -17,7 +17,7 @@ public class BeanType extends BaseClassifierType {
   }
 
   public BeanDeclaration getBean() {
-    return (BeanDeclaration)this.getReferent(BeanDeclaration.class, BeanType.BEAN);
+    return (BeanDeclaration) this.getReferent(BeanDeclaration.class, BeanType.BEAN);
   }
 
   public void setBean(BeanDeclaration node) {
@@ -25,7 +25,7 @@ public class BeanType extends BaseClassifierType {
   }
 
   public static BeanType newInstance(SModel sm, boolean init) {
-    return (BeanType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BeanType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BeanType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BeanType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BeanType newInstance(SModel sm) {

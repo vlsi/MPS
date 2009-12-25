@@ -52,7 +52,7 @@ public class DialogDimensions extends BaseConcept {
   }
 
   public static DialogDimensions newInstance(SModel sm, boolean init) {
-    return (DialogDimensions)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.DialogDimensions", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DialogDimensions) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.DialogDimensions", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DialogDimensions newInstance(SModel sm) {

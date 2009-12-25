@@ -44,7 +44,7 @@ public class InlineRenderer extends BaseConcept implements IComponentPart {
   }
 
   public ComponentInstance getRenderer() {
-    return (ComponentInstance)this.getChild(ComponentInstance.class, InlineRenderer.RENDERER);
+    return (ComponentInstance) this.getChild(ComponentInstance.class, InlineRenderer.RENDERER);
   }
 
   public void setRenderer(ComponentInstance node) {
@@ -52,7 +52,7 @@ public class InlineRenderer extends BaseConcept implements IComponentPart {
   }
 
   public static InlineRenderer newInstance(SModel sm, boolean init) {
-    return (InlineRenderer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.InlineRenderer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InlineRenderer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.InlineRenderer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InlineRenderer newInstance(SModel sm) {

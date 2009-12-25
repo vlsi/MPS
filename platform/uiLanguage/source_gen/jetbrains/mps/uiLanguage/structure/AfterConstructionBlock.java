@@ -18,7 +18,7 @@ public class AfterConstructionBlock extends BaseConcept {
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, AfterConstructionBlock.BODY);
+    return (StatementList) this.getChild(StatementList.class, AfterConstructionBlock.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -26,7 +26,7 @@ public class AfterConstructionBlock extends BaseConcept {
   }
 
   public static AfterConstructionBlock newInstance(SModel sm, boolean init) {
-    return (AfterConstructionBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AfterConstructionBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AfterConstructionBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AfterConstructionBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AfterConstructionBlock newInstance(SModel sm) {

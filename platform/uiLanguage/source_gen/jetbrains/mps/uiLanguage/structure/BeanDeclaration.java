@@ -121,7 +121,7 @@ public class BeanDeclaration extends BaseConcept implements IClassifier, INamedC
   }
 
   public static BeanDeclaration newInstance(SModel sm, boolean init) {
-    return (BeanDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BeanDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BeanDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BeanDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BeanDeclaration newInstance(SModel sm) {

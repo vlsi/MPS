@@ -16,7 +16,7 @@ public class DialogExpression extends Expression {
   }
 
   public static DialogExpression newInstance(SModel sm, boolean init) {
-    return (DialogExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.DialogExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DialogExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.DialogExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DialogExpression newInstance(SModel sm) {

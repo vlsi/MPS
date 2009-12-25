@@ -57,7 +57,7 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
   }
 
   public ComponentDeclaration getComponentDeclaration() {
-    return (ComponentDeclaration)this.getReferent(ComponentDeclaration.class, ComponentInstance.COMPONENT_DECLARATION);
+    return (ComponentDeclaration) this.getReferent(ComponentDeclaration.class, ComponentInstance.COMPONENT_DECLARATION);
   }
 
   public void setComponentDeclaration(ComponentDeclaration node) {
@@ -85,7 +85,7 @@ public class ComponentInstance extends BaseConcept implements IComponentPart, IC
   }
 
   public static ComponentInstance newInstance(SModel sm, boolean init) {
-    return (ComponentInstance)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComponentInstance) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComponentInstance newInstance(SModel sm) {

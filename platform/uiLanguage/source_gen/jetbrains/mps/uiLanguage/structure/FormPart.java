@@ -26,7 +26,7 @@ public class FormPart extends BaseConcept {
   }
 
   public IComponentPart getContent() {
-    return (IComponentPart)this.getChild(IComponentPart.class, FormPart.CONTENT);
+    return (IComponentPart) this.getChild(IComponentPart.class, FormPart.CONTENT);
   }
 
   public void setContent(IComponentPart node) {
@@ -34,7 +34,7 @@ public class FormPart extends BaseConcept {
   }
 
   public static FormPart newInstance(SModel sm, boolean init) {
-    return (FormPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.FormPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FormPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.FormPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FormPart newInstance(SModel sm) {

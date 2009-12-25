@@ -46,7 +46,7 @@ public class RaiseOperation extends BaseConcept implements IOperation {
   }
 
   public Expression getArgument() {
-    return (Expression)this.getChild(Expression.class, RaiseOperation.ARGUMENT);
+    return (Expression) this.getChild(Expression.class, RaiseOperation.ARGUMENT);
   }
 
   public void setArgument(Expression node) {
@@ -54,7 +54,7 @@ public class RaiseOperation extends BaseConcept implements IOperation {
   }
 
   public static RaiseOperation newInstance(SModel sm, boolean init) {
-    return (RaiseOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.RaiseOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RaiseOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.RaiseOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RaiseOperation newInstance(SModel sm) {

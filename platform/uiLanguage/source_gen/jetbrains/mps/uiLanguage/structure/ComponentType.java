@@ -17,7 +17,7 @@ public class ComponentType extends BaseClassifierType {
   }
 
   public ComponentDeclaration getComponent() {
-    return (ComponentDeclaration)this.getReferent(ComponentDeclaration.class, ComponentType.COMPONENT);
+    return (ComponentDeclaration) this.getReferent(ComponentDeclaration.class, ComponentType.COMPONENT);
   }
 
   public void setComponent(ComponentDeclaration node) {
@@ -25,7 +25,7 @@ public class ComponentType extends BaseClassifierType {
   }
 
   public static ComponentType newInstance(SModel sm, boolean init) {
-    return (ComponentType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComponentType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComponentType newInstance(SModel sm) {

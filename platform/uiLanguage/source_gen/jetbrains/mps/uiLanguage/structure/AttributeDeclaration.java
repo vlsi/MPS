@@ -58,7 +58,7 @@ public class AttributeDeclaration extends BaseConcept implements IMember {
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, AttributeDeclaration.TYPE);
+    return (Type) this.getChild(Type.class, AttributeDeclaration.TYPE);
   }
 
   public void setType(Type node) {
@@ -66,7 +66,7 @@ public class AttributeDeclaration extends BaseConcept implements IMember {
   }
 
   public Expression getInitializer() {
-    return (Expression)this.getChild(Expression.class, AttributeDeclaration.INITIALIZER);
+    return (Expression) this.getChild(Expression.class, AttributeDeclaration.INITIALIZER);
   }
 
   public void setInitializer(Expression node) {
@@ -74,7 +74,7 @@ public class AttributeDeclaration extends BaseConcept implements IMember {
   }
 
   public Expression getOnChange() {
-    return (Expression)this.getChild(Expression.class, AttributeDeclaration.ON_CHANGE);
+    return (Expression) this.getChild(Expression.class, AttributeDeclaration.ON_CHANGE);
   }
 
   public void setOnChange(Expression node) {
@@ -82,7 +82,7 @@ public class AttributeDeclaration extends BaseConcept implements IMember {
   }
 
   public static AttributeDeclaration newInstance(SModel sm, boolean init) {
-    return (AttributeDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AttributeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AttributeDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AttributeDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AttributeDeclaration newInstance(SModel sm) {

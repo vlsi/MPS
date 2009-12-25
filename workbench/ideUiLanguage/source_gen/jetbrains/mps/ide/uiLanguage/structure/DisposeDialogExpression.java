@@ -16,7 +16,7 @@ public class DisposeDialogExpression extends Expression {
   }
 
   public static DisposeDialogExpression newInstance(SModel sm, boolean init) {
-    return (DisposeDialogExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DisposeDialogExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ide.uiLanguage.structure.DisposeDialogExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DisposeDialogExpression newInstance(SModel sm) {

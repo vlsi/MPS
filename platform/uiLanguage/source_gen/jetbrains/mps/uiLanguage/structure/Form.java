@@ -87,7 +87,7 @@ public class Form extends BaseConcept implements IComponentPart, IComponentInsta
   }
 
   public static Form newInstance(SModel sm, boolean init) {
-    return (Form)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.Form", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Form) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.Form", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Form newInstance(SModel sm) {

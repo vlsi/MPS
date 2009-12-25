@@ -45,7 +45,7 @@ public class ListElements extends BaseConcept implements IComponentPart {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, ListElements.VALUE);
+    return (Expression) this.getChild(Expression.class, ListElements.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -53,7 +53,7 @@ public class ListElements extends BaseConcept implements IComponentPart {
   }
 
   public static ListElements newInstance(SModel sm, boolean init) {
-    return (ListElements)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ListElements", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ListElements) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ListElements", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ListElements newInstance(SModel sm) {

@@ -45,7 +45,7 @@ public class ActionHandler extends BaseConcept implements IComponentPart {
   }
 
   public Expression getHandler() {
-    return (Expression)this.getChild(Expression.class, ActionHandler.HANDLER);
+    return (Expression) this.getChild(Expression.class, ActionHandler.HANDLER);
   }
 
   public void setHandler(Expression node) {
@@ -53,7 +53,7 @@ public class ActionHandler extends BaseConcept implements IComponentPart {
   }
 
   public static ActionHandler newInstance(SModel sm, boolean init) {
-    return (ActionHandler)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ActionHandler", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ActionHandler) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ActionHandler", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ActionHandler newInstance(SModel sm) {

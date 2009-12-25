@@ -18,7 +18,7 @@ public class EventHandlerReference extends Expression {
   }
 
   public DefaultClassifierMethodDeclaration getHandler() {
-    return (DefaultClassifierMethodDeclaration)this.getReferent(DefaultClassifierMethodDeclaration.class, EventHandlerReference.HANDLER);
+    return (DefaultClassifierMethodDeclaration) this.getReferent(DefaultClassifierMethodDeclaration.class, EventHandlerReference.HANDLER);
   }
 
   public void setHandler(DefaultClassifierMethodDeclaration node) {
@@ -26,7 +26,7 @@ public class EventHandlerReference extends Expression {
   }
 
   public static EventHandlerReference newInstance(SModel sm, boolean init) {
-    return (EventHandlerReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.EventHandlerReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EventHandlerReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.EventHandlerReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EventHandlerReference newInstance(SModel sm) {

@@ -22,7 +22,7 @@ public class BeanCreator extends AbstractCreator {
   }
 
   public ConstructorDeclaration getConstructor() {
-    return (ConstructorDeclaration)this.getReferent(ConstructorDeclaration.class, BeanCreator.CONSTRUCTOR);
+    return (ConstructorDeclaration) this.getReferent(ConstructorDeclaration.class, BeanCreator.CONSTRUCTOR);
   }
 
   public void setConstructor(ConstructorDeclaration node) {
@@ -50,7 +50,7 @@ public class BeanCreator extends AbstractCreator {
   }
 
   public static BeanCreator newInstance(SModel sm, boolean init) {
-    return (BeanCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BeanCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BeanCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.BeanCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BeanCreator newInstance(SModel sm) {

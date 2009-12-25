@@ -16,7 +16,7 @@ public class RenderingObject extends Expression {
   }
 
   public static RenderingObject newInstance(SModel sm, boolean init) {
-    return (RenderingObject)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.RenderingObject", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RenderingObject) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.RenderingObject", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RenderingObject newInstance(SModel sm) {

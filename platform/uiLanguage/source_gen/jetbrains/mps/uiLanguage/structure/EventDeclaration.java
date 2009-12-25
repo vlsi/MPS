@@ -57,7 +57,7 @@ public class EventDeclaration extends BaseConcept implements IMember {
   }
 
   public ParameterDeclaration getParameter() {
-    return (ParameterDeclaration)this.getChild(ParameterDeclaration.class, EventDeclaration.PARAMETER);
+    return (ParameterDeclaration) this.getChild(ParameterDeclaration.class, EventDeclaration.PARAMETER);
   }
 
   public void setParameter(ParameterDeclaration node) {
@@ -65,7 +65,7 @@ public class EventDeclaration extends BaseConcept implements IMember {
   }
 
   public StatementList getInitializer() {
-    return (StatementList)this.getChild(StatementList.class, EventDeclaration.INITIALIZER);
+    return (StatementList) this.getChild(StatementList.class, EventDeclaration.INITIALIZER);
   }
 
   public void setInitializer(StatementList node) {
@@ -73,7 +73,7 @@ public class EventDeclaration extends BaseConcept implements IMember {
   }
 
   public static EventDeclaration newInstance(SModel sm, boolean init) {
-    return (EventDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.EventDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EventDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.EventDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EventDeclaration newInstance(SModel sm) {

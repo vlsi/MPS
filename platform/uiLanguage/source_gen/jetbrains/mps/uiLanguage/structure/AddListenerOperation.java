@@ -16,7 +16,7 @@ public class AddListenerOperation extends BinaryOperation {
   }
 
   public static AddListenerOperation newInstance(SModel sm, boolean init) {
-    return (AddListenerOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AddListenerOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AddListenerOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.AddListenerOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AddListenerOperation newInstance(SModel sm) {

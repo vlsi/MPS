@@ -17,7 +17,7 @@ public class ComponentReference extends Expression {
   }
 
   public ComponentInstance getComponent() {
-    return (ComponentInstance)this.getReferent(ComponentInstance.class, ComponentReference.COMPONENT);
+    return (ComponentInstance) this.getReferent(ComponentInstance.class, ComponentReference.COMPONENT);
   }
 
   public void setComponent(ComponentInstance node) {
@@ -25,7 +25,7 @@ public class ComponentReference extends Expression {
   }
 
   public static ComponentReference newInstance(SModel sm, boolean init) {
-    return (ComponentReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComponentReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.uiLanguage.structure.ComponentReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComponentReference newInstance(SModel sm) {
