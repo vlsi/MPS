@@ -17,7 +17,7 @@ public class GStatementItem extends GItem {
   }
 
   public StatementList getStatementList() {
-    return (StatementList)this.getChild(StatementList.class, GStatementItem.STATEMENT_LIST);
+    return (StatementList) this.getChild(StatementList.class, GStatementItem.STATEMENT_LIST);
   }
 
   public void setStatementList(StatementList node) {
@@ -25,7 +25,7 @@ public class GStatementItem extends GItem {
   }
 
   public static GStatementItem newInstance(SModel sm, boolean init) {
-    return (GStatementItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GStatementItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GStatementItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GStatementItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GStatementItem newInstance(SModel sm) {

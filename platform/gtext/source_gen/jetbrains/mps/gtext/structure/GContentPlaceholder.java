@@ -52,7 +52,7 @@ public class GContentPlaceholder extends GItem implements INamedConcept {
   }
 
   public static GContentPlaceholder newInstance(SModel sm, boolean init) {
-    return (GContentPlaceholder)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GContentPlaceholder", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GContentPlaceholder) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GContentPlaceholder", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GContentPlaceholder newInstance(SModel sm) {

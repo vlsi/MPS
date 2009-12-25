@@ -16,7 +16,7 @@ public class GIndentBlock extends GItem {
   }
 
   public GItemList getItemList() {
-    return (GItemList)this.getChild(GItemList.class, GIndentBlock.ITEM_LIST);
+    return (GItemList) this.getChild(GItemList.class, GIndentBlock.ITEM_LIST);
   }
 
   public void setItemList(GItemList node) {
@@ -24,7 +24,7 @@ public class GIndentBlock extends GItem {
   }
 
   public static GIndentBlock newInstance(SModel sm, boolean init) {
-    return (GIndentBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GIndentBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GIndentBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GIndentBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GIndentBlock newInstance(SModel sm) {

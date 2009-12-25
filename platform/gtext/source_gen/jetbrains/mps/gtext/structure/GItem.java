@@ -43,7 +43,7 @@ public class GItem extends BaseConcept implements GTextConcept {
   }
 
   public static GItem newInstance(SModel sm, boolean init) {
-    return (GItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GItem newInstance(SModel sm) {

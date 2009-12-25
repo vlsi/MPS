@@ -94,7 +94,7 @@ public class GDocument extends BaseConcept implements INamedConcept {
   }
 
   public static GDocument newInstance(SModel sm, boolean init) {
-    return (GDocument)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GDocument", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GDocument) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GDocument", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GDocument newInstance(SModel sm) {

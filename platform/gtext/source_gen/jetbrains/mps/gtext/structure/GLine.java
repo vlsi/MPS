@@ -65,7 +65,7 @@ public class GLine extends GItem implements GCompositeItem {
   }
 
   public static GLine newInstance(SModel sm, boolean init) {
-    return (GLine)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GLine", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GLine) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GLine", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GLine newInstance(SModel sm) {

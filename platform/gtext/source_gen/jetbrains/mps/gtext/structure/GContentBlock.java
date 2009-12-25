@@ -75,7 +75,7 @@ public class GContentBlock extends GItem implements INamedConcept, GCompositeIte
   }
 
   public static GContentBlock newInstance(SModel sm, boolean init) {
-    return (GContentBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GContentBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GContentBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GContentBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GContentBlock newInstance(SModel sm) {

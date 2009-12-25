@@ -15,7 +15,7 @@ public class GNewLine extends GItem {
   }
 
   public static GNewLine newInstance(SModel sm, boolean init) {
-    return (GNewLine)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GNewLine", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GNewLine) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GNewLine", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GNewLine newInstance(SModel sm) {

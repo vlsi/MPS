@@ -17,7 +17,7 @@ public class GExpressionItem extends GItem {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, GExpressionItem.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, GExpressionItem.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -25,7 +25,7 @@ public class GExpressionItem extends GItem {
   }
 
   public static GExpressionItem newInstance(SModel sm, boolean init) {
-    return (GExpressionItem)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GExpressionItem", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GExpressionItem) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GExpressionItem", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GExpressionItem newInstance(SModel sm) {

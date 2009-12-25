@@ -46,7 +46,7 @@ public class GSeparatorItemList extends GItem implements GCompositeItem {
   }
 
   public GItem getSeparator() {
-    return (GItem)this.getChild(GItem.class, GSeparatorItemList.SEPARATOR);
+    return (GItem) this.getChild(GItem.class, GSeparatorItemList.SEPARATOR);
   }
 
   public void setSeparator(GItem node) {
@@ -74,7 +74,7 @@ public class GSeparatorItemList extends GItem implements GCompositeItem {
   }
 
   public static GSeparatorItemList newInstance(SModel sm, boolean init) {
-    return (GSeparatorItemList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GSeparatorItemList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GSeparatorItemList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GSeparatorItemList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GSeparatorItemList newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class GIndent extends GItem {
   }
 
   public static GIndent newInstance(SModel sm, boolean init) {
-    return (GIndent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GIndent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GIndent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GIndent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GIndent newInstance(SModel sm) {

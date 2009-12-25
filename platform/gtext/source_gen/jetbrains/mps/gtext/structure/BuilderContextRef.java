@@ -43,7 +43,7 @@ public class BuilderContextRef extends Expression implements GTextConcept {
   }
 
   public static BuilderContextRef newInstance(SModel sm, boolean init) {
-    return (BuilderContextRef)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.BuilderContextRef", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BuilderContextRef) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.BuilderContextRef", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BuilderContextRef newInstance(SModel sm) {
