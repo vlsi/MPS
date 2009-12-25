@@ -27,6 +27,7 @@ public class ProjectActions_ActionGroup extends GeneratedActionGroup {
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CleanProject_Action", "jetbrains.mps.ide");
       ProjectActions_ActionGroup.this.addAnchor(ProjectActions_ActionGroup.LABEL_ID_runConfig);
       ProjectActions_ActionGroup.this.addSeparator();
+      ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModelPersistenceInProject_Action", "jetbrains.mps.ide");
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.OptimizeProjectImports_Action", "jetbrains.mps.ide");
       ProjectActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MPSProjectPaths_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {

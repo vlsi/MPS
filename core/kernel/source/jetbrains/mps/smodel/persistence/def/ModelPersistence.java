@@ -38,6 +38,7 @@ import jetbrains.mps.smodel.persistence.def.v4.ModelReader4;
 import jetbrains.mps.smodel.persistence.def.v4.ModelWriter4;
 import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.Condition;
 import static jetbrains.mps.util.JDOMUtil.loadDocument;
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
@@ -152,22 +153,10 @@ public class ModelPersistence {
       return false;
     }
     if (modelPersistenceVersion < getCurrentPersistenceVersion()) {
-      if (getPersistenceSettings().isUserPersistenceVersionDefined() /*|| ApplicationManager.getApplication().isUnitTestMode()*/) {
+      if (getPersistenceSettings().isUserPersistenceVersionDefined()) {
         return true; //user already decided to convert models now
       } else {
-        return true;
-        //undefined persistence version; user may want to upgrade models persistence
-//        int option = JOptionPane.showConfirmDialog(null,
-//          "Do you want to upgrade your models persistence level from "
-//            + modelPersistenceVersion + " to persistence level " + currentApplicationPersistenceVersion + " ?",
-//          "Upgrade Model Persistence", JOptionPane.YES_NO_OPTION);
-//        if (option == JOptionPane.YES_OPTION) {
-//          getPersistenceSettings().setMaxPersistenceVersion();
-//          return true;
-//        } else if (option == JOptionPane.NO_OPTION) {
-//          getPersistenceSettings().setUserPersistenceVersion(modelPersistenceVersion);
-//          return false;
-//        }
+        return false; //do not show dialog, for it causes deadlock
       }        
     }
     return false;
@@ -177,17 +166,28 @@ public class ModelPersistence {
   public static SModel readModel(@NotNull IFile file) {
     LOG.debug("ModelPersistence readModel from :" + file.getAbsolutePath());
 
+
+
+    Condition<Integer> needsUpgradeCondition = new Condition<Integer>() {
+      @Override
+      public boolean met(Integer version) {
+        return needsUpgrade(version);
+      }
+    };
+    SModel model = readModelUpgradeByCondition(file, needsUpgradeCondition, getCurrentPersistenceVersion());
+    return model;
+  }
+
+  @NotNull
+  public static SModel readModelUpgradeByCondition(@NotNull IFile file, Condition<Integer> needsUpgradeCondition, int toVersion) {
     // the model FQ name ...
     String modelName = extractModelName(file.getName());
     String modelStereotype = extractModelStereotype(file.getName());
-
     Document document = loadModelDocument(file);
     int modelPersistenceVersion = getModelPersistenceVersion(document);
     SModel model = modelReaders.get(modelPersistenceVersion).readModel(document, modelName, modelStereotype);
-    if (needsUpgrade(modelPersistenceVersion)) {
-      model = upgradeModelPersistence(model, modelPersistenceVersion);
-      modelPersistenceVersion = currentApplicationPersistenceVersion;
-      model.setPersistenceVersion(modelPersistenceVersion);
+    if (needsUpgradeCondition.met(modelPersistenceVersion)) {
+      model = upgradeModelPersistence(model, modelPersistenceVersion, toVersion); //sets persistence version
       document = saveModel(model, false);
       try {
         JDOMUtil.writeDocument(document, file);
@@ -242,10 +242,6 @@ public class ModelPersistence {
     return modelReaders.get(modelPersistenceVersion).readModel(doc, modelShortName, modelStereotype);
   }
 
-  private static SModel upgradeModelPersistence(SModel model, int fromVersion) {
-    return upgradeModelPersistence(model, fromVersion, currentApplicationPersistenceVersion);
-  }
-
   public static SModel upgradeModelPersistence(SModel model, int fromVersion, int toVersion) {
     SModelReference reference = model.getSModelReference();
     int version = fromVersion;
@@ -256,7 +252,14 @@ public class ModelPersistence {
       model = modelReaders.get(version).readModel(document, reference.getShortName(), reference.getStereotype());
     }
     LOG.info("persistence upgraded: " + fromVersion + "->" + toVersion + " " + reference);
+    model.setPersistenceVersion(toVersion);
     return model;
+  }
+
+  static int getModelPersistenceVersion(IFile file) {
+    Document document = loadModelDocument(file);
+    int modelPersistenceVersion = getModelPersistenceVersion(document);
+    return modelPersistenceVersion;
   }
 
   private static int getModelPersistenceVersion(Document document) {

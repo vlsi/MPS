@@ -41,6 +41,7 @@ public abstract class DefaultScope extends BaseScope {
 
   private Map<SModelFqName, SModelDescriptor> myFqNameToDescriptor = new HashMap<SModelFqName, SModelDescriptor>();
   private Map<SModelId, SModelDescriptor> myIdToDescriptor = new HashMap<SModelId, SModelDescriptor>();
+  private Set<SModelDescriptor> myOwnModelDescriptors = new HashSet<SModelDescriptor>();
 
   public SModelDescriptor getModelDescriptor(SModelReference modelReference) {
     if (modelReference == null) {
@@ -56,6 +57,12 @@ public abstract class DefaultScope extends BaseScope {
   public List<SModelDescriptor> getModelDescriptors() {
     initialize();
     return new ArrayList<SModelDescriptor>(myFqNameToDescriptor.values());
+  }
+
+  @Override
+  public List<SModelDescriptor> getOwnModelDescriptors() {
+    initialize();
+    return new ArrayList<SModelDescriptor>(myOwnModelDescriptors);
   }
 
   public List<Language> getVisibleLanguages() {
@@ -103,6 +110,7 @@ public abstract class DefaultScope extends BaseScope {
     myIdToDevKit.clear();
     myFqNameToDescriptor.clear();
     myIdToDescriptor.clear();
+    myOwnModelDescriptors.clear();
     myInitialized = false;
   }
 
@@ -115,6 +123,7 @@ public abstract class DefaultScope extends BaseScope {
     Set<IModule> visibleModules = new HashSet<IModule>();
     visibleModules.addAll(getInitialModules());
     for (IModule module : getInitialModules()) {
+      myOwnModelDescriptors.addAll(module.getOwnModelDescriptors());
       for (Dependency d : module.getDependOn()) {
         IModule dependency = MPSModuleRepository.getInstance().getModule(d.getModuleRef());
         if (dependency != null) {

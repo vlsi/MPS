@@ -19,6 +19,8 @@ import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
+import java.util.List;
+
 public abstract class BaseScope implements IScope {
   public final SModelDescriptor getModelDescriptor(SModelId modelId) {
     return getModelDescriptor(new SModelReference(null, modelId));
@@ -66,5 +68,10 @@ public abstract class BaseScope implements IScope {
 
   public final boolean isVisibleDevKit(ModuleId moduleId) {
     return isVisibleDevKit(new ModuleReference(null, moduleId));
+  }
+
+  @Override
+  public List<SModelDescriptor> getOwnModelDescriptors() {
+    return getModelDescriptors();
   }
 }

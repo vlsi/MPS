@@ -35,6 +35,8 @@ public interface IScope {
 
   List<SModelDescriptor> getModelDescriptors();
 
+  List<SModelDescriptor> getOwnModelDescriptors();
+
   Language getLanguage(ModuleReference moduleReference);
 
   Language getLanguage(ModuleId moduleId);

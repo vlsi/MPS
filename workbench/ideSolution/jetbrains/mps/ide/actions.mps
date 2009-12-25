@@ -385,8 +385,8 @@
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.GroupAnchor:23" id="1222173595836">
         <property name="name:23" value="refactoring" />
       </node>
-      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="786185644669475502">
-        <link role="action:23" targetNodeId="8956537184755222668" resolveInfo="UpgradeModelPersistence" />
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="3905468763930415933">
+        <link role="action:23" targetNodeId="3905468763930344101" resolveInfo="UpgradeModelPersistenceInModel" />
       </node>
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.Separator:23" id="1221757534230" />
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.GroupAnchor:23" id="1221757535813">
@@ -444,6 +444,9 @@
         <property name="name:23" value="runConfig" />
       </node>
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.Separator:23" id="1208361663328" />
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="3905468763930416034">
+        <link role="action:23" targetNodeId="3905468763930416010" resolveInfo="UpgradeModelPersistenceInProject" />
+      </node>
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="1215889588091">
         <link role="action:23" targetNodeId="1215889139721" resolveInfo="OptimizeProjectImports" />
       </node>
@@ -553,6 +556,9 @@
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.GroupAnchor:23" id="1222348086225">
         <property name="name:23" value="refactoring" />
       </node>
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="3905468763930416009">
+        <link role="action:23" targetNodeId="3905468763930415934" resolveInfo="UpgradeModelPersistenceInModule" />
+      </node>
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.Separator:23" id="1222348864979" />
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.GroupAnchor:23" id="1234535901004">
         <property name="name:23" value="vcs" />
@@ -658,6 +664,9 @@
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.GroupAnchor:23" id="1223018940901">
         <property name="name:23" value="refactoring" />
       </node>
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="3905468763930416007">
+        <link role="action:23" targetNodeId="3905468763930415934" resolveInfo="UpgradeModelPersistenceInModule" />
+      </node>
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.Separator:23" id="1223020731536" />
     </node>
   </node>
@@ -701,6 +710,9 @@
       </node>
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="1236184333509">
         <link role="action:23" targetNodeId="1236184251962" resolveInfo="CopyModuleName" />
+      </node>
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="3905468763930416005">
+        <link role="action:23" targetNodeId="3905468763930415934" resolveInfo="UpgradeModelPersistenceInModule" />
       </node>
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.Separator:23" id="1216226754723" />
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="1215875829830">
@@ -1081,6 +1093,9 @@
         <link role="action:23" targetNodeId="1241021719293" resolveInfo="RenameAspects" />
       </node>
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.Separator:23" id="1206351971744" />
+      <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionInstance:23" id="3905468763930416056">
+        <link role="action:23" targetNodeId="3905468763930416035" resolveInfo="UpgradeModelPersistenceGlobally" />
+      </node>
       <node role="reference:23" type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1205164534403">
         <property name="name:23" value="Internal" />
         <property name="caption:23" value="Internal" />
@@ -45799,81 +45814,206 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="8956537184755222668">
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="3905468763930344101">
     <property name="package:23" value="Menu.ProjectPane.Model.Actions" />
-    <property name="name:23" value="UpgradeModelPersistence" />
+    <property name="name:23" value="UpgradeModelPersistenceInModel" />
     <property name="caption:23" value="Upgrade Model Persistence" />
-    <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="8956537184755222669">
-      <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8956537184755222670">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8956537184755376918">
-          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8956537184755376919">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8956537184755376929">
-              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8956537184755376930">
-                <property name="name:3" value="defaultSModelDescriptor" />
-                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8956537184755376931">
-                  <link role="classifier:3" targetNodeId="40.~DefaultSModelDescriptor" resolveInfo="DefaultSModelDescriptor" />
-                </node>
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="8956537184755377277">
-                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8956537184755377278">
-                    <link role="classifier:3" targetNodeId="40.~DefaultSModelDescriptor" resolveInfo="DefaultSModelDescriptor" />
-                  </node>
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8956537184755377280">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="8956537184755377281" />
-                    <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="8956537184755377282">
-                      <link role="member:23" targetNodeId="8956537184755334059" resolveInfo="modelDescriptor" />
-                    </node>
-                  </node>
-                </node>
-              </node>
+    <property name="outsideCommandExecution:23" value="true" />
+    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="3905468763930377316">
+      <property name="name:23" value="mainFrame" />
+      <link role="key:23" targetNodeId="107.~MPSDataKeys.FRAME" resolveInfo="FRAME" />
+    </node>
+    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="3905468763930377318">
+      <property name="name:23" value="modelDescriptor" />
+      <link role="key:23" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+    </node>
+    <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="3905468763930344102">
+      <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3905468763930344103">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3905468763930405495">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3905468763930405496">
+            <property name="name:3" value="persistenceUpdater" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3905468763930405497">
+              <link role="classifier:3" targetNodeId="97.~PersistenceUpdater" resolveInfo="PersistenceUpdater" />
             </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8956537184755377288">
-              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8956537184755377289">
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8956537184755377290">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8956537184755377291">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8956537184755447649">
-                      <link role="variableDeclaration:3" targetNodeId="8956537184755376930" resolveInfo="defaultSModelDescriptor" />
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8956537184755447650">
-                      <link role="baseMethodDeclaration:3" targetNodeId="40.~DefaultSModelDescriptor.upgradeModelPersistence(int):void" resolveInfo="upgradeModelPersistence" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8956537184755447651">
-                        <property name="value:3" value="4" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="8956537184755447645">
-                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8956537184755447648">
-                  <property name="value:3" value="3" />
-                </node>
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8956537184755377298">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8956537184755377297">
-                    <link role="variableDeclaration:3" targetNodeId="8956537184755376930" resolveInfo="defaultSModelDescriptor" />
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8956537184755377302">
-                    <link role="baseMethodDeclaration:3" targetNodeId="40.~DefaultSModelDescriptor.getSModelPersistenceVersion():int" resolveInfo="getSModelPersistenceVersion" />
-                  </node>
-                </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3905468763930405499">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3905468763930405500">
+                <link role="baseMethodDeclaration:3" targetNodeId="97.~PersistenceUpdater.&lt;init&gt;()" resolveInfo="PersistenceUpdater" />
               </node>
             </node>
           </node>
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.InstanceOfExpression:3" id="8956537184755376925">
-            <node role="classType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8956537184755376928">
-              <link role="classifier:3" targetNodeId="40.~DefaultSModelDescriptor" resolveInfo="DefaultSModelDescriptor" />
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3905468763930405502">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3905468763930405504">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3905468763930405503">
+              <link role="variableDeclaration:3" targetNodeId="3905468763930405496" resolveInfo="persistenceUpdater" />
             </node>
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8956537184755376922">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="8956537184755376923" />
-              <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="8956537184755376924">
-                <link role="member:23" targetNodeId="8956537184755334059" resolveInfo="modelDescriptor" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3905468763930405508">
+              <link role="baseMethodDeclaration:3" targetNodeId="97.~PersistenceUpdater.upgradePersistenceInModel(jetbrains.mps.smodel.SModelDescriptor,java.awt.Frame):void" resolveInfo="upgradePersistenceInModel" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3905468763930415923">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="3905468763930415924" />
+                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="3905468763930415925">
+                  <link role="member:23" targetNodeId="3905468763930377318" resolveInfo="modelDescriptor" />
+                </node>
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3905468763930415927">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="3905468763930415928" />
+                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="3905468763930415929">
+                  <link role="member:23" targetNodeId="3905468763930377316" resolveInfo="mainFrame" />
+                </node>
               </node>
             </node>
           </node>
         </node>
       </node>
     </node>
-    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="8956537184755334059">
-      <property name="name:23" value="modelDescriptor" />
-      <link role="key:23" targetNodeId="107.~MPSDataKeys.MODEL" resolveInfo="MODEL" />
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="3905468763930415934">
+    <property name="package:23" value="Menu.ProjectPane.Module.Actions" />
+    <property name="name:23" value="UpgradeModelPersistenceInModule" />
+    <property name="caption:23" value="Upgrade Models Persistence" />
+    <property name="outsideCommandExecution:23" value="true" />
+    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="3905468763930415935">
+      <property name="name:23" value="mainFrame" />
+      <link role="key:23" targetNodeId="107.~MPSDataKeys.FRAME" resolveInfo="FRAME" />
+    </node>
+    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="3905468763930415955">
+      <property name="name:23" value="module" />
+      <link role="key:23" targetNodeId="107.~MPSDataKeys.MODULE" resolveInfo="MODULE" />
+    </node>
+    <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="3905468763930415937">
+      <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3905468763930415938">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3905468763930415939">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3905468763930415940">
+            <property name="name:3" value="persistenceUpdater" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3905468763930415941">
+              <link role="classifier:3" targetNodeId="97.~PersistenceUpdater" resolveInfo="PersistenceUpdater" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3905468763930415942">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3905468763930415943">
+                <link role="baseMethodDeclaration:3" targetNodeId="97.~PersistenceUpdater.&lt;init&gt;()" resolveInfo="PersistenceUpdater" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3905468763930415944">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3905468763930415945">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3905468763930415946">
+              <link role="variableDeclaration:3" targetNodeId="3905468763930415940" resolveInfo="persistenceUpdater" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3905468763930415947">
+              <link role="baseMethodDeclaration:3" targetNodeId="97.~PersistenceUpdater.upgradePersistenceInModule(jetbrains.mps.project.IModule,java.awt.Frame):void" resolveInfo="upgradePersistenceInModule" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3905468763930415948">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="3905468763930415949" />
+                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="3905468763930416003">
+                  <link role="member:23" targetNodeId="3905468763930415955" resolveInfo="module" />
+                </node>
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3905468763930415951">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="3905468763930415952" />
+                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="3905468763930415953">
+                  <link role="member:23" targetNodeId="3905468763930415935" resolveInfo="mainFrame" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="3905468763930416010">
+    <property name="package:23" value="Menu.ProjectPane.Project.Actions" />
+    <property name="name:23" value="UpgradeModelPersistenceInProject" />
+    <property name="caption:23" value="Upgrade Models Persistence" />
+    <property name="outsideCommandExecution:23" value="true" />
+    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="3905468763930416011">
+      <property name="name:23" value="mainFrame" />
+      <link role="key:23" targetNodeId="107.~MPSDataKeys.FRAME" resolveInfo="FRAME" />
+    </node>
+    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="3905468763930416031">
+      <property name="name:23" value="mpsProject" />
+      <link role="key:23" targetNodeId="107.~MPSDataKeys.MPS_PROJECT" resolveInfo="MPS_PROJECT" />
+    </node>
+    <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="3905468763930416013">
+      <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3905468763930416014">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3905468763930416015">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3905468763930416016">
+            <property name="name:3" value="persistenceUpdater" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3905468763930416017">
+              <link role="classifier:3" targetNodeId="97.~PersistenceUpdater" resolveInfo="PersistenceUpdater" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3905468763930416018">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3905468763930416019">
+                <link role="baseMethodDeclaration:3" targetNodeId="97.~PersistenceUpdater.&lt;init&gt;()" resolveInfo="PersistenceUpdater" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3905468763930416020">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3905468763930416021">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3905468763930416022">
+              <link role="variableDeclaration:3" targetNodeId="3905468763930416016" resolveInfo="persistenceUpdater" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3905468763930416023">
+              <link role="baseMethodDeclaration:3" targetNodeId="97.~PersistenceUpdater.upgradePersistenceInProject(jetbrains.mps.project.MPSProject,java.awt.Frame):void" resolveInfo="upgradePersistenceInProject" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3905468763930416024">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="3905468763930416025" />
+                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="3905468763930416032">
+                  <link role="member:23" targetNodeId="3905468763930416031" resolveInfo="mpsProject" />
+                </node>
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3905468763930416027">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="3905468763930416028" />
+                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="3905468763930416029">
+                  <link role="member:23" targetNodeId="3905468763930416011" resolveInfo="mainFrame" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="3905468763930416035">
+    <property name="package:23" value="Menu.MainMenu.ToolsActions" />
+    <property name="name:23" value="UpgradeModelPersistenceGlobally" />
+    <property name="caption:23" value="Upgrade Models Persistence" />
+    <property name="outsideCommandExecution:23" value="true" />
+    <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="3905468763930416036">
+      <property name="name:23" value="mainFrame" />
+      <link role="key:23" targetNodeId="107.~MPSDataKeys.FRAME" resolveInfo="FRAME" />
+    </node>
+    <node role="executeFunction:23" type="jetbrains.mps.lang.plugin.structure.ExecuteBlock:23" id="3905468763930416038">
+      <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3905468763930416039">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3905468763930416040">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3905468763930416041">
+            <property name="name:3" value="persistenceUpdater" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="3905468763930416042">
+              <link role="classifier:3" targetNodeId="97.~PersistenceUpdater" resolveInfo="PersistenceUpdater" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="3905468763930416043">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="3905468763930416044">
+                <link role="baseMethodDeclaration:3" targetNodeId="97.~PersistenceUpdater.&lt;init&gt;()" resolveInfo="PersistenceUpdater" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3905468763930416045">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3905468763930416046">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3905468763930416047">
+              <link role="variableDeclaration:3" targetNodeId="3905468763930416041" resolveInfo="persistenceUpdater" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3905468763930416048">
+              <link role="baseMethodDeclaration:3" targetNodeId="97.~PersistenceUpdater.upgradePersistenceInAllVisibleModels(java.awt.Frame):void" resolveInfo="upgradePersistenceInAllVisibleModels" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3905468763930416052">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="3905468763930416053" />
+                <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterReferenceOperation:23" id="3905468763930416054">
+                  <link role="member:23" targetNodeId="3905468763930416036" resolveInfo="mainFrame" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
     </node>
   </node>
 </model>

@@ -21,6 +21,7 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
       DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteModules_Action", "jetbrains.mps.ide");
       DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action", "jetbrains.mps.ide");
       DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action", "jetbrains.mps.ide");
+      DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModelPersistenceInModule_Action", "jetbrains.mps.ide");
       DevkitActions_ActionGroup.this.addSeparator();
       DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DevkitProperties_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {

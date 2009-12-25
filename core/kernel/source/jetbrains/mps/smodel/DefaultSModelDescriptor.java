@@ -137,15 +137,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
     return model.getPersistenceVersion();
   }
 
-  public void upgradeModelPersistence(int toVersion) {
-    SModel model = getSModel();
-    if (model != null) {
-      SModel newModel = ModelPersistence.upgradeModelPersistence(model, model.getPersistenceVersion(), toVersion);
-      mySModel = newModel;
-      save();
-    }
-  }
-
   public boolean isReadOnly() {
     String stereotype = getSModelReference().getStereotype();
     return stereotype.equals(SModelStereotype.JAVA_STUB);
