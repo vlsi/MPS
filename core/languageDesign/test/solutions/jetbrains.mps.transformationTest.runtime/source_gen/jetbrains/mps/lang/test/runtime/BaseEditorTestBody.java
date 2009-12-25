@@ -78,7 +78,7 @@ public class BaseEditorTestBody extends BaseTestBody {
     return new CellReference(this.getNodeById(SNodeOperations.getParent(ListSequence.fromList(annotations).first()).getId()), ListSequence.fromList(annotations).first(), this.myMap);
   }
 
-  public void finishTest() throws InvocationTargetException, InterruptedException {
+  public void checkAssertion() throws InvocationTargetException, InterruptedException {
     SwingUtilities.invokeAndWait(new Runnable() {
       public void run() {
         if (BaseEditorTestBody.this.myResult != null) {
@@ -93,7 +93,6 @@ public class BaseEditorTestBody extends BaseTestBody {
             }
           });
         }
-        BaseEditorTestBody.closeEditor(BaseEditorTestBody.this.myProject, BaseEditorTestBody.this.myBefore);
       }
     });
   }
@@ -101,8 +100,13 @@ public class BaseEditorTestBody extends BaseTestBody {
   public void testMethod() throws Exception {
     try {
       this.testMethodImpl();
+      this.checkAssertion();
     } finally {
-      this.finishTest();
+      SwingUtilities.invokeAndWait(new Runnable() {
+        public void run() {
+          BaseEditorTestBody.closeEditor(BaseEditorTestBody.this.myProject, BaseEditorTestBody.this.myBefore);
+        }
+      });
     }
   }
 
