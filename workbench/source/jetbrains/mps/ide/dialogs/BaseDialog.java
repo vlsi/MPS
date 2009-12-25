@@ -57,8 +57,15 @@ public abstract class BaseDialog extends JDialog {
   private boolean myPrepared = false;
 
   protected BaseDialog(Frame mainFrame, String text) throws HeadlessException {
+    this(mainFrame, text, true);
+  }
+
+  //required for invocation of "super" in descendants before initialization
+  protected BaseDialog(Frame mainFrame, String text, boolean init) throws HeadlessException {
     super(mainFrame, text, true);
-    doInit(mainFrame);
+    if (init) {
+      doInit(mainFrame);
+    }
   }
 
   protected BaseDialog(Dialog owner, String title) throws HeadlessException {
@@ -71,7 +78,7 @@ public abstract class BaseDialog extends JDialog {
     doInit(owner);
   }
 
-  private void doInit(Component mainFrame) {
+  protected void doInit(Component mainFrame) {
     //do not remove this code
     //it require to run MPS correctly on system
     //with many monitors

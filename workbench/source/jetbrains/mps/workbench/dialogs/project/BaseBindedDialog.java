@@ -32,8 +32,9 @@ public abstract class BaseBindedDialog extends BaseDialog implements IBindedDial
   private List<AutoBinding> myBindings = new ArrayList<AutoBinding>();
 
   protected BaseBindedDialog(String text, IOperationContext operationContext) throws HeadlessException {
-    super(operationContext.getMainFrame(), text);
+    super(operationContext.getMainFrame(), text, false);
     myOperationContext = operationContext;
+    doInit(operationContext.getMainFrame());
   }
 
   public abstract JComponent getMainComponent();
