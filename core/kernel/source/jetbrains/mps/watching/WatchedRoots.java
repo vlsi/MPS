@@ -91,7 +91,10 @@ public class WatchedRoots implements ApplicationComponent {
 
   private void removeLibraryWatch(List<Library> toRemove, Map<Library, WatchRequest> librariesRequests) {
     for (Library l : toRemove) {
-      myLocalFileSystem.removeWatchedRoot(librariesRequests.get(l));
+      final WatchRequest watchRequest = librariesRequests.get(l);
+      if (watchRequest != null) {
+        myLocalFileSystem.removeWatchedRoot(watchRequest);
+      }
       librariesRequests.remove(l);
     }
   }
