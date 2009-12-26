@@ -1,6 +1,8 @@
 package jetbrains.mps.build.ant.generation;
 
 import jetbrains.mps.build.ant.MpsWorker;
+import jetbrains.mps.compiler.JavaCompiler;
+import jetbrains.mps.util.AbstractClassLoader;
 import junit.framework.*;
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.BuildException;
@@ -30,6 +32,8 @@ import jetbrains.mps.build.ant.TeamCityMessageFormat;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.TestMain;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.*;
 import java.io.*;
 
@@ -41,7 +45,17 @@ public class TestGenerationWorker extends GeneratorWorker {
 
   private boolean myTestFailed = false;
   private final IBuildServerMessageFormat myBuildServerMessageFormat = getBuildServerMessageFormat();
-  private final TesterGenerationType myGenerationType = new TesterGenerationType(false);
+  private final TesterGenerationType myGenerationType = new TesterGenerationType(false) {
+    @Override
+    protected JavaCompiler createJavaCompiler(Set<IModule> contextModules) {
+      return new JavaCompiler(getClassPath(contextModules)) {
+        @Override
+        public ClassLoader getClassLoader(ClassLoader parent) {
+          return new MyClassLoader(parent);
+        }
+      };
+    }
+  };
 
   public static void main(String[] args) {
     TestGenerationWorker generator = new TestGenerationWorker(WhatToDo.fromDumpInFile(new File(args[0])), new SystemOutLogger());
@@ -306,6 +320,40 @@ public class TestGenerationWorker extends GeneratorWorker {
       } else {
         return test.toString();
       }
+    }
+  }
+
+  /**
+   * This class loader can find resources on disk.
+   */
+  private class MyClassLoader extends AbstractClassLoader {
+
+    private MyClassLoader(ClassLoader parent) {
+      super(parent);
+    }
+
+    protected byte[] findClassBytes(String name) {
+      return myGenerationType.getCompiler().getClasses().get(name);
+    }
+
+    protected boolean isExcluded(String name) {
+      return false;
+    }
+
+    @Override
+    public URL getResource(String name) {
+      final URL resource = super.getResource(name);
+      final File outputDir = myGenerationType.getLastOutputDir();
+      if (resource != null || outputDir == null) return resource;
+
+      File resourceFile = new File(outputDir.getAbsolutePath() + File.separator + name);
+      if (resourceFile.exists()) {
+        try {
+          return resourceFile.toURL();
+        } catch (MalformedURLException e) {
+        }
+      }
+      return null;
     }
   }
 }

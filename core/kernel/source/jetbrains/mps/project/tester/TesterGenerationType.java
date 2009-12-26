@@ -43,6 +43,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
 public class TesterGenerationType extends GenerateFilesAndClassesGenerationType {
+  private File myLastOutputDir;
   private Map<String, String> myNodeExtensionMap = new HashMap<String, String>();
   private Map<SModel, String> myOutputModelToPath = new HashMap<SModel, String>();
   private Map<SModelReference, String> myOutputModelRefToPath = new HashMap<SModelReference, String>();
@@ -70,6 +71,7 @@ public class TesterGenerationType extends GenerateFilesAndClassesGenerationType 
 
   @Override
   public boolean handleOutput(GenerationStatus status, String outputDir, IOperationContext context, ProgressIndicator monitor, IMessageHandler messages) {
+    myLastOutputDir = new File(context.getModule().getGeneratorOutputPath());
     SModel outputModel = status.getOutputModel();
     myOutputModelToPath.put(outputModel, outputDir);
     myOutputModelRefToPath.put(outputModel.getSModelReference(), outputDir);
@@ -155,5 +157,10 @@ public class TesterGenerationType extends GenerateFilesAndClassesGenerationType 
     myOutputModelRefToPath.clear();
     myOutputModelRefToRoots.clear();
     myOutputModelToPath.clear();
+    myLastOutputDir = null;
+  }
+
+  public File getLastOutputDir() {
+    return myLastOutputDir;
   }
 }

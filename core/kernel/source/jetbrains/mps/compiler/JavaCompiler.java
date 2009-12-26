@@ -108,6 +108,10 @@ public class JavaCompiler {
     }
   }
 
+  public Map<String, byte[]> getClasses() {
+    return Collections.unmodifiableMap(myClasses);
+  }
+
   private Set<String> getCompiledClasses() {
     return new HashSet<String>(myClasses.keySet());
   }
@@ -126,7 +130,7 @@ public class JavaCompiler {
     }
 
     protected byte[] findClassBytes(String name) {
-      return myClasses.get(name);
+      return getClasses().get(name);
     }
 
     protected boolean isExcluded(String name) {
