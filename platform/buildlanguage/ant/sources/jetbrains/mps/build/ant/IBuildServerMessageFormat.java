@@ -1,12 +1,14 @@
 package jetbrains.mps.build.ant;
 
+import org.jetbrains.annotations.NotNull;
+
 public interface IBuildServerMessageFormat {
-  StringBuffer escapeBuildMessage(StringBuffer message);
-  String escapeBuildMessage(String message);
+  StringBuffer escapeBuildMessage(@NotNull StringBuffer message);
+  String escapeBuildMessage(@NotNull String message);
   String getLinesSeparator();
-  String formatTestStart(String testName);
-  String formatTestFinish(String testName);
-  CharSequence formatTestFailure(String testName, String message, CharSequence details);
-  boolean isBuildServerMessage(CharSequence message);
-  int hasContinuation(String message);
+  String formatTestStart(@NotNull String testName);
+  String formatTestFinish(@NotNull String testName);
+  CharSequence formatTestFailure(@NotNull String testName, @NotNull String message, @NotNull CharSequence details);
+  boolean isBuildServerMessage(@NotNull CharSequence message);
+  int hasContinuation(@NotNull String message);
 }

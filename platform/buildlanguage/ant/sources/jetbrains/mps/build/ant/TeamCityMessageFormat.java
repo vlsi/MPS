@@ -1,5 +1,7 @@
 package jetbrains.mps.build.ant;
 
+import org.jetbrains.annotations.NotNull;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -8,11 +10,11 @@ public class TeamCityMessageFormat implements IBuildServerMessageFormat {
   private static final String SERVER_PREFIX = "##teamcity[";
   private static final String SERVER_TEST_FAILED_PREFIX = "##teamcity[testFailed";
 
-  public String escapeBuildMessage(String rawMessage) {
+  public String escapeBuildMessage(@NotNull String rawMessage) {
     return rawMessage.replace("|", "||").replace("'", "|'").replace("\n", LINES_SEPARATOR).replace("\r", "|r").replace("]", "|]");
   }
 
-  public StringBuffer escapeBuildMessage(StringBuffer message) {
+  public StringBuffer escapeBuildMessage(@NotNull StringBuffer message) {
     String[] replacements = new String[]{
       "\\|", "||",
       "'", "|'",
@@ -42,11 +44,11 @@ public class TeamCityMessageFormat implements IBuildServerMessageFormat {
     return LINES_SEPARATOR;
   }
 
-  public String formatTestStart(String testName) {
+  public String formatTestStart(@NotNull String testName) {
     return "##teamcity[testStarted name='" + testName + "' captureStandardOutput='true']";
   }
 
-  public String formatTestFinish(String testName) {
+  public String formatTestFinish(@NotNull String testName) {
     return "##teamcity[testFinished name='" + testName + "']";
   }
 
@@ -54,7 +56,7 @@ public class TeamCityMessageFormat implements IBuildServerMessageFormat {
     return "##teamcity[testFailed name='" + testName + "' message='" + message + "' details='" + detailes + "']";
   }
 
-  public CharSequence formatTestFailure(String testName, String message, CharSequence details) {
+  public CharSequence formatTestFailure(@NotNull String testName, @NotNull String message, @NotNull CharSequence details) {
     StringBuffer sb = new StringBuffer();
     sb.append("##teamcity[testFailed name='")
       .append(testName)
@@ -66,11 +68,11 @@ public class TeamCityMessageFormat implements IBuildServerMessageFormat {
     return sb;
   }
 
-  public boolean isBuildServerMessage(CharSequence message) {
+  public boolean isBuildServerMessage(@NotNull CharSequence message) {
     return (message.length() >= SERVER_PREFIX.length()) && message.subSequence(0, SERVER_PREFIX.length()).toString().equals(SERVER_PREFIX);
   }
 
-  public int hasContinuation(String message) {
+  public int hasContinuation(@NotNull String message) {
     return message.endsWith("\\") ? 1 : 0;
   }
 

@@ -278,7 +278,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     @Override
     public void addError(Test test, Throwable t) {
       System.out.println(myBuildServerMessageFormat.formatTestFailure(myBuildServerMessageFormat.escapeBuildMessage(getName(test)),
-        myBuildServerMessageFormat.escapeBuildMessage(t.getMessage()),
+        myBuildServerMessageFormat.escapeBuildMessage(t.getMessage() == null ? "" : t.getMessage()),
         myBuildServerMessageFormat.escapeBuildMessage(MpsWorker.extractStackTrace(t))));
     }
 

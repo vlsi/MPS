@@ -97,11 +97,11 @@ public class ProjectTester {
           public Boolean compute() {
             return !outputRoot.isInstanceOfConcept(ClassConcept.concept);
           }
-        })){
+        })) {
           continue;
         }
         try {
-          String className = ModelAccess.instance().runReadAction(new Computable<String>(){
+          String className = ModelAccess.instance().runReadAction(new Computable<String>() {
             @Override
             public String compute() {
               return model.getLongName() + "." + outputRoot.getName();
@@ -121,10 +121,14 @@ public class ProjectTester {
           }
 
           for (Method testMethod : testMethods) {
-            final Object instance = testClass.newInstance();
-            Method setName = TestCase.class.getMethod("setName", String.class);
-            setName.invoke(instance, testMethod.getName());
-            ((TestCase) instance).run(testResult);
+            try {
+              final Object instance = testClass.newInstance();
+              Method setName = TestCase.class.getMethod("setName", String.class);
+              setName.invoke(instance, testMethod.getName());
+              ((TestCase) instance).run(testResult);
+            } catch (Throwable ignored) {
+              // if one test fails, we still want to try to run the others
+            }
           }
         } catch (Throwable ignored) {
         }
