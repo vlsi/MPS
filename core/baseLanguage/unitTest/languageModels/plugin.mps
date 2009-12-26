@@ -3227,22 +3227,58 @@
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="604223941107444562">
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="604223941107444563">
                 <property name="name:3" value="testCaseTreeNode" />
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="604223941107444564">
-                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="604223941107444565">
-                    <link role="baseMethodDeclaration:3" targetNodeId="1208284838939:0" resolveInfo="TestCaseTreeNode" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="604223941107444566">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="604223941107444567" />
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1200269551723333515">
-                        <link role="fieldDeclaration:3" targetNodeId="1200269551723333436:0" resolveInfo="operationContext" />
-                      </node>
+                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="604223941107444570">
+                  <link role="classifier:3" targetNodeId="1208284790428:0" resolveInfo="TestCaseTreeNode" />
+                </node>
+                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2136326932536760271">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2136326932536760253">
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="2136326932536760254">
+                      <link role="fieldDeclaration:3" targetNodeId="1208875014405:0" resolveInfo="map" />
                     </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="604223941107444569">
-                      <link role="variable:7" targetNodeId="604223941107444620:0" resolveInfo="testCase" />
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="2136326932536760255" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2136326932536760290">
+                    <link role="baseMethodDeclaration:3" targetNodeId="1208875239717:0" resolveInfo="get" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2136326932536760334">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="2136326932536760308">
+                        <link role="variable:7" targetNodeId="604223941107444620:0" resolveInfo="testCase" />
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="2136326932536760363">
+                        <link role="baseMethodDeclaration:16" targetNodeId="41.1216136193905" resolveInfo="getClassName" />
+                      </node>
                     </node>
                   </node>
                 </node>
-                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="604223941107444570">
-                  <link role="classifier:3" targetNodeId="1208284790428:0" resolveInfo="TestCaseTreeNode" />
+              </node>
+            </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="5358007201103015766">
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5358007201103015767">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5358007201103020424">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="5358007201103020430">
+                    <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5358007201103020433">
+                      <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5358007201103020434">
+                        <link role="baseMethodDeclaration:3" targetNodeId="1208284838939:0" resolveInfo="TestCaseTreeNode" />
+                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5358007201103020439">
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5358007201103020440">
+                            <link role="fieldDeclaration:3" targetNodeId="1200269551723333436:0" resolveInfo="operationContext" />
+                          </node>
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5358007201103020441" />
+                        </node>
+                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="5358007201103020445">
+                          <link role="variable:7" targetNodeId="604223941107444620:0" resolveInfo="testCase" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5358007201103020425">
+                      <link role="variableDeclaration:3" targetNodeId="604223941107444563:0" resolveInfo="testCaseTreeNode" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="5358007201103020420">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="5358007201103020423" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5358007201103020403">
+                  <link role="variableDeclaration:3" targetNodeId="604223941107444563:0" resolveInfo="testCaseTreeNode" />
                 </node>
               </node>
             </node>

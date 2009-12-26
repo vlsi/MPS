@@ -130,7 +130,10 @@ public class TestTree extends MPSTree implements TestView {
       if ((testCase == null)) {
         continue;
       }
-      TestCaseTreeNode testCaseTreeNode = new TestCaseTreeNode(this.operationContext, testCase);
+      TestCaseTreeNode testCaseTreeNode = this.map.get(ITestCase_Behavior.call_getClassName_1216136193905(testCase));
+      if (testCaseTreeNode == null) {
+        testCaseTreeNode = new TestCaseTreeNode(this.operationContext, testCase);
+      }
       boolean hasFailedTest = false;
       for (SNode method : ListSequence.fromList(MapSequence.fromMap(this.state.getTestsMap()).get(testCase))) {
         TestMethodTreeNode oldMethodTreeNode = this.map.get(ITestCase_Behavior.call_getClassName_1216136193905(testCase), ITestMethod_Behavior.call_getTestName_1216136419751(method));
