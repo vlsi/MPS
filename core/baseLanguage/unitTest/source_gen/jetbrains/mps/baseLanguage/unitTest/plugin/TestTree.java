@@ -4,13 +4,7 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.smodel.IOperationContext;
-import java.util.Map;
-import jetbrains.mps.smodel.SNode;
 import java.util.List;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.LinkedHashMap;
-import jetbrains.mps.MPSProjectHolder;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -18,27 +12,31 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.ui.TextTreeNode;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
+import jetbrains.mps.MPSProjectHolder;
 
 public class TestTree extends MPSTree implements TestView {
   private IOperationContext operationContext;
-  private Map<SNode, List<SNode>> tests;
   private TestNameMap<TestCaseTreeNode, TestMethodTreeNode> map;
   private boolean isAllTree = true;
   private TestRunState state;
 
-  public TestTree(TestRunState state, MPSProject project) {
+  public TestTree(TestRunState state, IOperationContext context) {
     this.state = state;
-    this.tests = MapSequence.fromMap(new LinkedHashMap<SNode, List<SNode>>(16, (float) 0.75, false));
+    this.operationContext = context;
     this.map = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
-    this.isAllTree = !(project.getComponent(MPSProjectHolder.class).getMPSProject().getPluginManager().getPrefsComponent(JUnitTestActionOptions_PreferencesComponent.class).getStateObject().isHidePassed);
-    this.rebuildLater();
+    this.isAllTree = !(this.getPreferences().getStateObject().isHidePassed);
+    /*
+      this.rebuildLater();
+    */
   }
 
   private void updateState(TestMethodTreeNode methodNode, TestCaseTreeNode testCaseNode, TestState testState) {
@@ -58,6 +56,9 @@ public class TestTree extends MPSTree implements TestView {
   }
 
   public void update() {
+    if (this.state.getAvailableText() != null) {
+      return;
+    }
     String loseTest = this.state.getLoseClass();
     String loseMethod = this.state.getLoseMethod();
     String test = this.state.getCurrentClass();
@@ -116,17 +117,22 @@ public class TestTree extends MPSTree implements TestView {
     }
   }
 
+  public void init() {
+    this.rebuildNow();
+    this.expandAll();
+  }
+
   public MPSTreeNode rebuild() {
     MPSTreeNode root = new TextTreeNode("Tests");
     this.setRootVisible(false);
     TestNameMap<TestCaseTreeNode, TestMethodTreeNode> temp = new TestNameMap<TestCaseTreeNode, TestMethodTreeNode>();
-    for (SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.tests).keySet())) {
+    for (SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.state.getTestsMap()).keySet())) {
       if ((testCase == null)) {
         continue;
       }
       TestCaseTreeNode testCaseTreeNode = new TestCaseTreeNode(this.operationContext, testCase);
       boolean hasFailedTest = false;
-      for (SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
+      for (SNode method : ListSequence.fromList(MapSequence.fromMap(this.state.getTestsMap()).get(testCase))) {
         TestMethodTreeNode oldMethodTreeNode = this.map.get(ITestCase_Behavior.call_getClassName_1216136193905(testCase), ITestMethod_Behavior.call_getTestName_1216136419751(method));
         TestMethodTreeNode newMethodTreeNode = new TestMethodTreeNode(this.operationContext, method);
         TestMethodTreeNode methodTreeNode = (oldMethodTreeNode == null ?
@@ -157,11 +163,11 @@ public class TestTree extends MPSTree implements TestView {
   }
 
   public boolean hasFailedTests() {
-    for (final SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.tests).keySet())) {
+    for (final SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.state.getTestsMap()).keySet())) {
       if ((testCase == null)) {
         continue;
       }
-      for (final SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
+      for (final SNode method : ListSequence.fromList(MapSequence.fromMap(this.state.getTestsMap()).get(testCase))) {
         final Wrappers._T<String> className = new Wrappers._T<String>();
         final Wrappers._T<String> methodName = new Wrappers._T<String>();
         ModelAccess.instance().runReadAction(new Runnable() {
@@ -182,10 +188,6 @@ public class TestTree extends MPSTree implements TestView {
     return false;
   }
 
-  public IOperationContext getContext() {
-    return this.operationContext;
-  }
-
   public void hidePassed(boolean hide) {
     this.isAllTree = !(hide);
     this.rebuildNow();
@@ -197,15 +199,9 @@ public class TestTree extends MPSTree implements TestView {
     this.rebuildNow();
   }
 
-  public void setTests(IOperationContext operationContext, Map<SNode, List<SNode>> tests) {
-    this.operationContext = operationContext;
-    this.tests = tests;
-    this.rebuildNow();
-  }
-
   public List<String> getMethodName() {
     List<String> result = ListSequence.fromList(new ArrayList<String>());
-    for (List<SNode> values : MapSequence.fromMap(this.tests).values()) {
+    for (List<SNode> values : MapSequence.fromMap(this.state.getTestsMap()).values()) {
       for (SNode value : values) {
         ListSequence.fromList(result).addElement(ITestMethod_Behavior.call_getTestName_1216136419751(value));
       }
@@ -222,8 +218,8 @@ public class TestTree extends MPSTree implements TestView {
   }
 
   public void selectFirstDefectNode() {
-    for (final SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.tests).keySet())) {
-      for (final SNode method : ListSequence.fromList(MapSequence.fromMap(this.tests).get(testCase))) {
+    for (final SNode testCase : SetSequence.fromSet(MapSequence.fromMap(this.state.getTestsMap()).keySet())) {
+      for (final SNode method : ListSequence.fromList(MapSequence.fromMap(this.state.getTestsMap()).get(testCase))) {
         final Wrappers._T<String> className = new Wrappers._T<String>();
         final Wrappers._T<String> methodName = new Wrappers._T<String>();
         ModelAccess.instance().runReadAction(new Runnable() {

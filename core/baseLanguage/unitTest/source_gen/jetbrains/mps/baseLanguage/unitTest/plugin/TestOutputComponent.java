@@ -8,10 +8,11 @@ import java.util.List;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import javax.swing.SwingUtilities;
-import com.intellij.execution.process.ProcessOutputTypes;
-import org.apache.commons.lang.ObjectUtils;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import com.intellij.openapi.util.Key;
+import com.intellij.execution.process.ProcessOutputTypes;
+import javax.swing.SwingUtilities;
+import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.debug.StacktraceUtil;
 import com.intellij.execution.ui.ConsoleViewContentType;
 import com.intellij.openapi.util.Disposer;
@@ -32,15 +33,30 @@ public class TestOutputComponent implements TestView {
   }
 
   public void update() {
-    final String test = this.state.getLoseClass();
-    final String method = this.state.getLoseMethod();
-    if (test != null && method != null) {
+    final Wrappers._T<String> text = new Wrappers._T<String>(null);
+    final Wrappers._T<Key> key = new Wrappers._T<Key>(null);
+    final Wrappers._T<String> test = new Wrappers._T<String>(this.state.getLoseClass());
+    final Wrappers._T<String> method = new Wrappers._T<String>(this.state.getLoseMethod());
+    if (test.value != null && method.value != null) {
+      text.value = "\nError: couldn't find method '" + method.value + "' in '" + test.value + "'\n\n";
+      key.value = ProcessOutputTypes.STDERR;
+    } else if (this.state.getAvailableText() != null) {
+      text.value = this.state.getAvailableText();
+      key.value = this.state.getKey();
+      test.value = this.state.getCurrentClass();
+      method.value = this.state.getCurrentMethod();
+    }
+    if (test.value != null && method.value != null) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          TestOutputComponent.this.appendWithParameters(test, method, "\nError: couldn't find method '" + method + "' in '" + test + "'\n\n", ProcessOutputTypes.STDERR);
+          TestOutputComponent.this.appendWithParameters(test.value, method.value, text.value, key.value);
         }
       });
     }
+  }
+
+  public void init() {
+    this.clear();
   }
 
   public JComponent getComponent() {

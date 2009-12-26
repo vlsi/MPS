@@ -30,9 +30,13 @@ public class ProgressLine extends JPanel implements TestView {
     this.progressBar.setColor(ColorProgressBar.GREEN);
     this.add(progress);
     this.testsBuilt = true;
+    this.init();
   }
 
   public void update() {
+    if (this.state.getAvailableText() != null) {
+      return;
+    }
     final int defectedTests = this.state.getDefectTests();
     final int totalTests = this.state.getTotalTests();
     final int complitedTests = this.state.getCompletedTests();
@@ -43,6 +47,9 @@ public class ProgressLine extends JPanel implements TestView {
         ProgressLine.this.updateLabel(defectedTests, totalTests, complitedTests, testName);
       }
     });
+  }
+
+  public void init() {
   }
 
   private void updateProgressBar(int defected, int total, int complited) {

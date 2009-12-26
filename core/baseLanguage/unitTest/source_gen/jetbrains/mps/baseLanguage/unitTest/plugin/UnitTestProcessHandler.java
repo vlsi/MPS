@@ -11,14 +11,13 @@ import com.intellij.openapi.util.Key;
 import com.intellij.execution.process.ProcessOutputTypes;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
-import javax.swing.SwingUtilities;
 
 public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
-  private UnitTestViewComponent myComponent;
+  private TestRunListener listener;
 
-  public UnitTestProcessHandler(final UnitTestViewComponent component, Process process, String params) {
+  public UnitTestProcessHandler(TestRunListener listener, Process process, String params) {
     super(process, params, Charset.defaultCharset());
-    this.myComponent = component;
+    this.listener = listener;
 
     this.addProcessListener(new ProcessAdapter() {
       private StringBuffer buffer = new StringBuffer();
@@ -44,15 +43,13 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
         return false;
       }
 
-      public void onTextAvailable(ProcessEvent event, final Key k) {
+      public void onTextAvailable(ProcessEvent event, Key k) {
         if (this.isTerminatedEvent()) {
-          UnitTestProcessHandler.this.myComponent.getTestListener().onProcessTerminated(event.getText());
+          UnitTestProcessHandler.this.listener.onProcessTerminated(event.getText());
         }
-        final String className = UnitTestProcessHandler.this.myComponent.getCurrentClassName();
-        final String methodName = UnitTestProcessHandler.this.myComponent.getCurrentMethodName();
         boolean error = ProcessOutputTypes.STDERR.equals(k);
         boolean system = ProcessOutputTypes.SYSTEM.equals(k);
-        final String text = (error || system ?
+        String text = (error || system ?
           event.getText() :
           this.getLine(event.getText(), this.buffer)
         );
@@ -60,23 +57,12 @@ public class UnitTestProcessHandler extends DefaultJavaProcessHandler {
           return;
         }
         String textTrimmed = StringUtils.trim(text);
-        final String token = TestEvent.isTestEvent(textTrimmed);
-        final TestEvent testEvent = TestEvent.parse(textTrimmed);
+        TestEvent testEvent = TestEvent.parse(textTrimmed);
         if (testEvent != null) {
-          UnitTestProcessHandler.this.myComponent.getTestListener().onTestEvent(testEvent);
+          UnitTestProcessHandler.this.listener.onTestEvent(testEvent);
+        } else {
+          UnitTestProcessHandler.this.listener.onSimpleTextAvailable(text, k);
         }
-        SwingUtilities.invokeLater(new Runnable() {
-          public void run() {
-            if (token == null) {
-              component.appendWithParameters(className, methodName, text, k);
-            } else {
-              if (testEvent == null) {
-                component.appendWithParameters(className, methodName, text, k);
-                return;
-              }
-            }
-          }
-        });
       }
     });
     ProcessTerminatedListener.attach(this);

@@ -5,12 +5,15 @@ package jetbrains.mps.baseLanguage.unitTest.plugin;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import java.util.Set;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.LinkedHashMap;
+import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
+import com.intellij.openapi.util.Key;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestCase_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
@@ -20,6 +23,7 @@ public class TestRunState {
 
   private TestStatisticsModel statisticsModel;
   private List<String> testMethods = ListSequence.fromList(new ArrayList<String>());
+  private Map<SNode, List<SNode>> map = MapSequence.fromMap(new LinkedHashMap<SNode, List<SNode>>(16, (float) 0.75, false));
   private String curClass;
   private String curMethod;
   private String curToken;
@@ -30,14 +34,65 @@ public class TestRunState {
   private int defectTests = 0;
   private Set<TestView> viewList = SetSequence.fromSet(new HashSet<TestView>());
   private boolean isTerminated;
+  private String availableText = null;
+  private Key key = null;
 
-  public TestRunState(TestStatisticsModel statisticsModel) {
+  public TestRunState(List<SNode> testCases, List<SNode> testMethods, TestStatisticsModel statisticsModel) {
     this.statisticsModel = statisticsModel;
+    this.initTestState(testCases, testMethods);
+  }
+
+  private void initTestState(final List<SNode> testCases, final List<SNode> testMethods) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        TestRunState.this.statisticsModel.setTests(TestRunState.this.map);
+        TestRunState.this.addTestCases(testCases);
+        TestRunState.this.addTestMethods(testMethods);
+        for (SNode testCase : MapSequence.fromMap(TestRunState.this.map).keySet()) {
+          for (SNode testMethod : MapSequence.fromMap(TestRunState.this.map).get(testCase)) {
+            ListSequence.fromList(TestRunState.this.testMethods).addElement(ITestCase_Behavior.call_getClassName_1216136193905(testCase) + '.' + ITestMethod_Behavior.call_getTestName_1216136419751(testMethod));
+          }
+        }
+      }
+    });
+    this.totalTests = ListSequence.fromList(this.testMethods).count();
+
+    this.initView();
+  }
+
+  private void addTestCases(List<SNode> testCases) {
+    for (SNode testCase : ListSequence.fromList(testCases)) {
+      List<SNode> testMethods = new ArrayList<SNode>();
+      MapSequence.fromMap(this.map).put(testCase, testMethods);
+      for (SNode testMethod : ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(testCase))) {
+        ListSequence.fromList(testMethods).addElement(testMethod);
+      }
+    }
+  }
+
+  private void addTestMethods(List<SNode> testMethods) {
+    for (SNode testMethod : ListSequence.fromList(testMethods)) {
+      SNode testCase = ITestMethod_Behavior.call_getTestCase_1216134500045(testMethod);
+      List<SNode> curTestMethods = MapSequence.fromMap(this.map).get(testCase);
+      if (curTestMethods == null) {
+        curTestMethods = new ArrayList<SNode>();
+        MapSequence.fromMap(this.map).put(testCase, curTestMethods);
+      }
+      if (!(ListSequence.fromList(curTestMethods).contains(testMethod))) {
+        ListSequence.fromList(curTestMethods).addElement(testMethod);
+      }
+    }
   }
 
   private void updateView() {
     for (TestView view : this.viewList) {
       view.update();
+    }
+  }
+
+  private void initView() {
+    for (TestView view : this.viewList) {
+      view.init();
     }
   }
 
@@ -91,18 +146,14 @@ public class TestRunState {
     }
   }
 
-  public void setTests(Map<SNode, List<SNode>> tests) {
-    this.statisticsModel.setTests(tests);
-    for (SNode testCase : MapSequence.fromMap(tests).keySet()) {
-      for (SNode testMethod : MapSequence.fromMap(tests).get(testCase)) {
-        ListSequence.fromList(this.testMethods).addElement(ITestCase_Behavior.call_getClassName_1216136193905(testCase) + '.' + ITestMethod_Behavior.call_getTestName_1216136419751(testMethod));
-      }
+  public void outputText(String text, Key key) {
+    synchronized (lock) {
+      this.availableText = text;
+      this.key = key;
+      this.updateView();
+      this.availableText = null;
+      this.key = null;
     }
-    this.totalTests = ListSequence.fromList(this.testMethods).count();
-  }
-
-  public List<String> getUnusedMethods() {
-    return this.testMethods;
   }
 
   public void completeTestEvent(TestEvent event) {
@@ -117,6 +168,10 @@ public class TestRunState {
         }
       }
     }
+  }
+
+  public List<String> getUnusedMethods() {
+    return this.testMethods;
   }
 
   public int getTotalTests() {
@@ -157,6 +212,18 @@ public class TestRunState {
 
   public boolean isTerminated() {
     return this.isTerminated;
+  }
+
+  public String getAvailableText() {
+    return this.availableText;
+  }
+
+  public Key getKey() {
+    return this.key;
+  }
+
+  public Map<SNode, List<SNode>> getTestsMap() {
+    return this.map;
   }
 
   public TestMethodRow getTestMethodRow(String className, String methodName) {
