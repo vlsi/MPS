@@ -328,6 +328,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     addKeyListener(new KeyAdapter() {
       public void keyPressed(KeyEvent e) {
         if (e.getKeyCode() == KeyEvent.VK_ESCAPE) {
+          mySearchPanel.deactivate();
           if (getHighlightManager().clearForOwner(myOwner) || onEscape()) {
             e.consume();
           }
