@@ -188,7 +188,7 @@
       <link role="target:0" targetNodeId="3671542447677113727" resolveInfo="StubsCreatorDeclaration" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="5516999836374121343">
-      <property name="value:0" value="stub&lt;&lt;{creatorDeclaration}&gt;&gt;" />
+      <property name="value:0" value="stubCreator&lt;&lt;{creatorDeclaration}&gt;&gt;" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>

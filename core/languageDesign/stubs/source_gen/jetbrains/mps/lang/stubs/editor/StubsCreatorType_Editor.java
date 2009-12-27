@@ -36,7 +36,7 @@ public class StubsCreatorType_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_0421_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stub");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "stubCreator");
     editorCell.setCellId("Constant_0421_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     {

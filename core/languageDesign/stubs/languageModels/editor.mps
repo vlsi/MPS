@@ -96,7 +96,7 @@
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5516999836374121347">
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="5516999836374121349" />
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5516999836374121350">
-        <property name="text:32" value="stub" />
+        <property name="text:32" value="stubCreator" />
         <link role="styleClass:32" targetNodeId="3v.1186415544875" resolveInfo="KeyWord" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem:32" id="5516999836374599651">
           <property name="value:32" value="0.0" />
