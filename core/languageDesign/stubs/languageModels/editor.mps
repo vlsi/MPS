@@ -62,6 +62,11 @@
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="3798212845297795141">
           <link role="relationDeclaration:32" targetNodeId="1.368569065472982601" />
         </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5516999836374918948" />
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="5516999836374918950">
+          <link role="relationDeclaration:32" targetNodeId="1.5516999836374918946" />
+          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="5516999836374918951" />
+        </node>
       </node>
     </node>
   </node>

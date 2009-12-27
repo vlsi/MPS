@@ -5,6 +5,9 @@ package jetbrains.mps.lang.stubs.structure;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.baseLanguage.classifiers.structure.IClassifier;
 import jetbrains.mps.smodel.SNode;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration;
+import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -19,6 +22,7 @@ public class StubsCreatorDeclaration extends BaseConcept implements IClassifier 
   public static final String UPDATE_MODEL_BLOCK = "updateModelBlock";
   public static final String SETTINGS = "settings";
   public static final String ROOT_DESCRIPTORS_BLOCK = "rootDescriptorsBlock";
+  public static final String METHOD_DECLARATION = "methodDeclaration";
 
   public StubsCreatorDeclaration(SNode node) {
     super(node);
@@ -86,6 +90,26 @@ public class StubsCreatorDeclaration extends BaseConcept implements IClassifier 
 
   public void setRootDescriptorsBlock(RootNodeDescriptorsBlock node) {
     super.setChild(StubsCreatorDeclaration.ROOT_DESCRIPTORS_BLOCK, node);
+  }
+
+  public int getMethodDeclarationsCount() {
+    return this.getChildCount(StubsCreatorDeclaration.METHOD_DECLARATION);
+  }
+
+  public Iterator<DefaultClassifierMethodDeclaration> methodDeclarations() {
+    return this.children(DefaultClassifierMethodDeclaration.class, StubsCreatorDeclaration.METHOD_DECLARATION);
+  }
+
+  public List<DefaultClassifierMethodDeclaration> getMethodDeclarations() {
+    return this.getChildren(DefaultClassifierMethodDeclaration.class, StubsCreatorDeclaration.METHOD_DECLARATION);
+  }
+
+  public void addMethodDeclaration(DefaultClassifierMethodDeclaration node) {
+    this.addChild(StubsCreatorDeclaration.METHOD_DECLARATION, node);
+  }
+
+  public void insertMethodDeclaration(DefaultClassifierMethodDeclaration prev, DefaultClassifierMethodDeclaration node) {
+    this.insertChild(prev, StubsCreatorDeclaration.METHOD_DECLARATION, node);
   }
 
   public static StubsCreatorDeclaration newInstance(SModel sm, boolean init) {

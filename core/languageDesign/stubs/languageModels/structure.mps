@@ -63,6 +63,12 @@
       <property name="sourceCardinality:0" value="0..1" />
       <link role="target:0" targetNodeId="368569065472982602" resolveInfo="RootNodeDescriptorsBlock" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="5516999836374918946">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="methodDeclaration" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="3v.1205769003971:0" resolveInfo="DefaultClassifierMethodDeclaration" />
+    </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="444366895203545214">
       <link role="intfc:0" targetNodeId="3v.1205751982837:0" resolveInfo="IClassifier" />
     </node>

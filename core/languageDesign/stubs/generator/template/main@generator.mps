@@ -276,6 +276,26 @@
         </node>
       </node>
     </node>
+    <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5516999836374945737">
+      <property name="name:3" value="additionalMethods" />
+      <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcListMacro:2" id="5516999836374945738">
+        <node role="sourceNodesQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery:2" id="5516999836374945739">
+          <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5516999836374945740">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5516999836374945741">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5516999836374945742">
+                <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="5516999836374945743" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="5516999836374945748">
+                  <link role="link:16" targetNodeId="1.5516999836374918946" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5516999836374945745" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5516999836374945746" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5516999836374945747" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="5516999836374789370">
     <property name="name:2" value="reduce_ThisClassifierExpression" />
