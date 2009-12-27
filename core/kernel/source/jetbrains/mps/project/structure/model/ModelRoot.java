@@ -50,7 +50,7 @@ public class ModelRoot {
     myHandlerClass = handlerClass;
   }
 
-  public ModelRootManager getManager(){
+  public ModelRootManager getManager() {
     return myManager;
   }
 
@@ -63,7 +63,7 @@ public class ModelRoot {
     result.myPath = myPath;
     result.myPrefix = myPrefix;
     result.myHandlerClass = myHandlerClass;
-    result.myManager = myManager.getCopy();
+    result.myManager = myManager == null ? null : myManager.getCopy();
 
     return result;
   }
