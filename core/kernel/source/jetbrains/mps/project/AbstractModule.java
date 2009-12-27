@@ -22,6 +22,7 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.library.LibraryManager;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import jetbrains.mps.project.persistence.ModuleReadException;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -653,7 +654,11 @@ public abstract class AbstractModule implements IModule {
     ModelRoot mr = new ModelRoot();
     mr.setPrefix("");
 
-    myManager.updateModels(new SModelRoot(this, mr), this);
+    try {
+      myManager.updateModels(new SModelRoot(this, mr), this);
+    } catch (ManagerNotFoundException e) {
+      LOG.error("Error updating models from " + this, e);
+    }
   }
 
   private void loadJavaStubModelRoots() {

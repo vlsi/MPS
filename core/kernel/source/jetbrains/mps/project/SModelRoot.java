@@ -17,9 +17,7 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 
@@ -30,21 +28,46 @@ public class SModelRoot {
   private ModelRoot myModelRoot;
   private IModelRootManager myManager;
 
-  SModelRoot(AbstractModule module, ModelRoot root) {
+  SModelRoot(AbstractModule module, ModelRoot root) throws ManagerNotFoundException {
     myModule = module;
     myModelRoot = root;
     myManager = createManager();
   }
 
-  private IModelRootManager createManager() {
-    if (myModelRoot.getHandlerClass() == null) return new DefaultModelRootManager();
-    String fqName = myModelRoot.getHandlerClass();
-    try {
-      Class cls = Class.forName(fqName);
-      return (IModelRootManager) cls.newInstance();
-    } catch (Exception e) {
-      LOG.error(e);
-      return IModelRootManager.NULL_MANAGER;
+  private IModelRootManager createManager() throws ManagerNotFoundException {
+    if (myModelRoot.getManager() != null) {
+      String moduleId = myModelRoot.getManager().getModuleId();
+      String className = myModelRoot.getManager().getClassName();
+
+      Language l = ((Language) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId)));
+      if (l == null) {
+        String messgae = "Language with id " + moduleId + " not found for stubs loader " + className + ". Some stub models won't be loaded.";
+        throw new ManagerNotFoundException(messgae);
+      }
+
+      Class managerClass = l.getClass(className);
+      if (managerClass == null) {
+        throw new ManagerNotFoundException("Manager class " + className + " not found in language " + moduleId);
+      }
+
+      try {
+        return (IModelRootManager) managerClass.newInstance();
+      } catch (InstantiationException e) {
+        throw new ManagerNotFoundException("Problems during instantiating manager " + className, e);
+      } catch (IllegalAccessException e) {
+        throw new ManagerNotFoundException("Problems during instantiating manager " + className, e);
+      }
+    } else if (myModelRoot.getHandlerClass() != null) {
+      String fqName = myModelRoot.getHandlerClass();
+      try {
+        Class cls = Class.forName(fqName);
+        return (IModelRootManager) cls.newInstance();
+      } catch (Exception e) {
+        LOG.error(e);
+        return IModelRootManager.NULL_MANAGER;
+      }
+    } else {
+      return new DefaultModelRootManager();
     }
   }
 
@@ -86,5 +109,15 @@ public class SModelRoot {
 
   public void dispose() {
     myManager.dispose();
+  }
+
+  public static class ManagerNotFoundException extends Exception {
+    public ManagerNotFoundException(String message) {
+      super(message);
+    }
+
+    public ManagerNotFoundException(String message, Throwable cause) {
+      super(message, cause);
+    }
   }
 }

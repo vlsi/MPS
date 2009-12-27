@@ -123,6 +123,4 @@ public class ModuleDescriptor {
       RefUpdateUtil.updateDependencies(myDependencies)
     );
   }
-
-
 }

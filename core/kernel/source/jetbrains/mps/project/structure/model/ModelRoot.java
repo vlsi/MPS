@@ -18,10 +18,12 @@ package jetbrains.mps.project.structure.model;
 public class ModelRoot {
   public static final String PATH = "path";
   public static final String PREFIX = "prefix";
-  public static final String MANAGER = "handlerClass";
+  public static final String MANAGER = "manager";
+  public static final String OLD_MANAGER = "handlerClass";
 
   private String myPath;
   private String myPrefix;
+  private ModelRootManager myManager;
   private String myHandlerClass;
 
   public String getPath() {
@@ -46,6 +48,14 @@ public class ModelRoot {
 
   public void setHandlerClass(String handlerClass) {
     myHandlerClass = handlerClass;
+  }
+
+  public ModelRootManager getManager(){
+    return myManager;
+  }
+
+  public void setManager(ModelRootManager manager) {
+    myManager = manager;
   }
 
   public ModelRoot getCopy() {
