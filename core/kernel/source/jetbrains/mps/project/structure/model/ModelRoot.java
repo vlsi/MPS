@@ -63,6 +63,7 @@ public class ModelRoot {
     result.myPath = myPath;
     result.myPrefix = myPrefix;
     result.myHandlerClass = myHandlerClass;
+    result.myManager = myManager.getCopy();
 
     return result;
   }

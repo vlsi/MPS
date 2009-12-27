@@ -15,6 +15,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.Macros;
+import jetbrains.mps.project.structure.model.ModelRootManager;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.smodel.ModelAccess;
@@ -144,30 +145,51 @@ public class ModuleDescriptorPersistence {
         }
         String result_9364_20 = macros.expandPath(pathName, file);
         result_9364_17.setPath(result_9364_20);
+        if (ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).isNotEmpty()) {
+          new _FunctionTypes._return_P0_E0<ModelRootManager>() {
+            public ModelRootManager invoke() {
+              ModelRootManager result_9364_21 = new ModelRootManager();
+              Element manager = ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first();
+              String result_9364_22 = AttributeUtils.stringWithDefault(manager.getAttributeValue("moduleId"), "");
+              result_9364_21.setModuleId(result_9364_22);
+              String result_9364_23 = AttributeUtils.stringWithDefault(manager.getAttributeValue("className"), "");
+              result_9364_21.setClassName(result_9364_23);
+              return result_9364_21;
+            }
+          }.invoke();
+        }
         return result_9364_17;
       }
     }.invoke();
   }
 
   public static void saveModelRoots(Element modelsElement, List<ModelRoot> modelRoots, IFile file, Macros macros) {
-    Element result_9364_21 = modelsElement;
+    Element result_9364_24 = modelsElement;
     for (ModelRoot root : ListSequence.fromList(modelRoots)) {
-      Element result_9364_22 = new Element("modelRoot");
-      String result_9364_23 = macros.shrinkPath((root.getPath() == null ?
+      Element result_9364_25 = new Element("modelRoot");
+      String result_9364_26 = macros.shrinkPath((root.getPath() == null ?
         "" :
         root.getPath()
       ), file);
-      result_9364_22.setAttribute("path", "" + result_9364_23);
-      String result_9364_24 = (root.getPrefix() == null ?
+      result_9364_25.setAttribute("path", "" + result_9364_26);
+      String result_9364_27 = (root.getPrefix() == null ?
         "" :
         root.getPrefix()
       );
-      result_9364_22.setAttribute("namespacePrefix", "" + result_9364_24);
+      result_9364_25.setAttribute("namespacePrefix", "" + result_9364_27);
       if (root.getHandlerClass() != null) {
-        String result_9364_25 = root.getHandlerClass();
-        result_9364_22.setAttribute("persistenceHandler", "" + result_9364_25);
+        String result_9364_28 = root.getHandlerClass();
+        result_9364_25.setAttribute("persistenceHandler", "" + result_9364_28);
       }
-      result_9364_21.addContent(result_9364_22);
+      if (root.getManager() != null) {
+        Element result_9364_29 = new Element("manager");
+        String result_9364_30 = root.getManager().getModuleId();
+        result_9364_29.setAttribute("moduleId", "" + result_9364_30);
+        String result_9364_31 = root.getManager().getClassName();
+        result_9364_29.setAttribute("className", "" + result_9364_31);
+        result_9364_25.addContent(result_9364_29);
+      }
+      result_9364_24.addContent(result_9364_25);
     }
   }
 
