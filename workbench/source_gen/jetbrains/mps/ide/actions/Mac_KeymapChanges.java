@@ -7,6 +7,7 @@ import jetbrains.mps.workbench.action.BaseKeymapChanges;
 public class Mac_KeymapChanges extends BaseKeymapChanges {
   public Mac_KeymapChanges() {
     this.addAction("jetbrains.mps.ide.actions.ShowConceptInHierarchy_Action", "jetbrains.mps.ide", "ctrl H");
+    this.addAction("jetbrains.mps.ide.actions.ShowClassInHierarchy_Action", "jetbrains.mps.ide", "ctrl H");
     this.addAction("jetbrains.mps.ide.actions.ShowNodeInfo_Action", "jetbrains.mps.ide", "ctrl Q");
     this.addAction("jetbrains.mps.ide.actions.GenerationIntentions_Action", "jetbrains.mps.ide", "ctrl N");
   }
