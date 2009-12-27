@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -36,6 +37,14 @@ public class SimpleShortcutChange_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_0068_0");
     editorCell.addEditorCell(this.createRefCell_0068_0(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_0068_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_0068_0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_0068_0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, " ");
+    editorCell.setCellId("Constant_0068_0");
+    editorCell.setDefaultText("");
     return editorCell;
   }
 

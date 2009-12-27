@@ -3009,6 +3009,9 @@
         <link role="relationDeclaration:32" targetNodeId="1.1562714432501166206:23" />
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="6193305307616734348" />
       </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="2863241567468075645">
+        <property name="text:32" value=" " />
+      </node>
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1562714432501170058" />
     </node>
   </node>
