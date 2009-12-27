@@ -60,6 +60,7 @@
         </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="9137903967120238144" />
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="3798212845297795141">
+          <property name="noTargetText:32" value="&lt;no root descriptors block&gt;" />
           <link role="relationDeclaration:32" targetNodeId="1.368569065472982601" />
         </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5516999836374918948" />

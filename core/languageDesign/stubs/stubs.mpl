@@ -10,6 +10,9 @@
         <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.lang.stubs.generator.template" />
       </models>
       <external-templates />
+      <dependencies>
+        <dependency reexport="false">0e7466c6-bdd9-48a0-921b-a0f4bac08259(jetbrains.mps.baseLanguage.classifiers#1205839057922)</dependency>
+      </dependencies>
       <usedDevKits>
         <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
       </usedDevKits>

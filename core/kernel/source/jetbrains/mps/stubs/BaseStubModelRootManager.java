@@ -113,7 +113,9 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     }
   }
 
-  public abstract Set<SNodeDescriptor> getRootNodeDescriptors(StubLocation location);
+  public Set<SNodeDescriptor> getRootNodeDescriptors(StubLocation location){
+    return Collections.emptySet();
+  }
 
   protected abstract Set<SModelDescriptor> getModelDescriptors(StubLocation location);
 

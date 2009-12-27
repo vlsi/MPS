@@ -233,7 +233,7 @@ public class StubsCreatorDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createRefNode_5801_3(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("rootDescriptorsBlock");
-    provider.setNoTargetText("<no rootDescriptorsBlock>");
+    provider.setNoTargetText("<no root descriptors block>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
