@@ -46,7 +46,7 @@ public class StratergyAddMethodDialog extends BaseAddMethodDialog {
   }
 
   protected int compareMethods(BaseMethodDeclaration m1, BaseMethodDeclaration m2) {
-    if (this.mySortByNameAction.isSelected()) {
+    if (!(this.mySortByNameAction.isSelected())) {
       SNode n1 = m1.getNode();
       int i1 = this.myContainerStrategy.getContainer(n1).getIndexOfChild(n1);
       SNode n2 = m2.getNode();
