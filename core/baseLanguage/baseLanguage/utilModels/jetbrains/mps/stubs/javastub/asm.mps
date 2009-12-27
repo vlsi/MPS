@@ -374,18 +374,35 @@
                   </node>
                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="7241381882860005773" />
                 </node>
-                <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7241381882860005774">
-                  <link role="classConcept:3" targetNodeId="2.~Collections" />
-                  <link role="baseMethodDeclaration:3" targetNodeId="2.~Collections.unmodifiableList(java.util.List):java.util.List" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7241381882860005775">
-                    <link role="classConcept:3" targetNodeId="7241381882860007306" resolveInfo="TypeUtil" />
-                    <link role="baseMethodDeclaration:3" targetNodeId="7241381882860007581" resolveInfo="getFormalTypeParameters" />
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7241381882860005776">
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="7241381882860005777">
-                        <link role="fieldDeclaration:3" targetNodeId="1.~MethodNode.signature" />
+                <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="8278838086631112391">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="8278838086631112392">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="8278838086631112402">
+                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="8278838086631112403">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8278838086631112404">
+                          <link role="classConcept:3" targetNodeId="2.~Collections" resolveInfo="Collections" />
+                          <link role="baseMethodDeclaration:3" targetNodeId="2.~Collections.unmodifiableList(java.util.List):java.util.List" resolveInfo="unmodifiableList" />
+                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8278838086631112405">
+                            <link role="classConcept:3" targetNodeId="7241381882860007306" resolveInfo="TypeUtil" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="7241381882860007581" resolveInfo="getFormalTypeParameters" />
+                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8278838086631112406">
+                              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="8278838086631112407">
+                                <link role="fieldDeclaration:3" targetNodeId="1.~MethodNode.signature" resolveInfo="signature" />
+                              </node>
+                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8278838086631112408">
+                                <link role="variableDeclaration:3" targetNodeId="7241381882860005735" resolveInfo="method" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8278838086631112411">
+                          <link role="classifier:3" targetNodeId="2.~List" resolveInfo="List" />
+                        </node>
                       </node>
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7241381882860005778">
-                        <link role="variableDeclaration:3" targetNodeId="7241381882860005735" resolveInfo="method" />
+                    </node>
+                    <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8278838086631112398">
+                      <link role="classifier:3" targetNodeId="2.~List" resolveInfo="List" />
+                      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8278838086631112399">
+                        <link role="classifier:3" targetNodeId="7241381882860008701" resolveInfo="ASMTypeVariable" />
                       </node>
                     </node>
                   </node>
