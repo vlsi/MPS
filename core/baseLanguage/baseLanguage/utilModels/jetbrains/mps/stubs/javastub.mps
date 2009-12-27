@@ -3475,15 +3475,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7241381882860003637">
-              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7241381882860003638">
-                <property name="name:3" value="num" />
-                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="7241381882860003639" />
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="7241381882860003640">
-                  <property name="value:3" value="0" />
-                </node>
-              </node>
-            </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7241381882860003641">
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7241381882860003642">
                 <property name="name:3" value="parameterType" />
@@ -4062,15 +4053,6 @@
                       </node>
                     </node>
                   </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7241381882860003870">
-              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7241381882860003871">
-                <property name="name:3" value="num" />
-                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="7241381882860003872" />
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="7241381882860003873">
-                  <property name="value:3" value="0" />
                 </node>
               </node>
             </node>
@@ -6063,9 +6045,6 @@
             </node>
             <node role="classType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7241381882860004650">
               <link role="classifier:3" targetNodeId="4.~List" />
-              <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7241381882860004651">
-                <link role="classifier:3" targetNodeId="2v.~Object" />
-              </node>
             </node>
           </node>
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7241381882860004652">
