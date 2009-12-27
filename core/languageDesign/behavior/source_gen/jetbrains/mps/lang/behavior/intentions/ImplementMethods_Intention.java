@@ -11,8 +11,8 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.GlobalScope;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.baseLanguage.plugin.uiActions.StratergyAddMethodDialog;
-import jetbrains.mps.baseLanguage.plugin.uiActions.strategies.AddConceptMethodStrategy;
+import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
+import jetbrains.mps.ide.actions.AddConceptMethodStrategy;
 import jetbrains.mps.ide.actions.MethodsToImplementStrategy;
 import jetbrains.mps.ide.actions.ImplementMethodStrategy;
 

@@ -55,7 +55,6 @@
   <import index="51" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="54" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" />
   <import index="56" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
-  <import index="65" modelUID="f:java_stub#jetbrains.mps.baseLanguage.plugin.uiActions(jetbrains.mps.baseLanguage.plugin.uiActions@java_stub)" version="-1" />
   <import index="68" modelUID="f:java_stub#jetbrains.mps.baseLanguage.structure(jetbrains.mps.baseLanguage.structure@java_stub)" version="-1" />
   <import index="73" modelUID="f:java_stub#jetbrains.mps.workbench.editors(jetbrains.mps.workbench.editors@java_stub)" version="-1" />
   <import index="74" modelUID="r:00000000-0000-4000-0000-011c89590282(jetbrains.mps.lang.core.behavior)" version="-1" />
@@ -63,15 +62,9 @@
   <import index="76" modelUID="f:java_stub#jetbrains.mps.nodeEditor.style(jetbrains.mps.nodeEditor.style@java_stub)" version="-1" />
   <import index="77" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="78" modelUID="f:java_stub#jetbrains.mps.ide.dialogs(jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
-  <import index="83" modelUID="f:java_stub#jetbrains.mps.workbench.dialogs.choosers(jetbrains.mps.workbench.dialogs.choosers@java_stub)" version="-1" />
-  <import index="84" modelUID="f:java_stub#com.intellij.ide(com.intellij.ide@java_stub)" version="-1" />
-  <import index="85" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
-  <import index="86" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="88" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
-  <import index="94" modelUID="f:java_stub#jetbrains.mps.baseLanguage.plugin.uiActions.strategies(jetbrains.mps.baseLanguage.plugin.uiActions.strategies@java_stub)" version="-1" />
   <import index="96" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="98" modelUID="r:00000000-0000-4000-0000-011c895903aa(jetbrains.mps.baseLanguageInternal.editor)" version="-1" />
-  <import index="99" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1073416106125">
     <property name="name:32" value="StatementList_Editor" />
     <link role="conceptDeclaration:32" targetNodeId="17.1068580123136:3" />
@@ -11475,7 +11468,7 @@
                           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8382163613504522106">
                             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8382163613504522107">
                               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8382163613504522108">
-                                <link role="baseMethodDeclaration:3" targetNodeId="65.~StratergyAddMethodDialog.&lt;init&gt;(jetbrains.mps.nodeEditor.EditorContext,java.awt.Frame,jetbrains.mps.baseLanguage.plugin.uiActions.StratergyAddMethodDialog$ContainerStrategy,jetbrains.mps.baseLanguage.plugin.uiActions.StratergyAddMethodDialog$CollectMethodsStrategy,jetbrains.mps.baseLanguage.plugin.uiActions.StratergyAddMethodDialog$AdditionStrategy)" resolveInfo="StratergyAddMethodDialog" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="96.7824118464175997729" resolveInfo="StratergyAddMethodDialog" />
                                 <node role="actualArgument:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext:32" id="8382163613504522109" />
                                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8382163613504522110">
                                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8382163613504522111">
@@ -11490,7 +11483,7 @@
                                 </node>
                                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8382163613504522115">
                                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8382163613504522116">
-                                    <link role="baseMethodDeclaration:3" targetNodeId="94.~AddClassMethodStrategy.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="AddClassMethodStrategy" />
+                                    <link role="baseMethodDeclaration:3" targetNodeId="96.7824118464176019402" resolveInfo="AddClassMethodStrategy" />
                                     <node role="actualArgument:3" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode:32" id="8382163613504522117" />
                                   </node>
                                 </node>
@@ -11570,7 +11563,7 @@
                           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7347712222697957232">
                             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7347712222697957233">
                               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7347712222697957234">
-                                <link role="baseMethodDeclaration:3" targetNodeId="65.~StratergyAddMethodDialog.&lt;init&gt;(jetbrains.mps.nodeEditor.EditorContext,java.awt.Frame,jetbrains.mps.baseLanguage.plugin.uiActions.StratergyAddMethodDialog$ContainerStrategy,jetbrains.mps.baseLanguage.plugin.uiActions.StratergyAddMethodDialog$CollectMethodsStrategy,jetbrains.mps.baseLanguage.plugin.uiActions.StratergyAddMethodDialog$AdditionStrategy)" resolveInfo="StratergyAddMethodDialog" />
+                                <link role="baseMethodDeclaration:3" targetNodeId="96.7824118464175997729" resolveInfo="StratergyAddMethodDialog" />
                                 <node role="actualArgument:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_editorContext:32" id="7347712222697957235" />
                                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7347712222697957236">
                                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7347712222697957237">
@@ -11585,7 +11578,7 @@
                                 </node>
                                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7347712222697957241">
                                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7347712222697957242">
-                                    <link role="baseMethodDeclaration:3" targetNodeId="94.~AddClassMethodStrategy.&lt;init&gt;(jetbrains.mps.smodel.SNode)" resolveInfo="AddClassMethodStrategy" />
+                                    <link role="baseMethodDeclaration:3" targetNodeId="96.7824118464176019402" resolveInfo="AddClassMethodStrategy" />
                                     <node role="actualArgument:3" type="jetbrains.mps.lang.editor.structure.CellKeyMap_FunctionParm_selectedNode:32" id="7347712222697957243" />
                                   </node>
                                 </node>

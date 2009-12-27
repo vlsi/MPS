@@ -9,8 +9,8 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import javax.swing.SwingUtilities;
-import jetbrains.mps.baseLanguage.plugin.uiActions.StratergyAddMethodDialog;
-import jetbrains.mps.baseLanguage.plugin.uiActions.strategies.AddClassMethodStrategy;
+import jetbrains.mps.ide.actions.StratergyAddMethodDialog;
+import jetbrains.mps.ide.actions.AddClassMethodStrategy;
 import jetbrains.mps.ide.actions.MethodsToImplementStrategy;
 import jetbrains.mps.ide.actions.ImplementMethodStrategy;
 
