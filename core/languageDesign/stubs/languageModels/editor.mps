@@ -90,5 +90,26 @@
       <link role="relationDeclaration:32" targetNodeId="1.368569065472988630" resolveInfo="languageName" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="5516999836374121345">
+    <link role="conceptDeclaration:32" targetNodeId="1.5516999836374121342" resolveInfo="StubsCreatorType" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="5516999836374121347">
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="5516999836374121349" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5516999836374121350">
+        <property name="text:32" value="stub&lt;" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="5516999836374121354">
+        <link role="relationDeclaration:32" targetNodeId="1.5516999836374121344" />
+        <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="5516999836374121355">
+          <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="5516999836374121357">
+            <property name="readOnly:32" value="true" />
+            <link role="relationDeclaration:32" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+          </node>
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="5516999836374121352">
+        <property name="text:32" value="&gt;" />
+      </node>
+    </node>
+  </node>
 </model>
 
