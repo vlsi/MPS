@@ -2,6 +2,7 @@
 <language namespace="jetbrains.mps.baseLanguage" uuid="f3061a53-9226-4cc5-a443-f952ceaf5816" generatorOutputPath="${language_descriptor}/source_gen" java-stubs-enabled="true" compileInMPS="false">
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.baseLanguage" />
+    <modelRoot path="${language_descriptor}/utilModels" namespacePrefix="" />
   </models>
   <accessoryModels>
     <model modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
@@ -24,6 +25,7 @@
   </generators>
   <classPath>
     <entry path="${language_descriptor}/classes" include="false" />
+    <entry path="${mps_home}/lib/asm/asm.jar" include="false" />
   </classPath>
   <languageRuntimeClassPath>
     <entry path="${language_descriptor}/runtime/classes" />
