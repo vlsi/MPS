@@ -383,7 +383,6 @@ public abstract class ASMModelLoader {
         constructor.addTypeVariableDeclaration(typeVariableDeclaration);
       }
       constructor.setName(cls.getName());
-      int num = 0;
       List<ASMType> parameterType = c.getGenericParameterTypes();
       List<String> parameterNames = c.getParameterNames();
       for (int i = 0; i < parameterType.size(); i++) {
@@ -428,7 +427,6 @@ public abstract class ASMModelLoader {
       this.updateTypeVariables(m, model, methodDeclaration, cls);
       methodDeclaration.setName(m.getName());
       methodDeclaration.setReturnType(this.getTypeByASMType(m.getGenericReturnType(), methodDeclaration, cls, model));
-      int num = 0;
       List<ASMType> parameterTypes = m.getGenericParameterTypes();
       List<String> parameterNames = m.getParameterNames();
       for (int i = 0; i < parameterTypes.size(); i++) {
