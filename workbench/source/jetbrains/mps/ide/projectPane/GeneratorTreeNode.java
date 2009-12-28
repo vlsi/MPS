@@ -51,11 +51,11 @@ class GeneratorTreeNode extends ProjectModuleTreeNode implements StereotypeProvi
   }
 
   protected ActionGroup getQuickCreateGroup(boolean plain) {
-    return ActionUtils.getGroup(ProjectPane.GENERATOR_NEW_ACTIONS);
+    return ActionUtils.getGroup(ProjectPaneActionGroups.GENERATOR_NEW_ACTIONS);
   }
 
   public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_GENERATOR_ACTIONS);
+    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_GENERATOR_ACTIONS);
   }
 
 

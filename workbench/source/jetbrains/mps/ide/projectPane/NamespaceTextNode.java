@@ -76,7 +76,7 @@ public class NamespaceTextNode extends TextTreeNode {
   }
 
   public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_NAMESPACE_ACTIONS);
+    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_NAMESPACE_ACTIONS);
   }
 
   public DefaultActionGroup createNewGroup() {

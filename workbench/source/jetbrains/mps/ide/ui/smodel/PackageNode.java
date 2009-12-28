@@ -17,6 +17,7 @@ package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -42,7 +43,7 @@ public class PackageNode extends SNodeGroupTreeNode {
   }
 
   public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_PACKAGE_ACTIONS);
+    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_PACKAGE_ACTIONS);
   }
 
   public ActionGroup getQuickCreateGroup(boolean plain) {

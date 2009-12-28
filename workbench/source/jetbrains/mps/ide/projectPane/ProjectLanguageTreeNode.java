@@ -77,11 +77,11 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
   }
 
   protected ActionGroup getQuickCreateGroup(boolean plain) {
-    return ActionUtils.getGroup(ProjectPane.LANGUAGE_NEW_ACTIONS);
+    return ActionUtils.getGroup(ProjectPaneActionGroups.LANGUAGE_NEW_ACTIONS);
   }
 
   public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_LANGUAGE_ACTIONS);
+    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_LANGUAGE_ACTIONS);
   }
 
   protected String getModulePresentation() {
@@ -153,7 +153,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
 
     @Override
     public ActionGroup getActionGroup() {
-      return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_RUNTIME_FOLDER_ACTIONS);
+      return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_RUNTIME_FOLDER_ACTIONS);
     }
   }
 

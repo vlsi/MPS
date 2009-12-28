@@ -60,11 +60,11 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
   }
 
   protected ActionGroup getQuickCreateGroup(boolean plain) {
-    return ActionUtils.getGroup(ProjectPane.SOLUTION_NEW_ACTIONS);
+    return ActionUtils.getGroup(ProjectPaneActionGroups.SOLUTION_NEW_ACTIONS);
   }
 
   public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_SOLUTION_ACTIONS);
+    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_SOLUTION_ACTIONS);
   }
 
   protected String getModulePresentation() {

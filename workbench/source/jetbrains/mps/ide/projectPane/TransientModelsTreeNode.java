@@ -53,6 +53,6 @@ public class TransientModelsTreeNode extends ProjectModuleTreeNode {
   }
 
   public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_TRANSIENT_MODULES_ACTIONS);
+    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_TRANSIENT_MODULES_ACTIONS);
   }
 }

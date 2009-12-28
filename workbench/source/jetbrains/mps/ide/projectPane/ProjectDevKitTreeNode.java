@@ -73,7 +73,7 @@ class ProjectDevKitTreeNode extends ProjectModuleTreeNode {
   }
 
   public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_DEVKIT_ACTIONS);
+    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_DEVKIT_ACTIONS);
   }
 
   protected String getModulePresentation() {

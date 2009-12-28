@@ -42,11 +42,11 @@ class ProjectTreeNode extends MPSTreeNode {
   }
 
   protected ActionGroup getQuickCreateGroup(boolean plain) {
-    return ActionUtils.getGroup(ProjectPane.PROJECT_NEW_ACTIONS);
+    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_NEW_ACTIONS);
   }
 
   public ActionGroup getActionGroup() {
-    return ActionUtils.getGroup(ProjectPane.PROJECT_PANE_PROJECT_ACTIONS);
+    return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_PROJECT_ACTIONS);
   }
 
   @Override

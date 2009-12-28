@@ -21,6 +21,7 @@ import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.hierarchy.icons.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
+import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration;
@@ -184,7 +185,7 @@ public class LanguageHierarchiesComponentNew extends JComponent implements Scrol
   }
 
   private void processPopupMenu(MouseEvent e) {
-    BaseGroup group = ActionUtils.getGroup(ProjectPane.PROJECT_PANE_NODE_ACTIONS);
+    BaseGroup group = ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_NODE_ACTIONS);
     ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent().show(this, e.getX(), e.getY());
   }
 
