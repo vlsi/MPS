@@ -1253,6 +1253,28 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1260930188116633932">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1260930188116633933">
+            <property name="name:3" value="e" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1260930188116633934">
+              <link role="classifier:3" targetNodeId="1260930188116633921" resolveInfo="MyEnum" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1260930188116633936" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SwitchStatement:3" id="1260930188116633938">
+          <node role="case:3" type="jetbrains.mps.baseLanguage.structure.SwitchCase:3" id="1260930188116633942">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="1260930188116633946">
+              <link role="enumConstantDeclaration:3" targetNodeId="1260930188116633927" resolveInfo="A" />
+              <link role="enumClass:3" targetNodeId="1260930188116633921" resolveInfo="MyEnum" />
+            </node>
+            <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1260930188116633944" />
+          </node>
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1260930188116633941">
+            <link role="variableDeclaration:3" targetNodeId="1260930188116633933" resolveInfo="e" />
+          </node>
+          <node role="defaultBlock:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1260930188116633940" />
+        </node>
       </node>
     </node>
   </node>
@@ -1354,6 +1376,27 @@
           </node>
         </node>
       </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.structure.EnumClass:3" id="1260930188116633921">
+    <property name="name:3" value="MyEnum" />
+    <node role="enumConstant:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration:3" id="1260930188116633927">
+      <property name="name:3" value="A" />
+      <link role="baseMethodDeclaration:3" targetNodeId="1260930188116633923" resolveInfo="MyEnum" />
+    </node>
+    <node role="enumConstant:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration:3" id="1260930188116633929">
+      <property name="name:3" value="B" />
+      <link role="baseMethodDeclaration:3" targetNodeId="1260930188116633923" resolveInfo="MyEnum" />
+    </node>
+    <node role="enumConstant:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration:3" id="1260930188116633930">
+      <property name="name:3" value="C" />
+      <link role="baseMethodDeclaration:3" targetNodeId="1260930188116633923" resolveInfo="MyEnum" />
+    </node>
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1260930188116633922" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1260930188116633923">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1260930188116633924" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1260930188116633925" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1260930188116633926" />
     </node>
   </node>
 </model>
