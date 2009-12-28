@@ -97,7 +97,11 @@ public class TestGenerationWorker extends GeneratorWorker {
   }
 
   public static IBuildServerMessageFormat getBuildServerMessageFormat() {
-    return new TeamCityMessageFormat();
+    if (System.getProperty("teamcity.version") != null) {
+      return new TeamCityMessageFormat();
+    } else {
+      return new ConsoleMessageFormat();
+    }
   }
 
   public TestGenerationWorker(WhatToDo whatToDo, ProjectComponent component) {
