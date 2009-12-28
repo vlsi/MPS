@@ -1212,7 +1212,7 @@ public class JavaConverterTreeBuilder {
   public Classifier processType(TypeDeclaration x) {
     Classifier classifier = (Classifier) myTypesProvider.getRaw(x.binding);
     if (x.binding.isAnnotationType()) {
-      // Do not process.          //todo methods
+      // Do not process.          //todo methods can have annotations! process later
       return classifier;
     }
     myCurrentTypeDeclaration = x;
@@ -1500,7 +1500,13 @@ public class JavaConverterTreeBuilder {
       if (pairs != null) {
         for (ElementValuePair pair : pairs) {
           AnnotationInstanceValue value = AnnotationInstanceValue.newInstance(myCurrentModel);
-          //todo
+          // value.setValue(processExpressionRefl(pair.getValue()));
+          // todo set value later: it is implemented in JDT in a very weird way
+
+          SNode valueNode = value.getNode();
+          valueNode.addReference(
+            myTypesProvider.createMethodReference(pair.getMethodBinding(), AnnotationInstanceValue.KEY, valueNode));
+          annotationInstance.addValue(value);
         }
       }
       variableDeclaration.addAnnotation(annotationInstance);
