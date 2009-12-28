@@ -98,6 +98,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7241381882860002242">
     <property name="name:3" value="MPSClassPathModelRootManager" />
+    <property name="package:3" value="SpecificClasspath" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7241381882860002243" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7241381882860002244">
       <link role="classifier:3" targetNodeId="7241381882860008844" resolveInfo="JavaStubClassPathModelRootManager" />
@@ -148,6 +149,7 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7241381882860006683">
     <property name="name:3" value="JDKClassPathModelRootManager" />
+    <property name="package:3" value="SpecificClasspath" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7241381882860006684" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7241381882860006685">
       <link role="classifier:3" targetNodeId="7241381882860008844" resolveInfo="JavaStubClassPathModelRootManager" />
@@ -199,6 +201,7 @@
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="7241381882860008844">
     <property name="abstractClass:3" value="true" />
     <property name="name:3" value="JavaStubClassPathModelRootManager" />
+    <property name="package:3" value="SpecificClasspath" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7241381882860008845" />
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7241381882860008846">
       <link role="classifier:3" targetNodeId="3.~BaseStubModelRootManager" />
