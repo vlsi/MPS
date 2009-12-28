@@ -454,13 +454,10 @@ public class JavaConverterTreeBuilder {
     // SourceInfo info = makeSourceInfo(x);
     jetbrains.mps.baseLanguage.structure.Expression expr = processExpressionRefl(x.expression);
     Type testType = createType(x.type.resolvedType);
-    if (!(testType instanceof ClassifierType)) {
-      throw new JavaConverterException("type in instanceof should be ClassifierType");
-    }
     jetbrains.mps.baseLanguage.structure.InstanceOfExpression instanceOfExpression =
       jetbrains.mps.baseLanguage.structure.InstanceOfExpression.newInstance(myCurrentModel);
     instanceOfExpression.setLeftExpression(expr);
-    instanceOfExpression.setClassType((ClassifierType) testType);
+    instanceOfExpression.setClassType(testType);
     return instanceOfExpression;
   }
 
