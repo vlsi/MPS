@@ -149,6 +149,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
       exe.setAntRun(this.getProject());
       exe.setWorkingDirectory(this.getProject().getBaseDir());
       exe.setCommandline(commandLine.toArray(new String[commandLine.size()]));
+      exe.setNewenvironment(true);
       try {
         int i = exe.execute();
         if (i != 0) {
