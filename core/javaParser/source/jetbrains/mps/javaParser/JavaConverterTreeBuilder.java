@@ -563,7 +563,16 @@ public class JavaConverterTreeBuilder {
     jetbrains.mps.baseLanguage.structure.Expression result;
     ReferenceBinding declaredClassBinding = getDeclaredClassBinding(fieldBinding);
     if (fieldBinding.isStatic()) {
-      if (myCurrentClass == myTypesProvider.getRaw(declaredClassBinding)) {
+      INodeAdapter fieldAdapter = myTypesProvider.getRaw(fieldBinding);
+      if (fieldAdapter instanceof EnumConstantDeclaration) {
+        //enum constant reference
+        EnumConstantReference enumConstantReference = EnumConstantReference.newInstance(myCurrentModel);
+        role = EnumConstantReference.ENUM_CONSTANT_DECLARATION;
+        sourceNode = enumConstantReference.getNode();
+        enumConstantReference.getNode().addReference(
+          myTypesProvider.createClassifierReference(declaredClassBinding, EnumConstantReference.ENUM_CLASS, sourceNode));
+        result = enumConstantReference;
+      } else if (myCurrentClass == myTypesProvider.getRaw(declaredClassBinding)) {
         //unqualified static field reference
         role = LocalStaticFieldReference.VARIABLE_DECLARATION;
         LocalStaticFieldReference lsfr = LocalStaticFieldReference.newInstance(myCurrentModel);
