@@ -3,7 +3,12 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
-  <classPath />
+  <classPath>
+    <entry path="${mps_home}/core/baseLanguage/baseLanguage/classes" include="false" />
+    <entry path="${mps_home}/lib/asm/asm.jar" include="false" />
+    <entry path="${mps_home}/lib/jetbrains-ideframework/annotations.jar" include="false" />
+    <entry path="${mps_home}/core/languageDesign/core/classes" include="false" />
+  </classPath>
   <sourcePath />
 </solution>
 

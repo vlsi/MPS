@@ -23,9 +23,11 @@ import org.eclipse.jdt.internal.compiler.ast.Expression;
 import org.eclipse.jdt.internal.compiler.ast.FieldDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.TryStatement;
+import org.eclipse.jdt.internal.compiler.ast.Annotation;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.structure.*;
 import jetbrains.mps.logging.Logger;
 
@@ -483,7 +485,23 @@ public class ReferentsCreator {
       int paramCount = (b.parameters != null ? b.parameters.length : 0);
       if (paramCount > 0) {
         for (int i = 0, n = x.arguments.length; i < n; ++i) {
-          createParameter(x.arguments[i].binding, method);
+          Argument argument = x.arguments[i];
+          ParameterDeclaration parameterDeclaration =
+            createParameter(argument.binding, method);
+          addVariableAnnotations(parameterDeclaration, argument);
+        }
+      }
+    }
+
+    private void addVariableAnnotations(VariableDeclaration variableDeclaration, AbstractVariableDeclaration var) {
+      if (var.annotations != null) {
+        for (Annotation annotation : var.annotations) {
+          AnnotationBinding annotationBinding = annotation.getCompilerAnnotation();
+          AnnotationInstance annotationInstance = AnnotationInstance.newInstance(myReferentsCreator.myCurrentModel);
+          SNode sourceNode = annotationInstance.getNode();
+          sourceNode.addReference(myReferentsCreator.getTypesProvider().createClassifierReference(
+            annotationBinding.getAnnotationType(), AnnotationInstance.ANNOTATION, sourceNode));
+          variableDeclaration.addAnnotation(annotationInstance);
         }
       }
     }
