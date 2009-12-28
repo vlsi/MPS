@@ -1264,5 +1264,24 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1237983962450" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1260930188116560108">
+    <link role="concept" targetNodeId="1.1234529062040:11" resolveInfo="UtilityMethodCall" />
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1260930188116560109">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1260930188116560110" />
+    </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1260930188116560111">
+      <property name="name" value="isLegalAsStatement" />
+      <link role="overriddenMethod" targetNodeId="2v.1239211900844" resolveInfo="isLegalAsStatement" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1260930188116560114">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1260930188116560117">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1260930188116560119">
+            <property name="value:3" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1260930188116560115" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1260930188116560116" />
+    </node>
+  </node>
 </model>
 
