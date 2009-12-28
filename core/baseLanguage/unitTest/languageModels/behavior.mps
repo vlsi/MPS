@@ -27,7 +27,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="11" />
+  <maxImportIndex value="12" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c89590405(jetbrains.mps.baseLanguage.unitTest.runtime)" version="-1" />
@@ -36,8 +36,7 @@
   <import index="7" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c89590380(jetbrains.mps.lang.test.behavior)" version="-1" />
-  <import index="10" modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <import index="11" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
+  <import index="12" modelUID="r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877238815">
     <link role="concept" targetNodeId="1.1171931690126" resolveInfo="TestMethod" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1216135731803">
@@ -263,7 +262,7 @@
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7691748101595472040">
                       <link role="baseMethodDeclaration:3" targetNodeId="2.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
                       <node role="actualArgument:3" type="jetbrains.mps.lang.smodel.structure.NodeRefExpression:16" id="7691748101595472041">
-                        <link role="referentNode:16" targetNodeId="11.1278034865699377468" resolveInfo="MPSLaunch" />
+                        <link role="referentNode:16" targetNodeId="12.8492459591399146889" resolveInfo="MPSLaunch" />
                       </node>
                     </node>
                   </node>

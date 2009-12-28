@@ -32,18 +32,18 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="18" />
+  <maxImportIndex value="20" />
   <import index="1" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
-  <import index="7" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <import index="10" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="13" modelUID="f:java_stub#jetbrains.mps.lang.pattern.util(jetbrains.mps.lang.pattern.util@java_stub)" version="-1" />
   <import index="17" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <import index="18" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
+  <import index="20" modelUID="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1225194243289">
     <property name="package" value="Behavior" />
     <link role="concept" targetNodeId="1.1225194240794" resolveInfo="ConceptBehavior" />
@@ -405,13 +405,13 @@
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1225194243462">
             <property name="name:3" value="result" />
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1225194243463">
-              <link role="classifier:3" targetNodeId="7.1221578571953" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
+              <link role="classifier:3" targetNodeId="20.8492459591399164343" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1225194243464">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="1225194243465">
                 <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="1225194243466">
-                  <link role="classifier:3" targetNodeId="7.1221578571953" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
-                  <link role="baseMethodDeclaration:3" targetNodeId="7.1221578571955" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
+                  <link role="classifier:3" targetNodeId="20.8492459591399164343" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="20.8492459591399164512" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
                   <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1225194243467" />
                   <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1225194243468">
                     <property name="name:3" value="createMethodCall" />
@@ -604,7 +604,7 @@
                                   <link role="concept:16" targetNodeId="1.1225194240794" resolveInfo="ConceptBehavior" />
                                   <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1225194243552">
                                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1225194243553">
-                                      <link role="fieldDeclaration:3" targetNodeId="7.1221578599509" resolveInfo="myNode" />
+                                      <link role="fieldDeclaration:3" targetNodeId="20.8492459591399164505" resolveInfo="myNode" />
                                     </node>
                                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1225194243554" />
                                   </node>
@@ -670,7 +670,7 @@
         <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="1221668414344" />
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1227265946333">
-        <link role="classifier:3" targetNodeId="7.1223471722196" resolveInfo="IExtractMethodRefactoringProcessor" />
+        <link role="classifier:3" targetNodeId="20.8492459591399165413" resolveInfo="IExtractMethodRefactoringProcessor" />
       </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1225194243576">
@@ -682,8 +682,8 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1225194243580">
             <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="1225194243581">
               <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="1225194243582">
-                <link role="classifier:3" targetNodeId="7.1222173596072" resolveInfo="AbstractStaticContainerProcessor" />
-                <link role="baseMethodDeclaration:3" targetNodeId="7.1222173596074" resolveInfo="AbstractStaticContainerProcessor" />
+                <link role="classifier:3" targetNodeId="20.8492459591399169401" resolveInfo="AbstractStaticContainerProcessor" />
+                <link role="baseMethodDeclaration:3" targetNodeId="20.8492459591399169418" resolveInfo="AbstractStaticContainerProcessor" />
                 <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1225194243583" />
                 <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1225194243585">
                   <property name="name:3" value="createNewMethod" />
@@ -716,7 +716,7 @@
                                 <link role="concept:16" targetNodeId="1.1225194240794" resolveInfo="ConceptBehavior" />
                                 <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1225221099436">
                                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1225221099437">
-                                    <link role="fieldDeclaration:3" targetNodeId="7.1222173646706" resolveInfo="myStaticContainer" />
+                                    <link role="fieldDeclaration:3" targetNodeId="20.8492459591399169414" resolveInfo="myStaticContainer" />
                                   </node>
                                   <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1225221099438" />
                                 </node>
@@ -772,7 +772,7 @@
         <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1225194243686" />
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1225194243687">
-        <link role="classifier:3" targetNodeId="7.1222173596072" resolveInfo="AbstractStaticContainerProcessor" />
+        <link role="classifier:3" targetNodeId="20.8492459591399169401" resolveInfo="AbstractStaticContainerProcessor" />
       </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="6603209858471710849">

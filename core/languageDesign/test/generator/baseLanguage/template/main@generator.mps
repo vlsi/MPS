@@ -50,7 +50,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <maxImportIndex value="43" />
+  <maxImportIndex value="44" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590388(jetbrains.mps.lang.test.structure)" version="4" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="7" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -58,10 +58,7 @@
   <import index="11" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="14" modelUID="f:java_stub#jetbrains.mps.lang.test.matcher(jetbrains.mps.lang.test.matcher@java_stub)" version="-1" />
   <import index="17" modelUID="f:java_stub#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" version="-1" />
-  <import index="18" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="19" modelUID="f:java_stub#jetbrains.mps.vfs(jetbrains.mps.vfs@java_stub)" version="-1" />
   <import index="26" modelUID="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)" version="-1" />
-  <import index="27" modelUID="f:java_stub#com.intellij.openapi.project(com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="28" modelUID="f:java_stub#org.junit(org.junit@java_stub)" version="-1" />
   <import index="29" modelUID="r:00000000-0000-4000-0000-011c89590374(jetbrains.mps.baseLanguage.classifiers.generator.baseLanguage.template.main@generator)" version="-1" />
   <import index="30" modelUID="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)" version="-1" />
@@ -72,10 +69,8 @@
   <import index="37" modelUID="r:00000000-0000-4000-0000-011c89590360(jetbrains.mps.lang.plugin.behavior)" version="-1" />
   <import index="38" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <import index="39" modelUID="f:java_stub#jetbrains.mps.nodeEditor(jetbrains.mps.nodeEditor@java_stub)" version="-1" />
-  <import index="40" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
-  <import index="41" modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <import index="42" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <import index="43" modelUID="r:3d2b27a7-4374-41aa-af31-19e1e430d9f5(jetbrains.mps.lang.test.generator.baseLanguage.template.util)" version="-1" />
+  <import index="44" modelUID="r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1210261200088">
     <property name="name:2" value="main" />
     <property name="topPriorityGroup:2" value="true" />
@@ -1184,11 +1179,11 @@
         </node>
       </node>
       <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="7523560072226766730">
-        <link role="annotation:3" targetNodeId="42.1278034865699377468" resolveInfo="MPSLaunch" />
+        <link role="annotation:3" targetNodeId="44.8492459591399146889" resolveInfo="MPSLaunch" />
       </node>
     </node>
     <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="7523560072226766716">
-      <link role="annotation:3" targetNodeId="42.1278034865699377468" resolveInfo="MPSLaunch" />
+      <link role="annotation:3" targetNodeId="44.8492459591399146889" resolveInfo="MPSLaunch" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1225467537279">
@@ -1698,7 +1693,7 @@
         </node>
       </node>
       <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="7523560072226764505">
-        <link role="annotation:3" targetNodeId="42.1278034865699377468" resolveInfo="MPSLaunch" />
+        <link role="annotation:3" targetNodeId="44.8492459591399146889" resolveInfo="MPSLaunch" />
       </node>
     </node>
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1229198973176">
@@ -1835,7 +1830,7 @@
       <link role="classifier:3" targetNodeId="26.1215696484420" resolveInfo="BaseTransformationTest" />
     </node>
     <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="7523560072226763174">
-      <link role="annotation:3" targetNodeId="42.1278034865699377468" resolveInfo="MPSLaunch" />
+      <link role="annotation:3" targetNodeId="44.8492459591399146889" resolveInfo="MPSLaunch" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1230133923247">

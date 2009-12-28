@@ -18,7 +18,7 @@ package jetbrains.mps.project;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.plugin.MPSLaunch;
+import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;

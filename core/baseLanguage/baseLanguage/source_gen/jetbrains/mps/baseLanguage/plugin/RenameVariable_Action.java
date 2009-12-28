@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.RenameRefactoringDialog;
 
 public class RenameVariable_Action extends GeneratedAction {
   private static final Icon ICON = null;

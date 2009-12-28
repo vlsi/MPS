@@ -20,7 +20,7 @@ import jetbrains.mps.uiLanguage.runtime.events.Events;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
 import java.awt.GridBagLayout;
-import jetbrains.mps.baseLanguage.plugin.LayoutUtil;
+import jetbrains.mps.baseLanguage.util.plugin.run.LayoutUtil;
 import java.awt.FlowLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
@@ -29,7 +29,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.baseLanguage.plugin.ConfigRunParameters;
+import jetbrains.mps.baseLanguage.util.plugin.run.ConfigRunParameters;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class JUnitConfigEditor extends JPanel {

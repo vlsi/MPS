@@ -57,7 +57,7 @@ public class MakeAssert {
           ClassLoader classLoader = genType.getCompiler().getClassLoader(MakeAssert.class.getClassLoader());
           Class testClass = classLoader.loadClass(className);
           Method method = testClass.getMethods()[0];
-          returnValue[0] = (Boolean)method.invoke(null);
+          returnValue[0] = (Boolean) method.invoke(null);
           System.out.println("Test " + className + "." + method.getName() + " return " + returnValue[0]);
           changeModelProcessor.revertStep(filesGenType);
           changeModelProcessor.generateModelToChange(filesGenType);

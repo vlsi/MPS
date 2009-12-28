@@ -38,14 +38,14 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
-  <maxImportIndex value="19" />
+  <maxImportIndex value="21" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="5" modelUID="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" version="-1" />
   <import index="10" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="15" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <import index="17" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="18" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
-  <import index="19" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
+  <import index="21" modelUID="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" version="-1" />
   <node type="jetbrains.mps.lang.findUsages.structure.FinderDeclaration:2" id="1200309609796">
     <property name="name:2" value="OverridingMethods" />
     <property name="description:2" value="Overriding Methods" />
@@ -3485,22 +3485,22 @@
                     <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1227970654777">
                       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1227970643036">
                         <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1227970648295">
-                          <link role="baseMethodDeclaration:3" targetNodeId="19.1227969832187" resolveInfo="MethodCallAdapter" />
+                          <link role="baseMethodDeclaration:3" targetNodeId="21.8492459591399167636" resolveInfo="MethodCallAdapter" />
                           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1227970652560">
                             <link role="variable:7" targetNodeId="1227527192370" resolveInfo="nodeUsage" />
                           </node>
                         </node>
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1227970658167">
-                        <link role="baseMethodDeclaration:3" targetNodeId="19.1227970511521" resolveInfo="getMethodDeclaration" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="21.8492459591399167470" resolveInfo="getMethodDeclaration" />
                       </node>
                     </node>
                   </node>
                 </node>
               </node>
               <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1228129847916">
-                <link role="baseMethodDeclaration:3" targetNodeId="19.1227901293969" resolveInfo="isMethodCall" />
-                <link role="classConcept:3" targetNodeId="19.1227969832185" resolveInfo="MethodCallAdapter" />
+                <link role="baseMethodDeclaration:3" targetNodeId="21.8492459591399167664" resolveInfo="isMethodCall" />
+                <link role="classConcept:3" targetNodeId="21.8492459591399167469" resolveInfo="MethodCallAdapter" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1228129850356">
                   <link role="variable:7" targetNodeId="1227527192370" resolveInfo="nodeUsage" />
                 </node>

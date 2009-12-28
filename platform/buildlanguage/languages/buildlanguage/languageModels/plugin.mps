@@ -610,7 +610,6 @@
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="443f4c36-fcf5-4eb6-9500-8d06ed259e3e(jetbrains.mps.baseLanguage.classifiers)" />
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
-  <language namespace="760a0a8c-eabb-4521-8bfd-65db761a9ba3(jetbrains.mps.baseLanguage.logging)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
@@ -639,7 +638,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895904c7(jetbrains.mps.buildlanguage.plugin)" version="0" />
-  <maxImportIndex value="55" />
+  <maxImportIndex value="56" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
   <import index="21" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
   <import index="22" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -657,18 +656,16 @@
   <import index="36" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="37" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <import index="38" modelUID="f:java_stub#jetbrains.mps.generator.generationTypes(jetbrains.mps.generator.generationTypes@java_stub)" version="-1" />
-  <import index="40" modelUID="f:java_stub#jetbrains.mps.generator.fileGenerator(jetbrains.mps.generator.fileGenerator@java_stub)" version="-1" />
   <import index="42" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
   <import index="43" modelUID="f:java_stub#jetbrains.mps.ide.messages(jetbrains.mps.ide.messages@java_stub)" version="-1" />
   <import index="44" modelUID="f:java_stub#jetbrains.mps.ide(jetbrains.mps.ide@java_stub)" version="-1" />
-  <import index="45" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <import index="46" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="50" modelUID="f:java_stub#javax.swing.table(javax.swing.table@java_stub)" version="-1" />
   <import index="51" modelUID="f:java_stub#javax.swing.event(javax.swing.event@java_stub)" version="-1" />
   <import index="52" modelUID="f:java_stub#com.intellij.openapi.actionSystem(com.intellij.openapi.actionSystem@java_stub)" version="-1" />
   <import index="53" modelUID="f:java_stub#jetbrains.mps.ide.icons(jetbrains.mps.ide.icons@java_stub)" version="-1" />
-  <import index="54" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="55" modelUID="f:java_stub#jetbrains.mps.textGen(jetbrains.mps.textGen@java_stub)" version="-1" />
+  <import index="56" modelUID="r:f144b87b-8ea5-4a8a-bb79-78fd4663e93c(jetbrains.mps.baseLanguage.util.plugin.run)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1225567253971">
     <property name="name:3" value="BuildScriptRunner" />
     <property name="package:3" value="runner" />
@@ -903,13 +900,13 @@
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1225567254012">
                 <property name="name:3" value="input" />
                 <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1225567254013">
-                  <link role="classifier:3" targetNodeId="45.1208520470121" resolveInfo="BaseOutputReader" />
+                  <link role="classifier:3" targetNodeId="56.8492459591399146899" resolveInfo="BaseOutputReader" />
                 </node>
                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1225567254014">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="1225567254015">
                     <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="1225567254016">
-                      <link role="classifier:3" targetNodeId="45.1208520470121" resolveInfo="BaseOutputReader" />
-                      <link role="baseMethodDeclaration:3" targetNodeId="45.1208520470125" resolveInfo="BaseOutputReader" />
+                      <link role="classifier:3" targetNodeId="56.8492459591399146899" resolveInfo="BaseOutputReader" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="56.8492459591399146903" resolveInfo="BaseOutputReader" />
                       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1225567254020" />
                       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1225567254021">
                         <property name="name:3" value="addMessage" />
@@ -974,13 +971,13 @@
               <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1225567254039">
                 <property name="name:3" value="error" />
                 <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1225567254040">
-                  <link role="classifier:3" targetNodeId="45.1208520470121" resolveInfo="BaseOutputReader" />
+                  <link role="classifier:3" targetNodeId="56.8492459591399146899" resolveInfo="BaseOutputReader" />
                 </node>
                 <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1225567254041">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="1225567254042">
                     <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="1225567254043">
-                      <link role="classifier:3" targetNodeId="45.1208520470121" resolveInfo="BaseOutputReader" />
-                      <link role="baseMethodDeclaration:3" targetNodeId="45.1208520470125" resolveInfo="BaseOutputReader" />
+                      <link role="classifier:3" targetNodeId="56.8492459591399146899" resolveInfo="BaseOutputReader" />
+                      <link role="baseMethodDeclaration:3" targetNodeId="56.8492459591399146903" resolveInfo="BaseOutputReader" />
                       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1225567254047" />
                       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1225567254048">
                         <property name="name:3" value="addMessage" />
@@ -1091,7 +1088,7 @@
       </node>
     </node>
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1225567254092">
-      <link role="classifier:3" targetNodeId="45.1208519128358" resolveInfo="BaseRunner" />
+      <link role="classifier:3" targetNodeId="56.8492459591399147272" resolveInfo="BaseRunner" />
     </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1240230523394">
       <property name="name:3" value="getJavaHomes" />

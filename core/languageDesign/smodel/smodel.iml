@@ -14,6 +14,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="MPS" />
     <orderEntry type="module" module-name="Closures" />
+    <orderEntry type="module" module-name="baseLanguage" />
   </component>
 </module>
 

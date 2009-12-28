@@ -40,11 +40,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="9" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <import index="7" modelUID="f:java_stub#com.intellij.openapi.progress(com.intellij.openapi.progress@java_stub)" version="-1" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c895902c4(jetbrains.mps.baseLanguage.findUsages)" version="-1" />
+  <import index="11" modelUID="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" version="-1" />
   <visible index="2" modelUID="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)" />
   <visible index="3" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   <node type="jetbrains.mps.lang.refactoring.structure.Refactoring:1" id="7874812549549771289">
@@ -136,8 +136,8 @@
               <link role="elementConcept:16" targetNodeId="1.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1494876485718557625">
-              <link role="classConcept:3" targetNodeId="2.1227519212562" resolveInfo="MethodRefactoringUtils" />
-              <link role="baseMethodDeclaration:3" targetNodeId="2.1227519513467" resolveInfo="findOverridingMethods" />
+              <link role="classConcept:3" targetNodeId="11.8492459591399170869" resolveInfo="MethodRefactoringUtils" />
+              <link role="baseMethodDeclaration:3" targetNodeId="11.8492459591399170915" resolveInfo="findOverridingMethods" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1494876485718557626">
                 <link role="variableDeclaration:3" targetNodeId="7874812549549876827" resolveInfo="methodDeclNode" />
               </node>
@@ -275,8 +275,8 @@
                     <link role="variableDeclaration:3" targetNodeId="7874812549549919821" resolveInfo="overriding" />
                   </node>
                   <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="304997259309380408">
-                    <link role="classConcept:3" targetNodeId="2.1227519212562" resolveInfo="MethodRefactoringUtils" />
-                    <link role="baseMethodDeclaration:3" targetNodeId="2.1227519513467" resolveInfo="findOverridingMethods" />
+                    <link role="classConcept:3" targetNodeId="11.8492459591399170869" resolveInfo="MethodRefactoringUtils" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="11.8492459591399170915" resolveInfo="findOverridingMethods" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="304997259309380409">
                       <link role="variableDeclaration:3" targetNodeId="7874812549550140684" resolveInfo="methodDeclNode" />
                     </node>

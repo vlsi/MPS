@@ -2844,7 +2844,6 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1221393582612">
     <property name="name:0" value="IExtractMethodAvailable" />
-    <property name="package:0" value="refactoring" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1221737317277">
     <property name="name:0" value="StaticInitializer" />
@@ -2859,12 +2858,10 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1222174328436">
-    <property name="package:0" value="refactoring" />
     <property name="name:0" value="IStaticContainerForMethods" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1223985693348">
     <property name="name:0" value="IVariableAssignment" />
-    <property name="package:0" value="refactoring" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1224071154655">
     <property name="name:0" value="AsExpression" />
@@ -3000,7 +2997,6 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1224609861009">
-    <property name="package:0" value="refactoring" />
     <property name="name:0" value="IThisExpression" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1224848483129">
@@ -3169,7 +3165,6 @@
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1225280593310">
-    <property name="package:0" value="refactoring" />
     <property name="name:0" value="IParameter" />
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1225892208569">

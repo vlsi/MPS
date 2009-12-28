@@ -11,7 +11,7 @@ import java.util.List;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import jetbrains.mps.baseLanguage.plugin.MethodCallAdapter;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodCallAdapter;
 
 public class ExactMethodUsages_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.baseLanguage.findUsages.ExactMethodUsages_Finder");

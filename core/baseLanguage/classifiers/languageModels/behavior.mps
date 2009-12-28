@@ -34,13 +34,13 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="9" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="5" modelUID="r:00000000-0000-4000-0000-011c895902c8(jetbrains.mps.baseLanguage.plugin)" version="-1" />
   <import index="6" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="9" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
+  <import index="11" modelUID="r:5f19c5cc-325c-485a-b033-20949d89a6f0(jetbrains.mps.baseLanguage.util.plugin.refactorings)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877255427">
     <link role="concept" targetNodeId="1.1205752174734:0" resolveInfo="IClassifierPart" />
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877255428">
@@ -1089,8 +1089,8 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1221661952189">
             <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="1221661952190">
               <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="1221661952191">
-                <link role="classifier:3" targetNodeId="5.1221578571953" resolveInfo="ExtractMethodRefactoringProcessor" />
-                <link role="baseMethodDeclaration:3" targetNodeId="5.1221578571955" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
+                <link role="classifier:3" targetNodeId="11.8492459591399164343" resolveInfo="ExtractMethodRefactoringProcessor" />
+                <link role="baseMethodDeclaration:3" targetNodeId="11.8492459591399164512" resolveInfo="AbstractExtractMethodRefactoringProcessor" />
                 <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1221661952193" />
                 <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1221661952194">
                   <property name="name:3" value="createNewMethod" />
@@ -1244,7 +1244,7 @@
         </node>
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1221661930340">
-        <link role="classifier:3" targetNodeId="5.1221578571953" resolveInfo="ExtractMethodRefactoringProcessor" />
+        <link role="classifier:3" targetNodeId="11.8492459591399164343" resolveInfo="ExtractMethodRefactoringProcessor" />
       </node>
       <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1221670644669">
         <property name="name:3" value="nodesToRefactor" />

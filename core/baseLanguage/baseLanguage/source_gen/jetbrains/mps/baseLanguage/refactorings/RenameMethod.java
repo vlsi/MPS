@@ -11,7 +11,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.plugin.MethodRefactoringUtils;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.MethodRefactoringUtils;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
