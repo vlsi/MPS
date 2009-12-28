@@ -10,7 +10,12 @@ import org.jetbrains.annotations.NotNull;
  * To change this template use File | Settings | File Templates.
  */
 public class OrdinaryClassWithAnnotatedFeatures {
+  @NotNull
   public void foo(@NotNull Object param) {
-    
+    @NotNull Object a = null;
+  }
+
+  public @OrdinaryAnnotation class FooBar {
+
   }
 }

@@ -214,7 +214,6 @@ public class ReferentsCreator {
 
     private boolean process(TypeDeclaration typeDeclaration) {
       SourceTypeBinding binding = typeDeclaration.binding;
-
       if (binding.constantPoolName() == null) {
         /*
          * Weird case: if JDT determines that this local class is totally
@@ -299,6 +298,8 @@ public class ReferentsCreator {
           }
         }
 
+        addClassifierAnnotations(classifier, typeDeclaration);
+
         myReferentsCreator.myTypeDecls.add(typeDeclaration);
         if (isTopLevel) {
           myReferentsCreator.myTopLevelTypeDecls.add(typeDeclaration);
@@ -344,10 +345,14 @@ public class ReferentsCreator {
       FieldBinding b = fieldDeclaration.binding;
       Classifier enclosingClassifier = (Classifier) myReferentsCreator.myBindingMap.get(scope.enclosingSourceType());
       boolean isEnumConstant = isEnumConstant(fieldDeclaration);
+      VariableDeclaration field = null;
       if (isEnumConstant) {
         createEnumField(b, enclosingClassifier);
       } else {
-        createField(b, enclosingClassifier);
+        field = createField(b, enclosingClassifier);
+      }
+      if (field != null) { //todo annotations with enum constants?
+        addVariableAnnotations(field, fieldDeclaration);
       }
       return true;
     }
@@ -407,6 +412,7 @@ public class ReferentsCreator {
       newLocal.setIsFinal(b.isFinal());
       newLocal.setType(localType);
       myReferentsCreator.myBindingMap.put(b, newLocal);
+      addVariableAnnotations(newLocal, localDeclaration);
       return true;
     }
 
@@ -426,6 +432,7 @@ public class ReferentsCreator {
         if (!(classConcept instanceof AnonymousClass)) {
           classConcept.addConstructor(constructorDeclaration);
         }
+        addMethodAnnotations(constructorDeclaration, ctorDecl);
         myReferentsCreator.myBindingMap.put(b, constructorDeclaration);
         return true;
       } catch (Throwable e) {
@@ -450,6 +457,7 @@ public class ReferentsCreator {
       }
       newMethod.setReturnType(createType(b.returnType));
       mapParameters(newMethod, methodDeclaration);
+      addMethodAnnotations(newMethod, methodDeclaration);
       return true;
     }
 
@@ -496,14 +504,34 @@ public class ReferentsCreator {
     private void addVariableAnnotations(VariableDeclaration variableDeclaration, AbstractVariableDeclaration var) {
       if (var.annotations != null) {
         for (Annotation annotation : var.annotations) {
-          AnnotationBinding annotationBinding = annotation.getCompilerAnnotation();
-          AnnotationInstance annotationInstance = AnnotationInstance.newInstance(myReferentsCreator.myCurrentModel);
-          SNode sourceNode = annotationInstance.getNode();
-          sourceNode.addReference(myReferentsCreator.getTypesProvider().createClassifierReference(
-            annotationBinding.getAnnotationType(), AnnotationInstance.ANNOTATION, sourceNode));
-          variableDeclaration.addAnnotation(annotationInstance);
+          addAnnotation(variableDeclaration, annotation);
         }
       }
+    }
+
+    private void addMethodAnnotations(BaseMethodDeclaration methodDeclaration, AbstractMethodDeclaration method) {
+      if (method.annotations != null) {
+        for (Annotation annotation : method.annotations) {
+          addAnnotation(methodDeclaration, annotation);
+        }
+      }
+    }
+
+    private void addClassifierAnnotations(Classifier classifier, TypeDeclaration typeDeclaration) {
+      if (typeDeclaration.annotations != null) {
+        for (Annotation annotation : typeDeclaration.annotations) {
+          addAnnotation(classifier, annotation);
+        }
+      }
+    }
+
+    private void addAnnotation(HasAnnotation variableDeclaration, Annotation annotation) {
+      AnnotationBinding annotationBinding = annotation.getCompilerAnnotation();
+      AnnotationInstance annotationInstance = AnnotationInstance.newInstance(myReferentsCreator.myCurrentModel);
+      SNode sourceNode = annotationInstance.getNode();
+      sourceNode.addReference(myReferentsCreator.getTypesProvider().createClassifierReference(
+            annotationBinding.getAnnotationType(), AnnotationInstance.ANNOTATION, sourceNode));
+      variableDeclaration.addAnnotation(annotationInstance);
     }
 
     private ParameterDeclaration createParameter(LocalVariableBinding binding,
