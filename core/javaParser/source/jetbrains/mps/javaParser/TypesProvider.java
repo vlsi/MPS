@@ -128,10 +128,12 @@ public class TypesProvider {
         ReferenceBinding originalType = parameterizedTypeBinding.genericType();
         ClassifierType result = ClassifierType.newInstance(model);
         result.getNode().addReference(createClassifierReference(originalType, ClassifierType.CLASSIFIER, result.getNode()));
-        TypeBinding[] typeBindings = parameterizedTypeBinding.arguments;
-        if (typeBindings != null) {
-          for (TypeBinding typeBinding : typeBindings) {
-            result.addParameter(createType(typeBinding));
+        if (!(parameterizedTypeBinding instanceof RawTypeBinding)) {
+          TypeBinding[] typeBindings = parameterizedTypeBinding.arguments;
+          if (typeBindings != null) {
+            for (TypeBinding typeBinding : typeBindings) {
+              result.addParameter(createType(typeBinding));
+            }
           }
         }
         return result;
@@ -175,7 +177,7 @@ public class TypesProvider {
 
   public SReference createMethodReference(MethodBinding binding, String role, SNode sourceNode) {
     if (binding instanceof ParameterizedMethodBinding) {
-      binding = ((ParameterizedMethodBinding) binding).original(); 
+      binding = ((ParameterizedMethodBinding) binding).original();
     }
     INodeAdapter adapter = myReferentsCreator.myBindingMap.get(binding);
     if (adapter != null) {
@@ -212,7 +214,7 @@ public class TypesProvider {
 
 
   private SReference getRegularMPSNodeReferenceFromForeignId(SNode sourceNode, String role, SModelReference modelReference, SNodeId nodeId, FeatureKind targetKind) {
-      //foreign only
+    //foreign only
     SReference reference = new ForeignReferencesConvertor().createFromForeignId(sourceNode, role, modelReference, nodeId, targetKind);
     if (reference != null) return reference;
     return SReference.create(role, sourceNode, modelReference, nodeId);
@@ -281,16 +283,16 @@ public class TypesProvider {
         return asString(typeVariableBinding.superInterfaces[0]);
       }
       return asString(superclass);
-     /* Binding binding = typeVariableBinding.declaringElement;
-      String name = null;
-      if (binding instanceof MethodBinding) {
-        MethodBinding methodBinding = (MethodBinding) binding;
-        name = new String(methodBinding.typeVariables[typeVariableBinding.rank].sourceName);
-      } else if (binding instanceof SourceTypeBinding) {
-        SourceTypeBinding sourceTypeBinding = (SourceTypeBinding) binding;
-        name = new String(sourceTypeBinding.typeVariables[typeVariableBinding.rank].sourceName);
-      }
-      return name;*/
+      /* Binding binding = typeVariableBinding.declaringElement;
+     String name = null;
+     if (binding instanceof MethodBinding) {
+       MethodBinding methodBinding = (MethodBinding) binding;
+       name = new String(methodBinding.typeVariables[typeVariableBinding.rank].sourceName);
+     } else if (binding instanceof SourceTypeBinding) {
+       SourceTypeBinding sourceTypeBinding = (SourceTypeBinding) binding;
+       name = new String(sourceTypeBinding.typeVariables[typeVariableBinding.rank].sourceName);
+     }
+     return name;*/
     }
     if (type instanceof WildcardBinding && ((WildcardBinding) type).boundKind == Wildcard.EXTENDS) {
       return asString(((WildcardBinding) type).bound); //todo multiple bounds (much later)
