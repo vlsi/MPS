@@ -49,7 +49,6 @@ import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.actions.*;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AllModelsTreeNode;
-import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.RuntimeModulesTreeNode;
 import jetbrains.mps.ide.projectPane.SModelsSubtree.JavaStubsTreeNode;
 import jetbrains.mps.ide.projectPane.SModelsSubtree.TestsTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -805,7 +804,6 @@ public class ProjectPane extends AbstractProjectViewPane {
   //----find next queries----
 
   //todo: will work bad e.g. if operating with project data from modules pool
-
   public MPSTreeNode findNextTreeNode(SNode node) {
     MPSTreeNode foundNode = findMostSuitableSNodeTreeNode(node);
     if (foundNode == null) return null;
@@ -832,30 +830,19 @@ public class ProjectPane extends AbstractProjectViewPane {
   private static class ModuleInProjectCondition extends ModuleEverywhereCondition {
     public boolean met(MPSTreeNode object) {
       if (!super.met(object)) return false;
-
-      //do not go into modules pool
       return !(object instanceof ProjectModulesPoolTreeNode);
     }
   }
 
   private static class ModuleEverywhereCondition implements Condition<MPSTreeNode> {
     public boolean met(MPSTreeNode node) {
-      //go into namespace nodes
-      if (node instanceof NamespaceTextNode) return true;
+      if (node instanceof ProjectModuleTreeNode && !(node instanceof ProjectLanguageTreeNode)) return false;
+      if (node instanceof SModelTreeNode) return false;
 /*
       todo: extract optimal module finding process. Used method only works when there is a single ability of selection
       //need to go into devkits
       if (node instanceof ProjectDevKitTreeNode) return true;
 */
-      //need to go into language to find generator modules
-      if (node instanceof ProjectLanguageTreeNode) return true;
-      //go into runtime section
-      if (node instanceof RuntimeModulesTreeNode) return true;
-      //do not go into other modules
-      if (node instanceof ProjectModuleTreeNode) return false;
-      //not to load models
-      if (node instanceof SModelTreeNode) return false;
-
       return true;
     }
   }
@@ -866,9 +853,7 @@ public class ProjectPane extends AbstractProjectViewPane {
 
       if (node instanceof SModelTreeNode) {
         SModelTreeNode modelNode = (SModelTreeNode) node;
-        if (!modelNode.getSubfolderSModelTreeNodes().isEmpty()) {
-          return true;
-        }
+        if (modelNode.hasModelsUnder()) return true;
       }
 
       boolean descent = false;

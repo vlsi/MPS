@@ -16,8 +16,8 @@
 package jetbrains.mps.ide.ui.smodel;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.ModelGenerationStatusListener;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import jetbrains.mps.ide.ThreadUtils;
@@ -159,12 +159,16 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     if (children == null) return Collections.EMPTY_LIST;
     List<SModelTreeNode> result = new ArrayList<SModelTreeNode>();
     for (Object child : children) {
-      if (child instanceof SModelTreeNode) {
-        result.add((SModelTreeNode) child);
-        result.addAll(((SModelTreeNode) child).getSubfolderSModelTreeNodes());
-      }
+      if (!(child instanceof SModelTreeNode)) continue;
+
+      result.add((SModelTreeNode) child);
+      result.addAll(((SModelTreeNode) child).getSubfolderSModelTreeNodes());
     }
     return result;
+  }
+
+  public boolean hasModelsUnder(){
+    return !getSubfolderSModelTreeNodes().isEmpty();
   }
 
   protected boolean checkForErrors() {
