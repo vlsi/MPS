@@ -21990,5 +21990,39 @@
       <link role="concept:3" targetNodeId="1.1178285077437:3" resolveInfo="ClassifierMember" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="1260930188116714148">
+    <property name="name:3" value="PrimitiveTypesInInstanceOfNotAllowed" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1260930188116714149">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.AssertStatement:3" id="1260930188116719807">
+        <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1260930188116719818">
+          <property name="value:3" value="primitive types in instanceof are not allowed" />
+        </node>
+        <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1260930188116719819">
+          <link role="applicableNode:3" targetNodeId="1260930188116714151" resolveInfo="instanceOfExpression" />
+        </node>
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1260930188116719811">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1260930188116719812">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1260930188116719813">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1260930188116719814">
+                <link role="applicableNode:3" targetNodeId="1260930188116714151" resolveInfo="instanceOfExpression" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1260930188116719815">
+                <link role="link:16" targetNodeId="1.1081256993305:3" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1260930188116719816">
+              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1260930188116719817">
+                <link role="conceptDeclaration:16" targetNodeId="1.1164118113764:3" resolveInfo="PrimitiveType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1260930188116714151">
+      <property name="name:3" value="instanceOfExpression" />
+      <link role="concept:3" targetNodeId="1.1081256982272:3" resolveInfo="InstanceOfExpression" />
+    </node>
+  </node>
 </model>
 

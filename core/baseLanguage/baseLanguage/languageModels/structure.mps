@@ -998,7 +998,7 @@
       <property name="sourceCardinality:0" value="1" />
       <property name="role:0" value="classType" />
       <property name="metaClass:0" value="aggregation" />
-      <link role="target:0" targetNodeId="1107535904670:3" resolveInfo="ClassifierType" />
+      <link role="target:0" targetNodeId="1068431790189:3" resolveInfo="Type" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1081506762703">

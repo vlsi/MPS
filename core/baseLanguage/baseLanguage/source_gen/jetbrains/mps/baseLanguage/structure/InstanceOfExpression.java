@@ -24,11 +24,11 @@ public class InstanceOfExpression extends Expression {
     super.setChild(InstanceOfExpression.LEFT_EXPRESSION, node);
   }
 
-  public ClassifierType getClassType() {
-    return (ClassifierType) this.getChild(ClassifierType.class, InstanceOfExpression.CLASS_TYPE);
+  public Type getClassType() {
+    return (Type) this.getChild(Type.class, InstanceOfExpression.CLASS_TYPE);
   }
 
-  public void setClassType(ClassifierType node) {
+  public void setClassType(Type node) {
     super.setChild(InstanceOfExpression.CLASS_TYPE, node);
   }
 
