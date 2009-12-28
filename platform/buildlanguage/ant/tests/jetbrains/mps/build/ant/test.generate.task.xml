@@ -37,7 +37,7 @@
 
     <target name="testBuildLanguage">
         <mps.generate mpshome="${module.home}/../../.." loglevel="info" fork="true">
-            <module dir="${module.home}/../../../platform/buildlanguage"/>
+            <modules dir="${module.home}/../../../platform/buildlanguage"/>
         </mps.generate>
     </target>
 

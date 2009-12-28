@@ -139,6 +139,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
       commandLine.add("-classpath");
       commandLine.add(currentClassPathString + sb.toString());
       commandLine.add(getWorkerClass().getCanonicalName());
+      dumpPropertiesToWhatToDo();
       try {
         commandLine.add(myWhatToDo.dumpToTmpFile().getAbsolutePath());
       } catch (FileNotFoundException e) {
@@ -149,7 +150,6 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
       exe.setAntRun(this.getProject());
       exe.setWorkingDirectory(this.getProject().getBaseDir());
       exe.setCommandline(commandLine.toArray(new String[commandLine.size()]));
-      exe.setNewenvironment(true);
       try {
         int i = exe.execute();
         if (i != 0) {
@@ -193,6 +193,13 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
       } catch (InstantiationException e) {
         throw new BuildException(e);
       }
+    }
+  }
+
+  private void dumpPropertiesToWhatToDo() {
+    Hashtable properties = getProject().getProperties();
+    for (Object key : properties.keySet()) {
+      myWhatToDo.putProperty((String)key, (String)properties.get(key));  
     }
   }
 

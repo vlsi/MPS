@@ -320,7 +320,7 @@ public class WhatToDo {
         } else if (propertyValuePair.length == 2) {
           whatToDo.putProperty(propertyValuePair[0], propertyValuePair[1]);
         } else {
-          System.err.println("ERROR: Don't know what to do: [" + s + "]");
+//          System.err.println("ERROR: Don't know what to do: [" + s + "]");
         }
       }
     }

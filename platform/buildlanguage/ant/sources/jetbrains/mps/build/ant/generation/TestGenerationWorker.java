@@ -44,7 +44,7 @@ import com.intellij.openapi.project.ProjectManager;
 public class TestGenerationWorker extends GeneratorWorker {
 
   private boolean myTestFailed = false;
-  private final IBuildServerMessageFormat myBuildServerMessageFormat = getBuildServerMessageFormat();
+  private IBuildServerMessageFormat myBuildServerMessageFormat;
   private final TesterGenerationType myGenerationType = new TesterGenerationType(false) {
     @Override
     protected JavaCompiler createJavaCompiler(Set<IModule> contextModules) {
@@ -96,10 +96,12 @@ public class TestGenerationWorker extends GeneratorWorker {
     showStatistic();
   }
 
-  public static IBuildServerMessageFormat getBuildServerMessageFormat() {
-    if (System.getProperty("teamcity.version") != null) {
+  public IBuildServerMessageFormat getBuildServerMessageFormat() {
+    if (myWhatToDo.getProperty("teamcity.version") != null) {
+      System.out.println("teamcity");
       return new TeamCityMessageFormat();
     } else {
+      System.out.println("console");
       return new ConsoleMessageFormat();
     }
   }
@@ -110,6 +112,7 @@ public class TestGenerationWorker extends GeneratorWorker {
 
   public TestGenerationWorker(WhatToDo whatToDo, AntLogger logger) {
     super(whatToDo, logger);
+    myBuildServerMessageFormat = getBuildServerMessageFormat();
   }
 
   @Override
