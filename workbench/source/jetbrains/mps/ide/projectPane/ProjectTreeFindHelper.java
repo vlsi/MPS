@@ -30,13 +30,13 @@ public abstract class ProjectTreeFindHelper {
     return findModuleTreeNodeAnywhere(module);
   }
 
-  public ProjectModuleTreeNode findModuleTreeNodeInProject(final @NotNull IModule module) {
+  protected ProjectModuleTreeNode findModuleTreeNodeInProject(final @NotNull IModule module) {
     return (ProjectModuleTreeNode) findTreeNode(getTree().getRootNode(),
       new ModuleInProjectCondition(),
       new NodeForModuleCondition(module));
   }
 
-  public ProjectModuleTreeNode findModuleTreeNodeAnywhere(@NotNull IModule module) {
+  protected ProjectModuleTreeNode findModuleTreeNodeAnywhere(@NotNull IModule module) {
     return (ProjectModuleTreeNode) findTreeNode(getTree().getRootNode(),
       new ModuleEverywhereCondition(),
       new NodeForModuleCondition(module));
@@ -52,11 +52,11 @@ public abstract class ProjectTreeFindHelper {
     return findModelTreeNodeInModule(model, moduleTreeNode);
   }
 
-  public SModelTreeNode findModelTreeNodeInModule(final @NotNull SModelDescriptor model, @NotNull ProjectModuleTreeNode moduleNode) {
+  protected SModelTreeNode findModelTreeNodeInModule(final @NotNull SModelDescriptor model, @NotNull ProjectModuleTreeNode moduleNode) {
     return (SModelTreeNode) findTreeNode(moduleNode, new ModelInModuleCondition(), new NodeForModelCondition(model));
   }
 
-  public SModelTreeNode findModelTreeNodeAnywhere(@NotNull SModelDescriptor model, @NotNull MPSTreeNode parentNode) {
+  protected SModelTreeNode findModelTreeNodeAnywhere(@NotNull SModelDescriptor model, @NotNull MPSTreeNode parentNode) {
     return (SModelTreeNode) findTreeNode(parentNode, new ModelEverywhereCondition(), new NodeForModelCondition(model));
   }
 
@@ -69,9 +69,9 @@ public abstract class ProjectTreeFindHelper {
     return findSNodeTreeNodeInParent(node, modelNode);
   }
 
+  //todo rewrite using findTreeNode
   protected MPSTreeNodeEx findSNodeTreeNodeInParent(@NotNull SNode node, @NotNull MPSTreeNode parent) {
-    //todo rewrite using findTreeNode
-    if (!(parent.isInitialized() || parent.hasInfiniteSubtree())) parent.init();
+    if (!parent.isInitialized() && !parent.hasInfiniteSubtree()) parent.init();
     if (parent instanceof SNodeTreeNode) {
       SNodeTreeNode parentSNodeTreeNode = (SNodeTreeNode) parent;
       if (node == parentSNodeTreeNode.getSNode()) {
