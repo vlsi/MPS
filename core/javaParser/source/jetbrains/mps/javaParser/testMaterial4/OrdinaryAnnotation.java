@@ -8,4 +8,5 @@ package jetbrains.mps.javaParser.testMaterial4;
  * To change this template use File | Settings | File Templates.
  */
 public @interface OrdinaryAnnotation {
+  public int foo();
 }

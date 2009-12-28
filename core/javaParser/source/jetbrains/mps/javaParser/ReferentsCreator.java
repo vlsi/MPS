@@ -298,8 +298,6 @@ public class ReferentsCreator {
           }
         }
 
-        addClassifierAnnotations(classifier, typeDeclaration);
-
         myReferentsCreator.myTypeDecls.add(typeDeclaration);
         if (isTopLevel) {
           myReferentsCreator.myTopLevelTypeDecls.add(typeDeclaration);
@@ -350,9 +348,6 @@ public class ReferentsCreator {
         createEnumField(b, enclosingClassifier);
       } else {
         field = createField(b, enclosingClassifier);
-      }
-      if (field != null) { //todo annotations with enum constants?
-        addVariableAnnotations(field, fieldDeclaration);
       }
       return true;
     }
@@ -412,7 +407,6 @@ public class ReferentsCreator {
       newLocal.setIsFinal(b.isFinal());
       newLocal.setType(localType);
       myReferentsCreator.myBindingMap.put(b, newLocal);
-      addVariableAnnotations(newLocal, localDeclaration);
       return true;
     }
 
@@ -432,7 +426,6 @@ public class ReferentsCreator {
         if (!(classConcept instanceof AnonymousClass)) {
           classConcept.addConstructor(constructorDeclaration);
         }
-        addMethodAnnotations(constructorDeclaration, ctorDecl);
         myReferentsCreator.myBindingMap.put(b, constructorDeclaration);
         return true;
       } catch (Throwable e) {
@@ -457,7 +450,6 @@ public class ReferentsCreator {
       }
       newMethod.setReturnType(createType(b.returnType));
       mapParameters(newMethod, methodDeclaration);
-      addMethodAnnotations(newMethod, methodDeclaration);
       return true;
     }
 
@@ -496,43 +488,11 @@ public class ReferentsCreator {
           Argument argument = x.arguments[i];
           ParameterDeclaration parameterDeclaration =
             createParameter(argument.binding, method);
-          addVariableAnnotations(parameterDeclaration, argument);
         }
       }
     }
 
-    private void addVariableAnnotations(VariableDeclaration variableDeclaration, AbstractVariableDeclaration var) {
-      if (var.annotations != null) {
-        for (Annotation annotation : var.annotations) {
-          addAnnotation(variableDeclaration, annotation);
-        }
-      }
-    }
 
-    private void addMethodAnnotations(BaseMethodDeclaration methodDeclaration, AbstractMethodDeclaration method) {
-      if (method.annotations != null) {
-        for (Annotation annotation : method.annotations) {
-          addAnnotation(methodDeclaration, annotation);
-        }
-      }
-    }
-
-    private void addClassifierAnnotations(Classifier classifier, TypeDeclaration typeDeclaration) {
-      if (typeDeclaration.annotations != null) {
-        for (Annotation annotation : typeDeclaration.annotations) {
-          addAnnotation(classifier, annotation);
-        }
-      }
-    }
-
-    private void addAnnotation(HasAnnotation variableDeclaration, Annotation annotation) {
-      AnnotationBinding annotationBinding = annotation.getCompilerAnnotation();
-      AnnotationInstance annotationInstance = AnnotationInstance.newInstance(myReferentsCreator.myCurrentModel);
-      SNode sourceNode = annotationInstance.getNode();
-      sourceNode.addReference(myReferentsCreator.getTypesProvider().createClassifierReference(
-            annotationBinding.getAnnotationType(), AnnotationInstance.ANNOTATION, sourceNode));
-      variableDeclaration.addAnnotation(annotationInstance);
-    }
 
     private ParameterDeclaration createParameter(LocalVariableBinding binding,
                                                  BaseMethodDeclaration enclosingMethod) {

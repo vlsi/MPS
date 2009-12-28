@@ -44,6 +44,7 @@ import org.eclipse.jdt.internal.compiler.ast.TryStatement;
 import org.eclipse.jdt.internal.compiler.ast.WhileStatement;
 import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
 import org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration;
+import org.eclipse.jdt.internal.compiler.ast.Annotation;
 import org.eclipse.jdt.internal.compiler.lookup.*;
 
 import java.util.*;
@@ -997,6 +998,7 @@ public class JavaConverterTreeBuilder {
     LocalVariableDeclaration local = (LocalVariableDeclaration) myTypesProvider.getRaw(x.binding);
     jetbrains.mps.baseLanguage.structure.Expression initializer = processExpressionRefl(x.initialization);
     local.setInitializer(initializer);
+    addVariableAnnotations(local, x);
     return local;
   }
 
@@ -1279,6 +1281,7 @@ public class JavaConverterTreeBuilder {
       myCurrentTypeDeclaration = null;
       //currentSeparatorPositions = null;
       //currentFileName = null;
+      addClassifierAnnotations(classifier, x);
     } catch (Throwable e) {
       throw new JavaConverterException(e);
     }
@@ -1291,6 +1294,16 @@ public class JavaConverterTreeBuilder {
     for (ReferenceBinding referenceBinding : b.thrownExceptions) {
       ClassifierType exceptionType = (ClassifierType) myTypesProvider.createType(referenceBinding);
       method.addThrowsItem(exceptionType);
+    }
+  }
+
+  void addMethodParametersAnnotations(AbstractMethodDeclaration x) {
+    if (x.arguments != null) {
+      for (Argument argument : x.arguments) {
+        ParameterDeclaration parameterDeclaration =
+          (ParameterDeclaration) myTypesProvider.getRaw(argument.binding);
+        addVariableAnnotations(parameterDeclaration, argument);
+      }
     }
   }
 
@@ -1318,6 +1331,8 @@ public class JavaConverterTreeBuilder {
       }
       // currentMethodScope = null;
       // currentMethodBody = null;
+      addMethodParametersAnnotations(x);
+      addMethodAnnotations(method, x);
       myCurrentMethod = null;
     } catch (Throwable e) {
       throw new JavaConverterException(e);
@@ -1352,6 +1367,8 @@ public class JavaConverterTreeBuilder {
         body.addStatement(statement);
       }
 
+      addMethodParametersAnnotations(x);
+      addMethodAnnotations(ctor, x);
       // currentMethodScope = null;
       myCurrentMethod = null;
 
@@ -1403,6 +1420,8 @@ public class JavaConverterTreeBuilder {
         if (initializer != null) {
           field.setInitializer(initializer);
         }
+        //todo also add annotations for enum constants?
+        addVariableAnnotations(field, declaration);
       } catch (Throwable e) {
         throw new JavaConverterException(e);
       }
@@ -1446,6 +1465,46 @@ public class JavaConverterTreeBuilder {
       }
     }
   }
+
+   private void addVariableAnnotations(VariableDeclaration variableDeclaration, AbstractVariableDeclaration var) {
+      if (var.annotations != null) {
+        for (Annotation annotation : var.annotations) {
+          addAnnotation(variableDeclaration, annotation);
+        }
+      }
+    }
+
+    private void addMethodAnnotations(BaseMethodDeclaration methodDeclaration, AbstractMethodDeclaration method) {
+      if (method.annotations != null) {
+        for (Annotation annotation : method.annotations) {
+          addAnnotation(methodDeclaration, annotation);
+        }
+      }
+    }
+
+    private void addClassifierAnnotations(Classifier classifier, TypeDeclaration typeDeclaration) {
+      if (typeDeclaration.annotations != null) {
+        for (Annotation annotation : typeDeclaration.annotations) {
+          addAnnotation(classifier, annotation);
+        }
+      }
+    }
+
+    private void addAnnotation(HasAnnotation variableDeclaration, Annotation annotation) {
+      AnnotationBinding annotationBinding = annotation.getCompilerAnnotation();
+      AnnotationInstance annotationInstance = AnnotationInstance.newInstance(myCurrentModel);
+      SNode sourceNode = annotationInstance.getNode();
+      sourceNode.addReference(myTypesProvider.createClassifierReference(
+        annotationBinding.getAnnotationType(), AnnotationInstance.ANNOTATION, sourceNode));
+      ElementValuePair[] pairs = annotationBinding.getElementValuePairs();
+      if (pairs != null) {
+        for (ElementValuePair pair : pairs) {
+          AnnotationInstanceValue value = AnnotationInstanceValue.newInstance(myCurrentModel);
+          //todo
+        }
+      }
+      variableDeclaration.addAnnotation(annotationInstance);
+    }
 
   // exec ==========================================================================
   public void exec(ReferentsCreator referentsCreator,
