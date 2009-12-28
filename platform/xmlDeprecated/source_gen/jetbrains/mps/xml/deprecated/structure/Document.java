@@ -64,7 +64,7 @@ public class Document extends BaseConcept implements INamedConcept {
   }
 
   public DocumentTypeDeclaration getDoctype() {
-    return (DocumentTypeDeclaration)this.getChild(DocumentTypeDeclaration.class, Document.DOCTYPE);
+    return (DocumentTypeDeclaration) this.getChild(DocumentTypeDeclaration.class, Document.DOCTYPE);
   }
 
   public void setDoctype(DocumentTypeDeclaration node) {
@@ -72,7 +72,7 @@ public class Document extends BaseConcept implements INamedConcept {
   }
 
   public Element getRootElement() {
-    return (Element)this.getChild(Element.class, Document.ROOT_ELEMENT);
+    return (Element) this.getChild(Element.class, Document.ROOT_ELEMENT);
   }
 
   public void setRootElement(Element node) {
@@ -80,7 +80,7 @@ public class Document extends BaseConcept implements INamedConcept {
   }
 
   public static Document newInstance(SModel sm, boolean init) {
-    return (Document)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.deprecated.structure.Document", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Document) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.deprecated.structure.Document", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Document newInstance(SModel sm) {

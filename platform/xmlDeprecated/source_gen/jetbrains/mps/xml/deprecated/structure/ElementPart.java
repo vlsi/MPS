@@ -54,7 +54,7 @@ public class ElementPart extends BaseConcept implements INamedConcept {
   }
 
   public static ElementPart newInstance(SModel sm, boolean init) {
-    return (ElementPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.deprecated.structure.ElementPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ElementPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.deprecated.structure.ElementPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ElementPart newInstance(SModel sm) {

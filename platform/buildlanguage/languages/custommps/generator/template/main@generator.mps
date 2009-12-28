@@ -665,22 +665,6 @@
               </node>
             </node>
           </node>
-          <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="1234971270063">
-            <property name="file:7" value="false" />
-            <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="1234971270064">
-              <node role="macro:7" type="jetbrains.mps.build.packaging.structure.MacroReference:7" id="1234971270065">
-                <property name="name:7" value="mps_home" />
-              </node>
-              <node role="compositePathComponent:7" type="jetbrains.mps.build.packaging.structure.CompositePathComponent:7" id="1234971270066">
-                <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="1234971270067">
-                  <property name="path:7" value="lib" />
-                </node>
-                <node role="pathComponent:7" type="jetbrains.mps.build.packaging.structure.PathComponent:7" id="1234971270068">
-                  <property name="path:7" value="alloy" />
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="1234971270069">
             <property name="file:7" value="false" />
             <node role="sourcePath:7" type="jetbrains.mps.build.packaging.structure.Path:7" id="1234971270070">
@@ -5627,9 +5611,6 @@
       </node>
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="4895947921038725670">
         <property name="path:0" value="platform/jetbrains.mps.xmlQuery.runtime.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786074">
-        <property name="path:0" value="lib/alloy/alloy.jar" />
       </node>
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786075">
         <property name="path:0" value="lib/asm/asm.jar" />

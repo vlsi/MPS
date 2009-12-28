@@ -559,46 +559,6 @@
           </node>
         </node>
       </node>
-      <node role="taskCall:21" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="1239364393259">
-        <link role="declaration:22" targetNodeId="2v.353793545802812427" resolveInfo="copy" />
-        <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393260">
-          <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812435" resolveInfo="file" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393261">
-            <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393262">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393263">
-                <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
-              </node>
-              <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393264">
-                <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393265">
-                  <property name="value:21" value="/alloy.jar" />
-                </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393266">
-                  <property name="value:21" value="/idea/lib" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393267">
-          <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812455" resolveInfo="todir" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393268">
-            <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393269">
-              <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393270">
-                <property name="value:21" value="/alloy" />
-              </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393271">
-                <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393272">
-          <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812450" resolveInfo="overwrite" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.BooleanLiteral:21" id="1239364393273">
-            <property name="value:21" value="true" />
-          </node>
-        </node>
-      </node>
       <node role="taskCall:21" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="1239364393274">
         <link role="declaration:22" targetNodeId="2v.353793545802812427" resolveInfo="copy" />
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393275">
@@ -1089,46 +1049,6 @@
         <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393458">
           <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812450" resolveInfo="overwrite" />
           <node role="value:22" type="jetbrains.mps.buildlanguage.structure.BooleanLiteral:21" id="1239364393459">
-            <property name="value:21" value="true" />
-          </node>
-        </node>
-      </node>
-      <node role="taskCall:21" type="jetbrains.mps.build.generictasks.structure.TaskCall:22" id="1239364393460">
-        <link role="declaration:22" targetNodeId="2v.353793545802812427" resolveInfo="copy" />
-        <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393461">
-          <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812435" resolveInfo="file" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393462">
-            <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393463">
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393464">
-                <link role="propertyDeclaration:21" targetNodeId="1239364393116" resolveInfo="tmp" />
-              </node>
-              <node role="right:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393465">
-                <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393466">
-                  <property name="value:21" value="/alloy.jar" />
-                </node>
-                <node role="left:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393467">
-                  <property name="value:21" value="/idea/lib" />
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393468">
-          <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812455" resolveInfo="todir" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="1239364393469">
-            <node role="value:21" type="jetbrains.mps.buildlanguage.structure.PlusOperation:21" id="1239364393470">
-              <node role="right:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="1239364393471">
-                <property name="value:21" value="/alloy" />
-              </node>
-              <node role="left:21" type="jetbrains.mps.buildlanguage.structure.PropertyReference:21" id="1239364393472">
-                <link role="propertyDeclaration:21" targetNodeId="1239364393106" resolveInfo="lib.dir" />
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="atributes:22" type="jetbrains.mps.build.generictasks.structure.Attribute:22" id="1239364393473">
-          <link role="attributeDeclaration:22" targetNodeId="2v.353793545802812450" resolveInfo="overwrite" />
-          <node role="value:22" type="jetbrains.mps.buildlanguage.structure.BooleanLiteral:21" id="1239364393474">
             <property name="value:21" value="true" />
           </node>
         </node>

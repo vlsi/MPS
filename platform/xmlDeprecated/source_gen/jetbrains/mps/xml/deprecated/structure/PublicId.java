@@ -33,7 +33,7 @@ public class PublicId extends ExternalId {
   }
 
   public static PublicId newInstance(SModel sm, boolean init) {
-    return (PublicId)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.deprecated.structure.PublicId", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PublicId) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.deprecated.structure.PublicId", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PublicId newInstance(SModel sm) {

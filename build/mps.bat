@@ -54,7 +54,6 @@ set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%platform\jetbrains.mps.uiLanguage.mpsar
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%platform\jetbrains.mps.uiLanguage.runtime.mpsarch.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%platform\jetbrains.mps.xmlQuery.mpsarch.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%platform\jetbrains.mps.xmlQuery.runtime.mpsarch.jar"
-set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\alloy\alloy.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\asm\asm.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\beansbinding\beansbinding-1.2.1.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\commons-codec\commons-codec-1.3.jar"

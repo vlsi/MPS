@@ -61,7 +61,6 @@ CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/platform/jetbrains.mps.u
 CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/platform/jetbrains.mps.uiLanguage.runtime.mpsarch.jar
 CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/platform/jetbrains.mps.xmlQuery.mpsarch.jar
 CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/platform/jetbrains.mps.xmlQuery.runtime.mpsarch.jar
-CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/lib/alloy/alloy.jar
 CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/lib/asm/asm.jar
 CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/lib/beansbinding/beansbinding-1.2.1.jar
 CLASSPATH=${CLASSPATH}:${PROJECT_HOME_FROM_STARTUP_DIR}/lib/commons-codec/commons-codec-1.3.jar

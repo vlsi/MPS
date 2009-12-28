@@ -62,7 +62,7 @@ public class Attribute extends BaseConcept implements INamedConcept {
   }
 
   public static Attribute newInstance(SModel sm, boolean init) {
-    return (Attribute)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.deprecated.structure.Attribute", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Attribute) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xml.deprecated.structure.Attribute", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Attribute newInstance(SModel sm) {
