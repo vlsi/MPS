@@ -17,8 +17,17 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import jetbrains.mps.reloading.AbstractClassPathItem;
 import java.io.IOException;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Collections;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
+import jetbrains.mps.baseLanguage.structure.Interface;
+import jetbrains.mps.baseLanguage.structure.Annotation;
+import jetbrains.mps.baseLanguage.structure.EnumClass;
 
 public class JavaStubs extends BaseStubModelRootManager {
   private static Logger LOG = Logger.getLogger(JavaStubs.class);
@@ -80,6 +89,12 @@ public class JavaStubs extends BaseStubModelRootManager {
     return result;
   }
 
+  public Set<SNodeDescriptor> getRootNodeDescriptors(final StubLocation location) {
+    Set<SNodeDescriptor> result = new jetbrains.mps.util.misc.hash.HashSet<SNodeDescriptor>();
+    JavaStubs.this.iterateClasspath(JavaStubs.this.createClassPathItem(location), result, "");
+    return result;
+  }
+
   private IClassPathItem createClassPathItem(StubLocation location) {
     IClassPathItem result = null;
     try {
@@ -88,5 +103,43 @@ public class JavaStubs extends BaseStubModelRootManager {
       LOG.error("Error on loading stubs", e);
     }
     return result;
+  }
+
+  private void iterateClasspath(IClassPathItem item, Set<SNodeDescriptor> result, final String pack) {
+    int numberInStubModel = 0;
+    List<String> availableClasses = new ArrayList<String>();
+    availableClasses.addAll(item.getAvailableClasses(pack));
+    Collections.sort(availableClasses);
+    for (String cls : availableClasses) {
+      if (cls.contains("$")) {
+        continue;
+      }
+      byte[] content = item.getClass(("".equals(pack) ?
+        cls :
+        pack + "." + cls
+      ));
+      String conceptFqName = ClassConcept.concept;
+      ClassifierKind kind = ClassifierKind.getClassifierKind(content);
+      if (kind == ClassifierKind.CLASS) {
+        conceptFqName = ClassConcept.concept;
+      } else if (kind == ClassifierKind.INTERFACE) {
+        conceptFqName = Interface.concept;
+      } else if (kind == ClassifierKind.ANNOTATIONS) {
+        conceptFqName = Annotation.concept;
+      } else if (kind == ClassifierKind.ENUM) {
+        conceptFqName = EnumClass.concept;
+      } else if (kind == ClassifierKind.UNKNOWN) {
+        continue;
+      }
+      result.add(new SNodeDescriptor(cls, conceptFqName, 0, 0, numberInStubModel) {
+        public SModelReference getModelReference() {
+          return StubHelper.uidForPackageInStubs(pack);
+        }
+      });
+      numberInStubModel++;
+    }
+    for (String subpack : item.getSubpackages(pack)) {
+      JavaStubs.this.iterateClasspath(item, result, subpack);
+    }
   }
 }
