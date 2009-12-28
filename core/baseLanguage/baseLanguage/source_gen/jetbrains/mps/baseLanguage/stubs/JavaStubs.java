@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelStereotype;
-import java.io.File;
 import jetbrains.mps.reloading.AbstractClassPathItem;
 import java.io.IOException;
 

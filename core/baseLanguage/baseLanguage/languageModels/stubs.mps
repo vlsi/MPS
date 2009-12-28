@@ -328,44 +328,6 @@
                 </node>
               </node>
             </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5516999836374121288">
-              <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5516999836374121289">
-                <property name="name:3" value="path" />
-                <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5516999836374121290">
-                  <link role="classifier:3" targetNodeId="2v.~String" resolveInfo="String" />
-                </node>
-                <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5516999836374121291">
-                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5516999836374121292">
-                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5516999836374121293">
-                      <node role="operand:3" type="jetbrains.mps.lang.stubs.structure.StubLocation_ConceptFunctionParameter" id="5516999836374539339" />
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5516999836374121295">
-                        <link role="baseMethodDeclaration:3" targetNodeId="3.~StubLocation.getPath():java.lang.String" resolveInfo="getPath" />
-                      </node>
-                    </node>
-                    <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5516999836374121296">
-                      <link role="classifier:3" targetNodeId="8.~File" resolveInfo="File" />
-                      <link role="variableDeclaration:3" targetNodeId="8.~File.pathSeparator" resolveInfo="pathSeparator" />
-                    </node>
-                  </node>
-                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5516999836374121297">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5516999836374121298">
-                      <link role="variableDeclaration:3" targetNodeId="5516999836374121217" resolveInfo="subpackage" />
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5516999836374121299">
-                      <link role="baseMethodDeclaration:3" targetNodeId="2v.~String.substring(int):java.lang.String" resolveInfo="substring" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5516999836374121300">
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5516999836374121301">
-                          <link role="variableDeclaration:3" targetNodeId="5516999836374121187" resolveInfo="pack" />
-                        </node>
-                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5516999836374121302">
-                          <link role="baseMethodDeclaration:3" targetNodeId="2v.~String.length():int" resolveInfo="length" />
-                        </node>
-                      </node>
-                    </node>
-                  </node>
-                </node>
-              </node>
-            </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5516999836374121303">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5516999836374121304">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5516999836374121305">
@@ -380,8 +342,11 @@
                       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5516999836374121310">
                         <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5516999836374121311">
                           <link role="baseMethodDeclaration:3" targetNodeId="3.~StubLocation.&lt;init&gt;(java.lang.String,java.lang.String,jetbrains.mps.project.IModule)" resolveInfo="StubLocation" />
-                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5516999836374121312">
-                            <link role="variableDeclaration:3" targetNodeId="5516999836374121289" resolveInfo="path" />
+                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7362908983350038837">
+                            <node role="operand:3" type="jetbrains.mps.lang.stubs.structure.StubLocation_ConceptFunctionParameter" id="7362908983350038838" />
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7362908983350038839">
+                              <link role="baseMethodDeclaration:3" targetNodeId="3.~StubLocation.getPath():java.lang.String" resolveInfo="getPath" />
+                            </node>
                           </node>
                           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5516999836374121313">
                             <link role="variableDeclaration:3" targetNodeId="5516999836374121217" resolveInfo="subpackage" />
