@@ -1,7 +1,7 @@
 package jetbrains.mps.stubs;
 
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 public class StubLocation {
@@ -20,11 +20,11 @@ public class StubLocation {
   }
 
   public String getPath() {
-    return myPath;
+    return myPath == null ? "" : myPath;
   }
 
   public String getPrefix() {
-    return myPrefix;
+    return myPrefix == null ? "" : myPrefix;
   }
 
   public IModule getModule() {

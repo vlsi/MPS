@@ -76,7 +76,7 @@ public class JavaStubs extends BaseStubModelRootManager {
           result.add(modelDescriptor);
         }
       }
-      String path = location.getPath() + File.pathSeparator + subpackage.substring(pack.length());
+      String path = location.getPath() + File.separator + subpackage.substring(pack.length());
       result.addAll(JavaStubs.this.getModelDescriptors(new StubLocation(path, subpackage, location.getModule())));
     }
     return result;
