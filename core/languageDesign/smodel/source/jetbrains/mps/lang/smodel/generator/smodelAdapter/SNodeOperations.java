@@ -17,6 +17,7 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.LinkDeclaration;
+import jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
@@ -549,10 +550,12 @@ public class SNodeOperations {
     if (node == null) return null;
 
     if (!isInstanceOf(node, castTo)) {
-      if (ourCastsEnabled) {
-        throw new NodeCastException("Can't cast " + node.getConceptFqName() + " to " + castTo);
-      } else {
-        LOG.warning("Can't cast " + node.getConceptFqName() + " to " + castTo);
+      if (!RuntimeTypeVariable.concept.equals(node.getConceptFqName())) { //the main and almost irrelevant source of such exceptions
+        if (ourCastsEnabled) {
+          throw new NodeCastException("Can't cast " + node.getConceptFqName() + " to " + castTo);
+        } else {
+          LOG.warning("Can't cast " + node.getConceptFqName() + " to " + castTo);
+        }
       }
     }
 
