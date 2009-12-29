@@ -33,6 +33,7 @@ import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfig
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.project.tester.TesterGenerationType;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -82,22 +83,26 @@ public class ProjectTester {
   private static List<TestFailure> createTestFailures(@NotNull GenerateFilesAndClassesGenerationType genType, List<SModel> models) {
     List<TestFailure> testFailures = new ArrayList<TestFailure>();
     junit.framework.TestResult result = new junit.framework.TestResult();
-    invokeTests(genType, models, result);
+    invokeTests(genType, models, result, null);
     testFailures.addAll(Collections.list(result.failures()));
     testFailures.addAll(Collections.list(result.errors()));
     return testFailures;
   }
 
-  public static void invokeTests(@NotNull GenerateFilesAndClassesGenerationType genType, List<SModel> outputModels, junit.framework.TestResult testResult) {
+  public static void invokeTests(@NotNull GenerateFilesAndClassesGenerationType genType, List<SModel> outputModels, junit.framework.TestResult testResult, ClassLoader baseClassLoader) {
     for (final SModel model : outputModels) {
-      ClassLoader classLoader = genType.getCompiler().getClassLoader(model.getClass().getClassLoader());
       for (final SNode outputRoot : model.getRoots()) {
-        if (ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+        if (baseClassLoader == null) {
+          baseClassLoader = model.getClass().getClassLoader();
+        }
+        ClassLoader classLoader = genType.getCompiler().getClassLoader(baseClassLoader);
+        Boolean isClassConcept = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
           @Override
           public Boolean compute() {
             return !outputRoot.isInstanceOfConcept(ClassConcept.concept);
           }
-        })) {
+        });
+        if (isClassConcept) {
           continue;
         }
         try {
@@ -111,10 +116,11 @@ public class ProjectTester {
           if (testClass.getAnnotation(classLoader.loadClass(MPSLaunch.class.getName())) != null) continue;
 
           List<Method> testMethods = new ArrayList<Method>();
-          boolean isTestCase = TestCase.class.isAssignableFrom(testClass);
+          Class<TestCase> testCaseClass = (Class<TestCase>) classLoader.loadClass(TestCase.class.getName());
+          boolean isTestCase = testCaseClass.isAssignableFrom(testClass);
 
           for (Method method : testClass.getMethods()) {
-            if (method.getAnnotation(org.junit.Test.class) != null
+            if (method.getAnnotation((Class<Annotation>)classLoader.loadClass(org.junit.Test.class.getName())) != null
               || (method.getName().startsWith("test") && isTestCase)) {
               testMethods.add(method);
             }
@@ -123,14 +129,17 @@ public class ProjectTester {
           for (Method testMethod : testMethods) {
             try {
               final Object instance = testClass.newInstance();
-              Method setName = TestCase.class.getMethod("setName", String.class);
+              Method setName = testCaseClass.getMethod("setName", String.class);
               setName.invoke(instance, testMethod.getName());
-              ((TestCase) instance).run(testResult);
+              Method runMethod = testCaseClass.getMethod("run", classLoader.loadClass(junit.framework.TestResult.class.getName()));
+              runMethod.invoke(instance, testResult);
             } catch (Throwable ignored) {
               // if one test fails, we still want to try to run the others
+              ignored.printStackTrace();
             }
           }
         } catch (Throwable ignored) {
+          ignored.printStackTrace(); // exceptions happen for a reason
         }
       }
     }
@@ -258,6 +267,9 @@ public class ProjectTester {
         case ERROR:
           System.out.println("error: " + msg.getText());
           myErrors.add(msg.getText());
+          if (msg.getException() != null) {
+            myErrors.add(extractStackTrace(msg.getException()).toString());
+          }
           break;
 
         case WARNING:
@@ -295,10 +307,19 @@ public class ProjectTester {
 
     public void error(LogEntry e) {
       myErrors.add(e.getMessage());
+      if (e.getThrowable() != null) {
+        myErrors.add(extractStackTrace(e.getThrowable()).toString());
+      }
     }
 
     public void fatal(LogEntry e) {
       myErrors.add(e.getMessage());
     }
+  }
+
+  public static StringBuffer extractStackTrace(Throwable e) {
+    StringWriter writer = new StringWriter();
+    e.printStackTrace(new PrintWriter(writer));
+    return writer.getBuffer();
   }
 }

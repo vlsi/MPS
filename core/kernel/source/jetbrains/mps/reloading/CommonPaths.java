@@ -90,6 +90,7 @@ public class CommonPaths {
     result.add(getIDEAJar());
     result.add(getIDEAUtilJar());
     result.add(getIDEAExtensionsJar());
+    result.add(getLibraryJars());
 
     IClassPathItem kernelClassPath = getMPSKernelClassPath();
     if (kernelClassPath != null) {
@@ -119,6 +120,34 @@ public class CommonPaths {
     addIfExists(result, "/lib/annotations/annotations.jar");
 
     return result;
+  }
+
+  private static IClassPathItem getLibraryJars() {
+    CompositeClassPathItem cp = new CompositeClassPathItem();
+
+    String junitJar = PathManager.getHomePath() + File.separator + "lib"
+      + File.separator + "junit4"
+      + File.separator + "junit-4.1.jar";
+    if (new File(junitJar).exists()) {
+      try {
+        cp.add(new JarFileClassPathItem(junitJar));
+      } catch (IOException e) {
+        throw new RuntimeException(e);
+      }
+    }
+
+    String log4jJar = PathManager.getHomePath() + File.separator + "lib"
+      + File.separator + "log4j"
+      + File.separator + "log4j.jar";
+    if (new File(log4jJar).exists()) {
+      try {
+        cp.add(new JarFileClassPathItem(log4jJar));
+      } catch (IOException e) {
+        throw new RuntimeException(e);
+      }
+    }
+
+    return cp;
   }
 
   private static void addIfExists(CompositeClassPathItem item, String path) {

@@ -2,6 +2,7 @@ package jetbrains.mps.build.ant.generation;
 
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.compiler.JavaCompiler;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.util.AbstractClassLoader;
 import junit.framework.*;
 import org.apache.tools.ant.ProjectComponent;
@@ -98,10 +99,8 @@ public class TestGenerationWorker extends GeneratorWorker {
 
   public IBuildServerMessageFormat getBuildServerMessageFormat() {
     if (myWhatToDo.getProperty("teamcity.version") != null) {
-      System.out.println("teamcity");
       return new TeamCityMessageFormat();
     } else {
-      System.out.println("console");
       return new ConsoleMessageFormat();
     }
   }
@@ -163,7 +162,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     if (invokeTests()) {
       final TestResult testResult = new TestResult();
       testResult.addListener(new MyTestListener());
-      ProjectTester.invokeTests(myGenerationType, outputModels, testResult);
+      ProjectTester.invokeTests(myGenerationType, outputModels, testResult, cycle.getClassLoader());
     }
 
     myGenerationType.clean();
@@ -287,6 +286,10 @@ public class TestGenerationWorker extends GeneratorWorker {
         new EmptyProgressIndicator(),
         messageHandler,
         invokeTests());
+    }
+
+    public ClassLoader getClassLoader() {
+      return ClassLoaderManager.getInstance().getClassLoaderFor(myModule);
     }
 
     @Override

@@ -175,6 +175,7 @@ public class GeneratorWorker extends MpsWorker {
 
   protected static interface Cycle {
     void generate(GeneratorManager gm, IGenerationType generationType, IMessageHandler messageHandler);
+    ClassLoader getClassLoader();
   }
 
   protected static class SimpleModuleCycle implements Cycle {
@@ -198,6 +199,10 @@ public class GeneratorWorker extends MpsWorker {
         }
       }
       gm.generateModels(modelsToContext, generationType, new EmptyProgressIndicator(), messageHandler, false);
+    }
+
+    public ClassLoader getClassLoader() {
+      return null;
     }
 
     @Override
