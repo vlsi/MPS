@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ConvertToBeanBuilder_Intention extends BaseIntention implements Intention {
@@ -39,7 +40,7 @@ public class ConvertToBeanBuilder_Intention extends BaseIntention implements Int
     SNode builder = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.builders.structure.BeanBuilder", null);
     SLinkOperations.setTarget(builder, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
     for (SNode arg : SLinkOperations.getTargets(node, "actualArgument", true)) {
-      SLinkOperations.addChild(builder, "actualArgument", arg);
+      ListSequence.fromList(SLinkOperations.getTargets(builder, "actualArgument", true)).addElement(arg);
     }
     SLinkOperations.setTarget(creator, "builder", builder, true);
     SNodeOperations.replaceWithAnother(node, creator);
