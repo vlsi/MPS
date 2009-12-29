@@ -134,7 +134,6 @@ public class UIComponents {
           !classPath.getAvailableClasses(unresolvedFQName).isEmpty() ||
           !classPath.getSubpackages(unresolvedFQName).isEmpty()) {
           addClassInClassPath(classPath, unresolvedFQName);
-          break;
         }
       }
       //list should be repainted automatically
