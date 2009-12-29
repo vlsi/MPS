@@ -1188,6 +1188,9 @@
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1217444047480">
       <link role="intfc:0" targetNodeId="4.1196978630214:0" resolveInfo="IResolveInfo" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="9090619664968862624">
+      <link role="intfc:0" targetNodeId="1188208481402:3" resolveInfo="HasAnnotation" />
+    </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1189675724652">
       <link role="intfc:0" targetNodeId="1178285077437:3" resolveInfo="ClassifierMember" />
     </node>

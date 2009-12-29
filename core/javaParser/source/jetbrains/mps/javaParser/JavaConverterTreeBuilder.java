@@ -1420,7 +1420,6 @@ public class JavaConverterTreeBuilder {
         if (initializer != null) {
           field.setInitializer(initializer);
         }
-        //todo also add annotations for enum constants?
         addVariableAnnotations(field, declaration);
       } catch (Throwable e) {
         throw new JavaConverterException(e);
@@ -1460,6 +1459,7 @@ public class JavaConverterTreeBuilder {
             enumConstant.addActualArgument(processExpressionRefl(arg));
           }
         }
+        addEnumConstAnnotations(enumConstant, declaration);
       } catch (Throwable t) {
         throw new JavaConverterException(t);
       }
@@ -1470,6 +1470,14 @@ public class JavaConverterTreeBuilder {
       if (var.annotations != null) {
         for (Annotation annotation : var.annotations) {
           addAnnotation(variableDeclaration, annotation);
+        }
+      }
+    }
+
+   private void addEnumConstAnnotations(EnumConstantDeclaration enumConst, org.eclipse.jdt.internal.compiler.ast.FieldDeclaration field) {
+      if (field.annotations != null) {
+        for (Annotation annotation : field.annotations) {
+          addAnnotation(enumConst, annotation);
         }
       }
     }

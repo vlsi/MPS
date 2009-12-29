@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
-public class EnumConstantDeclaration extends BaseConcept implements IValidIdentifier, IResolveInfo, ClassifierMember, IMethodCall {
+public class EnumConstantDeclaration extends BaseConcept implements IValidIdentifier, IResolveInfo, HasAnnotation, ClassifierMember, IMethodCall {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
@@ -21,6 +21,7 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String VISIBILITY = "visibility";
   public static final String METHOD = "method";
+  public static final String ANNOTATION = "annotation";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
 
   public EnumConstantDeclaration(SNode node) {
@@ -109,6 +110,26 @@ public class EnumConstantDeclaration extends BaseConcept implements IValidIdenti
 
   public void insertMethod(InstanceMethodDeclaration prev, InstanceMethodDeclaration node) {
     this.insertChild(prev, EnumConstantDeclaration.METHOD, node);
+  }
+
+  public int getAnnotationsCount() {
+    return this.getChildCount(EnumConstantDeclaration.ANNOTATION);
+  }
+
+  public Iterator<AnnotationInstance> annotations() {
+    return this.children(AnnotationInstance.class, EnumConstantDeclaration.ANNOTATION);
+  }
+
+  public List<AnnotationInstance> getAnnotations() {
+    return this.getChildren(AnnotationInstance.class, EnumConstantDeclaration.ANNOTATION);
+  }
+
+  public void addAnnotation(AnnotationInstance node) {
+    this.addChild(EnumConstantDeclaration.ANNOTATION, node);
+  }
+
+  public void insertAnnotation(AnnotationInstance prev, AnnotationInstance node) {
+    this.insertChild(prev, EnumConstantDeclaration.ANNOTATION, node);
   }
 
   public int getActualArgumentsCount() {
