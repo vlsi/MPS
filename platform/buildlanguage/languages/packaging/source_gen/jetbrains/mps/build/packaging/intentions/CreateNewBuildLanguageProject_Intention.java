@@ -57,7 +57,7 @@ public class CreateNewBuildLanguageProject_Intention extends BaseIntention imple
       SNode property = SConceptOperations.createNewNode("jetbrains.mps.buildlanguage.structure.ExternalPropertyDeclaration", null);
       SPropertyOperations.set(property, "name", prop);
       SLinkOperations.setTarget(property, "type", SConceptOperations.createNewNode("jetbrains.mps.buildlanguage.structure.FileType", null), true);
-      SLinkOperations.addChild(project, "property", property);
+      ListSequence.fromList(SLinkOperations.getTargets(project, "property", true)).addElement(property);
     }
     SModel model = editorContext.getModel();
     model.addRoot(project);

@@ -840,13 +840,13 @@ public class QueriesGenerated {
       // say to all modules it's cycle 
       for (Set<IModule> moduleSet : ListSequence.fromList(sm)) {
         SNode cycle = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycle", null);
-        SLinkOperations.addChild(layout, "cycle", cycle);
+        ListSequence.fromList(SLinkOperations.getTargets(layout, "cycle", true)).addElement(cycle);
         for (IModule imodule : SetSequence.fromSet(moduleSet)) {
           List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
           for (SNode module : ListSequence.fromList(modulesForIModule)) {
             SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.NewModuleReference", null);
             SLinkOperations.setTarget(ref, "module", module, false);
-            SLinkOperations.addChild(cycle, "moduleReference", ref);
+            ListSequence.fromList(SLinkOperations.getTargets(cycle, "moduleReference", true)).addElement(ref);
           }
         }
       }
@@ -857,12 +857,12 @@ public class QueriesGenerated {
     List<SNode> holders = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.IMacroHolder");
     for (SNode holder : ListSequence.fromList(holders)) {
       List<String> allMAcroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(holder, true);
-      SLinkOperations.removeAllChildren(holder, "macro");
+      ListSequence.fromList(SLinkOperations.getTargets(holder, "macro", true)).clear();
       for (String macroName : ListSequence.fromList(allMAcroNames)) {
         SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Macro", null);
         SPropertyOperations.set(macro, "name", macroName);
         SPropertyOperations.set(macro, "path", IMacroHolder_Behavior.call_evaluateMacro_1234975967990(holder, macroName).replace("\\", Util.SEPARATOR));
-        SLinkOperations.addChild(holder, "macro", macro);
+        ListSequence.fromList(SLinkOperations.getTargets(holder, "macro", true)).addElement(macro);
       }
     }
   }

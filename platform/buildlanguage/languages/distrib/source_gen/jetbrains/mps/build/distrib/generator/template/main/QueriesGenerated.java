@@ -974,7 +974,7 @@ public class QueriesGenerated {
       SNode line = SConceptOperations.createNewNode("jetbrains.mps.gtext.structure.GLine", null);
       SNode text = SConceptOperations.createNewNode("jetbrains.mps.gtext.structure.GText", null);
       SPropertyOperations.set(text, "text", option);
-      SLinkOperations.addChild(line, "item", text);
+      ListSequence.fromList(SLinkOperations.getTargets(line, "item", true)).addElement(text);
       ListSequence.fromList(lines).addElement(line);
     }
     return lines;
@@ -992,7 +992,7 @@ public class QueriesGenerated {
       SPropertyOperations.set(element, "name", "string");
       SNode text = SConceptOperations.createNewNode("jetbrains.mps.xml.deprecated.structure.Text", null);
       SPropertyOperations.set(text, "text", ext);
-      SLinkOperations.addChild(element, "content", text);
+      ListSequence.fromList(SLinkOperations.getTargets(element, "content", true)).addElement(text);
       ListSequence.fromList(elements).addElement(element);
     }
     return elements;
@@ -1046,7 +1046,7 @@ public class QueriesGenerated {
         SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Macro", null);
         SPropertyOperations.set(macro, "name", macroName);
         SPropertyOperations.set(macro, "path", IMacroHolder_Behavior.call_evaluateMacro_1234975967990(holder, macroName).replace("\\", "/"));
-        SLinkOperations.addChild(holder, "macro", macro);
+        ListSequence.fromList(SLinkOperations.getTargets(holder, "macro", true)).addElement(macro);
       }
     }
   }

@@ -12,13 +12,13 @@ import jetbrains.mps.build.generictasks.behavior.BuiltInTaskDeclaration_Behavior
 import jetbrains.mps.build.generictasks.behavior.AttributeDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SimpleSearchScope;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.build.generictasks.behavior.ITaskDeclaration_Behavior;
 
@@ -41,7 +41,7 @@ public class TaskCall_declaration_ReferentConstraint extends BaseNodeReferenceSe
       if (AttributeDeclaration_Behavior.call_isRequired_353793545802643811(attrDecl)) {
         SNode attr = SConceptOperations.createNewNode("jetbrains.mps.build.generictasks.structure.Attribute", null);
         SLinkOperations.setTarget(attr, "attributeDeclaration", attrDecl, false);
-        SLinkOperations.addChild(referenceNode, "atributes", attr);
+        ListSequence.fromList(SLinkOperations.getTargets(referenceNode, "atributes", true)).addElement(attr);
       }
     }
   }

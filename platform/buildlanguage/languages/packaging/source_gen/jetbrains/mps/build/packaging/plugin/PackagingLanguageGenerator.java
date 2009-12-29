@@ -8,8 +8,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import java.io.File;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.io.File;
 import java.util.ArrayList;
 import org.apache.commons.lang.StringUtils;
 
@@ -44,7 +44,7 @@ public class PackagingLanguageGenerator {
 
   public static SNode createCompositePathComponent(List<SNode> pathComponents) {
     SNode compositePathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.CompositePathComponent", null);
-    SLinkOperations.addAll(compositePathComponent, "pathComponent", pathComponents);
+    ListSequence.fromList(SLinkOperations.getTargets(compositePathComponent, "pathComponent", true)).addSequence(ListSequence.fromList(pathComponents));
     return compositePathComponent;
   }
 

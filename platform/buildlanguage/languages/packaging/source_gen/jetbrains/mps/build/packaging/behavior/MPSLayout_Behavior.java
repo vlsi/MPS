@@ -29,14 +29,14 @@ public class MPSLayout_Behavior {
     MapSequence.fromMap(vars).put(":", "path.separator");
     MapSequence.fromMap(vars).put("date", "DSTAMP");
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true)).isEmpty()) {
-      SLinkOperations.addChild(thisNode, "configuration", SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Configuration", null));
+      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Configuration", null));
     }
     SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true)).first(), "name", "default");
     for (String s : SetSequence.fromSet(MapSequence.fromMap(vars).keySet())) {
       SNode var = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Variable", null);
       SPropertyOperations.set(var, "name", s);
       SPropertyOperations.set(var, "antName", MapSequence.fromMap(vars).get(s));
-      SLinkOperations.addChild(thisNode, "builtInVariable", var);
+      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "builtInVariable", true)).addElement(var);
     }
   }
 
