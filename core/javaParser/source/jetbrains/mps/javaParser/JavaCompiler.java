@@ -323,9 +323,18 @@ public class JavaCompiler {
           buildAST();
         }
       });
+      addRequiredLanguagesToModule();
       return false;
     }
     return false;
+  }
+
+  private void addRequiredLanguagesToModule() {
+  //  Language baseLanguage = BootstrapLanguages.baseLanguage();
+  //  if (!myModule.getAllUsedLanguages().contains(baseLanguage)) {
+  //    myModule.addUsedLanguage(baseLanguage.getModuleReference());
+  //  }
+    //no need, since BL is always used by any module (see AbstractModule.getUsedLanguages()).
   }
 
   public void buildAST() {
