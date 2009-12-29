@@ -50,7 +50,7 @@ public class typeof_DefaultMethodCallOperation_InferenceRule extends AbstractInf
         }
       }
     }
-    if (SLinkOperations.getCount(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter") != SLinkOperations.getCount(nodeToCheck, "actualArgument")) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(nodeToCheck, "member", false), "parameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(nodeToCheck, "actualArgument", true)).count()) {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();

@@ -1158,8 +1158,8 @@
                             <link role="link:16" targetNodeId="1.1205770614681:0" />
                           </node>
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation:16" id="1221662108777">
-                          <node role="childNodes:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1221662111436">
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation:7" id="2590030827991742313">
+                          <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1221662111436">
                             <link role="variableDeclaration:3" targetNodeId="1221661897773" resolveInfo="parameteres" />
                           </node>
                         </node>

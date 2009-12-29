@@ -210,7 +210,7 @@
                 <link role="link:16" targetNodeId="7.1205770614681:0" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1205854658399" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827991742317" />
           </node>
           <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1205854642442">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1205854640251">
@@ -226,7 +226,7 @@
                 <link role="link:16" targetNodeId="9.1068580123134:3" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1227869221040" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827991742318" />
           </node>
         </node>
       </node>

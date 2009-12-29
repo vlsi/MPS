@@ -87,7 +87,7 @@ public class IClassifier_Behavior {
       public SNode createMethodCall(SNode methodDeclaration, List<SNode> parameteres) {
         SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation", null);
         SLinkOperations.setTarget(call, "member", SNodeOperations.cast(methodDeclaration, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration"), false);
-        SLinkOperations.addAll(call, "actualArgument", parameteres);
+        ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addSequence(ListSequence.fromList(parameteres));
         SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
         SLinkOperations.setTarget(result, "operand", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression", null), true);
         SLinkOperations.setTarget(result, "operation", call, true);
