@@ -15,7 +15,7 @@ public class OrdinaryClassWithAnnotatedFeatures {
     @NotNull Object a = null;
   }
 
-  public @OrdinaryAnnotation(foo = 45 + 5) class FooBar {
+  public @OrdinaryAnnotation(foo = "hello " + "world") class FooBar {
 
   }
 }

@@ -24,6 +24,7 @@ import jetbrains.mps.baseLanguage.structure.CastExpression;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.NameUtil;
+import org.eclipse.jdt.internal.compiler.ast.AnnotationMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.impl.*;
 import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
 import org.eclipse.jdt.internal.compiler.impl.CharConstant;
@@ -1212,7 +1213,12 @@ public class JavaConverterTreeBuilder {
   public Classifier processType(TypeDeclaration x) {
     Classifier classifier = (Classifier) myTypesProvider.getRaw(x.binding);
     if (x.binding.isAnnotationType()) {
-      // Do not process.          //todo methods can have annotations! process later
+      if (x.methods != null) {
+        for (AbstractMethodDeclaration method : x.methods) {
+          processAnnotationMethod((AnnotationMethodDeclaration) method);
+        }
+      }
+      // Do not process.          
       return classifier;
     }
     myCurrentTypeDeclaration = x;
@@ -1220,10 +1226,7 @@ public class JavaConverterTreeBuilder {
     try {
       if (x.fields != null) {
         // Process fields
-        for (int i = 0, n = x.fields.length; i < n; ++i) {
-          org.eclipse.jdt.internal.compiler.ast.FieldDeclaration fieldDeclaration = x.fields[i];
-
-
+        for (org.eclipse.jdt.internal.compiler.ast.FieldDeclaration fieldDeclaration : x.fields) {
           if (fieldDeclaration instanceof Initializer) {
             assert (classifier instanceof ClassConcept);
             processInitializer((Initializer) fieldDeclaration, (ClassConcept) classifier);
@@ -1234,29 +1237,10 @@ public class JavaConverterTreeBuilder {
       }
 
       if (x.methods != null) {
-        /*   int constructorsCount = 0;
-        for (AbstractMethodDeclaration abstractMethodDeclaration : x.methods) {
-          if (abstractMethodDeclaration instanceof ConstructorDeclaration) {
-            constructorsCount++;
-          }
-        }*/
         // Process methods
-        for (int i = 0, n = x.methods.length; i < n; ++i) {
-          AbstractMethodDeclaration method = x.methods[i];
+        for (AbstractMethodDeclaration method : x.methods) {
           if (method.isConstructor()) {
             assert (myCurrentClass instanceof ClassConcept);
-            /* if (constructorsCount == 1 && (method.arguments == null || method.arguments.length == 0)) {
-              if (method.statements == null || method.statements.length == 0) {
-                //default constructor; could be omitted
-                MethodBinding b = method.binding;
-                BaseMethodDeclaration bmd = (BaseMethodDeclaration) myTypesProvider.getRaw(b);
-                if (bmd != null) {
-                  bmd.delete();
-                }
-                continue;
-              }
-            }*/
-            //it was a bad idea
             if (x.binding instanceof LocalTypeBinding) {
               //don't add constructor to AnonymousClass
             } else {
@@ -1272,15 +1256,8 @@ public class JavaConverterTreeBuilder {
         }
       }
 
-      if (myCurrentClass instanceof EnumClass) {
-        //    processEnumType((JEnumType) currentClass);
-      }
-
-      //currentClassScope = null;
       myCurrentClass = null;
       myCurrentTypeDeclaration = null;
-      //currentSeparatorPositions = null;
-      //currentFileName = null;
       addClassifierAnnotations(classifier, x);
     } catch (Throwable e) {
       throw new JavaConverterException(e);
@@ -1307,20 +1284,29 @@ public class JavaConverterTreeBuilder {
     }
   }
 
+  void processAnnotationMethod(AnnotationMethodDeclaration x) {
+    MethodBinding b = x.binding;
+    jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration method =
+      (jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration) myTypesProvider.getRaw(b);
+    try {
+      myCurrentMethod = method;
+      addMethodAnnotations(method, x);
+      myCurrentMethod = null;
+    } catch (Throwable t) {
+      throw new JavaConverterException(t);
+    }
+  }
+
   void processMethod(AbstractMethodDeclaration x) {
     MethodBinding b = x.binding;
     BaseMethodDeclaration method = (BaseMethodDeclaration) myTypesProvider.getRaw(b);
     try {
 
       if (x.isNative()) {
-        // processNativeMethod(x, (JsniMethodBody) method.getBody());
         throw new JavaConverterException("Native methods not supported");
       }
 
       myCurrentMethod = method;
-      // currentMethodBody = (JMethodBody) method.getBody();
-      // currentMethodScope = x.scope;
-
       StatementList methodBody = method.getBody();
       if (methodBody == null) {
         methodBody = StatementList.newInstance(myCurrentModel);
@@ -1329,8 +1315,6 @@ public class JavaConverterTreeBuilder {
       for (Statement statement : processStatements(x.statements)) {
         methodBody.addStatement(statement);
       }
-      // currentMethodScope = null;
-      // currentMethodBody = null;
       addMethodParametersAnnotations(x);
       addMethodAnnotations(method, x);
       myCurrentMethod = null;
@@ -1345,9 +1329,6 @@ public class JavaConverterTreeBuilder {
     try {
 
       myCurrentMethod = ctor;
-      // currentMethodBody = (JMethodBody) ctor.getBody();
-      // currentMethodScope = x.scope;
-
       ConstructorInvocationStatement superOrThisCall = null;
       ExplicitConstructorCall ctorCall = x.constructorCall;
       if (ctorCall != null) {
@@ -1369,7 +1350,6 @@ public class JavaConverterTreeBuilder {
 
       addMethodParametersAnnotations(x);
       addMethodAnnotations(ctor, x);
-      // currentMethodScope = null;
       myCurrentMethod = null;
 
     } catch (Throwable e) {
@@ -1466,58 +1446,58 @@ public class JavaConverterTreeBuilder {
     }
   }
 
-   private void addVariableAnnotations(VariableDeclaration variableDeclaration, AbstractVariableDeclaration var) {
-      if (var.annotations != null) {
-        for (Annotation annotation : var.annotations) {
-          addAnnotation(variableDeclaration, annotation);
-        }
+  private void addVariableAnnotations(VariableDeclaration variableDeclaration, AbstractVariableDeclaration var) {
+    if (var.annotations != null) {
+      for (Annotation annotation : var.annotations) {
+        addAnnotation(variableDeclaration, annotation);
       }
     }
+  }
 
-   private void addEnumConstAnnotations(EnumConstantDeclaration enumConst, org.eclipse.jdt.internal.compiler.ast.FieldDeclaration field) {
-      if (field.annotations != null) {
-        for (Annotation annotation : field.annotations) {
-          addAnnotation(enumConst, annotation);
-        }
+  private void addEnumConstAnnotations(EnumConstantDeclaration enumConst, org.eclipse.jdt.internal.compiler.ast.FieldDeclaration field) {
+    if (field.annotations != null) {
+      for (Annotation annotation : field.annotations) {
+        addAnnotation(enumConst, annotation);
       }
     }
+  }
 
-    private void addMethodAnnotations(BaseMethodDeclaration methodDeclaration, AbstractMethodDeclaration method) {
-      if (method.annotations != null) {
-        for (Annotation annotation : method.annotations) {
-          addAnnotation(methodDeclaration, annotation);
-        }
+  private void addMethodAnnotations(BaseMethodDeclaration methodDeclaration, AbstractMethodDeclaration method) {
+    if (method.annotations != null) {
+      for (Annotation annotation : method.annotations) {
+        addAnnotation(methodDeclaration, annotation);
       }
     }
+  }
 
-    private void addClassifierAnnotations(Classifier classifier, TypeDeclaration typeDeclaration) {
-      if (typeDeclaration.annotations != null) {
-        for (Annotation annotation : typeDeclaration.annotations) {
-          addAnnotation(classifier, annotation);
-        }
+  private void addClassifierAnnotations(Classifier classifier, TypeDeclaration typeDeclaration) {
+    if (typeDeclaration.annotations != null) {
+      for (Annotation annotation : typeDeclaration.annotations) {
+        addAnnotation(classifier, annotation);
       }
     }
+  }
 
-    private void addAnnotation(HasAnnotation variableDeclaration, Annotation annotation) {
-      AnnotationBinding annotationBinding = annotation.getCompilerAnnotation();
-      AnnotationInstance annotationInstance = AnnotationInstance.newInstance(myCurrentModel);
-      SNode sourceNode = annotationInstance.getNode();
-      sourceNode.addReference(myTypesProvider.createClassifierReference(
-        annotationBinding.getAnnotationType(), AnnotationInstance.ANNOTATION, sourceNode));
-      MemberValuePair[] pairs = annotation.memberValuePairs();
-      if (pairs != null) {
-        for (MemberValuePair pair : pairs) {
-          AnnotationInstanceValue value = AnnotationInstanceValue.newInstance(myCurrentModel);
-          value.setValue(processExpressionRefl(pair.value));
+  private void addAnnotation(HasAnnotation variableDeclaration, Annotation annotation) {
+    AnnotationBinding annotationBinding = annotation.getCompilerAnnotation();
+    AnnotationInstance annotationInstance = AnnotationInstance.newInstance(myCurrentModel);
+    SNode sourceNode = annotationInstance.getNode();
+    sourceNode.addReference(myTypesProvider.createClassifierReference(
+      annotationBinding.getAnnotationType(), AnnotationInstance.ANNOTATION, sourceNode));
+    MemberValuePair[] pairs = annotation.memberValuePairs();
+    if (pairs != null) {
+      for (MemberValuePair pair : pairs) {
+        AnnotationInstanceValue value = AnnotationInstanceValue.newInstance(myCurrentModel);
+        value.setValue(processExpressionRefl(pair.value));
 
-          SNode valueNode = value.getNode();
-          valueNode.addReference(
-            myTypesProvider.createMethodReference(pair.binding, AnnotationInstanceValue.KEY, valueNode));
-          annotationInstance.addValue(value);
-        }
+        SNode valueNode = value.getNode();
+        valueNode.addReference(
+          myTypesProvider.createMethodReference(pair.binding, AnnotationInstanceValue.KEY, valueNode));
+        annotationInstance.addValue(value);
       }
-      variableDeclaration.addAnnotation(annotationInstance);
     }
+    variableDeclaration.addAnnotation(annotationInstance);
+  }
 
   // exec ==========================================================================
   public void exec(ReferentsCreator referentsCreator,

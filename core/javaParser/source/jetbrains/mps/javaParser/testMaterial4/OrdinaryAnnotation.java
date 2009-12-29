@@ -1,5 +1,7 @@
 package jetbrains.mps.javaParser.testMaterial4;
 
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -8,5 +10,5 @@ package jetbrains.mps.javaParser.testMaterial4;
  * To change this template use File | Settings | File Templates.
  */
 public @interface OrdinaryAnnotation {
-  public int foo();
+  @NotNull public String foo();
 }
