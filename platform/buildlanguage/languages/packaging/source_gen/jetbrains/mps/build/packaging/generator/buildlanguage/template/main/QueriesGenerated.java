@@ -52,6 +52,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.CopyUtil;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1221758915287(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -840,13 +841,13 @@ public class QueriesGenerated {
       // say to all modules it's cycle 
       for (Set<IModule> moduleSet : ListSequence.fromList(sm)) {
         SNode cycle = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycle", null);
-        ListSequence.fromList(SLinkOperations.getTargets(layout, "cycle", true)).addElement(cycle);
+        SLinkOperations.addChild(layout, "cycle", cycle);
         for (IModule imodule : SetSequence.fromSet(moduleSet)) {
           List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
           for (SNode module : ListSequence.fromList(modulesForIModule)) {
             SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.NewModuleReference", null);
             SLinkOperations.setTarget(ref, "module", module, false);
-            ListSequence.fromList(SLinkOperations.getTargets(cycle, "moduleReference", true)).addElement(ref);
+            SLinkOperations.addChild(cycle, "moduleReference", ref);
           }
         }
       }
@@ -857,12 +858,12 @@ public class QueriesGenerated {
     List<SNode> holders = SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.IMacroHolder");
     for (SNode holder : ListSequence.fromList(holders)) {
       List<String> allMAcroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(holder, true);
-      ListSequence.fromList(SLinkOperations.getTargets(holder, "macro", true)).clear();
+      SLinkOperations.removeAllChildren(holder, "macro");
       for (String macroName : ListSequence.fromList(allMAcroNames)) {
         SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Macro", null);
         SPropertyOperations.set(macro, "name", macroName);
         SPropertyOperations.set(macro, "path", IMacroHolder_Behavior.call_evaluateMacro_1234975967990(holder, macroName).replace("\\", Util.SEPARATOR));
-        ListSequence.fromList(SLinkOperations.getTargets(holder, "macro", true)).addElement(macro);
+        SLinkOperations.addChild(holder, "macro", macro);
       }
     }
   }
@@ -885,6 +886,28 @@ public class QueriesGenerated {
             System.err.println(errorText);
             _context.showErrorMessage(null, errorText);
           }
+        }
+      }
+    }
+  }
+
+  public static void mappingScript_CodeBlock_9027273598492288378(final IOperationContext operationContext, final MappingScriptContext _context) {
+    for (SNode root : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.build.packaging.structure.MPSLayout"))) {
+      while (true) {
+        List<SNode> blocks = SNodeOperations.getDescendants(root, "jetbrains.mps.build.packaging.structure.BlockReference", false, new String[]{});
+        if (ListSequence.fromList(blocks).isEmpty()) {
+          break;
+        }
+        for (SNode blockRef : ListSequence.fromList(blocks)) {
+          SNode blockParent = SNodeOperations.cast(SNodeOperations.getParent(blockRef), "jetbrains.mps.build.packaging.structure.AbstractProjectComponent");
+          SNode block = SLinkOperations.getTarget(blockRef, "block", false);
+          SNode place = blockRef;
+          for (SNode entry : ListSequence.fromList(SLinkOperations.getTargets(block, "entry", true))) {
+            SNode entryCopy = CopyUtil.copy(entry);
+            SNodeOperations.insertNextSiblingChild(place, entryCopy);
+            place = entryCopy;
+          }
+          SNodeOperations.deleteNode(blockRef);
         }
       }
     }

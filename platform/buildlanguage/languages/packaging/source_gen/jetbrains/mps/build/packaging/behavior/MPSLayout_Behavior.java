@@ -29,14 +29,14 @@ public class MPSLayout_Behavior {
     MapSequence.fromMap(vars).put(":", "path.separator");
     MapSequence.fromMap(vars).put("date", "DSTAMP");
     if (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true)).isEmpty()) {
-      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Configuration", null));
+      SLinkOperations.addChild(thisNode, "configuration", SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Configuration", null));
     }
     SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true)).first(), "name", "default");
     for (String s : SetSequence.fromSet(MapSequence.fromMap(vars).keySet())) {
       SNode var = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Variable", null);
       SPropertyOperations.set(var, "name", s);
       SPropertyOperations.set(var, "antName", MapSequence.fromMap(vars).get(s));
-      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "builtInVariable", true)).addElement(var);
+      SLinkOperations.addChild(thisNode, "builtInVariable", var);
     }
   }
 
@@ -87,27 +87,24 @@ public class MPSLayout_Behavior {
   public static List<SNode> call_getModules_1213877228340(SNode thisNode) {
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode component : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "component", true))) {
-      if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(MPSLayout_Behavior.call_getModules_1213877228389(thisNode, SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent"))));
-      } else
-      if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.Module")) {
-        ListSequence.fromList(result).addElement(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.Module"));
-      }
+      MPSLayout_Behavior.call_getModules_9027273598492143575(thisNode, result, component);
     }
     return result;
   }
 
-  public static List<SNode> call_getModules_1213877228389(SNode thisNode, SNode component) {
-    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-    for (SNode entry : ListSequence.fromList(SLinkOperations.getTargets(component, "entry", true))) {
-      if (SNodeOperations.isInstanceOf(entry, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(MPSLayout_Behavior.call_getModules_1213877228389(thisNode, SNodeOperations.cast(entry, "jetbrains.mps.build.packaging.structure.ICompositeComponent"))));
-      } else
-      if (SNodeOperations.isInstanceOf(entry, "jetbrains.mps.build.packaging.structure.Module")) {
-        ListSequence.fromList(result).addElement(SNodeOperations.cast(entry, "jetbrains.mps.build.packaging.structure.Module"));
+  public static void call_getModules_9027273598492143575(SNode thisNode, List<SNode> modules, SNode component) {
+    if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent")) {
+      for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.ICompositeComponent"), "entry", true))) {
+        MPSLayout_Behavior.call_getModules_9027273598492143575(thisNode, modules, child);
+      }
+    } else
+    if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.Module")) {
+      ListSequence.fromList(modules).addElement(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.Module"));
+    } else if (SNodeOperations.isInstanceOf(component, "jetbrains.mps.build.packaging.structure.BlockReference")) {
+      for (SNode child : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(component, "jetbrains.mps.build.packaging.structure.BlockReference"), "block", false), "entry", true))) {
+        MPSLayout_Behavior.call_getModules_9027273598492143575(thisNode, modules, child);
       }
     }
-    return result;
   }
 
   public static List<SNode> virtual_getAllVariable_1234864693585(SNode thisNode) {

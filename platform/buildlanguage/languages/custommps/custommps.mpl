@@ -4,7 +4,9 @@
     <modelRoot path="${language_descriptor}/languageAccessories" namespacePrefix="jetbrains.mps.build.custommps" />
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.build.custommps" />
   </models>
-  <accessoryModels />
+  <accessoryModels>
+    <model modelUID="r:2d21a960-b27b-446c-b511-65afab987b27(jetbrains.mps.build.custommps.modules)" />
+  </accessoryModels>
   <generators>
     <generator name="genCustomMPS" generatorUID="jetbrains.mps.build.custommps#1233155119006" uuid="310ad856-d400-4ee5-abc4-1f355bef017b">
       <models>
@@ -19,9 +21,9 @@
         <dependency reexport="false">02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)</dependency>
       </dependencies>
       <usedLanguages>
-        <usedLanguages>8d09fa8b-0d65-4c2f-aae6-d4847a49d862(jetbrains.mps.build.custommpsInternal)</usedLanguages>
-        <usedLanguages>02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)</usedLanguages>
-        <usedLanguages>fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)</usedLanguages>
+        <usedLanguage>8d09fa8b-0d65-4c2f-aae6-d4847a49d862(jetbrains.mps.build.custommpsInternal)</usedLanguage>
+        <usedLanguage>02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)</usedLanguage>
+        <usedLanguage>fba399db-f591-45dc-a279-e2a2a986e262(jetbrains.mps.build.generictasks)</usedLanguage>
       </usedLanguages>
       <usedDevKits>
         <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
@@ -64,8 +66,10 @@
   <languageRuntimeClassPath />
   <sourcePath />
   <usedLanguages>
-    <usedLanguages>02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)</usedLanguages>
-    <usedLanguages>4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)</usedLanguages>
+    <usedLanguage>02824ec0-c6a4-4517-a484-12d85172bbaa(jetbrains.mps.build.distrib)</usedLanguage>
+    <usedLanguage>4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)</usedLanguage>
+    <usedLanguage>8d09fa8b-0d65-4c2f-aae6-d4847a49d862(jetbrains.mps.build.custommpsInternal)</usedLanguage>
+    <usedLanguage>8d09fa8b-0d65-4c2f-aae6-d4847a49d862(jetbrains.mps.build.custommpsInternal)</usedLanguage>
   </usedLanguages>
   <extendedLanguages>
     <extendedLanguage>4e6c5313-7662-4c44-9bc7-b488cec17508(jetbrains.mps.build.packaging)</extendedLanguage>

@@ -1252,5 +1252,35 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473891462:0" resolveInfo="alias" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="701559220729139189">
+    <property name="package:0" value="projectComponents" />
+    <property name="name:0" value="BlockReference" />
+    <link role="extends:0" targetNodeId="1203598300291:7" resolveInfo="AbstractProjectComponent" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="701559220729212648">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="block" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="701559220729212645:7" resolveInfo="Block" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="701559220729212645">
+    <property name="package:0" value="projectComponents" />
+    <property name="name:0" value="Block" />
+    <property name="rootable:0" value="true" />
+    <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="701559220729218131">
+      <property name="value:0" value="block" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473891462:0" resolveInfo="alias" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="701559220729212646">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="entry" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="1203598300291:7" resolveInfo="AbstractProjectComponent" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="701559220729212651">
+      <link role="intfc:0" targetNodeId="3.1169194658468:0" resolveInfo="INamedConcept" />
+    </node>
+  </node>
 </model>
 
