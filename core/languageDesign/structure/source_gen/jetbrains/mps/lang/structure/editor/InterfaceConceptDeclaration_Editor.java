@@ -37,6 +37,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
@@ -846,7 +847,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
       SPropertyOperations.set(result, "metaClass", "aggregation");
-      SLinkOperations.addChild(node, "linkDeclaration", result);
+      ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
     }
 
     public String getMatchingText() {
@@ -861,7 +862,7 @@ public class InterfaceConceptDeclaration_Editor extends DefaultNodeEditor {
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
       SNode result = SModelOperations.createNewNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.structure.structure.LinkDeclaration", null);
       SPropertyOperations.set(result, "metaClass", "reference");
-      SLinkOperations.addChild(node, "linkDeclaration", result);
+      ListSequence.fromList(SLinkOperations.getTargets(node, "linkDeclaration", true)).addElement(result);
     }
 
     public String getMatchingText() {

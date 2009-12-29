@@ -11,10 +11,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.lang.editor.behavior.EditorCellModel_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.util.NameUtil;
@@ -61,7 +61,7 @@ public class QueriesGenerated {
     }
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.EditorCellModel")) {
       SNode innerNode = SNodeOperations.copyNode(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.editor.structure.EditorCellModel"));
-      SLinkOperations.addChild(_context.getNewNode(), "childCellModel", innerNode);
+      ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "childCellModel", true)).addElement(innerNode);
       if (SNodeOperations.isInstanceOf(innerNode, "jetbrains.mps.lang.editor.structure.CellModel_Collection") && EditorCellModel_Behavior.call_isSelectable_1219420196673(innerNode)) {
         EditorCellModel_Behavior.call_setSelectable_1241444765326(innerNode, false);
       }

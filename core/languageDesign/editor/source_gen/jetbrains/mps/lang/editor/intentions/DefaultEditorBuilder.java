@@ -27,7 +27,7 @@ public class DefaultEditorBuilder {
         SNode propertyCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
         SLinkOperations.setTarget(propertyCell, "relationDeclaration", property, false);
         DefaultEditorBuilder.makeNewLine(propertyCell);
-        SLinkOperations.addChild(collection, "childCellModel", propertyCell);
+        ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).addElement(propertyCell);
       }
     }
     for (SNode linkDeclaration : ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(conceptDeclaration))) {
@@ -37,7 +37,7 @@ public class DefaultEditorBuilder {
           SNode linkCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNode", null);
           SLinkOperations.setTarget(linkCell, "relationDeclaration", linkDeclaration, false);
           DefaultEditorBuilder.makeNewLine(linkCell);
-          SLinkOperations.addChild(collection, "childCellModel", linkCell);
+          ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).addElement(linkCell);
         } else {
           SNode linkCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefNodeList", null);
           SLinkOperations.setTarget(linkCell, "relationDeclaration", linkDeclaration, false);
@@ -45,7 +45,7 @@ public class DefaultEditorBuilder {
           DefaultEditorBuilder.makeNewLine(linkCell);
           DefaultEditorBuilder.addClassItem(linkCell, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutIndentStyleClassItem"));
           DefaultEditorBuilder.addClassItem(linkCell, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineChildrenStyleClassItem"));
-          SLinkOperations.addChild(collection, "childCellModel", linkCell);
+          ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).addElement(linkCell);
         }
       } else {
         if (LinkDeclaration_Behavior.call_isSingular_1213877254557(linkDeclaration)) {
@@ -53,7 +53,7 @@ public class DefaultEditorBuilder {
           SLinkOperations.setTarget(linkCell, "relationDeclaration", linkDeclaration, false);
           SLinkOperations.setTarget(linkCell, "editorComponent", createInlineEditorComponent(SLinkOperations.getTarget(linkDeclaration, "target", false)), true);
           DefaultEditorBuilder.makeNewLine(linkCell);
-          SLinkOperations.addChild(collection, "childCellModel", linkCell);
+          ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).addElement(linkCell);
         }
       }
     }
@@ -71,18 +71,18 @@ public class DefaultEditorBuilder {
   private static void makeNewLine(SNode propertyCell) {
     SNode classItem = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.IndentLayoutNewLineStyleClassItem", null);
     SPropertyOperations.set(classItem, "flag", "" + true);
-    SLinkOperations.addChild(propertyCell, "styleItem", classItem);
+    ListSequence.fromList(SLinkOperations.getTargets(propertyCell, "styleItem", true)).addElement(classItem);
   }
 
   private static void addName(String name, SNode collection) {
     SNode nameCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Constant", null);
     SPropertyOperations.set(nameCell, "text", name);
-    SLinkOperations.addChild(collection, "childCellModel", nameCell);
+    ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).addElement(nameCell);
   }
 
   private static void addClassItem(SNode linkCell, SNode concept) {
     SNode classItem = SConceptOperations.createNewNode(NameUtil.nodeFQName(concept), null);
     SPropertyOperations.set(classItem, "flag", "" + true);
-    SLinkOperations.addChild(linkCell, "styleItem", classItem);
+    ListSequence.fromList(SLinkOperations.getTargets(linkCell, "styleItem", true)).addElement(classItem);
   }
 }

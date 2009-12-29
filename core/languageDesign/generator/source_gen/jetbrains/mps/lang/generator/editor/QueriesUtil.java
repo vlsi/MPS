@@ -96,7 +96,7 @@ public class QueriesUtil {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.generator.structure.NodeMacro") && ListSequence.fromList(SNodeOperations.getChildren(applyToNode)).contains(node)) {
       SNodeOperations.insertPrevSiblingChild(node, nodeMacro);
     } else {
-      SLinkOperations.addChild(applyToNode, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), nodeMacro);
+      ListSequence.fromList(SLinkOperations.getTargets(applyToNode, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true)).addElement(nodeMacro);
     }
     return nodeMacro;
   }
@@ -153,7 +153,7 @@ public class QueriesUtil {
     // re append all macros to make them go 'after' the <TF> 
     ListSequence.fromList(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true)).visitAll(new IVisitor<SNode>() {
       public void visit(SNode it) {
-        SLinkOperations.addChild(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), it);
+        ListSequence.fromList(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true)).addElement(it);
       }
     });
   }

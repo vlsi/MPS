@@ -5153,8 +5153,8 @@
                       </node>
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1216154257909">
-                    <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1216154257910">
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974610193491">
+                    <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1216154257910">
                       <link role="variableDeclaration:3" targetNodeId="1216154257878" resolveInfo="nodeMacro" />
                     </node>
                   </node>
@@ -5612,8 +5612,8 @@
                           </node>
                         </node>
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1227876791398">
-                        <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1227876815751">
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974610193505">
+                        <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1227876815751">
                           <link role="variableDeclaration:3" targetNodeId="1227876791389" resolveInfo="it" />
                         </node>
                       </node>

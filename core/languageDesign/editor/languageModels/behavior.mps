@@ -1586,8 +1586,8 @@
                     <link role="link:16" targetNodeId="1.1219418656006:32" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1241445357853">
-                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1241445359043">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974610193487">
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1241445359043">
                     <link role="variableDeclaration:3" targetNodeId="1241444783109" resolveInfo="firstItem" />
                   </node>
                 </node>

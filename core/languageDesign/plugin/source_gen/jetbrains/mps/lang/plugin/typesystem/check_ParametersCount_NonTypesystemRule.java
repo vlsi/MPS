@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
@@ -18,7 +19,7 @@ public class check_ParametersCount_NonTypesystemRule extends AbstractNonTypesyst
   }
 
   public void applyRule(final SNode instance, final TypeCheckingContext typeCheckingContext) {
-    if (SLinkOperations.getCount(instance, "actualParameter") != SLinkOperations.getCount(SLinkOperations.getTarget(instance, "action", false), "constructionParameter")) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(instance, "actualParameter", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(instance, "action", false), "constructionParameter", true)).count()) {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();

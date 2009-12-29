@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class _SplitConctantCellIntoWordsKeyMap extends EditorCellKeyMap {
   public _SplitConctantCellIntoWordsKeyMap() {
@@ -68,7 +69,7 @@ public class _SplitConctantCellIntoWordsKeyMap extends EditorCellKeyMap {
       for (String word : strings) {
         SNode constantCell = SNodeOperations.copyNode(node);
         SPropertyOperations.set(constantCell, "text", word);
-        SLinkOperations.addChild(collection, "childCellModel", constantCell);
+        ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).addElement(constantCell);
       }
     }
 

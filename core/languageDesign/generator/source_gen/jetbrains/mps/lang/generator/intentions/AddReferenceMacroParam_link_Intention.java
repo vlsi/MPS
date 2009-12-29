@@ -11,8 +11,8 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -67,7 +67,7 @@ public class AddReferenceMacroParam_link_Intention extends BaseIntention impleme
     SLinkOperations.setTarget(dotExpression, "operand", SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null), true);
     SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
-    SLinkOperations.addChild(SLinkOperations.getTarget(referentValue, "body", true), "statement", expressionStatement);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(referentValue, "body", true), "statement", true)).addElement(expressionStatement);
     SLinkOperations.setTarget(referenceMacro, "referentFunction", referentValue, true);
     // set caret 
     editorContext.selectAndSetCaret(referenceMacro, 2);

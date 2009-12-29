@@ -37,7 +37,7 @@ public class check_CallInnerFunctionOperation_NonTypesystemRule extends Abstract
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(innerMethodCall, "wrong number of parameters", "r:f568ac81-f20d-491c-8e81-330fbdff24e6(jetbrains.mps.lang.textGen.typesystem)", "1234279065022", intentionProvider, errorTarget);
       }
     }
-    if (SLinkOperations.getCount(baseMethodDeclaration, "typeVariableDeclaration") > 0) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "typeVariableDeclaration", true)).count() > 0) {
       for (SNode actual : actualArguments) {
         typeCheckingContext.addDependencyForCurrent(actual);
       }

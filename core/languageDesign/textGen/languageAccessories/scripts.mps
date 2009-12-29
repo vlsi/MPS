@@ -69,7 +69,7 @@
                           <link role="link:16" targetNodeId="1.1237306115446:11" />
                         </node>
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation:16" id="1737294499102100881" />
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation:7" id="1810715974610193548" />
                     </node>
                   </node>
                   <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1237980886697">
@@ -82,8 +82,8 @@
                           <link role="link:16" targetNodeId="1.1237306115446:11" />
                         </node>
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1237980896146">
-                        <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1237980900104">
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974610193457">
+                        <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1237980900104">
                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1237980899634">
                             <link role="variableDeclaration:3" targetNodeId="1237980813775" resolveInfo="st" />
                           </node>

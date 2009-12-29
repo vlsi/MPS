@@ -186,7 +186,7 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
       public void doUpdateInstanceNode(SNode node) {
         SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", null);
         SPropertyOperations.set(newNode, "flag", "" + true);
-        SLinkOperations.addChild(node, "styleItem", newNode);
+        ListSequence.fromList(SLinkOperations.getTargets(node, "styleItem", true)).addElement(newNode);
       }
 
       public boolean isShowAsIntention() {

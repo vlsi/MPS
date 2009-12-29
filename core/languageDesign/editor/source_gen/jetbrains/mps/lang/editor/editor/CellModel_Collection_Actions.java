@@ -39,7 +39,7 @@ public class CellModel_Collection_Actions {
         for (SNode child : ListSequence.fromList(children)) {
           SNodeOperations.insertPrevSiblingChild(node, child);
         }
-      } else if (SLinkOperations.getCount(node, "childCellModel") == 1) {
+      } else if (ListSequence.fromList(SLinkOperations.getTargets(node, "childCellModel", true)).count() == 1) {
         SNode cell = ListSequence.fromList(SLinkOperations.getTargets(node, "childCellModel", true)).first();
         SNodeOperations.replaceWithAnother(node, cell);
         return;

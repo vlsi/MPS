@@ -57,7 +57,7 @@ public class EditorCellModel_Behavior {
     SNode firstItem = SNodeOperations.cast(ListSequence.fromList(IStyleContainer_Behavior.call_getClassItems_1219419901278(thisNode, SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem"))).first(), "jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem");
     if ((firstItem == null)) {
       firstItem = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem", null);
-      SLinkOperations.addChild(thisNode, "styleItem", firstItem);
+      ListSequence.fromList(SLinkOperations.getTargets(thisNode, "styleItem", true)).addElement(firstItem);
     }
     SPropertyOperations.set(firstItem, "flag", "" + (newSelectable));
   }

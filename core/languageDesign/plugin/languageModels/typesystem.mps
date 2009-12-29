@@ -913,7 +913,7 @@
                 <link role="link:16" targetNodeId="4.1227011543811:23" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1227032341658" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="1810715974610193524" />
           </node>
           <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1227032362215">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1227032354509">
@@ -929,7 +929,7 @@
                 <link role="link:16" targetNodeId="4.1227008813498:23" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1227032363546" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="1810715974610193537" />
           </node>
         </node>
       </node>

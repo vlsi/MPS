@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
@@ -36,7 +37,7 @@ public class ConceptMethodDeclaration_overriddenMethod_ReferentConstraint extend
         SNodeOperations.deleteNode(p);
       }
       for (SNode p : SLinkOperations.getTargets(newReferentNode, "parameter", true)) {
-        SLinkOperations.addChild(referenceNode, "parameter", SNodeOperations.copyNode(p));
+        ListSequence.fromList(SLinkOperations.getTargets(referenceNode, "parameter", true)).addElement(SNodeOperations.copyNode(p));
       }
       SPropertyOperations.set(referenceNode, "name", SPropertyOperations.getString(newReferentNode, "name"));
       SLinkOperations.setTarget(referenceNode, "returnType", SNodeOperations.copyNode(SLinkOperations.getTarget(newReferentNode, "returnType", true)), true);

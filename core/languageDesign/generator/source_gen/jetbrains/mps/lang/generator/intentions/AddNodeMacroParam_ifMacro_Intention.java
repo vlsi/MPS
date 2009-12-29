@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
@@ -71,7 +71,7 @@ public class AddNodeMacroParam_ifMacro_Intention extends BaseIntention implement
     SLinkOperations.setTarget(dotExpression, "operand", SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null), true);
     SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
-    SLinkOperations.addChild(SLinkOperations.getTarget(ifMacro_Condition, "body", true), "statement", expressionStatement);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifMacro_Condition, "body", true), "statement", true)).addElement(expressionStatement);
     SLinkOperations.setTarget(ifMacro, "conditionFunction", ifMacro_Condition, true);
     // set caret 
     editorContext.selectAndSetCaret(ifMacro, 1);

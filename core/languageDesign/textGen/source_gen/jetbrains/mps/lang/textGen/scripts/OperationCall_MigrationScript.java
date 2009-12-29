@@ -9,6 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class OperationCall_MigrationScript extends BaseMigrationScript {
   public OperationCall_MigrationScript(IOperationContext operationContext) {
@@ -39,8 +40,8 @@ public class OperationCall_MigrationScript extends BaseMigrationScript {
         for (SNode st : SLinkOperations.getTargets(node, "statement", true)) {
           if (SNodeOperations.isInstanceOf(st, "jetbrains.mps.lang.textGen.structure.OperationCall")) {
             SNode append = SConceptOperations.createNewNode("jetbrains.mps.lang.textGen.structure.AppendOperation", null);
-            SLinkOperations.removeAllChildren(append, "part");
-            SLinkOperations.addChild(append, "part", SNodeOperations.copyNode(st));
+            ListSequence.fromList(SLinkOperations.getTargets(append, "part", true)).clear();
+            ListSequence.fromList(SLinkOperations.getTargets(append, "part", true)).addElement(SNodeOperations.copyNode(st));
             SNodeOperations.replaceWithAnother(st, append);
           }
         }

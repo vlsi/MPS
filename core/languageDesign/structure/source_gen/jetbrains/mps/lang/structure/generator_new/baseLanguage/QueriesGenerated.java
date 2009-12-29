@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.PrimitiveDataTypeDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.structure.behavior.EnumerationMemberDeclaration_Behavior;
@@ -21,7 +22,6 @@ import jetbrains.mps.lang.structure.behavior.EnumerationDataTypeDeclaration_Beha
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Iterator;
@@ -58,56 +58,56 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1169582607456(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    boolean b1 = SLinkOperations.getCount(_context.getNode(), "implements") > 0;
-    boolean b2 = SLinkOperations.getCount(_context.getNode(), "propertyDeclaration") > 0;
+    boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
+    boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_1169582607528(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    boolean b1 = SLinkOperations.getCount(_context.getNode(), "implements") > 0;
-    boolean b2 = SLinkOperations.getCount(_context.getNode(), "propertyDeclaration") > 0;
+    boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
+    boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_1169582607585(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    boolean b1 = SLinkOperations.getCount(_context.getNode(), "implements") > 0;
-    boolean b2 = SLinkOperations.getCount(_context.getNode(), "propertyDeclaration") > 0;
+    boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
+    boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_1169582607642(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    boolean b1 = SLinkOperations.getCount(_context.getNode(), "implements") > 0;
-    boolean b2 = SLinkOperations.getCount(_context.getNode(), "propertyDeclaration") > 0;
+    boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
+    boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "propertyDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_1169582939030(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    boolean b1 = SLinkOperations.getCount(_context.getNode(), "implements") > 0;
-    boolean b2 = SLinkOperations.getCount(_context.getNode(), "linkDeclaration") > 0;
+    boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
+    boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_1169583297029(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    boolean b1 = SLinkOperations.getCount(_context.getNode(), "implements") > 0;
-    boolean b2 = SLinkOperations.getCount(_context.getNode(), "linkDeclaration") > 0;
+    boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
+    boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_1169591070445(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    boolean b1 = SLinkOperations.getCount(_context.getNode(), "implements") > 0;
-    boolean b2 = SLinkOperations.getCount(_context.getNode(), "linkDeclaration") > 0;
+    boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
+    boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_1169592290031(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    boolean b1 = SLinkOperations.getCount(_context.getNode(), "implements") > 0;
-    boolean b2 = SLinkOperations.getCount(_context.getNode(), "linkDeclaration") > 0;
+    boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
+    boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
   public static boolean baseMappingRule_Condition_1169592375050(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    boolean b1 = SLinkOperations.getCount(_context.getNode(), "implements") > 0;
-    boolean b2 = SLinkOperations.getCount(_context.getNode(), "linkDeclaration") > 0;
+    boolean b1 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "implements", true)).count() > 0;
+    boolean b2 = ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "linkDeclaration", true)).count() > 0;
     return b1 || b2;
   }
 
@@ -696,7 +696,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1173128500049(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SLinkOperations.getCount(_context.getNode(), "extends") == 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "extends", true)).count() == 0;
   }
 
   public static boolean ifMacro_Condition_1212083662247(final IOperationContext operationContext, final IfMacroContext _context) {

@@ -12,8 +12,8 @@ import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 import java.util.ArrayList;
 
 public class AddNodeMacroParam_copySrclMacro_Intention extends BaseIntention implements Intention {
@@ -68,7 +68,7 @@ public class AddNodeMacroParam_copySrclMacro_Intention extends BaseIntention imp
     SLinkOperations.setTarget(dotExpression, "operand", SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode", null), true);
     SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SLinkOperations.setTarget(expressionStatement, "expression", dotExpression, true);
-    SLinkOperations.addChild(SLinkOperations.getTarget(referentValue, "body", true), "statement", expressionStatement);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(referentValue, "body", true), "statement", true)).addElement(expressionStatement);
     SLinkOperations.setTarget(copySrcListMacro, "sourceNodesQuery", referentValue, true);
     // set caret 
     editorContext.selectAndSetCaret(copySrcListMacro, 1);

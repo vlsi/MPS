@@ -11,8 +11,8 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
-import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Iterator;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -26,8 +26,8 @@ public class typeof_Node_ConceptMethodCall_InferenceRule extends AbstractInferen
       IErrorTarget errorTarget = new NodeErrorTarget();
       IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(conceptMethodCall, "no method declaration", "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1179410829052", intentionProvider, errorTarget);
     }
-    int actCount = SLinkOperations.getCount(conceptMethodCall, "actualArgument");
-    int expCount = SLinkOperations.getCount(SLinkOperations.getTarget(conceptMethodCall, "baseMethodDeclaration", false), "parameter");
+    int actCount = ListSequence.fromList(SLinkOperations.getTargets(conceptMethodCall, "actualArgument", true)).count();
+    int expCount = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(conceptMethodCall, "baseMethodDeclaration", false), "parameter", true)).count();
     if (!(actCount == expCount)) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();

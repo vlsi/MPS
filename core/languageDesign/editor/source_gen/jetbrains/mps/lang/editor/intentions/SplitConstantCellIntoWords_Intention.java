@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class SplitConstantCellIntoWords_Intention extends BaseIntention implements Intention {
   public SplitConstantCellIntoWords_Intention() {
@@ -90,7 +91,7 @@ public class SplitConstantCellIntoWords_Intention extends BaseIntention implemen
         SNode paddingRightStyleClassItem = SLinkOperations.addNewChild(constantCell, "styleItem", "jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem");
         SPropertyOperations.set(paddingRightStyleClassItem, "value", "0.5");
       }
-      SLinkOperations.addChild(collection, "childCellModel", constantCell);
+      ListSequence.fromList(SLinkOperations.getTargets(collection, "childCellModel", true)).addElement(constantCell);
       i++;
     }
   }

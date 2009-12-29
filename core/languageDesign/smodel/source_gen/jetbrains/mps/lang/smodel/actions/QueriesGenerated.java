@@ -4,8 +4,8 @@ package jetbrains.mps.lang.smodel.actions;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -35,7 +35,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperati
 
 public class QueriesGenerated {
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_SNodeOperation_1154637518825(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    boolean alreadyHasParms = SLinkOperations.getCount(_context.getSourceNode(), "parameter") > 0;
+    boolean alreadyHasParms = ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "parameter", true)).count() > 0;
     if (alreadyHasParms) {
       return false;
     }
@@ -69,7 +69,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation")) {
       List<SNode> parms = SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "parameter", true);
       for (SNode parm : ListSequence.fromList(parms)) {
-        SLinkOperations.addChild(_context.getNewNode(), "parameter", parm);
+        ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true)).addElement(parm);
       }
     }
     // init default parms 
@@ -109,7 +109,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation")) {
       List<SNode> parms = SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.lang.smodel.structure.SNodeOperation"), "parameter", true);
       for (SNode parm : ListSequence.fromList(parms)) {
-        SLinkOperations.addChild(_context.getNewNode(), "parameter", parm);
+        ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "parameter", true)).addElement(parm);
       }
     }
     // init default parms 

@@ -512,8 +512,8 @@
                 <link role="link:16" targetNodeId="2.1068581517665:3" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation:16" id="1193745326708">
-              <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1210717283438">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation:7" id="1810715974610193546">
+              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1210717283438">
                 <link role="variableDeclaration:3" targetNodeId="1193745326616" resolveInfo="castVariable" />
               </node>
             </node>
@@ -701,8 +701,8 @@
                     <link role="link:16" targetNodeId="1.1144104376918:16" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1206998647191">
-                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1206998657885">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974610193497">
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1206998657885">
                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="1206998694250">
                       <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="1206998694251">
                         <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1206998694252">

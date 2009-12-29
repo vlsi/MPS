@@ -582,7 +582,7 @@
                   <link role="link:16" targetNodeId="3v.1068580123134:3" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="3834658221333152959" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="1810715974610193515" />
             </node>
           </node>
         </node>
@@ -599,7 +599,7 @@
                   <link role="link:16" targetNodeId="3v.1068580123134:3" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="3834658221333152967" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="1810715974610193541" />
             </node>
           </node>
         </node>
@@ -693,8 +693,8 @@
                         <link role="link:16" targetNodeId="3v.1068580123134:3" />
                       </node>
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="3834658221333153009">
-                      <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3834658221333153010">
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974610193479">
+                      <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3834658221333153010">
                         <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3834658221333153011">
                           <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3834658221333153012">
                             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3834658221333153013">

@@ -535,8 +535,8 @@
                   <link role="link:16" targetNodeId="1.1219418656006:32" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1234797484163">
-                <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1234797488197">
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974610193463">
+                <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1234797488197">
                   <link role="variableDeclaration:3" targetNodeId="1234797443199" resolveInfo="newNode" />
                 </node>
               </node>
@@ -786,8 +786,8 @@
                       <link role="link:16" targetNodeId="1.1219418656006:32" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1237818377133">
-                    <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1237818605730">
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974610193485">
+                    <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1237818605730">
                       <link role="variableDeclaration:3" targetNodeId="1237818564824" resolveInfo="indentStyle" />
                     </node>
                   </node>

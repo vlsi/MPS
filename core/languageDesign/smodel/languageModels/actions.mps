@@ -853,7 +853,7 @@
                       <link role="link:16" targetNodeId="1.1144104376918:16" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1154637553691" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="1810715974610193525" />
                 </node>
               </node>
             </node>
@@ -979,8 +979,8 @@
                           <link role="link:16" targetNodeId="1.1144104376918:16" />
                         </node>
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1171415598427">
-                        <node role="childNode:16" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1171415601444">
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974610193503">
+                        <node role="argument:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1171415601444">
                           <link role="variable:7" targetNodeId="1171415558928" resolveInfo="parm" />
                         </node>
                       </node>
@@ -1072,8 +1072,8 @@
                           <link role="link:16" targetNodeId="1.1144104376918:16" />
                         </node>
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1207248813899">
-                        <node role="childNode:16" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1207248813900">
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974610193439">
+                        <node role="argument:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1207248813900">
                           <link role="variable:7" targetNodeId="1207248813891" resolveInfo="parm" />
                         </node>
                       </node>

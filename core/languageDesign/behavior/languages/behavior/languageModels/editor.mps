@@ -509,7 +509,7 @@
                       <link role="link:16" targetNodeId="6.1188208488637:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1233077365753" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="1810715974610193542" />
                 </node>
               </node>
             </node>
@@ -950,7 +950,7 @@
                       <link role="link:16" targetNodeId="6.1188208488637:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1233076507291" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="1810715974610193513" />
                 </node>
               </node>
             </node>

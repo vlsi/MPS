@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class AddSNodeCastStatement_Intention extends BaseIntention implements Intention {
   public AddSNodeCastStatement_Intention() {
@@ -76,7 +77,7 @@ public class AddSNodeCastStatement_Intention extends BaseIntention implements In
       SLinkOperations.setTarget(castExpression, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, "type", true)), true);
       SLinkOperations.setTarget(castExpression, "expression", SNodeOperations.copyNode(expression), true);
     }
-    SLinkOperations.insertChildFirst(SLinkOperations.getTarget(node, "ifTrue", true), "statement", castVariable);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "ifTrue", true), "statement", true)).insertElement(0, castVariable);
   }
 
   public String getLocationString() {
