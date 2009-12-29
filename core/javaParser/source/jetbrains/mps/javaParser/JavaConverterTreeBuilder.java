@@ -1496,16 +1496,15 @@ public class JavaConverterTreeBuilder {
       SNode sourceNode = annotationInstance.getNode();
       sourceNode.addReference(myTypesProvider.createClassifierReference(
         annotationBinding.getAnnotationType(), AnnotationInstance.ANNOTATION, sourceNode));
-      ElementValuePair[] pairs = annotationBinding.getElementValuePairs();
+      MemberValuePair[] pairs = annotation.memberValuePairs();
       if (pairs != null) {
-        for (ElementValuePair pair : pairs) {
+        for (MemberValuePair pair : pairs) {
           AnnotationInstanceValue value = AnnotationInstanceValue.newInstance(myCurrentModel);
-          // value.setValue(processExpressionRefl(pair.getValue()));
-          // todo set value later: it is implemented in JDT in a very weird way
+          value.setValue(processExpressionRefl(pair.value));
 
           SNode valueNode = value.getNode();
           valueNode.addReference(
-            myTypesProvider.createMethodReference(pair.getMethodBinding(), AnnotationInstanceValue.KEY, valueNode));
+            myTypesProvider.createMethodReference(pair.binding, AnnotationInstanceValue.KEY, valueNode));
           annotationInstance.addValue(value);
         }
       }
