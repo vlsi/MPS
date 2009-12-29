@@ -105,6 +105,9 @@ public class VersionUtil {
   }
 
   public static int getReferenceToNodeVersion(SNode node, SModelReference targetModelReference) {
+    if (targetModelReference == null) { //target model reference is nullable in postponed references
+      return -1;
+    }
     return node.getModel().getUsedVersion(targetModelReference);
   }
 
