@@ -57,13 +57,13 @@ public class convert_test_case_to_unittest_case_Intention extends BaseIntention 
     }
     for (SNode m : ListSequence.fromList(SLinkOperations.getTargets(node, "method", true))) {
       if (SPropertyOperations.getString(m, "name").startsWith("test")) {
-        SLinkOperations.addChild(SLinkOperations.getTarget(testCase, "testMethodList", true), "testMethod", new _Quotations.QuotationClass_2().createNode(SNodeOperations.detachNode(SLinkOperations.getTarget(m, "body", true)), SPropertyOperations.getString(m, "name").substring("test".length())));
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(testCase, "testMethodList", true), "testMethod", true)).addElement(new _Quotations.QuotationClass_2().createNode(SNodeOperations.detachNode(SLinkOperations.getTarget(m, "body", true)), SPropertyOperations.getString(m, "name").substring("test".length())));
       } else {
-        SLinkOperations.addChild(testCase, "method", SNodeOperations.detachNode(m));
+        ListSequence.fromList(SLinkOperations.getTargets(testCase, "method", true)).addElement(SNodeOperations.detachNode(m));
       }
     }
     for (SNode f : ListSequence.fromList(SLinkOperations.getTargets(node, "staticField", true))) {
-      SLinkOperations.addChild(testCase, "staticField", SNodeOperations.detachNode(f));
+      ListSequence.fromList(SLinkOperations.getTargets(testCase, "staticField", true)).addElement(SNodeOperations.detachNode(f));
     }
   }
 

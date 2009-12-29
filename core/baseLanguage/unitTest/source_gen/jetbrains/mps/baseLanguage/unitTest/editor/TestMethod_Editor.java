@@ -185,7 +185,7 @@ public class TestMethod_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition4471_1(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "annotation") > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).count() > 0;
   }
 
   private static class annotationListHandler_4471_0 extends RefNodeListHandler {

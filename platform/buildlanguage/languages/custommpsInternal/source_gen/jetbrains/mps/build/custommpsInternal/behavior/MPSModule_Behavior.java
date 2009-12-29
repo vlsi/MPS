@@ -10,6 +10,7 @@ import java.io.File;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MPSModule_Behavior {
@@ -32,7 +33,7 @@ public class MPSModule_Behavior {
     relativePath = relativePath.substring(relativePath.indexOf("}" + Macros.SEPARATOR_CHAR) + 2);
     SNode pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
     SPropertyOperations.set(pathComponent, "path", relativePath);
-    SLinkOperations.addChild(compositePath, "pathComponent", pathComponent);
+    ListSequence.fromList(SLinkOperations.getTargets(compositePath, "pathComponent", true)).addElement(pathComponent);
     return compositePath;
   }
 }

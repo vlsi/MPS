@@ -6338,8 +6338,8 @@
                           <link role="link:16" targetNodeId="2v.1204116468206:7" />
                         </node>
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1237471645128">
-                        <node role="childNode:16" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1237471649529">
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974608761248">
+                        <node role="argument:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1237471649529">
                           <link role="variable:7" targetNodeId="1237471626227" resolveInfo="config" />
                         </node>
                       </node>

@@ -435,7 +435,7 @@ public class QueriesGenerated {
     SNode module = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Module", null);
     SPropertyOperations.set(module, "id", SPropertyOperations.getString(_context.getNode(), "id"));
     for (SNode config : ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "configuration", true))) {
-      SLinkOperations.addChild(module, "configuration", config);
+      ListSequence.fromList(SLinkOperations.getTargets(module, "configuration", true)).addElement(config);
     }
     return module;
   }

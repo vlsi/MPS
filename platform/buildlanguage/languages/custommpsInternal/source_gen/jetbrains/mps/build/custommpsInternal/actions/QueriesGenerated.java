@@ -29,14 +29,14 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.custommpsInternal.structure.MPSModule");
-      SNode childConcept = (SNode)_context.getChildConcept();
+      SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
             return Module_Behavior.getAllAvailableModules_1222444746697();
           }
         };
-        Iterable<IModule> queryResult = (Iterable)calc.calculate();
+        Iterable<IModule> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final IModule item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {

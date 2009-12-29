@@ -330,7 +330,7 @@ public class QueriesGenerated {
             } else {
               redirection = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.InputRedirection", null);
             }
-            SLinkOperations.addChild(redirectedCommand, "redirection", redirection);
+            ListSequence.fromList(SLinkOperations.getTargets(redirectedCommand, "redirection", true)).addElement(redirection);
             SNode command = _context.getSourceNode();
             SNodeOperations.replaceWithAnother(_context.getSourceNode(), redirectedCommand);
             SLinkOperations.setTarget(redirectedCommand, "command", command, true);

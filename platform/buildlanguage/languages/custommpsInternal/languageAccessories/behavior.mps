@@ -247,8 +247,8 @@
                 <link role="link:16" targetNodeId="3v.1220978161990:7" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1240033962960">
-              <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1240033962961">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974608863189">
+              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1240033962961">
                 <link role="variableDeclaration:3" targetNodeId="1240033962943" resolveInfo="pathComponent" />
               </node>
             </node>

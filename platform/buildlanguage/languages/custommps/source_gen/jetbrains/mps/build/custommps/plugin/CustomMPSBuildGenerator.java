@@ -53,21 +53,21 @@ public class CustomMPSBuildGenerator extends BuildGeneratorImpl {
     SNode rootFolder = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(zipNode, "entry", true)).first(), "jetbrains.mps.build.packaging.structure.Folder");
     List<SNode> entries = SLinkOperations.getTargets(rootFolder, "entry", true);
     SNode mpsBuild = SConceptOperations.createNewNode("jetbrains.mps.build.custommps.structure.MPSBuild", null);
-    SLinkOperations.addChild(mpsLayout, "component", mpsBuild);
+    ListSequence.fromList(SLinkOperations.getTargets(mpsLayout, "component", true)).addElement(mpsBuild);
     // 
     SNode libraryFolder = createLibraryFolder(rootFolder);
     for (SNode entry : ListSequence.fromList(entries)) {
       if (SNodeOperations.isInstanceOf(entry, "jetbrains.mps.build.packaging.structure.Module")) {
-        SLinkOperations.addChild(libraryFolder, "entry", entry);
+        ListSequence.fromList(SLinkOperations.getTargets(libraryFolder, "entry", true)).addElement(entry);
       } else if (SNodeOperations.isInstanceOf(entry, "jetbrains.mps.build.packaging.structure.Folder")) {
         SNode oldFolder = SNodeOperations.cast(entry, "jetbrains.mps.build.packaging.structure.Folder");
         SNode newFolder = createLibraryFolder(oldFolder);
-        SLinkOperations.addAll(newFolder, "entry", SLinkOperations.getTargets(oldFolder, "entry", true));
-        SLinkOperations.addChild(mpsBuild, "entry", newFolder);
+        ListSequence.fromList(SLinkOperations.getTargets(newFolder, "entry", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(oldFolder, "entry", true)));
+        ListSequence.fromList(SLinkOperations.getTargets(mpsBuild, "entry", true)).addElement(newFolder);
       }
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(libraryFolder, "entry", true)).isNotEmpty()) {
-      SLinkOperations.addChild(mpsBuild, "entry", libraryFolder);
+      ListSequence.fromList(SLinkOperations.getTargets(mpsBuild, "entry", true)).addElement(libraryFolder);
     }
     SNodeOperations.deleteNode(zipNode);
     //  setting buildtools.zip path 
