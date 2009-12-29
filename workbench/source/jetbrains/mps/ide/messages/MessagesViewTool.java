@@ -424,6 +424,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         myInfos = 0;
         myHintObjects = 0;
         myList.setFixedCellWidth(myList.getWidth());
+        updateHeader();
         updateActions();
       }
     });
@@ -487,13 +488,15 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   }
 
   private void updateHeader() {
+    if (getToolWindow() == null) return;
     if (hasErrors() || hasWarnings() || hasInfo()) {
-      if (getToolWindow() == null) return;
       getToolWindow().setTitle(" ("
         + NameUtil.formatNumericalString(myErrors, "error") + "/"
         + NameUtil.formatNumericalString(myWarnings, "warning") + "/"
         + NameUtil.formatNumericalString(myInfos, "info")
         + ")");
+    } else {
+      getToolWindow().setTitle("");
     }
   }
 
