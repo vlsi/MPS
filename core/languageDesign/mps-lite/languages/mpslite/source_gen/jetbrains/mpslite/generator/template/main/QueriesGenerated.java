@@ -101,7 +101,7 @@ public class QueriesGenerated {
       SNode conceptConstraint = SConceptOperations.createNewNode("jetbrains.mps.lang.constraints.structure.ConceptConstraints", null);
       SLinkOperations.setTarget(conceptConstraint, "concept", MapSequence.fromMap(additionalConceptsToTargets).get(variableConcept), false);
       SNode varScope = VariableConcept_Behavior.call_createVariableScope_1239942296621(variableConcept, conceptsToTargets, partsToLinkDeclarations);
-      SLinkOperations.addChild(conceptConstraint, "referent", varScope);
+      ListSequence.fromList(SLinkOperations.getTargets(conceptConstraint, "referent", true)).addElement(varScope);
       MapSequence.fromMap(conceptsToConstraints).put(variableConcept, conceptConstraint);
     }
     SModel constraintsModel = language.getConstraintsModelDescriptor().getSModel();

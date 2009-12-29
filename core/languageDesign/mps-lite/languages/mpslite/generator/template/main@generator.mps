@@ -992,8 +992,8 @@
                     <link role="link:16" targetNodeId="8.1213100494875:8" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1239980677834">
-                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1239980680832">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2898190064848338717">
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1239980680832">
                     <link role="variableDeclaration:3" targetNodeId="1239980642010" resolveInfo="varScope" />
                   </node>
                 </node>

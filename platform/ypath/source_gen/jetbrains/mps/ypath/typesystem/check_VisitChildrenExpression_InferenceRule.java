@@ -6,6 +6,7 @@ import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ypath.behavior.VisitChildrenExpression_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
@@ -13,7 +14,6 @@ import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -23,7 +23,7 @@ public class check_VisitChildrenExpression_InferenceRule extends AbstractInferen
   }
 
   public void applyRule(final SNode visitChildrenExpression, final TypeCheckingContext typeCheckingContext) {
-    int actualCount = SLinkOperations.getCount(visitChildrenExpression, "actualArgument");
+    int actualCount = ListSequence.fromList(SLinkOperations.getTargets(visitChildrenExpression, "actualArgument", true)).count();
     SNode visitBlock = VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1213877259423(visitChildrenExpression);
     if (!((visitBlock != null))) {
       BaseIntentionProvider intentionProvider = null;

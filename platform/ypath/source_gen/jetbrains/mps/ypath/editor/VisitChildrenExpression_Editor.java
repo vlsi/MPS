@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.ypath.behavior.VisitChildrenExpression_Behavior;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
@@ -98,7 +99,7 @@ public class VisitChildrenExpression_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition9190_0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(SLinkOperations.getTarget(VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1213877259423(node), "visitParameterDeclarationList", true), "visitParameterDeclaration") > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(VisitChildrenExpression_Behavior.call_getEnclosingVisitNodesStatement_1213877259423(node), "visitParameterDeclarationList", true), "visitParameterDeclaration", true)).count() > 0;
   }
 
   private static class actualArgumentListHandler_9190_0 extends RefNodeListHandler {

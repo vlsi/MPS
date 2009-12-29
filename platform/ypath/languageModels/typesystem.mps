@@ -879,7 +879,7 @@
                 <link role="link:16" targetNodeId="1.1180014148583:0" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1180014460690" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2898190064848338726" />
           </node>
         </node>
       </node>
