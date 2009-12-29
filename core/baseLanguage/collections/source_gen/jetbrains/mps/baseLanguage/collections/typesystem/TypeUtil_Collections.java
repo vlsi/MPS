@@ -12,6 +12,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class TypeUtil_Collections {
   public static SNode coerceTo_SequenceType(SNode type) {
@@ -49,7 +50,7 @@ public class TypeUtil_Collections {
       SNode javaIterable = SNodeOperations.cast(SModelUtil.findNodeByFQName("java.lang.Iterable", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), scope), "jetbrains.mps.baseLanguage.structure.Classifier");
       SNode javaIterableType = SModelOperations.createNewNode(model, "jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(javaIterableType, "classifier", javaIterable, false);
-      SLinkOperations.addChild(javaIterableType, "parameter", entityType);
+      ListSequence.fromList(SLinkOperations.getTargets(javaIterableType, "parameter", true)).addElement(entityType);
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, javaIterableType)) {
         return new _Quotations.QuotationClass_28().createNode(SNodeOperations.copyNode(entity));
       }

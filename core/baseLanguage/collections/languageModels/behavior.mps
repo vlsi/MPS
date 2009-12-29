@@ -2114,8 +2114,8 @@
                         <link role="link:16" targetNodeId="13.1179479418730:3" />
                       </node>
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="497032923610723049">
-                      <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="497032923610723052">
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="4296974352970550225">
+                      <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="497032923610723052">
                         <link role="variableDeclaration:3" targetNodeId="497032923610152048" resolveInfo="rt" />
                       </node>
                     </node>

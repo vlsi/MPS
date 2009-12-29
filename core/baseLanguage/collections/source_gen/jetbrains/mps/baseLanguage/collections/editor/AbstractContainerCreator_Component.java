@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_DeleteNode;
@@ -312,7 +313,7 @@ public class AbstractContainerCreator_Component extends AbstractCellProvider {
   }
 
   private static boolean renderingCondition3349_1(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "initValue") > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "initValue", true)).count() > 0;
   }
 
   private static boolean renderingCondition3349_2(SNode node, EditorContext editorContext, IScope scope) {

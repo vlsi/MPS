@@ -65,7 +65,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractContainerCreator_1237731265768(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return ((SLinkOperations.getTarget(_context.getSourceNode(), "initSize", true) == null) || !(SConceptPropertyOperations.getBoolean(_context.getSourceNode(), "hasInitSize"))) && SLinkOperations.getCount(_context.getSourceNode(), "initValue") == 0 && (SLinkOperations.getTarget(_context.getSourceNode(), "copyFrom", true) == null);
+    return ((SLinkOperations.getTarget(_context.getSourceNode(), "initSize", true) == null) || !(SConceptPropertyOperations.getBoolean(_context.getSourceNode(), "hasInitSize"))) && ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "initValue", true)).count() == 0 && (SLinkOperations.getTarget(_context.getSourceNode(), "copyFrom", true) == null);
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_HashMapCreator_1240226454998(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -89,7 +89,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractContainerCreator_1562299158921287173(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return (SLinkOperations.getTarget(_context.getSourceNode(), "initSize", true) == null) && SConceptPropertyOperations.getBoolean(_context.getSourceNode(), "hasInitSize") && SLinkOperations.getCount(_context.getSourceNode(), "initValue") == 0 && (SLinkOperations.getTarget(_context.getSourceNode(), "copyFrom", true) == null);
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "initSize", true) == null) && SConceptPropertyOperations.getBoolean(_context.getSourceNode(), "hasInitSize") && ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "initValue", true)).count() == 0 && (SLinkOperations.getTarget(_context.getSourceNode(), "copyFrom", true) == null);
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_HashMapCreator_1562299158921333141(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -202,7 +202,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")) {
       SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "elementType", true)), true);
       for (SNode v : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true))) {
-        SLinkOperations.addChild(_context.getNewNode(), "initValue", SNodeOperations.detachNode(v));
+        ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "initValue", true)).addElement(SNodeOperations.detachNode(v));
       }
       SLinkOperations.setTarget(_context.getNewNode(), "copyFrom", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "copyFrom", true)), true);
     }
@@ -212,7 +212,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")) {
       SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "elementType", true)), true);
       for (SNode v : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true))) {
-        SLinkOperations.addChild(_context.getNewNode(), "initValue", SNodeOperations.detachNode(v));
+        ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "initValue", true)).addElement(SNodeOperations.detachNode(v));
       }
       SLinkOperations.setTarget(_context.getNewNode(), "copyFrom", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "copyFrom", true)), true);
     }
@@ -222,7 +222,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")) {
       SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "elementType", true)), true);
       for (SNode v : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true))) {
-        SLinkOperations.addChild(_context.getNewNode(), "initValue", SNodeOperations.detachNode(v));
+        ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "initValue", true)).addElement(SNodeOperations.detachNode(v));
       }
       SLinkOperations.setTarget(_context.getNewNode(), "copyFrom", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "copyFrom", true)), true);
     }
@@ -232,7 +232,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")) {
       SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "elementType", true)), true);
       for (SNode v : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true))) {
-        SLinkOperations.addChild(_context.getNewNode(), "initValue", SNodeOperations.detachNode(v));
+        ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "initValue", true)).addElement(SNodeOperations.detachNode(v));
       }
       SLinkOperations.setTarget(_context.getNewNode(), "copyFrom", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "copyFrom", true)), true);
     }
@@ -242,7 +242,7 @@ public class QueriesGenerated {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator")) {
       SLinkOperations.setTarget(_context.getNewNode(), "elementType", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "elementType", true)), true);
       for (SNode v : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true))) {
-        SLinkOperations.addChild(_context.getNewNode(), "initValue", SNodeOperations.detachNode(v));
+        ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "initValue", true)).addElement(SNodeOperations.detachNode(v));
       }
       SLinkOperations.setTarget(_context.getNewNode(), "copyFrom", SNodeOperations.detachNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "copyFrom", true)), true);
     }

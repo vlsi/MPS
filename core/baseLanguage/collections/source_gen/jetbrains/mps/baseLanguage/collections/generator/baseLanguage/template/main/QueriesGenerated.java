@@ -13,13 +13,13 @@ import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
 import jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Keys;
 import jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.util.Values;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.List;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -573,7 +573,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_3444116434173277662(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator") && (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "copyFrom", true) == null) && SLinkOperations.getCount(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue") == 0;
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator") && (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "copyFrom", true) == null) && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true)).count() == 0;
   }
 
   public static boolean baseMappingRule_Condition_3444116434173386514(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -589,7 +589,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_3444116434174665193(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator") && (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "copyFrom", true) == null) && SLinkOperations.getCount(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue") > 0;
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator") && (SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "copyFrom", true) == null) && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.collections.structure.AbstractContainerCreator"), "initValue", true)).count() > 0;
   }
 
   public static boolean baseMappingRule_Condition_3444116434174665270(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

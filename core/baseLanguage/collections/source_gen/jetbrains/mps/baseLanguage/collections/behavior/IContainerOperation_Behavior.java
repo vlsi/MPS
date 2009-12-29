@@ -21,7 +21,7 @@ public class IContainerOperation_Behavior {
       if ((et != null)) {
         SNode rt = SNodeOperations.copyNode(et);
         SNodeOperations.replaceWithAnother(ListSequence.fromList(SNodeOperations.getChildren(rt)).first(), SNodeOperations.copyNode(elementType));
-        SLinkOperations.addChild(jt, "argument", rt);
+        ListSequence.fromList(SLinkOperations.getTargets(jt, "argument", true)).addElement(rt);
       }
     }
     return jt;
