@@ -45,11 +45,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ExtractStatementList_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_ExtractStaticMethodExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ExtractStaticMethodExpression_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_ExtractStatementList_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

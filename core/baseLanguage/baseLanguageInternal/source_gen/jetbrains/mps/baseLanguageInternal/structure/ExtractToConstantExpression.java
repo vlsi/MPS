@@ -11,6 +11,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ExtractToConstantExpression extends Expression {
   public static final String concept = "jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression";
   public static final String FIELD_NAME = "fieldName";
+  public static final String MAKE_UNIQUE = "makeUnique";
   public static final String EXPRESSION = "expression";
 
   public ExtractToConstantExpression(SNode node) {
@@ -23,6 +24,14 @@ public class ExtractToConstantExpression extends Expression {
 
   public void setFieldName(String value) {
     this.setProperty(ExtractToConstantExpression.FIELD_NAME, value);
+  }
+
+  public boolean getMakeUnique() {
+    return this.getBooleanProperty(ExtractToConstantExpression.MAKE_UNIQUE);
+  }
+
+  public void setMakeUnique(boolean value) {
+    this.setBooleanProperty(ExtractToConstantExpression.MAKE_UNIQUE, value);
   }
 
   public Expression getExpression() {

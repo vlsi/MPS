@@ -8,18 +8,17 @@ import jetbrains.mps.baseLanguageInternal.generator.template.util.Flags;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguageInternal.generator.template.util.ContextUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 
@@ -29,22 +28,17 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1238251891480(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (SPropertyOperations.getBoolean(_context.getNode(), "makeUnique")) {
+      SNode context = ContextUtil.getContextForConstant(_context, _context.getNode(), true);
+      return _context.createUniqueName(SPropertyOperations.getString(_context.getNode(), "fieldName"), context);
+    }
     return SPropertyOperations.getString(_context.getNode(), "fieldName");
   }
 
   public static Object propertyMacro_GetPropertyValue_8733626498296662444(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode esm = SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticMethodExpression");
     if (SPropertyOperations.getBoolean(esm, "makeUnique")) {
-      SNode context;
-      SNode usage = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(esm, "inner", true), "methUsageExpr");
-      if ((usage != null)) {
-        context = ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
-      } else {
-        context = _context.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(esm, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
-        if ((context != null)) {
-          context = ListSequence.fromList(SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguage.structure.ClassConcept", true)).last();
-        }
-      }
+      SNode context = ContextUtil.getContextForMethod(_context, esm, true);
       return _context.createUniqueName(SPropertyOperations.getString(_context.getNode(), "name"), context);
     }
     return SPropertyOperations.getString(_context.getNode(), "name");
@@ -114,25 +108,11 @@ public class QueriesGenerated {
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_1238251595165(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    SNode usage = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "exprUsage");
-    if ((usage != null)) {
-      return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
-    } else {
-      return _context.getCopiedOutputNodeForInputNode(ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept", true)).last());
-    }
+    return ContextUtil.getContextForConstant(_context, _context.getNode(), true);
   }
 
   public static SNode weaving_MappingRule_ContextNodeQuery_8881995820265482161(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    SNode usage = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "inner", true), "methUsageExpr");
-    if ((usage != null)) {
-      return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return Classifier_Behavior.call_isStatic_521412098689998668(it);
-        }
-      }).first();
-    } else {
-      return _context.getCopiedOutputNodeForInputNode(ListSequence.fromList(SNodeOperations.getAncestors(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "jetbrains.mps.baseLanguage.structure.ClassConcept", true)).last());
-    }
+    return ContextUtil.getContextForMethod(_context, _context.getNode(), false);
   }
 
   public static void mappingScript_CodeBlock_5546896804536307448(final IOperationContext operationContext, final MappingScriptContext _context) {
