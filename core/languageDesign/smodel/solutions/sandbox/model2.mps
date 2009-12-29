@@ -480,8 +480,8 @@
                 </node>
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1205272345203">
-              <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1205272351487">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2898190064848645462">
+              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1205272351487">
                 <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="1205272351488">
                   <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1205272351489">
                     <link role="concept:16" targetNodeId="4.1087833466690:2" resolveInfo="NodeMacro" />

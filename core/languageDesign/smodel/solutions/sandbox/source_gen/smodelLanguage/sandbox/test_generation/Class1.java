@@ -13,7 +13,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class Class1 {
-
   public void method1(SNode node) {
     SNodeOperations.isAttribute(node);
     List<SNode> nodes = SNodeOperations.getAllAttributes(node);
@@ -40,47 +39,45 @@ public class Class1 {
   }
 
   public void method5(SNode node) {
-    // single attribute access
+    // single attribute access 
     SNode expression = SLinkOperations.getTarget(node, "expression", true);
     SLinkOperations.setNewChild(node, "expression", "jetbrains.mps.baseLanguage.structure.BinaryOperation");
     SLinkOperations.setNewChild(node, "expression", "jetbrains.mps.baseLanguage.structure.Expression");
-    SNode ex = SLinkOperations.removeChild(node, "expression");
+    SNode ex = SNodeOperations.detachNode(SLinkOperations.getTarget(node, "expression", true));
     SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "alias"), "jetbrains.mps.lang.generator.structure.PropertyMacro");
     SLinkOperations.setNewChild(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "alias"), "jetbrains.mps.lang.generator.structure.PropertyMacro");
-    SNode macro = SLinkOperations.removeChild(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "alias"));
+    SNode macro = SNodeOperations.detachNode(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "alias"), true));
   }
 
   public void method6(SNode node) {
-    // attribute list access
+    // attribute list access 
     List<SNode> nodes = SLinkOperations.getTargets(node, "statement", true);
     SLinkOperations.addNewChild(node, "statement", "jetbrains.mps.baseLanguage.structure.Statement");
     SLinkOperations.addNewChild(node, "statement", "jetbrains.mps.baseLanguage.structure.Statement");
-    SLinkOperations.addChild(node, "statement", null);
-    SLinkOperations.addAll(node, "statement", null);
-    SLinkOperations.insertChildFirst(node, "statement", null);
-    int c1 = SLinkOperations.getCount(node, "statement");
-    List<SNode> macros = SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true);
+    ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).addElement(null);
+    ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).addSequence(null);
+    ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).insertElement(0, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null));
+    int c1 = ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).count();
+    List<SNode> macros = SLinkOperations.getTargets(SNodeOperations.cast(node, ""), AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true);
     SLinkOperations.addNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), "jetbrains.mps.lang.generator.structure.NodeMacro");
     SLinkOperations.addNewChild(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), "jetbrains.mps.lang.generator.structure.NodeMacro");
-    SLinkOperations.addChild(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), null);
-    SLinkOperations.addAll(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), null);
-    SLinkOperations.insertChildFirst(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), null);
-    int c2 = SLinkOperations.getCount(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"));
+    ListSequence.fromList(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true)).addElement(null);
+    ListSequence.fromList(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true)).addSequence(null);
+    ListSequence.fromList(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true)).insertElement(0, null);
+    int c2 = ListSequence.fromList(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true)).count();
     int c3 = ListSequence.fromList(SLinkOperations.getTargets(node, AttributesRolesUtil.childRoleFromAttributeRole("nodeMacro"), true)).count();
-    // not a link
+    // not a link 
     int all = ListSequence.fromList(SNodeOperations.getAllAttributes(node)).count();
     SNodeOperations.copyNode(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromPropertyAttributeRole("propertyMacro", "alias"), true));
   }
 
   public void method7(SNode node) {
-    Iterable<SNode> seq = ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).where(new IWhereFilter <SNode>() {
-
+    Iterable<SNode> seq = ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "expression", true), "jetbrains.mps.baseLanguage.structure.NullLiteral");
+        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true), "jetbrains.mps.baseLanguage.structure.NullLiteral");
       }
-
     });
-    for(SNode statement : SLinkOperations.getTargets(node, "statement", true)) {
+    for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(node, "statement", true))) {
       String string = SPropertyOperations.getString(statement, "alias");
     }
   }
@@ -90,4 +87,6 @@ public class Class1 {
     SLinkOperations.setTarget(imco, "baseMethodDeclaration", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null), false);
   }
 
+  public static void main(String[] arg) {
+  }
 }
