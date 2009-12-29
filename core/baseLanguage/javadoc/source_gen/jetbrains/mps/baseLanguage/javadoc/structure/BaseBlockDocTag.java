@@ -16,7 +16,7 @@ public class BaseBlockDocTag extends BaseConcept {
   }
 
   public static BaseBlockDocTag newInstance(SModel sm, boolean init) {
-    return (BaseBlockDocTag)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseBlockDocTag) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseBlockDocTag newInstance(SModel sm) {

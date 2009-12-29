@@ -38,7 +38,7 @@ public class ClassifierDocComment extends BaseDocComment {
   }
 
   public static ClassifierDocComment newInstance(SModel sm, boolean init) {
-    return (ClassifierDocComment)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ClassifierDocComment) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocComment", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ClassifierDocComment newInstance(SModel sm) {

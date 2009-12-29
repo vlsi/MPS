@@ -47,7 +47,7 @@ public class HTMLElement extends CommentLinePart {
   }
 
   public static HTMLElement newInstance(SModel sm, boolean init) {
-    return (HTMLElement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (HTMLElement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static HTMLElement newInstance(SModel sm) {

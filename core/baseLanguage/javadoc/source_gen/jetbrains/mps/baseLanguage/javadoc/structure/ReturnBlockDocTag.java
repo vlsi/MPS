@@ -24,7 +24,7 @@ public class ReturnBlockDocTag extends BaseBlockDocTag {
   }
 
   public static ReturnBlockDocTag newInstance(SModel sm, boolean init) {
-    return (ReturnBlockDocTag)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReturnBlockDocTag) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ReturnBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReturnBlockDocTag newInstance(SModel sm) {

@@ -24,7 +24,7 @@ public class TextCommentLinePart extends CommentLinePart {
   }
 
   public static TextCommentLinePart newInstance(SModel sm, boolean init) {
-    return (TextCommentLinePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TextCommentLinePart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TextCommentLinePart newInstance(SModel sm) {

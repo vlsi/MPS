@@ -47,7 +47,7 @@ public class FoldHTMLElement_Intention extends BaseIntention implements Intentio
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).isEmpty()) {
       SLinkOperations.addNewChild(node, "line", "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine");
     } else {
-      SLinkOperations.removeAllChildren(node, "line");
+      ListSequence.fromList(SLinkOperations.getTargets(node, "line", true)).clear();
     }
   }
 

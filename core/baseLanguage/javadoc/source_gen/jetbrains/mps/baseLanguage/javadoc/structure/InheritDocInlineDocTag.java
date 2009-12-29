@@ -15,7 +15,7 @@ public class InheritDocInlineDocTag extends BaseInlineDocTag {
   }
 
   public static InheritDocInlineDocTag newInstance(SModel sm, boolean init) {
-    return (InheritDocInlineDocTag)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InheritDocInlineDocTag) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.InheritDocInlineDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InheritDocInlineDocTag newInstance(SModel sm) {

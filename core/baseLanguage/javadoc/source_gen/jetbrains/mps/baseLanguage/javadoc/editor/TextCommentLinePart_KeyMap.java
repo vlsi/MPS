@@ -63,11 +63,11 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
 
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode nextLine;
-      EditorCell_Label editorCell = ((EditorCell_Label)editorContext.getSelectedCell());
+      EditorCell_Label editorCell = ((EditorCell_Label) editorContext.getSelectedCell());
       int caretPosition = editorCell.getCaretPosition();
       nextLine = TextCommentPartUtil.divideLineBetweenCaretAndInsertNewLine(node, caretPosition, caretPosition, editorCell.getText());
       editorContext.selectWRTFocusPolicy(nextLine);
-      ((EditorCell_Label)editorContext.getSelectedCell()).setCaretPosition(0);
+      ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(0);
     }
 
     public String getKeyStroke() {
@@ -121,7 +121,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
           } else {
             NodeCaretPair nodeCaret = CommentLinePart_Behavior.call_smartDelete_9042833497008205283(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(node)), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), true);
             editorContext.selectWRTFocusPolicy(nodeCaret.myNode);
-            ((EditorCell_Label)editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
+            ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
           }
           return;
         } else {
@@ -140,7 +140,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
 
           SNodeOperations.deleteNode(curLine);
           editorContext.selectWRTFocusPolicy(nodeToSelect);
-          ((EditorCell_Label)editorContext.getSelectedCell()).setCaretPosition(caret);
+          ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(caret);
           return;
         }
       } else {
@@ -158,7 +158,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
         } else if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(node), "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart") || SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(node), "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement")) {
           NodeCaretPair nodeCaret = CommentLinePart_Behavior.call_smartDelete_9042833497008205283(SNodeOperations.cast(SNodeOperations.getPrevSibling(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), false);
           editorContext.selectWRTFocusPolicy(nodeCaret.myNode);
-          ((EditorCell_Label)editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
+          ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
         }
         return;
       }
@@ -201,7 +201,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       final Wrappers._T<SNode> nodeToSelect = new Wrappers._T<SNode>(null);
       final Wrappers._int caret = new Wrappers._int(-1);
-      EditorCell_Label selectedCell = ((EditorCell_Label)editorContext.getSelectedCell());
+      EditorCell_Label selectedCell = ((EditorCell_Label) editorContext.getSelectedCell());
       if (StringUtils.isNotEmpty(selectedCell.getSelectedText())) {
         selectedCell.deleteSelection();
         if (StringUtils.isEmpty(selectedCell.getText())) {
@@ -232,7 +232,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
             } else {
               NodeCaretPair nodeCaret = CommentLinePart_Behavior.call_smartDelete_9042833497008205283(SNodeOperations.cast(SNodeOperations.getParent(SNodeOperations.getParent(node)), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), false);
               editorContext.selectWRTFocusPolicy(nodeCaret.myNode);
-              ((EditorCell_Label)editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
+              ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
             }
             return;
           } else {
@@ -253,7 +253,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
 
                 SNodeOperations.deleteNode(nextLine);
                 editorContext.selectWRTFocusPolicy(nodeToSelect.value);
-                ((EditorCell_Label)editorContext.getSelectedCell()).setCaretPosition(caret.value);
+                ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(caret.value);
               }
             });
             return;
@@ -269,11 +269,11 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
               SPropertyOperations.set(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").substring(1));
             }
             editorContext.selectWRTFocusPolicy(nodeToSelect.value);
-            ((EditorCell_Label)editorContext.getSelectedCell()).setCaretPosition(caret.value);
+            ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(caret.value);
           } else if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(node), "jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart") || SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(node), "jetbrains.mps.baseLanguage.javadoc.structure.HTMLElement")) {
             NodeCaretPair nodeCaret = CommentLinePart_Behavior.call_smartDelete_9042833497008205283(SNodeOperations.cast(SNodeOperations.getNextSibling(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), true);
             editorContext.selectWRTFocusPolicy(nodeCaret.myNode);
-            ((EditorCell_Label)editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
+            ((EditorCell_Label) editorContext.getSelectedCell()).setCaretPosition(nodeCaret.myCaret);
           }
           return;
         }

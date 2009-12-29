@@ -24,7 +24,7 @@ public class AuthorBlockDocTag extends BaseBlockDocTag {
   }
 
   public static AuthorBlockDocTag newInstance(SModel sm, boolean init) {
-    return (AuthorBlockDocTag)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AuthorBlockDocTag) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.AuthorBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AuthorBlockDocTag newInstance(SModel sm) {

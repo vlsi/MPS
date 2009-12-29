@@ -17,7 +17,7 @@ public class MethodDocReference extends BaseDocReference {
   }
 
   public BaseMethodDeclaration getMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(BaseMethodDeclaration.class, MethodDocReference.METHOD_DECLARATION);
+    return (BaseMethodDeclaration) this.getReferent(BaseMethodDeclaration.class, MethodDocReference.METHOD_DECLARATION);
   }
 
   public void setMethodDeclaration(BaseMethodDeclaration node) {
@@ -25,7 +25,7 @@ public class MethodDocReference extends BaseDocReference {
   }
 
   public static MethodDocReference newInstance(SModel sm, boolean init) {
-    return (MethodDocReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MethodDocReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MethodDocReference newInstance(SModel sm) {

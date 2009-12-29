@@ -19,10 +19,10 @@ public class CommentLinePart_Behavior {
   }
 
   public static NodeCaretPair call_smartDelete_9042833497008205283(SNode thisNode, boolean isBeginning) {
-    return (NodeCaretPair)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), "virtual_smartDelete_9042833497008205283", PARAMETERS_9042833497008205283, isBeginning);
+    return (NodeCaretPair) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), "virtual_smartDelete_9042833497008205283", PARAMETERS_9042833497008205283, isBeginning);
   }
 
   public static NodeCaretPair callSuper_smartDelete_9042833497008205283(SNode thisNode, String callerConceptFqName, boolean isBeginning) {
-    return (NodeCaretPair)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), callerConceptFqName, "virtual_smartDelete_9042833497008205283", PARAMETERS_9042833497008205283, isBeginning);
+    return (NodeCaretPair) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"), callerConceptFqName, "virtual_smartDelete_9042833497008205283", PARAMETERS_9042833497008205283, isBeginning);
   }
 }

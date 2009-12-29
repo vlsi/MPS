@@ -25,7 +25,7 @@ public class ParameterBlockDocTag extends BaseBlockDocTag {
   }
 
   public BaseParameterReference getParameter() {
-    return (BaseParameterReference)this.getChild(BaseParameterReference.class, ParameterBlockDocTag.PARAMETER);
+    return (BaseParameterReference) this.getChild(BaseParameterReference.class, ParameterBlockDocTag.PARAMETER);
   }
 
   public void setParameter(BaseParameterReference node) {
@@ -33,7 +33,7 @@ public class ParameterBlockDocTag extends BaseBlockDocTag {
   }
 
   public static ParameterBlockDocTag newInstance(SModel sm, boolean init) {
-    return (ParameterBlockDocTag)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParameterBlockDocTag) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParameterBlockDocTag newInstance(SModel sm) {

@@ -24,7 +24,7 @@ public class StaticFieldDocReference extends BaseVariableDocReference {
   }
 
   public static StaticFieldDocReference newInstance(SModel sm, boolean init) {
-    return (StaticFieldDocReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StaticFieldDocReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.StaticFieldDocReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StaticFieldDocReference newInstance(SModel sm) {

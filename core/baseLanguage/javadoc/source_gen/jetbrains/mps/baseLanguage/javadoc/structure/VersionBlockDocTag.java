@@ -24,7 +24,7 @@ public class VersionBlockDocTag extends BaseBlockDocTag {
   }
 
   public static VersionBlockDocTag newInstance(SModel sm, boolean init) {
-    return (VersionBlockDocTag)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VersionBlockDocTag) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.VersionBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VersionBlockDocTag newInstance(SModel sm) {

@@ -24,7 +24,7 @@ public class FieldDocReference extends BaseVariableDocReference {
   }
 
   public static FieldDocReference newInstance(SModel sm, boolean init) {
-    return (FieldDocReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FieldDocReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FieldDocReference newInstance(SModel sm) {

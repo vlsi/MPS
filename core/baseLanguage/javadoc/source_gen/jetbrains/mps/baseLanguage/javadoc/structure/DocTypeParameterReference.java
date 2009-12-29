@@ -24,7 +24,7 @@ public class DocTypeParameterReference extends BaseParameterReference {
   }
 
   public static DocTypeParameterReference newInstance(SModel sm, boolean init) {
-    return (DocTypeParameterReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DocTypeParameterReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DocTypeParameterReference newInstance(SModel sm) {

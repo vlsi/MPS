@@ -17,7 +17,7 @@ public class ClassifierDocReference extends BaseDocReference {
   }
 
   public Classifier getClassifier() {
-    return (Classifier)this.getReferent(Classifier.class, ClassifierDocReference.CLASSIFIER);
+    return (Classifier) this.getReferent(Classifier.class, ClassifierDocReference.CLASSIFIER);
   }
 
   public void setClassifier(Classifier node) {
@@ -25,7 +25,7 @@ public class ClassifierDocReference extends BaseDocReference {
   }
 
   public static ClassifierDocReference newInstance(SModel sm, boolean init) {
-    return (ClassifierDocReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ClassifierDocReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ClassifierDocReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ClassifierDocReference newInstance(SModel sm) {

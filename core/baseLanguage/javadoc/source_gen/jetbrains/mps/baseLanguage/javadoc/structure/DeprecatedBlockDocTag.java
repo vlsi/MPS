@@ -15,7 +15,7 @@ public class DeprecatedBlockDocTag extends BaseBlockDocTag {
   }
 
   public static DeprecatedBlockDocTag newInstance(SModel sm, boolean init) {
-    return (DeprecatedBlockDocTag)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DeprecatedBlockDocTag) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DeprecatedBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DeprecatedBlockDocTag newInstance(SModel sm) {

@@ -12,6 +12,6 @@ public class ClassifierDocComment_AnnotationLink {
   }
 
   public static ClassifierDocComment getClassifierDocComment(Classifier source) {
-    return (ClassifierDocComment)source.getAttribute(ClassifierDocComment_AnnotationLink.CLASSIFIER_DOC_COMMENT);
+    return (ClassifierDocComment) source.getAttribute(ClassifierDocComment_AnnotationLink.CLASSIFIER_DOC_COMMENT);
   }
 }

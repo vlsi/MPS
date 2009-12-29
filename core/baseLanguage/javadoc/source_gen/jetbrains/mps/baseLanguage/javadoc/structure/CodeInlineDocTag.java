@@ -38,7 +38,7 @@ public class CodeInlineDocTag extends BaseInlineDocTag {
   }
 
   public static CodeInlineDocTag newInstance(SModel sm, boolean init) {
-    return (CodeInlineDocTag)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CodeInlineDocTag) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.CodeInlineDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CodeInlineDocTag newInstance(SModel sm) {

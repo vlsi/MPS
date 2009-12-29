@@ -19,7 +19,7 @@ public class LinkInlineDocTag extends BaseInlineDocTag {
   }
 
   public BaseDocReference getReference() {
-    return (BaseDocReference)this.getChild(BaseDocReference.class, LinkInlineDocTag.REFERENCE);
+    return (BaseDocReference) this.getChild(BaseDocReference.class, LinkInlineDocTag.REFERENCE);
   }
 
   public void setReference(BaseDocReference node) {
@@ -47,7 +47,7 @@ public class LinkInlineDocTag extends BaseInlineDocTag {
   }
 
   public static LinkInlineDocTag newInstance(SModel sm, boolean init) {
-    return (LinkInlineDocTag)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinkInlineDocTag) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.LinkInlineDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinkInlineDocTag newInstance(SModel sm) {

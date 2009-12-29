@@ -24,7 +24,7 @@ public class BaseDocComment extends BaseConcept {
   }
 
   public DeprecatedBlockDocTag getDeprecated() {
-    return (DeprecatedBlockDocTag)this.getChild(DeprecatedBlockDocTag.class, BaseDocComment.DEPRECATED);
+    return (DeprecatedBlockDocTag) this.getChild(DeprecatedBlockDocTag.class, BaseDocComment.DEPRECATED);
   }
 
   public void setDeprecated(DeprecatedBlockDocTag node) {
@@ -132,7 +132,7 @@ public class BaseDocComment extends BaseConcept {
   }
 
   public static BaseDocComment newInstance(SModel sm, boolean init) {
-    return (BaseDocComment)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseDocComment) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocComment", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseDocComment newInstance(SModel sm) {

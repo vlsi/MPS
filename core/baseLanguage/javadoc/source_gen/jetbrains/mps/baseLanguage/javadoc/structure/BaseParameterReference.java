@@ -18,7 +18,7 @@ public class BaseParameterReference extends BaseConcept {
   }
 
   public IValidIdentifier getParam() {
-    return (IValidIdentifier)this.getReferent(IValidIdentifier.class, BaseParameterReference.PARAM);
+    return (IValidIdentifier) this.getReferent(IValidIdentifier.class, BaseParameterReference.PARAM);
   }
 
   public void setParam(IValidIdentifier node) {
@@ -26,7 +26,7 @@ public class BaseParameterReference extends BaseConcept {
   }
 
   public static BaseParameterReference newInstance(SModel sm, boolean init) {
-    return (BaseParameterReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseParameterReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseParameterReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseParameterReference newInstance(SModel sm) {

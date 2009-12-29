@@ -12,6 +12,6 @@ public class MethodDocComment_AnnotationLink {
   }
 
   public static MethodDocComment getMethodDocComment(BaseMethodDeclaration source) {
-    return (MethodDocComment)source.getAttribute(MethodDocComment_AnnotationLink.METHOD_DOC_COMMENT);
+    return (MethodDocComment) source.getAttribute(MethodDocComment_AnnotationLink.METHOD_DOC_COMMENT);
   }
 }

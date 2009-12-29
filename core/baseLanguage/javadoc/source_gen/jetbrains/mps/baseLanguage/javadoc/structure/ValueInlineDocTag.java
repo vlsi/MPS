@@ -16,7 +16,7 @@ public class ValueInlineDocTag extends BaseInlineDocTag {
   }
 
   public BaseVariableDocReference getVariableReference() {
-    return (BaseVariableDocReference)this.getChild(BaseVariableDocReference.class, ValueInlineDocTag.VARIABLE_REFERENCE);
+    return (BaseVariableDocReference) this.getChild(BaseVariableDocReference.class, ValueInlineDocTag.VARIABLE_REFERENCE);
   }
 
   public void setVariableReference(BaseVariableDocReference node) {
@@ -24,7 +24,7 @@ public class ValueInlineDocTag extends BaseInlineDocTag {
   }
 
   public static ValueInlineDocTag newInstance(SModel sm, boolean init) {
-    return (ValueInlineDocTag)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ValueInlineDocTag) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ValueInlineDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ValueInlineDocTag newInstance(SModel sm) {

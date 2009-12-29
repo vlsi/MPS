@@ -25,7 +25,7 @@ public class SeeBlockDocTag extends BaseBlockDocTag {
   }
 
   public BaseDocReference getReference() {
-    return (BaseDocReference)this.getChild(BaseDocReference.class, SeeBlockDocTag.REFERENCE);
+    return (BaseDocReference) this.getChild(BaseDocReference.class, SeeBlockDocTag.REFERENCE);
   }
 
   public void setReference(BaseDocReference node) {
@@ -33,7 +33,7 @@ public class SeeBlockDocTag extends BaseBlockDocTag {
   }
 
   public static SeeBlockDocTag newInstance(SModel sm, boolean init) {
-    return (SeeBlockDocTag)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SeeBlockDocTag) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.SeeBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SeeBlockDocTag newInstance(SModel sm) {

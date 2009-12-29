@@ -1012,8 +1012,8 @@
                                 <link role="link:16" targetNodeId="1.8970989240999019149:5" />
                               </node>
                             </node>
-                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="3633133276124409288">
-                              <node role="childNode:16" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="3633133276124409289">
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="4296974352971109510">
+                              <node role="argument:7" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="3633133276124409289">
                                 <link role="concept:16" targetNodeId="1.8970989240999019142:5" resolveInfo="CommentLinePart" />
                                 <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="3633133276124409290">
                                   <link role="variable:7" targetNodeId="3633133276124409278" resolveInfo="linePart" />

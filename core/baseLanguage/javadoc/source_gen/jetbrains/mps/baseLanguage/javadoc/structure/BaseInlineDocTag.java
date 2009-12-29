@@ -16,7 +16,7 @@ public class BaseInlineDocTag extends BaseConcept {
   }
 
   public static BaseInlineDocTag newInstance(SModel sm, boolean init) {
-    return (BaseInlineDocTag)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseInlineDocTag) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseInlineDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseInlineDocTag newInstance(SModel sm) {

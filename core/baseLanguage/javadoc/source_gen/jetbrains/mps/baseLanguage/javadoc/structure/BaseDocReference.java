@@ -16,7 +16,7 @@ public class BaseDocReference extends BaseConcept {
   }
 
   public static BaseDocReference newInstance(SModel sm, boolean init) {
-    return (BaseDocReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseDocReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseDocReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseDocReference newInstance(SModel sm) {

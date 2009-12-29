@@ -20,7 +20,7 @@ public class MethodDocComment extends BaseDocComment {
   }
 
   public ReturnBlockDocTag getReturn() {
-    return (ReturnBlockDocTag)this.getChild(ReturnBlockDocTag.class, MethodDocComment.RETURN);
+    return (ReturnBlockDocTag) this.getChild(ReturnBlockDocTag.class, MethodDocComment.RETURN);
   }
 
   public void setReturn(ReturnBlockDocTag node) {
@@ -68,7 +68,7 @@ public class MethodDocComment extends BaseDocComment {
   }
 
   public static MethodDocComment newInstance(SModel sm, boolean init) {
-    return (MethodDocComment)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MethodDocComment) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MethodDocComment newInstance(SModel sm) {

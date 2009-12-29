@@ -16,7 +16,7 @@ public class InlineTagCommentLinePart extends CommentLinePart {
   }
 
   public BaseInlineDocTag getTag() {
-    return (BaseInlineDocTag)this.getChild(BaseInlineDocTag.class, InlineTagCommentLinePart.TAG);
+    return (BaseInlineDocTag) this.getChild(BaseInlineDocTag.class, InlineTagCommentLinePart.TAG);
   }
 
   public void setTag(BaseInlineDocTag node) {
@@ -24,7 +24,7 @@ public class InlineTagCommentLinePart extends CommentLinePart {
   }
 
   public static InlineTagCommentLinePart newInstance(SModel sm, boolean init) {
-    return (InlineTagCommentLinePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InlineTagCommentLinePart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.InlineTagCommentLinePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InlineTagCommentLinePart newInstance(SModel sm) {

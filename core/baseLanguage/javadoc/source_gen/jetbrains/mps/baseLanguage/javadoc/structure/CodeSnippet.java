@@ -39,7 +39,7 @@ public class CodeSnippet extends CommentLine {
   }
 
   public static CodeSnippet newInstance(SModel sm, boolean init) {
-    return (CodeSnippet)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CodeSnippet) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.CodeSnippet", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CodeSnippet newInstance(SModel sm) {

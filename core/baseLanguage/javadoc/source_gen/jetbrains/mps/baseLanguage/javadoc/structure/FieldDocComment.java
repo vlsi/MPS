@@ -15,7 +15,7 @@ public class FieldDocComment extends BaseDocComment {
   }
 
   public static FieldDocComment newInstance(SModel sm, boolean init) {
-    return (FieldDocComment)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FieldDocComment) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FieldDocComment newInstance(SModel sm) {

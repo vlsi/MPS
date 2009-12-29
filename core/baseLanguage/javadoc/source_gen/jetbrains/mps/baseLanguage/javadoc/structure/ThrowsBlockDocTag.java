@@ -26,7 +26,7 @@ public class ThrowsBlockDocTag extends BaseBlockDocTag {
   }
 
   public Type getExceptionType() {
-    return (Type)this.getChild(Type.class, ThrowsBlockDocTag.EXCEPTION_TYPE);
+    return (Type) this.getChild(Type.class, ThrowsBlockDocTag.EXCEPTION_TYPE);
   }
 
   public void setExceptionType(Type node) {
@@ -34,7 +34,7 @@ public class ThrowsBlockDocTag extends BaseBlockDocTag {
   }
 
   public static ThrowsBlockDocTag newInstance(SModel sm, boolean init) {
-    return (ThrowsBlockDocTag)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ThrowsBlockDocTag) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.ThrowsBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ThrowsBlockDocTag newInstance(SModel sm) {

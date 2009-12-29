@@ -12,6 +12,6 @@ public class FieldDocComment_AnnotationLink {
   }
 
   public static FieldDocComment getFieldDocComment(FieldDeclaration source) {
-    return (FieldDocComment)source.getAttribute(FieldDocComment_AnnotationLink.FIELD_DOC_COMMENT);
+    return (FieldDocComment) source.getAttribute(FieldDocComment_AnnotationLink.FIELD_DOC_COMMENT);
   }
 }

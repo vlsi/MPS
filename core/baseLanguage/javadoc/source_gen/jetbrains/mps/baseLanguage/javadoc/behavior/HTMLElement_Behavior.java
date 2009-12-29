@@ -62,7 +62,7 @@ public class HTMLElement_Behavior {
         //  Merging last line parts 
         index = ListSequence.fromList(SLinkOperations.getTargets(lastElementLine, "part", true)).count() - 1;
         for (SNode linePart : ListSequence.fromList(SNodeOperations.getNextSiblings(thisNode, false))) {
-          SLinkOperations.addChild(lastElementLine, "part", SNodeOperations.cast(linePart, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"));
+          ListSequence.fromList(SLinkOperations.getTargets(lastElementLine, "part", true)).addElement(SNodeOperations.cast(linePart, "jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart"));
         }
         SNodeOperations.deleteNode(thisNode);
         if (!(isBeginning)) {

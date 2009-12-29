@@ -17,7 +17,7 @@ public class BaseVariableDocReference extends BaseDocReference {
   }
 
   public BaseVariableDeclaration getDeclaration() {
-    return (BaseVariableDeclaration)this.getReferent(BaseVariableDeclaration.class, BaseVariableDocReference.DECLARATION);
+    return (BaseVariableDeclaration) this.getReferent(BaseVariableDeclaration.class, BaseVariableDocReference.DECLARATION);
   }
 
   public void setDeclaration(BaseVariableDeclaration node) {
@@ -25,7 +25,7 @@ public class BaseVariableDocReference extends BaseDocReference {
   }
 
   public static BaseVariableDocReference newInstance(SModel sm, boolean init) {
-    return (BaseVariableDocReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseVariableDocReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.BaseVariableDocReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseVariableDocReference newInstance(SModel sm) {

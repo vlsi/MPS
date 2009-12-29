@@ -24,7 +24,7 @@ public class SinceBlockDocTag extends BaseBlockDocTag {
   }
 
   public static SinceBlockDocTag newInstance(SModel sm, boolean init) {
-    return (SinceBlockDocTag)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SinceBlockDocTag) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.SinceBlockDocTag", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SinceBlockDocTag newInstance(SModel sm) {

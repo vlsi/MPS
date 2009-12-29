@@ -39,7 +39,7 @@ public class CommentLine extends BaseConcept {
   }
 
   public static CommentLine newInstance(SModel sm, boolean init) {
-    return (CommentLine)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CommentLine) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CommentLine newInstance(SModel sm) {

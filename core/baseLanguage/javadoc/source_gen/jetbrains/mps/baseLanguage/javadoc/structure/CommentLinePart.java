@@ -16,7 +16,7 @@ public class CommentLinePart extends BaseConcept {
   }
 
   public static CommentLinePart newInstance(SModel sm, boolean init) {
-    return (CommentLinePart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CommentLinePart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.CommentLinePart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CommentLinePart newInstance(SModel sm) {
