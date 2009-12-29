@@ -30,6 +30,8 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Pair;
 
 import javax.swing.*;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.util.*;
@@ -118,6 +120,12 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
 
     myComponent = new JPanel(new BorderLayout());
     myInnerTabbedPane = new JTabbedPane();
+    myInnerTabbedPane.addChangeListener(new ChangeListener() {
+      @Override
+      public void stateChanged(ChangeEvent e) {
+        myTabbedEditor.onSelectInnerTab();
+      }
+    });
     try {
       myInnerTabbedPane.setSelectedIndex(Math.max(myCurrentIndex, 0));
     } catch (IndexOutOfBoundsException e) {
