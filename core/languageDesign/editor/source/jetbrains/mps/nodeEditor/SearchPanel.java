@@ -170,9 +170,9 @@ public class SearchPanel extends AbstractSearchPanel {
     }
     cells.removeAll(emptyCells);
     for (EditorCell_Label cell : cells) {
+      if (current >= content.length()) break;
       String contentPart = content.substring(current);
       int start = contentPart.indexOf(cell.getRenderedText()) + current;
-      if (start < 0) continue;
       startCellPosition.add(start);
       current = start + cell.getRenderedText().length();
       endCellPosition.add(current);
@@ -184,12 +184,12 @@ public class SearchPanel extends AbstractSearchPanel {
     int index = 0;
     boolean needChangeSelection, selected = false;
     while (matcher.find()) {
-      while (index < cells.size()
+      while (index < startCellPosition.size()
         && !((startCellPosition.get(index) <= matcher.start())
         && (endCellPosition.get(index) > matcher.start()))) {
         index++;
       }
-      if (index == cells.size()) {
+      if (index >= startCellPosition.size()) {
         break;
       }
       EditorCell_Label currentCell = cells.get(index);
@@ -207,8 +207,10 @@ public class SearchPanel extends AbstractSearchPanel {
         resultIndex.add(index);
         startHighlightPosition.add(Math.max(0, matcher.start() - startCellPosition.get(index)));
         endHighlightPosition.add(Math.min(matcher.end(), endCellPosition.get(index)) - startCellPosition.get(index));
-        index++;
-      } while (index < cells.size() && startCellPosition.get(index) < matcher.end());
+        if (index < startCellPosition.size()) {
+          index++;
+        }
+      } while (index < startCellPosition.size() && startCellPosition.get(index) < matcher.end());
       index--;
     }
     myOwner = new EditorMessageOwner() {};
