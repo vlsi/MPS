@@ -172,6 +172,7 @@ public class SearchPanel extends AbstractSearchPanel {
     for (EditorCell_Label cell : cells) {
       String contentPart = content.substring(current);
       int start = contentPart.indexOf(cell.getRenderedText()) + current;
+      if (start < 0) continue;
       startCellPosition.add(start);
       current = start + cell.getRenderedText().length();
       endCellPosition.add(current);
