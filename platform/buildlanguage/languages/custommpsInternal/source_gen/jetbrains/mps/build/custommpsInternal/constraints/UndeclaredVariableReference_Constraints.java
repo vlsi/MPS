@@ -8,6 +8,6 @@ import jetbrains.mps.build.custommps.behavior.MPSBuild_Behavior;
 
 public class UndeclaredVariableReference_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    return MPSBuild_Behavior.isInCustomMPSGenerator_1238403397946(operationContext);
+    return MPSBuild_Behavior.isInCustomMPSLanguage_1238403397946(operationContext);
   }
 }

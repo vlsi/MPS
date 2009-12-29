@@ -132,10 +132,10 @@
       <node role="precondition:23" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction:23" id="1240034061541">
         <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240034061542">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1240034061543">
-            <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="1240034061544">
+            <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="7144889424322127231">
               <link role="concept:16" targetNodeId="5.1233149592028" resolveInfo="MPSBuild" />
-              <link role="baseMethodDeclaration:16" targetNodeId="6.1238403397946" resolveInfo="isInCustomMPSGenerator" />
-              <node role="actualArgument:16" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext:0" id="1240034061545" />
+              <link role="baseMethodDeclaration:16" targetNodeId="6.1238403397946" resolveInfo="isInCustomMPSLanguage" />
+              <node role="actualArgument:16" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext:0" id="7144889424322127232" />
             </node>
           </node>
         </node>

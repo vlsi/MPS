@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import java.util.ArrayList;
@@ -21,7 +21,6 @@ import jetbrains.mps.project.IModule;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.AbstractModule;
@@ -55,13 +54,13 @@ public class MPSBuild_Behavior {
     return "MPS-buildTools.zip";
   }
 
-  public static boolean isInCustomMPSGenerator_1238403397946(IOperationContext operationContext) {
-    Generator generator = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.custommps").getGenerators().get(0);
+  public static boolean isInCustomMPSLanguage_1238403397946(IOperationContext operationContext) {
+    Language language = MPSModuleRepository.getInstance().getLanguage("jetbrains.mps.build.custommps");
     ModuleId moduleId = operationContext.getModule().getModuleId();
     if (moduleId == null) {
       return false;
     }
-    return moduleId.equals(generator.getModuleId());
+    return moduleId.equals(language.getModuleId());
   }
 
   public static Iterable<SNode> getClassPathModules_1238502072959(String prefix) {

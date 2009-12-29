@@ -54,10 +54,10 @@
     <node role="canBeChild:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeAChild:8" id="1240033963212">
       <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240033963213">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1240033963214">
-          <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="1240033963215">
+          <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="7144889424322126585">
             <link role="concept:16" targetNodeId="2.1233149592028" resolveInfo="MPSBuild" />
-            <link role="baseMethodDeclaration:16" targetNodeId="3.1238403397946" resolveInfo="isInCustomMPSGenerator" />
-            <node role="actualArgument:16" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext:0" id="1240033963216" />
+            <link role="baseMethodDeclaration:16" targetNodeId="3.1238403397946" resolveInfo="isInCustomMPSLanguage" />
+            <node role="actualArgument:16" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_operationContext:0" id="7144889424322126586" />
           </node>
         </node>
       </node>

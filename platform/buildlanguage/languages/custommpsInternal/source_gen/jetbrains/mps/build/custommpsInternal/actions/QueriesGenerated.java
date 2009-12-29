@@ -22,7 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_MPSModule_1240034061541(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return MPSBuild_Behavior.isInCustomMPSGenerator_1238403397946(operationContext);
+    return MPSBuild_Behavior.isInCustomMPSLanguage_1238403397946(operationContext);
   }
 
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_MPSModule_1240034061504(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
