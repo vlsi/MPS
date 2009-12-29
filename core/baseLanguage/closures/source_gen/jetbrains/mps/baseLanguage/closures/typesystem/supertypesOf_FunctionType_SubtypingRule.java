@@ -27,10 +27,10 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
     if (SNodeOperations.isInstanceOf(ice, "jetbrains.mps.baseLanguage.structure.Interface")) {
       SNode ct = new _Quotations.QuotationClass_12().createNode(ice, typeCheckingContext);
       if ((FunctionType_Behavior.call_getResultType_1230475757059(ft) != null)) {
-        SLinkOperations.addChild(ct, "parameter", SNodeOperations.copyNode(FunctionType_Behavior.call_getResultType_1230475757059(ft)));
+        ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(SNodeOperations.copyNode(FunctionType_Behavior.call_getResultType_1230475757059(ft)));
       }
       for (SNode pt : SLinkOperations.getTargets(ft, "parameterType", true)) {
-        SLinkOperations.addChild(ct, "parameter", SNodeOperations.copyNode(pt));
+        ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(SNodeOperations.copyNode(pt));
       }
       supertypes = ListSequence.fromList(new ArrayList<SNode>());
     }

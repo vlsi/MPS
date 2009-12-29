@@ -511,7 +511,7 @@
                       <link role="link:16" targetNodeId="1.1199569906740:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1236960102130" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2978005800837019584" />
                 </node>
               </node>
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1232456383298">
@@ -522,7 +522,7 @@
                       <link role="link:16" targetNodeId="1.1229629947873:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1232456382563" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2978005800837019568" />
                 </node>
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1232456383834">
                   <property name="value:3" value="0" />
@@ -583,7 +583,7 @@
                       <link role="link:16" targetNodeId="1.1199569906740:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1236960300633" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2978005800837019588" />
                 </node>
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1236960300634">
                   <property name="value:3" value="0" />
@@ -597,7 +597,7 @@
                       <link role="link:16" targetNodeId="1.1229629947873:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1236960290005" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2978005800837019586" />
                 </node>
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1236960290006">
                   <property name="value:3" value="0" />
@@ -728,7 +728,7 @@
                       <link role="link:16" targetNodeId="1.1199569906740:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1236949878132" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2978005800837019578" />
                 </node>
               </node>
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1236794049300">
@@ -950,8 +950,8 @@
                                             <link role="link:16" targetNodeId="1.1199569906740:3" />
                                           </node>
                                         </node>
-                                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="876385242039365543">
-                                          <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="876385242039365544">
+                                        <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019513">
+                                          <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="876385242039365544">
                                             <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="876385242039365545">
                                               <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="876385242039365546">
                                                 <link role="concept:16" targetNodeId="4.1068498886292:3" resolveInfo="ParameterDeclaration" />

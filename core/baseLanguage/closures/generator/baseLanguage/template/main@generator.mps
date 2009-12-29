@@ -18304,7 +18304,7 @@
                             <link role="link:16" targetNodeId="3.1068581517665:3" />
                           </node>
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation:16" id="1229017663950" />
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation:7" id="2978005800837019592" />
                       </node>
                     </node>
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1229013956433">
@@ -33161,8 +33161,8 @@
                               <link role="link:16" targetNodeId="3.1068499141038:3" />
                             </node>
                           </node>
-                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="8665905049776863992">
-                            <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8665905049776863993">
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019491">
+                            <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8665905049776863993">
                               <link role="variableDeclaration:3" targetNodeId="8665905049776863983" resolveInfo="copy" />
                             </node>
                           </node>
@@ -33250,8 +33250,8 @@
                           <link role="link:16" targetNodeId="3.1068499141038:3" />
                         </node>
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="8665905049776864023">
-                        <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8665905049776864024">
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019503">
+                        <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8665905049776864024">
                           <link role="variableDeclaration:3" targetNodeId="8665905049776864000" resolveInfo="lvr" />
                         </node>
                       </node>

@@ -5,9 +5,9 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class UnrestrictedFunctionType_Behavior {
   public static void init(SNode thisNode) {
@@ -36,8 +36,8 @@ public class UnrestrictedFunctionType_Behavior {
     } else {
       sb.append("_void");
     }
-    sb.append("_P").append(SLinkOperations.getCount(thisNode, "parameterType"));
-    sb.append("_E").append(SLinkOperations.getCount(thisNode, "throwsType"));
+    sb.append("_P").append(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterType", true)).count());
+    sb.append("_E").append(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "throwsType", true)).count());
     return sb.toString();
   }
 

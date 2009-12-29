@@ -3671,11 +3671,11 @@ public class QueriesGenerated {
     }
     for (SNode p : SLinkOperations.getTargets(_context.getNode(), "actualParameter", true)) {
       SNode copy = CopyUtil.copyAndPreserveId(p);
-      SLinkOperations.addChild(bmc, "actualArgument", copy);
+      ListSequence.fromList(SLinkOperations.getTargets(bmc, "actualArgument", true)).addElement(copy);
     }
     SNode lvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
     SLinkOperations.setTarget(lvr, "variableDeclaration", SLinkOperations.getTarget(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getParentOutputNode(), "jetbrains.mps.baseLanguage.structure.BlockStatement", false, false), "statements", true), "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement"), "localVariableDeclaration", true), false);
-    SLinkOperations.addChild(bmc, "actualArgument", lvr);
+    ListSequence.fromList(SLinkOperations.getTargets(bmc, "actualArgument", true)).addElement(lvr);
     return bmc;
   }
 
@@ -3942,7 +3942,7 @@ public class QueriesGenerated {
             SNode elementType = SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(yas, "expression", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType"), true), "elementType", true);
             SNode fes = SNodeOperations.replaceWithNewChild(yas, "jetbrains.mps.baseLanguage.structure.ForeachStatement");
             //  now fes.body.statement contains a copy of yas. 
-            SLinkOperations.removeAllChildren(SLinkOperations.getTarget(fes, "body", true), "statement");
+            ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(fes, "body", true), "statement", true)).clear();
             SLinkOperations.setTarget(fes, "iterable", SNodeOperations.detachNode(SLinkOperations.getTarget(yas, "expression", true)), true);
             SNode var = SLinkOperations.setNewChild(fes, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
             SPropertyOperations.set(var, "name", "_yield");

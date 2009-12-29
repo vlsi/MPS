@@ -7,8 +7,8 @@ import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class PrepStatementUtil {
@@ -144,7 +144,7 @@ public class PrepStatementUtil {
     Object data = new Integer[]{ifTrueLabel,nextLabel};
     Values.CLOSURE_DATA.set(genContext, sn, data);
     this.prepStatementList(genContext, SLinkOperations.getTarget(ifstmt, "ifTrue", true));
-    if (SLinkOperations.getCount(ifstmt, "elsifClauses") > 0) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(ifstmt, "elsifClauses", true)).count() > 0) {
       for (SNode eicls : SLinkOperations.getTargets(ifstmt, "elsifClauses", true)) {
         int tmp = this.ctx.incrementLabel();
         SNode sn1 = SLinkOperations.getTarget(eicls, "statementList", true);

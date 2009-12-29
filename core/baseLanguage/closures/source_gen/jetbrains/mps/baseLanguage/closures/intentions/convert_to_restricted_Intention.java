@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class convert_to_restricted_Intention extends BaseIntention implements Intention {
   public convert_to_restricted_Intention() {
@@ -50,12 +51,12 @@ public class convert_to_restricted_Intention extends BaseIntention implements In
     SNode rft = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.closures.structure.FunctionType");
     List<SNode> ptypes = SLinkOperations.getTargets(node, "parameterType", true);
     for (SNode pt : ptypes) {
-      SLinkOperations.addChild(rft, "parameterType", SNodeOperations.detachNode(pt));
+      ListSequence.fromList(SLinkOperations.getTargets(rft, "parameterType", true)).addElement(SNodeOperations.detachNode(pt));
     }
     SLinkOperations.setTarget(rft, "resultType", SNodeOperations.detachNode(SLinkOperations.getTarget(node, "resultType", true)), true);
     List<SNode> ttypes = SLinkOperations.getTargets(node, "throwsType", true);
     for (SNode tt : ttypes) {
-      SLinkOperations.addChild(rft, "throwsType", SNodeOperations.detachNode(tt));
+      ListSequence.fromList(SLinkOperations.getTargets(rft, "throwsType", true)).addElement(SNodeOperations.detachNode(tt));
     }
   }
 

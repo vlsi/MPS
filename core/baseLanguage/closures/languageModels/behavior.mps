@@ -555,7 +555,7 @@
                     <link role="link:16" targetNodeId="1.1199542501692:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1215424433660" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2978005800837019569" />
               </node>
             </node>
           </node>
@@ -582,7 +582,7 @@
                     <link role="link:16" targetNodeId="1.1214831762486:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1215424422529" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2978005800837019570" />
               </node>
             </node>
           </node>
@@ -1520,8 +1520,8 @@
                     <link role="link:16" targetNodeId="8.1109201940907:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1230320773915">
-                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230320773916">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019497">
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230320773916">
                     <link role="baseMethodDeclaration:3" targetNodeId="11.1202774154486:2" resolveInfo="copyTypeRecursively" />
                     <link role="classConcept:3" targetNodeId="11.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230320773917">
@@ -1564,8 +1564,8 @@
                     <link role="link:16" targetNodeId="8.1109201940907:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1232032614236">
-                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1232032614237">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019517">
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1232032614237">
                     <link role="baseMethodDeclaration:3" targetNodeId="11.1202774154486:2" resolveInfo="copyTypeRecursively" />
                     <link role="classConcept:3" targetNodeId="11.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1232032614238">
@@ -1608,8 +1608,8 @@
                     <link role="link:16" targetNodeId="8.1109201940907:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1230320773942">
-                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230320773943">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019531">
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230320773943">
                     <link role="baseMethodDeclaration:3" targetNodeId="11.1202774154486:2" resolveInfo="copyTypeRecursively" />
                     <link role="classConcept:3" targetNodeId="11.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230320773944">
@@ -1652,8 +1652,8 @@
                     <link role="link:16" targetNodeId="8.1109201940907:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1230320773959">
-                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230320773960">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019547">
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230320773960">
                     <link role="baseMethodDeclaration:3" targetNodeId="11.1202774154486:2" resolveInfo="copyTypeRecursively" />
                     <link role="classConcept:3" targetNodeId="11.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1230320773961">
@@ -1776,8 +1776,8 @@
                     <link role="link:16" targetNodeId="8.1109201940907:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1230319160747">
-                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230319160748">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019545">
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230319160748">
                     <link role="classConcept:3" targetNodeId="11.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
                     <link role="baseMethodDeclaration:3" targetNodeId="11.1202763885217:2" resolveInfo="copyTypeRecursively" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230319160749">
@@ -1817,8 +1817,8 @@
                     <link role="link:16" targetNodeId="8.1109201940907:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1232032636602">
-                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1232032636603">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019515">
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1232032636603">
                     <link role="baseMethodDeclaration:3" targetNodeId="11.1202763885217:2" resolveInfo="copyTypeRecursively" />
                     <link role="classConcept:3" targetNodeId="11.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1232032636604">
@@ -1858,8 +1858,8 @@
                     <link role="link:16" targetNodeId="8.1109201940907:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1230319160773">
-                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230319160774">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019489">
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230319160774">
                     <link role="classConcept:3" targetNodeId="11.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
                     <link role="baseMethodDeclaration:3" targetNodeId="11.1202763885217:2" resolveInfo="copyTypeRecursively" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230319160775">
@@ -1899,8 +1899,8 @@
                     <link role="link:16" targetNodeId="8.1109201940907:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1230319160789">
-                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230319160790">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019511">
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230319160790">
                     <link role="baseMethodDeclaration:3" targetNodeId="11.1202763885217:2" resolveInfo="copyTypeRecursively" />
                     <link role="classConcept:3" targetNodeId="11.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1230319160791">
@@ -2024,8 +2024,8 @@
                     <link role="link:16" targetNodeId="8.1109201940907:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1230320204012">
-                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230320204013">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019543">
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230320204013">
                     <link role="classConcept:3" targetNodeId="11.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
                     <link role="baseMethodDeclaration:3" targetNodeId="11.1202763885217:2" resolveInfo="copyTypeRecursively" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230320204014">
@@ -2065,8 +2065,8 @@
                     <link role="link:16" targetNodeId="8.1109201940907:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1232032654090">
-                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1232032654091">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019479">
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1232032654091">
                     <link role="classConcept:3" targetNodeId="11.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
                     <link role="baseMethodDeclaration:3" targetNodeId="11.1202763885217:2" resolveInfo="copyTypeRecursively" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1232032654092">
@@ -2106,8 +2106,8 @@
                     <link role="link:16" targetNodeId="8.1109201940907:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1230320204038">
-                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230320204039">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019499">
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230320204039">
                     <link role="classConcept:3" targetNodeId="11.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
                     <link role="baseMethodDeclaration:3" targetNodeId="11.1202763885217:2" resolveInfo="copyTypeRecursively" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230320204040">
@@ -2144,8 +2144,8 @@
                     <link role="link:16" targetNodeId="8.1109201940907:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1230320204054">
-                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230320204055">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2978005800837019527">
+                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1230320204055">
                     <link role="classConcept:3" targetNodeId="11.1201536121399:2" resolveInfo="ClassifierTypeUtil" />
                     <link role="baseMethodDeclaration:3" targetNodeId="11.1202763885217:2" resolveInfo="copyTypeRecursively" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1230320204056">
@@ -3172,7 +3172,7 @@
                                       <link role="link:16" targetNodeId="1.1199542501692:3" />
                                     </node>
                                   </node>
-                                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1229773798358" />
+                                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2978005800837019571" />
                                 </node>
                               </node>
                               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="1229773798359">
@@ -3337,7 +3337,7 @@
                                   <link role="link:16" targetNodeId="1.1199542501692:3" />
                                 </node>
                               </node>
-                              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1229785273001" />
+                              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2978005800837019589" />
                             </node>
                             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1229785273002">
                               <property name="value:3" value="0" />
@@ -3749,7 +3749,7 @@
                     <link role="link:16" targetNodeId="1.1199542501692:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1233841555115" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2978005800837019567" />
               </node>
             </node>
           </node>
@@ -3776,7 +3776,7 @@
                     <link role="link:16" targetNodeId="1.1214831762486:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1233841555127" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2978005800837019590" />
               </node>
             </node>
           </node>

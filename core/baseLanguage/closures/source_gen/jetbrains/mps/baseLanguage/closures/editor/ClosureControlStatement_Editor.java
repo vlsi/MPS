@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
@@ -203,15 +204,15 @@ public class ClosureControlStatement_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition3967_0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(SLinkOperations.getTarget(node, "controlClosure", true), "parameter") > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "controlClosure", true), "parameter", true)).count() > 0;
   }
 
   private static boolean renderingCondition3967_1(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "actualParameter") > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "actualParameter", true)).count() > 0;
   }
 
   private static boolean renderingCondition3967_2(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(SLinkOperations.getTarget(node, "controlClosure", true), "parameter") > 0 || SLinkOperations.getCount(node, "actualParameter") > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "controlClosure", true), "parameter", true)).count() > 0 || ListSequence.fromList(SLinkOperations.getTargets(node, "actualParameter", true)).count() > 0;
   }
 
   public static class _Inline3967_0 extends InlineCellProvider {

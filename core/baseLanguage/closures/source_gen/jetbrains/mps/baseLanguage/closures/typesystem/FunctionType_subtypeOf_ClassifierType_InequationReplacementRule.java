@@ -41,7 +41,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
           }
         }
         SNode md = ListSequence.fromList(methods).getElement(0);
-        if (SLinkOperations.getCount(subtype, "parameterType") == SLinkOperations.getCount(md, "parameter")) {
+        if (ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).count()) {
           SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype);
           if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
             {
@@ -117,7 +117,7 @@ public class FunctionType_subtypeOf_ClassifierType_InequationReplacementRule ext
             // generated from warning statement 
           }
           SNode md = ListSequence.fromList(methods).getElement(0);
-          if (SLinkOperations.getCount(subtype, "parameterType") == SLinkOperations.getCount(md, "parameter")) {
+          if (ListSequence.fromList(SLinkOperations.getTargets(subtype, "parameterType", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(md, "parameter", true)).count()) {
             SNode retType = ClassifierTypeUtil.resolveType(SLinkOperations.getTarget(md, "returnType", true), supertype);
             if (!(SNodeOperations.isInstanceOf(retType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
               result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "resultType", true), (SNode) retType, true);

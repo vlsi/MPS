@@ -100,7 +100,7 @@ public class ClosureLiteralUtil {
           SLinkOperations.setTarget(newRetCT, "classifier", cls, false);
           /*
             for (SNode tvar : SLinkOperations.getTargets(SLinkOperations.getTarget(absRetCT, "classifier", false), "typeVariableDeclaration", true)) {
-              SLinkOperations.addChild(newRetCT, "parameter", MapSequence.fromMap(map).get(SPropertyOperations.getString(tvar, "name")));
+              ListSequence.fromList(SLinkOperations.getTargets(newRetCT, "parameter", true)).addElement(MapSequence.fromMap(map).get(SPropertyOperations.getString(tvar, "name")));
             }
           */
           Values.RETURN_TYPE.set(genContext, ctNoParams, newRetCT);
@@ -110,7 +110,7 @@ public class ClosureLiteralUtil {
     }
     /*
       for (SNode tvar : SLinkOperations.getTargets(SLinkOperations.getTarget(ctNoParams, "classifier", false), "typeVariableDeclaration", true)) {
-        SLinkOperations.addChild(ctNoParams, "parameter", MapSequence.fromMap(map).get(SPropertyOperations.getString(tvar, "name")));
+        ListSequence.fromList(SLinkOperations.getTargets(ctNoParams, "parameter", true)).addElement(MapSequence.fromMap(map).get(SPropertyOperations.getString(tvar, "name")));
       }
     */
     List<SNode> varDecls = SLinkOperations.getTargets(SLinkOperations.getTarget(origCT, "classifier", false), "typeVariableDeclaration", true);
@@ -125,13 +125,13 @@ public class ClosureLiteralUtil {
       if (SNodeOperations.isInstanceOf(p, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
         if (idx < ListSequence.fromList(varDecls).count()) {
           SNode tvd = ListSequence.fromList(varDecls).getElement(idx);
-          SLinkOperations.addChild(ctNoParams, "parameter", (map != null ?
+          ListSequence.fromList(SLinkOperations.getTargets(ctNoParams, "parameter", true)).addElement((map != null ?
             MapSequence.fromMap(map).get(SPropertyOperations.getString(tvd, "name")) :
             null
           ));
         }
       } else {
-        SLinkOperations.addChild(ctNoParams, "parameter", SNodeOperations.copyNode(p));
+        ListSequence.fromList(SLinkOperations.getTargets(ctNoParams, "parameter", true)).addElement(SNodeOperations.copyNode(p));
       }
       idx++;
     }
@@ -202,7 +202,7 @@ public class ClosureLiteralUtil {
       if (!(SNodeOperations.isInstanceOf(left, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
         return true;
       }
-      return SLinkOperations.getTarget(SNodeOperations.cast(left, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(SNodeOperations.cast(right, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) && SLinkOperations.getCount(SNodeOperations.cast(left, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter") == SLinkOperations.getCount(SNodeOperations.cast(right, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter");
+      return SLinkOperations.getTarget(SNodeOperations.cast(left, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) == SLinkOperations.getTarget(SNodeOperations.cast(right, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false) && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(left, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(right, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).count();
     }
     return false;
   }

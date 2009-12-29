@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SNodeId;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class convert_to_from_unrestricted_Intention extends BaseIntention implements Intention {
   public convert_to_from_unrestricted_Intention() {
@@ -61,7 +62,7 @@ public class convert_to_from_unrestricted_Intention extends BaseIntention implem
     SNodeOperations.replaceWithAnother(node, cl);
     List<SNode> params = SLinkOperations.getTargets(node, "parameter", true);
     for (SNode p : params) {
-      SLinkOperations.addChild(cl, "parameter", SNodeOperations.detachNode(p));
+      ListSequence.fromList(SLinkOperations.getTargets(cl, "parameter", true)).addElement(SNodeOperations.detachNode(p));
     }
     SLinkOperations.setTarget(cl, "body", SNodeOperations.detachNode(SLinkOperations.getTarget(node, "body", true)), true);
   }
