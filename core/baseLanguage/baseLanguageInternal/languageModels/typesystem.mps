@@ -7,6 +7,8 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
+  <language namespace="3f4bc5f5-c6c1-4a28-8b10-c83066ffa4a1(jetbrains.mps.lang.constraints)" />
+  <language namespace="df345b11-b8c7-4213-ac66-48d2a9b75d88(jetbrains.mps.baseLanguageInternal)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
@@ -29,6 +31,9 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ba(jetbrains.mps.lang.sharedConcepts.constraints)" version="0" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590307(jetbrains.mps.lang.constraints.constraints)" version="9" />
+  <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" version="0" />
   <maxImportIndex value="7" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" version="1" />
   <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -471,6 +476,125 @@
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1238253384655">
       <property name="name:3" value="expression" />
       <link role="concept:3" targetNodeId="1.1238251434034:1" resolveInfo="ExtractToConstantExpression" />
+    </node>
+  </node>
+  <visible index="2" modelUID="r:89e9cff1-cacb-42b4-95a5-bad4a21f5877(jetbrains.mps.baseLanguageInternal.behavior)" />
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="8881995820265138570">
+    <property name="name:3" value="check_ExtractStaticMethodCall" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8881995820265138571">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8881995820265138612">
+        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8881995820265138615">
+          <property name="name:3" value="available" />
+          <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="8881995820265138617">
+            <link role="elementConcept:16" targetNodeId="6.1081236700938:3" resolveInfo="StaticMethodDeclaration" />
+          </node>
+          <node role="initializer:3" type="jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall:16" id="8881995820265138603">
+            <link role="baseMethodDeclaration:16" targetNodeId="2v.5857910569715993654" resolveInfo="getMethods" />
+            <link role="concept:16" targetNodeId="1.3585982959253821850:1" resolveInfo="ExtractStaticMethod_CallExpression" />
+            <node role="actualArgument:16" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8881995820265138611">
+              <link role="applicableNode:3" targetNodeId="8881995820265138573" resolveInfo="callStatic" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8881995820265138586">
+        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8881995820265138587">
+          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="8881995820265138588">
+            <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8881995820265138589">
+              <property name="value:3" value="This method can't be called from the current context" />
+            </node>
+            <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8881995820265138625">
+              <link role="applicableNode:3" targetNodeId="8881995820265138573" resolveInfo="callStatic" />
+            </node>
+          </node>
+        </node>
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="8881995820265138591">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8881995820265138592">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8881995820265138618">
+              <link role="variableDeclaration:3" targetNodeId="8881995820265138615" resolveInfo="available" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.ContainsOperation:1" id="8881995820265138594">
+              <node role="argument:1" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8881995820265138596">
+                <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8881995820265138620">
+                  <link role="applicableNode:3" targetNodeId="8881995820265138573" resolveInfo="callStatic" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8881995820265138623">
+                  <link role="link:16" targetNodeId="1.8881995820265138548:1" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="8881995820265138573">
+      <property name="name:3" value="callStatic" />
+      <link role="concept:3" targetNodeId="1.3585982959253821850:1" resolveInfo="ExtractStaticMethod_CallExpression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="8881995820265343417">
+    <property name="name:3" value="typeof_ExtractStaticMethodExpression" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8881995820265343418">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="8881995820265357537">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="8881995820265357541">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="8881995820265357542">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8881995820265357545">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8881995820265357544">
+                <link role="applicableNode:3" targetNodeId="8881995820265343419" resolveInfo="expression" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="8881995820265380161">
+                <link role="link:16" targetNodeId="1.3585982959253588677:1" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="8881995820265357540">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="8881995820265357529">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8881995820265357536">
+              <link role="applicableNode:3" targetNodeId="8881995820265343419" resolveInfo="expression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="8881995820265343419">
+      <property name="name:3" value="expression" />
+      <link role="concept:3" targetNodeId="1.3585982959253588676:1" resolveInfo="ExtractStaticMethodExpression" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="3196918548952839984">
+    <property name="name:3" value="typeof_ExtractStatementList" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3196918548952839985">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="3196918548952839988">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3196918548952839989">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="3196918548952839990">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3196918548953109199">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3196918548952839991">
+                <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="3196918548952839992">
+                  <link role="applicableNode:3" targetNodeId="3196918548952839986" resolveInfo="expression" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="3196918548952839997">
+                  <link role="link:16" targetNodeId="1.3196918548952839504:1" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="3196918548953109203">
+                <link role="link:16" targetNodeId="1.3196918548953109194:1" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3196918548952839994">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="3196918548952839995">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="3196918548952839996">
+              <link role="applicableNode:3" targetNodeId="3196918548952839986" resolveInfo="expression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="3196918548952839986">
+      <property name="name:3" value="expression" />
+      <link role="concept:3" targetNodeId="1.3196918548952765095:1" resolveInfo="ExtractStatementList" />
     </node>
   </node>
 </model>
