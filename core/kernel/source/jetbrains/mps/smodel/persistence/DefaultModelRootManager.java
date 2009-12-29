@@ -21,6 +21,7 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelFileReadException;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.PathManager;
@@ -67,6 +68,9 @@ public class DefaultModelRootManager extends BaseMPSModelRootManager {
       model = ModelPersistence.readModel(modelDescriptor.getModelFile());
     } catch (ModelFileReadException t) {
       return handleExceptionDuringModelRead(modelDescriptor, t, false);
+    } catch (PersistenceVersionNotFoundException e) {
+      LOG.error(e);
+      return new StubModel(modelDescriptor.getSModelReference());
     }
 
     boolean needToSave = false;

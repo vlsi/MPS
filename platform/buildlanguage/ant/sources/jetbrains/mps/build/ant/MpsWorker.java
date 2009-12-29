@@ -24,6 +24,7 @@ import com.intellij.util.PathUtil;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -353,6 +354,8 @@ public abstract class MpsWorker {
       SModelDescriptor smodelDescriptor = new DefaultSModelDescriptor(new DefaultModelRootManager(), ifile, smodel.getSModelReference());
       modelDescriptors.add(smodelDescriptor);
     } catch (ModelFileReadException e) {
+      log(e);
+    } catch (PersistenceVersionNotFoundException e) {
       log(e);
     }
   }

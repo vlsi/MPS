@@ -40,6 +40,7 @@ import jetbrains.mps.smodel.persistence.PersistenceSettings;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.Condition;
 import static jetbrains.mps.util.JDOMUtil.loadDocument;
+
 import jetbrains.mps.vfs.IFile;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -185,7 +186,11 @@ public class ModelPersistence {
     String modelStereotype = extractModelStereotype(file.getName());
     Document document = loadModelDocument(file);
     int modelPersistenceVersion = getModelPersistenceVersion(document);
-    SModel model = modelReaders.get(modelPersistenceVersion).readModel(document, modelName, modelStereotype);
+    IModelReader reader = modelReaders.get(modelPersistenceVersion);
+    if (reader == null) {
+      return handleNullReaderForPersistence(" file " + file.getPath());
+    }
+    SModel model = reader.readModel(document, modelName, modelStereotype);
     if (needsUpgradeCondition.met(modelPersistenceVersion)) {
       model = upgradeModelPersistence(model, modelPersistenceVersion, toVersion); //sets persistence version
       document = saveModel(model, false);
@@ -198,6 +203,11 @@ public class ModelPersistence {
       model.setPersistenceVersion(modelPersistenceVersion);
     }
     return model;
+  }
+
+  private static SModel handleNullReaderForPersistence(String modelTitle) {
+    throw new PersistenceVersionNotFoundException("Can not find appropriate persistence version for model " + modelTitle + "\n" +
+      " Use newer version of JetBrains MPS to load this model.");
   }
 
   @NotNull
@@ -239,7 +249,11 @@ public class ModelPersistence {
     SModelReference modelReference = SModelReference.fromString(matcher.group(1));
     String modelStereotype = modelReference.getStereotype();
     String modelShortName = modelReference.getShortName();
-    return modelReaders.get(modelPersistenceVersion).readModel(doc, modelShortName, modelStereotype);
+    IModelReader modelReader = modelReaders.get(modelPersistenceVersion);
+    if (modelReader == null) {
+      return handleNullReaderForPersistence(modelReference.getLongName());
+    }
+    return modelReader.readModel(doc, modelShortName, modelStereotype);
   }
 
   public static SModel upgradeModelPersistence(SModel model, int fromVersion, int toVersion) {
@@ -249,6 +263,7 @@ public class ModelPersistence {
       IModelWriter writer = modelWriters.get(++version);
       Document document = writer.saveModel(model, false);
       model.dispose();
+      LOG.assertLog(modelReaders.get(version) != null);
       model = modelReaders.get(version).readModel(document, reference.getShortName(), reference.getStereotype());
     }
     LOG.info("persistence upgraded: " + fromVersion + "->" + toVersion + " " + reference);
