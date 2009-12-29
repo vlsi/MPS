@@ -47,7 +47,7 @@ public class NotMake_Test extends TestCase {
           SNode voidType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null);
           SPropertyOperations.set(method, "name", "abc");
           SLinkOperations.setTarget(method, "returnType", voidType, true);
-          SLinkOperations.addChild(root, "method", method);
+          ListSequence.fromList(SLinkOperations.getTargets(root, "method", true)).addElement(method);
         }
       }
     });

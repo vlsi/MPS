@@ -15,7 +15,7 @@ public class QueryCondition extends AbstractQueryFunction {
   }
 
   public static QueryCondition newInstance(SModel sm, boolean init) {
-    return (QueryCondition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.QueryCondition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryCondition) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.QueryCondition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryCondition newInstance(SModel sm) {

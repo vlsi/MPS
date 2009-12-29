@@ -16,7 +16,7 @@ public class ReplaceModelQuery extends BaseQuery {
   }
 
   public QueryReplace getReplace() {
-    return (QueryReplace)this.getChild(QueryReplace.class, ReplaceModelQuery.REPLACE);
+    return (QueryReplace) this.getChild(QueryReplace.class, ReplaceModelQuery.REPLACE);
   }
 
   public void setReplace(QueryReplace node) {
@@ -24,7 +24,7 @@ public class ReplaceModelQuery extends BaseQuery {
   }
 
   public static ReplaceModelQuery newInstance(SModel sm, boolean init) {
-    return (ReplaceModelQuery)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReplaceModelQuery) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.ReplaceModelQuery", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReplaceModelQuery newInstance(SModel sm) {

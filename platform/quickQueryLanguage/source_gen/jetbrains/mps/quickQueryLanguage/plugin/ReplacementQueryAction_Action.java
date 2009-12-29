@@ -57,7 +57,7 @@ public class ReplacementQueryAction_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ReplaceDialog dialog = new ReplaceDialog(new FindInstancesContext(ReplacementQueryAction_Action.this.context), (Language)ReplacementQueryAction_Action.this.langModule);
+      ReplaceDialog dialog = new ReplaceDialog(new FindInstancesContext(ReplacementQueryAction_Action.this.context), (Language) ReplacementQueryAction_Action.this.langModule);
       dialog.showDialog();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ReplacementQueryAction", t);

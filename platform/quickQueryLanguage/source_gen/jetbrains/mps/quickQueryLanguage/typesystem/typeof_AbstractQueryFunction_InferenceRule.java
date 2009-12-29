@@ -50,7 +50,7 @@ public class typeof_AbstractQueryFunction_InferenceRule extends AbstractInferenc
             BaseIntentionProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, "" + expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c8959050e(jetbrains.mps.quickQueryLanguage.typesystem)", "5046156961652249764", 0, intentionProvider);
             _info_12389875345.setInequationGroup("default");
-            typeCheckingContext.createLessThanInequation((SNode)returnType, (SNode)expectedRetType, false, _info_12389875345);
+            typeCheckingContext.createLessThanInequation((SNode) returnType, (SNode) expectedRetType, false, _info_12389875345);
           }
         }
       }
@@ -64,7 +64,7 @@ public class typeof_AbstractQueryFunction_InferenceRule extends AbstractInferenc
           BaseIntentionProvider intentionProvider = null;
           EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, expectedRetType + " is expected", "r:00000000-0000-4000-0000-011c8959050e(jetbrains.mps.quickQueryLanguage.typesystem)", "5046156961652249799", 0, intentionProvider);
           _info_12389875345.setInequationGroup("default");
-          typeCheckingContext.createLessThanInequation((SNode)returnType, (SNode)expectedRetType, false, _info_12389875345);
+          typeCheckingContext.createLessThanInequation((SNode) returnType, (SNode) expectedRetType, false, _info_12389875345);
         }
       }
     }

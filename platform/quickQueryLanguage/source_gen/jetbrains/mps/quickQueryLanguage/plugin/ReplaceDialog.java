@@ -80,7 +80,7 @@ public class ReplaceDialog extends BaseDialog {
       final GenerationResult result = this.myEditor.generate();
       String fqName = result.getModelDescriptor().getLongName() + "." + QueryExecutor.GENERATED_QUERY_NAME;
       ClassLoader loader = result.getLoader(QueryExecutor.class.getClassLoader());
-      final Query query = (Query)Class.forName(fqName, true, loader).newInstance();
+      final Query query = (Query) Class.forName(fqName, true, loader).newInstance();
       final IScope scope = this.myScope.getOptions().getScope(this.myContext, result.getModelDescriptor());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

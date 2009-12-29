@@ -19,7 +19,7 @@ public class BaseQuery extends BaseConcept {
   }
 
   public AbstractConceptDeclaration getConceptDeclaration() {
-    return (AbstractConceptDeclaration)this.getReferent(AbstractConceptDeclaration.class, BaseQuery.CONCEPT_DECLARATION);
+    return (AbstractConceptDeclaration) this.getReferent(AbstractConceptDeclaration.class, BaseQuery.CONCEPT_DECLARATION);
   }
 
   public void setConceptDeclaration(AbstractConceptDeclaration node) {
@@ -27,7 +27,7 @@ public class BaseQuery extends BaseConcept {
   }
 
   public QueryCondition getCondition() {
-    return (QueryCondition)this.getChild(QueryCondition.class, BaseQuery.CONDITION);
+    return (QueryCondition) this.getChild(QueryCondition.class, BaseQuery.CONDITION);
   }
 
   public void setCondition(QueryCondition node) {
@@ -35,7 +35,7 @@ public class BaseQuery extends BaseConcept {
   }
 
   public static BaseQuery newInstance(SModel sm, boolean init) {
-    return (BaseQuery)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.BaseQuery", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BaseQuery) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.BaseQuery", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BaseQuery newInstance(SModel sm) {

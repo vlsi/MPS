@@ -10,6 +10,6 @@ public class QuickQueryLanguage_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("d745e97c-8235-4470-b086-ba3da1f4c03c(jetbrains.mps.quickQueryLanguage)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

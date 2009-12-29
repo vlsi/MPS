@@ -16,7 +16,7 @@ public class Query_node_Parameter extends ConceptFunctionParameter {
   }
 
   public static Query_node_Parameter newInstance(SModel sm, boolean init) {
-    return (Query_node_Parameter)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Query_node_Parameter) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.Query_node_Parameter", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Query_node_Parameter newInstance(SModel sm) {

@@ -19122,8 +19122,8 @@
                     <link role="link:16" targetNodeId="3.1068580123134:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation:16" id="1223374876272">
-                  <node role="childNode:16" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1223374879509">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation:7" id="1810715974611068643">
+                  <node role="argument:7" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1223374879509">
                     <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1223374882091">
                       <property name="name:3" value="typeCheckingContext" />
                       <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1223374886953">
@@ -19189,8 +19189,8 @@
                     <link role="link:16" targetNodeId="3.1068499141038:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation:16" id="1223378999453">
-                  <node role="childNode:16" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1223379017017">
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation:7" id="1810715974611068641">
+                  <node role="argument:7" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1223379017017">
                     <node role="quotedNode:0" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference:1" id="1223379059036">
                       <property name="name:1" value="typeCheckingContext" />
                       <node role="type:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1223379083742">
@@ -19373,8 +19373,8 @@
                         <link role="link:16" targetNodeId="3.1068499141038:3" />
                       </node>
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation:16" id="1223389577949">
-                      <node role="childNode:16" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1223389582373">
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation:7" id="1810715974611068637">
+                      <node role="argument:7" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1223389582373">
                         <node role="quotedNode:0" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference:1" id="1223392622905">
                           <property name="name:1" value="typeCheckingContext" />
                           <node role="type:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1223393867216">
@@ -19510,8 +19510,8 @@
                         <link role="link:16" targetNodeId="3.1068580123134:3" />
                       </node>
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation:16" id="1223389540574">
-                      <node role="childNode:16" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1223389540575">
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation:7" id="1810715974611068639">
+                      <node role="argument:7" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1223389540575">
                         <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1223389540576">
                           <property name="name:3" value="typeCheckingContext" />
                           <property name="isFinal:3" value="true" />
@@ -20184,8 +20184,8 @@
                                     <link role="link:16" targetNodeId="3.1068499141038:3" />
                                   </node>
                                 </node>
-                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1224065659940">
-                                  <node role="childNode:16" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1224065669039">
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974611068631">
+                                  <node role="argument:7" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1224065669039">
                                     <node role="quotedNode:0" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference:1" id="1224065669040">
                                       <property name="name:1" value="typeCheckingContext" />
                                       <node role="type:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1224065669041">
@@ -20212,8 +20212,8 @@
                                     <link role="link:16" targetNodeId="3.1107880067339:3" />
                                   </node>
                                 </node>
-                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1224074629734">
-                                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1224074635219">
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974611068629">
+                                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1224074635219">
                                     <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1224074634302">
                                       <link role="variableDeclaration:3" targetNodeId="1224065362299" resolveInfo="instanceMethodDeclaration" />
                                     </node>
@@ -20232,8 +20232,8 @@
                                     <link role="link:16" targetNodeId="3.1068580123134:3" />
                                   </node>
                                 </node>
-                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1224065703383">
-                                  <node role="childNode:16" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1224065706275">
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974611068633">
+                                  <node role="argument:7" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1224065706275">
                                     <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1224065709466">
                                       <property name="name:3" value="typeCheckingContext" />
                                       <property name="isFinal:3" value="true" />
@@ -20277,8 +20277,8 @@
                                               <link role="link:16" targetNodeId="3.1068499141038:3" />
                                             </node>
                                           </node>
-                                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1224065863922">
-                                            <node role="childNode:16" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1224065863923">
+                                          <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974611068627">
+                                            <node role="argument:7" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1224065863923">
                                               <node role="quotedNode:0" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference:1" id="1224065863924">
                                                 <property name="name:1" value="typeCheckingContext" />
                                                 <node role="type:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1224065863925">
@@ -20697,8 +20697,8 @@
                                     <link role="link:16" targetNodeId="3.1068499141038:3" />
                                   </node>
                                 </node>
-                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1224242818648">
-                                  <node role="childNode:16" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1224242818649">
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974611068635">
+                                  <node role="argument:7" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1224242818649">
                                     <node role="quotedNode:0" type="jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference:1" id="1224242818650">
                                       <property name="name:1" value="typeCheckingContext" />
                                       <node role="type:1" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1224242818651">

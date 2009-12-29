@@ -16,7 +16,7 @@ public class AbstractQueryFunction extends ConceptFunction {
   }
 
   public static AbstractQueryFunction newInstance(SModel sm, boolean init) {
-    return (AbstractQueryFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractQueryFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.AbstractQueryFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractQueryFunction newInstance(SModel sm) {

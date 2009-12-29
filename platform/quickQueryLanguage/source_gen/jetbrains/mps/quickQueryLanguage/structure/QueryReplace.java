@@ -15,7 +15,7 @@ public class QueryReplace extends AbstractQueryFunction {
   }
 
   public static QueryReplace newInstance(SModel sm, boolean init) {
-    return (QueryReplace)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.QueryReplace", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QueryReplace) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.QueryReplace", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QueryReplace newInstance(SModel sm) {

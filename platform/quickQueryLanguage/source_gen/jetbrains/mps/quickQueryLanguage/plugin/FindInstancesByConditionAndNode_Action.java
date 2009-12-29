@@ -72,7 +72,7 @@ public class FindInstancesByConditionAndNode_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      FindInstancesDialog testDialog = new FindInstancesDialog(new FindInstancesContext(FindInstancesByConditionAndNode_Action.this.context), (Language)FindInstancesByConditionAndNode_Action.this.langModule);
+      FindInstancesDialog testDialog = new FindInstancesDialog(new FindInstancesContext(FindInstancesByConditionAndNode_Action.this.context), (Language) FindInstancesByConditionAndNode_Action.this.langModule);
       testDialog.setConceptDeclaration(FindInstancesByConditionAndNode_Action.this.node);
       testDialog.showDialog();
     } catch (Throwable t) {

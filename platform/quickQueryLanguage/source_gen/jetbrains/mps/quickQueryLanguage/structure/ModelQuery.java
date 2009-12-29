@@ -15,7 +15,7 @@ public class ModelQuery extends BaseQuery {
   }
 
   public static ModelQuery newInstance(SModel sm, boolean init) {
-    return (ModelQuery)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.ModelQuery", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ModelQuery) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.quickQueryLanguage.structure.ModelQuery", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ModelQuery newInstance(SModel sm) {

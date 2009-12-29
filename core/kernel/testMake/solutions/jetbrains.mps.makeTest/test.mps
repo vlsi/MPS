@@ -1324,8 +1324,8 @@
                                     <link role="link:16" targetNodeId="6.1107880067339:3" />
                                   </node>
                                 </node>
-                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1957199320903968537">
-                                  <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1957199320903968538">
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1810715974611175724">
+                                  <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1957199320903968538">
                                     <link role="variableDeclaration:3" targetNodeId="1957199320903968509" resolveInfo="method" />
                                   </node>
                                 </node>
