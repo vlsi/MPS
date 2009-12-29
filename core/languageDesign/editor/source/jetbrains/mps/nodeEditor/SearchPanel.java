@@ -117,6 +117,10 @@ public class SearchPanel extends AbstractSearchPanel {
   }
 
   protected void search() {
+    search(true);
+  }
+
+  protected void search(boolean requestFocus) {
     clearHighlight();
     if (!myCells.isEmpty()) {
       myCells.clear();
@@ -124,11 +128,13 @@ public class SearchPanel extends AbstractSearchPanel {
     if (myText.getText().length() == 0) {
       myFindResult.setText("");
       myText.setBackground(Color.white);
-      myText.requestFocus();
-      myEditor.repaint();
+      if (requestFocus) {
+        myText.requestFocus();
+        myEditor.repaint();
+      }
       return;
     }
-    selectCell();
+    selectCell(requestFocus);
     updateSearchReport(myCells.size());
     if (myCells.isEmpty()) {
       myText.setBackground(myBadSequenceColor);
@@ -150,7 +156,7 @@ public class SearchPanel extends AbstractSearchPanel {
     }
   }
 
-  private void selectCell() {
+  private void selectCell(boolean requestFocus) {
     final List<EditorCell_Label> cells = allCells();
     List<Integer> startCellPosition = new ArrayList<Integer>();
     List<Integer> endCellPosition = new ArrayList<Integer>();
@@ -188,10 +194,12 @@ public class SearchPanel extends AbstractSearchPanel {
       EditorCell_Label currentCell = cells.get(index);
       myCells.add(currentCell);
 
-      needChangeSelection = index >= cells.indexOf(myEditor.getSelectedCell());
-      if (needChangeSelection && !selected) {
-        myEditor.changeSelection(cells.get(index));
-        selected = true;
+      if (requestFocus) {
+        needChangeSelection = index >= cells.indexOf(myEditor.getSelectedCell());
+        if (needChangeSelection && !selected) {
+          myEditor.changeSelection(cells.get(index));
+          selected = true;
+        }
       }
 
       do {

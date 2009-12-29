@@ -1364,6 +1364,9 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myRootCell.relayout();
     myLeftHighlighter.setWidth(myShiftX - ADDITIONAL_SHIFT_X);
     myLeftHighlighter.relayout(updateFolding);
+    if (mySearchPanel.isVisible()) {
+      mySearchPanel.search(false);
+    }
   }
 
   public void leftHighlightCell(EditorCell cell, Color c) {
