@@ -12438,7 +12438,7 @@
                     <link role="link:16" targetNodeId="1.1068499141038:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation:16" id="8492459591399167556" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation:7" id="2590030827990910727" />
               </node>
             </node>
           </node>
@@ -12474,7 +12474,7 @@
                     <link role="link:16" targetNodeId="23.1205770614681:0" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation:16" id="8492459591399167573" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation:7" id="2590030827990910728" />
               </node>
             </node>
           </node>
@@ -19418,7 +19418,7 @@
                 <link role="link:16" targetNodeId="1.1164879685961:3" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation:16" id="8492459591399170643" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation:7" id="2590030827990910729" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="8492459591399170644">
@@ -19668,7 +19668,7 @@
                 <link role="link:16" targetNodeId="1.1068580123134:3" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation:16" id="8492459591399170752" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation:7" id="2590030827990910726" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="8492459591399170753">

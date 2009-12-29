@@ -79,10 +79,10 @@ public class InvertIfCondition_Intention extends BaseIntention implements Intent
     SNode newIfTrue;
     SNode newIfFalse;
     // Set new ifFalse 
-    if (SLinkOperations.getCount(ifTrue, "statement") == 0) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 0) {
       newIfFalse = null;
     } else
-    if (SLinkOperations.getCount(ifTrue, "statement") == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).count() == 1 && SNodeOperations.isInstanceOf(ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first(), "jetbrains.mps.baseLanguage.structure.IfStatement")) {
       newIfFalse = ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).first();
     } else {
       newIfFalse = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);

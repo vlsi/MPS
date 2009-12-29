@@ -1399,7 +1399,7 @@
                       <link role="link:16" targetNodeId="1.1068581517665:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1195647359589" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990910724" />
                 </node>
                 <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1195647359590">
                   <property name="value:3" value="1" />
@@ -1417,7 +1417,7 @@
                   <link role="link:16" targetNodeId="1.1068581517665:3" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1195647359596" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990910725" />
             </node>
             <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1195647359597">
               <property name="value:3" value="0" />

@@ -42,10 +42,10 @@ public class MethodCallAdapter {
 
   public void removeArguments() {
     if (SNodeOperations.isInstanceOf(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-      SLinkOperations.removeAllChildren(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument");
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).clear();
     }
     if (SNodeOperations.isInstanceOf(this.myMethodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation")) {
-      SLinkOperations.removeAllChildren(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"), "actualArgument");
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"), "actualArgument", true)).clear();
     }
   }
 

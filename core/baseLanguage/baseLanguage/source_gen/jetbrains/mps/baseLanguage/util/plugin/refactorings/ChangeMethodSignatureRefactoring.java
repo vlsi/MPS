@@ -32,7 +32,7 @@ public class ChangeMethodSignatureRefactoring {
       }
     }
     this.changeParameters();
-    SLinkOperations.removeAllChildren(this.myDeclaration, "throwsItem");
+    ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "throwsItem", true)).clear();
     for (SNode throwItem : ListSequence.fromList(SLinkOperations.getTargets(this.myParameters.getDeclaration(), "throwsItem", true))) {
       ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "throwsItem", true)).addElement(SNodeOperations.copyNode(throwItem));
     }
@@ -53,7 +53,7 @@ public class ChangeMethodSignatureRefactoring {
 
   private void changeParameters() {
     List<SNode> oldParams = SLinkOperations.getTargets(this.myDeclaration, "parameter", true);
-    SLinkOperations.removeAllChildren(this.myDeclaration, "parameter");
+    ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).clear();
     for (SNode parameter : ListSequence.fromList(SLinkOperations.getTargets(this.myParameters.getDeclaration(), "parameter", true))) {
       int index = ListSequence.fromList(this.myParameters.getIdList()).indexOf(parameter.getId());
       if (index == -1) {
