@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
@@ -51,7 +52,7 @@ public class FindInstancesDialog extends BaseDialog {
         SNode defaultCondition = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
         SPropertyOperations.set(defaultCondition, "value", "" + true);
         SLinkOperations.setTarget(expressionStatement, "expression", defaultCondition, true);
-        SLinkOperations.addChild(statementList, "statement", expressionStatement);
+        ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(expressionStatement);
         SLinkOperations.setTarget(SLinkOperations.getTarget(FindInstancesDialog.this.myNode, "condition", true), "body", statementList, true);
         FindInstancesDialog.this.myEditor = new EmbeddableEditor(context, new ModelOwner() {}, FindInstancesDialog.this.myNode);
       }

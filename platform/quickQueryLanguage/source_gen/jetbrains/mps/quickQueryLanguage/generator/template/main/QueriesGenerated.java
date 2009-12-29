@@ -12,6 +12,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1218801182940(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -38,7 +39,7 @@ public class QueriesGenerated {
     SNode defaultCondition = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
     SPropertyOperations.set(defaultCondition, "value", "" + false);
     SLinkOperations.setTarget(expressionStatement, "expression", defaultCondition, true);
-    SLinkOperations.addChild(statementList, "statement", expressionStatement);
+    ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(expressionStatement);
     return statementList;
   }
 }
