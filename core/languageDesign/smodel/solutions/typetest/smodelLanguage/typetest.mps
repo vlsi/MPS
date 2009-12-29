@@ -2352,7 +2352,7 @@
                   <link role="link:16" targetNodeId="6.1068581517665:3" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1173298431424" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2898190064848675951" />
             </node>
           </node>
         </node>
@@ -2406,8 +2406,8 @@
                 <link role="link:16" targetNodeId="6.1068581517665:3" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1173299453252">
-              <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1173299459129">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2898190064848675945">
+              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1173299459129">
                 <link role="variableDeclaration:3" targetNodeId="1173299116188" resolveInfo="new1" />
               </node>
             </node>
@@ -2423,8 +2423,8 @@
                 <link role="link:16" targetNodeId="6.1068581517665:3" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1173299463258">
-              <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1173299467887">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2898190064848675947">
+              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1173299467887">
                 <link role="variableDeclaration:3" targetNodeId="1173299148666" resolveInfo="new2" />
               </node>
             </node>
@@ -2440,8 +2440,8 @@
                 <link role="link:16" targetNodeId="6.1068581517665:3" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation:16" id="1173299664364">
-              <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1173299667194">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation:7" id="2898190064848675952">
+              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1173299667194">
                 <link role="variableDeclaration:3" targetNodeId="1173299116188" resolveInfo="new1" />
               </node>
             </node>
@@ -2457,8 +2457,8 @@
                 <link role="link:16" targetNodeId="6.1068581517665:3" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_InsertChildFirstOperation:16" id="1173299674883">
-              <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1173299678244">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation:7" id="2898190064848675954">
+              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1173299678244">
                 <link role="variableDeclaration:3" targetNodeId="1173299148666" resolveInfo="new2" />
               </node>
             </node>
@@ -2506,8 +2506,8 @@
                 <link role="link:16" targetNodeId="6.1068581517665:3" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1178214665755">
-              <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1178214809272">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2898190064848675949">
+              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1178214809272">
                 <link role="variableDeclaration:3" targetNodeId="1178214801417" resolveInfo="expr" />
               </node>
             </node>
@@ -2523,8 +2523,8 @@
                 <link role="link:16" targetNodeId="6.1068581517665:3" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1178214755239">
-              <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1178214759012">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2898190064848675943">
+              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1178214759012">
                 <property name="value:3" value="10" />
               </node>
             </node>
