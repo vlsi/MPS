@@ -35,7 +35,7 @@ public class typeof_InternalThisExpression_InferenceRule extends AbstractInferen
         {
           SNode tvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
           SLinkOperations.setTarget(tvr, "typeVariableDeclaration", tvd, false);
-          SLinkOperations.addChild(ct, "parameter", tvr);
+          ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(tvr);
         }
       }
     }

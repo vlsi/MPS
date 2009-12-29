@@ -292,7 +292,7 @@
                     <link role="link:16" targetNodeId="4.1109201940907:3" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1202148797360" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990816792" />
               </node>
             </node>
           </node>
