@@ -12,8 +12,7 @@ import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import java.util.List;
-import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class TypeVariableDeclaration_Behavior {
   private static Class[] PARAMETERS_1775412259244835270 = {SNode.class};
@@ -58,17 +57,16 @@ public class TypeVariableDeclaration_Behavior {
   }
 
   public static SNode getTypeWithConcreteUpperBounds_4346214032091504651(SNode inputType, Set<SNode> visitedVars) {
-    SNode result = SNodeOperations.copyNode(inputType);
-    if (SNodeOperations.isInstanceOf(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-      return TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(SLinkOperations.getTarget(SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), visitedVars);
+    if (SNodeOperations.isInstanceOf(inputType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      return TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.copyNode(inputType), "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), visitedVars);
     }
-    List<SNode> variableReferences = SNodeOperations.getDescendants(result, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
-    List<SNode> list = new ArrayList<SNode>();
-    ListSequence.fromList(list).addSequence(ListSequence.fromList(variableReferences));
-    for (SNode typeVariableReference : list) {
-      SNode concreteUpperBound = TypeVariableDeclaration_Behavior.call_getConcreteUpperBound_4346214032091504647(SLinkOperations.getTarget(typeVariableReference, "typeVariableDeclaration", false), visitedVars);
-      SNodeOperations.replaceWithAnother(typeVariableReference, concreteUpperBound);
+    SNode javaType = Type_Behavior.call_getJavaType_1213877337345(inputType);
+    if (SNodeOperations.isInstanceOf(javaType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+      SLinkOperations.setTarget(result, "classifier", SLinkOperations.getTarget(SNodeOperations.cast(javaType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), false);
+      return result;
+    } else {
+      return SNodeOperations.copyNode(javaType);
     }
-    return result;
   }
 }

@@ -21,7 +21,6 @@ import java.util.Map;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.ArrayList;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.baseLanguage.behavior.TypeVariableDeclaration_Behavior;
 import jetbrains.mps.lang.typesystem.dependencies.CheckingMethod;
@@ -210,9 +209,6 @@ __switch__:
         final SNode p_typevar_1228174472023 = typeCheckingContext.createNewRuntimeTypesVariable();
         if (nodes != null) {
           SNode tvar = ListSequence.fromList(nodes).first();
-          if (TRACE_METHOD_TYPES) {
-            System.out.println("-2- " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(tvar, "jetbrains.mps.lang.core.structure.BaseConcept")) + " :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(ListSequence.fromList(nodes).first(), "jetbrains.mps.lang.core.structure.BaseConcept")));
-          }
           {
             SNode _nodeToCheck_1029348928467 = null;
             BaseIntentionProvider intentionProvider = null;
@@ -408,9 +404,6 @@ __switch__:
         SNode prev = null;
         for (SNode tvar : nodes) {
           if (prev != null && prev != tvar) {
-            if (TRACE_METHOD_TYPES) {
-              System.out.println("-3- " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(prev, "jetbrains.mps.lang.core.structure.BaseConcept")) + " :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(tvar, "jetbrains.mps.lang.core.structure.BaseConcept")));
-            }
             {
               SNode _nodeToCheck_1029348928467 = null;
               BaseIntentionProvider intentionProvider = null;
@@ -419,26 +412,6 @@ __switch__:
             }
           }
           prev = tvar;
-        }
-        if (TRACE_METHOD_TYPES) {
-          if ((prev != null)) {
-            final SNode var = prev;
-            final SNode prevVar_typevar_1204114618000 = typeCheckingContext.createNewRuntimeTypesVariable();
-            {
-              SNode _nodeToCheck_1029348928467 = null;
-              BaseIntentionProvider intentionProvider = null;
-              EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204114618001", 0, intentionProvider);
-              typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(prevVar_typevar_1204114618000), (SNode) prev, _info_12389875345);
-            }
-            {
-              final SNode _representatorVar0 = typeCheckingContext.getEquationManager().getRepresentator(prevVar_typevar_1204114618000);
-              typeCheckingContext.whenConcrete(_representatorVar0, new Runnable() {
-                public void run() {
-                  System.out.println("-4- " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(var, "jetbrains.mps.lang.core.structure.BaseConcept")) + " :==: " + BaseConcept_Behavior.call_getPresentation_1213877396640(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(prevVar_typevar_1204114618000), "jetbrains.mps.lang.core.structure.BaseConcept")));
-                }
-              }, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1204114618006", false, false);
-            }
-          }
         }
       }
     }
