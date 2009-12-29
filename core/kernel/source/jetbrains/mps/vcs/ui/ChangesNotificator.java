@@ -24,10 +24,10 @@ import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.popup.JBPopupAdapter;
 import com.intellij.openapi.ui.popup.LightweightWindowEvent;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.StatusBar;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.ui.LightColors;
-import com.intellij.ui.popup.NotificationPopup;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vcs.VcsRootsManager;
@@ -39,13 +39,13 @@ import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JEditorPane;
 import javax.swing.JComponent;
+import javax.swing.JFrame;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.event.HyperlinkListener;
 import javax.swing.event.HyperlinkEvent;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import java.awt.Color;
-import java.awt.Component;
 import java.util.Map;
 import java.util.Set;
 
@@ -85,10 +85,7 @@ public class ChangesNotificator implements ProjectComponent {
 
   private void showAddVcsRootsPopup(final Project project, final VirtualFile vcsRoot, final SModelDescriptor sm) {
 
-    final StatusBar bar = WindowManager.getInstance().getStatusBar(project);
-
     if (myRoots.get(vcsRoot) == null) {
-
       final MyNotificationInfo info = new MyNotificationInfo();
       info.addSModelDescriptor(sm);
       myRoots.put(vcsRoot, info);
@@ -116,7 +113,9 @@ public class ChangesNotificator implements ProjectComponent {
         }
       });
 
-      final NotificationPopup popup = new NotificationPopup((JComponent) bar, pane, POPUP_COLOR);
+      StatusBar bar = WindowManager.getInstance().getStatusBar(project);
+      IdeFrame frame = WindowManager.getInstance().getIdeFrame(project);
+      final jetbrains.mps.vcs.ui.NotificationPopup popup = new jetbrains.mps.vcs.ui.NotificationPopup(frame, (JComponent) bar, pane, POPUP_COLOR);
       popup.addListener(new JBPopupAdapter() {
         @Override
         public void onClosed(LightweightWindowEvent event) {

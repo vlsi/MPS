@@ -13,12 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.intellij.ui.popup;
+package jetbrains.mps.vcs.ui;
 
 import com.intellij.openapi.ui.popup.Balloon;
 import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.JBPopupListener;
+import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.impl.IdeFrameImpl;
 import com.intellij.ui.components.panels.Wrapper;
 import com.intellij.ui.components.panels.NonOpaquePanel;
@@ -27,34 +28,21 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionListener;
 
-import jetbrains.mps.util.annotation.Patch;
+import com.intellij.ui.popup.FramelessNotificationPopup;
 import org.jetbrains.annotations.Nullable;
 
-/**
- * See http://jetbrains.net/jira/browse/IDEA-22993
- */
 public class NotificationPopup {
+  private final PopupDecorator myPopupDecorator;
 
-  private Impl myImpl;
+  public NotificationPopup(IdeFrame frame, JComponent owner, JComponent content, Color backgroud) {
+    IdeFrameImpl frameImpl = null;
+    if (frame instanceof IdeFrameImpl){
+      frameImpl = (IdeFrameImpl) frame;
+    }
+    if (frameImpl == null) {
+      final FramelessNotificationPopup popup = new FramelessNotificationPopup(owner, content, backgroud, true, null);
 
-  public NotificationPopup(final JComponent owner, final JComponent content, Color backgroud) {
-    this(owner, content, backgroud, true);
-  }
-
-  public NotificationPopup(final JComponent owner, final JComponent content, Color backgroud, boolean useDefaultPreferredSize) {
-    this(owner, content, backgroud, useDefaultPreferredSize, null, false);
-  }
-
-  public NotificationPopup(final JComponent owner, final JComponent content, Color backgroud, final boolean useDefaultPreferredSize, ActionListener clickHandler, boolean closeOnClick) {
-    final IdeFrameImpl frame = findFrame(owner);
-    if (frame == null) {
-      //todo kirillk
-      if (clickHandler != null) {
-        throw new UnsupportedOperationException("Click handler is not supported in frameless mode");
-      }
-      final FramelessNotificationPopup popup = new FramelessNotificationPopup(owner, content, backgroud, useDefaultPreferredSize, null);
-
-      myImpl = new Impl() {
+      myPopupDecorator = new PopupDecorator() {
         public void addListener(JBPopupListener listener) {
           popup.getPopup().addListener(listener);
         }
@@ -68,11 +56,9 @@ public class NotificationPopup {
         @Override
         public Dimension getPreferredSize() {
           final Dimension size = super.getPreferredSize();
-          if (useDefaultPreferredSize) {
-            if (size.width > 400 || size.height > 200) {
-              size.width = 400;
-              size.height = 200;
-            }
+          if (size.width > 400 || size.height > 200) {
+            size.width = 400;
+            size.height = 200;
           }
           return size;
         }
@@ -86,12 +72,12 @@ public class NotificationPopup {
         .setCloseButtonEnabled(true)
         .setFillColor(backgroud)
         .setShowCallout(false)
-        .setClickHandler(clickHandler, closeOnClick)
+        .setClickHandler(null, false)
         .createBalloon();
 
-      frame.getBalloonLayout().add(balloon);
+      frameImpl.getBalloonLayout().add(balloon);
 
-      myImpl = new Impl() {
+      myPopupDecorator = new PopupDecorator() {
         public void addListener(JBPopupListener listener) {
           balloon.addListener(listener);
         }
@@ -103,41 +89,17 @@ public class NotificationPopup {
     }
   }
 
-  @Nullable
-  private IdeFrameImpl findFrame(@Nullable JComponent owner) {
-    if (owner == null) return null;
-    final Window frame = SwingUtilities.getWindowAncestor(owner);
-    if (frame instanceof IdeFrameImpl) {
-      return (IdeFrameImpl) frame;
-    }
-
-    return null;
-  }
-
-  public JBPopup getPopup() {
-    return null;
-  }
-
-
-  interface Impl {
+  interface PopupDecorator {
     void addListener(JBPopupListener listener);
 
     void hide();
   }
 
-  /**
-   * See http://jetbrains.net/jira/browse/IDEA-22993
-   */
-  @Patch
   public void addListener(JBPopupListener listener) {
-    myImpl.addListener(listener);
+    myPopupDecorator.addListener(listener);
   }
 
-  /**
-   * See http://jetbrains.net/jira/browse/IDEA-22993
-   */
-  @Patch
   public void hide() {
-    myImpl.hide();
+    myPopupDecorator.hide();
   }
 }
