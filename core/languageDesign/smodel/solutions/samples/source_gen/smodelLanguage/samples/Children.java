@@ -4,9 +4,9 @@ package smodelLanguage.samples;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -16,11 +16,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 public class Children {
   public void accessToChildren_1(SNode statementList) {
     BaseConcept_Behavior.call_getPresentation_1213877396640(statementList);
-    int count1 = SLinkOperations.getCount(statementList, "statement");
+    int count1 = ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).count();
     List<SNode> statements = SLinkOperations.getTargets(statementList, "statement", true);
     int count2 = ListSequence.fromList(statements).count();
     int count3 = ((List<SNode>) statements).size();
-    List<SNode> removedStatements = SLinkOperations.removeAllChildren(statementList, "statement");
+    ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).clear();
   }
 
   public void accessToChildren_2(SNode statementList1, SNode statementList2) {
@@ -28,16 +28,16 @@ public class Children {
     SLinkOperations.addNewChild(statementList1, "statement", "jetbrains.mps.baseLanguage.structure.IfStatement");
     SLinkOperations.addNewChild(statementList1, "statement", "jetbrains.mps.baseLanguage.structure.ReturnStatement");
     for (SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
-      SLinkOperations.addChild(statementList2, "statement", SNodeOperations.copyNode(statement));
+      ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(SNodeOperations.copyNode(statement));
     }
     for (SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
-      SLinkOperations.addChild(statementList2, "statement", SNodeOperations.copyNode(statement));
+      ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(SNodeOperations.copyNode(statement));
     }
     for (SNode statement : SLinkOperations.getTargets(statementList1, "statement", true)) {
-      SLinkOperations.addChild(statementList2, "statement", SNodeOperations.copyNode(statement));
+      ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(SNodeOperations.copyNode(statement));
     }
     for (SNode statement : ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true))) {
-      SLinkOperations.addChild(statementList2, "statement", ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).first());
+      ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).addElement(ListSequence.fromList(SLinkOperations.getTargets(statementList2, "statement", true)).first());
     }
   }
 
