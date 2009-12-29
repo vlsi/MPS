@@ -10,13 +10,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.NodeSubstituteActionsFactoryContext;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Calculable;
@@ -47,20 +47,20 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_NamedTupleDeclaration_1240501255930(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SLinkOperations.getCount(_context.getSourceNode(), "extends") == 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "extends", true)).count() == 0;
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_NamedTupleDeclaration_1240501315568(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SLinkOperations.getCount(_context.getSourceNode(), "extends") == 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "extends", true)).count() == 0;
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_InterfaceTupleType_1240704192041(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SLinkOperations.getCount(_context.getSourceNode(), "parameterType") == 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "parameterType", true)).count() == 0;
   }
 
   public static void nodeFactory_NodeSetup_NamedTupleLiteral_1239567483801(final IOperationContext operationContext, final NodeSetupContext _context) {
     for (SNode cd : SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNewNode(), "tupleDeclaration", false), "component", true)) {
-      SLinkOperations.setTarget(SLinkOperations.addChild(_context.getNewNode(), "componentRef", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", null)), "componentDeclaration", cd, false);
+      SLinkOperations.setTarget(ListSequence.fromList(SLinkOperations.getTargets(_context.getNewNode(), "componentRef", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", null)), "componentDeclaration", cd, false);
     }
   }
 
@@ -73,18 +73,18 @@ public class QueriesGenerated {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
       SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType");
-      SNode childConcept = (SNode)_context.getChildConcept();
+      SNode childConcept = (SNode) _context.getChildConcept();
       if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         Calculable calc = new Calculable() {
           public Object calculate() {
-            return (List<SNode>)new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.INTERFACE, operationContext.getScope()).getNodes(new Condition<SNode>() {
+            return (List<SNode>) new VisibleClassifiersScope(_context.getModel(), IClassifiersSearchScope.INTERFACE, operationContext.getScope()).getNodes(new Condition<SNode>() {
               public boolean met(SNode node) {
-                return TupleIntefaceUtils.isTupleInterface((SNode)node);
+                return TupleIntefaceUtils.isTupleInterface((SNode) node);
               }
             });
           }
         };
-        Iterable<SNode> queryResult = (Iterable)calc.calculate();
+        Iterable<SNode> queryResult = (Iterable) calc.calculate();
         if (queryResult != null) {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {

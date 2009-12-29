@@ -81,7 +81,7 @@ public class NamedTupleComponentDeclaration extends BaseConcept implements IVali
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, NamedTupleComponentDeclaration.TYPE);
+    return (Type) this.getChild(Type.class, NamedTupleComponentDeclaration.TYPE);
   }
 
   public void setType(Type node) {
@@ -109,7 +109,7 @@ public class NamedTupleComponentDeclaration extends BaseConcept implements IVali
   }
 
   public static NamedTupleComponentDeclaration newInstance(SModel sm, boolean init) {
-    return (NamedTupleComponentDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NamedTupleComponentDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NamedTupleComponentDeclaration newInstance(SModel sm) {

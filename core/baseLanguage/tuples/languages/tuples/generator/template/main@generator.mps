@@ -118,7 +118,7 @@
                                   <link role="link:16" targetNodeId="1.1238852204892:2" />
                                 </node>
                               </node>
-                              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1238935362548" />
+                              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552022" />
                             </node>
                             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1238935343113">
                               <property name="value:3" value="Tuples._" />
@@ -996,7 +996,7 @@
                             <link role="link:16" targetNodeId="1.1238852204892:2" />
                           </node>
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1239699675937" />
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552028" />
                       </node>
                       <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1239699675938">
                         <property name="value:3" value="empty" />
@@ -6485,7 +6485,7 @@
                                     <link role="link:16" targetNodeId="1.1239529553065:2" />
                                   </node>
                                 </node>
-                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1239703523490" />
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552032" />
                               </node>
                               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1239703523491">
                                 <property name="value:3" value="Tuples._" />
@@ -6800,7 +6800,7 @@
                                 <link role="link:16" targetNodeId="1.1239529553065:2" />
                               </node>
                             </node>
-                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1239636851223" />
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552004" />
                           </node>
                           <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1239636851224">
                             <property name="value:3" value="MultiTuple._" />

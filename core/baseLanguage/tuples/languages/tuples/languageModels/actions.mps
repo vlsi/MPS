@@ -155,8 +155,8 @@
                           <link role="link:16" targetNodeId="1.1239560910577:2" />
                         </node>
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1239567557242">
-                        <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1239567559501">
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="4296974352971552001">
+                        <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1239567559501">
                           <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="1239567562737">
                             <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1239567562738">
                               <link role="concept:16" targetNodeId="1.1239560581441:2" resolveInfo="NamedTupleComponentReference" />
@@ -440,7 +440,7 @@
                     <link role="link:16" targetNodeId="1.1240485934753:2" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1240501321803" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552015" />
               </node>
             </node>
           </node>
@@ -489,7 +489,7 @@
                     <link role="link:16" targetNodeId="1.1240485934753:2" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1240501263735" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552020" />
               </node>
             </node>
           </node>
@@ -541,7 +541,7 @@
                     <link role="link:16" targetNodeId="1.1240700862985:2" />
                   </node>
                 </node>
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1240704198774" />
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552005" />
               </node>
             </node>
           </node>

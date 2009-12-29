@@ -118,7 +118,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     }
 
     public void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      this.handleAction_impl((SNode)parameterObject, node, model, scope, operationContext);
+      this.handleAction_impl((SNode) parameterObject, node, model, scope, operationContext);
     }
 
     public void handleAction_impl(SNode parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext) {
@@ -130,7 +130,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     }
 
     public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((SNode)parameterObject);
+      return this.getMatchingText_internal((SNode) parameterObject);
     }
 
     public String getMatchingText_internal(SNode parameterObject) {
@@ -138,7 +138,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     }
 
     public String getDescriptionText(Object parameterObject) {
-      return this.getDescriptionText_internal((SNode)parameterObject);
+      return this.getDescriptionText_internal((SNode) parameterObject);
     }
 
     public String getDescriptionText_internal(SNode parameterObject) {

@@ -216,7 +216,7 @@ public class InterfaceTupleType_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition0883_0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "parameterType") > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameterType", true)).count() > 0;
   }
 
   public static class _Inline0883_0 extends InlineCellProvider {

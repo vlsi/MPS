@@ -45,7 +45,7 @@ public class NamedTupleComponentAccessOperation extends BaseConcept implements I
   }
 
   public NamedTupleComponentDeclaration getComponent() {
-    return (NamedTupleComponentDeclaration)this.getReferent(NamedTupleComponentDeclaration.class, NamedTupleComponentAccessOperation.COMPONENT);
+    return (NamedTupleComponentDeclaration) this.getReferent(NamedTupleComponentDeclaration.class, NamedTupleComponentAccessOperation.COMPONENT);
   }
 
   public void setComponent(NamedTupleComponentDeclaration node) {
@@ -53,7 +53,7 @@ public class NamedTupleComponentAccessOperation extends BaseConcept implements I
   }
 
   public static NamedTupleComponentAccessOperation newInstance(SModel sm, boolean init) {
-    return (NamedTupleComponentAccessOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NamedTupleComponentAccessOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentAccessOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NamedTupleComponentAccessOperation newInstance(SModel sm) {

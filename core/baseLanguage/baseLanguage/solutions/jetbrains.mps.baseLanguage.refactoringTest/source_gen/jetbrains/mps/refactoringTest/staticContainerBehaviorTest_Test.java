@@ -10,8 +10,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoringParameters;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodRefactoring;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ExtractMethodFabric;
@@ -37,7 +37,7 @@ public class staticContainerBehaviorTest_Test extends BaseTransformationTest {
       SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(this.getNodeById("1230052684590"), "jetbrains.mps.lang.behavior.structure.StaticConceptMethodDeclaration"), false);
       SNode var = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null);
       SLinkOperations.setTarget(var, "variableDeclaration", SNodeOperations.cast(this.getNodeById("1230052684575"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"), false);
-      SLinkOperations.addChild(call, "actualArgument", var);
+      ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addElement(var);
       SLinkOperations.setTarget(call, "concept", SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("1230052684589"), "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("1230052684580"), "jetbrains.mps.baseLanguage.structure.LocalVariableReference"), call);
       ExtractMethodRefactoringParameters params = new ExtractMethodRefactoringParameters(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052684562"), "jetbrains.mps.baseLanguage.structure.ExpressionStatement")));

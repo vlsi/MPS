@@ -31,7 +31,7 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
         ListSequence.fromList(result).addElement(supertype);
         for (SNode comptype : SLinkOperations.getTargets(itt, "componentType", true)) {
           SNode javatype = ClassifierTypeUtil.getTypeCoercedToClassifierType(comptype);
-          SLinkOperations.addChild(supertype, "parameter", SNodeOperations.copyNode(javatype));
+          ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).addElement(SNodeOperations.copyNode(javatype));
         }
       }
     }

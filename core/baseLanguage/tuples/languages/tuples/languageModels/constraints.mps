@@ -373,7 +373,7 @@
                         <link role="link:16" targetNodeId="3v.1068580123134:3" />
                       </node>
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1240573261754" />
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552029" />
                   </node>
                   <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1240573261755">
                     <property name="value:3" value="0" />
@@ -460,7 +460,7 @@
                           <link role="link:16" targetNodeId="3v.1068580123134:3" />
                         </node>
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1240573261789" />
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552003" />
                     </node>
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1240573261790">
                       <property name="value:3" value="1" />
@@ -563,7 +563,7 @@
                             <link role="link:16" targetNodeId="3v.1068580123134:3" />
                           </node>
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1240573261824" />
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552017" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1240573261825">
                         <property name="value:3" value="1" />
@@ -616,7 +616,7 @@
                             <link role="link:16" targetNodeId="3v.1068580123134:3" />
                           </node>
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1240573261846" />
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552031" />
                       </node>
                       <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1240573261847">
                         <property name="value:3" value="0" />

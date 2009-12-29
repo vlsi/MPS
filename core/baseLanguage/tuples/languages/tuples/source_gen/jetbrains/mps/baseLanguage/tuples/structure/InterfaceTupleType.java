@@ -23,7 +23,7 @@ public class InterfaceTupleType extends Type {
   }
 
   public Interface getIface() {
-    return (Interface)this.getReferent(Interface.class, InterfaceTupleType.IFACE);
+    return (Interface) this.getReferent(Interface.class, InterfaceTupleType.IFACE);
   }
 
   public void setIface(Interface node) {
@@ -51,7 +51,7 @@ public class InterfaceTupleType extends Type {
   }
 
   public static InterfaceTupleType newInstance(SModel sm, boolean init) {
-    return (InterfaceTupleType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.InterfaceTupleType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InterfaceTupleType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.InterfaceTupleType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InterfaceTupleType newInstance(SModel sm) {

@@ -26,7 +26,7 @@ public class NamedTupleType extends ClassifierType {
   }
 
   public static NamedTupleType newInstance(SModel sm, boolean init) {
-    return (NamedTupleType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NamedTupleType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NamedTupleType newInstance(SModel sm) {

@@ -22,7 +22,7 @@ public class NamedTupleLiteral extends Expression {
   }
 
   public NamedTupleDeclaration getTupleDeclaration() {
-    return (NamedTupleDeclaration)this.getReferent(NamedTupleDeclaration.class, NamedTupleLiteral.TUPLE_DECLARATION);
+    return (NamedTupleDeclaration) this.getReferent(NamedTupleDeclaration.class, NamedTupleLiteral.TUPLE_DECLARATION);
   }
 
   public void setTupleDeclaration(NamedTupleDeclaration node) {
@@ -50,7 +50,7 @@ public class NamedTupleLiteral extends Expression {
   }
 
   public static NamedTupleLiteral newInstance(SModel sm, boolean init) {
-    return (NamedTupleLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NamedTupleLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NamedTupleLiteral newInstance(SModel sm) {

@@ -2762,8 +2762,8 @@
                 <link role="link:16" targetNodeId="138.1107880067339:3" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1809207813036422247">
-              <node role="childNode:16" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1809207813036422248">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="4296974352971551993">
+              <node role="argument:7" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1809207813036422248">
                 <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1809207813036422249">
                   <property name="name:3" value="toString" />
                   <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1809207813036422250" />

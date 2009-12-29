@@ -63,7 +63,7 @@ public class NamedTupleDeclaration extends Classifier {
   }
 
   public static NamedTupleDeclaration newInstance(SModel sm, boolean init) {
-    return (NamedTupleDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NamedTupleDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NamedTupleDeclaration newInstance(SModel sm) {

@@ -28,7 +28,7 @@ public class IndexedTupleType_Behavior {
 
   public static List<String> virtual_getVariableSuffixes_1213877337304(SNode thisNode) {
     List<String> suffixes = ListSequence.fromList(new ArrayList<String>());
-    switch (SLinkOperations.getCount(thisNode, "componentType")) {
+    switch (ListSequence.fromList(SLinkOperations.getTargets(thisNode, "componentType", true)).count()) {
       case 0:
         ListSequence.fromList(suffixes).addElement("unit");
         break;
@@ -45,7 +45,7 @@ public class IndexedTupleType_Behavior {
         ListSequence.fromList(suffixes).addElement("quadruple");
         break;
       default:
-        ListSequence.fromList(suffixes).addElement("_" + Integer.valueOf(SLinkOperations.getCount(thisNode, "componentType")) + "tuple");
+        ListSequence.fromList(suffixes).addElement("_" + Integer.valueOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "componentType", true)).count()) + "tuple");
     }
     return suffixes;
   }

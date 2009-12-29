@@ -20,7 +20,7 @@ public class InterfaceTupleType_Behavior {
       public String select(TupleIntefaceUtils.Property p) {
         return BaseConcept_Behavior.call_getPresentation_1213877396640(p.type()) + " " + p.name();
       }
-    }), ", ") + ((SLinkOperations.getCount(thisNode, "parameterType") > 0 ?
+    }), ", ") + ((ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterType", true)).count() > 0 ?
       "<" + IterableUtils.join(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameterType", true)).select(new ISelector<SNode, String>() {
         public String select(SNode pt) {
           return BaseConcept_Behavior.call_getPresentation_1213877396640(pt);

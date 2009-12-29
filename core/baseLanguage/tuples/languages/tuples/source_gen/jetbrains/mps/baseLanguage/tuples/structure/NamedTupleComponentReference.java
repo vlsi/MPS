@@ -19,7 +19,7 @@ public class NamedTupleComponentReference extends BaseConcept {
   }
 
   public NamedTupleComponentDeclaration getComponentDeclaration() {
-    return (NamedTupleComponentDeclaration)this.getReferent(NamedTupleComponentDeclaration.class, NamedTupleComponentReference.COMPONENT_DECLARATION);
+    return (NamedTupleComponentDeclaration) this.getReferent(NamedTupleComponentDeclaration.class, NamedTupleComponentReference.COMPONENT_DECLARATION);
   }
 
   public void setComponentDeclaration(NamedTupleComponentDeclaration node) {
@@ -27,7 +27,7 @@ public class NamedTupleComponentReference extends BaseConcept {
   }
 
   public Expression getValue() {
-    return (Expression)this.getChild(Expression.class, NamedTupleComponentReference.VALUE);
+    return (Expression) this.getChild(Expression.class, NamedTupleComponentReference.VALUE);
   }
 
   public void setValue(Expression node) {
@@ -35,7 +35,7 @@ public class NamedTupleComponentReference extends BaseConcept {
   }
 
   public static NamedTupleComponentReference newInstance(SModel sm, boolean init) {
-    return (NamedTupleComponentReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NamedTupleComponentReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleComponentReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NamedTupleComponentReference newInstance(SModel sm) {

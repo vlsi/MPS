@@ -18,7 +18,7 @@ public class IndexedTupleMemberAccessExpression extends Expression {
   }
 
   public Expression getTuple() {
-    return (Expression)this.getChild(Expression.class, IndexedTupleMemberAccessExpression.TUPLE);
+    return (Expression) this.getChild(Expression.class, IndexedTupleMemberAccessExpression.TUPLE);
   }
 
   public void setTuple(Expression node) {
@@ -26,7 +26,7 @@ public class IndexedTupleMemberAccessExpression extends Expression {
   }
 
   public Expression getIndex() {
-    return (Expression)this.getChild(Expression.class, IndexedTupleMemberAccessExpression.INDEX);
+    return (Expression) this.getChild(Expression.class, IndexedTupleMemberAccessExpression.INDEX);
   }
 
   public void setIndex(Expression node) {
@@ -34,7 +34,7 @@ public class IndexedTupleMemberAccessExpression extends Expression {
   }
 
   public static IndexedTupleMemberAccessExpression newInstance(SModel sm, boolean init) {
-    return (IndexedTupleMemberAccessExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IndexedTupleMemberAccessExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleMemberAccessExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IndexedTupleMemberAccessExpression newInstance(SModel sm) {

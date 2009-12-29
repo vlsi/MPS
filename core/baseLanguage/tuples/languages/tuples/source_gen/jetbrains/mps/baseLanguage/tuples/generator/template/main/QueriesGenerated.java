@@ -12,6 +12,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.tuples.generator.template.helpers.Values;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.List;
@@ -19,7 +20,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.behavior.Expression_Behavior;
 import jetbrains.mps.baseLanguage.tuples.generator.template.helpers.TupleDeclarationUtil;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -173,7 +173,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1239699675924(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "empty" + SLinkOperations.getCount(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "type", true), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType");
+    return "empty" + ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.as(SLinkOperations.getTarget(SNodeOperations.as(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguage.structure.VariableDeclaration"), "type", true), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true)).count();
   }
 
   public static Object propertyMacro_GetPropertyValue_1241018440944(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -241,7 +241,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1238933287426(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     List<SNode> ifcs = SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface");
     for (SNode ifc : ifcs) {
-      if (SPropertyOperations.getString(ifc, "name").equals("Tuples._" + SLinkOperations.getCount(_context.getNode(), "componentType"))) {
+      if (SPropertyOperations.getString(ifc, "name").equals("Tuples._" + ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "componentType", true)).count())) {
         return ifc;
       }
     }
@@ -331,7 +331,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1239636757672(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     List<SNode> ifcs = SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     for (SNode ifc : ifcs) {
-      if (SPropertyOperations.getString(ifc, "name").equals("MultiTuple._" + SLinkOperations.getCount(_context.getNode(), "component"))) {
+      if (SPropertyOperations.getString(ifc, "name").equals("MultiTuple._" + ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "component", true)).count())) {
         return ifc;
       }
     }
@@ -345,7 +345,7 @@ public class QueriesGenerated {
   public static Object referenceMacro_GetReferent_1239703504847(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     List<SNode> ifcs = SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new _Quotations.QuotationClass_4().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface");
     for (SNode ifc : ifcs) {
-      if (SPropertyOperations.getString(ifc, "name").equals("Tuples._" + SLinkOperations.getCount(_context.getNode(), "component"))) {
+      if (SPropertyOperations.getString(ifc, "name").equals("Tuples._" + ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "component", true)).count())) {
         return ifc;
       }
     }

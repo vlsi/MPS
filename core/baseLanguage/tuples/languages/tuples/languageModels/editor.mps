@@ -148,7 +148,7 @@
                       <link role="link:16" targetNodeId="2v.1188208488637:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1239459835946" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552023" />
                 </node>
               </node>
             </node>
@@ -259,7 +259,7 @@
                       <link role="link:16" targetNodeId="2v.1109279881614:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1240501437261" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552006" />
                 </node>
               </node>
             </node>
@@ -301,7 +301,7 @@
                       <link role="link:16" targetNodeId="1.1240485934753:2" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1240486053028" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552016" />
                 </node>
               </node>
             </node>
@@ -388,7 +388,7 @@
                       <link role="link:16" targetNodeId="2v.1188208488637:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1239463497092" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552011" />
                 </node>
               </node>
             </node>
@@ -714,7 +714,7 @@
                       <link role="link:16" targetNodeId="1.1239548562987:2" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1239881184394" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552010" />
                 </node>
               </node>
             </node>
@@ -766,7 +766,7 @@
                             <link role="link:16" targetNodeId="2v.1109279881614:3" />
                           </node>
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1239883957886" />
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552033" />
                       </node>
                     </node>
                   </node>
@@ -1069,7 +1069,7 @@
                       <link role="link:16" targetNodeId="1.1240700862985:2" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1240704009656" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552025" />
                 </node>
               </node>
             </node>

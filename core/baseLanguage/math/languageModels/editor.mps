@@ -828,7 +828,7 @@
                       <link role="link:16" targetNodeId="2v.1188208488637:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1418611629042457300" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552013" />
                 </node>
               </node>
             </node>

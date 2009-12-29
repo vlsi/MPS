@@ -288,7 +288,7 @@
                 <link role="link:16" targetNodeId="1.1238852204892:2" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1238853365662" />
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552034" />
           </node>
           <node role="defaultBlock:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1238853360777">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1238853597976">
@@ -315,7 +315,7 @@
                               <link role="link:16" targetNodeId="1.1238852204892:2" />
                             </node>
                           </node>
-                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1238853618687" />
+                          <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552019" />
                         </node>
                       </node>
                     </node>
@@ -901,7 +901,7 @@
                           <link role="link:16" targetNodeId="1.1240700862985:2" />
                         </node>
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1240702273244" />
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="4296974352971552007" />
                     </node>
                   </node>
                   <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1240702325017">

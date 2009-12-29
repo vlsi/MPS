@@ -2212,8 +2212,8 @@
                       <link role="link:16" targetNodeId="1.1174557628217:0" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation:16" id="4759120547780397924">
-                    <node role="childNodes:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4759120547780397929">
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation:7" id="4296974352971551979">
+                    <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4759120547780397929">
                       <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="4759120547780397927">
                         <link role="concept:16" targetNodeId="1.1174554186090:0" resolveInfo="SymbolClassRegexp" />
                         <node role="leftExpression:16" type="jetbrains.mps.lang.actions.structure.NodeSetupFunction_SampleNode:23" id="4759120547780397926" />

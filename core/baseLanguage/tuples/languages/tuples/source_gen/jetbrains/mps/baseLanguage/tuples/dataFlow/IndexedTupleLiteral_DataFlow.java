@@ -20,7 +20,7 @@ public class IndexedTupleLiteral_DataFlow extends DataFlowBuilder {
       }
     } else {
       for (SNode mbr : SLinkOperations.getTargets(_context.getNode(), "component", true)) {
-        _context.getBuilder().build((SNode)mbr);
+        _context.getBuilder().build((SNode) mbr);
       }
     }
   }

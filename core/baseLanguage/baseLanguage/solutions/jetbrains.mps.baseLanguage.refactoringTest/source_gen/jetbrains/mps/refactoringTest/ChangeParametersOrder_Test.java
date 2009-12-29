@@ -33,9 +33,9 @@ public class ChangeParametersOrder_Test extends BaseTransformationTest {
       ChangeMethodSignatureParameters params = new ChangeMethodSignatureParameters(SNodeOperations.cast(this.getNodeById("1230052943949"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       SNode p1 = ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).first();
       SNode p0 = ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).getElement(1);
-      SLinkOperations.removeAllChildren(params.getDeclaration(), "parameter");
-      SLinkOperations.addChild(params.getDeclaration(), "parameter", p0);
-      SLinkOperations.addChild(params.getDeclaration(), "parameter", p1);
+      ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).clear();
+      ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).addElement(p0);
+      ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).addElement(p1);
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(this.getNodeById("1230052943949"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       List<SNode> ussages = ListSequence.fromList(new ArrayList<SNode>());
       ListSequence.fromList(ussages).addElement(SNodeOperations.cast(this.getNodeById("1230052943965"), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"));

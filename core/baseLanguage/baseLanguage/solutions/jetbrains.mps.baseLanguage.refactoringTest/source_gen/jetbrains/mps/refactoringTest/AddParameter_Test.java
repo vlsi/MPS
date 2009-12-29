@@ -8,11 +8,11 @@ import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureParameters;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.ChangeMethodSignatureRefactoring;
 import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 
@@ -30,7 +30,7 @@ public class AddParameter_Test extends BaseTransformationTest {
       this.addNodeById("1230052943764");
       this.addNodeById("1230052943773");
       ChangeMethodSignatureParameters params = new ChangeMethodSignatureParameters(SNodeOperations.cast(this.getNodeById("1230052943766"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
-      SLinkOperations.addChild(params.getDeclaration(), "parameter", new _Quotations.QuotationClass_1().createNode());
+      ListSequence.fromList(SLinkOperations.getTargets(params.getDeclaration(), "parameter", true)).addElement(new _Quotations.QuotationClass_1().createNode());
       ChangeMethodSignatureRefactoring ref = new ChangeMethodSignatureRefactoring(params, SNodeOperations.cast(this.getNodeById("1230052943766"), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"));
       ref.doRefactoring();
       Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052943765"), "jetbrains.mps.baseLanguage.structure.ClassConcept")), ListSequence.fromListAndArray(new ArrayList<SNode>(), SNodeOperations.cast(this.getNodeById("1230052943774"), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
