@@ -68,7 +68,7 @@ public class ClassifierType_Behavior {
         SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassCreator", null);
         SLinkOperations.setTarget(creator, "baseMethodDeclaration", ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).first(), false);
         for (SNode typeParm : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true))) {
-          SLinkOperations.addChild(creator, "typeParameter", SNodeOperations.copyNode(typeParm));
+          ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).addElement(SNodeOperations.copyNode(typeParm));
         }
         return creator;
       }

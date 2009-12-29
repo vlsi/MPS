@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ReplaceAssertWithIf_Intention extends BaseIntention implements Intention {
@@ -55,7 +56,7 @@ public class ReplaceAssertWithIf_Intention extends BaseIntention implements Inte
     SNode notExpr = SLinkOperations.setNewChild(ifStatement, "condition", "jetbrains.mps.baseLanguage.structure.NotExpression");
     SLinkOperations.setTarget(notExpr, "expression", SLinkOperations.getTarget(node, "condition", true), true);
     SLinkOperations.setNewChild(ifStatement, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
-    SLinkOperations.insertChildFirst(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", throwStatement);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", true)).insertElement(0, throwStatement);
     // replace assert with if 
     SNodeOperations.replaceWithAnother(node, ifStatement);
   }

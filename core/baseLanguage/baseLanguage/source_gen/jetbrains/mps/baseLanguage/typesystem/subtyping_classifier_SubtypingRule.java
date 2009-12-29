@@ -40,7 +40,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
       for (SNode typeParam : SLinkOperations.getTargets(supertypeCopy, "parameter", true)) {
         for (SNode typeVar : SNodeOperations.getDescendants(typeParam, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", true, new String[]{})) {
           int i = ListSequence.fromList(SLinkOperations.getTargets(classifier, "typeVariableDeclaration", true)).indexOf(SLinkOperations.getTarget(typeVar, "typeVariableDeclaration", false));
-          if (i < 0 || i >= SLinkOperations.getCount(clt, "parameter")) {
+          if (i < 0 || i >= ListSequence.fromList(SLinkOperations.getTargets(clt, "parameter", true)).count()) {
             ((SNode) supertypeCopy).removeChild(typeParam);
             continue;
           }
@@ -53,7 +53,7 @@ public class subtyping_classifier_SubtypingRule extends SubtypingRule_Runtime im
     ListSequence.fromList(supertypes).addElement(clt);
     for (SNode supertype : supertypes) {
       SNode erasure = SNodeOperations.cast(SNodeOperations.copyNode(supertype), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-      if (SLinkOperations.getCount(erasure, "parameter") > 0) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(erasure, "parameter", true)).count() > 0) {
         for (SNode parameter : SLinkOperations.getTargets(erasure, "parameter", true)) {
           SNodeOperations.deleteNode(parameter);
         }

@@ -17,6 +17,7 @@ import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
@@ -111,7 +112,7 @@ public class ClassifierType_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition9185_0(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "parameter") > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).count() > 0;
   }
 
   public static class _Inline9185_0 extends InlineCellProvider {

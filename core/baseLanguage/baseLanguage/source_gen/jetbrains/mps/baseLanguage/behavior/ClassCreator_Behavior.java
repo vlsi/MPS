@@ -6,6 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 
 public class ClassCreator_Behavior {
@@ -17,7 +18,7 @@ public class ClassCreator_Behavior {
     SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(classifierType, "classifier", classConcept, false);
     for (SNode typeParameter : SLinkOperations.getTargets(thisNode, "typeParameter", true)) {
-      SLinkOperations.addChild(classifierType, "parameter", SNodeOperations.copyNode(typeParameter));
+      ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).addElement(SNodeOperations.copyNode(typeParameter));
     }
     return classifierType;
   }

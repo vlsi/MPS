@@ -54,7 +54,7 @@ public class Classifier_Behavior {
   }
 
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    return SLinkOperations.getCount(thisNode, "staticField") > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticField", true)).count() > 0;
   }
 
   public static String call_getNestedName_8540045600162184125(SNode thisNode) {

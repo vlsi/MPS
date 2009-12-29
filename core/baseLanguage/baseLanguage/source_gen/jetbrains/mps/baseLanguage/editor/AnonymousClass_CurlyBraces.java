@@ -35,12 +35,12 @@ public class AnonymousClass_CurlyBraces {
         SLinkOperations.setTarget(classCreator, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
         ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            SLinkOperations.addChild(classCreator, "typeParameter", it);
+            ListSequence.fromList(SLinkOperations.getTargets(classCreator, "typeParameter", true)).addElement(it);
           }
         });
         ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).visitAll(new IVisitor<SNode>() {
           public void visit(SNode it) {
-            SLinkOperations.addChild(classCreator, "actualArgument", it);
+            ListSequence.fromList(SLinkOperations.getTargets(classCreator, "actualArgument", true)).addElement(it);
           }
         });
       } else {

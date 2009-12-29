@@ -23,7 +23,7 @@ public class ExtractMethodWithExitPoints extends ExtractMethodFromStatementsRefa
     SNode ifNode = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
     SLinkOperations.setTarget(ifNode, "condition", methodCall, true);
     SLinkOperations.setTarget(ifNode, "ifTrue", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
-    SLinkOperations.addChild(SLinkOperations.getTarget(ifNode, "ifTrue", true), "statement", ListSequence.fromList(this.myAnalyzer.getIntenalExitPoints()).first());
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifNode, "ifTrue", true), "statement", true)).addElement(ListSequence.fromList(this.myAnalyzer.getIntenalExitPoints()).first());
     SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(this.myStatements).first(), ifNode);
     for (SNode statement : ListSequence.fromList(this.myStatements)) {
       SNodeOperations.deleteNode(statement);

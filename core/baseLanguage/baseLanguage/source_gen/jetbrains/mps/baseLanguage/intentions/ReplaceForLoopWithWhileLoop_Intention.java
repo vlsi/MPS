@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ReplaceForLoopWithWhileLoop_Intention extends BaseIntention implements Intention {
   public ReplaceForLoopWithWhileLoop_Intention() {
@@ -57,7 +58,7 @@ public class ReplaceForLoopWithWhileLoop_Intention extends BaseIntention impleme
     // adjust iteration 
     SNode iterStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SLinkOperations.setTarget(iterStatement, "expression", SLinkOperations.getTarget(node, "iteration", true), true);
-    SLinkOperations.addChild(SLinkOperations.getTarget(whileStatement, "body", true), "statement", iterStatement);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(whileStatement, "body", true), "statement", true)).addElement(iterStatement);
     // adjust exit condition 
     SLinkOperations.setTarget(whileStatement, "condition", SLinkOperations.getTarget(node, "condition", true), true);
   }

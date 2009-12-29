@@ -234,7 +234,7 @@ public class InlineMethodRefactoring {
   private boolean isNameGood(SNode statement, final String name) {
     SNode list = SNodeOperations.cast(SNodeOperations.getParent(statement), "jetbrains.mps.baseLanguage.structure.StatementList");
     int start = ListSequence.fromList(SLinkOperations.getTargets(list, "statement", true)).indexOf(statement);
-    for (int i = start; i < SLinkOperations.getCount(list, "statement"); i++) {
+    for (int i = start; i < ListSequence.fromList(SLinkOperations.getTargets(list, "statement", true)).count(); i++) {
       SNode st = ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(list, "statement", true)).toListSequence()).getElement(i);
       for (SNode declaration : ListSequence.fromList(SNodeOperations.getDescendants(st, "jetbrains.mps.baseLanguage.structure.VariableDeclaration", false, new String[]{}))) {
         if (SPropertyOperations.getString(declaration, "name").equals(name)) {

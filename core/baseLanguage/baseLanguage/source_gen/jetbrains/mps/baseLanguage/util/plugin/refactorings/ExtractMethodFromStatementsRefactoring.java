@@ -27,7 +27,7 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
     SNode body = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
     this.modifyPartToExtract();
     Map<SNode, SNode> mapping = MapSequence.fromMap(new HashMap<SNode, SNode>());
-    SLinkOperations.addAll(body, "statement", CopyUtil.copy(this.myStatements, mapping));
+    ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addSequence(ListSequence.fromList(CopyUtil.copy(this.myStatements, mapping)));
     List<SNode> params = new ArrayList<SNode>();
     Map<SNode, SNode> inputToParams = this.createInputParameters(body, params);
     SNode newMethod = this.createNewMethod(type, params, body);

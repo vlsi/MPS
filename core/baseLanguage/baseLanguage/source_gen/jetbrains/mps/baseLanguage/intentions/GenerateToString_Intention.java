@@ -80,7 +80,7 @@ public class GenerateToString_Intention extends GenerateIntention implements Int
     } else {
       rightmostExpression = new _Quotations.QuotationClass_8().createNode(currentExpression);
     }
-    SNode method = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_22().createNode(rightmostExpression));
+    SNode method = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new _Quotations.QuotationClass_22().createNode(rightmostExpression));
     editorContext.select(method);
   }
 

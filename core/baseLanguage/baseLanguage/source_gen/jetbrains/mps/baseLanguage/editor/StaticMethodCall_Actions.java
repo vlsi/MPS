@@ -34,7 +34,7 @@ public class StaticMethodCall_Actions {
         SNode localStaticMethodCall = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall");
         SLinkOperations.setTarget(localStaticMethodCall, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
         for (SNode actualArgument : ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true))) {
-          SLinkOperations.addChild(localStaticMethodCall, "actualArgument", actualArgument);
+          ListSequence.fromList(SLinkOperations.getTargets(localStaticMethodCall, "actualArgument", true)).addElement(actualArgument);
         }
       }
     }

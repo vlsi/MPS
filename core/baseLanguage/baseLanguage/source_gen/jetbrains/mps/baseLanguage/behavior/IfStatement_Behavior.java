@@ -20,10 +20,10 @@ public class IfStatement_Behavior {
     if (SNodeOperations.isInstanceOf(ifFalseStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
       SLinkOperations.setTarget(result, "statementList", SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true)), true);
     } else {
-      SLinkOperations.addChild(SLinkOperations.getTarget(result, "statementList", true), "statement", SNodeOperations.copyNode(ifFalseStatement));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(result, "statementList", true), "statement", true)).addElement(SNodeOperations.copyNode(ifFalseStatement));
     }
     SNodeOperations.detachNode(SLinkOperations.getTarget(thisNode, "ifFalseStatement", true));
-    SLinkOperations.addChild(thisNode, "elsifClauses", result);
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "elsifClauses", true)).addElement(result);
   }
 
   public static boolean call_isGuardIf_1237547453258(SNode thisNode) {

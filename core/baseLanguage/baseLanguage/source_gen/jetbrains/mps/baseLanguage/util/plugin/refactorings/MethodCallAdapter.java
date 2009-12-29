@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class MethodCallAdapter {
   @NotNull
@@ -50,10 +51,10 @@ public class MethodCallAdapter {
 
   public void addArgument(SNode arguemnt) {
     if (SNodeOperations.isInstanceOf(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall")) {
-      SLinkOperations.addChild(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", arguemnt);
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.structure.IMethodCall"), "actualArgument", true)).addElement(arguemnt);
     }
     if (SNodeOperations.isInstanceOf(this.myMethodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation")) {
-      SLinkOperations.addChild(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"), "actualArgument", arguemnt);
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.myMethodCall, "jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation"), "actualArgument", true)).addElement(arguemnt);
     }
   }
 

@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ClassStaticContainerProcessor extends AbstractStaticContainerProcessor {
   public ClassStaticContainerProcessor(SNode node) {
@@ -21,7 +22,7 @@ public class ClassStaticContainerProcessor extends AbstractStaticContainerProces
     SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
     SLinkOperations.setTarget(call, "classConcept", SNodeOperations.cast(this.myStaticContainer, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
     SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
-    SLinkOperations.addAll(call, "actualArgument", arguments);
+    ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addSequence(ListSequence.fromList(arguments));
     return call;
   }
 }

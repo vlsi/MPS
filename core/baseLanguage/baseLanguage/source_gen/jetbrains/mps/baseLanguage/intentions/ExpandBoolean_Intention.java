@@ -64,8 +64,8 @@ public class ExpandBoolean_Intention extends BaseIntention implements Intention 
     // 
     SLinkOperations.setTarget(ifNode, "condition", SNodeOperations.copyNode(node), true);
     // 
-    SLinkOperations.insertChildFirst(ifTrue, "statement", SNodeOperations.copyNode(statementNode));
-    SLinkOperations.insertChildFirst(ifFalse, "statement", SNodeOperations.copyNode(statementNode));
+    ListSequence.fromList(SLinkOperations.getTargets(ifTrue, "statement", true)).insertElement(0, SNodeOperations.copyNode(statementNode));
+    ListSequence.fromList(SLinkOperations.getTargets(ifFalse, "statement", true)).insertElement(0, SNodeOperations.copyNode(statementNode));
     // 
     final SNode fake_node = node;
     Iterable<SNode> refs;

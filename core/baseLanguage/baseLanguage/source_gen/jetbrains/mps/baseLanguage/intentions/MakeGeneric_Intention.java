@@ -6,6 +6,7 @@ import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class MakeGeneric_Intention extends BaseIntention implements Intention {
@@ -40,7 +41,7 @@ public class MakeGeneric_Intention extends BaseIntention implements Intention {
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SLinkOperations.getCount(node, "typeVariableDeclaration") == 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() == 0;
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {

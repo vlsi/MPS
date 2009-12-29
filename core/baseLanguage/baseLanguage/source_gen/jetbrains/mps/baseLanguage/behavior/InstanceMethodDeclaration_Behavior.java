@@ -44,7 +44,7 @@ public class InstanceMethodDeclaration_Behavior {
     }
     while (superclass != null) {
       for (SNode methodCandidate : ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(superclass, "classifier", false), "method", true))) {
-        if (SPropertyOperations.getString(methodCandidate, "name").equals(SPropertyOperations.getString(thisNode, "name")) && SLinkOperations.getCount(methodCandidate, "parameter") == SLinkOperations.getCount(thisNode, "parameter")) {
+        if (SPropertyOperations.getString(methodCandidate, "name").equals(SPropertyOperations.getString(thisNode, "name")) && ListSequence.fromList(SLinkOperations.getTargets(methodCandidate, "parameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count()) {
           if (BaseMethodDeclaration_Behavior.call_hasSameSignature_1213877350435(methodCandidate, thisNode)) {
             return methodCandidate;
           }

@@ -41,7 +41,7 @@ public class TryCatchFinally_Intention extends SurroundWithIntention implements 
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
     SNodeOperations.insertNextSiblingChild(node, tryStatement);
     for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
-      SLinkOperations.addChild(SLinkOperations.getTarget(tryStatement, "body", true), "statement", SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(tryStatement, "body", true), "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
     }
     SLinkOperations.addNewChild(tryStatement, "catchClause", "jetbrains.mps.baseLanguage.structure.CatchClause");
     editorContext.select(SLinkOperations.getTarget(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(tryStatement, "catchClause", true)).first(), "throwable", true), "type", true));

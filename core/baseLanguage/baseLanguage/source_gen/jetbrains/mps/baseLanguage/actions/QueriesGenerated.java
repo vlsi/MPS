@@ -156,11 +156,11 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_1177505734541(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SLinkOperations.getCount(_context.getSourceNode(), "parameter") == 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "parameter", true)).count() == 0;
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_GenericDeclaration_1177506104970(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SLinkOperations.getCount(_context.getSourceNode(), "typeVariableDeclaration") == 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeVariableDeclaration", true)).count() == 0;
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_BreakStatement_1199466283835(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -234,7 +234,7 @@ __switch__:
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClassCreator_1212701643023(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return SLinkOperations.getCount(_context.getSourceNode(), "typeParameter") == 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeParameter", true)).count() == 0;
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_ClassifierType_1214840273030(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -423,7 +423,7 @@ __switch__:
         SNodeOperations.deleteNode(expression);
       } else {
       }
-      SLinkOperations.addChild(SLinkOperations.setNewChild(_context.getNewNode(), "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.setNewChild(_context.getNewNode(), "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
     }
   }
 
@@ -455,13 +455,13 @@ __switch__:
 
   public static void nodeFactory_NodeSetup_TryCatchStatement_1183997671101(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement")) {
-      SLinkOperations.addChild(SLinkOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
     }
   }
 
   public static void nodeFactory_NodeSetup_TryStatement_1183997675652(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement")) {
-      SLinkOperations.addChild(SLinkOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
     }
   }
 
@@ -486,13 +486,13 @@ __switch__:
 
   public static void nodeFactory_NodeSetup_ForeachStatement_1188991457471(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement")) {
-      SLinkOperations.addChild(SLinkOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
     }
   }
 
   public static void nodeFactory_NodeSetup_ForStatement_1188991552885(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement")) {
-      SLinkOperations.addChild(SLinkOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.setNewChild(_context.getNewNode(), "body", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
     }
   }
 
@@ -507,7 +507,7 @@ __switch__:
 
   public static void nodeFactory_NodeSetup_BlockStatement_1205764418296(final IOperationContext operationContext, final NodeSetupContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement")) {
-      SLinkOperations.addChild(SLinkOperations.setNewChild(_context.getNewNode(), "statements", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.setNewChild(_context.getNewNode(), "statements", "jetbrains.mps.baseLanguage.structure.StatementList"), "statement", true)).addElement(SNodeOperations.cast(_context.getSampleNode(), "jetbrains.mps.baseLanguage.structure.Statement"));
     }
   }
 
@@ -1025,7 +1025,7 @@ __switch__:
                 SLinkOperations.setTarget(newNode, "baseMethodDeclaration", (item), false);
                 if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation")) {
                   for (SNode argument : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation"), "actualArgument", true))) {
-                    SLinkOperations.addChild(newNode, "actualArgument", argument);
+                    ListSequence.fromList(SLinkOperations.getTargets(newNode, "actualArgument", true)).addElement(argument);
                   }
                 }
                 return newNode;
@@ -1070,7 +1070,7 @@ __switch__:
                 SLinkOperations.setTarget(newNode, "baseMethodDeclaration", (item), false);
                 if (SNodeOperations.isInstanceOf(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation")) {
                   for (SNode argument : ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(_context.getCurrentTargetNode(), "jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation"), "actualArgument", true))) {
-                    SLinkOperations.addChild(newNode, "actualArgument", argument);
+                    ListSequence.fromList(SLinkOperations.getTargets(newNode, "actualArgument", true)).addElement(argument);
                   }
                 }
                 return newNode;
@@ -1295,7 +1295,7 @@ __switch__:
                   SNode method_copy = SNodeOperations.copyNode(method);
                   SPropertyOperations.set(method_copy, "isAbstract", "" + false);
                   SLinkOperations.setNewChild(method_copy, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
-                  SLinkOperations.addChild(SLinkOperations.getTarget(creator, "cls", true), "method", method_copy);
+                  ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(creator, "cls", true), "method", true)).addElement(method_copy);
                 }
                 // replace all type vars with Object 
                 List<SNode> typeVarRefs = SNodeOperations.getDescendants(SLinkOperations.getTarget(creator, "cls", true), "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{});
@@ -1379,7 +1379,7 @@ __switch__:
       IChildNodeSetter setter = new AbstractChildNodeSetter() {
         public SNode wrapNode(SNode nodeToWrap, SModel model) {
           SNode statementList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
-          SLinkOperations.addChild(statementList, "statement", nodeToWrap);
+          ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(nodeToWrap);
           return statementList;
         }
 
@@ -2032,7 +2032,7 @@ __switch__:
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode catchClause = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CatchClause", null);
-          SLinkOperations.insertChildFirst(_context.getSourceNode(), "catchClause", catchClause);
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "catchClause", true)).insertElement(0, catchClause);
           return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "catchClause", true)).first();
         }
 
@@ -2058,7 +2058,7 @@ __switch__:
           SNode body = SLinkOperations.getTarget(_context.getSourceNode(), "body", true);
           SLinkOperations.setTarget(tryStatement, "body", body, true);
           for (SNode catchClause : SLinkOperations.getTargets(_context.getSourceNode(), "catchClause", true)) {
-            SLinkOperations.addChild(tryStatement, "catchClause", catchClause);
+            ListSequence.fromList(SLinkOperations.getTargets(tryStatement, "catchClause", true)).addElement(catchClause);
           }
           SLinkOperations.setNewChild(tryStatement, "finallyBody", "jetbrains.mps.baseLanguage.structure.StatementList");
           SNodeOperations.replaceWithAnother(_context.getSourceNode(), tryStatement);
@@ -2585,12 +2585,12 @@ __switch__:
           final SNode cls = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnonymousClass", null);
           ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "actualArgument", true)).visitAll(new IVisitor<SNode>() {
             public void visit(SNode it) {
-              SLinkOperations.addChild(cls, "actualArgument", it);
+              ListSequence.fromList(SLinkOperations.getTargets(cls, "actualArgument", true)).addElement(it);
             }
           });
           ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeParameter", true)).visitAll(new IVisitor<SNode>() {
             public void visit(SNode it) {
-              SLinkOperations.addChild(cls, "typeParameter", it);
+              ListSequence.fromList(SLinkOperations.getTargets(cls, "typeParameter", true)).addElement(it);
             }
           });
           SLinkOperations.setTarget(cls, "classifier", SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(_context.getSourceNode(), "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
@@ -2747,7 +2747,7 @@ __switch__:
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           SNode type = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.Type", null);
-          SLinkOperations.addChild(_context.getSourceNode(), "typeParameter", type);
+          ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "typeParameter", true)).addElement(type);
           return type;
         }
 
@@ -3197,7 +3197,7 @@ __switch__:
           SNode body = SLinkOperations.getTarget(node, "body", true);
           SLinkOperations.setTarget(tryStatement, "body", body, true);
           for (SNode catchClause : SLinkOperations.getTargets(node, "catchClause", true)) {
-            SLinkOperations.addChild(tryStatement, "catchClause", catchClause);
+            ListSequence.fromList(SLinkOperations.getTargets(tryStatement, "catchClause", true)).addElement(catchClause);
           }
           SLinkOperations.setNewChild(tryStatement, "finallyBody", "jetbrains.mps.baseLanguage.structure.StatementList");
           SNodeOperations.replaceWithAnother(node, tryStatement);

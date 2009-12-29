@@ -79,7 +79,7 @@ public class CommentStatements_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SNode commentedStatementsBlock = SNodeOperations.insertNewPrevSiblingChild(ListSequence.fromList(CommentStatements_Action.this.nodes).first(), "jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock");
-      SLinkOperations.addAll(commentedStatementsBlock, "statement", CommentStatements_Action.this.nodes);
+      ListSequence.fromList(SLinkOperations.getTargets(commentedStatementsBlock, "statement", true)).addSequence(ListSequence.fromList(CommentStatements_Action.this.nodes));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "CommentStatements", t);
     }

@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class SurroundWithIfClause_Intention extends SurroundWithIntention implements Intention {
   public SurroundWithIfClause_Intention() {
@@ -48,7 +49,7 @@ public class SurroundWithIfClause_Intention extends SurroundWithIntention implem
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode ifStatement = SNodeOperations.replaceWithNewChild(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.IfStatement");
     SLinkOperations.setTarget(ifStatement, "condition", node, true);
-    SLinkOperations.removeAllChildren(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement");
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifStatement, "ifTrue", true), "statement", true)).clear();
     editorContext.select(SLinkOperations.getTarget(ifStatement, "ifTrue", true));
   }
 

@@ -84,7 +84,7 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
       }
       // Method creation begins 
       final SNode thisExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
-      SNode added = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_18().createNode(SLinkOperations.getTarget(field, "type", true), thisExpression, field, getterName));
+      SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new _Quotations.QuotationClass_18().createNode(SLinkOperations.getTarget(field, "type", true), thisExpression, field, getterName));
       lastAdded = added;
     }
     if (lastAdded != null) {

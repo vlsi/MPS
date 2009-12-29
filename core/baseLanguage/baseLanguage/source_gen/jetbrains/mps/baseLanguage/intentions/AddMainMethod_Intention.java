@@ -7,6 +7,7 @@ import jetbrains.mps.intentions.Intention;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AddMainMethod_Intention extends BaseIntention implements Intention {
@@ -46,7 +47,7 @@ public class AddMainMethod_Intention extends BaseIntention implements Intention 
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode methodNode = new _Quotations.QuotationClass_15().createNode();
-    SLinkOperations.addChild(node, "staticMethod", methodNode);
+    ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).addElement(methodNode);
     editorContext.select(methodNode);
   }
 

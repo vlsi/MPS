@@ -76,12 +76,12 @@ public class ReplaceConditionalWithIf_Intention extends BaseIntention implements
     // make the best - block ever 
     SNode falseBlockStmt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
     SLinkOperations.setNewChild(falseBlockStmt, "statements", "jetbrains.mps.baseLanguage.structure.StatementList");
-    SLinkOperations.insertChildFirst(SLinkOperations.getTarget(falseBlockStmt, "statements", true), "statement", SNodeOperations.copyNode(stmtNode));
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(falseBlockStmt, "statements", true), "statement", true)).insertElement(0, SNodeOperations.copyNode(stmtNode));
     // make if-statement and replace 
     SNode ifNode = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
     SLinkOperations.setTarget(ifNode, "condition", SLinkOperations.getTarget(node, "condition", true), true);
     SLinkOperations.setNewChild(ifNode, "ifTrue", "jetbrains.mps.baseLanguage.structure.StatementList");
-    SLinkOperations.insertChildFirst(SLinkOperations.getTarget(ifNode, "ifTrue", true), "statement", trueStmt);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifNode, "ifTrue", true), "statement", true)).insertElement(0, trueStmt);
     SLinkOperations.setTarget(ifNode, "ifFalseStatement", falseBlockStmt, true);
     SNodeOperations.replaceWithAnother(stmtNode, ifNode);
   }

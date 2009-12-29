@@ -34,7 +34,7 @@ public class RefactorAnonymousClasses_MigrationScript extends BaseMigrationScrip
 
       public void doUpdateInstanceNode(SNode node) {
         for (SNode parameter : SLinkOperations.getTargets(node, "parameter", true)) {
-          SLinkOperations.addChild(node, "actualArgument", parameter);
+          ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).addElement(parameter);
         }
         Map<SNode, SNode> map = new HashMap<SNode, SNode>();
         new MethodDeclarationsFixer().testAndFixMethodCall(node, map);

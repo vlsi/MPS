@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
@@ -36,7 +37,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
       return;
     }
     final SNode methodClassifier = SNodeOperations.cast(SLinkOperations.getTarget(anonymousClass, "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    if (!(SLinkOperations.getCount(anonymousClass, "typeParameter") == 0 || SLinkOperations.getCount(anonymousClass, "typeParameter") == SLinkOperations.getCount(SNodeOperations.getAncestor(SLinkOperations.getTarget(anonymousClass, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "typeVariableDeclaration"))) {
+    if (!(ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "typeParameter", true)).count() == 0 || ListSequence.fromList(SLinkOperations.getTargets(anonymousClass, "typeParameter", true)).count() == ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(SLinkOperations.getTarget(anonymousClass, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "typeVariableDeclaration", true)).count())) {
       {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();

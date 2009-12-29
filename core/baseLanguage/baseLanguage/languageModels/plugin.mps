@@ -151,8 +151,8 @@
                 <link role="link:16" targetNodeId="1.1177326540772:3" />
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddAllOperation:16" id="1205252133131">
-              <node role="childNodes:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1208352507174">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation:7" id="2590030827990111227">
+              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1208352507174">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="1208352507175" />
                 <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.ActionParameterReferenceOperation:23" id="1208352507912">
                   <link role="member:23" targetNodeId="1206096366578" resolveInfo="nodes" />

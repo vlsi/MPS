@@ -54,7 +54,7 @@ public class GenerateMainMethod_Intention extends GenerateIntention implements I
 
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     SNode methodNode = new _Quotations.QuotationClass_5().createNode();
-    SLinkOperations.addChild(node, "staticMethod", methodNode);
+    ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).addElement(methodNode);
     editorContext.select(SLinkOperations.getTarget(methodNode, "body", true));
   }
 

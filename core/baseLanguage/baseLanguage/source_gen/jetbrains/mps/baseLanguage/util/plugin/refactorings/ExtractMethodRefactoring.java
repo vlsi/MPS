@@ -8,10 +8,10 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.dataFlow.framework.instructions.Instruction;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -54,7 +54,7 @@ public abstract class ExtractMethodRefactoring {
     SNode methodDeclaration = declaration;
     SLinkOperations.setTarget(methodDeclaration, "returnType", returntType, true);
     SPropertyOperations.set(methodDeclaration, "name", this.myParameters.getName());
-    SLinkOperations.addAll(methodDeclaration, "parameter", params);
+    ListSequence.fromList(SLinkOperations.getTargets(methodDeclaration, "parameter", true)).addSequence(ListSequence.fromList(params));
     SLinkOperations.setTarget(methodDeclaration, "body", body, true);
     return methodDeclaration;
   }

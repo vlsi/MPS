@@ -31,7 +31,7 @@ public class check_parametersCount_NonTypesystemRule extends AbstractNonTypesyst
       } else {
         b = ListSequence.fromList(parameterDeclarations).count() == ListSequence.fromList(actualArguments).count();
       }
-      if (SLinkOperations.getCount(baseMethodDeclaration, "typeVariableDeclaration") > 0) {
+      if (ListSequence.fromList(SLinkOperations.getTargets(baseMethodDeclaration, "typeVariableDeclaration", true)).count() > 0) {
         for (SNode actual : actualArguments) {
           typeCheckingContext.addDependencyForCurrent(actual);
         }

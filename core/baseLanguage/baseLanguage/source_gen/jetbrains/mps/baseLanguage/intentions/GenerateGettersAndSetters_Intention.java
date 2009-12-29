@@ -109,7 +109,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
       if (!(getterIsAbsent.value)) {
         continue;
       }
-      lastAdded = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_20().createNode(SLinkOperations.getTarget(field, "type", true), thisExpression, field, getterName));
+      lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new _Quotations.QuotationClass_20().createNode(SLinkOperations.getTarget(field, "type", true), thisExpression, field, getterName));
 
       final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field);
       final Wrappers._boolean setterIsAbsent = new Wrappers._boolean(true);
@@ -123,7 +123,7 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
       if (!(setterIsAbsent.value)) {
         continue;
       }
-      lastAdded = SLinkOperations.addChild(classConcept, "method", new _Quotations.QuotationClass_21().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), SPropertyOperations.getString(field, "name"), setterName));
+      lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new _Quotations.QuotationClass_21().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), SPropertyOperations.getString(field, "name"), setterName));
     }
     if (lastAdded != null) {
       editorContext.select(lastAdded);

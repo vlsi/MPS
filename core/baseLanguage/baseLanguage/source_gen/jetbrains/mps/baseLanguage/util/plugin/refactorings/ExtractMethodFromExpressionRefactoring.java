@@ -33,11 +33,11 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
     if (SNodeOperations.isInstanceOf(typeNode, "jetbrains.mps.baseLanguage.structure.VoidType")) {
       SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
       SLinkOperations.setTarget(expressionStatement, "expression", SNodeOperations.cast(CopyUtil.copy(this.myExpression, mapping, true), "jetbrains.mps.baseLanguage.structure.Expression"), true);
-      SLinkOperations.addChild(body, "statement", expressionStatement);
+      ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(expressionStatement);
     } else {
       SNode ret = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
       SLinkOperations.setTarget(ret, "expression", SNodeOperations.cast(CopyUtil.copy(this.myExpression, mapping, true), "jetbrains.mps.baseLanguage.structure.Expression"), true);
-      SLinkOperations.addChild(body, "statement", ret);
+      ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(ret);
     }
     List<SNode> params = new ArrayList<SNode>();
     Map<SNode, SNode> inputToParams = this.createInputParameters(body, params);

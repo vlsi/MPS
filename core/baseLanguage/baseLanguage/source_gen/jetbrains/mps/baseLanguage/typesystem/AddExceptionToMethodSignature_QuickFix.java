@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.quickfix.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class AddExceptionToMethodSignature_QuickFix extends QuickFix_Runtime {
@@ -20,6 +21,6 @@ public class AddExceptionToMethodSignature_QuickFix extends QuickFix_Runtime {
       return;
     }
     SNode methodDecl = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    SLinkOperations.addChild(methodDecl, "throwsItem", SNodeOperations.cast(SNodeOperations.copyNode(((SNode) AddExceptionToMethodSignature_QuickFix.this.getField("throwableType")[0])), "jetbrains.mps.baseLanguage.structure.Type"));
+    ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "throwsItem", true)).addElement(SNodeOperations.cast(SNodeOperations.copyNode(((SNode) AddExceptionToMethodSignature_QuickFix.this.getField("throwableType")[0])), "jetbrains.mps.baseLanguage.structure.Type"));
   }
 }

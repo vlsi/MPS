@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
@@ -62,7 +63,7 @@ public class CreateMethodDeclaration_Intention extends BaseIntention implements 
     if (!(isSameClassifier)) {
       SLinkOperations.setTarget(method, "visibility", new _Quotations.QuotationClass_24().createNode(), true);
     }
-    SLinkOperations.addChild(classifier, "method", method);
+    ListSequence.fromList(SLinkOperations.getTargets(classifier, "method", true)).addElement(method);
     SNodeOperations.replaceWithAnother(node, new _Quotations.QuotationClass_23().createNode(method));
     if (isSameClassifier) {
       editorContext.selectWRTFocusPolicy(method);

@@ -4,8 +4,8 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 
@@ -26,7 +26,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
       newDeclaration = new _Quotations.QuotationClass_2().createNode(SNodeOperations.copyNode(this.getExpressionType()), this.getName());
     }
     SNode classConcept = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    SLinkOperations.addChild(classConcept, "field", newDeclaration);
+    ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).addElement(newDeclaration);
     SNode assignStatement = new _Quotations.QuotationClass_3().createNode(newDeclaration, SNodeOperations.copyNode(this.getExpression()));
     if (this.myFieldInitialization == FieldInitializationPlace.METHOD) {
       SNodeOperations.insertPrevSiblingChild(SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.Statement", false, false), SNodeOperations.copyNode(assignStatement));

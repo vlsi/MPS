@@ -416,11 +416,11 @@ public class InstanceMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition5704_5(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "annotation") > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).count() > 0;
   }
 
   private static boolean renderingCondition5704_6(SNode node, EditorContext editorContext, IScope scope) {
-    return SLinkOperations.getCount(node, "typeVariableDeclaration") > 0;
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
   }
 
   private static boolean renderingCondition5704_7(SNode node, EditorContext editorContext, IScope scope) {

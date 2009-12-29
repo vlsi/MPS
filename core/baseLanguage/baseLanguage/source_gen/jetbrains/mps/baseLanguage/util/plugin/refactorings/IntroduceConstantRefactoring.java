@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
@@ -13,7 +14,7 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
   public SNode doRefactoring() {
     SNode newDeclaration = new _Quotations.QuotationClass_5().createNode(SNodeOperations.copyNode(this.getExpressionType()), SNodeOperations.copyNode(this.getExpression()), this.getName());
     SNode classConcept = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    SLinkOperations.addChild(classConcept, "staticField", newDeclaration);
+    ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticField", true)).addElement(newDeclaration);
     SNodeOperations.replaceWithAnother(this.getExpression(), new _Quotations.QuotationClass_6().createNode(newDeclaration));
     return newDeclaration;
   }

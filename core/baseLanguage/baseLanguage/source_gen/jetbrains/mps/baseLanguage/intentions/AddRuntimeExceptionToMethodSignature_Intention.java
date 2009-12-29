@@ -77,7 +77,7 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode methodDecl = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
-    SLinkOperations.addChild(methodDecl, "throwsItem", SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "throwable", true)), "jetbrains.mps.baseLanguage.structure.Type"));
+    ListSequence.fromList(SLinkOperations.getTargets(methodDecl, "throwsItem", true)).addElement(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "throwable", true)), "jetbrains.mps.baseLanguage.structure.Type"));
   }
 
   public String getLocationString() {

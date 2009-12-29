@@ -39,7 +39,7 @@ public class IMethodCall_Behavior {
     if (SNodeOperations.getParent(expression) == thisNode && SNodeOperations.hasRole(expression, "jetbrains.mps.baseLanguage.structure.IMethodCall", "actualArgument")) {
       SNode method = SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false);
       int i = SNodeOperations.getIndexInParent(expression);
-      if (i < SLinkOperations.getCount(method, "parameter")) {
+      if (i < ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).count()) {
         SNode parameterDeclaration = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(i);
         SNode rawType = SNodeOperations.copyNode(SLinkOperations.getTarget(parameterDeclaration, "type", true));
         SNode instanceType = IMethodCall_Behavior.call_getInstanceType_8008512149545154471(thisNode);

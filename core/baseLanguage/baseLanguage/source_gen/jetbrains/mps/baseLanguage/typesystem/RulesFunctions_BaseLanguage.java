@@ -277,7 +277,7 @@ __switch__:
             {
               SNode componentType = SLinkOperations.getTarget(matchedNode_6, "componentType", true);
               final SNode matchedType = inference_matchTypeWithTypeVariables(typeCheckingContext, componentType, mmap);
-              if (SLinkOperations.getCount(mc, "actualArgument") == ListSequence.fromList(parameterDeclarations).count()) {
+              if (ListSequence.fromList(SLinkOperations.getTargets(mc, "actualArgument", true)).count() == ListSequence.fromList(parameterDeclarations).count()) {
                 // the actual parameter may appear to be an array instead of vararg 
                 final SNode actual = actualIterator.next();
                 {

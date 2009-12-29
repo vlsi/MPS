@@ -41,7 +41,7 @@ public class SurroundWithBrackets_Intention extends SurroundWithIntention implem
     List<SNode> selectedNodes = editorContext.getSelectedNodes();
     SNodeOperations.insertNextSiblingChild(node, blockStatement);
     for (SNode selectedNode : ListSequence.fromList(selectedNodes)) {
-      SLinkOperations.addChild(SLinkOperations.getTarget(blockStatement, "statements", true), "statement", SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(blockStatement, "statements", true), "statement", true)).addElement(SNodeOperations.getAncestor(selectedNode, "jetbrains.mps.baseLanguage.structure.Statement", true, false));
     }
     editorContext.select(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(blockStatement, "statements", true), "statement", true)).last());
   }

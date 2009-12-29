@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class AddFieldForUnUsedParameter_Intention extends BaseIntention implements Intention {
   public AddFieldForUnUsedParameter_Intention() {
@@ -59,7 +60,7 @@ public class AddFieldForUnUsedParameter_Intention extends BaseIntention implemen
     SNode field = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
     SPropertyOperations.set(field, "name", SPropertyOperations.getString(node, "name"));
     SLinkOperations.setTarget(field, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), true);
-    SLinkOperations.addChild(clazz, "field", field);
+    ListSequence.fromList(SLinkOperations.getTargets(clazz, "field", true)).addElement(field);
     SNode newStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SNode expr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
     SLinkOperations.setTarget(newStatement, "expression", expr, true);
@@ -72,7 +73,7 @@ public class AddFieldForUnUsedParameter_Intention extends BaseIntention implemen
     SNode paramRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterReference", null);
     SLinkOperations.setTarget(paramRef, "variableDeclaration", node, false);
     SLinkOperations.setTarget(expr, "rValue", paramRef, true);
-    SLinkOperations.addChild(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "body", true), "statement", newStatement);
+    ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "body", true), "statement", true)).addElement(newStatement);
   }
 
   public String getLocationString() {

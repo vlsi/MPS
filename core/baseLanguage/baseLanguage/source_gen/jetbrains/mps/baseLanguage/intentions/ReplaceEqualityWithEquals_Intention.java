@@ -9,6 +9,7 @@ import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ReplaceEqualityWithEquals_Intention extends BaseIntention implements Intention {
   public ReplaceEqualityWithEquals_Intention() {
@@ -52,7 +53,7 @@ public class ReplaceEqualityWithEquals_Intention extends BaseIntention implement
     SLinkOperations.setTarget(equalsExpression, "operand", leftExpr, true);
     SNode operation = SLinkOperations.setNewChild(equalsExpression, "operation", "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
     SLinkOperations.setTarget(operation, "baseMethodDeclaration", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "operation", true), "jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation"), "baseMethodDeclaration", false), false);
-    SLinkOperations.insertChildFirst(operation, "actualArgument", rightExpression);
+    ListSequence.fromList(SLinkOperations.getTargets(operation, "actualArgument", true)).insertElement(0, rightExpression);
     SNodeOperations.replaceWithAnother(node, equalsExpression);
   }
 

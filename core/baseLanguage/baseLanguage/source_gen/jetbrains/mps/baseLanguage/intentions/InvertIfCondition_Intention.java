@@ -94,7 +94,7 @@ public class InvertIfCondition_Intention extends BaseIntention implements Intent
     } else {
       newIfTrue = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
       if (ifFalse != null) {
-        SLinkOperations.addChild(newIfTrue, "statement", ifFalse);
+        ListSequence.fromList(SLinkOperations.getTargets(newIfTrue, "statement", true)).addElement(ifFalse);
       }
     }
     SLinkOperations.setTarget(node, "ifTrue", newIfTrue, true);

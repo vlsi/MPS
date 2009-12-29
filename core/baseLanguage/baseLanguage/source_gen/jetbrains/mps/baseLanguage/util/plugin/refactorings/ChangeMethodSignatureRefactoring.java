@@ -34,7 +34,7 @@ public class ChangeMethodSignatureRefactoring {
     this.changeParameters();
     SLinkOperations.removeAllChildren(this.myDeclaration, "throwsItem");
     for (SNode throwItem : ListSequence.fromList(SLinkOperations.getTargets(this.myParameters.getDeclaration(), "throwsItem", true))) {
-      SLinkOperations.addChild(this.myDeclaration, "throwsItem", SNodeOperations.copyNode(throwItem));
+      ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "throwsItem", true)).addElement(SNodeOperations.copyNode(throwItem));
     }
     for (SNode node : ListSequence.fromList(this.myUssages)) {
       MethodCallAdapter call = new MethodCallAdapter(node);
@@ -57,9 +57,9 @@ public class ChangeMethodSignatureRefactoring {
     for (SNode parameter : ListSequence.fromList(SLinkOperations.getTargets(this.myParameters.getDeclaration(), "parameter", true))) {
       int index = ListSequence.fromList(this.myParameters.getIdList()).indexOf(parameter.getId());
       if (index == -1) {
-        SLinkOperations.addChild(this.myDeclaration, "parameter", SNodeOperations.copyNode(parameter));
+        ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).addElement(SNodeOperations.copyNode(parameter));
       } else {
-        SLinkOperations.addChild(this.myDeclaration, "parameter", ListSequence.fromList(oldParams).getElement(index));
+        ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).addElement(ListSequence.fromList(oldParams).getElement(index));
         SNode newParam = ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).last();
         SPropertyOperations.set(newParam, "name", SPropertyOperations.getString(parameter, "name"));
         SLinkOperations.setTarget(newParam, "type", SLinkOperations.getTarget(parameter, "type", true), true);

@@ -41,7 +41,7 @@ public class QueriesUtil {
       if (SNodeOperations.isInstanceOf(oldNode, "jetbrains.mps.baseLanguage.structure.StaticMethodCall")) {
         SNode call = SNodeOperations.cast(oldNode, "jetbrains.mps.baseLanguage.structure.StaticMethodCall");
         for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true))) {
-          SLinkOperations.addChild(newNode, "actualArgument", SNodeOperations.copyNode(arg));
+          ListSequence.fromList(SLinkOperations.getTargets(newNode, "actualArgument", true)).addElement(SNodeOperations.copyNode(arg));
         }
       }
       for (SNode attribute : ListSequence.fromList(oldNode.getAllAttributes())) {

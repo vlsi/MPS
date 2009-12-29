@@ -180,7 +180,7 @@
                       <link role="link:16" targetNodeId="17.1188208488637:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1188208702362" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115927" />
                 </node>
               </node>
             </node>
@@ -298,7 +298,7 @@
                       <link role="link:16" targetNodeId="17.1109279881614:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1145916153779" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115954" />
                 </node>
               </node>
             </node>
@@ -878,7 +878,7 @@
                       <link role="link:16" targetNodeId="17.1188208488637:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1188210475925" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115949" />
                 </node>
               </node>
             </node>
@@ -919,7 +919,7 @@
                       <link role="link:16" targetNodeId="17.1109279881614:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1203413371743" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115948" />
                 </node>
               </node>
             </node>
@@ -976,7 +976,7 @@
                       <link role="link:16" targetNodeId="17.1164879685961:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1165410808122" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115963" />
                 </node>
               </node>
             </node>
@@ -1109,7 +1109,7 @@
                       <link role="link:16" targetNodeId="17.1188208488637:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1188210514747" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115955" />
                 </node>
               </node>
             </node>
@@ -1214,7 +1214,7 @@
                       <link role="link:16" targetNodeId="17.1109279881614:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1203413352312" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115931" />
                 </node>
               </node>
             </node>
@@ -1489,7 +1489,7 @@
                       <link role="link:16" targetNodeId="17.1188208488637:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1188210533007" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115968" />
                 </node>
               </node>
             </node>
@@ -1534,7 +1534,7 @@
                       <link role="link:16" targetNodeId="17.1109279881614:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1203413131118" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115941" />
                 </node>
               </node>
             </node>
@@ -1591,7 +1591,7 @@
                       <link role="link:16" targetNodeId="17.1164879685961:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1164890809760" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115958" />
                 </node>
               </node>
             </node>
@@ -1699,7 +1699,7 @@
                       <link role="link:16" targetNodeId="17.1188208488637:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1188210594849" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115928" />
                 </node>
               </node>
             </node>
@@ -1885,7 +1885,7 @@
                         <link role="link:16" targetNodeId="17.1188208488637:3" />
                       </node>
                     </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1188220825046" />
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115930" />
                   </node>
                 </node>
               </node>
@@ -1982,7 +1982,7 @@
                       <link role="link:16" targetNodeId="17.1188208488637:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1188220842778" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115937" />
                 </node>
               </node>
             </node>
@@ -3781,7 +3781,7 @@
                       <link role="link:16" targetNodeId="17.1188208488637:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1188210613763" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115950" />
                 </node>
               </node>
             </node>
@@ -4264,7 +4264,7 @@
                       <link role="link:16" targetNodeId="17.1188208488637:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1188208760868" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115959" />
                 </node>
               </node>
             </node>
@@ -4345,7 +4345,7 @@
                       <link role="link:16" targetNodeId="17.1109279881614:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1145916196636" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115967" />
                 </node>
               </node>
             </node>
@@ -4724,7 +4724,7 @@
                       <link role="link:16" targetNodeId="17.1109201940907:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1211505208496" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115952" />
                 </node>
               </node>
             </node>
@@ -6987,8 +6987,8 @@
                             <link role="link:16" targetNodeId="17.1068499141038:3" />
                           </node>
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1225269872606">
-                          <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1225269874047">
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2590030827990113737">
+                          <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1225269874047">
                             <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1225269873296">
                               <link role="variable:7" targetNodeId="1225269851116" resolveInfo="arg" />
                             </node>
@@ -8541,8 +8541,8 @@
                           <link role="link:16" targetNodeId="17.1068499141038:3" />
                         </node>
                       </node>
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1172062199707">
-                        <node role="childNode:16" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1172062202849">
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2590030827990115902">
+                        <node role="argument:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1172062202849">
                           <link role="variable:7" targetNodeId="1172062166211" resolveInfo="actualArgument" />
                         </node>
                       </node>
@@ -9917,8 +9917,8 @@
                   <link role="link:16" targetNodeId="17.1107880067339:3" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1197551845421">
-                <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1197551848160">
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2590030827990115823">
+                <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1197551848160">
                   <link role="variableDeclaration:3" targetNodeId="1197551596590" resolveInfo="g" />
                 </node>
               </node>
@@ -10071,8 +10071,8 @@
                   <link role="link:16" targetNodeId="17.1107880067339:3" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="1197551961034">
-                <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1197552109960">
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2590030827990115858">
+                <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1197552109960">
                   <link role="variableDeclaration:3" targetNodeId="1197551884289" resolveInfo="s" />
                 </node>
               </node>
@@ -10532,7 +10532,7 @@
                       <link role="link:16" targetNodeId="17.1188208488637:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1188210092006" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115960" />
                 </node>
               </node>
             </node>
@@ -10592,7 +10592,7 @@
                       <link role="link:16" targetNodeId="17.1109279881614:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1188206420412" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115938" />
                 </node>
               </node>
             </node>
@@ -12461,7 +12461,7 @@
                       <link role="link:16" targetNodeId="17.1212687122400:3" />
                     </node>
                   </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_GetCountOperation:16" id="1212699852050" />
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetSizeOperation:7" id="2590030827990115933" />
                 </node>
               </node>
             </node>
@@ -12848,7 +12848,7 @@
                   <link role="link:16" targetNodeId="17.1215091156086:3" />
                 </node>
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_RemoveAllChildrenOperation:16" id="1238595291353" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.ClearAllElementsOperation:7" id="2590030827990115991" />
             </node>
           </node>
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1215091405551">
@@ -15356,8 +15356,8 @@
                                 <link role="link:16" targetNodeId="17.1212687122400:3" />
                               </node>
                             </node>
-                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="7483212795959882568">
-                              <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7483212795959882576">
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2590030827990115884">
+                              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7483212795959882576">
                                 <link role="variableDeclaration:3" targetNodeId="7483212795959021667" resolveInfo="it" />
                               </node>
                             </node>
@@ -15393,8 +15393,8 @@
                                 <link role="link:16" targetNodeId="17.1068499141038:3" />
                               </node>
                             </node>
-                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.LinkList_AddChildOperation:16" id="7483212795959882539">
-                              <node role="childNode:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7483212795959882547">
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="2590030827990115807">
+                              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7483212795959882547">
                                 <link role="variableDeclaration:3" targetNodeId="7483212795959321308" resolveInfo="it" />
                               </node>
                             </node>

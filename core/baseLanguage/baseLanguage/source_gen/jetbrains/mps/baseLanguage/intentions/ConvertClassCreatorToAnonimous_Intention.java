@@ -49,10 +49,10 @@ public class ConvertClassCreatorToAnonimous_Intention extends BaseIntention impl
     SNode anonimousClassCreator = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
     SLinkOperations.setTarget(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "classifier", SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(node, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
     for (SNode typeParm : ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true))) {
-      SLinkOperations.addChild(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "typeParameter", typeParm);
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "typeParameter", true)).addElement(typeParm);
     }
     for (SNode typeParm : ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true))) {
-      SLinkOperations.addChild(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "typeParameter", typeParm);
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(anonimousClassCreator, "cls", true), "typeParameter", true)).addElement(typeParm);
     }
   }
 

@@ -54,7 +54,7 @@ public class ClassConcept_Behavior {
   }
 
   public static boolean virtual_hasStaticMemebers_1214840444586(SNode thisNode) {
-    return Classifier_Behavior.callSuper_hasStaticMemebers_1214840444586(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept") || SLinkOperations.getCount(thisNode, "staticMethod") > 0;
+    return Classifier_Behavior.callSuper_hasStaticMemebers_1214840444586(thisNode, "jetbrains.mps.baseLanguage.structure.ClassConcept") || ListSequence.fromList(SLinkOperations.getTargets(thisNode, "staticMethod", true)).count() > 0;
   }
 
   public static List<SNode> call_getMethodsToImplement_1221637841398(SNode thisNode) {

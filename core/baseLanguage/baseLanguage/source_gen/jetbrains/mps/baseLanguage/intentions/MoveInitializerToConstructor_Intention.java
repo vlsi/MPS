@@ -64,7 +64,7 @@ public class MoveInitializerToConstructor_Intention extends BaseIntention implem
     SLinkOperations.setTarget(SLinkOperations.setNewChild(lValue, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", node, false);
     // 
     for (SNode constr : ListSequence.fromList(SLinkOperations.getTargets(classNode, "constructor", true))) {
-      SLinkOperations.insertChildFirst(SLinkOperations.getTarget(constr, "body", true), "statement", SNodeOperations.copyNode(assignmentStmt));
+      ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(constr, "body", true), "statement", true)).insertElement(0, SNodeOperations.copyNode(assignmentStmt));
     }
     // 
     SNodeOperations.detachNode(SLinkOperations.getTarget(node, "initializer", true));
