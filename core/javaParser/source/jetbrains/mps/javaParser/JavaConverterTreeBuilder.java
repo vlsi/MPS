@@ -1027,12 +1027,12 @@ public class JavaConverterTreeBuilder {
 
     // SEE NOTE ON JDT FORCED OPTIMIZATIONS
     // If the condition is false, don't process the body
-    boolean removeBody = isOptimizedFalse(x.condition);
+   // boolean removeBody = isOptimizedFalse(x.condition);
 
     List<Statement> init = processStatements(x.initializations);
     jetbrains.mps.baseLanguage.structure.Expression expr = processExpressionRefl(x.condition);
     List<ExpressionStatement> incr = processExpressionStatements(x.increments);
-    Statement loopBody = removeBody ? null : processStatementRefl(x.action);
+    Statement loopBody = processStatementRefl(x.action);
     StatementList body = getStatementListFromStatement(loopBody);
     jetbrains.mps.baseLanguage.structure.ForStatement forStatement =
       jetbrains.mps.baseLanguage.structure.ForStatement.newInstance(myCurrentModel);
@@ -1058,15 +1058,13 @@ public class JavaConverterTreeBuilder {
     // SEE NOTE ON JDT FORCED OPTIMIZATIONS
     // If the condition is false, don't process the then statement
     // If the condition is false, don't process the else statement
-    boolean removeThen = isOptimizedFalse(x.condition);
-    boolean removeElse = isOptimizedTrue(x.condition);
+  //  boolean removeThen = isOptimizedFalse(x.condition);
+  //  boolean removeElse = isOptimizedTrue(x.condition);
 
     //SourceInfo info = makeSourceInfo(x);
     jetbrains.mps.baseLanguage.structure.Expression expr = processExpressionRefl(x.condition);
-    Statement thenStmt = removeThen ? null
-      : processStatementRefl(x.thenStatement);
-    Statement elseStmt = removeElse ? null
-      : processStatementRefl(x.elseStatement);
+    Statement thenStmt = processStatementRefl(x.thenStatement);
+    Statement elseStmt = processStatementRefl(x.elseStatement);
     jetbrains.mps.baseLanguage.structure.IfStatement result =
       jetbrains.mps.baseLanguage.structure.IfStatement.newInstance(myCurrentModel);
 
@@ -1196,11 +1194,11 @@ public class JavaConverterTreeBuilder {
   Statement processStatement(WhileStatement x) {
     // SEE NOTE ON JDT FORCED OPTIMIZATIONS
     // If the condition is false, don't process the body
-    boolean removeBody = isOptimizedFalse(x.condition);
+   // boolean removeBody = isOptimizedFalse(x.condition);
 
     // SourceInfo info = makeSourceInfo(x);
     jetbrains.mps.baseLanguage.structure.Expression loopTest = processExpressionRefl(x.condition);
-    Statement loopBody = removeBody ? null : processStatementRefl(x.action);
+    Statement loopBody = processStatementRefl(x.action);
     jetbrains.mps.baseLanguage.structure.WhileStatement result =
       jetbrains.mps.baseLanguage.structure.WhileStatement.newInstance(myCurrentModel);
     result.setCondition(loopTest);
@@ -1553,32 +1551,32 @@ public class JavaConverterTreeBuilder {
    * Returns <code>true</code> if JDT optimized the condition to
    * <code>false</code>.
    */
-  private static boolean isOptimizedFalse(Expression condition) {
-    if (condition != null) {
-      Constant cst = condition.optimizedBooleanConstant();
-      if (cst != Constant.NotAConstant) {
-        if (cst.booleanValue() == false) {
-          return true;
-        }
-      }
-    }
-    return false;
-  }
+//  private static boolean isOptimizedFalse(Expression condition) {
+//    if (condition != null) {
+//      Constant cst = condition.optimizedBooleanConstant();
+//      if (cst != Constant.NotAConstant) {
+//        if (cst.booleanValue() == false) {
+//          return true;
+//        }
+//      }
+//    }
+//    return false;
+//  }
 
   /**
    * Returns <code>true</code> if JDT optimized the condition to
    * <code>true</code>.
    */
-  private static boolean isOptimizedTrue(Expression condition) {
-    if (condition != null) {
-      Constant cst = condition.optimizedBooleanConstant();
-      if (cst != Constant.NotAConstant) {
-        if (cst.booleanValue() == true) {
-          return true;
-        }
-      }
-    }
-    return false;
-  }
+//  private static boolean isOptimizedTrue(Expression condition) {
+//    if (condition != null) {
+//      Constant cst = condition.optimizedBooleanConstant();
+//      if (cst != Constant.NotAConstant) {
+//        if (cst.booleanValue() == true) {
+//          return true;
+//        }
+//      }
+//    }
+//    return false;
+//  }
 }
 
