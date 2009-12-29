@@ -1,5 +1,6 @@
 package jetbrains.mps.javaParser;
 
+import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
 import jetbrains.mps.workbench.dialogs.project.BaseBindedDialog;
@@ -197,7 +198,7 @@ public class UIComponents {
       }
       Component listCellRendererComponent = super.getListCellRendererComponent(list, stringValue, index, isSelected, cellHasFocus);
       if (jar) {
-        setForeground(Color.CYAN);
+        setForeground(MPSColors.DARK_GRAY);
       }
       return listCellRendererComponent;
     }
