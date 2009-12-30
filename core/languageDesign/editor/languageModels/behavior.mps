@@ -5028,7 +5028,6 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1226339995687" />
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1226339995688" />
-      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="1226497978684" />
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1226492824000">
       <property name="name" value="canUseSpaces" />

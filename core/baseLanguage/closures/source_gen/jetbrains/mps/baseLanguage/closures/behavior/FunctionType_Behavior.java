@@ -58,6 +58,7 @@ public class FunctionType_Behavior {
     return "_FunctionTypes";
   }
 
+  @Deprecated
   public static String call_getSignature_1213877405047(SNode thisNode) {
     if (thisNode == null) {
       return "???invalid signature???";
@@ -79,6 +80,7 @@ public class FunctionType_Behavior {
     return buf.toString();
   }
 
+  @Deprecated
   public static void call_fillTypeSignature_1213877405099(SNode thisNode, SNode t, StringBuffer buf) {
     buf.append("_");
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.closures.structure.FunctionType")) {

@@ -461,7 +461,9 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1238269307298" />
-      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="1238269307299" />
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="1238269307299">
+        <link role="annotation:3" targetNodeId="2.~Deprecated" resolveInfo="Deprecated" />
+      </node>
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877231046">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1213877231047" />
@@ -3787,9 +3789,8 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="9011026350741578239" />
-      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="9011026350741578240">
-        <link role="annotation:3" targetNodeId="2.~Override" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="9011026350741578239">
+        <link role="concept:16" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
       </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="3508583411997837249">
@@ -4378,9 +4379,8 @@
           </node>
         </node>
       </node>
-      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="9011026350741579295" />
-      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="9011026350741579296">
-        <link role="annotation:3" targetNodeId="2.~Override" />
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="9011026350741579295">
+        <link role="concept:16" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
       </node>
     </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="1213877329516">

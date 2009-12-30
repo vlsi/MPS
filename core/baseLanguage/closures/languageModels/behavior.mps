@@ -799,7 +799,9 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1219155724375" />
-      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="1230288325037" />
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="1230288325037">
+        <link role="annotation:3" targetNodeId="2.~Deprecated" resolveInfo="Deprecated" />
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1213877405099">
       <property name="name" value="fillTypeSignature" />
@@ -1172,7 +1174,9 @@
         </node>
       </node>
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1219155723828" />
-      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="1230288393045" />
+      <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="1230288393045">
+        <link role="annotation:3" targetNodeId="2.~Deprecated" resolveInfo="Deprecated" />
+      </node>
     </node>
     <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="1230475757059">
       <property name="name" value="getResultType" />

@@ -13,6 +13,7 @@ public class Interface_Behavior {
   public static void init(SNode thisNode) {
   }
 
+  @Deprecated
   public static boolean call_isDescendant_1238269307226(SNode thisNode, SNode interfaceToCompare) {
     if (EqualUtil.equals(INamedConcept_Behavior.call_getFqName_1213877404258(thisNode), INamedConcept_Behavior.call_getFqName_1213877404258(interfaceToCompare))) {
       return true;
