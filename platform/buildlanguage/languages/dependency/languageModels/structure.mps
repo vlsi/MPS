@@ -71,6 +71,10 @@
     <property name="name:0" value="ProjectDescription" />
     <property name="rootable:0" value="true" />
     <link role="extends:0" targetNodeId="2.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="7857794759871997326">
+      <property name="name:0" value="basedir" />
+      <link role="dataType:0" targetNodeId="2.1082983041843:0" resolveInfo="string" />
+    </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1216745482257">
       <link role="intfc:0" targetNodeId="2.1169194658468:0" resolveInfo="INamedConcept" />
     </node>

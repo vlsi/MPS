@@ -261,7 +261,6 @@
     <node role="mappingLabel:2" type="jetbrains.mps.lang.generator.structure.MappingLabelDeclaration:2" id="7857794759871909108">
       <property name="name:2" value="ModuleCycleToCycle" />
       <link role="sourceConcept:2" targetNodeId="1.1216905728562:7" resolveInfo="ModuleCycle" />
-      <link role="targetConcept:2" targetNodeId="24.1216904128547:0" resolveInfo="Cycle" />
     </node>
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1234978497168">
       <property name="applyToConceptInheritors:2" value="false" />
@@ -4018,6 +4017,7 @@
   </node>
   <node type="jetbrains.mps.build.dependency.structure.ProjectDescription:0" id="1216902420773">
     <property name="name:0" value="compile.modules" />
+    <property name="basedir:0" value="." />
     <node role="cycle:0" type="jetbrains.mps.build.dependency.structure.Cycle:0" id="1217505524256">
       <property name="name:0" value="cycle.name" />
       <node role="dependency:0" type="jetbrains.mps.build.dependency.structure.CycleReference:0" id="7857794759871909110">
@@ -4820,6 +4820,39 @@
                 <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1220032500215" />
                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1220032511698">
                   <link role="baseMethodDeclaration:16" targetNodeId="20.1219770843283" resolveInfo="getPathWithoutMacro" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="propertyMacro$property_attribute$basedir:0" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="7857794759872078762">
+      <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="7857794759872078763">
+        <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7857794759872078764">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7857794759872079003">
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7857794759872100371">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7857794759872079007">
+                <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="7857794759872079006" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="7857794759872100370">
+                  <link role="property:16" targetNodeId="1.1229522370639:7" resolveInfo="scriptsFolder" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation:3" id="7857794759872100375" />
+            </node>
+            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7857794759872079005">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7857794759872100376">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7857794759872100378">
+                  <property name="value:3" value=".." />
+                </node>
+              </node>
+            </node>
+            <node role="ifFalseStatement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="7857794759872100379">
+              <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7857794759872100380">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7857794759872100381">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7857794759872100383">
+                    <property name="value:3" value="." />
+                  </node>
                 </node>
               </node>
             </node>

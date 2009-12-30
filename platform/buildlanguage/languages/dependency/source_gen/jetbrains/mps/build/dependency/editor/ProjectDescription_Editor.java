@@ -33,6 +33,7 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createVertical(editorContext, node);
     editorCell.setCellId("Collection_6967_0");
     editorCell.addEditorCell(this.createCollection_6967_1(editorContext, node));
+    editorCell.addEditorCell(this.createCollection_6967_7(editorContext, node));
     editorCell.addEditorCell(this.createCollection_6967_4(editorContext, node));
     editorCell.addEditorCell(this.createCollection_6967_3(editorContext, node));
     editorCell.addEditorCell(this.createCollection_6967_2(editorContext, node));
@@ -117,6 +118,18 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createCollection_6967_7(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
+    editorCell.setCellId("Collection_6967_7");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_6967_3(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_6967_1(editorContext, node));
+    return editorCell;
+  }
+
   private EditorCell createConstant_6967_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "description of");
     editorCell.setCellId("Constant_6967_0");
@@ -134,6 +147,13 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
   private EditorCell createConstant_6967_2(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "classpath:");
     editorCell.setCellId("Constant_6967_2");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_6967_3(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "basedir");
+    editorCell.setCellId("Constant_6967_3");
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -196,6 +216,24 @@ public class ProjectDescription_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_name");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createProperty_6967_1(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("basedir");
+    provider.setNoTargetText("<no basedir>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_basedir");
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

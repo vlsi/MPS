@@ -13,6 +13,7 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ProjectDescription extends BaseConcept implements INamedConcept {
   public static final String concept = "jetbrains.mps.build.dependency.structure.ProjectDescription";
+  public static final String BASEDIR = "basedir";
   public static final String NAME = "name";
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
@@ -23,6 +24,14 @@ public class ProjectDescription extends BaseConcept implements INamedConcept {
 
   public ProjectDescription(SNode node) {
     super(node);
+  }
+
+  public String getBasedir() {
+    return this.getProperty(ProjectDescription.BASEDIR);
+  }
+
+  public void setBasedir(String value) {
+    this.setProperty(ProjectDescription.BASEDIR, value);
   }
 
   public String getName() {

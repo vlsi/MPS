@@ -966,6 +966,42 @@
     <node role="default:21" type="jetbrains.mps.buildlanguage.structure.TargetReference:21" id="1217528681892">
       <link role="targetDeclaration:21" targetNodeId="1217528543877" resolveInfo="compile.all" />
     </node>
+    <node role="basedir:21" type="jetbrains.mps.buildlanguage.structure.FileName:21" id="7857794759871997466">
+      <node role="value:21" type="jetbrains.mps.buildlanguage.structure.StringLiteral:21" id="7857794759871997467">
+        <property name="value:21" value="" />
+        <node role="propertyMacro$property_attribute$value:21" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="7857794759872021242">
+          <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="7857794759872021243">
+            <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7857794759872021244">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7857794759872021245">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7857794759872021247">
+                  <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="7857794759872021246" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="7857794759872021251">
+                    <link role="property:16" targetNodeId="1.7857794759871997326:0" resolveInfo="basedir" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="nodeMacro$attribute:21" type="jetbrains.mps.lang.generator.structure.IfMacro:2" id="7857794759871997502">
+        <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition:2" id="7857794759871997503">
+          <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7857794759871997504">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7857794759871999870">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7857794759872021236">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7857794759871999872">
+                  <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="7857794759871999871" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="7857794759872021235">
+                    <link role="property:16" targetNodeId="1.7857794759871997326:0" resolveInfo="basedir" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.IsNotEmptyOperation:3" id="7857794759872021240" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1219772393477">
     <property name="name:2" value="reduce_PathHolder" />

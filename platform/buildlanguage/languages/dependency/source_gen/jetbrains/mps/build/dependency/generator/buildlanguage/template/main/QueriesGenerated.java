@@ -10,6 +10,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -49,6 +50,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1219773202905(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7857794759872021243(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "basedir");
   }
 
   public static Object referenceMacro_GetReferent_1216908641562(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -97,6 +102,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1219772493889(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "macro", false) != null);
+  }
+
+  public static boolean ifMacro_Condition_7857794759871997503(final IOperationContext operationContext, final IfMacroContext _context) {
+    return StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "basedir"));
   }
 
   public static SNode sourceNodeQuery_1219772645177(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

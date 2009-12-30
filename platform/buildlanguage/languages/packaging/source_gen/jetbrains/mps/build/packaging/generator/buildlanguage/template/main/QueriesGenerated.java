@@ -24,6 +24,7 @@ import jetbrains.mps.build.packaging.behavior.CompositePathComponent_Behavior;
 import jetbrains.mps.build.packaging.behavior.MPSLayout_Behavior;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.smodel.SNode;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -31,7 +32,6 @@ import jetbrains.mps.buildlanguage.behavior.PropertyReference_Behavior;
 import jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.project.IModule;
@@ -307,6 +307,14 @@ public class QueriesGenerated {
       result += IStringExpression_Behavior.call_getValue_1213877173054(v);
     }
     return result;
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7857794759872078763(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (StringUtils.isNotEmpty(SPropertyOperations.getString(_context.getNode(), "scriptsFolder"))) {
+      return "..";
+    } else {
+      return ".";
+    }
   }
 
   public static Object propertyMacro_GetPropertyValue_7878975119848007051(final IOperationContext operationContext, final PropertyMacroContext _context) {
