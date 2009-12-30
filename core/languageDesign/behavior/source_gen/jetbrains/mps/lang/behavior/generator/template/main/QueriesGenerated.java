@@ -319,4 +319,12 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1232967387673(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "parameter", true);
   }
+
+  public static Iterable sourceNodesQuery_3317934321613707903(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "annotation", true);
+  }
+
+  public static Iterable sourceNodesQuery_3317934321613716219(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "annotation", true);
+  }
 }
