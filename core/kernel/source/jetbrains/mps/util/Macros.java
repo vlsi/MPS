@@ -163,7 +163,7 @@ public abstract class Macros {
         String path = PathMacros.getInstance().getValue(macro);
         if (path == null) continue;
 
-        path = path.replace(SEPARATOR_CHAR, File.separatorChar);
+        path = FileUtil.getCanonicalPath(path).replace(SEPARATOR_CHAR, File.separatorChar);
         if (pathStartsWith(absolutePath, path)) {
           String relationalPath = shrink(absolutePath, path);
           fileName = "${" + macro + "}" + relationalPath;
