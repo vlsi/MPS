@@ -46,15 +46,15 @@ public class StronglyConnectedModules {
 
     Graph<IModuleDecorator<M>> g = new Graph<IModuleDecorator<M>>();
 
-    Map<IModule, IModuleDecorator<M>> map = new LinkedHashMap<IModule, IModuleDecorator<M>>();
+    Map<IModule, IModuleDecorator<M>> moduleToDecorator = new LinkedHashMap<IModule, IModuleDecorator<M>>();
     for (M m : modules) {
       IModuleDecorator<M> dec = decoratorBuilder.decorate(m);
-      map.put(m, dec);
+      moduleToDecorator.put(m, dec);
       g.add(dec);
     }
 
     for (IModuleDecorator<M> m : g.getData()) {
-      m.fill(map);
+      m.fill(moduleToDecorator);
     }
 
     List<Set<IModuleDecorator<M>>> sets = Graphs.getInstance().findStronglyConnectedComponents(g);
