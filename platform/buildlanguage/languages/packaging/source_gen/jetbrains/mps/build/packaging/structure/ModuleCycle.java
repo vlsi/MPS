@@ -13,6 +13,7 @@ import jetbrains.mps.project.GlobalScope;
 public class ModuleCycle extends BaseConcept {
   public static final String concept = "jetbrains.mps.build.packaging.structure.ModuleCycle";
   public static final String MODULE_REFERENCE = "moduleReference";
+  public static final String DEPENDENCY = "dependency";
 
   public ModuleCycle(SNode node) {
     super(node);
@@ -36,6 +37,26 @@ public class ModuleCycle extends BaseConcept {
 
   public void insertModuleReference(NewModuleReference prev, NewModuleReference node) {
     this.insertChild(prev, ModuleCycle.MODULE_REFERENCE, node);
+  }
+
+  public int getDependenciesCount() {
+    return this.getChildCount(ModuleCycle.DEPENDENCY);
+  }
+
+  public Iterator<ModuleCycleReference> dependencies() {
+    return this.children(ModuleCycleReference.class, ModuleCycle.DEPENDENCY);
+  }
+
+  public List<ModuleCycleReference> getDependencies() {
+    return this.getChildren(ModuleCycleReference.class, ModuleCycle.DEPENDENCY);
+  }
+
+  public void addDependency(ModuleCycleReference node) {
+    this.addChild(ModuleCycle.DEPENDENCY, node);
+  }
+
+  public void insertDependency(ModuleCycleReference prev, ModuleCycleReference node) {
+    this.insertChild(prev, ModuleCycle.DEPENDENCY, node);
   }
 
   public static ModuleCycle newInstance(SModel sm, boolean init) {

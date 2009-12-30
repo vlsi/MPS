@@ -953,6 +953,12 @@
       <property name="sourceCardinality:0" value="0..n" />
       <link role="target:0" targetNodeId="1217524754911:7" resolveInfo="ModuleReference" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7857794759871898776">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="dependency" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="7857794759871898774:7" resolveInfo="ModuleCycleReference" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1217524754911">
     <property name="name:0" value="NewModuleReference" />
@@ -1280,6 +1286,17 @@
     </node>
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="701559220729212651">
       <link role="intfc:0" targetNodeId="3.1169194658468:0" resolveInfo="INamedConcept" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7857794759871898774">
+    <property name="package:0" value="compile" />
+    <property name="name:0" value="ModuleCycleReference" />
+    <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7857794759871898775">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="cycle" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1216905728562:7" resolveInfo="ModuleCycle" />
     </node>
   </node>
 </model>
