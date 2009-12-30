@@ -871,6 +871,7 @@
               <link role="variableDeclaration" targetNodeId="7738261905749694803" resolveInfo="i" />
             </node>
             <node role="actualArgument" type="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression" id="7738261905749706217">
+              <property name="makeUnique" value="true" />
               <node role="innerClass" type="jetbrains.mps.baseLanguage.structure.ClassConcept" id="7738261905749706218">
                 <property name="name" value="MyComparator" />
                 <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility" id="7738261905749706219" />

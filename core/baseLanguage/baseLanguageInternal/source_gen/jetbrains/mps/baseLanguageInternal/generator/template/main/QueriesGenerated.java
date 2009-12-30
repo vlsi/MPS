@@ -36,6 +36,10 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5822086619725756114(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    if (SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression"), "makeUnique")) {
+      SNode context = ContextUtil.getContextForInnerClass(_context, SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression"), true);
+      return _context.createUniqueName(SPropertyOperations.getString(_context.getNode(), "name"), context);
+    }
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 

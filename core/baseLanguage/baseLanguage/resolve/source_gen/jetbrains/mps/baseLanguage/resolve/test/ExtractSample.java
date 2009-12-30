@@ -33,7 +33,7 @@ public class ExtractSample {
 
   public static void extrClass() {
     int[] i = new int[]{1,7,4,8};
-    Arrays.sort(i, new ExtractSample.MyComparator(1, 'c'));
+    Arrays.sort(i, new ExtractSample.MyComparator4379_0(1, 'c'));
   }
 
   public static int fromA4379_0(int i) {
@@ -45,8 +45,8 @@ public class ExtractSample {
     }
   }
 
-  public static class MyComparator implements Comparator {
-    public MyComparator(int i, char c) {
+  public static class MyComparator4379_0 implements Comparator {
+    public MyComparator4379_0(int i, char c) {
     }
 
     public int compare(Object p0, Object p1) {
