@@ -57,6 +57,14 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "basedir");
   }
 
+  public static Object referenceMacro_GetReferent_1216908641562(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CyclesToClasspaths");
+  }
+
+  public static Object referenceMacro_GetReferent_1216908738117(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CyclesToSourcePaths");
+  }
+
   public static Object referenceMacro_GetReferent_1216913346656(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "cycle", false), "CyclesToTargets");
   }
