@@ -112,7 +112,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     CommandProcessor commandProcessor = CommandProcessor.getInstance();
     commandProcessor.executeCommand(myProject, new Runnable() {
       public void run() {
-        final MessageView messageView = MessageView.SERVICE.getInstance(myProject);
+        final MessageView messageView = myProject.getComponent(jetbrains.mps.ide.messages.MessagesViewTool.class);
         messageView.runWhenInitialized(new Runnable() {
           public void run() {
             final Content content =
@@ -122,7 +122,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
             messageView.getContentManager().setSelectedContent(content);
             removeContents(content, tabDisplayName);
 
-            ToolWindowManager.getInstance(myProject).getToolWindow(ToolWindowId.MESSAGES_WINDOW).activate(null);
+            myProject.getComponent(jetbrains.mps.ide.messages.MessagesViewTool.class).getToolWindow().activate(null);
           }
         });
       }
@@ -314,7 +314,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
   }
 
   protected void removeContents(Content notToRemove, final String tabDisplayName) {
-    MessageView messageView = MessageView.SERVICE.getInstance(myProject);
+    MessageView messageView = myProject.getComponent(jetbrains.mps.ide.messages.MessagesViewTool.class);
     Content[] contents = messageView.getContentManager().getContents();
     for (Content content : contents) {
       LOG.assertTrue(content != null);

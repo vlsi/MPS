@@ -23,6 +23,8 @@ import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.ui.content.MessageView;
+import com.intellij.ui.content.ContentManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.MessageViewLoggingHandler;
@@ -67,7 +69,7 @@ import java.util.concurrent.atomic.AtomicInteger;
     )
   }
 )
-public class MessagesViewTool extends BaseProjectTool implements PersistentStateComponent<MyState>, INavigateableTool {
+public class MessagesViewTool extends BaseProjectTool implements PersistentStateComponent<MyState>, INavigateableTool, MessageView {
   private static final Logger LOG = Logger.getLogger(MessagesViewTool.class);
   private static final int MAX_MESSAGES_SIZE = 30000;
 
@@ -559,6 +561,16 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         return true;
       }
     };
+  }
+
+  @Override
+  public ContentManager getContentManager() {
+    return super.getContentManager();
+  }
+
+  @Override
+  public void runWhenInitialized(Runnable runnable) {
+    runnable.run();
   }
 
   public static class MyState {
