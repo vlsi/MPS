@@ -57,7 +57,7 @@ public class AddAnnotation_Intention extends BaseIntention implements Intention 
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode annotationInstance = SLinkOperations.addNewChild(node, "annotation", "jetbrains.mps.baseLanguage.structure.AnnotationInstance");
-    editorContext.select(annotationInstance);
+    editorContext.selectWRTFocusPolicy(annotationInstance);
   }
 
   public String getLocationString() {
