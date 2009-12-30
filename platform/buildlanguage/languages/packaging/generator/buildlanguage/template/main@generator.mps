@@ -5273,12 +5273,50 @@
                     </node>
                   </node>
                 </node>
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="654511802473317810">
+                  <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="654511802473317811">
+                    <property name="name:3" value="sortedModuleSet" />
+                    <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.SequenceType:7" id="654511802473317812">
+                      <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="654511802473317813">
+                        <link role="classifier:3" targetNodeId="16.~IModule" resolveInfo="IModule" />
+                      </node>
+                    </node>
+                    <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="654511802473317814">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="654511802473317815">
+                        <link role="variable:7" targetNodeId="1217436166400" resolveInfo="moduleSet" />
+                      </node>
+                      <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.SortOperation:7" id="654511802473317816">
+                        <node role="closure:7" type="jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral:3" id="654511802473317817">
+                          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="654511802473317818">
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="654511802473317819">
+                              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="654511802473317820">
+                                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="654511802473317821">
+                                  <link role="variableDeclaration:3" targetNodeId="654511802473317823" resolveInfo="it" />
+                                </node>
+                                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="654511802473317822">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="16.~IModule.getModuleFqName():java.lang.String" resolveInfo="getModuleFqName" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                          <node role="parameter:3" type="jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration:7" id="654511802473317823">
+                            <property name="name:7" value="it" />
+                            <node role="type:7" type="jetbrains.mps.baseLanguage.structure.WildCardType:3" id="654511802473317824" />
+                          </node>
+                        </node>
+                        <node role="ascending:7" type="jetbrains.mps.baseLanguage.collections.structure.SortDirection:7" id="654511802473317825">
+                          <property name="value:7" value="true" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="1217500983110">
                   <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="1217500983111">
                     <property name="name:7" value="imodule" />
                   </node>
-                  <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1217500994608">
-                    <link role="variable:7" targetNodeId="1217436166400" resolveInfo="moduleSet" />
+                  <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="654511802473317826">
+                    <link role="variableDeclaration:3" targetNodeId="654511802473317811" resolveInfo="sortedModuleSet" />
                   </node>
                   <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1217500983113">
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1217501006547">

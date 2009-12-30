@@ -14,6 +14,7 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1216906986545(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -54,14 +55,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_7857794759872021243(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "basedir");
-  }
-
-  public static Object referenceMacro_GetReferent_1216908641562(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CyclesToClasspaths");
-  }
-
-  public static Object referenceMacro_GetReferent_1216908738117(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CyclesToSourcePaths");
   }
 
   public static Object referenceMacro_GetReferent_1216913346656(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -161,7 +154,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1216910640246(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.dependency.structure.ModuleDescription", false, new String[]{});
+    return ListSequence.fromList(SNodeOperations.getDescendants(_context.getNode(), "jetbrains.mps.build.dependency.structure.ModuleDescription", false, new String[]{})).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return SPropertyOperations.getString(it, "name");
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_1216913286054(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

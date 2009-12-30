@@ -51,6 +51,7 @@ import java.util.Set;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.CopyUtil;
@@ -895,7 +896,12 @@ public class QueriesGenerated {
           ListSequence.fromList(SLinkOperations.getTargets(cycle, "dependency", true)).addElement(ref);
         }
         lastCycle = cycle;
-        for (IModule imodule : SetSequence.fromSet(moduleSet)) {
+        Iterable<IModule> sortedModuleSet = SetSequence.fromSet(moduleSet).sort(new ISelector<IModule, Comparable<?>>() {
+          public Comparable<?> select(IModule it) {
+            return it.getModuleFqName();
+          }
+        }, true);
+        for (IModule imodule : Sequence.fromIterable(sortedModuleSet)) {
           List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
           for (SNode module : ListSequence.fromList(modulesForIModule)) {
             SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.NewModuleReference", null);
