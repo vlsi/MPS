@@ -849,6 +849,61 @@
         </node>
       </node>
     </node>
+    <node role="alternativeIcon:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_GetAlternativeIcon:8" id="1382946559831552447">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1382946559831552448">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="5363084893386560588">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5363084893386560589">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="5363084893386562003">
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5363084893386562004">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5363084893386562013">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5363084893386562015">
+                    <property name="value:3" value="${language_descriptor}/icons/abstractException.png" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5363084893386562008">
+                <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node:8" id="5363084893386562007" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="5363084893386562012">
+                  <link role="property:16" targetNodeId="1.1075300953594:3" resolveInfo="abstractClass" />
+                </node>
+              </node>
+            </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5363084893386561999">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="5363084893386562001">
+                <property name="value:3" value="${language_descriptor}/icons/exceptionClass.png" />
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5363084893386827832">
+            <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node:8" id="5363084893386827831" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="5363084893386827836">
+              <link role="baseMethodDeclaration:16" targetNodeId="50.1213877355812" resolveInfo="isDescendant" />
+              <node role="actualArgument:16" type="jetbrains.mps.lang.smodel.structure.NodeRefExpression:16" id="5363084893386870380">
+                <link role="referentNode:16" targetNodeId="13.~Throwable" resolveInfo="Throwable" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1382946559831559076">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1382946559831559078">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1382946559831559085">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1382946559831559087">
+                <property name="value:3" value="${language_descriptor}/icons/abstractClass.png" />
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1382946559831559091">
+            <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node:8" id="1382946559831559088" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="1382946559831559095">
+              <link role="property:16" targetNodeId="1.1075300953594:3" resolveInfo="abstractClass" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1382946559831559097">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1382946559831559099" />
+        </node>
+      </node>
+    </node>
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104855712">
     <link role="concept:8" targetNodeId="1.1073063089578:3" resolveInfo="SuperMethodCall" />
@@ -2670,6 +2725,10 @@
   </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="5412515780383134208">
     <link role="concept:8" targetNodeId="1.1232461062092:3" resolveInfo="CommentedStatement" />
+  </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="5363084893386564700">
+    <property name="package:8" value="method" />
+    <link role="concept:8" targetNodeId="1.1068580123132:3" resolveInfo="BaseMethodDeclaration" />
   </node>
 </model>
 

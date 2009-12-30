@@ -54,7 +54,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1213107427185(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "canBeChild", true) != null) || (SLinkOperations.getTarget(_context.getNode(), "canBeParent", true) != null) || (SLinkOperations.getTarget(_context.getNode(), "canBeRoot", true) != null) || (SLinkOperations.getTarget(_context.getNode(), "defaultConcreteConcept", false) != null);
+    return (SLinkOperations.getTarget(_context.getNode(), "canBeChild", true) != null) || (SLinkOperations.getTarget(_context.getNode(), "canBeParent", true) != null) || (SLinkOperations.getTarget(_context.getNode(), "canBeRoot", true) != null) || (SLinkOperations.getTarget(_context.getNode(), "defaultConcreteConcept", false) != null) || (SLinkOperations.getTarget(_context.getNode(), "alternativeIcon", true) != null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1184608713100(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -181,6 +181,10 @@ public class QueriesGenerated {
     return BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME;
   }
 
+  public static Object propertyMacro_GetPropertyValue_1382946559831735873(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorConstants.GET_ALTERNATIVE_ICON_METHOD_NAME;
+  }
+
   public static Object referenceMacro_GetReferent_1198586190309(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode propertyConstraint = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.constraints.structure.NodePropertyConstraint", false, false);
     SNode property = SLinkOperations.getTarget(propertyConstraint, "applicableProperty", false);
@@ -227,6 +231,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_1227085790509(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "canBeRoot", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_1382946559831657773(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "alternativeIcon", true) != null);
   }
 
   public static boolean ifMacro_Condition_3216033926780887577(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -283,6 +291,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1238150662130(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "searchScopeFactory", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_1382946559831657791(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "alternativeIcon", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_3906442776579708815(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

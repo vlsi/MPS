@@ -18,6 +18,9 @@ package jetbrains.mps.ide.icons;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
+import jetbrains.mps.lang.structure.behavior.ConceptDeclaration_Behavior;
+import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.DevKit;
@@ -25,6 +28,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
@@ -62,6 +66,15 @@ public class IconManager {
     }
   };
 
+  public static boolean canUseAlternativeIcon(String conceptFqName) {
+    AbstractConceptDeclaration acd = SModelUtil_new.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
+    if (acd == null || !(acd instanceof ConceptDeclaration)) {
+      return false;
+    }
+    ConceptDeclaration concept = (ConceptDeclaration) acd;
+    return ModelConstraintsManager.getInstance().getAlternativeIconMethod(concept) != null;
+  }
+
   public static Icon getIconFor(@NotNull final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
       public Icon compute() {
@@ -73,7 +86,24 @@ public class IconManager {
 
 
         if (node.getConceptDeclarationAdapter() instanceof ConceptDeclaration) {
-          result = IconManager.getIconFor((ConceptDeclaration) node.getConceptDeclarationAdapter());
+          ConceptDeclaration concept = (ConceptDeclaration) node.getConceptDeclarationAdapter();
+          Method alternativeIconMethod = ModelConstraintsManager.getInstance().getAlternativeIconMethod(concept);
+          Icon icon = null;
+          try {
+            if (alternativeIconMethod != null) {
+              Object iconObject = alternativeIconMethod.invoke(null, node);
+              if (iconObject != null) {
+                String alternativeIconPath = (String) iconObject;
+                icon = getIconFor(concept, alternativeIconPath);
+              }
+            }
+          } catch (Throwable t) {
+          }
+          if (icon != null) {
+            result = icon;
+          } else {
+            result = IconManager.getIconFor(concept);            
+          }
         }
 
         if (result == null) {
@@ -98,21 +128,29 @@ public class IconManager {
   }
 
   private static Icon getIconFor(ConceptDeclaration conceptDeclaration) {
-    GlobalScope scope = GlobalScope.getInstance();
     while (conceptDeclaration != null) {
-      Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, scope);
-      if (language != null) {
-        String iconPath = Macros.languageDescriptor().expandPath(conceptDeclaration.getIconPath(), language.getDescriptorFile());
-        if (iconPath != null) {
-          Icon icon = loadIcon(iconPath, true);
-          if (icon != null) {
-            return icon;
-          }
-        }
+      Icon icon = getIconFor(conceptDeclaration, conceptDeclaration.getIconPath());
+      if (icon != null) {
+        return icon;
       }
       conceptDeclaration = conceptDeclaration.getExtends();
     }
 
+    return null;
+  }
+
+  private static Icon getIconFor(ConceptDeclaration conceptDeclaration, String path) {
+    IScope scope = GlobalScope.getInstance();
+    Language language = SModelUtil_new.getDeclaringLanguage(conceptDeclaration, scope);
+    if (language != null) {
+      String iconPath = Macros.languageDescriptor().expandPath(path, language.getDescriptorFile());
+      if (iconPath != null) {
+        Icon icon = loadIcon(iconPath, true);
+        if (icon != null) {
+          return icon;
+        }
+      }
+    }
     return null;
   }
 

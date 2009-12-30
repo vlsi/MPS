@@ -687,6 +687,27 @@ public class ModelConstraintsManager implements ApplicationComponent {
     return null;
   }
 
+  public Method getAlternativeIconMethod(ConceptDeclaration concept) {
+    String conceptFqName = concept.getConceptFQName();
+    String fqName = NameUtil.nodeFQName(concept);
+    String namespace = NameUtil.namespaceFromConcept(concept);
+    Language language = GlobalScope.getInstance().getLanguage(namespace);
+    String behaviorClassName = constraintsClassByConceptFqName(fqName);
+    Class behaviorClass = language.getClass(behaviorClassName);
+
+    if (behaviorClass == null) {
+      return null;
+    }
+
+    try {
+      Method method = behaviorClass.getMethod(BehaviorConstants.GET_ALTERNATIVE_ICON_METHOD_NAME, SNode.class);
+      return method;
+    } catch (NoSuchMethodException e) {
+      //it's ok
+    }
+    return null;
+  }
+
   public SNode getCanBeRootBlock(IOperationContext context, String conceptFqName) {
     Method m = getCanBeRootMethod(conceptFqName, context);
     ConceptConstraints constraints = getClassConstraints(context, m);

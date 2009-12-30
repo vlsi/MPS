@@ -26,6 +26,7 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
   public static final String CAN_BE_CHILD = "canBeChild";
   public static final String CAN_BE_ROOT = "canBeRoot";
   public static final String CAN_BE_PARENT = "canBeParent";
+  public static final String ALTERNATIVE_ICON = "alternativeIcon";
   public static final String PROPERTY = "property";
   public static final String REFERENT = "referent";
 
@@ -111,6 +112,14 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
 
   public void setCanBeParent(ConstraintFunction_CanBeAParent node) {
     super.setChild(ConceptConstraints.CAN_BE_PARENT, node);
+  }
+
+  public ConstraintFunction_GetAlternativeIcon getAlternativeIcon() {
+    return (ConstraintFunction_GetAlternativeIcon) this.getChild(ConstraintFunction_GetAlternativeIcon.class, ConceptConstraints.ALTERNATIVE_ICON);
+  }
+
+  public void setAlternativeIcon(ConstraintFunction_GetAlternativeIcon node) {
+    super.setChild(ConceptConstraints.ALTERNATIVE_ICON, node);
   }
 
   public int getPropertiesCount() {

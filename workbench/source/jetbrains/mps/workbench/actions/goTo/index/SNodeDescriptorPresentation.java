@@ -45,11 +45,6 @@ public class SNodeDescriptorPresentation extends BasePresentation {
 
   public Icon doGetIcon() {
     String conceptFqName = myNodeResult.getConceptFqName();
-    if (IconManager.canUseAlternativeIcon(conceptFqName)) {
-      SNode node = GlobalScope.getInstance().getModelDescriptor(myNodeResult.getModelReference()).
-        getSModel().getRoots().get(myNodeResult.getNumberInModel());
-      return IconManager.getIconFor(node);
-    }
     return IconManager.getIconForConceptFQName(conceptFqName);
   }
 }

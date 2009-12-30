@@ -20,6 +20,7 @@ public final class BehaviorConstants {
   public static final String CAN_BE_A_CHILD_METHOD_NAME = "canBeAChild";
   public static final String CAN_BE_A_PARENT_METHOD_NAME = "canBeAParent";
   public static final String CAN_BE_A_ROOT_METHOD_NAME = "canBeARoot";
+  public static final String GET_ALTERNATIVE_ICON_METHOD_NAME = "alternativeIcon";
 
   private BehaviorConstants() {
   }
