@@ -17,7 +17,7 @@ public class MathSymbolIndex extends AbstractIndex {
   }
 
   public Expression getIterable() {
-    return (Expression)this.getChild(Expression.class, MathSymbolIndex.ITERABLE);
+    return (Expression) this.getChild(Expression.class, MathSymbolIndex.ITERABLE);
   }
 
   public void setIterable(Expression node) {
@@ -25,7 +25,7 @@ public class MathSymbolIndex extends AbstractIndex {
   }
 
   public static MathSymbolIndex newInstance(SModel sm, boolean init) {
-    return (MathSymbolIndex)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MathSymbolIndex) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndex", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MathSymbolIndex newInstance(SModel sm) {

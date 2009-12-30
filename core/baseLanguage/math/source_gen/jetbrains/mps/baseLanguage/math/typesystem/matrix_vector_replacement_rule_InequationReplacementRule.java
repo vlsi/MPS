@@ -26,7 +26,7 @@ public class matrix_vector_replacement_rule_InequationReplacementRule extends Ab
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "6389121991275039360", 0, intentionProvider);
       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode)SLinkOperations.getTarget(subtype, "elementType", true), (SNode)SLinkOperations.getTarget(supertype, "elementType", true), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true), false, _info_12389875345);
     }
     if (SPropertyOperations.getInteger(supertype, "columns") != 0) {
       if (!(1 == SPropertyOperations.getInteger(supertype, "columns"))) {
@@ -52,7 +52,7 @@ public class matrix_vector_replacement_rule_InequationReplacementRule extends Ab
 
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo) {
     boolean result_14532009 = true;
-    result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode)SLinkOperations.getTarget(subtype, "elementType", true), (SNode)SLinkOperations.getTarget(supertype, "elementType", true), true);
+    result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) SLinkOperations.getTarget(subtype, "elementType", true), (SNode) SLinkOperations.getTarget(supertype, "elementType", true), true);
     if (SPropertyOperations.getInteger(supertype, "columns") != 0) {
       if (!(1 == SPropertyOperations.getInteger(supertype, "columns"))) {
         result_14532009 = false;

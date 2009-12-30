@@ -46,7 +46,7 @@ public class ExtensionMethodDeclaration extends BaseMethodDeclaration implements
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, ExtensionMethodDeclaration.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, ExtensionMethodDeclaration.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -54,7 +54,7 @@ public class ExtensionMethodDeclaration extends BaseMethodDeclaration implements
   }
 
   public static ExtensionMethodDeclaration newInstance(SModel sm, boolean init) {
-    return (ExtensionMethodDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExtensionMethodDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExtensionMethodDeclaration newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class DecimalPlusExpression extends DecimalBinaryOperation {
   }
 
   public static DecimalPlusExpression newInstance(SModel sm, boolean init) {
-    return (DecimalPlusExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DecimalPlusExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DecimalPlusExpression newInstance(SModel sm) {

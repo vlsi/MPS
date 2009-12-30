@@ -15,7 +15,7 @@ public class MoneyGetCurrencyMethodCall extends MoneyMethodCall {
   }
 
   public static MoneyGetCurrencyMethodCall newInstance(SModel sm, boolean init) {
-    return (MoneyGetCurrencyMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MoneyGetCurrencyMethodCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyGetCurrencyMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MoneyGetCurrencyMethodCall newInstance(SModel sm) {

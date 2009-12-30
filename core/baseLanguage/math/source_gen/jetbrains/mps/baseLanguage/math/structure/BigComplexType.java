@@ -15,7 +15,7 @@ public class BigComplexType extends MathPrimitiveType {
   }
 
   public static BigComplexType newInstance(SModel sm, boolean init) {
-    return (BigComplexType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BigComplexType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BigComplexType newInstance(SModel sm) {

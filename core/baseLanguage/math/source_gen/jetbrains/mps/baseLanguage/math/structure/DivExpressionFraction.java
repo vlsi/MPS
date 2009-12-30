@@ -18,7 +18,7 @@ public class DivExpressionFraction extends Expression {
   }
 
   public Expression getNumerator() {
-    return (Expression)this.getChild(Expression.class, DivExpressionFraction.NUMERATOR);
+    return (Expression) this.getChild(Expression.class, DivExpressionFraction.NUMERATOR);
   }
 
   public void setNumerator(Expression node) {
@@ -26,7 +26,7 @@ public class DivExpressionFraction extends Expression {
   }
 
   public Expression getDenominator() {
-    return (Expression)this.getChild(Expression.class, DivExpressionFraction.DENOMINATOR);
+    return (Expression) this.getChild(Expression.class, DivExpressionFraction.DENOMINATOR);
   }
 
   public void setDenominator(Expression node) {
@@ -34,7 +34,7 @@ public class DivExpressionFraction extends Expression {
   }
 
   public static DivExpressionFraction newInstance(SModel sm, boolean init) {
-    return (DivExpressionFraction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DivExpressionFraction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DivExpressionFraction newInstance(SModel sm) {

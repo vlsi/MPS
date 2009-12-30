@@ -15,7 +15,7 @@ public class ComplexType extends MathPrimitiveType {
   }
 
   public static ComplexType newInstance(SModel sm, boolean init) {
-    return (ComplexType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ComplexType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComplexType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ComplexType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComplexType newInstance(SModel sm) {

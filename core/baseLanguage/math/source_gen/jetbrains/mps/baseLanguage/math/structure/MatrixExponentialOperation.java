@@ -15,7 +15,7 @@ public class MatrixExponentialOperation extends ExponentialOperation {
   }
 
   public static MatrixExponentialOperation newInstance(SModel sm, boolean init) {
-    return (MatrixExponentialOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixExponentialOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixExponentialOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixExponentialOperation newInstance(SModel sm) {

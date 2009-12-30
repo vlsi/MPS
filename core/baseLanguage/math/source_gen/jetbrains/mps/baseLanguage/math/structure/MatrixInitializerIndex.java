@@ -53,7 +53,7 @@ public class MatrixInitializerIndex extends BaseConcept implements INamedConcept
   }
 
   public static MatrixInitializerIndex newInstance(SModel sm, boolean init) {
-    return (MatrixInitializerIndex)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixInitializerIndex) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndex", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixInitializerIndex newInstance(SModel sm) {

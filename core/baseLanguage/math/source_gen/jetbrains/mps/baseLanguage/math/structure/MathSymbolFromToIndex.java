@@ -17,7 +17,7 @@ public class MathSymbolFromToIndex extends AbstractIndex {
   }
 
   public Expression getFrom() {
-    return (Expression)this.getChild(Expression.class, MathSymbolFromToIndex.FROM);
+    return (Expression) this.getChild(Expression.class, MathSymbolFromToIndex.FROM);
   }
 
   public void setFrom(Expression node) {
@@ -25,7 +25,7 @@ public class MathSymbolFromToIndex extends AbstractIndex {
   }
 
   public static MathSymbolFromToIndex newInstance(SModel sm, boolean init) {
-    return (MathSymbolFromToIndex)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MathSymbolFromToIndex) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MathSymbolFromToIndex newInstance(SModel sm) {

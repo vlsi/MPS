@@ -15,7 +15,7 @@ public class DecimalMulExpression extends DecimalBinaryOperation {
   }
 
   public static DecimalMulExpression newInstance(SModel sm, boolean init) {
-    return (DecimalMulExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DecimalMulExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DecimalMulExpression newInstance(SModel sm) {

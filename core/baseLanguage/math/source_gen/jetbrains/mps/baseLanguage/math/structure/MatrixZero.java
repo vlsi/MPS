@@ -27,7 +27,7 @@ public class MatrixZero extends Expression {
   }
 
   public Expression getRows() {
-    return (Expression)this.getChild(Expression.class, MatrixZero.ROWS);
+    return (Expression) this.getChild(Expression.class, MatrixZero.ROWS);
   }
 
   public void setRows(Expression node) {
@@ -35,7 +35,7 @@ public class MatrixZero extends Expression {
   }
 
   public Expression getColumns() {
-    return (Expression)this.getChild(Expression.class, MatrixZero.COLUMNS);
+    return (Expression) this.getChild(Expression.class, MatrixZero.COLUMNS);
   }
 
   public void setColumns(Expression node) {
@@ -43,7 +43,7 @@ public class MatrixZero extends Expression {
   }
 
   public static MatrixZero newInstance(SModel sm, boolean init) {
-    return (MatrixZero)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixZero", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixZero) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixZero", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixZero newInstance(SModel sm) {

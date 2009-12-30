@@ -48,7 +48,7 @@ public class MatrixConstructor extends Expression {
   }
 
   public static MatrixConstructor newInstance(SModel sm, boolean init) {
-    return (MatrixConstructor)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixConstructor) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixConstructor", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixConstructor newInstance(SModel sm) {

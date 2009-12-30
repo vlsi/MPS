@@ -16,7 +16,7 @@ public class MoneyType extends Type {
   }
 
   public static MoneyType newInstance(SModel sm, boolean init) {
-    return (MoneyType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MoneyType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MoneyType newInstance(SModel sm) {

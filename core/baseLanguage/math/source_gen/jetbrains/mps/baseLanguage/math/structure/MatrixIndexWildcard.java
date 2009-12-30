@@ -16,7 +16,7 @@ public class MatrixIndexWildcard extends Expression {
   }
 
   public static MatrixIndexWildcard newInstance(SModel sm, boolean init) {
-    return (MatrixIndexWildcard)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixIndexWildcard) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixIndexWildcard", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixIndexWildcard newInstance(SModel sm) {

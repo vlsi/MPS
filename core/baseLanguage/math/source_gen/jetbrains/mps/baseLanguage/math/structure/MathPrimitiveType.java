@@ -16,7 +16,7 @@ public class MathPrimitiveType extends Type {
   }
 
   public static MathPrimitiveType newInstance(SModel sm, boolean init) {
-    return (MathPrimitiveType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MathPrimitiveType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MathPrimitiveType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MathPrimitiveType newInstance(SModel sm) {

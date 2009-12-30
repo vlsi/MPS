@@ -17,7 +17,7 @@ public class MatrixUnit extends Expression {
   }
 
   public Expression getSize() {
-    return (Expression)this.getChild(Expression.class, MatrixUnit.SIZE);
+    return (Expression) this.getChild(Expression.class, MatrixUnit.SIZE);
   }
 
   public void setSize(Expression node) {
@@ -25,7 +25,7 @@ public class MatrixUnit extends Expression {
   }
 
   public static MatrixUnit newInstance(SModel sm, boolean init) {
-    return (MatrixUnit)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixUnit", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixUnit) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixUnit", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixUnit newInstance(SModel sm) {

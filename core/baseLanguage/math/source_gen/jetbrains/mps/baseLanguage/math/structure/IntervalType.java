@@ -17,7 +17,7 @@ public class IntervalType extends Type {
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(Type.class, IntervalType.ELEMENT_TYPE);
+    return (Type) this.getChild(Type.class, IntervalType.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {
@@ -25,7 +25,7 @@ public class IntervalType extends Type {
   }
 
   public static IntervalType newInstance(SModel sm, boolean init) {
-    return (IntervalType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntervalType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntervalType newInstance(SModel sm) {

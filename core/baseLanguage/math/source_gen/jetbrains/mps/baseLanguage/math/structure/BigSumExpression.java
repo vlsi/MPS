@@ -15,7 +15,7 @@ public class BigSumExpression extends ArithmSymbol {
   }
 
   public static BigSumExpression newInstance(SModel sm, boolean init) {
-    return (BigSumExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigSumExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BigSumExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigSumExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BigSumExpression newInstance(SModel sm) {

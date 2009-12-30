@@ -16,7 +16,7 @@ public class MatrixInverseOperation extends MatrixExponentialOperation {
   }
 
   public MathContext getContext() {
-    return (MathContext)this.getChild(MathContext.class, MatrixInverseOperation.CONTEXT);
+    return (MathContext) this.getChild(MathContext.class, MatrixInverseOperation.CONTEXT);
   }
 
   public void setContext(MathContext node) {
@@ -24,7 +24,7 @@ public class MatrixInverseOperation extends MatrixExponentialOperation {
   }
 
   public static MatrixInverseOperation newInstance(SModel sm, boolean init) {
-    return (MatrixInverseOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixInverseOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixInverseOperation newInstance(SModel sm) {

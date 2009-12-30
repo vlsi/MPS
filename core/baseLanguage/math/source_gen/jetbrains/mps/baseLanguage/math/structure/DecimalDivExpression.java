@@ -15,7 +15,7 @@ public class DecimalDivExpression extends DecimalBinaryOperation {
   }
 
   public static DecimalDivExpression newInstance(SModel sm, boolean init) {
-    return (DecimalDivExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DecimalDivExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DecimalDivExpression newInstance(SModel sm) {

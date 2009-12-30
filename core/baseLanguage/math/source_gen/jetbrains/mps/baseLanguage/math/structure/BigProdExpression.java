@@ -15,7 +15,7 @@ public class BigProdExpression extends ArithmSymbol {
   }
 
   public static BigProdExpression newInstance(SModel sm, boolean init) {
-    return (BigProdExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigProdExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BigProdExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigProdExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BigProdExpression newInstance(SModel sm) {

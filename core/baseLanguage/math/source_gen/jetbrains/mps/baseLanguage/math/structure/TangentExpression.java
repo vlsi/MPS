@@ -15,7 +15,7 @@ public class TangentExpression extends MathFuncExpression {
   }
 
   public static TangentExpression newInstance(SModel sm, boolean init) {
-    return (TangentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.TangentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TangentExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.TangentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TangentExpression newInstance(SModel sm) {

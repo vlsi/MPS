@@ -14,8 +14,8 @@ public class LinearSolveOperation_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "matrix", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "vector", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "matrix", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "vector", true));
     _context.getBuilder().emitWrite(_context.getNode(), Expression_Behavior.call_getNullableState_1230540989695(SLinkOperations.getTarget(_context.getNode(), "matrix", true)));
   }
 }

@@ -15,7 +15,7 @@ public class BigDecimalType extends MathPrimitiveType {
   }
 
   public static BigDecimalType newInstance(SModel sm, boolean init) {
-    return (BigDecimalType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BigDecimalType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigDecimalType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BigDecimalType newInstance(SModel sm) {

@@ -53,7 +53,7 @@ public class AbstractIndex extends BaseConcept implements IValidIdentifier {
   }
 
   public static AbstractIndex newInstance(SModel sm, boolean init) {
-    return (AbstractIndex)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.AbstractIndex", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbstractIndex) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.AbstractIndex", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbstractIndex newInstance(SModel sm) {

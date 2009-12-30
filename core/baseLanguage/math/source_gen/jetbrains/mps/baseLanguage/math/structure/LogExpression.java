@@ -15,7 +15,7 @@ public class LogExpression extends MathFuncExpression {
   }
 
   public static LogExpression newInstance(SModel sm, boolean init) {
-    return (LogExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.LogExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LogExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.LogExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LogExpression newInstance(SModel sm) {

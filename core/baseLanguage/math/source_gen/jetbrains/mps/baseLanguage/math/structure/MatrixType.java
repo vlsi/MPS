@@ -62,7 +62,7 @@ public class MatrixType extends MathPrimitiveType implements MatrixOrVectorType 
   }
 
   public Type getElementType() {
-    return (Type)this.getChild(Type.class, MatrixType.ELEMENT_TYPE);
+    return (Type) this.getChild(Type.class, MatrixType.ELEMENT_TYPE);
   }
 
   public void setElementType(Type node) {
@@ -70,7 +70,7 @@ public class MatrixType extends MathPrimitiveType implements MatrixOrVectorType 
   }
 
   public static MatrixType newInstance(SModel sm, boolean init) {
-    return (MatrixType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixType newInstance(SModel sm) {

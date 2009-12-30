@@ -15,7 +15,7 @@ public class MoneyIsZeroMethodCall extends MoneyMethodCall {
   }
 
   public static MoneyIsZeroMethodCall newInstance(SModel sm, boolean init) {
-    return (MoneyIsZeroMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MoneyIsZeroMethodCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyIsZeroMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MoneyIsZeroMethodCall newInstance(SModel sm) {

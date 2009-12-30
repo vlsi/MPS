@@ -48,7 +48,7 @@ public class MatrixInitializer extends Expression implements MatrixOrVectorIniti
   }
 
   public MatrixInitializerIndex getRowIndex() {
-    return (MatrixInitializerIndex)this.getChild(MatrixInitializerIndex.class, MatrixInitializer.ROW_INDEX);
+    return (MatrixInitializerIndex) this.getChild(MatrixInitializerIndex.class, MatrixInitializer.ROW_INDEX);
   }
 
   public void setRowIndex(MatrixInitializerIndex node) {
@@ -56,7 +56,7 @@ public class MatrixInitializer extends Expression implements MatrixOrVectorIniti
   }
 
   public MatrixInitializerIndex getColIndex() {
-    return (MatrixInitializerIndex)this.getChild(MatrixInitializerIndex.class, MatrixInitializer.COL_INDEX);
+    return (MatrixInitializerIndex) this.getChild(MatrixInitializerIndex.class, MatrixInitializer.COL_INDEX);
   }
 
   public void setColIndex(MatrixInitializerIndex node) {
@@ -64,7 +64,7 @@ public class MatrixInitializer extends Expression implements MatrixOrVectorIniti
   }
 
   public Expression getRowsCount() {
-    return (Expression)this.getChild(Expression.class, MatrixInitializer.ROWS_COUNT);
+    return (Expression) this.getChild(Expression.class, MatrixInitializer.ROWS_COUNT);
   }
 
   public void setRowsCount(Expression node) {
@@ -72,7 +72,7 @@ public class MatrixInitializer extends Expression implements MatrixOrVectorIniti
   }
 
   public Expression getColsCount() {
-    return (Expression)this.getChild(Expression.class, MatrixInitializer.COLS_COUNT);
+    return (Expression) this.getChild(Expression.class, MatrixInitializer.COLS_COUNT);
   }
 
   public void setColsCount(Expression node) {
@@ -80,7 +80,7 @@ public class MatrixInitializer extends Expression implements MatrixOrVectorIniti
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, MatrixInitializer.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, MatrixInitializer.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -88,7 +88,7 @@ public class MatrixInitializer extends Expression implements MatrixOrVectorIniti
   }
 
   public static MatrixInitializer newInstance(SModel sm, boolean init) {
-    return (MatrixInitializer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixInitializer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixInitializer newInstance(SModel sm) {

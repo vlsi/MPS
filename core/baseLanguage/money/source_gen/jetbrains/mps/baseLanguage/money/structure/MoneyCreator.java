@@ -19,7 +19,7 @@ public class MoneyCreator extends AbstractCreator {
   }
 
   public Expression getAmount() {
-    return (Expression)this.getChild(Expression.class, MoneyCreator.AMOUNT);
+    return (Expression) this.getChild(Expression.class, MoneyCreator.AMOUNT);
   }
 
   public void setAmount(Expression node) {
@@ -27,7 +27,7 @@ public class MoneyCreator extends AbstractCreator {
   }
 
   public Expression getCurrency() {
-    return (Expression)this.getChild(Expression.class, MoneyCreator.CURRENCY);
+    return (Expression) this.getChild(Expression.class, MoneyCreator.CURRENCY);
   }
 
   public void setCurrency(Expression node) {
@@ -35,7 +35,7 @@ public class MoneyCreator extends AbstractCreator {
   }
 
   public static MoneyCreator newInstance(SModel sm, boolean init) {
-    return (MoneyCreator)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyCreator", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MoneyCreator) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyCreator", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MoneyCreator newInstance(SModel sm) {

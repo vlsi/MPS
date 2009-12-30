@@ -15,7 +15,7 @@ public class Determinant extends MathFuncExpression {
   }
 
   public static Determinant newInstance(SModel sm, boolean init) {
-    return (Determinant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.Determinant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Determinant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.Determinant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Determinant newInstance(SModel sm) {

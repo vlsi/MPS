@@ -17,7 +17,7 @@ public class MathFuncExpression extends Expression {
   }
 
   public Expression getParam() {
-    return (Expression)this.getChild(Expression.class, MathFuncExpression.PARAM);
+    return (Expression) this.getChild(Expression.class, MathFuncExpression.PARAM);
   }
 
   public void setParam(Expression node) {
@@ -25,7 +25,7 @@ public class MathFuncExpression extends Expression {
   }
 
   public static MathFuncExpression newInstance(SModel sm, boolean init) {
-    return (MathFuncExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MathFuncExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MathFuncExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MathFuncExpression newInstance(SModel sm) {

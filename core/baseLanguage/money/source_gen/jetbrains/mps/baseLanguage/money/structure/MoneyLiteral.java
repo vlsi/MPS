@@ -34,7 +34,7 @@ public class MoneyLiteral extends Expression {
   }
 
   public static MoneyLiteral newInstance(SModel sm, boolean init) {
-    return (MoneyLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MoneyLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MoneyLiteral newInstance(SModel sm) {

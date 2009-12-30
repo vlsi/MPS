@@ -19,7 +19,7 @@ public class MatrixElementAccessExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, MatrixElementAccessExpression.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, MatrixElementAccessExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -27,7 +27,7 @@ public class MatrixElementAccessExpression extends Expression {
   }
 
   public Expression getRowIndex() {
-    return (Expression)this.getChild(Expression.class, MatrixElementAccessExpression.ROW_INDEX);
+    return (Expression) this.getChild(Expression.class, MatrixElementAccessExpression.ROW_INDEX);
   }
 
   public void setRowIndex(Expression node) {
@@ -35,7 +35,7 @@ public class MatrixElementAccessExpression extends Expression {
   }
 
   public Expression getColIndex() {
-    return (Expression)this.getChild(Expression.class, MatrixElementAccessExpression.COL_INDEX);
+    return (Expression) this.getChild(Expression.class, MatrixElementAccessExpression.COL_INDEX);
   }
 
   public void setColIndex(Expression node) {
@@ -43,7 +43,7 @@ public class MatrixElementAccessExpression extends Expression {
   }
 
   public static MatrixElementAccessExpression newInstance(SModel sm, boolean init) {
-    return (MatrixElementAccessExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixElementAccessExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixElementAccessExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixElementAccessExpression newInstance(SModel sm) {

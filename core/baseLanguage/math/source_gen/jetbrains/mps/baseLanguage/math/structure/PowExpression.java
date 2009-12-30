@@ -18,7 +18,7 @@ public class PowExpression extends Expression {
   }
 
   public Expression getBase() {
-    return (Expression)this.getChild(Expression.class, PowExpression.BASE);
+    return (Expression) this.getChild(Expression.class, PowExpression.BASE);
   }
 
   public void setBase(Expression node) {
@@ -26,7 +26,7 @@ public class PowExpression extends Expression {
   }
 
   public Expression getExponent() {
-    return (Expression)this.getChild(Expression.class, PowExpression.EXPONENT);
+    return (Expression) this.getChild(Expression.class, PowExpression.EXPONENT);
   }
 
   public void setExponent(Expression node) {
@@ -34,7 +34,7 @@ public class PowExpression extends Expression {
   }
 
   public static PowExpression newInstance(SModel sm, boolean init) {
-    return (PowExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.PowExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PowExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.PowExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PowExpression newInstance(SModel sm) {

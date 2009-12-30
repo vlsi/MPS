@@ -15,7 +15,7 @@ public class ConjugateOperation extends MatrixExponentialOperation {
   }
 
   public static ConjugateOperation newInstance(SModel sm, boolean init) {
-    return (ConjugateOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ConjugateOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ConjugateOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ConjugateOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ConjugateOperation newInstance(SModel sm) {

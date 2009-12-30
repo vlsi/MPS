@@ -16,7 +16,7 @@ public class LiteralI extends Expression {
   }
 
   public static LiteralI newInstance(SModel sm, boolean init) {
-    return (LiteralI)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.LiteralI", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LiteralI) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.LiteralI", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LiteralI newInstance(SModel sm) {

@@ -17,7 +17,7 @@ public class DecimalBinaryOperation extends BinaryOperation {
   }
 
   public MathContext getContext() {
-    return (MathContext)this.getChild(MathContext.class, DecimalBinaryOperation.CONTEXT);
+    return (MathContext) this.getChild(MathContext.class, DecimalBinaryOperation.CONTEXT);
   }
 
   public void setContext(MathContext node) {
@@ -25,7 +25,7 @@ public class DecimalBinaryOperation extends BinaryOperation {
   }
 
   public static DecimalBinaryOperation newInstance(SModel sm, boolean init) {
-    return (DecimalBinaryOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DecimalBinaryOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DecimalBinaryOperation newInstance(SModel sm) {

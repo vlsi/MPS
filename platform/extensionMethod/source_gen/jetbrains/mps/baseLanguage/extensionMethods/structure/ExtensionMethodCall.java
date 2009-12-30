@@ -51,7 +51,7 @@ public class ExtensionMethodCall extends BaseConcept implements IOperation, IMet
   }
 
   public BaseMethodDeclaration getBaseMethodDeclaration() {
-    return (BaseMethodDeclaration)this.getReferent(BaseMethodDeclaration.class, ExtensionMethodCall.BASE_METHOD_DECLARATION);
+    return (BaseMethodDeclaration) this.getReferent(BaseMethodDeclaration.class, ExtensionMethodCall.BASE_METHOD_DECLARATION);
   }
 
   public void setBaseMethodDeclaration(BaseMethodDeclaration node) {
@@ -87,7 +87,7 @@ public class ExtensionMethodCall extends BaseConcept implements IOperation, IMet
   }
 
   public static ExtensionMethodCall newInstance(SModel sm, boolean init) {
-    return (ExtensionMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExtensionMethodCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExtensionMethodCall newInstance(SModel sm) {

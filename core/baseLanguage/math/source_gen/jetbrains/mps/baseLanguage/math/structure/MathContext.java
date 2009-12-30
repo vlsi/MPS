@@ -45,7 +45,7 @@ public class MathContext extends BaseConcept {
   }
 
   public static MathContext newInstance(SModel sm, boolean init) {
-    return (MathContext)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MathContext", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MathContext) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MathContext", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MathContext newInstance(SModel sm) {

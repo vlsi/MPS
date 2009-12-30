@@ -15,7 +15,7 @@ public class BigMaxExpression extends ExtrSymbol {
   }
 
   public static BigMaxExpression newInstance(SModel sm, boolean init) {
-    return (BigMaxExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigMaxExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BigMaxExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigMaxExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BigMaxExpression newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class BigMinExpression extends ExtrSymbol {
   }
 
   public static BigMinExpression newInstance(SModel sm, boolean init) {
-    return (BigMinExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigMinExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BigMinExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigMinExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BigMinExpression newInstance(SModel sm) {

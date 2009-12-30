@@ -46,7 +46,7 @@ public class VectorInitializer extends Expression implements MatrixOrVectorIniti
   }
 
   public MatrixInitializerIndex getRowIndex() {
-    return (MatrixInitializerIndex)this.getChild(MatrixInitializerIndex.class, VectorInitializer.ROW_INDEX);
+    return (MatrixInitializerIndex) this.getChild(MatrixInitializerIndex.class, VectorInitializer.ROW_INDEX);
   }
 
   public void setRowIndex(MatrixInitializerIndex node) {
@@ -54,7 +54,7 @@ public class VectorInitializer extends Expression implements MatrixOrVectorIniti
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, VectorInitializer.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, VectorInitializer.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -62,7 +62,7 @@ public class VectorInitializer extends Expression implements MatrixOrVectorIniti
   }
 
   public Expression getRowsCount() {
-    return (Expression)this.getChild(Expression.class, VectorInitializer.ROWS_COUNT);
+    return (Expression) this.getChild(Expression.class, VectorInitializer.ROWS_COUNT);
   }
 
   public void setRowsCount(Expression node) {
@@ -70,7 +70,7 @@ public class VectorInitializer extends Expression implements MatrixOrVectorIniti
   }
 
   public static VectorInitializer newInstance(SModel sm, boolean init) {
-    return (VectorInitializer)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.VectorInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (VectorInitializer) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.VectorInitializer", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static VectorInitializer newInstance(SModel sm) {

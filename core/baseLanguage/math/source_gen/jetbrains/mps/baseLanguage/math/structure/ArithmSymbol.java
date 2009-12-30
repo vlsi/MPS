@@ -15,7 +15,7 @@ public class ArithmSymbol extends MathSymbol {
   }
 
   public static ArithmSymbol newInstance(SModel sm, boolean init) {
-    return (ArithmSymbol)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ArithmSymbol) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ArithmSymbol", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ArithmSymbol newInstance(SModel sm) {

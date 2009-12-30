@@ -21,7 +21,7 @@ public class MathSymbol extends Expression {
   }
 
   public AbstractIndex getVar() {
-    return (AbstractIndex)this.getChild(AbstractIndex.class, MathSymbol.VAR);
+    return (AbstractIndex) this.getChild(AbstractIndex.class, MathSymbol.VAR);
   }
 
   public void setVar(AbstractIndex node) {
@@ -29,7 +29,7 @@ public class MathSymbol extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, MathSymbol.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, MathSymbol.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -37,7 +37,7 @@ public class MathSymbol extends Expression {
   }
 
   public Expression getPrecondition() {
-    return (Expression)this.getChild(Expression.class, MathSymbol.PRECONDITION);
+    return (Expression) this.getChild(Expression.class, MathSymbol.PRECONDITION);
   }
 
   public void setPrecondition(Expression node) {
@@ -45,7 +45,7 @@ public class MathSymbol extends Expression {
   }
 
   public Expression getUpperBound() {
-    return (Expression)this.getChild(Expression.class, MathSymbol.UPPER_BOUND);
+    return (Expression) this.getChild(Expression.class, MathSymbol.UPPER_BOUND);
   }
 
   public void setUpperBound(Expression node) {
@@ -53,7 +53,7 @@ public class MathSymbol extends Expression {
   }
 
   public static MathSymbol newInstance(SModel sm, boolean init) {
-    return (MathSymbol)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MathSymbol", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MathSymbol) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MathSymbol", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MathSymbol newInstance(SModel sm) {

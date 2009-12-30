@@ -51,7 +51,7 @@ public class TypeExtension extends GenericDeclaration implements ClassifierMembe
   }
 
   public Type getType() {
-    return (Type)this.getChild(Type.class, TypeExtension.TYPE);
+    return (Type) this.getChild(Type.class, TypeExtension.TYPE);
   }
 
   public void setType(Type node) {
@@ -59,7 +59,7 @@ public class TypeExtension extends GenericDeclaration implements ClassifierMembe
   }
 
   public Visibility getVisibility() {
-    return (Visibility)this.getChild(Visibility.class, TypeExtension.VISIBILITY);
+    return (Visibility) this.getChild(Visibility.class, TypeExtension.VISIBILITY);
   }
 
   public void setVisibility(Visibility node) {
@@ -87,7 +87,7 @@ public class TypeExtension extends GenericDeclaration implements ClassifierMembe
   }
 
   public static TypeExtension newInstance(SModel sm, boolean init) {
-    return (TypeExtension)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TypeExtension) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TypeExtension newInstance(SModel sm) {

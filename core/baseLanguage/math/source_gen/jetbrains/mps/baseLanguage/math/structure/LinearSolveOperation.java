@@ -21,7 +21,7 @@ public class LinearSolveOperation extends LocalVariableDeclaration {
   }
 
   public Expression getMatrix() {
-    return (Expression)this.getChild(Expression.class, LinearSolveOperation.MATRIX);
+    return (Expression) this.getChild(Expression.class, LinearSolveOperation.MATRIX);
   }
 
   public void setMatrix(Expression node) {
@@ -29,7 +29,7 @@ public class LinearSolveOperation extends LocalVariableDeclaration {
   }
 
   public Expression getVector() {
-    return (Expression)this.getChild(Expression.class, LinearSolveOperation.VECTOR);
+    return (Expression) this.getChild(Expression.class, LinearSolveOperation.VECTOR);
   }
 
   public void setVector(Expression node) {
@@ -37,7 +37,7 @@ public class LinearSolveOperation extends LocalVariableDeclaration {
   }
 
   public MathContext getContext() {
-    return (MathContext)this.getChild(MathContext.class, LinearSolveOperation.CONTEXT);
+    return (MathContext) this.getChild(MathContext.class, LinearSolveOperation.CONTEXT);
   }
 
   public void setContext(MathContext node) {
@@ -53,7 +53,7 @@ public class LinearSolveOperation extends LocalVariableDeclaration {
   }
 
   public static LinearSolveOperation newInstance(SModel sm, boolean init) {
-    return (LinearSolveOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LinearSolveOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LinearSolveOperation newInstance(SModel sm) {

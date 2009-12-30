@@ -21,7 +21,7 @@ public class typeof_ExtensionThis_InferenceRule extends AbstractInferenceRule_Ru
       SNode _nodeToCheck_1029348928467 = extensionThis;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)", "3316739663069207740", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)", "3316739663069207737", true), (SNode)SLinkOperations.getTarget(SNodeOperations.getAncestor(extensionThis, "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension", false, false), "type", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:d9557470-9267-4b7b-ab45-4dc4cc5d697c(jetbrains.mps.baseLanguage.extensionMethods.typesystem)", "3316739663069207737", true), (SNode) SLinkOperations.getTarget(SNodeOperations.getAncestor(extensionThis, "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension", false, false), "type", true), _info_12389875345);
     }
   }
 

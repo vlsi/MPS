@@ -15,7 +15,7 @@ public class SineExpression extends MathFuncExpression {
   }
 
   public static SineExpression newInstance(SModel sm, boolean init) {
-    return (SineExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.SineExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SineExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.SineExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SineExpression newInstance(SModel sm) {

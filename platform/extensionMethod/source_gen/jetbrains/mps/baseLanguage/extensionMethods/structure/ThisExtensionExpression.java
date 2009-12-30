@@ -16,7 +16,7 @@ public class ThisExtensionExpression extends Expression {
   }
 
   public static ThisExtensionExpression newInstance(SModel sm, boolean init) {
-    return (ThisExtensionExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ThisExtensionExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.extensionMethods.structure.ThisExtensionExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ThisExtensionExpression newInstance(SModel sm) {

@@ -35,7 +35,7 @@ public class typeof_LinearSolveOperation_InferenceRule extends AbstractInference
                   BaseIntentionProvider intentionProvider = null;
                   EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060213", 0, intentionProvider);
                   _info_12389875345.setInequationGroup("default");
-                  typeCheckingContext.createLessThanInequation((SNode)SNodeOperations.copyNode(MathTypeUtil.qFloat), (SNode)typeCheckingContext.getEquationManager().getRepresentator(T_typevar_5359814223490060193), false, _info_12389875345);
+                  typeCheckingContext.createLessThanInequation((SNode) SNodeOperations.copyNode(MathTypeUtil.qFloat), (SNode) typeCheckingContext.getEquationManager().getRepresentator(T_typevar_5359814223490060193), false, _info_12389875345);
                 }
                 if (SNodeOperations.isInstanceOf(typeCheckingContext.getEquationManager().getRepresentator(matrixType), "jetbrains.mps.baseLanguage.math.structure.MatrixOrVectorType")) {
                   {
@@ -43,7 +43,7 @@ public class typeof_LinearSolveOperation_InferenceRule extends AbstractInference
                     BaseIntentionProvider intentionProvider = null;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060186", 0, intentionProvider);
                     _info_12389875345.setInequationGroup("default");
-                    typeCheckingContext.createLessThanInequation((SNode)MathUtil.getUnboxedElementType(typeCheckingContext.getEquationManager().getRepresentator(matrixType)), (SNode)typeCheckingContext.getEquationManager().getRepresentator(T_typevar_5359814223490060193), false, _info_12389875345);
+                    typeCheckingContext.createLessThanInequation((SNode) MathUtil.getUnboxedElementType(typeCheckingContext.getEquationManager().getRepresentator(matrixType)), (SNode) typeCheckingContext.getEquationManager().getRepresentator(T_typevar_5359814223490060193), false, _info_12389875345);
                   }
                 } else {
                   {
@@ -58,7 +58,7 @@ public class typeof_LinearSolveOperation_InferenceRule extends AbstractInference
                     BaseIntentionProvider intentionProvider = null;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060227", 0, intentionProvider);
                     _info_12389875345.setInequationGroup("default");
-                    typeCheckingContext.createLessThanInequation((SNode)MathUtil.getUnboxedElementType(typeCheckingContext.getEquationManager().getRepresentator(matrixType)), (SNode)typeCheckingContext.getEquationManager().getRepresentator(T_typevar_5359814223490060193), false, _info_12389875345);
+                    typeCheckingContext.createLessThanInequation((SNode) MathUtil.getUnboxedElementType(typeCheckingContext.getEquationManager().getRepresentator(matrixType)), (SNode) typeCheckingContext.getEquationManager().getRepresentator(T_typevar_5359814223490060193), false, _info_12389875345);
                   }
                 } else {
                   {
@@ -71,7 +71,7 @@ public class typeof_LinearSolveOperation_InferenceRule extends AbstractInference
                   SNode _nodeToCheck_1029348928467 = op;
                   BaseIntentionProvider intentionProvider = null;
                   EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060200", 0, intentionProvider);
-                  typeCheckingContext.createEquation((SNode)typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060197", true), (SNode)MathTypeUtil.qVector(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_5359814223490060193)), _info_12389875345);
+                  typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060197", true), (SNode) MathTypeUtil.qVector(typeCheckingContext.getEquationManager().getRepresentator(T_typevar_5359814223490060193)), _info_12389875345);
                 }
               }
             }, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "5359814223490060125", false, false);

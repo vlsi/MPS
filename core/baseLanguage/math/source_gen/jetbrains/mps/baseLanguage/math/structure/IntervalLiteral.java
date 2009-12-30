@@ -36,7 +36,7 @@ public class IntervalLiteral extends Expression {
   }
 
   public Expression getStart() {
-    return (Expression)this.getChild(Expression.class, IntervalLiteral.START);
+    return (Expression) this.getChild(Expression.class, IntervalLiteral.START);
   }
 
   public void setStart(Expression node) {
@@ -44,7 +44,7 @@ public class IntervalLiteral extends Expression {
   }
 
   public Expression getEnd() {
-    return (Expression)this.getChild(Expression.class, IntervalLiteral.END);
+    return (Expression) this.getChild(Expression.class, IntervalLiteral.END);
   }
 
   public void setEnd(Expression node) {
@@ -52,7 +52,7 @@ public class IntervalLiteral extends Expression {
   }
 
   public static IntervalLiteral newInstance(SModel sm, boolean init) {
-    return (IntervalLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntervalLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntervalLiteral newInstance(SModel sm) {

@@ -16,7 +16,7 @@ public class IntervalContainsExpression extends BinaryOperation {
   }
 
   public static IntervalContainsExpression newInstance(SModel sm, boolean init) {
-    return (IntervalContainsExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntervalContainsExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalContainsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntervalContainsExpression newInstance(SModel sm) {

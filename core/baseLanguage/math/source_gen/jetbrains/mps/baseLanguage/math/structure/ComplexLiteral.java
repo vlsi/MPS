@@ -18,7 +18,7 @@ public class ComplexLiteral extends Expression {
   }
 
   public Expression getReal() {
-    return (Expression)this.getChild(Expression.class, ComplexLiteral.REAL);
+    return (Expression) this.getChild(Expression.class, ComplexLiteral.REAL);
   }
 
   public void setReal(Expression node) {
@@ -26,7 +26,7 @@ public class ComplexLiteral extends Expression {
   }
 
   public Expression getImag() {
-    return (Expression)this.getChild(Expression.class, ComplexLiteral.IMAG);
+    return (Expression) this.getChild(Expression.class, ComplexLiteral.IMAG);
   }
 
   public void setImag(Expression node) {
@@ -34,7 +34,7 @@ public class ComplexLiteral extends Expression {
   }
 
   public static ComplexLiteral newInstance(SModel sm, boolean init) {
-    return (ComplexLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ComplexLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ComplexLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ComplexLiteral newInstance(SModel sm) {

@@ -13,7 +13,7 @@ public class DivExpressionFraction_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "numerator", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "denominator", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "numerator", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "denominator", true));
   }
 }

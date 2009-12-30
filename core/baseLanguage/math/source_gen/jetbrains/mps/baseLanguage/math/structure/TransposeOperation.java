@@ -15,7 +15,7 @@ public class TransposeOperation extends MatrixExponentialOperation {
   }
 
   public static TransposeOperation newInstance(SModel sm, boolean init) {
-    return (TransposeOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.TransposeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TransposeOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.TransposeOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TransposeOperation newInstance(SModel sm) {

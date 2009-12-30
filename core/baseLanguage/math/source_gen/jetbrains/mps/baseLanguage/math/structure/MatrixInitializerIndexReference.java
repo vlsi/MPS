@@ -17,7 +17,7 @@ public class MatrixInitializerIndexReference extends Expression {
   }
 
   public MatrixInitializerIndex getIndex() {
-    return (MatrixInitializerIndex)this.getReferent(MatrixInitializerIndex.class, MatrixInitializerIndexReference.INDEX);
+    return (MatrixInitializerIndex) this.getReferent(MatrixInitializerIndex.class, MatrixInitializerIndexReference.INDEX);
   }
 
   public void setIndex(MatrixInitializerIndex node) {
@@ -25,7 +25,7 @@ public class MatrixInitializerIndexReference extends Expression {
   }
 
   public static MatrixInitializerIndexReference newInstance(SModel sm, boolean init) {
-    return (MatrixInitializerIndexReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixInitializerIndexReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixInitializerIndexReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixInitializerIndexReference newInstance(SModel sm) {

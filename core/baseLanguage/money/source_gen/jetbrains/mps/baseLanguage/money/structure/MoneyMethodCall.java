@@ -17,7 +17,7 @@ public class MoneyMethodCall extends Expression {
   }
 
   public Expression getInstance() {
-    return (Expression)this.getChild(Expression.class, MoneyMethodCall.INSTANCE);
+    return (Expression) this.getChild(Expression.class, MoneyMethodCall.INSTANCE);
   }
 
   public void setInstance(Expression node) {
@@ -25,7 +25,7 @@ public class MoneyMethodCall extends Expression {
   }
 
   public static MoneyMethodCall newInstance(SModel sm, boolean init) {
-    return (MoneyMethodCall)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MoneyMethodCall) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyMethodCall", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MoneyMethodCall newInstance(SModel sm) {

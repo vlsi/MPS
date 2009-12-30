@@ -13,7 +13,7 @@ public class MathSymbolIndex_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "iterable", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "iterable", true));
     _context.getBuilder().emitWrite(_context.getNode());
   }
 }

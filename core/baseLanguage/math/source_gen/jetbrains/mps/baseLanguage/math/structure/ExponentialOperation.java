@@ -19,7 +19,7 @@ public class ExponentialOperation extends Expression {
   }
 
   public Expression getExpr() {
-    return (Expression)this.getChild(Expression.class, ExponentialOperation.EXPR);
+    return (Expression) this.getChild(Expression.class, ExponentialOperation.EXPR);
   }
 
   public void setExpr(Expression node) {
@@ -27,7 +27,7 @@ public class ExponentialOperation extends Expression {
   }
 
   public static ExponentialOperation newInstance(SModel sm, boolean init) {
-    return (ExponentialOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExponentialOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ExponentialOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExponentialOperation newInstance(SModel sm) {

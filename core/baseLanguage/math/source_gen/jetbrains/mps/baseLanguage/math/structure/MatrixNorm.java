@@ -27,7 +27,7 @@ public class MatrixNorm extends Expression {
   }
 
   public Expression getMat() {
-    return (Expression)this.getChild(Expression.class, MatrixNorm.MAT);
+    return (Expression) this.getChild(Expression.class, MatrixNorm.MAT);
   }
 
   public void setMat(Expression node) {
@@ -35,7 +35,7 @@ public class MatrixNorm extends Expression {
   }
 
   public static MatrixNorm newInstance(SModel sm, boolean init) {
-    return (MatrixNorm)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixNorm", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatrixNorm) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixNorm", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatrixNorm newInstance(SModel sm) {

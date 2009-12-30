@@ -17,7 +17,7 @@ public class MathSymbolIndexReference extends Expression {
   }
 
   public AbstractIndex getIndexRef() {
-    return (AbstractIndex)this.getReferent(AbstractIndex.class, MathSymbolIndexReference.INDEX_REF);
+    return (AbstractIndex) this.getReferent(AbstractIndex.class, MathSymbolIndexReference.INDEX_REF);
   }
 
   public void setIndexRef(AbstractIndex node) {
@@ -25,7 +25,7 @@ public class MathSymbolIndexReference extends Expression {
   }
 
   public static MathSymbolIndexReference newInstance(SModel sm, boolean init) {
-    return (MathSymbolIndexReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MathSymbolIndexReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MathSymbolIndexReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MathSymbolIndexReference newInstance(SModel sm) {

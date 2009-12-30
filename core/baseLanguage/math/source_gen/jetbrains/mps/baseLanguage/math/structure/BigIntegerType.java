@@ -15,7 +15,7 @@ public class BigIntegerType extends MathPrimitiveType {
   }
 
   public static BigIntegerType newInstance(SModel sm, boolean init) {
-    return (BigIntegerType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigIntegerType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BigIntegerType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigIntegerType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BigIntegerType newInstance(SModel sm) {

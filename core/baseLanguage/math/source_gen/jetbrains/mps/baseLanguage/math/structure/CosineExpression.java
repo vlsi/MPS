@@ -15,7 +15,7 @@ public class CosineExpression extends MathFuncExpression {
   }
 
   public static CosineExpression newInstance(SModel sm, boolean init) {
-    return (CosineExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.CosineExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CosineExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.CosineExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CosineExpression newInstance(SModel sm) {

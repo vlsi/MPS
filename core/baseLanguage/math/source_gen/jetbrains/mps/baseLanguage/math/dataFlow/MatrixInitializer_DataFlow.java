@@ -13,9 +13,9 @@ public class MatrixInitializer_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "expression", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "rowsCount", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "colsCount", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "expression", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "rowsCount", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "colsCount", true));
     _context.getBuilder().emitWrite(SLinkOperations.getTarget(_context.getNode(), "colIndex", true));
     _context.getBuilder().emitWrite(SLinkOperations.getTarget(_context.getNode(), "rowIndex", true));
   }

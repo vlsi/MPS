@@ -15,7 +15,7 @@ public class ExponentExpression extends MathFuncExpression {
   }
 
   public static ExponentExpression newInstance(SModel sm, boolean init) {
-    return (ExponentExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ExponentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExponentExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ExponentExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExponentExpression newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class ExtrSymbol extends MathSymbol {
   }
 
   public static ExtrSymbol newInstance(SModel sm, boolean init) {
-    return (ExtrSymbol)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExtrSymbol) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.ExtrSymbol", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExtrSymbol newInstance(SModel sm) {

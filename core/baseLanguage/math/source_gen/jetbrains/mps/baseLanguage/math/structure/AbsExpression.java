@@ -17,7 +17,7 @@ public class AbsExpression extends Expression {
   }
 
   public Expression getExpr() {
-    return (Expression)this.getChild(Expression.class, AbsExpression.EXPR);
+    return (Expression) this.getChild(Expression.class, AbsExpression.EXPR);
   }
 
   public void setExpr(Expression node) {
@@ -25,7 +25,7 @@ public class AbsExpression extends Expression {
   }
 
   public static AbsExpression newInstance(SModel sm, boolean init) {
-    return (AbsExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.AbsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AbsExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.AbsExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AbsExpression newInstance(SModel sm) {

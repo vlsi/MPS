@@ -16,7 +16,7 @@ public class InIntervalExpression extends BinaryOperation {
   }
 
   public static InIntervalExpression newInstance(SModel sm, boolean init) {
-    return (InIntervalExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InIntervalExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.InIntervalExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InIntervalExpression newInstance(SModel sm) {

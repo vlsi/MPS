@@ -27,7 +27,7 @@ public class MathTypeCast extends Expression {
   }
 
   public Expression getCastedExpr() {
-    return (Expression)this.getChild(Expression.class, MathTypeCast.CASTED_EXPR);
+    return (Expression) this.getChild(Expression.class, MathTypeCast.CASTED_EXPR);
   }
 
   public void setCastedExpr(Expression node) {
@@ -35,7 +35,7 @@ public class MathTypeCast extends Expression {
   }
 
   public static MathTypeCast newInstance(SModel sm, boolean init) {
-    return (MathTypeCast)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MathTypeCast", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MathTypeCast) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MathTypeCast", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MathTypeCast newInstance(SModel sm) {
