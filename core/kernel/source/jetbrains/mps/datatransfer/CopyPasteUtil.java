@@ -321,6 +321,13 @@ public class CopyPasteUtil {
                                              final Set<ModuleReference> necessaryLanguages,
                                              final Set<SModelReference> necessaryImports,
                                              final IOperationContext context) {
+    if (targetModel.getModelDescriptor().getModule() == null) {
+      /*
+       * Sometimes terget model is just a model without module (e.g. model created inside "Find by condition" dialog)
+       * in this case necessary models/modules cannot be added.
+       */
+      return true;
+    }
     final List<ModuleReference> additionalLanguages = new ArrayList<ModuleReference>();
     final List<SModelReference> additionalModels = new ArrayList<SModelReference>();
 
