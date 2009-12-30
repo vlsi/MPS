@@ -16,7 +16,7 @@ public class MatchVariableReferenceReplacement extends Replacement {
   }
 
   public MatchParensRegexp getMatch() {
-    return (MatchParensRegexp)this.getReferent(MatchParensRegexp.class, MatchVariableReferenceReplacement.MATCH);
+    return (MatchParensRegexp) this.getReferent(MatchParensRegexp.class, MatchVariableReferenceReplacement.MATCH);
   }
 
   public void setMatch(MatchParensRegexp node) {
@@ -24,7 +24,7 @@ public class MatchVariableReferenceReplacement extends Replacement {
   }
 
   public static MatchVariableReferenceReplacement newInstance(SModel sm, boolean init) {
-    return (MatchVariableReferenceReplacement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchVariableReferenceReplacement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatchVariableReferenceReplacement newInstance(SModel sm) {

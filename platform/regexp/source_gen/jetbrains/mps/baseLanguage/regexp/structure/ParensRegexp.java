@@ -16,7 +16,7 @@ public class ParensRegexp extends Regexp {
   }
 
   public Regexp getExpr() {
-    return (Regexp)this.getChild(Regexp.class, ParensRegexp.EXPR);
+    return (Regexp) this.getChild(Regexp.class, ParensRegexp.EXPR);
   }
 
   public void setExpr(Regexp node) {
@@ -24,7 +24,7 @@ public class ParensRegexp extends Regexp {
   }
 
   public static ParensRegexp newInstance(SModel sm, boolean init) {
-    return (ParensRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParensRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ParensRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParensRegexp newInstance(SModel sm) {

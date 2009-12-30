@@ -14,7 +14,7 @@ public class SymbolClassRegexp_DataFlow extends DataFlowBuilder {
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
     for (SNode part : SLinkOperations.getTargets(_context.getNode(), "part", true)) {
-      _context.getBuilder().build((SNode)part);
+      _context.getBuilder().build((SNode) part);
     }
   }
 }

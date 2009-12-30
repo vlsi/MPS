@@ -48,7 +48,7 @@ public class ForEachMatchStatement extends Statement implements RegexpUsingConst
   }
 
   public Expression getExpr() {
-    return (Expression)this.getChild(Expression.class, ForEachMatchStatement.EXPR);
+    return (Expression) this.getChild(Expression.class, ForEachMatchStatement.EXPR);
   }
 
   public void setExpr(Expression node) {
@@ -56,7 +56,7 @@ public class ForEachMatchStatement extends Statement implements RegexpUsingConst
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, ForEachMatchStatement.BODY);
+    return (StatementList) this.getChild(StatementList.class, ForEachMatchStatement.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -64,7 +64,7 @@ public class ForEachMatchStatement extends Statement implements RegexpUsingConst
   }
 
   public RegexpExpression getRegexp() {
-    return (RegexpExpression)this.getChild(RegexpExpression.class, ForEachMatchStatement.REGEXP);
+    return (RegexpExpression) this.getChild(RegexpExpression.class, ForEachMatchStatement.REGEXP);
   }
 
   public void setRegexp(RegexpExpression node) {
@@ -72,7 +72,7 @@ public class ForEachMatchStatement extends Statement implements RegexpUsingConst
   }
 
   public static ForEachMatchStatement newInstance(SModel sm, boolean init) {
-    return (ForEachMatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ForEachMatchStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ForEachMatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ForEachMatchStatement newInstance(SModel sm) {

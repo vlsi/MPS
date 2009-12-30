@@ -62,7 +62,7 @@ public class PredefinedSymbolClassDeclaration extends BaseConcept implements INa
   }
 
   public static PredefinedSymbolClassDeclaration newInstance(SModel sm, boolean init) {
-    return (PredefinedSymbolClassDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PredefinedSymbolClassDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PredefinedSymbolClassDeclaration newInstance(SModel sm) {

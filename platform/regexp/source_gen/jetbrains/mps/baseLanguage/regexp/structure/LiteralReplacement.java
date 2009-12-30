@@ -24,7 +24,7 @@ public class LiteralReplacement extends Replacement {
   }
 
   public static LiteralReplacement newInstance(SModel sm, boolean init) {
-    return (LiteralReplacement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LiteralReplacement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LiteralReplacement newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class PositiveSymbolClassRegexp extends SymbolClassRegexp {
   }
 
   public static PositiveSymbolClassRegexp newInstance(SModel sm, boolean init) {
-    return (PositiveSymbolClassRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PositiveSymbolClassRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PositiveSymbolClassRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PositiveSymbolClassRegexp newInstance(SModel sm) {

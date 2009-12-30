@@ -29,10 +29,10 @@ public class MatchParensRegexp_Behavior {
   }
 
   public static String call_getString_1222435297321(SNode thisNode, List<SNode> vars) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222435297321, vars);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222435297321, vars);
   }
 
   public static String callSuper_getString_1222435297321(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222435297321, vars);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222435297321, vars);
   }
 }

@@ -15,7 +15,7 @@ public class PositiveLookBehindRegexp extends LookRegexp {
   }
 
   public static PositiveLookBehindRegexp newInstance(SModel sm, boolean init) {
-    return (PositiveLookBehindRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PositiveLookBehindRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookBehindRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PositiveLookBehindRegexp newInstance(SModel sm) {

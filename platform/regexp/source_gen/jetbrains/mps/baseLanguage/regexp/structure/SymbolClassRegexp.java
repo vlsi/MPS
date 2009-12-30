@@ -65,7 +65,7 @@ public class SymbolClassRegexp extends Regexp implements SymbolClassRegexpAndPar
   }
 
   public static SymbolClassRegexp newInstance(SModel sm, boolean init) {
-    return (SymbolClassRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SymbolClassRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SymbolClassRegexp newInstance(SModel sm) {

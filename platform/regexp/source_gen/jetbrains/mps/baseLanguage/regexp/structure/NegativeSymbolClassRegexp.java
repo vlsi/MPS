@@ -15,7 +15,7 @@ public class NegativeSymbolClassRegexp extends SymbolClassRegexp {
   }
 
   public static NegativeSymbolClassRegexp newInstance(SModel sm, boolean init) {
-    return (NegativeSymbolClassRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NegativeSymbolClassRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.NegativeSymbolClassRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NegativeSymbolClassRegexp newInstance(SModel sm) {

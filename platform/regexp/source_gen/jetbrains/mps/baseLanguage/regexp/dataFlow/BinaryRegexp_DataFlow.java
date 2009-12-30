@@ -13,7 +13,7 @@ public class BinaryRegexp_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "left", true));
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "right", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "left", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "right", true));
   }
 }

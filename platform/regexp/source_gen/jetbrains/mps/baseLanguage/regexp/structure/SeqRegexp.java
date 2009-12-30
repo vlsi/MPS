@@ -15,7 +15,7 @@ public class SeqRegexp extends BinaryRegexp {
   }
 
   public static SeqRegexp newInstance(SModel sm, boolean init) {
-    return (SeqRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SeqRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.SeqRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SeqRegexp newInstance(SModel sm) {

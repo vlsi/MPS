@@ -33,7 +33,7 @@ public class FromNToMTimesRegexp extends UnaryRegexp {
   }
 
   public static FromNToMTimesRegexp newInstance(SModel sm, boolean init) {
-    return (FromNToMTimesRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FromNToMTimesRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.FromNToMTimesRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FromNToMTimesRegexp newInstance(SModel sm) {

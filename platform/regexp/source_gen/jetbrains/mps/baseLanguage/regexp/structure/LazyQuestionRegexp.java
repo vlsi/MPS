@@ -15,7 +15,7 @@ public class LazyQuestionRegexp extends UnaryRegexp {
   }
 
   public static LazyQuestionRegexp newInstance(SModel sm, boolean init) {
-    return (LazyQuestionRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LazyQuestionRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LazyQuestionRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LazyQuestionRegexp newInstance(SModel sm) {

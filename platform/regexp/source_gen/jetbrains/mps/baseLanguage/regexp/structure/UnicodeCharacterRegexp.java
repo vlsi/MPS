@@ -24,7 +24,7 @@ public class UnicodeCharacterRegexp extends Regexp {
   }
 
   public static UnicodeCharacterRegexp newInstance(SModel sm, boolean init) {
-    return (UnicodeCharacterRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UnicodeCharacterRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.UnicodeCharacterRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UnicodeCharacterRegexp newInstance(SModel sm) {

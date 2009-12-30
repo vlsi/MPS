@@ -33,7 +33,7 @@ public class IntervalSymbolClassPart extends SymbolClassPart {
   }
 
   public static IntervalSymbolClassPart newInstance(SModel sm, boolean init) {
-    return (IntervalSymbolClassPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntervalSymbolClassPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntervalSymbolClassPart newInstance(SModel sm) {

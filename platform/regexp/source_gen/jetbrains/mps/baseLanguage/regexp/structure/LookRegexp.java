@@ -16,7 +16,7 @@ public class LookRegexp extends Regexp {
   }
 
   public Regexp getRegexp() {
-    return (Regexp)this.getChild(Regexp.class, LookRegexp.REGEXP);
+    return (Regexp) this.getChild(Regexp.class, LookRegexp.REGEXP);
   }
 
   public void setRegexp(Regexp node) {
@@ -24,7 +24,7 @@ public class LookRegexp extends Regexp {
   }
 
   public static LookRegexp newInstance(SModel sm, boolean init) {
-    return (LookRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LookRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LookRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LookRegexp newInstance(SModel sm) {

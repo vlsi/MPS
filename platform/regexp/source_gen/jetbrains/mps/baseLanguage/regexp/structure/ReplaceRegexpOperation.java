@@ -84,7 +84,7 @@ public class ReplaceRegexpOperation extends BaseConcept implements IOperation {
   }
 
   public Regexp getSearch() {
-    return (Regexp)this.getChild(Regexp.class, ReplaceRegexpOperation.SEARCH);
+    return (Regexp) this.getChild(Regexp.class, ReplaceRegexpOperation.SEARCH);
   }
 
   public void setSearch(Regexp node) {
@@ -112,7 +112,7 @@ public class ReplaceRegexpOperation extends BaseConcept implements IOperation {
   }
 
   public static ReplaceRegexpOperation newInstance(SModel sm, boolean init) {
-    return (ReplaceRegexpOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReplaceRegexpOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ReplaceRegexpOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReplaceRegexpOperation newInstance(SModel sm) {

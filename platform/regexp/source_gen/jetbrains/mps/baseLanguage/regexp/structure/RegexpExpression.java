@@ -16,7 +16,7 @@ public class RegexpExpression extends Expression {
   }
 
   public static RegexpExpression newInstance(SModel sm, boolean init) {
-    return (RegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RegexpExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.RegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RegexpExpression newInstance(SModel sm) {

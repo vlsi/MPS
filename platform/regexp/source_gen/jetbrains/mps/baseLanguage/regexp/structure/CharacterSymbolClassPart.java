@@ -24,7 +24,7 @@ public class CharacterSymbolClassPart extends SymbolClassPart {
   }
 
   public static CharacterSymbolClassPart newInstance(SModel sm, boolean init) {
-    return (CharacterSymbolClassPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (CharacterSymbolClassPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.CharacterSymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static CharacterSymbolClassPart newInstance(SModel sm) {

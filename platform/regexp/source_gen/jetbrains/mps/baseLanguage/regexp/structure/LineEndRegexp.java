@@ -15,7 +15,7 @@ public class LineEndRegexp extends Regexp {
   }
 
   public static LineEndRegexp newInstance(SModel sm, boolean init) {
-    return (LineEndRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LineEndRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LineEndRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LineEndRegexp newInstance(SModel sm) {

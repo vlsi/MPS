@@ -45,7 +45,7 @@ public class SplitExpression extends Expression implements RegexpUsingConstructi
   }
 
   public Expression getExpr() {
-    return (Expression)this.getChild(Expression.class, SplitExpression.EXPR);
+    return (Expression) this.getChild(Expression.class, SplitExpression.EXPR);
   }
 
   public void setExpr(Expression node) {
@@ -53,7 +53,7 @@ public class SplitExpression extends Expression implements RegexpUsingConstructi
   }
 
   public RegexpExpression getRegexp() {
-    return (RegexpExpression)this.getChild(RegexpExpression.class, SplitExpression.REGEXP);
+    return (RegexpExpression) this.getChild(RegexpExpression.class, SplitExpression.REGEXP);
   }
 
   public void setRegexp(RegexpExpression node) {
@@ -61,7 +61,7 @@ public class SplitExpression extends Expression implements RegexpUsingConstructi
   }
 
   public static SplitExpression newInstance(SModel sm, boolean init) {
-    return (SplitExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SplitExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SplitExpression newInstance(SModel sm) {

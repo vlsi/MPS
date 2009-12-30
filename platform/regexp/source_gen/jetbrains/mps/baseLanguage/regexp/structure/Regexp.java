@@ -16,7 +16,7 @@ public class Regexp extends BaseConcept {
   }
 
   public static Regexp newInstance(SModel sm, boolean init) {
-    return (Regexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.Regexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Regexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.Regexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Regexp newInstance(SModel sm) {

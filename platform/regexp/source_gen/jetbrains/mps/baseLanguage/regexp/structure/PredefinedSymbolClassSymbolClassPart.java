@@ -16,7 +16,7 @@ public class PredefinedSymbolClassSymbolClassPart extends SymbolClassPart {
   }
 
   public PredefinedSymbolClassDeclaration getDeclaration() {
-    return (PredefinedSymbolClassDeclaration)this.getReferent(PredefinedSymbolClassDeclaration.class, PredefinedSymbolClassSymbolClassPart.DECLARATION);
+    return (PredefinedSymbolClassDeclaration) this.getReferent(PredefinedSymbolClassDeclaration.class, PredefinedSymbolClassSymbolClassPart.DECLARATION);
   }
 
   public void setDeclaration(PredefinedSymbolClassDeclaration node) {
@@ -24,7 +24,7 @@ public class PredefinedSymbolClassSymbolClassPart extends SymbolClassPart {
   }
 
   public static PredefinedSymbolClassSymbolClassPart newInstance(SModel sm, boolean init) {
-    return (PredefinedSymbolClassSymbolClassPart)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PredefinedSymbolClassSymbolClassPart) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassSymbolClassPart", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PredefinedSymbolClassSymbolClassPart newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class OrRegexp extends BinaryRegexp {
   }
 
   public static OrRegexp newInstance(SModel sm, boolean init) {
-    return (OrRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.OrRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OrRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.OrRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OrRegexp newInstance(SModel sm) {

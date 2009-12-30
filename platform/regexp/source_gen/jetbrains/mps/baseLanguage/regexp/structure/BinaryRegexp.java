@@ -17,7 +17,7 @@ public class BinaryRegexp extends Regexp {
   }
 
   public Regexp getLeft() {
-    return (Regexp)this.getChild(Regexp.class, BinaryRegexp.LEFT);
+    return (Regexp) this.getChild(Regexp.class, BinaryRegexp.LEFT);
   }
 
   public void setLeft(Regexp node) {
@@ -25,7 +25,7 @@ public class BinaryRegexp extends Regexp {
   }
 
   public Regexp getRight() {
-    return (Regexp)this.getChild(Regexp.class, BinaryRegexp.RIGHT);
+    return (Regexp) this.getChild(Regexp.class, BinaryRegexp.RIGHT);
   }
 
   public void setRight(Regexp node) {
@@ -33,7 +33,7 @@ public class BinaryRegexp extends Regexp {
   }
 
   public static BinaryRegexp newInstance(SModel sm, boolean init) {
-    return (BinaryRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (BinaryRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.BinaryRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static BinaryRegexp newInstance(SModel sm) {

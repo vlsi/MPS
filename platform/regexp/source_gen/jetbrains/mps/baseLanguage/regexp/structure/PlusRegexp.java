@@ -15,7 +15,7 @@ public class PlusRegexp extends UnaryRegexp {
   }
 
   public static PlusRegexp newInstance(SModel sm, boolean init) {
-    return (PlusRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PlusRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PlusRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PlusRegexp newInstance(SModel sm) {

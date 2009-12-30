@@ -45,7 +45,7 @@ public class MatchRegexpExpression extends Expression implements RegexpUsingCons
   }
 
   public Expression getInputExpression() {
-    return (Expression)this.getChild(Expression.class, MatchRegexpExpression.INPUT_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, MatchRegexpExpression.INPUT_EXPRESSION);
   }
 
   public void setInputExpression(Expression node) {
@@ -53,7 +53,7 @@ public class MatchRegexpExpression extends Expression implements RegexpUsingCons
   }
 
   public RegexpExpression getRegexp() {
-    return (RegexpExpression)this.getChild(RegexpExpression.class, MatchRegexpExpression.REGEXP);
+    return (RegexpExpression) this.getChild(RegexpExpression.class, MatchRegexpExpression.REGEXP);
   }
 
   public void setRegexp(RegexpExpression node) {
@@ -61,7 +61,7 @@ public class MatchRegexpExpression extends Expression implements RegexpUsingCons
   }
 
   public static MatchRegexpExpression newInstance(SModel sm, boolean init) {
-    return (MatchRegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchRegexpExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatchRegexpExpression newInstance(SModel sm) {

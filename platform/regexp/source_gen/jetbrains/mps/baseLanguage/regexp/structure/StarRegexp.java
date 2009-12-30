@@ -15,7 +15,7 @@ public class StarRegexp extends UnaryRegexp {
   }
 
   public static StarRegexp newInstance(SModel sm, boolean init) {
-    return (StarRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.StarRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StarRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.StarRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StarRegexp newInstance(SModel sm) {

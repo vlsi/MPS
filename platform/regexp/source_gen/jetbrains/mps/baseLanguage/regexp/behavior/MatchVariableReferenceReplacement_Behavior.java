@@ -23,10 +23,10 @@ public class MatchVariableReferenceReplacement_Behavior {
   }
 
   public static String call_toString_3796137614137539495(SNode thisNode, SNode search) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement"), "virtual_toString_3796137614137538905", PARAMETERS_3796137614137539495, search);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement"), "virtual_toString_3796137614137538905", PARAMETERS_3796137614137539495, search);
   }
 
   public static String callSuper_toString_3796137614137539495(SNode thisNode, String callerConceptFqName, SNode search) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement"), callerConceptFqName, "virtual_toString_3796137614137538905", PARAMETERS_3796137614137539495, search);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceReplacement"), callerConceptFqName, "virtual_toString_3796137614137538905", PARAMETERS_3796137614137539495, search);
   }
 }

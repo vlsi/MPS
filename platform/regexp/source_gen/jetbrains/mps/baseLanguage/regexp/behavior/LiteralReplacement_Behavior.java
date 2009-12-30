@@ -86,10 +86,10 @@ public class LiteralReplacement_Behavior {
   }
 
   public static String call_toString_3796137614137538916(SNode thisNode, SNode search) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538916, search);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538916, search);
   }
 
   public static String callSuper_toString_3796137614137538916(SNode thisNode, String callerConceptFqName, SNode search) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), callerConceptFqName, "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538916, search);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.LiteralReplacement"), callerConceptFqName, "virtual_toString_3796137614137538905", PARAMETERS_3796137614137538916, search);
   }
 }

@@ -24,7 +24,7 @@ public class StringLiteralRegexp extends Regexp {
   }
 
   public static StringLiteralRegexp newInstance(SModel sm, boolean init) {
-    return (StringLiteralRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StringLiteralRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.StringLiteralRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StringLiteralRegexp newInstance(SModel sm) {

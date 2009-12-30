@@ -46,7 +46,7 @@ public class ReplaceWithRegexpExpression extends Expression implements RegexpUsi
   }
 
   public Expression getExpr() {
-    return (Expression)this.getChild(Expression.class, ReplaceWithRegexpExpression.EXPR);
+    return (Expression) this.getChild(Expression.class, ReplaceWithRegexpExpression.EXPR);
   }
 
   public void setExpr(Expression node) {
@@ -54,7 +54,7 @@ public class ReplaceWithRegexpExpression extends Expression implements RegexpUsi
   }
 
   public ReplaceBlock getReplaceBlock() {
-    return (ReplaceBlock)this.getChild(ReplaceBlock.class, ReplaceWithRegexpExpression.REPLACE_BLOCK);
+    return (ReplaceBlock) this.getChild(ReplaceBlock.class, ReplaceWithRegexpExpression.REPLACE_BLOCK);
   }
 
   public void setReplaceBlock(ReplaceBlock node) {
@@ -62,7 +62,7 @@ public class ReplaceWithRegexpExpression extends Expression implements RegexpUsi
   }
 
   public RegexpExpression getRegexp() {
-    return (RegexpExpression)this.getChild(RegexpExpression.class, ReplaceWithRegexpExpression.REGEXP);
+    return (RegexpExpression) this.getChild(RegexpExpression.class, ReplaceWithRegexpExpression.REGEXP);
   }
 
   public void setRegexp(RegexpExpression node) {
@@ -70,7 +70,7 @@ public class ReplaceWithRegexpExpression extends Expression implements RegexpUsi
   }
 
   public static ReplaceWithRegexpExpression newInstance(SModel sm, boolean init) {
-    return (ReplaceWithRegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReplaceWithRegexpExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReplaceWithRegexpExpression newInstance(SModel sm) {

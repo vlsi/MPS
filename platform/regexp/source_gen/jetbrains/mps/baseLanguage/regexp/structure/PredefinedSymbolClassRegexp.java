@@ -16,7 +16,7 @@ public class PredefinedSymbolClassRegexp extends Regexp {
   }
 
   public PredefinedSymbolClassDeclaration getSymbolClass() {
-    return (PredefinedSymbolClassDeclaration)this.getReferent(PredefinedSymbolClassDeclaration.class, PredefinedSymbolClassRegexp.SYMBOL_CLASS);
+    return (PredefinedSymbolClassDeclaration) this.getReferent(PredefinedSymbolClassDeclaration.class, PredefinedSymbolClassRegexp.SYMBOL_CLASS);
   }
 
   public void setSymbolClass(PredefinedSymbolClassDeclaration node) {
@@ -24,7 +24,7 @@ public class PredefinedSymbolClassRegexp extends Regexp {
   }
 
   public static PredefinedSymbolClassRegexp newInstance(SModel sm, boolean init) {
-    return (PredefinedSymbolClassRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PredefinedSymbolClassRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PredefinedSymbolClassRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PredefinedSymbolClassRegexp newInstance(SModel sm) {

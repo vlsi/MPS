@@ -15,7 +15,7 @@ public class QuestionRegexp extends UnaryRegexp {
   }
 
   public static QuestionRegexp newInstance(SModel sm, boolean init) {
-    return (QuestionRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (QuestionRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.QuestionRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static QuestionRegexp newInstance(SModel sm) {

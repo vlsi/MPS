@@ -15,7 +15,7 @@ public class LineStartRegexp extends Regexp {
   }
 
   public static LineStartRegexp newInstance(SModel sm, boolean init) {
-    return (LineStartRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LineStartRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.LineStartRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LineStartRegexp newInstance(SModel sm) {

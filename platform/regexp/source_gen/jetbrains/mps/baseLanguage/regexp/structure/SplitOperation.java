@@ -45,7 +45,7 @@ public class SplitOperation extends BaseConcept implements IOperation, RegexpUsi
   }
 
   public RegexpExpression getRegexp() {
-    return (RegexpExpression)this.getChild(RegexpExpression.class, SplitOperation.REGEXP);
+    return (RegexpExpression) this.getChild(RegexpExpression.class, SplitOperation.REGEXP);
   }
 
   public void setRegexp(RegexpExpression node) {
@@ -53,7 +53,7 @@ public class SplitOperation extends BaseConcept implements IOperation, RegexpUsi
   }
 
   public static SplitOperation newInstance(SModel sm, boolean init) {
-    return (SplitOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.SplitOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (SplitOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.SplitOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static SplitOperation newInstance(SModel sm) {

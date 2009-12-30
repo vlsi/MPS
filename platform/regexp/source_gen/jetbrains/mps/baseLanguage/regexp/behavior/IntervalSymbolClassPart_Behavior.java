@@ -18,10 +18,10 @@ public class IntervalSymbolClassPart_Behavior {
   }
 
   public static String call_getRepresentation_8173814113624650554(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"), "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650554);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"), "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650554);
   }
 
   public static String callSuper_getRepresentation_8173814113624650554(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"), callerConceptFqName, "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650554);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.IntervalSymbolClassPart"), callerConceptFqName, "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650554);
   }
 }

@@ -15,7 +15,7 @@ public class PositiveLookAheadRegexp extends LookRegexp {
   }
 
   public static PositiveLookAheadRegexp newInstance(SModel sm, boolean init) {
-    return (PositiveLookAheadRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PositiveLookAheadRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.PositiveLookAheadRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PositiveLookAheadRegexp newInstance(SModel sm) {

@@ -54,7 +54,7 @@ public class MatchParensRegexp extends Regexp implements INamedConcept, IVariabl
   }
 
   public Regexp getRegexp() {
-    return (Regexp)this.getChild(Regexp.class, MatchParensRegexp.REGEXP);
+    return (Regexp) this.getChild(Regexp.class, MatchParensRegexp.REGEXP);
   }
 
   public void setRegexp(Regexp node) {
@@ -62,7 +62,7 @@ public class MatchParensRegexp extends Regexp implements INamedConcept, IVariabl
   }
 
   public static MatchParensRegexp newInstance(SModel sm, boolean init) {
-    return (MatchParensRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchParensRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchParensRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatchParensRegexp newInstance(SModel sm) {

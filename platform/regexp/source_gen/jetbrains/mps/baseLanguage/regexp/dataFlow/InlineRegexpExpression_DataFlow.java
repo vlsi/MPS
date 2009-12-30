@@ -13,6 +13,6 @@ public class InlineRegexpExpression_DataFlow extends DataFlowBuilder {
   }
 
   public void build(final IOperationContext operationContext, final DataFlowBuilderContext _context) {
-    _context.getBuilder().build((SNode)SLinkOperations.getTarget(_context.getNode(), "regexp", true));
+    _context.getBuilder().build((SNode) SLinkOperations.getTarget(_context.getNode(), "regexp", true));
   }
 }

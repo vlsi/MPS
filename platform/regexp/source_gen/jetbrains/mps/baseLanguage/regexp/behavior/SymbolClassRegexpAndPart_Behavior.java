@@ -13,10 +13,10 @@ public class SymbolClassRegexpAndPart_Behavior {
   }
 
   public static String call_getRepresentation_8173814113624650482(SNode thisNode) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"), "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650482);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"), "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650482);
   }
 
   public static String callSuper_getRepresentation_8173814113624650482(SNode thisNode, String callerConceptFqName) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"), callerConceptFqName, "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650482);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.SymbolClassRegexpAndPart"), callerConceptFqName, "virtual_getRepresentation_8173814113624650482", PARAMETERS_8173814113624650482);
   }
 }

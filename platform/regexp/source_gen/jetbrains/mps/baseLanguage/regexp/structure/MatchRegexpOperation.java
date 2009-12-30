@@ -45,7 +45,7 @@ public class MatchRegexpOperation extends BaseConcept implements IOperation, Reg
   }
 
   public RegexpExpression getRegexp() {
-    return (RegexpExpression)this.getChild(RegexpExpression.class, MatchRegexpOperation.REGEXP);
+    return (RegexpExpression) this.getChild(RegexpExpression.class, MatchRegexpOperation.REGEXP);
   }
 
   public void setRegexp(RegexpExpression node) {
@@ -53,7 +53,7 @@ public class MatchRegexpOperation extends BaseConcept implements IOperation, Reg
   }
 
   public static MatchRegexpOperation newInstance(SModel sm, boolean init) {
-    return (MatchRegexpOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchRegexpOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatchRegexpOperation newInstance(SModel sm) {

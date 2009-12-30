@@ -24,10 +24,10 @@ public class NTimesRegexp_Behavior {
   }
 
   public static String call_getString_1222437729031(SNode thisNode, List<SNode> vars) {
-    return (String)BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222437729031, vars);
+    return (String) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp"), "virtual_getString_1222432436326", PARAMETERS_1222437729031, vars);
   }
 
   public static String callSuper_getString_1222437729031(SNode thisNode, String callerConceptFqName, List<SNode> vars) {
-    return (String)BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222437729031, vars);
+    return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.regexp.structure.NTimesRegexp"), callerConceptFqName, "virtual_getString_1222432436326", PARAMETERS_1222437729031, vars);
   }
 }

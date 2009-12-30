@@ -16,7 +16,7 @@ public class ReplaceBlock extends Closure {
   }
 
   public static ReplaceBlock newInstance(SModel sm, boolean init) {
-    return (ReplaceBlock)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReplaceBlock) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ReplaceBlock", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReplaceBlock newInstance(SModel sm) {

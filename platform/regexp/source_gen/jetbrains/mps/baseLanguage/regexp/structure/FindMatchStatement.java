@@ -48,7 +48,7 @@ public class FindMatchStatement extends Statement implements RegexpUsingConstruc
   }
 
   public Expression getExpr() {
-    return (Expression)this.getChild(Expression.class, FindMatchStatement.EXPR);
+    return (Expression) this.getChild(Expression.class, FindMatchStatement.EXPR);
   }
 
   public void setExpr(Expression node) {
@@ -56,7 +56,7 @@ public class FindMatchStatement extends Statement implements RegexpUsingConstruc
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, FindMatchStatement.BODY);
+    return (StatementList) this.getChild(StatementList.class, FindMatchStatement.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -64,7 +64,7 @@ public class FindMatchStatement extends Statement implements RegexpUsingConstruc
   }
 
   public RegexpExpression getRegexp() {
-    return (RegexpExpression)this.getChild(RegexpExpression.class, FindMatchStatement.REGEXP);
+    return (RegexpExpression) this.getChild(RegexpExpression.class, FindMatchStatement.REGEXP);
   }
 
   public void setRegexp(RegexpExpression node) {
@@ -72,7 +72,7 @@ public class FindMatchStatement extends Statement implements RegexpUsingConstruc
   }
 
   public static FindMatchStatement newInstance(SModel sm, boolean init) {
-    return (FindMatchStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FindMatchStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.FindMatchStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FindMatchStatement newInstance(SModel sm) {

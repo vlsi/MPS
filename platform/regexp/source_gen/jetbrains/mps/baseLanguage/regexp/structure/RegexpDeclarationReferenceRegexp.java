@@ -16,7 +16,7 @@ public class RegexpDeclarationReferenceRegexp extends Regexp {
   }
 
   public RegexpDeclaration getRegexp() {
-    return (RegexpDeclaration)this.getReferent(RegexpDeclaration.class, RegexpDeclarationReferenceRegexp.REGEXP);
+    return (RegexpDeclaration) this.getReferent(RegexpDeclaration.class, RegexpDeclarationReferenceRegexp.REGEXP);
   }
 
   public void setRegexp(RegexpDeclaration node) {
@@ -24,7 +24,7 @@ public class RegexpDeclarationReferenceRegexp extends Regexp {
   }
 
   public static RegexpDeclarationReferenceRegexp newInstance(SModel sm, boolean init) {
-    return (RegexpDeclarationReferenceRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RegexpDeclarationReferenceRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclarationReferenceRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RegexpDeclarationReferenceRegexp newInstance(SModel sm) {

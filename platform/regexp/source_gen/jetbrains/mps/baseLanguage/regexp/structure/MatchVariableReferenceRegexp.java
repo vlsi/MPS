@@ -16,7 +16,7 @@ public class MatchVariableReferenceRegexp extends Regexp {
   }
 
   public MatchParensRegexp getMatch() {
-    return (MatchParensRegexp)this.getReferent(MatchParensRegexp.class, MatchVariableReferenceRegexp.MATCH);
+    return (MatchParensRegexp) this.getReferent(MatchParensRegexp.class, MatchVariableReferenceRegexp.MATCH);
   }
 
   public void setMatch(MatchParensRegexp node) {
@@ -24,7 +24,7 @@ public class MatchVariableReferenceRegexp extends Regexp {
   }
 
   public static MatchVariableReferenceRegexp newInstance(SModel sm, boolean init) {
-    return (MatchVariableReferenceRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchVariableReferenceRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchVariableReferenceRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatchVariableReferenceRegexp newInstance(SModel sm) {

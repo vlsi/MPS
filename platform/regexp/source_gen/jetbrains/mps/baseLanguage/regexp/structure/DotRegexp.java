@@ -15,7 +15,7 @@ public class DotRegexp extends Regexp {
   }
 
   public static DotRegexp newInstance(SModel sm, boolean init) {
-    return (DotRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.DotRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (DotRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.DotRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static DotRegexp newInstance(SModel sm) {

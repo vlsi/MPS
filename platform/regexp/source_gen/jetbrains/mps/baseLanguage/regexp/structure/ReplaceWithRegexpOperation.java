@@ -46,7 +46,7 @@ public class ReplaceWithRegexpOperation extends BaseConcept implements IOperatio
   }
 
   public ReplaceBlock getReplaceBlock() {
-    return (ReplaceBlock)this.getChild(ReplaceBlock.class, ReplaceWithRegexpOperation.REPLACE_BLOCK);
+    return (ReplaceBlock) this.getChild(ReplaceBlock.class, ReplaceWithRegexpOperation.REPLACE_BLOCK);
   }
 
   public void setReplaceBlock(ReplaceBlock node) {
@@ -54,7 +54,7 @@ public class ReplaceWithRegexpOperation extends BaseConcept implements IOperatio
   }
 
   public RegexpExpression getRegexp() {
-    return (RegexpExpression)this.getChild(RegexpExpression.class, ReplaceWithRegexpOperation.REGEXP);
+    return (RegexpExpression) this.getChild(RegexpExpression.class, ReplaceWithRegexpOperation.REGEXP);
   }
 
   public void setRegexp(RegexpExpression node) {
@@ -62,7 +62,7 @@ public class ReplaceWithRegexpOperation extends BaseConcept implements IOperatio
   }
 
   public static ReplaceWithRegexpOperation newInstance(SModel sm, boolean init) {
-    return (ReplaceWithRegexpOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReplaceWithRegexpOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReplaceWithRegexpOperation newInstance(SModel sm) {

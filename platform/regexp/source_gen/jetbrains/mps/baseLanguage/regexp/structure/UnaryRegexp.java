@@ -16,7 +16,7 @@ public class UnaryRegexp extends Regexp {
   }
 
   public Regexp getRegexp() {
-    return (Regexp)this.getChild(Regexp.class, UnaryRegexp.REGEXP);
+    return (Regexp) this.getChild(Regexp.class, UnaryRegexp.REGEXP);
   }
 
   public void setRegexp(Regexp node) {
@@ -24,7 +24,7 @@ public class UnaryRegexp extends Regexp {
   }
 
   public static UnaryRegexp newInstance(SModel sm, boolean init) {
-    return (UnaryRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (UnaryRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.UnaryRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static UnaryRegexp newInstance(SModel sm) {

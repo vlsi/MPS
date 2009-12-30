@@ -48,7 +48,7 @@ public class MatchRegexpStatement extends Statement implements RegexpUsingConstr
   }
 
   public StatementList getBody() {
-    return (StatementList)this.getChild(StatementList.class, MatchRegexpStatement.BODY);
+    return (StatementList) this.getChild(StatementList.class, MatchRegexpStatement.BODY);
   }
 
   public void setBody(StatementList node) {
@@ -56,7 +56,7 @@ public class MatchRegexpStatement extends Statement implements RegexpUsingConstr
   }
 
   public Expression getExpr() {
-    return (Expression)this.getChild(Expression.class, MatchRegexpStatement.EXPR);
+    return (Expression) this.getChild(Expression.class, MatchRegexpStatement.EXPR);
   }
 
   public void setExpr(Expression node) {
@@ -64,7 +64,7 @@ public class MatchRegexpStatement extends Statement implements RegexpUsingConstr
   }
 
   public RegexpExpression getRegexp() {
-    return (RegexpExpression)this.getChild(RegexpExpression.class, MatchRegexpStatement.REGEXP);
+    return (RegexpExpression) this.getChild(RegexpExpression.class, MatchRegexpStatement.REGEXP);
   }
 
   public void setRegexp(RegexpExpression node) {
@@ -72,7 +72,7 @@ public class MatchRegexpStatement extends Statement implements RegexpUsingConstr
   }
 
   public static MatchRegexpStatement newInstance(SModel sm, boolean init) {
-    return (MatchRegexpStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MatchRegexpStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MatchRegexpStatement newInstance(SModel sm) {

@@ -43,7 +43,7 @@ public class InlineRegexpExpression extends RegexpExpression {
   }
 
   public Regexp getRegexp() {
-    return (Regexp)this.getChild(Regexp.class, InlineRegexpExpression.REGEXP);
+    return (Regexp) this.getChild(Regexp.class, InlineRegexpExpression.REGEXP);
   }
 
   public void setRegexp(Regexp node) {
@@ -51,7 +51,7 @@ public class InlineRegexpExpression extends RegexpExpression {
   }
 
   public static InlineRegexpExpression newInstance(SModel sm, boolean init) {
-    return (InlineRegexpExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InlineRegexpExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InlineRegexpExpression newInstance(SModel sm) {

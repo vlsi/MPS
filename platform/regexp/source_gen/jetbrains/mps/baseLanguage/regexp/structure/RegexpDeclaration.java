@@ -63,7 +63,7 @@ public class RegexpDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public Regexp getRegexp() {
-    return (Regexp)this.getChild(Regexp.class, RegexpDeclaration.REGEXP);
+    return (Regexp) this.getChild(Regexp.class, RegexpDeclaration.REGEXP);
   }
 
   public void setRegexp(Regexp node) {
@@ -71,7 +71,7 @@ public class RegexpDeclaration extends BaseConcept implements INamedConcept {
   }
 
   public static RegexpDeclaration newInstance(SModel sm, boolean init) {
-    return (RegexpDeclaration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (RegexpDeclaration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.RegexpDeclaration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static RegexpDeclaration newInstance(SModel sm) {

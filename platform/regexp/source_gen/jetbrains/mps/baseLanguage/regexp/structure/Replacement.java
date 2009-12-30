@@ -16,7 +16,7 @@ public class Replacement extends BaseConcept {
   }
 
   public static Replacement newInstance(SModel sm, boolean init) {
-    return (Replacement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.Replacement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Replacement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.Replacement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Replacement newInstance(SModel sm) {

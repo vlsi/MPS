@@ -15,7 +15,7 @@ public class NegativeLookBehindRegexp extends LookRegexp {
   }
 
   public static NegativeLookBehindRegexp newInstance(SModel sm, boolean init) {
-    return (NegativeLookBehindRegexp)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NegativeLookBehindRegexp) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.NegativeLookBehindRegexp", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NegativeLookBehindRegexp newInstance(SModel sm) {

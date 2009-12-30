@@ -45,7 +45,7 @@ public class FindMatchExpression extends Expression implements RegexpUsingConstr
   }
 
   public Expression getInputExpression() {
-    return (Expression)this.getChild(Expression.class, FindMatchExpression.INPUT_EXPRESSION);
+    return (Expression) this.getChild(Expression.class, FindMatchExpression.INPUT_EXPRESSION);
   }
 
   public void setInputExpression(Expression node) {
@@ -53,7 +53,7 @@ public class FindMatchExpression extends Expression implements RegexpUsingConstr
   }
 
   public RegexpExpression getRegexp() {
-    return (RegexpExpression)this.getChild(RegexpExpression.class, FindMatchExpression.REGEXP);
+    return (RegexpExpression) this.getChild(RegexpExpression.class, FindMatchExpression.REGEXP);
   }
 
   public void setRegexp(RegexpExpression node) {
@@ -61,7 +61,7 @@ public class FindMatchExpression extends Expression implements RegexpUsingConstr
   }
 
   public static FindMatchExpression newInstance(SModel sm, boolean init) {
-    return (FindMatchExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FindMatchExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FindMatchExpression newInstance(SModel sm) {
