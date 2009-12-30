@@ -39,7 +39,7 @@ public class CharConstant_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createCollection_2322_0(EditorContext editorContext, SNode node) {
-    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_2322_0");
     editorCell.addEditorCell(this.createConstant_2322_0(editorContext, node));
     editorCell.addEditorCell(this.createAlternation_2322_0(editorContext, node));

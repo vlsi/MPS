@@ -824,5 +824,57 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="7738261905749582032">
+    <link role="conceptDeclaration:32" targetNodeId="1.7738261905749564104:1" resolveInfo="ExtractStaticInnerClassExpression" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="7738261905749582034">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="7738261905749582037">
+        <property name="text:32" value="extract" />
+        <link role="styleClass:32" targetNodeId="1224158483340" resolveInfo="InternalName" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="7738261905749582040">
+        <property name="text:32" value="(" />
+        <link role="styleClass:32" targetNodeId="3.1234958090348" resolveInfo="LeftParenAfterName" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="7738261905749582049">
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="7738261905749582050">
+          <property name="flag:32" value="false" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="7738261905749582053">
+          <link role="relationDeclaration:32" targetNodeId="1.7738261905749564105:1" />
+        </node>
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="7738261905749582052" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="7738261905749582044">
+        <property name="text:32" value="=&gt;" />
+        <link role="styleClass:32" targetNodeId="1224158483340" resolveInfo="InternalName" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PaddingLeftStyleClassItem:32" id="7738261905749582047">
+          <property name="value:32" value="1" />
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="7738261905749582046">
+        <link role="relationDeclaration:32" targetNodeId="1.7738261905749582030:1" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="7738261905749582042">
+        <property name="text:32" value=")" />
+        <link role="styleClass:32" targetNodeId="3.1215088010675" resolveInfo="RightParen" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="7738261905749582036" />
+    </node>
+    <node role="inspectedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="7738261905749582055">
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="7738261905749582056" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="7738261905749582057">
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="7738261905749582058" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="7738261905749582059">
+          <property name="flag:32" value="false" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="7738261905749582060">
+          <property name="text:32" value="make unique" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="7738261905749582061">
+          <link role="relationDeclaration:32" targetNodeId="1.7738261905749582054:1" resolveInfo="makeUnique" />
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

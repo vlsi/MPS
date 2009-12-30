@@ -55,4 +55,25 @@ public class ContextUtil {
     }
     return null;
   }
+
+  public static SNode getContextForInnerClass(TemplateQueryContext genContext, SNode node, boolean topmost) {
+    SNode usage = genContext.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(node, "inner", true), "classUsageExpr");
+    if ((usage != null)) {
+      if (topmost) {
+        return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).last();
+      } else {
+        return ListSequence.fromList(SNodeOperations.getAncestors(usage, "jetbrains.mps.baseLanguage.structure.ClassConcept", false)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return Classifier_Behavior.call_isStatic_521412098689998668(it);
+          }
+        }).first();
+      }
+    } else {
+      SNode outclass = genContext.getCopiedOutputNodeForInputNode(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false));
+      if ((outclass != null)) {
+        return ListSequence.fromList(SNodeOperations.getAncestors(outclass, "jetbrains.mps.baseLanguage.structure.ClassConcept", true)).last();
+      }
+    }
+    return null;
+  }
 }

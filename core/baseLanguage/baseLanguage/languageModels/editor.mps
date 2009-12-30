@@ -11865,7 +11865,7 @@
         <property name="text:32" value="'" />
         <link role="styleClass:32" targetNodeId="1215088010675" resolveInfo="RightParen" />
       </node>
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1237471323129" />
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="5822086619725829606" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1201371426447">

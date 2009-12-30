@@ -597,5 +597,35 @@
       <link role="concept:3" targetNodeId="1.3196918548952765095:1" resolveInfo="ExtractStatementList" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="7738261905749582062">
+    <property name="name:3" value="typeof_ExtractStaticInnerClassExpression" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7738261905749582063">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="7738261905749582065">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="7738261905749582066">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="7738261905749582067">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7738261905749582068">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="7738261905749582069">
+                <link role="applicableNode:3" targetNodeId="7738261905749582064" resolveInfo="expression" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7738261905749616073">
+                <link role="link:16" targetNodeId="1.7738261905749582030:1" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="7738261905749582071">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="7738261905749582072">
+            <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="7738261905749582073">
+              <link role="applicableNode:3" targetNodeId="7738261905749582064" resolveInfo="expression" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="7738261905749582064">
+      <property name="name:3" value="expression" />
+      <link role="concept:3" targetNodeId="1.7738261905749564104:1" resolveInfo="ExtractStaticInnerClassExpression" />
+    </node>
+  </node>
 </model>
 
