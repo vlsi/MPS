@@ -17,6 +17,8 @@ package jetbrains.mps.workbench.actions.goTo.index;
 
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
@@ -42,6 +44,12 @@ public class SNodeDescriptorPresentation extends BasePresentation {
   }
 
   public Icon doGetIcon() {
-    return IconManager.getIconForConceptFQName(myNodeResult.getConceptFqName());
+    String conceptFqName = myNodeResult.getConceptFqName();
+    if (IconManager.canUseAlternativeIcon(conceptFqName)) {
+      SNode node = GlobalScope.getInstance().getModelDescriptor(myNodeResult.getModelReference()).
+        getSModel().getRoots().get(myNodeResult.getNumberInModel());
+      return IconManager.getIconFor(node);
+    }
+    return IconManager.getIconForConceptFQName(conceptFqName);
   }
 }
