@@ -325,7 +325,7 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
       }
       if (containsError) {
         group.addSeparator();
-        group.add(new BaseAction("Submit to Issue Tracker") {
+        group.add(new BaseAction(messages.length > 1? "Submit as One Issue" : "Submit to Issue Tracker") {
           {
             setExecuteOutsideCommand(true);
           }
