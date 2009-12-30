@@ -150,6 +150,10 @@ public class ImportProperties {
   //should return null if module is already in place
   private ModuleReference getPreferredModuleForModel(SModelReference modelRef) {
     SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(modelRef);
+    if (model == null) {
+      // Model was deleted.
+      return null;
+    }
     Set<IModule> owners = model.getModules();
 
     if (owners.contains(myTargetModule)) return null;
