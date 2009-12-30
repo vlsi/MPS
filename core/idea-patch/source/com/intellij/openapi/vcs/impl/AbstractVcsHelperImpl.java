@@ -97,6 +97,12 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
  * It was also patched in order to fix multiple merge dialog problem,
  * when MPS and IDEA both displayed merge dialog for the same file.
  * see showMergeDialog method for more details
+ *
+ * Third patch was performed in order to fix problem with two message views
+ * MessageView.SERVICE.getInstance(myProject)
+ * was replaced with
+ * myProject.getComponent(jetbrains.mps.ide.messages.MessagesViewTool.class)
+ * everywhere in this file
  */
 public class AbstractVcsHelperImpl extends AbstractVcsHelper {
   private static final Logger LOG = Logger.getInstance("#com.intellij.openapi.vcs.impl.AbstractVcsHelperImpl");
@@ -108,11 +114,15 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     myProject = project;
   }
 
+  @Patch
   public void openMessagesView(final VcsErrorViewPanel errorTreeView, final String tabDisplayName) {
     CommandProcessor commandProcessor = CommandProcessor.getInstance();
     commandProcessor.executeCommand(myProject, new Runnable() {
+      @Patch
       public void run() {
+        // MPS Patch Start
         final MessageView messageView = myProject.getComponent(jetbrains.mps.ide.messages.MessagesViewTool.class);
+        // MPS Patch End
         messageView.runWhenInitialized(new Runnable() {
           public void run() {
             final Content content =
@@ -122,7 +132,9 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
             messageView.getContentManager().setSelectedContent(content);
             removeContents(content, tabDisplayName);
 
+            // MPS Patch Start
             myProject.getComponent(jetbrains.mps.ide.messages.MessagesViewTool.class).getToolWindow().activate(null);
+            // MPS Patch End
           }
         });
       }
@@ -313,8 +325,11 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     }
   }
 
+  @Patch
   protected void removeContents(Content notToRemove, final String tabDisplayName) {
+    // MPS Patch Start
     MessageView messageView = myProject.getComponent(jetbrains.mps.ide.messages.MessagesViewTool.class);
+    // MPS Patch End
     Content[] contents = messageView.getContentManager().getContents();
     for (Content content : contents) {
       LOG.assertTrue(content != null);
@@ -644,6 +659,7 @@ public class AbstractVcsHelperImpl extends AbstractVcsHelper {
     return zipfile;
   }
 
+  @Patch
   private static void writeMetaInformation(MergeData mergeData, VirtualFile file, File tmpDir) throws IOException {
     File baseFile = new File(tmpDir.getAbsolutePath() + File.separator + "info.txt");
     baseFile.createNewFile();
