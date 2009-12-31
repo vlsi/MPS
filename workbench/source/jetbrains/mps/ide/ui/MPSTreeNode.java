@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.util.Computable;
+import com.intellij.ui.RowIcon;
 import jetbrains.mps.ide.SystemInfo;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
@@ -50,7 +51,6 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
 
   private Icon myCollapsedIcon = Icons.CLOSED_FOLDER;
   private Icon myExpandedIcon = Icons.OPENED_FOLDER;
-  private Icon myAdditionalIcon = null;
   private String myNodeIdentifier;
   private String myText;
   private String myAdditionalText = null;
@@ -298,14 +298,6 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
   }
 
   protected void updatePresentation() {
-  }
-
-  public final Icon getAdditionalIcon() {
-    return myAdditionalIcon;
-  }
-
-  public final void setAdditionalIcon(Icon newIcon) {
-    myAdditionalIcon = newIcon;
   }
 
   public final Icon getIcon(boolean expanded) {

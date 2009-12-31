@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.icons;
 
 import com.intellij.openapi.util.Computable;
+import com.intellij.ui.RowIcon;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -78,12 +79,11 @@ public class IconManager {
   public static Icon getIconFor(@NotNull final SNode node) {
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
       public Icon compute() {
-        Icon result = null;
+        Icon mainIcon = null;
 
         if (node.isUnknown()) {
           return Icons.UNKNOWN_ICON;
         }
-
 
         if (node.getConceptDeclarationAdapter() instanceof ConceptDeclaration) {
           ConceptDeclaration concept = (ConceptDeclaration) node.getConceptDeclarationAdapter();
@@ -100,29 +100,23 @@ public class IconManager {
           } catch (Throwable t) {
           }
           if (icon != null) {
-            result = icon;
+            mainIcon = icon;
           } else {
-            result = IconManager.getIconFor(concept);            
+            mainIcon = IconManager.getIconFor(concept);
           }
         }
 
-        if (result == null) {
+        if (mainIcon == null) {
           if (node.isRoot()) {
             return Icons.DEFAULT_ROOT_ICON;
           } else {
             return Icons.DEFAULT_NODE_ICON;
           }
         }
-
+        RowIcon result = new RowIcon(2);
+        result.setIcon(mainIcon, 0);
+        result.setIcon(BaseConcept_Behavior.call_getAdditionalIcon_5017341185733863694(node), 1);
         return result;
-      }
-    });
-  }
-
-  public static Icon getAdditionalIconFor(@NotNull final SNode node) {
-    return ModelAccess.instance().runReadAction(new Computable<Icon>() {
-      public Icon compute() {
-        return BaseConcept_Behavior.call_getAdditionalIcon_5017341185733863694(node);
       }
     });
   }

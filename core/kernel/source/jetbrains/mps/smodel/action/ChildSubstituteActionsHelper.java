@@ -474,10 +474,6 @@ public class ChildSubstituteActionsHelper {
       return NodePresentationUtil.getIcon(myReferentNode, true);
     }
 
-    public Icon getAdditionalIcon() {
-      return NodePresentationUtil.getAdditionalIcon(myReferentNode);
-    }
-
     @Override
     public int getFontStyleFor(String pattern) {
       return NodePresentationUtil.getFontStyle(myParentNode, myReferentNode);

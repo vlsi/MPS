@@ -703,7 +703,6 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
   }
 
   protected static class NewMPSTreeCellRenderer extends JPanel implements TreeCellRenderer {
-    private JLabel myIconLabel = new JLabel();
     private JLabel myMainTextLabel = new JLabel();
     private JLabel myAdditionalTextLabel = new JLabel();
     private boolean mySelected;
@@ -713,7 +712,6 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     public NewMPSTreeCellRenderer() {
       setLayout(new BorderLayout());
       setOpaque(false);
-      add(myIconLabel, BorderLayout.WEST);
       add(myMainTextLabel, BorderLayout.CENTER);
       add(myAdditionalTextLabel, BorderLayout.EAST);
     }
@@ -735,7 +733,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       String text = value.toString();
       String additionalText = null;
       if (value instanceof MPSTreeNode) {
-        final MPSTreeNode treeNode = (MPSTreeNode) value;
+        MPSTreeNode treeNode = (MPSTreeNode) value;
         icon = treeNode.getIcon(expanded);
         text = treeNode.getText();
         additionalText = treeNode.getAdditionalText();
@@ -747,9 +745,6 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
         if (!selected) {
           myMainTextLabel.setForeground(treeNode.getColor());
         }
-        Icon additionalIcon = treeNode.getAdditionalIcon();
-        myMainTextLabel.setIcon(additionalIcon);
-
         myNode = treeNode;
       } else {
         myMainTextLabel.setFont(tree.getFont());
@@ -773,12 +768,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
           icon = UIManager.getIcon("Tree.closedIcon");
         }
       }
-      if (myMainTextLabel.getIcon() == null) {
-        myMainTextLabel.setIcon(icon);
-        myIconLabel.setIcon(null);
-      } else {
-        myIconLabel.setIcon(icon);
-      }
+      myMainTextLabel.setIcon(icon);
       mySelected = selected;
       myHasFocus = hasFocus;
 
@@ -800,9 +790,6 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
       Icon icon = myMainTextLabel.getIcon();
       if (icon != null) {
         imageOffset = icon.getIconWidth() + Math.max(0, myMainTextLabel.getIconTextGap() - 1);
-        if (myIconLabel.getIcon() != null) {
-          imageOffset += Math.max(0, myIconLabel.getWidth() - 1);
-        }
       } else {
         imageOffset = 0;
       }
