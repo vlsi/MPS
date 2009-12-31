@@ -46,34 +46,33 @@ public class UIComponents {
     return dialog;
   }
 
-  public static class MyDialog extends BaseBindedDialog {
+  public static class MyDialog extends BaseBindedDialog implements ClasspathObserver {
     private File mySourceDir;
-    private List<IClassPathItem> myAdditionalClasspaths = new ArrayList<IClassPathItem>();
+    private List<IClassPathItem> myAdditionalClasspaths = ObservableCollections.observableList(new ArrayList<IClassPathItem>());
     private ObservableList<String> myUnresolvedFQNames;
 
     private Map<IClassPathItem, Set<String>> myClasspathsToClasses = new HashMap<IClassPathItem, Set<String>>();
-    private ObservableListListener myListListener = new MyObservableListListener();
 
     protected MyDialog(IOperationContext operationContext, final File sourceDir, List<String> classFqNames) throws HeadlessException {
       super("Classpaths", operationContext);
       mySourceDir = sourceDir;
       myUnresolvedFQNames = ObservableCollections.observableList(new ArrayList<String>(classFqNames));
 
-      Computable<IClassPathItem> chooser = new Computable<IClassPathItem>() {
-        public IClassPathItem compute() {
-          return chooseClasspath(mySourceDir);
-        }
-      };
-      ClassPathListCellRenderer classPathListCellRenderer = new ClassPathListCellRenderer();
-      ObservableList<IClassPathItem> observable = ObservableCollections.observableList(myAdditionalClasspaths);
-      observable.addObservableListListener(myListListener);
-      JPanel panel = UiListsFactory.createBoundListPanel(this, "Classpaths", observable, classPathListCellRenderer, null, chooser);
+      JScrollPane panel = new JScrollPane(ClasspathSelectionTree.createClasspathSelectionTree(this, mySourceDir));
 
       DefaultListCellRenderer renderer = new DefaultListCellRenderer();
+      JPanel classPathPanel = UiListsFactory.createBoundListPanel(this, "Added Classpaths",
+        myAdditionalClasspaths, renderer, null, null);
+
       JPanel classesList = UiListsFactory.createBoundListPanel(this, "Unresolved Names",
         myUnresolvedFQNames, renderer, null, null);
-      JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, panel, classesList);
-      splitPane.setResizeWeight(0.5);
+
+      JSplitPane innerSplitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, classPathPanel, classesList);
+      innerSplitPane.setResizeWeight(0.5);
+
+
+      JSplitPane splitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, panel, innerSplitPane);
+      splitPane.setResizeWeight(0.33);
 
       this.setLayout(new BorderLayout());
       this.add(splitPane, BorderLayout.CENTER);
@@ -128,7 +127,9 @@ public class UIComponents {
       return this.getRootPane();
     }
 
-    private void classPathAdded(IClassPathItem classPath) {
+    public void classPathAdded(IClassPathItem classPath) {
+      if (classPath == null) return;
+      myAdditionalClasspaths.add(classPath);
       for (String unresolvedFQName : new ArrayList<String>(myUnresolvedFQNames)) {
         if (classPath.getClass(unresolvedFQName) != null ||
           !classPath.getAvailableClasses(unresolvedFQName).isEmpty() ||
@@ -149,7 +150,9 @@ public class UIComponents {
       myUnresolvedFQNames.remove(fqName);
     }
 
-    private void classPathRemoved(IClassPathItem classPath) {
+    public void classPathRemoved(IClassPathItem classPath) {
+      if (classPath == null) return;
+      myAdditionalClasspaths.remove(classPath);
       Set<String> unresolvedNames = myClasspathsToClasses.remove(classPath);
       if (unresolvedNames != null) {
         myUnresolvedFQNames.addAll(unresolvedNames);
@@ -159,47 +162,6 @@ public class UIComponents {
 
     public List<IClassPathItem> getChosenClassPaths() {
       return new ArrayList<IClassPathItem>(myAdditionalClasspaths);
-    }
-
-    private class MyObservableListListener implements ObservableListListener {
-      public void listElementsAdded(ObservableList list, int index, int length) {
-        for (int i = 0; i < length; i++) {
-          IClassPathItem addedClasspath = (IClassPathItem) list.get(index + i);
-          classPathAdded(addedClasspath);
-        }
-      }
-
-      public void listElementsRemoved(ObservableList list, int index, List oldElements) {
-        for (Object oldElement : oldElements) {
-          classPathRemoved((IClassPathItem) oldElement);
-        }
-      }
-
-      public void listElementReplaced(ObservableList list, int index, Object oldElement) {
-      }
-
-      public void listElementPropertyChanged(ObservableList list, int index) {
-      }
-    }
-  }
-
-  public static class ClassPathListCellRenderer extends DefaultListCellRenderer {
-    public Component getListCellRendererComponent(JList list, Object value, int index, boolean isSelected, boolean cellHasFocus) {
-      String stringValue;
-      boolean jar = false;
-      if (value instanceof FileClassPathItem) {
-        stringValue = ((FileClassPathItem) value).getClassPath();
-      } else if (value instanceof JarFileClassPathItem) {
-        jar = true;
-        stringValue = ((JarFileClassPathItem) value).getFile().getAbsolutePath();
-      } else {
-        stringValue = "";
-      }
-      Component listCellRendererComponent = super.getListCellRendererComponent(list, stringValue, index, isSelected, cellHasFocus);
-      if (jar) {
-        setForeground(MPSColors.DARK_GRAY);
-      }
-      return listCellRendererComponent;
     }
   }
 }
