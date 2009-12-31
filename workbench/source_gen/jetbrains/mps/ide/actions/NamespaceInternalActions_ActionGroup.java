@@ -18,6 +18,7 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
+import javax.swing.tree.TreeNode;
 import javax.swing.tree.DefaultMutableTreeNode;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
@@ -46,8 +47,11 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
       NamespaceInternalActions_ActionGroup.this.removeAll();
       DataContext dataContext = DataManager.getInstance().getDataContext();
       Project project = MPSDataKeys.PROJECT.getData(dataContext);
+      List<TreeNode> selectedNodes = MPSDataKeys.LOGICAL_VIEW_NODES.getData(dataContext);
       DefaultMutableTreeNode selectedNode = ProjectPane.getInstance(project).getSelectedNode();
-      assert selectedNode instanceof NamespaceTextNode;
+      if (!(selectedNode instanceof NamespaceTextNode)) {
+        return;
+      }
       NamespaceTextNode node = (NamespaceTextNode) selectedNode;
       DefaultActionGroup newGroup = node.createNewGroup();
       if (newGroup != null) {
