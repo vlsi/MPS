@@ -19,9 +19,8 @@ import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.tree.TreeNode;
-import javax.swing.tree.DefaultMutableTreeNode;
-import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import org.jetbrains.annotations.Nullable;
 
@@ -48,19 +47,24 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
       DataContext dataContext = DataManager.getInstance().getDataContext();
       Project project = MPSDataKeys.PROJECT.getData(dataContext);
       List<TreeNode> selectedNodes = MPSDataKeys.LOGICAL_VIEW_NODES.getData(dataContext);
-      DefaultMutableTreeNode selectedNode = ProjectPane.getInstance(project).getSelectedNode();
-      if (!(selectedNode instanceof NamespaceTextNode)) {
-        return;
+      for (TreeNode selectedNode : selectedNodes) {
+        if (!(selectedNode instanceof NamespaceTextNode)) {
+          return;
+        }
       }
-      NamespaceTextNode node = (NamespaceTextNode) selectedNode;
-      DefaultActionGroup newGroup = node.createNewGroup();
-      if (newGroup != null) {
-        NamespaceInternalActions_ActionGroup.this.add(newGroup);
-        NamespaceInternalActions_ActionGroup.this.addSeparator();
+      if (ListSequence.fromList(selectedNodes).count() == 1) {
+        NamespaceTextNode node = (NamespaceTextNode) ListSequence.fromList(selectedNodes).first();
+        DefaultActionGroup newGroup = node.createNewGroup();
+        if (newGroup != null) {
+          NamespaceInternalActions_ActionGroup.this.add(newGroup);
+          NamespaceInternalActions_ActionGroup.this.addSeparator();
+        }
       }
       NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GenerateFiles_Action", "jetbrains.mps.ide");
-      NamespaceInternalActions_ActionGroup.this.addSeparator();
-      NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameNamespace_Action", "jetbrains.mps.ide");
+      if (ListSequence.fromList(selectedNodes).count() == 1) {
+        NamespaceInternalActions_ActionGroup.this.addSeparator();
+        NamespaceInternalActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameNamespace_Action", "jetbrains.mps.ide");
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

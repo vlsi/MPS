@@ -7,13 +7,13 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.project.MPSProject;
+import java.util.List;
 import javax.swing.tree.TreeNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
-import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -26,7 +26,7 @@ public class GenerateFiles_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(GenerateFiles_Action.class);
 
   private MPSProject project;
-  private TreeNode ppNode;
+  private List<TreeNode> ppNodes;
 
   public GenerateFiles_Action() {
     super("Generate Files", "Generate files from all models under this namespace", ICON);
@@ -40,7 +40,12 @@ public class GenerateFiles_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    return GenerateFiles_Action.this.ppNode instanceof NamespaceTextNode && GenerateFiles_Action.this.getGenManager() != null;
+    for (TreeNode selectedNode : GenerateFiles_Action.this.ppNodes) {
+      if (!(selectedNode instanceof NamespaceTextNode)) {
+        return false;
+      }
+    }
+    return GenerateFiles_Action.this.getGenManager() != null;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -66,8 +71,8 @@ public class GenerateFiles_Action extends GeneratedAction {
     if (this.project == null) {
       return false;
     }
-    this.ppNode = event.getData(MPSDataKeys.LOGICAL_VIEW_NODE);
-    if (this.ppNode == null) {
+    this.ppNodes = event.getData(MPSDataKeys.LOGICAL_VIEW_NODES);
+    if (this.ppNodes == null) {
       return false;
     }
     return true;
@@ -77,9 +82,11 @@ public class GenerateFiles_Action extends GeneratedAction {
     try {
       IOperationContext projectContext = GenerateFiles_Action.this.project.createOperationContext();
       List<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
-      for (SModelDescriptor model : ListSequence.fromList(((NamespaceTextNode) GenerateFiles_Action.this.ppNode).getModelsUnder())) {
-        if (!(model.isTransient()) && model instanceof DefaultSModelDescriptor) {
-          models.add(model);
+      for (TreeNode ppNode : ListSequence.fromList(GenerateFiles_Action.this.ppNodes)) {
+        for (SModelDescriptor model : ListSequence.fromList(((NamespaceTextNode) ppNode).getModelsUnder())) {
+          if (!(model.isTransient()) && model instanceof DefaultSModelDescriptor) {
+            models.add(model);
+          }
         }
       }
       GenerateFiles_Action.this.getGenManager().generateModelsFromDifferentModules(projectContext, models, IGenerationType.FILES);
