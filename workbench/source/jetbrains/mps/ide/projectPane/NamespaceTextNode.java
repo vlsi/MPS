@@ -24,7 +24,6 @@ import jetbrains.mps.ide.projectPane.NamespaceTreeBuilder.NamespaceNodeBuilder;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.StereotypeProvider;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -33,8 +32,6 @@ import jetbrains.mps.workbench.action.ActionUtils;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import javax.swing.tree.TreeNode;
 
 public class NamespaceTextNode extends TextTreeNode {
   private static final NamespaceNodeBuilder<NamespaceTextNode> BUILDER = new NamespaceNodeBuilder<NamespaceTextNode>() {
@@ -109,7 +106,7 @@ public class NamespaceTextNode extends TextTreeNode {
     for (MPSTreeNode child : this) {
       if (child instanceof SModelTreeNode) {
         models.add(((SModelTreeNode) child).getSModelDescriptor());
-        for (SModelTreeNode childTreeNode : ((SModelTreeNode) child).getSubfolderSModelTreeNodes()) {
+        for (SModelTreeNode childTreeNode : ((SModelTreeNode) child).getAllSubfolderSModelTreeNodes()) {
           models.add(childTreeNode.getSModelDescriptor());
         }
       } else if (child instanceof NamespaceTextNode) {

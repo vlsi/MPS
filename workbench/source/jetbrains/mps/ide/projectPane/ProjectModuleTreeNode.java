@@ -27,7 +27,6 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.Language;
-import com.intellij.openapi.project.DumbService;
 
 public abstract class ProjectModuleTreeNode extends MPSTreeNode {
   public static ProjectModuleTreeNode createFor(MPSProject project, IModule module) {
@@ -102,7 +101,7 @@ public abstract class ProjectModuleTreeNode extends MPSTreeNode {
       GenerationStatus modelGenStatus = smodelTreeNode.getGenerationStatus();
       if (isInheritableGenStatus(modelGenStatus)) return modelGenStatus;
 
-      for (SModelTreeNode child : smodelTreeNode.getChildModelTreeNodes()) {
+      for (SModelTreeNode child : smodelTreeNode.getSubfolderSModelTreeNodes()) {
         GenerationStatus childGenStatus = generationRequired(child);
         if (isInheritableGenStatus(childGenStatus)) return childGenStatus;
       }

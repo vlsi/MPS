@@ -156,19 +156,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     setText(calculateText());
   }
 
-  public List<SModelTreeNode> getSubfolderSModelTreeNodes() {
-    if (children == null) return Collections.EMPTY_LIST;
-    List<SModelTreeNode> result = new ArrayList<SModelTreeNode>();
-    for (Object child : children) {
-      if (!(child instanceof SModelTreeNode)) continue;
-
-      result.add((SModelTreeNode) child);
-      result.addAll(((SModelTreeNode) child).getSubfolderSModelTreeNodes());
-    }
-    return result;
-  }
-
-  public boolean hasModelsUnder(){
+  public boolean hasModelsUnder() {
     return !getSubfolderSModelTreeNodes().isEmpty();
   }
 
@@ -427,8 +415,20 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myChildModelTreeNodes.add(model);
   }
 
-  public List<SModelTreeNode> getChildModelTreeNodes() {
-    return myChildModelTreeNodes;
+  public List<SModelTreeNode> getSubfolderSModelTreeNodes() {
+    return Collections.unmodifiableList(myChildModelTreeNodes);
+  }
+
+  public List<SModelTreeNode> getAllSubfolderSModelTreeNodes() {
+    List<SModelTreeNode> result = new ArrayList<SModelTreeNode>();
+    if (myChildModelTreeNodes.isEmpty()) {
+      result.add(this);
+    } else {
+      for (SModelTreeNode treeNode : myChildModelTreeNodes) {
+        result.addAll(treeNode.getAllSubfolderSModelTreeNodes());
+      }
+    }
+    return result;
   }
 
   protected void doUpdate() {
