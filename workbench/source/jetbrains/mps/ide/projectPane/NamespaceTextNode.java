@@ -111,6 +111,8 @@ public class NamespaceTextNode extends TextTreeNode {
         }
       } else if (child instanceof NamespaceTextNode) {
         models.addAll(((NamespaceTextNode) child).getModelsUnder());
+      } else if (child instanceof ProjectModuleTreeNode) {
+        models.addAll(((ProjectModuleTreeNode) child).getModule().getOwnModelDescriptors());
       }
     }
 
