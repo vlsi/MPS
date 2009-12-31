@@ -508,6 +508,7 @@ public class ClassConcept_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.POSITION_CHILDREN, "next-line");
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
+      style.set(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE, true);
     }
     editorCell.setRole(handler.getElementRole());
     return editorCell;
