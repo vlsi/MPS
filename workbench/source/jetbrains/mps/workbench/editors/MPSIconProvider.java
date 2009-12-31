@@ -56,9 +56,9 @@ public class MPSIconProvider extends MultiTabPropertyProvider implements FileIco
       MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
       SNode node = getCurrentEditedNode(project, file);
       if (node != null) {
-        return IconManager.getIconFor(node);
+        return IconManager.getIconWithoutAdditionalPart(node);
       }
-      return IconManager.getIconFor(nodeFile.getNode());
+      return IconManager.getIconWithoutAdditionalPart(nodeFile.getNode());
     }
     if (file instanceof MPSLanguageVirtualFile) {
       return Icons.PROJECT_LANGUAGE_ICON;

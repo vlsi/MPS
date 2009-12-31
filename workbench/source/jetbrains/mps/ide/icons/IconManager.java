@@ -76,7 +76,15 @@ public class IconManager {
     return ModelConstraintsManager.getInstance().getAlternativeIconMethod(concept) != null;
   }
 
+  public static Icon getIconWithoutAdditionalPart(@NotNull final SNode node) {
+    return getIconFor(node, true);
+  }
+
   public static Icon getIconFor(@NotNull final SNode node) {
+    return getIconFor(node, false);
+  }
+
+  public static Icon getIconFor(@NotNull final SNode node, boolean withoutAdditional) {
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
       public Icon compute() {
         Icon mainIcon = null;
