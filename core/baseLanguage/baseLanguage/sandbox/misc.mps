@@ -1021,6 +1021,9 @@
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="3463236706575421989" />
         </node>
       </node>
+      <node role="typeVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="863669384468516510">
+        <property name="name:3" value="ERJ" />
+      </node>
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3293010995237625809" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3293010995237625810">

@@ -19,6 +19,7 @@ public class AnonymousClass extends ClassConcept implements IMethodCall {
   public static final String PARAMETER = "parameter";
   public static final String TYPE_PARAMETER = "typeParameter";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
+  public static final String TYPE_ARGUMENT = "typeArgument";
 
   public AnonymousClass(SNode node) {
     super(node);
@@ -130,6 +131,26 @@ public class AnonymousClass extends ClassConcept implements IMethodCall {
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, AnonymousClass.ACTUAL_ARGUMENT, node);
+  }
+
+  public int getTypeArgumentsCount() {
+    return this.getChildCount(AnonymousClass.TYPE_ARGUMENT);
+  }
+
+  public Iterator<Type> typeArguments() {
+    return this.children(Type.class, AnonymousClass.TYPE_ARGUMENT);
+  }
+
+  public List<Type> getTypeArguments() {
+    return this.getChildren(Type.class, AnonymousClass.TYPE_ARGUMENT);
+  }
+
+  public void addTypeArgument(Type node) {
+    this.addChild(AnonymousClass.TYPE_ARGUMENT, node);
+  }
+
+  public void insertTypeArgument(Type prev, Type node) {
+    this.insertChild(prev, AnonymousClass.TYPE_ARGUMENT, node);
   }
 
   public static AnonymousClass newInstance(SModel sm, boolean init) {

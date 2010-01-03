@@ -40,6 +40,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createRefCell_7119_1(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7119_0(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_7119_1(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7119_1(editorContext, node));
     return editorCell;
   }
@@ -50,7 +51,7 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, false);
-      style.set(StyleAttributes.SELECTABLE, false);
+      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
     }
     editorCell.addEditorCell(this.createRefCell_7119_0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_7119_0(editorContext, node));
@@ -67,10 +68,20 @@ public class StaticMethodCall_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createComponent_7119_1(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new IMethodCall_typeArguments(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
   private EditorCell createConstant_7119_0(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_7119_0");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }

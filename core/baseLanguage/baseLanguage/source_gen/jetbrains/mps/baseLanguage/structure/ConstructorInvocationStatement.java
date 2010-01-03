@@ -16,6 +16,7 @@ public class ConstructorInvocationStatement extends Statement implements IMethod
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
+  public static final String TYPE_ARGUMENT = "typeArgument";
 
   public ConstructorInvocationStatement(SNode node) {
     super(node);
@@ -79,6 +80,26 @@ public class ConstructorInvocationStatement extends Statement implements IMethod
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, ConstructorInvocationStatement.ACTUAL_ARGUMENT, node);
+  }
+
+  public int getTypeArgumentsCount() {
+    return this.getChildCount(ConstructorInvocationStatement.TYPE_ARGUMENT);
+  }
+
+  public Iterator<Type> typeArguments() {
+    return this.children(Type.class, ConstructorInvocationStatement.TYPE_ARGUMENT);
+  }
+
+  public List<Type> getTypeArguments() {
+    return this.getChildren(Type.class, ConstructorInvocationStatement.TYPE_ARGUMENT);
+  }
+
+  public void addTypeArgument(Type node) {
+    this.addChild(ConstructorInvocationStatement.TYPE_ARGUMENT, node);
+  }
+
+  public void insertTypeArgument(Type prev, Type node) {
+    this.insertChild(prev, ConstructorInvocationStatement.TYPE_ARGUMENT, node);
   }
 
   public static ConstructorInvocationStatement newInstance(SModel sm, boolean init) {

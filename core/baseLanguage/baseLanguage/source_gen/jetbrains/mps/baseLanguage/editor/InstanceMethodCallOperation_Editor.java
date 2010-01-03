@@ -29,6 +29,7 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
     }
+    editorCell.addEditorCell(this.createComponent_2215_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_2215_0(editorContext, node));
     editorCell.addEditorCell(this.createComponent_2215_0(editorContext, node));
     return editorCell;
@@ -44,6 +45,12 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createComponent_2215_1(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new IMethodCall_typeArguments(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
+    return editorCell;
+  }
+
   private EditorCell createRefCell_2215_0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
     provider.setRole("instanceMethodDeclaration");
@@ -51,6 +58,10 @@ public class InstanceMethodCallOperation_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new InstanceMethodCallOperation_Editor._Inline2215_0());
     editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

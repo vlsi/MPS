@@ -17,6 +17,7 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
+  public static final String TYPE_ARGUMENT = "typeArgument";
 
   public InstanceMethodCallOperation(SNode node) {
     super(node);
@@ -80,6 +81,26 @@ public class InstanceMethodCallOperation extends BaseConcept implements IOperati
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, InstanceMethodCallOperation.ACTUAL_ARGUMENT, node);
+  }
+
+  public int getTypeArgumentsCount() {
+    return this.getChildCount(InstanceMethodCallOperation.TYPE_ARGUMENT);
+  }
+
+  public Iterator<Type> typeArguments() {
+    return this.children(Type.class, InstanceMethodCallOperation.TYPE_ARGUMENT);
+  }
+
+  public List<Type> getTypeArguments() {
+    return this.getChildren(Type.class, InstanceMethodCallOperation.TYPE_ARGUMENT);
+  }
+
+  public void addTypeArgument(Type node) {
+    this.addChild(InstanceMethodCallOperation.TYPE_ARGUMENT, node);
+  }
+
+  public void insertTypeArgument(Type prev, Type node) {
+    this.insertChild(prev, InstanceMethodCallOperation.TYPE_ARGUMENT, node);
   }
 
   public static InstanceMethodCallOperation newInstance(SModel sm, boolean init) {

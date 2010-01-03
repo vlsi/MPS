@@ -9,6 +9,7 @@ import jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.List;
+import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -20,6 +21,7 @@ public class Node_ConceptMethodCall extends SNodeOperation implements IMethodCal
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
+  public static final String TYPE_ARGUMENT = "typeArgument";
 
   public Node_ConceptMethodCall(SNode node) {
     super(node);
@@ -83,6 +85,26 @@ public class Node_ConceptMethodCall extends SNodeOperation implements IMethodCal
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, Node_ConceptMethodCall.ACTUAL_ARGUMENT, node);
+  }
+
+  public int getTypeArgumentsCount() {
+    return this.getChildCount(Node_ConceptMethodCall.TYPE_ARGUMENT);
+  }
+
+  public Iterator<Type> typeArguments() {
+    return this.children(Type.class, Node_ConceptMethodCall.TYPE_ARGUMENT);
+  }
+
+  public List<Type> getTypeArguments() {
+    return this.getChildren(Type.class, Node_ConceptMethodCall.TYPE_ARGUMENT);
+  }
+
+  public void addTypeArgument(Type node) {
+    this.addChild(Node_ConceptMethodCall.TYPE_ARGUMENT, node);
+  }
+
+  public void insertTypeArgument(Type prev, Type node) {
+    this.insertChild(prev, Node_ConceptMethodCall.TYPE_ARGUMENT, node);
   }
 
   public static Node_ConceptMethodCall newInstance(SModel sm, boolean init) {

@@ -10,6 +10,7 @@ import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.structure.Expression;
 import java.util.List;
+import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -21,6 +22,7 @@ public class ExtensionMethodCall extends BaseConcept implements IOperation, IMet
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String BASE_METHOD_DECLARATION = "baseMethodDeclaration";
   public static final String ACTUAL_ARGUMENT = "actualArgument";
+  public static final String TYPE_ARGUMENT = "typeArgument";
 
   public ExtensionMethodCall(SNode node) {
     super(node);
@@ -84,6 +86,26 @@ public class ExtensionMethodCall extends BaseConcept implements IOperation, IMet
 
   public void insertActualArgument(Expression prev, Expression node) {
     this.insertChild(prev, ExtensionMethodCall.ACTUAL_ARGUMENT, node);
+  }
+
+  public int getTypeArgumentsCount() {
+    return this.getChildCount(ExtensionMethodCall.TYPE_ARGUMENT);
+  }
+
+  public Iterator<Type> typeArguments() {
+    return this.children(Type.class, ExtensionMethodCall.TYPE_ARGUMENT);
+  }
+
+  public List<Type> getTypeArguments() {
+    return this.getChildren(Type.class, ExtensionMethodCall.TYPE_ARGUMENT);
+  }
+
+  public void addTypeArgument(Type node) {
+    this.addChild(ExtensionMethodCall.TYPE_ARGUMENT, node);
+  }
+
+  public void insertTypeArgument(Type prev, Type node) {
+    this.insertChild(prev, ExtensionMethodCall.TYPE_ARGUMENT, node);
   }
 
   public static ExtensionMethodCall newInstance(SModel sm, boolean init) {
