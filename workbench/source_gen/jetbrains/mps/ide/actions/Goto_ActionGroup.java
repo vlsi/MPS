@@ -5,6 +5,7 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
 import com.intellij.ide.actions.GotoActionAction;
+import com.intellij.ide.actions.GotoFileAction;
 import jetbrains.mps.workbench.actions.goTo.GoToRootNodeAction;
 import jetbrains.mps.workbench.actions.goTo.GoToModelAction;
 import jetbrains.mps.workbench.actions.goTo.GoToLanguageAction;
@@ -22,6 +23,7 @@ public class Goto_ActionGroup extends GeneratedActionGroup {
     try {
       Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToAction_Action", "jetbrains.mps.ide", new GotoActionAction());
       Goto_ActionGroup.this.addSeparator();
+      Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToFile_Action", "jetbrains.mps.ide", new GotoFileAction());
       Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToRootNode_Action", "jetbrains.mps.ide", new GoToRootNodeAction());
       Goto_ActionGroup.this.addAction("jetbrains.mps.ide.actions.GoToNodeById_Action", "jetbrains.mps.ide");
       Goto_ActionGroup.this.addSeparator();
