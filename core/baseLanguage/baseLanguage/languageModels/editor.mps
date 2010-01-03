@@ -2185,6 +2185,9 @@
               </node>
             </node>
           </node>
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem:32" id="3253443639984653597">
+            <property name="tag:32" value="ext_2_RTransform" />
+          </node>
         </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="1173991610903">
           <link role="editorComponent:32" targetNodeId="1173990860683" resolveInfo="BaseMethodCall_actualArgumentList" />

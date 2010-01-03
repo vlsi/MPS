@@ -229,6 +229,40 @@ __switch__:
   }
 
   @InferenceMethod
+  public static void inference_matchConcreteTypesWithMethodTypeVariables(final TypeCheckingContext typeCheckingContext, SNode methodCall, Map<SNode, List<SNode>> mmap) {
+    if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty() && (SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) != null) && mmap != null && !(MapSequence.fromMap(mmap).isEmpty())) {
+      {
+        SNode tvd;
+        SNode arg;
+        Iterator<SNode> tvd_iterator = ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false), "typeVariableDeclaration", true)).iterator();
+        Iterator<SNode> arg_iterator = ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).iterator();
+        while (true) {
+          if (!(tvd_iterator.hasNext())) {
+            break;
+          }
+          if (!(arg_iterator.hasNext())) {
+            break;
+          }
+          tvd = tvd_iterator.next();
+          arg = arg_iterator.next();
+          {
+            List<SNode> nodes = MapSequence.fromMap(mmap).get(tvd);
+            if (nodes != null) {
+              SNode tvar = ListSequence.fromList(nodes).first();
+              {
+                SNode _nodeToCheck_1029348928467 = null;
+                BaseIntentionProvider intentionProvider = null;
+                EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "7769835591074321262", 0, intentionProvider);
+                typeCheckingContext.createEquation((SNode) tvar, (SNode) arg, _info_12389875345);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+
+  @InferenceMethod
   public static void inference_equateParametersAndReturnType(final TypeCheckingContext typeCheckingContext, final SNode mc, SNode returnType, Map<SNode, List<SNode>> mmap) {
     List<SNode> parameterDeclarations = SLinkOperations.getTargets(SLinkOperations.getTarget(mc, "baseMethodDeclaration", false), "parameter", true);
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(parameterDeclarations).last(), "type", true), "jetbrains.mps.baseLanguage.structure.VariableArityType")) {

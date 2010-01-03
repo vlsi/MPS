@@ -150,8 +150,23 @@ public abstract class BaseLanguageTextGen {
   }
 
   public static void methodCall(SNode methodCall, final SNodeTextGen textGen) {
-    textGen.append(textGen.getReferentPresentation(SNodeOperations.getReference(methodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"))));
-    BaseLanguageTextGen.arguments(methodCall, textGen);
+    if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty()) {
+      textGen.append("<");
+      if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty()) {
+        for (SNode item : SLinkOperations.getTargets(methodCall, "typeArgument", true)) {
+          TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), item, textGen.getSNode());
+          if (item != ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).last()) {
+            textGen.append(",");
+          }
+        }
+      }
+      textGen.append(">");
+      textGen.append(textGen.getReferentPresentation(SNodeOperations.getReference(methodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"))));
+      BaseLanguageTextGen.arguments(methodCall, textGen);
+    } else {
+      textGen.append(textGen.getReferentPresentation(SNodeOperations.getReference(methodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"))));
+      BaseLanguageTextGen.arguments(methodCall, textGen);
+    }
   }
 
   protected static Set<String> getUserObjects(String type, final SNodeTextGen textGen) {
