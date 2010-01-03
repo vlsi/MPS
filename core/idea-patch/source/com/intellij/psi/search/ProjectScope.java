@@ -67,6 +67,14 @@ public class ProjectScope {
           public boolean contains(VirtualFile file) {
             if (myFileIndex.isInLibraryClasses(file)) return false;
 
+            while (file.getParent() != null) {
+              if (file.getParent().getName().startsWith(".")) {
+                return false;
+              } else {
+                file = file.getParent();
+              }
+            }
+
             return true;
           }
 
