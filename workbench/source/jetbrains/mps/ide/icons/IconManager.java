@@ -84,7 +84,7 @@ public class IconManager {
     return getIconFor(node, false);
   }
 
-  public static Icon getIconFor(@NotNull final SNode node, boolean withoutAdditional) {
+  public static Icon getIconFor(@NotNull final SNode node, final boolean withoutAdditional) {
     return ModelAccess.instance().runReadAction(new Computable<Icon>() {
       public Icon compute() {
         Icon mainIcon = null;
@@ -123,7 +123,9 @@ public class IconManager {
         }
         RowIcon result = new RowIcon(2);
         result.setIcon(mainIcon, 0);
-        result.setIcon(BaseConcept_Behavior.call_getAdditionalIcon_5017341185733863694(node), 1);
+        if (!withoutAdditional) {
+          result.setIcon(BaseConcept_Behavior.call_getAdditionalIcon_5017341185733863694(node), 1);
+        }
         return result;
       }
     });
