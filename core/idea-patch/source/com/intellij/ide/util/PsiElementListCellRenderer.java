@@ -70,7 +70,11 @@ public abstract class PsiElementListCellRenderer<T extends PsiElement> extends J
       Color color = list.getForeground();
       boolean isProblemFile = false;
 
-      if (!(value instanceof NavigationItem)) return;
+      if (!(value instanceof NavigationItem)) {
+        setIcon(IconUtil.getEmptyIcon(false));
+        append(value == null ? "" : value.toString(), new SimpleTextAttributes(Font.PLAIN, list.getForeground()));
+        return;
+      }
 
       NavigationItem item = (NavigationItem) value;
 
