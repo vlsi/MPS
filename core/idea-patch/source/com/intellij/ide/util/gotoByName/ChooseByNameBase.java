@@ -1168,7 +1168,7 @@ public abstract class ChooseByNameBase {
               throw new ProcessCanceledException();
             }
             if (name != null) {
-              String shortName = jetbrains.mps.util.NameUtil.shortNameFromLongName(name);
+              String shortName = name; //jetbrains.mps.util.NameUtil.shortNameFromLongName(name);
               if (myModel instanceof GotoActionModel) {
                 if (((GotoActionModel) myModel).matches(name, pattern)) {
                   list.add(name);

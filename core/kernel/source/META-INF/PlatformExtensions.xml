@@ -132,6 +132,8 @@
                     serviceImplementation="com.intellij.ui.RecentsManager"/>
     <projectService serviceInterface="com.intellij.ui.content.MessageView"
                     serviceImplementation="com.intellij.ui.content.impl.MessageViewImpl"/>
+    <projectService serviceInterface="com.intellij.ide.actions.GotoFileConfiguration"
+                    serviceImplementation="com.intellij.ide.actions.GotoFileConfiguration"/>    
 
     <!--MPS Patch:-->
     <selectInTarget implementation="com.intellij.ide.impl.ProjectViewSelectInGroupTarget"/>
@@ -208,6 +210,9 @@
     <ComponentRoamingType component="ChangeListManager" type="DISABLED"/>
     <ComponentRoamingType component="RestoreUpdateTree" type="DISABLED"/>
     <ComponentRoamingType component="PropertiesComponent" type="DISABLED"/>
+
+    <gotoFileContributor implementation="com.intellij.ide.util.gotoByName.DefaultFileNavigationContributor"/>
+   
 
     <progressFunComponentProvider implementation="com.intellij.featureStatistics.ProgressFunProvider"/>
     <bundledKeymapProvider implementation="com.intellij.openapi.keymap.impl.DefaultBundledKeymaps"/>
