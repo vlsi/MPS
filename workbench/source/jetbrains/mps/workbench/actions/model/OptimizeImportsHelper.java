@@ -164,7 +164,7 @@ public class OptimizeImportsHelper {
 
   private Dependency getUnusedDependency(Result result, Dependency dep) {
     if (dep.isReexport()) return null;
-    
+
     IModule module = MPSModuleRepository.getInstance().getModule(dep.getModuleRef());
     if (module == null) return dep;
 
@@ -210,6 +210,11 @@ public class OptimizeImportsHelper {
   private ModuleReference getUnusedLanguageRef(Result result, ModuleReference languageRef) {
     Language language = GlobalScope.getInstance().getLanguage(languageRef);
     if (language == null) return languageRef;
+
+    for (Dependency dep : language.getDependOn()) {
+      if (getUnusedDependency(result, dep) == null) return null;
+    }
+
     if (result.myUsedLanguages.contains(language)) return null;
     return language.getModuleReference();
   }
