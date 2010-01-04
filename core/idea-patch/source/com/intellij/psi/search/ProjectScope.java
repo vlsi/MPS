@@ -67,6 +67,10 @@ public class ProjectScope {
           public boolean contains(VirtualFile file) {
             if (myFileIndex.isInLibraryClasses(file)) return false;
 
+            String filePath = file.getPath();
+            String projectDirPath = getProject().getBaseDir().getPath();
+            if (!filePath.startsWith(projectDirPath)) return false;
+
             while (file.getParent() != null) {
               if (file.getParent().getName().startsWith(".")) {
                 return false;
