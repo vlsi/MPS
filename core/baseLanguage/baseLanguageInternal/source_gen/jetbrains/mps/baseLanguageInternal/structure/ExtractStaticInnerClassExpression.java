@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguageInternal.structure;
 
 import jetbrains.mps.baseLanguage.structure.Expression;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -27,11 +26,11 @@ public class ExtractStaticInnerClassExpression extends Expression {
     this.setBooleanProperty(ExtractStaticInnerClassExpression.MAKE_UNIQUE, value);
   }
 
-  public ClassConcept getInnerClass() {
-    return (ClassConcept) this.getChild(ClassConcept.class, ExtractStaticInnerClassExpression.INNER_CLASS);
+  public ExtractStaticInnerClassConcept getInnerClass() {
+    return (ExtractStaticInnerClassConcept) this.getChild(ExtractStaticInnerClassConcept.class, ExtractStaticInnerClassExpression.INNER_CLASS);
   }
 
-  public void setInnerClass(ClassConcept node) {
+  public void setInnerClass(ExtractStaticInnerClassConcept node) {
     super.setChild(ExtractStaticInnerClassExpression.INNER_CLASS, node);
   }
 

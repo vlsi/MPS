@@ -444,7 +444,7 @@
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="innerClass" />
       <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="2.1068390468198:3" resolveInfo="ClassConcept" />
+      <link role="target:0" targetNodeId="937236280924494202:1" resolveInfo="ExtractStaticInnerClassConcept" />
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7738261905749582030">
       <property name="metaClass:0" value="aggregation" />
@@ -460,6 +460,10 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="5822086619725599105">
     <property name="name:0" value="ExtractStaticInnerClassCreator" />
     <link role="extends:0" targetNodeId="2.1212685548494:3" resolveInfo="ClassCreator" />
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="937236280924494202">
+    <property name="name:0" value="ExtractStaticInnerClassConcept" />
+    <link role="extends:0" targetNodeId="2.1068390468198:3" resolveInfo="ClassConcept" />
   </node>
 </model>
 

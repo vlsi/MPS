@@ -231,5 +231,23 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="937236280924494203">
+    <link role="concept:8" targetNodeId="1.937236280924494202:1" resolveInfo="ExtractStaticInnerClassConcept" />
+    <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="937236280924494204">
+      <link role="applicableProperty:8" targetNodeId="4v.1196978656277:0" resolveInfo="resolveInfo" />
+      <node role="propertyGetter:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_PropertyGetter:8" id="937236280924494205">
+        <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="937236280924494206">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="937236280924494207">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="937236280924494209">
+              <node role="operand:3" type="jetbrains.mps.lang.constraints.structure.ConstraintsFunctionParameter_node:8" id="937236280924494208" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="937236280924494213">
+                <link role="property:16" targetNodeId="4v.1169194664001:0" resolveInfo="name" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
