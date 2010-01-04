@@ -29,7 +29,6 @@ import com.intellij.util.ArrayUtil;
 import com.intellij.util.indexing.*;
 import com.intellij.util.io.EnumeratorStringDescriptor;
 import com.intellij.util.io.KeyDescriptor;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -86,62 +85,7 @@ public class FilenameIndex extends ScalarIndexExtension<String> {
     List<NavigationItem> result = new ArrayList<NavigationItem>();
     for(final VirtualFile file: files) {
       if (!file.isValid()) continue;
-      NavigationItem item = new NavigationItem() {
-        @Override
-        public String getName() {
-          return name;
-        }
-
-        @Override
-        public ItemPresentation getPresentation() {
-          return new ItemPresentation() {
-            @Override
-            public String getPresentableText() {                             
-              return name;
-            }
-
-            @Override
-            public String getLocationString() {
-              return file.getPath();
-            }
-
-            @Override
-            public Icon getIcon(boolean open) {
-              return file.getIcon();
-            }
-
-            @Override
-            public TextAttributesKey getTextAttributesKey() {
-              return null;
-            }
-          };
-        }
-
-        @Override
-        public FileStatus getFileStatus() {
-          return FileStatus.NOT_CHANGED;
-        }
-
-        @Override
-        public void navigate(boolean requestFocus) {
-
-        }
-
-        @Override
-        public boolean canNavigate() {
-          return true;
-        }
-
-        @Override
-        public boolean canNavigateToSource() {
-          return true;
-        }
-
-        @Override
-        public String toString() {
-          return getName();
-        }
-      };
+      FileNavigationItem item = new FileNavigationItem(name, file);
       result.add(item);
     }
     return result.toArray(new NavigationItem[result.size()]);
@@ -161,6 +105,75 @@ public class FilenameIndex extends ScalarIndexExtension<String> {
       }
 
       return !ProjectUtil.isProjectOrWorkspaceFile(file);
+    }
+  }
+
+  @Patch
+  public static class FileNavigationItem implements NavigationItem {
+    private String name;
+    private VirtualFile file;
+
+    public FileNavigationItem(String name, VirtualFile file) {
+      this.name = name;
+      this.file = file;
+    }
+
+    public VirtualFile getVirtualFile() {
+      return file;
+    }
+
+    @Override
+    public String getName() {
+      return name;
+    }
+
+    @Override
+    public ItemPresentation getPresentation() {
+      return new ItemPresentation() {
+        @Override
+        public String getPresentableText() {
+          return name;
+        }
+
+        @Override
+        public String getLocationString() {
+          return file.getPath();
+        }
+
+        @Override
+        public Icon getIcon(boolean open) {
+          return file.getIcon();
+        }
+
+        @Override
+        public TextAttributesKey getTextAttributesKey() {
+          return null;
+        }
+      };
+    }
+
+    @Override
+    public FileStatus getFileStatus() {
+      return FileStatus.NOT_CHANGED;
+    }
+
+    @Override
+    public void navigate(boolean requestFocus) {
+    }
+
+    @Override
+    public boolean canNavigate() {
+      return true;
+    }
+
+    @Override
+    public boolean canNavigateToSource() {
+      return true;
+    }
+
+    @Override
+    public String toString() {
+      return getName();
     }
   }
 }
