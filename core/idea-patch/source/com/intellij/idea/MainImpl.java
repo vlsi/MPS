@@ -25,6 +25,7 @@ import com.intellij.openapi.application.impl.ApplicationInfoImpl;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.ui.AppUIUtil;
+import jetbrains.mps.workbench.InternalFlag;
 import org.jetbrains.annotations.NonNls;
 
 import javax.swing.JOptionPane;
@@ -209,6 +210,9 @@ public class MainImpl {
   }
 
   private static boolean ensureNonServerVMVersion() {
+    if (InternalFlag.isInternalMode()) {
+      return true;
+    }
     String vmName = System.getProperty("java.vm.name");
     if (!vmName.toLowerCase().contains("server")) return true;
 
