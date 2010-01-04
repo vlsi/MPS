@@ -25,16 +25,23 @@ import com.intellij.openapi.editor.colors.TextAttributesKey;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.openapi.wm.ex.WindowManagerEx;
 import com.intellij.util.ArrayUtil;
+import com.intellij.util.ui.FilePathSplittingPolicy;
 import com.intellij.util.indexing.*;
 import com.intellij.util.io.EnumeratorStringDescriptor;
 import com.intellij.util.io.KeyDescriptor;
+import com.intellij.psi.PsiFile;
+import com.intellij.psi.PsiDirectory;
 import jetbrains.mps.util.annotation.Patch;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import java.util.*;
+import java.io.File;
 
 /**
  * @author yole
@@ -85,7 +92,7 @@ public class FilenameIndex extends ScalarIndexExtension<String> {
     List<NavigationItem> result = new ArrayList<NavigationItem>();
     for(final VirtualFile file: files) {
       if (!file.isValid()) continue;
-      FileNavigationItem item = new FileNavigationItem(name, file);
+      FileNavigationItem item = new FileNavigationItem(name, file, project);
       result.add(item);
     }
     return result.toArray(new NavigationItem[result.size()]);
@@ -112,10 +119,12 @@ public class FilenameIndex extends ScalarIndexExtension<String> {
   public static class FileNavigationItem implements NavigationItem {
     private String name;
     private VirtualFile file;
+    private Project project;
 
-    public FileNavigationItem(String name, VirtualFile file) {
+    public FileNavigationItem(String name, VirtualFile file, Project project) {
       this.name = name;
       this.file = file;
+      this.project = project;
     }
 
     public VirtualFile getVirtualFile() {
@@ -137,7 +146,36 @@ public class FilenameIndex extends ScalarIndexExtension<String> {
 
         @Override
         public String getLocationString() {
-          return file.getPath();
+          return getContainerText();
+        }
+
+        //copied from IDEA's class GotoFileCellRenderer
+        private String getContainerText() {
+          final String directory = file.getPath();
+          if (directory == null) return null;
+          final String relativePath = getRelativePath(project);
+          if (relativePath == null) return "( " + File.separator + " )";
+          return "(" + relativePath + ")";
+        }
+
+        //copied from IDEA's class GotoFileCellRenderer
+        @Nullable
+        private String getRelativePath(final Project project) {
+          String url = file.getPresentableUrl();
+          if (project == null) {
+            return url;
+          }
+          final VirtualFile baseDir = project.getBaseDir();
+          if (baseDir != null) {
+            //noinspection ConstantConditions
+            final String projectHomeUrl = baseDir.getPresentableUrl();
+            if (url.startsWith(projectHomeUrl)) {
+              final String cont = url.substring(projectHomeUrl.length());
+              if (cont.length() == 0) return null;
+              url = "..." + cont;
+            }
+          }
+          return url;
         }
 
         @Override
