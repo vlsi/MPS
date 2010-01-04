@@ -173,7 +173,8 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_4351631783611294090(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
+    SNode type = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+    return SLinkOperations.getTarget(type, "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_5447563960349298683(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -303,12 +304,20 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_8901044928163425520(final IOperationContext operationContext, final IfMacroContext _context) {
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-      if (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
-        return true;
-      }
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "type", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+      return false;
     }
-    return false;
+    SNode type = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "type", true), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+    if (type == null) {
+      return false;
+    }
+    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(type, "classifier", false), "jetbrains.mps.baseLanguage.structure.EnumClass")) {
+      return false;
+    }
+    if (SLinkOperations.getTarget(type, "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_2().createNode(), "classifier", false)) {
+      return false;
+    }
+    return true;
   }
 
   public static SNode sourceNodeQuery_90909550749889565(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
