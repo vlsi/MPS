@@ -182,29 +182,19 @@ public class OptimizeImportsHelper {
   }
 
   private ModuleReference getUnusedDevkitRef(Result result, ModuleReference devkitRef) {
-    boolean used = false;
-
     DevKit dk = GlobalScope.getInstance().getDevKit(devkitRef);
     if (dk == null) return devkitRef;
 
     for (Language lang : dk.getAllExportedLanguages()) {
-      if (result.myUsedLanguages.contains(lang)) {
-        used = true;
-        break;
-      }
+      if (getUnusedLanguageRef(result, lang.getModuleReference()) == null) return null;
     }
 
-    if (!used) {
-      for (Solution solution : dk.getAllExportedSolutions()) {
-        for (SModelDescriptor model : solution.getOwnModelDescriptors()) {
-          if (result.myUsedModels.contains(model.getSModelReference())) {
-            used = true;
-            break;
-          }
-        }
+    for (Solution solution : dk.getAllExportedSolutions()) {
+      for (SModelDescriptor model : solution.getOwnModelDescriptors()) {
+        if (result.myUsedModels.contains(model.getSModelReference())) return null;
       }
     }
-    return used ? null : dk.getModuleReference();
+    return dk.getModuleReference();
   }
 
   private ModuleReference getUnusedLanguageRef(Result result, ModuleReference languageRef) {
