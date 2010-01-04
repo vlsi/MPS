@@ -35,7 +35,6 @@
   <maxImportIndex value="16" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895903f7(jetbrains.mps.baseLanguage.money.structure)" version="0" />
   <import index="2" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
-  <import index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1187359576319">
     <property name="name:3" value="typeof_MoneyGetAmountMethodCall" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1187359576320">

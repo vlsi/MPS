@@ -14,6 +14,5 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <language-engaged-on-generation namespace="73736c50-f124-433b-b789-2828a15a0adc(jetbrains.mps.baseLanguage.collections.trove)" />
   <maxImportIndex value="1" />
-  <import index="1" modelUID="f:java_stub#gnu.trove(gnu.trove@java_stub)" version="-1" />
 </model>
 

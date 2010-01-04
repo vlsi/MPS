@@ -368,7 +368,6 @@
   <import index="9" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="11" modelUID="f:java_stub#jetbrains.mps.nodeEditor.cells(jetbrains.mps.nodeEditor.cells@java_stub)" version="-1" />
   <import index="12" modelUID="f:java_stub#jetbrains.mps.lang.actions(jetbrains.mps.lang.actions@java_stub)" version="-1" />
-  <import index="13" modelUID="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)" version="-1" />
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1112056943463">
     <property name="rootable:0" value="true" />
     <property name="iconPath:0" value="${language_descriptor}\icons\actions.png" />

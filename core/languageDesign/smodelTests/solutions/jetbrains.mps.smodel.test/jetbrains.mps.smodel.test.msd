@@ -6,7 +6,6 @@
   <classPath />
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">73736c50-f124-433b-b789-2828a15a0adc(jetbrains.mps.baseLanguage.collections.trove)</dependency>
     <dependency reexport="false">b02ae39f-4c16-4545-8dfa-88df16804e7e(jetbrains.mps.lang.smodelTests)</dependency>
   </dependencies>
   <usedLanguages>

@@ -42,12 +42,6 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959058f(jetbrains.mps.xmlInternal.constraints)" version="0" />
   <languageAspect modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" />
   <maxImportIndex value="33" />
-  <import index="10" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="28" modelUID="f:java_stub#javax.swing.event(javax.swing.event@java_stub)" version="-1" />
-  <import index="29" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="30" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
-  <import index="31" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
-  <import index="32" modelUID="f:java_stub#java.nio(java.nio@java_stub)" version="-1" />
   <import index="33" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="6208804448825809377">
     <property name="name:3" value="ArrayLength" />

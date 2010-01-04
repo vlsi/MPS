@@ -58,11 +58,9 @@
   <import index="37" modelUID="f:java_stub#jetbrains.mps.lang.structure.structure(jetbrains.mps.lang.structure.structure@java_stub)" version="-1" />
   <import index="38" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
   <import index="42" modelUID="f:java_stub#jetbrains.mps.smodel.constraints(jetbrains.mps.smodel.constraints@java_stub)" version="-1" />
-  <import index="43" modelUID="r:d9efd362-28b8-4f70-9bcd-fb582528d11c(jetbrains.mps.lang.core.refactorings)" version="-1" />
   <import index="44" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="45" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="46" modelUID="f:java_stub#javax.swing.text(javax.swing.text@java_stub)" version="-1" />
-  <import index="47" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <node type="jetbrains.mps.lang.refactoring.structure.OldRefactoring:1" id="1198076144993">
     <property name="name:1" value="MoveNodes" />
     <property name="userFriendlyName:1" value="Move Nodes" />

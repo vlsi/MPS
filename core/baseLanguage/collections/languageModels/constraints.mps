@@ -47,8 +47,6 @@
   <import index="14" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" />
   <import index="15" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="16" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
-  <import index="17" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="18" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1213104847098">
     <link role="concept:8" targetNodeId="1.1153944233411:7" resolveInfo="ForEachVariableReference" />
     <node role="referent:8" type="jetbrains.mps.lang.constraints.structure.NodeReferentConstraint:8" id="1213104847099">

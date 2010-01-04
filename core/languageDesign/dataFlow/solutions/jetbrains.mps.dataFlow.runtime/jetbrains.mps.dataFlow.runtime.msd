@@ -12,8 +12,5 @@
     <entry path="${mps_home}/lib/jetbrains-ideframework/annotations.jar" include="false" />
   </classPath>
   <sourcePath />
-  <dependencies>
-    <dependency reexport="false">bdfab909-4d8f-4566-b44e-c33957ce28ef(jetbrains.mps.lang.dataFlow#1206455293228)</dependency>
-  </dependencies>
 </solution>
 

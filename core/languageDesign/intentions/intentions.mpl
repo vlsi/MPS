@@ -65,7 +65,6 @@
   </languageRuntimeClassPath>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">aee9cad2-acd4-4608-aef2-0004f6a1cdbd(jetbrains.mps.lang.actions)</dependency>
     <dependency reexport="false">8fffa437-9500-4c6b-abfc-f4cb2335b059(jetbrains.mps.lang.typesystem#1174411220599)</dependency>
   </dependencies>
   <extendedLanguages>

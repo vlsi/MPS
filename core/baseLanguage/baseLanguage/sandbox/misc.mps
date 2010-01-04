@@ -47,8 +47,6 @@
   <import index="150" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="151" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="152" modelUID="f:java_stub#java.io(java.io@java_stub)" version="-1" />
-  <import index="153" modelUID="f:java_stub#org.jdom(org.jdom@java_stub)" version="-1" />
-  <import index="154" modelUID="r:00000000-0000-4000-0000-011c895903ee(jetbrains.mps.internalCollections.test.closures)" version="-1" />
   <import index="155" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
   <import index="156" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="157" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />

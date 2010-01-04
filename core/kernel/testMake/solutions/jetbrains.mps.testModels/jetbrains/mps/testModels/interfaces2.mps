@@ -9,7 +9,6 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590283(jetbrains.mps.lang.core.constraints)" version="2" />
   <maxImportIndex value="1" />
-  <import index="1" modelUID="r:93a6ef2e-9f35-4228-b460-87597e0be7c4(jetbrains.mps.testModels.interfaces1)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="1196985119947853670">
     <property name="name:3" value="Int2" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1196985119947853674">

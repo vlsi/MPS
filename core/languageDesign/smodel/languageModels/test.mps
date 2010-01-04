@@ -41,7 +41,6 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
   <maxImportIndex value="1" />
-  <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <node type="jetbrains.mps.lang.test.structure.EditorTestCase:4" id="1835794636205154554">
     <property name="name:4" value="InsertPrevSiblingOperation_Focus" />
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1835794636205189187">

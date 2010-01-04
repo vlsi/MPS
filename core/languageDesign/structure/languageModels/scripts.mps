@@ -56,10 +56,7 @@
   <import index="28" modelUID="r:00000000-0000-4000-0000-011c8959028e(jetbrains.mps.lang.structure.findUsages)" version="-1" />
   <import index="31" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <import index="34" modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" />
-  <import index="35" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
   <import index="36" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
-  <import index="37" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
-  <import index="38" modelUID="f:java_stub#jetbrains.mps.smodel.presentation(jetbrains.mps.smodel.presentation@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.refactoring.structure.OldRefactoring:1" id="1198085953023">
     <property name="name:1" value="RenameConcept" />
     <property name="userFriendlyName:1" value="Rename Concept" />

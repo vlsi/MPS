@@ -36,8 +36,6 @@
   <import index="15" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="19" modelUID="f:java_stub#jetbrains.mps.workbench(jetbrains.mps.workbench@java_stub)" version="-1" />
   <import index="20" modelUID="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)" version="-1" />
-  <import index="21" modelUID="f:java_stub#com.intellij.ide(com.intellij.ide@java_stub)" version="-1" />
-  <import index="22" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1209308509191">
     <property name="name:23" value="FindModelUsages" />
     <property name="caption:23" value="Find Usages" />

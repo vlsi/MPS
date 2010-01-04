@@ -16,7 +16,6 @@
   <maxImportIndex value="4" />
   <import index="1" modelUID="f:java_stub#gnu.trove.decorator(gnu.trove.decorator@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#gnu.trove(gnu.trove@java_stub)" version="-1" />
-  <import index="3" modelUID="r:8835fbd0-40c0-4726-83db-aa015a60e8fd(jetbrains.mps.baseLanguage.collections.trove.runtime)" version="-1" />
   <import index="4" modelUID="f:java_stub#jetbrains.mps.baseLanguage.collections.trove.runtime(jetbrains.mps.baseLanguage.collections.trove.runtime@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.collections.structure.CustomContainers:7" id="9034802358628764708">
     <property name="name:7" value="TroveSets" />
