@@ -135,8 +135,8 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                     ListSequence.fromList(methods).addElement(TestRunUtil.getTestMethod(DefaultJUnit_Configuration.this.getStateObject().node, DefaultJUnit_Configuration.this.getStateObject().method));
                   }
                   if (DefaultJUnit_Configuration.this.getStateObject().nodes != null) {
-                    for (int i = 0; i < ListSequence.fromList(DefaultJUnit_Configuration.this.getStateObject().nodes).count(); i++) {
-                      ListSequence.fromList(methods).addElement(TestRunUtil.getTestMethod(ListSequence.fromList(DefaultJUnit_Configuration.this.getStateObject().nodes).getElement(i), ListSequence.fromList(DefaultJUnit_Configuration.this.getStateObject().methods).getElement(i)));
+                    for (int i = 0; i < DefaultJUnit_Configuration.this.getStateObject().nodes.size(); i++) {
+                      ListSequence.fromList(methods).addElement(TestRunUtil.getTestMethod(DefaultJUnit_Configuration.this.getStateObject().nodes.get(i), DefaultJUnit_Configuration.this.getStateObject().methods.get(i)));
                     }
                   }
                 } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.NODE) {
@@ -144,8 +144,8 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                     ListSequence.fromList(tests).addElement(TestRunUtil.getTestNode(DefaultJUnit_Configuration.this.getStateObject().node));
                   }
                   if (DefaultJUnit_Configuration.this.getStateObject().nodes != null) {
-                    for (int i = 0; i < ListSequence.fromList(DefaultJUnit_Configuration.this.getStateObject().nodes).count(); i++) {
-                      ListSequence.fromList(tests).addElement(TestRunUtil.getTestNode(ListSequence.fromList(DefaultJUnit_Configuration.this.getStateObject().nodes).getElement(i)));
+                    for (int i = 0; i < DefaultJUnit_Configuration.this.getStateObject().nodes.size(); i++) {
+                      ListSequence.fromList(tests).addElement(TestRunUtil.getTestNode(DefaultJUnit_Configuration.this.getStateObject().nodes.get(i)));
                     }
                   }
                 } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODEL) {
@@ -304,11 +304,11 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
 
   public static class MyState implements Cloneable {
     public String node;
-    public List<String> nodes;
+    public ClonableList<String> nodes = new ClonableList<String>();
     public String model;
     public String module;
     public String method;
-    public List<String> methods;
+    public ClonableList<String> methods = new ClonableList<String>();
     public boolean compileInMPS;
     public JUnitRunTypes type;
     public ConfigRunParameters myParams;
@@ -318,6 +318,12 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
 
     public Object clone() throws CloneNotSupportedException {
       DefaultJUnit_Configuration.MyState object = (DefaultJUnit_Configuration.MyState) super.clone();
+      if (this.nodes != null) {
+        object.nodes = (ClonableList) this.nodes.clone();
+      }
+      if (this.methods != null) {
+        object.methods = (ClonableList) this.methods.clone();
+      }
       if (this.myParams != null) {
         object.myParams = (ConfigRunParameters) this.myParams.clone();
       }

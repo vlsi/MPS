@@ -52,8 +52,8 @@ public class JUnitConfigFromMethods extends BaseConfigCreator<List> implements C
       };
       _config.setName(ITestMethod_Behavior.call_getTestName_1216136419751(Sequence.fromIterable(parameter).first()) + ",...");
       _config.getStateObject().type = JUnitRunTypes.METHOD;
-      _config.getStateObject().methods = methodNames;
-      _config.getStateObject().nodes = nodeNames;
+      _config.getStateObject().methods = new ClonableList<String>(methodNames);
+      _config.getStateObject().nodes = new ClonableList<String>(nodeNames);
       _config.getStateObject().compileInMPS = isCompileInMPS;
       JUnitConfigFromMethods.this.myConfig = _config;
     }
