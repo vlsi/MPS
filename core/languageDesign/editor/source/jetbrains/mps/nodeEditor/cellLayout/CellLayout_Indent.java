@@ -61,7 +61,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     return result;
   }
 
-  static boolean isNewLineAfter(EditorCell root, EditorCell cell) {
+  public static boolean isNewLineAfter(EditorCell root, EditorCell cell) {
     EditorCell current = cell;
 
     while (current != root) {

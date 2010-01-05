@@ -16,6 +16,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
+import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
+import java.util.Arrays;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DeleteLine_Action extends GeneratedAction {
@@ -84,11 +87,33 @@ public class DeleteLine_Action extends GeneratedAction {
         }
       }
       EditorCell current = DeleteLine_Action.this.currentCell;
-      while (current.getParent() != null && !(current.getParent().getCellLayout() instanceof CellLayout_Vertical)) {
+      List<SNode> nodesToDelete = new ArrayList<SNode>();
+      while (true) {
+        if (current.getParent() == null) {
+          break;
+        }
+        CellLayout layout = current.getParent().getCellLayout();
+        if (layout instanceof CellLayout_Indent) {
+          EditorCell root = current.getRootParent();
+          EditorCell[] siblings = current.getParent().getCells();
+          int finish = siblings.length - 1;
+          for (int i = Arrays.asList(siblings).indexOf(current); i <= siblings.length - 1; i++) {
+            EditorCell sibling = siblings[i];
+            ListSequence.fromList(nodesToDelete).addElement(sibling.getSNode());
+            if (CellLayout_Indent.isNewLineAfter(root, sibling)) {
+              break;
+            }
+          }
+          break;
+        } else if (layout instanceof CellLayout_Vertical) {
+          if (current.isBigCell()) {
+            ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
+            break;
+          }
+        }
         current = current.getParent();
       }
-      if (current.isBigCell()) {
-        SNode nodeToDelete = current.getSNode();
+      for (SNode nodeToDelete : nodesToDelete) {
         if ((nodeToDelete != null) && SNodeOperations.getParent(nodeToDelete) != null) {
           SNodeOperations.deleteNode(nodeToDelete);
         }
