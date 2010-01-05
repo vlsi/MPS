@@ -32,7 +32,7 @@ public abstract class BaseGenerateAction extends BaseAction {
   private IOperationContext myOperationContext;
   private MPSProject myProject;
   private Frame myFrame;
-  private Set<IModule> myModules;
+  Set<IModule> myModules;
 
   public BaseGenerateAction(boolean regenerate) {
     super("");
@@ -43,6 +43,7 @@ public abstract class BaseGenerateAction extends BaseAction {
   }
 
   abstract Set<IModule> getModuleToGenerate(AnActionEvent e);
+  abstract String getObject();
 
   protected void doUpdate(AnActionEvent e) {
     for (IModule module : myModules) {
@@ -53,12 +54,7 @@ public abstract class BaseGenerateAction extends BaseAction {
     }
     enable(e.getPresentation());
     TreeNode treeNode = MPSDataKeys.LOGICAL_VIEW_NODE.getData(e.getDataContext());
-    String obj = null;
-    if (treeNode instanceof ProjectTreeNode) {
-      obj = "Project";
-    } else {
-      obj = myModules.size() == 1 ? NameUtil.shortNameFromLongName(myModules.iterator().next().getClass().getName()) : "Modules";
-    }
+    String obj = getObject();
     String newText = (myRegenerate ? "Regenerate" : "Generate") + " " + obj;
     e.getPresentation().setText(newText);
   }

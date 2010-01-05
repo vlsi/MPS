@@ -21,4 +21,9 @@ public class GenerateAllModulesInProjectAction extends BaseGenerateAction {
     assert mpsProject != null;
     return new HashSet(mpsProject.getModules());
   }
+
+  @Override
+  String getObject() {
+    return "Project";
+  }
 }

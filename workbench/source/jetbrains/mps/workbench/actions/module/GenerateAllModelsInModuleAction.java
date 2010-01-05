@@ -59,4 +59,9 @@ public class GenerateAllModelsInModuleAction extends BaseGenerateAction {
     }
     return result;
   }
+
+  @Override
+  String getObject() {
+    return myModules.size() == 1 ? NameUtil.shortNameFromLongName(myModules.iterator().next().getClass().getName()) : "Modules";
+  }
 }
