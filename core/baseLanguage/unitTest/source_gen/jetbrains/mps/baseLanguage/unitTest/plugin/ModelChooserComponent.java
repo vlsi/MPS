@@ -8,7 +8,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import java.util.Collections;
 import jetbrains.mps.smodel.ModelAccess;
@@ -21,10 +20,9 @@ public class ModelChooserComponent extends BaseChooserComponent {
 
   public ModelChooserComponent() {
     super();
-    this.collectModels();
     this.init(new ActionListener() {
       public void actionPerformed(ActionEvent p0) {
-        final MPSProject project = ModelChooserComponent.this.getProject();
+        ModelChooserComponent.this.collectModels();
         StringBuilder result = new StringBuilder();
         SModelDescriptor modelDescriptor = CommonChoosers.showDialogModelChooser(ModelChooserComponent.this, ModelChooserComponent.this.checkedModels, Collections.EMPTY_LIST);
         if (modelDescriptor != null) {

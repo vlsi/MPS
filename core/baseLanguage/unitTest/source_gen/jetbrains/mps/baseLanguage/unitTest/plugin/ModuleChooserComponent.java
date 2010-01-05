@@ -21,9 +21,9 @@ public class ModuleChooserComponent extends BaseChooserComponent {
 
   public ModuleChooserComponent() {
     super();
-    this.collectModules();
     this.init(new ActionListener() {
       public void actionPerformed(ActionEvent p0) {
+        ModuleChooserComponent.this.collectModules();
         StringBuilder result = new StringBuilder();
         IModule module = CommonChoosers.showDialogModuleChooser(ModuleChooserComponent.this, "", ModuleChooserComponent.this.checkedModules, Collections.EMPTY_LIST);
         if (module != null) {
