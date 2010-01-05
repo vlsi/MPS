@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.runconfigs;
 
+import com.intellij.execution.ExecutionManager;
 import com.intellij.execution.RunManagerEx;
-import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.execution.configurations.ConfigurationType;
-import com.intellij.execution.configurations.LocatableConfiguration;
-import com.intellij.execution.impl.RunManagerImpl;
 import com.intellij.execution.impl.ProjectRunConfigurationManager;
+import com.intellij.execution.impl.RunManagerImpl;
+import com.intellij.execution.junit.RuntimeConfigurationProducer;
+import com.intellij.execution.ui.RunContentDescriptor;
+import com.intellij.execution.ui.RunContentManagerImpl;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.extensions.ExtensionPoint;
 import com.intellij.openapi.extensions.Extensions;
@@ -39,8 +41,6 @@ import jetbrains.mps.plugins.pluginparts.runconfigs.BaseConfigCreator;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
@@ -48,7 +48,6 @@ import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
-import javax.swing.SwingUtilities;
 import java.util.*;
 
 public class RunConfigManager implements ProjectComponent {
@@ -140,6 +139,12 @@ public class RunConfigManager implements ProjectComponent {
     //assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
     assert !myProject.isDisposed();
     if (!myLoaded) return;
+
+    ExecutionManager executionManager = myProject.getComponent(ExecutionManager.class);
+    RunContentManagerImpl contentManager = (RunContentManagerImpl) executionManager.getContentManager();
+    for (RunContentDescriptor d:contentManager.getAllDescriptors()) {
+      d.getAttachedContent().getManager().removeAllContents(true);
+    }
 
     synchronized (myConfigsLock) {
       final ExtensionPoint<RuntimeConfigurationProducer> epCreator = Extensions.getArea(null).getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
