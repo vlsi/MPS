@@ -50,10 +50,7 @@ import java.awt.Component;
 import java.awt.Cursor;
 import java.awt.Toolkit;
 import java.awt.datatransfer.StringSelection;
-import java.awt.event.ActionEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseMotionListener;
+import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -160,6 +157,12 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         showHelpForCurrentMessage();
       }
     }, KeyStroke.getKeyStroke("F1"), JComponent.WHEN_ANCESTOR_OF_FOCUSED_COMPONENT);
+
+    myList.addMouseWheelListener(new MouseWheelListener() {
+      public void mouseWheelMoved(MouseWheelEvent e) {
+        myList.setAutoscrolls(false);
+      }
+    });
 
     myList.addMouseListener(new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
@@ -432,6 +435,10 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
     });
   }
 
+  public void resetAutoscrollOption() {
+    myList.setAutoscrolls(true);
+  }
+
   public void add(final Message message) {
     if (IdeMain.getTestMode() == TestMode.CORE_TEST) {
       return;
@@ -454,7 +461,9 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
         if (isVisible(message)) {
           myModel.add(message);
           int index = myModel.getSize() - 1;
-          myList.getSelectionModel().setSelectionInterval(index, index);
+          if (myList.getAutoscrolls()) {
+            myList.getSelectionModel().setSelectionInterval(index, index);
+          }
           if (messages == 0) {
             myList.ensureIndexIsVisible(index);
           }

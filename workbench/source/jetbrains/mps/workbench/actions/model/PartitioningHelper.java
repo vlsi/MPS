@@ -52,6 +52,7 @@ public class PartitioningHelper {
     }
 
     MessagesViewTool messagesView = project.getComponent(MessagesViewTool.class);
+    messagesView.resetAutoscrollOption();
     // print all rules
     messagesView.add(new Message(MessageKind.INFORMATION, "================================="));
     for (Generator generator : generators) {

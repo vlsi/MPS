@@ -75,11 +75,12 @@ public class GeneratorManager {
     try {
       GeneratorManager generatorManager = operationContext.getComponent(GeneratorManager.class);
       List<Pair<SModelDescriptor, IOperationContext>> modelsWithContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
+      MessagesViewTool messagesTool = operationContext.getProject().getComponent(MessagesViewTool.class);
+      messagesTool.resetAutoscrollOption();
       for (SModelDescriptor model : inputModels) {
         assert model != null;
         ModuleContext moduleContext = ModuleContext.create(model, operationContext.getMPSProject(), false);
         if (moduleContext == null) {
-          MessagesViewTool messagesTool = operationContext.getProject().getComponent(MessagesViewTool.class);
           messagesTool.add(new Message(MessageKind.WARNING, GeneratorManager.class, "Model " + model.getLongName() + " won't be generated"));
           continue;
         }

@@ -24,17 +24,21 @@ import jetbrains.mps.project.MPSProject;
  */
 public class DefaultMessageHandler implements IMessageHandler {
   private MPSProject myProject;
+  private MessagesViewTool myMessagesViewTool;
 
   public DefaultMessageHandler(MPSProject project) {
     myProject = project;
+    myMessagesViewTool = myProject.getComponent(Project.class).getComponent(MessagesViewTool.class);
+    if (myMessagesViewTool != null) {
+      myMessagesViewTool.resetAutoscrollOption();
+    }
   }
 
 
   public void handle(Message msg) {
-    MessagesViewTool messagesView = myProject.getComponent(Project.class).getComponent(MessagesViewTool.class);
-    if (messagesView != null) {
+    if (myMessagesViewTool != null) {
       //it might happen if we haven't opened IDE yet
-      messagesView.add(msg);
+      myMessagesViewTool.add(msg);
     }
   }
 }
