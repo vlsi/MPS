@@ -919,23 +919,6 @@
                     </node>
                   </node>
                 </node>
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5243890846675096268">
-                  <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5243890846675096269">
-                    <property name="name:3" value="finish" />
-                    <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="5243890846675096270" />
-                    <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.MinusExpression:3" id="5243890846675096282">
-                      <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5243890846675096285">
-                        <property name="value:3" value="1" />
-                      </node>
-                      <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5243890846675096279">
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5243890846675096280">
-                          <link role="variableDeclaration:3" targetNodeId="5243890846675096061" resolveInfo="siblings" />
-                        </node>
-                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.ArrayLengthOperation:3" id="5243890846675096281" />
-                      </node>
-                    </node>
-                  </node>
-                </node>
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForStatement:3" id="5243890846675096230">
                   <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5243890846675096231">
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5243890846675096232">

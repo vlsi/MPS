@@ -96,7 +96,6 @@ public class DeleteLine_Action extends GeneratedAction {
         if (layout instanceof CellLayout_Indent) {
           EditorCell root = current.getRootParent();
           EditorCell[] siblings = current.getParent().getCells();
-          int finish = siblings.length - 1;
           for (int i = Arrays.asList(siblings).indexOf(current); i <= siblings.length - 1; i++) {
             EditorCell sibling = siblings[i];
             ListSequence.fromList(nodesToDelete).addElement(sibling.getSNode());
