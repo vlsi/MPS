@@ -524,6 +524,7 @@
                           <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1215781220004" />
                         </node>
                       </node>
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="8538762981200303652" />
                     </node>
                   </node>
                 </node>
@@ -4302,6 +4303,32 @@
           </node>
         </node>
       </node>
+      <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="3924776406442668790">
+        <property name="name:3" value="isOutsideCommandExecution" />
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="3924776406442702980" />
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3924776406442668793">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3924776406442676415">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3924776406442676417">
+              <property name="value:3" value="true" />
+              <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="3924776406442676418">
+                <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="3924776406442676419">
+                  <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3924776406442676420">
+                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3924776406442754963">
+                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3924776406442754965">
+                        <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="3924776406442754966" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3924776406442754967">
+                          <link role="property:16" targetNodeId="1.8538762981200303653:23" resolveInfo="outsideCommand" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3924776406442702982" />
+      </node>
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1204048184295">
         <property name="name:3" value="createNode" />
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1204048184297" />
@@ -4373,10 +4400,12 @@
         </node>
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1204048184328">
           <property name="name:3" value="node" />
+          <property name="isFinal:3" value="true" />
           <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1239498049924" />
         </node>
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1224854161211">
           <property name="name:3" value="ask" />
+          <property name="isFinal:3" value="true" />
           <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1224854177702" />
         </node>
         <node role="returnType:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1239575737382" />
@@ -4684,6 +4713,32 @@
           </node>
         </node>
       </node>
+      <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8538762981200305023">
+        <property name="name:3" value="isOutsideCommandExecution" />
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="8538762981200325185" />
+        <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8538762981200305025" />
+        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8538762981200305026">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3924776406442702991">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3924776406442702993">
+              <property name="value:3" value="true" />
+              <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="3924776406442702994">
+                <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="3924776406442702995">
+                  <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3924776406442702996">
+                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3924776406442754958">
+                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3924776406442754960">
+                        <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="3924776406442754961" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3924776406442754962">
+                          <link role="property:16" targetNodeId="1.8538762981200303653:23" resolveInfo="outsideCommand" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1204047621781">
         <property name="name:3" value="createNode" />
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1204047621783" />
@@ -4755,6 +4810,7 @@
         </node>
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1204047670649">
           <property name="name:3" value="node" />
+          <property name="isFinal:3" value="true" />
           <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1239498050203" />
         </node>
         <node role="returnType:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1239575746258" />

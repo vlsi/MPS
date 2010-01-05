@@ -17,6 +17,7 @@ public class AbstractEditorTab extends BaseConcept implements IClassifier, IChec
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String OUTSIDE_COMMAND = "outsideCommand";
   public static final String INIT_BLOCK = "initBlock";
   public static final String ASK_BLOCK = "askBlock";
   public static final String CREATE_BLOCK = "createBlock";
@@ -71,6 +72,14 @@ public class AbstractEditorTab extends BaseConcept implements IClassifier, IChec
 
   public void setVirtualPackage(String value) {
     this.setProperty(AbstractEditorTab.VIRTUAL_PACKAGE, value);
+  }
+
+  public boolean getOutsideCommand() {
+    return this.getBooleanProperty(AbstractEditorTab.OUTSIDE_COMMAND);
+  }
+
+  public void setOutsideCommand(boolean value) {
+    this.setBooleanProperty(AbstractEditorTab.OUTSIDE_COMMAND, value);
   }
 
   public InitTabBlock getInitBlock() {

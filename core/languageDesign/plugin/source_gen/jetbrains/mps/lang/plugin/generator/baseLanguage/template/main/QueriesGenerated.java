@@ -438,6 +438,14 @@ public class QueriesGenerated {
     return ActionGroupDeclaration_Behavior.call_getID_1213877494306(SLinkOperations.getTarget(_context.getNode(), "group", false));
   }
 
+  public static Object propertyMacro_GetPropertyValue_3924776406442676419(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "outsideCommand");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_3924776406442702995(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(_context.getNode(), "outsideCommand");
+  }
+
   public static Object propertyMacro_GetPropertyValue_4042687513231504118(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ActionDeclaration_Behavior.call_getGeneratedClassFQName_1213877371952(SLinkOperations.getTarget(_context.getNode(), "action", false));
   }
