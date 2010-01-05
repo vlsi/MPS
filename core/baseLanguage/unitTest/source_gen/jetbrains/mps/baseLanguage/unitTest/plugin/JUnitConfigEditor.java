@@ -491,6 +491,8 @@ public class JUnitConfigEditor extends JPanel {
     List<String> methods = TestRunUtil.getValues(config.getStateObject().method, config.getStateObject().methods);
     myThis.setNodes(new ArrayList<SNode>());
     myThis.setMethods(new ArrayList<SNode>());
+    myThis.myTestCases0.clear();
+    myThis.myTestMethods0.clear();
     for (String nodeName : nodes) {
       myThis.addNodeValue(nodeName);
       if (ListSequence.fromList(nodes).first().equals(nodeName)) {

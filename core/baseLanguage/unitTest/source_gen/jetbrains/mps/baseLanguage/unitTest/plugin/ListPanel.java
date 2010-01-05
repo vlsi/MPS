@@ -95,6 +95,11 @@ public class ListPanel extends JPanel {
     return this.values;
   }
 
+  public void clear() {
+    ListSequence.fromList(this.values).removeSequence(ListSequence.fromList(this.values));
+    this.list.updateUI();
+  }
+
   public void init(List<SNode> nodes, final boolean isTestMethods) {
     this.isTestMethods = isTestMethods;
     this.setLayout(new BorderLayout());
