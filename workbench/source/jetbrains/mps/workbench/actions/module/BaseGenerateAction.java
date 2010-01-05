@@ -10,6 +10,7 @@ import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
+import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.Solution;
@@ -22,6 +23,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
+import javax.swing.tree.TreeNode;
 import java.awt.Frame;
 import java.util.*;
 
@@ -50,7 +52,13 @@ public abstract class BaseGenerateAction extends BaseAction {
       }
     }
     enable(e.getPresentation());
-    String obj = myModules.size() == 1 ? NameUtil.shortNameFromLongName(myModules.iterator().next().getClass().getName()) : "Modules";
+    TreeNode treeNode = MPSDataKeys.LOGICAL_VIEW_NODE.getData(e.getDataContext());
+    String obj = null;
+    if (treeNode instanceof ProjectTreeNode) {
+      obj = "Project";
+    } else {
+      obj = myModules.size() == 1 ? NameUtil.shortNameFromLongName(myModules.iterator().next().getClass().getName()) : "Modules";
+    }
     String newText = (myRegenerate ? "Regenerate" : "Generate") + " " + obj;
     e.getPresentation().setText(newText);
   }
