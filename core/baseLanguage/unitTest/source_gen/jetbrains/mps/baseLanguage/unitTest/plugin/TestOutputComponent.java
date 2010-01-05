@@ -46,13 +46,11 @@ public class TestOutputComponent implements TestView {
       test.value = this.state.getCurrentClass();
       method.value = this.state.getCurrentMethod();
     }
-    if (test.value != null && method.value != null) {
-      SwingUtilities.invokeLater(new Runnable() {
-        public void run() {
-          TestOutputComponent.this.appendWithParameters(test.value, method.value, text.value, key.value);
-        }
-      });
-    }
+    SwingUtilities.invokeLater(new Runnable() {
+      public void run() {
+        TestOutputComponent.this.appendWithParameters(test.value, method.value, text.value, key.value);
+      }
+    });
   }
 
   public void init() {
