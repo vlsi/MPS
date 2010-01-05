@@ -18,8 +18,8 @@ import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
-import java.util.Arrays;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Arrays;
 
 public class DeleteLine_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -94,16 +94,19 @@ public class DeleteLine_Action extends GeneratedAction {
         }
         CellLayout layout = current.getParent().getCellLayout();
         if (layout instanceof CellLayout_Indent) {
-          EditorCell root = current.getRootParent();
-          EditorCell[] siblings = current.getParent().getCells();
-          for (int i = Arrays.asList(siblings).indexOf(current); i <= siblings.length - 1; i++) {
-            EditorCell sibling = siblings[i];
-            ListSequence.fromList(nodesToDelete).addElement(sibling.getSNode());
-            if (CellLayout_Indent.isNewLineAfter(root, sibling)) {
-              break;
+          SNode currentNode = current.getSNode();
+          if (SNodeOperations.isInstanceOf(currentNode, "jetbrains.mps.baseLanguage.structure.Statement") || (SNodeOperations.getAncestor(currentNode, "jetbrains.mps.baseLanguage.structure.Statement", false, false) == null)) {
+            EditorCell root = current.getRootParent();
+            EditorCell[] siblings = current.getParent().getCells();
+            for (int i = Arrays.asList(siblings).indexOf(current); i <= siblings.length - 1; i++) {
+              EditorCell sibling = siblings[i];
+              ListSequence.fromList(nodesToDelete).addElement(sibling.getSNode());
+              if (CellLayout_Indent.isNewLineAfter(root, sibling)) {
+                break;
+              }
             }
+            break;
           }
-          break;
         } else if (layout instanceof CellLayout_Vertical) {
           if (current.isBigCell()) {
             ListSequence.fromList(nodesToDelete).addElement(current.getSNode());
