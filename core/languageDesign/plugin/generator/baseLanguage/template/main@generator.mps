@@ -524,7 +524,6 @@
                           <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1215781220004" />
                         </node>
                       </node>
-                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="8538762981200303652" />
                     </node>
                   </node>
                 </node>
