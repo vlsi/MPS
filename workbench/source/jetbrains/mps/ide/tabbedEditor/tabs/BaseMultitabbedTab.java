@@ -78,6 +78,10 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
 
   protected abstract Pair<SNode, IOperationContext> createLoadableNode(boolean ask);
 
+  public boolean isOutsideCommandExecution() {
+    return false;
+  }
+
   protected List<SNode> getLoadableNodes() {
     List<SNode> result = new ArrayList<SNode>();
     for (SNodePointer sNodePointer : myLoadableNodes) {
@@ -200,12 +204,22 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     if (!canCreate()) return;
     if (!askCreate()) return;
 
+    final Pair<SNode, IOperationContext>[] nodeAndContext = new Pair[1];
+    if (isOutsideCommandExecution()) {
+      nodeAndContext[0] = createLoadableNode(true);
+    } else {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          nodeAndContext[0] = createLoadableNode(true);
+        }
+      });
+    }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      @Override
       public void run() {
-        Pair<SNode, IOperationContext> nodeAndContext = createLoadableNode(true);
-        if (nodeAndContext == null) return;
+        if (nodeAndContext[0] == null) return;
 
-        nodeAndContext.o1.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
+        nodeAndContext[0].o1.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
       }
     });
   }

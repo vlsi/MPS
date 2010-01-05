@@ -43,7 +43,11 @@ public class ComponentEditor_TabbedEditor extends BaseTabbedEditor {
       return false;
     }
 
-    public SNode createNode(SNode node) {
+    public boolean isOutsideCommandExecution() {
+      return false;
+    }
+
+    public SNode createNode(final SNode node) {
       throw new IllegalArgumentException();
     }
   }
@@ -69,7 +73,11 @@ public class ComponentEditor_TabbedEditor extends BaseTabbedEditor {
       return true;
     }
 
-    public SNode createNode(SNode node) {
+    public boolean isOutsideCommandExecution() {
+      return false;
+    }
+
+    public SNode createNode(final SNode node) {
       {
         SNode controller = SConceptOperations.createNewNode("jetbrains.mps.uiLanguage.structure.ComponentController", null);
         SLinkOperations.setTarget(controller, "component", node, false);
