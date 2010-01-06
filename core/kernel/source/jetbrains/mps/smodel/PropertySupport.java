@@ -17,6 +17,11 @@ package jetbrains.mps.smodel;
 
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.lang.editor.behavior.AbstractPropertySupport_Behavior;
+import jetbrains.mps.lang.editor.behavior.ConceptPropertySupports_Behavior;
+import jetbrains.mps.lang.editor.structure.AbstractPropertySupport;
+import jetbrains.mps.lang.editor.structure.ConceptPropertySupports;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.DataTypeDeclaration;
 import jetbrains.mps.lang.structure.structure.PrimitiveDataTypeDeclaration;
@@ -29,6 +34,7 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 
 public abstract class PropertySupport {
   private static final Logger LOG = Logger.getLogger(PropertySupport.class);
@@ -66,7 +72,11 @@ public abstract class PropertySupport {
       public PropertySupport compute() {
         DataTypeDeclaration dataType = propertyDeclaration.getDataType();
         if (dataType != null) {
-          PropertySupport propertySupport = (PropertySupport) dataType.getNode().getUserObject(PROPERTY_SUPPORT);
+          PropertySupport propertySupport = loadCustomPropertySupport(propertyDeclaration);
+          if (propertySupport != null) {
+            return propertySupport;
+          }
+          propertySupport = (PropertySupport) dataType.getNode().getUserObject(PROPERTY_SUPPORT);
           if (propertySupport != null) {
             return propertySupport;
           }
@@ -101,6 +111,43 @@ public abstract class PropertySupport {
    */
   public static String getClassName(DataTypeDeclaration propertyDataType) {
     return propertyDataType.getName() + "_PropertySupport";
+  }
+
+  // TODO: introduce PropertySupport registry described in MPS and call it from here.
+  private static PropertySupport loadCustomPropertySupport(PropertyDeclaration propertyDeclaration) {
+    AbstractConceptDeclaration cd = (AbstractConceptDeclaration) propertyDeclaration.getParent();
+    Language l = SModelUtil_new.getDeclaringLanguage(cd, GlobalScope.getInstance());
+
+    if (l.getEditorModelDescriptor() == null) {
+      return null;
+    }
+    for (INodeAdapter rootElement : l.getEditorModelDescriptor().getSModel().getRootsAdapters()) {
+      if (rootElement instanceof ConceptPropertySupports && cd.equals(((ConceptPropertySupports) rootElement).getConceptDeclaration())) {
+        ConceptPropertySupports propertySupports = (ConceptPropertySupports) rootElement;
+        for (AbstractPropertySupport propertySupport : propertySupports.getPropertySupports()) {
+          if (propertyDeclaration.equals(propertySupport.getPropertyDeclaration())) {
+            String propertySupportClassName = JavaNameUtil.fqClassName(propertySupports.getNode(), ConceptPropertySupports_Behavior.call_getClassName_4474273835819399522(propertySupports.getNode()));
+            Class propertySupportClass = l.getClass(propertySupportClassName);
+            if (propertySupportClass != null) {
+              try {
+                Method method = propertySupportClass.getMethod(AbstractPropertySupport_Behavior.call_getFactoryMehodName_4474273835819398328(propertySupport.getNode()));
+                return (PropertySupport) method.invoke(null);
+              } catch (NoSuchMethodException e) {
+                LOG.error(e);
+              } catch (InvocationTargetException e) {
+                LOG.error(e);
+              } catch (IllegalAccessException e) {
+                LOG.error(e);
+              }
+            } else {
+              LOG.error("Can't find a class " + propertySupportClassName);
+            }
+          }
+        }
+        return null;
+      }
+    }
+    return null;
   }
 
   private static PropertySupport loadPropertySupport(PropertyDeclaration propertyDeclaration) {
