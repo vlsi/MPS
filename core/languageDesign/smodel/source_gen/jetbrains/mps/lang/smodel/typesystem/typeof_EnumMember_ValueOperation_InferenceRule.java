@@ -13,6 +13,10 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.ConceptWrapper;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_EnumMember_ValueOperation_InferenceRule() {
@@ -25,7 +29,7 @@ public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInfe
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(operation), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240331899146", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240331895732", true), (SNode) new _Quotations.QuotationClass_113().createNode(typeCheckingContext.getEquationManager().getRepresentator(Enum_typevar_1240331870095), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240331895732", true), (SNode) new typeof_EnumMember_ValueOperation_InferenceRule.QuotationClass_4386_0().createNode(typeCheckingContext.getEquationManager().getRepresentator(Enum_typevar_1240331870095), typeCheckingContext), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = operation;
@@ -58,5 +62,36 @@ public class typeof_EnumMember_ValueOperation_InferenceRule extends AbstractInfe
 
   public boolean overrides() {
     return false;
+  }
+
+  public static class QuotationClass_4386_0 {
+    public QuotationClass_4386_0() {
+    }
+
+    public SNode createNode(Object parameter_4386_0, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_118 = null;
+      {
+        quotedNode_118 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_118 = quotedNode_118;
+        quotedNode1_118.setReferent("enum", (SNode) parameter_4386_0);
+        result = quotedNode1_118;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_4386_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_118 = null;
+      {
+        quotedNode_118 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_118 = quotedNode_118;
+        quotedNode1_118.setReferent("enum", (SNode) parameter_4386_0);
+        result = quotedNode1_118;
+      }
+      return result;
+    }
   }
 }

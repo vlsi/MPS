@@ -13,6 +13,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule() {
@@ -24,9 +28,9 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
     if (SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept, false);
       for (SNode superConcept : ListSequence.fromList(superConcepts)) {
-        ListSequence.fromList(list).addElement(new _Quotations.QuotationClass_48().createNode(superConcept, typeCheckingContext));
+        ListSequence.fromList(list).addElement(new supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.QuotationClass_8679_0().createNode(superConcept, typeCheckingContext));
       }
-      ListSequence.fromList(list).addElement(new _Quotations.QuotationClass_49().createNode(typeCheckingContext));
+      ListSequence.fromList(list).addElement(new supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule.QuotationClass_8679_1().createNode(typeCheckingContext));
     }
     return list;
   }
@@ -41,5 +45,65 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
 
   public boolean isWeak() {
     return false;
+  }
+
+  public static class QuotationClass_8679_0 {
+    public QuotationClass_8679_0() {
+    }
+
+    public SNode createNode(Object parameter_8679_0, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_65 = null;
+      {
+        quotedNode_65 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_65 = quotedNode_65;
+        quotedNode1_65.setReferent("conceptDeclaraton", (SNode) parameter_8679_0);
+        result = quotedNode1_65;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_8679_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_65 = null;
+      {
+        quotedNode_65 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_65 = quotedNode_65;
+        quotedNode1_65.setReferent("conceptDeclaraton", (SNode) parameter_8679_0);
+        result = quotedNode1_65;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_8679_1 {
+    public QuotationClass_8679_1() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_66 = null;
+      {
+        quotedNode_66 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_66 = quotedNode_66;
+        result = quotedNode1_66;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_66 = null;
+      {
+        quotedNode_66 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_66 = quotedNode_66;
+        result = quotedNode1_66;
+      }
+      return result;
+    }
   }
 }

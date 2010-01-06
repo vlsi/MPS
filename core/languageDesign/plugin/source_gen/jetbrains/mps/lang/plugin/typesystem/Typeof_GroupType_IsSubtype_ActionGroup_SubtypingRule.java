@@ -7,13 +7,20 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode groupType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_6().createNode(typeCheckingContext);
+    return new Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule.QuotationClass_6310_0().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -26,5 +33,36 @@ public class Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule extends Subtyp
 
   public boolean isWeak() {
     return false;
+  }
+
+  public static class QuotationClass_6310_0 {
+    public QuotationClass_6310_0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_8 = null;
+      {
+        quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8 = quotedNode_8;
+        quotedNode1_8.addReference(SReference.create("classifier", quotedNode1_8, SModelReference.fromString("f:java_stub#jetbrains.mps.plugins.pluginparts.actions(jetbrains.mps.plugins.pluginparts.actions@java_stub)"), SNodeId.fromString("~GeneratedActionGroup")));
+        result = quotedNode1_8;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_8 = null;
+      {
+        quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8 = quotedNode_8;
+        quotedNode1_8.addReference(SReference.create("classifier", quotedNode1_8, SModelReference.fromString("f:java_stub#jetbrains.mps.plugins.pluginparts.actions(jetbrains.mps.plugins.pluginparts.actions@java_stub)"), SNodeId.fromString("~GeneratedActionGroup")));
+        result = quotedNode1_8;
+      }
+      return result;
+    }
   }
 }

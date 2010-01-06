@@ -8,6 +8,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class SNodeTypeCastExpression_Behavior {
   private static Class[] PARAMETERS_2749027262099690841 = {SNode.class};
@@ -17,7 +21,7 @@ public class SNodeTypeCastExpression_Behavior {
 
   public static boolean call_isSNodeCast_1238686302573(SNode thisNode) {
     SNode leftType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "leftExpression", true));
-    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new _Quotations.QuotationClass_4().createNode(), false)) || SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.lang.smodel.structure.SNodeType");
+    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(leftType, new SNodeTypeCastExpression_Behavior.QuotationClass_3483_0().createNode(), false)) || SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.lang.smodel.structure.SNodeType");
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
@@ -33,5 +37,22 @@ public class SNodeTypeCastExpression_Behavior {
 
   public static String callSuper_getPresentation_2749027262099690841(SNode thisNode, String callerConceptFqName) {
     return (String) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression"), callerConceptFqName, "virtual_getPresentation_1213877396640", PARAMETERS_2749027262099690841);
+  }
+
+  public static class QuotationClass_3483_0 {
+    public QuotationClass_3483_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_4 = null;
+      {
+        quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_4;
+        result = quotedNode1_4;
+      }
+      return result;
+    }
   }
 }

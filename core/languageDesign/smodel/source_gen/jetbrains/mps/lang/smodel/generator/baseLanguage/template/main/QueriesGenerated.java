@@ -36,6 +36,13 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.baseLanguage.behavior.IInternalType_Behavior;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1168911272662(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -53,13 +60,13 @@ public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1168978381110(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     // apply rule if argument is string 
     SNode typeOfArgument = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "value", true));
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(typeOfArgument, new _Quotations.QuotationClass_0().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(typeOfArgument, new QueriesGenerated.QuotationClass_8087_0().createNode());
   }
 
   public static boolean baseMappingRule_Condition_1168978822549(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     // apply rule if argument is not string 
     SNode typeOfArgument = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "value", true));
-    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeOfArgument, new _Quotations.QuotationClass_1().createNode()));
+    return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeOfArgument, new QueriesGenerated.QuotationClass_8087_1().createNode()));
   }
 
   public static boolean baseMappingRule_Condition_1168979597371(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -169,7 +176,7 @@ public class QueriesGenerated {
 
   public static boolean baseMappingRule_Condition_1206552173985(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     // apply rule if the value is string 
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rValue", true)), new _Quotations.QuotationClass_2().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "rValue", true)), new QueriesGenerated.QuotationClass_8087_2().createNode());
   }
 
   public static boolean baseMappingRule_Condition_1206558374188(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -719,7 +726,7 @@ public class QueriesGenerated {
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(rawType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     SNode classifier = SLinkOperations.getTarget(nodeType, "classifier", false);
     if (classifier == null) {
-      return SLinkOperations.getTarget(new _Quotations.QuotationClass_3().createNode(), "classifier", false);
+      return SLinkOperations.getTarget(new QueriesGenerated.QuotationClass_8087_3().createNode(), "classifier", false);
     }
     return classifier;
   }
@@ -1554,5 +1561,74 @@ public class QueriesGenerated {
 
   public static SNode mapSrcMacro_mapper_1206037957637(final IOperationContext operationContext, final MapSrcMacroContext _context) {
     return IInternalType_Behavior.call_getPublicType_1213877443338(_context.getNode());
+  }
+
+  public static class QuotationClass_8087_0 {
+    public QuotationClass_8087_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        result = quotedNode1_0;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_8087_1 {
+    public QuotationClass_8087_1() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1 = quotedNode_1;
+        result = quotedNode1_1;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_8087_2 {
+    public QuotationClass_8087_2() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_2;
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_8087_3 {
+    public QuotationClass_8087_3() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_3;
+        quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~INodeAdapter")));
+        result = quotedNode1_3;
+      }
+      return result;
+    }
   }
 }

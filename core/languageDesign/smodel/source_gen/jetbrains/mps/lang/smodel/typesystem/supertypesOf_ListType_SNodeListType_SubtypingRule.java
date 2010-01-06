@@ -6,6 +6,11 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class supertypesOf_ListType_SNodeListType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ _Patterns.Pattern_3 myMatchingPattern;
@@ -14,7 +19,7 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
   }
 
   public SNode getSubOrSuperType(SNode subtype, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_57().createNode(this.myMatchingPattern.PatternVar0, typeCheckingContext);
+    return new supertypesOf_ListType_SNodeListType_SubtypingRule.QuotationClass_0844_0().createNode(this.myMatchingPattern.PatternVar0, typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -28,5 +33,36 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
 
   public boolean isWeak() {
     return false;
+  }
+
+  public static class QuotationClass_0844_0 {
+    public QuotationClass_0844_0() {
+    }
+
+    public SNode createNode(Object parameter_0844_0, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_84 = null;
+      {
+        quotedNode_84 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_84 = quotedNode_84;
+        quotedNode1_84.setReferent("elementConcept", (SNode) parameter_0844_0);
+        result = quotedNode1_84;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_0844_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_84 = null;
+      {
+        quotedNode_84 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_84 = quotedNode_84;
+        quotedNode1_84.setReferent("elementConcept", (SNode) parameter_0844_0);
+        result = quotedNode1_84;
+      }
+      return result;
+    }
   }
 }

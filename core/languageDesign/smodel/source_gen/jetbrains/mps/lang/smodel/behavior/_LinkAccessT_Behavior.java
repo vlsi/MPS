@@ -7,6 +7,11 @@ import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.baseLanguage.behavior.IInternalType_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class _LinkAccessT_Behavior {
   public static void init(SNode thisNode) {
@@ -18,9 +23,9 @@ public class _LinkAccessT_Behavior {
 
   public static SNode virtual_getPublicType_1213877443338(SNode thisNode) {
     if (SPropertyOperations.getBoolean(thisNode, "singularCradinality")) {
-      return new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(thisNode, "targetConcept", false));
+      return new _LinkAccessT_Behavior.QuotationClass_5770_0().createNode(SLinkOperations.getTarget(thisNode, "targetConcept", false));
     }
-    return new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(thisNode, "targetConcept", false));
+    return new _LinkAccessT_Behavior.QuotationClass_5770_1().createNode(SLinkOperations.getTarget(thisNode, "targetConcept", false));
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
@@ -36,5 +41,41 @@ public class _LinkAccessT_Behavior {
     }
     sb.append("node<").append(SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "targetConcept", false), "name")).append(">]");
     return sb.toString();
+  }
+
+  public static class QuotationClass_5770_0 {
+    public QuotationClass_5770_0() {
+    }
+
+    public SNode createNode(Object parameter_5770_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_2;
+        quotedNode1_2.setReferent("concept", (SNode) parameter_5770_0);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_5770_1 {
+    public QuotationClass_5770_1() {
+    }
+
+    public SNode createNode(Object parameter_5770_1) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_3;
+        quotedNode1_3.setReferent("elementConcept", (SNode) parameter_5770_1);
+        result = quotedNode1_3;
+      }
+      return result;
+    }
   }
 }

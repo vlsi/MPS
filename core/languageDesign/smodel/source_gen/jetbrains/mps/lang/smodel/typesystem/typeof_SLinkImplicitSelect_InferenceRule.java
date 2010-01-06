@@ -10,6 +10,10 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class typeof_SLinkImplicitSelect_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_SLinkImplicitSelect_InferenceRule() {
@@ -20,7 +24,7 @@ public class typeof_SLinkImplicitSelect_InferenceRule extends AbstractInferenceR
       SNode _nodeToCheck_1029348928467 = implicitSelect;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8405512791876070126", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8405512791876070123", true), (SNode) new _Quotations.QuotationClass_136().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(implicitSelect, "link", false), "target", false), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "8405512791876070123", true), (SNode) new typeof_SLinkImplicitSelect_InferenceRule.QuotationClass_0774_0().createNode(SLinkOperations.getTarget(SLinkOperations.getTarget(implicitSelect, "link", false), "target", false), typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -34,5 +38,48 @@ public class typeof_SLinkImplicitSelect_InferenceRule extends AbstractInferenceR
 
   public boolean overrides() {
     return false;
+  }
+
+  public static class QuotationClass_0774_0 {
+    public QuotationClass_0774_0() {
+    }
+
+    public SNode createNode(Object parameter_0774_0, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_136 = null;
+      SNode quotedNode_137 = null;
+      {
+        quotedNode_136 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_136 = quotedNode_136;
+        {
+          quotedNode_137 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_137 = quotedNode_137;
+          quotedNode1_137.setReferent("concept", (SNode) parameter_0774_0);
+          quotedNode_136.addChild("elementType", quotedNode1_137);
+        }
+        result = quotedNode1_136;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_0774_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_136 = null;
+      SNode quotedNode_137 = null;
+      {
+        quotedNode_136 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_136 = quotedNode_136;
+        {
+          quotedNode_137 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_137 = quotedNode_137;
+          quotedNode1_137.setReferent("concept", (SNode) parameter_0774_0);
+          quotedNode_136.addChild("elementType", quotedNode1_137);
+        }
+        result = quotedNode1_136;
+      }
+      return result;
+    }
   }
 }

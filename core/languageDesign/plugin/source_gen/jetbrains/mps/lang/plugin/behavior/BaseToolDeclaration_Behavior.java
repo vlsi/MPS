@@ -12,6 +12,14 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.lang.structure.editor.EditorUtil;
 import jetbrains.mps.util.Macros;
 import jetbrains.mps.checkedName.PropertyReference;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class BaseToolDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -36,7 +44,7 @@ public class BaseToolDeclaration_Behavior {
   }
 
   public static SNode virtual_createSuperType_1217433657148(SNode thisNode) {
-    return new _Quotations.QuotationClass_9().createNode();
+    return new BaseToolDeclaration_Behavior.QuotationClass_6752_0().createNode();
   }
 
   public static String call_getExpandedIconPath_6547237850567463492(SNode thisNode) {
@@ -49,5 +57,23 @@ public class BaseToolDeclaration_Behavior {
 
   public static PropertyReference virtual_getPropertyToCheck_5003188907305392322(SNode thisNode) {
     return new PropertyReference(thisNode, "caption");
+  }
+
+  public static class QuotationClass_6752_0 {
+    public QuotationClass_6752_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_10 = null;
+      {
+        quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_10 = quotedNode_10;
+        quotedNode1_10.addReference(SReference.create("classifier", quotedNode1_10, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench.tools(jetbrains.mps.workbench.tools@java_stub)"), SNodeId.fromString("~BaseTool")));
+        result = quotedNode1_10;
+      }
+      return result;
+    }
   }
 }
