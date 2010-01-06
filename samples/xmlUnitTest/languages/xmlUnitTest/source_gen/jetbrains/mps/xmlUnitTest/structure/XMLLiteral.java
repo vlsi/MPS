@@ -18,7 +18,7 @@ public class XMLLiteral extends BaseConcept {
   }
 
   public Element getElement() {
-    return (Element)this.getChild(Element.class, XMLLiteral.ELEMENT);
+    return (Element) this.getChild(Element.class, XMLLiteral.ELEMENT);
   }
 
   public void setElement(Element node) {
@@ -26,7 +26,7 @@ public class XMLLiteral extends BaseConcept {
   }
 
   public static XMLLiteral newInstance(SModel sm, boolean init) {
-    return (XMLLiteral)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlUnitTest.structure.XMLLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (XMLLiteral) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlUnitTest.structure.XMLLiteral", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static XMLLiteral newInstance(SModel sm) {

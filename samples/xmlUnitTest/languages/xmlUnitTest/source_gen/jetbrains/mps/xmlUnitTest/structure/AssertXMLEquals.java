@@ -49,7 +49,7 @@ public class AssertXMLEquals extends Statement implements MessageHolder {
   }
 
   public Expression getExpected() {
-    return (Expression)this.getChild(Expression.class, AssertXMLEquals.EXPECTED);
+    return (Expression) this.getChild(Expression.class, AssertXMLEquals.EXPECTED);
   }
 
   public void setExpected(Expression node) {
@@ -57,7 +57,7 @@ public class AssertXMLEquals extends Statement implements MessageHolder {
   }
 
   public Expression getActual() {
-    return (Expression)this.getChild(Expression.class, AssertXMLEquals.ACTUAL);
+    return (Expression) this.getChild(Expression.class, AssertXMLEquals.ACTUAL);
   }
 
   public void setActual(Expression node) {
@@ -65,7 +65,7 @@ public class AssertXMLEquals extends Statement implements MessageHolder {
   }
 
   public Message getMessage() {
-    return (Message)this.getChild(Message.class, AssertXMLEquals.MESSAGE);
+    return (Message) this.getChild(Message.class, AssertXMLEquals.MESSAGE);
   }
 
   public void setMessage(Message node) {
@@ -73,7 +73,7 @@ public class AssertXMLEquals extends Statement implements MessageHolder {
   }
 
   public static AssertXMLEquals newInstance(SModel sm, boolean init) {
-    return (AssertXMLEquals)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlUnitTest.structure.AssertXMLEquals", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AssertXMLEquals) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.xmlUnitTest.structure.AssertXMLEquals", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AssertXMLEquals newInstance(SModel sm) {
