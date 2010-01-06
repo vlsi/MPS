@@ -740,6 +740,18 @@ public class QueriesGenerated {
     return QueriesUtil.get_SConceptPropertyAccess_SetMethod(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess"), _context.getScope());
   }
 
+  public static Object referenceMacro_GetReferent_6082414168447114450(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "link", false);
+  }
+
+  public static Object referenceMacro_GetReferent_6082414168447114514(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect"), "link", false);
+  }
+
+  public static Object referenceMacro_GetReferent_6082414168447114553(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect"), "link", false);
+  }
+
   public static boolean ifMacro_Condition_1194958602508(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(_context.getNode());
     return SNodeOperations.isInstanceOf(leftExpression, "jetbrains.mps.lang.behavior.structure.SuperNodeExpression");
@@ -1498,18 +1510,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_8405512791876101998(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "operand", true);
-  }
-
-  public static SNode sourceNodeQuery_8405512791876102034(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return new _Quotations.QuotationClass_4().createNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect"), "link", false));
-  }
-
-  public static SNode sourceNodeQuery_8405512791876102090(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return new _Quotations.QuotationClass_5().createNode(SLinkOperations.getTarget(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.smodel.structure.SLinkImplicitSelect"), "link", false));
-  }
-
-  public static SNode sourceNodeQuery_8405512791876102182(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return new _Quotations.QuotationClass_6().createNode(SLinkOperations.getTarget(_context.getNode(), "link", false));
   }
 
   public static SNode sourceNodeQuery_9203425869795792329(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
