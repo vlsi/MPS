@@ -12,6 +12,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class FieldDocReference_fieldDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public FieldDocReference_fieldDeclaration_ReferentConstraint() {
@@ -28,8 +33,25 @@ public class FieldDocReference_fieldDeclaration_ReferentConstraint extends BaseN
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.FieldDeclaration")).removeWhere(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "visibility", true) == new _Quotations.QuotationClass_0().createNode();
+        return SLinkOperations.getTarget(it, "visibility", true) == new FieldDocReference_fieldDeclaration_ReferentConstraint.QuotationClass_8027_0().createNode();
       }
     });
+  }
+
+  public static class QuotationClass_8027_0 {
+    public QuotationClass_8027_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        result = quotedNode1_0;
+      }
+      return result;
+    }
   }
 }

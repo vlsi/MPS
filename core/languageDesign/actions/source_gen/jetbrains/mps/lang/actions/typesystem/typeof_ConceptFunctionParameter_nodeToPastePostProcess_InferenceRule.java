@@ -11,6 +11,10 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToPastePostProcess_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class typeof_ConceptFunctionParameter_nodeToPastePostProcess_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ConceptFunctionParameter_nodeToPastePostProcess_InferenceRule() {
@@ -21,7 +25,7 @@ public class typeof_ConceptFunctionParameter_nodeToPastePostProcess_InferenceRul
       SNode _nodeToCheck_1029348928467 = node;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "6026743057587447957", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "6026743057587447954", true), (SNode) new _Quotations.QuotationClass_8().createNode(SLinkOperations.getTarget(ConceptFunctionParameter_nodeToPastePostProcess_Behavior.call_getPostProcessor_6026743057587447970(node), "concept", false), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "6026743057587447954", true), (SNode) new typeof_ConceptFunctionParameter_nodeToPastePostProcess_InferenceRule.QuotationClass_3239_0().createNode(SLinkOperations.getTarget(ConceptFunctionParameter_nodeToPastePostProcess_Behavior.call_getPostProcessor_6026743057587447970(node), "concept", false), typeCheckingContext), _info_12389875345);
     }
   }
 
@@ -35,5 +39,36 @@ public class typeof_ConceptFunctionParameter_nodeToPastePostProcess_InferenceRul
 
   public boolean overrides() {
     return false;
+  }
+
+  public static class QuotationClass_3239_0 {
+    public QuotationClass_3239_0() {
+    }
+
+    public SNode createNode(Object parameter_3239_0, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_8 = null;
+      {
+        quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8 = quotedNode_8;
+        quotedNode1_8.setReferent("concept", (SNode) parameter_3239_0);
+        result = quotedNode1_8;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_3239_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_8 = null;
+      {
+        quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8 = quotedNode_8;
+        quotedNode1_8.setReferent("concept", (SNode) parameter_3239_0);
+        result = quotedNode1_8;
+      }
+      return result;
+    }
   }
 }

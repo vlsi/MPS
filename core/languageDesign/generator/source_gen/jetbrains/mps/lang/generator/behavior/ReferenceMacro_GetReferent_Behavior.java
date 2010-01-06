@@ -11,6 +11,11 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class ReferenceMacro_GetReferent_Behavior {
   public static void init(SNode thisNode) {
@@ -24,11 +29,59 @@ public class ReferenceMacro_GetReferent_Behavior {
     LinkDeclaration link_ = linkSearchScope.getMostSpecificLinkDeclarationByRole(linkRole);
     SNode link = SNodeOperations.cast(BaseAdapter.fromAdapter(link_), "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SNode targetConcept = SLinkOperations.getTarget(link, "target", false);
-    SNode expectedNodeType = new _Quotations.QuotationClass_0().createNode(targetConcept);
+    SNode expectedNodeType = new ReferenceMacro_GetReferent_Behavior.QuotationClass_4978_0().createNode(targetConcept);
     // reference may be resolved dynamically? 
     if (SConceptOperations.isSubConceptOf(targetConcept, "jetbrains.mps.lang.core.structure.IResolveInfo")) {
-      return new _Quotations.QuotationClass_1().createNode(targetConcept);
+      return new ReferenceMacro_GetReferent_Behavior.QuotationClass_4978_1().createNode(targetConcept);
     }
     return expectedNodeType;
+  }
+
+  public static class QuotationClass_4978_0 {
+    public QuotationClass_4978_0() {
+    }
+
+    public SNode createNode(Object parameter_4978_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode1_0.setReferent("concept", (SNode) parameter_4978_0);
+        result = quotedNode1_0;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_4978_1 {
+    public QuotationClass_4978_1() {
+    }
+
+    public SNode createNode(Object parameter_4978_1) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1 = quotedNode_1;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_2;
+          quotedNode1_2.setReferent("concept", (SNode) parameter_4978_1);
+          quotedNode_1.addChild("argument", quotedNode1_2);
+        }
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_3 = quotedNode_3;
+          quotedNode_1.addChild("argument", quotedNode1_3);
+        }
+        result = quotedNode1_1;
+      }
+      return result;
+    }
   }
 }

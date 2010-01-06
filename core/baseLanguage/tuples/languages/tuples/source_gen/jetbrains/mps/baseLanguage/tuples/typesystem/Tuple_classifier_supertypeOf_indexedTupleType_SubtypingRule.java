@@ -16,6 +16,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule() {
@@ -24,10 +31,10 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
   public List<SNode> getSubOrSuperTypes(SNode itt, TypeCheckingContext typeCheckingContext) {
     List<SNode> result = new ArrayList<SNode>();
     String clname = "Tuples._" + ListSequence.fromList(SLinkOperations.getTargets(itt, "componentType", true)).count();
-    SModel rtmodel = SNodeOperations.getModel(SLinkOperations.getTarget(new _Quotations.QuotationClass_7().createNode(typeCheckingContext), "classifier", false));
+    SModel rtmodel = SNodeOperations.getModel(SLinkOperations.getTarget(new Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.QuotationClass_5937_0().createNode(typeCheckingContext), "classifier", false));
     for (SNode ct : SModelOperations.getNodes(rtmodel, "jetbrains.mps.baseLanguage.structure.Classifier")) {
       if ((clname).equals(SPropertyOperations.getString(ct, "name"))) {
-        SNode supertype = new _Quotations.QuotationClass_8().createNode(ct, typeCheckingContext);
+        SNode supertype = new Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule.QuotationClass_5937_1().createNode(ct, typeCheckingContext);
         ListSequence.fromList(result).addElement(supertype);
         for (SNode comptype : SLinkOperations.getTargets(itt, "componentType", true)) {
           SNode javatype = ClassifierTypeUtil.getTypeCoercedToClassifierType(comptype);
@@ -48,5 +55,67 @@ public class Tuple_classifier_supertypeOf_indexedTupleType_SubtypingRule extends
 
   public boolean isWeak() {
     return true;
+  }
+
+  public static class QuotationClass_5937_0 {
+    public QuotationClass_5937_0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_13 = null;
+      {
+        quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7 = quotedNode_13;
+        quotedNode1_7.addReference(SReference.create("classifier", quotedNode1_7, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.tuples.runtime(jetbrains.mps.baseLanguage.tuples.runtime@java_stub)"), SNodeId.fromString("~Tuples")));
+        result = quotedNode1_7;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_13 = null;
+      {
+        quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7 = quotedNode_13;
+        quotedNode1_7.addReference(SReference.create("classifier", quotedNode1_7, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.tuples.runtime(jetbrains.mps.baseLanguage.tuples.runtime@java_stub)"), SNodeId.fromString("~Tuples")));
+        result = quotedNode1_7;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_5937_1 {
+    public QuotationClass_5937_1() {
+    }
+
+    public SNode createNode(Object parameter_5937_0, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_14 = null;
+      {
+        quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8 = quotedNode_14;
+        quotedNode1_8.setReferent("classifier", (SNode) parameter_5937_0);
+        result = quotedNode1_8;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_5937_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_14 = null;
+      {
+        quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8 = quotedNode_14;
+        quotedNode1_8.setReferent("classifier", (SNode) parameter_5937_0);
+        result = quotedNode1_8;
+      }
+      return result;
+    }
   }
 }

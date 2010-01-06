@@ -28,6 +28,10 @@ import jetbrains.mps.smodel.action.DefaultChildNodeSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_IOperation_1239580454767(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -89,7 +93,7 @@ public class QueriesGenerated {
           for (final SNode item : queryResult) {
             ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
               public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-                return new _Quotations.QuotationClass_0().createNode((item));
+                return new QueriesGenerated.QuotationClass_8087_0().createNode((item));
               }
             });
           }
@@ -212,5 +216,23 @@ public class QueriesGenerated {
       });
     }
     return result;
+  }
+
+  public static class QuotationClass_8087_0 {
+    public QuotationClass_8087_0() {
+    }
+
+    public SNode createNode(Object parameter_9035_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode1_0.setReferent("classifier", (SNode) parameter_9035_0);
+        result = quotedNode1_0;
+      }
+      return result;
+    }
   }
 }

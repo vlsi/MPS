@@ -11,6 +11,11 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class AddMethodDocComment_Intention extends BaseIntention implements Intention {
   public AddMethodDocComment_Intention() {
@@ -49,14 +54,14 @@ public class AddMethodDocComment_Intention extends BaseIntention implements Inte
     //  Method parameters 
     for (SNode parameterDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true))) {
       SNode paramTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
-      SLinkOperations.setTarget(paramTag, "parameter", new _Quotations.QuotationClass_2().createNode(parameterDeclaration), true);
+      SLinkOperations.setTarget(paramTag, "parameter", new AddMethodDocComment_Intention.QuotationClass_6454_0().createNode(parameterDeclaration), true);
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true), "param", true)).addElement(paramTag);
     }
 
     //  Type variables 
     for (SNode typeVariableDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true))) {
       SNode paramTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
-      SLinkOperations.setTarget(paramTag, "parameter", new _Quotations.QuotationClass_0().createNode(typeVariableDeclaration), true);
+      SLinkOperations.setTarget(paramTag, "parameter", new AddMethodDocComment_Intention.QuotationClass_6454_1().createNode(typeVariableDeclaration), true);
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("methodDocComment"), true), "param", true)).addElement(paramTag);
     }
 
@@ -75,5 +80,41 @@ public class AddMethodDocComment_Intention extends BaseIntention implements Inte
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.javadoc.intentions";
+  }
+
+  public static class QuotationClass_6454_0 {
+    public QuotationClass_6454_0() {
+    }
+
+    public SNode createNode(Object parameter_6567_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocMethodParameterReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode1_0.setReferent("param", (SNode) parameter_6567_0);
+        result = quotedNode1_0;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_6454_1 {
+    public QuotationClass_6454_1() {
+    }
+
+    public SNode createNode(Object parameter_6567_1) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1 = quotedNode_1;
+        quotedNode1_1.setReferent("param", (SNode) parameter_6567_1);
+        result = quotedNode1_1;
+      }
+      return result;
+    }
   }
 }

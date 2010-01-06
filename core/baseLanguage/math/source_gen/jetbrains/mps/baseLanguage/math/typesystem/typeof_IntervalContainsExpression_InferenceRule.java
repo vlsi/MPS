@@ -10,6 +10,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class typeof_IntervalContainsExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_IntervalContainsExpression_InferenceRule() {
@@ -21,7 +27,7 @@ public class typeof_IntervalContainsExpression_InferenceRule extends AbstractInf
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "leftExpression", true);
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1235747425252", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) new _Quotations.QuotationClass_2().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1235747425251), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1235747425254", true), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) new typeof_IntervalContainsExpression_InferenceRule.QuotationClass_0848_0().createNode(typeCheckingContext.getEquationManager().getRepresentator(elementType_typevar_1235747425251), typeCheckingContext), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1235747425254", true), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(expression, "rightExpression", true);
@@ -42,5 +48,62 @@ public class typeof_IntervalContainsExpression_InferenceRule extends AbstractInf
 
   public boolean overrides() {
     return false;
+  }
+
+  public static class QuotationClass_0848_0 {
+    public QuotationClass_0848_0() {
+    }
+
+    public SNode createNode(Object parameter_0848_0, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_4 = null;
+      SNode quotedNode_5 = null;
+      {
+        quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_4;
+        {
+          quotedNode_5 = (SNode) parameter_0848_0;
+          SNode quotedNode1_5;
+          if (_parameterValues_129834374.contains(quotedNode_5)) {
+            quotedNode1_5 = CopyUtil.copy(quotedNode_5);
+          } else {
+            _parameterValues_129834374.add(quotedNode_5);
+            quotedNode1_5 = quotedNode_5;
+          }
+          if (quotedNode1_5 != null) {
+            quotedNode_4.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
+          }
+        }
+        result = quotedNode1_4;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_0848_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_4 = null;
+      SNode quotedNode_5 = null;
+      {
+        quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_4;
+        {
+          quotedNode_5 = (SNode) parameter_0848_0;
+          SNode quotedNode1_5;
+          if (_parameterValues_129834374.contains(quotedNode_5)) {
+            quotedNode1_5 = CopyUtil.copy(quotedNode_5);
+          } else {
+            _parameterValues_129834374.add(quotedNode_5);
+            quotedNode1_5 = quotedNode_5;
+          }
+          if (quotedNode1_5 != null) {
+            quotedNode_4.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_5));
+          }
+        }
+        result = quotedNode1_4;
+      }
+      return result;
+    }
   }
 }

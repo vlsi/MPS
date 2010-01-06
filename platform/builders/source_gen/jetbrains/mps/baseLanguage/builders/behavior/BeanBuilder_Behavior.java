@@ -6,6 +6,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import java.util.List;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class BeanBuilder_Behavior {
   private static Class[] PARAMETERS_6666322667909649860 = {SNode.class ,SNode.class};
@@ -15,11 +22,11 @@ public class BeanBuilder_Behavior {
   }
 
   public static SNode virtual_getCreatorExpression_7057666463730727863(SNode thisNode, SNode parentRef) {
-    return new _Quotations.QuotationClass_1().createNode(SLinkOperations.getTargets(thisNode, "actualArgument", true), SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false));
+    return new BeanBuilder_Behavior.QuotationClass_4166_0().createNode(SLinkOperations.getTargets(thisNode, "actualArgument", true), SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false));
   }
 
   public static SNode virtual_getResultType_7057666463730718251(SNode thisNode) {
-    return new _Quotations.QuotationClass_2().createNode(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    return new BeanBuilder_Behavior.QuotationClass_4166_1().createNode(SNodeOperations.cast(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false)), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
   }
 
   public static SNode call_getCreatorExpression_6666322667909649860(SNode thisNode, SNode parentRef) {
@@ -36,5 +43,54 @@ public class BeanBuilder_Behavior {
 
   public static SNode callSuper_getResultType_6666322667909649864(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.builders.structure.BeanBuilder"), callerConceptFqName, "virtual_getResultType_7057666463730718251", PARAMETERS_6666322667909649864);
+  }
+
+  public static class QuotationClass_4166_0 {
+    public QuotationClass_4166_0() {
+    }
+
+    public SNode createNode(Object parameter_4166_0, Object parameter_4166_1) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_5 = null;
+      SNode quotedNode_6 = null;
+      SNode quotedNode_7 = null;
+      {
+        quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5 = quotedNode_5;
+        {
+          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_6 = quotedNode_6;
+          quotedNode1_6.setReferent("baseMethodDeclaration", (SNode) parameter_4166_1);
+          {
+            List<SNode> nodes = (List<SNode>) parameter_4166_0;
+            for (SNode child : nodes) {
+              quotedNode_6.addChild("actualArgument", HUtil.copyIfNecessary(child));
+            }
+          }
+          quotedNode_5.addChild("creator", quotedNode1_6);
+        }
+        result = quotedNode1_5;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_4166_1 {
+    public QuotationClass_4166_1() {
+    }
+
+    public SNode createNode(Object parameter_4166_2) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_8 = null;
+      {
+        quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7 = quotedNode_8;
+        quotedNode1_7.setReferent("classifier", (SNode) parameter_4166_2);
+        result = quotedNode1_7;
+      }
+      return result;
+    }
   }
 }

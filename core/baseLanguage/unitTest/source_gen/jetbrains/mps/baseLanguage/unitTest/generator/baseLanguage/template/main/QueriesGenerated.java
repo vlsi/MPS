@@ -10,6 +10,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1171932074421(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -55,7 +63,7 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1171932074431(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode superclass = SLinkOperations.getTarget(_context.getNode(), "superclass", true);
     if ((superclass == null)) {
-      return new _Quotations.QuotationClass_0().createNode();
+      return new QueriesGenerated.QuotationClass_8087_0().createNode();
     }
     return superclass;
   }
@@ -158,5 +166,23 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_9110034126561076473(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "annotation", true);
+  }
+
+  public static class QuotationClass_8087_0 {
+    public QuotationClass_8087_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode1_0.addReference(SReference.create("classifier", quotedNode1_0, SModelReference.fromString("f:java_stub#junit.framework(junit.framework@java_stub)"), SNodeId.fromString("~TestCase")));
+        result = quotedNode1_0;
+      }
+      return result;
+    }
   }
 }

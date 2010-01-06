@@ -18,6 +18,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.LanguageAspect;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConceptBehavior_Behavior {
   public static void init(SNode thisNode) {
@@ -90,7 +95,7 @@ public class ConceptBehavior_Behavior {
       }
 
       public SNode createMethodCall(SNode method, List<SNode> arguments) {
-        return new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(this.myStaticContainer, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), method, arguments);
+        return new ConceptBehavior_Behavior.QuotationClass_3513_0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(this.myStaticContainer, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), method, arguments);
       }
     };
   }
@@ -132,5 +137,31 @@ public class ConceptBehavior_Behavior {
 
   public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "concept", false);
+  }
+
+  public static class QuotationClass_3513_0 {
+    public QuotationClass_3513_0() {
+    }
+
+    public SNode createNode(Object parameter_3513_0, Object parameter_3513_1, Object parameter_3513_2) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode1_0.setReferent("baseMethodDeclaration", (SNode) parameter_3513_1);
+        quotedNode1_0.setReferent("concept", (SNode) parameter_3513_0);
+        {
+          List<SNode> nodes = (List<SNode>) parameter_3513_2;
+          for (SNode child : nodes) {
+            quotedNode_0.addChild("actualArgument", HUtil.copyIfNecessary(child));
+          }
+        }
+        result = quotedNode1_0;
+      }
+      return result;
+    }
   }
 }

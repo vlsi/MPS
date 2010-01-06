@@ -7,13 +7,20 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class bigdecimal_extends_BigDecimal_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public bigdecimal_extends_BigDecimal_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode bigDecimalType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_8().createNode(typeCheckingContext);
+    return new bigdecimal_extends_BigDecimal_SubtypingRule.QuotationClass_4311_0().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -26,5 +33,36 @@ public class bigdecimal_extends_BigDecimal_SubtypingRule extends SubtypingRule_R
 
   public boolean isWeak() {
     return false;
+  }
+
+  public static class QuotationClass_4311_0 {
+    public QuotationClass_4311_0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_16 = null;
+      {
+        quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_16 = quotedNode_16;
+        quotedNode1_16.addReference(SReference.create("classifier", quotedNode1_16, SModelReference.fromString("f:java_stub#java.math(java.math@java_stub)"), SNodeId.fromString("~BigDecimal")));
+        result = quotedNode1_16;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_16 = null;
+      {
+        quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_16 = quotedNode_16;
+        quotedNode1_16.addReference(SReference.create("classifier", quotedNode1_16, SModelReference.fromString("f:java_stub#java.math(java.math@java_stub)"), SNodeId.fromString("~BigDecimal")));
+        result = quotedNode1_16;
+      }
+      return result;
+    }
   }
 }

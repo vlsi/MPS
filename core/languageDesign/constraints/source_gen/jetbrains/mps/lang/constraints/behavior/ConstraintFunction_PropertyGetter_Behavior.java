@@ -6,6 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class ConstraintFunction_PropertyGetter_Behavior {
   public static void init(SNode thisNode) {
@@ -18,6 +23,23 @@ public class ConstraintFunction_PropertyGetter_Behavior {
     if (dataType != null) {
       return DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType);
     }
-    return new _Quotations.QuotationClass_0().createNode();
+    return new ConstraintFunction_PropertyGetter_Behavior.QuotationClass_5927_0().createNode();
+  }
+
+  public static class QuotationClass_5927_0 {
+    public QuotationClass_5927_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        result = quotedNode1_0;
+      }
+      return result;
+    }
   }
 }

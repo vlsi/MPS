@@ -12,6 +12,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class ClassifierDocReference_classifier_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ClassifierDocReference_classifier_ReferentConstraint() {
@@ -28,8 +33,25 @@ public class ClassifierDocReference_classifier_ReferentConstraint extends BaseNo
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.Classifier")).removeWhere(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "visibility", true) == new _Quotations.QuotationClass_1().createNode();
+        return SLinkOperations.getTarget(it, "visibility", true) == new ClassifierDocReference_classifier_ReferentConstraint.QuotationClass_9573_0().createNode();
       }
     });
+  }
+
+  public static class QuotationClass_9573_0 {
+    public QuotationClass_9573_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1 = quotedNode_1;
+        result = quotedNode1_1;
+      }
+      return result;
+    }
   }
 }

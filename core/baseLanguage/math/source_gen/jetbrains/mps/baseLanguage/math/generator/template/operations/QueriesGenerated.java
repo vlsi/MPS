@@ -14,6 +14,10 @@ import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1237111605288(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -29,11 +33,11 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1418611629041289492(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), new _Quotations.QuotationClass_0().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.QuotationClass_8087_0().createNode());
   }
 
   public static boolean baseMappingRule_Condition_1418611629041290683(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), new _Quotations.QuotationClass_1().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.QuotationClass_8087_1().createNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1237111769945(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -166,5 +170,51 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1418611629041290673(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "expression", true));
+  }
+
+  public static class QuotationClass_8087_0 {
+    public QuotationClass_8087_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        {
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_1 = quotedNode_1;
+          quotedNode_0.addChild("elementType", quotedNode1_1);
+        }
+        result = quotedNode1_0;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_8087_1 {
+    public QuotationClass_8087_1() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_2;
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_3 = quotedNode_3;
+          quotedNode_2.addChild("elementType", quotedNode1_3);
+        }
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }

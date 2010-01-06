@@ -10,6 +10,13 @@ import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class typeof_IntervalType_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_IntervalType_InferenceRule() {
@@ -21,7 +28,7 @@ public class typeof_IntervalType_InferenceRule extends AbstractInferenceRule_Run
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "1235747425320", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode) SLinkOperations.getTarget(intervalType, "elementType", true), (SNode) new _Quotations.QuotationClass_4().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) SLinkOperations.getTarget(intervalType, "elementType", true), (SNode) new typeof_IntervalType_InferenceRule.QuotationClass_6109_0().createNode(typeCheckingContext), false, _info_12389875345);
     }
   }
 
@@ -35,5 +42,36 @@ public class typeof_IntervalType_InferenceRule extends AbstractInferenceRule_Run
 
   public boolean overrides() {
     return false;
+  }
+
+  public static class QuotationClass_6109_0 {
+    public QuotationClass_6109_0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_8 = null;
+      {
+        quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8 = quotedNode_8;
+        quotedNode1_8.addReference(SReference.create("classifier", quotedNode1_8, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
+        result = quotedNode1_8;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_8 = null;
+      {
+        quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8 = quotedNode_8;
+        quotedNode1_8.addReference(SReference.create("classifier", quotedNode1_8, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
+        result = quotedNode1_8;
+      }
+      return result;
+    }
   }
 }

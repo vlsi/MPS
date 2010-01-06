@@ -6,6 +6,11 @@ import jetbrains.mps.lang.typesystem.runtime.BaseHelginsDescriptor;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsTypesProvider;
 import jetbrains.mps.smodel.SNode;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
@@ -32,8 +37,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
         {
-          this.myLeftOperandType = new _Quotations.QuotationClass_5().createNode();
-          this.myRightOperandType = new _Quotations.QuotationClass_6().createNode();
+          this.myLeftOperandType = new TypesystemDescriptor.QuotationClass_1832_1().createNode();
+          this.myRightOperandType = new TypesystemDescriptor.QuotationClass_1832_2().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myLeftTypeIsExact = true;
           this.myRightTypeIsExact = true;
@@ -42,7 +47,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new _Quotations.QuotationClass_7().createNode();
+          return new TypesystemDescriptor.QuotationClass_1832_0().createNode();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
@@ -50,8 +55,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
         {
-          this.myLeftOperandType = new _Quotations.QuotationClass_8().createNode();
-          this.myRightOperandType = new _Quotations.QuotationClass_9().createNode();
+          this.myLeftOperandType = new TypesystemDescriptor.QuotationClass_1832_4().createNode();
+          this.myRightOperandType = new TypesystemDescriptor.QuotationClass_1832_5().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MinusExpression";
           this.myLeftTypeIsExact = true;
           this.myRightTypeIsExact = true;
@@ -60,7 +65,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new _Quotations.QuotationClass_10().createNode();
+          return new TypesystemDescriptor.QuotationClass_1832_3().createNode();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
@@ -68,8 +73,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
         {
-          this.myLeftOperandType = new _Quotations.QuotationClass_11().createNode();
-          this.myRightOperandType = new _Quotations.QuotationClass_13().createNode();
+          this.myLeftOperandType = new TypesystemDescriptor.QuotationClass_1832_7().createNode();
+          this.myRightOperandType = new TypesystemDescriptor.QuotationClass_1832_8().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.DivExpression";
           this.myLeftTypeIsExact = true;
           this.myRightTypeIsExact = true;
@@ -78,7 +83,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new _Quotations.QuotationClass_12().createNode();
+          return new TypesystemDescriptor.QuotationClass_1832_6().createNode();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
@@ -86,8 +91,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
         {
-          this.myLeftOperandType = new _Quotations.QuotationClass_14().createNode();
-          this.myRightOperandType = new _Quotations.QuotationClass_15().createNode();
+          this.myLeftOperandType = new TypesystemDescriptor.QuotationClass_1832_10().createNode();
+          this.myRightOperandType = new TypesystemDescriptor.QuotationClass_1832_11().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MulExpression";
           this.myLeftTypeIsExact = true;
           this.myRightTypeIsExact = true;
@@ -96,7 +101,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new _Quotations.QuotationClass_16().createNode();
+          return new TypesystemDescriptor.QuotationClass_1832_9().createNode();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
@@ -104,8 +109,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     {
       OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
         {
-          this.myLeftOperandType = new _Quotations.QuotationClass_17().createNode();
-          this.myRightOperandType = new _Quotations.QuotationClass_18().createNode();
+          this.myLeftOperandType = new TypesystemDescriptor.QuotationClass_1832_13().createNode();
+          this.myRightOperandType = new TypesystemDescriptor.QuotationClass_1832_14().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MulExpression";
           this.myLeftTypeIsExact = true;
           this.myRightTypeIsExact = true;
@@ -114,10 +119,265 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new _Quotations.QuotationClass_19().createNode();
+          return new TypesystemDescriptor.QuotationClass_1832_12().createNode();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
+    }
+  }
+
+  public static class QuotationClass_1832_0 {
+    public QuotationClass_1832_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        result = quotedNode1_0;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_1832_1 {
+    public QuotationClass_1832_1() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1 = quotedNode_1;
+        result = quotedNode1_1;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_1832_2 {
+    public QuotationClass_1832_2() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_2;
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_1832_3 {
+    public QuotationClass_1832_3() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_3;
+        result = quotedNode1_3;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_1832_4 {
+    public QuotationClass_1832_4() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_4 = null;
+      {
+        quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_4;
+        result = quotedNode1_4;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_1832_5 {
+    public QuotationClass_1832_5() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_5 = null;
+      {
+        quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5 = quotedNode_5;
+        result = quotedNode1_5;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_1832_6 {
+    public QuotationClass_1832_6() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_6 = null;
+      {
+        quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6 = quotedNode_6;
+        result = quotedNode1_6;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_1832_7 {
+    public QuotationClass_1832_7() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_7 = null;
+      {
+        quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7 = quotedNode_7;
+        result = quotedNode1_7;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_1832_8 {
+    public QuotationClass_1832_8() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_8 = null;
+      {
+        quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8 = quotedNode_8;
+        result = quotedNode1_8;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_1832_9 {
+    public QuotationClass_1832_9() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_9 = null;
+      {
+        quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9 = quotedNode_9;
+        result = quotedNode1_9;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_1832_10 {
+    public QuotationClass_1832_10() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_10 = null;
+      {
+        quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_10 = quotedNode_10;
+        result = quotedNode1_10;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_1832_11 {
+    public QuotationClass_1832_11() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_11 = null;
+      {
+        quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_11 = quotedNode_11;
+        result = quotedNode1_11;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_1832_12 {
+    public QuotationClass_1832_12() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_12 = null;
+      {
+        quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_12 = quotedNode_12;
+        result = quotedNode1_12;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_1832_13 {
+    public QuotationClass_1832_13() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_13 = null;
+      {
+        quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_13 = quotedNode_13;
+        result = quotedNode1_13;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_1832_14 {
+    public QuotationClass_1832_14() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_14 = null;
+      {
+        quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_14 = quotedNode_14;
+        result = quotedNode1_14;
+      }
+      return result;
     }
   }
 }

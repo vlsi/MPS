@@ -6,6 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class QueryFunction_Substitute_Handler_Behavior {
   public static void init(SNode thisNode) {
@@ -21,6 +26,24 @@ public class QueryFunction_Substitute_Handler_Behavior {
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode ancestor = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.actions.structure.AddMenuPart", false, false);
     SNode concept = SLinkOperations.getTarget(ancestor, "concept", false);
-    return new _Quotations.QuotationClass_0().createNode(concept);
+    return new QueryFunction_Substitute_Handler_Behavior.QuotationClass_4883_0().createNode(concept);
+  }
+
+  public static class QuotationClass_4883_0 {
+    public QuotationClass_4883_0() {
+    }
+
+    public SNode createNode(Object parameter_4883_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode1_0.setReferent("concept", (SNode) parameter_4883_0);
+        result = quotedNode1_0;
+      }
+      return result;
+    }
   }
 }

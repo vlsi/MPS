@@ -10,6 +10,11 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class PropertyMacro_GetPropertyValue_Behavior {
   public static void init(SNode thisNode) {
@@ -27,6 +32,23 @@ public class PropertyMacro_GetPropertyValue_Behavior {
         return DataTypeDeclaration_Behavior.call_toBaseLanguageType_1213877229718(dataType);
       }
     }
-    return new _Quotations.QuotationClass_2().createNode();
+    return new PropertyMacro_GetPropertyValue_Behavior.QuotationClass_9283_0().createNode();
+  }
+
+  public static class QuotationClass_9283_0 {
+    public QuotationClass_9283_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_4 = null;
+      {
+        quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_4;
+        result = quotedNode1_4;
+      }
+      return result;
+    }
   }
 }

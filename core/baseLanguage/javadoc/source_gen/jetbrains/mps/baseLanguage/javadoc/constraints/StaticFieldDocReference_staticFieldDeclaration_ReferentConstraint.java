@@ -12,6 +12,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class StaticFieldDocReference_staticFieldDeclaration_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public StaticFieldDocReference_staticFieldDeclaration_ReferentConstraint() {
@@ -28,8 +33,25 @@ public class StaticFieldDocReference_staticFieldDeclaration_ReferentConstraint e
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")).removeWhere(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SLinkOperations.getTarget(it, "visibility", true) == new _Quotations.QuotationClass_3().createNode();
+        return SLinkOperations.getTarget(it, "visibility", true) == new StaticFieldDocReference_staticFieldDeclaration_ReferentConstraint.QuotationClass_3271_0().createNode();
       }
     });
+  }
+
+  public static class QuotationClass_3271_0 {
+    public QuotationClass_3271_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_3;
+        result = quotedNode1_3;
+      }
+      return result;
+    }
   }
 }

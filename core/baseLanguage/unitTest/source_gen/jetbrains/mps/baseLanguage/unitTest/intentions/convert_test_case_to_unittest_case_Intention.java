@@ -12,6 +12,15 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class convert_test_case_to_unittest_case_Intention extends BaseIntention implements Intention {
   public convert_test_case_to_unittest_case_Intention() {
@@ -45,19 +54,19 @@ public class convert_test_case_to_unittest_case_Intention extends BaseIntention 
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept") && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(node, "superclass", true), new _Quotations.QuotationClass_1().createNode());
+    return SNodeOperations.getConceptDeclaration(node) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassConcept") && TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(node, "superclass", true), new convert_test_case_to_unittest_case_Intention.QuotationClass_3408_0().createNode());
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode testCase = SNodeOperations.replaceWithNewChild(node, "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase");
     SPropertyOperations.set(testCase, "name", SPropertyOperations.getString(node, "name"));
     SPropertyOperations.set(testCase, "testCaseName", SPropertyOperations.getString(node, "name"));
-    if ((SLinkOperations.getTarget(node, "superclass", true) != null) && SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false) != SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false)) {
+    if ((SLinkOperations.getTarget(node, "superclass", true) != null) && SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false) != SLinkOperations.getTarget(new convert_test_case_to_unittest_case_Intention.QuotationClass_3408_1().createNode(), "classifier", false)) {
       SLinkOperations.setTarget(SLinkOperations.getTarget(testCase, "superclass", true), "classifier", SLinkOperations.getTarget(SLinkOperations.getTarget(node, "superclass", true), "classifier", false), false);
     }
     for (SNode m : ListSequence.fromList(SLinkOperations.getTargets(node, "method", true))) {
       if (SPropertyOperations.getString(m, "name").startsWith("test")) {
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(testCase, "testMethodList", true), "testMethod", true)).addElement(new _Quotations.QuotationClass_2().createNode(SNodeOperations.detachNode(SLinkOperations.getTarget(m, "body", true)), SPropertyOperations.getString(m, "name").substring("test".length())));
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(testCase, "testMethodList", true), "testMethod", true)).addElement(new convert_test_case_to_unittest_case_Intention.QuotationClass_3408_2().createNode(SNodeOperations.detachNode(SLinkOperations.getTarget(m, "body", true)), SPropertyOperations.getString(m, "name").substring("test".length())));
       } else {
         ListSequence.fromList(SLinkOperations.getTargets(testCase, "method", true)).addElement(SNodeOperations.detachNode(m));
       }
@@ -69,5 +78,79 @@ public class convert_test_case_to_unittest_case_Intention extends BaseIntention 
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.unitTest.intentions";
+  }
+
+  public static class QuotationClass_3408_0 {
+    public QuotationClass_3408_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_4 = null;
+      {
+        quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4 = quotedNode_4;
+        quotedNode1_4.addReference(SReference.create("classifier", quotedNode1_4, SModelReference.fromString("f:java_stub#junit.framework(junit.framework@java_stub)"), SNodeId.fromString("~TestCase")));
+        result = quotedNode1_4;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_3408_1 {
+    public QuotationClass_3408_1() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode1_0.addReference(SReference.create("classifier", quotedNode1_0, SModelReference.fromString("f:java_stub#junit.framework(junit.framework@java_stub)"), SNodeId.fromString("~TestCase")));
+        result = quotedNode1_0;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_3408_2 {
+    public QuotationClass_3408_2() {
+    }
+
+    public SNode createNode(Object parameter_1459_0, Object parameter_1459_1) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1 = quotedNode_1;
+        quotedNode1_1.setProperty("methodName", (String) parameter_1459_1);
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_2;
+          quotedNode_1.addChild("returnType", quotedNode1_2);
+        }
+        {
+          quotedNode_3 = (SNode) parameter_1459_0;
+          SNode quotedNode1_3;
+          if (_parameterValues_129834374.contains(quotedNode_3)) {
+            quotedNode1_3 = CopyUtil.copy(quotedNode_3);
+          } else {
+            _parameterValues_129834374.add(quotedNode_3);
+            quotedNode1_3 = quotedNode_3;
+          }
+          if (quotedNode1_3 != null) {
+            quotedNode_1.addChild("body", HUtil.copyIfNecessary(quotedNode1_3));
+          }
+        }
+        result = quotedNode1_1;
+      }
+      return result;
+    }
   }
 }

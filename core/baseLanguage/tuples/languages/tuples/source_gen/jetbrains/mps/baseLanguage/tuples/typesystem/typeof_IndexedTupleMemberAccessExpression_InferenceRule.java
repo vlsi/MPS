@@ -17,6 +17,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.List;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_IndexedTupleMemberAccessExpression_InferenceRule() {
@@ -33,7 +37,7 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238857999186", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238857984180", true), (SNode) new _Quotations.QuotationClass_1().createNode(typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1238857984180", true), (SNode) new typeof_IndexedTupleMemberAccessExpression_InferenceRule.QuotationClass_2529_0().createNode(typeCheckingContext), false, _info_12389875345);
     }
     if (Expression_Behavior.call_isCompileTimeConstant_1238860258777(SLinkOperations.getTarget(mae, "index", true))) {
       Object idxValue = Expression_Behavior.call_getCompileTimeConstantValue_1238860310638(SLinkOperations.getTarget(mae, "index", true), SNodeOperations.getModel(SLinkOperations.getTarget(mae, "index", true)).getModelDescriptor().getModule());
@@ -75,5 +79,34 @@ public class typeof_IndexedTupleMemberAccessExpression_InferenceRule extends Abs
 
   public boolean overrides() {
     return false;
+  }
+
+  public static class QuotationClass_2529_0 {
+    public QuotationClass_2529_0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1 = quotedNode_2;
+        result = quotedNode1_1;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1 = quotedNode_2;
+        result = quotedNode1_1;
+      }
+      return result;
+    }
   }
 }

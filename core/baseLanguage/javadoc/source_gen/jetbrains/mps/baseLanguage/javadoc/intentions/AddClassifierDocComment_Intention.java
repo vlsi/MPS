@@ -11,6 +11,11 @@ import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class AddClassifierDocComment_Intention extends BaseIntention implements Intention {
   public AddClassifierDocComment_Intention() {
@@ -61,12 +66,30 @@ public class AddClassifierDocComment_Intention extends BaseIntention implements 
     //  Type variables 
     for (SNode typeVariableDeclaration : ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true))) {
       SNode paramTag = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.ParameterBlockDocTag", null);
-      SLinkOperations.setTarget(paramTag, "parameter", new _Quotations.QuotationClass_1().createNode(typeVariableDeclaration), true);
+      SLinkOperations.setTarget(paramTag, "parameter", new AddClassifierDocComment_Intention.QuotationClass_2266_0().createNode(typeVariableDeclaration), true);
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, AttributesRolesUtil.childRoleFromAttributeRole("classifierDocComment"), true), "param", true)).addElement(paramTag);
     }
   }
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.javadoc.intentions";
+  }
+
+  public static class QuotationClass_2266_0 {
+    public QuotationClass_2266_0() {
+    }
+
+    public SNode createNode(Object parameter_4743_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_2;
+        quotedNode1_2.setReferent("param", (SNode) parameter_4743_0);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }

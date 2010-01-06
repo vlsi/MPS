@@ -8,6 +8,13 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class DivExpressionDivToFraction_Intention extends BaseIntention implements Intention {
   public DivExpressionDivToFraction_Intention() {
@@ -34,10 +41,55 @@ public class DivExpressionDivToFraction_Intention extends BaseIntention implemen
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNodeOperations.replaceWithAnother(node, new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(node, "leftExpression", true), SLinkOperations.getTarget(node, "rightExpression", true)));
+    SNodeOperations.replaceWithAnother(node, new DivExpressionDivToFraction_Intention.QuotationClass_0590_0().createNode(SLinkOperations.getTarget(node, "leftExpression", true), SLinkOperations.getTarget(node, "rightExpression", true)));
   }
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.math.intentions";
+  }
+
+  public static class QuotationClass_0590_0 {
+    public QuotationClass_0590_0() {
+    }
+
+    public SNode createNode(Object parameter_4981_0, Object parameter_4981_1) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      SNode quotedNode_5 = null;
+      {
+        quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_3;
+        {
+          quotedNode_4 = (SNode) parameter_4981_0;
+          SNode quotedNode1_4;
+          if (_parameterValues_129834374.contains(quotedNode_4)) {
+            quotedNode1_4 = CopyUtil.copy(quotedNode_4);
+          } else {
+            _parameterValues_129834374.add(quotedNode_4);
+            quotedNode1_4 = quotedNode_4;
+          }
+          if (quotedNode1_4 != null) {
+            quotedNode_3.addChild("numerator", HUtil.copyIfNecessary(quotedNode1_4));
+          }
+        }
+        {
+          quotedNode_5 = (SNode) parameter_4981_1;
+          SNode quotedNode1_5;
+          if (_parameterValues_129834374.contains(quotedNode_5)) {
+            quotedNode1_5 = CopyUtil.copy(quotedNode_5);
+          } else {
+            _parameterValues_129834374.add(quotedNode_5);
+            quotedNode1_5 = quotedNode_5;
+          }
+          if (quotedNode1_5 != null) {
+            quotedNode_3.addChild("denominator", HUtil.copyIfNecessary(quotedNode1_5));
+          }
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
   }
 }

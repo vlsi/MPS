@@ -15,6 +15,11 @@ import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_NamedTupleComponentAccessOperation_InferenceRule() {
@@ -32,7 +37,7 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "3862929002918414716", 0, intentionProvider);
       _info_12389875345.setInequationGroup("default");
-      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "3862929002918414718", true), (SNode) new _Quotations.QuotationClass_6().createNode(tupleDecl, PTYPES, typeCheckingContext), false, _info_12389875345);
+      typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "3862929002918414718", true), (SNode) new typeof_NamedTupleComponentAccessOperation_InferenceRule.QuotationClass_7207_0().createNode(tupleDecl, PTYPES, typeCheckingContext), false, _info_12389875345);
     }
     SNode opType = SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(operation, "component", false), "type", true));
     if (SNodeOperations.isInstanceOf(opType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
@@ -67,5 +72,50 @@ public class typeof_NamedTupleComponentAccessOperation_InferenceRule extends Abs
 
   public boolean overrides() {
     return false;
+  }
+
+  public static class QuotationClass_7207_0 {
+    public QuotationClass_7207_0() {
+    }
+
+    public SNode createNode(Object parameter_7207_0, Object parameter_7207_1, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_5 = null;
+      SNode quotedNode_6 = null;
+      {
+        quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_5;
+        quotedNode1_3.setReferent("classifier", (SNode) parameter_7207_0);
+        {
+          List<SNode> nodes = (List<SNode>) parameter_7207_1;
+          for (SNode child : nodes) {
+            quotedNode_5.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
+          }
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_7207_0, Object parameter_7207_1) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_5 = null;
+      SNode quotedNode_6 = null;
+      {
+        quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_5;
+        quotedNode1_3.setReferent("classifier", (SNode) parameter_7207_0);
+        {
+          List<SNode> nodes = (List<SNode>) parameter_7207_1;
+          for (SNode child : nodes) {
+            quotedNode_5.addChild("parameter", HUtil.copyIfNecessary(child));
+          }
+        }
+        result = quotedNode1_3;
+      }
+      return result;
+    }
   }
 }

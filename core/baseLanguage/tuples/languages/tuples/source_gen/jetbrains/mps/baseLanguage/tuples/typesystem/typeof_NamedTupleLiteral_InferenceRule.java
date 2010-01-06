@@ -20,6 +20,11 @@ import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_NamedTupleLiteral_InferenceRule() {
@@ -60,7 +65,7 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
       SNode _nodeToCheck_1029348928467 = literal;
       BaseIntentionProvider intentionProvider = null;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239901165879", 0, intentionProvider);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239968222968", true), (SNode) new _Quotations.QuotationClass_4().createNode(PTYPES, SLinkOperations.getTarget(literal, "tupleDeclaration", false), typeCheckingContext), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:e119dbbd-3529-4067-8bad-6b9edd79d0b6(jetbrains.mps.baseLanguage.tuples.typesystem)", "1239968222968", true), (SNode) new typeof_NamedTupleLiteral_InferenceRule.QuotationClass_2200_0().createNode(PTYPES, SLinkOperations.getTarget(literal, "tupleDeclaration", false), typeCheckingContext), _info_12389875345);
     }
     RulesFunctions_BaseLanguage.inference_equateMatchingTypeVariables(typeCheckingContext, mmap);
   }
@@ -75,5 +80,50 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
 
   public boolean overrides() {
     return false;
+  }
+
+  public static class QuotationClass_2200_0 {
+    public QuotationClass_2200_0() {
+    }
+
+    public SNode createNode(Object parameter_2200_0, Object parameter_2200_1, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      {
+        quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_3;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_2200_1);
+        {
+          List<SNode> nodes = (List<SNode>) parameter_2200_0;
+          for (SNode child : nodes) {
+            quotedNode_3.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
+          }
+        }
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_2200_0, Object parameter_2200_1) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      {
+        quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_3;
+        quotedNode1_2.setReferent("classifier", (SNode) parameter_2200_1);
+        {
+          List<SNode> nodes = (List<SNode>) parameter_2200_0;
+          for (SNode child : nodes) {
+            quotedNode_3.addChild("parameter", HUtil.copyIfNecessary(child));
+          }
+        }
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }

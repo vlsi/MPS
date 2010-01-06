@@ -5,6 +5,13 @@ package jetbrains.mps.lang.actions.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueryFunction_ParameterizedSideTransform_Query_Behavior {
   public static void init(SNode thisNode) {
@@ -14,8 +21,62 @@ public class QueryFunction_ParameterizedSideTransform_Query_Behavior {
     SNode hostMenuPart = SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.actions.structure.ParameterizedSideTransformMenuPart");
     SNode parameterType = SLinkOperations.getTarget(hostMenuPart, "type", true);
     if (parameterType != null) {
-      return new _Quotations.QuotationClass_8().createNode(parameterType);
+      return new QueryFunction_ParameterizedSideTransform_Query_Behavior.QuotationClass_2083_0().createNode(parameterType);
     }
-    return new _Quotations.QuotationClass_9().createNode();
+    return new QueryFunction_ParameterizedSideTransform_Query_Behavior.QuotationClass_2083_1().createNode();
+  }
+
+  public static class QuotationClass_2083_0 {
+    public QuotationClass_2083_0() {
+    }
+
+    public SNode createNode(Object parameter_2083_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_11 = null;
+      SNode quotedNode_12 = null;
+      {
+        quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_11 = quotedNode_11;
+        {
+          quotedNode_12 = (SNode) parameter_2083_0;
+          SNode quotedNode1_12;
+          if (_parameterValues_129834374.contains(quotedNode_12)) {
+            quotedNode1_12 = CopyUtil.copy(quotedNode_12);
+          } else {
+            _parameterValues_129834374.add(quotedNode_12);
+            quotedNode1_12 = quotedNode_12;
+          }
+          if (quotedNode1_12 != null) {
+            quotedNode_11.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_12));
+          }
+        }
+        result = quotedNode1_11;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_2083_1 {
+    public QuotationClass_2083_1() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_13 = null;
+      SNode quotedNode_14 = null;
+      {
+        quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_13 = quotedNode_13;
+        {
+          quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_14 = quotedNode_14;
+          quotedNode_13.addChild("elementType", quotedNode1_14);
+        }
+        result = quotedNode1_13;
+      }
+      return result;
+    }
   }
 }

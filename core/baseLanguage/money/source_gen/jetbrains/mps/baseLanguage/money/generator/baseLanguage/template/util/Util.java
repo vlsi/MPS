@@ -5,12 +5,16 @@ package jetbrains.mps.baseLanguage.money.generator.baseLanguage.template.util;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class Util {
   public static boolean isPlusMinusExpressionMoneyExpression(SNode expr) {
     SNode rtype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "rightExpression", true));
     SNode ltype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "leftExpression", true));
-    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, new _Quotations.QuotationClass_1().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, new _Quotations.QuotationClass_0().createNode())) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, new Util.QuotationClass_7074_1().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, new Util.QuotationClass_7074_0().createNode())) {
       return true;
     }
     return false;
@@ -19,9 +23,77 @@ public class Util {
   public static boolean isMulDivExpressionMoneyExpression(SNode expr) {
     SNode rtype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "rightExpression", true));
     SNode ltype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(expr, "leftExpression", true));
-    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, new _Quotations.QuotationClass_3().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, new _Quotations.QuotationClass_2().createNode())) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(ltype, new Util.QuotationClass_7074_3().createNode()) && TypeChecker.getInstance().getSubtypingManager().isSubtype(rtype, new Util.QuotationClass_7074_2().createNode())) {
       return true;
     }
     return false;
+  }
+
+  public static class QuotationClass_7074_0 {
+    public QuotationClass_7074_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        result = quotedNode1_0;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_7074_1 {
+    public QuotationClass_7074_1() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1 = quotedNode_1;
+        result = quotedNode1_1;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_7074_2 {
+    public QuotationClass_7074_2() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_2;
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_7074_3 {
+    public QuotationClass_7074_3() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.money.structure.MoneyType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_3;
+        result = quotedNode1_3;
+      }
+      return result;
+    }
   }
 }

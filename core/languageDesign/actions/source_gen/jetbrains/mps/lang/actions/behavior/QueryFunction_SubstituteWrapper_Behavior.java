@@ -5,6 +5,11 @@ package jetbrains.mps.lang.actions.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class QueryFunction_SubstituteWrapper_Behavior {
   public static void init(SNode thisNode) {
@@ -23,6 +28,24 @@ public class QueryFunction_SubstituteWrapper_Behavior {
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode hostMenuPart = SNodeOperations.getAncestor(thisNode, "jetbrains.mps.lang.actions.structure.AddMenuPart", false, false);
     SNode concept = SLinkOperations.getTarget(hostMenuPart, "concept", false);
-    return new _Quotations.QuotationClass_2().createNode(concept);
+    return new QueryFunction_SubstituteWrapper_Behavior.QuotationClass_5223_0().createNode(concept);
+  }
+
+  public static class QuotationClass_5223_0 {
+    public QuotationClass_5223_0() {
+    }
+
+    public SNode createNode(Object parameter_5223_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_2;
+        quotedNode1_2.setReferent("concept", (SNode) parameter_5223_0);
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }

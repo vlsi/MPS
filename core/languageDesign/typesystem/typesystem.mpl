@@ -33,20 +33,23 @@
             </external-mapping>
           </greater-priority-mapping>
           <lesser-priority-mapping>
-            <mapping-set>
-              <mapping-set-element>
-                <generator generatorUID="8fffa437-9500-4c6b-abfc-f4cb2335b059(jetbrains.mps.lang.typesystem#1174411220599)" />
-                <external-mapping>
-                  <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" nodeID="1215528394348" />
-                </external-mapping>
-              </mapping-set-element>
-              <mapping-set-element>
-                <generator generatorUID="b736a816-59a2-4796-a8e6-372fc0a096ce(jetbrains.mps.lang.quotation#1196351859310)" />
-                <external-mapping>
-                  <mapping-node modelUID="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)" nodeID="1196351887556" />
-                </external-mapping>
-              </mapping-set-element>
-            </mapping-set>
+            <generator generatorUID="8fffa437-9500-4c6b-abfc-f4cb2335b059(jetbrains.mps.lang.typesystem#1174411220599)" />
+            <external-mapping>
+              <mapping-set>
+                <mapping-set-element>
+                  <generator generatorUID="8fffa437-9500-4c6b-abfc-f4cb2335b059(jetbrains.mps.lang.typesystem#1174411220599)" />
+                  <external-mapping>
+                    <mapping-node modelUID="r:00000000-0000-4000-0000-011c895902b7(jetbrains.mps.lang.typesystem.generator.baseLanguage.template.main@generator)" nodeID="1215528394348" />
+                  </external-mapping>
+                </mapping-set-element>
+                <mapping-set-element>
+                  <generator generatorUID="b736a816-59a2-4796-a8e6-372fc0a096ce(jetbrains.mps.lang.quotation#1196351859310)" />
+                  <external-mapping>
+                    <mapping-node modelUID="r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)" nodeID="1196351887556" />
+                  </external-mapping>
+                </mapping-set-element>
+              </mapping-set>
+            </external-mapping>
           </lesser-priority-mapping>
         </mapping-priority-rule>
         <mapping-priority-rule kind="strictly_together">

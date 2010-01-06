@@ -24,6 +24,11 @@ import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.util.Calculable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueriesGenerated {
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_LocalVariableDeclaration_5853558151363158391(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -31,7 +36,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_6389121991274660120(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new _Quotations.QuotationClass_1().createNode());
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new QueriesGenerated.QuotationClass_8087_0().createNode());
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_7388416617632092630(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -80,7 +85,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SNode result = SNodeOperations.replaceWithAnother(_context.getSourceNode(), new _Quotations.QuotationClass_0().createNode(_context.getSourceNode()));
+          SNode result = SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_8087_1().createNode(_context.getSourceNode()));
           return SLinkOperations.getTarget(result, "exponent", true);
         }
 
@@ -205,7 +210,7 @@ public class QueriesGenerated {
       for (final SNode item : parameterObjects) {
         ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(item, _context.getSourceNode()) {
           public SNode doSubstitute(String pattern) {
-            return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), new _Quotations.QuotationClass_2().createNode(_context.getSourceNode())));
+            return SNodeOperations.replaceWithAnother(_context.getSourceNode(), SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), new QueriesGenerated.QuotationClass_8087_2().createNode(_context.getSourceNode())));
           }
 
           public SNode getOutputConcept() {
@@ -227,5 +232,90 @@ public class QueriesGenerated {
       }
     }
     return result;
+  }
+
+  public static class QuotationClass_8087_0 {
+    public QuotationClass_8087_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        {
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_1 = quotedNode_1;
+          quotedNode_0.addChild("elementType", quotedNode1_1);
+        }
+        result = quotedNode1_0;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_8087_1 {
+    public QuotationClass_8087_1() {
+    }
+
+    public SNode createNode(Object parameter_7774_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      {
+        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.PowExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_2;
+        {
+          quotedNode_3 = (SNode) parameter_7774_0;
+          SNode quotedNode1_3;
+          if (_parameterValues_129834374.contains(quotedNode_3)) {
+            quotedNode1_3 = CopyUtil.copy(quotedNode_3);
+          } else {
+            _parameterValues_129834374.add(quotedNode_3);
+            quotedNode1_3 = quotedNode_3;
+          }
+          if (quotedNode1_3 != null) {
+            quotedNode_2.addChild("base", HUtil.copyIfNecessary(quotedNode1_3));
+          }
+        }
+        {
+          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_4 = quotedNode_4;
+          quotedNode_2.addChild("exponent", quotedNode1_4);
+        }
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_8087_2 {
+    public QuotationClass_8087_2() {
+    }
+
+    public SNode createNode(Object parameter_7774_1) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_5 = null;
+      {
+        quotedNode_5 = (SNode) parameter_7774_1;
+        SNode quotedNode1_5;
+        if (_parameterValues_129834374.contains(quotedNode_5)) {
+          quotedNode1_5 = CopyUtil.copy(quotedNode_5);
+        } else {
+          _parameterValues_129834374.add(quotedNode_5);
+          quotedNode1_5 = quotedNode_5;
+        }
+        if (quotedNode1_5 != null) {
+          result = quotedNode1_5;
+        }
+      }
+      return result;
+    }
   }
 }

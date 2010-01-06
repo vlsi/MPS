@@ -9,13 +9,19 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class vector_subtype_of_matrix_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public vector_subtype_of_matrix_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode vectorType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_20().createNode(SLinkOperations.getTarget(vectorType, "elementType", true), "" + SPropertyOperations.getInteger(vectorType, "height"), typeCheckingContext);
+    return new vector_subtype_of_matrix_SubtypingRule.QuotationClass_0764_0().createNode(SLinkOperations.getTarget(vectorType, "elementType", true), "" + SPropertyOperations.getInteger(vectorType, "height"), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -28,5 +34,66 @@ public class vector_subtype_of_matrix_SubtypingRule extends SubtypingRule_Runtim
 
   public boolean isWeak() {
     return false;
+  }
+
+  public static class QuotationClass_0764_0 {
+    public QuotationClass_0764_0() {
+    }
+
+    public SNode createNode(Object parameter_0764_0, Object parameter_0764_1, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_40 = null;
+      SNode quotedNode_41 = null;
+      {
+        quotedNode_40 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_40 = quotedNode_40;
+        quotedNode1_40.setProperty("columns", "1");
+        quotedNode1_40.setProperty("rows", (String) parameter_0764_1);
+        {
+          quotedNode_41 = (SNode) parameter_0764_0;
+          SNode quotedNode1_41;
+          if (_parameterValues_129834374.contains(quotedNode_41)) {
+            quotedNode1_41 = CopyUtil.copy(quotedNode_41);
+          } else {
+            _parameterValues_129834374.add(quotedNode_41);
+            quotedNode1_41 = quotedNode_41;
+          }
+          if (quotedNode1_41 != null) {
+            quotedNode_40.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_41, typeCheckingContext));
+          }
+        }
+        result = quotedNode1_40;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_0764_0, Object parameter_0764_1) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_40 = null;
+      SNode quotedNode_41 = null;
+      {
+        quotedNode_40 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_40 = quotedNode_40;
+        quotedNode1_40.setProperty("columns", "1");
+        quotedNode1_40.setProperty("rows", (String) parameter_0764_1);
+        {
+          quotedNode_41 = (SNode) parameter_0764_0;
+          SNode quotedNode1_41;
+          if (_parameterValues_129834374.contains(quotedNode_41)) {
+            quotedNode1_41 = CopyUtil.copy(quotedNode_41);
+          } else {
+            _parameterValues_129834374.add(quotedNode_41);
+            quotedNode1_41 = quotedNode_41;
+          }
+          if (quotedNode1_41 != null) {
+            quotedNode_40.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_41));
+          }
+        }
+        result = quotedNode1_40;
+      }
+      return result;
+    }
   }
 }
