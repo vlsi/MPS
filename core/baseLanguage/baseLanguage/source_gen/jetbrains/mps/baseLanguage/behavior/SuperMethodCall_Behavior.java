@@ -7,6 +7,12 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class SuperMethodCall_Behavior {
   public static void init(SNode thisNode) {
@@ -16,8 +22,51 @@ public class SuperMethodCall_Behavior {
     SNode concept = ClassConcept_Behavior.getContextClass_8008512149545173402(thisNode);
     List<SNode> typeVarRefs = new ArrayList<SNode>();
     for (SNode tvd : SLinkOperations.getTargets(concept, "typeVariableDeclaration", true)) {
-      ListSequence.fromList(typeVarRefs).addElement(new _Quotations.QuotationClass_27().createNode(tvd));
+      ListSequence.fromList(typeVarRefs).addElement(new SuperMethodCall_Behavior.QuotationClass_7225_1().createNode(tvd));
     }
-    return new _Quotations.QuotationClass_24().createNode(typeVarRefs, concept);
+    return new SuperMethodCall_Behavior.QuotationClass_7225_0().createNode(typeVarRefs, concept);
+  }
+
+  public static class QuotationClass_7225_0 {
+    public QuotationClass_7225_0() {
+    }
+
+    public SNode createNode(Object parameter_7225_1, Object parameter_7225_2) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_29 = null;
+      SNode quotedNode_30 = null;
+      {
+        quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_28 = quotedNode_29;
+        quotedNode1_28.setReferent("classifier", (SNode) parameter_7225_2);
+        {
+          List<SNode> nodes = (List<SNode>) parameter_7225_1;
+          for (SNode child : nodes) {
+            quotedNode_29.addChild("parameter", HUtil.copyIfNecessary(child));
+          }
+        }
+        result = quotedNode1_28;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_7225_1 {
+    public QuotationClass_7225_1() {
+    }
+
+    public SNode createNode(Object parameter_7225_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_28 = null;
+      {
+        quotedNode_28 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_27 = quotedNode_28;
+        quotedNode1_27.setReferent("typeVariableDeclaration", (SNode) parameter_7225_0);
+        result = quotedNode1_27;
+      }
+      return result;
+    }
   }
 }

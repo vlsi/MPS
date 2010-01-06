@@ -7,13 +7,17 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode dequeType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_187().createNode(typeCheckingContext);
+    return new supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule.QuotationClass_4920_0().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -30,5 +34,46 @@ public class supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule extends
 
   public boolean surelyKeepsConcept() {
     return true;
+  }
+
+  public static class QuotationClass_4920_0 {
+    public QuotationClass_4920_0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_367 = null;
+      SNode quotedNode_368 = null;
+      {
+        quotedNode_367 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DequeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_367 = quotedNode_367;
+        {
+          quotedNode_368 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_368 = quotedNode_368;
+          quotedNode_367.addChild("elementType", quotedNode1_368);
+        }
+        result = quotedNode1_367;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_367 = null;
+      SNode quotedNode_368 = null;
+      {
+        quotedNode_367 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DequeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_367 = quotedNode_367;
+        {
+          quotedNode_368 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_368 = quotedNode_368;
+          quotedNode_367.addChild("elementType", quotedNode1_368);
+        }
+        result = quotedNode1_367;
+      }
+      return result;
+    }
   }
 }

@@ -8,13 +8,22 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class supertypesOf_ListType_ClassifierTypeList_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_ListType_ClassifierTypeList_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_24().createNode(SLinkOperations.getTarget(type, "elementType", true), typeCheckingContext);
+    return new supertypesOf_ListType_ClassifierTypeList_SubtypingRule.QuotationClass_9350_0().createNode(SLinkOperations.getTarget(type, "elementType", true), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -27,5 +36,64 @@ public class supertypesOf_ListType_ClassifierTypeList_SubtypingRule extends Subt
 
   public boolean isWeak() {
     return true;
+  }
+
+  public static class QuotationClass_9350_0 {
+    public QuotationClass_9350_0() {
+    }
+
+    public SNode createNode(Object parameter_9350_0, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_31 = null;
+      SNode quotedNode_32 = null;
+      {
+        quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_31 = quotedNode_31;
+        quotedNode1_31.addReference(SReference.create("classifier", quotedNode1_31, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~List")));
+        {
+          quotedNode_32 = (SNode) parameter_9350_0;
+          SNode quotedNode1_32;
+          if (_parameterValues_129834374.contains(quotedNode_32)) {
+            quotedNode1_32 = CopyUtil.copy(quotedNode_32);
+          } else {
+            _parameterValues_129834374.add(quotedNode_32);
+            quotedNode1_32 = quotedNode_32;
+          }
+          if (quotedNode1_32 != null) {
+            quotedNode_31.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_32, typeCheckingContext));
+          }
+        }
+        result = quotedNode1_31;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_9350_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_31 = null;
+      SNode quotedNode_32 = null;
+      {
+        quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_31 = quotedNode_31;
+        quotedNode1_31.addReference(SReference.create("classifier", quotedNode1_31, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~List")));
+        {
+          quotedNode_32 = (SNode) parameter_9350_0;
+          SNode quotedNode1_32;
+          if (_parameterValues_129834374.contains(quotedNode_32)) {
+            quotedNode1_32 = CopyUtil.copy(quotedNode_32);
+          } else {
+            _parameterValues_129834374.add(quotedNode_32);
+            quotedNode1_32 = quotedNode_32;
+          }
+          if (quotedNode1_32 != null) {
+            quotedNode_31.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_32));
+          }
+        }
+        result = quotedNode1_31;
+      }
+      return result;
+    }
   }
 }

@@ -13,6 +13,13 @@ import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_UnaryMinus_InferenceRule() {
@@ -30,7 +37,7 @@ public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runti
       final SNode exType = typeCheckingContext.getEquationManager().getRepresentator(expressionType_typevar_7602524515424797598);
       typeCheckingContext.whenConcrete(exType, new Runnable() {
         public void run() {
-          SNode type = typeCheckingContext.getOverloadedOperationType(minus, typeCheckingContext.getEquationManager().getRepresentator(exType), new _Quotations.QuotationClass_115().createNode(typeCheckingContext));
+          SNode type = typeCheckingContext.getOverloadedOperationType(minus, typeCheckingContext.getEquationManager().getRepresentator(exType), new typeof_UnaryMinus_InferenceRule.QuotationClass_2581_0().createNode(typeCheckingContext));
           if (type != null) {
             {
               SNode _nodeToCheck_1029348928467 = minus;
@@ -60,5 +67,36 @@ public class typeof_UnaryMinus_InferenceRule extends AbstractInferenceRule_Runti
 
   public boolean overrides() {
     return true;
+  }
+
+  public static class QuotationClass_2581_0 {
+    public QuotationClass_2581_0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_144 = null;
+      {
+        quotedNode_144 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_140 = quotedNode_144;
+        quotedNode1_140.addReference(SReference.create("classifier", quotedNode1_140, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_140;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_144 = null;
+      {
+        quotedNode_144 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_140 = quotedNode_144;
+        quotedNode1_140.addReference(SReference.create("classifier", quotedNode1_140, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_140;
+      }
+      return result;
+    }
   }
 }

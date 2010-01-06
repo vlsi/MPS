@@ -13,6 +13,14 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class RuntimeUtils {
   private static Map<String, SNode> runtimeClassifiers = null;
@@ -21,7 +29,7 @@ public class RuntimeUtils {
   }
 
   public static SModel getRuntimeModel() {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(new _Quotations.QuotationClass_6().createNode(), "classifier", false));
+    return SNodeOperations.getModel(SLinkOperations.getTarget(new RuntimeUtils.QuotationClass_6121_0().createNode(), "classifier", false));
   }
 
   public static Map<String, SNode> getRuntimeClassifiersMap() {
@@ -42,5 +50,23 @@ public class RuntimeUtils {
       }
     }
     return runtimeClassifiers;
+  }
+
+  public static class QuotationClass_6121_0 {
+    public QuotationClass_6121_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_17 = null;
+      {
+        quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_13 = quotedNode_17;
+        quotedNode1_13.addReference(SReference.create("classifier", quotedNode1_13, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~YieldingIterator")));
+        result = quotedNode1_13;
+      }
+      return result;
+    }
   }
 }

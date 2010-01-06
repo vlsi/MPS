@@ -12,6 +12,11 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionContext;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class GenerateMainMethod_Intention extends GenerateIntention implements Intention {
   public GenerateMainMethod_Intention() {
@@ -53,7 +58,7 @@ public class GenerateMainMethod_Intention extends GenerateIntention implements I
   }
 
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
-    SNode methodNode = new _Quotations.QuotationClass_5().createNode();
+    SNode methodNode = new GenerateMainMethod_Intention.QuotationClass_6820_0().createNode();
     ListSequence.fromList(SLinkOperations.getTargets(node, "staticMethod", true)).addElement(methodNode);
     editorContext.select(SLinkOperations.getTarget(methodNode, "body", true));
   }
@@ -64,5 +69,60 @@ public class GenerateMainMethod_Intention extends GenerateIntention implements I
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
+  }
+
+  public static class QuotationClass_6820_0 {
+    public QuotationClass_6820_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_402 = null;
+      SNode quotedNode_403 = null;
+      SNode quotedNode_404 = null;
+      SNode quotedNode_405 = null;
+      SNode quotedNode_406 = null;
+      SNode quotedNode_407 = null;
+      SNode quotedNode_408 = null;
+      {
+        quotedNode_402 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_402 = quotedNode_402;
+        quotedNode1_402.setProperty("name", "main");
+        {
+          quotedNode_403 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_403 = quotedNode_403;
+          quotedNode_402.addChild("returnType", quotedNode1_403);
+        }
+        {
+          quotedNode_404 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_404 = quotedNode_404;
+          quotedNode_402.addChild("visibility", quotedNode1_404);
+        }
+        {
+          quotedNode_405 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_405 = quotedNode_405;
+          quotedNode_402.addChild("body", quotedNode1_405);
+        }
+        {
+          quotedNode_406 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_406 = quotedNode_406;
+          quotedNode1_406.setProperty("name", "args");
+          {
+            quotedNode_407 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+            SNode quotedNode1_407 = quotedNode_407;
+            {
+              quotedNode_408 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+              SNode quotedNode1_408 = quotedNode_408;
+              quotedNode_407.addChild("componentType", quotedNode1_408);
+            }
+            quotedNode_406.addChild("type", quotedNode1_407);
+          }
+          quotedNode_402.addChild("parameter", quotedNode1_406);
+        }
+        result = quotedNode1_402;
+      }
+      return result;
+    }
   }
 }

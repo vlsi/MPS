@@ -14,6 +14,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention implements Intention {
   public ReplaceForEachLoopWithIndexedLoop_Intention() {
@@ -64,7 +68,7 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention i
     // 
     final SNode forVariableDeclaration = SLinkOperations.setNewChild(forStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
     SPropertyOperations.set(forVariableDeclaration, "name", "i");
-    SLinkOperations.setTarget(forVariableDeclaration, "type", new _Quotations.QuotationClass_2().createNode(), true);
+    SLinkOperations.setTarget(forVariableDeclaration, "type", new ReplaceForEachLoopWithIndexedLoop_Intention.QuotationClass_1422_0().createNode(), true);
     SLinkOperations.setNewChild(forVariableDeclaration, "initializer", "jetbrains.mps.baseLanguage.structure.IntegerConstant");
     SPropertyOperations.set(SNodeOperations.cast(SLinkOperations.getTarget(forVariableDeclaration, "initializer", true), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), "value", "" + (0));
     // 
@@ -105,5 +109,22 @@ public class ReplaceForEachLoopWithIndexedLoop_Intention extends BaseIntention i
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
+  }
+
+  public static class QuotationClass_1422_0 {
+    public QuotationClass_1422_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_7 = null;
+      {
+        quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7 = quotedNode_7;
+        result = quotedNode1_7;
+      }
+      return result;
+    }
   }
 }

@@ -6,6 +6,11 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ _Patterns.Pattern_3 myMatchingPattern;
@@ -14,7 +19,7 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
   }
 
   public SNode getSubOrSuperType(SNode byteType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_50().createNode(typeCheckingContext);
+    return new byte_unboxing_SubtypingRule.QuotationClass_8651_0().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -28,5 +33,34 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
 
   public boolean isWeak() {
     return true;
+  }
+
+  public static class QuotationClass_8651_0 {
+    public QuotationClass_8651_0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_84 = null;
+      {
+        quotedNode_84 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_83 = quotedNode_84;
+        result = quotedNode1_83;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_84 = null;
+      {
+        quotedNode_84 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_83 = quotedNode_84;
+        result = quotedNode1_83;
+      }
+      return result;
+    }
   }
 }

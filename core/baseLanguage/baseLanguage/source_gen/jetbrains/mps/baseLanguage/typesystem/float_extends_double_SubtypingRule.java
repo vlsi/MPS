@@ -7,13 +7,17 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class float_extends_double_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public float_extends_double_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode floatType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_38().createNode(typeCheckingContext);
+    return new float_extends_double_SubtypingRule.QuotationClass_4978_0().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -26,5 +30,34 @@ public class float_extends_double_SubtypingRule extends SubtypingRule_Runtime im
 
   public boolean isWeak() {
     return false;
+  }
+
+  public static class QuotationClass_4978_0 {
+    public QuotationClass_4978_0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_71 = null;
+      {
+        quotedNode_71 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_70 = quotedNode_71;
+        result = quotedNode1_70;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_71 = null;
+      {
+        quotedNode_71 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_70 = quotedNode_71;
+        result = quotedNode1_70;
+      }
+      return result;
+    }
   }
 }

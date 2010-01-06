@@ -13,6 +13,10 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class FieldDeclaration_Behavior {
   private static Class[] PARAMETERS_8884554759541377970 = {SNode.class};
@@ -24,7 +28,7 @@ public class FieldDeclaration_Behavior {
 
   public static String call_getGetterName_1213877243782(SNode thisNode) {
     String prefix = "get";
-    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, "type", true), new _Quotations.QuotationClass_2().createNode())) {
+    if (TypeChecker.getInstance().getSubtypingManager().isSubtype(SLinkOperations.getTarget(thisNode, "type", true), new FieldDeclaration_Behavior.QuotationClass_9617_0().createNode())) {
       prefix = "is";
     }
     return prefix + NameUtil.capitalize(SPropertyOperations.getString(thisNode, "name"));
@@ -88,5 +92,22 @@ public class FieldDeclaration_Behavior {
 
   public static List<SNode> callSuper_getChildrenToDisplayIntention_4025276038182459890(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), callerConceptFqName, "virtual_getChildrenToDisplayIntention_4025276038182325660", PARAMETERS_4025276038182459890);
+  }
+
+  public static class QuotationClass_9617_0 {
+    public QuotationClass_9617_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_4 = null;
+      {
+        quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_4;
+        result = quotedNode1_3;
+      }
+      return result;
+    }
   }
 }

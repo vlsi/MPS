@@ -21,6 +21,12 @@ import jetbrains.mps.util.Condition;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class InlineMethodRefactoring {
   private SNode myReturnType;
@@ -84,7 +90,7 @@ public class InlineMethodRefactoring {
   public void addLastReturnStatement(SNode body) {
     SNode last = ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).last();
     if (SNodeOperations.isInstanceOf(last, "jetbrains.mps.baseLanguage.structure.ExpressionStatement")) {
-      SNodeOperations.replaceWithAnother(last, new _Quotations.QuotationClass_11().createNode(SLinkOperations.getTarget(SNodeOperations.cast(last, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)));
+      SNodeOperations.replaceWithAnother(last, new InlineMethodRefactoring.QuotationClass_3318_0().createNode(SLinkOperations.getTarget(SNodeOperations.cast(last, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"), "expression", true)));
     }
   }
 
@@ -281,5 +287,36 @@ public class InlineMethodRefactoring {
       }
     }
     return buff.toString();
+  }
+
+  public static class QuotationClass_3318_0 {
+    public QuotationClass_3318_0() {
+    }
+
+    public SNode createNode(Object parameter_3318_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_29 = null;
+      SNode quotedNode_30 = null;
+      {
+        quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_29 = quotedNode_29;
+        {
+          quotedNode_30 = (SNode) parameter_3318_0;
+          SNode quotedNode1_30;
+          if (_parameterValues_129834374.contains(quotedNode_30)) {
+            quotedNode1_30 = CopyUtil.copy(quotedNode_30);
+          } else {
+            _parameterValues_129834374.add(quotedNode_30);
+            quotedNode1_30 = quotedNode_30;
+          }
+          if (quotedNode1_30 != null) {
+            quotedNode_29.addChild("expression", HUtil.copyIfNecessary(quotedNode1_30));
+          }
+        }
+        result = quotedNode1_29;
+      }
+      return result;
+    }
   }
 }

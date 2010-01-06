@@ -7,13 +7,17 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class erasure_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public erasure_SNodeType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode snodeType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_8().createNode(typeCheckingContext);
+    return new erasure_SNodeType_SubtypingRule.QuotationClass_8429_0().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -30,5 +34,34 @@ public class erasure_SNodeType_SubtypingRule extends SubtypingRule_Runtime imple
 
   public boolean surelyKeepsConcept() {
     return true;
+  }
+
+  public static class QuotationClass_8429_0 {
+    public QuotationClass_8429_0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_8 = null;
+      {
+        quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8 = quotedNode_8;
+        result = quotedNode1_8;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_8 = null;
+      {
+        quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8 = quotedNode_8;
+        result = quotedNode1_8;
+      }
+      return result;
+    }
   }
 }

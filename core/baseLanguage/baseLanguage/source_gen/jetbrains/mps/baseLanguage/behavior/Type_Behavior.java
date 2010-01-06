@@ -17,6 +17,10 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class Type_Behavior {
   private static Class[] PARAMETERS_1213877337304 = {SNode.class};
@@ -81,7 +85,7 @@ public class Type_Behavior {
       IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
       SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, pattern_1);
       if (coercedNode_1 != null) {
-        return new _Quotations.QuotationClass_25().createNode(SLinkOperations.getTarget(coercedNode_1, "classifier", false));
+        return new Type_Behavior.QuotationClass_8537_0().createNode(SLinkOperations.getTarget(coercedNode_1, "classifier", false));
       } else {
         throw new UnsupportedOperationException();
       }
@@ -202,5 +206,23 @@ public class Type_Behavior {
 
   public static boolean callSuper_hasMissingParameters_3508583411997314206(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_hasMissingParameters_3508583411997314206", PARAMETERS_3508583411997314206);
+  }
+
+  public static class QuotationClass_8537_0 {
+    public QuotationClass_8537_0() {
+    }
+
+    public SNode createNode(Object parameter_8537_1) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_16 = null;
+      {
+        quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_15 = quotedNode_16;
+        quotedNode1_15.setReferent("classifier", (SNode) parameter_8537_1);
+        result = quotedNode1_15;
+      }
+      return result;
+    }
   }
 }

@@ -16,6 +16,10 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.Iterator;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class ClassifierType_Behavior {
   private static Class[] PARAMETERS_9011026350741578236 = {SNode.class};
@@ -58,7 +62,7 @@ public class ClassifierType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new _Quotations.QuotationClass_7().createNode(SLinkOperations.getTarget(thisNode, "classifier", false));
+    return new ClassifierType_Behavior.QuotationClass_3370_0().createNode(SLinkOperations.getTarget(thisNode, "classifier", false));
   }
 
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
@@ -128,7 +132,7 @@ public class ClassifierType_Behavior {
   }
 
   public static SNode virtual_createDefaultTypeExpression_3359611512358152580(SNode thisNode) {
-    return new _Quotations.QuotationClass_31().createNode();
+    return new ClassifierType_Behavior.QuotationClass_3370_1().createNode();
   }
 
   public static boolean virtual_hasMissingParameters_3508583411997314206(SNode thisNode) {
@@ -141,5 +145,40 @@ public class ClassifierType_Behavior {
 
   public static SNode callSuper_createDefaultTypeExpression_9011026350741578236(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.ClassifierType"), callerConceptFqName, "virtual_createDefaultTypeExpression_3359611512358152580", PARAMETERS_9011026350741578236);
+  }
+
+  public static class QuotationClass_3370_0 {
+    public QuotationClass_3370_0() {
+    }
+
+    public SNode createNode(Object parameter_3370_1) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_9 = null;
+      {
+        quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8 = quotedNode_9;
+        quotedNode1_8.setReferent("classifier", (SNode) parameter_3370_1);
+        result = quotedNode1_8;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_3370_1 {
+    public QuotationClass_3370_1() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_10 = null;
+      {
+        quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9 = quotedNode_10;
+        result = quotedNode1_9;
+      }
+      return result;
+    }
   }
 }

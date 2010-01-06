@@ -19,6 +19,12 @@ import java.util.Iterator;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ClassifierType_NonTypesystemRule() {
@@ -50,7 +56,7 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
       }
     }
     for (SNode typeParameter : SLinkOperations.getTargets(classifierType, "parameter", true)) {
-      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeParameter, SLinkOperations.getTarget(new _Quotations.QuotationClass_59().createNode(typeCheckingContext), "descriptor", false), false)))) {
+      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(typeParameter, SLinkOperations.getTarget(new check_ClassifierType_NonTypesystemRule.QuotationClass_8123_0().createNode(typeCheckingContext), "descriptor", false), false)))) {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(typeParameter, "primitive types not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1195494591112", intentionProvider, errorTarget);
@@ -105,5 +111,36 @@ public class check_ClassifierType_NonTypesystemRule extends AbstractNonTypesyste
 
   public boolean overrides() {
     return false;
+  }
+
+  public static class QuotationClass_8123_0 {
+    public QuotationClass_8123_0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_97 = null;
+      {
+        quotedNode_97 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_95 = quotedNode_97;
+        quotedNode1_95.addReference(SReference.create("descriptor", quotedNode1_95, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
+        result = quotedNode1_95;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_97 = null;
+      {
+        quotedNode_97 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_95 = quotedNode_97;
+        quotedNode1_95.addReference(SReference.create("descriptor", quotedNode1_95, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
+        result = quotedNode1_95;
+      }
+      return result;
+    }
   }
 }

@@ -6,6 +6,11 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ _Patterns.Pattern_4 myMatchingPattern;
@@ -14,7 +19,7 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
   }
 
   public SNode getSubOrSuperType(SNode floatType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_51().createNode(typeCheckingContext);
+    return new float_unboxing_SubtypingRule.QuotationClass_2903_0().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -28,5 +33,34 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
 
   public boolean isWeak() {
     return true;
+  }
+
+  public static class QuotationClass_2903_0 {
+    public QuotationClass_2903_0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_85 = null;
+      {
+        quotedNode_85 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_84 = quotedNode_85;
+        result = quotedNode1_84;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_85 = null;
+      {
+        quotedNode_85 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_84 = quotedNode_85;
+        result = quotedNode1_84;
+      }
+      return result;
+    }
   }
 }

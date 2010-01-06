@@ -13,6 +13,13 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntention implements Intention {
   public AddRuntimeExceptionToMethodSignature_Intention() {
@@ -61,7 +68,7 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
       return false;
     }
     // check it's instance of RuntimeException 
-    if (!(ClassConcept_Behavior.call_isDescendant_1213877355812(exceptionJavaType, (SNode) SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false)))) {
+    if (!(ClassConcept_Behavior.call_isDescendant_1213877355812(exceptionJavaType, (SNode) SLinkOperations.getTarget(new AddRuntimeExceptionToMethodSignature_Intention.QuotationClass_1793_0().createNode(), "classifier", false)))) {
       return false;
     }
     // check if it's not thrown by a method yet 
@@ -82,5 +89,23 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
+  }
+
+  public static class QuotationClass_1793_0 {
+    public QuotationClass_1793_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_8 = null;
+      {
+        quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8 = quotedNode_8;
+        quotedNode1_8.addReference(SReference.create("classifier", quotedNode1_8, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
+        result = quotedNode1_8;
+      }
+      return result;
+    }
   }
 }

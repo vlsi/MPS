@@ -4,12 +4,78 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.smodel.CopyUtil;
 
 public class UnrestrictedClosureLiteral_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static SNode virtual_getType_1229718192182(SNode thisNode, List<SNode> paramTypes, SNode resultType, SNode returnType, SNode termType, List<SNode> throwsTypes) {
-    return new _Quotations.QuotationClass_8().createNode(paramTypes, termType, returnType, throwsTypes);
+    return new UnrestrictedClosureLiteral_Behavior.QuotationClass_7225_0().createNode(paramTypes, termType, returnType, throwsTypes);
+  }
+
+  public static class QuotationClass_7225_0 {
+    public QuotationClass_7225_0() {
+    }
+
+    public SNode createNode(Object parameter_7225_0, Object parameter_7225_1, Object parameter_7225_2, Object parameter_7225_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_12 = null;
+      SNode quotedNode_13 = null;
+      SNode quotedNode_14 = null;
+      SNode quotedNode_15 = null;
+      SNode quotedNode_16 = null;
+      {
+        quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_10 = quotedNode_12;
+        {
+          List<SNode> nodes = (List<SNode>) parameter_7225_0;
+          for (SNode child : nodes) {
+            quotedNode_12.addChild("parameterType", HUtil.copyIfNecessary(child));
+          }
+        }
+        {
+          quotedNode_14 = (SNode) parameter_7225_1;
+          SNode quotedNode1_11;
+          if (_parameterValues_129834374.contains(quotedNode_14)) {
+            quotedNode1_11 = CopyUtil.copy(quotedNode_14);
+          } else {
+            _parameterValues_129834374.add(quotedNode_14);
+            quotedNode1_11 = quotedNode_14;
+          }
+          if (quotedNode1_11 != null) {
+            quotedNode_12.addChild("terminateType", HUtil.copyIfNecessary(quotedNode1_11));
+          }
+        }
+        {
+          quotedNode_15 = (SNode) parameter_7225_2;
+          SNode quotedNode1_12;
+          if (_parameterValues_129834374.contains(quotedNode_15)) {
+            quotedNode1_12 = CopyUtil.copy(quotedNode_15);
+          } else {
+            _parameterValues_129834374.add(quotedNode_15);
+            quotedNode1_12 = quotedNode_15;
+          }
+          if (quotedNode1_12 != null) {
+            quotedNode_12.addChild("resultType", HUtil.copyIfNecessary(quotedNode1_12));
+          }
+        }
+        {
+          List<SNode> nodes = (List<SNode>) parameter_7225_3;
+          for (SNode child : nodes) {
+            quotedNode_12.addChild("throwsType", HUtil.copyIfNecessary(child));
+          }
+        }
+        result = quotedNode1_10;
+      }
+      return result;
+    }
   }
 }

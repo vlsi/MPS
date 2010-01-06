@@ -11,6 +11,10 @@ import java.util.List;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class StaticMethodDeclaration_Behavior {
   private static Class[] PARAMETERS_4025276038182459944 = {SNode.class};
@@ -25,7 +29,7 @@ public class StaticMethodDeclaration_Behavior {
   }
 
   public static boolean call_isMainMethod_1213877536670(SNode thisNode) {
-    return "main".equals(SPropertyOperations.getString(thisNode, "name")) && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == 1 && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).first()), new _Quotations.QuotationClass_18().createNode(), false);
+    return "main".equals(SPropertyOperations.getString(thisNode, "name")) && ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).count() == 1 && TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).first()), new StaticMethodDeclaration_Behavior.QuotationClass_3402_0().createNode(), false);
   }
 
   public static List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
@@ -64,5 +68,28 @@ public class StaticMethodDeclaration_Behavior {
 
   public static Icon callSuper_getAdditionalIcon_8884554759541381569(SNode thisNode, String callerConceptFqName) {
     return (Icon) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), callerConceptFqName, "virtual_getAdditionalIcon_5017341185733863694", PARAMETERS_8884554759541381569);
+  }
+
+  public static class QuotationClass_3402_0 {
+    public QuotationClass_3402_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_26 = null;
+      SNode quotedNode_27 = null;
+      {
+        quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_25 = quotedNode_26;
+        {
+          quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_26 = quotedNode_27;
+          quotedNode_26.addChild("componentType", quotedNode1_26);
+        }
+        result = quotedNode1_25;
+      }
+      return result;
+    }
   }
 }

@@ -13,6 +13,16 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class MapType_Behavior {
   private static Class[] PARAMETERS_7602110602933345772 = {SNode.class ,SModel.class};
@@ -26,14 +36,14 @@ public class MapType_Behavior {
 
   public static List<SNode> virtual_getAbstractCreators_7602110602933317830(SNode thisNode, SModel targetModel) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_3().createNode(SLinkOperations.getTarget(thisNode, "keyType", true), SLinkOperations.getTarget(thisNode, "valueType", true)));
-    ListSequence.fromList(result).addElement(new _Quotations.QuotationClass_4().createNode(SLinkOperations.getTarget(thisNode, "keyType", true), SLinkOperations.getTarget(thisNode, "valueType", true)));
+    ListSequence.fromList(result).addElement(new MapType_Behavior.QuotationClass_8245_1().createNode(SLinkOperations.getTarget(thisNode, "keyType", true), SLinkOperations.getTarget(thisNode, "valueType", true)));
+    ListSequence.fromList(result).addElement(new MapType_Behavior.QuotationClass_8245_2().createNode(SLinkOperations.getTarget(thisNode, "keyType", true), SLinkOperations.getTarget(thisNode, "valueType", true)));
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(CustomContainersUtil.containerCreators(targetModel, thisNode)));
     return result;
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    return new _Quotations.QuotationClass_12().createNode();
+    return new MapType_Behavior.QuotationClass_8245_0().createNode();
   }
 
   public static List<SNode> call_getAbstractCreators_7602110602933345772(SNode thisNode, SModel targetModel) {
@@ -42,5 +52,113 @@ public class MapType_Behavior {
 
   public static List<SNode> callSuper_getAbstractCreators_7602110602933345772(SNode thisNode, String callerConceptFqName, SModel targetModel) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.collections.structure.MapType"), callerConceptFqName, "virtual_getAbstractCreators_7602110602933317830", PARAMETERS_7602110602933345772, targetModel);
+  }
+
+  public static class QuotationClass_8245_0 {
+    public QuotationClass_8245_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_8 = null;
+      {
+        quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8 = quotedNode_8;
+        quotedNode1_8.addReference(SReference.create("classifier", quotedNode1_8, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~Map")));
+        result = quotedNode1_8;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_8245_1 {
+    public QuotationClass_8245_1() {
+    }
+
+    public SNode createNode(Object parameter_8245_0, Object parameter_8245_1) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      {
+        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_2;
+        {
+          quotedNode_3 = (SNode) parameter_8245_0;
+          SNode quotedNode1_3;
+          if (_parameterValues_129834374.contains(quotedNode_3)) {
+            quotedNode1_3 = CopyUtil.copy(quotedNode_3);
+          } else {
+            _parameterValues_129834374.add(quotedNode_3);
+            quotedNode1_3 = quotedNode_3;
+          }
+          if (quotedNode1_3 != null) {
+            quotedNode_2.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_3));
+          }
+        }
+        {
+          quotedNode_4 = (SNode) parameter_8245_1;
+          SNode quotedNode1_4;
+          if (_parameterValues_129834374.contains(quotedNode_4)) {
+            quotedNode1_4 = CopyUtil.copy(quotedNode_4);
+          } else {
+            _parameterValues_129834374.add(quotedNode_4);
+            quotedNode1_4 = quotedNode_4;
+          }
+          if (quotedNode1_4 != null) {
+            quotedNode_2.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_4));
+          }
+        }
+        result = quotedNode1_2;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_8245_2 {
+    public QuotationClass_8245_2() {
+    }
+
+    public SNode createNode(Object parameter_8245_2, Object parameter_8245_3) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_5 = null;
+      SNode quotedNode_6 = null;
+      SNode quotedNode_7 = null;
+      {
+        quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedHashMapCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5 = quotedNode_5;
+        {
+          quotedNode_6 = (SNode) parameter_8245_2;
+          SNode quotedNode1_6;
+          if (_parameterValues_129834374.contains(quotedNode_6)) {
+            quotedNode1_6 = CopyUtil.copy(quotedNode_6);
+          } else {
+            _parameterValues_129834374.add(quotedNode_6);
+            quotedNode1_6 = quotedNode_6;
+          }
+          if (quotedNode1_6 != null) {
+            quotedNode_5.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_6));
+          }
+        }
+        {
+          quotedNode_7 = (SNode) parameter_8245_3;
+          SNode quotedNode1_7;
+          if (_parameterValues_129834374.contains(quotedNode_7)) {
+            quotedNode1_7 = CopyUtil.copy(quotedNode_7);
+          } else {
+            _parameterValues_129834374.add(quotedNode_7);
+            quotedNode1_7 = quotedNode_7;
+          }
+          if (quotedNode1_7 != null) {
+            quotedNode_5.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_7));
+          }
+        }
+        result = quotedNode1_5;
+      }
+      return result;
+    }
   }
 }

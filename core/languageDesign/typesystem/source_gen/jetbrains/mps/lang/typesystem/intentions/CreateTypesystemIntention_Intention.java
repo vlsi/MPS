@@ -10,6 +10,11 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class CreateTypesystemIntention_Intention extends BaseIntention implements Intention {
   public CreateTypesystemIntention_Intention() {
@@ -50,9 +55,9 @@ public class CreateTypesystemIntention_Intention extends BaseIntention implement
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SNode quickFixNode = new _Quotations.QuotationClass_0().createNode();
+    SNode quickFixNode = new CreateTypesystemIntention_Intention.QuotationClass_2348_0().createNode();
 
-    SNode quickFixCall = new _Quotations.QuotationClass_1().createNode(quickFixNode);
+    SNode quickFixCall = new CreateTypesystemIntention_Intention.QuotationClass_2348_1().createNode(quickFixNode);
 
     SModelOperations.addRootNode(SNodeOperations.getModel(node), quickFixNode);
     SLinkOperations.setTarget(node, "helginsIntention", quickFixCall, true);
@@ -60,5 +65,53 @@ public class CreateTypesystemIntention_Intention extends BaseIntention implement
 
   public String getLocationString() {
     return "jetbrains.mps.lang.typesystem.intentions";
+  }
+
+  public static class QuotationClass_2348_0 {
+    public QuotationClass_2348_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode1_0.setProperty("name", "fix_");
+        {
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_1 = quotedNode_1;
+          {
+            quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+            SNode quotedNode1_2 = quotedNode_2;
+            quotedNode_1.addChild("body", quotedNode1_2);
+          }
+          quotedNode_0.addChild("executeBlock", quotedNode1_1);
+        }
+        result = quotedNode1_0;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_2348_1 {
+    public QuotationClass_2348_1() {
+    }
+
+    public SNode createNode(Object parameter_7609_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_3 = null;
+      {
+        quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemIntention", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3 = quotedNode_3;
+        quotedNode1_3.setReferent("quickFix", (SNode) parameter_7609_0);
+        result = quotedNode1_3;
+      }
+      return result;
+    }
   }
 }

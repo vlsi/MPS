@@ -29,6 +29,12 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_ThisExpression_1199651311977(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -224,7 +230,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new _Quotations.QuotationClass_0().createNode(_context.getSourceNode()));
+          return SNodeOperations.replaceWithAnother(_context.getSourceNode(), new QueriesGenerated.QuotationClass_8087_0().createNode(_context.getSourceNode()));
         }
 
         public String getMatchingText(String pattern) {
@@ -315,5 +321,36 @@ public class QueriesGenerated {
       });
     }
     return result;
+  }
+
+  public static class QuotationClass_8087_0 {
+    public QuotationClass_8087_0() {
+    }
+
+    public SNode createNode(Object parameter_4028_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        {
+          quotedNode_1 = (SNode) parameter_4028_0;
+          SNode quotedNode1_1;
+          if (_parameterValues_129834374.contains(quotedNode_1)) {
+            quotedNode1_1 = CopyUtil.copy(quotedNode_1);
+          } else {
+            _parameterValues_129834374.add(quotedNode_1);
+            quotedNode1_1 = quotedNode_1;
+          }
+          if (quotedNode1_1 != null) {
+            quotedNode_0.addChild("function", HUtil.copyIfNecessary(quotedNode1_1));
+          }
+        }
+        result = quotedNode1_0;
+      }
+      return result;
+    }
   }
 }

@@ -8,13 +8,22 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class sorted_set_comparableTo_SortedSet_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public sorted_set_comparableTo_SortedSet_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode sortedSetType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_139().createNode(SLinkOperations.getTarget(sortedSetType, "elementType", true), typeCheckingContext);
+    return new sorted_set_comparableTo_SortedSet_SubtypingRule.QuotationClass_1518_0().createNode(SLinkOperations.getTarget(sortedSetType, "elementType", true), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -27,5 +36,64 @@ public class sorted_set_comparableTo_SortedSet_SubtypingRule extends SubtypingRu
 
   public boolean isWeak() {
     return true;
+  }
+
+  public static class QuotationClass_1518_0 {
+    public QuotationClass_1518_0() {
+    }
+
+    public SNode createNode(Object parameter_1518_0, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_284 = null;
+      SNode quotedNode_285 = null;
+      {
+        quotedNode_284 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_284 = quotedNode_284;
+        quotedNode1_284.addReference(SReference.create("classifier", quotedNode1_284, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~SortedSet")));
+        {
+          quotedNode_285 = (SNode) parameter_1518_0;
+          SNode quotedNode1_285;
+          if (_parameterValues_129834374.contains(quotedNode_285)) {
+            quotedNode1_285 = CopyUtil.copy(quotedNode_285);
+          } else {
+            _parameterValues_129834374.add(quotedNode_285);
+            quotedNode1_285 = quotedNode_285;
+          }
+          if (quotedNode1_285 != null) {
+            quotedNode_284.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_285, typeCheckingContext));
+          }
+        }
+        result = quotedNode1_284;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_1518_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_284 = null;
+      SNode quotedNode_285 = null;
+      {
+        quotedNode_284 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_284 = quotedNode_284;
+        quotedNode1_284.addReference(SReference.create("classifier", quotedNode1_284, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~SortedSet")));
+        {
+          quotedNode_285 = (SNode) parameter_1518_0;
+          SNode quotedNode1_285;
+          if (_parameterValues_129834374.contains(quotedNode_285)) {
+            quotedNode1_285 = CopyUtil.copy(quotedNode_285);
+          } else {
+            _parameterValues_129834374.add(quotedNode_285);
+            quotedNode1_285 = quotedNode_285;
+          }
+          if (quotedNode1_285 != null) {
+            quotedNode_284.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_285));
+          }
+        }
+        result = quotedNode1_284;
+      }
+      return result;
+    }
   }
 }

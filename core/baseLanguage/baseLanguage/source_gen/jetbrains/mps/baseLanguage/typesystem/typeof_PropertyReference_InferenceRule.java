@@ -12,6 +12,10 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class typeof_PropertyReference_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_PropertyReference_InferenceRule() {
@@ -31,7 +35,7 @@ public class typeof_PropertyReference_InferenceRule extends AbstractInferenceRul
         BaseIntentionProvider intentionProvider = null;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1201468086542", 0, intentionProvider);
         _info_12389875345.setInequationGroup("default");
-        typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1201468086552", true), (SNode) new _Quotations.QuotationClass_61().createNode(SNodeOperations.getAncestor(property, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), typeCheckingContext), false, _info_12389875345);
+        typeCheckingContext.createLessThanInequationStrong((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1201468086552", true), (SNode) new typeof_PropertyReference_InferenceRule.QuotationClass_9138_0().createNode(SNodeOperations.getAncestor(property, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), typeCheckingContext), false, _info_12389875345);
       }
     }
   }
@@ -46,5 +50,36 @@ public class typeof_PropertyReference_InferenceRule extends AbstractInferenceRul
 
   public boolean overrides() {
     return false;
+  }
+
+  public static class QuotationClass_9138_0 {
+    public QuotationClass_9138_0() {
+    }
+
+    public SNode createNode(Object parameter_9138_0, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_101 = null;
+      {
+        quotedNode_101 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_99 = quotedNode_101;
+        quotedNode1_99.setReferent("classifier", (SNode) parameter_9138_0);
+        result = quotedNode1_99;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_9138_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_101 = null;
+      {
+        quotedNode_101 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_99 = quotedNode_101;
+        quotedNode1_99.setReferent("classifier", (SNode) parameter_9138_0);
+        result = quotedNode1_99;
+      }
+      return result;
+    }
   }
 }

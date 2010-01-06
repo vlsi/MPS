@@ -7,13 +7,20 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class long_boxing_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public long_boxing_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode longType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_46().createNode(typeCheckingContext);
+    return new long_boxing_SubtypingRule.QuotationClass_2782_0().createNode(typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -26,5 +33,36 @@ public class long_boxing_SubtypingRule extends SubtypingRule_Runtime implements 
 
   public boolean isWeak() {
     return true;
+  }
+
+  public static class QuotationClass_2782_0 {
+    public QuotationClass_2782_0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_80 = null;
+      {
+        quotedNode_80 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_79 = quotedNode_80;
+        quotedNode1_79.addReference(SReference.create("classifier", quotedNode1_79, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Long")));
+        result = quotedNode1_79;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_80 = null;
+      {
+        quotedNode_80 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_79 = quotedNode_80;
+        quotedNode1_79.addReference(SReference.create("classifier", quotedNode1_79, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Long")));
+        result = quotedNode1_79;
+      }
+      return result;
+    }
   }
 }

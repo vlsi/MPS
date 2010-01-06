@@ -8,13 +8,22 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class supertypesOf_EnumeratorType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_EnumeratorType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode enumeratorType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_108().createNode(SLinkOperations.getTarget(enumeratorType, "elementType", true), typeCheckingContext);
+    return new supertypesOf_EnumeratorType_SubtypingRule.QuotationClass_9604_0().createNode(SLinkOperations.getTarget(enumeratorType, "elementType", true), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -27,5 +36,64 @@ public class supertypesOf_EnumeratorType_SubtypingRule extends SubtypingRule_Run
 
   public boolean isWeak() {
     return true;
+  }
+
+  public static class QuotationClass_9604_0 {
+    public QuotationClass_9604_0() {
+    }
+
+    public SNode createNode(Object parameter_9604_0, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_210 = null;
+      SNode quotedNode_211 = null;
+      {
+        quotedNode_210 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_210 = quotedNode_210;
+        quotedNode1_210.addReference(SReference.create("classifier", quotedNode1_210, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~IEnumerator")));
+        {
+          quotedNode_211 = (SNode) parameter_9604_0;
+          SNode quotedNode1_211;
+          if (_parameterValues_129834374.contains(quotedNode_211)) {
+            quotedNode1_211 = CopyUtil.copy(quotedNode_211);
+          } else {
+            _parameterValues_129834374.add(quotedNode_211);
+            quotedNode1_211 = quotedNode_211;
+          }
+          if (quotedNode1_211 != null) {
+            quotedNode_210.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_211, typeCheckingContext));
+          }
+        }
+        result = quotedNode1_210;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_9604_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_210 = null;
+      SNode quotedNode_211 = null;
+      {
+        quotedNode_210 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_210 = quotedNode_210;
+        quotedNode1_210.addReference(SReference.create("classifier", quotedNode1_210, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~IEnumerator")));
+        {
+          quotedNode_211 = (SNode) parameter_9604_0;
+          SNode quotedNode1_211;
+          if (_parameterValues_129834374.contains(quotedNode_211)) {
+            quotedNode1_211 = CopyUtil.copy(quotedNode_211);
+          } else {
+            _parameterValues_129834374.add(quotedNode_211);
+            quotedNode1_211 = quotedNode_211;
+          }
+          if (quotedNode1_211 != null) {
+            quotedNode_210.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_211));
+          }
+        }
+        result = quotedNode1_210;
+      }
+      return result;
+    }
   }
 }

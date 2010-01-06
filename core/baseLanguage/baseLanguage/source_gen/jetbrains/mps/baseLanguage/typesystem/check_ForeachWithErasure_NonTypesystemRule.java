@@ -15,6 +15,12 @@ import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_ForeachWithErasure_NonTypesystemRule() {
@@ -31,7 +37,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
       if (coercedNode_0 != null) {
       } else {
         // not an iterable or an erasure 
-        if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(SLinkOperations.getTarget(foreachStatement, "variable", true), "type", true), new _Quotations.QuotationClass_117().createNode(typeCheckingContext)))) {
+        if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(SLinkOperations.getTarget(foreachStatement, "variable", true), "type", true), new check_ForeachWithErasure_NonTypesystemRule.QuotationClass_9843_0().createNode(typeCheckingContext)))) {
           {
             BaseIntentionProvider intentionProvider = null;
             IErrorTarget errorTarget = new NodeErrorTarget();
@@ -52,5 +58,36 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
 
   public boolean overrides() {
     return false;
+  }
+
+  public static class QuotationClass_9843_0 {
+    public QuotationClass_9843_0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_140 = null;
+      {
+        quotedNode_140 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_136 = quotedNode_140;
+        quotedNode1_136.addReference(SReference.create("classifier", quotedNode1_136, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_136;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_140 = null;
+      {
+        quotedNode_140 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_136 = quotedNode_140;
+        quotedNode1_136.addReference(SReference.create("classifier", quotedNode1_136, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_136;
+      }
+      return result;
+    }
   }
 }

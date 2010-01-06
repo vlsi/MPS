@@ -22,6 +22,11 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import java.util.HashMap;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class ClosureLiteralUtil {
   public static boolean hasYieldStatement(SNode cl) {
@@ -89,8 +94,8 @@ public class ClosureLiteralUtil {
     if ((absRetCT != null)) {
       SNode ftResCT = SNodeOperations.cast(FunctionTypeUtil.unmeet(FunctionType_Behavior.call_getNormalizedReturnType_1213877405252(ft)), "jetbrains.mps.baseLanguage.structure.ClassifierType");
       /*
-        if (SLinkOperations.getTarget(ftResCT, "classifier", false) == SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "classifier", false)) {
-          SLinkOperations.setTarget(ftResCT, "classifier", SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "classifier", false), false);
+        if (SLinkOperations.getTarget(ftResCT, "classifier", false) == SLinkOperations.getTarget(new ClosureLiteralUtil.QuotationClass_4922_1().createNode(), "classifier", false)) {
+          SLinkOperations.setTarget(ftResCT, "classifier", SLinkOperations.getTarget(new ClosureLiteralUtil.QuotationClass_4922_0().createNode(), "classifier", false), false);
         }
       */
       String adapterName = JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(absRetCT, "classifier", false), "name")) + JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(ftResCT, "classifier", false), "name")) + "Adapter";
@@ -234,5 +239,41 @@ public class ClosureLiteralUtil {
       map = MapSequence.fromMap(new HashMap<String, SNode>());
     }
     return map;
+  }
+
+  public static class QuotationClass_4922_0 {
+    public QuotationClass_4922_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1 = quotedNode_1;
+        quotedNode1_1.addReference(SReference.create("classifier", quotedNode1_1, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Iterable")));
+        result = quotedNode1_1;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_4922_1 {
+    public QuotationClass_4922_1() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_2;
+        quotedNode1_2.addReference(SReference.create("classifier", quotedNode1_2, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~ISequence")));
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }

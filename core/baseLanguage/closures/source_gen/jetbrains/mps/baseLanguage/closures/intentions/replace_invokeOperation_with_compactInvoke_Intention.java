@@ -8,6 +8,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import java.util.List;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.smodel.CopyUtil;
 
 public class replace_invokeOperation_with_compactInvoke_Intention extends BaseIntention implements Intention {
   public replace_invokeOperation_with_compactInvoke_Intention() {
@@ -46,10 +54,48 @@ public class replace_invokeOperation_with_compactInvoke_Intention extends BaseIn
 
   public void execute(final SNode node, final EditorContext editorContext) {
     SNode parent = SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression");
-    SNodeOperations.replaceWithAnother(parent, new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(parent, "operation", true), "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation"), "parameter", true), SLinkOperations.getTarget(parent, "operand", true)));
+    SNodeOperations.replaceWithAnother(parent, new replace_invokeOperation_with_compactInvoke_Intention.QuotationClass_4266_0().createNode(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(parent, "operation", true), "jetbrains.mps.baseLanguage.closures.structure.InvokeFunctionOperation"), "parameter", true), SLinkOperations.getTarget(parent, "operand", true)));
   }
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.closures.intentions";
+  }
+
+  public static class QuotationClass_4266_0 {
+    public QuotationClass_4266_0() {
+    }
+
+    public SNode createNode(Object parameter_3549_0, Object parameter_3549_1) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        {
+          List<SNode> nodes = (List<SNode>) parameter_3549_0;
+          for (SNode child : nodes) {
+            quotedNode_0.addChild("parameter", HUtil.copyIfNecessary(child));
+          }
+        }
+        {
+          quotedNode_2 = (SNode) parameter_3549_1;
+          SNode quotedNode1_1;
+          if (_parameterValues_129834374.contains(quotedNode_2)) {
+            quotedNode1_1 = CopyUtil.copy(quotedNode_2);
+          } else {
+            _parameterValues_129834374.add(quotedNode_2);
+            quotedNode1_1 = quotedNode_2;
+          }
+          if (quotedNode1_1 != null) {
+            quotedNode_0.addChild("function", HUtil.copyIfNecessary(quotedNode1_1));
+          }
+        }
+        result = quotedNode1_0;
+      }
+      return result;
+    }
   }
 }

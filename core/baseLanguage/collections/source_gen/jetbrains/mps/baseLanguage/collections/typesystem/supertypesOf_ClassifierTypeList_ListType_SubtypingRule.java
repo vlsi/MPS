@@ -6,6 +6,13 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ _Patterns.Pattern_0 myMatchingPattern;
@@ -14,7 +21,7 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
   }
 
   public SNode getSubOrSuperType(SNode node, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_25().createNode(this.myMatchingPattern.PatternVar0, typeCheckingContext);
+    return new supertypesOf_ClassifierTypeList_ListType_SubtypingRule.QuotationClass_1656_0().createNode(this.myMatchingPattern.PatternVar0, typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -28,5 +35,62 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
 
   public boolean isWeak() {
     return true;
+  }
+
+  public static class QuotationClass_1656_0 {
+    public QuotationClass_1656_0() {
+    }
+
+    public SNode createNode(Object parameter_1656_0, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_33 = null;
+      SNode quotedNode_34 = null;
+      {
+        quotedNode_33 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_33 = quotedNode_33;
+        {
+          quotedNode_34 = (SNode) parameter_1656_0;
+          SNode quotedNode1_34;
+          if (_parameterValues_129834374.contains(quotedNode_34)) {
+            quotedNode1_34 = CopyUtil.copy(quotedNode_34);
+          } else {
+            _parameterValues_129834374.add(quotedNode_34);
+            quotedNode1_34 = quotedNode_34;
+          }
+          if (quotedNode1_34 != null) {
+            quotedNode_33.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_34, typeCheckingContext));
+          }
+        }
+        result = quotedNode1_33;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_1656_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_33 = null;
+      SNode quotedNode_34 = null;
+      {
+        quotedNode_33 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_33 = quotedNode_33;
+        {
+          quotedNode_34 = (SNode) parameter_1656_0;
+          SNode quotedNode1_34;
+          if (_parameterValues_129834374.contains(quotedNode_34)) {
+            quotedNode1_34 = CopyUtil.copy(quotedNode_34);
+          } else {
+            _parameterValues_129834374.add(quotedNode_34);
+            quotedNode1_34 = quotedNode_34;
+          }
+          if (quotedNode1_34 != null) {
+            quotedNode_33.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_34));
+          }
+        }
+        result = quotedNode1_33;
+      }
+      return result;
+    }
   }
 }

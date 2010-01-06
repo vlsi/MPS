@@ -19,6 +19,14 @@ import jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class ClassConcept_Behavior {
   private static Class[] PARAMETERS_1240936569950 = {SNode.class};
@@ -109,7 +117,7 @@ public class ClassConcept_Behavior {
   public static SNode virtual_getSuperclass_1240936569950(SNode thisNode) {
     return (SLinkOperations.getTarget(thisNode, "superclass", true) != null ?
       SLinkOperations.getTarget(thisNode, "superclass", true) :
-      new _Quotations.QuotationClass_29().createNode()
+      new ClassConcept_Behavior.QuotationClass_6833_0().createNode()
     );
   }
 
@@ -143,5 +151,23 @@ public class ClassConcept_Behavior {
       }
     }
     return SNodeOperations.getAncestor(contextNode, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
+  }
+
+  public static class QuotationClass_6833_0 {
+    public QuotationClass_6833_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_17 = null;
+      {
+        quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_16 = quotedNode_17;
+        quotedNode1_16.addReference(SReference.create("classifier", quotedNode1_16, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_16;
+      }
+      return result;
+    }
   }
 }

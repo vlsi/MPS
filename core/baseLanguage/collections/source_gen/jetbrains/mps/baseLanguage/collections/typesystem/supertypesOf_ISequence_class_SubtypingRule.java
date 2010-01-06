@@ -11,6 +11,15 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_ISequence_class_SubtypingRule() {
@@ -18,12 +27,12 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
 
   public List<SNode> getSubOrSuperTypes(SNode ct, TypeCheckingContext typeCheckingContext) {
     List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
-    if (SLinkOperations.getTarget(new _Quotations.QuotationClass_44().createNode(typeCheckingContext), "classifier", false) == SLinkOperations.getTarget(ct, "classifier", false)) {
+    if (SLinkOperations.getTarget(new supertypesOf_ISequence_class_SubtypingRule.QuotationClass_4893_0().createNode(typeCheckingContext), "classifier", false) == SLinkOperations.getTarget(ct, "classifier", false)) {
       res = ListSequence.fromList(new ArrayList<SNode>());
       List<SNode> ptypes = SLinkOperations.getTargets(ct, "parameter", true);
       if (ListSequence.fromList(ptypes).count() > 0) {
         SNode elType = ListSequence.fromList(ptypes).getElement(0);
-        ListSequence.fromList(res).addElement(new _Quotations.QuotationClass_161().createNode(elType, typeCheckingContext));
+        ListSequence.fromList(res).addElement(new supertypesOf_ISequence_class_SubtypingRule.QuotationClass_4893_1().createNode(elType, typeCheckingContext));
       }
     }
     return res;
@@ -39,5 +48,93 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
 
   public boolean isWeak() {
     return true;
+  }
+
+  public static class QuotationClass_4893_0 {
+    public QuotationClass_4893_0() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_91 = null;
+      {
+        quotedNode_91 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_91 = quotedNode_91;
+        quotedNode1_91.addReference(SReference.create("classifier", quotedNode1_91, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~ISequence")));
+        result = quotedNode1_91;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_91 = null;
+      {
+        quotedNode_91 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_91 = quotedNode_91;
+        quotedNode1_91.addReference(SReference.create("classifier", quotedNode1_91, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~ISequence")));
+        result = quotedNode1_91;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_4893_1 {
+    public QuotationClass_4893_1() {
+    }
+
+    public SNode createNode(Object parameter_4893_0, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_89 = null;
+      SNode quotedNode_90 = null;
+      {
+        quotedNode_89 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_89 = quotedNode_89;
+        {
+          quotedNode_90 = (SNode) parameter_4893_0;
+          SNode quotedNode1_90;
+          if (_parameterValues_129834374.contains(quotedNode_90)) {
+            quotedNode1_90 = CopyUtil.copy(quotedNode_90);
+          } else {
+            _parameterValues_129834374.add(quotedNode_90);
+            quotedNode1_90 = quotedNode_90;
+          }
+          if (quotedNode1_90 != null) {
+            quotedNode_89.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_90, typeCheckingContext));
+          }
+        }
+        result = quotedNode1_89;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_4893_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_89 = null;
+      SNode quotedNode_90 = null;
+      {
+        quotedNode_89 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_89 = quotedNode_89;
+        {
+          quotedNode_90 = (SNode) parameter_4893_0;
+          SNode quotedNode1_90;
+          if (_parameterValues_129834374.contains(quotedNode_90)) {
+            quotedNode1_90 = CopyUtil.copy(quotedNode_90);
+          } else {
+            _parameterValues_129834374.add(quotedNode_90);
+            quotedNode1_90 = quotedNode_90;
+          }
+          if (quotedNode1_90 != null) {
+            quotedNode_89.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_90));
+          }
+        }
+        result = quotedNode1_89;
+      }
+      return result;
+    }
   }
 }

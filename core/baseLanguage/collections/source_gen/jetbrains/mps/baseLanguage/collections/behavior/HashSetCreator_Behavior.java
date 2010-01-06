@@ -4,12 +4,50 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class HashSetCreator_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static SNode virtual_createType_1237722437229(SNode thisNode) {
-    return new _Quotations.QuotationClass_1().createNode(SLinkOperations.getTarget(thisNode, "elementType", true));
+    return new HashSetCreator_Behavior.QuotationClass_2057_0().createNode(SLinkOperations.getTarget(thisNode, "elementType", true));
+  }
+
+  public static class QuotationClass_2057_0 {
+    public QuotationClass_2057_0() {
+    }
+
+    public SNode createNode(Object parameter_2057_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_17 = null;
+      SNode quotedNode_18 = null;
+      {
+        quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SetType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_17 = quotedNode_17;
+        {
+          quotedNode_18 = (SNode) parameter_2057_0;
+          SNode quotedNode1_18;
+          if (_parameterValues_129834374.contains(quotedNode_18)) {
+            quotedNode1_18 = CopyUtil.copy(quotedNode_18);
+          } else {
+            _parameterValues_129834374.add(quotedNode_18);
+            quotedNode1_18 = quotedNode_18;
+          }
+          if (quotedNode1_18 != null) {
+            quotedNode_17.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_18));
+          }
+        }
+        result = quotedNode1_17;
+      }
+      return result;
+    }
   }
 }

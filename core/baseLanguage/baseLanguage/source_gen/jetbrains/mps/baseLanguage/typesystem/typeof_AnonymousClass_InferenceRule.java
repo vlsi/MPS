@@ -20,13 +20,20 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_AnonymousClass_InferenceRule() {
   }
 
   public void applyRule(final SNode anonymousClass, final TypeCheckingContext typeCheckingContext) {
-    SNode constructedType = new _Quotations.QuotationClass_110().createNode(SLinkOperations.getTargets(anonymousClass, "typeParameter", true), SLinkOperations.getTarget(anonymousClass, "classifier", false), typeCheckingContext);
+    SNode constructedType = new typeof_AnonymousClass_InferenceRule.QuotationClass_8831_0().createNode(SLinkOperations.getTargets(anonymousClass, "typeParameter", true), SLinkOperations.getTarget(anonymousClass, "classifier", false), typeCheckingContext);
     {
       SNode _nodeToCheck_1029348928467 = anonymousClass;
       BaseIntentionProvider intentionProvider = null;
@@ -45,7 +52,7 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
       }
     }
     for (SNode parameter : SLinkOperations.getTargets(anonymousClass, "typeParameter", true)) {
-      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(new _Quotations.QuotationClass_109().createNode(typeCheckingContext), "descriptor", false), false)))) {
+      if (!(!(TypeChecker.getInstance().getSubtypingManager().isSubtype(parameter, SLinkOperations.getTarget(new typeof_AnonymousClass_InferenceRule.QuotationClass_8831_1().createNode(typeCheckingContext), "descriptor", false), false)))) {
         BaseIntentionProvider intentionProvider = null;
         IErrorTarget errorTarget = new NodeErrorTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(parameter, "primitive type not allowed", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "2925336694746296785", intentionProvider, errorTarget);
@@ -76,5 +83,81 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
 
   public boolean overrides() {
     return true;
+  }
+
+  public static class QuotationClass_8831_0 {
+    public QuotationClass_8831_0() {
+    }
+
+    public SNode createNode(Object parameter_8831_0, Object parameter_8831_1, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_94 = null;
+      SNode quotedNode_95 = null;
+      {
+        quotedNode_94 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_93 = quotedNode_94;
+        quotedNode1_93.setReferent("classifier", (SNode) parameter_8831_1);
+        {
+          List<SNode> nodes = (List<SNode>) parameter_8831_0;
+          for (SNode child : nodes) {
+            quotedNode_94.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
+          }
+        }
+        result = quotedNode1_93;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_8831_0, Object parameter_8831_1) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_94 = null;
+      SNode quotedNode_95 = null;
+      {
+        quotedNode_94 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_93 = quotedNode_94;
+        quotedNode1_93.setReferent("classifier", (SNode) parameter_8831_1);
+        {
+          List<SNode> nodes = (List<SNode>) parameter_8831_0;
+          for (SNode child : nodes) {
+            quotedNode_94.addChild("parameter", HUtil.copyIfNecessary(child));
+          }
+        }
+        result = quotedNode1_93;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_8831_1 {
+    public QuotationClass_8831_1() {
+    }
+
+    public SNode createNode(final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_96 = null;
+      {
+        quotedNode_96 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_94 = quotedNode_96;
+        quotedNode1_94.addReference(SReference.create("descriptor", quotedNode1_94, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
+        result = quotedNode1_94;
+      }
+      return result;
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_96 = null;
+      {
+        quotedNode_96 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_94 = quotedNode_96;
+        quotedNode1_94.addReference(SReference.create("descriptor", quotedNode1_94, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
+        result = quotedNode1_94;
+      }
+      return result;
+    }
   }
 }

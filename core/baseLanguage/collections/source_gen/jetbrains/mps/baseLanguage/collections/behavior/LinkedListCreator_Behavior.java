@@ -4,12 +4,50 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class LinkedListCreator_Behavior {
   public static void init(SNode thisNode) {
   }
 
   public static SNode virtual_createType_1237722437229(SNode thisNode) {
-    return new _Quotations.QuotationClass_2().createNode(SLinkOperations.getTarget(thisNode, "elementType", true));
+    return new LinkedListCreator_Behavior.QuotationClass_6772_0().createNode(SLinkOperations.getTarget(thisNode, "elementType", true));
+  }
+
+  public static class QuotationClass_6772_0 {
+    public QuotationClass_6772_0() {
+    }
+
+    public SNode createNode(Object parameter_6772_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_19 = null;
+      SNode quotedNode_20 = null;
+      {
+        quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_19 = quotedNode_19;
+        {
+          quotedNode_20 = (SNode) parameter_6772_0;
+          SNode quotedNode1_20;
+          if (_parameterValues_129834374.contains(quotedNode_20)) {
+            quotedNode1_20 = CopyUtil.copy(quotedNode_20);
+          } else {
+            _parameterValues_129834374.add(quotedNode_20);
+            quotedNode1_20 = quotedNode_20;
+          }
+          if (quotedNode1_20 != null) {
+            quotedNode_19.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_20));
+          }
+        }
+        result = quotedNode1_19;
+      }
+      return result;
+    }
   }
 }

@@ -13,6 +13,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class TypeVariableDeclaration_Behavior {
   private static Class[] PARAMETERS_1775412259244835270 = {SNode.class};
@@ -26,13 +32,13 @@ public class TypeVariableDeclaration_Behavior {
 
   public static SNode call_getConcreteUpperBound_4346214032091504647(SNode thisNode, Set<SNode> visitedVars) {
     if (SetSequence.fromSet(visitedVars).contains(thisNode)) {
-      return new _Quotations.QuotationClass_22().createNode();
+      return new TypeVariableDeclaration_Behavior.QuotationClass_1085_0().createNode();
     }
     SetSequence.fromSet(visitedVars).addElement(thisNode);
     if ((SLinkOperations.getTarget(thisNode, "bound", true) != null)) {
       return TypeVariableDeclaration_Behavior.getTypeWithConcreteUpperBounds_4346214032091504651(SLinkOperations.getTarget(thisNode, "bound", true), visitedVars);
     } else {
-      return new _Quotations.QuotationClass_21().createNode();
+      return new TypeVariableDeclaration_Behavior.QuotationClass_1085_1().createNode();
     }
   }
 
@@ -67,6 +73,42 @@ public class TypeVariableDeclaration_Behavior {
       return result;
     } else {
       return SNodeOperations.copyNode(javaType);
+    }
+  }
+
+  public static class QuotationClass_1085_0 {
+    public QuotationClass_1085_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_31 = null;
+      {
+        quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_29 = quotedNode_31;
+        quotedNode1_29.addReference(SReference.create("classifier", quotedNode1_29, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_29;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_1085_1 {
+    public QuotationClass_1085_1() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_32 = null;
+      {
+        quotedNode_32 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_30 = quotedNode_32;
+        quotedNode1_30.addReference(SReference.create("classifier", quotedNode1_30, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_30;
+      }
+      return result;
     }
   }
 }

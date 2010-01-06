@@ -8,13 +8,22 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class supertypesOf_IteratorType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_IteratorType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode iteratorType, TypeCheckingContext typeCheckingContext) {
-    return new _Quotations.QuotationClass_99().createNode(SLinkOperations.getTarget(iteratorType, "elementType", true), typeCheckingContext);
+    return new supertypesOf_IteratorType_SubtypingRule.QuotationClass_7030_0().createNode(SLinkOperations.getTarget(iteratorType, "elementType", true), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -27,5 +36,64 @@ public class supertypesOf_IteratorType_SubtypingRule extends SubtypingRule_Runti
 
   public boolean isWeak() {
     return true;
+  }
+
+  public static class QuotationClass_7030_0 {
+    public QuotationClass_7030_0() {
+    }
+
+    public SNode createNode(Object parameter_7030_0, final TypeCheckingContext typeCheckingContext) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_188 = null;
+      SNode quotedNode_189 = null;
+      {
+        quotedNode_188 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_188 = quotedNode_188;
+        quotedNode1_188.addReference(SReference.create("classifier", quotedNode1_188, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~Iterator")));
+        {
+          quotedNode_189 = (SNode) parameter_7030_0;
+          SNode quotedNode1_189;
+          if (_parameterValues_129834374.contains(quotedNode_189)) {
+            quotedNode1_189 = CopyUtil.copy(quotedNode_189);
+          } else {
+            _parameterValues_129834374.add(quotedNode_189);
+            quotedNode1_189 = quotedNode_189;
+          }
+          if (quotedNode1_189 != null) {
+            quotedNode_188.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_189, typeCheckingContext));
+          }
+        }
+        result = quotedNode1_188;
+      }
+      return result;
+    }
+
+    public SNode createNode(Object parameter_7030_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_188 = null;
+      SNode quotedNode_189 = null;
+      {
+        quotedNode_188 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_188 = quotedNode_188;
+        quotedNode1_188.addReference(SReference.create("classifier", quotedNode1_188, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~Iterator")));
+        {
+          quotedNode_189 = (SNode) parameter_7030_0;
+          SNode quotedNode1_189;
+          if (_parameterValues_129834374.contains(quotedNode_189)) {
+            quotedNode1_189 = CopyUtil.copy(quotedNode_189);
+          } else {
+            _parameterValues_129834374.add(quotedNode_189);
+            quotedNode1_189 = quotedNode_189;
+          }
+          if (quotedNode1_189 != null) {
+            quotedNode_188.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_189));
+          }
+        }
+        result = quotedNode1_188;
+      }
+      return result;
+    }
   }
 }

@@ -10,6 +10,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class TryCatchStatement_Behavior {
   public static void init(SNode thisNode) {
@@ -29,7 +31,7 @@ public class TryCatchStatement_Behavior {
       Set<SNode> toRemove = SetSequence.fromSet(new HashSet());
       for (SNode thrownFromBody : SetSequence.fromSet(thrownsFromBody)) {
         SNode catchedType = SLinkOperations.getTarget(SLinkOperations.getTarget(caatch, "throwable", true), "type", true);
-        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(new _Quotations.QuotationClass_20().createNode(thrownFromBody), catchedType)) {
+        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(new TryCatchStatement_Behavior.QuotationClass_7170_0().createNode(thrownFromBody), catchedType)) {
           SetSequence.fromSet(toRemove).addElement(thrownFromBody);
         }
       }
@@ -40,6 +42,24 @@ public class TryCatchStatement_Behavior {
     // now collect what was thrown in catch blocks 
     for (SNode caatch : ListSequence.fromList(catchClause)) {
       StatementList_Behavior.call_collectUncaughtThrowables_5412515780383134474(SLinkOperations.getTarget(caatch, "catchBody", true), throwables, ignoreMayBeThrowables);
+    }
+  }
+
+  public static class QuotationClass_7170_0 {
+    public QuotationClass_7170_0() {
+    }
+
+    public SNode createNode(Object parameter_7170_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_36 = null;
+      {
+        quotedNode_36 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_33 = quotedNode_36;
+        quotedNode1_33.setReferent("classifier", (SNode) parameter_7170_0);
+        result = quotedNode1_33;
+      }
+      return result;
     }
   }
 }

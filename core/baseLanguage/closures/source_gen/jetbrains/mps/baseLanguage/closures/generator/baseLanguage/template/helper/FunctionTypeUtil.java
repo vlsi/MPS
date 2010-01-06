@@ -22,6 +22,10 @@ import java.text.Collator;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.util.Constants;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class FunctionTypeUtil {
   public static String getRuntimeSignature(SNode ft) {
@@ -96,7 +100,7 @@ with_meet:
           continue with_meet;
         }
       }
-      return new _Quotations.QuotationClass_2().createNode();
+      return new FunctionTypeUtil.QuotationClass_5316_0().createNode();
     }
     if (SNodeOperations.isInstanceOf(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
       List<SNode> params = SLinkOperations.getTargets(SNodeOperations.cast(tmp, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
@@ -206,5 +210,22 @@ with_meet:
 
   public static List<SNode> getAdaptableClassifierTypeTargets(SNode adaptable, ITemplateGenerator generator) {
     return (List<SNode>) generator.getGeneratorSessionContext().getStepObject(Keys.NEEDS_ADAPTER.compose(INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(adaptable, "classifier", false))));
+  }
+
+  public static class QuotationClass_5316_0 {
+    public QuotationClass_5316_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        result = quotedNode1_0;
+      }
+      return result;
+    }
   }
 }

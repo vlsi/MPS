@@ -30,6 +30,10 @@ import jetbrains.mps.smodel.constraints.SearchScopeStatus;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
   private static Pattern REGEXP0 = Pattern.compile("\\\\u[\\da-fA-F]{4}", 0);
@@ -49,7 +53,7 @@ public class QueriesGenerated {
   private static Pattern REGEXP14 = Pattern.compile("\\{(\\d+)", 0);
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1175165238942(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new _Quotations.QuotationClass_0().createNode(), false);
+    return TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(_context.getSourceNode()), new QueriesGenerated.QuotationClass_8087_0().createNode(), false);
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Regexp_1353467374625925691(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -1070,5 +1074,22 @@ public class QueriesGenerated {
       });
     }
     return result;
+  }
+
+  public static class QuotationClass_8087_0 {
+    public QuotationClass_8087_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        result = quotedNode1_0;
+      }
+      return result;
+    }
   }
 }
