@@ -7,6 +7,14 @@ import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class ConcretePropertyPart_Behavior {
   public static void init(SNode thisNode) {
@@ -16,10 +24,48 @@ public class ConcretePropertyPart_Behavior {
     SNode propertyDeclaration = SLinkOperations.addNewChild(concept, "propertyDeclaration", "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
     SPropertyOperations.set(propertyDeclaration, "name", SPropertyOperations.getString(thisNode, "name"));
     if (SPropertyOperations.hasValue(thisNode, "propertyType", "numeric", "string")) {
-      SLinkOperations.setTarget(propertyDeclaration, "dataType", SLinkOperations.getTarget(new _Quotations.QuotationClass_0().createNode(), "dataType", false), false);
+      SLinkOperations.setTarget(propertyDeclaration, "dataType", SLinkOperations.getTarget(new ConcretePropertyPart_Behavior.QuotationClass_3956_0().createNode(), "dataType", false), false);
     } else if (SPropertyOperations.hasValue(thisNode, "propertyType", "string", "string")) {
-      SLinkOperations.setTarget(propertyDeclaration, "dataType", SLinkOperations.getTarget(new _Quotations.QuotationClass_1().createNode(), "dataType", false), false);
+      SLinkOperations.setTarget(propertyDeclaration, "dataType", SLinkOperations.getTarget(new ConcretePropertyPart_Behavior.QuotationClass_3956_1().createNode(), "dataType", false), false);
     }
     MapSequence.fromMap(partsToLinks).put(thisNode, propertyDeclaration);
+  }
+
+  public static class QuotationClass_3956_0 {
+    public QuotationClass_3956_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode1_0.setProperty("name", "_");
+        quotedNode1_0.addReference(SReference.create("dataType", quotedNode1_0, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1082983657062")));
+        result = quotedNode1_0;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_3956_1 {
+    public QuotationClass_3956_1() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1 = quotedNode_1;
+        quotedNode1_1.setProperty("name", "_");
+        quotedNode1_1.addReference(SReference.create("dataType", quotedNode1_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1082983041843")));
+        result = quotedNode1_1;
+      }
+      return result;
+    }
   }
 }
