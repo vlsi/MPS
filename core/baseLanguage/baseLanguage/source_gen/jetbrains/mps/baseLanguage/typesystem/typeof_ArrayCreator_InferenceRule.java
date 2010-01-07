@@ -54,25 +54,25 @@ public class typeof_ArrayCreator_InferenceRule extends AbstractInferenceRule_Run
     public SNode createNode(Object parameter_1385_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_111 = null;
-      SNode quotedNode_112 = null;
+      SNode quotedNode_101 = null;
+      SNode quotedNode_102 = null;
       {
-        quotedNode_111 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_109 = quotedNode_111;
+        quotedNode_101 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_99 = quotedNode_101;
         {
-          quotedNode_112 = (SNode) parameter_1385_0;
-          SNode quotedNode1_110;
-          if (_parameterValues_129834374.contains(quotedNode_112)) {
-            quotedNode1_110 = CopyUtil.copy(quotedNode_112);
+          quotedNode_102 = (SNode) parameter_1385_0;
+          SNode quotedNode1_100;
+          if (_parameterValues_129834374.contains(quotedNode_102)) {
+            quotedNode1_100 = CopyUtil.copy(quotedNode_102);
           } else {
-            _parameterValues_129834374.add(quotedNode_112);
-            quotedNode1_110 = quotedNode_112;
+            _parameterValues_129834374.add(quotedNode_102);
+            quotedNode1_100 = quotedNode_102;
           }
-          if (quotedNode1_110 != null) {
-            quotedNode_111.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_110, typeCheckingContext));
+          if (quotedNode1_100 != null) {
+            quotedNode_101.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_100, typeCheckingContext));
           }
         }
-        result = quotedNode1_109;
+        result = quotedNode1_99;
       }
       return result;
     }
@@ -80,25 +80,25 @@ public class typeof_ArrayCreator_InferenceRule extends AbstractInferenceRule_Run
     public SNode createNode(Object parameter_1385_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_111 = null;
-      SNode quotedNode_112 = null;
+      SNode quotedNode_101 = null;
+      SNode quotedNode_102 = null;
       {
-        quotedNode_111 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_109 = quotedNode_111;
+        quotedNode_101 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_99 = quotedNode_101;
         {
-          quotedNode_112 = (SNode) parameter_1385_0;
-          SNode quotedNode1_110;
-          if (_parameterValues_129834374.contains(quotedNode_112)) {
-            quotedNode1_110 = CopyUtil.copy(quotedNode_112);
+          quotedNode_102 = (SNode) parameter_1385_0;
+          SNode quotedNode1_100;
+          if (_parameterValues_129834374.contains(quotedNode_102)) {
+            quotedNode1_100 = CopyUtil.copy(quotedNode_102);
           } else {
-            _parameterValues_129834374.add(quotedNode_112);
-            quotedNode1_110 = quotedNode_112;
+            _parameterValues_129834374.add(quotedNode_102);
+            quotedNode1_100 = quotedNode_102;
           }
-          if (quotedNode1_110 != null) {
-            quotedNode_111.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_110));
+          if (quotedNode1_100 != null) {
+            quotedNode_101.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_100));
           }
         }
-        result = quotedNode1_109;
+        result = quotedNode1_99;
       }
       return result;
     }

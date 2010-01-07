@@ -54,12 +54,12 @@ public class typeof_EnumValueOfExpression_InferenceRule extends AbstractInferenc
     public SNode createNode(Object parameter_0457_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_122 = null;
+      SNode quotedNode_112 = null;
       {
-        quotedNode_122 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_118 = quotedNode_122;
-        quotedNode1_118.setReferent("classifier", (SNode) parameter_0457_0);
-        result = quotedNode1_118;
+        quotedNode_112 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_108 = quotedNode_112;
+        quotedNode1_108.setReferent("classifier", (SNode) parameter_0457_0);
+        result = quotedNode1_108;
       }
       return result;
     }
@@ -67,12 +67,12 @@ public class typeof_EnumValueOfExpression_InferenceRule extends AbstractInferenc
     public SNode createNode(Object parameter_0457_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_122 = null;
+      SNode quotedNode_112 = null;
       {
-        quotedNode_122 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_118 = quotedNode_122;
-        quotedNode1_118.setReferent("classifier", (SNode) parameter_0457_0);
-        result = quotedNode1_118;
+        quotedNode_112 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_108 = quotedNode_112;
+        quotedNode1_108.setReferent("classifier", (SNode) parameter_0457_0);
+        result = quotedNode1_108;
       }
       return result;
     }
@@ -85,11 +85,11 @@ public class typeof_EnumValueOfExpression_InferenceRule extends AbstractInferenc
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_123 = null;
+      SNode quotedNode_113 = null;
       {
-        quotedNode_123 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_119 = quotedNode_123;
-        result = quotedNode1_119;
+        quotedNode_113 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_109 = quotedNode_113;
+        result = quotedNode1_109;
       }
       return result;
     }
@@ -97,11 +97,11 @@ public class typeof_EnumValueOfExpression_InferenceRule extends AbstractInferenc
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_123 = null;
+      SNode quotedNode_113 = null;
       {
-        quotedNode_123 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_119 = quotedNode_123;
-        result = quotedNode1_119;
+        quotedNode_113 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_109 = quotedNode_113;
+        result = quotedNode1_109;
       }
       return result;
     }

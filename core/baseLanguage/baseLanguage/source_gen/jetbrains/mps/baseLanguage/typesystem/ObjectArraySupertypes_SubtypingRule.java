@@ -48,12 +48,12 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_104 = null;
+      SNode quotedNode_94 = null;
       {
-        quotedNode_104 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_102 = quotedNode_104;
-        quotedNode1_102.addReference(SReference.create("classifier", quotedNode1_102, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_102;
+        quotedNode_94 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_92 = quotedNode_94;
+        quotedNode1_92.addReference(SReference.create("classifier", quotedNode1_92, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_92;
       }
       return result;
     }
@@ -61,12 +61,12 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_104 = null;
+      SNode quotedNode_94 = null;
       {
-        quotedNode_104 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_102 = quotedNode_104;
-        quotedNode1_102.addReference(SReference.create("classifier", quotedNode1_102, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_102;
+        quotedNode_94 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_92 = quotedNode_94;
+        quotedNode1_92.addReference(SReference.create("classifier", quotedNode1_92, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_92;
       }
       return result;
     }
@@ -79,12 +79,12 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_105 = null;
+      SNode quotedNode_95 = null;
       {
-        quotedNode_105 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_103 = quotedNode_105;
-        quotedNode1_103.addReference(SReference.create("classifier", quotedNode1_103, SModelReference.fromString("f:java_stub#java.io(java.io@java_stub)"), SNodeId.fromString("~Serializable")));
-        result = quotedNode1_103;
+        quotedNode_95 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_93 = quotedNode_95;
+        quotedNode1_93.addReference(SReference.create("classifier", quotedNode1_93, SModelReference.fromString("f:java_stub#java.io(java.io@java_stub)"), SNodeId.fromString("~Serializable")));
+        result = quotedNode1_93;
       }
       return result;
     }
@@ -92,12 +92,12 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_105 = null;
+      SNode quotedNode_95 = null;
       {
-        quotedNode_105 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_103 = quotedNode_105;
-        quotedNode1_103.addReference(SReference.create("classifier", quotedNode1_103, SModelReference.fromString("f:java_stub#java.io(java.io@java_stub)"), SNodeId.fromString("~Serializable")));
-        result = quotedNode1_103;
+        quotedNode_95 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_93 = quotedNode_95;
+        quotedNode1_93.addReference(SReference.create("classifier", quotedNode1_93, SModelReference.fromString("f:java_stub#java.io(java.io@java_stub)"), SNodeId.fromString("~Serializable")));
+        result = quotedNode1_93;
       }
       return result;
     }
@@ -110,12 +110,12 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_106 = null;
+      SNode quotedNode_96 = null;
       {
-        quotedNode_106 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_104 = quotedNode_106;
-        quotedNode1_104.addReference(SReference.create("classifier", quotedNode1_104, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));
-        result = quotedNode1_104;
+        quotedNode_96 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_94 = quotedNode_96;
+        quotedNode1_94.addReference(SReference.create("classifier", quotedNode1_94, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));
+        result = quotedNode1_94;
       }
       return result;
     }
@@ -123,12 +123,12 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_106 = null;
+      SNode quotedNode_96 = null;
       {
-        quotedNode_106 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_104 = quotedNode_106;
-        quotedNode1_104.addReference(SReference.create("classifier", quotedNode1_104, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));
-        result = quotedNode1_104;
+        quotedNode_96 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_94 = quotedNode_96;
+        quotedNode1_94.addReference(SReference.create("classifier", quotedNode1_94, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));
+        result = quotedNode1_94;
       }
       return result;
     }

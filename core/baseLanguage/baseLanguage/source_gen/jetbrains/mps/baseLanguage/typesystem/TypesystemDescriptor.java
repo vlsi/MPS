@@ -8,19 +8,19 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InequationReplacementRule_Runtime;
-import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsTypesProvider;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.typesystem.runtime.OverloadedOpsProvider_OneTypeSpecified;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.util.IDependency_Runtime;
 import jetbrains.mps.typesystem.inference.util.AbstractDependency_Runtime;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.Set;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.Iterator;
+import jetbrains.mps.lang.typesystem.runtime.OverloadedOperationsTypesProvider;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
@@ -742,185 +742,25 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       InequationReplacementRule_Runtime eliminationRule = new any_type_supertypeof_bottom_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.QuotationClass_1832_0().createNode(), "descriptor", false);
-          this.myRightOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.QuotationClass_1832_1().createNode(), "descriptor", false);
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
-
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
-            return null;
-          } else {
-            return Queries.getBinaryOperationType(leftOperandType, rightOperandType);
-          }
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
-    }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.QuotationClass_1832_2().createNode(), "descriptor", false);
-          this.myRightOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.QuotationClass_1832_3().createNode(), "descriptor", false);
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MinusExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
-
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
-            return null;
-          } else {
-            return Queries.getBinaryOperationType(leftOperandType, rightOperandType);
-          }
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
-    }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.QuotationClass_1832_4().createNode(), "descriptor", false);
-          this.myRightOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.QuotationClass_1832_5().createNode(), "descriptor", false);
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.DivExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
-
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
-            return null;
-          } else {
-            return Queries.getBinaryOperationType(leftOperandType, rightOperandType);
-          }
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
-    }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.QuotationClass_1832_6().createNode(), "descriptor", false);
-          this.myRightOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.QuotationClass_1832_7().createNode(), "descriptor", false);
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MulExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
-
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
-            return null;
-          } else {
-            return Queries.getBinaryOperationType(leftOperandType, rightOperandType);
-          }
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
-    }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.QuotationClass_1832_8().createNode(), "descriptor", false);
-          this.myRightOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.QuotationClass_1832_9().createNode(), "descriptor", false);
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.RemExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
-
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
-            return null;
-          } else {
-            return Queries.getBinaryOperationType(leftOperandType, rightOperandType);
-          }
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
-    }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.QuotationClass_1832_10().createNode(), "descriptor", false);
-          this.myRightOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.QuotationClass_1832_11().createNode(), "descriptor", false);
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.BinaryBitwiseOperation";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
-
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
-            return null;
-          } else {
-            return Queries.getBinaryOperationType(leftOperandType, rightOperandType);
-          }
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
-    }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.QuotationClass_1832_13().createNode(), "descriptor", false);
-          this.myRightOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.QuotationClass_1832_14().createNode(), "descriptor", false);
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.BinaryCompareOperation";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
-
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new TypesystemDescriptor.QuotationClass_1832_12().createNode();
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
-    }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.QuotationClass_1832_15().createNode(), "descriptor", false);
-          this.myRightOperandType = new TypesystemDescriptor.QuotationClass_1832_16().createNode();
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.UnaryMinus";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
-
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return leftOperandType;
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
-    }
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider0("jetbrains.mps.baseLanguage.structure.PlusExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider0("jetbrains.mps.baseLanguage.structure.MinusExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider0("jetbrains.mps.baseLanguage.structure.DivExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider0("jetbrains.mps.baseLanguage.structure.MulExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider0("jetbrains.mps.baseLanguage.structure.RemExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider0("jetbrains.mps.baseLanguage.structure.BinaryBitwiseOperation"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider1("jetbrains.mps.baseLanguage.structure.BinaryCompareOperation"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider2("jetbrains.mps.baseLanguage.structure.UnaryMinus"));
     {
       OverloadedOpsProvider_OneTypeSpecified provider = new OverloadedOpsProvider_OneTypeSpecified() {
         {
-          this.myOperandType = new TypesystemDescriptor.QuotationClass_1832_18().createNode();
+          this.myOperandType = new TypesystemDescriptor.QuotationClass_1832_8().createNode();
           this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
           this.myTypeIsExact = false;
           this.myIsStrong = false;
         }
 
         public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return new TypesystemDescriptor.QuotationClass_1832_17().createNode();
+          return new TypesystemDescriptor.QuotationClass_1832_7().createNode();
         }
       };
       this.myOverloadedOperationsTypesProviders.add(provider);
@@ -1027,129 +867,180 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
   }
 
-  public static class QuotationClass_1832_0 {
-    public QuotationClass_1832_0() {
+  public static class CustomOverloadedOperationsTypesProvider0 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider0(String conceptFQ) {
+      this.myLeftOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider0.QuotationClass_1832_0().createNode(), "descriptor", false);
+      this.myRightOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider0.QuotationClass_1832_1().createNode(), "descriptor", false);
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
     }
 
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0 = null;
-      {
-        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0 = quotedNode_0;
-        quotedNode1_0.addReference(SReference.create("descriptor", quotedNode1_0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-        result = quotedNode1_0;
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      if (SNodeOperations.isInstanceOf(leftOperandType, "jetbrains.mps.baseLanguage.structure.NullType") || SNodeOperations.isInstanceOf(rightOperandType, "jetbrains.mps.baseLanguage.structure.NullType")) {
+        return null;
+      } else {
+        return Queries.getBinaryOperationType(leftOperandType, rightOperandType);
       }
-      return result;
+    }
+
+    public static class QuotationClass_1832_0 {
+      public QuotationClass_1832_0() {
+      }
+
+      public SNode createNode() {
+        SNode result = null;
+        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+        SNode quotedNode_0 = null;
+        {
+          quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0 = quotedNode_0;
+          quotedNode1_0.addReference(SReference.create("descriptor", quotedNode1_0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
+          result = quotedNode1_0;
+        }
+        return result;
+      }
+    }
+
+    public static class QuotationClass_1832_1 {
+      public QuotationClass_1832_1() {
+      }
+
+      public SNode createNode() {
+        SNode result = null;
+        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+        SNode quotedNode_1 = null;
+        {
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_1 = quotedNode_1;
+          quotedNode1_1.addReference(SReference.create("descriptor", quotedNode1_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
+          result = quotedNode1_1;
+        }
+        return result;
+      }
     }
   }
 
-  public static class QuotationClass_1832_1 {
-    public QuotationClass_1832_1() {
+  public static class CustomOverloadedOperationsTypesProvider1 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider1(String conceptFQ) {
+      this.myLeftOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider1.QuotationClass_1832_3().createNode(), "descriptor", false);
+      this.myRightOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider1.QuotationClass_1832_4().createNode(), "descriptor", false);
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
     }
 
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1 = quotedNode_1;
-        quotedNode1_1.addReference(SReference.create("descriptor", quotedNode1_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-        result = quotedNode1_1;
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider1.QuotationClass_1832_2().createNode();
+    }
+
+    public static class QuotationClass_1832_2 {
+      public QuotationClass_1832_2() {
       }
-      return result;
+
+      public SNode createNode() {
+        SNode result = null;
+        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+        SNode quotedNode_2 = null;
+        {
+          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2 = quotedNode_2;
+          result = quotedNode1_2;
+        }
+        return result;
+      }
+    }
+
+    public static class QuotationClass_1832_3 {
+      public QuotationClass_1832_3() {
+      }
+
+      public SNode createNode() {
+        SNode result = null;
+        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+        SNode quotedNode_3 = null;
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_3 = quotedNode_3;
+          quotedNode1_3.addReference(SReference.create("descriptor", quotedNode1_3, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
+          result = quotedNode1_3;
+        }
+        return result;
+      }
+    }
+
+    public static class QuotationClass_1832_4 {
+      public QuotationClass_1832_4() {
+      }
+
+      public SNode createNode() {
+        SNode result = null;
+        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+        SNode quotedNode_4 = null;
+        {
+          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_4 = quotedNode_4;
+          quotedNode1_4.addReference(SReference.create("descriptor", quotedNode1_4, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
+          result = quotedNode1_4;
+        }
+        return result;
+      }
     }
   }
 
-  public static class QuotationClass_1832_2 {
-    public QuotationClass_1832_2() {
+  public static class CustomOverloadedOperationsTypesProvider2 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider2(String conceptFQ) {
+      this.myLeftOperandType = SLinkOperations.getTarget(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider2.QuotationClass_1832_5().createNode(), "descriptor", false);
+      this.myRightOperandType = new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider2.QuotationClass_1832_6().createNode();
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
     }
 
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2 = null;
-      {
-        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_2;
-        quotedNode1_2.addReference(SReference.create("descriptor", quotedNode1_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-        result = quotedNode1_2;
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return leftOperandType;
+    }
+
+    public static class QuotationClass_1832_5 {
+      public QuotationClass_1832_5() {
       }
-      return result;
-    }
-  }
 
-  public static class QuotationClass_1832_3 {
-    public QuotationClass_1832_3() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3 = null;
-      {
-        quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_3;
-        quotedNode1_3.addReference(SReference.create("descriptor", quotedNode1_3, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-        result = quotedNode1_3;
+      public SNode createNode() {
+        SNode result = null;
+        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+        SNode quotedNode_5 = null;
+        {
+          quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_5 = quotedNode_5;
+          quotedNode1_5.addReference(SReference.create("descriptor", quotedNode1_5, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
+          result = quotedNode1_5;
+        }
+        return result;
       }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_1832_4 {
-    public QuotationClass_1832_4() {
     }
 
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4 = null;
-      {
-        quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4 = quotedNode_4;
-        quotedNode1_4.addReference(SReference.create("descriptor", quotedNode1_4, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-        result = quotedNode1_4;
+    public static class QuotationClass_1832_6 {
+      public QuotationClass_1832_6() {
       }
-      return result;
-    }
-  }
 
-  public static class QuotationClass_1832_5 {
-    public QuotationClass_1832_5() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5 = null;
-      {
-        quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5 = quotedNode_5;
-        quotedNode1_5.addReference(SReference.create("descriptor", quotedNode1_5, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-        result = quotedNode1_5;
+      public SNode createNode() {
+        SNode result = null;
+        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+        SNode quotedNode_6 = null;
+        {
+          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_6 = quotedNode_6;
+          quotedNode1_6.addReference(SReference.create("classifier", quotedNode1_6, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+          result = quotedNode1_6;
+        }
+        return result;
       }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_1832_6 {
-    public QuotationClass_1832_6() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6 = null;
-      {
-        quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6 = quotedNode_6;
-        quotedNode1_6.addReference(SReference.create("descriptor", quotedNode1_6, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-        result = quotedNode1_6;
-      }
-      return result;
     }
   }
 
@@ -1162,9 +1053,8 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_7 = null;
       {
-        quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_7 = quotedNode_7;
-        quotedNode1_7.addReference(SReference.create("descriptor", quotedNode1_7, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
         result = quotedNode1_7;
       }
       return result;
@@ -1180,187 +1070,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
       SNode quotedNode_8 = null;
       {
-        quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
         SNode quotedNode1_8 = quotedNode_8;
-        quotedNode1_8.addReference(SReference.create("descriptor", quotedNode1_8, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
         result = quotedNode1_8;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_1832_9 {
-    public QuotationClass_1832_9() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9 = null;
-      {
-        quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9 = quotedNode_9;
-        quotedNode1_9.addReference(SReference.create("descriptor", quotedNode1_9, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-        result = quotedNode1_9;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_1832_10 {
-    public QuotationClass_1832_10() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_10 = null;
-      {
-        quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_10 = quotedNode_10;
-        quotedNode1_10.addReference(SReference.create("descriptor", quotedNode1_10, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-        result = quotedNode1_10;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_1832_11 {
-    public QuotationClass_1832_11() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_11 = null;
-      {
-        quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_11 = quotedNode_11;
-        quotedNode1_11.addReference(SReference.create("descriptor", quotedNode1_11, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-        result = quotedNode1_11;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_1832_12 {
-    public QuotationClass_1832_12() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_12 = null;
-      {
-        quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_12 = quotedNode_12;
-        result = quotedNode1_12;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_1832_13 {
-    public QuotationClass_1832_13() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_13 = null;
-      {
-        quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_13 = quotedNode_13;
-        quotedNode1_13.addReference(SReference.create("descriptor", quotedNode1_13, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-        result = quotedNode1_13;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_1832_14 {
-    public QuotationClass_1832_14() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_14 = null;
-      {
-        quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_14 = quotedNode_14;
-        quotedNode1_14.addReference(SReference.create("descriptor", quotedNode1_14, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-        result = quotedNode1_14;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_1832_15 {
-    public QuotationClass_1832_15() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_15 = null;
-      {
-        quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_15 = quotedNode_15;
-        quotedNode1_15.addReference(SReference.create("descriptor", quotedNode1_15, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683729865")));
-        result = quotedNode1_15;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_1832_16 {
-    public QuotationClass_1832_16() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_16 = null;
-      {
-        quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_16 = quotedNode_16;
-        quotedNode1_16.addReference(SReference.create("classifier", quotedNode1_16, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_16;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_1832_17 {
-    public QuotationClass_1832_17() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_17 = null;
-      {
-        quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_17 = quotedNode_17;
-        result = quotedNode1_17;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_1832_18 {
-    public QuotationClass_1832_18() {
-    }
-
-    public SNode createNode() {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_18 = null;
-      {
-        quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_18 = quotedNode_18;
-        result = quotedNode1_18;
       }
       return result;
     }

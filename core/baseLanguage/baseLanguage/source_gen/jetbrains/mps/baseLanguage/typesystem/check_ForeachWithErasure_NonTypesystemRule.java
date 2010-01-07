@@ -67,12 +67,12 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_140 = null;
+      SNode quotedNode_130 = null;
       {
-        quotedNode_140 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_136 = quotedNode_140;
-        quotedNode1_136.addReference(SReference.create("classifier", quotedNode1_136, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_136;
+        quotedNode_130 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_126 = quotedNode_130;
+        quotedNode1_126.addReference(SReference.create("classifier", quotedNode1_126, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_126;
       }
       return result;
     }
@@ -80,12 +80,12 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_140 = null;
+      SNode quotedNode_130 = null;
       {
-        quotedNode_140 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_136 = quotedNode_140;
-        quotedNode1_136.addReference(SReference.create("classifier", quotedNode1_136, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_136;
+        quotedNode_130 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_126 = quotedNode_130;
+        quotedNode1_126.addReference(SReference.create("classifier", quotedNode1_126, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_126;
       }
       return result;
     }

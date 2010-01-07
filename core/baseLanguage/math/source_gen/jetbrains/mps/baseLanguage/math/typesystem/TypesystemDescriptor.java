@@ -222,373 +222,353 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       InequationReplacementRule_Runtime eliminationRule = new vector_vector_replacement_rule_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBigInteger;
-          this.myRightOperandType = MathTypeUtil.qInt;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.ShiftLeftExpression";
-          this.myLeftTypeIsExact = true;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider0("jetbrains.mps.baseLanguage.structure.ShiftLeftExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider1("jetbrains.mps.baseLanguage.structure.BitwiseAndExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider2("jetbrains.mps.baseLanguage.structure.BitwiseOrExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider3("jetbrains.mps.baseLanguage.structure.BitwiseXorExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider4("jetbrains.mps.baseLanguage.structure.ShiftRightExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider5("jetbrains.mps.baseLanguage.structure.RemExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider6("jetbrains.mps.baseLanguage.structure.LessThanExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider7("jetbrains.mps.baseLanguage.structure.GreaterThanExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider8("jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider9("jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider10("jetbrains.mps.baseLanguage.structure.PlusExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider11("jetbrains.mps.baseLanguage.structure.MinusExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider12("jetbrains.mps.baseLanguage.structure.MulExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider13("jetbrains.mps.baseLanguage.structure.DivExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider14("jetbrains.mps.baseLanguage.structure.PlusExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider15("jetbrains.mps.baseLanguage.structure.MinusExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider16("jetbrains.mps.baseLanguage.structure.MulExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider17("jetbrains.mps.baseLanguage.structure.MulExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider18("jetbrains.mps.baseLanguage.structure.DivExpression"));
+    this.myOverloadedOperationsTypesProviders.add(new TypesystemDescriptor.CustomOverloadedOperationsTypesProvider19("jetbrains.mps.baseLanguage.structure.MulExpression"));
+  }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.qBigInteger;
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+  public static class CustomOverloadedOperationsTypesProvider0 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider0(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBigInteger;
+      this.myRightOperandType = MathTypeUtil.qInt;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = true;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBigInteger;
-          this.myRightOperandType = MathTypeUtil.qBigInteger;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.BitwiseAndExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.ML_bitwiseOp(leftOperandType, rightOperandType);
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.qBigInteger;
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBigInteger;
-          this.myRightOperandType = MathTypeUtil.qBigInteger;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.BitwiseOrExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
+  }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.ML_bitwiseOp(leftOperandType, rightOperandType);
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+  public static class CustomOverloadedOperationsTypesProvider1 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider1(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBigInteger;
+      this.myRightOperandType = MathTypeUtil.qBigInteger;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBigInteger;
-          this.myRightOperandType = MathTypeUtil.qBigInteger;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.BitwiseXorExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.ML_bitwiseOp(leftOperandType, rightOperandType);
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.ML_bitwiseOp(leftOperandType, rightOperandType);
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBigInteger;
-          this.myRightOperandType = MathTypeUtil.qInt;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.ShiftRightExpression";
-          this.myLeftTypeIsExact = true;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
+  }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.qBigInteger;
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+  public static class CustomOverloadedOperationsTypesProvider2 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider2(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBigInteger;
+      this.myRightOperandType = MathTypeUtil.qBigInteger;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBigInteger;
-          this.myRightOperandType = MathTypeUtil.qBigInteger;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.RemExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.ML_bitwiseOp(leftOperandType, rightOperandType);
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.ML_bitwiseOp(leftOperandType, rightOperandType);
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBigDecimal;
-          this.myRightOperandType = MathTypeUtil.qBigDecimal;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.LessThanExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
+  }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.ML_compareOp(leftOperandType, rightOperandType);
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+  public static class CustomOverloadedOperationsTypesProvider3 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider3(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBigInteger;
+      this.myRightOperandType = MathTypeUtil.qBigInteger;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBigDecimal;
-          this.myRightOperandType = MathTypeUtil.qBigDecimal;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.GreaterThanExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.ML_compareOp(leftOperandType, rightOperandType);
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.ML_bitwiseOp(leftOperandType, rightOperandType);
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBigDecimal;
-          this.myRightOperandType = MathTypeUtil.qBigDecimal;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.LessThanOrEqualsExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
+  }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.ML_compareOp(leftOperandType, rightOperandType);
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+  public static class CustomOverloadedOperationsTypesProvider4 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider4(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBigInteger;
+      this.myRightOperandType = MathTypeUtil.qInt;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = true;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBigDecimal;
-          this.myRightOperandType = MathTypeUtil.qBigDecimal;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.GreaterThanOrEqualsExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.ML_compareOp(leftOperandType, rightOperandType);
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.qBigInteger;
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBigComplex;
-          this.myRightOperandType = MathTypeUtil.qBigComplex;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
+  }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.ML_arithmeticOp(leftOperandType, rightOperandType);
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+  public static class CustomOverloadedOperationsTypesProvider5 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider5(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBigInteger;
+      this.myRightOperandType = MathTypeUtil.qBigInteger;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBigComplex;
-          this.myRightOperandType = MathTypeUtil.qBigComplex;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MinusExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.ML_arithmeticOp(leftOperandType, rightOperandType);
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.ML_bitwiseOp(leftOperandType, rightOperandType);
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBigComplex;
-          this.myRightOperandType = MathTypeUtil.qBigComplex;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MulExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
+  }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.ML_arithmeticOp(leftOperandType, rightOperandType);
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+  public static class CustomOverloadedOperationsTypesProvider6 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider6(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBigDecimal;
+      this.myRightOperandType = MathTypeUtil.qBigDecimal;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBigComplex;
-          this.myRightOperandType = MathTypeUtil.qBigComplex;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.DivExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.ML_arithmeticOp(leftOperandType, rightOperandType);
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.ML_compareOp(leftOperandType, rightOperandType);
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBCMatrix;
-          this.myRightOperandType = MathTypeUtil.qBCMatrix;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.PlusExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
+  }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.ML_matrixOp(leftOperandType, rightOperandType, false);
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+  public static class CustomOverloadedOperationsTypesProvider7 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider7(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBigDecimal;
+      this.myRightOperandType = MathTypeUtil.qBigDecimal;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBCMatrix;
-          this.myRightOperandType = MathTypeUtil.qBCMatrix;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MinusExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.ML_matrixOp(leftOperandType, rightOperandType, false);
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.ML_compareOp(leftOperandType, rightOperandType);
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBigComplex;
-          this.myRightOperandType = MathTypeUtil.qBCMatrix;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MulExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
+  }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.typeOfMatrixScalarMultiplication(leftOperandType, rightOperandType);
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+  public static class CustomOverloadedOperationsTypesProvider8 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider8(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBigDecimal;
+      this.myRightOperandType = MathTypeUtil.qBigDecimal;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBCMatrix;
-          this.myRightOperandType = MathTypeUtil.qBigComplex;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MulExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(MathUtil.getUnboxedElementType(leftOperandType), rightOperandType)) {
-            return MathTypeUtil.qMatrix(rightOperandType);
-          } else {
-            return leftOperandType;
-          }
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.ML_compareOp(leftOperandType, rightOperandType);
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBCMatrix;
-          this.myRightOperandType = MathTypeUtil.qBigComplex;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.DivExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
+  }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          if (TypeChecker.getInstance().getSubtypingManager().isSubtype(MathUtil.getUnboxedElementType(leftOperandType), rightOperandType)) {
-            return MathTypeUtil.qMatrix(rightOperandType);
-          } else {
-            return leftOperandType;
-          }
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+  public static class CustomOverloadedOperationsTypesProvider9 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider9(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBigDecimal;
+      this.myRightOperandType = MathTypeUtil.qBigDecimal;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
     }
-    {
-      OverloadedOperationsTypesProvider provider = new OverloadedOperationsTypesProvider() {
-        {
-          this.myLeftOperandType = MathTypeUtil.qBCMatrix;
-          this.myRightOperandType = MathTypeUtil.qBCMatrix;
-          this.myOperationConceptFQName = "jetbrains.mps.baseLanguage.structure.MulExpression";
-          this.myLeftTypeIsExact = false;
-          this.myRightTypeIsExact = false;
-          this.myRightIsStrong = false;
-          this.myLeftIsStrong = false;
-        }
 
-        public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-          return MathTypeUtil.ML_matrixOp(leftOperandType, rightOperandType, true);
-        }
-      };
-      this.myOverloadedOperationsTypesProviders.add(provider);
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.ML_compareOp(leftOperandType, rightOperandType);
+    }
+  }
+
+  public static class CustomOverloadedOperationsTypesProvider10 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider10(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBigComplex;
+      this.myRightOperandType = MathTypeUtil.qBigComplex;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
+    }
+
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.ML_arithmeticOp(leftOperandType, rightOperandType);
+    }
+  }
+
+  public static class CustomOverloadedOperationsTypesProvider11 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider11(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBigComplex;
+      this.myRightOperandType = MathTypeUtil.qBigComplex;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
+    }
+
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.ML_arithmeticOp(leftOperandType, rightOperandType);
+    }
+  }
+
+  public static class CustomOverloadedOperationsTypesProvider12 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider12(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBigComplex;
+      this.myRightOperandType = MathTypeUtil.qBigComplex;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
+    }
+
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.ML_arithmeticOp(leftOperandType, rightOperandType);
+    }
+  }
+
+  public static class CustomOverloadedOperationsTypesProvider13 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider13(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBigComplex;
+      this.myRightOperandType = MathTypeUtil.qBigComplex;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
+    }
+
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.ML_arithmeticOp(leftOperandType, rightOperandType);
+    }
+  }
+
+  public static class CustomOverloadedOperationsTypesProvider14 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider14(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBCMatrix;
+      this.myRightOperandType = MathTypeUtil.qBCMatrix;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
+    }
+
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.ML_matrixOp(leftOperandType, rightOperandType, false);
+    }
+  }
+
+  public static class CustomOverloadedOperationsTypesProvider15 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider15(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBCMatrix;
+      this.myRightOperandType = MathTypeUtil.qBCMatrix;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
+    }
+
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.ML_matrixOp(leftOperandType, rightOperandType, false);
+    }
+  }
+
+  public static class CustomOverloadedOperationsTypesProvider16 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider16(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBigComplex;
+      this.myRightOperandType = MathTypeUtil.qBCMatrix;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
+    }
+
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.typeOfMatrixScalarMultiplication(leftOperandType, rightOperandType);
+    }
+  }
+
+  public static class CustomOverloadedOperationsTypesProvider17 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider17(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBCMatrix;
+      this.myRightOperandType = MathTypeUtil.qBigComplex;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
+    }
+
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(MathUtil.getUnboxedElementType(leftOperandType), rightOperandType)) {
+        return MathTypeUtil.qMatrix(rightOperandType);
+      } else {
+        return leftOperandType;
+      }
+    }
+  }
+
+  public static class CustomOverloadedOperationsTypesProvider18 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider18(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBCMatrix;
+      this.myRightOperandType = MathTypeUtil.qBigComplex;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
+    }
+
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(MathUtil.getUnboxedElementType(leftOperandType), rightOperandType)) {
+        return MathTypeUtil.qMatrix(rightOperandType);
+      } else {
+        return leftOperandType;
+      }
+    }
+  }
+
+  public static class CustomOverloadedOperationsTypesProvider19 extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider19(String conceptFQ) {
+      this.myLeftOperandType = MathTypeUtil.qBCMatrix;
+      this.myRightOperandType = MathTypeUtil.qBCMatrix;
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
+    }
+
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return MathTypeUtil.ML_matrixOp(leftOperandType, rightOperandType, true);
     }
   }
 }

@@ -42,11 +42,11 @@ public class int_unboxing_SubtypingRule extends SubtypingRule_Runtime implements
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_86 = null;
+      SNode quotedNode_76 = null;
       {
-        quotedNode_86 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_85 = quotedNode_86;
-        result = quotedNode1_85;
+        quotedNode_76 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_75 = quotedNode_76;
+        result = quotedNode1_75;
       }
       return result;
     }
@@ -54,11 +54,11 @@ public class int_unboxing_SubtypingRule extends SubtypingRule_Runtime implements
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_86 = null;
+      SNode quotedNode_76 = null;
       {
-        quotedNode_86 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_85 = quotedNode_86;
-        result = quotedNode1_85;
+        quotedNode_76 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_75 = quotedNode_76;
+        result = quotedNode1_75;
       }
       return result;
     }

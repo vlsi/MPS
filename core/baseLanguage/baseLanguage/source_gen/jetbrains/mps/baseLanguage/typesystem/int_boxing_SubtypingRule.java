@@ -42,12 +42,12 @@ public class int_boxing_SubtypingRule extends SubtypingRule_Runtime implements I
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_78 = null;
+      SNode quotedNode_68 = null;
       {
-        quotedNode_78 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_77 = quotedNode_78;
-        quotedNode1_77.addReference(SReference.create("classifier", quotedNode1_77, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Integer")));
-        result = quotedNode1_77;
+        quotedNode_68 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_67 = quotedNode_68;
+        quotedNode1_67.addReference(SReference.create("classifier", quotedNode1_67, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Integer")));
+        result = quotedNode1_67;
       }
       return result;
     }
@@ -55,12 +55,12 @@ public class int_boxing_SubtypingRule extends SubtypingRule_Runtime implements I
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_78 = null;
+      SNode quotedNode_68 = null;
       {
-        quotedNode_78 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_77 = quotedNode_78;
-        quotedNode1_77.addReference(SReference.create("classifier", quotedNode1_77, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Integer")));
-        result = quotedNode1_77;
+        quotedNode_68 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_67 = quotedNode_68;
+        quotedNode1_67.addReference(SReference.create("classifier", quotedNode1_67, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Integer")));
+        result = quotedNode1_67;
       }
       return result;
     }

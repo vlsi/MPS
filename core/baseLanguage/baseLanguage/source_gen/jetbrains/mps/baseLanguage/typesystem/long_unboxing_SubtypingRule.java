@@ -42,11 +42,11 @@ public class long_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_87 = null;
+      SNode quotedNode_77 = null;
       {
-        quotedNode_87 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_86 = quotedNode_87;
-        result = quotedNode1_86;
+        quotedNode_77 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_76 = quotedNode_77;
+        result = quotedNode1_76;
       }
       return result;
     }
@@ -54,11 +54,11 @@ public class long_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_87 = null;
+      SNode quotedNode_77 = null;
       {
-        quotedNode_87 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_86 = quotedNode_87;
-        result = quotedNode1_86;
+        quotedNode_77 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_76 = quotedNode_77;
+        result = quotedNode1_76;
       }
       return result;
     }

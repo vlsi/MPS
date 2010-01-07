@@ -59,25 +59,25 @@ public class typeof_ArrayLiteral_InferenceRule extends AbstractInferenceRule_Run
     public SNode createNode(Object parameter_4794_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_91 = null;
-      SNode quotedNode_92 = null;
+      SNode quotedNode_81 = null;
+      SNode quotedNode_82 = null;
       {
-        quotedNode_91 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_90 = quotedNode_91;
+        quotedNode_81 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_80 = quotedNode_81;
         {
-          quotedNode_92 = (SNode) parameter_4794_0;
-          SNode quotedNode1_91;
-          if (_parameterValues_129834374.contains(quotedNode_92)) {
-            quotedNode1_91 = CopyUtil.copy(quotedNode_92);
+          quotedNode_82 = (SNode) parameter_4794_0;
+          SNode quotedNode1_81;
+          if (_parameterValues_129834374.contains(quotedNode_82)) {
+            quotedNode1_81 = CopyUtil.copy(quotedNode_82);
           } else {
-            _parameterValues_129834374.add(quotedNode_92);
-            quotedNode1_91 = quotedNode_92;
+            _parameterValues_129834374.add(quotedNode_82);
+            quotedNode1_81 = quotedNode_82;
           }
-          if (quotedNode1_91 != null) {
-            quotedNode_91.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_91, typeCheckingContext));
+          if (quotedNode1_81 != null) {
+            quotedNode_81.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_81, typeCheckingContext));
           }
         }
-        result = quotedNode1_90;
+        result = quotedNode1_80;
       }
       return result;
     }
@@ -85,25 +85,25 @@ public class typeof_ArrayLiteral_InferenceRule extends AbstractInferenceRule_Run
     public SNode createNode(Object parameter_4794_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_91 = null;
-      SNode quotedNode_92 = null;
+      SNode quotedNode_81 = null;
+      SNode quotedNode_82 = null;
       {
-        quotedNode_91 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_90 = quotedNode_91;
+        quotedNode_81 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_80 = quotedNode_81;
         {
-          quotedNode_92 = (SNode) parameter_4794_0;
-          SNode quotedNode1_91;
-          if (_parameterValues_129834374.contains(quotedNode_92)) {
-            quotedNode1_91 = CopyUtil.copy(quotedNode_92);
+          quotedNode_82 = (SNode) parameter_4794_0;
+          SNode quotedNode1_81;
+          if (_parameterValues_129834374.contains(quotedNode_82)) {
+            quotedNode1_81 = CopyUtil.copy(quotedNode_82);
           } else {
-            _parameterValues_129834374.add(quotedNode_92);
-            quotedNode1_91 = quotedNode_92;
+            _parameterValues_129834374.add(quotedNode_82);
+            quotedNode1_81 = quotedNode_82;
           }
-          if (quotedNode1_91 != null) {
-            quotedNode_91.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_91));
+          if (quotedNode1_81 != null) {
+            quotedNode_81.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_81));
           }
         }
-        result = quotedNode1_90;
+        result = quotedNode1_80;
       }
       return result;
     }
