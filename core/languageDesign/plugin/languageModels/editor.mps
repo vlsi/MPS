@@ -3742,7 +3742,7 @@
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="8156518249612798398">
       <link role="relationDeclaration:32" targetNodeId="1.1221669969834:23" resolveInfo="isOptional" />
       <link role="styleClass:32" targetNodeId="17.1186415544875" resolveInfo="KeyWord" />
-      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem:32" id="4624817354936638092">
+      <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem:32" id="8646833443968143948">
         <property name="flag:32" value="false" />
       </node>
     </node>
