@@ -16,6 +16,14 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class CreateReferenceConcept_Intention extends BaseIntention implements Intention {
   public CreateReferenceConcept_Intention() {
@@ -54,7 +62,7 @@ public class CreateReferenceConcept_Intention extends BaseIntention implements I
 
   public void execute(final SNode node, final EditorContext editorContext) {
     // structure 
-    SNode concept = new _Quotations.QuotationClass_0().createNode(NameUtil.decapitalize(SPropertyOperations.getString(node, "name")), node, SPropertyOperations.getString(node, "name") + "Reference");
+    SNode concept = new CreateReferenceConcept_Intention.QuotationClass_1050_0().createNode(NameUtil.decapitalize(SPropertyOperations.getString(node, "name")), node, SPropertyOperations.getString(node, "name") + "Reference");
     SModelOperations.addRootNode(SNodeOperations.getModel(node), concept);
     SPropertyOperations.set(concept, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));
     SNode link = ListSequence.fromList(SLinkOperations.getTargets(concept, "linkDeclaration", true)).first();
@@ -64,7 +72,7 @@ public class CreateReferenceConcept_Intention extends BaseIntention implements I
     SModel editorModel = language.getEditorModelDescriptor().getSModel();
 
     // editor 
-    SNode editor = new _Quotations.QuotationClass_1().createNode(concept, link);
+    SNode editor = new CreateReferenceConcept_Intention.QuotationClass_1050_1().createNode(concept, link);
     SModelOperations.addRootNode(editorModel, editor);
     SPropertyOperations.set(editor, "virtualPackage", SPropertyOperations.getString(node, "virtualPackage"));
 
@@ -74,5 +82,73 @@ public class CreateReferenceConcept_Intention extends BaseIntention implements I
 
   public String getLocationString() {
     return "jetbrains.mps.lang.structure.intentions";
+  }
+
+  public static class QuotationClass_1050_0 {
+    public QuotationClass_1050_0() {
+    }
+
+    public SNode createNode(Object parameter_0887_0, Object parameter_0887_1, Object parameter_0887_2) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode1_0.setProperty("name", (String) parameter_0887_2);
+        quotedNode1_0.addReference(SReference.create("extends", quotedNode1_0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)"), SNodeId.fromString("1068431790191")));
+        {
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.LinkDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_1 = quotedNode_1;
+          quotedNode1_1.setProperty("metaClass", "reference");
+          quotedNode1_1.setProperty("sourceCardinality", "1");
+          quotedNode1_1.setProperty("role", (String) parameter_0887_0);
+          quotedNode1_1.setReferent("target", (SNode) parameter_0887_1);
+          quotedNode_0.addChild("linkDeclaration", quotedNode1_1);
+        }
+        result = quotedNode1_0;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_1050_1 {
+    public QuotationClass_1050_1() {
+    }
+
+    public SNode createNode(Object parameter_0887_3, Object parameter_0887_4) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      SNode quotedNode_5 = null;
+      {
+        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2 = quotedNode_2;
+        quotedNode1_2.setReferent("conceptDeclaration", (SNode) parameter_0887_3);
+        {
+          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_RefCell", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_3 = quotedNode_3;
+          quotedNode1_3.setReferent("relationDeclaration", (SNode) parameter_0887_4);
+          {
+            quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.InlineEditorComponent", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+            SNode quotedNode1_4 = quotedNode_4;
+            {
+              quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Property", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+              SNode quotedNode1_5 = quotedNode_5;
+              quotedNode1_5.setProperty("readOnly", "true");
+              quotedNode1_5.addReference(SReference.create("relationDeclaration", quotedNode1_5, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1169194664001")));
+              quotedNode_4.addChild("cellModel", quotedNode1_5);
+            }
+            quotedNode_3.addChild("editorComponent", quotedNode1_4);
+          }
+          quotedNode_2.addChild("cellModel", quotedNode1_3);
+        }
+        result = quotedNode1_2;
+      }
+      return result;
+    }
   }
 }

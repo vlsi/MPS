@@ -6,6 +6,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class DataTypeDeclaration_Behavior {
   private static Class[] PARAMETERS_1213877229718 = {SNode.class};
@@ -14,7 +19,7 @@ public class DataTypeDeclaration_Behavior {
   }
 
   public static SNode virtual_toBaseLanguageType_1213877229718(SNode thisNode) {
-    return new _Quotations.QuotationClass_0().createNode();
+    return new DataTypeDeclaration_Behavior.QuotationClass_3787_0().createNode();
   }
 
   public static boolean call_isSimple_1220268671473(SNode thisNode) {
@@ -87,5 +92,22 @@ public class DataTypeDeclaration_Behavior {
 
   public static SNode callSuper_toBaseLanguageType_1213877229718(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.DataTypeDeclaration"), callerConceptFqName, "virtual_toBaseLanguageType_1213877229718", PARAMETERS_1213877229718);
+  }
+
+  public static class QuotationClass_3787_0 {
+    public QuotationClass_3787_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        result = quotedNode1_0;
+      }
+      return result;
+    }
   }
 }
