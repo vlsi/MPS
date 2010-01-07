@@ -8,6 +8,13 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.smodel.SNode;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public abstract class BaseMethodUpdateStrategy implements StratergyAddMethodDialog.AdditionStrategy {
   private JCheckBox myCheckBox;
@@ -38,9 +45,71 @@ public abstract class BaseMethodUpdateStrategy implements StratergyAddMethodDial
     }
 
     if (this.myCheckBox.isSelected()) {
-      return new _Quotations.QuotationClass_4().createNode(returnExpr);
+      return new BaseMethodUpdateStrategy.QuotationClass_3774_0().createNode(returnExpr);
     } else {
-      return new _Quotations.QuotationClass_5().createNode(returnExpr);
+      return new BaseMethodUpdateStrategy.QuotationClass_3774_1().createNode(returnExpr);
+    }
+  }
+
+  public static class QuotationClass_3774_0 {
+    public QuotationClass_3774_0() {
+    }
+
+    public SNode createNode(Object parameter_3774_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_17 = null;
+      SNode quotedNode_18 = null;
+      {
+        quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_15 = quotedNode_17;
+        {
+          quotedNode_18 = (SNode) parameter_3774_0;
+          SNode quotedNode1_16;
+          if (_parameterValues_129834374.contains(quotedNode_18)) {
+            quotedNode1_16 = CopyUtil.copy(quotedNode_18);
+          } else {
+            _parameterValues_129834374.add(quotedNode_18);
+            quotedNode1_16 = quotedNode_18;
+          }
+          if (quotedNode1_16 != null) {
+            quotedNode_17.addChild("expression", HUtil.copyIfNecessary(quotedNode1_16));
+          }
+        }
+        result = quotedNode1_15;
+      }
+      return result;
+    }
+  }
+
+  public static class QuotationClass_3774_1 {
+    public QuotationClass_3774_1() {
+    }
+
+    public SNode createNode(Object parameter_3774_1) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_19 = null;
+      SNode quotedNode_20 = null;
+      {
+        quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_17 = quotedNode_19;
+        {
+          quotedNode_20 = (SNode) parameter_3774_1;
+          SNode quotedNode1_18;
+          if (_parameterValues_129834374.contains(quotedNode_20)) {
+            quotedNode1_18 = CopyUtil.copy(quotedNode_20);
+          } else {
+            _parameterValues_129834374.add(quotedNode_20);
+            quotedNode1_18 = quotedNode_20;
+          }
+          if (quotedNode1_18 != null) {
+            quotedNode_19.addChild("expression", HUtil.copyIfNecessary(quotedNode1_18));
+          }
+        }
+        result = quotedNode1_17;
+      }
+      return result;
     }
   }
 }
