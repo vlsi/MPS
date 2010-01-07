@@ -4180,7 +4180,7 @@
     <property name="name:23" value="newExpression" />
     <property name="package:23" value="sideTransforms" />
     <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="1212701533821">
-      <property name="transformTag:23" value="ext_1_RTransform" />
+      <property name="transformTag:23" value="ext_2_RTransform" />
       <property name="description:23" value="new Smth() --&gt; new Smth&lt;T&gt;()" />
       <link role="applicableConcept:23" targetNodeId="1.1212685548494:3" resolveInfo="ClassCreator" />
       <node role="precondition:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction:23" id="1212701643023">

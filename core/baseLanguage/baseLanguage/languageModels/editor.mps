@@ -12551,7 +12551,7 @@
           <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ReferencePresentation:32" id="4590747232508931350" />
         </node>
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem:32" id="1883175908512858430">
-          <property name="tag:32" value="ext_1_RTransform" />
+          <property name="tag:32" value="ext_2_RTransform" />
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1212699852037">
