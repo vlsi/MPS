@@ -10,6 +10,11 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
 
 public class SNODE_Design {
   public static class Design_Feature_child extends IParameterizedFeatureDesign.Stub<String> implements IParameterizedFeatureDesign<String> {
@@ -33,11 +38,29 @@ public class SNODE_Design {
         }
       }).first();
       SNode trg = SLinkOperations.getTarget(ld, "target", false);
-      return new _Quotations.QuotationClass_0().createNode(trg);
+      return new SNODE_Design.Design_Feature_child.QuotationClass_7688_0().createNode(trg);
     }
 
     public String parameterToString(String param) {
       return param;
+    }
+
+    public static class QuotationClass_7688_0 {
+      public QuotationClass_7688_0() {
+      }
+
+      public SNode createNode(Object parameter_4037_0) {
+        SNode result = null;
+        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+        SNode quotedNode_0 = null;
+        {
+          quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0 = quotedNode_0;
+          quotedNode1_0.setReferent("concept", (SNode) parameter_4037_0);
+          result = quotedNode1_0;
+        }
+        return result;
+      }
     }
   }
 
@@ -62,11 +85,29 @@ public class SNODE_Design {
         }
       }).first();
       SNode trg = SLinkOperations.getTarget(ld, "target", false);
-      return new _Quotations.QuotationClass_1().createNode(trg);
+      return new SNODE_Design.Design_Feature_link.QuotationClass_7688_1().createNode(trg);
     }
 
     public String parameterToString(String param) {
       return param;
+    }
+
+    public static class QuotationClass_7688_1 {
+      public QuotationClass_7688_1() {
+      }
+
+      public SNode createNode(Object parameter_4037_1) {
+        SNode result = null;
+        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+        SNode quotedNode_1 = null;
+        {
+          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_1 = quotedNode_1;
+          quotedNode1_1.setReferent("concept", (SNode) parameter_4037_1);
+          result = quotedNode1_1;
+        }
+        return result;
+      }
     }
   }
 }

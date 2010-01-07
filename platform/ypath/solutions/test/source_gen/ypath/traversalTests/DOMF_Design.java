@@ -8,6 +8,14 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class DOMF_Design {
   public static class Design_Feature_child extends IParameterizedFeatureDesign.Stub<String> implements IParameterizedFeatureDesign<String> {
@@ -56,11 +64,29 @@ __switch__:
     }
 
     public SNode getTargetType(String param, SNode nodeType) {
-      return new _Quotations.QuotationClass_0().createNode();
+      return new DOMF_Design.Design_Feature_child.QuotationClass_4985_0().createNode();
     }
 
     public String parameterToString(String param) {
       return param;
+    }
+
+    public static class QuotationClass_4985_0 {
+      public QuotationClass_4985_0() {
+      }
+
+      public SNode createNode() {
+        SNode result = null;
+        Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+        SNode quotedNode_0 = null;
+        {
+          quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0 = quotedNode_0;
+          quotedNode1_0.addReference(SReference.create("classifier", quotedNode1_0, SModelReference.fromString("f:java_stub#org.w3c.dom(org.w3c.dom@java_stub)"), SNodeId.fromString("~Node")));
+          result = quotedNode1_0;
+        }
+        return result;
+      }
     }
   }
 }
