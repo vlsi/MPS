@@ -184,7 +184,7 @@ public abstract class PropertySupport {
       if ("true".equals(value)) {
         return value;
       }
-      return "false";
+      return null;
     }
   }
 }
