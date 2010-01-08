@@ -917,7 +917,6 @@
           </node>
         </node>
         <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1096027956237">
-          <property name="name:3" value="" />
         </node>
         <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1096027956236" />
         <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1096027956235">
@@ -970,7 +969,6 @@
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1095688526433">
           <property name="name:3" value="value" />
           <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1095688526434">
-            <property name="name:3" value="" />
           </node>
         </node>
         <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1095688526435">
