@@ -30577,7 +30577,7 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="711543295130559511">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="711543295130559512">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~JPanel.&lt;init&gt;()" resolveInfo="JPanel" />
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolveInfo="JPanel" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="711543295130559513">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="711543295130594206">
                     <link role="baseMethodDeclaration:3" targetNodeId="3.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
@@ -30965,7 +30965,7 @@
               <link role="variableDeclaration:3" targetNodeId="711543295130535865" resolveInfo="parametersPanel" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="711543295130595861">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.~Container.add(java.awt.Component):java.awt.Component" resolveInfo="add" />
+              <link role="baseMethodDeclaration:3" targetNodeId="3.~Container.add(java.awt.Component,java.lang.Object):void" resolveInfo="add" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="711543295130595862">
                 <link role="variableDeclaration:3" targetNodeId="8492459591399175354" resolveInfo="parametersTable" />
               </node>
@@ -31015,32 +31015,10 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5292216163440301908">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5358105620799534694">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~JPanel.&lt;init&gt;()" resolveInfo="JPanel" />
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~JPanel.&lt;init&gt;(java.awt.LayoutManager)" resolveInfo="JPanel" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="711543295130733953">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="711543295130782295">
                     <link role="baseMethodDeclaration:3" targetNodeId="3.~GridBagLayout.&lt;init&gt;()" resolveInfo="GridBagLayout" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5358105620799534697">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5358105620799534699">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5358105620799534698">
-              <link role="variableDeclaration:3" targetNodeId="5292216163440301875" resolveInfo="buttonsPanel" />
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5358105620799534703">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.~Container.setLayout(java.awt.LayoutManager):void" resolveInfo="setLayout" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5358105620799534704">
-                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5358105620799534705">
-                  <link role="baseMethodDeclaration:3" targetNodeId="2.~BoxLayout.&lt;init&gt;(java.awt.Container,int)" resolveInfo="BoxLayout" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5358105620799534708">
-                    <link role="variableDeclaration:3" targetNodeId="5292216163440301875" resolveInfo="buttonsPanel" />
-                  </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5358105620799534707">
-                    <link role="classifier:3" targetNodeId="2.~BoxLayout" resolveInfo="BoxLayout" />
-                    <link role="variableDeclaration:3" targetNodeId="2.~BoxLayout.Y_AXIS" resolveInfo="Y_AXIS" />
                   </node>
                 </node>
               </node>
@@ -31797,7 +31775,7 @@
               <link role="variableDeclaration:3" targetNodeId="5292216163440301928" resolveInfo="component" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8492459591399175776">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.~Container.add(java.awt.Component):java.awt.Component" resolveInfo="add" />
+              <link role="baseMethodDeclaration:3" targetNodeId="3.~Container.add(java.awt.Component,java.lang.Object):void" resolveInfo="add" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8492459591399175777">
                 <link role="variableDeclaration:3" targetNodeId="8492459591399175725" resolveInfo="button" />
               </node>
