@@ -23749,6 +23749,30 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5358105620800623045">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5358105620800623659">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5358105620800623046">
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5358105620800623047">
+                <link role="fieldDeclaration:3" targetNodeId="8492459591399171917" resolveInfo="myPreviewArea" />
+              </node>
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5358105620800623048" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5358105620800623664">
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~JComponent.setBackground(java.awt.Color):void" resolveInfo="setBackground" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5358105620800623670">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5358105620800623666">
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5358105620800623667">
+                    <link role="fieldDeclaration:3" targetNodeId="8492459591399171911" resolveInfo="myPanel" />
+                  </node>
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5358105620800623668" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5358105620800623675">
+                  <link role="baseMethodDeclaration:3" targetNodeId="3.~Component.getBackground():java.awt.Color" resolveInfo="getBackground" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8492459591399172458">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8492459591399172459">
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8492459591399172460">
@@ -23801,6 +23825,30 @@
                 <link role="fieldDeclaration:3" targetNodeId="8492459591399171922" resolveInfo="myMessagesArea" />
               </node>
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="8492459591399172482" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5358105620800623678">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5358105620800623679">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5358105620800623680">
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5358105620800623690">
+                <link role="fieldDeclaration:3" targetNodeId="8492459591399171922" resolveInfo="myMessagesArea" />
+              </node>
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5358105620800623682" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5358105620800623683">
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~JComponent.setBackground(java.awt.Color):void" resolveInfo="setBackground" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5358105620800623684">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5358105620800623685">
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5358105620800623686">
+                    <link role="fieldDeclaration:3" targetNodeId="8492459591399171911" resolveInfo="myPanel" />
+                  </node>
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="5358105620800623687" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5358105620800623688">
+                  <link role="baseMethodDeclaration:3" targetNodeId="3.~Component.getBackground():java.awt.Color" resolveInfo="getBackground" />
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -30521,6 +30569,44 @@
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="8492459591399175352" />
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="711543295130535864">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="711543295130535865">
+            <property name="name:3" value="parametersPanel" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="711543295130535866">
+              <link role="classifier:3" targetNodeId="2.~JPanel" resolveInfo="JPanel" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="711543295130559511">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="711543295130559512">
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~JPanel.&lt;init&gt;()" resolveInfo="JPanel" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="711543295130559513">
+                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="711543295130594206">
+                    <link role="baseMethodDeclaration:3" targetNodeId="3.~BorderLayout.&lt;init&gt;()" resolveInfo="BorderLayout" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="711543295130594208">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="711543295130594210">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="711543295130594209">
+              <link role="variableDeclaration:3" targetNodeId="711543295130535865" resolveInfo="parametersPanel" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="711543295130594214">
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~JComponent.setBackground(java.awt.Color):void" resolveInfo="setBackground" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="711543295130594218">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="711543295130594215">
+                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="711543295130594217">
+                    <link role="baseMethodDeclaration:3" targetNodeId="2.~JTextField.&lt;init&gt;()" resolveInfo="JTextField" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="711543295130595852">
+                  <link role="baseMethodDeclaration:3" targetNodeId="3.~Component.getBackground():java.awt.Color" resolveInfo="getBackground" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8492459591399175353">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8492459591399175354">
             <property name="name:3" value="parametersTable" />
@@ -30873,6 +30959,23 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="711543295130595854">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="711543295130595856">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="711543295130595860">
+              <link role="variableDeclaration:3" targetNodeId="711543295130535865" resolveInfo="parametersPanel" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="711543295130595861">
+              <link role="baseMethodDeclaration:3" targetNodeId="3.~Container.add(java.awt.Component):java.awt.Component" resolveInfo="add" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="711543295130595862">
+                <link role="variableDeclaration:3" targetNodeId="8492459591399175354" resolveInfo="parametersTable" />
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="711543295130595865">
+                <link role="classifier:3" targetNodeId="3.~BorderLayout" resolveInfo="BorderLayout" />
+                <link role="variableDeclaration:3" targetNodeId="3.~BorderLayout.CENTER" resolveInfo="CENTER" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8492459591399175476">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8492459591399175477">
             <property name="name:3" value="scrollPane" />
@@ -30882,8 +30985,8 @@
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8492459591399175479">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="8492459591399175480">
                 <link role="baseMethodDeclaration:3" targetNodeId="2.~JScrollPane.&lt;init&gt;(java.awt.Component)" resolveInfo="JScrollPane" />
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8492459591399175481">
-                  <link role="variableDeclaration:3" targetNodeId="8492459591399175354" resolveInfo="parametersTable" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="711543295130595868">
+                  <link role="variableDeclaration:3" targetNodeId="711543295130535865" resolveInfo="parametersPanel" />
                 </node>
               </node>
             </node>
@@ -30913,6 +31016,11 @@
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5292216163440301908">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5358105620799534694">
                 <link role="baseMethodDeclaration:3" targetNodeId="2.~JPanel.&lt;init&gt;()" resolveInfo="JPanel" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="711543295130733953">
+                  <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="711543295130782295">
+                    <link role="baseMethodDeclaration:3" targetNodeId="3.~GridBagLayout.&lt;init&gt;()" resolveInfo="GridBagLayout" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>
@@ -31002,7 +31110,7 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5292216163440301913">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5292216163440301915">
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5292216163440301920">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.~Container.add(java.awt.Component):java.awt.Component" resolveInfo="add" />
+              <link role="baseMethodDeclaration:3" targetNodeId="3.~Container.add(java.awt.Component,java.lang.Object):void" resolveInfo="add" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5292216163440301921">
                 <link role="variableDeclaration:3" targetNodeId="5292216163440301875" resolveInfo="buttonsPanel" />
               </node>
@@ -31692,6 +31800,9 @@
               <link role="baseMethodDeclaration:3" targetNodeId="3.~Container.add(java.awt.Component):java.awt.Component" resolveInfo="add" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8492459591399175777">
                 <link role="variableDeclaration:3" targetNodeId="8492459591399175725" resolveInfo="button" />
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="711543295130733951">
+                <link role="variableDeclaration:3" targetNodeId="8492459591399175673" resolveInfo="c" />
               </node>
             </node>
           </node>

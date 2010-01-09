@@ -7,6 +7,7 @@ import java.awt.BorderLayout;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.TitledBorder;
 import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
 import java.awt.Dimension;
@@ -15,6 +16,7 @@ import javax.swing.event.TableModelListener;
 import javax.swing.event.TableModelEvent;
 import java.awt.GridBagConstraints;
 import javax.swing.JScrollPane;
+import java.awt.GridBagLayout;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.event.ListSelectionListener;
@@ -44,6 +46,8 @@ import java.awt.event.ActionEvent;
 
   private void initPanel() {
     this.setBorder(new CompoundBorder(new TitledBorder("Parameters"), new EmptyBorder(5, 5, 5, 5)));
+    JPanel parametersPanel = new JPanel(new BorderLayout());
+    parametersPanel.setBackground(new JTextField().getBackground());
     final JTable parametersTable = new JTable(this.myTableModel);
     parametersTable.setShowGrid(false);
     parametersTable.setCellSelectionEnabled(false);
@@ -67,9 +71,10 @@ import java.awt.event.ActionEvent;
     c.weighty = 0;
     c.anchor = GridBagConstraints.FIRST_LINE_START;
     parametersTable.setTableHeader(null);
-    JScrollPane scrollPane = new JScrollPane(parametersTable);
+    parametersPanel.add(parametersTable, BorderLayout.CENTER);
+    JScrollPane scrollPane = new JScrollPane(parametersPanel);
     this.add(scrollPane, BorderLayout.CENTER);
-    JPanel buttonsPanel = new JPanel();
+    JPanel buttonsPanel = new JPanel(new GridBagLayout());
     buttonsPanel.setLayout(new BoxLayout(buttonsPanel, BoxLayout.Y_AXIS));
     final JButton upButton = this.createParametersRowMoveButton(parametersTable, "Move up", -1, 0, buttonsPanel);
     final JButton downButton = this.createParametersRowMoveButton(parametersTable, "Move down", 1, 1, buttonsPanel);
@@ -124,7 +129,7 @@ import java.awt.event.ActionEvent;
       }
     });
     button.setEnabled(false);
-    component.add(button);
+    component.add(button, c);
     return button;
   }
 }
