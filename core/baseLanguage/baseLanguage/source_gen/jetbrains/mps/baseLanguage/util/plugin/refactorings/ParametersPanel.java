@@ -9,6 +9,8 @@ import javax.swing.border.TitledBorder;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTable;
 import javax.swing.ListSelectionModel;
+import java.awt.Dimension;
+import javax.swing.JCheckBox;
 import javax.swing.event.TableModelListener;
 import javax.swing.event.TableModelEvent;
 import java.awt.GridBagConstraints;
@@ -47,9 +49,10 @@ import java.awt.event.ActionEvent;
     parametersTable.setCellSelectionEnabled(false);
     parametersTable.setRowSelectionAllowed(true);
     parametersTable.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-    parametersTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+    parametersTable.setIntercellSpacing(new Dimension(0, 0));
     this.fitTableColumns(parametersTable);
     parametersTable.getColumnModel().getColumn(1).setCellEditor(this.createCellEditor());
+    parametersTable.getColumnModel().getColumn(0).setMaxWidth(new JCheckBox().getPreferredSize().width);
     this.myTableModel.addTableModelListener(new TableModelListener() {
       public void tableChanged(TableModelEvent p0) {
         ParametersPanel.this.fitTableColumns(parametersTable);

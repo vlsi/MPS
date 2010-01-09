@@ -30594,17 +30594,24 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8492459591399175381">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8492459591399175382">
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8492459591399175383">
-              <link role="baseMethodDeclaration:3" targetNodeId="2.~JTable.setAutoResizeMode(int):void" resolveInfo="setAutoResizeMode" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="8492459591399175384">
-                <link role="classifier:3" targetNodeId="2.~JTable" resolveInfo="JTable" />
-                <link role="variableDeclaration:3" targetNodeId="2.~JTable.AUTO_RESIZE_OFF" resolveInfo="AUTO_RESIZE_OFF" />
-              </node>
-            </node>
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8492459591399175385">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5358105620800451566">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5358105620800451568">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5358105620800451567">
               <link role="variableDeclaration:3" targetNodeId="8492459591399175354" resolveInfo="parametersTable" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5358105620800451572">
+              <link role="baseMethodDeclaration:3" targetNodeId="2.~JTable.setIntercellSpacing(java.awt.Dimension):void" resolveInfo="setIntercellSpacing" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5358105620800451573">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5358105620800451575">
+                  <link role="baseMethodDeclaration:3" targetNodeId="3.~Dimension.&lt;init&gt;(int,int)" resolveInfo="Dimension" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5358105620800451576">
+                    <property name="value:3" value="0" />
+                  </node>
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5358105620800451578">
+                    <property name="value:3" value="0" />
+                  </node>
+                </node>
+              </node>
             </node>
           </node>
         </node>
@@ -30643,6 +30650,44 @@
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="8492459591399175401" />
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8492459591399175402">
                   <link role="baseMethodDeclaration:3" targetNodeId="8492459591399175653" resolveInfo="createCellEditor" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5358105620800415213">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5358105620800420085">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5358105620800419492">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5358105620800415215">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5358105620800415214">
+                  <link role="variableDeclaration:3" targetNodeId="8492459591399175354" resolveInfo="parametersTable" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5358105620800419491">
+                  <link role="baseMethodDeclaration:3" targetNodeId="2.~JTable.getColumnModel():javax.swing.table.TableColumnModel" resolveInfo="getColumnModel" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5358105620800420083">
+                <link role="baseMethodDeclaration:3" targetNodeId="14.~TableColumnModel.getColumn(int):javax.swing.table.TableColumn" resolveInfo="getColumn" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="5358105620800420084">
+                  <property name="value:3" value="0" />
+                </node>
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5358105620800420089">
+              <link role="baseMethodDeclaration:3" targetNodeId="14.~TableColumn.setMaxWidth(int):void" resolveInfo="setMaxWidth" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5358105620800451559">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5358105620800451554">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="5358105620800420090">
+                    <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="5358105620800451553">
+                      <link role="baseMethodDeclaration:3" targetNodeId="2.~JCheckBox.&lt;init&gt;()" resolveInfo="JCheckBox" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5358105620800451558">
+                    <link role="baseMethodDeclaration:3" targetNodeId="2.~JComponent.getPreferredSize():java.awt.Dimension" resolveInfo="getPreferredSize" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="5358105620800451563">
+                  <link role="fieldDeclaration:3" targetNodeId="3.~Dimension.width" resolveInfo="width" />
                 </node>
               </node>
             </node>
