@@ -169,7 +169,7 @@ public class ExtractMethodDialog extends BaseDialog {
 
   private JComponent createPreviewPanel() {
     this.myPreviewArea.setEditable(false);
-    this.myPreviewArea.setBorder(this.createBorder("Preview"));
+    this.myPreviewArea.setBorder(this.createBorder("Signature Preview"));
     return this.myPreviewArea;
   }
 
