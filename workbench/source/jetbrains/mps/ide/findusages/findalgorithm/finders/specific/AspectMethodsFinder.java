@@ -26,6 +26,7 @@ import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
@@ -91,6 +92,7 @@ public class AspectMethodsFinder implements IFinder {
       return myData;
     }
 
+    @NotNull
     public String getCaption() {
       return myData.myMethodName + " in " + myData.myModelName;
     }

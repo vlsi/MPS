@@ -21,6 +21,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
@@ -44,6 +45,7 @@ public class ModelsHolder implements IHolder<List<SModelDescriptor>> {
     return myOperationContext;
   }
 
+  @NotNull
   public String getCaption() {
     return myModelDescriptors.size() + " models";
   }

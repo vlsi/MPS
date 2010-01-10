@@ -26,6 +26,7 @@ import jetbrains.mps.project.AbstractModule.ModuleScope;
 import jetbrains.mps.project.MPSProject.ProjectScope;
 import jetbrains.mps.smodel.*;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.ArrayList;
@@ -87,6 +88,7 @@ public class SearchQuery implements IExternalizeable {
     return myObjectHolder;
   }
 
+  @NotNull
   public String getCaption() {
     return myObjectHolder.getCaption();
   }

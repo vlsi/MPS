@@ -16,12 +16,14 @@
 package jetbrains.mps.ide.findusages.model.holders;
 
 import jetbrains.mps.ide.findusages.IExternalizeable;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
 public interface IHolder<T> extends IExternalizeable {
   public T getObject();
 
+  @NotNull
   public String getCaption();
 
   public Icon getIcon();

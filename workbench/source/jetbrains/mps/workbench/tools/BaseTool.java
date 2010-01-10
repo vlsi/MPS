@@ -225,7 +225,7 @@ public abstract class BaseTool {
 
     if (myComponent == null) myComponent = getComponent();
     if (myComponent != null) {
-      addContent(myComponent, null, null, false);
+      addContent(myComponent, "", null, false);
     }
 
 
@@ -298,7 +298,7 @@ public abstract class BaseTool {
     return null;
   }
 
-  protected Content addContent(JComponent component, String name, Icon icon, boolean isLockable) {
+  protected Content addContent(JComponent component, @NotNull String name, Icon icon, boolean isLockable) {
     Content content = new ContentFactoryImpl().createContent(component, name, isLockable);
     if (icon != null) {
       content.putUserData(ToolWindow.SHOW_CONTENT_ICON, Boolean.TRUE);

@@ -22,6 +22,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
@@ -42,6 +43,7 @@ public class ModuleHolder implements IHolder<IModule> {
     return MPSModuleRepository.getInstance().getModuleByUID(myModuleUID);
   }
 
+  @NotNull
   public String getCaption() {
     return myModuleUID;
   }

@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
@@ -50,6 +51,7 @@ public class ModelHolder implements IHolder<SModel> {
     return modelDescriptor.getSModel();
   }
 
+  @NotNull
   public String getCaption() {
     return getModelDescriptor().getName();
   }

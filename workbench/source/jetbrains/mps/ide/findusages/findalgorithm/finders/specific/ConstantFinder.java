@@ -27,6 +27,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import java.util.Collection;
@@ -68,6 +69,7 @@ public class ConstantFinder implements IFinder {
       return myData;
     }
 
+    @NotNull
     public String getCaption() {
       return myCaption;
     }

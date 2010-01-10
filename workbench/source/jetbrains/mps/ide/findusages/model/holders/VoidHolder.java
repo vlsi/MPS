@@ -19,6 +19,7 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
@@ -43,6 +44,7 @@ public class VoidHolder implements IHolder {
     throw new UnsupportedOperationException();
   }
 
+  @NotNull
   public String getCaption() {
     return myCaption;
   }

@@ -20,6 +20,7 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.content.*;
 import jetbrains.mps.workbench.tools.BaseTool;
 import jetbrains.mps.lang.plugin.structure.IComponentDisposer;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 import javax.swing.JComponent;
@@ -48,7 +49,7 @@ public abstract class GeneratedTabbedTool extends BaseGeneratedTool {
     contentManager.removeContent(content, true);
   }
 
-  public <T extends JComponent> void addTab(final T tabComponent, String title, Icon icon,
+  public <T extends JComponent> void addTab(final T tabComponent, @NotNull String title, Icon icon,
                                             final IComponentDisposer<T> tabDisposer) {
     IDisposableTab tab = new IDisposableTab() {
       public void disposeTab() {

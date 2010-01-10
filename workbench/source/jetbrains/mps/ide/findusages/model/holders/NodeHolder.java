@@ -23,6 +23,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jdom.Element;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
 
@@ -43,6 +44,7 @@ public class NodeHolder implements IHolder<SNode> {
     return myNodePointer.getNode();
   }
 
+  @NotNull
   public String getCaption() {
     SNode node = getObject();
     if (node == null) return "<null>";
