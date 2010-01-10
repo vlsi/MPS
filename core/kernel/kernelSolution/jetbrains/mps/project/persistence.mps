@@ -1024,142 +1024,11 @@
   <node type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders:0" id="842994667883030054">
     <property name="name:0" value="ModuleDescriptorsBuilders" />
     <property name="package:0" value="builders" />
-    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="842994667883030055">
-      <property name="name:0" value="solutionDescriptor" />
-      <property name="root:0" value="true" />
-      <link role="extends:0" targetNodeId="842994667883030127" resolveInfo="moduleDescriptor" />
-      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883030064">
-        <link role="classifier:3" targetNodeId="11.~SolutionDescriptor" resolveInfo="SolutionDescriptor" />
-      </node>
-      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="842994667883030065">
-        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="842994667883030066">
-          <link role="baseMethodDeclaration:3" targetNodeId="11.~SolutionDescriptor.&lt;init&gt;()" />
-        </node>
-      </node>
-    </node>
-    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="842994667883030067">
-      <property name="name:0" value="classPath" />
-      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883030068">
-        <link role="classifier:3" targetNodeId="11.~ClassPathEntry" resolveInfo="ClassPathEntry" />
-      </node>
-      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="842994667883030069">
-        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="842994667883030070">
-          <link role="baseMethodDeclaration:3" targetNodeId="11.~ClassPathEntry.&lt;init&gt;()" />
-        </node>
-      </node>
-    </node>
-    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="842994667883030071">
-      <property name="name:0" value="runtimeClassPath" />
-      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883030072">
-        <link role="classifier:3" targetNodeId="11.~ClassPathEntry" resolveInfo="ClassPathEntry" />
-      </node>
-      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="842994667883030073">
-        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="842994667883030074">
-          <link role="baseMethodDeclaration:3" targetNodeId="11.~ClassPathEntry.&lt;init&gt;()" />
-        </node>
-      </node>
-    </node>
-    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="842994667883030075">
-      <property name="root:0" value="true" />
-      <property name="name:0" value="generatorDescriptor" />
-      <link role="extends:0" targetNodeId="842994667883030127" resolveInfo="moduleDescriptor" />
-      <node role="child:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild:0" id="842994667883030076">
-        <link role="child:0" targetNodeId="842994667883030091" resolveInfo="mappingPriorityRule" />
-        <node role="attachStatement:0" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="842994667883030077">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="842994667883030078">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="842994667883030079">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression:0" id="842994667883030080" />
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="842994667883030081">
-                <link role="baseMethodDeclaration:3" targetNodeId="11.~GeneratorDescriptor.getPriorityRules():java.util.List" />
-              </node>
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="842994667883030082">
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~List.add(java.lang.Object):boolean" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression:0" id="842994667883030083" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883030084">
-        <link role="classifier:3" targetNodeId="11.~GeneratorDescriptor" resolveInfo="GeneratorDescriptor" />
-      </node>
-      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="842994667883030085">
-        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="842994667883030086">
-          <link role="baseMethodDeclaration:3" targetNodeId="11.~GeneratorDescriptor.&lt;init&gt;()" />
-        </node>
-      </node>
-    </node>
-    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="842994667883030087">
-      <property name="root:0" value="true" />
-      <property name="name:0" value="mappingConfig_ExternalRef" />
-      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883030088">
-        <link role="classifier:3" targetNodeId="2.~MappingConfig_ExternalRef" resolveInfo="MappingConfig_ExternalRef" />
-      </node>
-      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="842994667883030089">
-        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="842994667883030090">
-          <link role="baseMethodDeclaration:3" targetNodeId="2.~MappingConfig_ExternalRef.&lt;init&gt;()" />
-        </node>
-      </node>
-    </node>
-    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="842994667883030091">
-      <property name="name:0" value="mappingPriorityRule" />
-      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883030092">
-        <link role="classifier:3" targetNodeId="2.~MappingPriorityRule" resolveInfo="MappingPriorityRule" />
-      </node>
-      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="842994667883030093">
-        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="842994667883030094">
-          <link role="baseMethodDeclaration:3" targetNodeId="2.~MappingPriorityRule.&lt;init&gt;()" />
-        </node>
-      </node>
-    </node>
-    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="842994667883030095">
-      <property name="root:0" value="true" />
-      <property name="name:0" value="languageDescriptor" />
-      <link role="extends:0" targetNodeId="842994667883030127" resolveInfo="moduleDescriptor" />
-      <node role="child:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild:0" id="842994667883030104">
-        <link role="child:0" targetNodeId="842994667883030071" resolveInfo="runtimeClassPath" />
-        <node role="attachStatement:0" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="842994667883030105">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="842994667883030106">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="842994667883030107">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression:0" id="842994667883030108" />
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="842994667883030109">
-                <link role="baseMethodDeclaration:3" targetNodeId="11.~LanguageDescriptor.getRuntimeClassPaths():java.util.List" />
-              </node>
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="842994667883030110">
-              <link role="baseMethodDeclaration:3" targetNodeId="6.~List.add(java.lang.Object):boolean" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression:0" id="842994667883030111" />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883030112">
-        <link role="classifier:3" targetNodeId="11.~LanguageDescriptor" resolveInfo="LanguageDescriptor" />
-      </node>
-      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="842994667883030113">
-        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="842994667883030114">
-          <link role="baseMethodDeclaration:3" targetNodeId="11.~LanguageDescriptor.&lt;init&gt;()" />
-        </node>
-      </node>
-    </node>
-    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="842994667883030115">
-      <property name="root:0" value="true" />
-      <property name="name:0" value="devkitDescriptor" />
-      <link role="extends:0" targetNodeId="842994667883030127" resolveInfo="moduleDescriptor" />
-      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883030124">
-        <link role="classifier:3" targetNodeId="11.~DevkitDescriptor" resolveInfo="DevkitDescriptor" />
-      </node>
-      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="842994667883030125">
-        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="842994667883030126">
-          <link role="baseMethodDeclaration:3" targetNodeId="11.~DevkitDescriptor.&lt;init&gt;()" />
-        </node>
-      </node>
-    </node>
     <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="842994667883030127">
       <property name="name:0" value="moduleDescriptor" />
       <property name="root:0" value="true" />
       <node role="child:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild:0" id="702807520180572596">
-        <link role="child:0" targetNodeId="842994667883030067" resolveInfo="classPath" />
+        <link role="child:0" targetNodeId="9015822011646769813" resolveInfo="classPath" />
         <node role="attachStatement:0" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="702807520180572597">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="702807520180572598">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="702807520180572599">
@@ -1217,7 +1086,7 @@
       <property name="root:0" value="true" />
       <property name="name:0" value="stubModelsEntry" />
       <node role="child:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild:0" id="702807520180467444">
-        <link role="child:0" targetNodeId="6705025829619511223" resolveInfo="manager" />
+        <link role="child:0" targetNodeId="9015822011646769822" resolveInfo="stubsManager" />
         <node role="attachStatement:0" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="702807520180467445">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="702807520180467446">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression:0" id="702807520180467447" />
@@ -1237,6 +1106,17 @@
         </node>
       </node>
     </node>
+    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="9015822011646769822">
+      <property name="name:0" value="stubsManager" />
+      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9015822011646769823">
+        <link role="classifier:3" targetNodeId="5.~ModelRootManager" resolveInfo="ModelRootManager" />
+      </node>
+      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="9015822011646769824">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="9015822011646769825">
+          <link role="baseMethodDeclaration:3" targetNodeId="5.~ModelRootManager.&lt;init&gt;()" resolveInfo="ModelRootManager" />
+        </node>
+      </node>
+    </node>
     <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="842994667883030143">
       <property name="root:0" value="true" />
       <property name="name:0" value="modelRoot" />
@@ -1249,26 +1129,25 @@
         </node>
       </node>
     </node>
-    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="6705025829619511223">
-      <property name="name:0" value="stubsManager" />
-      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="6705025829619511226">
-        <link role="classifier:3" targetNodeId="5.~ModelRootManager" resolveInfo="ModelRootManager" />
+    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="9015822011646769813">
+      <property name="name:0" value="classPath" />
+      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9015822011646769814">
+        <link role="classifier:3" targetNodeId="11.~ClassPathEntry" resolveInfo="ClassPathEntry" />
       </node>
-      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6705025829619511227">
-        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6705025829619511229">
-          <link role="baseMethodDeclaration:3" targetNodeId="5.~ModelRootManager.&lt;init&gt;()" resolveInfo="ModelRootManager" />
+      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="9015822011646769815">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="9015822011646769816">
+          <link role="baseMethodDeclaration:3" targetNodeId="11.~ClassPathEntry.&lt;init&gt;()" resolveInfo="ClassPathEntry" />
         </node>
       </node>
     </node>
-    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="842994667883030147">
-      <property name="root:0" value="true" />
-      <property name="name:0" value="path" />
-      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="842994667883030148">
-        <link role="classifier:3" targetNodeId="4.~Path" resolveInfo="Path" />
+    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="9015822011646769817">
+      <property name="name:0" value="runtimeClassPath" />
+      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9015822011646769818">
+        <link role="classifier:3" targetNodeId="11.~ClassPathEntry" resolveInfo="ClassPathEntry" />
       </node>
-      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="842994667883030149">
-        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="842994667883030150">
-          <link role="baseMethodDeclaration:3" targetNodeId="4.~Path.&lt;init&gt;()" />
+      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="9015822011646769819">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="9015822011646769820">
+          <link role="baseMethodDeclaration:3" targetNodeId="11.~ClassPathEntry.&lt;init&gt;()" resolveInfo="ClassPathEntry" />
         </node>
       </node>
     </node>
@@ -1600,7 +1479,7 @@
                               </node>
                             </node>
                             <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="842994667883030292">
-                              <link role="declaration:0" targetNodeId="842994667883030067" resolveInfo="classPath" />
+                              <link role="declaration:0" targetNodeId="9015822011646769813" resolveInfo="classPath" />
                             </node>
                           </node>
                         </node>
@@ -1622,7 +1501,7 @@
                       </node>
                     </node>
                     <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="842994667883030300">
-                      <link role="declaration:0" targetNodeId="842994667883030115" resolveInfo="devkitDescriptor" />
+                      <link role="declaration:0" targetNodeId="9015822011646764044" resolveInfo="devkitDescriptor" />
                     </node>
                   </node>
                 </node>
@@ -1969,8 +1848,8 @@
                                 </node>
                               </node>
                             </node>
-                            <node role="builder:0" type="jetbrains.mps.xmlQuery.structure.ElementBuilder:4" id="842994667883030449">
-                              <link role="elementDeclaration:4" targetNodeId="2574803278448809961" resolveInfo="entry" />
+                            <node role="builder:0" type="jetbrains.mps.xmlQuery.structure.ElementBuilder:4" id="9015822011646769844">
+                              <link role="elementDeclaration:4" targetNodeId="2574803278448809918" resolveInfo="entry" />
                             </node>
                           </node>
                         </node>
@@ -2560,14 +2439,14 @@
                           </node>
                         </node>
                         <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="1772246947774056132">
-                          <link role="declaration:0" targetNodeId="842994667883030091" resolveInfo="mappingPriorityRule" />
+                          <link role="declaration:0" targetNodeId="9015822011646764025" resolveInfo="mappingPriorityRule" />
                         </node>
                       </node>
                     </node>
                   </node>
                 </node>
                 <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="1772246947774056133">
-                  <link role="declaration:0" targetNodeId="842994667883030075" resolveInfo="generatorDescriptor" />
+                  <link role="declaration:0" targetNodeId="9015822011646764011" resolveInfo="generatorDescriptor" />
                 </node>
               </node>
             </node>
@@ -3366,7 +3245,7 @@
                       </node>
                     </node>
                     <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="842994667883030999">
-                      <link role="declaration:0" targetNodeId="842994667883030087" resolveInfo="mappingConfig_ExternalRef" />
+                      <link role="declaration:0" targetNodeId="9015822011646764048" resolveInfo="mappingConfig_ExternalRef" />
                     </node>
                   </node>
                 </node>
@@ -3491,7 +3370,7 @@
                       </node>
                     </node>
                     <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="842994667883031052">
-                      <link role="declaration:0" targetNodeId="842994667883030087" resolveInfo="mappingConfig_ExternalRef" />
+                      <link role="declaration:0" targetNodeId="9015822011646764048" resolveInfo="mappingConfig_ExternalRef" />
                     </node>
                   </node>
                 </node>
@@ -3587,7 +3466,7 @@
                       </node>
                     </node>
                     <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="842994667883031094">
-                      <link role="declaration:0" targetNodeId="842994667883030087" resolveInfo="mappingConfig_ExternalRef" />
+                      <link role="declaration:0" targetNodeId="9015822011646764048" resolveInfo="mappingConfig_ExternalRef" />
                     </node>
                   </node>
                 </node>
@@ -3737,7 +3616,7 @@
                       </node>
                     </node>
                     <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="842994667883031159">
-                      <link role="declaration:0" targetNodeId="842994667883030087" resolveInfo="mappingConfig_ExternalRef" />
+                      <link role="declaration:0" targetNodeId="9015822011646764048" resolveInfo="mappingConfig_ExternalRef" />
                     </node>
                   </node>
                 </node>
@@ -4254,8 +4133,8 @@
                               </node>
                               <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation:7" id="842994667883031378" />
                             </node>
-                            <node role="operation:3" type="jetbrains.mps.xmlQuery.structure.AccessChildrenOperation:4" id="842994667883031379">
-                              <link role="elementDeclaration:4" targetNodeId="2574803278448809961" resolveInfo="entry" />
+                            <node role="operation:3" type="jetbrains.mps.xmlQuery.structure.AccessChildrenOperation:4" id="9015822011646769837">
+                              <link role="elementDeclaration:4" targetNodeId="2574803278448809918" resolveInfo="entry" />
                             </node>
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.ConcatOperation:7" id="7500439221912764249">
@@ -4271,8 +4150,8 @@
                                 </node>
                                 <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation:7" id="7500439221912764258" />
                               </node>
-                              <node role="operation:3" type="jetbrains.mps.xmlQuery.structure.AccessChildrenOperation:4" id="7500439221912764268">
-                                <link role="elementDeclaration:4" targetNodeId="2574803278448809961" resolveInfo="entry" />
+                              <node role="operation:3" type="jetbrains.mps.xmlQuery.structure.AccessChildrenOperation:4" id="9015822011646769841">
+                                <link role="elementDeclaration:4" targetNodeId="2574803278448809918" resolveInfo="entry" />
                               </node>
                             </node>
                           </node>
@@ -4326,7 +4205,7 @@
                               </node>
                             </node>
                             <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="842994667883031399">
-                              <link role="declaration:0" targetNodeId="842994667883030067" resolveInfo="classPath" />
+                              <link role="declaration:0" targetNodeId="9015822011646769813" resolveInfo="classPath" />
                             </node>
                           </node>
                         </node>
@@ -4395,8 +4274,8 @@
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.GetFirstOperation:7" id="842994667883031411" />
                           </node>
-                          <node role="operation:3" type="jetbrains.mps.xmlQuery.structure.AccessChildrenOperation:4" id="842994667883031412">
-                            <link role="elementDeclaration:4" targetNodeId="2574803278448809961" resolveInfo="entry" />
+                          <node role="operation:3" type="jetbrains.mps.xmlQuery.structure.AccessChildrenOperation:4" id="9015822011646769834">
+                            <link role="elementDeclaration:4" targetNodeId="2574803278448809918" resolveInfo="entry" />
                           </node>
                         </node>
                         <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="842994667883031413">
@@ -4442,8 +4321,8 @@
                                 </node>
                               </node>
                             </node>
-                            <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="842994667883031432">
-                              <link role="declaration:0" targetNodeId="842994667883030071" resolveInfo="runtimeClassPath" />
+                            <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="9015822011646769826">
+                              <link role="declaration:0" targetNodeId="2574803278448811632" resolveInfo="stubModelsEntry" />
                             </node>
                           </node>
                         </node>
@@ -4521,7 +4400,7 @@
                       </node>
                     </node>
                     <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="842994667883031464">
-                      <link role="declaration:0" targetNodeId="842994667883030095" resolveInfo="languageDescriptor" />
+                      <link role="declaration:0" targetNodeId="9015822011646763974" resolveInfo="languageDescriptor" />
                     </node>
                   </node>
                 </node>
@@ -6348,8 +6227,8 @@
                       </node>
                     </node>
                   </node>
-                  <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="702807520180568548">
-                    <link role="declaration:0" targetNodeId="6705025829619511223" resolveInfo="manager" />
+                  <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="9015822011646769849">
+                    <link role="declaration:0" targetNodeId="9015822011646769822" resolveInfo="stubsManager" />
                   </node>
                 </node>
                 <node role="statement:3" type="jetbrains.mps.baseLanguage.builders.structure.BuilderStatement:0" id="702807520180568549">
@@ -8801,7 +8680,7 @@
                               </node>
                             </node>
                             <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="842994667883032990">
-                              <link role="declaration:0" targetNodeId="842994667883030067" resolveInfo="classPath" />
+                              <link role="declaration:0" targetNodeId="9015822011646769813" resolveInfo="classPath" />
                             </node>
                           </node>
                         </node>
@@ -8900,7 +8779,7 @@
                       </node>
                     </node>
                     <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="842994667883033031">
-                      <link role="declaration:0" targetNodeId="842994667883030055" resolveInfo="solutionDescriptor" />
+                      <link role="declaration:0" targetNodeId="9015822011646764002" resolveInfo="solutionDescriptor" />
                     </node>
                   </node>
                 </node>
@@ -9503,6 +9382,152 @@
         <property name="name:3" value="e" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2709156219364650550">
           <link role="classifier:3" targetNodeId="2v.~Throwable" resolveInfo="Throwable" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders:0" id="9015822011646763875">
+    <property name="name:0" value="LanguageDescriptorsBuilders" />
+    <property name="package:0" value="builders" />
+    <link role="extendsBuilder:0" targetNodeId="842994667883030054" resolveInfo="ModuleDescriptorsBuilders" />
+    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="9015822011646763974">
+      <property name="root:0" value="true" />
+      <property name="name:0" value="languageDescriptor" />
+      <link role="extends:0" targetNodeId="842994667883030127" resolveInfo="moduleDescriptor" />
+      <node role="child:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild:0" id="9015822011646763975">
+        <link role="child:0" targetNodeId="9015822011646769817" resolveInfo="runtimeClassPath" />
+        <node role="attachStatement:0" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="9015822011646763976">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9015822011646763977">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9015822011646763978">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression:0" id="9015822011646763979" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9015822011646763980">
+                <link role="baseMethodDeclaration:3" targetNodeId="11.~LanguageDescriptor.getRuntimeClassPaths():java.util.List" resolveInfo="getRuntimeClassPaths" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9015822011646763981">
+              <link role="baseMethodDeclaration:3" targetNodeId="6.~List.add(java.lang.Object):boolean" resolveInfo="add" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression:0" id="9015822011646763982" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9015822011646763983">
+        <link role="classifier:3" targetNodeId="11.~LanguageDescriptor" resolveInfo="LanguageDescriptor" />
+      </node>
+      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="9015822011646763984">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="9015822011646763985">
+          <link role="baseMethodDeclaration:3" targetNodeId="11.~LanguageDescriptor.&lt;init&gt;()" resolveInfo="LanguageDescriptor" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders:0" id="9015822011646763988">
+    <property name="name:0" value="SolutionDescriptorsBuilders" />
+    <property name="package:0" value="builders" />
+    <link role="extendsBuilder:0" targetNodeId="842994667883030054" resolveInfo="ModuleDescriptorsBuilders" />
+    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="9015822011646764002">
+      <property name="name:0" value="solutionDescriptor" />
+      <property name="root:0" value="true" />
+      <link role="extends:0" targetNodeId="842994667883030127" resolveInfo="moduleDescriptor" />
+      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9015822011646764003">
+        <link role="classifier:3" targetNodeId="11.~SolutionDescriptor" resolveInfo="SolutionDescriptor" />
+      </node>
+      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="9015822011646764004">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="9015822011646764005">
+          <link role="baseMethodDeclaration:3" targetNodeId="11.~SolutionDescriptor.&lt;init&gt;()" resolveInfo="SolutionDescriptor" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders:0" id="9015822011646764006">
+    <property name="name:0" value="GeneratorDescriptorsBuilders" />
+    <property name="package:0" value="builders" />
+    <link role="extendsBuilder:0" targetNodeId="842994667883030054" resolveInfo="ModuleDescriptorsBuilders" />
+    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="9015822011646764011">
+      <property name="root:0" value="true" />
+      <property name="name:0" value="generatorDescriptor" />
+      <link role="extends:0" targetNodeId="842994667883030127" resolveInfo="moduleDescriptor" />
+      <node role="child:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChild:0" id="9015822011646764012">
+        <link role="child:0" targetNodeId="9015822011646764025" resolveInfo="mappingPriorityRule" />
+        <node role="attachStatement:0" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="9015822011646764013">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9015822011646764014">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9015822011646764015">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderParentExpression:0" id="9015822011646764016" />
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9015822011646764017">
+                <link role="baseMethodDeclaration:3" targetNodeId="11.~GeneratorDescriptor.getPriorityRules():java.util.List" resolveInfo="getPriorityRules" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="9015822011646764018">
+              <link role="baseMethodDeclaration:3" targetNodeId="6.~List.add(java.lang.Object):boolean" resolveInfo="add" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderChildExpression:0" id="9015822011646764019" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9015822011646764020">
+        <link role="classifier:3" targetNodeId="11.~GeneratorDescriptor" resolveInfo="GeneratorDescriptor" />
+      </node>
+      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="9015822011646764021">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="9015822011646764022">
+          <link role="baseMethodDeclaration:3" targetNodeId="11.~GeneratorDescriptor.&lt;init&gt;()" resolveInfo="GeneratorDescriptor" />
+        </node>
+      </node>
+    </node>
+    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="9015822011646764025">
+      <property name="name:0" value="mappingPriorityRule" />
+      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9015822011646764026">
+        <link role="classifier:3" targetNodeId="2.~MappingPriorityRule" resolveInfo="MappingPriorityRule" />
+      </node>
+      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="9015822011646764027">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="9015822011646764028">
+          <link role="baseMethodDeclaration:3" targetNodeId="2.~MappingPriorityRule.&lt;init&gt;()" resolveInfo="MappingPriorityRule" />
+        </node>
+      </node>
+    </node>
+    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="9015822011646764048">
+      <property name="root:0" value="true" />
+      <property name="name:0" value="mappingConfig_ExternalRef" />
+      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9015822011646764049">
+        <link role="classifier:3" targetNodeId="2.~MappingConfig_ExternalRef" resolveInfo="MappingConfig_ExternalRef" />
+      </node>
+      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="9015822011646764050">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="9015822011646764051">
+          <link role="baseMethodDeclaration:3" targetNodeId="2.~MappingConfig_ExternalRef.&lt;init&gt;()" resolveInfo="MappingConfig_ExternalRef" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders:0" id="9015822011646764030">
+    <property name="name:0" value="DevkitDescriptorsBuilders" />
+    <property name="package:0" value="builders" />
+    <link role="extendsBuilder:0" targetNodeId="842994667883030054" resolveInfo="ModuleDescriptorsBuilders" />
+    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="9015822011646764044">
+      <property name="root:0" value="true" />
+      <property name="name:0" value="devkitDescriptor" />
+      <link role="extends:0" targetNodeId="842994667883030127" resolveInfo="moduleDescriptor" />
+      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9015822011646764045">
+        <link role="classifier:3" targetNodeId="11.~DevkitDescriptor" resolveInfo="DevkitDescriptor" />
+      </node>
+      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="9015822011646764046">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="9015822011646764047">
+          <link role="baseMethodDeclaration:3" targetNodeId="11.~DevkitDescriptor.&lt;init&gt;()" resolveInfo="DevkitDescriptor" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilders:0" id="9015822011646769803">
+    <property name="name:0" value="ProjectDescriptorsBuilders" />
+    <property name="package:0" value="builders" />
+    <link role="extendsBuilder:0" targetNodeId="842994667883030054" resolveInfo="ModuleDescriptorsBuilders" />
+    <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilderDeclaration:0" id="9015822011646769808">
+      <property name="root:0" value="true" />
+      <property name="name:0" value="path" />
+      <node role="type:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="9015822011646769809">
+        <link role="classifier:3" targetNodeId="4.~Path" resolveInfo="Path" />
+      </node>
+      <node role="creator:0" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="9015822011646769810">
+        <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="9015822011646769811">
+          <link role="baseMethodDeclaration:3" targetNodeId="4.~Path.&lt;init&gt;()" resolveInfo="Path" />
         </node>
       </node>
     </node>

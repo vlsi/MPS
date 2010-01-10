@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
+import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import java.io.File;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -75,7 +76,7 @@ public class LanguageDescriptorPersistence {
             result_5080_0.getGenerators().add(GeneratorDescriptorPersistence.loadGeneratorDescriptor(generatorElement, file, macros));
           }
 
-          for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "classPath")).first(), "stubModelEntry")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "runtimeClassPath")).first(), "stubModelEntry")))) {
+          for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "classPath")).first(), "entry")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "runtimeClassPath")).first(), "entry")))) {
             // runtimeClassPath was left for compatibility 
             ClassPathEntry result_5080_5 = new ClassPathEntry();
             String result_5080_6 = macros.expandPath(entryElement.getAttributeValue("path"), file);
@@ -89,13 +90,13 @@ public class LanguageDescriptorPersistence {
             result_5080_0.getStubModelEntries().addAll(ModuleDescriptorPersistence.loadStubModelEntries(AttributeUtils.elementChildren(languageElement, "stubModelEntries"), file, macros));
           }
 
-          for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "languageRuntimeClassPath")).first(), "stubModelEntry"))) {
-            ClassPathEntry result_5080_8 = new ClassPathEntry();
+          for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "languageRuntimeClassPath")).first(), "entry"))) {
+            StubModelsEntry result_5080_8 = new StubModelsEntry();
             String result_5080_9 = macros.expandPath(entryElement.getAttributeValue("path"), file);
             result_5080_8.setPath(result_5080_9);
             boolean result_5080_10 = AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false);
             result_5080_8.setIncludedInVCS(result_5080_10);
-            result_5080_0.getRuntimeClassPaths().add(result_5080_8);
+            result_5080_0.getStubModelEntries().add(result_5080_8);
           }
 
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "sourcePath")).first(), "source"))) {
