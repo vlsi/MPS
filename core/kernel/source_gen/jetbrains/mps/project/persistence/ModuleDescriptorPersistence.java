@@ -15,8 +15,8 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.Macros;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import org.jdom.Document;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.smodel.ModelAccess;
@@ -146,6 +146,15 @@ public class ModuleDescriptorPersistence {
         }
         String result_9364_20 = macros.expandPath(pathName, file);
         result_9364_17.setPath(result_9364_20);
+        if (ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).isNotEmpty()) {
+          ModelRootManager result_9364_21 = new ModelRootManager();
+          Element manager = ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first();
+          String result_9364_22 = AttributeUtils.stringWithDefault(manager.getAttributeValue("moduleId"), "");
+          result_9364_21.setModuleId(result_9364_22);
+          String result_9364_23 = AttributeUtils.stringWithDefault(manager.getAttributeValue("className"), "");
+          result_9364_21.setClassName(result_9364_23);
+          result_9364_17.setManager(result_9364_21);
+        }
         return result_9364_17;
       }
     }.invoke();
@@ -162,58 +171,66 @@ public class ModuleDescriptorPersistence {
   private static StubModelsEntry loadModelEntry(final Element modelRootElement, final IFile file, final Macros macros) {
     return new _FunctionTypes._return_P0_E0<StubModelsEntry>() {
       public StubModelsEntry invoke() {
-        StubModelsEntry result_9364_21 = new StubModelsEntry();
-        String result_9364_22 = macros.expandPath(modelRootElement.getAttributeValue("path"), file);
-        result_9364_21.setPath(result_9364_22);
-        ModelRootManager result_9364_23 = new ModelRootManager();
-        String result_9364_24 = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("moduleId"), "");
-        result_9364_23.setModuleId(result_9364_24);
-        String result_9364_25 = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("className"), "");
-        result_9364_23.setClassName(result_9364_25);
-        result_9364_21.setManager(result_9364_23);
-        boolean result_9364_26 = AttributeUtils.booleanWithDefault(modelRootElement.getAttributeValue("include"), false);
-        result_9364_21.setIncludedInVCS(result_9364_26);
-        return result_9364_21;
+        StubModelsEntry result_9364_24 = new StubModelsEntry();
+        String result_9364_25 = macros.expandPath(modelRootElement.getAttributeValue("path"), file);
+        result_9364_24.setPath(result_9364_25);
+        ModelRootManager result_9364_26 = new ModelRootManager();
+        String result_9364_27 = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("moduleId"), "");
+        result_9364_26.setModuleId(result_9364_27);
+        String result_9364_28 = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("className"), "");
+        result_9364_26.setClassName(result_9364_28);
+        result_9364_24.setManager(result_9364_26);
+        boolean result_9364_29 = AttributeUtils.booleanWithDefault(modelRootElement.getAttributeValue("include"), false);
+        result_9364_24.setIncludedInVCS(result_9364_29);
+        return result_9364_24;
       }
     }.invoke();
   }
 
   public static void saveModelRoots(Element modelsElement, List<ModelRoot> modelRoots, IFile file, Macros macros) {
-    Element result_9364_27 = modelsElement;
+    Element result_9364_30 = modelsElement;
     for (ModelRoot root : ListSequence.fromList(modelRoots)) {
-      Element result_9364_28 = new Element("modelRoot");
-      String result_9364_29 = macros.shrinkPath((root.getPath() == null ?
+      Element result_9364_31 = new Element("modelRoot");
+      String result_9364_32 = macros.shrinkPath((root.getPath() == null ?
         "" :
         root.getPath()
       ), file);
-      result_9364_28.setAttribute("path", "" + result_9364_29);
-      String result_9364_30 = (root.getPrefix() == null ?
+      result_9364_31.setAttribute("path", "" + result_9364_32);
+      String result_9364_33 = (root.getPrefix() == null ?
         "" :
         root.getPrefix()
       );
-      result_9364_28.setAttribute("namespacePrefix", "" + result_9364_30);
+      result_9364_31.setAttribute("namespacePrefix", "" + result_9364_33);
       if (root.getHandlerClass() != null) {
-        String result_9364_31 = root.getHandlerClass();
-        result_9364_28.setAttribute("persistenceHandler", "" + result_9364_31);
+        String result_9364_34 = root.getHandlerClass();
+        result_9364_31.setAttribute("persistenceHandler", "" + result_9364_34);
       }
-      result_9364_27.addContent(result_9364_28);
+      if (root.getManager() != null) {
+        Element result_9364_35 = new Element("manager");
+        String result_9364_36 = root.getManager().getModuleId();
+        result_9364_35.setAttribute("moduleId", "" + result_9364_36);
+        String result_9364_37 = root.getManager().getClassName();
+        result_9364_35.setAttribute("className", "" + result_9364_37);
+        result_9364_31.addContent(result_9364_35);
+      }
+      result_9364_30.addContent(result_9364_31);
     }
   }
 
   public static void saveStubModelEntries(Element modelsElement, List<StubModelsEntry> modelRoots, IFile file, Macros macros) {
     for (StubModelsEntry root : ListSequence.fromList(modelRoots)) {
-      Element result_9364_32 = new Element("entry");
-      String result_9364_33 = macros.shrinkPath((root.getPath() == null ?
+      Element result_9364_38 = new Element("entry");
+      String result_9364_39 = macros.shrinkPath((root.getPath() == null ?
         "" :
         root.getPath()
       ), file);
-      result_9364_32.setAttribute("path", "" + result_9364_33);
-      boolean result_9364_34 = root.isIncludedInVCS();
-      result_9364_32.setAttribute("include", "" + result_9364_34);
-      String result_9364_35 = root.getManager().getModuleId();
-      result_9364_32.setAttribute("moduleId", "" + result_9364_35);
-      String result_9364_36 = root.getManager().getClassName();
-      result_9364_32.setAttribute("className", "" + result_9364_36);
+      result_9364_38.setAttribute("path", "" + result_9364_39);
+      boolean result_9364_40 = root.isIncludedInVCS();
+      result_9364_38.setAttribute("include", "" + result_9364_40);
+      String result_9364_41 = root.getManager().getModuleId();
+      result_9364_38.setAttribute("moduleId", "" + result_9364_41);
+      String result_9364_42 = root.getManager().getClassName();
+      result_9364_38.setAttribute("className", "" + result_9364_42);
     }
   }
 
