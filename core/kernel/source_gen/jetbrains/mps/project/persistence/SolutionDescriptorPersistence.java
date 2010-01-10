@@ -57,6 +57,10 @@ public class SolutionDescriptorPersistence {
 
           result_3591_0.getModelRoots().addAll(ModuleDescriptorPersistence.loadModelRoots(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "models")).first(), "modelRoot"), file, macros));
 
+          if (ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "stubModelEntries")).isNotEmpty()) {
+            result_3591_0.getStubModelEntries().addAll(ModuleDescriptorPersistence.loadStubModelEntries(AttributeUtils.elementChildren(solutionElement, "stubModelEntries"), file, macros));
+          }
+
           ModuleDescriptorPersistence.loadDependencies(result_3591_0, solutionElement);
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "classPath")).first(), "entry")).concat(ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(solutionElement, "runtimeClassPath")).first(), "entry")))) {
             // runtime classpath left for compatibility 
@@ -120,25 +124,31 @@ public class SolutionDescriptorPersistence {
         ModuleDescriptorPersistence.saveModelRoots(result_3591_19, descriptor.getModelRoots(), file, macros);
         result_3591_11.addContent(result_3591_19);
 
-        Element result_3591_20 = new Element("classPath");
-        for (ClassPathEntry entry : ListSequence.fromList(descriptor.getClassPaths())) {
-          Element result_3591_21 = new Element("entry");
-          String result_3591_22 = macros.shrinkPath(entry.getPath(), file);
-          result_3591_21.setAttribute("path", "" + result_3591_22);
-          boolean result_3591_23 = entry.isIncludedInVCS();
-          result_3591_21.setAttribute("include", "" + result_3591_23);
-          result_3591_20.addContent(result_3591_21);
+        if (!(descriptor.getStubModelEntries().isEmpty())) {
+          Element result_3591_20 = new Element("stubModelEntries");
+          ModuleDescriptorPersistence.saveStubModelEntries(result_3591_20, descriptor.getStubModelEntries(), file, macros);
+          result_3591_11.addContent(result_3591_20);
         }
-        result_3591_11.addContent(result_3591_20);
 
-        Element result_3591_24 = new Element("sourcePath");
-        for (String p : ListSequence.fromList(descriptor.getSourcePaths())) {
-          Element result_3591_25 = new Element("source");
-          String result_3591_26 = macros.shrinkPath(p, file);
-          result_3591_25.setAttribute("path", "" + result_3591_26);
-          result_3591_24.addContent(result_3591_25);
+        Element result_3591_21 = new Element("classPath");
+        for (ClassPathEntry entry : ListSequence.fromList(descriptor.getClassPaths())) {
+          Element result_3591_22 = new Element("entry");
+          String result_3591_23 = macros.shrinkPath(entry.getPath(), file);
+          result_3591_22.setAttribute("path", "" + result_3591_23);
+          boolean result_3591_24 = entry.isIncludedInVCS();
+          result_3591_22.setAttribute("include", "" + result_3591_24);
+          result_3591_21.addContent(result_3591_22);
         }
-        result_3591_11.addContent(result_3591_24);
+        result_3591_11.addContent(result_3591_21);
+
+        Element result_3591_25 = new Element("sourcePath");
+        for (String p : ListSequence.fromList(descriptor.getSourcePaths())) {
+          Element result_3591_26 = new Element("source");
+          String result_3591_27 = macros.shrinkPath(p, file);
+          result_3591_26.setAttribute("path", "" + result_3591_27);
+          result_3591_25.addContent(result_3591_26);
+        }
+        result_3591_11.addContent(result_3591_25);
 
         ModuleDescriptorPersistence.saveDependencies(result_3591_11, descriptor);
         return result_3591_11;

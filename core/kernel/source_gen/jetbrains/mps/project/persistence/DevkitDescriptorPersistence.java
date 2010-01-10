@@ -114,7 +114,7 @@ public class DevkitDescriptorPersistence {
 
         Element result_1953_18 = new Element("classPath");
         for (ClassPathEntry entry : ListSequence.fromList(descriptor.getClassPaths())) {
-          Element result_1953_19 = new Element("entry");
+          Element result_1953_19 = new Element("stubModelEntry");
           String result_1953_20 = Macros.devkitMacros().shrinkPath(entry.getPath(), file);
           result_1953_19.setAttribute("path", "" + result_1953_20);
           boolean result_1953_21 = entry.isIncludedInVCS();
