@@ -11,11 +11,13 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import java.util.List;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import java.awt.Frame;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
-import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 public class ShowMembers_Action extends GeneratedAction {
@@ -28,7 +30,7 @@ public class ShowMembers_Action extends GeneratedAction {
   public ShowMembers_Action() {
     super("Show Members", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull
@@ -75,10 +77,14 @@ public class ShowMembers_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      SNode container = SNodeOperations.getAncestor(ShowMembers_Action.this.node, "jetbrains.mps.baseLanguage.structure.IMemberContainer", true, false);
-      String header = "Structure of " + BaseConcept_Behavior.call_getPresentation_1213877396640(container) + ":";
+      final Wrappers._T<List<SNode>> members = new Wrappers._T<List<SNode>>();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          members.value = IMemberContainer_Behavior.call_getMembers_1213877531970(SNodeOperations.getAncestor(ShowMembers_Action.this.node, "jetbrains.mps.baseLanguage.structure.IMemberContainer", true, false));
+        }
+      });
       final Frame frame = MPSDataKeys.FRAME.getData(DataManager.getInstance().getDataContext());
-      SNode snode = CommonChoosers.showDialogNodeChooser(frame, IMemberContainer_Behavior.call_getMembers_1213877531970(container));
+      SNode snode = CommonChoosers.showDialogNodeChooser(frame, members.value);
       if (snode == null) {
         return;
       }
