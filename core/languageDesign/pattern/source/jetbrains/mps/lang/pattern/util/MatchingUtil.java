@@ -41,7 +41,8 @@ public class MatchingUtil {
     if (!node1.getConceptFqName().equals(node2.getConceptFqName())) return false;
 
     //properties
-    Set<String> propertyNames = node1.getPropertyNames();
+    Set<String> propertyNames1 = node1.getPropertyNames();
+    Set<String> propertyNames = propertyNames1;
     propertyNames.addAll(node2.getPropertyNames());
     for (String propertyName : propertyNames) {
       AbstractConceptDeclaration typeDeclaration = node1.getConceptDeclarationAdapter();
@@ -49,7 +50,8 @@ public class MatchingUtil {
       String propertyValue1 = node1.getProperty(propertyName);
       String propertyValue2 = node2.getProperty(propertyName);
       if (propertyDeclaration == null) {
-        LOG.warning("can't find a property declaration for property " + propertyName + " in a concept " + typeDeclaration);
+        SNode diagnosticsNode = propertyNames1.contains(propertyName) ? node1 : node2;
+        LOG.warning("can't find a property declaration for property " + propertyName + " in a concept " + typeDeclaration, diagnosticsNode);
         LOG.warning("try to compare just properties' internal values");
         if (!EqualUtil.equals(propertyValue1, propertyValue2)) {
           return false;
