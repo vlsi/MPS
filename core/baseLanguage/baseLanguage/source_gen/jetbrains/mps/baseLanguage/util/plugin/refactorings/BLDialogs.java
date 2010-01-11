@@ -5,7 +5,6 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.ide.chooseNode.BaseChooseNodeDialog;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class BLDialogs {
