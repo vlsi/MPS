@@ -4312,8 +4312,8 @@
                                 </node>
                               </node>
                             </node>
-                            <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="2448325025794054828">
-                              <link role="declaration:0" targetNodeId="9015822011646769813" resolveInfo="classPath" />
+                            <node role="builder:0" type="jetbrains.mps.baseLanguage.builders.structure.SimpleBuilder:0" id="2874712155533611572">
+                              <link role="declaration:0" targetNodeId="9015822011646769817" resolveInfo="runtimeClassPath" />
                             </node>
                           </node>
                         </node>

@@ -95,7 +95,7 @@ public class LanguageDescriptorPersistence {
             result_5080_8.setPath(result_5080_9);
             boolean result_5080_10 = AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false);
             result_5080_8.setIncludedInVCS(result_5080_10);
-            result_5080_0.getClassPaths().add(result_5080_8);
+            result_5080_0.getRuntimeClassPaths().add(result_5080_8);
           }
 
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "sourcePath")).first(), "source"))) {
