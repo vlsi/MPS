@@ -121,7 +121,7 @@ public class JavaModelUtil_new {
   }
 
   public static SNode findClassifier(String packageName, String shortClassName, boolean reportErrors) {
-    SModelFqName modelUID = new SModelFqName(packageName, SModelStereotype.JAVA_STUB);
+    SModelFqName modelUID = new SModelFqName(packageName, SModelStereotype.getStubStereotypeForId(LanguageID.JAVA));
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelUID);
     if (modelDescriptor == null) {
       if (reportErrors) LOG.error("couldn't find model '" + modelUID + "'");

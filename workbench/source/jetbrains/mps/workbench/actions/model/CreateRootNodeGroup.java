@@ -71,9 +71,9 @@ public class CreateRootNodeGroup extends BaseGroup {
     IScope scope = MPSDataKeys.SCOPE.getData(event.getDataContext());
     IOperationContext context = MPSDataKeys.OPERATION_CONTEXT.getData(event.getDataContext());
     Integer selectedItemsCount = MPSDataKeys.LOGICAL_VIEW_SELECTION_SIZE.getData(event.getDataContext());
-    boolean isJavaStubModel = SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype());
+    boolean isStubModel = SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
     boolean singleItemSelected = selectedItemsCount != null && selectedItemsCount == 1;
-    if (scope == null || context == null || isJavaStubModel || !singleItemSelected) {
+    if (scope == null || context == null || isStubModel || !singleItemSelected) {
       setEnabledState(event.getPresentation(), false);
       return;
     }

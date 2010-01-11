@@ -66,7 +66,7 @@ class DefaultFindUsagesManager extends FindUsagesManager {
     Set<AbstractConceptDeclaration> result = new HashSet<AbstractConceptDeclaration>();
     List<SModelDescriptor> models = scope.getModelDescriptors();
     for (SModelDescriptor model : models) {
-      if (model.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
+      if (SModelStereotype.isStubModelStereotype(model.getStereotype())) continue;
       HashSet<AbstractConceptDeclaration> descendantsKnownInModel = knownDescendantsInModelDescriptors.get(model);
       if (descendantsKnownInModel == null) {
         descendantsKnownInModel = new HashSet<AbstractConceptDeclaration>();

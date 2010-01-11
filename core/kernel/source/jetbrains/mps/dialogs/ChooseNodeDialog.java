@@ -53,7 +53,7 @@ public final class ChooseNodeDialog extends BaseDialog {
     assert module != null;
     Set<SModelDescriptor> models = new HashSet<SModelDescriptor>(module.getOwnModelDescriptors());
     for (SModelDescriptor model : new ArrayList<SModelDescriptor>(models)) {
-      if (model.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
+      if (SModelStereotype.isStubModelStereotype(model.getStereotype())) {
         models.remove(model);
       }
     }

@@ -138,8 +138,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public boolean isReadOnly() {
-    String stereotype = getSModelReference().getStereotype();
-    return stereotype.equals(SModelStereotype.JAVA_STUB);
+    return SModelStereotype.isStubModelStereotype(getSModelReference().getStereotype());
   }
 
   public long timestamp() {
