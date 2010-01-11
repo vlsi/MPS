@@ -984,5 +984,14 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="418496713971221936">
+    <property name="package:8" value="Actions.Action.Parameters" />
+    <link role="concept:8" targetNodeId="7.1217413147516:23" resolveInfo="ActionParameter" />
+    <node role="propertySupport:8" type="jetbrains.mps.lang.constraints.structure.BooleanNodePropertySupport:8" id="418496713971305604">
+      <property name="trueText:8" value="optional" />
+      <property name="falseText:8" value="required" />
+      <link role="propertyDeclaration:8" targetNodeId="7.1221669969834:23" resolveInfo="isOptional" />
+    </node>
+  </node>
 </model>
 

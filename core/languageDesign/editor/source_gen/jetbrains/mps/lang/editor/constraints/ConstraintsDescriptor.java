@@ -14,7 +14,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
   public ConstraintsDescriptor() {
     ListSequence.fromList(this.myConstraints).addElement(new ConceptEditorDeclaration_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new RGBColor_value_PropertyConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new ConceptPropertySupports_name_PropertyConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new CellModel_Component_editorComponent_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new QueryMethodIdEditorProviderExpression_queryIdProperty_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new CellMenuComponentFeature_Link_linkDeclaration_ReferentConstraint());
@@ -26,7 +25,6 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new CellModel_RefNode_linkDeclaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new CellModel_TransactionalProperty_property_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new NavigatableReferenceStyleClassItem_link_ReferentConstraint());
-    ListSequence.fromList(this.myConstraints).addElement(new BooleanPropertySupport_propertyDeclaration_ReferentConstraint());
   }
 
   public void unRegisterSelf(ModelConstraintsManager p0) {

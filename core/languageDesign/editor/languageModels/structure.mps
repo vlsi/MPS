@@ -4654,47 +4654,5 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473914776:0" resolveInfo="shortDescription" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="949199741004259306">
-    <property name="name:0" value="ConceptPropertySupports" />
-    <property name="package:0" value="PropertySupport" />
-    <property name="rootable:0" value="true" />
-    <link role="extends:0" targetNodeId="1166049232041:32" resolveInfo="AbstractComponent" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="949199741004311527">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="propertySupport" />
-      <property name="sourceCardinality:0" value="1..n" />
-      <link role="target:0" targetNodeId="949199741004259307:32" resolveInfo="AbstractPropertySupport" />
-    </node>
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="7993943361796672095">
-      <link role="intfc:0" targetNodeId="3.1169194658468:0" resolveInfo="INamedConcept" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="949199741004259307">
-    <property name="package:0" value="PropertySupport" />
-    <property name="name:0" value="AbstractPropertySupport" />
-    <link role="extends:0" targetNodeId="3.1133920641626:0" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="949199741004259309">
-      <property name="metaClass:0" value="reference" />
-      <property name="role:0" value="propertyDeclaration" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="1.1071489288299:0" resolveInfo="PropertyDeclaration" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="949199741004259308">
-      <link role="conceptPropertyDeclaration:0" targetNodeId="3.1137473854053:0" resolveInfo="abstract" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="949199741004360817">
-    <property name="package:0" value="PropertySupport" />
-    <property name="name:0" value="BooleanPropertySupport" />
-    <link role="extends:0" targetNodeId="949199741004259307:32" resolveInfo="AbstractPropertySupport" />
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="949199741004360818">
-      <property name="name:0" value="trueText" />
-      <link role="dataType:0" targetNodeId="3.1082983041843:0" resolveInfo="string" />
-    </node>
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="949199741004360819">
-      <property name="name:0" value="falseText" />
-      <link role="dataType:0" targetNodeId="3.1082983041843:0" resolveInfo="string" />
-    </node>
-  </node>
 </model>
 

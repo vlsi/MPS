@@ -5460,14 +5460,5 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="5703381818026464835" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptPropertySupports:32" id="7993943361796629293">
-    <property name="package:32" value="Actions.Action.Parameters" />
-    <link role="conceptDeclaration:32" targetNodeId="1.1217413147516:23" resolveInfo="ActionParameter" />
-    <node role="propertySupport:32" type="jetbrains.mps.lang.editor.structure.BooleanPropertySupport:32" id="7993943361796631102">
-      <property name="trueText:32" value="optional" />
-      <property name="falseText:32" value="required" />
-      <link role="propertyDeclaration:32" targetNodeId="1.1221669969834:23" resolveInfo="isOptional" />
-    </node>
-  </node>
 </model>
 
