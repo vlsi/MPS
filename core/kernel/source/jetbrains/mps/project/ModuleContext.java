@@ -25,9 +25,6 @@ import org.jetbrains.annotations.Nullable;
 import java.awt.Frame;
 import java.util.Set;
 
-/**
-
- */
 public class ModuleContext extends StandaloneMPSContext {
   private static final Logger LOG = Logger.getLogger(ModuleContext.class);
 
@@ -116,7 +113,7 @@ public class ModuleContext extends StandaloneMPSContext {
     }
 
     IModule module;
-    if (owningModules.size() == 1 || !askIfMany || SModelStereotype.JAVA_STUB.equals(model.getStereotype())) {
+    if (owningModules.size() == 1 || !askIfMany || SModelStereotype.isStubModelStereotype(model.getStereotype())) {
       module = owningModules.iterator().next();
     } else {
       Frame frame = null;
