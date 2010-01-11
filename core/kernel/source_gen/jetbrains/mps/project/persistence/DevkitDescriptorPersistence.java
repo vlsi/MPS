@@ -91,6 +91,7 @@ public class DevkitDescriptorPersistence {
         }
 
         if (!(descriptor.getExtendedDevkits().isEmpty())) {
+
           Element result_1953_12 = new Element("extendedDevKits");
           for (ModuleReference ref : ListSequence.fromList(descriptor.getExtendedDevkits())) {
             Element result_1953_13 = new Element("extendedDevKit");
