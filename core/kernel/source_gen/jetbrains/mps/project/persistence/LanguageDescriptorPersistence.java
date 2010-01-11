@@ -16,7 +16,6 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
-import jetbrains.mps.project.structure.modules.StubModelsEntry;
 import java.io.File;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -91,12 +90,12 @@ public class LanguageDescriptorPersistence {
           }
 
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "languageRuntimeClassPath")).first(), "entry"))) {
-            StubModelsEntry result_5080_8 = new StubModelsEntry();
+            ClassPathEntry result_5080_8 = new ClassPathEntry();
             String result_5080_9 = macros.expandPath(entryElement.getAttributeValue("path"), file);
             result_5080_8.setPath(result_5080_9);
             boolean result_5080_10 = AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false);
             result_5080_8.setIncludedInVCS(result_5080_10);
-            result_5080_0.getStubModelEntries().add(result_5080_8);
+            result_5080_0.getClassPaths().add(result_5080_8);
           }
 
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "sourcePath")).first(), "source"))) {
