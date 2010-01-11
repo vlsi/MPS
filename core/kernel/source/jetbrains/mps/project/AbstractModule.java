@@ -711,7 +711,12 @@ public abstract class AbstractModule implements IModule {
   }
 
   private void loadNewStubs() {
-    loadJavaStubModelRoots();
+    for (SModelRoot mr1 : getSModelRoots()) {
+      IModelRootManager m = mr1.getManager();
+      if (m instanceof BaseStubModelRootManager) {
+        m.updateModels(mr1, this);
+      }
+    }
 
     for (StubPath sp : myStubPath) {
       BaseStubModelRootManager manager = createStubManager(sp);
@@ -746,15 +751,6 @@ public abstract class AbstractModule implements IModule {
     } catch (ManagerNotFoundException e) {
       LOG.error("Can't create stub manager " + sp.getManager().getClassName() + " for " + sp.getPath(), e);
       return null;
-    }
-  }
-
-  private void loadJavaStubModelRoots() {
-    for (SModelRoot mr : getSModelRoots()) {
-      IModelRootManager m = mr.getManager();
-      if (m instanceof BaseStubModelRootManager) {
-        m.updateModels(mr, this);
-      }
     }
   }
 

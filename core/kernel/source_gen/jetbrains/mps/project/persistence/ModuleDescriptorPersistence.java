@@ -175,9 +175,9 @@ public class ModuleDescriptorPersistence {
         String result_9364_25 = macros.expandPath(modelRootElement.getAttributeValue("path"), file);
         result_9364_24.setPath(result_9364_25);
         ModelRootManager result_9364_26 = new ModelRootManager();
-        String result_9364_27 = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("moduleId"), "");
+        String result_9364_27 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("moduleId"), "");
         result_9364_26.setModuleId(result_9364_27);
-        String result_9364_28 = AttributeUtils.stringWithDefault(modelRootElement.getAttributeValue("className"), "");
+        String result_9364_28 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(modelRootElement, "manager")).first().getAttributeValue("className"), "");
         result_9364_26.setClassName(result_9364_28);
         result_9364_24.setManager(result_9364_26);
         boolean result_9364_29 = AttributeUtils.booleanWithDefault(modelRootElement.getAttributeValue("include"), false);
@@ -219,7 +219,7 @@ public class ModuleDescriptorPersistence {
 
   public static void saveStubModelEntries(Element modelsElement, List<StubModelsEntry> modelRoots, IFile file, Macros macros) {
     for (StubModelsEntry root : ListSequence.fromList(modelRoots)) {
-      Element result_9364_38 = new Element("entry");
+      Element result_9364_38 = new Element("stubModelEntry");
       String result_9364_39 = macros.shrinkPath((root.getPath() == null ?
         "" :
         root.getPath()
@@ -227,10 +227,12 @@ public class ModuleDescriptorPersistence {
       result_9364_38.setAttribute("path", "" + result_9364_39);
       boolean result_9364_40 = root.isIncludedInVCS();
       result_9364_38.setAttribute("include", "" + result_9364_40);
-      String result_9364_41 = root.getManager().getModuleId();
-      result_9364_38.setAttribute("moduleId", "" + result_9364_41);
-      String result_9364_42 = root.getManager().getClassName();
-      result_9364_38.setAttribute("className", "" + result_9364_42);
+      Element result_9364_41 = new Element("manager");
+      String result_9364_42 = root.getManager().getModuleId();
+      result_9364_41.setAttribute("moduleId", "" + result_9364_42);
+      String result_9364_43 = root.getManager().getClassName();
+      result_9364_41.setAttribute("className", "" + result_9364_43);
+      result_9364_38.addContent(result_9364_41);
     }
   }
 

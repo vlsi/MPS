@@ -28,6 +28,7 @@ public class LanguageDescriptor extends ModuleDescriptor {
   private List<ModuleReference> myExtendedLanguages;
   private List<Dependency> myRuntimeModules;
   private List<ClassPathEntry> myRuntimeClassPaths;
+  private List<StubModelsEntry> myRuntimeStubModels;
 
   public LanguageDescriptor() {
     super();
@@ -36,6 +37,7 @@ public class LanguageDescriptor extends ModuleDescriptor {
     myExtendedLanguages = new ArrayList<ModuleReference>();
     myRuntimeModules = new ArrayList<Dependency>();
     myRuntimeClassPaths = new ArrayList<ClassPathEntry>();
+    myRuntimeStubModels = new ArrayList<StubModelsEntry>();
   }
 
   public String getGenPath() {
@@ -64,6 +66,10 @@ public class LanguageDescriptor extends ModuleDescriptor {
 
   public List<ClassPathEntry> getRuntimeClassPaths() {
     return myRuntimeClassPaths;
+  }
+
+  public List<StubModelsEntry> getRuntimeStubModels() {
+    return myRuntimeStubModels;
   }
 
   @Override

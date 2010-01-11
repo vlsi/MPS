@@ -16,6 +16,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
+import jetbrains.mps.project.structure.modules.StubModelsEntry;
+import jetbrains.mps.project.structure.model.ModelRootManager;
 import java.io.File;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
@@ -98,12 +100,29 @@ public class LanguageDescriptorPersistence {
             result_5080_0.getRuntimeClassPaths().add(result_5080_8);
           }
 
+          if (ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "runtimeStubModels")).isNotEmpty()) {
+            for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "runtimeStubModels")).first(), "stubModelEntry"))) {
+              StubModelsEntry result_5080_11 = new StubModelsEntry();
+              String result_5080_12 = macros.expandPath(entryElement.getAttributeValue("path"), file);
+              result_5080_11.setPath(result_5080_12);
+              ModelRootManager result_5080_13 = new ModelRootManager();
+              String result_5080_14 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(entryElement, "manager")).first().getAttributeValue("moduleId"), "");
+              result_5080_13.setModuleId(result_5080_14);
+              String result_5080_15 = AttributeUtils.stringWithDefault(ListSequence.fromList(AttributeUtils.elementChildren(entryElement, "manager")).first().getAttributeValue("className"), "");
+              result_5080_13.setClassName(result_5080_15);
+              result_5080_11.setManager(result_5080_13);
+              boolean result_5080_16 = AttributeUtils.booleanWithDefault(entryElement.getAttributeValue("include"), false);
+              result_5080_11.setIncludedInVCS(result_5080_16);
+              result_5080_0.getRuntimeStubModels().add(result_5080_11);
+            }
+          }
+
           for (Element entryElement : ListSequence.fromList(AttributeUtils.elementChildren(ListSequence.fromList(AttributeUtils.elementChildren(languageElement, "sourcePath")).first(), "source"))) {
             result_5080_0.getSourcePaths().add(macros.expandPath(entryElement.getAttributeValue("path"), file));
           }
 
-          boolean result_5080_11 = AttributeUtils.booleanWithDefault(languageElement.getAttributeValue("compileInMPS"), false);
-          result_5080_0.setCompileInMPS(result_5080_11);
+          boolean result_5080_17 = AttributeUtils.booleanWithDefault(languageElement.getAttributeValue("compileInMPS"), false);
+          result_5080_0.setCompileInMPS(result_5080_17);
           return result_5080_0;
         }
       }.invoke();
@@ -130,88 +149,107 @@ public class LanguageDescriptorPersistence {
     final Macros macros = Macros.languageDescriptor();
     Element languageElement = new _FunctionTypes._return_P0_E0<Element>() {
       public Element invoke() {
-        Element result_5080_12 = new Element("language");
-        String result_5080_13 = descriptor.getNamespace();
-        result_5080_12.setAttribute("namespace", "" + result_5080_13);
+        Element result_5080_18 = new Element("language");
+        String result_5080_19 = descriptor.getNamespace();
+        result_5080_18.setAttribute("namespace", "" + result_5080_19);
         if (descriptor.getUUID() != null) {
-          String result_5080_14 = descriptor.getUUID();
-          result_5080_12.setAttribute("uuid", "" + result_5080_14);
+          String result_5080_20 = descriptor.getUUID();
+          result_5080_18.setAttribute("uuid", "" + result_5080_20);
         }
         if (descriptor.getGenPath() != null) {
-          String result_5080_15 = macros.shrinkPath(descriptor.getGenPath(), file);
-          result_5080_12.setAttribute("generatorOutputPath", "" + result_5080_15);
+          String result_5080_21 = macros.shrinkPath(descriptor.getGenPath(), file);
+          result_5080_18.setAttribute("generatorOutputPath", "" + result_5080_21);
         }
-        boolean result_5080_16 = descriptor.getEnableJavaStubs();
-        result_5080_12.setAttribute("java-stubs-enabled", "" + result_5080_16);
+        boolean result_5080_22 = descriptor.getEnableJavaStubs();
+        result_5080_18.setAttribute("java-stubs-enabled", "" + result_5080_22);
 
-        Element result_5080_17 = new Element("models");
-        ModuleDescriptorPersistence.saveModelRoots(result_5080_17, descriptor.getModelRoots(), file, macros);
-        result_5080_12.addContent(result_5080_17);
+        Element result_5080_23 = new Element("models");
+        ModuleDescriptorPersistence.saveModelRoots(result_5080_23, descriptor.getModelRoots(), file, macros);
+        result_5080_18.addContent(result_5080_23);
 
-        Element result_5080_18 = new Element("accessoryModels");
+        Element result_5080_24 = new Element("accessoryModels");
         for (SModelReference model : ListSequence.fromList(descriptor.getAccessoryModels())) {
-          Element result_5080_19 = new Element("model");
-          String result_5080_20 = model.toString();
-          result_5080_19.setAttribute("modelUID", "" + result_5080_20);
-          result_5080_18.addContent(result_5080_19);
+          Element result_5080_25 = new Element("model");
+          String result_5080_26 = model.toString();
+          result_5080_25.setAttribute("modelUID", "" + result_5080_26);
+          result_5080_24.addContent(result_5080_25);
         }
-        result_5080_12.addContent(result_5080_18);
+        result_5080_18.addContent(result_5080_24);
 
-        Element result_5080_21 = new Element("generators");
+        Element result_5080_27 = new Element("generators");
         for (GeneratorDescriptor generatorDescriptor : ListSequence.fromList(descriptor.getGenerators())) {
-          GeneratorDescriptorPersistence.saveGeneratorDescriptor(result_5080_21, generatorDescriptor, file, macros);
+          GeneratorDescriptorPersistence.saveGeneratorDescriptor(result_5080_27, generatorDescriptor, file, macros);
         }
-        result_5080_12.addContent(result_5080_21);
+        result_5080_18.addContent(result_5080_27);
 
-        Element result_5080_22 = new Element("classPath");
+        Element result_5080_28 = new Element("classPath");
         for (ClassPathEntry entry : ListSequence.fromList(descriptor.getClassPaths())) {
-          Element result_5080_23 = new Element("entry");
-          String result_5080_24 = macros.shrinkPath(entry.getPath(), file);
-          result_5080_23.setAttribute("path", "" + result_5080_24);
-          boolean result_5080_25 = entry.isIncludedInVCS();
-          result_5080_23.setAttribute("include", "" + result_5080_25);
-          result_5080_22.addContent(result_5080_23);
+          Element result_5080_29 = new Element("entry");
+          String result_5080_30 = macros.shrinkPath(entry.getPath(), file);
+          result_5080_29.setAttribute("path", "" + result_5080_30);
+          boolean result_5080_31 = entry.isIncludedInVCS();
+          result_5080_29.setAttribute("include", "" + result_5080_31);
+          result_5080_28.addContent(result_5080_29);
         }
-        result_5080_12.addContent(result_5080_22);
+        result_5080_18.addContent(result_5080_28);
 
         if (!(descriptor.getStubModelEntries().isEmpty())) {
-          Element result_5080_26 = new Element("stubModelEntries");
-          ModuleDescriptorPersistence.saveStubModelEntries(result_5080_26, descriptor.getStubModelEntries(), file, macros);
-          result_5080_12.addContent(result_5080_26);
+          Element result_5080_32 = new Element("stubModelEntries");
+          ModuleDescriptorPersistence.saveStubModelEntries(result_5080_32, descriptor.getStubModelEntries(), file, macros);
+          result_5080_18.addContent(result_5080_32);
         }
 
-        Element result_5080_27 = new Element("languageRuntimeClassPath");
+        Element result_5080_33 = new Element("languageRuntimeClassPath");
         for (ClassPathEntry entry : ListSequence.fromList(descriptor.getRuntimeClassPaths())) {
-          Element result_5080_28 = new Element("entry");
-          String result_5080_29 = macros.shrinkPath(entry.getPath(), file);
-          result_5080_28.setAttribute("path", "" + result_5080_29);
-          result_5080_27.addContent(result_5080_28);
+          Element result_5080_34 = new Element("entry");
+          String result_5080_35 = macros.shrinkPath(entry.getPath(), file);
+          result_5080_34.setAttribute("path", "" + result_5080_35);
+          result_5080_33.addContent(result_5080_34);
         }
-        result_5080_12.addContent(result_5080_27);
+        result_5080_18.addContent(result_5080_33);
 
-        Element result_5080_30 = new Element("sourcePath");
+        if (!(descriptor.getRuntimeStubModels().isEmpty())) {
+          Element result_5080_36 = new Element("runtimeStubModels");
+          for (StubModelsEntry entry : ListSequence.fromList(descriptor.getRuntimeStubModels())) {
+            Element result_5080_37 = new Element("stubModelEntry");
+            String result_5080_38 = macros.shrinkPath(entry.getPath(), file);
+            result_5080_37.setAttribute("path", "" + result_5080_38);
+            boolean result_5080_39 = entry.isIncludedInVCS();
+            result_5080_37.setAttribute("include", "" + result_5080_39);
+            Element result_5080_40 = new Element("manager");
+            String result_5080_41 = entry.getManager().getModuleId();
+            result_5080_40.setAttribute("moduleId", "" + result_5080_41);
+            String result_5080_42 = entry.getManager().getClassName();
+            result_5080_40.setAttribute("className", "" + result_5080_42);
+            result_5080_37.addContent(result_5080_40);
+            result_5080_36.addContent(result_5080_37);
+          }
+          result_5080_18.addContent(result_5080_36);
+        }
+
+        Element result_5080_43 = new Element("sourcePath");
         for (String p : ListSequence.fromList(descriptor.getSourcePaths())) {
-          Element result_5080_31 = new Element("source");
-          String result_5080_32 = macros.shrinkPath(p, file);
-          result_5080_31.setAttribute("path", "" + result_5080_32);
-          result_5080_30.addContent(result_5080_31);
+          Element result_5080_44 = new Element("source");
+          String result_5080_45 = macros.shrinkPath(p, file);
+          result_5080_44.setAttribute("path", "" + result_5080_45);
+          result_5080_43.addContent(result_5080_44);
         }
-        result_5080_12.addContent(result_5080_30);
+        result_5080_18.addContent(result_5080_43);
 
-        boolean result_5080_33 = descriptor.getCompileInMPS();
-        result_5080_12.setAttribute("compileInMPS", "" + result_5080_33);
+        boolean result_5080_46 = descriptor.getCompileInMPS();
+        result_5080_18.setAttribute("compileInMPS", "" + result_5080_46);
 
-        ModuleDescriptorPersistence.saveDependencies(result_5080_12, descriptor);
+        ModuleDescriptorPersistence.saveDependencies(result_5080_18, descriptor);
 
-        Element result_5080_34 = new Element("extendedLanguages");
+        Element result_5080_47 = new Element("extendedLanguages");
         for (ModuleReference ref : ListSequence.fromList(descriptor.getExtendedLanguages())) {
-          Element result_5080_35 = new Element("extendedLanguage");
-          String result_5080_36 = ref.toString();
-          result_5080_35.setText(result_5080_36);
-          result_5080_34.addContent(result_5080_35);
+          Element result_5080_48 = new Element("extendedLanguage");
+          String result_5080_49 = ref.toString();
+          result_5080_48.setText(result_5080_49);
+          result_5080_47.addContent(result_5080_48);
         }
-        result_5080_12.addContent(result_5080_34);
-        return result_5080_12;
+        result_5080_18.addContent(result_5080_47);
+        return result_5080_18;
       }
     }.invoke();
 
