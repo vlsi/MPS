@@ -30,7 +30,7 @@ public class SModelsSubtree {
   public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
     List<SModelDescriptor> regularModels = new ArrayList<SModelDescriptor>();
     List<SModelDescriptor> tests = new ArrayList<SModelDescriptor>();
-    List<SModelDescriptor> javaStubs = new ArrayList<SModelDescriptor>();
+    List<SModelDescriptor> stubs = new ArrayList<SModelDescriptor>();
 
     IModule module = operationContext.getModule();
     assert module != null;
@@ -43,8 +43,8 @@ public class SModelsSubtree {
         stereotype = ".";
       }
 
-      if (SModelStereotype.JAVA_STUB.equals(stereotype)) {
-        javaStubs.add(modelDescriptor);
+      if (SModelStereotype.isStubModelStereotype(stereotype)) {
+        stubs.add(modelDescriptor);
       } else if (SModelStereotype.TESTS.equals(stereotype)) {
         tests.add(modelDescriptor);
       } else {
@@ -97,17 +97,17 @@ public class SModelsSubtree {
       rootTreeNode.add(testsNode);
     }
 
-    if (!javaStubs.isEmpty()) {
+    if (!stubs.isEmpty()) {
       builder = new SModelNamespaceTreeBuilder();
-      List<SModelTreeNode> javaStubNodes = getRootModelTreeNodes(javaStubs, operationContext, isNeedBuildChildModels(rootTreeNode));
-      for (SModelTreeNode treeNode : javaStubNodes) {
+      List<SModelTreeNode> stubNodes = getRootModelTreeNodes(stubs, operationContext, isNeedBuildChildModels(rootTreeNode));
+      for (SModelTreeNode treeNode : stubNodes) {
         builder.addNode(treeNode);
       }
 
-      JavaStubsTreeNode javaStubsNode = new JavaStubsTreeNode(operationContext);
-      builder.fillNode(javaStubsNode);
+      StubsTreeNode stubsNode = new StubsTreeNode(operationContext);
+      builder.fillNode(stubsNode);
 
-      rootTreeNode.add(javaStubsNode);
+      rootTreeNode.add(stubsNode);
     }
   }
 
@@ -154,9 +154,9 @@ public class SModelsSubtree {
     return shortName.split("\\.").length - 1;
   }
 
-  public static class JavaStubsTreeNode extends TextTreeNode implements StereotypeProvider {
-    public JavaStubsTreeNode(IOperationContext context) {
-      super("java stubs", context);
+  public static class StubsTreeNode extends TextTreeNode implements StereotypeProvider {
+    public StubsTreeNode(IOperationContext context) {
+      super("stubs", context);
 
       setIcon(Icons.PROJECT_MODELS_ICON, false);
       setIcon(Icons.PROJECT_MODELS_EXPANDED_ICON, true);

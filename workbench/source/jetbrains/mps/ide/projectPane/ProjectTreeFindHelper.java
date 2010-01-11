@@ -2,7 +2,7 @@ package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AccessoriesModelTreeNode;
 import jetbrains.mps.ide.projectPane.ProjectLanguageTreeNode.AllModelsTreeNode;
-import jetbrains.mps.ide.projectPane.SModelsSubtree.JavaStubsTreeNode;
+import jetbrains.mps.ide.projectPane.SModelsSubtree.StubsTreeNode;
 import jetbrains.mps.ide.projectPane.SModelsSubtree.TestsTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -166,7 +166,7 @@ public abstract class ProjectTreeFindHelper {
       if (node instanceof ProjectModuleTreeNode) descent = true;
       if (node instanceof NamespaceTextNode) descent = true;
       if (node instanceof AccessoriesModelTreeNode) descent = true;
-      if (node instanceof JavaStubsTreeNode) descent = true;
+      if (node instanceof StubsTreeNode) descent = true;
       if (node instanceof AllModelsTreeNode) descent = true;
       if (node instanceof TestsTreeNode) descent = true;
 
