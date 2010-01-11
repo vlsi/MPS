@@ -12545,6 +12545,9 @@
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1212699852032">
       <property name="name:32" value="expressionBox" />
       <property name="vertical:32" value="false" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="4022780949364649459">
+        <link role="editorComponent:32" targetNodeId="4972241301747172167" resolveInfo="IMethodCall_typeArguments" />
+      </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="4590747232508931347">
         <link role="relationDeclaration:32" targetNodeId="17.1212686240295:3" />
         <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="4590747232508931348">

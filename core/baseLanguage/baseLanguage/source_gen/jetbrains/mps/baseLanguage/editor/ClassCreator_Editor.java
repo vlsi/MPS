@@ -43,6 +43,7 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PARAMETERS_INFORMATION, new BaseMethodParameterInformationQuery());
     }
+    editorCell.addEditorCell(this.createComponent_9368_1(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_9368_0(editorContext, node));
     if (renderingCondition9368_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createCollection_9368_1(editorContext, node));
@@ -71,6 +72,12 @@ public class ClassCreator_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
+    return editorCell;
+  }
+
+  private EditorCell createComponent_9368_1(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new IMethodCall_typeArguments(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 

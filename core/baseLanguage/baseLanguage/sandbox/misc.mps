@@ -1048,7 +1048,19 @@
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="3293010995237625810">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3293010995237625811" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3293010995237625812" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3293010995237625813" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3293010995237625813">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4022780949364649452">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4022780949364649453">
+            <property name="name:3" value="s" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableReference:3" id="4022780949364649454">
+              <link role="typeVariableDeclaration:3" targetNodeId="4022780949364644260" resolveInfo="ERJ" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="typeVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="4022780949364644260">
+        <property name="name:3" value="ERJ" />
+      </node>
     </node>
     <node role="typeVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration:3" id="3463236706575385305">
       <property name="name:3" value="E" />
