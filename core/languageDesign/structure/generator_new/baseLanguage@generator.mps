@@ -916,8 +916,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1096027956237">
-        </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1096027956237" />
         <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1096027956236" />
         <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1096027956235">
           <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1219110545179">
@@ -968,8 +967,7 @@
         </node>
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1095688526433">
           <property name="name:3" value="value" />
-          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1095688526434">
-          </node>
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1095688526434" />
         </node>
         <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1095688526435">
           <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1219110655219">
@@ -1120,7 +1118,6 @@
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1095689039699">
           <property name="name:3" value="value" />
           <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1095689039701">
-            <property name="name:3" value="int" />
           </node>
         </node>
         <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1095689039702">
