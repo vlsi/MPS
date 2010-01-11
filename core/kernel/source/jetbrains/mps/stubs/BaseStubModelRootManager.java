@@ -43,7 +43,11 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   private StubLocation myLocation;
 
   public final void updateModels(@NotNull SModelRoot root, @NotNull IModule module) {
-    myLocation = new StubLocation(root.getPath(), root.getPrefix(), module);
+    updateModels(root.getPath(), root.getPrefix(), module);
+  }
+
+  public final void updateModels(String path, String prefix, @NotNull IModule module) {
+    myLocation = new StubLocation(path, prefix, module);
 
     SModelRepository repository = SModelRepository.getInstance();
 
@@ -113,7 +117,7 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
     }
   }
 
-  public Set<SNodeDescriptor> getRootNodeDescriptors(StubLocation location){
+  public Set<SNodeDescriptor> getRootNodeDescriptors(StubLocation location) {
     return Collections.emptySet();
   }
 
