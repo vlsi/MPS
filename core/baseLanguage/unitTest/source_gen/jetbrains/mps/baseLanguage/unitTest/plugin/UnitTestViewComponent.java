@@ -131,6 +131,7 @@ public class UnitTestViewComponent extends JPanel {
 
   public void dispose() {
     this.outputComponent.dispose();
+    this.treeComponent.dispose();
     this.invokeCloseListeners();
   }
 

@@ -28,6 +28,9 @@ public enum TestState {
   }
 
   public Icon getIcon() {
+    if (this.equals(TestState.IN_PROGRESS)) {
+      return TestTreeIconAnimator.getCurrentFrame();
+    }
     return this.icon;
   }
 }
