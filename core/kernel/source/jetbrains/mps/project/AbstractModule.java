@@ -714,12 +714,9 @@ public abstract class AbstractModule implements IModule {
     loadJavaStubModelRoots();
 
     for (StubPath sp : myStubPath) {
-      try {
-        BaseStubModelRootManager manager = createStubManager(sp.getManager());
-        manager.updateModels(sp.getPath(), "", this);
-      } catch (ManagerNotFoundException e) {
-        LOG.error("Can't create stub manager " + sp.getManager().getClassName() + " for " + sp.getPath(), e);
-      }
+      BaseStubModelRootManager manager = createStubManager(sp);
+      if (manager == null) continue;
+      manager.updateModels(sp.getPath(), "", this);
     }
 
     myManager.dispose();
@@ -739,27 +736,16 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
-  private BaseStubModelRootManager createStubManager(ModelRootManager manager) throws ManagerNotFoundException {
-    String moduleId = manager.getModuleId();
-    String className = manager.getClassName();
-
-    Language l = ((Language) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId)));
-    if (l == null) {
-      String messgae = "Language with id " + moduleId + " not found for stubs loader " + className + ". Some stub models won't be loaded.";
-      throw new ManagerNotFoundException(messgae);
-    }
-
-    Class managerClass = l.getClass(className);
-    if (managerClass == null) {
-      throw new ManagerNotFoundException("Manager class " + className + " not found in language " + moduleId);
-    }
-
+  @Nullable
+  private BaseStubModelRootManager createStubManager(StubPath sp) {
     try {
-      return (BaseStubModelRootManager) managerClass.newInstance();
-    } catch (InstantiationException e) {
-      throw new ManagerNotFoundException("Problems during instantiating manager " + className, e);
-    } catch (IllegalAccessException e) {
-      throw new ManagerNotFoundException("Problems during instantiating manager " + className, e);
+      String moduleId = sp.getManager().getModuleId();
+      String className = sp.getManager().getClassName();
+
+      return (BaseStubModelRootManager) BaseStubModelRootManager.create(moduleId, className);
+    } catch (ManagerNotFoundException e) {
+      LOG.error("Can't create stub manager " + sp.getManager().getClassName() + " for " + sp.getPath(), e);
+      return null;
     }
   }
 
@@ -771,7 +757,6 @@ public abstract class AbstractModule implements IModule {
       }
     }
   }
-
 
   public IClassPathItem getModuleWithDependenciesClassPathItem() {
     return getDependenciesClasspath(CollectionUtil.set((IModule) this), false, false);

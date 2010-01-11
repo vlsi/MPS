@@ -17,9 +17,12 @@ package jetbrains.mps.stubs;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.SModelRoot;
+import jetbrains.mps.project.SModelRoot.ManagerNotFoundException;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.AbstractModelRootManager;
+import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -126,4 +129,25 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   protected abstract void updateModel(StubLocation location, ModelInfo modelInfo);
 
   protected abstract Set<Language> getLanguagesToImport();
+
+  public static IModelRootManager create(String moduleId, String className) throws ManagerNotFoundException {
+    Language l = ((Language) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId)));
+    if (l == null) {
+      String messgae = "Language with id " + moduleId + " not found for stubs loader " + className + ". Some stub models won't be loaded.";
+      throw new ManagerNotFoundException(messgae);
+    }
+
+    Class managerClass = l.getClass(className);
+    if (managerClass == null) {
+      throw new ManagerNotFoundException("Manager class " + className + " not found in language " + moduleId);
+    }
+
+    try {
+      return (IModelRootManager) managerClass.newInstance();
+    } catch (InstantiationException e) {
+      throw new ManagerNotFoundException("Problems during instantiating manager " + className, e);
+    } catch (IllegalAccessException e) {
+      throw new ManagerNotFoundException("Problems during instantiating manager " + className, e);
+    }
+  }
 }

@@ -17,9 +17,12 @@ package jetbrains.mps.project;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.persistence.DefaultModelRootManager;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
+import jetbrains.mps.stubs.BaseStubModelRootManager;
 
 public class SModelRoot {
   private static final Logger LOG = Logger.getLogger(SModelRoot.class);
@@ -38,26 +41,10 @@ public class SModelRoot {
     if (myModelRoot.getManager() != null) {
       String moduleId = myModelRoot.getManager().getModuleId();
       String className = myModelRoot.getManager().getClassName();
+      return BaseStubModelRootManager.create(moduleId, className);
+    }
 
-      Language l = ((Language) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId)));
-      if (l == null) {
-        String messgae = "Language with id " + moduleId + " not found for stubs loader " + className + ". Some stub models won't be loaded.";
-        throw new ManagerNotFoundException(messgae);
-      }
-
-      Class managerClass = l.getClass(className);
-      if (managerClass == null) {
-        throw new ManagerNotFoundException("Manager class " + className + " not found in language " + moduleId);
-      }
-
-      try {
-        return (IModelRootManager) managerClass.newInstance();
-      } catch (InstantiationException e) {
-        throw new ManagerNotFoundException("Problems during instantiating manager " + className, e);
-      } catch (IllegalAccessException e) {
-        throw new ManagerNotFoundException("Problems during instantiating manager " + className, e);
-      }
-    } else if (myModelRoot.getHandlerClass() != null) {
+    if (myModelRoot.getHandlerClass() != null) {
       String fqName = myModelRoot.getHandlerClass();
       try {
         Class cls = Class.forName(fqName);
@@ -66,9 +53,9 @@ public class SModelRoot {
         LOG.error(e);
         return IModelRootManager.NULL_MANAGER;
       }
-    } else {
-      return new DefaultModelRootManager();
     }
+
+    return new DefaultModelRootManager();
   }
 
   public IModelRootManager getManager() {
