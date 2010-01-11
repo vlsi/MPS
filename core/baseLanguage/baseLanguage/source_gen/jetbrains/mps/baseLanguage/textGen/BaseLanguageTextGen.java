@@ -150,6 +150,12 @@ public abstract class BaseLanguageTextGen {
   }
 
   public static void methodCall(SNode methodCall, final SNodeTextGen textGen) {
+    BaseLanguageTextGen.methodTypeArguments(methodCall, textGen);
+    textGen.append(textGen.getReferentPresentation(SNodeOperations.getReference(methodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"))));
+    BaseLanguageTextGen.arguments(methodCall, textGen);
+  }
+
+  public static void methodTypeArguments(SNode methodCall, final SNodeTextGen textGen) {
     if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty()) {
       textGen.append("<");
       if (ListSequence.fromList(SLinkOperations.getTargets(methodCall, "typeArgument", true)).isNotEmpty()) {
@@ -161,11 +167,6 @@ public abstract class BaseLanguageTextGen {
         }
       }
       textGen.append(">");
-      textGen.append(textGen.getReferentPresentation(SNodeOperations.getReference(methodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"))));
-      BaseLanguageTextGen.arguments(methodCall, textGen);
-    } else {
-      textGen.append(textGen.getReferentPresentation(SNodeOperations.getReference(methodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"))));
-      BaseLanguageTextGen.arguments(methodCall, textGen);
     }
   }
 

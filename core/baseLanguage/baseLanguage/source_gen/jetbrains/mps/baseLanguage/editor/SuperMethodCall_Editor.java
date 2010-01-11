@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -41,10 +42,17 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_4254_0");
     editorCell.addEditorCell(this.createConstant_4254_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4254_3(editorContext, node));
+    editorCell.addEditorCell(this.createComponent_4254_0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_4254_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4254_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_4254_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_4254_2(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createComponent_4254_0(EditorContext editorContext, SNode node) {
+    AbstractCellProvider provider = new IMethodCall_typeArguments(node);
+    EditorCell editorCell = provider.createEditorCell(editorContext);
     return editorCell;
   }
 
@@ -83,6 +91,10 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_4254_3");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_1_RTransform");
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -102,6 +114,10 @@ public class SuperMethodCall_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     provider.setAuxiliaryCellProvider(new SuperMethodCall_Editor._Inline4254_0());
     editorCell = provider.createEditorCell(editorContext);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
+    }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

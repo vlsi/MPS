@@ -3086,6 +3086,12 @@
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1101210485458">
         <property name="text:32" value="." />
         <link role="styleClass:32" targetNodeId="1215096040201" resolveInfo="Dot" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem:32" id="163269897332083233">
+          <property name="tag:32" value="ext_1_RTransform" />
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="163269897332083231">
+        <link role="editorComponent:32" targetNodeId="4972241301747172167" resolveInfo="IMethodCall_typeArguments" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="1091709481300">
         <link role="relationDeclaration:32" targetNodeId="17.1073063089579:3" />
@@ -3094,6 +3100,9 @@
             <property name="readOnly:32" value="true" />
             <link role="relationDeclaration:32" targetNodeId="18.1169194664001:0" resolveInfo="name" />
           </node>
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem:32" id="163269897332083232">
+          <property name="tag:32" value="ext_2_RTransform" />
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1091709481303">
