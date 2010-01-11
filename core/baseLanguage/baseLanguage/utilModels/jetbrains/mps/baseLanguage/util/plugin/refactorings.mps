@@ -59,7 +59,6 @@
   <import index="27" modelUID="f:java_stub#com.intellij.openapi.ui(com.intellij.openapi.ui@java_stub)" version="-1" />
   <import index="28" modelUID="f:java_stub#jetbrains.mps.typesystem.inference(jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
   <import index="29" modelUID="f:java_stub#jetbrains.mps.typesystem.inference.util(jetbrains.mps.typesystem.inference.util@java_stub)" version="-1" />
-  <import index="30" modelUID="f:java_stub#jetbrains.mps.ide.chooseNode(jetbrains.mps.ide.chooseNode@java_stub)" version="-1" />
   <import index="31" modelUID="f:java_stub#jetbrains.mps.refactoring(jetbrains.mps.refactoring@java_stub)" version="-1" />
   <import index="32" modelUID="f:java_stub#jetbrains.mps.ide.findusages.view(jetbrains.mps.ide.findusages.view@java_stub)" version="-1" />
   <import index="33" modelUID="f:java_stub#jetbrains.mps.baseLanguage.findUsages(jetbrains.mps.baseLanguage.findUsages@java_stub)" version="-1" />
@@ -16526,8 +16525,8 @@
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8492459591399169317">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="8492459591399169318">
                 <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="8492459591399169319">
-                  <link role="baseMethodDeclaration:3" targetNodeId="30.~BaseChooseNodeDialog.&lt;init&gt;(java.awt.Frame,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.smodel.SModelDescriptor,java.lang.String)" resolveInfo="BaseChooseNodeDialog" />
                   <link role="classifier:3" targetNodeId="7425580205971833185" resolveInfo="BaseChooseNodeDialog" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="7425580205971833226" resolveInfo="BaseChooseNodeDialog" />
                   <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399169320" />
                   <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399169321">
                     <property name="isAbstract:3" value="false" />
@@ -16646,8 +16645,8 @@
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="8492459591399169369">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClassCreator:3" id="8492459591399169370">
                 <node role="cls:3" type="jetbrains.mps.baseLanguage.structure.AnonymousClass:3" id="8492459591399169371">
-                  <link role="baseMethodDeclaration:3" targetNodeId="30.~BaseChooseNodeDialog.&lt;init&gt;(java.awt.Frame,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.smodel.SModelDescriptor,java.lang.String)" resolveInfo="BaseChooseNodeDialog" />
                   <link role="classifier:3" targetNodeId="7425580205971833185" resolveInfo="BaseChooseNodeDialog" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="7425580205971833226" resolveInfo="BaseChooseNodeDialog" />
                   <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8492459591399169372" />
                   <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8492459591399169373">
                     <property name="isAbstract:3" value="false" />
