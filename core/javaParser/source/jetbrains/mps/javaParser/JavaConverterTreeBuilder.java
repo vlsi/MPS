@@ -373,32 +373,33 @@ public class JavaConverterTreeBuilder {
       case CompoundAssignment.MINUS:
         op = MinusAssignmentExpression.newInstance(myCurrentModel);
         break;
-      //todo make those expressions' counterparts in BL
-      /* case CompoundAssignment.MULTIPLY:
-      op = JBinaryOperator.ASG_MUL;
+
+       case CompoundAssignment.MULTIPLY:
+      op = MulAssignmentExpression.newInstance(myCurrentModel);
       break;
     case CompoundAssignment.DIVIDE:
-      op = JBinaryOperator.ASG_DIV;
+      op = DivAssignmentExpression.newInstance(myCurrentModel);
       break;
     case CompoundAssignment.AND:
-      op = JBinaryOperator.ASG_BIT_AND;
+      op = AndAssignmentExpression.newInstance(myCurrentModel);
       break;
     case CompoundAssignment.OR:
-      op = JBinaryOperator.ASG_BIT_OR;
+      op = OrAssignmentExpression.newInstance(myCurrentModel);
       break;
     case CompoundAssignment.XOR:
-      op = JBinaryOperator.ASG_BIT_XOR;
+      op = XorAssignmentExpression.newInstance(myCurrentModel);
       break;
     case CompoundAssignment.REMAINDER:
-      op = JBinaryOperator.ASG_MOD;
+      op = RemAssignmentExpression.newInstance(myCurrentModel);
       break;
     case CompoundAssignment.LEFT_SHIFT:
-      op = JBinaryOperator.ASG_SHL;
+      op = LeftShiftAssignmentExpression.newInstance(myCurrentModel);
       break;
     case CompoundAssignment.RIGHT_SHIFT:
-      op = JBinaryOperator.ASG_SHR;
+      op = RightShiftAssignmentExpression.newInstance(myCurrentModel);
       break;
-    case CompoundAssignment.UNSIGNED_RIGHT_SHIFT:
+     //todo make this expression's counterpart in BL
+ /*   case CompoundAssignment.UNSIGNED_RIGHT_SHIFT:
       op = JBinaryOperator.ASG_SHRU;
       break;*/
       default:

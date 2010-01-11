@@ -3575,5 +3575,77 @@
       <link role="target:0" targetNodeId="1068580123157:3" resolveInfo="Statement" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7024111702304495340">
+    <property name="name:0" value="MulAssignmentExpression" />
+    <property name="package:0" value="assignments" />
+    <link role="extends:0" targetNodeId="1215693861676:3" resolveInfo="BaseAssignmentExpression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7024111702304495341">
+      <property name="value:0" value="*=" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7024111702304501412">
+    <property name="name:0" value="DivAssignmentExpression" />
+    <property name="package:0" value="assignments" />
+    <link role="extends:0" targetNodeId="1215693861676:3" resolveInfo="BaseAssignmentExpression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7024111702304501413">
+      <property name="value:0" value="/=" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7024111702304501414">
+    <property name="name:0" value="RemAssignmentExpression" />
+    <property name="package:0" value="assignments" />
+    <link role="extends:0" targetNodeId="1215693861676:3" resolveInfo="BaseAssignmentExpression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7024111702304501415">
+      <property name="value:0" value="%=" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7024111702304501416">
+    <property name="name:0" value="OrAssignmentExpression" />
+    <property name="package:0" value="assignments" />
+    <link role="extends:0" targetNodeId="1215693861676:3" resolveInfo="BaseAssignmentExpression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7024111702304501417">
+      <property name="value:0" value="|=" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7024111702304501418">
+    <property name="name:0" value="AndAssignmentExpression" />
+    <property name="package:0" value="assignments" />
+    <link role="extends:0" targetNodeId="1215693861676:3" resolveInfo="BaseAssignmentExpression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7024111702304501419">
+      <property name="value:0" value="&amp;=" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7024111702304501420">
+    <property name="name:0" value="XorAssignmentExpression" />
+    <property name="package:0" value="assignments" />
+    <link role="extends:0" targetNodeId="1215693861676:3" resolveInfo="BaseAssignmentExpression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7024111702304501421">
+      <property name="value:0" value="^=" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7024111702304501422">
+    <property name="name:0" value="LeftShiftAssignmentExpression" />
+    <property name="package:0" value="assignments" />
+    <link role="extends:0" targetNodeId="1215693861676:3" resolveInfo="BaseAssignmentExpression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7024111702304501423">
+      <property name="value:0" value="&lt;&lt;=" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7024111702304501424">
+    <property name="name:0" value="RightShiftAssignmentExpression" />
+    <property name="package:0" value="assignments" />
+    <link role="extends:0" targetNodeId="1215693861676:3" resolveInfo="BaseAssignmentExpression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="7024111702304501425">
+      <property name="value:0" value="&gt;&gt;=" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
 </model>
 
