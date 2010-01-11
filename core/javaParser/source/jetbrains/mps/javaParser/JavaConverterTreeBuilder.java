@@ -713,13 +713,12 @@ public class JavaConverterTreeBuilder {
       methodCall.getNode().addReference(methodReference);
     }
 
-    // The arguments come first...
+    // type arguments
+    addMethodTypeArgs(x.typeArguments, methodCall);
+
+    // arguments
     addCallArgs(x.arguments, methodCall);
 
-    /*if (x.valueCast != null) {
-      JType castType = (JType) typeMap.get(x.valueCast);
-      return maybeCast(castType, call);
-    }*/
     return result;
   }
 
@@ -744,6 +743,8 @@ public class JavaConverterTreeBuilder {
         }
       }
     }
+
+    addMethodTypeArgs(x.typeArguments, classCreator);
 
     // Plain old regular user arguments
     addCallArgs(x.arguments, classCreator);
@@ -789,6 +790,14 @@ public class JavaConverterTreeBuilder {
     GenericNewExpression result = GenericNewExpression.newInstance(myCurrentModel);
     result.setCreator(creator);
     return result;
+  }
+
+  private void addMethodTypeArgs(TypeReference[] typeArgs, IMethodCall call) {
+    if (typeArgs == null) return;
+    for (TypeReference typeArg : typeArgs) {
+      Type type = myTypesProvider.createType(typeArg.resolvedType);
+      call.addTypeArgument(type);
+    }
   }
 
   private void addCallArgs(Expression[] args, IMethodCall call) {

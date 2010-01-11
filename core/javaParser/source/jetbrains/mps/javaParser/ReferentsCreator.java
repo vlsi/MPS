@@ -422,11 +422,13 @@ public class ReferentsCreator {
           jetbrains.mps.baseLanguage.structure.ConstructorDeclaration.newInstance(model);
         Visibility visibility = getMethodVisibility(b);
         constructorDeclaration.setVisibility(visibility);
+        //should be put to map before mapParameters()
+        myReferentsCreator.myBindingMap.put(b, constructorDeclaration);
+        processMethodTypeParameters(ctorDecl, constructorDeclaration);
         mapParameters(constructorDeclaration, ctorDecl);
         if (!(classConcept instanceof AnonymousClass)) {
           classConcept.addConstructor(constructorDeclaration);
         }
-        myReferentsCreator.myBindingMap.put(b, constructorDeclaration);
         return true;
       } catch (Throwable e) {
         throw new JavaConverterException(e);
@@ -438,16 +440,7 @@ public class ReferentsCreator {
       MethodBinding b = methodDeclaration.binding;
       Classifier enclosingClassifier = (Classifier) myReferentsCreator.myBindingMap.get(scope.enclosingSourceType());
       BaseMethodDeclaration newMethod = processMethodBinding(b, enclosingClassifier, methodDeclaration instanceof AnnotationMethodDeclaration);
-      SModel model = myReferentsCreator.myCurrentModel;
-      TypeParameter[] typeParameters = methodDeclaration.typeParameters;
-      if (typeParameters != null) {
-        for (TypeParameter typeParameter : typeParameters) {
-          TypeVariableDeclaration typeVariableDeclaration = TypeVariableDeclaration.newInstance(model);
-          typeVariableDeclaration.setName(new String(typeParameter.name));
-          setTypeVariableBounds(typeParameter, typeVariableDeclaration);
-          newMethod.addTypeVariableDeclaration(typeVariableDeclaration);
-        }
-      }
+      processMethodTypeParameters(methodDeclaration, newMethod);
       newMethod.setReturnType(createType(b.returnType));
       mapParameters(newMethod, methodDeclaration);
       return true;
@@ -480,6 +473,19 @@ public class ReferentsCreator {
       return result;
     }
 
+    private void processMethodTypeParameters(AbstractMethodDeclaration methodDeclaration, BaseMethodDeclaration newMethod) {
+      SModel model = myReferentsCreator.myCurrentModel;
+      TypeParameter[] typeParameters = methodDeclaration.typeParameters();
+      if (typeParameters != null) {
+        for (TypeParameter typeParameter : typeParameters) {
+          TypeVariableDeclaration typeVariableDeclaration = TypeVariableDeclaration.newInstance(model);
+          typeVariableDeclaration.setName(new String(typeParameter.name));
+          setTypeVariableBounds(typeParameter, typeVariableDeclaration);
+          newMethod.addTypeVariableDeclaration(typeVariableDeclaration);
+        }
+      }
+    }
+
     private void mapParameters(BaseMethodDeclaration method, AbstractMethodDeclaration x) {
       MethodBinding b = x.binding;
       int paramCount = (b.parameters != null ? b.parameters.length : 0);
@@ -491,8 +497,6 @@ public class ReferentsCreator {
         }
       }
     }
-
-
 
     private ParameterDeclaration createParameter(LocalVariableBinding binding,
                                                  BaseMethodDeclaration enclosingMethod) {
