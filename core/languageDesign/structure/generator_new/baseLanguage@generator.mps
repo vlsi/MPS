@@ -1117,8 +1117,7 @@
         </node>
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1095689039699">
           <property name="name:3" value="value" />
-          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1095689039701">
-          </node>
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1095689039701" />
         </node>
         <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1095689039702">
           <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1219110685494">
@@ -3360,7 +3359,6 @@
           </node>
         </node>
         <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1096045148383">
-          <property name="name:3" value="int" />
         </node>
         <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1096045201276">
           <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1219165134105">
@@ -3583,7 +3581,7 @@
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1204740459838">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1096046219762" />
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1204740459839">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~INodeAdapter.addChild(java.lang.String,jetbrains.mps.smodel.INodeAdapter):void" resolveInfo="addChild" />
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~BaseAdapter.addChild(java.lang.String,jetbrains.mps.smodel.INodeAdapter):void" resolveInfo="addChild" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1096046216853">
                   <link role="variableDeclaration:3" targetNodeId="1096045201277" resolveInfo="_property_constant_" />
                   <link role="classifier:3" targetNodeId="1096045130767" resolveInfo="_context_class_" />
@@ -3681,7 +3679,7 @@
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1204740459435">
               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1096046728860" />
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1204740459436">
-                <link role="baseMethodDeclaration:3" targetNodeId="5.~INodeAdapter.insertChild(jetbrains.mps.smodel.INodeAdapter,java.lang.String,jetbrains.mps.smodel.INodeAdapter):void" resolveInfo="insertChild" />
+                <link role="baseMethodDeclaration:3" targetNodeId="5.~BaseAdapter.insertChild(jetbrains.mps.smodel.INodeAdapter,java.lang.String,jetbrains.mps.smodel.INodeAdapter):void" resolveInfo="insertChild" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1096046741081">
                   <link role="variableDeclaration:3" targetNodeId="1096046720280" resolveInfo="prev" />
                 </node>
