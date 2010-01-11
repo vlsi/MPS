@@ -95,7 +95,7 @@ public class OptimizeImportsHelper {
   private Result optimizeModelsImports_internal(List<SModelDescriptor> modelsToOptimize) {
     Result result = new Result();
     for (SModelDescriptor modelDescriptor : modelsToOptimize) {
-      if (SModelStereotype.JAVA_STUB.equals(modelDescriptor.getStereotype())) continue;
+      if (SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) continue;
       result.add(optimizeModelImports_internal(modelDescriptor));
     }
     return result;

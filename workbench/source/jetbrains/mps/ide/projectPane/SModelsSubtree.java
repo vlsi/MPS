@@ -21,10 +21,7 @@ import jetbrains.mps.ide.StereotypeProvider;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ProjectModels;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -166,7 +163,7 @@ public class SModelsSubtree {
     }
 
     public String getStereotype() {
-      return SModelStereotype.JAVA_STUB;
+      return SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
     }
 
     public boolean isStrict() {

@@ -102,7 +102,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
 
   public boolean generationRequired(SModelDescriptor sm, Project project, @Nullable NoCachesStrategy strategy) {
     if (sm.isPackaged()) return false;
-    if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) return false;
+    if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return false;
     if (sm.getModelFile() == null) return false;
     if (isDoNotGenerate(sm)) return false;
     if (SModelRepository.getInstance().isChanged(sm)) return true;

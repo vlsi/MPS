@@ -253,38 +253,6 @@ public class ModuleMaker {
     return new jetbrains.mps.plugin.CompilationResult(errorCount, 0, false);
   }
 
-  private SNode getNodeByLine(final CategorizedProblem cp, final String fqName) {
-    final int lastDot = fqName.lastIndexOf(".");
-    String pkg = (lastDot == -1 ?
-      "" :
-      fqName.substring(0, lastDot)
-    );
-
-    List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptorsByModelName(pkg);
-    final Wrappers._T<SModelDescriptor> descriptor = new Wrappers._T<SModelDescriptor>(null);
-
-
-    for (SModelDescriptor modelDescriptor : ListSequence.fromList(list)) {
-      if (!(ObjectUtils.equals(modelDescriptor.getStereotype(), SModelStereotype.JAVA_STUB)) && !(modelDescriptor.isTransient())) {
-        descriptor.value = modelDescriptor;
-      }
-    }
-
-    final Wrappers._T<SNode> nodeToShow = new Wrappers._T<SNode>(null);
-    if (descriptor.value != null) {
-      final DebugInfo result = BLDebugInfoCache.getInstance().get(descriptor.value);
-      if (result != null) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            nodeToShow.value = result.getNodeForLine(fqName.substring(lastDot + 1) + ".java", cp.getSourceLineNumber(), descriptor.value.getSModel());
-          }
-        });
-      }
-    }
-
-    return nodeToShow.value;
-  }
-
   private String getName(char[][] compoundName) {
     StringBuilder result = new StringBuilder();
     for (int i = 0; i < compoundName.length; i++) {

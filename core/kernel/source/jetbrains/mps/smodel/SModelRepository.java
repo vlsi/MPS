@@ -399,7 +399,7 @@ public class SModelRepository implements ApplicationComponent {
 
   public void updateReferences() {
     for (SModelDescriptor sm : getModelDescriptors()) {
-      if (SModelStereotype.JAVA_STUB.equals(sm.getStereotype())) continue;
+      if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) continue;
 
       boolean needSaving = false;
 

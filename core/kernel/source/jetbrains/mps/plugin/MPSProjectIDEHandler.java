@@ -127,7 +127,7 @@ public class MPSProjectIDEHandler extends UnicastRemoteObject implements IMPSIDE
           public void run() {
             for (SModelDescriptor descriptor : GlobalScope.getInstance().getModelDescriptors()) {
               if (!namespace.equals(descriptor.getSModelReference().getLongName())) continue;
-              if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
+              if (descriptor.getStereotype().equals(SModelStereotype.getStubStereotypeForId(LanguageID.JAVA))) continue;
 
               SNode node = descriptor.getSModel().getNodeById(id);
               if (node != null) {

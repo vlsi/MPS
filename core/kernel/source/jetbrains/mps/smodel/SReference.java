@@ -114,7 +114,7 @@ public abstract class SReference {
     if (ourLoggingOff) return;
     //skip errors in java stubs because they can have reference to classes that doesn't present
     //in class path
-    if (getSourceNode().getModel().getStereotype().endsWith(SModelStereotype.JAVA_STUB)) return;
+    if (SModelStereotype.isStubModelStereotype(getSourceNode().getModel().getStereotype())) return;
     if (getSourceNode().getModel().getUserObject(SModel.TMP_MODEL) != null) return;
 
     if (ourErrorReportedRefs.contains(this)) return;
