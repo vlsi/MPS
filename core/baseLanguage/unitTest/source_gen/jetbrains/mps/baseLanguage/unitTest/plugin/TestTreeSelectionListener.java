@@ -19,19 +19,23 @@ public class TestTreeSelectionListener implements TreeSelectionListener {
   }
 
   public void valueChanged(TreeSelectionEvent event) {
+    if (event.getNewLeadSelectionPath() == null) {
+      return;
+    }
     TreePath path = this.treeSelectionModel.getSelectionPath();
+    if (path == null) {
+      return;
+    }
     String className = null;
     String methodName = null;
-    if (path != null) {
-      Object node = path.getLastPathComponent();
-      if (node instanceof TestCaseTreeNode) {
-        TestCaseTreeNode n = (TestCaseTreeNode) node;
-        className = n.getClassName();
-      } else if (node instanceof TestMethodTreeNode) {
-        TestMethodTreeNode n = (TestMethodTreeNode) node;
-        className = n.getClassName();
-        methodName = n.getMethodName();
-      }
+    Object node = path.getLastPathComponent();
+    if (node instanceof TestCaseTreeNode) {
+      TestCaseTreeNode n = (TestCaseTreeNode) node;
+      className = n.getClassName();
+    } else if (node instanceof TestMethodTreeNode) {
+      TestMethodTreeNode n = (TestMethodTreeNode) node;
+      className = n.getClassName();
+      methodName = n.getMethodName();
     }
     this.outputComponent.filter(className, methodName);
     this.statisticsModel.setFilter(className, methodName);

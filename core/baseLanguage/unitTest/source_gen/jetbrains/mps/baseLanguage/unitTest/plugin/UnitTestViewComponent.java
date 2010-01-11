@@ -77,6 +77,8 @@ public class UnitTestViewComponent extends JPanel {
     this.progressLineComponent = new ProgressLine(this.testState);
     this.progressLineComponent.setMinimumSize(new Dimension(0, this.progressLineComponent.getMinimumSize().height));
     this.treeComponent.addTreeSelectionListener(new TestTreeSelectionListener(this.treeComponent, statisticsModel, this.outputComponent));
+    this.treeComponent.addMouseListener(new TestTreeRootMouseListener(this.treeComponent, statisticsModel, this.outputComponent));
+
 
     leftPanel.add(this.actionToolComponent, BorderLayout.NORTH);
     rightPanel.add(stackTraceActions, BorderLayout.LINE_START);
