@@ -439,6 +439,7 @@
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1200269551723334091">
                   <link role="variableDeclaration:3" targetNodeId="1200269551723334085:0" resolveInfo="context" />
                 </node>
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1766229992445373892" />
               </node>
             </node>
           </node>
@@ -1587,6 +1588,9 @@
     <node role="superclass:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1208270565843">
       <link role="classifier:3" targetNodeId="7.~JPanel" resolveInfo="JPanel" />
     </node>
+    <node role="implementedInterface:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1766229992445520138">
+      <link role="classifier:3" targetNodeId="96.~Disposable" resolveInfo="Disposable" />
+    </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1208284790428">
     <property name="package:3" value="tool.tree" />
@@ -2254,6 +2258,16 @@
     </node>
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="1208286242568">
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1208286242571">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1766229992445373669">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1766229992445373883">
+            <link role="classConcept:3" targetNodeId="40.~Disposer" resolveInfo="Disposer" />
+            <link role="baseMethodDeclaration:3" targetNodeId="40.~Disposer.register(com.intellij.openapi.Disposable,com.intellij.openapi.Disposable):void" resolveInfo="register" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1766229992445373888">
+              <link role="variableDeclaration:3" targetNodeId="1766229992445325263:0" resolveInfo="disposable" />
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1766229992445373890" />
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4403789015609949336">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="4403789015609949340">
             <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="4403789015609949343">
@@ -2356,16 +2370,6 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock:3" id="1200269551723334477">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1209120457017">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1209120457018">
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1209120457019">
-                <link role="baseMethodDeclaration:3" targetNodeId="11.~MPSTree.rebuildLater():void" resolveInfo="rebuildLater" />
-              </node>
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1209120457020" />
-            </node>
-          </node>
-        </node>
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1208286242570" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1208286242569" />
@@ -2379,6 +2383,12 @@
         <property name="name:3" value="context" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1200269551723333768">
           <link role="classifier:3" targetNodeId="9.~IOperationContext" resolveInfo="IOperationContext" />
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1766229992445325263">
+        <property name="name:3" value="disposable" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1766229992445370798">
+          <link role="classifier:3" targetNodeId="96.~Disposable" resolveInfo="Disposable" />
         </node>
       </node>
     </node>
