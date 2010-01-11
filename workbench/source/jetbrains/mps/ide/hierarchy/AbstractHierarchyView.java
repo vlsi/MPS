@@ -154,7 +154,7 @@ public abstract class AbstractHierarchyView<T extends INodeAdapter> extends Base
       protected void doExecute(AnActionEvent e) {
         List<SNode> nodes = new ArrayList<SNode>();
         for (SModelDescriptor modelDescriptor : myContext.getScope().getModelDescriptors()) {
-          if (modelDescriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) continue;
+          if (SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype())) continue;
           for (INodeAdapter node : modelDescriptor.getSModel().getRootsAdapters()) {
             if (aClass.isInstance(node)) nodes.add(node.getNode());
           }

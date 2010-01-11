@@ -40,7 +40,7 @@ public class AspectMethodsFinder implements IFinder {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (final SModelDescriptor descriptor : SModelRepository.getInstance().getModelDescriptorsByModelName(data.myModelName)) {
-          if (!descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
+          if (!SModelStereotype.isStubModelStereotype(descriptor.getStereotype())) {
             applicableModelDescriptors.add(descriptor.getSModel());
           }
         }

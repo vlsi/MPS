@@ -20,15 +20,25 @@ package jetbrains.mps.smodel;
  * Jul 20, 2005
  */
 public class SModelStereotype {
-  public static final String NONE = "";
   @Deprecated
   public static final String TEMPLATES = "templates";
-  public static final String GENERATOR = "generator";
+  @Deprecated
   public static final String JAVA_STUB = "java_stub";
+
+  //------
+
+  public static final String STUB_SUFFIX = "_stub";
+
+  //------
+
+  public static final String NONE = "";
+  public static final String GENERATOR = "generator";
   public static final String TESTS = "tests";
   public static final String GENERATED_MODEL = "generatedModel";
   public static final String INTERNAL_COPY = "internal_copy";
   public static final String INTERNAL = "$internal$";
+
+  //------
 
   public static final String[] values = new String[]{NONE, GENERATOR, TESTS};
 
@@ -63,6 +73,14 @@ public class SModelStereotype {
 
   public static boolean isTestModel(SModel model) {
     return isTestModelStereotype(model.getStereotype());
+  }
+
+  public static boolean isStubModelStereotype(String stereotype) {
+    return stereotype.endsWith(STUB_SUFFIX);
+  }
+
+  public static String getStubStereotypeForId(String languageId) {
+    return languageId + STUB_SUFFIX;
   }
 
   private static boolean isGeneratorModelStereotype(String stereotype) {

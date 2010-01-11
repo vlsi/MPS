@@ -41,6 +41,22 @@
         </node>
       </node>
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7241381882860002223">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7976475468567234158">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7976475468567234159">
+            <property name="name:3" value="javaStubStereotype" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7976475468567234160">
+              <link role="classifier:3" targetNodeId="2v.~String" resolveInfo="String" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7976475468567234165">
+              <link role="baseMethodDeclaration:3" targetNodeId="1.~SModelStereotype.getStubStereotypeForId(java.lang.String):java.lang.String" resolveInfo="getStubStereotypeForId" />
+              <link role="classConcept:3" targetNodeId="1.~SModelStereotype" resolveInfo="SModelStereotype" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5814343044972497492">
+                <link role="classifier:3" targetNodeId="1.~LanguageID" resolveInfo="LanguageID" />
+                <link role="variableDeclaration:3" targetNodeId="1.~LanguageID.JAVA" resolveInfo="JAVA" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7241381882860002224">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7241381882860002225">
             <property name="name:3" value="fqName" />
@@ -53,9 +69,8 @@
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7241381882860002229">
                   <link role="variableDeclaration:3" targetNodeId="7241381882860002221" resolveInfo="pack" />
                 </node>
-                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7241381882860002230">
-                  <link role="classifier:3" targetNodeId="1.~SModelStereotype" />
-                  <link role="variableDeclaration:3" targetNodeId="1.~SModelStereotype.JAVA_STUB" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7976475468567234162">
+                  <link role="variableDeclaration:3" targetNodeId="7976475468567234159" resolveInfo="javaStubStereotype" />
                 </node>
               </node>
             </node>
@@ -70,9 +85,8 @@
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7241381882860002234">
               <link role="classConcept:3" targetNodeId="1.~SModelId" />
               <link role="baseMethodDeclaration:3" targetNodeId="1.~SModelId.foreign(java.lang.String,java.lang.String):jetbrains.mps.smodel.SModelId" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="7241381882860002235">
-                <link role="classifier:3" targetNodeId="1.~SModelStereotype" />
-                <link role="variableDeclaration:3" targetNodeId="1.~SModelStereotype.JAVA_STUB" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7976475468567234164">
+                <link role="variableDeclaration:3" targetNodeId="7976475468567234159" resolveInfo="javaStubStereotype" />
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7241381882860002236">
                 <link role="variableDeclaration:3" targetNodeId="7241381882860002221" resolveInfo="pack" />

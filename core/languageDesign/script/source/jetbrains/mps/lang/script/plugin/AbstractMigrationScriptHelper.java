@@ -70,7 +70,7 @@ public abstract class AbstractMigrationScriptHelper {
       if (model.getStereotype() != null) {
         if (model.getStereotype().equals(SModelStereotype.INTERNAL) ||
           model.getStereotype().equals(SModelStereotype.INTERNAL_COPY) ||
-          model.getStereotype().equals(SModelStereotype.JAVA_STUB)) return;
+          SModelStereotype.isStubModelStereotype(model.getStereotype())) return;
       }
       myModels.add(model);
     }
