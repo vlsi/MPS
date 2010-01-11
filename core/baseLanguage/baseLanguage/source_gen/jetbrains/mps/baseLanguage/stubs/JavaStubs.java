@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import jetbrains.mps.reloading.AbstractClassPathItem;
 import java.io.IOException;
@@ -75,7 +76,7 @@ public class JavaStubs extends BaseStubModelRootManager {
       if (!(cpItem.getAvailableClasses(subpackage).isEmpty())) {
         SModelReference modelReference = StubHelper.uidForPackageInStubs(subpackage);
         if (SModelRepository.getInstance().getModelDescriptor(modelReference) != null) {
-          final SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(subpackage + "@" + SModelStereotype.JAVA_STUB));
+          final SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(subpackage + "@" + SModelStereotype.getStubStereotypeForId(LanguageID.JAVA)));
           assert descriptor != null;
           SModelRepository.getInstance().addOwnerForDescriptor(descriptor, location.getModule());
           result.add(descriptor);

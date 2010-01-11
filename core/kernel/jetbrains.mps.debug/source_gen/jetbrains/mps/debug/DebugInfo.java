@@ -34,7 +34,7 @@ public class DebugInfo {
   private static final String UNSPECIFIED_ROOT = "";
   private static Logger LOG = Logger.getLogger(DebugInfo.class);
 
-  private Map<String, Set<PositionInfo>> myRootToPositions = MapSequence.fromMap(new LinkedHashMap<String, Set<PositionInfo>>(16, (float)0.75, false));
+  private Map<String, Set<PositionInfo>> myRootToPositions = MapSequence.fromMap(new LinkedHashMap<String, Set<PositionInfo>>(16, (float) 0.75, false));
   private SModel myModel;
 
   public DebugInfo() {
@@ -165,12 +165,12 @@ public class DebugInfo {
     Element root = element;
     DebugInfo result = new DebugInfo();
     try {
-      for (Element e : ((List<Element>)root.getChildren(NODE_INFO))) {
+      for (Element e : ((List<Element>) root.getChildren(NODE_INFO))) {
         result.addPosition(new PositionInfo(e));
       }
-      for (Element re : ((List<Element>)root.getChildren(ROOT))) {
+      for (Element re : ((List<Element>) root.getChildren(ROOT))) {
         String rootId = re.getAttributeValue(ROOT_ID_ATTR);
-        for (Element e : ((List<Element>)re.getChildren(NODE_INFO))) {
+        for (Element e : ((List<Element>) re.getChildren(NODE_INFO))) {
           result.addPosition(new PositionInfo(e), rootId);
         }
       }

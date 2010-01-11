@@ -39,7 +39,7 @@
   <import index="5" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionDeclaration:23" id="1240664643338">
     <property name="name:23" value="CheckLangForJavaStubModels" />
-    <property name="caption:23" value="Check for java_stubs usages" />
+    <property name="caption:23" value="Check for java_stubs Usages" />
     <node role="parameter:23" type="jetbrains.mps.lang.plugin.structure.ActionDataParameterDeclaration:23" id="1240664663372">
       <property name="name:23" value="module" />
       <link role="key:23" targetNodeId="4.~MPSDataKeys.MODULE" resolveInfo="MODULE" />
@@ -140,9 +140,13 @@
                     </node>
                     <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1240664979102">
                       <link role="baseMethodDeclaration:3" targetNodeId="5.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1240664981605">
-                        <link role="classifier:3" targetNodeId="2.~SModelStereotype" resolveInfo="SModelStereotype" />
-                        <link role="variableDeclaration:3" targetNodeId="2.~SModelStereotype.JAVA_STUB" resolveInfo="JAVA_STUB" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5814343044972987430">
+                        <link role="baseMethodDeclaration:3" targetNodeId="2.~SModelStereotype.getStubStereotypeForId(java.lang.String):java.lang.String" resolveInfo="getStubStereotypeForId" />
+                        <link role="classConcept:3" targetNodeId="2.~SModelStereotype" resolveInfo="SModelStereotype" />
+                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5814343044972987431">
+                          <link role="classifier:3" targetNodeId="2.~LanguageID" resolveInfo="LanguageID" />
+                          <link role="variableDeclaration:3" targetNodeId="2.~LanguageID.JAVA" resolveInfo="JAVA" />
+                        </node>
                       </node>
                     </node>
                   </node>

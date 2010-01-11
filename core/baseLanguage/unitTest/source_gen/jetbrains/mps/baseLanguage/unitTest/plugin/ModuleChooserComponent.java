@@ -42,7 +42,7 @@ public class ModuleChooserComponent extends BaseChooserComponent {
         ListSequence.fromList(modules).addSequence(SetSequence.fromSet(GlobalScope.getInstance().getVisibleModules()));
         for (IModule module : modules) {
           for (SModelDescriptor descriptor : module.getOwnModelDescriptors()) {
-            if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
+            if (SModelStereotype.isStubModelStereotype(descriptor.getStereotype())) {
               continue;
             }
             if (ListSequence.fromList(TestRunUtil.getModelTests(descriptor.getSModel())).isNotEmpty()) {

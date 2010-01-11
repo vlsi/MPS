@@ -13,7 +13,6 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import org.apache.commons.lang.ObjectUtils;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -72,7 +71,7 @@ public class StacktraceUtil {
     );
     List<SModelDescriptor> list = SModelRepository.getInstance().getModelDescriptorsByModelName(pkg);
     for (final SModelDescriptor descriptor : ListSequence.fromList(list)) {
-      if (ObjectUtils.equals(descriptor.getStereotype(), SModelStereotype.JAVA_STUB)) {
+      if (SModelStereotype.isStubModelStereotype(descriptor.getStereotype())) {
         continue;
       }
 

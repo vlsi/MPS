@@ -26,7 +26,7 @@ public class StaticFieldReference_Behavior {
 
   public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
-    if ((classifier != null) && SModelStereotype.JAVA_STUB.equals(SNodeOperations.getModel(classifier).getSModelReference().getStereotype())) {
+    if ((classifier != null) && SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(classifier).getSModelReference().getStereotype())) {
       return Expression_Behavior.call_eval_1213877519769(thisNode, module);
     } else {
       return (Expression_Behavior.call_isCompileTimeConstant_1238860258777(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "initializer", true)) ?

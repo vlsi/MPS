@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.SModelRepository;
 import javax.swing.JOptionPane;
 
@@ -29,7 +30,7 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
   private Frame frame;
 
   public CheckLangForJavaStubModels_Action() {
-    super("Check for java_stubs usages", "", ICON);
+    super("Check for java_stubs Usages", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -78,7 +79,7 @@ public class CheckLangForJavaStubModels_Action extends GeneratedAction {
       Set<String> otherStubModels = SetSequence.fromSet(new HashSet<String>());
       for (SModelDescriptor md : SetSequence.fromSet(language.getAspectModelDescriptors())) {
         for (SModelReference model : ListSequence.fromList(md.getSModel().getImportedModelUIDs())) {
-          if (model.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
+          if (model.getStereotype().equals(SModelStereotype.getStubStereotypeForId(LanguageID.JAVA))) {
             SModelDescriptor langModelForStub = SModelRepository.getInstance().getModelDescriptor(SModelReference.fromString(model.getLongName()));
             String modelName = model.getSModelFqName().toString();
             if (langModelForStub != null && language.getAspectForModel(langModelForStub) != null) {

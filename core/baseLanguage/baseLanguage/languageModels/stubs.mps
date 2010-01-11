@@ -275,9 +275,13 @@
                                     <property name="value:3" value="@" />
                                   </node>
                                 </node>
-                                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5516999836374121270">
-                                  <link role="classifier:3" targetNodeId="5.~SModelStereotype" resolveInfo="SModelStereotype" />
-                                  <link role="variableDeclaration:3" targetNodeId="5.~SModelStereotype.JAVA_STUB" resolveInfo="JAVA_STUB" />
+                                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5814343044972609645">
+                                  <link role="baseMethodDeclaration:3" targetNodeId="5.~SModelStereotype.getStubStereotypeForId(java.lang.String):java.lang.String" resolveInfo="getStubStereotypeForId" />
+                                  <link role="classConcept:3" targetNodeId="5.~SModelStereotype" resolveInfo="SModelStereotype" />
+                                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5814343044972609647">
+                                    <link role="classifier:3" targetNodeId="5.~LanguageID" resolveInfo="LanguageID" />
+                                    <link role="variableDeclaration:3" targetNodeId="5.~LanguageID.JAVA" resolveInfo="JAVA" />
+                                  </node>
                                 </node>
                               </node>
                             </node>

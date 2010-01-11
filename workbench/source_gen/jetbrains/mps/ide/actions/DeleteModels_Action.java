@@ -86,7 +86,7 @@ public class DeleteModels_Action extends GeneratedAction {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           for (SModelDescriptor model : ListSequence.fromList(DeleteModels_Action.this.models)) {
-            if (model.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
+            if (SModelStereotype.isStubModelStereotype(model.getStereotype())) {
               continue;
             }
             DeleteModelHelper.deleteModel(DeleteModels_Action.this.project, DeleteModels_Action.this.contextModule, model, dialog.isSafe(), dialog.isDeleteFiles());

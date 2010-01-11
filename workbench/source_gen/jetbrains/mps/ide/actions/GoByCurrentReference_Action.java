@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.smodel.SModelReference;
@@ -104,7 +105,7 @@ public class GoByCurrentReference_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       SNode targetNode = GoByCurrentReference_Action.this.cell.getSNodeWRTReference();
-      if (SModelStereotype.JAVA_STUB.equals(SNodeOperations.getModel(targetNode).getStereotype()) && GoByCurrentReference_Action.this.project.getProjectHandler() != null) {
+      if (SModelStereotype.getStubStereotypeForId(LanguageID.JAVA).equals(SNodeOperations.getModel(targetNode).getStereotype()) && GoByCurrentReference_Action.this.project.getProjectHandler() != null) {
         if (GoByCurrentReference_Action.this.navigateToJavaStub(targetNode)) {
           return;
         }

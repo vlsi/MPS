@@ -59,7 +59,7 @@ public class ListPanel extends JPanel {
       public void run() {
         for (IModule module : GlobalScope.getInstance().getVisibleModules()) {
           for (SModelDescriptor descriptor : module.getOwnModelDescriptors()) {
-            if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
+            if (SModelStereotype.isStubModelStereotype(descriptor.getStereotype())) {
               continue;
             }
             ListSequence.fromList(nodesList).addSequence(ListSequence.fromList(TestRunUtil.getModelTests(descriptor.getSModel())));

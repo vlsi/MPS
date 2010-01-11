@@ -15649,20 +15649,15 @@
                     <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3387561978206366126">
                       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ContinueStatement:3" id="3387561978206368349" />
                     </node>
-                    <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3387561978206368343">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3387561978206366130">
-                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3387561978206366129">
+                    <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5814343044972969728">
+                      <link role="baseMethodDeclaration:3" targetNodeId="9.~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolveInfo="isStubModelStereotype" />
+                      <link role="classConcept:3" targetNodeId="9.~SModelStereotype" resolveInfo="SModelStereotype" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5814343044972969729">
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5814343044972969730">
                           <link role="variableDeclaration:3" targetNodeId="3387561978206365940:0" resolveInfo="descriptor" />
                         </node>
-                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3387561978206368342">
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5814343044972969731">
                           <link role="baseMethodDeclaration:3" targetNodeId="9.~SModelDescriptor.getStereotype():java.lang.String" resolveInfo="getStereotype" />
-                        </node>
-                      </node>
-                      <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3387561978206368347">
-                        <link role="baseMethodDeclaration:3" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3387561978206368348">
-                          <link role="classifier:3" targetNodeId="9.~SModelStereotype" resolveInfo="SModelStereotype" />
-                          <link role="variableDeclaration:3" targetNodeId="9.~SModelStereotype.JAVA_STUB" resolveInfo="JAVA_STUB" />
                         </node>
                       </node>
                     </node>
@@ -15960,20 +15955,15 @@
                         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3387561978206531580">
                           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ContinueStatement:3" id="3387561978206531581" />
                         </node>
-                        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3387561978206531582">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3387561978206531583">
-                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3387561978206531584">
+                        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5814343044972969753">
+                          <link role="baseMethodDeclaration:3" targetNodeId="9.~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolveInfo="isStubModelStereotype" />
+                          <link role="classConcept:3" targetNodeId="9.~SModelStereotype" resolveInfo="SModelStereotype" />
+                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5814343044972969754">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5814343044972969755">
                               <link role="variableDeclaration:3" targetNodeId="3387561978206531603:0" resolveInfo="descriptor" />
                             </node>
-                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3387561978206531585">
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5814343044972969756">
                               <link role="baseMethodDeclaration:3" targetNodeId="9.~SModelDescriptor.getStereotype():java.lang.String" resolveInfo="getStereotype" />
-                            </node>
-                          </node>
-                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3387561978206531586">
-                            <link role="baseMethodDeclaration:3" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="3387561978206531587">
-                              <link role="classifier:3" targetNodeId="9.~SModelStereotype" resolveInfo="SModelStereotype" />
-                              <link role="variableDeclaration:3" targetNodeId="9.~SModelStereotype.JAVA_STUB" resolveInfo="JAVA_STUB" />
                             </node>
                           </node>
                         </node>
@@ -21394,20 +21384,15 @@
                         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1363788752897799556">
                           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ContinueStatement:3" id="1363788752897801391" />
                         </node>
-                        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1363788752897801361">
-                          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1363788752897799566">
-                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1363788752897799565">
+                        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5814343044972969707">
+                          <link role="baseMethodDeclaration:3" targetNodeId="9.~SModelStereotype.isStubModelStereotype(java.lang.String):boolean" resolveInfo="isStubModelStereotype" />
+                          <link role="classConcept:3" targetNodeId="9.~SModelStereotype" resolveInfo="SModelStereotype" />
+                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5814343044972969708">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5814343044972969709">
                               <link role="variableDeclaration:3" targetNodeId="1363788752897798761:0" resolveInfo="descriptor" />
                             </node>
-                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1363788752897801360">
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5814343044972969710">
                               <link role="baseMethodDeclaration:3" targetNodeId="9.~SModelDescriptor.getStereotype():java.lang.String" resolveInfo="getStereotype" />
-                            </node>
-                          </node>
-                          <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1363788752897801371">
-                            <link role="baseMethodDeclaration:3" targetNodeId="2.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1363788752897801378">
-                              <link role="classifier:3" targetNodeId="9.~SModelStereotype" resolveInfo="SModelStereotype" />
-                              <link role="variableDeclaration:3" targetNodeId="9.~SModelStereotype.JAVA_STUB" resolveInfo="JAVA_STUB" />
                             </node>
                           </node>
                         </node>

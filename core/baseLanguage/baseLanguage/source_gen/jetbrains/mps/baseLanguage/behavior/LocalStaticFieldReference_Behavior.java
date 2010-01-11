@@ -26,7 +26,7 @@ public class LocalStaticFieldReference_Behavior {
 
   public static Object virtual_getCompileTimeConstantValue_1238860310638(SNode thisNode, IModule module) {
     SNode classifier = SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(thisNode, "variableDeclaration", false)), "jetbrains.mps.baseLanguage.structure.Classifier");
-    if ((classifier != null) && SModelStereotype.JAVA_STUB.equals(SNodeOperations.getModel(classifier).getSModelReference().getStereotype())) {
+    if ((classifier != null) && SModelStereotype.isStubModelStereotype(SNodeOperations.getModel(classifier).getSModelReference().getStereotype())) {
       return Expression_Behavior.call_eval_1213877519769(thisNode, module);
     } else {
       return (Expression_Behavior.call_isCompileTimeConstant_1238860258777(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "variableDeclaration", false), "initializer", true)) ?

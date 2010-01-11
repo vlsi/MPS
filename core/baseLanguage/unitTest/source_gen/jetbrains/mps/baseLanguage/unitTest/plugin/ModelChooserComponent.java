@@ -42,7 +42,7 @@ public class ModelChooserComponent extends BaseChooserComponent {
           ListSequence.fromList(models).addSequence(ListSequence.fromList(module.getOwnModelDescriptors()));
         }
         for (SModelDescriptor descriptor : models) {
-          if (descriptor.getStereotype().equals(SModelStereotype.JAVA_STUB)) {
+          if (SModelStereotype.isStubModelStereotype(descriptor.getStereotype())) {
             continue;
           }
           if (ListSequence.fromList(TestRunUtil.getModelTests(descriptor.getSModel())).isNotEmpty()) {
