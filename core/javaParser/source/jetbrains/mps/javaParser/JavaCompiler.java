@@ -37,10 +37,14 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ClassPathEntry;
 import jetbrains.mps.javaParser.UIComponents.MyDialog;
+import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 import javax.swing.JOptionPane;
 import java.util.*;
 import java.io.*;
+
+import com.intellij.ide.DataManager;
 
 /**
  * Created by IntelliJ IDEA.
@@ -257,7 +261,16 @@ public class JavaCompiler {
     }
   }
 
+  private void showMessageView() {
+    IOperationContext operationContext = MPSDataKeys.OPERATION_CONTEXT.getData(DataManager.getInstance().getDataContext());
+    MessagesViewTool messagesView = operationContext.getComponent(MessagesViewTool.class);
+    if (messagesView != null) {
+      messagesView.openToolLater(false);
+    }
+  }
+
   private void recompile() {
+    showMessageView();
     myCompilationUnitDeclarations = new ArrayList<CompilationUnitDeclaration>();
     myProcessedCompilationUnits = new HashSet<ICompilationUnit>();
     Compiler c = new CompilerImpl();
@@ -278,7 +291,7 @@ public class JavaCompiler {
             fqNames.add(problem.getArguments()[0]);
           } else {
             String message = problem.getMessage();
-            LOG.error(message + " (line: " + problem.getSourceLineNumber() + ")");
+            LOG.warning(message + " (line: " + problem.getSourceLineNumber() + ")");
             //, new FileWithPosition(javaFile.getFile(), cp.getSourceStart()));
           }
         }
