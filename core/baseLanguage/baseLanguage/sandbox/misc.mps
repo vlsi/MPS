@@ -1030,6 +1030,23 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4746245540142329629">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4746245540142329630">
+            <property name="name:3" value="e" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4746245540142329631">
+              <link role="classifier:3" targetNodeId="150.~Enum" resolveInfo="Enum" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4746245540142628030">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="4746245540142329634">
+                <link role="enumConstantDeclaration:3" targetNodeId="1908995137503731353" resolveInfo="GOODBYE" />
+                <link role="enumClass:3" targetNodeId="1908995137503717943" resolveInfo="EnumConstantsWithMethods" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4746245540142632698">
+                <link role="baseMethodDeclaration:3" targetNodeId="150.~Enum.compareTo(java.lang.Enum):int" resolveInfo="compareTo" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="588721567335013177">
