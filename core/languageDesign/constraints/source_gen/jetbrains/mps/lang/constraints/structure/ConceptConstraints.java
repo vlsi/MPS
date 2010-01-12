@@ -29,7 +29,6 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
   public static final String ALTERNATIVE_ICON = "alternativeIcon";
   public static final String PROPERTY = "property";
   public static final String REFERENT = "referent";
-  public static final String PROPERTY_SUPPORT = "propertySupport";
 
   public ConceptConstraints(SNode node) {
     super(node);
@@ -161,26 +160,6 @@ public class ConceptConstraints extends BaseConcept implements INamedConcept, IC
 
   public void insertReferent(NodeReferentConstraint prev, NodeReferentConstraint node) {
     this.insertChild(prev, ConceptConstraints.REFERENT, node);
-  }
-
-  public int getPropertySupportsCount() {
-    return this.getChildCount(ConceptConstraints.PROPERTY_SUPPORT);
-  }
-
-  public Iterator<AbstractNodePropertySupport> propertySupports() {
-    return this.children(AbstractNodePropertySupport.class, ConceptConstraints.PROPERTY_SUPPORT);
-  }
-
-  public List<AbstractNodePropertySupport> getPropertySupports() {
-    return this.getChildren(AbstractNodePropertySupport.class, ConceptConstraints.PROPERTY_SUPPORT);
-  }
-
-  public void addPropertySupport(AbstractNodePropertySupport node) {
-    this.addChild(ConceptConstraints.PROPERTY_SUPPORT, node);
-  }
-
-  public void insertPropertySupport(AbstractNodePropertySupport prev, AbstractNodePropertySupport node) {
-    this.insertChild(prev, ConceptConstraints.PROPERTY_SUPPORT, node);
   }
 
   public static ConceptConstraints newInstance(SModel sm, boolean init) {

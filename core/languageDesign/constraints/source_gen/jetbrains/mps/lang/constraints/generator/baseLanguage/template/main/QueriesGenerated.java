@@ -16,7 +16,6 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.constraints.behavior.NodeDefaultSearchScope_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorConstants;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
-import jetbrains.mps.lang.constraints.behavior.AbstractNodePropertySupport_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -188,22 +187,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1227085912913(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BehaviorConstants.CAN_BE_A_ROOT_METHOD_NAME;
-  }
-
-  public static Object propertyMacro_GetPropertyValue_418496713971518567(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return AbstractNodePropertySupport_Behavior.call_getClassName_4684114957703814081(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_418496713971582702(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "trueText");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_418496713971582712(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "falseText");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_418496713971852362(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return AbstractNodePropertySupport_Behavior.call_getAccessorMethodName_4684114957703791269(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_1382946559831735873(final IOperationContext operationContext, final PropertyMacroContext _context) {
