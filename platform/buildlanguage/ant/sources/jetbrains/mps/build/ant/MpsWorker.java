@@ -117,7 +117,7 @@ public abstract class MpsWorker {
   protected void disposeProject(final MPSProject p) {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
-        p.dispose();
+        p.dispose(false);
         
         IdeEventQueue.getInstance().flushQueue();
         System.gc();
