@@ -1564,7 +1564,7 @@
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="additionalVar" />
       <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="1068581242863:3" resolveInfo="LocalVariableDeclaration" />
+      <link role="target:0" targetNodeId="1830039279190439966:3" resolveInfo="AdditionalForLoopVariable" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1144231339107">
       <property name="value:0" value="for" />
@@ -3652,6 +3652,10 @@
       <property name="value:0" value="&gt;&gt;=" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473891462:0" resolveInfo="alias" />
     </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1830039279190439966">
+    <property name="name:0" value="AdditionalForLoopVariable" />
+    <link role="extends:0" targetNodeId="1068581242863:3" resolveInfo="LocalVariableDeclaration" />
   </node>
 </model>
 

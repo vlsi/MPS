@@ -51,19 +51,19 @@ public class ForStatement extends AbstractForStatement {
     return this.getChildCount(ForStatement.ADDITIONAL_VAR);
   }
 
-  public Iterator<LocalVariableDeclaration> additionalVars() {
-    return this.children(LocalVariableDeclaration.class, ForStatement.ADDITIONAL_VAR);
+  public Iterator<AdditionalForLoopVariable> additionalVars() {
+    return this.children(AdditionalForLoopVariable.class, ForStatement.ADDITIONAL_VAR);
   }
 
-  public List<LocalVariableDeclaration> getAdditionalVars() {
-    return this.getChildren(LocalVariableDeclaration.class, ForStatement.ADDITIONAL_VAR);
+  public List<AdditionalForLoopVariable> getAdditionalVars() {
+    return this.getChildren(AdditionalForLoopVariable.class, ForStatement.ADDITIONAL_VAR);
   }
 
-  public void addAdditionalVar(LocalVariableDeclaration node) {
+  public void addAdditionalVar(AdditionalForLoopVariable node) {
     this.addChild(ForStatement.ADDITIONAL_VAR, node);
   }
 
-  public void insertAdditionalVar(LocalVariableDeclaration prev, LocalVariableDeclaration node) {
+  public void insertAdditionalVar(AdditionalForLoopVariable prev, AdditionalForLoopVariable node) {
     this.insertChild(prev, ForStatement.ADDITIONAL_VAR, node);
   }
 

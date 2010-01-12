@@ -1,5 +1,7 @@
 package jetbrains.mps.javaParser.testMaterial6;
 
+import jetbrains.mps.util.annotation.Hack;
+
 /**
  * Created by IntelliJ IDEA.
  * User: User
@@ -9,7 +11,7 @@ package jetbrains.mps.javaParser.testMaterial6;
  */
 public class OrdinaryClassWithMultipleFor {
   public static void main(String[] args) {
-    for (int i = 2, j = 3; i <= 4; i++, j++ ) {
+    for (@Hack int i = 2, j = 3; i <= 4; i++, j++ ) {
       i++;
       j++;
     }

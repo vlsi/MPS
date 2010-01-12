@@ -1034,27 +1034,11 @@ public class JavaConverterTreeBuilder {
   }
 
   Statement processStatement(ForStatement x) {
-
-    // SEE NOTE ON JDT FORCED OPTIMIZATIONS
-    // If the condition is false, don't process the body
-    // boolean removeBody = isOptimizedFalse(x.condition);
-
     List<Statement> init = processStatements(x.initializations);
     jetbrains.mps.baseLanguage.structure.Expression expr = processExpressionRefl(x.condition);
-    List<ExpressionStatement> incr = processExpressionStatements(x.increments);
-    Statement loopBody = processStatementRefl(x.action);
-    StatementList body = getStatementListFromStatement(loopBody);
     jetbrains.mps.baseLanguage.structure.ForStatement forStatement =
       jetbrains.mps.baseLanguage.structure.ForStatement.newInstance(myCurrentModel);
     forStatement.setCondition(expr);
-    forStatement.setBody(body);
-    if (!incr.isEmpty()) {
-      for (ExpressionStatement expressionStatement : incr) {
-        jetbrains.mps.baseLanguage.structure.Expression expression = expressionStatement.getExpression();
-        expression.getParent().removeChild(expression);
-        forStatement.addIteration(expression);
-      }
-    }
     if (!init.isEmpty()) {
       boolean first = true;
       for (Statement statement : init) {
@@ -1066,11 +1050,30 @@ public class JavaConverterTreeBuilder {
             forStatement.setVariable(variableDeclaration);
             first = false;
           } else {
-            forStatement.addAdditionalVar(variableDeclaration);
+            AdditionalForLoopVariable additionalForLoopVariable = AdditionalForLoopVariable.newInstance(myCurrentModel);
+            myTypesProvider.replaceUnsafe(variableDeclaration, additionalForLoopVariable);
+            additionalForLoopVariable.setName(variableDeclaration.getName());
+            jetbrains.mps.baseLanguage.structure.Expression inititalizer = variableDeclaration.getInitializer();
+            if (inititalizer != null) {
+              inititalizer.getParent().removeChild(inititalizer);
+              additionalForLoopVariable.setInitializer(inititalizer);
+            }
+            forStatement.addAdditionalVar(additionalForLoopVariable);
           }
         }
       }
     }
+    List<ExpressionStatement> incr = processExpressionStatements(x.increments);
+    if (!incr.isEmpty()) {
+      for (ExpressionStatement expressionStatement : incr) {
+        jetbrains.mps.baseLanguage.structure.Expression expression = expressionStatement.getExpression();
+        expression.getParent().removeChild(expression);
+        forStatement.addIteration(expression);
+      }
+    }
+    Statement loopBody = processStatementRefl(x.action);
+    StatementList body = getStatementListFromStatement(loopBody);
+    forStatement.setBody(body);
     return forStatement;
   }
 

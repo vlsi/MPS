@@ -26,9 +26,7 @@ import jetbrains.mps.stubs.javastub.classpath.StubHelper;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.logging.Logger;
 
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Iterator;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -359,4 +357,14 @@ public class TypesProvider {
     return myReferentsCreator.myBindingMap.get(binding);
   }
 
+  public void replaceUnsafe(INodeAdapter oldAdapter, INodeAdapter newAdapter) {
+    if (oldAdapter == null) return;
+    Map<Binding,INodeAdapter> map = myReferentsCreator.myBindingMap;
+    for (Binding binding : new HashSet<Binding>(map.keySet())) {
+      INodeAdapter result = map.get(binding);
+      if (result != null && result.getNode() == oldAdapter.getNode()) {
+        map.put(binding, newAdapter);
+      }
+    }
+  }
 }
