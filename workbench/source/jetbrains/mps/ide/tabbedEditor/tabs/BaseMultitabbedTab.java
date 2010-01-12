@@ -16,10 +16,20 @@
 package jetbrains.mps.ide.tabbedEditor.tabs;
 
 import com.intellij.openapi.wm.ToolWindowManager;
+import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.ui.popup.ListPopup;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.intellij.openapi.ui.popup.PopupStep;
+import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
+import com.intellij.execution.junit.RuntimeConfigurationProducer;
+import com.intellij.execution.ExecutionBundle;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.*;
@@ -35,6 +45,8 @@ import javax.swing.event.ChangeEvent;
 import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.util.*;
+
+import org.jetbrains.annotations.NotNull;
 
 public abstract class BaseMultitabbedTab implements ILazyTab {
   private Set<SNodePointer> myLoadableNodes = new HashSet<SNodePointer>();
@@ -74,9 +86,13 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     return -1;
   }
 
+  protected List<SNode> getAvailableConcepts() {
+    return new ArrayList<SNode>();
+  }
+
   protected abstract List<Pair<SNode, IOperationContext>> tryToLoadNodes();
 
-  protected abstract Pair<SNode, IOperationContext> createLoadableNode(boolean ask);
+  protected abstract Pair<SNode, IOperationContext> createLoadableNode(boolean ask, SNode concept);
 
   public boolean isOutsideCommandExecution() {
     return false;
@@ -143,9 +159,29 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
 
     if (canCreate()) {
       JPanel panel = new JPanel(new BorderLayout());
+      final List<SNode> concepts = getAvailableConcepts();
       panel.add(new JButton(new AbstractAction("Create new") {
         public void actionPerformed(ActionEvent e) {
-          createNewInnerTab();
+          if (concepts.size() == 0) {
+            createNewInnerTab(null);
+          } else {
+            final ListPopup popup =
+              JBPopupFactory.getInstance().createListPopup(new BaseListPopupStep<SNode>("Choose concept", concepts) {
+                public Icon getIconFor(SNode conceptDeclaration) {
+                  return IconManager.getIconFor(conceptDeclaration);
+                }
+
+                @NotNull
+                public String getTextFor(SNode value) {
+                  return value.getConceptShortName();
+                }
+
+                public PopupStep onChosen(SNode selectedValue, boolean finalChoice) {
+                  createNewInnerTab(selectedValue);
+                  return FINAL_CHOICE;
+                }
+              });
+          }
         }
       }), BorderLayout.WEST);
       myComponent.add(panel, BorderLayout.NORTH);
@@ -188,10 +224,10 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     return myEditors.get(myInnerTabbedPane.getSelectedIndex());
   }
 
-  private void createNewInnerTab() {
+  private void createNewInnerTab(final SNode concept) {
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
-        Pair<SNode, IOperationContext> nodeAndContext = createLoadableNode(false);
+        Pair<SNode, IOperationContext> nodeAndContext = createLoadableNode(false, concept);
         if (nodeAndContext != null) {
           nodeAndContext.o1.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
           myInnerTabbedPane.setSelectedIndex(myInnerTabbedPane.getTabCount() - 1);
@@ -206,11 +242,11 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
 
     final Pair<SNode, IOperationContext>[] nodeAndContext = new Pair[1];
     if (isOutsideCommandExecution()) {
-      nodeAndContext[0] = createLoadableNode(true);
+      nodeAndContext[0] = createLoadableNode(true, null);
     } else {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          nodeAndContext[0] = createLoadableNode(true);
+          nodeAndContext[0] = createLoadableNode(true, null);
         }
       });
     }

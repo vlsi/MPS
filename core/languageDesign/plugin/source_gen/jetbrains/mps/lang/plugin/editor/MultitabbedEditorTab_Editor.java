@@ -53,10 +53,13 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_7753_5(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7753_2(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7753_6(editorContext, node));
-    if (renderingCondition7753_0(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createRefNode_7753_3(editorContext, node));
-    }
+    editorCell.addEditorCell(this.createRefNode_7753_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7753_4(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_7753_7(editorContext, node));
+    if (renderingCondition7753_0(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_7753_5(editorContext, node));
+    }
+    editorCell.addEditorCell(this.createRefNode_7753_6(editorContext, node));
     return editorCell;
   }
 
@@ -90,7 +93,7 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createCollection_7753_5(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7753_6(editorContext, node));
     if (renderingCondition7753_2(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_7753_8(editorContext, node));
+      editorCell.addEditorCell(this.createConstant_7753_9(editorContext, node));
     }
     return editorCell;
   }
@@ -104,7 +107,7 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createCollection_7753_0(editorContext, node));
     if (renderingCondition7753_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_7753_7(editorContext, node));
+      editorCell.addEditorCell(this.createConstant_7753_8(editorContext, node));
     }
     return editorCell;
   }
@@ -181,16 +184,23 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7753_7(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
     editorCell.setCellId("Constant_7753_7");
-    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
   private EditorCell createConstant_7753_8(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
     editorCell.setCellId("Constant_7753_8");
+    BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_7753_9(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
+    editorCell.setCellId("Constant_7753_9");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
@@ -310,6 +320,40 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
 
   private EditorCell createRefNode_7753_3(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("getConceptsBlock");
+    provider.setNoTargetText("<no available nodes>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_7753_4(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("newCreateBlock");
+    provider.setNoTargetText("<no newCreateBlock>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
+  private EditorCell createRefNode_7753_5(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("askBlock");
     provider.setNoTargetText("<ask by default>");
     EditorCell editorCell;
@@ -325,7 +369,7 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefNode_7753_4(EditorContext editorContext, SNode node) {
+  private EditorCell createRefNode_7753_6(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
     provider.setRole("createBlock");
     provider.setNoTargetText("<can't create node from this tab>");

@@ -879,6 +879,14 @@
           <link role="relationDeclaration:32" targetNodeId="1.1203852102915:23" />
         </node>
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1218984978356" />
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="7692832593197364367">
+          <property name="noTargetText:32" value="&lt;no available nodes&gt;" />
+          <link role="relationDeclaration:32" targetNodeId="1.7692832593197364364:23" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="7692832593197710983">
+          <link role="relationDeclaration:32" targetNodeId="1.7692832593197710980:23" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="7692832593197364366" />
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="5703381818025949400">
           <property name="noTargetText:32" value="&lt;ask by default&gt;" />
           <link role="relationDeclaration:32" targetNodeId="1.5703381818025947591:23" />

@@ -10,6 +10,8 @@ import jetbrains.mps.project.GlobalScope;
 public class MultitabbedEditorTab extends AbstractEditorTab {
   public static final String concept = "jetbrains.mps.lang.plugin.structure.MultitabbedEditorTab";
   public static final String GET_NODES_BLOCK = "getNodesBlock";
+  public static final String GET_CONCEPTS_BLOCK = "getConceptsBlock";
+  public static final String NEW_CREATE_BLOCK = "newCreateBlock";
   public static final String GET_INNER_TAB_NAME_BLOCK = "getInnerTabNameBlock";
 
   public MultitabbedEditorTab(SNode node) {
@@ -22,6 +24,22 @@ public class MultitabbedEditorTab extends AbstractEditorTab {
 
   public void setGetNodesBlock(GetNodesBlock node) {
     super.setChild(MultitabbedEditorTab.GET_NODES_BLOCK, node);
+  }
+
+  public GetConceptsBlock getGetConceptsBlock() {
+    return (GetConceptsBlock) this.getChild(GetConceptsBlock.class, MultitabbedEditorTab.GET_CONCEPTS_BLOCK);
+  }
+
+  public void setGetConceptsBlock(GetConceptsBlock node) {
+    super.setChild(MultitabbedEditorTab.GET_CONCEPTS_BLOCK, node);
+  }
+
+  public NewCreateBlock getNewCreateBlock() {
+    return (NewCreateBlock) this.getChild(NewCreateBlock.class, MultitabbedEditorTab.NEW_CREATE_BLOCK);
+  }
+
+  public void setNewCreateBlock(NewCreateBlock node) {
+    super.setChild(MultitabbedEditorTab.NEW_CREATE_BLOCK, node);
   }
 
   public GetInnerTabCaptionBlock getGetInnerTabNameBlock() {
