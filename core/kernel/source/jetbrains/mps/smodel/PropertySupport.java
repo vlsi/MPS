@@ -66,11 +66,7 @@ public abstract class PropertySupport {
       public PropertySupport compute() {
         DataTypeDeclaration dataType = propertyDeclaration.getDataType();
         if (dataType != null) {
-          PropertySupport propertySupport = PropertySupportManager.createPropertySupport(propertyDeclaration.getNode());
-          if (propertySupport != null) {
-            return propertySupport;
-          }
-          propertySupport = (PropertySupport) dataType.getNode().getUserObject(PROPERTY_SUPPORT);
+          PropertySupport propertySupport = (PropertySupport) dataType.getNode().getUserObject(PROPERTY_SUPPORT);
           if (propertySupport != null) {
             return propertySupport;
           }
