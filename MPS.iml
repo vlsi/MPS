@@ -53,7 +53,6 @@
     <orderEntry type="module" module-name="actions" exported="" />
     <orderEntry type="module" module-name="baseLanguage-runtime" exported="" />
     <orderEntry type="module" module-name="behavior" exported="" />
-    <orderEntry type="library" exported="" name="Alloy" level="project" />
     <orderEntry type="library" exported="" name="Commons-codec" level="project" />
     <orderEntry type="library" exported="" name="Commons-net" level="project" />
     <orderEntry type="library" exported="" name="Commons-collections" level="project" />
