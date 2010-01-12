@@ -22007,5 +22007,83 @@
       <link role="concept:3" targetNodeId="1.1081256982272:3" resolveInfo="InstanceOfExpression" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="4746245540142329635">
+    <property name="name:3" value="EnumsAreEnum" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4746245540142329636">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4746245540142533120">
+        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4746245540142533121">
+          <property name="name:3" value="result" />
+          <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="4746245540142533122" />
+          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="4746245540142533124">
+            <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeListCreator:16" id="4746245540142533125">
+              <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="4746245540142533126" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="4746245540142533145">
+        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="4746245540142533146">
+          <property name="name:3" value="classifier" />
+          <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4746245540142533147">
+            <link role="concept:16" targetNodeId="1.1107461130800:3" resolveInfo="Classifier" />
+          </node>
+          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4746245540142533148">
+            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4746245540142533149">
+              <link role="applicableNode:3" targetNodeId="4746245540142340255" resolveInfo="classifierType" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4746245540142533150">
+              <link role="link:16" targetNodeId="1.1107535924139:3" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4746245540142479810">
+        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4746245540142479811">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4746245540142533128">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4746245540142533130">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4746245540142533129">
+                <link role="variableDeclaration:3" targetNodeId="4746245540142533121" resolveInfo="result" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="4746245540142533134">
+                <node role="argument:7" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4746245540142533138">
+                  <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4746245540142533139">
+                    <link role="classifier:3" targetNodeId="4.~Enum" resolveInfo="Enum" />
+                    <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4746245540142533140">
+                      <link role="classifier:3" targetNodeId="4.~Object" resolveInfo="Object" />
+                      <node role="referenceAntiquotation$link_attribute$classifier:3" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="4746245540142533141">
+                        <property name="label:0" value="ClassifierType" />
+                        <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4746245540142533152">
+                          <link role="variableDeclaration:3" targetNodeId="4746245540142533146" resolveInfo="classifier" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4746245540142501164">
+          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4746245540142533151">
+            <link role="variableDeclaration:3" targetNodeId="4746245540142533146" resolveInfo="classifier" />
+          </node>
+          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="4746245540142501168">
+            <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="4746245540142501170">
+              <link role="conceptDeclaration:16" targetNodeId="1.1083245097125:3" resolveInfo="EnumClass" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4746245540142533153">
+        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4746245540142533155">
+          <link role="variableDeclaration:3" targetNodeId="4746245540142533121" resolveInfo="result" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="4746245540142340255">
+      <property name="name:3" value="classifierType" />
+      <link role="concept:3" targetNodeId="1.1107535904670:3" resolveInfo="ClassifierType" />
+    </node>
+  </node>
 </model>
 

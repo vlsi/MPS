@@ -703,6 +703,10 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
+      SubtypingRule_Runtime subtypingRule = new EnumsAreEnum_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
       ComparisonRule_Runtime comparisonRule = new interfaces_are_comparable_ComparisonRule();
       this.myComparisonRules.add(comparisonRule);
     }
