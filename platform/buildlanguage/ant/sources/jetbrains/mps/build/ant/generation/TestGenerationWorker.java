@@ -90,7 +90,6 @@ public class TestGenerationWorker extends GeneratorWorker {
     collectFromModelFiles(models);
     executeTask(project, new GenerationObjects(Collections.EMPTY_SET, modules, models));
 
-    disposeProject(project);
     projectFile.deleteOnExit();
     dispose();
 
