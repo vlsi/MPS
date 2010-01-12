@@ -233,7 +233,7 @@ public class TypesProvider {
     sb.append('(');
     appendList(sb, method.parameters, method);
     sb.append(')');
-    if (!method.isConstructor()) {
+    if (!method.isConstructor() && !classBinding.isAnnotationType()) {
       // need return type because just name+parms can collide in generic methods after type erasure
       sb.append(':');
       sb.append(asString(method.returnType));
