@@ -53,9 +53,11 @@ public class ReplaceForLoopWithWhileLoop_Intention extends BaseIntention impleme
     // adjust while body 
     SLinkOperations.setTarget(whileStatement, "body", SLinkOperations.getTarget(node, "body", true), true);
     // adjust precondition 
+    // todo: multiple vars 
     SNode preStatement = SNodeOperations.insertNewPrevSiblingChild(whileStatement, "jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
     SLinkOperations.setTarget(preStatement, "localVariableDeclaration", SLinkOperations.getTarget(node, "variable", true), true);
     // adjust iteration 
+    // todo: multiple iterations 
     SNode iterStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SLinkOperations.setTarget(iterStatement, "expression", SLinkOperations.getTarget(node, "iteration", true), true);
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(whileStatement, "body", true), "statement", true)).addElement(iterStatement);

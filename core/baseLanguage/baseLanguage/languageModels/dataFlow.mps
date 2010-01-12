@@ -722,6 +722,25 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="1032195626824969319">
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1032195626824969320">
+            <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="1032195626824969341">
+              <node role="codeFor:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1032195626824969343">
+                <link role="variableDeclaration:3" targetNodeId="1032195626824969323" resolveInfo="additionalVar" />
+              </node>
+            </node>
+          </node>
+          <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1032195626824969331">
+            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1032195626824969330" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="1032195626824969337">
+              <link role="link:16" targetNodeId="1.1032195626824963089:3" />
+            </node>
+          </node>
+          <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1032195626824969323">
+            <property name="name:3" value="additionalVar" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1032195626824969327" />
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitLabelStatement:0" id="1207063213423">
           <property name="name:0" value="start" />
         </node>
@@ -746,14 +765,26 @@
             </node>
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable:0" id="1206536501766">
-          <node role="emitStatement:0" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="1206463706563">
-            <node role="codeFor:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1206463707941">
-              <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1206463707596" />
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1206463709349">
-                <link role="link:16" targetNodeId="1.1144231408325:3" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="1032195626824969351">
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1032195626824969352">
+            <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitMayBeUnreachable:0" id="1206536501766">
+              <node role="emitStatement:0" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="1206463706563">
+                <node role="codeFor:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1032195626824972337">
+                  <link role="variableDeclaration:3" targetNodeId="1032195626824969355" resolveInfo="iteration" />
+                </node>
               </node>
             </node>
+          </node>
+          <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1032195626824969363">
+            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1032195626824969362" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="1032195626824969369">
+              <link role="link:16" targetNodeId="1.1144231408325:3" />
+            </node>
+          </node>
+          <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1032195626824969355">
+            <property name="name:3" value="iteration" />
+            <property name="isFinal:3" value="true" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1032195626824969359" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitJumpStatement:0" id="1214992621851">

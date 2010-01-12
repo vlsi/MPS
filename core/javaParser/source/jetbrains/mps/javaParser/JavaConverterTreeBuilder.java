@@ -374,32 +374,32 @@ public class JavaConverterTreeBuilder {
         op = MinusAssignmentExpression.newInstance(myCurrentModel);
         break;
 
-       case CompoundAssignment.MULTIPLY:
-      op = MulAssignmentExpression.newInstance(myCurrentModel);
-      break;
-    case CompoundAssignment.DIVIDE:
-      op = DivAssignmentExpression.newInstance(myCurrentModel);
-      break;
-    case CompoundAssignment.AND:
-      op = AndAssignmentExpression.newInstance(myCurrentModel);
-      break;
-    case CompoundAssignment.OR:
-      op = OrAssignmentExpression.newInstance(myCurrentModel);
-      break;
-    case CompoundAssignment.XOR:
-      op = XorAssignmentExpression.newInstance(myCurrentModel);
-      break;
-    case CompoundAssignment.REMAINDER:
-      op = RemAssignmentExpression.newInstance(myCurrentModel);
-      break;
-    case CompoundAssignment.LEFT_SHIFT:
-      op = LeftShiftAssignmentExpression.newInstance(myCurrentModel);
-      break;
-    case CompoundAssignment.RIGHT_SHIFT:
-      op = RightShiftAssignmentExpression.newInstance(myCurrentModel);
-      break;
-     //todo make this expression's counterpart in BL
- /*   case CompoundAssignment.UNSIGNED_RIGHT_SHIFT:
+      case CompoundAssignment.MULTIPLY:
+        op = MulAssignmentExpression.newInstance(myCurrentModel);
+        break;
+      case CompoundAssignment.DIVIDE:
+        op = DivAssignmentExpression.newInstance(myCurrentModel);
+        break;
+      case CompoundAssignment.AND:
+        op = AndAssignmentExpression.newInstance(myCurrentModel);
+        break;
+      case CompoundAssignment.OR:
+        op = OrAssignmentExpression.newInstance(myCurrentModel);
+        break;
+      case CompoundAssignment.XOR:
+        op = XorAssignmentExpression.newInstance(myCurrentModel);
+        break;
+      case CompoundAssignment.REMAINDER:
+        op = RemAssignmentExpression.newInstance(myCurrentModel);
+        break;
+      case CompoundAssignment.LEFT_SHIFT:
+        op = LeftShiftAssignmentExpression.newInstance(myCurrentModel);
+        break;
+      case CompoundAssignment.RIGHT_SHIFT:
+        op = RightShiftAssignmentExpression.newInstance(myCurrentModel);
+        break;
+      //todo make this expression's counterpart in BL
+      /*   case CompoundAssignment.UNSIGNED_RIGHT_SHIFT:
       op = JBinaryOperator.ASG_SHRU;
       break;*/
       default:
@@ -1037,7 +1037,7 @@ public class JavaConverterTreeBuilder {
 
     // SEE NOTE ON JDT FORCED OPTIMIZATIONS
     // If the condition is false, don't process the body
-   // boolean removeBody = isOptimizedFalse(x.condition);
+    // boolean removeBody = isOptimizedFalse(x.condition);
 
     List<Statement> init = processStatements(x.initializations);
     jetbrains.mps.baseLanguage.structure.Expression expr = processExpressionRefl(x.condition);
@@ -1049,16 +1049,26 @@ public class JavaConverterTreeBuilder {
     forStatement.setCondition(expr);
     forStatement.setBody(body);
     if (!incr.isEmpty()) {
-      jetbrains.mps.baseLanguage.structure.Expression expression = incr.get(0).getExpression();
-      expression.getParent().removeChild(expression);
-      forStatement.setIteration(expression); //todo add to BL multiple iterations
+      for (ExpressionStatement expressionStatement : incr) {
+        jetbrains.mps.baseLanguage.structure.Expression expression = expressionStatement.getExpression();
+        expression.getParent().removeChild(expression);
+        forStatement.addIteration(expression);
+      }
     }
-    if (!init.isEmpty()) { //todo add to BL multiple for-loop variables
-      if (init.get(0) instanceof LocalVariableDeclarationStatement) {
-        LocalVariableDeclarationStatement lvds = (LocalVariableDeclarationStatement) init.get(0);
-        LocalVariableDeclaration variableDeclaration = lvds.getLocalVariableDeclaration();
-        lvds.removeChild(variableDeclaration);
-        forStatement.setVariable(variableDeclaration);
+    if (!init.isEmpty()) {
+      boolean first = true;
+      for (Statement statement : init) {
+        if (statement instanceof LocalVariableDeclarationStatement) {
+          LocalVariableDeclarationStatement lvds = (LocalVariableDeclarationStatement) statement;
+          LocalVariableDeclaration variableDeclaration = lvds.getLocalVariableDeclaration();
+          lvds.removeChild(variableDeclaration);
+          if (first) {
+            forStatement.setVariable(variableDeclaration);
+            first = false;
+          } else {
+            forStatement.addAdditionalVar(variableDeclaration);
+          }
+        }
       }
     }
     return forStatement;
@@ -1068,8 +1078,8 @@ public class JavaConverterTreeBuilder {
     // SEE NOTE ON JDT FORCED OPTIMIZATIONS
     // If the condition is false, don't process the then statement
     // If the condition is false, don't process the else statement
-  //  boolean removeThen = isOptimizedFalse(x.condition);
-  //  boolean removeElse = isOptimizedTrue(x.condition);
+    //  boolean removeThen = isOptimizedFalse(x.condition);
+    //  boolean removeElse = isOptimizedTrue(x.condition);
 
     //SourceInfo info = makeSourceInfo(x);
     jetbrains.mps.baseLanguage.structure.Expression expr = processExpressionRefl(x.condition);
@@ -1204,7 +1214,7 @@ public class JavaConverterTreeBuilder {
   Statement processStatement(WhileStatement x) {
     // SEE NOTE ON JDT FORCED OPTIMIZATIONS
     // If the condition is false, don't process the body
-   // boolean removeBody = isOptimizedFalse(x.condition);
+    // boolean removeBody = isOptimizedFalse(x.condition);
 
     // SourceInfo info = makeSourceInfo(x);
     jetbrains.mps.baseLanguage.structure.Expression loopTest = processExpressionRefl(x.condition);

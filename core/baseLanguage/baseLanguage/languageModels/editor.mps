@@ -5951,6 +5951,25 @@
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1144231387422">
         <link role="relationDeclaration:32" targetNodeId="17.1144230900587:3" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SideTransformAnchorTagStyleClassItem:32" id="1032195626825058911">
+          <property name="tag:32" value="ext_2_RTransform" />
+        </node>
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1032195626824963091">
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1032195626824963092">
+          <property name="flag:32" value="false" />
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1032195626824963095">
+          <property name="text:32" value="," />
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem:32" id="1032195626824963097">
+            <property name="flag:32" value="true" />
+          </node>
+        </node>
+        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="1032195626824963098">
+          <link role="relationDeclaration:32" targetNodeId="17.1032195626824963089:3" />
+          <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1032195626824963099" />
+        </node>
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1032195626824963094" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1144231387423">
         <property name="text:32" value=";" />
@@ -5967,8 +5986,10 @@
         <link role="styleClass:32" targetNodeId="1215094139260" resolveInfo="Semicolon" />
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1215104980873" />
       </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1144231426986">
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="1032195626824939922">
+        <property name="separatorText:32" value="," />
         <link role="relationDeclaration:32" targetNodeId="17.1144231408325:3" />
+        <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1032195626824939923" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1144231387425">
         <property name="text:32" value=")" />

@@ -25,14 +25,18 @@ public class ForStatement_TextGen extends SNodeTextGen {
     if ((SLinkOperations.getTarget(node, "variable", true) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "variable", true), this.getSNode());
     }
+    for (SNode additionalVar : SLinkOperations.getTargets(node, "additionalVar", true)) {
+      this.append(", ");
+      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), additionalVar, this.getSNode());
+    }
     this.append("; ");
     if ((SLinkOperations.getTarget(node, "condition", true) != null)) {
       TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "condition", true), this.getSNode());
     }
     this.append(";");
-    if ((SLinkOperations.getTarget(node, "iteration", true) != null)) {
+    for (SNode iteration : SLinkOperations.getTargets(node, "iteration", true)) {
       this.append(" ");
-      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "iteration", true), this.getSNode());
+      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), iteration, this.getSNode());
     }
     this.append(") {");
     this.increaseDepth();

@@ -1556,9 +1556,15 @@
     </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1144231408325">
       <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="0..1" />
+      <property name="sourceCardinality:0" value="0..n" />
       <property name="role:0" value="iteration" />
       <link role="target:0" targetNodeId="1068431790191:3" resolveInfo="Expression" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1032195626824963089">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="additionalVar" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="1068581242863:3" resolveInfo="LocalVariableDeclaration" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1144231339107">
       <property name="value:0" value="for" />
