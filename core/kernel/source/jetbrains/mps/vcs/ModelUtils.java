@@ -138,6 +138,23 @@ public class ModelUtils {
     }
   }
 
+  public static SModel readModel(String content, String path) throws IOException, ReadException {
+    final String[] modelNameAndStereotype = getModelNameAndStereotype(path);
+    try {
+      if (content.isEmpty()) {
+        return new SModel(SModelReference.fromString(modelNameAndStereotype[0] + "@" + modelNameAndStereotype[1]));
+      }
+      final Document document = JDOMUtil.loadDocument(new StringReader(content));
+      return ModelAccess.instance().runReadAction(new Computable<SModel>() {
+        public SModel compute() {
+          return ModelPersistence.readModel(document, modelNameAndStereotype[0], modelNameAndStereotype[1]);
+        }
+      });
+    } catch (Throwable t) {
+      throw new ReadException(t);
+    }
+  }
+
   public static SModel readModel(String path) throws JDOMException, IOException {
     final String[] modelNameAndStereotype = getModelNameAndStereotype(path);
     final Document document = JDOMUtil.loadDocument(new FileInputStream(path));
