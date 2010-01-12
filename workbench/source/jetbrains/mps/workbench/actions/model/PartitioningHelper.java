@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.actions.model;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.generator.plan.GenerationPartitioner;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
+import jetbrains.mps.generator2.plan.ConnectedComponentPartitioner;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;
@@ -30,6 +31,7 @@ import jetbrains.mps.workbench.output.OutputViewTool;
 
 import javax.swing.JOptionPane;
 import java.awt.Frame;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -98,6 +100,18 @@ public class PartitioningHelper {
     viewTool.append("---------------------  mappings partitioning  -----------------------------------\n\n");
     viewTool.append(text);
     viewTool.append("---------------------------------------------------------------------------------\n");
+
+    // other
+    List<SNode> roots = new ArrayList<SNode>();
+    for(SModelDescriptor md : models) {
+      SModel model = md.getSModel();
+      for (SNode root : model.getRoots()) {
+        roots.add(root);
+      }
+    }
+    ConnectedComponentPartitioner ccp = new ConnectedComponentPartitioner(roots);
+    viewTool.append(ccp.partition());
+
     viewTool.openToolLater(true);
   }
 }
