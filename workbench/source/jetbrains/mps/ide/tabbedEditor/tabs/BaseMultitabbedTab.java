@@ -24,6 +24,7 @@ import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.execution.ExecutionBundle;
+import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -44,6 +45,8 @@ import javax.swing.*;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import java.awt.BorderLayout;
+import java.awt.Component;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
 import java.util.*;
 
@@ -167,7 +170,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
       }
       final JButton button = new JButton();
       AbstractAction action = new AbstractAction("Create new") {
-        public void actionPerformed(ActionEvent e) {
+        public void actionPerformed(final ActionEvent e) {
           if (nodeList.size() == 0) {
             createNewInnerTab(null);
           } else {
@@ -202,7 +205,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
                     return FINAL_CHOICE;
                   }
                 });
-                popup.show(panel);
+                popup.show(new RelativePoint(button, new Point(0, button.getHeight())));
               }
             });
           }
