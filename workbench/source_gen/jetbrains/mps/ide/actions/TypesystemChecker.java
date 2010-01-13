@@ -37,7 +37,7 @@ public class TypesystemChecker extends SpecificChecker {
       for (Pair<SNode, List<IErrorReporter>> nodeErrorReporters : SetSequence.fromSet(nodeTypesComponent.getNodesWithErrors())) {
         SNode node = nodeErrorReporters.o1;
         for (IErrorReporter errorReporter : ListSequence.fromList(nodeErrorReporters.o2)) {
-          addIssue(results, node, errorReporter.reportError(), getResultCategory(errorReporter.getMessageStatus()), null);
+          addIssue(results, node, errorReporter.reportError(), getResultCategory(errorReporter.getMessageStatus()), "type system", null);
         }
       }
     }

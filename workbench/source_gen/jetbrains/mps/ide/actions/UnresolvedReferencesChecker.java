@@ -29,7 +29,7 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
       // Check for unresolved references 
       for (final SReference ref : ListSequence.fromList(SNodeOperations.getReferences(node))) {
         if ((SLinkOperations.getTargetNode(ref) == null)) {
-          addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.CATEGORY_ERROR, new IModelCheckerFix() {
+          addIssue(results, node, "Unresolved reference: " + SLinkOperations.getResolveInfo(ref), ModelChecker.CATEGORY_ERROR, "unresolved reference", new IModelCheckerFix() {
             public boolean doFix() {
               return Resolver.resolve1(ref, operationContext);
             }

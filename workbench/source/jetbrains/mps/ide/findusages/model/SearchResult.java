@@ -16,6 +16,8 @@
 package jetbrains.mps.ide.findusages.model;
 
 public class SearchResult<T> {
+  public static final String SUBCATEGORY_SEPARATOR = "/"; 
+
   protected T myObject;
   protected Object myPathObject;
   protected String myCategory;
@@ -48,6 +50,10 @@ public class SearchResult<T> {
 
   public String getCategory() {
     return myCategory;
+  }
+
+  public String[] getCategoryPath() {
+    return myCategory.split(SUBCATEGORY_SEPARATOR);
   }
 
   public int hashCode() {

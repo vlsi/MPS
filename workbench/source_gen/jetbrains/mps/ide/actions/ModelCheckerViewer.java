@@ -42,6 +42,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.projectPane.Icons;
+import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.StringEscapeUtils;
 import org.jdom.Element;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -232,12 +233,14 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
     }
 
     public Icon getCategoryIcon(String category) {
-      if (ModelChecker.CATEGORY_ERROR.equals(category)) {
-        return jetbrains.mps.ide.messages.Icons.ERROR_ICON;
-      } else if (ModelChecker.CATEGORY_WARNING.equals(category)) {
-        return jetbrains.mps.ide.messages.Icons.WARNING_ICON;
-      } else if (ModelChecker.CATEGORY_INFO.equals(category)) {
-        return jetbrains.mps.ide.messages.Icons.INFORMATION_ICON;
+      if (StringUtils.isNotEmpty(category)) {
+        if (category.startsWith(ModelChecker.CATEGORY_ERROR)) {
+          return jetbrains.mps.ide.messages.Icons.ERROR_ICON;
+        } else if (category.startsWith(ModelChecker.CATEGORY_WARNING)) {
+          return jetbrains.mps.ide.messages.Icons.WARNING_ICON;
+        } else if (category.startsWith(ModelChecker.CATEGORY_INFO)) {
+          return jetbrains.mps.ide.messages.Icons.INFORMATION_ICON;
+        }
       }
       return jetbrains.mps.ide.messages.Icons.ERROR_ICON;
     }

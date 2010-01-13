@@ -26,7 +26,7 @@ public class UnavailableConceptsChecker extends SpecificChecker {
       }
       SNode concept = SNodeOperations.getConceptDeclaration(node);
       if (concept == null) {
-        addIssue(results, node, "Cannot find concept \"" + INamedConcept_Behavior.call_getFqName_1213877404258(concept) + "\"", ModelChecker.CATEGORY_ERROR, null);
+        addIssue(results, node, "Cannot find concept \"" + INamedConcept_Behavior.call_getFqName_1213877404258(concept) + "\"", ModelChecker.CATEGORY_ERROR, "unavailable concept", null);
       }
     }
 

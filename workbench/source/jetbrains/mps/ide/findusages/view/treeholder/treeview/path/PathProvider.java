@@ -59,6 +59,8 @@ public class PathProvider {
       res.add(new PathItem(PathItemRole.ROLE_MODULE, module));
     }
 
+
+    //todo
     res.add(new PathItem(PathItemRole.ROLE_CATEGORY, result.getCategory()));
 
     Collections.reverse(res);
