@@ -176,7 +176,11 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
 
           public PopupStep onChosen(SNode selectedValue, boolean finalChoice) {
             if (myInnerTabbedPane == null) {
-              tryToInitComponent();  
+              ModelAccess.instance().runReadAction(new Runnable() {
+                public void run() {
+                  tryToInitComponent();
+                }
+              });
             }
             createNewInnerTab(selectedValue);
             return FINAL_CHOICE;
