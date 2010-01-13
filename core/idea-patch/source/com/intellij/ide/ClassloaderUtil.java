@@ -47,17 +47,21 @@ import java.util.regex.Pattern;
 /*
  * IDEA keeps all its libraries in lib folder, MPS uses sub-folders.
  * So we automatically add everything near idea platform jar into classpath.
- * See addAllFromLibFolder.
+ * We also want languages jars.
  */
 public class ClassloaderUtil {
-  @NonNls static final String FILE_CACHE = "fileCache";
-  @NonNls static final String URL_CACHE = "urlCache";// See http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4167874
-  @NonNls public static final String PROPERTY_IGNORE_CLASSPATH = "ignore.classpath";
+  @NonNls
+  static final String FILE_CACHE = "fileCache";
+  @NonNls
+  static final String URL_CACHE = "urlCache";// See http://bugs.sun.com/bugdatabase/view_bug.do?bug_id=4167874
+  @NonNls
+  public static final String PROPERTY_IGNORE_CLASSPATH = "ignore.classpath";
 
   @SuppressWarnings({"HardCodedStringLiteral"})
   private static final String ERROR = "Error";
 
-  private ClassloaderUtil() {}
+  private ClassloaderUtil() {
+  }
 
   public static void clearJarURLCache() {
     try {
@@ -90,11 +94,15 @@ public class ClassloaderUtil {
     return Logger.getInstance("ClassloaderUtil");
   }
 
+  @Patch
   public static UrlClassLoader initClassloader(final List<URL> classpathElements) {
     PathManager.loadProperties();
 
     try {
       addParentClasspath(classpathElements);
+      // MPS Patch Start
+      addLanguagesClassPath(classpathElements);
+      // MPS Patch End
       addIDEALibraries(classpathElements);
       addAdditionalClassPath(classpathElements);
     }
@@ -146,12 +154,31 @@ public class ClassloaderUtil {
       Logger logger = getLogger();
       if (logger == null) {
         e.printStackTrace(System.err);
-      }
-      else {
+      } else {
         logger.error(e);
       }
     }
     return newClassLoader;
+  }
+
+  @Patch
+  private static void addLanguagesClassPath(List<URL> classPath) {
+    String homePath = PathManager.getHomePath();
+    try {
+      Class<Bootstrap> clazz = Bootstrap.class;
+      String selfRoot = PathManager.getResourceRoot(clazz, "/" + clazz.getName().replace('.', '/') + ".class");
+      URL selfRootUrl = new File(selfRoot).getAbsoluteFile().toURL();
+
+      File baseLanguageFolder = new File(homePath + File.separator + "core" + File.separator + "baseLanguage");
+      addLibraries(classPath, baseLanguageFolder, selfRootUrl);
+
+      File languageDesignFolder = new File(homePath + File.separator + "core" + File.separator + "languageDesign");
+      addLibraries(classPath, languageDesignFolder, selfRootUrl);
+
+    }
+    catch (MalformedURLException e) {
+      getLogger().error(e);
+    }
   }
 
   public static void filterClassPath(final List<URL> classpathElements) {
@@ -172,25 +199,23 @@ public class ClassloaderUtil {
   public static void addParentClasspath(List<URL> aClasspathElements) throws MalformedURLException {
     final ClassLoader loader = ClassloaderUtil.class.getClassLoader();
     if (loader instanceof URLClassLoader) {
-      URLClassLoader urlClassLoader = (URLClassLoader)loader;
+      URLClassLoader urlClassLoader = (URLClassLoader) loader;
       aClasspathElements.addAll(Arrays.asList(urlClassLoader.getURLs()));
-    }
-    else {
+    } else {
       try {
         Class antClassLoaderClass = Class.forName("org.apache.tools.ant.AntClassLoader");
         if (antClassLoaderClass.isInstance(loader) ||
-            loader.getClass().getName().equals("org.apache.tools.ant.AntClassLoader") ||
-            loader.getClass().getName().equals("org.apache.tools.ant.loader.AntClassLoader2")) {
+          loader.getClass().getName().equals("org.apache.tools.ant.AntClassLoader") ||
+          loader.getClass().getName().equals("org.apache.tools.ant.loader.AntClassLoader2")) {
           //noinspection HardCodedStringLiteral
           final String classpath =
-            (String)antClassLoaderClass.getDeclaredMethod("getClasspath", ArrayUtil.EMPTY_CLASS_ARRAY).invoke(loader, ArrayUtil.EMPTY_OBJECT_ARRAY);
+            (String) antClassLoaderClass.getDeclaredMethod("getClasspath", ArrayUtil.EMPTY_CLASS_ARRAY).invoke(loader, ArrayUtil.EMPTY_OBJECT_ARRAY);
           final StringTokenizer tokenizer = new StringTokenizer(classpath, File.separator, false);
           while (tokenizer.hasMoreTokens()) {
             final String token = tokenizer.nextToken();
             aClasspathElements.add(new File(token).toURL());
           }
-        }
-        else {
+        } else {
           getLogger().warn("Unknown classloader: " + loader.getClass().getName());
         }
       }
@@ -236,7 +261,7 @@ public class ClassloaderUtil {
       // MPS Patch Start
       File jetbrainsIdeFrameworkDir = new File(selfRoot).getAbsoluteFile().getParentFile();
       if (!libFolder.equals(jetbrainsIdeFrameworkDir)) {
-        addLibraries(classPath, jetbrainsIdeFrameworkDir, selfRootUrl);        
+        addLibraries(classPath, jetbrainsIdeFrameworkDir, selfRootUrl);
       }
       // MPS Patch End
 

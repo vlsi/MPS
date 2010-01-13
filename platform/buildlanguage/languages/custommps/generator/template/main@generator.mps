@@ -5146,117 +5146,6 @@
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786037">
         <property name="path:0" value="lib/mps.jar" />
       </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786038">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.actions.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1237393773053">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.annotations.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786039">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.behavior.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786040">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.constraints.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1237393211503">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.core.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786041">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.dataFlow.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786042">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.dataFlow.runtime.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786043">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.editor.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786044">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.findUsages.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786045">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.generator.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786046">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.intentions.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786048">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.pattern.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786049">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.plugin.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786050">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.quotation.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786051">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.refactoring.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786052">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.script.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786053">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.sharedConcepts.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786054">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.smodel.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786055">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.structure.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786056">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.test.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1237559314719">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.textGen.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786057">
-        <property name="path:0" value="core/languageDesign/jetbrains.mps.lang.typesystem.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1240248542021">
-        <property name="path:0" value="core/languageDesign/jetbrains.mpslite.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786058">
-        <property name="path:0" value="core/baseLanguage/jetbrains.mps.baseLanguage.blTypes.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786060">
-        <property name="path:0" value="core/baseLanguage/jetbrains.mps.baseLanguage.classifiers.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786061">
-        <property name="path:0" value="core/baseLanguage/jetbrains.mps.baseLanguage.closures.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786062">
-        <property name="path:0" value="core/baseLanguage/jetbrains.mps.baseLanguage.closures.runtime.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786063">
-        <property name="path:0" value="core/baseLanguage/jetbrains.mps.baseLanguage.collections.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786064">
-        <property name="path:0" value="core/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786065">
-        <property name="path:0" value="core/baseLanguage/jetbrains.mps.baseLanguage.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786066">
-        <property name="path:0" value="core/baseLanguage/jetbrains.mps.baseLanguage.refactoring.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786067">
-        <property name="path:0" value="core/baseLanguage/jetbrains.mps.baseLanguage.runtime.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="7435147164990358736">
-        <property name="path:0" value="core/baseLanguage/jetbrains.mps.baseLanguage.dates.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="7435147164990358739">
-        <property name="path:0" value="core/baseLanguage/jetbrains.mps.baseLanguage.dates.runtime.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="8825264714574789816">
-        <property name="path:0" value="core/baseLanguage/jetbrains.mps.baseLanguage.datesInternal.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786068">
-        <property name="path:0" value="core/baseLanguage/jetbrains.mps.baseLanguage.unitTest.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786069">
-        <property name="path:0" value="core/baseLanguage/jetbrains.mps.internal.collections.mpsarch.jar" />
-      </node>
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786071">
         <property name="path:0" value="platform/jetbrains.mps.uiLanguage.mpsarch.jar" />
       </node>
@@ -5302,9 +5191,6 @@
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786086">
         <property name="path:0" value="lib/jdom/jdom.jar" />
       </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786087">
-        <property name="path:0" value="lib/jetbrains-ideframework/annotations.jar" />
-      </node>
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786088">
         <property name="path:0" value="lib/jetbrains-ideframework/boot.jar" />
       </node>
@@ -5313,24 +5199,6 @@
       </node>
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786090">
         <property name="path:0" value="lib/jetbrains-ideframework/extensions.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786091">
-        <property name="path:0" value="lib/jetbrains-ideframework/forms_rt.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786092">
-        <property name="path:0" value="lib/jetbrains-ideframework/icons.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786093">
-        <property name="path:0" value="lib/jetbrains-ideframework/platform-api.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786094">
-        <property name="path:0" value="lib/jetbrains-ideframework/platform.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786095">
-        <property name="path:0" value="lib/jetbrains-ideframework/resources.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786096">
-        <property name="path:0" value="lib/jetbrains-ideframework/resources_en.jar" />
       </node>
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786098">
         <property name="path:0" value="lib/jetbrains-ideframework/util.jar" />
