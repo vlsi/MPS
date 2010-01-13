@@ -28,7 +28,7 @@ import java.util.*;
 public class PathProvider {
   private static final Logger LOG = Logger.getLogger(PathProvider.class);
 
-  public static List<PathItem> getPathForSearchResult(SearchResult result) {
+  public static List<PathItem> getPathForSearchResult(SearchResult<?> result) {
     List<PathItem> res = new ArrayList<PathItem>();
     Object o = result.getPathObject();
 
@@ -59,9 +59,11 @@ public class PathProvider {
       res.add(new PathItem(PathItemRole.ROLE_MODULE, module));
     }
 
-
-    //todo
-    res.add(new PathItem(PathItemRole.ROLE_CATEGORY, result.getCategory()));
+    List<String> reversedCategories = new ArrayList<String>(result.getCategories());
+    Collections.reverse(reversedCategories);
+    for (String category : reversedCategories) {
+      res.add(new PathItem(PathItemRole.ROLE_CATEGORY, category));
+    }
 
     Collections.reverse(res);
 

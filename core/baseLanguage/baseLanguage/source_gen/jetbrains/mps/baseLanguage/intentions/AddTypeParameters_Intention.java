@@ -30,7 +30,7 @@ public class AddTypeParameters_Intention extends BaseIntention implements Intent
   }
 
   public String getDescription(final SNode node, final EditorContext editorContext) {
-    return "Add type parameters";
+    return "Add Type Parameters";
   }
 
   public boolean isApplicable(final SNode node, final EditorContext editorContext) {

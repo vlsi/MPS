@@ -40,8 +40,8 @@ public class ModelCheckerIssue {
     return this.myFix != null;
   }
 
-  public static SearchResult<ModelCheckerIssue> getSearchResult(SNode node, String message, String category, IModelCheckerFix fix) {
+  public static SearchResult<ModelCheckerIssue> getSearchResult(SNode node, String message, IModelCheckerFix fix, String... categories) {
     ModelCheckerIssue issue = new ModelCheckerIssue(node, message, fix);
-    return new SearchResult<ModelCheckerIssue>(issue, node, category);
+    return new SearchResult<ModelCheckerIssue>(issue, node, categories);
   }
 }

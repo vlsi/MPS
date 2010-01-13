@@ -242,7 +242,7 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
           return jetbrains.mps.ide.messages.Icons.INFORMATION_ICON;
         }
       }
-      return jetbrains.mps.ide.messages.Icons.ERROR_ICON;
+      return Icons.CLOSED_FOLDER;
     }
 
     public String getPresentation(ModelCheckerIssue issue) {

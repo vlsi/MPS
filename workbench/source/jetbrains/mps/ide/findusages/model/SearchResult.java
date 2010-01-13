@@ -15,29 +15,41 @@
  */
 package jetbrains.mps.ide.findusages.model;
 
-public class SearchResult<T> {
-  public static final String SUBCATEGORY_SEPARATOR = "/"; 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
+public class SearchResult<T> {
   protected T myObject;
   protected Object myPathObject;
-  protected String myCategory;
+  protected List<String> myCategories = new ArrayList<String>();
 
   public SearchResult() {
 
   }
 
   public SearchResult(SearchResult<T> src) {
-    this(src.getObject(), src.getPathObject(), src.getCategory());
+    this(src.getObject(), src.getPathObject(), src.getCategories());
   }
 
+  @Deprecated
   public SearchResult(T object, String category) {
-    this(object, object, category);
+    this(object, object, new String[]{category});
   }
 
+  @Deprecated
   public SearchResult(T object, Object pathObject, String category) {
+    this(object, pathObject, new String[]{category});
+  }
+
+  public SearchResult(T object, Object pathObject, List<String> categories) {
     myObject = object;
     myPathObject = pathObject;
-    myCategory = category;
+    myCategories = categories;
+  }
+
+  public SearchResult(T object, Object pathObject, String... categories) {
+    this(object, pathObject, Arrays.asList(categories));
   }
 
   public T getObject() {
@@ -48,23 +60,28 @@ public class SearchResult<T> {
     return myPathObject;
   }
 
+  @Deprecated
   public String getCategory() {
-    return myCategory;
+    if (myCategories.size() == 0) {
+      return null;
+    } else {
+      return myCategories.get(0);
+    }
   }
 
-  public String[] getCategoryPath() {
-    return myCategory.split(SUBCATEGORY_SEPARATOR);
+  public List<String> getCategories() {
+    return myCategories;
   }
 
   public int hashCode() {
-    return myCategory.hashCode() * 37 + myObject.hashCode() * 17;
+    return myCategories.hashCode() * 37 + myObject.hashCode() * 17;
   }
 
   public boolean equals(Object o) {
     if (!(o instanceof SearchResult)) return false;
     SearchResult searchResult = (SearchResult) o;
     if (!myObject.equals(searchResult.myObject)) return false;
-    if (!myCategory.equals(searchResult.myCategory)) return false;
+    if (!myCategories.equals(searchResult.myCategories)) return false;
     return true;
   }
 }
