@@ -109,6 +109,7 @@ public class AbstractConceptDeclaration_Behavior {
         AbstractConceptDeclaration_Behavior.call_findConceptAspectCollection_8360039740498071686(thisNode, model, result);
       }
     }
+    ListSequence.fromList(result).removeSequence(ListSequence.fromList(AbstractConceptDeclaration_Behavior.call_findGeneratorFragments_6409339300305625383(thisNode, scope)));
     return result;
   }
 

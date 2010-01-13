@@ -1476,6 +1476,24 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3761071458241956624">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3761071458241956626">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3761071458241956625">
+              <link role="variableDeclaration:3" targetNodeId="3590548766499750664" resolveInfo="result" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation:7" id="3761071458241956630">
+              <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3761071458241956637">
+                <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="3761071458241956638" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3761071458241956639">
+                  <link role="baseMethodDeclaration:16" targetNodeId="6409339300305625383" resolveInfo="findGeneratorFragments" />
+                  <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="3761071458241956645">
+                    <link role="variableDeclaration:3" targetNodeId="3590548766499750658" resolveInfo="scope" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="3590548766499750707">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3590548766499750709">
             <link role="variableDeclaration:3" targetNodeId="3590548766499750664" resolveInfo="result" />
