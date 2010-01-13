@@ -29,25 +29,41 @@ import javax.swing.Icon;
 
 public class CategoryNodeData extends BaseNodeData {
   private static final String CATEGORY = "category";
+  private static final String CATEGORY_KIND = "category_kind";
+
+  private String myCategoryKindName = "";
   private String myCategory = "";
   private INodeRepresentator myNodeRepresentator;
 
+  @Deprecated
   public CategoryNodeData(PathItemRole role, String category, boolean resultsSection) {
     super(role, "<b>" + category + "</b>", "", true, false, resultsSection);
     myCategory = category;
   }
 
+  @Deprecated
   public CategoryNodeData(PathItemRole role, String category, boolean resultsSection,
                           INodeRepresentator nodeRepresentator) {
-    super(role, "<b>" + category + "</b>",
-      "", true, false, resultsSection);
+    super(role, "<b>" + category + "</b>", "", true, false, resultsSection);
+    myCategory = category;
+    myNodeRepresentator = nodeRepresentator;
+  }
+
+  public CategoryNodeData(PathItemRole role, String categoryKindName, String category, boolean resultsSection) {
+    this(role, categoryKindName, category, resultsSection, null);
+  }
+
+  public CategoryNodeData(PathItemRole role, String categoryKindName, String category, boolean resultsSection,
+                          INodeRepresentator nodeRepresentator) {
+    super(role, "<b>" + category + "</b>", "", true, false, resultsSection);
+    myCategoryKindName = categoryKindName;
     myCategory = category;
     myNodeRepresentator = nodeRepresentator;
   }
 
   public CategoryNodeData(Element element, MPSProject project) throws CantLoadSomethingException {
     read(element, project);
-  }
+  }         
 
   @Override
   public Icon getIcon() {
@@ -62,14 +78,22 @@ public class CategoryNodeData extends BaseNodeData {
     return myCategory;
   }
 
+  public String getCategoryKindName() {
+    return myCategoryKindName;
+  }
+
   public void write(Element element, MPSProject project) throws CantSaveSomethingException {
     super.write(element, project);
     element.setAttribute(CATEGORY, myCategory);
+    if (myCategoryKindName != null) {
+      element.setAttribute(CATEGORY_KIND, myCategoryKindName);
+    }
   }
 
   public void read(Element element, MPSProject project) throws CantLoadSomethingException {
     super.read(element, project);
     myCategory = element.getAttributeValue(CATEGORY);
+    myCategoryKindName = element.getAttributeValue(CATEGORY_KIND);
   }
 
   public String getText(TextOptions options) {

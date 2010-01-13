@@ -19,6 +19,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.IExternalizeable;
+import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes.*;
@@ -29,6 +30,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathProvider;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Pair;
 import org.jdom.Element;
 
 import java.util.ArrayList;
@@ -203,9 +205,9 @@ public class DataTree implements IExternalizeable, IChangeListener {
         } else {
           data = new NodeNodeData(creator, (SNode) o, isResult, nodeRepresentator, results);
         }
-      } else {
-        String caption = (String) currentIdObject;
-        data = new CategoryNodeData(creator, caption, results, nodeRepresentator);
+      } else if (o instanceof Pair) {
+        Pair<CategoryKind, String> category = (Pair<CategoryKind, String>) currentIdObject;
+        data = new CategoryNodeData(creator, category.o1.getName(), category.o2, results, nodeRepresentator);
       }
       next = new DataNode(data);
       root.add(next);

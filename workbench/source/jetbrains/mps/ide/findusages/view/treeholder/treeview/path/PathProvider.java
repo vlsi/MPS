@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.treeview.path;
 
+import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
@@ -22,6 +23,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
@@ -59,9 +61,9 @@ public class PathProvider {
       res.add(new PathItem(PathItemRole.ROLE_MODULE, module));
     }
 
-    List<String> reversedCategories = new ArrayList<String>(result.getCategories());
+    List<Pair<CategoryKind, String>> reversedCategories = new ArrayList<Pair<CategoryKind, String>>(result.getCategories());
     Collections.reverse(reversedCategories);
-    for (String category : reversedCategories) {
+    for (Pair<CategoryKind, String> category : reversedCategories) {
       res.add(new PathItem(PathItemRole.ROLE_CATEGORY, category));
     }
 

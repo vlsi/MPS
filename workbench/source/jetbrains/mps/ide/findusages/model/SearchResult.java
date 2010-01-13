@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.findusages.model;
 
+import jetbrains.mps.util.Pair;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -22,7 +24,7 @@ import java.util.List;
 public class SearchResult<T> {
   protected T myObject;
   protected Object myPathObject;
-  protected List<String> myCategories = new ArrayList<String>();
+  protected List<Pair<CategoryKind, String>> myCategories = new ArrayList<Pair<CategoryKind, String>>();
 
   public SearchResult() {
 
@@ -32,23 +34,23 @@ public class SearchResult<T> {
     this(src.getObject(), src.getPathObject(), src.getCategories());
   }
 
-  @Deprecated
+  // This constructor should be used for simple, one-level categories
   public SearchResult(T object, String category) {
-    this(object, object, new String[]{category});
+    this(object, object, new Pair<CategoryKind, String>(null, category));
   }
 
-  @Deprecated
+  // This constructor should be used for simple, one-level categories
   public SearchResult(T object, Object pathObject, String category) {
-    this(object, pathObject, new String[]{category});
+    this(object, pathObject, new Pair<CategoryKind, String>(null, category));
   }
 
-  public SearchResult(T object, Object pathObject, List<String> categories) {
+  public SearchResult(T object, Object pathObject, List<Pair<CategoryKind, String>> categories) {
     myObject = object;
     myPathObject = pathObject;
     myCategories = categories;
   }
 
-  public SearchResult(T object, Object pathObject, String... categories) {
+  public SearchResult(T object, Object pathObject, Pair<CategoryKind, String>... categories) {
     this(object, pathObject, Arrays.asList(categories));
   }
 
@@ -60,16 +62,25 @@ public class SearchResult<T> {
     return myPathObject;
   }
 
-  @Deprecated
+  // This method should be used for simple, one-level categories
   public String getCategory() {
     if (myCategories.size() == 0) {
       return null;
     } else {
-      return myCategories.get(0);
+      return myCategories.get(0).o2;
     }
   }
 
-  public List<String> getCategories() {
+  public String getCategoryForKind(CategoryKind categoryKind) {
+    for (Pair<CategoryKind, String> kindNamePair : myCategories) {
+      if (kindNamePair.o1.equals(categoryKind)) {
+        return kindNamePair.o2;
+      }
+    }
+    return null;
+  }
+
+  public List<Pair<CategoryKind, String>> getCategories() {
     return myCategories;
   }
 
