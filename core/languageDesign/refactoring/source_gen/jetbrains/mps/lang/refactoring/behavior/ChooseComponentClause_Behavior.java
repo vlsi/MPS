@@ -5,6 +5,16 @@ package jetbrains.mps.lang.refactoring.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ChooseComponentClause_Behavior {
   public static void init(SNode thisNode) {
@@ -12,6 +22,38 @@ public class ChooseComponentClause_Behavior {
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
     SNode elementType = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(thisNode), "jetbrains.mps.lang.refactoring.structure.RequiredUserEnteredArgument"), "argumentType", true);
-    return new _Quotations.QuotationClass_0().createNode(elementType);
+    return new ChooseComponentClause_Behavior.QuotationClass_6948_0().createNode(elementType);
+  }
+
+  public static class QuotationClass_6948_0 {
+    public QuotationClass_6948_0() {
+    }
+
+    public SNode createNode(Object parameter_6948_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0 = null;
+      SNode quotedNode_1 = null;
+      {
+        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode1_0.addReference(SReference.create("classifier", quotedNode1_0, SModelReference.fromString("f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)"), SNodeId.fromString("~IChooseComponent")));
+        {
+          quotedNode_1 = (SNode) parameter_6948_0;
+          SNode quotedNode1_1;
+          if (_parameterValues_129834374.contains(quotedNode_1)) {
+            quotedNode1_1 = CopyUtil.copy(quotedNode_1);
+          } else {
+            _parameterValues_129834374.add(quotedNode_1);
+            quotedNode1_1 = quotedNode_1;
+          }
+          if (quotedNode1_1 != null) {
+            quotedNode_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_1));
+          }
+        }
+        result = quotedNode1_0;
+      }
+      return result;
+    }
   }
 }

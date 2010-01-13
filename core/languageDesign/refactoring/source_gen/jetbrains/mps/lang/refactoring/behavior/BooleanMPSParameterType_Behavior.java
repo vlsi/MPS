@@ -5,6 +5,14 @@ package jetbrains.mps.lang.refactoring.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodeId;
 
 public class BooleanMPSParameterType_Behavior {
   private static Class[] PARAMETERS_4413749148913760627 = {SNode.class};
@@ -13,7 +21,7 @@ public class BooleanMPSParameterType_Behavior {
   }
 
   public static SNode virtual_getCreatorMethod_4413749148913760555(SNode thisNode) {
-    return new _Quotations.QuotationClass_6().createNode();
+    return new BooleanMPSParameterType_Behavior.QuotationClass_6230_0().createNode();
   }
 
   public static SNode call_getCreatorMethod_4413749148913760627(SNode thisNode) {
@@ -22,5 +30,24 @@ public class BooleanMPSParameterType_Behavior {
 
   public static SNode callSuper_getCreatorMethod_4413749148913760627(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.refactoring.structure.BooleanMPSParameterType"), callerConceptFqName, "virtual_getCreatorMethod_4413749148913760555", PARAMETERS_4413749148913760627);
+  }
+
+  public static class QuotationClass_6230_0 {
+    public QuotationClass_6230_0() {
+    }
+
+    public SNode createNode() {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_7 = null;
+      {
+        quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7 = quotedNode_7;
+        quotedNode1_7.addReference(SReference.create("baseMethodDeclaration", quotedNode1_7, SModelReference.fromString("f:java_stub#jetbrains.mps.refactoring.framework.paramchooser.mps(jetbrains.mps.refactoring.framework.paramchooser.mps@java_stub)"), SNodeId.fromString("~MPSChooserFactory.createBooleanChooser(jetbrains.mps.refactoring.framework.RefactoringContext,java.lang.String,jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings):jetbrains.mps.refactoring.framework.paramchooser.IChooser")));
+        quotedNode1_7.addReference(SReference.create("classConcept", quotedNode1_7, SModelReference.fromString("f:java_stub#jetbrains.mps.refactoring.framework.paramchooser.mps(jetbrains.mps.refactoring.framework.paramchooser.mps@java_stub)"), SNodeId.fromString("~MPSChooserFactory")));
+        result = quotedNode1_7;
+      }
+      return result;
+    }
   }
 }
