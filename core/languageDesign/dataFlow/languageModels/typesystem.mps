@@ -6,6 +6,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)" />
   <language namespace="3a13115c-633c-4c5c-bbcc-75c4219e9555(jetbrains.mps.lang.quotation)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ae(jetbrains.mps.lang.typesystem.constraints)" version="17" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590328(jetbrains.mps.baseLanguage.collections.constraints)" version="6" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="4" />
@@ -146,6 +147,36 @@
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="1206445108942">
       <property name="name:3" value="nodeToCheck" />
       <link role="concept:3" targetNodeId="1.1206444910183:0" resolveInfo="RelativePosition" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="4358085932829601411">
+    <property name="package:3" value="Instructions" />
+    <property name="name:3" value="typeof_EmitCodeForStatement" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4358085932829601412">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateStrongLessThanInequationStatement:3" id="4358085932829606435">
+        <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="4358085932829606436" />
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4358085932829606440">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4358085932829606441">
+            <node role="quotedNode:0" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="4358085932829606443" />
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4358085932829606439">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="4358085932829606431">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4358085932829606432">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4358085932829606433">
+                <link role="applicableNode:3" targetNodeId="4358085932829601417" resolveInfo="emitCodeForStatement" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4358085932829606434">
+                <link role="link:16" targetNodeId="1.1206454079161:0" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="4358085932829601417">
+      <property name="name:3" value="emitCodeForStatement" />
+      <link role="concept:3" targetNodeId="1.1206454052847:0" resolveInfo="EmitCodeForStatement" />
     </node>
   </node>
 </model>

@@ -19,5 +19,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       InferenceRule_Runtime inferenceRule = new typeof_RelativePosition_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_EmitCodeForStatement_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
   }
 }
