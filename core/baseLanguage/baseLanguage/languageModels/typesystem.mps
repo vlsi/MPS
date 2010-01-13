@@ -22087,6 +22087,7 @@
   </node>
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="1830039279190444602">
     <property name="name:3" value="typeof_AdditionalForLoopVariable" />
+    <property name="overrides:3" value="true" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1830039279190444603">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1830039279190455438">
         <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1830039279190455447">

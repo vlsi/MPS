@@ -36,6 +36,6 @@ public class typeof_AdditionalForLoopVariable_InferenceRule extends AbstractInfe
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 }

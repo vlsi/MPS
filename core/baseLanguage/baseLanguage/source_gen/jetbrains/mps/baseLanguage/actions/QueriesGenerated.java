@@ -369,17 +369,6 @@ __switch__:
     return (SLinkOperations.getTarget(_context.getSourceNode(), "expression", true) == null);
   }
 
-  public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_LocalVariableDeclaration_1032195626825026393(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    SNode parent = SNodeOperations.getParent(_context.getSourceNode());
-    if (SNodeOperations.isInstanceOf(parent, "jetbrains.mps.baseLanguage.structure.ForStatement")) {
-      SNode forLoop = SNodeOperations.cast(parent, "jetbrains.mps.baseLanguage.structure.ForStatement");
-      if (ListSequence.fromList(SLinkOperations.getTargets(forLoop, "additionalVar", true)).isEmpty() && SLinkOperations.getTarget(forLoop, "variable", true) == _context.getSourceNode()) {
-        return true;
-      }
-    }
-    return false;
-  }
-
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_EnumConstantDeclaration_3189410239339394410(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
     return ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "method", true)).isEmpty();
   }
@@ -3485,31 +3474,6 @@ __switch__:
 
         public String getVisibleMatchingText(String pattern) {
           return this.getMatchingText(pattern);
-        }
-      });
-    }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> sideTransform_ActionsFactory_LocalVariableDeclaration_1032195626825021676(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    {
-      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
-        public SNode doSubstitute(String pattern) {
-          return SLinkOperations.addNewChild(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.ForStatement"), "additionalVar", "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable");
-        }
-
-        public String getMatchingText(String pattern) {
-          return ",";
-        }
-
-        public String getVisibleMatchingText(String pattern) {
-          return this.getMatchingText(pattern);
-        }
-
-        public String getDescriptionText(String pattern) {
-          return "add loop var";
         }
       });
     }
