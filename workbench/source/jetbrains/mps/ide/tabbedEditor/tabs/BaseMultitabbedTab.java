@@ -38,6 +38,7 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.NameUtil;
 
 import javax.swing.*;
 import javax.swing.event.ChangeListener;
@@ -158,32 +159,57 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     myComponent.add(myInnerTabbedPane, BorderLayout.CENTER);
 
     if (canCreate()) {
-      JPanel panel = new JPanel(new BorderLayout());
-      final List<SNode> concepts = getAvailableConcepts();
-      panel.add(new JButton(new AbstractAction("Create new") {
+      final JPanel panel = new JPanel(new BorderLayout());
+      final List<SNode> nodeList = getAvailableConcepts();
+      final SNode[] concepts = new SNode[nodeList.size()];
+      for (int i = 0; i < nodeList.size(); i++) {
+        concepts[i] = nodeList.get(i);
+      }
+      final JButton button = new JButton();
+      AbstractAction action = new AbstractAction("Create new") {
         public void actionPerformed(ActionEvent e) {
-          if (concepts.size() == 0) {
+          if (nodeList.size() == 0) {
             createNewInnerTab(null);
           } else {
-            final ListPopup popup =
-              JBPopupFactory.getInstance().createListPopup(new BaseListPopupStep<SNode>("Choose concept", concepts) {
-                public Icon getIconFor(SNode conceptDeclaration) {
-                  return IconManager.getIconFor(conceptDeclaration);
-                }
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                final ListPopup popup;
+                popup = JBPopupFactory.getInstance().createListPopup(new BaseListPopupStep<SNode>("Choose concept", concepts) {
+                  public Icon getIconFor(final SNode concept) {
+                    final Icon[] result = new Icon[1];
+                    ModelAccess.instance().runReadAction(new Runnable() {
+                      public void run() {
+                        String name = NameUtil.longNameFromNamespaceAndShortName(concept.getModel().getSModelFqName().getLongName(), concept.getName());
+                        result[0] = IconManager.getIconForConceptFQName(name);
+                      }
+                    });
+                    return result[0];
+                  }
 
-                @NotNull
-                public String getTextFor(SNode value) {
-                  return value.getConceptShortName();
-                }
+                  @NotNull
+                  public String getTextFor(final SNode concept) {
+                    final String[] result = new String[]{null};
+                    ModelAccess.instance().runReadAction(new Runnable() {
+                      public void run() {
+                        result[0] = concept.getName();
+                      }
+                    });
+                    return result[0];
+                  }
 
-                public PopupStep onChosen(SNode selectedValue, boolean finalChoice) {
-                  createNewInnerTab(selectedValue);
-                  return FINAL_CHOICE;
-                }
-              });
+                  public PopupStep onChosen(SNode selectedValue, boolean finalChoice) {
+                    createNewInnerTab(selectedValue);
+                    return FINAL_CHOICE;
+                  }
+                });
+                popup.show(panel);
+              }
+            });
           }
         }
-      }), BorderLayout.WEST);
+      };
+      button.setAction(action);
+      panel.add(button, BorderLayout.WEST);
       myComponent.add(panel, BorderLayout.NORTH);
     }
 
