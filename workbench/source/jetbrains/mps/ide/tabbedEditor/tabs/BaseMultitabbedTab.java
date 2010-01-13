@@ -163,14 +163,19 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
 
     if (canCreate()) {
       final JPanel panel = new JPanel(new BorderLayout());
-      final List<SNode> nodeList = getAvailableConcepts();
-      final SNode[] concepts = new SNode[nodeList.size()];
-      for (int i = 0; i < nodeList.size(); i++) {
-        concepts[i] = nodeList.get(i);
-      }
       final JButton button = new JButton();
       AbstractAction action = new AbstractAction("Create new") {
         public void actionPerformed(final ActionEvent e) {
+          final List<SNode> nodeList = new ArrayList<SNode>();
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              nodeList.addAll(getAvailableConcepts());  
+            }
+          });
+          final SNode[] concepts = new SNode[nodeList.size()];
+          for (int i = 0; i < nodeList.size(); i++) {
+            concepts[i] = nodeList.get(i);
+          }
           if (nodeList.size() == 0) {
             createNewInnerTab(null);
           } else {
