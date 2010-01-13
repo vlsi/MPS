@@ -21,6 +21,7 @@ import jetbrains.mps.baseLanguageInternal.editor.StyleSheet_StyleSheet;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -50,7 +51,9 @@ public class ForStatement_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_0938_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_0938_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0938_0(editorContext, node));
-    editorCell.addEditorCell(this.createCollection_0938_4(editorContext, node));
+    if (renderingCondition0938_2(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_0938_4(editorContext, node));
+    }
     editorCell.addEditorCell(this.createConstant_0938_2(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_0938_2(editorContext, node));
     editorCell.addEditorCell(this.createConstant_0938_6(editorContext, node));
@@ -267,6 +270,7 @@ public class ForStatement_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.RT_ANCHOR_TAG, "ext_2_RTransform");
     }
+    DeleteFirstForLoopVar.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
@@ -377,6 +381,10 @@ public class ForStatement_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition0938_1(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "loopLabel", true) != null);
+  }
+
+  private static boolean renderingCondition0938_2(SNode node, EditorContext editorContext, IScope scope) {
+    return ListSequence.fromList(SLinkOperations.getTargets(node, "additionalVar", true)).isNotEmpty();
   }
 
   private static class iterationListHandler_0938_0 extends RefNodeListHandler {
