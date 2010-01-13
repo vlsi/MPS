@@ -814,9 +814,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1095670167932">
-          <property name="name:3" value="void" />
-        </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1095670167932" />
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1095670167931">
           <property name="name:3" value="value" />
           <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225192521117" />
@@ -962,9 +960,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1095688526432">
-          <property name="name:3" value="void" />
-        </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1095688526432" />
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1095688526433">
           <property name="name:3" value="value" />
           <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1095688526434" />
@@ -1064,9 +1060,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1096027932539">
-          <property name="name:3" value="int" />
-        </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1096027932539" />
         <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1096027932537">
           <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1219110458895">
             <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1219110458896">
@@ -1112,9 +1106,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1095689039700">
-          <property name="name:3" value="void" />
-        </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1095689039700" />
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1095689039699">
           <property name="name:3" value="value" />
           <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1095689039701" />
@@ -2496,9 +2488,7 @@
         </node>
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1095930013867">
           <property name="name:3" value="value" />
-          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1095929581470">
-            <property name="name:3" value="int" />
-          </node>
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1095929581470" />
         </node>
         <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1095930013868" />
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1178546096217" />
@@ -2656,9 +2646,7 @@
         </node>
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1095952798602">
           <property name="name:3" value="value" />
-          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1095952783288">
-            <property name="name:3" value="boolean" />
-          </node>
+          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1095952783288" />
         </node>
         <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="1095952798603" />
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1178546096218" />
@@ -2795,9 +2783,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1096018151078">
-          <property name="name:3" value="void" />
-        </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1096018151078" />
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1096017901985">
           <property name="name:3" value="value" />
           <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1234210968732">
@@ -3024,9 +3010,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1096027818731">
-          <property name="name:3" value="void" />
-        </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1096027818731" />
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1096027818730">
           <property name="name:3" value="node" />
           <node role="type:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType:1" id="1198511107396">
@@ -3243,9 +3227,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1096044406092">
-          <property name="name:3" value="void" />
-        </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1096044406092" />
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1096044406091">
           <property name="name:3" value="node" />
           <node role="type:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType:1" id="1198510262333">
@@ -3358,8 +3340,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1096045148383">
-        </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="1096045148383" />
         <node role="propertyMacro$property_attribute$name:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1096045201276">
           <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="1219165134105">
             <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1219165134106">
@@ -3593,9 +3574,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1096046219764">
-          <property name="name:3" value="void" />
-        </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1096046219764" />
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1096046207428">
           <property name="name:3" value="node" />
           <node role="type:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType:1" id="1198510857679">
@@ -3694,9 +3673,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1096046753451">
-          <property name="name:3" value="void" />
-        </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1096046753451" />
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1096046753450">
           <property name="name:3" value="node" />
           <node role="type:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType:1" id="1198510782842">
@@ -3957,9 +3934,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1096450034135">
-          <property name="name:3" value="void" />
-        </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1096450034135" />
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1096450091843">
           <property name="name:3" value="node" />
           <node role="type:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType:1" id="1198511227919">
@@ -4078,9 +4053,7 @@
           </node>
         </node>
       </node>
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1096451952337">
-        <property name="name:3" value="boolean" />
-      </node>
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="1096451952337" />
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1096451957562">
         <property name="name:3" value="value" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1225192521301" />
@@ -4275,9 +4248,7 @@
             </node>
           </node>
         </node>
-        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1111091494496">
-          <property name="name:3" value="void" />
-        </node>
+        <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1111091494496" />
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="1111091494495">
           <property name="name:3" value="node" />
           <node role="type:3" type="jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType:1" id="1198510448488">
