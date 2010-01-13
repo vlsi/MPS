@@ -12,9 +12,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 
 public class ModelChecker {
-  public static final String CATEGORY_ERROR = "Errors";
-  public static final String CATEGORY_WARNING = "Warnings";
-  public static final String CATEGORY_INFO = "Infos";
+  public static final String SEVERITY_ERROR = "Errors";
+  public static final String SEVERITY_WARNING = "Warnings";
+  public static final String SEVERITY_INFO = "Infos";
 
   private SearchResults<ModelCheckerIssue> myResults = new SearchResults<ModelCheckerIssue>();
   private IOperationContext myOperationContext;

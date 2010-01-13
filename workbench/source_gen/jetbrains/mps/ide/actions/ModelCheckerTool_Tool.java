@@ -114,8 +114,8 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     ModelCheckerViewer viewer = ModelCheckerTool_Tool.this.checkModels(modelDescriptors, operationContext, false);
     SearchResults<ModelCheckerIssue> issues = viewer.getSearchResults();
 
-    int warnings = ModelCheckerUtils.getIssueCountForCategory(issues, ModelChecker.CATEGORY_WARNING);
-    int errors = ModelCheckerUtils.getIssueCountForCategory(issues, ModelChecker.CATEGORY_ERROR);
+    int warnings = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelChecker.SEVERITY_WARNING);
+    int errors = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelChecker.SEVERITY_ERROR);
 
     if (errors != 0) {
       CheckBeforeGenerationDialog dialog = new CheckBeforeGenerationDialog(ModelCheckerTool_Tool.this.myProject, errors, warnings);
@@ -138,8 +138,8 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     ModelCheckerViewer viewer = ModelCheckerTool_Tool.this.checkModels(modelDescriptors, operationContext, false);
     SearchResults<ModelCheckerIssue> issues = viewer.getSearchResults();
 
-    int warnings = ModelCheckerUtils.getIssueCountForCategory(issues, ModelChecker.CATEGORY_WARNING);
-    int errors = ModelCheckerUtils.getIssueCountForCategory(issues, ModelChecker.CATEGORY_ERROR);
+    int warnings = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelChecker.SEVERITY_WARNING);
+    int errors = ModelCheckerUtils.getIssueCountForSeverity(issues, ModelChecker.SEVERITY_ERROR);
 
     if (errors != 0) {
       String dialogMessage = "Model checker found " + errors + " errors and " + warnings + " warnings. Would you like to review them?";

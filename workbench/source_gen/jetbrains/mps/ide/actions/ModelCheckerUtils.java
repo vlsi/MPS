@@ -51,13 +51,13 @@ public class ModelCheckerUtils {
     return getModelDescriptors(mpsProject.getModules());
   }
 
-  public static int getIssueCountForCategory(SearchResults<ModelCheckerIssue> issues, String category) {
-    if (category == null) {
+  public static int getIssueCountForSeverity(SearchResults<ModelCheckerIssue> issues, String severity) {
+    if (severity == null) {
       return 0;
     }
     int issueCount = 0;
     for (SearchResult<ModelCheckerIssue> issue : ListSequence.fromList(issues.getSearchResults())) {
-      if (category.equals(issue.getCategory())) {
+      if (severity.equals(issue.getCategories().get(0))) {
         issueCount++;
       }
     }

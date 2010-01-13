@@ -49,11 +49,11 @@ public class SearchScopesChecker extends SpecificChecker {
           if (checkScope(concept, node, targetNode, genuineLinkDeclaration, operationContext)) {
           } else if (checkScope(concept, node, targetNode, genuineLinkDeclaration, new ModuleContext(thisModelModule, operationContext.getMPSProject()))) {
           } else {
-            addIssue(results, node, "Reference in role \"" + SPropertyOperations.getString(genuineLinkDeclaration, "role") + "\" is out of search scope", ModelChecker.CATEGORY_WARNING, "wrong scope", null);
+            addIssue(results, node, "Reference in role \"" + SPropertyOperations.getString(genuineLinkDeclaration, "role") + "\" is out of search scope", ModelChecker.SEVERITY_WARNING, "wrong scope", null);
           }
         } catch (Exception e) {
           e.printStackTrace();
-          addIssue(results, node, "Exception \"" + e.getMessage() + "\" during search scope checking", "scope exception", ModelChecker.CATEGORY_WARNING, null);
+          addIssue(results, node, "Exception \"" + e.getMessage() + "\" during search scope checking", "scope exception", ModelChecker.SEVERITY_WARNING, null);
         }
       }
     }

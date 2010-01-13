@@ -44,11 +44,11 @@ public class ConstraintsChecker extends SpecificChecker {
         if (LinkDeclaration_Behavior.call_isAtLeastOneCardinality_3386205146660812199(link)) {
           if (SPropertyOperations.hasValue(link, "metaClass", "aggregation", "reference")) {
             if (ListSequence.fromList(SNodeOperations.getChildren(node, link)).isEmpty()) {
-              addIssue(results, node, "Cardinality constraint violation in role \"" + SPropertyOperations.getString(link, "role") + "\"", ModelChecker.CATEGORY_ERROR, "cardinality", null);
+              addIssue(results, node, "Cardinality constraint violation in role \"" + SPropertyOperations.getString(link, "role") + "\"", ModelChecker.SEVERITY_ERROR, "cardinality", null);
             }
           } else {
             if ((SLinkOperations.getTargetNode(SNodeOperations.getReference(node, link)) == null)) {
-              addIssue(results, node, "Cardinality constraint violation in role \"" + SPropertyOperations.getString(link, "role") + "\"", ModelChecker.CATEGORY_ERROR, "cardinality", null);
+              addIssue(results, node, "Cardinality constraint violation in role \"" + SPropertyOperations.getString(link, "role") + "\"", ModelChecker.SEVERITY_ERROR, "cardinality", null);
             }
           }
         }
@@ -60,7 +60,7 @@ public class ConstraintsChecker extends SpecificChecker {
         }
       })) {
         if (!(ModelCheckerUtils.isDeclaredLink(SNodeOperations.getContainingLinkDeclaration(child), true))) {
-          addIssue(results, node, "Usage of undeclared child role \"" + SNodeOperations.getContainingLinkRole(child) + "\"", ModelChecker.CATEGORY_WARNING, "undeclared child", new IModelCheckerFix() {
+          addIssue(results, node, "Usage of undeclared child role \"" + SNodeOperations.getContainingLinkRole(child) + "\"", ModelChecker.SEVERITY_WARNING, "undeclared child", new IModelCheckerFix() {
             public boolean doFix() {
               ListSequence.fromList(SNodeOperations.getChildren(node, SNodeOperations.getContainingLinkDeclaration(child))).visitAll(new IVisitor<SNode>() {
                 public void visit(SNode child) {
@@ -75,7 +75,7 @@ public class ConstraintsChecker extends SpecificChecker {
 
       for (final SReference reference : ListSequence.fromList(SNodeOperations.getReferences(node))) {
         if (!(ModelCheckerUtils.isDeclaredLink(SLinkOperations.findLinkDeclaration(reference), false))) {
-          addIssue(results, node, "Usage of undeclared reference role \"" + reference + "\"", ModelChecker.CATEGORY_WARNING, "undeclared reference", new IModelCheckerFix() {
+          addIssue(results, node, "Usage of undeclared reference role \"" + reference + "\"", ModelChecker.SEVERITY_WARNING, "undeclared reference", new IModelCheckerFix() {
             public boolean doFix() {
               node.removeReferent(SLinkOperations.getRole(reference));
               return true;
@@ -91,7 +91,7 @@ public class ConstraintsChecker extends SpecificChecker {
         PropertySupport ps = PropertySupport.getPropertySupport(p);
         String value = ps.fromInternalValue(node.getProperty(p.getName()));
         if (!(ps.canSetValue(node, p.getName(), value, operationContext.getScope()))) {
-          addIssue(results, node, "Property constraint violation for property \"" + p.getName() + "\"", ModelChecker.CATEGORY_WARNING, "property constraint", null);
+          addIssue(results, node, "Property constraint violation for property \"" + p.getName() + "\"", ModelChecker.SEVERITY_WARNING, "property constraint", null);
         }
       }
 
@@ -100,7 +100,7 @@ public class ConstraintsChecker extends SpecificChecker {
           continue;
         }
         if (!(isDeclaredProperty(concept, name))) {
-          addIssue(results, node, "Usage of undeclared property \"" + name + "\"", ModelChecker.CATEGORY_WARNING, "undeclared property", new IModelCheckerFix() {
+          addIssue(results, node, "Usage of undeclared property \"" + name + "\"", ModelChecker.SEVERITY_WARNING, "undeclared property", new IModelCheckerFix() {
             public boolean doFix() {
               node.setProperty(name, null, false);
               return true;

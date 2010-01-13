@@ -47,13 +47,13 @@ public class TypesystemChecker extends SpecificChecker {
   private static String getResultCategory(MessageStatus messageStatus) {
     switch (messageStatus) {
       case ERROR:
-        return ModelChecker.CATEGORY_ERROR;
+        return ModelChecker.SEVERITY_ERROR;
       case WARNING:
-        return ModelChecker.CATEGORY_WARNING;
+        return ModelChecker.SEVERITY_WARNING;
       case OK:
-        return ModelChecker.CATEGORY_INFO;
+        return ModelChecker.SEVERITY_INFO;
       default:
-        return ModelChecker.CATEGORY_ERROR;
+        return ModelChecker.SEVERITY_ERROR;
     }
   }
 }

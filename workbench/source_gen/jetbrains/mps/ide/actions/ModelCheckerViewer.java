@@ -234,11 +234,11 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
 
     public Icon getCategoryIcon(String category) {
       if (StringUtils.isNotEmpty(category)) {
-        if (category.startsWith(ModelChecker.CATEGORY_ERROR)) {
+        if (category.startsWith(ModelChecker.SEVERITY_ERROR)) {
           return jetbrains.mps.ide.messages.Icons.ERROR_ICON;
-        } else if (category.startsWith(ModelChecker.CATEGORY_WARNING)) {
+        } else if (category.startsWith(ModelChecker.SEVERITY_WARNING)) {
           return jetbrains.mps.ide.messages.Icons.WARNING_ICON;
-        } else if (category.startsWith(ModelChecker.CATEGORY_INFO)) {
+        } else if (category.startsWith(ModelChecker.SEVERITY_INFO)) {
           return jetbrains.mps.ide.messages.Icons.INFORMATION_ICON;
         }
       }
