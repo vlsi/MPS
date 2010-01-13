@@ -759,6 +759,10 @@ public class GeneratorUtil {
   }
 
   private static boolean checkLinkTarget(SNode sourceNode, String role, SNode targetNode, boolean child, boolean riseError) {
+    if (child && AttributesRolesUtil.isAttributeRole(role)) {
+      //unnecessary warning removed
+      return true; //todo maybe add check for attribule links
+    }
     String relationKind = child ? "child" : "referent";
     AbstractConceptDeclaration concept = sourceNode.getConceptDeclarationAdapter();
     if (concept == null) {
