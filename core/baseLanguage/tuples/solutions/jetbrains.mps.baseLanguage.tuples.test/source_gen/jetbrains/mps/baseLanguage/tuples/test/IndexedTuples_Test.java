@@ -12,6 +12,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 
 public class IndexedTuples_Test extends TestCase {
   public void test_empty() throws Exception {
@@ -21,7 +22,7 @@ public class IndexedTuples_Test extends TestCase {
   }
 
   public void test_creatingAndAssigning() throws Exception {
-    Tuples._2<Integer, String> pair = MultiTuple.from(1, "a");
+    Tuples._2<Integer, String> pair = MultiTuple.<Integer,String>from(1, "a");
     Assert.assertSame(1, pair._0());
     Assert.assertEquals("a", pair._1());
     Tuples._2<Integer, String> anotherPair = MultiTuple.<Integer, String>empty2().assign(pair);
@@ -41,13 +42,13 @@ public class IndexedTuples_Test extends TestCase {
   public void test_writeVar() throws Exception {
     int a;
     {
-      Tuples._1<Integer> _tmp9717_0 = MultiTuple.from(1);
+      Tuples._1<Integer> _tmp9717_0 = MultiTuple.<Integer>from(1);
       a = _tmp9717_0._0();
     }
     Assert.assertSame(1, a);
     char c = 'a';
     {
-      Tuples._2<Integer, Character> _tmp9717_1 = MultiTuple.from(2, 'b');
+      Tuples._2<Integer, Character> _tmp9717_1 = MultiTuple.<Integer,Character>from(2, 'b');
       a = _tmp9717_1._0();
       c = _tmp9717_1._1();
     }
@@ -59,7 +60,7 @@ public class IndexedTuples_Test extends TestCase {
     String foo = "bar";
     String bar = "foo";
     {
-      Tuples._2<String, String> _tmp9717_2 = MultiTuple.from(bar, foo);
+      Tuples._2<String, String> _tmp9717_2 = MultiTuple.<String,String>from(bar, foo);
       foo = _tmp9717_2._0();
       bar = _tmp9717_2._1();
     }
@@ -74,8 +75,8 @@ public class IndexedTuples_Test extends TestCase {
   }
 
   public void test_equalsOperator() throws Exception {
-    Tuples._2<Integer, Character> tpl1 = MultiTuple.from(1, 'a');
-    Tuples._2<Integer, Character> tpl2 = MultiTuple.from(1, 'a');
+    Tuples._2<Integer, Character> tpl1 = MultiTuple.<Integer,Character>from(1, 'a');
+    Tuples._2<Integer, Character> tpl2 = MultiTuple.<Integer,Character>from(1, 'a');
     Assert.assertTrue(MultiTuple.eq(tpl1, tpl2));
     Assert.assertFalse(!(MultiTuple.eq(tpl1, tpl2)));
     tpl2._0(2);
@@ -94,18 +95,41 @@ public class IndexedTuples_Test extends TestCase {
   }
 
   public void test_listOfTuples() throws Exception {
-    List<Tuples._2<Integer, String>> lot = ListSequence.fromListAndArray(new ArrayList<Tuples._2<Integer, String>>(), MultiTuple.from(1, "A"), MultiTuple.from(2, "B"), MultiTuple.from(3, "C"));
+    List<Tuples._2<Integer, String>> lot = ListSequence.fromListAndArray(new ArrayList<Tuples._2<Integer, String>>(), MultiTuple.<Integer,String>from(1, "A"), MultiTuple.<Integer,String>from(2, "B"), MultiTuple.<Integer,String>from(3, "C"));
     Assert.assertSame(3, ListSequence.fromList(lot).count());
     Assert.assertEquals("B", ListSequence.fromList(lot).getElement(1)._1());
   }
 
   public void test_tupleDecl() throws Exception {
     Tuples._2<String, Long> sit;
-    sit = MultiTuple.from("A", -1L);
+    sit = MultiTuple.<String,Long>from("A", -1L);
     Assert.assertEquals("A", sit._0());
   }
 
+  public void test_mps7408() throws Exception {
+    MPS7408 foo = new MPS7408();
+    Tuples._2<_FunctionTypes._return_P0_E0<? extends Boolean>, _FunctionTypes._void_P0_E0> asd = MultiTuple.<_FunctionTypes._return_P0_E0<? extends Boolean>,_FunctionTypes._void_P0_E0>from(new _FunctionTypes._return_P0_E0<Boolean>() {
+      public Boolean invoke() {
+        return true;
+      }
+    }, new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+      }
+    });
+    foo.waitFor(asd);
+    Assert.assertSame(1, ListSequence.fromList(foo.jobs).count());
+  }
+
+  public void test_mps7409() throws Exception {
+    Tuples._1<_FunctionTypes._return_P0_E0<? extends Boolean>> t = MultiTuple.<_FunctionTypes._return_P0_E0<? extends Boolean>>from(new _FunctionTypes._return_P0_E0<Boolean>() {
+      public Boolean invoke() {
+        return false;
+      }
+    });
+    Assert.assertFalse(t._0().invoke());
+  }
+
   public Tuples._2<String, Character> toTuple(String s, char c) {
-    return MultiTuple.from(s, c);
+    return MultiTuple.<String,Character>from(s, c);
   }
 }
