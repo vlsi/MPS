@@ -16,21 +16,16 @@
 package jetbrains.mps.ide.tabbedEditor.tabs;
 
 import com.intellij.openapi.wm.ToolWindowManager;
-import com.intellij.openapi.actionSystem.AnAction;
-import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
-import com.intellij.execution.junit.RuntimeConfigurationProducer;
-import com.intellij.execution.ExecutionBundle;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.*;
@@ -45,8 +40,8 @@ import javax.swing.*;
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import java.awt.BorderLayout;
-import java.awt.Component;
 import java.awt.Point;
+import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.util.*;
 
@@ -137,6 +132,57 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     return node.getName();
   }
 
+  private SNode[] getAvailableConceptArray() {
+    final List<SNode> nodeList = new ArrayList<SNode>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        nodeList.addAll(getAvailableConcepts());
+      }
+    });
+    final SNode[] concepts = new SNode[nodeList.size()];
+    for (int i = 0; i < nodeList.size(); i++) {
+      concepts[i] = nodeList.get(i);
+    }
+    return concepts;
+  }
+
+  private void showConceptList(final Component component, final int x, final int y) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        final ListPopup popup;
+        popup = JBPopupFactory.getInstance().createListPopup(new BaseListPopupStep<SNode>("Choose concept", getAvailableConceptArray()) {
+          public Icon getIconFor(final SNode concept) {
+            final Icon[] result = new Icon[1];
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                String name = NameUtil.longNameFromNamespaceAndShortName(concept.getModel().getSModelFqName().getLongName(), concept.getName());
+                result[0] = IconManager.getIconForConceptFQName(name);
+              }
+            });
+            return result[0];
+          }
+
+          @NotNull
+          public String getTextFor(final SNode concept) {
+            final String[] result = new String[]{null};
+            ModelAccess.instance().runReadAction(new Runnable() {
+              public void run() {
+                result[0] = concept.getName();
+              }
+            });
+            return result[0];
+          }
+
+          public PopupStep onChosen(SNode selectedValue, boolean finalChoice) {
+            createNewInnerTab(selectedValue);
+            return FINAL_CHOICE;
+          }
+        });
+        popup.show(new RelativePoint(component, new Point(x, y)));
+      }
+    });
+  }
+
   private boolean tryToInitComponent() {
     List<Pair<SNode, IOperationContext>> loadableNodes = tryToLoadNodes();
 
@@ -166,53 +212,10 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
       final JButton button = new JButton();
       AbstractAction action = new AbstractAction("Create new") {
         public void actionPerformed(final ActionEvent e) {
-          final List<SNode> nodeList = new ArrayList<SNode>();
-          ModelAccess.instance().runReadAction(new Runnable() {
-            public void run() {
-              nodeList.addAll(getAvailableConcepts());  
-            }
-          });
-          final SNode[] concepts = new SNode[nodeList.size()];
-          for (int i = 0; i < nodeList.size(); i++) {
-            concepts[i] = nodeList.get(i);
-          }
-          if (nodeList.size() == 0) {
+          if (getAvailableConceptArray().length == 0) {
             createNewInnerTab(null);
           } else {
-            ModelAccess.instance().runReadAction(new Runnable() {
-              public void run() {
-                final ListPopup popup;
-                popup = JBPopupFactory.getInstance().createListPopup(new BaseListPopupStep<SNode>("Choose concept", concepts) {
-                  public Icon getIconFor(final SNode concept) {
-                    final Icon[] result = new Icon[1];
-                    ModelAccess.instance().runReadAction(new Runnable() {
-                      public void run() {
-                        String name = NameUtil.longNameFromNamespaceAndShortName(concept.getModel().getSModelFqName().getLongName(), concept.getName());
-                        result[0] = IconManager.getIconForConceptFQName(name);
-                      }
-                    });
-                    return result[0];
-                  }
-
-                  @NotNull
-                  public String getTextFor(final SNode concept) {
-                    final String[] result = new String[]{null};
-                    ModelAccess.instance().runReadAction(new Runnable() {
-                      public void run() {
-                        result[0] = concept.getName();
-                      }
-                    });
-                    return result[0];
-                  }
-
-                  public PopupStep onChosen(SNode selectedValue, boolean finalChoice) {
-                    createNewInnerTab(selectedValue);
-                    return FINAL_CHOICE;
-                  }
-                });
-                popup.show(new RelativePoint(button, new Point(0, button.getHeight())));
-              }
-            });
+            showConceptList(button, 0, button.getHeight());
           }
         }
       };
@@ -276,11 +279,19 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
 
     final Pair<SNode, IOperationContext>[] nodeAndContext = new Pair[1];
     if (isOutsideCommandExecution()) {
-      nodeAndContext[0] = createLoadableNode(true, null);
+      if (getAvailableConceptArray().length == 0) {
+        showConceptList(myTabbedEditor.getTabbedPane(), 0, 0);
+      } else {
+        nodeAndContext[0] = createLoadableNode(true, null);
+      }
     } else {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          nodeAndContext[0] = createLoadableNode(true, null);
+          if (getAvailableConcepts().size() == 0) {
+            nodeAndContext[0] = createLoadableNode(true, null);
+          } else {
+            showConceptList(myTabbedEditor.getTabbedPane(), 0, 0);
+          }
         }
       });
     }
