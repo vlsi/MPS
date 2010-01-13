@@ -7,11 +7,13 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class NodeSubstituteActions_Behavior {
   private static Class[] PARAMETERS_5270353093116089664 = {SNode.class};
+  private static Class[] PARAMETERS_6261424444345978468 = {SNode.class ,SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -24,11 +26,25 @@ public class NodeSubstituteActions_Behavior {
     return result;
   }
 
+  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
+    SNode actionsBuilder = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder", null);
+    SLinkOperations.setTarget(actionsBuilder, "applicableConcept", baseConcept, false);
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "actionsBuilder", true)).addElement(actionsBuilder);
+  }
+
   public static List<SNode> call_getBaseConceptCollection_5270353093116089664(SNode thisNode) {
     return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"), "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_5270353093116089664);
   }
 
+  public static void call_setBaseConcept_6261424444345978468(SNode thisNode, SNode baseConcept) {
+    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978468, baseConcept);
+  }
+
   public static List<SNode> callSuper_getBaseConceptCollection_5270353093116089664(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_5270353093116089664);
+  }
+
+  public static void callSuper_setBaseConcept_6261424444345978468(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.actions.structure.NodeSubstituteActions"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978468, baseConcept);
   }
 }

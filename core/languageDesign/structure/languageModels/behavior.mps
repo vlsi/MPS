@@ -3887,6 +3887,19 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="6261424444345963020">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="setBaseConcept" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6261424444345963021" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6261424444345963023" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6261424444345976548" />
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6261424444345976549">
+        <property name="name:3" value="baseConcept" />
+        <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="6261424444345976550">
+          <link role="concept:16" targetNodeId="1.1169125787135:0" resolveInfo="AbstractConceptDeclaration" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
