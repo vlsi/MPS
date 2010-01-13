@@ -338,6 +338,9 @@
       <property name="value:0" value="emit maybe unreachable command" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="5.1137473914776:0" resolveInfo="short_description" />
     </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="3289765843756594422">
+      <link role="intfc:0" targetNodeId="3.1207665819089:3" resolveInfo="Closureoid" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1206956528885">
     <property name="package:0" value="Instructions" />
