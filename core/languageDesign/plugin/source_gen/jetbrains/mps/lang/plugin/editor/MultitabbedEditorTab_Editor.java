@@ -387,7 +387,7 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition7753_0(SNode node, EditorContext editorContext, IScope scope) {
-    return (SLinkOperations.getTarget(node, "createBlock", true) != null);
+    return (SLinkOperations.getTarget(node, "createBlock", true) != null) || (SLinkOperations.getTarget(node, "newCreateBlock", true) != null);
   }
 
   private static boolean renderingCondition7753_1(SNode node, EditorContext editorContext, IScope scope) {
