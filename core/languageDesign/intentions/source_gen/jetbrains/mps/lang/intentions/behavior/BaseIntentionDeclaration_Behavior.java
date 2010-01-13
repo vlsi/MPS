@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 public class BaseIntentionDeclaration_Behavior {
   private static Class[] PARAMETERS_6263518417926802310 = {SNode.class};
   private static Class[] PARAMETERS_6263518417926802384 = {SNode.class};
+  private static Class[] PARAMETERS_6261424444345979509 = {SNode.class ,SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -52,6 +53,10 @@ public class BaseIntentionDeclaration_Behavior {
     return SLinkOperations.getTarget(thisNode, "forConcept", false);
   }
 
+  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
+    SLinkOperations.setTarget(thisNode, "forConcept", baseConcept, false);
+  }
+
   public static boolean call_isParameterized_6263518417926802310(SNode thisNode) {
     return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "virtual_isParameterized_6263518417926802310", PARAMETERS_6263518417926802310);
   }
@@ -60,11 +65,19 @@ public class BaseIntentionDeclaration_Behavior {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_6263518417926802384);
   }
 
+  public static void call_setBaseConcept_6261424444345979509(SNode thisNode, SNode baseConcept) {
+    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979509, baseConcept);
+  }
+
   public static boolean callSuper_isParameterized_6263518417926802310(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), callerConceptFqName, "virtual_isParameterized_6263518417926802310", PARAMETERS_6263518417926802310);
   }
 
   public static SNode callSuper_getBaseConcept_6263518417926802384(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_6263518417926802384);
+  }
+
+  public static void callSuper_setBaseConcept_6261424444345979509(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979509, baseConcept);
   }
 }

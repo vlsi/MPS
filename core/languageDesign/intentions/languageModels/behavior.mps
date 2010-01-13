@@ -623,6 +623,36 @@
         <link role="concept:16" targetNodeId="5v.1169125787135:0" resolveInfo="AbstractConceptDeclaration" />
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="6261424444345979509">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="setBaseConcept" />
+      <link role="overriddenMethod" targetNodeId="4v.6261424444345963020" resolveInfo="setBaseConcept" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6261424444345979510" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6261424444345979511">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6261424444345979520">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6261424444345979527">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6261424444345979522">
+              <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="6261424444345979521" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="6261424444345979526">
+                <link role="link:16" targetNodeId="1.2522969319638198290:8" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation:16" id="6261424444345979531">
+              <node role="linkTarget:16" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6261424444345979534">
+                <link role="variableDeclaration:3" targetNodeId="6261424444345979512" resolveInfo="baseConcept" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6261424444345979512">
+        <property name="name:3" value="baseConcept" />
+        <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="6261424444345979513">
+          <link role="concept:16" targetNodeId="5v.1169125787135:0" resolveInfo="AbstractConceptDeclaration" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6261424444345979514" />
+    </node>
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="6263518417926802283">
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6263518417926802284" />
     </node>
