@@ -19,6 +19,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 
 import javax.swing.JComponent;
 import java.util.List;
+import java.awt.event.MouseEvent;
 
 public interface ILazyTab {
   String getTitle();
@@ -38,6 +39,8 @@ public interface ILazyTab {
   boolean askCreate();
 
   void create();
+
+  void createFirst(MouseEvent e);
 
   int getCurrentTab();
 

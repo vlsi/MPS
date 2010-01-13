@@ -39,6 +39,7 @@ import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
 import java.util.Collections;
 import java.util.List;
+import java.awt.event.MouseEvent;
 
 public abstract class BaseSingletabbedTab implements ILazyTab {
   private static final Logger LOG = Logger.getLogger(BaseSingletabbedTab.class);
@@ -172,6 +173,10 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
     }
 
     return false;
+  }
+
+  public void createFirst(MouseEvent e) {
+    create();
   }
 
   public void create() {

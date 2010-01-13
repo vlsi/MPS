@@ -104,7 +104,7 @@ public class LazyTabbedPane extends JPanel {
 
       label.addMouseListener(new MouseAdapter() {
         public void mousePressed(MouseEvent e) {
-          tab.create();
+          tab.createFirst(e);
           initTab(tab);
         }
       });

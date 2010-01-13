@@ -43,6 +43,7 @@ import java.awt.BorderLayout;
 import java.awt.Point;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
+import java.awt.event.MouseEvent;
 import java.util.*;
 
 import org.jetbrains.annotations.NotNull;
@@ -146,7 +147,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     return concepts;
   }
 
-  private void showConceptList(final Component component, final int x, final int y) {
+  private void showConceptList(final RelativePoint relativePoint) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         final ListPopup popup;
@@ -174,11 +175,14 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
           }
 
           public PopupStep onChosen(SNode selectedValue, boolean finalChoice) {
+            if (myInnerTabbedPane == null) {
+              tryToInitComponent();  
+            }
             createNewInnerTab(selectedValue);
             return FINAL_CHOICE;
           }
         });
-        popup.show(new RelativePoint(component, new Point(x, y)));
+        popup.show(relativePoint);
       }
     });
   }
@@ -215,7 +219,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
           if (getAvailableConceptArray().length == 0) {
             createNewInnerTab(null);
           } else {
-            showConceptList(button, 0, button.getHeight());
+            showConceptList(new RelativePoint(button, new Point(0, button.getHeight())));
           }
         }
       };
@@ -273,36 +277,45 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     });
   }
 
-  public void create() {
+  private void createNewInnerTabAnyway(final Pair<SNode, IOperationContext>[] nodeAndContext, RelativePoint relativePoint) {
+    if (getAvailableConceptArray().length == 0) {
+      if (!askCreate()) return;
+      nodeAndContext[0] = createLoadableNode(true, null);
+    } else {
+      showConceptList(relativePoint);
+    }
+  }
+
+  private void createAnyone(final RelativePoint relativePoint) {
     if (!canCreate()) return;
-    if (!askCreate()) return;
 
     final Pair<SNode, IOperationContext>[] nodeAndContext = new Pair[1];
     if (isOutsideCommandExecution()) {
-      if (getAvailableConceptArray().length == 0) {
-        showConceptList(myTabbedEditor.getTabbedPane(), 0, 0);
-      } else {
-        nodeAndContext[0] = createLoadableNode(true, null);
-      }
+      createNewInnerTabAnyway(nodeAndContext, relativePoint);
     } else {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          if (getAvailableConcepts().size() == 0) {
-            nodeAndContext[0] = createLoadableNode(true, null);
-          } else {
-            showConceptList(myTabbedEditor.getTabbedPane(), 0, 0);
-          }
+          createNewInnerTabAnyway(nodeAndContext, relativePoint);
         }
       });
     }
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      @Override
       public void run() {
         if (nodeAndContext[0] == null) return;
-
         nodeAndContext[0].o1.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
       }
     });
+  }
+
+  public void createFirst(MouseEvent e) {
+    createAnyone(new RelativePoint(e));
+  }
+
+  public void create() {
+    Component component = myTabbedEditor.getTabbedPane();
+    int x = component.getWidth() / 2;
+    int y = component. getHeight() / 2;
+    createAnyone(new RelativePoint(component, new Point(x, y)));
   }
 
   public int getCurrentTab() {
