@@ -11,12 +11,17 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
-import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 
 public class ReferenceAppendPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+    return this.createCollection_1860_1(editorContext, node);
+  }
+
+  public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_1860_0(editorContext, node);
   }
 
@@ -24,14 +29,37 @@ public class ReferenceAppendPart_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_1860_0");
     editorCell.addEditorCell(this.createConstant_1860_0(editorContext, node));
-    editorCell.addEditorCell(this.createRefNode_1860_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_1860_1(editorContext, node));
+    editorCell.addEditorCell(this.createProperty_1860_0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_1860_1(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_1860_1");
+    editorCell.addEditorCell(this.createConstant_1860_2(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_1860_0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_1860_3(editorContext, node));
     return editorCell;
   }
 
   private EditorCell createConstant_1860_0(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$ref{");
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "unique name in file");
     editorCell.setCellId("Constant_1860_0");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_1860_1(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ":");
+    editorCell.setCellId("Constant_1860_1");
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_1860_2(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "$ref{");
+    editorCell.setCellId("Constant_1860_2");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
@@ -42,15 +70,33 @@ public class ReferenceAppendPart_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createConstant_1860_1(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_1860_3(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_1860_1");
+    editorCell.setCellId("Constant_1860_3");
     TextGenStyles_StyleSheet.getAppendPart(editorCell).apply(editorCell);
     {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.PUNCTUATION_LEFT, true);
     }
     editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createProperty_1860_0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+    provider.setRole("uniqNameInFile");
+    provider.setNoTargetText("<no uniqNameInFile>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setCellId("property_uniqNameInFile");
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
     return editorCell;
   }
 

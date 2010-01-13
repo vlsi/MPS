@@ -1210,6 +1210,18 @@
         </node>
       </node>
     </node>
+    <node role="inspectedCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4809320654438978486">
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="4809320654438978488" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4809320654438978490">
+        <property name="text:32" value="unique name in file" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4809320654438978495">
+        <property name="text:32" value=":" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="4809320654438978496">
+        <link role="relationDeclaration:32" targetNodeId="1.4809320654438971908:11" resolveInfo="uniqNameInFile" />
+      </node>
+    </node>
   </node>
 </model>
 

@@ -2949,7 +2949,7 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="4.~SNodeTextGen.append(java.lang.String):void" resolveInfo="append" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4340589516982036837">
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4340589516982036838">
-                    <link role="baseMethodDeclaration:3" targetNodeId="4.~SNodeTextGen.getReferentPresentation(jetbrains.mps.smodel.SReference):java.lang.String" resolveInfo="getReferentPresentation" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="4.~SNodeTextGen.getReferentPresentation(jetbrains.mps.smodel.SReference,boolean):java.lang.String" resolveInfo="getReferentPresentation" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="4340589516982036840">
                       <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="4340589516982036843">
                         <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="4340589516982036844">
@@ -2959,6 +2959,23 @@
                                 <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4340589516982036847" />
                                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4340589516982036852">
                                   <link role="link:16" targetNodeId="1.6911933836258445307:11" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="4809320654438747919">
+                      <property name="value:3" value="true" />
+                      <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="4809320654438747920">
+                        <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="4809320654438747921">
+                          <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4809320654438747922">
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4809320654438978469">
+                              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4809320654438978472">
+                                <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4809320654438978471" />
+                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4809320654438978476">
+                                  <link role="property:16" targetNodeId="1.4809320654438971908:11" resolveInfo="uniqNameInFile" />
                                 </node>
                               </node>
                             </node>
@@ -3003,7 +3020,7 @@
                     <link role="variableDeclaration:3" targetNodeId="6911933836258446185" resolveInfo="textGen" />
                   </node>
                   <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4340589516981959091">
-                    <link role="baseMethodDeclaration:3" targetNodeId="4.~SNodeTextGen.getReferentPresentation(jetbrains.mps.smodel.SReference):java.lang.String" resolveInfo="getReferentPresentation" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="4.~SNodeTextGen.getReferentPresentation(jetbrains.mps.smodel.SReference,boolean):java.lang.String" resolveInfo="getReferentPresentation" />
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="4340589516981966473">
                       <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="4340589516981966479">
                         <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="4340589516981966480">
@@ -3013,6 +3030,23 @@
                                 <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4340589516981966483" />
                                 <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4340589516981966488">
                                   <link role="link:16" targetNodeId="1.6911933836258445307:11" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3761071458242063882">
+                      <property name="value:3" value="true" />
+                      <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="3761071458242063883">
+                        <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="3761071458242063884">
+                          <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3761071458242063885">
+                            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="4809320654438978477">
+                              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4809320654438978480">
+                                <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4809320654438978479" />
+                                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4809320654438978484">
+                                  <link role="property:16" targetNodeId="1.4809320654438971908:11" resolveInfo="uniqNameInFile" />
                                 </node>
                               </node>
                             </node>

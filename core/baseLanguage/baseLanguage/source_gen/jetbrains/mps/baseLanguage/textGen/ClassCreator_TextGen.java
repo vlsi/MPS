@@ -11,7 +11,7 @@ public class ClassCreator_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
     BaseLanguageTextGen.importPart(SLinkOperations.getTarget(node, "baseMethodDeclaration", false), this);
     BaseLanguageTextGen.methodTypeArguments(node, this);
-    this.append(this.getReferentPresentation(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration"))));
+    this.append(this.getReferentPresentation(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), true));
     BaseLanguageTextGen.typeParameters(SLinkOperations.getTargets(node, "typeParameter", true), this);
     BaseLanguageTextGen.arguments(node, this);
   }

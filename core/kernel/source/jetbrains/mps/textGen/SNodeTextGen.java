@@ -134,6 +134,10 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
   }
 
   public String getReferentPresentation(SReference reference) {
+    return getReferentPresentation(reference, true);
+  }
+
+  public String getReferentPresentation(SReference reference, boolean uniq) {
     if (reference == null) {
       foundError();
       return "<err:null reference>";
@@ -155,7 +159,11 @@ public abstract class SNodeTextGen<BA extends INodeAdapter> {
       shortName = targetNode.getResolveInfo();
       packageName = targetNode.getModel().getSModelReference().getLongName();
     }
-    return (isNeedLongName(shortName, packageName) ? packageName + '.' + shortName : shortName);
+    if (uniq) {
+      return (isNeedLongName(shortName, packageName) ? packageName + '.' + shortName : shortName);
+    } else {
+      return shortName;
+    }
   }
 
   public String getDeafultNoTextGenErrorText(SNode node) {

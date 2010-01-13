@@ -10,10 +10,19 @@ import jetbrains.mps.project.GlobalScope;
 
 public class ReferenceAppendPart extends AbstractAppendPart {
   public static final String concept = "jetbrains.mps.lang.textGen.structure.ReferenceAppendPart";
+  public static final String UNIQ_NAME_IN_FILE = "uniqNameInFile";
   public static final String REFERENCE = "reference";
 
   public ReferenceAppendPart(SNode node) {
     super(node);
+  }
+
+  public boolean getUniqNameInFile() {
+    return this.getBooleanProperty(ReferenceAppendPart.UNIQ_NAME_IN_FILE);
+  }
+
+  public void setUniqNameInFile(boolean value) {
+    this.setBooleanProperty(ReferenceAppendPart.UNIQ_NAME_IN_FILE, value);
   }
 
   public Expression getReference() {

@@ -575,6 +575,10 @@
     <property name="package:0" value="operation.append.part" />
     <property name="name:0" value="ReferenceAppendPart" />
     <link role="extends:0" targetNodeId="1237305115734:11" resolveInfo="AbstractAppendPart" />
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="4809320654438971908">
+      <property name="name:0" value="uniqNameInFile" />
+      <link role="dataType:0" targetNodeId="2v.1082983657063:0" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="6911933836258445307">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="reference" />

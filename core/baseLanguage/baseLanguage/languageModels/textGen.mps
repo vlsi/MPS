@@ -1736,6 +1736,7 @@
             </node>
           </node>
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ReferenceAppendPart:11" id="4340589516982100071">
+            <property name="uniqNameInFile:11" value="true" />
             <node role="reference:11" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4340589516982100074">
               <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="4340589516982100073" />
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation:16" id="4340589516982100078">
@@ -1931,6 +1932,7 @@
             </node>
           </node>
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ReferenceAppendPart:11" id="4340589516982100083">
+            <property name="uniqNameInFile:11" value="true" />
             <node role="reference:11" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4340589516982100086">
               <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="4340589516982100085" />
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation:16" id="4340589516982100090">
@@ -3293,6 +3295,7 @@
             <node role="parameter:11" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="163269897332225911" />
           </node>
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ReferenceAppendPart:11" id="4340589516982101154">
+            <property name="uniqNameInFile:11" value="true" />
             <node role="reference:11" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4340589516982101157">
               <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="4340589516982101156" />
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation:16" id="4340589516982115900">
@@ -3336,6 +3339,7 @@
             </node>
           </node>
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ReferenceAppendPart:11" id="4340589516982101163">
+            <property name="uniqNameInFile:11" value="true" />
             <node role="reference:11" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4340589516982101166">
               <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="4340589516982101165" />
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation:16" id="4340589516982101170">
@@ -3369,6 +3373,7 @@
             </node>
           </node>
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ReferenceAppendPart:11" id="4340589516982101329">
+            <property name="uniqNameInFile:11" value="true" />
             <node role="reference:11" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4340589516982101332">
               <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="4340589516982101331" />
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation:16" id="4340589516982101336">
@@ -5285,6 +5290,7 @@
             </node>
           </node>
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ReferenceAppendPart:11" id="4340589516982101769">
+            <property name="uniqNameInFile:11" value="true" />
             <node role="reference:11" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4340589516982101772">
               <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="4340589516982101771" />
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation:16" id="4340589516982101778">
@@ -5329,6 +5335,7 @@
             </node>
           </node>
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ReferenceAppendPart:11" id="4340589516982101757">
+            <property name="uniqNameInFile:11" value="true" />
             <node role="reference:11" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4340589516982101760">
               <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="4340589516982101759" />
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation:16" id="4340589516982101764">
@@ -6703,6 +6710,7 @@
                   </node>
                 </node>
                 <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ReferenceAppendPart:11" id="4340589516982101674">
+                  <property name="uniqNameInFile:11" value="true" />
                   <node role="reference:11" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4340589516982101677">
                     <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="4340589516982101676" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation:16" id="4340589516982101682">
@@ -6772,6 +6780,7 @@
             </node>
           </node>
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ReferenceAppendPart:11" id="4340589516982101699">
+            <property name="uniqNameInFile:11" value="true" />
             <node role="reference:11" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4340589516982101702">
               <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="4340589516982101701" />
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation:16" id="4340589516982101706">
@@ -6819,6 +6828,7 @@
             </node>
           </node>
           <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ReferenceAppendPart:11" id="4340589516982101711">
+            <property name="uniqNameInFile:11" value="true" />
             <node role="reference:11" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4340589516982101714">
               <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="4340589516982101713" />
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetReferenceOperation:16" id="4340589516982101718">

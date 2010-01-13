@@ -9,6 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TypeVariableReference_TextGen extends SNodeTextGen {
   public void doGenerateText(SNode node) {
-    this.append(this.getReferentPresentation(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", "typeVariableDeclaration"))));
+    this.append(this.getReferentPresentation(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", "typeVariableDeclaration")), false));
   }
 }
