@@ -3497,7 +3497,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          return SLinkOperations.addNewChild(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.ForStatement"), "additionalVar", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+          return SLinkOperations.addNewChild(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.ForStatement"), "additionalVar", "jetbrains.mps.baseLanguage.structure.AdditionalForLoopVariable");
         }
 
         public String getMatchingText(String pattern) {
