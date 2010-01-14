@@ -4531,6 +4531,7 @@
         </node>
         <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7692832593197996117">
           <property name="name:3" value="concept" />
+          <property name="isFinal:3" value="true" />
           <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SConceptType:16" id="7692832593197996119" />
         </node>
         <node role="returnType:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1239575737382" />
