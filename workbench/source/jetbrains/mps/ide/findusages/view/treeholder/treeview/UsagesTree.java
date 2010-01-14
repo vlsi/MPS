@@ -430,6 +430,11 @@ public abstract class UsagesTree extends MPSTree {
     myContents.setExcluded(nodes, isExcluded);
   }
 
+  private void setCurrentNodesOnlyExclusion() {
+    myContents.setExcluded(Arrays.asList(myContents.getTreeRoot()), true);
+    setCurrentNodesExclusion(false);
+  }
+
   protected JPopupMenu createPopupMenu(MPSTreeNode node) {
     if (!myShowPopupMenu) {
       return null;
@@ -458,8 +463,14 @@ public abstract class UsagesTree extends MPSTree {
         return "DELETE";
       }
     };
+    BaseAction includeSelectedOnlyAction = new BaseAction("Include selected only") {
+      public void doExecute(AnActionEvent e) {
+        setCurrentNodesOnlyExclusion();
+        e.getInputEvent().consume();
+      }
+    };
 
-    DefaultActionGroup group = ActionUtils.groupFromActions(includeAction, excludeAction);
+    DefaultActionGroup group = ActionUtils.groupFromActions(includeAction, excludeAction, includeSelectedOnlyAction);
     return ActionManager.getInstance().createActionPopupMenu(ActionPlaces.UNKNOWN, group).getComponent();
   }
 
