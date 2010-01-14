@@ -13,6 +13,7 @@ public class IConceptAspect_Behavior {
   private static Class[] PARAMETERS_2621449412040133768 = {SNode.class};
   private static Class[] PARAMETERS_5270353093116013036 = {SNode.class};
   private static Class[] PARAMETERS_6261424444345963020 = {SNode.class ,SNode.class};
+  private static Class[] PARAMETERS_7839831476331657915 = {SNode.class ,SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -33,6 +34,10 @@ public class IConceptAspect_Behavior {
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
   }
 
+  public static boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
+    return true;
+  }
+
   public static SNode call_getBaseConcept_2621449412040133768(SNode thisNode) {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_2621449412040133768);
   }
@@ -45,6 +50,10 @@ public class IConceptAspect_Behavior {
     BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345963020, baseConcept);
   }
 
+  public static boolean call_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), "virtual_isApplicable_7839831476331657915", PARAMETERS_7839831476331657915, candidate);
+  }
+
   public static SNode callSuper_getBaseConcept_2621449412040133768(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_2621449412040133768);
   }
@@ -55,5 +64,9 @@ public class IConceptAspect_Behavior {
 
   public static void callSuper_setBaseConcept_6261424444345963020(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
     BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345963020, baseConcept);
+  }
+
+  public static boolean callSuper_isApplicable_7839831476331657915(SNode thisNode, String callerConceptFqName, SNode candidate) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.structure.structure.IConceptAspect"), callerConceptFqName, "virtual_isApplicable_7839831476331657915", PARAMETERS_7839831476331657915, candidate);
   }
 }

@@ -3918,6 +3918,25 @@
         </node>
       </node>
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7839831476331657915">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="isApplicable" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7839831476331657916" />
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="7839831476331668944" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7839831476331657918">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7839831476331668947">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7839831476331668949">
+            <property name="value:3" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7839831476331668945">
+        <property name="name:3" value="candidate" />
+        <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7839831476331668946">
+          <link role="concept:16" targetNodeId="1.1169125787135:0" resolveInfo="AbstractConceptDeclaration" />
+        </node>
+      </node>
+    </node>
   </node>
 </model>
 
