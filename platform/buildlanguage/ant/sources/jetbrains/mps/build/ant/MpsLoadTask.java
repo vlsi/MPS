@@ -138,6 +138,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
       }
       commandLine.add("-classpath");
       commandLine.add(currentClassPathString + sb.toString());
+      commandLine.add(AntBootstrap.class.getCanonicalName());
       commandLine.add(getWorkerClass().getCanonicalName());
       dumpPropertiesToWhatToDo();
       try {
@@ -231,17 +232,11 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
         new File(myMpsHome.getAbsolutePath() + File.separator + "MPSPlugin" + File.separator + "MPSSupport")};
     } else {
       pathsToLook = new File[]{new File(myMpsHome.getAbsolutePath() + File.separator + "lib"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "workbench"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "generate.ant.task.jar"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.uiLanguage.mpsarch.jar"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.uiLanguage.runtime.jar"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.xmlInternal.mpsarch.jar"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.xml.mpsarch.jar"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.xmlSchema.mpsarch.jar"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.xmlQuery.mpsarch.jar"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.xmlQuery.runtime.mpsarch.jar"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.gtext.mpsarch.jar"),
-        new File(myMpsHome.getAbsolutePath() + File.separator + "platform" + File.separator + "jetbrains.mps.gtext.runtime.mpsarch.jar"),
         new File(myMpsHome.getAbsolutePath() + File.separator + "plugin")};
     }
 
