@@ -71,7 +71,7 @@ public abstract class MigrationScriptsView {
     finder.setMigrationScriptsView(this);
     myTool = tool;
     ViewOptions viewOptions = new ViewOptions();
-    viewOptions.myCategory = true;
+    viewOptions.myCategories[0] = true;
     viewOptions.myShowSearchedNodes = false;
     viewOptions.myGroupSearchedNodes = false;
     viewOptions.mySearchedNodesButtonsVisible = false;

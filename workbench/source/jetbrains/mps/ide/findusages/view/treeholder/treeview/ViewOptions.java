@@ -19,6 +19,8 @@ import jetbrains.mps.ide.findusages.IExternalizeable;
 import jetbrains.mps.project.MPSProject;
 import org.jdom.Element;
 
+import java.util.Arrays;
+
 public class ViewOptions implements IExternalizeable {
   private static final String OPTIONS = "options";
   private static final String CATEGORY_OPTION = "category_option";
@@ -36,11 +38,14 @@ public class ViewOptions implements IExternalizeable {
 
   public boolean myAutoscrolls = false;
 
-  public boolean myCategory = false,
-    myModule = true,
+  @Deprecated
+  public boolean myCategory = false;
+  public boolean myModule = true,
     myModel = true,
     myRoot = true,
     myNamedPath = false;
+
+  public boolean[] myCategories = new boolean[]{false};
 
   public boolean myCount = true,
     myInfo = true,
@@ -72,6 +77,8 @@ public class ViewOptions implements IExternalizeable {
     myRoot = Boolean.valueOf(viewOptionsXML.getAttributeValue(ROOT_OPTION));
     myNamedPath = Boolean.valueOf(viewOptionsXML.getAttributeValue(PATH_OPTION));
 
+    // TODO persistence for categories array
+
     myCount = Boolean.valueOf(viewOptionsXML.getAttributeValue(COUNT_OPTION));
     myInfo = Boolean.valueOf(viewOptionsXML.getAttributeValue(INFO_OPTION));
     myShowSearchedNodes = Boolean.valueOf(viewOptionsXML.getAttributeValue(SHOW_SEARCHED_NODES_OPTION));
@@ -88,6 +95,8 @@ public class ViewOptions implements IExternalizeable {
     viewOptionsXML.setAttribute(MODEL_OPTION, Boolean.toString(myModel));
     viewOptionsXML.setAttribute(ROOT_OPTION, Boolean.toString(myRoot));
     viewOptionsXML.setAttribute(PATH_OPTION, Boolean.toString(myNamedPath));
+
+    // TODO persistence for categories array
 
     viewOptionsXML.setAttribute(COUNT_OPTION, Boolean.toString(myCount));
     viewOptionsXML.setAttribute(INFO_OPTION, Boolean.toString(myInfo));
@@ -107,6 +116,7 @@ public class ViewOptions implements IExternalizeable {
     myModel = options.myModel;
     myRoot = options.myRoot;
     myNamedPath = options.myNamedPath;
+    myCategories = Arrays.copyOf(options.myCategories, options.myCategories.length);
 
     myCount = options.myCount;
     myInfo = options.myInfo;

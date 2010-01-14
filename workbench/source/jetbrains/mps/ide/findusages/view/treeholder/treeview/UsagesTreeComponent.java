@@ -116,6 +116,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   public void setCustomRepresentator(INodeRepresentator nodeRepresentator) {
     myNodeRepresentator = nodeRepresentator;
     myViewToolbar.recreateToolbar();
+    myViewToolbar.setViewOptions(myViewOptions);
   }
 
   public void setComponentsViewOptions(ViewOptions options) {
@@ -408,8 +409,11 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       public void setViewOptions(ViewOptions options) {
         myTree.startAdjusting();
 
-        // TODO!
-        // myCategoryPathButton.doSetSelected(null, options.myCategory);
+        int size = Math.min(myCategoryPathButtons.size(), options.myCategories.length);
+        for (int i = 0; i < size; i++) {
+          myCategoryPathButtons.get(i).doSetSelected(null, options.myCategories[i]);
+        }
+
         myModulePathButton.doSetSelected(null, options.myModule);
         myModelPathButton.doSetSelected(null, options.myModel);
         myRootPathButton.doSetSelected(null, options.myRoot);
@@ -419,8 +423,11 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       }
 
       public void getViewOptions(ViewOptions options) {
-        // TODO!
-        // options.myCategory = myCategoryPathButton.isSelected(null);
+        options.myCategories = new boolean[myCategoryPathButtons.size()];
+        for (int i = 0; i < myCategoryPathButtons.size(); i++) {
+          options.myCategories[i] = myCategoryPathButtons.get(i).isSelected(null);
+        }
+
         options.myModule = myModulePathButton.isSelected(null);
         options.myModel = myModelPathButton.isSelected(null);
         options.myRoot = myRootPathButton.isSelected(null);
