@@ -342,6 +342,7 @@ public class GeneratorUtil {
     try {
       List<SNode> outputNodes = TemplateProcessor.createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, generator);
       for (SNode outputNode : outputNodes) {
+        generator.registerRoot(outputNode, inputNode);
         generator.getOutputModel().addRoot(outputNode);
       }
     } catch (TemplateProcessingFailureException e) {
@@ -560,6 +561,22 @@ public class GeneratorUtil {
         if (outputContextNode == null) {
           generator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
           continue;
+        } else {
+          // Additional check - context should be generated from the same root, TODO replace warn -> error
+          SNode contextRoot = outputContextNode.getContainingRoot();
+          if(contextRoot != null) {
+            SNode inputRoot = applicableNode.getContainingRoot();
+            SNode originalContextRoot = generator.getInputRootForOutput(contextRoot);
+            if(originalContextRoot == null) {
+              generator.showWarningMessage(rule.getNode(), "bad context for weaving rule: unknown input for " + contextRoot);
+            }
+            originalContextRoot = originalContextRoot != null ? originalContextRoot.getContainingRoot() : null;
+            if(originalContextRoot != inputRoot && inputRoot != null && originalContextRoot != null) {
+              generator.showWarningMessage(rule.getNode(), "bad context for weaving rule: " + originalContextRoot.toString() + " vs " + inputRoot.toString());
+            }
+          } else {
+            generator.showWarningMessage(rule.getNode(), "bad context for weaving rule: no root for " + outputContextNode);
+          }
         }
         generator.setChanged(true);
 

@@ -47,6 +47,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private TemplateSwitchGraph myTemplateSwitchGraph;
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
   private Map<String, SNode> myCurrentPreviousInputNodesByMappingName;
+  private Map<SNode,SNode> myNewToOldRoot = new HashMap<SNode,SNode>();
 
   private boolean myChanged = false;
   private RuleManager myRuleManager;
@@ -95,6 +96,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private void doMapping(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
     checkMonitorCanceled();
     myRuleManager = new RuleManager(this);
+    myNewToOldRoot.clear();
 
     // create all roots
     if (isPrimary) {
@@ -149,7 +151,9 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
     List<SNode> copiedRoots = new ArrayList<SNode>();
     for (SNode rootToCopy : rootsToCopy) {
-      copiedRoots.add(CloneUtil.clone(rootToCopy, myOutputModel, getGeneratorSessionContext().getOriginalInputModel() == myInputModel));
+      SNode newroot = CloneUtil.clone(rootToCopy, myOutputModel, getGeneratorSessionContext().getOriginalInputModel() == myInputModel);
+      myNewToOldRoot.put(newroot, rootToCopy);
+      copiedRoots.add(newroot);
     }
     return copiedRoots;
   }
@@ -432,5 +436,13 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public void setChanged(boolean b) {
     myChanged = b;
+  }
+  
+  void registerRoot(SNode newroot, SNode old) {
+    myNewToOldRoot.put(newroot, old);
+  }
+
+  public SNode getInputRootForOutput(SNode node) {
+    return myNewToOldRoot.get(node);
   }
 }
