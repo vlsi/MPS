@@ -20,6 +20,7 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -46,6 +47,8 @@ import javax.swing.ImageIcon;
 import java.awt.BorderLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.util.Arrays;
+import java.util.List;
 
 public class TodoViewer extends JPanel {
   private UsagesView myUsagesView;
@@ -140,6 +143,11 @@ public class TodoViewer extends JPanel {
 
     public Icon getCategoryIcon(String category) {
       return Icons.CLOSED_FOLDER;
+    }
+
+    @Override
+    public List<CategoryKind> getCategoryKinds() {
+      return Arrays.asList(CategoryKind.DEFAULT_CATEGORY_KIND);
     }
 
     // Nothing to read or write: this class is stateless

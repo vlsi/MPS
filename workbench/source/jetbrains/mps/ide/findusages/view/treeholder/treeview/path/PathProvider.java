@@ -64,7 +64,7 @@ public class PathProvider {
     List<Pair<CategoryKind, String>> reversedCategories = new ArrayList<Pair<CategoryKind, String>>(result.getCategories());
     Collections.reverse(reversedCategories);
     for (Pair<CategoryKind, String> category : reversedCategories) {
-      res.add(new PathItem(PathItemRole.ROLE_CATEGORY, category));
+      res.add(new PathItem(PathItemRole.getCategoryRole(category.o1), category));
     }
 
     Collections.reverse(res);

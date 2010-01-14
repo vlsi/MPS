@@ -18,6 +18,7 @@ package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.DataTree;
@@ -33,9 +34,7 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.BorderLayout;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public abstract class UsagesTreeComponent extends JPanel implements IChangeListener {
   private static final Logger LOG = Logger.getLogger(UsagesTreeComponent.class);
@@ -116,6 +115,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
   //MUST be called in construction time, introduced for "to do" functionality
   public void setCustomRepresentator(INodeRepresentator nodeRepresentator) {
     myNodeRepresentator = nodeRepresentator;
+    myViewToolbar.recreateToolbar();
   }
 
   public void setComponentsViewOptions(ViewOptions options) {
@@ -229,6 +229,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       }
 
       DefaultActionGroup actionGroup = new DefaultActionGroup();
+      myPathOptionsToolbar.recreateActions();
       actionGroup.addAll(myPathOptionsToolbar.getActions());
       actionGroup.addSeparator();
       actionGroup.addAll(myViewOptionsToolbar.getActions());
@@ -330,7 +331,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
     }
 
     class PathOptionsToolbar {
-      private MyBaseToggleAction myCategoryPathButton;
+      private List<MyBaseToggleAction> myCategoryPathButtons = new ArrayList<MyBaseToggleAction>();
       private MyBaseToggleAction myModulePathButton;
       private MyBaseToggleAction myModelPathButton;
       private MyBaseToggleAction myRootPathButton;
@@ -338,7 +339,21 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       private DefaultActionGroup myActions;
 
       public PathOptionsToolbar() {
-        myCategoryPathButton = new MyBasePathToggleAction(PathItemRole.ROLE_CATEGORY, "Group by category", Icons.CATEGORY_ICON);
+        recreateActions();
+      }
+
+      private void recreateActions() {
+        List<CategoryKind> categoryKinds = Arrays.asList(CategoryKind.DEFAULT_CATEGORY_KIND);
+        if (myNodeRepresentator != null) {
+          categoryKinds = ((INodeRepresentator<?>) myNodeRepresentator).getCategoryKinds();
+        }
+
+        myCategoryPathButtons.clear();
+        for (CategoryKind kind : categoryKinds) {
+          myCategoryPathButtons.add(new MyBasePathToggleAction(
+                                      PathItemRole.getCategoryRole(kind), kind.getTooltip(), kind.getIcon()));
+        }
+
         myModulePathButton = new MyBasePathToggleAction(PathItemRole.ROLE_MODULE, "Group by module", Icons.MODULE_ICON);
         myModelPathButton = new MyBasePathToggleAction(PathItemRole.ROLE_MODEL, "Group by model", Icons.MODEL_ICON);
 
@@ -381,7 +396,9 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
         };
 
         myActions = new DefaultActionGroup();
-        myActions.addAction(myCategoryPathButton);
+        for (MyBaseToggleAction categoryPathButton : myCategoryPathButtons) {
+          myActions.addAction(categoryPathButton);
+        }
         myActions.addAction(myModulePathButton);
         myActions.addAction(myModelPathButton);
         myActions.addAction(myRootPathButton);
@@ -391,7 +408,8 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       public void setViewOptions(ViewOptions options) {
         myTree.startAdjusting();
 
-        myCategoryPathButton.doSetSelected(null, options.myCategory);
+        // TODO!
+        // myCategoryPathButton.doSetSelected(null, options.myCategory);
         myModulePathButton.doSetSelected(null, options.myModule);
         myModelPathButton.doSetSelected(null, options.myModel);
         myRootPathButton.doSetSelected(null, options.myRoot);
@@ -401,7 +419,8 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       }
 
       public void getViewOptions(ViewOptions options) {
-        options.myCategory = myCategoryPathButton.isSelected(null);
+        // TODO!
+        // options.myCategory = myCategoryPathButton.isSelected(null);
         options.myModule = myModulePathButton.isSelected(null);
         options.myModel = myModelPathButton.isSelected(null);
         options.myRoot = myRootPathButton.isSelected(null);

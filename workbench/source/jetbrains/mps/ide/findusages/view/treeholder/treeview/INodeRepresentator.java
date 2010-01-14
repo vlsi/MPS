@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
+import jetbrains.mps.ide.findusages.model.CategoryKind;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.IExternalizeable;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 
 import javax.swing.Icon;
+import java.util.List;
 
 public interface INodeRepresentator<N> extends IExternalizeable {
   public String getPresentation(N node);
@@ -31,4 +33,6 @@ public interface INodeRepresentator<N> extends IExternalizeable {
   public String getCategoryText(TextOptions options, String category, boolean isResultsSection);
 
   public Icon getCategoryIcon(String category);
+
+  public List<CategoryKind> getCategoryKinds();
 }

@@ -44,6 +44,8 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.projectPane.Icons;
 import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.StringEscapeUtils;
+import jetbrains.mps.ide.findusages.model.CategoryKind;
+import java.util.Arrays;
 import org.jdom.Element;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
@@ -247,6 +249,10 @@ public abstract class ModelCheckerViewer extends JPanel implements INavigator {
 
     public String getPresentation(ModelCheckerIssue issue) {
       return StringEscapeUtils.escapeHtml(issue.getMessage());
+    }
+
+    public List<CategoryKind> getCategoryKinds() {
+      return Arrays.asList(ModelCheckerIssue.CATEGORY_KIND_SEVERITY, ModelCheckerIssue.CATEGORY_KIND_ISSUE_TYPE);
     }
 
     public void write(Element element, MPSProject project) throws CantSaveSomethingException {

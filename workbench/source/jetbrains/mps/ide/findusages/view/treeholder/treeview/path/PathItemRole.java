@@ -17,6 +17,7 @@ package jetbrains.mps.ide.findusages.view.treeholder.treeview.path;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.model.CategoryKind;
 import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 
@@ -25,11 +26,14 @@ import java.util.HashSet;
 import java.util.Set;
 
 public final class PathItemRole {
+  public static final String ROLE_CATEGORY_PREFIX = "category:";
+
   public static final PathItemRole ROLE_TARGET_NODE = new PathItemRole("target");
   public static final PathItemRole ROLE_ROOT_TO_TARGET_NODE = new PathItemRole("root to target");
   public static final PathItemRole ROLE_ROOT = new PathItemRole("root");
   public static final PathItemRole ROLE_MODEL = new PathItemRole("model");
   public static final PathItemRole ROLE_MODULE = new PathItemRole("module");
+  @Deprecated
   public static final PathItemRole ROLE_CATEGORY = new PathItemRole("category");
 
   public static final PathItemRole ROLE_MAIN_SEARCHED_NODES = new PathItemRole("searched nodes");
@@ -63,6 +67,9 @@ public final class PathItemRole {
         return instance;
       }
     }
+    if (name.startsWith(ROLE_CATEGORY_PREFIX)) {
+      return new PathItemRole(name);
+    }
     return null;
   }
 
@@ -78,5 +85,33 @@ public final class PathItemRole {
 
   private PathItemRole(@NotNull String name) {
     myName = name;
+  }
+
+  public static PathItemRole getCategoryRole(CategoryKind categoryKind) {
+    return new PathItemRole(ROLE_CATEGORY_PREFIX + categoryKind.getName());
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    PathItemRole that = (PathItemRole) o;
+
+    if (!myName.equals(that.myName)) return false;
+
+    return true;
+  }
+
+  @Override
+  public int hashCode() {
+    return myName.hashCode();
+  }
+
+  @Override
+  public String toString() {
+    return "PathItemRole{" +
+      "myName='" + myName + '\'' +
+      '}';
   }
 }
