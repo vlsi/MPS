@@ -207,8 +207,7 @@ public class DataTree implements IExternalizeable, IChangeListener {
         }
       } else if (o instanceof Pair) {
         Pair<CategoryKind, String> category = (Pair<CategoryKind, String>) currentIdObject;
-     //  todo: category.o1 in null (MPS-7431)
-        data = new CategoryNodeData(creator, category.o2, results, nodeRepresentator);
+        data = new CategoryNodeData(creator, category.o1.getName(), category.o2, results, nodeRepresentator);
       }
       next = new DataNode(data);
       root.add(next);

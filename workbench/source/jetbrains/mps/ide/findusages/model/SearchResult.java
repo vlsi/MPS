@@ -36,12 +36,12 @@ public class SearchResult<T> {
 
   // This constructor should be used for simple, one-level categories
   public SearchResult(T object, String category) {
-    this(object, object, new Pair<CategoryKind, String>(null, category));
+    this(object, object, new Pair<CategoryKind, String>(CategoryKind.DEFAULT_CATEGORY_KIND, category));
   }
 
   // This constructor should be used for simple, one-level categories
   public SearchResult(T object, Object pathObject, String category) {
-    this(object, pathObject, new Pair<CategoryKind, String>(null, category));
+    this(object, pathObject, new Pair<CategoryKind, String>(CategoryKind.DEFAULT_CATEGORY_KIND, category));
   }
 
   public SearchResult(T object, Object pathObject, List<Pair<CategoryKind, String>> categories) {
