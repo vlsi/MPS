@@ -5146,18 +5146,6 @@
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786037">
         <property name="path:0" value="lib/mps.jar" />
       </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786071">
-        <property name="path:0" value="platform/jetbrains.mps.uiLanguage.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786073">
-        <property name="path:0" value="platform/jetbrains.mps.uiLanguage.runtime.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="4895947921038725667">
-        <property name="path:0" value="platform/jetbrains.mps.xmlQuery.mpsarch.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="4895947921038725670">
-        <property name="path:0" value="platform/jetbrains.mps.xmlQuery.runtime.mpsarch.jar" />
-      </node>
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786086">
         <property name="path:0" value="lib/jdom/jdom.jar" />
       </node>

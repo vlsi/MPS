@@ -49,6 +49,7 @@ import java.util.regex.Pattern;
  * So we automatically add everything near idea platform jar into classpath.
  * We also want languages jars.
  */
+
 public class ClassloaderUtil {
   @NonNls
   static final String FILE_CACHE = "fileCache";
@@ -175,6 +176,9 @@ public class ClassloaderUtil {
       File languageDesignFolder = new File(homePath + File.separator + "core" + File.separator + "languageDesign");
       addLibraries(classPath, languageDesignFolder, selfRootUrl);
 
+      File platformCoreFolder = new File(homePath + File.separator + "platform" + File.separator + "core");
+      addLibraries(classPath, platformCoreFolder, selfRootUrl);
+
     }
     catch (MalformedURLException e) {
       getLogger().error(e);
@@ -262,7 +266,7 @@ public class ClassloaderUtil {
 
       final File libFolder = new File(aFolderPath + File.separator + "lib");
       // MPS Patch Start
-      for (File libSubFolder : libFolder.listFiles()){
+      for (File libSubFolder : libFolder.listFiles()) {
         addLibraries(classPath, libSubFolder, selfRootUrl);
       }
       // MPS Patch End

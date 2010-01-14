@@ -251,6 +251,9 @@
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="4062013737453621585">
     <property name="name:7" value="platform" />
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.BlockReference:7" id="6748863620932397040">
+      <link role="block:7" targetNodeId="6748863620932397034" resolveInfo="platform.core" />
+    </node>
     <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4062013737453621586">
       <property name="id" value="084f8779-0bb0-44bf-8a8b-1214d7acfbc5" />
       <property name="name" value="ypath.main" />
@@ -315,10 +318,6 @@
       <property name="id" value="5dc5fc0d-37ef-4782-8192-8b5ce1f69f80" />
       <property name="name" value="jetbrains.mps.baseLanguage.methodExtension" />
     </node>
-    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4062013737453621602">
-      <property name="id" value="5d6bee4c-f891-4a93-a0c9-e2268726ae47" />
-      <property name="name" value="jetbrains.mps.uiLanguage" />
-    </node>
     <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4062013737453621603">
       <property name="id" value="2c55c7ac-60c3-4eea-b9db-0d627bd2dcb9" />
       <property name="name" value="jetbrains.mps.xml" />
@@ -338,14 +337,6 @@
     <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4062013737453621607">
       <property name="id" value="b51b9e02-45dc-4b48-b300-cf49360a8d1f" />
       <property name="name" value="jetbrains.mps.xmlSchema" />
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4062013737453621608">
-      <property name="id" value="a8fdde77-2e6c-41f6-ac79-8e9b6449c271" />
-      <property name="name" value="jetbrains.mps.xmlQuery" />
-    </node>
-    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4062013737453621609">
-      <property name="id" value="13bb5d8e-e640-4722-80ed-259ec90709b3" />
-      <property name="name" value="jetbrains.mps.xmlQuery.runtime" />
     </node>
     <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4062013737453621610">
       <property name="id" value="34f23130-e35c-4795-a45a-85d828b16016" />
@@ -412,6 +403,27 @@
     <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4062013737453621625">
       <property name="id" value="2d3c70e9-aab2-4870-8d8d-6036800e4103" />
       <property name="name" value="jetbrains.mps.kernel" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.build.packaging.structure.Block:7" id="6748863620932397034">
+    <property name="name:7" value="platform.core" />
+    <node role="entry:7" type="jetbrains.mps.build.packaging.structure.Folder:7" id="6748863620932398114">
+      <property name="excludes:7" value="" />
+      <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="6748863620932398119">
+        <property name="id" value="5d6bee4c-f891-4a93-a0c9-e2268726ae47" />
+        <property name="name" value="jetbrains.mps.uiLanguage" />
+      </node>
+      <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="6748863620932398120">
+        <property name="id" value="a8fdde77-2e6c-41f6-ac79-8e9b6449c271" />
+        <property name="name" value="jetbrains.mps.xmlQuery" />
+      </node>
+      <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="6748863620932398121">
+        <property name="id" value="13bb5d8e-e640-4722-80ed-259ec90709b3" />
+        <property name="name" value="jetbrains.mps.xmlQuery.runtime" />
+      </node>
+      <node role="title:7" type="jetbrains.mps.build.packaging.structure.SimpleString:7" id="6748863620932398118">
+        <property name="name:7" value="core" />
+      </node>
     </node>
   </node>
 </model>

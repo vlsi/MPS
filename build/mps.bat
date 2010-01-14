@@ -13,10 +13,6 @@ set JVM_ARGS=%ACC%
 ::set ADDITIONAL_JVM_ARGS=-Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=5005
 set CLASSPATH="%PROJECT_HOME%lib\idea-patch.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\mps.jar"
-set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%platform\jetbrains.mps.uiLanguage.mpsarch.jar"
-set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%platform\jetbrains.mps.uiLanguage.runtime.mpsarch.jar"
-set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%platform\jetbrains.mps.xmlQuery.mpsarch.jar"
-set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%platform\jetbrains.mps.xmlQuery.runtime.mpsarch.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\jdom\jdom.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\jetbrains-ideframework\boot.jar"
 set CLASSPATH=%CLASSPATH%;"%PROJECT_HOME%lib\jetbrains-ideframework\bootstrap.jar"
