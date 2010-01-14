@@ -29,7 +29,6 @@ import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_1221138344773(final IOperationContext operationContext, final CreateRootRuleContext _context) {
@@ -637,31 +636,31 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186794781128(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByMappingLabel("classQueriesGenerated");
+  public static Iterable sourceNodesQuery_5771417138871048269(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186795057567(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByMappingLabel("classQueriesGenerated");
+  public static Iterable sourceNodesQuery_5771417138871077915(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186795061791(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByMappingLabel("classQueriesGenerated");
+  public static Iterable sourceNodesQuery_5771417138871077937(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.NodeSetupFunction");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186795065171(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByMappingLabel("classQueriesGenerated");
+  public static Iterable sourceNodesQuery_5771417138871077959(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186795068567(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByMappingLabel("classQueriesGenerated");
+  public static Iterable sourceNodesQuery_5771417138871077981(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1186795071822(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByMappingLabel("classQueriesGenerated");
+  public static Iterable sourceNodesQuery_5771417138871078003(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.RemoveByConditionPart");
   }
 
-  public static SNode weaving_MappingRule_ContextNodeQuery_1197455643098(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
-    return _context.getOutputNodeByMappingLabel("classQueriesGenerated");
+  public static Iterable sourceNodesQuery_5771417138871078025(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.actions.structure.RemoveSTByConditionPart");
   }
 }
