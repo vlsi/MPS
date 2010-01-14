@@ -23,6 +23,7 @@ import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
+import jetbrains.mps.ide.tabbedEditor.LazyTabbedPane;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.lang.core.structure.INamedConcept;
@@ -174,15 +175,12 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
             return result[0];
           }
 
-          public PopupStep onChosen(SNode selectedValue, boolean finalChoice) {
-            if (myInnerTabbedPane == null) {
-              ModelAccess.instance().runReadAction(new Runnable() {
-                public void run() {
-                  tryToInitComponent();
-                }
-              });
-            }
-            createNewInnerTab(selectedValue);
+          public PopupStep onChosen(final SNode selectedValue, boolean finalChoice) {
+            Pair<SNode, IOperationContext>[] nodeAndContext = new Pair[1];
+            createLoadableNodeChecked(nodeAndContext, selectedValue);
+            setPackageAfterCreationChecked(nodeAndContext);
+            LazyTabbedPane tabbedPane = myTabbedEditor.getTabbedPane();
+            tabbedPane.initTab(BaseMultitabbedTab.this);
             return FINAL_CHOICE;
           }
         });
@@ -221,7 +219,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
       AbstractAction action = new AbstractAction("Create new") {
         public void actionPerformed(final ActionEvent e) {
           if (getAvailableConceptArray().length == 0) {
-            createNewInnerTab(null);
+            createLoadableNode(true, null);
           } else {
             showConceptList(new RelativePoint(button, new Point(0, button.getHeight())));
           }
@@ -269,24 +267,32 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     return myEditors.get(myInnerTabbedPane.getSelectedIndex());
   }
 
-  private void createNewInnerTab(final SNode concept) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        Pair<SNode, IOperationContext> nodeAndContext = createLoadableNode(false, concept);
-        if (nodeAndContext != null) {
-          nodeAndContext.o1.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
-          myInnerTabbedPane.setSelectedIndex(myInnerTabbedPane.getTabCount() - 1);
-        }
-      }
-    });
+  private void setPackageAfterCreation(final Pair<SNode, IOperationContext> nodeAndContext) {
+    if (nodeAndContext == null) return;
+    nodeAndContext.o1.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
   }
 
-  private void createNewInnerTabAnyway(final Pair<SNode, IOperationContext>[] nodeAndContext, RelativePoint relativePoint) {
-    if (getAvailableConceptArray().length == 0) {
-      if (!askCreate()) return;
+  private void setPackageAfterCreationChecked(final Pair<SNode, IOperationContext>[] nodeAndContext) {
+    if (ModelAccess.instance().canWrite()) {
+      setPackageAfterCreation(nodeAndContext[0]);
+    } else {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          setPackageAfterCreation(nodeAndContext[0]);
+        }
+      });
+    }
+  }
+
+  private void createLoadableNodeChecked(final Pair<SNode, IOperationContext>[] nodeAndContext, final SNode concept) {
+    if (isOutsideCommandExecution()) {
       nodeAndContext[0] = createLoadableNode(true, null);
     } else {
-      showConceptList(relativePoint);
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          nodeAndContext[0] = createLoadableNode(true, concept);
+        }
+      });
     }
   }
 
@@ -294,21 +300,13 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     if (!canCreate()) return;
 
     final Pair<SNode, IOperationContext>[] nodeAndContext = new Pair[1];
-    if (isOutsideCommandExecution()) {
-      createNewInnerTabAnyway(nodeAndContext, relativePoint);
+    if (getAvailableConceptArray().length == 0) {
+      if (!askCreate()) return;
+      createLoadableNodeChecked(nodeAndContext, null);
+      setPackageAfterCreationChecked(nodeAndContext);
     } else {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          createNewInnerTabAnyway(nodeAndContext, relativePoint);
-        }
-      });
+      showConceptList(relativePoint);
     }
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        if (nodeAndContext[0] == null) return;
-        nodeAndContext[0].o1.setProperty(SModelTreeNode.PACK, getBaseNode().getProperty(SModelTreeNode.PACK));
-      }
-    });
   }
 
   public void createFirst(MouseEvent e) {
