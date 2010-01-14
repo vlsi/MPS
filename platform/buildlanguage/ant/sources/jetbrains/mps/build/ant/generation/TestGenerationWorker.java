@@ -66,10 +66,7 @@ public class TestGenerationWorker extends GeneratorWorker {
 
   public void work() {
     setupEnvironment();
-    if (myWhatToDo.getProperty("per.root.generation") != null) {
-      boolean perRootGeneration = Boolean.parseBoolean(myWhatToDo.getProperty("per.root.generation"));
-      GenerationSettings.getInstance().setUseNewGenerator(perRootGeneration);
-    }
+    setGenerationProperties();
 
     Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
 
@@ -99,6 +96,14 @@ public class TestGenerationWorker extends GeneratorWorker {
     dispose();
 
     showStatistic();
+  }
+
+  private void setGenerationProperties() {
+    if (myWhatToDo.getProperty("per.root.generation") != null) {
+      boolean perRootGeneration = Boolean.parseBoolean(myWhatToDo.getProperty("per.root.generation"));
+      GenerationSettings.getInstance().setUseNewGenerator(perRootGeneration);
+      info("Per-root generation set to " + perRootGeneration);
+    }
   }
 
   public IBuildServerMessageFormat getBuildServerMessageFormat() {
