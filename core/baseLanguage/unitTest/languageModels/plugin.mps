@@ -2125,7 +2125,7 @@
                 <link role="variableDeclaration:3" targetNodeId="604223941107444727:0" resolveInfo="state" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="604223941107444736">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~Enum.equals(java.lang.Object):boolean" resolveInfo="equals" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="604223941107444737">
                   <link role="enumClass:3" targetNodeId="1208285711556:0" resolveInfo="TestState" />
                   <link role="enumConstantDeclaration:3" targetNodeId="1208285795925:0" resolveInfo="FAILED" />
@@ -2137,7 +2137,7 @@
                 <link role="variableDeclaration:3" targetNodeId="604223941107444727:0" resolveInfo="state" />
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="604223941107444740">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~Enum.equals(java.lang.Object):boolean" resolveInfo="equals" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="604223941107444741">
                   <link role="enumClass:3" targetNodeId="1208285711556:0" resolveInfo="TestState" />
                   <link role="enumConstantDeclaration:3" targetNodeId="1208285804880:0" resolveInfo="ERROR" />
@@ -2197,7 +2197,7 @@
                 </node>
               </node>
               <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="4983672462913881807">
-                <link role="baseMethodDeclaration:3" targetNodeId="2.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                <link role="baseMethodDeclaration:3" targetNodeId="2.~Enum.equals(java.lang.Object):boolean" resolveInfo="equals" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="4983672462913881808">
                   <link role="enumClass:3" targetNodeId="1208285711556:0" resolveInfo="TestState" />
                   <link role="enumConstantDeclaration:3" targetNodeId="1208285838401:0" resolveInfo="PASSED" />
@@ -2477,7 +2477,7 @@
                             <link role="enumClass:3" targetNodeId="1208285711556:0" resolveInfo="TestState" />
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="892466083793313277">
-                            <link role="baseMethodDeclaration:3" targetNodeId="2.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="2.~Enum.equals(java.lang.Object):boolean" resolveInfo="equals" />
                             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="892466083793313278">
                               <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="892466083793313279">
                                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="892466083793313280">
@@ -2515,7 +2515,7 @@
                   <link role="enumClass:3" targetNodeId="1208285711556:0" resolveInfo="TestState" />
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="892466083793313021">
-                  <link role="baseMethodDeclaration:3" targetNodeId="2.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="2.~Enum.equals(java.lang.Object):boolean" resolveInfo="equals" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="892466083793313031">
                     <link role="variableDeclaration:3" targetNodeId="892466083793292697:0" resolveInfo="testState" />
                   </node>
@@ -3048,7 +3048,7 @@
                               <link role="enumConstantDeclaration:3" targetNodeId="1208285769681:0" resolveInfo="IN_PROGRESS" />
                             </node>
                             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="892466083792934587">
-                              <link role="baseMethodDeclaration:3" targetNodeId="2.~Object.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                              <link role="baseMethodDeclaration:3" targetNodeId="2.~Enum.equals(java.lang.Object):boolean" resolveInfo="equals" />
                               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="892466083792934588">
                                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="892466083792934589">
                                   <link role="variableDeclaration:3" targetNodeId="9145640367063641407:0" resolveInfo="node" />
@@ -3264,9 +3264,21 @@
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8640331875043842880" />
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8640331875043842881" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8640331875043842882">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8640331875043842884">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall:3" id="8640331875043842885">
-            <link role="baseMethodDeclaration:3" targetNodeId="11.~MPSTree.dispose():void" resolveInfo="dispose" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1632784999951775918">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1632784999951775919">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8640331875043842884">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall:3" id="8640331875043842885">
+                <link role="baseMethodDeclaration:3" targetNodeId="11.~MPSTree.dispose():void" resolveInfo="dispose" />
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1632784999951775926">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1632784999951775927">
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1632784999951775928">
+                <link role="baseMethodDeclaration:3" targetNodeId="11.~MPSTree.isDisposed():boolean" resolveInfo="isDisposed" />
+              </node>
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1632784999951775929" />
+            </node>
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="497539554675290542">

@@ -128,7 +128,9 @@ public class TestTree extends MPSTree implements TestView, Disposable {
 
   @Override
   public void dispose() {
-    super.dispose();
+    if (!(this.isDisposed())) {
+      super.dispose();
+    }
     this.animator.dispose();
   }
 
