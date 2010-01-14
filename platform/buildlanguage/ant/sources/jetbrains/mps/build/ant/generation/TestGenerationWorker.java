@@ -2,6 +2,7 @@ package jetbrains.mps.build.ant.generation;
 
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.compiler.JavaCompiler;
+import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.util.AbstractClassLoader;
 import junit.framework.*;
@@ -65,6 +66,10 @@ public class TestGenerationWorker extends GeneratorWorker {
 
   public void work() {
     setupEnvironment();
+    if (myWhatToDo.getProperty("per.root.generation") != null) {
+      boolean perRootGeneration = Boolean.parseBoolean(myWhatToDo.getProperty("per.root.generation"));
+      GenerationSettings.getInstance().setUseNewGenerator(perRootGeneration);
+    }
 
     Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
 
