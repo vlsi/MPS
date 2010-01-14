@@ -102,8 +102,8 @@ public class ClassloaderUtil {
       addParentClasspath(classpathElements);
       // MPS Patch Start
       addLanguagesClassPath(classpathElements);
+      addLibraries(classpathElements);
       // MPS Patch End
-      addIDEALibraries(classpathElements);
       addAdditionalClassPath(classpathElements);
     }
     catch (IllegalArgumentException e) {
@@ -237,7 +237,12 @@ public class ClassloaderUtil {
     }
   }
 
-  public static void addIDEALibraries(List<URL> classpathElements) {
+  /**
+   * Patched by MPS.
+   * Was named addIDEALibraries
+   */
+  @Patch
+  public static void addLibraries(List<URL> classpathElements) {
     final String ideaHomePath = PathManager.getHomePath();
     addAllFromLibFolder(ideaHomePath, classpathElements);
   }
@@ -256,12 +261,9 @@ public class ClassloaderUtil {
       classPath.add(selfRootUrl);
 
       final File libFolder = new File(aFolderPath + File.separator + "lib");
-      addLibraries(classPath, libFolder, selfRootUrl);
-
       // MPS Patch Start
-      File jetbrainsIdeFrameworkDir = new File(selfRoot).getAbsoluteFile().getParentFile();
-      if (!libFolder.equals(jetbrainsIdeFrameworkDir)) {
-        addLibraries(classPath, jetbrainsIdeFrameworkDir, selfRootUrl);
+      for (File libSubFolder : libFolder.listFiles()){
+        addLibraries(classPath, libSubFolder, selfRootUrl);
       }
       // MPS Patch End
 

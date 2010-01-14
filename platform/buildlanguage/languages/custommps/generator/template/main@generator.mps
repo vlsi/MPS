@@ -5158,36 +5158,6 @@
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="4895947921038725670">
         <property name="path:0" value="platform/jetbrains.mps.xmlQuery.runtime.mpsarch.jar" />
       </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786075">
-        <property name="path:0" value="lib/asm/asm.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786076">
-        <property name="path:0" value="lib/beansbinding/beansbinding-1.2.1.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786077">
-        <property name="path:0" value="lib/commons-codec/commons-codec-1.3.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786078">
-        <property name="path:0" value="lib/commons-collections/commons-collections.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786079">
-        <property name="path:0" value="lib/commons-lang/commons-lang-2.1.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786080">
-        <property name="path:0" value="lib/commons-logging/commons-logging-1.1.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786081">
-        <property name="path:0" value="lib/commons-net/commons-net-1.4.1.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786082">
-        <property name="path:0" value="lib/eclipse-compiler/ecj.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786083">
-        <property name="path:0" value="lib/httpclient/httpclient.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786084">
-        <property name="path:0" value="lib/javahelp/jh.jar" />
-      </node>
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786086">
         <property name="path:0" value="lib/jdom/jdom.jar" />
       </node>
@@ -5203,50 +5173,8 @@
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786098">
         <property name="path:0" value="lib/jetbrains-ideframework/util.jar" />
       </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786099">
-        <property name="path:0" value="lib/jgoodies/jgoodies-forms.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786100">
-        <property name="path:0" value="lib/jna/jna-utils.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786101">
-        <property name="path:0" value="lib/jna/jna.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786102">
-        <property name="path:0" value="lib/junit4/junit-4.1.jar" />
-      </node>
       <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786103">
         <property name="path:0" value="lib/log4j/log4j.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786104">
-        <property name="path:0" value="lib/microba/microba.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786105">
-        <property name="path:0" value="lib/nanoxml/nanoxml-2.2.3.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786106">
-        <property name="path:0" value="lib/oromatcher/oromatcher.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786107">
-        <property name="path:0" value="lib/picocontainer/picocontainer.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786108">
-        <property name="path:0" value="lib/trove4j/trove4j.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786109">
-        <property name="path:0" value="lib/trove4j/trove4j_src.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786111">
-        <property name="path:0" value="lib/xmlrpc/xmlrpc-2.0.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786112">
-        <property name="path:0" value="lib/xstream/xstream.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1234780786113">
-        <property name="path:0" value="lib/yjp/yjp-controller-api-redist.jar" />
-      </node>
-      <node role="classPathItem:0" type="jetbrains.mps.build.distrib.structure.SimplePath:0" id="1239368785363">
-        <property name="path:0" value="lib/jmock2.4/cglib-nodep-2.1_3.jar" />
       </node>
     </node>
     <node role="rootTemplateAnnotation$attribute:0" type="jetbrains.mps.lang.generator.structure.RootTemplateAnnotation:2" id="1234779587499">
