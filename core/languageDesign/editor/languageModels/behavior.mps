@@ -3068,6 +3068,78 @@
       </node>
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6261424444345979345" />
     </node>
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7839831476331825169">
+      <property name="isVirtual" value="true" />
+      <property name="name" value="isApplicable" />
+      <link role="overriddenMethod" targetNodeId="18.7839831476331657915" resolveInfo="isApplicable" />
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7839831476331825170" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7839831476331825171">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7839831476331857553">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7839831476331857554">
+            <property name="name:3" value="createdEditors" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeListType:16" id="7839831476331857555" />
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7839831476331857557">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7839831476331857558">
+                <link role="variableDeclaration:3" targetNodeId="7839831476331825172" resolveInfo="candidate" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="7839831476331857559">
+                <link role="baseMethodDeclaration:16" targetNodeId="18.1567570417158062208" resolveInfo="findConceptAspectCollection" />
+                <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="7839831476331857560">
+                  <link role="classConcept:3" targetNodeId="23.~GlobalScope" resolveInfo="GlobalScope" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="23.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
+                </node>
+                <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="7839831476331857561">
+                  <link role="enumClass:3" targetNodeId="7.~LanguageAspect" resolveInfo="LanguageAspect" />
+                  <link role="enumConstantDeclaration:3" targetNodeId="7.~LanguageAspect.EDITOR" resolveInfo="EDITOR" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="7839831476331857563">
+          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7839831476331857564">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7839831476331857578">
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7839831476331857579">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7839831476331857605">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7839831476331857610">
+                    <property name="value:3" value="false" />
+                  </node>
+                </node>
+              </node>
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7839831476331857589">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7839831476331857585">
+                  <link role="variableDeclaration:3" targetNodeId="7839831476331857567" resolveInfo="createdEditor" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="7839831476331857596">
+                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="7839831476331857601">
+                    <link role="conceptDeclaration:16" targetNodeId="1.1071666914219:32" resolveInfo="ConceptEditorDeclaration" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7839831476331857574">
+            <link role="variableDeclaration:3" targetNodeId="7839831476331857554" resolveInfo="createdEditors" />
+          </node>
+          <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7839831476331857567">
+            <property name="name:3" value="createdEditor" />
+            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7839831476331857571" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7839831476331857618">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7839831476331857623">
+            <property name="value:3" value="true" />
+          </node>
+        </node>
+      </node>
+      <node role="parameter" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7839831476331825172">
+        <property name="name:3" value="candidate" />
+        <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7839831476331825173">
+          <link role="concept:16" targetNodeId="15.1169125787135:0" resolveInfo="AbstractConceptDeclaration" />
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="7839831476331825174" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877515584">
     <property name="package" value="Stylesheet" />
