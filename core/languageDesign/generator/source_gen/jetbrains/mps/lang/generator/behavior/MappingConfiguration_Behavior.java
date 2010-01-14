@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class MappingConfiguration_Behavior {
   private static Class[] PARAMETERS_8360039740498071265 = {SNode.class};
+  private static Class[] PARAMETERS_390427525177434695 = {SNode.class ,SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -40,11 +41,23 @@ public class MappingConfiguration_Behavior {
     return result;
   }
 
+  public static boolean virtual_isApplicable_7839831476331657915(SNode thisNode, SNode candidate) {
+    return false;
+  }
+
   public static List<SNode> call_getBaseConceptCollection_8360039740498071265(SNode thisNode) {
     return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_8360039740498071265);
   }
 
+  public static boolean call_isApplicable_390427525177434695(SNode thisNode, SNode candidate) {
+    return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), "virtual_isApplicable_7839831476331657915", PARAMETERS_390427525177434695, candidate);
+  }
+
   public static List<SNode> callSuper_getBaseConceptCollection_8360039740498071265(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_8360039740498071265);
+  }
+
+  public static boolean callSuper_isApplicable_390427525177434695(SNode thisNode, String callerConceptFqName, SNode candidate) {
+    return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.MappingConfiguration"), callerConceptFqName, "virtual_isApplicable_7839831476331657915", PARAMETERS_390427525177434695, candidate);
   }
 }
