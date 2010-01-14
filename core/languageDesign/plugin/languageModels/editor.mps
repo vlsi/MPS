@@ -886,7 +886,6 @@
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="7692832593197710983">
           <link role="relationDeclaration:32" targetNodeId="1.7692832593197710980:23" />
         </node>
-        <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="7692832593197364366" />
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="5703381818025949400">
           <property name="noTargetText:32" value="&lt;ask by default&gt;" />
           <link role="relationDeclaration:32" targetNodeId="1.5703381818025947591:23" />
@@ -920,6 +919,21 @@
         <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1218984978357">
           <property name="noTargetText:32" value="&lt;can't create node from this tab&gt;" />
           <link role="relationDeclaration:32" targetNodeId="1.1203851845428:23" />
+          <node role="renderingCondition:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_NodeCondition:32" id="9196263109209935113">
+            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9196263109209935114">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="9196263109209943108">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9196263109209943115">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="9196263109209943110">
+                    <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="9196263109209943109" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="9196263109209943114">
+                      <link role="link:16" targetNodeId="1.1203851845428:23" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNotNullOperation:16" id="9196263109209943119" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
         <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Vertical:32" id="1239880362715" />
       </node>

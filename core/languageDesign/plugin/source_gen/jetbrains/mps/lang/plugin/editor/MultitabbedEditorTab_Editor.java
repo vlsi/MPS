@@ -55,11 +55,12 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_7753_6(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7753_3(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_7753_4(editorContext, node));
-    editorCell.addEditorCell(this.createConstant_7753_7(editorContext, node));
     if (renderingCondition7753_0(node, editorContext, editorContext.getOperationContext().getScope())) {
       editorCell.addEditorCell(this.createRefNode_7753_5(editorContext, node));
     }
-    editorCell.addEditorCell(this.createRefNode_7753_6(editorContext, node));
+    if (renderingCondition7753_1(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createRefNode_7753_6(editorContext, node));
+    }
     return editorCell;
   }
 
@@ -92,8 +93,8 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
     }
     editorCell.addEditorCell(this.createCollection_7753_5(editorContext, node));
     editorCell.addEditorCell(this.createCollection_7753_6(editorContext, node));
-    if (renderingCondition7753_2(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_7753_9(editorContext, node));
+    if (renderingCondition7753_3(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_7753_8(editorContext, node));
     }
     return editorCell;
   }
@@ -106,8 +107,8 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, false);
     }
     editorCell.addEditorCell(this.createCollection_7753_0(editorContext, node));
-    if (renderingCondition7753_1(node, editorContext, editorContext.getOperationContext().getScope())) {
-      editorCell.addEditorCell(this.createConstant_7753_8(editorContext, node));
+    if (renderingCondition7753_2(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createConstant_7753_7(editorContext, node));
     }
     return editorCell;
   }
@@ -184,23 +185,16 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
   }
 
   private EditorCell createConstant_7753_7(EditorContext editorContext, SNode node) {
-    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
-    editorCell.setCellId("Constant_7753_7");
-    editorCell.setDefaultText("");
-    return editorCell;
-  }
-
-  private EditorCell createConstant_7753_8(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "{");
-    editorCell.setCellId("Constant_7753_8");
+    editorCell.setCellId("Constant_7753_7");
     BaseLanguageStyle_StyleSheet.getLeftBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
 
-  private EditorCell createConstant_7753_9(EditorContext editorContext, SNode node) {
+  private EditorCell createConstant_7753_8(EditorContext editorContext, SNode node) {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "}");
-    editorCell.setCellId("Constant_7753_9");
+    editorCell.setCellId("Constant_7753_8");
     BaseLanguageStyle_StyleSheet.getRightBrace(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
@@ -391,10 +385,14 @@ public class MultitabbedEditorTab_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition7753_1(SNode node, EditorContext editorContext, IScope scope) {
-    return BlockCells.useBraces();
+    return (SLinkOperations.getTarget(node, "createBlock", true) != null);
   }
 
   private static boolean renderingCondition7753_2(SNode node, EditorContext editorContext, IScope scope) {
+    return BlockCells.useBraces();
+  }
+
+  private static boolean renderingCondition7753_3(SNode node, EditorContext editorContext, IScope scope) {
     return BlockCells.useBraces();
   }
 }
