@@ -286,7 +286,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
 
   private void createLoadableNodeChecked(final Pair<SNode, IOperationContext>[] nodeAndContext, final SNode concept) {
     if (isOutsideCommandExecution()) {
-      nodeAndContext[0] = createLoadableNode(true, null);
+      nodeAndContext[0] = createLoadableNode(true, concept);
     } else {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
