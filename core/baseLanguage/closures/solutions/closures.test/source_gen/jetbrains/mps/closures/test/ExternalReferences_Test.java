@@ -143,4 +143,13 @@ __switch__:
       }.invoke();
     }
   }
+
+  public void test_mps7432() throws Exception {
+    String res = MPS7432.<String>aaaa(new _FunctionTypes._return_P0_E0<String>() {
+      public String invoke() {
+        return "fubar";
+      }
+    });
+    Assert.assertEquals("fubar", res);
+  }
 }
