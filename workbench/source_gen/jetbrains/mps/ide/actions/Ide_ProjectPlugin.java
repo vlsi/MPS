@@ -37,32 +37,25 @@ public class Ide_ProjectPlugin extends BaseProjectPlugin {
         if (baseNode == null) {
           return null;
         }
-
-
         // We should be sure that node and base node are inside the same module.  
         // Otherwise, tabbed editor for base node will be opened, but there will be no tab for "node" 
         // So, the user will not be able to open node by a double-click 
         SModelDescriptor baseModelDesIcriptor = baseNode.getModel().getModelDescriptor();
         SModelDescriptor mainModelDescriptor = SNodeOperations.getModel(node).getModelDescriptor();
-
         if (mainModelDescriptor == null) {
           return null;
         }
         if (mainModelDescriptor.getModules().size() != 1) {
           return null;
         }
-
         IModule baseModule = baseModelDesIcriptor.getModule();
         IModule mainModule = mainModelDescriptor.getModule();
-
         if (mainModule instanceof Generator) {
           mainModule = ((Generator) mainModule).getSourceLanguage();
         }
-
         if (baseModule != mainModule) {
           return null;
         }
-
         if (!(ConceptEditorOpenHelper.canOpen(context, baseNode))) {
           return null;
         }
