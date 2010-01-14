@@ -39,6 +39,33 @@
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
+        <entry key="$APPLICATION_HOME_DIR$">
+          <value>
+            <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="http://svn.jetbrains.org/mps/branches">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="http://svn.jetbrains.org/mps/tags">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                </map>
+              </option>
+              <option name="branchUrls">
+                <list>
+                  <option value="http://svn.jetbrains.org/mps/branches" />
+                  <option value="http://svn.jetbrains.org/mps/tags" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
+            </SvnBranchConfiguration>
+          </value>
+        </entry>
         <entry key="$PROJECT_DIR$">
           <value>
             <SvnBranchConfiguration>

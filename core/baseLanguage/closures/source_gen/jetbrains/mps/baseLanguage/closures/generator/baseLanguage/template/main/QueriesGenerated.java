@@ -57,7 +57,9 @@ public class QueriesGenerated {
   public static boolean createRootRule_Condition_1216995080029(final IOperationContext operationContext, final CreateRootRuleContext _context) {
     List<SNode> adapters = FunctionTypeUtil.getAllAdaptableClassifierTypes(_context);
     if (adapters != null && ListSequence.fromList(adapters).count() > 0) {
-      _context.putStepObject(Keys.NEEDS_WEAVING_CLASS, Boolean.TRUE);
+      /*
+        _context.putStepObject(Keys.NEEDS_WEAVING_CLASS, Boolean.TRUE);
+      */
       return true;
     }
     return false;
@@ -257,7 +259,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1216995140846(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    if (_context.getStepObject(Keys.NEEDS_WEAVING_CLASS) != null) {
+    if (false && _context.getStepObject(Keys.NEEDS_WEAVING_CLASS) != null) {
       _context.putStepObject(Keys.NEEDS_WEAVING_CLASS, null);
       return true;
     }
@@ -967,6 +969,41 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "localVariableDeclaration", true), "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_4763941486571303169(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, _context.getNode());
+    String adapterName = FunctionTypeUtil.getAdapterName(adaptable, _context.getNode());
+    Map<String, List<SNode>> adaptersMultiMap = (Map<String, List<SNode>>) _context.getStepObject("adapters_map");
+    List<SNode> adaptersList = MapSequence.fromMap(adaptersMultiMap).get(adapterName);
+    int idx = ListSequence.fromList(adaptersList).indexOf(adaptable);
+    return (idx > 0 ?
+      adapterName + "_" + idx :
+      adapterName
+    );
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4763941486571303499(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, _context.getNode());
+    List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(adaptable, "classifier", false), "method", true);
+    return SPropertyOperations.getString(ListSequence.fromList(mds).getElement(0), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4763941486571303527(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "method", true);
+    return SPropertyOperations.getString(ListSequence.fromList(mds).getElement(0), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4763941486571303546(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, _context.getNode());
+    String adapterName = FunctionTypeUtil.getAdapterName(adaptable, _context.getNode());
+    Map<String, List<SNode>> adaptersMultiMap = (Map<String, List<SNode>>) _context.getStepObject("adapters_map");
+    List<SNode> adaptersList = MapSequence.fromMap(adaptersMultiMap).get(adapterName);
+    int idx = ListSequence.fromList(adaptersList).indexOf(adaptable);
+    return (idx > 0 ?
+      adapterName + "_" + idx :
+      adapterName
+    );
+  }
+
   public static Object propertyMacro_GetPropertyValue_6995834834764135577(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "label");
   }
@@ -1492,6 +1529,20 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1232140831660(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return SLinkOperations.getTarget(FunctionType_Behavior.call_getRuntimeType_1230319150573(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(_context.getNode()), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType")), "classifier", false);
+  }
+
+  public static Object referenceMacro_GetReferent_4763941486571303125(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, _context.getNode());
+    return SLinkOperations.getTarget(adaptable, "classifier", false);
+  }
+
+  public static Object referenceMacro_GetReferent_4763941486571303231(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, _context.getNode());
+    return SLinkOperations.getTarget(adaptable, "classifier", false);
+  }
+
+  public static Object referenceMacro_GetReferent_4763941486571303626(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "classifier", false);
   }
 
   public static Object referenceMacro_GetReferent_7246115176735005356(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -2188,6 +2239,17 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1232469628886(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "controlClosure", true);
+  }
+
+  public static SNode sourceNodeQuery_4763941486571303380(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "method", true);
+    SNode type = SLinkOperations.getTarget(ListSequence.fromList(mds).getElement(0), "returnType", true);
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+      List<SNode> psib = SNodeOperations.getPrevSiblings(SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), false);
+      List<SNode> ptypes = SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
+      return ClassifierTypeUtil.copyTypeRecursively(ListSequence.fromList(ptypes).getElement(ListSequence.fromList(psib).count()));
+    }
+    return type;
   }
 
   public static SNode sourceNodeQuery_5451047975132812783(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -3585,6 +3647,67 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1232624247528(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedClosureLiteral"), "body", true), "statement", true);
+  }
+
+  public static Iterable sourceNodesQuery_4763941486571303143(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, _context.getNode());
+    return SLinkOperations.getTargets(adaptable, "parameter", true);
+  }
+
+  public static Iterable sourceNodesQuery_4763941486571303249(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    SNode adaptable = (SNode) Values.ADAPTABLE.get(_context, _context.getNode());
+    return SLinkOperations.getTargets(adaptable, "parameter", true);
+  }
+
+  public static Iterable sourceNodesQuery_4763941486571303269(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "method", true);
+    int idx = 1;
+    List<SNode> ptypes = SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
+    List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
+    for (SNode pdecl : SLinkOperations.getTargets(ListSequence.fromList(mds).getElement(0), "parameter", true)) {
+      SNode pd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
+      SNode ptype = SLinkOperations.getTarget(pdecl, "type", true);
+      if (SNodeOperations.isInstanceOf(ptype, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
+        List<SNode> psib = SNodeOperations.getPrevSiblings(SLinkOperations.getTarget(SNodeOperations.cast(ptype, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), "typeVariableDeclaration", false), false);
+        SLinkOperations.setTarget(pd, "type", ClassifierTypeUtil.copyTypeRecursively(ListSequence.fromList(ptypes).getElement(ListSequence.fromList(psib).count())), true);
+      } else {
+        SLinkOperations.setTarget(pd, "type", SNodeOperations.copyNode(ptype), true);
+      }
+      SPropertyOperations.set(pd, "name", "param" + idx);
+      idx++;
+      ListSequence.fromList(res).addElement(pd);
+    }
+    return res;
+  }
+
+  public static Iterable sourceNodesQuery_4763941486571303438(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    List<SNode> mds = SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "classifier", false), "method", true);
+    int idx = 1;
+    List<SNode> res = ListSequence.fromList(new ArrayList<SNode>());
+    for (SNode pdecls : SLinkOperations.getTargets(ListSequence.fromList(mds).getElement(0), "parameter", true)) {
+      SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", null);
+      SPropertyOperations.set(ref, "name", "param" + idx);
+      idx++;
+      ListSequence.fromList(res).addElement(ref);
+    }
+    return res;
+  }
+
+  public static Iterable sourceNodesQuery_4763941486571303606(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return FunctionTypeUtil.getAllAdaptableClassifierTypes(_context);
+  }
+
+  public static Iterable sourceNodesQuery_4763941486571303612(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return FunctionTypeUtil.getAdaptableClassifierTypeTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassifierType"), ((TemplateQueryContext) _context).getGenerator());
+  }
+
+  public static Iterable sourceNodesQuery_4763941486571303634(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    List<SNode> ptypes = SLinkOperations.getTargets(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    for (SNode pt : ptypes) {
+      ListSequence.fromList(result).addElement(ClassifierTypeUtil.copyTypeRecursively(pt));
+    }
+    return result;
   }
 
   public static Iterable sourceNodesQuery_6995834834764138064(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
