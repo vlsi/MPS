@@ -20,7 +20,6 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import javax.swing.Icon;
 import jetbrains.mps.smodel.IOperationContext;
-import javax.swing.JOptionPane;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -81,11 +80,7 @@ public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
     ModelCheckerViewer newViewer = ModelCheckerTool_Tool.this.createViewer(operationContext);
     newViewer.prepareAndCheck(modelDescriptors, taskTargetTitle, taskIcon);
     if (showTab) {
-      if (newViewer.getSearchResults().getSearchResults().isEmpty()) {
-        JOptionPane.showMessageDialog(ModelCheckerTool_Tool.this.getComponent(), "No problems found", "Not found", JOptionPane.INFORMATION_MESSAGE);
-      } else {
-        ModelCheckerTool_Tool.this.showTabWithResults(newViewer);
-      }
+      ModelCheckerTool_Tool.this.showTabWithResults(newViewer);
     }
     return newViewer;
   }
