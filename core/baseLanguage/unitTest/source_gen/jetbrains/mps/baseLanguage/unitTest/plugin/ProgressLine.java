@@ -9,6 +9,7 @@ import java.awt.GridLayout;
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import com.intellij.execution.process.ProcessOutputTypes;
 import javax.swing.SwingUtilities;
 import com.intellij.execution.process.ProcessHandler;
 import com.intellij.execution.process.ProcessAdapter;
@@ -34,7 +35,7 @@ public class ProgressLine extends JPanel implements TestView {
   }
 
   public void update() {
-    if (this.state.getAvailableText() != null) {
+    if (this.state.getAvailableText() != null || ProcessOutputTypes.SYSTEM.equals(this.state.getKey())) {
       return;
     }
     final int defectedTests = this.state.getDefectTests();

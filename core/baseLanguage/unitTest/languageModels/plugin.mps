@@ -16282,18 +16282,40 @@
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1200269551723286995">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1200269551723288010" />
           </node>
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="1200269551723288006">
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1200269551723288009" />
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1200269551723288001">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1200269551723287998">
-                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1200269551723287999">
-                  <link role="fieldDeclaration:3" targetNodeId="1717728468090418714:0" resolveInfo="state" />
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.OrExpression:3" id="8609657144234704387">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8609657144234744238">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="8609657144234744237">
+                <link role="classifier:3" targetNodeId="75.~ProcessOutputTypes" resolveInfo="ProcessOutputTypes" />
+                <link role="variableDeclaration:3" targetNodeId="75.~ProcessOutputTypes.SYSTEM" resolveInfo="SYSTEM" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8609657144234744242">
+                <link role="baseMethodDeclaration:3" targetNodeId="40.~Key.equals(java.lang.Object):boolean" resolveInfo="equals" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8609657144234744249">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8609657144234744246">
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="8609657144234744247">
+                      <link role="fieldDeclaration:3" targetNodeId="1717728468090418714:0" resolveInfo="state" />
+                    </node>
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="8609657144234744248" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8609657144234744253">
+                    <link role="baseMethodDeclaration:3" targetNodeId="1200269551723287970:0" resolveInfo="getKey" />
+                  </node>
                 </node>
-                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1200269551723288000" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1200269551723288005">
-                <link role="baseMethodDeclaration:3" targetNodeId="1200269551723287949:0" resolveInfo="getAvailableText" />
+            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="1200269551723288006">
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1200269551723288001">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1200269551723287998">
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1200269551723287999">
+                    <link role="fieldDeclaration:3" targetNodeId="1717728468090418714:0" resolveInfo="state" />
+                  </node>
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1200269551723288000" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1200269551723288005">
+                  <link role="baseMethodDeclaration:3" targetNodeId="1200269551723287949:0" resolveInfo="getAvailableText" />
+                </node>
               </node>
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1200269551723288009" />
             </node>
           </node>
         </node>
