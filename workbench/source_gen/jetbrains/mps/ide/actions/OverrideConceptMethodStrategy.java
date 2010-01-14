@@ -52,31 +52,31 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
     public SNode createNode(Object parameter_8496_1, Object parameter_8496_2) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_11 = null;
-      SNode quotedNode_12 = null;
-      SNode quotedNode_13 = null;
-      SNode quotedNode_14 = null;
+      SNode quotedNode_7 = null;
+      SNode quotedNode_8 = null;
+      SNode quotedNode_9 = null;
+      SNode quotedNode_10 = null;
       {
-        quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_10 = quotedNode_11;
+        quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6 = quotedNode_7;
         {
-          quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.SuperNodeExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_11 = quotedNode_12;
-          quotedNode_11.addChild("operand", quotedNode1_11);
+          quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.SuperNodeExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_7 = quotedNode_8;
+          quotedNode_7.addChild("operand", quotedNode1_7);
         }
         {
-          quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_12 = quotedNode_13;
-          quotedNode1_12.setReferent("baseMethodDeclaration", (SNode) parameter_8496_2);
+          quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_8 = quotedNode_9;
+          quotedNode1_8.setReferent("baseMethodDeclaration", (SNode) parameter_8496_2);
           {
             List<SNode> nodes = (List<SNode>) parameter_8496_1;
             for (SNode child : nodes) {
-              quotedNode_13.addChild("actualArgument", HUtil.copyIfNecessary(child));
+              quotedNode_9.addChild("actualArgument", HUtil.copyIfNecessary(child));
             }
           }
-          quotedNode_11.addChild("operation", quotedNode1_12);
+          quotedNode_7.addChild("operation", quotedNode1_8);
         }
-        result = quotedNode1_10;
+        result = quotedNode1_6;
       }
       return result;
     }
@@ -89,12 +89,12 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
     public SNode createNode(Object parameter_8496_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_10 = null;
+      SNode quotedNode_6 = null;
       {
-        quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9 = quotedNode_10;
-        quotedNode1_9.setReferent("variableDeclaration", (SNode) parameter_8496_0);
-        result = quotedNode1_9;
+        quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5 = quotedNode_6;
+        quotedNode1_5.setReferent("variableDeclaration", (SNode) parameter_8496_0);
+        result = quotedNode1_5;
       }
       return result;
     }
@@ -107,25 +107,25 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
     public SNode createNode(Object parameter_8496_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_15 = null;
-      SNode quotedNode_16 = null;
+      SNode quotedNode_11 = null;
+      SNode quotedNode_12 = null;
       {
-        quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_13 = quotedNode_15;
+        quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9 = quotedNode_11;
         {
-          quotedNode_16 = (SNode) parameter_8496_3;
-          SNode quotedNode1_14;
-          if (_parameterValues_129834374.contains(quotedNode_16)) {
-            quotedNode1_14 = CopyUtil.copy(quotedNode_16);
+          quotedNode_12 = (SNode) parameter_8496_3;
+          SNode quotedNode1_10;
+          if (_parameterValues_129834374.contains(quotedNode_12)) {
+            quotedNode1_10 = CopyUtil.copy(quotedNode_12);
           } else {
-            _parameterValues_129834374.add(quotedNode_16);
-            quotedNode1_14 = quotedNode_16;
+            _parameterValues_129834374.add(quotedNode_12);
+            quotedNode1_10 = quotedNode_12;
           }
-          if (quotedNode1_14 != null) {
-            quotedNode_15.addChild("expression", HUtil.copyIfNecessary(quotedNode1_14));
+          if (quotedNode1_10 != null) {
+            quotedNode_11.addChild("expression", HUtil.copyIfNecessary(quotedNode1_10));
           }
         }
-        result = quotedNode1_13;
+        result = quotedNode1_9;
       }
       return result;
     }

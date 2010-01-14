@@ -87,7 +87,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     return -1;
   }
 
-  protected List<SNode> getAvailableConcepts() {
+  protected List<SNode> getAvailableConcepts(final SNode node) {
     return new ArrayList<SNode>();
   }
 
@@ -138,7 +138,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     final List<SNode> nodeList = new ArrayList<SNode>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        nodeList.addAll(getAvailableConcepts());
+        nodeList.addAll(getAvailableConcepts(getBaseNode()));
       }
     });
     final SNode[] concepts = new SNode[nodeList.size()];

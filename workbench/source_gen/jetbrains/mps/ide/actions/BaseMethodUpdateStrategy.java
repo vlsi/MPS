@@ -58,25 +58,25 @@ public abstract class BaseMethodUpdateStrategy implements StratergyAddMethodDial
     public SNode createNode(Object parameter_3774_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_17 = null;
-      SNode quotedNode_18 = null;
+      SNode quotedNode_13 = null;
+      SNode quotedNode_14 = null;
       {
-        quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_15 = quotedNode_17;
+        quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_11 = quotedNode_13;
         {
-          quotedNode_18 = (SNode) parameter_3774_0;
-          SNode quotedNode1_16;
-          if (_parameterValues_129834374.contains(quotedNode_18)) {
-            quotedNode1_16 = CopyUtil.copy(quotedNode_18);
+          quotedNode_14 = (SNode) parameter_3774_0;
+          SNode quotedNode1_12;
+          if (_parameterValues_129834374.contains(quotedNode_14)) {
+            quotedNode1_12 = CopyUtil.copy(quotedNode_14);
           } else {
-            _parameterValues_129834374.add(quotedNode_18);
-            quotedNode1_16 = quotedNode_18;
+            _parameterValues_129834374.add(quotedNode_14);
+            quotedNode1_12 = quotedNode_14;
           }
-          if (quotedNode1_16 != null) {
-            quotedNode_17.addChild("expression", HUtil.copyIfNecessary(quotedNode1_16));
+          if (quotedNode1_12 != null) {
+            quotedNode_13.addChild("expression", HUtil.copyIfNecessary(quotedNode1_12));
           }
         }
-        result = quotedNode1_15;
+        result = quotedNode1_11;
       }
       return result;
     }
@@ -89,25 +89,25 @@ public abstract class BaseMethodUpdateStrategy implements StratergyAddMethodDial
     public SNode createNode(Object parameter_3774_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_19 = null;
-      SNode quotedNode_20 = null;
+      SNode quotedNode_15 = null;
+      SNode quotedNode_16 = null;
       {
-        quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_17 = quotedNode_19;
+        quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_13 = quotedNode_15;
         {
-          quotedNode_20 = (SNode) parameter_3774_1;
-          SNode quotedNode1_18;
-          if (_parameterValues_129834374.contains(quotedNode_20)) {
-            quotedNode1_18 = CopyUtil.copy(quotedNode_20);
+          quotedNode_16 = (SNode) parameter_3774_1;
+          SNode quotedNode1_14;
+          if (_parameterValues_129834374.contains(quotedNode_16)) {
+            quotedNode1_14 = CopyUtil.copy(quotedNode_16);
           } else {
-            _parameterValues_129834374.add(quotedNode_20);
-            quotedNode1_18 = quotedNode_20;
+            _parameterValues_129834374.add(quotedNode_16);
+            quotedNode1_14 = quotedNode_16;
           }
-          if (quotedNode1_18 != null) {
-            quotedNode_19.addChild("expression", HUtil.copyIfNecessary(quotedNode1_18));
+          if (quotedNode1_14 != null) {
+            quotedNode_15.addChild("expression", HUtil.copyIfNecessary(quotedNode1_14));
           }
         }
-        result = quotedNode1_17;
+        result = quotedNode1_13;
       }
       return result;
     }

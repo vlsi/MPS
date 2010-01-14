@@ -4314,6 +4314,11 @@
       </node>
       <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="7692832593197995940">
         <property name="name:3" value="getAvailableConcepts" />
+        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7839831476332189603">
+          <property name="name:3" value="node" />
+          <property name="isFinal:3" value="true" />
+          <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7839831476332191165" />
+        </node>
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7692832593197995942" />
         <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7692832593197995943">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7692832593197995947">
