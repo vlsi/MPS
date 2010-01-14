@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DataFlowBuilderDeclaration_Behavior {
   private static Class[] PARAMETERS_8952337903384725404 = {SNode.class};
+  private static Class[] PARAMETERS_6261424444345978709 = {SNode.class ,SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -17,11 +18,23 @@ public class DataFlowBuilderDeclaration_Behavior {
     return SLinkOperations.getTarget(thisNode, "conceptDeclaration", false);
   }
 
+  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
+    SLinkOperations.setTarget(thisNode, "conceptDeclaration", baseConcept, false);
+  }
+
   public static SNode call_getBaseConcept_8952337903384725404(SNode thisNode) {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384725404);
   }
 
+  public static void call_setBaseConcept_6261424444345978709(SNode thisNode, SNode baseConcept) {
+    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978709, baseConcept);
+  }
+
   public static SNode callSuper_getBaseConcept_8952337903384725404(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384725404);
+  }
+
+  public static void callSuper_setBaseConcept_6261424444345978709(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978709, baseConcept);
   }
 }

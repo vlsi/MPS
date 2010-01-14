@@ -18,6 +18,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -25,6 +26,8 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConceptBehavior_Behavior {
+  private static Class[] PARAMETERS_6261424444345978650 = {SNode.class ,SNode.class};
+
   public static void init(SNode thisNode) {
   }
 
@@ -137,6 +140,18 @@ public class ConceptBehavior_Behavior {
 
   public static SNode virtual_getBaseConcept_2621449412040133768(SNode thisNode) {
     return SLinkOperations.getTarget(thisNode, "concept", false);
+  }
+
+  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
+    SLinkOperations.setTarget(thisNode, "concept", baseConcept, false);
+  }
+
+  public static void call_setBaseConcept_6261424444345978650(SNode thisNode, SNode baseConcept) {
+    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978650, baseConcept);
+  }
+
+  public static void callSuper_setBaseConcept_6261424444345978650(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345978650, baseConcept);
   }
 
   public static class QuotationClass_3513_0 {

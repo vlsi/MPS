@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class ConceptTextGenDeclaration_Behavior {
   private static Class[] PARAMETERS_8952337903384725606 = {SNode.class};
+  private static Class[] PARAMETERS_6261424444345979603 = {SNode.class ,SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -34,11 +35,23 @@ public class ConceptTextGenDeclaration_Behavior {
     return SLinkOperations.getTarget(thisNode, "conceptDeclaration", false);
   }
 
+  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
+    SLinkOperations.setTarget(thisNode, "conceptDeclaration", baseConcept, false);
+  }
+
   public static SNode call_getBaseConcept_8952337903384725606(SNode thisNode) {
     return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"), "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384725606);
   }
 
+  public static void call_setBaseConcept_6261424444345979603(SNode thisNode, SNode baseConcept) {
+    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979603, baseConcept);
+  }
+
   public static SNode callSuper_getBaseConcept_8952337903384725606(SNode thisNode, String callerConceptFqName) {
     return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"), callerConceptFqName, "virtual_getBaseConcept_2621449412040133768", PARAMETERS_8952337903384725606);
+  }
+
+  public static void callSuper_setBaseConcept_6261424444345979603(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_6261424444345979603, baseConcept);
   }
 }
