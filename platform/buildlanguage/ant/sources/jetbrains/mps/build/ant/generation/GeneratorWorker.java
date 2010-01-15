@@ -1,5 +1,7 @@
 package jetbrains.mps.build.ant.generation;
 
+import jetbrains.mps.generator.GenerationAdapter;
+import jetbrains.mps.generator.GenerationListener;
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.BuildException;
 
@@ -11,6 +13,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
@@ -48,8 +51,17 @@ public class GeneratorWorker extends MpsWorker {
   }
 
   protected void executeTask(final MPSProject project, GenerationObjects go) {
+    setGenerationProperties();
     if (go.hasAnythingToGenerate()) {
       generate(project, go);
+    }
+  }
+
+  private void setGenerationProperties() {
+    if (myWhatToDo.getProperty(GenerateTask.PER_ROOT_GENERATION) != null) {
+      boolean perRootGeneration = Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.PER_ROOT_GENERATION));
+      GenerationSettings.getInstance().setUseNewGenerator(perRootGeneration);
+      info("Per-root generation set to " + perRootGeneration);
     }
   }
 
@@ -81,13 +93,21 @@ public class GeneratorWorker extends MpsWorker {
       s.append(m);
     }
     info(s.toString());
-    final GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
+    GeneratorManager gm = project.getComponentSafe(GeneratorManager.class);
+    GenerationListener generationListener = getGenerationListener();
+    gm.addGenerationListener(generationListener);
 
     List<Cycle> order = computeGenerationOrder(project, go);
 
-    for (final Cycle cycle : order) {
+    for (Cycle cycle : order) {
       generateModulesCycle(gm, cycle);
     }
+
+    gm.removeGenerationListener(generationListener);
+  }
+
+  protected GenerationListener getGenerationListener() {
+    return new GenerationAdapter();
   }
 
   protected void generateModulesCycle(final GeneratorManager gm, final Cycle cycle) {

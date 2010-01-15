@@ -9,10 +9,12 @@ public class TestGenerationOnTeamcity extends GenerateTask {
   public static final String INVOKE_TESTS = "INVOKE_TESTS";
   public static final String SHOW_DIFF = "SHOW_DIFF";
   public static final String WHOLE_PROJECT = "WHOLE_PROJECT";
+  public static final String GENERATE_PERFORMANCE_REPORT = "GENERATE_PERFORMANCE_REPORT";
 
   {
     myWhatToDo.putProperty(INVOKE_TESTS, Boolean.toString(false));
     myWhatToDo.putProperty(SHOW_DIFF, Boolean.toString(false));
+    myWhatToDo.putProperty(GENERATE_PERFORMANCE_REPORT , Boolean.toString(false));
   }
 
   public boolean getShowDiff() {
@@ -29,6 +31,14 @@ public class TestGenerationOnTeamcity extends GenerateTask {
 
   public void setInvokeTests(boolean invokeTests) {
     myWhatToDo.putProperty(INVOKE_TESTS, Boolean.toString(invokeTests));
+  }
+
+  public boolean getPerformanceReport() {
+    return Boolean.parseBoolean(myWhatToDo.getProperty(GENERATE_PERFORMANCE_REPORT));
+  }
+
+  public void setPerformanceReport(boolean generatePerfomanceReport) {
+    myWhatToDo.putProperty(GENERATE_PERFORMANCE_REPORT, Boolean.toString(generatePerfomanceReport));
   }
 
   @Override

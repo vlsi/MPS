@@ -20,9 +20,11 @@ import jetbrains.mps.build.ant.MpsWorker;
 
 public class GenerateTask extends MpsLoadTask {
   public static final String COMPILE = "COMPILE";
+  public static final String PER_ROOT_GENERATION = "PER_ROOT_GENERATION";
 
   {
     myWhatToDo.putProperty(COMPILE, Boolean.toString(true));
+    myWhatToDo.putProperty(PER_ROOT_GENERATION, Boolean.toString(false));
   }
 
   protected Class<? extends MpsWorker> getWorkerClass() {
@@ -35,5 +37,13 @@ public class GenerateTask extends MpsLoadTask {
 
   protected boolean getCompile() {
     return Boolean.parseBoolean(myWhatToDo.getProperty(COMPILE));
+  }
+
+  public void setUsePerRootGeneration(boolean usePerRootGeneration) {
+    myWhatToDo.putProperty(PER_ROOT_GENERATION, Boolean.toString(usePerRootGeneration));
+  }
+
+  protected boolean getUsePerRootGeneration() {
+    return Boolean.parseBoolean(myWhatToDo.getProperty(PER_ROOT_GENERATION));
   }
 }

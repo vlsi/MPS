@@ -16,7 +16,8 @@
     </jvmargs>
 
     <target name="generation.tests">
-        <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="false" loglevel="info">
+        <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="false" loglevel="info"
+                             useperrootgeneration="${per.root.generation}">
             <jvmargs refid="mps.args"/>
 
             <!-- Bootstrap tests -->

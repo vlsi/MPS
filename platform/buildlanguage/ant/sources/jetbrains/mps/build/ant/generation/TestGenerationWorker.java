@@ -2,9 +2,13 @@ package jetbrains.mps.build.ant.generation;
 
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.compiler.JavaCompiler;
-import jetbrains.mps.generator.GenerationSettings;
+import jetbrains.mps.generator.GenerationAdapter;
+import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.AbstractClassLoader;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.Pair;
 import junit.framework.*;
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.BuildException;
@@ -47,6 +51,7 @@ public class TestGenerationWorker extends GeneratorWorker {
 
   private boolean myTestFailed = false;
   private IBuildServerMessageFormat myBuildServerMessageFormat;
+  private final Map<SModelDescriptor, Long> myPerfomanceMap = new HashMap<SModelDescriptor, Long>();
   private final TesterGenerationType myGenerationType = new TesterGenerationType(false) {
     @Override
     protected JavaCompiler createJavaCompiler(Set<IModule> contextModules) {
@@ -64,9 +69,17 @@ public class TestGenerationWorker extends GeneratorWorker {
     generator.workFromMain();
   }
 
+  public TestGenerationWorker(WhatToDo whatToDo, ProjectComponent component) {
+    super(whatToDo, component);
+  }
+
+  public TestGenerationWorker(WhatToDo whatToDo, AntLogger logger) {
+    super(whatToDo, logger);
+    myBuildServerMessageFormat = getBuildServerMessageFormat();
+  }
+
   public void work() {
     setupEnvironment();
-    setGenerationProperties();
 
     Map<File, List<String>> mpsProjects = myWhatToDo.getMPSProjectFiles();
 
@@ -92,17 +105,31 @@ public class TestGenerationWorker extends GeneratorWorker {
     collectFromModelFiles(models);
     executeTask(project, new GenerationObjects(Collections.EMPTY_SET, modules, models));
 
+    generatePerformanceReport();
+
     projectFile.deleteOnExit();
     dispose();
 
     showStatistic();
   }
 
-  private void setGenerationProperties() {
-    if (myWhatToDo.getProperty("per.root.generation") != null) {
-      boolean perRootGeneration = Boolean.parseBoolean(myWhatToDo.getProperty("per.root.generation"));
-      GenerationSettings.getInstance().setUseNewGenerator(perRootGeneration);
-      info("Per-root generation set to " + perRootGeneration);
+  private void generatePerformanceReport() {
+    if (isGeneratePerfomanceReport()) {
+      StringWriter w = new StringWriter();
+      Formatter f = new Formatter(w);
+      f.format("Generation Time Report:\n");
+      ArrayList<SModelDescriptor> models = new ArrayList<SModelDescriptor>();
+      models.addAll(myPerfomanceMap.keySet());
+      Collections.sort(models, new Comparator<SModelDescriptor>() {
+        @Override
+        public int compare(SModelDescriptor o1, SModelDescriptor o2) {
+          return -myPerfomanceMap.get(o1).compareTo(myPerfomanceMap.get(o2));
+        }
+      });
+      for (SModelDescriptor modelDescriptor : models){
+        f.format("%s %dms\n", modelDescriptor.getLongName(), myPerfomanceMap.get(modelDescriptor));
+      }
+      info(myBuildServerMessageFormat.escapeBuildMessage(w.toString()));
     }
   }
 
@@ -114,13 +141,34 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
   }
 
-  public TestGenerationWorker(WhatToDo whatToDo, ProjectComponent component) {
-    super(whatToDo, component);
+  @Override
+  protected GenerationListener getGenerationListener() {
+    if (isGeneratePerfomanceReport()) {
+      return new GenerationAdapter() {
+        @Override
+        public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+          Long startTime = System.currentTimeMillis();
+          for (Pair<SModelDescriptor, IOperationContext> pair : inputModels) {
+            myPerfomanceMap.put(pair.o1, startTime);
+          }
+        }
+
+        @Override
+        public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+          Long finishTime = System.currentTimeMillis();
+          for (Pair<SModelDescriptor, IOperationContext> pair : inputModels) {
+            Long startTime = myPerfomanceMap.get(pair.o1);
+            myPerfomanceMap.put(pair.o1, finishTime - startTime);
+          }
+        }
+      };
+    } else {
+      return super.getGenerationListener();
+    }
   }
 
-  public TestGenerationWorker(WhatToDo whatToDo, AntLogger logger) {
-    super(whatToDo, logger);
-    myBuildServerMessageFormat = getBuildServerMessageFormat();
+  private boolean isGeneratePerfomanceReport() {
+    return Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.GENERATE_PERFORMANCE_REPORT));
   }
 
   @Override
@@ -169,7 +217,7 @@ public class TestGenerationWorker extends GeneratorWorker {
 
     // invoke generated tests
     if (invokeTests()) {
-      final TestResult testResult = new TestResult();
+      TestResult testResult = new TestResult();
       testResult.addListener(new MyTestListener());
       ProjectTester.invokeTests(myGenerationType, outputModels, testResult, cycle.getClassLoader());
     }
@@ -183,8 +231,8 @@ public class TestGenerationWorker extends GeneratorWorker {
 
   @Override
   protected List<Cycle> computeGenerationOrder(MPSProject project, GenerationObjects go) {
-    final List<Cycle> cycles = new ArrayList<Cycle>();
-    final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
+    List<Cycle> cycles = new ArrayList<Cycle>();
+    Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
 
     extractModels(go.getProjects(), go.getModules(), go.getModels(), moduleToModels);
 
