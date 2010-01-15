@@ -240,13 +240,13 @@ public class DiffBuilder {
     newNodeIds.removeAll(oldNodes);
 
     for (SNodeId id : newNodeIds) {
-      SNode sNode = myNewModel.getNodeById(id);
-      assert sNode != null;
-      String role = sNode.getRole_();
+      SNode node = myNewModel.getNodeById(id);
+      assert node != null;
+      String role = node.getRole_();
 
       if (role != null) {
-        if (!isToManyCardinality(sNode.getParent().getConceptFqName(), role)) {
-          SNodeId parentId = sNode.getParent().getSNodeId();
+        if (!isCardinalityTooBig(node.getParent().getConceptFqName(), role)) {
+          SNodeId parentId = node.getParent().getSNodeId();
           SNode oldParent = myOldModel.getNodeById(parentId);
           SNodeId oldChildId = null;
           if (oldParent != null) {
@@ -256,28 +256,28 @@ public class DiffBuilder {
           }
 
           String prevRole = null;
-          SNode prevSubling = sNode.prevSibling();
-          if (prevSubling != null) {
-            prevRole = prevSubling.getRole_();
+          SNode prevSibling = node.prevSibling();
+          if (prevSibling != null) {
+            prevRole = prevSibling.getRole_();
           }
-          myChanges.add(new SetNodeChange(sNode.getConceptFqName(), id, role, parentId, oldChildId, prevRole));
+          myChanges.add(new SetNodeChange(node.getConceptFqName(), id, role, parentId, oldChildId, prevRole));
         } else {
-          SNode prevChild = sNode.getParent().getPrevChild(sNode);
+          SNode prevChild = node.getParent().getPrevChild(node);
           SNodeId prevId = null;
           String prevRole = null;
           if (prevChild != null) {
             prevId = prevChild.getSNodeId();
           } else {
-            SNode prevSubling = sNode.prevSibling();
+            SNode prevSubling = node.prevSibling();
             if (prevSubling != null) {
               prevRole = prevSubling.getRole_();
             }
           }
 
-          myChanges.add(new AddNodeChange(sNode.getConceptFqName(), id, role, sNode.getParent().getSNodeId(), prevId, prevRole));
+          myChanges.add(new AddNodeChange(node.getConceptFqName(), id, role, node.getParent().getSNodeId(), prevId, prevRole));
         }
       } else {
-        myChanges.add(new AddRootChange(sNode.getConceptFqName(), id));
+        myChanges.add(new AddRootChange(node.getConceptFqName(), id));
       }
     }
   }
@@ -400,7 +400,7 @@ public class DiffBuilder {
         Set<String> roles = new HashSet<String>(newNode.getReferenceRoles());
         roles.addAll(oldNode.getReferenceRoles());
         for (String role : roles) {
-          if (!isToManyCardinality(newNode.getConceptFqName(), role)) {
+          if (!isCardinalityTooBig(newNode.getConceptFqName(), role)) {
             if (oldNode.getReference(role) != null && newNode.getReference(role) == null) {
               myChanges.add(new DeleteReferenceChange(id, myNewModel, oldNode.getReference(role)));
             } else {
@@ -409,10 +409,10 @@ public class DiffBuilder {
               }
             }
           } else {
-            System.out.println("we have to many references : " + newNode + " " + newNode.getId());
+            System.out.println("we have too many references : " + newNode + " " + newNode.getId());
             System.out.println("role : " + role);
             System.out.println("not supported!");
-            isToManyCardinality(newNode.getConceptFqName(), role);
+            isCardinalityTooBig(newNode.getConceptFqName(), role);
           }
         }
       }
@@ -428,7 +428,7 @@ public class DiffBuilder {
     return id.toString();
   }
 
-  private boolean isToManyCardinality(String fqName, String role) {
+  private boolean isCardinalityTooBig(String fqName, String role) {
     LinkDeclaration ld = SModelSearchUtil.findLinkDeclaration(SModelUtil_new.findConceptDeclaration(fqName, GlobalScope.getInstance()), role);
     if (ld == null) {
       return false;
