@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.Set;
@@ -13,7 +14,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
 
 public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  /*package*/ _Patterns.Pattern_0 myMatchingPattern;
+  /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public Boolean_extends_boolean_2_SubtypingRule() {
   }
