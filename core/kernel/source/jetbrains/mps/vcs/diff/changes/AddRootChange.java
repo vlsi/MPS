@@ -22,8 +22,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 
 public class AddRootChange extends NewNodeChange {
-  public AddRootChange(String type, SNodeId nodeId) {
-    super(type, nodeId, null, null);
+  public AddRootChange(String conceptFqName, SNodeId nodeId) {
+    super(conceptFqName, nodeId, null, null);
   }
 
   public String toString() {
