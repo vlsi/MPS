@@ -300,9 +300,11 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     if (!canCreate()) return;
 
     final Pair<SNode, IOperationContext>[] nodeAndContext = new Pair[1];
-    if (getAvailableConceptArray().length == 0) {
+    SNode[] availableConcepts = getAvailableConceptArray();
+    if (availableConcepts.length <= 1) {
+      SNode concept = (availableConcepts.length == 0)? null : availableConcepts[0];
       if (!askCreate()) return;
-      createLoadableNodeChecked(nodeAndContext, null);
+      createLoadableNodeChecked(nodeAndContext, concept);
       setPackageAfterCreationChecked(nodeAndContext);
     } else {
       if (myListPopup != null) {
