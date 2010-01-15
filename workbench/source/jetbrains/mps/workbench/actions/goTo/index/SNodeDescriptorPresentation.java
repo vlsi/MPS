@@ -16,15 +16,18 @@
 package jetbrains.mps.workbench.actions.goTo.index;
 
 import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.workbench.choose.base.BasePresentation;
+import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SNodeDescriptorPresentation extends BasePresentation {
   private SNodeDescriptor myNodeResult;
@@ -46,13 +49,23 @@ public class SNodeDescriptorPresentation extends BasePresentation {
     return "(" + getModelName() + ")";
   }
 
+  private SNode getNodeInReadOnlyModel(SModel model) {
+    List<SNode> classes = new ArrayList<SNode>();
+    for (SNode root : model.getRoots()) {
+      String rootName = root.getName();
+      if (rootName.contains("$")) continue;
+      classes.add(root);
+    }
+    return SortUtil.sortNodes(classes).get(myNodeResult.getNumberInModel());
+  }
+
   public Icon doGetIcon() {
     String conceptFqName = myNodeResult.getConceptFqName();
     if (IconManager.canUseAlternativeIcon(conceptFqName)) {
       SModelReference modelReference = myNodeResult.getModelReference();
-      SModelDescriptor modelDescriptor = GlobalScope.getInstance().getModelDescriptor(modelReference);
-      SModel model = modelDescriptor.getSModel();
-      SNode node = model.getRoots().get(myNodeResult.getNumberInModel());
+      SModelDescriptor md = GlobalScope.getInstance().getModelDescriptor(modelReference);
+      SModel model = md.getSModel();
+      SNode node = (md.isReadOnly())? getNodeInReadOnlyModel(model) : model.getRoots().get(myNodeResult.getNumberInModel());
       return IconManager.getIconFor(node);
     }
     return IconManager.getIconForConceptFQName(conceptFqName);
