@@ -44,6 +44,10 @@ public class ThisConstructorInvocation_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "this");
     editorCell.setCellId("Constant_8960_0");
     BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.NAVIGATABLE_REFERENCE, "constructorDeclaration");
+    }
     editorCell.setDefaultText("");
     return editorCell;
   }

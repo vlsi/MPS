@@ -9212,6 +9212,9 @@
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1178893550246">
         <property name="text:32" value="this" />
         <link role="styleClass:32" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.NavigatableReferenceStyleClassItem:32" id="5102147670402763536">
+          <link role="link:32" targetNodeId="17.1241540960362:3" />
+        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1178893553751">
         <property name="text:32" value="(" />
