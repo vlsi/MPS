@@ -22139,5 +22139,82 @@
       <link role="concept:3" targetNodeId="1.1830039279190439966:3" resolveInfo="AdditionalForLoopVariable" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="8218132442157467380">
+    <property name="name:3" value="typeof_ThisConstructorInvocation" />
+    <property name="package:3" value="classifier" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8218132442157467381" />
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="8218132442157467382">
+      <property name="name:3" value="thisConstructorInvocation" />
+      <link role="concept:3" targetNodeId="1.1178893518978:3" resolveInfo="ThisConstructorInvocation" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="8218132442157478804">
+    <property name="name:3" value="check_ConstructorInvocationStatementIsFirstStatement" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8218132442157478805">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="8218132442157485332">
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.AndExpression:3" id="1574971316873039257">
+          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1574971316873039258">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1574971316873039259">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1574971316873039260">
+                <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1574971316873039261">
+                  <link role="applicableNode:3" targetNodeId="8218132442157485325" resolveInfo="constructorInvocation" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="1574971316873039262" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="1574971316873039263" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="1574971316873039264">
+              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="1574971316873039265">
+                <link role="conceptDeclaration:16" targetNodeId="1.1068580123140:3" resolveInfo="ConstructorDeclaration" />
+              </node>
+            </node>
+          </node>
+          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="1574971316873039266">
+            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1574971316873039267">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="1574971316873039268">
+                <link role="applicableNode:3" targetNodeId="8218132442157485325" resolveInfo="constructorInvocation" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetIndexInParentOperation:16" id="1574971316873039269" />
+            </node>
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1574971316873039270">
+              <property name="value:3" value="0" />
+            </node>
+          </node>
+        </node>
+        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8218132442157485334" />
+        <node role="ifFalseStatement:3" type="jetbrains.mps.baseLanguage.structure.BlockStatement:3" id="8218132442157499081">
+          <node role="statements:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8218132442157499082">
+            <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="8218132442157499105">
+              <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="8218132442157499118">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8218132442157499121">
+                  <property name="value:3" value="' must be first statement in constructor body" />
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="8218132442157499109">
+                  <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="8218132442157499108">
+                    <property name="value:3" value="Call to '" />
+                  </node>
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8218132442157499113">
+                    <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8218132442157499112">
+                      <link role="applicableNode:3" targetNodeId="8218132442157485325" resolveInfo="constructorInvocation" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="8218132442157499117">
+                      <link role="baseMethodDeclaration:16" targetNodeId="34.1213877396640" resolveInfo="getPresentation" />
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8218132442157499122">
+                <link role="applicableNode:3" targetNodeId="8218132442157485325" resolveInfo="constructorInvocation" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="8218132442157485325">
+      <property name="name:3" value="constructorInvocation" />
+      <link role="concept:3" targetNodeId="1.1241540912639:3" resolveInfo="ConstructorInvocationStatement" />
+    </node>
+  </node>
 </model>
 
