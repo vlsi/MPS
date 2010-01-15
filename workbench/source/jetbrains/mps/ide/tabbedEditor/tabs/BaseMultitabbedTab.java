@@ -20,12 +20,17 @@ import com.intellij.openapi.ui.popup.ListPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.actionSystem.Separator;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.tabbedEditor.LazyTabbedPane;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
@@ -36,6 +41,8 @@ import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.workbench.action.ActionUtils;
 
 import javax.swing.*;
 import javax.swing.event.ChangeListener;
@@ -45,6 +52,7 @@ import java.awt.Point;
 import java.awt.Component;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
+import java.awt.event.MouseAdapter;
 import java.util.*;
 
 import org.jetbrains.annotations.NotNull;
@@ -197,9 +205,19 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     myComponent = new JPanel(new BorderLayout());
     myInnerTabbedPane = new JTabbedPane();
     myInnerTabbedPane.addChangeListener(new ChangeListener() {
-      @Override
       public void stateChanged(ChangeEvent e) {
         myTabbedEditor.onSelectInnerTab();
+      }
+    });
+    myInnerTabbedPane.addMouseListener(new MouseAdapter() {
+      public void mouseClicked(MouseEvent e) {
+        if (e.getButton() == MouseEvent.BUTTON3) {
+          BaseGroup baseGroup = ActionUtils.getGroup(EditorTabActions_ActionGroup.ID);
+          baseGroup.setPopup(false);
+          DefaultActionGroup group = ActionUtils.groupFromActions(baseGroup);
+          JPopupMenu popupMenu = ActionManager.getInstance().createActionPopupMenu(ActionPlaces.EDITOR_TAB, group).getComponent();
+          popupMenu.show(myInnerTabbedPane, e.getX(), e.getY());
+        }
       }
     });
     try {

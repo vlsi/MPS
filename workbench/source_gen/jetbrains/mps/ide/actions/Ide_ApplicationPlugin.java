@@ -64,6 +64,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.PackageNewActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.RuntimeFolderActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Breakpoints_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.EditorTabActions_ActionGroup");
     return groups;
   }
 
@@ -80,6 +81,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "VcsGroup", EditorPopup_ActionGroup.LABEL_ID_vcs);
     this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "VcsGroup", LanguageActions_ActionGroup.LABEL_ID_vcs);
     this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "RunContextGroup", null);
+    this.insertGroupIntoAnother(EditorTabActions_ActionGroup.ID, "RunContextGroup", null);
     this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, "RunContextGroup", null);
     this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, "RunContextGroup", null);
     this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, "RunContextGroup", null);
