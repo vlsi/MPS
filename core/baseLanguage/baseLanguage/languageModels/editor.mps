@@ -10906,6 +10906,9 @@
           <link role="relationDeclaration:32" targetNodeId="17.1188214630783:3" />
           <node role="emptyCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1188995299493">
             <property name="text:32" value="" />
+            <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem:32" id="6699325334162954758">
+              <property name="flag:32" value="true" />
+            </node>
           </node>
           <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="1237472709813" />
         </node>

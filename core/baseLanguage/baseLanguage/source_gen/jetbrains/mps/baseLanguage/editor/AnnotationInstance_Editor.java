@@ -214,6 +214,10 @@ public class AnnotationInstance_Editor extends DefaultNodeEditor {
     private EditorCell createConstant_4312_1(EditorContext editorContext, SNode node) {
       EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_4312_1");
+      {
+        Style style = editorCell.getStyle();
+        style.set(StyleAttributes.EDITABLE, true);
+      }
       editorCell.setDefaultText("");
       return editorCell;
     }
