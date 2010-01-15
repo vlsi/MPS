@@ -642,6 +642,16 @@
       <zipfileset dir="core/kernel/kernelSolution" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
     </jar>
   </target>
+  <target name="pack.jetbrains.mps.baseLanguage.builders0">
+    <mkdir dir="platform/builders/classes_gen" />
+    <mkdir dir="platform/builders/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/core/jetbrains.mps.baseLanguage.builders.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/builders/builders.mpl" prefix="module" />
+      <zipfileset dir="platform/builders/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/builders" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/builders/classes_gen" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.uiLanguage0">
     <mkdir dir="platform/uiLanguage/classes" />
     <mkdir dir="platform/uiLanguage/runtime/classes" />
@@ -655,6 +665,16 @@
     </jar>
     <jar destfile="${deploy.dir}/MPS/platform/core/jetbrains.mps.uiLanguage.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="platform/uiLanguage/runtime/classes" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.xml0">
+    <mkdir dir="platform/xml/xml/classes_gen" />
+    <mkdir dir="platform/xml/xml/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/core/jetbrains.mps.xml.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/xml/xml/xml.mpl" prefix="module" />
+      <zipfileset dir="platform/xml/xml/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/xml/xml" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/xml/xml/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.xmlQuery0">
@@ -679,6 +699,54 @@
       <zipfileset dir="platform/xml/xmlQuery/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
       <zipfileset dir="platform/xml/xmlQuery/runtime/classes_gen" />
       <zipfileset dir="platform/xml/xmlQuery/runtime/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.xmlInternal0">
+    <mkdir dir="platform/xml/xmlInternal/classes_gen" />
+    <mkdir dir="platform/xml/xmlInternal/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/core/jetbrains.mps.xmlInternal.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/xml/xmlInternal/xmlInternal.mpl" prefix="module" />
+      <zipfileset dir="platform/xml/xmlInternal/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/xml/xmlInternal" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/xml/xmlInternal/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.xmlSchema0">
+    <mkdir dir="platform/xml/xmlSchema/classes_gen" />
+    <mkdir dir="platform/xml/xmlSchema/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/core/jetbrains.mps.xmlSchema.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/xml/xmlSchema/xmlSchema.mpl" prefix="module" />
+      <zipfileset dir="platform/xml/xmlSchema/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/xml/xmlSchema" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/xml/xmlSchema/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.gtext0">
+    <mkdir dir="platform/gtext/classes_gen" />
+    <mkdir dir="platform/gtext/classes_gen" />
+    <mkdir dir="platform/gtext/source_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/core/jetbrains.mps.gtext.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/gtext/gtext.mpl" prefix="module" />
+      <zipfileset dir="platform/gtext/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/gtext" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/gtext/classes_gen" />
+      <zipfileset dir="platform/gtext/classes_gen" />
+    </jar>
+  </target>
+  <target name="pack.jetbrains.mps.gtext.runtime0">
+    <mkdir dir="platform/gtext/runtime/classes_gen" />
+    <mkdir dir="platform/gtext/runtime/classes_gen" />
+    <mkdir dir="platform/gtext/runtime/classes_gen" />
+    <mkdir dir="platform/gtext/runtime/source_gen.caches" />
+    <mkdir dir="platform/gtext/runtime/test_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/platform/core/jetbrains.mps.gtext.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="platform/gtext/runtime/jetbrains.mps.gtext.runtime.msd" prefix="module" />
+      <zipfileset dir="platform/gtext/runtime/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="platform/gtext/runtime/test_gen.caches" prefix="test_gen.caches" />
+      <zipfileset dir="platform/gtext/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="platform/gtext/runtime/classes_gen" />
+      <zipfileset dir="platform/gtext/runtime/classes_gen" />
+      <zipfileset dir="platform/gtext/runtime/classes_gen" />
     </jar>
   </target>
   <target name="pack.ypath.main0">
@@ -815,16 +883,6 @@
       <zipfileset dir="platform/buildlanguage/languages/property/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.baseLanguage.builders0">
-    <mkdir dir="platform/builders/classes_gen" />
-    <mkdir dir="platform/builders/source_gen.caches" />
-    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.baseLanguage.builders.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="platform/builders/builders.mpl" prefix="module" />
-      <zipfileset dir="platform/builders/source_gen.caches" prefix="source_gen.caches" />
-      <zipfileset dir="platform/builders" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="platform/builders/classes_gen" />
-    </jar>
-  </target>
   <target name="pack.jetbrains.mps.bash0">
     <mkdir dir="platform/bash/languages/bash/classes_gen" />
     <mkdir dir="platform/bash/languages/bash/source_gen.caches" />
@@ -877,16 +935,6 @@
       <fileset dir="platform/extensionMethod/classes" />
     </jar>
   </target>
-  <target name="pack.jetbrains.mps.xml0">
-    <mkdir dir="platform/xml/xml/classes_gen" />
-    <mkdir dir="platform/xml/xml/source_gen.caches" />
-    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.xml.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="platform/xml/xml/xml.mpl" prefix="module" />
-      <zipfileset dir="platform/xml/xml/source_gen.caches" prefix="source_gen.caches" />
-      <zipfileset dir="platform/xml/xml" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="platform/xml/xml/classes_gen" />
-    </jar>
-  </target>
   <target name="pack.jetbrains.mps.xml.deprecated0">
     <mkdir dir="platform/xmlDeprecated/classes" />
     <mkdir dir="platform/xmlDeprecated/source_gen.caches" />
@@ -895,54 +943,6 @@
       <zipfileset dir="platform/xmlDeprecated/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="platform/xmlDeprecated" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
       <zipfileset dir="platform/xmlDeprecated/classes" />
-    </jar>
-  </target>
-  <target name="pack.jetbrains.mps.gtext0">
-    <mkdir dir="platform/gtext/classes_gen" />
-    <mkdir dir="platform/gtext/classes_gen" />
-    <mkdir dir="platform/gtext/source_gen.caches" />
-    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.gtext.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="platform/gtext/gtext.mpl" prefix="module" />
-      <zipfileset dir="platform/gtext/source_gen.caches" prefix="source_gen.caches" />
-      <zipfileset dir="platform/gtext" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="platform/gtext/classes_gen" />
-      <zipfileset dir="platform/gtext/classes_gen" />
-    </jar>
-  </target>
-  <target name="pack.jetbrains.mps.xmlInternal0">
-    <mkdir dir="platform/xml/xmlInternal/classes_gen" />
-    <mkdir dir="platform/xml/xmlInternal/source_gen.caches" />
-    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.xmlInternal.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="platform/xml/xmlInternal/xmlInternal.mpl" prefix="module" />
-      <zipfileset dir="platform/xml/xmlInternal/source_gen.caches" prefix="source_gen.caches" />
-      <zipfileset dir="platform/xml/xmlInternal" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="platform/xml/xmlInternal/classes_gen" />
-    </jar>
-  </target>
-  <target name="pack.jetbrains.mps.xmlSchema0">
-    <mkdir dir="platform/xml/xmlSchema/classes_gen" />
-    <mkdir dir="platform/xml/xmlSchema/source_gen.caches" />
-    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.xmlSchema.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="platform/xml/xmlSchema/xmlSchema.mpl" prefix="module" />
-      <zipfileset dir="platform/xml/xmlSchema/source_gen.caches" prefix="source_gen.caches" />
-      <zipfileset dir="platform/xml/xmlSchema" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="platform/xml/xmlSchema/classes_gen" />
-    </jar>
-  </target>
-  <target name="pack.jetbrains.mps.gtext.runtime0">
-    <mkdir dir="platform/gtext/runtime/classes_gen" />
-    <mkdir dir="platform/gtext/runtime/classes_gen" />
-    <mkdir dir="platform/gtext/runtime/classes_gen" />
-    <mkdir dir="platform/gtext/runtime/source_gen.caches" />
-    <mkdir dir="platform/gtext/runtime/test_gen.caches" />
-    <jar destfile="${deploy.dir}/MPS/platform/jetbrains.mps.gtext.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
-      <zipfileset file="platform/gtext/runtime/jetbrains.mps.gtext.runtime.msd" prefix="module" />
-      <zipfileset dir="platform/gtext/runtime/source_gen.caches" prefix="source_gen.caches" />
-      <zipfileset dir="platform/gtext/runtime/test_gen.caches" prefix="test_gen.caches" />
-      <zipfileset dir="platform/gtext/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="platform/gtext/runtime/classes_gen" />
-      <zipfileset dir="platform/gtext/runtime/classes_gen" />
-      <zipfileset dir="platform/gtext/runtime/classes_gen" />
     </jar>
   </target>
   <target name="pack.jetbrains.mps.quickQueryLanguage0">
