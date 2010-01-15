@@ -160,34 +160,6 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1136889887092">
-    <property name="name:0" value="PropertyPatternVariableReference" />
-    <property name="rootable:0" value="false" />
-    <link role="extends:0" targetNodeId="5.1068431790191:3" resolveInfo="Expression" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1136890007360">
-      <property name="role:0" value="propertyVariableDeclaration" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="1136720037781:0" resolveInfo="PropertyPatternVariableDeclaration" />
-      <link role="specializedLink:0" targetNodeId="1220026221182:0" />
-    </node>
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1220026201445">
-      <link role="intfc:0" targetNodeId="1220026119278:0" resolveInfo="IPatternVarReference" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1136890029205">
-    <property name="name:0" value="PatternVariableReference" />
-    <property name="rootable:0" value="false" />
-    <link role="extends:0" targetNodeId="5.1068431790191:3" resolveInfo="Expression" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1136890071566">
-      <property name="role:0" value="patternVariableDeclaration" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="1136720037779:0" resolveInfo="PatternVariableDeclaration" />
-      <link role="specializedLink:0" targetNodeId="1220026221182:0" />
-    </node>
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1220026211962">
-      <link role="intfc:0" targetNodeId="1220026119278:0" resolveInfo="IPatternVarReference" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1137418540378">
     <property name="name:0" value="LinkPatternVariableDeclaration" />
     <link role="extends:0" targetNodeId="3.1136027498483:0" />
@@ -208,66 +180,6 @@
     <property name="role:0" value="asPattern" />
     <link role="source:0" targetNodeId="1.1133920641626:0" />
     <link role="target:0" targetNodeId="1136720037773:0" resolveInfo="AsPattern" />
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1220008878124">
-    <property name="name:0" value="SubstitutionOperation" />
-    <link role="extends:0" targetNodeId="6.1138411891628:16" resolveInfo="SNodeOperation" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1220009414719">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="substitutionItem" />
-      <property name="sourceCardinality:0" value="1..n" />
-      <link role="target:0" targetNodeId="1220008921641:0" resolveInfo="SubstitutionItem" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1220009336574">
-      <property name="value:0" value="[ &gt;pattern&lt; = expr... ]" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473891462:0" resolveInfo="alias" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1220009377279">
-      <property name="value:0" value="substitution" />
-      <link role="conceptPropertyDeclaration:0" targetNodeId="1.1137473914776:0" resolveInfo="short_description" />
-    </node>
-    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="1220009393656">
-      <link role="conceptPropertyDeclaration:0" targetNodeId="6.1138763241883:16" resolveInfo="applicable_to_node" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1220008921641">
-    <property name="name:0" value="SubstitutionItem" />
-    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1220008935782">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="pattern" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="1136720037777:0" resolveInfo="PatternExpression" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1220008953143">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="expression" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="5.1068431790191:3" resolveInfo="Expression" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1220024135347">
-    <property name="name:0" value="LinkPatternVariableReference" />
-    <link role="extends:0" targetNodeId="5.1068431790191:3" resolveInfo="Expression" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1220024163613">
-      <property name="metaClass:0" value="reference" />
-      <property name="role:0" value="linkVariableDeclaration" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="1137418540378:0" resolveInfo="LinkPatternVariableDeclaration" />
-      <link role="specializedLink:0" targetNodeId="1220026221182:0" />
-    </node>
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1220026162351">
-      <link role="intfc:0" targetNodeId="1220026119278:0" resolveInfo="IPatternVarReference" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration:0" id="1220026119278">
-    <property name="name:0" value="IPatternVarReference" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1220026221182">
-      <property name="metaClass:0" value="reference" />
-      <property name="role:0" value="variableDeclaration" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
-    </node>
   </node>
 </model>
 

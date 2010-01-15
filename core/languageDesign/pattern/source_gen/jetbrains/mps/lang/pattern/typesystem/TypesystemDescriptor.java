@@ -31,25 +31,5 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       InferenceRule_Runtime inferenceRule = new typeof_ListPattern_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_SubstitutionItem_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_SubstitutionOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_LinkPatternVariableReference_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_PropertyPatternVariableReference_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_PatternVariableReference_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
   }
 }
