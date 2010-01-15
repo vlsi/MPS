@@ -104,35 +104,5 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1207241050957">
-    <link role="conceptDeclaration:0" targetNodeId="1.1136890029205:0" resolveInfo="PatternVariableReference" />
-    <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1207241050958">
-      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1207241050959">
-        <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitReadStatement:0" id="1207241054570">
-          <node role="variable:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1207241057057">
-            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1207241056291" />
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1207241061887">
-              <link role="link:16" targetNodeId="1.1136890071566:0" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1207241069264">
-    <link role="conceptDeclaration:0" targetNodeId="1.1136889887092:0" resolveInfo="PropertyPatternVariableReference" />
-    <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1207241069265">
-      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1207241069266">
-        <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitReadStatement:0" id="1207241073485">
-          <node role="variable:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1207241075488">
-            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1207241074628" />
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1207241077615">
-              <link role="link:16" targetNodeId="1.1136890007360:0" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
 </model>
 
