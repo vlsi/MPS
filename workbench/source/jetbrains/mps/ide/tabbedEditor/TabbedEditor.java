@@ -397,11 +397,13 @@ public class TabbedEditor implements IEditor {
     @Nullable
     public Object getData(@NonNls String dataId) {
       if (dataId.equals(MPSDataKeys.MPS_EDITOR.getName())) return TabbedEditor.this;
-      if (dataId.equals(MPSDataKeys.NODE.getName())) return getCurrentEditorComponent().getEditedNode();
-      if (dataId.equals(MPSDataKeys.NODES.getName())) return Collections.singletonList(getCurrentEditorComponent().getEditedNode());
-      if (dataId.equals(MPSDataKeys.EDITOR_CELL.getName())) return getCurrentEditorComponent().getRootCell();
+      EditorComponent editor = getCurrentEditorComponent();
+      if (editor == null) return null;
+      if (dataId.equals(MPSDataKeys.NODE.getName())) return editor.getEditedNode();
+      if (dataId.equals(MPSDataKeys.NODES.getName())) return Collections.singletonList(editor.getEditedNode());
+      if (dataId.equals(MPSDataKeys.EDITOR_CELL.getName())) return editor.getRootCell();
 
-      return getCurrentEditorComponent().getData(dataId);
+      return editor.getData(dataId);
     }
   }
 
