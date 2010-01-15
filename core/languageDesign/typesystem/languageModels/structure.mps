@@ -648,37 +648,6 @@
       <link role="target:0" targetNodeId="1174665551739:3" resolveInfo="TypeVarDeclaration" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174913569543">
-    <property name="name:0" value="Judgement" />
-    <link role="extends:0" targetNodeId="1.1133920641626:0" />
-    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="1174913619594">
-      <property name="name:0" value="result" />
-      <link role="dataType:0" targetNodeId="1.1082983657063:0" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1174913577997">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="pattern" />
-      <link role="target:0" targetNodeId="4.1136720037777:0" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1174913589936">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="1" />
-      <property name="role:0" value="nodeToMatch" />
-      <link role="target:0" targetNodeId="2.1068431790191:3" />
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174913798044">
-    <property name="name:0" value="Judgementlist" />
-    <property name="rootable:0" value="true" />
-    <link role="extends:0" targetNodeId="1.1133920641626:0" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1174913808889">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <property name="role:0" value="judgement" />
-      <link role="target:0" targetNodeId="1174913569543:3" resolveInfo="Judgement" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1174989242422">
     <property name="name:0" value="PatternVariableReference" />
     <link role="extends:0" targetNodeId="2.1068431790191:3" />

@@ -2335,25 +2335,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1227088600055">
-    <link role="concept:8" targetNodeId="1.1174913798044:3" resolveInfo="Judgementlist" />
-    <node role="canBeRoot:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot:8" id="1227088601306">
-      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1227088601307">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1227088601636">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1227088601637">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.EnumConstantReference:3" id="1227088601638">
-              <link role="enumClass:3" targetNodeId="22.~LanguageAspect" resolveInfo="LanguageAspect" />
-              <link role="enumConstantDeclaration:3" targetNodeId="22.~LanguageAspect.TYPESYSTEM" resolveInfo="TYPESYSTEM" />
-            </node>
-            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1227088601639">
-              <link role="baseMethodDeclaration:3" targetNodeId="22.~LanguageAspect.is(jetbrains.mps.smodel.SModel):boolean" resolveInfo="is" />
-              <node role="actualArgument:3" type="jetbrains.mps.lang.sharedConcepts.structure.ConceptFunctionParameter_model:0" id="1227088601640" />
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="1227088611953">
     <link role="concept:8" targetNodeId="1.1195214364922:3" resolveInfo="NonTypesystemRule" />
     <node role="canBeRoot:8" type="jetbrains.mps.lang.constraints.structure.ConstraintFunction_CanBeARoot:8" id="1227088613158">
