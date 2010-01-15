@@ -7,11 +7,13 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TemplateSwitch_Behavior {
   private static Class[] PARAMETERS_8360039740498070955 = {SNode.class};
+  private static Class[] PARAMETERS_7656801780400891052 = {SNode.class ,SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -24,11 +26,25 @@ public class TemplateSwitch_Behavior {
     return result;
   }
 
+  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
+    SNode rule = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", null);
+    SLinkOperations.setTarget(rule, "applicableConcept", baseConcept, false);
+    ListSequence.fromList(SLinkOperations.getTargets(thisNode, "reductionMappingRule", true)).addElement(rule);
+  }
+
   public static List<SNode> call_getBaseConceptCollection_8360039740498070955(SNode thisNode) {
     return (List<SNode>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateSwitch"), "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_8360039740498070955);
   }
 
+  public static void call_setBaseConcept_7656801780400891052(SNode thisNode, SNode baseConcept) {
+    BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateSwitch"), "virtual_setBaseConcept_6261424444345963020", PARAMETERS_7656801780400891052, baseConcept);
+  }
+
   public static List<SNode> callSuper_getBaseConceptCollection_8360039740498070955(SNode thisNode, String callerConceptFqName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateSwitch"), callerConceptFqName, "virtual_getBaseConceptCollection_5270353093116013036", PARAMETERS_8360039740498070955);
+  }
+
+  public static void callSuper_setBaseConcept_7656801780400891052(SNode thisNode, String callerConceptFqName, SNode baseConcept) {
+    BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.lang.generator.structure.TemplateSwitch"), callerConceptFqName, "virtual_setBaseConcept_6261424444345963020", PARAMETERS_7656801780400891052, baseConcept);
   }
 }
