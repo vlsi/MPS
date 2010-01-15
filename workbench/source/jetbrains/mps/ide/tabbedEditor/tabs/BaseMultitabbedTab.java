@@ -59,6 +59,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   private Class<? extends BaseAdapter> myClass;
   private TabbedEditor myTabbedEditor;
   private int myCurrentIndex = 0;
+  private ListPopup myListPopup;
 
   protected BaseMultitabbedTab(TabbedEditor tabbedEditor, SNode baseNode, Class<? extends BaseAdapter> adapterClass) {
     myTabbedEditor = tabbedEditor;
@@ -151,8 +152,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   private void showConceptList(final RelativePoint relativePoint) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        final ListPopup popup;
-        popup = JBPopupFactory.getInstance().createListPopup(new BaseListPopupStep<SNode>("Choose concept", getAvailableConceptArray()) {
+        myListPopup = JBPopupFactory.getInstance().createListPopup(new BaseListPopupStep<SNode>("Choose concept", getAvailableConceptArray()) {
           public Icon getIconFor(final SNode concept) {
             final Icon[] result = new Icon[1];
             ModelAccess.instance().runReadAction(new Runnable() {
@@ -184,7 +184,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
             return FINAL_CHOICE;
           }
         });
-        popup.show(relativePoint);
+        myListPopup.show(relativePoint);
       }
     });
   }
@@ -305,6 +305,10 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
       createLoadableNodeChecked(nodeAndContext, null);
       setPackageAfterCreationChecked(nodeAndContext);
     } else {
+      if (myListPopup != null) {
+        myListPopup = null;
+        return;
+      }
       showConceptList(relativePoint);
     }
   }
