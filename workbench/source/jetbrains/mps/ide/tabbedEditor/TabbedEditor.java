@@ -45,10 +45,7 @@ import javax.swing.JComponent;
 import javax.swing.KeyStroke;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class TabbedEditor implements IEditor {
   public static final Logger LOG = Logger.getLogger(TabbedEditor.class);
@@ -399,9 +396,11 @@ public class TabbedEditor implements IEditor {
 
     @Nullable
     public Object getData(@NonNls String dataId) {
-      if (dataId.equals(MPSDataKeys.MPS_EDITOR.getName())) {
-        return TabbedEditor.this;
-      }
+      if (dataId.equals(MPSDataKeys.MPS_EDITOR.getName())) return TabbedEditor.this;
+      if (dataId.equals(MPSDataKeys.NODE.getName())) return getCurrentEditorComponent().getEditedNode();
+      if (dataId.equals(MPSDataKeys.NODES.getName())) return Collections.singletonList(getCurrentEditorComponent().getEditedNode());
+      if (dataId.equals(MPSDataKeys.PROJECT.getName())) return myOperationContext.getProject();
+      if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return myOperationContext;
 
       return null;
     }
