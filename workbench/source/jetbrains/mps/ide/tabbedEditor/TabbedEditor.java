@@ -399,10 +399,9 @@ public class TabbedEditor implements IEditor {
       if (dataId.equals(MPSDataKeys.MPS_EDITOR.getName())) return TabbedEditor.this;
       if (dataId.equals(MPSDataKeys.NODE.getName())) return getCurrentEditorComponent().getEditedNode();
       if (dataId.equals(MPSDataKeys.NODES.getName())) return Collections.singletonList(getCurrentEditorComponent().getEditedNode());
-      if (dataId.equals(MPSDataKeys.PROJECT.getName())) return myOperationContext.getProject();
-      if (dataId.equals(MPSDataKeys.OPERATION_CONTEXT.getName())) return myOperationContext;
+      if (dataId.equals(MPSDataKeys.EDITOR_CELL.getName())) return getCurrentEditorComponent().getRootCell();
 
-      return null;
+      return getCurrentEditorComponent().getData(dataId);
     }
   }
 
