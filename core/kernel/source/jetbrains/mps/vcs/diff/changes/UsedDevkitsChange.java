@@ -57,4 +57,8 @@ public class UsedDevkitsChange extends Change {
   public ChangeType getChangeType() {
     return myIsDeleted ? ChangeType.DELETE : ChangeType.ADD;
   }
+
+  public boolean isOppositeTo(UsedDevkitsChange that) {
+    return this.myReference.equals(that.myReference) && this.myIsDeleted != that.myIsDeleted;
+  }
 }

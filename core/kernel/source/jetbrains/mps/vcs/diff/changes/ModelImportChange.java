@@ -56,4 +56,8 @@ public class ModelImportChange extends Change {
   public ChangeType getChangeType() {
     return myIsDeleted ? ChangeType.DELETE : ChangeType.ADD;
   }
+
+  public boolean isOppositeTo(ModelImportChange that) {
+    return this.mySModelReference.equals(that.mySModelReference) && this.myIsDeleted != that.myIsDeleted;
+  }
 }

@@ -57,4 +57,8 @@ public class UsedLanguagesChange extends Change {
   public ChangeType getChangeType() {
     return myIsDeleted ? ChangeType.DELETE : ChangeType.ADD;
   }
+
+  public boolean isOppositeTo(UsedLanguagesChange that) {
+    return this.myReference.equals(that.myReference) && this.myIsDeleted != that.myIsDeleted;
+  }
 }
