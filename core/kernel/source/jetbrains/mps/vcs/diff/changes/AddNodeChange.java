@@ -29,12 +29,11 @@ public class AddNodeChange extends NewNodeChange {
   private SNodeId myPreviousNode;
   private String myPreviousRole;
 
-  public AddNodeChange(String nodeType, SNodeId nodeId, String role, SNodeId parentId, SNodeId prevNode, String prevRole) {
-    super(nodeType, nodeId, role, parentId);
+  public AddNodeChange(String conceptFqName, SNodeId nodeId, String role, SNodeId parentId, SNodeId prevNode, String prevRole) {
+    super(conceptFqName, nodeId, role, parentId);
     myPreviousNode = prevNode;
     myPreviousRole = prevRole;
   }
-
 
   public SNodeId getPreviousNode() {
     return myPreviousNode;

@@ -28,8 +28,8 @@ public class SetNodeChange extends NewNodeChange {
   SNodeId myOldChildId;
   private String myPrevRole;
 
-  public SetNodeChange(String nodeType, SNodeId nodeId, String role, SNodeId parentId, SNodeId oldChildId, String prevRole) {
-    super(nodeType, nodeId, role, parentId);
+  public SetNodeChange(String conceptFqName, SNodeId nodeId, String role, SNodeId parentId, SNodeId oldChildId, String prevRole) {
+    super(conceptFqName, nodeId, role, parentId);
     myOldChildId = oldChildId;
     myPrevRole = prevRole;
   }
