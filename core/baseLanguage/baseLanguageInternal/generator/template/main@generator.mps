@@ -1166,7 +1166,7 @@
                   <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5822086619725756438">
                     <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="5822086619725756435" />
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="5822086619725756447">
-                      <link role="link:16" targetNodeId="2v.2101871847910816112:3" />
+                      <link role="link:16" targetNodeId="2v.1178616825527:3" />
                     </node>
                   </node>
                 </node>

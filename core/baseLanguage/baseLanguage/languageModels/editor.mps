@@ -717,7 +717,7 @@
         <property name="separatorText:32" value=" " />
         <property name="name:32" value="staticMethodList" />
         <property name="vertical:32" value="false" />
-        <link role="relationDeclaration:32" targetNodeId="17.2101871847910816112:3" />
+        <link role="relationDeclaration:32" targetNodeId="17.1178616825527:3" />
         <node role="emptyCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1178616865558">
           <property name="nullText:32" value="&lt;&lt;inner classifiers&gt;&gt;" />
           <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem:32" id="1214579834105">
@@ -4523,7 +4523,7 @@
         <property name="separatorText:32" value=" " />
         <property name="name:32" value="staticMethodList" />
         <property name="vertical:32" value="false" />
-        <link role="relationDeclaration:32" targetNodeId="17.2101871847910816112:3" />
+        <link role="relationDeclaration:32" targetNodeId="17.1178616825527:3" />
         <node role="emptyCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1578358025114233726">
           <property name="nullText:32" value="&lt;&lt;inner classifiers&gt;&gt;" />
           <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem:32" id="1578358025114233727">

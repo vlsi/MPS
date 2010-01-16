@@ -1303,7 +1303,7 @@
       <property name="metaClass:0" value="aggregation" />
       <link role="target:0" targetNodeId="1068580123165:3" resolveInfo="InstanceMethodDeclaration" />
     </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="2101871847910816112">
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1178616825527">
       <property name="metaClass:0" value="aggregation" />
       <property name="sourceCardinality:0" value="0..n" />
       <property name="role:0" value="staticInnerClassifiers" />
