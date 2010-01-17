@@ -18,6 +18,7 @@ package jetbrains.mps.project;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.baseLanguage.collections.structure.Collections_Language;
 import jetbrains.mps.baseLanguage.structure.BaseLanguage_Language;
+import jetbrains.mps.baseLanguage.stubs.JavaStubs;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.lang.generator.structure.Generator_Language;
 import jetbrains.mps.library.LibraryManager;
@@ -33,7 +34,6 @@ import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.stubs.BaseStubModelRootManager;
-import jetbrains.mps.stubs.javastub.classpath.JavaStubClassPathModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.SuspiciousModelIndex;
@@ -74,12 +74,9 @@ public abstract class AbstractModule implements IModule {
 
   private ModuleScope myScope = new ModuleScope();
 
-  private IClassPathItem myClassPath;
-  private IClassPathItem myJavaStubsClassPath;
-  private List<StubPath> myStubPath;
-  private MyClassPathModelRootManager myManager = new MyClassPathModelRootManager();
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
   private Set<String> myIncludedClassPath;
+  private CompositeClassPathItem myCachedClassPathItem;
 
   private List<IModule> myExplicitlyDependentModules;
 
@@ -317,22 +314,17 @@ public abstract class AbstractModule implements IModule {
   }
 
   public List<SModelDescriptor> getOwnModelDescriptors() {
-    List<SModelDescriptor> modelDescriptors = SModelRepository.getInstance().getModelDescriptors(this);
-    return modelDescriptors;
+    return SModelRepository.getInstance().getModelDescriptors(this);
   }
 
   public IFile getClassesGen() {
-    if (getDescriptorFile() == null) {
-      return null;
-    }
+    if (getDescriptorFile() == null) return null;
     return getDescriptorFile().getParent().child("classes_gen");
   }
 
   private List<ModelRoot> getModelRoots() {
     ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      return descriptor.getModelRoots();
-    }
+    if (descriptor != null) return descriptor.getModelRoots();
     return new ArrayList<ModelRoot>();
   }
 
@@ -509,7 +501,6 @@ public abstract class AbstractModule implements IModule {
     return myScope;
   }
 
-
   protected void readModels() {
     if (!myModelsRead) {
       myModelsRead = true;
@@ -541,34 +532,32 @@ public abstract class AbstractModule implements IModule {
     mySModelRoots.clear();
   }
 
-  public List<String> getClassPath() {
-    ArrayList<String> result = new ArrayList<String>();
-
-    if (getClassesGen() != null && getClassesGen().exists() && isCompileInMPS()) {
-      result.add(getClassesGen().getCanonicalPath());
-    }
-    ModuleDescriptor descriptor = getModuleDescriptor();
-    if (descriptor != null) {
-      for (ClassPathEntry entry : descriptor.getClassPaths()) {
-        result.add(entry.getPath());
-      }
-    }
-
+  public List<StubPath> getAllStubPaths() {
+    ArrayList<StubPath> result = new ArrayList<StubPath>();
+    result.addAll(getStubPaths());
+    result.addAll(getOwnStubPaths());
     return result;
   }
 
-  public List<StubPath> getStubPath() {
+  public List<StubPath> getOwnStubPaths() {
+    ArrayList<StubPath> result = new ArrayList<StubPath>();
+    if (isCompileInMPS() && getClassesGen() != null && getClassesGen().exists()) {
+      result.add(new StubPath(getClassesGen().getCanonicalPath(), LanguageID.JAVA_MANAGER));
+    }
+    return result;
+  }
+
+  public List<StubPath> getStubPaths() {
     ArrayList<StubPath> result = new ArrayList<StubPath>();
 
-/*
-    if (getClassesGen() != null && getClassesGen().exists() && isCompileInMPS()) {
-      result.add(getClassesGen().getCanonicalPath());
-    }
-*/
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor != null) {
       for (StubModelsEntry entry : descriptor.getStubModelEntries()) {
         result.add(new StubPath(entry.getPath(), entry.getManager()));
+      }
+
+      for (ClassPathEntry entry : descriptor.getClassPaths()) {
+        result.add(new StubPath(entry.getPath(), LanguageID.JAVA_MANAGER));
       }
     }
 
@@ -629,7 +618,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public IClassPathItem getClassPathItem() {
-    return myClassPath;
+    return myCachedClassPathItem;
   }
 
   public boolean isClassPathExcluded(String path) {
@@ -661,40 +650,31 @@ public abstract class AbstractModule implements IModule {
 
   public void updateClassPath() {
     updateClassPathItem();
-    releaseJavaStubs();
+    updateExcludes();
+
+    releaseOldStubs();
     CleanupManager.getInstance().cleanup();
     MPSModuleRepository.getInstance().invalidateCaches();
     loadNewStubs();
   }
 
   private void updateClassPathItem() {
-    CompositeClassPathItem result = new CompositeClassPathItem();
-    CompositeClassPathItem javaStubsResult = new CompositeClassPathItem();
-    for (String path : getClassPath()) {
+    myCachedClassPathItem = new CompositeClassPathItem();
+    for (StubPath path : getAllStubPaths()) {
       try {
-        IClassPathItem pathItem = AbstractClassPathItem.createFromPath(path, this);
-
-        if (!EqualUtil.equals(path, getClassesGen().getPath()) || areJavaStubsEnabled()) {
-          javaStubsResult.add(pathItem);
-        }
-
-        result.add(pathItem);
+        IClassPathItem pathItem = AbstractClassPathItem.createFromPath(path.getPath(), this);
+        myCachedClassPathItem.add(pathItem);
       } catch (IOException e) {
         LOG.error(e);
       }
     }
-
-    updateExcludes();
-    myStubPath = getStubPath();
-    myClassPath = result;
-    myJavaStubsClassPath = javaStubsResult;
   }
 
   public void updateExcludes() {
     myIncludedClassPath = getIncludedClassPath();
   }
 
-  private void releaseJavaStubs() {
+  private void releaseOldStubs() {
     for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(this)) {
       if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) {
         if (SModelRepository.getInstance().getOwners(sm).size() == 1) {
@@ -718,32 +698,19 @@ public abstract class AbstractModule implements IModule {
       }
     }
 
-    for (StubPath sp : myStubPath) {
+    List<StubPath> stubModels = areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
+    for (StubPath sp : stubModels) {
       BaseStubModelRootManager manager = createStubManager(sp);
       if (manager == null) continue;
       manager.updateModels(sp.getPath(), "", this);
-    }
-
-    myManager.dispose();
-
-    myManager = new MyClassPathModelRootManager();
-
-    SModel sm = new SModel();
-    sm.setLoading(true);
-
-    ModelRoot mr = new ModelRoot();
-    mr.setPrefix("");
-
-    try {
-      myManager.updateModels(new SModelRoot(this, mr), this);
-    } catch (ManagerNotFoundException e) {
-      LOG.error("Error updating models from " + this, e);
     }
   }
 
   @Nullable
   private BaseStubModelRootManager createStubManager(StubPath sp) {
     try {
+      if (sp.getManager().equals(LanguageID.JAVA_MANAGER)) return new JavaStubs();
+
       String moduleId = sp.getManager().getModuleId();
       String className = sp.getManager().getClassName();
 
@@ -978,12 +945,6 @@ public abstract class AbstractModule implements IModule {
 
     public String toString() {
       return "Scope of module " + AbstractModule.this;
-    }
-  }
-
-  private class MyClassPathModelRootManager extends JavaStubClassPathModelRootManager {
-    public IClassPathItem getClassPathItem() {
-      return myJavaStubsClassPath;
     }
   }
 }

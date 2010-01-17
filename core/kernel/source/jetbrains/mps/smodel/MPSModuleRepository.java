@@ -19,6 +19,7 @@ import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.*;
+import jetbrains.mps.project.AbstractModule.StubPath;
 import jetbrains.mps.project.structure.model.RootReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.util.FileUtil;
@@ -487,10 +488,6 @@ public class MPSModuleRepository implements ApplicationComponent {
       Class<? extends IModule> cls = myExtensionsToModuleTypes.get(extension);
       module = (AbstractModule) registerModule(dir, owner, cls);
 
-      if (module.getClassesGen() != null) {
-        excludes.add(module.getClassesGen());
-      }
-
       for (String sourceDir : module.getSourcePaths()) {
         excludes.add(FileSystem.getFile(sourceDir));
       }
@@ -504,8 +501,11 @@ public class MPSModuleRepository implements ApplicationComponent {
         excludes.add(FileSystem.getFile(root.getPath()));
       }
 
-      for (String cp : module.getClassPath()) {
-        excludes.add(FileSystem.getFile(cp));
+      if (module.getClassesGen() != null) {
+        excludes.add(module.getClassesGen());
+      }
+      for (StubPath sp : module.getStubPaths()) {
+        excludes.add(FileSystem.getFile(sp.getPath()));
       }
     } catch (Throwable t) {
       LOG.error("Fail to load module from descriptor " + dir.getAbsolutePath(), t);

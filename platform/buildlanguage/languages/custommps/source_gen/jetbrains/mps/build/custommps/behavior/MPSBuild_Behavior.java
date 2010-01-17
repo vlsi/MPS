@@ -82,8 +82,8 @@ public class MPSBuild_Behavior {
       ListSequence.fromList(paths).addElement(path);
       if (module instanceof Language) {
         Language language = (Language) module;
-        List<String> runtimeCP = language.getLanguageRuntimeClassPathItems();
-        ListSequence.fromList(runtimeCP).removeSequence(ListSequence.fromList(language.getClassPath()));
+        List<AbstractModule.StubPath> runtimeCP = language.getRuntimeStubPaths();
+        ListSequence.fromList(runtimeCP).removeSequence(ListSequence.fromList(language.getAllStubPaths()));
         if (!(ListSequence.fromList(runtimeCP).isEmpty())) {
           path = SConceptOperations.createNewNode("jetbrains.mps.build.distrib.structure.SimplePath", null);
           SPropertyOperations.set(path, "path", prefix + "/" + moduleProperName + "." + AbstractModule.RUNTIME_JAR_SUFFIX);

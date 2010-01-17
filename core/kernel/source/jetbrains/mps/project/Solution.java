@@ -166,15 +166,6 @@ public class Solution extends AbstractModule {
     }
   }
 
-  public List<String> getClassPath() {
-    List<String> result = new ArrayList<String>();
-    if (getClassesGen() != null && getClassesGen().exists()) {
-      result.add(getClassesGen().getPath());
-    }
-    result.addAll(super.getClassPath());
-    return result;
-  }
-
   public boolean reloadClassesAfterGeneration() {
     return false;
   }
@@ -182,7 +173,6 @@ public class Solution extends AbstractModule {
   protected boolean areJavaStubsEnabled() {
     return getSolutionDescriptor().getEnableJavaStubs();
   }
-
 
   @Override
   protected SolutionDescriptor loadDescriptor() {
