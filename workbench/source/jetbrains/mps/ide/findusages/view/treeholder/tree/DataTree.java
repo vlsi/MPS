@@ -183,6 +183,13 @@ public class DataTree implements IExternalizeable, IChangeListener {
         if (child.getData().getIdObject().equals(currentIdObject)) {
           next = child;
         }
+      } else if (currentIdObject instanceof Pair && child.getData() instanceof CategoryNodeData) {
+        Pair<CategoryKind, String> category = (Pair<CategoryKind, String>) currentIdObject;
+        CategoryNodeData data = (CategoryNodeData) child.getData();
+        if (data.getCategoryKindName().equals(category.o1.getName())
+            && data.getIdObject().equals(category.o2)) {
+          next = child;
+        }
       } else {
         if (child.getData().getIdObject() == currentIdObject) {
           next = child;
