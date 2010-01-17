@@ -594,16 +594,14 @@
                   <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1238504189354">
                     <property name="name:3" value="runtimeCP" />
                     <node role="type:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="1238669911998">
-                      <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1431837068638106854">
-                        <link role="classifier:3" targetNodeId="3.~AbstractModule$StubPath" resolveInfo="AbstractModule.StubPath" />
-                      </node>
+                      <node role="elementType:7" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1188338037705467214" />
                     </node>
                     <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1238504189357">
                       <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1238504189358">
                         <link role="variableDeclaration:3" targetNodeId="1238504189348" resolveInfo="language" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1238504189359">
-                        <link role="baseMethodDeclaration:3" targetNodeId="7.~Language.getRuntimeStubPaths():java.util.List" resolveInfo="getRuntimeStubPaths" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="7.~Language.getLanguageRuntimeClassPathItems():java.util.List" resolveInfo="getLanguageRuntimeClassPathItems" />
                       </node>
                     </node>
                   </node>
@@ -619,7 +617,7 @@
                           <link role="variableDeclaration:3" targetNodeId="1238504189348" resolveInfo="language" />
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1238669948427">
-                          <link role="baseMethodDeclaration:3" targetNodeId="3.~AbstractModule.getAllStubPaths():java.util.List" resolveInfo="getAllStubPaths" />
+                          <link role="baseMethodDeclaration:3" targetNodeId="3.~AbstractModule.getClassPath():java.util.List" resolveInfo="getClassPath" />
                         </node>
                       </node>
                     </node>

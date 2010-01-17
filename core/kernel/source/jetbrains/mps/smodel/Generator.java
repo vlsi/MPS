@@ -129,8 +129,8 @@ public class Generator extends AbstractModule {
     }
   }
 
-  public List<StubPath> getStubPaths() {
-    return getSourceLanguage().getRuntimeStubPaths();
+  public List<String> getClassPath() {
+    return getSourceLanguage().getLanguageRuntimeClassPathItems();
   }
 
   public void dispose() {
