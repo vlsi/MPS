@@ -1462,6 +1462,9 @@
     <property name="name:0" value="ClassifierClassExpression" />
     <property name="package:0" value="classifier" />
     <link role="extends:0" targetNodeId="1068431790191:3" resolveInfo="Expression" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="4848386836750267456">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
+    </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1137986190996">
       <property name="value:0" value="class of node operation" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473914776:0" />

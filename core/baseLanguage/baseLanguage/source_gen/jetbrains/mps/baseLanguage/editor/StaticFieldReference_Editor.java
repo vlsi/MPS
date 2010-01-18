@@ -25,6 +25,9 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.editor.generator.internal.PrimaryReferentMenuCellMenuPart;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class StaticFieldReference_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -60,7 +63,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     }
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new StaticFieldReference_Editor.StaticFieldReference_staticFieldDeclaration_cellMenu0(),new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu0()}));
+    editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new StaticFieldReference_Editor.StaticFieldReference_generic_cellMenu0(),new StaticFieldReference_Editor.StaticFieldReference_staticFieldDeclaration_cellMenu0(),new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();
     if (attributeConcept != null) {
@@ -183,6 +186,21 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
 
   public static class StaticFieldReference_staticFieldDeclaration_cellMenu0 extends PrimaryReferentMenuCellMenuPart {
     public StaticFieldReference_staticFieldDeclaration_cellMenu0() {
+    }
+  }
+
+  public static class StaticFieldReference_generic_cellMenu0 extends AbstractCellMenuPart_Generic_Item {
+    public StaticFieldReference_generic_cellMenu0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
+      SNode expr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null);
+      SLinkOperations.setTarget(expr, "classifier", SLinkOperations.getTarget(node, "classifier", false), false);
+      SNodeOperations.replaceWithAnother(node, expr);
+    }
+
+    public String getMatchingText() {
+      return "class";
     }
   }
 }

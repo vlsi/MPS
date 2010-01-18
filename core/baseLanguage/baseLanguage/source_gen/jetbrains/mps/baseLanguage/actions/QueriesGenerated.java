@@ -807,9 +807,7 @@ __switch__:
             List<SNode> visibleClassifiers = (List<SNode>) searchScope.getClassifierNodes();
             List<SNode> classifiers = new ArrayList<SNode>();
             for (SNode cls : visibleClassifiers) {
-              if (Classifier_Behavior.call_hasStaticMemebers_1214840444586(cls)) {
-                ListSequence.fromList(classifiers).addElement(cls);
-              }
+              ListSequence.fromList(classifiers).addElement(cls);
             }
             return classifiers;
           }

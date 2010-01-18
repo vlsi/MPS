@@ -38,6 +38,7 @@ public class ClassifierClassExpression_Editor extends DefaultNodeEditor {
     if (true) {
       editorCell.setFocusPolicy(FocusPolicy.ATTRACTS_FOCUS);
     }
+    ClassifierClassExpression_DeleteClass.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
