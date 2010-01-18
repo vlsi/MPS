@@ -67,5 +67,6 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", new SuperConstructorInvocation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.TupleExpression", new TupleExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation", new AbstractUnaryNumberOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", new ConstructorInvocationStatement_DataFlow());
   }
 }
