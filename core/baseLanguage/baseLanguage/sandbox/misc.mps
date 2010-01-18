@@ -216,6 +216,9 @@
           </node>
         </node>
       </node>
+      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="5536314641534700402">
+        <link role="annotation:3" targetNodeId="150.~SuppressWarnings" resolveInfo="SuppressWarnings" />
+      </node>
     </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="588721567335013177">
       <property name="name:3" value="f" />
