@@ -12,6 +12,11 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import javax.swing.JScrollPane;
 import javax.swing.tree.TreeSelectionModel;
+import javax.swing.event.TreeSelectionListener;
+import javax.swing.event.TreeSelectionEvent;
+import javax.swing.tree.TreePath;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.Generator;
@@ -20,7 +25,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.util.Condition;
 import com.intellij.ui.treeStructure.Tree;
 import javax.swing.JOptionPane;
@@ -44,6 +48,23 @@ public class MappingDialog extends BaseDialog {
     JScrollPane scrollPane = new JScrollPane(this.myTree);
     this.myMainComponent.add(scrollPane, BorderLayout.CENTER);
     this.myTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
+    this.myTree.addTreeSelectionListener(new TreeSelectionListener() {
+      public void valueChanged(TreeSelectionEvent e) {
+        if (e.getNewLeadSelectionPath() == null) {
+          return;
+        }
+        TreePath path = MappingDialog.this.myTree.getSelectionModel().getSelectionPath();
+        if (path == null) {
+          return;
+        }
+        Object node = path.getLastPathComponent();
+        if (!(node instanceof SNodeTreeNode)) {
+          return;
+        }
+        MPSEditorOpener opener = MappingDialog.this.myContext.getComponent(MPSEditorOpener.class);
+        opener.editNode(((SNodeTreeNode) node).getSNode(), MappingDialog.this.myContext);
+      }
+    });
     this.myTree.rebuildNow();
     this.myTree.expandAll();
   }
