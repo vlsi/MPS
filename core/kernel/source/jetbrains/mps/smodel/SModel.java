@@ -1331,18 +1331,15 @@ public class SModel implements Iterable<SNode> {
       ImportElement that = (ImportElement) o;
 
       if (myReferenceID != that.myReferenceID) return false;
-      if (myUsedVersion != that.myUsedVersion) return false;
-      if (myModelDescriptor != null ? !myModelDescriptor.equals(that.myModelDescriptor) : that.myModelDescriptor != null)
-        return false;
+      if (!myModelDescriptor.equals(that.myModelDescriptor)) return false;
 
       return true;
     }
 
     @Override
     public int hashCode() {
-      int result = myModelDescriptor != null ? myModelDescriptor.hashCode() : 0;
+      int result = myModelDescriptor.hashCode();
       result = 31 * result + myReferenceID;
-      result = 31 * result + myUsedVersion;
       return result;
     }
   }
