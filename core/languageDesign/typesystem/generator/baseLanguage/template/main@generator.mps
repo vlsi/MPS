@@ -3276,12 +3276,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.generator.structure.TemplateSwitch:2" id="1174916652689">
-    <property name="name:2" value="JudgementSwitch" />
-    <node role="defaultConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1174916661284">
-      <link role="template:2" targetNodeId="1174914699680" resolveInfo="Judgement_to_statement" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.generator.structure.TemplateDeclaration:2" id="1174997185242">
     <property name="name:2" value="PatternVariableReference_to_expression_in_rule" />
     <link role="applicableConcept:2" targetNodeId="1.1174989242422:3" />
