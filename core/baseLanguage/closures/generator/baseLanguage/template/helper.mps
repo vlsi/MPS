@@ -4525,9 +4525,6 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1202760849993">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1202760921497">
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1202760922775">
-              <property name="value:3" value="_adapter" />
-            </node>
             <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1202760862857">
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1202760855132">
                 <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1202760854253">
@@ -4540,6 +4537,9 @@
               <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1202760865708">
                 <link role="variableDeclaration:3" targetNodeId="1202760780046" resolveInfo="tname" />
               </node>
+            </node>
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1202760922775">
+              <property name="value:3" value="_adapter" />
             </node>
           </node>
         </node>
