@@ -64,6 +64,10 @@ public abstract class MpsWorker {
   private final AntLogger myLogger;
   private final Set<Library> myCompiledLibraries = new LinkedHashSet<Library>();
 
+  private MpsWorker() {
+    this(null, (AntLogger) null);
+  }
+
   public MpsWorker(WhatToDo whatToDo, ProjectComponent component) {
     this(whatToDo, new ProjectComponentLogger(component));
   }
@@ -91,7 +95,7 @@ public abstract class MpsWorker {
     File projectFile = FileUtil.createTmpFile();
     final MPSProject project = new MPSProject(projectFile, new ProjectDescriptor(), ideaProject);
 
-    MpsWorker.GenerationObjects go = new GenerationObjects();
+    ObjectsToProcess go = new ObjectsToProcess();
     collectModelsToGenerate(go);
 
     executeTask(project, go);
@@ -179,7 +183,7 @@ public abstract class MpsWorker {
     info(result.toString());
   }
 
-  protected abstract void executeTask(MPSProject project, GenerationObjects go);
+  protected abstract void executeTask(MPSProject project, ObjectsToProcess go);
 
   protected abstract void showStatistic();
 
@@ -241,7 +245,7 @@ public abstract class MpsWorker {
     });
   }
 
-  public void collectModelsToGenerate(GenerationObjects go) {
+  public void collectModelsToGenerate(ObjectsToProcess go) {
     collectFromProjects(go.getProjects());
     collectFromModuleFiles(go.getModules());
     collectFromModelFiles(go.getModels());
@@ -456,15 +460,15 @@ public abstract class MpsWorker {
     }
   }
 
-  protected class GenerationObjects {
+  protected class ObjectsToProcess {
     private final Set<MPSProject> myProjects = new LinkedHashSet<MPSProject>();
     private final Set<IModule> myModules = new LinkedHashSet<IModule>();
     private final Set<SModelDescriptor> myModels = new LinkedHashSet<SModelDescriptor>();
 
-    public GenerationObjects() {
+    public ObjectsToProcess() {
     }
 
-    public GenerationObjects(Set<MPSProject> mpsProjects, Set<IModule> modules, Set<SModelDescriptor> models) {
+    public ObjectsToProcess(Set<MPSProject> mpsProjects, Set<IModule> modules, Set<SModelDescriptor> models) {
       myProjects.addAll(mpsProjects);
       myModules.addAll(modules);
       myModels.addAll(models);

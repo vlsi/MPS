@@ -12,7 +12,6 @@ import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.build.ant.TeamCityMessageFormat;
 
 import java.util.List;
-import java.util.Set;
 import java.io.File;
 
 public class TestBrokenReferencesWorker extends MpsWorker {
@@ -31,7 +30,7 @@ public class TestBrokenReferencesWorker extends MpsWorker {
     return new TeamCityMessageFormat();
   }
 
-  protected void executeTask(MPSProject project, final GenerationObjects go) {
+  protected void executeTask(MPSProject project, final ObjectsToProcess go) {
     for (MPSProject p : go.getProjects()) {
       extractModels(go.getModels(), p);
     }

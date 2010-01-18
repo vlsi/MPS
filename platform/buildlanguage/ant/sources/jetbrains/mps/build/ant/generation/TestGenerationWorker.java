@@ -7,7 +7,6 @@ import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.AbstractClassLoader;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 import junit.framework.*;
 import org.apache.tools.ant.ProjectComponent;
@@ -89,7 +88,7 @@ public class TestGenerationWorker extends GeneratorWorker {
       final MPSProject p = TestMain.loadProject(file);
       info("Loaded project " + p);
 
-      executeTask(p, new GenerationObjects(Collections.singleton(p), new java.util.HashSet<IModule>(), new java.util.HashSet<SModelDescriptor>()));
+      executeTask(p, new ObjectsToProcess(Collections.singleton(p), new java.util.HashSet<IModule>(), new java.util.HashSet<SModelDescriptor>()));
 
       disposeProject(p);
       dispose();
@@ -103,7 +102,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     LinkedHashSet<SModelDescriptor> models = new LinkedHashSet<SModelDescriptor>();
     collectFromModuleFiles(modules);
     collectFromModelFiles(models);
-    executeTask(project, new GenerationObjects(Collections.EMPTY_SET, modules, models));
+    executeTask(project, new ObjectsToProcess(Collections.EMPTY_SET, modules, models));
 
     generatePerformanceReport();
 
@@ -210,7 +209,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     myMessageHandler.clean();
     if (sb.length() > 0) {
       myTestFailed = true;
-      System.out.append(myBuildServerMessageFormat.formatTestFailure(currentTestName, "Generation Errors", sb));
+      System.out.append(myBuildServerMessageFormat.formatTestFailure(currentTestName, "Errors During Generation Testing", sb));
       System.out.println("");
     }
     System.out.println(myBuildServerMessageFormat.formatTestFinish(currentTestName));
@@ -230,7 +229,7 @@ public class TestGenerationWorker extends GeneratorWorker {
   }
 
   @Override
-  protected List<Cycle> computeGenerationOrder(MPSProject project, GenerationObjects go) {
+  protected List<Cycle> computeGenerationOrder(MPSProject project, ObjectsToProcess go) {
     List<Cycle> cycles = new ArrayList<Cycle>();
     Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
 
@@ -272,7 +271,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     StringBuffer sb = new StringBuffer();
 
     if (myMessageHandler.getGenerationErrors().size() > 0) {
-      sb.append("Generation errors:\n");
+      sb.append("Generation Errors:\n");
       for (String e : myMessageHandler.getGenerationErrors()) {
         sb.append("  ");
         sb.append(e);
@@ -285,7 +284,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     for (CompilationResult r : compilationResult) {
       if (r.getErrors() != null && r.getErrors().length > 0) {
         if (!headerPrinted) {
-          sb.append("Compilation problems:\n");
+          sb.append("Compilation Problems:\n");
           headerPrinted = true;
         }
         for (CategorizedProblem p : r.getErrors()) {

@@ -26,12 +26,8 @@ import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
-import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.util.Computable;
-
-import javax.swing.SwingUtilities;
 
 public class GeneratorWorker extends MpsWorker {
 
@@ -50,7 +46,7 @@ public class GeneratorWorker extends MpsWorker {
     super(whatToDo, logger);
   }
 
-  protected void executeTask(final MPSProject project, GenerationObjects go) {
+  protected void executeTask(final MPSProject project, ObjectsToProcess go) {
     setGenerationProperties();
     if (go.hasAnythingToGenerate()) {
       generate(project, go);
@@ -78,7 +74,7 @@ public class GeneratorWorker extends MpsWorker {
     }
   }
 
-  private void generate(MPSProject project, GenerationObjects go) {
+  private void generate(MPSProject project, ObjectsToProcess go) {
     StringBuffer s = new StringBuffer("Generating:");
     for (MPSProject p : go.getProjects()) {
       s.append("\n    ");
@@ -127,7 +123,7 @@ public class GeneratorWorker extends MpsWorker {
     });
   }
 
-  protected List<Cycle> computeGenerationOrder(MPSProject project, GenerationObjects go) {
+  protected List<Cycle> computeGenerationOrder(MPSProject project, ObjectsToProcess go) {
 
     final Map<IModule, List<SModelDescriptor>> moduleToModels = new LinkedHashMap<IModule, List<SModelDescriptor>>();
     extractModels(go.getProjects(), go.getModules(), go.getModels(), moduleToModels);

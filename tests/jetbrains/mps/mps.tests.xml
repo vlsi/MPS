@@ -16,6 +16,15 @@
     </jvmargs>
 
     <target name="generation.tests">
+        <mps.make fork="true" loglevel="info">
+            <jvmargs refid="mps.args"/>
+            <modules dir="${mps.home}">
+                <exclude name="**/classes/**"/>
+                <exclude name="**/classes_gen/**"/>
+                <exclude name="**/lib/**"/>
+                <exclude name="**/testMaterial/**"/>
+            </modules>
+        </mps.make>
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="false" loglevel="info"
                              useperrootgeneration="${per.root.generation}">
             <jvmargs refid="mps.args"/>
