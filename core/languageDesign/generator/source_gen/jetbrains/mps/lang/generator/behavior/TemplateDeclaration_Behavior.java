@@ -9,7 +9,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class TemplateDeclaration_Behavior {
@@ -29,10 +28,6 @@ public class TemplateDeclaration_Behavior {
       public void run() {
         SPropertyOperations.set(thisNode, "name", "reduce_" + SPropertyOperations.getString(baseConcept, "name"));
         SNode mapping = ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.lang.generator.structure.MappingConfiguration")).first();
-        if ((mapping == null)) {
-          mapping = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
-          SModelOperations.addRootNode(SNodeOperations.getModel(thisNode), mapping);
-        }
         SNode ruleNode;
         ruleNode = SLinkOperations.addNewChild(mapping, "reductionMappingRule", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule");
         SLinkOperations.setTarget(ruleNode, "applicableConcept", baseConcept, false);
