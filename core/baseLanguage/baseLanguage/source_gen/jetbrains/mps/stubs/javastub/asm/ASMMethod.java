@@ -12,8 +12,6 @@ import org.objectweb.asm.tree.LocalVariableNode;
 import org.objectweb.asm.Opcodes;
 
 public class ASMMethod {
-  private static final boolean GET_PARAMETER_NAMES_FROM_DEBUG_INFO = false;
-
   private MethodNode myMethod;
   private ASMType myReturnType;
   private ASMType myGenericReturnType;
@@ -125,18 +123,20 @@ public class ASMMethod {
     }
     if (!(this.myParameterTypes.isEmpty())) {
       this.myParameterNames = new ArrayList<String>(this.myParameterTypes.size());
-      if (GET_PARAMETER_NAMES_FROM_DEBUG_INFO && method.localVariables != null && this.myParameterTypes.size() < method.localVariables.size()) {
+      for (int i = 0; i < this.myParameterTypes.size(); i++) {
+        this.myParameterNames.add("p" + i);
+      }
+      if (method.localVariables != null && this.myParameterTypes.size() < method.localVariables.size()) {
         int offset = (!(this.isStatic()) ?
           1 :
           0
         );
-        for (int i = offset; i < this.myParameterTypes.size() + offset; i++) {
-          LocalVariableNode node = ((LocalVariableNode) method.localVariables.get(i));
-          this.myParameterNames.add(node.name);
-        }
-      } else {
-        for (int i = 0; i < this.myParameterTypes.size(); i++) {
-          this.myParameterNames.add("p" + i);
+        for (Object lv : method.localVariables) {
+          LocalVariableNode node = ((LocalVariableNode) lv);
+          int index = node.index - offset;
+          if (index >= 0 && index < this.myParameterTypes.size()) {
+            this.myParameterNames.set(index, node.name);
+          }
         }
       }
     }
