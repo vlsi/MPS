@@ -15,7 +15,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.DynamicReference;
 
 public class BL_CopyPasteHandlers_PastePostProcessor_0 implements PastePostProcessor {
   public SNode getApplicableConcept() {
@@ -30,13 +29,14 @@ public class BL_CopyPasteHandlers_PastePostProcessor_0 implements PastePostProce
         return SNodeOperations.as(it, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration");
       }
     });
-    if (Sequence.fromIterable(visibleStaticFields).where(new IWhereFilter<SNode>() {
+    SNode staticFieldDecl = Sequence.fromIterable(visibleStaticFields).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals(SLinkOperations.getResolveInfo(staticFieldRef));
       }
-    }).isNotEmpty()) {
+    }).first();
+    if (staticFieldDecl != null) {
       SNode localStatisFieldReference = SNodeOperations.replaceWithNewChild(pastedNode, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
-      localStatisFieldReference.addReference(new DynamicReference(SLinkOperations.getRole(staticFieldRef), localStatisFieldReference, localStatisFieldReference.getModel().getSModelReference(), SLinkOperations.getResolveInfo(staticFieldRef)));
+      SLinkOperations.setTarget(localStatisFieldReference, "variableDeclaration", staticFieldDecl, false);
     }
   }
 }
