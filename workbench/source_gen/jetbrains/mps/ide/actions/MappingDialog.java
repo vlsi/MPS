@@ -7,10 +7,11 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import javax.swing.BorderFactory;
-import java.awt.Color;
+import javax.swing.JScrollPane;
+import javax.swing.tree.TreeSelectionModel;
 import javax.swing.JComponent;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.Generator;
@@ -18,7 +19,6 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.util.Condition;
@@ -30,6 +30,7 @@ public class MappingDialog extends BaseDialog {
   private JPanel myMainComponent = new JPanel(new BorderLayout());
   private Language myLanguage;
   private IOperationContext myContext;
+  private SNode myResult;
   private MPSTree myTree = new MPSTree() {
     protected MPSTreeNode rebuild() {
       return MappingDialog.this.rebuildTree();
@@ -40,9 +41,11 @@ public class MappingDialog extends BaseDialog {
     super(operationContext.getMainFrame(), "Choose Mapping Configuration");
     this.myLanguage = language;
     this.myContext = operationContext;
-    this.myMainComponent.add(this.myTree, BorderLayout.CENTER);
-    this.myTree.setBorder(BorderFactory.createLineBorder(Color.BLACK));
+    JScrollPane scrollPane = new JScrollPane(this.myTree);
+    this.myMainComponent.add(scrollPane, BorderLayout.CENTER);
+    this.myTree.getSelectionModel().setSelectionMode(TreeSelectionModel.SINGLE_TREE_SELECTION);
     this.myTree.rebuildNow();
+    this.myTree.expandAll();
   }
 
   protected JComponent getMainComponent() {
@@ -74,14 +77,23 @@ public class MappingDialog extends BaseDialog {
     return root;
   }
 
+  public SNode getResult() {
+    return this.myResult;
+  }
+
   @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
   public void buttonOk() {
-    if (this.myTree.getSelectedNodes(SNodeTreeNode.class, new Tree.NodeFilter() {
+    SNodeTreeNode[] selectedNode = this.myTree.getSelectedNodes(SNodeTreeNode.class, new Tree.NodeFilter() {
       public boolean accept(Object p0) {
         return true;
       }
-    }).length != 1) {
-      JOptionPane.showMessageDialog(this, "Error!");
+    });
+    if (selectedNode.length != 1) {
+      JOptionPane.showMessageDialog(this, "Mapping Configuration node is not selected!");
+    } else {
+      this.myResult = (SNode) selectedNode[0].getSNode();
+      this.myTree.dispose();
+      this.dispose();
     }
   }
 
