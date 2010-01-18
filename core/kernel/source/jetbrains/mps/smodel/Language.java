@@ -115,13 +115,10 @@ public class Language extends AbstractModule {
     revalidateGenerators();
   }
 
-  public List<StubPath> getRuntimeStubPaths() {
-    List<StubPath> result = new ArrayList<StubPath>();
-    for (StubModelsEntry me : myLanguageDescriptor.getRuntimeStubModels()) {
-      result.add(new StubPath(me.getPath(), me.getManager()));
-    }
-    for (ClassPathEntry ce : myLanguageDescriptor.getRuntimeClassPaths()) {
-      result.add(new StubPath(ce.getPath(), LanguageID.JAVA_MANAGER));
+  public List<String> getLanguageRuntimeClassPathItems() {
+    List<String> result = new ArrayList<String>();
+    for (ClassPathEntry entry : myLanguageDescriptor.getRuntimeClassPaths()) {
+      result.add(entry.getPath());
     }
     return result;
   }
@@ -151,14 +148,6 @@ public class Language extends AbstractModule {
     }
 
     myLanguageRuntimeClasspath = result;
-  }
-
-  private List<String> getLanguageRuntimeClassPathItems() {
-    List<String> result = new ArrayList<String>();
-    for (ClassPathEntry entry : myLanguageDescriptor.getRuntimeClassPaths()) {
-      result.add(entry.getPath());
-    }
-    return result;
   }
 
   @Override
