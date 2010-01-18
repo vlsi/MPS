@@ -15201,10 +15201,10 @@
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="6329021646629175156">
     <link role="conceptDeclaration:32" targetNodeId="17.6329021646629104954:3" resolveInfo="SingleLineComment" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="6329021646629175158">
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty:32" id="6329021646629175161">
-        <link role="relationDeclaration:32" targetNodeId="18.1137473891462:0" resolveInfo="alias" />
-        <link role="styleClass:32" targetNodeId="1198594875276" resolveInfo="Comment" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4620487550964403895">
+        <property name="text:32" value="//" />
         <link role="actionMap:32" targetNodeId="6173498004806798033" resolveInfo="UncommentSingleLineComment" />
+        <link role="styleClass:32" targetNodeId="1198594875276" resolveInfo="Comment" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNodeList:32" id="6329021646629175163">
         <link role="relationDeclaration:32" targetNodeId="17.6329021646629175155:3" />
