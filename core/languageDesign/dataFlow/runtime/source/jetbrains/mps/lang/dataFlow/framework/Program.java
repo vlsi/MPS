@@ -251,6 +251,13 @@ public class Program {
     return result;
   }
 
+  public boolean isInitializedRewritten(WriteInstruction instruction) {
+    AnalysisResult<VarSet> analysisResult = analyze(new InitializedVariablesAnalyzer(instruction));
+    Set<ReadInstruction> result = new HashSet<ReadInstruction>();
+    VarSet initializedVars = analysisResult.get(instruction);
+    return initializedVars.contains(instruction.getVariableIndex());
+  }
+
   public Set<WriteInstruction> getUnusedAssignments() {
     AnalysisResult<VarSet> analysisResult = analyze(new LivenessAnalyzer());
     Set<WriteInstruction> result = new HashSet<WriteInstruction>();

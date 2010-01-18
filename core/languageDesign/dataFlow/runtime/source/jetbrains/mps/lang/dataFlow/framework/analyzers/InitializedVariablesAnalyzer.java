@@ -28,6 +28,15 @@ import java.util.List;
 
 public class InitializedVariablesAnalyzer implements DataFlowAnalyzer<VarSet> {
 
+  private Set<Instruction> myExclusions;
+
+  public InitializedVariablesAnalyzer(Instruction... exclusions) {
+    myExclusions = new HashSet<Instruction>(exclusions.length);
+    for (Instruction exclusion : exclusions) {
+      myExclusions.add(exclusion);
+    }
+  }
+
   public VarSet initial(Program p) {
     return new VarSet(p, true);
   }
@@ -39,7 +48,7 @@ public class InitializedVariablesAnalyzer implements DataFlowAnalyzer<VarSet> {
 
     VarSet result = new VarSet(p, true);
     for (VarSet anInput : input) {
-      result.retainAll(anInput);     
+      result.retainAll(anInput);
     }
     return result;
   }
@@ -52,7 +61,7 @@ public class InitializedVariablesAnalyzer implements DataFlowAnalyzer<VarSet> {
       result.clear();
     }
 
-    if (instruction instanceof WriteInstruction) {
+    if (instruction instanceof WriteInstruction && !myExclusions.contains(instruction)) {
       WriteInstruction write = (WriteInstruction) instruction;
       result.add(write.getVariableIndex());
     }

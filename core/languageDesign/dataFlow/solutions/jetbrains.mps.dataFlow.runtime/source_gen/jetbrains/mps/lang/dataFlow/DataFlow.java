@@ -68,6 +68,20 @@ public class DataFlow {
     return reads;
   }
 
+  public boolean isInitializedRewritten(Program program, SNode write) {
+    WriteInstruction writeInstruction = null;
+    for (Instruction instruction : program.getInstructionsFor(write)) {
+      if (instruction instanceof WriteInstruction && instruction.getSource() == write) {
+        writeInstruction = (WriteInstruction) instruction;
+        break;
+      }
+    }
+    if (writeInstruction != null) {
+      return program.isInitializedRewritten(writeInstruction);
+    }
+    return false;
+  }
+
   public static Set<SNode> getUsedVariables(Program program, SNode node) {
     Set<SNode> readVars = new HashSet<SNode>();
     for (Instruction i : program.getInstructions()) {
