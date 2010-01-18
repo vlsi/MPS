@@ -68,7 +68,7 @@ public class DataFlow {
     return reads;
   }
 
-  public boolean isInitializedRewritten(Program program, SNode write) {
+  public static boolean isInitializedRewritten(Program program, SNode write) {
     WriteInstruction writeInstruction = null;
     for (Instruction instruction : program.getInstructionsFor(write)) {
       if (instruction instanceof WriteInstruction && instruction.getSource() == write) {
