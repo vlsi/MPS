@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.Set;
@@ -15,13 +16,13 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  /*package*/ _Patterns.Pattern_1 myMatchingPattern;
+  /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode iterableClassifierType, TypeCheckingContext typeCheckingContext) {
-    return new supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule.QuotationClass_2313_0().createNode(this.myMatchingPattern.PatternVar1, typeCheckingContext);
+    return new supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule.QuotationClass_2313_0().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar1")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {

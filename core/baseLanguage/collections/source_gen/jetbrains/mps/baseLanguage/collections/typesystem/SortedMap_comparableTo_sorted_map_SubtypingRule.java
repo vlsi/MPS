@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import java.util.Set;
@@ -15,13 +16,13 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  /*package*/ _Patterns.Pattern_8 myMatchingPattern;
+  /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public SortedMap_comparableTo_sorted_map_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode sortedMap, TypeCheckingContext typeCheckingContext) {
-    return new SortedMap_comparableTo_sorted_map_SubtypingRule.QuotationClass_1640_0().createNode(this.myMatchingPattern.PatternVar10, this.myMatchingPattern.PatternVar9, typeCheckingContext);
+    return new SortedMap_comparableTo_sorted_map_SubtypingRule.QuotationClass_1640_0().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar10")), ((SNode) this.myMatchingPattern.getFieldValue("PatternVar9")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
