@@ -30,7 +30,7 @@ public class NewAccessoryModel_Action extends GeneratedAction {
   private IModule module;
 
   public NewAccessoryModel_Action() {
-    super("New Accessory Model", "", ICON);
+    super("Accessory Model", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

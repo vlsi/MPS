@@ -44,7 +44,7 @@ public class NewModelFromSource_Action extends GeneratedAction {
   private TreeNode treeNode;
 
   public NewModelFromSource_Action() {
-    super("New Model from Source", "", ICON);
+    super("Model from Source", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

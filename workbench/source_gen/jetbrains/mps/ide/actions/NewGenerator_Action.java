@@ -27,7 +27,7 @@ public class NewGenerator_Action extends GeneratedAction {
   private Project project;
 
   public NewGenerator_Action() {
-    super("New Generator", "", ICON);
+    super("Generator", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

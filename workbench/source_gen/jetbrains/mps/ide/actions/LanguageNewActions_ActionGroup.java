@@ -17,10 +17,9 @@ public class LanguageNewActions_ActionGroup extends GeneratedActionGroup {
     try {
       LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewGenerator_Action", "jetbrains.mps.ide");
       LanguageNewActions_ActionGroup.this.addSeparator();
-      LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewAccessoryModel_Action", "jetbrains.mps.ide");
-      LanguageNewActions_ActionGroup.this.addSeparator();
       LanguageNewActions_ActionGroup.this.addAnchor(LanguageNewActions_ActionGroup.LABEL_ID_newAspect);
       LanguageNewActions_ActionGroup.this.addSeparator();
+      LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewAccessoryModel_Action", "jetbrains.mps.ide");
       LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModel_Action", "jetbrains.mps.ide");
       LanguageNewActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.NewModelFromSource_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {
