@@ -19,6 +19,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.ToStringComparator;
+import jetbrains.mps.util.Comparing;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -29,18 +30,23 @@ public class SortUtil {
   public static List<SModelDescriptor> sortModels(List<SModelDescriptor> modelDescriptors) {
     List<SModelDescriptor> sortedModels = new ArrayList<SModelDescriptor>(modelDescriptors);
     Collections.sort(sortedModels, new Comparator<SModelDescriptor>() {
-      private int compareValues(String s, String s1) {
-        if (s == null) s = "";
-        if (s1 == null) s1 = "";
-        return s.compareTo(s1);
-      }
-
       public int compare(SModelDescriptor o, SModelDescriptor o1) {
-        if (o == o1) {
-          return 0;
+        if (o == o1) return 0;
+        int result = Comparing.compare(o.getLongName(), o1.getLongName());
+        if (result != 0) return result;
+        String str = o.getStereotype();
+        String str1 = o1.getStereotype();
+        if (o.isTransient() && o1.isTransient()) {
+          String[] part = str.split("_");
+          String[] part1 = str1.split("_");
+          for (int i = 0; i < part.length; i++) {
+            result = Comparing.compare(Integer.valueOf(part[i]), Integer.valueOf(part1[i]));
+            if (result != 0) return result;
+          }
+          return result;
+        } else {
+          return Comparing.compare(str, str1);
         }
-        int result = compareValues(o.getLongName(), o1.getLongName());
-        return (result == 0) ? compareValues(o.getStereotype(), o1.getStereotype()) : result;
       }
     });
     return sortedModels;
