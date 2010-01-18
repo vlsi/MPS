@@ -1414,7 +1414,7 @@
     </node>
     <node role="code:4" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1232130377375">
       <node role="statement:3" type="jetbrains.mps.lang.test.structure.TypeKeyStatement:4" id="1232130377376">
-        <property name="keys:4" value="Math.E " />
+        <property name="keys:4" value="Math.E" />
       </node>
     </node>
   </node>
