@@ -62,7 +62,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_1 implements PastePostProce
             }
           }).where(new IWhereFilter<SNode>() {
             public boolean accept(SNode it) {
-              return resolveInfo.equals(SPropertyOperations.getString(it, "name"));
+              return SPropertyOperations.getString(it, "name").equals(resolveInfo);
             }
           }).isNotEmpty()) {
             if (nextClassConcept != containingClass) {

@@ -32,7 +32,7 @@ public class BL_CopyPasteHandlers_PastePostProcessor_0 implements PastePostProce
     });
     if (Sequence.fromIterable(visibleStaticFields).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return SPropertyOperations.getString(it, "name") == SLinkOperations.getResolveInfo(staticFieldRef);
+        return SPropertyOperations.getString(it, "name").equals(SLinkOperations.getResolveInfo(staticFieldRef));
       }
     }).isNotEmpty()) {
       SNode localStatisFieldReference = SNodeOperations.replaceWithNewChild(pastedNode, "jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference");
