@@ -322,6 +322,10 @@
       <property name="id" value="d745e97c-8235-4470-b086-ba3da1f4c03c" />
       <property name="name" value="jetbrains.mps.quickQueryLanguage" />
     </node>
+    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="5787215816014179124">
+      <property name="id" value="f85adbd8-2ec2-4572-bcfc-8dd799a7f025" />
+      <property name="name" value="jetbrains.mps.xmlUnitTest" />
+    </node>
   </node>
   <node type="jetbrains.mps.build.packaging.structure.Block:7" id="4062013737453621614">
     <property name="name:7" value="core.devkits" />
