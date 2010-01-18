@@ -29,7 +29,7 @@ public class NewAspectModel_Action extends GeneratedAction {
   private LanguageAspect aspect;
 
   public NewAspectModel_Action(LanguageAspect aspect_par) {
-    super("New Aspect Model", "", ICON);
+    super("Aspect Model", "", ICON);
     this.aspect = aspect_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
@@ -42,7 +42,7 @@ public class NewAspectModel_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      event.getPresentation().setText("New " + NameUtil.capitalize(NewAspectModel_Action.this.aspect.getName()) + " Aspect");
+      event.getPresentation().setText(NameUtil.capitalize(NewAspectModel_Action.this.aspect.getName()) + " Aspect");
       event.getPresentation().setIcon(NewAspectModel_Action.this.aspect.getIcon());
       if (NewAspectModel_Action.this.module instanceof Language) {
         NewAspectModel_Action.this.setEnabledState(event.getPresentation(), NewAspectModel_Action.this.aspect.get(((Language) NewAspectModel_Action.this.module)) == null);
