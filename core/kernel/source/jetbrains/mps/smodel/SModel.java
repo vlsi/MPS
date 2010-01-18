@@ -1289,7 +1289,7 @@ public class SModel implements Iterable<SNode> {
   }
 
   /*package*/
-  public static class ImportElement {
+  public static class ImportElement {  //todo: used version ignored in equality relationship. seems to be strange. so why? discussion needed.
     private SModelReference myModelDescriptor;
     private int myReferenceID;
     private int myUsedVersion;
