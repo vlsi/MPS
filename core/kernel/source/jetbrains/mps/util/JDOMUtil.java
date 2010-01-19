@@ -146,13 +146,17 @@ public class JDOMUtil {
 
   public static void writeDocument(Document document, Writer writer) throws IOException {
     XMLOutputter xmlOutputter = createOutputter();
-    try {
+    if (xmlOutputter == null) {
+      LOG.error("Could not create XMLOutputter");
+    } else if (document == null) {
+      LOG.error("Document is null");
+    } else if (writer == null) {
+      LOG.error("Writer is null");
+      return;
+    } else {
       xmlOutputter.output(document, writer);
-    } catch (NullPointerException ex) {
-      LOG.error(ex);
-    } finally {
-      writer.close();
     }
+    writer.close();
   }
 
   public static XMLOutputter createOutputter() {
