@@ -193,9 +193,9 @@
       </node>
       <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="6624237184121122601">
         <link role="annotation:3" targetNodeId="150.~SuppressWarnings" resolveInfo="SuppressWarnings" />
-        <node role="value:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue:3" id="6624237184121136105">
+        <node role="value:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue:3" id="6624237184121285170">
           <link role="key:3" targetNodeId="150.~SuppressWarnings.value()" resolveInfo="value" />
-          <node role="value:3" type="jetbrains.mps.baseLanguage.structure.ArrayLiteral:3" id="6624237184121136107" />
+          <node role="value:3" type="jetbrains.mps.baseLanguage.structure.ArrayLiteral:3" id="6624237184121298576" />
         </node>
       </node>
     </node>
