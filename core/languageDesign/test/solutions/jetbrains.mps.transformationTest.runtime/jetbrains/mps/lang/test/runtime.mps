@@ -725,7 +725,7 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="5.~Program.analyze(jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.lang.dataFlow.framework.AnalysisResult" resolveInfo="analyze" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1215615113462">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1215615113463">
-                    <link role="baseMethodDeclaration:3" targetNodeId="9.~InitializedVariablesAnalyzer.&lt;init&gt;()" resolveInfo="InitializedVariablesAnalyzer" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="9.~InitializedVariablesAnalyzer.&lt;init&gt;(jetbrains.mps.lang.dataFlow.framework.instructions.Instruction...)" resolveInfo="InitializedVariablesAnalyzer" />
                   </node>
                 </node>
               </node>

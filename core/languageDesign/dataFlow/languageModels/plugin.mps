@@ -308,7 +308,7 @@
                 <link role="baseMethodDeclaration:3" targetNodeId="21.~Program.analyze(jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer):jetbrains.mps.lang.dataFlow.framework.AnalysisResult" resolveInfo="analyze" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1213727358714">
                   <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1213727358716">
-                    <link role="baseMethodDeclaration:3" targetNodeId="20.~InitializedVariablesAnalyzer.&lt;init&gt;()" resolveInfo="InitializedVariablesAnalyzer" />
+                    <link role="baseMethodDeclaration:3" targetNodeId="20.~InitializedVariablesAnalyzer.&lt;init&gt;(jetbrains.mps.lang.dataFlow.framework.instructions.Instruction...)" resolveInfo="InitializedVariablesAnalyzer" />
                   </node>
                 </node>
               </node>
