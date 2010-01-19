@@ -971,7 +971,27 @@
                 <node role="constructor:1" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="937236280924642357">
                   <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="937236280924642358" />
                   <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="937236280924642359" />
-                  <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="937236280924642360" />
+                  <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="937236280924642360">
+                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="3626909006981634103">
+                      <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3626909006981634104">
+                        <property name="name:3" value="d" />
+                        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.DoubleType:3" id="3626909006981634105" />
+                      </node>
+                    </node>
+                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3626909006981627655">
+                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="3626909006981627659">
+                        <node role="rValue:3" type="jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression:1" id="3626909006981634069">
+                          <property name="fieldName:1" value="PI" />
+                          <node role="expression:1" type="jetbrains.mps.baseLanguage.structure.FloatingPointConstant:3" id="3626909006981634077">
+                            <property name="value:3" value="3.1415926" />
+                          </node>
+                        </node>
+                        <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3626909006981634108">
+                          <link role="variableDeclaration:3" targetNodeId="3626909006981634104" resolveInfo="d" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                   <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="937236280924642408">
                     <property name="name:3" value="i" />
                     <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="937236280924642409" />

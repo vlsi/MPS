@@ -12,6 +12,7 @@ import jetbrains.mps.baseLanguageInternal.generator.template.util.ContextUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
@@ -62,6 +63,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_8881995820265485461(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "ExtractedMeth");
+  }
+
+  public static boolean ifMacro_Condition_5042204713575387814(final IOperationContext operationContext, final IfMacroContext _context) {
+    return true;
   }
 
   public static SNode sourceNodeQuery_1238251880657(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

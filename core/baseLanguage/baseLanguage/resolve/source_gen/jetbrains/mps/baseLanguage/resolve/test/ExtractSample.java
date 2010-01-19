@@ -8,6 +8,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 
 public class ExtractSample {
+  private static double PI = 3.1415926;
   private static Pattern PATTERN4379_0 = Pattern.compile("\\w+");
   private static Pattern PATTERN4379_1 = Pattern.compile("\\w+");
 
@@ -47,6 +48,8 @@ public class ExtractSample {
 
   public static class MyComparator4379_0 implements Comparator {
     public MyComparator4379_0(int i, char c) {
+      double d;
+      d = PI;
     }
 
     public int compare(Object p0, Object p1) {

@@ -50,21 +50,21 @@
       <link role="sourceConcept:2" targetNodeId="1.1238251434034:1" resolveInfo="ExtractToConstantExpression" />
       <link role="targetConcept:2" targetNodeId="2v.1172008963197:3" resolveInfo="LocalStaticFieldReference" />
     </node>
-    <node role="weavingMappingRule:2" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule:2" id="1238251595163">
-      <link role="applicableConcept:2" targetNodeId="1.1238251434034:1" resolveInfo="ExtractToFieldExpression" />
-      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1238251676113">
-        <link role="template:2" targetNodeId="1238251630841" resolveInfo="weave_ExtractToField" />
+    <node role="weavingMappingRule:2" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule:2" id="5822086619725756047">
+      <link role="applicableConcept:2" targetNodeId="1.7738261905749564104:1" resolveInfo="ExtractStaticInnerClassExpression" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="5822086619725756448">
+        <link role="template:2" targetNodeId="5822086619725756059" resolveInfo="weave_ExtractInnerStaticClass" />
       </node>
-      <node role="contextNodeQuery:2" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery:2" id="1238251595165">
-        <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1238251595166">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8835849473318892858">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8835849473318892860">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.8835849473318892505" resolveInfo="getContext" />
+      <node role="contextNodeQuery:2" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery:2" id="5822086619725756049">
+        <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5822086619725756050">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5822086619725756051">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5822086619725756053">
+              <link role="baseMethodDeclaration:3" targetNodeId="3.5822086619725755928" resolveInfo="getContextForInnerClass" />
               <link role="classConcept:3" targetNodeId="3.8835849473318892499" resolveInfo="ContextUtil" />
-              <node role="actualArgument:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="8835849473318892861" />
-              <node role="actualArgument:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="8835849473318892864" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="8835849473318892865">
-                <property name="value:3" value="true" />
+              <node role="actualArgument:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="5822086619725756054" />
+              <node role="actualArgument:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="5822086619725756057" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="5822086619725756058">
+                <property name="value:3" value="false" />
               </node>
             </node>
           </node>
@@ -92,21 +92,21 @@
         </node>
       </node>
     </node>
-    <node role="weavingMappingRule:2" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule:2" id="5822086619725756047">
-      <link role="applicableConcept:2" targetNodeId="1.7738261905749564104:1" resolveInfo="ExtractStaticInnerClassExpression" />
-      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="5822086619725756448">
-        <link role="template:2" targetNodeId="5822086619725756059" resolveInfo="weave_ExtractInnerStaticClass" />
+    <node role="weavingMappingRule:2" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule:2" id="1238251595163">
+      <link role="applicableConcept:2" targetNodeId="1.1238251434034:1" resolveInfo="ExtractToFieldExpression" />
+      <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.TemplateDeclarationReference:2" id="1238251676113">
+        <link role="template:2" targetNodeId="1238251630841" resolveInfo="weave_ExtractToField" />
       </node>
-      <node role="contextNodeQuery:2" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery:2" id="5822086619725756049">
-        <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5822086619725756050">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5822086619725756051">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="5822086619725756053">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.5822086619725755928" resolveInfo="getContextForInnerClass" />
+      <node role="contextNodeQuery:2" type="jetbrains.mps.lang.generator.structure.Weaving_MappingRule_ContextNodeQuery:2" id="1238251595165">
+        <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1238251595166">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8835849473318892858">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8835849473318892860">
+              <link role="baseMethodDeclaration:3" targetNodeId="3.8835849473318892505" resolveInfo="getContext" />
               <link role="classConcept:3" targetNodeId="3.8835849473318892499" resolveInfo="ContextUtil" />
-              <node role="actualArgument:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="5822086619725756054" />
-              <node role="actualArgument:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="5822086619725756057" />
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="5822086619725756058">
-                <property name="value:3" value="false" />
+              <node role="actualArgument:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="8835849473318892861" />
+              <node role="actualArgument:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="8835849473318892864" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="8835849473318892865">
+                <property name="value:3" value="true" />
               </node>
             </node>
           </node>
@@ -162,8 +162,17 @@
               </node>
             </node>
           </node>
-          <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.MapSrcNodeMacro:2" id="6824913256593945762">
-            <link role="mappingLabel:2" targetNodeId="6824913256593945760" />
+          <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.IfMacro:2" id="5042204713575387813">
+            <link role="mappingLabel:2" targetNodeId="6824913256593945760" resolveInfo="exprUsage" />
+            <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition:2" id="5042204713575387814">
+              <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5042204713575387815">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5042204713575390215">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="5042204713575390216">
+                    <property name="value:3" value="true" />
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>
