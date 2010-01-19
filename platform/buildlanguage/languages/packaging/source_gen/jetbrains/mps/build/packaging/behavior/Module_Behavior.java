@@ -20,6 +20,7 @@ import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -100,7 +101,7 @@ public class Module_Behavior {
     return pathHolder;
   }
 
-  public static List<SNode> call_getPathHolders_1213877515000(SNode thisNode, List<AbstractModule.StubPath> stubpath, boolean onlyUnderProjectBasedir) {
+  public static List<SNode> call_getPathHolders_1213877515000(SNode thisNode, List<String> stubpath, boolean onlyUnderProjectBasedir) {
     List<SNode> result = new ArrayList<SNode>();
     String projectBasedir = "";
     // search for project if needed 
@@ -111,22 +112,32 @@ public class Module_Behavior {
       }
     }
     // process classpath 
-    for (AbstractModule.StubPath cp : ListSequence.fromList(stubpath)) {
-      if (!(onlyUnderProjectBasedir) || cp.getPath().startsWith(projectBasedir)) {
-        ListSequence.fromList(result).addElement(Module_Behavior.call_getPathHolder_1239195000114(thisNode, cp.getPath()));
+    for (String cp : ListSequence.fromList(stubpath)) {
+      if (!(onlyUnderProjectBasedir) || cp.startsWith(projectBasedir)) {
+        ListSequence.fromList(result).addElement(Module_Behavior.call_getPathHolder_1239195000114(thisNode, cp));
       }
     }
     return result;
   }
 
   public static List<SNode> call_getClassPath_1213877515083(SNode thisNode) {
-    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getAllStubPaths(), true);
+    List<AbstractModule.StubPath> paths = ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getAllStubPaths();
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<AbstractModule.StubPath, String>() {
+      public String select(AbstractModule.StubPath it) {
+        return it.getPath();
+      }
+    }).toListSequence(), true);
   }
 
   public static List<SNode> call_getRuntimeClassPath_1213877515098(SNode thisNode) {
     IModule module = Module_Behavior.call_getModule_1213877515148(thisNode);
     if (module instanceof Language) {
-      return ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, ((Language) module).getRuntimeStubPaths(), true)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPath_1213877515083(thisNode))).toListSequence();
+      List<AbstractModule.StubPath> paths = ((Language) module).getRuntimeStubPaths();
+      return ListSequence.fromList(Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<AbstractModule.StubPath, String>() {
+        public String select(AbstractModule.StubPath it) {
+          return it.getPath();
+        }
+      }).toListSequence(), true)).subtract(ListSequence.fromList(Module_Behavior.call_getClassPath_1213877515083(thisNode))).toListSequence();
     }
     return new ArrayList<SNode>();
   }
@@ -152,7 +163,7 @@ public class Module_Behavior {
   }
 
   public static List<SNode> call_getSources_1216909568805(SNode thisNode) {
-    return null;// Module_Behavior.call_getPathHolders_1213877515000(thisNode, Module_Behavior.call_getModule_1213877515148(thisNode).getSourcePaths(), false);
+    return Module_Behavior.call_getPathHolders_1213877515000(thisNode, Module_Behavior.call_getModule_1213877515148(thisNode).getSourcePaths(), false);
   }
 
   public static List<String> getAllAvailableModules_1222444513017() {
