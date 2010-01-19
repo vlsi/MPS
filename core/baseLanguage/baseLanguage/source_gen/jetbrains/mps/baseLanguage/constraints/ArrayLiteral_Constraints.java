@@ -10,12 +10,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class ArrayLiteral_Constraints {
   public static boolean canBeAChild(final IOperationContext operationContext, final CanBeAChildContext _context) {
-    /*
-      if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
-        SNode variableDeclaration = SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
-        return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(variableDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType") && _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration", "initializer");
-      }
-    */
-    return true;
+    if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration")) {
+      SNode variableDeclaration = SNodeOperations.cast(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+      return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(variableDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType") && _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration", "initializer");
+    }
+    if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue")) {
+      return true;
+    }
+    return false;
   }
 }

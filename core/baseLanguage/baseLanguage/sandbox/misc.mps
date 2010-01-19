@@ -191,6 +191,13 @@
           </node>
         </node>
       </node>
+      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="6624237184121122601">
+        <link role="annotation:3" targetNodeId="150.~SuppressWarnings" resolveInfo="SuppressWarnings" />
+        <node role="value:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue:3" id="6624237184121136105">
+          <link role="key:3" targetNodeId="150.~SuppressWarnings.value()" resolveInfo="value" />
+          <node role="value:3" type="jetbrains.mps.baseLanguage.structure.ArrayLiteral:3" id="6624237184121136107" />
+        </node>
+      </node>
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="3293010995237625814">
