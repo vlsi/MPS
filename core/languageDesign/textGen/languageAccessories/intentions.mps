@@ -238,5 +238,58 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.intentions.structure.IntentionDeclaration:8" id="590757823759470534">
+    <property name="package:8" value="operation.append.part" />
+    <property name="name:8" value="SetUniqueNameInFile" />
+    <property name="isAvailableInChildNodes:8" value="true" />
+    <link role="forConcept:8" targetNodeId="1.6911933836258445304:11" resolveInfo="ReferenceAppendPart" />
+    <node role="descriptionFunction:8" type="jetbrains.mps.lang.intentions.structure.DescriptionBlock:8" id="590757823759470535">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="590757823759470536">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="590757823759470541">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression:3" id="590757823759470542">
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="590757823759470547">
+              <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="590757823759470546" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="590757823759470551">
+                <link role="property:16" targetNodeId="1.4809320654438971908:11" resolveInfo="uniqNameInFile" />
+              </node>
+            </node>
+            <node role="ifFalse:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="590757823759470554">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="590757823759470557">
+                <property name="value:3" value=" Unique Name in File" />
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="590757823759470553">
+                <property name="value:3" value="Set" />
+              </node>
+            </node>
+            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="590757823759470552">
+              <property name="value:3" value="Unset" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="executeFunction:8" type="jetbrains.mps.lang.intentions.structure.ExecuteBlock:8" id="590757823759470537">
+      <node role="body:8" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="590757823759470538">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="590757823759470558">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="590757823759470565">
+            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="590757823759470568">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="590757823759470571">
+                <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="590757823759470570" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="590757823759470575">
+                  <link role="property:16" targetNodeId="1.4809320654438971908:11" resolveInfo="uniqNameInFile" />
+                </node>
+              </node>
+            </node>
+            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="590757823759470560">
+              <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="590757823759470559" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="590757823759470564">
+                <link role="property:16" targetNodeId="1.4809320654438971908:11" resolveInfo="uniqNameInFile" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
