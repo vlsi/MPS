@@ -564,11 +564,6 @@
         </node>
       </node>
     </node>
-    <node role="settings" type="jetbrains.mps.lang.stubs.structure.ModelCreationSettings" id="5516999836374025633">
-      <node role="importedLanguage" type="jetbrains.mps.lang.stubs.structure.LanguageRef" id="5516999836374121329">
-        <property name="languageName" value="jetbrains.mps.baseLanguage" />
-      </node>
-    </node>
     <node role="methodDeclaration" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodDeclaration:0" id="5516999836375009819">
       <property name="name:0" value="createClassPathItem" />
       <node role="visibility:0" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="5516999836375009820" />
@@ -1091,6 +1086,11 @@
             <link role="variableDeclaration:3" targetNodeId="8818697550806759799" resolveInfo="result" />
           </node>
         </node>
+      </node>
+    </node>
+    <node role="settings" type="jetbrains.mps.lang.stubs.structure.ModelCreationSettings" id="562112407432412193">
+      <node role="importedLanguage" type="jetbrains.mps.lang.stubs.structure.LanguageRef" id="562112407432412197">
+        <property name="languageId" value="f3061a53-9226-4cc5-a443-f952ceaf5816" />
       </node>
     </node>
   </node>

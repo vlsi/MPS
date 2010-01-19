@@ -9,14 +9,31 @@
       <models>
         <modelRoot path="${language_descriptor}/generator/template" namespacePrefix="jetbrains.mps.lang.stubs.generator.template" />
       </models>
-      <external-templates />
+      <external-templates>
+        <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
+      </external-templates>
       <dependencies>
         <dependency reexport="false">0e7466c6-bdd9-48a0-921b-a0f4bac08259(jetbrains.mps.baseLanguage.classifiers#1205839057922)</dependency>
       </dependencies>
       <usedDevKits>
         <usedDevKit>2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)</usedDevKit>
       </usedDevKits>
-      <mapping-priorities />
+      <mapping-priorities>
+        <mapping-priority-rule kind="before_or_together">
+          <greater-priority-mapping>
+            <generator generatorUID="8af38322-6248-4d7b-ab72-98204ce8ea9c(jetbrains.mps.lang.stubs#444366895203565719)" />
+            <external-mapping>
+              <mapping-node modelUID="r:f2dd746b-c380-468c-b7b4-617bc6843aa2(jetbrains.mps.lang.stubs.generator.template.main@generator)" nodeID="444366895203565720" />
+            </external-mapping>
+          </greater-priority-mapping>
+          <lesser-priority-mapping>
+            <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
+            <external-mapping>
+              <all-local-mappings />
+            </external-mapping>
+          </lesser-priority-mapping>
+        </mapping-priority-rule>
+      </mapping-priorities>
     </generator>
   </generators>
   <classPath />

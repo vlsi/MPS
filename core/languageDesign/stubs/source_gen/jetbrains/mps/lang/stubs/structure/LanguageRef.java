@@ -10,18 +10,27 @@ import jetbrains.mps.project.GlobalScope;
 
 public class LanguageRef extends BaseConcept {
   public static final String concept = "jetbrains.mps.lang.stubs.structure.LanguageRef";
-  public static final String LANGUAGE_NAME = "languageName";
+  public static final String LANGUAGE_ID = "languageId";
+  public static final String LANGUAGE_FQ_NAME = "languageFqName";
 
   public LanguageRef(SNode node) {
     super(node);
   }
 
-  public String getLanguageName() {
-    return this.getProperty(LanguageRef.LANGUAGE_NAME);
+  public String getLanguageId() {
+    return this.getProperty(LanguageRef.LANGUAGE_ID);
   }
 
-  public void setLanguageName(String value) {
-    this.setProperty(LanguageRef.LANGUAGE_NAME, value);
+  public void setLanguageId(String value) {
+    this.setProperty(LanguageRef.LANGUAGE_ID, value);
+  }
+
+  public String getLanguageFqName() {
+    return this.getProperty(LanguageRef.LANGUAGE_FQ_NAME);
+  }
+
+  public void setLanguageFqName(String value) {
+    this.setProperty(LanguageRef.LANGUAGE_FQ_NAME, value);
   }
 
   public static LanguageRef newInstance(SModel sm, boolean init) {

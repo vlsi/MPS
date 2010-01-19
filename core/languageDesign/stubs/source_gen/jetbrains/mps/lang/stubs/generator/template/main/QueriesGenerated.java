@@ -7,6 +7,7 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.stubs.behavior.StubsCreatorDeclaration_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -18,6 +19,10 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_5516999836374766741(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SNodeOperations.isInstanceOf(ThisClassifierExpression_Behavior.call_getClassifier_1213877512819(_context.getNode()), "jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_562112407431589663(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "languageId");
   }
 
   public static Object propertyMacro_GetPropertyValue_3798212845297807980(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -50,6 +55,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_3798212845297904714(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "rootDescriptorsBlock", true), "body", true);
+  }
+
+  public static Iterable sourceNodesQuery_562112407431544948(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SLinkOperations.getTarget(_context.getNode(), "settings", true), "importedLanguage", true);
   }
 
   public static Iterable sourceNodesQuery_4009335194403290554(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

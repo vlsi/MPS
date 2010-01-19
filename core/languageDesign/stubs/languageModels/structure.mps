@@ -123,7 +123,11 @@
     <property name="package:0" value="Methods.CreationSettings" />
     <link role="extends:0" targetNodeId="2v.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="368569065472988630">
-      <property name="name:0" value="languageName" />
+      <property name="name:0" value="languageId" />
+      <link role="dataType:0" targetNodeId="2v.1082983041843:0" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="562112407431569980">
+      <property name="name:0" value="languageFqName" />
       <link role="dataType:0" targetNodeId="2v.1082983041843:0" resolveInfo="string" />
     </node>
   </node>
