@@ -28,11 +28,13 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <devkit namespace="2677cb18-f558-4e33-bc38-a5139cee06dc(jetbrains.mps.devkit.language-design)" />
-  <maxImportIndex value="3" />
+  <maxImportIndex value="4" />
   <import index="1" modelUID="r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.stubs(jetbrains.mps.stubs@java_stub)" version="-1" />
+  <import index="4" modelUID="f:java_stub#jetbrains.mps.smodel.persistence(jetbrains.mps.smodel.persistence@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="5516999836374121358">
     <property name="name:3" value="StubsCreatorType_SubtypeOf_ModelRootManager" />
+    <property name="package:3" value="Stubs" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5516999836374121359">
       <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5516999836374123404">
         <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="5516999836374123407">
@@ -43,6 +45,23 @@
       </node>
     </node>
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="5516999836374121361">
+      <property name="name:3" value="creatorType" />
+      <link role="concept:3" targetNodeId="1.5516999836374121342" resolveInfo="StubsCreatorType" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.SubtypingRule:3" id="5553449326502623316">
+    <property name="name:3" value="ModelManagerType_SubtypeOf_ModelRootManager" />
+    <property name="package:3" value="Stubs" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5553449326502623317">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5553449326502623318">
+        <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="5553449326502623319">
+          <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5553449326502640419">
+            <link role="classifier:3" targetNodeId="4.~AbstractModelRootManager" resolveInfo="AbstractModelRootManager" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="5553449326502623321">
       <property name="name:3" value="creatorType" />
       <link role="concept:3" targetNodeId="1.5516999836374121342" resolveInfo="StubsCreatorType" />
     </node>

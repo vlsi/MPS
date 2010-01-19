@@ -36,7 +36,7 @@
   <import index="3" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <visible index="2" modelUID="r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)" />
   <node type="jetbrains.mps.lang.constraints.structure.ConceptConstraints:8" id="562112407431569978">
-    <property name="package:8" value="Methods.CreationSettings" />
+    <property name="package:8" value="AbstractCreator.Methods.CreationSettings" />
     <link role="concept:8" targetNodeId="2v.368569065472982597" resolveInfo="LanguageRef" />
     <node role="property:8" type="jetbrains.mps.lang.constraints.structure.NodePropertyConstraint:8" id="562112407431569979">
       <link role="applicableProperty:8" targetNodeId="2v.562112407431569980" resolveInfo="languageFqName" />
