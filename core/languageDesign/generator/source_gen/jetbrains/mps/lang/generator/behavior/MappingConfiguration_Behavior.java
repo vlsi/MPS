@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -31,12 +32,12 @@ public class MappingConfiguration_Behavior {
   }
 
   public static void call_addMember_3166264919334415805(SNode thisNode, SNode newMember) {
-    if (SNodeOperations.isInstanceOf(newMember, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")) {
+    if ((SLinkOperations.getTarget(newMember, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true) != null)) {
       SNode ruleNode = SLinkOperations.addNewChild(thisNode, "rootMappingRule", "jetbrains.mps.lang.generator.structure.Root_MappingRule");
-      SLinkOperations.setTarget(ruleNode, "applicableConcept", SLinkOperations.getTarget(SNodeOperations.cast(newMember, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"), "applicableConcept", false), false);
+      SLinkOperations.setTarget(ruleNode, "applicableConcept", SLinkOperations.getTarget(SLinkOperations.getTarget(newMember, AttributesRolesUtil.childRoleFromAttributeRole("rootTemplateAnnotation"), true), "applicableConcept", false), false);
       SLinkOperations.setTarget(ruleNode, "template", SNodeOperations.cast(newMember, "jetbrains.mps.lang.core.structure.INamedConcept"), false);
     } else if (SNodeOperations.isInstanceOf(newMember, "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
-      SNode mappingRule = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", null);
+      SNode mappingRule = SLinkOperations.addNewChild(thisNode, "reductionMappingRule", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule");
       SLinkOperations.setTarget(mappingRule, "applicableConcept", SLinkOperations.getTarget(SNodeOperations.cast(newMember, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "applicableConcept", false), false);
       SNode templateRef = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", null);
       SLinkOperations.setTarget(templateRef, "template", SNodeOperations.cast(newMember, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), false);

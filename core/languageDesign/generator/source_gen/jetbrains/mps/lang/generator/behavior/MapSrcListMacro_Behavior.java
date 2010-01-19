@@ -15,7 +15,7 @@ public class MapSrcListMacro_Behavior {
       _Patterns.Pattern_1 pattern_1 = new _Patterns.Pattern_1();
       SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodesQuery", true)), pattern_1);
       if (coercedNode_1 != null) {
-        return pattern_1.PatternVar1;
+        return ((SNode) pattern_1.getFieldValue("PatternVar1"));
       } else {
       }
     }

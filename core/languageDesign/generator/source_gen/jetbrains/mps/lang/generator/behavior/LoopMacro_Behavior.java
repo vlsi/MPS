@@ -15,7 +15,7 @@ public class LoopMacro_Behavior {
       _Patterns.Pattern_2 pattern_2 = new _Patterns.Pattern_2();
       SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodesQuery", true)), pattern_2);
       if (coercedNode_2 != null) {
-        return pattern_2.PatternVar2;
+        return ((SNode) pattern_2.getFieldValue("PatternVar2"));
       } else {
       }
     }

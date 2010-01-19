@@ -16,7 +16,7 @@ public class CopySrcListMacro_Behavior {
       _Patterns.Pattern_0 pattern_0 = new _Patterns.Pattern_0();
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(queryType, pattern_0);
       if (coercedNode_0 != null) {
-        return pattern_0.PatternVar0;
+        return ((SNode) pattern_0.getFieldValue("PatternVar0"));
       } else {
       }
     }
