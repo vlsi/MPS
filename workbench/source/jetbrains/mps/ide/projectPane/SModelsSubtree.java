@@ -28,13 +28,17 @@ import java.util.List;
 
 public class SModelsSubtree {
   public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext) {
+    IModule module = operationContext.getModule();
+    assert module != null;
+    create(rootTreeNode, operationContext, module.getOwnModelDescriptors());
+  }
+
+  public static void create(MPSTreeNode rootTreeNode, IOperationContext operationContext, List<SModelDescriptor> models) {
     List<SModelDescriptor> regularModels = new ArrayList<SModelDescriptor>();
     List<SModelDescriptor> tests = new ArrayList<SModelDescriptor>();
     List<SModelDescriptor> stubs = new ArrayList<SModelDescriptor>();
 
-    IModule module = operationContext.getModule();
-    assert module != null;
-    for (SModelDescriptor modelDescriptor : module.getOwnModelDescriptors()) {
+    for (SModelDescriptor modelDescriptor : models) {
       if (ProjectModels.isProjectModel(modelDescriptor.getSModelReference())) continue;
 
       String stereotype = modelDescriptor.getStereotype();
