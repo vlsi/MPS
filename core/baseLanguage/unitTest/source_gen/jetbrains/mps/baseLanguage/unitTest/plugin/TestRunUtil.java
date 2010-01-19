@@ -17,6 +17,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class TestRunUtil {
   public TestRunUtil() {
@@ -115,6 +117,59 @@ public class TestRunUtil {
     }
     if (collection != null) {
       ListSequence.fromList(result).addSequence(ListSequence.fromList(collection));
+    }
+    return result;
+  }
+
+  public static boolean validateMethods(String simpleNode, List<String> listNode, String simpleMethod, List<String> listMethod) {
+    List<String> nodes = getValues(simpleNode, listNode);
+    List<String> methods = getValues(simpleMethod, listMethod);
+    if (ListSequence.fromList(nodes).count() != ListSequence.fromList(methods).count()) {
+      return false;
+    }
+    for (int i = 0; i < ListSequence.fromList(nodes).count(); i++) {
+      if ((getTestMethod(ListSequence.fromList(nodes).getElement(i), ListSequence.fromList(methods).getElement(i)) == null)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  public static boolean validateNodes(String simple, List<String> collection) {
+    List<String> nodes = getValues(simple, collection);
+    for (String node : nodes) {
+      if ((getTestNode(node) == null)) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  public static boolean validateModel(String model) {
+    return ListSequence.fromList(getModelTests(getModel(model))).isNotEmpty();
+  }
+
+  public static boolean validateModule(String module) {
+    return ListSequence.fromList(getModuleTests(module)).isNotEmpty();
+  }
+
+  public static List<SNode> excludeIgnored(List<SNode> methods) {
+    List<SNode> result = new ArrayList<SNode>();
+    for (SNode method : methods) {
+      if (!(SNodeOperations.isInstanceOf(method, "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod"))) {
+        ListSequence.fromList(result).addElement(method);
+        continue;
+      }
+      boolean isIgnored = false;
+      for (SNode annotation : SLinkOperations.getTargets(SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.unitTest.structure.TestMethod"), "annotation", true)) {
+        if (SLinkOperations.getTarget(annotation, "annotation", false).equals(SNodeOperations.getNode("f:java_stub#org.junit(org.junit@java_stub)", "~Ignore"))) {
+          isIgnored = true;
+          break;
+        }
+      }
+      if (!(isIgnored)) {
+        ListSequence.fromList(result).addElement(method);
+      }
     }
     return result;
   }

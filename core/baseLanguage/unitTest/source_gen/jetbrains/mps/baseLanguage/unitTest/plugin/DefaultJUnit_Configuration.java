@@ -72,18 +72,26 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
             if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.METHOD) {
               if (ListSequence.fromList(TestRunUtil.getValues(DefaultJUnit_Configuration.this.getStateObject().method, DefaultJUnit_Configuration.this.getStateObject().methods)).isEmpty()) {
                 errorReport.value = "methods list is empty";
+              } else if (!(TestRunUtil.validateMethods(DefaultJUnit_Configuration.this.getStateObject().node, DefaultJUnit_Configuration.this.getStateObject().nodes, DefaultJUnit_Configuration.this.getStateObject().method, DefaultJUnit_Configuration.this.getStateObject().methods))) {
+                errorReport.value = "methods is not valid";
               }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.NODE) {
               if (ListSequence.fromList(TestRunUtil.getValues(DefaultJUnit_Configuration.this.getStateObject().node, DefaultJUnit_Configuration.this.getStateObject().nodes)).isEmpty()) {
                 errorReport.value = "classes list is empty";
+              } else if (!(TestRunUtil.validateNodes(DefaultJUnit_Configuration.this.getStateObject().node, DefaultJUnit_Configuration.this.getStateObject().nodes))) {
+                errorReport.value = "nodes is not valid";
               }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODEL) {
               if (DefaultJUnit_Configuration.this.getStateObject().model == null) {
                 errorReport.value = "model is not selected or does not exist";
+              } else if (!(TestRunUtil.validateModel(DefaultJUnit_Configuration.this.getStateObject().model))) {
+                errorReport.value = "model is not valid";
               }
             } else if (DefaultJUnit_Configuration.this.getStateObject().type == JUnitRunTypes.MODULE) {
               if (DefaultJUnit_Configuration.this.getStateObject().module == null) {
                 errorReport.value = "module is not selected or does not exist";
+              } else if (TestRunUtil.validateModule(DefaultJUnit_Configuration.this.getStateObject().module)) {
+                errorReport.value = "module is not valid";
               }
             }
           }
@@ -158,7 +166,7 @@ public class DefaultJUnit_Configuration extends BaseRunConfig {
                   }
                 }
                 ListSequence.fromList(all).addSequence(ListSequence.fromList(tests));
-                ListSequence.fromList(all).addSequence(ListSequence.fromList(methods));
+                ListSequence.fromList(all).addSequence(ListSequence.fromList(TestRunUtil.excludeIgnored(methods)));
               }
             }
           });

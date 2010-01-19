@@ -64,7 +64,7 @@ public class TestRunState {
     for (SNode testCase : ListSequence.fromList(testCases)) {
       List<SNode> testMethods = new ArrayList<SNode>();
       MapSequence.fromMap(this.map).put(testCase, testMethods);
-      for (SNode testMethod : ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(testCase))) {
+      for (SNode testMethod : ListSequence.fromList(TestRunUtil.excludeIgnored(ITestCase_Behavior.call_getTestMethods_2148145109766218395(testCase)))) {
         ListSequence.fromList(testMethods).addElement(testMethod);
       }
     }
