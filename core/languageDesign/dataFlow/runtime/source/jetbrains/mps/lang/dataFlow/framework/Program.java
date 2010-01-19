@@ -20,6 +20,7 @@ import jetbrains.mps.lang.dataFlow.framework.instructions.*;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachabilityAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.InitializedVariablesAnalyzer;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.LivenessAnalyzer;
+import jetbrains.mps.lang.dataFlow.framework.analyzers.MayBeInitializedVariablesAnalyzer;
 import jetbrains.mps.lang.dataFlow.DataflowBuilderException;
 
 import java.util.*;
@@ -252,7 +253,7 @@ public class Program {
   }
 
   public boolean isInitializedRewritten(WriteInstruction instruction) {
-    AnalysisResult<VarSet> analysisResult = analyze(new InitializedVariablesAnalyzer(instruction));
+    AnalysisResult<VarSet> analysisResult = analyze(new MayBeInitializedVariablesAnalyzer(instruction));
     Set<ReadInstruction> result = new HashSet<ReadInstruction>();
     VarSet initializedVars = analysisResult.get(instruction);
     return initializedVars.contains(instruction.getVariableIndex());
