@@ -164,6 +164,11 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
       super("accessories");
       setIcon(Icons.LIB_ICON);
     }
+
+    @Override
+     public ActionGroup getActionGroup() {
+      return ActionUtils.getGroup(ProjectPaneActionGroups.PROJECT_PANE_ACCESSORIES_ACTIONS);
+     }
   }
 
   public class SModelGroupTreeNode extends NamespaceTextNode implements StereotypeProvider {
