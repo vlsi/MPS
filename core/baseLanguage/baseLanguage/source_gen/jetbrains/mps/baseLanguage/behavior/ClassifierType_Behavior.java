@@ -102,7 +102,7 @@ public class ClassifierType_Behavior {
         {
           SNode typeParam;
           SNode myParam;
-          Iterator<SNode> typeParam_iterator = ListSequence.fromList(pattern_0.PatternVar0).iterator();
+          Iterator<SNode> typeParam_iterator = ListSequence.fromList(((List<SNode>) pattern_0.getFieldValue("PatternVar0"))).iterator();
           Iterator<SNode> myParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).iterator();
           while (true) {
             if (!(typeParam_iterator.hasNext())) {

@@ -22216,5 +22216,53 @@
       <link role="concept:3" targetNodeId="1.1241540912639:3" resolveInfo="ConstructorInvocationStatement" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="4914488904501091779">
+    <property name="name:3" value="check_FinalVariableReferenceNotAssigned" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4914488904501091780">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4914488904501097568">
+        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4914488904501097569">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4914488904501129550">
+            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4914488904501129551">
+              <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="4914488904501129562">
+                <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4914488904501129565">
+                  <property name="value:3" value="assignment to a final variable" />
+                </node>
+                <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4914488904501129566">
+                  <link role="applicableNode:3" targetNodeId="4914488904501091781" resolveInfo="variableReference" />
+                </node>
+              </node>
+            </node>
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="4914488904501129560">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4914488904501129555">
+                <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4914488904501129554">
+                  <link role="applicableNode:3" targetNodeId="4914488904501091781" resolveInfo="variableReference" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="4914488904501129559">
+                  <link role="baseMethodDeclaration:16" targetNodeId="37.5536314641534918560" resolveInfo="isUninitializedOrBad" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4914488904501129545">
+          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4914488904501129540">
+            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4914488904501129539">
+              <link role="applicableNode:3" targetNodeId="4914488904501091781" resolveInfo="variableReference" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4914488904501129544">
+              <link role="link:16" targetNodeId="1.1068581517664:3" />
+            </node>
+          </node>
+          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="4914488904501129549">
+            <link role="property:16" targetNodeId="1.1176718929932:3" resolveInfo="isFinal" />
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="4914488904501091781">
+      <property name="name:3" value="variableReference" />
+      <link role="concept:3" targetNodeId="1.1068498886296:3" resolveInfo="VariableReference" />
+    </node>
+  </node>
 </model>
 
