@@ -9,7 +9,6 @@ public class DFABuilders extends DataFlowBuilders {
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.baseLanguage.structure.IfStatement", new IfStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.WhileStatement", new WhileStatement_DataFlow());
-    manager.register("jetbrains.mps.baseLanguage.structure.Statement", new Statement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.Expression", new Expression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.ExpressionStatement", new ExpressionStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.BlockStatement", new BlockStatement_DataFlow());
@@ -64,9 +63,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.SubstringExpression", new SubstringExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.BitwiseNotExpression", new BitwiseNotExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.CommentedStatementsBlock", new CommentedStatementsBlock_DataFlow());
-    manager.register("jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation", new SuperConstructorInvocation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.TupleExpression", new TupleExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.AbstractUnaryNumberOperation", new AbstractUnaryNumberOperation_DataFlow());
-    manager.register("jetbrains.mps.baseLanguage.structure.ConstructorInvocationStatement", new ConstructorInvocationStatement_DataFlow());
   }
 }

@@ -122,31 +122,43 @@ import java.util.*;
   // Utils
   //
 
-  private static void collectImplementedAndExtended(AbstractConceptDeclaration cd, Set<AbstractConceptDeclaration> result) {
-    if (cd == null) return;
-    if (result.contains(cd)) return;
-    result.add(cd);
+  private static void collectImplementedAndExtended(AbstractConceptDeclaration top, Set<AbstractConceptDeclaration> result) {
+    Set<AbstractConceptDeclaration> frontier = new LinkedHashSet<AbstractConceptDeclaration>();
+    Set<AbstractConceptDeclaration> newFrontier = new LinkedHashSet<AbstractConceptDeclaration>();
+    frontier.add(top);
+    result.add(top);
+    while (!frontier.isEmpty()) {
+      for (AbstractConceptDeclaration cd : frontier) {
+        if (cd instanceof InterfaceConceptDeclaration) {
+          InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) cd;
+          for (InterfaceConceptReference i : icd.getExtendses()) {
+            InterfaceConceptDeclaration intfc = i.getIntfc();
+            if (intfc != null && !result.contains(intfc)) {
+              newFrontier.add(intfc);
+              result.add(intfc);
+            }
+          }
+        }
 
-    if (cd instanceof InterfaceConceptDeclaration) {
-      InterfaceConceptDeclaration icd = (InterfaceConceptDeclaration) cd;
-      for (InterfaceConceptReference i : icd.getExtendses()) {
-        if (i.getIntfc() != null) {
-          collectImplementedAndExtended(i.getIntfc(), result);
+        if (cd instanceof ConceptDeclaration) {
+          ConceptDeclaration c = (ConceptDeclaration) cd;
+          ConceptDeclaration anExtends = c.getExtends();
+          if (anExtends != null && !result.contains(anExtends)) {
+            newFrontier.add(anExtends);
+            result.add(anExtends);
+          }
+
+          for (InterfaceConceptReference i : c.getImplementses()) {
+            InterfaceConceptDeclaration intfc = i.getIntfc();
+            if (intfc != null) {
+              newFrontier.add(intfc);
+              result.add(intfc);
+            }
+          }
         }
       }
-    }
-
-    if (cd instanceof ConceptDeclaration) {
-      ConceptDeclaration c = (ConceptDeclaration) cd;
-      if (c.getExtends() != null) {
-        collectImplementedAndExtended(c.getExtends(), result);
-      }
-
-      for (InterfaceConceptReference i : c.getImplementses()) {
-        if (i.getIntfc() != null) {
-          collectImplementedAndExtended(i.getIntfc(), result);
-        }
-      }
+      frontier = newFrontier;
+      newFrontier = new LinkedHashSet<AbstractConceptDeclaration>();
     }
   }
 

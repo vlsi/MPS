@@ -271,12 +271,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1206459382666">
-    <link role="conceptDeclaration:0" targetNodeId="1.1068580123157:3" resolveInfo="Statement" />
-    <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1206459382667">
-      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1206459382668" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1206459403819">
     <link role="conceptDeclaration:0" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
     <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1206459403820">
@@ -2264,32 +2258,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1236181246810">
-    <property name="package:0" value="classifier" />
-    <link role="conceptDeclaration:0" targetNodeId="1.1070475587102:3" resolveInfo="SuperConstructorInvocation" />
-    <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1236181246811">
-      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1236181246812">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="1236181251208">
-          <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="1236181251209">
-            <property name="name:7" value="arg" />
-          </node>
-          <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1236181261110">
-            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1236181260259" />
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="1241539644609">
-              <link role="link:16" targetNodeId="1.1068499141038:3" />
-            </node>
-          </node>
-          <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1236181251211">
-            <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="1236181266467">
-              <node role="codeFor:0" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1236181267879">
-                <link role="variable:7" targetNodeId="1236181251209" resolveInfo="arg" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1237402838834">
     <property name="package:0" value="tuples" />
     <link role="conceptDeclaration:0" targetNodeId="1.1233829069870:3" resolveInfo="TupleExpression" />
@@ -2330,35 +2298,6 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitNopStatement:0" id="1239714982018" />
-      </node>
-    </node>
-  </node>
-  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="3218262717396639703">
-    <property name="package:0" value="classifier" />
-    <link role="conceptDeclaration:0" targetNodeId="1.1241540912639:3" resolveInfo="ConstructorInvocationStatement" />
-    <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="3218262717396639704">
-      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3218262717396639705">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="3218262717396639706">
-          <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3218262717396639707">
-            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="3218262717396639708" />
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="3218262717396661077">
-              <link role="link:16" targetNodeId="1.1068499141038:3" />
-            </node>
-          </node>
-          <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="3218262717396639710">
-            <property name="name:3" value="arg" />
-            <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="3218262717396639711">
-              <link role="concept:16" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
-            </node>
-          </node>
-          <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3218262717396639712">
-            <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="3218262717396639713">
-              <node role="codeFor:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="3218262717396639714">
-                <link role="variableDeclaration:3" targetNodeId="3218262717396639710" resolveInfo="arg" />
-              </node>
-            </node>
-          </node>
-        </node>
       </node>
     </node>
   </node>
