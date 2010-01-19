@@ -37,7 +37,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="9" />
+  <maxImportIndex value="11" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
@@ -46,6 +46,8 @@
   <import index="7" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="8" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="9" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <import index="10" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
+  <import index="11" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="1213877228937">
     <property name="package" value="queryFunctions" />
     <link role="concept" targetNodeId="1.1177327570013:23" resolveInfo="QueryFunction_Substitute_Handler" />
@@ -2517,6 +2519,39 @@
             <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="6261424444345978380">
               <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6261424444345978384">
                 <link role="variableDeclaration:3" targetNodeId="6261424444345978370" resolveInfo="pastePostProcessor" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="590757823759260315">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="590757823759260322">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="590757823759260317">
+              <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="590757823759260316" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="590757823759260321">
+                <link role="property:16" targetNodeId="9.1169194664001:0" resolveInfo="name" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation:16" id="590757823759260326">
+              <node role="value:16" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="590757823759260413">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="590757823759260416">
+                  <property name="value:3" value="_CopyPasteHandlers" />
+                </node>
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="590757823759260408">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="590757823759260396">
+                    <link role="baseMethodDeclaration:3" targetNodeId="10.1237995590835" resolveInfo="getDeclaringLanguage" />
+                    <link role="classConcept:3" targetNodeId="10.1237995590703" resolveInfo="SModelUtil" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="590757823759260404">
+                      <link role="variableDeclaration:3" targetNodeId="6261424444345978347" resolveInfo="baseConcept" />
+                    </node>
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="590757823759260407">
+                      <link role="baseMethodDeclaration:3" targetNodeId="11.~GlobalScope.getInstance():jetbrains.mps.project.GlobalScope" resolveInfo="getInstance" />
+                      <link role="classConcept:3" targetNodeId="11.~GlobalScope" resolveInfo="GlobalScope" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="590757823759260412">
+                    <link role="baseMethodDeclaration:3" targetNodeId="3.~Language.getShortName():java.lang.String" resolveInfo="getShortName" />
+                  </node>
+                </node>
               </node>
             </node>
           </node>

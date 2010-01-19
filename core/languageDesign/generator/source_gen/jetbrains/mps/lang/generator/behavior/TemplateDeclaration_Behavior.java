@@ -4,12 +4,9 @@ package jetbrains.mps.lang.generator.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class TemplateDeclaration_Behavior {
   private static Class[] PARAMETERS_8952337903384729127 = {SNode.class};
@@ -22,19 +19,9 @@ public class TemplateDeclaration_Behavior {
     return SLinkOperations.getTarget(thisNode, "applicableConcept", false);
   }
 
-  public static void virtual_setBaseConcept_6261424444345963020(final SNode thisNode, final SNode baseConcept) {
+  public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
     SLinkOperations.setTarget(thisNode, "applicableConcept", baseConcept, false);
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        SPropertyOperations.set(thisNode, "name", "reduce_" + SPropertyOperations.getString(baseConcept, "name"));
-        SNode mapping = ListSequence.fromList(SModelOperations.getRoots(SNodeOperations.getModel(thisNode), "jetbrains.mps.lang.generator.structure.MappingConfiguration")).first();
-        SNode ruleNode;
-        ruleNode = SLinkOperations.addNewChild(mapping, "reductionMappingRule", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule");
-        SLinkOperations.setTarget(ruleNode, "applicableConcept", baseConcept, false);
-        SNode tmplRef = SLinkOperations.setNewChild(ruleNode, "ruleConsequence", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
-        SLinkOperations.setTarget(tmplRef, "template", thisNode, false);
-      }
-    });
+    SPropertyOperations.set(thisNode, "name", "reduce_" + SPropertyOperations.getString(baseConcept, "name"));
   }
 
   public static SNode call_getBaseConcept_8952337903384729127(SNode thisNode) {
