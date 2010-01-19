@@ -139,8 +139,8 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
 
   boolean needReloading();
 
-  boolean isClassPathExcluded(String path);
+  boolean isStubPathExcluded(String path);
 
-  boolean excludeClassPath(String path, boolean b);
+  boolean setStubPathExcluded(String path, boolean b);
 
 }

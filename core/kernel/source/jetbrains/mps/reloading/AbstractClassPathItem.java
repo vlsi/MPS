@@ -72,7 +72,6 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
       currentItem = new JarFileClassPathItem(path);
     }
 
-
     return currentItem;
   }
 }

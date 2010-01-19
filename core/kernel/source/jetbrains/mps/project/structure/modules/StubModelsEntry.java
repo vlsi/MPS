@@ -16,6 +16,7 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.util.EqualUtil;
 
 public class StubModelsEntry {
   public static final String PATH = "path";
@@ -48,6 +49,24 @@ public class StubModelsEntry {
 
   public void setIncludedInVCS(boolean includedInVCS) {
     myIncludedInVCS = includedInVCS;
+  }
+
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+
+    StubModelsEntry that = (StubModelsEntry) o;
+
+    if (!EqualUtil.equals(myManager, that.myManager)) return false;
+    if (!EqualUtil.equals(myPath, that.myPath)) return false;
+
+    return true;
+  }
+
+  public int hashCode() {
+    int result = myPath != null ? myPath.hashCode() : 0;
+    result = 31 * result + (myManager != null ? myManager.hashCode() : 0);
+    return result;
   }
 
   public StubModelsEntry getCopy() {

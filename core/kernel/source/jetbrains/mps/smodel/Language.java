@@ -33,7 +33,10 @@ import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.refactoring.framework.AbstractLoggableRefactoring;
 import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.OldRefactoringAdapter;
-import jetbrains.mps.reloading.*;
+import jetbrains.mps.reloading.AbstractClassPathItem;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.NameUtil;
@@ -60,7 +63,7 @@ public class Language extends AbstractModule {
   private List<Generator> myGenerators = new ArrayList<Generator>();
 
   private HashMap<String, AbstractConceptDeclaration> myNameToConceptCache = new HashMap<String, AbstractConceptDeclaration>();
-  private IClassPathItem myLanguageRuntimeClasspath;
+  private IClassPathItem myLanguageRuntimeClasspathCache;
 
   private CachesInvalidator myCachesInvalidator;
 
@@ -109,45 +112,10 @@ public class Language extends AbstractModule {
     }
 
     rereadModels();
-    updateDescriptorClasspath();
+    updatePackagedDescriptorClasspath();
     updateLanguageRuntimeClassPathItem();
     updateClassPath();
     revalidateGenerators();
-  }
-
-  public List<String> getLanguageRuntimeClassPathItems() {
-    List<String> result = new ArrayList<String>();
-    for (ClassPathEntry entry : myLanguageDescriptor.getRuntimeClassPaths()) {
-      result.add(entry.getPath());
-    }
-    return result;
-  }
-
-  public IClassPathItem getLanguageRuntimeClasspath() {
-    return myLanguageRuntimeClasspath;
-  }
-
-  private void updateLanguageRuntimeClassPathItem() {
-    CompositeClassPathItem result = new CompositeClassPathItem();
-    for (String s : getLanguageRuntimeClassPathItems()) {
-      try {
-        IFile file = FileSystem.getFile(s);
-        if (!file.exists()) {
-          LOG.error("Can't find " + s);
-          continue;
-        }
-
-        if (file.isFile()) {
-          result.add(new JarFileClassPathItem(s));
-        } else {
-          result.add(new FileClassPathItem(s));
-        }
-      } catch (IOException e) {
-        LOG.error(e);
-      }
-    }
-
-    myLanguageRuntimeClasspath = result;
   }
 
   @Override
@@ -282,33 +250,6 @@ public class Language extends AbstractModule {
     }
   }
 
-  @Override
-  protected void updateDescriptorClasspath() {
-    super.updateDescriptorClasspath();
-
-    if (!isPackaged()) return;
-    Set<String> visited = new HashSet<String>();
-    List<ClassPathEntry> remove = new ArrayList<ClassPathEntry>();
-    for (ClassPathEntry e : myLanguageDescriptor.getRuntimeClassPaths()) {
-      IFile file = FileSystem.getFile(e.getPath());
-      if (!file.exists() || file.isDirectory() || (visited.contains(e.getPath()))) {
-        remove.add(e);
-      }
-      visited.add(e.getPath());
-    }
-    myLanguageDescriptor.getRuntimeClassPaths().removeAll(remove);
-
-    File parent = getBundleHome().getParentFile();
-    String name = getModuleFqName() + "." + RUNTIME_JAR_SUFFIX;
-    File file = new File(parent, name);
-
-    if (file.exists() && !visited.contains(file.getPath())) {
-      ClassPathEntry runtimeJar = new ClassPathEntry();
-      myLanguageDescriptor.getRuntimeClassPaths().add(runtimeJar);
-      runtimeJar.setPath(file.getPath());
-    }
-  }
-
   public void onModuleLoad() {
     super.onModuleLoad();
 
@@ -420,10 +361,6 @@ public class Language extends AbstractModule {
 
   public LanguageDescriptor getLanguageDescriptor() {
     return myLanguageDescriptor;
-  }
-
-  protected boolean areJavaStubsEnabled() {
-    return getLanguageDescriptor().getEnableJavaStubs();
   }
 
   public String getGeneratedPluginClassLongName() {
@@ -819,6 +756,130 @@ public class Language extends AbstractModule {
     modelRoot.setPrefix(getNamespace());
     return modelRoot;
   }
+
+  //-----------stubs--------------
+
+  protected boolean areJavaStubsEnabled() {
+    return getLanguageDescriptor().getEnableJavaStubs();
+  }
+
+  public List<StubPath> getRuntimeStubPaths() {
+    List<StubPath> result = new ArrayList<StubPath>();
+
+    for (StubModelsEntry me : getRuntimeModelsEntries()) {
+      result.add(new StubPath(me.getPath(), me.getManager()));
+    }
+
+    return result;
+  }
+
+  public IClassPathItem getLanguageRuntimeClasspath() {
+    return myLanguageRuntimeClasspathCache;
+  }
+
+  private void updateLanguageRuntimeClassPathItem() {
+    CompositeClassPathItem result = new CompositeClassPathItem();
+    for (StubModelsEntry entry : getRuntimeModelsEntries()) {
+      String s = entry.getPath();
+      try {
+        IFile file = FileSystem.getFile(s);
+        if (!file.exists()) {
+          LOG.error("Can't find " + s);
+          continue;
+        }
+
+        result.add(AbstractClassPathItem.createFromPath(s, this));
+      } catch (IOException e) {
+        LOG.error(e);
+      }
+    }
+
+    myLanguageRuntimeClasspathCache = result;
+  }
+
+  //todo check this code. Wy not to do it where we add jars?
+  //todo[CP] rewrite when classpaths are removed
+  @Override
+  protected void updatePackagedDescriptorClasspath() {
+    super.updatePackagedDescriptorClasspath();
+
+    if (!isPackaged()) return;
+
+    LanguageDescriptor descriptor = getLanguageDescriptor();
+
+    File bundleParent = getBundleHome().getParentFile();
+    String jarName = getModuleFqName() + "." + RUNTIME_JAR_SUFFIX;
+    File jarFile = new File(bundleParent, jarName);
+    boolean addJar = false;
+
+    if (descriptor != null) {
+      Set<String> visited = new HashSet<String>();
+      List<ClassPathEntry> remove = new ArrayList<ClassPathEntry>();
+      for (ClassPathEntry e : myLanguageDescriptor.getRuntimeClassPaths()) {
+        IFile file = FileSystem.getFile(e.getPath());
+        if (!file.exists() || file.isDirectory() || (visited.contains(e.getPath()))) {
+          remove.add(e);
+        }
+        visited.add(e.getPath());
+      }
+      myLanguageDescriptor.getRuntimeClassPaths().removeAll(remove);
+
+
+      if (jarFile.exists() && !visited.contains(jarFile.getPath())) {
+        addJar = true;
+      }
+    }
+
+    if (descriptor != null) {
+      Set<StubModelsEntry> visited = new HashSet<StubModelsEntry>();
+      List<StubModelsEntry> remove = new ArrayList<StubModelsEntry>();
+      for (StubModelsEntry entry : descriptor.getRuntimeStubModels()) {
+        IFile cp = FileSystem.getFile(entry.getPath());
+        if ((!cp.exists()) || cp.isDirectory()) {
+          remove.add(entry);
+        }
+
+        for (StubModelsEntry ve : visited) {
+          boolean eqManager = EqualUtil.equals(ve.getManager(), entry.getManager());
+          boolean eqPath = EqualUtil.equals(cp.getAbsolutePath(), ve.getPath());
+          if (eqManager && eqPath) {
+            remove.add(entry);
+            break;
+          }
+        }
+        visited.add(entry);
+      }
+      descriptor.getRuntimeStubModels().removeAll(remove);
+
+      boolean containsJar = false;
+      for (StubModelsEntry ve : visited) {
+        boolean eqPath = EqualUtil.equals(jarFile.getPath(), ve.getPath());
+        if (eqPath) {
+          containsJar = true;
+          break;
+        }
+      }
+      if (jarFile.exists() && !containsJar) {
+        addJar = true;
+      }
+    }
+
+    if (addJar) {
+      ClassPathEntry runtimeJar = new ClassPathEntry();
+      myLanguageDescriptor.getRuntimeClassPaths().add(runtimeJar);
+      runtimeJar.setPath(jarFile.getPath());
+    }
+  }
+
+  //todo[CP] remove this method when got rid of classpaths
+  protected List<StubModelsEntry> getRuntimeModelsEntries() {
+    List<StubModelsEntry> sm = myLanguageDescriptor.getRuntimeStubModels();
+    List<ClassPathEntry> cp = myLanguageDescriptor.getRuntimeClassPaths();
+
+    return toStubModelEntries(cp, sm);
+  }
+
+  //-----------stubs--------------
 
   private static LanguageDescriptor createNewDescriptor(String languageNamespace, IFile descriptorFile) {
     LanguageDescriptor languageDescriptor = new LanguageDescriptor();

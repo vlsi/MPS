@@ -20,8 +20,6 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
-import jetbrains.mps.cleanup.CleanupListener;
-import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.reloading.CompositeClassPathItem;
@@ -30,9 +28,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
-import jetbrains.mps.smodel.ModuleRepositoryListener;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -139,7 +135,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       // should exclude classPath
       for (IModule m : myClassPathIndex.get(classPathFile)) {
         if (m == module) continue;
-        m.excludeClassPath(classPathFile, true);
+        m.setStubPathExcluded(classPathFile, true);
       }
       myExcludedClassPath.add(classPathFile);
       myIsChanged = true;
@@ -147,7 +143,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       // should include classPath
       for (IModule m : myClassPathIndex.get(classPathFile)) {
         if (m == module) continue;
-        m.excludeClassPath(classPathFile, false);
+        m.setStubPathExcluded(classPathFile, false);
       }
       myExcludedClassPath.remove(classPathFile);
       myIsChanged = true;
@@ -210,7 +206,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
       // we only need to update this module if classPath is included in other modules
       ArrayList<IModule> modules = myClassPathIndex.get(classPathFile);
       if (!myExcludedClassPath.contains(classPathFile) && (modules != null) && !modules.isEmpty()) {
-        module.excludeClassPath(classPathFile, false);
+        module.setStubPathExcluded(classPathFile, false);
         modules.add(module);
       } else if (modules == null) {
         putModuleInIndex(module, classPathFile);
@@ -228,7 +224,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
         // we only need update all existing modules if the classPath is excluded
         if (myExcludedClassPath.remove(classPathFile)) {
           for (IModule m : modules) {
-            m.excludeClassPath(classPathFile, false);
+            m.setStubPathExcluded(classPathFile, false);
           }
         }
         modules.add(module);
@@ -237,7 +233,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   }
 
   private boolean isClassPathExcludedInModule(IModule module, String classPathFile) {
-    return module.isClassPathExcluded(classPathFile.replace("/", File.separator));
+    return module.isStubPathExcluded(classPathFile.replace("/", File.separator));
   }
 
   private void putModuleInIndex(IModule module, String classPathFile) {

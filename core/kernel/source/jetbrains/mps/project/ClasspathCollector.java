@@ -16,7 +16,6 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.lang.core.structure.Core_Language;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -25,8 +24,6 @@ import jetbrains.mps.smodel.Language;
 import java.util.*;
 
 public class ClasspathCollector {
-  private static final Logger LOG = Logger.getLogger(ClasspathCollector.class);
-
   private Set<IModule> myStart;
   private Set<IModule> myVisited = new HashSet<IModule>();
   private Set<IClassPathItem> myResult = new LinkedHashSet<IClassPathItem>();

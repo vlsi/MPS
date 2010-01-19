@@ -30,15 +30,10 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
-import jetbrains.mps.debug.BLDebugInfoCache;
-import jetbrains.mps.debug.DebugInfo;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.ClassFile;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.jetbrains.annotations.NotNull;
-import org.apache.commons.lang.ObjectUtils;
 
 import java.io.File;
 import java.io.FileOutputStream;
@@ -267,7 +262,7 @@ public class ModuleMaker {
   }
 
   private IClassPathItem computeDependenciesClassPath(Set<IModule> modules) {
-    return AbstractModule.getDependenciesClasspath(modules);
+    return AbstractModule.getDependenciesClasspath(modules, true, true);
   }
 
   private Set<IModule> getModulesToCompile(Set<IModule> modules) {
