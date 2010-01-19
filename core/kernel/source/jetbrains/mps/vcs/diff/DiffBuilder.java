@@ -116,12 +116,21 @@ public class DiffBuilder {
 
   private void collectLanguageAspects() {
     List<ImportElement> oldImportElements = myOldModel.getLanguageAspectModelElements();
-    List<ImportElement> newImportElements = myNewModel.getLanguageAspectModelElements();
 
-    newImportElements.removeAll(oldImportElements);
+    for (ImportElement importElement : myNewModel.getLanguageAspectModelElements()) {
+      boolean alreadyPresent = false;
 
-    for (ImportElement el : newImportElements) {
-      myChanges.add(new AddLanguageAspectChange(el));
+      for (ImportElement oldImportElement : oldImportElements) {
+        if (oldImportElement.getModelReference().equals(importElement.getModelReference())
+            && oldImportElement.getReferenceID() == importElement.getReferenceID()) {
+          alreadyPresent = true;
+          break;
+        }
+      }
+
+      if (!alreadyPresent) {
+        myChanges.add(new AddLanguageAspectChange(importElement));
+      }
     }
   }
 

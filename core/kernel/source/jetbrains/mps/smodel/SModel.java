@@ -1288,8 +1288,7 @@ public class SModel implements Iterable<SNode> {
     myRefactoringHistory = refactoringHistory;
   }
 
-  /*package*/
-  public static class ImportElement {  //todo: used version ignored in equality relationship. seems to be strange. so why? discussion needed.
+  public static class ImportElement {
     private SModelReference myModelDescriptor;
     private int myReferenceID;
     private int myUsedVersion;
@@ -1331,15 +1330,18 @@ public class SModel implements Iterable<SNode> {
       ImportElement that = (ImportElement) o;
 
       if (myReferenceID != that.myReferenceID) return false;
-      if (!myModelDescriptor.equals(that.myModelDescriptor)) return false;
+      if (myUsedVersion != that.myUsedVersion) return false;
+      if (myModelDescriptor != null ? !myModelDescriptor.equals(that.myModelDescriptor) : that.myModelDescriptor != null)
+        return false;
 
       return true;
     }
 
     @Override
     public int hashCode() {
-      int result = myModelDescriptor.hashCode();
+      int result = myModelDescriptor != null ? myModelDescriptor.hashCode() : 0;
       result = 31 * result + myReferenceID;
+      result = 31 * result + myUsedVersion;
       return result;
     }
   }
