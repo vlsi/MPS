@@ -3032,8 +3032,8 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5536314641534792886">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="5536314641534792888">
-            <property name="value:3" value="false" />
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="2764480759143896663">
+            <property name="value:3" value="true" />
           </node>
         </node>
       </node>

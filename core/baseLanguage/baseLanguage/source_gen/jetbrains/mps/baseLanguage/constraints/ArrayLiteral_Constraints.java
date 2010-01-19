@@ -16,6 +16,6 @@ public class ArrayLiteral_Constraints {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(variableDeclaration, "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType") && _context.getLink() == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableDeclaration", "initializer");
       }
     */
-    return false;
+    return true;
   }
 }
