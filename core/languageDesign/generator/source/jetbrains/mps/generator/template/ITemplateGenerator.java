@@ -46,10 +46,6 @@ public interface ITemplateGenerator {
    */
   SModel getTargetModel();
 
-  boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailureException, GenerationCanceledException;
-
-  boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailureException, GenerationCanceledException;
-
   SNode findOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName);
 
   List<SNode> findAllOutputNodesByInputNodeAndMappingName(SNode inputNode, String mappingName);

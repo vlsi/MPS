@@ -21,8 +21,10 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * int[][] graph; defines an oriented graph of {graph.length} vertices, where
- * graph[i] is an array of edges from vertex i 
+ * <code>int[][] graph;</code> defines an oriented graph of {graph.length} vertices, where
+ * graph[i] is an array of edges from vertex i (Adjacency list)
+ *
+ * Evgeny Gryaznov, Jan 11, 2010
  */
 public class GraphUtil {
 
@@ -148,7 +150,7 @@ public class GraphUtil {
     return result.toArray(new int[result.size()][]);
   }
 
-  public static class Tarjan {
+  private static class Tarjan {
 
     List<int[]> result = new ArrayList<int[]>();
     int[] stack;

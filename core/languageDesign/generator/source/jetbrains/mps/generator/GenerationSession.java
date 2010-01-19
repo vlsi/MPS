@@ -166,7 +166,7 @@ public class GenerationSession implements IGenerationSession {
     mySessionContext = new GenerationSessionContext(myInvocationContext, inputModel, stepController, mySessionContext);
 
     // -- replace generator
-    ITemplateGenerator generator = new TemplateGenerator(mySessionContext, myProgressMonitor);
+    AbstractTemplateGenerator generator = new TemplateGenerator(mySessionContext, myProgressMonitor);
     GenerationStatus status;
     try {
       SModel outputModel = generateModel_stepIntern(inputModel, generator);
@@ -191,7 +191,7 @@ public class GenerationSession implements IGenerationSession {
     return status;
   }
 
-  private SModel generateModel_stepIntern(SModel inputModel, ITemplateGenerator generator) throws GenerationFailureException, GenerationCanceledException {
+  private SModel generateModel_stepIntern(SModel inputModel, AbstractTemplateGenerator generator) throws GenerationFailureException, GenerationCanceledException {
     String modelsLongName = inputModel.getLongName();
     SModel currentInputModel = inputModel;
 

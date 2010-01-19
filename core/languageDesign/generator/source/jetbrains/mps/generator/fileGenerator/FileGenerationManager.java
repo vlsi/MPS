@@ -19,6 +19,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.generator2.GenerationStatus2;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
@@ -64,7 +65,7 @@ public class FileGenerationManager implements ApplicationComponent {
 
   }
 
-  public boolean handlePartialOutput(IOperationContext context, String rootNodeId,
+  public boolean handlePartialOutput(IOperationContext context, 
                                      GenerationStatus status, File outputRoot, Set<File> result) {
 
     if (outputRoot == null) throw new RuntimeException("unspecified output path for file generation.");
@@ -76,7 +77,7 @@ public class FileGenerationManager implements ApplicationComponent {
     Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
 
     boolean ok = true;
-    if (!generateText(context, rootNodeId, status, outputNodeContents)) {
+    if (!generateText(context, status, outputNodeContents)) {
       return false;
     }
 
@@ -112,7 +113,7 @@ public class FileGenerationManager implements ApplicationComponent {
     Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
 
     boolean ok = true;
-    if (!generateText(context, null, status, outputNodeContents)) {
+    if (!generateText(context, status, outputNodeContents)) {
       return false;
     }
 
@@ -204,7 +205,7 @@ public class FileGenerationManager implements ApplicationComponent {
     }
   }
 
-  private boolean generateText(IOperationContext context, String rootNodeId, GenerationStatus status, Map<SNode, String> outputNodeContents) {
+  private boolean generateText(IOperationContext context, GenerationStatus status, Map<SNode, String> outputNodeContents) {
     boolean hasErrors = false;
     ModelDependencies dependRoot = new ModelDependencies();
     DebugInfo info = new DebugInfo();
@@ -213,6 +214,14 @@ public class FileGenerationManager implements ApplicationComponent {
     for (SNode outputNode : status.getOutputModel().getRoots()) {
       try {
         TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
+        String rootNodeId = null;
+        // FIXME temp hack
+        if(status instanceof GenerationStatus2) {
+          SNode node = ((GenerationStatus2)status).getDependencies().getOriginalRoot(outputNode);
+          if(node != null) {
+            rootNodeId = node.getId();
+          }
+        }
         fillDebugInfo(info, rootNodeId, outputNode, result);
         fillDependencies(dependRoot, outputNode, result);
 

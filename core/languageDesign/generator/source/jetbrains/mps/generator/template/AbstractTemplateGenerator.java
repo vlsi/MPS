@@ -16,10 +16,12 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.template.GeneratorLogger;
 import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.progress.ProgressIndicator;
 
@@ -81,4 +83,8 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   public int getWarningCount() {
     return myLogger.getWarningCount();
   }
+
+  public abstract boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailureException, GenerationCanceledException;
+
+  public abstract boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailureException, GenerationCanceledException;
 }

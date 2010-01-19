@@ -21,16 +21,15 @@ import jetbrains.mps.smodel.SReference;
 import java.util.*;
 
 /**
- * Created by IntelliJ IDEA.
- * User: evgeny
- * Date: Jan 11, 2010
- * Time: 3:54:23 PM
- * To change this template use File | Settings | File Templates.
+ * Uses linear algorithms.
+ * 
+ * Evgeny Gryaznov, Jan 11, 2010
  */
 public class ConnectedComponentPartitioner {
 
-  int count;
-  SNode[] myRoots;
+  private int count;
+  private SNode[] myRoots;
+  private List<SNode[]> myResult;
 
   public ConnectedComponentPartitioner(List<SNode> roots) {
     this.count = roots.size();
@@ -74,7 +73,25 @@ public class ConnectedComponentPartitioner {
     }
   }
 
-  public String partition() {
+  public List<SNode[]> partition() {
+    int[][] dependencies = buildDependencies();
+    dependencies = GraphUtil.removeOrientation(dependencies);
+    int[][] partitions = GraphUtil.components(dependencies);
+
+    myResult = new ArrayList<SNode[]>(partitions.length+1);
+    for(int i = 0; i < partitions.length; i++) {
+      SNode[] proots = new SNode[partitions[i].length];
+      for(int e = 0; e < proots.length; e++) {
+        proots[e] = myRoots[partitions[i][e]];
+      }
+      myResult.add(proots);
+    }
+    myResult.add(new SNode[0]);
+    return myResult;
+  }
+
+
+  public String toString() {
     int[][] dependencies = buildDependencies();
     int[][] strongPartitions = GraphUtil.tarjan(dependencies);
     dependencies = GraphUtil.removeOrientation(dependencies);
