@@ -10,6 +10,7 @@
   <language namespace="7a5dda62-9140-4668-ab76-d5ed1746f2b2(jetbrains.mps.lang.typesystem)" />
   <language namespace="d4615e3b-d671-4ba9-af01-2b78369b0ba7(jetbrains.mps.lang.pattern)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
+  <language namespace="ceab5195-25ea-4f22-9b92-103b95ca8c0c(jetbrains.mps.lang.core)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -2031,6 +2032,7 @@
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Component:32" id="1188212207013">
         <link role="editorComponent:32" targetNodeId="1181823106174" resolveInfo="VariableDeclaration_NameCellComponent" />
+        <link role="actionMap:32" targetNodeId="2404148721319673822" resolveInfo="LocalVariableDeclaration_delete_name" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1188212207014">
         <property name="name:32" value="initializerArea" />
@@ -3192,10 +3194,12 @@
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1082740154394">
         <property name="text:32" value="." />
         <link role="styleClass:32" targetNodeId="1215096040201" resolveInfo="Dot" />
+        <link role="actionMap:32" targetNodeId="7812779912049781470" resolveInfo="StaticFieldReference_DeleteDot" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="1088427644683">
         <property name="noTargetText:32" value="&lt;no static member&gt;" />
         <link role="relationDeclaration:32" targetNodeId="17.1070568178160:3" />
+        <link role="actionMap:32" targetNodeId="7812779912049781470" resolveInfo="StaticFieldReference_DeleteDot" />
         <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="1088427644684">
           <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1088427644685">
             <property name="readOnly:32" value="true" />
@@ -16099,6 +16103,178 @@
               <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation:16" id="4848386836749839797">
                 <node role="replacementNode:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4848386836749839799">
                   <link role="variableDeclaration:3" targetNodeId="4848386836749822375" resolveInfo="ref" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="7812779912047922393">
+    <property name="package:32" value="classifier" />
+    <link role="conceptDeclaration:32" targetNodeId="17.7812779912047922391:3" resolveInfo="AbstractClassifierReference" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="7812779912047934390">
+      <link role="relationDeclaration:32" targetNodeId="17.7812779912047934386:3" />
+      <link role="keyMap:32" targetNodeId="7812779912049087960" resolveInfo="AbstractClassifierReference" />
+      <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="7812779912047934391">
+        <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="7812779912047934393">
+          <property name="readOnly:32" value="true" />
+          <link role="relationDeclaration:32" targetNodeId="18.1169194664001:0" resolveInfo="name" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration:32" id="7812779912049087960">
+    <property name="package:32" value="classifier" />
+    <property name="name:32" value="AbstractClassifierReference_KeyMap" />
+    <link role="applicableConcept:32" targetNodeId="17.7812779912047922391:3" resolveInfo="AbstractClassifierReference" />
+    <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellKeyMapItem:32" id="7812779912049087961">
+      <property name="caretPolicy:32" value="caret_at_last_position" />
+      <node role="keystroke:32" type="jetbrains.mps.lang.editor.structure.CellKeyMapKeystroke:32" id="7812779912049087962">
+        <property name="keycode:32" value="VK_SPACE" />
+        <property name="modifiers:32" value="none" />
+      </node>
+      <node role="executeFunction:32" type="jetbrains.mps.lang.editor.structure.CellKeyMap_ExecuteFunction:32" id="7812779912049087963">
+        <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7812779912049087964">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7812779912049128800">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7812779912049128801">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7812779912049128802">
+                <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode:32" id="7812779912049128803" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="7812779912049128804" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation:16" id="7812779912049128805">
+                <node role="replacementNode:16" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="7812779912049128806">
+                  <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7812779912049128807">
+                    <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7812779912049128808">
+                      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7812779912049128809">
+                        <node role="referenceAntiquotation$link_attribute$classifier:3" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="7812779912049128810">
+                          <property name="label:0" value="ClassifierType" />
+                          <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7812779912049128811">
+                            <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode:32" id="7812779912049128812" />
+                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7812779912049128813">
+                              <link role="link:16" targetNodeId="17.7812779912047934386:3" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="isApplicableFunction:32" type="jetbrains.mps.lang.editor.structure.CellKeyMap_IsApplicableFunction:32" id="7812779912049123716">
+        <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7812779912049123717">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7812779912049128792">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7812779912049128793">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7812779912049128794">
+                <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode:32" id="7812779912049128795" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="7812779912049128796" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="7812779912049128797">
+                <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="7812779912049128798">
+                  <link role="conceptDeclaration:16" targetNodeId="17.1068580123157:3" resolveInfo="Statement" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="7812779912049781470">
+    <property name="name:32" value="StaticFieldReference_DeleteDot" />
+    <link role="applicableConcept:32" targetNodeId="17.1070533707846:3" resolveInfo="StaticFieldReference" />
+    <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="7812779912049817200">
+      <property name="actionId:32" value="delete_action_id" />
+      <node role="executeFunction:32" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction:32" id="7812779912049817201">
+        <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7812779912049817202">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7812779912049825267">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7812779912049825269">
+              <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode:32" id="7812779912049825268" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation:16" id="7812779912049825273">
+                <node role="replacementNode:16" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="7812779912049825278">
+                  <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.AbstractClassifierReference:3" id="7812779912049825280">
+                    <node role="referenceAntiquotation$link_attribute$classifier:3" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="7812779912049825281">
+                      <property name="label:0" value="AbstractClassifierReference" />
+                      <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7812779912049854306">
+                        <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode:32" id="7812779912049854305" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7812779912049854310">
+                          <link role="link:16" targetNodeId="17.1144433057691:3" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.editor.structure.CellActionMapDeclaration:32" id="2404148721319673822">
+    <property name="name:32" value="LocalVariableDeclaration_delete_name" />
+    <link role="applicableConcept:32" targetNodeId="17.1068581242863:3" resolveInfo="LocalVariableDeclaration" />
+    <node role="item:32" type="jetbrains.mps.lang.editor.structure.CellActionMapItem:32" id="2404148721319673823">
+      <property name="actionId:32" value="delete_action_id" />
+      <node role="executeFunction:32" type="jetbrains.mps.lang.editor.structure.CellActionMap_ExecuteFunction:32" id="2404148721319673824">
+        <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2404148721319673825">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2404148721319749622">
+            <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2404148721319749623">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2404148721319749639">
+                <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2404148721319749640">
+                  <property name="name:3" value="type" />
+                  <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="2404148721319749641">
+                    <link role="concept:16" targetNodeId="17.1107535904670:3" resolveInfo="ClassifierType" />
+                  </node>
+                  <node role="initializer:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="2404148721319749672">
+                    <link role="concept:16" targetNodeId="17.1107535904670:3" resolveInfo="ClassifierType" />
+                    <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2404148721319749663">
+                      <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode:32" id="2404148721319749662" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2404148721319749667">
+                        <link role="link:16" targetNodeId="17.5680397130376446158:3" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2404148721319749647">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2404148721319749648">
+                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode:32" id="2404148721319749649" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation:16" id="2404148721319749650">
+                    <node role="replacementNode:16" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2404148721319749651">
+                      <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.AbstractClassifierReference:3" id="2404148721319749652">
+                        <node role="referenceAntiquotation$link_attribute$classifier:3" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="2404148721319749653">
+                          <property name="label:0" value="AbstractClassifierReference" />
+                          <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2404148721319749656">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2404148721319749655">
+                              <link role="variableDeclaration:3" targetNodeId="2404148721319749640" resolveInfo="type" />
+                            </node>
+                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2404148721319749660">
+                              <link role="link:16" targetNodeId="17.1107535924139:3" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2404148721319749632">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2404148721319749627">
+                <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode:32" id="2404148721319749626" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2404148721319749631">
+                  <link role="link:16" targetNodeId="17.5680397130376446158:3" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="2404148721319749636">
+                <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="2404148721319749638">
+                  <link role="conceptDeclaration:16" targetNodeId="17.1107535904670:3" resolveInfo="ClassifierType" />
                 </node>
               </node>
             </node>

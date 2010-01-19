@@ -3660,5 +3660,16 @@
     <property name="name:0" value="AdditionalForLoopVariable" />
     <link role="extends:0" targetNodeId="1068581242863:3" resolveInfo="LocalVariableDeclaration" />
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7812779912047922391">
+    <property name="package:0" value="classifier" />
+    <property name="name:0" value="AbstractClassifierReference" />
+    <link role="extends:0" targetNodeId="1068431790191:3" resolveInfo="Expression" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7812779912047934386">
+      <property name="metaClass:0" value="reference" />
+      <property name="role:0" value="classifier" />
+      <property name="sourceCardinality:0" value="1" />
+      <link role="target:0" targetNodeId="1107461130800:3" resolveInfo="Classifier" />
+    </node>
+  </node>
 </model>
 

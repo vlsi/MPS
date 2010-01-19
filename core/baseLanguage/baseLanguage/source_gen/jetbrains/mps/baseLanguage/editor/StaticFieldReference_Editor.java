@@ -47,6 +47,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
     EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, ".");
     editorCell.setCellId("Constant_6051_0");
     BaseLanguageStyle_StyleSheet.getDot(editorCell).apply(editorCell);
+    StaticFieldReference_DeleteDot.setCellActions(editorCell, node, editorContext);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -62,6 +63,7 @@ public class StaticFieldReference_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.RT_ANCHOR_TAG, "default_RTransform");
     }
+    StaticFieldReference_DeleteDot.setCellActions(editorCell, node, editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     editorCell.setSubstituteInfo(new CompositeSubstituteInfo(editorContext, provider.getCellContext(), new SubstituteInfoPart[]{new StaticFieldReference_Editor.StaticFieldReference_generic_cellMenu0(),new StaticFieldReference_Editor.StaticFieldReference_staticFieldDeclaration_cellMenu0(),new StaticFieldReference_Editor.StaticFieldReference_customReplace_cellMenu0()}));
     SNode attributeConcept = provider.getRoleAttribute();

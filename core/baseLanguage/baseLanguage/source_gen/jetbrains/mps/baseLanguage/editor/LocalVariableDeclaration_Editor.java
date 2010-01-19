@@ -91,6 +91,7 @@ public class LocalVariableDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_2231_0(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new VariableDeclaration_NameCellComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    LocalVariableDeclaration_delete_name.setCellActions(editorCell, node, editorContext);
     return editorCell;
   }
 

@@ -56,8 +56,8 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
       if (coercedNode_0 != null) {
         SNode foreachStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
         SNode variableDeclaration = SLinkOperations.setNewChild(foreachStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-        SLinkOperations.setTarget(variableDeclaration, "type", SNodeOperations.copyNode(pattern_0.PatternVar1), true);
-        SPropertyOperations.set(variableDeclaration, "name", NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(pattern_0.PatternVar1)));
+        SLinkOperations.setTarget(variableDeclaration, "type", SNodeOperations.copyNode(((SNode) pattern_0.getFieldValue("PatternVar1"))), true);
+        SPropertyOperations.set(variableDeclaration, "name", NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(((SNode) pattern_0.getFieldValue("PatternVar1")))));
         SLinkOperations.setTarget(foreachStatement, "iterable", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "expression", true)), true);
         SNodeOperations.insertNextSiblingChild(node, foreachStatement);
         SNodeOperations.deleteNode(node);
