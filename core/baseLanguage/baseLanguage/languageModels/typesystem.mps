@@ -22264,5 +22264,49 @@
       <link role="concept:3" targetNodeId="1.1068498886296:3" resolveInfo="VariableReference" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="6624237184120284147">
+    <property name="name:3" value="check_AnnotationMethodDeclarationReturnType" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6624237184120284148">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6624237184120289957">
+        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6624237184120289958">
+          <property name="name:3" value="returnType" />
+          <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="6624237184120289959">
+            <link role="concept:16" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
+          </node>
+          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6624237184120289960">
+            <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6624237184120289961">
+              <link role="applicableNode:3" targetNodeId="6624237184120284149" resolveInfo="annotationMethodDeclaration" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="6624237184120289962">
+              <link role="link:16" targetNodeId="1.1068580123133:3" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.AssertStatement:3" id="6624237184120343376">
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6624237184120343381">
+          <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6624237184120343380">
+            <link role="applicableNode:3" targetNodeId="6624237184120284149" resolveInfo="annotationMethodDeclaration" />
+          </node>
+          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="6624237184120343385">
+            <link role="baseMethodDeclaration:16" targetNodeId="37.6624237184120289968" resolveInfo="isGoodReturnType" />
+            <node role="actualArgument:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6624237184120343386">
+              <link role="variableDeclaration:3" targetNodeId="6624237184120289958" resolveInfo="returnType" />
+            </node>
+          </node>
+        </node>
+        <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6624237184120343387">
+          <property name="value:3" value="bad annotation method type" />
+        </node>
+        <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6624237184120343388">
+          <link role="applicableNode:3" targetNodeId="6624237184120284149" resolveInfo="annotationMethodDeclaration" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="6624237184120284149">
+      <property name="name:3" value="annotationMethodDeclaration" />
+      <link role="concept:3" targetNodeId="1.1188206574119:3" resolveInfo="AnnotationMethodDeclaration" />
+    </node>
+  </node>
 </model>
 

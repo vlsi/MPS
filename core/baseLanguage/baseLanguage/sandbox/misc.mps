@@ -163,16 +163,6 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="5536314641534939176" />
           </node>
         </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1918985843474113453">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="1918985843474113455">
-            <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="1918985843474113458">
-              <property name="value:3" value="4" />
-            </node>
-            <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1918985843474113454">
-              <link role="variableDeclaration:3" targetNodeId="5536314641534939175" resolveInfo="a" />
-            </node>
-          </node>
-        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="4193142602321623916">
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4193142602321623917">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5536314641534939178">
