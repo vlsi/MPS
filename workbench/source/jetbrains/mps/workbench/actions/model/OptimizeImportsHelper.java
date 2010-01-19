@@ -121,11 +121,12 @@ public class OptimizeImportsHelper {
     }
 
     Set<ModuleReference> unusedDevkits = new HashSet<ModuleReference>();
+/*
     for (ModuleReference devkitRef : modelDescriptor.getSModel().getDevKitRefs()) {
       ModuleReference ref = getUnusedDevkitRef(result, devkitRef);
       if (ref != null) unusedDevkits.add(devkitRef);
     }
-
+*/
 
     Set<SModelReference> unusedModels = new HashSet<SModelReference>();
     for (SModelReference model : modelDescriptor.getSModel().getImportedModelUIDs()) {
@@ -148,10 +149,12 @@ public class OptimizeImportsHelper {
     }
 
     List<ModuleReference> unusedDevkits = new ArrayList<ModuleReference>();
+/*
     for (ModuleReference devkitRef : descriptor.getUsedDevkits()) {
       ModuleReference ref = getUnusedDevkitRef(result, devkitRef);
       if (ref != null) unusedDevkits.add(devkitRef);
     }
+*/
 
     List<Dependency> unusedDeps = new ArrayList<Dependency>();
     for (Dependency d : descriptor.getDependencies()) {
