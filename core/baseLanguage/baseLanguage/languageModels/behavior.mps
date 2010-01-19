@@ -16386,6 +16386,25 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6624237184120289969" />
       <node role="returnType" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="6624237184120298287" />
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6624237184120289971">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6624237184120654495">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6624237184120654496">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="6624237184120654507">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="6624237184120654509">
+                <property name="value:3" value="false" />
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6624237184120654500">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6624237184120654499">
+              <link role="variableDeclaration:3" targetNodeId="6624237184120298288" resolveInfo="type" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="6624237184120654504">
+              <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="6624237184120654506">
+                <link role="conceptDeclaration:16" targetNodeId="1.1068581517677:3" resolveInfo="VoidType" />
+              </node>
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6624237184120298290">
           <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6624237184120298294">
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="6624237184120298293">

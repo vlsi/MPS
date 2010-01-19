@@ -558,6 +558,11 @@ __switch__:
     }
   }
 
+  public static void nodeFactory_NodeSetup_AnnotationMethodDeclaration_6624237184120886047(final IOperationContext operationContext, final NodeSetupContext _context) {
+    SNode classifierType = SLinkOperations.setNewChild(_context.getNewNode(), "returnType", "jetbrains.mps.baseLanguage.structure.ClassifierType");
+    SLinkOperations.setTarget(classifierType, "classifier", SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~String"), false);
+  }
+
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1177334764520(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {

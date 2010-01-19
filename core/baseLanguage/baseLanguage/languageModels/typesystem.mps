@@ -22296,10 +22296,10 @@
           </node>
         </node>
         <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6624237184120343387">
-          <property name="value:3" value="bad annotation method type" />
+          <property name="value:3" value="invalid type for annotation member" />
         </node>
-        <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="6624237184120343388">
-          <link role="applicableNode:3" targetNodeId="6624237184120284149" resolveInfo="annotationMethodDeclaration" />
+        <node role="nodeToReport:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6624237184120690157">
+          <link role="variableDeclaration:3" targetNodeId="6624237184120289958" resolveInfo="returnType" />
         </node>
       </node>
     </node>

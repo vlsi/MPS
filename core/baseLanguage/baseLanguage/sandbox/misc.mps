@@ -2225,5 +2225,9 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.baseLanguage.structure.Annotation:3" id="6624237184120625881">
+    <property name="name:3" value="Foobar" />
+    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6624237184120625882" />
+  </node>
 </model>
 

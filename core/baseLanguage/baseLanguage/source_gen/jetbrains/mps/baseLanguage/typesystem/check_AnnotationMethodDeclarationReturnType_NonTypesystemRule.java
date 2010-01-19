@@ -23,7 +23,7 @@ public class check_AnnotationMethodDeclarationReturnType_NonTypesystemRule exten
     if (!(AnnotationMethodDeclaration_Behavior.call_isGoodReturnType_6624237184120289968(annotationMethodDeclaration, returnType))) {
       BaseIntentionProvider intentionProvider = null;
       IErrorTarget errorTarget = new NodeErrorTarget();
-      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(annotationMethodDeclaration, "bad annotation method type", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6624237184120343376", intentionProvider, errorTarget);
+      IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(returnType, "invalid type for annotation member", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6624237184120343376", intentionProvider, errorTarget);
     }
   }
 

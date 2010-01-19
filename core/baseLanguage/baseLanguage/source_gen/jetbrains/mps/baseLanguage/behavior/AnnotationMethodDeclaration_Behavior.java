@@ -15,6 +15,9 @@ public class AnnotationMethodDeclaration_Behavior {
   }
 
   public static boolean call_isGoodReturnType_6624237184120289968(SNode thisNode, SNode type) {
+    if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.VoidType")) {
+      return false;
+    }
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
       SNode componentType = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true);
       if (SNodeOperations.isInstanceOf(componentType, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
