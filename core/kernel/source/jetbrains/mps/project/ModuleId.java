@@ -26,9 +26,7 @@ public class ModuleId {
   }
 
   public static ModuleId fromString(String text) {
-    if (text == null) {
-      return null;
-    }
+    if (text == null) return null;
     return new ModuleId(UUID.fromString(text));
   }
 
@@ -39,9 +37,7 @@ public class ModuleId {
   }
 
   public boolean equals(Object obj) {
-    if (!(obj instanceof ModuleId)) {
-      return false;
-    }
+    if (!(obj instanceof ModuleId)) return false;
 
     ModuleId id = (ModuleId) obj;
     return id.myUid.equals(myUid);

@@ -206,6 +206,7 @@ public class MPSModuleRepository implements ApplicationComponent {
     return myFileToModuleMap.get(path);
   }
 
+  //todo rename to getByFqName
   public IModule getModuleByUID(String moduleUID) {
     return myFqNameToModulesMap.get(moduleUID);
   }
