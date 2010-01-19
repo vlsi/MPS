@@ -51,4 +51,13 @@ public class SModelReferenceEvent extends SModelEvent {
   public void accept(SModelEventVisitor visitor) {
     visitor.visitReferenceEvent(this);
   }
+
+  @Override
+  public String toString() {
+    return "SModelReferenceEvent{" +
+      "myModel=" + getModel() +
+      ", myReference=" + myReference +
+      ", myAdded=" + myAdded +
+      '}';
+  }
 }
