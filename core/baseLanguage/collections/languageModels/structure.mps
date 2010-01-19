@@ -467,6 +467,7 @@
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1153944193378">
     <property name="name:0" value="ForEachVariable" />
+    <property name="iconPath:0" value="${mps_home}/core/baseLanguage/baseLanguage/icons/variable.png" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="1219697389604">
       <link role="intfc:0" targetNodeId="1.1169194658468:0" resolveInfo="INamedConcept" />
