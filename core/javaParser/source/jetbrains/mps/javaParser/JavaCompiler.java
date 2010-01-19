@@ -104,12 +104,17 @@ public class JavaCompiler {
     return new File(generalSourcePath);
   }
 
-  private void initClassPathItem(IModule module) {
-    CompositeClassPathItem compositeClassPathItem = new CompositeClassPathItem();
-    compositeClassPathItem.add(module.getClassPathItem());
-    compositeClassPathItem.add(CommonPaths.getJDK());
-    compositeClassPathItem.add(CommonPaths.getMPSPath());
-    myClassPathItem = compositeClassPathItem;
+  private void initClassPathItem(final IModule module) {
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        CompositeClassPathItem compositeClassPathItem = new CompositeClassPathItem();
+        compositeClassPathItem.add(module.getModuleWithDependenciesClassPathItem());
+        compositeClassPathItem.add(CommonPaths.getJDK());
+        compositeClassPathItem.add(CommonPaths.getMPSPath());
+        myClassPathItem = compositeClassPathItem;
+      }
+    });
   }
 
   public void addSourceFromFile(File file, String packageNameWithoutPrefix) {
@@ -175,9 +180,9 @@ public class JavaCompiler {
         String dirName = file.getName();
         String nestedPackageName;
         if ("".equals(packageNameWithoutPrefix)) {
-           nestedPackageName = dirName;
+          nestedPackageName = dirName;
         } else {
-           nestedPackageName = packageNameWithoutPrefix + '.' + dirName;
+          nestedPackageName = packageNameWithoutPrefix + '.' + dirName;
         }
         addSourceFromDirectory(file, nestedPackageName);
       } else {
@@ -248,8 +253,8 @@ public class JavaCompiler {
     File generalSourceDirectory = getGeneralSourceDirectory();
     if (generalSourceDirectory != null) {
       if (myModule instanceof Solution && mySetOutputPath) {
-    //    ((Solution) myModule).getSolutionDescriptor().setOutputPath(generalSourceDirectory.getPath());
-      //todo: it is not very convenient
+        //    ((Solution) myModule).getSolutionDescriptor().setOutputPath(generalSourceDirectory.getPath());
+        //todo: it is not very convenient
       }
     }
     myModule.save();
@@ -331,7 +336,7 @@ public class JavaCompiler {
       }
     }
     if (buildAstNow) {
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {        
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           buildAST();
         }
@@ -343,10 +348,10 @@ public class JavaCompiler {
   }
 
   private void addRequiredLanguagesToModule() {
-  //  Language baseLanguage = BootstrapLanguages.baseLanguage();
-  //  if (!myModule.getAllUsedLanguages().contains(baseLanguage)) {
-  //    myModule.addUsedLanguage(baseLanguage.getModuleReference());
-  //  }
+    //  Language baseLanguage = BootstrapLanguages.baseLanguage();
+    //  if (!myModule.getAllUsedLanguages().contains(baseLanguage)) {
+    //    myModule.addUsedLanguage(baseLanguage.getModuleReference());
+    //  }
     //no need, since BL is always used by any module (see AbstractModule.getUsedLanguages()).
   }
 
