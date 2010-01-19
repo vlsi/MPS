@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.classifiers.behavior.ThisClassifierExpression_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.stubs.behavior.StubsCreatorDeclaration_Behavior;
+import jetbrains.mps.lang.stubs.behavior.AbstractModelCreator_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -26,7 +26,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_3798212845297807980(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return StubsCreatorDeclaration_Behavior.call_getGeneratedName_5307115338409984553(_context.getNode());
+    return AbstractModelCreator_Behavior.call_getGeneratedName_5553449326502826657(_context.getNode());
   }
 
   public static Object referenceMacro_GetReferent_4009335194403290562(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -34,7 +34,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_5516999836374471953(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "creatorDeclaration", false), "map_StubCreator");
+    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "declaration", false), "map_StubCreator");
   }
 
   public static Object referenceMacro_GetReferent_5516999836374789389(final IOperationContext operationContext, final ReferenceMacroContext _context) {

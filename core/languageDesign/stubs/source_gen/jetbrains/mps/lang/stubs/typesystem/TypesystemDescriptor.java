@@ -11,5 +11,9 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       SubtypingRule_Runtime subtypingRule = new StubsCreatorType_SubtypeOf_ModelRootManager_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
+    {
+      SubtypingRule_Runtime subtypingRule = new ModelManagerType_SubtypeOf_ModelRootManager_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
   }
 }
