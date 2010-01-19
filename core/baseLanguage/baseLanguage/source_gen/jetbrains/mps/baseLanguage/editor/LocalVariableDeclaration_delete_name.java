@@ -34,7 +34,7 @@ public class LocalVariableDeclaration_delete_name {
     public void execute_internal(EditorContext editorContext, SNode node) {
       if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
         SNode type = SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.baseLanguage.structure.ClassifierType");
-        SNodeOperations.replaceWithAnother(node, new LocalVariableDeclaration_delete_name.LocalVariableDeclaration_delete_name_DELETE.QuotationClass_2691_0().createNode(SLinkOperations.getTarget(type, "classifier", false)));
+        SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), new LocalVariableDeclaration_delete_name.LocalVariableDeclaration_delete_name_DELETE.QuotationClass_2691_0().createNode(SLinkOperations.getTarget(type, "classifier", false)));
       }
     }
 
@@ -46,10 +46,16 @@ public class LocalVariableDeclaration_delete_name {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
         SNode quotedNode_24 = null;
+        SNode quotedNode_25 = null;
         {
-          quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractClassifierReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
           SNode quotedNode1_24 = quotedNode_24;
-          quotedNode1_24.setReferent("classifier", (SNode) parameter_2691_0);
+          {
+            quotedNode_25 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractClassifierReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+            SNode quotedNode1_25 = quotedNode_25;
+            quotedNode1_25.setReferent("classifier", (SNode) parameter_2691_0);
+            quotedNode_24.addChild("expression", quotedNode1_25);
+          }
           result = quotedNode1_24;
         }
         return result;

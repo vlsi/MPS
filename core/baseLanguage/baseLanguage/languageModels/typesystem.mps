@@ -22438,5 +22438,23 @@
       <link role="concept:3" targetNodeId="1.1188207840427:3" resolveInfo="AnnotationInstance" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="3256208460069601930">
+    <property name="name:3" value="check_AbstractClassifierReference" />
+    <property name="package:3" value="classifier" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3256208460069601931">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.ReportErrorStatement:3" id="3256208460069612180">
+        <node role="errorString:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="3256208460069612184">
+          <property name="value:3" value="Expression expected" />
+        </node>
+        <node role="nodeToReport:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="3256208460069612183">
+          <link role="applicableNode:3" targetNodeId="3256208460069601932" resolveInfo="abstractClassifierReference" />
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="3256208460069601932">
+      <property name="name:3" value="abstractClassifierReference" />
+      <link role="concept:3" targetNodeId="1.7812779912047922391:3" resolveInfo="AbstractClassifierReference" />
+    </node>
+  </node>
 </model>
 

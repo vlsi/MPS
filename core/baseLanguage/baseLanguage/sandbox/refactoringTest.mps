@@ -82,13 +82,7 @@
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="6208804448825809379">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6208804448825809380" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6208804448825809381" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6208804448825809382">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2361031037893797163">
-          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.AbstractClassifierReference:3" id="2361031037893797166">
-            <link role="classifier:3" targetNodeId="6208804448825809377" resolveInfo="ArrayLength" />
-          </node>
-        </node>
-      </node>
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6208804448825809382" />
     </node>
   </node>
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />

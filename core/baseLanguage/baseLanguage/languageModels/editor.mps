@@ -16244,18 +16244,23 @@
               </node>
               <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2404148721319749647">
                 <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2404148721319749648">
-                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode:32" id="2404148721319749649" />
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1201449424350180168">
+                    <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellActionMap_FunctionParm_selectedNode:32" id="2404148721319749649" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="1201449424350180172" />
+                  </node>
                   <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ReplaceWithAnotherOperation:16" id="2404148721319749650">
-                    <node role="replacementNode:16" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2404148721319749651">
-                      <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.AbstractClassifierReference:3" id="2404148721319749652">
-                        <node role="referenceAntiquotation$link_attribute$classifier:3" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="2404148721319749653">
-                          <property name="label:0" value="AbstractClassifierReference" />
-                          <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2404148721319749656">
-                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="2404148721319749655">
-                              <link role="variableDeclaration:3" targetNodeId="2404148721319749640" resolveInfo="type" />
-                            </node>
-                            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2404148721319749660">
-                              <link role="link:16" targetNodeId="17.1107535924139:3" />
+                    <node role="replacementNode:16" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="1201449424350180173">
+                      <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1201449424350180174">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AbstractClassifierReference:3" id="1201449424350180175">
+                          <node role="referenceAntiquotation$link_attribute$classifier:3" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="1201449424350180176">
+                            <property name="label:0" value="AbstractClassifierReference" />
+                            <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1201449424350180177">
+                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1201449424350180178">
+                                <link role="variableDeclaration:3" targetNodeId="2404148721319749640" resolveInfo="type" />
+                              </node>
+                              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1201449424350180179">
+                                <link role="link:16" targetNodeId="17.1107535924139:3" />
+                              </node>
                             </node>
                           </node>
                         </node>
