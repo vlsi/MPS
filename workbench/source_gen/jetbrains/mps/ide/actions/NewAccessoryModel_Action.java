@@ -20,10 +20,11 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 
 public class NewAccessoryModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -95,11 +96,16 @@ public class NewAccessoryModel_Action extends GeneratedAction {
       if (result == null) {
         return;
       }
+      final Wrappers._T<LanguageDescriptor> descriptor = new Wrappers._T<LanguageDescriptor>();
       ProgressManager.getInstance().run(new Task.Modal(NewAccessoryModel_Action.this.project, "Creating", false) {
         public void run(@NotNull ProgressIndicator progressIndicator) {
-          LanguageDescriptor descriptor = language.getLanguageDescriptor();
-          descriptor.getAccessoryModels().add(result.getSModelReference());
-          language.setLanguageDescriptor(descriptor);
+          descriptor.value = language.getLanguageDescriptor();
+          descriptor.value.getAccessoryModels().add(result.getSModelReference());
+        }
+      });
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          language.setLanguageDescriptor(descriptor.value);
           language.save();
         }
       });
