@@ -29,6 +29,10 @@ public class QueriesGenerated {
     return AbstractModelCreator_Behavior.call_getGeneratedName_5553449326502826657(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_5553449326502993530(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return AbstractModelCreator_Behavior.call_getGeneratedName_5553449326502826657(_context.getNode());
+  }
+
   public static Object referenceMacro_GetReferent_4009335194403290562(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "member", false), "map_ClassifierMethod");
   }
