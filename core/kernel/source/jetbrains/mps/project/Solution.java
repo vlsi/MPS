@@ -22,6 +22,7 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelRepository;
@@ -29,8 +30,6 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -179,5 +178,14 @@ public class Solution extends AbstractModule {
     IFile file = getDescriptorFile();
     assert file != null;
     return SolutionDescriptorPersistence.loadSolutionDescriptor(file);
+  }
+
+  public BytecodeLocator getBytecodeLocator() {
+    return new ModuleBytecodeLocator() {
+      public byte[] find(String fqName) {
+        if (getSolutionDescriptor().isDontLoadClasses()) return null;
+        return super.find(fqName);
+      }
+    };
   }
 }

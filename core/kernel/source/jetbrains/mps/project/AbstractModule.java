@@ -842,17 +842,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   public BytecodeLocator getBytecodeLocator() {
-    return new BytecodeLocator() {
-      public byte[] find(String fqName) {
-        Solution solution = AbstractModule.this instanceof Solution ? (Solution) AbstractModule.this : null;
-        if (solution != null && solution.getSolutionDescriptor().isDontLoadClasses()) return null;
-        return getClassPathItem().getClass(fqName);
-      }
-
-      public URL findResource(String name) {
-        return getClassPathItem().getResource(name);
-      }
-    };
+    return new ModuleBytecodeLocator();
   }
 
   //todo[CP] remove this method when got rid of classpaths
@@ -934,6 +924,16 @@ public abstract class AbstractModule implements IModule {
 
     public String toString() {
       return "Scope of module " + AbstractModule.this;
+    }
+  }
+
+  protected class ModuleBytecodeLocator implements BytecodeLocator {
+    public byte[] find(String fqName) {
+      return getClassPathItem().getClass(fqName);
+    }
+
+    public URL findResource(String name) {
+      return getClassPathItem().getResource(name);
     }
   }
 }
