@@ -20,6 +20,10 @@ public class AnnotationMethodDeclaration_TextGen extends SNodeTextGen {
     this.append(" ");
     this.append(SPropertyOperations.getString(node, "name"));
     this.append("()");
+    if ((SLinkOperations.getTarget(node, "defaultValue", true) != null)) {
+      this.append(" default ");
+      TextGenManager.instance().appendNodeText(this.getContext(), this.getBuffer(), SLinkOperations.getTarget(node, "defaultValue", true), this.getSNode());
+    }
     this.append(";");
   }
 }
