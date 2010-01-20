@@ -1311,6 +1311,9 @@ public class JavaConverterTreeBuilder {
       (jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration) myTypesProvider.getRaw(b);
     try {
       myCurrentMethod = method;
+      if (x.defaultValue != null) {
+        method.setDefaultValue(processExpressionRefl(x.defaultValue));
+      }
       addMethodAnnotations(method, x);
       myCurrentMethod = null;
     } catch (Throwable t) {
