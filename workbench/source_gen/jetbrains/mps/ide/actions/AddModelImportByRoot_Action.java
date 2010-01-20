@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.workbench.actions.imports.ImportHelper;
 
 public class AddModelImportByRoot_Action extends GeneratedAction {
@@ -82,8 +82,8 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
     try {
       EditorCell selectedCell = AddModelImportByRoot_Action.this.editorComponent.getSelectedCell();
       String initialText = "";
-      if (selectedCell instanceof EditorCell_Label) {
-        initialText = ((EditorCell_Label) selectedCell).getRenderedText();
+      if (selectedCell instanceof EditorCell_Error) {
+        initialText = ((EditorCell_Error) selectedCell).getRenderedText();
       }
       ImportHelper.addModelImportByRoot(AddModelImportByRoot_Action.this.project, AddModelImportByRoot_Action.this.mpsProject, AddModelImportByRoot_Action.this.module, AddModelImportByRoot_Action.this.model, initialText);
     } catch (Throwable t) {
