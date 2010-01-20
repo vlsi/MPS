@@ -47,6 +47,7 @@ public class ConstraintsDescriptor implements IModelConstraints {
     ListSequence.fromList(this.myConstraints).addElement(new VarVariableReference_declaration_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new TupleMemberAccessOperation_member_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new LoopLabelReference_loopLabel_ReferentConstraint());
+    ListSequence.fromList(this.myConstraints).addElement(new ImplicitAnnotationInstanceValue_key_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new StaticFieldReference_classifier_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new ClassifierClassExpression_classifier_ReferentConstraint());
     ListSequence.fromList(this.myConstraints).addElement(new Annotation_DefaultSearchScope());

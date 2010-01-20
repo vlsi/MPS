@@ -17,6 +17,9 @@ public class ArrayLiteral_Constraints {
     if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue")) {
       return true;
     }
+    if (SNodeOperations.isInstanceOf(_context.getParentNode(), "jetbrains.mps.baseLanguage.structure.AnnotationInstance")) {
+      return true;
+    }
     return false;
   }
 }

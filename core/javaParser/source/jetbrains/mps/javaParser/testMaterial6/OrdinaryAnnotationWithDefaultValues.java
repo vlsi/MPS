@@ -9,5 +9,6 @@ package jetbrains.mps.javaParser.testMaterial6;
  */
 public @interface OrdinaryAnnotationWithDefaultValues {
   OrdEnum anEnum() default OrdEnum.A;
+  @SuppressWarnings(value = "hello")
   String text() default "";
 }

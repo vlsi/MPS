@@ -3676,5 +3676,12 @@
       <link role="target:0" targetNodeId="1107461130800:3" resolveInfo="Classifier" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="2580416627845338977">
+    <property name="name:0" value="ImplicitAnnotationInstanceValue" />
+    <link role="extends:0" targetNodeId="1188214545140:3" resolveInfo="AnnotationInstanceValue" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="2580416627846277719">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
 </model>
 

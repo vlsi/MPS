@@ -16328,5 +16328,11 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="2580416627845338978">
+    <link role="conceptDeclaration:32" targetNodeId="17.2580416627845338977:3" resolveInfo="ImplicitAnnotationInstanceValue" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="2580416627845354228">
+      <link role="relationDeclaration:32" targetNodeId="17.1188214607812:3" />
+    </node>
+  </node>
 </model>
 

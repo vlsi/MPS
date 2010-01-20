@@ -10693,5 +10693,22 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="2580416627845806804">
+    <link role="conceptDeclaration:11" targetNodeId="1.2580416627845338977:3" resolveInfo="ImplicitAnnotationInstanceValue" />
+    <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="2580416627845806805">
+      <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2580416627845806806">
+        <node role="statement:3" type="jetbrains.mps.lang.textGen.structure.AppendOperation:11" id="2580416627845831546">
+          <node role="part:11" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart:11" id="2580416627845831548">
+            <node role="value:11" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2580416627845831551">
+              <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="2580416627845831550" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2580416627845831555">
+                <link role="link:16" targetNodeId="1.1188214607812:3" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
