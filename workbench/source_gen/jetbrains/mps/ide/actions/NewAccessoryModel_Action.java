@@ -8,19 +8,22 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import java.awt.Frame;
 import jetbrains.mps.project.IModule;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.smodel.ModelAccess;
-import javax.swing.JOptionPane;
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task;
+import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 
 public class NewAccessoryModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -28,9 +31,10 @@ public class NewAccessoryModel_Action extends GeneratedAction {
 
   private Frame frame;
   private IModule module;
+  private Project project;
 
   public NewAccessoryModel_Action() {
-    super("Accessory Model", "", ICON);
+    super("New Accessory Model", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -67,8 +71,12 @@ public class NewAccessoryModel_Action extends GeneratedAction {
     if (this.frame == null) {
       return false;
     }
-    this.module = event.getData(MPSDataKeys.MODULE);
+    this.module = event.getData(MPSDataKeys.CONTEXT_MODULE);
     if (this.module == null) {
+      return false;
+    }
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
       return false;
     }
     return true;
@@ -77,39 +85,22 @@ public class NewAccessoryModel_Action extends GeneratedAction {
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
       final Language language = ((Language) NewAccessoryModel_Action.this.module);
-      final Wrappers._T<String> languageNamespace = new Wrappers._T<String>();
+      final List<SModelDescriptor> models = ListSequence.fromList(new ArrayList<SModelDescriptor>());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          languageNamespace.value = language.getNamespace();
+          ListSequence.fromList(models).addSequence(ListSequence.fromList(GlobalScope.getInstance().getModelDescriptors()));
         }
       });
-      final String name = JOptionPane.showInputDialog(NewAccessoryModel_Action.this.frame, "Enter a model's name", languageNamespace.value);
-      if (name == null) {
+      final SModelDescriptor result = CommonChoosers.showDialogModelChooser(NewAccessoryModel_Action.this.frame, models, null);
+      if (result == null) {
         return;
       }
-      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-        public void run() {
-          try {
-            ModelRoot newAccRoot = language.createAccessoriesRoot();
-            SModelRoot existingAccRoot = language.findModelRoot(newAccRoot.getPath());
-            if (existingAccRoot == null) {
-              LanguageDescriptor descriptor = language.getLanguageDescriptor();
-              descriptor.getModelRoots().add(newAccRoot);
-              language.setLanguageDescriptor(descriptor);
-              language.save();
-            }
-            SModelDescriptor model = language.createModel(SModelFqName.fromString(name), language.findModelRoot(newAccRoot.getPath()));
-            model.save();
-            LanguageDescriptor descriptor = language.getLanguageDescriptor();
-            descriptor.getAccessoryModels().add(SModelReference.fromString(name));
-            if (existingAccRoot == null) {
-              descriptor.getModelRoots().add(newAccRoot);
-            }
-            language.setLanguageDescriptor(descriptor);
-            language.save();
-          } catch (IllegalArgumentException e) {
-            JOptionPane.showMessageDialog(NewAccessoryModel_Action.this.frame, "Invalid Accessory Model Name", "Invalid Accessory Model Name", JOptionPane.ERROR_MESSAGE);
-          }
+      ProgressManager.getInstance().run(new Task.Modal(NewAccessoryModel_Action.this.project, "Creating", false) {
+        public void run(@NotNull ProgressIndicator progressIndicator) {
+          LanguageDescriptor descriptor = language.getLanguageDescriptor();
+          descriptor.getAccessoryModels().add(result.getSModelReference());
+          language.setLanguageDescriptor(descriptor);
+          language.save();
         }
       });
     } catch (Throwable t) {
