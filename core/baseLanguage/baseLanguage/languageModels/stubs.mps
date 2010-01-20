@@ -387,6 +387,7 @@
             <property name="isFinal:3" value="true" />
             <node role="type:3" type="jetbrains.mps.lang.stubs.structure.StubsCreatorType" id="5516999836374599642">
               <link role="creatorDeclaration" targetNodeId="5516999836374025628" resolveInfo="JavaStubs" />
+              <link role="declaration" targetNodeId="5516999836374025628" resolveInfo="JavaStubs" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="5516999836374599643" />
           </node>
