@@ -22,6 +22,7 @@ public class ASMMethod {
   private List<List<ASMAnnotation>> myParameterAnnotations;
   private List<ASMType> myExceptions;
   private List<ASMAnnotation> myAnnotations;
+  private Object myAnnotationDefault;
 
   /*package*/ ASMMethod(MethodNode method) {
     this.myMethod = method;
@@ -140,6 +141,13 @@ public class ASMMethod {
         }
       }
     }
+    if (method.annotationDefault != null) {
+      this.myAnnotationDefault = ASMAnnotation.processValue(method.annotationDefault);
+    }
+  }
+
+  public Object getAnnotationDefault() {
+    return this.myAnnotationDefault;
   }
 
   public String getName() {

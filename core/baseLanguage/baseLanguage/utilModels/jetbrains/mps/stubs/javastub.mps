@@ -3229,6 +3229,48 @@
                 </node>
               </node>
             </node>
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6678934770475973979">
+              <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6678934770475973980">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6678934770475974053">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6678934770475974067">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6678934770475974054">
+                      <link role="variableDeclaration:3" targetNodeId="7241381882860003490" resolveInfo="methodDeclaration" />
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6678934770475974083">
+                      <link role="baseMethodDeclaration:3" targetNodeId="5.~AnnotationMethodDeclaration.setDefaultValue(jetbrains.mps.baseLanguage.structure.Expression):void" resolveInfo="setDefaultValue" />
+                      <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6678934770475974109">
+                        <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="6678934770475974096" />
+                        <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6678934770475974125">
+                          <link role="baseMethodDeclaration:3" targetNodeId="7241381882860004460" resolveInfo="getAnnotationValue" />
+                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6678934770475974139">
+                            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6678934770475974138">
+                              <link role="variableDeclaration:3" targetNodeId="7241381882860003486" resolveInfo="m" />
+                            </node>
+                            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6678934770475974155">
+                              <link role="baseMethodDeclaration:3" targetNodeId="9.6678934770475968071" resolveInfo="getAnnotationDefault" />
+                            </node>
+                          </node>
+                          <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6678934770475974181">
+                            <link role="variableDeclaration:3" targetNodeId="7241381882860003477" resolveInfo="model" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotEqualsExpression:3" id="6678934770475974025">
+                <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="6678934770475974040" />
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6678934770475973996">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="6678934770475973995">
+                    <link role="variableDeclaration:3" targetNodeId="7241381882860003486" resolveInfo="m" />
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="6678934770475974012">
+                    <link role="baseMethodDeclaration:3" targetNodeId="9.6678934770475968071" resolveInfo="getAnnotationDefault" />
+                  </node>
+                </node>
+              </node>
+            </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7241381882860003542">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7241381882860003543">
                 <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7241381882860003544">

@@ -43,7 +43,7 @@ public class ASMAnnotation {
     }
   }
 
-  private Object processValue(Object value) {
+  public static Object processValue(Object value) {
     if (value instanceof AnnotationNode) {
       return new ASMAnnotation((AnnotationNode) value);
     }

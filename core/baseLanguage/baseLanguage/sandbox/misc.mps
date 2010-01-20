@@ -40,7 +40,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="160" />
+  <maxImportIndex value="161" />
   <import index="125" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="138" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <import index="149" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
@@ -51,6 +51,7 @@
   <import index="156" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="157" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="159" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
+  <import index="161" modelUID="f:java_stub#jetbrains.mps.util.annotation(jetbrains.mps.util.annotation@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.Interface:3" id="8703963746976779593">
     <property name="name:3" value="MyIntfc" />
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8703963746976779594" />
@@ -141,6 +142,9 @@
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="6624237184121408373">
         <property name="name:3" value="a" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="6624237184121408374" />
+      </node>
+      <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="3364510679006024616">
+        <link role="annotation:3" targetNodeId="161.~Hack" resolveInfo="Hack" />
       </node>
     </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="4193142602321652615">

@@ -363,6 +363,9 @@ public abstract class ASMModelLoader {
       methodDeclaration.setName(m.getName());
       methodDeclaration.setReturnType(this.getTypeByASMType(m.getGenericReturnType(), null, annotation, model));
       methodDeclaration.getNode().setId(ASMNodeId.createAnnotationMethodId(refCls.getFqName(), m.getName()));
+      if (m.getAnnotationDefault() != null) {
+        methodDeclaration.setDefaultValue(this.getAnnotationValue(m.getAnnotationDefault(), model));
+      }
       annotation.addMethod(methodDeclaration);
     }
   }
