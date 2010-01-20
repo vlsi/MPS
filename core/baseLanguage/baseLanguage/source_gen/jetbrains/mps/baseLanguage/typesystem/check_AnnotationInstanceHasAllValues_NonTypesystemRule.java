@@ -20,24 +20,25 @@ public class check_AnnotationInstanceHasAllValues_NonTypesystemRule extends Abst
 
   public void applyRule(final SNode annotationInstance, final TypeCheckingContext typeCheckingContext) {
     SNode annotation = SLinkOperations.getTarget(annotationInstance, "annotation", false);
-    /*
-      for (SNode annotationMethod : SLinkOperations.getTargets(annotation, "method", true)) {
-        boolean found = false;
-        for (SNode annotationInstanceValue : SLinkOperations.getTargets(annotationInstance, "value", true)) {
-          if (SLinkOperations.getTarget(annotationInstanceValue, "key", false) == annotationMethod) {
-            found = true;
-            break;
-          }
-        }
-        if (!(found)) {
-          {
-            BaseIntentionProvider intentionProvider = null;
-            IErrorTarget errorTarget = new NodeErrorTarget();
-            IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(annotationInstance, "'" + SPropertyOperations.getString(annotationMethod, "name") + "' missing though required", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6624237184121162632", intentionProvider, errorTarget);
-          }
+    for (SNode annotationMethod : SLinkOperations.getTargets(annotation, "method", true)) {
+      if ((SLinkOperations.getTarget(annotationMethod, "defaultValue", true) != null)) {
+        continue;
+      }
+      boolean found = false;
+      for (SNode annotationInstanceValue : SLinkOperations.getTargets(annotationInstance, "value", true)) {
+        if (SLinkOperations.getTarget(annotationInstanceValue, "key", false) == annotationMethod) {
+          found = true;
+          break;
         }
       }
-    */
+      if (!(found)) {
+        {
+          BaseIntentionProvider intentionProvider = null;
+          IErrorTarget errorTarget = new NodeErrorTarget();
+          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(annotationInstance, "'" + SPropertyOperations.getString(annotationMethod, "name") + "' missing though required", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6624237184121162632", intentionProvider, errorTarget);
+        }
+      }
+    }
   }
 
   public String getApplicableConceptFQName() {
