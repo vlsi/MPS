@@ -22,6 +22,7 @@ import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
+import jetbrains.mps.generator.generationTypes.GenerationHandlerAdapter;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
@@ -216,7 +217,7 @@ public class ProjectTester {
             gm.generateModels(
               parms.getModelDescriptors(),
               new ModuleContext(parms.getModule(), myProject),
-              generationType,
+              new GenerationHandlerAdapter(generationType),
               new EmptyProgressIndicator(),
               handler
             );

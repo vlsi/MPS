@@ -4,6 +4,7 @@ import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.GenerationAdapter;
 import jetbrains.mps.generator.GenerationListener;
+import jetbrains.mps.generator.generationTypes.GenerationHandlerAdapter;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.AbstractClassLoader;
@@ -338,7 +339,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     public void generate(GeneratorManager gm, IGenerationType generationType, IMessageHandler messageHandler) {
       gm.generateModels(Collections.singletonList(mySModel),
         new ModuleContext(myModule, myProject),
-        generationType,
+        new GenerationHandlerAdapter(generationType),
         new EmptyProgressIndicator(),
         messageHandler,
         invokeTests());

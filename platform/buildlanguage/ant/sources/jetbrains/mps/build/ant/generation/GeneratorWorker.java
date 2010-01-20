@@ -2,6 +2,7 @@ package jetbrains.mps.build.ant.generation;
 
 import jetbrains.mps.generator.GenerationAdapter;
 import jetbrains.mps.generator.GenerationListener;
+import jetbrains.mps.generator.generationTypes.GenerationHandlerAdapter;
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.BuildException;
 
@@ -214,7 +215,7 @@ public class GeneratorWorker extends MpsWorker {
           modelsToContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
         }
       }
-      gm.generateModels(modelsToContext, generationType, new EmptyProgressIndicator(), messageHandler, false);
+      gm.generateModels(modelsToContext, new GenerationHandlerAdapter(generationType), new EmptyProgressIndicator(), messageHandler, false);
     }
 
     public ClassLoader getClassLoader() {

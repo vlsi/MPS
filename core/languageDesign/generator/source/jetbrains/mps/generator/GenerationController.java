@@ -17,6 +17,7 @@ package jetbrains.mps.generator;
 
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.IMessageHandler;
@@ -55,10 +56,9 @@ public class GenerationController {
   private GeneratorManager myManager;
   protected GenerationSettings mySettings;
   private List<Pair<SModelDescriptor, IOperationContext>> myInputModels;
-  protected IGenerationType myGenerationType;
+  protected IGenerationHandler myGenerationHandler;
   protected ProgressIndicator myProgress;
-  private String myText2;
-  protected IMessageHandler myMesssages;
+  protected IMessageHandler myMessages;
   protected boolean mySaveTransientModels;
 
   protected Map<SModelDescriptor, IOperationContext> myModelsToContexts = new HashMap<SModelDescriptor, IOperationContext>();
@@ -68,7 +68,7 @@ public class GenerationController {
   public GenerationController(GeneratorManager generatorManager,
                               GenerationSettings settings,
                               List<Pair<SModelDescriptor, IOperationContext>> _inputModels,
-                              IGenerationType generationType,
+                              IGenerationHandler generationHandler,
                               ProgressIndicator progress,
                               IMessageHandler messages,
                               boolean saveTransientModels) {
@@ -76,9 +76,9 @@ public class GenerationController {
     myManager = generatorManager;
     mySettings = settings;
     myInputModels = _inputModels;
-    myGenerationType = generationType;
+    myGenerationHandler = generationHandler;
     myProgress = progress;
-    myMesssages = messages;
+    myMessages = messages;
     mySaveTransientModels = saveTransientModels;
 
     for (Pair<SModelDescriptor, IOperationContext> modelPair : myInputModels) {
@@ -100,55 +100,26 @@ public class GenerationController {
   }
 
   public boolean generate() {
-    long startTime = System.currentTimeMillis();
-
     clearMessageVew();
     myProgress.setIndeterminate(false);
     myProgress.setFraction(0);
     long totalJob = estimateGenerationTime();
     long startJobTime = System.currentTimeMillis();
-    myMesssages.handle(new Message(MessageKind.INFORMATION, GenerationController.class, myGenerationType.getStartText()));
+
+    info(myGenerationHandler.getGenType().getStartText());
+    TaskProgressHelper progressHelper = new TaskProgressHelper(myProgress, totalJob, startJobTime);
+
     try {
       boolean generationOK = true;
       for (Pair<IModule, List<SModelDescriptor>> moduleAndDescriptors : myModuleSequence) {
-        boolean result = generateModelsInModule(moduleAndDescriptors.o1, moduleAndDescriptors.o2, totalJob, startJobTime);
+        boolean result = generateModelsInModule(moduleAndDescriptors.o1, moduleAndDescriptors.o2, progressHelper);
         generationOK = generationOK && result;
       }
       if (generationOK) {
-        fireBeforeModelsCompiled(generationOK);
-        boolean compiledSuccessfully = true;
-        long compilationStart = System.currentTimeMillis();
-        boolean needToReload = false;
-        for (Pair<IModule, List<SModelDescriptor>> moduleListPair : myModuleSequence) {
-          IModule module = moduleListPair.o1;
-          if (module != null && module.reloadClassesAfterGeneration() && myGenerationType.requiresReloading()) {
-            needToReload = true;
-          }
-          boolean compilationResult = compileModule(module, totalJob, startJobTime);
-          compiledSuccessfully = compiledSuccessfully && compilationResult;
-        }
-        for (SModelDescriptor sm : myModelsToContexts.keySet()) {
-          ModelGenerationStatusManager.getInstance().invalidateData(sm);
-        }
-        if (compiledSuccessfully && needToReload && IdeMain.getTestMode() == TestMode.NO_TEST) {
-          reloadClasses(totalJob, startJobTime);
-        }
-
-        generationOK = generationOK && compiledSuccessfully;
-
-        info("Compilation finished in " + (System.currentTimeMillis() - compilationStart) + " ms");
-
-        fireAfterModelsCompiled(generationOK);
-      }
-
-      if (generationOK) {
-        info("generation completed successfully in " + (System.currentTimeMillis() - startTime) + " ms");
+        info("generation completed successfully in " + (System.currentTimeMillis() - startJobTime) + " ms");
+        generationOK = compile(progressHelper, generationOK);
       } else {
-        error("generation completed with errors in " + (System.currentTimeMillis() - startTime) + " ms");
-      }
-
-      if (isIDEAPresent() && !myGenerationType.requiresCompilationAfterGeneration()) {
-        getProjectHandler().refreshFS();
+        error("generation completed with errors in " + (System.currentTimeMillis() - startJobTime) + " ms");
       }
       fireModelsGenerated(generationOK);
     } catch (GenerationCanceledException gce) {
@@ -161,9 +132,40 @@ public class GenerationController {
       LOG.error(t);
       final String text = t.toString();
       // myProgress.setText(text);
-      myMesssages.handle(new Message(MessageKind.ERROR, GenerationController.class, text));
+      error(text);
     }
     return true;
+  }
+
+  private boolean compile(TaskProgressHelper progressHelper, boolean generationOK) throws RemoteException, GenerationCanceledException {
+    fireBeforeModelsCompiled(generationOK);
+    boolean compiledSuccessfully = true;
+    long compilationStart = System.currentTimeMillis();
+    boolean needToReload = false;
+    for (Pair<IModule, List<SModelDescriptor>> moduleListPair : myModuleSequence) {
+      IModule module = moduleListPair.o1;
+      if (module != null && module.reloadClassesAfterGeneration() && myGenerationHandler.getGenType().requiresReloading()) {
+        needToReload = true;
+      }
+      boolean compilationResult = compileModule(module, progressHelper);
+      compiledSuccessfully = compiledSuccessfully && compilationResult;
+    }
+    for (SModelDescriptor sm : myModelsToContexts.keySet()) {
+      ModelGenerationStatusManager.getInstance().invalidateData(sm);
+    }
+    if (compiledSuccessfully && needToReload && IdeMain.getTestMode() == TestMode.NO_TEST) {
+      reloadClasses(progressHelper);
+    }
+
+    generationOK = generationOK && compiledSuccessfully;
+
+    info("Compilation finished in " + (System.currentTimeMillis() - compilationStart) + " ms");
+
+    if (isIDEAPresent() && !myGenerationHandler.getGenType().requiresCompilationAfterGeneration()) {
+      getProjectHandler().refreshFS();
+    }
+    fireAfterModelsCompiled(generationOK);
+    return generationOK;
   }
 
   private void fireModelsGenerated(boolean success) {
@@ -179,7 +181,7 @@ public class GenerationController {
   }
 
   private long estimateGenerationTime() {
-    boolean compile = myGenerationType.requiresCompilationAfterGeneration();
+    boolean compile = myGenerationHandler.getGenType().requiresCompilationAfterGeneration();
     long totalJob = 0;
     for (Pair<IModule, List<SModelDescriptor>> pair : myModuleSequence) {
       IModule module = pair.o1;
@@ -195,14 +197,14 @@ public class GenerationController {
     return totalJob;
   }
 
-  protected boolean generateModelsInModule(IModule module, List<SModelDescriptor> inputModels, final long totalJob, long startJobTime) throws Exception {
+  protected boolean generateModelsInModule(IModule module, List<SModelDescriptor> inputModels, TaskProgressHelper progressHelper) throws Exception {
     boolean currentGenerationOK = true;
 
     IOperationContext invocationContext = myModulesToContexts.get(module);
 
     // myProgress.startTask("generating in module " + module);
     //todo start timer
-    setText2("module " + module, totalJob, startJobTime);
+    progressHelper.setText2("module " + module);
 
     String outputFolder = module != null ? module.getGeneratorOutputPath() : null;
     prepareOutputFolder(outputFolder);
@@ -212,11 +214,11 @@ public class GenerationController {
       prepareOutputFolder(testsOutputFolder);
     }
 
-    myMesssages.handle(new Message(MessageKind.INFORMATION, GenerationController.class, "    target root folder: \"" + outputFolder + "\""));
+    info("    target root folder: \"" + outputFolder + "\"");
 
     //++ generation
     String wasLoggingThreshold = null;
-    IGenerationSession generationSession = new GenerationSession(invocationContext, mySaveTransientModels, myProgress, myMesssages);
+    IGenerationSession generationSession = new GenerationSession(invocationContext, mySaveTransientModels, myProgress, myMessages);
     try {
       if (mySettings.isShowErrorsOnly()) {
         wasLoggingThreshold = Logger.setThreshold("ERROR");
@@ -226,10 +228,9 @@ public class GenerationController {
       for (SModelDescriptor inputModel : inputModels) {
         TypeChecker.getInstance().setIsGeneration(true);
 
-        TaskProgressHelper progress = new TaskProgressHelper(this);
         try {
-          if (!myGenerationType.isApplicable(inputModel)) {
-            LOG.error("Can't apply generation type " + myGenerationType + " to " + inputModel.getSModelFqName());
+          if (!myGenerationHandler.getGenType().isApplicable(inputModel)) {
+            LOG.error("Can't apply generation type " + myGenerationHandler.getGenType() + " to " + inputModel.getSModelFqName());
             continue;
           }
 
@@ -237,8 +238,8 @@ public class GenerationController {
           String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
 
           //  myProgress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
-          setText2("model " + inputModel.getSModelFqName(), totalJob, startJobTime);
-          progress.startLeafTask(taskName, myProgress, totalJob, startJobTime);
+          progressHelper.setText2("model " + inputModel.getSModelFqName());
+          progressHelper.startLeafTask(taskName);
 
           GenerationStatus status = generationSession.generateModel(inputModel);
           status.setOriginalInputModel(inputModel);
@@ -250,14 +251,14 @@ public class GenerationController {
           String targetDir = module.getOutputFor(inputModel);
 
           if (status.getOutputModel() != null) {
-            boolean result = myGenerationType.handleOutput(status, targetDir, invocationContext, myProgress, myMesssages);
+            boolean result = myGenerationHandler.getGenType().handleOutput(status, targetDir, invocationContext, myProgress, myMessages);
 
             if (!result) {
               info("there were errors.");
               currentGenerationOK = false;
             }
           } else if (!(status.isCanceled() || status.isError())) {
-            myGenerationType.handleEmptyOutput(status, targetDir, invocationContext, myProgress, myMesssages);
+            myGenerationHandler.getGenType().handleEmptyOutput(status, targetDir, invocationContext, myProgress, myMessages);
           }
         } finally {
           generationSession.discardTransients();
@@ -265,13 +266,13 @@ public class GenerationController {
 
           // myProgress.finishTask(taskName);
 
-          progress.finishTask();
+          progressHelper.finishTask();
 
           //We need this in order to clear subtyping cache which might occupy too much memory
           //if we generate a lot of models. For example, Charisma generation wasn't possible
           //with -Xmx1200 before this change
           TypeChecker.getInstance().setIsGeneration(false);
-          setText2("", totalJob, startJobTime);
+          progressHelper.setText2("");
         }
       }
     } finally {
@@ -285,7 +286,7 @@ public class GenerationController {
     info("");
 
     //myProgress.finishTask("generating in module " + module);   //todo finish timer
-    setText2("", totalJob, startJobTime);
+    progressHelper.setText2("");
 
     return currentGenerationOK;
   }
@@ -299,7 +300,7 @@ public class GenerationController {
           projectHandler.addSourceRoot(outputFolder);
         }
       } catch (Exception e) {
-        myMesssages.handle(new Message(MessageKind.WARNING, GenerationController.class, "Can't add output folder to IDEA as sources"));
+        warning("Can't add output folder to IDEA as sources");
       }
     }
   }
@@ -311,10 +312,10 @@ public class GenerationController {
     return false;
   }
 
-  private boolean compileModule(IModule module, long totalJob, long startJobTime) throws RemoteException, GenerationCanceledException {
+  private boolean compileModule(IModule module, TaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
     boolean compiledSuccessfully = true;
 
-    if (module != null && myGenerationType.requiresCompilationAfterGeneration()) {
+    if (module != null && myGenerationHandler.getGenType().requiresCompilationAfterGeneration()) {
       if (!isIDEAPresent() && !module.isCompileInMPS()) {
         error("Module is compiled in IntelliJ IDEA but IntelliJ IDEA isn't present.");
         error("Can't compile it.");
@@ -322,24 +323,23 @@ public class GenerationController {
       } else {
         checkMonitorCanceled();
         CompilationResult compilationResult;
-        TaskProgressHelper taskProgressHelper = new TaskProgressHelper(this);
         if (!module.isCompileInMPS()) {
-          taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS, myProgress, totalJob, startJobTime);
+          progressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_REFRESH_FS);
           getProjectHandler().refreshFS();
-          taskProgressHelper.finishTask();
+          progressHelper.finishTask();
           String info = "compiling in IntelliJ IDEA...";
-          setText2(info, totalJob, startJobTime);
+          progressHelper.setText2(info);
           info(info);
-          taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA, myProgress, totalJob, startJobTime);
+          progressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_IDEA);
           compilationResult = getProjectHandler().buildModule(module.getGeneratorOutputPath());
-          taskProgressHelper.finishTask();
+          progressHelper.finishTask();
         } else {
-          taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS, myProgress, totalJob, startJobTime);
+          progressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_COMPILE_IN_MPS);
           String info = "compiling in JetBrains MPS...";
-          setText2(info, totalJob, startJobTime);
+          progressHelper.setText2(info);
           info(info);
           compilationResult = new ModuleMaker().make(CollectionUtil.set(module), new EmptyProgressIndicator());
-          taskProgressHelper.finishTask();
+          progressHelper.finishTask();
         }
         if (compilationResult == null || compilationResult.getErrors() > 0) {
           compiledSuccessfully = false;
@@ -356,25 +356,24 @@ public class GenerationController {
         }
       }
 
-      setText2("", totalJob, startJobTime);
+      progressHelper.setText2("");
       checkMonitorCanceled();
     }
     return compiledSuccessfully;
   }
 
-  private void reloadClasses(long totalJob, long startJobTime) {
+  private void reloadClasses(TaskProgressHelper progressHelper) {
     long start = System.currentTimeMillis();
 
     info("");
     String info = "reloading MPS classes...";
     info(info);
 
-    setText2(info, totalJob, startJobTime);
-    TaskProgressHelper taskProgressHelper = new TaskProgressHelper(this);
-    taskProgressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL, myProgress, totalJob, startJobTime);
+    progressHelper.setText2(info);
+    progressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
     ClassLoaderManager.getInstance().reloadAll(myProgress);
-    taskProgressHelper.finishTask();
-    setText2("", totalJob, startJobTime);
+    progressHelper.finishTask();
+    progressHelper.setText2("");
 
     info("Reloaded in " + (System.currentTimeMillis() - start) + " ms");
   }
@@ -407,53 +406,35 @@ public class GenerationController {
   }
 
   protected void info(String text) {
-    myMesssages.handle(new Message(MessageKind.INFORMATION, GenerationController.class, text));
+    myMessages.handle(new Message(MessageKind.INFORMATION, GenerationController.class, text));
   }
 
   protected void warning(String text) {
-    myMesssages.handle(new Message(MessageKind.WARNING, GenerationController.class, text));
+    myMessages.handle(new Message(MessageKind.WARNING, GenerationController.class, text));
   }
 
   protected void error(String text) {
-    myMesssages.handle(new Message(MessageKind.ERROR, GenerationController.class, text));
-  }
-
-  protected void setText2(String text, long estimatedTime, long startJobTime) {
-    myText2 = text;
-    long elapsedTime = System.currentTimeMillis() - startJobTime;
-    String elapsedTimeString = TimePresentationUtil.timeIntervalStringPresentation(elapsedTime);
-    String estimatedTimeString = TimePresentationUtil.timeIntervalStringPresentation(estimatedTime);
-    myProgress.setText(myText2);
-    myProgress.setText2("Estimated time: " + estimatedTimeString + ", elapsed time: " + elapsedTimeString);
-  }
-
-  private String getText2() {
-    return myText2;
+    myMessages.handle(new Message(MessageKind.ERROR, GenerationController.class, text));
   }
 
   protected static class TaskProgressHelper {
+    private final ProgressIndicator myProgress;
+    private final long myStartJobTime;
+    private long myTotalJob;
+
     private javax.swing.Timer myTimer;
     private String myTaskName;
-    private ProgressIndicator myProgress;
-    private GenerationController myGenerationController;
     private long myStartTime;
-    private long myStartJobTime;
-    private long myTotalJob;
+    private String myText2;
 
     private final Object myDisposeSync = new Object();
     private boolean myIsDisposed = false;
+    private long myEstimatedTime;
 
-    public TaskProgressHelper(GenerationController generationController) {
-      myGenerationController = generationController;
-    }
-
-    private void advance(long totalJob, long elapsedJob) {
-      double fraction = ((double) elapsedJob) / ((double) totalJob);
-      if (fraction > 1) {
-        fraction = 1;
-      }
-      myProgress.setFraction(fraction);
-      myGenerationController.setText2(myGenerationController.getText2(), myTotalJob, myStartJobTime);
+    public TaskProgressHelper(ProgressIndicator progressIndicator, long totalJob, long startJobTime) {
+      myProgress = progressIndicator;
+      myStartJobTime = startJobTime;
+      myTotalJob = totalJob;
     }
 
     private void clear() {
@@ -461,38 +442,28 @@ public class GenerationController {
         myIsDisposed = true;
         myTimer = null;
         myTaskName = null;
-        myProgress = null;
         myStartTime = 0;
-        myStartJobTime = 0;
-        myTotalJob = 0;
       }
     }
 
-    public void startLeafTask(String taskName, ProgressIndicator progressIndicator, long totalJob, long startJobTime) {
+    public void startLeafTask(String taskName) {
       myTaskName = taskName;
-      myProgress = progressIndicator;
-      myTotalJob = totalJob;
-      myStartJobTime = startJobTime;
+      myIsDisposed = false;
 
-      final long estimatedTime = TaskProgressSettings.getInstance().getEstimatedTimeMillis(taskName);
+      myEstimatedTime = TaskProgressSettings.getInstance().getEstimatedTimeMillis(taskName);
       myStartTime = System.currentTimeMillis();
 
       javax.swing.Timer timer = new javax.swing.Timer(TIMER_DELAY, new ActionListener() {
         long myMillis = 0;
-        boolean myIndeterminate = false;
 
         public void actionPerformed(ActionEvent e) {
           synchronized (myDisposeSync) {
             if (myIsDisposed) return;
 
             myMillis += TIMER_DELAY;
-            if (myMillis > estimatedTime) {
-              myMillis = estimatedTime;
-              myIndeterminate = true;
-              advance(myTotalJob, (myStartTime - myStartJobTime) + myMillis);
-              myProgress.setIndeterminate(true);
-            }
-            if (!myIndeterminate) {
+            if (myMillis > myEstimatedTime) {
+              advance(myTotalJob + myMillis - myEstimatedTime, (myStartTime - myStartJobTime) + myMillis);
+            } else {
               advance(myTotalJob, (myStartTime - myStartJobTime) + myMillis);
             }
           }
@@ -505,10 +476,32 @@ public class GenerationController {
     public void finishTask() {
       long elapsedTaskTime = System.currentTimeMillis() - myStartTime;
       long elapsedJob = System.currentTimeMillis() - myStartJobTime;
+      myTotalJob += elapsedTaskTime - myEstimatedTime;
+      if(myTotalJob < 1) {
+        myTotalJob = 1;
+      }
       TaskProgressSettings.getInstance().addEstimatedTimeMillis(myTaskName, elapsedTaskTime);
       advance(myTotalJob, elapsedJob);
       myTimer.stop();
       clear();
+    }
+
+    private void advance(long totalJob, long elapsedJob) {
+      double fraction = ((double) elapsedJob) / ((double) totalJob);
+      if (fraction > 1) {
+        fraction = 1;
+      }
+      myProgress.setFraction(fraction);
+      setText2(myText2);
+    }
+
+    public void setText2(String text) {
+      myText2 = text;
+      long elapsedTime = System.currentTimeMillis() - myStartJobTime;
+      String elapsedTimeString = TimePresentationUtil.timeIntervalStringPresentation(elapsedTime);
+      String estimatedTimeString = TimePresentationUtil.timeIntervalStringPresentation(myTotalJob);
+      myProgress.setText(myText2);
+      myProgress.setText2("Estimated time: " + estimatedTimeString + ", elapsed time: " + elapsedTimeString);
     }
   }
 }

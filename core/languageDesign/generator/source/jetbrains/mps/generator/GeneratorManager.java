@@ -25,6 +25,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
+import jetbrains.mps.generator.generationTypes.GenerationHandlerAdapter;
+import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator2.GenerationController2;
 import jetbrains.mps.ide.messages.*;
@@ -209,7 +211,7 @@ public class GeneratorManager {
     final boolean[] result = new boolean[]{false};
     ProgressManager.getInstance().run(new Modal(invocationContext.getComponent(Project.class), "Generation", true) {
       public void run(@NotNull ProgressIndicator progress) {
-        result[0] = generateModels(inputModels, generationType, progress, messages, saveTransientModels);
+        result[0] = generateModels(inputModels, new GenerationHandlerAdapter(generationType), progress, messages, saveTransientModels);
       }
     });
     return result[0];
@@ -252,10 +254,10 @@ public class GeneratorManager {
    */
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
-                                final IGenerationType generationType,
+                                final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages) {
-    return generateModels(inputModels, invocationContext, generationType, progress, messages, false);
+    return generateModels(inputModels, invocationContext, generationHandler, progress, messages, false);
   }
 
   /**
@@ -263,7 +265,7 @@ public class GeneratorManager {
    */
   public boolean generateModels(final List<SModelDescriptor> inputModels,
                                 final IOperationContext invocationContext,
-                                final IGenerationType generationType,
+                                final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages,
                                 boolean saveTransientModels) {
@@ -273,7 +275,7 @@ public class GeneratorManager {
     }
     return generateModels(
       inputModelPairs,
-      generationType,
+      generationHandler,
       progress,
       messages,
       saveTransientModels);
@@ -283,7 +285,7 @@ public class GeneratorManager {
    * @return false if canceled
    */
   public boolean generateModels(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
-                                final IGenerationType generationType,
+                                final IGenerationHandler generationHandler,
                                 final ProgressIndicator progress,
                                 final IMessageHandler messages,
                                 final boolean saveTransientModels
@@ -299,8 +301,8 @@ public class GeneratorManager {
         fireBeforeGeneration(inputModels);
         GenerationController gc =
           mySettings.isUseNewGenerator()
-            ? new GenerationController2(GeneratorManager.this, mySettings, inputModels, generationType, progress, messages, saveTransientModels)
-            : new GenerationController(GeneratorManager.this, mySettings, inputModels, generationType, progress, messages, saveTransientModels);
+            ? new GenerationController2(GeneratorManager.this, mySettings, inputModels, generationHandler, progress, messages, saveTransientModels)
+            : new GenerationController(GeneratorManager.this, mySettings, inputModels, generationHandler, progress, messages, saveTransientModels);
         result[0] = gc.generate();
         project.getComponentSafe(GenerationTracer.class).finishTracing();
         fireAfterGeneration(inputModels);
