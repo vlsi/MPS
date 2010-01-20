@@ -30,6 +30,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Arrays;
 import java.util.regex.Pattern;
 
 
@@ -248,33 +249,7 @@ public abstract class AbstractSearchPanel extends JPanel {
     }
   }
 
-  protected class NextOccurenceAction extends AnAction {
-    public NextOccurenceAction() {
-      getTemplatePresentation().setIcon(Icons.NEXT_ICON);
-      getTemplatePresentation().setDescription("Next Occurrence");
-      getTemplatePresentation().setText("Next Occurrence");
-    }
-
-    public void actionPerformed(AnActionEvent e) {
-      goDown();
-    }
-  }
-
-  protected class PrevOccurenceAction extends AnAction {
-    public PrevOccurenceAction() {
-      getTemplatePresentation().setIcon(Icons.PREVIOUS_ICON);
-      getTemplatePresentation().setDescription("Previous Occurrence");
-      getTemplatePresentation().setText("Previous Occurrence");
-    }
-
-    public void actionPerformed(AnActionEvent e) {
-      goUp();
-    }
-
-  }
-
   protected class HistoryCompletionTextField extends CompletionTextField {
-
     private final int myPossibleValuesLimit = 30;
     private List<String> myPossibleValues = new ArrayList<String>();
 
@@ -318,6 +293,15 @@ public abstract class AbstractSearchPanel extends JPanel {
       getTemplatePresentation().setIcon(Icons.SEARCH_ICON);
       getTemplatePresentation().setDescription("Search history");
       getTemplatePresentation().setText("Search History");
+
+      ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
+      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(IdeActions.ACTION_FIND).getShortcutSet().getShortcuts()));
+      shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_H, KeyEvent.CTRL_DOWN_MASK), null));
+      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction("IncrementalSearch").getShortcutSet().getShortcuts()));
+
+      registerCustomShortcutSet(
+        new CustomShortcutSet(shortcuts.toArray(new Shortcut[shortcuts.size()])),
+        myText);
     }
 
     public void actionPerformed(AnActionEvent e) {
@@ -329,5 +313,45 @@ public abstract class AbstractSearchPanel extends JPanel {
     }
   }
 
+  private class PrevOccurenceAction extends AnAction {
+    public PrevOccurenceAction() {
+      getTemplatePresentation().setIcon(Icons.PREVIOUS_ICON);
+      getTemplatePresentation().setDescription("Previous Occurrence");
+      getTemplatePresentation().setText("Previous Occurrence");
 
+      ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
+      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(IdeActions.ACTION_FIND_PREVIOUS).getShortcutSet().getShortcuts()));
+      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(IdeActions.ACTION_EDITOR_MOVE_CARET_UP).getShortcutSet().getShortcuts()));
+      shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, KeyEvent.SHIFT_DOWN_MASK), null));
+
+      registerCustomShortcutSet(
+        new CustomShortcutSet(shortcuts.toArray(new Shortcut[shortcuts.size()])),
+        myText);
+    }
+
+    public void actionPerformed(final AnActionEvent e) {
+      goUp();
+    }
+  }
+
+  private class NextOccurenceAction extends AnAction {
+    public NextOccurenceAction() {
+      getTemplatePresentation().setIcon(Icons.NEXT_ICON);
+      getTemplatePresentation().setDescription("Next Occurrence");
+      getTemplatePresentation().setText("Next Occurrence");
+
+      ArrayList<Shortcut> shortcuts = new ArrayList<Shortcut>();
+      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(IdeActions.ACTION_FIND_NEXT).getShortcutSet().getShortcuts()));
+      shortcuts.addAll(Arrays.asList(ActionManager.getInstance().getAction(IdeActions.ACTION_EDITOR_MOVE_CARET_DOWN).getShortcutSet().getShortcuts()));
+      shortcuts.add(new KeyboardShortcut(KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0), null));
+
+      registerCustomShortcutSet(
+        new CustomShortcutSet(shortcuts.toArray(new Shortcut[shortcuts.size()])),
+        myText);
+    }
+
+    public void actionPerformed(final AnActionEvent e) {
+      goDown();
+    }
+  }
 }
