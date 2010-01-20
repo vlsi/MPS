@@ -311,10 +311,6 @@ public class GeneratorManager {
     return result[0];
   }
 
-  public boolean willCompile(boolean ideaPresent, IGenerationType generationType) {
-    return ideaPresent && generationType.requiresCompilationBeforeGeneration();
-  }
-
   void fireModelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
     for (GenerationListener l : myGenerationListeners) {
       try {

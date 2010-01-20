@@ -179,7 +179,7 @@ public class GenerationController {
   }
 
   private long estimateGenerationTime() {
-    boolean compile = (myGenerationType.requiresCompilationAfterGeneration() || myGenerationType.requiresCompilationBeforeGeneration());
+    boolean compile = myGenerationType.requiresCompilationAfterGeneration();
     long totalJob = 0;
     for (Pair<IModule, List<SModelDescriptor>> pair : myModuleSequence) {
       IModule module = pair.o1;

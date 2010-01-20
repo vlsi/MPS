@@ -57,10 +57,6 @@ public class TesterGenerationType extends GenerateFilesAndClassesGenerationType 
     return false;
   }
 
-  public boolean requiresCompilationBeforeGeneration() {
-    return false;
-  }
-
   public boolean requiresCompilationAfterGeneration() {
     return false;
   }
