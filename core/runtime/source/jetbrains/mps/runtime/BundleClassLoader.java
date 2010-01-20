@@ -44,7 +44,7 @@ public class
 
     synchronized (myLock) {
       if (myClassesCache.containsKey(fqName)) {
-        return myClassesCache.get("Classloader: " + this + "; Class: " + fqName);
+        return myClassesCache.get(fqName);
       }
 
       fqName = InternUtil.intern(fqName);

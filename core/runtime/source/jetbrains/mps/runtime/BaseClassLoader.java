@@ -39,7 +39,7 @@ abstract class BaseClassLoader extends ClassLoader {
     Class c = myCache.get(name);
 
     if (myCache.containsKey(name) && c == null) {
-      throw new ClassNotFoundException(name);
+      throw new ClassNotFoundException("Classloader: " + this + "; Class: " + name);
     }
 
     if (c == null) {
