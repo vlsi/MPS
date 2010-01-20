@@ -10,9 +10,12 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.workbench.actions.imports.ImportHelper;
 
 public class AddModelImportByRoot_Action extends GeneratedAction {
@@ -23,6 +26,7 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
   private MPSProject mpsProject;
   private IModule module;
   private SModelDescriptor model;
+  private EditorComponent editorComponent;
 
   public AddModelImportByRoot_Action() {
     super("Add Model Import by Root", "", ICON);
@@ -67,12 +71,21 @@ public class AddModelImportByRoot_Action extends GeneratedAction {
     if (this.model == null) {
       return false;
     }
+    this.editorComponent = event.getData(MPSDataKeys.EDITOR_COMPONENT);
+    if (this.editorComponent == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ImportHelper.addModelImportByRoot(AddModelImportByRoot_Action.this.project, AddModelImportByRoot_Action.this.mpsProject, AddModelImportByRoot_Action.this.module, AddModelImportByRoot_Action.this.model);
+      EditorCell selectedCell = AddModelImportByRoot_Action.this.editorComponent.getSelectedCell();
+      String initialText = "";
+      if (selectedCell instanceof EditorCell_Label) {
+        initialText = ((EditorCell_Label) selectedCell).getRenderedText();
+      }
+      ImportHelper.addModelImportByRoot(AddModelImportByRoot_Action.this.project, AddModelImportByRoot_Action.this.mpsProject, AddModelImportByRoot_Action.this.module, AddModelImportByRoot_Action.this.model, initialText);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddModelImportByRoot", t);

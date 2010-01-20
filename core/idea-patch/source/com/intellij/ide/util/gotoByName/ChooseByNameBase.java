@@ -47,6 +47,7 @@ import com.intellij.util.SmartList;
 import com.intellij.util.diff.Diff;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.ChooseItemComponent;
+import jetbrains.mps.util.annotation.Patch;
 import org.apache.oro.text.regex.*;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
@@ -70,7 +71,8 @@ public abstract class ChooseByNameBase {
 
   protected final Project myProject;
   protected final ChooseByNameModel myModel;
-  protected final String myInitialText;
+  @Patch
+  protected String myInitialText; // final modifier removed
   private final Reference<PsiElement> myContext;
 
   protected Component myPreviouslyFocusedComponent;
@@ -240,6 +242,11 @@ public abstract class ChooseByNameBase {
         updateProcessor.updatePopup(element);
       }
     }
+  }
+
+  @Patch
+  public void setInitialText(String text) {
+    myInitialText = text;
   }
 
   /**

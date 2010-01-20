@@ -162,7 +162,8 @@ public class ImportHelper {
     }
   }
 
-  public static void addModelImportByRoot(Project project, final MPSProject mpsProject, final IModule contextModule, final SModelDescriptor model) {
+  public static void addModelImportByRoot(Project project, final MPSProject mpsProject, final IModule contextModule, final SModelDescriptor model,
+                                          String initialText) {
     FakePsiElement fakePsiContext = new FakePsiElement() {
       public PsiElement getParent() {
         return null;
@@ -236,6 +237,7 @@ public class ImportHelper {
       };
     }
     ChooseByNamePopup popup = ChooseByNamePopup.createPopup(project, goToNodeModel, fakePsiContext);
+    popup.setInitialText(initialText);
 
     popup.invoke(new ChooseByNamePopupComponent.Callback() {
       public void onClose() {
