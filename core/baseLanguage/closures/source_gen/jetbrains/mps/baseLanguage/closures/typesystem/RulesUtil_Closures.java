@@ -41,12 +41,12 @@ public class RulesUtil_Closures {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_51 = null;
+      SNode quotedNode_53 = null;
       {
-        quotedNode_51 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_44 = quotedNode_51;
-        quotedNode1_44.addReference(SReference.create("classifier", quotedNode1_44, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~FunctionTypes")));
-        result = quotedNode1_44;
+        quotedNode_53 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_46 = quotedNode_53;
+        quotedNode1_46.addReference(SReference.create("classifier", quotedNode1_46, SModelReference.fromString("f:java_stub#jetbrains.mps.baseLanguage.closures.runtime(jetbrains.mps.baseLanguage.closures.runtime@java_stub)"), SNodeId.fromString("~FunctionTypes")));
+        result = quotedNode1_46;
       }
       return result;
     }

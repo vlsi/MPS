@@ -335,6 +335,7 @@
     </node>
   </node>
   <visible index="2" modelUID="r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)" />
+  <visible index="3" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.lang.typesystem.structure.InequationReplacementRule:3" id="1201614755266">
     <property name="name:3" value="FunctionType_subtypeOf_FunctionType" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1201614755268">
@@ -586,6 +587,25 @@
             <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="1214834430015">
               <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="1214834430016">
                 <link role="concept:16" targetNodeId="24.1179479408386:3" resolveInfo="JoinType" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7026901688661339079">
+        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7026901688661360446">
+          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7026901688661339081">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7026901688661339080">
+              <link role="variableDeclaration:3" targetNodeId="1214834359719" resolveInfo="join" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="7026901688661360445">
+              <link role="link:16" targetNodeId="24.1179479418730:3" />
+            </node>
+          </node>
+          <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="7026901688661360452">
+            <node role="argument:7" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="7026901688661360463">
+              <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7026901688661360470">
+                <link role="classifier:3" targetNodeId="3v.~RuntimeException" resolveInfo="RuntimeException" />
               </node>
             </node>
           </node>
@@ -3811,7 +3831,7 @@
       <link role="concept:3" targetNodeId="1.1235746970280:3" resolveInfo="CompactInvokeFunctionExpression" />
     </node>
   </node>
-  <visible index="3" modelUID="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
+  <visible index="4" modelUID="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)" />
   <node type="jetbrains.mps.lang.typesystem.structure.NonTypesystemRule:3" id="81108310549037922">
     <property name="name:3" value="check_ClosureLiteralDataFlow" />
     <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="81108310549037923">
@@ -3819,8 +3839,8 @@
         <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="81108310549155633">
           <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="81108310549155644">
             <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8249991444799099530">
-              <link role="baseMethodDeclaration:3" targetNodeId="3v.8249991444799099355" resolveInfo="checkDataFlow" />
-              <link role="classConcept:3" targetNodeId="3v.1223640197349" resolveInfo="DataFlowUtil" />
+              <link role="baseMethodDeclaration:3" targetNodeId="4v.8249991444799099355" resolveInfo="checkDataFlow" />
+              <link role="classConcept:3" targetNodeId="4v.1223640197349" resolveInfo="DataFlowUtil" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8249991444799099531">
                 <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8249991444799099532">
                   <link role="applicableNode:3" targetNodeId="81108310549037925" resolveInfo="closureLiteral" />
