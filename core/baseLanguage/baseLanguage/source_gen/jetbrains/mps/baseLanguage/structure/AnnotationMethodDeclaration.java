@@ -9,9 +9,18 @@ import jetbrains.mps.project.GlobalScope;
 
 public class AnnotationMethodDeclaration extends InstanceMethodDeclaration {
   public static final String concept = "jetbrains.mps.baseLanguage.structure.AnnotationMethodDeclaration";
+  public static final String DEFAULT_VALUE = "defaultValue";
 
   public AnnotationMethodDeclaration(SNode node) {
     super(node);
+  }
+
+  public Expression getDefaultValue() {
+    return (Expression) this.getChild(Expression.class, AnnotationMethodDeclaration.DEFAULT_VALUE);
+  }
+
+  public void setDefaultValue(Expression node) {
+    super.setChild(AnnotationMethodDeclaration.DEFAULT_VALUE, node);
   }
 
   public static AnnotationMethodDeclaration newInstance(SModel sm, boolean init) {

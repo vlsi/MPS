@@ -13081,5 +13081,51 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="5790076564176961892">
+    <property name="package:23" value="sideTransforms" />
+    <property name="name:23" value="AddAnnotationMemberDefaultValue" />
+    <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder:23" id="5790076564176961893">
+      <property name="transformTag:23" value="ext_3_RTransform" />
+      <link role="applicableConcept:23" targetNodeId="1.1188206574119:3" resolveInfo="AnnotationMethodDeclaration" />
+      <node role="part:23" type="jetbrains.mps.lang.actions.structure.AddMenuPart:23" id="5790076564176968742">
+        <link role="concept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
+        <node role="part:23" type="jetbrains.mps.lang.actions.structure.SimpleSideTransformMenuPart:23" id="5790076564176968744">
+          <node role="handler:23" type="jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_Handler:23" id="5790076564176968745">
+            <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5790076564176968746">
+              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5790076564176968748">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5790076564176968755">
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5790076564176968750">
+                    <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode:23" id="5790076564176968749" />
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5790076564176968754">
+                      <link role="link:16" targetNodeId="1.5790076564176875336:3" />
+                    </node>
+                  </node>
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation:16" id="5790076564176968759" />
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="matchingText:23" type="jetbrains.mps.lang.actions.structure.SideTransform_SimpleString:23" id="5790076564176968747">
+            <property name="text:23" value="default" />
+          </node>
+        </node>
+      </node>
+      <node role="precondition:23" type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstitutePreconditionFunction:23" id="5790076564176968727">
+        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5790076564176968728">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5790076564176968729">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5790076564176968736">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5790076564176968731">
+                <node role="operand:3" type="jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_sourceNode:23" id="5790076564176968730" />
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5790076564176968735">
+                  <link role="link:16" targetNodeId="1.5790076564176875336:3" />
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsNullOperation:16" id="5790076564176968740" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 
