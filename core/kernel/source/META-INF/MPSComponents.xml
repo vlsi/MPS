@@ -592,6 +592,10 @@
         <component>
             <implementation-class>jetbrains.mps.changesmanager.ChangesManager</implementation-class>
         </component>
+
+        <component>
+            <implementation-class>jetbrains.mps.changesmanager.EditorChangesHighlighter</implementation-class>
+        </component>
     </project-components>
 
 
