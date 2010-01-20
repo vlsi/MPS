@@ -9,10 +9,12 @@ import org.apache.commons.logging.LogFactory;
 import java.awt.Frame;
 import jetbrains.mps.project.IModule;
 import com.intellij.openapi.project.Project;
+import javax.swing.tree.TreeNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.ide.projectPane.ProjectModuleTreeNode;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.smodel.Language;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -20,11 +22,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.progress.ProgressIndicator;
 
 public class NewAccessoryModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -33,6 +31,7 @@ public class NewAccessoryModel_Action extends GeneratedAction {
   private Frame frame;
   private IModule module;
   private Project project;
+  private TreeNode treeNode;
 
   public NewAccessoryModel_Action() {
     super("New Accessory Model", "", ICON);
@@ -45,16 +44,12 @@ public class NewAccessoryModel_Action extends GeneratedAction {
     return "";
   }
 
-  public boolean isApplicable(AnActionEvent event) {
-    return NewAccessoryModel_Action.this.module instanceof Language;
-  }
-
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      {
-        boolean enabled = this.isApplicable(event);
-        this.setEnabledState(event.getPresentation(), enabled);
-      }
+      event.getPresentation().setText(((NewAccessoryModel_Action.this.treeNode instanceof ProjectModuleTreeNode ?
+        "" :
+        "New "
+      )) + "Accesory Model");
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "NewAccessoryModel", t);
@@ -80,6 +75,10 @@ public class NewAccessoryModel_Action extends GeneratedAction {
     if (this.project == null) {
       return false;
     }
+    this.treeNode = event.getData(MPSDataKeys.LOGICAL_VIEW_NODE);
+    if (this.treeNode == null) {
+      return false;
+    }
     return true;
   }
 
@@ -96,16 +95,12 @@ public class NewAccessoryModel_Action extends GeneratedAction {
       if (result == null) {
         return;
       }
-      final Wrappers._T<LanguageDescriptor> descriptor = new Wrappers._T<LanguageDescriptor>();
-      ProgressManager.getInstance().run(new Task.Modal(NewAccessoryModel_Action.this.project, "Creating", false) {
-        public void run(@NotNull ProgressIndicator progressIndicator) {
-          descriptor.value = language.getLanguageDescriptor();
-          descriptor.value.getAccessoryModels().add(result.getSModelReference());
-        }
-      });
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          language.setLanguageDescriptor(descriptor.value);
+          LanguageDescriptor descriptor;
+          descriptor = language.getLanguageDescriptor();
+          descriptor.getAccessoryModels().add(result.getSModelReference());
+          language.setLanguageDescriptor(descriptor);
           language.save();
         }
       });
