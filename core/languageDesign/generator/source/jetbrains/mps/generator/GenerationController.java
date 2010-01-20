@@ -24,7 +24,7 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.ide.progress.TaskProgressSettings;
+import jetbrains.mps.ide.progress.TaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.make.ModuleMaker;
@@ -39,19 +39,14 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.TimePresentationUtil;
 import jetbrains.mps.cleanup.CleanupManager;
 
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.rmi.RemoteException;
 import java.util.*;
 
 public class GenerationController {
   protected static Logger LOG = Logger.getLogger(GenerationController.class);
-
-  private static final int TIMER_DELAY = 100; //milliseconds
 
   private GeneratorManager myManager;
   protected GenerationSettings mySettings;
@@ -371,7 +366,7 @@ public class GenerationController {
 
     progressHelper.setText2(info);
     progressHelper.startLeafTask(ModelsProgressUtil.TASK_NAME_RELOAD_ALL);
-    ClassLoaderManager.getInstance().reloadAll(myProgress);
+    ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     progressHelper.finishTask();
     progressHelper.setText2("");
 
@@ -417,91 +412,4 @@ public class GenerationController {
     myMessages.handle(new Message(MessageKind.ERROR, GenerationController.class, text));
   }
 
-  protected static class TaskProgressHelper {
-    private final ProgressIndicator myProgress;
-    private final long myStartJobTime;
-    private long myTotalJob;
-
-    private javax.swing.Timer myTimer;
-    private String myTaskName;
-    private long myStartTime;
-    private String myText2;
-
-    private final Object myDisposeSync = new Object();
-    private boolean myIsDisposed = false;
-    private long myEstimatedTime;
-
-    public TaskProgressHelper(ProgressIndicator progressIndicator, long totalJob, long startJobTime) {
-      myProgress = progressIndicator;
-      myStartJobTime = startJobTime;
-      myTotalJob = totalJob;
-    }
-
-    private void clear() {
-      synchronized (myDisposeSync) {
-        myIsDisposed = true;
-        myTimer = null;
-        myTaskName = null;
-        myStartTime = 0;
-      }
-    }
-
-    public void startLeafTask(String taskName) {
-      myTaskName = taskName;
-      myIsDisposed = false;
-
-      myEstimatedTime = TaskProgressSettings.getInstance().getEstimatedTimeMillis(taskName);
-      myStartTime = System.currentTimeMillis();
-
-      javax.swing.Timer timer = new javax.swing.Timer(TIMER_DELAY, new ActionListener() {
-        long myMillis = 0;
-
-        public void actionPerformed(ActionEvent e) {
-          synchronized (myDisposeSync) {
-            if (myIsDisposed) return;
-
-            myMillis += TIMER_DELAY;
-            if (myMillis > myEstimatedTime) {
-              advance(myTotalJob + myMillis - myEstimatedTime, (myStartTime - myStartJobTime) + myMillis);
-            } else {
-              advance(myTotalJob, (myStartTime - myStartJobTime) + myMillis);
-            }
-          }
-        }
-      });
-      myTimer = timer;
-      timer.start();
-    }
-
-    public void finishTask() {
-      long elapsedTaskTime = System.currentTimeMillis() - myStartTime;
-      long elapsedJob = System.currentTimeMillis() - myStartJobTime;
-      myTotalJob += elapsedTaskTime - myEstimatedTime;
-      if(myTotalJob < 1) {
-        myTotalJob = 1;
-      }
-      TaskProgressSettings.getInstance().addEstimatedTimeMillis(myTaskName, elapsedTaskTime);
-      advance(myTotalJob, elapsedJob);
-      myTimer.stop();
-      clear();
-    }
-
-    private void advance(long totalJob, long elapsedJob) {
-      double fraction = ((double) elapsedJob) / ((double) totalJob);
-      if (fraction > 1) {
-        fraction = 1;
-      }
-      myProgress.setFraction(fraction);
-      setText2(myText2);
-    }
-
-    public void setText2(String text) {
-      myText2 = text;
-      long elapsedTime = System.currentTimeMillis() - myStartJobTime;
-      String elapsedTimeString = TimePresentationUtil.timeIntervalStringPresentation(elapsedTime);
-      String estimatedTimeString = TimePresentationUtil.timeIntervalStringPresentation(myTotalJob);
-      myProgress.setText(myText2);
-      myProgress.setText2("Estimated time: " + estimatedTimeString + ", elapsed time: " + elapsedTimeString);
-    }
-  }
 }
