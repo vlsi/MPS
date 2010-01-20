@@ -42,6 +42,10 @@ public class StubLocation {
     return myPrefix == null ? "" : myPrefix;
   }
 
+  public ModuleReference getModuleRef(){
+    return myModuleReference;
+  }
+
   public IModule getModule() {
     if (myModuleReference == null) return null;
     return MPSModuleRepository.getInstance().getModule(myModuleReference);
