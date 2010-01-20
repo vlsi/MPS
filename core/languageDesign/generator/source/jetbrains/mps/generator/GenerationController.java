@@ -178,12 +178,16 @@ public class GenerationController {
   private long estimateGenerationTime() {
     boolean compile = myGenerationHandler.getGenType().requiresCompilationAfterGeneration();
     long totalJob = 0;
+
     for (Pair<IModule, List<SModelDescriptor>> pair : myModuleSequence) {
       IModule module = pair.o1;
       if (module != null) {
         long jobTime = ModelsProgressUtil.estimateTotalGenerationJobMillis(compile, !module.isCompileInMPS(), pair.o2);
         totalJob += jobTime;
       }
+    }
+    if(compile) {
+      totalJob += ModelsProgressUtil.estimateReloadAllTimeMillis();
     }
 
     if (totalJob == 0) {

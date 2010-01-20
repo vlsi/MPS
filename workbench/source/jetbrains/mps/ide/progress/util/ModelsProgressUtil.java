@@ -101,7 +101,6 @@ public class ModelsProgressUtil {
 
   public static long estimateTotalGenerationJobMillis(boolean compile, boolean inIDEA, Collection<SModelDescriptor> models) {
     long generationTime = estimateGenerationTimeMillis(models);
-    long reloadingTime = estimateReloadAllTimeMillis();
     long refreshingFSTime = estimateRefreshIDEAFileSystemTimeMillis();
     if (compile) {
       long compilationInIDEATime = 0;
@@ -110,7 +109,7 @@ public class ModelsProgressUtil {
       } else {
         compilationInIDEATime = estimateCompileInMPSTimeMillis();
       }
-      long totalCompilationTime = compilationInIDEATime + refreshingFSTime + reloadingTime;
+      long totalCompilationTime = compilationInIDEATime + refreshingFSTime;
       generationTime = generationTime + totalCompilationTime;
     } else {
       //generationTime = generationTime; // only re-load classes
