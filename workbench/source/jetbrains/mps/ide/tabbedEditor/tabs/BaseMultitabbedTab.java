@@ -35,6 +35,7 @@ import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
@@ -177,7 +178,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
             final String[] result = new String[]{null};
             ModelAccess.instance().runReadAction(new Runnable() {
               public void run() {
-                result[0] = concept.getName();
+                result[0] = NodePresentationUtil.matchingText(concept);
               }
             });
             return result[0];
