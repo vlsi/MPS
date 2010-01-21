@@ -425,6 +425,16 @@
             <action id="ChangeLaf" class="com.intellij.ide.actions.QuickChangeLookAndFeel"/>
         </group>
 
+        <group id="NavbarPopupMenu">
+            <reference ref="CutCopyPasteGroup"></reference>
+            <separator/>
+            <reference ref="EditSource"></reference>
+            <reference ref="ViewSource"></reference>
+            <separator/>
+            <action id="SynchronizeCurrentFile" class="com.intellij.ide.actions.SynchronizeCurrentFileAction" icon="/actions/sync.png"/>
+            <reference ref="CompareTwoFiles"></reference>
+            <reference ref="CompareFileWithEditor"></reference>
+        </group> 
     </actions>
 </component>
 
