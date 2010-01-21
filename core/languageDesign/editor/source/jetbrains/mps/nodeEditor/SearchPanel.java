@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.util.Pair;
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
@@ -32,9 +33,8 @@ import jetbrains.mps.workbench.search.AbstractSearchPanel;
 import jetbrains.mps.workbench.search.SearchHistoryComponent;
 
 import java.awt.*;
-import java.util.ArrayList;
+import java.util.*;
 import java.util.List;
-import java.util.Set;
 import java.util.regex.Matcher;
 
 public class SearchPanel extends AbstractSearchPanel {
@@ -219,16 +219,25 @@ public class SearchPanel extends AbstractSearchPanel {
     }
   }
 
-  private void highlight(final List<Integer> resultIndex, final List<Integer> startPosition,
-                         final List<Integer> endPosition, final List<EditorCell_Label> cells) {
+  private void highlight(final List<Integer> resultIndex, final List<Integer> startPositions,
+                         final List<Integer> endPositions, final List<EditorCell_Label> cells) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         myHighlightManager = myEditor.getHighlightManager();
         List<EditorMessage> messages = new ArrayList<EditorMessage>();
+        Map<EditorCell_Label, List<Pair>> cellToPositions = new LinkedHashMap<EditorCell_Label, List<Pair>>();
         for (int i = 0; i < resultIndex.size(); i++) {
           Integer index = resultIndex.get(i);
-          messages.add(new SearchPanelEditorMessage(cells.get(index),
-            startPosition.get(i), endPosition.get(i)));
+          EditorCell_Label cell = cells.get(index);
+          Integer startPosition = startPositions.get(i);
+          Integer endPosition = endPositions.get(i);
+          if (!cellToPositions.containsKey(cell)) {
+            cellToPositions.put(cell, new ArrayList<Pair>());
+          }
+          cellToPositions.get(cell).add(new Pair(startPosition, endPosition));
+        }
+        for (EditorCell_Label cell : cellToPositions.keySet()) {
+          messages.add(new SearchPanelEditorMessage(cell, cellToPositions.get(cell)));
         }
         myHighlightManager.mark(messages);
       }
@@ -262,18 +271,12 @@ public class SearchPanel extends AbstractSearchPanel {
 
   private class SearchPanelEditorMessage extends DefaultEditorMessage {
     private final CellInfo myInfo;
-    private int myStartPosition;
-    private int myEndPosition;
+    private final List<Pair> myPositions;
 
-    public SearchPanelEditorMessage(EditorCell cell, int start, int end) {
+    public SearchPanelEditorMessage(EditorCell cell, List<Pair> positions) {
       super(cell.getSNode(), Color.yellow, "", SearchPanel.this.myOwner);
       myInfo = cell.getCellInfo();
-      myStartPosition = start;
-      myEndPosition = end;
-    }
-
-    public SearchPanelEditorMessage(EditorCell cell) {
-      this(cell, 0, ((EditorCell_Label) cell).getRenderedText().length());
+      myPositions = positions;
     }
 
     public EditorCell getCell(EditorComponent editor) {
@@ -285,24 +288,27 @@ public class SearchPanel extends AbstractSearchPanel {
     }
 
     public void paint(Graphics g, EditorComponent editorComponent, EditorCell cell) {
-      if (!(cell instanceof EditorCell_Label)) return;
+      if (cell == null || !(cell instanceof EditorCell_Label)) return;
       EditorCell_Label editorCell = (EditorCell_Label) cell;
-      if (editorCell != null && editorCell.getRenderedText().length() >= myEndPosition) {
-        FontMetrics metrics = g.getFontMetrics();
-        String text = editorCell.getRenderedText().substring(myStartPosition, myEndPosition);
-        int prevStringWidth = metrics.stringWidth(editorCell.getRenderedText().
-          substring(0, editorCell.getRenderedText().toLowerCase().
-            indexOf(text.toLowerCase())));
-        int x = editorCell.getX() + editorCell.getLeftInset()
-          + prevStringWidth;
-        int y = editorCell.getY();
-        int height = editorCell.getHeight();
-        int width = metrics.stringWidth(text);
+      for (Pair position : myPositions) {
+        int startPosition = (Integer) position.first;
+        int endPosition = (Integer) position.second;
+        if (editorCell.getRenderedText().length() >= endPosition) {
+          FontMetrics metrics = g.getFontMetrics();
+          String text = editorCell.getRenderedText().substring(startPosition, endPosition);
+          int prevStringWidth = metrics.stringWidth(editorCell.getRenderedText().
+            substring(0, startPosition));
+          int x = editorCell.getX() + editorCell.getLeftInset()
+            + prevStringWidth;
+          int y = editorCell.getY();
+          int height = editorCell.getHeight();
+          int width = metrics.stringWidth(text);
 
-        Color color = getColor();
-        color = new Color(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha() / 4);
-        g.setColor(color);
-        g.fillRect(x, y, width - 1, height - 1);
+          Color color = getColor();
+          color = new Color(color.getRed(), color.getGreen(), color.getBlue(), color.getAlpha() / 4);
+          g.setColor(color);
+          g.fillRect(x, y, width - 1, height - 1);
+        }
       }
     }
   }
