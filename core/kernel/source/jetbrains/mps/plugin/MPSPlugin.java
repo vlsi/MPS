@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.plugin;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.logging.Logger;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
@@ -49,31 +49,25 @@ public class MPSPlugin {
   }
 
   private IMPSPlugin getPlugin() {
-    if (myPlugin != null) {
-      try {
-        myPlugin.getProjectCreator().ping();
-      } catch (RemoteException e) {
-        myPlugin = null;
+    if (checkIsConnected()) return myPlugin;
+
+    try {
+      myPlugin = (IMPSPlugin) Naming.lookup("//localhost:2390/MPSPlugin");
+    } catch (Exception e) {
+      if (!myMessageShown) {
+        myMessageShown = true;
+        LOG.info("Wasn't able to connect to IDEA");
       }
     }
 
-    if (myPlugin == null) {
-      try {
-        myPlugin = (IMPSPlugin) Naming.lookup("//localhost:2390/MPSPlugin");
-      } catch (Exception e) {
-        if (!myMessageShown) {
-          myMessageShown = true;
-          LOG.info("Wasn't able to connect to IDEA");
-        }
-      }
-    }
     return myPlugin;
   }
 
   public IProjectHandler getProjectHandler(String projectPath) {
     try {
-      if (getPlugin() == null) return null;
-      return getPlugin().getProjectHandlerFor(projectPath);
+      IMPSPlugin plugin = getPlugin();
+      if (plugin == null) return null;
+      return plugin.getProjectHandlerFor(projectPath);
     } catch (RemoteException e) {
       return null;
     }
