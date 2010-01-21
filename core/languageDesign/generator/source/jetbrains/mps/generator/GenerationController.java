@@ -17,6 +17,8 @@ package jetbrains.mps.generator;
 
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -229,7 +231,7 @@ public class GenerationController {
   }
 
   protected IProjectHandler getProjectHandler() {
-    return getProject().getProjectHandler();
+    return IdeMain.getTestMode() != TestMode.CORE_TEST ? getProject().getProjectHandler() : null;
   }
 
   private MPSProject getProject() {
