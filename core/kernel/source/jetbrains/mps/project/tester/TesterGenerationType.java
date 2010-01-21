@@ -61,10 +61,6 @@ public class TesterGenerationType extends GenerateFilesAndClassesGenerationType 
     return false;
   }
 
-  protected boolean isPutClassesOnTheDisk() {
-    return false;
-  }
-
   @Override
   public boolean handleOutput(GenerationStatus status, String outputDir, IOperationContext context, ProgressIndicator monitor, IMessageHandler messages) {
     myLastOutputDir = new File(context.getModule().getGeneratorOutputPath());
