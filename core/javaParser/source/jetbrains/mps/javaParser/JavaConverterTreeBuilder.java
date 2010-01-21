@@ -812,11 +812,20 @@ public class JavaConverterTreeBuilder {
   }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(ClassLiteralAccess x) {
-    ClassifierClassExpression classExpression = ClassifierClassExpression.newInstance(myCurrentModel);
-    SReference classifierReference = myTypesProvider.createClassifierReference((ReferenceBinding) x.targetType,
-      ClassifierClassExpression.CLASSIFIER, classExpression.getNode());
-    classExpression.getNode().addReference(classifierReference);
-    return classExpression;
+    if (x.targetType instanceof ReferenceBinding) {
+      ClassifierClassExpression classExpression = ClassifierClassExpression.newInstance(myCurrentModel);
+      SReference classifierReference = myTypesProvider.createClassifierReference((ReferenceBinding) x.targetType,
+        ClassifierClassExpression.CLASSIFIER, classExpression.getNode());
+      classExpression.getNode().addReference(classifierReference);
+      return classExpression;
+    }
+    if (x.targetType instanceof BaseTypeBinding) {
+      PrimitiveClassExpression classExpression = PrimitiveClassExpression.newInstance(myCurrentModel);
+      classExpression.setPrimitiveType((PrimitiveType) myTypesProvider.createType(x.targetType));
+      return classExpression;
+    }
+    LOG.error("unknown class expression type");
+    return null;
   }
 
   jetbrains.mps.baseLanguage.structure.Expression processExpression(UnaryExpression x) {

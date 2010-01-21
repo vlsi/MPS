@@ -11,4 +11,5 @@ public @interface OrdinaryAnnotationWithDefaultValues {
   OrdEnum anEnum() default OrdEnum.A;
   @SuppressWarnings(value = "hello")
   String text() default "";
+  Class c() default void.class;
 }
