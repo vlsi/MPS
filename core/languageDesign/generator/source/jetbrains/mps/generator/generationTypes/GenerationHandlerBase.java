@@ -38,15 +38,15 @@ public abstract class GenerationHandlerBase implements IGenerationHandler {
   }
 
   protected void info(String text) {
-    myMessages.handle(new Message(MessageKind.INFORMATION, GenerationHandlerBase.class, text));
+    myMessages.handle(new Message(MessageKind.INFORMATION, this.getClass(), text));
   }
 
   protected void warning(String text) {
-    myMessages.handle(new Message(MessageKind.WARNING, GenerationHandlerBase.class, text));
+    myMessages.handle(new Message(MessageKind.WARNING, this.getClass(), text));
   }
 
   protected void error(String text) {
-    myMessages.handle(new Message(MessageKind.ERROR, GenerationHandlerBase.class, text));
+    myMessages.handle(new Message(MessageKind.ERROR, this.getClass(), text));
   }
 
   protected void checkMonitorCanceled(TaskProgressHelper progressHelper) throws GenerationCanceledException {

@@ -63,7 +63,7 @@ public abstract class AbstractClassPathItem implements IClassPathItem {
   public static IClassPathItem createFromPath(String path, IModule module) throws IOException {
     IFile file = FileSystem.getFile(path);
     if (!file.exists())
-      throw new IOException("Can't load class path item " + path + " in " + (module == null ? "" : module.toString()) + (file.isDirectory() ? ". Execute make in IDEA." : ""));
+      throw new IOException("Can't load class path item " + path + " in " + (module == null ? "" : module.toString()) + (file.isDirectory() ? ". Execute make in IDEA." : "."));
 
     IClassPathItem currentItem;
     if (file.isDirectory()) {
