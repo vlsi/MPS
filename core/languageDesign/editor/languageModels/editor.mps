@@ -7,6 +7,7 @@
   <language namespace="7866978e-a0f0-4cc7-81bc-4d213d9375e1(jetbrains.mps.lang.smodel)" />
   <language namespace="83888646-71ce-4f1c-9c53-c54016f6ad4f(jetbrains.mps.baseLanguage.collections)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
+  <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590298(jetbrains.mps.lang.editor.constraints)" version="21" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959029e(jetbrains.mps.lang.editor.structure)" version="32" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
@@ -6525,6 +6526,73 @@
             </node>
           </node>
         </node>
+        <node role="menuDescriptor:32" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor:32" id="6699718426954288698">
+          <node role="cellMenuPart:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group:32" id="6699718426954288706">
+            <node role="parametersFunction:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query:32" id="6699718426954288707">
+              <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6699718426954288708">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6699718426954288709">
+                  <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation:16" id="6699718426954288711">
+                    <link role="enumDeclaration:16" targetNodeId="2.1101211480448:32" resolveInfo="_FontStyle_Enum" />
+                    <node role="operation:16" type="jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation:16" id="6699718426954288712" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="handlerFunction:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group_Handler:32" id="6699718426954288723">
+              <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6699718426954288724">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6699718426954288731">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6699718426954288732">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6699718426954288733">
+                      <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode:32" id="6699718426954288734" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="6699718426954288735">
+                        <link role="property:16" targetNodeId="2.1186403771423:32" resolveInfo="style" />
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Property_SetOperation:16" id="6699718426954288736">
+                      <node role="value:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6699718426954288737">
+                        <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject:32" id="6699718426954288738" />
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.EnumMember_ValueOperation:16" id="6699718426954288739" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="6699718426954288836">
+                  <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6699718426954288837">
+                    <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6699718426954288879">
+                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="6699718426954288886">
+                        <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6699718426954288889">
+                          <node role="creator:3" type="jetbrains.mps.lang.smodel.structure.SNodeCreator:16" id="6699718426954288890">
+                            <node role="createdType:16" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="6699718426954288891">
+                              <link role="concept:16" targetNodeId="2.1220974635399:32" resolveInfo="QueryFunction_FontStyle" />
+                            </node>
+                          </node>
+                        </node>
+                        <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6699718426954288881">
+                          <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode:32" id="6699718426954288880" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="6699718426954288885">
+                            <link role="link:16" targetNodeId="2.1220975211821:32" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                  <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression:3" id="6699718426954288852">
+                    <node role="leftExpression:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_parameterObject:32" id="6699718426954288840" />
+                    <node role="rightExpression:3" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation:16" id="6699718426954288877">
+                      <link role="enumDeclaration:16" targetNodeId="2.1101211480448:32" resolveInfo="_FontStyle_Enum" />
+                      <node role="operation:16" type="jetbrains.mps.lang.smodel.structure.SEnum_MemberOperation:16" id="6699718426954288878">
+                        <link role="member:16" targetNodeId="2.1220973684614:32" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="parameterObjectType:32" type="jetbrains.mps.lang.smodel.structure.SEnumMemberType:16" id="6699718426954288740">
+              <link role="enum:16" targetNodeId="2.1101211480448:32" resolveInfo="_FontStyle_Enum" />
+            </node>
+          </node>
+        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1220975756218">
         <property name="attractsFocus:32" value="3" />
@@ -6553,31 +6621,13 @@
           </node>
         </node>
         <node role="menuDescriptor:32" type="jetbrains.mps.lang.editor.structure.CellMenuDescriptor:32" id="1221475093708">
-          <node role="cellMenuPart:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item:32" id="1221475097538">
-            <property name="matchingText:32" value="query body" />
-            <node role="handlerFunction:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Item_Handler:32" id="1221475097539">
-              <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1221475097540">
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1221475105807">
-                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1221475105808">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1221475105809">
-                      <node role="operand:3" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Abstract_editedNode:32" id="1221475105810" />
-                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="1221475109500">
-                        <link role="link:16" targetNodeId="2.1220975211821:32" />
-                      </node>
-                    </node>
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Link_SetNewChildOperation:16" id="1221475105812" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
           <node role="cellMenuPart:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_Generic_Group:32" id="1225473442525">
             <node role="parametersFunction:32" type="jetbrains.mps.lang.editor.structure.CellMenuPart_AbstractGroup_Query:32" id="1225473442526">
               <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1225473442527">
-                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1240932768843">
-                  <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation:16" id="1240932768844">
+                <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6699718426954539991">
+                  <node role="expression:3" type="jetbrains.mps.lang.smodel.structure.SEnumOperationInvocation:16" id="6699718426954539992">
                     <link role="enumDeclaration:16" targetNodeId="2.1101211480448:32" resolveInfo="_FontStyle_Enum" />
-                    <node role="operation:16" type="jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation:16" id="1240932775299" />
+                    <node role="operation:16" type="jetbrains.mps.lang.smodel.structure.SEnum_MembersOperation:16" id="6699718426954539993" />
                   </node>
                 </node>
               </node>
