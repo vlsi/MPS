@@ -21,7 +21,6 @@ import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConf
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import javax.swing.JOptionPane;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.generationTypes.TextGenerationHandler;
 
 public class GenerateTextFromSolution_Action extends GeneratedAction {
@@ -107,7 +106,6 @@ public class GenerateTextFromSolution_Action extends GeneratedAction {
         return;
       }
       GeneratorManager manager = GenerateTextFromSolution_Action.this.context.getComponent(GeneratorManager.class);
-      IGenerationType genType = IGenerationType.TEXT;
       manager.generateModelsWithProgressWindow(params.value.getModelDescriptors(), GenerateTextFromSolution_Action.this.context, new TextGenerationHandler(), false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
