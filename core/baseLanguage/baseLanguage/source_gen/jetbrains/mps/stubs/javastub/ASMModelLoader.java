@@ -59,8 +59,10 @@ import jetbrains.mps.stubs.javastub.asm.ASMEnumValue;
 import jetbrains.mps.baseLanguage.structure.EnumConstantReference;
 import jetbrains.mps.baseLanguage.structure.AnnotationInstanceExpression;
 import jetbrains.mps.baseLanguage.structure.ClassifierClassExpression;
-import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.stubs.javastub.asm.ASMPrimitiveType;
+import jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression;
+import jetbrains.mps.baseLanguage.structure.PrimitiveType;
+import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.baseLanguage.structure.BooleanType;
 import jetbrains.mps.baseLanguage.structure.ByteType;
 import jetbrains.mps.baseLanguage.structure.ShortType;
@@ -631,6 +633,12 @@ public abstract class ASMModelLoader {
       ASMClassType classType = (ASMClassType) value;
       ClassifierClassExpression res = ClassifierClassExpression.newInstance(model);
       this.addClassifierReference(res.getNode(), ClassifierClassExpression.CLASSIFIER, classType);
+      return res;
+    }
+    if (value instanceof ASMPrimitiveType) {
+      ASMPrimitiveType primitiveType = (ASMPrimitiveType) value;
+      PrimitiveClassExpression res = PrimitiveClassExpression.newInstance(model);
+      res.setPrimitiveType((PrimitiveType) this.getTypeByASMType(primitiveType, null, null, model));
       return res;
     }
     LOG.error("couldn't create annotation value from " + ((value == null ?

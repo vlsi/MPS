@@ -185,6 +185,11 @@
             <node role="primitiveType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="7287261519498543231" />
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4608486806535847229">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AbstractClassifierReference:3" id="4608486806535847230">
+            <link role="classifier:3" targetNodeId="151.~SNode" resolveInfo="SNode" />
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="2565066725666636966" />
       </node>
     </node>
