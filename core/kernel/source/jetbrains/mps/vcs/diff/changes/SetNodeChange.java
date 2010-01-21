@@ -69,7 +69,7 @@ public class SetNodeChange extends NewNodeChange {
   }
 
   @Override
-  public List<SNodeId> getDependences() {
+  public List<SNodeId> getDependencies() {
     return Arrays.asList(getNodeParent(), myOldChildId);
   }
 }

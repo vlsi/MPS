@@ -28,7 +28,7 @@ public abstract class Change {
 
   public abstract boolean apply(SModel m);
 
-  public List<SNodeId> getDependences() {
+  public List<SNodeId> getDependencies() {
     return new ArrayList();
   }
 

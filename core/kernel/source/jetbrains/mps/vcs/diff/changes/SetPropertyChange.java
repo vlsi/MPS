@@ -63,7 +63,7 @@ public class SetPropertyChange extends Change {
   }
 
   @Override
-  public List<SNodeId> getDependences() {
+  public List<SNodeId> getDependencies() {
     return Arrays.asList(getAffectedNodeId());
   }
 }

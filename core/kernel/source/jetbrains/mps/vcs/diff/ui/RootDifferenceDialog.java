@@ -188,7 +188,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
       return;
     }
     notAppliedChanges.remove(changeToApply);
-    for (SNodeId usedNodeId : changeToApply.getDependences()) {
+    for (SNodeId usedNodeId : changeToApply.getDependencies()) {
       for (Change change : notAppliedChanges) {
         if (change instanceof NewNodeChange || change instanceof DeleteNodeChange || change instanceof MoveNodeChange) {
           if (change.getAffectedNodeId().equals(usedNodeId)) {
@@ -199,7 +199,7 @@ public class RootDifferenceDialog extends BaseDialog implements EditorMessageOwn
       }
     }
     for (Change change : new ArrayList<Change>(notAppliedChanges)) {
-      if (change.getDependences().contains(change.getAffectedNodeId())) {
+      if (change.getDependencies().contains(change.getAffectedNodeId())) {
         applyChange(notAppliedChanges, change);
       }
     }

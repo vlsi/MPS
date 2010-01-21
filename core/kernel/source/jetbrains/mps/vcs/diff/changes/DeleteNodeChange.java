@@ -52,7 +52,7 @@ public class DeleteNodeChange extends Change {
   }
 
   @Override
-  public List<SNodeId> getDependences() {
+  public List<SNodeId> getDependencies() {
     return myChildren;
   }
 }
