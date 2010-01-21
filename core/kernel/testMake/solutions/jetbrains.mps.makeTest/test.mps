@@ -2037,7 +2037,7 @@
               <link role="variableDeclaration:3" targetNodeId="7196776143116382701" resolveInfo="gm" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7196776143116382746">
-              <link role="baseMethodDeclaration:3" targetNodeId="12.~GeneratorManager.generateModels(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.IGenerationType,com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.messages.IMessageHandler):boolean" resolveInfo="generateModels" />
+              <link role="baseMethodDeclaration:3" targetNodeId="12.~GeneratorManager.generateModels(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.generationTypes.IGenerationHandler,com.intellij.openapi.progress.ProgressIndicator,jetbrains.mps.ide.messages.IMessageHandler):boolean" resolveInfo="generateModels" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7196776143116382747">
                 <link role="variableDeclaration:3" targetNodeId="7196776143116382695" resolveInfo="models" />
               </node>
