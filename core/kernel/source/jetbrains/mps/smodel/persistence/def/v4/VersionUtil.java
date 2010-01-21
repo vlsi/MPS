@@ -15,85 +15,99 @@
  */
 package jetbrains.mps.smodel.persistence.def.v4;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelVersionsInfo;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import org.jdom.Element;
 
 public class VersionUtil {
-  private static final char VERSION_SEPARATOR_CHAR = ':';
-  private static final String VERSION_SEPARATOR = "" + VERSION_SEPARATOR_CHAR;
-  private static final int NO_VERSION = -100;
+  private static final Logger LOG = Logger.getLogger(VersionUtil.class);
+  private static final String VERSION_SEPARATOR = ":";
 
-  private static int parseVersionedString(String rawString) {
-    int result = 0;
-    int mul = 1;
-    char[] chars = rawString.toCharArray();
-    int lastCharNum = rawString.length() - 1;
-
-    for (int i = lastCharNum; i <= 0; i--) {
-      int digit = Character.digit(chars[i], 10);
-      if (digit != -1) {
-        result += digit * mul;
-        mul *= 10;
-      } else {
-        if (chars[i] == VERSION_SEPARATOR_CHAR) return result;
-        return NO_VERSION;
-      }
+  private static String[] parseVersionedString(String rawString) {
+    final String[] strings = rawString.split(VERSION_SEPARATOR);
+    try{
+      Integer.parseInt(strings[strings.length-1]);
+      return strings;
+    } catch (NumberFormatException e) {
+      return new String[]{rawString};
     }
-    return NO_VERSION;
-  }
-
-  private static String getBeforeSeparator(String s) {
-    int index = s.lastIndexOf(VERSION_SEPARATOR_CHAR);
-    if (index == -1) return s;
-    return s.substring(0, index);
   }
 
   public static String formVersionedString(String parameter, int version) {
-    if (version == -1) return parameter;
+    if (version == -1) {
+      return parameter;
+    }
     return parameter + VERSION_SEPARATOR + version;
   }
 
   public static void fetchConceptVersion(String rawFqName, SNode node, SModelVersionsInfo versionsInfo) {
-    int version = parseVersionedString(rawFqName);
-    if (version != NO_VERSION) {
-      versionsInfo.addConceptNameVersion(node, version);
+    final String[] fqNameVersion = parseVersionedString(rawFqName);
+    LOG.assertLog(fqNameVersion != null);
+    if (fqNameVersion.length > 1) {
+      try {
+        int version = Integer.parseInt(fqNameVersion[fqNameVersion.length-1]);
+        versionsInfo.addConceptNameVersion(node, version);
+      } catch (NumberFormatException e) {
+        LOG.error(e);
+      }
     }
   }
 
   public static String getConceptFQName(String rawFqName) {
-    return getBeforeSeparator(rawFqName);
+    String[] fqNameVersion = parseVersionedString(rawFqName);
+    LOG.assertLog(fqNameVersion != null && fqNameVersion.length > 0);
+    return fqNameVersion[0];
   }
 
   public static void fetchChildNodeRoleVersion(String rawRole, SNode childNode, SModelVersionsInfo versionsInfo) {
-    int version = parseVersionedString(rawRole);
-    if (version != NO_VERSION) {
-      versionsInfo.addRoleVersion(childNode, version);
+    final String[] roleNameVersion = parseVersionedString(rawRole);
+    LOG.assertLog(roleNameVersion != null);
+    if (roleNameVersion.length > 1) {
+      try {
+        int version = Integer.parseInt(roleNameVersion[roleNameVersion.length - 1]);
+        versionsInfo.addRoleVersion(childNode, version);
+      } catch (NumberFormatException e) {
+        LOG.error(e);
+      }
     }
   }
 
   public static String getRole(String rawRole) {
-    return getBeforeSeparator(rawRole);
+    final String[] roleNameVersion = parseVersionedString(rawRole);
+    LOG.assertLog(roleNameVersion != null && roleNameVersion.length > 0);
+    return roleNameVersion[0];
   }
 
   public static String getPropertyName(Element propertyElement, SNode node, SModelVersionsInfo versionsInfo) {
-    String raw = propertyElement.getAttributeValue(ModelPersistence.NAME);
-    String propertyName = getBeforeSeparator(raw);
-    int version = parseVersionedString(raw);
-    if (version != NO_VERSION) {
-      versionsInfo.addPropertyVersion(node, propertyName, version);
+    final String[] propertyNameVersion = parseVersionedString(propertyElement.getAttributeValue(ModelPersistence.NAME));
+    LOG.assertLog(propertyNameVersion != null && propertyNameVersion.length > 0);
+    String propertyName = propertyNameVersion[0];
+    if (propertyNameVersion.length > 1) {
+      try {
+        int version = Integer.parseInt(propertyNameVersion[propertyNameVersion.length - 1]);
+        versionsInfo.addPropertyVersion(node, propertyName, version);
+      } catch (NumberFormatException e) {
+        LOG.error(e);
+      }
     }
     return propertyName;
   }
 
   public static String getLinkRole(String rawRole, SNode node, SModelVersionsInfo versionsInfo) {
-    int version = parseVersionedString(rawRole);
-    String linkRole = getBeforeSeparator(rawRole);
-    if (version != NO_VERSION) {
-      versionsInfo.addLinkRoleVersion(node, linkRole, version);
+    final String[] roleNameVersion = parseVersionedString(rawRole);
+    LOG.assertLog(roleNameVersion != null && roleNameVersion.length > 0);
+    final String linkRole = roleNameVersion[0];
+    if (roleNameVersion.length > 1) {
+      try {
+        int version = Integer.parseInt(roleNameVersion[roleNameVersion.length - 1]);
+        versionsInfo.addLinkRoleVersion(node, linkRole, version);
+      } catch (NumberFormatException e) {
+        LOG.error(e);
+      }
     }
     return linkRole;
   }
@@ -106,23 +120,34 @@ public class VersionUtil {
   }
 
   public static int getReferenceToNodeVersion(SNode node, SModelReference targetModelReference) {
-    if (targetModelReference == null) return -1;//target model reference is nullable in postponed references
+    if (targetModelReference == null) { //target model reference is nullable in postponed references
+      return -1;
+    }
     return node.getModel().getUsedVersion(targetModelReference);
   }
 
   //for children's roles version: finds a parent's concept, its version is a version of a role
   public static int getRoleVersion(SNode node) {
+    int roleVersion = -1;
     final SNode parent = node.getParent();
-    if (parent == null) return -1;
-    return VersionUtil.getNodeLanguageVersion(parent);
+    if (parent != null) {
+      roleVersion = VersionUtil.getNodeLanguageVersion(parent);
+    }
+    return roleVersion;
   }
 
 
   public static String getTargetNodeId(String targetId, String role, SNode node, SModelVersionsInfo versionsInfo) {
-    final String linkRole = getBeforeSeparator(targetId);
-    int version = parseVersionedString(targetId);
-    if (version != NO_VERSION) {
-      versionsInfo.addLinkTargetIdVersion(node, role, version);
+    final String[] linkTargetVersion = parseVersionedString(targetId);
+    LOG.assertLog(linkTargetVersion != null && linkTargetVersion.length > 0);
+    final String linkRole = linkTargetVersion[0];
+    if (linkTargetVersion.length > 1) {
+      try {
+        int version = Integer.parseInt(linkTargetVersion[linkTargetVersion.length - 1]);
+        versionsInfo.addLinkTargetIdVersion(node, role, version);
+      } catch (NumberFormatException e) {
+        LOG.error(e);
+      }
     }
     return linkRole;
   }
