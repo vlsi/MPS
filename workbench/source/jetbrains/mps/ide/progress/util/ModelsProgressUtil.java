@@ -99,22 +99,15 @@ public class ModelsProgressUtil {
     return getInstance().getModelsProgressHelper(TASK_KIND_CHECK_MODELS).estimateModelsTaskTimeMillis(models);
   }
 
-  public static long estimateTotalGenerationJobMillis(boolean compile, boolean inIDEA, Collection<SModelDescriptor> models) {
-    long generationTime = estimateGenerationTimeMillis(models);
+  public static long estimateCompilationMillis(boolean inIDEA) {
     long refreshingFSTime = estimateRefreshIDEAFileSystemTimeMillis();
-    if (compile) {
-      long compilationInIDEATime = 0;
-      if (inIDEA) {
-        compilationInIDEATime = estimateCompileInIDEATimeMillis();
-      } else {
-        compilationInIDEATime = estimateCompileInMPSTimeMillis();
-      }
-      long totalCompilationTime = compilationInIDEATime + refreshingFSTime;
-      generationTime = generationTime + totalCompilationTime;
+    long compilationInIDEATime = 0;
+    if (inIDEA) {
+      compilationInIDEATime = estimateCompileInIDEATimeMillis();
     } else {
-      //generationTime = generationTime; // only re-load classes
+      compilationInIDEATime = estimateCompileInMPSTimeMillis();
     }
-    return generationTime;
+    return compilationInIDEATime + refreshingFSTime;
   }
 
   public static long estimateCompileInIDEATimeMillis() {

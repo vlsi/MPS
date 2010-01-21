@@ -31,6 +31,9 @@ public class TaskProgressHelper {
     myProgress = progressIndicator;
     myStartJobTime = startJobTime;
     myTotalJob = totalJob;
+
+    myProgress.setIndeterminate(false);
+    myProgress.setFraction(0);
   }
 
   private void clear() {
@@ -98,5 +101,9 @@ public class TaskProgressHelper {
     String estimatedTimeString = TimePresentationUtil.timeIntervalStringPresentation(myTotalJob);
     myProgress.setText(myText2);
     myProgress.setText2("Estimated time: " + estimatedTimeString + ", elapsed time: " + elapsedTimeString);
+  }
+
+  public boolean isCancelled() {
+    return myProgress.isCanceled();
   }
 }
