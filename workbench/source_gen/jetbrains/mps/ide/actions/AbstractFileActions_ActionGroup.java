@@ -4,14 +4,12 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
-import com.intellij.ide.actions.CutAction;
-import com.intellij.ide.actions.CopyAction;
-import com.intellij.ide.actions.PasteAction;
 import jetbrains.mps.ide.projectPane.fileSystem.actions.FileDeleteActionFixed;
 
 public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(AbstractFileActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.AbstractFileActions";
+  public static final String LABEL_ID_ideaActions = ID + "ideaActions";
   public static final String LABEL_ID_vcs = ID + "vcs";
 
   public AbstractFileActions_ActionGroup() {
@@ -19,9 +17,7 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
     this.setIsInternal(false);
     this.setPopup(false);
     try {
-      AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FileCut_Action", "jetbrains.mps.ide", new CutAction());
-      AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FileCopy_Action", "jetbrains.mps.ide", new CopyAction());
-      AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FilePaste_Action", "jetbrains.mps.ide", new PasteAction());
+      AbstractFileActions_ActionGroup.this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_ideaActions);
       AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FileDelete_Action", "jetbrains.mps.ide", new FileDeleteActionFixed());
       AbstractFileActions_ActionGroup.this.addSeparator();
       AbstractFileActions_ActionGroup.this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_vcs);
