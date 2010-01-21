@@ -96,10 +96,10 @@ public class GenerationController {
       }
       if (generationOK) {
         info("generation completed successfully in " + (System.currentTimeMillis() - startJobTime) + " ms");
-        generationOK = compile(progressHelper, generationOK);
       } else {
         error("generation completed with errors in " + (System.currentTimeMillis() - startJobTime) + " ms");
       }
+      generationOK = compile(progressHelper, generationOK);
 
       fireModelsGenerated(generationOK);
       return generationOK;
@@ -122,8 +122,7 @@ public class GenerationController {
 
   private boolean compile(TaskProgressHelper progressHelper, boolean generationOK) throws RemoteException, GenerationCanceledException {
     fireBeforeModelsCompiled(generationOK);
-
-    generationOK = generationOK && myGenerationHandler.compile(getProjectHandler(), myModuleSequence, progressHelper);
+    generationOK = generationOK && myGenerationHandler.compile(getProjectHandler(), myModuleSequence, generationOK, progressHelper);
     fireAfterModelsCompiled(generationOK);
     return generationOK;
   }

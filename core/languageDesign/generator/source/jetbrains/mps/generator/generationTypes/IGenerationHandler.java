@@ -45,7 +45,7 @@ public interface IGenerationHandler {
 
   long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input);
 
-  boolean compile(IProjectHandler projectHandler, List<Pair<IModule, List<SModelDescriptor>>> input, TaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException;
+  boolean compile(IProjectHandler projectHandler, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, TaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException;
 
   void startModule(IModule module, List<SModelDescriptor> inputModels, IProjectHandler projectHandler, TaskProgressHelper progressHelper);
 
