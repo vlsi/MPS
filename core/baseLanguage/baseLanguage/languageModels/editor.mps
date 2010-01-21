@@ -16334,5 +16334,26 @@
       <link role="relationDeclaration:32" targetNodeId="17.1188214607812:3" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="4564374268190696675">
+    <property name="package:32" value="classifier" />
+    <link role="conceptDeclaration:32" targetNodeId="17.4564374268190696673:3" resolveInfo="PrimitiveClassExpression" />
+    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="4564374268190696677">
+      <property name="vertical:32" value="false" />
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="4564374268190697517">
+        <link role="relationDeclaration:32" targetNodeId="17.4564374268190696674:3" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4564374268190696681">
+        <property name="text:32" value="." />
+        <link role="styleClass:32" targetNodeId="1215096040201" resolveInfo="Dot" />
+      </node>
+      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="4564374268190696682">
+        <property name="text:32" value="class" />
+        <property name="attractsFocus:32" value="1" />
+        <link role="styleClass:32" targetNodeId="1186415544875" resolveInfo="KeyWord" />
+        <link role="actionMap:32" targetNodeId="4848386836749782320" resolveInfo="ClassifierClassExpression_DeleteClass" />
+      </node>
+      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Indent:32" id="4564374268190696683" />
+    </node>
+  </node>
 </model>
 

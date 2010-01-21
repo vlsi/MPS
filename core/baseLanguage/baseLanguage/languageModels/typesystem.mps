@@ -22472,5 +22472,82 @@
       <link role="concept:3" targetNodeId="1.7812779912047922391:3" resolveInfo="AbstractClassifierReference" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="4564374268190697518">
+    <property name="name:3" value="typeof_PrimitiveClassExpression" />
+    <property name="package:3" value="classifier" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4564374268190697519">
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7287261519498543243">
+        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7287261519498543244">
+          <property name="name:3" value="unboxedType" />
+          <node role="type:3" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="7287261519498543245">
+            <link role="concept:16" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
+          </node>
+          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7287261519498543246">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7287261519498543247">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="7287261519498543248">
+                <link role="applicableNode:3" targetNodeId="4564374268190697520" resolveInfo="primitiveClassExpression" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7287261519498543249">
+                <link role="link:16" targetNodeId="1.4564374268190696674:3" />
+              </node>
+            </node>
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="7287261519498543250">
+              <link role="baseMethodDeclaration:16" targetNodeId="37.1213877337320" resolveInfo="getUnboxedType" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="7287261519498543761">
+        <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7287261519498543762">
+          <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateEquationStatement:3" id="4564374268190697521">
+            <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4564374268190697522">
+              <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="4564374268190697523">
+                <node role="term:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="4564374268190722705">
+                  <link role="applicableNode:3" targetNodeId="4564374268190697520" resolveInfo="primitiveClassExpression" />
+                </node>
+              </node>
+            </node>
+            <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="4564374268190697525">
+              <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="4564374268190697526">
+                <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4564374268190697527">
+                  <link role="classifier:3" targetNodeId="4.~Class" resolveInfo="Class" />
+                  <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="4564374268190697528">
+                    <link role="classifier:3" targetNodeId="4.~Object" resolveInfo="Object" />
+                    <node role="referenceAntiquotation$link_attribute$classifier:3" type="jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation:0" id="4564374268190697529">
+                      <node role="expression:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7287261519498562533">
+                        <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="7287261519498562531">
+                          <link role="concept:16" targetNodeId="1.1107535904670:3" resolveInfo="ClassifierType" />
+                          <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7287261519498543251">
+                            <link role="variableDeclaration:3" targetNodeId="7287261519498543244" resolveInfo="unboxedType" />
+                          </node>
+                        </node>
+                        <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7287261519498562537">
+                          <link role="link:16" targetNodeId="1.1107535924139:3" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7287261519498562524">
+          <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7287261519498562523">
+            <link role="variableDeclaration:3" targetNodeId="7287261519498543244" resolveInfo="unboxedType" />
+          </node>
+          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation:16" id="7287261519498562528">
+            <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="7287261519498562530">
+              <link role="conceptDeclaration:16" targetNodeId="1.1107535904670:3" resolveInfo="ClassifierType" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="4564374268190697520">
+      <property name="name:3" value="primitiveClassExpression" />
+      <link role="concept:3" targetNodeId="1.4564374268190696673:3" resolveInfo="PrimitiveClassExpression" />
+    </node>
+  </node>
 </model>
 

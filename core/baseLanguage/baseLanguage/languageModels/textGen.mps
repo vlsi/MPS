@@ -10710,5 +10710,26 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.textGen.structure.ConceptTextGenDeclaration:11" id="4564374268190746435">
+    <property name="package:11" value="classifier" />
+    <link role="conceptDeclaration:11" targetNodeId="1.4564374268190696673:3" resolveInfo="PrimitiveClassExpression" />
+    <node role="textGenBlock:11" type="jetbrains.mps.lang.textGen.structure.GenerateTextDeclaration:11" id="4564374268190746436">
+      <node role="body:11" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="4564374268190746437">
+        <node role="statement:3" type="jetbrains.mps.lang.textGen.structure.AppendOperation:11" id="4564374268190746438">
+          <node role="part:11" type="jetbrains.mps.lang.textGen.structure.NodeAppendPart:11" id="4564374268190746440">
+            <node role="value:11" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4564374268190746443">
+              <node role="operand:3" type="jetbrains.mps.lang.textGen.structure.NodeParameter:11" id="4564374268190746442" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="4564374268190746447">
+                <link role="link:16" targetNodeId="1.4564374268190696674:3" />
+              </node>
+            </node>
+          </node>
+          <node role="part:11" type="jetbrains.mps.lang.textGen.structure.ConstantStringAppendPart:11" id="4564374268190746448">
+            <property name="value:11" value=".class" />
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

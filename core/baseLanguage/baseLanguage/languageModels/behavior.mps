@@ -19639,5 +19639,29 @@
       <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3382729383756582762" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="2102329369853775247">
+    <property name="package" value="type.primitive" />
+    <link role="concept" targetNodeId="1.1068581517677:3" resolveInfo="VoidType" />
+    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="2102329369853775250">
+      <property name="name" value="getUnboxedType" />
+      <link role="overriddenMethod" targetNodeId="1213877337320" resolveInfo="getUnboxedType" />
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2102329369853775253">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2102329369853788155">
+          <node role="expression:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="2102329369853788156">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2102329369853817557">
+              <link role="classifier:3" targetNodeId="2.~Void" resolveInfo="Void" />
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="returnType" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="2102329369853775254">
+        <link role="concept:16" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
+      </node>
+      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="2102329369853775255" />
+    </node>
+    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="2102329369853775248">
+      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2102329369853775249" />
+    </node>
+  </node>
 </model>
 

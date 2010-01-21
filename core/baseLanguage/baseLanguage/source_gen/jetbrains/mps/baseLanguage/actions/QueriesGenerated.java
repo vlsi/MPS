@@ -53,6 +53,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.search.VisibleThrowablesScope;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.plugin.ParenthesisUtil;
@@ -1840,6 +1841,50 @@ __switch__:
             return this.getMatchingText(pattern);
           }
         });
+      }
+    }
+    return result;
+  }
+
+  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_6163353915142220925(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
+    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
+    {
+      SNode outputConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression");
+      SNode childConcept = (SNode) _context.getChildConcept();
+      if (SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
+        Calculable calc = new Calculable() {
+          public Object calculate() {
+            List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+            SModel blStructure = BootstrapLanguages.baseLanguage().getStructureModelDescriptor().getSModel();
+            for (SNode conceptDeclaration : SModelOperations.getRoots(blStructure, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
+              if (SConceptOperations.isSubConceptOf(conceptDeclaration, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
+                ListSequence.fromList(result).addElement((SNode) conceptDeclaration);
+              }
+            }
+            return result;
+          }
+        };
+        Iterable<SNode> queryResult = (Iterable) calc.calculate();
+        if (queryResult != null) {
+          for (final SNode item : queryResult) {
+            ListSequence.fromList(result).addElement(new DefaultChildNodeSubstituteAction(outputConcept, item, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
+              public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
+                SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression", null);
+                SLinkOperations.setTarget(result, "primitiveType", SConceptOperations.createNewNode(NameUtil.nodeFQName((item)), null), true);
+                return result;
+              }
+
+              public String getMatchingText(String pattern) {
+                String alias = SConceptPropertyOperations.getString((item), "alias");
+                return alias + ".class";
+              }
+
+              public String getVisibleMatchingText(String pattern) {
+                return this.getMatchingText(pattern);
+              }
+            });
+          }
+        }
       }
     }
     return result;

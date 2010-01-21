@@ -228,12 +228,12 @@ outer:
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_147 = null;
+      SNode quotedNode_149 = null;
       {
-        quotedNode_147 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_142 = quotedNode_147;
-        quotedNode1_142.addReference(SReference.create("classifier", quotedNode1_142, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_142;
+        quotedNode_149 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_144 = quotedNode_149;
+        quotedNode1_144.addReference(SReference.create("classifier", quotedNode1_144, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_144;
       }
       return result;
     }

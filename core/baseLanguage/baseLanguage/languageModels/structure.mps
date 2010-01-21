@@ -3683,5 +3683,19 @@
       <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="4564374268190696673">
+    <property name="package:0" value="classifier" />
+    <property name="name:0" value="PrimitiveClassExpression" />
+    <link role="extends:0" targetNodeId="1068431790191:3" resolveInfo="Expression" />
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="4564374268190696674">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="sourceCardinality:0" value="1" />
+      <property name="role:0" value="primitiveType" />
+      <link role="target:0" targetNodeId="1164118113764:3" resolveInfo="PrimitiveType" />
+    </node>
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.BooleanConceptProperty:0" id="6163353915142353701">
+      <link role="conceptPropertyDeclaration:0" targetNodeId="4.1137473994950:0" resolveInfo="dontSubstituteByDefault" />
+    </node>
+  </node>
 </model>
 

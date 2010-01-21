@@ -165,6 +165,27 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="2565066725666636962">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="2565066725666636963">
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="2565066725666636965" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4361769929369385719">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression:3" id="4361769929369385720">
+            <node role="primitiveType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="4361769929369385721" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7287261519498543222">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression:3" id="7287261519498543223">
+            <node role="primitiveType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="7287261519498543224" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7287261519498543229">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression:3" id="7287261519498543230">
+            <node role="primitiveType:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="7287261519498543231" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="2565066725666636966" />
       </node>
     </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="3293010995237625809" />
