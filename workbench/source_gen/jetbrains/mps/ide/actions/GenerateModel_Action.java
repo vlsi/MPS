@@ -10,7 +10,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -26,11 +26,11 @@ public class GenerateModel_Action extends GeneratedAction {
   private IOperationContext context;
   private List<SModelDescriptor> models;
   private SModelDescriptor model;
-  private IGenerationType generationType;
+  private IGenerationHandler generationHandler;
 
-  public GenerateModel_Action(IGenerationType generationType_par) {
+  public GenerateModel_Action(IGenerationHandler generationHandler_par) {
     super("Generate Model", "", ICON);
-    this.generationType = generationType_par;
+    this.generationHandler = generationHandler_par;
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -43,10 +43,10 @@ public class GenerateModel_Action extends GeneratedAction {
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
       {
-        event.getPresentation().setText(GenerateModel_Action.this.generationType.toString());
+        event.getPresentation().setText(GenerateModel_Action.this.generationHandler.toString());
         boolean applicable = ListSequence.fromList(GenerateModel_Action.this.getModels()).isNotEmpty();
         for (SModelDescriptor model : ListSequence.fromList(GenerateModel_Action.this.getModels())) {
-          if (!(GenerateModel_Action.this.generationType.isApplicable(model))) {
+          if (!(GenerateModel_Action.this.generationHandler.canHandle(model))) {
             applicable = false;
             break;
           }
@@ -83,13 +83,13 @@ public class GenerateModel_Action extends GeneratedAction {
     try {
       boolean checkSuccessful = GenerateModel_Action.this.project.getPluginManager().getTool(ModelCheckerTool_Tool.class).checkModelsBeforeGenerationIfNeeded(GenerateModel_Action.this.context, GenerateModel_Action.this.models, new Runnable() {
         public void run() {
-          GenerateModel_Action.this.project.getComponentSafe(GeneratorManager.class).generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationType);
+          GenerateModel_Action.this.project.getComponentSafe(GeneratorManager.class).generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationHandler);
         }
       });
       if (!(checkSuccessful)) {
         return;
       }
-      GenerateModel_Action.this.project.getComponentSafe(GeneratorManager.class).generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationType);
+      GenerateModel_Action.this.project.getComponentSafe(GeneratorManager.class).generateModelsFromDifferentModules(GenerateModel_Action.this.context, GenerateModel_Action.this.models, GenerateModel_Action.this.generationHandler);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateModel", t);
@@ -102,7 +102,7 @@ public class GenerateModel_Action extends GeneratedAction {
     StringBuilder res = new StringBuilder(500);
     res.append(GenerateModel_Action.class.getName());
     res.append("#");
-    res.append(generationType_State((IGenerationType) this.generationType));
+    res.append(generationHandler_State((IGenerationHandler) this.generationHandler));
     res.append("!");
     return res.toString();
   }
@@ -118,7 +118,7 @@ public class GenerateModel_Action extends GeneratedAction {
     return result;
   }
 
-  public static String generationType_State(IGenerationType object) {
+  public static String generationHandler_State(IGenerationHandler object) {
     return object.toString();
   }
 }

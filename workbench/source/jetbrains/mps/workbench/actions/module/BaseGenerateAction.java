@@ -23,6 +23,7 @@ import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
+import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
@@ -120,11 +121,11 @@ public abstract class BaseGenerateAction extends BaseAction {
       .checkModelsBeforeGenerationIfNeeded(invocationContext, modelsToGenerate, new Runnable() {
         public void run() {
           GeneratorManager generatorManager = myOperationContext.getComponent(GeneratorManager.class);
-          IGenerationType generationType = generatorManager.getDefaultModuleGenerationType();
+          IGenerationHandler generationHandler = generatorManager.getDefaultGenerationHandler();
           generatorManager.generateModelsFromDifferentModules(
             invocationContext1,
             modelsToGenerate,
-            generationType);
+            generationHandler);
         }
       });
     if (!checkSuccessful) {
@@ -132,11 +133,11 @@ public abstract class BaseGenerateAction extends BaseAction {
     }
 
     GeneratorManager generatorManager = myOperationContext.getComponent(GeneratorManager.class);
-    IGenerationType generationType = generatorManager.getDefaultModuleGenerationType();
+    IGenerationHandler generationHandler = generatorManager.getDefaultGenerationHandler();
     generatorManager.generateModelsFromDifferentModules(
       invocationContext,
       modelsToGenerate,
-      generationType);
+      generationHandler);
   }
 
   @NotNull

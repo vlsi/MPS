@@ -24,6 +24,7 @@ import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
+import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
 import jetbrains.mps.ide.genconf.GenParameters;
@@ -152,7 +153,7 @@ public class RenameLanguageDialog extends BaseDialog {
           .generateModelsFromDifferentModules(
             new ModuleContext(myLanguage, mpsProject),
             params.getModelDescriptors(),
-            IGenerationType.FILES);
+             new JavaGenerationHandler());
       }
     }
 

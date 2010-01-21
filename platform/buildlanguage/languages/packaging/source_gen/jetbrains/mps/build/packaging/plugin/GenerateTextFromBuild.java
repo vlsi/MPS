@@ -39,7 +39,7 @@ public class GenerateTextFromBuild {
     final GeneratorManager generatorManager = project.getComponentSafe(GeneratorManager.class);
     GenerateTextFromBuildGenerationType generationType = new GenerateTextFromBuildGenerationType(generatorManager, basedir, configuration);
     if (showWindow) {
-      generatorManager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationType, true);
+      generatorManager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, new GenerationHandlerAdapter(generationType), true);
     } else {
       generatorManager.generateModels(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, new GenerationHandlerAdapter(generationType), new EmptyProgressIndicator(), new IMessageHandler() {
         public void handle(Message message) {

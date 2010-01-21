@@ -239,4 +239,9 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     totalJob += ModelsProgressUtil.estimateReloadAllTimeMillis();
     return totalJob;
   }
+
+  @Override
+  public String toString() {
+    return "Generate Files";
+  }
 }

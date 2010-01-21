@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.ModelGenerationStatusManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.NoCachesStrategy;
-import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 
 public class RunUtil {
   public RunUtil() {
@@ -34,7 +34,7 @@ public class RunUtil {
       });
     }
     if (ListSequence.fromList(models).isNotEmpty()) {
-      genManager.generateModelsFromDifferentModules(project.createOperationContext(), models, IGenerationType.FILES);
+      genManager.generateModelsFromDifferentModules(project.createOperationContext(), models, new JavaGenerationHandler());
     }
   }
 }

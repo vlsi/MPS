@@ -24,6 +24,7 @@ import com.intellij.openapi.util.Computable;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.logging.Logger;
@@ -232,7 +233,7 @@ public class RefactoringProcessor {
         }
       });
       IOperationContext operationContext = refactoringContext.getSelectedMPSProject().createOperationContext();
-      new GeneratorManager(operationContext.getComponent(Project.class), new GenerationSettings()).generateModelsFromDifferentModules(operationContext, descriptors, IGenerationType.FILES);
+      new GeneratorManager(operationContext.getComponent(Project.class), new GenerationSettings()).generateModelsFromDifferentModules(operationContext, descriptors, new JavaGenerationHandler());
     } finally {
       SNode.setNodeMemeberAccessModifier(null);
     }

@@ -16,6 +16,8 @@
 package jetbrains.mps.workbench.actions.generate;
 
 import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.generator.generationTypes.TextGenerationHandler;
 import org.jetbrains.annotations.NotNull;
 
 public class GenerateTextFromModelsAction extends GenerateModelsAction {
@@ -24,7 +26,7 @@ public class GenerateTextFromModelsAction extends GenerateModelsAction {
     addPlace(null);
   }
 
-  public IGenerationType getGenerationType() {
-    return IGenerationType.TEXT;
+  public IGenerationHandler getGenerationHandler() {
+    return new TextGenerationHandler();
   }
 }

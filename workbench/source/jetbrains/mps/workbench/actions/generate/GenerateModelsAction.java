@@ -19,6 +19,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.generator.generationTypes.GenerationHandlerAdapter;
+import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -41,7 +43,7 @@ public abstract class GenerateModelsAction extends BaseAction {
     setExecuteOutsideCommand(true);
   }
 
-  public abstract IGenerationType getGenerationType();
+  public abstract IGenerationHandler getGenerationHandler();
 
   public void doExecute(AnActionEvent e) {
     MPSProject project = myContext.getMPSProject();
@@ -52,7 +54,7 @@ public abstract class GenerateModelsAction extends BaseAction {
           myGenManager.generateModelsFromDifferentModules(
             myContext,
             myModels,
-            getGenerationType()
+            getGenerationHandler()
           );
         }
       });
@@ -63,14 +65,14 @@ public abstract class GenerateModelsAction extends BaseAction {
     myGenManager.generateModelsFromDifferentModules(
       myContext,
       myModels,
-      getGenerationType()
+      getGenerationHandler()
     );
   }
 
   protected void doUpdate(AnActionEvent e) {
     boolean applicable = true;
     for (SModelDescriptor sm : myModels) {
-      if (!getGenerationType().isApplicable(sm)) {
+      if (!getGenerationHandler().canHandle(sm)) {
         applicable = false;
       }
     }

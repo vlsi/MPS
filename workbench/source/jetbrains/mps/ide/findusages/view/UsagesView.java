@@ -22,6 +22,7 @@ import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IGenerationType;
+import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
@@ -144,7 +145,7 @@ public abstract class UsagesView implements IExternalizeable, INavigator {
         models.add(modelDescriptor);
       }
     }
-    manager.generateModelsFromDifferentModules(project.createOperationContext(), models, IGenerationType.FILES);
+    manager.generateModelsFromDifferentModules(project.createOperationContext(), models, new JavaGenerationHandler());
   }
 
   public void goToNext() {

@@ -15,6 +15,7 @@ import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.generator.generationTypes.GenerationHandlerAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
@@ -57,7 +58,7 @@ public class EmbeddableEditor {
         return false;
       }
     };
-    manager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), this.myModel), this.myContext, type, false);
+    manager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), this.myModel), this.myContext, new GenerationHandlerAdapter(type), false);
     return new GenerationResult(this.myNode, this.myContext, this.myModel, type);
   }
 

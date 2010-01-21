@@ -3365,7 +3365,7 @@
               <link role="variableDeclaration:3" targetNodeId="1225568992855:0" resolveInfo="generatorManager" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1225569284049">
-              <link role="baseMethodDeclaration:3" targetNodeId="35.~GeneratorManager.generateModelsWithProgressWindow(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.IGenerationType,boolean):boolean" resolveInfo="generateModelsWithProgressWindow" />
+              <link role="baseMethodDeclaration:3" targetNodeId="35.~GeneratorManager.generateModelsWithProgressWindow(java.util.List,jetbrains.mps.smodel.IOperationContext,jetbrains.mps.generator.generationTypes.IGenerationHandler,boolean):boolean" resolveInfo="generateModelsWithProgressWindow" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1240241944011">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit:7" id="1240241946554">
                   <node role="initValue:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1240241954199">
@@ -3385,8 +3385,13 @@
                   <link role="member:23" targetNodeId="1225569358290:0" resolveInfo="context" />
                 </node>
               </node>
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1225569998584">
-                <link role="variableDeclaration:3" targetNodeId="1225569913556:0" resolveInfo="gt" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1865344399155545834">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1865344399155545839">
+                  <link role="baseMethodDeclaration:3" targetNodeId="38.~GenerationHandlerAdapter.&lt;init&gt;(jetbrains.mps.generator.IGenerationType)" resolveInfo="GenerationHandlerAdapter" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1865344399155545841">
+                    <link role="variableDeclaration:3" targetNodeId="1225569913556:0" resolveInfo="gt" />
+                  </node>
+                </node>
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1225569507500">
                 <property name="value:3" value="false" />

@@ -27,6 +27,7 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.fileGenerator.IFileGenerator;
 import jetbrains.mps.generator.generationTypes.GenerationHandlerAdapter;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator2.GenerationController2;
 import jetbrains.mps.ide.messages.*;
@@ -73,7 +74,11 @@ public class GeneratorManager {
     return IGenerationType.FILES;
   }
 
-  public void generateModelsFromDifferentModules(final IOperationContext operationContext, final List<SModelDescriptor> inputModels, final IGenerationType generationType) {
+  public IGenerationHandler getDefaultGenerationHandler() {
+    return new JavaGenerationHandler();
+  }
+
+  public void generateModelsFromDifferentModules(final IOperationContext operationContext, final List<SModelDescriptor> inputModels, final IGenerationHandler generationHandler) {
     try {
       GeneratorManager generatorManager = operationContext.getComponent(GeneratorManager.class);
       List<Pair<SModelDescriptor, IOperationContext>> modelsWithContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
@@ -91,7 +96,7 @@ public class GeneratorManager {
 
       generatorManager.generateModelsWithProgressWindow(
         modelsWithContext,
-        generationType
+        generationHandler
       );
     } catch (Throwable t) {
       LOG.error(t);
@@ -103,7 +108,7 @@ public class GeneratorManager {
    */
   public boolean generateModelsWithProgressWindow(final List<SModelDescriptor> inputModels,
                                                   final IOperationContext invocationContext,
-                                                  final IGenerationType generationType,
+                                                  final IGenerationHandler generationHandler,
                                                   boolean closeOnExit) {
     List<Pair<SModelDescriptor, IOperationContext>> inputModelPairs = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
 
@@ -113,7 +118,7 @@ public class GeneratorManager {
 
     return generateModelsWithProgressWindow(
       inputModelPairs,
-      generationType
+      generationHandler
     );
   }
 
@@ -121,7 +126,7 @@ public class GeneratorManager {
    * @return false if canceled
    */
   private boolean generateModelsWithProgressWindow(final List<Pair<SModelDescriptor, IOperationContext>> inputModels,
-                                                   final IGenerationType generationType
+                                                   final IGenerationHandler generationHandler
   ) {
     if (inputModels.isEmpty()) {
       return true;
@@ -190,7 +195,7 @@ public class GeneratorManager {
           //idea don't have constants for YES/NO
           if (result == -1 || result == 2) return false;
           if (result == 0) {
-            generateModelsFromDifferentModules(invocationContext, new ArrayList<SModelDescriptor>(requirements), IGenerationType.FILES);
+            generateModelsFromDifferentModules(invocationContext, new ArrayList<SModelDescriptor>(requirements), new JavaGenerationHandler());
           }
         }
       } finally {
@@ -211,7 +216,7 @@ public class GeneratorManager {
     final boolean[] result = new boolean[]{false};
     ProgressManager.getInstance().run(new Modal(invocationContext.getComponent(Project.class), "Generation", true) {
       public void run(@NotNull ProgressIndicator progress) {
-        result[0] = generateModels(inputModels, new GenerationHandlerAdapter(generationType), progress, messages, saveTransientModels);
+        result[0] = generateModels(inputModels, generationHandler, progress, messages, saveTransientModels);
       }
     });
     return result[0];
