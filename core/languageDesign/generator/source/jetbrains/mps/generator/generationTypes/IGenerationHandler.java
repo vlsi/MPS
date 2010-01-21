@@ -41,15 +41,27 @@ public interface IGenerationHandler {
 
   void startGeneration(IMessageHandler handler);
 
+  void finishGeneration();
+
   boolean canHandle(SModelDescriptor inputModel);
 
-  long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input);
-
-  boolean compile(IProjectHandler projectHandler, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, TaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException;
-
+  /*
+   * Next module started.
+   */
   void startModule(IModule module, List<SModelDescriptor> inputModels, IProjectHandler projectHandler, TaskProgressHelper progressHelper);
 
+  /*
+   * Handle generation result of a model.
+   */
   boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, TaskProgressHelper progressHelper);
 
-  void finishGeneration();
+  /*
+   * Estimates execution time of compile() method in milliseconds.
+   */
+  long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input);
+
+  /*
+   * Post-process generated output: compile, reload, etc. Once per generation cycle. 
+   */
+  boolean compile(IProjectHandler projectHandler, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, TaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException;
 }
