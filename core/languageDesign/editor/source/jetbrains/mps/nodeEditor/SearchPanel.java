@@ -29,6 +29,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.search.AbstractSearchPanel;
 import jetbrains.mps.workbench.search.SearchHistoryComponent;
 
@@ -310,6 +311,23 @@ public class SearchPanel extends AbstractSearchPanel {
           g.fillRect(x, y, width - 1, height - 1);
         }
       }
+    }
+
+    @Override
+    public boolean sameAs(EditorMessage message) {
+      return super.sameAs(message) && this.equals(message);
+    }
+
+    @Override
+    public int hashCode() {
+      return ((myPositions == null)? -1 : myPositions.size()) + EqualUtil.hashCode(myInfo);
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+      if (!(obj instanceof SearchPanelEditorMessage)) return false;
+      SearchPanelEditorMessage msg = (SearchPanelEditorMessage) obj;
+      return EqualUtil.equals(myPositions, msg.myPositions) && EqualUtil.equals(myInfo, msg.myInfo);
     }
   }
 }
