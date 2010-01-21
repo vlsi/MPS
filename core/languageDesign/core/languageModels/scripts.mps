@@ -9,6 +9,7 @@
   <language namespace="18bc6592-03a6-4e29-a83a-7ff23bde13ba(jetbrains.mps.lang.editor)" />
   <language namespace="fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)" />
   <language namespace="28f9e497-3b42-4291-aeba-0a1039153ab1(jetbrains.mps.lang.plugin)" />
+  <language namespace="0eddeefa-c2d6-4437-bc2c-de50fd4ce470(jetbrains.mps.lang.script)" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)" version="83" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)" version="21" />
@@ -45,7 +46,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590361(jetbrains.mps.lang.plugin.constraints)" version="19" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959036e(jetbrains.mps.baseLanguage.classifiers.constraints)" version="7" />
-  <maxImportIndex value="47" />
+  <maxImportIndex value="48" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="4" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
@@ -61,6 +62,7 @@
   <import index="44" modelUID="f:java_stub#javax.swing(javax.swing@java_stub)" version="-1" />
   <import index="45" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
   <import index="46" modelUID="f:java_stub#javax.swing.text(javax.swing.text@java_stub)" version="-1" />
+  <import index="48" modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="8" />
   <node type="jetbrains.mps.lang.refactoring.structure.OldRefactoring:1" id="1198076144993">
     <property name="name:1" value="MoveNodes" />
     <property name="userFriendlyName:1" value="Move Nodes" />
@@ -1215,6 +1217,39 @@
         <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="8311321388555090834" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8311321388555090835">
           <link role="classifier:3" targetNodeId="44.~JTextField" resolveInfo="JTextField" />
+        </node>
+      </node>
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.script.structure.MigrationScript:0" id="6243486444683604044">
+    <property name="name:0" value="ShowGetNameUsages" />
+    <property name="title:0" value="Show getters for name property" />
+    <node role="part:0" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance:0" id="6243486444683604045">
+      <property name="description:0" value="Show getters for name property" />
+      <link role="affectedInstanceConcept:0" targetNodeId="48.1147467115080:8" resolveInfo="NodePropertyConstraint" />
+      <node role="affectedInstanceUpdater:0" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Updater:0" id="6243486444683604046">
+        <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6243486444683604047" />
+      </node>
+      <node role="affectedInstancePredicate:0" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_Instance_Predicate:0" id="6243486444683690985">
+        <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6243486444683690986">
+          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="6243486444683698873">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NPEEqualsExpression:3" id="6243486444683713666">
+              <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="6243486444683713669">
+                <property name="value:3" value="name" />
+              </node>
+              <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6243486444683713661">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="6243486444683698875">
+                  <node role="operand:3" type="jetbrains.mps.lang.script.structure.MigrationScriptPart_node:0" id="6243486444683698874" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="6243486444683713660">
+                    <link role="link:16" targetNodeId="48.1147467295099:8" />
+                  </node>
+                </node>
+                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="6243486444683713665">
+                  <link role="property:16" targetNodeId="1.1169194664001:0" resolveInfo="name" />
+                </node>
+              </node>
+            </node>
+          </node>
         </node>
       </node>
     </node>
