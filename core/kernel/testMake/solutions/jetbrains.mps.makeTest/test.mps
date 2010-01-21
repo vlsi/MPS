@@ -2060,8 +2060,13 @@
                   </node>
                 </node>
               </node>
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7196776143116382754">
-                <link role="variableDeclaration:3" targetNodeId="7196776143116382674" resolveInfo="genType" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1116843610524007799">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1116843610524008107">
+                  <link role="baseMethodDeclaration:3" targetNodeId="14.~GenerationHandlerAdapter.&lt;init&gt;(jetbrains.mps.generator.IGenerationType)" resolveInfo="GenerationHandlerAdapter" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1116843610524008112">
+                    <link role="variableDeclaration:3" targetNodeId="7196776143116382674" resolveInfo="genType" />
+                  </node>
+                </node>
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7196776143116382755">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7196776143116382756">

@@ -12059,7 +12059,7 @@
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1224851586297">
                     <link role="variableDeclaration:3" targetNodeId="1224851629352" resolveInfo="context" />
                   </node>
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1224851586298">
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1116843610523723133">
                     <link role="variableDeclaration:3" targetNodeId="1224851586158" resolveInfo="generationType" />
                   </node>
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1224851586299">
@@ -12094,8 +12094,13 @@
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1240233989450">
                       <link role="variableDeclaration:3" targetNodeId="1224851629352" resolveInfo="context" />
                     </node>
-                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1240233989451">
-                      <link role="variableDeclaration:3" targetNodeId="1224851586158" resolveInfo="generationType" />
+                    <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1116843610523723135">
+                      <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1116843610523723136">
+                        <link role="baseMethodDeclaration:3" targetNodeId="5.~GenerationHandlerAdapter.&lt;init&gt;(jetbrains.mps.generator.IGenerationType)" resolveInfo="GenerationHandlerAdapter" />
+                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1116843610523723137">
+                          <link role="variableDeclaration:3" targetNodeId="1224851586158" resolveInfo="generationType" />
+                        </node>
+                      </node>
                     </node>
                     <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1240234104614">
                       <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1240234272708">
