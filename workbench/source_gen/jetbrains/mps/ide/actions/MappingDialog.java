@@ -102,9 +102,9 @@ public class MappingDialog extends BaseDialog {
     return this.myResult;
   }
 
-  @BaseDialog.Button(position = 0, name = "OK", defaultButton = true)
+  @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
   public void buttonOk() {
-    SNodeTreeNode[] selectedNode = this.myTree.getSelectedNodes(SNodeTreeNode.class, new Tree.NodeFilter() {
+    Object[] selectedNode = this.myTree.getSelectedNodes(SNodeTreeNode.class, new Tree.NodeFilter() {
       public boolean accept(Object p0) {
         return true;
       }
@@ -112,7 +112,7 @@ public class MappingDialog extends BaseDialog {
     if (selectedNode.length != 1) {
       JOptionPane.showMessageDialog(this, "Mapping Configuration node is not selected!");
     } else {
-      this.myResult = (SNode) selectedNode[0].getSNode();
+      this.myResult = (SNode) ((SNodeTreeNode) selectedNode[0]).getSNode();
       this.myTree.dispose();
       this.dispose();
     }
