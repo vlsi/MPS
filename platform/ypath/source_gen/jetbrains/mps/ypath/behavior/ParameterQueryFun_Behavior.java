@@ -5,6 +5,13 @@ package jetbrains.mps.ypath.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import java.util.Set;
+import java.util.HashSet;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ParameterQueryFun_Behavior {
   public static void init(SNode thisNode) {
@@ -15,6 +22,37 @@ public class ParameterQueryFun_Behavior {
     if ((parameterType == null)) {
       return null;
     }
-    return new _Quotations.QuotationClass_0().createNode(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.IFeature", false, false), "parameterType", true));
+    return new ParameterQueryFun_Behavior.QuotationClass_0383_0().createNode(SLinkOperations.getTarget(SNodeOperations.getAncestor(thisNode, "jetbrains.mps.ypath.structure.IFeature", false, false), "parameterType", true));
+  }
+
+  public static class QuotationClass_0383_0 {
+    public QuotationClass_0383_0() {
+    }
+
+    public SNode createNode(Object parameter_0383_0) {
+      SNode result = null;
+      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
+      SNode quotedNode_0383_0 = null;
+      SNode quotedNode_0383_1 = null;
+      {
+        quotedNode_0383_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0383_0 = quotedNode_0383_0;
+        {
+          quotedNode_0383_1 = (SNode) parameter_0383_0;
+          SNode quotedNode1_0;
+          if (_parameterValues_129834374.contains(quotedNode_0383_1)) {
+            quotedNode1_0 = CopyUtil.copy(quotedNode_0383_1);
+          } else {
+            _parameterValues_129834374.add(quotedNode_0383_1);
+            quotedNode1_0 = quotedNode_0383_1;
+          }
+          if (quotedNode1_0 != null) {
+            quotedNode_0383_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_0));
+          }
+        }
+        result = quotedNode1_0383_0;
+      }
+      return result;
+    }
   }
 }
