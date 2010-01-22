@@ -17,6 +17,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.ide.IdeBundle;
+import com.intellij.ide.projectView.ProjectView;
+import jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView;
 
 public class NewFile_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -69,6 +71,7 @@ public class NewFile_Action extends GeneratedAction {
         NewFile_Action.this.selectedFile :
         NewFile_Action.this.selectedFile.getParent()
       );
+      final VirtualFile[] result = new VirtualFile[1];
       InputValidator validator = new InputValidator() {
         public boolean checkInput(String p) {
           return true;
@@ -84,7 +87,7 @@ public class NewFile_Action extends GeneratedAction {
           ModelAccess.instance().runWriteAction(new Runnable() {
             public void run() {
               try {
-                dir.createChildData(null, p);
+                result[0] = dir.createChildData(null, p);
               } catch (IOException e) {
               }
             }
@@ -93,6 +96,9 @@ public class NewFile_Action extends GeneratedAction {
         }
       };
       Messages.showInputDialog(NewFile_Action.this.project, IdeBundle.message("prompt.enter.new.file.name"), IdeBundle.message("title.new.file"), Messages.getQuestionIcon(), "", validator);
+      if (result[0] != null) {
+        ProjectView.getInstance(NewFile_Action.this.project).getProjectViewPaneById(BaseDirectoryProjectView.ID).select(null, result[0], true);
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "NewFile", t);
