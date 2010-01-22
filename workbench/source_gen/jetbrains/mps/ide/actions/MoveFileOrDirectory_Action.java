@@ -62,7 +62,7 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
     try {
       final TextFieldWithBrowseButton[] textWithButton = new TextFieldWithBrowseButton[1];
       final String path = MoveFileOrDirectory_Action.this.selectedFile.getPath();
-      DialogWrapper dialog = new DialogWrapper() {
+      DialogWrapper dialog = new DialogWrapper(null) {
         {
           this.setTitle("Move");
           this.init();

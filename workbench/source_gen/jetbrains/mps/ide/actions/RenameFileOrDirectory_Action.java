@@ -63,7 +63,7 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
       final String oldName = RenameFileOrDirectory_Action.this.selectedFile.getName();
       final String oldNameWithoutExtension = RenameFileOrDirectory_Action.this.selectedFile.getNameWithoutExtension();
       final JTextField[] textField = new JTextField[1];
-      DialogWrapper dialog = new DialogWrapper() {
+      DialogWrapper dialog = new DialogWrapper(null) {
         {
           this.setTitle("Rename");
           this.init();
