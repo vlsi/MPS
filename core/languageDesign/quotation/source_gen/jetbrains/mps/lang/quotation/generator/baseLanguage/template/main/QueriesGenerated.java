@@ -7,9 +7,9 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.generator.template.IfMacroContext;
 import java.util.List;
@@ -71,11 +71,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1201868689728(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("quotedNode1_", null);
+    return _context.createUniqueName("quotedNode1_", SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false));
   }
 
   public static Object propertyMacro_GetPropertyValue_937236280924642859(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("quotedNode_", null);
+    return _context.createUniqueName("quotedNode_", SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.quotation.structure.Quotation", false, false));
   }
 
   public static Object propertyMacro_GetPropertyValue_937236280924642984(final IOperationContext operationContext, final PropertyMacroContext _context) {

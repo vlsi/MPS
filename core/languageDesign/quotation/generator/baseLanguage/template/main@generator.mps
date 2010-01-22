@@ -330,6 +330,16 @@
                             <node role="baseName:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="937236280924642865">
                               <property name="value:3" value="quotedNode_" />
                             </node>
+                            <node role="contextNode:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5768501179248369582">
+                              <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="5768501179248369577" />
+                              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="5768501179248390949">
+                                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="5768501179248390950">
+                                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="5768501179248390953">
+                                    <link role="conceptDeclaration:16" targetNodeId="1.1196350785113:0" resolveInfo="Quotation" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
                           </node>
                         </node>
                       </node>
@@ -1450,6 +1460,16 @@
                               <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName:0" id="1218070397408">
                                 <node role="baseName:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1203100269872">
                                   <property name="value:3" value="quotedNode1_" />
+                                </node>
+                                <node role="contextNode:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5768501179248392136">
+                                  <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="5768501179248392135" />
+                                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="5768501179248392140">
+                                    <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="5768501179248392141">
+                                      <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="5768501179248392144">
+                                        <link role="conceptDeclaration:16" targetNodeId="1.1196350785113:0" resolveInfo="Quotation" />
+                                      </node>
+                                    </node>
+                                  </node>
                                 </node>
                               </node>
                             </node>
