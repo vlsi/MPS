@@ -274,8 +274,8 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7196776143116393597">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7196776143116393598">
             <property name="name:3" value="genType" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7196776143116393599">
-              <link role="classifier:3" targetNodeId="12.~IGenerationType" resolveInfo="IGenerationType" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5311359939641099078">
+              <link role="classifier:3" targetNodeId="14.~IGenerationHandler" resolveInfo="IGenerationHandler" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="7196776143116393601">
               <link role="baseMethodDeclaration:3" targetNodeId="1957199320903968379" resolveInfo="getFilesGenType" />
@@ -428,9 +428,9 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7196776143116393606">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7196776143116393607">
-            <property name="name:3" value="filesGenType" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7196776143116393608">
-              <link role="classifier:3" targetNodeId="12.~IGenerationType" resolveInfo="IGenerationType" />
+            <property name="name:3" value="filesGenHandler" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5311359939641099081">
+              <link role="classifier:3" targetNodeId="14.~IGenerationHandler" resolveInfo="IGenerationHandler" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="7196776143116393610">
               <link role="baseMethodDeclaration:3" targetNodeId="1957199320903968379" resolveInfo="getFilesGenType" />
@@ -452,13 +452,13 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="6016914837743474509">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="6016914837743474510">
-            <property name="name:3" value="genType" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="727524775504984673">
-              <link role="classifier:3" targetNodeId="9.~TesterGenerationType" resolveInfo="TesterGenerationType" />
+            <property name="name:3" value="genHandler" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5311359939641098679">
+              <link role="classifier:3" targetNodeId="9.~TesterGenerationHandler" resolveInfo="TesterGenerationHandler" />
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="6016914837743474516">
               <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="6016914837743493709">
-                <link role="baseMethodDeclaration:3" targetNodeId="9.~TesterGenerationType.&lt;init&gt;(boolean)" resolveInfo="TesterGenerationType" />
+                <link role="baseMethodDeclaration:3" targetNodeId="9.~TesterGenerationHandler.&lt;init&gt;(boolean)" resolveInfo="TesterGenerationHandler" />
                 <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="6016914837743493713">
                   <property name="value:3" value="true" />
                 </node>
@@ -565,10 +565,10 @@
                         <link role="variableDeclaration:3" targetNodeId="6016914837743474510" resolveInfo="genType" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2381103581468453848">
-                        <link role="baseMethodDeclaration:3" targetNodeId="9.~TesterGenerationType.compile(jetbrains.mps.ide.progress.IAdaptiveProgressMonitor):java.util.List" resolveInfo="compile" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="9.~TesterGenerationHandler.compile(jetbrains.mps.ide.progress.ITaskProgressHelper):java.util.List" resolveInfo="compile" />
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2381103581468453849">
-                          <link role="classifier:3" targetNodeId="19.~IAdaptiveProgressMonitor" resolveInfo="IAdaptiveProgressMonitor" />
-                          <link role="variableDeclaration:3" targetNodeId="19.~IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR" resolveInfo="NULL_PROGRESS_MONITOR" />
+                          <link role="classifier:3" targetNodeId="19.~ITaskProgressHelper" resolveInfo="ITaskProgressHelper" />
+                          <link role="variableDeclaration:3" targetNodeId="19.~ITaskProgressHelper.EMPTY" resolveInfo="EMPTY" />
                         </node>
                       </node>
                     </node>
@@ -585,7 +585,7 @@
                             <link role="variableDeclaration:3" targetNodeId="6016914837743474510" resolveInfo="genType" />
                           </node>
                           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1957199320903968003">
-                            <link role="baseMethodDeclaration:3" targetNodeId="14.~GenerateFilesAndClassesGenerationType.getCompiler():jetbrains.mps.compiler.JavaCompiler" resolveInfo="getCompiler" />
+                            <link role="baseMethodDeclaration:3" targetNodeId="14.~InMemoryJavaGenerationHandler.getCompiler():jetbrains.mps.compiler.JavaCompiler" resolveInfo="getCompiler" />
                           </node>
                         </node>
                         <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1957199320903968004">
@@ -995,16 +995,16 @@
       </node>
     </node>
     <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="1957199320903968379">
-      <property name="name:3" value="getFilesGenType" />
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1957199320903968380">
-        <link role="classifier:3" targetNodeId="14.~GenerateFilesGenerationType" resolveInfo="GenerateFilesGenerationType" />
+      <property name="name:3" value="getFilesGenHandler" />
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5311359939641099079">
+        <link role="classifier:3" targetNodeId="14.~JavaGenerationHandler" resolveInfo="JavaGenerationHandler" />
       </node>
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="1957199320903968381" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1957199320903968382">
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1957199320903968383">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1957199320903968384">
             <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1957199320903968385">
-              <link role="baseMethodDeclaration:3" targetNodeId="14.~GenerateFilesGenerationType.&lt;init&gt;()" resolveInfo="GenerateFilesGenerationType" />
+              <link role="baseMethodDeclaration:3" targetNodeId="14.~JavaGenerationHandler.&lt;init&gt;()" resolveInfo="JavaGenerationHandler" />
             </node>
           </node>
         </node>
@@ -1506,9 +1506,9 @@
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7196776143116385068">
-        <property name="name:3" value="genType" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7196776143116385069">
-          <link role="classifier:3" targetNodeId="12.~IGenerationType" resolveInfo="IGenerationType" />
+        <property name="name:3" value="generationHandler" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5311359939641099056">
+          <link role="classifier:3" targetNodeId="14.~IGenerationHandler" resolveInfo="IGenerationHandler" />
         </node>
       </node>
     </node>
@@ -1581,9 +1581,9 @@
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7196776143116385092">
-        <property name="name:3" value="genType" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7196776143116385093">
-          <link role="classifier:3" targetNodeId="12.~IGenerationType" resolveInfo="IGenerationType" />
+        <property name="name:3" value="generationHandler" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5311359939641099053">
+          <link role="classifier:3" targetNodeId="14.~IGenerationHandler" resolveInfo="IGenerationHandler" />
         </node>
       </node>
     </node>
@@ -1601,9 +1601,9 @@
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="7196776143116382561" />
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7196776143116382562">
-        <property name="name:3" value="genType" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7196776143116382563">
-          <link role="classifier:3" targetNodeId="12.~IGenerationType" resolveInfo="IGenerationType" />
+        <property name="name:3" value="generationHandler" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5311359939641099048">
+          <link role="classifier:3" targetNodeId="14.~IGenerationHandler" resolveInfo="IGenerationHandler" />
         </node>
       </node>
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="7196776143116382565" />
@@ -1831,9 +1831,9 @@
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7196776143116384913">
-        <property name="name:3" value="genType" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7196776143116384914">
-          <link role="classifier:3" targetNodeId="12.~IGenerationType" resolveInfo="IGenerationType" />
+        <property name="name:3" value="generationHandler" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5311359939641099021">
+          <link role="classifier:3" targetNodeId="14.~IGenerationHandler" resolveInfo="IGenerationHandler" />
         </node>
       </node>
     </node>
@@ -1863,9 +1863,9 @@
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7196776143116384942">
-        <property name="name:3" value="genType" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7196776143116384943">
-          <link role="classifier:3" targetNodeId="12.~IGenerationType" resolveInfo="IGenerationType" />
+        <property name="name:3" value="generationHandler" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5311359939641099022">
+          <link role="classifier:3" targetNodeId="14.~IGenerationHandler" resolveInfo="IGenerationHandler" />
         </node>
       </node>
     </node>
@@ -1878,9 +1878,9 @@
         </node>
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="7196776143116382674">
-        <property name="name:3" value="genType" />
-        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="7196776143116382675">
-          <link role="classifier:3" targetNodeId="12.~IGenerationType" resolveInfo="IGenerationType" />
+        <property name="name:3" value="generationHandler" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5311359939641099027">
+          <link role="classifier:3" targetNodeId="14.~IGenerationHandler" resolveInfo="IGenerationHandler" />
         </node>
       </node>
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.collections.structure.ListType:7" id="7196776143116382667">
@@ -2060,13 +2060,8 @@
                   </node>
                 </node>
               </node>
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1116843610524007799">
-                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1116843610524008107">
-                  <link role="baseMethodDeclaration:3" targetNodeId="14.~GenerationHandlerAdapter.&lt;init&gt;(jetbrains.mps.generator.IGenerationType)" resolveInfo="GenerationHandlerAdapter" />
-                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1116843610524008112">
-                    <link role="variableDeclaration:3" targetNodeId="7196776143116382674" resolveInfo="genType" />
-                  </node>
-                </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5311359939641099039">
+                <link role="variableDeclaration:3" targetNodeId="7196776143116382674" resolveInfo="generationHandler" />
               </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="7196776143116382755">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="7196776143116382756">
