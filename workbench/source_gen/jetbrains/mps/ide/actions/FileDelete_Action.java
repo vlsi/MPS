@@ -6,14 +6,17 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 public class FileDelete_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(FileDelete_Action.class);
 
+  private VirtualFile selectedFile;
   private AnAction action;
 
   public FileDelete_Action(AnAction action_par) {
@@ -42,6 +45,10 @@ public class FileDelete_Action extends GeneratedAction {
   @Override
   protected boolean collectActionData(AnActionEvent event) {
     if (!(super.collectActionData(event))) {
+      return false;
+    }
+    this.selectedFile = event.getData(MPSDataKeys.VIRTUAL_FILE);
+    if (this.selectedFile == null) {
       return false;
     }
     return true;

@@ -21,6 +21,8 @@ public class AbstractFileActions_ActionGroup extends GeneratedActionGroup {
       AbstractFileActions_ActionGroup.this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_new);
       AbstractFileActions_ActionGroup.this.addSeparator();
       AbstractFileActions_ActionGroup.this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_ideaActions);
+      AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameFileOrDirectory_Action", "jetbrains.mps.ide");
+      AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.MoveFileOrDirectory_Action", "jetbrains.mps.ide");
       AbstractFileActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.FileDelete_Action", "jetbrains.mps.ide", new FileDeleteActionFixed());
       AbstractFileActions_ActionGroup.this.addSeparator();
       AbstractFileActions_ActionGroup.this.addAnchor(AbstractFileActions_ActionGroup.LABEL_ID_vcs);
