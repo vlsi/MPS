@@ -60,8 +60,9 @@ public class CreateMethodDeclaration_Intention extends BaseIntention implements 
     boolean isSameClassifier = SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) == classifier;
     final String name = CreateMethodDeclarationUtil.getMethodName(editorContext);
     SNode type;
-    if (SNodeOperations.isInstanceOf(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type")) {
-      type = SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(node), "jetbrains.mps.baseLanguage.structure.Type");
+    SNode inferType = TypeChecker.getInstance().getInferredTypeOf(node);
+    if (SNodeOperations.isInstanceOf(inferType, "jetbrains.mps.baseLanguage.structure.Type")) {
+      type = SNodeOperations.cast(inferType, "jetbrains.mps.baseLanguage.structure.Type");
     } else {
       type = new CreateMethodDeclaration_Intention.QuotationClass_2774_0().createNode();
     }
