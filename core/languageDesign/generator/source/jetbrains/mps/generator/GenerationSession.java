@@ -39,9 +39,7 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
+import java.util.*;
 
 /**
  * Igor Alshannikov
@@ -60,13 +58,15 @@ public class GenerationSession implements IGenerationSession {
 
   private int myInvocationCount = 0;
   private int myTransientModelsCount = 0;
+  private boolean myReverseRoots;
 
 
-  public GenerationSession(IOperationContext invocationContext, boolean saveTransientModels, ProgressIndicator progressMonitor, final IMessageHandler messagesHandler) {
+  public GenerationSession(IOperationContext invocationContext, boolean saveTransientModels, ProgressIndicator progressMonitor, final IMessageHandler messagesHandler, boolean reverseRoots) {
     myInvocationContext = invocationContext;
     myDiscardTransients = !saveTransientModels;
     myProgressMonitor = progressMonitor;
     myMessagesHandler = messagesHandler;
+    myReverseRoots = reverseRoots;
   }
 
   public ILoggingHandler getLoggingHandler() {
@@ -195,6 +195,25 @@ public class GenerationSession implements IGenerationSession {
     String modelsLongName = inputModel.getLongName();
     SModel currentInputModel = inputModel;
 
+    // reverse roots order
+    if(myReverseRoots && inputModel == mySessionContext.getOriginalInputModel()) {
+      SModel currentInputModel_clone = createTransientModel(modelsLongName);
+      addMessage(MessageKind.INFORMATION, "reversing roots '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
+      List<SNode> rrr = currentInputModel.getRoots();
+      SNode[] roots = rrr.toArray(new SNode[rrr.size()]);
+      for(int i = 0; i < roots.length/2; i++) {
+        SNode temp = roots[i];
+        roots[i] = roots[roots.length-1-i];
+        roots[roots.length-1-i] = temp;
+      }
+      for (SNode node : roots) {
+        SNode outputNode = CloneUtil.clone(node, currentInputModel_clone, true);
+        currentInputModel_clone.addRoot(outputNode);
+      }
+      recycleWasteModel(currentInputModel);
+      currentInputModel = currentInputModel_clone;
+    }
+
     // -----------------------
     // run pre-processing scripts
     // -----------------------
@@ -216,7 +235,7 @@ public class GenerationSession implements IGenerationSession {
         SModel currentInputModel_clone = createTransientModel(modelsLongName);
         addMessage(MessageKind.INFORMATION, "clone model '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
 
-        CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, inputModel == mySessionContext.getOriginalInputModel());
+        CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
 
         if (!myDiscardTransients) { // tracing
           mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, preMappingScripts);

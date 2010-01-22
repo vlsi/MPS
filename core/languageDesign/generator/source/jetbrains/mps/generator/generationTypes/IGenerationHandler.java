@@ -34,11 +34,6 @@ import java.util.List;
  */
 public interface IGenerationHandler {
 
-  /**
-   * @deprecated
-   */
-  IGenerationType getGenType();
-
   void startGeneration(IMessageHandler handler);
 
   void finishGeneration();

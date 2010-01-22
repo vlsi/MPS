@@ -48,11 +48,6 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public IGenerationType getGenType() {
-    return null;
-  }
-
-  @Override
   public boolean canHandle(SModelDescriptor inputModel) {
     return SModelStereotype.isUserModel(inputModel);
   }
