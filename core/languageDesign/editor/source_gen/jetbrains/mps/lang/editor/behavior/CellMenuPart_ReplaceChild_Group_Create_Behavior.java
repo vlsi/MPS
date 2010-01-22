@@ -32,12 +32,12 @@ public class CellMenuPart_ReplaceChild_Group_Create_Behavior {
     public SNode createNode(Object parameter_9639_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0 = null;
+      SNode quotedNode_9639_0 = null;
       {
-        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0 = quotedNode_0;
-        quotedNode1_0.setReferent("concept", (SNode) parameter_9639_0);
-        result = quotedNode1_0;
+        quotedNode_9639_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9639_0 = quotedNode_9639_0;
+        quotedNode1_9639_0.setReferent("concept", (SNode) parameter_9639_0);
+        result = quotedNode1_9639_0;
       }
       return result;
     }

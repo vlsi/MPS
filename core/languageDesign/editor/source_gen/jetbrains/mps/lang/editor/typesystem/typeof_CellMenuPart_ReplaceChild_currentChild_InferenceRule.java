@@ -69,12 +69,12 @@ public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule extends
     public SNode createNode(Object parameter_6659_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3 = null;
+      SNode quotedNode_6659_0 = null;
       {
-        quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_3;
-        quotedNode1_3.setReferent("concept", (SNode) parameter_6659_0);
-        result = quotedNode1_3;
+        quotedNode_6659_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6659_0 = quotedNode_6659_0;
+        quotedNode1_6659_0.setReferent("concept", (SNode) parameter_6659_0);
+        result = quotedNode1_6659_0;
       }
       return result;
     }
@@ -82,12 +82,12 @@ public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule extends
     public SNode createNode(Object parameter_6659_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3 = null;
+      SNode quotedNode_6659_0 = null;
       {
-        quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_3;
-        quotedNode1_3.setReferent("concept", (SNode) parameter_6659_0);
-        result = quotedNode1_3;
+        quotedNode_6659_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6659_0 = quotedNode_6659_0;
+        quotedNode1_6659_0.setReferent("concept", (SNode) parameter_6659_0);
+        result = quotedNode1_6659_0;
       }
       return result;
     }
@@ -100,11 +100,11 @@ public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule extends
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4 = null;
+      SNode quotedNode_6659_1 = null;
       {
-        quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4 = quotedNode_4;
-        result = quotedNode1_4;
+        quotedNode_6659_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6659_1 = quotedNode_6659_1;
+        result = quotedNode1_6659_1;
       }
       return result;
     }
@@ -112,11 +112,11 @@ public class typeof_CellMenuPart_ReplaceChild_currentChild_InferenceRule extends
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4 = null;
+      SNode quotedNode_6659_1 = null;
       {
-        quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4 = quotedNode_4;
-        result = quotedNode1_4;
+        quotedNode_6659_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6659_1 = quotedNode_6659_1;
+        result = quotedNode1_6659_1;
       }
       return result;
     }
