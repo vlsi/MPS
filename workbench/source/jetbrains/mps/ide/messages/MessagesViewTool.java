@@ -501,11 +501,9 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
   private void updateHeader() {
     if (getToolWindow() == null) return;
     if (hasErrors() || hasWarnings() || hasInfo()) {
-      getToolWindow().setTitle(" ("
-        + NameUtil.formatNumericalString(myErrors, "error") + "/"
+      getToolWindow().setTitle(NameUtil.formatNumericalString(myErrors, "error") + "/"
         + NameUtil.formatNumericalString(myWarnings, "warning") + "/"
-        + NameUtil.formatNumericalString(myInfos, "info")
-        + ")");
+        + NameUtil.formatNumericalString(myInfos, "info"));
     } else {
       getToolWindow().setTitle("");
     }
