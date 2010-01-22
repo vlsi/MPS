@@ -54,13 +54,13 @@ import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.baseLanguage.search.VisibleThrowablesScope;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.BootstrapLanguages;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.baseLanguage.plugin.ParenthesisUtil;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.behavior.ThisExpression_Behavior;
-import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.action.RemoveSideTransformActionByConditionContext;
 import jetbrains.mps.util.Condition;
 import java.util.Set;
@@ -1858,7 +1858,11 @@ __switch__:
             SModel blStructure = BootstrapLanguages.baseLanguage().getStructureModelDescriptor().getSModel();
             for (SNode conceptDeclaration : SModelOperations.getRoots(blStructure, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
               if (SConceptOperations.isSubConceptOf(conceptDeclaration, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
-                ListSequence.fromList(result).addElement((SNode) conceptDeclaration);
+                SNode param = (SNode) conceptDeclaration;
+                if (StringUtils.isEmpty(SConceptPropertyOperations.getString(param, "alias")) || SConceptPropertyOperations.getBoolean(param, "dontSubstituteByDefault") || SConceptPropertyOperations.getBoolean(param, "abstract")) {
+                  continue;
+                }
+                ListSequence.fromList(result).addElement(param);
               }
             }
             return result;
