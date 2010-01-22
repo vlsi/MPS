@@ -310,7 +310,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
       //heuristics
       List<SNode> ancestors = outputNode.getAncestors(true);
-      SNode[] candidates = new SNode[list.size()];
+      SNode[] candidates = new SNode[ancestors.size()];
       for (int i = 0; i < list.size(); i++) {
         SNode candidate = list.get(i);
         for (SNode ancestor : candidate.getAncestors(true)) {
