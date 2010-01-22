@@ -15,56 +15,51 @@
  */
 package jetbrains.mps.project.tester;
 
-import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
-import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
+import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.plugin.IProjectHandler;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.NameUtil;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Map;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Collection;
-import java.io.File;
-
-import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.util.Pair;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
-public class TesterGenerationType extends GenerateFilesAndClassesGenerationType {
+import java.io.File;
+import java.rmi.RemoteException;
+import java.util.*;
+
+/**
+ * In-memory generation with ability to reference on-disk resources.
+ */
+public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
   private File myLastOutputDir;
   private Map<String, String> myNodeExtensionMap = new HashMap<String, String>();
   private Map<SModel, String> myOutputModelToPath = new HashMap<SModel, String>();
   private Map<SModelReference, String> myOutputModelRefToPath = new HashMap<SModelReference, String>();
   private Map<SModelReference, List<String>> myOutputModelRefToRoots = new HashMap<SModelReference, List<String>>();
 
-  public TesterGenerationType(boolean reloadClasses) {
+  public TesterGenerationHandler(boolean reloadClasses) {
     super(reloadClasses);
   }
 
-  public boolean requiresReloading() {
-    return false;
-  }
-
-  public boolean requiresCompilationAfterGeneration() {
-    return false;
+  @Override
+  public boolean compile(IProjectHandler projectHandler, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+    return true;
   }
 
   @Override
-  public boolean handleOutput(GenerationStatus status, String outputDir, IOperationContext context, ProgressIndicator monitor, IMessageHandler messages) {
+  public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
+    return 0;
+  }
+  
+  @Override
+  public boolean collectSources(IModule module, SModelDescriptor inputModel, IOperationContext context, SModel outputModel) {
+    String outputDir = module.getOutputFor(inputModel);
     myLastOutputDir = new File(context.getModule().getGeneratorOutputPath());
-    SModel outputModel = status.getOutputModel();
     myOutputModelToPath.put(outputModel, outputDir);
     myOutputModelRefToPath.put(outputModel.getSModelReference(), outputDir);
     List<String> roots = new ArrayList<String>();
@@ -74,13 +69,13 @@ public class TesterGenerationType extends GenerateFilesAndClassesGenerationType 
       String extension = TextGenManager.instance().getExtension(outputRoot);
       myNodeExtensionMap.put(NameUtil.nodeFQName(outputRoot), extension);
     }
-    return super.handleOutput(status, outputDir, context, monitor, messages);
+    return super.collectSources(module, inputModel, context, outputModel);
   }
 
   @Override
-  public List<CompilationResult> compile(IAdaptiveProgressMonitor progress) {
+  public List<CompilationResult> compile(ITaskProgressHelper helper) {
     clean();
-    return super.compile(progress);
+    return super.compile(helper);
   }
 
   public Collection<SModel> getOutputModels() {

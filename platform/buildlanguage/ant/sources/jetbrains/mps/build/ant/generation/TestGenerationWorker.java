@@ -4,7 +4,8 @@ import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.GenerationAdapter;
 import jetbrains.mps.generator.GenerationListener;
-import jetbrains.mps.generator.generationTypes.GenerationHandlerAdapter;
+import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.AbstractClassLoader;
@@ -21,15 +22,13 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
-import jetbrains.mps.project.tester.TesterGenerationType;
+import jetbrains.mps.project.tester.TesterGenerationHandler;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.build.ant.IBuildServerMessageFormat;
@@ -52,7 +51,8 @@ public class TestGenerationWorker extends GeneratorWorker {
   private boolean myTestFailed = false;
   private IBuildServerMessageFormat myBuildServerMessageFormat;
   private final Map<SModelDescriptor, Long> myPerfomanceMap = new HashMap<SModelDescriptor, Long>();
-  private final TesterGenerationType myGenerationType = new TesterGenerationType(false) {
+
+  private final TesterGenerationHandler myGenerationHandler = new TesterGenerationHandler(false) {
     @Override
     protected JavaCompiler createJavaCompiler(Set<IModule> contextModules) {
       return new JavaCompiler(getClassPath(contextModules)) {
@@ -177,28 +177,28 @@ public class TestGenerationWorker extends GeneratorWorker {
     System.out.println(myBuildServerMessageFormat.formatTestStart(currentTestName));
 
     // do generate
-    cycle.generate(gm, myGenerationType, myMessageHandler);
+    cycle.generate(gm, myGenerationHandler, myMessageHandler);
 
     // calculate diff
     List<String> diffReports;
     if (Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
       diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
         public List<String> compute() {
-          return DiffReporter.createDiffReports(myGenerationType);
+          return DiffReporter.createDiffReports(myGenerationHandler);
         }
       });
     } else {
       diffReports = new ArrayList<String>();
     }
     final List<SModel> outputModels = new ArrayList<SModel>();
-    outputModels.addAll(myGenerationType.getOutputModels());
+    outputModels.addAll(myGenerationHandler.getOutputModels());
 
     // compile
     List<CompilationResult> compilationResult;
     if (Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE))) {
       compilationResult = ModelAccess.instance().runReadAction(new Computable<List<CompilationResult>>() {
         public List<CompilationResult> compute() {
-          return myGenerationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
+          return myGenerationHandler.compile(ITaskProgressHelper.EMPTY);
         }
       });
     } else {
@@ -219,10 +219,10 @@ public class TestGenerationWorker extends GeneratorWorker {
     if (invokeTests()) {
       TestResult testResult = new TestResult();
       testResult.addListener(new MyTestListener());
-      ProjectTester.invokeTests(myGenerationType, outputModels, testResult, cycle.getClassLoader());
+      ProjectTester.invokeTests(myGenerationHandler, outputModels, testResult, cycle.getClassLoader());
     }
 
-    myGenerationType.clean();
+    myGenerationHandler.clean();
   }
 
   private boolean invokeTests() {
@@ -336,10 +336,10 @@ public class TestGenerationWorker extends GeneratorWorker {
       myModule = module;
     }
 
-    public void generate(GeneratorManager gm, IGenerationType generationType, IMessageHandler messageHandler) {
+    public void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler) {
       gm.generateModels(Collections.singletonList(mySModel),
         new ModuleContext(myModule, myProject),
-        new GenerationHandlerAdapter(generationType),
+        generationHandler,
         new EmptyProgressIndicator(),
         messageHandler,
         invokeTests());
@@ -400,7 +400,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
 
     protected byte[] findClassBytes(String name) {
-      return myGenerationType.getCompiler().getClasses().get(name);
+      return myGenerationHandler.getCompiler().getClasses().get(name);
     }
 
     protected boolean isExcluded(String name) {
@@ -410,7 +410,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     @Override
     public URL getResource(String name) {
       final URL resource = super.getResource(name);
-      final File outputDir = myGenerationType.getLastOutputDir();
+      final File outputDir = myGenerationHandler.getLastOutputDir();
       if (resource != null || outputDir == null) return resource;
 
       File resourceFile = new File(outputDir.getAbsolutePath() + File.separator + name);

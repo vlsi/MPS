@@ -1,34 +1,33 @@
 package jetbrains.mps.build.ant.generation;
 
-import jetbrains.mps.generator.GenerationAdapter;
-import jetbrains.mps.generator.GenerationListener;
-import jetbrains.mps.generator.generationTypes.GenerationHandlerAdapter;
-import org.apache.tools.ant.ProjectComponent;
-import org.apache.tools.ant.BuildException;
-
-import java.io.File;
-import java.util.*;
-
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleContext;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.generator.GenerationSettings;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IGenerationType;
-import jetbrains.mps.generator.generationTypes.GenerateFilesGenerationType;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.make.dependencies.StronglyConnectedModules;
-import jetbrains.mps.make.dependencies.graph.IVertex;
-import jetbrains.mps.make.dependencies.StronglyConnectedModules.IModuleDecorator;
-import jetbrains.mps.make.dependencies.StronglyConnectedModules.IModuleDecoratorBuilder;
-import jetbrains.mps.build.ant.MpsWorker;
-import jetbrains.mps.build.ant.WhatToDo;
-import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.ide.messages.Message;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import com.intellij.openapi.util.Computable;
+import jetbrains.mps.build.ant.MpsWorker;
+import jetbrains.mps.build.ant.WhatToDo;
+import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
+import jetbrains.mps.ide.messages.IMessageHandler;
+import jetbrains.mps.ide.messages.Message;
+import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
+import jetbrains.mps.make.dependencies.StronglyConnectedModules;
+import jetbrains.mps.make.dependencies.StronglyConnectedModules.IModuleDecorator;
+import jetbrains.mps.make.dependencies.StronglyConnectedModules.IModuleDecoratorBuilder;
+import jetbrains.mps.make.dependencies.graph.IVertex;
+import jetbrains.mps.plugin.IProjectHandler;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Pair;
+import org.apache.tools.ant.BuildException;
+import org.apache.tools.ant.ProjectComponent;
+
+import java.io.File;
+import java.rmi.RemoteException;
+import java.util.*;
 
 public class GeneratorWorker extends MpsWorker {
 
@@ -111,9 +110,24 @@ public class GeneratorWorker extends MpsWorker {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         info("Start " + cycle);
-        cycle.generate(gm, new GenerateFilesGenerationType() {
+        cycle.generate(gm, new JavaGenerationHandler() {
           @Override
-          public boolean requiresCompilationAfterGeneration() {
+          public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
+            if(requiresCompilationAfterGeneration()) {
+              return super.estimateCompilationMillis(input);
+            }
+            return ModelsProgressUtil.estimateReloadAllTimeMillis();
+          }
+
+          @Override
+          protected boolean compileModule(IModule module, IProjectHandler projectHandler, boolean[] ideaIsFresh, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+            return 
+              requiresCompilationAfterGeneration()
+                ? super.compileModule(module, projectHandler, ideaIsFresh, progressHelper)
+                : true;
+          }
+
+          private boolean requiresCompilationAfterGeneration() {
             return Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE));
           }
         }, myMessageHandler);
@@ -191,7 +205,7 @@ public class GeneratorWorker extends MpsWorker {
   }
 
   protected static interface Cycle {
-    void generate(GeneratorManager gm, IGenerationType generationType, IMessageHandler messageHandler);
+    void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler);
     ClassLoader getClassLoader();
   }
 
@@ -206,7 +220,7 @@ public class GeneratorWorker extends MpsWorker {
       myModuleToModels = moduleToModels;
     }
 
-    public void generate(GeneratorManager gm, IGenerationType generationType, IMessageHandler messageHandler) {
+    public void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler) {
       List<Pair<SModelDescriptor, IOperationContext>> modelsToContext = new ArrayList<Pair<SModelDescriptor, IOperationContext>>();
       for (IModule module : myModules) {
         ModuleContext moduleContext = new ModuleContext(module, myProject);
@@ -215,7 +229,7 @@ public class GeneratorWorker extends MpsWorker {
           modelsToContext.add(new Pair<SModelDescriptor, IOperationContext>(model, moduleContext));
         }
       }
-      gm.generateModels(modelsToContext, new GenerationHandlerAdapter(generationType), new EmptyProgressIndicator(), messageHandler, false);
+      gm.generateModels(modelsToContext, generationHandler, new EmptyProgressIndicator(), messageHandler, false);
     }
 
     public ClassLoader getClassLoader() {

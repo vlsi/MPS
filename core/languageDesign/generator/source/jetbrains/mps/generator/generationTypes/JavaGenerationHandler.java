@@ -24,7 +24,7 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.ide.progress.TaskProgressHelper;
+import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.plugin.CompilationResult;
@@ -44,6 +44,8 @@ import java.util.List;
 import java.util.Set;
 
 /**
+ * Stores files on disk, compiles and reloads classes.
+ *
  * Evgeny Gryaznov, Jan 21, 2010
  */
 public class JavaGenerationHandler extends GenerationHandlerBase {
@@ -65,7 +67,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, TaskProgressHelper progressHelper) {
+  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext invocationContext, ITaskProgressHelper progressHelper) {
     info("handling output...");
     String targetDir = module.getOutputFor(inputModel);
 
@@ -82,7 +84,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     return true;
   }
 
-  public void startModule(IModule module, List<SModelDescriptor> inputModels, IProjectHandler projectHandler, TaskProgressHelper progressHelper) {
+  public void startModule(IModule module, List<SModelDescriptor> inputModels, IProjectHandler projectHandler, ITaskProgressHelper progressHelper) {
     progressHelper.setText2("module " + module);
 
     String outputFolder = module != null ? module.getGeneratorOutputPath() : null;
@@ -97,7 +99,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public boolean compile(IProjectHandler projectHandler, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, TaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+  public boolean compile(IProjectHandler projectHandler, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
     boolean compiledSuccessfully = generationOK;
     boolean[] ideaIsFresh = new boolean[] { false };
 
@@ -131,7 +133,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     return compiledSuccessfully;
   }
 
-  protected boolean compileModule(IModule module, IProjectHandler projectHandler, boolean[] ideaIsFresh, TaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+  protected boolean compileModule(IModule module, IProjectHandler projectHandler, boolean[] ideaIsFresh, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
     boolean compiledSuccessfully = true;
 
     if (module != null) {
@@ -186,7 +188,7 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     return IdeMain.getTestMode() != TestMode.CORE_TEST && handler != null;
   }
 
-  protected void reloadClasses(TaskProgressHelper progressHelper) {
+  protected void reloadClasses(ITaskProgressHelper progressHelper) {
     if(IdeMain.getTestMode() != TestMode.NO_TEST) {
       return;
     }
@@ -206,26 +208,6 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     info("Reloaded in " + (System.currentTimeMillis() - start) + " ms");
   }
 
-    protected boolean containsTestModels(List<SModelDescriptor> sms) {
-    for (SModelDescriptor sm : sms) {
-      if (SModelStereotype.isTestModel(sm)) return true;
-    }
-    return false;
-  }
-
-  protected void prepareOutputFolder(IProjectHandler projectHandler, String outputFolder) {
-    if (outputFolder != null && !new File(outputFolder).exists()) {
-      new File(outputFolder).mkdirs();
-      try {
-        if (projectHandler != null) {
-          projectHandler.addSourceRoot(outputFolder);
-        }
-      } catch (Exception e) {
-        warning("Can't add output folder to IDEA as sources");
-      }
-    }
-  }
-
   @Override
   public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
     long totalJob = 0;
@@ -240,6 +222,26 @@ public class JavaGenerationHandler extends GenerationHandlerBase {
     return totalJob;
   }
 
+  protected final boolean containsTestModels(List<SModelDescriptor> sms) {
+    for (SModelDescriptor sm : sms) {
+      if (SModelStereotype.isTestModel(sm)) return true;
+    }
+    return false;
+  }
+
+  protected final void prepareOutputFolder(IProjectHandler projectHandler, String outputFolder) {
+    if (outputFolder != null && !new File(outputFolder).exists()) {
+      new File(outputFolder).mkdirs();
+      try {
+        if (projectHandler != null) {
+          projectHandler.addSourceRoot(outputFolder);
+        }
+      } catch (Exception e) {
+        warning("Can't add output folder to IDEA as sources");
+      }
+    }
+  }
+  
   @Override
   public String toString() {
     return "Generate Files";

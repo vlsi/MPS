@@ -21,20 +21,18 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
-import jetbrains.mps.generator.generationTypes.GenerateFilesAndClassesGenerationType;
-import jetbrains.mps.generator.generationTypes.GenerationHandlerAdapter;
+import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
-import jetbrains.mps.ide.progress.IAdaptiveProgressMonitor;
+import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.logging.ILoggingHandler;
 import jetbrains.mps.logging.LogEntry;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.tester.DiffReporter;
-import jetbrains.mps.project.tester.TesterGenerationType;
+import jetbrains.mps.project.tester.TesterGenerationHandler;
 import jetbrains.mps.reloading.ClassLoaderManager;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
@@ -81,22 +79,22 @@ public class ProjectTester {
     return res;
   }
 
-  private static List<TestFailure> createTestFailures(@NotNull GenerateFilesAndClassesGenerationType genType, List<SModel> models) {
+  private static List<TestFailure> createTestFailures(@NotNull InMemoryJavaGenerationHandler generationHandler, List<SModel> models) {
     List<TestFailure> testFailures = new ArrayList<TestFailure>();
     junit.framework.TestResult result = new junit.framework.TestResult();
-    invokeTests(genType, models, result, null);
+    invokeTests(generationHandler, models, result, null);
     testFailures.addAll(Collections.list(result.failures()));
     testFailures.addAll(Collections.list(result.errors()));
     return testFailures;
   }
 
-  public static void invokeTests(@NotNull GenerateFilesAndClassesGenerationType genType, List<SModel> outputModels, junit.framework.TestResult testResult, ClassLoader baseClassLoader) {
+  public static void invokeTests(@NotNull InMemoryJavaGenerationHandler generationHandler, List<SModel> outputModels, junit.framework.TestResult testResult, ClassLoader baseClassLoader) {
     for (final SModel model : outputModels) {
       for (final SNode outputRoot : model.getRoots()) {
         if (baseClassLoader == null) {
           baseClassLoader = model.getClass().getClassLoader();
         }
-        ClassLoader classLoader = genType.getCompiler().getClassLoader(baseClassLoader);
+        ClassLoader classLoader = generationHandler.getCompiler().getClassLoader(baseClassLoader);
         Boolean isClassConcept = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
           @Override
           public Boolean compute() {
@@ -177,7 +175,7 @@ public class ProjectTester {
     try {
       Logger.addLoggingHandler(loggingHandler);
 
-      final TesterGenerationType generationType = new TesterGenerationType(true);
+      final TesterGenerationHandler generationHandler = new TesterGenerationHandler(true);
 
       ModelAccess.instance().runWriteAction(new Runnable() {
         public void run() {
@@ -217,28 +215,28 @@ public class ProjectTester {
             gm.generateModels(
               parms.getModelDescriptors(),
               new ModuleContext(parms.getModule(), myProject),
-              new GenerationHandlerAdapter(generationType),
+              generationHandler,
               new EmptyProgressIndicator(),
               handler
             );
 
             if (myIsRunnable) {
-              diffReports.addAll(DiffReporter.createDiffReports(generationType));
+              diffReports.addAll(DiffReporter.createDiffReports(generationHandler));
             }
             List<SModel> outputModels = new ArrayList<SModel>();
-            outputModels.addAll(generationType.getOutputModels());
+            outputModels.addAll(generationHandler.getOutputModels());
             if (errors.size() > numErrorsBeforeGeneration) {
               System.out.println("There were generation errors, cancelling compilation");
             } else {
               long start = System.currentTimeMillis();
-              List<CompilationResult> compilationResultList = generationType.compile(IAdaptiveProgressMonitor.NULL_PROGRESS_MONITOR);
+              List<CompilationResult> compilationResultList = generationHandler.compile(ITaskProgressHelper.EMPTY);
               System.out.println("Compiled " + compilationResultList.size() + " compilation units in " + (System.currentTimeMillis() - start));
               compilationResults.addAll(createCompilationProblemsList(compilationResultList));
               if (compilationResults.isEmpty()) {
                 System.out.println("Compilation ok");
               }
 
-              failedTests.addAll(createTestFailures(generationType, outputModels));
+              failedTests.addAll(createTestFailures(generationHandler, outputModels));
             }
 
             System.out.println("");

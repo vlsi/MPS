@@ -15,12 +15,11 @@
  */
 package jetbrains.mps.project.tester;
 
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.project.tester.TesterGenerationType;
+import jetbrains.mps.project.tester.TesterGenerationHandler;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -53,22 +52,22 @@ public class DiffReporter {
     }
   }
 
-  public static List<String> createDiffReports(TesterGenerationType genType) {
+  public static List<String> createDiffReports(TesterGenerationHandler genHandler) {
     List<String> result = new ArrayList<String>();
-    for (SModelReference outputModel : genType.getOutputModelRefs()) {
+    for (SModelReference outputModel : genHandler.getOutputModelRefs()) {
       List<String> files = new ArrayList<String>();
-      File dir = genType.getOutputDir(outputModel);
+      File dir = genHandler.getOutputDir(outputModel);
       if (dir == null || !dir.exists() || !dir.canRead()) {
         continue;
       }
       files.addAll(Arrays.asList(dir.list()));
-      for (String outputRoot : genType.getRoots(outputModel)) {
-        final String fileType = "." + genType.getExtension(outputRoot);
-        final String fileName = genType.getName(outputRoot, outputModel) + fileType;
-        final String filePath = genType.getOutputDir(outputModel) + File.separator + fileName;
+      for (String outputRoot : genHandler.getRoots(outputModel)) {
+        final String fileType = "." + genHandler.getExtension(outputRoot);
+        final String fileName = genHandler.getName(outputRoot, outputModel) + fileType;
+        final String filePath = genHandler.getOutputDir(outputModel) + File.separator + fileName;
         final File testFile = new File(filePath);
         String oldContent = null;
-        String newContent = genType.getSourceByNode(outputRoot, outputModel);
+        String newContent = genHandler.getSourceByNode(outputRoot, outputModel);
         if (testFile.exists() && testFile.canRead()) {
           oldContent = FileUtil.read(testFile);
           files.remove(fileName);
@@ -85,7 +84,7 @@ public class DiffReporter {
           continue;
         }
         String title = getDiffReportTitle((SNode) null, fileName, false, true);
-        File file = new File(genType.getOutputDir(outputModel) + File.separator + fileName);
+        File file = new File(genHandler.getOutputDir(outputModel) + File.separator + fileName);
         if (!file.exists() || !file.canRead() || !file.isFile()) {
           continue;
         }

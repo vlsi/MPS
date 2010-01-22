@@ -15,14 +15,13 @@
  */
 package jetbrains.mps.generator.generationTypes;
 
-import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.ide.progress.TaskProgressHelper;
+import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
@@ -39,6 +38,8 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
+ * Prints all generated files in output view.
+ *
  * Evgeny Gryaznov, Jan 21, 2010
  */
 public class TextGenerationHandler extends GenerationHandlerBase {
@@ -60,12 +61,12 @@ public class TextGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public void startModule(IModule module, List<SModelDescriptor> inputModels, IProjectHandler projectHandler, TaskProgressHelper progressHelper) {
+  public void startModule(IModule module, List<SModelDescriptor> inputModels, IProjectHandler projectHandler, ITaskProgressHelper progressHelper) {
     progressHelper.setText2("module " + module);
   }
 
   @Override
-  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext context, TaskProgressHelper progressHelper) {
+  public boolean handleOutput(IModule module, SModelDescriptor inputModel, GenerationStatus status, IOperationContext context, ITaskProgressHelper progressHelper) {
     final OutputViewTool viewTool = OutputViewTool.getOutputViewTool(context.getMPSProject());
     viewTool.clear();
 
@@ -108,7 +109,7 @@ public class TextGenerationHandler extends GenerationHandlerBase {
   }
 
   @Override
-  public boolean compile(IProjectHandler projectHandler, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, TaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
+  public boolean compile(IProjectHandler projectHandler, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
     return true;
   }
 

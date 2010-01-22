@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 /**
 * Evgeny Gryaznov, Jan 20, 2010
 */
-public class TaskProgressHelper {
+public class TaskProgressHelper implements ITaskProgressHelper {
 
   private static final int TIMER_DELAY = 100; //milliseconds
 

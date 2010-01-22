@@ -15,22 +15,20 @@
  */
 package jetbrains.mps.generator.generationTypes;
 
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.compiler.JavaCompiler;
-import jetbrains.mps.generator.JavaNameUtil;
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Interface;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.debug.PositionInfo;
+import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.textGen.TextGenManager;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
-import com.intellij.openapi.progress.ProgressIndicator;
 
-import java.util.Map;
-import java.util.List;
 import java.util.HashMap;
-import java.util.Set;
+import java.util.Map;
 
 public class TextGenerationUtil {
   public static TextGenerationResult generateText(IOperationContext context, SNode node) {

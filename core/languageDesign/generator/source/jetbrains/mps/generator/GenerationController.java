@@ -23,6 +23,7 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.messages.MessagesViewTool;
+import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.TaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
 import jetbrains.mps.logging.Logger;
@@ -122,14 +123,14 @@ public class GenerationController {
     }
   }
 
-  private boolean compile(TaskProgressHelper progressHelper, boolean generationOK) throws RemoteException, GenerationCanceledException {
+  private boolean compile(ITaskProgressHelper progressHelper, boolean generationOK) throws RemoteException, GenerationCanceledException {
     fireBeforeModelsCompiled(generationOK);
     generationOK = generationOK && myGenerationHandler.compile(getProjectHandler(), myModuleSequence, generationOK, progressHelper);
     fireAfterModelsCompiled(generationOK);
     return generationOK;
   }
 
-  protected boolean generateModelsInModule(IModule module, List<SModelDescriptor> inputModels, TaskProgressHelper progressHelper) throws Exception {
+  protected boolean generateModelsInModule(IModule module, List<SModelDescriptor> inputModels, ITaskProgressHelper progressHelper) throws Exception {
     boolean currentGenerationOK = true;
 
     IOperationContext invocationContext = myModulesToContexts.get(module);

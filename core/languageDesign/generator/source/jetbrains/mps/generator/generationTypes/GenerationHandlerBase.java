@@ -19,7 +19,13 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
-import jetbrains.mps.ide.progress.TaskProgressHelper;
+import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.plugin.IProjectHandler;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelStereotype;
+
+import java.io.File;
+import java.util.List;
 
 /**
  * Evgeny Gryaznov, Jan 20, 2010
@@ -49,7 +55,7 @@ public abstract class GenerationHandlerBase implements IGenerationHandler {
     myMessages.handle(new Message(MessageKind.ERROR, this.getClass(), text));
   }
 
-  protected void checkMonitorCanceled(TaskProgressHelper progressHelper) throws GenerationCanceledException {
+  protected void checkMonitorCanceled(ITaskProgressHelper progressHelper) throws GenerationCanceledException {
     if (progressHelper.isCancelled()) throw new GenerationCanceledException();
   }
 }
