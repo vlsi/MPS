@@ -38,13 +38,13 @@ public class ConcretePropertyPart_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0 = null;
+      SNode quotedNode_3956_0 = null;
       {
-        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0 = quotedNode_0;
-        quotedNode1_0.setProperty("name", "_");
-        quotedNode1_0.addReference(SReference.create("dataType", quotedNode1_0, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1082983657062")));
-        result = quotedNode1_0;
+        quotedNode_3956_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3956_0 = quotedNode_3956_0;
+        quotedNode1_3956_0.setProperty("name", "_");
+        quotedNode1_3956_0.addReference(SReference.create("dataType", quotedNode1_3956_0, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1082983657062")));
+        result = quotedNode1_3956_0;
       }
       return result;
     }
@@ -57,13 +57,13 @@ public class ConcretePropertyPart_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
+      SNode quotedNode_3956_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1 = quotedNode_1;
-        quotedNode1_1.setProperty("name", "_");
-        quotedNode1_1.addReference(SReference.create("dataType", quotedNode1_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1082983041843")));
-        result = quotedNode1_1;
+        quotedNode_3956_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3956_1 = quotedNode_3956_1;
+        quotedNode1_3956_1.setProperty("name", "_");
+        quotedNode1_3956_1.addReference(SReference.create("dataType", quotedNode1_3956_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1082983041843")));
+        result = quotedNode1_3956_1;
       }
       return result;
     }

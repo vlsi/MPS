@@ -36,11 +36,11 @@ public class SingletabbedEditorTab_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8 = null;
+      SNode quotedNode_8147_0 = null;
       {
-        quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.SingletabbedEditorTabType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8 = quotedNode_8;
-        result = quotedNode1_8;
+        quotedNode_8147_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.SingletabbedEditorTabType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8147_0 = quotedNode_8147_0;
+        result = quotedNode1_8147_0;
       }
       return result;
     }

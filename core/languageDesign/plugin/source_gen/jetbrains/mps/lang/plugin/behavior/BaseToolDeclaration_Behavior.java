@@ -66,12 +66,12 @@ public class BaseToolDeclaration_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_10 = null;
+      SNode quotedNode_6752_0 = null;
       {
-        quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_10 = quotedNode_10;
-        quotedNode1_10.addReference(SReference.create("classifier", quotedNode1_10, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench.tools(jetbrains.mps.workbench.tools@java_stub)"), SNodeId.fromString("~BaseTool")));
-        result = quotedNode1_10;
+        quotedNode_6752_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6752_0 = quotedNode_6752_0;
+        quotedNode1_6752_0.addReference(SReference.create("classifier", quotedNode1_6752_0, SModelReference.fromString("f:java_stub#jetbrains.mps.workbench.tools(jetbrains.mps.workbench.tools@java_stub)"), SNodeId.fromString("~BaseTool")));
+        result = quotedNode1_6752_0;
       }
       return result;
     }

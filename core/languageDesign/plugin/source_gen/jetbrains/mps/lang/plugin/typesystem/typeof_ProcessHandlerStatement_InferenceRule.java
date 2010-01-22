@@ -51,12 +51,12 @@ public class typeof_ProcessHandlerStatement_InferenceRule extends AbstractInfere
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_18 = null;
+      SNode quotedNode_3940_0 = null;
       {
-        quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_18 = quotedNode_18;
-        quotedNode1_18.addReference(SReference.create("classifier", quotedNode1_18, SModelReference.fromString("f:java_stub#com.intellij.execution.process(com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
-        result = quotedNode1_18;
+        quotedNode_3940_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3940_0 = quotedNode_3940_0;
+        quotedNode1_3940_0.addReference(SReference.create("classifier", quotedNode1_3940_0, SModelReference.fromString("f:java_stub#com.intellij.execution.process(com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
+        result = quotedNode1_3940_0;
       }
       return result;
     }
@@ -64,12 +64,12 @@ public class typeof_ProcessHandlerStatement_InferenceRule extends AbstractInfere
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_18 = null;
+      SNode quotedNode_3940_0 = null;
       {
-        quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_18 = quotedNode_18;
-        quotedNode1_18.addReference(SReference.create("classifier", quotedNode1_18, SModelReference.fromString("f:java_stub#com.intellij.execution.process(com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
-        result = quotedNode1_18;
+        quotedNode_3940_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3940_0 = quotedNode_3940_0;
+        quotedNode1_3940_0.addReference(SReference.create("classifier", quotedNode1_3940_0, SModelReference.fromString("f:java_stub#com.intellij.execution.process(com.intellij.execution.process@java_stub)"), SNodeId.fromString("~ProcessHandler")));
+        result = quotedNode1_3940_0;
       }
       return result;
     }

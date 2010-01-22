@@ -39,11 +39,11 @@ public class subtype_ComplexType_SubtypingRule extends SubtypingRule_Runtime imp
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2 = null;
+      SNode quotedNode_0327_0 = null;
       {
-        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_2;
-        result = quotedNode1_2;
+        quotedNode_0327_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0327_0 = quotedNode_0327_0;
+        result = quotedNode1_0327_0;
       }
       return result;
     }
@@ -51,11 +51,11 @@ public class subtype_ComplexType_SubtypingRule extends SubtypingRule_Runtime imp
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2 = null;
+      SNode quotedNode_0327_0 = null;
       {
-        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_2;
-        result = quotedNode1_2;
+        quotedNode_0327_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.complex.structure.ComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0327_0 = quotedNode_0327_0;
+        result = quotedNode1_0327_0;
       }
       return result;
     }
