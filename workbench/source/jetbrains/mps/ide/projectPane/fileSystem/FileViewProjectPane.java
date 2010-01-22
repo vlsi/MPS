@@ -220,6 +220,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   }
 
   public void disposeComponent() {
+    myTimer.stop();
     FileStatusManager.getInstance(myProject).removeFileStatusListener(myFileStatusListener);
     VirtualFileManager.getInstance().removeVirtualFileListener(myFileListener);
     VirtualFileManager.getInstance().removeVirtualFileManagerListener(myVirtualFileManagerListener);
