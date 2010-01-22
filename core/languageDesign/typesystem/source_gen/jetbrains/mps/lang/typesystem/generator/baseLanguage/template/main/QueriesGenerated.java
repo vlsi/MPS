@@ -168,7 +168,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1203646555005(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.typesystem.structure.Node_TypeOperation");
+    return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.typesystem.structure.Node_TypeOperation") || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.typesystem.structure.Node_InferTypeOperation");
   }
 
   public static boolean baseMappingRule_Condition_1212662753946(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
