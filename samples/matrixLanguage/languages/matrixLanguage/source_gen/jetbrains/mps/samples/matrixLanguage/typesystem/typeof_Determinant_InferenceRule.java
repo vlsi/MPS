@@ -56,25 +56,25 @@ public class typeof_Determinant_InferenceRule extends AbstractInferenceRule_Runt
     public SNode createNode(Object parameter_5891_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4 = null;
-      SNode quotedNode_5 = null;
+      SNode quotedNode_5891_0 = null;
+      SNode quotedNode_5891_1 = null;
       {
-        quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4 = quotedNode_4;
+        quotedNode_5891_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5891_0 = quotedNode_5891_0;
         {
-          quotedNode_5 = (SNode) parameter_5891_0;
-          SNode quotedNode1_5;
-          if (_parameterValues_129834374.contains(quotedNode_5)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_5);
+          quotedNode_5891_1 = (SNode) parameter_5891_0;
+          SNode quotedNode1_1;
+          if (_parameterValues_129834374.contains(quotedNode_5891_1)) {
+            quotedNode1_1 = CopyUtil.copy(quotedNode_5891_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_5);
-            quotedNode1_5 = quotedNode_5;
+            _parameterValues_129834374.add(quotedNode_5891_1);
+            quotedNode1_1 = quotedNode_5891_1;
           }
-          if (quotedNode1_5 != null) {
-            quotedNode_4.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
+          if (quotedNode1_1 != null) {
+            quotedNode_5891_0.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_1, typeCheckingContext));
           }
         }
-        result = quotedNode1_4;
+        result = quotedNode1_5891_0;
       }
       return result;
     }
@@ -82,25 +82,25 @@ public class typeof_Determinant_InferenceRule extends AbstractInferenceRule_Runt
     public SNode createNode(Object parameter_5891_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4 = null;
-      SNode quotedNode_5 = null;
+      SNode quotedNode_5891_0 = null;
+      SNode quotedNode_5891_1 = null;
       {
-        quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4 = quotedNode_4;
+        quotedNode_5891_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5891_0 = quotedNode_5891_0;
         {
-          quotedNode_5 = (SNode) parameter_5891_0;
-          SNode quotedNode1_5;
-          if (_parameterValues_129834374.contains(quotedNode_5)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_5);
+          quotedNode_5891_1 = (SNode) parameter_5891_0;
+          SNode quotedNode1_1;
+          if (_parameterValues_129834374.contains(quotedNode_5891_1)) {
+            quotedNode1_1 = CopyUtil.copy(quotedNode_5891_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_5);
-            quotedNode1_5 = quotedNode_5;
+            _parameterValues_129834374.add(quotedNode_5891_1);
+            quotedNode1_1 = quotedNode_5891_1;
           }
-          if (quotedNode1_5 != null) {
-            quotedNode_4.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_5));
+          if (quotedNode1_1 != null) {
+            quotedNode_5891_0.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_1));
           }
         }
-        result = quotedNode1_4;
+        result = quotedNode1_5891_0;
       }
       return result;
     }

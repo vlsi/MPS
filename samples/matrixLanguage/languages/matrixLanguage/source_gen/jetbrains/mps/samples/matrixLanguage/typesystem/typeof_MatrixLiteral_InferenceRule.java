@@ -60,25 +60,25 @@ public class typeof_MatrixLiteral_InferenceRule extends AbstractInferenceRule_Ru
     public SNode createNode(Object parameter_5610_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0 = null;
-      SNode quotedNode_1 = null;
+      SNode quotedNode_5610_0 = null;
+      SNode quotedNode_5610_1 = null;
       {
-        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode_5610_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5610_0 = quotedNode_5610_0;
         {
-          quotedNode_1 = (SNode) parameter_5610_0;
-          SNode quotedNode1_1;
-          if (_parameterValues_129834374.contains(quotedNode_1)) {
-            quotedNode1_1 = CopyUtil.copy(quotedNode_1);
+          quotedNode_5610_1 = (SNode) parameter_5610_0;
+          SNode quotedNode1_0;
+          if (_parameterValues_129834374.contains(quotedNode_5610_1)) {
+            quotedNode1_0 = CopyUtil.copy(quotedNode_5610_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_1);
-            quotedNode1_1 = quotedNode_1;
+            _parameterValues_129834374.add(quotedNode_5610_1);
+            quotedNode1_0 = quotedNode_5610_1;
           }
-          if (quotedNode1_1 != null) {
-            quotedNode_0.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_1, typeCheckingContext));
+          if (quotedNode1_0 != null) {
+            quotedNode_5610_0.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_0, typeCheckingContext));
           }
         }
-        result = quotedNode1_0;
+        result = quotedNode1_5610_0;
       }
       return result;
     }
@@ -86,25 +86,25 @@ public class typeof_MatrixLiteral_InferenceRule extends AbstractInferenceRule_Ru
     public SNode createNode(Object parameter_5610_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0 = null;
-      SNode quotedNode_1 = null;
+      SNode quotedNode_5610_0 = null;
+      SNode quotedNode_5610_1 = null;
       {
-        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode_5610_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5610_0 = quotedNode_5610_0;
         {
-          quotedNode_1 = (SNode) parameter_5610_0;
-          SNode quotedNode1_1;
-          if (_parameterValues_129834374.contains(quotedNode_1)) {
-            quotedNode1_1 = CopyUtil.copy(quotedNode_1);
+          quotedNode_5610_1 = (SNode) parameter_5610_0;
+          SNode quotedNode1_0;
+          if (_parameterValues_129834374.contains(quotedNode_5610_1)) {
+            quotedNode1_0 = CopyUtil.copy(quotedNode_5610_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_1);
-            quotedNode1_1 = quotedNode_1;
+            _parameterValues_129834374.add(quotedNode_5610_1);
+            quotedNode1_0 = quotedNode_5610_1;
           }
-          if (quotedNode1_1 != null) {
-            quotedNode_0.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_1));
+          if (quotedNode1_0 != null) {
+            quotedNode_5610_0.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_0));
           }
         }
-        result = quotedNode1_0;
+        result = quotedNode1_5610_0;
       }
       return result;
     }
@@ -117,18 +117,18 @@ public class typeof_MatrixLiteral_InferenceRule extends AbstractInferenceRule_Ru
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
+      SNode quotedNode_5610_2 = null;
+      SNode quotedNode_5610_3 = null;
       {
-        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_2;
+        quotedNode_5610_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5610_1 = quotedNode_5610_2;
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3 = quotedNode_3;
-          quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
-          quotedNode_2.addChild("scalarType", quotedNode1_3);
+          quotedNode_5610_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_5610_2 = quotedNode_5610_3;
+          quotedNode1_5610_2.addReference(SReference.create("classifier", quotedNode1_5610_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
+          quotedNode_5610_2.addChild("scalarType", quotedNode1_5610_2);
         }
-        result = quotedNode1_2;
+        result = quotedNode1_5610_1;
       }
       return result;
     }
@@ -136,18 +136,18 @@ public class typeof_MatrixLiteral_InferenceRule extends AbstractInferenceRule_Ru
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
+      SNode quotedNode_5610_2 = null;
+      SNode quotedNode_5610_3 = null;
       {
-        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_2;
+        quotedNode_5610_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5610_1 = quotedNode_5610_2;
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3 = quotedNode_3;
-          quotedNode1_3.addReference(SReference.create("classifier", quotedNode1_3, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
-          quotedNode_2.addChild("scalarType", quotedNode1_3);
+          quotedNode_5610_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_5610_2 = quotedNode_5610_3;
+          quotedNode1_5610_2.addReference(SReference.create("classifier", quotedNode1_5610_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
+          quotedNode_5610_2.addChild("scalarType", quotedNode1_5610_2);
         }
-        result = quotedNode1_2;
+        result = quotedNode1_5610_1;
       }
       return result;
     }
