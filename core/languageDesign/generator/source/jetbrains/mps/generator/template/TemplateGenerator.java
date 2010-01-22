@@ -299,6 +299,36 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return (SNode) o;
   }
 
+  @Override
+  public SNode findOutputNodeByInputNodeAndOutputNodeAndMappingName(SNode inputNode, SNode outputNode, String mappingLabel) {
+     Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingLabel, inputNode));
+    if (o instanceof List) {
+      List<SNode> list = (List<SNode>) o;
+      showWarningMessage(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingLabel + "' and input " + inputNode.getDebugText());
+      for (int i = 0; i < list.size(); i++) {
+        Logger.getLogger(this.getClass()).warning("-- output [" + i + "] : " + list.get(i).getDebugText(), list.get(i));
+      }
+      //heuristics
+      List<SNode> ancestors = outputNode.getAncestors(true);
+      SNode[] candidates = new SNode[list.size()];
+      for (int i = 0; i < list.size(); i++) {
+        SNode candidate = list.get(i);
+        for (SNode ancestor : candidate.getAncestors(true)) {
+          if (ancestors.contains(ancestor)) {
+            candidates[ancestors.indexOf(ancestor)] = candidate;
+            break;
+          }
+        }
+      }
+      for (SNode candidate : candidates) {
+        if (candidate != null) return candidate;
+      }
+      return list.get(0);
+    }
+
+    return (SNode) o;
+  }
+
   public List<SNode> findAllOutputNodesByInputNodeAndMappingName(SNode inputNode, String mappingLabel) {
     Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingLabel, inputNode));
     if (o instanceof List) return ((List<SNode>) o);

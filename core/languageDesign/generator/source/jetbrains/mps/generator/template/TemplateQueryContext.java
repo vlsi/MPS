@@ -102,6 +102,11 @@ public class TemplateQueryContext {
     return myGenerator.findOutputNodeByInputNodeAndMappingName(inputNode, label);
   }
 
+  public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNode inputNode, SNode outputNode, String label) {
+    if (inputNode == null) return null;
+    return myGenerator.findOutputNodeByInputNodeAndOutputNodeAndMappingName(inputNode, outputNode, label);
+  }
+
   public List<SNode> getAllOutputNodesByInputNodeAndMappingLabel(SNode inputNode, String label) {
     if (inputNode == null) return null;
     return myGenerator.findAllOutputNodesByInputNodeAndMappingName(inputNode, label);
