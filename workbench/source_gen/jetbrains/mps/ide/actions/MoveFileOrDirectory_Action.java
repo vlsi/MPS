@@ -6,12 +6,23 @@ import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import com.intellij.openapi.vfs.VirtualFile;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.ui.TextFieldWithBrowseButton;
+import com.intellij.openapi.ui.DialogWrapper;
+import org.jetbrains.annotations.Nullable;
+import javax.swing.JComponent;
+import javax.swing.JPanel;
+import java.awt.BorderLayout;
+import javax.swing.JLabel;
 
 public class MoveFileOrDirectory_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(MoveFileOrDirectory_Action.class);
+
+  private VirtualFile selectedFile;
 
   public MoveFileOrDirectory_Action() {
     super("Move...", "", ICON);
@@ -40,11 +51,45 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
     if (!(super.collectActionData(event))) {
       return false;
     }
+    this.selectedFile = event.getData(MPSDataKeys.VIRTUAL_FILE);
+    if (this.selectedFile == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
+      final TextFieldWithBrowseButton[] textWithButton = new TextFieldWithBrowseButton[1];
+      final String path = MoveFileOrDirectory_Action.this.selectedFile.getPath();
+      DialogWrapper dialog = new DialogWrapper() {
+        {
+          this.setTitle("Move");
+          this.init();
+        }
+
+        @Nullable
+        protected JComponent createCenterPanel() {
+          JPanel result = new JPanel(new BorderLayout());
+          JLabel label = new JLabel("Move file " + path);
+          JPanel mainPanel = new JPanel(new BorderLayout());
+          JLabel mainLabel = new JLabel("To directory:");
+          textWithButton[0] = new TextFieldWithBrowseButton();
+          textWithButton[0].setText(path);
+          mainPanel.add(textWithButton[0], BorderLayout.CENTER);
+          mainPanel.add(mainLabel, BorderLayout.LINE_START);
+          result.add(mainPanel, BorderLayout.CENTER);
+          result.add(label, BorderLayout.PAGE_START);
+          return result;
+        }
+      };
+      dialog.show();
+      if (!(dialog.isOK())) {
+        return;
+      }
+      if (textWithButton[0].getText().length() == 0) {
+        return;
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MoveFileOrDirectory", t);
