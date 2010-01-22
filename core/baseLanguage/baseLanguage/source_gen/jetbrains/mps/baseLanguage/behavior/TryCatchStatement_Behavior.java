@@ -52,12 +52,12 @@ public class TryCatchStatement_Behavior {
     public SNode createNode(Object parameter_7170_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_36 = null;
+      SNode quotedNode_7170_0 = null;
       {
-        quotedNode_36 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_33 = quotedNode_36;
-        quotedNode1_33.setReferent("classifier", (SNode) parameter_7170_0);
-        result = quotedNode1_33;
+        quotedNode_7170_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7170_0 = quotedNode_7170_0;
+        quotedNode1_7170_0.setReferent("classifier", (SNode) parameter_7170_0);
+        result = quotedNode1_7170_0;
       }
       return result;
     }

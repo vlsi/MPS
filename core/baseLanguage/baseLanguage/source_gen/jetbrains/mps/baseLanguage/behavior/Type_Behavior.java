@@ -215,12 +215,12 @@ public class Type_Behavior {
     public SNode createNode(Object parameter_8537_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_16 = null;
+      SNode quotedNode_8537_0 = null;
       {
-        quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_15 = quotedNode_16;
-        quotedNode1_15.setReferent("classifier", (SNode) parameter_8537_1);
-        result = quotedNode1_15;
+        quotedNode_8537_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8537_0 = quotedNode_8537_0;
+        quotedNode1_8537_0.setReferent("classifier", (SNode) parameter_8537_1);
+        result = quotedNode1_8537_0;
       }
       return result;
     }

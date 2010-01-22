@@ -42,12 +42,12 @@ public class StaticFieldReference_DeleteDot {
       public SNode createNode(Object parameter_5038_0) {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_23 = null;
+        SNode quotedNode_5038_0 = null;
         {
-          quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractClassifierReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_23 = quotedNode_23;
-          quotedNode1_23.setReferent("classifier", (SNode) parameter_5038_0);
-          result = quotedNode1_23;
+          quotedNode_5038_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractClassifierReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_5038_0 = quotedNode_5038_0;
+          quotedNode1_5038_0.setReferent("classifier", (SNode) parameter_5038_0);
+          result = quotedNode1_5038_0;
         }
         return result;
       }

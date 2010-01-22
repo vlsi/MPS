@@ -59,12 +59,12 @@ public class typeof_PropertyReference_InferenceRule extends AbstractInferenceRul
     public SNode createNode(Object parameter_9138_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_91 = null;
+      SNode quotedNode_9138_0 = null;
       {
-        quotedNode_91 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_89 = quotedNode_91;
-        quotedNode1_89.setReferent("classifier", (SNode) parameter_9138_0);
-        result = quotedNode1_89;
+        quotedNode_9138_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9138_0 = quotedNode_9138_0;
+        quotedNode1_9138_0.setReferent("classifier", (SNode) parameter_9138_0);
+        result = quotedNode1_9138_0;
       }
       return result;
     }
@@ -72,12 +72,12 @@ public class typeof_PropertyReference_InferenceRule extends AbstractInferenceRul
     public SNode createNode(Object parameter_9138_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_91 = null;
+      SNode quotedNode_9138_0 = null;
       {
-        quotedNode_91 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_89 = quotedNode_91;
-        quotedNode1_89.setReferent("classifier", (SNode) parameter_9138_0);
-        result = quotedNode1_89;
+        quotedNode_9138_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9138_0 = quotedNode_9138_0;
+        quotedNode1_9138_0.setReferent("classifier", (SNode) parameter_9138_0);
+        result = quotedNode1_9138_0;
       }
       return result;
     }

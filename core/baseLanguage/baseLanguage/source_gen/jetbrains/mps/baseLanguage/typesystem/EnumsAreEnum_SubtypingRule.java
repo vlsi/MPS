@@ -52,19 +52,19 @@ public class EnumsAreEnum_SubtypingRule extends SubtypingRule_Runtime implements
     public SNode createNode(Object parameter_3063_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_138 = null;
-      SNode quotedNode_139 = null;
+      SNode quotedNode_3063_0 = null;
+      SNode quotedNode_3063_1 = null;
       {
-        quotedNode_138 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_134 = quotedNode_138;
-        quotedNode1_134.addReference(SReference.create("classifier", quotedNode1_134, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Enum")));
+        quotedNode_3063_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3063_0 = quotedNode_3063_0;
+        quotedNode1_3063_0.addReference(SReference.create("classifier", quotedNode1_3063_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Enum")));
         {
-          quotedNode_139 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_135 = quotedNode_139;
-          quotedNode1_135.setReferent("classifier", (SNode) parameter_3063_0);
-          quotedNode_138.addChild("parameter", quotedNode1_135);
+          quotedNode_3063_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_3063_1 = quotedNode_3063_1;
+          quotedNode1_3063_1.setReferent("classifier", (SNode) parameter_3063_0);
+          quotedNode_3063_0.addChild("parameter", quotedNode1_3063_1);
         }
-        result = quotedNode1_134;
+        result = quotedNode1_3063_0;
       }
       return result;
     }
@@ -72,19 +72,19 @@ public class EnumsAreEnum_SubtypingRule extends SubtypingRule_Runtime implements
     public SNode createNode(Object parameter_3063_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_138 = null;
-      SNode quotedNode_139 = null;
+      SNode quotedNode_3063_0 = null;
+      SNode quotedNode_3063_1 = null;
       {
-        quotedNode_138 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_134 = quotedNode_138;
-        quotedNode1_134.addReference(SReference.create("classifier", quotedNode1_134, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Enum")));
+        quotedNode_3063_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3063_0 = quotedNode_3063_0;
+        quotedNode1_3063_0.addReference(SReference.create("classifier", quotedNode1_3063_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Enum")));
         {
-          quotedNode_139 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_135 = quotedNode_139;
-          quotedNode1_135.setReferent("classifier", (SNode) parameter_3063_0);
-          quotedNode_138.addChild("parameter", quotedNode1_135);
+          quotedNode_3063_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_3063_1 = quotedNode_3063_1;
+          quotedNode1_3063_1.setReferent("classifier", (SNode) parameter_3063_0);
+          quotedNode_3063_0.addChild("parameter", quotedNode1_3063_1);
         }
-        result = quotedNode1_134;
+        result = quotedNode1_3063_0;
       }
       return result;
     }

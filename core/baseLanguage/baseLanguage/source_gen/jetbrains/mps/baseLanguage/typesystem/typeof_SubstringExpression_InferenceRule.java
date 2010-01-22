@@ -65,11 +65,11 @@ public class typeof_SubstringExpression_InferenceRule extends AbstractInferenceR
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_121 = null;
+      SNode quotedNode_2111_0 = null;
       {
-        quotedNode_121 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_117 = quotedNode_121;
-        result = quotedNode1_117;
+        quotedNode_2111_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2111_0 = quotedNode_2111_0;
+        result = quotedNode1_2111_0;
       }
       return result;
     }
@@ -77,11 +77,11 @@ public class typeof_SubstringExpression_InferenceRule extends AbstractInferenceR
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_121 = null;
+      SNode quotedNode_2111_0 = null;
       {
-        quotedNode_121 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_117 = quotedNode_121;
-        result = quotedNode1_117;
+        quotedNode_2111_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2111_0 = quotedNode_2111_0;
+        result = quotedNode1_2111_0;
       }
       return result;
     }
@@ -94,11 +94,11 @@ public class typeof_SubstringExpression_InferenceRule extends AbstractInferenceR
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_122 = null;
+      SNode quotedNode_2111_1 = null;
       {
-        quotedNode_122 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_118 = quotedNode_122;
-        result = quotedNode1_118;
+        quotedNode_2111_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2111_1 = quotedNode_2111_1;
+        result = quotedNode1_2111_1;
       }
       return result;
     }
@@ -106,11 +106,11 @@ public class typeof_SubstringExpression_InferenceRule extends AbstractInferenceR
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_122 = null;
+      SNode quotedNode_2111_1 = null;
       {
-        quotedNode_122 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_118 = quotedNode_122;
-        result = quotedNode1_118;
+        quotedNode_2111_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2111_1 = quotedNode_2111_1;
+        result = quotedNode1_2111_1;
       }
       return result;
     }
@@ -123,11 +123,11 @@ public class typeof_SubstringExpression_InferenceRule extends AbstractInferenceR
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_123 = null;
+      SNode quotedNode_2111_2 = null;
       {
-        quotedNode_123 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_119 = quotedNode_123;
-        result = quotedNode1_119;
+        quotedNode_2111_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2111_2 = quotedNode_2111_2;
+        result = quotedNode1_2111_2;
       }
       return result;
     }
@@ -135,11 +135,11 @@ public class typeof_SubstringExpression_InferenceRule extends AbstractInferenceR
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_123 = null;
+      SNode quotedNode_2111_2 = null;
       {
-        quotedNode_123 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_119 = quotedNode_123;
-        result = quotedNode1_119;
+        quotedNode_2111_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2111_2 = quotedNode_2111_2;
+        result = quotedNode1_2111_2;
       }
       return result;
     }

@@ -39,19 +39,19 @@ public class AnonymousClass_Behavior {
     public SNode createNode(Object parameter_0842_0, Object parameter_0842_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
+      SNode quotedNode_0842_0 = null;
+      SNode quotedNode_0842_1 = null;
       {
-        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_2;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_0842_1);
+        quotedNode_0842_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0842_0 = quotedNode_0842_0;
+        quotedNode1_0842_0.setReferent("classifier", (SNode) parameter_0842_1);
         {
           List<SNode> nodes = (List<SNode>) parameter_0842_0;
           for (SNode child : nodes) {
-            quotedNode_2.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_0842_0.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_2;
+        result = quotedNode1_0842_0;
       }
       return result;
     }

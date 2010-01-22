@@ -31,12 +31,12 @@ public class DoubleType_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_22 = null;
+      SNode quotedNode_5050_0 = null;
       {
-        quotedNode_22 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_21 = quotedNode_22;
-        quotedNode1_21.addReference(SReference.create("classifier", quotedNode1_21, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
-        result = quotedNode1_21;
+        quotedNode_5050_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5050_0 = quotedNode_5050_0;
+        quotedNode1_5050_0.addReference(SReference.create("classifier", quotedNode1_5050_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
+        result = quotedNode1_5050_0;
       }
       return result;
     }
@@ -49,13 +49,13 @@ public class DoubleType_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_23 = null;
+      SNode quotedNode_5050_1 = null;
       {
-        quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_22 = quotedNode_23;
-        quotedNode1_22.addReference(SReference.create("classifier", quotedNode1_22, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
-        quotedNode1_22.addReference(SReference.create("variableDeclaration", quotedNode1_22, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double.TYPE")));
-        result = quotedNode1_22;
+        quotedNode_5050_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5050_1 = quotedNode_5050_1;
+        quotedNode1_5050_1.addReference(SReference.create("classifier", quotedNode1_5050_1, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
+        quotedNode1_5050_1.addReference(SReference.create("variableDeclaration", quotedNode1_5050_1, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double.TYPE")));
+        result = quotedNode1_5050_1;
       }
       return result;
     }

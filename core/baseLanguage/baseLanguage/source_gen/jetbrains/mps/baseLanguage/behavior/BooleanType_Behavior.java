@@ -47,12 +47,12 @@ public class BooleanType_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_13 = null;
+      SNode quotedNode_6127_0 = null;
       {
-        quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_12 = quotedNode_13;
-        quotedNode1_12.addReference(SReference.create("classifier", quotedNode1_12, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Boolean")));
-        result = quotedNode1_12;
+        quotedNode_6127_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6127_0 = quotedNode_6127_0;
+        quotedNode1_6127_0.addReference(SReference.create("classifier", quotedNode1_6127_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Boolean")));
+        result = quotedNode1_6127_0;
       }
       return result;
     }
@@ -65,13 +65,13 @@ public class BooleanType_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_14 = null;
+      SNode quotedNode_6127_1 = null;
       {
-        quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_13 = quotedNode_14;
-        quotedNode1_13.addReference(SReference.create("classifier", quotedNode1_13, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Boolean")));
-        quotedNode1_13.addReference(SReference.create("variableDeclaration", quotedNode1_13, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Boolean.TYPE")));
-        result = quotedNode1_13;
+        quotedNode_6127_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6127_1 = quotedNode_6127_1;
+        quotedNode1_6127_1.addReference(SReference.create("classifier", quotedNode1_6127_1, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Boolean")));
+        quotedNode1_6127_1.addReference(SReference.create("variableDeclaration", quotedNode1_6127_1, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Boolean.TYPE")));
+        result = quotedNode1_6127_1;
       }
       return result;
     }
@@ -84,11 +84,11 @@ public class BooleanType_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_15 = null;
+      SNode quotedNode_6127_2 = null;
       {
-        quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_14 = quotedNode_15;
-        result = quotedNode1_14;
+        quotedNode_6127_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6127_2 = quotedNode_6127_2;
+        result = quotedNode1_6127_2;
       }
       return result;
     }

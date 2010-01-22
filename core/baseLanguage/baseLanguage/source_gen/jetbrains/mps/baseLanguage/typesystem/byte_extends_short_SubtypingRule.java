@@ -39,11 +39,11 @@ public class byte_extends_short_SubtypingRule extends SubtypingRule_Runtime impl
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_55 = null;
+      SNode quotedNode_1677_0 = null;
       {
-        quotedNode_55 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_54 = quotedNode_55;
-        result = quotedNode1_54;
+        quotedNode_1677_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1677_0 = quotedNode_1677_0;
+        result = quotedNode1_1677_0;
       }
       return result;
     }
@@ -51,11 +51,11 @@ public class byte_extends_short_SubtypingRule extends SubtypingRule_Runtime impl
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_55 = null;
+      SNode quotedNode_1677_0 = null;
       {
-        quotedNode_55 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_54 = quotedNode_55;
-        result = quotedNode1_54;
+        quotedNode_1677_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1677_0 = quotedNode_1677_0;
+        result = quotedNode1_1677_0;
       }
       return result;
     }

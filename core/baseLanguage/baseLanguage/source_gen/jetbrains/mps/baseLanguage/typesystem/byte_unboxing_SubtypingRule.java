@@ -43,11 +43,11 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_74 = null;
+      SNode quotedNode_8651_0 = null;
       {
-        quotedNode_74 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_73 = quotedNode_74;
-        result = quotedNode1_73;
+        quotedNode_8651_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8651_0 = quotedNode_8651_0;
+        result = quotedNode1_8651_0;
       }
       return result;
     }
@@ -55,11 +55,11 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_74 = null;
+      SNode quotedNode_8651_0 = null;
       {
-        quotedNode_74 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_73 = quotedNode_74;
-        result = quotedNode1_73;
+        quotedNode_8651_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8651_0 = quotedNode_8651_0;
+        result = quotedNode1_8651_0;
       }
       return result;
     }

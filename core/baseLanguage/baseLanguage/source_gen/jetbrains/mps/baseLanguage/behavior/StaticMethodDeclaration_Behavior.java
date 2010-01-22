@@ -77,17 +77,17 @@ public class StaticMethodDeclaration_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_26 = null;
-      SNode quotedNode_27 = null;
+      SNode quotedNode_3402_0 = null;
+      SNode quotedNode_3402_1 = null;
       {
-        quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_25 = quotedNode_26;
+        quotedNode_3402_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3402_0 = quotedNode_3402_0;
         {
-          quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_26 = quotedNode_27;
-          quotedNode_26.addChild("componentType", quotedNode1_26);
+          quotedNode_3402_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_3402_1 = quotedNode_3402_1;
+          quotedNode_3402_0.addChild("componentType", quotedNode1_3402_1);
         }
-        result = quotedNode1_25;
+        result = quotedNode1_3402_0;
       }
       return result;
     }

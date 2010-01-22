@@ -154,12 +154,12 @@ public class ClassifierType_Behavior {
     public SNode createNode(Object parameter_3370_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9 = null;
+      SNode quotedNode_3370_0 = null;
       {
-        quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8 = quotedNode_9;
-        quotedNode1_8.setReferent("classifier", (SNode) parameter_3370_1);
-        result = quotedNode1_8;
+        quotedNode_3370_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3370_0 = quotedNode_3370_0;
+        quotedNode1_3370_0.setReferent("classifier", (SNode) parameter_3370_1);
+        result = quotedNode1_3370_0;
       }
       return result;
     }
@@ -172,11 +172,11 @@ public class ClassifierType_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_10 = null;
+      SNode quotedNode_3370_1 = null;
       {
-        quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9 = quotedNode_10;
-        result = quotedNode1_9;
+        quotedNode_3370_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3370_1 = quotedNode_3370_1;
+        result = quotedNode1_3370_1;
       }
       return result;
     }

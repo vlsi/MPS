@@ -92,11 +92,11 @@ public class CreateMethodDeclaration_Intention extends BaseIntention implements 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_391 = null;
+      SNode quotedNode_2851_0 = null;
       {
-        quotedNode_391 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_391 = quotedNode_391;
-        result = quotedNode1_391;
+        quotedNode_2851_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2851_0 = quotedNode_2851_0;
+        result = quotedNode1_2851_0;
       }
       return result;
     }
@@ -109,38 +109,38 @@ public class CreateMethodDeclaration_Intention extends BaseIntention implements 
     public SNode createNode(Object parameter_2851_0, Object parameter_2851_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_392 = null;
-      SNode quotedNode_393 = null;
-      SNode quotedNode_394 = null;
-      SNode quotedNode_395 = null;
+      SNode quotedNode_2851_1 = null;
+      SNode quotedNode_2851_2 = null;
+      SNode quotedNode_2851_3 = null;
+      SNode quotedNode_2851_4 = null;
       {
-        quotedNode_392 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_392 = quotedNode_392;
-        quotedNode1_392.setProperty("name", (String) parameter_2851_1);
+        quotedNode_2851_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2851_1 = quotedNode_2851_1;
+        quotedNode1_2851_1.setProperty("name", (String) parameter_2851_1);
         {
-          quotedNode_393 = (SNode) parameter_2851_0;
-          SNode quotedNode1_393;
-          if (_parameterValues_129834374.contains(quotedNode_393)) {
-            quotedNode1_393 = CopyUtil.copy(quotedNode_393);
+          quotedNode_2851_2 = (SNode) parameter_2851_0;
+          SNode quotedNode1_103;
+          if (_parameterValues_129834374.contains(quotedNode_2851_2)) {
+            quotedNode1_103 = CopyUtil.copy(quotedNode_2851_2);
           } else {
-            _parameterValues_129834374.add(quotedNode_393);
-            quotedNode1_393 = quotedNode_393;
+            _parameterValues_129834374.add(quotedNode_2851_2);
+            quotedNode1_103 = quotedNode_2851_2;
           }
-          if (quotedNode1_393 != null) {
-            quotedNode_392.addChild("returnType", HUtil.copyIfNecessary(quotedNode1_393));
+          if (quotedNode1_103 != null) {
+            quotedNode_2851_1.addChild("returnType", HUtil.copyIfNecessary(quotedNode1_103));
           }
         }
         {
-          quotedNode_394 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_394 = quotedNode_394;
-          quotedNode_392.addChild("visibility", quotedNode1_394);
+          quotedNode_2851_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2851_2 = quotedNode_2851_3;
+          quotedNode_2851_1.addChild("visibility", quotedNode1_2851_2);
         }
         {
-          quotedNode_395 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_395 = quotedNode_395;
-          quotedNode_392.addChild("body", quotedNode1_395);
+          quotedNode_2851_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2851_3 = quotedNode_2851_4;
+          quotedNode_2851_1.addChild("body", quotedNode1_2851_3);
         }
-        result = quotedNode1_392;
+        result = quotedNode1_2851_1;
       }
       return result;
     }
@@ -153,11 +153,11 @@ public class CreateMethodDeclaration_Intention extends BaseIntention implements 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_396 = null;
+      SNode quotedNode_2851_5 = null;
       {
-        quotedNode_396 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_396 = quotedNode_396;
-        result = quotedNode1_396;
+        quotedNode_2851_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2851_4 = quotedNode_2851_5;
+        result = quotedNode1_2851_4;
       }
       return result;
     }
@@ -170,12 +170,12 @@ public class CreateMethodDeclaration_Intention extends BaseIntention implements 
     public SNode createNode(Object parameter_2851_2) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_397 = null;
+      SNode quotedNode_2851_6 = null;
       {
-        quotedNode_397 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_397 = quotedNode_397;
-        quotedNode1_397.setReferent("baseMethodDeclaration", (SNode) parameter_2851_2);
-        result = quotedNode1_397;
+        quotedNode_2851_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2851_5 = quotedNode_2851_6;
+        quotedNode1_2851_5.setReferent("baseMethodDeclaration", (SNode) parameter_2851_2);
+        result = quotedNode1_2851_5;
       }
       return result;
     }

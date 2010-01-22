@@ -33,47 +33,47 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     public SNode createNode(Object parameter_0749_0, Object parameter_0749_1, Object parameter_0749_2) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_20 = null;
-      SNode quotedNode_21 = null;
-      SNode quotedNode_22 = null;
-      SNode quotedNode_23 = null;
+      SNode quotedNode_0749_0 = null;
+      SNode quotedNode_0749_1 = null;
+      SNode quotedNode_0749_2 = null;
+      SNode quotedNode_0749_3 = null;
       {
-        quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_20 = quotedNode_20;
-        quotedNode1_20.setProperty("isFinal", "true");
-        quotedNode1_20.setProperty("name", (String) parameter_0749_2);
+        quotedNode_0749_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0749_0 = quotedNode_0749_0;
+        quotedNode1_0749_0.setProperty("isFinal", "true");
+        quotedNode1_0749_0.setProperty("name", (String) parameter_0749_2);
         {
-          quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_21 = quotedNode_21;
-          quotedNode_20.addChild("visibility", quotedNode1_21);
+          quotedNode_0749_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0749_1 = quotedNode_0749_1;
+          quotedNode_0749_0.addChild("visibility", quotedNode1_0749_1);
         }
         {
-          quotedNode_22 = (SNode) parameter_0749_0;
-          SNode quotedNode1_22;
-          if (_parameterValues_129834374.contains(quotedNode_22)) {
-            quotedNode1_22 = CopyUtil.copy(quotedNode_22);
+          quotedNode_0749_2 = (SNode) parameter_0749_0;
+          SNode quotedNode1_6;
+          if (_parameterValues_129834374.contains(quotedNode_0749_2)) {
+            quotedNode1_6 = CopyUtil.copy(quotedNode_0749_2);
           } else {
-            _parameterValues_129834374.add(quotedNode_22);
-            quotedNode1_22 = quotedNode_22;
+            _parameterValues_129834374.add(quotedNode_0749_2);
+            quotedNode1_6 = quotedNode_0749_2;
           }
-          if (quotedNode1_22 != null) {
-            quotedNode_20.addChild("type", HUtil.copyIfNecessary(quotedNode1_22));
+          if (quotedNode1_6 != null) {
+            quotedNode_0749_0.addChild("type", HUtil.copyIfNecessary(quotedNode1_6));
           }
         }
         {
-          quotedNode_23 = (SNode) parameter_0749_1;
-          SNode quotedNode1_23;
-          if (_parameterValues_129834374.contains(quotedNode_23)) {
-            quotedNode1_23 = CopyUtil.copy(quotedNode_23);
+          quotedNode_0749_3 = (SNode) parameter_0749_1;
+          SNode quotedNode1_7;
+          if (_parameterValues_129834374.contains(quotedNode_0749_3)) {
+            quotedNode1_7 = CopyUtil.copy(quotedNode_0749_3);
           } else {
-            _parameterValues_129834374.add(quotedNode_23);
-            quotedNode1_23 = quotedNode_23;
+            _parameterValues_129834374.add(quotedNode_0749_3);
+            quotedNode1_7 = quotedNode_0749_3;
           }
-          if (quotedNode1_23 != null) {
-            quotedNode_20.addChild("initializer", HUtil.copyIfNecessary(quotedNode1_23));
+          if (quotedNode1_7 != null) {
+            quotedNode_0749_0.addChild("initializer", HUtil.copyIfNecessary(quotedNode1_7));
           }
         }
-        result = quotedNode1_20;
+        result = quotedNode1_0749_0;
       }
       return result;
     }
@@ -86,12 +86,12 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
     public SNode createNode(Object parameter_0749_3) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_24 = null;
+      SNode quotedNode_0749_4 = null;
       {
-        quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_24 = quotedNode_24;
-        quotedNode1_24.setReferent("variableDeclaration", (SNode) parameter_0749_3);
-        result = quotedNode1_24;
+        quotedNode_0749_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0749_2 = quotedNode_0749_4;
+        quotedNode1_0749_2.setReferent("variableDeclaration", (SNode) parameter_0749_3);
+        result = quotedNode1_0749_2;
       }
       return result;
     }

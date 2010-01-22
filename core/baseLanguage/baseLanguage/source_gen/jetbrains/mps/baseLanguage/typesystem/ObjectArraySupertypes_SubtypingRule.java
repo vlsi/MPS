@@ -49,12 +49,12 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_94 = null;
+      SNode quotedNode_1228_0 = null;
       {
-        quotedNode_94 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_92 = quotedNode_94;
-        quotedNode1_92.addReference(SReference.create("classifier", quotedNode1_92, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_92;
+        quotedNode_1228_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1228_0 = quotedNode_1228_0;
+        quotedNode1_1228_0.addReference(SReference.create("classifier", quotedNode1_1228_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_1228_0;
       }
       return result;
     }
@@ -62,12 +62,12 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_94 = null;
+      SNode quotedNode_1228_0 = null;
       {
-        quotedNode_94 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_92 = quotedNode_94;
-        quotedNode1_92.addReference(SReference.create("classifier", quotedNode1_92, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_92;
+        quotedNode_1228_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1228_0 = quotedNode_1228_0;
+        quotedNode1_1228_0.addReference(SReference.create("classifier", quotedNode1_1228_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_1228_0;
       }
       return result;
     }
@@ -80,12 +80,12 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_95 = null;
+      SNode quotedNode_1228_1 = null;
       {
-        quotedNode_95 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_93 = quotedNode_95;
-        quotedNode1_93.addReference(SReference.create("classifier", quotedNode1_93, SModelReference.fromString("f:java_stub#java.io(java.io@java_stub)"), SNodeId.fromString("~Serializable")));
-        result = quotedNode1_93;
+        quotedNode_1228_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1228_1 = quotedNode_1228_1;
+        quotedNode1_1228_1.addReference(SReference.create("classifier", quotedNode1_1228_1, SModelReference.fromString("f:java_stub#java.io(java.io@java_stub)"), SNodeId.fromString("~Serializable")));
+        result = quotedNode1_1228_1;
       }
       return result;
     }
@@ -93,12 +93,12 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_95 = null;
+      SNode quotedNode_1228_1 = null;
       {
-        quotedNode_95 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_93 = quotedNode_95;
-        quotedNode1_93.addReference(SReference.create("classifier", quotedNode1_93, SModelReference.fromString("f:java_stub#java.io(java.io@java_stub)"), SNodeId.fromString("~Serializable")));
-        result = quotedNode1_93;
+        quotedNode_1228_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1228_1 = quotedNode_1228_1;
+        quotedNode1_1228_1.addReference(SReference.create("classifier", quotedNode1_1228_1, SModelReference.fromString("f:java_stub#java.io(java.io@java_stub)"), SNodeId.fromString("~Serializable")));
+        result = quotedNode1_1228_1;
       }
       return result;
     }
@@ -111,12 +111,12 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_96 = null;
+      SNode quotedNode_1228_2 = null;
       {
-        quotedNode_96 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_94 = quotedNode_96;
-        quotedNode1_94.addReference(SReference.create("classifier", quotedNode1_94, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));
-        result = quotedNode1_94;
+        quotedNode_1228_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1228_2 = quotedNode_1228_2;
+        quotedNode1_1228_2.addReference(SReference.create("classifier", quotedNode1_1228_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));
+        result = quotedNode1_1228_2;
       }
       return result;
     }
@@ -124,12 +124,12 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_96 = null;
+      SNode quotedNode_1228_2 = null;
       {
-        quotedNode_96 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_94 = quotedNode_96;
-        quotedNode1_94.addReference(SReference.create("classifier", quotedNode1_94, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));
-        result = quotedNode1_94;
+        quotedNode_1228_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1228_2 = quotedNode_1228_2;
+        quotedNode1_1228_2.addReference(SReference.create("classifier", quotedNode1_1228_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Cloneable")));
+        result = quotedNode1_1228_2;
       }
       return result;
     }

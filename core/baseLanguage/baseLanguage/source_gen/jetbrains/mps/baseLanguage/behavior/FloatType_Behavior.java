@@ -31,12 +31,12 @@ public class FloatType_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_24 = null;
+      SNode quotedNode_7045_0 = null;
       {
-        quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_23 = quotedNode_24;
-        quotedNode1_23.addReference(SReference.create("classifier", quotedNode1_23, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Float")));
-        result = quotedNode1_23;
+        quotedNode_7045_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7045_0 = quotedNode_7045_0;
+        quotedNode1_7045_0.addReference(SReference.create("classifier", quotedNode1_7045_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Float")));
+        result = quotedNode1_7045_0;
       }
       return result;
     }
@@ -49,13 +49,13 @@ public class FloatType_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_25 = null;
+      SNode quotedNode_7045_1 = null;
       {
-        quotedNode_25 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_24 = quotedNode_25;
-        quotedNode1_24.addReference(SReference.create("classifier", quotedNode1_24, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Float")));
-        quotedNode1_24.addReference(SReference.create("variableDeclaration", quotedNode1_24, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Float.TYPE")));
-        result = quotedNode1_24;
+        quotedNode_7045_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7045_1 = quotedNode_7045_1;
+        quotedNode1_7045_1.addReference(SReference.create("classifier", quotedNode1_7045_1, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Float")));
+        quotedNode1_7045_1.addReference(SReference.create("variableDeclaration", quotedNode1_7045_1, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Float.TYPE")));
+        result = quotedNode1_7045_1;
       }
       return result;
     }

@@ -27,12 +27,12 @@ public class VoidType_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_37 = null;
+      SNode quotedNode_5341_0 = null;
       {
-        quotedNode_37 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_34 = quotedNode_37;
-        quotedNode1_34.addReference(SReference.create("classifier", quotedNode1_34, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Void")));
-        result = quotedNode1_34;
+        quotedNode_5341_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5341_0 = quotedNode_5341_0;
+        quotedNode1_5341_0.addReference(SReference.create("classifier", quotedNode1_5341_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Void")));
+        result = quotedNode1_5341_0;
       }
       return result;
     }

@@ -42,12 +42,12 @@ public class Class_Void_weak_supertypeof_void_SubtypingRule extends SubtypingRul
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_126 = null;
+      SNode quotedNode_8354_0 = null;
       {
-        quotedNode_126 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_122 = quotedNode_126;
-        quotedNode1_122.addReference(SReference.create("classifier", quotedNode1_122, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Void")));
-        result = quotedNode1_122;
+        quotedNode_8354_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8354_0 = quotedNode_8354_0;
+        quotedNode1_8354_0.addReference(SReference.create("classifier", quotedNode1_8354_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Void")));
+        result = quotedNode1_8354_0;
       }
       return result;
     }
@@ -55,12 +55,12 @@ public class Class_Void_weak_supertypeof_void_SubtypingRule extends SubtypingRul
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_126 = null;
+      SNode quotedNode_8354_0 = null;
       {
-        quotedNode_126 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_122 = quotedNode_126;
-        quotedNode1_122.addReference(SReference.create("classifier", quotedNode1_122, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Void")));
-        result = quotedNode1_122;
+        quotedNode_8354_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8354_0 = quotedNode_8354_0;
+        quotedNode1_8354_0.addReference(SReference.create("classifier", quotedNode1_8354_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Void")));
+        result = quotedNode1_8354_0;
       }
       return result;
     }

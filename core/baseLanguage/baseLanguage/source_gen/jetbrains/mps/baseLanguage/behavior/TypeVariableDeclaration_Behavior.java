@@ -83,12 +83,12 @@ public class TypeVariableDeclaration_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_31 = null;
+      SNode quotedNode_1085_0 = null;
       {
-        quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_29 = quotedNode_31;
-        quotedNode1_29.addReference(SReference.create("classifier", quotedNode1_29, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_29;
+        quotedNode_1085_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1085_0 = quotedNode_1085_0;
+        quotedNode1_1085_0.addReference(SReference.create("classifier", quotedNode1_1085_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_1085_0;
       }
       return result;
     }
@@ -101,12 +101,12 @@ public class TypeVariableDeclaration_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_32 = null;
+      SNode quotedNode_1085_1 = null;
       {
-        quotedNode_32 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_30 = quotedNode_32;
-        quotedNode1_30.addReference(SReference.create("classifier", quotedNode1_30, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_30;
+        quotedNode_1085_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1085_1 = quotedNode_1085_1;
+        quotedNode1_1085_1.addReference(SReference.create("classifier", quotedNode1_1085_1, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_1085_1;
       }
       return result;
     }

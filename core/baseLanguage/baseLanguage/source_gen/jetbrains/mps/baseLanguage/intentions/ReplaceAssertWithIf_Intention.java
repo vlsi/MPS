@@ -80,18 +80,18 @@ public class ReplaceAssertWithIf_Intention extends BaseIntention implements Inte
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5 = null;
-      SNode quotedNode_6 = null;
+      SNode quotedNode_9869_0 = null;
+      SNode quotedNode_9869_1 = null;
       {
-        quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5 = quotedNode_5;
+        quotedNode_9869_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9869_0 = quotedNode_9869_0;
         {
-          quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_6 = quotedNode_6;
-          quotedNode1_6.addReference(SReference.create("baseMethodDeclaration", quotedNode1_6, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~IllegalArgumentException.<init>()")));
-          quotedNode_5.addChild("creator", quotedNode1_6);
+          quotedNode_9869_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_9869_1 = quotedNode_9869_1;
+          quotedNode1_9869_1.addReference(SReference.create("baseMethodDeclaration", quotedNode1_9869_1, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~IllegalArgumentException.<init>()")));
+          quotedNode_9869_0.addChild("creator", quotedNode1_9869_1);
         }
-        result = quotedNode1_5;
+        result = quotedNode1_9869_0;
       }
       return result;
     }

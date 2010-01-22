@@ -98,12 +98,12 @@ public class AddRuntimeExceptionToMethodSignature_Intention extends BaseIntentio
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_8 = null;
+      SNode quotedNode_8100_0 = null;
       {
-        quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8 = quotedNode_8;
-        quotedNode1_8.addReference(SReference.create("classifier", quotedNode1_8, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
-        result = quotedNode1_8;
+        quotedNode_8100_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8100_0 = quotedNode_8100_0;
+        quotedNode1_8100_0.addReference(SReference.create("classifier", quotedNode1_8100_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
+        result = quotedNode1_8100_0;
       }
       return result;
     }

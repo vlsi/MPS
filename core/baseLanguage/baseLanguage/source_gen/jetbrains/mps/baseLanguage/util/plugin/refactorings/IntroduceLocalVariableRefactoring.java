@@ -44,46 +44,46 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     public SNode createNode(Object parameter_3912_0, Object parameter_3912_1, Object parameter_3912_2) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0 = null;
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
+      SNode quotedNode_3912_0 = null;
+      SNode quotedNode_3912_1 = null;
+      SNode quotedNode_3912_2 = null;
+      SNode quotedNode_3912_3 = null;
       {
-        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode_3912_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3912_0 = quotedNode_3912_0;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_1 = quotedNode_1;
-          quotedNode1_1.setProperty("name", (String) parameter_3912_2);
+          quotedNode_3912_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_3912_1 = quotedNode_3912_1;
+          quotedNode1_3912_1.setProperty("name", (String) parameter_3912_2);
           {
-            quotedNode_2 = (SNode) parameter_3912_0;
-            SNode quotedNode1_2;
-            if (_parameterValues_129834374.contains(quotedNode_2)) {
-              quotedNode1_2 = CopyUtil.copy(quotedNode_2);
+            quotedNode_3912_2 = (SNode) parameter_3912_0;
+            SNode quotedNode1_0;
+            if (_parameterValues_129834374.contains(quotedNode_3912_2)) {
+              quotedNode1_0 = CopyUtil.copy(quotedNode_3912_2);
             } else {
-              _parameterValues_129834374.add(quotedNode_2);
-              quotedNode1_2 = quotedNode_2;
+              _parameterValues_129834374.add(quotedNode_3912_2);
+              quotedNode1_0 = quotedNode_3912_2;
             }
-            if (quotedNode1_2 != null) {
-              quotedNode_1.addChild("type", HUtil.copyIfNecessary(quotedNode1_2));
+            if (quotedNode1_0 != null) {
+              quotedNode_3912_1.addChild("type", HUtil.copyIfNecessary(quotedNode1_0));
             }
           }
           {
-            quotedNode_3 = (SNode) parameter_3912_1;
-            SNode quotedNode1_3;
-            if (_parameterValues_129834374.contains(quotedNode_3)) {
-              quotedNode1_3 = CopyUtil.copy(quotedNode_3);
+            quotedNode_3912_3 = (SNode) parameter_3912_1;
+            SNode quotedNode1_1;
+            if (_parameterValues_129834374.contains(quotedNode_3912_3)) {
+              quotedNode1_1 = CopyUtil.copy(quotedNode_3912_3);
             } else {
-              _parameterValues_129834374.add(quotedNode_3);
-              quotedNode1_3 = quotedNode_3;
+              _parameterValues_129834374.add(quotedNode_3912_3);
+              quotedNode1_1 = quotedNode_3912_3;
             }
-            if (quotedNode1_3 != null) {
-              quotedNode_1.addChild("initializer", HUtil.copyIfNecessary(quotedNode1_3));
+            if (quotedNode1_1 != null) {
+              quotedNode_3912_1.addChild("initializer", HUtil.copyIfNecessary(quotedNode1_1));
             }
           }
-          quotedNode_0.addChild("localVariableDeclaration", quotedNode1_1);
+          quotedNode_3912_0.addChild("localVariableDeclaration", quotedNode1_3912_1);
         }
-        result = quotedNode1_0;
+        result = quotedNode1_3912_0;
       }
       return result;
     }

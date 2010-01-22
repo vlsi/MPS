@@ -62,19 +62,19 @@ public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime
     public SNode createNode(Object parameter_4983_1, Object parameter_4983_2, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_26 = null;
-      SNode quotedNode_27 = null;
+      SNode quotedNode_4983_1 = null;
+      SNode quotedNode_4983_2 = null;
       {
-        quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_26 = quotedNode_26;
-        quotedNode1_26.setReferent("classifier", (SNode) parameter_4983_2);
+        quotedNode_4983_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4983_1 = quotedNode_4983_1;
+        quotedNode1_4983_1.setReferent("classifier", (SNode) parameter_4983_2);
         {
           List<SNode> nodes = (List<SNode>) parameter_4983_1;
           for (SNode child : nodes) {
-            quotedNode_26.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
+            quotedNode_4983_1.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
           }
         }
-        result = quotedNode1_26;
+        result = quotedNode1_4983_1;
       }
       return result;
     }
@@ -82,19 +82,19 @@ public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime
     public SNode createNode(Object parameter_4983_1, Object parameter_4983_2) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_26 = null;
-      SNode quotedNode_27 = null;
+      SNode quotedNode_4983_1 = null;
+      SNode quotedNode_4983_2 = null;
       {
-        quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_26 = quotedNode_26;
-        quotedNode1_26.setReferent("classifier", (SNode) parameter_4983_2);
+        quotedNode_4983_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4983_1 = quotedNode_4983_1;
+        quotedNode1_4983_1.setReferent("classifier", (SNode) parameter_4983_2);
         {
           List<SNode> nodes = (List<SNode>) parameter_4983_1;
           for (SNode child : nodes) {
-            quotedNode_26.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_4983_1.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_26;
+        result = quotedNode1_4983_1;
       }
       return result;
     }
@@ -107,12 +107,12 @@ public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime
     public SNode createNode(Object parameter_4983_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_25 = null;
+      SNode quotedNode_4983_0 = null;
       {
-        quotedNode_25 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_25 = quotedNode_25;
-        quotedNode1_25.setReferent("typeVariableDeclaration", (SNode) parameter_4983_0);
-        result = quotedNode1_25;
+        quotedNode_4983_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4983_0 = quotedNode_4983_0;
+        quotedNode1_4983_0.setReferent("typeVariableDeclaration", (SNode) parameter_4983_0);
+        result = quotedNode1_4983_0;
       }
       return result;
     }
@@ -120,12 +120,12 @@ public class typeOf_thisExpr_InferenceRule extends AbstractInferenceRule_Runtime
     public SNode createNode(Object parameter_4983_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_25 = null;
+      SNode quotedNode_4983_0 = null;
       {
-        quotedNode_25 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_25 = quotedNode_25;
-        quotedNode1_25.setReferent("typeVariableDeclaration", (SNode) parameter_4983_0);
-        result = quotedNode1_25;
+        quotedNode_4983_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4983_0 = quotedNode_4983_0;
+        quotedNode1_4983_0.setReferent("typeVariableDeclaration", (SNode) parameter_4983_0);
+        result = quotedNode1_4983_0;
       }
       return result;
     }

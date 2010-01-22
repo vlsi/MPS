@@ -92,19 +92,19 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
     public SNode createNode(Object parameter_8831_0, Object parameter_8831_1, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_84 = null;
-      SNode quotedNode_85 = null;
+      SNode quotedNode_8831_0 = null;
+      SNode quotedNode_8831_1 = null;
       {
-        quotedNode_84 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_83 = quotedNode_84;
-        quotedNode1_83.setReferent("classifier", (SNode) parameter_8831_1);
+        quotedNode_8831_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8831_0 = quotedNode_8831_0;
+        quotedNode1_8831_0.setReferent("classifier", (SNode) parameter_8831_1);
         {
           List<SNode> nodes = (List<SNode>) parameter_8831_0;
           for (SNode child : nodes) {
-            quotedNode_84.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
+            quotedNode_8831_0.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
           }
         }
-        result = quotedNode1_83;
+        result = quotedNode1_8831_0;
       }
       return result;
     }
@@ -112,19 +112,19 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
     public SNode createNode(Object parameter_8831_0, Object parameter_8831_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_84 = null;
-      SNode quotedNode_85 = null;
+      SNode quotedNode_8831_0 = null;
+      SNode quotedNode_8831_1 = null;
       {
-        quotedNode_84 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_83 = quotedNode_84;
-        quotedNode1_83.setReferent("classifier", (SNode) parameter_8831_1);
+        quotedNode_8831_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8831_0 = quotedNode_8831_0;
+        quotedNode1_8831_0.setReferent("classifier", (SNode) parameter_8831_1);
         {
           List<SNode> nodes = (List<SNode>) parameter_8831_0;
           for (SNode child : nodes) {
-            quotedNode_84.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_8831_0.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_83;
+        result = quotedNode1_8831_0;
       }
       return result;
     }
@@ -137,12 +137,12 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_86 = null;
+      SNode quotedNode_8831_2 = null;
       {
-        quotedNode_86 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_84 = quotedNode_86;
-        quotedNode1_84.addReference(SReference.create("descriptor", quotedNode1_84, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
-        result = quotedNode1_84;
+        quotedNode_8831_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8831_1 = quotedNode_8831_2;
+        quotedNode1_8831_1.addReference(SReference.create("descriptor", quotedNode1_8831_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
+        result = quotedNode1_8831_1;
       }
       return result;
     }
@@ -150,12 +150,12 @@ public class typeof_AnonymousClass_InferenceRule extends AbstractInferenceRule_R
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_86 = null;
+      SNode quotedNode_8831_2 = null;
       {
-        quotedNode_86 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_84 = quotedNode_86;
-        quotedNode1_84.addReference(SReference.create("descriptor", quotedNode1_84, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
-        result = quotedNode1_84;
+        quotedNode_8831_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.blTypes.structure.PrimitiveTypeRef", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8831_1 = quotedNode_8831_2;
+        quotedNode1_8831_1.addReference(SReference.create("descriptor", quotedNode1_8831_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)"), SNodeId.fromString("1196683941620")));
+        result = quotedNode1_8831_1;
       }
       return result;
     }

@@ -43,19 +43,19 @@ public class ConstructorInvocationStatement_Behavior {
     public SNode createNode(Object parameter_0196_1, Object parameter_0196_2) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_34 = null;
-      SNode quotedNode_35 = null;
+      SNode quotedNode_0196_1 = null;
+      SNode quotedNode_0196_2 = null;
       {
-        quotedNode_34 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_32 = quotedNode_34;
-        quotedNode1_32.setReferent("classifier", (SNode) parameter_0196_2);
+        quotedNode_0196_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0196_1 = quotedNode_0196_1;
+        quotedNode1_0196_1.setReferent("classifier", (SNode) parameter_0196_2);
         {
           List<SNode> nodes = (List<SNode>) parameter_0196_1;
           for (SNode child : nodes) {
-            quotedNode_34.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_0196_1.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_32;
+        result = quotedNode1_0196_1;
       }
       return result;
     }
@@ -68,12 +68,12 @@ public class ConstructorInvocationStatement_Behavior {
     public SNode createNode(Object parameter_0196_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_33 = null;
+      SNode quotedNode_0196_0 = null;
       {
-        quotedNode_33 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_31 = quotedNode_33;
-        quotedNode1_31.setReferent("typeVariableDeclaration", (SNode) parameter_0196_0);
-        result = quotedNode1_31;
+        quotedNode_0196_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0196_0 = quotedNode_0196_0;
+        quotedNode1_0196_0.setReferent("typeVariableDeclaration", (SNode) parameter_0196_0);
+        result = quotedNode1_0196_0;
       }
       return result;
     }
