@@ -36,12 +36,12 @@ public class QueryFunction_Substitute_Handler_Behavior {
     public SNode createNode(Object parameter_4883_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0 = null;
+      SNode quotedNode_4883_0 = null;
       {
-        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0 = quotedNode_0;
-        quotedNode1_0.setReferent("concept", (SNode) parameter_4883_0);
-        result = quotedNode1_0;
+        quotedNode_4883_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4883_0 = quotedNode_4883_0;
+        quotedNode1_4883_0.setReferent("concept", (SNode) parameter_4883_0);
+        result = quotedNode1_4883_0;
       }
       return result;
     }

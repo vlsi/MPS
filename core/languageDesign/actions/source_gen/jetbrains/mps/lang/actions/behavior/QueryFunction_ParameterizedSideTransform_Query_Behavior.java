@@ -33,25 +33,25 @@ public class QueryFunction_ParameterizedSideTransform_Query_Behavior {
     public SNode createNode(Object parameter_2083_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_11 = null;
-      SNode quotedNode_12 = null;
+      SNode quotedNode_2083_0 = null;
+      SNode quotedNode_2083_1 = null;
       {
-        quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_11 = quotedNode_11;
+        quotedNode_2083_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2083_0 = quotedNode_2083_0;
         {
-          quotedNode_12 = (SNode) parameter_2083_0;
-          SNode quotedNode1_12;
-          if (_parameterValues_129834374.contains(quotedNode_12)) {
-            quotedNode1_12 = CopyUtil.copy(quotedNode_12);
+          quotedNode_2083_1 = (SNode) parameter_2083_0;
+          SNode quotedNode1_1;
+          if (_parameterValues_129834374.contains(quotedNode_2083_1)) {
+            quotedNode1_1 = CopyUtil.copy(quotedNode_2083_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_12);
-            quotedNode1_12 = quotedNode_12;
+            _parameterValues_129834374.add(quotedNode_2083_1);
+            quotedNode1_1 = quotedNode_2083_1;
           }
-          if (quotedNode1_12 != null) {
-            quotedNode_11.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_12));
+          if (quotedNode1_1 != null) {
+            quotedNode_2083_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_1));
           }
         }
-        result = quotedNode1_11;
+        result = quotedNode1_2083_0;
       }
       return result;
     }
@@ -64,17 +64,17 @@ public class QueryFunction_ParameterizedSideTransform_Query_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_13 = null;
-      SNode quotedNode_14 = null;
+      SNode quotedNode_2083_2 = null;
+      SNode quotedNode_2083_3 = null;
       {
-        quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_13 = quotedNode_13;
+        quotedNode_2083_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2083_1 = quotedNode_2083_2;
         {
-          quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_14 = quotedNode_14;
-          quotedNode_13.addChild("elementType", quotedNode1_14);
+          quotedNode_2083_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_2083_2 = quotedNode_2083_3;
+          quotedNode_2083_2.addChild("elementType", quotedNode1_2083_2);
         }
-        result = quotedNode1_13;
+        result = quotedNode1_2083_1;
       }
       return result;
     }
