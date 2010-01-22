@@ -573,7 +573,7 @@ public class ConceptMethodDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition6299_2(SNode node, EditorContext editorContext, IScope scope) {
-    return !(SPropertyOperations.getBoolean(node, "isPrivate")) && SLinkOperations.getTarget(node, "overriddenMethod", false) == null;
+    return !(SPropertyOperations.getBoolean(node, "isPrivate")) && SLinkOperations.getTarget(node, "overriddenMethod", false) == null && !(SPropertyOperations.getBoolean(node, "isAbstract"));
   }
 
   private static boolean renderingCondition6299_3(SNode node, EditorContext editorContext, IScope scope) {

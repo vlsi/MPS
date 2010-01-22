@@ -203,6 +203,31 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="3566429363059295340">
+          <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3566429363059295341">
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3566429363059322021">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.AssignmentExpression:3" id="3566429363059322028">
+                <node role="rValue:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="3566429363059322031">
+                  <property name="value:3" value="false" />
+                </node>
+                <node role="lValue:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3566429363059322023">
+                  <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="3566429363059322022" />
+                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3566429363059322027">
+                    <link role="property:16" targetNodeId="1.1225194472834" resolveInfo="isAbstract" />
+                  </node>
+                </node>
+              </node>
+            </node>
+          </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="3566429363059295344">
+            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3566429363059322016">
+              <node role="operand:3" type="jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node:8" id="3566429363059322015" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="3566429363059322020">
+                <link role="property:16" targetNodeId="1.1225194472832" resolveInfo="isVirtual" />
+              </node>
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </node>
