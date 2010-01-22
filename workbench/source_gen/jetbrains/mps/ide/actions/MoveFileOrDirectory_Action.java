@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -17,12 +18,14 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
+import com.intellij.ui.IdeBorderFactory;
 
 public class MoveFileOrDirectory_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(MoveFileOrDirectory_Action.class);
 
   private VirtualFile selectedFile;
+  private Project project;
 
   public MoveFileOrDirectory_Action() {
     super("Move...", "", ICON);
@@ -55,6 +58,10 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
     if (this.selectedFile == null) {
       return false;
     }
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
+      return false;
+    }
     return true;
   }
 
@@ -62,7 +69,7 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
     try {
       final TextFieldWithBrowseButton[] textWithButton = new TextFieldWithBrowseButton[1];
       final String path = MoveFileOrDirectory_Action.this.selectedFile.getPath();
-      DialogWrapper dialog = new DialogWrapper(null) {
+      DialogWrapper dialog = new DialogWrapper(MoveFileOrDirectory_Action.this.project) {
         {
           this.setTitle("Move");
           this.init();
@@ -78,6 +85,7 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
           textWithButton[0].setText(path);
           mainPanel.add(textWithButton[0], BorderLayout.CENTER);
           mainPanel.add(mainLabel, BorderLayout.LINE_START);
+          result.setBorder(IdeBorderFactory.createBorder());
           result.add(mainPanel, BorderLayout.CENTER);
           result.add(label, BorderLayout.PAGE_START);
           return result;

@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -17,12 +18,14 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import javax.swing.JLabel;
+import com.intellij.ui.IdeBorderFactory;
 
 public class RenameFileOrDirectory_Action extends GeneratedAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(RenameFileOrDirectory_Action.class);
 
   private VirtualFile selectedFile;
+  private Project project;
 
   public RenameFileOrDirectory_Action() {
     super("Rename...", "", ICON);
@@ -55,6 +58,10 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
     if (this.selectedFile == null) {
       return false;
     }
+    this.project = event.getData(MPSDataKeys.PROJECT);
+    if (this.project == null) {
+      return false;
+    }
     return true;
   }
 
@@ -63,7 +70,7 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
       final String oldName = RenameFileOrDirectory_Action.this.selectedFile.getName();
       final String oldNameWithoutExtension = RenameFileOrDirectory_Action.this.selectedFile.getNameWithoutExtension();
       final JTextField[] textField = new JTextField[1];
-      DialogWrapper dialog = new DialogWrapper(null) {
+      DialogWrapper dialog = new DialogWrapper(RenameFileOrDirectory_Action.this.project) {
         {
           this.setTitle("Rename");
           this.init();
@@ -77,8 +84,9 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
           textField[0].setText(oldName);
           textField[0].setSelectionStart(0);
           textField[0].setSelectionEnd(oldNameWithoutExtension.length());
+          result.setBorder(IdeBorderFactory.createBorder());
           result.add(label, BorderLayout.PAGE_START);
-          result.add(textField[0], BorderLayout.CENTER);
+          result.add(textField[0], BorderLayout.PAGE_END);
           return result;
         }
       };
