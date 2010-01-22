@@ -426,18 +426,16 @@
         </group>
 
         <group id="NavbarPopupMenu">
-            <action id="NewFile" class="com.intellij.ide.actions.CreateFileAction"/>
-            <action id="NewDir" class="com.intellij.ide.actions.CreateDirectoryOrPackageAction"/>
-            <separator/>
             <reference ref="CutCopyPasteGroup"></reference>
             <separator/>
             <reference ref="EditSource"></reference>
             <reference ref="ViewSource"></reference>
             <separator/>
-            <action id="SynchronizeCurrentFile" class="com.intellij.ide.actions.SynchronizeCurrentFileAction" icon="/actions/sync.png"/>
+            <action id="SynchronizeCurrentFile" class="com.intellij.ide.actions.SynchronizeCurrentFileAction"
+                    icon="/actions/sync.png"/>
             <reference ref="CompareTwoFiles"></reference>
             <reference ref="CompareFileWithEditor"></reference>
-        </group> 
+        </group>
     </actions>
 </component>
 

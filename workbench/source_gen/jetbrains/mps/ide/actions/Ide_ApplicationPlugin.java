@@ -66,6 +66,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Breakpoints_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.EditorTabActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.AccessoriesGroupActions_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.FileSystemNewActions_ActionGroup");
     return groups;
   }
 
