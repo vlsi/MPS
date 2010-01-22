@@ -28,7 +28,7 @@ public class FileDelete_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return " DELETE";
+    return "alt DELETE";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
