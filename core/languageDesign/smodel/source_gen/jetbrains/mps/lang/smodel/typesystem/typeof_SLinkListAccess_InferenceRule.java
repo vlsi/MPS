@@ -51,12 +51,12 @@ public class typeof_SLinkListAccess_InferenceRule extends AbstractInferenceRule_
     public SNode createNode(Object parameter_2583_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_14 = null;
+      SNode quotedNode_2583_0 = null;
       {
-        quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_14 = quotedNode_14;
-        quotedNode1_14.setReferent("elementConcept", (SNode) parameter_2583_0);
-        result = quotedNode1_14;
+        quotedNode_2583_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2583_0 = quotedNode_2583_0;
+        quotedNode1_2583_0.setReferent("elementConcept", (SNode) parameter_2583_0);
+        result = quotedNode1_2583_0;
       }
       return result;
     }
@@ -64,12 +64,12 @@ public class typeof_SLinkListAccess_InferenceRule extends AbstractInferenceRule_
     public SNode createNode(Object parameter_2583_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_14 = null;
+      SNode quotedNode_2583_0 = null;
       {
-        quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_14 = quotedNode_14;
-        quotedNode1_14.setReferent("elementConcept", (SNode) parameter_2583_0);
-        result = quotedNode1_14;
+        quotedNode_2583_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2583_0 = quotedNode_2583_0;
+        quotedNode1_2583_0.setReferent("elementConcept", (SNode) parameter_2583_0);
+        result = quotedNode1_2583_0;
       }
       return result;
     }

@@ -45,40 +45,40 @@ public class sorted_map_comparableTo_SortedMap_SubtypingRule extends SubtypingRu
     public SNode createNode(Object parameter_2370_0, Object parameter_2370_1, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_279 = null;
-      SNode quotedNode_280 = null;
-      SNode quotedNode_281 = null;
+      SNode quotedNode_2370_0 = null;
+      SNode quotedNode_2370_1 = null;
+      SNode quotedNode_2370_2 = null;
       {
-        quotedNode_279 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_279 = quotedNode_279;
-        quotedNode1_279.addReference(SReference.create("classifier", quotedNode1_279, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~SortedMap")));
+        quotedNode_2370_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2370_0 = quotedNode_2370_0;
+        quotedNode1_2370_0.addReference(SReference.create("classifier", quotedNode1_2370_0, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~SortedMap")));
         {
-          quotedNode_280 = (SNode) parameter_2370_0;
-          SNode quotedNode1_280;
-          if (_parameterValues_129834374.contains(quotedNode_280)) {
-            quotedNode1_280 = CopyUtil.copy(quotedNode_280);
+          quotedNode_2370_1 = (SNode) parameter_2370_0;
+          SNode quotedNode1_128;
+          if (_parameterValues_129834374.contains(quotedNode_2370_1)) {
+            quotedNode1_128 = CopyUtil.copy(quotedNode_2370_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_280);
-            quotedNode1_280 = quotedNode_280;
+            _parameterValues_129834374.add(quotedNode_2370_1);
+            quotedNode1_128 = quotedNode_2370_1;
           }
-          if (quotedNode1_280 != null) {
-            quotedNode_279.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_280, typeCheckingContext));
+          if (quotedNode1_128 != null) {
+            quotedNode_2370_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_128, typeCheckingContext));
           }
         }
         {
-          quotedNode_281 = (SNode) parameter_2370_1;
-          SNode quotedNode1_281;
-          if (_parameterValues_129834374.contains(quotedNode_281)) {
-            quotedNode1_281 = CopyUtil.copy(quotedNode_281);
+          quotedNode_2370_2 = (SNode) parameter_2370_1;
+          SNode quotedNode1_129;
+          if (_parameterValues_129834374.contains(quotedNode_2370_2)) {
+            quotedNode1_129 = CopyUtil.copy(quotedNode_2370_2);
           } else {
-            _parameterValues_129834374.add(quotedNode_281);
-            quotedNode1_281 = quotedNode_281;
+            _parameterValues_129834374.add(quotedNode_2370_2);
+            quotedNode1_129 = quotedNode_2370_2;
           }
-          if (quotedNode1_281 != null) {
-            quotedNode_279.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_281, typeCheckingContext));
+          if (quotedNode1_129 != null) {
+            quotedNode_2370_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_129, typeCheckingContext));
           }
         }
-        result = quotedNode1_279;
+        result = quotedNode1_2370_0;
       }
       return result;
     }
@@ -86,40 +86,40 @@ public class sorted_map_comparableTo_SortedMap_SubtypingRule extends SubtypingRu
     public SNode createNode(Object parameter_2370_0, Object parameter_2370_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_279 = null;
-      SNode quotedNode_280 = null;
-      SNode quotedNode_281 = null;
+      SNode quotedNode_2370_0 = null;
+      SNode quotedNode_2370_1 = null;
+      SNode quotedNode_2370_2 = null;
       {
-        quotedNode_279 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_279 = quotedNode_279;
-        quotedNode1_279.addReference(SReference.create("classifier", quotedNode1_279, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~SortedMap")));
+        quotedNode_2370_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2370_0 = quotedNode_2370_0;
+        quotedNode1_2370_0.addReference(SReference.create("classifier", quotedNode1_2370_0, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~SortedMap")));
         {
-          quotedNode_280 = (SNode) parameter_2370_0;
-          SNode quotedNode1_280;
-          if (_parameterValues_129834374.contains(quotedNode_280)) {
-            quotedNode1_280 = CopyUtil.copy(quotedNode_280);
+          quotedNode_2370_1 = (SNode) parameter_2370_0;
+          SNode quotedNode1_128;
+          if (_parameterValues_129834374.contains(quotedNode_2370_1)) {
+            quotedNode1_128 = CopyUtil.copy(quotedNode_2370_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_280);
-            quotedNode1_280 = quotedNode_280;
+            _parameterValues_129834374.add(quotedNode_2370_1);
+            quotedNode1_128 = quotedNode_2370_1;
           }
-          if (quotedNode1_280 != null) {
-            quotedNode_279.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_280));
+          if (quotedNode1_128 != null) {
+            quotedNode_2370_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_128));
           }
         }
         {
-          quotedNode_281 = (SNode) parameter_2370_1;
-          SNode quotedNode1_281;
-          if (_parameterValues_129834374.contains(quotedNode_281)) {
-            quotedNode1_281 = CopyUtil.copy(quotedNode_281);
+          quotedNode_2370_2 = (SNode) parameter_2370_1;
+          SNode quotedNode1_129;
+          if (_parameterValues_129834374.contains(quotedNode_2370_2)) {
+            quotedNode1_129 = CopyUtil.copy(quotedNode_2370_2);
           } else {
-            _parameterValues_129834374.add(quotedNode_281);
-            quotedNode1_281 = quotedNode_281;
+            _parameterValues_129834374.add(quotedNode_2370_2);
+            quotedNode1_129 = quotedNode_2370_2;
           }
-          if (quotedNode1_281 != null) {
-            quotedNode_279.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_281));
+          if (quotedNode1_129 != null) {
+            quotedNode_2370_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_129));
           }
         }
-        result = quotedNode1_279;
+        result = quotedNode1_2370_0;
       }
       return result;
     }

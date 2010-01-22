@@ -54,12 +54,12 @@ public class SortedSetType_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_27 = null;
+      SNode quotedNode_9906_2 = null;
       {
-        quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_27 = quotedNode_27;
-        quotedNode1_27.addReference(SReference.create("classifier", quotedNode1_27, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~SortedSet")));
-        result = quotedNode1_27;
+        quotedNode_9906_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9906_1 = quotedNode_9906_2;
+        quotedNode1_9906_1.addReference(SReference.create("classifier", quotedNode1_9906_1, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~SortedSet")));
+        result = quotedNode1_9906_1;
       }
       return result;
     }
@@ -72,25 +72,25 @@ public class SortedSetType_Behavior {
     public SNode createNode(Object parameter_9906_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_25 = null;
-      SNode quotedNode_26 = null;
+      SNode quotedNode_9906_0 = null;
+      SNode quotedNode_9906_1 = null;
       {
-        quotedNode_25 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_25 = quotedNode_25;
+        quotedNode_9906_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TreeSetCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9906_0 = quotedNode_9906_0;
         {
-          quotedNode_26 = (SNode) parameter_9906_0;
-          SNode quotedNode1_26;
-          if (_parameterValues_129834374.contains(quotedNode_26)) {
-            quotedNode1_26 = CopyUtil.copy(quotedNode_26);
+          quotedNode_9906_1 = (SNode) parameter_9906_0;
+          SNode quotedNode1_11;
+          if (_parameterValues_129834374.contains(quotedNode_9906_1)) {
+            quotedNode1_11 = CopyUtil.copy(quotedNode_9906_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_26);
-            quotedNode1_26 = quotedNode_26;
+            _parameterValues_129834374.add(quotedNode_9906_1);
+            quotedNode1_11 = quotedNode_9906_1;
           }
-          if (quotedNode1_26 != null) {
-            quotedNode_25.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_26));
+          if (quotedNode1_11 != null) {
+            quotedNode_9906_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_11));
           }
         }
-        result = quotedNode1_25;
+        result = quotedNode1_9906_0;
       }
       return result;
     }

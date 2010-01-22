@@ -42,11 +42,11 @@ public class PropertyMacro_GetPropertyValue_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_4 = null;
+      SNode quotedNode_9283_0 = null;
       {
-        quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4 = quotedNode_4;
-        result = quotedNode1_4;
+        quotedNode_9283_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9283_0 = quotedNode_9283_0;
+        result = quotedNode1_9283_0;
       }
       return result;
     }

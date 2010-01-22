@@ -27,25 +27,25 @@ public class ListCreatorWithInit_Behavior {
     public SNode createNode(Object parameter_8637_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_15 = null;
-      SNode quotedNode_16 = null;
+      SNode quotedNode_8637_0 = null;
+      SNode quotedNode_8637_1 = null;
       {
-        quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_15 = quotedNode_15;
+        quotedNode_8637_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8637_0 = quotedNode_8637_0;
         {
-          quotedNode_16 = (SNode) parameter_8637_0;
-          SNode quotedNode1_16;
-          if (_parameterValues_129834374.contains(quotedNode_16)) {
-            quotedNode1_16 = CopyUtil.copy(quotedNode_16);
+          quotedNode_8637_1 = (SNode) parameter_8637_0;
+          SNode quotedNode1_6;
+          if (_parameterValues_129834374.contains(quotedNode_8637_1)) {
+            quotedNode1_6 = CopyUtil.copy(quotedNode_8637_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_16);
-            quotedNode1_16 = quotedNode_16;
+            _parameterValues_129834374.add(quotedNode_8637_1);
+            quotedNode1_6 = quotedNode_8637_1;
           }
-          if (quotedNode1_16 != null) {
-            quotedNode_15.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_16));
+          if (quotedNode1_6 != null) {
+            quotedNode_8637_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_6));
           }
         }
-        result = quotedNode1_15;
+        result = quotedNode1_8637_0;
       }
       return result;
     }

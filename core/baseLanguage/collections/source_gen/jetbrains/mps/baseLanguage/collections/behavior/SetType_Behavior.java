@@ -77,12 +77,12 @@ public class SetType_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_13 = null;
+      SNode quotedNode_0571_4 = null;
       {
-        quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_13 = quotedNode_13;
-        quotedNode1_13.addReference(SReference.create("classifier", quotedNode1_13, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~Set")));
-        result = quotedNode1_13;
+        quotedNode_0571_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0571_2 = quotedNode_0571_4;
+        quotedNode1_0571_2.addReference(SReference.create("classifier", quotedNode1_0571_2, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~Set")));
+        result = quotedNode1_0571_2;
       }
       return result;
     }
@@ -95,25 +95,25 @@ public class SetType_Behavior {
     public SNode createNode(Object parameter_0571_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9 = null;
-      SNode quotedNode_10 = null;
+      SNode quotedNode_0571_0 = null;
+      SNode quotedNode_0571_1 = null;
       {
-        quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9 = quotedNode_9;
+        quotedNode_0571_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0571_0 = quotedNode_0571_0;
         {
-          quotedNode_10 = (SNode) parameter_0571_0;
-          SNode quotedNode1_10;
-          if (_parameterValues_129834374.contains(quotedNode_10)) {
-            quotedNode1_10 = CopyUtil.copy(quotedNode_10);
+          quotedNode_0571_1 = (SNode) parameter_0571_0;
+          SNode quotedNode1_4;
+          if (_parameterValues_129834374.contains(quotedNode_0571_1)) {
+            quotedNode1_4 = CopyUtil.copy(quotedNode_0571_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_10);
-            quotedNode1_10 = quotedNode_10;
+            _parameterValues_129834374.add(quotedNode_0571_1);
+            quotedNode1_4 = quotedNode_0571_1;
           }
-          if (quotedNode1_10 != null) {
-            quotedNode_9.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_10));
+          if (quotedNode1_4 != null) {
+            quotedNode_0571_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4));
           }
         }
-        result = quotedNode1_9;
+        result = quotedNode1_0571_0;
       }
       return result;
     }
@@ -126,25 +126,25 @@ public class SetType_Behavior {
     public SNode createNode(Object parameter_0571_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_11 = null;
-      SNode quotedNode_12 = null;
+      SNode quotedNode_0571_2 = null;
+      SNode quotedNode_0571_3 = null;
       {
-        quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_11 = quotedNode_11;
+        quotedNode_0571_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0571_1 = quotedNode_0571_2;
         {
-          quotedNode_12 = (SNode) parameter_0571_1;
-          SNode quotedNode1_12;
-          if (_parameterValues_129834374.contains(quotedNode_12)) {
-            quotedNode1_12 = CopyUtil.copy(quotedNode_12);
+          quotedNode_0571_3 = (SNode) parameter_0571_1;
+          SNode quotedNode1_5;
+          if (_parameterValues_129834374.contains(quotedNode_0571_3)) {
+            quotedNode1_5 = CopyUtil.copy(quotedNode_0571_3);
           } else {
-            _parameterValues_129834374.add(quotedNode_12);
-            quotedNode1_12 = quotedNode_12;
+            _parameterValues_129834374.add(quotedNode_0571_3);
+            quotedNode1_5 = quotedNode_0571_3;
           }
-          if (quotedNode1_12 != null) {
-            quotedNode_11.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_12));
+          if (quotedNode1_5 != null) {
+            quotedNode_0571_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_5));
           }
         }
-        result = quotedNode1_11;
+        result = quotedNode1_0571_1;
       }
       return result;
     }

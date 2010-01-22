@@ -45,26 +45,26 @@ public class supertypesOf_EnumeratorType_SubtypingRule extends SubtypingRule_Run
     public SNode createNode(Object parameter_9604_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_210 = null;
-      SNode quotedNode_211 = null;
+      SNode quotedNode_9604_0 = null;
+      SNode quotedNode_9604_1 = null;
       {
-        quotedNode_210 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_210 = quotedNode_210;
-        quotedNode1_210.addReference(SReference.create("classifier", quotedNode1_210, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~IEnumerator")));
+        quotedNode_9604_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9604_0 = quotedNode_9604_0;
+        quotedNode1_9604_0.addReference(SReference.create("classifier", quotedNode1_9604_0, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~IEnumerator")));
         {
-          quotedNode_211 = (SNode) parameter_9604_0;
-          SNode quotedNode1_211;
-          if (_parameterValues_129834374.contains(quotedNode_211)) {
-            quotedNode1_211 = CopyUtil.copy(quotedNode_211);
+          quotedNode_9604_1 = (SNode) parameter_9604_0;
+          SNode quotedNode1_90;
+          if (_parameterValues_129834374.contains(quotedNode_9604_1)) {
+            quotedNode1_90 = CopyUtil.copy(quotedNode_9604_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_211);
-            quotedNode1_211 = quotedNode_211;
+            _parameterValues_129834374.add(quotedNode_9604_1);
+            quotedNode1_90 = quotedNode_9604_1;
           }
-          if (quotedNode1_211 != null) {
-            quotedNode_210.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_211, typeCheckingContext));
+          if (quotedNode1_90 != null) {
+            quotedNode_9604_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_90, typeCheckingContext));
           }
         }
-        result = quotedNode1_210;
+        result = quotedNode1_9604_0;
       }
       return result;
     }
@@ -72,26 +72,26 @@ public class supertypesOf_EnumeratorType_SubtypingRule extends SubtypingRule_Run
     public SNode createNode(Object parameter_9604_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_210 = null;
-      SNode quotedNode_211 = null;
+      SNode quotedNode_9604_0 = null;
+      SNode quotedNode_9604_1 = null;
       {
-        quotedNode_210 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_210 = quotedNode_210;
-        quotedNode1_210.addReference(SReference.create("classifier", quotedNode1_210, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~IEnumerator")));
+        quotedNode_9604_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9604_0 = quotedNode_9604_0;
+        quotedNode1_9604_0.addReference(SReference.create("classifier", quotedNode1_9604_0, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~IEnumerator")));
         {
-          quotedNode_211 = (SNode) parameter_9604_0;
-          SNode quotedNode1_211;
-          if (_parameterValues_129834374.contains(quotedNode_211)) {
-            quotedNode1_211 = CopyUtil.copy(quotedNode_211);
+          quotedNode_9604_1 = (SNode) parameter_9604_0;
+          SNode quotedNode1_90;
+          if (_parameterValues_129834374.contains(quotedNode_9604_1)) {
+            quotedNode1_90 = CopyUtil.copy(quotedNode_9604_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_211);
-            quotedNode1_211 = quotedNode_211;
+            _parameterValues_129834374.add(quotedNode_9604_1);
+            quotedNode1_90 = quotedNode_9604_1;
           }
-          if (quotedNode1_211 != null) {
-            quotedNode_210.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_211));
+          if (quotedNode1_90 != null) {
+            quotedNode_9604_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_90));
           }
         }
-        result = quotedNode1_210;
+        result = quotedNode1_9604_0;
       }
       return result;
     }

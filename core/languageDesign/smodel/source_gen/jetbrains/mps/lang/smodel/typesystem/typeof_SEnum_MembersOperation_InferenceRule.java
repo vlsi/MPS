@@ -47,18 +47,18 @@ public class typeof_SEnum_MembersOperation_InferenceRule extends AbstractInferen
     public SNode createNode(Object parameter_8691_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_116 = null;
-      SNode quotedNode_117 = null;
+      SNode quotedNode_8691_0 = null;
+      SNode quotedNode_8691_1 = null;
       {
-        quotedNode_116 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_116 = quotedNode_116;
+        quotedNode_8691_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8691_0 = quotedNode_8691_0;
         {
-          quotedNode_117 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_117 = quotedNode_117;
-          quotedNode1_117.setReferent("enum", (SNode) parameter_8691_0);
-          quotedNode_116.addChild("elementType", quotedNode1_117);
+          quotedNode_8691_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_8691_1 = quotedNode_8691_1;
+          quotedNode1_8691_1.setReferent("enum", (SNode) parameter_8691_0);
+          quotedNode_8691_0.addChild("elementType", quotedNode1_8691_1);
         }
-        result = quotedNode1_116;
+        result = quotedNode1_8691_0;
       }
       return result;
     }
@@ -66,18 +66,18 @@ public class typeof_SEnum_MembersOperation_InferenceRule extends AbstractInferen
     public SNode createNode(Object parameter_8691_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_116 = null;
-      SNode quotedNode_117 = null;
+      SNode quotedNode_8691_0 = null;
+      SNode quotedNode_8691_1 = null;
       {
-        quotedNode_116 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_116 = quotedNode_116;
+        quotedNode_8691_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8691_0 = quotedNode_8691_0;
         {
-          quotedNode_117 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_117 = quotedNode_117;
-          quotedNode1_117.setReferent("enum", (SNode) parameter_8691_0);
-          quotedNode_116.addChild("elementType", quotedNode1_117);
+          quotedNode_8691_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_8691_1 = quotedNode_8691_1;
+          quotedNode1_8691_1.setReferent("enum", (SNode) parameter_8691_0);
+          quotedNode_8691_0.addChild("elementType", quotedNode1_8691_1);
         }
-        result = quotedNode1_116;
+        result = quotedNode1_8691_0;
       }
       return result;
     }

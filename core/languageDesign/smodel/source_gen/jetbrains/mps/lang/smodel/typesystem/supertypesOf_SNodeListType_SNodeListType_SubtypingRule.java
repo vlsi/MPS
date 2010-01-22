@@ -54,12 +54,12 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
     public SNode createNode(Object parameter_3461_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_35 = null;
+      SNode quotedNode_3461_0 = null;
       {
-        quotedNode_35 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_35 = quotedNode_35;
-        quotedNode1_35.setReferent("elementConcept", (SNode) parameter_3461_0);
-        result = quotedNode1_35;
+        quotedNode_3461_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3461_0 = quotedNode_3461_0;
+        quotedNode1_3461_0.setReferent("elementConcept", (SNode) parameter_3461_0);
+        result = quotedNode1_3461_0;
       }
       return result;
     }
@@ -67,12 +67,12 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
     public SNode createNode(Object parameter_3461_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_35 = null;
+      SNode quotedNode_3461_0 = null;
       {
-        quotedNode_35 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_35 = quotedNode_35;
-        quotedNode1_35.setReferent("elementConcept", (SNode) parameter_3461_0);
-        result = quotedNode1_35;
+        quotedNode_3461_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3461_0 = quotedNode_3461_0;
+        quotedNode1_3461_0.setReferent("elementConcept", (SNode) parameter_3461_0);
+        result = quotedNode1_3461_0;
       }
       return result;
     }
@@ -85,11 +85,11 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_36 = null;
+      SNode quotedNode_3461_1 = null;
       {
-        quotedNode_36 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_36 = quotedNode_36;
-        result = quotedNode1_36;
+        quotedNode_3461_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3461_1 = quotedNode_3461_1;
+        result = quotedNode1_3461_1;
       }
       return result;
     }
@@ -97,11 +97,11 @@ public class supertypesOf_SNodeListType_SNodeListType_SubtypingRule extends Subt
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_36 = null;
+      SNode quotedNode_3461_1 = null;
       {
-        quotedNode_36 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_36 = quotedNode_36;
-        result = quotedNode1_36;
+        quotedNode_3461_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3461_1 = quotedNode_3461_1;
+        result = quotedNode1_3461_1;
       }
       return result;
     }

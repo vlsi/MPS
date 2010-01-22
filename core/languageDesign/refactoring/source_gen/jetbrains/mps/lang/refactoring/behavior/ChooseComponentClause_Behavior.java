@@ -32,26 +32,26 @@ public class ChooseComponentClause_Behavior {
     public SNode createNode(Object parameter_6948_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0 = null;
-      SNode quotedNode_1 = null;
+      SNode quotedNode_6948_0 = null;
+      SNode quotedNode_6948_1 = null;
       {
-        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0 = quotedNode_0;
-        quotedNode1_0.addReference(SReference.create("classifier", quotedNode1_0, SModelReference.fromString("f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)"), SNodeId.fromString("~IChooseComponent")));
+        quotedNode_6948_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6948_0 = quotedNode_6948_0;
+        quotedNode1_6948_0.addReference(SReference.create("classifier", quotedNode1_6948_0, SModelReference.fromString("f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)"), SNodeId.fromString("~IChooseComponent")));
         {
-          quotedNode_1 = (SNode) parameter_6948_0;
-          SNode quotedNode1_1;
-          if (_parameterValues_129834374.contains(quotedNode_1)) {
-            quotedNode1_1 = CopyUtil.copy(quotedNode_1);
+          quotedNode_6948_1 = (SNode) parameter_6948_0;
+          SNode quotedNode1_0;
+          if (_parameterValues_129834374.contains(quotedNode_6948_1)) {
+            quotedNode1_0 = CopyUtil.copy(quotedNode_6948_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_1);
-            quotedNode1_1 = quotedNode_1;
+            _parameterValues_129834374.add(quotedNode_6948_1);
+            quotedNode1_0 = quotedNode_6948_1;
           }
-          if (quotedNode1_1 != null) {
-            quotedNode_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_1));
+          if (quotedNode1_0 != null) {
+            quotedNode_6948_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_0));
           }
         }
-        result = quotedNode1_0;
+        result = quotedNode1_6948_0;
       }
       return result;
     }

@@ -54,12 +54,12 @@ public class SortedMapType_Behavior {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_24 = null;
+      SNode quotedNode_7768_3 = null;
       {
-        quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_24 = quotedNode_24;
-        quotedNode1_24.addReference(SReference.create("classifier", quotedNode1_24, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~SortedMap")));
-        result = quotedNode1_24;
+        quotedNode_7768_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7768_1 = quotedNode_7768_3;
+        quotedNode1_7768_1.addReference(SReference.create("classifier", quotedNode1_7768_1, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~SortedMap")));
+        result = quotedNode1_7768_1;
       }
       return result;
     }
@@ -72,39 +72,39 @@ public class SortedMapType_Behavior {
     public SNode createNode(Object parameter_7768_0, Object parameter_7768_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_21 = null;
-      SNode quotedNode_22 = null;
-      SNode quotedNode_23 = null;
+      SNode quotedNode_7768_0 = null;
+      SNode quotedNode_7768_1 = null;
+      SNode quotedNode_7768_2 = null;
       {
-        quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_21 = quotedNode_21;
+        quotedNode_7768_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.TreeMapCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7768_0 = quotedNode_7768_0;
         {
-          quotedNode_22 = (SNode) parameter_7768_0;
-          SNode quotedNode1_22;
-          if (_parameterValues_129834374.contains(quotedNode_22)) {
-            quotedNode1_22 = CopyUtil.copy(quotedNode_22);
+          quotedNode_7768_1 = (SNode) parameter_7768_0;
+          SNode quotedNode1_9;
+          if (_parameterValues_129834374.contains(quotedNode_7768_1)) {
+            quotedNode1_9 = CopyUtil.copy(quotedNode_7768_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_22);
-            quotedNode1_22 = quotedNode_22;
+            _parameterValues_129834374.add(quotedNode_7768_1);
+            quotedNode1_9 = quotedNode_7768_1;
           }
-          if (quotedNode1_22 != null) {
-            quotedNode_21.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_22));
+          if (quotedNode1_9 != null) {
+            quotedNode_7768_0.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_9));
           }
         }
         {
-          quotedNode_23 = (SNode) parameter_7768_1;
-          SNode quotedNode1_23;
-          if (_parameterValues_129834374.contains(quotedNode_23)) {
-            quotedNode1_23 = CopyUtil.copy(quotedNode_23);
+          quotedNode_7768_2 = (SNode) parameter_7768_1;
+          SNode quotedNode1_10;
+          if (_parameterValues_129834374.contains(quotedNode_7768_2)) {
+            quotedNode1_10 = CopyUtil.copy(quotedNode_7768_2);
           } else {
-            _parameterValues_129834374.add(quotedNode_23);
-            quotedNode1_23 = quotedNode_23;
+            _parameterValues_129834374.add(quotedNode_7768_2);
+            quotedNode1_10 = quotedNode_7768_2;
           }
-          if (quotedNode1_23 != null) {
-            quotedNode_21.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_23));
+          if (quotedNode1_10 != null) {
+            quotedNode_7768_0.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_10));
           }
         }
-        result = quotedNode1_21;
+        result = quotedNode1_7768_0;
       }
       return result;
     }

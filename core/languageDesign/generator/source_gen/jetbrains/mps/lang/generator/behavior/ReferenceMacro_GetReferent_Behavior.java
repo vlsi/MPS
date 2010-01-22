@@ -44,12 +44,12 @@ public class ReferenceMacro_GetReferent_Behavior {
     public SNode createNode(Object parameter_4978_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0 = null;
+      SNode quotedNode_4978_0 = null;
       {
-        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0 = quotedNode_0;
-        quotedNode1_0.setReferent("concept", (SNode) parameter_4978_0);
-        result = quotedNode1_0;
+        quotedNode_4978_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4978_0 = quotedNode_4978_0;
+        quotedNode1_4978_0.setReferent("concept", (SNode) parameter_4978_0);
+        result = quotedNode1_4978_0;
       }
       return result;
     }
@@ -62,24 +62,24 @@ public class ReferenceMacro_GetReferent_Behavior {
     public SNode createNode(Object parameter_4978_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
+      SNode quotedNode_4978_1 = null;
+      SNode quotedNode_4978_2 = null;
+      SNode quotedNode_4978_3 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1 = quotedNode_1;
+        quotedNode_4978_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.JoinType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4978_1 = quotedNode_4978_1;
         {
-          quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_2 = quotedNode_2;
-          quotedNode1_2.setReferent("concept", (SNode) parameter_4978_1);
-          quotedNode_1.addChild("argument", quotedNode1_2);
+          quotedNode_4978_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_4978_2 = quotedNode_4978_2;
+          quotedNode1_4978_2.setReferent("concept", (SNode) parameter_4978_1);
+          quotedNode_4978_1.addChild("argument", quotedNode1_4978_2);
         }
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3 = quotedNode_3;
-          quotedNode_1.addChild("argument", quotedNode1_3);
+          quotedNode_4978_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_4978_3 = quotedNode_4978_3;
+          quotedNode_4978_1.addChild("argument", quotedNode1_4978_3);
         }
-        result = quotedNode1_1;
+        result = quotedNode1_4978_1;
       }
       return result;
     }

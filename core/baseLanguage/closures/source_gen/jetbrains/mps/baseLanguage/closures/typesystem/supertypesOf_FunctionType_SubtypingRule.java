@@ -60,12 +60,12 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
     public SNode createNode(Object parameter_0368_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9 = null;
+      SNode quotedNode_0368_0 = null;
       {
-        quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6 = quotedNode_9;
-        quotedNode1_6.setReferent("classifier", (SNode) parameter_0368_0);
-        result = quotedNode1_6;
+        quotedNode_0368_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0368_0 = quotedNode_0368_0;
+        quotedNode1_0368_0.setReferent("classifier", (SNode) parameter_0368_0);
+        result = quotedNode1_0368_0;
       }
       return result;
     }
@@ -73,12 +73,12 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
     public SNode createNode(Object parameter_0368_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9 = null;
+      SNode quotedNode_0368_0 = null;
       {
-        quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6 = quotedNode_9;
-        quotedNode1_6.setReferent("classifier", (SNode) parameter_0368_0);
-        result = quotedNode1_6;
+        quotedNode_0368_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0368_0 = quotedNode_0368_0;
+        quotedNode1_0368_0.setReferent("classifier", (SNode) parameter_0368_0);
+        result = quotedNode1_0368_0;
       }
       return result;
     }

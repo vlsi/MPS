@@ -45,26 +45,26 @@ public class supertypesOf_DequeType_ClassiType_Deque_SubtypingRule extends Subty
     public SNode createNode(Object parameter_7153_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_365 = null;
-      SNode quotedNode_366 = null;
+      SNode quotedNode_7153_0 = null;
+      SNode quotedNode_7153_1 = null;
       {
-        quotedNode_365 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_365 = quotedNode_365;
-        quotedNode1_365.addReference(SReference.create("classifier", quotedNode1_365, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime.backports(jetbrains.mps.internal.collections.runtime.backports@java_stub)"), SNodeId.fromString("~Deque")));
+        quotedNode_7153_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7153_0 = quotedNode_7153_0;
+        quotedNode1_7153_0.addReference(SReference.create("classifier", quotedNode1_7153_0, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime.backports(jetbrains.mps.internal.collections.runtime.backports@java_stub)"), SNodeId.fromString("~Deque")));
         {
-          quotedNode_366 = (SNode) parameter_7153_0;
-          SNode quotedNode1_366;
-          if (_parameterValues_129834374.contains(quotedNode_366)) {
-            quotedNode1_366 = CopyUtil.copy(quotedNode_366);
+          quotedNode_7153_1 = (SNode) parameter_7153_0;
+          SNode quotedNode1_171;
+          if (_parameterValues_129834374.contains(quotedNode_7153_1)) {
+            quotedNode1_171 = CopyUtil.copy(quotedNode_7153_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_366);
-            quotedNode1_366 = quotedNode_366;
+            _parameterValues_129834374.add(quotedNode_7153_1);
+            quotedNode1_171 = quotedNode_7153_1;
           }
-          if (quotedNode1_366 != null) {
-            quotedNode_365.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_366, typeCheckingContext));
+          if (quotedNode1_171 != null) {
+            quotedNode_7153_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_171, typeCheckingContext));
           }
         }
-        result = quotedNode1_365;
+        result = quotedNode1_7153_0;
       }
       return result;
     }
@@ -72,26 +72,26 @@ public class supertypesOf_DequeType_ClassiType_Deque_SubtypingRule extends Subty
     public SNode createNode(Object parameter_7153_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_365 = null;
-      SNode quotedNode_366 = null;
+      SNode quotedNode_7153_0 = null;
+      SNode quotedNode_7153_1 = null;
       {
-        quotedNode_365 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_365 = quotedNode_365;
-        quotedNode1_365.addReference(SReference.create("classifier", quotedNode1_365, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime.backports(jetbrains.mps.internal.collections.runtime.backports@java_stub)"), SNodeId.fromString("~Deque")));
+        quotedNode_7153_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7153_0 = quotedNode_7153_0;
+        quotedNode1_7153_0.addReference(SReference.create("classifier", quotedNode1_7153_0, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime.backports(jetbrains.mps.internal.collections.runtime.backports@java_stub)"), SNodeId.fromString("~Deque")));
         {
-          quotedNode_366 = (SNode) parameter_7153_0;
-          SNode quotedNode1_366;
-          if (_parameterValues_129834374.contains(quotedNode_366)) {
-            quotedNode1_366 = CopyUtil.copy(quotedNode_366);
+          quotedNode_7153_1 = (SNode) parameter_7153_0;
+          SNode quotedNode1_171;
+          if (_parameterValues_129834374.contains(quotedNode_7153_1)) {
+            quotedNode1_171 = CopyUtil.copy(quotedNode_7153_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_366);
-            quotedNode1_366 = quotedNode_366;
+            _parameterValues_129834374.add(quotedNode_7153_1);
+            quotedNode1_171 = quotedNode_7153_1;
           }
-          if (quotedNode1_366 != null) {
-            quotedNode_365.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_366));
+          if (quotedNode1_171 != null) {
+            quotedNode_7153_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_171));
           }
         }
-        result = quotedNode1_365;
+        result = quotedNode1_7153_0;
       }
       return result;
     }

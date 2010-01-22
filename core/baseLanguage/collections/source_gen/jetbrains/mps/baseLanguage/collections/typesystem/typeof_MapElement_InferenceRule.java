@@ -65,39 +65,39 @@ public class typeof_MapElement_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode(Object parameter_4060_0, Object parameter_4060_1, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_49 = null;
-      SNode quotedNode_50 = null;
-      SNode quotedNode_51 = null;
+      SNode quotedNode_4060_0 = null;
+      SNode quotedNode_4060_1 = null;
+      SNode quotedNode_4060_2 = null;
       {
-        quotedNode_49 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_49 = quotedNode_49;
+        quotedNode_4060_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4060_0 = quotedNode_4060_0;
         {
-          quotedNode_50 = (SNode) parameter_4060_0;
-          SNode quotedNode1_50;
-          if (_parameterValues_129834374.contains(quotedNode_50)) {
-            quotedNode1_50 = CopyUtil.copy(quotedNode_50);
+          quotedNode_4060_1 = (SNode) parameter_4060_0;
+          SNode quotedNode1_18;
+          if (_parameterValues_129834374.contains(quotedNode_4060_1)) {
+            quotedNode1_18 = CopyUtil.copy(quotedNode_4060_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_50);
-            quotedNode1_50 = quotedNode_50;
+            _parameterValues_129834374.add(quotedNode_4060_1);
+            quotedNode1_18 = quotedNode_4060_1;
           }
-          if (quotedNode1_50 != null) {
-            quotedNode_49.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_50, typeCheckingContext));
+          if (quotedNode1_18 != null) {
+            quotedNode_4060_0.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_18, typeCheckingContext));
           }
         }
         {
-          quotedNode_51 = (SNode) parameter_4060_1;
-          SNode quotedNode1_51;
-          if (_parameterValues_129834374.contains(quotedNode_51)) {
-            quotedNode1_51 = CopyUtil.copy(quotedNode_51);
+          quotedNode_4060_2 = (SNode) parameter_4060_1;
+          SNode quotedNode1_19;
+          if (_parameterValues_129834374.contains(quotedNode_4060_2)) {
+            quotedNode1_19 = CopyUtil.copy(quotedNode_4060_2);
           } else {
-            _parameterValues_129834374.add(quotedNode_51);
-            quotedNode1_51 = quotedNode_51;
+            _parameterValues_129834374.add(quotedNode_4060_2);
+            quotedNode1_19 = quotedNode_4060_2;
           }
-          if (quotedNode1_51 != null) {
-            quotedNode_49.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_51, typeCheckingContext));
+          if (quotedNode1_19 != null) {
+            quotedNode_4060_0.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_19, typeCheckingContext));
           }
         }
-        result = quotedNode1_49;
+        result = quotedNode1_4060_0;
       }
       return result;
     }
@@ -105,39 +105,39 @@ public class typeof_MapElement_InferenceRule extends AbstractInferenceRule_Runti
     public SNode createNode(Object parameter_4060_0, Object parameter_4060_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_49 = null;
-      SNode quotedNode_50 = null;
-      SNode quotedNode_51 = null;
+      SNode quotedNode_4060_0 = null;
+      SNode quotedNode_4060_1 = null;
+      SNode quotedNode_4060_2 = null;
       {
-        quotedNode_49 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_49 = quotedNode_49;
+        quotedNode_4060_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MapType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4060_0 = quotedNode_4060_0;
         {
-          quotedNode_50 = (SNode) parameter_4060_0;
-          SNode quotedNode1_50;
-          if (_parameterValues_129834374.contains(quotedNode_50)) {
-            quotedNode1_50 = CopyUtil.copy(quotedNode_50);
+          quotedNode_4060_1 = (SNode) parameter_4060_0;
+          SNode quotedNode1_18;
+          if (_parameterValues_129834374.contains(quotedNode_4060_1)) {
+            quotedNode1_18 = CopyUtil.copy(quotedNode_4060_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_50);
-            quotedNode1_50 = quotedNode_50;
+            _parameterValues_129834374.add(quotedNode_4060_1);
+            quotedNode1_18 = quotedNode_4060_1;
           }
-          if (quotedNode1_50 != null) {
-            quotedNode_49.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_50));
+          if (quotedNode1_18 != null) {
+            quotedNode_4060_0.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_18));
           }
         }
         {
-          quotedNode_51 = (SNode) parameter_4060_1;
-          SNode quotedNode1_51;
-          if (_parameterValues_129834374.contains(quotedNode_51)) {
-            quotedNode1_51 = CopyUtil.copy(quotedNode_51);
+          quotedNode_4060_2 = (SNode) parameter_4060_1;
+          SNode quotedNode1_19;
+          if (_parameterValues_129834374.contains(quotedNode_4060_2)) {
+            quotedNode1_19 = CopyUtil.copy(quotedNode_4060_2);
           } else {
-            _parameterValues_129834374.add(quotedNode_51);
-            quotedNode1_51 = quotedNode_51;
+            _parameterValues_129834374.add(quotedNode_4060_2);
+            quotedNode1_19 = quotedNode_4060_2;
           }
-          if (quotedNode1_51 != null) {
-            quotedNode_49.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_51));
+          if (quotedNode1_19 != null) {
+            quotedNode_4060_0.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_19));
           }
         }
-        result = quotedNode1_49;
+        result = quotedNode1_4060_0;
       }
       return result;
     }

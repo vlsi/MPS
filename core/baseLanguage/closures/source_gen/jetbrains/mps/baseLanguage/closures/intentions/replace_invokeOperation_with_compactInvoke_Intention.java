@@ -68,32 +68,32 @@ public class replace_invokeOperation_with_compactInvoke_Intention extends BaseIn
     public SNode createNode(Object parameter_3549_0, Object parameter_3549_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0 = null;
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
+      SNode quotedNode_3549_0 = null;
+      SNode quotedNode_3549_1 = null;
+      SNode quotedNode_3549_2 = null;
       {
-        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode_3549_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.CompactInvokeFunctionExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3549_0 = quotedNode_3549_0;
         {
           List<SNode> nodes = (List<SNode>) parameter_3549_0;
           for (SNode child : nodes) {
-            quotedNode_0.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_3549_0.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
         {
-          quotedNode_2 = (SNode) parameter_3549_1;
-          SNode quotedNode1_1;
-          if (_parameterValues_129834374.contains(quotedNode_2)) {
-            quotedNode1_1 = CopyUtil.copy(quotedNode_2);
+          quotedNode_3549_2 = (SNode) parameter_3549_1;
+          SNode quotedNode1_0;
+          if (_parameterValues_129834374.contains(quotedNode_3549_2)) {
+            quotedNode1_0 = CopyUtil.copy(quotedNode_3549_2);
           } else {
-            _parameterValues_129834374.add(quotedNode_2);
-            quotedNode1_1 = quotedNode_2;
+            _parameterValues_129834374.add(quotedNode_3549_2);
+            quotedNode1_0 = quotedNode_3549_2;
           }
-          if (quotedNode1_1 != null) {
-            quotedNode_0.addChild("function", HUtil.copyIfNecessary(quotedNode1_1));
+          if (quotedNode1_0 != null) {
+            quotedNode_3549_0.addChild("function", HUtil.copyIfNecessary(quotedNode1_0));
           }
         }
-        result = quotedNode1_0;
+        result = quotedNode1_3549_0;
       }
       return result;
     }

@@ -50,12 +50,12 @@ public class _LinkAccessT_Behavior {
     public SNode createNode(Object parameter_5770_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2 = null;
+      SNode quotedNode_5770_0 = null;
       {
-        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_2;
-        quotedNode1_2.setReferent("concept", (SNode) parameter_5770_0);
-        result = quotedNode1_2;
+        quotedNode_5770_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5770_0 = quotedNode_5770_0;
+        quotedNode1_5770_0.setReferent("concept", (SNode) parameter_5770_0);
+        result = quotedNode1_5770_0;
       }
       return result;
     }
@@ -68,12 +68,12 @@ public class _LinkAccessT_Behavior {
     public SNode createNode(Object parameter_5770_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3 = null;
+      SNode quotedNode_5770_1 = null;
       {
-        quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_3;
-        quotedNode1_3.setReferent("elementConcept", (SNode) parameter_5770_1);
-        result = quotedNode1_3;
+        quotedNode_5770_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5770_1 = quotedNode_5770_1;
+        quotedNode1_5770_1.setReferent("elementConcept", (SNode) parameter_5770_1);
+        result = quotedNode1_5770_1;
       }
       return result;
     }

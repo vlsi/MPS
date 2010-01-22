@@ -45,25 +45,25 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
     public SNode createNode(Object parameter_1656_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_33 = null;
-      SNode quotedNode_34 = null;
+      SNode quotedNode_1656_0 = null;
+      SNode quotedNode_1656_1 = null;
       {
-        quotedNode_33 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_33 = quotedNode_33;
+        quotedNode_1656_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1656_0 = quotedNode_1656_0;
         {
-          quotedNode_34 = (SNode) parameter_1656_0;
-          SNode quotedNode1_34;
-          if (_parameterValues_129834374.contains(quotedNode_34)) {
-            quotedNode1_34 = CopyUtil.copy(quotedNode_34);
+          quotedNode_1656_1 = (SNode) parameter_1656_0;
+          SNode quotedNode1_11;
+          if (_parameterValues_129834374.contains(quotedNode_1656_1)) {
+            quotedNode1_11 = CopyUtil.copy(quotedNode_1656_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_34);
-            quotedNode1_34 = quotedNode_34;
+            _parameterValues_129834374.add(quotedNode_1656_1);
+            quotedNode1_11 = quotedNode_1656_1;
           }
-          if (quotedNode1_34 != null) {
-            quotedNode_33.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_34, typeCheckingContext));
+          if (quotedNode1_11 != null) {
+            quotedNode_1656_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_11, typeCheckingContext));
           }
         }
-        result = quotedNode1_33;
+        result = quotedNode1_1656_0;
       }
       return result;
     }
@@ -71,25 +71,25 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
     public SNode createNode(Object parameter_1656_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_33 = null;
-      SNode quotedNode_34 = null;
+      SNode quotedNode_1656_0 = null;
+      SNode quotedNode_1656_1 = null;
       {
-        quotedNode_33 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_33 = quotedNode_33;
+        quotedNode_1656_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1656_0 = quotedNode_1656_0;
         {
-          quotedNode_34 = (SNode) parameter_1656_0;
-          SNode quotedNode1_34;
-          if (_parameterValues_129834374.contains(quotedNode_34)) {
-            quotedNode1_34 = CopyUtil.copy(quotedNode_34);
+          quotedNode_1656_1 = (SNode) parameter_1656_0;
+          SNode quotedNode1_11;
+          if (_parameterValues_129834374.contains(quotedNode_1656_1)) {
+            quotedNode1_11 = CopyUtil.copy(quotedNode_1656_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_34);
-            quotedNode1_34 = quotedNode_34;
+            _parameterValues_129834374.add(quotedNode_1656_1);
+            quotedNode1_11 = quotedNode_1656_1;
           }
-          if (quotedNode1_34 != null) {
-            quotedNode_33.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_34));
+          if (quotedNode1_11 != null) {
+            quotedNode_1656_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_11));
           }
         }
-        result = quotedNode1_33;
+        result = quotedNode1_1656_0;
       }
       return result;
     }

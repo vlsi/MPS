@@ -27,25 +27,25 @@ public class HashSetCreator_Behavior {
     public SNode createNode(Object parameter_2057_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_17 = null;
-      SNode quotedNode_18 = null;
+      SNode quotedNode_2057_0 = null;
+      SNode quotedNode_2057_1 = null;
       {
-        quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SetType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_17 = quotedNode_17;
+        quotedNode_2057_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SetType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2057_0 = quotedNode_2057_0;
         {
-          quotedNode_18 = (SNode) parameter_2057_0;
-          SNode quotedNode1_18;
-          if (_parameterValues_129834374.contains(quotedNode_18)) {
-            quotedNode1_18 = CopyUtil.copy(quotedNode_18);
+          quotedNode_2057_1 = (SNode) parameter_2057_0;
+          SNode quotedNode1_7;
+          if (_parameterValues_129834374.contains(quotedNode_2057_1)) {
+            quotedNode1_7 = CopyUtil.copy(quotedNode_2057_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_18);
-            quotedNode1_18 = quotedNode_18;
+            _parameterValues_129834374.add(quotedNode_2057_1);
+            quotedNode1_7 = quotedNode_2057_1;
           }
-          if (quotedNode1_18 != null) {
-            quotedNode_17.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_18));
+          if (quotedNode1_7 != null) {
+            quotedNode_2057_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_7));
           }
         }
-        result = quotedNode1_17;
+        result = quotedNode1_2057_0;
       }
       return result;
     }

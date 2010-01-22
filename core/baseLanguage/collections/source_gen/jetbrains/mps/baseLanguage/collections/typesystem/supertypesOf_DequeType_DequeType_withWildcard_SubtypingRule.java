@@ -43,17 +43,17 @@ public class supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule extends
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_367 = null;
-      SNode quotedNode_368 = null;
+      SNode quotedNode_4920_0 = null;
+      SNode quotedNode_4920_1 = null;
       {
-        quotedNode_367 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DequeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_367 = quotedNode_367;
+        quotedNode_4920_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DequeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4920_0 = quotedNode_4920_0;
         {
-          quotedNode_368 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_368 = quotedNode_368;
-          quotedNode_367.addChild("elementType", quotedNode1_368);
+          quotedNode_4920_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_4920_1 = quotedNode_4920_1;
+          quotedNode_4920_0.addChild("elementType", quotedNode1_4920_1);
         }
-        result = quotedNode1_367;
+        result = quotedNode1_4920_0;
       }
       return result;
     }
@@ -61,17 +61,17 @@ public class supertypesOf_DequeType_DequeType_withWildcard_SubtypingRule extends
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_367 = null;
-      SNode quotedNode_368 = null;
+      SNode quotedNode_4920_0 = null;
+      SNode quotedNode_4920_1 = null;
       {
-        quotedNode_367 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DequeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_367 = quotedNode_367;
+        quotedNode_4920_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DequeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4920_0 = quotedNode_4920_0;
         {
-          quotedNode_368 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_368 = quotedNode_368;
-          quotedNode_367.addChild("elementType", quotedNode1_368);
+          quotedNode_4920_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_4920_1 = quotedNode_4920_1;
+          quotedNode_4920_0.addChild("elementType", quotedNode1_4920_1);
         }
-        result = quotedNode1_367;
+        result = quotedNode1_4920_0;
       }
       return result;
     }

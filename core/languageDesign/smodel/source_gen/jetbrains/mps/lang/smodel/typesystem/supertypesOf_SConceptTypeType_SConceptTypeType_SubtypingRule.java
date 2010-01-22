@@ -54,12 +54,12 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
     public SNode createNode(Object parameter_8679_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_65 = null;
+      SNode quotedNode_8679_0 = null;
       {
-        quotedNode_65 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_65 = quotedNode_65;
-        quotedNode1_65.setReferent("conceptDeclaraton", (SNode) parameter_8679_0);
-        result = quotedNode1_65;
+        quotedNode_8679_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8679_0 = quotedNode_8679_0;
+        quotedNode1_8679_0.setReferent("conceptDeclaraton", (SNode) parameter_8679_0);
+        result = quotedNode1_8679_0;
       }
       return result;
     }
@@ -67,12 +67,12 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
     public SNode createNode(Object parameter_8679_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_65 = null;
+      SNode quotedNode_8679_0 = null;
       {
-        quotedNode_65 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_65 = quotedNode_65;
-        quotedNode1_65.setReferent("conceptDeclaraton", (SNode) parameter_8679_0);
-        result = quotedNode1_65;
+        quotedNode_8679_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8679_0 = quotedNode_8679_0;
+        quotedNode1_8679_0.setReferent("conceptDeclaraton", (SNode) parameter_8679_0);
+        result = quotedNode1_8679_0;
       }
       return result;
     }
@@ -85,11 +85,11 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_66 = null;
+      SNode quotedNode_8679_1 = null;
       {
-        quotedNode_66 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_66 = quotedNode_66;
-        result = quotedNode1_66;
+        quotedNode_8679_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8679_1 = quotedNode_8679_1;
+        result = quotedNode1_8679_1;
       }
       return result;
     }
@@ -97,11 +97,11 @@ public class supertypesOf_SConceptTypeType_SConceptTypeType_SubtypingRule extend
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_66 = null;
+      SNode quotedNode_8679_1 = null;
       {
-        quotedNode_66 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_66 = quotedNode_66;
-        result = quotedNode1_66;
+        quotedNode_8679_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8679_1 = quotedNode_8679_1;
+        result = quotedNode1_8679_1;
       }
       return result;
     }

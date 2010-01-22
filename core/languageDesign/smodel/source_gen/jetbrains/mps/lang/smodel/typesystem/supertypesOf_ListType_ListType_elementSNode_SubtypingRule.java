@@ -52,12 +52,12 @@ public class supertypesOf_ListType_ListType_elementSNode_SubtypingRule extends S
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_83 = null;
+      SNode quotedNode_5015_2 = null;
       {
-        quotedNode_83 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_83 = quotedNode_83;
-        quotedNode1_83.addReference(SReference.create("classifier", quotedNode1_83, SModelReference.fromString("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
-        result = quotedNode1_83;
+        quotedNode_5015_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5015_2 = quotedNode_5015_2;
+        quotedNode1_5015_2.addReference(SReference.create("classifier", quotedNode1_5015_2, SModelReference.fromString("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
+        result = quotedNode1_5015_2;
       }
       return result;
     }
@@ -65,12 +65,12 @@ public class supertypesOf_ListType_ListType_elementSNode_SubtypingRule extends S
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_83 = null;
+      SNode quotedNode_5015_2 = null;
       {
-        quotedNode_83 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_83 = quotedNode_83;
-        quotedNode1_83.addReference(SReference.create("classifier", quotedNode1_83, SModelReference.fromString("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
-        result = quotedNode1_83;
+        quotedNode_5015_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5015_2 = quotedNode_5015_2;
+        quotedNode1_5015_2.addReference(SReference.create("classifier", quotedNode1_5015_2, SModelReference.fromString("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
+        result = quotedNode1_5015_2;
       }
       return result;
     }
@@ -83,17 +83,17 @@ public class supertypesOf_ListType_ListType_elementSNode_SubtypingRule extends S
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_81 = null;
-      SNode quotedNode_82 = null;
+      SNode quotedNode_5015_0 = null;
+      SNode quotedNode_5015_1 = null;
       {
-        quotedNode_81 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_81 = quotedNode_81;
+        quotedNode_5015_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5015_0 = quotedNode_5015_0;
         {
-          quotedNode_82 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_82 = quotedNode_82;
-          quotedNode_81.addChild("elementType", quotedNode1_82);
+          quotedNode_5015_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_5015_1 = quotedNode_5015_1;
+          quotedNode_5015_0.addChild("elementType", quotedNode1_5015_1);
         }
-        result = quotedNode1_81;
+        result = quotedNode1_5015_0;
       }
       return result;
     }
@@ -101,17 +101,17 @@ public class supertypesOf_ListType_ListType_elementSNode_SubtypingRule extends S
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_81 = null;
-      SNode quotedNode_82 = null;
+      SNode quotedNode_5015_0 = null;
+      SNode quotedNode_5015_1 = null;
       {
-        quotedNode_81 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_81 = quotedNode_81;
+        quotedNode_5015_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5015_0 = quotedNode_5015_0;
         {
-          quotedNode_82 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_82 = quotedNode_82;
-          quotedNode_81.addChild("elementType", quotedNode1_82);
+          quotedNode_5015_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_5015_1 = quotedNode_5015_1;
+          quotedNode_5015_0.addChild("elementType", quotedNode1_5015_1);
         }
-        result = quotedNode1_81;
+        result = quotedNode1_5015_0;
       }
       return result;
     }

@@ -45,25 +45,25 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
     public SNode createNode(Object parameter_1015_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_214 = null;
-      SNode quotedNode_215 = null;
+      SNode quotedNode_1015_0 = null;
+      SNode quotedNode_1015_1 = null;
       {
-        quotedNode_214 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.EnumeratorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_214 = quotedNode_214;
+        quotedNode_1015_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.EnumeratorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1015_0 = quotedNode_1015_0;
         {
-          quotedNode_215 = (SNode) parameter_1015_0;
-          SNode quotedNode1_215;
-          if (_parameterValues_129834374.contains(quotedNode_215)) {
-            quotedNode1_215 = CopyUtil.copy(quotedNode_215);
+          quotedNode_1015_1 = (SNode) parameter_1015_0;
+          SNode quotedNode1_92;
+          if (_parameterValues_129834374.contains(quotedNode_1015_1)) {
+            quotedNode1_92 = CopyUtil.copy(quotedNode_1015_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_215);
-            quotedNode1_215 = quotedNode_215;
+            _parameterValues_129834374.add(quotedNode_1015_1);
+            quotedNode1_92 = quotedNode_1015_1;
           }
-          if (quotedNode1_215 != null) {
-            quotedNode_214.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_215, typeCheckingContext));
+          if (quotedNode1_92 != null) {
+            quotedNode_1015_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_92, typeCheckingContext));
           }
         }
-        result = quotedNode1_214;
+        result = quotedNode1_1015_0;
       }
       return result;
     }
@@ -71,25 +71,25 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
     public SNode createNode(Object parameter_1015_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_214 = null;
-      SNode quotedNode_215 = null;
+      SNode quotedNode_1015_0 = null;
+      SNode quotedNode_1015_1 = null;
       {
-        quotedNode_214 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.EnumeratorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_214 = quotedNode_214;
+        quotedNode_1015_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.EnumeratorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_1015_0 = quotedNode_1015_0;
         {
-          quotedNode_215 = (SNode) parameter_1015_0;
-          SNode quotedNode1_215;
-          if (_parameterValues_129834374.contains(quotedNode_215)) {
-            quotedNode1_215 = CopyUtil.copy(quotedNode_215);
+          quotedNode_1015_1 = (SNode) parameter_1015_0;
+          SNode quotedNode1_92;
+          if (_parameterValues_129834374.contains(quotedNode_1015_1)) {
+            quotedNode1_92 = CopyUtil.copy(quotedNode_1015_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_215);
-            quotedNode1_215 = quotedNode_215;
+            _parameterValues_129834374.add(quotedNode_1015_1);
+            quotedNode1_92 = quotedNode_1015_1;
           }
-          if (quotedNode1_215 != null) {
-            quotedNode_214.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_215));
+          if (quotedNode1_92 != null) {
+            quotedNode_1015_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_92));
           }
         }
-        result = quotedNode1_214;
+        result = quotedNode1_1015_0;
       }
       return result;
     }

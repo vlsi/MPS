@@ -69,12 +69,12 @@ public class typeOf_Concept_FindInstances_InferenceRule extends AbstractInferenc
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_76 = null;
+      SNode quotedNode_4374_0 = null;
       {
-        quotedNode_76 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_76 = quotedNode_76;
-        quotedNode1_76.addReference(SReference.create("classifier", quotedNode1_76, SModelReference.fromString("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IScope")));
-        result = quotedNode1_76;
+        quotedNode_4374_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4374_0 = quotedNode_4374_0;
+        quotedNode1_4374_0.addReference(SReference.create("classifier", quotedNode1_4374_0, SModelReference.fromString("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IScope")));
+        result = quotedNode1_4374_0;
       }
       return result;
     }
@@ -82,12 +82,12 @@ public class typeOf_Concept_FindInstances_InferenceRule extends AbstractInferenc
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_76 = null;
+      SNode quotedNode_4374_0 = null;
       {
-        quotedNode_76 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_76 = quotedNode_76;
-        quotedNode1_76.addReference(SReference.create("classifier", quotedNode1_76, SModelReference.fromString("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IScope")));
-        result = quotedNode1_76;
+        quotedNode_4374_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4374_0 = quotedNode_4374_0;
+        quotedNode1_4374_0.addReference(SReference.create("classifier", quotedNode1_4374_0, SModelReference.fromString("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~IScope")));
+        result = quotedNode1_4374_0;
       }
       return result;
     }
@@ -100,12 +100,12 @@ public class typeOf_Concept_FindInstances_InferenceRule extends AbstractInferenc
     public SNode createNode(Object parameter_4374_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_77 = null;
+      SNode quotedNode_4374_1 = null;
       {
-        quotedNode_77 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_77 = quotedNode_77;
-        quotedNode1_77.setReferent("conceptDeclaraton", (SNode) parameter_4374_0);
-        result = quotedNode1_77;
+        quotedNode_4374_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4374_1 = quotedNode_4374_1;
+        quotedNode1_4374_1.setReferent("conceptDeclaraton", (SNode) parameter_4374_0);
+        result = quotedNode1_4374_1;
       }
       return result;
     }
@@ -113,12 +113,12 @@ public class typeOf_Concept_FindInstances_InferenceRule extends AbstractInferenc
     public SNode createNode(Object parameter_4374_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_77 = null;
+      SNode quotedNode_4374_1 = null;
       {
-        quotedNode_77 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_77 = quotedNode_77;
-        quotedNode1_77.setReferent("conceptDeclaraton", (SNode) parameter_4374_0);
-        result = quotedNode1_77;
+        quotedNode_4374_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4374_1 = quotedNode_4374_1;
+        quotedNode1_4374_1.setReferent("conceptDeclaraton", (SNode) parameter_4374_0);
+        result = quotedNode1_4374_1;
       }
       return result;
     }
@@ -131,12 +131,12 @@ public class typeOf_Concept_FindInstances_InferenceRule extends AbstractInferenc
     public SNode createNode(Object parameter_4374_1, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_78 = null;
+      SNode quotedNode_4374_2 = null;
       {
-        quotedNode_78 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_78 = quotedNode_78;
-        quotedNode1_78.setReferent("elementConcept", (SNode) parameter_4374_1);
-        result = quotedNode1_78;
+        quotedNode_4374_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4374_2 = quotedNode_4374_2;
+        quotedNode1_4374_2.setReferent("elementConcept", (SNode) parameter_4374_1);
+        result = quotedNode1_4374_2;
       }
       return result;
     }
@@ -144,12 +144,12 @@ public class typeOf_Concept_FindInstances_InferenceRule extends AbstractInferenc
     public SNode createNode(Object parameter_4374_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_78 = null;
+      SNode quotedNode_4374_2 = null;
       {
-        quotedNode_78 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_78 = quotedNode_78;
-        quotedNode1_78.setReferent("elementConcept", (SNode) parameter_4374_1);
-        result = quotedNode1_78;
+        quotedNode_4374_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4374_2 = quotedNode_4374_2;
+        quotedNode1_4374_2.setReferent("elementConcept", (SNode) parameter_4374_1);
+        result = quotedNode1_4374_2;
       }
       return result;
     }

@@ -49,18 +49,18 @@ public class typeof_SplitOperation_InferenceRule extends AbstractInferenceRule_R
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9 = null;
-      SNode quotedNode_10 = null;
+      SNode quotedNode_8559_0 = null;
+      SNode quotedNode_8559_1 = null;
       {
-        quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9 = quotedNode_9;
-        quotedNode1_9.addReference(SReference.create("classifier", quotedNode1_9, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~List")));
+        quotedNode_8559_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8559_0 = quotedNode_8559_0;
+        quotedNode1_8559_0.addReference(SReference.create("classifier", quotedNode1_8559_0, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~List")));
         {
-          quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_10 = quotedNode_10;
-          quotedNode_9.addChild("parameter", quotedNode1_10);
+          quotedNode_8559_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_8559_1 = quotedNode_8559_1;
+          quotedNode_8559_0.addChild("parameter", quotedNode1_8559_1);
         }
-        result = quotedNode1_9;
+        result = quotedNode1_8559_0;
       }
       return result;
     }
@@ -68,18 +68,18 @@ public class typeof_SplitOperation_InferenceRule extends AbstractInferenceRule_R
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_9 = null;
-      SNode quotedNode_10 = null;
+      SNode quotedNode_8559_0 = null;
+      SNode quotedNode_8559_1 = null;
       {
-        quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9 = quotedNode_9;
-        quotedNode1_9.addReference(SReference.create("classifier", quotedNode1_9, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~List")));
+        quotedNode_8559_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8559_0 = quotedNode_8559_0;
+        quotedNode1_8559_0.addReference(SReference.create("classifier", quotedNode1_8559_0, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~List")));
         {
-          quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_10 = quotedNode_10;
-          quotedNode_9.addChild("parameter", quotedNode1_10);
+          quotedNode_8559_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_8559_1 = quotedNode_8559_1;
+          quotedNode_8559_0.addChild("parameter", quotedNode1_8559_1);
         }
-        result = quotedNode1_9;
+        result = quotedNode1_8559_0;
       }
       return result;
     }
