@@ -57,12 +57,12 @@ public class typeOf_CoerceExpression_InferenceRule extends AbstractInferenceRule
     public SNode createNode(Object parameter_6631_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_11 = null;
+      SNode quotedNode_6631_0 = null;
       {
-        quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_11 = quotedNode_11;
-        quotedNode1_11.setReferent("concept", (SNode) parameter_6631_0);
-        result = quotedNode1_11;
+        quotedNode_6631_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6631_0 = quotedNode_6631_0;
+        quotedNode1_6631_0.setReferent("concept", (SNode) parameter_6631_0);
+        result = quotedNode1_6631_0;
       }
       return result;
     }
@@ -70,12 +70,12 @@ public class typeOf_CoerceExpression_InferenceRule extends AbstractInferenceRule
     public SNode createNode(Object parameter_6631_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_11 = null;
+      SNode quotedNode_6631_0 = null;
       {
-        quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_11 = quotedNode_11;
-        quotedNode1_11.setReferent("concept", (SNode) parameter_6631_0);
-        result = quotedNode1_11;
+        quotedNode_6631_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6631_0 = quotedNode_6631_0;
+        quotedNode1_6631_0.setReferent("concept", (SNode) parameter_6631_0);
+        result = quotedNode1_6631_0;
       }
       return result;
     }

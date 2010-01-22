@@ -57,12 +57,12 @@ public class RulesUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_57 = null;
+      SNode quotedNode_5639_0 = null;
       {
-        quotedNode_57 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_57 = quotedNode_57;
-        quotedNode1_57.addReference(SReference.create("classifier", quotedNode1_57, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), SNodeId.fromString("1196177069451")));
-        result = quotedNode1_57;
+        quotedNode_5639_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5639_0 = quotedNode_5639_0;
+        quotedNode1_5639_0.addReference(SReference.create("classifier", quotedNode1_5639_0, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), SNodeId.fromString("1196177069451")));
+        result = quotedNode1_5639_0;
       }
       return result;
     }
@@ -75,12 +75,12 @@ public class RulesUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_58 = null;
+      SNode quotedNode_5639_1 = null;
       {
-        quotedNode_58 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_58 = quotedNode_58;
-        quotedNode1_58.addReference(SReference.create("classifier", quotedNode1_58, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), SNodeId.fromString("1196177069451")));
-        result = quotedNode1_58;
+        quotedNode_5639_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5639_1 = quotedNode_5639_1;
+        quotedNode1_5639_1.addReference(SReference.create("classifier", quotedNode1_5639_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), SNodeId.fromString("1196177069451")));
+        result = quotedNode1_5639_1;
       }
       return result;
     }
@@ -93,12 +93,12 @@ public class RulesUtil {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_59 = null;
+      SNode quotedNode_5639_2 = null;
       {
-        quotedNode_59 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_59 = quotedNode_59;
-        quotedNode1_59.addReference(SReference.create("classifier", quotedNode1_59, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), SNodeId.fromString("1223644778913")));
-        result = quotedNode1_59;
+        quotedNode_5639_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_5639_2 = quotedNode_5639_2;
+        quotedNode1_5639_2.addReference(SReference.create("classifier", quotedNode1_5639_2, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), SNodeId.fromString("1223644778913")));
+        result = quotedNode1_5639_2;
       }
       return result;
     }

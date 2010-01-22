@@ -48,11 +48,11 @@ public class typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule extends 
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_56 = null;
+      SNode quotedNode_0105_0 = null;
       {
-        quotedNode_56 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_56 = quotedNode_56;
-        result = quotedNode1_56;
+        quotedNode_0105_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0105_0 = quotedNode_0105_0;
+        result = quotedNode1_0105_0;
       }
       return result;
     }
@@ -60,11 +60,11 @@ public class typeof_OverloadedOpTypeRule_OneTypeSpecified_InferenceRule extends 
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_56 = null;
+      SNode quotedNode_0105_0 = null;
       {
-        quotedNode_56 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_56 = quotedNode_56;
-        result = quotedNode1_56;
+        quotedNode_0105_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0105_0 = quotedNode_0105_0;
+        result = quotedNode1_0105_0;
       }
       return result;
     }

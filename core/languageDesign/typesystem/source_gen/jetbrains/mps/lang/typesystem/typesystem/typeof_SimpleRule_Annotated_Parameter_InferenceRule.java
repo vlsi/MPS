@@ -58,11 +58,11 @@ public class typeof_SimpleRule_Annotated_Parameter_InferenceRule extends Abstrac
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_28 = null;
+      SNode quotedNode_6117_0 = null;
       {
-        quotedNode_28 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_28 = quotedNode_28;
-        result = quotedNode1_28;
+        quotedNode_6117_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6117_0 = quotedNode_6117_0;
+        result = quotedNode1_6117_0;
       }
       return result;
     }
@@ -70,11 +70,11 @@ public class typeof_SimpleRule_Annotated_Parameter_InferenceRule extends Abstrac
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_28 = null;
+      SNode quotedNode_6117_0 = null;
       {
-        quotedNode_28 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_28 = quotedNode_28;
-        result = quotedNode1_28;
+        quotedNode_6117_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6117_0 = quotedNode_6117_0;
+        result = quotedNode1_6117_0;
       }
       return result;
     }
@@ -87,12 +87,12 @@ public class typeof_SimpleRule_Annotated_Parameter_InferenceRule extends Abstrac
     public SNode createNode(Object parameter_6117_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_29 = null;
+      SNode quotedNode_6117_1 = null;
       {
-        quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_29 = quotedNode_29;
-        quotedNode1_29.setReferent("concept", (SNode) parameter_6117_0);
-        result = quotedNode1_29;
+        quotedNode_6117_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6117_1 = quotedNode_6117_1;
+        quotedNode1_6117_1.setReferent("concept", (SNode) parameter_6117_0);
+        result = quotedNode1_6117_1;
       }
       return result;
     }
@@ -100,12 +100,12 @@ public class typeof_SimpleRule_Annotated_Parameter_InferenceRule extends Abstrac
     public SNode createNode(Object parameter_6117_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_29 = null;
+      SNode quotedNode_6117_1 = null;
       {
-        quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_29 = quotedNode_29;
-        quotedNode1_29.setReferent("concept", (SNode) parameter_6117_0);
-        result = quotedNode1_29;
+        quotedNode_6117_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_6117_1 = quotedNode_6117_1;
+        quotedNode1_6117_1.setReferent("concept", (SNode) parameter_6117_0);
+        result = quotedNode1_6117_1;
       }
       return result;
     }
