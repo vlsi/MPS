@@ -84,20 +84,16 @@ public class MPSPlugin {
 
   public boolean isIDEAPresent() {
     try {
-      IIDEAHandler handler;
-      try {
-        IMPSPlugin plugin = getPlugin();
-        handler = plugin == null ? null : plugin.getProjectCreator();
-      } catch (RemoteException e) {
-        handler = null;
-      }
+      IMPSPlugin plugin = getPlugin();
+      IIDEAHandler handler = plugin == null ? null : plugin.getProjectCreator();
 
       boolean result = handler != null;
       if (result) {
         handler.ping();
       }
+
       return result;
-    } catch (Throwable t) {
+    } catch (RemoteException e) {
       return false;
     }
   }
