@@ -27,8 +27,6 @@ import java.rmi.RemoteException;
 public class MPSPlugin {
   private static final Logger LOG = Logger.getLogger(MPSPlugin.class);
 
-  //---singleton stuff---
-
   private static MPSPlugin ourInstance;
 
   public static MPSPlugin getInstance() {
@@ -38,15 +36,12 @@ public class MPSPlugin {
     return ourInstance;
   }
 
-  //---plugin---
+  private MPSPlugin() {
 
-  public static final int PORT = 23239;
+  }
+
   private IMPSPlugin myPlugin = null;
   private boolean myMessageShown = false;
-
-  private MPSPlugin() {
-    getPlugin();
-  }
 
   private IMPSPlugin getPlugin() {
     if (checkIsConnected()) return myPlugin;
@@ -74,7 +69,7 @@ public class MPSPlugin {
   }
 
   public boolean checkIsConnected() {
-    assert !ThreadUtils.isEventDispatchThread();
+    LOG.assertLog(!ThreadUtils.isEventDispatchThread());
 
     if (myPlugin != null) {
       try {
@@ -90,12 +85,11 @@ public class MPSPlugin {
   public boolean isIDEAPresent() {
     try {
       IIDEAHandler ideaHandler = getIDEAHandler();
-      if (ideaHandler != null) {
+      boolean result = ideaHandler != null;
+      if (result) {
         ideaHandler.ping();
-        return true;
-      } else {
-        return false;
       }
+      return result;
     } catch (Throwable t) {
       return false;
     }
@@ -103,11 +97,8 @@ public class MPSPlugin {
 
   public IIDEAHandler getIDEAHandler() {
     try {
-      if (getPlugin() != null) {
-        return getPlugin().getProjectCreator();
-      } else {
-        return null;
-      }
+      IMPSPlugin plugin = getPlugin();
+      return plugin == null ? null : plugin.getProjectCreator();
     } catch (RemoteException e) {
       return null;
     }
