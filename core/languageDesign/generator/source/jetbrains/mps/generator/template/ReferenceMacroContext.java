@@ -58,4 +58,9 @@ public class ReferenceMacroContext extends TemplateQueryContext {
     }
     return null;
   }
+
+  public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNode inputNode, SNode outputNode, String label) {
+    if (inputNode == null) return null;
+    return getGenerator().findOutputNodeByInputNodeAndOutputNodeAndMappingName(inputNode, outputNode, label);
+  }
 }
