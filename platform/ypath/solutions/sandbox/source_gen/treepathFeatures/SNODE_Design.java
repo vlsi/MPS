@@ -52,12 +52,12 @@ public class SNODE_Design {
       public SNode createNode(Object parameter_4037_0) {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_0 = null;
+        SNode quotedNode_4037_0 = null;
         {
-          quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_0 = quotedNode_0;
-          quotedNode1_0.setReferent("concept", (SNode) parameter_4037_0);
-          result = quotedNode1_0;
+          quotedNode_4037_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_4037_0 = quotedNode_4037_0;
+          quotedNode1_4037_0.setReferent("concept", (SNode) parameter_4037_0);
+          result = quotedNode1_4037_0;
         }
         return result;
       }
@@ -99,12 +99,12 @@ public class SNODE_Design {
       public SNode createNode(Object parameter_4037_1) {
         SNode result = null;
         Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-        SNode quotedNode_1 = null;
+        SNode quotedNode_4037_1 = null;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_1 = quotedNode_1;
-          quotedNode1_1.setReferent("concept", (SNode) parameter_4037_1);
-          result = quotedNode1_1;
+          quotedNode_4037_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_4037_1 = quotedNode_4037_1;
+          quotedNode1_4037_1.setReferent("concept", (SNode) parameter_4037_1);
+          result = quotedNode1_4037_1;
         }
         return result;
       }
