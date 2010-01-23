@@ -249,13 +249,13 @@ public class Annotation_Editor extends DefaultNodeEditor {
     }
 
     private EditorCell createConstant_9459_2(EditorContext editorContext, SNode node) {
-      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "<< methods >>");
+      EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "");
       editorCell.setCellId("Constant_9459_2");
       {
         Style style = editorCell.getStyle();
-        style.set(StyleAttributes.SELECTABLE, true);
+        style.set(StyleAttributes.EDITABLE, true);
       }
-      editorCell.setDefaultText("");
+      editorCell.setDefaultText("<<methods>>");
       return editorCell;
     }
   }

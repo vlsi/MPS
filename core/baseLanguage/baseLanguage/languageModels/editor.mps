@@ -10801,8 +10801,8 @@
         <property name="vertical:32" value="false" />
         <link role="relationDeclaration:32" targetNodeId="17.1188206594042:3" />
         <node role="emptyCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1188206420425">
-          <property name="text:32" value="&lt;&lt; methods &gt;&gt;" />
-          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.SelectableStyleSheetItem:32" id="1214310997249">
+          <property name="nullText:32" value="&lt;&lt;methods&gt;&gt;" />
+          <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.EditableStyleClassItem:32" id="8060376756091101360">
             <property name="flag:32" value="true" />
           </node>
         </node>
