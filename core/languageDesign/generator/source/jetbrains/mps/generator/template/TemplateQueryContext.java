@@ -108,7 +108,7 @@ public class TemplateQueryContext {
 
   public SNode getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNode inputNode, SNode outputNode, String label) {
     if (inputNode == null) return null;
-    return getOutputNodeByInputNodeAndMappingLabel(inputNode, label);
+    return getOutputNodeByInputNodeAndMappingLabel(inputNode, label); //output node ignored
   }
 
   public List<SNode> getAllOutputNodesByInputNodeAndMappingLabel(SNode inputNode, String label) {
