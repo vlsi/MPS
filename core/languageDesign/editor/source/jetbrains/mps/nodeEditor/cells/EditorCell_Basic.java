@@ -68,7 +68,7 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   private EditorCell_Collection myParent = null;
   private SNode myNode;
-  private NodeSubstituteInfo mySubstitueInfo;
+  private NodeSubstituteInfo mySubstituteInfo;
   private Map<CellActionType, EditorCellAction> myActionMap = new ListMap<CellActionType, EditorCellAction>();  
 
   private Style myStyle = new Style(this);
@@ -628,15 +628,15 @@ public abstract class EditorCell_Basic implements EditorCell {
     return new NodeSubstitutePatternEditor();
   }
 
-  public void setSubstituteInfo(NodeSubstituteInfo substitueInfo) {
-    mySubstitueInfo = substitueInfo;
-    if (mySubstitueInfo != null) {
-      mySubstitueInfo.setOriginalNode(getSNode());
+  public void setSubstituteInfo(NodeSubstituteInfo substituteInfo) {
+    mySubstituteInfo = substituteInfo;
+    if (mySubstituteInfo != null) {
+      mySubstituteInfo.setOriginalNode(getSNode());
     }
   }
 
   public NodeSubstituteInfo getSubstituteInfo() {
-    return mySubstitueInfo;
+    return mySubstituteInfo;
   }
 
   public void paint(Graphics g) {
