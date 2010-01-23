@@ -23,4 +23,24 @@ public class PatternVarsUtil {
     }
     return null;
   }
+
+  public static boolean fieldTypeHasParameter(SNode patternVar) {
+    return SNodeOperations.isInstanceOf(patternVar, "jetbrains.mps.lang.pattern.structure.ListPattern");
+  }
+
+  public static SNode getFieldTypeReference(SNode patternVar) {
+    if (SNodeOperations.isInstanceOf(patternVar, "jetbrains.mps.lang.pattern.structure.ListPattern")) {
+      return SNodeOperations.getNode("f:java_stub#java.util(java.util@java_stub)", "~List");
+    }
+    if (SNodeOperations.isInstanceOf(patternVar, "jetbrains.mps.lang.pattern.structure.PatternVariableDeclaration")) {
+      return SNodeOperations.getNode("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)", "~SNode");
+    }
+    if (SNodeOperations.isInstanceOf(patternVar, "jetbrains.mps.lang.pattern.structure.LinkPatternVariableDeclaration")) {
+      return SNodeOperations.getNode("f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)", "~SNode");
+    }
+    if (SNodeOperations.isInstanceOf(patternVar, "jetbrains.mps.lang.pattern.structure.PropertyPatternVariableDeclaration")) {
+      return SNodeOperations.getNode("f:java_stub#java.lang(java.lang@java_stub)", "~String");
+    }
+    return null;
+  }
 }
