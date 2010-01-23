@@ -44,7 +44,9 @@ import org.jetbrains.annotations.NotNull;
 import java.io.PrintWriter;
 import java.io.StringWriter;
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -112,6 +114,8 @@ public class ProjectTester {
             }
           });
           final Class testClass = Class.forName(className, true, classLoader);
+          if (Modifier.isAbstract(testClass.getModifiers()) || Modifier.isInterface(testClass.getModifiers())) continue;
+          if (Modifier.isPrivate(testClass.getModifiers())) continue;
           if (testClass.getAnnotation(classLoader.loadClass(MPSLaunch.class.getName())) != null) continue;
 
           List<Method> testMethods = new ArrayList<Method>();
@@ -134,6 +138,7 @@ public class ProjectTester {
               runMethod.invoke(instance, testResult);
             } catch (Throwable ignored) {
               // if one test fails, we still want to try to run the others
+              System.err.println(testClass.getCanonicalName() + ":");
               ignored.printStackTrace();
             }
           }
