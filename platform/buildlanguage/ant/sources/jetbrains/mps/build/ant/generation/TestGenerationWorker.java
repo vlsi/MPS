@@ -1,25 +1,24 @@
 package jetbrains.mps.build.ant.generation;
 
+import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.GenerationAdapter;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
-import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.project.*;
+import jetbrains.mps.reloading.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.util.Pair;
 import junit.framework.*;
+import junit.framework.TestResult;
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.BuildException;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ProjectTester;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.tester.TesterGenerationHandler;
@@ -39,6 +38,7 @@ import jetbrains.mps.TestMain;
 
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.net.URLClassLoader;
 import java.util.*;
 import java.io.*;
 
@@ -346,7 +346,40 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
 
     public ClassLoader getClassLoader() {
-      return ClassLoaderManager.getInstance().getClassLoaderFor(myModule);
+      IClassPathItem cp = ModelAccess.instance().runReadAction(new Computable<IClassPathItem>(){
+        @Override
+        public IClassPathItem compute() {
+          return AbstractModule.getDependenciesClasspath(Collections.singleton(myModule), false, false);
+        }
+      });
+      List<URL> cpUrls = new ArrayList<URL>();
+      classPathItemToUrl(cp, cpUrls);
+      URLClassLoader classloader = new URLClassLoader(cpUrls.toArray(new URL[cpUrls.size()]), ApplicationManager.class.getClassLoader());
+      return classloader;
+    }
+
+    private void classPathItemToUrl(final IClassPathItem cp, final List<URL> cpUrls) {
+      cp.accept(new EachClassPathItemVisitor() {
+        @Override
+        public void visit(FileClassPathItem cpItem) {
+          File path = new File(cpItem.getClassPath());
+          try {
+            cpUrls.add(new URL("file:///" + path + (path.isDirectory() ? "/" : "")));
+          } catch (MalformedURLException e) {
+            log(e);
+          }
+        }
+
+        @Override
+        public void visit(JarFileClassPathItem cpItem) {
+          File path = new File(cpItem.getFile().getAbsolutePath());
+          try {
+            cpUrls.add(new URL("file:///" + path + (path.isDirectory() ? "/" : "")));
+          } catch (MalformedURLException e) {
+            log(e);
+          }
+        }
+      });
     }
 
     @Override
