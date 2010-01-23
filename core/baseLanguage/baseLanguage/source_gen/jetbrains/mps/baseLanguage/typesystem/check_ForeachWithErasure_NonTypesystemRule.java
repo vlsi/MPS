@@ -4,17 +4,20 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.intentions.BaseIntentionProvider;
 import jetbrains.mps.typesystem.inference.IErrorTarget;
 import jetbrains.mps.typesystem.inference.NodeErrorTarget;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.project.GlobalScope;
@@ -23,6 +26,8 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
 public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
+  private static SNodePointer SNODE_POINTER10 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+
   public check_ForeachWithErasure_NonTypesystemRule() {
   }
 
@@ -32,7 +37,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
       return;
     }
     {
-      _Patterns.Pattern_11 pattern_0 = new _Patterns.Pattern_11();
+      GeneratedMatchingPattern pattern_0 = new check_ForeachWithErasure_NonTypesystemRule.Pattern_10();
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(iterableType, pattern_0, typeCheckingContext);
       if (coercedNode_0 != null) {
       } else {
@@ -58,6 +63,59 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
 
   public boolean overrides() {
     return false;
+  }
+
+  public static class Pattern_10 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode PatternVar_p;
+
+    public Pattern_10() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_3248_0;
+        nodeToMatch_3248_0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_3248_0.getConceptFqName()))) {
+          return false;
+        }
+        {
+          SNode referent;
+          referent = SNODE_POINTER10.getNode();
+          if (nodeToMatch_3248_0.getReferent("classifier") != referent) {
+            return false;
+          }
+        }
+        {
+          String childRole3248_0 = "parameter";
+          if (nodeToMatch_3248_0.getChildCount(childRole3248_0) != 1) {
+            return false;
+          }
+          {
+            this.PatternVar_p = null;
+            SNode childVar_3248_0 = nodeToMatch_3248_0.getChildren(childRole3248_0).get(0);
+            this.PatternVar_p = childVar_3248_0;
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
+        this.PatternVar_p = (SNode) pattern.getFieldValue("PatternVar_p");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("PatternVar_p".equals(fieldName)) {
+        return this.PatternVar_p;
+      }
+      return null;
+    }
   }
 
   public static class QuotationClass_9843_0 {

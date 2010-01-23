@@ -4,9 +4,11 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -16,13 +18,15 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+  private static SNodePointer SNODE_POINTER6 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~SortedMap");
+
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public SortedMap_comparableTo_sorted_map_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode sortedMap, TypeCheckingContext typeCheckingContext) {
-    return new SortedMap_comparableTo_sorted_map_SubtypingRule.QuotationClass_1640_0().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar10")), ((SNode) this.myMatchingPattern.getFieldValue("PatternVar9")), typeCheckingContext);
+    return new SortedMap_comparableTo_sorted_map_SubtypingRule.QuotationClass_1640_0().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_VALUE")), ((SNode) this.myMatchingPattern.getFieldValue("PatternVar_KEY")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -30,12 +34,75 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new _Patterns.Pattern_8();
+    this.myMatchingPattern = new SortedMap_comparableTo_sorted_map_SubtypingRule.Pattern_8();
     return this.myMatchingPattern.match(argument);
   }
 
   public boolean isWeak() {
     return true;
+  }
+
+  public static class Pattern_8 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode PatternVar_KEY;
+    /*package*/ SNode PatternVar_VALUE;
+
+    public Pattern_8() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_4468_0;
+        nodeToMatch_4468_0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_4468_0.getConceptFqName()))) {
+          return false;
+        }
+        {
+          SNode referent;
+          referent = SNODE_POINTER6.getNode();
+          if (nodeToMatch_4468_0.getReferent("classifier") != referent) {
+            return false;
+          }
+        }
+        {
+          String childRole4468_0 = "parameter";
+          if (nodeToMatch_4468_0.getChildCount(childRole4468_0) != 2) {
+            return false;
+          }
+          {
+            this.PatternVar_KEY = null;
+            SNode childVar_4468_0 = nodeToMatch_4468_0.getChildren(childRole4468_0).get(0);
+            this.PatternVar_KEY = childVar_4468_0;
+          }
+          {
+            this.PatternVar_VALUE = null;
+            SNode childVar_4468_1 = nodeToMatch_4468_0.getChildren(childRole4468_0).get(1);
+            this.PatternVar_VALUE = childVar_4468_1;
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
+        this.PatternVar_KEY = (SNode) pattern.getFieldValue("PatternVar_KEY");
+        this.PatternVar_VALUE = (SNode) pattern.getFieldValue("PatternVar_VALUE");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("PatternVar_KEY".equals(fieldName)) {
+        return this.PatternVar_KEY;
+      }
+      if ("PatternVar_VALUE".equals(fieldName)) {
+        return this.PatternVar_VALUE;
+      }
+      return null;
+    }
   }
 
   public static class QuotationClass_1640_0 {

@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -22,7 +23,7 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public SNode getSubOrSuperType(SNode set, TypeCheckingContext typeCheckingContext) {
-    return new sequence_supertypeOf_set_SubtypingRule.QuotationClass_2757_0().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar5")), typeCheckingContext);
+    return new sequence_supertypeOf_set_SubtypingRule.QuotationClass_2757_0().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_elementType")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -30,12 +31,58 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new _Patterns.Pattern_4();
+    this.myMatchingPattern = new sequence_supertypeOf_set_SubtypingRule.Pattern_4();
     return this.myMatchingPattern.match(argument);
   }
 
   public boolean isWeak() {
     return false;
+  }
+
+  public static class Pattern_4 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode PatternVar_elementType;
+
+    public Pattern_4() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_6831_0;
+        nodeToMatch_6831_0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SetType".equals(nodeToMatch_6831_0.getConceptFqName()))) {
+          return false;
+        }
+        {
+          String childRole6831_0 = "elementType";
+          if (nodeToMatch_6831_0.getChildCount(childRole6831_0) != 1) {
+            return false;
+          }
+          {
+            this.PatternVar_elementType = null;
+            SNode childVar_6831_0 = nodeToMatch_6831_0.getChildren(childRole6831_0).get(0);
+            this.PatternVar_elementType = childVar_6831_0;
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
+        this.PatternVar_elementType = (SNode) pattern.getFieldValue("PatternVar_elementType");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("PatternVar_elementType".equals(fieldName)) {
+        return this.PatternVar_elementType;
+      }
+      return null;
+    }
   }
 
   public static class QuotationClass_2757_0 {

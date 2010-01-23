@@ -4,9 +4,11 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -16,13 +18,15 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+  private static SNodePointer SNODE_POINTER2 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~Map");
+
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public java_util_Map_extends_map_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode mapType, TypeCheckingContext typeCheckingContext) {
-    return new java_util_Map_extends_map_SubtypingRule.QuotationClass_7495_0().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar2")), ((SNode) this.myMatchingPattern.getFieldValue("PatternVar3")), typeCheckingContext);
+    return new java_util_Map_extends_map_SubtypingRule.QuotationClass_7495_0().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_keyType")), ((SNode) this.myMatchingPattern.getFieldValue("PatternVar_valueType")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -30,12 +34,75 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new _Patterns.Pattern_2();
+    this.myMatchingPattern = new java_util_Map_extends_map_SubtypingRule.Pattern_2();
     return this.myMatchingPattern.match(argument);
   }
 
   public boolean isWeak() {
     return true;
+  }
+
+  public static class Pattern_2 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode PatternVar_keyType;
+    /*package*/ SNode PatternVar_valueType;
+
+    public Pattern_2() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_1123_0;
+        nodeToMatch_1123_0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_1123_0.getConceptFqName()))) {
+          return false;
+        }
+        {
+          SNode referent;
+          referent = SNODE_POINTER2.getNode();
+          if (nodeToMatch_1123_0.getReferent("classifier") != referent) {
+            return false;
+          }
+        }
+        {
+          String childRole1123_0 = "parameter";
+          if (nodeToMatch_1123_0.getChildCount(childRole1123_0) != 2) {
+            return false;
+          }
+          {
+            this.PatternVar_keyType = null;
+            SNode childVar_1123_0 = nodeToMatch_1123_0.getChildren(childRole1123_0).get(0);
+            this.PatternVar_keyType = childVar_1123_0;
+          }
+          {
+            this.PatternVar_valueType = null;
+            SNode childVar_1123_1 = nodeToMatch_1123_0.getChildren(childRole1123_0).get(1);
+            this.PatternVar_valueType = childVar_1123_1;
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
+        this.PatternVar_keyType = (SNode) pattern.getFieldValue("PatternVar_keyType");
+        this.PatternVar_valueType = (SNode) pattern.getFieldValue("PatternVar_valueType");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("PatternVar_keyType".equals(fieldName)) {
+        return this.PatternVar_keyType;
+      }
+      if ("PatternVar_valueType".equals(fieldName)) {
+        return this.PatternVar_valueType;
+      }
+      return null;
+    }
   }
 
   public static class QuotationClass_7495_0 {

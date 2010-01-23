@@ -25,7 +25,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SearchScopeOperations;
 import java.util.List;
 
 public class ReferenceMacroContext extends TemplateQueryContext {
-  private static boolean HEURISTICS_ON = false;
+  private static boolean HEURISTICS_ON = true;
 
   private SNode myOutputNode;
   private SNode myMacro;

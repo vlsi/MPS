@@ -4,9 +4,11 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -16,13 +18,15 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+  private static SNodePointer SNODE_POINTER7 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~SortedSet");
+
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public SortedSet_comparableTo_sorted_set_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode sortedSet, TypeCheckingContext typeCheckingContext) {
-    return new SortedSet_comparableTo_sorted_set_SubtypingRule.QuotationClass_1012_0().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar11")), typeCheckingContext);
+    return new SortedSet_comparableTo_sorted_set_SubtypingRule.QuotationClass_1012_0().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_ELEMENT")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -30,12 +34,65 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new _Patterns.Pattern_9();
+    this.myMatchingPattern = new SortedSet_comparableTo_sorted_set_SubtypingRule.Pattern_9();
     return this.myMatchingPattern.match(argument);
   }
 
   public boolean isWeak() {
     return true;
+  }
+
+  public static class Pattern_9 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode PatternVar_ELEMENT;
+
+    public Pattern_9() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_3616_0;
+        nodeToMatch_3616_0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_3616_0.getConceptFqName()))) {
+          return false;
+        }
+        {
+          SNode referent;
+          referent = SNODE_POINTER7.getNode();
+          if (nodeToMatch_3616_0.getReferent("classifier") != referent) {
+            return false;
+          }
+        }
+        {
+          String childRole3616_0 = "parameter";
+          if (nodeToMatch_3616_0.getChildCount(childRole3616_0) != 1) {
+            return false;
+          }
+          {
+            this.PatternVar_ELEMENT = null;
+            SNode childVar_3616_0 = nodeToMatch_3616_0.getChildren(childRole3616_0).get(0);
+            this.PatternVar_ELEMENT = childVar_3616_0;
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
+        this.PatternVar_ELEMENT = (SNode) pattern.getFieldValue("PatternVar_ELEMENT");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("PatternVar_ELEMENT".equals(fieldName)) {
+        return this.PatternVar_ELEMENT;
+      }
+      return null;
+    }
   }
 
   public static class QuotationClass_1012_0 {

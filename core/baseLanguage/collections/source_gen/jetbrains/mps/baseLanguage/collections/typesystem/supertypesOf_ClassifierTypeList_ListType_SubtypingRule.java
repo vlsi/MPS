@@ -4,9 +4,11 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -16,13 +18,15 @@ import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+  private static SNodePointer SNODE_POINTER0 = new SNodePointer("f:java_stub#java.util(java.util@java_stub)", "~List");
+
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public supertypesOf_ClassifierTypeList_ListType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode node, TypeCheckingContext typeCheckingContext) {
-    return new supertypesOf_ClassifierTypeList_ListType_SubtypingRule.QuotationClass_1656_0().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar0")), typeCheckingContext);
+    return new supertypesOf_ClassifierTypeList_ListType_SubtypingRule.QuotationClass_1656_0().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_elemType")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -30,12 +34,65 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new _Patterns.Pattern_0();
+    this.myMatchingPattern = new supertypesOf_ClassifierTypeList_ListType_SubtypingRule.Pattern_0();
     return this.myMatchingPattern.match(argument);
   }
 
   public boolean isWeak() {
     return true;
+  }
+
+  public static class Pattern_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode PatternVar_elemType;
+
+    public Pattern_0() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_9060_0;
+        nodeToMatch_9060_0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_9060_0.getConceptFqName()))) {
+          return false;
+        }
+        {
+          SNode referent;
+          referent = SNODE_POINTER0.getNode();
+          if (nodeToMatch_9060_0.getReferent("classifier") != referent) {
+            return false;
+          }
+        }
+        {
+          String childRole9060_0 = "parameter";
+          if (nodeToMatch_9060_0.getChildCount(childRole9060_0) != 1) {
+            return false;
+          }
+          {
+            this.PatternVar_elemType = null;
+            SNode childVar_9060_0 = nodeToMatch_9060_0.getChildren(childRole9060_0).get(0);
+            this.PatternVar_elemType = childVar_9060_0;
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
+        this.PatternVar_elemType = (SNode) pattern.getFieldValue("PatternVar_elemType");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("PatternVar_elemType".equals(fieldName)) {
+        return this.PatternVar_elemType;
+      }
+      return null;
+    }
   }
 
   public static class QuotationClass_1656_0 {
