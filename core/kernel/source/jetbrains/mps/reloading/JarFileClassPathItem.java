@@ -15,14 +15,12 @@
  */
 package jetbrains.mps.reloading;
 
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.*;
 import java.net.MalformedURLException;
@@ -199,6 +197,11 @@ public class JarFileClassPathItem extends AbstractClassPathItem {
     List<IClassPathItem> result = new ArrayList<IClassPathItem>();
     result.add(this);
     return result;
+  }
+
+  @Override
+  public void accept(IClassPathItemVisitor visitor) {
+    visitor.visit(this);
   }
 
   private void buildPackageCaches(String namespace) {

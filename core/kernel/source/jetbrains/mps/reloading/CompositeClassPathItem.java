@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.reloading;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.net.URL;
 import java.util.*;
 
@@ -137,6 +135,11 @@ public class CompositeClassPathItem extends AbstractClassPathItem {
     }
 
     return result;
+  }
+
+  @Override
+  public void accept(IClassPathItemVisitor visitor) {
+    visitor.visit(this);
   }
 
   public String toString() {

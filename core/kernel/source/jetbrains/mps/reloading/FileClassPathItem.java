@@ -20,7 +20,6 @@ import jetbrains.mps.util.ReadUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.MPSExtentions;
-import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;
@@ -157,6 +156,11 @@ public class FileClassPathItem extends AbstractClassPathItem {
     List<IClassPathItem> result = new ArrayList<IClassPathItem>();
     result.add(this);
     return result;
+  }
+
+  @Override
+  public void accept(IClassPathItemVisitor visitor) {
+    visitor.visit(this);
   }
 
   public IFile getModelDir(String namespace) {

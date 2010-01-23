@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.reloading.IClassPathItem;
 import java.util.ArrayList;
-import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.reloading.EachClassPathItemVisitor;
 import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.reloading.JarFileClassPathItem;
 
@@ -41,20 +41,16 @@ public class ModuleUtil {
   }
 
   public static List<String> retrieveClassPath(IClassPathItem cpitem) {
-    List<String> result = ListSequence.fromList(new ArrayList<String>());
-    if (cpitem instanceof CompositeClassPathItem) {
-      List<IClassPathItem> flattenedClassPath = cpitem.flatten();
-      for (IClassPathItem item : ListSequence.fromList(flattenedClassPath)) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(retrieveClassPath(item)));
+    final List<String> result = ListSequence.fromList(new ArrayList<String>());
+    cpitem.accept(new EachClassPathItemVisitor() {
+      public void visit(FileClassPathItem p0) {
+        ListSequence.fromList(result).addElement(p0.getClassPath());
       }
-    } else {
-      // TODO how not to use instanceof here? 
-      if (cpitem instanceof FileClassPathItem) {
-        ListSequence.fromList(result).addElement(((FileClassPathItem) cpitem).getClassPath());
-      } else if (cpitem instanceof JarFileClassPathItem) {
-        ListSequence.fromList(result).addElement(((JarFileClassPathItem) cpitem).getIFile().getPath());
+
+      public void visit(JarFileClassPathItem p0) {
+        ListSequence.fromList(result).addElement(p0.getIFile().getPath());
       }
-    }
+    });
     return result;
   }
 }

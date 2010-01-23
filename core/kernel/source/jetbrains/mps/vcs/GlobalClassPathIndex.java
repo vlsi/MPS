@@ -22,9 +22,7 @@ import com.intellij.openapi.vcs.FilePath;
 import com.intellij.openapi.vcs.actions.VcsContextFactory;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.reloading.FileClassPathItem;
-import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.*;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryAdapter;
@@ -108,18 +106,16 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   }
 
 
-  private void updateClassPath(IModule module, IClassPathItem item) {
-    if (item instanceof CompositeClassPathItem) {
-      List<IClassPathItem> children = ((CompositeClassPathItem) item).getChildren();
-      for (IClassPathItem child : children) {
-        updateClassPath(module, child);
+  private void updateClassPath(final IModule module, final IClassPathItem item) {
+    item.accept(new EachClassPathItemVisitor() {
+      @Override
+      public void visit(FileClassPathItem cpItem) {
+        String classPath = cpItem.getClassPath();
+        if (new File(classPath).isDirectory()) {
+          dealWithClassPathOnModuleInit(module, classPath);
+        }
       }
-    } else if (item instanceof FileClassPathItem) {
-      String classPath = ((FileClassPathItem) item).getClassPath();
-      if (new File(classPath).isDirectory()) {
-        dealWithClassPathOnModuleInit(module, classPath);
-      }
-    }
+    });
   }
 
   private void dealWithClassPathOnModuleInit(IModule module, String classPathFile) {
@@ -154,18 +150,16 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     unexcludeClassPath(module, module.getClassPathItem());
   }
 
-  private void unexcludeClassPath(IModule module, IClassPathItem item) {
-    if (item instanceof CompositeClassPathItem) {
-      List<IClassPathItem> children = ((CompositeClassPathItem) item).getChildren();
-      for (IClassPathItem child : children) {
-        unexcludeClassPath(module, child);
+  private void unexcludeClassPath(final IModule module, IClassPathItem item) {
+    item.accept(new EachClassPathItemVisitor() {
+      @Override
+      public void visit(FileClassPathItem cpItem) {
+        String classPath = cpItem.getClassPath();
+        if (new File(classPath).isDirectory()) {
+          dealWithClassPathOnModuleRemove(module, classPath);
+        }
       }
-    } else if (item instanceof FileClassPathItem) {
-      String classPath = ((FileClassPathItem) item).getClassPath();
-      if (new File(classPath).isDirectory()) {
-        dealWithClassPathOnModuleRemove(module, classPath);
-      }
-    }
+    });
   }
 
   private void dealWithClassPathOnModuleRemove(IModule module, String classPathFile) {
@@ -187,18 +181,16 @@ public class GlobalClassPathIndex implements ApplicationComponent {
     excludeClassPath(module, module.getClassPathItem());
   }
 
-  private void excludeClassPath(IModule module, IClassPathItem item) {
-    if (item instanceof CompositeClassPathItem) {
-      List<IClassPathItem> children = ((CompositeClassPathItem) item).getChildren();
-      for (IClassPathItem child : children) {
-        excludeClassPath(module, child);
+  private void excludeClassPath(final IModule module, IClassPathItem item) {
+    item.accept(new EachClassPathItemVisitor() {
+      @Override
+      public void visit(FileClassPathItem cpItem) {
+        String classPath = cpItem.getClassPath();
+        if (new File(classPath).isDirectory()) {
+          dealWithClassPathOnModuleAdd(module, classPath);
+        }
       }
-    } else if (item instanceof FileClassPathItem) {
-      String classPath = ((FileClassPathItem) item).getClassPath();
-      if (new File(classPath).isDirectory()) {
-        dealWithClassPathOnModuleAdd(module, classPath);
-      }
-    }
+    });
   }
 
   private void dealWithClassPathOnModuleAdd(IModule module, String classPathFile) {
