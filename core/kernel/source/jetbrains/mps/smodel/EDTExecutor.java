@@ -15,9 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
-import com.intellij.openapi.util.ShutDownTracker;
 import jetbrains.mps.logging.Logger;
 
+import javax.swing.SwingUtilities;
 import java.util.LinkedList;
 import java.util.Queue;
 
@@ -40,13 +40,6 @@ class EDTExecutor {
     myExecutor = new Executor();
     myExecutor.setDaemon(true);
     myExecutor.start();
-    ShutDownTracker.getInstance().registerShutdownTask(new Runnable() {
-
-      @Override
-      public void run() {
-        flushEventQueue();
-      }
-    });
   }
 
 
