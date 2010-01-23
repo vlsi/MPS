@@ -57,6 +57,10 @@ public class TemplateQueryContext {
   public SNode getTemplateNode() {
     return myTemplateNode;
   }
+  
+   public SNode getOutputNode() {
+     return null; //used in ref macros
+   }
 
   public SModel getInputModel() {
     return myGenerator.getInputModel();

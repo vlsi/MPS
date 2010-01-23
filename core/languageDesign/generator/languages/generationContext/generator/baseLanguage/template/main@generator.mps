@@ -230,7 +230,7 @@
             </node>
           </node>
           <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1216862267952">
-            <link role="baseMethodDeclaration:3" targetNodeId="4.~TemplateQueryContext.getOutputNodeByInputNodeAndMappingLabel(jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="getOutputNodeByInputNodeAndMappingLabel" />
+            <link role="baseMethodDeclaration:3" targetNodeId="4.~TemplateQueryContext.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(jetbrains.mps.smodel.SNode,jetbrains.mps.smodel.SNode,java.lang.String):jetbrains.mps.smodel.SNode" resolveInfo="getOutputNodeByInputNodeAndMappingLabelAndOutputNode" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1216862267953">
               <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1216862267954">
                 <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1216862267955">
@@ -245,6 +245,39 @@
                     </node>
                   </node>
                 </node>
+              </node>
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2313099001803679179">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParenthesizedExpression:3" id="2313099001803678162">
+                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="2313099001803678163">
+                  <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2313099001803678164" />
+                  <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2313099001803678165">
+                    <link role="classifier:3" targetNodeId="4.~TemplateQueryContext" resolveInfo="TemplateQueryContext" />
+                  </node>
+                </node>
+                <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="2313099001803678166">
+                  <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="2313099001803678167">
+                    <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2313099001803678168">
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="2313099001803678169">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2313099001803678170">
+                          <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression:16" id="2313099001803678171">
+                            <link role="concept:16" targetNodeId="5.1197027756228:3" resolveInfo="DotExpression" />
+                            <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2313099001803678172">
+                              <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="2313099001803678173" />
+                              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetParentOperation:16" id="2313099001803678174" />
+                            </node>
+                          </node>
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2313099001803678175">
+                            <link role="link:16" targetNodeId="5.1197027771414:3" />
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="3527005385732845261">
+                <link role="baseMethodDeclaration:3" targetNodeId="4.~TemplateQueryContext.getOutputNode():jetbrains.mps.smodel.SNode" resolveInfo="getOutputNode" />
               </node>
             </node>
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1216862267961">
