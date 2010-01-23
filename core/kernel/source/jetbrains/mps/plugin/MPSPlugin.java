@@ -44,7 +44,7 @@ public class MPSPlugin {
   private boolean myMessageShown = false;
 
   public IProjectHandler getProjectHandler(String projectPath) {
-    LOG.assertLog(!ThreadUtils.isEventDispatchThread());
+   //todo enable LOG.assertLog(!ThreadUtils.isEventDispatchThread());
     try {
       IMPSPlugin plugin = getPlugin();
       if (plugin == null) return null;
@@ -72,7 +72,7 @@ public class MPSPlugin {
   }
 
   public boolean checkIsConnected() {
-    LOG.assertLog(!ThreadUtils.isEventDispatchThread());
+   //todo enable LOG.assertLog(!ThreadUtils.isEventDispatchThread());
 
     if (myPlugin != null) {
       try {
@@ -86,7 +86,7 @@ public class MPSPlugin {
   }
 
   private IMPSPlugin getPlugin() {
-    if (checkIsConnected()) return myPlugin;
+   //todo enable if (checkIsConnected()) return myPlugin;
 
     try {
       myPlugin = (IMPSPlugin) Naming.lookup("//localhost:2390/MPSPlugin");
