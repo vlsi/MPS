@@ -11,9 +11,25 @@
         <arg value="-Xmx1000m"/>
         <arg value="-XX:MaxPermSize=92m"/>
         <arg value="-XX:+HeapDumpOnOutOfMemoryError"/>
-        <!--<arg value="-Xdebug"/>-->
-        <!--<arg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"/>-->
     </jvmargs>
+
+    <jvmargs id="debug.args">
+        <arg value="-Xdebug"/>
+        <arg value="-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5005"/>
+    </jvmargs>
+
+    <jvmargs id="mps.debug.args">
+        <jvmargs refid="mps.args"/>
+        <jvmargs refid="debug.args"/>
+    </jvmargs>
+
+    <target name="test.test">
+        <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
+                             useperrootgeneration="${per.root.generation}">
+            <jvmargs refid="mps.debug.args"/>
+            <project file="${mps.home}/core/baseLanguage/baseLanguage/baseLanguage.mpr"/>
+        </mps.test.generation>
+    </target>
 
     <target name="generation.tests">
         <mps.make fork="true" loglevel="info">
@@ -25,7 +41,7 @@
                 <exclude name="**/testMaterial/**"/>
             </modules>
         </mps.make>
-        <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="false" loglevel="info"
+        <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
                              useperrootgeneration="${per.root.generation}">
             <jvmargs refid="mps.args"/>
 
