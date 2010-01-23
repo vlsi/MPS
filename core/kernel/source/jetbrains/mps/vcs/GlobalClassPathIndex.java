@@ -178,10 +178,12 @@ public class GlobalClassPathIndex implements ApplicationComponent {
 
   private void moduleAdded(IModule module) {
     excludeClassesGen(module);
-    excludeClassPath(module, module.getClassPathItem());
+    IClassPathItem pathItem = module.getClassPathItem();
+    if (pathItem == null) return;
+    excludeClassPath(module, pathItem);
   }
 
-  private void excludeClassPath(final IModule module, IClassPathItem item) {
+  private void excludeClassPath(final IModule module, @NotNull IClassPathItem item) {
     item.accept(new EachClassPathItemVisitor() {
       @Override
       public void visit(FileClassPathItem cpItem) {
