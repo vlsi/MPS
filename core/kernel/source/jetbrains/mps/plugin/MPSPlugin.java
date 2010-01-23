@@ -43,28 +43,31 @@ public class MPSPlugin {
   private IMPSPlugin myPlugin = null;
   private boolean myMessageShown = false;
 
-  private IMPSPlugin getPlugin() {
-    if (checkIsConnected()) return myPlugin;
-
-    try {
-      myPlugin = (IMPSPlugin) Naming.lookup("//localhost:2390/MPSPlugin");
-    } catch (Exception e) {
-      if (!myMessageShown) {
-        myMessageShown = true;
-        LOG.info("Wasn't able to connect to IDEA");
-      }
-    }
-
-    return myPlugin;
-  }
-
   public IProjectHandler getProjectHandler(String projectPath) {
+    LOG.assertLog(!ThreadUtils.isEventDispatchThread());
     try {
       IMPSPlugin plugin = getPlugin();
       if (plugin == null) return null;
       return plugin.getProjectHandlerFor(projectPath);
     } catch (RemoteException e) {
       return null;
+    }
+  }
+
+  public boolean isIDEAPresent() {
+    LOG.assertLog(!ThreadUtils.isEventDispatchThread());
+    try {
+      IMPSPlugin plugin = getPlugin();
+      IIDEAHandler handler = plugin == null ? null : plugin.getProjectCreator();
+
+      boolean result = handler != null;
+      if (result) {
+        handler.ping();
+      }
+
+      return result;
+    } catch (RemoteException e) {
+      return false;
     }
   }
 
@@ -82,19 +85,18 @@ public class MPSPlugin {
     return myPlugin != null;
   }
 
-  public boolean isIDEAPresent() {
+  private IMPSPlugin getPlugin() {
+    if (checkIsConnected()) return myPlugin;
+
     try {
-      IMPSPlugin plugin = getPlugin();
-      IIDEAHandler handler = plugin == null ? null : plugin.getProjectCreator();
-
-      boolean result = handler != null;
-      if (result) {
-        handler.ping();
+      myPlugin = (IMPSPlugin) Naming.lookup("//localhost:2390/MPSPlugin");
+    } catch (Exception e) {
+      if (!myMessageShown) {
+        myMessageShown = true;
+        LOG.info("Wasn't able to connect to IDEA");
       }
-
-      return result;
-    } catch (RemoteException e) {
-      return false;
     }
+
+    return myPlugin;
   }
 }

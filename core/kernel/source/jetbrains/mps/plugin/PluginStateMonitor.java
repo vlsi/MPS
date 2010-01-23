@@ -20,22 +20,25 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.StatusBar;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.plugin.icons.Icons;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugin.icons.Icons;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
 import javax.swing.JLabel;
-import javax.swing.Timer;
 import javax.swing.SwingUtilities;
+import javax.swing.Timer;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 public class PluginStateMonitor implements ProjectComponent {
+  private static Logger LOG = Logger.getLogger(PluginStateMonitor.class);
+
   private static final int INITIAL_DELAY = 4000;
   private static final int CRITICAL_DELAY = 16000;
   private static final double DELAY_MUL = 2.0;
@@ -104,6 +107,7 @@ public class PluginStateMonitor implements ProjectComponent {
   }
 
   private void tick() {
+    LOG.assertLog(!ThreadUtils.isEventDispatchThread());
     if (myState == State.CONNECTED && isConnected()) return;
 
     if (myState == State.DISCONNECTED) {
@@ -111,15 +115,11 @@ public class PluginStateMonitor implements ProjectComponent {
         setNewState(State.CONNECTED);
         myTimer.setNewDelay(INITIAL_DELAY);
       }
-      return;
-    }
-
-    if (myState == State.CONNECTED) {
+    } else if (myState == State.CONNECTED) {
       //isConnected = false
       setNewState(State.TRYING_TO_CONNECT);
       myTimer.setNewDelay(INITIAL_DELAY);
-    } else {
-      //state = trying_to_connect
+    } else if (myState == State.TRYING_TO_CONNECT) {
       if (isConnected()) {
         setNewState(State.CONNECTED);
         myTimer.setNewDelay(INITIAL_DELAY);
