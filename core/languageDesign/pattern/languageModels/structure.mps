@@ -105,6 +105,7 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1136720037777">
     <property name="name:0" value="PatternExpression" />
     <property name="rootable:0" value="false" />
+    <link role="extends:0" targetNodeId="5.1068431790191:3" resolveInfo="Expression" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1136720037778">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="patternNode" />
