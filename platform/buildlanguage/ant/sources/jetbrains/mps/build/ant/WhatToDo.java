@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.build.ant;
 
+import jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity;
 import org.apache.tools.ant.BuildException;
 
 import java.io.*;
@@ -333,5 +334,15 @@ public class WhatToDo {
 
   public String getProperty(String name) {
     return myProperties.get(name);
+  }
+
+  public void addPerfomanceReport(String s) {
+    String reports = myProperties.get(TestGenerationOnTeamcity.GENERATE_PERFORMANCE_REPORT);
+    if (reports == null) reports = "";
+    if (!reports.isEmpty()) {
+      reports += ",";
+    }
+    reports += s;
+    myProperties.put(TestGenerationOnTeamcity.GENERATE_PERFORMANCE_REPORT, reports);    
   }
 }

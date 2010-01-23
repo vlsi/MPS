@@ -44,6 +44,7 @@
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
                              useperrootgeneration="${per.root.generation}">
             <jvmargs refid="mps.args"/>
+            <perfomancereport file="${mps.home}/generation.perfomance"/>
 
             <!-- Bootstrap tests -->
             <project file="${mps.home}/core/baseLanguage/baseLanguage/baseLanguage.mpr"/>

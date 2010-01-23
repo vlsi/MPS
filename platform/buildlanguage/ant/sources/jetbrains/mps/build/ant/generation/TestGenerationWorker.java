@@ -114,7 +114,8 @@ public class TestGenerationWorker extends GeneratorWorker {
   }
 
   private void generatePerformanceReport() {
-    if (isGeneratePerfomanceReport()) {
+    String[] destinations = getPerfomanceReportDestinations();
+    if (destinations.length > 0) {
       StringWriter w = new StringWriter();
       Formatter f = new Formatter(w);
       f.format("Generation Time Report:\n");
@@ -129,7 +130,14 @@ public class TestGenerationWorker extends GeneratorWorker {
       for (SModelDescriptor modelDescriptor : models){
         f.format("%s %dms\n", modelDescriptor.getLongName(), myPerfomanceMap.get(modelDescriptor));
       }
-      info(myBuildServerMessageFormat.escapeBuildMessage(w.toString()));
+      String report = w.toString();
+      for (String dest : destinations) {
+        if (dest.equals(PerfomanceReport.STDOUT)){
+          info(myBuildServerMessageFormat.escapeBuildMessage(report));
+        } else {
+          FileUtil.write(new File(dest), report);
+        }
+      }
     }
   }
 
@@ -167,8 +175,15 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
   }
 
+  private String[] getPerfomanceReportDestinations() {
+    String reportType = myWhatToDo.getProperty(TestGenerationOnTeamcity.GENERATE_PERFORMANCE_REPORT);
+    if (reportType == null || reportType.isEmpty()) return new String[]{};
+    String[] reports = reportType.split(",+");
+    return reports;
+  }
+
   private boolean isGeneratePerfomanceReport() {
-    return Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.GENERATE_PERFORMANCE_REPORT));
+    return getPerfomanceReportDestinations().length > 0;
   }
 
   @Override

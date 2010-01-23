@@ -14,7 +14,7 @@ public class TestGenerationOnTeamcity extends GenerateTask {
   {
     myWhatToDo.putProperty(INVOKE_TESTS, Boolean.toString(false));
     myWhatToDo.putProperty(SHOW_DIFF, Boolean.toString(false));
-    myWhatToDo.putProperty(GENERATE_PERFORMANCE_REPORT , Boolean.toString(false));
+    myWhatToDo.putProperty(GENERATE_PERFORMANCE_REPORT , "");
   }
 
   public boolean getShowDiff() {
@@ -33,12 +33,8 @@ public class TestGenerationOnTeamcity extends GenerateTask {
     myWhatToDo.putProperty(INVOKE_TESTS, Boolean.toString(invokeTests));
   }
 
-  public boolean getPerformanceReport() {
-    return Boolean.parseBoolean(myWhatToDo.getProperty(GENERATE_PERFORMANCE_REPORT));
-  }
-
-  public void setPerformanceReport(boolean generatePerfomanceReport) {
-    myWhatToDo.putProperty(GENERATE_PERFORMANCE_REPORT, Boolean.toString(generatePerfomanceReport));
+  public void addConfiguredPerfomanceReport(PerfomanceReport report) {
+    myWhatToDo.addPerfomanceReport(report.toString());
   }
 
   @Override
