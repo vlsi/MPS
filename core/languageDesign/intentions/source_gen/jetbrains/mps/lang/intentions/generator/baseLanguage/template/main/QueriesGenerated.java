@@ -73,7 +73,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_3355120809064708273(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode statementList = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false), "body", true);
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getOutputNodeByInputNodeAndMappingLabel(statementList, "methodBodyFromConceptFunction")), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).last();
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(statementList, _context.getOutputNode(), "methodBodyFromConceptFunction")), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).last();
   }
 
   public static Object referenceMacro_GetReferent_4945049520561168160(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -86,7 +86,7 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_6359146168315201254(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode statementList = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.ConceptFunction", false, false), "body", true);
-    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getOutputNodeByInputNodeAndMappingLabel(statementList, "methodBodyFromConceptFunction")), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).last();
+    return ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SNodeOperations.getParent(_context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(statementList, _context.getOutputNode(), "methodBodyFromConceptFunction")), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"), "parameter", true)).last();
   }
 
   public static boolean ifMacro_Condition_1204743248015(final IOperationContext operationContext, final IfMacroContext _context) {

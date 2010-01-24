@@ -7,6 +7,7 @@ import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -20,7 +21,7 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
   }
 
   public SNode getSubOrSuperType(SNode subtype, TypeCheckingContext typeCheckingContext) {
-    return new supertypesOf_ListType_SNodeListType_SubtypingRule.QuotationClass_0844_0().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar0")), typeCheckingContext);
+    return new supertypesOf_ListType_SNodeListType_SubtypingRule.QuotationClass_0844_0().createNode(((SNode) this.myMatchingPattern.getFieldValue("PatternVar_elem")), typeCheckingContext);
   }
 
   public String getApplicableConceptFQName() {
@@ -28,12 +29,64 @@ public class supertypesOf_ListType_SNodeListType_SubtypingRule extends Subtyping
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new _Patterns.Pattern_3();
+    this.myMatchingPattern = new supertypesOf_ListType_SNodeListType_SubtypingRule.Pattern_3();
     return this.myMatchingPattern.match(argument);
   }
 
   public boolean isWeak() {
     return false;
+  }
+
+  public static class Pattern_3 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode PatternVar_elem;
+
+    public Pattern_3() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_0272_0;
+        nodeToMatch_0272_0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.ListType".equals(nodeToMatch_0272_0.getConceptFqName()))) {
+          return false;
+        }
+        {
+          String childRole0272_0 = "elementType";
+          if (nodeToMatch_0272_0.getChildCount(childRole0272_0) != 1) {
+            return false;
+          }
+          {
+            SNode childVar_0272_0 = nodeToMatch_0272_0.getChildren(childRole0272_0).get(0);
+            {
+              SNode nodeToMatch_0272_1;
+              nodeToMatch_0272_1 = childVar_0272_0;
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_0272_1.getConceptFqName()))) {
+                return false;
+              }
+              this.PatternVar_elem = nodeToMatch_0272_1.getReferent("concept");
+            }
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
+        this.PatternVar_elem = (SNode) pattern.getFieldValue("PatternVar_elem");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("PatternVar_elem".equals(fieldName)) {
+        return this.PatternVar_elem;
+      }
+      return null;
+    }
   }
 
   public static class QuotationClass_0844_0 {

@@ -4,9 +4,11 @@ package jetbrains.mps.lang.smodel.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -14,6 +16,8 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.project.GlobalScope;
 
 public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
+  private static SNodePointer SNODE_POINTER2 = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135");
+
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public supertypesOf_SNodeType_SConceptType_SubtypingRule() {
@@ -28,12 +32,46 @@ public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends Subtyping
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new _Patterns.Pattern_2();
+    this.myMatchingPattern = new supertypesOf_SNodeType_SConceptType_SubtypingRule.Pattern_2();
     return this.myMatchingPattern.match(argument);
   }
 
   public boolean isWeak() {
     return false;
+  }
+
+  public static class Pattern_2 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_2() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_3241_0;
+        nodeToMatch_3241_0 = nodeToMatch;
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_3241_0.getConceptFqName()))) {
+          return false;
+        }
+        {
+          SNode referent;
+          referent = SNODE_POINTER2.getNode();
+          if (nodeToMatch_3241_0.getReferent("concept") != referent) {
+            return false;
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+    }
+
+    public Object getFieldValue(String fieldName) {
+      return null;
+    }
   }
 
   public static class QuotationClass_3405_0 {

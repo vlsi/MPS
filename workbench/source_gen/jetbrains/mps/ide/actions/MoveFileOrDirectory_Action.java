@@ -83,7 +83,7 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
           JLabel mainLabel = new JLabel("To directory:");
           textWithButton[0] = new TextFieldWithBrowseButton();
           textWithButton[0].setText(path);
-          mainPanel.add(textWithButton[0], BorderLayout.CENTER);
+          mainPanel.add(textWithButton[0], BorderLayout.LINE_END);
           mainPanel.add(mainLabel, BorderLayout.LINE_START);
           result.setBorder(IdeBorderFactory.createBorder());
           result.add(mainPanel, BorderLayout.CENTER);

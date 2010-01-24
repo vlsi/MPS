@@ -68,7 +68,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1210252600192(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "scalarType", true), "types_label");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "scalarType", true), _context.getOutputNode(), "types_label");
   }
 
   public static SNode sourceNodeQuery_1209997923540(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
