@@ -517,31 +517,31 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1230564502576(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "SystemSpecificConfigToTargetDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "SystemSpecificConfigToTargetDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1230577930415(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "VariableToExternalPropertyDeclarationWin");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "VariableToExternalPropertyDeclarationWin");
   }
 
   public static Object referenceMacro_GetReferent_1230650270986(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "NullToMPSHomePropertyDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "NullToMPSHomePropertyDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1234519151154(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "VariableToExternalPropertyDeclarationMac");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "VariableToExternalPropertyDeclarationMac");
   }
 
   public static Object referenceMacro_GetReferent_1237301624593(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode macDecl = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variable", false), "VariableToExternalPropertyDeclarationMac");
+    SNode macDecl = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "variable", false), _context.getOutputNode(), "VariableToExternalPropertyDeclarationMac");
     if (macDecl != null) {
       return macDecl;
     }
-    SNode winDecl = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variable", false), "VariableToExternalPropertyDeclarationWin");
+    SNode winDecl = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "variable", false), _context.getOutputNode(), "VariableToExternalPropertyDeclarationWin");
     if (winDecl != null) {
       return winDecl;
     }
-    SNode unixDecl = _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variable", false), "VariableToExternalPropertyDeclarationUnix");
+    SNode unixDecl = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "variable", false), _context.getOutputNode(), "VariableToExternalPropertyDeclarationUnix");
     if (unixDecl != null) {
       return unixDecl;
     }
@@ -563,11 +563,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1240246843004(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "SystemSpecificConfigToTargetDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "SystemSpecificConfigToTargetDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_4331351068295137109(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "NullToMPSHomePropertyDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "NullToMPSHomePropertyDeclaration");
   }
 
   public static boolean ifMacro_Condition_1230567183522(final IOperationContext operationContext, final IfMacroContext _context) {

@@ -58,47 +58,47 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1216908641562(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CyclesToClasspaths");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "CyclesToClasspaths");
   }
 
   public static Object referenceMacro_GetReferent_1216908738117(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CyclesToSourcePaths");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "CyclesToSourcePaths");
   }
 
   public static Object referenceMacro_GetReferent_1216913346656(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "cycle", false), "CyclesToTargets");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "cycle", false), _context.getOutputNode(), "CyclesToTargets");
   }
 
   public static Object referenceMacro_GetReferent_1217528713106(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CyclesToTargets");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "CyclesToTargets");
   }
 
   public static Object referenceMacro_GetReferent_1219772509208(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "macro", false), "MacroToExternalProperty");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "macro", false), _context.getOutputNode(), "MacroToExternalProperty");
   }
 
   public static Object referenceMacro_GetReferent_1224775901838(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "description", false), "DescriptionToProject");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "description", false), _context.getOutputNode(), "DescriptionToProject");
   }
 
   public static Object referenceMacro_GetReferent_1235489624447(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ModuleToClassesProperty");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "ModuleToClassesProperty");
   }
 
   public static Object referenceMacro_GetReferent_763186553349438290(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "moduleDescription", true)).first(), "ModuleToClassesProperty");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "moduleDescription", true)).first(), _context.getOutputNode(), "ModuleToClassesProperty");
   }
 
   public static Object referenceMacro_GetReferent_763186553349438310(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.dependency.structure.Cycle", false, false), "CyclesToClasspaths");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.build.dependency.structure.Cycle", false, false), _context.getOutputNode(), "CyclesToClasspaths");
   }
 
   public static Object referenceMacro_GetReferent_763186553349438390(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ModuleToClassesProperty");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "ModuleToClassesProperty");
   }
 
   public static Object referenceMacro_GetReferent_763186553349590557(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ModuleToClassesProperty");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "ModuleToClassesProperty");
   }
 
   public static boolean ifMacro_Condition_1219772493889(final IOperationContext operationContext, final IfMacroContext _context) {

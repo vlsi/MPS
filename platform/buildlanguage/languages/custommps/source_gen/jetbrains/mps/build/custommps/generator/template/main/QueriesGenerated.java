@@ -208,7 +208,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1233931081841(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode output = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "UndeclaredVariableReferenceToVariable");
+    SNode output = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "UndeclaredVariableReferenceToVariable");
     if (output == null) {
       output = IVariableHolder_Behavior.call_findVariable_1234876428215(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.IVariableHolder", true, false), SPropertyOperations.getString(_context.getNode(), "name"), SPropertyOperations.getString(_context.getNode(), "antName"));
     }
@@ -224,11 +224,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1234780362598(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPsBuildToFolder");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "CustomMPsBuildToFolder");
   }
 
   public static Object referenceMacro_GetReferent_1234891647534(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode output = _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "UndeclaredVariableReferenceToVariable");
+    SNode output = _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "UndeclaredVariableReferenceToVariable");
     if (output == null) {
       return IVariableHolder_Behavior.call_findVariable_1234876428215(SNodeOperations.getAncestor(_context.getOutputNode(), "jetbrains.mps.build.packaging.structure.IVariableHolder", true, false), SPropertyOperations.getString(_context.getNode(), "name"), SPropertyOperations.getString(_context.getNode(), "antName"));
     }
@@ -245,7 +245,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1234971270387(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPSBuildToTargetDeclaration");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "CustomMPSBuildToTargetDeclaration");
   }
 
   public static Object referenceMacro_GetReferent_1234971270563(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -294,11 +294,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1239129956195(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPSBuildToUnpackZipAntcall");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "CustomMPSBuildToUnpackZipAntcall");
   }
 
   public static Object referenceMacro_GetReferent_1239130486844(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "CustomMPSBuildToUnpackZipAntcall");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "CustomMPSBuildToUnpackZipAntcall");
   }
 
   public static Object referenceMacro_GetReferent_1240405287357(final IOperationContext operationContext, final ReferenceMacroContext _context) {
