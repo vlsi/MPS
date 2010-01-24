@@ -16,6 +16,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import java.util.Set;
 import java.util.HashSet;
@@ -94,7 +95,7 @@ public class Type_Behavior {
 
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     {
-      _Patterns.Pattern_0 pattern_2 = new _Patterns.Pattern_0(thisNode);
+      GeneratedMatchingPattern pattern_2 = new Type_Behavior.Pattern_2(thisNode);
       SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_2);
       if (coercedNode_2 != null) {
         return true;
@@ -223,6 +224,36 @@ public class Type_Behavior {
         result = quotedNode1_8537_0;
       }
       return result;
+    }
+  }
+
+  public static class Pattern_2 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ Object AntiquotationField1;
+
+    public Pattern_2(Object parameter_8537_0) {
+      this.AntiquotationField1 = parameter_8537_0;
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_8537_0;
+        nodeToMatch_8537_0 = nodeToMatch;
+        if (!("jetbrains.mps.lang.core.structure.BaseConcept".equals(nodeToMatch_8537_0.getConceptFqName()))) {
+          return false;
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return true;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+    }
+
+    public Object getFieldValue(String fieldName) {
+      return null;
     }
   }
 }

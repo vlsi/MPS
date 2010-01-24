@@ -155,25 +155,25 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_19 = null;
-      SNode quotedNode_20 = null;
-      SNode quotedNode_21 = null;
+      SNode quotedNode_0469_0 = null;
+      SNode quotedNode_0469_1 = null;
+      SNode quotedNode_0469_2 = null;
       {
-        quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DivExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_19 = quotedNode_19;
+        quotedNode_0469_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DivExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0469_0 = quotedNode_0469_0;
         {
-          quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_20 = quotedNode_20;
-          quotedNode1_20.setProperty("value", "1");
-          quotedNode_19.addChild("rightExpression", quotedNode1_20);
+          quotedNode_0469_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0469_1 = quotedNode_0469_1;
+          quotedNode1_0469_1.setProperty("value", "1");
+          quotedNode_0469_0.addChild("rightExpression", quotedNode1_0469_1);
         }
         {
-          quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_21 = quotedNode_21;
-          quotedNode1_21.setProperty("value", "1");
-          quotedNode_19.addChild("leftExpression", quotedNode1_21);
+          quotedNode_0469_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0469_2 = quotedNode_0469_2;
+          quotedNode1_0469_2.setProperty("value", "1");
+          quotedNode_0469_0.addChild("leftExpression", quotedNode1_0469_2);
         }
-        result = quotedNode1_19;
+        result = quotedNode1_0469_0;
       }
       return result;
     }
@@ -181,25 +181,25 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_19 = null;
-      SNode quotedNode_20 = null;
-      SNode quotedNode_21 = null;
+      SNode quotedNode_0469_0 = null;
+      SNode quotedNode_0469_1 = null;
+      SNode quotedNode_0469_2 = null;
       {
-        quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DivExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_19 = quotedNode_19;
+        quotedNode_0469_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DivExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0469_0 = quotedNode_0469_0;
         {
-          quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_20 = quotedNode_20;
-          quotedNode1_20.setProperty("value", "1");
-          quotedNode_19.addChild("rightExpression", quotedNode1_20);
+          quotedNode_0469_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0469_1 = quotedNode_0469_1;
+          quotedNode1_0469_1.setProperty("value", "1");
+          quotedNode_0469_0.addChild("rightExpression", quotedNode1_0469_1);
         }
         {
-          quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_21 = quotedNode_21;
-          quotedNode1_21.setProperty("value", "1");
-          quotedNode_19.addChild("leftExpression", quotedNode1_21);
+          quotedNode_0469_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0469_2 = quotedNode_0469_2;
+          quotedNode1_0469_2.setProperty("value", "1");
+          quotedNode_0469_0.addChild("leftExpression", quotedNode1_0469_2);
         }
-        result = quotedNode1_19;
+        result = quotedNode1_0469_0;
       }
       return result;
     }
@@ -212,25 +212,25 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_22 = null;
-      SNode quotedNode_23 = null;
-      SNode quotedNode_24 = null;
+      SNode quotedNode_0469_3 = null;
+      SNode quotedNode_0469_4 = null;
+      SNode quotedNode_0469_5 = null;
       {
-        quotedNode_22 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MinusExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_22 = quotedNode_22;
+        quotedNode_0469_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MinusExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0469_3 = quotedNode_0469_3;
         {
-          quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_23 = quotedNode_23;
-          quotedNode1_23.setProperty("value", "1");
-          quotedNode_22.addChild("leftExpression", quotedNode1_23);
+          quotedNode_0469_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0469_4 = quotedNode_0469_4;
+          quotedNode1_0469_4.setProperty("value", "1");
+          quotedNode_0469_3.addChild("leftExpression", quotedNode1_0469_4);
         }
         {
-          quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_24 = quotedNode_24;
-          quotedNode1_24.setProperty("value", "1");
-          quotedNode_22.addChild("rightExpression", quotedNode1_24);
+          quotedNode_0469_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0469_5 = quotedNode_0469_5;
+          quotedNode1_0469_5.setProperty("value", "1");
+          quotedNode_0469_3.addChild("rightExpression", quotedNode1_0469_5);
         }
-        result = quotedNode1_22;
+        result = quotedNode1_0469_3;
       }
       return result;
     }
@@ -238,25 +238,25 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_22 = null;
-      SNode quotedNode_23 = null;
-      SNode quotedNode_24 = null;
+      SNode quotedNode_0469_3 = null;
+      SNode quotedNode_0469_4 = null;
+      SNode quotedNode_0469_5 = null;
       {
-        quotedNode_22 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MinusExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_22 = quotedNode_22;
+        quotedNode_0469_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MinusExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0469_3 = quotedNode_0469_3;
         {
-          quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_23 = quotedNode_23;
-          quotedNode1_23.setProperty("value", "1");
-          quotedNode_22.addChild("leftExpression", quotedNode1_23);
+          quotedNode_0469_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0469_4 = quotedNode_0469_4;
+          quotedNode1_0469_4.setProperty("value", "1");
+          quotedNode_0469_3.addChild("leftExpression", quotedNode1_0469_4);
         }
         {
-          quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_24 = quotedNode_24;
-          quotedNode1_24.setProperty("value", "1");
-          quotedNode_22.addChild("rightExpression", quotedNode1_24);
+          quotedNode_0469_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0469_5 = quotedNode_0469_5;
+          quotedNode1_0469_5.setProperty("value", "1");
+          quotedNode_0469_3.addChild("rightExpression", quotedNode1_0469_5);
         }
-        result = quotedNode1_22;
+        result = quotedNode1_0469_3;
       }
       return result;
     }
@@ -269,25 +269,25 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_25 = null;
-      SNode quotedNode_26 = null;
-      SNode quotedNode_27 = null;
+      SNode quotedNode_0469_6 = null;
+      SNode quotedNode_0469_7 = null;
+      SNode quotedNode_0469_8 = null;
       {
-        quotedNode_25 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MulExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_25 = quotedNode_25;
+        quotedNode_0469_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MulExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0469_6 = quotedNode_0469_6;
         {
-          quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_26 = quotedNode_26;
-          quotedNode1_26.setProperty("value", "1");
-          quotedNode_25.addChild("rightExpression", quotedNode1_26);
+          quotedNode_0469_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0469_7 = quotedNode_0469_7;
+          quotedNode1_0469_7.setProperty("value", "1");
+          quotedNode_0469_6.addChild("rightExpression", quotedNode1_0469_7);
         }
         {
-          quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_27 = quotedNode_27;
-          quotedNode1_27.setProperty("value", "1");
-          quotedNode_25.addChild("leftExpression", quotedNode1_27);
+          quotedNode_0469_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0469_8 = quotedNode_0469_8;
+          quotedNode1_0469_8.setProperty("value", "1");
+          quotedNode_0469_6.addChild("leftExpression", quotedNode1_0469_8);
         }
-        result = quotedNode1_25;
+        result = quotedNode1_0469_6;
       }
       return result;
     }
@@ -295,25 +295,25 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_25 = null;
-      SNode quotedNode_26 = null;
-      SNode quotedNode_27 = null;
+      SNode quotedNode_0469_6 = null;
+      SNode quotedNode_0469_7 = null;
+      SNode quotedNode_0469_8 = null;
       {
-        quotedNode_25 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MulExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_25 = quotedNode_25;
+        quotedNode_0469_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MulExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0469_6 = quotedNode_0469_6;
         {
-          quotedNode_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_26 = quotedNode_26;
-          quotedNode1_26.setProperty("value", "1");
-          quotedNode_25.addChild("rightExpression", quotedNode1_26);
+          quotedNode_0469_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0469_7 = quotedNode_0469_7;
+          quotedNode1_0469_7.setProperty("value", "1");
+          quotedNode_0469_6.addChild("rightExpression", quotedNode1_0469_7);
         }
         {
-          quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_27 = quotedNode_27;
-          quotedNode1_27.setProperty("value", "1");
-          quotedNode_25.addChild("leftExpression", quotedNode1_27);
+          quotedNode_0469_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0469_8 = quotedNode_0469_8;
+          quotedNode1_0469_8.setProperty("value", "1");
+          quotedNode_0469_6.addChild("leftExpression", quotedNode1_0469_8);
         }
-        result = quotedNode1_25;
+        result = quotedNode1_0469_6;
       }
       return result;
     }
@@ -326,25 +326,25 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
     public SNode createNode(final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_28 = null;
-      SNode quotedNode_29 = null;
-      SNode quotedNode_30 = null;
+      SNode quotedNode_0469_9 = null;
+      SNode quotedNode_0469_10 = null;
+      SNode quotedNode_0469_11 = null;
       {
-        quotedNode_28 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlusExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_28 = quotedNode_28;
+        quotedNode_0469_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlusExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0469_9 = quotedNode_0469_9;
         {
-          quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_29 = quotedNode_29;
-          quotedNode1_29.setProperty("value", "1");
-          quotedNode_28.addChild("leftExpression", quotedNode1_29);
+          quotedNode_0469_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0469_10 = quotedNode_0469_10;
+          quotedNode1_0469_10.setProperty("value", "1");
+          quotedNode_0469_9.addChild("leftExpression", quotedNode1_0469_10);
         }
         {
-          quotedNode_30 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_30 = quotedNode_30;
-          quotedNode1_30.setProperty("value", "1");
-          quotedNode_28.addChild("rightExpression", quotedNode1_30);
+          quotedNode_0469_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0469_11 = quotedNode_0469_11;
+          quotedNode1_0469_11.setProperty("value", "1");
+          quotedNode_0469_9.addChild("rightExpression", quotedNode1_0469_11);
         }
-        result = quotedNode1_28;
+        result = quotedNode1_0469_9;
       }
       return result;
     }
@@ -352,25 +352,25 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_28 = null;
-      SNode quotedNode_29 = null;
-      SNode quotedNode_30 = null;
+      SNode quotedNode_0469_9 = null;
+      SNode quotedNode_0469_10 = null;
+      SNode quotedNode_0469_11 = null;
       {
-        quotedNode_28 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlusExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_28 = quotedNode_28;
+        quotedNode_0469_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PlusExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0469_9 = quotedNode_0469_9;
         {
-          quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_29 = quotedNode_29;
-          quotedNode1_29.setProperty("value", "1");
-          quotedNode_28.addChild("leftExpression", quotedNode1_29);
+          quotedNode_0469_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0469_10 = quotedNode_0469_10;
+          quotedNode1_0469_10.setProperty("value", "1");
+          quotedNode_0469_9.addChild("leftExpression", quotedNode1_0469_10);
         }
         {
-          quotedNode_30 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_30 = quotedNode_30;
-          quotedNode1_30.setProperty("value", "1");
-          quotedNode_28.addChild("rightExpression", quotedNode1_30);
+          quotedNode_0469_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_0469_11 = quotedNode_0469_11;
+          quotedNode1_0469_11.setProperty("value", "1");
+          quotedNode_0469_9.addChild("rightExpression", quotedNode1_0469_11);
         }
-        result = quotedNode1_28;
+        result = quotedNode1_0469_9;
       }
       return result;
     }

@@ -82,12 +82,12 @@ public class AddClassifierDocComment_Intention extends BaseIntention implements 
     public SNode createNode(Object parameter_4743_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2 = null;
+      SNode quotedNode_4743_0 = null;
       {
-        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_2;
-        quotedNode1_2.setReferent("param", (SNode) parameter_4743_0);
-        result = quotedNode1_2;
+        quotedNode_4743_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4743_0 = quotedNode_4743_0;
+        quotedNode1_4743_0.setReferent("param", (SNode) parameter_4743_0);
+        result = quotedNode1_4743_0;
       }
       return result;
     }

@@ -61,43 +61,43 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1237112085618(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), "TmpLocalVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), _context.getOutputNode(), "TmpLocalVar");
   }
 
   public static Object referenceMacro_GetReferent_1237112162700(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), "TmpLocalVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "var", true), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), _context.getOutputNode(), "TmpLocalVar");
   }
 
   public static Object referenceMacro_GetReferent_1237113243060(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ForeachVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "ForeachVar");
   }
 
   public static Object referenceMacro_GetReferent_1237113245188(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "LocalVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "LocalVar");
   }
 
   public static Object referenceMacro_GetReferent_1237113438439(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ResultVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "ResultVar");
   }
 
   public static Object referenceMacro_GetReferent_1237117141434(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "InvokedExpression");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "InvokedExpression");
   }
 
   public static Object referenceMacro_GetReferent_1237117144781(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "InvokedExpression");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "InvokedExpression");
   }
 
   public static Object referenceMacro_GetReferent_1237117195572(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "InvokedExpression");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "InvokedExpression");
   }
 
   public static Object referenceMacro_GetReferent_1237117198279(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "InvokedExpression");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "InvokedExpression");
   }
 
   public static Object referenceMacro_GetReferent_1237125777321(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), "TmpLocalVar");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.baseLanguage.math.structure.MathSymbolFromToIndex"), _context.getOutputNode(), "TmpLocalVar");
   }
 
   public static boolean ifMacro_Condition_1237117033967(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -179,17 +179,17 @@ public class QueriesGenerated {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0 = null;
-      SNode quotedNode_1 = null;
+      SNode quotedNode_8087_0 = null;
+      SNode quotedNode_8087_1 = null;
       {
-        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode_8087_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8087_0 = quotedNode_8087_0;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_1 = quotedNode_1;
-          quotedNode_0.addChild("elementType", quotedNode1_1);
+          quotedNode_8087_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_8087_1 = quotedNode_8087_1;
+          quotedNode_8087_0.addChild("elementType", quotedNode1_8087_1);
         }
-        result = quotedNode1_0;
+        result = quotedNode1_8087_0;
       }
       return result;
     }
@@ -202,17 +202,17 @@ public class QueriesGenerated {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
+      SNode quotedNode_8087_2 = null;
+      SNode quotedNode_8087_3 = null;
       {
-        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_2;
+        quotedNode_8087_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8087_2 = quotedNode_8087_2;
         {
-          quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3 = quotedNode_3;
-          quotedNode_2.addChild("elementType", quotedNode1_3);
+          quotedNode_8087_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_8087_3 = quotedNode_8087_3;
+          quotedNode_8087_2.addChild("elementType", quotedNode1_8087_3);
         }
-        result = quotedNode1_2;
+        result = quotedNode1_8087_2;
       }
       return result;
     }

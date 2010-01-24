@@ -43,27 +43,27 @@ public class vector_subtype_of_matrix_SubtypingRule extends SubtypingRule_Runtim
     public SNode createNode(Object parameter_0764_0, Object parameter_0764_1, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_40 = null;
-      SNode quotedNode_41 = null;
+      SNode quotedNode_0764_0 = null;
+      SNode quotedNode_0764_1 = null;
       {
-        quotedNode_40 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_40 = quotedNode_40;
-        quotedNode1_40.setProperty("columns", "1");
-        quotedNode1_40.setProperty("rows", (String) parameter_0764_1);
+        quotedNode_0764_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0764_0 = quotedNode_0764_0;
+        quotedNode1_0764_0.setProperty("columns", "1");
+        quotedNode1_0764_0.setProperty("rows", (String) parameter_0764_1);
         {
-          quotedNode_41 = (SNode) parameter_0764_0;
-          SNode quotedNode1_41;
-          if (_parameterValues_129834374.contains(quotedNode_41)) {
-            quotedNode1_41 = CopyUtil.copy(quotedNode_41);
+          quotedNode_0764_1 = (SNode) parameter_0764_0;
+          SNode quotedNode1_5;
+          if (_parameterValues_129834374.contains(quotedNode_0764_1)) {
+            quotedNode1_5 = CopyUtil.copy(quotedNode_0764_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_41);
-            quotedNode1_41 = quotedNode_41;
+            _parameterValues_129834374.add(quotedNode_0764_1);
+            quotedNode1_5 = quotedNode_0764_1;
           }
-          if (quotedNode1_41 != null) {
-            quotedNode_40.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_41, typeCheckingContext));
+          if (quotedNode1_5 != null) {
+            quotedNode_0764_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
           }
         }
-        result = quotedNode1_40;
+        result = quotedNode1_0764_0;
       }
       return result;
     }
@@ -71,27 +71,27 @@ public class vector_subtype_of_matrix_SubtypingRule extends SubtypingRule_Runtim
     public SNode createNode(Object parameter_0764_0, Object parameter_0764_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_40 = null;
-      SNode quotedNode_41 = null;
+      SNode quotedNode_0764_0 = null;
+      SNode quotedNode_0764_1 = null;
       {
-        quotedNode_40 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_40 = quotedNode_40;
-        quotedNode1_40.setProperty("columns", "1");
-        quotedNode1_40.setProperty("rows", (String) parameter_0764_1);
+        quotedNode_0764_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_0764_0 = quotedNode_0764_0;
+        quotedNode1_0764_0.setProperty("columns", "1");
+        quotedNode1_0764_0.setProperty("rows", (String) parameter_0764_1);
         {
-          quotedNode_41 = (SNode) parameter_0764_0;
-          SNode quotedNode1_41;
-          if (_parameterValues_129834374.contains(quotedNode_41)) {
-            quotedNode1_41 = CopyUtil.copy(quotedNode_41);
+          quotedNode_0764_1 = (SNode) parameter_0764_0;
+          SNode quotedNode1_5;
+          if (_parameterValues_129834374.contains(quotedNode_0764_1)) {
+            quotedNode1_5 = CopyUtil.copy(quotedNode_0764_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_41);
-            quotedNode1_41 = quotedNode_41;
+            _parameterValues_129834374.add(quotedNode_0764_1);
+            quotedNode1_5 = quotedNode_0764_1;
           }
-          if (quotedNode1_41 != null) {
-            quotedNode_40.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_41));
+          if (quotedNode1_5 != null) {
+            quotedNode_0764_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_5));
           }
         }
-        result = quotedNode1_40;
+        result = quotedNode1_0764_0;
       }
       return result;
     }

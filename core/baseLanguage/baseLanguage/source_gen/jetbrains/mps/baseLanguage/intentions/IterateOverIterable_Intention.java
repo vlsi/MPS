@@ -4,17 +4,23 @@ package jetbrains.mps.baseLanguage.intentions;
 
 import jetbrains.mps.intentions.BaseIntention;
 import jetbrains.mps.intentions.Intention;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class IterateOverIterable_Intention extends BaseIntention implements Intention {
+  private static SNodePointer SNODE_POINTER1 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+  private static SNodePointer SNODE_POINTER0 = new SNodePointer("f:java_stub#java.lang(java.lang@java_stub)", "~Iterable");
+
   public IterateOverIterable_Intention() {
   }
 
@@ -46,18 +52,18 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
   }
 
   public boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true)), new _Patterns.Pattern_0(), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true)), new IterateOverIterable_Intention.Pattern_1(), true) != null);
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
     {
-      _Patterns.Pattern_1 pattern_0 = new _Patterns.Pattern_1();
+      GeneratedMatchingPattern pattern_0 = new IterateOverIterable_Intention.Pattern_0();
       SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(node, "expression", true)), pattern_0);
       if (coercedNode_0 != null) {
         SNode foreachStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
         SNode variableDeclaration = SLinkOperations.setNewChild(foreachStatement, "variable", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-        SLinkOperations.setTarget(variableDeclaration, "type", SNodeOperations.copyNode(((SNode) pattern_0.getFieldValue("PatternVar1"))), true);
-        SPropertyOperations.set(variableDeclaration, "name", NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(((SNode) pattern_0.getFieldValue("PatternVar1")))));
+        SLinkOperations.setTarget(variableDeclaration, "type", SNodeOperations.copyNode(((SNode) pattern_0.getFieldValue("PatternVar_elem"))), true);
+        SPropertyOperations.set(variableDeclaration, "name", NameUtil.toValidIdentifier(BaseConcept_Behavior.call_getPresentation_1213877396640(((SNode) pattern_0.getFieldValue("PatternVar_elem")))));
         SLinkOperations.setTarget(foreachStatement, "iterable", SNodeOperations.copyNode(SLinkOperations.getTarget(node, "expression", true)), true);
         SNodeOperations.insertNextSiblingChild(node, foreachStatement);
         SNodeOperations.deleteNode(node);
@@ -68,5 +74,111 @@ public class IterateOverIterable_Intention extends BaseIntention implements Inte
 
   public String getLocationString() {
     return "jetbrains.mps.baseLanguage.intentions";
+  }
+
+  public static class Pattern_1 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode PatternVar_elem;
+
+    public Pattern_1() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_2336_1;
+        nodeToMatch_2336_1 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_2336_1.getConceptFqName()))) {
+          return false;
+        }
+        {
+          SNode referent;
+          referent = SNODE_POINTER1.getNode();
+          if (nodeToMatch_2336_1.getReferent("classifier") != referent) {
+            return false;
+          }
+        }
+        {
+          String childRole2336_1 = "parameter";
+          if (nodeToMatch_2336_1.getChildCount(childRole2336_1) != 1) {
+            return false;
+          }
+          {
+            this.PatternVar_elem = null;
+            SNode childVar_2336_1 = nodeToMatch_2336_1.getChildren(childRole2336_1).get(0);
+            this.PatternVar_elem = childVar_2336_1;
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
+        this.PatternVar_elem = (SNode) pattern.getFieldValue("PatternVar_elem");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("PatternVar_elem".equals(fieldName)) {
+        return this.PatternVar_elem;
+      }
+      return null;
+    }
+  }
+
+  public static class Pattern_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode PatternVar_elem;
+
+    public Pattern_0() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_2336_0;
+        nodeToMatch_2336_0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_2336_0.getConceptFqName()))) {
+          return false;
+        }
+        {
+          SNode referent;
+          referent = SNODE_POINTER0.getNode();
+          if (nodeToMatch_2336_0.getReferent("classifier") != referent) {
+            return false;
+          }
+        }
+        {
+          String childRole2336_0 = "parameter";
+          if (nodeToMatch_2336_0.getChildCount(childRole2336_0) != 1) {
+            return false;
+          }
+          {
+            this.PatternVar_elem = null;
+            SNode childVar_2336_0 = nodeToMatch_2336_0.getChildren(childRole2336_0).get(0);
+            this.PatternVar_elem = childVar_2336_0;
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
+        this.PatternVar_elem = (SNode) pattern.getFieldValue("PatternVar_elem");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("PatternVar_elem".equals(fieldName)) {
+        return this.PatternVar_elem;
+      }
+      return null;
+    }
   }
 }

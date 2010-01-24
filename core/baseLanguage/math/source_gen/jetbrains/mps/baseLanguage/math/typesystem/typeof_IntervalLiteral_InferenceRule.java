@@ -66,25 +66,25 @@ public class typeof_IntervalLiteral_InferenceRule extends AbstractInferenceRule_
     public SNode createNode(Object parameter_7666_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6 = null;
-      SNode quotedNode_7 = null;
+      SNode quotedNode_7666_0 = null;
+      SNode quotedNode_7666_1 = null;
       {
-        quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6 = quotedNode_6;
+        quotedNode_7666_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7666_0 = quotedNode_7666_0;
         {
-          quotedNode_7 = (SNode) parameter_7666_0;
-          SNode quotedNode1_7;
-          if (_parameterValues_129834374.contains(quotedNode_7)) {
-            quotedNode1_7 = CopyUtil.copy(quotedNode_7);
+          quotedNode_7666_1 = (SNode) parameter_7666_0;
+          SNode quotedNode1_3;
+          if (_parameterValues_129834374.contains(quotedNode_7666_1)) {
+            quotedNode1_3 = CopyUtil.copy(quotedNode_7666_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_7);
-            quotedNode1_7 = quotedNode_7;
+            _parameterValues_129834374.add(quotedNode_7666_1);
+            quotedNode1_3 = quotedNode_7666_1;
           }
-          if (quotedNode1_7 != null) {
-            quotedNode_6.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_7, typeCheckingContext));
+          if (quotedNode1_3 != null) {
+            quotedNode_7666_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_3, typeCheckingContext));
           }
         }
-        result = quotedNode1_6;
+        result = quotedNode1_7666_0;
       }
       return result;
     }
@@ -92,25 +92,25 @@ public class typeof_IntervalLiteral_InferenceRule extends AbstractInferenceRule_
     public SNode createNode(Object parameter_7666_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_6 = null;
-      SNode quotedNode_7 = null;
+      SNode quotedNode_7666_0 = null;
+      SNode quotedNode_7666_1 = null;
       {
-        quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_6 = quotedNode_6;
+        quotedNode_7666_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7666_0 = quotedNode_7666_0;
         {
-          quotedNode_7 = (SNode) parameter_7666_0;
-          SNode quotedNode1_7;
-          if (_parameterValues_129834374.contains(quotedNode_7)) {
-            quotedNode1_7 = CopyUtil.copy(quotedNode_7);
+          quotedNode_7666_1 = (SNode) parameter_7666_0;
+          SNode quotedNode1_3;
+          if (_parameterValues_129834374.contains(quotedNode_7666_1)) {
+            quotedNode1_3 = CopyUtil.copy(quotedNode_7666_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_7);
-            quotedNode1_7 = quotedNode_7;
+            _parameterValues_129834374.add(quotedNode_7666_1);
+            quotedNode1_3 = quotedNode_7666_1;
           }
-          if (quotedNode1_7 != null) {
-            quotedNode_6.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_7));
+          if (quotedNode1_3 != null) {
+            quotedNode_7666_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_3));
           }
         }
-        result = quotedNode1_6;
+        result = quotedNode1_7666_0;
       }
       return result;
     }

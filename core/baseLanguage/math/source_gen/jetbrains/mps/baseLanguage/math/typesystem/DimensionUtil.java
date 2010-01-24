@@ -299,26 +299,26 @@ public class DimensionUtil {
     public SNode createNode(Object parameter_4712_0, Object parameter_4712_1, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_86 = null;
-      SNode quotedNode_87 = null;
+      SNode quotedNode_4712_0 = null;
+      SNode quotedNode_4712_1 = null;
       {
-        quotedNode_86 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.VectorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_86 = quotedNode_86;
-        quotedNode1_86.setProperty("height", (String) parameter_4712_1);
+        quotedNode_4712_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.VectorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4712_0 = quotedNode_4712_0;
+        quotedNode1_4712_0.setProperty("height", (String) parameter_4712_1);
         {
-          quotedNode_87 = (SNode) parameter_4712_0;
-          SNode quotedNode1_87;
-          if (_parameterValues_129834374.contains(quotedNode_87)) {
-            quotedNode1_87 = CopyUtil.copy(quotedNode_87);
+          quotedNode_4712_1 = (SNode) parameter_4712_0;
+          SNode quotedNode1_13;
+          if (_parameterValues_129834374.contains(quotedNode_4712_1)) {
+            quotedNode1_13 = CopyUtil.copy(quotedNode_4712_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_87);
-            quotedNode1_87 = quotedNode_87;
+            _parameterValues_129834374.add(quotedNode_4712_1);
+            quotedNode1_13 = quotedNode_4712_1;
           }
-          if (quotedNode1_87 != null) {
-            quotedNode_86.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_87, typeCheckingContext));
+          if (quotedNode1_13 != null) {
+            quotedNode_4712_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_13, typeCheckingContext));
           }
         }
-        result = quotedNode1_86;
+        result = quotedNode1_4712_0;
       }
       return result;
     }
@@ -326,26 +326,26 @@ public class DimensionUtil {
     public SNode createNode(Object parameter_4712_0, Object parameter_4712_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_86 = null;
-      SNode quotedNode_87 = null;
+      SNode quotedNode_4712_0 = null;
+      SNode quotedNode_4712_1 = null;
       {
-        quotedNode_86 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.VectorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_86 = quotedNode_86;
-        quotedNode1_86.setProperty("height", (String) parameter_4712_1);
+        quotedNode_4712_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.VectorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4712_0 = quotedNode_4712_0;
+        quotedNode1_4712_0.setProperty("height", (String) parameter_4712_1);
         {
-          quotedNode_87 = (SNode) parameter_4712_0;
-          SNode quotedNode1_87;
-          if (_parameterValues_129834374.contains(quotedNode_87)) {
-            quotedNode1_87 = CopyUtil.copy(quotedNode_87);
+          quotedNode_4712_1 = (SNode) parameter_4712_0;
+          SNode quotedNode1_13;
+          if (_parameterValues_129834374.contains(quotedNode_4712_1)) {
+            quotedNode1_13 = CopyUtil.copy(quotedNode_4712_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_87);
-            quotedNode1_87 = quotedNode_87;
+            _parameterValues_129834374.add(quotedNode_4712_1);
+            quotedNode1_13 = quotedNode_4712_1;
           }
-          if (quotedNode1_87 != null) {
-            quotedNode_86.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_87));
+          if (quotedNode1_13 != null) {
+            quotedNode_4712_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_13));
           }
         }
-        result = quotedNode1_86;
+        result = quotedNode1_4712_0;
       }
       return result;
     }

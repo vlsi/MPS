@@ -8,6 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import java.util.List;
 import java.util.Map;
@@ -17,6 +18,7 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -55,7 +57,7 @@ public class IMethodCall_Behavior {
         }
         SNode methodClassifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
         {
-          _Patterns.Pattern_3 pattern_3 = new _Patterns.Pattern_3(methodClassifier);
+          GeneratedMatchingPattern pattern_3 = new IMethodCall_Behavior.Pattern_3(methodClassifier);
           SNode coercedNode_3 = TypeChecker.getInstance().getRuntimeSupport().coerce_(instanceType, pattern_3);
           if (coercedNode_3 != null) {
             SNode resultType;
@@ -140,6 +142,64 @@ public class IMethodCall_Behavior {
 
   public static List<SNode> callSuper_getAvailableMethodDeclarations_5776618742611315379(SNode thisNode, String callerConceptFqName, String methodName) {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_5776618742611315379, methodName);
+  }
+
+  public static class Pattern_3 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ List<SNode> PatternVar_param;
+    /*package*/ SNode PatternVar_ignore;
+    /*package*/ Object AntiquotationField2;
+
+    public Pattern_3(Object parameter_5753_0) {
+      this.AntiquotationField2 = parameter_5753_0;
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_5753_0;
+        nodeToMatch_5753_0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_5753_0.getConceptFqName()))) {
+          return false;
+        }
+        {
+          SNode referent;
+          referent = (SNode) this.AntiquotationField2;
+          if (nodeToMatch_5753_0.getReferent("classifier") != referent) {
+            return false;
+          }
+        }
+        {
+          String childRole5753_0 = "parameter";
+          this.PatternVar_param = ListSequence.fromList(new ArrayList<SNode>());
+          this.PatternVar_ignore = null;
+          for (SNode childVar : nodeToMatch_5753_0.getChildren(childRole5753_0)) {
+            this.PatternVar_ignore = childVar;
+            ListSequence.fromList(this.PatternVar_param).addElement(childVar);
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return true;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
+        this.PatternVar_param = (List<SNode>) pattern.getFieldValue("PatternVar_param");
+        this.PatternVar_ignore = (SNode) pattern.getFieldValue("PatternVar_ignore");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("PatternVar_param".equals(fieldName)) {
+        return this.PatternVar_param;
+      }
+      if ("PatternVar_ignore".equals(fieldName)) {
+        return this.PatternVar_ignore;
+      }
+      return null;
+    }
   }
 
   public static class QuotationClass_5753_0 {

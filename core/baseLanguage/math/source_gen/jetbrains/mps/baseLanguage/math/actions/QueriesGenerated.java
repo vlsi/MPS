@@ -241,17 +241,17 @@ public class QueriesGenerated {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0 = null;
-      SNode quotedNode_1 = null;
+      SNode quotedNode_7774_0 = null;
+      SNode quotedNode_7774_1 = null;
       {
-        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0 = quotedNode_0;
+        quotedNode_7774_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7774_0 = quotedNode_7774_0;
         {
-          quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_1 = quotedNode_1;
-          quotedNode_0.addChild("elementType", quotedNode1_1);
+          quotedNode_7774_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.BigComplexType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_7774_1 = quotedNode_7774_1;
+          quotedNode_7774_0.addChild("elementType", quotedNode1_7774_1);
         }
-        result = quotedNode1_0;
+        result = quotedNode1_7774_0;
       }
       return result;
     }
@@ -264,31 +264,31 @@ public class QueriesGenerated {
     public SNode createNode(Object parameter_7774_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      SNode quotedNode_4 = null;
+      SNode quotedNode_7774_2 = null;
+      SNode quotedNode_7774_3 = null;
+      SNode quotedNode_7774_4 = null;
       {
-        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.PowExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_2;
+        quotedNode_7774_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.PowExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_7774_2 = quotedNode_7774_2;
         {
-          quotedNode_3 = (SNode) parameter_7774_0;
-          SNode quotedNode1_3;
-          if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_3 = CopyUtil.copy(quotedNode_3);
+          quotedNode_7774_3 = (SNode) parameter_7774_0;
+          SNode quotedNode1_0;
+          if (_parameterValues_129834374.contains(quotedNode_7774_3)) {
+            quotedNode1_0 = CopyUtil.copy(quotedNode_7774_3);
           } else {
-            _parameterValues_129834374.add(quotedNode_3);
-            quotedNode1_3 = quotedNode_3;
+            _parameterValues_129834374.add(quotedNode_7774_3);
+            quotedNode1_0 = quotedNode_7774_3;
           }
-          if (quotedNode1_3 != null) {
-            quotedNode_2.addChild("base", HUtil.copyIfNecessary(quotedNode1_3));
+          if (quotedNode1_0 != null) {
+            quotedNode_7774_2.addChild("base", HUtil.copyIfNecessary(quotedNode1_0));
           }
         }
         {
-          quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_4 = quotedNode_4;
-          quotedNode_2.addChild("exponent", quotedNode1_4);
+          quotedNode_7774_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+          SNode quotedNode1_7774_3 = quotedNode_7774_4;
+          quotedNode_7774_2.addChild("exponent", quotedNode1_7774_3);
         }
-        result = quotedNode1_2;
+        result = quotedNode1_7774_2;
       }
       return result;
     }
@@ -301,18 +301,18 @@ public class QueriesGenerated {
     public SNode createNode(Object parameter_7774_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_5 = null;
+      SNode quotedNode_7774_5 = null;
       {
-        quotedNode_5 = (SNode) parameter_7774_1;
-        SNode quotedNode1_5;
-        if (_parameterValues_129834374.contains(quotedNode_5)) {
-          quotedNode1_5 = CopyUtil.copy(quotedNode_5);
+        quotedNode_7774_5 = (SNode) parameter_7774_1;
+        SNode quotedNode1_1;
+        if (_parameterValues_129834374.contains(quotedNode_7774_5)) {
+          quotedNode1_1 = CopyUtil.copy(quotedNode_7774_5);
         } else {
-          _parameterValues_129834374.add(quotedNode_5);
-          quotedNode1_5 = quotedNode_5;
+          _parameterValues_129834374.add(quotedNode_7774_5);
+          quotedNode1_1 = quotedNode_7774_5;
         }
-        if (quotedNode1_5 != null) {
-          result = quotedNode1_5;
+        if (quotedNode1_1 != null) {
+          result = quotedNode1_1;
         }
       }
       return result;

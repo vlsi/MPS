@@ -225,12 +225,12 @@ public class QueriesGenerated {
     public SNode createNode(Object parameter_9035_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0 = null;
+      SNode quotedNode_9035_0 = null;
       {
-        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0 = quotedNode_0;
-        quotedNode1_0.setReferent("classifier", (SNode) parameter_9035_0);
-        result = quotedNode1_0;
+        quotedNode_9035_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_9035_0 = quotedNode_9035_0;
+        quotedNode1_9035_0.setReferent("classifier", (SNode) parameter_9035_0);
+        result = quotedNode1_9035_0;
       }
       return result;
     }

@@ -55,39 +55,39 @@ public class DivExpressionDivToFraction_Intention extends BaseIntention implemen
     public SNode createNode(Object parameter_4981_0, Object parameter_4981_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3 = null;
-      SNode quotedNode_4 = null;
-      SNode quotedNode_5 = null;
+      SNode quotedNode_4981_0 = null;
+      SNode quotedNode_4981_1 = null;
+      SNode quotedNode_4981_2 = null;
       {
-        quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3 = quotedNode_3;
+        quotedNode_4981_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.DivExpressionFraction", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4981_0 = quotedNode_4981_0;
         {
-          quotedNode_4 = (SNode) parameter_4981_0;
-          SNode quotedNode1_4;
-          if (_parameterValues_129834374.contains(quotedNode_4)) {
-            quotedNode1_4 = CopyUtil.copy(quotedNode_4);
+          quotedNode_4981_1 = (SNode) parameter_4981_0;
+          SNode quotedNode1_2;
+          if (_parameterValues_129834374.contains(quotedNode_4981_1)) {
+            quotedNode1_2 = CopyUtil.copy(quotedNode_4981_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_4);
-            quotedNode1_4 = quotedNode_4;
+            _parameterValues_129834374.add(quotedNode_4981_1);
+            quotedNode1_2 = quotedNode_4981_1;
           }
-          if (quotedNode1_4 != null) {
-            quotedNode_3.addChild("numerator", HUtil.copyIfNecessary(quotedNode1_4));
+          if (quotedNode1_2 != null) {
+            quotedNode_4981_0.addChild("numerator", HUtil.copyIfNecessary(quotedNode1_2));
           }
         }
         {
-          quotedNode_5 = (SNode) parameter_4981_1;
-          SNode quotedNode1_5;
-          if (_parameterValues_129834374.contains(quotedNode_5)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_5);
+          quotedNode_4981_2 = (SNode) parameter_4981_1;
+          SNode quotedNode1_3;
+          if (_parameterValues_129834374.contains(quotedNode_4981_2)) {
+            quotedNode1_3 = CopyUtil.copy(quotedNode_4981_2);
           } else {
-            _parameterValues_129834374.add(quotedNode_5);
-            quotedNode1_5 = quotedNode_5;
+            _parameterValues_129834374.add(quotedNode_4981_2);
+            quotedNode1_3 = quotedNode_4981_2;
           }
-          if (quotedNode1_5 != null) {
-            quotedNode_3.addChild("denominator", HUtil.copyIfNecessary(quotedNode1_5));
+          if (quotedNode1_3 != null) {
+            quotedNode_4981_0.addChild("denominator", HUtil.copyIfNecessary(quotedNode1_3));
           }
         }
-        result = quotedNode1_3;
+        result = quotedNode1_4981_0;
       }
       return result;
     }

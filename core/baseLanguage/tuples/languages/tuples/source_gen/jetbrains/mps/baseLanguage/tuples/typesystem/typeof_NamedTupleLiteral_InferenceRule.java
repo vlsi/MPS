@@ -89,19 +89,19 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
     public SNode createNode(Object parameter_2200_0, Object parameter_2200_1, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3 = null;
-      SNode quotedNode_4 = null;
+      SNode quotedNode_2200_0 = null;
+      SNode quotedNode_2200_1 = null;
       {
-        quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_3;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_2200_1);
+        quotedNode_2200_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2200_0 = quotedNode_2200_0;
+        quotedNode1_2200_0.setReferent("classifier", (SNode) parameter_2200_1);
         {
           List<SNode> nodes = (List<SNode>) parameter_2200_0;
           for (SNode child : nodes) {
-            quotedNode_3.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
+            quotedNode_2200_0.addChild("parameter", HUtil.copyIfNecessary(child, typeCheckingContext));
           }
         }
-        result = quotedNode1_2;
+        result = quotedNode1_2200_0;
       }
       return result;
     }
@@ -109,19 +109,19 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
     public SNode createNode(Object parameter_2200_0, Object parameter_2200_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_3 = null;
-      SNode quotedNode_4 = null;
+      SNode quotedNode_2200_0 = null;
+      SNode quotedNode_2200_1 = null;
       {
-        quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_3;
-        quotedNode1_2.setReferent("classifier", (SNode) parameter_2200_1);
+        quotedNode_2200_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_2200_0 = quotedNode_2200_0;
+        quotedNode1_2200_0.setReferent("classifier", (SNode) parameter_2200_1);
         {
           List<SNode> nodes = (List<SNode>) parameter_2200_0;
           for (SNode child : nodes) {
-            quotedNode_3.addChild("parameter", HUtil.copyIfNecessary(child));
+            quotedNode_2200_0.addChild("parameter", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_2;
+        result = quotedNode1_2200_0;
       }
       return result;
     }

@@ -57,25 +57,25 @@ public class typeof_InIntervalExpression_InferenceRule extends AbstractInference
     public SNode createNode(Object parameter_8278_0, final TypeCheckingContext typeCheckingContext) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
+      SNode quotedNode_8278_0 = null;
+      SNode quotedNode_8278_1 = null;
       {
-        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_2;
+        quotedNode_8278_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8278_0 = quotedNode_8278_0;
         {
-          quotedNode_3 = (SNode) parameter_8278_0;
-          SNode quotedNode1_3;
-          if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_3 = CopyUtil.copy(quotedNode_3);
+          quotedNode_8278_1 = (SNode) parameter_8278_0;
+          SNode quotedNode1_1;
+          if (_parameterValues_129834374.contains(quotedNode_8278_1)) {
+            quotedNode1_1 = CopyUtil.copy(quotedNode_8278_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_3);
-            quotedNode1_3 = quotedNode_3;
+            _parameterValues_129834374.add(quotedNode_8278_1);
+            quotedNode1_1 = quotedNode_8278_1;
           }
-          if (quotedNode1_3 != null) {
-            quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_3, typeCheckingContext));
+          if (quotedNode1_1 != null) {
+            quotedNode_8278_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_1, typeCheckingContext));
           }
         }
-        result = quotedNode1_2;
+        result = quotedNode1_8278_0;
       }
       return result;
     }
@@ -83,25 +83,25 @@ public class typeof_InIntervalExpression_InferenceRule extends AbstractInference
     public SNode createNode(Object parameter_8278_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
+      SNode quotedNode_8278_0 = null;
+      SNode quotedNode_8278_1 = null;
       {
-        quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_2;
+        quotedNode_8278_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.IntervalType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8278_0 = quotedNode_8278_0;
         {
-          quotedNode_3 = (SNode) parameter_8278_0;
-          SNode quotedNode1_3;
-          if (_parameterValues_129834374.contains(quotedNode_3)) {
-            quotedNode1_3 = CopyUtil.copy(quotedNode_3);
+          quotedNode_8278_1 = (SNode) parameter_8278_0;
+          SNode quotedNode1_1;
+          if (_parameterValues_129834374.contains(quotedNode_8278_1)) {
+            quotedNode1_1 = CopyUtil.copy(quotedNode_8278_1);
           } else {
-            _parameterValues_129834374.add(quotedNode_3);
-            quotedNode1_3 = quotedNode_3;
+            _parameterValues_129834374.add(quotedNode_8278_1);
+            quotedNode1_1 = quotedNode_8278_1;
           }
-          if (quotedNode1_3 != null) {
-            quotedNode_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_3));
+          if (quotedNode1_1 != null) {
+            quotedNode_8278_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_1));
           }
         }
-        result = quotedNode1_2;
+        result = quotedNode1_8278_0;
       }
       return result;
     }
