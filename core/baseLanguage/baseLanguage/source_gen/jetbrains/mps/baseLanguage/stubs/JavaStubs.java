@@ -25,7 +25,6 @@ import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import java.util.List;
 import java.util.ArrayList;
-import java.util.Collections;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.baseLanguage.structure.Interface;
@@ -113,10 +112,8 @@ public class JavaStubs extends BaseStubModelRootManager {
   }
 
   private void iterateClasspath(IClassPathItem item, Set<SNodeDescriptor> result, final String pack) {
-    int numberInStubModel = 0;
     List<String> availableClasses = new ArrayList<String>();
     availableClasses.addAll(item.getAvailableClasses(pack));
-    Collections.sort(availableClasses);
     for (String cls : availableClasses) {
       if (cls.contains("$")) {
         continue;
@@ -138,12 +135,11 @@ public class JavaStubs extends BaseStubModelRootManager {
       } else if (kind == ClassifierKind.UNKNOWN) {
         continue;
       }
-      result.add(new SNodeDescriptor(cls, conceptFqName, 0, 0, numberInStubModel) {
+      result.add(new SNodeDescriptor(cls, conceptFqName, 0, 0, -1) {
         public SModelReference getModelReference() {
           return StubHelper.uidForPackageInStubs(pack);
         }
       });
-      numberInStubModel++;
     }
     for (String subpack : item.getSubpackages(pack)) {
       JavaStubs.this.iterateClasspath(item, result, subpack);

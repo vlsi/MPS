@@ -128,7 +128,18 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
             SModelDescriptor descriptor = GlobalScope.getInstance().getModelDescriptor(object.getModelReference());
             SModel model = descriptor.getSModel();
             List<SNode> roots = myIndex.getNodesToIterate(model);
-            SNode node = roots.get(object.getNumberInModel());
+            int number = object.getNumberInModel();
+            SNode node = null;
+            if (number != -1) {
+              node = roots.get(number);
+            } else {
+              for (SNode n : roots) {
+                if (n.getName().equals(object.getNodeName())) {
+                  node = n;
+                  break;
+                }
+              }
+            }
             myProject.getComponentSafe(MPSEditorOpener.class).openNode(node);
           }
         });

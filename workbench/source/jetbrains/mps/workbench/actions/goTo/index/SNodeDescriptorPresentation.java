@@ -49,14 +49,13 @@ public class SNodeDescriptorPresentation extends BasePresentation {
     return "(" + getModelName() + ")";
   }
 
-  private SNode getNodeInReadOnlyModel(SModel model) {
-    List<SNode> classes = new ArrayList<SNode>();
-    for (SNode root : model.getRoots()) {
-      String rootName = root.getName();
-      if (rootName.contains("$")) continue;
-      classes.add(root);
+  private SNode getRootByName(SModel model) {
+    for (SNode node : model.getRoots()) {
+      if (myNodeResult.getNodeName().equals(node.getName())) {
+        return node;
+      }
     }
-    return SortUtil.sortNodes(classes).get(myNodeResult.getNumberInModel());
+    return null;
   }
 
   public Icon doGetIcon() {
@@ -65,7 +64,7 @@ public class SNodeDescriptorPresentation extends BasePresentation {
       SModelReference modelReference = myNodeResult.getModelReference();
       SModelDescriptor md = GlobalScope.getInstance().getModelDescriptor(modelReference);
       SModel model = md.getSModel();
-      SNode node = (md.isReadOnly())? getNodeInReadOnlyModel(model) : model.getRoots().get(myNodeResult.getNumberInModel());
+      SNode node = (myNodeResult.getNumberInModel() == -1) ? getRootByName(model) : model.getRoots().get(myNodeResult.getNumberInModel());
       return IconManager.getIconFor(node);
     }
     return IconManager.getIconForConceptFQName(conceptFqName);

@@ -628,15 +628,6 @@
       </node>
       <node role="returnType:0" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="8818697550806799761" />
       <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="8818697550806799587">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8818697550806799591">
-          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8818697550806799592">
-            <property name="name:3" value="numberInStubModel" />
-            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="8818697550806799593" />
-            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8818697550806799594">
-              <property name="value:3" value="0" />
-            </node>
-          </node>
-        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="8818697550806799595">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="8818697550806799596">
             <property name="name:3" value="availableClasses" />
@@ -674,15 +665,6 @@
                   </node>
                 </node>
               </node>
-            </node>
-          </node>
-        </node>
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8818697550806799610">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8818697550806799611">
-            <link role="baseMethodDeclaration:3" targetNodeId="7.~Collections.sort(java.util.List):void" resolveInfo="sort" />
-            <link role="classConcept:3" targetNodeId="7.~Collections" resolveInfo="Collections" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8818697550806799612">
-              <link role="variableDeclaration:3" targetNodeId="8818697550806799596" resolveInfo="availableClasses" />
             </node>
           </node>
         </node>
@@ -938,19 +920,12 @@
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="8818697550806799711">
                           <property name="value:3" value="0" />
                         </node>
-                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8818697550806799712">
-                          <link role="variableDeclaration:3" targetNodeId="8818697550806799592" resolveInfo="numberInStubModel" />
+                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.IntegerConstant:3" id="3109832400002233409">
+                          <property name="value:3" value="-1" />
                         </node>
                       </node>
                     </node>
                   </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8818697550806799713">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression:3" id="8818697550806799714">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8818697550806799715">
-                  <link role="variableDeclaration:3" targetNodeId="8818697550806799592" resolveInfo="numberInStubModel" />
                 </node>
               </node>
             </node>
