@@ -134,6 +134,14 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
     myState.myUseAntialiasing = useAntialiasing;
   }
 
+  public boolean isHighightChanges() {
+    return myState.myHighlightChanges;
+  }
+
+  public void setHighlightChanges(boolean highlightChanges) {
+    myState.myHighlightChanges = highlightChanges;
+  }
+
   public Color getSelectionBackgroundColor() {
     return myState.mySelectionBackground;
   }
@@ -345,6 +353,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
     private MyColorComponent mySelectionBackgroundColorComponent;
     private MyColorComponent mySelectionForegroundColorComponent;
     private JCheckBox myAntialiasingCheckBox;
+    private JCheckBox myHighlightChangesCheckBox;
     private JCheckBox myUseBraces;
     private JSlider myBlinkingRateSlider;
     private final EditorComponent myBlinkingDemo;
@@ -398,6 +407,12 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
       antialiasingPanel.add(myAntialiasingCheckBox);
 
       panel.add(antialiasingPanel);
+
+      JPanel highlightChangesPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
+      myHighlightChangesCheckBox = new JCheckBox("Highlight changes from base version");
+      highlightChangesPanel.add(myHighlightChangesCheckBox);
+
+      panel.add(highlightChangesPanel);
 
       JPanel colorSettingsPanel = new JPanel();
       Border border = BorderFactory.createEmptyBorder(5, 5, 0, 0);
@@ -530,6 +545,8 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
           setUseAntialiasing(myAntialiasingCheckBox.isSelected());
           setUseBraces(myUseBraces.isSelected());
 
+          setHighlightChanges(myHighlightChangesCheckBox.isSelected());
+
           try {
             myState.myLineSpacing = Double.parseDouble(myLineSpacingField.getText());
           } catch (NumberFormatException e) {
@@ -556,6 +573,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
       boolean sameIndentSize = myIndentSizeComboBox.getSelectedItem().equals("" + getIndentSize());
       boolean sameAntialiasing = myAntialiasingCheckBox.isSelected() == isUseAntialiasing();
       boolean sameUseBraces = myUseBraces.isSelected() == useBraces();
+      boolean sameHighlightChanges = myHighlightChangesCheckBox.isSelected() == isHighightChanges();
       boolean sameFontSize = myFontSizesComboBox.getSelectedItem().equals("" + myState.myFontSize);
       boolean sameFontFamily = myFontsComboBox.getSelectedItem().equals("" + myState.myFontFamily);
       boolean sameLineSpacing = myLineSpacingField.getText().equals("" + myState.myLineSpacing);
@@ -563,7 +581,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
       boolean sameFgColor = mySelectionForegroundColorComponent.getColor().equals(getDefaultSelectionForegroundColor());
       boolean sameBlinkingRate = myBlinkingRateSlider.getValue() == (int) (SLIDER_RATIO / (long) CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis());
 
-      return !(sameTextWidth && sameIndentSize && sameAntialiasing && sameUseBraces
+      return !(sameTextWidth && sameIndentSize && sameAntialiasing && sameUseBraces && sameHighlightChanges
         && sameFontSize && sameFontFamily && sameLineSpacing && sameBgColor && sameFgColor && sameBlinkingRate);
     }
 
@@ -575,6 +593,8 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
       myAntialiasingCheckBox.setSelected(isUseAntialiasing());
 
       myUseBraces.setSelected(useBraces());
+
+      myHighlightChangesCheckBox.setSelected(isHighightChanges());
 
       myFontSizesComboBox.setSelectedItem("" + myState.myFontSize);
 
@@ -664,6 +684,8 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
     private int myIndentSize = 2;
     private int myVerticalBound = 120;
 
+    private boolean myHighlightChanges = false;
+
     @Override
     public boolean equals(Object o) {
       if (this == o) return true;
@@ -683,11 +705,17 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
       if (mySelectionForeground != null ? !mySelectionForeground.equals(otherState.mySelectionForeground) : otherState.mySelectionForeground != null)
         return false;
 
-      if(myIndentSize != otherState.myIndentSize)
+      if (myIndentSize != otherState.myIndentSize) {
         return false;
+      }
 
-      if(myVerticalBound != otherState.myVerticalBound)
+      if (myVerticalBound != otherState.myVerticalBound) {
         return false;
+      }
+
+      if (myHighlightChanges != otherState.myHighlightChanges) {
+        return false;
+      }
 
       return true;
     }
@@ -703,6 +731,7 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
       result = 31 * result + myTextWidth;
       result = 31 * result + myIndentSize;
       result = 31 * result + myVerticalBound;
+      result = 31 * result + (myHighlightChanges ? 1 : 0);
       result = 31 * result + (myUseAntialiasing ? 1 : 0);
       result = 31 * result + (mySelectionForeground != null ? mySelectionForeground.hashCode() : 0);
       result = 31 * result + (mySelectionBackground != null ? mySelectionBackground.hashCode() : 0);
@@ -788,6 +817,14 @@ public class EditorSettings implements SearchableConfigurable, PersistentStateCo
 
     public void setLineSpacing(double lineSpacing) {
       myLineSpacing = lineSpacing;
+    }
+
+    public boolean isHighlightChanges() {
+      return myHighlightChanges;
+    }
+
+    public void setHighlightChanges(boolean highlightChanges) {
+      myHighlightChanges = highlightChanges;
     }
   }
 }
