@@ -6,8 +6,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.search.ClassifierAndSuperClassifiersScope;
@@ -44,7 +42,7 @@ public class ClassConcept_Behavior {
   }
 
   public static boolean call_isDescendant_1213877355812(SNode thisNode, SNode classToCompare) {
-    if (EqualUtil.equals(INamedConcept_Behavior.call_getFqName_1213877404258(thisNode), INamedConcept_Behavior.call_getFqName_1213877404258(classToCompare))) {
+    if (thisNode == classToCompare) {
       return true;
     }
     if (SLinkOperations.getTarget(thisNode, "superclass", true) == null) {

@@ -7319,23 +7319,11 @@
               </node>
             </node>
           </node>
-          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1238269424336">
-            <link role="baseMethodDeclaration:3" targetNodeId="5.~EqualUtil.equals(java.lang.Object,java.lang.Object):boolean" resolveInfo="equals" />
-            <link role="classConcept:3" targetNodeId="5.~EqualUtil" resolveInfo="EqualUtil" />
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1238269424337">
-              <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="1238269424338" />
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1238269424339">
-                <link role="baseMethodDeclaration:16" targetNodeId="20.1213877404258" resolveInfo="getFqName" />
-              </node>
+          <node role="condition:3" type="jetbrains.mps.baseLanguage.structure.EqualsExpression:3" id="5219051414201774255">
+            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5219051414201774258">
+              <link role="variableDeclaration:3" targetNodeId="1213877355882" resolveInfo="classToCompare" />
             </node>
-            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1238269424340">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1238269424341">
-                <link role="variableDeclaration:3" targetNodeId="1213877355882" resolveInfo="classToCompare" />
-              </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="1238269424342">
-                <link role="baseMethodDeclaration:16" targetNodeId="20.1213877404258" resolveInfo="getFqName" />
-              </node>
-            </node>
+            <node role="leftExpression:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="5219051414201774254" />
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="1238269418066">
