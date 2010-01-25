@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.workbench.actions.generate;
 
-import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
-import org.jetbrains.annotations.NotNull;
 
 public class GenerateFilesFromModelsAction extends GenerateModelsAction {
   public GenerateFilesFromModelsAction() {

@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.workbench.actions.generate;
 
-import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.TextGenerationHandler;
-import org.jetbrains.annotations.NotNull;
 
 public class GenerateTextFromModelsAction extends GenerateModelsAction {
   public GenerateTextFromModelsAction() {

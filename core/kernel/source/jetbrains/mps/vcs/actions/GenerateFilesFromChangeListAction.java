@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.vcs.actions;
 
-import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 

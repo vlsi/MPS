@@ -15,26 +15,24 @@
  */
 package jetbrains.mps.vcs.actions;
 
+import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.openapi.actionSystem.Presentation;
 import com.intellij.openapi.vcs.actions.AbstractVcsAction;
 import com.intellij.openapi.vcs.actions.VcsContext;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.actionSystem.Presentation;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.generator.generationTypes.GenerationHandlerAdapter;
+import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.MPSProjectHolder;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vfs.VFileSystem;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IGenerationType;
 
-import java.util.List;
-import java.util.Collection;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.List;
 
 public abstract class GenerateFromChangeListAction extends AbstractVcsAction {
   protected void actionPerformed(VcsContext vcsContext) {

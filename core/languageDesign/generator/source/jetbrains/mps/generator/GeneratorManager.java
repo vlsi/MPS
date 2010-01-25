@@ -70,10 +70,6 @@ public class GeneratorManager {
     mySettings = settings;
   }
 
-  public IGenerationType getDefaultModuleGenerationType() {
-    return IGenerationType.FILES;
-  }
-
   public IGenerationHandler getDefaultGenerationHandler() {
     return new JavaGenerationHandler();
   }

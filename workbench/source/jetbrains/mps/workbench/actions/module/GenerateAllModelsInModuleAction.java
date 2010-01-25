@@ -16,29 +16,14 @@
 package jetbrains.mps.workbench.actions.module;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IGenerationType;
-import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
-import jetbrains.mps.ide.genconf.GenParameters;
-import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
-import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.workbench.action.BaseAction;
-import org.jetbrains.annotations.NotNull;
 
-import javax.swing.JOptionPane;
-import java.awt.Frame;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 public class GenerateAllModelsInModuleAction extends BaseGenerateAction {
   public GenerateAllModelsInModuleAction(boolean regenerate) {

@@ -16,18 +16,14 @@
 package jetbrains.mps.workbench.actions.generate;
 
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IGenerationType;
-import jetbrains.mps.generator.generationTypes.GenerationHandlerAdapter;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
+import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.ide.actions.ModelCheckerTool_Tool;
-import jetbrains.mps.MPSProjectHolder;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;

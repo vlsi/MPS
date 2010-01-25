@@ -15,14 +15,13 @@
  */
 package jetbrains.mps.refactoring.renameLanguage;
 
+import com.intellij.openapi.progress.ProgressIndicator;
+import com.intellij.openapi.progress.ProgressManager;
+import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Computable;
-import com.intellij.openapi.progress.ProgressManager;
-import com.intellij.openapi.progress.ProgressIndicator;
-import com.intellij.openapi.progress.Task.Modal;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.ide.dialogs.BaseDialog;
@@ -34,13 +33,12 @@ import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConf
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Set;
 import java.util.LinkedHashSet;
-
-import org.jetbrains.annotations.NotNull;
+import java.util.Set;
 
 public class RenameLanguageDialog extends BaseDialog {
   private JPanel myMainPanel;
