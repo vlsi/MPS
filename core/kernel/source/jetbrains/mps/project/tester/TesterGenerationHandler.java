@@ -72,12 +72,6 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
     return super.collectSources(module, inputModel, context, outputModel);
   }
 
-  @Override
-  public List<CompilationResult> compile(ITaskProgressHelper helper) {
-    clean();
-    return super.compile(helper);
-  }
-
   public Collection<SModel> getOutputModels() {
     return myOutputModelToPath.keySet();
   }
@@ -139,7 +133,9 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
     return getSources().get(JavaNameUtil.packageNameForModelUID(outputModel) + "." + outputRoot.substring(outputModel.getLongName().length() + 1)); // see NameUtil
   }
 
+  @Override
   public void clean() {
+    super.clean();
     myNodeExtensionMap.clear();
     myOutputModelRefToPath.clear();
     myOutputModelRefToRoots.clear();

@@ -56,9 +56,6 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   public void startGeneration(IMessageHandler handler) {
     super.startGeneration(handler);
     info("generating classes (in-memory)");
-    myResult = null;
-    mySources.clear();
-    myContextModules.clear();
   }
 
   @Override
@@ -186,5 +183,11 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     LOG.info(sb.toString());
 
     return result;
+  }
+
+  public void clean() {
+    mySources.clear();
+    myContextModules.clear();
+    myResult = null;
   }
 }

@@ -6,6 +6,6 @@ import jetbrains.mps.testModels.anonymousClass2.Superclass;
 
 public class SomeClass {
   public SomeClass() {
-    Superclass myClass = new Superclass() {    };
+    Superclass myClass = new Superclass() {};
   }
 }

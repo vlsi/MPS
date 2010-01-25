@@ -249,6 +249,18 @@
             </node>
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4338657704633418355">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4338657704633418357">
+            <link role="classConcept:3" targetNodeId="16.~Assert" resolveInfo="Assert" />
+            <link role="baseMethodDeclaration:3" targetNodeId="16.~Assert.assertNotNull(java.lang.String,java.lang.Object):void" resolveInfo="assertNotNull" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4338657704633418358">
+              <property name="value:3" value="project is not loaded" />
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4338657704633418360">
+              <link role="variableDeclaration:3" targetNodeId="1957199320903967765" resolveInfo="project" />
+            </node>
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="7196776143116386535">
           <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="7196776143116386536">
             <property name="name:3" value="changeModelProcessor" />
@@ -401,6 +413,18 @@
             </node>
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.LocalStaticMethodCall:3" id="1957199320903967883">
               <link role="baseMethodDeclaration:3" targetNodeId="1957199320903968137" resolveInfo="launchProject" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="4338657704633610067">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4338657704633610068">
+            <link role="classConcept:3" targetNodeId="16.~Assert" resolveInfo="Assert" />
+            <link role="baseMethodDeclaration:3" targetNodeId="16.~Assert.assertNotNull(java.lang.String,java.lang.Object):void" resolveInfo="assertNotNull" />
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4338657704633610069">
+              <property name="value:3" value="project is not loaded" />
+            </node>
+            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4338657704633610070">
+              <link role="variableDeclaration:3" targetNodeId="1957199320903967881" resolveInfo="project" />
             </node>
           </node>
         </node>
@@ -565,7 +589,7 @@
                         <link role="variableDeclaration:3" targetNodeId="6016914837743474510" resolveInfo="genType" />
                       </node>
                       <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="2381103581468453848">
-                        <link role="baseMethodDeclaration:3" targetNodeId="9.~TesterGenerationHandler.compile(jetbrains.mps.ide.progress.ITaskProgressHelper):java.util.List" resolveInfo="compile" />
+                        <link role="baseMethodDeclaration:3" targetNodeId="14.~InMemoryJavaGenerationHandler.compile(jetbrains.mps.ide.progress.ITaskProgressHelper):java.util.List" resolveInfo="compile" />
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="2381103581468453849">
                           <link role="classifier:3" targetNodeId="19.~ITaskProgressHelper" resolveInfo="ITaskProgressHelper" />
                           <link role="variableDeclaration:3" targetNodeId="19.~ITaskProgressHelper.EMPTY" resolveInfo="EMPTY" />
@@ -771,19 +795,16 @@
                       </node>
                     </node>
                     <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1957199320903968092">
-                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1957199320903968093">
-                        <link role="baseMethodDeclaration:3" targetNodeId="16.~Assert.assertTrue(java.lang.String,boolean):void" resolveInfo="assertTrue" />
+                      <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="4338657704633652998">
+                        <link role="baseMethodDeclaration:3" targetNodeId="16.~Assert.fail(java.lang.String):void" resolveInfo="fail" />
                         <link role="classConcept:3" targetNodeId="16.~Assert" resolveInfo="Assert" />
-                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="1957199320903968094">
-                          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1957199320903968095">
-                            <link role="variableDeclaration:3" targetNodeId="1957199320903968082" resolveInfo="t" />
-                          </node>
-                          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1957199320903968096">
+                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="4338657704633652999">
+                          <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="4338657704633653000">
                             <property name="value:3" value="Exception: " />
                           </node>
-                        </node>
-                        <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1957199320903968097">
-                          <property name="value:3" value="false" />
+                          <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="4338657704633653001">
+                            <link role="variableDeclaration:3" targetNodeId="1957199320903968082" resolveInfo="t" />
+                          </node>
                         </node>
                       </node>
                     </node>
