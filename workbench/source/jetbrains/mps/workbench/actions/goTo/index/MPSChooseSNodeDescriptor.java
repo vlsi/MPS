@@ -19,6 +19,7 @@ import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
 import com.intellij.util.Processor;
 import com.intellij.util.indexing.FileBasedIndex;
+import com.intellij.util.indexing.FileBasedIndex.AllValuesProcessor;
 import com.intellij.util.indexing.ID;
 import com.intellij.psi.search.EverythingGlobalScope;
 import jetbrains.mps.lang.core.structure.INamedConcept;
@@ -62,30 +63,22 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
       }
     }
 
-    final ID<SNodeDescriptor, Void> indexName = myIndex.getName();
+    final ID<String, SNodeDescriptor> indexName = myIndex.getName();
     final ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
     final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
 
-    fileBasedIndex.processAllKeys(indexName, new Processor<SNodeDescriptor>() {
-      public boolean process(SNodeDescriptor s) {
-        if (scope.getModelDescriptor(s.getModelReference()) == null) return true;
+    fileBasedIndex.processAllValues(indexName, new AllValuesProcessor<SNodeDescriptor>() {
+      @Override
+      public void process(int inputId, SNodeDescriptor s) {
+        if (scope.getModelDescriptor(s.getModelReference()) == null) return;
 
         if (changedModels.contains(s.getModelReference()) || cm.hasGetter(s.getConceptFqName(), INamedConcept.NAME)) {
           hasToLoad.add(s.getModelReference());
         } else {
           keys.add(s);
         }
-
-        return true;
       }
     }, getIdeaProject());
-
-    Set<SNodeDescriptor> keysCopy = new HashSet<SNodeDescriptor>(keys);
-    for (SNodeDescriptor s : keysCopy) {
-      if (fileBasedIndex.getContainingFiles(indexName, s, new EverythingGlobalScope(getIdeaProject())).isEmpty()) {
-        keys.remove(s);
-      }
-    }
 
     for (SModelReference ref : hasToLoad) {
       SModelDescriptor sm = scope.getModelDescriptor(ref);

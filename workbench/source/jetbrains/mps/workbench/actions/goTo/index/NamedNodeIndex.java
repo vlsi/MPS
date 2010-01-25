@@ -26,9 +26,9 @@ import java.util.List;
 
 public class NamedNodeIndex extends BaseSNodeDescriptorIndex {
   @NonNls
-  public static final ID<SNodeDescriptor, Void> NAME = ID.create("NamedNodeIndex");
+  public static final ID<String, SNodeDescriptor> NAME = ID.create("NamedNodeIndex");
 
-  public ID<SNodeDescriptor, Void> getName() {
+  public ID<String, SNodeDescriptor> getName() {
     return NAME;
   }
 

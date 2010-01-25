@@ -15,14 +15,14 @@
  */
 package jetbrains.mps.workbench.actions.goTo.index;
 
-import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.util.Key;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.indexing.DataIndexer;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.InputFilter;
+import com.intellij.util.indexing.FileBasedIndexExtension;
 import com.intellij.util.indexing.FileContent;
-import com.intellij.util.indexing.ScalarIndexExtension;
-import com.intellij.util.io.KeyDescriptor;
+import com.intellij.util.io.*;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.lang.core.structure.INamedConcept;
@@ -36,28 +36,34 @@ import jetbrains.mps.vcs.SuspiciousModelIndex;
 import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 
+import java.io.DataInput;
+import java.io.DataOutput;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public abstract class BaseSNodeDescriptorIndex extends ScalarIndexExtension<SNodeDescriptor> {
+public abstract class BaseSNodeDescriptorIndex extends FileBasedIndexExtension<String, SNodeDescriptor> {
 
   private static final Logger LOG = Logger.getLogger(BaseSNodeDescriptorIndex.class);
   private static final Key<SModel> PARSED_MODEL = new Key<SModel>("parsed-model");
 
   private final MyInputFilter myInputFilter = new MyInputFilter();
   private final MyIndexer myIndexer = new MyIndexer();
-  private final EnumeratorSNodeDescriptor myKeyDescriptor = new EnumeratorSNodeDescriptor();
 
   public abstract List<SNode> getNodesToIterate(SModel model);
 
-  public DataIndexer<SNodeDescriptor, Void, FileContent> getIndexer() {
+  public DataIndexer<String, SNodeDescriptor, FileContent> getIndexer() {
     return myIndexer;
   }
 
-  public KeyDescriptor<SNodeDescriptor> getKeyDescriptor() {
-    return myKeyDescriptor;
+  public KeyDescriptor<String> getKeyDescriptor() {
+    return new EnumeratorStringDescriptor();
+  }
+
+  @Override
+  public DataExternalizer<SNodeDescriptor> getValueExternalizer() {
+    return new EnumeratorSNodeDescriptor();
   }
 
   public InputFilter getInputFilter() {
@@ -69,17 +75,17 @@ public abstract class BaseSNodeDescriptorIndex extends ScalarIndexExtension<SNod
   }
 
   public int getVersion() {
-    return 3;
+    return 4;
   }
 
   public int getCacheSize() {
     return DEFAULT_CACHE_SIZE;
   }
 
-  private class MyIndexer implements DataIndexer<SNodeDescriptor, Void, FileContent> {
+  private class MyIndexer implements DataIndexer<String, SNodeDescriptor, FileContent> {
     @NotNull
-    public Map<SNodeDescriptor, Void> map(final FileContent inputData) {
-      final Map<SNodeDescriptor, Void> result = new HashMap<SNodeDescriptor, Void>();
+    public Map<String, SNodeDescriptor> map(final FileContent inputData) {
+      final Map<String, SNodeDescriptor> result = new HashMap<String, SNodeDescriptor>();
       ModelAccess.instance().runIndexing(new Runnable() {
         public void run() {
           try {
@@ -102,8 +108,8 @@ public abstract class BaseSNodeDescriptorIndex extends ScalarIndexExtension<SNod
               String conceptFqName = node.getConceptFqName();
               SModelReference modelRef = model.getSModelReference();
               int number = nodes.indexOf(node);
-              SNodeDescriptor key = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, number);
-              result.put(key, null);
+              SNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, number);
+              result.put("" + result.size(), value);
             }
           } catch (JDOMException e) {
             handleException(e, inputData);
