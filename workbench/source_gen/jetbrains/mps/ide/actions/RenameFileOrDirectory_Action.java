@@ -8,12 +8,14 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
+import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.RenameFileDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import java.io.IOException;
+import javax.swing.JOptionPane;
 
 public class RenameFileOrDirectory_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -21,6 +23,7 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
 
   private VirtualFile selectedFile;
   private Project project;
+  private Frame frame;
 
   public RenameFileOrDirectory_Action() {
     super("Rename...", "", ICON);
@@ -57,6 +60,10 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
     if (this.project == null) {
       return false;
     }
+    this.frame = event.getData(MPSDataKeys.FRAME);
+    if (this.frame == null) {
+      return false;
+    }
     return true;
   }
 
@@ -88,7 +95,12 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
   }
 
   /*package*/ boolean isNotValid(String result) {
-    if (result == null) {
+    if (result == null || result.length() == 0) {
+      JOptionPane.showMessageDialog(RenameFileOrDirectory_Action.this.frame, "Enter valid name");
+      return true;
+    }
+    if (RenameFileOrDirectory_Action.this.selectedFile.getParent().findChild(result) != null) {
+      JOptionPane.showMessageDialog(RenameFileOrDirectory_Action.this.frame, result + " already exists");
       return true;
     }
     return false;

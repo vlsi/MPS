@@ -8,6 +8,7 @@ import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
+import java.awt.Frame;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -15,6 +16,8 @@ import jetbrains.mps.workbench.dialogs.MoveFileDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.VFileSystem;
 import java.io.IOException;
+import javax.swing.JOptionPane;
+import jetbrains.mps.vfs.FileSystem;
 
 public class MoveFileOrDirectory_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -22,6 +25,7 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
 
   private VirtualFile selectedFile;
   private Project project;
+  private Frame frame;
 
   public MoveFileOrDirectory_Action() {
     super("Move...", "", ICON);
@@ -58,12 +62,16 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
     if (this.project == null) {
       return false;
     }
+    this.frame = event.getData(MPSDataKeys.FRAME);
+    if (this.frame == null) {
+      return false;
+    }
     return true;
   }
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      String path = MoveFileOrDirectory_Action.this.selectedFile.getPath();
+      String path = MoveFileOrDirectory_Action.this.selectedFile.getParent().getPath();
       MoveFileDialog dialog = new MoveFileDialog(MoveFileOrDirectory_Action.this.project, path, MoveFileOrDirectory_Action.this.selectedFile.isDirectory());
       dialog.show();
       if (!(dialog.isOK())) {
@@ -90,7 +98,12 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
   }
 
   /*package*/ boolean isNotValid(String result) {
-    if (result == null) {
+    if (result == null || result.length() == 0) {
+      JOptionPane.showMessageDialog(MoveFileOrDirectory_Action.this.frame, "Enter valid name");
+      return true;
+    }
+    if (FileSystem.getFile(result).toVirtualFile().findChild(MoveFileOrDirectory_Action.this.selectedFile.getName()) != null) {
+      JOptionPane.showMessageDialog(MoveFileOrDirectory_Action.this.frame, MoveFileOrDirectory_Action.this.selectedFile.getName() + " already exists");
       return true;
     }
     return false;
