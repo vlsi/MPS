@@ -130,7 +130,7 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
         return true;
       }
     }, GlobalSearchScope.allScope(project));
-    return generatedHash.equals(valueArray[0]);
+    return !(generatedHash.equals(valueArray[0]));
   }
 
   private boolean isEmpty(SModelDescriptor sm) {
