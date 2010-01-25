@@ -53,7 +53,6 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
 
   public Set<SNodeDescriptor> getSNodeDescritpors(IModule m) {
     if (!myCache.containsKey(m)) {
-      System.out.println("creating caches " + m);
       Set<SNodeDescriptor> result = new HashSet<SNodeDescriptor>();
       for (SModelRoot root : m.getSModelRoots()) {
         IModelRootManager manager = root.getManager();
