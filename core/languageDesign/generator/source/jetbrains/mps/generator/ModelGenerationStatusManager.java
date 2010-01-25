@@ -24,6 +24,7 @@ import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.DumbService;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.psi.search.GlobalSearchScope;
+import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
@@ -103,7 +104,8 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
   public boolean generationRequired(SModelDescriptor sm, Project project, @Nullable NoCachesStrategy strategy) {
     if (sm.isPackaged()) return false;
     if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) return false;
-    if (sm.getModelFile() == null) return false;
+    IFile modelFile = sm.getModelFile();
+    if (modelFile == null) return false;
     if (isDoNotGenerate(sm)) return false;
     if (SModelRepository.getInstance().isChanged(sm)) return true;
     if (isEmpty(sm)) return false;
@@ -116,38 +118,19 @@ public class ModelGenerationStatusManager implements ApplicationComponent {
       return strategy.compute(project, sm, generatedHash);
     }
 
-    return checkGenerationRequired(project, generatedHash);
+    return checkGenerationRequired(project, modelFile.toVirtualFile(), generatedHash);
   }
 
-  private boolean checkGenerationRequired(final Project project, String generatedHash) {
-    try {
-      Collection<VirtualFile> files = FileBasedIndex.getInstance().getContainingFiles(ModelDigestIndex.NAME,
-        generatedHash,
-        new GlobalSearchScope(project) {
-          @Override
-          public boolean contains(VirtualFile file) {
-            return true;
-          }
-
-          @Override
-          public int compare(VirtualFile file1, VirtualFile file2) {
-            return file1.getPath().compareTo(file2.getPath());
-          }
-
-          @Override
-          public boolean isSearchInModuleContent(@NotNull Module aModule) {
-            return true;
-          }
-
-          @Override
-          public boolean isSearchInLibraries() {
-            return false;
-          }
-        });
-      return files.isEmpty();
-    } catch (IndexNotReadyException e) {
-      return false;
-    }
+  private boolean checkGenerationRequired(final Project project, VirtualFile f, String generatedHash) {
+    final String[] valueArray = new String[1];
+    FileBasedIndex.getInstance().processValues(ModelDigestIndex.NAME, FileBasedIndex.getFileId(f), f, new ValueProcessor<String>() {
+      @Override
+      public boolean process(VirtualFile file, String value) {
+        valueArray[0] = value;
+        return true;
+      }
+    }, GlobalSearchScope.allScope(project));
+    return generatedHash.equals(valueArray[0]);
   }
 
   private boolean isEmpty(SModelDescriptor sm) {

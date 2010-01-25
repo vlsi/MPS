@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.generator;
 
-import com.intellij.util.indexing.ScalarIndexExtension;
-import com.intellij.util.indexing.ID;
-import com.intellij.util.indexing.FileContent;
-import com.intellij.util.indexing.DataIndexer;
+import com.intellij.util.indexing.*;
 import com.intellij.util.indexing.FileBasedIndex.InputFilter;
+import com.intellij.util.io.DataExternalizer;
 import com.intellij.util.io.KeyDescriptor;
 import com.intellij.util.io.EnumeratorStringDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -38,10 +36,10 @@ import java.io.InputStreamReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
 
-public class ModelDigestIndex extends ScalarIndexExtension<String> {
+public class ModelDigestIndex extends SingleEntryFileBasedIndexExtension<String> {
   private static final Logger LOG = Logger.getLogger(ModelDigestIndex.class);
 
-  public static ID<String, Void> NAME = ID.create("ModelDigest");
+  public static final ID<Integer, String> NAME = ID.create("ModelDigest");
 
   public static String hash(byte[] content) {
     try {
@@ -64,23 +62,24 @@ public class ModelDigestIndex extends ScalarIndexExtension<String> {
     }
   }
 
-  public ID<String, Void> getName() {
+  public ID<Integer, String> getName() {
     return NAME;
   }
 
-  public DataIndexer<String, Void, FileContent> getIndexer() {
-    return new DataIndexer<String, Void, FileContent>() {
-      @NotNull
-      public Map<String, Void> map(FileContent inputData) {
-        Map<String, Void> result = new HashMap<String, Void>();
-        result.put(hash(inputData.getContent()), null);
-        return result;
-      }
-    };
+
+  @Override
+  public DataExternalizer<String> getValueExternalizer() {
+    return new EnumeratorStringDescriptor();
   }
 
-  public KeyDescriptor<String> getKeyDescriptor() {
-    return new EnumeratorStringDescriptor();
+  @Override
+  public SingleEntryIndexer<String> getIndexer() {
+    return new SingleEntryIndexer<String>(false) {
+      @Override
+      protected String computeValue(@NotNull FileContent inputData) {
+        return hash(inputData.getContent());
+      }
+    };
   }
 
   public InputFilter getInputFilter() {
@@ -96,6 +95,6 @@ public class ModelDigestIndex extends ScalarIndexExtension<String> {
   }
 
   public int getVersion() {
-    return 1;
+    return 2;
   }
 }
