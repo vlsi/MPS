@@ -65,7 +65,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
     final ID<SNodeDescriptor, Void> indexName = myIndex.getName();
     final ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
     final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
-    
+
     fileBasedIndex.processAllKeys(indexName, new Processor<SNodeDescriptor>() {
       public boolean process(SNodeDescriptor s) {
         if (scope.getModelDescriptor(s.getModelReference()) == null) return true;
@@ -114,12 +114,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
 
   private void addJavaStubs(Set<SNodeDescriptor> result, IScope scope) {
     for (IModule m : scope.getVisibleModules()) {
-      for (SModelRoot root : m.getSModelRoots()) {
-        IModelRootManager manager = root.getManager();
-        if (manager instanceof BaseStubModelRootManager) {
-          result.addAll(((BaseStubModelRootManager) manager).getRootNodeDescriptors(new StubLocation(root.getPath(), root.getPrefix(), m)));
-        }
-      }
+      result.addAll(StubsNodeDescriptorsCache.getInstance().getSNodeDescritpors(m));
     }
   }
 
@@ -154,4 +149,6 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
   public String getCheckBoxName() {
     return "Include non-project models";
   }
+
+
 }
