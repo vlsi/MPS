@@ -18,6 +18,7 @@ import java.io.IOException;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.ide.IdeBundle;
 import com.intellij.ide.projectView.ProjectView;
+import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView;
 
 public class NewFile_Action extends GeneratedAction {
@@ -97,7 +98,12 @@ public class NewFile_Action extends GeneratedAction {
       };
       Messages.showInputDialog(NewFile_Action.this.project, IdeBundle.message("prompt.enter.new.file.name"), IdeBundle.message("title.new.file"), Messages.getQuestionIcon(), "", validator);
       if (result[0] != null) {
-        ProjectView.getInstance(NewFile_Action.this.project).getProjectViewPaneById(BaseDirectoryProjectView.ID).select(null, result[0], true);
+        ProjectView.getInstance(NewFile_Action.this.project).refresh();
+        SwingUtilities.invokeLater(new Runnable() {
+          public void run() {
+            ProjectView.getInstance(NewFile_Action.this.project).getProjectViewPaneById(BaseDirectoryProjectView.ID).select(null, result[0], true);
+          }
+        });
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {

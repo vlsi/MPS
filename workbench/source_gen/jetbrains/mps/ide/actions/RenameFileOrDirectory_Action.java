@@ -14,6 +14,9 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.RenameFileDialog;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.ide.projectView.ProjectView;
+import javax.swing.SwingUtilities;
+import jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 
@@ -83,6 +86,12 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
               return;
             }
             RenameFileOrDirectory_Action.this.selectedFile.rename(null, result);
+            ProjectView.getInstance(RenameFileOrDirectory_Action.this.project).refresh();
+            SwingUtilities.invokeLater(new Runnable() {
+              public void run() {
+                ProjectView.getInstance(RenameFileOrDirectory_Action.this.project).getProjectViewPaneById(BaseDirectoryProjectView.ID).select(null, RenameFileOrDirectory_Action.this.selectedFile, true);
+              }
+            });
           } catch (IOException e) {
           }
         }

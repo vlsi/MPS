@@ -15,6 +15,9 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.MoveFileDialog;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.VFileSystem;
+import com.intellij.ide.projectView.ProjectView;
+import javax.swing.SwingUtilities;
+import jetbrains.mps.ide.projectPane.fileSystem.BaseDirectoryProjectView;
 import java.io.IOException;
 import javax.swing.JOptionPane;
 import jetbrains.mps.vfs.FileSystem;
@@ -86,6 +89,12 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
             }
             VirtualFile virtualFile = VFileSystem.getFile(result);
             MoveFileOrDirectory_Action.this.selectedFile.move(null, virtualFile);
+            ProjectView.getInstance(MoveFileOrDirectory_Action.this.project).refresh();
+            SwingUtilities.invokeLater(new Runnable() {
+              public void run() {
+                ProjectView.getInstance(MoveFileOrDirectory_Action.this.project).getProjectViewPaneById(BaseDirectoryProjectView.ID).select(null, MoveFileOrDirectory_Action.this.selectedFile, true);
+              }
+            });
           } catch (IOException e) {
           }
         }

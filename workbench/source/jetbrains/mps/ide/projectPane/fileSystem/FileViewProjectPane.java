@@ -260,6 +260,7 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
   }
 
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {
+    getTree().rebuildLater();
     return new ActionCallback();
   }
 
