@@ -472,11 +472,6 @@ public abstract class FileViewProjectPane extends AbstractProjectViewPane implem
     public void fileCopied(VirtualFileCopyEvent event) {
       rebuildTreeLater();
     }
-
-    @Override
-    public void contentsChanged(VirtualFileEvent event) {
-      VcsDirtyScopeManager.getInstance(myProject).fileDirty(event.getFile());
-    }
   }
 
   private class ChangeListUpdateListener extends ChangeListAdapter {
