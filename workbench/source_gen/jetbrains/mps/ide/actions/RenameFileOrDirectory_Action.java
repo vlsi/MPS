@@ -12,6 +12,8 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.RenameFileDialog;
+import jetbrains.mps.smodel.ModelAccess;
+import java.io.IOException;
 
 public class RenameFileOrDirectory_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -23,7 +25,7 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
   public RenameFileOrDirectory_Action() {
     super("Rename...", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull
@@ -66,12 +68,29 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
       if (!(dialog.isOK())) {
         return;
       }
-      String result = dialog.getResult();
-      RenameFileOrDirectory_Action.this.selectedFile.rename(null, result);
+      final String result = dialog.getResult();
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          try {
+            if (RenameFileOrDirectory_Action.this.isNotValid(result)) {
+              return;
+            }
+            RenameFileOrDirectory_Action.this.selectedFile.rename(null, result);
+          } catch (IOException e) {
+          }
+        }
+      });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameFileOrDirectory", t);
       }
     }
+  }
+
+  /*package*/ boolean isNotValid(String result) {
+    if (result == null) {
+      return true;
+    }
+    return false;
   }
 }

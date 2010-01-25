@@ -12,7 +12,9 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.dialogs.MoveFileDialog;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.VFileSystem;
+import java.io.IOException;
 
 public class MoveFileOrDirectory_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -24,7 +26,7 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
   public MoveFileOrDirectory_Action() {
     super("Move...", "", ICON);
     this.setIsAlwaysVisible(false);
-    this.setExecuteOutsideCommand(false);
+    this.setExecuteOutsideCommand(true);
   }
 
   @NotNull
@@ -67,13 +69,30 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
       if (!(dialog.isOK())) {
         return;
       }
-      String result = dialog.getResult();
-      VirtualFile virtualFile = VFileSystem.getFile(result);
-      MoveFileOrDirectory_Action.this.selectedFile.move(null, virtualFile);
+      final String result = dialog.getResult();
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          try {
+            if (MoveFileOrDirectory_Action.this.isNotValid(result)) {
+              return;
+            }
+            VirtualFile virtualFile = VFileSystem.getFile(result);
+            MoveFileOrDirectory_Action.this.selectedFile.move(null, virtualFile);
+          } catch (IOException e) {
+          }
+        }
+      });
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MoveFileOrDirectory", t);
       }
     }
+  }
+
+  /*package*/ boolean isNotValid(String result) {
+    if (result == null) {
+      return true;
+    }
+    return false;
   }
 }

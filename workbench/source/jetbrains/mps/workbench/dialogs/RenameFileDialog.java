@@ -5,10 +5,9 @@ import com.intellij.openapi.project.Project;
 import com.intellij.ui.IdeBorderFactory;
 
 import javax.swing.*;
-import java.awt.GridBagLayout;
-import java.awt.GridBagConstraints;
-import java.awt.Insets;
-import java.awt.BorderLayout;
+import java.awt.*;
+
+import jetbrains.mps.ide.dialogs.BaseDialog;
 
 public class RenameFileDialog extends DialogWrapper {
   private JLabel myLabel;
@@ -18,7 +17,7 @@ public class RenameFileDialog extends DialogWrapper {
     super(project);
     setTitle("Rename");
     myTextField = new JTextField(initialText);
-    String type = (isDirectory)? " directory " : "file";
+    String type = (isDirectory)? "directory" : "file";
     myLabel = new JLabel("Rename " + type + " " + initialText + " to:");
     init();
   }
