@@ -23,10 +23,6 @@ public class RenameFileDialog extends DialogWrapper {
     init();
   }
 
-  public RenameFileDialog(Project project, String initialText) {
-    this(project, initialText, false);
-  }
-
   @Override
   protected JComponent createCenterPanel() {
     JPanel centralPanel = new JPanel(new BorderLayout());

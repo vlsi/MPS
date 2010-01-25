@@ -11,14 +11,8 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.openapi.ui.TextFieldWithBrowseButton;
-import com.intellij.openapi.ui.DialogWrapper;
-import org.jetbrains.annotations.Nullable;
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import javax.swing.JLabel;
-import com.intellij.ui.IdeBorderFactory;
+import jetbrains.mps.workbench.dialogs.MoveFileDialog;
+import jetbrains.mps.vfs.VFileSystem;
 
 public class MoveFileOrDirectory_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -67,37 +61,15 @@ public class MoveFileOrDirectory_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      final TextFieldWithBrowseButton[] textWithButton = new TextFieldWithBrowseButton[1];
-      final String path = MoveFileOrDirectory_Action.this.selectedFile.getPath();
-      DialogWrapper dialog = new DialogWrapper(MoveFileOrDirectory_Action.this.project) {
-        {
-          this.setTitle("Move");
-          this.init();
-        }
-
-        @Nullable
-        protected JComponent createCenterPanel() {
-          JPanel result = new JPanel(new BorderLayout());
-          JLabel label = new JLabel("Move file " + path);
-          JPanel mainPanel = new JPanel(new BorderLayout());
-          JLabel mainLabel = new JLabel("To directory:");
-          textWithButton[0] = new TextFieldWithBrowseButton();
-          textWithButton[0].setText(path);
-          mainPanel.add(textWithButton[0], BorderLayout.LINE_END);
-          mainPanel.add(mainLabel, BorderLayout.LINE_START);
-          result.setBorder(IdeBorderFactory.createBorder());
-          result.add(mainPanel, BorderLayout.CENTER);
-          result.add(label, BorderLayout.PAGE_START);
-          return result;
-        }
-      };
+      String path = MoveFileOrDirectory_Action.this.selectedFile.getPath();
+      MoveFileDialog dialog = new MoveFileDialog(MoveFileOrDirectory_Action.this.project, path, MoveFileOrDirectory_Action.this.selectedFile.isDirectory());
       dialog.show();
       if (!(dialog.isOK())) {
         return;
       }
-      if (textWithButton[0].getText().length() == 0) {
-        return;
-      }
+      String result = dialog.getResult();
+      VirtualFile virtualFile = VFileSystem.getFile(result);
+      MoveFileOrDirectory_Action.this.selectedFile.move(null, virtualFile);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "MoveFileOrDirectory", t);

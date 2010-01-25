@@ -11,14 +11,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import javax.swing.JTextField;
-import com.intellij.openapi.ui.DialogWrapper;
-import org.jetbrains.annotations.Nullable;
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import java.awt.BorderLayout;
-import javax.swing.JLabel;
-import com.intellij.ui.IdeBorderFactory;
+import jetbrains.mps.workbench.dialogs.RenameFileDialog;
 
 public class RenameFileOrDirectory_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -67,38 +60,14 @@ public class RenameFileOrDirectory_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      final String oldName = RenameFileOrDirectory_Action.this.selectedFile.getName();
-      final String oldNameWithoutExtension = RenameFileOrDirectory_Action.this.selectedFile.getNameWithoutExtension();
-      final JTextField[] textField = new JTextField[1];
-      DialogWrapper dialog = new DialogWrapper(RenameFileOrDirectory_Action.this.project) {
-        {
-          this.setTitle("Rename");
-          this.init();
-        }
-
-        @Nullable
-        protected JComponent createCenterPanel() {
-          JPanel result = new JPanel(new BorderLayout());
-          JLabel label = new JLabel("Rename file " + oldName + " to:");
-          textField[0] = new JTextField();
-          textField[0].setText(oldName);
-          textField[0].setSelectionStart(0);
-          textField[0].setSelectionEnd(oldNameWithoutExtension.length());
-          result.setBorder(IdeBorderFactory.createBorder());
-          result.add(label, BorderLayout.PAGE_START);
-          result.add(textField[0], BorderLayout.PAGE_END);
-          return result;
-        }
-      };
+      String oldName = RenameFileOrDirectory_Action.this.selectedFile.getName();
+      RenameFileDialog dialog = new RenameFileDialog(RenameFileOrDirectory_Action.this.project, oldName, RenameFileOrDirectory_Action.this.selectedFile.isDirectory());
       dialog.show();
       if (!(dialog.isOK())) {
         return;
       }
-      String newName = textField[0].getText();
-      if (newName.length() == 0) {
-        return;
-      }
-      RenameFileOrDirectory_Action.this.selectedFile.rename(null, newName);
+      String result = dialog.getResult();
+      RenameFileOrDirectory_Action.this.selectedFile.rename(null, result);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameFileOrDirectory", t);

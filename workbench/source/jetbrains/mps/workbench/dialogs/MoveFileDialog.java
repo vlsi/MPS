@@ -26,10 +26,6 @@ public class MoveFileDialog extends DialogWrapper {
   private JLabel myLabel;
   private TextFieldWithBrowseButton myDirectoryField = new TextFieldWithBrowseButton();;
 
-  public MoveFileDialog(Project project, String initialText) {
-    this(project, initialText, false);
-  }
-
   public MoveFileDialog(Project project, String initialText, boolean isDirectory) {
     super(project);
     setTitle("Move");
