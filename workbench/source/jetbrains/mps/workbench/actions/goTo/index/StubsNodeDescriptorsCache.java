@@ -67,7 +67,6 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
   }
 
   private void clearCache() {
-    System.out.println("clear caches");
     myCache.clear();
   }
 }
