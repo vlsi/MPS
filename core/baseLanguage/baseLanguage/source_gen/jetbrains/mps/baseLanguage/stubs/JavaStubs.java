@@ -136,7 +136,8 @@ public class JavaStubs extends BaseStubModelRootManager {
         continue;
       }
       result.add(new SNodeDescriptor(cls, conceptFqName, 0, 0, -1) {
-        public SModelReference getModelReference() {
+        @Override
+        protected SModelReference calculateModelReference() {
           return StubHelper.uidForPackageInStubs(pack);
         }
       });

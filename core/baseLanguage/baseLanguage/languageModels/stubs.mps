@@ -891,8 +891,8 @@
                         <link role="classifier:3" targetNodeId="10.~SNodeDescriptor" resolveInfo="SNodeDescriptor" />
                         <link role="baseMethodDeclaration:3" targetNodeId="10.~SNodeDescriptor.&lt;init&gt;(java.lang.String,java.lang.String,long,long,int)" resolveInfo="SNodeDescriptor" />
                         <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="8818697550806799701">
-                          <property name="name:3" value="getModelReference" />
-                          <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="8818697550806799702" />
+                          <property name="name:3" value="calculateModelReference" />
+                          <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="909795493547395322" />
                           <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="8818697550806799703">
                             <link role="classifier:3" targetNodeId="5.~SModelReference" resolveInfo="SModelReference" />
                           </node>
@@ -906,6 +906,9 @@
                                 </node>
                               </node>
                             </node>
+                          </node>
+                          <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="909795493547395323">
+                            <link role="annotation:3" targetNodeId="2v.~Override" resolveInfo="Override" />
                           </node>
                         </node>
                         <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="8818697550806799708">

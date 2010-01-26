@@ -25,7 +25,8 @@ public class SNodeDescriptor {
   private String myConceptFqName;
   private long myMostSignificantBits;
   private long myLeastSignificantBits;
-  private int myNumberInModel;  
+  private int myNumberInModel;
+  private SModelReference myModelReference;
 
   public SNodeDescriptor(String nodeName, String fqName, long mostSignificantBits, long leastSignificantBits, int number) {
     myNodeName = nodeName;
@@ -48,7 +49,14 @@ public class SNodeDescriptor {
     return myNodeName;
   }
 
-  public SModelReference getModelReference() {
+  public final SModelReference getModelReference() {
+    if (myModelReference == null) {
+      myModelReference = calculateModelReference();
+    }
+    return myModelReference;
+  }
+
+  protected SModelReference calculateModelReference() {
     return new SModelReference(null, SModelId.regular(new UUID(myMostSignificantBits, myLeastSignificantBits))).update();
   }
 
@@ -68,9 +76,9 @@ public class SNodeDescriptor {
   public boolean equals(Object obj) {
     if (!(obj instanceof SNodeDescriptor)) return false;
     SNodeDescriptor sd = (SNodeDescriptor) obj;
-    return sd.getConceptFqName().equals(getConceptFqName())
-      && sd.getNodeName().equals(getNodeName())
-      && sd.getNumberInModel() == getNumberInModel()
+    return sd.myConceptFqName.equals(myConceptFqName)
+      && sd.myNodeName.equals(myNodeName)
+      && sd.myNumberInModel == myNumberInModel
       && sd.getModelReference().equals(getModelReference());
   }
 
