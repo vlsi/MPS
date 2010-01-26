@@ -214,14 +214,15 @@ public class TestGenerationWorker extends GeneratorWorker {
     outputModels.addAll(myGenerationHandler.getOutputModels());
 
     // compile
-    List<CompilationResult> compilationResult;
+    List<CompilationResult> compilationResult = null;
     if (Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE))) {
       compilationResult = ModelAccess.instance().runReadAction(new Computable<List<CompilationResult>>() {
         public List<CompilationResult> compute() {
           return myGenerationHandler.compile(ITaskProgressHelper.EMPTY);
         }
       });
-    } else {
+    }
+    if (compilationResult == null){
       compilationResult = Collections.EMPTY_LIST;
     }
 
@@ -236,7 +237,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     System.out.println(myBuildServerMessageFormat.formatTestFinish(currentTestName));
 
     // invoke generated tests
-    if (isInvokeTestsSet()) {
+    if (isInvokeTestsSet() && ((ModelCycle) cycle).isUserModel()) {
       runTests(cycle.getClassPath(), cycle.getStandaloneClassPath(), myGenerationHandler, outputModels);
     }
 
@@ -244,6 +245,9 @@ public class TestGenerationWorker extends GeneratorWorker {
   }
 
   private void runTests(List<File> moduleClassPath, List<File> standaloneClassPath, TesterGenerationHandler handler, List<SModel> outputModels) {
+    List<String> testClassesNames = getTestClassesNames(handler, outputModels, createClassLoader(moduleClassPath));
+    if (testClassesNames.isEmpty()) return;
+
     List<String> commandLine = new ArrayList<String>();
     commandLine.add(JavaEnvUtils.getJreExecutable("java"));
 
@@ -260,7 +264,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     commandLine.add("-classpath");
     commandLine.add(sb.toString());
     commandLine.add(UnitTestRunner.class.getCanonicalName());
-    for (String testClassName : getTestClassesNames(handler, outputModels, createClassLoader(moduleClassPath))) {
+    for (String testClassName : testClassesNames) {
       commandLine.add("-c");
       commandLine.add(testClassName);
     }
@@ -324,7 +328,7 @@ public class TestGenerationWorker extends GeneratorWorker {
           if (testCaseClass.isAssignableFrom(testClass)) {
             testClasses.add(className);
           }
-
+        } catch (java.lang.ExceptionInInitializerError ignored) {
         } catch (Throwable throwable) {
           log(throwable);
         }
@@ -495,6 +499,24 @@ public class TestGenerationWorker extends GeneratorWorker {
     @Override
     public String toString() {
       return "generating " + mySModel.getLongName();
+    }
+
+    public SModelDescriptor getModel() {
+      return mySModel;
+    }
+
+    public boolean isUserModel() {
+      if (myModule instanceof Language) {
+        for (LanguageAspect la : LanguageAspect.values()) {
+          if (la.get((Language) myModule) == mySModel) {
+            return false;
+          }
+        }
+        return true;
+      } else if (myModule instanceof Generator || myModule instanceof DevKit) {
+        return false;
+      }
+      return true;
     }
   }
 
