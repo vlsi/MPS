@@ -88,6 +88,11 @@
   <visible index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5626639541500581272">
     <property name="name:3" value="Test" />
+    <node role="staticMethod:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration:3" id="6715668012349988729">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="6715668012349988730" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="6715668012349988731" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="6715668012349988732" />
+    </node>
     <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5626639541500581273" />
     <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="5626639541500581274">
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5626639541500581275" />

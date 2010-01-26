@@ -96,7 +96,10 @@ public class JavaStubs extends BaseStubModelRootManager {
 
   public Set<SNodeDescriptor> getRootNodeDescriptors(final StubLocation location) {
     Set<SNodeDescriptor> result = new jetbrains.mps.util.misc.hash.HashSet<SNodeDescriptor>();
-    JavaStubs.this.iterateClasspath(JavaStubs.this.createClassPathItem(location), result, "");
+    IClassPathItem item = JavaStubs.this.createClassPathItem(location);
+    if (item != null) {
+      JavaStubs.this.iterateClasspath(item, result, "");
+    }
     return result;
   }
 
