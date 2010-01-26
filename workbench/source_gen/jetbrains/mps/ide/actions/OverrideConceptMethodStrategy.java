@@ -114,15 +114,15 @@ public class OverrideConceptMethodStrategy extends BaseMethodUpdateStrategy {
         SNode quotedNode1_8496_4 = quotedNode_8496_5;
         {
           quotedNode_8496_6 = (SNode) parameter_8496_3;
-          SNode quotedNode1_1;
+          SNode quotedNode1_8496_5;
           if (_parameterValues_129834374.contains(quotedNode_8496_6)) {
-            quotedNode1_1 = CopyUtil.copy(quotedNode_8496_6);
+            quotedNode1_8496_5 = CopyUtil.copy(quotedNode_8496_6);
           } else {
             _parameterValues_129834374.add(quotedNode_8496_6);
-            quotedNode1_1 = quotedNode_8496_6;
+            quotedNode1_8496_5 = quotedNode_8496_6;
           }
-          if (quotedNode1_1 != null) {
-            quotedNode_8496_5.addChild("expression", HUtil.copyIfNecessary(quotedNode1_1));
+          if (quotedNode1_8496_5 != null) {
+            quotedNode_8496_5.addChild("expression", HUtil.copyIfNecessary(quotedNode1_8496_5));
           }
         }
         result = quotedNode1_8496_4;

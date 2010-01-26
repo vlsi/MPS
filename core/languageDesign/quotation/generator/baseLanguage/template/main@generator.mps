@@ -2877,6 +2877,16 @@
                                 <node role="baseName:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1525847198352014993">
                                   <property name="value:3" value="quotedNode1_" />
                                 </node>
+                                <node role="contextNode:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="4472762157342702037">
+                                  <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="4472762157342702038" />
+                                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="4472762157342702039">
+                                    <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="4472762157342702040">
+                                      <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="4472762157342702041">
+                                        <link role="conceptDeclaration:16" targetNodeId="1.1196350785113:0" resolveInfo="Quotation" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                </node>
                               </node>
                             </node>
                           </node>

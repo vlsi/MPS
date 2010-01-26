@@ -139,15 +139,15 @@ public class OverrideClassMethodStrategy extends BaseMethodUpdateStrategy {
         SNode quotedNode1_2096_3 = quotedNode_2096_4;
         {
           quotedNode_2096_5 = (SNode) parameter_2096_3;
-          SNode quotedNode1_0;
+          SNode quotedNode1_2096_4;
           if (_parameterValues_129834374.contains(quotedNode_2096_5)) {
-            quotedNode1_0 = CopyUtil.copy(quotedNode_2096_5);
+            quotedNode1_2096_4 = CopyUtil.copy(quotedNode_2096_5);
           } else {
             _parameterValues_129834374.add(quotedNode_2096_5);
-            quotedNode1_0 = quotedNode_2096_5;
+            quotedNode1_2096_4 = quotedNode_2096_5;
           }
-          if (quotedNode1_0 != null) {
-            quotedNode_2096_4.addChild("expression", HUtil.copyIfNecessary(quotedNode1_0));
+          if (quotedNode1_2096_4 != null) {
+            quotedNode_2096_4.addChild("expression", HUtil.copyIfNecessary(quotedNode1_2096_4));
           }
         }
         result = quotedNode1_2096_3;
