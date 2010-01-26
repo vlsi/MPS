@@ -54,7 +54,7 @@ public class Document extends BaseConcept implements INamedConcept {
   }
 
   public Element getRootElement() {
-    return (Element)this.getChild(Element.class, Document.ROOT_ELEMENT);
+    return (Element) this.getChild(Element.class, Document.ROOT_ELEMENT);
   }
 
   public void setRootElement(Element node) {
@@ -62,7 +62,7 @@ public class Document extends BaseConcept implements INamedConcept {
   }
 
   public static Document newInstance(SModel sm, boolean init) {
-    return (Document)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.sampleXML.structure.Document", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Document) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.sampleXML.structure.Document", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Document newInstance(SModel sm) {

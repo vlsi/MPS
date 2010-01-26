@@ -59,7 +59,7 @@ public class Element extends ElementPart {
   }
 
   public static Element newInstance(SModel sm, boolean init) {
-    return (Element)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.sampleXML.structure.Element", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Element) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.sampleXML.structure.Element", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Element newInstance(SModel sm) {

@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
 import java.awt.Dimension;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -44,8 +45,8 @@ public class FindInstancesDialog extends BaseDialog {
     this.myContext = context;
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
+    ModelAccess.instance().runWriteActionInCommand(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<EmbeddableEditor>() {
+      public EmbeddableEditor invoke() {
         FindInstancesDialog.this.myNode = SConceptOperations.createNewNode("jetbrains.mps.quickQueryLanguage.structure.ModelQuery", null);
         SNode statementList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
         SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
@@ -54,15 +55,15 @@ public class FindInstancesDialog extends BaseDialog {
         SLinkOperations.setTarget(expressionStatement, "expression", defaultCondition, true);
         ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(expressionStatement);
         SLinkOperations.setTarget(SLinkOperations.getTarget(FindInstancesDialog.this.myNode, "condition", true), "body", statementList, true);
-        FindInstancesDialog.this.myEditor = new EmbeddableEditor(context, new ModelOwner() {}, FindInstancesDialog.this.myNode);
+        return FindInstancesDialog.this.myEditor = new EmbeddableEditor(context, new ModelOwner() {}, FindInstancesDialog.this.myNode);
       }
-    });
+    }));
     final Wrappers._T<List<Language>> languageList = new Wrappers._T<List<Language>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        languageList.value = language.getAllExtendedLanguages();
+    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<List<Language>>() {
+      public List<Language> invoke() {
+        return languageList.value = language.getAllExtendedLanguages();
       }
-    });
+    }));
     for (Language extendedLanguage : languageList.value) {
       this.myEditor.addLanguageStructureModel(extendedLanguage);
     }
@@ -82,11 +83,11 @@ public class FindInstancesDialog extends BaseDialog {
   }
 
   public void setConceptDeclaration(final SNode declaration) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        SLinkOperations.setTarget(FindInstancesDialog.this.myNode, "conceptDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false);
+    ModelAccess.instance().runWriteActionInCommand(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
+        return SLinkOperations.setTarget(FindInstancesDialog.this.myNode, "conceptDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false);
       }
-    });
+    }));
   }
 
   @BaseDialog.Button(position = 0, name = "Find", mnemonic = 'F', defaultButton = true)

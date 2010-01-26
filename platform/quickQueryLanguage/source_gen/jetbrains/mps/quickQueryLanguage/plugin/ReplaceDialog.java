@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.ModelOwner;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import java.awt.Dimension;
 import javax.swing.JComponent;
@@ -48,11 +49,11 @@ public class ReplaceDialog extends BaseDialog {
     });
     this.myEditor.addLanguageStructureModel(language);
     final Wrappers._T<List<Language>> languageList = new Wrappers._T<List<Language>>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        languageList.value = language.getAllExtendedLanguages();
+    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<List<Language>>() {
+      public List<Language> invoke() {
+        return languageList.value = language.getAllExtendedLanguages();
       }
-    });
+    }));
     for (Language extendedLanguage : languageList.value) {
       this.myEditor.addLanguageStructureModel(extendedLanguage);
     }
@@ -67,11 +68,11 @@ public class ReplaceDialog extends BaseDialog {
   }
 
   public void setConceptDeclaration(final SNode declaration) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        SLinkOperations.setTarget(ReplaceDialog.this.myNode, "conceptDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false);
+    ModelAccess.instance().runWriteActionInCommand(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
+      public SNode invoke() {
+        return SLinkOperations.setTarget(ReplaceDialog.this.myNode, "conceptDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false);
       }
-    });
+    }));
   }
 
   @BaseDialog.Button(position = 0, name = "Modify", mnemonic = 'M', defaultButton = true)

@@ -10,6 +10,6 @@ public class SampleXML_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("772f6dcd-8c0d-48f7-869c-908e036f7c8e(jetbrains.mps.sampleXML)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

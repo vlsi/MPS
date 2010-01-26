@@ -13,8 +13,8 @@ public class QuickQueryLanguage_ApplicationPlugin extends BaseApplicationPlugin 
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.quickQueryLanguage";
-    this.addGroup(groups, moduleName, "jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionGroup_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionAndNodeGroup_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.quickQueryLanguage.plugin.FindInstancesByConditionGroup_ActionGroup");
     return groups;
   }
 

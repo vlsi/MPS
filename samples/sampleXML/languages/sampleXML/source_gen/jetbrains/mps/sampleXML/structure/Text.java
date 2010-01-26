@@ -24,7 +24,7 @@ public class Text extends ElementPart {
   }
 
   public static Text newInstance(SModel sm, boolean init) {
-    return (Text)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.sampleXML.structure.Text", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Text) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.sampleXML.structure.Text", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Text newInstance(SModel sm) {
