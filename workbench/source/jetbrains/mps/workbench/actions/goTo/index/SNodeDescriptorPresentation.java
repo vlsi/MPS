@@ -60,13 +60,8 @@ public class SNodeDescriptorPresentation extends BasePresentation {
 
   public Icon doGetIcon() {
     String conceptFqName = myNodeResult.getConceptFqName();
-    if (IconManager.canUseAlternativeIcon(conceptFqName)) {
-      SModelReference modelReference = myNodeResult.getModelReference();
-      SModelDescriptor md = GlobalScope.getInstance().getModelDescriptor(modelReference);
-      SModel model = md.getSModel();
-      SNode node = (myNodeResult.getNumberInModel() == -1) ? getRootByName(model) : model.getRoots().get(myNodeResult.getNumberInModel());
-      return IconManager.getIconFor(node);
-    }
+
+    //we don't use alternative icon here since it's very expensive and slows down Ctrl+N popup considerably
     return IconManager.getIconForConceptFQName(conceptFqName);
   }
 }
