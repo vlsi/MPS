@@ -7,9 +7,9 @@
     <target name="all" depends="generation.tests, broken.references.test"/>
 
     <jvmargs id="mps.args">
-        <arg value="-Xss1024k"/>
-        <arg value="-Xmx1000m"/>
-        <arg value="-XX:MaxPermSize=92m"/>
+        <arg value="-Xss4096k"/>
+        <arg value="-Xmx1600m"/>
+        <arg value="-XX:MaxPermSize=400m"/>
         <arg value="-XX:+HeapDumpOnOutOfMemoryError"/>
     </jvmargs>
 
@@ -52,7 +52,12 @@
             <project file="${mps.home}/core/baseLanguage/closures/closures.mpr"/>
             <project file="${mps.home}/core/baseLanguage/collections/collections.mpr"/>
             <project file="${mps.home}/core/baseLanguage/dates/dates.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/javadoc/javadoc.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/logging/logging.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/math/mathLanguage.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/money/MoneyLang.mpr"/>
             <project file="${mps.home}/core/baseLanguage/tuples/tuples.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/unitTest/unitTest.mpr"/>
             <project file="${mps.home}/core/languageDesign/actions/actions.mpr"/>
             <project file="${mps.home}/core/languageDesign/annotations/annotations.mpr"/>
             <project file="${mps.home}/core/languageDesign/constraints/constraints.mpr"/>
