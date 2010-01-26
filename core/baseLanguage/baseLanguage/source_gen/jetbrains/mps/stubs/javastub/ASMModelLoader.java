@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.structure.Classifier;
-import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.smodel.BaseAdapter;
 import org.objectweb.asm.ClassReader;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
@@ -85,6 +84,7 @@ import jetbrains.mps.baseLanguage.structure.LowerBoundType;
 import jetbrains.mps.stubs.javastub.asm.ASMUnboundedType;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.NodeNameUtil;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SReference;
 import java.util.Iterator;
@@ -108,32 +108,27 @@ public abstract class ASMModelLoader {
       String pack = reference.getLongName();
       final Set<String> classes = this.getAvailableClasses(pack);
       for (String name : classes) {
-        this.getClassifier((pack.equals("") ?
-          name :
-          pack + "." + name
-        ));
+        this.getClassifier(name);
       }
     } catch (Exception e) {
       LOG.error("Exception", e);
     }
   }
 
-  private Classifier getClassifier(String fqName) {
-    String pack = NodeNameUtil.getNamespace(fqName);
-    final String name = NodeNameUtil.getName(fqName);
-    SModelDescriptor modelDescriptor = this.getModelDescriptor(pack);
-    SModel model = (modelDescriptor == this.myModelDescriptor ?
-      this.myModel :
-      modelDescriptor.getSModel()
-    );
+  private Classifier getClassifier(String name) {
+    SModel model = this.myModel;
     Classifier result = (Classifier) BaseAdapter.fromNode(model.getNodeById(ASMNodeId.createId(name)));
     if (result == null) {
-      byte[] code = this.myCpItem.getClass(fqName);
+      String pack = model.getLongName();
+      byte[] code = this.myCpItem.getClass((pack.length() == 0 ?
+        name :
+        pack + "." + name
+      ));
       if (code == null) {
         return null;
       }
       ClassReader reader = new ClassReader(code);
-      result = this.createClassifierForClass(fqName, model, reader);
+      result = this.createClassifierForClass(name, model, reader);
       if (result == null) {
         return null;
       }
@@ -756,14 +751,14 @@ public abstract class ASMModelLoader {
   }
 
   private void addClassifierReference(SNode sourceNode, String role, ASMClassType clsType) {
-    SModelDescriptor targetModel = this.getModelDescriptor(NodeNameUtil.getNamespace(clsType.getName()));
-    if (sourceNode.getModel().getModelDescriptor() != targetModel) {
+    SModelReference targetModelRef = this.getModelReferenceFor(NodeNameUtil.getNamespace(clsType.getName()));
+    if (!(sourceNode.getModel().getModelDescriptor().getSModelReference().equals(targetModelRef))) {
       SNodeId nodeId = ASMNodeId.createId(clsType.getName());
-      SReference reference = SReference.create(role, sourceNode, targetModel.getSModelReference(), nodeId);
+      SReference reference = SReference.create(role, sourceNode, targetModelRef, nodeId);
       sourceNode.addReference(reference);
     } else {
       if (sourceNode.getReferent(role) == null) {
-        Classifier classifier = this.getClassifier(clsType.getName());
+        Classifier classifier = this.getClassifier(NameUtil.shortNameFromLongName(clsType.getName()));
         if (classifier != null) {
           SNode targetNode = classifier.getNode();
           SReference reference = SReference.create(role, sourceNode, targetNode);
@@ -774,13 +769,14 @@ public abstract class ASMModelLoader {
   }
 
   private void addAnnotationMethodReference(SNode sourceNode, String role, ASMClassType annotationType, String method) {
-    SModelDescriptor targetModel = this.getModelDescriptor(NodeNameUtil.getNamespace(annotationType.getName()));
-    if (sourceNode.getModel().getModelDescriptor() != targetModel) {
+
+    SModelReference targetRef = this.getModelReferenceFor(NodeNameUtil.getNamespace(annotationType.getName()));
+    if (!(sourceNode.getModel().getModelDescriptor().equals(targetRef))) {
       SNodeId nodeId = ASMNodeId.createAnnotationMethodId(annotationType.getName(), method);
-      SReference reference = SReference.create(role, sourceNode, targetModel.getSModelReference(), nodeId);
+      SReference reference = SReference.create(role, sourceNode, targetRef, nodeId);
       sourceNode.addReference(reference);
     } else {
-      Classifier classifier = this.getClassifier(annotationType.getName());
+      Classifier classifier = this.getClassifier(NameUtil.shortNameFromLongName(annotationType.getName()));
       InstanceMethodDeclaration result = null;
       if (classifier instanceof Annotation) {
         Annotation annotation = (Annotation) classifier;
@@ -799,14 +795,14 @@ public abstract class ASMModelLoader {
 
   private void addEnumConstReference(SNode sourceNode, String role, ASMEnumValue enumValue) {
     ASMClassType classType = (ASMClassType) enumValue.getType();
-    SModelDescriptor targetModel = this.getModelDescriptor(NodeNameUtil.getNamespace(classType.getName()));
-    if (sourceNode.getModel().getModelDescriptor() != targetModel) {
+    SModelReference targetRef = this.getModelReferenceFor(NodeNameUtil.getNamespace(classType.getName()));
+    if (!(sourceNode.getModel().getSModelReference().equals(targetRef))) {
       SNodeId nodeId = ASMNodeId.createFieldId(classType.getName(), enumValue.getConstant());
-      SReference reference = SReference.create(role, sourceNode, targetModel.getSModelReference(), nodeId);
+      SReference reference = SReference.create(role, sourceNode, targetRef, nodeId);
       sourceNode.addReference(reference);
     } else {
       if (sourceNode.getReferent(role) == null) {
-        Classifier classifier = this.getClassifier(classType.getName());
+        Classifier classifier = this.getClassifier(NameUtil.shortNameFromLongName(classType.getName()));
         EnumConstantDeclaration constDcl = null;
         if (classifier instanceof EnumClass) {
           EnumClass ec = (EnumClass) classifier;
@@ -822,7 +818,7 @@ public abstract class ASMModelLoader {
     }
   }
 
-  public abstract SModelDescriptor getModelDescriptor(String packageName);
+  public abstract SModelReference getModelReferenceFor(String packageName);
 
   private Set<String> getAvailableClasses(String namespace) {
     Set<String> classes = this.myCpItem.getAvailableClasses(namespace);

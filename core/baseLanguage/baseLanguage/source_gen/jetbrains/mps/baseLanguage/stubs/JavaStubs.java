@@ -15,13 +15,13 @@ import jetbrains.mps.stubs.StubLocation;
 import jetbrains.mps.stubs.ModelInfo;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.stubs.javastub.ASMModelLoader;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import java.util.List;
 import java.util.ArrayList;
@@ -58,15 +58,8 @@ public class JavaStubs extends BaseStubModelRootManager {
       return;
     }
     new ASMModelLoader(cpItem, modelInfo.getModelDescriptor(), modelInfo.getModel()) {
-      public SModelDescriptor getModelDescriptor(String packageName) {
-        SModelReference modelReference = StubHelper.uidForPackageInStubs(packageName);
-        SModelDescriptor result = SModelRepository.getInstance().getModelDescriptor(modelReference);
-        if (result != null) {
-          return result;
-        }
-        result = new DefaultSModelDescriptor(localThis, null, modelReference);
-        SModelRepository.getInstance().registerModelDescriptor(result, modelInfo.getModelDescriptor().getModule());
-        return result;
+      public SModelReference getModelReferenceFor(String packageName) {
+        return StubHelper.uidForPackageInStubs(packageName);
       }
     }.updateModel();
   }
