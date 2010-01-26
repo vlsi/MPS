@@ -20,17 +20,14 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
-import jetbrains.mps.plugin.IProjectHandler;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelStereotype;
-
-import java.io.File;
-import java.util.List;
+import jetbrains.mps.logging.Logger;
 
 /**
  * Evgeny Gryaznov, Jan 20, 2010
  */
 public abstract class GenerationHandlerBase implements IGenerationHandler {
+  protected static final Logger LOG = Logger.getLogger(IGenerationHandler.class);
+
   protected IMessageHandler myMessages;
 
   @Override

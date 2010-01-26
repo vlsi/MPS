@@ -24,12 +24,9 @@ import com.intellij.openapi.progress.Task.Modal;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.cleanup.CleanupManager;
-import jetbrains.mps.generator.fileGenerator.IFileGenerator;
-import jetbrains.mps.generator.generationTypes.GenerationHandlerAdapter;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
-import jetbrains.mps.generator2.GenerationController2;
 import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.logging.Logger;
@@ -40,7 +37,10 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.JOptionPane;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 
 @State(

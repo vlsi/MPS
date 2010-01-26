@@ -16,7 +16,7 @@
 package jetbrains.mps.workbench.actions.generate;
 
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.generator.generationTypes.TextGenerationHandler;
+import jetbrains.mps.generator.generationTypes.OutputViewGenerationHandler;
 
 public class GenerateTextFromModelsAction extends GenerateModelsAction {
   public GenerateTextFromModelsAction() {
@@ -25,6 +25,6 @@ public class GenerateTextFromModelsAction extends GenerateModelsAction {
   }
 
   public IGenerationHandler getGenerationHandler() {
-    return new TextGenerationHandler();
+    return new OutputViewGenerationHandler();
   }
 }

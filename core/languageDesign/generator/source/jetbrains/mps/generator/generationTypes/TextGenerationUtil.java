@@ -48,36 +48,6 @@ public class TextGenerationUtil {
     return new TextGenerationResult(nodeText, containsErrors, positions, dependencies);
   }
 
-  public static JavaCompiler compile(IOperationContext context, SModel targetModel, ProgressIndicator progress) {
-    CompositeClassPathItem item = new CompositeClassPathItem();
-    item.add(context.getModule().getModuleWithDependenciesClassPathItem());
-    item.add(CommonPaths.getMPSPath());
-    item.add(CommonPaths.getJDK());
-
-    JavaCompiler compiler = new JavaCompiler(item);
-
-    for (SNode root : targetModel.getRoots()) {
-      INodeAdapter outputNode = BaseAdapter.fromNode(root);
-      if (outputNode instanceof ClassConcept || outputNode instanceof Interface) {
-        compiler.addSource(JavaNameUtil.packageNameForModelUID(targetModel.getSModelReference()) + "." + root.getName(), generateText(context, root).getText()
-        );
-      }
-    }
-    
-    progress.setText2("Compiling...");
-    compiler.compile();
-
-    for (org.eclipse.jdt.internal.compiler.CompilationResult cr : compiler.getCompilationResults()) {
-      CategorizedProblem[] categorizedProblems = cr.getErrors();
-      if (categorizedProblems != null && categorizedProblems.length > 0) {
-        System.err.println("Warning. Compilation failed.");
-      }
-    }
-
-    progress.setText2("Compilation finished.");
-    return compiler;
-  }
-
   public static class TextGenerationResult {
     private boolean myContainsErrors;
     private String myText;

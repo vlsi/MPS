@@ -21,7 +21,7 @@ import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConf
 import jetbrains.mps.generator.IllegalGeneratorConfigurationException;
 import javax.swing.JOptionPane;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.generator.generationTypes.TextGenerationHandler;
+import jetbrains.mps.generator.generationTypes.OutputViewGenerationHandler;
 
 public class GenerateTextFromSolution_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -106,7 +106,7 @@ public class GenerateTextFromSolution_Action extends GeneratedAction {
         return;
       }
       GeneratorManager manager = GenerateTextFromSolution_Action.this.context.getComponent(GeneratorManager.class);
-      manager.generateModelsWithProgressWindow(params.value.getModelDescriptors(), GenerateTextFromSolution_Action.this.context, new TextGenerationHandler(), false);
+      manager.generateModelsWithProgressWindow(params.value.getModelDescriptors(), GenerateTextFromSolution_Action.this.context, new OutputViewGenerationHandler(), false);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "GenerateTextFromSolution", t);

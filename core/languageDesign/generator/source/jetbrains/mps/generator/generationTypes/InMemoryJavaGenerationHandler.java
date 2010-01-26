@@ -8,13 +8,11 @@ import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.IGenerationType;
 import jetbrains.mps.generator.JavaNameUtil;
 import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.ide.progress.util.ModelsProgressUtil;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
@@ -37,7 +35,6 @@ import java.util.*;
 public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
 
   private boolean myReloadClasses;
-  public static final Logger LOG = Logger.getLogger(InMemoryJavaGenerationHandler.class);
   private JavaCompiler myCompiler;
   private List<CompilationResult> myResult;
 

@@ -16,12 +16,12 @@
 package jetbrains.mps.vcs.actions;
 
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
-import jetbrains.mps.generator.generationTypes.TextGenerationHandler;
+import jetbrains.mps.generator.generationTypes.OutputViewGenerationHandler;
 
 public class GenerateTextFromChangeListAction extends GenerateFromChangeListAction {
 
   protected IGenerationHandler getGenerationHandler() {
-    return new TextGenerationHandler();
+    return new OutputViewGenerationHandler();
   }
 
   protected String getWhatToGenerateName() {
