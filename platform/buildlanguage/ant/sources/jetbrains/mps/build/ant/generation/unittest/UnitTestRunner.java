@@ -1,7 +1,5 @@
 package jetbrains.mps.build.ant.generation.unittest;
 
-import jetbrains.mps.baseLanguage.unitTest.runtime.CommandOutputStream;
-import jetbrains.mps.baseLanguage.unitTest.runtime.MyTestListener;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import junit.framework.*;
 import junit.runner.BaseTestRunner;
@@ -15,8 +13,6 @@ public class UnitTestRunner extends BaseTestRunner {
   public static final String END_TEST_PREFIX = "<END_TEST>";
   public static final String FAILURE_TEST_PREFIX = "<TEST_FAILURE_BEGIN>";
   public static final String FAILURE_TEST_SUFFIX = "<TEST_FAILURE_END>";
-  private CommandOutputStream myOutput;
-  private CommandOutputStream myErrorOutput;
 
   public void start(String[] argv) throws Throwable {
     runTests(collectTestsToRun(argv));
@@ -24,10 +20,6 @@ public class UnitTestRunner extends BaseTestRunner {
 
   private void runTests(List<Test> tests) {
     TestResult testResult = new TestResult();
-//    myOutput = new CommandOutputStream(System.out);
-//    myErrorOutput = new CommandOutputStream(System.err);
-//    System.setOut(new PrintStream(myOutput));
-//    System.setErr(new PrintStream(myErrorOutput));
     testResult.addListener(this);
     for (Test test : ListSequence.fromList(tests)) {
       if (test == null) {
