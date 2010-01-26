@@ -13,9 +13,9 @@ public class Core_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.lang.core";
-    this.addGroup(groups, moduleName, "jetbrains.mps.lang.core.plugin.FindModelUsages_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.lang.core.plugin.FindLanguageUsages_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.lang.core.plugin.CoreActions_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.core.plugin.FindLanguageUsages_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.core.plugin.FindModelUsages_ActionGroup");
     return groups;
   }
 

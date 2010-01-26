@@ -13,8 +13,8 @@ public class Structure_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.lang.structure";
-    this.addGroup(groups, moduleName, "jetbrains.mps.lang.structure.plugin.Structure_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.lang.structure.plugin.ShowHelp_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.structure.plugin.Structure_ActionGroup");
     return groups;
   }
 

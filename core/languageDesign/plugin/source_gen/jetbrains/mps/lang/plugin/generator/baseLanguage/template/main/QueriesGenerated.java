@@ -45,6 +45,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.lang.plugin.behavior.ActionParameter_Behavior;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import java.util.Set;
@@ -1402,7 +1403,11 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(it), "jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration");
       }
-    });
+    }).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return ActionGroupDeclaration_Behavior.call_getGeneratedClassFQName_1213877494288(it);
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_1227879454337(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1410,11 +1415,19 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1228237231852(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration");
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.ApplicationPluginDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return ApplicationPluginDeclaration_Behavior.call_getGeneratedName_1215280284491(it);
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_1228239043085(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.InterfaceGroup");
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.InterfaceGroup")).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return SPropertyOperations.getString(it, "caption");
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_1228242072138(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1438,7 +1451,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4042687513231504054(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration");
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.KeymapChangesDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return KeymapChangesDeclaration_Behavior.call_getGeneratedClassFQName_6277721878946468954(it);
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_4042687513231504252(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

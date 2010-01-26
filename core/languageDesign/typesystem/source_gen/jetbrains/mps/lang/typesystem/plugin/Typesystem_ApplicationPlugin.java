@@ -13,11 +13,11 @@ public class Typesystem_ApplicationPlugin extends BaseApplicationPlugin {
   public List<BaseGroup> initGroups() {
     List<BaseGroup> groups = ListSequence.fromList(new ArrayList<BaseGroup>());
     String moduleName = "jetbrains.mps.lang.typesystem";
-    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemNodeActions_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemToolsAddition_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.GoToTypeErrorGroup_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemActions_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemEditorPopupInternal_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemNodeActions_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.lang.typesystem.plugin.TypesystemToolsAddition_ActionGroup");
     return groups;
   }
 
