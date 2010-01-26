@@ -12,7 +12,9 @@
       <languagePath path="${project}/stubs.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <genConfs />
+    <genConfs>
+      <genConfModule name="stubs" moduleRef="jetbrains.mps.lang.stubs" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="stubs" />

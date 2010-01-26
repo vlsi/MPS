@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project version="4">
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="MPSProject" auto-import-from-idea="true" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions />
     <projectLanguages>
-      <languagePath path="${project}\sharedConcepts.mpl" />
+      <languagePath path="${project}/sharedConcepts.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs>
-      <genConfLanguage name="shared concepts" language="jetbrains.mps.lang.sharedConcepts" />
+      <genConfModule name="sharedConcepts" moduleRef="jetbrains.mps.lang.sharedConcepts" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="sharedConcepts.mpr" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
