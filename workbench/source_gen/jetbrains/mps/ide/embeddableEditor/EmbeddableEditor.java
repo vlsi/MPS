@@ -11,11 +11,11 @@ import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import javax.swing.JComponent;
+import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.generator.generationTypes.GenerationHandlerAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
@@ -52,14 +52,19 @@ public class EmbeddableEditor {
     if (this.myNode == null) {
       return null;
     }
-    EditorGenerateType type = new EditorGenerateType();
+    InMemoryJavaGenerationHandler handler = new InMemoryJavaGenerationHandler(false) {
+      @Override
+      public boolean canHandle(SModelDescriptor inputModel) {
+        return inputModel != null;
+      }
+    };
     GeneratorManager manager = new GeneratorManager(this.myContext.getProject(), new GenerationSettings()) {
       protected boolean generateRequirements() {
         return false;
       }
     };
-    manager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), this.myModel), this.myContext, new GenerationHandlerAdapter(type), false);
-    return new GenerationResult(this.myNode, this.myContext, this.myModel, type);
+    manager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), this.myModel), this.myContext, handler, false);
+    return new GenerationResult(this.myNode, this.myContext, this.myModel, handler);
   }
 
   public void addLanguageStructureModel(final Language language) {

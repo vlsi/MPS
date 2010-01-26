@@ -23,6 +23,7 @@ import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
+import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
 import java.rmi.RemoteException;
@@ -134,6 +135,11 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     for (CompilationResult cr : result) {
       if (cr.hasErrors()) {
         hasErrors = true;
+        CategorizedProblem[] categorizedProblems = cr.getErrors();
+        for(int i = 0; i < 3 && i < categorizedProblems.length; i++) {
+          error("" + categorizedProblems[i]);
+        }
+        info("Compilation finished with errors.");
         break;
       }
     }
@@ -146,7 +152,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressIndicator());
     }
 
-    return result;
+    return hasErrors ? null : result;
   }
 
   public List<CompilationResult> getCompilationResult() {

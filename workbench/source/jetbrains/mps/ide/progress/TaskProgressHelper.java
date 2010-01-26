@@ -73,6 +73,9 @@ public class TaskProgressHelper implements ITaskProgressHelper {
   }
 
   public void finishTask() {
+    if(myStartTime == 0) {
+      return;
+    }
     long elapsedTaskTime = System.currentTimeMillis() - myStartTime;
     long elapsedJob = System.currentTimeMillis() - myStartJobTime;
     myTotalJob += elapsedTaskTime - myEstimatedTime;
