@@ -17,6 +17,7 @@ package jetbrains.mps.project.tester;
 
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.project.tester.TesterGenerationHandler;
@@ -62,15 +63,19 @@ public class DiffReporter {
       }
       files.addAll(Arrays.asList(dir.list()));
       for (String outputRoot : genHandler.getRoots(outputModel)) {
-        final String fileType = "." + genHandler.getExtension(outputRoot);
-        final String fileName = genHandler.getName(outputRoot, outputModel) + fileType;
-        final String filePath = genHandler.getOutputDir(outputModel) + File.separator + fileName;
+        String extension = genHandler.getExtension(outputRoot);
+        String filename = (extension == null)? genHandler.getName(outputRoot, outputModel) : genHandler.getName(outputRoot, outputModel) + "." + extension;
+        if (filename == null) {
+          continue;
+        }
+
+        final String filePath = genHandler.getOutputDir(outputModel) + File.separator + filename;
         final File testFile = new File(filePath);
         String oldContent = null;
         String newContent = genHandler.getSourceByNode(outputRoot, outputModel);
         if (testFile.exists() && testFile.canRead()) {
           oldContent = FileUtil.read(testFile);
-          files.remove(fileName);
+          files.remove(filename);
         }
         final boolean created = oldContent == null && newContent != null;
         final String title = getDiffReportTitle(outputRoot, filePath, created, false);

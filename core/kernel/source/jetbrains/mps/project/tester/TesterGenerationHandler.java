@@ -70,6 +70,9 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
     List<String> roots = new ArrayList<String>();
     myOutputModelRefToRoots.put(outputModel.getSModelReference(), roots);
     for (SNode outputRoot : outputModel.getRoots()) {
+      if(outputRoot.getName() == null) {
+        continue;
+      }
       roots.add(NameUtil.nodeFQName(outputRoot));
       String extension = TextGenManager.instance().getExtension(outputRoot);
       myNodeExtensionMap.put(NameUtil.nodeFQName(outputRoot), extension);
@@ -161,9 +164,12 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
       }
       files.addAll(Arrays.asList(dir.list()));
       for (String outputRoot : getRoots(outputModel)) {
-        final String fileType = "." + getExtension(outputRoot);
-        final String fileName = getName(outputRoot, outputModel) + fileType;
-        final String filePath = getOutputDir(outputModel) + File.separator + fileName;
+        String extension = getExtension(outputRoot);
+        String filename = (extension == null)? getName(outputRoot, outputModel) : getName(outputRoot, outputModel) + "." + extension;
+        if (filename == null) {
+          continue;
+        }
+        final String filePath = getOutputDir(outputModel) + File.separator + filename;
         final File testFile = new File(filePath);
 
         String content = getSourceByNode(outputRoot, outputModel);

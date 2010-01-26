@@ -111,6 +111,9 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
 
     myContextModules.add(context.getModule());
     for (SNode root : outputModel.getRoots()) {
+      if(root.getName() == null) {
+        continue;
+      }
       INodeAdapter outputNode = BaseAdapter.fromNode(root);
       TextGenerationResult genResult = TextGenerationUtil.generateText(context, root);
       wereErrors |= genResult.hasErrors();
