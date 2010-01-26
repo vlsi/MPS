@@ -11,11 +11,11 @@ public class MPS7432 {
 
   public static <T>T aaaa(final _FunctionTypes._return_P0_E0<? extends T> t) {
     final Wrappers._T<T> result = new Wrappers._T<T>(null);
-    bbb(new _Adapters._return_P0_E0_to__void_P0_E0_adapter(new _FunctionTypes._return_P0_E0<T>() {
-      public T invoke() {
-        return result.value = t.invoke();
+    bbb(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        result.value = t.invoke();
       }
-    }));
+    });
     return result.value;
   }
 
