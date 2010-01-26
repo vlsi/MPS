@@ -16,7 +16,11 @@
 package jetbrains.mps.workbench.actions.goTo.index;
 
 import com.intellij.navigation.NavigationItem;
+import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.search.GlobalSearchScope;
+import com.intellij.psi.search.ProjectAndLibrariesScope;
 import com.intellij.util.Processor;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.AllValuesProcessor;
@@ -30,6 +34,7 @@ import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
+import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.reloading.IClassPathItem;
@@ -41,6 +46,7 @@ import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.structure.Annotation;
 import jetbrains.mps.baseLanguage.structure.Interface;
 import jetbrains.mps.baseLanguage.structure.EnumClass;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
@@ -54,35 +60,47 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
 
   public SNodeDescriptor[] find(final IScope scope) {
     final Set<SNodeDescriptor> keys = new HashSet<SNodeDescriptor>();
-    final Set<SModelReference> hasToLoad = new HashSet<SModelReference>();
-    final Set<SModelReference> changedModels = new HashSet<SModelReference>();
 
-    for (SModelDescriptor sm : SModelRepository.getInstance().getChangedModels()) {
-      if (scope instanceof GlobalScope || scope.getModelDescriptors().contains(sm)) {
-        changedModels.add(sm.getSModelReference());
-      }
-    }
-
-    final ID<String, SNodeDescriptor> indexName = myIndex.getName();
+    final ID<Integer, List<SNodeDescriptor>> indexName = myIndex.getName();
     final ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
     final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
 
-    fileBasedIndex.processAllValues(indexName, new AllValuesProcessor<SNodeDescriptor>() {
-      @Override
-      public void process(int inputId, SNodeDescriptor s) {
-        if (scope.getModelDescriptor(s.getModelReference()) == null) return;
 
-        if (changedModels.contains(s.getModelReference()) || cm.hasGetter(s.getConceptFqName(), INamedConcept.NAME)) {
-          hasToLoad.add(s.getModelReference());
+    Set<SModelDescriptor> findDirectly = new HashSet<SModelDescriptor>();
+
+    for (SModelDescriptor sm : scope.getModelDescriptors()) {
+      if (!SModelStereotype.isUserModel(sm)) continue;
+
+      if (sm.isInitialized()) {
+        findDirectly.add(sm);
+        continue;
+      }
+
+      IFile modelFile = sm.getModelFile();
+      assert modelFile != null;
+      VirtualFile vf = modelFile.toVirtualFile();
+      int fileId = FileBasedIndex.getFileId(vf);
+
+      List<List<SNodeDescriptor>> descriptors = fileBasedIndex.getValues(indexName, fileId, GlobalSearchScope.fileScope(getIdeaProject(), vf));
+
+      if (!descriptors.isEmpty()) {
+        boolean needToLoad = false;
+        for (SNodeDescriptor snd : descriptors.get(0)) {
+          if (cm.hasGetter(snd.getConceptFqName(), INamedConcept.NAME)) {
+            needToLoad = true;
+            break;
+          }
+        }
+
+        if (needToLoad) {
+          findDirectly.add(sm);
         } else {
-          keys.add(s);
+          keys.addAll(descriptors.get(0));
         }
       }
-    }, getIdeaProject());
+    }
 
-    for (SModelReference ref : hasToLoad) {
-      SModelDescriptor sm = scope.getModelDescriptor(ref);
-      if (sm == null) continue;
+    for (SModelDescriptor sm : findDirectly) {
       List<SNode> nodes = myIndex.getNodesToIterate(sm.getSModel());
 
       for (SNode root : nodes) {
