@@ -10,6 +10,6 @@ public class Calculator_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("26b3d6d5-b99a-4ed6-83be-d2ea6f3627a1(jetbrains.mps.calculator)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

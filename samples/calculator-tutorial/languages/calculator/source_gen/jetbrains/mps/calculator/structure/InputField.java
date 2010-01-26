@@ -53,7 +53,7 @@ public class InputField extends BaseConcept implements INamedConcept {
   }
 
   public static InputField newInstance(SModel sm, boolean init) {
-    return (InputField)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.calculator.structure.InputField", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InputField) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.calculator.structure.InputField", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InputField newInstance(SModel sm) {

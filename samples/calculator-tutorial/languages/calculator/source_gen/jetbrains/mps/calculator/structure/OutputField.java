@@ -18,7 +18,7 @@ public class OutputField extends BaseConcept {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, OutputField.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, OutputField.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
@@ -26,7 +26,7 @@ public class OutputField extends BaseConcept {
   }
 
   public static OutputField newInstance(SModel sm, boolean init) {
-    return (OutputField)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.calculator.structure.OutputField", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OutputField) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.calculator.structure.OutputField", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OutputField newInstance(SModel sm) {

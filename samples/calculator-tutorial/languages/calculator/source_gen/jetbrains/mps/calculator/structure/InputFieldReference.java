@@ -17,7 +17,7 @@ public class InputFieldReference extends Expression {
   }
 
   public InputField getField() {
-    return (InputField)this.getReferent(InputField.class, InputFieldReference.FIELD);
+    return (InputField) this.getReferent(InputField.class, InputFieldReference.FIELD);
   }
 
   public void setField(InputField node) {
@@ -25,7 +25,7 @@ public class InputFieldReference extends Expression {
   }
 
   public static InputFieldReference newInstance(SModel sm, boolean init) {
-    return (InputFieldReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.calculator.structure.InputFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InputFieldReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.calculator.structure.InputFieldReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InputFieldReference newInstance(SModel sm) {
