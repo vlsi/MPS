@@ -59,7 +59,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
   }
 
   public SNodeDescriptor[] find(final IScope scope) {
-    final Set<SNodeDescriptor> keys = new HashSet<SNodeDescriptor>();
+    final List<SNodeDescriptor> keys = new ArrayList<SNodeDescriptor>();
 
     final ID<Integer, List<SNodeDescriptor>> indexName = myIndex.getName();
     final ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
@@ -108,9 +108,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
         String nodeName = (root.getName() == null) ? "null" : root.getName();
         SNodeDescriptor nodeDescriptor = SNodeDescriptor.fromModelReference(
           nodeName, root.getConceptFqName(), root.getModel().getSModelReference(), number);
-        if (!keys.contains(nodeDescriptor)) {
-          keys.add(nodeDescriptor);
-        }
+        keys.add(nodeDescriptor);
       }
     }
 
@@ -123,7 +121,7 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<SNodeDescriptor
     return getProject().getComponent(Project.class);
   }
 
-  private void addJavaStubs(Set<SNodeDescriptor> result, IScope scope) {
+  private void addJavaStubs(List<SNodeDescriptor> result, IScope scope) {
     for (IModule m : scope.getVisibleModules()) {
       result.addAll(StubsNodeDescriptorsCache.getInstance().getSNodeDescritpors(m));
     }
