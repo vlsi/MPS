@@ -25,7 +25,7 @@ public class SNodeDescriptor {
   private String myConceptFqName;
   private long myMostSignificantBits;
   private long myLeastSignificantBits;
-  private int myNumberInModel;
+  private int myNumberInModel;  
 
   public SNodeDescriptor(String nodeName, String fqName, long mostSignificantBits, long leastSignificantBits, int number) {
     myNodeName = nodeName;
@@ -66,12 +66,12 @@ public class SNodeDescriptor {
 
   @Override
   public boolean equals(Object obj) {
-    if (obj == null || !(obj instanceof SNodeDescriptor)) return false;
+    if (!(obj instanceof SNodeDescriptor)) return false;
     SNodeDescriptor sd = (SNodeDescriptor) obj;
     return sd.getConceptFqName().equals(getConceptFqName())
-      && sd.getModelReference().equals(getModelReference())
       && sd.getNodeName().equals(getNodeName())
-      && sd.getNumberInModel() == getNumberInModel();
+      && sd.getNumberInModel() == getNumberInModel()
+      && sd.getModelReference().equals(getModelReference());
   }
 
   @Override
