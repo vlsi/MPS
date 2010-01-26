@@ -7,10 +7,10 @@
     <target name="all" depends="generation.tests, broken.references.test"/>
 
     <jvmargs id="mps.args">
-        <arg value="-Xss4096k"/>
-        <arg value="-Xmx1600m"/>
-        <arg value="-XX:MaxPermSize=400m"/>
-        <arg value="-XX:+HeapDumpOnOutOfMemoryError"/>
+	<arg value="-Xss1024k"/>
+	<arg value="-Xmx1000m"/>
+	<arg value="-XX:MaxPermSize=92m"/>
+	<arg value="-XX:+HeapDumpOnOutOfMemoryError"/>
     </jvmargs>
 
     <jvmargs id="debug.args">
