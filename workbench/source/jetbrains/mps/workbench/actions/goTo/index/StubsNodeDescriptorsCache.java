@@ -33,7 +33,7 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
       }
     }
   };
-  private Map<IModule, Set<SNodeDescriptor>> myCache = new HashMap<IModule, Set<SNodeDescriptor>>();
+  private Map<IModule, List<SNodeDescriptor>> myCache = new HashMap<IModule, List<SNodeDescriptor>>();
 
   @NotNull
   @Override
@@ -51,18 +51,12 @@ public class StubsNodeDescriptorsCache implements ApplicationComponent {
     SModelRepository.getInstance().removeModelRepositoryListener(myListener);
   }
 
-  public Set<SNodeDescriptor> getSNodeDescritpors(IModule m) {
+  public List<SNodeDescriptor> getSNodeDescritpors(IModule m) {
     if (!myCache.containsKey(m)) {
-      Set<SNodeDescriptor> result = new HashSet<SNodeDescriptor>();
-      for (SModelRoot root : m.getSModelRoots()) {
-        IModelRootManager manager = root.getManager();
-        if (manager instanceof BaseStubModelRootManager) {
-          result.addAll(((BaseStubModelRootManager) manager).getRootNodeDescriptors(new StubLocation(root.getPath(), root.getPrefix(), m)));
-        }
-      }
+      List<SNodeDescriptor> result = m.getStubsRootNodeDescriptors();
       myCache.put(m, result);
     }
-    return Collections.unmodifiableSet(myCache.get(m));
+    return Collections.unmodifiableList(myCache.get(m));
   }
 
   private void clearCache() {

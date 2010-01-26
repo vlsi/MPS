@@ -23,6 +23,7 @@ import jetbrains.mps.reloading.FileClassPathItem;
 import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
@@ -142,5 +143,7 @@ public interface IModule extends ModelOwner, MPSModuleOwner {
   boolean isStubPathExcluded(String path);
 
   boolean setStubPathExcluded(String path, boolean b);
+
+  List<SNodeDescriptor> getStubsRootNodeDescriptors();
 
 }

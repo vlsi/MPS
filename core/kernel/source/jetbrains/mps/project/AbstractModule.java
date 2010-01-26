@@ -37,12 +37,14 @@ import jetbrains.mps.runtime.BytecodeLocator;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.stubs.BaseStubModelRootManager;
+import jetbrains.mps.stubs.StubLocation;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.SuspiciousModelIndex;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.JarFileEntryFile;
+import jetbrains.mps.workbench.actions.goTo.index.SNodeDescriptor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -70,6 +72,7 @@ public abstract class AbstractModule implements IModule {
   private ModuleScope myScope = new ModuleScope();
 
   private List<SModelRoot> mySModelRoots = new ArrayList<SModelRoot>();
+  private List<StubPath> myLoadedStubPaths = new ArrayList<StubPath>();
 
   private Set<String> myIncludedStubPaths;
   private CompositeClassPathItem myCachedClassPathItem;
@@ -813,12 +816,14 @@ public abstract class AbstractModule implements IModule {
   }
 
   private void disposeStubs() {
-    for (StubPath sp : getLoadedStubPaths()) {
+    for (StubPath sp : myLoadedStubPaths) {
       BaseStubModelRootManager mrm = sp.getModelRootManager();
       if (mrm == null) continue;
       mrm.dispose();
       sp.setModelRootManager(null);
     }
+
+    myLoadedStubPaths.clear();
   }
 
   private void loadNewStubs() {
@@ -829,17 +834,35 @@ public abstract class AbstractModule implements IModule {
       m.updateModels(mr, this);
     }
 
-    List<StubPath> stubModels = getLoadedStubPaths();
+    List<StubPath> stubModels = areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
     for (StubPath sp : stubModels) {
       BaseStubModelRootManager manager = createStubManager(sp);
       sp.setModelRootManager(manager);
       if (manager == null) continue;
       manager.updateModels(sp.getPath(), "", this);
+      myLoadedStubPaths.add(sp);
     }
   }
 
-  private List<StubPath> getLoadedStubPaths() {
-    return areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
+  @Override
+  public List<SNodeDescriptor> getStubsRootNodeDescriptors() {
+    List<SNodeDescriptor> result = new ArrayList<SNodeDescriptor>();
+
+    for (SModelRoot root : getSModelRoots()) {
+      IModelRootManager manager = root.getManager();
+      if (manager instanceof BaseStubModelRootManager) {
+        result.addAll(((BaseStubModelRootManager) manager).getRootNodeDescriptors(new StubLocation(root.getPath(), root.getPrefix(), this)));
+      }
+    }
+
+    for (StubPath path : myLoadedStubPaths) {
+      IModelRootManager m = path.getModelRootManager();
+      if (m instanceof BaseStubModelRootManager) {
+        result.addAll(((BaseStubModelRootManager) m).getRootNodeDescriptors(new StubLocation(path.getPath(), "", this)));
+      }
+    }
+
+    return result;
   }
 
   @Nullable
@@ -854,7 +877,7 @@ public abstract class AbstractModule implements IModule {
       return (BaseStubModelRootManager) BaseStubModelRootManager.create(moduleId, className);
     } catch (ManagerNotFoundException e) {
       LOG.error("Can't create stub manager " + sp.getManager().getClassName() + " for " + sp.getPath(), e);
-      return null;
+      return null;                                                                                                                                
     }
   }
 
