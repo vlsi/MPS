@@ -67,7 +67,7 @@ public class Type<Meta, Target> {
       return;
     }
     if (myChildren.contains(child)) {
-      LOG.error("this child yet exists");
+      LOG.error("this child already exists");
       return;
     }
     myChildren.add(child);
@@ -80,5 +80,9 @@ public class Type<Meta, Target> {
       result.add(t.myRole);
     }
     return result;
+  }
+
+  public boolean isVar() {
+    return false;
   }
 }
