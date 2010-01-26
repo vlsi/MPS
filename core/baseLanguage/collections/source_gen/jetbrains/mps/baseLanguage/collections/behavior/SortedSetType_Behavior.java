@@ -57,9 +57,9 @@ public class SortedSetType_Behavior {
       SNode quotedNode_9906_2 = null;
       {
         quotedNode_9906_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_9906_1 = quotedNode_9906_2;
-        quotedNode1_9906_1.addReference(SReference.create("classifier", quotedNode1_9906_1, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~SortedSet")));
-        result = quotedNode1_9906_1;
+        SNode quotedNode1_9906_2 = quotedNode_9906_2;
+        quotedNode1_9906_2.addReference(SReference.create("classifier", quotedNode1_9906_2, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~SortedSet")));
+        result = quotedNode1_9906_2;
       }
       return result;
     }
@@ -79,15 +79,15 @@ public class SortedSetType_Behavior {
         SNode quotedNode1_9906_0 = quotedNode_9906_0;
         {
           quotedNode_9906_1 = (SNode) parameter_9906_0;
-          SNode quotedNode1_11;
+          SNode quotedNode1_9906_1;
           if (_parameterValues_129834374.contains(quotedNode_9906_1)) {
-            quotedNode1_11 = CopyUtil.copy(quotedNode_9906_1);
+            quotedNode1_9906_1 = CopyUtil.copy(quotedNode_9906_1);
           } else {
             _parameterValues_129834374.add(quotedNode_9906_1);
-            quotedNode1_11 = quotedNode_9906_1;
+            quotedNode1_9906_1 = quotedNode_9906_1;
           }
-          if (quotedNode1_11 != null) {
-            quotedNode_9906_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_11));
+          if (quotedNode1_9906_1 != null) {
+            quotedNode_9906_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_9906_1));
           }
         }
         result = quotedNode1_9906_0;

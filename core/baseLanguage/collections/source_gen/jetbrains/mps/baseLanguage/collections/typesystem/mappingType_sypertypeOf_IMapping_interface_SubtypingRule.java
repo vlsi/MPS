@@ -120,28 +120,28 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
         SNode quotedNode1_1359_0 = quotedNode_1359_0;
         {
           quotedNode_1359_1 = (SNode) parameter_1359_0;
-          SNode quotedNode1_138;
+          SNode quotedNode1_1359_1;
           if (_parameterValues_129834374.contains(quotedNode_1359_1)) {
-            quotedNode1_138 = CopyUtil.copy(quotedNode_1359_1);
+            quotedNode1_1359_1 = CopyUtil.copy(quotedNode_1359_1);
           } else {
             _parameterValues_129834374.add(quotedNode_1359_1);
-            quotedNode1_138 = quotedNode_1359_1;
+            quotedNode1_1359_1 = quotedNode_1359_1;
           }
-          if (quotedNode1_138 != null) {
-            quotedNode_1359_0.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_138, typeCheckingContext));
+          if (quotedNode1_1359_1 != null) {
+            quotedNode_1359_0.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_1359_1, typeCheckingContext));
           }
         }
         {
           quotedNode_1359_2 = (SNode) parameter_1359_1;
-          SNode quotedNode1_139;
+          SNode quotedNode1_1359_2;
           if (_parameterValues_129834374.contains(quotedNode_1359_2)) {
-            quotedNode1_139 = CopyUtil.copy(quotedNode_1359_2);
+            quotedNode1_1359_2 = CopyUtil.copy(quotedNode_1359_2);
           } else {
             _parameterValues_129834374.add(quotedNode_1359_2);
-            quotedNode1_139 = quotedNode_1359_2;
+            quotedNode1_1359_2 = quotedNode_1359_2;
           }
-          if (quotedNode1_139 != null) {
-            quotedNode_1359_0.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_139, typeCheckingContext));
+          if (quotedNode1_1359_2 != null) {
+            quotedNode_1359_0.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_1359_2, typeCheckingContext));
           }
         }
         result = quotedNode1_1359_0;
@@ -160,28 +160,28 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
         SNode quotedNode1_1359_0 = quotedNode_1359_0;
         {
           quotedNode_1359_1 = (SNode) parameter_1359_0;
-          SNode quotedNode1_138;
+          SNode quotedNode1_1359_1;
           if (_parameterValues_129834374.contains(quotedNode_1359_1)) {
-            quotedNode1_138 = CopyUtil.copy(quotedNode_1359_1);
+            quotedNode1_1359_1 = CopyUtil.copy(quotedNode_1359_1);
           } else {
             _parameterValues_129834374.add(quotedNode_1359_1);
-            quotedNode1_138 = quotedNode_1359_1;
+            quotedNode1_1359_1 = quotedNode_1359_1;
           }
-          if (quotedNode1_138 != null) {
-            quotedNode_1359_0.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_138));
+          if (quotedNode1_1359_1 != null) {
+            quotedNode_1359_0.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_1359_1));
           }
         }
         {
           quotedNode_1359_2 = (SNode) parameter_1359_1;
-          SNode quotedNode1_139;
+          SNode quotedNode1_1359_2;
           if (_parameterValues_129834374.contains(quotedNode_1359_2)) {
-            quotedNode1_139 = CopyUtil.copy(quotedNode_1359_2);
+            quotedNode1_1359_2 = CopyUtil.copy(quotedNode_1359_2);
           } else {
             _parameterValues_129834374.add(quotedNode_1359_2);
-            quotedNode1_139 = quotedNode_1359_2;
+            quotedNode1_1359_2 = quotedNode_1359_2;
           }
-          if (quotedNode1_139 != null) {
-            quotedNode_1359_0.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_139));
+          if (quotedNode1_1359_2 != null) {
+            quotedNode_1359_0.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_1359_2));
           }
         }
         result = quotedNode1_1359_0;

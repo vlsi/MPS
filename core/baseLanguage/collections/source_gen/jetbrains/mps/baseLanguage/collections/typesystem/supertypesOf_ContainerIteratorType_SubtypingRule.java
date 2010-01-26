@@ -49,15 +49,15 @@ public class supertypesOf_ContainerIteratorType_SubtypingRule extends SubtypingR
         SNode quotedNode1_2813_0 = quotedNode_2813_0;
         {
           quotedNode_2813_1 = (SNode) parameter_2813_0;
-          SNode quotedNode1_102;
+          SNode quotedNode1_2813_1;
           if (_parameterValues_129834374.contains(quotedNode_2813_1)) {
-            quotedNode1_102 = CopyUtil.copy(quotedNode_2813_1);
+            quotedNode1_2813_1 = CopyUtil.copy(quotedNode_2813_1);
           } else {
             _parameterValues_129834374.add(quotedNode_2813_1);
-            quotedNode1_102 = quotedNode_2813_1;
+            quotedNode1_2813_1 = quotedNode_2813_1;
           }
-          if (quotedNode1_102 != null) {
-            quotedNode_2813_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_102, typeCheckingContext));
+          if (quotedNode1_2813_1 != null) {
+            quotedNode_2813_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_2813_1, typeCheckingContext));
           }
         }
         result = quotedNode1_2813_0;
@@ -75,15 +75,15 @@ public class supertypesOf_ContainerIteratorType_SubtypingRule extends SubtypingR
         SNode quotedNode1_2813_0 = quotedNode_2813_0;
         {
           quotedNode_2813_1 = (SNode) parameter_2813_0;
-          SNode quotedNode1_102;
+          SNode quotedNode1_2813_1;
           if (_parameterValues_129834374.contains(quotedNode_2813_1)) {
-            quotedNode1_102 = CopyUtil.copy(quotedNode_2813_1);
+            quotedNode1_2813_1 = CopyUtil.copy(quotedNode_2813_1);
           } else {
             _parameterValues_129834374.add(quotedNode_2813_1);
-            quotedNode1_102 = quotedNode_2813_1;
+            quotedNode1_2813_1 = quotedNode_2813_1;
           }
-          if (quotedNode1_102 != null) {
-            quotedNode_2813_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_102));
+          if (quotedNode1_2813_1 != null) {
+            quotedNode_2813_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_2813_1));
           }
         }
         result = quotedNode1_2813_0;

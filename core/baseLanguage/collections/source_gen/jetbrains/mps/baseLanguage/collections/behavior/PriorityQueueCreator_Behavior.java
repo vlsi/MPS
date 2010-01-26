@@ -34,15 +34,15 @@ public class PriorityQueueCreator_Behavior {
         SNode quotedNode1_3202_0 = quotedNode_3202_0;
         {
           quotedNode_3202_1 = (SNode) parameter_3202_0;
-          SNode quotedNode1_15;
+          SNode quotedNode1_3202_1;
           if (_parameterValues_129834374.contains(quotedNode_3202_1)) {
-            quotedNode1_15 = CopyUtil.copy(quotedNode_3202_1);
+            quotedNode1_3202_1 = CopyUtil.copy(quotedNode_3202_1);
           } else {
             _parameterValues_129834374.add(quotedNode_3202_1);
-            quotedNode1_15 = quotedNode_3202_1;
+            quotedNode1_3202_1 = quotedNode_3202_1;
           }
-          if (quotedNode1_15 != null) {
-            quotedNode_3202_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_15));
+          if (quotedNode1_3202_1 != null) {
+            quotedNode_3202_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_3202_1));
           }
         }
         result = quotedNode1_3202_0;

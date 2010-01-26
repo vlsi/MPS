@@ -34,15 +34,15 @@ public class HashSetCreator_Behavior {
         SNode quotedNode1_2057_0 = quotedNode_2057_0;
         {
           quotedNode_2057_1 = (SNode) parameter_2057_0;
-          SNode quotedNode1_7;
+          SNode quotedNode1_2057_1;
           if (_parameterValues_129834374.contains(quotedNode_2057_1)) {
-            quotedNode1_7 = CopyUtil.copy(quotedNode_2057_1);
+            quotedNode1_2057_1 = CopyUtil.copy(quotedNode_2057_1);
           } else {
             _parameterValues_129834374.add(quotedNode_2057_1);
-            quotedNode1_7 = quotedNode_2057_1;
+            quotedNode1_2057_1 = quotedNode_2057_1;
           }
-          if (quotedNode1_7 != null) {
-            quotedNode_2057_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_7));
+          if (quotedNode1_2057_1 != null) {
+            quotedNode_2057_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_2057_1));
           }
         }
         result = quotedNode1_2057_0;

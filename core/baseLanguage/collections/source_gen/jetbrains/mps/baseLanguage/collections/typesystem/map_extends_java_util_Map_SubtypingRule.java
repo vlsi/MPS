@@ -54,28 +54,28 @@ public class map_extends_java_util_Map_SubtypingRule extends SubtypingRule_Runti
         quotedNode1_1431_0.addReference(SReference.create("classifier", quotedNode1_1431_0, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~Map")));
         {
           quotedNode_1431_1 = (SNode) parameter_1431_0;
-          SNode quotedNode1_20;
+          SNode quotedNode1_1431_1;
           if (_parameterValues_129834374.contains(quotedNode_1431_1)) {
-            quotedNode1_20 = CopyUtil.copy(quotedNode_1431_1);
+            quotedNode1_1431_1 = CopyUtil.copy(quotedNode_1431_1);
           } else {
             _parameterValues_129834374.add(quotedNode_1431_1);
-            quotedNode1_20 = quotedNode_1431_1;
+            quotedNode1_1431_1 = quotedNode_1431_1;
           }
-          if (quotedNode1_20 != null) {
-            quotedNode_1431_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_20, typeCheckingContext));
+          if (quotedNode1_1431_1 != null) {
+            quotedNode_1431_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_1431_1, typeCheckingContext));
           }
         }
         {
           quotedNode_1431_2 = (SNode) parameter_1431_1;
-          SNode quotedNode1_21;
+          SNode quotedNode1_1431_2;
           if (_parameterValues_129834374.contains(quotedNode_1431_2)) {
-            quotedNode1_21 = CopyUtil.copy(quotedNode_1431_2);
+            quotedNode1_1431_2 = CopyUtil.copy(quotedNode_1431_2);
           } else {
             _parameterValues_129834374.add(quotedNode_1431_2);
-            quotedNode1_21 = quotedNode_1431_2;
+            quotedNode1_1431_2 = quotedNode_1431_2;
           }
-          if (quotedNode1_21 != null) {
-            quotedNode_1431_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_21, typeCheckingContext));
+          if (quotedNode1_1431_2 != null) {
+            quotedNode_1431_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_1431_2, typeCheckingContext));
           }
         }
         result = quotedNode1_1431_0;
@@ -95,28 +95,28 @@ public class map_extends_java_util_Map_SubtypingRule extends SubtypingRule_Runti
         quotedNode1_1431_0.addReference(SReference.create("classifier", quotedNode1_1431_0, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~Map")));
         {
           quotedNode_1431_1 = (SNode) parameter_1431_0;
-          SNode quotedNode1_20;
+          SNode quotedNode1_1431_1;
           if (_parameterValues_129834374.contains(quotedNode_1431_1)) {
-            quotedNode1_20 = CopyUtil.copy(quotedNode_1431_1);
+            quotedNode1_1431_1 = CopyUtil.copy(quotedNode_1431_1);
           } else {
             _parameterValues_129834374.add(quotedNode_1431_1);
-            quotedNode1_20 = quotedNode_1431_1;
+            quotedNode1_1431_1 = quotedNode_1431_1;
           }
-          if (quotedNode1_20 != null) {
-            quotedNode_1431_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_20));
+          if (quotedNode1_1431_1 != null) {
+            quotedNode_1431_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_1431_1));
           }
         }
         {
           quotedNode_1431_2 = (SNode) parameter_1431_1;
-          SNode quotedNode1_21;
+          SNode quotedNode1_1431_2;
           if (_parameterValues_129834374.contains(quotedNode_1431_2)) {
-            quotedNode1_21 = CopyUtil.copy(quotedNode_1431_2);
+            quotedNode1_1431_2 = CopyUtil.copy(quotedNode_1431_2);
           } else {
             _parameterValues_129834374.add(quotedNode_1431_2);
-            quotedNode1_21 = quotedNode_1431_2;
+            quotedNode1_1431_2 = quotedNode_1431_2;
           }
-          if (quotedNode1_21 != null) {
-            quotedNode_1431_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_21));
+          if (quotedNode1_1431_2 != null) {
+            quotedNode_1431_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_1431_2));
           }
         }
         result = quotedNode1_1431_0;

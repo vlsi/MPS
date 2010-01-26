@@ -34,15 +34,15 @@ public class LinkedListCreator_Behavior {
         SNode quotedNode1_6772_0 = quotedNode_6772_0;
         {
           quotedNode_6772_1 = (SNode) parameter_6772_0;
-          SNode quotedNode1_8;
+          SNode quotedNode1_6772_1;
           if (_parameterValues_129834374.contains(quotedNode_6772_1)) {
-            quotedNode1_8 = CopyUtil.copy(quotedNode_6772_1);
+            quotedNode1_6772_1 = CopyUtil.copy(quotedNode_6772_1);
           } else {
             _parameterValues_129834374.add(quotedNode_6772_1);
-            quotedNode1_8 = quotedNode_6772_1;
+            quotedNode1_6772_1 = quotedNode_6772_1;
           }
-          if (quotedNode1_8 != null) {
-            quotedNode_6772_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_8));
+          if (quotedNode1_6772_1 != null) {
+            quotedNode_6772_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_6772_1));
           }
         }
         result = quotedNode1_6772_0;

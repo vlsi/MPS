@@ -109,15 +109,15 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
         SNode quotedNode1_3287_0 = quotedNode_3287_0;
         {
           quotedNode_3287_1 = (SNode) parameter_3287_0;
-          SNode quotedNode1_158;
+          SNode quotedNode1_3287_1;
           if (_parameterValues_129834374.contains(quotedNode_3287_1)) {
-            quotedNode1_158 = CopyUtil.copy(quotedNode_3287_1);
+            quotedNode1_3287_1 = CopyUtil.copy(quotedNode_3287_1);
           } else {
             _parameterValues_129834374.add(quotedNode_3287_1);
-            quotedNode1_158 = quotedNode_3287_1;
+            quotedNode1_3287_1 = quotedNode_3287_1;
           }
-          if (quotedNode1_158 != null) {
-            quotedNode_3287_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_158, typeCheckingContext));
+          if (quotedNode1_3287_1 != null) {
+            quotedNode_3287_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_3287_1, typeCheckingContext));
           }
         }
         result = quotedNode1_3287_0;
@@ -135,15 +135,15 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
         SNode quotedNode1_3287_0 = quotedNode_3287_0;
         {
           quotedNode_3287_1 = (SNode) parameter_3287_0;
-          SNode quotedNode1_158;
+          SNode quotedNode1_3287_1;
           if (_parameterValues_129834374.contains(quotedNode_3287_1)) {
-            quotedNode1_158 = CopyUtil.copy(quotedNode_3287_1);
+            quotedNode1_3287_1 = CopyUtil.copy(quotedNode_3287_1);
           } else {
             _parameterValues_129834374.add(quotedNode_3287_1);
-            quotedNode1_158 = quotedNode_3287_1;
+            quotedNode1_3287_1 = quotedNode_3287_1;
           }
-          if (quotedNode1_158 != null) {
-            quotedNode_3287_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_158));
+          if (quotedNode1_3287_1 != null) {
+            quotedNode_3287_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_3287_1));
           }
         }
         result = quotedNode1_3287_0;

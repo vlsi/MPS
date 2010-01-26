@@ -80,15 +80,15 @@ public class typeof_ComparatorSortOperation_InferenceRule extends AbstractInfere
         SNode quotedNode1_3083_0 = quotedNode_3083_0;
         {
           quotedNode_3083_1 = (SNode) parameter_3083_0;
-          SNode quotedNode1_52;
+          SNode quotedNode1_3083_1;
           if (_parameterValues_129834374.contains(quotedNode_3083_1)) {
-            quotedNode1_52 = CopyUtil.copy(quotedNode_3083_1);
+            quotedNode1_3083_1 = CopyUtil.copy(quotedNode_3083_1);
           } else {
             _parameterValues_129834374.add(quotedNode_3083_1);
-            quotedNode1_52 = quotedNode_3083_1;
+            quotedNode1_3083_1 = quotedNode_3083_1;
           }
-          if (quotedNode1_52 != null) {
-            quotedNode_3083_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_52, typeCheckingContext));
+          if (quotedNode1_3083_1 != null) {
+            quotedNode_3083_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_3083_1, typeCheckingContext));
           }
         }
         result = quotedNode1_3083_0;
@@ -106,15 +106,15 @@ public class typeof_ComparatorSortOperation_InferenceRule extends AbstractInfere
         SNode quotedNode1_3083_0 = quotedNode_3083_0;
         {
           quotedNode_3083_1 = (SNode) parameter_3083_0;
-          SNode quotedNode1_52;
+          SNode quotedNode1_3083_1;
           if (_parameterValues_129834374.contains(quotedNode_3083_1)) {
-            quotedNode1_52 = CopyUtil.copy(quotedNode_3083_1);
+            quotedNode1_3083_1 = CopyUtil.copy(quotedNode_3083_1);
           } else {
             _parameterValues_129834374.add(quotedNode_3083_1);
-            quotedNode1_52 = quotedNode_3083_1;
+            quotedNode1_3083_1 = quotedNode_3083_1;
           }
-          if (quotedNode1_52 != null) {
-            quotedNode_3083_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_52));
+          if (quotedNode1_3083_1 != null) {
+            quotedNode_3083_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_3083_1));
           }
         }
         result = quotedNode1_3083_0;
@@ -136,39 +136,39 @@ public class typeof_ComparatorSortOperation_InferenceRule extends AbstractInfere
       SNode quotedNode_3083_5 = null;
       {
         quotedNode_3083_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3083_1 = quotedNode_3083_2;
+        SNode quotedNode1_3083_2 = quotedNode_3083_2;
         {
           quotedNode_3083_3 = (SNode) parameter_3083_1;
-          SNode quotedNode1_53;
+          SNode quotedNode1_3083_3;
           if (_parameterValues_129834374.contains(quotedNode_3083_3)) {
-            quotedNode1_53 = CopyUtil.copy(quotedNode_3083_3);
+            quotedNode1_3083_3 = CopyUtil.copy(quotedNode_3083_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3083_3);
-            quotedNode1_53 = quotedNode_3083_3;
+            quotedNode1_3083_3 = quotedNode_3083_3;
           }
-          if (quotedNode1_53 != null) {
-            quotedNode_3083_2.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_53, typeCheckingContext));
+          if (quotedNode1_3083_3 != null) {
+            quotedNode_3083_2.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_3083_3, typeCheckingContext));
           }
         }
         {
           quotedNode_3083_4 = (SNode) parameter_3083_2;
-          SNode quotedNode1_54;
+          SNode quotedNode1_3083_4;
           if (_parameterValues_129834374.contains(quotedNode_3083_4)) {
-            quotedNode1_54 = CopyUtil.copy(quotedNode_3083_4);
+            quotedNode1_3083_4 = CopyUtil.copy(quotedNode_3083_4);
           } else {
             _parameterValues_129834374.add(quotedNode_3083_4);
-            quotedNode1_54 = quotedNode_3083_4;
+            quotedNode1_3083_4 = quotedNode_3083_4;
           }
-          if (quotedNode1_54 != null) {
-            quotedNode_3083_2.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_54, typeCheckingContext));
+          if (quotedNode1_3083_4 != null) {
+            quotedNode_3083_2.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_3083_4, typeCheckingContext));
           }
         }
         {
           quotedNode_3083_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3083_2 = quotedNode_3083_5;
-          quotedNode_3083_2.addChild("resultType", quotedNode1_3083_2);
+          SNode quotedNode1_3083_5 = quotedNode_3083_5;
+          quotedNode_3083_2.addChild("resultType", quotedNode1_3083_5);
         }
-        result = quotedNode1_3083_1;
+        result = quotedNode1_3083_2;
       }
       return result;
     }
@@ -182,39 +182,39 @@ public class typeof_ComparatorSortOperation_InferenceRule extends AbstractInfere
       SNode quotedNode_3083_5 = null;
       {
         quotedNode_3083_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3083_1 = quotedNode_3083_2;
+        SNode quotedNode1_3083_2 = quotedNode_3083_2;
         {
           quotedNode_3083_3 = (SNode) parameter_3083_1;
-          SNode quotedNode1_53;
+          SNode quotedNode1_3083_3;
           if (_parameterValues_129834374.contains(quotedNode_3083_3)) {
-            quotedNode1_53 = CopyUtil.copy(quotedNode_3083_3);
+            quotedNode1_3083_3 = CopyUtil.copy(quotedNode_3083_3);
           } else {
             _parameterValues_129834374.add(quotedNode_3083_3);
-            quotedNode1_53 = quotedNode_3083_3;
+            quotedNode1_3083_3 = quotedNode_3083_3;
           }
-          if (quotedNode1_53 != null) {
-            quotedNode_3083_2.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_53));
+          if (quotedNode1_3083_3 != null) {
+            quotedNode_3083_2.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_3083_3));
           }
         }
         {
           quotedNode_3083_4 = (SNode) parameter_3083_2;
-          SNode quotedNode1_54;
+          SNode quotedNode1_3083_4;
           if (_parameterValues_129834374.contains(quotedNode_3083_4)) {
-            quotedNode1_54 = CopyUtil.copy(quotedNode_3083_4);
+            quotedNode1_3083_4 = CopyUtil.copy(quotedNode_3083_4);
           } else {
             _parameterValues_129834374.add(quotedNode_3083_4);
-            quotedNode1_54 = quotedNode_3083_4;
+            quotedNode1_3083_4 = quotedNode_3083_4;
           }
-          if (quotedNode1_54 != null) {
-            quotedNode_3083_2.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_54));
+          if (quotedNode1_3083_4 != null) {
+            quotedNode_3083_2.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_3083_4));
           }
         }
         {
           quotedNode_3083_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3083_2 = quotedNode_3083_5;
-          quotedNode_3083_2.addChild("resultType", quotedNode1_3083_2);
+          SNode quotedNode1_3083_5 = quotedNode_3083_5;
+          quotedNode_3083_2.addChild("resultType", quotedNode1_3083_5);
         }
-        result = quotedNode1_3083_1;
+        result = quotedNode1_3083_2;
       }
       return result;
     }
@@ -230,8 +230,8 @@ public class typeof_ComparatorSortOperation_InferenceRule extends AbstractInfere
       SNode quotedNode_3083_6 = null;
       {
         quotedNode_3083_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3083_3 = quotedNode_3083_6;
-        result = quotedNode1_3083_3;
+        SNode quotedNode1_3083_6 = quotedNode_3083_6;
+        result = quotedNode1_3083_6;
       }
       return result;
     }
@@ -242,8 +242,8 @@ public class typeof_ComparatorSortOperation_InferenceRule extends AbstractInfere
       SNode quotedNode_3083_6 = null;
       {
         quotedNode_3083_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3083_3 = quotedNode_3083_6;
-        result = quotedNode1_3083_3;
+        SNode quotedNode1_3083_6 = quotedNode_3083_6;
+        result = quotedNode1_3083_6;
       }
       return result;
     }
@@ -260,21 +260,21 @@ public class typeof_ComparatorSortOperation_InferenceRule extends AbstractInfere
       SNode quotedNode_3083_8 = null;
       {
         quotedNode_3083_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3083_4 = quotedNode_3083_7;
+        SNode quotedNode1_3083_7 = quotedNode_3083_7;
         {
           quotedNode_3083_8 = (SNode) parameter_3083_3;
-          SNode quotedNode1_55;
+          SNode quotedNode1_3083_8;
           if (_parameterValues_129834374.contains(quotedNode_3083_8)) {
-            quotedNode1_55 = CopyUtil.copy(quotedNode_3083_8);
+            quotedNode1_3083_8 = CopyUtil.copy(quotedNode_3083_8);
           } else {
             _parameterValues_129834374.add(quotedNode_3083_8);
-            quotedNode1_55 = quotedNode_3083_8;
+            quotedNode1_3083_8 = quotedNode_3083_8;
           }
-          if (quotedNode1_55 != null) {
-            quotedNode_3083_7.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_55, typeCheckingContext));
+          if (quotedNode1_3083_8 != null) {
+            quotedNode_3083_7.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_3083_8, typeCheckingContext));
           }
         }
-        result = quotedNode1_3083_4;
+        result = quotedNode1_3083_7;
       }
       return result;
     }
@@ -286,21 +286,21 @@ public class typeof_ComparatorSortOperation_InferenceRule extends AbstractInfere
       SNode quotedNode_3083_8 = null;
       {
         quotedNode_3083_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_3083_4 = quotedNode_3083_7;
+        SNode quotedNode1_3083_7 = quotedNode_3083_7;
         {
           quotedNode_3083_8 = (SNode) parameter_3083_3;
-          SNode quotedNode1_55;
+          SNode quotedNode1_3083_8;
           if (_parameterValues_129834374.contains(quotedNode_3083_8)) {
-            quotedNode1_55 = CopyUtil.copy(quotedNode_3083_8);
+            quotedNode1_3083_8 = CopyUtil.copy(quotedNode_3083_8);
           } else {
             _parameterValues_129834374.add(quotedNode_3083_8);
-            quotedNode1_55 = quotedNode_3083_8;
+            quotedNode1_3083_8 = quotedNode_3083_8;
           }
-          if (quotedNode1_55 != null) {
-            quotedNode_3083_7.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_55));
+          if (quotedNode1_3083_8 != null) {
+            quotedNode_3083_7.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_3083_8));
           }
         }
-        result = quotedNode1_3083_4;
+        result = quotedNode1_3083_7;
       }
       return result;
     }

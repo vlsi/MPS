@@ -34,15 +34,15 @@ public class ListCreatorWithInit_Behavior {
         SNode quotedNode1_8637_0 = quotedNode_8637_0;
         {
           quotedNode_8637_1 = (SNode) parameter_8637_0;
-          SNode quotedNode1_6;
+          SNode quotedNode1_8637_1;
           if (_parameterValues_129834374.contains(quotedNode_8637_1)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_8637_1);
+            quotedNode1_8637_1 = CopyUtil.copy(quotedNode_8637_1);
           } else {
             _parameterValues_129834374.add(quotedNode_8637_1);
-            quotedNode1_6 = quotedNode_8637_1;
+            quotedNode1_8637_1 = quotedNode_8637_1;
           }
-          if (quotedNode1_6 != null) {
-            quotedNode_8637_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_6));
+          if (quotedNode1_8637_1 != null) {
+            quotedNode_8637_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_8637_1));
           }
         }
         result = quotedNode1_8637_0;

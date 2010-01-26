@@ -66,28 +66,28 @@ public class typeof_HashMapCreator_InferenceRule extends AbstractInferenceRule_R
         SNode quotedNode1_2322_0 = quotedNode_2322_0;
         {
           quotedNode_2322_1 = (SNode) parameter_2322_0;
-          SNode quotedNode1_16;
+          SNode quotedNode1_2322_1;
           if (_parameterValues_129834374.contains(quotedNode_2322_1)) {
-            quotedNode1_16 = CopyUtil.copy(quotedNode_2322_1);
+            quotedNode1_2322_1 = CopyUtil.copy(quotedNode_2322_1);
           } else {
             _parameterValues_129834374.add(quotedNode_2322_1);
-            quotedNode1_16 = quotedNode_2322_1;
+            quotedNode1_2322_1 = quotedNode_2322_1;
           }
-          if (quotedNode1_16 != null) {
-            quotedNode_2322_0.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_16, typeCheckingContext));
+          if (quotedNode1_2322_1 != null) {
+            quotedNode_2322_0.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_2322_1, typeCheckingContext));
           }
         }
         {
           quotedNode_2322_2 = (SNode) parameter_2322_1;
-          SNode quotedNode1_17;
+          SNode quotedNode1_2322_2;
           if (_parameterValues_129834374.contains(quotedNode_2322_2)) {
-            quotedNode1_17 = CopyUtil.copy(quotedNode_2322_2);
+            quotedNode1_2322_2 = CopyUtil.copy(quotedNode_2322_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2322_2);
-            quotedNode1_17 = quotedNode_2322_2;
+            quotedNode1_2322_2 = quotedNode_2322_2;
           }
-          if (quotedNode1_17 != null) {
-            quotedNode_2322_0.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_17, typeCheckingContext));
+          if (quotedNode1_2322_2 != null) {
+            quotedNode_2322_0.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_2322_2, typeCheckingContext));
           }
         }
         result = quotedNode1_2322_0;
@@ -106,28 +106,28 @@ public class typeof_HashMapCreator_InferenceRule extends AbstractInferenceRule_R
         SNode quotedNode1_2322_0 = quotedNode_2322_0;
         {
           quotedNode_2322_1 = (SNode) parameter_2322_0;
-          SNode quotedNode1_16;
+          SNode quotedNode1_2322_1;
           if (_parameterValues_129834374.contains(quotedNode_2322_1)) {
-            quotedNode1_16 = CopyUtil.copy(quotedNode_2322_1);
+            quotedNode1_2322_1 = CopyUtil.copy(quotedNode_2322_1);
           } else {
             _parameterValues_129834374.add(quotedNode_2322_1);
-            quotedNode1_16 = quotedNode_2322_1;
+            quotedNode1_2322_1 = quotedNode_2322_1;
           }
-          if (quotedNode1_16 != null) {
-            quotedNode_2322_0.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_16));
+          if (quotedNode1_2322_1 != null) {
+            quotedNode_2322_0.addChild("keyType", HUtil.copyIfNecessary(quotedNode1_2322_1));
           }
         }
         {
           quotedNode_2322_2 = (SNode) parameter_2322_1;
-          SNode quotedNode1_17;
+          SNode quotedNode1_2322_2;
           if (_parameterValues_129834374.contains(quotedNode_2322_2)) {
-            quotedNode1_17 = CopyUtil.copy(quotedNode_2322_2);
+            quotedNode1_2322_2 = CopyUtil.copy(quotedNode_2322_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2322_2);
-            quotedNode1_17 = quotedNode_2322_2;
+            quotedNode1_2322_2 = quotedNode_2322_2;
           }
-          if (quotedNode1_17 != null) {
-            quotedNode_2322_0.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_17));
+          if (quotedNode1_2322_2 != null) {
+            quotedNode_2322_0.addChild("valueType", HUtil.copyIfNecessary(quotedNode1_2322_2));
           }
         }
         result = quotedNode1_2322_0;
@@ -146,8 +146,8 @@ public class typeof_HashMapCreator_InferenceRule extends AbstractInferenceRule_R
       SNode quotedNode_2322_3 = null;
       {
         quotedNode_2322_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2322_1 = quotedNode_2322_3;
-        result = quotedNode1_2322_1;
+        SNode quotedNode1_2322_3 = quotedNode_2322_3;
+        result = quotedNode1_2322_3;
       }
       return result;
     }
@@ -158,8 +158,8 @@ public class typeof_HashMapCreator_InferenceRule extends AbstractInferenceRule_R
       SNode quotedNode_2322_3 = null;
       {
         quotedNode_2322_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2322_1 = quotedNode_2322_3;
-        result = quotedNode1_2322_1;
+        SNode quotedNode1_2322_3 = quotedNode_2322_3;
+        result = quotedNode1_2322_3;
       }
       return result;
     }

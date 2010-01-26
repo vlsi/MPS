@@ -204,21 +204,21 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         SNode quotedNode1_5899_0 = quotedNode_5899_0;
         {
           quotedNode_5899_1 = (SNode) parameter_5899_0;
-          SNode quotedNode1_15;
+          SNode quotedNode1_5899_1;
           if (_parameterValues_129834374.contains(quotedNode_5899_1)) {
-            quotedNode1_15 = CopyUtil.copy(quotedNode_5899_1);
+            quotedNode1_5899_1 = CopyUtil.copy(quotedNode_5899_1);
           } else {
             _parameterValues_129834374.add(quotedNode_5899_1);
-            quotedNode1_15 = quotedNode_5899_1;
+            quotedNode1_5899_1 = quotedNode_5899_1;
           }
-          if (quotedNode1_15 != null) {
-            quotedNode_5899_0.addChild("argument", HUtil.copyIfNecessary(quotedNode1_15, typeCheckingContext));
+          if (quotedNode1_5899_1 != null) {
+            quotedNode_5899_0.addChild("argument", HUtil.copyIfNecessary(quotedNode1_5899_1, typeCheckingContext));
           }
         }
         {
           quotedNode_5899_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_5899_1 = quotedNode_5899_2;
-          quotedNode_5899_0.addChild("argument", quotedNode1_5899_1);
+          SNode quotedNode1_5899_2 = quotedNode_5899_2;
+          quotedNode_5899_0.addChild("argument", quotedNode1_5899_2);
         }
         result = quotedNode1_5899_0;
       }
@@ -236,21 +236,21 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         SNode quotedNode1_5899_0 = quotedNode_5899_0;
         {
           quotedNode_5899_1 = (SNode) parameter_5899_0;
-          SNode quotedNode1_15;
+          SNode quotedNode1_5899_1;
           if (_parameterValues_129834374.contains(quotedNode_5899_1)) {
-            quotedNode1_15 = CopyUtil.copy(quotedNode_5899_1);
+            quotedNode1_5899_1 = CopyUtil.copy(quotedNode_5899_1);
           } else {
             _parameterValues_129834374.add(quotedNode_5899_1);
-            quotedNode1_15 = quotedNode_5899_1;
+            quotedNode1_5899_1 = quotedNode_5899_1;
           }
-          if (quotedNode1_15 != null) {
-            quotedNode_5899_0.addChild("argument", HUtil.copyIfNecessary(quotedNode1_15));
+          if (quotedNode1_5899_1 != null) {
+            quotedNode_5899_0.addChild("argument", HUtil.copyIfNecessary(quotedNode1_5899_1));
           }
         }
         {
           quotedNode_5899_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_5899_1 = quotedNode_5899_2;
-          quotedNode_5899_0.addChild("argument", quotedNode1_5899_1);
+          SNode quotedNode1_5899_2 = quotedNode_5899_2;
+          quotedNode_5899_0.addChild("argument", quotedNode1_5899_2);
         }
         result = quotedNode1_5899_0;
       }
@@ -270,26 +270,26 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       SNode quotedNode_5899_6 = null;
       {
         quotedNode_5899_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.MeetType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5899_3 = quotedNode_5899_4;
+        SNode quotedNode1_5899_4 = quotedNode_5899_4;
         {
           quotedNode_5899_5 = (SNode) parameter_5899_1;
-          SNode quotedNode1_16;
+          SNode quotedNode1_5899_5;
           if (_parameterValues_129834374.contains(quotedNode_5899_5)) {
-            quotedNode1_16 = CopyUtil.copy(quotedNode_5899_5);
+            quotedNode1_5899_5 = CopyUtil.copy(quotedNode_5899_5);
           } else {
             _parameterValues_129834374.add(quotedNode_5899_5);
-            quotedNode1_16 = quotedNode_5899_5;
+            quotedNode1_5899_5 = quotedNode_5899_5;
           }
-          if (quotedNode1_16 != null) {
-            quotedNode_5899_4.addChild("argument", HUtil.copyIfNecessary(quotedNode1_16));
+          if (quotedNode1_5899_5 != null) {
+            quotedNode_5899_4.addChild("argument", HUtil.copyIfNecessary(quotedNode1_5899_5));
           }
         }
         {
           quotedNode_5899_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_5899_4 = quotedNode_5899_6;
-          quotedNode_5899_4.addChild("argument", quotedNode1_5899_4);
+          SNode quotedNode1_5899_6 = quotedNode_5899_6;
+          quotedNode_5899_4.addChild("argument", quotedNode1_5899_6);
         }
-        result = quotedNode1_5899_3;
+        result = quotedNode1_5899_4;
       }
       return result;
     }
@@ -305,9 +305,9 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       SNode quotedNode_5899_3 = null;
       {
         quotedNode_5899_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5899_2 = quotedNode_5899_3;
-        quotedNode1_5899_2.addReference(SReference.create("classifier", quotedNode1_5899_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
-        result = quotedNode1_5899_2;
+        SNode quotedNode1_5899_3 = quotedNode_5899_3;
+        quotedNode1_5899_3.addReference(SReference.create("classifier", quotedNode1_5899_3, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
+        result = quotedNode1_5899_3;
       }
       return result;
     }
@@ -318,9 +318,9 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       SNode quotedNode_5899_3 = null;
       {
         quotedNode_5899_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5899_2 = quotedNode_5899_3;
-        quotedNode1_5899_2.addReference(SReference.create("classifier", quotedNode1_5899_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
-        result = quotedNode1_5899_2;
+        SNode quotedNode1_5899_3 = quotedNode_5899_3;
+        quotedNode1_5899_3.addReference(SReference.create("classifier", quotedNode1_5899_3, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
+        result = quotedNode1_5899_3;
       }
       return result;
     }
@@ -336,9 +336,9 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
       SNode quotedNode_5899_7 = null;
       {
         quotedNode_5899_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5899_5 = quotedNode_5899_7;
-        quotedNode1_5899_5.addReference(SReference.create("classifier", quotedNode1_5899_5, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
-        result = quotedNode1_5899_5;
+        SNode quotedNode1_5899_7 = quotedNode_5899_7;
+        quotedNode1_5899_7.addReference(SReference.create("classifier", quotedNode1_5899_7, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~RuntimeException")));
+        result = quotedNode1_5899_7;
       }
       return result;
     }

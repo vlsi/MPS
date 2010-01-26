@@ -109,15 +109,15 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
         SNode quotedNode1_2060_0 = quotedNode_2060_0;
         {
           quotedNode_2060_1 = (SNode) parameter_2060_0;
-          SNode quotedNode1_81;
+          SNode quotedNode1_2060_1;
           if (_parameterValues_129834374.contains(quotedNode_2060_1)) {
-            quotedNode1_81 = CopyUtil.copy(quotedNode_2060_1);
+            quotedNode1_2060_1 = CopyUtil.copy(quotedNode_2060_1);
           } else {
             _parameterValues_129834374.add(quotedNode_2060_1);
-            quotedNode1_81 = quotedNode_2060_1;
+            quotedNode1_2060_1 = quotedNode_2060_1;
           }
-          if (quotedNode1_81 != null) {
-            quotedNode_2060_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_81, typeCheckingContext));
+          if (quotedNode1_2060_1 != null) {
+            quotedNode_2060_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_2060_1, typeCheckingContext));
           }
         }
         result = quotedNode1_2060_0;
@@ -135,15 +135,15 @@ public class supertypesOf_ClassifierType_Iterator_SubtypingRule extends Subtypin
         SNode quotedNode1_2060_0 = quotedNode_2060_0;
         {
           quotedNode_2060_1 = (SNode) parameter_2060_0;
-          SNode quotedNode1_81;
+          SNode quotedNode1_2060_1;
           if (_parameterValues_129834374.contains(quotedNode_2060_1)) {
-            quotedNode1_81 = CopyUtil.copy(quotedNode_2060_1);
+            quotedNode1_2060_1 = CopyUtil.copy(quotedNode_2060_1);
           } else {
             _parameterValues_129834374.add(quotedNode_2060_1);
-            quotedNode1_81 = quotedNode_2060_1;
+            quotedNode1_2060_1 = quotedNode_2060_1;
           }
-          if (quotedNode1_81 != null) {
-            quotedNode_2060_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_81));
+          if (quotedNode1_2060_1 != null) {
+            quotedNode_2060_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_2060_1));
           }
         }
         result = quotedNode1_2060_0;

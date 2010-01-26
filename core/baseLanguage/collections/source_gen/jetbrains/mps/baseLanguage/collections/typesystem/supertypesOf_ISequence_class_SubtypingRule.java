@@ -60,9 +60,9 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
       SNode quotedNode_4893_2 = null;
       {
         quotedNode_4893_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4893_1 = quotedNode_4893_2;
-        quotedNode1_4893_1.addReference(SReference.create("classifier", quotedNode1_4893_1, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~ISequence")));
-        result = quotedNode1_4893_1;
+        SNode quotedNode1_4893_2 = quotedNode_4893_2;
+        quotedNode1_4893_2.addReference(SReference.create("classifier", quotedNode1_4893_2, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~ISequence")));
+        result = quotedNode1_4893_2;
       }
       return result;
     }
@@ -73,9 +73,9 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
       SNode quotedNode_4893_2 = null;
       {
         quotedNode_4893_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4893_1 = quotedNode_4893_2;
-        quotedNode1_4893_1.addReference(SReference.create("classifier", quotedNode1_4893_1, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~ISequence")));
-        result = quotedNode1_4893_1;
+        SNode quotedNode1_4893_2 = quotedNode_4893_2;
+        quotedNode1_4893_2.addReference(SReference.create("classifier", quotedNode1_4893_2, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~ISequence")));
+        result = quotedNode1_4893_2;
       }
       return result;
     }
@@ -95,15 +95,15 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
         SNode quotedNode1_4893_0 = quotedNode_4893_0;
         {
           quotedNode_4893_1 = (SNode) parameter_4893_0;
-          SNode quotedNode1_40;
+          SNode quotedNode1_4893_1;
           if (_parameterValues_129834374.contains(quotedNode_4893_1)) {
-            quotedNode1_40 = CopyUtil.copy(quotedNode_4893_1);
+            quotedNode1_4893_1 = CopyUtil.copy(quotedNode_4893_1);
           } else {
             _parameterValues_129834374.add(quotedNode_4893_1);
-            quotedNode1_40 = quotedNode_4893_1;
+            quotedNode1_4893_1 = quotedNode_4893_1;
           }
-          if (quotedNode1_40 != null) {
-            quotedNode_4893_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_40, typeCheckingContext));
+          if (quotedNode1_4893_1 != null) {
+            quotedNode_4893_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4893_1, typeCheckingContext));
           }
         }
         result = quotedNode1_4893_0;
@@ -121,15 +121,15 @@ public class supertypesOf_ISequence_class_SubtypingRule extends SubtypingRule_Ru
         SNode quotedNode1_4893_0 = quotedNode_4893_0;
         {
           quotedNode_4893_1 = (SNode) parameter_4893_0;
-          SNode quotedNode1_40;
+          SNode quotedNode1_4893_1;
           if (_parameterValues_129834374.contains(quotedNode_4893_1)) {
-            quotedNode1_40 = CopyUtil.copy(quotedNode_4893_1);
+            quotedNode1_4893_1 = CopyUtil.copy(quotedNode_4893_1);
           } else {
             _parameterValues_129834374.add(quotedNode_4893_1);
-            quotedNode1_40 = quotedNode_4893_1;
+            quotedNode1_4893_1 = quotedNode_4893_1;
           }
-          if (quotedNode1_40 != null) {
-            quotedNode_4893_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_40));
+          if (quotedNode1_4893_1 != null) {
+            quotedNode_4893_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4893_1));
           }
         }
         result = quotedNode1_4893_0;

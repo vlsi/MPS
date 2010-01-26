@@ -53,15 +53,15 @@ public class supertypesOf_EnumeratorType_SubtypingRule extends SubtypingRule_Run
         quotedNode1_9604_0.addReference(SReference.create("classifier", quotedNode1_9604_0, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~IEnumerator")));
         {
           quotedNode_9604_1 = (SNode) parameter_9604_0;
-          SNode quotedNode1_90;
+          SNode quotedNode1_9604_1;
           if (_parameterValues_129834374.contains(quotedNode_9604_1)) {
-            quotedNode1_90 = CopyUtil.copy(quotedNode_9604_1);
+            quotedNode1_9604_1 = CopyUtil.copy(quotedNode_9604_1);
           } else {
             _parameterValues_129834374.add(quotedNode_9604_1);
-            quotedNode1_90 = quotedNode_9604_1;
+            quotedNode1_9604_1 = quotedNode_9604_1;
           }
-          if (quotedNode1_90 != null) {
-            quotedNode_9604_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_90, typeCheckingContext));
+          if (quotedNode1_9604_1 != null) {
+            quotedNode_9604_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_9604_1, typeCheckingContext));
           }
         }
         result = quotedNode1_9604_0;
@@ -80,15 +80,15 @@ public class supertypesOf_EnumeratorType_SubtypingRule extends SubtypingRule_Run
         quotedNode1_9604_0.addReference(SReference.create("classifier", quotedNode1_9604_0, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~IEnumerator")));
         {
           quotedNode_9604_1 = (SNode) parameter_9604_0;
-          SNode quotedNode1_90;
+          SNode quotedNode1_9604_1;
           if (_parameterValues_129834374.contains(quotedNode_9604_1)) {
-            quotedNode1_90 = CopyUtil.copy(quotedNode_9604_1);
+            quotedNode1_9604_1 = CopyUtil.copy(quotedNode_9604_1);
           } else {
             _parameterValues_129834374.add(quotedNode_9604_1);
-            quotedNode1_90 = quotedNode_9604_1;
+            quotedNode1_9604_1 = quotedNode_9604_1;
           }
-          if (quotedNode1_90 != null) {
-            quotedNode_9604_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_90));
+          if (quotedNode1_9604_1 != null) {
+            quotedNode_9604_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_9604_1));
           }
         }
         result = quotedNode1_9604_0;

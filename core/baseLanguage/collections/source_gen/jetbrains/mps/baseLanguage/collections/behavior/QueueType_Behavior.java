@@ -55,15 +55,15 @@ public class QueueType_Behavior {
         SNode quotedNode1_8710_0 = quotedNode_8710_0;
         {
           quotedNode_8710_1 = (SNode) parameter_8710_0;
-          SNode quotedNode1_13;
+          SNode quotedNode1_8710_1;
           if (_parameterValues_129834374.contains(quotedNode_8710_1)) {
-            quotedNode1_13 = CopyUtil.copy(quotedNode_8710_1);
+            quotedNode1_8710_1 = CopyUtil.copy(quotedNode_8710_1);
           } else {
             _parameterValues_129834374.add(quotedNode_8710_1);
-            quotedNode1_13 = quotedNode_8710_1;
+            quotedNode1_8710_1 = quotedNode_8710_1;
           }
-          if (quotedNode1_13 != null) {
-            quotedNode_8710_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_13));
+          if (quotedNode1_8710_1 != null) {
+            quotedNode_8710_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_8710_1));
           }
         }
         result = quotedNode1_8710_0;
@@ -83,21 +83,21 @@ public class QueueType_Behavior {
       SNode quotedNode_8710_3 = null;
       {
         quotedNode_8710_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.PriorityQueueCreator", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_8710_1 = quotedNode_8710_2;
+        SNode quotedNode1_8710_2 = quotedNode_8710_2;
         {
           quotedNode_8710_3 = (SNode) parameter_8710_1;
-          SNode quotedNode1_14;
+          SNode quotedNode1_8710_3;
           if (_parameterValues_129834374.contains(quotedNode_8710_3)) {
-            quotedNode1_14 = CopyUtil.copy(quotedNode_8710_3);
+            quotedNode1_8710_3 = CopyUtil.copy(quotedNode_8710_3);
           } else {
             _parameterValues_129834374.add(quotedNode_8710_3);
-            quotedNode1_14 = quotedNode_8710_3;
+            quotedNode1_8710_3 = quotedNode_8710_3;
           }
-          if (quotedNode1_14 != null) {
-            quotedNode_8710_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_14));
+          if (quotedNode1_8710_3 != null) {
+            quotedNode_8710_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_8710_3));
           }
         }
-        result = quotedNode1_8710_1;
+        result = quotedNode1_8710_2;
       }
       return result;
     }

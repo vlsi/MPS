@@ -82,15 +82,15 @@ public class replace_invokeOperation_with_compactInvoke_Intention extends BaseIn
         }
         {
           quotedNode_3549_2 = (SNode) parameter_3549_1;
-          SNode quotedNode1_0;
+          SNode quotedNode1_3549_1;
           if (_parameterValues_129834374.contains(quotedNode_3549_2)) {
-            quotedNode1_0 = CopyUtil.copy(quotedNode_3549_2);
+            quotedNode1_3549_1 = CopyUtil.copy(quotedNode_3549_2);
           } else {
             _parameterValues_129834374.add(quotedNode_3549_2);
-            quotedNode1_0 = quotedNode_3549_2;
+            quotedNode1_3549_1 = quotedNode_3549_2;
           }
-          if (quotedNode1_0 != null) {
-            quotedNode_3549_0.addChild("function", HUtil.copyIfNecessary(quotedNode1_0));
+          if (quotedNode1_3549_1 != null) {
+            quotedNode_3549_0.addChild("function", HUtil.copyIfNecessary(quotedNode1_3549_1));
           }
         }
         result = quotedNode1_3549_0;

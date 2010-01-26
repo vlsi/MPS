@@ -54,28 +54,28 @@ public class IMapping_interface_supertypeOf_mappingType_SubtypingRule extends Su
         quotedNode1_9801_0.addReference(SReference.create("classifier", quotedNode1_9801_0, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~IMapping")));
         {
           quotedNode_9801_1 = (SNode) parameter_9801_0;
-          SNode quotedNode1_136;
+          SNode quotedNode1_9801_1;
           if (_parameterValues_129834374.contains(quotedNode_9801_1)) {
-            quotedNode1_136 = CopyUtil.copy(quotedNode_9801_1);
+            quotedNode1_9801_1 = CopyUtil.copy(quotedNode_9801_1);
           } else {
             _parameterValues_129834374.add(quotedNode_9801_1);
-            quotedNode1_136 = quotedNode_9801_1;
+            quotedNode1_9801_1 = quotedNode_9801_1;
           }
-          if (quotedNode1_136 != null) {
-            quotedNode_9801_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_136, typeCheckingContext));
+          if (quotedNode1_9801_1 != null) {
+            quotedNode_9801_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_9801_1, typeCheckingContext));
           }
         }
         {
           quotedNode_9801_2 = (SNode) parameter_9801_1;
-          SNode quotedNode1_137;
+          SNode quotedNode1_9801_2;
           if (_parameterValues_129834374.contains(quotedNode_9801_2)) {
-            quotedNode1_137 = CopyUtil.copy(quotedNode_9801_2);
+            quotedNode1_9801_2 = CopyUtil.copy(quotedNode_9801_2);
           } else {
             _parameterValues_129834374.add(quotedNode_9801_2);
-            quotedNode1_137 = quotedNode_9801_2;
+            quotedNode1_9801_2 = quotedNode_9801_2;
           }
-          if (quotedNode1_137 != null) {
-            quotedNode_9801_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_137, typeCheckingContext));
+          if (quotedNode1_9801_2 != null) {
+            quotedNode_9801_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_9801_2, typeCheckingContext));
           }
         }
         result = quotedNode1_9801_0;
@@ -95,28 +95,28 @@ public class IMapping_interface_supertypeOf_mappingType_SubtypingRule extends Su
         quotedNode1_9801_0.addReference(SReference.create("classifier", quotedNode1_9801_0, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)"), SNodeId.fromString("~IMapping")));
         {
           quotedNode_9801_1 = (SNode) parameter_9801_0;
-          SNode quotedNode1_136;
+          SNode quotedNode1_9801_1;
           if (_parameterValues_129834374.contains(quotedNode_9801_1)) {
-            quotedNode1_136 = CopyUtil.copy(quotedNode_9801_1);
+            quotedNode1_9801_1 = CopyUtil.copy(quotedNode_9801_1);
           } else {
             _parameterValues_129834374.add(quotedNode_9801_1);
-            quotedNode1_136 = quotedNode_9801_1;
+            quotedNode1_9801_1 = quotedNode_9801_1;
           }
-          if (quotedNode1_136 != null) {
-            quotedNode_9801_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_136));
+          if (quotedNode1_9801_1 != null) {
+            quotedNode_9801_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_9801_1));
           }
         }
         {
           quotedNode_9801_2 = (SNode) parameter_9801_1;
-          SNode quotedNode1_137;
+          SNode quotedNode1_9801_2;
           if (_parameterValues_129834374.contains(quotedNode_9801_2)) {
-            quotedNode1_137 = CopyUtil.copy(quotedNode_9801_2);
+            quotedNode1_9801_2 = CopyUtil.copy(quotedNode_9801_2);
           } else {
             _parameterValues_129834374.add(quotedNode_9801_2);
-            quotedNode1_137 = quotedNode_9801_2;
+            quotedNode1_9801_2 = quotedNode_9801_2;
           }
-          if (quotedNode1_137 != null) {
-            quotedNode_9801_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_137));
+          if (quotedNode1_9801_2 != null) {
+            quotedNode_9801_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_9801_2));
           }
         }
         result = quotedNode1_9801_0;

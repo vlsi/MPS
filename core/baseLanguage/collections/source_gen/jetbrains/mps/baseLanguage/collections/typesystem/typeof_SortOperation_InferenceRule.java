@@ -83,15 +83,15 @@ public class typeof_SortOperation_InferenceRule extends AbstractInferenceRule_Ru
         SNode quotedNode1_4177_0 = quotedNode_4177_0;
         {
           quotedNode_4177_1 = (SNode) parameter_4177_0;
-          SNode quotedNode1_41;
+          SNode quotedNode1_4177_1;
           if (_parameterValues_129834374.contains(quotedNode_4177_1)) {
-            quotedNode1_41 = CopyUtil.copy(quotedNode_4177_1);
+            quotedNode1_4177_1 = CopyUtil.copy(quotedNode_4177_1);
           } else {
             _parameterValues_129834374.add(quotedNode_4177_1);
-            quotedNode1_41 = quotedNode_4177_1;
+            quotedNode1_4177_1 = quotedNode_4177_1;
           }
-          if (quotedNode1_41 != null) {
-            quotedNode_4177_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_41, typeCheckingContext));
+          if (quotedNode1_4177_1 != null) {
+            quotedNode_4177_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4177_1, typeCheckingContext));
           }
         }
         result = quotedNode1_4177_0;
@@ -109,15 +109,15 @@ public class typeof_SortOperation_InferenceRule extends AbstractInferenceRule_Ru
         SNode quotedNode1_4177_0 = quotedNode_4177_0;
         {
           quotedNode_4177_1 = (SNode) parameter_4177_0;
-          SNode quotedNode1_41;
+          SNode quotedNode1_4177_1;
           if (_parameterValues_129834374.contains(quotedNode_4177_1)) {
-            quotedNode1_41 = CopyUtil.copy(quotedNode_4177_1);
+            quotedNode1_4177_1 = CopyUtil.copy(quotedNode_4177_1);
           } else {
             _parameterValues_129834374.add(quotedNode_4177_1);
-            quotedNode1_41 = quotedNode_4177_1;
+            quotedNode1_4177_1 = quotedNode_4177_1;
           }
-          if (quotedNode1_41 != null) {
-            quotedNode_4177_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_41));
+          if (quotedNode1_4177_1 != null) {
+            quotedNode_4177_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4177_1));
           }
         }
         result = quotedNode1_4177_0;
@@ -138,27 +138,27 @@ public class typeof_SortOperation_InferenceRule extends AbstractInferenceRule_Ru
       SNode quotedNode_4177_4 = null;
       {
         quotedNode_4177_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4177_1 = quotedNode_4177_2;
+        SNode quotedNode1_4177_2 = quotedNode_4177_2;
         {
           quotedNode_4177_3 = (SNode) parameter_4177_1;
-          SNode quotedNode1_42;
+          SNode quotedNode1_4177_3;
           if (_parameterValues_129834374.contains(quotedNode_4177_3)) {
-            quotedNode1_42 = CopyUtil.copy(quotedNode_4177_3);
+            quotedNode1_4177_3 = CopyUtil.copy(quotedNode_4177_3);
           } else {
             _parameterValues_129834374.add(quotedNode_4177_3);
-            quotedNode1_42 = quotedNode_4177_3;
+            quotedNode1_4177_3 = quotedNode_4177_3;
           }
-          if (quotedNode1_42 != null) {
-            quotedNode_4177_2.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_42, typeCheckingContext));
+          if (quotedNode1_4177_3 != null) {
+            quotedNode_4177_2.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_4177_3, typeCheckingContext));
           }
         }
         {
           quotedNode_4177_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_4177_2 = quotedNode_4177_4;
-          quotedNode1_4177_2.addReference(SReference.create("classifier", quotedNode1_4177_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
-          quotedNode_4177_2.addChild("resultType", quotedNode1_4177_2);
+          SNode quotedNode1_4177_4 = quotedNode_4177_4;
+          quotedNode1_4177_4.addReference(SReference.create("classifier", quotedNode1_4177_4, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
+          quotedNode_4177_2.addChild("resultType", quotedNode1_4177_4);
         }
-        result = quotedNode1_4177_1;
+        result = quotedNode1_4177_2;
       }
       return result;
     }
@@ -171,27 +171,27 @@ public class typeof_SortOperation_InferenceRule extends AbstractInferenceRule_Ru
       SNode quotedNode_4177_4 = null;
       {
         quotedNode_4177_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4177_1 = quotedNode_4177_2;
+        SNode quotedNode1_4177_2 = quotedNode_4177_2;
         {
           quotedNode_4177_3 = (SNode) parameter_4177_1;
-          SNode quotedNode1_42;
+          SNode quotedNode1_4177_3;
           if (_parameterValues_129834374.contains(quotedNode_4177_3)) {
-            quotedNode1_42 = CopyUtil.copy(quotedNode_4177_3);
+            quotedNode1_4177_3 = CopyUtil.copy(quotedNode_4177_3);
           } else {
             _parameterValues_129834374.add(quotedNode_4177_3);
-            quotedNode1_42 = quotedNode_4177_3;
+            quotedNode1_4177_3 = quotedNode_4177_3;
           }
-          if (quotedNode1_42 != null) {
-            quotedNode_4177_2.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_42));
+          if (quotedNode1_4177_3 != null) {
+            quotedNode_4177_2.addChild("parameterType", HUtil.copyIfNecessary(quotedNode1_4177_3));
           }
         }
         {
           quotedNode_4177_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_4177_2 = quotedNode_4177_4;
-          quotedNode1_4177_2.addReference(SReference.create("classifier", quotedNode1_4177_2, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
-          quotedNode_4177_2.addChild("resultType", quotedNode1_4177_2);
+          SNode quotedNode1_4177_4 = quotedNode_4177_4;
+          quotedNode1_4177_4.addReference(SReference.create("classifier", quotedNode1_4177_4, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Comparable")));
+          quotedNode_4177_2.addChild("resultType", quotedNode1_4177_4);
         }
-        result = quotedNode1_4177_1;
+        result = quotedNode1_4177_2;
       }
       return result;
     }
@@ -207,8 +207,8 @@ public class typeof_SortOperation_InferenceRule extends AbstractInferenceRule_Ru
       SNode quotedNode_4177_5 = null;
       {
         quotedNode_4177_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4177_3 = quotedNode_4177_5;
-        result = quotedNode1_4177_3;
+        SNode quotedNode1_4177_5 = quotedNode_4177_5;
+        result = quotedNode1_4177_5;
       }
       return result;
     }
@@ -219,8 +219,8 @@ public class typeof_SortOperation_InferenceRule extends AbstractInferenceRule_Ru
       SNode quotedNode_4177_5 = null;
       {
         quotedNode_4177_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4177_3 = quotedNode_4177_5;
-        result = quotedNode1_4177_3;
+        SNode quotedNode1_4177_5 = quotedNode_4177_5;
+        result = quotedNode1_4177_5;
       }
       return result;
     }
@@ -237,21 +237,21 @@ public class typeof_SortOperation_InferenceRule extends AbstractInferenceRule_Ru
       SNode quotedNode_4177_7 = null;
       {
         quotedNode_4177_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4177_4 = quotedNode_4177_6;
+        SNode quotedNode1_4177_6 = quotedNode_4177_6;
         {
           quotedNode_4177_7 = (SNode) parameter_4177_2;
-          SNode quotedNode1_43;
+          SNode quotedNode1_4177_7;
           if (_parameterValues_129834374.contains(quotedNode_4177_7)) {
-            quotedNode1_43 = CopyUtil.copy(quotedNode_4177_7);
+            quotedNode1_4177_7 = CopyUtil.copy(quotedNode_4177_7);
           } else {
             _parameterValues_129834374.add(quotedNode_4177_7);
-            quotedNode1_43 = quotedNode_4177_7;
+            quotedNode1_4177_7 = quotedNode_4177_7;
           }
-          if (quotedNode1_43 != null) {
-            quotedNode_4177_6.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_43, typeCheckingContext));
+          if (quotedNode1_4177_7 != null) {
+            quotedNode_4177_6.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4177_7, typeCheckingContext));
           }
         }
-        result = quotedNode1_4177_4;
+        result = quotedNode1_4177_6;
       }
       return result;
     }
@@ -263,21 +263,21 @@ public class typeof_SortOperation_InferenceRule extends AbstractInferenceRule_Ru
       SNode quotedNode_4177_7 = null;
       {
         quotedNode_4177_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_4177_4 = quotedNode_4177_6;
+        SNode quotedNode1_4177_6 = quotedNode_4177_6;
         {
           quotedNode_4177_7 = (SNode) parameter_4177_2;
-          SNode quotedNode1_43;
+          SNode quotedNode1_4177_7;
           if (_parameterValues_129834374.contains(quotedNode_4177_7)) {
-            quotedNode1_43 = CopyUtil.copy(quotedNode_4177_7);
+            quotedNode1_4177_7 = CopyUtil.copy(quotedNode_4177_7);
           } else {
             _parameterValues_129834374.add(quotedNode_4177_7);
-            quotedNode1_43 = quotedNode_4177_7;
+            quotedNode1_4177_7 = quotedNode_4177_7;
           }
-          if (quotedNode1_43 != null) {
-            quotedNode_4177_6.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_43));
+          if (quotedNode1_4177_7 != null) {
+            quotedNode_4177_6.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4177_7));
           }
         }
-        result = quotedNode1_4177_4;
+        result = quotedNode1_4177_6;
       }
       return result;
     }

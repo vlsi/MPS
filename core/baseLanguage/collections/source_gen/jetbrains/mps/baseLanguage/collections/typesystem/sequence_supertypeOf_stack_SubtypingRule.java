@@ -49,15 +49,15 @@ public class sequence_supertypeOf_stack_SubtypingRule extends SubtypingRule_Runt
         SNode quotedNode1_3547_0 = quotedNode_3547_0;
         {
           quotedNode_3547_1 = (SNode) parameter_3547_0;
-          SNode quotedNode1_174;
+          SNode quotedNode1_3547_1;
           if (_parameterValues_129834374.contains(quotedNode_3547_1)) {
-            quotedNode1_174 = CopyUtil.copy(quotedNode_3547_1);
+            quotedNode1_3547_1 = CopyUtil.copy(quotedNode_3547_1);
           } else {
             _parameterValues_129834374.add(quotedNode_3547_1);
-            quotedNode1_174 = quotedNode_3547_1;
+            quotedNode1_3547_1 = quotedNode_3547_1;
           }
-          if (quotedNode1_174 != null) {
-            quotedNode_3547_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_174, typeCheckingContext));
+          if (quotedNode1_3547_1 != null) {
+            quotedNode_3547_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_3547_1, typeCheckingContext));
           }
         }
         result = quotedNode1_3547_0;
@@ -75,15 +75,15 @@ public class sequence_supertypeOf_stack_SubtypingRule extends SubtypingRule_Runt
         SNode quotedNode1_3547_0 = quotedNode_3547_0;
         {
           quotedNode_3547_1 = (SNode) parameter_3547_0;
-          SNode quotedNode1_174;
+          SNode quotedNode1_3547_1;
           if (_parameterValues_129834374.contains(quotedNode_3547_1)) {
-            quotedNode1_174 = CopyUtil.copy(quotedNode_3547_1);
+            quotedNode1_3547_1 = CopyUtil.copy(quotedNode_3547_1);
           } else {
             _parameterValues_129834374.add(quotedNode_3547_1);
-            quotedNode1_174 = quotedNode_3547_1;
+            quotedNode1_3547_1 = quotedNode_3547_1;
           }
-          if (quotedNode1_174 != null) {
-            quotedNode_3547_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_174));
+          if (quotedNode1_3547_1 != null) {
+            quotedNode_3547_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_3547_1));
           }
         }
         result = quotedNode1_3547_0;

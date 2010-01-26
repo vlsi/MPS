@@ -34,15 +34,15 @@ public class TreeSetCreator_Behavior {
         SNode quotedNode1_5289_0 = quotedNode_5289_0;
         {
           quotedNode_5289_1 = (SNode) parameter_5289_0;
-          SNode quotedNode1_12;
+          SNode quotedNode1_5289_1;
           if (_parameterValues_129834374.contains(quotedNode_5289_1)) {
-            quotedNode1_12 = CopyUtil.copy(quotedNode_5289_1);
+            quotedNode1_5289_1 = CopyUtil.copy(quotedNode_5289_1);
           } else {
             _parameterValues_129834374.add(quotedNode_5289_1);
-            quotedNode1_12 = quotedNode_5289_1;
+            quotedNode1_5289_1 = quotedNode_5289_1;
           }
-          if (quotedNode1_12 != null) {
-            quotedNode_5289_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_12));
+          if (quotedNode1_5289_1 != null) {
+            quotedNode_5289_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_5289_1));
           }
         }
         result = quotedNode1_5289_0;

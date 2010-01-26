@@ -53,15 +53,15 @@ public class supertypesOf_DequeType_ClassiType_Deque_SubtypingRule extends Subty
         quotedNode1_7153_0.addReference(SReference.create("classifier", quotedNode1_7153_0, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime.backports(jetbrains.mps.internal.collections.runtime.backports@java_stub)"), SNodeId.fromString("~Deque")));
         {
           quotedNode_7153_1 = (SNode) parameter_7153_0;
-          SNode quotedNode1_171;
+          SNode quotedNode1_7153_1;
           if (_parameterValues_129834374.contains(quotedNode_7153_1)) {
-            quotedNode1_171 = CopyUtil.copy(quotedNode_7153_1);
+            quotedNode1_7153_1 = CopyUtil.copy(quotedNode_7153_1);
           } else {
             _parameterValues_129834374.add(quotedNode_7153_1);
-            quotedNode1_171 = quotedNode_7153_1;
+            quotedNode1_7153_1 = quotedNode_7153_1;
           }
-          if (quotedNode1_171 != null) {
-            quotedNode_7153_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_171, typeCheckingContext));
+          if (quotedNode1_7153_1 != null) {
+            quotedNode_7153_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_7153_1, typeCheckingContext));
           }
         }
         result = quotedNode1_7153_0;
@@ -80,15 +80,15 @@ public class supertypesOf_DequeType_ClassiType_Deque_SubtypingRule extends Subty
         quotedNode1_7153_0.addReference(SReference.create("classifier", quotedNode1_7153_0, SModelReference.fromString("f:java_stub#jetbrains.mps.internal.collections.runtime.backports(jetbrains.mps.internal.collections.runtime.backports@java_stub)"), SNodeId.fromString("~Deque")));
         {
           quotedNode_7153_1 = (SNode) parameter_7153_0;
-          SNode quotedNode1_171;
+          SNode quotedNode1_7153_1;
           if (_parameterValues_129834374.contains(quotedNode_7153_1)) {
-            quotedNode1_171 = CopyUtil.copy(quotedNode_7153_1);
+            quotedNode1_7153_1 = CopyUtil.copy(quotedNode_7153_1);
           } else {
             _parameterValues_129834374.add(quotedNode_7153_1);
-            quotedNode1_171 = quotedNode_7153_1;
+            quotedNode1_7153_1 = quotedNode_7153_1;
           }
-          if (quotedNode1_171 != null) {
-            quotedNode_7153_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_171));
+          if (quotedNode1_7153_1 != null) {
+            quotedNode_7153_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_7153_1));
           }
         }
         result = quotedNode1_7153_0;

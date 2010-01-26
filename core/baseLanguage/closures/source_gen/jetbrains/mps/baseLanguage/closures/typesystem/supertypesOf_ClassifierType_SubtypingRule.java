@@ -75,15 +75,15 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
         }
         {
           quotedNode_2487_2 = (SNode) parameter_2487_1;
-          SNode quotedNode1_2;
+          SNode quotedNode1_2487_1;
           if (_parameterValues_129834374.contains(quotedNode_2487_2)) {
-            quotedNode1_2 = CopyUtil.copy(quotedNode_2487_2);
+            quotedNode1_2487_1 = CopyUtil.copy(quotedNode_2487_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2487_2);
-            quotedNode1_2 = quotedNode_2487_2;
+            quotedNode1_2487_1 = quotedNode_2487_2;
           }
-          if (quotedNode1_2 != null) {
-            quotedNode_2487_0.addChild("resultType", HUtil.copyIfNecessary(quotedNode1_2, typeCheckingContext));
+          if (quotedNode1_2487_1 != null) {
+            quotedNode_2487_0.addChild("resultType", HUtil.copyIfNecessary(quotedNode1_2487_1, typeCheckingContext));
           }
         }
         result = quotedNode1_2487_0;
@@ -108,15 +108,15 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
         }
         {
           quotedNode_2487_2 = (SNode) parameter_2487_1;
-          SNode quotedNode1_2;
+          SNode quotedNode1_2487_1;
           if (_parameterValues_129834374.contains(quotedNode_2487_2)) {
-            quotedNode1_2 = CopyUtil.copy(quotedNode_2487_2);
+            quotedNode1_2487_1 = CopyUtil.copy(quotedNode_2487_2);
           } else {
             _parameterValues_129834374.add(quotedNode_2487_2);
-            quotedNode1_2 = quotedNode_2487_2;
+            quotedNode1_2487_1 = quotedNode_2487_2;
           }
-          if (quotedNode1_2 != null) {
-            quotedNode_2487_0.addChild("resultType", HUtil.copyIfNecessary(quotedNode1_2));
+          if (quotedNode1_2487_1 != null) {
+            quotedNode_2487_0.addChild("resultType", HUtil.copyIfNecessary(quotedNode1_2487_1));
           }
         }
         result = quotedNode1_2487_0;

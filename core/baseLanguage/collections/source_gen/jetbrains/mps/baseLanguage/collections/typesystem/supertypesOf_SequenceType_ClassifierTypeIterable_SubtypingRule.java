@@ -53,15 +53,15 @@ public class supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule exte
         quotedNode1_8539_0.addReference(SReference.create("classifier", quotedNode1_8539_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Iterable")));
         {
           quotedNode_8539_1 = (SNode) parameter_8539_0;
-          SNode quotedNode1_13;
+          SNode quotedNode1_8539_1;
           if (_parameterValues_129834374.contains(quotedNode_8539_1)) {
-            quotedNode1_13 = CopyUtil.copy(quotedNode_8539_1);
+            quotedNode1_8539_1 = CopyUtil.copy(quotedNode_8539_1);
           } else {
             _parameterValues_129834374.add(quotedNode_8539_1);
-            quotedNode1_13 = quotedNode_8539_1;
+            quotedNode1_8539_1 = quotedNode_8539_1;
           }
-          if (quotedNode1_13 != null) {
-            quotedNode_8539_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_13, typeCheckingContext));
+          if (quotedNode1_8539_1 != null) {
+            quotedNode_8539_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_8539_1, typeCheckingContext));
           }
         }
         result = quotedNode1_8539_0;
@@ -80,15 +80,15 @@ public class supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule exte
         quotedNode1_8539_0.addReference(SReference.create("classifier", quotedNode1_8539_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Iterable")));
         {
           quotedNode_8539_1 = (SNode) parameter_8539_0;
-          SNode quotedNode1_13;
+          SNode quotedNode1_8539_1;
           if (_parameterValues_129834374.contains(quotedNode_8539_1)) {
-            quotedNode1_13 = CopyUtil.copy(quotedNode_8539_1);
+            quotedNode1_8539_1 = CopyUtil.copy(quotedNode_8539_1);
           } else {
             _parameterValues_129834374.add(quotedNode_8539_1);
-            quotedNode1_13 = quotedNode_8539_1;
+            quotedNode1_8539_1 = quotedNode_8539_1;
           }
-          if (quotedNode1_13 != null) {
-            quotedNode_8539_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_13));
+          if (quotedNode1_8539_1 != null) {
+            quotedNode_8539_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_8539_1));
           }
         }
         result = quotedNode1_8539_0;

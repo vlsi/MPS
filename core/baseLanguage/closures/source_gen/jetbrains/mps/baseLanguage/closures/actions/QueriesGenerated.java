@@ -337,15 +337,15 @@ public class QueriesGenerated {
         SNode quotedNode1_4028_0 = quotedNode_4028_0;
         {
           quotedNode_4028_1 = (SNode) parameter_4028_0;
-          SNode quotedNode1_0;
+          SNode quotedNode1_4028_1;
           if (_parameterValues_129834374.contains(quotedNode_4028_1)) {
-            quotedNode1_0 = CopyUtil.copy(quotedNode_4028_1);
+            quotedNode1_4028_1 = CopyUtil.copy(quotedNode_4028_1);
           } else {
             _parameterValues_129834374.add(quotedNode_4028_1);
-            quotedNode1_0 = quotedNode_4028_1;
+            quotedNode1_4028_1 = quotedNode_4028_1;
           }
-          if (quotedNode1_0 != null) {
-            quotedNode_4028_0.addChild("function", HUtil.copyIfNecessary(quotedNode1_0));
+          if (quotedNode1_4028_1 != null) {
+            quotedNode_4028_0.addChild("function", HUtil.copyIfNecessary(quotedNode1_4028_1));
           }
         }
         result = quotedNode1_4028_0;

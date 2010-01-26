@@ -470,15 +470,15 @@ public class ClassifierTypeUtil {
         SNode quotedNode1_1043_8 = quotedNode_1043_8;
         {
           quotedNode_1043_9 = (SNode) parameter_1043_3;
-          SNode quotedNode1_0;
+          SNode quotedNode1_1043_9;
           if (_parameterValues_129834374.contains(quotedNode_1043_9)) {
-            quotedNode1_0 = CopyUtil.copy(quotedNode_1043_9);
+            quotedNode1_1043_9 = CopyUtil.copy(quotedNode_1043_9);
           } else {
             _parameterValues_129834374.add(quotedNode_1043_9);
-            quotedNode1_0 = quotedNode_1043_9;
+            quotedNode1_1043_9 = quotedNode_1043_9;
           }
-          if (quotedNode1_0 != null) {
-            quotedNode_1043_8.addChild("bound", HUtil.copyIfNecessary(quotedNode1_0));
+          if (quotedNode1_1043_9 != null) {
+            quotedNode_1043_8.addChild("bound", HUtil.copyIfNecessary(quotedNode1_1043_9));
           }
         }
         result = quotedNode1_1043_8;
@@ -498,21 +498,21 @@ public class ClassifierTypeUtil {
       SNode quotedNode_1043_11 = null;
       {
         quotedNode_1043_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1043_9 = quotedNode_1043_10;
+        SNode quotedNode1_1043_10 = quotedNode_1043_10;
         {
           quotedNode_1043_11 = (SNode) parameter_1043_4;
-          SNode quotedNode1_1;
+          SNode quotedNode1_1043_11;
           if (_parameterValues_129834374.contains(quotedNode_1043_11)) {
-            quotedNode1_1 = CopyUtil.copy(quotedNode_1043_11);
+            quotedNode1_1043_11 = CopyUtil.copy(quotedNode_1043_11);
           } else {
             _parameterValues_129834374.add(quotedNode_1043_11);
-            quotedNode1_1 = quotedNode_1043_11;
+            quotedNode1_1043_11 = quotedNode_1043_11;
           }
-          if (quotedNode1_1 != null) {
-            quotedNode_1043_10.addChild("bound", HUtil.copyIfNecessary(quotedNode1_1));
+          if (quotedNode1_1043_11 != null) {
+            quotedNode_1043_10.addChild("bound", HUtil.copyIfNecessary(quotedNode1_1043_11));
           }
         }
-        result = quotedNode1_1043_9;
+        result = quotedNode1_1043_10;
       }
       return result;
     }
@@ -529,21 +529,21 @@ public class ClassifierTypeUtil {
       SNode quotedNode_1043_13 = null;
       {
         quotedNode_1043_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1043_10 = quotedNode_1043_12;
+        SNode quotedNode1_1043_12 = quotedNode_1043_12;
         {
           quotedNode_1043_13 = (SNode) parameter_1043_5;
-          SNode quotedNode1_2;
+          SNode quotedNode1_1043_13;
           if (_parameterValues_129834374.contains(quotedNode_1043_13)) {
-            quotedNode1_2 = CopyUtil.copy(quotedNode_1043_13);
+            quotedNode1_1043_13 = CopyUtil.copy(quotedNode_1043_13);
           } else {
             _parameterValues_129834374.add(quotedNode_1043_13);
-            quotedNode1_2 = quotedNode_1043_13;
+            quotedNode1_1043_13 = quotedNode_1043_13;
           }
-          if (quotedNode1_2 != null) {
-            quotedNode_1043_12.addChild("bound", HUtil.copyIfNecessary(quotedNode1_2));
+          if (quotedNode1_1043_13 != null) {
+            quotedNode_1043_12.addChild("bound", HUtil.copyIfNecessary(quotedNode1_1043_13));
           }
         }
-        result = quotedNode1_1043_10;
+        result = quotedNode1_1043_12;
       }
       return result;
     }
@@ -560,21 +560,21 @@ public class ClassifierTypeUtil {
       SNode quotedNode_1043_15 = null;
       {
         quotedNode_1043_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1043_11 = quotedNode_1043_14;
+        SNode quotedNode1_1043_14 = quotedNode_1043_14;
         {
           quotedNode_1043_15 = (SNode) parameter_1043_6;
-          SNode quotedNode1_3;
+          SNode quotedNode1_1043_15;
           if (_parameterValues_129834374.contains(quotedNode_1043_15)) {
-            quotedNode1_3 = CopyUtil.copy(quotedNode_1043_15);
+            quotedNode1_1043_15 = CopyUtil.copy(quotedNode_1043_15);
           } else {
             _parameterValues_129834374.add(quotedNode_1043_15);
-            quotedNode1_3 = quotedNode_1043_15;
+            quotedNode1_1043_15 = quotedNode_1043_15;
           }
-          if (quotedNode1_3 != null) {
-            quotedNode_1043_14.addChild("bound", HUtil.copyIfNecessary(quotedNode1_3));
+          if (quotedNode1_1043_15 != null) {
+            quotedNode_1043_14.addChild("bound", HUtil.copyIfNecessary(quotedNode1_1043_15));
           }
         }
-        result = quotedNode1_1043_11;
+        result = quotedNode1_1043_14;
       }
       return result;
     }

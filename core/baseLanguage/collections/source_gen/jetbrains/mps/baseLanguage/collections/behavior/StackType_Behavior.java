@@ -54,15 +54,15 @@ public class StackType_Behavior {
         SNode quotedNode1_2225_0 = quotedNode_2225_0;
         {
           quotedNode_2225_1 = (SNode) parameter_2225_0;
-          SNode quotedNode1_17;
+          SNode quotedNode1_2225_1;
           if (_parameterValues_129834374.contains(quotedNode_2225_1)) {
-            quotedNode1_17 = CopyUtil.copy(quotedNode_2225_1);
+            quotedNode1_2225_1 = CopyUtil.copy(quotedNode_2225_1);
           } else {
             _parameterValues_129834374.add(quotedNode_2225_1);
-            quotedNode1_17 = quotedNode_2225_1;
+            quotedNode1_2225_1 = quotedNode_2225_1;
           }
-          if (quotedNode1_17 != null) {
-            quotedNode_2225_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_17));
+          if (quotedNode1_2225_1 != null) {
+            quotedNode_2225_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_2225_1));
           }
         }
         result = quotedNode1_2225_0;

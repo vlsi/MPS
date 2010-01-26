@@ -54,15 +54,15 @@ public class DequeType_Behavior {
         SNode quotedNode1_4089_0 = quotedNode_4089_0;
         {
           quotedNode_4089_1 = (SNode) parameter_4089_0;
-          SNode quotedNode1_16;
+          SNode quotedNode1_4089_1;
           if (_parameterValues_129834374.contains(quotedNode_4089_1)) {
-            quotedNode1_16 = CopyUtil.copy(quotedNode_4089_1);
+            quotedNode1_4089_1 = CopyUtil.copy(quotedNode_4089_1);
           } else {
             _parameterValues_129834374.add(quotedNode_4089_1);
-            quotedNode1_16 = quotedNode_4089_1;
+            quotedNode1_4089_1 = quotedNode_4089_1;
           }
-          if (quotedNode1_16 != null) {
-            quotedNode_4089_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_16));
+          if (quotedNode1_4089_1 != null) {
+            quotedNode_4089_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_4089_1));
           }
         }
         result = quotedNode1_4089_0;

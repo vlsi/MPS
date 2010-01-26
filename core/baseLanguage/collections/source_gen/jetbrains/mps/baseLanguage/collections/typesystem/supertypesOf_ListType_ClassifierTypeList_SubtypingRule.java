@@ -53,15 +53,15 @@ public class supertypesOf_ListType_ClassifierTypeList_SubtypingRule extends Subt
         quotedNode1_9350_0.addReference(SReference.create("classifier", quotedNode1_9350_0, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~List")));
         {
           quotedNode_9350_1 = (SNode) parameter_9350_0;
-          SNode quotedNode1_10;
+          SNode quotedNode1_9350_1;
           if (_parameterValues_129834374.contains(quotedNode_9350_1)) {
-            quotedNode1_10 = CopyUtil.copy(quotedNode_9350_1);
+            quotedNode1_9350_1 = CopyUtil.copy(quotedNode_9350_1);
           } else {
             _parameterValues_129834374.add(quotedNode_9350_1);
-            quotedNode1_10 = quotedNode_9350_1;
+            quotedNode1_9350_1 = quotedNode_9350_1;
           }
-          if (quotedNode1_10 != null) {
-            quotedNode_9350_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_10, typeCheckingContext));
+          if (quotedNode1_9350_1 != null) {
+            quotedNode_9350_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_9350_1, typeCheckingContext));
           }
         }
         result = quotedNode1_9350_0;
@@ -80,15 +80,15 @@ public class supertypesOf_ListType_ClassifierTypeList_SubtypingRule extends Subt
         quotedNode1_9350_0.addReference(SReference.create("classifier", quotedNode1_9350_0, SModelReference.fromString("f:java_stub#java.util(java.util@java_stub)"), SNodeId.fromString("~List")));
         {
           quotedNode_9350_1 = (SNode) parameter_9350_0;
-          SNode quotedNode1_10;
+          SNode quotedNode1_9350_1;
           if (_parameterValues_129834374.contains(quotedNode_9350_1)) {
-            quotedNode1_10 = CopyUtil.copy(quotedNode_9350_1);
+            quotedNode1_9350_1 = CopyUtil.copy(quotedNode_9350_1);
           } else {
             _parameterValues_129834374.add(quotedNode_9350_1);
-            quotedNode1_10 = quotedNode_9350_1;
+            quotedNode1_9350_1 = quotedNode_9350_1;
           }
-          if (quotedNode1_10 != null) {
-            quotedNode_9350_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_10));
+          if (quotedNode1_9350_1 != null) {
+            quotedNode_9350_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_9350_1));
           }
         }
         result = quotedNode1_9350_0;
