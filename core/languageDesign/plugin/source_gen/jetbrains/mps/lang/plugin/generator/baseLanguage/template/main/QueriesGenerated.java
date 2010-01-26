@@ -1319,7 +1319,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1206117913386(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.ProjectPluginDeclaration");
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.ProjectPluginDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return ProjectPluginDeclaration_Behavior.call_getGeneratedName_1213877264644(it);
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_1213276678415(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1339,19 +1343,35 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1218025164864(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.GenerationListenerDeclaration");
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.GenerationListenerDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return GenerationListenerDeclaration_Behavior.call_getClassName_1213877431631(it);
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_1218028775789(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration");
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.PreferencesComponentDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return PreferencesComponentDeclaration_Behavior.call_getClassName_1213877322095(it);
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_1218030875875(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.BaseToolDeclaration");
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.BaseToolDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return BaseToolDeclaration_Behavior.call_getGeneratedName_6547237850567463427(it);
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_1218031038422(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration");
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.TabbedEditorDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return TabbedEditorDeclaration_Behavior.call_getGeneratedName_1213877237161(it);
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_1218039696944(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -1439,7 +1459,11 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1228847767150(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration");
+    return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.FileGeneratorDeclaration")).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return FileGeneratorDeclaration_Behavior.call_getGeneratedName_1218038748102(it);
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_1239982454772(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
