@@ -1,25 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project version="4">
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\solutions\jetbrains.mps.xml.sandbox\jetbrains.mps.xml.sandbox.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.xml.sandbox/jetbrains.mps.xml.sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\languageDescriptor.mpl" />
+      <languagePath path="${project}/languageDescriptor.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>
-      <genConfSolution name="xmlDeprecated" solution="jetbrains.mps.xml.deprecated" />
-      <genConfLanguage name="xmlDeprecated" language="jetbrains.mps.xml.deprecated" />
+      <genConfModule name="deprecated" moduleRef="jetbrains.mps.xml.deprecated" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="xml" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
@@ -39,6 +42,7 @@
       </map>
     </option>
     <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />

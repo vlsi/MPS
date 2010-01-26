@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project version="4">
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
@@ -16,29 +16,31 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\solutions\jetbrains.mps.uiLanguage.samples\jetbrains.mps.uiLanguage.saamples.msd" />
-      <solutionPath path="${mps_home}\workbench\ideSolution\jetbrains.mps.ide.msd" />
-      <solutionPath path="${project}\solutions\jetbrains.mps.uiLanguage.sandbox\jetbrains.mps.uiLanguage.sandbox.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.uiLanguage.samples/jetbrains.mps.uiLanguage.saamples.msd" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.uiLanguage.sandbox/jetbrains.mps.uiLanguage.sandbox.msd" />
+      <solutionPath path="${mps_home}/workbench/ideSolution/jetbrains.mps.ide.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\uiLanguage.mpl" />
-      <languagePath path="${mps_home}\workbench\ideUiLanguage\uiLanguage.mpl" />
-      <languagePath path="${mps_home}\platform\wizards\wizards.mpl" />
+      <languagePath path="${project}/uiLanguage.mpl" />
+      <languagePath path="${mps_home}/platform/wizards/wizards.mpl" />
+      <languagePath path="${mps_home}/workbench/ideUiLanguage/uiLanguage.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
     <genConfs>
-      <genConfSolution name="samples" solution="jetbrains.mps.uiLanguage.samples" />
-      <genConfLanguage name="uiLanguage" language="jetbrains.mps.ide.uiLanguage" />
-      <genConfLanguage name="ideUILanguage" language="jetbrains.mps.ide.uiLanguage" />
-      <genConfLanguage name="classifiers" language="jetbrains.mps.baseLanguage.classifiers" />
+      <genConfModule name="ide.uiLanguage" moduleRef="jetbrains.mps.ide.uiLanguage" />
+      <genConfModule name="uiLanguage" moduleRef="jetbrains.mps.uiLanguage" />
+      <genConfModule name="wizards" moduleRef="jetbrains.mps.wizards" />
     </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="uiLanguage" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="SvnBranchConfigurationManager">
     <option name="myConfigurationMap">
       <map>
@@ -58,11 +60,11 @@
       </map>
     </option>
     <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$" vcs="svn" />
   </component>
 </project>
 
