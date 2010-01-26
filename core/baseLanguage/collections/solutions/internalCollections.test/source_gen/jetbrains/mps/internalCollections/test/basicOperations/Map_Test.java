@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import java.util.Iterator;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.WeakHashMap;
@@ -184,11 +184,11 @@ public class Map_Test extends Util_Test {
 
   public void test_mappings2() throws Exception {
     Map<Integer, String> mis = MapSequence.<Integer, String>fromMapAndKeysArray(new HashMap<Integer, String>(), 1, 2, 3).withValues("a", "b", "c");
-    SetSequence.fromSet(MapSequence.fromMap(mis).mappingsSet()).toListSequence().visitAll(new _Adapters._return_P1_E0_to_IVisitor_adapter<IMapping<Integer, String>>(new _FunctionTypes._return_P1_E0<String, IMapping<Integer, String>>() {
-      public String invoke(IMapping<Integer, String> m) {
-        return m.value(String.valueOf((char) ('A' - 1 + m.key())));
+    SetSequence.fromSet(MapSequence.fromMap(mis).mappingsSet()).toListSequence().visitAll(new IVisitor<IMapping<Integer, String>>() {
+      public void visit(IMapping<Integer, String> m) {
+        m.value(String.valueOf((char) ('A' - 1 + m.key())));
       }
-    }));
+    });
     this.assertIterableEqualsIgnoreOrder(Sequence.fromIterable(ArrayUtils.fromCharacterArray("ABC".toCharArray())).select(new ISelector<Character, String>() {
       public String select(Character c) {
         return String.valueOf(c);
