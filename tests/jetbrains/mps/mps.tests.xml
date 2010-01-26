@@ -60,6 +60,7 @@
             <project file="${mps.home}/core/baseLanguage/unitTest/unitTest.mpr"/>
             <project file="${mps.home}/core/languageDesign/actions/actions.mpr"/>
             <project file="${mps.home}/core/languageDesign/annotations/annotations.mpr"/>
+            <project file="${mps.home}/core/languageDesign/behavior/behavior.mpr"/>
             <project file="${mps.home}/core/languageDesign/constraints/constraints.mpr"/>
             <project file="${mps.home}/core/languageDesign/core/core.mpr"/>
             <project file="${mps.home}/core/languageDesign/dataFlow/dataFlow.mpr"/>
@@ -75,8 +76,11 @@
             <project file="${mps.home}/core/languageDesign/sharedConcepts/sharedConcepts.mpr"/>
             <project file="${mps.home}/core/languageDesign/smodel/smodel.mpr"/>
             <project file="${mps.home}/core/languageDesign/structure/structure.mpr"/>
+            <project file="${mps.home}/core/languageDesign/stubs/stubs.mpr"/>
             <project file="${mps.home}/core/languageDesign/test/test.mpr"/>
             <project file="${mps.home}/core/languageDesign/typesystem/typesystem.mpr"/>
+            <project file="${mps.home}/platform/builders/builders.mpr"/>
+            <project file="${mps.home}/platform/extensionMethod/MethodExtension.mpr"/>
             <project file="${mps.home}/platform/regexp/regexp.mpr"/>
             <project file="${mps.home}/platform/xml/xml/xml.mpr"/>
             <project file="${mps.home}/platform/xmlDeprecated/xmlDeprecated.mpr"/>
