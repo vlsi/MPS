@@ -468,6 +468,7 @@ public abstract class AbstractModule implements IModule {
     for (SModelRoot root : mySModelRoots) {
       root.dispose();
     }
+    disposeStubs();
     mySModelRoots.clear();
   }
 
@@ -798,6 +799,8 @@ public abstract class AbstractModule implements IModule {
   }
 
   private void releaseOldStubs() {
+    disposeStubs();
+
     for (SModelDescriptor sm : SModelRepository.getInstance().getModelDescriptors(this)) {
       if (SModelStereotype.isStubModelStereotype(sm.getStereotype())) {
         if (SModelRepository.getInstance().getOwners(sm).size() == 1) {
@@ -809,6 +812,15 @@ public abstract class AbstractModule implements IModule {
     }
   }
 
+  private void disposeStubs() {
+    for (StubPath sp : getLoadedStubPaths()) {
+      BaseStubModelRootManager mrm = sp.getModelRootManager();
+      if (mrm == null) continue;
+      mrm.dispose();
+      sp.setModelRootManager(null);
+    }
+  }
+
   private void loadNewStubs() {
     //todo[CP] remove this when JDK and Classpath migrated. Will be supported by another framework
     for (SModelRoot mr : getSModelRoots()) {
@@ -817,12 +829,17 @@ public abstract class AbstractModule implements IModule {
       m.updateModels(mr, this);
     }
 
-    List<StubPath> stubModels = areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
+    List<StubPath> stubModels = getLoadedStubPaths();
     for (StubPath sp : stubModels) {
       BaseStubModelRootManager manager = createStubManager(sp);
+      sp.setModelRootManager(manager);
       if (manager == null) continue;
       manager.updateModels(sp.getPath(), "", this);
     }
+  }
+
+  private List<StubPath> getLoadedStubPaths() {
+    return areJavaStubsEnabled() ? getAllStubPaths() : getStubPaths();
   }
 
   @Nullable
@@ -874,6 +891,7 @@ public abstract class AbstractModule implements IModule {
   public static class StubPath {
     private String myPath;
     private ModelRootManager myManager;
+    private BaseStubModelRootManager myModelRootManager;
 
     public StubPath(String path, ModelRootManager manager) {
       myPath = path;
@@ -894,6 +912,14 @@ public abstract class AbstractModule implements IModule {
 
     public void setManager(ModelRootManager manager) {
       myManager = manager;
+    }
+
+    public BaseStubModelRootManager getModelRootManager() {
+      return myModelRootManager;
+    }
+
+    public void setModelRootManager(BaseStubModelRootManager modelRootManager) {
+      myModelRootManager = modelRootManager;
     }
   }
 
