@@ -70,13 +70,11 @@ public class Event extends BaseConcept implements INamedConcept {
     this.setProperty(Event.VIRTUAL_PACKAGE, value);
   }
 
-
   public static Event newInstance(SModel sm, boolean init) {
-    return (Event)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.secretCompartmentLanguage.structure.Event", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Event) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.secretCompartmentLanguage.structure.Event", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Event newInstance(SModel sm) {
     return Event.newInstance(sm, false);
   }
-
 }

@@ -29,7 +29,7 @@ public class StateMachineTestMethod extends BaseConcept {
   }
 
   public State getFinalState() {
-    return (State)this.getReferent(State.class, StateMachineTestMethod.FINAL_STATE);
+    return (State) this.getReferent(State.class, StateMachineTestMethod.FINAL_STATE);
   }
 
   public void setFinalState(State node) {
@@ -56,13 +56,11 @@ public class StateMachineTestMethod extends BaseConcept {
     this.insertChild(prev, StateMachineTestMethod.HANDLE_EVENT, node);
   }
 
-
   public static StateMachineTestMethod newInstance(SModel sm, boolean init) {
-    return (StateMachineTestMethod)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StateMachineTestMethod) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTestMethod", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StateMachineTestMethod newInstance(SModel sm) {
     return StateMachineTestMethod.newInstance(sm, false);
   }
-
 }

@@ -53,7 +53,7 @@ public class AccountType extends BaseConcept implements INamedConcept {
   }
 
   public static AccountType newInstance(SModel sm, boolean init) {
-    return (AccountType)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.AccountType", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AccountType) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.AccountType", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AccountType newInstance(SModel sm) {

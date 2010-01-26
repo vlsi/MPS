@@ -16,20 +16,18 @@ public class ParenthisizedExpression extends Expression {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, ParenthisizedExpression.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, ParenthisizedExpression.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
     super.setChild(ParenthisizedExpression.EXPRESSION, node);
   }
 
-
   public static ParenthisizedExpression newInstance(SModel sm, boolean init) {
-    return (ParenthisizedExpression)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.ParenthisizedExpression", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ParenthisizedExpression) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.ParenthisizedExpression", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ParenthisizedExpression newInstance(SModel sm) {
     return ParenthisizedExpression.newInstance(sm, false);
   }
-
 }

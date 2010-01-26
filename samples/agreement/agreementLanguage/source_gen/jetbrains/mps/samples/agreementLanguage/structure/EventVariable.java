@@ -63,7 +63,7 @@ public class EventVariable extends BaseConcept implements INamedConcept {
   }
 
   public static EventVariable newInstance(SModel sm, boolean init) {
-    return (EventVariable)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.EventVariable", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EventVariable) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.EventVariable", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EventVariable newInstance(SModel sm) {

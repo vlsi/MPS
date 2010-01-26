@@ -93,13 +93,11 @@ public class Mapping extends BaseConcept implements INamedConcept {
     this.insertChild(prev, Mapping.FIELD, node);
   }
 
-
   public static Mapping newInstance(SModel sm, boolean init) {
-    return (Mapping)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.readerConfigLanguage.structure.Mapping", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Mapping) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.readerConfigLanguage.structure.Mapping", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Mapping newInstance(SModel sm) {
     return Mapping.newInstance(sm, false);
   }
-
 }

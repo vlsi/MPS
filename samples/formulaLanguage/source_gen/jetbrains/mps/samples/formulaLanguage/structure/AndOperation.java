@@ -15,11 +15,10 @@ public class AndOperation extends Operation {
   }
 
   public static AndOperation newInstance(SModel sm, boolean init) {
-    return (AndOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.AndOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AndOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.AndOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AndOperation newInstance(SModel sm) {
     return AndOperation.newInstance(sm, false);
   }
-
 }

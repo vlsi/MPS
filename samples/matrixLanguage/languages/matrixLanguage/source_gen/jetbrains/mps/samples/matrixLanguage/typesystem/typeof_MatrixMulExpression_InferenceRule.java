@@ -137,15 +137,15 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
         SNode quotedNode1_1357_0 = quotedNode_1357_0;
         {
           quotedNode_1357_1 = (SNode) parameter_1357_0;
-          SNode quotedNode1_2;
+          SNode quotedNode1_1357_1;
           if (_parameterValues_129834374.contains(quotedNode_1357_1)) {
-            quotedNode1_2 = CopyUtil.copy(quotedNode_1357_1);
+            quotedNode1_1357_1 = CopyUtil.copy(quotedNode_1357_1);
           } else {
             _parameterValues_129834374.add(quotedNode_1357_1);
-            quotedNode1_2 = quotedNode_1357_1;
+            quotedNode1_1357_1 = quotedNode_1357_1;
           }
-          if (quotedNode1_2 != null) {
-            quotedNode_1357_0.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_2, typeCheckingContext));
+          if (quotedNode1_1357_1 != null) {
+            quotedNode_1357_0.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_1357_1, typeCheckingContext));
           }
         }
         result = quotedNode1_1357_0;
@@ -163,15 +163,15 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
         SNode quotedNode1_1357_0 = quotedNode_1357_0;
         {
           quotedNode_1357_1 = (SNode) parameter_1357_0;
-          SNode quotedNode1_2;
+          SNode quotedNode1_1357_1;
           if (_parameterValues_129834374.contains(quotedNode_1357_1)) {
-            quotedNode1_2 = CopyUtil.copy(quotedNode_1357_1);
+            quotedNode1_1357_1 = CopyUtil.copy(quotedNode_1357_1);
           } else {
             _parameterValues_129834374.add(quotedNode_1357_1);
-            quotedNode1_2 = quotedNode_1357_1;
+            quotedNode1_1357_1 = quotedNode_1357_1;
           }
-          if (quotedNode1_2 != null) {
-            quotedNode_1357_0.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_2));
+          if (quotedNode1_1357_1 != null) {
+            quotedNode_1357_0.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_1357_1));
           }
         }
         result = quotedNode1_1357_0;
@@ -190,8 +190,8 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
       SNode quotedNode_1357_2 = null;
       {
         quotedNode_1357_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1357_1 = quotedNode_1357_2;
-        result = quotedNode1_1357_1;
+        SNode quotedNode1_1357_2 = quotedNode_1357_2;
+        result = quotedNode1_1357_2;
       }
       return result;
     }
@@ -202,8 +202,8 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
       SNode quotedNode_1357_2 = null;
       {
         quotedNode_1357_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1357_1 = quotedNode_1357_2;
-        result = quotedNode1_1357_1;
+        SNode quotedNode1_1357_2 = quotedNode_1357_2;
+        result = quotedNode1_1357_2;
       }
       return result;
     }
@@ -220,21 +220,21 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
       SNode quotedNode_1357_4 = null;
       {
         quotedNode_1357_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1357_2 = quotedNode_1357_3;
+        SNode quotedNode1_1357_3 = quotedNode_1357_3;
         {
           quotedNode_1357_4 = (SNode) parameter_1357_1;
-          SNode quotedNode1_3;
+          SNode quotedNode1_1357_4;
           if (_parameterValues_129834374.contains(quotedNode_1357_4)) {
-            quotedNode1_3 = CopyUtil.copy(quotedNode_1357_4);
+            quotedNode1_1357_4 = CopyUtil.copy(quotedNode_1357_4);
           } else {
             _parameterValues_129834374.add(quotedNode_1357_4);
-            quotedNode1_3 = quotedNode_1357_4;
+            quotedNode1_1357_4 = quotedNode_1357_4;
           }
-          if (quotedNode1_3 != null) {
-            quotedNode_1357_3.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_3, typeCheckingContext));
+          if (quotedNode1_1357_4 != null) {
+            quotedNode_1357_3.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_1357_4, typeCheckingContext));
           }
         }
-        result = quotedNode1_1357_2;
+        result = quotedNode1_1357_3;
       }
       return result;
     }
@@ -246,21 +246,21 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
       SNode quotedNode_1357_4 = null;
       {
         quotedNode_1357_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.matrixLanguage.structure.MatrixType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1357_2 = quotedNode_1357_3;
+        SNode quotedNode1_1357_3 = quotedNode_1357_3;
         {
           quotedNode_1357_4 = (SNode) parameter_1357_1;
-          SNode quotedNode1_3;
+          SNode quotedNode1_1357_4;
           if (_parameterValues_129834374.contains(quotedNode_1357_4)) {
-            quotedNode1_3 = CopyUtil.copy(quotedNode_1357_4);
+            quotedNode1_1357_4 = CopyUtil.copy(quotedNode_1357_4);
           } else {
             _parameterValues_129834374.add(quotedNode_1357_4);
-            quotedNode1_3 = quotedNode_1357_4;
+            quotedNode1_1357_4 = quotedNode_1357_4;
           }
-          if (quotedNode1_3 != null) {
-            quotedNode_1357_3.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_3));
+          if (quotedNode1_1357_4 != null) {
+            quotedNode_1357_3.addChild("scalarType", HUtil.copyIfNecessary(quotedNode1_1357_4));
           }
         }
-        result = quotedNode1_1357_2;
+        result = quotedNode1_1357_3;
       }
       return result;
     }
@@ -276,8 +276,8 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
       SNode quotedNode_1357_5 = null;
       {
         quotedNode_1357_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1357_3 = quotedNode_1357_5;
-        result = quotedNode1_1357_3;
+        SNode quotedNode1_1357_5 = quotedNode_1357_5;
+        result = quotedNode1_1357_5;
       }
       return result;
     }
@@ -288,8 +288,8 @@ public class typeof_MatrixMulExpression_InferenceRule extends AbstractInferenceR
       SNode quotedNode_1357_5 = null;
       {
         quotedNode_1357_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1357_3 = quotedNode_1357_5;
-        result = quotedNode1_1357_3;
+        SNode quotedNode1_1357_5 = quotedNode_1357_5;
+        result = quotedNode1_1357_5;
       }
       return result;
     }

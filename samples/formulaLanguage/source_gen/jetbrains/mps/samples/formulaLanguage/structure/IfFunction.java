@@ -18,7 +18,7 @@ public class IfFunction extends Function {
   }
 
   public Expression getLogicalTest() {
-    return (Expression)this.getChild(Expression.class, IfFunction.LOGICAL_TEST);
+    return (Expression) this.getChild(Expression.class, IfFunction.LOGICAL_TEST);
   }
 
   public void setLogicalTest(Expression node) {
@@ -26,7 +26,7 @@ public class IfFunction extends Function {
   }
 
   public Expression getValueIfTrue() {
-    return (Expression)this.getChild(Expression.class, IfFunction.VALUE_IF_TRUE);
+    return (Expression) this.getChild(Expression.class, IfFunction.VALUE_IF_TRUE);
   }
 
   public void setValueIfTrue(Expression node) {
@@ -34,20 +34,18 @@ public class IfFunction extends Function {
   }
 
   public Expression getValueIfFalse() {
-    return (Expression)this.getChild(Expression.class, IfFunction.VALUE_IF_FALSE);
+    return (Expression) this.getChild(Expression.class, IfFunction.VALUE_IF_FALSE);
   }
 
   public void setValueIfFalse(Expression node) {
     super.setChild(IfFunction.VALUE_IF_FALSE, node);
   }
 
-
   public static IfFunction newInstance(SModel sm, boolean init) {
-    return (IfFunction)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.IfFunction", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IfFunction) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.IfFunction", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IfFunction newInstance(SModel sm) {
     return IfFunction.newInstance(sm, false);
   }
-
 }

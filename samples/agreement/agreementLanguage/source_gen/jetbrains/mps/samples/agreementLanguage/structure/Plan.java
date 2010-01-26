@@ -97,7 +97,7 @@ public class Plan extends BaseConcept implements INamedConcept {
   }
 
   public static Plan newInstance(SModel sm, boolean init) {
-    return (Plan)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Plan", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Plan) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Plan", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Plan newInstance(SModel sm) {

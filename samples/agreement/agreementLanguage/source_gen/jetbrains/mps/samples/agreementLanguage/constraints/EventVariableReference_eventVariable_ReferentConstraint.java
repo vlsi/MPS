@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SubnodesSearchScope;
 
 public class EventVariableReference_eventVariable_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public EventVariableReference_eventVariable_ReferentConstraint() {
   }
 
@@ -29,5 +28,4 @@ public class EventVariableReference_eventVariable_ReferentConstraint extends Bas
     SNode eventType = SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.agreementLanguage.structure.Event", true, false), "type", false);
     return new SubnodesSearchScope(eventType);
   }
-
 }

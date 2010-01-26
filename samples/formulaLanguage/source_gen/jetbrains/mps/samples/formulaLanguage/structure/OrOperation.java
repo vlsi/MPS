@@ -15,11 +15,10 @@ public class OrOperation extends Operation {
   }
 
   public static OrOperation newInstance(SModel sm, boolean init) {
-    return (OrOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.OrOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OrOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.OrOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OrOperation newInstance(SModel sm) {
     return OrOperation.newInstance(sm, false);
   }
-
 }

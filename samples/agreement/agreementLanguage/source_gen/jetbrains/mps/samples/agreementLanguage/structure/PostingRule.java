@@ -17,7 +17,7 @@ public class PostingRule extends Formula {
   }
 
   public AccountType getAccount() {
-    return (AccountType)this.getReferent(AccountType.class, PostingRule.ACCOUNT);
+    return (AccountType) this.getReferent(AccountType.class, PostingRule.ACCOUNT);
   }
 
   public void setAccount(AccountType node) {
@@ -25,7 +25,7 @@ public class PostingRule extends Formula {
   }
 
   public static PostingRule newInstance(SModel sm, boolean init) {
-    return (PostingRule)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.PostingRule", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PostingRule) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.PostingRule", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PostingRule newInstance(SModel sm) {

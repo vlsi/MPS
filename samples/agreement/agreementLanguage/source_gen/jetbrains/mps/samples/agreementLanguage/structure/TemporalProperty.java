@@ -18,7 +18,7 @@ public class TemporalProperty extends BaseConcept {
   }
 
   public Date getDate() {
-    return (Date)this.getChild(Date.class, TemporalProperty.DATE);
+    return (Date) this.getChild(Date.class, TemporalProperty.DATE);
   }
 
   public void setDate(Date node) {
@@ -26,7 +26,7 @@ public class TemporalProperty extends BaseConcept {
   }
 
   public BaseConcept getValue() {
-    return (BaseConcept)this.getChild(BaseConcept.class, TemporalProperty.VALUE);
+    return (BaseConcept) this.getChild(BaseConcept.class, TemporalProperty.VALUE);
   }
 
   public void setValue(BaseConcept node) {
@@ -34,7 +34,7 @@ public class TemporalProperty extends BaseConcept {
   }
 
   public static TemporalProperty newInstance(SModel sm, boolean init) {
-    return (TemporalProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TemporalProperty) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.TemporalProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TemporalProperty newInstance(SModel sm) {

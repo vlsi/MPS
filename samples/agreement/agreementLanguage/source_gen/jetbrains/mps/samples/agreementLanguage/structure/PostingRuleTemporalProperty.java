@@ -23,7 +23,7 @@ public class PostingRuleTemporalProperty extends TemporalProperty {
   }
 
   public static PostingRuleTemporalProperty newInstance(SModel sm, boolean init) {
-    return (PostingRuleTemporalProperty)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PostingRuleTemporalProperty) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.PostingRuleTemporalProperty", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PostingRuleTemporalProperty newInstance(SModel sm) {

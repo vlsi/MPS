@@ -15,11 +15,10 @@ public class PlusOperation extends Operation {
   }
 
   public static PlusOperation newInstance(SModel sm, boolean init) {
-    return (PlusOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.PlusOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (PlusOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.PlusOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static PlusOperation newInstance(SModel sm) {
     return PlusOperation.newInstance(sm, false);
   }
-
 }

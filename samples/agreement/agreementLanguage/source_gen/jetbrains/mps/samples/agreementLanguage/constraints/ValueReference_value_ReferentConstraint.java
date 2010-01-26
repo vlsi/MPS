@@ -12,7 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.search.SubnodesSearchScope;
 
 public class ValueReference_value_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
-
   public ValueReference_value_ReferentConstraint() {
   }
 
@@ -28,5 +27,4 @@ public class ValueReference_value_ReferentConstraint extends BaseNodeReferenceSe
     SNode plan = SNodeOperations.getAncestor(_context.getEnclosingNode(), "jetbrains.mps.samples.agreementLanguage.structure.Plan", true, false);
     return new SubnodesSearchScope(plan);
   }
-
 }

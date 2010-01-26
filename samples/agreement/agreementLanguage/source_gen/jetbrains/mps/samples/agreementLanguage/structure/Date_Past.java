@@ -15,7 +15,7 @@ public class Date_Past extends Date {
   }
 
   public static Date_Past newInstance(SModel sm, boolean init) {
-    return (Date_Past)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Date_Past", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Date_Past) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Date_Past", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Date_Past newInstance(SModel sm) {

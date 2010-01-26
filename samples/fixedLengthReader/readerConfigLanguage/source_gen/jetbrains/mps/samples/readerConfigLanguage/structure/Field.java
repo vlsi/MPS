@@ -70,13 +70,11 @@ public class Field extends BaseConcept implements INamedConcept {
     this.setIntegerProperty(Field.END, value);
   }
 
-
   public static Field newInstance(SModel sm, boolean init) {
-    return (Field)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.readerConfigLanguage.structure.Field", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Field) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.readerConfigLanguage.structure.Field", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Field newInstance(SModel sm) {
     return Field.newInstance(sm, false);
   }
-
 }

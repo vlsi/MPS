@@ -15,11 +15,10 @@ public class Constant extends Expression {
   }
 
   public static Constant newInstance(SModel sm, boolean init) {
-    return (Constant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.Constant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Constant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.Constant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Constant newInstance(SModel sm) {
     return Constant.newInstance(sm, false);
   }
-
 }

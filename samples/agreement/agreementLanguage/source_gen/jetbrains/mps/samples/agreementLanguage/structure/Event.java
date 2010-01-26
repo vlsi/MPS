@@ -30,7 +30,7 @@ public class Event extends BaseConcept {
   }
 
   public EventType getType() {
-    return (EventType)this.getReferent(EventType.class, Event.TYPE);
+    return (EventType) this.getReferent(EventType.class, Event.TYPE);
   }
 
   public void setType(EventType node) {
@@ -58,7 +58,7 @@ public class Event extends BaseConcept {
   }
 
   public static Event newInstance(SModel sm, boolean init) {
-    return (Event)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Event", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Event) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Event", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Event newInstance(SModel sm) {

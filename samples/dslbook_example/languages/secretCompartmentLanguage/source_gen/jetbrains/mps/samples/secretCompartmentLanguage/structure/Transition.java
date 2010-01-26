@@ -18,7 +18,7 @@ public class Transition extends BaseConcept {
   }
 
   public Event getTrigger() {
-    return (Event)this.getReferent(Event.class, Transition.TRIGGER);
+    return (Event) this.getReferent(Event.class, Transition.TRIGGER);
   }
 
   public void setTrigger(Event node) {
@@ -26,20 +26,18 @@ public class Transition extends BaseConcept {
   }
 
   public State getTarget() {
-    return (State)this.getReferent(State.class, Transition.TARGET);
+    return (State) this.getReferent(State.class, Transition.TARGET);
   }
 
   public void setTarget(State node) {
     super.setReferent(Transition.TARGET, node);
   }
 
-
   public static Transition newInstance(SModel sm, boolean init) {
-    return (Transition)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Transition) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.secretCompartmentLanguage.structure.Transition", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Transition newInstance(SModel sm) {
     return Transition.newInstance(sm, false);
   }
-
 }

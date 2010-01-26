@@ -15,7 +15,7 @@ public class Date_Future extends Date {
   }
 
   public static Date_Future newInstance(SModel sm, boolean init) {
-    return (Date_Future)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Date_Future", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Date_Future) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Date_Future", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Date_Future newInstance(SModel sm) {

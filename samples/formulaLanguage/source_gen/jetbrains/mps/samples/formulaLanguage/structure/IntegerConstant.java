@@ -23,13 +23,11 @@ public class IntegerConstant extends Constant {
     this.setIntegerProperty(IntegerConstant.VALUE, value);
   }
 
-
   public static IntegerConstant newInstance(SModel sm, boolean init) {
-    return (IntegerConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IntegerConstant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.IntegerConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IntegerConstant newInstance(SModel sm) {
     return IntegerConstant.newInstance(sm, false);
   }
-
 }

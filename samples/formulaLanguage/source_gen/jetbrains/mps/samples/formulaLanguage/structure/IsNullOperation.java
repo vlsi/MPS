@@ -15,11 +15,10 @@ public class IsNullOperation extends Operation {
   }
 
   public static IsNullOperation newInstance(SModel sm, boolean init) {
-    return (IsNullOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.IsNullOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (IsNullOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.IsNullOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static IsNullOperation newInstance(SModel sm) {
     return IsNullOperation.newInstance(sm, false);
   }
-
 }

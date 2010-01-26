@@ -10,7 +10,6 @@ public class FormulaLanguage_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("b1a9bc47-8a26-4792-8b68-4660c531090a(jetbrains.mps.samples.formulaLanguage)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
-
 }

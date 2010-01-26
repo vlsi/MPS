@@ -15,11 +15,10 @@ public class GreaterThanOperation extends Operation {
   }
 
   public static GreaterThanOperation newInstance(SModel sm, boolean init) {
-    return (GreaterThanOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GreaterThanOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.GreaterThanOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GreaterThanOperation newInstance(SModel sm) {
     return GreaterThanOperation.newInstance(sm, false);
   }
-
 }

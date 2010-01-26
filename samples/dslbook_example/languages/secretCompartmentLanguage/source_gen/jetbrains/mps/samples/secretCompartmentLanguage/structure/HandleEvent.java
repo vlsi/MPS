@@ -17,20 +17,18 @@ public class HandleEvent extends BaseConcept {
   }
 
   public Event getEvent() {
-    return (Event)this.getReferent(Event.class, HandleEvent.EVENT);
+    return (Event) this.getReferent(Event.class, HandleEvent.EVENT);
   }
 
   public void setEvent(Event node) {
     super.setReferent(HandleEvent.EVENT, node);
   }
 
-
   public static HandleEvent newInstance(SModel sm, boolean init) {
-    return (HandleEvent)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (HandleEvent) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.secretCompartmentLanguage.structure.HandleEvent", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static HandleEvent newInstance(SModel sm) {
     return HandleEvent.newInstance(sm, false);
   }
-
 }

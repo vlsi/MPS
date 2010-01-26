@@ -17,20 +17,18 @@ public class Formula extends BaseConcept {
   }
 
   public Expression getExpression() {
-    return (Expression)this.getChild(Expression.class, Formula.EXPRESSION);
+    return (Expression) this.getChild(Expression.class, Formula.EXPRESSION);
   }
 
   public void setExpression(Expression node) {
     super.setChild(Formula.EXPRESSION, node);
   }
 
-
   public static Formula newInstance(SModel sm, boolean init) {
-    return (Formula)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.Formula", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Formula) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.Formula", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Formula newInstance(SModel sm) {
     return Formula.newInstance(sm, false);
   }
-
 }

@@ -17,7 +17,7 @@ public class ValueReference extends Expression {
   }
 
   public Value getValue() {
-    return (Value)this.getReferent(Value.class, ValueReference.VALUE);
+    return (Value) this.getReferent(Value.class, ValueReference.VALUE);
   }
 
   public void setValue(Value node) {
@@ -25,7 +25,7 @@ public class ValueReference extends Expression {
   }
 
   public static ValueReference newInstance(SModel sm, boolean init) {
-    return (ValueReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.ValueReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ValueReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.ValueReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ValueReference newInstance(SModel sm) {

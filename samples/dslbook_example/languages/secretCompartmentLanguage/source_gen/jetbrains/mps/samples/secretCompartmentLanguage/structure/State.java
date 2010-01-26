@@ -84,13 +84,11 @@ public class State extends BaseConcept implements INamedConcept {
     this.insertChild(prev, State.TRANSITION, node);
   }
 
-
   public static State newInstance(SModel sm, boolean init) {
-    return (State)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.secretCompartmentLanguage.structure.State", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (State) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.secretCompartmentLanguage.structure.State", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static State newInstance(SModel sm) {
     return State.newInstance(sm, false);
   }
-
 }

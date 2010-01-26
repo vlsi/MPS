@@ -23,13 +23,11 @@ public class StringConstant extends Constant {
     this.setProperty(StringConstant.VALUE, value);
   }
 
-
   public static StringConstant newInstance(SModel sm, boolean init) {
-    return (StringConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.StringConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StringConstant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.StringConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StringConstant newInstance(SModel sm) {
     return StringConstant.newInstance(sm, false);
   }
-
 }

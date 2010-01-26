@@ -15,11 +15,10 @@ public class LessThanOperation extends Operation {
   }
 
   public static LessThanOperation newInstance(SModel sm, boolean init) {
-    return (LessThanOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.LessThanOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (LessThanOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.LessThanOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static LessThanOperation newInstance(SModel sm) {
     return LessThanOperation.newInstance(sm, false);
   }
-
 }

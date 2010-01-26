@@ -28,7 +28,7 @@ public class Quantity extends Constant {
   }
 
   public FloatingPointConstant getAmount() {
-    return (FloatingPointConstant)this.getChild(FloatingPointConstant.class, Quantity.AMOUNT);
+    return (FloatingPointConstant) this.getChild(FloatingPointConstant.class, Quantity.AMOUNT);
   }
 
   public void setAmount(FloatingPointConstant node) {
@@ -36,7 +36,7 @@ public class Quantity extends Constant {
   }
 
   public static Quantity newInstance(SModel sm, boolean init) {
-    return (Quantity)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Quantity", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Quantity) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Quantity", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Quantity newInstance(SModel sm) {

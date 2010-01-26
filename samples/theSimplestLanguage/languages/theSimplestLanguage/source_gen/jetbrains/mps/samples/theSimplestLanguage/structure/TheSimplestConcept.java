@@ -61,13 +61,11 @@ public class TheSimplestConcept extends BaseConcept implements INamedConcept {
     this.setProperty(TheSimplestConcept.VIRTUAL_PACKAGE, value);
   }
 
-
   public static TheSimplestConcept newInstance(SModel sm, boolean init) {
-    return (TheSimplestConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.theSimplestLanguage.structure.TheSimplestConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (TheSimplestConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.theSimplestLanguage.structure.TheSimplestConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static TheSimplestConcept newInstance(SModel sm) {
     return TheSimplestConcept.newInstance(sm, false);
   }
-
 }

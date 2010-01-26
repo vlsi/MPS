@@ -60,7 +60,7 @@ public class AgreementDeclarations extends BaseConcept {
   }
 
   public static AgreementDeclarations newInstance(SModel sm, boolean init) {
-    return (AgreementDeclarations)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AgreementDeclarations) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.AgreementDeclarations", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AgreementDeclarations newInstance(SModel sm) {

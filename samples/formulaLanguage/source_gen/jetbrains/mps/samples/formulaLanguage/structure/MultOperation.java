@@ -15,11 +15,10 @@ public class MultOperation extends Operation {
   }
 
   public static MultOperation newInstance(SModel sm, boolean init) {
-    return (MultOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.MultOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MultOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.MultOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MultOperation newInstance(SModel sm) {
     return MultOperation.newInstance(sm, false);
   }
-
 }

@@ -15,11 +15,10 @@ public class NullConstant extends Expression {
   }
 
   public static NullConstant newInstance(SModel sm, boolean init) {
-    return (NullConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.NullConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NullConstant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.NullConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NullConstant newInstance(SModel sm) {
     return NullConstant.newInstance(sm, false);
   }
-
 }

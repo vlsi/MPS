@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 
 public class StateMachineTest_name_PropertyConstraint implements IModelConstraints, INodePropertyGetter {
-
   public StateMachineTest_name_PropertyConstraint() {
   }
 
@@ -24,5 +23,4 @@ public class StateMachineTest_name_PropertyConstraint implements IModelConstrain
   public Object execPropertyGet(SNode node, String propertyName, IScope scope) {
     return StateMachineTest_Behavior.call_getStateMachineName_1197251245696(node) + " State Machine Test";
   }
-
 }

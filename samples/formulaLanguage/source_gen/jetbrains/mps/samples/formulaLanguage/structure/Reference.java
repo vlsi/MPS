@@ -15,11 +15,10 @@ public class Reference extends Expression {
   }
 
   public static Reference newInstance(SModel sm, boolean init) {
-    return (Reference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.Reference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Reference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.Reference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Reference newInstance(SModel sm) {
     return Reference.newInstance(sm, false);
   }
-
 }

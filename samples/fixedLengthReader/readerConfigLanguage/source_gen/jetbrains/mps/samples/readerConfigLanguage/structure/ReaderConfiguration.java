@@ -75,13 +75,11 @@ public class ReaderConfiguration extends BaseConcept implements INamedConcept {
     this.insertChild(prev, ReaderConfiguration.MAPPING, node);
   }
 
-
   public static ReaderConfiguration newInstance(SModel sm, boolean init) {
-    return (ReaderConfiguration)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ReaderConfiguration) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.readerConfigLanguage.structure.ReaderConfiguration", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ReaderConfiguration newInstance(SModel sm) {
     return ReaderConfiguration.newInstance(sm, false);
   }
-
 }

@@ -15,11 +15,10 @@ public class NotOperation extends Operation {
   }
 
   public static NotOperation newInstance(SModel sm, boolean init) {
-    return (NotOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.NotOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (NotOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.NotOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static NotOperation newInstance(SModel sm) {
     return NotOperation.newInstance(sm, false);
   }
-
 }

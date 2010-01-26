@@ -43,7 +43,7 @@ public class Date extends BaseConcept {
   }
 
   public static Date newInstance(SModel sm, boolean init) {
-    return (Date)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Date", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Date) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.Date", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Date newInstance(SModel sm) {

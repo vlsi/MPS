@@ -15,11 +15,10 @@ public class MinusOperation extends Operation {
   }
 
   public static MinusOperation newInstance(SModel sm, boolean init) {
-    return (MinusOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.MinusOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (MinusOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.MinusOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static MinusOperation newInstance(SModel sm) {
     return MinusOperation.newInstance(sm, false);
   }
-
 }

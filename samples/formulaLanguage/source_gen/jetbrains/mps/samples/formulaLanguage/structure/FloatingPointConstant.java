@@ -23,13 +23,11 @@ public class FloatingPointConstant extends Constant {
     this.setProperty(FloatingPointConstant.VALUE, value);
   }
 
-
   public static FloatingPointConstant newInstance(SModel sm, boolean init) {
-    return (FloatingPointConstant)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (FloatingPointConstant) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static FloatingPointConstant newInstance(SModel sm) {
     return FloatingPointConstant.newInstance(sm, false);
   }
-
 }

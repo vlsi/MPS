@@ -15,11 +15,10 @@ public class EqualsOperation extends Operation {
   }
 
   public static EqualsOperation newInstance(SModel sm, boolean init) {
-    return (EqualsOperation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.EqualsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EqualsOperation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.EqualsOperation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EqualsOperation newInstance(SModel sm) {
     return EqualsOperation.newInstance(sm, false);
   }
-
 }

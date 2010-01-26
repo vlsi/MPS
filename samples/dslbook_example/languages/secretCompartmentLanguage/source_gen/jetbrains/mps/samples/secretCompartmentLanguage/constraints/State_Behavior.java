@@ -5,8 +5,6 @@ package jetbrains.mps.samples.secretCompartmentLanguage.constraints;
 import jetbrains.mps.smodel.SNode;
 
 public class State_Behavior {
-
   public static void init(SNode thisNode) {
   }
-
 }

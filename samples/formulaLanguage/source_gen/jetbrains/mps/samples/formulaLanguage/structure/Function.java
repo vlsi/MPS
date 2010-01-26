@@ -15,11 +15,10 @@ public class Function extends Expression {
   }
 
   public static Function newInstance(SModel sm, boolean init) {
-    return (Function)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.Function", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Function) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.Function", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Function newInstance(SModel sm) {
     return Function.newInstance(sm, false);
   }
-
 }

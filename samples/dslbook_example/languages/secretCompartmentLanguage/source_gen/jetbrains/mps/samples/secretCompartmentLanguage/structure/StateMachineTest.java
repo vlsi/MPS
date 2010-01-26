@@ -57,7 +57,7 @@ public class StateMachineTest extends BaseConcept implements INamedConcept {
   }
 
   public StateMachine getStateMachine() {
-    return (StateMachine)this.getReferent(StateMachine.class, StateMachineTest.STATE_MACHINE);
+    return (StateMachine) this.getReferent(StateMachine.class, StateMachineTest.STATE_MACHINE);
   }
 
   public void setStateMachine(StateMachine node) {
@@ -84,13 +84,11 @@ public class StateMachineTest extends BaseConcept implements INamedConcept {
     this.insertChild(prev, StateMachineTest.TEST_METHOD, node);
   }
 
-
   public static StateMachineTest newInstance(SModel sm, boolean init) {
-    return (StateMachineTest)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (StateMachineTest) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.secretCompartmentLanguage.structure.StateMachineTest", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static StateMachineTest newInstance(SModel sm) {
     return StateMachineTest.newInstance(sm, false);
   }
-
 }

@@ -17,7 +17,7 @@ public class Operation extends Expression {
   }
 
   public Expression getLeftOperand() {
-    return (Expression)this.getChild(Expression.class, Operation.LEFT_OPERAND);
+    return (Expression) this.getChild(Expression.class, Operation.LEFT_OPERAND);
   }
 
   public void setLeftOperand(Expression node) {
@@ -25,20 +25,18 @@ public class Operation extends Expression {
   }
 
   public Expression getRightOperand() {
-    return (Expression)this.getChild(Expression.class, Operation.RIGHT_OPERAND);
+    return (Expression) this.getChild(Expression.class, Operation.RIGHT_OPERAND);
   }
 
   public void setRightOperand(Expression node) {
     super.setChild(Operation.RIGHT_OPERAND, node);
   }
 
-
   public static Operation newInstance(SModel sm, boolean init) {
-    return (Operation)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.Operation", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (Operation) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.formulaLanguage.structure.Operation", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static Operation newInstance(SModel sm) {
     return Operation.newInstance(sm, false);
   }
-
 }

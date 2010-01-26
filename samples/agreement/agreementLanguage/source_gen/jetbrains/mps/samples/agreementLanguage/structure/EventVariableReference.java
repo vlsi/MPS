@@ -17,7 +17,7 @@ public class EventVariableReference extends Expression {
   }
 
   public EventVariable getEventVariable() {
-    return (EventVariable)this.getReferent(EventVariable.class, EventVariableReference.EVENT_VARIABLE);
+    return (EventVariable) this.getReferent(EventVariable.class, EventVariableReference.EVENT_VARIABLE);
   }
 
   public void setEventVariable(EventVariable node) {
@@ -25,7 +25,7 @@ public class EventVariableReference extends Expression {
   }
 
   public static EventVariableReference newInstance(SModel sm, boolean init) {
-    return (EventVariableReference)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (EventVariableReference) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.samples.agreementLanguage.structure.EventVariableReference", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static EventVariableReference newInstance(SModel sm) {
