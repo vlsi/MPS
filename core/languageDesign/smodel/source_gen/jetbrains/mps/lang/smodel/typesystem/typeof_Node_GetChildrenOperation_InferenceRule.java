@@ -114,15 +114,15 @@ public class typeof_Node_GetChildrenOperation_InferenceRule extends AbstractInfe
         SNode quotedNode1_8551_2 = quotedNode_8551_2;
         {
           quotedNode_8551_3 = (SNode) parameter_8551_0;
-          SNode quotedNode1_0;
+          SNode quotedNode1_8551_3;
           if (_parameterValues_129834374.contains(quotedNode_8551_3)) {
-            quotedNode1_0 = CopyUtil.copy(quotedNode_8551_3);
+            quotedNode1_8551_3 = CopyUtil.copy(quotedNode_8551_3);
           } else {
             _parameterValues_129834374.add(quotedNode_8551_3);
-            quotedNode1_0 = quotedNode_8551_3;
+            quotedNode1_8551_3 = quotedNode_8551_3;
           }
-          if (quotedNode1_0 != null) {
-            quotedNode_8551_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_0, typeCheckingContext));
+          if (quotedNode1_8551_3 != null) {
+            quotedNode_8551_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_8551_3, typeCheckingContext));
           }
         }
         result = quotedNode1_8551_2;
@@ -140,15 +140,15 @@ public class typeof_Node_GetChildrenOperation_InferenceRule extends AbstractInfe
         SNode quotedNode1_8551_2 = quotedNode_8551_2;
         {
           quotedNode_8551_3 = (SNode) parameter_8551_0;
-          SNode quotedNode1_0;
+          SNode quotedNode1_8551_3;
           if (_parameterValues_129834374.contains(quotedNode_8551_3)) {
-            quotedNode1_0 = CopyUtil.copy(quotedNode_8551_3);
+            quotedNode1_8551_3 = CopyUtil.copy(quotedNode_8551_3);
           } else {
             _parameterValues_129834374.add(quotedNode_8551_3);
-            quotedNode1_0 = quotedNode_8551_3;
+            quotedNode1_8551_3 = quotedNode_8551_3;
           }
-          if (quotedNode1_0 != null) {
-            quotedNode_8551_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_0));
+          if (quotedNode1_8551_3 != null) {
+            quotedNode_8551_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_8551_3));
           }
         }
         result = quotedNode1_8551_2;

@@ -40,15 +40,15 @@ public class ChooseComponentClause_Behavior {
         quotedNode1_6948_0.addReference(SReference.create("classifier", quotedNode1_6948_0, SModelReference.fromString("f:java_stub#jetbrains.mps.refactoring.framework(jetbrains.mps.refactoring.framework@java_stub)"), SNodeId.fromString("~IChooseComponent")));
         {
           quotedNode_6948_1 = (SNode) parameter_6948_0;
-          SNode quotedNode1_0;
+          SNode quotedNode1_6948_1;
           if (_parameterValues_129834374.contains(quotedNode_6948_1)) {
-            quotedNode1_0 = CopyUtil.copy(quotedNode_6948_1);
+            quotedNode1_6948_1 = CopyUtil.copy(quotedNode_6948_1);
           } else {
             _parameterValues_129834374.add(quotedNode_6948_1);
-            quotedNode1_0 = quotedNode_6948_1;
+            quotedNode1_6948_1 = quotedNode_6948_1;
           }
-          if (quotedNode1_0 != null) {
-            quotedNode_6948_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_0));
+          if (quotedNode1_6948_1 != null) {
+            quotedNode_6948_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_6948_1));
           }
         }
         result = quotedNode1_6948_0;

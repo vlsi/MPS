@@ -34,15 +34,15 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_4009335194403290562(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "member", false), "map_ClassifierMethod");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "member", false), _context.getOutputNode(), "map_ClassifierMethod");
   }
 
   public static Object referenceMacro_GetReferent_5516999836374471953(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "declaration", false), "map_StubCreator");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SLinkOperations.getTarget(_context.getNode(), "declaration", false), _context.getOutputNode(), "map_StubCreator");
   }
 
   public static Object referenceMacro_GetReferent_5516999836374789389(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(SNodeOperations.cast(ThisClassifierExpression_Behavior.call_getClassifier_1213877512819(_context.getNode()), "jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration"), "map_StubCreator");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(SNodeOperations.cast(ThisClassifierExpression_Behavior.call_getClassifier_1213877512819(_context.getNode()), "jetbrains.mps.lang.stubs.structure.StubsCreatorDeclaration"), _context.getOutputNode(), "map_StubCreator");
   }
 
   public static boolean ifMacro_Condition_4009335194403392534(final IOperationContext operationContext, final IfMacroContext _context) {

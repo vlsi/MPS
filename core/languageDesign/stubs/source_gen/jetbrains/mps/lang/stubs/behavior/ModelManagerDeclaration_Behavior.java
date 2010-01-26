@@ -36,12 +36,12 @@ public class ModelManagerDeclaration_Behavior {
     public SNode createNode(Object parameter_4389_0) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
+      SNode quotedNode_4389_0 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.ModelManagerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1 = quotedNode_1;
-        quotedNode1_1.setReferent("declaration", (SNode) parameter_4389_0);
-        result = quotedNode1_1;
+        quotedNode_4389_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.ModelManagerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_4389_0 = quotedNode_4389_0;
+        quotedNode1_4389_0.setReferent("declaration", (SNode) parameter_4389_0);
+        result = quotedNode1_4389_0;
       }
       return result;
     }

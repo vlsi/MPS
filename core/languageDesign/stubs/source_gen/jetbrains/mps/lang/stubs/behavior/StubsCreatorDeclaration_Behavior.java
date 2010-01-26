@@ -36,13 +36,13 @@ public class StubsCreatorDeclaration_Behavior {
     public SNode createNode(Object parameter_3906_0, Object parameter_3906_1) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0 = null;
+      SNode quotedNode_3906_0 = null;
       {
-        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.StubsCreatorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0 = quotedNode_0;
-        quotedNode1_0.setReferent("creatorDeclaration", (SNode) parameter_3906_0);
-        quotedNode1_0.setReferent("declaration", (SNode) parameter_3906_1);
-        result = quotedNode1_0;
+        quotedNode_3906_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.stubs.structure.StubsCreatorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3906_0 = quotedNode_3906_0;
+        quotedNode1_3906_0.setReferent("creatorDeclaration", (SNode) parameter_3906_0);
+        quotedNode1_3906_0.setReferent("declaration", (SNode) parameter_3906_1);
+        result = quotedNode1_3906_0;
       }
       return result;
     }
