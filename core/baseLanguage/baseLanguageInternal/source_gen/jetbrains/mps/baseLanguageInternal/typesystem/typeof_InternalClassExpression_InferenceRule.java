@@ -60,15 +60,15 @@ public class typeof_InternalClassExpression_InferenceRule extends AbstractInfere
         quotedNode1_9717_0.addReference(SReference.create("classifier", quotedNode1_9717_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Class")));
         {
           quotedNode_9717_1 = (SNode) parameter_9717_0;
-          SNode quotedNode1_0;
+          SNode quotedNode1_9717_1;
           if (_parameterValues_129834374.contains(quotedNode_9717_1)) {
-            quotedNode1_0 = CopyUtil.copy(quotedNode_9717_1);
+            quotedNode1_9717_1 = CopyUtil.copy(quotedNode_9717_1);
           } else {
             _parameterValues_129834374.add(quotedNode_9717_1);
-            quotedNode1_0 = quotedNode_9717_1;
+            quotedNode1_9717_1 = quotedNode_9717_1;
           }
-          if (quotedNode1_0 != null) {
-            quotedNode_9717_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_0, typeCheckingContext));
+          if (quotedNode1_9717_1 != null) {
+            quotedNode_9717_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_9717_1, typeCheckingContext));
           }
         }
         result = quotedNode1_9717_0;
@@ -87,15 +87,15 @@ public class typeof_InternalClassExpression_InferenceRule extends AbstractInfere
         quotedNode1_9717_0.addReference(SReference.create("classifier", quotedNode1_9717_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Class")));
         {
           quotedNode_9717_1 = (SNode) parameter_9717_0;
-          SNode quotedNode1_0;
+          SNode quotedNode1_9717_1;
           if (_parameterValues_129834374.contains(quotedNode_9717_1)) {
-            quotedNode1_0 = CopyUtil.copy(quotedNode_9717_1);
+            quotedNode1_9717_1 = CopyUtil.copy(quotedNode_9717_1);
           } else {
             _parameterValues_129834374.add(quotedNode_9717_1);
-            quotedNode1_0 = quotedNode_9717_1;
+            quotedNode1_9717_1 = quotedNode_9717_1;
           }
-          if (quotedNode1_0 != null) {
-            quotedNode_9717_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_0));
+          if (quotedNode1_9717_1 != null) {
+            quotedNode_9717_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_9717_1));
           }
         }
         result = quotedNode1_9717_0;

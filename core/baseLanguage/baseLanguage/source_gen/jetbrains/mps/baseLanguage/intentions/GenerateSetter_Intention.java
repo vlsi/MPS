@@ -165,22 +165,22 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
                 SNode quotedNode1_3012_7 = quotedNode_3012_9;
                 {
                   quotedNode_3012_10 = (SNode) parameter_3012_0;
-                  SNode quotedNode1_2;
+                  SNode quotedNode1_3012_8;
                   if (_parameterValues_129834374.contains(quotedNode_3012_10)) {
-                    quotedNode1_2 = CopyUtil.copy(quotedNode_3012_10);
+                    quotedNode1_3012_8 = CopyUtil.copy(quotedNode_3012_10);
                   } else {
                     _parameterValues_129834374.add(quotedNode_3012_10);
-                    quotedNode1_2 = quotedNode_3012_10;
+                    quotedNode1_3012_8 = quotedNode_3012_10;
                   }
-                  if (quotedNode1_2 != null) {
-                    quotedNode_3012_9.addChild("operand", HUtil.copyIfNecessary(quotedNode1_2));
+                  if (quotedNode1_3012_8 != null) {
+                    quotedNode_3012_9.addChild("operand", HUtil.copyIfNecessary(quotedNode1_3012_8));
                   }
                 }
                 {
                   quotedNode_3012_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-                  SNode quotedNode1_3012_8 = quotedNode_3012_11;
-                  quotedNode1_3012_8.setReferent("fieldDeclaration", (SNode) parameter_3012_1);
-                  quotedNode_3012_9.addChild("operation", quotedNode1_3012_8);
+                  SNode quotedNode1_3012_9 = quotedNode_3012_11;
+                  quotedNode1_3012_9.setReferent("fieldDeclaration", (SNode) parameter_3012_1);
+                  quotedNode_3012_9.addChild("operation", quotedNode1_3012_9);
                 }
                 quotedNode_3012_7.addChild("lValue", quotedNode1_3012_7);
               }
@@ -192,22 +192,22 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
         }
         {
           quotedNode_3012_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_3012_9 = quotedNode_3012_4;
-          quotedNode1_3012_9.setProperty("name", (String) parameter_3012_3);
+          SNode quotedNode1_3012_10 = quotedNode_3012_4;
+          quotedNode1_3012_10.setProperty("name", (String) parameter_3012_3);
           {
             quotedNode_3012_6 = (SNode) parameter_3012_2;
-            SNode quotedNode1_3;
+            SNode quotedNode1_3012_11;
             if (_parameterValues_129834374.contains(quotedNode_3012_6)) {
-              quotedNode1_3 = CopyUtil.copy(quotedNode_3012_6);
+              quotedNode1_3012_11 = CopyUtil.copy(quotedNode_3012_6);
             } else {
               _parameterValues_129834374.add(quotedNode_3012_6);
-              quotedNode1_3 = quotedNode_3012_6;
+              quotedNode1_3012_11 = quotedNode_3012_6;
             }
-            if (quotedNode1_3 != null) {
-              quotedNode_3012_4.addChild("type", HUtil.copyIfNecessary(quotedNode1_3));
+            if (quotedNode1_3012_11 != null) {
+              quotedNode_3012_4.addChild("type", HUtil.copyIfNecessary(quotedNode1_3012_11));
             }
           }
-          quotedNode_3012_0.addChild("parameter", quotedNode1_3012_9);
+          quotedNode_3012_0.addChild("parameter", quotedNode1_3012_10);
         }
         result = quotedNode1_3012_0;
       }

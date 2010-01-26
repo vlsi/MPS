@@ -86,28 +86,28 @@ public class SurroundWithTypeCast_Intention extends SurroundWithIntention implem
           SNode quotedNode1_7309_1 = quotedNode_7309_1;
           {
             quotedNode_7309_2 = (SNode) parameter_7309_0;
-            SNode quotedNode1_104;
+            SNode quotedNode1_7309_2;
             if (_parameterValues_129834374.contains(quotedNode_7309_2)) {
-              quotedNode1_104 = CopyUtil.copy(quotedNode_7309_2);
+              quotedNode1_7309_2 = CopyUtil.copy(quotedNode_7309_2);
             } else {
               _parameterValues_129834374.add(quotedNode_7309_2);
-              quotedNode1_104 = quotedNode_7309_2;
+              quotedNode1_7309_2 = quotedNode_7309_2;
             }
-            if (quotedNode1_104 != null) {
-              quotedNode_7309_1.addChild("expression", HUtil.copyIfNecessary(quotedNode1_104));
+            if (quotedNode1_7309_2 != null) {
+              quotedNode_7309_1.addChild("expression", HUtil.copyIfNecessary(quotedNode1_7309_2));
             }
           }
           {
             quotedNode_7309_3 = (SNode) parameter_7309_1;
-            SNode quotedNode1_105;
+            SNode quotedNode1_7309_3;
             if (_parameterValues_129834374.contains(quotedNode_7309_3)) {
-              quotedNode1_105 = CopyUtil.copy(quotedNode_7309_3);
+              quotedNode1_7309_3 = CopyUtil.copy(quotedNode_7309_3);
             } else {
               _parameterValues_129834374.add(quotedNode_7309_3);
-              quotedNode1_105 = quotedNode_7309_3;
+              quotedNode1_7309_3 = quotedNode_7309_3;
             }
-            if (quotedNode1_105 != null) {
-              quotedNode_7309_1.addChild("type", HUtil.copyIfNecessary(quotedNode1_105));
+            if (quotedNode1_7309_3 != null) {
+              quotedNode_7309_1.addChild("type", HUtil.copyIfNecessary(quotedNode1_7309_3));
             }
           }
           quotedNode_7309_0.addChild("expression", quotedNode1_7309_1);

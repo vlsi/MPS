@@ -49,28 +49,28 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
         }
         {
           quotedNode_0749_2 = (SNode) parameter_0749_0;
-          SNode quotedNode1_6;
+          SNode quotedNode1_0749_2;
           if (_parameterValues_129834374.contains(quotedNode_0749_2)) {
-            quotedNode1_6 = CopyUtil.copy(quotedNode_0749_2);
+            quotedNode1_0749_2 = CopyUtil.copy(quotedNode_0749_2);
           } else {
             _parameterValues_129834374.add(quotedNode_0749_2);
-            quotedNode1_6 = quotedNode_0749_2;
+            quotedNode1_0749_2 = quotedNode_0749_2;
           }
-          if (quotedNode1_6 != null) {
-            quotedNode_0749_0.addChild("type", HUtil.copyIfNecessary(quotedNode1_6));
+          if (quotedNode1_0749_2 != null) {
+            quotedNode_0749_0.addChild("type", HUtil.copyIfNecessary(quotedNode1_0749_2));
           }
         }
         {
           quotedNode_0749_3 = (SNode) parameter_0749_1;
-          SNode quotedNode1_7;
+          SNode quotedNode1_0749_3;
           if (_parameterValues_129834374.contains(quotedNode_0749_3)) {
-            quotedNode1_7 = CopyUtil.copy(quotedNode_0749_3);
+            quotedNode1_0749_3 = CopyUtil.copy(quotedNode_0749_3);
           } else {
             _parameterValues_129834374.add(quotedNode_0749_3);
-            quotedNode1_7 = quotedNode_0749_3;
+            quotedNode1_0749_3 = quotedNode_0749_3;
           }
-          if (quotedNode1_7 != null) {
-            quotedNode_0749_0.addChild("initializer", HUtil.copyIfNecessary(quotedNode1_7));
+          if (quotedNode1_0749_3 != null) {
+            quotedNode_0749_0.addChild("initializer", HUtil.copyIfNecessary(quotedNode1_0749_3));
           }
         }
         result = quotedNode1_0749_0;
@@ -89,9 +89,9 @@ public class IntroduceConstantRefactoring extends IntroduceVariableRefactoring {
       SNode quotedNode_0749_4 = null;
       {
         quotedNode_0749_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalStaticFieldReference", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0749_2 = quotedNode_0749_4;
-        quotedNode1_0749_2.setReferent("variableDeclaration", (SNode) parameter_0749_3);
-        result = quotedNode1_0749_2;
+        SNode quotedNode1_0749_4 = quotedNode_0749_4;
+        quotedNode1_0749_4.setReferent("variableDeclaration", (SNode) parameter_0749_3);
+        result = quotedNode1_0749_4;
       }
       return result;
     }

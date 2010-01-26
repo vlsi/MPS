@@ -303,15 +303,15 @@ public class InlineMethodRefactoring {
         SNode quotedNode1_3318_0 = quotedNode_3318_0;
         {
           quotedNode_3318_1 = (SNode) parameter_3318_0;
-          SNode quotedNode1_8;
+          SNode quotedNode1_3318_1;
           if (_parameterValues_129834374.contains(quotedNode_3318_1)) {
-            quotedNode1_8 = CopyUtil.copy(quotedNode_3318_1);
+            quotedNode1_3318_1 = CopyUtil.copy(quotedNode_3318_1);
           } else {
             _parameterValues_129834374.add(quotedNode_3318_1);
-            quotedNode1_8 = quotedNode_3318_1;
+            quotedNode1_3318_1 = quotedNode_3318_1;
           }
-          if (quotedNode1_8 != null) {
-            quotedNode_3318_0.addChild("expression", HUtil.copyIfNecessary(quotedNode1_8));
+          if (quotedNode1_3318_1 != null) {
+            quotedNode_3318_0.addChild("expression", HUtil.copyIfNecessary(quotedNode1_3318_1));
           }
         }
         result = quotedNode1_3318_0;

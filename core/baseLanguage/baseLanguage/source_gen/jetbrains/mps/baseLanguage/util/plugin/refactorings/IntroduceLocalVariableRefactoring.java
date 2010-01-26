@@ -57,28 +57,28 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
           quotedNode1_3912_1.setProperty("name", (String) parameter_3912_2);
           {
             quotedNode_3912_2 = (SNode) parameter_3912_0;
-            SNode quotedNode1_0;
+            SNode quotedNode1_3912_2;
             if (_parameterValues_129834374.contains(quotedNode_3912_2)) {
-              quotedNode1_0 = CopyUtil.copy(quotedNode_3912_2);
+              quotedNode1_3912_2 = CopyUtil.copy(quotedNode_3912_2);
             } else {
               _parameterValues_129834374.add(quotedNode_3912_2);
-              quotedNode1_0 = quotedNode_3912_2;
+              quotedNode1_3912_2 = quotedNode_3912_2;
             }
-            if (quotedNode1_0 != null) {
-              quotedNode_3912_1.addChild("type", HUtil.copyIfNecessary(quotedNode1_0));
+            if (quotedNode1_3912_2 != null) {
+              quotedNode_3912_1.addChild("type", HUtil.copyIfNecessary(quotedNode1_3912_2));
             }
           }
           {
             quotedNode_3912_3 = (SNode) parameter_3912_1;
-            SNode quotedNode1_1;
+            SNode quotedNode1_3912_3;
             if (_parameterValues_129834374.contains(quotedNode_3912_3)) {
-              quotedNode1_1 = CopyUtil.copy(quotedNode_3912_3);
+              quotedNode1_3912_3 = CopyUtil.copy(quotedNode_3912_3);
             } else {
               _parameterValues_129834374.add(quotedNode_3912_3);
-              quotedNode1_1 = quotedNode_3912_3;
+              quotedNode1_3912_3 = quotedNode_3912_3;
             }
-            if (quotedNode1_1 != null) {
-              quotedNode_3912_1.addChild("initializer", HUtil.copyIfNecessary(quotedNode1_1));
+            if (quotedNode1_3912_3 != null) {
+              quotedNode_3912_1.addChild("initializer", HUtil.copyIfNecessary(quotedNode1_3912_3));
             }
           }
           quotedNode_3912_0.addChild("localVariableDeclaration", quotedNode1_3912_1);
