@@ -24,6 +24,7 @@ import jetbrains.mps.plugin.IProjectHandler;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
@@ -46,6 +47,10 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
     super(reloadClasses);
   }
 
+  public TesterGenerationHandler(boolean reloadClasses, boolean keepSources) {
+    super(reloadClasses, keepSources);
+  }
+
   @Override
   public boolean compile(IProjectHandler projectHandler, List<Pair<IModule, List<SModelDescriptor>>> input, boolean generationOK, ITaskProgressHelper progressHelper) throws RemoteException, GenerationCanceledException {
     return true;
@@ -55,7 +60,7 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
   public long estimateCompilationMillis(List<Pair<IModule, List<SModelDescriptor>>> input) {
     return 0;
   }
-  
+
   @Override
   public boolean collectSources(IModule module, SModelDescriptor inputModel, IOperationContext context, SModel outputModel) {
     String outputDir = module.getOutputFor(inputModel);
@@ -145,5 +150,33 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
 
   public File getLastOutputDir() {
     return myLastOutputDir;
+  }
+
+  public void saveGeneratedFilesOnDisk() {
+    for (SModelReference outputModel : getOutputModelRefs()) {
+      List<String> files = new ArrayList<String>();
+      File dir = getOutputDir(outputModel);
+      if (dir == null || !dir.exists() || !dir.canRead()) {
+        continue;
+      }
+      files.addAll(Arrays.asList(dir.list()));
+      for (String outputRoot : getRoots(outputModel)) {
+        final String fileType = "." + getExtension(outputRoot);
+        final String fileName = getName(outputRoot, outputModel) + fileType;
+        final String filePath = getOutputDir(outputModel) + File.separator + fileName;
+        final File testFile = new File(filePath);
+
+        String content = getSourceByNode(outputRoot, outputModel);
+        if (content != null) {
+          FileUtil.write(testFile, content);
+        } else {
+          testFile.delete();
+        }
+        files.remove(filePath);
+      }
+      for (String f : files) {
+        new File(f).delete();
+      }
+    }
   }
 }

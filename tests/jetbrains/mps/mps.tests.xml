@@ -7,10 +7,10 @@
     <target name="all" depends="generation.tests, broken.references.test"/>
 
     <jvmargs id="mps.args">
-	<arg value="-Xss1024k"/>
-	<arg value="-Xmx1000m"/>
-	<arg value="-XX:MaxPermSize=92m"/>
-	<arg value="-XX:+HeapDumpOnOutOfMemoryError"/>
+        <arg value="-Xss1024k"/>
+        <arg value="-Xmx1000m"/>
+        <arg value="-XX:MaxPermSize=92m"/>
+        <arg value="-XX:+HeapDumpOnOutOfMemoryError"/>
     </jvmargs>
 
     <jvmargs id="debug.args">
@@ -42,7 +42,7 @@
             </modules>
         </mps.make>
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
-                             useperrootgeneration="${per.root.generation}">
+                             useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
             <jvmargs refid="mps.args"/>
             <perfomancereport file="${mps.home}/generation.perfomance"/>
 

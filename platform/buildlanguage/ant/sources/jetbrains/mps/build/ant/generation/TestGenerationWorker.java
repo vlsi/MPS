@@ -52,7 +52,7 @@ public class TestGenerationWorker extends GeneratorWorker {
   private IBuildServerMessageFormat myBuildServerMessageFormat;
   private final Map<SModelDescriptor, Long> myPerfomanceMap = new HashMap<SModelDescriptor, Long>();
 
-  private final TesterGenerationHandler myGenerationHandler = new TesterGenerationHandler(false) {
+  private final TesterGenerationHandler myGenerationHandler = new TesterGenerationHandler(false, true) {
     @Override
     protected JavaCompiler createJavaCompiler(Set<IModule> contextModules) {
       return new JavaCompiler(getClassPath(contextModules)) {
@@ -201,7 +201,9 @@ public class TestGenerationWorker extends GeneratorWorker {
 
     // calculate diff
     List<String> diffReports;
-    if (Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
+    boolean generationOk = myMessageHandler.getGenerationErrors().isEmpty();
+    if (generationOk &&
+      Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF))) {
       diffReports = ModelAccess.instance().runReadAction(new Computable<List<String>>() {
         public List<String> compute() {
           return DiffReporter.createDiffReports(myGenerationHandler);
@@ -215,14 +217,14 @@ public class TestGenerationWorker extends GeneratorWorker {
 
     // compile
     List<CompilationResult> compilationResult = null;
-    if (Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE))) {
+    if (generationOk && Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE))) {
       compilationResult = ModelAccess.instance().runReadAction(new Computable<List<CompilationResult>>() {
         public List<CompilationResult> compute() {
           return myGenerationHandler.compile(ITaskProgressHelper.EMPTY);
         }
       });
     }
-    if (compilationResult == null){
+    if (compilationResult == null) {
       compilationResult = Collections.EMPTY_LIST;
     }
 
@@ -236,12 +238,22 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
     System.out.println(myBuildServerMessageFormat.formatTestFinish(currentTestName));
 
+    if (isSaveGeneratedFilesOnDisk()
+      && generationOk && compilationResult.isEmpty() && !diffReports.isEmpty()) {
+      info("Saving files generated from " + cycle.toString() + " on disk.");
+      myGenerationHandler.saveGeneratedFilesOnDisk();
+    }
+
     // invoke generated tests
     if (isInvokeTestsSet() && ((ModelCycle) cycle).isUserModel()) {
       runTests(cycle.getClassPath(), myGenerationHandler, outputModels);
     }
 
     myGenerationHandler.clean();
+  }
+
+  private boolean isSaveGeneratedFilesOnDisk() {
+    return Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SAVE_ON_DISK));
   }
 
   private void runTests(List<File> moduleClassPath, TesterGenerationHandler handler, List<SModel> outputModels) {

@@ -7,6 +7,7 @@ import java.util.Iterator;
 
 public class TestGenerationOnTeamcity extends GenerateTask {
   public static final String INVOKE_TESTS = "INVOKE_TESTS";
+  public static final String SAVE_ON_DISK = "SAVE_ON_DISK";
   public static final String SHOW_DIFF = "SHOW_DIFF";
   public static final String WHOLE_PROJECT = "WHOLE_PROJECT";
   public static final String GENERATE_PERFORMANCE_REPORT = "GENERATE_PERFORMANCE_REPORT";
@@ -31,6 +32,14 @@ public class TestGenerationOnTeamcity extends GenerateTask {
 
   public void setInvokeTests(boolean invokeTests) {
     myWhatToDo.putProperty(INVOKE_TESTS, Boolean.toString(invokeTests));
+  }
+
+  public boolean getSaveOnDisk() {
+    return Boolean.parseBoolean(myWhatToDo.getProperty(SAVE_ON_DISK));
+  }
+
+  public void setSaveOnDisk(boolean saveOnDisk) {
+    myWhatToDo.putProperty(SAVE_ON_DISK, Boolean.toString(saveOnDisk));
   }
 
   public void addConfiguredPerfomanceReport(PerfomanceReport report) {

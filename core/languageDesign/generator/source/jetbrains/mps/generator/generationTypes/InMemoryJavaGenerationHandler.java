@@ -24,25 +24,33 @@ import jetbrains.mps.util.Pair;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
+import javax.swing.JTabbedPane;
 import java.rmi.RemoteException;
 import java.util.*;
 
 /**
  * Keeps generation result in memory, compiles and optionally reloads.
- *
+ * <p/>
  * Evgeny Gryaznov, Jan 21, 2010
  */
 public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
 
-  private boolean myReloadClasses;
+  private final boolean myReloadClasses;
+  private final boolean myKeepSources;
   private JavaCompiler myCompiler;
   private List<CompilationResult> myResult;
 
-  private Map<String, String> mySources = new HashMap<String, String>();
+  private final Map<String, String> mySources = new HashMap<String, String>();
+  private final Set<String> myJavaSources = new HashSet<String>();
   private Set<IModule> myContextModules = new HashSet<IModule>();
 
+  public InMemoryJavaGenerationHandler(boolean reloadClasses, boolean keepSources) {
+    myReloadClasses = reloadClasses;
+    myKeepSources = keepSources;
+  }
+
   public InMemoryJavaGenerationHandler(boolean reloadClasses) {
-    this.myReloadClasses = reloadClasses;
+    this(reloadClasses, false);
   }
 
   @Override
@@ -92,7 +100,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
         totalJob += jobTime;
       }
     }
-    if(myReloadClasses) {
+    if (myReloadClasses) {
       totalJob += ModelsProgressUtil.estimateReloadAllTimeMillis();
     }
     return totalJob;
@@ -104,12 +112,13 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     myContextModules.add(context.getModule());
     for (SNode root : outputModel.getRoots()) {
       INodeAdapter outputNode = BaseAdapter.fromNode(root);
+      TextGenerationResult genResult = TextGenerationUtil.generateText(context, root);
+      wereErrors |= genResult.hasErrors();
+      String key = JavaNameUtil.packageNameForModelUID(outputModel.getSModelReference()) + "." + root.getName();
+      mySources.put(key, genResult.getText());
       if (outputNode.getClass() == ClassConcept.class || outputNode.getClass() == Interface.class ||
         outputNode.getClass() == (Class) EnumClass.class || outputNode.getClass() == Annotation.class) {
-        TextGenerationResult genResult = TextGenerationUtil.generateText(context, root);
-        wereErrors |= genResult.hasErrors();
-        mySources.put(JavaNameUtil.packageNameForModelUID(outputModel.getSModelReference()) + "." + root.getName(),
-                genResult.getText());
+        myJavaSources.add(key);
       }
     }
 
@@ -119,7 +128,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
   public List<CompilationResult> compile(ITaskProgressHelper progress) {
     myCompiler = createJavaCompiler(myContextModules);
 
-    for (String key : mySources.keySet()) {
+    for (String key : myJavaSources) {
       myCompiler.addSource(key, mySources.get(key));
     }
 
@@ -133,7 +142,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
       if (cr.hasErrors()) {
         hasErrors = true;
         CategorizedProblem[] categorizedProblems = cr.getErrors();
-        for(int i = 0; i < 3 && i < categorizedProblems.length; i++) {
+        for (int i = 0; i < 3 && i < categorizedProblems.length; i++) {
           error("" + categorizedProblems[i]);
         }
         info("Compilation finished with errors.");
@@ -141,7 +150,10 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
       }
     }
 
-    mySources.clear();
+    if (!myKeepSources) {
+      mySources.clear();
+      myJavaSources.clear();
+    }
     myContextModules.clear();
 
     progress.setText2("reloading MPS classes...");
@@ -190,6 +202,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
 
   public void clean() {
     mySources.clear();
+    myJavaSources.clear();
     myContextModules.clear();
     myResult = null;
   }
