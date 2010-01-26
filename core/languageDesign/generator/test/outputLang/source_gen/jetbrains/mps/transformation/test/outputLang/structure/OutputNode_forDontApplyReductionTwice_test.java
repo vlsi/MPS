@@ -15,7 +15,7 @@ public class OutputNode_forDontApplyReductionTwice_test extends OutputNode {
   }
 
   public static OutputNode_forDontApplyReductionTwice_test newInstance(SModel sm, boolean init) {
-    return (OutputNode_forDontApplyReductionTwice_test)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OutputNode_forDontApplyReductionTwice_test) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OutputNode_forDontApplyReductionTwice_test newInstance(SModel sm) {

@@ -15,7 +15,7 @@ public class InputNode_C extends InputNode_B {
   }
 
   public static InputNode_C newInstance(SModel sm, boolean init) {
-    return (InputNode_C)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.InputNode_C", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InputNode_C) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.InputNode_C", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InputNode_C newInstance(SModel sm) {

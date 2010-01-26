@@ -86,7 +86,7 @@ public class InputRoot extends BaseConcept implements INamedConcept {
   }
 
   public static InputRoot newInstance(SModel sm, boolean init) {
-    return (InputRoot)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.InputRoot", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InputRoot) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.InputRoot", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InputRoot newInstance(SModel sm) {

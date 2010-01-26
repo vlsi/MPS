@@ -48,7 +48,7 @@ public class OutputNode extends BaseConcept {
   }
 
   public static OutputNode newInstance(SModel sm, boolean init) {
-    return (OutputNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OutputNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OutputNode newInstance(SModel sm) {

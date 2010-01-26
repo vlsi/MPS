@@ -65,7 +65,7 @@ public class InputRootWithStatementList extends BaseConcept implements INamedCon
   }
 
   public StatementList getStatementList() {
-    return (StatementList)this.getChild(StatementList.class, InputRootWithStatementList.STATEMENT_LIST);
+    return (StatementList) this.getChild(StatementList.class, InputRootWithStatementList.STATEMENT_LIST);
   }
 
   public void setStatementList(StatementList node) {
@@ -73,7 +73,7 @@ public class InputRootWithStatementList extends BaseConcept implements INamedCon
   }
 
   public static InputRootWithStatementList newInstance(SModel sm, boolean init) {
-    return (InputRootWithStatementList)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InputRootWithStatementList) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.InputRootWithStatementList", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InputRootWithStatementList newInstance(SModel sm) {

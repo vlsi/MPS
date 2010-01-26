@@ -9,6 +9,7 @@ import jetbrains.mps.workbench.tools.BaseTool;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.MPSProjectHolder;
 
@@ -18,11 +19,11 @@ public class AntRunner {
     component.clean();
     BuildScriptRunner runner = new BuildScriptRunner(component);
     final Wrappers._T<SNodePointer> pointer = new Wrappers._T<SNodePointer>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        pointer.value = new SNodePointer(antScript);
+    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNodePointer>() {
+      public SNodePointer invoke() {
+        return pointer.value = new SNodePointer(antScript);
       }
-    });
+    }));
     String commandLine = MapSequence.fromMap(mpsProject.getComponent(MPSProjectHolder.class).getMPSProject().getPluginManager().getPrefsComponent(AntRunnerPreferences_PreferencesComponent.class).getStateObject().data).get(BuildTableModel.pointerToString(pointer.value));
     runner.run(file, commandLine);
     buildTool.openToolLater(true);

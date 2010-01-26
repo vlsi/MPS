@@ -10,6 +10,6 @@ public class OutputLang_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("157a9668-bf58-417b-893e-53d86388dc56(jetbrains.mps.transformation.test.outputLang)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

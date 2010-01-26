@@ -66,7 +66,7 @@ public class OutputRoot extends BaseConcept implements INamedConcept {
   }
 
   public OutputNode getSpecialChild() {
-    return (OutputNode)this.getChild(OutputNode.class, OutputRoot.SPECIAL_CHILD);
+    return (OutputNode) this.getChild(OutputNode.class, OutputRoot.SPECIAL_CHILD);
   }
 
   public void setSpecialChild(OutputNode node) {
@@ -94,7 +94,7 @@ public class OutputRoot extends BaseConcept implements INamedConcept {
   }
 
   public static OutputRoot newInstance(SModel sm, boolean init) {
-    return (OutputRoot)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (OutputRoot) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static OutputRoot newInstance(SModel sm) {

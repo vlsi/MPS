@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.event.TableModelEvent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelReference;
@@ -74,11 +75,11 @@ public class BuildTableModel implements TableModel {
     final SNodePointer snode = ListSequence.fromList(this.mySNodes).getElement(row);
     if (column == 0) {
       final Wrappers._T<String> name = new Wrappers._T<String>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          name.value = snode.getNode().getName();
+      ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<String>() {
+        public String invoke() {
+          return name.value = snode.getNode().getName();
         }
-      });
+      }));
       return name.value;
     } else if (column == 1) {
       return snode.getModelReference().getSModelFqName();
@@ -123,11 +124,11 @@ public class BuildTableModel implements TableModel {
     for (String name : SetSequence.fromSet(MapSequence.fromMap(state).keySet())) {
       final SNodePointer pointer = stringToPointer(name);
       final Wrappers._T<SNode> node = new Wrappers._T<SNode>();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        public void run() {
-          node.value = pointer.getNode();
+      ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
+        public SNode invoke() {
+          return node.value = pointer.getNode();
         }
-      });
+      }));
       if (node.value != null) {
         MapSequence.fromMap(result).put(pointer, MapSequence.fromMap(state).get(name));
       }
@@ -144,11 +145,11 @@ public class BuildTableModel implements TableModel {
 
   public static String pointerToString(final SNodePointer pointer) {
     final Wrappers._T<String> value = new Wrappers._T<String>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        value.value = pointer.getModel().getSModelReference().toString() + "#" + pointer.getNode().getId();
+    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<String>() {
+      public String invoke() {
+        return value.value = pointer.getModel().getSModelReference().toString() + "#" + pointer.getNode().getId();
       }
-    });
+    }));
     return value.value;
   }
 }

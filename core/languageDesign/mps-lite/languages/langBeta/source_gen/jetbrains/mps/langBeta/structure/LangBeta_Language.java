@@ -10,6 +10,6 @@ public class LangBeta_Language {
   public static ModuleReference MODULE_REFERENCE = ModuleReference.fromString("d431aa49-24df-485d-80c1-3eda33d816b0(jetbrains.mps.langBeta)");
 
   public static Language get() {
-    return (Language)MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
+    return (Language) MPSModuleRepository.getInstance().getModule(MODULE_REFERENCE);
   }
 }

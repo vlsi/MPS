@@ -76,7 +76,7 @@ public class InputNode extends BaseConcept implements INamedConcept {
   }
 
   public static InputNode newInstance(SModel sm, boolean init) {
-    return (InputNode)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.InputNode", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (InputNode) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.InputNode", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static InputNode newInstance(SModel sm) {

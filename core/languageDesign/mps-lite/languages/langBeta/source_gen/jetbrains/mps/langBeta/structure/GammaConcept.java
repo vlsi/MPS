@@ -16,7 +16,7 @@ public class GammaConcept extends BaseConcept {
   }
 
   public static GammaConcept newInstance(SModel sm, boolean init) {
-    return (GammaConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.langBeta.structure.GammaConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (GammaConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.langBeta.structure.GammaConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static GammaConcept newInstance(SModel sm) {

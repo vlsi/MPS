@@ -16,7 +16,7 @@ public class AlphaConcept extends BaseConcept {
   }
 
   public static AlphaConcept newInstance(SModel sm, boolean init) {
-    return (AlphaConcept)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.langBeta.structure.AlphaConcept", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (AlphaConcept) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.langBeta.structure.AlphaConcept", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static AlphaConcept newInstance(SModel sm) {

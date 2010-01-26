@@ -16,7 +16,7 @@ public class ExpressionToReduceToStatement extends Expression {
   }
 
   public static ExpressionToReduceToStatement newInstance(SModel sm, boolean init) {
-    return (ExpressionToReduceToStatement)SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.ExpressionToReduceToStatement", sm, GlobalScope.getInstance(), init).getAdapter();
+    return (ExpressionToReduceToStatement) SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.transformation.test.inputLang.structure.ExpressionToReduceToStatement", sm, GlobalScope.getInstance(), init).getAdapter();
   }
 
   public static ExpressionToReduceToStatement newInstance(SModel sm) {
