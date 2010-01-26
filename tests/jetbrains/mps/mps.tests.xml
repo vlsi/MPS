@@ -49,42 +49,42 @@
             <!-- Bootstrap tests -->
             <project file="${mps.home}/core/baseLanguage/baseLanguage/baseLanguage.mpr"/>
             <project file="${mps.home}/core/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpr"/>
-            <project file="${mps.home}/core/languageDesign/core/core.mpr"/>
-            <project file="${mps.home}/core/languageDesign/structure/structure.mpr"/>
-            <project file="${mps.home}/core/languageDesign/editor/editor.mpr"/>
-            <project file="${mps.home}/core/languageDesign/constraints/constraints.mpr"/>
-            <project file="${mps.home}/core/languageDesign/smodel/smodel.mpr"/>
-            <project file="${mps.home}/core/languageDesign/actions/actions.mpr"/>
-            <project file="${mps.home}/core/languageDesign/typesystem/typesystem.mpr"/>
-            <project file="${mps.home}/core/languageDesign/refactoring/refactoring.mpr"/>
-            <project file="${mps.home}/core/languageDesign/sharedConcepts/sharedConcepts.mpr"/>
+            <project file="${mps.home}/core/baseLanguage/closures/closures.mpr"/>
             <project file="${mps.home}/core/baseLanguage/collections/collections.mpr"/>
             <project file="${mps.home}/core/baseLanguage/dates/dates.mpr"/>
             <project file="${mps.home}/core/baseLanguage/tuples/tuples.mpr"/>
-            <project file="${mps.home}/core/baseLanguage/closures/closures.mpr"/>
+            <project file="${mps.home}/core/languageDesign/actions/actions.mpr"/>
+            <project file="${mps.home}/core/languageDesign/annotations/annotations.mpr"/>
+            <project file="${mps.home}/core/languageDesign/constraints/constraints.mpr"/>
+            <project file="${mps.home}/core/languageDesign/core/core.mpr"/>
+            <project file="${mps.home}/core/languageDesign/dataFlow/dataFlow.mpr"/>
+            <project file="${mps.home}/core/languageDesign/editor/editor.mpr"/>
+            <project file="${mps.home}/core/languageDesign/findUsages/findUsages.mpr"/>
             <project file="${mps.home}/core/languageDesign/generator/generator.mpr"/>
             <project file="${mps.home}/core/languageDesign/intentions/intentions.mpr"/>
-            <project file="${mps.home}/core/languageDesign/findUsages/findUsages.mpr"/>
-            <project file="${mps.home}/core/languageDesign/plugin/plugin.mpr"/>
-            <project file="${mps.home}/platform/xmlDeprecated/xmlDeprecated.mpr"/>
-            <project file="${mps.home}/platform/regexp/regexp.mpr"/>
-            <project file="${mps.home}/core/languageDesign/quotation/quotation.mpr"/>
-            <project file="${mps.home}/core/languageDesign/annotations/annotations.mpr"/>
             <project file="${mps.home}/core/languageDesign/pattern/pattern.mpr"/>
-            <project file="${mps.home}/core/languageDesign/dataFlow/dataFlow.mpr"/>
+            <project file="${mps.home}/core/languageDesign/plugin/plugin.mpr"/>
+            <project file="${mps.home}/core/languageDesign/quotation/quotation.mpr"/>
+            <project file="${mps.home}/core/languageDesign/refactoring/refactoring.mpr"/>
             <project file="${mps.home}/core/languageDesign/script/script.mpr"/>
+            <project file="${mps.home}/core/languageDesign/sharedConcepts/sharedConcepts.mpr"/>
+            <project file="${mps.home}/core/languageDesign/smodel/smodel.mpr"/>
+            <project file="${mps.home}/core/languageDesign/structure/structure.mpr"/>
             <project file="${mps.home}/core/languageDesign/test/test.mpr"/>
+            <project file="${mps.home}/core/languageDesign/typesystem/typesystem.mpr"/>
+            <project file="${mps.home}/platform/regexp/regexp.mpr"/>
             <project file="${mps.home}/platform/xml/xml/xml.mpr"/>
+            <project file="${mps.home}/platform/xmlDeprecated/xmlDeprecated.mpr"/>
 
             <!-- Applications tests -->
             <project file="${mps.home}/core/languageDesign/mps-lite/mps-lite.mpr"/>
             <project file="${mps.home}/platform/buildlanguage/BuildLanguage.mpr"/>
-            <project file="${mps.home}/samples/complexLanguage/Complex.mpr"/>
             <project file="${mps.home}/platform/uiLanguage/uiLanguage.mpr"/>
-            <project file="${mps.home}/workbench/ideSolution/ide.mpr"/>
-            <project file="${mps.home}/samples/matrixLanguage/jetbrains.mps.matrixLanguage.mpr"/>
             <project file="${mps.home}/platform/ypath/YPath.mpr"/>
+            <project file="${mps.home}/samples/complexLanguage/Complex.mpr"/>
+            <project file="${mps.home}/samples/matrixLanguage/jetbrains.mps.matrixLanguage.mpr"/>
             <project file="${mps.home}/samples/xmlLiterals/jetbrains.mps.samples.xmlLiterals.mpr"/>
+            <project file="${mps.home}/workbench/ideSolution/ide.mpr"/>
         </mps.test.generation>
     </target>
 
