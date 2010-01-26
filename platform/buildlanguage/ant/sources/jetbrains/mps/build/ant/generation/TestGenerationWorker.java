@@ -1,7 +1,5 @@
 package jetbrains.mps.build.ant.generation;
 
-import com.intellij.execution.process.ProcessOutputTypes;
-import com.intellij.openapi.util.Key;
 import jetbrains.mps.baseLanguage.structure.ClassConcept;
 import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
 import jetbrains.mps.build.ant.*;
@@ -63,6 +61,11 @@ public class TestGenerationWorker extends GeneratorWorker {
           return new MyClassLoader(parent);
         }
       };
+    }
+
+    @Override
+    public void finishGeneration() {
+      //
     }
   };
 
@@ -234,17 +237,17 @@ public class TestGenerationWorker extends GeneratorWorker {
 
     // invoke generated tests
     if (isInvokeTestsSet()) {
-      runTests(cycle.getClassPath(), myGenerationHandler, outputModels);
+      runTests(cycle.getClassPath(), cycle.getStandaloneClassPath(), myGenerationHandler, outputModels);
     }
 
     myGenerationHandler.clean();
   }
 
-  private void runTests(List<File> moduleClassPath, TesterGenerationHandler handler, List<SModel> outputModels) {
+  private void runTests(List<File> moduleClassPath, List<File> standaloneClassPath, TesterGenerationHandler handler, List<SModel> outputModels) {
     List<String> commandLine = new ArrayList<String>();
     commandLine.add(JavaEnvUtils.getJreExecutable("java"));
 
-    final List<File> classPaths = new ArrayList<File>(moduleClassPath);
+    final List<File> classPaths = new ArrayList<File>(standaloneClassPath);
     classPaths.add(new File(com.intellij.openapi.application.PathManager.getResourceRoot(getClass(), "/" + getClass().getName().replace('.', '/') + ".class")).getAbsoluteFile());
     classPaths.add(new File(PathManager.getHomePath() + File.separator + "lib" + File.separator + "junit4" + File.separator + "junit-4.1.jar")); // herovo
 
@@ -452,13 +455,17 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
 
     @Override
-    public List<File> getClassPath() {
+    public List<File> getStandaloneClassPath() {
       IClassPathItem cp = ModelAccess.instance().runReadAction(new Computable<IClassPathItem>() {
         @Override
         public IClassPathItem compute() {
           return myModule.getModuleWithDependenciesClassPathItem();
         }
       });
+      return classPathItemToFiles(cp);
+    }
+
+    private List<File> classPathItemToFiles(IClassPathItem cp) {
       final List<File> classPathFiles = new ArrayList<File>();
       cp.accept(new EachClassPathItemVisitor() {
         @Override
@@ -472,6 +479,17 @@ public class TestGenerationWorker extends GeneratorWorker {
         }
       });
       return classPathFiles;
+    }
+
+    @Override
+    public List<File> getClassPath() {
+      IClassPathItem cp = ModelAccess.instance().runReadAction(new Computable<IClassPathItem>() {
+        @Override
+        public IClassPathItem compute() {
+          return AbstractModule.getDependenciesClasspath(Collections.singleton(myModule), false, false);
+        }
+      });
+      return classPathItemToFiles(cp);
     }
 
     @Override

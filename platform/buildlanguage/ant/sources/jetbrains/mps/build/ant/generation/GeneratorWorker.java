@@ -206,6 +206,7 @@ public class GeneratorWorker extends MpsWorker {
 
   protected static interface Cycle {
     void generate(GeneratorManager gm, IGenerationHandler generationHandler, IMessageHandler messageHandler);
+    List<File> getStandaloneClassPath();
     List<File> getClassPath();
   }
 
@@ -230,6 +231,11 @@ public class GeneratorWorker extends MpsWorker {
         }
       }
       gm.generateModels(modelsToContext, generationHandler, new EmptyProgressIndicator(), messageHandler, false);
+    }
+
+    @Override
+    public List<File> getStandaloneClassPath() {
+      return Collections.emptyList();
     }
 
     @Override
