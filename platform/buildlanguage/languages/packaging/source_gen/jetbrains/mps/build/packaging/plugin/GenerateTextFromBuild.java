@@ -15,7 +15,6 @@ import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.generator.generationTypes.GenerationHandlerAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
@@ -37,11 +36,11 @@ public class GenerateTextFromBuild {
     });
     // generate files 
     final GeneratorManager generatorManager = project.getComponentSafe(GeneratorManager.class);
-    GenerateTextFromBuildGenerationType generationType = new GenerateTextFromBuildGenerationType(generatorManager, basedir, configuration);
+    GenerateTextFromBuildGenerationHandler generationHandler = new GenerateTextFromBuildGenerationHandler(basedir, configuration);
     if (showWindow) {
-      generatorManager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, new GenerationHandlerAdapter(generationType), true);
+      generatorManager.generateModelsWithProgressWindow(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationHandler, true);
     } else {
-      generatorManager.generateModels(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, new GenerationHandlerAdapter(generationType), new EmptyProgressIndicator(), new IMessageHandler() {
+      generatorManager.generateModels(ListSequence.fromListAndArray(new ArrayList<SModelDescriptor>(), descriptor), context, generationHandler, new EmptyProgressIndicator(), new IMessageHandler() {
         public void handle(Message message) {
           switch (message.getKind()) {
             case ERROR:
@@ -55,7 +54,7 @@ public class GenerateTextFromBuild {
         }
       });
     }
-    return generationType.getFileToRun();
+    return generationHandler.getFileToRun();
   }
 
   public static SNode getLayout(SModelDescriptor descriptor) {
