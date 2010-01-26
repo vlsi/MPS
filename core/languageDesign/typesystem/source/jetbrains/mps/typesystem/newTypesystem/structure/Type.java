@@ -2,10 +2,7 @@ package jetbrains.mps.typesystem.newTypesystem.structure;
 
 import jetbrains.mps.logging.Logger;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.
@@ -20,7 +17,7 @@ public class Type<Meta, Target> {
   protected String myRole;
   protected IReference<Meta> myMeta;
   protected List<Type<Meta, Target>> myChildren = new ArrayList<Type<Meta,Target>>(2);
-  protected List<EntityReference<Target>> myReferences = new ArrayList<EntityReference<Target>>(0);
+  protected Map<String, IReference<Target>> myReferences = new HashMap<String, IReference<Target>>(0);
 
   public List<Type<Meta, Target>> getChildren() {
     return new ArrayList<Type<Meta,Target>>(myChildren);
@@ -38,22 +35,50 @@ public class Type<Meta, Target> {
   }
 
   public Target getReferent(String role) {
-    EntityReference<Target> entityReference = getReference(role);
-    if (entityReference != null) {
-      return entityReference.getTarget();
+    IReference<Target> reference = getReference(role);
+    if (reference != null) {
+      return reference.getTarget();
     }
     return null;
   }
 
-  public EntityReference<Target> getReference(String role) {
+  public IReference<Target> getReference(String role) {
     if (role == null) return null;
-    for (EntityReference<Target> reference : myReferences) {
-      if (role.equals(reference.getRole())) {
-        return reference;
-      }
-    }
-    return null;
+    return myReferences.get(role);
   }
 
   //no properties needed imho
+
+  public Meta getMeta() {
+    return myMeta.getTarget();
+  }
+
+  public Set<String> getReferenceRoles() {
+    return new HashSet<String>(myReferences.keySet());
+  }
+
+  public void addChild(Type<Meta, Target> child, String role) {
+    if (child == null) {
+      LOG.error("child is null");
+      return;
+    }
+    if (role == null) {
+      LOG.error("role is null");
+      return;
+    }
+    if (myChildren.contains(child)) {
+      LOG.error("this child yet exists");
+      return;
+    }
+    myChildren.add(child);
+    child.myRole = role;
+  }
+
+  public Set<String> getChildRoles() {
+    Set<String> result = new HashSet<String>();
+    for (Type t : myChildren) {
+      result.add(t.myRole);
+    }
+    return result;
+  }
 }
