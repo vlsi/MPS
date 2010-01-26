@@ -39,15 +39,15 @@ public class ParameterQueryFun_Behavior {
         SNode quotedNode1_0383_0 = quotedNode_0383_0;
         {
           quotedNode_0383_1 = (SNode) parameter_0383_0;
-          SNode quotedNode1_0;
+          SNode quotedNode1_0383_1;
           if (_parameterValues_129834374.contains(quotedNode_0383_1)) {
-            quotedNode1_0 = CopyUtil.copy(quotedNode_0383_1);
+            quotedNode1_0383_1 = CopyUtil.copy(quotedNode_0383_1);
           } else {
             _parameterValues_129834374.add(quotedNode_0383_1);
-            quotedNode1_0 = quotedNode_0383_1;
+            quotedNode1_0383_1 = quotedNode_0383_1;
           }
-          if (quotedNode1_0 != null) {
-            quotedNode_0383_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_0));
+          if (quotedNode1_0383_1 != null) {
+            quotedNode_0383_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_0383_1));
           }
         }
         result = quotedNode1_0383_0;

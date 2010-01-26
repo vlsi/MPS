@@ -49,36 +49,36 @@ public class ChildrenBlock_Behavior {
           SNode quotedNode1_7533_1 = quotedNode_7533_1;
           {
             quotedNode_7533_3 = (SNode) parameter_7533_0;
-            SNode quotedNode1_2;
+            SNode quotedNode1_7533_2;
             if (_parameterValues_129834374.contains(quotedNode_7533_3)) {
-              quotedNode1_2 = CopyUtil.copy(quotedNode_7533_3);
+              quotedNode1_7533_2 = CopyUtil.copy(quotedNode_7533_3);
             } else {
               _parameterValues_129834374.add(quotedNode_7533_3);
-              quotedNode1_2 = quotedNode_7533_3;
+              quotedNode1_7533_2 = quotedNode_7533_3;
             }
-            if (quotedNode1_2 != null) {
-              quotedNode_7533_1.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_2));
+            if (quotedNode1_7533_2 != null) {
+              quotedNode_7533_1.addChild("componentType", HUtil.copyIfNecessary(quotedNode1_7533_2));
             }
           }
           quotedNode_7533_0.addChild("argument", quotedNode1_7533_1);
         }
         {
           quotedNode_7533_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_7533_2 = quotedNode_7533_2;
+          SNode quotedNode1_7533_3 = quotedNode_7533_2;
           {
             quotedNode_7533_4 = (SNode) parameter_7533_1;
-            SNode quotedNode1_3;
+            SNode quotedNode1_7533_4;
             if (_parameterValues_129834374.contains(quotedNode_7533_4)) {
-              quotedNode1_3 = CopyUtil.copy(quotedNode_7533_4);
+              quotedNode1_7533_4 = CopyUtil.copy(quotedNode_7533_4);
             } else {
               _parameterValues_129834374.add(quotedNode_7533_4);
-              quotedNode1_3 = quotedNode_7533_4;
+              quotedNode1_7533_4 = quotedNode_7533_4;
             }
-            if (quotedNode1_3 != null) {
-              quotedNode_7533_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_3));
+            if (quotedNode1_7533_4 != null) {
+              quotedNode_7533_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_7533_4));
             }
           }
-          quotedNode_7533_0.addChild("argument", quotedNode1_7533_2);
+          quotedNode_7533_0.addChild("argument", quotedNode1_7533_3);
         }
         result = quotedNode1_7533_0;
       }

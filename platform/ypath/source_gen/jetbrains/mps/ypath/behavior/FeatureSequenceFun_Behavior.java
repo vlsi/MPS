@@ -36,15 +36,15 @@ public class FeatureSequenceFun_Behavior {
         SNode quotedNode1_1511_0 = quotedNode_1511_0;
         {
           quotedNode_1511_1 = (SNode) parameter_1511_0;
-          SNode quotedNode1_1;
+          SNode quotedNode1_1511_1;
           if (_parameterValues_129834374.contains(quotedNode_1511_1)) {
-            quotedNode1_1 = CopyUtil.copy(quotedNode_1511_1);
+            quotedNode1_1511_1 = CopyUtil.copy(quotedNode_1511_1);
           } else {
             _parameterValues_129834374.add(quotedNode_1511_1);
-            quotedNode1_1 = quotedNode_1511_1;
+            quotedNode1_1511_1 = quotedNode_1511_1;
           }
-          if (quotedNode1_1 != null) {
-            quotedNode_1511_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_1));
+          if (quotedNode1_1511_1 != null) {
+            quotedNode_1511_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_1511_1));
           }
         }
         result = quotedNode1_1511_0;

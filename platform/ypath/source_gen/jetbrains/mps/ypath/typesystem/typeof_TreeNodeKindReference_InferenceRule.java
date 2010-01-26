@@ -61,15 +61,15 @@ public class typeof_TreeNodeKindReference_InferenceRule extends AbstractInferenc
         quotedNode1_2335_0.addReference(SReference.create("classifier", quotedNode1_2335_0, SModelReference.fromString("f:java_stub#jetbrains.mps.ypath.runtime(jetbrains.mps.ypath.runtime@java_stub)"), SNodeId.fromString("~IFilter")));
         {
           quotedNode_2335_1 = (SNode) parameter_2335_0;
-          SNode quotedNode1_4;
+          SNode quotedNode1_2335_1;
           if (_parameterValues_129834374.contains(quotedNode_2335_1)) {
-            quotedNode1_4 = CopyUtil.copy(quotedNode_2335_1);
+            quotedNode1_2335_1 = CopyUtil.copy(quotedNode_2335_1);
           } else {
             _parameterValues_129834374.add(quotedNode_2335_1);
-            quotedNode1_4 = quotedNode_2335_1;
+            quotedNode1_2335_1 = quotedNode_2335_1;
           }
-          if (quotedNode1_4 != null) {
-            quotedNode_2335_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_4, typeCheckingContext));
+          if (quotedNode1_2335_1 != null) {
+            quotedNode_2335_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_2335_1, typeCheckingContext));
           }
         }
         result = quotedNode1_2335_0;
@@ -88,15 +88,15 @@ public class typeof_TreeNodeKindReference_InferenceRule extends AbstractInferenc
         quotedNode1_2335_0.addReference(SReference.create("classifier", quotedNode1_2335_0, SModelReference.fromString("f:java_stub#jetbrains.mps.ypath.runtime(jetbrains.mps.ypath.runtime@java_stub)"), SNodeId.fromString("~IFilter")));
         {
           quotedNode_2335_1 = (SNode) parameter_2335_0;
-          SNode quotedNode1_4;
+          SNode quotedNode1_2335_1;
           if (_parameterValues_129834374.contains(quotedNode_2335_1)) {
-            quotedNode1_4 = CopyUtil.copy(quotedNode_2335_1);
+            quotedNode1_2335_1 = CopyUtil.copy(quotedNode_2335_1);
           } else {
             _parameterValues_129834374.add(quotedNode_2335_1);
-            quotedNode1_4 = quotedNode_2335_1;
+            quotedNode1_2335_1 = quotedNode_2335_1;
           }
-          if (quotedNode1_4 != null) {
-            quotedNode_2335_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_4));
+          if (quotedNode1_2335_1 != null) {
+            quotedNode_2335_0.addChild("parameter", HUtil.copyIfNecessary(quotedNode1_2335_1));
           }
         }
         result = quotedNode1_2335_0;
