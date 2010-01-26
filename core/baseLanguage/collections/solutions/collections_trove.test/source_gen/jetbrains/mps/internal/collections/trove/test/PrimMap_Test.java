@@ -42,7 +42,7 @@ public class PrimMap_Test extends Util_Test {
 
   public void test_doubleDouble() throws Exception {
     Map<Double, Double> mdd = MapSequence.fromMap(new TDoubleDoubleHashMapDecorator(new TDoubleDoubleHashMap()));
-    Map<Double, Double> mdd2 = MapSequence.fromMap(new TObjectDoubleHashMapDecorator(new TObjectDoubleHashMap()));
+    Map<Double, Double> mdd2 = MapSequence.fromMap(new TObjectDoubleHashMapDecorator(new TObjectDoubleHashMap<Double>()));
     Map<Double, Double> mdd3 = MapSequence.fromMap(new TDoubleObjectHashMapDecorator(new TDoubleObjectHashMap<Double>()));
     MapSequence.fromMap(mdd).put(3.1415, 2.71828);
     Assert.assertSame(1, MapSequence.fromMap(mdd).count());

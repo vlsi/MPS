@@ -7,7 +7,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
@@ -18,11 +18,11 @@ public class ForEach_Test1 extends TestCase {
   public void test_1() {
     List<Integer> list = ListSequence.fromListAndArray(new ArrayList<Integer>(), 1, 2, 3, 4, 5);
     final Wrappers._int sum = new Wrappers._int(0);
-    ListSequence.fromList(list).visitAll(new IVisitor<Integer>() {
-      public void visit(Integer i) {
-        sum.value = sum.value + i;
+    ListSequence.fromList(list).visitAll(new _Adapters._return_P1_E0_to_IVisitor_adapter<Integer>(new _FunctionTypes._return_P1_E0<Integer, Integer>() {
+      public Integer invoke(Integer i) {
+        return sum.value = sum.value + i;
       }
-    });
+    }));
     Assert.assertEquals(15, sum.value);
   }
 
@@ -78,22 +78,22 @@ __switch__:
       }
     });
     final Wrappers._int sum = new Wrappers._int(0);
-    Sequence.fromIterable(seq).visitAll(new IVisitor<Integer>() {
-      public void visit(Integer i) {
-        sum.value = sum.value + i;
+    Sequence.fromIterable(seq).visitAll(new _Adapters._return_P1_E0_to_IVisitor_adapter<Integer>(new _FunctionTypes._return_P1_E0<Integer, Integer>() {
+      public Integer invoke(Integer i) {
+        return sum.value = sum.value + i;
       }
-    });
+    }));
     Assert.assertEquals(15, sum.value);
   }
 
   public void test_null() {
     Iterable<String> zseq = null;
     final Wrappers._int sum = new Wrappers._int(0);
-    Sequence.fromIterable(zseq).visitAll(new IVisitor<String>() {
-      public void visit(String s) {
-        sum.value = sum.value + s.length();
+    Sequence.fromIterable(zseq).visitAll(new _Adapters._return_P1_E0_to_IVisitor_adapter<String>(new _FunctionTypes._return_P1_E0<Integer, String>() {
+      public Integer invoke(String s) {
+        return sum.value = sum.value + s.length();
       }
-    });
+    }));
     Assert.assertEquals(0, sum.value);
   }
 }

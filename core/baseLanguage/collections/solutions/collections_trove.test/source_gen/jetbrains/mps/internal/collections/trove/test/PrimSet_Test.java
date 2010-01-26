@@ -22,7 +22,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import gnu.trove.decorator.TLongHashSetDecorator;
 import gnu.trove.TLongHashSet;
 import jetbrains.mps.internal.collections.runtime.ArrayUtils;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import gnu.trove.decorator.TShortHashSetDecorator;
 import gnu.trove.TShortHashSet;
@@ -110,11 +110,11 @@ __switch__:
 
   public void test_longSet() throws Exception {
     final Set<Long> ls = SetSequence.fromSet(new TLongHashSetDecorator(new TLongHashSet()));
-    Sequence.fromIterable(ArrayUtils.fromLongArray(new long[]{5,4,3,2,1,2,3,4,5})).visitAll(new IVisitor<Long>() {
-      public void visit(Long i) {
-        SetSequence.fromSet(ls).addElement(i);
+    Sequence.fromIterable(ArrayUtils.fromLongArray(new long[]{5,4,3,2,1,2,3,4,5})).visitAll(new _Adapters._return_P1_E0_to_IVisitor_adapter<Long>(new _FunctionTypes._return_P1_E0<Long, Long>() {
+      public Long invoke(Long i) {
+        return SetSequence.fromSet(ls).addElement(i);
       }
-    });
+    }));
     this.assertIterableEqualsAsSet(this.input5(), SetSequence.fromSet(ls).select(new ISelector<Long, Integer>() {
       public Integer select(Long l) {
         return (int) (long) l;

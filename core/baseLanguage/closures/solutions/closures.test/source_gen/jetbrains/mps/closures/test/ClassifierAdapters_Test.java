@@ -208,11 +208,11 @@ __switch__:
 
   public void test_closureLiteralAsParameterToConstructor() throws Exception {
     final Wrappers._int foo = new Wrappers._int(-1);
-    Thread trd = new Thread(new Runnable() {
-      public void run() {
-        foo.value = 42;
+    Thread trd = new Thread(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<Integer>() {
+      public Integer invoke() {
+        return foo.value = 42;
       }
-    });
+    }));
     trd.start();
     try {
       trd.join();
