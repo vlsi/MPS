@@ -40,15 +40,15 @@ public class QueryFunction_ParameterizedSideTransform_Query_Behavior {
         SNode quotedNode1_2083_0 = quotedNode_2083_0;
         {
           quotedNode_2083_1 = (SNode) parameter_2083_0;
-          SNode quotedNode1_1;
+          SNode quotedNode1_2083_1;
           if (_parameterValues_129834374.contains(quotedNode_2083_1)) {
-            quotedNode1_1 = CopyUtil.copy(quotedNode_2083_1);
+            quotedNode1_2083_1 = CopyUtil.copy(quotedNode_2083_1);
           } else {
             _parameterValues_129834374.add(quotedNode_2083_1);
-            quotedNode1_1 = quotedNode_2083_1;
+            quotedNode1_2083_1 = quotedNode_2083_1;
           }
-          if (quotedNode1_1 != null) {
-            quotedNode_2083_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_1));
+          if (quotedNode1_2083_1 != null) {
+            quotedNode_2083_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_2083_1));
           }
         }
         result = quotedNode1_2083_0;
@@ -68,13 +68,13 @@ public class QueryFunction_ParameterizedSideTransform_Query_Behavior {
       SNode quotedNode_2083_3 = null;
       {
         quotedNode_2083_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_2083_1 = quotedNode_2083_2;
+        SNode quotedNode1_2083_2 = quotedNode_2083_2;
         {
           quotedNode_2083_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_2083_2 = quotedNode_2083_3;
-          quotedNode_2083_2.addChild("elementType", quotedNode1_2083_2);
+          SNode quotedNode1_2083_3 = quotedNode_2083_3;
+          quotedNode_2083_2.addChild("elementType", quotedNode1_2083_3);
         }
-        result = quotedNode1_2083_1;
+        result = quotedNode1_2083_2;
       }
       return result;
     }

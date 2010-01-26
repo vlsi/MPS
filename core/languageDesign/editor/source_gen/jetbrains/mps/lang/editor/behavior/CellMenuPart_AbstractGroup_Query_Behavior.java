@@ -40,15 +40,15 @@ public class CellMenuPart_AbstractGroup_Query_Behavior {
         SNode quotedNode1_0518_0 = quotedNode_0518_0;
         {
           quotedNode_0518_1 = (SNode) parameter_0518_0;
-          SNode quotedNode1_1;
+          SNode quotedNode1_0518_1;
           if (_parameterValues_129834374.contains(quotedNode_0518_1)) {
-            quotedNode1_1 = CopyUtil.copy(quotedNode_0518_1);
+            quotedNode1_0518_1 = CopyUtil.copy(quotedNode_0518_1);
           } else {
             _parameterValues_129834374.add(quotedNode_0518_1);
-            quotedNode1_1 = quotedNode_0518_1;
+            quotedNode1_0518_1 = quotedNode_0518_1;
           }
-          if (quotedNode1_1 != null) {
-            quotedNode_0518_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_1));
+          if (quotedNode1_0518_1 != null) {
+            quotedNode_0518_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_0518_1));
           }
         }
         result = quotedNode1_0518_0;

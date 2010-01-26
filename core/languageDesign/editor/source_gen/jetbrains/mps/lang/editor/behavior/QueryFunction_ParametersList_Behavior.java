@@ -74,15 +74,15 @@ public class QueryFunction_ParametersList_Behavior {
         SNode quotedNode1_5498_2 = quotedNode_5498_2;
         {
           quotedNode_5498_3 = (SNode) parameter_5498_0;
-          SNode quotedNode1_2;
+          SNode quotedNode1_5498_3;
           if (_parameterValues_129834374.contains(quotedNode_5498_3)) {
-            quotedNode1_2 = CopyUtil.copy(quotedNode_5498_3);
+            quotedNode1_5498_3 = CopyUtil.copy(quotedNode_5498_3);
           } else {
             _parameterValues_129834374.add(quotedNode_5498_3);
-            quotedNode1_2 = quotedNode_5498_3;
+            quotedNode1_5498_3 = quotedNode_5498_3;
           }
-          if (quotedNode1_2 != null) {
-            quotedNode_5498_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_2));
+          if (quotedNode1_5498_3 != null) {
+            quotedNode_5498_2.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_5498_3));
           }
         }
         result = quotedNode1_5498_2;

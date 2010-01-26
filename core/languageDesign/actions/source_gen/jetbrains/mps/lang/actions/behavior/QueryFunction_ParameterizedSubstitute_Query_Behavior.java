@@ -94,15 +94,15 @@ public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
         SNode quotedNode1_3700_4 = quotedNode_3700_4;
         {
           quotedNode_3700_5 = (SNode) parameter_3700_1;
-          SNode quotedNode1_0;
+          SNode quotedNode1_3700_5;
           if (_parameterValues_129834374.contains(quotedNode_3700_5)) {
-            quotedNode1_0 = CopyUtil.copy(quotedNode_3700_5);
+            quotedNode1_3700_5 = CopyUtil.copy(quotedNode_3700_5);
           } else {
             _parameterValues_129834374.add(quotedNode_3700_5);
-            quotedNode1_0 = quotedNode_3700_5;
+            quotedNode1_3700_5 = quotedNode_3700_5;
           }
-          if (quotedNode1_0 != null) {
-            quotedNode_3700_4.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_0));
+          if (quotedNode1_3700_5 != null) {
+            quotedNode_3700_4.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_3700_5));
           }
         }
         result = quotedNode1_3700_4;

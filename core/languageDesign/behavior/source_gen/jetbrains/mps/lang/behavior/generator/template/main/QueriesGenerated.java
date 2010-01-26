@@ -109,11 +109,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1225195370545(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "parameters");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "parameters");
   }
 
   public static Object referenceMacro_GetReferent_1225195370612(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "parameters");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "parameters");
   }
 
   public static Object referenceMacro_GetReferent_1225195370713(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -124,11 +124,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1225195370749(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "parameters");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "parameters");
   }
 
   public static Object referenceMacro_GetReferent_1225195370817(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "parameters");
+    return _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "parameters");
   }
 
   public static Object referenceMacro_GetReferent_1241075527936(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -343,12 +343,12 @@ public class QueriesGenerated {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0 = null;
+      SNode quotedNode_8087_0 = null;
       {
-        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0 = quotedNode_0;
-        quotedNode1_0.addReference(SReference.create("classifier", quotedNode1_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_0;
+        quotedNode_8087_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8087_0 = quotedNode_8087_0;
+        quotedNode1_8087_0.addReference(SReference.create("classifier", quotedNode1_8087_0, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_8087_0;
       }
       return result;
     }
@@ -361,12 +361,12 @@ public class QueriesGenerated {
     public SNode createNode() {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
+      SNode quotedNode_8087_1 = null;
       {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1 = quotedNode_1;
-        quotedNode1_1.addReference(SReference.create("classifier", quotedNode1_1, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
-        result = quotedNode1_1;
+        quotedNode_8087_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_8087_1 = quotedNode_8087_1;
+        quotedNode1_8087_1.addReference(SReference.create("classifier", quotedNode1_8087_1, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Object")));
+        result = quotedNode1_8087_1;
       }
       return result;
     }

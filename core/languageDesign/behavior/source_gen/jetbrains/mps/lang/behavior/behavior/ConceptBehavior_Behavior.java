@@ -161,20 +161,20 @@ public class ConceptBehavior_Behavior {
     public SNode createNode(Object parameter_3513_0, Object parameter_3513_1, Object parameter_3513_2) {
       SNode result = null;
       Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_0 = null;
-      SNode quotedNode_1 = null;
+      SNode quotedNode_3513_0 = null;
+      SNode quotedNode_3513_1 = null;
       {
-        quotedNode_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_0 = quotedNode_0;
-        quotedNode1_0.setReferent("baseMethodDeclaration", (SNode) parameter_3513_1);
-        quotedNode1_0.setReferent("concept", (SNode) parameter_3513_0);
+        quotedNode_3513_0 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
+        SNode quotedNode1_3513_0 = quotedNode_3513_0;
+        quotedNode1_3513_0.setReferent("baseMethodDeclaration", (SNode) parameter_3513_1);
+        quotedNode1_3513_0.setReferent("concept", (SNode) parameter_3513_0);
         {
           List<SNode> nodes = (List<SNode>) parameter_3513_2;
           for (SNode child : nodes) {
-            quotedNode_0.addChild("actualArgument", HUtil.copyIfNecessary(child));
+            quotedNode_3513_0.addChild("actualArgument", HUtil.copyIfNecessary(child));
           }
         }
-        result = quotedNode1_0;
+        result = quotedNode1_3513_0;
       }
       return result;
     }
