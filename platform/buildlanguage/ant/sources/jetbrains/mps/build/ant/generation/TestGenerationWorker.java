@@ -1,7 +1,13 @@
 package jetbrains.mps.build.ant.generation;
 
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.build.ant.MpsWorker;
+import com.intellij.execution.process.ProcessOutputTypes;
+import com.intellij.openapi.util.Key;
+import jetbrains.mps.baseLanguage.structure.ClassConcept;
+import jetbrains.mps.baseLanguage.util.plugin.run.MPSLaunch;
+import jetbrains.mps.build.ant.*;
+import jetbrains.mps.build.ant.generation.unittest.UnitTestAdapter;
+import jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader;
+import jetbrains.mps.build.ant.generation.unittest.UnitTestRunner;
 import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.generator.GenerationAdapter;
 import jetbrains.mps.generator.GenerationListener;
@@ -9,13 +15,14 @@ import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
 import jetbrains.mps.project.*;
 import jetbrains.mps.reloading.*;
-import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.AbstractClassLoader;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.PathManager;
 import junit.framework.*;
-import junit.framework.TestResult;
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.BuildException;
+import org.apache.tools.ant.util.JavaEnvUtils;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.jetbrains.annotations.NotNull;
@@ -24,18 +31,13 @@ import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.tester.TesterGenerationHandler;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.messages.IMessageHandler;
-import jetbrains.mps.build.ant.IBuildServerMessageFormat;
-import jetbrains.mps.build.ant.WhatToDo;
-import jetbrains.mps.build.ant.TeamCityMessageFormat;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.TestMain;
 
+import java.lang.reflect.Modifier;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLClassLoader;
@@ -127,12 +129,12 @@ public class TestGenerationWorker extends GeneratorWorker {
           return -myPerfomanceMap.get(o1).compareTo(myPerfomanceMap.get(o2));
         }
       });
-      for (SModelDescriptor modelDescriptor : models){
+      for (SModelDescriptor modelDescriptor : models) {
         f.format("%s %dms\n", modelDescriptor.getLongName(), myPerfomanceMap.get(modelDescriptor));
       }
       String report = w.toString();
       for (String dest : destinations) {
-        if (dest.equals(PerfomanceReport.STDOUT)){
+        if (dest.equals(PerfomanceReport.STDOUT)) {
           info(myBuildServerMessageFormat.escapeBuildMessage(report));
         } else {
           FileUtil.write(new File(dest), report);
@@ -231,16 +233,105 @@ public class TestGenerationWorker extends GeneratorWorker {
     System.out.println(myBuildServerMessageFormat.formatTestFinish(currentTestName));
 
     // invoke generated tests
-    if (invokeTests()) {
-      TestResult testResult = new TestResult();
-      testResult.addListener(new MyTestListener());
-      ProjectTester.invokeTests(myGenerationHandler, outputModels, testResult, cycle.getClassLoader());
+    if (isInvokeTestsSet()) {
+      runTests(cycle.getClassPath(), myGenerationHandler, outputModels);
     }
 
     myGenerationHandler.clean();
   }
 
-  private boolean invokeTests() {
+  private void runTests(List<File> moduleClassPath, TesterGenerationHandler handler, List<SModel> outputModels) {
+    List<String> commandLine = new ArrayList<String>();
+    commandLine.add(JavaEnvUtils.getJreExecutable("java"));
+
+    final List<File> classPaths = new ArrayList<File>(moduleClassPath);
+    classPaths.add(new File(com.intellij.openapi.application.PathManager.getResourceRoot(getClass(), "/" + getClass().getName().replace('.', '/') + ".class")).getAbsoluteFile());
+    classPaths.add(new File(PathManager.getHomePath() + File.separator + "lib" + File.separator + "junit4" + File.separator + "junit-4.1.jar")); // herovo
+
+    StringBuffer sb = new StringBuffer();
+    String pathSeparator = System.getProperty("path.separator");
+    for (File cp : classPaths) {
+      sb.append(pathSeparator);
+      sb.append(cp.getAbsolutePath());
+    }
+    commandLine.add("-classpath");
+    commandLine.add(sb.toString());
+    commandLine.add(UnitTestRunner.class.getCanonicalName());
+    for (String testClassName : getTestClassesNames(handler, outputModels, createClassLoader(moduleClassPath))) {
+      commandLine.add("-c");
+      commandLine.add(testClassName);
+    }
+
+    ProcessBuilder builder = new ProcessBuilder(commandLine);
+    try {
+      Process process = builder.start();
+      UnitTestOutputReader reader = new UnitTestOutputReader(process, new MyUnitTestAdapter());
+      int result = reader.start();
+      if (result != 0) {
+        error("Process Exited With Code " + result);
+      }
+    } catch (IOException e) {
+      log(e);
+    }
+  }
+
+  private ClassLoader createClassLoader(List<File> files) {
+    List<URL> classPath = new ArrayList<URL>();
+    for (File f : files) {
+      try {
+        classPath.add(new URL("file:///" + f.getAbsolutePath() + (f.isDirectory() ? "/" : "")));
+      } catch (MalformedURLException e) {
+        log(e);
+      }
+    }
+    return new URLClassLoader(classPath.toArray(new URL[classPath.size()]));
+  }
+
+  private List<String> getTestClassesNames(TesterGenerationHandler generationHandler, List<SModel> outputModels, ClassLoader baseClassLoader) {
+    List<String> testClasses = new ArrayList<String>();
+
+    for (final SModel model : outputModels) {
+      for (final SNode outputRoot : model.getRoots()) {
+        if (baseClassLoader == null) {
+          model.getClass().getClassLoader();
+        }
+        ClassLoader classLoader = generationHandler.getCompiler().getClassLoader(baseClassLoader);
+        Boolean isNotClassConcept = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
+          @Override
+          public Boolean compute() {
+            return !outputRoot.isInstanceOfConcept(ClassConcept.concept);
+          }
+        });
+        if (isNotClassConcept) {
+          continue;
+        }
+        try {
+          String className = ModelAccess.instance().runReadAction(new Computable<String>() {
+            @Override
+            public String compute() {
+              return model.getLongName() + "." + outputRoot.getName();
+            }
+          });
+          final Class testClass = Class.forName(className, true, classLoader);
+          if (Modifier.isAbstract(testClass.getModifiers()) || Modifier.isInterface(testClass.getModifiers())) continue;
+          if (Modifier.isPrivate(testClass.getModifiers())) continue;
+          if (testClass.getAnnotation(classLoader.loadClass(MPSLaunch.class.getName())) != null) continue;
+
+          Class<TestCase> testCaseClass = (Class<TestCase>) classLoader.loadClass(TestCase.class.getName());
+          if (testCaseClass.isAssignableFrom(testClass)) {
+            testClasses.add(className);
+          }
+
+        } catch (Throwable throwable) {
+          log(throwable);
+        }
+      }
+    }
+
+    return testClasses;
+  }
+
+  private boolean isInvokeTestsSet() {
     return Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.INVOKE_TESTS)) && Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE));
   }
 
@@ -357,84 +448,35 @@ public class TestGenerationWorker extends GeneratorWorker {
         generationHandler,
         new EmptyProgressIndicator(),
         messageHandler,
-        invokeTests());
+        isInvokeTestsSet());
     }
 
-    public ClassLoader getClassLoader() {
-      IClassPathItem cp = ModelAccess.instance().runReadAction(new Computable<IClassPathItem>(){
+    @Override
+    public List<File> getClassPath() {
+      IClassPathItem cp = ModelAccess.instance().runReadAction(new Computable<IClassPathItem>() {
         @Override
         public IClassPathItem compute() {
-          return AbstractModule.getDependenciesClasspath(Collections.singleton(myModule), false, false);
+          return myModule.getModuleWithDependenciesClassPathItem();
         }
       });
-      List<URL> cpUrls = new ArrayList<URL>();
-      classPathItemToUrl(cp, cpUrls);
-      URLClassLoader classloader = new URLClassLoader(cpUrls.toArray(new URL[cpUrls.size()]), ApplicationManager.class.getClassLoader());
-      return classloader;
-    }
-
-    private void classPathItemToUrl(final IClassPathItem cp, final List<URL> cpUrls) {
+      final List<File> classPathFiles = new ArrayList<File>();
       cp.accept(new EachClassPathItemVisitor() {
         @Override
         public void visit(FileClassPathItem cpItem) {
-          File path = new File(cpItem.getClassPath());
-          try {
-            cpUrls.add(new URL("file:///" + path + (path.isDirectory() ? "/" : "")));
-          } catch (MalformedURLException e) {
-            log(e);
-          }
+          classPathFiles.add(new File(cpItem.getClassPath()));
         }
 
         @Override
         public void visit(JarFileClassPathItem cpItem) {
-          File path = new File(cpItem.getFile().getAbsolutePath());
-          try {
-            cpUrls.add(new URL("file:///" + path + (path.isDirectory() ? "/" : "")));
-          } catch (MalformedURLException e) {
-            log(e);
-          }
+          classPathFiles.add(new File(cpItem.getFile().getAbsolutePath()));
         }
       });
+      return classPathFiles;
     }
 
     @Override
     public String toString() {
       return "generating " + mySModel.getLongName();
-    }
-  }
-
-  private class MyTestListener implements TestListener {
-    @Override
-    public void addError(Test test, Throwable t) {
-      System.out.println(myBuildServerMessageFormat.formatTestFailure(myBuildServerMessageFormat.escapeBuildMessage(getName(test)),
-        myBuildServerMessageFormat.escapeBuildMessage(t.getMessage() == null ? "" : t.getMessage()),
-        myBuildServerMessageFormat.escapeBuildMessage(MpsWorker.extractStackTrace(t))));
-    }
-
-    @Override
-    public void addFailure(Test test, AssertionFailedError t) {
-      System.out.println(myBuildServerMessageFormat.formatTestFailure(myBuildServerMessageFormat.escapeBuildMessage(getName(test)),
-        myBuildServerMessageFormat.escapeBuildMessage(t.getMessage() == null ? "" : t.getMessage()),
-        myBuildServerMessageFormat.escapeBuildMessage(MpsWorker.extractStackTrace(t))));
-    }
-
-    @Override
-    public void endTest(Test test) {
-      System.out.println(myBuildServerMessageFormat.formatTestFinish(myBuildServerMessageFormat.escapeBuildMessage(getName(test))));
-    }
-
-    @Override
-    public void startTest(Test test) {
-      System.out.println(myBuildServerMessageFormat.formatTestStart(myBuildServerMessageFormat.escapeBuildMessage(getName(test))));
-    }
-
-    private String getName(Test test) {
-      if (test instanceof TestCase) {
-        TestCase testCase = (TestCase) test;
-        return testCase.getClass().getName() + "." + testCase.getName();
-      } else {
-        return test.toString();
-      }
     }
   }
 
@@ -469,6 +511,35 @@ public class TestGenerationWorker extends GeneratorWorker {
         }
       }
       return null;
+    }
+  }
+
+  private class MyUnitTestAdapter extends UnitTestAdapter {
+    @Override
+    public void testStarted(String testName) {
+      System.out.println(myBuildServerMessageFormat.formatTestStart(myBuildServerMessageFormat.escapeBuildMessage(testName)));
+    }
+
+    @Override
+    public void testFailed(String test, String message, String details) {
+      System.out.println(myBuildServerMessageFormat.formatTestFailure(myBuildServerMessageFormat.escapeBuildMessage(test),
+        myBuildServerMessageFormat.escapeBuildMessage(message),
+        myBuildServerMessageFormat.escapeBuildMessage(details)));
+    }
+
+    @Override
+    public void testFinished(String testName) {
+      System.out.println(myBuildServerMessageFormat.formatTestFinish(myBuildServerMessageFormat.escapeBuildMessage(testName)));
+    }
+
+    @Override
+    public void logMessage(String message) {
+      if (message != null && !message.isEmpty()) info(message);
+    }
+
+    @Override
+    public void logError(String errorMessage) {
+      if (errorMessage != null && !errorMessage.isEmpty()) error(errorMessage);
     }
   }
 }
