@@ -272,21 +272,21 @@ public class QueriesGenerated {
         SNode quotedNode1_7774_2 = quotedNode_7774_2;
         {
           quotedNode_7774_3 = (SNode) parameter_7774_0;
-          SNode quotedNode1_0;
+          SNode quotedNode1_7774_3;
           if (_parameterValues_129834374.contains(quotedNode_7774_3)) {
-            quotedNode1_0 = CopyUtil.copy(quotedNode_7774_3);
+            quotedNode1_7774_3 = CopyUtil.copy(quotedNode_7774_3);
           } else {
             _parameterValues_129834374.add(quotedNode_7774_3);
-            quotedNode1_0 = quotedNode_7774_3;
+            quotedNode1_7774_3 = quotedNode_7774_3;
           }
-          if (quotedNode1_0 != null) {
-            quotedNode_7774_2.addChild("base", HUtil.copyIfNecessary(quotedNode1_0));
+          if (quotedNode1_7774_3 != null) {
+            quotedNode_7774_2.addChild("base", HUtil.copyIfNecessary(quotedNode1_7774_3));
           }
         }
         {
           quotedNode_7774_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_7774_3 = quotedNode_7774_4;
-          quotedNode_7774_2.addChild("exponent", quotedNode1_7774_3);
+          SNode quotedNode1_7774_4 = quotedNode_7774_4;
+          quotedNode_7774_2.addChild("exponent", quotedNode1_7774_4);
         }
         result = quotedNode1_7774_2;
       }
@@ -304,15 +304,15 @@ public class QueriesGenerated {
       SNode quotedNode_7774_5 = null;
       {
         quotedNode_7774_5 = (SNode) parameter_7774_1;
-        SNode quotedNode1_1;
+        SNode quotedNode1_7774_5;
         if (_parameterValues_129834374.contains(quotedNode_7774_5)) {
-          quotedNode1_1 = CopyUtil.copy(quotedNode_7774_5);
+          quotedNode1_7774_5 = CopyUtil.copy(quotedNode_7774_5);
         } else {
           _parameterValues_129834374.add(quotedNode_7774_5);
-          quotedNode1_1 = quotedNode_7774_5;
+          quotedNode1_7774_5 = quotedNode_7774_5;
         }
-        if (quotedNode1_1 != null) {
-          result = quotedNode1_1;
+        if (quotedNode1_7774_5 != null) {
+          result = quotedNode1_7774_5;
         }
       }
       return result;

@@ -52,15 +52,15 @@ public class vector_subtype_of_matrix_SubtypingRule extends SubtypingRule_Runtim
         quotedNode1_0764_0.setProperty("rows", (String) parameter_0764_1);
         {
           quotedNode_0764_1 = (SNode) parameter_0764_0;
-          SNode quotedNode1_5;
+          SNode quotedNode1_0764_1;
           if (_parameterValues_129834374.contains(quotedNode_0764_1)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_0764_1);
+            quotedNode1_0764_1 = CopyUtil.copy(quotedNode_0764_1);
           } else {
             _parameterValues_129834374.add(quotedNode_0764_1);
-            quotedNode1_5 = quotedNode_0764_1;
+            quotedNode1_0764_1 = quotedNode_0764_1;
           }
-          if (quotedNode1_5 != null) {
-            quotedNode_0764_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_5, typeCheckingContext));
+          if (quotedNode1_0764_1 != null) {
+            quotedNode_0764_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_0764_1, typeCheckingContext));
           }
         }
         result = quotedNode1_0764_0;
@@ -80,15 +80,15 @@ public class vector_subtype_of_matrix_SubtypingRule extends SubtypingRule_Runtim
         quotedNode1_0764_0.setProperty("rows", (String) parameter_0764_1);
         {
           quotedNode_0764_1 = (SNode) parameter_0764_0;
-          SNode quotedNode1_5;
+          SNode quotedNode1_0764_1;
           if (_parameterValues_129834374.contains(quotedNode_0764_1)) {
-            quotedNode1_5 = CopyUtil.copy(quotedNode_0764_1);
+            quotedNode1_0764_1 = CopyUtil.copy(quotedNode_0764_1);
           } else {
             _parameterValues_129834374.add(quotedNode_0764_1);
-            quotedNode1_5 = quotedNode_0764_1;
+            quotedNode1_0764_1 = quotedNode_0764_1;
           }
-          if (quotedNode1_5 != null) {
-            quotedNode_0764_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_5));
+          if (quotedNode1_0764_1 != null) {
+            quotedNode_0764_0.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_0764_1));
           }
         }
         result = quotedNode1_0764_0;

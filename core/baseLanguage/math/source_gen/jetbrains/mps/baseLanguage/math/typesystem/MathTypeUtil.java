@@ -618,15 +618,15 @@ public class MathTypeUtil {
         SNode quotedNode1_5052_15 = quotedNode_5052_15;
         {
           quotedNode_5052_16 = (SNode) parameter_5052_0;
-          SNode quotedNode1_11;
+          SNode quotedNode1_5052_16;
           if (_parameterValues_129834374.contains(quotedNode_5052_16)) {
-            quotedNode1_11 = CopyUtil.copy(quotedNode_5052_16);
+            quotedNode1_5052_16 = CopyUtil.copy(quotedNode_5052_16);
           } else {
             _parameterValues_129834374.add(quotedNode_5052_16);
-            quotedNode1_11 = quotedNode_5052_16;
+            quotedNode1_5052_16 = quotedNode_5052_16;
           }
-          if (quotedNode1_11 != null) {
-            quotedNode_5052_15.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_11));
+          if (quotedNode1_5052_16 != null) {
+            quotedNode_5052_15.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_5052_16));
           }
         }
         result = quotedNode1_5052_15;
@@ -646,21 +646,21 @@ public class MathTypeUtil {
       SNode quotedNode_5052_18 = null;
       {
         quotedNode_5052_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.VectorType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5052_16 = quotedNode_5052_17;
+        SNode quotedNode1_5052_17 = quotedNode_5052_17;
         {
           quotedNode_5052_18 = (SNode) parameter_5052_1;
-          SNode quotedNode1_12;
+          SNode quotedNode1_5052_18;
           if (_parameterValues_129834374.contains(quotedNode_5052_18)) {
-            quotedNode1_12 = CopyUtil.copy(quotedNode_5052_18);
+            quotedNode1_5052_18 = CopyUtil.copy(quotedNode_5052_18);
           } else {
             _parameterValues_129834374.add(quotedNode_5052_18);
-            quotedNode1_12 = quotedNode_5052_18;
+            quotedNode1_5052_18 = quotedNode_5052_18;
           }
-          if (quotedNode1_12 != null) {
-            quotedNode_5052_17.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_12));
+          if (quotedNode1_5052_18 != null) {
+            quotedNode_5052_17.addChild("elementType", HUtil.copyIfNecessary(quotedNode1_5052_18));
           }
         }
-        result = quotedNode1_5052_16;
+        result = quotedNode1_5052_17;
       }
       return result;
     }
@@ -676,9 +676,9 @@ public class MathTypeUtil {
       SNode quotedNode_5052_19 = null;
       {
         quotedNode_5052_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5052_17 = quotedNode_5052_19;
-        quotedNode1_5052_17.addReference(SReference.create("classifier", quotedNode1_5052_17, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Float")));
-        result = quotedNode1_5052_17;
+        SNode quotedNode1_5052_19 = quotedNode_5052_19;
+        quotedNode1_5052_19.addReference(SReference.create("classifier", quotedNode1_5052_19, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Float")));
+        result = quotedNode1_5052_19;
       }
       return result;
     }
@@ -694,9 +694,9 @@ public class MathTypeUtil {
       SNode quotedNode_5052_20 = null;
       {
         quotedNode_5052_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5052_18 = quotedNode_5052_20;
-        quotedNode1_5052_18.addReference(SReference.create("classifier", quotedNode1_5052_18, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
-        result = quotedNode1_5052_18;
+        SNode quotedNode1_5052_20 = quotedNode_5052_20;
+        quotedNode1_5052_20.addReference(SReference.create("classifier", quotedNode1_5052_20, SModelReference.fromString("f:java_stub#java.lang(java.lang@java_stub)"), SNodeId.fromString("~Double")));
+        result = quotedNode1_5052_20;
       }
       return result;
     }
@@ -714,18 +714,18 @@ public class MathTypeUtil {
       SNode quotedNode_5052_23 = null;
       {
         quotedNode_5052_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5052_19 = quotedNode_5052_21;
+        SNode quotedNode1_5052_21 = quotedNode_5052_21;
         {
           quotedNode_5052_22 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_5052_20 = quotedNode_5052_22;
-          quotedNode_5052_21.addChild("type", quotedNode1_5052_20);
+          SNode quotedNode1_5052_22 = quotedNode_5052_22;
+          quotedNode_5052_21.addChild("type", quotedNode1_5052_22);
         }
         {
           quotedNode_5052_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_5052_21 = quotedNode_5052_23;
-          quotedNode_5052_21.addChild("expression", quotedNode1_5052_21);
+          SNode quotedNode1_5052_23 = quotedNode_5052_23;
+          quotedNode_5052_21.addChild("expression", quotedNode1_5052_23);
         }
-        result = quotedNode1_5052_19;
+        result = quotedNode1_5052_21;
       }
       return result;
     }
@@ -743,18 +743,18 @@ public class MathTypeUtil {
       SNode quotedNode_5052_26 = null;
       {
         quotedNode_5052_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5052_22 = quotedNode_5052_24;
+        SNode quotedNode1_5052_24 = quotedNode_5052_24;
         {
           quotedNode_5052_25 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_5052_23 = quotedNode_5052_25;
-          quotedNode_5052_24.addChild("type", quotedNode1_5052_23);
+          SNode quotedNode1_5052_25 = quotedNode_5052_25;
+          quotedNode_5052_24.addChild("type", quotedNode1_5052_25);
         }
         {
           quotedNode_5052_26 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_5052_24 = quotedNode_5052_26;
-          quotedNode_5052_24.addChild("expression", quotedNode1_5052_24);
+          SNode quotedNode1_5052_26 = quotedNode_5052_26;
+          quotedNode_5052_24.addChild("expression", quotedNode1_5052_26);
         }
-        result = quotedNode1_5052_22;
+        result = quotedNode1_5052_24;
       }
       return result;
     }
@@ -772,18 +772,18 @@ public class MathTypeUtil {
       SNode quotedNode_5052_29 = null;
       {
         quotedNode_5052_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5052_25 = quotedNode_5052_27;
+        SNode quotedNode1_5052_27 = quotedNode_5052_27;
         {
           quotedNode_5052_28 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_5052_26 = quotedNode_5052_28;
-          quotedNode_5052_27.addChild("type", quotedNode1_5052_26);
+          SNode quotedNode1_5052_28 = quotedNode_5052_28;
+          quotedNode_5052_27.addChild("type", quotedNode1_5052_28);
         }
         {
           quotedNode_5052_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_5052_27 = quotedNode_5052_29;
-          quotedNode_5052_27.addChild("expression", quotedNode1_5052_27);
+          SNode quotedNode1_5052_29 = quotedNode_5052_29;
+          quotedNode_5052_27.addChild("expression", quotedNode1_5052_29);
         }
-        result = quotedNode1_5052_25;
+        result = quotedNode1_5052_27;
       }
       return result;
     }
@@ -801,18 +801,18 @@ public class MathTypeUtil {
       SNode quotedNode_5052_32 = null;
       {
         quotedNode_5052_30 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_5052_28 = quotedNode_5052_30;
+        SNode quotedNode1_5052_30 = quotedNode_5052_30;
         {
           quotedNode_5052_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_5052_29 = quotedNode_5052_31;
-          quotedNode_5052_30.addChild("type", quotedNode1_5052_29);
+          SNode quotedNode1_5052_31 = quotedNode_5052_31;
+          quotedNode_5052_30.addChild("type", quotedNode1_5052_31);
         }
         {
           quotedNode_5052_32 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-          SNode quotedNode1_5052_30 = quotedNode_5052_32;
-          quotedNode_5052_30.addChild("expression", quotedNode1_5052_30);
+          SNode quotedNode1_5052_32 = quotedNode_5052_32;
+          quotedNode_5052_30.addChild("expression", quotedNode1_5052_32);
         }
-        result = quotedNode1_5052_28;
+        result = quotedNode1_5052_30;
       }
       return result;
     }

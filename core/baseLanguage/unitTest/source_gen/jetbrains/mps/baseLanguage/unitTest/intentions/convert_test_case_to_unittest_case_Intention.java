@@ -90,9 +90,9 @@ public class convert_test_case_to_unittest_case_Intention extends BaseIntention 
       SNode quotedNode_1459_4 = null;
       {
         quotedNode_1459_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", TypeChecker.getInstance().getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-        SNode quotedNode1_1459_3 = quotedNode_1459_4;
-        quotedNode1_1459_3.addReference(SReference.create("classifier", quotedNode1_1459_3, SModelReference.fromString("f:java_stub#junit.framework(junit.framework@java_stub)"), SNodeId.fromString("~TestCase")));
-        result = quotedNode1_1459_3;
+        SNode quotedNode1_1459_4 = quotedNode_1459_4;
+        quotedNode1_1459_4.addReference(SReference.create("classifier", quotedNode1_1459_4, SModelReference.fromString("f:java_stub#junit.framework(junit.framework@java_stub)"), SNodeId.fromString("~TestCase")));
+        result = quotedNode1_1459_4;
       }
       return result;
     }
@@ -137,15 +137,15 @@ public class convert_test_case_to_unittest_case_Intention extends BaseIntention 
         }
         {
           quotedNode_1459_3 = (SNode) parameter_1459_0;
-          SNode quotedNode1_0;
+          SNode quotedNode1_1459_3;
           if (_parameterValues_129834374.contains(quotedNode_1459_3)) {
-            quotedNode1_0 = CopyUtil.copy(quotedNode_1459_3);
+            quotedNode1_1459_3 = CopyUtil.copy(quotedNode_1459_3);
           } else {
             _parameterValues_129834374.add(quotedNode_1459_3);
-            quotedNode1_0 = quotedNode_1459_3;
+            quotedNode1_1459_3 = quotedNode_1459_3;
           }
-          if (quotedNode1_0 != null) {
-            quotedNode_1459_1.addChild("body", HUtil.copyIfNecessary(quotedNode1_0));
+          if (quotedNode1_1459_3 != null) {
+            quotedNode_1459_1.addChild("body", HUtil.copyIfNecessary(quotedNode1_1459_3));
           }
         }
         result = quotedNode1_1459_1;
