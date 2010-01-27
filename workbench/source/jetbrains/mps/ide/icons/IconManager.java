@@ -17,6 +17,7 @@ package jetbrains.mps.ide.icons;
 
 import com.intellij.openapi.util.Computable;
 import com.intellij.ui.RowIcon;
+import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -96,19 +97,19 @@ public class IconManager {
         if (node.getConceptDeclarationAdapter() instanceof ConceptDeclaration) {
           ConceptDeclaration concept = (ConceptDeclaration) node.getConceptDeclarationAdapter();
           Method alternativeIconMethod = ModelConstraintsManager.getInstance().getAlternativeIconMethod(concept);
-          Icon icon = null;
+          Icon alternativeIcon = null;
           try {
             if (alternativeIconMethod != null) {
               Object iconObject = alternativeIconMethod.invoke(null, node);
               if (iconObject != null) {
                 String alternativeIconPath = (String) iconObject;
-                icon = getIconFor(concept, alternativeIconPath);
+                alternativeIcon = getIconFor(concept, alternativeIconPath);
               }
             }
           } catch (Throwable t) {
           }
-          if (icon != null) {
-            mainIcon = icon;
+          if (alternativeIcon != null) {
+            mainIcon = alternativeIcon;
           } else {
             mainIcon = IconManager.getIconFor(concept);
           }
@@ -126,7 +127,7 @@ public class IconManager {
         if (!withoutAdditional) {
           result.setIcon(BaseConcept_Behavior.call_getAdditionalIcon_5017341185733863694(node), 1);
         }
-        return result;
+        return (node.getModel().isNotEditable())? new LayeredIcon(result, com.intellij.util.Icons.LOCKED_ICON) : result;
       }
     });
   }
