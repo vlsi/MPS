@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.workbench.actions.goTo.index;
 
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
 
 import java.util.UUID;
 
@@ -70,6 +72,14 @@ public class SNodeDescriptor {
 
   public long getMostSignificantBits() {
     return myMostSignificantBits;
+  }
+
+  public SNode getNode(SModel model) {
+    if (getNumberInModel() != -1) {
+      return model.getRoots().get(getNumberInModel());
+    } else {
+      return model.getRootByName(getNodeName());
+    }
   }
 
   @Override
