@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.util;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -33,5 +34,16 @@ public class ReadUtil {
     if (offset != len) {
       throw new RuntimeException("This can't happen");
     }
+  }
+
+  public static byte[] read(InputStream is) throws IOException {
+    ByteArrayOutputStream os = new ByteArrayOutputStream();
+    byte[] buff = new byte[1024];
+    while (true) {
+      int read = is.read(buff, 0, buff.length);
+      if (read == -1) break;
+      os.write(buff, 0, read);
+    }
+    return os.toByteArray();
   }
 }

@@ -61,11 +61,11 @@ public class FileClassPathItem extends AbstractClassPathItem {
     String path = myClassPath + File.separatorChar + name.replace('.', File.separatorChar) + MPSExtentions.DOT_CLASSFILE;
     IFile file = FileSystem.getFile(path);
     try {
-      byte[] result = new byte[(int) file.length()];
+      byte[] result = null;
       InputStream inp = null;
       try {
         inp = file.openInputStream();
-        ReadUtil.read(result, inp);
+        result = ReadUtil.read(inp);
       } finally {
         if (inp != null) {
           inp.close();
