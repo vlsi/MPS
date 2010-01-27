@@ -265,7 +265,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public void addTransientModelToKeep(SModel model) {
     SModelDescriptor modelDescriptor = model.getModelDescriptor();
-    if (modelDescriptor != null && modelDescriptor.isTransient() && keepTransientForMessageNavigation()) {
+    if (modelDescriptor.isTransient() && keepTransientForMessageNavigation()) {
       ((TransientModelsModule) getModule()).addModelToKeep(modelDescriptor);
     }
   }
