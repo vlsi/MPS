@@ -11,7 +11,11 @@ import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import javax.swing.JComponent;
+import java.util.Set;
+import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
+import jetbrains.mps.reloading.CompositeClassPathItem;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.generator.GeneratorManager;
 import jetbrains.mps.generator.GenerationSettings;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -48,7 +52,7 @@ public class EmbeddableEditor {
     return this.myPanel;
   }
 
-  public GenerationResult generate() {
+  public GenerationResult generate(final Set<IClassPathItem> additionalClasspath) {
     if (this.myNode == null) {
       return null;
     }
@@ -56,6 +60,15 @@ public class EmbeddableEditor {
       @Override
       public boolean canHandle(SModelDescriptor inputModel) {
         return inputModel != null;
+      }
+
+      @Override
+      protected CompositeClassPathItem getClassPath(Set<IModule> contextModules) {
+        CompositeClassPathItem result = super.getClassPath(contextModules);
+        for (IClassPathItem item : additionalClasspath) {
+          result.add(item);
+        }
+        return result;
       }
     };
     GeneratorManager manager = new GeneratorManager(this.myContext.getProject(), new GenerationSettings()) {

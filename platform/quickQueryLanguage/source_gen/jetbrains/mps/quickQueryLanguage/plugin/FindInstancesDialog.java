@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.Language;
 import java.awt.Dimension;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -24,7 +23,10 @@ import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
 import javax.swing.JComponent;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.kernel.model.SModelUtil;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ide.embeddableEditor.GenerationResult;
+import java.util.Collections;
 import jetbrains.mps.quickQueryLanguage.runtime.Query;
 import jetbrains.mps.smodel.IScope;
 import com.intellij.openapi.project.Project;
@@ -45,8 +47,8 @@ public class FindInstancesDialog extends BaseDialog {
     this.myContext = context;
     this.setSize(new Dimension(500, 500));
     this.setModal(false);
-    ModelAccess.instance().runWriteActionInCommand(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<EmbeddableEditor>() {
-      public EmbeddableEditor invoke() {
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
         FindInstancesDialog.this.myNode = SConceptOperations.createNewNode("jetbrains.mps.quickQueryLanguage.structure.ModelQuery", null);
         SNode statementList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
         SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
@@ -55,15 +57,15 @@ public class FindInstancesDialog extends BaseDialog {
         SLinkOperations.setTarget(expressionStatement, "expression", defaultCondition, true);
         ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(expressionStatement);
         SLinkOperations.setTarget(SLinkOperations.getTarget(FindInstancesDialog.this.myNode, "condition", true), "body", statementList, true);
-        return FindInstancesDialog.this.myEditor = new EmbeddableEditor(context, new ModelOwner() {}, FindInstancesDialog.this.myNode);
+        FindInstancesDialog.this.myEditor = new EmbeddableEditor(context, new ModelOwner() {}, FindInstancesDialog.this.myNode);
       }
-    }));
+    });
     final Wrappers._T<List<Language>> languageList = new Wrappers._T<List<Language>>();
-    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<List<Language>>() {
-      public List<Language> invoke() {
-        return languageList.value = language.getAllExtendedLanguages();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        languageList.value = language.getAllExtendedLanguages();
       }
-    }));
+    });
     for (Language extendedLanguage : languageList.value) {
       this.myEditor.addLanguageStructureModel(extendedLanguage);
     }
@@ -83,17 +85,23 @@ public class FindInstancesDialog extends BaseDialog {
   }
 
   public void setConceptDeclaration(final SNode declaration) {
-    ModelAccess.instance().runWriteActionInCommand(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<SNode>() {
-      public SNode invoke() {
-        return SLinkOperations.setTarget(FindInstancesDialog.this.myNode, "conceptDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false);
+    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+      public void run() {
+        SLinkOperations.setTarget(FindInstancesDialog.this.myNode, "conceptDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration"), false);
       }
-    }));
+    });
   }
 
   @BaseDialog.Button(position = 0, name = "Find", mnemonic = 'F', defaultButton = true)
   public void buttonFind() {
     try {
-      final GenerationResult result = this.myEditor.generate();
+      final Wrappers._T<Language> language = new Wrappers._T<Language>();
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          language.value = SModelUtil.getDeclaringLanguage(SNodeOperations.getConceptDeclaration(FindInstancesDialog.this.myNode), GlobalScope.getInstance());
+        }
+      });
+      final GenerationResult result = this.myEditor.generate(Collections.singleton(language.value.getClassPathItem()));
       String fqName = result.getModelDescriptor().getLongName() + "." + QueryExecutor.GENERATED_QUERY_NAME;
       ClassLoader loader = result.getLoader(QueryExecutor.class.getClassLoader());
       final Query query = (Query) Class.forName(fqName, true, loader).newInstance();

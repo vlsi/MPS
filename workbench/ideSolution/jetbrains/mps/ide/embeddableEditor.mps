@@ -42,6 +42,7 @@
   <import index="30" modelUID="f:java_stub#jetbrains.mps.compiler(jetbrains.mps.compiler@java_stub)" version="-1" />
   <import index="31" modelUID="f:java_stub#jetbrains.mps.reloading(jetbrains.mps.reloading@java_stub)" version="-1" />
   <import index="32" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
+  <visible index="2" modelUID="f:java_stub#jetbrains.mps.project(jetbrains.mps.project@java_stub)" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1219405202223">
     <property name="name:3" value="EmbeddableEditor" />
     <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1220278334166">
@@ -121,6 +122,72 @@
                       </node>
                     </node>
                     <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="8310923198241449852">
+                      <link role="annotation:3" targetNodeId="6.~Override" />
+                    </node>
+                  </node>
+                  <node role="method:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="5658679531526310983">
+                    <property name="name:3" value="getClassPath" />
+                    <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.ProtectedVisibility:3" id="5658679531526310984" />
+                    <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5658679531526310985">
+                      <link role="classifier:3" targetNodeId="31.~CompositeClassPathItem" resolveInfo="CompositeClassPathItem" />
+                    </node>
+                    <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="5658679531526310986">
+                      <property name="name:3" value="contextModules" />
+                      <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5658679531526310987">
+                        <link role="classifier:3" targetNodeId="32.~Set" resolveInfo="Set" />
+                        <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5658679531526310988">
+                          <link role="classifier:3" targetNodeId="2v.~IModule" resolveInfo="IModule" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5658679531526310989">
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="5658679531526338311">
+                        <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5658679531526338312">
+                          <property name="name:3" value="result" />
+                          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5658679531526338313">
+                            <link role="classifier:3" targetNodeId="31.~CompositeClassPathItem" resolveInfo="CompositeClassPathItem" />
+                          </node>
+                          <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.SuperMethodCall:3" id="5658679531526341643">
+                            <link role="baseMethodDeclaration:3" targetNodeId="9.~InMemoryJavaGenerationHandler.getClassPath(java.util.Set):jetbrains.mps.reloading.CompositeClassPathItem" resolveInfo="getClassPath" />
+                            <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5658679531526341644">
+                              <link role="variableDeclaration:3" targetNodeId="5658679531526310986" resolveInfo="contextModules" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ForeachStatement:3" id="5658679531526381866">
+                        <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5658679531526381867">
+                          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5658679531526381881">
+                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5658679531526381883">
+                              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5658679531526381882">
+                                <link role="variableDeclaration:3" targetNodeId="5658679531526338312" resolveInfo="result" />
+                              </node>
+                              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="5658679531526381887">
+                                <link role="baseMethodDeclaration:3" targetNodeId="31.~CompositeClassPathItem.add(jetbrains.mps.reloading.IClassPathItem):void" resolveInfo="add" />
+                                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5658679531526381888">
+                                  <link role="variableDeclaration:3" targetNodeId="5658679531526381870" resolveInfo="item" />
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                        <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="5658679531526381877">
+                          <link role="variableDeclaration:3" targetNodeId="5658679531526376321" resolveInfo="additionalClasspath" />
+                        </node>
+                        <node role="variable:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="5658679531526381870">
+                          <property name="name:3" value="item" />
+                          <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5658679531526381874">
+                            <link role="classifier:3" targetNodeId="31.~IClassPathItem" resolveInfo="IClassPathItem" />
+                          </node>
+                        </node>
+                      </node>
+                      <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="5658679531526381853">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="5658679531526381855">
+                          <link role="variableDeclaration:3" targetNodeId="5658679531526338312" resolveInfo="result" />
+                        </node>
+                      </node>
+                    </node>
+                    <node role="annotation:3" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="5658679531526310990">
                       <link role="annotation:3" targetNodeId="6.~Override" />
                     </node>
                   </node>
@@ -235,6 +302,16 @@
                 <link role="variableDeclaration:3" targetNodeId="1219740443861" resolveInfo="type" />
               </node>
             </node>
+          </node>
+        </node>
+      </node>
+      <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="5658679531526376321">
+        <property name="name:3" value="additionalClasspath" />
+        <property name="isFinal:3" value="true" />
+        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5658679531526383601">
+          <link role="classifier:3" targetNodeId="32.~Set" resolveInfo="Set" />
+          <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="5658679531526383624">
+            <link role="classifier:3" targetNodeId="31.~IClassPathItem" resolveInfo="IClassPathItem" />
           </node>
         </node>
       </node>
