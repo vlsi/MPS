@@ -22,6 +22,7 @@ import java.util.Comparator;
 import java.text.Collator;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.util.Constants;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
@@ -166,7 +167,11 @@ with_meet:
     );
 
     if ((lCType != null) && (rFType != null)) {
-      if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(lCType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.closures.structure.FunctionType"), true), "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType") || ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true), "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})).isEmpty())) {
+      if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(lCType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.closures.structure.FunctionType"), true), "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType") || ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true), "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})).all(new IWhereFilter<SNode>() {
+        public boolean accept(SNode rs) {
+          return (SLinkOperations.getTarget(rs, "expression", true) == null);
+        }
+      }))) {
         ClosureLiteralUtil.addAdaptableClosureLiteralTarget(genContext, SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), lCType);
       } else {
         FunctionTypeUtil.addAdaptableClassifierTypeTarget(genContext, ClassifierTypeUtil.getDeclarationClassifierType(rFType), lCType);
@@ -178,7 +183,11 @@ with_meet:
       Values.PREP_DATA.set(genContext, rexpr, INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(ClassifierTypeUtil.getDeclarationClassifierType(lFType), "classifier", false)));
     } else
     if ((lFType != null) && (rFType != null)) {
-      if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(lFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType") || ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true), "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})).isEmpty())) {
+      if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") && (!(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(lFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(rFType, "resultType", true), "jetbrains.mps.baseLanguage.structure.VoidType") || ListSequence.fromList(SNodeOperations.getDescendants(SLinkOperations.getTarget(SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), "body", true), "jetbrains.mps.baseLanguage.structure.ReturnStatement", false, new String[]{})).all(new IWhereFilter<SNode>() {
+        public boolean accept(SNode rs) {
+          return (SLinkOperations.getTarget(rs, "expression", true) == null);
+        }
+      }))) {
         ClosureLiteralUtil.addAdaptableClosureLiteralTarget(genContext, SNodeOperations.cast(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral"), ClassifierTypeUtil.getClassifierType(lFType, SLinkOperations.getTargets(rFType, "parameterType", true)));
       } else if (SNodeOperations.isInstanceOf(rexpr, "jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral") || ListSequence.fromList(SLinkOperations.getTargets(lFType, "throwsType", true)).count() != ListSequence.fromList(SLinkOperations.getTargets(rFType, "throwsType", true)).count()) {
         FunctionTypeUtil.addAdaptableClassifierTypeTarget(genContext, ClassifierTypeUtil.getDeclarationClassifierType(rFType), ClassifierTypeUtil.getDeclarationClassifierType(lFType));
