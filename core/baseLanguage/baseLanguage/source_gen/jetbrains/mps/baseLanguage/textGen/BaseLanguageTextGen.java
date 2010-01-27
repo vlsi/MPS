@@ -141,7 +141,11 @@ public abstract class BaseLanguageTextGen {
     }
     if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Interface") && ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true)).isNotEmpty()) {
       for (SNode interface1 : SLinkOperations.getTargets(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true)) {
-        BaseLanguageTextGen.extendedInterface(SNodeOperations.cast(SLinkOperations.getTarget(interface1, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"), textGen);
+        if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(interface1, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface")) {
+          BaseLanguageTextGen.extendedInterface(SNodeOperations.cast(SLinkOperations.getTarget(interface1, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"), textGen);
+        } else {
+          textGen.foundError("Collection of extended interfaces can't be contains other Classifier Types except Interface");
+        }
       }
     } else if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       BaseLanguageTextGen.implementedInterface(cls, textGen);

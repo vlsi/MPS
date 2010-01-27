@@ -12,6 +12,6 @@ public class StaticFieldReference_TextGen extends SNodeTextGen {
     BaseLanguageTextGen.importPart(SLinkOperations.getTarget(node, "classifier", false), this);
     this.append(this.getReferentPresentation(SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "classifier")), true));
     this.append(".");
-    this.append(this.getReferentResolveInfoOrName("variableDeclaration", SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference")));
+    this.append(this.getReferentPresentation(SNodeOperations.getReference(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference"), SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", "variableDeclaration")), false));
   }
 }
