@@ -19,12 +19,15 @@ import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
 import com.intellij.openapi.fileEditor.FileEditorManagerListener;
+import com.intellij.openapi.fileEditor.FileEditorManagerListener.Before;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class EditorsProvider {
@@ -36,10 +39,12 @@ public class EditorsProvider {
 
   private final Object myLock = new Object();
 
+  private MessageBusConnection myMessageBusConnection;
+
   public EditorsProvider(Project project) {
     myProject = project;
-    FileEditorManager manager = FileEditorManager.getInstance(project);
-    manager.addFileEditorManagerListener(new FileEditorManagerListener() {
+
+    FileEditorManagerListener editorManagerListener = new FileEditorManagerListener() {
       public void fileOpened(FileEditorManager source, VirtualFile file) {
         updateInformation();
         FileEditor selectedEditor = source.getSelectedEditor(file);
@@ -51,15 +56,36 @@ public class EditorsProvider {
 
       public void fileClosed(FileEditorManager source, VirtualFile file) {
         updateInformation();
+        /*
+        FileEditor selectedEditor = source.getSelectedEditor(file);
+        dumpFileEditors(source.getAllEditors());
+        if (selectedEditor instanceof MPSFileNodeEditor) {
+          MPSFileNodeEditor editor = (MPSFileNodeEditor) selectedEditor;
+          fireEditorClosed(editor.getNodeEditor());
+        }
+        */
+      }
+
+      public void selectionChanged(FileEditorManagerEvent event) {
+        updateInformation();
+      }
+    };
+
+    myMessageBusConnection = myProject.getMessageBus().connect();
+    myMessageBusConnection.subscribe(FileEditorManagerListener.FILE_EDITOR_MANAGER, editorManagerListener);
+    myMessageBusConnection.subscribe(FileEditorManagerListener.Before.FILE_EDITOR_MANAGER, new Before() {
+      @Override
+      public void beforeFileOpened(FileEditorManager source, VirtualFile file) {
+      }
+
+      @Override
+      public void beforeFileClosed(FileEditorManager source, VirtualFile file) {
+        updateInformation();
         FileEditor selectedEditor = source.getSelectedEditor(file);
         if (selectedEditor instanceof MPSFileNodeEditor) {
           MPSFileNodeEditor editor = (MPSFileNodeEditor) selectedEditor;
           fireEditorClosed(editor.getNodeEditor());
         }
-      }
-
-      public void selectionChanged(FileEditorManagerEvent event) {
-        updateInformation();
       }
     });
   }
