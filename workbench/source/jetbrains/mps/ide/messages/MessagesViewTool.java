@@ -25,6 +25,7 @@ import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.ui.content.MessageView;
 import com.intellij.ui.content.ContentManager;
+import com.intellij.ui.content.Content;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.MessageViewLoggingHandler;
@@ -43,6 +44,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.tools.BaseProjectTool;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.EqualUtil;
 
 import javax.swing.*;
 import java.awt.BorderLayout;
@@ -500,7 +502,10 @@ public class MessagesViewTool extends BaseProjectTool implements PersistentState
 
   private void updateHeader() {
     if (getToolWindow() == null) return;
-    if (!getToolWindow().getContentManager().getSelectedContent().getComponent().equals(myComponent)) return;
+    if (getContentManager() == null) return;
+    Content content = getContentManager().getSelectedContent();
+    if (content == null) return;
+    if (!EqualUtil.equals(content.getComponent(), myComponent)) return;
     if (hasErrors() || hasWarnings() || hasInfo()) {
       getToolWindow().setTitle(NameUtil.formatNumericalString(myErrors, "error") + "/"
         + NameUtil.formatNumericalString(myWarnings, "warning") + "/"
