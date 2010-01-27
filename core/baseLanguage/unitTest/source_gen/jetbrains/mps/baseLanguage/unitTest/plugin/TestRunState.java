@@ -113,8 +113,8 @@ public class TestRunState {
 
   public void endTest() {
     synchronized (lock) {
-      this.updateView();
       this.completedTests++;
+      this.updateView();
       this.curClass = null;
       this.curMethod = null;
     }
