@@ -42,8 +42,8 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
             typeCheckingContext.createEquation((SNode) typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1186145352982", true), _info_12389875345);
           }
           {
-            final SNode _representatorVar0 = typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005);
-            typeCheckingContext.whenConcrete(_representatorVar0, new Runnable() {
+            final SNode _representatorVar2556_0 = typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005);
+            typeCheckingContext.whenConcrete(_representatorVar2556_0, new Runnable() {
               public void run() {
                 SNode targetType = FeatureUtil.getTargetType(SLinkOperations.getTarget(op, "usedFeature", false), SLinkOperations.getTarget(SNodeOperations.cast(typeCheckingContext.getEquationManager().getRepresentator(SourceType_typevar_1186145333005), "jetbrains.mps.ypath.structure.TreePathType"), "nodeType", true), ParameterWrapper_Behavior.call_getParameterValue_1213877312166(SLinkOperations.getTarget(op, "paramObject", true)));
                 if (!((targetType != null))) {
