@@ -19,21 +19,21 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
 
   public void applyRule(final SNode variableArityType, final TypeCheckingContext typeCheckingContext) {
     do {
-      SNode matchedNode_2 = SNodeOperations.getParent(variableArityType);
+      SNode matchedNode_2444_0 = SNodeOperations.getParent(variableArityType);
       {
-        boolean matches_2 = false;
+        boolean matches_2444_0 = false;
         {
-          SNode matchingNode_2 = SNodeOperations.getParent(variableArityType);
-          if (matchingNode_2 != null) {
-            matches_2 = SModelUtil_new.isAssignableConcept(matchingNode_2.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+          SNode matchingNode_2444_0 = SNodeOperations.getParent(variableArityType);
+          if (matchingNode_2444_0 != null) {
+            matches_2444_0 = SModelUtil_new.isAssignableConcept(matchingNode_2444_0.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
           }
         }
-        if (matches_2) {
-          if ((SNodeOperations.getNextSibling(matchedNode_2) != null)) {
+        if (matches_2444_0) {
+          if ((SNodeOperations.getNextSibling(matchedNode_2444_0) != null)) {
             {
               BaseIntentionProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();
-              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(matchedNode_2, "parameter of variable arity must be a last one", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219921711936", intentionProvider, errorTarget);
+              IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(matchedNode_2444_0, "parameter of variable arity must be a last one", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219921711936", intentionProvider, errorTarget);
             }
           }
           break;

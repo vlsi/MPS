@@ -88,12 +88,12 @@ public class ClassifierType_Behavior {
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     if (SNodeOperations.isInstanceOf(t, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
       do {
-        SNode matchedNode_0 = thisNode;
+        SNode matchedNode_3370_0 = thisNode;
         {
-          boolean matches_0 = false;
-          GeneratedMatchingPattern matchingPattern = new ClassifierType_Behavior.Pattern_0();
-          matches_0 = matchingPattern.match(matchedNode_0);
-          if (matches_0) {
+          boolean matches_3370_0 = false;
+          GeneratedMatchingPattern matchingPattern = new ClassifierType_Behavior.Pattern_3370_0();
+          matches_3370_0 = matchingPattern.match(matchedNode_3370_0);
+          if (matches_3370_0) {
             return true;
           }
         }
@@ -101,13 +101,13 @@ public class ClassifierType_Behavior {
       } while(false);
     }
     {
-      GeneratedMatchingPattern pattern_0 = new ClassifierType_Behavior.Pattern_1(SLinkOperations.getTarget(thisNode, "classifier", false));
-      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_0);
-      if (coercedNode_0 != null) {
+      GeneratedMatchingPattern pattern_3370_0 = new ClassifierType_Behavior.Pattern_3370_1(SLinkOperations.getTarget(thisNode, "classifier", false));
+      SNode coercedNode_3370_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_3370_0);
+      if (coercedNode_3370_0 != null) {
         {
           SNode typeParam;
           SNode myParam;
-          Iterator<SNode> typeParam_iterator = ListSequence.fromList(((List<SNode>) pattern_0.getFieldValue("PatternVar_l"))).iterator();
+          Iterator<SNode> typeParam_iterator = ListSequence.fromList(((List<SNode>) pattern_3370_0.getFieldValue("PatternVar_l"))).iterator();
           Iterator<SNode> myParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true)).iterator();
           while (true) {
             if (!(typeParam_iterator.hasNext())) {
@@ -170,8 +170,8 @@ public class ClassifierType_Behavior {
     }
   }
 
-  public static class Pattern_0 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_0() {
+  public static class Pattern_3370_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_3370_0() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -204,13 +204,13 @@ public class ClassifierType_Behavior {
     }
   }
 
-  public static class Pattern_1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_3370_1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> PatternVar_l;
     /*package*/ SNode PatternVar_ignored;
-    /*package*/ Object AntiquotationField0;
+    /*package*/ Object AntiquotationField3370_0;
 
-    public Pattern_1(Object parameter_3370_0) {
-      this.AntiquotationField0 = parameter_3370_0;
+    public Pattern_3370_1(Object parameter_3370_0) {
+      this.AntiquotationField3370_0 = parameter_3370_0;
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -222,7 +222,7 @@ public class ClassifierType_Behavior {
         }
         {
           SNode referent;
-          referent = (SNode) this.AntiquotationField0;
+          referent = (SNode) this.AntiquotationField3370_0;
           if (nodeToMatch_3370_1.getReferent("classifier") != referent) {
             return false;
           }

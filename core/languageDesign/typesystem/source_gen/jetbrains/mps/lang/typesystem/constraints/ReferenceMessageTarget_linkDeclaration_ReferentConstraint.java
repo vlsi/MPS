@@ -36,10 +36,10 @@ public class ReferenceMessageTarget_linkDeclaration_ReferentConstraint extends B
     }
     SNode nodetype = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(messageStatement, "nodeToReport", true));
     {
-      IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType");
-      SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(nodetype, pattern_1);
-      if (coercedNode_1 != null) {
-        return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(coercedNode_1, "concept", false));
+      IMatchingPattern pattern_6516_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeType");
+      SNode coercedNode_6516_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(nodetype, pattern_6516_0);
+      if (coercedNode_6516_0 != null) {
+        return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(coercedNode_6516_0, "concept", false));
       } else {
         return Sequence.fromIterable(Collections.<SNode>emptyList());
       }

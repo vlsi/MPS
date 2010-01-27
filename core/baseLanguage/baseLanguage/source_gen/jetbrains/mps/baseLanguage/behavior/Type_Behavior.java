@@ -83,10 +83,10 @@ public class Type_Behavior {
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
     {
-      IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
-      SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, pattern_1);
-      if (coercedNode_1 != null) {
-        return new Type_Behavior.QuotationClass_8537_0().createNode(SLinkOperations.getTarget(coercedNode_1, "classifier", false));
+      IMatchingPattern pattern_8537_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SNode coercedNode_8537_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(thisNode, pattern_8537_0);
+      if (coercedNode_8537_0 != null) {
+        return new Type_Behavior.QuotationClass_8537_0().createNode(SLinkOperations.getTarget(coercedNode_8537_0, "classifier", false));
       } else {
         throw new UnsupportedOperationException();
       }
@@ -95,9 +95,9 @@ public class Type_Behavior {
 
   public static boolean virtual_isSupersetOf_1220438914705(SNode thisNode, SNode t) {
     {
-      GeneratedMatchingPattern pattern_2 = new Type_Behavior.Pattern_2(thisNode);
-      SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_2);
-      if (coercedNode_2 != null) {
+      GeneratedMatchingPattern pattern_8537_1 = new Type_Behavior.Pattern_8537_0(thisNode);
+      SNode coercedNode_8537_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_8537_1);
+      if (coercedNode_8537_1 != null) {
         return true;
       } else {
       }
@@ -227,11 +227,11 @@ public class Type_Behavior {
     }
   }
 
-  public static class Pattern_2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    /*package*/ Object AntiquotationField1;
+  public static class Pattern_8537_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ Object AntiquotationField8537_0;
 
-    public Pattern_2(Object parameter_8537_0) {
-      this.AntiquotationField1 = parameter_8537_0;
+    public Pattern_8537_0(Object parameter_8537_0) {
+      this.AntiquotationField8537_0 = parameter_8537_0;
     }
 
     public boolean match(SNode nodeToMatch) {

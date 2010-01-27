@@ -23,17 +23,17 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
       SNode classifier = SNodeOperations.getAncestor(method, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       if (!(SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.EnumClass"))) {
         do {
-          SNode matchedNode_3 = classifier;
+          SNode matchedNode_2070_0 = classifier;
           {
-            boolean matches_3 = false;
+            boolean matches_2070_0 = false;
             {
-              SNode matchingNode_3 = classifier;
-              if (matchingNode_3 != null) {
-                matches_3 = SModelUtil_new.isAssignableConcept(matchingNode_3.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+              SNode matchingNode_2070_0 = classifier;
+              if (matchingNode_2070_0 != null) {
+                matches_2070_0 = SModelUtil_new.isAssignableConcept(matchingNode_2070_0.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
               }
             }
-            if (matches_3) {
-              if ((matchedNode_3 != null) && !(SPropertyOperations.getBoolean(matchedNode_3, "abstractClass"))) {
+            if (matches_2070_0) {
+              if ((matchedNode_2070_0 != null) && !(SPropertyOperations.getBoolean(matchedNode_2070_0, "abstractClass"))) {
                 {
                   BaseIntentionProvider intentionProvider = null;
                   IErrorTarget errorTarget = new NodeErrorTarget();

@@ -23,21 +23,21 @@ public class typeOf_VarRef_InferenceRule extends AbstractInferenceRule_Runtime i
 
   public void applyRule(final SNode varRef, final TypeCheckingContext typeCheckingContext) {
     do {
-      SNode matchedNode_0 = SLinkOperations.getTarget(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "type", true);
+      SNode matchedNode_1014_0 = SLinkOperations.getTarget(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "type", true);
       {
-        boolean matches_0 = false;
+        boolean matches_1014_0 = false;
         {
-          SNode matchingNode_0 = SLinkOperations.getTarget(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "type", true);
-          if (matchingNode_0 != null) {
-            matches_0 = SModelUtil_new.isAssignableConcept(matchingNode_0.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
+          SNode matchingNode_1014_0 = SLinkOperations.getTarget(SLinkOperations.getTarget(varRef, "variableDeclaration", false), "type", true);
+          if (matchingNode_1014_0 != null) {
+            matches_1014_0 = SModelUtil_new.isAssignableConcept(matchingNode_1014_0.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
           }
         }
-        if (matches_0) {
+        if (matches_1014_0) {
           {
             SNode _nodeToCheck_1029348928467 = varRef;
             BaseIntentionProvider intentionProvider = null;
             EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923263526", 0, intentionProvider);
-            typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923238086", true), (SNode) new typeOf_VarRef_InferenceRule.QuotationClass_0992_0().createNode(SLinkOperations.getTarget(matchedNode_0, "componentType", true), typeCheckingContext), _info_12389875345);
+            typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1219923238086", true), (SNode) new typeOf_VarRef_InferenceRule.QuotationClass_0992_0().createNode(SLinkOperations.getTarget(matchedNode_1014_0, "componentType", true), typeCheckingContext), _info_12389875345);
           }
           break;
         }

@@ -119,7 +119,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_412500033819201005(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("AntiquotationField", null);
+    return _context.createUniqueName("AntiquotationField", _context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_412500033819201041(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -133,10 +133,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_412500033819201168(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return PatternVarsUtil.getFieldName(_context.getNode());
-  }
-
-  public static Object propertyMacro_GetPropertyValue_412500033819201222(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("Pattern_", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_3444116434173864874(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -33,13 +33,13 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
       typeCheckingContext.whenConcrete(t, new Runnable() {
         public void run() {
           {
-            GeneratedMatchingPattern pattern_1 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_12(SLinkOperations.getTarget(supertype, "classifier", false));
-            SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(t), pattern_1, typeCheckingContext);
-            if (coercedNode_1 != null) {
+            GeneratedMatchingPattern pattern_9891_0 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_9163_1(SLinkOperations.getTarget(supertype, "classifier", false));
+            SNode coercedNode_9891_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(typeCheckingContext.getEquationManager().getRepresentator(t), pattern_9891_0, typeCheckingContext);
+            if (coercedNode_9891_0 != null) {
               {
                 SNode typeParam;
                 SNode myParam;
-                Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_1, "parameter", true)).iterator();
+                Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_9891_0, "parameter", true)).iterator();
                 Iterator<SNode> myParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
                 while (true) {
                   if (!(typeParam_iterator.hasNext())) {
@@ -114,13 +114,13 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     {
       final SNode t = subtype;
       {
-        GeneratedMatchingPattern pattern_2 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_12(SLinkOperations.getTarget(supertype, "classifier", false));
-        SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_2);
-        if (coercedNode_2 != null) {
+        GeneratedMatchingPattern pattern_9891_1 = new subtypesOfClassifierTypeWWildcards_InequationReplacementRule.Pattern_9163_1(SLinkOperations.getTarget(supertype, "classifier", false));
+        SNode coercedNode_9891_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(t, pattern_9891_1);
+        if (coercedNode_9891_1 != null) {
           {
             SNode typeParam;
             SNode myParam;
-            Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_2, "parameter", true)).iterator();
+            Iterator<SNode> typeParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(coercedNode_9891_1, "parameter", true)).iterator();
             Iterator<SNode> myParam_iterator = ListSequence.fromList(SLinkOperations.getTargets(supertype, "parameter", true)).iterator();
             while (true) {
               if (!(typeParam_iterator.hasNext())) {
@@ -182,13 +182,13 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
 
-  public static class Pattern_11 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_9163_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> PatternVar_l;
     /*package*/ SNode PatternVar_ignored;
-    /*package*/ Object AntiquotationField0;
+    /*package*/ Object AntiquotationField9891_0;
 
-    public Pattern_11(Object parameter_9891_0) {
-      this.AntiquotationField0 = parameter_9891_0;
+    public Pattern_9163_0(Object parameter_9891_0) {
+      this.AntiquotationField9891_0 = parameter_9891_0;
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -200,7 +200,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
         }
         {
           SNode referent;
-          referent = (SNode) this.AntiquotationField0;
+          referent = (SNode) this.AntiquotationField9891_0;
           if (nodeToMatch_9891_0.getReferent("classifier") != referent) {
             return false;
           }
@@ -240,13 +240,13 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
     }
   }
 
-  public static class Pattern_12 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_9163_1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> PatternVar_l;
     /*package*/ SNode PatternVar_ignored;
-    /*package*/ Object AntiquotationField1;
+    /*package*/ Object AntiquotationField9891_1;
 
-    public Pattern_12(Object parameter_9891_1) {
-      this.AntiquotationField1 = parameter_9891_1;
+    public Pattern_9163_1(Object parameter_9891_1) {
+      this.AntiquotationField9891_1 = parameter_9891_1;
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -258,7 +258,7 @@ public class subtypesOfClassifierTypeWWildcards_InequationReplacementRule extend
         }
         {
           SNode referent;
-          referent = (SNode) this.AntiquotationField1;
+          referent = (SNode) this.AntiquotationField9891_1;
           if (nodeToMatch_9891_1.getReferent("classifier") != referent) {
             return false;
           }

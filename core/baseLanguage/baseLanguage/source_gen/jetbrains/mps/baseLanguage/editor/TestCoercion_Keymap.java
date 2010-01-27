@@ -83,9 +83,9 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
       }
       {
         text = text + "\n\ncoerce to Iterable<..>";
-        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new TestCoercion_Keymap.TestCoercion_Keymap_Action0.Pattern_0(), true);
+        SNode coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new TestCoercion_Keymap.TestCoercion_Keymap_Action0.Pattern_3548_0(), true);
         text = text + "\nweak  : " + coercedType;
-        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new TestCoercion_Keymap.TestCoercion_Keymap_Action0.Pattern_1(), false);
+        coercedType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, new TestCoercion_Keymap.TestCoercion_Keymap_Action0.Pattern_3548_1(), false);
         text = text + "\nstrong: " + coercedType;
       }
       {
@@ -102,8 +102,8 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
       return "ctrl alt shift T";
     }
 
-    public static class Pattern_0 extends GeneratedMatchingPattern implements IMatchingPattern {
-      public Pattern_0() {
+    public static class Pattern_3548_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+      public Pattern_3548_0() {
       }
 
       public boolean match(SNode nodeToMatch) {
@@ -136,8 +136,8 @@ public class TestCoercion_Keymap extends EditorCellKeyMap {
       }
     }
 
-    public static class Pattern_1 extends GeneratedMatchingPattern implements IMatchingPattern {
-      public Pattern_1() {
+    public static class Pattern_3548_1 extends GeneratedMatchingPattern implements IMatchingPattern {
+      public Pattern_3548_1() {
       }
 
       public boolean match(SNode nodeToMatch) {

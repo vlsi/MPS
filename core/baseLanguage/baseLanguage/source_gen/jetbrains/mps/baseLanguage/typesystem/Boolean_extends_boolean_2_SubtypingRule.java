@@ -32,7 +32,7 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new Boolean_extends_boolean_2_SubtypingRule.Pattern_0();
+    this.myMatchingPattern = new Boolean_extends_boolean_2_SubtypingRule.Pattern_9314_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -40,8 +40,8 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
     return true;
   }
 
-  public static class Pattern_0 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_0() {
+  public static class Pattern_9314_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_9314_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

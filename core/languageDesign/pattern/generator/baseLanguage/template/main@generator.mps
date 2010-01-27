@@ -4283,6 +4283,7 @@
     <property name="name:2" value="PatternExpressionToExpression" />
     <link role="applicableConcept:2" targetNodeId="1.1136720037777:0" resolveInfo="PatternExpression" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression:1" id="412500033819200806">
+      <property name="makeUnique:1" value="true" />
       <node role="inner:1" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="412500033819201340">
         <node role="creator:3" type="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassCreator:1" id="412500033819225507">
           <link role="baseMethodDeclaration:1" targetNodeId="412500033819200815" resolveInfo="_pattern_class_" />
@@ -4374,7 +4375,7 @@
         </node>
       </node>
       <node role="innerClass:1" type="jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept:1" id="412500033819200814">
-        <property name="name:1" value="_pattern_class_" />
+        <property name="name:1" value="Pattern_" />
         <node role="constructor:1" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="412500033819200815">
           <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.Type:3" id="412500033819200816" />
           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="412500033819200817">
@@ -4782,6 +4783,7 @@
                       <node role="baseName:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="412500033819201011">
                         <property name="value:3" value="AntiquotationField" />
                       </node>
+                      <node role="contextNode:0" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="7289340362175201217" />
                     </node>
                   </node>
                 </node>
@@ -5322,22 +5324,6 @@
             </node>
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="412500033819201219">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="412500033819201220" />
-            </node>
-          </node>
-        </node>
-        <node role="propertyMacro$property_attribute$name:1" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="412500033819201221">
-          <node role="propertyValueFunction:2" type="jetbrains.mps.lang.generator.structure.PropertyMacro_GetPropertyValue:2" id="412500033819201222">
-            <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="412500033819201223">
-              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="412500033819201224">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="412500033819201225">
-                  <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="412500033819201226" />
-                  <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName:0" id="412500033819201227">
-                    <node role="baseName:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="412500033819201228">
-                      <property name="value:3" value="Pattern_" />
-                    </node>
-                  </node>
-                </node>
-              </node>
             </node>
           </node>
         </node>

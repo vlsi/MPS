@@ -23,31 +23,31 @@ public class check_UnusedPrivateMethods_NonTypesystemRule extends AbstractNonTyp
   public void applyRule(final SNode classifierMember, final TypeCheckingContext typeCheckingContext) {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(classifierMember, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) {
       do {
-        final SNode matchedNode_5 = classifierMember;
+        final SNode matchedNode_6708_0 = classifierMember;
         {
-          boolean matches_6 = false;
+          boolean matches_6708_0 = false;
           {
-            SNode matchingNode_6 = classifierMember;
-            if (matchingNode_6 != null) {
-              matches_6 = SModelUtil_new.isAssignableConcept(matchingNode_6.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
+            SNode matchingNode_6708_0 = classifierMember;
+            if (matchingNode_6708_0 != null) {
+              matches_6708_0 = SModelUtil_new.isAssignableConcept(matchingNode_6708_0.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
             }
           }
-          if (matches_6) {
+          if (matches_6708_0) {
             {
-              SNode topClassifier = SNodeOperations.getAncestor(matchedNode_5, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
+              SNode topClassifier = SNodeOperations.getAncestor(matchedNode_6708_0, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
               if (topClassifier != null) {
                 while (SNodeOperations.getAncestor(topClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false) != null) {
                   topClassifier = SNodeOperations.getAncestor(topClassifier, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
                 }
                 if (!(ListSequence.fromList(SNodeOperations.getDescendants(topClassifier, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})).any(new IWhereFilter<SNode>() {
                   public boolean accept(SNode call) {
-                    return SLinkOperations.getTarget(call, "baseMethodDeclaration", false) == matchedNode_5;
+                    return SLinkOperations.getTarget(call, "baseMethodDeclaration", false) == matchedNode_6708_0;
                   }
                 }))) {
                   {
                     BaseIntentionProvider intentionProvider = null;
                     IErrorTarget errorTarget = new NodeErrorTarget();
-                    IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(matchedNode_5, "Private method " + matchedNode_5 + " is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8101436443850399677", intentionProvider, errorTarget);
+                    IErrorReporter _reporter_2309309498 = typeCheckingContext.reportWarning(matchedNode_6708_0, "Private method " + matchedNode_6708_0 + " is never used", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8101436443850399677", intentionProvider, errorTarget);
                   }
                 }
               }

@@ -299,18 +299,18 @@ __switch__:
         }
       }
       do {
-        SNode matchedNode_6 = SLinkOperations.getTarget(formalParam, "type", true);
+        SNode matchedNode_6596_0 = SLinkOperations.getTarget(formalParam, "type", true);
         {
-          boolean matches_7 = false;
+          boolean matches_6596_0 = false;
           {
-            SNode matchingNode_7 = SLinkOperations.getTarget(formalParam, "type", true);
-            if (matchingNode_7 != null) {
-              matches_7 = SModelUtil_new.isAssignableConcept(matchingNode_7.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
+            SNode matchingNode_6596_0 = SLinkOperations.getTarget(formalParam, "type", true);
+            if (matchingNode_6596_0 != null) {
+              matches_6596_0 = SModelUtil_new.isAssignableConcept(matchingNode_6596_0.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableArityType");
             }
           }
-          if (matches_7) {
+          if (matches_6596_0) {
             {
-              SNode componentType = SLinkOperations.getTarget(matchedNode_6, "componentType", true);
+              SNode componentType = SLinkOperations.getTarget(matchedNode_6596_0, "componentType", true);
               final SNode matchedType = inference_matchTypeWithTypeVariables(typeCheckingContext, componentType, mmap);
               if (ListSequence.fromList(SLinkOperations.getTargets(mc, "actualArgument", true)).count() == ListSequence.fromList(parameterDeclarations).count()) {
                 // the actual parameter may appear to be an array instead of vararg 
@@ -511,17 +511,17 @@ __switch__:
     }
     if ((prevStatementList != null)) {
       do {
-        SNode matchedNode_7 = SNodeOperations.getParent(prevStatementList);
+        SNode matchedNode_6596_1 = SNodeOperations.getParent(prevStatementList);
         {
-          boolean matches_8 = false;
+          boolean matches_6596_1 = false;
           {
-            SNode matchingNode_8 = SNodeOperations.getParent(prevStatementList);
-            if (matchingNode_8 != null) {
-              matches_8 = SModelUtil_new.isAssignableConcept(matchingNode_8.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+            SNode matchingNode_6596_1 = SNodeOperations.getParent(prevStatementList);
+            if (matchingNode_6596_1 != null) {
+              matches_6596_1 = SModelUtil_new.isAssignableConcept(matchingNode_6596_1.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
             }
           }
-          if (matches_8) {
-            return SLinkOperations.getTarget(matchedNode_7, "staticInitializer", true) == prevStatementList;
+          if (matches_6596_1) {
+            return SLinkOperations.getTarget(matchedNode_6596_1, "staticInitializer", true) == prevStatementList;
           }
         }
       } while(false);

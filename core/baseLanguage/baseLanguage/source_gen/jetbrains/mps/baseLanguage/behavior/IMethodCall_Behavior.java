@@ -57,15 +57,15 @@ public class IMethodCall_Behavior {
         }
         SNode methodClassifier = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
         {
-          GeneratedMatchingPattern pattern_3 = new IMethodCall_Behavior.Pattern_3(methodClassifier);
-          SNode coercedNode_3 = TypeChecker.getInstance().getRuntimeSupport().coerce_(instanceType, pattern_3);
-          if (coercedNode_3 != null) {
+          GeneratedMatchingPattern pattern_5753_0 = new IMethodCall_Behavior.Pattern_5753_0(methodClassifier);
+          SNode coercedNode_5753_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(instanceType, pattern_5753_0);
+          if (coercedNode_5753_0 != null) {
             SNode resultType;
             if (SNodeOperations.isInstanceOf(rawType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference")) {
-              resultType = IMethodCall_Behavior.call_getConcreteType_8008512149545161843(thisNode, SNodeOperations.cast(rawType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), coercedNode_3, methodClassifier);
+              resultType = IMethodCall_Behavior.call_getConcreteType_8008512149545161843(thisNode, SNodeOperations.cast(rawType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference"), coercedNode_5753_0, methodClassifier);
             } else {
               for (SNode typeVariableReference : SNodeOperations.getDescendants(rawType, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})) {
-                SNode concreteType = IMethodCall_Behavior.call_getConcreteType_8008512149545161843(thisNode, typeVariableReference, coercedNode_3, methodClassifier);
+                SNode concreteType = IMethodCall_Behavior.call_getConcreteType_8008512149545161843(thisNode, typeVariableReference, coercedNode_5753_0, methodClassifier);
                 SNodeOperations.replaceWithAnother(typeVariableReference, concreteType);
               }
               resultType = rawType;
@@ -144,13 +144,13 @@ public class IMethodCall_Behavior {
     return (List<SNode>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.IMethodCall"), callerConceptFqName, "virtual_getAvailableMethodDeclarations_5776618742611315379", PARAMETERS_5776618742611315379, methodName);
   }
 
-  public static class Pattern_3 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_5753_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ List<SNode> PatternVar_param;
     /*package*/ SNode PatternVar_ignore;
-    /*package*/ Object AntiquotationField2;
+    /*package*/ Object AntiquotationField5753_0;
 
-    public Pattern_3(Object parameter_5753_0) {
-      this.AntiquotationField2 = parameter_5753_0;
+    public Pattern_5753_0(Object parameter_5753_0) {
+      this.AntiquotationField5753_0 = parameter_5753_0;
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -162,7 +162,7 @@ public class IMethodCall_Behavior {
         }
         {
           SNode referent;
-          referent = (SNode) this.AntiquotationField2;
+          referent = (SNode) this.AntiquotationField5753_0;
           if (nodeToMatch_5753_0.getReferent("classifier") != referent) {
             return false;
           }

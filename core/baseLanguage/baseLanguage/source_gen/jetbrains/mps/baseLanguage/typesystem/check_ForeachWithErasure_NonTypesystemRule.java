@@ -37,9 +37,9 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
       return;
     }
     {
-      GeneratedMatchingPattern pattern_0 = new check_ForeachWithErasure_NonTypesystemRule.Pattern_10();
-      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(iterableType, pattern_0, typeCheckingContext);
-      if (coercedNode_0 != null) {
+      GeneratedMatchingPattern pattern_3248_0 = new check_ForeachWithErasure_NonTypesystemRule.Pattern_9843_0();
+      SNode coercedNode_3248_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(iterableType, pattern_3248_0, typeCheckingContext);
+      if (coercedNode_3248_0 != null) {
       } else {
         // not an iterable or an erasure 
         if (!(MatchingUtil.matchNodes(SLinkOperations.getTarget(SLinkOperations.getTarget(foreachStatement, "variable", true), "type", true), new check_ForeachWithErasure_NonTypesystemRule.QuotationClass_9843_0().createNode(typeCheckingContext)))) {
@@ -65,10 +65,10 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
     return false;
   }
 
-  public static class Pattern_10 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_9843_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_p;
 
-    public Pattern_10() {
+    public Pattern_9843_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

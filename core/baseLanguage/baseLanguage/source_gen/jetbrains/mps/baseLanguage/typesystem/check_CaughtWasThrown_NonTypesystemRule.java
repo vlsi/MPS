@@ -37,30 +37,30 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
       } else {
         Set<SNode> thrown = SetSequence.fromSet(new HashSet<SNode>());
         do {
-          SNode matchedNode_4 = SNodeOperations.getParent(catchClause);
+          SNode matchedNode_5614_0 = SNodeOperations.getParent(catchClause);
           {
-            boolean matches_4 = false;
+            boolean matches_5614_0 = false;
             {
-              SNode matchingNode_4 = SNodeOperations.getParent(catchClause);
-              if (matchingNode_4 != null) {
-                matches_4 = SModelUtil_new.isAssignableConcept(matchingNode_4.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
+              SNode matchingNode_5614_0 = SNodeOperations.getParent(catchClause);
+              if (matchingNode_5614_0 != null) {
+                matches_5614_0 = SModelUtil_new.isAssignableConcept(matchingNode_5614_0.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.TryCatchStatement");
               }
             }
-            if (matches_4) {
-              thrown = StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(matchedNode_4, "body", true), false);
+            if (matches_5614_0) {
+              thrown = StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(matchedNode_5614_0, "body", true), false);
               break;
             }
           }
           {
-            boolean matches_5 = false;
+            boolean matches_5614_1 = false;
             {
-              SNode matchingNode_5 = SNodeOperations.getParent(catchClause);
-              if (matchingNode_5 != null) {
-                matches_5 = SModelUtil_new.isAssignableConcept(matchingNode_5.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.TryStatement");
+              SNode matchingNode_5614_1 = SNodeOperations.getParent(catchClause);
+              if (matchingNode_5614_1 != null) {
+                matches_5614_1 = SModelUtil_new.isAssignableConcept(matchingNode_5614_1.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.TryStatement");
               }
             }
-            if (matches_5) {
-              thrown = StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(matchedNode_4, "body", true), false);
+            if (matches_5614_1) {
+              thrown = StatementList_Behavior.call_uncaughtThrowables_3331512479731115649(SLinkOperations.getTarget(matchedNode_5614_0, "body", true), false);
               break;
             }
           }

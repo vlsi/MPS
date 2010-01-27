@@ -38,7 +38,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new ObjectArraySupertypes_SubtypingRule.Pattern_8();
+    this.myMatchingPattern = new ObjectArraySupertypes_SubtypingRule.Pattern_1228_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -46,8 +46,8 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
     return false;
   }
 
-  public static class Pattern_8 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_8() {
+  public static class Pattern_1228_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_1228_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

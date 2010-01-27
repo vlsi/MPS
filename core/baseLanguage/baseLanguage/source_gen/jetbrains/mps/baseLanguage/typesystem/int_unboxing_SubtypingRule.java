@@ -32,7 +32,7 @@ public class int_unboxing_SubtypingRule extends SubtypingRule_Runtime implements
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new int_unboxing_SubtypingRule.Pattern_5();
+    this.myMatchingPattern = new int_unboxing_SubtypingRule.Pattern_8540_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -40,8 +40,8 @@ public class int_unboxing_SubtypingRule extends SubtypingRule_Runtime implements
     return true;
   }
 
-  public static class Pattern_5 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_5() {
+  public static class Pattern_8540_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_8540_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

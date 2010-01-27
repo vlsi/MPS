@@ -32,7 +32,7 @@ public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new java_lang_String_extends_string_SubtypingRule.Pattern_9();
+    this.myMatchingPattern = new java_lang_String_extends_string_SubtypingRule.Pattern_7381_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -40,8 +40,8 @@ public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule
     return false;
   }
 
-  public static class Pattern_9 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_9() {
+  public static class Pattern_7381_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_7381_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

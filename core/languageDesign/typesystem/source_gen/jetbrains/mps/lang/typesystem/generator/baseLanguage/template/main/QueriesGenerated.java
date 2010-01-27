@@ -228,7 +228,7 @@ public class QueriesGenerated {
       SNode matchedNode_0 = type;
       {
         boolean matches_0 = false;
-        GeneratedMatchingPattern matchingPattern = new QueriesGenerated.Pattern_0();
+        GeneratedMatchingPattern matchingPattern = new QueriesGenerated.Pattern_8087_0();
         matches_0 = matchingPattern.match(matchedNode_0);
         if (matches_0) {
           return true;
@@ -236,7 +236,7 @@ public class QueriesGenerated {
       }
       {
         boolean matches_1 = false;
-        GeneratedMatchingPattern matchingPattern = new QueriesGenerated.Pattern_1();
+        GeneratedMatchingPattern matchingPattern = new QueriesGenerated.Pattern_8087_1();
         matches_1 = matchingPattern.match(matchedNode_0);
         if (matches_1) {
           return true;
@@ -347,13 +347,13 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1176815544545(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String name = _context.createUniqueName("pattern_", null);
+    String name = _context.createUniqueName("pattern_", SNodeOperations.getContainingRoot(_context.getNode()));
     _context.getNode().putUserObject("coercedPatternName", name);
     return name;
   }
 
   public static Object propertyMacro_GetPropertyValue_1176817383122(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String name = _context.createUniqueName("coercedNode_", null);
+    String name = _context.createUniqueName("coercedNode_", SNodeOperations.getContainingRoot(_context.getNode()));
     _context.getNode().putUserObject("coercedNodeName", name);
     return name;
   }
@@ -364,11 +364,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1177675756830(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("matchedNode_", null);
+    return _context.createUniqueName("matchedNode_", SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1177675835821(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("matches_", null);
+    return _context.createUniqueName("matches_", SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1178874415131(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -520,7 +520,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1205764736448(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode variableDeclaration = SLinkOperations.getTarget(_context.getNode(), "argumentRepresentator", true);
     if ((variableDeclaration == null)) {
-      return _context.createUniqueName("_representatorVar", null);
+      return _context.createUniqueName("_representatorVar", SNodeOperations.getContainingRoot(_context.getNode()));
     } else {
       return SPropertyOperations.getString(variableDeclaration, "name");
     }
@@ -604,7 +604,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1215079048829(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("matchingNode_", null);
+    return _context.createUniqueName("matchingNode_", SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1215531866925(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -674,7 +674,7 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1220519561019(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode variableDeclaration = SLinkOperations.getTarget(_context.getNode(), "argumentRepresentator", true);
     if ((variableDeclaration == null)) {
-      return _context.createUniqueName("_representatorVar", null);
+      return _context.createUniqueName("_representatorVar", SNodeOperations.getContainingRoot(_context.getNode()));
     } else {
       return SPropertyOperations.getString(variableDeclaration, "name");
     }
@@ -697,39 +697,39 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1223044050730(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("typeOf_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name") + "_Literal", null);
+    return _context.createUniqueName("typeOf_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name") + "_Literal", SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1223044091076(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("parameter_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name"), null);
+    return _context.createUniqueName("parameter_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name"), SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1223048346637(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("typeOf_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name") + "_VarRef", null);
+    return _context.createUniqueName("typeOf_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name") + "_VarRef", SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1223048506081(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("parameter_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name"), null);
+    return _context.createUniqueName("parameter_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name"), SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1223049394576(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("parameter_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name"), null);
+    return _context.createUniqueName("parameter_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name"), SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1223049420372(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("typeOf_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name") + "_Annotated", null);
+    return _context.createUniqueName("typeOf_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name") + "_Annotated", SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1223059020984(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("parameter_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name"), null);
+    return _context.createUniqueName("parameter_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name"), SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1223059021001(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("typeOf_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name") + "_ProcedureCall", null);
+    return _context.createUniqueName("typeOf_" + SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "conceptReference", true), "concept", false), "name") + "_ProcedureCall", SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1223922835693(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName(SPropertyOperations.getString(_context.getNode(), "name") + "_typevar", null);
+    return _context.createUniqueName(SPropertyOperations.getString(_context.getNode(), "name") + "_typevar", SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1223987307011(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -2853,7 +2853,7 @@ parametersLoop:
                   SNode matchedNode_7 = mc;
                   {
                     boolean matches_8 = false;
-                    GeneratedMatchingPattern matchingPattern = new QueriesGenerated.Pattern_2();
+                    GeneratedMatchingPattern matchingPattern = new QueriesGenerated.Pattern_8087_2();
                     matches_8 = matchingPattern.match(matchedNode_7);
                     if (matches_8) {
                       ListSequence.fromList(SLinkOperations.getTargets(matchedNode_7, "actualArgument", true)).addElement(new QueriesGenerated.QuotationClass_8087_32().createNode());
@@ -2890,7 +2890,7 @@ parametersLoop:
           SNode matchedNode_8 = SLinkOperations.getTarget(dotExpression, "operand", true);
           {
             boolean matches_9 = false;
-            GeneratedMatchingPattern matchingPattern = new QueriesGenerated.Pattern_3();
+            GeneratedMatchingPattern matchingPattern = new QueriesGenerated.Pattern_8087_3();
             matches_9 = matchingPattern.match(matchedNode_8);
             if (matches_9) {
               break;
@@ -2913,8 +2913,8 @@ parametersLoop:
     }
   }
 
-  public static class Pattern_0 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_0() {
+  public static class Pattern_8087_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_8087_0() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -2947,10 +2947,10 @@ parametersLoop:
     }
   }
 
-  public static class Pattern_1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_8087_1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar__;
 
-    public Pattern_1() {
+    public Pattern_8087_1() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -2983,10 +2983,10 @@ parametersLoop:
     }
   }
 
-  public static class Pattern_2 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_8087_2 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_p;
 
-    public Pattern_2() {
+    public Pattern_8087_2() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -3043,8 +3043,8 @@ parametersLoop:
     }
   }
 
-  public static class Pattern_3 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_3() {
+  public static class Pattern_8087_3 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_8087_3() {
     }
 
     public boolean match(SNode nodeToMatch) {
