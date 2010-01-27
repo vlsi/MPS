@@ -13,29 +13,29 @@ public class DefaultBaseLine_Behavior {
 
   public static boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
     do {
-      SNode matchedNode_0 = cellModel;
+      SNode matchedNode_9749_0 = cellModel;
       {
-        boolean matches_0 = false;
+        boolean matches_9749_0 = false;
         {
-          SNode matchingNode_0 = cellModel;
-          if (matchingNode_0 != null) {
-            matches_0 = SModelUtil_new.isAssignableConcept(matchingNode_0.getConceptFqName(), "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList");
+          SNode matchingNode_9749_0 = cellModel;
+          if (matchingNode_9749_0 != null) {
+            matches_9749_0 = SModelUtil_new.isAssignableConcept(matchingNode_9749_0.getConceptFqName(), "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList");
           }
         }
-        if (matches_0) {
-          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical") || (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Table"));
+        if (matches_9749_0) {
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_9749_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical") || (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_9749_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Table"));
         }
       }
       {
-        boolean matches_1 = false;
+        boolean matches_9749_1 = false;
         {
-          SNode matchingNode_1 = cellModel;
-          if (matchingNode_1 != null) {
-            matches_1 = SModelUtil_new.isAssignableConcept(matchingNode_1.getConceptFqName(), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
+          SNode matchingNode_9749_1 = cellModel;
+          if (matchingNode_9749_1 != null) {
+            matches_9749_1 = SModelUtil_new.isAssignableConcept(matchingNode_9749_1.getConceptFqName(), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
           }
         }
-        if (matches_1) {
-          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical") || (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Table"));
+        if (matches_9749_1) {
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_9749_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Vertical") || (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_9749_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Table"));
         }
       }
       return false;

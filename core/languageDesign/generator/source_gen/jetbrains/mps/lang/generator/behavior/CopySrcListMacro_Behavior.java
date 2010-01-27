@@ -15,20 +15,20 @@ public class CopySrcListMacro_Behavior {
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     SNode queryType = TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodesQuery", true));
     {
-      GeneratedMatchingPattern pattern_0 = new CopySrcListMacro_Behavior.Pattern_0();
-      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(queryType, pattern_0);
-      if (coercedNode_0 != null) {
-        return ((SNode) pattern_0.getFieldValue("PatternVar_concept"));
+      GeneratedMatchingPattern pattern_5026_0 = new CopySrcListMacro_Behavior.Pattern_5026_0();
+      SNode coercedNode_5026_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(queryType, pattern_5026_0);
+      if (coercedNode_5026_0 != null) {
+        return ((SNode) pattern_5026_0.getFieldValue("PatternVar_concept"));
       } else {
       }
     }
     return null;
   }
 
-  public static class Pattern_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_5026_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_concept;
 
-    public Pattern_0() {
+    public Pattern_5026_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

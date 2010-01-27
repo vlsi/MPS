@@ -32,7 +32,7 @@ public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends 
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule.Pattern_1();
+    this.myMatchingPattern = new supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule.Pattern_1688_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -40,8 +40,8 @@ public class supertypesOf_ClassifierTypeSModel_SModelType_SubtypingRule extends 
     return true;
   }
 
-  public static class Pattern_1 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_1() {
+  public static class Pattern_1688_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_1688_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

@@ -21,17 +21,17 @@ public class check_Antiquotation_NonTypesystemRule extends AbstractNonTypesystem
   public void applyRule(final SNode antiquotation, final TypeCheckingContext typeCheckingContext) {
     SNode annotatedNode = SNodeOperations.getParent(antiquotation);
     do {
-      SNode matchedNode_0 = SNodeOperations.getParent(annotatedNode);
+      SNode matchedNode_9107_0 = SNodeOperations.getParent(annotatedNode);
       {
-        boolean matches_0 = false;
+        boolean matches_9107_0 = false;
         {
-          SNode matchingNode_0 = SNodeOperations.getParent(annotatedNode);
-          if (matchingNode_0 != null) {
-            matches_0 = SModelUtil_new.isAssignableConcept(matchingNode_0.getConceptFqName(), "jetbrains.mps.lang.quotation.structure.Quotation");
+          SNode matchingNode_9107_0 = SNodeOperations.getParent(annotatedNode);
+          if (matchingNode_9107_0 != null) {
+            matches_9107_0 = SModelUtil_new.isAssignableConcept(matchingNode_9107_0.getConceptFqName(), "jetbrains.mps.lang.quotation.structure.Quotation");
           }
         }
-        if (matches_0) {
-          if (SLinkOperations.getTarget(matchedNode_0, "quotedNode", true) == annotatedNode) {
+        if (matches_9107_0) {
+          if (SLinkOperations.getTarget(matchedNode_9107_0, "quotedNode", true) == annotatedNode) {
             {
               BaseIntentionProvider intentionProvider = null;
               IErrorTarget errorTarget = new NodeErrorTarget();

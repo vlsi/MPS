@@ -34,20 +34,20 @@ public class MacroIntentionsUtil {
     // ====== 
     if (SNodeOperations.isInstanceOf(query, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery")) {
       {
-        GeneratedMatchingPattern pattern_0 = new MacroIntentionsUtil.Pattern_0();
-        SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_0);
-        if (coercedNode_0 != null) {
-          return ((SNode) pattern_0.getFieldValue("PatternVar_concept"));
+        GeneratedMatchingPattern pattern_3019_0 = new MacroIntentionsUtil.Pattern_3019_0();
+        SNode coercedNode_3019_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_3019_0);
+        if (coercedNode_3019_0 != null) {
+          return ((SNode) pattern_3019_0.getFieldValue("PatternVar_concept"));
         } else {
           return null;
         }
       }
     } else if (SNodeOperations.isInstanceOf(query, "jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodesQuery")) {
       {
-        GeneratedMatchingPattern pattern_1 = new MacroIntentionsUtil.Pattern_1();
-        SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_1);
-        if (coercedNode_1 != null) {
-          return ((SNode) pattern_1.getFieldValue("PatternVar_concept"));
+        GeneratedMatchingPattern pattern_3019_1 = new MacroIntentionsUtil.Pattern_3019_1();
+        SNode coercedNode_3019_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(returnType, pattern_3019_1);
+        if (coercedNode_3019_1 != null) {
+          return ((SNode) pattern_3019_1.getFieldValue("PatternVar_concept"));
         } else {
           return null;
         }
@@ -87,10 +87,10 @@ public class MacroIntentionsUtil {
     return result;
   }
 
-  public static class Pattern_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_3019_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_concept;
 
-    public Pattern_0() {
+    public Pattern_3019_0() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -123,10 +123,10 @@ public class MacroIntentionsUtil {
     }
   }
 
-  public static class Pattern_1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_3019_1 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_concept;
 
-    public Pattern_1() {
+    public Pattern_3019_1() {
     }
 
     public boolean match(SNode nodeToMatch) {

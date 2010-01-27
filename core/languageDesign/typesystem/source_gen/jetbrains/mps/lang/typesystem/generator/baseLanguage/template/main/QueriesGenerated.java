@@ -225,20 +225,20 @@ public class QueriesGenerated {
       return false;
     }
     do {
-      SNode matchedNode_0 = type;
+      SNode matchedNode_8087_0 = type;
       {
-        boolean matches_0 = false;
+        boolean matches_8087_0 = false;
         GeneratedMatchingPattern matchingPattern = new QueriesGenerated.Pattern_8087_0();
-        matches_0 = matchingPattern.match(matchedNode_0);
-        if (matches_0) {
+        matches_8087_0 = matchingPattern.match(matchedNode_8087_0);
+        if (matches_8087_0) {
           return true;
         }
       }
       {
-        boolean matches_1 = false;
+        boolean matches_8087_1 = false;
         GeneratedMatchingPattern matchingPattern = new QueriesGenerated.Pattern_8087_1();
-        matches_1 = matchingPattern.match(matchedNode_0);
-        if (matches_1) {
+        matches_8087_1 = matchingPattern.match(matchedNode_8087_0);
+        if (matches_8087_1) {
           return true;
         }
       }
@@ -1665,34 +1665,34 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1214931157675(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode grandparent = SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode()));
     do {
-      SNode matchedNode_1 = grandparent;
+      SNode matchedNode_8087_1 = grandparent;
       {
-        boolean matches_2 = false;
+        boolean matches_8087_2 = false;
         {
-          SNode matchingNode_0 = grandparent;
-          if (matchingNode_0 != null) {
-            matches_2 = SModelUtil_new.isAssignableConcept(matchingNode_0.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement_internal");
+          SNode matchingNode_8087_0 = grandparent;
+          if (matchingNode_8087_0 != null) {
+            matches_8087_2 = SModelUtil_new.isAssignableConcept(matchingNode_8087_0.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement_internal");
           }
         }
-        if (matches_2) {
+        if (matches_8087_2) {
           {
-            if ((SLinkOperations.getTarget(matchedNode_1, "nodeToCheck", true) != null)) {
+            if ((SLinkOperations.getTarget(matchedNode_8087_1, "nodeToCheck", true) != null)) {
               return false;
             }
-            SNode leftPart = SLinkOperations.getTarget(matchedNode_1, "leftExpression", true);
+            SNode leftPart = SLinkOperations.getTarget(matchedNode_8087_1, "leftExpression", true);
             do {
-              SNode matchedNode_2 = leftPart;
+              SNode matchedNode_8087_2 = leftPart;
               {
-                boolean matches_3 = false;
+                boolean matches_8087_3 = false;
                 {
-                  SNode matchingNode_1 = leftPart;
-                  if (matchingNode_1 != null) {
-                    matches_3 = SModelUtil_new.isAssignableConcept(matchingNode_1.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause");
+                  SNode matchingNode_8087_1 = leftPart;
+                  if (matchingNode_8087_1 != null) {
+                    matches_8087_3 = SModelUtil_new.isAssignableConcept(matchingNode_8087_1.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause");
                   }
                 }
-                if (matches_3) {
-                  if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_2, "normalType", true), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression_internal")) {
-                    if (SLinkOperations.getTarget(matchedNode_2, "normalType", true) == _context.getNode()) {
+                if (matches_8087_3) {
+                  if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_8087_2, "normalType", true), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression_internal")) {
+                    if (SLinkOperations.getTarget(matchedNode_8087_2, "normalType", true) == _context.getNode()) {
                       return true;
                     } else {
                       return false;
@@ -1702,19 +1702,19 @@ public class QueriesGenerated {
                 }
               }
             } while(false);
-            SNode rightPart = SLinkOperations.getTarget(matchedNode_1, "rightExpression", true);
+            SNode rightPart = SLinkOperations.getTarget(matchedNode_8087_1, "rightExpression", true);
             do {
-              SNode matchedNode_3 = rightPart;
+              SNode matchedNode_8087_3 = rightPart;
               {
-                boolean matches_4 = false;
+                boolean matches_8087_4 = false;
                 {
-                  SNode matchingNode_2 = rightPart;
-                  if (matchingNode_2 != null) {
-                    matches_4 = SModelUtil_new.isAssignableConcept(matchingNode_2.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause");
+                  SNode matchingNode_8087_2 = rightPart;
+                  if (matchingNode_8087_2 != null) {
+                    matches_8087_4 = SModelUtil_new.isAssignableConcept(matchingNode_8087_2.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause");
                   }
                 }
-                if (matches_4) {
-                  if (SLinkOperations.getTarget(matchedNode_3, "normalType", true) == _context.getNode()) {
+                if (matches_8087_4) {
+                  if (SLinkOperations.getTarget(matchedNode_8087_3, "normalType", true) == _context.getNode()) {
                     return true;
                   }
                   break;
@@ -1732,34 +1732,34 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_1214931879685(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode grandparent = SNodeOperations.getParent(SNodeOperations.getParent(_context.getNode()));
     do {
-      SNode matchedNode_4 = grandparent;
+      SNode matchedNode_8087_4 = grandparent;
       {
-        boolean matches_5 = false;
+        boolean matches_8087_5 = false;
         {
-          SNode matchingNode_3 = grandparent;
-          if (matchingNode_3 != null) {
-            matches_5 = SModelUtil_new.isAssignableConcept(matchingNode_3.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement_internal");
+          SNode matchingNode_8087_3 = grandparent;
+          if (matchingNode_8087_3 != null) {
+            matches_8087_5 = SModelUtil_new.isAssignableConcept(matchingNode_8087_3.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.AbstractEquationStatement_internal");
           }
         }
-        if (matches_5) {
+        if (matches_8087_5) {
           {
-            if ((SLinkOperations.getTarget(matchedNode_4, "nodeToCheck", true) != null)) {
+            if ((SLinkOperations.getTarget(matchedNode_8087_4, "nodeToCheck", true) != null)) {
               return true;
             }
-            SNode leftPart = SLinkOperations.getTarget(matchedNode_4, "leftExpression", true);
+            SNode leftPart = SLinkOperations.getTarget(matchedNode_8087_4, "leftExpression", true);
             do {
-              SNode matchedNode_5 = leftPart;
+              SNode matchedNode_8087_5 = leftPart;
               {
-                boolean matches_6 = false;
+                boolean matches_8087_6 = false;
                 {
-                  SNode matchingNode_4 = leftPart;
-                  if (matchingNode_4 != null) {
-                    matches_6 = SModelUtil_new.isAssignableConcept(matchingNode_4.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause");
+                  SNode matchingNode_8087_4 = leftPart;
+                  if (matchingNode_8087_4 != null) {
+                    matches_8087_6 = SModelUtil_new.isAssignableConcept(matchingNode_8087_4.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause");
                   }
                 }
-                if (matches_6) {
-                  if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_5, "normalType", true), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression_internal")) {
-                    if (SLinkOperations.getTarget(matchedNode_5, "normalType", true) == _context.getNode()) {
+                if (matches_8087_6) {
+                  if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_8087_5, "normalType", true), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression_internal")) {
+                    if (SLinkOperations.getTarget(matchedNode_8087_5, "normalType", true) == _context.getNode()) {
                       return false;
                     } else {
                       return true;
@@ -1769,19 +1769,19 @@ public class QueriesGenerated {
                 }
               }
             } while(false);
-            SNode rightPart = SLinkOperations.getTarget(matchedNode_4, "rightExpression", true);
+            SNode rightPart = SLinkOperations.getTarget(matchedNode_8087_4, "rightExpression", true);
             do {
-              SNode matchedNode_6 = rightPart;
+              SNode matchedNode_8087_6 = rightPart;
               {
-                boolean matches_7 = false;
+                boolean matches_8087_7 = false;
                 {
-                  SNode matchingNode_5 = rightPart;
-                  if (matchingNode_5 != null) {
-                    matches_7 = SModelUtil_new.isAssignableConcept(matchingNode_5.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause");
+                  SNode matchingNode_8087_5 = rightPart;
+                  if (matchingNode_8087_5 != null) {
+                    matches_8087_7 = SModelUtil_new.isAssignableConcept(matchingNode_8087_5.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.NormalTypeClause");
                   }
                 }
-                if (matches_7) {
-                  if (SLinkOperations.getTarget(matchedNode_6, "normalType", true) == _context.getNode()) {
+                if (matches_8087_7) {
+                  if (SLinkOperations.getTarget(matchedNode_8087_6, "normalType", true) == _context.getNode()) {
                     return false;
                   }
                   break;
@@ -2850,13 +2850,13 @@ parametersLoop:
               ListSequence.fromList(SLinkOperations.getTargets(instanceMethodDeclaration, "parameter", true)).addElement(new QueriesGenerated.QuotationClass_8087_31().createNode());
               for (SNode mc : SNodeOperations.getDescendants(instanceMethodDeclaration, "jetbrains.mps.baseLanguage.structure.IMethodCall", false, new String[]{})) {
                 do {
-                  SNode matchedNode_7 = mc;
+                  SNode matchedNode_8087_7 = mc;
                   {
-                    boolean matches_8 = false;
+                    boolean matches_8087_8 = false;
                     GeneratedMatchingPattern matchingPattern = new QueriesGenerated.Pattern_8087_2();
-                    matches_8 = matchingPattern.match(matchedNode_7);
-                    if (matches_8) {
-                      ListSequence.fromList(SLinkOperations.getTargets(matchedNode_7, "actualArgument", true)).addElement(new QueriesGenerated.QuotationClass_8087_32().createNode());
+                    matches_8087_8 = matchingPattern.match(matchedNode_8087_7);
+                    if (matches_8087_8) {
+                      ListSequence.fromList(SLinkOperations.getTargets(matchedNode_8087_7, "actualArgument", true)).addElement(new QueriesGenerated.QuotationClass_8087_32().createNode());
                       break;
                     }
                   }
@@ -2887,12 +2887,12 @@ parametersLoop:
         }
         SNode dotExpression = SNodeOperations.cast(SNodeOperations.getParent(instanceMethodCall), "jetbrains.mps.baseLanguage.structure.DotExpression");
         do {
-          SNode matchedNode_8 = SLinkOperations.getTarget(dotExpression, "operand", true);
+          SNode matchedNode_8087_8 = SLinkOperations.getTarget(dotExpression, "operand", true);
           {
-            boolean matches_9 = false;
+            boolean matches_8087_9 = false;
             GeneratedMatchingPattern matchingPattern = new QueriesGenerated.Pattern_8087_3();
-            matches_9 = matchingPattern.match(matchedNode_8);
-            if (matches_9) {
+            matches_8087_9 = matchingPattern.match(matchedNode_8087_8);
+            if (matches_8087_9) {
               break;
             }
           }

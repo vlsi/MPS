@@ -14,20 +14,20 @@ public class MapSrcListMacro_Behavior {
 
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
-      GeneratedMatchingPattern pattern_1 = new MapSrcListMacro_Behavior.Pattern_1();
-      SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodesQuery", true)), pattern_1);
-      if (coercedNode_1 != null) {
-        return ((SNode) pattern_1.getFieldValue("PatternVar_concept"));
+      GeneratedMatchingPattern pattern_0773_0 = new MapSrcListMacro_Behavior.Pattern_0773_0();
+      SNode coercedNode_0773_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodesQuery", true)), pattern_0773_0);
+      if (coercedNode_0773_0 != null) {
+        return ((SNode) pattern_0773_0.getFieldValue("PatternVar_concept"));
       } else {
       }
     }
     return null;
   }
 
-  public static class Pattern_1 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_0773_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_concept;
 
-    public Pattern_1() {
+    public Pattern_0773_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

@@ -13,29 +13,29 @@ public class ScriptKindClassItem_Behavior {
 
   public static boolean virtual_isApplicableTo_1214304723440(SNode thisNode, SNode cellModel) {
     do {
-      SNode matchedNode_1 = SNodeOperations.getParent(cellModel);
+      SNode matchedNode_3509_0 = SNodeOperations.getParent(cellModel);
       {
-        boolean matches_2 = false;
+        boolean matches_3509_0 = false;
         {
-          SNode matchingNode_2 = SNodeOperations.getParent(cellModel);
-          if (matchingNode_2 != null) {
-            matches_2 = SModelUtil_new.isAssignableConcept(matchingNode_2.getConceptFqName(), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
+          SNode matchingNode_3509_0 = SNodeOperations.getParent(cellModel);
+          if (matchingNode_3509_0 != null) {
+            matches_3509_0 = SModelUtil_new.isAssignableConcept(matchingNode_3509_0.getConceptFqName(), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
           }
         }
-        if (matches_2) {
-          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_1, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Superscript");
+        if (matches_3509_0) {
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_3509_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Superscript");
         }
       }
       {
-        boolean matches_3 = false;
+        boolean matches_3509_1 = false;
         {
-          SNode matchingNode_3 = SNodeOperations.getParent(cellModel);
-          if (matchingNode_3 != null) {
-            matches_3 = SModelUtil_new.isAssignableConcept(matchingNode_3.getConceptFqName(), "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole");
+          SNode matchingNode_3509_1 = SNodeOperations.getParent(cellModel);
+          if (matchingNode_3509_1 != null) {
+            matches_3509_1 = SModelUtil_new.isAssignableConcept(matchingNode_3509_1.getConceptFqName(), "jetbrains.mps.lang.editor.structure.CellModel_ListWithRole");
           }
         }
-        if (matches_3) {
-          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_1, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Superscript");
+        if (matches_3509_1) {
+          return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(matchedNode_3509_0, "cellLayout", true), "jetbrains.mps.lang.editor.structure.CellLayout_Superscript");
         }
       }
       return false;

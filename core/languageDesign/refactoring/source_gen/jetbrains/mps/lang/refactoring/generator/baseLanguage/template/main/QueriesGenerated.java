@@ -200,10 +200,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_7110754463748604112(final IOperationContext operationContext, final PropertyMacroContext _context) {
     {
-      GeneratedMatchingPattern pattern_0 = new QueriesGenerated.Pattern_0();
-      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_0);
-      if (coercedNode_0 != null) {
-        SNode abstractConceptDeclaration = SNodeOperations.cast(((SNode) pattern_0.getFieldValue("PatternVar_concept")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
+      GeneratedMatchingPattern pattern_8087_0 = new QueriesGenerated.Pattern_8087_0();
+      SNode coercedNode_8087_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(SLinkOperations.getTarget(_context.getNode(), "argumentType", true), pattern_8087_0);
+      if (coercedNode_8087_0 != null) {
+        SNode abstractConceptDeclaration = SNodeOperations.cast(((SNode) pattern_8087_0.getFieldValue("PatternVar_concept")), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration");
         return SNodeOperations.getModel(abstractConceptDeclaration).getSModelFqName() + "." + SPropertyOperations.getString(abstractConceptDeclaration, "name");
       } else {
       }
@@ -867,10 +867,10 @@ public class QueriesGenerated {
     return result;
   }
 
-  public static class Pattern_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_8087_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_concept;
 
-    public Pattern_0() {
+    public Pattern_8087_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

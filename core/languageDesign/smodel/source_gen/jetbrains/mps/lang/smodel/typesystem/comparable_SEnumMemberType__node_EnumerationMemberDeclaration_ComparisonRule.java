@@ -30,7 +30,7 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
   }
 
   public boolean isApplicable2(SNode node) {
-    this.myMatchingPattern2 = new comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule.Pattern_4();
+    this.myMatchingPattern2 = new comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ComparisonRule.Pattern_1423_0();
     return this.myMatchingPattern2.match(node);
   }
 
@@ -42,8 +42,8 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
     return "jetbrains.mps.lang.smodel.structure.SNodeType";
   }
 
-  public static class Pattern_4 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_4() {
+  public static class Pattern_1423_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_1423_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

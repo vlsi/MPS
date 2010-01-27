@@ -14,20 +14,20 @@ public class IncludeMacro_Behavior {
 
   public static SNode virtual_getInputNodeTypeInsideOfMacro_1213877290799(SNode thisNode) {
     {
-      GeneratedMatchingPattern pattern_3 = new IncludeMacro_Behavior.Pattern_3();
-      SNode coercedNode_3 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_3);
-      if (coercedNode_3 != null) {
-        return ((SNode) pattern_3.getFieldValue("PatternVar_concept"));
+      GeneratedMatchingPattern pattern_5347_0 = new IncludeMacro_Behavior.Pattern_5347_0();
+      SNode coercedNode_5347_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(thisNode, "sourceNodeQuery", true)), pattern_5347_0);
+      if (coercedNode_5347_0 != null) {
+        return ((SNode) pattern_5347_0.getFieldValue("PatternVar_concept"));
       } else {
       }
     }
     return NodeMacro_Behavior.callSuper_getInputNodeTypeInsideOfMacro_1213877290799(thisNode, "jetbrains.mps.lang.generator.structure.IncludeMacro");
   }
 
-  public static class Pattern_3 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_5347_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_concept;
 
-    public Pattern_3() {
+    public Pattern_5347_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

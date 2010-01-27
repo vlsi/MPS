@@ -41,16 +41,16 @@ public class DependenciesCollector {
       for (SNode node : SetSequence.fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(dependencies).keySet())) {
         SNode parent = SNodeOperations.getParent(node);
         do {
-          SNode matchedNode_0 = parent;
+          SNode matchedNode_3860_0 = parent;
           {
-            boolean matches_0 = false;
+            boolean matches_3860_0 = false;
             {
-              SNode matchingNode_0 = parent;
-              if (matchingNode_0 != null) {
-                matches_0 = SModelUtil_new.isAssignableConcept(matchingNode_0.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression");
+              SNode matchingNode_3860_0 = parent;
+              if (matchingNode_3860_0 != null) {
+                matches_3860_0 = SModelUtil_new.isAssignableConcept(matchingNode_3860_0.getConceptFqName(), "jetbrains.mps.lang.typesystem.structure.TypeOfExpression");
               }
             }
-            if (matches_0) {
+            if (matches_3860_0) {
               if (!(SetSequence.fromSet(roots).contains(node))) {
                 SetSequence.fromSet(leaves).addElement(node);
               }
@@ -58,46 +58,46 @@ public class DependenciesCollector {
             }
           }
           {
-            boolean matches_1 = false;
+            boolean matches_3860_1 = false;
             {
-              SNode matchingNode_1 = parent;
-              if (matchingNode_1 != null) {
-                matches_1 = SModelUtil_new.isAssignableConcept(matchingNode_1.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+              SNode matchingNode_3860_1 = parent;
+              if (matchingNode_3860_1 != null) {
+                matches_3860_1 = SModelUtil_new.isAssignableConcept(matchingNode_3860_1.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.AssignmentExpression");
               }
             }
-            if (matches_1) {
-              if (SLinkOperations.getTarget(matchedNode_0, "rValue", true) == node) {
-                MapSequence.fromMap(dependencies).put(SLinkOperations.getTarget(matchedNode_0, "lValue", true), new Pair<SNode, SNode>(node, new DependenciesCollector.QuotationClass_3860_0().createNode()));
+            if (matches_3860_1) {
+              if (SLinkOperations.getTarget(matchedNode_3860_0, "rValue", true) == node) {
+                MapSequence.fromMap(dependencies).put(SLinkOperations.getTarget(matchedNode_3860_0, "lValue", true), new Pair<SNode, SNode>(node, new DependenciesCollector.QuotationClass_3860_0().createNode()));
               }
               break;
             }
           }
           {
-            boolean matches_2 = false;
+            boolean matches_3860_2 = false;
             {
-              SNode matchingNode_2 = parent;
-              if (matchingNode_2 != null) {
-                matches_2 = SModelUtil_new.isAssignableConcept(matchingNode_2.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+              SNode matchingNode_3860_2 = parent;
+              if (matchingNode_3860_2 != null) {
+                matches_3860_2 = SModelUtil_new.isAssignableConcept(matchingNode_3860_2.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
               }
             }
-            if (matches_2) {
-              if (SLinkOperations.getTarget(matchedNode_0, "initializer", true) == node) {
-                MapSequence.fromMap(dependencies).put(matchedNode_0, new Pair<SNode, SNode>(node, new DependenciesCollector.QuotationClass_3860_1().createNode()));
+            if (matches_3860_2) {
+              if (SLinkOperations.getTarget(matchedNode_3860_0, "initializer", true) == node) {
+                MapSequence.fromMap(dependencies).put(matchedNode_3860_0, new Pair<SNode, SNode>(node, new DependenciesCollector.QuotationClass_3860_1().createNode()));
               }
               break;
             }
           }
           do {
-            SNode matchedNode_1 = node;
+            SNode matchedNode_3860_1 = node;
             {
-              boolean matches_3 = false;
+              boolean matches_3860_3 = false;
               {
-                SNode matchingNode_3 = node;
-                if (matchingNode_3 != null) {
-                  matches_3 = SModelUtil_new.isAssignableConcept(matchingNode_3.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
+                SNode matchingNode_3860_3 = node;
+                if (matchingNode_3860_3 != null) {
+                  matches_3860_3 = SModelUtil_new.isAssignableConcept(matchingNode_3860_3.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableDeclaration");
                 }
               }
-              if (matches_3) {
+              if (matches_3860_3) {
                 for (SNode variableReference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
                   if (SLinkOperations.getTarget(variableReference, "variableDeclaration", false) == node) {
                     MapSequence.fromMap(dependencies).put(variableReference, new Pair<SNode, SNode>(node, new DependenciesCollector.QuotationClass_3860_2().createNode()));
@@ -107,19 +107,19 @@ public class DependenciesCollector {
               }
             }
             {
-              boolean matches_4 = false;
+              boolean matches_3860_4 = false;
               {
-                SNode matchingNode_4 = node;
-                if (matchingNode_4 != null) {
-                  matches_4 = SModelUtil_new.isAssignableConcept(matchingNode_4.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableReference");
+                SNode matchingNode_3860_4 = node;
+                if (matchingNode_3860_4 != null) {
+                  matches_3860_4 = SModelUtil_new.isAssignableConcept(matchingNode_3860_4.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.VariableReference");
                 }
               }
-              if (matches_4) {
+              if (matches_3860_4) {
                 {
-                  SNode variableDeclaration = SLinkOperations.getTarget(matchedNode_1, "variableDeclaration", false);
+                  SNode variableDeclaration = SLinkOperations.getTarget(matchedNode_3860_1, "variableDeclaration", false);
                   for (SNode reference : SNodeOperations.getDescendants(inferenceRule, "jetbrains.mps.baseLanguage.structure.VariableReference", false, new String[]{})) {
-                    if (SLinkOperations.getTarget(matchedNode_1, "variableDeclaration", false) == variableDeclaration) {
-                      SNode nodeStatement = SNodeOperations.getAncestor(matchedNode_1, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
+                    if (SLinkOperations.getTarget(matchedNode_3860_1, "variableDeclaration", false) == variableDeclaration) {
+                      SNode nodeStatement = SNodeOperations.getAncestor(matchedNode_3860_1, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
                       SNode usageStatement = SNodeOperations.getAncestor(reference, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
                       while (SNodeOperations.getParent(nodeStatement) != SNodeOperations.getParent(usageStatement)) {
                         usageStatement = SNodeOperations.getAncestor(usageStatement, "jetbrains.mps.baseLanguage.structure.Statement", false, false);
