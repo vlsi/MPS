@@ -372,11 +372,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1178874415131(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("pattern_", null);
+    return _context.createUniqueName("pattern_", SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1178874415161(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("coercedNode_", null);
+    return _context.createUniqueName("coercedNode_", SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
   public static Object propertyMacro_GetPropertyValue_1178874523174(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -9254,6 +9254,10 @@
                         <node role="baseName:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1210260306743">
                           <property name="value:3" value="pattern_" />
                         </node>
+                        <node role="contextNode:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1841723058015867998">
+                          <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1841723058015867997" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation:16" id="1841723058015889363" />
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -9319,6 +9323,10 @@
                       <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_CreateUniqueName:0" id="1218070397555">
                         <node role="baseName:0" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1210260340944">
                           <property name="value:3" value="coercedNode_" />
+                        </node>
+                        <node role="contextNode:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1841723058015889365">
+                          <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1841723058015889364" />
+                          <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetContainingRootOperation:16" id="1841723058015889369" />
                         </node>
                       </node>
                     </node>
