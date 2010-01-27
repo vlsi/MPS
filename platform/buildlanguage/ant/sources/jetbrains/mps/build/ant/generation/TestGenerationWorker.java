@@ -228,6 +228,14 @@ public class TestGenerationWorker extends GeneratorWorker {
       compilationResult = Collections.EMPTY_LIST;
     }
 
+    boolean compilatonOk = true;
+    for (CompilationResult r : compilationResult) {
+      if (r.hasErrors()) {
+        compilatonOk = false;
+        break;
+      }
+    }
+
     // create test result report
     StringBuffer sb = createDetailedReport(compilationResult, diffReports);
     myMessageHandler.clean();
@@ -239,7 +247,7 @@ public class TestGenerationWorker extends GeneratorWorker {
     System.out.println(myBuildServerMessageFormat.formatTestFinish(currentTestName));
 
     if (isSaveGeneratedFilesOnDisk()
-      && generationOk && compilationResult.isEmpty() && !diffReports.isEmpty()) {
+      && generationOk && compilatonOk && !diffReports.isEmpty()) {
       info("Saving files generated from " + cycle.toString() + " on disk.");
       myGenerationHandler.saveGeneratedFilesOnDisk();
     }
