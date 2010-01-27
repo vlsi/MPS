@@ -80,20 +80,37 @@
             <project file="${mps.home}/core/languageDesign/test/test.mpr"/>
             <project file="${mps.home}/core/languageDesign/typesystem/typesystem.mpr"/>
             <project file="${mps.home}/platform/builders/builders.mpr"/>
+            <project file="${mps.home}/platform/buildlanguage/BuildLanguage.mpr"/>
+            <project file="${mps.home}/platform/gtext/gtext.mpr"/>
             <project file="${mps.home}/platform/extensionMethod/MethodExtension.mpr"/>
             <project file="${mps.home}/platform/regexp/regexp.mpr"/>
             <project file="${mps.home}/platform/xml/xml/xml.mpr"/>
             <project file="${mps.home}/platform/xmlDeprecated/xmlDeprecated.mpr"/>
+            <project file="${mps.home}/platform/xmlUnitTest/xmlUnitTest.mpr"/>
 
             <!-- Applications tests -->
+            <project file="${mps.home}/core/kernel/kernelSolution/kernel.mpr"/>\
+            <project file="${mps.home}/core/kernel/testMake/testMake.mpr"/>
             <project file="${mps.home}/core/languageDesign/mps-lite/mps-lite.mpr"/>
-            <project file="${mps.home}/platform/buildlanguage/BuildLanguage.mpr"/>
+            <project file="${mps.home}/core/mps.mpr"/>
+            <project file="${mps.home}/platform/quickQueryLanguage/quickQueryLanguage.mpr"/>
             <project file="${mps.home}/platform/uiLanguage/uiLanguage.mpr"/>
             <project file="${mps.home}/platform/ypath/YPath.mpr"/>
+            <project file="${mps.home}/workbench/ideSolution/ide.mpr"/>
+            <project file="${mps.home}/workbench/workbench.mpr"/>
+
+            <!-- Samples -->
             <project file="${mps.home}/samples/complexLanguage/Complex.mpr"/>
             <project file="${mps.home}/samples/matrixLanguage/jetbrains.mps.matrixLanguage.mpr"/>
             <project file="${mps.home}/samples/xmlLiterals/jetbrains.mps.samples.xmlLiterals.mpr"/>
-            <project file="${mps.home}/workbench/ideSolution/ide.mpr"/>
+            <project file="${mps.home}/samples/agreement/agreement.mpr"/>
+            <project file="${mps.home}/samples/calculator/calculator.mpr"/>
+            <project file="${mps.home}/samples/dslbook_example/dslbook_example.mpr"/>
+            <project file="${mps.home}/samples/fixedLengthReader/fixedLengthReader.mpr"/>
+            <project file="${mps.home}/samples/formulaLanguage/formulaLanguage.mpr"/>
+            <project file="${mps.home}/samples/generator_demo/generator_demo.mpr"/>
+            <project file="${mps.home}/samples/sampleXML/sampleXML.mpr"/>
+            <project file="${mps.home}/samples/theSimplestLanguage/theSimplestLanguage.mpr"/>
         </mps.test.generation>
     </target>
 

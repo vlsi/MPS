@@ -8,7 +8,6 @@ import jetbrains.mps.samples.readerConfigLanguage.dsl.ServiceCall;
 import jetbrains.mps.samples.readerConfigLanguage.dsl.Usage;
 
 public class Config1 {
-
   public void Configure(Reader target) {
     target.AddStrategy(this.ConfigureServiceCall());
     target.AddStrategy(this.ConfigureUsage());
@@ -31,5 +30,4 @@ public class Config1 {
     result.AddFieldExtractor(31, 36, "ReadDate");
     return result;
   }
-
 }
