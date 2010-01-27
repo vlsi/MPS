@@ -612,11 +612,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1215687492423(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getId();
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_1215687497129(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getModel().toString();
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getModel().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1215687780688(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -631,11 +631,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1215690624674(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getModel().toString();
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getModel().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1215690810531(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getId();
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_1215690854327(final IOperationContext operationContext, final PropertyMacroContext _context) {

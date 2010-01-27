@@ -129,9 +129,10 @@ public class TemplateQueryContext {
     return myGenerator.getPreviousInputNodeByMappingName(label);
   }
 
-  public SNode getOriginalCopiedInputNode(SNode outputNode) {
-    if (outputNode == null || outputNode.isDisposed()) return null;
-    return (SNode) outputNode.getUserObject(ORIGINAL_INPUT_NODE);
+  public SNode getOriginalCopiedInputNode(SNode node) {
+    if (node == null || node.isDisposed()) return null;
+    SNode result = (SNode) node.getUserObject(ORIGINAL_INPUT_NODE);
+    return result != null ? result : node;
   }
 
   public String createUniqueName(String baseName, SNode contextNode) {

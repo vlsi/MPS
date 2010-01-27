@@ -716,12 +716,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1170386916206(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    SNode currentNode = _context.getNode();
-    SNode originalNode = null;
-    while (currentNode != null) {
-      originalNode = currentNode;
-      currentNode = _context.getOriginalCopiedInputNode(currentNode);
-    }
+    SNode originalNode = _context.getOriginalCopiedInputNode(_context.getNode());
     SNode rawType = TypeChecker.getInstance().getTypeOf(originalNode);
     SNode nodeType = TypeChecker.getInstance().getRuntimeSupport().coerce_(rawType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false);
     SNode classifier = SLinkOperations.getTarget(nodeType, "classifier", false);
