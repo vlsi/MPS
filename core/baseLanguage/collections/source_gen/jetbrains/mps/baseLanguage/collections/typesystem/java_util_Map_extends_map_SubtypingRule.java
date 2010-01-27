@@ -34,7 +34,7 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new java_util_Map_extends_map_SubtypingRule.Pattern_2();
+    this.myMatchingPattern = new java_util_Map_extends_map_SubtypingRule.Pattern_7495_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -42,11 +42,11 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
     return true;
   }
 
-  public static class Pattern_2 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_7495_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_keyType;
     /*package*/ SNode PatternVar_valueType;
 
-    public Pattern_2() {
+    public Pattern_7495_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

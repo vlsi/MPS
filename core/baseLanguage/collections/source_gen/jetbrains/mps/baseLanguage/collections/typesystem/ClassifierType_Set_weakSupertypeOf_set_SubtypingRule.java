@@ -34,7 +34,7 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.Pattern_5();
+    this.myMatchingPattern = new ClassifierType_Set_weakSupertypeOf_set_SubtypingRule.Pattern_1510_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -42,10 +42,10 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
     return true;
   }
 
-  public static class Pattern_5 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_1510_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_elementType;
 
-    public Pattern_5() {
+    public Pattern_1510_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

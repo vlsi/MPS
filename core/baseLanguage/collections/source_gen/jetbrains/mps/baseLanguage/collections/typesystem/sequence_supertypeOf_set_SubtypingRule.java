@@ -31,7 +31,7 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new sequence_supertypeOf_set_SubtypingRule.Pattern_4();
+    this.myMatchingPattern = new sequence_supertypeOf_set_SubtypingRule.Pattern_2757_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -39,10 +39,10 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
     return false;
   }
 
-  public static class Pattern_4 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_2757_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_elementType;
 
-    public Pattern_4() {
+    public Pattern_2757_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

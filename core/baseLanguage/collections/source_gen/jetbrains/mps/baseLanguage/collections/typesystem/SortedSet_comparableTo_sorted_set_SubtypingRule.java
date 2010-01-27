@@ -34,7 +34,7 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new SortedSet_comparableTo_sorted_set_SubtypingRule.Pattern_9();
+    this.myMatchingPattern = new SortedSet_comparableTo_sorted_set_SubtypingRule.Pattern_1012_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -42,10 +42,10 @@ public class SortedSet_comparableTo_sorted_set_SubtypingRule extends SubtypingRu
     return true;
   }
 
-  public static class Pattern_9 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_1012_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_ELEMENT;
 
-    public Pattern_9() {
+    public Pattern_1012_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

@@ -202,10 +202,10 @@ public class ClassifierTypeUtil {
       ListSequence.fromList(visitedClassifiers).addElement(SLinkOperations.getTarget(ct, "classifier", false));
       for (SNode sup : TypeChecker.getInstance().getSubtypingManager().collectImmediateSupertypes(ct)) {
         {
-          IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
-          SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(sup, pattern_0);
-          if (coercedNode_0 != null) {
-            ListSequence.fromList(concretes).addElement(coercedNode_0);
+          IMatchingPattern pattern_1043_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+          SNode coercedNode_1043_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(sup, pattern_1043_0);
+          if (coercedNode_1043_0 != null) {
+            ListSequence.fromList(concretes).addElement(coercedNode_1043_0);
           } else {
           }
         }

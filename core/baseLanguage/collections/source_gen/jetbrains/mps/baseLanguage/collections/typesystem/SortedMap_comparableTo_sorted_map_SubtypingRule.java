@@ -34,7 +34,7 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new SortedMap_comparableTo_sorted_map_SubtypingRule.Pattern_8();
+    this.myMatchingPattern = new SortedMap_comparableTo_sorted_map_SubtypingRule.Pattern_1640_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -42,11 +42,11 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
     return true;
   }
 
-  public static class Pattern_8 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_1640_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_KEY;
     /*package*/ SNode PatternVar_VALUE;
 
-    public Pattern_8() {
+    public Pattern_1640_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

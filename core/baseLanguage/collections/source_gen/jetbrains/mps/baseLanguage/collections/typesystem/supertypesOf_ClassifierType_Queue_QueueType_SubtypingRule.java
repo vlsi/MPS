@@ -34,7 +34,7 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule.Pattern_11();
+    this.myMatchingPattern = new supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule.Pattern_3287_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -42,10 +42,10 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
     return true;
   }
 
-  public static class Pattern_11 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_3287_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_ELEMENT_TYPE;
 
-    public Pattern_11() {
+    public Pattern_3287_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

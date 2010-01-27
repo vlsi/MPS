@@ -50,55 +50,55 @@ public class typeof_BinaryOperationMathContext_InferenceRule extends AbstractInf
               public void run() {
                 SNode op;
                 do {
-                  SNode matchedNode_0 = oper;
+                  SNode matchedNode_6145_0 = oper;
                   {
-                    boolean matches_0 = false;
+                    boolean matches_6145_0 = false;
                     {
-                      SNode matchingNode_0 = oper;
-                      if (matchingNode_0 != null) {
-                        matches_0 = SModelUtil_new.isAssignableConcept(matchingNode_0.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression");
+                      SNode matchingNode_6145_0 = oper;
+                      if (matchingNode_6145_0 != null) {
+                        matches_6145_0 = SModelUtil_new.isAssignableConcept(matchingNode_6145_0.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression");
                       }
                     }
-                    if (matches_0) {
+                    if (matches_6145_0) {
                       op = new typeof_BinaryOperationMathContext_InferenceRule.QuotationClass_0469_0().createNode(typeCheckingContext);
                       break;
                     }
                   }
                   {
-                    boolean matches_1 = false;
+                    boolean matches_6145_1 = false;
                     {
-                      SNode matchingNode_1 = oper;
-                      if (matchingNode_1 != null) {
-                        matches_1 = SModelUtil_new.isAssignableConcept(matchingNode_1.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression");
+                      SNode matchingNode_6145_1 = oper;
+                      if (matchingNode_6145_1 != null) {
+                        matches_6145_1 = SModelUtil_new.isAssignableConcept(matchingNode_6145_1.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression");
                       }
                     }
-                    if (matches_1) {
+                    if (matches_6145_1) {
                       op = new typeof_BinaryOperationMathContext_InferenceRule.QuotationClass_0469_1().createNode(typeCheckingContext);
                       break;
                     }
                   }
                   {
-                    boolean matches_2 = false;
+                    boolean matches_6145_2 = false;
                     {
-                      SNode matchingNode_2 = oper;
-                      if (matchingNode_2 != null) {
-                        matches_2 = SModelUtil_new.isAssignableConcept(matchingNode_2.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression");
+                      SNode matchingNode_6145_2 = oper;
+                      if (matchingNode_6145_2 != null) {
+                        matches_6145_2 = SModelUtil_new.isAssignableConcept(matchingNode_6145_2.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression");
                       }
                     }
-                    if (matches_2) {
+                    if (matches_6145_2) {
                       op = new typeof_BinaryOperationMathContext_InferenceRule.QuotationClass_0469_2().createNode(typeCheckingContext);
                       break;
                     }
                   }
                   {
-                    boolean matches_3 = false;
+                    boolean matches_6145_3 = false;
                     {
-                      SNode matchingNode_3 = oper;
-                      if (matchingNode_3 != null) {
-                        matches_3 = SModelUtil_new.isAssignableConcept(matchingNode_3.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression");
+                      SNode matchingNode_6145_3 = oper;
+                      if (matchingNode_6145_3 != null) {
+                        matches_6145_3 = SModelUtil_new.isAssignableConcept(matchingNode_6145_3.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression");
                       }
                     }
-                    if (matches_3) {
+                    if (matches_6145_3) {
                       op = new typeof_BinaryOperationMathContext_InferenceRule.QuotationClass_0469_3().createNode(typeCheckingContext);
                       break;
                     }

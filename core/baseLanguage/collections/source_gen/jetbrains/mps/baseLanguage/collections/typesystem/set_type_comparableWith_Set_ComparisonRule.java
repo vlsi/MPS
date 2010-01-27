@@ -30,7 +30,7 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
   }
 
   public boolean isApplicable2(SNode node) {
-    this.myMatchingPattern2 = new set_type_comparableWith_Set_ComparisonRule.Pattern_12();
+    this.myMatchingPattern2 = new set_type_comparableWith_Set_ComparisonRule.Pattern_9209_0();
     return this.myMatchingPattern2.match(node);
   }
 
@@ -42,10 +42,10 @@ public class set_type_comparableWith_Set_ComparisonRule extends ComparisonRule_R
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
 
-  public static class Pattern_12 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_9209_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_ELEMENT;
 
-    public Pattern_12() {
+    public Pattern_9209_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

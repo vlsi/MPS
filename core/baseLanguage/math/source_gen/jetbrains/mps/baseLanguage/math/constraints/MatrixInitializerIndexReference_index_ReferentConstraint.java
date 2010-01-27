@@ -32,31 +32,31 @@ public class MatrixInitializerIndexReference_index_ReferentConstraint extends Ba
     List<SNode> indices = new ArrayList<SNode>();
     while (n != null) {
       do {
-        SNode matchedNode_0 = n;
+        SNode matchedNode_4513_0 = n;
         {
-          boolean matches_0 = false;
+          boolean matches_4513_0 = false;
           {
-            SNode matchingNode_0 = n;
-            if (matchingNode_0 != null) {
-              matches_0 = SModelUtil_new.isAssignableConcept(matchingNode_0.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer");
+            SNode matchingNode_4513_0 = n;
+            if (matchingNode_4513_0 != null) {
+              matches_4513_0 = SModelUtil_new.isAssignableConcept(matchingNode_4513_0.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer");
             }
           }
-          if (matches_0) {
-            ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_0, "colIndex", true));
-            ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_0, "rowIndex", true));
+          if (matches_4513_0) {
+            ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_4513_0, "colIndex", true));
+            ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_4513_0, "rowIndex", true));
             break;
           }
         }
         {
-          boolean matches_1 = false;
+          boolean matches_4513_1 = false;
           {
-            SNode matchingNode_1 = n;
-            if (matchingNode_1 != null) {
-              matches_1 = SModelUtil_new.isAssignableConcept(matchingNode_1.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorInitializer");
+            SNode matchingNode_4513_1 = n;
+            if (matchingNode_4513_1 != null) {
+              matches_4513_1 = SModelUtil_new.isAssignableConcept(matchingNode_4513_1.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorInitializer");
             }
           }
-          if (matches_1) {
-            ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_0, "rowIndex", true));
+          if (matches_4513_1) {
+            ListSequence.fromList(indices).addElement(SLinkOperations.getTarget(matchedNode_4513_0, "rowIndex", true));
             break;
           }
         }

@@ -34,7 +34,7 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new supertypesOf_ClassifierTypeList_ListType_SubtypingRule.Pattern_0();
+    this.myMatchingPattern = new supertypesOf_ClassifierTypeList_ListType_SubtypingRule.Pattern_1656_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -42,10 +42,10 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
     return true;
   }
 
-  public static class Pattern_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_1656_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_elemType;
 
-    public Pattern_0() {
+    public Pattern_1656_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

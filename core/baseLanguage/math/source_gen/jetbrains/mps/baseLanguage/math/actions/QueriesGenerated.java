@@ -113,29 +113,29 @@ public class QueriesGenerated {
         public SNode doSubstitute(String pattern) {
           SNode lso = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation", null);
           do {
-            SNode matchedNode_0 = SLinkOperations.getTarget(_context.getSourceNode(), "type", true);
+            SNode matchedNode_7774_0 = SLinkOperations.getTarget(_context.getSourceNode(), "type", true);
             {
-              boolean matches_0 = false;
+              boolean matches_7774_0 = false;
               {
-                SNode matchingNode_0 = SLinkOperations.getTarget(_context.getSourceNode(), "type", true);
-                if (matchingNode_0 != null) {
-                  matches_0 = SModelUtil_new.isAssignableConcept(matchingNode_0.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
+                SNode matchingNode_7774_0 = SLinkOperations.getTarget(_context.getSourceNode(), "type", true);
+                if (matchingNode_7774_0 != null) {
+                  matches_7774_0 = SModelUtil_new.isAssignableConcept(matchingNode_7774_0.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
                 }
               }
-              if (matches_0) {
+              if (matches_7774_0) {
                 SLinkOperations.setTarget(lso, "type", SNodeOperations.cast(SLinkOperations.getTarget(_context.getSourceNode(), "type", true), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), true);
                 break;
               }
             }
             {
-              boolean matches_1 = false;
+              boolean matches_7774_1 = false;
               {
-                SNode matchingNode_1 = SLinkOperations.getTarget(_context.getSourceNode(), "type", true);
-                if (matchingNode_1 != null) {
-                  matches_1 = SModelUtil_new.isAssignableConcept(matchingNode_1.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+                SNode matchingNode_7774_1 = SLinkOperations.getTarget(_context.getSourceNode(), "type", true);
+                if (matchingNode_7774_1 != null) {
+                  matches_7774_1 = SModelUtil_new.isAssignableConcept(matchingNode_7774_1.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
                 }
               }
-              if (matches_1) {
+              if (matches_7774_1) {
                 SLinkOperations.setTarget(lso, "type", SNodeOperations.cast(SLinkOperations.getTarget(_context.getSourceNode(), "type", true), "jetbrains.mps.baseLanguage.math.structure.VectorType"), true);
                 break;
               }

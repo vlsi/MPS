@@ -34,7 +34,7 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new mappingType_sypertypeOf_IMapping_interface_SubtypingRule.Pattern_10();
+    this.myMatchingPattern = new mappingType_sypertypeOf_IMapping_interface_SubtypingRule.Pattern_1359_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -42,11 +42,11 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
     return true;
   }
 
-  public static class Pattern_10 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_1359_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_KEY;
     /*package*/ SNode PatternVar_VALUE;
 
-    public Pattern_10() {
+    public Pattern_1359_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

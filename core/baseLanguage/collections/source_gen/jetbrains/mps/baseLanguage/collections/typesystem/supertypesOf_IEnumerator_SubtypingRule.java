@@ -34,7 +34,7 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public boolean isApplicable(SNode argument) {
-    this.myMatchingPattern = new supertypesOf_IEnumerator_SubtypingRule.Pattern_7();
+    this.myMatchingPattern = new supertypesOf_IEnumerator_SubtypingRule.Pattern_1015_0();
     return this.myMatchingPattern.match(argument);
   }
 
@@ -42,10 +42,10 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
     return true;
   }
 
-  public static class Pattern_7 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_1015_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_p;
 
-    public Pattern_7() {
+    public Pattern_1015_0() {
     }
 
     public boolean match(SNode nodeToMatch) {

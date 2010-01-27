@@ -31,53 +31,53 @@ public class MathUtil {
 
   public static SNode convert1(SNode bmc) {
     do {
-      SNode matchedNode_0 = bmc;
+      SNode matchedNode_8234_0 = bmc;
       {
-        boolean matches_0 = false;
+        boolean matches_8234_0 = false;
         {
-          SNode matchingNode_0 = bmc;
-          if (matchingNode_0 != null) {
-            matches_0 = SModelUtil_new.isAssignableConcept(matchingNode_0.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression");
+          SNode matchingNode_8234_0 = bmc;
+          if (matchingNode_8234_0 != null) {
+            matches_8234_0 = SModelUtil_new.isAssignableConcept(matchingNode_8234_0.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalPlusExpression");
           }
         }
-        if (matches_0) {
-          return new MathUtil.QuotationClass_8234_10().createNode(SLinkOperations.getTarget(matchedNode_0, "rightExpression", true), SLinkOperations.getTarget(matchedNode_0, "leftExpression", true));
+        if (matches_8234_0) {
+          return new MathUtil.QuotationClass_8234_10().createNode(SLinkOperations.getTarget(matchedNode_8234_0, "rightExpression", true), SLinkOperations.getTarget(matchedNode_8234_0, "leftExpression", true));
         }
       }
       {
-        boolean matches_1 = false;
+        boolean matches_8234_1 = false;
         {
-          SNode matchingNode_1 = bmc;
-          if (matchingNode_1 != null) {
-            matches_1 = SModelUtil_new.isAssignableConcept(matchingNode_1.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression");
+          SNode matchingNode_8234_1 = bmc;
+          if (matchingNode_8234_1 != null) {
+            matches_8234_1 = SModelUtil_new.isAssignableConcept(matchingNode_8234_1.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalMinusExpression");
           }
         }
-        if (matches_1) {
-          return new MathUtil.QuotationClass_8234_11().createNode(SLinkOperations.getTarget(matchedNode_0, "rightExpression", true), SLinkOperations.getTarget(matchedNode_0, "leftExpression", true));
+        if (matches_8234_1) {
+          return new MathUtil.QuotationClass_8234_11().createNode(SLinkOperations.getTarget(matchedNode_8234_0, "rightExpression", true), SLinkOperations.getTarget(matchedNode_8234_0, "leftExpression", true));
         }
       }
       {
-        boolean matches_2 = false;
+        boolean matches_8234_2 = false;
         {
-          SNode matchingNode_2 = bmc;
-          if (matchingNode_2 != null) {
-            matches_2 = SModelUtil_new.isAssignableConcept(matchingNode_2.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression");
+          SNode matchingNode_8234_2 = bmc;
+          if (matchingNode_8234_2 != null) {
+            matches_8234_2 = SModelUtil_new.isAssignableConcept(matchingNode_8234_2.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalMulExpression");
           }
         }
-        if (matches_2) {
-          return new MathUtil.QuotationClass_8234_12().createNode(SLinkOperations.getTarget(matchedNode_0, "rightExpression", true), SLinkOperations.getTarget(matchedNode_0, "leftExpression", true));
+        if (matches_8234_2) {
+          return new MathUtil.QuotationClass_8234_12().createNode(SLinkOperations.getTarget(matchedNode_8234_0, "rightExpression", true), SLinkOperations.getTarget(matchedNode_8234_0, "leftExpression", true));
         }
       }
       {
-        boolean matches_3 = false;
+        boolean matches_8234_3 = false;
         {
-          SNode matchingNode_3 = bmc;
-          if (matchingNode_3 != null) {
-            matches_3 = SModelUtil_new.isAssignableConcept(matchingNode_3.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression");
+          SNode matchingNode_8234_3 = bmc;
+          if (matchingNode_8234_3 != null) {
+            matches_8234_3 = SModelUtil_new.isAssignableConcept(matchingNode_8234_3.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalDivExpression");
           }
         }
-        if (matches_3) {
-          return new MathUtil.QuotationClass_8234_13().createNode(SLinkOperations.getTarget(matchedNode_0, "rightExpression", true), SLinkOperations.getTarget(matchedNode_0, "leftExpression", true));
+        if (matches_8234_3) {
+          return new MathUtil.QuotationClass_8234_13().createNode(SLinkOperations.getTarget(matchedNode_8234_0, "rightExpression", true), SLinkOperations.getTarget(matchedNode_8234_0, "leftExpression", true));
         }
       }
       return null;
@@ -86,52 +86,52 @@ public class MathUtil {
 
   public static SNode convert2(SNode bmc) {
     do {
-      SNode matchedNode_1 = bmc;
+      SNode matchedNode_8234_1 = bmc;
       {
-        boolean matches_4 = false;
+        boolean matches_8234_4 = false;
         {
-          SNode matchingNode_4 = bmc;
-          if (matchingNode_4 != null) {
-            matches_4 = SModelUtil_new.isAssignableConcept(matchingNode_4.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.PlusExpression");
+          SNode matchingNode_8234_4 = bmc;
+          if (matchingNode_8234_4 != null) {
+            matches_8234_4 = SModelUtil_new.isAssignableConcept(matchingNode_8234_4.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.PlusExpression");
           }
         }
-        if (matches_4) {
+        if (matches_8234_4) {
           return new MathUtil.QuotationClass_8234_14().createNode(SLinkOperations.getTarget(bmc, "rightExpression", true), SLinkOperations.getTarget(bmc, "leftExpression", true));
         }
       }
       {
-        boolean matches_5 = false;
+        boolean matches_8234_5 = false;
         {
-          SNode matchingNode_5 = bmc;
-          if (matchingNode_5 != null) {
-            matches_5 = SModelUtil_new.isAssignableConcept(matchingNode_5.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.MinusExpression");
+          SNode matchingNode_8234_5 = bmc;
+          if (matchingNode_8234_5 != null) {
+            matches_8234_5 = SModelUtil_new.isAssignableConcept(matchingNode_8234_5.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.MinusExpression");
           }
         }
-        if (matches_5) {
+        if (matches_8234_5) {
           return new MathUtil.QuotationClass_8234_15().createNode(SLinkOperations.getTarget(bmc, "rightExpression", true), SLinkOperations.getTarget(bmc, "leftExpression", true));
         }
       }
       {
-        boolean matches_6 = false;
+        boolean matches_8234_6 = false;
         {
-          SNode matchingNode_6 = bmc;
-          if (matchingNode_6 != null) {
-            matches_6 = SModelUtil_new.isAssignableConcept(matchingNode_6.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.MulExpression");
+          SNode matchingNode_8234_6 = bmc;
+          if (matchingNode_8234_6 != null) {
+            matches_8234_6 = SModelUtil_new.isAssignableConcept(matchingNode_8234_6.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.MulExpression");
           }
         }
-        if (matches_6) {
+        if (matches_8234_6) {
           return new MathUtil.QuotationClass_8234_16().createNode(SLinkOperations.getTarget(bmc, "rightExpression", true), SLinkOperations.getTarget(bmc, "leftExpression", true));
         }
       }
       {
-        boolean matches_7 = false;
+        boolean matches_8234_7 = false;
         {
-          SNode matchingNode_7 = bmc;
-          if (matchingNode_7 != null) {
-            matches_7 = SModelUtil_new.isAssignableConcept(matchingNode_7.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.DivExpression");
+          SNode matchingNode_8234_7 = bmc;
+          if (matchingNode_8234_7 != null) {
+            matches_8234_7 = SModelUtil_new.isAssignableConcept(matchingNode_8234_7.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.DivExpression");
           }
         }
-        if (matches_7) {
+        if (matches_8234_7) {
           return new MathUtil.QuotationClass_8234_17().createNode(SLinkOperations.getTarget(bmc, "rightExpression", true), SLinkOperations.getTarget(bmc, "leftExpression", true));
         }
       }
@@ -142,43 +142,43 @@ public class MathUtil {
   public static SNode getMathContext(SNode node) {
     SNode mc;
     do {
-      SNode matchedNode_2 = node;
+      SNode matchedNode_8234_2 = node;
       {
-        boolean matches_8 = false;
+        boolean matches_8234_8 = false;
         {
-          SNode matchingNode_8 = node;
-          if (matchingNode_8 != null) {
-            matches_8 = SModelUtil_new.isAssignableConcept(matchingNode_8.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation");
+          SNode matchingNode_8234_8 = node;
+          if (matchingNode_8234_8 != null) {
+            matches_8234_8 = SModelUtil_new.isAssignableConcept(matchingNode_8234_8.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.DecimalBinaryOperation");
           }
         }
-        if (matches_8) {
-          mc = SLinkOperations.getTarget(matchedNode_2, "context", true);
+        if (matches_8234_8) {
+          mc = SLinkOperations.getTarget(matchedNode_8234_2, "context", true);
           break;
         }
       }
       {
-        boolean matches_9 = false;
+        boolean matches_8234_9 = false;
         {
-          SNode matchingNode_9 = node;
-          if (matchingNode_9 != null) {
-            matches_9 = SModelUtil_new.isAssignableConcept(matchingNode_9.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation");
+          SNode matchingNode_8234_9 = node;
+          if (matchingNode_8234_9 != null) {
+            matches_8234_9 = SModelUtil_new.isAssignableConcept(matchingNode_8234_9.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.LinearSolveOperation");
           }
         }
-        if (matches_9) {
-          mc = SLinkOperations.getTarget(matchedNode_2, "context", true);
+        if (matches_8234_9) {
+          mc = SLinkOperations.getTarget(matchedNode_8234_2, "context", true);
           break;
         }
       }
       {
-        boolean matches_10 = false;
+        boolean matches_8234_10 = false;
         {
-          SNode matchingNode_10 = node;
-          if (matchingNode_10 != null) {
-            matches_10 = SModelUtil_new.isAssignableConcept(matchingNode_10.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation");
+          SNode matchingNode_8234_10 = node;
+          if (matchingNode_8234_10 != null) {
+            matches_8234_10 = SModelUtil_new.isAssignableConcept(matchingNode_8234_10.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.MatrixInverseOperation");
           }
         }
-        if (matches_10) {
-          mc = SLinkOperations.getTarget(matchedNode_2, "context", true);
+        if (matches_8234_10) {
+          mc = SLinkOperations.getTarget(matchedNode_8234_2, "context", true);
           break;
         }
       }
@@ -225,29 +225,29 @@ public class MathUtil {
 
   public static SNode getUnboxedElementType(SNode t) {
     do {
-      SNode matchedNode_3 = t;
+      SNode matchedNode_8234_3 = t;
       {
-        boolean matches_11 = false;
+        boolean matches_8234_11 = false;
         {
-          SNode matchingNode_11 = t;
-          if (matchingNode_11 != null) {
-            matches_11 = SModelUtil_new.isAssignableConcept(matchingNode_11.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
+          SNode matchingNode_8234_11 = t;
+          if (matchingNode_8234_11 != null) {
+            matches_8234_11 = SModelUtil_new.isAssignableConcept(matchingNode_8234_11.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
           }
         }
-        if (matches_11) {
-          return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(matchedNode_3, "elementType", true));
+        if (matches_8234_11) {
+          return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(matchedNode_8234_3, "elementType", true));
         }
       }
       {
-        boolean matches_12 = false;
+        boolean matches_8234_12 = false;
         {
-          SNode matchingNode_12 = t;
-          if (matchingNode_12 != null) {
-            matches_12 = SModelUtil_new.isAssignableConcept(matchingNode_12.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+          SNode matchingNode_8234_12 = t;
+          if (matchingNode_8234_12 != null) {
+            matches_8234_12 = SModelUtil_new.isAssignableConcept(matchingNode_8234_12.getConceptFqName(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
           }
         }
-        if (matches_12) {
-          return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(matchedNode_3, "elementType", true));
+        if (matches_8234_12) {
+          return Type_Behavior.call_getUnboxedType_1213877337320(SLinkOperations.getTarget(matchedNode_8234_3, "elementType", true));
         }
       }
       return null;

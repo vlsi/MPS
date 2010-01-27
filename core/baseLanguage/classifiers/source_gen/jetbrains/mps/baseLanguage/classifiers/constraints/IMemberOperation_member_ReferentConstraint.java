@@ -35,10 +35,10 @@ public class IMemberOperation_member_ReferentConstraint extends BaseNodeReferenc
     SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
     List<SNode> applicableMembers = new ArrayList<SNode>();
     {
-      IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
-      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(operand), pattern_0);
-      if (coercedNode_0 != null) {
-        for (SNode member : BaseClassifierType_Behavior.call_getMembers_1213877402148(coercedNode_0, _context.getEnclosingNode())) {
+      IMatchingPattern pattern_6027_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.classifiers.structure.BaseClassifierType");
+      SNode coercedNode_6027_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(operand), pattern_6027_0);
+      if (coercedNode_6027_0 != null) {
+        for (SNode member : BaseClassifierType_Behavior.call_getMembers_1213877402148(coercedNode_6027_0, _context.getEnclosingNode())) {
           if (SNodeOperations.isInstanceOf(member, NameUtil.nodeFQName(_context.getLinkTarget()))) {
             ListSequence.fromList(applicableMembers).addElement(member);
           }

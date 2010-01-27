@@ -130,15 +130,15 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1208699492548(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_0(), true) != null) && SLinkOperations.getTarget(_context.getNode(), "classConcept", false).getModel().getLongName().startsWith("jetbrains.mps.internal.collections.runtime");
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_8087_0(), true) != null) && SLinkOperations.getTarget(_context.getNode(), "classConcept", false).getModel().getLongName().startsWith("jetbrains.mps.internal.collections.runtime");
   }
 
   public static boolean baseMappingRule_Condition_1208699581854(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_1(), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_8087_1(), true) != null);
   }
 
   public static boolean baseMappingRule_Condition_1208699591175(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_2(), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_8087_2(), true) != null);
   }
 
   public static boolean baseMappingRule_Condition_1224426031738(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -228,7 +228,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1226933059022(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_3(), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_8087_3(), true) != null);
   }
 
   public static boolean baseMappingRule_Condition_1226933059043(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -307,7 +307,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1237491339952(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_4(), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_8087_4(), true) != null);
   }
 
   public static boolean baseMappingRule_Condition_1237491379928(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -355,7 +355,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1240243169548(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_5(), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_8087_5(), true) != null);
   }
 
   public static boolean baseMappingRule_Condition_1240243169569(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -378,7 +378,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1240253424883(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_6(), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_8087_6(), true) != null);
   }
 
   public static boolean baseMappingRule_Condition_1240253424904(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -478,7 +478,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_1848858642723003393(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_7(), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_8087_7(), true) != null);
   }
 
   public static boolean baseMappingRule_Condition_1848858642723005424(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -557,7 +557,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_3358009230509159533(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_8(), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_8087_8(), true) != null);
   }
 
   public static boolean baseMappingRule_Condition_3358009230509159554(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -684,7 +684,7 @@ public class QueriesGenerated {
   }
 
   public static boolean baseMappingRule_Condition_5478544378670483593(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_9(), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(_context.getNode()), new QueriesGenerated.Pattern_8087_9(), true) != null);
   }
 
   public static boolean baseMappingRule_Condition_5478544378670483614(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -899,10 +899,10 @@ public class QueriesGenerated {
       }
     }
     {
-      IMatchingPattern pattern_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
-      SNode coercedNode_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(componentType, pattern_0);
-      if (coercedNode_0 != null) {
-        return SLinkOperations.getTarget(coercedNode_0, "classifier", false);
+      IMatchingPattern pattern_8087_0 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType");
+      SNode coercedNode_8087_0 = TypeChecker.getInstance().getRuntimeSupport().coerce_(componentType, pattern_8087_0);
+      if (coercedNode_8087_0 != null) {
+        return SLinkOperations.getTarget(coercedNode_8087_0, "classifier", false);
       } else {
       }
     }
@@ -1231,12 +1231,12 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1226410564227(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
-      SNode coercedNode_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true)), pattern_1);
-      if (coercedNode_1 != null) {
-        return (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_1, "elementType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType") ?
-          SLinkOperations.getTarget(coercedNode_1, "elementType", true) :
-          ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_1, "elementType", true))
+      IMatchingPattern pattern_8087_1 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
+      SNode coercedNode_8087_1 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true)), pattern_8087_1);
+      if (coercedNode_8087_1 != null) {
+        return (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_8087_1, "elementType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType") ?
+          SLinkOperations.getTarget(coercedNode_8087_1, "elementType", true) :
+          ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_8087_1, "elementType", true))
         );
       } else {
       }
@@ -1250,12 +1250,12 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1226410635744(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     {
-      IMatchingPattern pattern_2 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
-      SNode coercedNode_2 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true)), pattern_2);
-      if (coercedNode_2 != null) {
-        return (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_2, "elementType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType") ?
-          SLinkOperations.getTarget(coercedNode_2, "elementType", true) :
-          ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_2, "elementType", true))
+      IMatchingPattern pattern_8087_2 = HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.collections.structure.SequenceType");
+      SNode coercedNode_8087_2 = TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "inputSequence", true)), pattern_8087_2);
+      if (coercedNode_8087_2 != null) {
+        return (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(coercedNode_8087_2, "elementType", true), "jetbrains.mps.baseLanguage.structure.PrimitiveType") ?
+          SLinkOperations.getTarget(coercedNode_8087_2, "elementType", true) :
+          ClassifierTypeUtil.getTypeCoercedToClassifierType(SLinkOperations.getTarget(coercedNode_8087_2, "elementType", true))
         );
       } else {
       }
@@ -2342,8 +2342,8 @@ public class QueriesGenerated {
     return res;
   }
 
-  public static class Pattern_0 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_0() {
+  public static class Pattern_8087_0 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_8087_0() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -2376,8 +2376,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_1 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_1() {
+  public static class Pattern_8087_1 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_8087_1() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -2410,8 +2410,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_2() {
+  public static class Pattern_8087_2 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_8087_2() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -2444,8 +2444,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_3 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_3() {
+  public static class Pattern_8087_3 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_8087_3() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -2478,8 +2478,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_4 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_4() {
+  public static class Pattern_8087_4 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_8087_4() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -2512,8 +2512,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_5 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_5() {
+  public static class Pattern_8087_5 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_8087_5() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -2546,8 +2546,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_6 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_6() {
+  public static class Pattern_8087_6 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_8087_6() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -2580,8 +2580,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_7 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_7() {
+  public static class Pattern_8087_7 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_8087_7() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -2614,8 +2614,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_8 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_8() {
+  public static class Pattern_8087_8 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_8087_8() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -2648,8 +2648,8 @@ public class QueriesGenerated {
     }
   }
 
-  public static class Pattern_9 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_9() {
+  public static class Pattern_8087_9 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_8087_9() {
     }
 
     public boolean match(SNode nodeToMatch) {

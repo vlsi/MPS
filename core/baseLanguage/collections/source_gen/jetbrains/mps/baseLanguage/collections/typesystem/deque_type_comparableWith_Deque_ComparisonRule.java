@@ -30,7 +30,7 @@ public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
   }
 
   public boolean isApplicable2(SNode node) {
-    this.myMatchingPattern2 = new deque_type_comparableWith_Deque_ComparisonRule.Pattern_17();
+    this.myMatchingPattern2 = new deque_type_comparableWith_Deque_ComparisonRule.Pattern_8509_0();
     return this.myMatchingPattern2.match(node);
   }
 
@@ -42,10 +42,10 @@ public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
     return "jetbrains.mps.baseLanguage.structure.ClassifierType";
   }
 
-  public static class Pattern_17 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_8509_0 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode PatternVar_ELEMENT_TYPE;
 
-    public Pattern_17() {
+    public Pattern_8509_0() {
     }
 
     public boolean match(SNode nodeToMatch) {
