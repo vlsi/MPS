@@ -17379,7 +17379,12 @@
                 <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1222949938339">
                   <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1222949938340">
                     <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetModelOperation:16" id="1222949938341" />
-                    <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1222949938342" />
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1909819095656736704">
+                      <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="1909819095656736703" />
+                      <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput:0" id="1909819095656736708">
+                        <node role="outputNode:0" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1909819095656736710" />
+                      </node>
+                    </node>
                   </node>
                 </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1222949938343">
@@ -17395,11 +17400,16 @@
           <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1222949923539">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1222949951407">
               <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1222949951408">
-                <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1222949951409">
-                  <node role="leftExpression:16" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1222949951410" />
-                </node>
                 <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1222949951411">
                   <link role="baseMethodDeclaration:3" targetNodeId="4.~SNode.getId():java.lang.String" resolveInfo="getId" />
+                </node>
+                <node role="operand:3" type="jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression:16" id="1909819095656736719">
+                  <node role="leftExpression:16" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1909819095656736715">
+                    <node role="operand:3" type="jetbrains.mps.lang.generator.generationContext.structure.TemplateFunctionParameter_generationContext:0" id="1909819095656736716" />
+                    <node role="operation:3" type="jetbrains.mps.lang.generator.generationContext.structure.GenerationContextOp_GetOriginalCopiedInputByOutput:0" id="1909819095656736717">
+                      <node role="outputNode:0" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="1909819095656736718" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>

@@ -689,11 +689,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1222949920050(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(_context.getNode()).toString();
+    return SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1222949923538(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getId();
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_1223044050730(final IOperationContext operationContext, final PropertyMacroContext _context) {
