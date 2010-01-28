@@ -4,6 +4,8 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.pluginparts.actions.GeneratedAction;
 import javax.swing.Icon;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.plugins.MacrosUtil;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
@@ -11,8 +13,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 
 public class NewSubModel_Action extends GeneratedAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/nodes/model.png", "jetbrains.mps.ide"), true);
   protected static Log log = LogFactory.getLog(NewSubModel_Action.class);
 
   private Project ideaProject;
@@ -41,7 +41,6 @@ public class NewSubModel_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    boolean correctModule = NewSubModel_Action.this.model.getModule() instanceof Solution || NewSubModel_Action.this.model.getModule() instanceof Generator;
     boolean correctStereotype = false;
     String stereotype = NewSubModel_Action.this.model.getStereotype();
     for (String availableStereotype : SModelStereotype.values) {
@@ -50,7 +49,7 @@ public class NewSubModel_Action extends GeneratedAction {
         break;
       }
     }
-    return correctModule && correctStereotype;
+    return correctStereotype;
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
