@@ -25,12 +25,15 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
+import jetbrains.mps.logging.Logger;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
 public class EditorsProvider {
+  private static Logger LOG = Logger.getLogger(EditorsProvider.class);
+
   private Project myProject;
 
   private List<MPSFileNodeEditor> myEditors = new ArrayList<MPSFileNodeEditor>();
@@ -136,12 +139,21 @@ public class EditorsProvider {
   }
 
   public List<IEditor> getAllEditors() {
+    List<MPSFileNodeEditor> emptyEditors = new ArrayList<MPSFileNodeEditor>(0);
+    List<IEditor> result = new ArrayList<IEditor>();
     synchronized (myLock) {
-      List<IEditor> result = new ArrayList<IEditor>();
       for (MPSFileNodeEditor e : myEditors) {
-        result.add(e.getNodeEditor());
+        IEditor editor = e.getNodeEditor();
+        if (editor != null) {
+          result.add(editor);
+        } else {
+          emptyEditors.add(e);
+        }
       }
-      return result;
     }
+    for (MPSFileNodeEditor emptyEditor : emptyEditors) {
+      LOG.error("MPSFileNodeEditor has null editor : " + emptyEditor);
+    }
+    return result;
   }
 }
