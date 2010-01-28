@@ -8,7 +8,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
-      InferenceRule_Runtime inferenceRule = new typeof_NodeParameter_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_EmitCodeForStatement_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -16,11 +16,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_RelativePosition_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_NodeParameter_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_EmitCodeForStatement_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_RelativePosition_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
   }

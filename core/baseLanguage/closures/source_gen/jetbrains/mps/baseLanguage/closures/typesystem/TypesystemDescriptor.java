@@ -16,15 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
-      InferenceRule_Runtime inferenceRule = new typeof_InvokeFunctionExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_InvokeExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_ReturnStatement_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_ClosureControlStatement_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -32,19 +24,27 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_CompactInvokeFunctionExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_InvokeExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_InvokeFunctionExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_InvokeFunctionOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_ReturnStatement_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_YieldAllStatement_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_ClosureControlStatement_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_CompactInvokeFunctionExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -64,11 +64,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myComparisonRules.add(comparisonRule);
     }
     {
-      InequationReplacementRule_Runtime eliminationRule = new FunctionType_subtypeOf_FunctionType_InequationReplacementRule();
+      InequationReplacementRule_Runtime eliminationRule = new FunctionType_subtypeOf_ClassifierType_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
     {
-      InequationReplacementRule_Runtime eliminationRule = new FunctionType_subtypeOf_ClassifierType_InequationReplacementRule();
+      InequationReplacementRule_Runtime eliminationRule = new FunctionType_subtypeOf_FunctionType_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
     {

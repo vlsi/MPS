@@ -8,7 +8,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
-      InferenceRule_Runtime inferenceRule = new typeof_PatternExpression_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_AsPattern_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -16,7 +16,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_PropertyPatternVariableDeclaration_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_ListPattern_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_PatternExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -24,11 +28,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_AsPattern_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_ListPattern_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_PropertyPatternVariableDeclaration_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
   }

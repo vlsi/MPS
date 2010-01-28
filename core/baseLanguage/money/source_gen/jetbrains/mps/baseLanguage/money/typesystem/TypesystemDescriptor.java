@@ -15,6 +15,10 @@ import jetbrains.mps.project.GlobalScope;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
+      InferenceRule_Runtime inferenceRule = new typeof_MoneyCreator_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_MoneyGetAmountMethodCall_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -24,10 +28,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InferenceRule_Runtime inferenceRule = new typeof_MoneyIsZeroMethodCall_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_MoneyCreator_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

@@ -15,6 +15,42 @@ import jetbrains.mps.baseLanguage.math.behavior.MathUtil;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
+      InferenceRule_Runtime inferenceRule = new typeof_AbsExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ArithmSymbol_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_BinaryOperationMathContext_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ComplexLiteral_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ConjugateOperation_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_Determinant_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_DivOperationFraction_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ExtrSymbol_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_ILiteral_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_InIntervalExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -31,83 +67,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_MathSymbolFromToIndex_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_ComplexLiteral_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_MathTypeCast_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_TrigonometricExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_AbsExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_PowExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_ArithmSymbol_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_VectorInitializer_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_ILiteral_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_LinearSolveOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_MatrixInitializerIndexReference_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_MatrixNorm_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_MatrixElementAccessExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_BinaryOperationMathContext_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_ExtrSymbol_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_MatrixConstructor_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_MathSymbolIndex_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_MatrixInitializer_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_MathSymbolReference_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_Determinant_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -115,11 +75,35 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_MatrixUnit_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_MathSymbolFromToIndex_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_DivOperationFraction_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_MathSymbolIndex_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MathSymbolReference_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MathTypeCast_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MatrixConstructor_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MatrixElementAccessExpression_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MatrixInitializer_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MatrixInitializerIndexReference_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -127,7 +111,19 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
+      InferenceRule_Runtime inferenceRule = new typeof_MatrixNorm_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_MatrixUnit_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_MatrixZero_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_PowExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -135,15 +131,19 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ConjugateOperation_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_TrigonometricExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new highlight_complex_to_real_casts_NonTypesystemRule();
+      InferenceRule_Runtime inferenceRule = new typeof_VectorInitializer_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      NonTypesystemRule_Runtime nonTypesystemRule = new check_dimensions_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new vector_element_must_be_number_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new highlight_complex_to_real_casts_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
@@ -155,7 +155,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
-      NonTypesystemRule_Runtime nonTypesystemRule = new check_dimensions_NonTypesystemRule();
+      NonTypesystemRule_Runtime nonTypesystemRule = new vector_element_must_be_number_NonTypesystemRule();
       this.myNonTypesystemRules.add(nonTypesystemRule);
     }
     {
@@ -163,19 +163,19 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new complex_extends_bigcomplex_SubtypingRule();
+      SubtypingRule_Runtime subtypingRule = new bigcomplex_extends_BigComplex_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new double_extends_bigdecimal_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new long_extends_biginteger_SubtypingRule();
+      SubtypingRule_Runtime subtypingRule = new bigdecimal_extends_BigDecimal_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {
       SubtypingRule_Runtime subtypingRule = new bigdecimal_extends_bigcomplex_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new biginteger_extends_BigInteger_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {
@@ -187,19 +187,19 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new bigdecimal_extends_BigDecimal_SubtypingRule();
+      SubtypingRule_Runtime subtypingRule = new complex_extends_bigcomplex_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new biginteger_extends_BigInteger_SubtypingRule();
-      this.mySubtypingRules.add(subtypingRule);
-    }
-    {
-      SubtypingRule_Runtime subtypingRule = new bigcomplex_extends_BigComplex_SubtypingRule();
+      SubtypingRule_Runtime subtypingRule = new double_extends_bigdecimal_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {
       SubtypingRule_Runtime subtypingRule = new double_extends_complex_SubtypingRule();
+      this.mySubtypingRules.add(subtypingRule);
+    }
+    {
+      SubtypingRule_Runtime subtypingRule = new long_extends_biginteger_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {
@@ -211,11 +211,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      InequationReplacementRule_Runtime eliminationRule = new matrix_vector_replacement_rule_InequationReplacementRule();
+      InequationReplacementRule_Runtime eliminationRule = new matrix_replacement_rule_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
     {
-      InequationReplacementRule_Runtime eliminationRule = new matrix_replacement_rule_InequationReplacementRule();
+      InequationReplacementRule_Runtime eliminationRule = new matrix_vector_replacement_rule_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
     {

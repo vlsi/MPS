@@ -9,7 +9,7 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ThisClassifierExpresson_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_DefaultClassifierFieldAccessOperation_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -17,11 +17,11 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_DefaultClassifierFieldAccessOperation_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_SuperClassifierExpresson_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_SuperClassifierExpresson_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_ThisClassifierExpresson_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
