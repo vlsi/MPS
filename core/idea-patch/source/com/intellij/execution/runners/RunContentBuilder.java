@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2000-2010 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -174,8 +174,6 @@ public class RunContentBuilder implements LogConsoleManager, Disposable {
     log.attachStopLogConsoleTrackingListener(myExecutionResult.getProcessHandler());
     addAdditionalTabComponent(log, path);
 
-    Disposer.register(this, log);
-
     myUi.addListener(new ContentManagerAdapter() {
       public void selectionChanged(final ContentManagerEvent event) {
         log.stateChanged(new ChangeEvent(myUi));
@@ -271,7 +269,7 @@ public class RunContentBuilder implements LogConsoleManager, Disposable {
   }
 
   public void removeAdditionalTabComponent(AdditionalTabComponent component) {
-    component.dispose();
+    Disposer.dispose(component);
     myDisposeables.remove(component);
     final Content content = myAdditionalContent.remove(component);
     myUi.removeContent(content, true);

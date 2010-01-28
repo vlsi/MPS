@@ -23,7 +23,6 @@ import com.intellij.psi.search.GlobalSearchScope;
 import com.intellij.psi.search.ProjectAndLibrariesScope;
 import com.intellij.util.Processor;
 import com.intellij.util.indexing.FileBasedIndex;
-import com.intellij.util.indexing.FileBasedIndex.AllValuesProcessor;
 import com.intellij.util.indexing.ID;
 import com.intellij.psi.search.EverythingGlobalScope;
 import jetbrains.mps.lang.core.structure.INamedConcept;

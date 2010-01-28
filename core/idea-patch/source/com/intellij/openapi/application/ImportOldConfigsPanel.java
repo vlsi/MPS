@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2000-2010 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -18,9 +18,11 @@ package com.intellij.openapi.application;
 import com.intellij.openapi.MnemonicHelper;
 import com.intellij.openapi.ui.TextFieldWithBrowseButton;
 import com.intellij.openapi.util.SystemInfo;
+import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.Spacer;
+import org.jetbrains.annotations.Nullable;
 
 import javax.swing.*;
 import javax.swing.event.ChangeEvent;
@@ -43,6 +45,8 @@ public class ImportOldConfigsPanel extends JDialog {
   private JPanel myRootPanel;
   private File myLastSelection = null;
   private JButton myOkButton;
+  private JLabel mySuggestLabel;
+  private JLabel myHomeLabel;
 
   public ImportOldConfigsPanel(final Frame owner) {
     super(owner, true);
@@ -64,6 +68,12 @@ public class ImportOldConfigsPanel extends JDialog {
     group.add(myRbImport);
     myRbDoNotImport.setSelected(true);
 
+    final ApplicationNamesInfo namesInfo = ApplicationNamesInfo.getInstance();
+    final String productName = namesInfo.getProductName().equals("IDEA") ? namesInfo.getFullProductName() : namesInfo.getProductName();
+    mySuggestLabel.setText(ApplicationBundle.message("label.you.can.import", productName));
+    myRbDoNotImport.setText(ApplicationBundle.message("radio.do.not.import", productName));
+    myHomeLabel.setText(ApplicationBundle.message("editbox.installation.home", productName));
+
     myRbImport.addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
         update();
@@ -71,13 +81,11 @@ public class ImportOldConfigsPanel extends JDialog {
     });
 
     if (SystemInfo.isMac) {
-      //noinspection HardCodedStringLiteral
-      final String mostProbable = "/Applications/" + ApplicationNamesInfo.getInstance().getFullProductName();
-      if (new File(mostProbable).exists()) {
-        myPrevInstallation.setText(mostProbable);
-      } else {
-        //noinspection HardCodedStringLiteral
-        myPrevInstallation.setText("/Applications");
+      myPrevInstallation.setText(findPreviousInstallationMac(productName));
+    } else if (SystemInfo.isWindows) {
+      String prevInstall = findPreviousInstallationWindows(productName);
+      if (prevInstall != null) {
+        myPrevInstallation.setText(prevInstall);
       }
     }
 
@@ -122,6 +130,44 @@ public class ImportOldConfigsPanel extends JDialog {
     Dimension ownSize = getPreferredSize();
 
     setLocation((parentSize.width - ownSize.width) / 2, (parentSize.height - ownSize.height) / 2);
+  }
+
+  @Nullable
+  private static String findPreviousInstallationWindows(String productName) {
+    String programFiles = System.getenv("ProgramFiles");
+    if (programFiles != null) {
+      File jetbrainsHome = new File(programFiles, "JetBrains");
+      if (jetbrainsHome.isDirectory()) {
+        final File[] files = jetbrainsHome.listFiles();
+        String latestVersion = null;
+        File latestFile = null;
+        for (File file : files) {
+          if (file.isDirectory() && file.getName().startsWith(productName)) {
+            String versionName = file.getName().substring(productName.length()).trim();
+            // EAP builds don't have . in version number - ignore them
+            if (versionName.indexOf('.') > 0) {
+              if (latestVersion == null || StringUtil.compareVersionNumbers(latestVersion, versionName) > 0) {
+                latestVersion = versionName;
+                latestFile = file;
+              }
+            }
+          }
+        }
+        if (latestFile != null) {
+          return latestFile.getAbsolutePath();
+        }
+      }
+    }
+    return null;
+  }
+
+  private static String findPreviousInstallationMac(String productName) {
+    //noinspection HardCodedStringLiteral
+    final String mostProbable = "/Applications/" + productName;
+    if (new File(mostProbable).exists()) {
+      return mostProbable;
+    }
+    return "/Applications";
   }
 
   private void close() {

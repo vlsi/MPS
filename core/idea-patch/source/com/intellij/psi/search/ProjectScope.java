@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2000-2010 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -39,7 +39,7 @@ public class ProjectScope {
     if (allScope == null) {
       final ProjectRootManager projectRootManager = ProjectRootManager.getInstance(project);
       allScope = projectRootManager == null ? new EverythingGlobalScope(project) : new ProjectAndLibrariesScope(project);
-      allScope = ((UserDataHolderEx)project).putUserDataIfAbsent(ALL_SCOPE_KEY, allScope);
+      allScope = ((UserDataHolderEx) project).putUserDataIfAbsent(ALL_SCOPE_KEY, allScope);
     }
     return allScope;
   }
@@ -54,8 +54,7 @@ public class ProjectScope {
             return false;
           }
         };
-      }
-      else {
+      } else {
         projectScope = new GlobalSearchScope(project) {
           private final ProjectFileIndex myFileIndex = projectRootManager.getFileIndex();
 
@@ -113,7 +112,7 @@ public class ProjectScope {
           }
         };
       }
-      projectScope = ((UserDataHolderEx)project).putUserDataIfAbsent(PROJECT_SCOPE_KEY, projectScope);
+      projectScope = ((UserDataHolderEx) project).putUserDataIfAbsent(PROJECT_SCOPE_KEY, projectScope);
     }
     return projectScope;
   }

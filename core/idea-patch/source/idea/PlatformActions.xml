@@ -1,11 +1,12 @@
 <component>
     <actions>
+        <!--MPS Patch Start-->
         <action id="CaptureMemorySnapShot" class="com.intellij.util.CaptureMemorySnapshotAction"
                 icon="/actions/profileMemory.png"/>
         <action id="CaptureCPUUsageData" class="com.intellij.util.CaptureCPUUsageDataAction"
                 icon="/actions/profuleCPU.png"/>
+        <!--MPS Patch End-->
         <action id="ContextHelp" class="com.intellij.ide.actions.ContextHelpAction"/>
-        <action id="ToggleReadOnlyAttribute" class="com.intellij.ide.actions.ToggleReadOnlyAttributeAction"/>
         <action id="RunGc" class="com.intellij.ide.actions.RunGcAction"/>
         <action id="ShowPopupMenu" class="com.intellij.ide.actions.ShowPopupMenuAction"/>
         <action id="CloseWindow" class="com.intellij.ide.actions.CloseWindowAction"/>
@@ -14,6 +15,8 @@
         <action id="PreviousEditorTab" class="com.intellij.openapi.fileEditor.impl.SelectPreviousEditorTabAction"/>
 
         <action id="TextComponent.ClearAction" class="com.intellij.ui.ClearTextAction"/>
+        <!--TODO (MPS) Do we need this action?-->
+        <action id="ToolWindowSwitcher" class="com.intellij.ide.actions.ToolWindowSwitcher" text="Switcher"/>
 
         <group id="EditorActions">
             <action id="EditorPageUp" class="com.intellij.openapi.editor.actions.PageUpAction"/>
@@ -114,6 +117,9 @@
         <action id="CompareTwoFiles" class="com.intellij.openapi.diff.actions.CompareFiles"/>
         <action id="CompareFileWithEditor" class="com.intellij.openapi.diff.actions.CompareFileWithEditor"/>
 
+        <action id="ScrollTreeToCenter" class="com.intellij.ide.actions.ScrollTreeToCenterAction"
+                use-shortcut-of="EditorScrollToCenter"/>
+
         <action id="PinToolwindowTab" class="com.intellij.ui.content.tabs.PinToolwindowTabAction"/>
 
         <group id="MainMenu">
@@ -124,15 +130,17 @@
                     <action id="OpenFile" class="com.intellij.ide.actions.OpenFileAction"
                             icon="/actions/menu-open.png"/>
                     <action id="OpenRemoteFile" class="com.intellij.ide.actions.OpenRemoteFileAction"
-                            text="Open Remote File..."
-                            internal="true"/>
+                            text="Open Remote File..." internal="true"/>
                     <group id="$LRU" class="com.intellij.ide.actions.RecentProjectsGroup" popup="true"/>
                     <action id="CloseProject" class="com.intellij.ide.actions.CloseProjectAction"/>
                 </group>
                 <separator/>
-                <group id="FileSettingsGroup">
+                <group id="FileMainSettingsGroup">
                     <action id="ShowSettings" class="com.intellij.ide.actions.ShowSettingsAction"
                             icon="/general/ideOptions.png"/>
+                    <group id="FileOtherSettingsGroup" popup="true">
+                        <group id="FileSettingsGroup"/>
+                    </group>
                 </group>
                 <separator/>
                 <action id="SaveAll" class="com.intellij.ide.actions.SaveAllAction" icon="/actions/menu-saveall.png"/>
@@ -147,9 +155,11 @@
                 <group id="ChangeFileEncodingGroup" popup="true"
                        class="com.intellij.openapi.vfs.encoding.ChangeEncodingUpdateGroup">
                     <action id="ChangeFileEncodingGroupAction"
-                            class="com.intellij.openapi.vfs.encoding.ChangeFileEncodingGroup"
-                            text=""/>
+                            class="com.intellij.openapi.vfs.encoding.ChangeFileEncodingGroup" text=""/>
                 </group>
+                <!--MPS Patch Start-->
+                <!--<action id="ToggleReadOnlyAttribute" class="com.intellij.ide.actions.ToggleReadOnlyAttributeAction"/>-->
+                <!--MPS Patch End-->
                 <separator/>
                 <action id="Exit" class="com.intellij.ide.actions.ExitAction"/>
             </group>
@@ -201,6 +211,7 @@
                 <separator/>
                 <group id="ViewRecentActions">
                     <action id="RecentFiles" class="com.intellij.ide.actions.ShowRecentFilesAction"/>
+                    <action id="RecentChangedFiles" class="com.intellij.ide.actions.ShowRecentlyEditedFilesAction"/>
                 </group>
                 <separator/>
                 <group id="PairFileActions">
@@ -237,6 +248,9 @@
                     <separator/>
                     <group id="PlaySavedMacroActions" class="com.intellij.ide.actionMacro.actions.MacrosGroup"/>
                 </group>
+                <!--MPS Patch Start-->
+                <!--<action id="PsiViewer" class="com.intellij.internal.psiView.PsiViewerAction"/>-->
+                <!--MPS Patch End-->
             </group>
 
             <group id="WindowMenu" popup="true">
@@ -255,6 +269,16 @@
                 <action id="ToggleDockMode" class="com.intellij.ide.actions.ToggleDockModeAction"/>
                 <action id="ToggleFloatingMode" class="com.intellij.ide.actions.ToggleFloatingModeAction"/>
                 <action id="ToggleSideMode" class="com.intellij.ide.actions.ToggleSideModeAction"/>
+                <!--MPS Patch Start-->
+                <!--<action id="ToggleContentUiTypeMode" class="com.intellij.ide.actions.ToggleContentUiTypeAction"/>-->
+                <!--<action id="ShowContent" class="com.intellij.ide.actions.ShowContentAction"/>-->
+                <!--<group id="ResizeToolWindowGroup" popup="true">-->
+                    <!--<action id="ResizeToolWindowLeft" class="com.intellij.ide.actions.ResizeToolWindowAction$Left"/>-->
+                    <!--<action id="ResizeToolWindowRight" class="com.intellij.ide.actions.ResizeToolWindowAction$Right"/>-->
+                    <!--<action id="ResizeToolWindowUp" class="com.intellij.ide.actions.ResizeToolWindowAction$Up"/>-->
+                    <!--<action id="ResizeToolWindowDown" class="com.intellij.ide.actions.ResizeToolWindowAction$Down"/>-->
+                <!--</group>-->
+                <!--MPS Patch End-->
                 <separator/>
                 <action id="NextTab" class="com.intellij.ide.actions.NextTabAction"/>
                 <action id="PreviousTab" class="com.intellij.ide.actions.PreviousTabAction"/>
@@ -286,7 +310,13 @@
                 <action id="HelpTopics" class="com.intellij.ide.actions.HelpTopicsAction"
                         icon="/actions/menu-help.png"/>
                 <action id="ShowTips" class="com.intellij.ide.actions.ShowTipsAction"/>
+                <!--MPS Patch Start-->
+                <!--<action id="ProductivityGude"-->
+                        <!--class="com.intellij.featureStatistics.actions.ShowFeatureUsageStatisticsAction"/>-->
+                <!--MPS Patch End-->
                 <separator/>
+                <!--MPS Patch Start-->
+                <!--Add MPS Actions, remove IDEA's-->
                 <action id="ShowMPSSite"
                         class="jetbrains.mps.workbench.actions.help.ShowMPSSiteAction"
                         text="MPS Home"/>
@@ -309,6 +339,7 @@
                 <action id="MPSShowDefaultKeymap"
                         class="jetbrains.mps.ide.actions.ShowDefaultKeymap_Action"
                         text="Default Keymap Reference"/>
+                <!--MPS Patch End-->
                 <separator/>
                 <action id="About" class="com.intellij.ide.actions.AboutAction"/>
             </group>
@@ -334,16 +365,21 @@
             <reference ref="ShowSettings"/>
             <separator/>
             <reference ref="HelpTopics"/>
+            <!--MPS Patch Start-->
+            <!--Add profile actions-->
             <separator/>
             <reference ref="CaptureMemorySnapShot"/>
             <reference ref="CaptureCPUUsageData"/>
-
+            <!--MPS Patch End-->
         </group>
 
         <group id="EditorPopupMenu" configurable="true">
-            <reference ref="CutCopyPasteGroup"/>
-            <separator/>
-            <reference ref="CloseEditor"/>
+            <reference ref="$Cut"/>
+            <reference ref="$Copy"/>
+            <reference ref="$Paste"/>
+            <reference ref="PasteMultiple"/>
+            <reference ref="EditorPasteSimple"/>
+            <reference ref="EditorToggleColumnMode"/>
             <separator/>
             <action id="CompareClipboardWithSelection"
                     class="com.intellij.openapi.diff.actions.CompareClipboardWithSelection"/>
@@ -352,6 +388,8 @@
 
         <group id="EditorTabPopupMenu">
             <reference ref="CloseEditorsGroup"/>
+            <separator/>
+            <reference ref="CopyPaths"/>
             <separator/>
             <reference ref="SplitVertically"/>
             <reference ref="SplitHorizontally"/>
@@ -371,6 +409,13 @@
         </group>
 
         <group id="WelcomeScreen.Documentation">
+            <!--MPS Patch Start-->
+            <!--<action id="WelcomeScreen.ReadHelp" class="com.intellij.openapi.wm.impl.welcomeScreen.ReadHelpAction"-->
+                    <!--icon="/general/readHelp.png"/>-->
+            <!--<action id="WelcomeScreen.ShowTips" class="com.intellij.ide.actions.ShowTipsAction"-->
+                    <!--icon="/general/tipsOfTheDay.png"/>-->
+            <!--<reference ref="Help.KeymapReference"/>-->
+            <!--MPS Patch End-->
         </group>
 
         <group id="FileChooser">
@@ -425,6 +470,41 @@
             <action id="ChangeLaf" class="com.intellij.ide.actions.QuickChangeLookAndFeel"/>
         </group>
 
+        <!--MPS Patch-->
+        <!--TODO (MPS) Do we need this?-->
+        <!--<group id="Internal" text="Internal Actions" internal="true" popup="true">-->
+            <!--<action id="DropAnError" internal="true" class="com.intellij.diagnostic.DropAnErrorAction"/>-->
+            <!--<action id="DropAnOutOfMemoryError" internal="true"-->
+                    <!--class="com.intellij.diagnostic.DropAnOutOfMemoryErrorAction"/>-->
+            <!--<action id="DropAnOutOfPermGenMemoryError" internal="true"-->
+                    <!--class="com.intellij.diagnostic.DropAnOutOfPermGenMemoryErrorAction"/>-->
+            <!--<separator/>-->
+            <!--<action internal="true" id="ReloadProjectAction" class="com.intellij.internal.ReloadProjectAction"/>-->
+            <!--<action internal="true" id="RestartInfo" class="com.intellij.internal.RestartInfoAction"-->
+                    <!--text="Restart Info"/>-->
+            <!--<action internal="true" id="PruneEmptyDirectories"-->
+                    <!--class="com.intellij.ide.actions.PruneEmptyDirectoriesAction" text="Prune Empty Directories"/>-->
+            <!--<action internal="true" id="FixLineSeparators" class="com.intellij.ide.actions.FixLineSeparatorsAction"-->
+                    <!--text="Fix Line Separators"/>-->
+            <!--<action id="DumbMode" internal="true" class="com.intellij.internal.ToggleDumbModeAction" text="Dumb mode"/>-->
+            <!--<add-to-group group-id="ToolsMenu" anchor="last"/>-->
+        <!--</group>-->
+
+        <!--<group id="EditorContextBarMenu">-->
+        <!--</group>-->
+
+        <!--<action id="Rerun" class="com.intellij.execution.runners.FakeRerunAction" text="Rerun"/>-->
+
+        <!--<action id="IncrementWindowWidth" class="com.intellij.ide.actions.WindowAction$IncrementWidth"-->
+                <!--use-shortcut-of="ResizeToolWindowRight"/>-->
+        <!--<action id="DecrementWindowWidth" class="com.intellij.ide.actions.WindowAction$DecrementWidth"-->
+                <!--use-shortcut-of="ResizeToolWindowLeft"/>-->
+        <!--<action id="IncrementWindowHeight" class="com.intellij.ide.actions.WindowAction$IncrementHeight"-->
+                <!--use-shortcut-of="ResizeToolWindowDown"/>-->
+        <!--<action id="DecrementWindowHeight" class="com.intellij.ide.actions.WindowAction$DecrementHeight"-->
+                <!--use-shortcut-of="ResizeToolWindowUp"/>-->
+        <!--MPS Patch End-->
+
         <group id="NavbarPopupMenu">
             <reference ref="CutCopyPasteGroup"></reference>
             <separator/>
@@ -438,4 +518,3 @@
         </group>
     </actions>
 </component>
-

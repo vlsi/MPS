@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2000-2010 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,11 +29,11 @@ import com.intellij.openapi.keymap.KeyMapBundle;
 import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.keymap.KeymapExtension;
 import com.intellij.openapi.keymap.ex.KeymapManagerEx;
-import com.intellij.openapi.options.ShowSettingsUtil;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Comparing;
 import com.intellij.openapi.util.Condition;
 import com.intellij.openapi.util.IconLoader;
+import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.util.containers.ContainerUtil;
 import org.jetbrains.annotations.NonNls;
 
@@ -169,7 +169,7 @@ public class ActionsTreeUtil {
 
     for (int i = 0; i < children.length; i++) {
       AnAction action = children[i];
-
+      LOG.assertTrue(action != null, groupName + " contains null actions");
       if (action instanceof ActionGroup) {
         Group subGroup = createGroup((ActionGroup) action, getName(action), null, null, ignore, filtered, normalizeSeparators);
         if (subGroup.getSize() > 0) {
@@ -183,7 +183,7 @@ public class ActionsTreeUtil {
         }
       } else if (action instanceof Separator) {
         group.addSeparator();
-      } else {
+      } else if (action != null) {
         String id = action instanceof ActionStub ? ((ActionStub) action).getId() : actionManager.getId(action);
         if (id != null) {
           if (id.startsWith(TOOL_ACTION_PREFIX)) continue;
@@ -263,10 +263,9 @@ public class ActionsTreeUtil {
     for (QuickList quickList : quickLists) {
       if (filtered != null && filtered.value(ActionManagerEx.getInstanceEx().getAction(quickList.getActionId()))) {
         group.addQuickList(quickList);
-      } else if (SearchUtil.isComponentHighlighted(quickList.getDisplayName(), filter, forceFiltering,
-        ShowSettingsUtil.getInstance().findApplicationConfigurable(KeymapConfigurable.class))) {
+      } else if (SearchUtil.isComponentHighlighted(quickList.getDisplayName(), filter, forceFiltering, null)) {
         group.addQuickList(quickList);
-      } else if (filtered == null && filter == null) {
+      } else if (filtered == null && StringUtil.isEmpty(filter)) {
         group.addQuickList(quickList);
       }
     }
@@ -454,13 +453,11 @@ public class ActionsTreeUtil {
         if (filter == null) return true;
         if (action == null) return false;
         final String insensitiveFilter = filter.toLowerCase();
-        final KeymapConfigurable keymapConfigurable =
-          ShowSettingsUtil.getInstance().findApplicationConfigurable(KeymapConfigurable.class);
         final String text = action.getTemplatePresentation().getText();
         if (text != null) {
           final String lowerText = text.toLowerCase();
           if (SearchUtil
-            .isComponentHighlighted(lowerText, insensitiveFilter, force, keymapConfigurable)) {
+            .isComponentHighlighted(lowerText, insensitiveFilter, force, null)) {
             return true;
           } else if (lowerText.indexOf(insensitiveFilter) != -1) {
             return true;
@@ -470,7 +467,7 @@ public class ActionsTreeUtil {
         if (description != null) {
           final String insensitiveDescription = description.toLowerCase();
           if (SearchUtil
-            .isComponentHighlighted(insensitiveDescription, insensitiveFilter, force, keymapConfigurable)) {
+            .isComponentHighlighted(insensitiveDescription, insensitiveFilter, force, null)) {
             return true;
           } else if (insensitiveDescription.indexOf(insensitiveFilter) != -1) {
             return true;

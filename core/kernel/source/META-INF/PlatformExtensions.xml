@@ -132,8 +132,6 @@
                     serviceImplementation="com.intellij.ui.RecentsManager"/>
     <projectService serviceInterface="com.intellij.ui.content.MessageView"
                     serviceImplementation="com.intellij.ui.content.impl.MessageViewImpl"/>
-    <projectService serviceInterface="com.intellij.ide.actions.GotoFileConfiguration"
-                    serviceImplementation="com.intellij.ide.actions.GotoFileConfiguration"/>    
 
     <!--MPS Patch:-->
     <selectInTarget implementation="com.intellij.ide.impl.ProjectViewSelectInGroupTarget"/>
@@ -211,13 +209,14 @@
     <ComponentRoamingType component="RestoreUpdateTree" type="DISABLED"/>
     <ComponentRoamingType component="PropertiesComponent" type="DISABLED"/>
 
-    <gotoFileContributor implementation="com.intellij.ide.util.gotoByName.DefaultFileNavigationContributor"/>
-   
-
     <progressFunComponentProvider implementation="com.intellij.featureStatistics.ProgressFunProvider"/>
-    <bundledKeymapProvider implementation="com.intellij.openapi.keymap.impl.DefaultBundledKeymaps"/>
     <!--MPS Patch: we do not need javaee configurable-->
     <!--<projectConfigurable implementation="com.intellij.javaee.ExternalResourceConfigurable"/>-->
     <!--This was commented out for unknown reason also-->
+    <bundledKeymapProvider implementation="com.intellij.openapi.keymap.impl.DefaultBundledKeymaps"/>
     <!-- <checkinHandlerFactory implementation="com.intellij.openapi.vcs.CheckRemoteStatusCheckinHandlerFactory"/> -->
+    <!--MPS Patch Start: goto file-->
+    <projectService serviceInterface="com.intellij.ide.actions.GotoFileConfiguration" serviceImplementation="com.intellij.ide.actions.GotoFileConfiguration"/>
+    <gotoFileContributor implementation="com.intellij.ide.util.gotoByName.DefaultFileNavigationContributor"/>
+    <!--MPS Patch End-->
 </extensions>

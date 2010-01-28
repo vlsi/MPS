@@ -21,6 +21,7 @@ import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.project.Project;
 import com.intellij.psi.search.FilenameIndex;
 import com.intellij.psi.search.ProjectScope;
+import jetbrains.mps.util.annotation.Patch;
 
 public class DefaultFileNavigationContributor implements ChooseByNameContributor, DumbAware {
 
@@ -28,6 +29,7 @@ public class DefaultFileNavigationContributor implements ChooseByNameContributor
     return FilenameIndex.getAllFilenames(project);
   }
 
+  @Patch
   public NavigationItem[] getItemsByName(String name, final String pattern, Project project, boolean includeNonProjectItems) {
     return FilenameIndex.getFilesByName(project, name,
                                         includeNonProjectItems ? ProjectScope.getAllScope(project) : ProjectScope.getProjectScope(project));

@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2000-2010 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,12 +46,13 @@ import java.io.File;
  * @author yole
  */
 public class FilenameIndex extends ScalarIndexExtension<String> {
-  @NonNls public static final ID<String, Void> NAME = ID.create("FilenameIndex");
+  @NonNls
+  public static final ID<String, Void> NAME = ID.create("FilenameIndex");
   private final MyDataIndexer myDataIndexer = new MyDataIndexer();
   private final MyInputFilter myInputFilter = new MyInputFilter();
   private final EnumeratorStringDescriptor myKeyDescriptor = new EnumeratorStringDescriptor();
 
-  public ID<String,Void> getName() {
+  public ID<String, Void> getName() {
     return NAME;
   }
 
@@ -106,7 +107,7 @@ public class FilenameIndex extends ScalarIndexExtension<String> {
 
   private static class MyInputFilter implements FileBasedIndex.InputFilter {
     public boolean acceptInput(final VirtualFile file) {
-      if (((ApplicationEx)ApplicationManager.getApplication()).isInternal()) {
+      if (((ApplicationEx) ApplicationManager.getApplication()).isInternal()) {
         return true;
       }
 

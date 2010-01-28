@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2000-2010 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -404,7 +404,7 @@ public class UndoManagerImpl extends UndoManager implements ProjectComponent, Ap
     return isUndoOrRedoAvailable(refs, false);
   }
 
-  private Collection<DocumentReference> getDocRefs(FileEditor editor) {
+  private static Collection<DocumentReference> getDocRefs(FileEditor editor) {
     if (editor instanceof TextEditor && ((TextEditor) editor).getEditor().isViewer()) return null;
     return getDocumentReferences(editor);
   }

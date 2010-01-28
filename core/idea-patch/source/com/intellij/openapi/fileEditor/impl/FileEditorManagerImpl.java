@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2000-2010 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -523,9 +523,9 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
           editor.putUserData(DUMB_AWARE, provider instanceof DumbAware);
 
           if (current && editor instanceof TextEditorImpl) {
-            ((TextEditorImpl)editor).initFolding();
+            ((TextEditorImpl) editor).initFolding();
           }
-       }
+        }
         catch (Exception e) {
           LOG.error(e);
         }
@@ -633,7 +633,7 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
     final FileEditorProvider selectedProvider = composite.getSelectedEditorWithProvider().getSecond();
 
     for (int i = 0; i < editorProviders.length; i++) {
-      if (editorProviders[i].getEditorTypeId().equals(fileEditorProviderId) &&  !selectedProvider.equals(editorProviders[i])) {
+      if (editorProviders[i].getEditorTypeId().equals(fileEditorProviderId) && !selectedProvider.equals(editorProviders[i])) {
         composite.setSelectedEditor(i);
         composite.getSelectedEditor().selectNotify();
       }
@@ -1034,7 +1034,7 @@ public class FileEditorManagerImpl extends FileEditorManagerEx implements Projec
 
   public void initComponent() { /* really do nothing */ }
 
-  public void disposeComponent() { /* really do nothing */  }
+  public void disposeComponent() { /* really do nothing */ }
 
 //JDOMExternalizable methods
 

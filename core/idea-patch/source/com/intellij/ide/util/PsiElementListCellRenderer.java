@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2000-2010 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -64,7 +64,7 @@ public abstract class PsiElementListCellRenderer<T extends PsiElement> extends J
       int index,
       boolean selected,
       boolean hasFocus
-      ) {
+    ) {
       Color bgColor = UIUtil.getListBackground();
       Color color = list.getForeground();
       boolean isProblemFile = false;
@@ -79,29 +79,24 @@ public abstract class PsiElementListCellRenderer<T extends PsiElement> extends J
 
       TextAttributes attributes = null;
 
-      if (value instanceof NavigationItem) {
-        TextAttributesKey attributesKey = null;
-        final ItemPresentation presentation = ((NavigationItem)value).getPresentation();
-        if (presentation != null) attributesKey = presentation.getTextAttributesKey();
+      TextAttributesKey attributesKey = null;
+      final ItemPresentation presentation = ((NavigationItem) value).getPresentation();
+      if (presentation != null) attributesKey = presentation.getTextAttributesKey();
 
-        if (attributesKey != null) {
-          attributes = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(attributesKey);
-        }
+      if (attributesKey != null) {
+        attributes = EditorColorsManager.getInstance().getGlobalScheme().getAttributes(attributesKey);
       }
 
-      SimpleTextAttributes nameAttributes;
-      if (isProblemFile) {
-        attributes = TextAttributes.merge(new TextAttributes(color, null, Color.red, EffectType.WAVE_UNDERSCORE, Font.PLAIN),attributes);
-      }
+      SimpleTextAttributes nameAttributes = attributes != null ? SimpleTextAttributes.fromTextAttributes(attributes) : null;
 
-      nameAttributes = attributes != null ? SimpleTextAttributes.fromTextAttributes(attributes):null;
-
-      if (nameAttributes == null)  nameAttributes = new SimpleTextAttributes(Font.PLAIN, color);
+      if (nameAttributes == null) nameAttributes = new SimpleTextAttributes(Font.PLAIN, color);
 
       append(item + " ", nameAttributes);
-      setIcon(item.getPresentation().getIcon(true));
+      ItemPresentation itemPresentation = item.getPresentation();
+      assert itemPresentation != null;
+      setIcon(itemPresentation.getIcon(true));
 
-      append(item.getPresentation().getLocationString(), new SimpleTextAttributes(Font.PLAIN, Color.GRAY));
+      append(itemPresentation.getLocationString(), new SimpleTextAttributes(Font.PLAIN, Color.GRAY));
 
       setPaintFocusBorder(false);
       setBackground(selected ? UIUtil.getListSelectionBackground() : bgColor);
@@ -171,9 +166,8 @@ public abstract class PsiElementListCellRenderer<T extends PsiElement> extends J
     builder.setFilteringEnabled(new Function<Object, String>() {
       public String fun(Object o) {
         if (o instanceof PsiElement) {
-          return PsiElementListCellRenderer.this.getElementText((T)o);
-        }
-        else {
+          return PsiElementListCellRenderer.this.getElementText((T) o);
+        } else {
           return o.toString();
         }
       }
@@ -188,9 +182,8 @@ public abstract class PsiElementListCellRenderer<T extends PsiElement> extends J
     new ListSpeedSearch(list) {
       protected String getElementText(Object o) {
         if (o instanceof PsiElement) {
-          return PsiElementListCellRenderer.this.getElementText((T)o);
-        }
-        else {
+          return PsiElementListCellRenderer.this.getElementText((T) o);
+        } else {
           return o.toString();
         }
       }

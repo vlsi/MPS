@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2000-2010 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,6 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
 package com.intellij.psi.search;
 
 import com.intellij.openapi.module.Module;
@@ -58,14 +59,12 @@ public class ProjectAndLibrariesScope extends GlobalSearchScope {
       OrderEntry entry2 = moduleFileIndex.getOrderEntryForFile(file2);
       if (entry2 == null) {
         return 0;
-      }
-      else {
+      } else {
         int aRes = entry2.compareTo(entry1);
         if (aRes == 0) return 0;
         if (res == 0) {
           res = aRes;
-        }
-        else if (res != aRes) {
+        } else if (res != aRes) {
           return 0;
         }
       }

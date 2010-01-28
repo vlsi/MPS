@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2010 JetBrains s.r.o.
+ * Copyright 2000-2010 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -46,8 +46,11 @@ public class ConfigImportHelper {
   public static void importConfigsTo(String newConfigPath) {
     do {
       ImportOldConfigsPanel dlg;
-
-      dlg = new ImportOldConfigsPanel(JOptionPane.getRootFrame());
+      if (UIUtil.hasJdk6Dialogs()) {
+        dlg = new ImportOldConfigsPanel();
+      } else {
+        dlg = new ImportOldConfigsPanel(JOptionPane.getRootFrame());
+      }
 
       UIUtil.setToolkitModal(dlg);
       AppUIUtil.updateDialogIcon(dlg);
