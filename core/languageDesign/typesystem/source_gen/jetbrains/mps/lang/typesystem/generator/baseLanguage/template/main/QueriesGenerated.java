@@ -681,11 +681,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1221233437904(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(_context.getNode()).toString();
+    return SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1221233446969(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getId();
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_1222949920050(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -737,11 +737,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1223996041083(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(_context.getNode()).toString();
+    return SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1223996100286(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getId();
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_1223996377283(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -767,19 +767,19 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1225969094391(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(_context.getNode()).toString();
+    return SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1225969288494(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getId();
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_1225972237456(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(_context.getNode()).toString();
+    return SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1225972260674(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getId();
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_1227106551298(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -847,11 +847,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1237048711664(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(_context.getNode()) + "";
+    return SNodeOperations.getModel(_context.getOriginalCopiedInputNode(_context.getNode())).toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1237048711675(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getId();
+    return _context.getOriginalCopiedInputNode(_context.getNode()).getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_1237048711685(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1039,33 +1039,33 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6773347515165742270(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "inequation", false)).toString();
+    return SNodeOperations.getModel(_context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), "inequation", false))).toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_6773347515165742306(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "inequation", false)).toString();
+    return SNodeOperations.getModel(_context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), "inequation", false))).toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_6773347515165742323(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.InequationsGroupReference") ?
-      SNodeOperations.getModel(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.InequationsGroupReference"), "group", false)).toString() :
+      SNodeOperations.getModel(_context.getOriginalCopiedInputNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.InequationsGroupReference"), "group", false))).toString() :
       "default"
     );
   }
 
   public static Object propertyMacro_GetPropertyValue_6773347515165742388(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.InequationsGroupReference") ?
-      SNodeOperations.getModel(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.InequationsGroupReference"), "group", false)).toString() :
+      SNodeOperations.getModel(_context.getOriginalCopiedInputNode(SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.InequationsGroupReference"), "group", false))).toString() :
       "default"
     );
   }
 
   public static Object propertyMacro_GetPropertyValue_6773347515165742409(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "inequation", false).getId();
+    return _context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), "inequation", false)).getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_6773347515165742440(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "inequation", false).getId();
+    return _context.getOriginalCopiedInputNode(SLinkOperations.getTarget(_context.getNode(), "inequation", false)).getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_6773347515165742463(final IOperationContext operationContext, final PropertyMacroContext _context) {
