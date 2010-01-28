@@ -17062,7 +17062,6 @@
         </node>
       </node>
       <node role="helginsIntention:3" type="jetbrains.mps.lang.typesystem.structure.TypesystemIntention:3" id="1216210608882">
-        <link role="intentionDeclaration:3" targetNodeId="42.1212611479483:83" resolveInfo="RemoveUnusedAssignment" />
         <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1216210638494">
           <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1216210638495">
             <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1216210638496">
