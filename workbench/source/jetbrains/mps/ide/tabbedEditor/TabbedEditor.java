@@ -18,6 +18,7 @@ package jetbrains.mps.ide.tabbedEditor;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.fileEditor.FileEditorStateLevel;
+import com.intellij.openapi.fileEditor.FileEditor;
 import com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -35,6 +36,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import org.jdom.Element;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -127,6 +129,19 @@ public class TabbedEditor implements IEditor {
     FileEditorManagerImpl manager = (FileEditorManagerImpl) FileEditorManager.getInstance(project);
     VirtualFile virtualFile = manager.getCurrentFile();
     if (virtualFile == null) return;
+    List<SNode> thisNodes = this.getEditedNodes();
+    if (thisNodes.size() > 1) {
+      for (FileEditor openedEditor : manager.getAllEditors()) {
+        if (openedEditor instanceof MPSFileNodeEditor) {
+          MPSFileNodeEditor openedMPSEditor = (MPSFileNodeEditor) openedEditor;
+          if (EqualUtil.equals(this, openedMPSEditor.getNodeEditor())) continue;
+          List<SNode> openedNodes = openedMPSEditor.getNodeEditor().getEditedNodes();
+          if (openedNodes.size() == 1 && thisNodes.contains(openedNodes.get(0))) {
+            manager.closeFile(openedMPSEditor.getFile());
+          }
+        }
+      }
+    }
     manager.updateFilePresentation(virtualFile);
   }
 
