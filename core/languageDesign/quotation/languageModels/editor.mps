@@ -489,6 +489,10 @@
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem:32" id="1215436926206">
           <property name="value:32" value="0.0" />
         </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem:32" id="5915179142332960576">
+          <property name="hasNoLabel:32" value="true" />
+          <property name="labelName:32" value="dfdfdf" />
+        </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1196350915659">
         <link role="relationDeclaration:32" targetNodeId="1.1196350785114:0" />
@@ -502,6 +506,10 @@
         </node>
         <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.TextBackgroundColorStyleClassItem:32" id="1214407442002">
           <property name="color:32" value="cyan" />
+        </node>
+        <node role="styleItem:32" type="jetbrains.mps.lang.editor.structure.MatchingLabelStyleClassItem:32" id="5915179142333509149">
+          <property name="labelName:32" value="nu" />
+          <property name="hasNoLabel:32" value="true" />
         </node>
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1196350915661">

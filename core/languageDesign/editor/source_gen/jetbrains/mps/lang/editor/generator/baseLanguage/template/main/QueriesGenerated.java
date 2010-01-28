@@ -1375,6 +1375,10 @@ public class QueriesGenerated {
     return !(SPropertyOperations.hasValue(_context.getNode(), "attractsFocus", "0", "0"));
   }
 
+  public static boolean ifMacro_Condition_5915179142333330421(final IOperationContext operationContext, final IfMacroContext _context) {
+    return !(SPropertyOperations.getBoolean(_context.getNode(), "hasNoLabel"));
+  }
+
   public static boolean ifMacro_Condition_6577030305815218822(final IOperationContext operationContext, final IfMacroContext _context) {
     return CellModel_Collection_Behavior.call_isVerticalGrid_1239872947848(_context.getNode());
   }

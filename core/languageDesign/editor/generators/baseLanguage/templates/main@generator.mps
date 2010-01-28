@@ -16615,6 +16615,30 @@
                       </node>
                     </node>
                   </node>
+                  <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.IfMacro:2" id="5915179142333330420">
+                    <node role="conditionFunction:2" type="jetbrains.mps.lang.generator.structure.IfMacro_Condition:2" id="5915179142333330421">
+                      <node role="body:2" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5915179142333330422">
+                        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5915179142333330429">
+                          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="5915179142333330436">
+                            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5915179142333330437">
+                              <node role="operand:3" type="jetbrains.mps.lang.generator.structure.TemplateFunctionParameter_sourceNode:2" id="5915179142333330438" />
+                              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SPropertyAccess:16" id="5915179142333330439">
+                                <link role="property:16" targetNodeId="38.5915179142332960580:32" resolveInfo="hasNoLabel" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                    <node role="alternativeConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="5915179142333330425">
+                      <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.CastExpression:3" id="2929055682376692060">
+                        <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="2929055682376692061" />
+                        <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="2929055682376692062">
+                          <link role="classifier:3" targetNodeId="2.~String" resolveInfo="String" />
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
                 <node role="templateFragment$attribute:3" type="jetbrains.mps.lang.generator.structure.TemplateFragment:2" id="3219221556189195487" />
               </node>

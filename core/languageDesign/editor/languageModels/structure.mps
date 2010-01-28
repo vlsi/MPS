@@ -4096,6 +4096,10 @@
       <property name="name:0" value="labelName" />
       <link role="dataType:0" targetNodeId="3.1082983041843:0" resolveInfo="string" />
     </node>
+    <node role="propertyDeclaration:0" type="jetbrains.mps.lang.structure.structure.PropertyDeclaration:0" id="5915179142332960580">
+      <property name="name:0" value="hasNoLabel" />
+      <link role="dataType:0" targetNodeId="3.1082983657063:0" resolveInfo="boolean" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1236443321503">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="query" />
