@@ -127,7 +127,8 @@ public class IconManager {
         if (!withoutAdditional) {
           result.setIcon(BaseConcept_Behavior.call_getAdditionalIcon_5017341185733863694(node), 1);
         }
-        return (node.getModel().isNotEditable())? new LayeredIcon(result, com.intellij.util.Icons.LOCKED_ICON) : result;
+        SModel model = node.getModel();
+        return (!model.isDisposed() && model.isNotEditable())? new LayeredIcon(result, com.intellij.util.Icons.LOCKED_ICON) : result;
       }
     });
   }
