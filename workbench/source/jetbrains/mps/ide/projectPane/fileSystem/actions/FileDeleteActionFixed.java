@@ -58,28 +58,23 @@ public class FileDeleteActionFixed extends DeleteAction {
 
       Arrays.sort(files, FileComparator.getInstance());
 
-      CommandProcessor.getInstance().executeCommand((Project) dataContext.getData(PlatformDataKeys.PROJECT.getName()),
-        new Runnable() {
-          public void run() {
-            ModelAccess.instance().runWriteAction(new Runnable() {
-              public void run() {
-                for (final VirtualFile file : files) {
-                  try {
-                    file.delete(this);
-                  }
-                  catch (IOException e) {
-                    ApplicationManager.getApplication().invokeLater(new Runnable() {
-                      public void run() {
-                        Messages.showMessageDialog("Could not erase file or folder: " + file.getName(),
-                          "Error", Messages.getErrorIcon());
-                      }
-                    });
-                  }
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          for (final VirtualFile file : files) {
+            try {
+              file.delete(this);
+            }
+            catch (IOException e) {
+              ApplicationManager.getApplication().invokeLater(new Runnable() {
+                public void run() {
+                  Messages.showMessageDialog("Could not erase file or folder: " + file.getName(),
+                    "Error", Messages.getErrorIcon());
                 }
-              }
-            });
+              });
+            }
           }
-        }, null, null, null);
+        }
+      });
     }
 
     private final static class FileComparator implements Comparator<VirtualFile> {
