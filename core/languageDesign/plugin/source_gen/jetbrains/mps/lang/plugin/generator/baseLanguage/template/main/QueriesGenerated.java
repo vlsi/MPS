@@ -1445,13 +1445,17 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1228239043085(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.InterfaceGroup")).sort(new ISelector<SNode, Comparable<?>>() {
       public Comparable<?> select(SNode it) {
-        return SPropertyOperations.getString(it, "caption");
+        return SPropertyOperations.getString(it, "caption") + _context.getOriginalCopiedInputNode(it).getId();
       }
     }, true);
   }
 
   public static Iterable sourceNodesQuery_1228242072138(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "modifier", true);
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "modifier", true)).sort(new ISelector<SNode, Comparable<?>>() {
+      public Comparable<?> select(SNode it) {
+        return ActionGroupDeclaration_Behavior.call_getGeneratedClassFQName_1213877494288(SLinkOperations.getTarget(it, "modifiedGroup", false));
+      }
+    }, true);
   }
 
   public static Iterable sourceNodesQuery_1228322102380(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
