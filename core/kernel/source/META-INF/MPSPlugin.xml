@@ -17,6 +17,8 @@
 
         <errorHandler implementation="jetbrains.mps.workbench.diagnostics.CharismaReporter"/>
 
+        <vcs.fileStatusProvider implementation="jetbrains.mps.changesmanager.ChangesManagerFileStatusProvider"/>
+
         <applicationService serviceInterface="com.intellij.codeStyle.CodeStyleFacade"
                             serviceImplementation="com.intellij.codeStyle.DefaultCodeStyleFacade"/>
 
