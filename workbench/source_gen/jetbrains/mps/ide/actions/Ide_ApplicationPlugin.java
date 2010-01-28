@@ -78,20 +78,20 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
   }
 
   public void adjustInterfaceGroups() {
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, "VcsGroup", ModelActions_ActionGroup.LABEL_ID_vcs);
     this.insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, "VcsGroup", AbstractFileActions_ActionGroup.LABEL_ID_vcs);
     this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "VcsGroup", EditorPopup_ActionGroup.LABEL_ID_vcs);
     this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "VcsGroup", LanguageActions_ActionGroup.LABEL_ID_vcs);
+    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, "VcsGroup", ModelActions_ActionGroup.LABEL_ID_vcs);
+    this.insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, "NavbarPopupMenu", AbstractFileActions_ActionGroup.LABEL_ID_ideaActions);
     this.insertGroupIntoAnother(EditorPopup_ActionGroup.ID, "RunContextGroup", null);
     this.insertGroupIntoAnother(EditorTabActions_ActionGroup.ID, "RunContextGroup", null);
-    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, "RunContextGroup", null);
-    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, "RunContextGroup", null);
-    this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, "RunContextGroup", null);
-    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "RunContextGroup", null);
     this.insertGroupIntoAnother(JUnitTestCaseActions_ActionGroup.ID, "RunContextGroup", null);
     this.insertGroupIntoAnother(JUnitTestMethodActions_ActionGroup.ID, "RunContextGroup", null);
+    this.insertGroupIntoAnother(LanguageActions_ActionGroup.ID, "RunContextGroup", null);
+    this.insertGroupIntoAnother(ModelActions_ActionGroup.ID, "RunContextGroup", null);
+    this.insertGroupIntoAnother(NodeActions_ActionGroup.ID, "RunContextGroup", null);
     this.insertGroupIntoAnother(ProjectActions_ActionGroup.ID, "RunContextGroup", ProjectActions_ActionGroup.LABEL_ID_runConfig);
-    this.insertGroupIntoAnother(AbstractFileActions_ActionGroup.ID, "NavbarPopupMenu", AbstractFileActions_ActionGroup.LABEL_ID_ideaActions);
+    this.insertGroupIntoAnother(SolutionActions_ActionGroup.ID, "RunContextGroup", null);
   }
 
   public void insertGroupIntoAnother(String toId, String whatId, String labelName) {
