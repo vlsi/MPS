@@ -8,11 +8,11 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
-      SubtypingRule_Runtime subtypingRule = new StubsCreatorType_SubtypeOf_ModelRootManager_SubtypingRule();
+      SubtypingRule_Runtime subtypingRule = new ModelManagerType_SubtypeOf_ModelRootManager_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
     {
-      SubtypingRule_Runtime subtypingRule = new ModelManagerType_SubtypeOf_ModelRootManager_SubtypingRule();
+      SubtypingRule_Runtime subtypingRule = new StubsCreatorType_SubtypeOf_ModelRootManager_SubtypingRule();
       this.mySubtypingRules.add(subtypingRule);
     }
   }

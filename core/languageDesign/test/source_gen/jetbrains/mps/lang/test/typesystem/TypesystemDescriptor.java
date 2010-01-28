@@ -9,11 +9,11 @@ import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
-      InferenceRule_Runtime inferenceRule = new typeof_TestNodeReference_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_AssertMatch_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_AssertMatch_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_EditorComponentExpression_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -29,7 +29,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_EditorComponentExpression_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_TestNodeReference_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
