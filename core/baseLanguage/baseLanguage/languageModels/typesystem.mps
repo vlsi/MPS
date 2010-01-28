@@ -22847,5 +22847,34 @@
       <link role="concept:3" targetNodeId="1.1202948039474:3" resolveInfo="InstanceMethodCallOperation" />
     </node>
   </node>
+  <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="5915179142332645884">
+    <property name="name:3" value="checkTypesInForStatement" />
+    <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5915179142332645885">
+      <node role="statement:3" type="jetbrains.mps.lang.typesystem.structure.CreateLessThanInequationStatement:3" id="5915179142332709362">
+        <node role="inequationGroup:3" type="jetbrains.mps.lang.typesystem.structure.DefaultGroupReference:3" id="5915179142332709363" />
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5915179142332709367">
+          <node role="normalType:3" type="jetbrains.mps.lang.quotation.structure.Quotation:0" id="5915179142332709368">
+            <node role="quotedNode:0" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="5915179142332709370" />
+          </node>
+        </node>
+        <node role="leftExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="5915179142332709366">
+          <node role="normalType:3" type="jetbrains.mps.lang.typesystem.structure.TypeOfExpression:3" id="5915179142332709358">
+            <node role="term:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5915179142332709359">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="5915179142332709360">
+                <link role="applicableNode:3" targetNodeId="5915179142332645886" resolveInfo="forStatement" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="5915179142332709361">
+                <link role="link:16" targetNodeId="1.1144231399730:3" />
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+    <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="5915179142332645886">
+      <property name="name:3" value="forStatement" />
+      <link role="concept:3" targetNodeId="1.1144231330558:3" resolveInfo="ForStatement" />
+    </node>
+  </node>
 </model>
 
