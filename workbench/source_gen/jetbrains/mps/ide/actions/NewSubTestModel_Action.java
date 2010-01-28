@@ -20,8 +20,11 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import java.util.List;
+import jetbrains.mps.ide.projectPane.SortUtil;
 
 public class NewSubTestModel_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/nodes/testModel.png", "jetbrains.mps.ide"), true);
@@ -93,16 +96,25 @@ public class NewSubTestModel_Action extends GeneratedAction {
       final Wrappers._T<SModelDescriptor> result = new Wrappers._T<SModelDescriptor>();
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
-          String namespace = NewSubTestModel_Action.this.model.getLongName();
+          String namespace = NewSubTestModel_Action.this.getNamespace();
           String name = NewSubTestModel_Action.this.getTestModelName();
           SModelFqName newModelFqName = new SModelFqName(namespace, name, SModelStereotype.TESTS);
           result.value = NewSubTestModel_Action.this.model.getModule().createModel(newModelFqName, NewSubTestModel_Action.this.model.getSModelRoot());
+          SModel createdModel = result.value.getSModel();
+          SModel sourceModel = NewSubTestModel_Action.this.model.getSModel();
+          createdModel.addImportedModel(sourceModel.getSModelReference());
+          for (SModel.ImportElement importElement : sourceModel.getImportElements()) {
+            createdModel.addImportedModel(importElement.getModelReference());
+          }
+          for (ModuleReference importedLanguage : sourceModel.getExplicitlyImportedLanguages()) {
+            createdModel.addLanguage(importedLanguage);
+          }
+          for (ModuleReference devKit : sourceModel.getDevKitRefs()) {
+            createdModel.addDevKit(devKit);
+          }
         }
       });
-      if (result.value != null) {
-        SModelDescriptor modelDescriptor = result.value;
-        ProjectPane.getInstance(NewSubTestModel_Action.this.ideaProject).selectModel(modelDescriptor);
-      }
+      ProjectPane.getInstance(NewSubTestModel_Action.this.ideaProject).selectModel(result.value);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "NewSubTestModel", t);
@@ -111,19 +123,30 @@ public class NewSubTestModel_Action extends GeneratedAction {
   }
 
   /*package*/ String getTestModelName() {
-    SModelTreeNode modelTreeNode = (SModelTreeNode) NewSubTestModel_Action.this.treeNode;
+    StringBuilder builder = new StringBuilder();
+    builder.append(NewSubTestModel_Action.this.model.getName());
     int testModelCount = 0;
-    List<SModelTreeNode> subModels = modelTreeNode.getSubfolderSModelTreeNodes();
-    for (SModelTreeNode subModel : subModels) {
-      if (SModelStereotype.TESTS.equals(subModel.getSModelDescriptor().getStereotype())) {
+    List<SModelDescriptor> models = NewSubTestModel_Action.this.model.getModule().getOwnModelDescriptors();
+    List<SModelDescriptor> sortedModels = SortUtil.sortModels(models);
+    for (SModelDescriptor md : sortedModels) {
+      if (!(SModelStereotype.TESTS.equals(md.getStereotype()))) {
+        continue;
+      }
+      String name = NewSubTestModel_Action.this.model.getLongName() + ((testModelCount == 0 ?
+        "" :
+        testModelCount
+      ));
+      if (name.equals(md.getLongName())) {
         testModelCount++;
       }
     }
-    StringBuilder builder = new StringBuilder();
-    builder.append(NewSubTestModel_Action.this.model.getName()).append("_test");
-    if (testModelCount > 0) {
+    if (testModelCount != 0) {
       builder.append(testModelCount + "");
     }
     return builder.toString();
+  }
+
+  /*package*/ String getNamespace() {
+    return NewSubTestModel_Action.this.model.getSModelFqName().getNamespace();
   }
 }
