@@ -10,6 +10,18 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
+      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_Base_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetCopiedOutputByInput_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
+      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetOriginalCopiedInputByOutput_InferenceRule();
+      this.myInferenceRules.add(inferenceRule);
+    }
+    {
       InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetOutputByLabel_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -18,15 +30,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_Base_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetPrevInputByLabel_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetCopiedOutputByInput_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -34,11 +38,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetOutputByLabelAndInputAndReferenceScope_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetOriginalCopiedInputByOutput_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_GenerationContextOp_GetPrevInputByLabel_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {

@@ -8,7 +8,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 public class TypesystemDescriptor extends BaseHelginsDescriptor {
   public TypesystemDescriptor() {
     {
-      InferenceRule_Runtime inferenceRule = new typeof_XmlLiteral_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_ElementMacro_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
     {
@@ -16,7 +16,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_ElementMacro_InferenceRule();
+      InferenceRule_Runtime inferenceRule = new typeof_XmlLiteral_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
   }
