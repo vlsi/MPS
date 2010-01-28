@@ -191,6 +191,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
             setPackageAfterCreationChecked(nodeAndContext);
             LazyTabbedPane tabbedPane = myTabbedEditor.getTabbedPane();
             tabbedPane.initTab(BaseMultitabbedTab.this);
+            selectTab(myLoadableNodes.size() - 1);
             return FINAL_CHOICE;
           }
         });
