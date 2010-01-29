@@ -20,7 +20,7 @@ public class CodeStylePreferencesPage {
 
     myPage = new JPanel(new BorderLayout());
     JPanel mainPanel = new JPanel(new GridBagLayout());
-    myPreferLongerName = new JCheckBox("Prefer longer name", true);
+    myPreferLongerName = new JCheckBox("Prefer longer names", true);
     GridBagConstraints c = new GridBagConstraints();
     c.anchor = GridBagConstraints.WEST;
     c.insets = getInsets();

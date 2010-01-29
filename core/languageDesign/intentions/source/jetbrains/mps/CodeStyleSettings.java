@@ -7,8 +7,12 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.options.ConfigurationException;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectManager;
+import com.intellij.ide.DataManager;
 import jetbrains.mps.CodeStyleSettings.MyState;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.workbench.MPSDataKeys;
 
 import java.util.Map;
 import java.util.LinkedHashMap;
@@ -29,8 +33,12 @@ import javax.swing.Icon;
   }
 )
 public class CodeStyleSettings implements PersistentStateComponent<MyState>, ProjectComponent, SearchableConfigurable {
+  public static CodeStyleSettings getInstance(Project project) {
+    return project.getComponent(CodeStyleSettings.class);
+  }
+  
   public static CodeStyleSettings getInstance() {
-    return ApplicationManager.getApplication().getComponent(CodeStyleSettings.class);
+    return getInstance(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()));
   }
 
   private MyState myState = new MyState();
