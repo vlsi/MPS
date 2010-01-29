@@ -300,19 +300,29 @@
       <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="3293010995237625817" />
       <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PrivateVisibility:3" id="6624237184121358759" />
       <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3293010995237625819">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="3687363927180577716" />
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="3687363927180577717" />
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="3687363927180577718" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="778356624280083876" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="5358614344155989866" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="778356624280083877" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="7474472077267026915" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="5358614344155989867" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="778356624280083878" />
       </node>
       <node role="parameter:3" type="jetbrains.mps.baseLanguage.structure.ParameterDeclaration:3" id="9075231980435795440">
-        <property name="name:3" value="a" />
+        <property name="name:3" value="abcder" />
         <node role="type:3" type="jetbrains.mps.baseLanguage.structure.IntegerType:3" id="9075231980435795441" />
       </node>
     </node>
-    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="9075231980436043892">
-      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="9075231980436043893" />
-      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="9075231980436043894" />
-      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="9075231980436043896" />
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="778356624280083879">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="778356624280083880" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="778356624280083881" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="778356624280083882">
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="5358614344155989868" />
+      </node>
+    </node>
+    <node role="constructor:3" type="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration:3" id="5358614344155989869">
+      <node role="returnType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5358614344155989870" />
+      <node role="visibility:3" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="5358614344155989871" />
+      <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="5358614344155989872" />
     </node>
   </node>
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="5766921824837040040">

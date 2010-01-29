@@ -377,6 +377,9 @@
           </node>
           <node role="body:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1154536494179">
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.BreakStatement:3" id="1154540178627" />
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="4586821568865281674" />
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="4586821568865281675" />
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="4586821568865281676" />
             <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ContinueStatement:3" id="1154540194208" />
           </node>
         </node>
@@ -623,7 +626,7 @@
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1137816820174">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1137816822865">
             <link role="classConcept:3" targetNodeId="1.~String" resolveInfo="String" />
-            <link role="baseMethodDeclaration:3" targetNodeId="1.~String.valueOf(java.lang.Object):java.lang.String" resolveInfo="valueOf" />
+            <link role="baseMethodDeclaration:3" targetNodeId="1.~String.valueOf(char[]):java.lang.String" resolveInfo="valueOf" />
             <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1140571422560" />
           </node>
         </node>
