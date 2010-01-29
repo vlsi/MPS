@@ -122,7 +122,7 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
 
       if (myComponent != null) {
         if (IdeMain.getTestMode() != IdeMain.TestMode.CORE_TEST) {
-          Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+          Project project = myTabbedEditor.getOperationContext().getProject();
           ToolWindowManager.getInstance(project).getFocusManager().requestFocus(myComponent, false);
         }
       }
