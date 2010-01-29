@@ -1,4 +1,4 @@
-package jetbrains.mps;
+package jetbrains.mps.intentions;
 
 import jetbrains.mps.util.Pair;
 

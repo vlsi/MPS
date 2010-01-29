@@ -59,7 +59,7 @@
             <skipForDummyProject/>
         </component>
         <component>
-            <implementation-class>jetbrains.mps.CodeStyleSettings</implementation-class>
+            <implementation-class>jetbrains.mps.intentions.CodeStyleSettings</implementation-class>
         </component>
     </project-components>
 

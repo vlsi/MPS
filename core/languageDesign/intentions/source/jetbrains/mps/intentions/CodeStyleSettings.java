@@ -1,21 +1,16 @@
-package jetbrains.mps;
+package jetbrains.mps.intentions;
 
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.options.SearchableConfigurable;
 import com.intellij.openapi.options.ConfigurationException;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.ide.DataManager;
-import jetbrains.mps.CodeStyleSettings.MyState;
+import jetbrains.mps.intentions.CodeStyleSettings.MyState;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
-
-import java.util.Map;
-import java.util.LinkedHashMap;
 
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nls;
