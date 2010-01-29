@@ -1,0 +1,220 @@
+package jetbrains.mps.baseLanguage.index;
+
+import com.intellij.ide.DataManager;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.psi.search.GlobalSearchScope;
+import com.intellij.util.indexing.FileBasedIndex;
+import jetbrains.mps.baseLanguage.structure.*;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.misc.hash.HashMap;
+import jetbrains.mps.util.misc.hash.HashSet;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.workbench.MPSDataKeys;
+import org.jetbrains.annotations.NotNull;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+/**
+ * Created by IntelliJ IDEA.
+ * User: Alexander Shatalin
+ */
+public class ClassifierSuccessorsFinder {
+
+  public static boolean isIndexReady() {
+    Project project = MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext());
+    if (project == null) {
+      return false;
+    }
+    return !DumbService.getInstance(project).isDumb();
+  }
+
+  public static List<SNode> getDerivedClassifiers(SNode classifier, IScope scope) {
+    Set<VirtualFile> notModifiedModelFiles = new HashSet();
+    List<ClassConcept> modifiedClasses = new ArrayList();
+    List<Interface> modifiedInterfaces = new ArrayList();
+    for (SModelDescriptor modelDescriptor : scope.getModelDescriptors()) {
+      IFile modelFile = modelDescriptor.getModelFile();
+      if (modelFile == null) {
+        continue;
+      }
+      if (SModelRepository.getInstance().isChanged(modelDescriptor)) {
+        for (SNode sNode : modelDescriptor.getSModel().allNodes()) {
+          BaseAdapter adapter = sNode.getAdapter();
+          if (adapter instanceof ClassConcept) {
+            modifiedClasses.add((ClassConcept) adapter);
+          } else if (adapter instanceof Interface) {
+            modifiedInterfaces.add((Interface) adapter);
+          }
+        }
+      } else {
+        notModifiedModelFiles.add(modelFile.toVirtualFile());
+      }
+    }
+
+    List<SNode> result = new ArrayList();
+    List<SNode> superClassifiers = new ArrayList();
+    superClassifiers.add(classifier);
+
+    ValueProcessor valueProcessor = new ValueProcessor(result, superClassifiers);
+    ModifiedsuccessorFinder modifiedSuccessorFinder = new ModifiedsuccessorFinder(modifiedClasses, modifiedInterfaces, result, superClassifiers);
+    SearchScope searchScope = new SearchScope(notModifiedModelFiles);
+
+    for (int i = 0; i < superClassifiers.size(); i++) {
+      SNode superClassifier = superClassifiers.get(i);
+      FileBasedIndex.getInstance().processValues(ClassifierSuccessorsIndexer.NAME, new SNodeId(superClassifier), null, valueProcessor, searchScope);
+      modifiedSuccessorFinder.process(superClassifier);
+    }
+    return result;
+  }
+
+  private static class ModifiedsuccessorFinder {
+    private List<ClassConcept> myModifiedClasses;
+    private List<Interface> myModifiedInterfaces;
+    private List<SNode> mySuperClassifiers;
+    private List<SNode> myResult;
+    private Set<SNode> myProcessedNodes = new HashSet();
+    private Map<Classifier, List<Classifier>> mySuccessorsMap = new HashMap();
+    private boolean myInterfacesMapped;
+    private boolean myClassesMapped;
+
+    ModifiedsuccessorFinder(List<ClassConcept> modifiedClasses, List<Interface> modifiedInterfaces, List<SNode> result, List<SNode> superClassifiers) {
+      myModifiedClasses = modifiedClasses;
+      myModifiedInterfaces = modifiedInterfaces;
+      mySuperClassifiers = superClassifiers;
+      myResult = result;
+    }
+
+    public void process(SNode superClassifier) {
+      if (myProcessedNodes.contains(superClassifier)) {
+        return;
+      }
+      myProcessedNodes.add(superClassifier);
+      BaseAdapter adapter = superClassifier.getAdapter();
+      if (adapter instanceof Interface) {
+        mapInterfaces();
+      } else if (adapter instanceof ClassConcept) {
+        mapInterfaces();
+        mapClasses();
+      } else {
+        return;
+      }
+      List<Classifier> successors = mySuccessorsMap.get((Classifier) adapter);
+      if (successors != null) {
+        for (Classifier successor : successors) {
+          SNode node = successor.getNode();
+          myResult.add(node);
+          mySuperClassifiers.add(node);
+        }
+      }
+    }
+
+    private void mapClasses() {
+      if (myClassesMapped) {
+        return;
+      }
+      myClassesMapped = true;
+      for (ClassConcept aClass : myModifiedClasses) {
+        ClassifierType superClass = aClass.getSuperclass();
+        if (superClass != null) {
+          safeMap(superClass.getClassifier(), aClass);
+        }
+        if (aClass instanceof AnonymousClass) {
+          safeMap(((AnonymousClass) aClass).getClassifier(), aClass);
+        }
+        for (ClassifierType implementedInterface : aClass.getImplementedInterfaces()) {
+          safeMap(implementedInterface.getClassifier(), aClass);
+        }
+      }
+    }
+
+    private void mapInterfaces() {
+      if (myInterfacesMapped) {
+        return;
+      }
+      myInterfacesMapped = true;
+      for (Interface anInterface : myModifiedInterfaces) {
+        for (ClassifierType nextClassifierType : anInterface.getExtendedInterfaces()) {
+          Classifier extendedInterface = nextClassifierType.getClassifier();
+          safeMap(extendedInterface, anInterface);
+        }
+      }
+    }
+
+    private void safeMap(Classifier predecessor, Classifier successor) {
+      if (predecessor == null) {
+        return;
+      }
+      List<Classifier> successors = mySuccessorsMap.get(predecessor);
+      if (successors == null) {
+        successors = new ArrayList();
+        mySuccessorsMap.put(predecessor, successors);
+      }
+      successors.add(successor);
+    }
+  }
+
+  private static class ValueProcessor implements com.intellij.util.indexing.FileBasedIndex.ValueProcessor<List<SNodeId>> {
+
+    private List<SNode> myResult;
+    private List<SNode> mySuperClassifiers;
+    private Set<SNodeId> myProcessedNodes = new HashSet();
+
+    ValueProcessor(List<SNode> result, List<SNode> superClassifiers) {
+      myResult = result;
+      mySuperClassifiers = superClassifiers;
+    }
+
+    @Override
+    public boolean process(VirtualFile file, List<SNodeId> successors) {
+      for (SNodeId snodeId : successors) {
+        if (myProcessedNodes.contains(snodeId)) {
+          continue;
+        }
+        myProcessedNodes.add(snodeId);
+        SNode node = snodeId.getNode();
+        if (node != null) {
+          myResult.add(node);
+          mySuperClassifiers.add(node);
+        }
+      }
+      return true;
+    }
+  }
+
+  private static class SearchScope extends GlobalSearchScope {
+
+    private Set<VirtualFile> myFilesInScope;
+
+    SearchScope(Set<VirtualFile> notModifiedModelFiles) {
+      super(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()));
+      myFilesInScope = notModifiedModelFiles;
+    }
+
+    @Override
+    public boolean contains(VirtualFile file) {
+      return myFilesInScope.contains(file);
+    }
+
+    @Override
+    public int compare(VirtualFile file1, VirtualFile file2) {
+      return file1.getPath().compareTo(file2.getPath());
+    }
+
+    @Override
+    public boolean isSearchInModuleContent(@NotNull Module aModule) {
+      return true;
+    }
+
+    @Override
+    public boolean isSearchInLibraries() {
+      return false;
+    }
+  }
+
+}

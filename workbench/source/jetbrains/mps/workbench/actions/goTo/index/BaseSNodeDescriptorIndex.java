@@ -44,7 +44,7 @@ import java.util.Map;
 public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndexExtension<List<SNodeDescriptor>> {
 
   private static final Logger LOG = Logger.getLogger(BaseSNodeDescriptorIndex.class);
-  private static final Key<SModel> PARSED_MODEL = new Key<SModel>("parsed-model");
+  public static final Key<SModel> PARSED_MODEL = new Key<SModel>("parsed-model");
 
   private final MyInputFilter myInputFilter = new MyInputFilter();
   private final MyIndexer myIndexer = new MyIndexer();

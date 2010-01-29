@@ -222,27 +222,14 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     boolean isUpdated = false;
     boolean inspectorIsUpdated = false;
     EditorComponent inspector = null;
-    List<IEditor> allEditors = getAllEditors();
+    List<EditorComponent> allEditorComponents = getAllEditorComponents();
+    cleanupCheckedOnce(allEditorComponents);
 
     try {
       TypeChecker.getInstance().enableGlobalSubtypingCache();
-      for (final IEditor editor : allEditors) {
-        final EditorComponent component[] = new EditorComponent[1];
-        try {
-          SwingUtilities.invokeAndWait(new Runnable() {
-            public void run() {
-              component[0] = editor.getCurrentEditorComponent();
-            }
-          });
-        } catch (InterruptedException e) {
-          e.printStackTrace();
-        } catch (InvocationTargetException e) {
-          e.printStackTrace();
-        }
-        if (component[0] != null) {
-          if (updateEditorComponent(component[0], events, checkers, checkersToRemove, false)) {
-            isUpdated = true;
-          }
+      for (EditorComponent editorComponent : allEditorComponents) {
+        if (updateEditorComponent(editorComponent, events, checkers, checkersToRemove, false)) {
+          isUpdated = true;
         }
       }
 
@@ -257,12 +244,9 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
 
     if (isUpdated) {
-      for (IEditor editor : allEditors) {
-        editor.repaint();
-        EditorComponent component = editor.getCurrentEditorComponent();
-        if (component != null) {
-          component.getMessagesGutter().repaint();
-        }
+      for (EditorComponent editorComponent : allEditorComponents) {
+        editorComponent.repaint();
+        editorComponent.getMessagesGutter().repaint();
       }
     }
     if (inspectorIsUpdated) {
@@ -275,14 +259,32 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
   }
 
-  protected List<IEditor> getAllEditors() {
+  private List<EditorComponent> getAllEditorComponents() {
+    final List<IEditor> list;
     synchronized (ADD_EDITORS_LOCK) {
-      List<IEditor> list = myEditorsProvider.getAllEditors();
+      list = myEditorsProvider.getAllEditors();
       if (!myAdditionalEditors.isEmpty()) {
         list.addAll(myAdditionalEditors);
       }
-      return list;
     }
+    final List<EditorComponent> editorComponents = new ArrayList();
+    try {
+      SwingUtilities.invokeAndWait(new Runnable() {
+        public void run() {
+          for(IEditor editor : list) {
+            EditorComponent editorComponent = editor.getCurrentEditorComponent();
+            if (editorComponent != null) {
+              editorComponents.add(editorComponent);
+            }
+          }
+        }
+      });
+    } catch (InterruptedException e) {
+      e.printStackTrace();
+    } catch (InvocationTargetException e) {
+      e.printStackTrace();
+    }
+    return editorComponents;
   }
 
   public static void runUpdateMessagesAction(Runnable updateAction) {
@@ -340,6 +342,14 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
         return false;
       }
     });
+  }
+
+  /*
+   * Only carrently visible (active) editor remains in myCheckedOnceEditors forcing all Checkers
+   * to createMessages() on next visible (active) editor change
+   */
+  private void cleanupCheckedOnce(List<EditorComponent> allEditorComponents) {
+    myCheckedOnceEditors.retainAll(allEditorComponents);    
   }
 
   private boolean wasCheckedOnce(EditorComponent editorComponent) {

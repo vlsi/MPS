@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import jetbrains.mps.editor.markers.JavaLineMarkerProvider;
+import jetbrains.mps.editor.markers.Marker;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.ColorAndGraphicsUtil;
 import jetbrains.mps.util.Pair;
@@ -59,7 +61,6 @@ public class LeftEditorHighlighter {
 
   private BookmarkListener myListener;
   private BookmarkManager myBookmarkManager = null;
-
 
   public LeftEditorHighlighter(EditorComponent editorComponent) {
     myEditorComponent = editorComponent;
@@ -139,7 +140,6 @@ public class LeftEditorHighlighter {
       bookmark.paint(g);
     }
   }
-
 
   public void unHighlight(EditorCell cell) {
     myBrackets.remove(cell.getCellInfo());
@@ -312,7 +312,6 @@ public class LeftEditorHighlighter {
     myBookmarkManager = bookmarkManager;
     return bookmarkManager;
   }
-
 
   private class HighlighterBracket {
 

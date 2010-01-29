@@ -13,6 +13,7 @@ public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProj
 
   private ToDoHighlighter myToDoHighlighter = new ToDoHighlighter();
   private MethodDeclarationsFixer myMethodDeclFixer = new MethodDeclarationsFixer();
+  private OverrideMethodsChecker myOverrideMethodsChecker = new OverrideMethodsChecker();
 
   public BaseLanguageCustomPlugin_CustomProjectPlugin() {
   }
@@ -22,6 +23,7 @@ public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProj
     if (highlighter != null) {
       highlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter);
       highlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer);
+      highlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myOverrideMethodsChecker);
     }
   }
 
@@ -30,6 +32,7 @@ public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProj
     if (highlighter != null) {
       highlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer);
       highlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter);
+      highlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myOverrideMethodsChecker);
     }
   }
 }

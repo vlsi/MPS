@@ -38,6 +38,7 @@
     <orderEntry type="library" name="Beansbinding" level="project" />
     <orderEntry type="module" module-name="uiLanguage-runtime" />
     <orderEntry type="module" module-name="baseLanguageInternal" />
+    <orderEntry type="module" module-name="kernel" />
   </component>
 </module>
 
