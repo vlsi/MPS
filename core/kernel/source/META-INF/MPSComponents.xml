@@ -58,6 +58,9 @@
             <implementation-class>com.intellij.codeInsight.highlighting.HighlightManagerImpl</implementation-class>
             <skipForDummyProject/>
         </component>
+        <component>
+            <implementation-class>jetbrains.mps.CodeStyleSettings</implementation-class>
+        </component>
     </project-components>
 
     <application-components>
