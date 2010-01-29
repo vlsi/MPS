@@ -154,6 +154,8 @@ public class NodeHighlightManager implements EditorMessageOwner {
     myMessagesToNodes.addLink(m, m.getNode());
   }
 
+  // This method should be private, use unmark() method instead  
+  @Deprecated
   public void removeMessage(EditorMessage m) {
     if (m == null) {
       return;
@@ -179,6 +181,20 @@ public class NodeHighlightManager implements EditorMessageOwner {
       addMessage(message);
     }
     myEditor.getMessagesGutter().add(message);
+    if (repaintAndRebuild) {
+      repaintAndRebuildEditorMessages();
+    }
+  }
+
+  public void unmark(EditorMessage message) {
+    unmark(message, true);
+  }
+
+  public void unmark(EditorMessage message, boolean repaintAndRebuild) {
+    synchronized (myMessagesLock) {
+      removeMessage(message);
+    }
+    myEditor.getMessagesGutter().remove(message);
     if (repaintAndRebuild) {
       repaintAndRebuildEditorMessages();
     }
