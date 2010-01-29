@@ -237,8 +237,8 @@ public abstract class DiffEditorComponent extends EditorComponent {
 
   public void removeAllChanges() {
     for (ChangeEditorMessage message : myChangeEditorMessages) {
-      getHighlightManager().removeMessage(message);
-      myInspector.getHighlightManager().removeMessage(message);
+      getHighlightManager().unmark(message, false);
+      myInspector.getHighlightManager().unmark(message, false);
     }
     myInspector.getHighlightManager().rebuildMessages();
     removeAllChangesFrom(this);
