@@ -10,11 +10,11 @@ import jetbrains.mps.smodel.constraints.ReferentConstraintContext;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ExtensionMethodCall_extension_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
   public ExtensionMethodCall_extension_ReferentConstraint() {
@@ -30,9 +30,17 @@ public class ExtensionMethodCall_extension_ReferentConstraint extends BaseNodeRe
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> result = new ArrayList<SNode>();
+    SNode operandType = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
     for (SNode extension : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"))) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), SLinkOperations.getTarget(extension, "type", true))) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operandType), SLinkOperations.getTarget(extension, "type", true))) {
         ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(extension, "methods", true)));
+      }
+    }
+    for (SNode container : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"))) {
+      for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(container, "methods", true))) {
+        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operandType), SLinkOperations.getTarget(method, "extendedType", true))) {
+          ListSequence.fromList(result).addElement(method);
+        }
       }
     }
     return result;

@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.extensionMethods.structure;
 import jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration;
 import jetbrains.mps.baseLanguage.structure.ClassifierMember;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.structure.Type;
 import jetbrains.mps.baseLanguage.structure.Visibility;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -15,6 +16,7 @@ public class ExtensionMethodDeclaration extends BaseMethodDeclaration implements
   public static final String SHORT_DESCRIPTION = "shortDescription";
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
+  public static final String EXTENDED_TYPE = "extendedType";
   public static final String VISIBILITY = "visibility";
 
   public ExtensionMethodDeclaration(SNode node) {
@@ -43,6 +45,14 @@ public class ExtensionMethodDeclaration extends BaseMethodDeclaration implements
 
   public void setVirtualPackage(String value) {
     this.setProperty(ExtensionMethodDeclaration.VIRTUAL_PACKAGE, value);
+  }
+
+  public Type getExtendedType() {
+    return (Type) this.getChild(Type.class, ExtensionMethodDeclaration.EXTENDED_TYPE);
+  }
+
+  public void setExtendedType(Type node) {
+    super.setChild(ExtensionMethodDeclaration.EXTENDED_TYPE, node);
   }
 
   public Visibility getVisibility() {

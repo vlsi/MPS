@@ -7,12 +7,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.editor._GenericDeclaration_TypeVariables_Component;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
-import jetbrains.mps.nodeEditor.style.Style;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Indent;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -26,6 +26,7 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeListHandler;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.nodeEditor.CellActionType;
@@ -51,10 +52,25 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     editorCell.addEditorCell(this.createConstant_3522_1(editorContext, node));
     editorCell.addEditorCell(this.createRefNodeList_3522_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3522_3(editorContext, node));
+    if (renderingCondition3522_3(node, editorContext, editorContext.getOperationContext().getScope())) {
+      editorCell.addEditorCell(this.createCollection_3522_1(editorContext, node));
+    }
     editorCell.addEditorCell(this.createConstant_3522_4(editorContext, node));
     editorCell.addEditorCell(this.createRefNode_3522_2(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3522_0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_3522_5(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createCollection_3522_1(EditorContext editorContext, SNode node) {
+    EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
+    editorCell.setCellId("Collection_3522_1");
+    {
+      Style style = editorCell.getStyle();
+      style.set(StyleAttributes.SELECTABLE, false);
+    }
+    editorCell.addEditorCell(this.createConstant_3522_6(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_3522_3(editorContext, node));
     return editorCell;
   }
 
@@ -111,6 +127,14 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.INDENT_LAYOUT_NEW_LINE, true);
     }
+    editorCell.setDefaultText("");
+    return editorCell;
+  }
+
+  private EditorCell createConstant_3522_6(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "for");
+    editorCell.setCellId("Constant_3522_6");
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     editorCell.setDefaultText("");
     return editorCell;
   }
@@ -205,6 +229,23 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
+  private EditorCell createRefNode_3522_3(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("extendedType");
+    provider.setNoTargetText("<no extendedType>");
+    EditorCell editorCell;
+    editorCell = provider.createEditorCell(editorContext);
+    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+    SNode attributeConcept = provider.getRoleAttribute();
+    Class attributeKind = provider.getRoleAttributeClass();
+    if (attributeConcept != null) {
+      IOperationContext opContext = editorContext.getOperationContext();
+      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+    } else
+    return editorCell;
+  }
+
   private static boolean renderingCondition3522_0(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "typeVariableDeclaration", true)).count() > 0;
   }
@@ -215,6 +256,10 @@ public class ExtensionMethodDeclaration_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition3522_2(SNode node, EditorContext editorContext, IScope scope) {
     return ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty();
+  }
+
+  private static boolean renderingCondition3522_3(SNode node, EditorContext editorContext, IScope scope) {
+    return (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer", false, false) != null);
   }
 
   private static class parameterListHandler_3522_0 extends RefNodeListHandler {

@@ -54,21 +54,13 @@
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="1894531970723270160">
     <property name="name:0" value="TypeExtension" />
     <property name="rootable:0" value="true" />
-    <link role="extends:0" targetNodeId="6.1109279851642:3" resolveInfo="GenericDeclaration" />
+    <property name="package:0" value="topLevel" />
+    <link role="extends:0" targetNodeId="8022092943110829337:0" resolveInfo="BaseExtensionMethodContainer" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1894531970723323134">
       <property name="metaClass:0" value="aggregation" />
       <property name="role:0" value="type" />
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="6.1068431790189:3" resolveInfo="Type" />
-    </node>
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="1894531970723350220">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="role:0" value="methods" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <link role="target:0" targetNodeId="1550313277222152185:0" resolveInfo="ExtensionMethodDeclaration" />
-    </node>
-    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="5617464356390463487">
-      <link role="intfc:0" targetNodeId="6.1178285077437:3" resolveInfo="ClassifierMember" />
     </node>
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="1894531970723270240">
       <property name="value:0" value="type extension" />
@@ -98,6 +90,11 @@
     <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="8831352240098722668">
       <link role="intfc:0" targetNodeId="6.1178285077437:3" resolveInfo="ClassifierMember" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8022092943109605394">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="extendedType" />
+      <link role="target:0" targetNodeId="6.1068431790189:3" resolveInfo="Type" />
+    </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3316739663067157299">
     <property name="name:0" value="ThisExtensionExpression" />
@@ -105,6 +102,30 @@
     <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="3316739663067466226">
       <property name="value:0" value="this" />
       <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8022092943109322131">
+    <property name="name:0" value="SimpleExtensionMethodsContainer" />
+    <property name="package:0" value="topLevel" />
+    <property name="rootable:0" value="true" />
+    <link role="extends:0" targetNodeId="8022092943110829337:0" resolveInfo="BaseExtensionMethodContainer" />
+    <node role="conceptProperty:0" type="jetbrains.mps.lang.structure.structure.StringConceptProperty:0" id="8022092943110868238">
+      <property name="value:0" value="Simple Extension Method Container" />
+      <link role="conceptPropertyDeclaration:0" targetNodeId="2v.1137473891462:0" resolveInfo="alias" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8022092943110829337">
+    <property name="package:0" value="topLevel" />
+    <property name="name:0" value="BaseExtensionMethodContainer" />
+    <link role="extends:0" targetNodeId="6.1109279851642:3" resolveInfo="GenericDeclaration" />
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="8022092943110829338">
+      <link role="intfc:0" targetNodeId="6.1178549954367:3" resolveInfo="IVisible" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8022092943110829339">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="methods" />
+      <property name="sourceCardinality:0" value="0..n" />
+      <link role="target:0" targetNodeId="1550313277222152185:0" resolveInfo="ExtensionMethodDeclaration" />
     </node>
   </node>
 </model>

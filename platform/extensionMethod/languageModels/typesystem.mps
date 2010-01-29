@@ -27,6 +27,7 @@
   <languageAspect modelUID="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" version="0" />
   <maxImportIndex value="6" />
   <visible index="2" modelUID="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" />
+  <visible index="3" modelUID="r:a5509d93-a6df-4356-9363-7de4efc47849(jetbrains.mps.baseLanguage.extensionMethods.behavior)" />
   <node type="jetbrains.mps.lang.typesystem.structure.InferenceRule:3" id="3316739663069186517">
     <property name="name:3" value="typeof_ExtensionThis" />
     <node role="applicableNode:3" type="jetbrains.mps.lang.typesystem.structure.ConceptReference:3" id="3316739663069186519">
@@ -42,22 +43,22 @@
             </node>
           </node>
         </node>
-        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="3316739663069379933">
-          <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2304123357700145254">
-            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="2304123357700144125">
-              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="2304123357700144124">
+        <node role="rightExpression:3" type="jetbrains.mps.lang.typesystem.structure.NormalTypeClause:3" id="8022092943109959772">
+          <node role="normalType:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8022092943109982425">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8022092943109959774">
+              <node role="operand:3" type="jetbrains.mps.lang.typesystem.structure.ApplicableNodeReference:3" id="8022092943109959773">
                 <link role="applicableNode:3" targetNodeId="3316739663069186519" resolveInfo="extensionThis" />
               </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="328127298620977430">
-                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="328127298620977431">
-                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="328127298620996657">
-                    <link role="conceptDeclaration:16" targetNodeId="2v.1894531970723270160:0" resolveInfo="TypeExtension" />
+              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation:16" id="8022092943109982420">
+                <node role="parameter:16" type="jetbrains.mps.lang.smodel.structure.OperationParm_Concept:16" id="8022092943109982421">
+                  <node role="conceptArgument:16" type="jetbrains.mps.lang.smodel.structure.RefConcept_Reference:16" id="8022092943109982424">
+                    <link role="conceptDeclaration:16" targetNodeId="2v.1550313277222152185:0" resolveInfo="ExtensionMethodDeclaration" />
                   </node>
                 </node>
               </node>
             </node>
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="2304123357700145258">
-              <link role="link:16" targetNodeId="2v.1894531970723323134:0" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="8022092943109983433">
+              <link role="baseMethodDeclaration:16" targetNodeId="3v.8022092943109893938" resolveInfo="getThisType" />
             </node>
           </node>
         </node>
