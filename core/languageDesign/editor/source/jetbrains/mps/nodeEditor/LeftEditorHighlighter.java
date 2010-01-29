@@ -15,28 +15,26 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.editor.markers.JavaLineMarkerProvider;
-import jetbrains.mps.editor.markers.Marker;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.ColorAndGraphicsUtil;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.CellInfo;
+import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager;
 import jetbrains.mps.nodeEditor.bookmark.BookmarkManager.BookmarkListener;
-import jetbrains.mps.nodeEditor.EditorComponent.RebuildListener;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.cells.CellInfo;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.ColorAndGraphicsUtil;
+import jetbrains.mps.util.Pair;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
-import java.util.*;
-import java.util.List;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseMotionAdapter;
+import java.util.*;
+import java.util.List;
 
 public class LeftEditorHighlighter {
 
