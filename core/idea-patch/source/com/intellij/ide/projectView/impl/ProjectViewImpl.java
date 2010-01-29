@@ -1348,6 +1348,10 @@ public final class ProjectViewImpl extends ProjectView implements PersistentStat
   public boolean isShowMembers(String paneId) {
     return getPaneOptionValue(myShowMembers, paneId, ourShowMembersDefaults);
   }
+  
+  public void setShowMembers(boolean value, String paneId) {
+    setPaneOption(myShowMembers, value, paneId, true);
+  }
 
   public boolean isHideEmptyMiddlePackages(String paneId) {
     return getPaneOptionValue(myHideEmptyPackages, paneId, ourHideEmptyPackagesDefaults);

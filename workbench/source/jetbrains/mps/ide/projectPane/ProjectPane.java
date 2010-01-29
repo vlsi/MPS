@@ -19,6 +19,7 @@ import com.intellij.ide.*;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.ide.projectView.impl.ProjectViewPane;
+import com.intellij.ide.projectView.impl.ProjectViewImpl;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.command.CommandAdapter;
 import com.intellij.openapi.command.CommandEvent;
@@ -127,8 +128,6 @@ public class ProjectPane extends AbstractProjectViewPane {
   };
 
   private MyScrollPane myScrollPane;
-  private boolean myLastPropertiesState;
-
   private VirtualFileManagerListener myRefreshListener = new RefreshListener();
 
   public static final String ID = ProjectViewPane.ID;
@@ -182,7 +181,6 @@ public class ProjectPane extends AbstractProjectViewPane {
   public ProjectPane(Project project, ProjectView projectView) {
     super(project);
     myProjectView = projectView;
-    myLastPropertiesState = projectView.isShowMembers(ID);
 
     myTree = new MyTree();
 
@@ -218,8 +216,10 @@ public class ProjectPane extends AbstractProjectViewPane {
       }
 
       public void setSelected(@Nullable AnActionEvent e, boolean state) {
-        if (state != myLastPropertiesState) {
-          myLastPropertiesState = state;
+        if (state != isShowPropertiesAndReferences()) {
+          if (myProjectView instanceof ProjectViewImpl) {
+            ((ProjectViewImpl) myProjectView).setShowMembers(state, ID);
+          }
           ModelAccess.instance().runReadInEDT(new Runnable() {
             public void run() {
               getTree().rebuildNow();
@@ -307,7 +307,7 @@ public class ProjectPane extends AbstractProjectViewPane {
   }
 
   public boolean isShowPropertiesAndReferences() {
-    return myLastPropertiesState;
+    return myProjectView.isShowMembers(ID);
   }
 
   public void openEditor() {
