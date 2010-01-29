@@ -57,6 +57,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private EventsCollector myEventsCollector;
   private MySimpleModelListener mySimpleModelListener = new MySimpleModelListener();
   private MyGenerationStatusListener myStatusListener = new MyGenerationStatusListener();
+// [Dirty implementation of VCS highlighting in editor
+//  private MyChangeListener myChangesListener = new MyChangeListener();
   private boolean myShowLongName;
   private int myCountAdditionalNamePart = 0;
   private List<SNodeGroupTreeNode> myRootGroups = new ArrayList<SNodeGroupTreeNode>();
@@ -122,6 +124,21 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       setColor(Color.BLACK);
     }
 
+// [Dirty implementation of VCS highlighting in editor
+
+//
+//    ChangesManager changesManager = ChangesManager.getInstance(getOperationContext().getProject());
+//    ModelChangesManager modelChangesManager = null;
+//    if (changesManager != null && sm != null) {
+//      modelChangesManager = changesManager.getModelChangesManager(sm.getSModelReference());
+//    }
+//
+//    if (sm != null && sm.isInitialized() && modelChangesManager != null && !(modelChangesManager.isEmpty())) {
+//      setColor(FileStatus.COLOR_MODIFIED);
+//    } else {
+//      setColor(Color.BLACK);
+//    }
+//
     if (getSModelDescriptor() != null) {
       setIcon(IconManager.getIconFor(getSModelDescriptor()));
     } else {
@@ -519,6 +536,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myEventsCollector = new MyEventsCollector();
     myEventsCollector.add(myModelDescriptor);
     getSModelDescriptor().addModelListener(mySimpleModelListener);
+// [Dirty implementation of VCS highlighting in editor
+//    ModelChangesManager modelChangesManager = ChangesManager.getInstance(getOperationContext().getProject()).getModelChangesManager(myModelDescriptor);
+//    modelChangesManager.addChangeListener(myChangesListener);
     ModelGenerationStatusManager.getInstance().addGenerationStatusListener(myStatusListener);
   }
 
@@ -527,6 +547,9 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     ModelGenerationStatusManager.getInstance().removeGenerationStatusListener(myStatusListener);
 
     if (myEventsCollector == null) return;
+// [Dirty implementation of VCS highlighting in editor
+//    ModelChangesManager modelChangesManager = ChangesManager.getInstance(getOperationContext().getProject()).getModelChangesManager(myModelDescriptor);
+//    modelChangesManager.removeChangeListener(myChangesListener);
     myEventsCollector.remove(myModelDescriptor);
     myEventsCollector.dispose();
     myEventsCollector = null;
@@ -894,6 +917,19 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private class MyEventsCollector extends EventsCollector {
     protected void eventsHappened(List<SModelEvent> events) {
       eventsHappenedInCommand(events);
+// [Dirty implementation of VCS highlighting in editor
+//    }
+//  }
+//
+//  private class MyChangeListener implements ChangeListener {
+//    @Override
+//    public void changeAdded(Change change) {
+//      updateNodePresentation(true, false);
+//    }
+//
+//    @Override
+//    public void changeRemoved(Change change) {
+//      updateNodePresentation(true, false);
     }
   }
 }

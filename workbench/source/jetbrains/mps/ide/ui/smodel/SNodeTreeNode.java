@@ -92,6 +92,20 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     } else {
       setColor(Color.BLACK);
     }
+// [Dirty implementation of VCS highlighting in editor
+//    ChangesManager changesManager = ChangesManager.getInstance(getOperationContext().getProject());
+//    ModelChangesManager modelChangesManager = null;
+//    if (changesManager != null) {
+//      modelChangesManager = changesManager.getModelChangesManager(myNode.getModel().getSModelReference());
+//    }
+//
+//    if (modelChangesManager != null && modelChangesManager.isAddedNode(myNode)) {
+//      setColor(FileStatus.COLOR_ADDED);
+//    } else if (hasErrors()) {
+//      setColor(Color.RED);
+//    } else {
+//      setColor(Color.BLACK);
+//    }
 
     if (myNode != null) {
       setIcon(IconManager.getIconFor(myNode));
