@@ -125,10 +125,13 @@
     <path path="core/baseLanguage/classifiers/classes" />
     <path path="core/baseLanguage/closures/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/classes" />
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -148,7 +151,6 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
-    <path path="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
@@ -175,6 +177,7 @@
     <path path="lib/joda-time/joda-time-1.6.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/extensionMethod/classes" />
     <path path="platform/regexp/runtime/classes" />
     <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/xml/xmlQuery/runtime/classes_gen" />
@@ -191,10 +194,8 @@
     <path path="core/baseLanguage/tuples/languages/tuples/classes_gen" />
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/tuples/runtime/classes_gen" />
-    <path path="core/baseLanguage/tuples/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/classes" />
     <path path="core/baseLanguage/unitTest/classes_gen" />
-    <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="core/languageDesign/editorTest/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/classes" />
@@ -204,10 +205,13 @@
     <path path="core/baseLanguage/classifiers/classes" />
     <path path="core/baseLanguage/closures/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/classes" />
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
@@ -229,7 +233,6 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
-    <path path="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     <path path="core/languageDesign/editorTest/classes_gen" />
@@ -256,6 +259,7 @@
     <path path="lib/jetbrains-ideframework/annotations.jar" />
     <path path="lib/joda-time/joda-time-1.6.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="platform/extensionMethod/classes" />
     <path path="platform/regexp/runtime/classes" />
     <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/xml/xmlQuery/runtime/classes_gen" />
@@ -266,10 +270,12 @@
   <path id="cycle.jetbrains.mps.baseLanguage.dates.runtime0.classpaths">
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
-    <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/runtime/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/joda-time/joda-time-1.6.jar" />
@@ -277,10 +283,12 @@
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.regexp.examples0.classpaths">
     <path path="platform/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
-    <path path="platform/regexp/solutions/jetbrains.mps.regexp.examples/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/runtime/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/jdom/jdom.jar" />
@@ -299,10 +307,13 @@
     <path path="core/baseLanguage/classifiers/classes" />
     <path path="core/baseLanguage/closures/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/classes" />
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -322,7 +333,6 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
-    <path path="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
@@ -349,6 +359,7 @@
     <path path="lib/joda-time/joda-time-1.6.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
     <path path="platform/bash/languages/bash/classes_gen" />
+    <path path="platform/extensionMethod/classes" />
     <path path="platform/regexp/runtime/classes" />
     <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/xml/xmlQuery/runtime/classes_gen" />
@@ -358,7 +369,6 @@
   </path>
   <path id="cycle.jetbrains.mps.debug0.classpaths">
     <path path="core/kernel/jetbrains.mps.debug/classes_gen" />
-    <path path="core/kernel/jetbrains.mps.debug/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguage/runtime/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
@@ -366,10 +376,13 @@
     <path path="core/baseLanguage/classifiers/classes" />
     <path path="core/baseLanguage/closures/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/classes" />
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -389,7 +402,6 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
-    <path path="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
@@ -415,6 +427,7 @@
     <path path="lib/jetbrains-ideframework/annotations.jar" />
     <path path="lib/joda-time/joda-time-1.6.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="platform/extensionMethod/classes" />
     <path path="platform/regexp/runtime/classes" />
     <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/xml/xmlQuery/runtime/classes_gen" />
@@ -424,7 +437,6 @@
   </path>
   <path id="cycle.jetbrains.mps.editor.runtime0.classpaths">
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
-    <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguage/runtime/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
@@ -432,10 +444,13 @@
     <path path="core/baseLanguage/classifiers/classes" />
     <path path="core/baseLanguage/closures/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/classes" />
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -455,7 +470,6 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
-    <path path="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
@@ -481,6 +495,7 @@
     <path path="lib/jetbrains-ideframework/annotations.jar" />
     <path path="lib/joda-time/joda-time-1.6.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="platform/extensionMethod/classes" />
     <path path="platform/regexp/runtime/classes" />
     <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/xml/xmlQuery/runtime/classes_gen" />
@@ -498,10 +513,13 @@
     <path path="core/baseLanguage/classifiers/classes" />
     <path path="core/baseLanguage/closures/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/classes" />
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -521,7 +539,6 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
-    <path path="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
@@ -547,6 +564,7 @@
     <path path="lib/jetbrains-ideframework/annotations.jar" />
     <path path="lib/joda-time/joda-time-1.6.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="platform/extensionMethod/classes" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/regexp/runtime/classes" />
@@ -559,16 +577,17 @@
   <path id="cycle.jetbrains.mps.gtext.runtime0.classpaths">
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
-    <path path="platform/gtext/runtime/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/runtime/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="platform/gtext/runtime/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.lang.test.runtime0.classpaths">
-    <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguage/runtime/classes" />
@@ -577,10 +596,13 @@
     <path path="core/baseLanguage/classifiers/classes" />
     <path path="core/baseLanguage/closures/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/classes" />
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -600,7 +622,6 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
-    <path path="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
@@ -626,6 +647,7 @@
     <path path="lib/jetbrains-ideframework/annotations.jar" />
     <path path="lib/joda-time/joda-time-1.6.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="platform/extensionMethod/classes" />
     <path path="platform/regexp/runtime/classes" />
     <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/xml/xmlQuery/runtime/classes_gen" />
@@ -644,10 +666,13 @@
     <path path="core/baseLanguage/classifiers/classes" />
     <path path="core/baseLanguage/closures/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/classes" />
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -667,7 +692,6 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
-    <path path="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
@@ -693,6 +717,7 @@
     <path path="lib/jetbrains-ideframework/annotations.jar" />
     <path path="lib/joda-time/joda-time-1.6.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="platform/extensionMethod/classes" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/regexp/runtime/classes" />
@@ -714,10 +739,13 @@
     <path path="core/baseLanguage/classifiers/classes" />
     <path path="core/baseLanguage/closures/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/classes" />
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -737,7 +765,6 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
-    <path path="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
@@ -764,6 +791,7 @@
     <path path="lib/joda-time/joda-time-1.6.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
     <path path="platform/builders/classes_gen" />
+    <path path="platform/extensionMethod/classes" />
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/regexp/runtime/classes" />
@@ -779,10 +807,12 @@
   </path>
   <path id="cycle.jetbrains.mps.xmlQuery.runtime0.classpaths">
     <path path="platform/xml/xmlQuery/runtime/classes_gen" />
-    <path path="platform/xml/xmlQuery/runtime/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/runtime/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/jdom/jdom.jar" />
     <path path="lib/jetbrains-ideframework/annotations.jar" />
@@ -799,10 +829,13 @@
     <path path="core/baseLanguage/classifiers/classes" />
     <path path="core/baseLanguage/closures/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/classes" />
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -822,7 +855,6 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
-    <path path="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
@@ -848,13 +880,18 @@
     <path path="lib/jetbrains-ideframework/annotations.jar" />
     <path path="lib/joda-time/joda-time-1.6.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="platform/extensionMethod/classes" />
+    <path path="platform/gtext/classes_gen" />
+    <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/regexp/runtime/classes" />
     <path path="platform/uiLanguage/runtime/classes" />
+    <path path="platform/xml/xml/classes_gen" />
+    <path path="platform/xml/xmlInternal/classes_gen" />
     <path path="platform/xml/xmlQuery/runtime/classes_gen" />
+    <path path="platform/xml/xmlSchema/classes_gen" />
     <path path="platform/xmlUnitTest/languages/xmlUnitTest/classes_gen" />
     <path path="platform/ypath/classes_gen" />
     <path path="platform/ypath/runtime/classes" />
-    <path path="samples/sampleXML/languages/sampleXML/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.ypath0.classpaths">
@@ -868,10 +905,13 @@
     <path path="core/baseLanguage/classifiers/classes" />
     <path path="core/baseLanguage/closures/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/classes" />
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -891,7 +931,6 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
-    <path path="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
@@ -917,6 +956,7 @@
     <path path="lib/jetbrains-ideframework/annotations.jar" />
     <path path="lib/joda-time/joda-time-1.6.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="platform/extensionMethod/classes" />
     <path path="platform/regexp/runtime/classes" />
     <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/xml/xmlQuery/runtime/classes_gen" />
@@ -926,7 +966,6 @@
   </path>
   <path id="cycle.ypath.main0.classpaths">
     <path path="platform/ypath/solutions/main/classes_gen" />
-    <path path="platform/ypath/solutions/main/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguage/runtime/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
@@ -934,10 +973,13 @@
     <path path="core/baseLanguage/classifiers/classes" />
     <path path="core/baseLanguage/closures/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/classes" />
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -957,7 +999,6 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
-    <path path="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
@@ -983,6 +1024,7 @@
     <path path="lib/jetbrains-ideframework/annotations.jar" />
     <path path="lib/joda-time/joda-time-1.6.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="platform/extensionMethod/classes" />
     <path path="platform/regexp/runtime/classes" />
     <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/xml/xmlQuery/runtime/classes_gen" />
@@ -993,7 +1035,6 @@
   </path>
   <path id="cycle.ypath.test0.classpaths">
     <path path="platform/ypath/solutions/test/classes_gen" />
-    <path path="platform/ypath/solutions/test/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguage/runtime/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
@@ -1001,10 +1042,13 @@
     <path path="core/baseLanguage/classifiers/classes" />
     <path path="core/baseLanguage/closures/classes" />
     <path path="core/baseLanguage/closures/runtime/classes" />
+    <path path="core/baseLanguage/closures/runtime/source" />
+    <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/classes" />
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
+    <path path="core/baseLanguage/collections/runtime/source" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -1024,7 +1068,6 @@
     <path path="core/languageDesign/core/classes" />
     <path path="core/languageDesign/dataFlow/classes" />
     <path path="core/languageDesign/dataFlow/runtime/classes" />
-    <path path="core/languageDesign/dataFlow/solutions/jetbrains.mps.dataFlow.runtime/classes_gen" />
     <path path="core/languageDesign/editor/classes" />
     <path path="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/classes_gen" />
     <path path="core/languageDesign/findUsages/classes" />
@@ -1050,6 +1093,7 @@
     <path path="lib/jetbrains-ideframework/annotations.jar" />
     <path path="lib/joda-time/joda-time-1.6.jar" />
     <path path="lib/picocontainer/picocontainer.jar" />
+    <path path="platform/extensionMethod/classes" />
     <path path="platform/regexp/runtime/classes" />
     <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/xml/xmlQuery/runtime/classes_gen" />
@@ -1060,7 +1104,7 @@
     <path refid="common.classpath" />
   </path>
   <target name="compile.all" depends="compile.cycle.jetbrains.mps.baseLanguage.builders0,compile.cycle.jetbrains.mps.baseLanguage.dates0,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime0,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples0,compile.cycle.jetbrains.mps.bash0,compile.cycle.jetbrains.mps.debug0,compile.cycle.jetbrains.mps.editor.runtime0,compile.cycle.jetbrains.mps.gtext0,compile.cycle.jetbrains.mps.gtext.runtime0,compile.cycle.jetbrains.mps.lang.test.runtime0,compile.cycle.jetbrains.mps.xml0,compile.cycle.jetbrains.mps.xmlQuery0,compile.cycle.jetbrains.mps.xmlQuery.runtime0,compile.cycle.jetbrains.mps.xmlUnitTest0,compile.cycle.jetbrains.mps.ypath0,compile.cycle.ypath.main0,compile.cycle.ypath.test0" />
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.builders0" depends="compile.cycle.jetbrains.mps.lang.test.runtime0">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.builders0" depends="compile.cycle.ypath.test0">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.builders.classes}.tmp" />
     <mkdir dir="platform/builders/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -1075,7 +1119,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.dates0" depends="compile.cycle.jetbrains.mps.debug0">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.dates0" depends="compile.cycle.jetbrains.mps.baseLanguage.dates.runtime0">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.dates.classes}.tmp" />
     <mkdir dir="core/baseLanguage/dates/source" />
     <mkdir dir="core/baseLanguage/dates/source_gen" />
@@ -1152,7 +1196,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.dates.runtime0">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.dates.runtime0" depends="compile.cycle.jetbrains.mps.debug0">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.dates.runtime.classes}.tmp" />
     <mkdir dir="core/baseLanguage/dates/runtime/source_gen" />
     <mkdir dir="core/baseLanguage/dates/runtime/src" />
@@ -1171,7 +1215,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples0" depends="compile.cycle.jetbrains.mps.xml0">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples0" depends="compile.cycle.jetbrains.mps.lang.test.runtime0">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.regexp.examples.classes}.tmp" />
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/source_gen" />
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/test_gen" />
@@ -1188,7 +1232,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.bash0" depends="compile.cycle.jetbrains.mps.xmlQuery0">
+  <target name="compile.cycle.jetbrains.mps.bash0" depends="compile.cycle.jetbrains.mps.xmlUnitTest0">
     <property name="classes.dump" value="${jetbrains.mps.bash.classes}.tmp" />
     <mkdir dir="platform/bash/languages/bash/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -1203,7 +1247,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.debug0" depends="compile.cycle.jetbrains.mps.baseLanguage.dates.runtime0">
+  <target name="compile.cycle.jetbrains.mps.debug0" depends="compile.cycle.jetbrains.mps.xmlQuery.runtime0">
     <property name="classes.dump" value="${jetbrains.mps.debug.classes}.tmp" />
     <mkdir dir="core/kernel/jetbrains.mps.debug/source_gen" />
     <mkdir dir="core/kernel/jetbrains.mps.debug/test_gen" />
@@ -1220,7 +1264,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.editor.runtime0" depends="compile.cycle.ypath.test0">
+  <target name="compile.cycle.jetbrains.mps.editor.runtime0" depends="compile.cycle.jetbrains.mps.bash0">
     <property name="classes.dump" value="${jetbrains.mps.editor.runtime.classes}.tmp" />
     <mkdir dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/source_gen" />
     <mkdir dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/test_gen" />
@@ -1254,7 +1298,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.gtext.runtime0" depends="compile.cycle.jetbrains.mps.baseLanguage.dates0">
+  <target name="compile.cycle.jetbrains.mps.gtext.runtime0" depends="compile.cycle.jetbrains.mps.baseLanguage.builders0">
     <property name="classes.dump" value="${jetbrains.mps.gtext.runtime.classes}.tmp" />
     <mkdir dir="platform/gtext/runtime/source" />
     <mkdir dir="platform/gtext/runtime/source_gen" />
@@ -1273,7 +1317,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.lang.test.runtime0" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples0">
+  <target name="compile.cycle.jetbrains.mps.lang.test.runtime0" depends="compile.cycle.jetbrains.mps.editor.runtime0">
     <property name="classes.dump" value="${jetbrains.mps.lang.test.runtime.classes}.tmp" />
     <mkdir dir="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/source_gen" />
     <mkdir dir="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/test_gen" />
@@ -1319,7 +1363,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.xmlQuery0" depends="compile.cycle.jetbrains.mps.xmlQuery.runtime0">
+  <target name="compile.cycle.jetbrains.mps.xmlQuery0" depends="compile.cycle.jetbrains.mps.xml0">
     <property name="classes.dump" value="${jetbrains.mps.xmlQuery.classes}.tmp" />
     <mkdir dir="platform/xml/xmlQuery/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -1334,7 +1378,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.xmlQuery.runtime0" depends="compile.cycle.jetbrains.mps.baseLanguage.builders0">
+  <target name="compile.cycle.jetbrains.mps.xmlQuery.runtime0">
     <property name="classes.dump" value="${jetbrains.mps.xmlQuery.runtime.classes}.tmp" />
     <mkdir dir="platform/xml/xmlQuery/runtime/source_gen" />
     <mkdir dir="platform/xml/xmlQuery/runtime/test_gen" />
@@ -1351,7 +1395,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.xmlUnitTest0" depends="compile.cycle.jetbrains.mps.editor.runtime0">
+  <target name="compile.cycle.jetbrains.mps.xmlUnitTest0" depends="compile.cycle.jetbrains.mps.xmlQuery0">
     <property name="classes.dump" value="${jetbrains.mps.xmlUnitTest.classes}.tmp" />
     <mkdir dir="platform/xmlUnitTest/languages/xmlUnitTest/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -1366,7 +1410,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ypath0" depends="compile.cycle.jetbrains.mps.bash0">
+  <target name="compile.cycle.jetbrains.mps.ypath0" depends="compile.cycle.jetbrains.mps.baseLanguage.dates0">
     <property name="classes.dump" value="${jetbrains.mps.ypath.classes}.tmp" />
     <mkdir dir="platform/ypath/source" />
     <mkdir dir="platform/ypath/source_gen" />

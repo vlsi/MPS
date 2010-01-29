@@ -60,6 +60,20 @@
         <entry key="$APPLICATION_HOME_DIR$">
           <value>
             <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="https://svn.jetbrains.org/mps/branches">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://svn.jetbrains.org/mps/tags">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                </map>
+              </option>
               <option name="branchUrls">
                 <list>
                   <option value="https://svn.jetbrains.org/mps/branches" />
@@ -73,6 +87,20 @@
         <entry key="$PROJECT_DIR$">
           <value>
             <SvnBranchConfiguration>
+              <option name="branchMap">
+                <map>
+                  <entry key="https://svn.jetbrains.org/mps/branches">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="https://svn.jetbrains.org/mps/tags">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                </map>
+              </option>
               <option name="branchUrls">
                 <list>
                   <option value="https://svn.jetbrains.org/mps/branches" />
@@ -88,6 +116,14 @@
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
     <mapping directory="$PROJECT_DIR$" vcs="svn" />
   </component>
