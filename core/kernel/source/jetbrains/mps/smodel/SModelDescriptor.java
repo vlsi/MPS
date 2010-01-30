@@ -70,6 +70,8 @@ public interface SModelDescriptor {
 
   void reloadFromDisk();
 
+  void reloadFromDiskSafe();
+
   void refresh();
 
   void dispose();

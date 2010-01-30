@@ -122,7 +122,7 @@ class ReloadSession {
             String text = "Reloading " + model.getSModelReference().getSModelFqName();
             LOG.info(text);
             progressIndicator.setText2(text);
-            model.reloadFromDisk();
+            model.reloadFromDiskSafe();
           } catch (RuntimeException e) {
             LOG.error(e);
           }

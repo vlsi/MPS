@@ -234,7 +234,12 @@ public class ModelReader4 implements IModelReader {
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);
     if (idValue != null) {
-      node.setId(SNodeId.fromString(idValue));
+      SNodeId id = SNodeId.fromString(idValue);
+      if (id == null) {
+        LOG.error("invalid id string");
+        return null;
+      }
+      node.setId(id);
     }
 
     List properties = nodeElement.getChildren(ModelPersistence.PROPERTY);

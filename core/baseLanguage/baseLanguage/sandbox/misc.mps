@@ -268,6 +268,26 @@
             <node role="primitiveType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1983823974967228467" />
           </node>
         </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5907814479178356838">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression:3" id="5907814479178356839">
+            <node role="primitiveType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5907814479178356840" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5907814479178356841">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression:3" id="5907814479178356842">
+            <node role="primitiveType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5907814479178356843" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5907814479178356844">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression:3" id="5907814479178356845">
+            <node role="primitiveType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5907814479178356846" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="5907814479178356847">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PrimitiveClassExpression:3" id="5907814479178356848">
+            <node role="primitiveType:3" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="5907814479178356849" />
+          </node>
+        </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="1983823974967228427" />
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="1983823974967228428" />
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="1983823974967228429" />

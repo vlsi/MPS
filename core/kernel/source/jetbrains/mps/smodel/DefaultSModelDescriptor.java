@@ -33,7 +33,6 @@ import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
-import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.WeakSet;
@@ -93,6 +92,32 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
 
   protected SModel loadModel() {
     return myModelRootManager.loadModel(this);
+  }
+
+  public void reloadFromDiskSafe() {
+    if (SModelRepository.getInstance().isChanged(this)) {
+      ApplicationManager.getApplication().invokeLater(new Runnable() {
+        public void run() {
+          final boolean needSave = VcsHelper.showDiskMemoryMerge(myModelFile, mySModel);
+          if (needSave) {
+            ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+              public void run() {
+                myDiskTimestamp = fileTimestamp();
+                save();
+              }
+            });
+          } else {
+            ModelAccess.instance().runWriteAction(new Runnable() {
+              public void run() {
+                reloadFromDisk();
+              }
+            });
+          }
+        }
+      }, ModalityState.NON_MODAL);
+    } else {
+      reloadFromDisk();
+    }
   }
 
   public void reloadFromDisk() {
