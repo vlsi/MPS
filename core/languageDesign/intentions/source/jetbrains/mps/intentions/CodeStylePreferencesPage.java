@@ -60,7 +60,7 @@ public class CodeStylePreferencesPage {
     mySettings.setFieldSettings(myFieldItem.getSettings());
     mySettings.setStaticFieldSettings(myStaticField.getSettings());
     mySettings.setParameterSettings(myParameter.getSettings());
-    mySettings.setLocalVariableSettings(myParameter.getSettings());
+    mySettings.setLocalVariableSettings(myLocalVariable.getSettings());
   }
 
   public boolean isModified() {
