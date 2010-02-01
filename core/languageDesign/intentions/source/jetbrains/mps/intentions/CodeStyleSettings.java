@@ -29,6 +29,7 @@ import javax.swing.Icon;
 )
 public class CodeStyleSettings implements PersistentStateComponent<MyState>, ProjectComponent, SearchableConfigurable {
   public static CodeStyleSettings getInstance(Project project) {
+    if (project == null) return null;
     return project.getComponent(CodeStyleSettings.class);
   }
 
