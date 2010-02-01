@@ -78,7 +78,7 @@ public class RunConfigManager implements ProjectComponent {
     //assert ThreadUtils.isEventDispatchThread() : "should be called from EDT only";
     if (myProject.isDisposed()) return;
     if (myLoaded) return;
-    if (IdeMain.getTestMode() == TestMode.CORE_TEST) return;
+    if (IdeMain.getTestMode() != TestMode.NO_TEST) return;
 
     addConfigTypes();
 
@@ -114,6 +114,7 @@ public class RunConfigManager implements ProjectComponent {
   public void firstInit() {
     if (myProject.isDisposed()) return;
     if (myLoaded) return;
+    if (IdeMain.getTestMode() != TestMode.NO_TEST) return;
 
     addConfigTypes();
 
