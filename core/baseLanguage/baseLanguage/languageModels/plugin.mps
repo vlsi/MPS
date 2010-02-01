@@ -117,7 +117,6 @@
   <import index="161" modelUID="f:java_stub#com.intellij.openapi.module(com.intellij.openapi.module@java_stub)" version="-1" />
   <import index="162" modelUID="f:java_stub#jetbrains.mps.baseLanguage.index(jetbrains.mps.baseLanguage.index@java_stub)" version="-1" />
   <import index="163" modelUID="f:java_stub#jetbrains.mps.ide.icons(jetbrains.mps.ide.icons@java_stub)" version="-1" />
-  <import index="164" modelUID="f:java_stub#jetbrains.mps.uiLanguage(jetbrains.mps.uiLanguage@java_stub)" version="-1" />
   <import index="165" modelUID="f:java_stub#jetbrains.mps.util(jetbrains.mps.util@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.plugin.structure.ActionGroupDeclaration:23" id="1205247737002">
     <property name="name:23" value="BaseLanguageModelActionsInternal" />
