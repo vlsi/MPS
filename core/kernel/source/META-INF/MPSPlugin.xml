@@ -73,7 +73,7 @@
 
         <fileBasedIndex implementation="com.intellij.psi.impl.cache.impl.id.IdIndex"/>
         <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex"/>
-        <fileBasedIndex implementation="jetbrains.mps.baseLanguage.index.ClassifierSuccessorsIndexer"/> 
+<!--        <fileBasedIndex implementation="jetbrains.mps.baseLanguage.index.ClassifierSuccessorsIndexer"/> --> 
         <!--        <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.NamedNodeIndex"/> -->
         <fileBasedIndex implementation="jetbrains.mps.generator.ModelDigestIndex"/>
         <fileBasedIndex implementation="com.intellij.psi.search.FilenameIndex"/>
