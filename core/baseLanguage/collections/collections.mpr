@@ -31,6 +31,7 @@
       <solutionPath path="${project}/solutions/internalCollections.sandbox/internalCollections.sandbox.msd" />
       <solutionPath path="${project}/solutions/internalCollections.test/internalCollections.test.msd" />
       <solutionPath path="${project}/languages/trove/runtime/collections_trove.runtime.msd" folder="" />
+      <solutionPath path="${project}/runtime/collections.runtime.msd" folder="" />
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${mps_home}/core/baseLanguage/closures/closures.mpl" />
@@ -93,6 +94,8 @@
     <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+    <mapping directory="" vcs="" />
     <mapping directory="" vcs="" />
     <mapping directory="" vcs="" />
     <mapping directory="" vcs="" />
