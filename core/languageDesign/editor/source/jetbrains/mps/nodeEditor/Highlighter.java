@@ -78,6 +78,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   };
   private SModelCommandListener myModelCommandListener = new SModelCommandListener() {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
+      if (IdeMain.getTestMode() != TestMode.NO_TEST) return;
       synchronized (EVENTS_LOCK) {
         myLastEvents.addAll(events);
       }
