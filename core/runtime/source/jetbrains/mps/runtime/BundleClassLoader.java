@@ -105,6 +105,8 @@ public class
   }
 
   public void dispose() {
+    super.dispose ();
+    myClassesCache.clear();
     myDisposed = true;
   }
 
