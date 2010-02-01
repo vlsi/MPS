@@ -98,6 +98,18 @@
       <fileset dir="core/baseLanguage/collections/runtime/source" />
     </jar>
   </target>
+  <target name="pack.collections.runtime0">
+    <mkdir dir="core/baseLanguage/collections/runtime/classes_gen" />
+    <mkdir dir="core/baseLanguage/collections/runtime/source_gen.caches" />
+    <mkdir dir="core/baseLanguage/collections/runtime/test_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/core/baseLanguage/collections.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/baseLanguage/collections/runtime/collections.runtime.msd" prefix="module" />
+      <zipfileset dir="core/baseLanguage/collections/runtime/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="core/baseLanguage/collections/runtime/test_gen.caches" prefix="test_gen.caches" />
+      <zipfileset dir="core/baseLanguage/collections/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset dir="core/baseLanguage/collections/runtime/classes_gen" />
+    </jar>
+  </target>
   <target name="pack.collections_samples0">
     <mkdir dir="core/baseLanguage/collections/solutions/collections/samples/source_gen.caches" />
     <mkdir dir="core/baseLanguage/collections/solutions/collections/samples/test_gen.caches" />

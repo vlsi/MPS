@@ -65,6 +65,10 @@
       <property name="id" value="83888646-71ce-4f1c-9c53-c54016f6ad4f" />
       <property name="name" value="jetbrains.mps.baseLanguage.collections" />
     </node>
+    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="3710764346182727958">
+      <property name="id" value="9b80526e-f0bf-4992-bdf5-cee39c1833f3" />
+      <property name="name" value="collections.runtime" />
+    </node>
     <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="701559220729405143">
       <property name="id" value="927a8eff-b060-4b84-9bf9-95534382f566" />
       <property name="name" value="collections_samples" />
