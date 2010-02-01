@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;
 import junit.framework.TestResult;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.io.PrintStream;
 
 public class TestRunner extends BaseTestRunner {
@@ -34,7 +36,19 @@ public class TestRunner extends BaseTestRunner {
         ListSequence.fromList(tests).addElement(test);
       }
     }
-    TestResult testResult = new TestResult();
+    TestResult testResult = new TestResult() {
+      protected void run(TestCase test) {
+        try {
+          Method method = test.getClass().getMethod(test.getName());
+          boolean isAbstractClass = Modifier.isAbstract(method.getDeclaringClass().getModifiers());
+          if (isAbstractClass) {
+            return;
+          }
+        } catch (NoSuchMethodException e) {
+        }
+        super.run(test);
+      }
+    };
     CommandOutputStream out = new CommandOutputStream(System.out);
     CommandOutputStream err = new CommandOutputStream(System.err);
     System.setOut(new PrintStream(out));

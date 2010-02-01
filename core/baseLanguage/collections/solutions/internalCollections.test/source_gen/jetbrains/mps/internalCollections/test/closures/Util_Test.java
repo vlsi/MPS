@@ -11,7 +11,7 @@ import java.util.Collections;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
-public class Util_Test extends TestCase {
+public abstract class Util_Test extends TestCase {
   public void test_dummy() throws Exception {
   }
 

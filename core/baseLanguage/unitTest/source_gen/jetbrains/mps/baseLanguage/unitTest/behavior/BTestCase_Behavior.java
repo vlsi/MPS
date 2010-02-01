@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.unitTest.runtime.TestRunParameters;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 
 public class BTestCase_Behavior {
@@ -46,9 +47,11 @@ public class BTestCase_Behavior {
 
   public static List<SNode> virtual_getTestMethods_2148145109766218395(SNode thisNode) {
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true)));
-    if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) {
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))));
+    if (!(SPropertyOperations.getBoolean(thisNode, "abstractClass"))) {
+      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(thisNode, "testMethodList", true), "testMethod", true)));
+      if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")) {
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(ITestCase_Behavior.call_getTestMethods_2148145109766218395(SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "superclass", true), "classifier", false), "jetbrains.mps.baseLanguage.unitTest.structure.ITestCase"))));
+      }
     }
     return result;
   }
