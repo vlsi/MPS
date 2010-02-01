@@ -97,7 +97,8 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
       }
       final SNode thisExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
       // Method creation begins 
-      SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateSetter_Intention.QuotationClass_2193_0().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), SPropertyOperations.getString(field, "name"), setterName));
+      String parameterName = GenerateGettersAndSettersUtil.getParameterNameForField(field, ideaProject);
+      SNode added = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateSetter_Intention.QuotationClass_2193_0().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
       lastAdded = added;
     }
     if (lastAdded != null) {

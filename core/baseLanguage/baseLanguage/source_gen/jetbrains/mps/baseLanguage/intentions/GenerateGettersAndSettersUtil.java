@@ -7,8 +7,8 @@ import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.CodeStyleSettings;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class GenerateGettersAndSettersUtil {
   public GenerateGettersAndSettersUtil() {
@@ -37,6 +37,20 @@ public class GenerateGettersAndSettersUtil {
 
   public static String getFieldSetterName(SNode fieldDeclaration, Project project) {
     return "set" + NameUtil.capitalize(getPreparedFieldName(fieldDeclaration, project));
+  }
+
+  public static String getParameterNameForField(SNode field, Project project) {
+    String preparedFieldName = getPreparedFieldName(field, project);
+    CodeStyleSettings codeStyleSettings = CodeStyleSettings.getInstance(project);
+    if (codeStyleSettings == null) {
+      return NameUtil.decapitalize(preparedFieldName);
+    }
+    Pair<String, String> settings = codeStyleSettings.getParameterSettings();
+    if (StringUtils.isEmpty(settings.o1)) {
+      return NameUtil.decapitalize(preparedFieldName + settings.o2);
+    } else {
+      return settings.o1 + preparedFieldName + settings.o2;
+    }
   }
 
   public static String getPreparedFieldName(SNode fieldDeclaration, Project project) {

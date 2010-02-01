@@ -133,7 +133,8 @@ public class GenerateGettersAndSetters_Intention extends GenerateIntention imple
       if (!(setterIsAbsent.value)) {
         continue;
       }
-      lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Intention.QuotationClass_7565_1().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), SPropertyOperations.getString(field, "name"), setterName));
+      String parameterName = GenerateGettersAndSettersUtil.getParameterNameForField(field, ideaProject);
+      lastAdded = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).addElement(new GenerateGettersAndSetters_Intention.QuotationClass_7565_1().createNode(thisExpression, field, SLinkOperations.getTarget(field, "type", true), parameterName, setterName));
     }
     if (lastAdded != null) {
       editorContext.select(lastAdded);
