@@ -31,10 +31,6 @@ public class CodeStyleSettings implements PersistentStateComponent<MyState>, Pro
   public static CodeStyleSettings getInstance(Project project) {
     return project.getComponent(CodeStyleSettings.class);
   }
-  
-  public static CodeStyleSettings getInstance() {
-    return getInstance(MPSDataKeys.PROJECT.getData(DataManager.getInstance().getDataContext()));
-  }
 
   private MyState myState = new MyState();
   private CodeStylePreferencesPage myPage;

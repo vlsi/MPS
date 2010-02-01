@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.intentions;
 import jetbrains.mps.util.Pair;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNode;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.CodeStyleSettings;
@@ -30,19 +31,23 @@ public class GenerateGettersAndSettersUtil {
     return fullName.substring(preparedNameStart, preparedNameEnd);
   }
 
-  public static String getFieldGetterName(SNode fieldDeclaration) {
-    return "get" + NameUtil.capitalize(getPreparedFieldName(fieldDeclaration));
+  public static String getFieldGetterName(SNode fieldDeclaration, Project project) {
+    return "get" + NameUtil.capitalize(getPreparedFieldName(fieldDeclaration, project));
   }
 
-  public static String getFieldSetterName(SNode fieldDeclaration) {
-    return "set" + NameUtil.capitalize(getPreparedFieldName(fieldDeclaration));
+  public static String getFieldSetterName(SNode fieldDeclaration, Project project) {
+    return "set" + NameUtil.capitalize(getPreparedFieldName(fieldDeclaration, project));
   }
 
-  public static String getPreparedFieldName(SNode fieldDeclaration) {
+  public static String getPreparedFieldName(SNode fieldDeclaration, Project project) {
     String rawName = SPropertyOperations.getString(fieldDeclaration, "name");
     if (rawName == null || rawName.length() == 0) {
       return "unnamedField";
     }
-    return getPreparedName(rawName, CodeStyleSettings.getInstance().getFieldSettings());
+    CodeStyleSettings codeStyleSettings = CodeStyleSettings.getInstance(project);
+    if (codeStyleSettings == null) {
+      return rawName;
+    }
+    return getPreparedName(rawName, codeStyleSettings.getFieldSettings());
   }
 }

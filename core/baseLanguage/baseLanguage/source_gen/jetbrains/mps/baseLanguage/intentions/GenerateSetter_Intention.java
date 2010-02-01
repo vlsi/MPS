@@ -10,6 +10,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionContext;
@@ -59,8 +60,9 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
       return false;
     }
     boolean allSettersImplemented = true;
+    Project project = editorContext.getOperationContext().getProject();
     for (SNode fieldDeclaration : fields) {
-      final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(fieldDeclaration);
+      final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(fieldDeclaration, project);
       boolean fieldHasSetter = false;
       if (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {
@@ -79,8 +81,9 @@ public class GenerateSetter_Intention extends GenerateIntention implements Inten
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode lastAdded = null;
+    Project ideaProject = editorContext.getOperationContext().getProject();
     for (final SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
-      final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field);
+      final String setterName = GenerateGettersAndSettersUtil.getFieldSetterName(field, ideaProject);
       boolean setterIsAbsent = true;
       if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {

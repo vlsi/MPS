@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorContext;
 import jetbrains.mps.intentions.IntentionContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import com.intellij.openapi.project.Project;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -57,6 +58,7 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
   public void execute(final SNode node, final EditorContext editorContext, IntentionContext intentionContext) {
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode constructorDeclaration = null;
+    Project project = editorContext.getOperationContext().getProject();
     for (SNode selectedSuperConstructor : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedConstructors"))) {
       SNode constructor = SLinkOperations.addNewChild(classConcept, "constructor", "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
       constructorDeclaration = constructor;
@@ -75,7 +77,7 @@ public class GenerateConstructor_Intention extends GenerateIntention implements 
       for (SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
         SNode parameterDeclaration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
         SLinkOperations.setTarget(parameterDeclaration, "type", SNodeOperations.copyNode(SLinkOperations.getTarget(field, "type", true)), true);
-        SPropertyOperations.set(parameterDeclaration, "name", NameUtil.decapitalize(GenerateGettersAndSettersUtil.getPreparedFieldName(field)));
+        SPropertyOperations.set(parameterDeclaration, "name", NameUtil.decapitalize(GenerateGettersAndSettersUtil.getPreparedFieldName(field, project)));
         ListSequence.fromList(SLinkOperations.getTargets(constructor, "parameter", true)).addElement(parameterDeclaration);
         SNode expressionStatement = SLinkOperations.addNewChild(SLinkOperations.getTarget(constructor, "body", true), "statement", "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
         SNode assignmentExpression = SLinkOperations.setNewChild(expressionStatement, "expression", "jetbrains.mps.baseLanguage.structure.AssignmentExpression");

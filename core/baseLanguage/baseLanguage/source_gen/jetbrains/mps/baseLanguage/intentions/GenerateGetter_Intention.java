@@ -10,6 +10,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.intentions.IntentionContext;
@@ -60,7 +61,8 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
     }
     boolean allGettersImplemented = true;
     for (SNode fieldDeclaration : fields) {
-      final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(fieldDeclaration);
+      Project project = editorContext.getOperationContext().getProject();
+      final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(fieldDeclaration, project);
       boolean fieldHasGetter = false;
       if (ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {
@@ -81,7 +83,8 @@ public class GenerateGetter_Intention extends GenerateIntention implements Inten
     SNode classConcept = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
     SNode lastAdded = null;
     for (final SNode field : ((List<SNode>) intentionContext.getContextParametersMap().get("selectedFields"))) {
-      final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field);
+      Project ideaProject = editorContext.getOperationContext().getProject();
+      final String getterName = GenerateGettersAndSettersUtil.getFieldGetterName(field, ideaProject);
       if (ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).any(new IWhereFilter<SNode>() {
         public boolean accept(SNode method) {
           return getterName.equals(SPropertyOperations.getString(method, "name")) && ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).isEmpty();
