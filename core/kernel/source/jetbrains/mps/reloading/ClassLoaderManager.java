@@ -123,17 +123,22 @@ public class ClassLoaderManager implements ApplicationComponent {
     try {
       indicator.setIndeterminate(true);
       indicator.setText("Reloading classes...");
+      LOG.info("Reloading classes...");
 
       indicator.setText2("Disposing old classes...");
+      LOG.info("Disposing old classes...");
       callBeforeReloadHandlers();
 
       indicator.setText2("Updating classpath...");
+      LOG.info("Updating classpath...");
       updateClassPath();
 
       indicator.setText2("Refreshing models...");
+      LOG.info("Refreshing models...");
       SModelRepository.getInstance().refreshModels();
 
       indicator.setText2("Reloading classes...");
+      LOG.info("Reloading classes...");
       callReloadHandlers();
 
       indicator.setText2("Rebuilding ui...");
