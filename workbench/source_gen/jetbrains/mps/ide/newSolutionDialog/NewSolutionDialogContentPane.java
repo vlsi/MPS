@@ -29,13 +29,6 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.project.structure.model.ModelRoot;
-import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
-import com.intellij.openapi.application.ApplicationManager;
-import jetbrains.mps.vcs.ApplicationLevelVcsManager;
-import jetbrains.mps.vfs.VFileSystem;
-import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.util.FileUtil;
 
 public class NewSolutionDialogContentPane extends JPanel {
@@ -236,7 +229,7 @@ public class NewSolutionDialogContentPane extends JPanel {
         indicator.setIndeterminate(true);
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            myThis.setResult(myThis.createNewSolution(myThis.getSolutionName(), FileSystem.getFile(file)));
+            myThis.setResult(myThis.createNewSolution(FileSystem.getFile(file)));
           }
         });
       }
@@ -247,27 +240,10 @@ public class NewSolutionDialogContentPane extends JPanel {
     myThis.getDialog().dispose();
   }
 
-  /*package*/ Solution createNewSolution(String solutionName, final IFile solutionDescriptorFile) {
-    File dir = solutionDescriptorFile.toFile().getParentFile();
-    if (!(dir.exists())) {
-      dir.mkdirs();
-    }
-    SolutionDescriptor solutionDescriptor = new SolutionDescriptor();
-    solutionDescriptor.setExternallyVisible(true);
-    solutionDescriptor.setCompileInMPS(myThis.getCompileInMPS());
-    String fileName = solutionDescriptorFile.getName();
-    solutionDescriptor.setNamespace(fileName.substring(0, fileName.length() - 4));
-    ModelRoot modelRoot = new ModelRoot();
-    modelRoot.setPrefix("");
-    modelRoot.setPath(solutionDescriptorFile.getParent().getAbsolutePath());
-    solutionDescriptor.getModelRoots().add(modelRoot);
-    SolutionDescriptorPersistence.saveSolutionDescriptor(solutionDescriptorFile, solutionDescriptor);
-    ApplicationManager.getApplication().invokeLater(new Runnable() {
-      public void run() {
-        ApplicationLevelVcsManager.instance().addFileToVcs(VFileSystem.refreshAndGetFile(solutionDescriptorFile), false);
-      }
-    }, ModalityState.NON_MODAL);
-    return myThis.getProject().addProjectSolution(solutionDescriptorFile.toFile());
+  /*package*/ Solution createNewSolution(final IFile solutionDescriptorFile) {
+    Solution solution = NewModuleUtil.createNewSolution(solutionDescriptorFile, myThis.getProject());
+    solution.getSolutionDescriptor().setCompileInMPS(myThis.getCompileInMPS());
+    return solution;
   }
 
   /*package*/ void updateSolutionPath() {
