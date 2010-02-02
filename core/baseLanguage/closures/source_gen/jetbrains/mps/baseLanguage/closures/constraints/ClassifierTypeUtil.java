@@ -105,6 +105,7 @@ public class ClassifierTypeUtil {
     return type;
   }
 
+  @Deprecated
   public static SNode getDeclarationClassifierType(SNode ft) {
     String rtSig = "_FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(ft);
     for (SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new ClassifierTypeUtil.QuotationClass_1043_1().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
@@ -125,6 +126,7 @@ public class ClassifierTypeUtil {
     return null;
   }
 
+  @Deprecated
   public static SNode getClassifierType(SNode ft) {
     String rtSig = "_FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(ft);
     for (SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new ClassifierTypeUtil.QuotationClass_1043_3().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
@@ -145,6 +147,7 @@ public class ClassifierTypeUtil {
     return null;
   }
 
+  @Deprecated
   public static SNode getClassifierType(SNode ft, List<SNode> parameterType) {
     String rtSig = "_FunctionTypes." + FunctionTypeUtil.getRuntimeSignature(ft);
     for (SNode ice : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(new ClassifierTypeUtil.QuotationClass_1043_5().createNode(), "classifier", false)), "jetbrains.mps.baseLanguage.structure.Interface")) {
