@@ -16,20 +16,20 @@ public class ListExternalizer<T> implements DataExternalizer<List<T>> {
   private DataExternalizer<T> myInnerExternalizer;
 
   public ListExternalizer(DataExternalizer<T> innerExternalizer) {
-    this.myInnerExternalizer = innerExternalizer;
+    myInnerExternalizer = innerExternalizer;
   }
 
   public void save(DataOutput output, List<T> elements) throws IOException {
     output.writeInt(elements.size());
     for (T element : elements) {
-      this.myInnerExternalizer.save(output, element);
+      myInnerExternalizer.save(output, element);
     }
   }
 
   public List<T> read(DataInput input) throws IOException {
     List<T> result = new ArrayList<T>();
     for (int i = input.readInt(); i > 0; i--) {
-      result.add(this.myInnerExternalizer.read(input));
+      result.add(myInnerExternalizer.read(input));
     }
     return result;
   }

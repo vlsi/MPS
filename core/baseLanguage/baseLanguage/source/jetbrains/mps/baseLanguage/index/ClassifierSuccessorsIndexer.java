@@ -31,7 +31,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeId
 
   private FileBasedIndex.InputFilter myInputFilter = new InputFilter();
   private KeyDescriptor<SNodeId> myKeyDescriptor = new SNodeIdDescriptor();
-  private DataExternalizer<List<SNodeId>> myDataExternalizer = new ListExternalizer(this.myKeyDescriptor);
+  private DataExternalizer<List<SNodeId>> myDataExternalizer = new ListExternalizer(myKeyDescriptor);
   private DataIndexer<SNodeId, List<SNodeId>, FileContent> myIndexer = new Indexer();
 
   public ID<SNodeId, List<SNodeId>> getName() {
@@ -47,19 +47,19 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeId
   }
 
   public FileBasedIndex.InputFilter getInputFilter() {
-    return this.myInputFilter;
+    return myInputFilter;
   }
 
   public KeyDescriptor<SNodeId> getKeyDescriptor() {
-    return this.myKeyDescriptor;
+    return myKeyDescriptor;
   }
 
   public DataExternalizer<List<SNodeId>> getValueExternalizer() {
-    return this.myDataExternalizer;
+    return myDataExternalizer;
   }
 
   public DataIndexer<SNodeId, List<SNodeId>, FileContent> getIndexer() {
-    return this.myIndexer;
+    return myIndexer;
   }
 
   private static class InputFilter implements FileBasedIndex.InputFilter {
@@ -73,6 +73,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeId
     @NotNull
     public Map<SNodeId, List<SNodeId>> map(final FileContent inputData) {
       final Map<SNodeId, List<SNodeId>> result = new HashMap();
+/*
       ModelAccess.instance().runIndexing(new Runnable() {
         public void run() {
           try {
@@ -131,6 +132,7 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeId
           successors.add(new SNodeId(node));
         }
       });
+*/      
       return result;
     }
   }
