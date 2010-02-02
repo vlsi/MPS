@@ -18,7 +18,6 @@ import java.awt.GridLayout;
 import org.jdesktop.beansbinding.Property;
 import org.jdesktop.beansbinding.BeanProperty;
 import org.jdesktop.beansbinding.Bindings;
-import java.awt.BorderLayout;
 import java.io.File;
 import jetbrains.mps.ide.NewModuleCheckUtil;
 import jetbrains.mps.vfs.MPSExtentions;
@@ -30,7 +29,9 @@ import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -40,12 +41,10 @@ import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
 import jetbrains.mps.vfs.VFileSystem;
 import com.intellij.openapi.application.ModalityState;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.FileUtil;
 
 public class NewLanguageDialogContentPane extends JPanel {
@@ -54,11 +53,7 @@ public class NewLanguageDialogContentPane extends JPanel {
   private JTextField myName0;
   private JLabel myComponent1;
   private PathField myPath0;
-  private JPanel myComponent2;
-  private JLabel myComponent3;
   private JCheckBox myNeedRuntime0;
-  private JPanel myComponent4;
-  private JLabel myComponent5;
   private JCheckBox myNeedSandbox0;
   private String myLanguageNamespace;
   private String myLanguagePath;
@@ -84,7 +79,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     component.add(this.createComponent2());
     component.add(this.createComponent3());
     component.add(this.createComponent4());
-    component.add(this.createComponent7());
+    component.add(this.createComponent5());
     this.myEvents.initialize();
     myThis.setLanguageNamespace("");
     myThis.setLanguagePath("");
@@ -161,47 +156,17 @@ public class NewLanguageDialogContentPane extends JPanel {
     return component;
   }
 
-  private JPanel createComponent4() {
-    JPanel component = new JPanel();
-    this.myComponent2 = component;
-    component.setLayout(new BorderLayout());
-    component.add(this.createComponent5(), BorderLayout.LINE_START);
-    component.add(this.createComponent6(), BorderLayout.LINE_END);
-    return component;
-  }
-
-  private JLabel createComponent5() {
-    JLabel component = new JLabel();
-    this.myComponent3 = component;
+  private JCheckBox createComponent4() {
+    JCheckBox component = new JCheckBox();
+    this.myNeedRuntime0 = component;
     component.setText("Create Runtime Solution");
     return component;
   }
 
-  private JCheckBox createComponent6() {
-    JCheckBox component = new JCheckBox();
-    this.myNeedRuntime0 = component;
-    return component;
-  }
-
-  private JPanel createComponent7() {
-    JPanel component = new JPanel();
-    this.myComponent4 = component;
-    component.setLayout(new BorderLayout());
-    component.add(this.createComponent8(), BorderLayout.LINE_START);
-    component.add(this.createComponent9(), BorderLayout.LINE_END);
-    return component;
-  }
-
-  private JLabel createComponent8() {
-    JLabel component = new JLabel();
-    this.myComponent5 = component;
-    component.setText("Create Sandbox Solution");
-    return component;
-  }
-
-  private JCheckBox createComponent9() {
+  private JCheckBox createComponent5() {
     JCheckBox component = new JCheckBox();
     this.myNeedSandbox0 = component;
+    component.setText("Create Sandbox Solution");
     return component;
   }
 
@@ -292,6 +257,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     ProgressManager.getInstance().run(new Task.Modal(project, "Creating", false) {
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
+        final Wrappers._T<Solution> sandbox = new Wrappers._T<Solution>(null);
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
             language.value = myThis.createNewLanguage();
@@ -299,10 +265,20 @@ public class NewLanguageDialogContentPane extends JPanel {
               myThis.createRuntimeSolution();
             }
             if (myThis.myNeedSandbox0.isSelected()) {
-              myThis.createSandboxSolution();
+              sandbox.value = myThis.createSandboxSolution();
             }
           }
         });
+        if (sandbox.value != null) {
+          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+            public void run() {
+              SModel createdModel = sandbox.value.getOwnModelDescriptors().get(0).getSModel();
+              for (Language extendedLanguage : myThis.getResult().getExtendedLanguages()) {
+                createdModel.addLanguage(extendedLanguage);
+              }
+            }
+          });
+        }
       }
     });
     ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
@@ -348,15 +324,16 @@ public class NewLanguageDialogContentPane extends JPanel {
     return language;
   }
 
-  /*package*/ void createRuntimeSolution() {
+  /*package*/ Solution createRuntimeSolution() {
     String descriptorPath = myThis.getLanguagePath() + File.separator + myThis.getLanguageName() + ".runtime" + MPSExtentions.DOT_SOLUTION;
     final File file = new File(descriptorPath);
     Solution solution = NewModuleUtil.createNewSolution(FileSystem.getFile(file), myThis.getProject());
     solution.getSolutionDescriptor().setCompileInMPS(myThis.getCompileInMPS());
     solution.createModel(SModelFqName.fromString(myThis.getLanguageNamespace() + ".runtime"), solution.getSModelRoots().get(0));
+    return solution;
   }
 
-  /*package*/ void createSandboxSolution() {
+  /*package*/ Solution createSandboxSolution() {
     String descriptorPath = myThis.getLanguagePath() + File.separator + myThis.getLanguageName() + ".sandbox" + MPSExtentions.DOT_SOLUTION;
     final File file = new File(descriptorPath);
     Solution solution = NewModuleUtil.createNewSolution(FileSystem.getFile(file), myThis.getProject());
@@ -364,9 +341,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     SModelDescriptor md = solution.createModel(SModelFqName.fromString(myThis.getLanguageNamespace() + ".sandbox"), solution.getSModelRoots().get(0));
     SModel createdModel = md.getSModel();
     createdModel.addLanguage(myThis.getResult());
-    for (Language extendedLanguage : myThis.getResult().getExtendedLanguages()) {
-      createdModel.addLanguage(extendedLanguage);
-    }
+    return solution;
   }
 
   /*package*/ void updateLanguagePath() {
