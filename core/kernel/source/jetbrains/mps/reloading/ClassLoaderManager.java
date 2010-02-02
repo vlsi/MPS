@@ -213,11 +213,25 @@ public class ClassLoaderManager implements ApplicationComponent {
       generatorPrefixes.add(l.getNamespace() + ".generator");
     }
 
+    final Set<String> nonBootstrapPackages = new HashSet();
+    final Set<String> reportedViolations = new HashSet();
+    for (Language l : MPSModuleRepository.getInstance().getAllModules(Language.class)) {
+      if (generatorPrefixes.contains(l.getNamespace() + ".generator")) {
+        // bootstrap
+        continue;
+      }
+      for (LanguageAspect aspect : LanguageAspect.values()) {
+        nonBootstrapPackages.add(l.getNamespace() + "." + aspect.getName());
+      }
+    }
+
     return new RuntimeEnvironment<ModuleReference>() {
       public Class loadFromParent(String cls, RBundle<ModuleReference> bundle) {
-        if (MPSModuleRepository.getInstance().getModule(bundle.getId()) instanceof Solution) {
+        IModule module = MPSModuleRepository.getInstance().getModule(bundle.getId());
+        if (module instanceof Solution) {
           return null;
         }
+
         String pack = NameUtil.namespaceFromLongName(cls);
         if (excludedPackages.contains(pack)) {
           return null;
@@ -228,7 +242,15 @@ public class ClassLoaderManager implements ApplicationComponent {
             return null;
           }
         }
-        return getFromParent(cls);
+        Class classFromParent = getFromParent(cls);
+        if (classFromParent != null && !reportedViolations.contains(cls)) {
+          if (nonBootstrapPackages.contains(pack)) {
+            LOG.warning("Non bootstrap class was loaded via bootstrap classloader: " + cls);
+            reportedViolations.add(cls);
+          }
+        }
+
+        return classFromParent;
       }
     };
   }
