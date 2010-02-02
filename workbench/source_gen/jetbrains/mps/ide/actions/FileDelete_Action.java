@@ -7,6 +7,7 @@ import javax.swing.Icon;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.ide.DeleteProvider;
 import com.intellij.openapi.actionSystem.AnAction;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
@@ -17,6 +18,7 @@ public class FileDelete_Action extends GeneratedAction {
   protected static Log log = LogFactory.getLog(FileDelete_Action.class);
 
   private VirtualFile selectedFile;
+  private DeleteProvider deleteProvider;
   private AnAction action;
 
   public FileDelete_Action(AnAction action_par) {
@@ -28,7 +30,7 @@ public class FileDelete_Action extends GeneratedAction {
 
   @NotNull
   public String getKeyStroke() {
-    return "alt DELETE";
+    return " DELETE";
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -49,6 +51,10 @@ public class FileDelete_Action extends GeneratedAction {
     }
     this.selectedFile = event.getData(MPSDataKeys.VIRTUAL_FILE);
     if (this.selectedFile == null) {
+      return false;
+    }
+    this.deleteProvider = event.getData(MPSDataKeys.DELETE_ELEMENT_PROVIDER);
+    if (this.deleteProvider == null) {
       return false;
     }
     return true;
