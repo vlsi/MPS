@@ -25,9 +25,9 @@ import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
-import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
@@ -43,6 +43,9 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.smodel.SModelFqName;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.util.FileUtil;
 
 public class NewLanguageDialogContentPane extends JPanel {
@@ -285,40 +288,23 @@ public class NewLanguageDialogContentPane extends JPanel {
     }
     myThis.getDialog().dispose();
     final Wrappers._T<Language> language = new Wrappers._T<Language>(null);
-    ProgressManager.getInstance().run(new Task.Modal(myThis.getProject().getComponent(Project.class), "Creating", false) {
+    Project project = myThis.getProject().getComponent(Project.class);
+    ProgressManager.getInstance().run(new Task.Modal(project, "Creating", false) {
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
             language.value = myThis.createNewLanguage();
+            if (myThis.myNeedRuntime0.isSelected()) {
+              myThis.createRuntimeSolution();
+            }
+            if (myThis.myNeedSandbox0.isSelected()) {
+              myThis.createSandboxSolution();
+            }
           }
         });
       }
     });
-    if (myThis.myNeedRuntime0.isSelected()) {
-      ProgressManager.getInstance().run(new Task.Modal(myThis.getProject().getComponent(Project.class), "Creating Runtime Solution", false) {
-        public void run(@NotNull ProgressIndicator indicator) {
-          indicator.setIndeterminate(true);
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              myThis.createRuntimeSolution();
-            }
-          });
-        }
-      });
-    }
-    if (myThis.myNeedSandbox0.isSelected()) {
-      ProgressManager.getInstance().run(new Task.Modal(myThis.getProject().getComponent(Project.class), "Creating Sandbox Solution", false) {
-        public void run(@NotNull ProgressIndicator indicator) {
-          indicator.setIndeterminate(true);
-          ModelAccess.instance().runWriteAction(new Runnable() {
-            public void run() {
-              myThis.createSandboxSolution();
-            }
-          });
-        }
-      });
-    }
     ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
       public void run() {
         LanguageAspect.STRUCTURE.createNew(language.value, false);
@@ -367,6 +353,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     final File file = new File(descriptorPath);
     Solution solution = NewModuleUtil.createNewSolution(FileSystem.getFile(file), myThis.getProject());
     solution.getSolutionDescriptor().setCompileInMPS(myThis.getCompileInMPS());
+    solution.createModel(SModelFqName.fromString(myThis.getLanguageNamespace() + ".runtime"), solution.getSModelRoots().get(0));
   }
 
   /*package*/ void createSandboxSolution() {
@@ -374,6 +361,12 @@ public class NewLanguageDialogContentPane extends JPanel {
     final File file = new File(descriptorPath);
     Solution solution = NewModuleUtil.createNewSolution(FileSystem.getFile(file), myThis.getProject());
     solution.getSolutionDescriptor().setCompileInMPS(myThis.getCompileInMPS());
+    SModelDescriptor md = solution.createModel(SModelFqName.fromString(myThis.getLanguageNamespace() + ".sandbox"), solution.getSModelRoots().get(0));
+    SModel createdModel = md.getSModel();
+    createdModel.addLanguage(myThis.getResult());
+    for (Language extendedLanguage : myThis.getResult().getExtendedLanguages()) {
+      createdModel.addLanguage(extendedLanguage);
+    }
   }
 
   /*package*/ void updateLanguagePath() {
