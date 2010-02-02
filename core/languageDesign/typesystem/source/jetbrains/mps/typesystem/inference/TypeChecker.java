@@ -157,12 +157,16 @@ public class TypeChecker implements ApplicationComponent {
   }
 
   public boolean isCheckedRoot(SNode node) {
+    return isCheckedRoot(node, true);
+  }
+
+  public boolean isCheckedRoot(SNode node, boolean considerNonTypesystemRules) {
     TypeCheckingContext context = NodeTypesComponentsRepository.getInstance().getTypeCheckingContext(node);
     if (context == null) {
       return false;
     }
     NodeTypesComponent baseNodeTypesComponent = context.getBaseNodeTypesComponent();
-    return baseNodeTypesComponent.isChecked();
+    return baseNodeTypesComponent.isChecked(considerNonTypesystemRules);
   }
 
   public void checkRoot(SNode node) {
@@ -198,7 +202,7 @@ public class TypeChecker implements ApplicationComponent {
     if (containingRoot == null) return null;
     NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
       getNodeTypesComponent(node.getContainingRoot());
-    if (!isCheckedRoot(containingRoot) || component == null) {
+    if (!isCheckedRoot(containingRoot, false) || component == null) {
       final NodeTypesComponent component1 = NodeTypesComponentsRepository.getInstance().createNodeTypesComponent(containingRoot);
       SNode computedType = component1.computeTypesForNodeDuringGeneration(node);
       return computedType;
@@ -277,7 +281,7 @@ public class TypeChecker implements ApplicationComponent {
     if (containingRoot == null) return false;
     NodeTypesComponent component = NodeTypesComponentsRepository.getInstance().
       getNodeTypesComponent(node.getContainingRoot());
-    if (!isCheckedRoot(containingRoot) || component == null) {
+    if (!isCheckedRoot(containingRoot, useNonTypesystemRules) || component == null) {
       component = NodeTypesComponentsRepository.getInstance().
         createNodeTypesComponent(node.getContainingRoot());
       checkRoot(containingRoot);

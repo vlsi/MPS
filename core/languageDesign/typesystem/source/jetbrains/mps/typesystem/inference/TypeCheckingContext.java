@@ -138,7 +138,7 @@ public class TypeCheckingContext {
 
   public void reportMessage(SNode nodeWithError, IErrorReporter errorReporter) {
     getNodeTypesComponent().reportTypeError(nodeWithError, errorReporter);
-    getNodeTypesComponent().addDependcyOnCurrent(nodeWithError);
+    getNodeTypesComponent().addDependcyOnCurrent(nodeWithError, false);
   }
   //~
 
@@ -169,6 +169,7 @@ public class TypeCheckingContext {
     if (currentTypesComponent != null) {
       //--- for incremental algorithm:
       currentTypesComponent.addNodeToFrontier(node);
+      currentTypesComponent.typeOfNodeCalled(node);
       if (addDependency) {
         currentTypesComponent.addDependcyOnCurrent(node);
       }

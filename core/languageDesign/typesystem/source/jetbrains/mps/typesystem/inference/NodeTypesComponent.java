@@ -66,7 +66,9 @@ public class NodeTypesComponent implements EditorMessageOwner {
   private Set<Pair<SNode, NonTypesystemRule_Runtime>> myCheckedNodesNonTypesystem
     = new HashSet<Pair<SNode, NonTypesystemRule_Runtime>>(); // nodes which are checked themselves but not children
 
-  private WeakHashMap<SNode, WeakSet<SNode>> myNodesToDependentNodes = new WeakHashMap<SNode, WeakSet<SNode>>();
+  private WeakHashMap<SNode, WeakSet<SNode>> myNodesToDependentNodes_A = new WeakHashMap<SNode, WeakSet<SNode>>();
+  private WeakHashMap<SNode, WeakSet<SNode>> myNodesToDependentNodes_B = new WeakHashMap<SNode, WeakSet<SNode>>();
+
   private WeakSet<SNode> myNodesDependentOnCaches = new WeakSet<SNode>();
 
   private EquationManager myEquationManager;
@@ -118,6 +120,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
   private Set<SNode> myCurrentFrontier;
   private SNode myCurrentCheckedNode;
+  private boolean myCurrentTypeAffected = false;
   private WeakHashMap<SNode, Set<Pair<String, String>>> myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
   private boolean myIsSpecial = false;
 
@@ -181,7 +184,8 @@ public class NodeTypesComponent implements EditorMessageOwner {
     myFullyCheckedNodes.clear();
     myPartlyCheckedNodes.clear();
     myCheckedNodesNonTypesystem.clear();
-    myNodesToDependentNodes.clear();
+    myNodesToDependentNodes_A.clear();
+    myNodesToDependentNodes_B.clear();
     myNodesDependentOnCaches.clear();
     myNodesAndNTRulesToErrors.clear();
     myNodesToDependentNodesWithNTRules.clear();
@@ -203,12 +207,14 @@ public class NodeTypesComponent implements EditorMessageOwner {
     myVariableIndex = 0;
   }
 
-  private void invalidateNodeTypesystem(SNode node) {
+  private void invalidateNodeTypesystem(SNode node, boolean typeWillBeRecalculated) {
     myFullyCheckedNodes.remove(node);
     myPartlyCheckedNodes.remove(node);
     myNodesToTypesMap.remove(node);
     myNodesToErrorsMap.remove(node);
-    TypeChecker.getInstance().fireTypeWillBeRecalculatedForTerm(node);
+    if (typeWillBeRecalculated) {
+      TypeChecker.getInstance().fireTypeWillBeRecalculatedForTerm(node);
+    }
     myNodesToRules.remove(node);
   }
 
@@ -356,7 +362,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
     getSlicer().beforeTypesExpanded(myNodesToTypesMap);
 
     if (myIsSmartCompletion) {
-      myHoleTypeWrapper = HoleWrapper.createHoleWrapper(myEquationManager, myHoleTypeWrapper); //todo why do we need to create new wrapper? (equation manager is old)
+      myHoleTypeWrapper = HoleWrapper.createHoleWrapper(myEquationManager, myHoleTypeWrapper);
       myHoleTypeWrapper.getInequationSystem().normalize();
     }
 
@@ -488,8 +494,9 @@ public class NodeTypesComponent implements EditorMessageOwner {
             NodeReadEventsCaster.setNodesReadListener(myNodesReadListener);
             LanguageHierarchyCache.getInstance().setReadAccessListener(languageCachesReadListener);
           }
+          boolean typeAffected = false;
           try {
-            applyRulesToNode(sNode);
+            typeAffected = applyRulesToNode(sNode);
           } finally {
             if (isIncrementalMode()) {
               LanguageHierarchyCache.getInstance().removeReadAccessListener();
@@ -501,7 +508,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
             synchronized (ACCESS_LOCK) {
               myNodesReadListener.setAccessReport(true);
               Set<SNode> accessedNodes = myNodesReadListener.myAccessedNodes;
-              addDepedentNodesTypesystem(sNode, accessedNodes);
+              addDepedentNodesTypesystem(sNode, accessedNodes, typeAffected);
               myNodesReadListener.setAccessReport(false);
               if (languageCachesReadListener != null) { //redundant checking, in fact; but without this IDEA underlines the next line with red
                 languageCachesReadListener.setAccessReport(true);
@@ -522,14 +529,16 @@ public class NodeTypesComponent implements EditorMessageOwner {
     }
   }
 
-
-  private void addDepedentNodesTypesystem(SNode sNode, Set<SNode> nodesToDependOn) {
+  //"type affected" means that *type* of this node depends on this set
+  // used to decide whether call "type will be recalculated" if node from set invalidated
+  private void addDepedentNodesTypesystem(SNode sNode, Set<SNode> nodesToDependOn, boolean typesAffected) {
+    WeakHashMap<SNode, WeakSet<SNode>> dependencies = typesAffected ? myNodesToDependentNodes_A : myNodesToDependentNodes_B;
     for (SNode nodeToDependOn : nodesToDependOn) {
       if (nodeToDependOn == null) continue;
-      WeakSet<SNode> dependentNodes = myNodesToDependentNodes.get(nodeToDependOn);
+      WeakSet<SNode> dependentNodes = dependencies.get(nodeToDependOn);
       if (dependentNodes == null) {
         dependentNodes = new WeakSet<SNode>();
-        myNodesToDependentNodes.put(nodeToDependOn, dependentNodes);
+        dependencies.put(nodeToDependOn, dependentNodes);
         myModelListenerManager.track(nodeToDependOn);
       }
       dependentNodes.add(sNode);
@@ -596,32 +605,49 @@ public class NodeTypesComponent implements EditorMessageOwner {
     rules.add(rule);
   }
 
+  public void typeOfNodeCalled(SNode node) {
+    if (myCurrentCheckedNode == node) {
+      myCurrentTypeAffected = true;
+    }
+  }
+
   public void addDependcyOnCurrent(SNode node) {
+    addDependcyOnCurrent(node, true);
+  }
+
+  //"type affected" means that *type* of this node depends on current
+  // used to decide whether call "type will be recalculated" if current invalidated
+  public void addDependcyOnCurrent(SNode node, boolean typeAffected) {
     HashSet<SNode> hashSet = new HashSet<SNode>();
     hashSet.add(myCurrentCheckedNode);
-    addDepedentNodesTypesystem(node, hashSet);
+    addDepedentNodesTypesystem(node, hashSet, typeAffected);
   }
 
   public void addDependencyForCurrent(SNode node) {
     HashSet<SNode> hashSet = new HashSet<SNode>();
     hashSet.add(node);
-    addDepedentNodesTypesystem(myCurrentCheckedNode, hashSet);
+    addDepedentNodesTypesystem(myCurrentCheckedNode, hashSet, true);
   }
 
   public Map<SNode, SNode> getMainContext() {
     return myNodesToTypesMap;
   }
 
-  private void applyRulesToNode(SNode node) {
+  private boolean applyRulesToNode(SNode node) {
     Set<InferenceRule_Runtime> newRules = myTypeChecker.getRulesManager().getInferenceRules(node);
+    boolean result = false;
     if (newRules != null) {
+      myCurrentTypeAffected = false;
       SNode oldCheckedNode = myCurrentCheckedNode;
       myCurrentCheckedNode = node;
       for (InferenceRule_Runtime rule : newRules) {
         applyRuleToNode(node, rule);
       }
       myCurrentCheckedNode = oldCheckedNode;
+      result = myCurrentTypeAffected;
+      myCurrentTypeAffected = false;
     }
+    return result;
   }
 
 
@@ -705,7 +731,6 @@ public class NodeTypesComponent implements EditorMessageOwner {
 
   private void applyRuleToNode(SNode node, ICheckingRule_Runtime rule) {
     try {
-      //todo get rid of ifs when refactoring is complete
       if (rule instanceof AbstractInferenceRule_Runtime) {
         ((AbstractInferenceRule_Runtime) rule).applyRule(node, getTypeCheckingContext());
       } else if (rule instanceof AbstractNonTypesystemRule_Runtime) {
@@ -741,7 +766,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
   }
 
   public void markUnchecked(SNode node) {
-    invalidateNodeTypesystem(node);
+    invalidateNodeTypesystem(node, true);
   }
 
   public SNode getRawTypeFromContext(SNode node) {
@@ -889,26 +914,53 @@ public class NodeTypesComponent implements EditorMessageOwner {
       return myInvalidationResult;
     }
     boolean result = false;
-    Set<SNode> invalidatedNodes = new HashSet<SNode>();
-    Set<SNode> newNodesToInvalidate = new HashSet<SNode>();
-    Set<SNode> currentNodesToInvalidate = myCurrentNodesToInvalidate;
+    Set<SNode> invalidatedNodes_A = new HashSet<SNode>();
+    Set<SNode> invalidatedNodes_B = new HashSet<SNode>();
+    Set<SNode> newNodesToInvalidate_A = new HashSet<SNode>();
+    Set<SNode> newNodesToInvalidate_B = new HashSet<SNode>();
+    Set<SNode> currentNodesToInvalidate_A = myCurrentNodesToInvalidate;
+    Set<SNode> currentNodesToInvalidate_B = new HashSet<SNode>();
+
     if (myCacheWasCurrentlyRebuiltTypesystem) {
-      currentNodesToInvalidate.addAll(myNodesDependentOnCaches); //todo maybe clear this set here?
+      currentNodesToInvalidate_A.addAll(myNodesDependentOnCaches);
     }
-    while (!currentNodesToInvalidate.isEmpty()) {
-      for (SNode nodeToInvalidate : currentNodesToInvalidate) {
-        if (invalidatedNodes.contains(nodeToInvalidate)) continue;
-        invalidateNodeTypesystem(nodeToInvalidate);
-        invalidatedNodes.add(nodeToInvalidate);
-        WeakSet<SNode> nodes = myNodesToDependentNodes.get(nodeToInvalidate);
+
+    //A means invalidated and type will be recalculated, B means invalidated but type not affected. A => B then.
+    while (!currentNodesToInvalidate_A.isEmpty() || !currentNodesToInvalidate_B.isEmpty()) {
+      for (SNode nodeToInvalidate : currentNodesToInvalidate_A) {
+        if (invalidatedNodes_A.contains(nodeToInvalidate)) continue;
+        invalidateNodeTypesystem(nodeToInvalidate, true);
+        invalidatedNodes_A.add(nodeToInvalidate);
+        WeakSet<SNode> nodes = myNodesToDependentNodes_A.get(nodeToInvalidate);
         if (nodes != null) {
-          newNodesToInvalidate.addAll(nodes);
+          newNodesToInvalidate_A.addAll(nodes);
+        }
+        nodes = myNodesToDependentNodes_B.get(nodeToInvalidate);
+        if (nodes != null) {
+          newNodesToInvalidate_B.addAll(nodes);
         }
       }
-      currentNodesToInvalidate = newNodesToInvalidate;
-      newNodesToInvalidate = new HashSet<SNode>();
+
+      for (SNode nodeToInvalidate : currentNodesToInvalidate_B) {
+        if (invalidatedNodes_A.contains(nodeToInvalidate)) continue;
+        if (invalidatedNodes_B.contains(nodeToInvalidate)) continue;
+        invalidateNodeTypesystem(nodeToInvalidate, false);
+        invalidatedNodes_B.add(nodeToInvalidate);
+        WeakSet<SNode> nodes = myNodesToDependentNodes_A.get(nodeToInvalidate);
+        if (nodes != null) {
+          newNodesToInvalidate_B.addAll(nodes);
+        }
+        nodes = myNodesToDependentNodes_B.get(nodeToInvalidate);
+        if (nodes != null) {
+          newNodesToInvalidate_B.addAll(nodes);
+        }
+      }
+      currentNodesToInvalidate_A = newNodesToInvalidate_A;
+      currentNodesToInvalidate_B = newNodesToInvalidate_B;
+      newNodesToInvalidate_A = new HashSet<SNode>();
+      newNodesToInvalidate_B = new HashSet<SNode>();
     }
-    result = !invalidatedNodes.isEmpty();
+    result = !invalidatedNodes_A.isEmpty() || !invalidatedNodes_B.isEmpty();
     myCurrentNodesToInvalidate.clear();
     myCacheWasCurrentlyRebuiltTypesystem = false;
     myInvalidationWasPerformed = true;
@@ -961,11 +1013,16 @@ public class NodeTypesComponent implements EditorMessageOwner {
     mySlicer = slicer;
   }
 
-  public boolean isChecked() {
+  public boolean isChecked(boolean considerNonTypesystemRules) {
     if (!myIsChecked) {
       return false;
     }
-    return isCheckedTypesystem() && isCheckedNonTypesystem();
+    boolean b = isCheckedTypesystem();
+    if (considerNonTypesystemRules) {
+      return b && isCheckedNonTypesystem();
+    } else {
+      return b;
+    }
   }
 
   private boolean isCheckedTypesystem() {
@@ -1028,10 +1085,10 @@ public class NodeTypesComponent implements EditorMessageOwner {
         myCurrentNodesToInvalidateNonTypesystem.add(eventNode);
         myInvalidationWasPerformedNT = false;
       } else {
-        Set<SNode> nodes = myNodesToDependentNodes.get(eventNode);    // todo don't use here myNodesToDependentNodes
+   /*     Set<SNode> nodes = myNodesToDependentNodes_A.get(eventNode);    // todo don't use here myNodesToDependentNodes
         if (nodes != null) {
           myCurrentNodesToInvalidate.addAll(nodes);
-        }
+        }*/
         myCurrentNodesToInvalidate.add(eventNode);
         myInvalidationWasPerformed = false;
       }
