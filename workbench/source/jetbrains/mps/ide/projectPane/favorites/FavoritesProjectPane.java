@@ -99,6 +99,8 @@ public class FavoritesProjectPane extends AbstractProjectViewPane {
     };
     myFavoritesListener = new MPSFavoritesListener() {
       public void rootsChanged(String listName) {
+        refreshMySubIdsAndSelect(listName);
+        getTree().rebuildLater();
       }
       public void listAdded(String listName) {
         refreshMySubIdsAndSelect(listName);

@@ -81,6 +81,12 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
     }
   }
 
+  private void onListChanged(String name) {
+    for (MPSFavoritesListener listener : myListeners) {
+      listener.rootsChanged(name);
+    }
+  }
+
   public void projectOpened() {
 
   }
@@ -137,6 +143,7 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
   public void addRoots(String name, List<Object> roots) {
     if (!myName2FavoritesRoots.containsKey(name)) return;
     myName2FavoritesRoots.get(name).addAll(roots);
+    onListChanged(name);
   }
 
   public void addListener(MPSFavoritesListener listener) {
