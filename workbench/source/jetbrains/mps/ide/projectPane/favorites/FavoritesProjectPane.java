@@ -64,7 +64,8 @@ public class FavoritesProjectPane extends AbstractProjectViewPane {
     myTree = new MPSTree() {
       protected MPSTreeNode rebuild() {
         String subId = getSubId();
-        TextTreeNode invisibleRoot = new TextTreeNode(subId, myContext);
+        TextTreeNode invisibleRoot = new TextTreeNode("", myContext);
+        setRootVisible(false);
         List<Object> objectList = myFavoritesManager.getRoots(subId);
         // todo: get rid of non-optimal code. Favorite root should be implemented as Generic Class
         if (objectList == null) return invisibleRoot;
