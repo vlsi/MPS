@@ -12,6 +12,7 @@ public class UnitTestOutputReader {
   private boolean myInsideTestError = false;
   private StringBuffer myLastError = new StringBuffer();
   private String myLastMessage = "";
+  private String myCurrentlyRunningTest;
 
   public UnitTestOutputReader(@NotNull Process unitTestProcess, @NotNull UnitTestListener unitTestListener) {
     myUnitTestProcess = unitTestProcess;
@@ -31,14 +32,17 @@ public class UnitTestOutputReader {
   private void parseMessage(String text, boolean error) {
     String textTrimmed = StringUtils.trim(text);
     if (text.startsWith(UnitTestRunner.START_TEST_PREFIX)) {
-      myUnitTestListener.testStarted(text.substring(UnitTestRunner.START_TEST_PREFIX.length()));
+      saveLastTestIfNecessary();
+      myCurrentlyRunningTest = removeTag(text, UnitTestRunner.START_TEST_PREFIX);
+      myUnitTestListener.testStarted(myCurrentlyRunningTest);
     } else if (text.startsWith(UnitTestRunner.END_TEST_PREFIX)) {
-      myUnitTestListener.testFinished(text.substring(UnitTestRunner.END_TEST_PREFIX.length()));
+      myCurrentlyRunningTest = null;
+      myUnitTestListener.testFinished(removeTag(text, UnitTestRunner.END_TEST_PREFIX));
     } else if (text.startsWith(UnitTestRunner.FAILURE_TEST_PREFIX)) {
-      myLastMessage = text.substring(UnitTestRunner.FAILURE_TEST_PREFIX.length());
+      myLastMessage = removeTag(text, UnitTestRunner.FAILURE_TEST_PREFIX);
       myInsideTestError = true;
     } else if (text.startsWith(UnitTestRunner.FAILURE_TEST_SUFFIX)) {
-      myUnitTestListener.testFailed(text.substring(UnitTestRunner.FAILURE_TEST_SUFFIX.length()), myLastMessage, myLastError.toString());
+      myUnitTestListener.testFailed(removeTag(text, UnitTestRunner.FAILURE_TEST_SUFFIX), myLastMessage, myLastError.toString());
       myLastError = new StringBuffer();
       myInsideTestError = false;
     } else if (error) {
@@ -51,6 +55,17 @@ public class UnitTestOutputReader {
     } else {
       myUnitTestListener.logMessage(text);
     }
+  }
+
+  private void saveLastTestIfNecessary() {
+    if (myCurrentlyRunningTest != null) {
+      myUnitTestListener.testFinished(myCurrentlyRunningTest);
+      myCurrentlyRunningTest = null;
+    }
+  }
+
+  private String removeTag(String text, String prefix) {
+    return text.substring(prefix.length());
   }
 
   public int start() {
