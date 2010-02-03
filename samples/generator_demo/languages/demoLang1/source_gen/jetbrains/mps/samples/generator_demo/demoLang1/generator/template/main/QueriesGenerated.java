@@ -11,7 +11,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1228431352276(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("button");
   }
@@ -27,5 +26,4 @@ public class QueriesGenerated {
   public static SNode sourceNodeQuery_1228431535919(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "rootElement", true);
   }
-
 }

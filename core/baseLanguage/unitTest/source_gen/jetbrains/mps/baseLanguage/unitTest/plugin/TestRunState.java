@@ -21,6 +21,7 @@ import jetbrains.mps.baseLanguage.unitTest.runtime.TestEvent;
 public class TestRunState {
   private static final Object lock = new Object();
 
+  @Deprecated
   private TestStatisticsModel statisticsModel;
   private List<String> testMethods = ListSequence.fromList(new ArrayList<String>());
   private Map<SNode, List<SNode>> map = MapSequence.fromMap(new LinkedHashMap<SNode, List<SNode>>(16, (float) 0.75, false));
@@ -226,10 +227,12 @@ public class TestRunState {
     return this.map;
   }
 
+  @Deprecated
   public TestMethodRow getTestMethodRow(String className, String methodName) {
     return this.statisticsModel.getRow(className, methodName);
   }
 
+  @Deprecated
   public void updateTestMethodRow(TestMethodRow row) {
     this.statisticsModel.updateRow(row);
   }

@@ -18,7 +18,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 
 public class QueriesGenerated {
-
   public static boolean baseMappingRule_Condition_1228530334488(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name").equals("button");
   }
@@ -28,8 +27,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1228530847854(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter <SNode>() {
-
+    return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("text");
       }
@@ -37,8 +35,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1228530922047(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter <SNode>() {
-
+    return SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("text");
       }
@@ -62,8 +59,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1228530695049(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter <SNode>() {
-
+    return (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("text");
       }
@@ -71,8 +67,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1228530922069(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter <SNode>() {
-
+    return (ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("text");
       }
@@ -80,8 +75,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1228532217556(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("enabled");
       }
@@ -89,8 +83,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1228532713788(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter <SNode>() {
-
+    return ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "attribute", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("background");
       }
@@ -99,8 +92,7 @@ public class QueriesGenerated {
 
   public static SNode templateFragment_ContextNodeQuery_1228531534788(final IOperationContext operationContext, final TemplateFragmentContext _context) {
     SNode demoApp = SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    SNode method = ListSequence.fromList(SLinkOperations.getTargets(demoApp, "staticMethod", true)).findFirst(new IWhereFilter <SNode>() {
-
+    SNode method = ListSequence.fromList(SLinkOperations.getTargets(demoApp, "staticMethod", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("addContent");
       }
@@ -110,8 +102,7 @@ public class QueriesGenerated {
 
   public static SNode templateFragment_ContextNodeQuery_1228531789982(final IOperationContext operationContext, final TemplateFragmentContext _context) {
     SNode demoApp = SNodeOperations.cast(_context.getMainContextNode(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
-    SNode method = ListSequence.fromList(SLinkOperations.getTargets(demoApp, "staticMethod", true)).findFirst(new IWhereFilter <SNode>() {
-
+    SNode method = ListSequence.fromList(SLinkOperations.getTargets(demoApp, "staticMethod", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("addContent");
       }
@@ -126,5 +117,4 @@ public class QueriesGenerated {
   public static SNode weaving_MappingRule_ContextNodeQuery_1228530974513(final IOperationContext opereationContext, final WeavingMappingRuleContext _context) {
     return _context.getOutputNodeByMappingLabel("main_class");
   }
-
 }
