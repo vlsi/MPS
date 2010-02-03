@@ -146,4 +146,8 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
   public void removeListener(MPSFavoritesListener listener) {
     myListeners.remove(listener);
   }
+
+  public List<Object> getRoots(String name) {
+    return myName2FavoritesRoots.get(name);
+  }
 }
