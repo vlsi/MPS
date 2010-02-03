@@ -48,9 +48,10 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import java.util.ArrayList;
 import java.util.Set;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.LinkedHashSet;
 import jetbrains.mps.make.dependencies.StronglyConnectedModules;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.Generator;
@@ -883,7 +884,14 @@ public class QueriesGenerated {
         ListSequence.fromList(modulesForIModule).addElement(module);
       }
       // calculate module cycles 
-      List<Set<IModule>> sm = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(MapSequence.fromMap(map).keySet());
+      Set<IModule> modulesToProcess = MapSequence.fromMap(map).keySet();
+      Set<IModule> modulesCopy = SetSequence.fromSet(new LinkedHashSet());
+      SetSequence.fromSet(modulesCopy).addSequence(SetSequence.fromSet(modulesToProcess).sort(new ISelector<IModule, Comparable<?>>() {
+        public Comparable<?> select(IModule it) {
+          return it.getModuleFqName();
+        }
+      }, true));
+      List<Set<IModule>> sm = StronglyConnectedModules.getInstance().getStronglyConnectedComponents(modulesCopy);
       // say to all modules it's cycle 
       SNode lastCycle = null;
       for (Set<IModule> moduleSet : ListSequence.fromList(sm)) {
