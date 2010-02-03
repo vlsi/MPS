@@ -272,7 +272,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     });
     ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
       public void run() {
-        if (!(language.value.getSModelRoots().isEmpty())) {
+        if (language.value.getSModelRoots().isEmpty()) {
           LanguageAspect.STRUCTURE.createNew(language.value, false);
           LanguageAspect.EDITOR.createNew(language.value, false);
           LanguageAspect.CONSTRAINTS.createNew(language.value, false);
