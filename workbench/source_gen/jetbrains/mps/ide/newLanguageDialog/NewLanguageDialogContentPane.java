@@ -24,15 +24,15 @@ import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.project.Solution;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -44,7 +44,6 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.FileUtil;
 
 public class NewLanguageDialogContentPane extends JPanel {
@@ -253,11 +252,11 @@ public class NewLanguageDialogContentPane extends JPanel {
     }
     myThis.getDialog().dispose();
     final Wrappers._T<Language> language = new Wrappers._T<Language>(null);
+    final Wrappers._T<Solution> sandbox = new Wrappers._T<Solution>(null);
     Project project = myThis.getProject().getComponent(Project.class);
     ProgressManager.getInstance().run(new Task.Modal(project, "Creating", false) {
       public void run(@NotNull ProgressIndicator indicator) {
         indicator.setIndeterminate(true);
-        final Wrappers._T<Solution> sandbox = new Wrappers._T<Solution>(null);
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
             language.value = myThis.createNewLanguage();
@@ -269,24 +268,23 @@ public class NewLanguageDialogContentPane extends JPanel {
             }
           }
         });
-        if (sandbox.value != null) {
-          ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-            public void run() {
-              SModel createdModel = sandbox.value.getOwnModelDescriptors().get(0).getSModel();
-              for (Language extendedLanguage : myThis.getResult().getExtendedLanguages()) {
-                createdModel.addLanguage(extendedLanguage);
-              }
-            }
-          });
-        }
       }
     });
     ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
       public void run() {
-        LanguageAspect.STRUCTURE.createNew(language.value, false);
-        LanguageAspect.EDITOR.createNew(language.value, false);
-        LanguageAspect.CONSTRAINTS.createNew(language.value, false);
-        LanguageAspect.TYPESYSTEM.createNew(language.value, false);
+        if (!(language.value.getSModelRoots().isEmpty())) {
+          LanguageAspect.STRUCTURE.createNew(language.value, false);
+          LanguageAspect.EDITOR.createNew(language.value, false);
+          LanguageAspect.CONSTRAINTS.createNew(language.value, false);
+          LanguageAspect.TYPESYSTEM.createNew(language.value, false);
+        }
+        if (sandbox.value != null) {
+          SModel createdModel = sandbox.value.getOwnModelDescriptors().get(0).getSModel();
+          createdModel.addLanguage(myThis.getResult());
+          for (Language extendedLanguage : myThis.getResult().getExtendedLanguages()) {
+            createdModel.addLanguage(extendedLanguage);
+          }
+        }
       }
     });
   }
@@ -338,9 +336,7 @@ public class NewLanguageDialogContentPane extends JPanel {
     final File file = new File(descriptorPath);
     Solution solution = NewModuleUtil.createNewSolution(FileSystem.getFile(file), myThis.getProject());
     solution.getSolutionDescriptor().setCompileInMPS(myThis.getCompileInMPS());
-    SModelDescriptor md = solution.createModel(SModelFqName.fromString(myThis.getLanguageNamespace() + ".sandbox"), solution.getSModelRoots().get(0));
-    SModel createdModel = md.getSModel();
-    createdModel.addLanguage(myThis.getResult());
+    solution.createModel(SModelFqName.fromString(myThis.getLanguageNamespace() + ".sandbox"), solution.getSModelRoots().get(0));
     return solution;
   }
 
