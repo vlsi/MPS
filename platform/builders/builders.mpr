@@ -12,7 +12,9 @@
       <languagePath path="${project}/builders.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <genConfs />
+    <genConfs>
+      <genConfModule name="builders" moduleRef="jetbrains.mps.baseLanguage.builders" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="builders" />
