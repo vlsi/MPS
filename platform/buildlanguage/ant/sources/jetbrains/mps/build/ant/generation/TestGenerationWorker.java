@@ -35,6 +35,7 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.TestMain;
 
+import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -346,7 +347,16 @@ public class TestGenerationWorker extends GeneratorWorker {
 
           Class<TestCase> testCaseClass = (Class<TestCase>) classLoader.loadClass(TestCase.class.getName());
           if (testCaseClass.isAssignableFrom(testClass)) {
-            testClasses.add(className);
+            boolean hasTestMethods = false;
+            for (Method m : testClass.getDeclaredMethods()) {
+              if (m.getName().startsWith("test") && Modifier.isPublic(m.getModifiers()) && (m.getParameterTypes().length == 0) && m.getReturnType().equals(void.class)) {
+                hasTestMethods = true;
+                break;
+              }
+            }
+            if (hasTestMethods) {
+              testClasses.add(className);
+            }
           }
         } catch (java.lang.ExceptionInInitializerError ignored) {
         } catch (Throwable throwable) {
