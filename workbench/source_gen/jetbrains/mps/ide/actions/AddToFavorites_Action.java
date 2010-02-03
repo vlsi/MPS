@@ -67,7 +67,7 @@ public class AddToFavorites_Action extends GeneratedAction {
       if (favoritesManager == null) {
         return;
       }
-      favoritesManager.addRoots(this.name, FavoritesUtil.getObjects(AddToFavorites_Action.this.treeNodes));
+      favoritesManager.addRoots(AddToFavorites_Action.this.name, FavoritesUtil.getObjects(AddToFavorites_Action.this.treeNodes));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddToFavorites", t);
