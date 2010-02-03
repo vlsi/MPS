@@ -38,7 +38,6 @@ import java.util.*;
  */
 public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
   private File myLastOutputDir;
-  private Map<String, String> myNodeExtensionMap = new HashMap<String, String>();
   private Map<SModel, String> myOutputModelToPath = new HashMap<SModel, String>();
   private Map<SModelReference, String> myOutputModelRefToPath = new HashMap<SModelReference, String>();
   private Map<SModelReference, List<String>> myOutputModelRefToRoots = new HashMap<SModelReference, List<String>>();
@@ -73,9 +72,7 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
       if(outputRoot.getName() == null) {
         continue;
       }
-      roots.add(NameUtil.nodeFQName(outputRoot));
-      String extension = TextGenManager.instance().getExtension(outputRoot);
-      myNodeExtensionMap.put(NameUtil.nodeFQName(outputRoot), extension);
+      roots.add(getKey(outputModel.getSModelReference(), outputRoot));
     }
     return super.collectSources(module, inputModel, context, outputModel);
   }
@@ -93,17 +90,7 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
   }
 
   public String getExtension(SNode outputNode) {
-    if (myNodeExtensionMap.isEmpty()) {
-      return null;
-    }
-    return myNodeExtensionMap.get(NameUtil.nodeFQName(outputNode));
-  }
-
-  public String getExtension(String outputNode) {
-    if (myNodeExtensionMap.isEmpty()) {
-      return null;
-    }
-    return myNodeExtensionMap.get(outputNode);
+    return TextGenManager.instance().getExtension(outputNode);
   }
 
   public String getName(String outputNode, SModelReference outputModel) {
@@ -126,11 +113,20 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
     return FileGenerationUtil.getDefaultOutputDir(outputModelRef, outputDir);
   }
 
+  @Override
+  protected String getKey(SModelReference model, SNode root) {
+    return super.getKey(model, root) + "." + getExtension(root);
+  }
+
+  protected String getKey(SModelReference modelReference, String root) {
+    return JavaNameUtil.packageNameForModelUID(modelReference) + "." + root.substring(modelReference.getLongName().length() + 1);
+  }
+
   public String getSourceByNode(SNode outputRoot, SModel outputModel) {
     if (getSources().isEmpty()) {
       return null;
     }
-    return getSources().get(JavaNameUtil.packageNameForModelUID(outputModel.getSModelReference()) + "." + outputRoot.getName());
+    return getSources().get(getKey(outputModel.getSModelReference(), outputRoot));
   }
 
 
@@ -138,13 +134,12 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
     if (getSources().isEmpty()) {
       return null;
     }
-    return getSources().get(JavaNameUtil.packageNameForModelUID(outputModel) + "." + outputRoot.substring(outputModel.getLongName().length() + 1)); // see NameUtil
+    return getSources().get(getKey(outputModel, outputRoot));
   }
 
   @Override
   public void clean() {
     super.clean();
-    myNodeExtensionMap.clear();
     myOutputModelRefToPath.clear();
     myOutputModelRefToRoots.clear();
     myOutputModelToPath.clear();
@@ -164,8 +159,7 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
       }
       files.addAll(Arrays.asList(dir.list()));
       for (String outputRoot : getRoots(outputModel)) {
-        String extension = getExtension(outputRoot);
-        String filename = (extension == null)? getName(outputRoot, outputModel) : getName(outputRoot, outputModel) + "." + extension;
+        String filename = getName(outputRoot, outputModel);
         if (filename == null) {
           continue;
         }

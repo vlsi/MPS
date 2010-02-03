@@ -21,7 +21,7 @@ public class UnitTestRunner extends BaseTestRunner {
   private void runTests(List<Test> tests) {
     TestResult testResult = new TestResult();
     testResult.addListener(this);
-    for (Test test : ListSequence.fromList(tests)) {
+    for (Test test : tests) {
       if (test == null) {
         System.err.println("Can't run. Test is Null");
         continue;
@@ -30,7 +30,11 @@ public class UnitTestRunner extends BaseTestRunner {
         System.err.println("No tests found in " + test.getClass().getName());
         continue;
       }
-      test.run(testResult);
+      try {
+        test.run(testResult);
+      } catch (Throwable t) {
+        t.printStackTrace();
+      }
     }
   }
 
@@ -58,7 +62,7 @@ public class UnitTestRunner extends BaseTestRunner {
   private String getTestName(Test test) {
     String testName = test.getClass().getName();
     if (test instanceof TestCase) {
-      testName += "." + ((TestCase)test).getName();
+      testName += "." + ((TestCase) test).getName();
     }
     return testName;
   }

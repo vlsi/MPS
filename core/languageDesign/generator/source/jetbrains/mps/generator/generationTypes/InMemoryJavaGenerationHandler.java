@@ -20,6 +20,8 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
@@ -117,15 +119,23 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
       INodeAdapter outputNode = BaseAdapter.fromNode(root);
       TextGenerationResult genResult = TextGenerationUtil.generateText(context, root);
       wereErrors |= genResult.hasErrors();
-      String key = JavaNameUtil.packageNameForModelUID(outputModel.getSModelReference()) + "." + root.getName();
+      String key = getKey(outputModel.getSModelReference(), root);
       mySources.put(key, genResult.getText());
-      if (outputNode.getClass() == ClassConcept.class || outputNode.getClass() == Interface.class ||
-        outputNode.getClass() == (Class) EnumClass.class || outputNode.getClass() == Annotation.class) {
+      if (isJavaSource(outputNode)) {
         myJavaSources.add(key);
       }
     }
 
     return !wereErrors;
+  }
+
+  protected String getKey(SModelReference modelReference, SNode root) {
+    return JavaNameUtil.packageNameForModelUID(modelReference) + "." + root.getName();
+  }
+
+  private static boolean isJavaSource(INodeAdapter outputNode) {
+    return outputNode.getClass() == ClassConcept.class || outputNode.getClass() == Interface.class ||
+      outputNode.getClass() == (Class) EnumClass.class || outputNode.getClass() == Annotation.class;
   }
 
   public List<CompilationResult> compile(ITaskProgressHelper progress) {

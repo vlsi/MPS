@@ -63,8 +63,7 @@ public class DiffReporter {
       }
       files.addAll(Arrays.asList(dir.list()));
       for (String outputRoot : genHandler.getRoots(outputModel)) {
-        String extension = genHandler.getExtension(outputRoot);
-        String filename = (extension == null)? genHandler.getName(outputRoot, outputModel) : genHandler.getName(outputRoot, outputModel) + "." + extension;
+        String filename = genHandler.getName(outputRoot, outputModel);
         if (filename == null) {
           continue;
         }
