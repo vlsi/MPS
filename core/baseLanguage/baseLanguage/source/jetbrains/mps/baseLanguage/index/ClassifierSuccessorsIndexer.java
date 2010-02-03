@@ -73,7 +73,6 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeId
     @NotNull
     public Map<SNodeId, List<SNodeId>> map(final FileContent inputData) {
       final Map<SNodeId, List<SNodeId>> result = new HashMap();
-/*
       ModelAccess.instance().runIndexing(new Runnable() {
         public void run() {
           try {
@@ -132,7 +131,6 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<SNodeId
           successors.add(new SNodeId(node));
         }
       });
-*/      
       return result;
     }
   }
