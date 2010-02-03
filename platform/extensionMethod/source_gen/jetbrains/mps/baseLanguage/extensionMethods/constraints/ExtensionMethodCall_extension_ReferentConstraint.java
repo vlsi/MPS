@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.baseLanguage.behavior.Type_Behavior;
 import jetbrains.mps.baseLanguage.search.VisibilityUtil;
 
 public class ExtensionMethodCall_extension_ReferentConstraint extends BaseNodeReferenceSearchScopeProvider implements IModelConstraints {
@@ -31,9 +32,9 @@ public class ExtensionMethodCall_extension_ReferentConstraint extends BaseNodeRe
 
   public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferentConstraintContext _context) {
     List<SNode> result = new ArrayList<SNode>();
-    SNode operandType = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
+    SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
     for (SNode extension : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.extensionMethods.structure.TypeExtension"))) {
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operandType), SLinkOperations.getTarget(extension, "type", true))) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type_Behavior.call_getLooseType_5744862332972792015(SLinkOperations.getTarget(extension, "type", true)))) {
         for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(extension, "methods", true))) {
           if (VisibilityUtil.isVisible(_context.getEnclosingNode(), method)) {
             ListSequence.fromList(result).addElement(method);
@@ -43,7 +44,7 @@ public class ExtensionMethodCall_extension_ReferentConstraint extends BaseNodeRe
     }
     for (SNode container : ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.extensionMethods.structure.SimpleExtensionMethodsContainer"))) {
       for (SNode method : ListSequence.fromList(SLinkOperations.getTargets(container, "methods", true))) {
-        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operandType), SLinkOperations.getTarget(method, "extendedType", true))) {
+        if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), Type_Behavior.call_getLooseType_5744862332972792015(SLinkOperations.getTarget(method, "extendedType", true)))) {
           if (VisibilityUtil.isVisible(_context.getEnclosingNode(), method)) {
             ListSequence.fromList(result).addElement(method);
           }

@@ -36,6 +36,7 @@ public class Type_Behavior {
   private static Class[] PARAMETERS_1220438914705 = {SNode.class ,SNode.class};
   private static Class[] PARAMETERS_3359611512358152580 = {SNode.class};
   private static Class[] PARAMETERS_3508583411997314206 = {SNode.class};
+  private static Class[] PARAMETERS_5744862332972792015 = {SNode.class};
 
   public static void init(SNode thisNode) {
   }
@@ -113,6 +114,10 @@ public class Type_Behavior {
     return false;
   }
 
+  public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode) {
+    return SNodeOperations.copyNode(thisNode);
+  }
+
   public static List<String> call_getVariableSuffixes_1213877337304(SNode thisNode) {
     return (List<String>) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getVariableSuffixes_1213877337304", PARAMETERS_1213877337304);
   }
@@ -161,6 +166,10 @@ public class Type_Behavior {
     return (Boolean) BehaviorManager.getInstance().invoke(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_hasMissingParameters_3508583411997314206", PARAMETERS_3508583411997314206);
   }
 
+  public static SNode call_getLooseType_5744862332972792015(SNode thisNode) {
+    return (SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), "virtual_getLooseType_5744862332972792015", PARAMETERS_5744862332972792015);
+  }
+
   public static List<String> callSuper_getVariableSuffixes_1213877337304(SNode thisNode, String callerConceptFqName) {
     return (List<String>) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getVariableSuffixes_1213877337304", PARAMETERS_1213877337304);
   }
@@ -207,6 +216,10 @@ public class Type_Behavior {
 
   public static boolean callSuper_hasMissingParameters_3508583411997314206(SNode thisNode, String callerConceptFqName) {
     return (Boolean) BehaviorManager.getInstance().invokeSuper(Boolean.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_hasMissingParameters_3508583411997314206", PARAMETERS_3508583411997314206);
+  }
+
+  public static SNode callSuper_getLooseType_5744862332972792015(SNode thisNode, String callerConceptFqName) {
+    return (SNode) BehaviorManager.getInstance().invokeSuper(Object.class, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_getLooseType_5744862332972792015", PARAMETERS_5744862332972792015);
   }
 
   public static class QuotationClass_8537_0 {

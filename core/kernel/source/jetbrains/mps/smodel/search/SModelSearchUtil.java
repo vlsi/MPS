@@ -24,6 +24,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -96,6 +97,7 @@ public class SModelSearchUtil {
     return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarations();
   }
 
+  @Nullable
   public static PropertyDeclaration findPropertyDeclaration(AbstractConceptDeclaration concept, String propertyName) {
     if (concept == null || propertyName == null) return null;
     return new ConceptAndSuperConceptsScope(concept).getPropertyDeclarationByName(propertyName);

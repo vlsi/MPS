@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class TypeVariableReference_Behavior {
   public static void init(SNode thisNode) {
@@ -23,5 +24,16 @@ public class TypeVariableReference_Behavior {
       return Type_Behavior.call_getErasureSignature_1213877337313(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true));
     }
     return "java.lang.Object";
+  }
+
+  public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode) {
+    if ((SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true) != null)) {
+      SNode upperBoundType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UpperBoundType", null);
+      SLinkOperations.setTarget(upperBoundType, "bound", Type_Behavior.call_getLooseType_5744862332972792015(SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true)), true);
+      return upperBoundType;
+    } else {
+      return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WildCardType", null);
+    }
+
   }
 }

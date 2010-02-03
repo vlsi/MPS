@@ -30,6 +30,8 @@ import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 
+import org.jetbrains.annotations.NotNull;
+
 public abstract class PropertySupport {
   private static final Logger LOG = Logger.getLogger(PropertySupport.class);
 
@@ -61,7 +63,7 @@ public abstract class PropertySupport {
     return value;
   }
 
-  public static PropertySupport getPropertySupport(final PropertyDeclaration propertyDeclaration) {
+  public static PropertySupport getPropertySupport(@NotNull final PropertyDeclaration propertyDeclaration) {
     return NodeReadAccessCasterInEditor.runReadTransparentAction(new Computable<PropertySupport>() {
       public PropertySupport compute() {
         DataTypeDeclaration dataType = propertyDeclaration.getDataType();
