@@ -8,6 +8,7 @@ import jetbrains.mps.logging.Logger;
 public class DevkitActions_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(DevkitActions_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.DevkitActions";
+  public static final String LABEL_ID_favorites = ID + "favorites";
 
   public DevkitActions_ActionGroup() {
     super("DevkitActions", ID);
@@ -22,6 +23,8 @@ public class DevkitActions_ActionGroup extends GeneratedActionGroup {
       DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AnalyzeClasspath_Action", "jetbrains.mps.ide");
       DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.CopyModuleName_Action", "jetbrains.mps.ide");
       DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModelPersistenceInModule_Action", "jetbrains.mps.ide");
+      DevkitActions_ActionGroup.this.addSeparator();
+      DevkitActions_ActionGroup.this.addAnchor(DevkitActions_ActionGroup.LABEL_ID_favorites);
       DevkitActions_ActionGroup.this.addSeparator();
       DevkitActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DevkitProperties_Action", "jetbrains.mps.ide");
     } catch (Throwable t) {

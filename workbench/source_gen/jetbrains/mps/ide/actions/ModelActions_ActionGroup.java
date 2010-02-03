@@ -13,6 +13,7 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_newActions = ID + "newActions";
   public static final String LABEL_ID_showHelp = ID + "showHelp";
   public static final String LABEL_ID_refactoring = ID + "refactoring";
+  public static final String LABEL_ID_favorites = ID + "favorites";
   public static final String LABEL_ID_vcs = ID + "vcs";
 
   public ModelActions_ActionGroup() {
@@ -48,6 +49,8 @@ public class ModelActions_ActionGroup extends GeneratedActionGroup {
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_refactoring);
       ModelActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModelPersistenceInModel_Action", "jetbrains.mps.ide");
+      ModelActions_ActionGroup.this.addSeparator();
+      ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_favorites);
       ModelActions_ActionGroup.this.addSeparator();
       ModelActions_ActionGroup.this.addAnchor(ModelActions_ActionGroup.LABEL_ID_vcs);
       ModelActions_ActionGroup.this.addSeparator();

@@ -91,4 +91,9 @@ public class FavoritesProjectPane extends AbstractProjectViewPane {
   public String getPresentableSubIdName(@NotNull String subId) {
     return subId;
   }
+
+  @Override
+  public String toString() {
+    return "Favorites";
+  }
 }

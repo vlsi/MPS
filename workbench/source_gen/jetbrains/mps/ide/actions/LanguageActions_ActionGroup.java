@@ -13,6 +13,7 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_find_usages = ID + "find_usages";
   public static final String LABEL_ID_find_instances = ID + "find_instances";
   public static final String LABEL_ID_refactoring = ID + "refactoring";
+  public static final String LABEL_ID_favorites = ID + "favorites";
   public static final String LABEL_ID_vcs = ID + "vcs";
 
   public LanguageActions_ActionGroup() {
@@ -48,6 +49,8 @@ public class LanguageActions_ActionGroup extends GeneratedActionGroup {
       LanguageActions_ActionGroup.this.addSeparator();
       LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_refactoring);
       LanguageActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModelPersistenceInModule_Action", "jetbrains.mps.ide");
+      LanguageActions_ActionGroup.this.addSeparator();
+      LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_favorites);
       LanguageActions_ActionGroup.this.addSeparator();
       LanguageActions_ActionGroup.this.addAnchor(LanguageActions_ActionGroup.LABEL_ID_vcs);
       LanguageActions_ActionGroup.this.addSeparator();

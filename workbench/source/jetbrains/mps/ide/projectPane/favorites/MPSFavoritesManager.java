@@ -115,4 +115,13 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
   //  favariteNames.add("Test 123");
     return ArrayUtil.toStringArray(favariteNames);
   }
+
+  public void addNewFavoritesList(String name) {
+    myName2FavoritesRoots.put(name, new ArrayList<Object>());
+  }
+
+  public void addRoots(String name, List<Object> roots) {
+    if (!myName2FavoritesRoots.containsKey(name)) return;
+    myName2FavoritesRoots.get(name).addAll(roots);
+  }
 }

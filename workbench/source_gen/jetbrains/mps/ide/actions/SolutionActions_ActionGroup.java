@@ -11,6 +11,7 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
   public static final String LABEL_ID_solutionNew = ID + "solutionNew";
   public static final String LABEL_ID_generateModule = ID + "generateModule";
   public static final String LABEL_ID_refactoring = ID + "refactoring";
+  public static final String LABEL_ID_favorites = ID + "favorites";
 
   public SolutionActions_ActionGroup() {
     super("SolutionActions", ID);
@@ -43,6 +44,8 @@ public class SolutionActions_ActionGroup extends GeneratedActionGroup {
       SolutionActions_ActionGroup.this.addSeparator();
       SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_refactoring);
       SolutionActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.UpgradeModelPersistenceInModule_Action", "jetbrains.mps.ide");
+      SolutionActions_ActionGroup.this.addSeparator();
+      SolutionActions_ActionGroup.this.addAnchor(SolutionActions_ActionGroup.LABEL_ID_favorites);
       SolutionActions_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);
