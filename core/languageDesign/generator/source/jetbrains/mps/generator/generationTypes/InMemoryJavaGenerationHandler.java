@@ -129,6 +129,10 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     return !wereErrors;
   }
 
+  protected String getJavaNameFromKey(String key) {
+    return key;
+  }
+
   protected String getKey(SModelReference modelReference, SNode root) {
     return JavaNameUtil.packageNameForModelUID(modelReference) + "." + root.getName();
   }
@@ -142,7 +146,7 @@ public class InMemoryJavaGenerationHandler extends GenerationHandlerBase {
     myCompiler = createJavaCompiler(myContextModules);
 
     for (String key : myJavaSources) {
-      myCompiler.addSource(key, mySources.get(key));
+      myCompiler.addSource(getJavaNameFromKey(key), mySources.get(key));
     }
 
     progress.setText2("Compiling...");

@@ -217,7 +217,7 @@ public class TestGenerationWorker extends GeneratorWorker {
 
     // compile
     List<CompilationResult> compilationResult = null;
-    if (generationOk && Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE))) {
+    if (generationOk && isCompileSet()) {
       compilationResult = ModelAccess.instance().runReadAction(new Computable<List<CompilationResult>>() {
         public List<CompilationResult> compute() {
           return myGenerationHandler.compile(ITaskProgressHelper.EMPTY);
@@ -359,7 +359,11 @@ public class TestGenerationWorker extends GeneratorWorker {
   }
 
   private boolean isInvokeTestsSet() {
-    return Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.INVOKE_TESTS)) && Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE));
+    return Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.INVOKE_TESTS)) && isCompileSet();
+  }
+
+  private boolean isCompileSet() {
+    return Boolean.parseBoolean(myWhatToDo.getProperty(GenerateTask.COMPILE));
   }
 
   @Override

@@ -114,6 +114,11 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
   }
 
   @Override
+  protected String getJavaNameFromKey(String key) {
+    return key.substring(0, key.lastIndexOf("."));
+  }
+
+  @Override
   protected String getKey(SModelReference model, SNode root) {
     return super.getKey(model, root) + "." + getExtension(root);
   }
