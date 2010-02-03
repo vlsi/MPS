@@ -23,6 +23,13 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
   private static final String NUMBER_IN_MODEL = "root_number";
   private final Map<String, List<Object>> myName2FavoritesRoots = new LinkedHashMap<String, List<Object>>();
   private final Project myProject;
+  private List<MPSFavoritesListener> myListeners = new ArrayList<MPSFavoritesListener>();
+
+  public interface MPSFavoritesListener {
+    void rootsChanged(String listName);
+    void listAdded(String listName);
+    void listRemoved(String listName);
+  }
 
   public MPSFavoritesManager(Project project) {
     myProject = project;
@@ -66,6 +73,12 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
       }
     }
     return result;
+  }
+
+  private void onListAdded(String name) {
+    for (MPSFavoritesListener listener : myListeners) {
+      listener.listAdded(name);
+    }
   }
 
   public void projectOpened() {
@@ -118,10 +131,19 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
 
   public void addNewFavoritesList(String name) {
     myName2FavoritesRoots.put(name, new ArrayList<Object>());
+    onListAdded(name);
   }
 
   public void addRoots(String name, List<Object> roots) {
     if (!myName2FavoritesRoots.containsKey(name)) return;
     myName2FavoritesRoots.get(name).addAll(roots);
+  }
+
+  public void addListener(MPSFavoritesListener listener) {
+    myListeners.add(listener);
+  }
+
+  public void removeListener(MPSFavoritesListener listener) {
+    myListeners.remove(listener);
   }
 }
