@@ -25,13 +25,6 @@
     </projectSolutions>
     <projectLanguages />
     <projectDevkits />
-    <genConfs>
-      <genConfModels name="newLanguageDialog">
-        <models>
-          <model modelRef="r:00000000-0000-4000-0000-011c895904a9(jetbrains.mps.ide.newLanguageDialog)" />
-        </models>
-      </genConfModels>
-    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="workbench.mpr" />
