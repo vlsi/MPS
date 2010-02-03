@@ -12,7 +12,9 @@
       <languagePath path="${project}/languages/xmlUnitTest/xmlUnitTest.mpl" folder="" />
     </projectLanguages>
     <projectDevkits />
-    <genConfs />
+    <genConfs>
+      <genConfModule name="xmlUnitTest" moduleRef="jetbrains.mps.xmlUnitTest" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="xmlUnitTest" />
@@ -26,7 +28,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="" vcs="" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
   </component>
 </project>
 
