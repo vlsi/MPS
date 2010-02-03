@@ -4,14 +4,12 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.util.*;
 import com.intellij.openapi.project.Project;
 import com.intellij.ide.projectView.impl.AbstractUrl;
+import com.intellij.util.ArrayUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.NonNls;
 import org.jdom.Element;
 
-import java.util.List;
-import java.util.Map;
-import java.util.LinkedHashMap;
-import java.util.ArrayList;
+import java.util.*;
 
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -109,5 +107,12 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
       element.addContent(list);
     }
     DefaultJDOMExternalizer.writeExternal(this, element);
+  }
+
+  public String[] getFavoriteNames() {
+    Set<String> favariteNames = new LinkedHashSet<String>();
+    favariteNames.addAll(myName2FavoritesRoots.keySet());
+  //  favariteNames.add("Test 123");
+    return ArrayUtil.toStringArray(favariteNames);
   }
 }

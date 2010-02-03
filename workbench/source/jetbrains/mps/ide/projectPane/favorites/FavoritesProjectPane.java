@@ -79,4 +79,16 @@ public class FavoritesProjectPane extends AbstractProjectViewPane {
   public SelectInTarget createSelectInTarget() {
     return new FavoritesSelectInTarget();
   }
+
+  @NotNull
+  @Override
+  public String[] getSubIds() {
+    return myFavoritesManager.getFavoriteNames();
+  }
+
+  @NotNull
+  @Override
+  public String getPresentableSubIdName(@NotNull String subId) {
+    return subId;
+  }
 }
