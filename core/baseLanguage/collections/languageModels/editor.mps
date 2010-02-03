@@ -735,7 +735,7 @@
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="1206657703109">
         <property name="text:32" value="=" />
-        <link role="styleClass:32" targetNodeId="15.1215096040201" resolveInfo="Dot" />
+        <link role="styleClass:32" targetNodeId="15.1215010940130" resolveInfo="Operator" />
       </node>
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefNode:32" id="1206657736486">
         <link role="relationDeclaration:32" targetNodeId="1.1206655853135:7" />
