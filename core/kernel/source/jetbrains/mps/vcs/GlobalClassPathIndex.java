@@ -151,6 +151,7 @@ public class GlobalClassPathIndex implements ApplicationComponent {
   }
 
   private void unexcludeClassPath(final IModule module, IClassPathItem item) {
+    if (item == null) return;
     item.accept(new EachClassPathItemVisitor() {
       @Override
       public void visit(FileClassPathItem cpItem) {
