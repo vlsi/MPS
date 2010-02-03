@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project version="4">
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
@@ -11,12 +11,17 @@
     <projectLanguages>
       <languagePath path="${project}/languages/demoLang1/demoLang1.mpl" />
       <languagePath path="${project}/languages/demoLang2/demoLang2.mpl" />
-      <languagePath path="${samples_home}/sampleXML/languages/sampleXML/sampleXML.mpl" />
       <languagePath path="${project}/languages/demoLang3/demoLang3.mpl" folder="" />
       <languagePath path="${project}/languages/demoLang4/demoLang4.mpl" folder="" />
+      <languagePath path="${samples_home}/sampleXML/languages/sampleXML/sampleXML.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <genConfs />
+    <genConfs>
+      <genConfModule name="demoLang1" moduleRef="jetbrains.mps.samples.generator_demo.demoLang1" />
+      <genConfModule name="demoLang2" moduleRef="jetbrains.mps.samples.generator_demo.demoLang2" />
+      <genConfModule name="demoLang3" moduleRef="jetbrains.mps.samples.generator_demo.demoLang3" />
+      <genConfModule name="demoLang4" moduleRef="jetbrains.mps.samples.generator_demo.demoLang4" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="generator_demo" />
@@ -32,7 +37,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
-    <mapping directory="C:/MPS-beta1" vcs="svn" />
   </component>
 </project>
 

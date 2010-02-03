@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project version="4">
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
@@ -22,7 +22,9 @@
       <languagePath path="${project}/language/formulaLanguage.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <genConfs />
+    <genConfs>
+      <genConfModule name="formulaLanguage" moduleRef="jetbrains.mps.samples.formulaLanguage" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="formulaLanguage" />
@@ -38,7 +40,6 @@
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
-    <mapping directory="$PROJECT_DIR$" vcs="svn" />
   </component>
 </project>
 

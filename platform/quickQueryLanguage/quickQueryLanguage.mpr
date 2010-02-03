@@ -1,32 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project version="4">
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\solutions\jetbrains.mps.quickQueryLanguage.sandbox\jetbrains.mps.quickQueryLanguage.sandbox.msd" folder="main" />
-      <solutionPath path="${mps_home}\workbench\ideSolution\jetbrains.mps.ide.msd" folder="mps-stuff" />
+      <solutionPath path="${project}/solutions/jetbrains.mps.quickQueryLanguage.sandbox/jetbrains.mps.quickQueryLanguage.sandbox.msd" folder="main" />
+      <solutionPath path="${mps_home}/workbench/ideSolution/jetbrains.mps.ide.msd" folder="mps-stuff" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\languages\quickQueryLanguage\quickQueryLanguage.mpl" />
-      <languagePath path="${project}\quickQueryLanguage.mpl" folder="main" />
-      <languagePath path="${mps_home}\core\baseLanguage\baseLanguage\baseLanguage.mpl" folder="mps-stuff" />
+      <languagePath path="${mps_home}/core/baseLanguage/baseLanguage/baseLanguage.mpl" folder="mps-stuff" />
+      <languagePath path="${project}/languages/quickQueryLanguage/quickQueryLanguage.mpl" />
+      <languagePath path="${project}/quickQueryLanguage.mpl" folder="main" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
-    <genConfs />
+    <genConfs>
+      <genConfModule name="quickQueryLanguage" moduleRef="jetbrains.mps.quickQueryLanguage" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="quickQueryLanguage" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="C:/Copy of MPS" vcs="svn" />
     <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
   </component>
 </project>
