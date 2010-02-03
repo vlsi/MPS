@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project version="4">
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
@@ -19,22 +19,28 @@
     <option name="info" value="true" />
     <option name="warnings" value="true" />
   </component>
-  <component name="MPSProject" auto-import-from-idea="false" testAllLanguages="false">
+  <component name="MPSProject">
     <projectSolutions>
-      <solutionPath path="${project}\solutions\sandbox\sandbox.msd" />
+      <solutionPath path="${project}/solutions/sandbox/sandbox.msd" />
     </projectSolutions>
     <projectLanguages>
-      <languagePath path="${project}\languages\money\money.mpl" />
+      <languagePath path="${project}/money.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <libraries />
-    <genConfs />
+    <genConfs>
+      <genConfModule name="money" moduleRef="jetbrains.mps.baseLanguage.money" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="MoneyLang.mpr" />
   </component>
+  <component name="ProjectModuleManager">
+    <modules />
+  </component>
+  <component name="ProjectRootManager" version="2" />
   <component name="SvnBranchConfigurationManager">
     <option name="myVersion" value="124" />
+    <option name="mySupportsUserInfoFilter" value="true" />
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />

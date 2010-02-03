@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project relativePaths="false" version="4">
+<project version="4">
   <component name="DependencyValidationManager">
     <option name="SKIP_IMPORT_STATEMENTS" value="false" />
   </component>
@@ -12,7 +12,9 @@
       <languagePath path="${project}/javadoc.mpl" />
     </projectLanguages>
     <projectDevkits />
-    <genConfs />
+    <genConfs>
+      <genConfModule name="javadoc" moduleRef="jetbrains.mps.baseLanguage.javadoc" />
+    </genConfs>
   </component>
   <component name="ProjectDetails">
     <option name="projectName" value="javadoc" />
@@ -27,19 +29,20 @@
         <entry key="$PROJECT_DIR$">
           <value>
             <SvnBranchConfiguration>
-              <option name="branchUrls">
-                <list>
-                  <option value="http://svn.jetbrains.org/mps/branches" />
-                  <option value="http://svn.jetbrains.org/mps/tags" />
-                </list>
+              <option name="branchMap">
+                <map>
+                  <entry key="http://svn.jetbrains.org/mps/branches">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                  <entry key="http://svn.jetbrains.org/mps/tags">
+                    <value>
+                      <list />
+                    </value>
+                  </entry>
+                </map>
               </option>
-              <option name="trunkUrl" value="http://svn.jetbrains.org/mps/trunk" />
-            </SvnBranchConfiguration>
-          </value>
-        </entry>
-        <entry key="C:/work/mps">
-          <value>
-            <SvnBranchConfiguration>
               <option name="branchUrls">
                 <list>
                   <option value="http://svn.jetbrains.org/mps/branches" />
@@ -56,8 +59,7 @@
   </component>
   <component name="VcsDirectoryMappings">
     <mapping directory="" vcs="" />
-    <mapping directory="$PROJECT_DIR$" vcs="svn" />
-    <mapping directory="C:/work/mps" vcs="svn" />
+    <mapping directory="$APPLICATION_HOME_DIR$" vcs="svn" />
   </component>
 </project>
 
