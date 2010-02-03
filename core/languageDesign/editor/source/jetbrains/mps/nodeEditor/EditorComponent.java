@@ -1017,6 +1017,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private void clearCaches() {
     myCellsToNodesToDependOnMap.clear();
+    removeOurListeners();
     myCellsToRefTargetsToDependOnMap.clear();
     myNodesToBigCellsMap.clear();
     myRefNodeContextsToBigCellsMap.clear();
@@ -2248,12 +2249,6 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   public void putCellAndNodesToDependOn(EditorCell cell, Set<SNode> nodes, Set<SNodePointer> refTargets) {
-    for (SNode n : nodes) {
-      if (n == null) continue;
-      if ("4413749148913760651".equals(n.getId()) || "Constant_2079_0".equals(cell.getCellId())) {
-        System.out.printf("123");
-      }
-    }
     myCellsToNodesToDependOnMap.put(cell, nodes);
     myCellsToRefTargetsToDependOnMap.put(cell, refTargets);
   }
@@ -2280,6 +2275,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public void clearNodesCellDependsOn(EditorCell cell, EditorManager editorManager) {
     if (editorManager == EditorManager.getInstanceFromContext(myOperationContext)) {
       myCellsToNodesToDependOnMap.remove(cell);
+      removeOurListeners();
       myCellsToRefTargetsToDependOnMap.remove(cell);
     }
   }
