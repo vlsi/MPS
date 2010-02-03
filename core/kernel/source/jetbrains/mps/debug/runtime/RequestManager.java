@@ -16,11 +16,10 @@
 package jetbrains.mps.debug.runtime;
 
 import com.intellij.util.containers.HashMap;
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.util.Computable;
 import com.sun.jdi.request.*;
-import com.sun.jdi.InternalException;
-import com.sun.jdi.Location;
+import com.sun.jdi.*;
+import com.sun.jdi.event.ClassPrepareEvent;
 
 import java.util.Set;
 import java.util.Map;
@@ -34,7 +33,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.debug.BLDebugInfoCache;
 import jetbrains.mps.debug.DebugInfo;
 import jetbrains.mps.debug.PositionInfo;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by IntelliJ IDEA.
@@ -53,6 +52,7 @@ public class RequestManager implements DebugProcessListener {
   private EventRequestManager myEventRequestManager;
 
   private DebugEventsProcessor myDebugEventsProcessor;
+  private final Map<Requestor, String> myInvalidRequestsAndWarnings = new HashMap<Requestor, String>();
 
   public RequestManager(DebugEventsProcessor processor) {
     myDebugEventsProcessor = processor;
@@ -189,14 +189,12 @@ public class RequestManager implements DebugProcessListener {
   }
 
 
-  // requests creation
-  public ClassPrepareRequest createClassPrepareRequest(Requestor requestor, String pattern) {
-//todo: more precise requestor type - ClassPrepareRequestor
+  //------------------- requests creation
+  public ClassPrepareRequest createClassPrepareRequest(ClassPrepareRequestor requestor, String pattern) {
     ClassPrepareRequest classPrepareRequest = myEventRequestManager.createClassPrepareRequest();
     classPrepareRequest.setSuspendPolicy(EventRequest.SUSPEND_EVENT_THREAD);
     classPrepareRequest.addClassFilter(pattern);
     classPrepareRequest.putProperty(CLASS_NAME, pattern);
-
     registerRequestInternal(requestor, classPrepareRequest);
     return classPrepareRequest;
   }
@@ -209,11 +207,10 @@ public class RequestManager implements DebugProcessListener {
     return req;
   }
   //todo: some other types of requests; later
-  //~requests creation
+  //------------------- ~requests creation
 
   //by node
-  public void callbackOnPrepareClasses(final Requestor requestor, final SNode node) {
-    //todo: more precise requestor type - ClassPrepareRequestor
+  public void callbackOnPrepareClasses(final ClassPrepareRequestor requestor, final SNode node) {
     // DebuggerManagerThreadImpl.assertIsManagerThread();
 
     String pattern = ModelAccess.instance().runReadAction(new Computable<String>() {
@@ -239,27 +236,52 @@ public class RequestManager implements DebugProcessListener {
     //todo maybe consider inner classes
     if (pattern != null) {
       ClassPrepareRequest prepareRequest = createClassPrepareRequest(requestor, pattern);
-      /*myDebugEventsProcessor
-      .getPositionManager().createPrepareRequest(requestor, classPosition)*/;
-
-//    if(prepareRequest == null) {
-//      setInvalid(requestor, DebuggerBundle.message("status.invalid.breakpoint.out.of.class"));
-//      return;
-//    }
-
       registerRequest(requestor, prepareRequest);
       prepareRequest.enable();
     }
   }
 
   //by classname
-  public void callbackOnPrepareClasses(Requestor requestor, String classOrPatternToBeLoaded) {
-    //todo: more precise requestor type - ClassPrepareRequestor
+  public void callbackOnPrepareClasses(ClassPrepareRequestor requestor, String classOrPatternToBeLoaded) {
     // DebuggerManagerThreadImpl.assertIsManagerThread();
     ClassPrepareRequest classPrepareRequest = createClassPrepareRequest(requestor, classOrPatternToBeLoaded);
-
     registerRequest(requestor, classPrepareRequest);
     classPrepareRequest.enable();
+  }
+
+   //currently does no much more than request.enable()
+   public void enableRequest(EventRequest request) {
+    // DebuggerManagerThreadImpl.assertIsManagerThread();
+    LOG.assertLog(findRequestor(request) != null);
+    try {
+      //todo what's filter thread? nevermind.
+     /* final ThreadReference filterThread = myFilterThread;
+      if (filterThread != null) {
+        if (request instanceof BreakpointRequest) {
+          ((BreakpointRequest)request).addThreadFilter(filterThread);
+        }
+        else if (request instanceof MethodEntryRequest) {
+          ((MethodEntryRequest)request).addThreadFilter(filterThread);
+        }
+        else if (request instanceof MethodExitRequest) {
+          ((MethodExitRequest)request).addThreadFilter(filterThread);
+        }
+      }*/
+      request.enable();
+    } catch (InternalException e) {
+      LOG.error(e);
+    }
+  }
+
+   public void setInvalid(Requestor requestor, String message) {
+  //  DebuggerManagerThreadImpl.assertIsManagerThread();
+    myInvalidRequestsAndWarnings.put(requestor, message);
+  }
+
+  public @Nullable
+  String getWarning(Requestor requestor) {
+   // DebuggerManagerThreadImpl.assertIsManagerThread();
+    return myInvalidRequestsAndWarnings.get(requestor);
   }
 
 
@@ -288,5 +310,20 @@ public class RequestManager implements DebugProcessListener {
   @Override
   public void processAttached(DebugEventsProcessor process) {
     //To change body of implemented methods use File | Settings | File Templates.
+  }
+
+  public void processClassPrepared(final ClassPrepareEvent event) {
+//    if (!myDebugEventsProcessor.isAttached()) {
+//      return;
+//    }
+
+    final ReferenceType refType = event.referenceType();
+
+    if (refType instanceof ClassType || refType instanceof InterfaceType) {
+      ClassPrepareRequestor requestor = (ClassPrepareRequestor)event.request().getProperty(REQUESTOR);
+      if (requestor != null) {
+        requestor.processClassPrepare(myDebugEventsProcessor, refType);
+      }
+    }
   }
 }

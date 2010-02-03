@@ -22,6 +22,7 @@ import jetbrains.mps.logging.Logger;
 
 import java.util.List;
 import java.util.ArrayList;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * Created by IntelliJ IDEA.
@@ -34,6 +35,9 @@ public class DebugEventsProcessor {
   private static final Logger LOG = Logger.getLogger(DebugEventsProcessor.class);
 
   private BreakpointManager myBreakpointManager;
+  private final RequestManager myRequestManager;
+  private SuspendManager mySuspendManager;
+
   private Project myProject;
 
   private List<DebugProcessListener> myListeners = new ArrayList<DebugProcessListener>();
@@ -45,16 +49,24 @@ public class DebugEventsProcessor {
 
   private ConnectorWrapper myConnectorWrapper;
 
+  protected static final int STATE_INITIAL   = 0;
+  protected static final int STATE_ATTACHED  = 1;
+  protected static final int STATE_DETACHING = 2;
+  protected static final int STATE_DETACHED  = 3;
+  protected final AtomicInteger myState = new AtomicInteger(STATE_INITIAL);
+
   public DebugEventsProcessor(Project p) {
     myProject = p;
     myBreakpointManager = p.getComponent(BreakpointManager.class);
+    myRequestManager = new RequestManager(this);
+    mySuspendManager = new SuspendManager(this);
   }
 
   public void startVM(VirtualMachine vm) {
 
     if(vm != null) {
       //todo prepare proxy for vm
-     // vmAttached();
+      vmAttached();
       myVirtualMachine = vm;
       myEventThread = new DebuggerEventThread();
     //  ApplicationManager.getApplication().executeOnPooledThread(myEventThread);
@@ -65,6 +77,10 @@ public class DebugEventsProcessor {
 
   public VirtualMachine getVirtualMachine() {
     return myVirtualMachine;
+  }
+
+  public RequestManager getRequestManager() {
+    return myRequestManager;
   }
 
   private class DebuggerEventThread implements Runnable {
@@ -202,6 +218,31 @@ public class DebugEventsProcessor {
   }
 
 
+   public boolean isAttached() {
+      return myState.get() == STATE_ATTACHED;
+   }
+
+   private void vmAttached() {
+    // DebuggerManagerThreadImpl.assertIsManagerThread();
+    LOG.assertLog(!isAttached());
+    if(myState.compareAndSet(STATE_INITIAL, STATE_ATTACHED)) { //here we change an atomic state from initial to attached
+      final VirtualMachine virtualMachine = myVirtualMachine;
+
+      //todo I don't know yet what for it was meant
+      /*if (virtualMachine.canGetMethodReturnValues()) {
+        MethodExitRequest request = virtualMachine.eventRequestManager().createMethodExitRequest();
+        request.setSuspendPolicy(EventRequest.SUSPEND_NONE);
+        myReturnValueWatcher = new MethodReturnValueWatcher(request);
+      }*/
+
+      // init some states, fire events
+      /*DebuggerManagerEx.getInstanceEx(getProject()).getBreakpointManager().setInitialBreakpointsState();
+      myDebugProcessDispatcher.getMulticaster().processAttached(this);*/
+
+      //show some info etc
+    }
+  }
+
   private void processLocatableEvent(/*final SuspendContextImpl suspendContext,*/ final LocatableEvent event) {
   /*  if (myReturnValueWatcher != null && event instanceof MethodExitEvent) {
       if (myReturnValueWatcher.processMethodExitEvent(((MethodExitEvent)event))) {
@@ -280,5 +321,12 @@ public class DebugEventsProcessor {
         }
       }
     });*/
+  }
+
+  // a class is prepared: let's set breakpoint requests from breakpoints
+  private void processClassPrepareEvent(SuspendContext suspendContext, ClassPrepareEvent event) {
+    // preprocessEvent(suspendContext, event.thread());
+    myRequestManager.processClassPrepared(event);
+    mySuspendManager.voteResume(suspendContext);
   }
 }
