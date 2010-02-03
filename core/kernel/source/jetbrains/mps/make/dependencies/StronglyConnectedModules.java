@@ -106,7 +106,16 @@ public class StronglyConnectedModules {
     }
 
     public void fill(Map<IModule, IModuleDecorator<M>> map) {
-      for (IModule m : myModule.getExplicitlyDependOnModules(myIncludeBootstrap)) {
+      List<IModule> dependency = myModule.getExplicitlyDependOnModules(myIncludeBootstrap);
+      List<IModule> dependencyCopy = new ArrayList<IModule>();
+      dependencyCopy.addAll(dependency);
+      Collections.sort(dependencyCopy, new Comparator<IModule>() {
+        @Override
+        public int compare(IModule o1, IModule o2) {
+          return o1.getModuleFqName().compareTo(o2.getModuleFqName());
+        }
+      });
+      for (IModule m : dependencyCopy) {
         DefaultModuleDecorator<M> next = (DefaultModuleDecorator<M>) map.get(m);
         if (next != null) myNext.add(next);
       }
