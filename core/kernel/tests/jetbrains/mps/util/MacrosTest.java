@@ -15,13 +15,24 @@
  */
 package jetbrains.mps.util;
 
+import jetbrains.mps.BaseMPSTest;
+import jetbrains.mps.TestMain;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.ide.IdeMain.TestMode;
 import junit.framework.TestCase;
 
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MacrosTest extends TestCase {
+public class MacrosTest extends BaseMPSTest {
+
+  @Override
+  protected void setUp() throws Exception {
+    IdeMain.setTestMode(TestMode.CORE_TEST);
+    TestMain.configureMPS();
+  }
+
   public void testExpand() {
     List<String> tests = generateExpandTests();
     for (String test : tests) {
