@@ -10,5 +10,5 @@ import com.sun.jdi.ReferenceType;
  * To change this template use File | Settings | File Templates.
  */
 public interface ClassPrepareRequestor extends Requestor {
-  public void processClassPrepare(final DebugEventsProcessor debugProcess, final ReferenceType classType);
+  public void processClassPrepare(final DebugVMEventsProcessor debugProcess, final ReferenceType classType);
 }

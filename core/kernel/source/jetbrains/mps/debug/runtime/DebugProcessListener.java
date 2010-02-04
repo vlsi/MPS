@@ -33,8 +33,8 @@ public interface DebugProcessListener {
   void resumed(SuspendContext suspendContext);
 
   //executed in manager thread
-  void processDetached(DebugEventsProcessor process, boolean closedByUser);
+  void processDetached(DebugVMEventsProcessor process, boolean closedByUser);
 
   //executed in manager thread
-  void processAttached(DebugEventsProcessor process);
+  void processAttached(DebugVMEventsProcessor process);
 }

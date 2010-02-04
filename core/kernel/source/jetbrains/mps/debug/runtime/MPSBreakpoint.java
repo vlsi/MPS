@@ -22,10 +22,10 @@ import jetbrains.mps.debug.BLDebugInfoCache;
 import jetbrains.mps.debug.DebugInfo;
 import jetbrains.mps.logging.Logger;
 import com.sun.jdi.*;
+import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.BreakpointRequest;
 
 import java.util.List;
-import java.util.ArrayList;
 
 /**
  * Created by IntelliJ IDEA.
@@ -34,7 +34,7 @@ import java.util.ArrayList;
  * Time: 15:25:56
  * To change this template use File | Settings | File Templates.
  */
-public class MPSBreakpoint implements ClassPrepareRequestor {
+public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventRequestor {
   private static Logger LOG = Logger.getLogger(MPSBreakpoint.class);
 
 
@@ -79,8 +79,9 @@ public class MPSBreakpoint implements ClassPrepareRequestor {
   }
 
   //this should be called on every breakpoint when DebugEventsProcessor is attached
-  public void createClassPrepareRequest(DebugEventsProcessor debugProcess) {
+  public void createClassPrepareRequest(DebugVMEventsProcessor debugProcess) {
     // DebuggerManagerThreadImpl.assertIsManagerThread();
+
     // check is this breakpoint is enabled, vm reference is valid and there're no requests created yet
     if (!myIsEnabled || !debugProcess.isAttached() || debugProcess.getRequestManager().findRequests(this).isEmpty()) {
       return;
@@ -94,16 +95,16 @@ public class MPSBreakpoint implements ClassPrepareRequestor {
     // updateUI();
   }
 
-  protected void createOrWaitPrepare(final DebugEventsProcessor debugProcess) {
+  protected void createOrWaitPrepare(final DebugVMEventsProcessor debugProcess) {
     SNode node = getSNode();
 
-    debugProcess.getRequestManager().callbackOnPrepareClasses(this, node);
+    String className = PositionUtil.getGeneratedClassName(node);
 
-    //get all prepared classes for a SNode; todo.
-    List list = new ArrayList(0); // debugProcess.getPositionManager().getAllClasses(classPosition);
-
-    for (final Object aList : list) {
-      ReferenceType refType = (ReferenceType)aList;
+    //add requests for not prepared classes
+    debugProcess.getRequestManager().callbackOnPrepareClasses(this, className);
+    //and get all already prepared classes for a SNode
+    List<ReferenceType> list = debugProcess.getVirtualMachine().classesByName(className);
+    for (final ReferenceType refType : list) {
       if (refType.isPrepared()) {
         processClassPrepare(debugProcess, refType);
       }
@@ -111,8 +112,8 @@ public class MPSBreakpoint implements ClassPrepareRequestor {
   }
 
 
-  @Override
-  public void processClassPrepare(DebugEventsProcessor debugProcess, ReferenceType classType) {
+  @Override     //this is called when a class for this ClassPrepareRequestor is prepared
+  public void processClassPrepare(DebugVMEventsProcessor debugProcess, ReferenceType classType) {
     if (!myIsEnabled || !isValid()) {
       return;
     }
@@ -126,7 +127,8 @@ public class MPSBreakpoint implements ClassPrepareRequestor {
     return position.getStartLine();
   }
 
-  protected void createRequestForPreparedClass(DebugEventsProcessor debugProcess, final ReferenceType classType) {
+  //this is called when a class for this BP is prepared
+  protected void createRequestForPreparedClass(DebugVMEventsProcessor debugProcess, final ReferenceType classType) {
     RequestManager requestManager = debugProcess.getRequestManager();
 
     try {
@@ -174,5 +176,40 @@ public class MPSBreakpoint implements ClassPrepareRequestor {
     public BreakpointInfo() {
 
     }
+  }
+
+  @Override  //called when breakpoint is hit
+  public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event) {
+    final SuspendContext context = action.getSuspendContext();
+    if(!isValid()) {
+      context.getDebugProcess().getRequestManager().deleteRequest(this);
+      return false;
+    }
+    try {
+      final StackFrame stackFrame = context.getThread().frame(0);
+      if (stackFrame == null) {
+        // might be if the thread has been collected
+        return false;
+      }
+
+      //todo conditions - later
+    /*  final EvaluationContextImpl evaluationContext = new EvaluationContextImpl(
+        action.getSuspendContext(),
+        frameProxy,
+        getThisObject(context, event)
+      );
+
+      if(!evaluateCondition(evaluationContext, event)) {
+        return false;
+      }*/
+      //todo here some expressions may be evaluated; later
+     // runAction(evaluationContext, event);
+    }
+    catch (IncompatibleThreadStateException ex) {
+      LOG.error(ex);
+      return false;
+    }
+
+    return true;
   }
 }

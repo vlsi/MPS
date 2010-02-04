@@ -16,7 +16,6 @@
 package jetbrains.mps.debug.runtime;
 
 import com.intellij.util.containers.HashMap;
-import com.intellij.openapi.util.Computable;
 import com.sun.jdi.request.*;
 import com.sun.jdi.*;
 import com.sun.jdi.event.ClassPrepareEvent;
@@ -27,12 +26,6 @@ import java.util.Collections;
 import java.util.HashSet;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.debug.BLDebugInfoCache;
-import jetbrains.mps.debug.DebugInfo;
-import jetbrains.mps.debug.PositionInfo;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -51,10 +44,10 @@ public class RequestManager implements DebugProcessListener {
   private final Map<Requestor, Set<EventRequest>> myRequestorToBelongedRequests = new HashMap<Requestor, Set<EventRequest>>();
   private EventRequestManager myEventRequestManager;
 
-  private DebugEventsProcessor myDebugEventsProcessor;
+  private DebugVMEventsProcessor myDebugEventsProcessor;
   private final Map<Requestor, String> myInvalidRequestsAndWarnings = new HashMap<Requestor, String>();
 
-  public RequestManager(DebugEventsProcessor processor) {
+  public RequestManager(DebugVMEventsProcessor processor) {
     myDebugEventsProcessor = processor;
     myDebugEventsProcessor.addDebugProcessListener(this);
   }
@@ -209,37 +202,6 @@ public class RequestManager implements DebugProcessListener {
   //todo: some other types of requests; later
   //------------------- ~requests creation
 
-  //by node
-  public void callbackOnPrepareClasses(final ClassPrepareRequestor requestor, final SNode node) {
-    // DebuggerManagerThreadImpl.assertIsManagerThread();
-
-    String pattern = ModelAccess.instance().runReadAction(new Computable<String>() {
-      @Override
-      public String compute() {
-        final BLDebugInfoCache cache = BLDebugInfoCache.getInstance();
-        SModel model = node.getModel();
-        DebugInfo debugInfo = cache.get(model.getModelDescriptor());
-        PositionInfo positionInfo = debugInfo.getPositionForNode(node.getId());
-        if (positionInfo != null) {
-          String fileName = positionInfo.getFileName();
-          if (fileName.endsWith(".java")) {
-            fileName = fileName.substring(0, fileName.length() - ".java".length());
-          }
-          String result = model.getLongName() + '.' + fileName;
-          return result;
-        } else {
-          //todo invalidate show error
-          return null;
-        }
-      }
-    });
-    //todo maybe consider inner classes
-    if (pattern != null) {
-      ClassPrepareRequest prepareRequest = createClassPrepareRequest(requestor, pattern);
-      registerRequest(requestor, prepareRequest);
-      prepareRequest.enable();
-    }
-  }
 
   //by classname
   public void callbackOnPrepareClasses(ClassPrepareRequestor requestor, String classOrPatternToBeLoaded) {
@@ -303,12 +265,12 @@ public class RequestManager implements DebugProcessListener {
   }
 
   @Override
-  public void processDetached(DebugEventsProcessor process, boolean closedByUser) {
+  public void processDetached(DebugVMEventsProcessor process, boolean closedByUser) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 
   @Override
-  public void processAttached(DebugEventsProcessor process) {
+  public void processAttached(DebugVMEventsProcessor process) {
     //To change body of implemented methods use File | Settings | File Templates.
   }
 

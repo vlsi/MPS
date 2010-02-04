@@ -18,13 +18,14 @@ package jetbrains.mps.debug.runtime;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
+import java.util.HashSet;
 
 import com.sun.jdi.ThreadReference;
 import com.sun.jdi.IncompatibleThreadStateException;
 import com.sun.jdi.StackFrame;
+import com.sun.jdi.ObjectReference;
 import com.sun.jdi.event.EventSet;
 import com.sun.jdi.request.EventRequest;
-import jetbrains.mps.util.annotation.Hack;
 import jetbrains.mps.logging.Logger;
 
 /**
@@ -37,7 +38,7 @@ import jetbrains.mps.logging.Logger;
 public abstract class SuspendContext { //todo: add evaluation and postponed commands - later
   private static final Logger LOG = Logger.getLogger(SuspendContext.class);
 
-   private final DebugEventsProcessor myDebugProcess;
+  private final DebugVMEventsProcessor myDebugProcess;
   private final int mySuspendPolicy;
 
   private ThreadReference myThread;
@@ -53,13 +54,12 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
   // public ConcurrentLinkedQueue<SuspendContextCommandImpl> myPostponedCommands = new ConcurrentLinkedQueue<SuspendContextCommandImpl>();
   public volatile boolean  myInProgress;
 
+  private final Set<ObjectReference> myKeptReferences = new HashSet<ObjectReference>();
 
-  // private final HashSet<ObjectReference>       myKeptReferences = new HashSet<ObjectReference>();
+  //todo - add evaluation context later
+  // private EvaluationContextImpl  myEvaluationContext = null;
 
-  //todo - add evaluation later
-  // private EvaluationContextImpl          myEvaluationContext = null;
-
-  SuspendContext(@NotNull DebugEventsProcessor debugProcess,
+  SuspendContext(@NotNull DebugVMEventsProcessor debugProcess,
                  int suspendPolicy, int eventVotes, EventSet set) {
     myDebugProcess = debugProcess;
     mySuspendPolicy = suspendPolicy;
@@ -69,8 +69,6 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
 
   public void setThread(ThreadReference thread) {
     assertNotResumed();
-    //todo: keep a proxy instead of a thread, if necessary
-    // ThreadReference threadProxy = myDebugProcess.getVirtualMachineProxy().getThreadReferenceProxy(thread);
     LOG.assertLog(myThread == null || myThread == thread);
     myThread = thread;
   }
@@ -81,23 +79,11 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
     assertNotResumed();
     // DebuggerManagerThreadImpl.assertIsManagerThread();
     try {
-   /*   if (!Patches.IBM_JDK_DISABLE_COLLECTION_BUG) {
-        for (ObjectReference objectReference : myKeptReferences) {
-          try {
-            objectReference.enableCollection();
-          }
-          catch (UnsupportedOperationException e) {
-            // ignore: some J2ME implementations does not provide this operation
-          }
-        }
-        myKeptReferences.clear();
-      }*/
-
+      unkeepKeptReferences();
       //todo: postponed commands
-    /*  for(SuspendContextCommandImpl cmd = myPostponedCommands.poll(); cmd != null; cmd = myPostponedCommands.poll()) {
+      /*  for(SuspendContextCommandImpl cmd = myPostponedCommands.poll(); cmd != null; cmd = myPostponedCommands.poll()) {
         cmd.notifyCancelled();
       }*/
-
       resumeImpl();
     }
     finally {
@@ -107,9 +93,9 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
 
   private void assertNotResumed() {
     if (myIsResumed) {
-    //  if (myDebugProcess.isAttached()) {
+      if (myDebugProcess.isAttached()) {
         LOG.assertLog(false, "Cannot access SuspendContext. SuspendContext is resumed.");
-    //  }
+      }
     }
   }
 
@@ -119,7 +105,7 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
     return myEventSet;
   }
 
-  public DebugEventsProcessor getDebugProcess() {
+  public DebugVMEventsProcessor getDebugProcess() {
     assertNotResumed();
     return myDebugProcess;
   }
@@ -143,17 +129,11 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
     return mySuspendPolicy;
   }
 
-  //todo what is this for?
-  @Hack
-  public void doNotResumeHack() {
-    assertNotResumed();
-    myVotesToVote = 1000000000;
-  }
-
   public boolean isExplicitlyResumed(ThreadReference thread) {
     return myResumedThreads != null ? myResumedThreads.contains(thread) : false;
   }
 
+  //if this context suspends a given thread
   public boolean suspends(ThreadReference thread) {
     assertNotResumed();
     /*if(isEvaluating()) {    //todo - add evaluation later
@@ -189,19 +169,30 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
   }*/
 
 
-  /*public void keep(ObjectReference reference) {
-    if (!Patches.IBM_JDK_DISABLE_COLLECTION_BUG) {
-      final boolean added = myKeptReferences.add(reference);
-      if (added) {
-        try {
-          reference.disableCollection();
-        }
-        catch (UnsupportedOperationException e) {
-          // ignore: some J2ME implementations does not provide this operation
-        }
+  //prevents object from collecting; maybe needed for eval?
+  public void keep(ObjectReference reference) {
+    final boolean added = myKeptReferences.add(reference);
+    if (added) {
+      try {
+        reference.disableCollection();
+      }
+      catch (UnsupportedOperationException e) {
+        // ignore: some J2ME implementations does not provide this operation
       }
     }
-  }*/
+  }
+
+  private void unkeepKeptReferences() {
+    for (ObjectReference objectReference : myKeptReferences) {
+      try {
+        objectReference.enableCollection();
+      }
+      catch (UnsupportedOperationException e) {
+        // ignore: some J2ME implementations does not provide this operation
+      }
+    }
+    myKeptReferences.clear();
+  }
 
   //todo: what is a postponed command?
   /*public void postponeCommand(final SuspendContextCommandImpl command) {
