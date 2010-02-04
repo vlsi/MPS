@@ -250,6 +250,10 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     return myProject;
   }
 
+  public ProjectView getProjectView() {
+    return myProjectView;
+  }
+
   public MPSProject getMPSProject() {
     return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
   }
@@ -478,26 +482,12 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     }
   }
 
-  public class MyTree extends MPSTree {
+  public class MyTree extends LogicalViewTree {
     public MyTree() {
-      super();
+      super(ProjectPane.this);
 
       getSelectionModel().setSelectionMode(TreeSelectionModel.DISCONTIGUOUS_TREE_SELECTION);
       scrollsOnExpand = false;
-    }
-
-    public void editNode(final SNode node, IOperationContext context, boolean focus) {
-      boolean select = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-        public Boolean compute() {
-          return !node.isRoot();
-        }
-      });
-      ProjectPane.this.editNode(node, context, focus, select);
-    }
-
-    @Override
-    public boolean isAutoOpen() {
-      return myProjectView.isAutoscrollToSource(ID);
     }
 
     protected MPSTreeNode rebuild() {

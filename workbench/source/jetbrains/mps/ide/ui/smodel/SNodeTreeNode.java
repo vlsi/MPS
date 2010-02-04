@@ -20,9 +20,9 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
+import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -30,7 +30,6 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
 
-import javax.swing.Icon;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import java.awt.Color;
@@ -202,21 +201,21 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   private boolean showPropertiesAndReferences() {
     Project project = getOperationContext().getProject();
-    return getTree() instanceof ProjectPane.MyTree &&
+    return getTree() instanceof LogicalViewTree &&
       ProjectPane.getInstance(project).isShowPropertiesAndReferences();
   }
 
   public void doubleClick() {
-    if (getTree() instanceof ProjectPane.MyTree) {
-      ((ProjectPane.MyTree) getTree()).editNode(myNode, getOperationContext(), true);
+    if (getTree() instanceof LogicalViewTree) {
+      ((LogicalViewTree) getTree()).editNode(myNode, getOperationContext(), true);
     }
   }
 
   @Override
   public void autoscroll() {
     super.autoscroll();
-    if (getTree() instanceof ProjectPane.MyTree) {
-      ((ProjectPane.MyTree) getTree()).editNode(myNode, getOperationContext(), false);
+    if (getTree() instanceof LogicalViewTree) {
+      ((LogicalViewTree) getTree()).editNode(myNode, getOperationContext(), false);
     }
   }
 

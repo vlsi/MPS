@@ -1,6 +1,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
+import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.CopyProvider;
 import com.intellij.ide.PasteProvider;
 import com.intellij.ide.CutProvider;
@@ -45,6 +46,8 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   }
 
   public abstract Project getProject();
+
+  public abstract ProjectView getProjectView();
 
   public Object getData(String dataId) {
     //MPSDK

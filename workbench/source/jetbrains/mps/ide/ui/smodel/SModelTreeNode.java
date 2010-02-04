@@ -26,6 +26,7 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.SortUtil;
+import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
@@ -514,7 +515,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   private boolean showPropertiesAndReferences() {
     Project project = getOperationContext().getProject();
-    return getTree() instanceof ProjectPane.MyTree &&
+    return getTree() instanceof LogicalViewTree &&
       ProjectPane.getInstance(project).isShowPropertiesAndReferences();
   }
 

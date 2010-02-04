@@ -17,6 +17,7 @@ import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
+import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager.MPSFavoritesListener;
 import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
 import jetbrains.mps.smodel.*;
@@ -46,7 +47,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     myFavoritesManager = manager;
     myProjectView = projectView;
     myContext = getMPSProject().createOperationContext();
-    myTree = new MPSTree() {
+    myTree = new LogicalViewTree(FavoritesProjectPane.this) {
       protected MPSTreeNode rebuild() {
         String subId = getSubId();
         TextTreeNode invisibleRoot = new TextTreeNode("", myContext);
@@ -153,5 +154,10 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   @Override
   public Project getProject() {
     return myProject;
+  }
+
+  @Override
+  public ProjectView getProjectView() {
+    return myProjectView;
   }
 }
