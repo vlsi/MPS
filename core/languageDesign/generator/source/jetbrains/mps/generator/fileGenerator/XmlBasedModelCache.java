@@ -44,7 +44,7 @@ public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
       Document doc = JDOMUtil.loadDocument(is);
       return fromXml(doc.getRootElement());
     } catch (JDOMException e) {
-      throw new RuntimeException(e);
+      throw new IOException(e);
     }
   }
 }
