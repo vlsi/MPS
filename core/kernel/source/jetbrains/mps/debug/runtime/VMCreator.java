@@ -46,6 +46,7 @@ public class VMCreator {
   private Map<String, Argument> myArguments;
   private DebugConnectionSettings myConnectionSettings;
   private DebugVMEventsProcessor myDebugVMEventsProcessor;
+  private boolean myIsFailed = false;
 
   //holds listeners before process is executed; then adds them to process handler.
   private final List<ProcessListener> myProcessListeners = new ArrayList<ProcessListener>();
@@ -72,7 +73,7 @@ public class VMCreator {
       synchronized (myProcessListeners) {
         myExecutionResult = state.execute(executor, runner);
         if (myExecutionResult == null) {
-          // fail();
+          fail();
           return null;
         }
         for (ProcessListener processListener : myProcessListeners) {
@@ -81,10 +82,20 @@ public class VMCreator {
         myProcessListeners.clear();
       }
     } catch (ExecutionException e) {
-      // fail();
+      fail();
       throw e;
     }
     return myExecutionResult;
+  }
+
+  private void fail() {
+    synchronized (this) {
+      if (myIsFailed) {
+        return;
+      }
+      myIsFailed = true;
+    }
+    stop(false);
   }
 
 
@@ -112,9 +123,10 @@ public class VMCreator {
         try {
           vm = doCreateVirtualMachine();
           break;
-        }
-        catch (Throwable t) {
+        } catch (Throwable t) {
+          fail();
           LOG.error(t);
+          break;
         }
       }
     }
@@ -172,12 +184,10 @@ public class VMCreator {
           throw new RunFailedException("no debug listen port");
         }
         // negative port number means the caller leaves to debugger to decide at which hport to listen
-        //noinspection HardCodedStringLiteral
         final Connector.Argument portArg = myConnectionSettings.isUseSockets() ? myArguments.get("port") : myArguments.get("name");
         if (portArg != null) {
           portArg.setValue(address);
         }
-        //noinspection HardCodedStringLiteral
         final Connector.Argument timeoutArg = myArguments.get("timeout");
         if (timeoutArg != null) {
           timeoutArg.setValue("0"); // wait forever
@@ -240,6 +250,10 @@ public class VMCreator {
       }
     }
     return null;
+  }
+
+  public void stop(boolean forceTerminate) {
+    //todo impl
   }
 
   public void addProcessListener(ProcessListener processListener) {

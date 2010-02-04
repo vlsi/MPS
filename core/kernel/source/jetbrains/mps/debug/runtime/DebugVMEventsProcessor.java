@@ -42,9 +42,6 @@ public class DebugVMEventsProcessor {
   private DebugProcessMulticaster myMulticaster = new DebugProcessMulticaster();
 
   private Project myProject;
-
-  private List<DebugProcessListener> myListeners = new ArrayList<DebugProcessListener>();
-
   private VirtualMachine myVirtualMachine;
 
   private DebuggerEventThread myEventThread;
@@ -192,11 +189,11 @@ public class DebugVMEventsProcessor {
   }
 
   public void addDebugProcessListener(DebugProcessListener listener) {
-    myListeners.add(listener);
+    myMulticaster.addListener(listener);
   }
 
   public void removeDebugProcessListener(DebugProcessListener listener) {
-    myListeners.remove(listener);
+    myMulticaster.removeListener(listener);
   }
 
 
