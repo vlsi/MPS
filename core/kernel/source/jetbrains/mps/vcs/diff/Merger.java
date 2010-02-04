@@ -499,50 +499,49 @@ public class Merger {
     }
   }
 
-  private void applyNewNodeChange(NewNodeChange c, Map<SNodeId, NewNodeChange> map) {
-    if (myPreviewMode && !myApplyedChanges.contains(c)) {
+  private void applyNewNodeChange(NewNodeChange change, Map<SNodeId, NewNodeChange> affectedNodeToChangeMap) {
+    if (myPreviewMode && !myApplyedChanges.contains(change)) {
       return;
     }
-    if (myExcludedChanges.contains(c) || isChangeUnResolved(c)) {
-      return;
-    }
-
-    if (myResultModel.getNodeById(c.getAffectedNodeId()) != null) {
+    if (myExcludedChanges.contains(change) || isChangeUnResolved(change)) {
       return;
     }
 
-    if (c.getNodeParent() == null) { //i.e. add root
-      boolean result = c.apply(myResultModel);
+    if (myResultModel.getNodeById(change.getAffectedNodeId()) != null) {
+      return;
+    }
+
+    if (change.getNodeParent() == null) { //i.e. add root
+      boolean result = change.apply(myResultModel);
       assert result;
       return;
     }
 
-    if (myResultModel.getNodeById(c.getNodeParent()) == null) {
-      NewNodeChange pChange = map.get(c.getNodeParent());
-      if (pChange != null) {
-        applyNewNodeChange(pChange, map);
+    if (myResultModel.getNodeById(change.getNodeParent()) == null) {
+      NewNodeChange parentNodeChange = affectedNodeToChangeMap.get(change.getNodeParent());
+      if (parentNodeChange != null) {
+        applyNewNodeChange(parentNodeChange, affectedNodeToChangeMap);
       }
 
-      if (myResultModel.getNodeById(c.getNodeParent()) == null) {
-        //we wasn't able to find a parent (probably because it was exluded) so return
+      if (myResultModel.getNodeById(change.getNodeParent()) == null) {
+        //we wasn't able to find a parent (probably because it was excluded) so return
         return;
       }
     }
 
-    if (c instanceof AddNodeChange) {
-      AddNodeChange anc = (AddNodeChange) c;
+    if (change instanceof AddNodeChange) {
+      AddNodeChange addNodeChange = (AddNodeChange) change;
 
-      if (anc.getPreviousNode() != null) {
-        NewNodeChange pChange = map.get(anc.getPreviousNode());
-        assert pChange != null || myResultModel.getNodeById(anc.getPreviousNode()) != null;
-        if (pChange != null) {
-          applyNewNodeChange(pChange, map);
+      if (addNodeChange.getPreviousNode() != null) {
+        NewNodeChange previousNodeChange = affectedNodeToChangeMap.get(addNodeChange.getPreviousNode());
+        if (previousNodeChange != null) {
+          applyNewNodeChange(previousNodeChange, affectedNodeToChangeMap);
         }
       }
     }
 
-    assert myResultModel.getNodeById(c.getAffectedNodeId()) == null;
-    boolean result = c.apply(myResultModel);
+    assert myResultModel.getNodeById(change.getAffectedNodeId()) == null;
+    boolean result = change.apply(myResultModel);
 
     assert result;
   }
