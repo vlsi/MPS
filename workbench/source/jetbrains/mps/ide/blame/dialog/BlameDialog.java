@@ -140,14 +140,14 @@ public class BlameDialog extends BaseDialog {
   }
 
   private String getBuildString() {
-    String build = ApplicationInfo.getInstance().getBuildNumber();
+    String build = ApplicationInfo.getInstance().getBuild().asString();
     return "[build:" + build + "] ";
   }
 
   private String getAdditionalInfo() {
     ApplicationInfo ai = ApplicationInfo.getInstance();
     return "[Build info]\n" +
-      "build number: " + ai.getBuildNumber() + "\n" +
+      "build number: " + ai.getBuild().asString() + "\n" +
       "version name: " + ai.getVersionName() + "\n" +
       "build date: " + ai.getBuildDate().getTime().toString() + "\n";
   }
