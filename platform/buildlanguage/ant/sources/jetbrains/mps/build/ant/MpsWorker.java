@@ -24,6 +24,7 @@ import com.intellij.util.PathUtil;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.plugin.CompilationResult;
 import jetbrains.mps.make.ModuleMaker;
+import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.persistence.def.PersistenceVersionNotFoundException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.IdeMain;
@@ -122,7 +123,7 @@ public abstract class MpsWorker {
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         p.dispose(false);
-        
+
         IdeEventQueue.getInstance().flushQueue();
         System.gc();
       }
@@ -167,20 +168,20 @@ public abstract class MpsWorker {
     info(sb.toString());
     CompilationResult result = ModelAccess.instance().runReadAction(new Computable<CompilationResult>() {
       public CompilationResult compute() {
-        return new ModuleMaker().make(toCompile, new EmptyProgressIndicator() {
-          @Override
-          public void setText2(String text) {
-            info("    " + text);
-          }
-
-          @Override
-          public void setText(String text) {
-            info(text);
-          }
-        });
+        return new ModuleMaker().make(toCompile, new InfoProgressIndicator());
       }
     });
-    info(result.toString());
+    if (!result.isOk()) {
+      error(result.toString());
+      throw new RuntimeException(result.toString());
+    } else {
+      info(result.toString());
+    }
+    if (result.isReloadingNeeded()) {
+      info("Reloading classes...");
+      ClassLoaderManager.getInstance().reloadAll(new InfoProgressIndicator());
+      info("Classes reloaded");
+    }
   }
 
   protected abstract void executeTask(MPSProject project, ObjectsToProcess go);
@@ -488,6 +489,18 @@ public abstract class MpsWorker {
 
     public boolean hasAnythingToGenerate() {
       return !myModels.isEmpty() || !myProjects.isEmpty() || !myModules.isEmpty();
+    }
+  }
+
+  private class InfoProgressIndicator extends EmptyProgressIndicator {
+    @Override
+    public void setText2(String text) {
+      info("    " + text);
+    }
+
+    @Override
+    public void setText(String text) {
+      info(text);
     }
   }
 }
