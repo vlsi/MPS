@@ -23,9 +23,9 @@ import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeUpdater.SNodeTreeListener;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -34,12 +34,16 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import java.awt.Color;
 import java.util.List;
+import java.util.Set;
 
 public class SNodeTreeNode extends MPSTreeNodeEx {
   protected boolean myInitialized = false;
   private SNode myNode;
   private String myRole;
   private Condition<SNode> myCondition = Condition.TRUE_CONDITION;
+  private SNodeTreeUpdater myTreeUpdater;
+  private MyEventsCollector myEventsCollector = new MyEventsCollector();
+  private  MySNodeModelListener mySNodeModelListener = new MySNodeModelListener();
 
   public SNodeTreeNode(SNode node, IOperationContext operationContext) {
     this(node, null, operationContext);
@@ -54,6 +58,37 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     myNode = node;
     myRole = role;
     myCondition = condition;
+    myTreeUpdater = new SNodeTreeUpdater(operationContext, new DependencyRecorder<SNodeTreeNode>(), getTree());
+    myTreeUpdater.addListener(new SNodeTreeListener() {
+      public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
+        DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+        for (SNode removedRoot : removedRoots) {
+          if (removedRoot.equals(getSNode())) {
+            treeModel.removeNodeFromParent(SNodeTreeNode.this);
+          }
+        }
+      }
+
+      public void addAndRemoveVisibleChildren(Set<SNode> removedNodes, Set<SNode> addedNodes) {
+
+      }
+
+      public void updateChangedPresentations(Set<SNode> nodesWithChangedPresentations) {
+
+      }
+
+      public void updateChangedRefs(Set<SNode> nodesWithChangedRefs) {
+
+      }
+
+      public void updateNodesWithChangedPackages(Set<SNode> nodesWithChangedPackages) {
+
+      }
+
+      public void updateAncestorsPresentationInTree() {
+
+      }
+    });
     updatePresentation();
   }
 
@@ -69,6 +104,10 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
   }
 
+  private boolean isWithModelListener() {
+    return getSModelModelTreeNode() == null && getModelDescriptor() != null;
+  }
+
   protected void onAdd() {
     super.onAdd();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -76,11 +115,17 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
         updatePresentation();
       }
     });
+    if (isWithModelListener()) {
+      addListeners();
+    }
   }
 
   protected void onRemove() {
     if (getSModelModelTreeNode() != null) {
       getSModelModelTreeNode().getDependencyRecorder().remove(this);
+    }
+    if (isWithModelListener()) {
+      removeListeners();
     }
     super.onRemove();
   }
@@ -219,6 +264,31 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
   }
 
+  private SModelDescriptor getModelDescriptor() {
+    SNode node = getSNode();
+    if (node == null) return null;
+    SModelDescriptor md = node.getModel().getModelDescriptor();
+    return md;
+  }
+
+  private void addListeners() {
+    if (myEventsCollector == null) return;
+    SModelDescriptor md = getModelDescriptor();
+    if (md == null) return;
+    myEventsCollector.add(md);
+    md.addModelListener(mySNodeModelListener);
+  }
+
+  private void removeListeners() {
+    SModelDescriptor md = getModelDescriptor();
+    if (md == null) return;
+    getModelDescriptor().removeModelListener(mySNodeModelListener);
+    if (myEventsCollector == null) return;
+    myEventsCollector.remove(md);
+    myEventsCollector.dispose();
+    myEventsCollector = null;
+  }
+
   private String caclulateNodeTextPresentation() {
     StringBuffer output = new StringBuffer();
 
@@ -243,5 +313,17 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   public boolean hasErrors() {
     return false;
+  }
+
+  class MyEventsCollector extends EventsCollector {
+    protected void eventsHappened(List<SModelEvent> events) {
+      if (SNodeTreeNode.this.isWithModelListener()) {
+        myTreeUpdater.eventsHappenedInCommand(events);
+      }
+    }
+  }
+
+  class MySNodeModelListener extends SModelAdapter {
+
   }
 }

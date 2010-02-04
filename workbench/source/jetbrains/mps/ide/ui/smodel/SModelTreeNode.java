@@ -631,10 +631,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     return false;
   }
 
-  private void eventsHappenedInCommand(final List<SModelEvent> events) {
-    myTreeUpdater.eventsHappenedInCommand(events);
-  }
-
   private void updateNodesWithChangedPackages(Set<SNode> nodes) {
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
 
@@ -855,7 +851,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
   private class MyEventsCollector extends EventsCollector {
     protected void eventsHappened(List<SModelEvent> events) {
-      eventsHappenedInCommand(events);
+      myTreeUpdater.eventsHappenedInCommand(events);
 // [Dirty implementation of VCS highlighting in editor
 //    }
 //  }
