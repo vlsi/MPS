@@ -107,8 +107,13 @@ public class CellAction_SideTransform extends EditorCellAction {
 
     EditorCell nodeCell = context.getNodeEditorComponent().findNodeCell(node);
     assert nodeCell != null : "can't find cell for node " + node.getId() +  " " + node.getModel();
+    assert node.equals(nodeCell.getSNode()) : "node cell has incorrect node: " + nodeCell.getSNode();
     EditorCell rtHint = nodeCell.getSTHintCell();
-    assert rtHint != null : "can't find RT Hint for cell " + nodeCell + " with node " + node.getId() +  " " + node.getModel();
+    if (rtHint == null) {
+      String anchorCellID = anchorCell.getCellId();
+      EditorCell anchor_Cell = context.getNodeEditorComponent().findCellWithId(node, anchorCellID);
+      assert rtHint != null : "can't find RT Hint for cell " + nodeCell + " with node " + node.getId() +  " " + node.getModel() + " ( anchorCellId = " + anchorCellID + ", anchor_Cell = " + anchor_Cell + ", original anchor cell: " + anchorCell + ")" ;
+    }
     context.getNodeEditorComponent().changeSelection(rtHint);
   }
 }
