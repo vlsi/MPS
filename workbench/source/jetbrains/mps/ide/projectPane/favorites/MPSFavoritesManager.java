@@ -14,6 +14,7 @@ import java.util.*;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
 
 public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable { 
   private static final String ELEMENT_FAVORITES_LIST = "favorites_list";
@@ -132,7 +133,6 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
   public String[] getFavoriteNames() {
     Set<String> favariteNames = new LinkedHashSet<String>();
     favariteNames.addAll(myName2FavoritesRoots.keySet());
-  //  favariteNames.add("Test 123");
     return ArrayUtil.toStringArray(favariteNames);
   }
 

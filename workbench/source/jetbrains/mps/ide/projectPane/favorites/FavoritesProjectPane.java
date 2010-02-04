@@ -1,16 +1,11 @@
 package jetbrains.mps.ide.projectPane.favorites;
 
-import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.SelectInTarget;
-import com.intellij.ide.IdeBundle;
-import com.intellij.ide.util.treeView.AbstractTreeBuilder;
-import com.intellij.ide.favoritesTreeView.FavoritesManager;
 import com.intellij.openapi.util.ActionCallback;
 import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.State;
 import com.intellij.util.ArrayUtil;
@@ -18,24 +13,14 @@ import com.intellij.util.ArrayUtil;
 import javax.swing.*;
 
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.projectPane.NamespaceTextNode;
-import jetbrains.mps.ide.projectPane.ProjectModuleTreeNode;
-import jetbrains.mps.ide.projectPane.SModelsSubtree;
 import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager.MPSFavoritesListener;
-import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
+import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.MPSProjectHolder;
 
 import java.util.List;
@@ -67,28 +52,11 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
         TextTreeNode invisibleRoot = new TextTreeNode("", myContext);
         setRootVisible(false);
         List<Object> objectList = myFavoritesManager.getRoots(subId);
-        // todo: get rid of non-optimal code. Favorite root should be implemented as Generic Class
         if (objectList == null) return invisibleRoot;
         for (Object o : objectList) {
-          if (o instanceof SModelReference) {
-            SModelReference modelReference = (SModelReference) o;
-            SModelDescriptor modelDescriptor = GlobalScope.getInstance().getModelDescriptor(modelReference);
-            if (modelDescriptor == null) continue;
-            SModelTreeNode modelTreeNode = new SModelTreeNode(modelDescriptor, null, myContext);
-            invisibleRoot.add(modelTreeNode);
-          } else if (o instanceof ModuleReference) {
-            ModuleReference moduleReference = (ModuleReference) o;
-            IModule module = MPSModuleRepository.getInstance().getModule(moduleReference);
-            if (module == null) continue;
-            ProjectModuleTreeNode moduleTreeNode = ProjectModuleTreeNode.createFor(getMPSProject(), module);
-            SModelsSubtree.create(moduleTreeNode, myContext);
-            invisibleRoot.add(moduleTreeNode);
-          } else if (o instanceof SNodePointer) {
-            SNodePointer nodePointer = (SNodePointer) o;
-            SNode node = nodePointer.getNode();
-            if (node == null) continue;
-            SNodeTreeNode nodeTreeNode = new SNodeTreeNode(node, myContext);
-          }
+          FavoritesRoot favoritesRoot = FavoritesRoot.createForValue(o);
+          if (favoritesRoot == null) continue;
+          invisibleRoot.add(favoritesRoot.getTreeNode(myContext));
         }
         return invisibleRoot;
       }

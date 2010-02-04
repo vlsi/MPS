@@ -873,6 +873,10 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
   }
 
+  public Object getUserObject() {
+    return myModelDescriptor;
+  }
+
   public static enum GenerationStatus {
     PACKAGED("packaged"),
     DO_NOT_GENERATE("do not generate"),

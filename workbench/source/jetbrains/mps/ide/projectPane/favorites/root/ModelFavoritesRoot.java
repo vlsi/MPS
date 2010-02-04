@@ -1,0 +1,20 @@
+package jetbrains.mps.ide.projectPane.favorites.root;
+
+import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+
+class ModelFavoritesRoot extends FavoritesRoot<SModelReference> {
+  public ModelFavoritesRoot(SModelReference value) {
+    super(value);
+  }
+
+  public MPSTreeNode getTreeNode(IOperationContext context) {
+    SModelDescriptor md = GlobalScope.getInstance().getModelDescriptor(getValue());
+    if (md == null) return null;
+    return new SModelTreeNode(md, null, context);
+  }
+}
