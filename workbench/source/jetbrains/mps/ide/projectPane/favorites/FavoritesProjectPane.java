@@ -35,7 +35,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.MPSProjectHolder;
 
@@ -84,15 +83,11 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
             ProjectModuleTreeNode moduleTreeNode = ProjectModuleTreeNode.createFor(getMPSProject(), module);
             SModelsSubtree.create(moduleTreeNode, myContext);
             invisibleRoot.add(moduleTreeNode);
-          } else if (o instanceof Pair) {
-            Pair<SModelReference, Integer> pair = (Pair<SModelReference, Integer>) o;
-            SModelReference modelReference = pair.o1;
-            Integer indexInModel = pair.o2;
-            SModelDescriptor modelDescriptor = GlobalScope.getInstance().getModelDescriptor(modelReference);
-            if (modelDescriptor == null) continue;
-            SNode node = modelDescriptor.getSModel().getRoots().get(indexInModel);
+          } else if (o instanceof SNodePointer) {
+            SNodePointer nodePointer = (SNodePointer) o;
+            SNode node = nodePointer.getNode();
+            if (node == null) continue;
             SNodeTreeNode nodeTreeNode = new SNodeTreeNode(node, myContext);
-            invisibleRoot.add(nodeTreeNode);
           }
         }
         return invisibleRoot;

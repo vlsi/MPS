@@ -12,6 +12,7 @@ import org.jdom.Element;
 import java.util.*;
 
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
 public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable { 
@@ -20,7 +21,7 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
   private static final String ATTRIBUTE_NAME = "name";
   private static final String MODULE_REFERENCE = "module_ref";
   private static final String SMODEL_REFERENCE = "model_ref";
-  private static final String NUMBER_IN_MODEL = "root_number";
+  private static final String SNODE_POINTER = "node_pointer";
   private final Map<String, List<Object>> myName2FavoritesRoots = new LinkedHashMap<String, List<Object>>();
   private final Project myProject;
   private List<MPSFavoritesListener> myListeners = new ArrayList<MPSFavoritesListener>();
@@ -42,10 +43,10 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
         favoriteRoot.setAttribute(SMODEL_REFERENCE, root.toString());
       } else if (root instanceof ModuleReference) {
         favoriteRoot.setAttribute(MODULE_REFERENCE, root.toString());
-      } else if (root instanceof Pair) {
-        Pair pair = (Pair) root;
-        favoriteRoot.setAttribute(SMODEL_REFERENCE, pair.getFirst().toString());
-        favoriteRoot.setAttribute(NUMBER_IN_MODEL, pair.getSecond().toString());
+      } else if (root instanceof SNodePointer) {
+        SNodePointer nodePointer = (SNodePointer) root;
+        favoriteRoot.setAttribute(SMODEL_REFERENCE, nodePointer.getModelReference().toString());
+        favoriteRoot.setAttribute(SNODE_POINTER, nodePointer.getNodeId().toString());
       }
       element.addContent(favoriteRoot);
     }
@@ -61,15 +62,15 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
         continue;
       }
       final String modelRef = favoriteElement.getAttributeValue(SMODEL_REFERENCE);
-      if (modelRef == null) continue;
-      SModelReference modelReference = SModelReference.fromString(modelRef);
-      final String numberInModelStr = favoriteElement.getAttributeValue(NUMBER_IN_MODEL);
-      if (numberInModelStr == null) {
-        result.add(modelReference);
-      } else {
-        Integer numberInModel = Integer.parseInt(numberInModelStr);
-        Pair<SModelReference, Integer> pair = new Pair<SModelReference, Integer>(modelReference, numberInModel);
-        result.add(pair);
+      if (modelRef != null) {
+        final String nodeId = favoriteElement.getAttributeValue(SNODE_POINTER);
+        if (nodeId == null) {
+          SModelReference modelReference = SModelReference.fromString(modelRef);
+          result.add(modelReference);
+        } else {
+          SNodePointer nodePointer = new SNodePointer(modelRef, nodeId);
+          result.add(nodePointer);
+        }
       }
     }
     return result;
