@@ -22,7 +22,6 @@ class ModuleFavoritesRoot extends FavoritesRoot<ModuleReference> {
     MPSProject mpsProject = context.getProject().getComponent(MPSProjectHolder.class).getMPSProject();
     if (mpsProject == null) return null;
     ProjectModuleTreeNode moduleTreeNode = ProjectModuleTreeNode.createFor(mpsProject, module);
-    SModelsSubtree.create(moduleTreeNode, new ModuleContext(module, mpsProject));
     return moduleTreeNode;
   }
 }

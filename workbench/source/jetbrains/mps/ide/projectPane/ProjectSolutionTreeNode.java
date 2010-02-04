@@ -41,6 +41,10 @@ class ProjectSolutionTreeNode extends ProjectModuleTreeNode {
     updatePresentation();
   }
 
+  public Object getUserObject() {
+    return mySolution;
+  }
+
   protected void updatePresentation() {
     super.updatePresentation();
     setIcon(Icons.SOLUTION_ICON);
