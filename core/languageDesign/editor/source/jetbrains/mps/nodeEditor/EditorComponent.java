@@ -2275,8 +2275,10 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   public void clearNodesCellDependsOn(EditorCell cell, EditorManager editorManager) {
     if (editorManager == EditorManager.getInstanceFromContext(myOperationContext)) {
       myCellsToNodesToDependOnMap.remove(cell);
-      removeOurListeners();
       myCellsToRefTargetsToDependOnMap.remove(cell);
+      if (myRootCell == cell) {
+        removeOurListeners();
+      }
     }
   }
 
