@@ -6,6 +6,7 @@ import jetbrains.mps.ide.projectPane.SModelsSubtree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.MPSModuleRepository;
@@ -21,7 +22,7 @@ class ModuleFavoritesRoot extends FavoritesRoot<ModuleReference> {
     MPSProject mpsProject = context.getProject().getComponent(MPSProjectHolder.class).getMPSProject();
     if (mpsProject == null) return null;
     ProjectModuleTreeNode moduleTreeNode = ProjectModuleTreeNode.createFor(mpsProject, module);
-    SModelsSubtree.create(moduleTreeNode, context);
+    SModelsSubtree.create(moduleTreeNode, new ModuleContext(module, mpsProject));
     return moduleTreeNode;
   }
 }

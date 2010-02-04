@@ -28,7 +28,7 @@ public abstract class FavoritesRoot<T> {
     } else if (userObject instanceof IModule) {
       o = ((IModule) userObject).getModuleReference();
     }
-    if (o != null) createForValue(o);
+    if (o != null) return createForValue(o);
     return null;
   }
 

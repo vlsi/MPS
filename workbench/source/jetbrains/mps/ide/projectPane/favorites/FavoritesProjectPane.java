@@ -149,4 +149,9 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   public String toString() {
     return "Favorites";
   }
+
+  @Override
+  public Project getProject() {
+    return myProject;
+  }
 }

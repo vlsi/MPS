@@ -291,16 +291,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     return myScrollPane;
   }
 
-  protected void editNode(final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
-    ModelAccess.instance().executeCommand(new Runnable() {
-      public void run() {
-        MPSEditorOpener opener = getProject().getComponent(MPSEditorOpener.class);
-        assert opener != null;
-        opener.openNode(node, context, focus, select);
-      }
-    });
-  }
-
   //todo:the same thing for nodes & modules
   protected void onBeforeModelWillBeDeleted(SModelDescriptor sm) {
     selectNextModel(sm);

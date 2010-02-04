@@ -12,11 +12,9 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.ActionPlace;
+import jetbrains.mps.workbench.editors.MPSEditorOpener;
 import jetbrains.mps.workbench.action.ActionUtils;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -45,6 +43,8 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
   protected BaseLogicalViewProjectPane(Project project) {
     super(project);
   }
+
+  public abstract Project getProject();
 
   public Object getData(String dataId) {
     //MPSDK
@@ -210,6 +210,16 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
       }
     }
     return ActionPlace.PROJECT_PANE;
+  }
+
+  protected void editNode(final SNode node, final IOperationContext context, final boolean focus, final boolean select) {
+    ModelAccess.instance().executeCommand(new Runnable() {
+      public void run() {
+        MPSEditorOpener opener = getProject().getComponent(MPSEditorOpener.class);
+        assert opener != null;
+        opener.openNode(node, context, focus, select);
+      }
+    });
   }
 
   protected <T extends TreeNode> List<T> getSelectedTreeNodes(Class<T> nodeClass) {
