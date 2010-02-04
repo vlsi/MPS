@@ -27,6 +27,7 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import jetbrains.mps.ide.projectPane.ProjectModuleTreeNode;
 import jetbrains.mps.ide.projectPane.SModelsSubtree;
+import jetbrains.mps.ide.projectPane.BaseLogicalViewProjectPane;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager.MPSFavoritesListener;
 import jetbrains.mps.ide.projectPane.fileSystem.nodes.ProjectTreeNode;
 import jetbrains.mps.smodel.*;
@@ -49,7 +50,7 @@ import java.util.List;
     )
   }
 )
-public class FavoritesProjectPane extends AbstractProjectViewPane {
+public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   public static final String ID = "Favorites";
   private MPSFavoritesManager myFavoritesManager;
   private MPSFavoritesListener myFavoritesListener;
