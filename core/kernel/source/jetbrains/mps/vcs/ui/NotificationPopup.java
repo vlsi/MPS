@@ -39,7 +39,7 @@ public class NotificationPopup {
     if (frame instanceof IdeFrameImpl){
       frameImpl = (IdeFrameImpl) frame;
     }
-    if (frameImpl == null) {
+    if (frameImpl == null || !frameImpl.isShowing()) {
       final FramelessNotificationPopup popup = new FramelessNotificationPopup(owner, content, backgroud, true, null);
 
       myPopupDecorator = new PopupDecorator() {
