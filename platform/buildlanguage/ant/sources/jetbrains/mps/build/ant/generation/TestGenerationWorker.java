@@ -35,8 +35,6 @@ import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.TestMain;
 
-import java.lang.management.ManagementFactory;
-import java.lang.management.RuntimeMXBean;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 import java.net.MalformedURLException;
@@ -268,19 +266,11 @@ public class TestGenerationWorker extends GeneratorWorker {
   }
 
   private void runTests(List<File> moduleClassPath, TesterGenerationHandler handler, List<SModel> outputModels) {
-    Pair<List<String>, List<String>> testClassesPair = getTestClassesNames(handler, outputModels, createClassLoader(moduleClassPath));
-    boolean mpsLaunch = !testClassesPair.o2.isEmpty();
-    List<String> testClassesNames = testClassesPair.o1;
-    testClassesNames.addAll(testClassesPair.o2);
-
+    List<String> testClassesNames = getTestClassesNames(handler, outputModels, createClassLoader(moduleClassPath));
     if (testClassesNames.isEmpty()) return;
 
     List<String> commandLine = new ArrayList<String>();
     commandLine.add(JavaEnvUtils.getJreExecutable("java"));
-
-    if (mpsLaunch) {
-      commandLine.addAll(new JvmArgs().getArgs());
-    }
 
     final List<File> classPaths = new ArrayList<File>(moduleClassPath);
     classPaths.add(new File(com.intellij.openapi.application.PathManager.getResourceRoot(getClass(), "/" + getClass().getName().replace('.', '/') + ".class")).getAbsoluteFile());
@@ -325,9 +315,8 @@ public class TestGenerationWorker extends GeneratorWorker {
     return new URLClassLoader(classPath.toArray(new URL[classPath.size()]));
   }
 
-  private Pair<List<String>, List<String>> getTestClassesNames(TesterGenerationHandler generationHandler, List<SModel> outputModels, ClassLoader baseClassLoader) {
+  private List<String> getTestClassesNames(TesterGenerationHandler generationHandler, List<SModel> outputModels, ClassLoader baseClassLoader) {
     List<String> testClasses = new ArrayList<String>();
-    List<String> testMpsLaunchClasses = new ArrayList<String>();
 
     for (final SModel model : outputModels) {
       for (final SNode outputRoot : model.getRoots()) {
@@ -354,8 +343,7 @@ public class TestGenerationWorker extends GeneratorWorker {
           final Class testClass = Class.forName(className, true, classLoader);
           if (Modifier.isAbstract(testClass.getModifiers()) || Modifier.isInterface(testClass.getModifiers())) continue;
           if (Modifier.isPrivate(testClass.getModifiers())) continue;
-          boolean mpsLaunch = (testClass.getAnnotation(classLoader.loadClass(MPSLaunch.class.getName())) != null);
-
+          if (testClass.getAnnotation(classLoader.loadClass(MPSLaunch.class.getName())) != null) continue;
 
           Class<TestCase> testCaseClass = (Class<TestCase>) classLoader.loadClass(TestCase.class.getName());
           if (testCaseClass.isAssignableFrom(testClass)) {
@@ -367,11 +355,7 @@ public class TestGenerationWorker extends GeneratorWorker {
               }
             }
             if (hasTestMethods) {
-              if (mpsLaunch) {
-                testMpsLaunchClasses.add(className);
-              } else {
-                testClasses.add(className);
-              }
+              testClasses.add(className);
             }
           }
         } catch (java.lang.ExceptionInInitializerError ignored) {
@@ -381,7 +365,7 @@ public class TestGenerationWorker extends GeneratorWorker {
       }
     }
 
-    return new Pair<List<String>, List<String>>(testClasses, testMpsLaunchClasses);
+    return testClasses;
   }
 
   private boolean isInvokeTestsSet() {
