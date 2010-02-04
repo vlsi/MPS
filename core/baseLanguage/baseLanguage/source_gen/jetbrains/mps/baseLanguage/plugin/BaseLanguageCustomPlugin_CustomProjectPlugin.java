@@ -23,9 +23,7 @@ public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProj
     if (highlighter != null) {
       highlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter);
       highlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer);
-      /*
-        highlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myOverrideMethodsChecker);
-      */
+      highlighter.addChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myOverrideMethodsChecker);
     }
   }
 
@@ -34,9 +32,7 @@ public class BaseLanguageCustomPlugin_CustomProjectPlugin extends BaseCustomProj
     if (highlighter != null) {
       highlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myMethodDeclFixer);
       highlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myToDoHighlighter);
-      /*
-        highlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myOverrideMethodsChecker);
-      */
+      highlighter.removeChecker(BaseLanguageCustomPlugin_CustomProjectPlugin.this.myOverrideMethodsChecker);
     }
   }
 }
