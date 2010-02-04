@@ -57,7 +57,9 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
         for (Object o : objectList) {
           FavoritesRoot favoritesRoot = FavoritesRoot.createForValue(o);
           if (favoritesRoot == null) continue;
-          invisibleRoot.add(favoritesRoot.getTreeNode(myContext));
+          MPSTreeNode newChild = favoritesRoot.getTreeNode(myContext);
+          if (newChild == null) continue;
+          invisibleRoot.add(newChild);
         }
         return invisibleRoot;
       }
