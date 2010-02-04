@@ -176,6 +176,9 @@ public abstract class Macros {
   }
 
   private static String shrink(String path, String prefix) {
+    // since pathStartsWith uses getCanonicalPath
+    // we use it here also
+    path = FileUtil.getCanonicalPath(path);
     assert path.length() >= prefix.length() : "path: " + path + "; prefix: " + prefix;
     String result = path.substring(prefix.length());
 
@@ -193,14 +196,13 @@ public abstract class Macros {
   }
 
   private static boolean pathStartsWith(String path, @NotNull String with) {
+    // shrink uses getCanonicalPath
     path = FileUtil.getCanonicalPath(path);
 
     if (path.equals(with)) return true;
 
     String fullPart = with + (with.endsWith(File.separator) ? "" : File.separator);
-    boolean notCroppedPart = path.toLowerCase().startsWith(fullPart.toLowerCase());
-
-    if (!notCroppedPart) return false;
+    if (!path.toLowerCase().startsWith(fullPart.toLowerCase())) return false;
 
     String pathReplaced = FileUtil.getCanonicalPath(with + path.substring(with.length()));
     boolean sameObjects = path.equals(pathReplaced);
