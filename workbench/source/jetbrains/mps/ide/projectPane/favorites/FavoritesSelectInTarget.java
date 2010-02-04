@@ -10,6 +10,7 @@ public class FavoritesSelectInTarget implements SelectInTarget {
   }
 
   public void selectIn(SelectInContext context, boolean requestFocus) {
+    
   }
 
   public String getToolWindowId() {
@@ -22,5 +23,9 @@ public class FavoritesSelectInTarget implements SelectInTarget {
 
   public float getWeight() {
     return 0;
+  }
+
+  public String toString() {
+    return getMinorViewId();
   }
 }
