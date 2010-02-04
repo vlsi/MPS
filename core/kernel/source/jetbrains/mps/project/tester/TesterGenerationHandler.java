@@ -28,6 +28,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.rmi.RemoteException;
@@ -89,6 +90,7 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
     return myOutputModelRefToRoots != null ? myOutputModelRefToRoots.get(ref) : Collections.<String>emptyList();
   }
 
+  @Nullable
   public String getExtension(SNode outputNode) {
     return TextGenManager.instance().getExtension(outputNode);
   }
@@ -120,7 +122,9 @@ public class TesterGenerationHandler extends InMemoryJavaGenerationHandler {
 
   @Override
   protected String getKey(SModelReference model, SNode root) {
-    return super.getKey(model, root) + "." + getExtension(root);
+    String extension = getExtension(root);
+    String key = super.getKey(model, root);
+    return extension == null ? key : key + "." + extension;
   }
 
   protected String getKey(SModelReference modelReference, String root) {
