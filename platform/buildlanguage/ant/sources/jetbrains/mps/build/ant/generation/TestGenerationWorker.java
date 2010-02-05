@@ -11,25 +11,25 @@ import jetbrains.mps.generator.GenerationAdapter;
 import jetbrains.mps.generator.GenerationListener;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.progress.ITaskProgressHelper;
+import jetbrains.mps.library.Library;
 import jetbrains.mps.project.*;
 import jetbrains.mps.reloading.*;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.AbstractClassLoader;
-import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.PathManager;
+import jetbrains.mps.util.*;
 import junit.framework.*;
 import org.apache.tools.ant.ProjectComponent;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.util.JavaEnvUtils;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
+import org.jdom.Document;
+import org.jdom.Element;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.structure.project.testconfigurations.BaseTestConfiguration;
 import jetbrains.mps.project.structure.project.ProjectDescriptor;
 import jetbrains.mps.project.tester.TesterGenerationHandler;
 import jetbrains.mps.project.tester.DiffReporter;
 import jetbrains.mps.generator.GeneratorManager;
-import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.genconf.GenParameters;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.vfs.MPSExtentions;
@@ -147,12 +147,31 @@ public class TestGenerationWorker extends GeneratorWorker {
     }
   }
 
+  @Override
+  protected void startMake(Set<Library> compiledLibraries, Set<IModule> toCompile) {
+    myBuildServerMessageFormat.formatTestStart(myBuildServerMessageFormat.escapeBuildMessage("make " + compiledLibraries));
+    super.startMake(compiledLibraries, toCompile);
+  }
+
+  @Override
+  protected void finishMake(Set<Library> compiledLibraries, @NotNull jetbrains.mps.plugin.CompilationResult result) {
+    String testName = myBuildServerMessageFormat.escapeBuildMessage("make " + compiledLibraries);
+    if (!result.isOk()) {
+      myBuildServerMessageFormat.formatTestFailure(testName, "Compilation Errors", result.toString());
+    }
+    myBuildServerMessageFormat.formatTestFinish(testName);
+  }
+
   public IBuildServerMessageFormat getBuildServerMessageFormat() {
-    if (myWhatToDo.getProperty("teamcity.version") != null) {
+    if (isRunningOnTeamCity()) {
       return new TeamCityMessageFormat();
     } else {
       return new ConsoleMessageFormat();
     }
+  }
+
+  private boolean isRunningOnTeamCity() {
+    return myWhatToDo.getProperty("teamcity.version") != null;
   }
 
   @Override

@@ -154,7 +154,7 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
       try {
         int i = exe.execute();
         if (i != 0) {
-          throw new BuildException("Process exited with code " + i + ".");
+          processNonZeroExitCode(i);
         }
       } catch (IOException e) {
         log(e, Project.MSG_ERR);
@@ -195,6 +195,10 @@ public abstract class MpsLoadTask extends org.apache.tools.ant.Task {
         throw new BuildException(e);
       }
     }
+  }
+
+  private void processNonZeroExitCode(int i) {
+    throw new BuildException("Process exited with code " + i + ".");
   }
 
   private void dumpPropertiesToWhatToDo() {

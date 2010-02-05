@@ -51,6 +51,7 @@ import org.apache.log4j.Logger;
 import org.apache.log4j.varia.NullAppender;
 import org.apache.tools.ant.Project;
 import org.apache.tools.ant.ProjectComponent;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.SwingUtilities;
 import java.io.File;
@@ -158,6 +159,32 @@ public abstract class MpsWorker {
       });
     }
     if (toCompile.isEmpty()) return;
+
+    startMake(myCompiledLibraries, toCompile);
+
+    CompilationResult result = null;
+    try {
+      result = ModelAccess.instance().runReadAction(new Computable<CompilationResult>() {
+        public CompilationResult compute() {
+          return new ModuleMaker().make(toCompile, new InfoProgressIndicator());
+        }
+      });
+    } catch (Throwable t) {
+      log(t);
+    }
+
+    if (result != null) {
+      finishMake(myCompiledLibraries, result);
+
+      if (result.isReloadingNeeded()) {
+        info("Reloading classes...");
+        ClassLoaderManager.getInstance().reloadAll(new InfoProgressIndicator());
+        info("Classes reloaded");
+      }
+    }
+  }
+
+  protected void startMake(Set<Library> compiledLibraries, Set<IModule> toCompile) {
     info("Starting compilation:");
     StringBuffer sb = new StringBuffer();
     for (IModule m : toCompile) {
@@ -166,21 +193,14 @@ public abstract class MpsWorker {
       sb.append("\n");
     }
     info(sb.toString());
-    CompilationResult result = ModelAccess.instance().runReadAction(new Computable<CompilationResult>() {
-      public CompilationResult compute() {
-        return new ModuleMaker().make(toCompile, new InfoProgressIndicator());
-      }
-    });
+  }
+
+  protected void finishMake(Set<Library> compiledLibraries, @NotNull CompilationResult result) {
     if (!result.isOk()) {
       error(result.toString());
       throw new RuntimeException(result.toString());
     } else {
       info(result.toString());
-    }
-    if (result.isReloadingNeeded()) {
-      info("Reloading classes...");
-      ClassLoaderManager.getInstance().reloadAll(new InfoProgressIndicator());
-      info("Classes reloaded");
     }
   }
 
