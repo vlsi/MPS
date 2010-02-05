@@ -308,6 +308,7 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1572321421811416493" />
     </node>
   </node>
+  <visible index="3" modelUID="r:e05dc49b-f130-4a79-a52f-8bddeacd3610(jetbrains.mps.gwt.client.behavior)" />
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="1572321421811416509">
     <link role="conceptDeclaration:32" targetNodeId="1.1572321421811299552:0" resolveInfo="Inherits" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="1572321421811416511">
@@ -317,9 +318,21 @@
       <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_RefCell:32" id="1572321421811416517">
         <link role="relationDeclaration:32" targetNodeId="1.1572321421811299553:0" />
         <node role="editorComponent:32" type="jetbrains.mps.lang.editor.structure.InlineEditorComponent:32" id="1572321421811416518">
-          <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Property:32" id="1572321421811416520">
-            <property name="readOnly:32" value="true" />
-            <link role="relationDeclaration:32" targetNodeId="2v.1169194664001:0" resolveInfo="name" />
+          <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ReadOnlyModelAccessor:32" id="3710764346182472728">
+            <node role="modelAccessor:32" type="jetbrains.mps.lang.editor.structure.ReadOnlyModelAccessor:32" id="3710764346182472729">
+              <node role="getter:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter:32" id="3710764346182472730">
+                <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3710764346182472731">
+                  <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="3710764346182546694">
+                    <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3710764346182546696">
+                      <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="3710764346182546695" />
+                      <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="3710764346182568060">
+                        <link role="baseMethodDeclaration:16" targetNodeId="3v.1572321421814401058" resolveInfo="getLogicalName" />
+                      </node>
+                    </node>
+                  </node>
+                </node>
+              </node>
+            </node>
           </node>
         </node>
       </node>

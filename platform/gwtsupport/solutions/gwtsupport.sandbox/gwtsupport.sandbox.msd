@@ -3,6 +3,14 @@
   <models>
     <modelRoot path="${solution_descriptor}/" namespacePrefix="" />
   </models>
+  <stubModelEntries>
+    <stubModelEntry path="/opt/gwt/2.0/gwt-dev.jar" include="false">
+      <manager moduleId="954c4d77-e24b-4e49-a5a5-5476c966c092" className="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="/opt/gwt/gwt-2.0.0/gwt-user.jar" include="false">
+      <manager moduleId="954c4d77-e24b-4e49-a5a5-5476c966c092" className="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
+    </stubModelEntry>
+  </stubModelEntries>
   <classPath />
   <sourcePath />
   <usedLanguages>
