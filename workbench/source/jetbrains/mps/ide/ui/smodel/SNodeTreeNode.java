@@ -299,7 +299,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   class MyEventsCollector extends EventsCollector {
     protected void eventsHappened(List<SModelEvent> events) {
       if (myTreeUpdater == null) return;
-      if (SNodeTreeNode.this.isWithModelListener()) {
+      if (SNodeTreeNode.this.isWithModelListener() || getSNode().getContainingRoot() == null) {
         myTreeUpdater.eventsHappenedInCommand(events);
       }
     }
