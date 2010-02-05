@@ -19,6 +19,7 @@ import com.intellij.execution.runners.DefaultProgramRunner;
 import com.intellij.execution.configurations.RunProfile;
 import com.intellij.execution.configurations.RunConfiguration;
 import com.intellij.execution.Executor;
+import com.intellij.execution.executors.DefaultRunExecutor;
 import com.intellij.openapi.options.SettingsEditor;
 import com.intellij.openapi.options.ConfigurationException;
 import org.jetbrains.annotations.NotNull;
@@ -33,6 +34,6 @@ public class MPSProgramRunner extends DefaultProgramRunner {
   }
 
   public boolean canRun(@NotNull String executorId, @NotNull RunProfile profile) {
-    return true;
+    return executorId.equals(DefaultRunExecutor.EXECUTOR_ID);
   }
 }

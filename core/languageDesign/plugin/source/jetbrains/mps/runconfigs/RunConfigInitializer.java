@@ -27,6 +27,7 @@ import com.intellij.execution.impl.ExecutionManagerImpl;
 import com.intellij.execution.runners.ProgramRunner;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.runconfigs.runner.MPSProgramRunner;
+import jetbrains.mps.debug.integration.MPSDebugRunner;
 
 public class RunConfigInitializer implements ApplicationComponent {
 
@@ -48,6 +49,7 @@ public class RunConfigInitializer implements ApplicationComponent {
 
     ExtensionPoint<ProgramRunner> epRunner = Extensions.getArea(null).getExtensionPoint(ProgramRunner.PROGRAM_RUNNER_EP);
     epRunner.registerExtension(new MPSProgramRunner());
+    epRunner.registerExtension(new MPSDebugRunner());
     RunnerRegistry.getInstance().initComponent();
   }
 
