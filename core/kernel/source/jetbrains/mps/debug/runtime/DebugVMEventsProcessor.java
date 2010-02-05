@@ -52,12 +52,12 @@ public class DebugVMEventsProcessor {
   protected static final int STATE_DETACHED  = 3;
   protected final AtomicInteger myState = new AtomicInteger(STATE_INITIAL);
 
-  public DebugVMEventsProcessor(Project p) {
+  public DebugVMEventsProcessor(Project p, VMCreator vmCreator) {
     myProject = p;
     myBreakpointManager = p.getComponent(BreakpointManager.class);
     myRequestManager = new RequestManager(this);
     mySuspendManager = new SuspendManager(this);
-    myVMCreator = new VMCreator(this);
+    myVMCreator = vmCreator;
   }
 
   public void commitVM(VirtualMachine vm) {

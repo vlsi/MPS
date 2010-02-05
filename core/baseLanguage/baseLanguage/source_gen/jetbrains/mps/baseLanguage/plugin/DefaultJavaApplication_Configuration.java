@@ -35,6 +35,7 @@ import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.baseLanguage.util.plugin.run.RunUtil;
 import java.util.Collections;
 import jetbrains.mps.baseLanguage.util.plugin.run.ClassRunner;
+import com.intellij.execution.executors.DefaultDebugExecutor;
 import com.intellij.openapi.util.Disposer;
 import jetbrains.mps.ide.actions.DefaultProcessHandler;
 import com.intellij.execution.ui.ExecutionConsole;
@@ -133,6 +134,9 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
           }
 
           final ClassRunner classRunner = new ClassRunner();
+          if (executor.getId().equals(DefaultDebugExecutor.EXECUTOR_ID)) {
+            // todo add debug params here 
+          }
 
           ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), consoleView.createConsoleActions())));
           consoleComponent = consoleView.getComponent();

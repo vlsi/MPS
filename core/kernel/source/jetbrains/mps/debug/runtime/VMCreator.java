@@ -16,6 +16,7 @@ import com.intellij.execution.Executor;
 import com.intellij.execution.ExecutionException;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.RunProfileState;
+import com.intellij.openapi.project.Project;
 
 import java.io.IOException;
 import java.util.Map;
@@ -24,6 +25,7 @@ import java.util.Iterator;
 import java.util.ArrayList;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.ide.ThreadUtils;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -53,20 +55,20 @@ public class VMCreator {
 
   private ExecutionResult myExecutionResult;
 
-  public VMCreator(DebugVMEventsProcessor processor) {
-    myDebugVMEventsProcessor = processor;
+  public VMCreator(Project p) {
+    myDebugVMEventsProcessor = new DebugVMEventsProcessor(p, this);
   }
 
   @Nullable
   public ExecutionResult attachVirtualMachine(final Executor executor,
                                               final ProgramRunner runner,
                                               final RunProfileState state,
-                                              //   final RemoteConnection remoteConnection,
-                                              boolean pollConnection) throws ExecutionException {
-    // ApplicationManager.getApplication().assertIsDispatchThread();
+                                              DebugConnectionSettings settings
+                                             ) throws ExecutionException {
+    assert ThreadUtils.isEventDispatchThread() : "must be called from EDT only";
     // LOG.assertTrue(isInInitialState());
 
-    // myConnection = remoteConnection;
+    myConnectionSettings = settings;
 
     createVirtualMachine();
     try {
