@@ -50,8 +50,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     myTree = new LogicalViewTree(FavoritesProjectPane.this) {
       protected MPSTreeNode rebuild() {
         String subId = getSubId();
-        TextTreeNode invisibleRoot = new TextTreeNode("", myContext);
-        setRootVisible(false);
+        TextTreeNode invisibleRoot = new TextTreeNode(subId == null? "Favorites" : subId);
         List<Object> objectList = myFavoritesManager.getRoots(subId);
         if (objectList == null) return invisibleRoot;
         for (Object o : objectList) {
