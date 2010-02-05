@@ -83,7 +83,7 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
     // DebuggerManagerThreadImpl.assertIsManagerThread();
 
     // check is this breakpoint is enabled, vm reference is valid and there're no requests created yet
-    if (!myIsEnabled || !debugProcess.isAttached() || debugProcess.getRequestManager().findRequests(this).isEmpty()) {
+    if (!myIsEnabled /*|| !debugProcess.isAttached() || debugProcess.getRequestManager().findRequests(this).isEmpty()*/) {
       return;
     }
 
@@ -118,7 +118,6 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
       return;
     }
     createRequestForPreparedClass(debugProcess, classType);
-    // updateUI(); todo this is probably not needed since UI is updated from breakpoints manager
   }
 
   public int getLineIndexInClass() {
@@ -160,8 +159,6 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
     } catch(Exception ex) {
       LOG.error(ex);
     }
-    // updateUI(); todo this is probably not needed since UI is updated from breakpoints manager
-
   }
 
   public static class BreakpointInfo {

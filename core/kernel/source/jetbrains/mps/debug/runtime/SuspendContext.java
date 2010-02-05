@@ -45,19 +45,13 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
   boolean myIsVotedForResume = true;
 
   protected int myVotesToVote;
-  protected Set<ThreadReference> myResumedThreads;
 
   private final EventSet myEventSet;
   private volatile boolean  myIsResumed;
 
-  //todo - review postponed later
-  // public ConcurrentLinkedQueue<SuspendContextCommandImpl> myPostponedCommands = new ConcurrentLinkedQueue<SuspendContextCommandImpl>();
   public volatile boolean  myInProgress;
 
   private final Set<ObjectReference> myKeptReferences = new HashSet<ObjectReference>();
-
-  //todo - add evaluation context later
-  // private EvaluationContextImpl  myEvaluationContext = null;
 
   SuspendContext(@NotNull DebugVMEventsProcessor debugProcess,
                  int suspendPolicy, int eventVotes, EventSet set) {
@@ -79,14 +73,8 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
     assertNotResumed();
     // DebuggerManagerThreadImpl.assertIsManagerThread();
     try {
-      unkeepKeptReferences();
-      //todo: postponed commands
-      /*  for(SuspendContextCommandImpl cmd = myPostponedCommands.poll(); cmd != null; cmd = myPostponedCommands.poll()) {
-        cmd.notifyCancelled();
-      }*/
       resumeImpl();
-    }
-    finally {
+    } finally {
       myIsResumed = true;
     }
   }
@@ -129,82 +117,19 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
     return mySuspendPolicy;
   }
 
-  public boolean isExplicitlyResumed(ThreadReference thread) {
-    return myResumedThreads != null ? myResumedThreads.contains(thread) : false;
-  }
-
   //if this context suspends a given thread
   public boolean suspends(ThreadReference thread) {
     assertNotResumed();
-    /*if(isEvaluating()) {    //todo - add evaluation later
-      return false;
-    }*/
     switch(getSuspendPolicy()) {
       case EventRequest.SUSPEND_ALL:
-        return !isExplicitlyResumed(thread);
+        return true;
       case EventRequest.SUSPEND_EVENT_THREAD:
         return thread == getThread();
     }
     return false;
   }
 
-
   public boolean isResumed() {
     return myIsResumed;
   }
-
-  //todo - add evaluation later
-  /*public boolean isEvaluating() {
-    assertNotResumed();
-    return myEvaluationContext != null;
-  }
-
-  public EvaluationContextImpl getEvaluationContext() {
-    return myEvaluationContext;
-  }
-
-  public void setIsEvaluating(EvaluationContextImpl evaluationContext) {
-    assertNotResumed();
-    myEvaluationContext = evaluationContext;
-  }*/
-
-
-  //prevents object from collecting; maybe needed for eval?
-  public void keep(ObjectReference reference) {
-    final boolean added = myKeptReferences.add(reference);
-    if (added) {
-      try {
-        reference.disableCollection();
-      }
-      catch (UnsupportedOperationException e) {
-        // ignore: some J2ME implementations does not provide this operation
-      }
-    }
-  }
-
-  private void unkeepKeptReferences() {
-    for (ObjectReference objectReference : myKeptReferences) {
-      try {
-        objectReference.enableCollection();
-      }
-      catch (UnsupportedOperationException e) {
-        // ignore: some J2ME implementations does not provide this operation
-      }
-    }
-    myKeptReferences.clear();
-  }
-
-  //todo: what is a postponed command?
-  /*public void postponeCommand(final SuspendContextCommandImpl command) {
-    if (!isResumed()) {
-      myPostponedCommands.add(command);
-    }
-    else {
-      command.notifyCancelled();
-    }
-  }
-
-  public SuspendContextCommandImpl pollPostponedCommand() {
-    return myPostponedCommands.poll();
-  }*/
 }

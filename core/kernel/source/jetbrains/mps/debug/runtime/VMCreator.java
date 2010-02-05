@@ -129,8 +129,7 @@ public class VMCreator {
           break;
         }
       }
-    }
-    finally {
+    } finally {
       semaphore.up();
     }
 
@@ -212,14 +211,11 @@ public class VMCreator {
         throw new UnsupportedOperationException("not implemented");
       }
 
-    }
-    catch (IOException e) {
+    } catch (IOException e) {
       throw new RunFailedException(e);
-    }
-    catch (IllegalConnectorArgumentsException e) {
+    } catch (IllegalConnectorArgumentsException e) {
       throw new RunFailedException(e);
-    }
-    finally {
+    }    finally {
       myArguments = null;
     }
   }

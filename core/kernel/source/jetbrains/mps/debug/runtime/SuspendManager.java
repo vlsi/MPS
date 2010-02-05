@@ -37,14 +37,12 @@ public class SuspendManager {
 
 
   private final LinkedList<SuspendContext> myEventContexts  = new LinkedList<SuspendContext>();
+
   // contexts, paused at breakpoint or another debugger event requests. Note that thread, explicitly paused by user is not considered as
   // "paused at breakpoint" and JDI prohibits data queries on its stackframes
   private final LinkedList<SuspendContext> myPausedContexts = new LinkedList<SuspendContext>();
-  private final Set<ThreadReference> myFrozenThreads  = Collections.synchronizedSet(new HashSet<ThreadReference>());
 
   private final DebugVMEventsProcessor myDebugProcess;
-
-  public int suspends = 0;
 
   public SuspendManager(DebugVMEventsProcessor debugProcess) {
     myDebugProcess = debugProcess;
@@ -52,50 +50,8 @@ public class SuspendManager {
       public void processDetached(DebugVMEventsProcessor process, boolean closedByUser) {
         myEventContexts.clear();
         myPausedContexts.clear();
-        myFrozenThreads.clear();
       }
     });
-  }
-
-  public SuspendContext pushSuspendContext(final int suspendPolicy, int nVotes) {
-    SuspendContext suspendContext = new SuspendContext(myDebugProcess, suspendPolicy, nVotes, null) {
-      protected void resumeImpl() {
-        switch(getSuspendPolicy()) {
-          case EventRequest.SUSPEND_ALL:
-            int resumeAttempts = 5;
-            while (--resumeAttempts > 0) {
-              try {
-                myDebugProcess.getVirtualMachine().resume();
-                break;
-              }
-              catch (InternalException e) {
-                //InternalException 13 means that there are running threads that we are trying to resume
-                //On MacOS it happened that native thread didn't stop while some java thread reached breakpoint
-                if (/*Patches.MAC_RESUME_VM_HACK && */e.errorCode() == 13) {
-                  //Its funny, but second resume solves the problem
-                  continue;
-                }
-                else {
-                  LOG.error(e);
-                  break;
-                }
-              }
-            }
-            //now VM is resumed
-
-            break;
-          case EventRequest.SUSPEND_EVENT_THREAD:
-            //resuming one thread
-            this.getThread().resume();
-            break;
-          case EventRequest.SUSPEND_NONE:
-            //none resumed
-            break;
-        }
-      }
-    };
-    pushContext(suspendContext);
-    return suspendContext;
   }
 
   public SuspendContext pushSuspendContext(final EventSet set) {
@@ -144,12 +100,9 @@ public class SuspendManager {
   private void pushContext(SuspendContext suspendContext) {
     // DebuggerManagerThreadImpl.assertIsManagerThread();
     myEventContexts.addFirst(suspendContext);
-    suspends++;
   }
 
   public void resume(SuspendContext context) {
-    SuspendManager.prepareForResume(context);
-    int suspendPolicy = context.getSuspendPolicy();
     context.resume();
     popContext(context);
   }
@@ -159,7 +112,6 @@ public class SuspendManager {
   }
 
   public void popContext(SuspendContext suspendContext) {
-    suspends--;
     //  DebuggerManagerThreadImpl.assertIsManagerThread();
     myEventContexts.remove(suspendContext);
     myPausedContexts.remove(suspendContext);
@@ -180,64 +132,17 @@ public class SuspendManager {
     return myEventContexts;
   }
 
-  public boolean isFrozen(ThreadReference thread) {
-    return myFrozenThreads.contains(thread);
-  }
-
   public boolean isSuspended(ThreadReference thread) throws ObjectCollectedException{
     // DebuggerManagerThreadImpl.assertIsManagerThread();
 
     boolean suspended = false;
-
-    if (isFrozen(thread)) {
-      suspended = true;
-    }
-    else {
       for (SuspendContext suspendContext : myEventContexts) {
         if (suspendContext.suspends(thread)) {
           suspended = true;
           break;
         }
       }
-    }
-
-    //todo ATTENTION!
-    //bug in JDI : newly created thread may be resumed even when suspendPolicy == SUSPEND_ALL
-   /* if(suspended) {
-      LOG.assertLog(thread.suspends(), thread.name());
-    }*/
     return suspended && (thread == null || thread.isSuspended());
-  }
-
-  public void suspendThread(SuspendContext context, ThreadReference thread) {
-    LOG.assertLog(thread != context.getThread(), "Thread is already suspended at the breakpoint");
-    if(context.isExplicitlyResumed(thread)) {
-      context.myResumedThreads.remove(thread);
-      thread.suspend();
-    }
-  }
-
-  public void resumeThread(SuspendContext context, ThreadReference thread) {
-    LOG.assertLog(thread != context.getThread(), "Use resume() instead of resuming breakpoint thread");
-    LOG.assertLog(!context.isExplicitlyResumed(thread));
-
-    if(context.myResumedThreads == null) {
-      context.myResumedThreads = new HashSet<ThreadReference>();
-    }
-    context.myResumedThreads.add(thread);
-    thread.resume();
-  }
-
-  public void freezeThread(ThreadReference thread) {
-    if (myFrozenThreads.add(thread)) {
-      thread.suspend();
-    }
-  }
-
-  public void unfreezeThread(ThreadReference thread) {
-    if (myFrozenThreads.remove(thread)) {
-      thread.resume();
-    }
   }
 
   private void processVote(SuspendContext suspendContext) {
@@ -256,8 +161,7 @@ public class SuspendManager {
 
   public void notifyPaused(SuspendContext suspendContext) {
     pushPausedContext(suspendContext);
-    //todo fire event
-    // myDebugProcess.myDebugProcessDispatcher.getMulticaster().paused(suspendContext);
+    myDebugProcess.getMulticaster().paused(suspendContext);
   }
 
   public void voteResume(SuspendContext suspendContext) {
@@ -273,21 +177,4 @@ public class SuspendManager {
     return myPausedContexts;
   }
 
-
-  public static void prepareForResume(SuspendContext context) {
-    SuspendManager suspendManager = context.getDebugProcess().getSuspendManager();
-    ThreadReference thread = context.getThread();
-
-    if(suspendManager.isFrozen(thread)) {
-      suspendManager.unfreezeThread(thread);
-    }
-
-    if(context.myResumedThreads != null) {
-      for (ThreadReference resumedThread : context.myResumedThreads) {
-        resumedThread.suspend();
-      }
-      context.myResumedThreads = null;
-    }
-
-  }
 }

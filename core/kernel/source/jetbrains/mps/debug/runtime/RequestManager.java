@@ -87,9 +87,9 @@ public class RequestManager implements DebugProcessListener {
   public void deleteRequest(Requestor requestor) {
     // DebuggerManagerThreadImpl.assertIsManagerThread();
 
-//     if(!myDebugEventsProcessor.isAttached()) {        //todo create method isAttached()
-//      return;
-//    }
+    if(!myDebugEventsProcessor.isAttached()) {
+      return;
+    }
     final Set<EventRequest> requests = myRequestorToBelongedRequests.remove(requestor);
     if(requests == null) {
       return;
@@ -115,88 +115,27 @@ public class RequestManager implements DebugProcessListener {
         // request is already deleted
       }
       catch (InternalException e) {
-        // if (e.errorCode() == 41) {
-        //event request not found
-        //there could be no requests after hotswap
-        // }
-        //  else {
         LOG.error(e);
-        //  }
       }
     }
   }
 
-  private void addLocatableRequest(Requestor requestor, EventRequest request) {
-    //  if(DebuggerSettings.SUSPEND_ALL.equals(requestor.SUSPEND_POLICY)) {
-    request.setSuspendPolicy(EventRequest.SUSPEND_ALL);
-    // }
-//    else {
-    //when requestor.SUSPEND_POLICY == SUSPEND_NONE
-    //we should pause thread in order to evaluate conditions
-    //    request.setSuspendPolicy(EventRequest.SUSPEND_EVENT_THREAD);
-    //  }
-
-    //   if (requestor.COUNT_FILTER_ENABLED) {
-    //     request.addCountFilter(requestor.COUNT_FILTER);
-    //   }
-
-    //todo: here many filters are added. add them later, now we need only basic functionality.
-
-    /*  if (requestor.CLASS_FILTERS_ENABLED) {
-      ClassFilter[] classFilters = requestor.getClassFilters();
-      for (final ClassFilter filter : classFilters) {
-        if (!filter.isEnabled()) {
-          continue;
-        }
-        final JVMName jvmClassName = ApplicationManager.getApplication().runReadAction(new Computable<JVMName>() {
-          public JVMName compute() {
-            PsiClass psiClass =
-              DebuggerUtilsEx.findClass(filter.getPattern(), myDebugProcess.getProject(), myDebugProcess.getSearchScope());
-            if (psiClass == null) {
-              return null;
-            }
-            return JVMNameUtil.getJVMQualifiedName(psiClass);
-          }
-        });
-        String pattern = filter.getPattern();
-        try {
-          if (jvmClassName != null) {
-            pattern = jvmClassName.getName(myDebugProcess);
-          }
-        }
-        catch (EvaluateException e) {
-        }
-
-        addClassFilter(request, pattern);
-      }
-
-      final ClassFilter[] iclassFilters = requestor.getClassExclusionFilters();
-      for (ClassFilter filter : iclassFilters) {
-        if (filter.isEnabled()) {
-          addClassExclusionFilter(request, filter.getPattern());
-        }
-      }
-    }*/
-
-    registerRequestInternal(requestor, request);
-  }
-
 
   //------------------- requests creation
-  public ClassPrepareRequest createClassPrepareRequest(ClassPrepareRequestor requestor, String pattern) {
+  private ClassPrepareRequest createClassPrepareRequest(ClassPrepareRequestor requestor, String className) {
     ClassPrepareRequest classPrepareRequest = myEventRequestManager.createClassPrepareRequest();
     classPrepareRequest.setSuspendPolicy(EventRequest.SUSPEND_EVENT_THREAD);
-    classPrepareRequest.addClassFilter(pattern);
-    classPrepareRequest.putProperty(CLASS_NAME, pattern);
+    classPrepareRequest.addClassFilter(className);
+    classPrepareRequest.putProperty(CLASS_NAME, className);
     registerRequestInternal(requestor, classPrepareRequest);
     return classPrepareRequest;
   }
 
-  public BreakpointRequest createBreakpointRequest(Requestor requestor, Location location) {
-    //todo: more precise requestor type - FilteredRequestor
+  public BreakpointRequest createBreakpointRequest(MPSBreakpoint requestor, Location location) {
     // DebuggerManagerThreadImpl.assertIsManagerThread();
     BreakpointRequest req = myEventRequestManager.createBreakpointRequest(location);
-    addLocatableRequest(requestor, req);
+    req.setSuspendPolicy(EventRequest.SUSPEND_ALL);
+    registerRequestInternal(requestor, req);
     return req;
   }
   //todo: some other types of requests; later
@@ -207,33 +146,16 @@ public class RequestManager implements DebugProcessListener {
   public void callbackOnPrepareClasses(ClassPrepareRequestor requestor, String classOrPatternToBeLoaded) {
     // DebuggerManagerThreadImpl.assertIsManagerThread();
     ClassPrepareRequest classPrepareRequest = createClassPrepareRequest(requestor, classOrPatternToBeLoaded);
-    registerRequest(requestor, classPrepareRequest);
     classPrepareRequest.enable();
   }
 
    //currently does no much more than request.enable()
    public void enableRequest(EventRequest request) {
     // DebuggerManagerThreadImpl.assertIsManagerThread();
-    LOG.assertLog(findRequestor(request) != null);
-    try {
-      //todo what's filter thread? nevermind.
-     /* final ThreadReference filterThread = myFilterThread;
-      if (filterThread != null) {
-        if (request instanceof BreakpointRequest) {
-          ((BreakpointRequest)request).addThreadFilter(filterThread);
-        }
-        else if (request instanceof MethodEntryRequest) {
-          ((MethodEntryRequest)request).addThreadFilter(filterThread);
-        }
-        else if (request instanceof MethodExitRequest) {
-          ((MethodExitRequest)request).addThreadFilter(filterThread);
-        }
-      }*/
+      LOG.assertLog(findRequestor(request) != null);
       request.enable();
-    } catch (InternalException e) {
-      LOG.error(e);
-    }
-  }
+   }
+
 
    public void setInvalid(Requestor requestor, String message) {
   //  DebuggerManagerThreadImpl.assertIsManagerThread();
@@ -271,14 +193,13 @@ public class RequestManager implements DebugProcessListener {
 
   @Override
   public void processAttached(DebugVMEventsProcessor process) {
-    //To change body of implemented methods use File | Settings | File Templates.
+    //todo implement: create all breakpoints' class prepare requests
   }
 
   public void processClassPrepared(final ClassPrepareEvent event) {
-//    if (!myDebugEventsProcessor.isAttached()) {
-//      return;
-//    }
-
+    if (!myDebugEventsProcessor.isAttached()) {
+      return;
+    }
     final ReferenceType refType = event.referenceType();
 
     if (refType instanceof ClassType || refType instanceof InterfaceType) {

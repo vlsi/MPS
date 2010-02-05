@@ -111,8 +111,7 @@ public class DebugVMEventsProcessor {
 
                 final SuspendContext suspendContext = mySuspendManager.pushSuspendContext(eventSet);
 
-                for (EventIterator eventIterator = eventSet.eventIterator(); eventIterator.hasNext(); ) {
-                  final Event event = eventIterator.nextEvent();
+                for (Event event : eventSet) {
                   try {
                     //todo processing different event kinds here
                  /*   if (event instanceof VMStartEvent) {
@@ -135,6 +134,8 @@ public class DebugVMEventsProcessor {
                     }*/
                     else if (event instanceof LocatableEvent) {
                       processLocatableEvent(suspendContext, (LocatableEvent)event);
+                    } else {
+                      mySuspendManager.voteResume(suspendContext);
                     }
                   /*  else if (event instanceof ClassUnloadEvent){
                       processDefaultEvent(suspendContext);
@@ -205,10 +206,8 @@ public class DebugVMEventsProcessor {
     // DebuggerManagerThreadImpl.assertIsManagerThread();
     LOG.assertLog(!isAttached());
     if(myState.compareAndSet(STATE_INITIAL, STATE_ATTACHED)) { //here we change an atomic state from initial to attached
-      // init some states, fire events
-      /*DebuggerManagerEx.getInstanceEx(getProject()).getBreakpointManager().setInitialBreakpointsState();
-      myDebugProcessDispatcher.getMulticaster().processAttached(this);*/
-
+      //DebuggerManagerEx.getInstanceEx(getProject()).getBreakpointManager().setInitialBreakpointsState();
+      myMulticaster.processAttached(this);
       //show some info etc
     }
   }
@@ -231,7 +230,6 @@ public class DebugVMEventsProcessor {
   private void processLocatableEvent(SuspendContext suspendContext, final LocatableEvent event) {
     ThreadReference thread = event.thread();
     LOG.assertLog(thread.isSuspended());
-
     preprocessEvent(suspendContext, thread);
 
     //we use schedule to allow processing other events during processing this one
