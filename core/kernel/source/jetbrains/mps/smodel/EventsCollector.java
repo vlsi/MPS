@@ -165,63 +165,62 @@ public class EventsCollector {
     }
 
     private void fireCommandStarted(CommandEvent e) {
-      synchronized (myLock) {
-        for (CommandListener l : myListeners) {
-          try {
-            l.commandStarted(e);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
+      for (CommandListener l : getCommandListeners()) {
+        try {
+          l.commandStarted(e);
+        } catch (Throwable t) {
+          LOG.error(t);
         }
       }
     }
 
     private void fireBeforeCommandFinished(CommandEvent e) {
-      synchronized (myLock) {
-        for (CommandListener l : myListeners) {
-          try {
-            l.beforeCommandFinished(e);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
+      for (CommandListener l : getCommandListeners()) {
+        try {
+          l.beforeCommandFinished(e);
+        } catch (Throwable t) {
+          LOG.error(t);
         }
       }
     }
 
     private void fireCommandFinished(CommandEvent e) {
-      synchronized (myLock) {
-        for (CommandListener l : myListeners) {
-          try {
-            l.commandFinished(e);
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
+      for (CommandListener l : getCommandListeners()) {
+        try {
+          l.commandFinished(e);
+        } catch (Throwable t) {
+          LOG.error(t);
         }
       }
     }
 
     private void fireUndoTransparentActionStarted() {
-      synchronized (myLock) {
-        for (CommandListener l : myListeners) {
-          try {
-            l.undoTransparentActionStarted();
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
+      for (CommandListener l : getCommandListeners()) {
+        try {
+          l.undoTransparentActionStarted();
+        } catch (Throwable t) {
+          LOG.error(t);
         }
       }
     }
 
     private void fireUndoTransparentActionFinished() {
-      synchronized (myLock) {
-        for (CommandListener l : myListeners) {
-          try {
-            l.undoTransparentActionFinished();
-          } catch (Throwable t) {
-            LOG.error(t);
-          }
+      for (CommandListener l : getCommandListeners()) {
+        try {
+          l.undoTransparentActionFinished();
+        } catch (Throwable t) {
+          LOG.error(t);
         }
       }
+    }
+
+    private CommandListener[] getCommandListeners() {
+      CommandListener[] result;
+      synchronized (myLock) {
+        result = new CommandListener[myListeners.size()];
+        result = myListeners.toArray(result);
+      }
+      return result;
     }
 
     private class MyListener implements CommandListener {
