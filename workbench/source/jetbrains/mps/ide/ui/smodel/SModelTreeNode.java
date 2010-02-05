@@ -29,7 +29,6 @@ import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeUpdater.SNodeTreeListener;
 import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
@@ -113,7 +112,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myNodesCondition = condition;
     myCountAdditionalNamePart = countNamePart;
     myTreeUpdater = new SNodeTreeUpdater(operationContext, myDependencyRecorder, getTree());
-    myTreeUpdater.addListener(new SNodeTreeListener() {
+    myTreeUpdater.addListener(new SNodeTreeListener(this) {
+      public boolean showPropertiesAndReferences() {
+        return SModelTreeNode.this.showPropertiesAndReferences();
+      }
+
       public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
         SModelTreeNode.this.addAndRemoveRoots(removedRoots, addedRoots);
       }
@@ -132,10 +135,6 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 
       public void updateNodesWithChangedPackages(Set<SNode> nodesWithChangedPackages) {
         SModelTreeNode.this.updateNodesWithChangedPackages(nodesWithChangedPackages);
-      }
-
-      public void updateAncestorsPresentationInTree() {
-        SModelTreeNode.this.updateAncestorsPresentationInTree();
       }
     });
 

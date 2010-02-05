@@ -23,7 +23,6 @@ import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeUpdater.SNodeTreeListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.CollectionUtil;
@@ -42,8 +41,8 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   private String myRole;
   private Condition<SNode> myCondition = Condition.TRUE_CONDITION;
   private SNodeTreeUpdater myTreeUpdater;
-  private MyEventsCollector myEventsCollector = new MyEventsCollector();
-  private  MySNodeModelListener mySNodeModelListener = new MySNodeModelListener();
+  private MyEventsCollector myEventsCollector;
+  private  MySNodeModelListener mySNodeModelListener;
 
   public SNodeTreeNode(SNode node, IOperationContext operationContext) {
     this(node, null, operationContext);
@@ -58,37 +57,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     myNode = node;
     myRole = role;
     myCondition = condition;
-    myTreeUpdater = new SNodeTreeUpdater(operationContext, new DependencyRecorder<SNodeTreeNode>(), getTree());
-    myTreeUpdater.addListener(new SNodeTreeListener() {
-      public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
-        DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-        for (SNode removedRoot : removedRoots) {
-          if (removedRoot.equals(getSNode())) {
-            treeModel.removeNodeFromParent(SNodeTreeNode.this);
-          }
-        }
-      }
-
-      public void addAndRemoveVisibleChildren(Set<SNode> removedNodes, Set<SNode> addedNodes) {
-
-      }
-
-      public void updateChangedPresentations(Set<SNode> nodesWithChangedPresentations) {
-
-      }
-
-      public void updateChangedRefs(Set<SNode> nodesWithChangedRefs) {
-
-      }
-
-      public void updateNodesWithChangedPackages(Set<SNode> nodesWithChangedPackages) {
-
-      }
-
-      public void updateAncestorsPresentationInTree() {
-
-      }
-    });
     updatePresentation();
   }
 
@@ -116,6 +84,31 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       }
     });
     if (isWithModelListener()) {
+      myEventsCollector = new MyEventsCollector();
+      mySNodeModelListener = new MySNodeModelListener();
+      myTreeUpdater = new SNodeTreeUpdater(getOperationContext(), new DependencyRecorder<SNodeTreeNode>(), getTree());
+      myTreeUpdater.addListener(new SNodeTreeListener(this) {
+        public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
+          DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+          for (SNode removedRoot : removedRoots) {
+            if (removedRoot.equals(getSNode())) {
+              treeModel.removeNodeFromParent(SNodeTreeNode.this);
+            }
+          }
+        }
+
+        public void addAndRemoveVisibleChildren(Set<SNode> removedNodes, Set<SNode> addedNodes) {
+        }
+
+        public void updateChangedPresentations(Set<SNode> nodesWithChangedPresentations) {
+        }
+
+        public void updateChangedRefs(Set<SNode> nodesWithChangedRefs) {
+        }
+
+        public void updateNodesWithChangedPackages(Set<SNode> nodesWithChangedPackages) {
+        }
+      });
       addListeners();
     }
   }
