@@ -1,15 +1,13 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
+import com.intellij.ide.projectView.impl.ProjectViewImpl;
 import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.CopyProvider;
 import com.intellij.ide.PasteProvider;
 import com.intellij.ide.CutProvider;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.actionSystem.DataContext;
-import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
@@ -60,6 +58,8 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.io.File;
+
+import org.jetbrains.annotations.Nullable;
 
 public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane {
   private MyCommandListener myCommandListener = new MyCommandListener();
@@ -170,6 +170,32 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
     removeListeners();
     myDisposed = true;
+  }
+
+  public boolean isShowPropertiesAndReferences() {
+    return getProjectView().isShowMembers(getId());
+  }
+
+  public void addToolbarActions(final DefaultActionGroup group) {
+    ToggleAction myPAndRToggle = new ToggleAction("Show properties and references", "Show properties and references", Icons.PROP_AND_REF) {
+      public boolean isSelected(@Nullable AnActionEvent e) {
+        return isShowPropertiesAndReferences();
+      }
+
+      public void setSelected(@Nullable AnActionEvent e, boolean state) {
+        if (state != isShowPropertiesAndReferences()) {
+          if (getProjectView() instanceof ProjectViewImpl) {
+            ((ProjectViewImpl) getProjectView()).setShowMembers(state, getId());
+          }
+          ModelAccess.instance().runReadInEDT(new Runnable() {
+            public void run() {
+              rebuild();
+            }
+          });
+        }
+      }
+    };
+    group.add(myPAndRToggle);
   }
 
   protected void removeListeners() {

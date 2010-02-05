@@ -13,6 +13,9 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
+import com.intellij.ide.projectView.ProjectView;
+import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
+import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 
 public class AddToFavorites_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -67,7 +70,13 @@ public class AddToFavorites_Action extends GeneratedAction {
       if (favoritesManager == null) {
         return;
       }
-      favoritesManager.addRoots(AddToFavorites_Action.this.name, FavoritesUtil.getObjects(AddToFavorites_Action.this.treeNodes));
+      List<Object> toMove = FavoritesUtil.getObjects(AddToFavorites_Action.this.treeNodes);
+      ProjectView projectView = ProjectView.getInstance(AddToFavorites_Action.this.project);
+      AbstractProjectViewPane pane = projectView.getCurrentProjectViewPane();
+      if (pane instanceof FavoritesProjectPane) {
+        favoritesManager.removeRoots(pane.getSubId(), toMove);
+      }
+      favoritesManager.addRoots(AddToFavorites_Action.this.name, toMove);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddToFavorites", t);

@@ -13,6 +13,9 @@ import javax.swing.tree.TreeNode;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
+import com.intellij.ide.projectView.ProjectView;
+import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
+import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import com.intellij.openapi.ui.Messages;
@@ -38,7 +41,13 @@ public class AddToNewFavoritesList_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      this.enable(event.getPresentation());
+      {
+        ProjectView projectView = ProjectView.getInstance(AddToNewFavoritesList_Action.this.project);
+        AbstractProjectViewPane pane = projectView.getCurrentProjectViewPane();
+        if (pane instanceof FavoritesProjectPane) {
+          event.getPresentation().setText("Send to New Favorites List");
+        }
+      }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action doUpdate method failed. Action:" + "AddToNewFavoritesList", t);
@@ -76,7 +85,13 @@ public class AddToNewFavoritesList_Action extends GeneratedAction {
         }
       });
       favoritesManager.addNewFavoritesList(name);
-      favoritesManager.addRoots(name, FavoritesUtil.getObjects(AddToNewFavoritesList_Action.this.treeNodes));
+      ProjectView projectView = ProjectView.getInstance(AddToNewFavoritesList_Action.this.project);
+      AbstractProjectViewPane pane = projectView.getCurrentProjectViewPane();
+      List<Object> toMove = FavoritesUtil.getObjects(AddToNewFavoritesList_Action.this.treeNodes);
+      if (pane instanceof FavoritesProjectPane) {
+        favoritesManager.removeRoots(pane.getSubId(), toMove);
+      }
+      favoritesManager.addRoots(name, toMove);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "AddToNewFavoritesList", t);

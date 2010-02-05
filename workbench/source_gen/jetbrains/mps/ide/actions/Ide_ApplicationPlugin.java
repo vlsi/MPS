@@ -20,7 +20,7 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     String moduleName = "jetbrains.mps.ide";
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.AbstractFileActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.AccessoriesGroupActions_ActionGroup");
-    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.AddToFavoritesGtoup_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.AddToFavoritesGroup_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Bookmarks_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Breakpoints_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Build_ActionGroup");
@@ -30,6 +30,8 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.EditorInternal_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.EditorPopup_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.EditorTabActions_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.FavoritesPopupWrapper_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.FavoritesPopup_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Favorites_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.FileActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.FileSystemNewActions_ActionGroup");

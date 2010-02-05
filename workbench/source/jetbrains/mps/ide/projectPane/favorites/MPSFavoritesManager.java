@@ -147,6 +147,12 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
     onListChanged(name);
   }
 
+  public void removeRoots(String name, List<Object> roots) {
+    if (!myName2FavoritesRoots.containsKey(name)) return;
+    myName2FavoritesRoots.get(name).remove(roots);
+    onListChanged(name);
+  }
+
   public void addListener(MPSFavoritesListener listener) {
     myListeners.add(listener);
   }

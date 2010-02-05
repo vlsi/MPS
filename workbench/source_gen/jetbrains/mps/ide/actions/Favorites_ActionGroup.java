@@ -8,16 +8,17 @@ import jetbrains.mps.logging.Logger;
 public class Favorites_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Favorites_ActionGroup.class);
   public static final String ID = "jetbrains.mps.ide.actions.Favorites";
-  public static final String LABEL_ID_addToFavorites = ID + "addToFavorites";
+  public static final String LABEL_ID_popup = ID + "popup";
 
   public Favorites_ActionGroup() {
-    super("Add to Favorites", ID);
+    super("Favorites", ID);
     this.setIsInternal(false);
-    this.setPopup(true);
+    this.setPopup(false);
     try {
-      Favorites_ActionGroup.this.addAnchor(Favorites_ActionGroup.LABEL_ID_addToFavorites);
-      Favorites_ActionGroup.this.addSeparator();
-      Favorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddToNewFavoritesList_Action", "jetbrains.mps.ide");
+      Favorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RenameFavoritesList_Action", "jetbrains.mps.ide");
+      Favorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.RemoveFromFavorites_Action", "jetbrains.mps.ide");
+      Favorites_ActionGroup.this.addAction("jetbrains.mps.ide.actions.DeleteFavoritesList_Action", "jetbrains.mps.ide");
+      Favorites_ActionGroup.this.addAnchor(Favorites_ActionGroup.LABEL_ID_popup);
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

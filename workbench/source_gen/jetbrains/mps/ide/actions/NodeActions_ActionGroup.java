@@ -53,6 +53,7 @@ public class NodeActions_ActionGroup extends GeneratedActionGroup {
       NodeActions_ActionGroup.this.addAction("jetbrains.mps.ide.actions.ShowErrorMessage_Action", "jetbrains.mps.ide");
       NodeActions_ActionGroup.this.addSeparator();
       NodeActions_ActionGroup.this.addAnchor(NodeActions_ActionGroup.LABEL_ID_favorites);
+      NodeActions_ActionGroup.this.addSeparator();
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

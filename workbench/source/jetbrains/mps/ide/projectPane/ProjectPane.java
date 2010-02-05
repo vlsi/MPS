@@ -189,28 +189,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     getProject().getComponent(FileEditorManager.class).addFileEditorManagerListener(myEditorListener);
   }
 
-  public void addToolbarActions(final DefaultActionGroup group) {
-    ToggleAction myPAndRToggle = new ToggleAction("Show properties and references", "Show properties and references", Icons.PROP_AND_REF) {
-      public boolean isSelected(@Nullable AnActionEvent e) {
-        return isShowPropertiesAndReferences();
-      }
-
-      public void setSelected(@Nullable AnActionEvent e, boolean state) {
-        if (state != isShowPropertiesAndReferences()) {
-          if (myProjectView instanceof ProjectViewImpl) {
-            ((ProjectViewImpl) myProjectView).setShowMembers(state, ID);
-          }
-          ModelAccess.instance().runReadInEDT(new Runnable() {
-            public void run() {
-              getTree().rebuildNow();
-            }
-          });
-        }
-      }
-    };
-    group.add(myPAndRToggle);
-  }
-
   @Hack
   public static ProjectPane getInstance(Project project) {
     final ProjectView projectView = ProjectView.getInstance(project);
@@ -274,10 +252,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
 
   public JComponent getComponent() {
     return myScrollPane;
-  }
-
-  public boolean isShowPropertiesAndReferences() {
-    return myProjectView.isShowMembers(ID);
   }
 
   public void openEditor() {
