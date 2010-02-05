@@ -74,7 +74,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   }
 
   private boolean isWithModelListener() {
-    return getSModelModelTreeNode() == null && getModelDescriptor() != null;
+    return getSModelModelTreeNode() == null && getModelDescriptor() != null && getSNode().isRoot();
   }
 
   protected void onAdd() {
@@ -85,6 +85,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       }
     });
     if (isWithModelListener()) {
+      if (myEventsCollector != null) return;
       myEventsCollector = new MyEventsCollector();
       mySNodeModelListener = new SimpleModelListener(this) {
         public void updateTreeNodePresentation() {
