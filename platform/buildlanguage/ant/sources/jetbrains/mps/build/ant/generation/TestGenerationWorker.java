@@ -149,7 +149,7 @@ public class TestGenerationWorker extends GeneratorWorker {
 
   @Override
   protected void startMake(Set<Library> compiledLibraries, Set<IModule> toCompile) {
-    myBuildServerMessageFormat.formatTestStart(myBuildServerMessageFormat.escapeBuildMessage("make " + compiledLibraries));
+    System.out.println(myBuildServerMessageFormat.formatTestStart(myBuildServerMessageFormat.escapeBuildMessage("make " + compiledLibraries)));
     super.startMake(compiledLibraries, toCompile);
   }
 
@@ -157,9 +157,9 @@ public class TestGenerationWorker extends GeneratorWorker {
   protected void finishMake(Set<Library> compiledLibraries, @NotNull jetbrains.mps.plugin.CompilationResult result) {
     String testName = myBuildServerMessageFormat.escapeBuildMessage("make " + compiledLibraries);
     if (!result.isOk()) {
-      myBuildServerMessageFormat.formatTestFailure(testName, "Compilation Errors", result.toString());
+      System.out.println(myBuildServerMessageFormat.formatTestFailure(testName, "Compilation Errors", result.toString()));
     }
-    myBuildServerMessageFormat.formatTestFinish(testName);
+    System.out.println(myBuildServerMessageFormat.formatTestFinish(testName));
   }
 
   public IBuildServerMessageFormat getBuildServerMessageFormat() {
