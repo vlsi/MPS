@@ -14,7 +14,6 @@ import java.util.*;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Pair;
-import com.sun.istack.internal.NotNull;
 
 public class SNodeTreeUpdater {
   private Project myProject;
