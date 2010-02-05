@@ -11,13 +11,24 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
+import com.intellij.openapi.vfs.VirtualFileManagerListener;
+import com.intellij.openapi.command.CommandProcessor;
+import com.intellij.openapi.command.CommandAdapter;
+import com.intellij.openapi.command.CommandEvent;
+import com.intellij.openapi.fileEditor.FileEditorManager;
+import com.intellij.openapi.fileEditor.FileEditorManagerAdapter;
+import com.intellij.openapi.fileEditor.FileEditorManagerEvent;
+import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.workbench.ActionPlace;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
+import jetbrains.mps.workbench.editors.MPSFileNodeEditor;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
@@ -30,24 +41,75 @@ import jetbrains.mps.ide.actions.CutNode_Action;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.reloading.ReloadListener;
+import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.generator.GeneratorManager;
+import jetbrains.mps.generator.GenerationListener;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.nodeEditor.EditorComponent;
 
 import javax.swing.tree.TreeNode;
 import javax.swing.tree.TreePath;
+import javax.swing.JTree;
+import javax.swing.JComponent;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.io.File;
 
 public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane {
+  private MyCommandListener myCommandListener = new MyCommandListener();
+  private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryAdapter();
+  private VirtualFileManagerListener myRefreshListener = new RefreshListener();
+  private boolean myNeedRebuild = false;
+  private MyModuleRepositoryListener myRepositoryListener = new MyModuleRepositoryListener();
+  protected boolean myDisposed;
+
+  private ReloadListener myReloadListener = new ReloadAdapter() {
+    public void onAfterReload() {
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          rebuild();
+        }
+      });
+    }
+  };
+
+  private GenerationListener myGenerationListener = new GenerationListener() {
+    public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+
+    }
+
+    public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+    }
+
+    public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
+      // rebuild tree in case of 'cancel' too (need to get 'transient models' node rebuilt)
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          rebuild();
+        }
+      });
+    }
+  };
+
   protected BaseLogicalViewProjectPane(Project project) {
     super(project);
   }
 
   public abstract Project getProject();
 
+  public abstract MPSProject getMPSProject();
+
   public abstract ProjectView getProjectView();
+
+  public abstract void rebuild();
+
+  public abstract void selectNextModel(SModelDescriptor md);
 
   public Object getData(String dataId) {
     //MPSDK
@@ -84,6 +146,52 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
     //not found
     return null;
   }
+
+  public boolean isDisposed() {
+    return myDisposed;
+  }
+
+  @Override
+  public JComponent createComponent() {
+    ProjectView projectView = getProjectView();
+    if (projectView == null) return null;
+    AbstractProjectViewPane currentProjectView = projectView.getCurrentProjectViewPane();
+    if (currentProjectView == null) return null;
+    currentProjectView.dispose();
+    return null;
+  }
+
+  //todo:the same thing for nodes & modules
+  protected void onBeforeModelWillBeDeleted(SModelDescriptor sm) {
+    selectNextModel(sm);
+  }
+
+  public void dispose() {
+    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
+    removeListeners();
+    myDisposed = true;
+  }
+
+  protected void removeListeners() {
+    if (getMPSProject() != null) {
+      SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
+      CommandProcessor.getInstance().removeCommandListener(myCommandListener);
+      MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
+      getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
+      VirtualFileManager.getInstance().removeVirtualFileManagerListener(myRefreshListener);
+    }
+  }
+
+  protected void addListeners() {
+    VirtualFileManager.getInstance().addVirtualFileManagerListener(myRefreshListener);
+    SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
+    CommandProcessor.getInstance().addCommandListener(myCommandListener);
+    MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
+    getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
+    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
+  }
+
+
 
   public SNode getSelectedSNode() {
     MPSTreeNodeEx selectedTreeNode = getSelectedTreeNode(MPSTreeNodeEx.class);
@@ -343,6 +451,62 @@ public abstract class BaseLogicalViewProjectPane extends AbstractProjectViewPane
 
     public boolean isCutVisible(DataContext dataContext) {
       return true;
+    }
+  }
+
+  private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
+    public void moduleAdded(IModule module) {
+      myNeedRebuild = true;
+    }
+
+    public void moduleRemoved(IModule module) {
+      myNeedRebuild = true;
+    }
+  }
+
+  private class MyCommandListener extends CommandAdapter {
+    public void commandStarted(CommandEvent event) {
+      myNeedRebuild = false;
+    }
+
+    public void commandFinished(CommandEvent event) {
+      if (myNeedRebuild) {
+        JTree tree = getTree();
+        if (tree instanceof MPSTree) {
+          ((MPSTree) tree).rebuildLater();
+        }
+        myNeedRebuild = false;
+      }
+    }
+  }
+
+    //----listeners----
+
+  private class MyModelRepositoryAdapter extends SModelRepositoryAdapter {
+    public void modelRepositoryChanged() {
+      myNeedRebuild = true;
+    }
+
+    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
+      onBeforeModelWillBeDeleted(modelDescriptor);
+    }
+  }
+
+  //----copy-paste----
+
+  private class RefreshListener implements VirtualFileManagerListener {
+    public void beforeRefreshStart(boolean asynchonous) {
+
+    }
+
+    public void afterRefreshFinish(boolean asynchonous) {
+      if (myNeedRebuild) {
+        JTree tree = getTree();
+        if (tree instanceof MPSTree) {
+          ((MPSTree) tree).rebuildLater();
+        }
+        myNeedRebuild = false;
+      }
     }
   }
 }

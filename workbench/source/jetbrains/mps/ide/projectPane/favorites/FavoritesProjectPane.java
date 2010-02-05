@@ -94,8 +94,21 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     getTree().rebuildLater();
   }
 
-  private MPSProject getMPSProject() {
+  public MPSProject getMPSProject() {
     return myProject.getComponent(MPSProjectHolder.class).getMPSProject();
+  }
+
+  public void rebuild() {
+    ModelAccess.instance().runReadInEDT(new Runnable() {
+      public void run() {
+        if (isDisposed()) return;
+        getTree().rebuildNow();
+      }
+    });
+  }
+
+  public void selectNextModel(SModelDescriptor md) {
+    // todo: (after remove)
   }
 
   public String getTitle() {
@@ -112,6 +125,7 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public JComponent createComponent() {
+    super.createComponent();
     getTree().rebuildLater();
     return new JScrollPane(myTree);
   }

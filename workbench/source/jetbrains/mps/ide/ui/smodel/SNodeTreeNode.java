@@ -23,6 +23,8 @@ import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeUpdater;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeListener;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.CollectionUtil;
@@ -33,7 +35,6 @@ import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeNode;
 import java.awt.Color;
 import java.util.List;
-import java.util.Set;
 
 public class SNodeTreeNode extends MPSTreeNodeEx {
   protected boolean myInitialized = false;
@@ -42,7 +43,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   private Condition<SNode> myCondition = Condition.TRUE_CONDITION;
   private SNodeTreeUpdater myTreeUpdater;
   private MyEventsCollector myEventsCollector;
-  private  MySNodeModelListener mySNodeModelListener;
+  private  SimpleModelListener mySNodeModelListener;
 
   public SNodeTreeNode(SNode node, IOperationContext operationContext) {
     this(node, null, operationContext);
@@ -85,30 +86,15 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     });
     if (isWithModelListener()) {
       myEventsCollector = new MyEventsCollector();
-      mySNodeModelListener = new MySNodeModelListener();
-      myTreeUpdater = new SNodeTreeUpdater(getOperationContext(), new DependencyRecorder<SNodeTreeNode>(), getTree());
-      myTreeUpdater.addListener(new SNodeTreeListener(this) {
-        public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
-          DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-          for (SNode removedRoot : removedRoots) {
-            if (removedRoot.equals(getSNode())) {
-              treeModel.removeNodeFromParent(SNodeTreeNode.this);
-            }
-          }
+      mySNodeModelListener = new SimpleModelListener(this) {
+        public void updateTreeNodePresentation() {
+          SNodeTreeNode.this.updatePresentation();
         }
-
-        public void addAndRemoveVisibleChildren(Set<SNode> removedNodes, Set<SNode> addedNodes) {
-        }
-
-        public void updateChangedPresentations(Set<SNode> nodesWithChangedPresentations) {
-        }
-
-        public void updateChangedRefs(Set<SNode> nodesWithChangedRefs) {
-        }
-
-        public void updateNodesWithChangedPackages(Set<SNode> nodesWithChangedPackages) {
-        }
-      });
+      };
+      if (!getModelDescriptor().isReadOnly()) {
+        myTreeUpdater = new SNodeTreeUpdater(getOperationContext().getProject());
+        myTreeUpdater.addListener(new SNodeTreeListener(this));
+      }
       addListeners();
     }
   }
@@ -280,6 +266,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     myEventsCollector.remove(md);
     myEventsCollector.dispose();
     myEventsCollector = null;
+    myTreeUpdater = null;
   }
 
   private String caclulateNodeTextPresentation() {
@@ -310,13 +297,10 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   class MyEventsCollector extends EventsCollector {
     protected void eventsHappened(List<SModelEvent> events) {
+      if (myTreeUpdater == null) return;
       if (SNodeTreeNode.this.isWithModelListener()) {
         myTreeUpdater.eventsHappenedInCommand(events);
       }
     }
-  }
-
-  class MySNodeModelListener extends SModelAdapter {
-
   }
 }

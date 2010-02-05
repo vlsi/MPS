@@ -105,12 +105,6 @@ import java.util.List;
 )
 public class ProjectPane extends BaseLogicalViewProjectPane {
   private static final Logger LOG = Logger.getLogger(ProjectPane.class);
-
-  private SModelRepositoryListener mySModelRepositoryListener = new MyModelRepositoryAdapter();
-  private MyCommandListener myCommandListener = new MyCommandListener();
-  private MyModuleRepositoryListener myRepositoryListener = new MyModuleRepositoryListener();
-  private boolean myNeedRebuild = false;
-  private boolean myDisposed;
   private ProjectModulesPoolTreeNode myModulesPool;
   private ProjectView myProjectView;
   private ProjectTreeFindHelper myFindHelper = new ProjectTreeFindHelper() {
@@ -128,37 +122,9 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   };
 
   private MyScrollPane myScrollPane;
-  private VirtualFileManagerListener myRefreshListener = new RefreshListener();
 
   public static final String ID = ProjectViewPane.ID;
 
-  private ReloadListener myReloadListener = new ReloadAdapter() {
-    public void onAfterReload() {
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        public void run() {
-          rebuild();
-        }
-      });
-    }
-  };
-
-  private GenerationListener myGenerationListener = new GenerationListener() {
-    public void beforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
-
-    }
-
-    public void modelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
-    }
-
-    public void afterGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
-      // rebuild tree in case of 'cancel' too (need to get 'transient models' node rebuilt)
-      ModelAccess.instance().runReadInEDT(new Runnable() {
-        public void run() {
-          rebuild();
-        }
-      });
-    }
-  };
   private FileEditorManagerAdapter myEditorListener = new FileEditorManagerAdapter() {
     public void selectionChanged(FileEditorManagerEvent event) {
       FileEditor fileEditor = event.getNewEditor();
@@ -207,6 +173,20 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
         }
       });
     }
+  }
+
+  @Override
+  protected void removeListeners() {
+    super.removeListeners();
+    if (getMPSProject() != null) {
+      getProject().getComponent(FileEditorManager.class).removeFileEditorManagerListener(myEditorListener);  
+    }
+  }
+
+  @Override
+  protected void addListeners() {
+    super.addListeners();
+    getProject().getComponent(FileEditorManager.class).addFileEditorManagerListener(myEditorListener);
   }
 
   public void addToolbarActions(final DefaultActionGroup group) {
@@ -288,16 +268,12 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public JComponent createComponent() {
+    super.createComponent();
     return getComponent();
   }
 
   public JComponent getComponent() {
     return myScrollPane;
-  }
-
-  //todo:the same thing for nodes & modules
-  protected void onBeforeModelWillBeDeleted(SModelDescriptor sm) {
-    selectNextModel(sm);
   }
 
   public boolean isShowPropertiesAndReferences() {
@@ -330,16 +306,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
     }, false);
   }
 
-  public boolean isDisposed() {
-    return myDisposed;
-  }
-
-  public void dispose() {
-    ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
-    removeListeners();
-    myDisposed = true;
-  }
-
   public void rebuild() {
     ModelAccess.instance().runReadInEDT(new Runnable() {
       public void run() {
@@ -347,27 +313,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
         rebuildTree();
       }
     });
-  }
-
-  protected void removeListeners() {
-    if (getMPSProject() != null) {
-      SModelRepository.getInstance().removeModelRepositoryListener(mySModelRepositoryListener);
-      CommandProcessor.getInstance().removeCommandListener(myCommandListener);
-      MPSModuleRepository.getInstance().removeModuleRepositoryListener(myRepositoryListener);
-      getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
-      getProject().getComponent(FileEditorManager.class).removeFileEditorManagerListener(myEditorListener);
-      VirtualFileManager.getInstance().removeVirtualFileManagerListener(myRefreshListener);
-    }
-  }
-
-  protected void addListeners() {
-    VirtualFileManager.getInstance().addVirtualFileManagerListener(myRefreshListener);
-    SModelRepository.getInstance().addModelRepositoryListener(mySModelRepositoryListener);
-    CommandProcessor.getInstance().addCommandListener(myCommandListener);
-    MPSModuleRepository.getInstance().addModuleRepositoryListener(myRepositoryListener);
-    getMPSProject().getComponent(GeneratorManager.class).addGenerationListener(myGenerationListener);
-    getProject().getComponent(FileEditorManager.class).addFileEditorManagerListener(myEditorListener);
-    ClassLoaderManager.getInstance().addReloadHandler(myReloadListener);
   }
 
   //----selection----
@@ -553,56 +498,6 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
       }
 
       return "";
-    }
-  }
-
-  //----listeners----
-
-  private class MyModuleRepositoryListener extends ModuleRepositoryAdapter {
-    public void moduleAdded(IModule module) {
-      myNeedRebuild = true;
-    }
-
-    public void moduleRemoved(IModule module) {
-      myNeedRebuild = true;
-    }
-  }
-
-  private class MyCommandListener extends CommandAdapter {
-    public void commandStarted(CommandEvent event) {
-      myNeedRebuild = false;
-    }
-
-    public void commandFinished(CommandEvent event) {
-      if (myNeedRebuild) {
-        getTree().rebuildLater();
-        myNeedRebuild = false;
-      }
-    }
-  }
-
-  private class MyModelRepositoryAdapter extends SModelRepositoryAdapter {
-    public void modelRepositoryChanged() {
-      myNeedRebuild = true;
-    }
-
-    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
-      onBeforeModelWillBeDeleted(modelDescriptor);
-    }
-  }
-
-  //----copy-paste----
-
-  private class RefreshListener implements VirtualFileManagerListener {
-    public void beforeRefreshStart(boolean asynchonous) {
-
-    }
-
-    public void afterRefreshFinish(boolean asynchonous) {
-      if (myNeedRebuild) {
-        rebuildTree();
-        myNeedRebuild = false;
-      }
     }
   }
 

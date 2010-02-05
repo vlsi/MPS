@@ -29,6 +29,8 @@ import jetbrains.mps.ide.projectPane.LogicalViewTree;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
+import jetbrains.mps.ide.ui.smodel.SNodeTreeUpdater;
+import jetbrains.mps.ide.ui.smodel.SModelTreeListener;
 import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
@@ -56,7 +58,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
   private boolean myInitialized = false;
   private boolean myInitializing = false;
   private EventsCollector myEventsCollector;
-  private MySimpleModelListener mySimpleModelListener = new MySimpleModelListener();
+  private SimpleModelListener mySimpleModelListener = new SimpleModelListener(this) {
+    public void updateTreeNodePresentation() {
+      SModelTreeNode.this.updatePresentation();
+    }
+  };
   private MyGenerationStatusListener myStatusListener = new MyGenerationStatusListener();
 // [Dirty implementation of VCS highlighting in editor
 //  private MyChangeListener myChangesListener = new MyChangeListener();
@@ -111,35 +117,16 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myLabel = label;
     myNodesCondition = condition;
     myCountAdditionalNamePart = countNamePart;
-    myTreeUpdater = new SNodeTreeUpdater(operationContext, myDependencyRecorder, getTree());
-    myTreeUpdater.addListener(new SNodeTreeListener(this) {
-      public boolean showPropertiesAndReferences() {
-        return SModelTreeNode.this.showPropertiesAndReferences();
-      }
-
-      public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
-        SModelTreeNode.this.addAndRemoveRoots(removedRoots, addedRoots);
-      }
-
-      public void addAndRemoveVisibleChildren(Set<SNode> removedNodes, Set<SNode> addedNodes) {
-        SModelTreeNode.this.addAndRemoveVisibleChildren(removedNodes, addedNodes);
-      }
-
-      public void updateChangedPresentations(Set<SNode> nodesWithChangedPresentations) {
-        SModelTreeNode.this.updateChangedPresentations(nodesWithChangedPresentations);
-      }
-
-      public void updateChangedRefs(Set<SNode> nodesWithChangedRefs) {
-        SModelTreeNode.this.updateChangedRefs(nodesWithChangedRefs);
-      }
-
-      public void updateNodesWithChangedPackages(Set<SNode> nodesWithChangedPackages) {
-        SModelTreeNode.this.updateNodesWithChangedPackages(nodesWithChangedPackages);
-      }
-    });
-
+    if (!getSModelDescriptor().isReadOnly()) {
+      myTreeUpdater = new SNodeTreeUpdater(operationContext.getProject());
+      myTreeUpdater.setDependencyRecorder(myDependencyRecorder);
+      myTreeUpdater.addListener(new SModelTreeListener(this) {
+        public boolean showPropertiesAndReferences() {
+          return SModelTreeNode.this.showPropertiesAndReferences();
+        }
+      });
+    }
     setUserObject(modelDescriptor);
-
     updatePresentation();
   }
 
@@ -582,183 +569,11 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myEventsCollector = null;
   }
 
-  private void updateNodePresentation(final boolean reloadSubTree, final boolean updateAncesotrs) {
-    ModelAccess.instance().runReadInEDT(new Runnable() {
-      public void run() {
-        if (getTree() == null) return;
-
-        //module has been already removed  
-        if (!getOperationContext().isValid()) return;
-
-        updatePresentation();
-        updateNodePresentationInTree();
-        if (reloadSubTree) {
-          updateSubTree();
-        }
-
-        if (updateAncesotrs) {
-          updateAncestorsPresentationInTree();
-        }
-      }
-    });
-  }
-
-  private SNodeTreeNode findRootSNodeTreeNode(SNode node) {
-    return findRootSNodeTreeNode(this, node);
-  }
-
-  private SNodeTreeNode findRootSNodeTreeNode(MPSTreeNode current, SNode node) {
-    for (int i = 0; i < current.getChildCount(); i++) {
-      MPSTreeNode child = (MPSTreeNode) current.getChildAt(i);
-
-      if (child instanceof SNodeTreeNode && ((SNodeTreeNode) child).getSNode() == node) {
-        return (SNodeTreeNode) child;
-      }
-
-      if (child instanceof SNodeGroupTreeNode || child instanceof SModelTreeNode) {
-        SNodeTreeNode result = findRootSNodeTreeNode(child, node);
-        if (result != null) {
-          return result;
-        }
-      }
-    }
-
-    return null;
-  }
-
   protected final boolean canBeOpened() {
     return false;
   }
 
-  private void updateNodesWithChangedPackages(Set<SNode> nodes) {
-    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-
-    for (SNode node : nodes) {
-      SNodeTreeNode treeNode = (SNodeTreeNode) findRootSNodeTreeNode(node);
-      if (treeNode == null) continue;
-
-      MPSTreeNode parent = (MPSTreeNode) treeNode.getParent();
-
-      treeModel.removeNodeFromParent(treeNode);
-      if (parent.getChildCount() == 0 && parent instanceof SNodeGroupTreeNode) {
-        groupBecameEmpty((SNodeGroupTreeNode) parent);
-      }
-    }
-
-    insertRoots(nodes);
-  }
-
-  private void updateChangedRefs(Set<SNode> nodesWithChangedRefs) {
-    if (!showPropertiesAndReferences()) return;
-
-    for (SNode sourceNode : nodesWithChangedRefs) {
-      MPSTreeNode nodeTreeNode = findDescendantWith(sourceNode);
-      if (nodeTreeNode == null || !nodeTreeNode.isInitialized()) return;
-
-      MPSTreeNodeEx refsNode = (MPSTreeNodeEx) nodeTreeNode.getChildAt(1);
-      refsNode.update();
-      refsNode.init();
-    }
-  }
-
-  private void updateChangedPresentations(Set<SNode> nodesWithChangedProperties) {
-    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-    for (SNode node : nodesWithChangedProperties) {
-      SNodeTreeNode treeNode = (SNodeTreeNode) findDescendantWith(node);
-
-      if (treeNode == null) continue;
-      if (node.isRoot()) {
-        MPSTreeNode parentTreeNode = (MPSTreeNode) treeNode.getParent();
-        int currentIndex = parentTreeNode.getIndex(treeNode);
-
-        int newIndex = -1;
-        for (int i = 0; i < parentTreeNode.getChildCount(); i++) {
-          if (i == currentIndex) continue;
-          if (!(parentTreeNode.getChildAt(i) instanceof SNodeTreeNode)) continue;
-          SNodeTreeNode child = (SNodeTreeNode) parentTreeNode.getChildAt(i);
-
-          String rp = node.toString();
-          String cp = child.getSNode().toString();
-          if (rp.compareTo(cp) < 0) {
-            newIndex = i;
-            if (newIndex > currentIndex) {
-              newIndex--;
-            }
-            break;
-          }
-        }
-        if (newIndex == -1) {
-          newIndex = parentTreeNode.getChildCount() - 1;
-        }
-
-        if (currentIndex != newIndex) {
-          treeModel.removeNodeFromParent(treeNode);
-          treeModel.insertNodeInto(treeNode, parentTreeNode, newIndex);
-        }
-      }
-
-      if (treeNode.isInitialized() && showPropertiesAndReferences()) {
-        MPSTreeNodeEx propsNode = (MPSTreeNodeEx) treeNode.getChildAt(0);
-        propsNode.update();
-        propsNode.init();
-      }
-
-      treeNode.updatePresentation();
-      treeNode.updateNodePresentationInTree();
-    }
-  }
-
-  private void addAndRemoveVisibleChildren(Set<SNode> removedNodes, Set<SNode> addedNodes) {
-    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-    for (SNode removed : removedNodes) {
-      SNodeTreeNode node = (SNodeTreeNode) findDescendantWith(removed);
-      if (node == null) continue;
-      treeModel.removeNodeFromParent(node);
-    }
-
-    outer:
-    for (SNode added : addedNodes) {
-      if (added.isDeleted()) continue;
-      if (added.getParent() == null) continue;
-      SNodeTreeNode parent = (SNodeTreeNode) findDescendantWith(added.getParent());
-      if (parent == null) continue;
-      if (!parent.isInitialized()) continue;
-      SNode parentNode = parent.getSNode();
-      int indexof = parentNode.getChildren().indexOf(added);
-      for (Object childO : CollectionUtil.asIterable(parent.children())) {
-        if (childO instanceof SNodeTreeNode) {
-          SNodeTreeNode child = (SNodeTreeNode) childO;
-          SNode childNode = child.getSNode();
-          int index = parentNode.getChildren().indexOf(childNode);
-          if (index > indexof) { // insert added before it
-            treeModel.insertNodeInto(createSNodeTreeNode(added, added.getRole_(), getOperationContext()),
-              parent, treeModel.getIndexOfChild(parent, child));
-            continue outer;
-          }
-        }
-      }
-      treeModel.insertNodeInto(createSNodeTreeNode(added, added.getRole_(), getOperationContext()), parent, parent.getChildCount());
-    }
-  }
-
-  private void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
-    DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
-    for (SNode root : removedRoots) {
-      SNodeTreeNode node = (SNodeTreeNode) findRootSNodeTreeNode(root);
-      if (node == null) continue;
-
-      MPSTreeNode parent = (MPSTreeNode) node.getParent();
-      treeModel.removeNodeFromParent(node);
-
-      if (parent instanceof SNodeGroupTreeNode && parent.getChildCount() == 0) {
-        groupBecameEmpty((SNodeGroupTreeNode) parent);
-      }
-    }
-
-    insertRoots(addedRoots);
-  }
-
-  private void insertRoots(Set<SNode> addedRoots) {
+  protected void insertRoots(Set<SNode> addedRoots) {
     if (addedRoots.isEmpty()) {
       return;
     }
@@ -826,31 +641,19 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     }
   }
 
-  private class MySimpleModelListener extends SModelAdapter {
-    public void modelSaved(SModelDescriptor sm) {
-      updateNodePresentation(false, true);
-    }
-
-    public void modelInitialized(SModelDescriptor sm) {
-      updateNodePresentation(false, false);
-    }
-
-    public void modelReloaded(SModelDescriptor sm) {
-      updateNodePresentation(true, true);
-    }
-  }
-
   private class MyGenerationStatusListener implements ModelGenerationStatusListener {
     public void generatedFilesChanged(SModelDescriptor sm) {
       if (sm == getSModelDescriptor()) {
-        updateNodePresentation(false, true);
+        mySimpleModelListener.modelSaved(sm);
       }
     }
   }
 
   private class MyEventsCollector extends EventsCollector {
     protected void eventsHappened(List<SModelEvent> events) {
-      myTreeUpdater.eventsHappenedInCommand(events);
+      if (myTreeUpdater != null) {
+        myTreeUpdater.eventsHappenedInCommand(events);
+      }
 // [Dirty implementation of VCS highlighting in editor
 //    }
 //  }
