@@ -104,7 +104,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       getSModelModelTreeNode().getDependencyRecorder().remove(this);
     }
     if (isWithModelListener()) {
-      removeListeners();
+     // removeListeners();
     }
     super.onRemove();
   }
