@@ -58,17 +58,24 @@ public class SearchPanel extends AbstractSearchPanel {
     return operationContext.getProject().getComponent(SearchHistoryComponent.class);
   }
 
-  private List<EditorCell_Label> allCells() {
+  private Pair<List<EditorCell_Label>, String> allCellsAndContent() {
+    StringBuilder sb = new StringBuilder();
     List<EditorCell_Label> cells = new ArrayList<EditorCell_Label>();
     EditorCell rootCell = myEditor.getRootCell();
     if (rootCell instanceof EditorCell_Label) {
-      cells.add((EditorCell_Label) rootCell);
+      EditorCell_Label cell_label = (EditorCell_Label) rootCell;
+      cells.add(cell_label);
+      sb.append(cell_label.getRenderedText());
     }
     if (rootCell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) rootCell;
-      cells.addAll(CollectionUtil.filter(EditorCell_Label.class, collection.dfsCells()));
+      List<EditorCell_Label> editorCell_labelList = CollectionUtil.filter(EditorCell_Label.class, collection.dfsCells());
+      for (EditorCell_Label label : editorCell_labelList) {
+        sb.append(label.getRenderedText());
+      }
+      cells.addAll(editorCell_labelList);
     }
-    return cells;
+    return new Pair<List<EditorCell_Label>, String>(cells, sb.toString());
   }
 
   protected void goUp() {
@@ -158,10 +165,11 @@ public class SearchPanel extends AbstractSearchPanel {
   }
 
   private void selectCell(boolean requestFocus) {
-    final List<EditorCell_Label> cells = allCells();
+    Pair<List<EditorCell_Label>, String> pair = allCellsAndContent();
+    final List<EditorCell_Label> cells = pair.first;
     List<Integer> startCellPosition = new ArrayList<Integer>();
     List<Integer> endCellPosition = new ArrayList<Integer>();
-    String content = myEditor.getRootCell().renderText().getText();
+    String content = pair.second;
     int current = 0;
     List<EditorCell> emptyCells = new ArrayList<EditorCell>();
     for (EditorCell_Label cell : cells) {
