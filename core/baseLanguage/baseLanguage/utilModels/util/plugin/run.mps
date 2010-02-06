@@ -325,7 +325,7 @@
           </node>
           <node role="iterable:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="8492459591399147311">
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="8492459591399147312">
-              <link role="baseMethodDeclaration:3" targetNodeId="2v.~ProcessBuilder.command(java.lang.String...):java.lang.ProcessBuilder" resolveInfo="command" />
+              <link role="baseMethodDeclaration:3" targetNodeId="2v.~ProcessBuilder.command():java.util.List" resolveInfo="command" />
             </node>
             <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="8492459591399147313">
               <link role="variableDeclaration:3" targetNodeId="8492459591399147293" resolveInfo="p" />
