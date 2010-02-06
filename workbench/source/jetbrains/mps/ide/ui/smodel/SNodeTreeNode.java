@@ -94,7 +94,7 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       };
       if (!getModelDescriptor().isReadOnly()) {
         myTreeUpdater = new SNodeTreeUpdater(getOperationContext().getProject());
-        myTreeUpdater.addListener(new SNodeTreeListener(this));
+        myTreeUpdater.setListener(new SNodeTreeListener(this));
       }
       addListeners();
     }

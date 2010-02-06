@@ -2,9 +2,7 @@ package jetbrains.mps.ide.ui.smodel;
 
 import jetbrains.mps.smodel.event.*;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.DependencyRecorder;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
@@ -13,36 +11,23 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import java.util.*;
 
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.util.Pair;
+import org.jetbrains.annotations.NotNull;
 
 public class SNodeTreeUpdater {
   private Project myProject;
   private DependencyRecorder<SNodeTreeNode> myDependencyRecorder;
-  private List<BaseTreeListener> myListeners = new ArrayList<BaseTreeListener>();
+  private BaseTreeListener myListener;
 
   public SNodeTreeUpdater(Project project) {
     myProject = project;
   }
 
-  public void addListener(BaseTreeListener listener) {
-    myListeners.add(listener);
+  public void setListener(@NotNull BaseTreeListener listener) {
+    myListener = listener;
   }
 
   public void setDependencyRecorder(DependencyRecorder recorder) {
     myDependencyRecorder = recorder;
-  }
-
-  private List<MPSTree> getTreeCollection() {
-    List<MPSTree> trees = new ArrayList<MPSTree>();
-    for (BaseTreeListener listener : myListeners) {
-      if (listener.getTree() == null) continue;
-      trees.add(listener.getTree());
-    }
-    return trees;
-  }
-
-  private DependencyRecorder<SNodeTreeNode> getDependencyRecorder() {
-    return myDependencyRecorder;
   }
 
   public void eventsHappenedInCommand(final List<SModelEvent> events) {
@@ -112,40 +97,35 @@ public class SNodeTreeUpdater {
 
         Set<SNodeTreeNode> treeNodesToUpdate = new LinkedHashSet<SNodeTreeNode>();
         for (SNode changedNode : changedNodes) {
-          DependencyRecorder<SNodeTreeNode> dependencyRecorder = getDependencyRecorder();
-          if (dependencyRecorder != null) {
-            treeNodesToUpdate.addAll(dependencyRecorder.getDependOn(changedNode));
+          if (myDependencyRecorder != null) {
+            treeNodesToUpdate.addAll(myDependencyRecorder.getDependOn(changedNode));
           }
         }
         for (SNodeTreeNode n : treeNodesToUpdate) {
           nodesWithChangedPresentations.add(n.getSNode());
         }
 
-        for (BaseTreeListener listener : myListeners) {
-          listener.addAndRemoveRoots(removedRoots, addedRoots);
-          listener.addAndRemoveVisibleChildren(removedNodes, addedNodes);
-  
-          listener.updateChangedPresentations(nodesWithChangedPresentations);
+        myListener.addAndRemoveRoots(removedRoots, addedRoots);
+        myListener.addAndRemoveVisibleChildren(removedNodes, addedNodes);
 
-          listener.updateChangedRefs(nodesWithChangedRefs);
-          listener.updateNodesWithChangedPackages(nodesWithChangedPackages);
+        myListener.updateChangedPresentations(nodesWithChangedPresentations);
 
-          listener.updateAncestorsPresentationInTree();
-        }
+        myListener.updateChangedRefs(nodesWithChangedRefs);
+        myListener.updateNodesWithChangedPackages(nodesWithChangedPackages);
+
+        myListener.updateAncestorsPresentationInTree();
       }
     };
 
     if (ThreadUtils.isEventDispatchThread()) {
       action.run();
     } else {
-      for (MPSTree tree : getTreeCollection()) {
-        tree.rebuildTreeLater(new Runnable() {
-          public void run() {
-            if (myProject.isDisposed()) return;
-            action.run();
-          }
-        }, false);
-      }
+      myListener.getTree().rebuildTreeLater(new Runnable() {
+        public void run() {
+          if (myProject.isDisposed()) return;
+          action.run();
+        }
+      }, false);
     }
   }
 }

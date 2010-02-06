@@ -120,7 +120,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     if (!getSModelDescriptor().isReadOnly()) {
       myTreeUpdater = new SNodeTreeUpdater(operationContext.getProject());
       myTreeUpdater.setDependencyRecorder(myDependencyRecorder);
-      myTreeUpdater.addListener(new SModelTreeListener(this) {
+      myTreeUpdater.setListener(new SModelTreeListener(this) {
         public boolean showPropertiesAndReferences() {
           return SModelTreeNode.this.showPropertiesAndReferences();
         }
