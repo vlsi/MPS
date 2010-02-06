@@ -37,12 +37,19 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
   private void removeListeners() {
     SModelDescriptor md = getModelDescriptor();
     if (md == null) return;
-    getModelDescriptor().removeModelListener(mySNodeModelListener);
+    if (mySNodeModelListener != null) {
+      getModelDescriptor().removeModelListener(mySNodeModelListener);
+    }
     if (myEventsCollector == null) return;
     myEventsCollector.remove(md);
     myEventsCollector.dispose();
     myEventsCollector = null;
     myTreeUpdater = null;
+  }
+
+  protected void onRemove() {
+    super.onRemove();
+    removeListeners();
   }
 
   protected void onAdd() {

@@ -28,6 +28,7 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.MPSProjectHolder;
 
 import java.util.List;
+import java.util.Collections;
 
 @State(
   name = "Favorites",
@@ -64,7 +65,10 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
           FavoritesRoot favoritesRoot = FavoritesRoot.createForValue(o);
           if (favoritesRoot == null) continue;
           MPSTreeNode newChild = favoritesRoot.getTreeNode(myContext);
-          if (newChild == null) continue;
+          if (newChild == null) {
+            myFavoritesManager.removeRoots(subId, Collections.singletonList(o));
+            continue;
+          }
           invisibleRoot.add(newChild);
         }
         return invisibleRoot;
