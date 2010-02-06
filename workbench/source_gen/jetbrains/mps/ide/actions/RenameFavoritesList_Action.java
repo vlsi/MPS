@@ -15,6 +15,10 @@ import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.openapi.ui.Messages;
+import org.apache.commons.lang.StringUtils;
+import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
+import java.util.List;
 
 public class RenameFavoritesList_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/other/menu-replace.png", "jetbrains.mps.ide"), true);
@@ -67,6 +71,21 @@ public class RenameFavoritesList_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
+      ProjectView projectView = ProjectView.getInstance(RenameFavoritesList_Action.this.project);
+      FavoritesProjectPane pane = (FavoritesProjectPane) projectView.getCurrentProjectViewPane();
+      String oldName = pane.getSubId();
+      String newName = Messages.showInputDialog("Input favorites list new name", "New Name For Favorites List", Messages.getQuestionIcon(), oldName, null);
+      if (newName == null || StringUtils.isEmpty(newName)) {
+        return;
+      }
+      MPSFavoritesManager favoritesManager = RenameFavoritesList_Action.this.project.getComponent(MPSFavoritesManager.class);
+      if (favoritesManager == null) {
+        return;
+      }
+      List<Object> objects = favoritesManager.getRoots(oldName);
+      favoritesManager.removeFavoritesList(oldName);
+      favoritesManager.addNewFavoritesList(newName);
+      favoritesManager.addRoots(newName, objects);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameFavoritesList", t);

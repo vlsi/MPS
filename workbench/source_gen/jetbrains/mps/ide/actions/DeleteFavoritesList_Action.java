@@ -13,6 +13,7 @@ import com.intellij.ide.projectView.ProjectView;
 import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 
 public class DeleteFavoritesList_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -65,6 +66,13 @@ public class DeleteFavoritesList_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
+      ProjectView projectView = ProjectView.getInstance(DeleteFavoritesList_Action.this.project);
+      FavoritesProjectPane pane = (FavoritesProjectPane) projectView.getCurrentProjectViewPane();
+      MPSFavoritesManager favoritesManager = DeleteFavoritesList_Action.this.project.getComponent(MPSFavoritesManager.class);
+      if (favoritesManager == null) {
+        return;
+      }
+      favoritesManager.removeFavoritesList(pane.getSubId());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "DeleteFavoritesList", t);

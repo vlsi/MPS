@@ -89,6 +89,12 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
     }
   }
 
+  private void onListRemoved(String name) {
+    for (MPSFavoritesListener listener : myListeners) {
+      listener.listRemoved(name);
+    }
+  }
+
   public void projectOpened() {
 
   }
@@ -141,6 +147,11 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
     onListAdded(name);
   }
 
+  public void removeFavoritesList(String name) {
+    myName2FavoritesRoots.remove(name);
+    onListRemoved(name);
+  }
+
   public void addRoots(String name, List<Object> roots) {
     if (!myName2FavoritesRoots.containsKey(name)) return;
     myName2FavoritesRoots.get(name).addAll(roots);
@@ -149,7 +160,7 @@ public class MPSFavoritesManager implements ProjectComponent, JDOMExternalizable
 
   public void removeRoots(String name, List<Object> roots) {
     if (!myName2FavoritesRoots.containsKey(name)) return;
-    myName2FavoritesRoots.get(name).remove(roots);
+    myName2FavoritesRoots.get(name).removeAll(roots);
     onListChanged(name);
   }
 
