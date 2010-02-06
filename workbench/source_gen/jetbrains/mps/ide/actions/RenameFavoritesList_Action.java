@@ -83,9 +83,9 @@ public class RenameFavoritesList_Action extends GeneratedAction {
         return;
       }
       List<Object> objects = favoritesManager.getRoots(oldName);
-      favoritesManager.removeFavoritesList(oldName);
       favoritesManager.addNewFavoritesList(newName);
       favoritesManager.addRoots(newName, objects);
+      favoritesManager.removeFavoritesList(oldName);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "RenameFavoritesList", t);
