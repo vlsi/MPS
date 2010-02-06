@@ -9,8 +9,10 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.State;
 import com.intellij.util.ArrayUtil;
+import com.intellij.util.ui.EmptyIcon;
 
 import javax.swing.*;
+import javax.swing.tree.TreeNode;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -51,8 +53,12 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
       protected MPSTreeNode rebuild() {
         String subId = getSubId();
         TextTreeNode invisibleRoot = new TextTreeNode(subId == null? "Favorites" : subId);
+        invisibleRoot.setIcon(new EmptyIcon(10));
         List<Object> objectList = myFavoritesManager.getRoots(subId);
-        if (objectList == null) return invisibleRoot;
+        if (objectList == null || objectList.size() == 0) {
+          invisibleRoot.setText("There is nothing to display.");
+          return invisibleRoot;
+        }
         for (Object o : objectList) {
           FavoritesRoot favoritesRoot = FavoritesRoot.createForValue(o);
           if (favoritesRoot == null) continue;
