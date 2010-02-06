@@ -6,6 +6,9 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
+import java.util.List;
+import java.util.Collections;
+
 class NodeFavoritesRoot extends FavoritesRoot<SNodePointer> {
   public NodeFavoritesRoot(SNodePointer value) {
     super(value);
@@ -16,5 +19,9 @@ class NodeFavoritesRoot extends FavoritesRoot<SNodePointer> {
     if (node == null) return null;
     SNodeTreeNode nodeTreeNode = new SNodeTreeNode(node, context);
     return nodeTreeNode;
+  }
+
+  public List<SNode> getAvaliableNodes() {
+    return Collections.singletonList(getValue().getNode());
   }
 }

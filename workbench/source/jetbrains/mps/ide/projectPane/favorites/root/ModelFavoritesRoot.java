@@ -5,10 +5,11 @@ import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.MPSProjectHolder;
+
+import java.util.List;
+import java.util.ArrayList;
 
 class ModelFavoritesRoot extends FavoritesRoot<SModelReference> {
   public ModelFavoritesRoot(SModelReference value) {
@@ -21,5 +22,15 @@ class ModelFavoritesRoot extends FavoritesRoot<SModelReference> {
     MPSProject mpsProject = context.getProject().getComponent(MPSProjectHolder.class).getMPSProject();
     if (mpsProject == null) return null;
     return new SModelTreeNode(md, null, new ModuleContext(md.getModule(), mpsProject));
+  }
+
+  public List<SNode> getAvaliableNodes() {
+    List<SNode> result = new ArrayList<SNode>();
+    SModelDescriptor md = GlobalScope.getInstance().getModelDescriptor(getValue());
+    if (md == null) return result;
+    SModel model = md.getSModel();
+    if (model == null) return result;
+    result.addAll(model.getRoots());
+    return result;
   }
 }

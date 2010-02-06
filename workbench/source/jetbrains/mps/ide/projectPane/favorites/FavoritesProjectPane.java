@@ -8,6 +8,7 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.components.State;
+import com.intellij.openapi.startup.StartupManager;
 import com.intellij.util.ArrayUtil;
 import com.intellij.util.ui.EmptyIcon;
 
@@ -97,6 +98,11 @@ public class FavoritesProjectPane extends BaseLogicalViewProjectPane {
     };
     myFavoritesManager.addListener(myFavoritesListener);
     getTree().rebuildLater();
+    StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
+      public void run() {
+        myProjectView.addProjectPane(FavoritesProjectPane.this);
+      }
+    });
   }
 
   public MPSProject getMPSProject() {

@@ -8,6 +8,8 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 
+import java.util.List;
+
 public abstract class FavoritesRoot<T> {
   private T myValue;
 
@@ -41,4 +43,6 @@ public abstract class FavoritesRoot<T> {
   }
 
   public abstract MPSTreeNode getTreeNode(IOperationContext context);
+
+  public abstract List<SNode> getAvaliableNodes();
 }

@@ -7,9 +7,12 @@ import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.*;
+
+import java.util.List;
+import java.util.ArrayList;
 
 class ModuleFavoritesRoot extends FavoritesRoot<ModuleReference> {
   public ModuleFavoritesRoot(ModuleReference value) {
@@ -23,5 +26,17 @@ class ModuleFavoritesRoot extends FavoritesRoot<ModuleReference> {
     if (mpsProject == null) return null;
     ProjectModuleTreeNode moduleTreeNode = ProjectModuleTreeNode.createFor(mpsProject, module);
     return moduleTreeNode;
+  }
+
+  public List<SNode> getAvaliableNodes() {
+    List<SNode> result = new ArrayList<SNode>();
+    IModule module = MPSModuleRepository.getInstance().getModule(getValue());
+    if (module == null) return result;
+    for (SModelDescriptor md : module.getOwnModelDescriptors()) {
+      SModel model = md.getSModel();
+      if (model == null) continue;
+      result.addAll(model.getRoots());
+    }
+    return result;
   }
 }
