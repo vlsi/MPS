@@ -24,6 +24,7 @@ import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.text.TextRenderUtil;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
+import jetbrains.mps.nodeEditor.cellLayout.PunctuationUtil;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.ModelAccess;
@@ -71,6 +72,9 @@ public class SearchPanel extends AbstractSearchPanel {
       EditorCell_Collection collection = (EditorCell_Collection) rootCell;
       List<EditorCell_Label> editorCell_labelList = CollectionUtil.filter(EditorCell_Label.class, collection.dfsCells());
       for (EditorCell_Label label : editorCell_labelList) {
+        if (PunctuationUtil.hasLeftGap(label)) {
+          sb.append(" ");
+        }
         sb.append(label.getRenderedText());
       }
       cells.addAll(editorCell_labelList);
