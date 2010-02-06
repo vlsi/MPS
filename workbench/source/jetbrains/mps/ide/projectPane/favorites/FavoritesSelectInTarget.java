@@ -42,11 +42,8 @@ public class FavoritesSelectInTarget implements SelectInTarget {
     if (!(file instanceof MPSNodeVirtualFile)) return false;
     MPSNodeVirtualFile nodeVirtualFile = (MPSNodeVirtualFile) file;
     Project project = context.getProject();
-    ProjectView projectView = ProjectView.getInstance(project);
-    if (projectView == null) return false;
-    AbstractProjectViewPane currentPane = projectView.getCurrentProjectViewPane();
-    if (currentPane instanceof FavoritesProjectPane) {
-      FavoritesProjectPane currentFavoritesPane = (FavoritesProjectPane) currentPane;
+    FavoritesProjectPane currentFavoritesPane = FavoritesUtil.getCurrentPane(project);
+    if (currentFavoritesPane != null) {
       MPSFavoritesManager favoritesManager = project.getComponent(MPSFavoritesManager.class);
       if (favoritesManager == null) return false;
       String name = currentFavoritesPane.getSubId();

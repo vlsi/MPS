@@ -17,9 +17,8 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
-import com.intellij.ide.projectView.ProjectView;
-import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
+import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.annotations.Nullable;
 
@@ -51,16 +50,13 @@ public class AddToFavoritesGroup_ActionGroup extends GeneratedActionGroup {
       if (favoritesManager == null) {
         return;
       }
-      ProjectView projectView = ProjectView.getInstance(project);
-      AbstractProjectViewPane pane = projectView.getCurrentProjectViewPane();
-      boolean isInFavorites = pane instanceof FavoritesProjectPane;
+      FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(project);
       String currentFavoritesList = null;
-      if (isInFavorites) {
-        FavoritesProjectPane currentPane = (FavoritesProjectPane) pane;
-        currentFavoritesList = currentPane.getSubId();
+      if (pane != null) {
+        currentFavoritesList = pane.getSubId();
       }
       for (String name : favoritesManager.getFavoriteNames()) {
-        if (isInFavorites && EqualUtil.equals(name, currentFavoritesList)) {
+        if (pane != null && EqualUtil.equals(name, currentFavoritesList)) {
           continue;
         }
         AddToFavoritesGroup_ActionGroup.this.addAction("jetbrains.mps.ide.actions.AddToFavorites_Action", "jetbrains.mps.ide", name);

@@ -9,10 +9,10 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.ide.projectView.ProjectView;
-import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
-import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
+import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
+import com.intellij.ide.projectView.ProjectView;
+import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 
 public class DeleteFavoritesList_Action extends GeneratedAction {
@@ -33,9 +33,7 @@ public class DeleteFavoritesList_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    ProjectView projectView = ProjectView.getInstance(DeleteFavoritesList_Action.this.project);
-    AbstractProjectViewPane pane = projectView.getCurrentProjectViewPane();
-    return pane instanceof FavoritesProjectPane;
+    return FavoritesUtil.isActiveFavorites(DeleteFavoritesList_Action.this.project);
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

@@ -14,10 +14,9 @@ import java.util.HashSet;
 import java.util.List;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.ide.projectView.ProjectView;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
-import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
+import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import org.jetbrains.annotations.Nullable;
 
 public class FavoritesPopupWrapper_ActionGroup extends GeneratedActionGroup {
@@ -39,10 +38,8 @@ public class FavoritesPopupWrapper_ActionGroup extends GeneratedActionGroup {
 
   public void doUpdate(AnActionEvent event) {
     try {
-      ProjectView projectView = ProjectView.getInstance(event.getData(MPSDataKeys.PROJECT));
-      AbstractProjectViewPane pane = projectView.getCurrentProjectViewPane();
-      boolean isInFavorites = pane instanceof FavoritesProjectPane;
-      String text = ((isInFavorites ?
+      Project project = event.getData(MPSDataKeys.PROJECT);
+      String text = ((FavoritesUtil.isActiveFavorites(project) ?
         "Send" :
         "Add"
       )) + " to Favorites";

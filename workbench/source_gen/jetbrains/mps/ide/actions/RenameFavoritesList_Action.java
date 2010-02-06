@@ -11,10 +11,9 @@ import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.ide.projectView.ProjectView;
-import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
-import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
+import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import com.intellij.openapi.ui.Messages;
 import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
@@ -38,9 +37,7 @@ public class RenameFavoritesList_Action extends GeneratedAction {
   }
 
   public boolean isApplicable(AnActionEvent event) {
-    ProjectView projectView = ProjectView.getInstance(RenameFavoritesList_Action.this.project);
-    AbstractProjectViewPane pane = projectView.getCurrentProjectViewPane();
-    return pane instanceof FavoritesProjectPane;
+    return FavoritesUtil.isActiveFavorites(RenameFavoritesList_Action.this.project);
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {
@@ -71,8 +68,7 @@ public class RenameFavoritesList_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ProjectView projectView = ProjectView.getInstance(RenameFavoritesList_Action.this.project);
-      FavoritesProjectPane pane = (FavoritesProjectPane) projectView.getCurrentProjectViewPane();
+      FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(RenameFavoritesList_Action.this.project);
       String oldName = pane.getSubId();
       String newName = Messages.showInputDialog("Input favorites list new name", "New Name For Favorites List", Messages.getQuestionIcon(), oldName, null);
       if (newName == null || StringUtils.isEmpty(newName)) {

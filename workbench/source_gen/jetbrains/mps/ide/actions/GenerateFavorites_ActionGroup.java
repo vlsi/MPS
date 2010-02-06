@@ -16,9 +16,7 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.MPSDataKeys;
-import com.intellij.ide.projectView.ProjectView;
-import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
-import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
+import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.workbench.actions.generate.GenerateFilesFromModelsAction;
@@ -46,10 +44,7 @@ public class GenerateFavorites_ActionGroup extends GeneratedActionGroup {
     try {
       GenerateFavorites_ActionGroup.this.removeAll();
       Project project = MPSDataKeys.PROJECT.getData(event.getDataContext());
-      ProjectView projectView = ProjectView.getInstance(project);
-      AbstractProjectViewPane pane = projectView.getCurrentProjectViewPane();
-      boolean isInFavorites = pane instanceof FavoritesProjectPane;
-      if (!(isInFavorites)) {
+      if (!(FavoritesUtil.isActiveFavorites(project))) {
         return;
       }
       TreeNode treeNode = MPSDataKeys.LOGICAL_VIEW_NODE.getData(event.getDataContext());

@@ -11,11 +11,11 @@ import javax.swing.tree.TreeNode;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.ide.projectView.ProjectView;
-import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
-import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
+import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
+import com.intellij.ide.projectView.ProjectView;
+import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 
 public class RemoveFromFavorites_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -39,9 +39,7 @@ public class RemoveFromFavorites_Action extends GeneratedAction {
     if (RemoveFromFavorites_Action.this.treeNodes.isEmpty()) {
       return false;
     }
-    ProjectView projectView = ProjectView.getInstance(RemoveFromFavorites_Action.this.project);
-    AbstractProjectViewPane pane = projectView.getCurrentProjectViewPane();
-    return pane instanceof FavoritesProjectPane;
+    return FavoritesUtil.isActiveFavorites(RemoveFromFavorites_Action.this.project);
   }
 
   public void doUpdate(@NotNull AnActionEvent event) {

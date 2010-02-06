@@ -13,13 +13,12 @@ import javax.swing.tree.TreeNode;
 import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.ide.projectView.ProjectView;
-import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
-import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
+import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.ui.InputValidator;
+import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 
 public class AddToNewFavoritesList_Action extends GeneratedAction {
   private static final Icon ICON = IconManager.loadIcon(MacrosUtil.expandPath("${mps_home}/workbench/source/jetbrains/mps/ide/projectPane/other/addFavoritesList.png", "jetbrains.mps.ide"), true);
@@ -41,12 +40,8 @@ public class AddToNewFavoritesList_Action extends GeneratedAction {
 
   public void doUpdate(@NotNull AnActionEvent event) {
     try {
-      {
-        ProjectView projectView = ProjectView.getInstance(AddToNewFavoritesList_Action.this.project);
-        AbstractProjectViewPane pane = projectView.getCurrentProjectViewPane();
-        if (pane instanceof FavoritesProjectPane) {
-          event.getPresentation().setText("Send to New Favorites List");
-        }
+      if (FavoritesUtil.isActiveFavorites(AddToNewFavoritesList_Action.this.project)) {
+        event.getPresentation().setText("Send to New Favorites List");
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
@@ -85,10 +80,9 @@ public class AddToNewFavoritesList_Action extends GeneratedAction {
         }
       });
       favoritesManager.addNewFavoritesList(name);
-      ProjectView projectView = ProjectView.getInstance(AddToNewFavoritesList_Action.this.project);
-      AbstractProjectViewPane pane = projectView.getCurrentProjectViewPane();
+      FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(AddToNewFavoritesList_Action.this.project);
       List<Object> toMove = FavoritesUtil.getObjects(AddToNewFavoritesList_Action.this.treeNodes);
-      if (pane instanceof FavoritesProjectPane) {
+      if (pane != null) {
         favoritesManager.removeRoots(pane.getSubId(), toMove);
       }
       favoritesManager.addRoots(name, toMove);

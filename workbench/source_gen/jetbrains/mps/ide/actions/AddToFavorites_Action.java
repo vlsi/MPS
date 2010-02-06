@@ -13,8 +13,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
-import com.intellij.ide.projectView.ProjectView;
-import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
+import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 
 public class AddToFavorites_Action extends GeneratedAction {
@@ -71,9 +70,8 @@ public class AddToFavorites_Action extends GeneratedAction {
         return;
       }
       List<Object> toMove = FavoritesUtil.getObjects(AddToFavorites_Action.this.treeNodes);
-      ProjectView projectView = ProjectView.getInstance(AddToFavorites_Action.this.project);
-      AbstractProjectViewPane pane = projectView.getCurrentProjectViewPane();
-      if (pane instanceof FavoritesProjectPane) {
+      FavoritesProjectPane pane = FavoritesUtil.getCurrentPane(AddToFavorites_Action.this.project);
+      if (pane != null) {
         favoritesManager.removeRoots(pane.getSubId(), toMove);
       }
       favoritesManager.addRoots(AddToFavorites_Action.this.name, toMove);
