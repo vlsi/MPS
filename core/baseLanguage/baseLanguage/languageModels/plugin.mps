@@ -4909,9 +4909,25 @@
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.IfStatement:3" id="2067275938743356863">
           <node role="ifTrue:3" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="2067275938743356864">
-            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.SingleLineComment:3" id="2067275938743375966">
-              <node role="commentPart:3" type="jetbrains.mps.baseLanguage.structure.TextCommentPart:3" id="2067275938743375967">
-                <property name="text:3" value="todo add debug params here" />
+            <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="7518625823783904311">
+              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7518625823783904313">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="7518625823783904312">
+                  <link role="variableDeclaration:3" targetNodeId="3212636031937248205" resolveInfo="classRunner" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7518625823783904317">
+                  <link role="baseMethodDeclaration:3" targetNodeId="141.7518625823783865223" resolveInfo="setDebugPort" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7518625823783912147">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7518625823783912144">
+                      <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="7518625823783912145" />
+                      <node role="operation:3" type="jetbrains.mps.lang.plugin.structure.PersistentPropertyReference:23" id="7518625823783912146">
+                        <link role="member:23" targetNodeId="5001211796553540699" resolveInfo="parameters" />
+                      </node>
+                    </node>
+                    <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7518625823783912152">
+                      <link role="baseMethodDeclaration:3" targetNodeId="141.7518625823783904324" resolveInfo="getHardcodedDebugPort" />
+                    </node>
+                  </node>
+                </node>
               </node>
             </node>
           </node>

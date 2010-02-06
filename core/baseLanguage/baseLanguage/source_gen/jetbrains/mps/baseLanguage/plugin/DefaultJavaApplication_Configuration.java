@@ -135,7 +135,7 @@ public class DefaultJavaApplication_Configuration extends BaseRunConfig {
 
           final ClassRunner classRunner = new ClassRunner();
           if (executor.getId().equals(DefaultDebugExecutor.EXECUTOR_ID)) {
-            // todo add debug params here 
+            classRunner.setDebugPort(DefaultJavaApplication_Configuration.this.getStateObject().parameters.getHardcodedDebugPort());
           }
 
           ListSequence.fromList(actions).addSequence(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<AnAction>(), consoleView.createConsoleActions())));
