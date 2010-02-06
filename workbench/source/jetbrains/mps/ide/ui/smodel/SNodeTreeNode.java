@@ -41,9 +41,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
   private SNode myNode;
   private String myRole;
   private Condition<SNode> myCondition = Condition.TRUE_CONDITION;
-  private SNodeTreeUpdater myTreeUpdater;
-  private MyEventsCollector myEventsCollector;
-  private  SimpleModelListener mySNodeModelListener;
 
   public SNodeTreeNode(SNode node, IOperationContext operationContext) {
     this(node, null, operationContext);
@@ -73,10 +70,6 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
   }
 
-  private boolean isWithModelListener() {
-    return getSModelModelTreeNode() == null && getModelDescriptor() != null && getSNode().isRoot();
-  }
-
   protected void onAdd() {
     super.onAdd();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -84,28 +77,11 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
         updatePresentation();
       }
     });
-    if (isWithModelListener()) {
-      if (myEventsCollector != null) return;
-      myEventsCollector = new MyEventsCollector();
-      mySNodeModelListener = new SimpleModelListener(this) {
-        public void updateTreeNodePresentation() {
-          SNodeTreeNode.this.updatePresentation();
-        }
-      };
-      if (!getModelDescriptor().isReadOnly()) {
-        myTreeUpdater = new SNodeTreeUpdater(getOperationContext().getProject());
-        myTreeUpdater.setListener(new SNodeTreeListener(this));
-      }
-      addListeners();
-    }
   }
 
   protected void onRemove() {
     if (getSModelModelTreeNode() != null) {
       getSModelModelTreeNode().getDependencyRecorder().remove(this);
-    }
-    if (isWithModelListener()) {
-     // removeListeners();
     }
     super.onRemove();
   }
@@ -244,30 +220,11 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
     }
   }
 
-  private SModelDescriptor getModelDescriptor() {
+  protected SModelDescriptor getModelDescriptor() {
     SNode node = getSNode();
     if (node == null) return null;
     SModelDescriptor md = node.getModel().getModelDescriptor();
     return md;
-  }
-
-  private void addListeners() {
-    if (myEventsCollector == null) return;
-    SModelDescriptor md = getModelDescriptor();
-    if (md == null) return;
-    myEventsCollector.add(md);
-    md.addModelListener(mySNodeModelListener);
-  }
-
-  private void removeListeners() {
-    SModelDescriptor md = getModelDescriptor();
-    if (md == null) return;
-    getModelDescriptor().removeModelListener(mySNodeModelListener);
-    if (myEventsCollector == null) return;
-    myEventsCollector.remove(md);
-    myEventsCollector.dispose();
-    myEventsCollector = null;
-    myTreeUpdater = null;
   }
 
   private String caclulateNodeTextPresentation() {
@@ -294,14 +251,5 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
 
   public boolean hasErrors() {
     return false;
-  }
-
-  class MyEventsCollector extends EventsCollector {
-    protected void eventsHappened(List<SModelEvent> events) {
-      if (myTreeUpdater == null) return;
-      if (SNodeTreeNode.this.isWithModelListener() || getSNode().getContainingRoot() == null) {
-        myTreeUpdater.eventsHappenedInCommand(events);
-      }
-    }
   }
 }
