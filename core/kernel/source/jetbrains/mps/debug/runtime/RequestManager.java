@@ -26,6 +26,7 @@ import java.util.Collections;
 import java.util.HashSet;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -188,12 +189,22 @@ public class RequestManager implements DebugProcessListener {
 
   @Override
   public void processDetached(DebugVMEventsProcessor process, boolean closedByUser) {
-    //To change body of implemented methods use File | Settings | File Templates.
+    myEventRequestManager = null;
+    myRequestorToBelongedRequests.clear();
+
   }
 
   @Override
   public void processAttached(DebugVMEventsProcessor process) {
-    //todo implement: create all breakpoints' class prepare requests
+    myEventRequestManager = myDebugEventsProcessor.getVirtualMachine().eventRequestManager();
+    // invoke later, so that requests are for sure created only _after_ 'processAttached()' methods of other listeneres are executed
+    process.getManagerThread().schedule(new DebuggerCommand() {
+      @Override
+      protected void action() throws Exception {
+        BreakpointManager breakpointManager = myDebugEventsProcessor.getBreakpointManager();
+        breakpointManager.createAllClassPrepareRequests(myDebugEventsProcessor);
+      }
+    });
   }
 
   public void processClassPrepared(final ClassPrepareEvent event) {

@@ -15,7 +15,7 @@ public class DebugProcessMulticaster {
 
   private List<DebugProcessListener> getListeners() {
     synchronized (myListeners) {
-      List<DebugProcessListener> result = new ArrayList<DebugProcessListener>(myListeners.size());
+      List<DebugProcessListener> result = new ArrayList<DebugProcessListener>(myListeners);
       return result;
     }
   }

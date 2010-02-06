@@ -19,6 +19,8 @@ import com.intellij.openapi.project.Project;
 import com.sun.jdi.*;
 import com.sun.jdi.event.*;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
 
 import java.util.List;
 import java.util.ArrayList;
@@ -62,8 +64,8 @@ public class DebugVMEventsProcessor {
 
   public void commitVM(VirtualMachine vm) {
     if(vm != null) {
-      vmAttached();
       myVirtualMachine = vm;
+      vmAttached();
       myEventThread = new DebuggerEventThread();
       new Thread(myEventThread).start();
     }
@@ -83,6 +85,10 @@ public class DebugVMEventsProcessor {
 
   public SuspendManager getSuspendManager() {
     return mySuspendManager;
+  }
+
+  public BreakpointManager getBreakpointManager() {
+    return myBreakpointManager;
   }
 
   private class DebuggerEventThread implements Runnable {
@@ -105,10 +111,9 @@ public class DebugVMEventsProcessor {
         while (!isStopped()) {
           try {
             final EventSet eventSet = eventQueue.remove();
-            //todo implement manager thread
-       //     getManagerThread().invokeAndWait(new DebuggerCommandImpl() {
-      //        protected void action() throws Exception {
 
+            getManagerThread().invokeAndWait(new DebuggerCommand() {
+              protected void action() throws Exception {
                 final SuspendContext suspendContext = mySuspendManager.pushSuspendContext(eventSet);
 
                 for (Event event : eventSet) {
@@ -152,7 +157,7 @@ public class DebugVMEventsProcessor {
                   }
                 }
 
-       //     });
+            }});
 
           }
           catch (InternalException e) {
@@ -168,11 +173,9 @@ public class DebugVMEventsProcessor {
            // LOG.debug(e);
           }
         }
-      }
-      catch (InterruptedException e) {
+      } catch (InterruptedException e) {
       //  invokeVMDeathEvent();
-      }
-      catch (VMDisconnectedException e) {
+      } catch (VMDisconnectedException e) {
       //  invokeVMDeathEvent();
       } finally {
         Thread.interrupted(); // reset interrupted status
@@ -187,6 +190,10 @@ public class DebugVMEventsProcessor {
         }
       });
     }*/
+  }
+
+  public IDebuggerManagerThread getManagerThread() {
+    return myVMCreator.getManagerThread();
   }
 
   public void addDebugProcessListener(DebugProcessListener listener) {

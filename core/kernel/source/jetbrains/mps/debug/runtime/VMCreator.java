@@ -26,6 +26,9 @@ import java.util.ArrayList;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.ide.ThreadUtils;
+import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -48,6 +51,7 @@ public class VMCreator {
   private Map<String, Argument> myArguments;
   private DebugConnectionSettings myConnectionSettings;
   private DebugVMEventsProcessor myDebugVMEventsProcessor;
+  private DebuggerManagerThread myDebuggerManagerThread;
   private boolean myIsFailed = false;
 
   //holds listeners before process is executed; then adds them to process handler.
@@ -57,6 +61,7 @@ public class VMCreator {
 
   public VMCreator(Project p) {
     myDebugVMEventsProcessor = new DebugVMEventsProcessor(p, this);
+    myDebuggerManagerThread = new DebuggerManagerThread(); //thread started!
   }
 
   @Nullable
@@ -64,7 +69,7 @@ public class VMCreator {
                                               final ProgramRunner runner,
                                               final RunProfileState state,
                                               DebugConnectionSettings settings
-                                             ) throws ExecutionException {
+  ) throws ExecutionException {
     assert ThreadUtils.isEventDispatchThread() : "must be called from EDT only";
     // LOG.assertTrue(isInInitialState());
 
@@ -115,49 +120,49 @@ public class VMCreator {
       }
     });
 
-    //  this.getManagerThread().schedule(new DebuggerCommandImpl() {
-    //    protected void action() {
-    VirtualMachine vm = null;
+    myDebuggerManagerThread.schedule(new DebuggerCommand() {
+      protected void action() {
+        VirtualMachine vm = null;
 
-    try {
-      final long time = System.currentTimeMillis();
-      while (System.currentTimeMillis() - time < LOCAL_START_TIMEOUT) {
         try {
-          vm = doCreateVirtualMachine();
-          break;
-        } catch (Throwable t) {
-          fail();
-          LOG.error(t);
-          break;
+          final long time = System.currentTimeMillis();
+          while (System.currentTimeMillis() - time < LOCAL_START_TIMEOUT) {
+            try {
+              vm = doCreateVirtualMachine();
+              break;
+            } catch (Throwable t) {
+              fail();
+              LOG.error(t);
+              break;
+            }
+          }
+        } finally {
+          semaphore.up();
+        }
+
+        if (vm != null) {
+          final VirtualMachine vm1 = vm;
+          executeAfterProcessStarted(new Runnable() {
+            public void run() {
+              myDebuggerManagerThread.schedule(new DebuggerCommand() {
+                protected void action() throws Exception {
+                  myDebugVMEventsProcessor.commitVM(vm1);
+                }
+              });
+            }
+          });
         }
       }
-    } finally {
-      semaphore.up();
-    }
 
-    if (vm != null) {
-      final VirtualMachine vm1 = vm;
-      executeAfterProcessStarted(new Runnable() {
-        public void run() {
-        //  getManagerThread().schedule(new DebuggerCommandImpl() {
-        //    protected void action() throws Exception {
-              myDebugVMEventsProcessor.commitVM(vm1);
-        //    }
-        //  });
+      protected void commandCancelled() {
+        try {
+          super.commandCancelled();
         }
-      });
-    }
-    // }
-
-    /* protected void commandCancelled() {
-    try {
-      super.commandCancelled();
-    }
-    finally {
-      semaphore.up();
-    }*/
-    //     }
-    //   });
+        finally {
+          semaphore.up();
+        }
+      }
+    });
 
     semaphore.waitFor();
   }
@@ -285,6 +290,10 @@ public class VMCreator {
         processListener.run();
       }
     }
+  }
+
+  public IDebuggerManagerThread getManagerThread() {
+    return myDebuggerManagerThread;
   }
 
   private class RunsAfterProcessStarted extends ProcessAdapter {
