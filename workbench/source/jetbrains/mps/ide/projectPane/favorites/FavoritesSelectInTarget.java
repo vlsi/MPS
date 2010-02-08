@@ -1,20 +1,15 @@
 package jetbrains.mps.ide.projectPane.favorites;
 
-import com.intellij.ide.impl.ProjectViewSelectInTarget;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.SelectInContext;
 import com.intellij.ide.projectView.ProjectView;
-import com.intellij.ide.projectView.impl.AbstractProjectViewPane;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.ide.projectPane.favorites.root.FavoritesRoot;
-import jetbrains.mps.ide.projectPane.ProjectModuleTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTree;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.IModule;
 
@@ -30,6 +25,16 @@ public class FavoritesSelectInTarget implements SelectInTarget {
       result.addAll(favoritesRoot.getAvaliableNodes());
     }
     return result;
+  }
+
+  private MPSTreeNode findTreeNode(MPSTreeNode treeNode, Object userObject) {
+    if (treeNode.getUserObject() == userObject) return treeNode;
+    if (!treeNode.isInitialized()) treeNode.init();
+    for (MPSTreeNode child : treeNode) {
+      MPSTreeNode result = findTreeNode(child, userObject);
+      if (result != null) return result;
+    }
+    return null;
   }
 
   private void select(MPSTreeNode treeNode, MPSTree tree) {
@@ -73,7 +78,7 @@ public class FavoritesSelectInTarget implements SelectInTarget {
       if (userObject.equals(nodeToSelect)) {
         select(root, tree);
       } else if (userObject.equals(model) || userObject.equals(module)) {
-        select(root.findDescendantWith(nodeToSelect), tree);
+        select(findTreeNode(root, nodeToSelect), tree);
       }
     }
   }

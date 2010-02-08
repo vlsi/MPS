@@ -11,6 +11,8 @@ import jetbrains.mps.MPSProjectHolder;
 import java.util.List;
 import java.util.ArrayList;
 
+import com.intellij.openapi.util.Computable;
+
 class ModelFavoritesRoot extends FavoritesRoot<SModelReference> {
   public ModelFavoritesRoot(SModelReference value) {
     super(value);
@@ -26,9 +28,13 @@ class ModelFavoritesRoot extends FavoritesRoot<SModelReference> {
 
   public List<SNode> getAvaliableNodes() {
     List<SNode> result = new ArrayList<SNode>();
-    SModelDescriptor md = GlobalScope.getInstance().getModelDescriptor(getValue());
+    final SModelDescriptor md = GlobalScope.getInstance().getModelDescriptor(getValue());
     if (md == null) return result;
-    SModel model = md.getSModel();
+    SModel model = ModelAccess.instance().runReadAction(new Computable<SModel>() {
+      public SModel compute() {
+        return md.getSModel();
+      }
+    });
     if (model == null) return result;
     result.addAll(model.getRoots());
     return result;
