@@ -23,6 +23,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.smodel.IScope;
+import javax.swing.JOptionPane;
 
 public class NewAccessoryModel_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -101,6 +103,13 @@ public class NewAccessoryModel_Action extends GeneratedAction {
           descriptor = language.getLanguageDescriptor();
           descriptor.getAccessoryModels().add(result.getSModelReference());
           language.setLanguageDescriptor(descriptor);
+          IScope scope = language.getScope();
+          if (scope.getModelDescriptor(result.getSModelReference()) == null) {
+            int res = JOptionPane.showConfirmDialog(NewAccessoryModel_Action.this.frame, "<html>Model <b>" + result.getLongName() + "</b> is added to accessories</html>\n\n" + "Do you want to automatically the module add to dependency?", "Add Dependency", JOptionPane.YES_NO_OPTION);
+            if (res == JOptionPane.YES_OPTION) {
+              language.addDependency(result.getModule().getModuleReference(), false);
+            }
+          }
           language.save();
         }
       });
