@@ -16,6 +16,7 @@
 package jetbrains.mps.debug.runtime;
 
 import com.intellij.util.containers.HashMap;
+import com.intellij.openapi.project.Project;
 import com.sun.jdi.request.*;
 import com.sun.jdi.*;
 import com.sun.jdi.event.ClassPrepareEvent;
@@ -219,5 +220,43 @@ public class RequestManager implements DebugProcessListener {
         requestor.processClassPrepare(myDebugEventsProcessor, refType);
       }
     }
+  }
+
+  //todo the code below should be called on EVERY debug session in a project
+
+  private interface AllDebugProcessesAction {
+    public void run(DebugVMEventsProcessor processor);
+  }
+
+  private static void performAllDebugProcessesAction(final AllDebugProcessesAction action, Project p) {
+    DebugManager debugManager = DebugManager.getInstance(p);
+    for (final DebugVMEventsProcessor processor : debugManager.getDebugProcesses()) {
+      processor.getManagerThread().invoke(new DebuggerCommand() {
+        @Override
+        protected void action() throws Exception {
+          action.run(processor);
+        }
+      });
+    }
+  }
+
+  public static void createClassPrepareRequests(final MPSBreakpoint breakpoint) {
+    Project p = breakpoint.getProject();
+    performAllDebugProcessesAction(new AllDebugProcessesAction() {
+      @Override
+      public void run(DebugVMEventsProcessor processor) {
+        breakpoint.createClassPrepareRequest(processor);
+      }
+    }, p);
+  }
+
+  public static void removeClassPrepareRequests(final MPSBreakpoint breakpoint) {
+    Project p = breakpoint.getProject();
+    performAllDebugProcessesAction(new AllDebugProcessesAction() {
+      @Override
+      public void run(DebugVMEventsProcessor processor) {
+        processor.getRequestManager().deleteRequest(breakpoint);
+      }
+    }, p);
   }
 }

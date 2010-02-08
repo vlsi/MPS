@@ -18,12 +18,12 @@ package jetbrains.mps.debug.runtime;
 import com.intellij.openapi.project.Project;
 import com.sun.jdi.*;
 import com.sun.jdi.event.*;
+import com.sun.tools.jdi.EventSetImpl;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
+import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 
-import java.util.List;
-import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -124,13 +124,13 @@ public class DebugVMEventsProcessor {
                       //Sun WTK fails when J2ME when event set is resumed on VMStartEvent
                       processVMStartEvent(suspendContext, (VMStartEvent)event);
                     }
-                    else if (event instanceof VMDeathEvent) {
+                    else */ if (event instanceof VMDeathEvent) {
                       processVMDeathEvent(suspendContext, event);
                     }
                     else if (event instanceof VMDisconnectEvent) {
                       processVMDeathEvent(suspendContext, event);
                     }
-                    else */ if (event instanceof ClassPrepareEvent) {
+                    else  if (event instanceof ClassPrepareEvent) {
                       System.err.println("class prepare event happened");
                       processClassPrepareEvent(suspendContext, (ClassPrepareEvent)event);
                     }
@@ -177,22 +177,23 @@ public class DebugVMEventsProcessor {
           }
         }
       } catch (InterruptedException e) {
-      //  invokeVMDeathEvent();
+        invokeVMDeathEventInManagerThread();
       } catch (VMDisconnectedException e) {
-      //  invokeVMDeathEvent();
+        invokeVMDeathEventInManagerThread();
       } finally {
         Thread.interrupted(); // reset interrupted status
       }
     }
 
-    /*private void invokeVMDeathEvent() {
-      getManagerThread().invokeAndWait(new DebuggerCommandImpl() {
+    private void invokeVMDeathEventInManagerThread() {
+      getManagerThread().invokeAndWait(new DebuggerCommand() {
         protected void action() throws Exception {
-          SuspendContextImpl suspendContext = getSuspendManager().pushSuspendContext(EventRequest.SUSPEND_NONE, 1);
+         // SuspendContext suspendContext = getSuspendManager().pushSuspendContext(EventRequest.SUSPEND_NONE, 1);
+          SuspendContext suspendContext = getSuspendManager().pushSuspendContext(null);
           processVMDeathEvent(suspendContext, null);
         }
       });
-    }*/
+    }
   }
 
   public IDebuggerManagerThread getManagerThread() {
@@ -218,6 +219,7 @@ public class DebugVMEventsProcessor {
     if(myState.compareAndSet(STATE_INITIAL, STATE_ATTACHED)) { //here we change an atomic state from initial to attached
       //DebuggerManagerEx.getInstanceEx(getProject()).getBreakpointManager().setInitialBreakpointsState();
       myMulticaster.processAttached(this);
+      getDebugManager().addDebugProcess(this);
       //show some info etc
     }
   }
@@ -297,5 +299,38 @@ public class DebugVMEventsProcessor {
     preprocessEvent(suspendContext, event.thread());
     myRequestManager.processClassPrepared(event);
     mySuspendManager.voteResume(suspendContext);
+  }
+
+  // a VM is dead
+  private void processVMDeathEvent(SuspendContext suspendContext, Event event) {
+    try {
+      preprocessEvent(suspendContext, null);
+    //  cancelRunToCursorBreakpoint();
+    }
+    finally {
+      if (myEventThread != null) {
+        myEventThread.stopListening();
+        myEventThread = null;
+      }
+      getDebugManager().removeDebugProcess(this);
+      closeProcess(false);
+    }
+  }
+
+  private void closeProcess(boolean closedByUser) {
+    DebuggerManagerThread.assertIsManagerThread();
+    if (myState.compareAndSet(STATE_INITIAL, STATE_DETACHING) || myState.compareAndSet(STATE_ATTACHED, STATE_DETACHING)) {
+      myVirtualMachine = null;
+      try {
+        getManagerThread().close();
+      } finally {
+        myState.set(STATE_DETACHED);
+        getMulticaster().processDetached(this, closedByUser);
+      }
+    }
+  }
+
+  public DebugManager getDebugManager() {
+    return myProject.getComponent(DebugManager.class);
   }
 }

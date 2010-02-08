@@ -55,44 +55,53 @@ public class SuspendManager {
   }
 
   public SuspendContext pushSuspendContext(final EventSet set) {
-    SuspendContext suspendContext = new SuspendContext(myDebugProcess, set.suspendPolicy(), set.size(), set) {
-      protected void resumeImpl() {
-        final ThreadReference thread = this.getThread();
-        if (thread != null) { // check that thread is suspended at the moment
-          try {
-            if (!thread.isSuspended()) {
-              LOG.assertLog(false, "Context thread must be suspended");
-            }
-          } catch (ObjectCollectedException ignored) {
-
-          }
+    SuspendContext suspendContext;
+    if (set == null) { // special case
+      suspendContext = new SuspendContext(myDebugProcess, EventRequest.SUSPEND_NONE, 1, set) {
+        @Override
+        protected void resumeImpl() {
         }
+      };
+    } else {
+      suspendContext = new SuspendContext(myDebugProcess, set.suspendPolicy(), set.size(), set) {
+        protected void resumeImpl() {
+          final ThreadReference thread = this.getThread();
+          if (thread != null) { // check that thread is suspended at the moment
+            try {
+              if (!thread.isSuspended()) {
+                LOG.assertLog(false, "Context thread must be suspended");
+              }
+            } catch (ObjectCollectedException ignored) {
 
-        int attempts = 5;
-        while (--attempts > 0) {
-          try {
-            set.resume();   //resuming an EventSet
-            break;
-          }
-          catch (ObjectCollectedException e) {
-            // according to error reports set.resume() may throw this if one of the threads has been collected
-            continue;
-          }
-          catch (InternalException e) {
-            //InternalException 13 means that there are running threads that we are trying to resume
-            //On MacOS it happened that native thread didn't stop while some java thread reached breakpoint
-            if (/*Patches.MAC_RESUME_VM_HACK && */e.errorCode() == 13 && set.suspendPolicy() == EventRequest.SUSPEND_ALL) {
-              //Its funny, but second resume solves the problem
-              continue;
             }
-            else {
-              LOG.error(e);
+          }
+
+          int attempts = 5;
+          while (--attempts > 0) {
+            try {
+              set.resume();   //resuming an EventSet
               break;
             }
+            catch (ObjectCollectedException e) {
+              // according to error reports set.resume() may throw this if one of the threads has been collected
+              continue;
+            }
+            catch (InternalException e) {
+              //InternalException 13 means that there are running threads that we are trying to resume
+              //On MacOS it happened that native thread didn't stop while some java thread reached breakpoint
+              if (/*Patches.MAC_RESUME_VM_HACK && */e.errorCode() == 13 && set.suspendPolicy() == EventRequest.SUSPEND_ALL) {
+                //Its funny, but second resume solves the problem
+                continue;
+              }
+              else {
+                LOG.error(e);
+                break;
+              }
+            }
           }
         }
-      }
-    };
+      };
+    }
     pushContext(suspendContext);
     return suspendContext;
   }
@@ -136,12 +145,12 @@ public class SuspendManager {
     // DebuggerManagerThreadImpl.assertIsManagerThread();
 
     boolean suspended = false;
-      for (SuspendContext suspendContext : myEventContexts) {
-        if (suspendContext.suspends(thread)) {
-          suspended = true;
-          break;
-        }
+    for (SuspendContext suspendContext : myEventContexts) {
+      if (suspendContext.suspends(thread)) {
+        suspended = true;
+        break;
       }
+    }
     return suspended && (thread == null || thread.isSuspended());
   }
 

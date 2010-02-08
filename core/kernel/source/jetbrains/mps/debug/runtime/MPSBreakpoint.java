@@ -21,11 +21,13 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debug.PositionInfo;
 import jetbrains.mps.debug.BLDebugInfoCache;
 import jetbrains.mps.debug.DebugInfo;
+import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
 import com.sun.jdi.*;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.BreakpointRequest;
 import com.intellij.openapi.util.Computable;
+import com.intellij.openapi.project.Project;
 
 import java.util.List;
 
@@ -42,13 +44,16 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
 
   private SNodePointer myNodePointer;
   public boolean myIsEnabled = true; //todo add ability to disable breakpoints
+  private Project myProject;
 
-  public MPSBreakpoint(SNode node) {
+  public MPSBreakpoint(SNode node, Project project) {
     myNodePointer = new SNodePointer(node);
+    myProject = project;
   }
 
-  public MPSBreakpoint(SNodePointer nodePointer) {
+  public MPSBreakpoint(SNodePointer nodePointer, Project project) {
     myNodePointer = nodePointer;
+    myProject = project;
   }
 
   public SNodePointer getNodePointer() {
@@ -64,8 +69,8 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
       myNodePointer.getNodeId().toString());
   }
 
-  public static MPSBreakpoint fromBreakpointInfo(BreakpointInfo breakpointInfo) {
-    return new MPSBreakpoint(new SNodePointer(breakpointInfo.myModelReference, breakpointInfo.myNodeId));
+  public static MPSBreakpoint fromBreakpointInfo(BreakpointInfo breakpointInfo, Project project) {
+    return new MPSBreakpoint(new SNodePointer(breakpointInfo.myModelReference, breakpointInfo.myNodeId), project);
   }
 
   public PositionInfo getTargetCodePosition() {
@@ -82,7 +87,7 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
 
   //this should be called on every breakpoint when DebugEventsProcessor is attached
   public void createClassPrepareRequest(DebugVMEventsProcessor debugProcess) {
-    // DebuggerManagerThreadImpl.assertIsManagerThread();
+    DebuggerManagerThread.assertIsManagerThread();
 
     // check is this breakpoint is enabled, vm reference is valid and there're no requests created yet
     if (!myIsEnabled /*|| !debugProcess.isAttached() || debugProcess.getRequestManager().findRequests(this).isEmpty()*/) {
@@ -168,6 +173,10 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
     } catch(Exception ex) {
       LOG.error(ex);
     }
+  }
+
+  public Project getProject() {
+    return myProject;
   }
 
   public static class BreakpointInfo {
