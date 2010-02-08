@@ -16,7 +16,6 @@
 package jetbrains.mps.internal.collections.runtime;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -333,7 +332,7 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
         }
 
         public Object[] toGenericArray(Class runtimeClass) {
-            Object[] arr = (Object[]) Array.newInstance(runtimeClass, size());
+            Object[] arr = (Object[]) ArrayUtils.newArrayInstance(runtimeClass, size());
             return toArray(arr);
         }
 
@@ -403,7 +402,7 @@ public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapS
         public Object[] toArray(Object[] arr) {
             int size = size();
             if (arr.length < size) {
-                arr = (Object[]) Array.newInstance(arr.getClass().getComponentType(), size);
+                arr = (Object[]) ArrayUtils.newArrayInstance(arr.getClass().getComponentType(), size);
             }
             Iterator it = iterator();
             for (int i = 0; i < size; i++) {

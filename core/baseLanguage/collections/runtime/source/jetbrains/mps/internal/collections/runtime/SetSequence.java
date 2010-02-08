@@ -16,7 +16,6 @@
 package jetbrains.mps.internal.collections.runtime;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.HashSet;
@@ -313,7 +312,7 @@ public class SetSequence<T> extends Sequence<T> implements ISetSequence<T>, Set<
 
 	@SuppressWarnings("unchecked")
 	public T[] toGenericArray(Class<T> runtimeClass) {
-        T[] arr = (T[]) Array.newInstance(runtimeClass, set.size());
+        T[] arr = (T[]) ArrayUtils.newArrayInstance(runtimeClass, set.size());
         return set.toArray(arr);
 	}
 

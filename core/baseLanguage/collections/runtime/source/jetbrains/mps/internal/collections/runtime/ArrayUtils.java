@@ -84,6 +84,10 @@ public class ArrayUtils {
             return Sequence.<Short>fromIterable(ArrayUtils.<Short>iterableFromArray(array));
         }
 
+        public static Object newArrayInstance (Class<?> componentType, int length) {
+            return Array.newInstance(componentType, length);  
+        }
+
 	private static <T> Object createAndFillArray(Class<T> type, ISequence<? extends T> seq) {
 		Object arr = Array.newInstance(type, seq.count());
 		int idx=0;

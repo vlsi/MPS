@@ -96,10 +96,10 @@
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.collections.runtime.jar" duplicate="preserve" filesonly="true">
       <fileset dir="core/baseLanguage/collections/runtime/classes" />
       <fileset dir="core/baseLanguage/collections/runtime/source" />
+      <fileset dir="core/baseLanguage/collections/runtime/source_gen" />
     </jar>
   </target>
   <target name="pack.collections.runtime0">
-    <mkdir dir="core/baseLanguage/collections/runtime/classes_gen" />
     <mkdir dir="core/baseLanguage/collections/runtime/source_gen.caches" />
     <mkdir dir="core/baseLanguage/collections/runtime/test_gen.caches" />
     <jar destfile="${deploy.dir}/MPS/core/baseLanguage/collections.runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
@@ -107,7 +107,6 @@
       <zipfileset dir="core/baseLanguage/collections/runtime/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="core/baseLanguage/collections/runtime/test_gen.caches" prefix="test_gen.caches" />
       <zipfileset dir="core/baseLanguage/collections/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
-      <zipfileset dir="core/baseLanguage/collections/runtime/classes_gen" />
     </jar>
   </target>
   <target name="pack.collections_samples0">
@@ -966,6 +965,9 @@
       <zipfileset file="platform/gwtsupport/languages/client/client.mpl" prefix="module" />
       <zipfileset dir="platform/gwtsupport/languages/client/source_gen.caches" prefix="source_gen.caches" />
       <zipfileset dir="platform/gwtsupport/languages/client" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+      <zipfileset file="platform/gwtsupport/languages/client/redist/gwt-dev.jar" />
+      <zipfileset file="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
+      <zipfileset file="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
       <zipfileset dir="platform/gwtsupport/languages/client/classes_gen" />
     </jar>
   </target>

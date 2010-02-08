@@ -15,7 +15,7 @@
       </node>
     </node>
     <node role="renameTo:0" type="jetbrains.mps.gwt.client.structure.RenameTo:0" id="1624295421069327413">
-      <property name="value:0" value="jetbrains.mps.baseLanguage.closures" />
+      <property name="value:0" value="jetbrains.mps.baseLanguage.closures.runtime" />
     </node>
   </node>
 </model>

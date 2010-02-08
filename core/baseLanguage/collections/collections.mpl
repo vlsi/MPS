@@ -58,6 +58,7 @@
   <languageRuntimeClassPath>
     <entry path="${language_descriptor}/runtime/classes" />
     <entry path="${language_descriptor}/runtime/source" />
+    <entry path="${language_descriptor}/runtime/source_gen" />
   </languageRuntimeClassPath>
   <sourcePath />
   <dependencies>

@@ -1,5 +1,4 @@
 <project name="MPS-compile" default="compile.all" basedir="..">
-  <property name="collections.runtime.classes" value="core/baseLanguage/collections/runtime/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.builders.classes" value="platform/builders/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.dates.classes" value="core/baseLanguage/dates/classes_gen" />
   <property name="jetbrains.mps.baseLanguage.dates.runtime.classes" value="core/baseLanguage/dates/runtime/classes_gen" />
@@ -40,10 +39,6 @@
     <path path="lib/junit4/junit-4.1.jar" />
     <path path="lib/log4j/log4j.jar" />
     <path path="workbench/classes" />
-  </path>
-  <path id="cycle.collections.runtime0.src">
-    <path path="core/baseLanguage/collections/runtime/source_gen" />
-    <path path="core/baseLanguage/collections/runtime/test_gen" />
   </path>
   <path id="cycle.jetbrains.mps.baseLanguage.builders0.src">
     <path path="platform/builders/source_gen" />
@@ -125,18 +120,6 @@
     <path path="platform/ypath/solutions/test/source_gen" />
     <path path="platform/ypath/solutions/test/test_gen" />
   </path>
-  <path id="cycle.collections.runtime0.classpaths">
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
-    <path path="core/baseLanguage/baseLanguage/runtime/classes" />
-    <path path="core/baseLanguage/closures/runtime/classes" />
-    <path path="core/baseLanguage/closures/runtime/source" />
-    <path path="core/baseLanguage/closures/runtime/source_gen" />
-    <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
-    <path path="core/baseLanguage/collections/runtime/source" />
-    <path path="lib/commons-lang/commons-lang-2.1.jar" />
-    <path refid="common.classpath" />
-  </path>
   <path id="cycle.jetbrains.mps.baseLanguage.builders0.classpaths">
     <path path="platform/builders/classes_gen" />
     <path path="core/baseLanguage/baseLanguage/classes" />
@@ -152,8 +135,8 @@
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -233,8 +216,8 @@
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/dates/classes_gen" />
     <path path="core/baseLanguage/dates/internal/classes_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
@@ -298,8 +281,8 @@
     <path path="core/baseLanguage/closures/runtime/source" />
     <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/joda-time/joda-time-1.6.jar" />
@@ -312,8 +295,8 @@
     <path path="core/baseLanguage/closures/runtime/source" />
     <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/unitTest/solutions/runtime/classes_gen" />
     <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/jdom/jdom.jar" />
@@ -338,8 +321,8 @@
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -408,8 +391,8 @@
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -477,8 +460,8 @@
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -547,8 +530,8 @@
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -611,14 +594,17 @@
     <path path="core/baseLanguage/closures/runtime/source" />
     <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="platform/gtext/runtime/classes_gen" />
     <path refid="common.classpath" />
   </path>
   <path id="cycle.jetbrains.mps.gwt.client0.classpaths">
     <path path="platform/gwtsupport/languages/client/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-dev.jar" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="core/baseLanguage/baseLanguage/classes" />
     <path path="core/baseLanguage/baseLanguage/runtime/classes" />
     <path path="core/baseLanguage/baseLanguageInternal/classes" />
@@ -632,8 +618,8 @@
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -682,6 +668,8 @@
     <path path="platform/gtext/classes_gen" />
     <path path="platform/gtext/runtime/classes_gen" />
     <path path="platform/gwtsupport/languages/client/classes_gen" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-dev.jar" />
+    <path path="platform/gwtsupport/languages/client/redist/gwt-user.jar" />
     <path path="platform/regexp/runtime/classes" />
     <path path="platform/uiLanguage/runtime/classes" />
     <path path="platform/xml/xml/classes_gen" />
@@ -707,8 +695,8 @@
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -778,8 +766,8 @@
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -852,8 +840,8 @@
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -920,8 +908,8 @@
     <path path="core/baseLanguage/closures/runtime/source" />
     <path path="core/baseLanguage/closures/runtime/source_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="lib/commons-lang/commons-lang-2.1.jar" />
     <path path="lib/jdom/jdom.jar" />
     <path path="lib/jetbrains-ideframework/annotations.jar" />
@@ -944,8 +932,8 @@
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -1021,8 +1009,8 @@
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -1090,8 +1078,8 @@
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -1160,8 +1148,8 @@
     <path path="core/baseLanguage/collections/languages/trove/lib/trove-2.1.0.jar" />
     <path path="core/baseLanguage/collections/languages/trove/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/classes" />
-    <path path="core/baseLanguage/collections/runtime/classes_gen" />
     <path path="core/baseLanguage/collections/runtime/source" />
+    <path path="core/baseLanguage/collections/runtime/source_gen" />
     <path path="core/baseLanguage/dates/runtime/classes_gen" />
     <path path="core/baseLanguage/javadoc/classes" />
     <path path="core/baseLanguage/javadoc/classes_gen" />
@@ -1216,25 +1204,8 @@
     <path path="platform/ypath/solutions/test/classes_gen" />
     <path refid="common.classpath" />
   </path>
-  <target name="compile.all" depends="compile.cycle.collections.runtime0,compile.cycle.jetbrains.mps.baseLanguage.builders0,compile.cycle.jetbrains.mps.baseLanguage.dates0,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime0,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples0,compile.cycle.jetbrains.mps.bash0,compile.cycle.jetbrains.mps.debug0,compile.cycle.jetbrains.mps.editor.runtime0,compile.cycle.jetbrains.mps.gtext0,compile.cycle.jetbrains.mps.gtext.runtime0,compile.cycle.jetbrains.mps.gwt.client0,compile.cycle.jetbrains.mps.lang.test.runtime0,compile.cycle.jetbrains.mps.xml0,compile.cycle.jetbrains.mps.xmlQuery0,compile.cycle.jetbrains.mps.xmlQuery.runtime0,compile.cycle.jetbrains.mps.xmlUnitTest0,compile.cycle.jetbrains.mps.ypath0,compile.cycle.ypath.main0,compile.cycle.ypath.test0" />
-  <target name="compile.cycle.collections.runtime0" depends="compile.cycle.jetbrains.mps.bash0">
-    <property name="classes.dump" value="${collections.runtime.classes}.tmp" />
-    <mkdir dir="core/baseLanguage/collections/runtime/source_gen" />
-    <mkdir dir="core/baseLanguage/collections/runtime/test_gen" />
-    <mkdir dir="${classes.dump}" />
-    <mkdir dir="${collections.runtime.classes}" />
-    <javac classpathref="cycle.collections.runtime0.classpaths" destdir="${classes.dump}">
-      <src refid="cycle.collections.runtime0.src" />
-    </javac>
-    <javac classpathref="cycle.collections.runtime0.classpaths" classpath="${classes.dump}" destdir="${collections.runtime.classes}">
-      <src>
-        <path path="core/baseLanguage/collections/runtime/source_gen" />
-        <path path="core/baseLanguage/collections/runtime/test_gen" />
-      </src>
-    </javac>
-    <delete dir="${classes.dump}" />
-  </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.builders0" depends="compile.cycle.jetbrains.mps.xml0">
+  <target name="compile.all" depends="compile.cycle.jetbrains.mps.baseLanguage.builders0,compile.cycle.jetbrains.mps.baseLanguage.dates0,compile.cycle.jetbrains.mps.baseLanguage.dates.runtime0,compile.cycle.jetbrains.mps.baseLanguage.regexp.examples0,compile.cycle.jetbrains.mps.bash0,compile.cycle.jetbrains.mps.debug0,compile.cycle.jetbrains.mps.editor.runtime0,compile.cycle.jetbrains.mps.gtext0,compile.cycle.jetbrains.mps.gtext.runtime0,compile.cycle.jetbrains.mps.gwt.client0,compile.cycle.jetbrains.mps.lang.test.runtime0,compile.cycle.jetbrains.mps.xml0,compile.cycle.jetbrains.mps.xmlQuery0,compile.cycle.jetbrains.mps.xmlQuery.runtime0,compile.cycle.jetbrains.mps.xmlUnitTest0,compile.cycle.jetbrains.mps.ypath0,compile.cycle.ypath.main0,compile.cycle.ypath.test0" />
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.builders0" depends="compile.cycle.jetbrains.mps.xmlQuery.runtime0">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.builders.classes}.tmp" />
     <mkdir dir="platform/builders/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -1345,7 +1316,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples0" depends="compile.cycle.ypath.test0">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples0" depends="compile.cycle.jetbrains.mps.bash0">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.regexp.examples.classes}.tmp" />
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/source_gen" />
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/test_gen" />
@@ -1362,7 +1333,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.bash0" depends="compile.cycle.jetbrains.mps.gwt.client0">
+  <target name="compile.cycle.jetbrains.mps.bash0" depends="compile.cycle.jetbrains.mps.lang.test.runtime0">
     <property name="classes.dump" value="${jetbrains.mps.bash.classes}.tmp" />
     <mkdir dir="platform/bash/languages/bash/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -1394,7 +1365,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.editor.runtime0" depends="compile.cycle.jetbrains.mps.xmlQuery0">
+  <target name="compile.cycle.jetbrains.mps.editor.runtime0" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples0">
     <property name="classes.dump" value="${jetbrains.mps.editor.runtime.classes}.tmp" />
     <mkdir dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/source_gen" />
     <mkdir dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/test_gen" />
@@ -1428,7 +1399,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.gtext.runtime0" depends="compile.cycle.jetbrains.mps.xmlQuery.runtime0">
+  <target name="compile.cycle.jetbrains.mps.gtext.runtime0" depends="compile.cycle.jetbrains.mps.baseLanguage.dates0">
     <property name="classes.dump" value="${jetbrains.mps.gtext.runtime.classes}.tmp" />
     <mkdir dir="platform/gtext/runtime/source" />
     <mkdir dir="platform/gtext/runtime/source_gen" />
@@ -1447,7 +1418,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.gwt.client0" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples0">
+  <target name="compile.cycle.jetbrains.mps.gwt.client0" depends="compile.cycle.jetbrains.mps.baseLanguage.builders0">
     <property name="classes.dump" value="${jetbrains.mps.gwt.client.classes}.tmp" />
     <mkdir dir="platform/gwtsupport/languages/client/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -1462,7 +1433,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.lang.test.runtime0" depends="compile.cycle.collections.runtime0">
+  <target name="compile.cycle.jetbrains.mps.lang.test.runtime0" depends="compile.cycle.jetbrains.mps.xmlUnitTest0">
     <property name="classes.dump" value="${jetbrains.mps.lang.test.runtime.classes}.tmp" />
     <mkdir dir="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/source_gen" />
     <mkdir dir="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/test_gen" />
@@ -1508,7 +1479,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.xmlQuery0" depends="compile.cycle.jetbrains.mps.baseLanguage.builders0">
+  <target name="compile.cycle.jetbrains.mps.xmlQuery0" depends="compile.cycle.jetbrains.mps.gwt.client0">
     <property name="classes.dump" value="${jetbrains.mps.xmlQuery.classes}.tmp" />
     <mkdir dir="platform/xml/xmlQuery/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -1523,7 +1494,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.xmlQuery.runtime0" depends="compile.cycle.jetbrains.mps.baseLanguage.dates0">
+  <target name="compile.cycle.jetbrains.mps.xmlQuery.runtime0" depends="compile.cycle.ypath.test0">
     <property name="classes.dump" value="${jetbrains.mps.xmlQuery.runtime.classes}.tmp" />
     <mkdir dir="platform/xml/xmlQuery/runtime/source_gen" />
     <mkdir dir="platform/xml/xmlQuery/runtime/test_gen" />
@@ -1540,7 +1511,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.xmlUnitTest0" depends="compile.cycle.jetbrains.mps.lang.test.runtime0">
+  <target name="compile.cycle.jetbrains.mps.xmlUnitTest0" depends="compile.cycle.jetbrains.mps.xmlQuery0">
     <property name="classes.dump" value="${jetbrains.mps.xmlUnitTest.classes}.tmp" />
     <mkdir dir="platform/xmlUnitTest/languages/xmlUnitTest/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -1555,7 +1526,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ypath0" depends="compile.cycle.jetbrains.mps.editor.runtime0">
+  <target name="compile.cycle.jetbrains.mps.ypath0" depends="compile.cycle.jetbrains.mps.xml0">
     <property name="classes.dump" value="${jetbrains.mps.ypath.classes}.tmp" />
     <mkdir dir="platform/ypath/source" />
     <mkdir dir="platform/ypath/source_gen" />
@@ -1607,7 +1578,6 @@
     <delete dir="${classes.dump}" />
   </target>
   <target name="clean.classes">
-    <delete dir="${collections.runtime.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.builders.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.dates.classes}" />
     <delete dir="${jetbrains.mps.baseLanguage.datesInternal.classes}" />

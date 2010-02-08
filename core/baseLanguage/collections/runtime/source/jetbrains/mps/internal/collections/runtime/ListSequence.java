@@ -16,7 +16,6 @@
 package jetbrains.mps.internal.collections.runtime;
 
 import java.io.Serializable;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -347,7 +346,7 @@ public class ListSequence<T> extends CollectionSequence<T> implements IListSeque
 
     @SuppressWarnings("unchecked")
     public T[] toGenericArray(Class<T> runtimeClass) {
-        T[] arr = (T[]) Array.newInstance(runtimeClass, getList().size());
+        T[] arr = (T[]) ArrayUtils.newArrayInstance(runtimeClass, getList().size());
         return getList().toArray(arr);
     }
     

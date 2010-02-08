@@ -13,9 +13,19 @@
       <node role="path:0" type="jetbrains.mps.gwt.client.structure.Path:0" id="1624295421069330101">
         <property name="value:0" value="runtime" />
       </node>
+      <node role="pattern:0" type="jetbrains.mps.gwt.client.structure.Exclude:0" id="1957929848382298819">
+        <node role="pattern:0" type="jetbrains.mps.gwt.client.structure.Pattern:0" id="1957929848382298820">
+          <property name="value:0" value="**/ArrayUtils.java" />
+        </node>
+      </node>
+    </node>
+    <node role="element:0" type="jetbrains.mps.gwt.client.structure.SuperSource:0" id="1957929848382304106">
+      <node role="path:0" type="jetbrains.mps.gwt.client.structure.Path:0" id="1957929848382304107">
+        <property name="value:0" value="gwt" />
+      </node>
     </node>
     <node role="renameTo:0" type="jetbrains.mps.gwt.client.structure.RenameTo:0" id="1624295421069330100">
-      <property name="value:0" value="jetbrains.mps.baseLanguage.collections" />
+      <property name="value:0" value="jetbrains.mps.baseLanguage.collections.runtime" />
     </node>
   </node>
 </model>
