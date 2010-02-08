@@ -17,6 +17,7 @@ package jetbrains.mps.debug.runtime;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debug.PositionInfo;
 import jetbrains.mps.debug.BLDebugInfoCache;
 import jetbrains.mps.debug.DebugInfo;
@@ -24,6 +25,7 @@ import jetbrains.mps.logging.Logger;
 import com.sun.jdi.*;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.BreakpointRequest;
+import com.intellij.openapi.util.Computable;
 
 import java.util.List;
 
@@ -96,9 +98,15 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
   }
 
   protected void createOrWaitPrepare(final DebugVMEventsProcessor debugProcess) {
-    SNode node = getSNode();
 
-    String className = PositionUtil.getGeneratedClassName(node);
+    String className = ModelAccess.instance().runReadAction(new Computable<String>() {
+      @Override
+      public String compute() {
+        SNode node = getSNode();
+        return PositionUtil.getGeneratedClassName(node);
+      }
+    });
+
 
     //add requests for not prepared classes
     System.err.println("BP creating prepare request for class " + className);
@@ -125,7 +133,7 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
   public int getLineIndexInClass() {
     PositionInfo position = getTargetCodePosition();
     if (position == null) return -1;
-    return position.getStartLine();
+    return position.getStartLine() + 1;
   }
 
   //this is called when a class for this BP is prepared
@@ -140,8 +148,7 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
           BreakpointRequest request = requestManager.createBreakpointRequest(this, location);
           requestManager.enableRequest(request);
         }
-      }
-      else {
+      } else {
         // there's no executable code in this class
         requestManager.setInvalid(this, "no executable code found");
         String message = "No locations of type " + classType.name() + " found at line " + getLineIndexInClass();
@@ -179,6 +186,7 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
 
   @Override  //called when breakpoint is hit
   public boolean processLocatableEvent(SuspendContextCommand action, LocatableEvent event) {
+    System.err.println("breakpoint hit!");
     final SuspendContext context = action.getSuspendContext();
     if(!isValid()) {
       context.getDebugProcess().getRequestManager().deleteRequest(this);
@@ -192,7 +200,7 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
       }
 
       //todo conditions - later
-    /*  final EvaluationContextImpl evaluationContext = new EvaluationContextImpl(
+      /*  final EvaluationContextImpl evaluationContext = new EvaluationContextImpl(
         action.getSuspendContext(),
         frameProxy,
         getThisObject(context, event)
@@ -202,7 +210,7 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
         return false;
       }*/
       //todo here some expressions may be evaluated; later
-     // runAction(evaluationContext, event);
+      // runAction(evaluationContext, event);
     }
     catch (IncompatibleThreadStateException ex) {
       LOG.error(ex);

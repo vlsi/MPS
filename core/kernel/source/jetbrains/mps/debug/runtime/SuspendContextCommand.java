@@ -15,6 +15,6 @@ public class SuspendContextCommand {  //todo
   }
 
   public SuspendContext getSuspendContext() {
-    return null;  //todo
+    return mySuspendContext;
   }
 }
