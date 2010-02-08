@@ -30,10 +30,11 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
-  <maxImportIndex value="4" />
+  <maxImportIndex value="5" />
   <import index="1" modelUID="f:java_stub#java.util(java.util@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="3" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
+  <import index="5" modelUID="f:java_stub#org.junit(org.junit@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1203180268870">
     <property name="testCaseName" value="Where" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1203180268871" />
@@ -1884,13 +1885,16 @@
   </node>
   <node type="jetbrains.mps.baseLanguage.unitTest.structure.BTestCase" id="1204129267857">
     <property name="testCaseName" value="Util" />
-    <property name="abstractClass" value="true" />
+    <property name="abstractClass" value="false" />
     <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="1204129267858" />
     <node role="testMethodList" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethodList" id="1204129267859">
       <node role="testMethod" type="jetbrains.mps.baseLanguage.unitTest.structure.TestMethod" id="1204129298262">
         <property name="methodName" value="dummy" />
         <node role="returnType" type="jetbrains.mps.baseLanguage.structure.VoidType:3" id="1204129298263" />
         <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1204129298264" />
+        <node role="annotation" type="jetbrains.mps.baseLanguage.structure.AnnotationInstance:3" id="5403909411138438379">
+          <link role="annotation:3" targetNodeId="5.~Ignore" resolveInfo="Ignore" />
+        </node>
       </node>
     </node>
     <node role="method" type="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration:3" id="1204129289579">
