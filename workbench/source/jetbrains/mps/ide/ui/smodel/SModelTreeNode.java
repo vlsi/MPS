@@ -30,7 +30,6 @@ import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeUpdater;
-import jetbrains.mps.ide.ui.smodel.SModelTreeListener;
 import jetbrains.mps.lang.annotations.structure.AttributeConcept;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
@@ -118,13 +117,8 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myNodesCondition = condition;
     myCountAdditionalNamePart = countNamePart;
     if (!getSModelDescriptor().isReadOnly()) {
-      myTreeUpdater = new SNodeTreeUpdater(operationContext.getProject());
+      myTreeUpdater = new MySNodeTreeUpdater(operationContext.getProject(), this);
       myTreeUpdater.setDependencyRecorder(myDependencyRecorder);
-      myTreeUpdater.setListener(new SModelTreeListener(this) {
-        public boolean showPropertiesAndReferences() {
-          return SModelTreeNode.this.showPropertiesAndReferences();
-        }
-      });
     }
     setUserObject(modelDescriptor);
     updatePresentation();
@@ -667,6 +661,76 @@ public class SModelTreeNode extends MPSTreeNodeEx {
 //    @Override
 //    public void changeRemoved(Change change) {
 //      updateNodePresentation(true, false);
+    }
+  }
+
+  private class MySNodeTreeUpdater extends SNodeTreeUpdater<SModelTreeNode> {
+    public MySNodeTreeUpdater(Project project, SModelTreeNode treeNode) {
+      super(project, treeNode);
+    }
+
+    public boolean showPropertiesAndReferences() {
+      return SModelTreeNode.this.showPropertiesAndReferences();
+    }
+
+    private SNodeTreeNode findRootSNodeTreeNode(SNode node) {
+      return findRootSNodeTreeNode(myTreeNode, node);
+    }
+
+    private SNodeTreeNode findRootSNodeTreeNode(MPSTreeNode current, SNode node) {
+      for (int i = 0; i < current.getChildCount(); i++) {
+        MPSTreeNode child = (MPSTreeNode) current.getChildAt(i);
+
+        if (child instanceof SNodeTreeNode && ((SNodeTreeNode) child).getSNode() == node) {
+          return (SNodeTreeNode) child;
+        }
+
+        if (child instanceof SNodeGroupTreeNode || child instanceof SModelTreeNode) {
+          SNodeTreeNode result = findRootSNodeTreeNode(child, node);
+          if (result != null) {
+            return result;
+          }
+        }
+      }
+
+      return null;
+    }
+
+    public SModelDescriptor getSModelDescriptor() {
+      return myTreeNode.getSModel().getModelDescriptor();
+    }
+
+    public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
+      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+      for (SNode root : removedRoots) {
+        SNodeTreeNode node = (SNodeTreeNode) findRootSNodeTreeNode(root);
+        if (node == null) continue;
+
+        MPSTreeNode parent = (MPSTreeNode) node.getParent();
+        treeModel.removeNodeFromParent(node);
+
+        if (parent instanceof SNodeGroupTreeNode && parent.getChildCount() == 0) {
+          myTreeNode.groupBecameEmpty((SNodeGroupTreeNode) parent);
+        }
+      }
+      myTreeNode.insertRoots(addedRoots);
+    }
+
+    public void updateNodesWithChangedPackages(Set<SNode> nodesWithChangedPackages) {
+      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+
+      for (SNode node : nodesWithChangedPackages) {
+        SNodeTreeNode treeNode = (SNodeTreeNode) findRootSNodeTreeNode(node);
+        if (treeNode == null) continue;
+
+        MPSTreeNode parent = (MPSTreeNode) treeNode.getParent();
+
+        treeModel.removeNodeFromParent(treeNode);
+        if (parent.getChildCount() == 0 && parent instanceof SNodeGroupTreeNode) {
+          myTreeNode.groupBecameEmpty((SNodeGroupTreeNode) parent);
+        }
+      }
+      myTreeNode.insertRoots(nodesWithChangedPackages);
     }
   }
 }

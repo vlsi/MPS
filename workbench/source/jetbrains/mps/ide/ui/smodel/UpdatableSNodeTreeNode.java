@@ -6,8 +6,15 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.EventsCollector;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.util.Condition;
+import jetbrains.mps.ide.ui.MPSTreeNode;
 
 import java.util.List;
+import java.util.Set;
+import java.util.HashSet;
+
+import com.intellij.openapi.project.Project;
+
+import javax.swing.tree.DefaultTreeModel;
 
 public class UpdatableSNodeTreeNode extends SNodeTreeNode {
   private SNodeTreeUpdater myTreeUpdater;
@@ -62,16 +69,60 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
       }
     };
     if (!getModelDescriptor().isReadOnly()) {
-      myTreeUpdater = new SNodeTreeUpdater(getOperationContext().getProject());
-      myTreeUpdater.setListener(new SNodeTreeListener(this));
+      myTreeUpdater = new MySNodeTreeUpdater(getOperationContext().getProject(), this);
     }
     addListeners();
   }
 
-  class MyEventsCollector extends EventsCollector {
+  private class MyEventsCollector extends EventsCollector {
     protected void eventsHappened(List<SModelEvent> events) {
       if (myTreeUpdater == null) return;
       myTreeUpdater.eventsHappenedInCommand(events);
+    }
+  }
+
+  private class MySNodeTreeUpdater extends SNodeTreeUpdater<UpdatableSNodeTreeNode> {
+    public MySNodeTreeUpdater(Project project, UpdatableSNodeTreeNode treeNode) {
+      super(project, treeNode);
+    }
+
+    private Set<SNode> getNodesInThisRoot(Set<SNode> candidates) {
+      Set<SNode> nodesInThisRoot = new HashSet<SNode>();
+      for (SNode node : candidates) {
+        SNode root = (node.isRoot())? node : node.getContainingRoot();
+        if (myTreeNode.getSNode().equals(root)) {
+          nodesInThisRoot.add(node);
+        }
+      }
+      return nodesInThisRoot;
+    }
+
+    public SModelDescriptor getSModelDescriptor() {
+      return myTreeNode.getSNode().getModel().getModelDescriptor();
+    }
+
+    public void updateNodesWithChangedPackages(Set<SNode> nodesWithChangedPackages) {
+      // empty
+    }
+
+    public void addAndRemoveRoots(Set<SNode> removedRoots, Set<SNode> addedRoots) {
+      if (getTree() == null) return;
+      DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
+      for (SNode removedRoot : removedRoots) {
+        if (removedRoot.equals(myTreeNode.getSNode())) {
+          treeModel.removeNodeFromParent(myTreeNode);
+        }
+      }
+    }
+
+    public void updateChangedPresentations(Set<SNode> nodesWithChangedPresentations) {
+      Set<SNode> nodeInThisRoot = getNodesInThisRoot(nodesWithChangedPresentations);
+      super.updateChangedPresentations(nodeInThisRoot);
+    }
+
+    public void updateChangedRefs(Set<SNode> nodesWithChangedRefs) {
+      Set<SNode> nodeInThisRoot = getNodesInThisRoot(nodesWithChangedRefs);
+      super.updateChangedRefs(nodeInThisRoot);
     }
   }
 }
