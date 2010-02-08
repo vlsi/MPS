@@ -17,19 +17,18 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro;
 import jetbrains.mps.lang.generator.structure.ReferenceMacro_GetReferent;
-import jetbrains.mps.util.QueryMethodGenerated;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.stubs.javastub.classpath.StubHelper;
+import jetbrains.mps.util.QueryMethodGenerated;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
-
-import org.jetbrains.annotations.Nullable;
 
 /**
  * Created by: Sergey Dmitriev

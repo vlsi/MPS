@@ -16,7 +16,6 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
 
 public interface IReferenceResolver {
   SNode resolve(SNode outputSourceNode, String role, SNode inputTargetNode);

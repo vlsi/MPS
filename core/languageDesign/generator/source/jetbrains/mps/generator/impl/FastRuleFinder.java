@@ -15,11 +15,11 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.*;

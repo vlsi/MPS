@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.generator.impl;
 
+import jetbrains.mps.lang.generator.structure.NodeMacro;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.lang.generator.structure.NodeMacro;
 
 import java.util.ArrayList;
 import java.util.Map;

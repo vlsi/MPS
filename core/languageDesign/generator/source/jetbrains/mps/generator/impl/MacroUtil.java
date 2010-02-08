@@ -17,12 +17,12 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.template.*;
+import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
+import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.BaseAdapter;
 import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
-import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.ArrayList;

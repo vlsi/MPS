@@ -15,11 +15,14 @@
  */
 package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.lang.generator.structure.TemplateSwitch;
+import jetbrains.mps.smodel.INodeAdapter;
+import jetbrains.mps.smodel.SModelDescriptor;
 
-import java.util.*;
+import java.util.HashMap;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
 
 public class TemplateSwitchGraph {
   private Map<TemplateSwitch, TemplateSwitchGraphNode> myTemplateSwitchToGraphNodeMap = new HashMap<TemplateSwitch, TemplateSwitchGraphNode>();

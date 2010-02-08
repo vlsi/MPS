@@ -13,13 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator;
+package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.generator.impl.AbstractTemplateGenerator;
-import jetbrains.mps.generator.impl.CloneUtil;
-import jetbrains.mps.generator.impl.GeneratorUtil;
-import jetbrains.mps.generator.impl.TemplateGenerator;
+import jetbrains.mps.generator.*;
 import jetbrains.mps.generator.plan.AbstractGenerationStepController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationStepController;
@@ -40,7 +37,9 @@ import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.*;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 /**
  * Igor Alshannikov
