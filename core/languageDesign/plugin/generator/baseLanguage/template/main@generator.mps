@@ -49,7 +49,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
-  <maxImportIndex value="88" />
+  <maxImportIndex value="89" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="23" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="4" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -99,6 +99,7 @@
   <import index="85" modelUID="f:java_stub#com.intellij.openapi.util(com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="87" modelUID="f:java_stub#jetbrains.mps.checkedName(jetbrains.mps.checkedName@java_stub)" version="-1" />
   <import index="88" modelUID="f:java_stub#jetbrains.mps.debug(jetbrains.mps.debug@java_stub)" version="-1" />
+  <import index="89" modelUID="f:java_stub#jetbrains.mps.generator.impl(jetbrains.mps.generator.impl@java_stub)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1203080454777">
     <property name="package:2" value="Plugin" />
     <property name="name:2" value="ProjectPlugin" />
@@ -3327,7 +3328,7 @@
             <node role="operation:3" type="jetbrains.mps.baseLanguage.collections.structure.AddElementOperation:7" id="1238672255063">
               <node role="argument:7" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1238672255064">
                 <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1238672255065">
-                  <link role="baseMethodDeclaration:3" targetNodeId="16.~AbandonRuleInputException.&lt;init&gt;()" resolveInfo="AbandonRuleInputException" />
+                  <link role="baseMethodDeclaration:3" targetNodeId="89.~AbandonRuleInputException.&lt;init&gt;()" resolveInfo="AbandonRuleInputException" />
                   <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="1238672255066">
                     <link role="variableDeclaration:3" targetNodeId="1204475189688" resolveInfo="project" />
                   </node>
