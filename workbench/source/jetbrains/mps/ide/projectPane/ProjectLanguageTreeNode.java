@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import com.intellij.openapi.actionSystem.ActionGroup;
+import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -23,10 +24,12 @@ import jetbrains.mps.ide.StereotypeProvider;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.action.ActionUtils;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
@@ -52,6 +55,7 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     super.updatePresentation();
     setIcon(Icons.PROJECT_LANGUAGE_ICON);
     setNodeIdentifier(myLanguage.getModuleReference().toString());
+    
   }
 
   @Override
@@ -163,6 +167,24 @@ class ProjectLanguageTreeNode extends ProjectModuleTreeNode {
     public AccessoriesModelTreeNode() {
       super("accessories");
       setIcon(Icons.LIB_ICON);
+      updatePresentation();
+    }
+
+    public List<String> validate() {
+      List<String> errors = new ArrayList<String>();
+      IScope scope = getLanguage().getScope();
+      for (SModelReference accessory : getLanguage().getLanguageDescriptor().getAccessoryModels()) {
+        if (scope.getModelDescriptor(accessory) == null) {
+          errors.add("Can't find accessory " + accessory.getLongName());
+        }
+      }
+      return errors;
+    }
+
+    @Override
+    protected void updatePresentation() {
+      super.updatePresentation();
+      setErrorState(validate().isEmpty()? ErrorState.NONE : ErrorState.ERROR);
     }
 
     @Override

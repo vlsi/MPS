@@ -216,6 +216,11 @@ public class Language extends AbstractModule {
         errors.add("Can't find extended language " + lang.getModuleFqName());
       }
     }
+    for (SModelReference accessory : getLanguageDescriptor().getAccessoryModels()) {
+      if (getScope().getModelDescriptor(accessory) == null) {
+        errors.add("Can't find accessory model" + accessory.getLongName());
+      }
+    }
     return errors;
   }
 
