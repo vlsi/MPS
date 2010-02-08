@@ -156,6 +156,10 @@ public class MPSModuleRepository implements ApplicationComponent {
     }
   }
 
+  public boolean isKnownModule (IModule m) {
+    return myModules.contains(m);
+  }
+
   public void fireModuleChanged(IModule m) {
     if (!myModules.contains(m)) return;
 

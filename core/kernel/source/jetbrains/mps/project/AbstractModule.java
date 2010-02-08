@@ -874,6 +874,14 @@ public abstract class AbstractModule implements IModule {
       String moduleId = sp.getManager().getModuleId();
       String className = sp.getManager().getClassName();
 
+      // TODO: fixme
+      // while loading a language we can't refer to it by ID, since it hasn't been created yet
+      // fortunately, we don't have to
+      if (this.getModuleId().equals(ModuleId.fromString(moduleId))) {
+        // well, that's weird... this causes an NPE in ClassLoaderManager
+        return (BaseStubModelRootManager) BaseStubModelRootManager.create(this, className);
+      }
+      
       return (BaseStubModelRootManager) BaseStubModelRootManager.create(moduleId, className);
     } catch (ManagerNotFoundException e) {
       LOG.error("Can't create stub manager " + sp.getManager().getClassName() + " for " + sp.getPath(), e);

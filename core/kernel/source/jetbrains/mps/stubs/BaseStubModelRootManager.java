@@ -16,6 +16,7 @@
 package jetbrains.mps.stubs;
 
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.SModelRoot;
@@ -131,15 +132,24 @@ public abstract class BaseStubModelRootManager extends AbstractModelRootManager 
   protected abstract Set<Language> getLanguagesToImport();
 
   public static IModelRootManager create(String moduleId, String className) throws ManagerNotFoundException {
-    Language l = ((Language) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId)));
-    if (l == null) {
-      String messgae = "Language with id " + moduleId + " not found for stubs loader " + className + ". Some stub models won't be loaded.";
-      throw new ManagerNotFoundException(messgae);
+    AbstractModule mod = ((AbstractModule) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString(moduleId)));
+    if (mod == null) {
+      String msg = "Module with id " + moduleId + " not found for stubs loader " + className + ". Some stub models won't be loaded.";
+      throw new ManagerNotFoundException(msg);
     }
 
-    Class managerClass = l.getClass(className);
+    return create(mod, className);
+  }
+
+  public static IModelRootManager create(AbstractModule mod, String className) throws ManagerNotFoundException {
+    // TODO: fixme
+    // hack -- avoid "harmless exceptions" to be reported if the module hasn't been loaded yet
+    if (!(MPSModuleRepository.getInstance().isKnownModule(mod))) {
+       return null;
+    }
+    Class managerClass = mod.getClass(className);
     if (managerClass == null) {
-      throw new ManagerNotFoundException("Manager class " + className + " not found in language " + moduleId);
+      throw new ManagerNotFoundException("Manager class " + className + " not found in mod " + mod.getModuleFqName());
     }
 
     try {
