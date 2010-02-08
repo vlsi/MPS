@@ -116,7 +116,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
     myLabel = label;
     myNodesCondition = condition;
     myCountAdditionalNamePart = countNamePart;
-    if (!getSModelDescriptor().isReadOnly()) {
+    if (getSModelDescriptor() != null && !getSModelDescriptor().isReadOnly()) {
       myTreeUpdater = new MySNodeTreeUpdater(operationContext.getProject(), this);
       myTreeUpdater.setDependencyRecorder(myDependencyRecorder);
     }
