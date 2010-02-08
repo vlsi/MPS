@@ -203,6 +203,9 @@ public class VMCreator {
         myDebugVMEventsProcessor.getMulticaster().connectorIsReady();
         try {
           return connector.accept(myArguments);
+        } catch (IOException ex) {
+          LOG.error(ex);
+          throw new RunFailedException(ex);
         } finally {
           if(myArguments != null) {
             try {

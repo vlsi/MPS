@@ -90,7 +90,7 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
     if (!isValid()) {
       return;
     }
-
+    System.err.println("BP creating class prepare request");
     createOrWaitPrepare(debugProcess);
     // updateUI();
   }
@@ -101,11 +101,13 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
     String className = PositionUtil.getGeneratedClassName(node);
 
     //add requests for not prepared classes
+    System.err.println("BP creating prepare request for class " + className);
     debugProcess.getRequestManager().callbackOnPrepareClasses(this, className);
     //and get all already prepared classes for a SNode
     List<ReferenceType> list = debugProcess.getVirtualMachine().classesByName(className);
     for (final ReferenceType refType : list) {
       if (refType.isPrepared()) {
+        System.err.println("BP creating requests on prepared class " + className);
         processClassPrepare(debugProcess, refType);
       }
     }

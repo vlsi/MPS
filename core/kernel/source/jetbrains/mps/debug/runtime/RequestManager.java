@@ -27,6 +27,7 @@ import java.util.HashSet;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
+import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import org.jetbrains.annotations.Nullable;
 
 /**
@@ -58,19 +59,19 @@ public class RequestManager implements DebugProcessListener {
   }
 
   public Requestor findRequestor(EventRequest request) {
-    // DebuggerManagerThreadImpl.assertIsManagerThread();   //todo add assertions if necessary
+    DebuggerManagerThread.assertIsManagerThread();
     return request != null? (Requestor)request.getProperty(REQUESTOR) : null;
   }
 
   public Set<EventRequest> findRequests(Requestor requestor) {
-    // DebuggerManagerThreadImpl.assertIsManagerThread();
+    DebuggerManagerThread.assertIsManagerThread();
     if (!myRequestorToBelongedRequests.containsKey(requestor)) {
       return Collections.emptySet();
     }
     return new HashSet<EventRequest>(myRequestorToBelongedRequests.get(requestor));
   }
 
-  public void registerRequestInternal(final Requestor requestor, final EventRequest request) {
+  private void registerRequestInternal(final Requestor requestor, final EventRequest request) {
     registerRequest(requestor, request);
     request.putProperty(REQUESTOR, requestor);
   }
@@ -82,11 +83,10 @@ public class RequestManager implements DebugProcessListener {
       myRequestorToBelongedRequests.put(requestor, reqSet);
     }
     reqSet.add(request);
-
   }
 
   public void deleteRequest(Requestor requestor) {
-    // DebuggerManagerThreadImpl.assertIsManagerThread();
+    DebuggerManagerThread.assertIsManagerThread();
 
     if(!myDebugEventsProcessor.isAttached()) {
       return;
@@ -123,17 +123,8 @@ public class RequestManager implements DebugProcessListener {
 
 
   //------------------- requests creation
-  private ClassPrepareRequest createClassPrepareRequest(ClassPrepareRequestor requestor, String className) {
-    ClassPrepareRequest classPrepareRequest = myEventRequestManager.createClassPrepareRequest();
-    classPrepareRequest.setSuspendPolicy(EventRequest.SUSPEND_EVENT_THREAD);
-    classPrepareRequest.addClassFilter(className);
-    classPrepareRequest.putProperty(CLASS_NAME, className);
-    registerRequestInternal(requestor, classPrepareRequest);
-    return classPrepareRequest;
-  }
-
   public BreakpointRequest createBreakpointRequest(MPSBreakpoint requestor, Location location) {
-    // DebuggerManagerThreadImpl.assertIsManagerThread();
+    DebuggerManagerThread.assertIsManagerThread();
     BreakpointRequest req = myEventRequestManager.createBreakpointRequest(location);
     req.setSuspendPolicy(EventRequest.SUSPEND_ALL);
     registerRequestInternal(requestor, req);
@@ -145,27 +136,36 @@ public class RequestManager implements DebugProcessListener {
 
   //by classname
   public void callbackOnPrepareClasses(ClassPrepareRequestor requestor, String classOrPatternToBeLoaded) {
-    // DebuggerManagerThreadImpl.assertIsManagerThread();
+    DebuggerManagerThread.assertIsManagerThread();
     ClassPrepareRequest classPrepareRequest = createClassPrepareRequest(requestor, classOrPatternToBeLoaded);
     classPrepareRequest.enable();
   }
 
-   //currently does no much more than request.enable()
-   public void enableRequest(EventRequest request) {
-    // DebuggerManagerThreadImpl.assertIsManagerThread();
-      LOG.assertLog(findRequestor(request) != null);
-      request.enable();
-   }
+  private ClassPrepareRequest createClassPrepareRequest(ClassPrepareRequestor requestor, String className) {
+    ClassPrepareRequest classPrepareRequest = myEventRequestManager.createClassPrepareRequest();
+    classPrepareRequest.setSuspendPolicy(EventRequest.SUSPEND_EVENT_THREAD);
+    classPrepareRequest.addClassFilter(className);
+    classPrepareRequest.putProperty(CLASS_NAME, className);
+    registerRequestInternal(requestor, classPrepareRequest);
+    return classPrepareRequest;
+  }
+
+  //currently does no much more than request.enable()
+  public void enableRequest(EventRequest request) {
+    DebuggerManagerThread.assertIsManagerThread();
+    LOG.assertLog(findRequestor(request) != null);
+    request.enable();
+  }
 
 
-   public void setInvalid(Requestor requestor, String message) {
-  //  DebuggerManagerThreadImpl.assertIsManagerThread();
+  public void setInvalid(Requestor requestor, String message) {
+    DebuggerManagerThread.assertIsManagerThread();
     myInvalidRequestsAndWarnings.put(requestor, message);
   }
 
   public @Nullable
   String getWarning(Requestor requestor) {
-   // DebuggerManagerThreadImpl.assertIsManagerThread();
+    DebuggerManagerThread.assertIsManagerThread();
     return myInvalidRequestsAndWarnings.get(requestor);
   }
 

@@ -117,6 +117,7 @@ public class DebugVMEventsProcessor {
                 final SuspendContext suspendContext = mySuspendManager.pushSuspendContext(eventSet);
 
                 for (Event event : eventSet) {
+                  System.err.println("event happened: " + event.toString());
                   try {
                     //todo processing different event kinds here
                  /*   if (event instanceof VMStartEvent) {
@@ -130,6 +131,7 @@ public class DebugVMEventsProcessor {
                       processVMDeathEvent(suspendContext, event);
                     }
                     else */ if (event instanceof ClassPrepareEvent) {
+                      System.err.println("class prepare event happened");
                       processClassPrepareEvent(suspendContext, (ClassPrepareEvent)event);
                     }
                     //AccessWatchpointEvent, BreakpointEvent, ExceptionEvent, MethodEntryEvent, MethodExitEvent,
@@ -138,6 +140,7 @@ public class DebugVMEventsProcessor {
                       processStepEvent(suspendContext, (StepEvent)event);
                     }*/
                     else if (event instanceof LocatableEvent) {
+                      System.err.println("locatable event happened");
                       processLocatableEvent(suspendContext, (LocatableEvent)event);
                     } else {
                       mySuspendManager.voteResume(suspendContext);

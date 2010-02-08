@@ -568,7 +568,9 @@
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.ParameterReference:3" id="7518625823783829300">
                 <link role="variableDeclaration:3" targetNodeId="7518625823783829289" resolveInfo="port" />
               </node>
-              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7518625823783829302" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7518625823783829302">
+                <property name="value:3" value="true" />
+              </node>
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="7518625823783829304">
                 <property name="value:3" value="false" />
               </node>
