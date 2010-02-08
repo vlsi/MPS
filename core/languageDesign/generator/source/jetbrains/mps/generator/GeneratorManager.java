@@ -28,7 +28,6 @@ import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
 import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
-import jetbrains.mps.generator2.GenerationController2;
 import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.logging.Logger;

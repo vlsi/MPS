@@ -2,6 +2,8 @@ package jetbrains.mps.generator2.plan;
 
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.generator.plan.AbstractGenerationStepController;
+import jetbrains.mps.generator.plan.GenerationPartitioner;
+import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
