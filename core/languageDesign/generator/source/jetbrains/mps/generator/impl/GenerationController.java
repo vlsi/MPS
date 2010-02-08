@@ -13,9 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator;
+package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
+import jetbrains.mps.cleanup.CleanupManager;
+import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.GeneratorManager.GeneratorNotifierHelper;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
@@ -34,7 +37,6 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.cleanup.CleanupManager;
 
 import java.rmi.RemoteException;
 import java.util.*;
@@ -43,6 +45,7 @@ public class GenerationController {
   protected static Logger LOG = Logger.getLogger(GenerationController.class);
 
   private GeneratorManager myManager;
+  private GeneratorNotifierHelper myNotifierHelper;
   protected GenerationSettings mySettings;
   private List<Pair<SModelDescriptor, IOperationContext>> myInputModels;
   protected IGenerationHandler myGenerationHandler;
@@ -54,6 +57,7 @@ public class GenerationController {
   protected Map<IModule, IOperationContext> myModulesToContexts = new HashMap<IModule, IOperationContext>();
 
   public GenerationController(GeneratorManager generatorManager,
+                              GeneratorNotifierHelper notifierHelper,
                               GenerationSettings settings,
                               List<Pair<SModelDescriptor, IOperationContext>> _inputModels,
                               IGenerationHandler generationHandler,
@@ -62,6 +66,7 @@ public class GenerationController {
                               boolean saveTransientModels) {
 
     myManager = generatorManager;
+    myNotifierHelper = notifierHelper;
     mySettings = settings;
     myInputModels = _inputModels;
     myGenerationHandler = generationHandler;
@@ -134,10 +139,6 @@ public class GenerationController {
     boolean currentGenerationOK = true;
 
     IOperationContext invocationContext = myModulesToContexts.get(module);
-
-    // myProgress.startTask("generating in module " + module);
-    //todo start timer
-
     myGenerationHandler.startModule(module, inputModels, getProjectHandler(), progressHelper);
 
     //++ generation
@@ -216,15 +217,15 @@ public class GenerationController {
   }
 
   private void fireModelsGenerated(boolean success) {
-    myManager.fireModelsGenerated(Collections.unmodifiableList(myInputModels), success);
+    myNotifierHelper.fireModelsGenerated(Collections.unmodifiableList(myInputModels), success);
   }
 
   private void fireBeforeModelsCompiled(boolean success) {
-    myManager.fireBeforeModelsCompiled(Collections.unmodifiableList(myInputModels), success);
+    myNotifierHelper.fireBeforeModelsCompiled(Collections.unmodifiableList(myInputModels), success);
   }
 
   private void fireAfterModelsCompiled(boolean success) {
-    myManager.fireAfterModelsCompiled(Collections.unmodifiableList(myInputModels), success);
+    myNotifierHelper.fireAfterModelsCompiled(Collections.unmodifiableList(myInputModels), success);
   }
 
   private IOperationContext getFirstContext() {

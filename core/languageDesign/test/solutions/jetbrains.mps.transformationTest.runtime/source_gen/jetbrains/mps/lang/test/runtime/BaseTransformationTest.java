@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.generator.TransientModelsModule;
-import jetbrains.mps.generator.template.CloneUtil;
+import jetbrains.mps.generator.impl.CloneUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.lang.reflect.InvocationTargetException;
 

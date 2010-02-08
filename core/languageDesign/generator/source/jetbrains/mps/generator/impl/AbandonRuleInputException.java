@@ -13,11 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator.template;
+package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SReference;
-
-public interface IReferenceResolver {
-  SNode resolve(SNode outputSourceNode, String role, SNode inputTargetNode);
+public class AbandonRuleInputException extends Exception {
 }

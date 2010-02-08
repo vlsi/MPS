@@ -13,16 +13,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.generator.template;
+package jetbrains.mps.generator.impl;
 
-import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
-import jetbrains.mps.lang.structure.structure.ConceptDeclaration;
-import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
-import jetbrains.mps.generator.template.GeneratorUtil;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.util.NameUtil;
 

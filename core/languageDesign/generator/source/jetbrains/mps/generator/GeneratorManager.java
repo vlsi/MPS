@@ -26,7 +26,9 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.generator.generationTypes.IGenerationHandler;
 import jetbrains.mps.generator.generationTypes.JavaGenerationHandler;
+import jetbrains.mps.generator.impl.GenerationController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
+import jetbrains.mps.generator2.GenerationController2;
 import jetbrains.mps.ide.messages.*;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.logging.Logger;
@@ -300,10 +302,10 @@ public class GeneratorManager {
           project.getComponentSafe(GenerationTracer.class).startTracing();
         }
         fireBeforeGeneration(inputModels);
-        GenerationController gc = new GenerationController(GeneratorManager.this, mySettings, inputModels, generationHandler, progress, messages, saveTransientModels);
-//          mySettings.isUseNewGenerator()
-//            ? new GenerationController2(GeneratorManager.this, mySettings, inputModels, generationHandler, progress, messages, saveTransientModels)
-//            : new GenerationController(GeneratorManager.this, mySettings, inputModels, generationHandler, progress, messages, saveTransientModels);
+        GenerationController gc = new GenerationController(GeneratorManager.this, new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, progress, messages, saveTransientModels);
+          //mySettings.isUseNewGenerator()
+          //  ? new GenerationController2(GeneratorManager.this, new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, progress, messages, saveTransientModels)
+          //  : new GenerationController(GeneratorManager.this, new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, progress, messages, saveTransientModels);
         result[0] = gc.generate();
         project.getComponentSafe(GenerationTracer.class).finishTracing();
         fireAfterGeneration(inputModels);
@@ -312,36 +314,6 @@ public class GeneratorManager {
       }
     });
     return result[0];
-  }
-
-  void fireModelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
-    for (GenerationListener l : myGenerationListeners) {
-      try {
-        l.modelsGenerated(models, success);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  void fireBeforeModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
-    for (CompilationListener l : myCompilationListeners) {
-      try {
-        l.beforeModelsCompiled(models, success);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
-  }
-
-  void fireAfterModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
-    for (CompilationListener l : myCompilationListeners) {
-      try {
-        l.afterModelsCompiled(models, success);
-      } catch (Throwable t) {
-        LOG.error(t);
-      }
-    }
   }
 
   private void fireBeforeGeneration(List<Pair<SModelDescriptor, IOperationContext>> inputModels) {
@@ -360,6 +332,39 @@ public class GeneratorManager {
         l.afterGeneration(inputModels);
       } catch (Throwable t) {
         LOG.error(t);
+      }
+    }
+  }
+
+  public class GeneratorNotifierHelper {
+
+    public void fireModelsGenerated(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+      for (GenerationListener l : myGenerationListeners) {
+        try {
+          l.modelsGenerated(models, success);
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
+      }
+    }
+
+    public void fireBeforeModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+      for (CompilationListener l : myCompilationListeners) {
+        try {
+          l.beforeModelsCompiled(models, success);
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
+      }
+    }
+
+    public void fireAfterModelsCompiled(List<Pair<SModelDescriptor, IOperationContext>> models, boolean success) {
+      for (CompilationListener l : myCompilationListeners) {
+        try {
+          l.afterModelsCompiled(models, success);
+        } catch (Throwable t) {
+          LOG.error(t);
+        }
       }
     }
   }
