@@ -143,7 +143,7 @@ public class GenerationController {
 
     //++ generation
     String wasLoggingThreshold = null;
-    IGenerationSession generationSession = new GenerationSession(invocationContext, mySaveTransientModels, myProgress, myMessages, mySettings.isUseNewGenerator());
+    GenerationSession generationSession = new GenerationSession(invocationContext, mySaveTransientModels, myProgress, myMessages, mySettings.isUseNewGenerator());
     try {
       if (mySettings.isShowErrorsOnly()) {
         wasLoggingThreshold = Logger.setThreshold("ERROR");

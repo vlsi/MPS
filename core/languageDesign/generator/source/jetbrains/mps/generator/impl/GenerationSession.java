@@ -45,7 +45,7 @@ import java.util.List;
  * Igor Alshannikov
  * Oct 26, 2005
  */
-public class GenerationSession implements IGenerationSession {
+public class GenerationSession {
   public static final Logger LOG = Logger.getLogger(GenerationSession.class);
 
   private IOperationContext myInvocationContext;
