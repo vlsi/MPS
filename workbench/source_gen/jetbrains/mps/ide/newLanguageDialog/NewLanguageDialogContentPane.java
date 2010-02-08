@@ -32,10 +32,11 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.ApplicationLevelVcsManager;
@@ -43,7 +44,6 @@ import jetbrains.mps.vfs.VFileSystem;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.ide.newSolutionDialog.NewModuleUtil;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.util.FileUtil;
 
 public class NewLanguageDialogContentPane extends JPanel {
@@ -272,14 +272,20 @@ public class NewLanguageDialogContentPane extends JPanel {
           LanguageAspect.TYPESYSTEM.createNew(language.value, false);
         }
         if (myThis.myNeedRuntime0.isSelected()) {
-          myThis.createRuntimeSolution();
+          Solution runtime = myThis.createRuntimeSolution();
+          runtime.createModel(SModelFqName.fromString(myThis.getLanguageNamespace() + ".runtime"), runtime.getSModelRoots().get(0));
         }
         if (myThis.myNeedSandbox0.isSelected()) {
           Solution sandbox = myThis.createSandboxSolution();
-          SModel createdModel = sandbox.getOwnModelDescriptors().get(0).getSModel();
+          SModel createdModel = sandbox.createModel(SModelFqName.fromString(myThis.getLanguageNamespace() + ".sandbox"), sandbox.getSModelRoots().get(0)).getSModel();
           createdModel.addLanguage(myThis.getResult());
           for (Language extendedLanguage : myThis.getResult().getExtendedLanguages()) {
             createdModel.addLanguage(extendedLanguage);
+          }
+          for (ModuleReference addedLanguage : createdModel.getExplicitlyImportedLanguages()) {
+            if (sandbox.getScope().getLanguage(addedLanguage) == null) {
+              sandbox.addUsedLanguage(addedLanguage);
+            }
           }
         }
       }
@@ -324,7 +330,6 @@ public class NewLanguageDialogContentPane extends JPanel {
     final File file = new File(descriptorPath);
     Solution solution = NewModuleUtil.createNewSolution(FileSystem.getFile(file), myThis.getProject());
     solution.getSolutionDescriptor().setCompileInMPS(myThis.getCompileInMPS());
-    solution.createModel(SModelFqName.fromString(myThis.getLanguageNamespace() + ".runtime"), solution.getSModelRoots().get(0));
     return solution;
   }
 
@@ -333,7 +338,6 @@ public class NewLanguageDialogContentPane extends JPanel {
     final File file = new File(descriptorPath);
     Solution solution = NewModuleUtil.createNewSolution(FileSystem.getFile(file), myThis.getProject());
     solution.getSolutionDescriptor().setCompileInMPS(myThis.getCompileInMPS());
-    solution.createModel(SModelFqName.fromString(myThis.getLanguageNamespace() + ".sandbox"), solution.getSModelRoots().get(0));
     return solution;
   }
 
