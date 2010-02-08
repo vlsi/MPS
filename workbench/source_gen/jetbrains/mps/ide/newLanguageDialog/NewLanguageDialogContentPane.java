@@ -323,7 +323,7 @@ public class NewLanguageDialogContentPane extends JPanel {
   }
 
   /*package*/ Solution createRuntimeSolution() {
-    String descriptorPath = myThis.getLanguagePath() + File.separator + myThis.getLanguageName() + ".runtime" + MPSExtentions.DOT_SOLUTION;
+    String descriptorPath = myThis.getLanguagePath() + File.separator + "runtime" + File.separator + myThis.getLanguageNamespace() + ".runtime" + MPSExtentions.DOT_SOLUTION;
     final File file = new File(descriptorPath);
     Solution solution = NewModuleUtil.createNewSolution(FileSystem.getFile(file), myThis.getProject());
     solution.getSolutionDescriptor().setCompileInMPS(myThis.getCompileInMPS());
@@ -332,7 +332,7 @@ public class NewLanguageDialogContentPane extends JPanel {
   }
 
   /*package*/ Solution createSandboxSolution() {
-    String descriptorPath = myThis.getLanguagePath() + File.separator + myThis.getLanguageName() + ".sandbox" + MPSExtentions.DOT_SOLUTION;
+    String descriptorPath = myThis.getLanguagePath() + File.separator + "sandbox" + File.separator + myThis.getLanguageNamespace() + ".sandbox" + MPSExtentions.DOT_SOLUTION;
     final File file = new File(descriptorPath);
     Solution solution = NewModuleUtil.createNewSolution(FileSystem.getFile(file), myThis.getProject());
     solution.getSolutionDescriptor().setCompileInMPS(myThis.getCompileInMPS());

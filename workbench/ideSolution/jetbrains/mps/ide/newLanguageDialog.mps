@@ -982,23 +982,34 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="5890305283801272057" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5890305283801272058">
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5890305283801272151">
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5890305283801272097">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="748144436670853494">
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="748144436670853498">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="748144436670853499" />
+                    <node role="operation:3" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation:1" id="748144436670853500">
+                      <link role="member:1" targetNodeId="1203685089919" resolveInfo="languageNamespace" />
+                    </node>
+                  </node>
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5890305283801272087">
-                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5890305283801272090">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="5890305283801272091" />
-                      <node role="operation:3" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation:1" id="5890305283801272092">
-                        <link role="member:1" targetNodeId="1203685104730" resolveInfo="languagePath" />
+                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="748144436670853545">
+                      <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="748144436670853549">
+                        <property name="value:3" value="runtime" />
+                      </node>
+                      <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="748144436670853523">
+                        <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5890305283801272090">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="5890305283801272091" />
+                          <node role="operation:3" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation:1" id="5890305283801272092">
+                            <link role="member:1" targetNodeId="1203685104730" resolveInfo="languagePath" />
+                          </node>
+                        </node>
+                        <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="748144436670853529">
+                          <link role="classifier:3" targetNodeId="4.~File" resolveInfo="File" />
+                          <link role="variableDeclaration:3" targetNodeId="4.~File.separator" resolveInfo="separator" />
+                        </node>
                       </node>
                     </node>
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5890305283801272064">
                       <link role="classifier:3" targetNodeId="4.~File" resolveInfo="File" />
                       <link role="variableDeclaration:3" targetNodeId="4.~File.separator" resolveInfo="separator" />
-                    </node>
-                  </node>
-                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5890305283801272147">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="5890305283801272148" />
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation:0" id="5890305283801272149">
-                      <link role="member:0" targetNodeId="5890305283801272101" resolveInfo="getLanguageName" />
                     </node>
                   </node>
                 </node>
@@ -1136,23 +1147,34 @@
             <node role="type:3" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="5890305283801272183" />
             <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5890305283801272184">
               <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5890305283801272185">
-                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5890305283801272186">
+                <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="748144436670853503">
+                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="748144436670853507">
+                    <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="748144436670853508" />
+                    <node role="operation:3" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation:1" id="748144436670853509">
+                      <link role="member:1" targetNodeId="1203685089919" resolveInfo="languageNamespace" />
+                    </node>
+                  </node>
                   <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="5890305283801272187">
-                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5890305283801272188">
-                      <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="5890305283801272189" />
-                      <node role="operation:3" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation:1" id="5890305283801272190">
-                        <link role="member:1" targetNodeId="1203685104730" resolveInfo="languagePath" />
+                    <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="748144436670853552">
+                      <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="748144436670853556">
+                        <property name="value:3" value="sandbox" />
+                      </node>
+                      <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="748144436670853511">
+                        <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5890305283801272188">
+                          <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="5890305283801272189" />
+                          <node role="operation:3" type="jetbrains.mps.uiLanguage.structure.AttributeReferenceOperation:1" id="5890305283801272190">
+                            <link role="member:1" targetNodeId="1203685104730" resolveInfo="languagePath" />
+                          </node>
+                        </node>
+                        <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="748144436670853516">
+                          <link role="classifier:3" targetNodeId="4.~File" resolveInfo="File" />
+                          <link role="variableDeclaration:3" targetNodeId="4.~File.separator" resolveInfo="separator" />
+                        </node>
                       </node>
                     </node>
                     <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="5890305283801272191">
                       <link role="classifier:3" targetNodeId="4.~File" resolveInfo="File" />
                       <link role="variableDeclaration:3" targetNodeId="4.~File.separator" resolveInfo="separator" />
-                    </node>
-                  </node>
-                  <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="5890305283801272192">
-                    <node role="operand:3" type="jetbrains.mps.baseLanguage.classifiers.structure.ThisClassifierExpression:0" id="5890305283801272193" />
-                    <node role="operation:3" type="jetbrains.mps.baseLanguage.classifiers.structure.DefaultClassifierMethodCallOperation:0" id="5890305283801272194">
-                      <link role="member:0" targetNodeId="5890305283801272101" resolveInfo="getLanguageName" />
                     </node>
                   </node>
                 </node>
