@@ -24,7 +24,6 @@ import jetbrains.mps.vfs.MPSExtentions;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
-import jetbrains.mps.project.Solution;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.progress.Task;
@@ -32,6 +31,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.LanguageAspect;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vfs.FileSystemFile;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -252,7 +252,6 @@ public class NewLanguageDialogContentPane extends JPanel {
     }
     myThis.getDialog().dispose();
     final Wrappers._T<Language> language = new Wrappers._T<Language>(null);
-    final Wrappers._T<Solution> sandbox = new Wrappers._T<Solution>(null);
     Project project = myThis.getProject().getComponent(Project.class);
     ProgressManager.getInstance().run(new Task.Modal(project, "Creating", false) {
       public void run(@NotNull ProgressIndicator indicator) {
@@ -260,26 +259,24 @@ public class NewLanguageDialogContentPane extends JPanel {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
             language.value = myThis.createNewLanguage();
-            if (myThis.myNeedRuntime0.isSelected()) {
-              myThis.createRuntimeSolution();
-            }
-            if (myThis.myNeedSandbox0.isSelected()) {
-              sandbox.value = myThis.createSandboxSolution();
-            }
           }
         });
       }
     });
     ModelAccess.instance().runWriteActionInCommandAsync(new Runnable() {
       public void run() {
-        if (language.value.getSModelRoots().isEmpty()) {
+        if (!(language.value.getSModelRoots().isEmpty())) {
           LanguageAspect.STRUCTURE.createNew(language.value, false);
           LanguageAspect.EDITOR.createNew(language.value, false);
           LanguageAspect.CONSTRAINTS.createNew(language.value, false);
           LanguageAspect.TYPESYSTEM.createNew(language.value, false);
         }
-        if (sandbox.value != null) {
-          SModel createdModel = sandbox.value.getOwnModelDescriptors().get(0).getSModel();
+        if (myThis.myNeedRuntime0.isSelected()) {
+          myThis.createRuntimeSolution();
+        }
+        if (myThis.myNeedSandbox0.isSelected()) {
+          Solution sandbox = myThis.createSandboxSolution();
+          SModel createdModel = sandbox.getOwnModelDescriptors().get(0).getSModel();
           createdModel.addLanguage(myThis.getResult());
           for (Language extendedLanguage : myThis.getResult().getExtendedLanguages()) {
             createdModel.addLanguage(extendedLanguage);
