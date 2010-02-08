@@ -3,9 +3,7 @@
   <models>
     <modelRoot path="${language_descriptor}/languageModels" namespacePrefix="jetbrains.mps.gwt.client" />
   </models>
-  <accessoryModels>
-    <model modelUID="r:4145a3ac-04c9-4819-acb3-65eeb8ae947b(jetbrains.mps.gwt.stubs)" />
-  </accessoryModels>
+  <accessoryModels />
   <generators>
     <generator name="xml" generatorUID="jetbrains.mps.gwt.client#1572321421814275034" uuid="486577d1-3c2e-499e-91d3-9bab36e681a9">
       <models>
@@ -54,12 +52,18 @@
     </generator>
   </generators>
   <classPath />
+  <stubModelEntries>
+    <stubModelEntry path="${language_descriptor}/redist/gwt-dev.jar" include="false">
+      <manager moduleId="954c4d77-e24b-4e49-a5a5-5476c966c092" className="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
+    </stubModelEntry>
+    <stubModelEntry path="${language_descriptor}/redist/gwt-user.jar" include="false">
+      <manager moduleId="954c4d77-e24b-4e49-a5a5-5476c966c092" className="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
+    </stubModelEntry>
+  </stubModelEntries>
   <languageRuntimeClassPath />
   <sourcePath />
   <dependencies>
     <dependency reexport="false">f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)</dependency>
-    <dependency reexport="false">59b51007-81d7-4e04-a8ff-42b18d9bd0cd(gwtsupport.runtime)</dependency>
-    <dependency reexport="false">486577d1-3c2e-499e-91d3-9bab36e681a9(jetbrains.mps.gwt.client#1572321421814275034)</dependency>
   </dependencies>
   <usedLanguages>
     <usedLanguage>fd392034-7849-419d-9071-12563d152375(jetbrains.mps.baseLanguage.closures)</usedLanguage>
