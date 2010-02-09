@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.workbench.InternalFlag;
 import jetbrains.mps.smodel.action.SideTransformPreconditionContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -142,18 +141,6 @@ public class QueriesGenerated {
 
   public static boolean nodeSubstituteActionsBuilder_Precondition_InstanceMethodDeclaration_1225898267857(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
     return true;
-  }
-
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Type_1240657927808(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return !(InternalFlag.isInternalMode());
-  }
-
-  public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1240657991451(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return !(InternalFlag.isInternalMode());
-  }
-
-  public static boolean nodeSubstituteActionsBuilder_Precondition_IOperation_1240658015500(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
-    return !(InternalFlag.isInternalMode());
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_1177503884613(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -1727,21 +1714,6 @@ __switch__:
         });
       }
     }
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Type_1240657847105(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_1240657982492(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
-    return result;
-  }
-
-  public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_IOperation_1240657999273(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
-    List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     return result;
   }
 

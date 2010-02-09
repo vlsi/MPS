@@ -62,7 +62,6 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.structure.ThrowStatement", new ThrowStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.TryCatchStatement", new TryCatchStatement_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.TryStatement", new TryStatement_DataFlow());
-    manager.register("jetbrains.mps.baseLanguage.structure.TupleExpression", new TupleExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.VariableDeclaration", new VariableDeclaration_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.structure.WhileStatement", new WhileStatement_DataFlow());
   }

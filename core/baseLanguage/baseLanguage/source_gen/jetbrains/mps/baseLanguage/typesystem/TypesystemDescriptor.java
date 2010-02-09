@@ -351,14 +351,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
       this.myInferenceRules.add(inferenceRule);
     }
     {
-      InferenceRule_Runtime inferenceRule = new typeof_TupleExpression_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
-      InferenceRule_Runtime inferenceRule = new typeof_TupleMemberAccessOperation_InferenceRule();
-      this.myInferenceRules.add(inferenceRule);
-    }
-    {
       InferenceRule_Runtime inferenceRule = new typeof_UnaryMinus_InferenceRule();
       this.myInferenceRules.add(inferenceRule);
     }
@@ -772,10 +764,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
     {
       InequationReplacementRule_Runtime eliminationRule = new any_type_supertypeof_nulltype_InequationReplacementRule();
-      this.myInequationReplacementRules.add(eliminationRule);
-    }
-    {
-      InequationReplacementRule_Runtime eliminationRule = new replace_Tuples_InequationReplacementRule();
       this.myInequationReplacementRules.add(eliminationRule);
     }
     {

@@ -2258,32 +2258,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1237402838834">
-    <property name="package:0" value="tuples" />
-    <link role="conceptDeclaration:0" targetNodeId="1.1233829069870:3" resolveInfo="TupleExpression" />
-    <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="1237402838835">
-      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1237402838836">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.collections.structure.ForEachStatement:7" id="1237402850003">
-          <node role="variable:7" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariable:7" id="1237402850004">
-            <property name="name:7" value="item" />
-          </node>
-          <node role="inputSequence:7" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1237402858851">
-            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="1237402858253" />
-            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkListAccess:16" id="1237402862592">
-              <link role="link:16" targetNodeId="1.1233829084761:3" />
-            </node>
-          </node>
-          <node role="body:7" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1237402850006">
-            <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="1237402866927">
-              <node role="codeFor:0" type="jetbrains.mps.baseLanguage.collections.structure.ForEachVariableReference:7" id="1237402868270">
-                <link role="variable:7" targetNodeId="1237402850004" resolveInfo="item" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="1239714962884">
     <property name="package:0" value="prefix/postfix" />
     <link role="conceptDeclaration:0" targetNodeId="1.1239714755177:3" resolveInfo="AbstractUnaryNumberOperation" />

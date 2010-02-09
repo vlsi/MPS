@@ -11181,63 +11181,6 @@
       </node>
     </node>
   </node>
-  <node type="jetbrains.mps.lang.actions.structure.NodeSubstituteActions:23" id="1240657827409">
-    <property name="name:23" value="tupleInInternalModeOnly" />
-    <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1240657999273">
-      <link role="applicableConcept:23" targetNodeId="1.1197027803184:3" resolveInfo="IOperation" />
-      <node role="precondition:23" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction:23" id="1240658015500">
-        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240658015501">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1240658015502">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1240658015503">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="68924901662856509">
-                <link role="baseMethodDeclaration:3" targetNodeId="68.~InternalFlag.isInternalMode():boolean" resolveInfo="isInternalMode" />
-                <link role="classConcept:3" targetNodeId="68.~InternalFlag" resolveInfo="InternalFlag" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="part:23" type="jetbrains.mps.lang.actions.structure.RemovePart:23" id="1240658019021">
-        <link role="conceptToRemove:23" targetNodeId="1.1233828326825:3" resolveInfo="TupleMemberAccessOperation" />
-      </node>
-    </node>
-    <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1240657982492">
-      <link role="applicableConcept:23" targetNodeId="1.1068431790191:3" resolveInfo="Expression" />
-      <node role="precondition:23" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction:23" id="1240657991451">
-        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240657991452">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1240657991453">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1240657991454">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="68924901662856508">
-                <link role="baseMethodDeclaration:3" targetNodeId="68.~InternalFlag.isInternalMode():boolean" resolveInfo="isInternalMode" />
-                <link role="classConcept:3" targetNodeId="68.~InternalFlag" resolveInfo="InternalFlag" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="part:23" type="jetbrains.mps.lang.actions.structure.RemovePart:23" id="1240657993925">
-        <link role="conceptToRemove:23" targetNodeId="1.1233829069870:3" resolveInfo="TupleExpression" />
-      </node>
-    </node>
-    <node role="actionsBuilder:23" type="jetbrains.mps.lang.actions.structure.NodeSubstituteActionsBuilder:23" id="1240657847105">
-      <link role="applicableConcept:23" targetNodeId="1.1068431790189:3" resolveInfo="Type" />
-      <node role="part:23" type="jetbrains.mps.lang.actions.structure.RemovePart:23" id="1240657922070">
-        <link role="conceptToRemove:23" targetNodeId="1.1233824724035:3" resolveInfo="TupleType" />
-      </node>
-      <node role="precondition:23" type="jetbrains.mps.lang.actions.structure.NodeSubstitutePreconditionFunction:23" id="1240657927808">
-        <node role="body:23" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1240657927809">
-          <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="1240657936466">
-            <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.NotExpression:3" id="1240657975768">
-              <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="68924901662856507">
-                <link role="baseMethodDeclaration:3" targetNodeId="68.~InternalFlag.isInternalMode():boolean" resolveInfo="isInternalMode" />
-                <link role="classConcept:3" targetNodeId="68.~InternalFlag" resolveInfo="InternalFlag" />
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions:23" id="5606590085431552230">
     <property name="package:23" value="sideTransforms.expression" />
     <property name="name:23" value="Expression to type Cast" />
