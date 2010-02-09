@@ -12,6 +12,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.baseLanguage.behavior.Property_Behavior;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -52,6 +53,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1224072736283(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "resource_" + _context.getNode().getId();
+  }
+
+  public static Object referenceMacro_GetReferent_2492830749282740166(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "classifierType", true), "classifier", false);
   }
 
   public static boolean ifMacro_Condition_1201570447832(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -115,10 +120,6 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(property, "type", true);
   }
 
-  public static SNode sourceNodeQuery_1224072707340(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "expression", true);
-  }
-
   public static SNode sourceNodeQuery_1224072736270(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return TypeChecker.getInstance().getTypeOf(_context.getNode());
   }
@@ -135,8 +136,8 @@ public class QueriesGenerated {
     return TypeChecker.getInstance().getTypeOf(_context.getNode());
   }
 
-  public static SNode sourceNodeQuery_1225190463205(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "classifierType", true);
+  public static SNode sourceNodeQuery_2492830749282199462(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
 
   public static Iterable sourceNodesQuery_1201570443454(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
