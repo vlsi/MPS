@@ -172,6 +172,7 @@ public abstract class AbstractHierarchyTree<T extends INodeAdapter> extends MPST
     HierarchyTreeNode parentTreeNode = null;
     HierarchyTreeNode hierarchyTreeNode = null;
     HierarchyTreeNode rootNode = null;
+
     for (int i = parentHierarchy.size() - 1; i >= 0; i--) {
       hierarchyTreeNode = i > 0 ? (new HierarchyTreeNode<T>(parentHierarchy.get(i), myOperationContext, this))
         : new ChildHierarchyTreeNode<T>(parentHierarchy.get(i), myOperationContext, this);

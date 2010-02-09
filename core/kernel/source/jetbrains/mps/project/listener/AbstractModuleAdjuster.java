@@ -16,8 +16,8 @@
 package jetbrains.mps.project.listener;
 
 import com.intellij.openapi.components.ApplicationComponent;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.project.AbstractModule;
+import org.jetbrains.annotations.NotNull;
 
 public class AbstractModuleAdjuster implements ApplicationComponent {
   @NotNull
@@ -30,6 +30,7 @@ public class AbstractModuleAdjuster implements ApplicationComponent {
     AbstractModule.registerModelCreationListener(new TestsModelCreationListener());
     AbstractModule.registerModelCreationListener(new LanguageAspectCreationListener());
     AbstractModule.registerModelCreationListener(new LanguageModelCreationListener());
+    AbstractModule.registerModelCreationListener(new StructureAspectCreationListener());
   }
 
   public void disposeComponent() {

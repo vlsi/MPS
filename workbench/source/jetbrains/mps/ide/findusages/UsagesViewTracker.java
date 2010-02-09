@@ -22,7 +22,7 @@ import com.intellij.openapi.actionSystem.KeyboardShortcut;
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.keymap.Keymap;
 import com.intellij.openapi.keymap.KeymapManager;
-import jetbrains.mps.ide.findusages.view.UsagesView;
+import jetbrains.mps.ide.hierarchy.HierarchyViewTool;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.KeyStroke;
@@ -50,6 +50,16 @@ public class UsagesViewTracker implements ApplicationComponent {
 
   private static KeyboardShortcut getPrevShortcut() {
     return new KeyboardShortcut(KeyStroke.getKeyStroke("control alt UP"), null);
+  }
+
+  public static List<HierarchyViewTool> getHierarchyTools() {
+    List<HierarchyViewTool> result = new ArrayList<HierarchyViewTool>();
+    for (INavigateableTool tool : myTools) {
+      if (tool instanceof HierarchyViewTool) {
+        result.add((HierarchyViewTool) tool);
+      }
+    }
+    return result;
   }
 
   public static INavigator getNavigator() {
