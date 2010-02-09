@@ -1,6 +1,5 @@
 package jetbrains.mps.debug.runtime;
 
-import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.logging.Logger;
 
 public class DebuggerSession {
@@ -21,12 +20,20 @@ public class DebuggerSession {
     return myState.equals(DebuggerState.Running);
   }
 
+  public boolean isStopped() {
+    return myState.equals(DebuggerState.Stopped);
+  }
+
   public void resume() {
     myEventsProcessor.getManagerThread().schedule(myEventsProcessor.createResumeCommand());
   }
 
   public void pause() {
     myEventsProcessor.getManagerThread().schedule(myEventsProcessor.createPauseCommand());
+  }
+
+  public void stop() {
+    myEventsProcessor.getManagerThread().invokeTerminalCommand(myEventsProcessor.createStopCommand());
   }
 
   public enum DebuggerState {
@@ -51,6 +58,11 @@ public class DebuggerSession {
     @Override
     public void processAttached(DebugVMEventsProcessor process) {
       myState = DebuggerState.Running;
+    }
+
+    @Override
+    public void processDetached(DebugVMEventsProcessor process, boolean closedByUser) {
+      myState = DebuggerState.Stopped;
     }
   }
 }

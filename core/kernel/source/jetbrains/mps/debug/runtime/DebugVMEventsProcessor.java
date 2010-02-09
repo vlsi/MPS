@@ -349,6 +349,10 @@ public class DebugVMEventsProcessor {
     return new PauseCommand();
   }
 
+  public DebuggerCommand createStopCommand(){
+    return new StopCommand(true);
+  }
+
   private class ResumeCommand extends DebuggerCommand {
     @Override
     public CommandPriority getPriority() {
@@ -374,6 +378,35 @@ public class DebugVMEventsProcessor {
       getVirtualMachine().suspend();
       SuspendContext suspendContext = getSuspendManager().pushSuspendContext(EventRequest.SUSPEND_ALL, 0);
       getMulticaster().paused(suspendContext);
+    }
+  }
+
+  private class StopCommand extends DebuggerCommand {
+    private final boolean myIsTerminateTargetVM;
+
+    public StopCommand(boolean isTerminateTargetVM) {
+      myIsTerminateTargetVM = isTerminateTargetVM;
+    }
+
+    public CommandPriority getPriority() {
+      return CommandPriority.HIGH;
+    }
+
+    protected void action() throws Exception {
+      if (isAttached()) {
+        VirtualMachine virtualMachine = getVirtualMachine();
+        if (myIsTerminateTargetVM) {
+          virtualMachine.exit(-1);
+        } else {
+          // some VM's (like IBM VM 1.4.2 bundled with WebSpere) does not
+          // resume threads on dispose() like it should
+          virtualMachine.resume();
+          virtualMachine.dispose();
+        }
+      } else {
+// TODO       
+//        stopConnecting();
+      }
     }
   }
 }
