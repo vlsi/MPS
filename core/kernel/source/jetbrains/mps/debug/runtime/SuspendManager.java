@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.debug.runtime;
 
-import com.sun.jdi.ThreadReference;
 import com.sun.jdi.InternalException;
 import com.sun.jdi.ObjectCollectedException;
+import com.sun.jdi.ThreadReference;
 import com.sun.jdi.event.EventSet;
 import com.sun.jdi.request.EventRequest;
-
-import java.util.*;
-
 import jetbrains.mps.logging.Logger;
+
+import java.util.LinkedList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -36,7 +36,7 @@ public class SuspendManager {
   private static final Logger LOG = Logger.getLogger(SuspendManager.class);
 
 
-  private final LinkedList<SuspendContext> myEventContexts  = new LinkedList<SuspendContext>();
+  private final LinkedList<SuspendContext> myEventContexts = new LinkedList<SuspendContext>();
 
   // contexts, paused at breakpoint or another debugger event requests. Note that thread, explicitly paused by user is not considered as
   // "paused at breakpoint" and JDI prohibits data queries on its stackframes
@@ -52,6 +52,47 @@ public class SuspendManager {
         myPausedContexts.clear();
       }
     });
+  }
+
+  public SuspendContext pushSuspendContext(final int suspendPolicy, int nVotes) {
+    SuspendContext suspendContext = new SuspendContext(myDebugProcess, suspendPolicy, nVotes, null) {
+      protected void resumeImpl() {
+        LOG.debug("Start resuming...");
+        switch (getSuspendPolicy()) {
+          case EventRequest.SUSPEND_ALL:
+            int resumeAttempts = 5;
+            while (--resumeAttempts > 0) {
+              try {
+                myDebugProcess.getVirtualMachine().resume();
+                break;
+              }
+              catch (InternalException e) {
+                //InternalException 13 means that there are running threads that we are trying to resume
+                //On MacOS it happened that native thread didn't stop while some java thread reached breakpoint
+                if (/*Patches.MAC_RESUME_VM_HACK && */e.errorCode() == 13) {
+                  //Its funny, but second resume solves the problem
+                  continue;
+                } else {
+                  LOG.error(e);
+                  break;
+                }
+              }
+            }
+
+            LOG.debug("VM resumed ");
+            break;
+          case EventRequest.SUSPEND_EVENT_THREAD:
+            getThread().resume();
+            LOG.debug("Thread resumed : " + getThread().toString());
+            break;
+          case EventRequest.SUSPEND_NONE:
+            LOG.debug("None resumed");
+            break;
+        }
+      }
+    };
+    pushContext(suspendContext);
+    return suspendContext;
   }
 
   public SuspendContext pushSuspendContext(final EventSet set) {
@@ -92,8 +133,7 @@ public class SuspendManager {
               if (/*Patches.MAC_RESUME_VM_HACK && */e.errorCode() == 13 && set.suspendPolicy() == EventRequest.SUSPEND_ALL) {
                 //Its funny, but second resume solves the problem
                 continue;
-              }
-              else {
+              } else {
                 LOG.error(e);
                 break;
               }
@@ -141,7 +181,7 @@ public class SuspendManager {
     return myEventContexts;
   }
 
-  public boolean isSuspended(ThreadReference thread) throws ObjectCollectedException{
+  public boolean isSuspended(ThreadReference thread) throws ObjectCollectedException {
     // DebuggerManagerThreadImpl.assertIsManagerThread();
 
     boolean suspended = false;
@@ -158,11 +198,10 @@ public class SuspendManager {
     LOG.assertLog(suspendContext.myVotesToVote > 0);
     suspendContext.myVotesToVote--;
 
-    if(suspendContext.myVotesToVote == 0) {
-      if(suspendContext.myIsVotedForResume) {
+    if (suspendContext.myVotesToVote == 0) {
+      if (suspendContext.myIsVotedForResume) {
         resume(suspendContext);
-      }
-      else {
+      } else {
         notifyPaused(suspendContext);
       }
     }

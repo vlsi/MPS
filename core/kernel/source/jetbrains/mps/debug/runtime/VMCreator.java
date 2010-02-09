@@ -58,10 +58,12 @@ public class VMCreator {
   private final List<ProcessListener> myProcessListeners = new ArrayList<ProcessListener>();
 
   private ExecutionResult myExecutionResult;
+  private final DebuggerSession myDebuggerSession;
 
   public VMCreator(Project p) {
     myDebugVMEventsProcessor = new DebugVMEventsProcessor(p, this);
     myDebuggerManagerThread = new DebuggerManagerThread(); //thread started!
+    myDebuggerSession = new DebuggerSession(myDebugVMEventsProcessor);
   }
 
   @Nullable
@@ -299,8 +301,8 @@ public class VMCreator {
     return myDebuggerManagerThread;
   }
 
-  public DebuggerCommands createDebuggerCommands() {
-    return new DebuggerCommands(myDebugVMEventsProcessor);
+  public DebuggerSession getDebuggerSession() {
+    return myDebuggerSession;
   }
 
   private class RunsAfterProcessStarted extends ProcessAdapter {

@@ -16,14 +16,16 @@
 package jetbrains.mps.debug.runtime;
 
 import com.intellij.openapi.project.Project;
-import com.sun.jdi.*;
+import com.sun.jdi.InternalException;
+import com.sun.jdi.ThreadReference;
+import com.sun.jdi.VMDisconnectedException;
+import com.sun.jdi.VirtualMachine;
 import com.sun.jdi.event.*;
-import com.sun.tools.jdi.EventSetImpl;
-import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
-import jetbrains.mps.logging.Logger;
+import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
-import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
+import jetbrains.mps.logging.Logger;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -123,11 +125,12 @@ public class DebugVMEventsProcessor {
                   System.err.println("event happened: " + event.toString());
                   try {
                     //todo processing different event kinds here
-                 /*   if (event instanceof VMStartEvent) {
-                      //Sun WTK fails when J2ME when event set is resumed on VMStartEvent
-                      processVMStartEvent(suspendContext, (VMStartEvent)event);
-                    }
-                    else */ if (event instanceof VMDeathEvent) {
+                    /*   if (event instanceof VMStartEvent) {
+                     //Sun WTK fails when J2ME when event set is resumed on VMStartEvent
+                     processVMStartEvent(suspendContext, (VMStartEvent)event);
+                   }
+                   else */
+                    if (event instanceof VMDeathEvent) {
                       processVMDeathEvent(suspendContext, event);
                     } else if (event instanceof VMDisconnectEvent) {
                       processVMDeathEvent(suspendContext, event);
@@ -226,6 +229,7 @@ public class DebugVMEventsProcessor {
   }
 
   //todo here a thread will be set to suspend context, dont know why
+
   private static void preprocessEvent(SuspendContext suspendContext, ThreadReference thread) {
     ThreadReference oldThread = suspendContext.getThread();
     suspendContext.setThread(thread);
@@ -296,6 +300,7 @@ public class DebugVMEventsProcessor {
   }
 
   // a class is prepared: let's set breakpoint requests from breakpoints
+
   private void processClassPrepareEvent(SuspendContext suspendContext, ClassPrepareEvent event) {
     preprocessEvent(suspendContext, event.thread());
     myRequestManager.processClassPrepared(event);
@@ -303,10 +308,11 @@ public class DebugVMEventsProcessor {
   }
 
   // a VM is dead
+
   private void processVMDeathEvent(SuspendContext suspendContext, Event event) {
     try {
       preprocessEvent(suspendContext, null);
-    //  cancelRunToCursorBreakpoint();
+      //  cancelRunToCursorBreakpoint();
     }
     finally {
       if (myEventThread != null) {
@@ -333,5 +339,41 @@ public class DebugVMEventsProcessor {
 
   public DebugManager getDebugManager() {
     return myProject.getComponent(DebugManager.class);
+  }
+
+  public DebuggerCommand createResumeCommand(){
+    return new ResumeCommand();
+  }
+
+  public DebuggerCommand createPauseCommand(){
+    return new PauseCommand();
+  }
+
+  private class ResumeCommand extends DebuggerCommand {
+    @Override
+    public CommandPriority getPriority() {
+      return CommandPriority.HIGH;
+    }
+
+    @Override
+    protected void action() throws Exception {
+      System.err.println("Resuming execution!");
+      // see DebugProcessImpl.ResumeCommand in idea
+      SuspendManager suspendManager = getSuspendManager();
+      SuspendContext context = suspendManager.getPausedContext();
+      suspendManager.resume(context);
+      getMulticaster().resumed(context);
+    }
+  }
+
+  private class PauseCommand extends DebuggerCommand {
+    @Override
+    protected void action() throws Exception {
+      System.err.println("Pausing execution!");
+      // see DebugProcessImpl.PauseCommand in idea
+      getVirtualMachine().suspend();
+      SuspendContext suspendContext = getSuspendManager().pushSuspendContext(EventRequest.SUSPEND_ALL, 0);
+      getMulticaster().paused(suspendContext);
+    }
   }
 }

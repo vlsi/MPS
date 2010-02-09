@@ -45,7 +45,6 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
 
   private final Project myProject;
   private final SNodePointer myNodePointer;
-  private final List<IBreakpointListener> myListeners = new ArrayList<IBreakpointListener>();
   public boolean myIsEnabled = true; //todo add ability to disable breakpoints
 
 
@@ -211,8 +210,6 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
         return false;
       }
 
-      fireHit();
-
       //todo conditions - later
       /*  final EvaluationContextImpl evaluationContext = new EvaluationContextImpl(
         action.getSuspendContext(),
@@ -232,33 +229,5 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
     }
 
     return true;
-  }
-
-  public void addListener(@NotNull IBreakpointListener listener) {
-    synchronized (myListeners) {
-      myListeners.add(listener);
-    }
-  }
-
-  public void removeListener(@NotNull IBreakpointListener listener) {
-    synchronized (myListeners) {
-      myListeners.remove(listener);
-    }
-  }
-
-  private void fireHit() {
-    synchronized (myListeners) {
-      for (IBreakpointListener l : myListeners) {
-        l.hit();
-      }
-    }
-  }
-
-  private void fireResumed() {
-    synchronized (myListeners) {
-      for (IBreakpointListener l : myListeners) {
-        l.resumed();
-      }
-    }
   }
 }
