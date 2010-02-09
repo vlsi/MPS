@@ -43,17 +43,23 @@ public class StaticFieldDeclaration_Behavior {
   public static String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
     CodeStyleSettings settings = CodeStyleSettings.getInstance(project);
     if (settings == null) {
-      return null;
+      return "";
     }
-    return settings.getStaticFieldSettings().o2;
+    return (settings.getStaticFieldSettings().o2 == null ?
+      "" :
+      settings.getStaticFieldSettings().o2
+    );
   }
 
   public static String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
     CodeStyleSettings settings = CodeStyleSettings.getInstance(project);
     if (settings == null) {
-      return null;
+      return "";
     }
-    return settings.getStaticFieldSettings().o1;
+    return (settings.getStaticFieldSettings().o1 == null ?
+      "" :
+      settings.getStaticFieldSettings().o1
+    );
   }
 
   public static List<SNode> call_getChildrenToDisplayIntention_4025276038182459921(SNode thisNode) {

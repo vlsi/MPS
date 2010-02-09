@@ -54,17 +54,23 @@ public class LocalVariableDeclaration_Behavior {
   public static String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
     CodeStyleSettings settings = CodeStyleSettings.getInstance(project);
     if (settings == null) {
-      return null;
+      return "";
     }
-    return settings.getLocalVariableSettings().o1;
+    return (settings.getLocalVariableSettings().o1 == null ?
+      "" :
+      settings.getLocalVariableSettings().o1
+    );
   }
 
   public static String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
     CodeStyleSettings settings = CodeStyleSettings.getInstance(project);
     if (settings == null) {
-      return null;
+      return "";
     }
-    return settings.getLocalVariableSettings().o2;
+    return (settings.getLocalVariableSettings().o2 == null ?
+      "" :
+      settings.getLocalVariableSettings().o2
+    );
   }
 
   public static String call_getPrefix_3012473318495506424(SNode thisNode, Project project) {

@@ -15,8 +15,14 @@ public class GenerateGettersAndSettersUtil {
   }
 
   private static String getPreparedName(String fullName, Pair<String, String> settings) {
-    String prefix = settings.o1;
-    String suffix = settings.o2;
+    String prefix = (settings.o1 == null ?
+      "" :
+      settings.o1
+    );
+    String suffix = (settings.o2 == null ?
+      "" :
+      settings.o2
+    );
     int preparedNameStart = ((StringUtils.isNotEmpty(prefix) && fullName.startsWith(prefix)) ?
       prefix.length() :
       0
@@ -46,10 +52,18 @@ public class GenerateGettersAndSettersUtil {
       return NameUtil.decapitalize(preparedFieldName);
     }
     Pair<String, String> settings = codeStyleSettings.getParameterSettings();
-    if (StringUtils.isEmpty(settings.o1)) {
-      return NameUtil.decapitalize(preparedFieldName + settings.o2);
+    String prefix = (settings.o1 == null ?
+      "" :
+      settings.o1
+    );
+    String suffix = (settings.o2 == null ?
+      "" :
+      settings.o2
+    );
+    if (StringUtils.isEmpty(prefix)) {
+      return NameUtil.decapitalize(preparedFieldName + suffix);
     } else {
-      return settings.o1 + preparedFieldName + settings.o2;
+      return prefix + preparedFieldName + suffix;
     }
   }
 

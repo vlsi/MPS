@@ -85,17 +85,23 @@ public class FieldDeclaration_Behavior {
   public static String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
     CodeStyleSettings settings = CodeStyleSettings.getInstance(project);
     if (settings == null) {
-      return null;
+      return "";
     }
-    return settings.getFieldSettings().o2;
+    return (settings.getFieldSettings().o2 == null ?
+      "" :
+      settings.getFieldSettings().o2
+    );
   }
 
   public static String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
     CodeStyleSettings settings = CodeStyleSettings.getInstance(project);
     if (settings == null) {
-      return null;
+      return "";
     }
-    return settings.getFieldSettings().o1;
+    return (settings.getFieldSettings().o1 == null ?
+      "" :
+      settings.getFieldSettings().o1
+    );
   }
 
   public static Icon call_getAdditionalIcon_8884554759541377970(SNode thisNode) {

@@ -44,11 +44,11 @@ public class VariableDeclaration_Behavior {
   }
 
   public static String virtual_getPrefix_3012473318495495520(SNode thisNode, Project project) {
-    return null;
+    return "";
   }
 
   public static String virtual_getSuffix_3012473318495499856(SNode thisNode, Project project) {
-    return null;
+    return "";
   }
 
   public static SNode virtual_getTypeAnnotation_1233920952262(SNode thisNode) {
