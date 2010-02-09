@@ -16,10 +16,13 @@
 package jetbrains.mps.generator.impl;
 
 import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.generator.*;
+import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.plan.AbstractGenerationStepController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
-import jetbrains.mps.generator.plan.GenerationStepController;
+import jetbrains.mps.generator.plan.GenerationPlan;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -69,70 +72,39 @@ public class GenerationSession {
     myReverseRoots = reverseRoots;
   }
 
-  public ILoggingHandler getLoggingHandler() {
-    if (myLoggingHandler == null) {
-      myLoggingHandler = new LoggingHandlerAdapter() {
-        public void addLogEntry(LogEntry e) {
-          Object o = e.getHintObject();
-          if (o instanceof SNode) {
-            mySessionContext.addTransientModelToKeep(((SNode) o).getModel());
-          } else if (o instanceof NodeWithContext) {
-            SNode node = ((NodeWithContext) o).getNode();
-            if (node != null) {
-              mySessionContext.addTransientModelToKeep(node.getModel());
-            }
-          }
-        }
-      };
-    }
-    return myLoggingHandler;
-  }
-
-  public void discardTransients() {
-    if (mySessionContext == null) return;
-    if (myDiscardTransients) {
-      mySessionContext.clearTransientModels();
-    }
-    mySessionContext = null;
-  }
-
   public GenerationStatus generateModel(@NotNull SModelDescriptor inputModel) throws Exception {
-    return generateModel(inputModel, new GenerationStepController(inputModel.getSModel()));
+    return generateModel(inputModel, new GenerationPlan(inputModel.getSModel()));
   }
 
   public GenerationStatus generateModel(SModelDescriptor inputModel,
-                                        AbstractGenerationStepController stepController) throws Exception {
-    if (!checkGenerationStep(stepController)) {
+                                        GenerationPlan generationPlan) throws Exception {
+    if (!checkGenerationPlan(generationPlan)) {
 //      throw new GenerationCanceledException();
     }
 
     GenerationStatus status;
     boolean wasErrors = false;
     boolean wasWarnings = false;
-    int stepCount = 1;
+    int stepCount = 0;
     SModelDescriptor currInputModel = inputModel;
-    while (true) {
-      addMessage(new Message(MessageKind.INFORMATION, "execute step " + (stepCount++)));
-      status = generateModel_step(currInputModel.getSModel(), stepController);
+    do {
+      addMessage(new Message(MessageKind.INFORMATION, "execute step " + (stepCount + 1)));
+      status = generateModel_step(currInputModel.getSModel(), generationPlan.getAdapter(stepCount));
       wasErrors |= status.isError();
       wasWarnings |= status.hasWarnings();
       if (status.isError() || status.isCanceled()) {
         break;
       }
-
-      // need more steps?
-      if (!stepController.advanceStep()) {
-        // generation complete
-        break;
-      }
-      if (stepController.getCurrentMappings().isEmpty()) {
+      if (generationPlan.getMappingConfigurations(stepCount).isEmpty()) {
         break;
       }
       if (status.getOutputModel() == null) {
         break;
       }
       currInputModel = status.getOutputModel().getModelDescriptor();
-    }
+      stepCount++;
+
+    } while (stepCount < generationPlan.getStepCount());
 
     //we need this in order to prevent memory leaks from nodes which are reported to message view
     //since session objects might include objects with disposed class loaders
@@ -196,15 +168,15 @@ public class GenerationSession {
     SModel currentInputModel = inputModel;
 
     // reverse roots order
-    if(myReverseRoots && inputModel == mySessionContext.getOriginalInputModel()) {
+    if (myReverseRoots && inputModel == mySessionContext.getOriginalInputModel()) {
       SModel currentInputModel_clone = createTransientModel(modelsLongName);
       addMessage(MessageKind.INFORMATION, "reversing roots '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
       List<SNode> rrr = currentInputModel.getRoots();
       SNode[] roots = rrr.toArray(new SNode[rrr.size()]);
-      for(int i = 0; i < roots.length/2; i++) {
+      for (int i = 0; i < roots.length / 2; i++) {
         SNode temp = roots[i];
-        roots[i] = roots[roots.length-1-i];
-        roots[roots.length-1-i] = temp;
+        roots[i] = roots[roots.length - 1 - i];
+        roots[roots.length - 1 - i] = temp;
       }
       for (SNode node : roots) {
         SNode outputNode = CloneUtil.clone(node, currentInputModel_clone, true);
@@ -381,10 +353,10 @@ public class GenerationSession {
     addMessage(new Message(kind, text));
   }
 
-  private boolean checkGenerationStep(AbstractGenerationStepController stepController) {
-    if (stepController.hasConflictingPriorityRules()) {
+  private boolean checkGenerationPlan(GenerationPlan generationPlan) {
+    if (generationPlan.hasConflictingPriorityRules()) {
       addMessage(MessageKind.ERROR, "Conflicting mapping priority rules encountered:");
-      List<com.intellij.openapi.util.Pair<MappingPriorityRule, String>> errors = stepController.getConflictingPriorityRulesAsStrings();
+      List<com.intellij.openapi.util.Pair<MappingPriorityRule, String>> errors = generationPlan.getConflictingPriorityRulesAsStrings();
       for (com.intellij.openapi.util.Pair<MappingPriorityRule, String> error : errors) {
         MappingPriorityRule rule = error.first;
         String text = error.second;
@@ -429,5 +401,32 @@ public class GenerationSession {
     for (String message : messages) {
       addMessage(new Message(MessageKind.INFORMATION, "    " + message));
     }
+  }
+
+  public ILoggingHandler getLoggingHandler() {
+    if (myLoggingHandler == null) {
+      myLoggingHandler = new LoggingHandlerAdapter() {
+        public void addLogEntry(LogEntry e) {
+          Object o = e.getHintObject();
+          if (o instanceof SNode) {
+            mySessionContext.addTransientModelToKeep(((SNode) o).getModel());
+          } else if (o instanceof NodeWithContext) {
+            SNode node = ((NodeWithContext) o).getNode();
+            if (node != null) {
+              mySessionContext.addTransientModelToKeep(node.getModel());
+            }
+          }
+        }
+      };
+    }
+    return myLoggingHandler;
+  }
+
+  public void discardTransients() {
+    if (mySessionContext == null) return;
+    if (myDiscardTransients) {
+      mySessionContext.clearTransientModels();
+    }
+    mySessionContext = null;
   }
 }

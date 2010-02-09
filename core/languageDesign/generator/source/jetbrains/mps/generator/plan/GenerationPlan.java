@@ -1,4 +1,4 @@
-package jetbrains.mps.generator2.plan;
+package jetbrains.mps.generator.plan;
 
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.generator.plan.AbstractGenerationStepController;
@@ -92,11 +92,6 @@ public class GenerationPlan {
       @Override
       public List<MappingConfiguration> getCurrentMappings() {
           return getMappingConfigurations(step);
-      }
-
-      @Override
-      public boolean advanceStep() {
-        throw new UnsupportedOperationException();
       }
 
       @Override
