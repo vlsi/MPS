@@ -15,33 +15,14 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.ModalityState;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
-import jetbrains.mps.baseLanguage.textGen.RootDependencies;
-import jetbrains.mps.generator.*;
-import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
-import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
-import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.vcs.MPSVCSManager;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.vfs.VFileSystem;
+import jetbrains.mps.generator.JavaNameUtil;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.vfs.FileSystem;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.util.ReadUtil;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.messages.IMessageHandler;
+import jetbrains.mps.vfs.IFile;
 
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.util.*;
 
 public class FileGenerationUtil {
   private static final String CACHES_SUFFIX = ".caches";

@@ -16,16 +16,19 @@
 package jetbrains.mps.generator.fileGenerator;
 
 import com.intellij.openapi.components.ApplicationComponent;
-
-import java.io.*;
-import java.util.*;
-
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.vfs.*;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.Nullable;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
+import java.util.*;
 
 public abstract class BaseModelCache<T> implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(BaseModelCache.class);

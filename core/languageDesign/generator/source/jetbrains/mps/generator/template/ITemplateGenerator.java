@@ -15,18 +15,16 @@
  */
 package jetbrains.mps.generator.template;
 
+import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.GenerationSessionContext;
-import jetbrains.mps.generator.GenerationCanceledException;
+import jetbrains.mps.lang.generator.structure.RuleConsequence;
+import jetbrains.mps.lang.generator.structure.TemplateSwitch;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.generator.structure.RuleConsequence;
-import jetbrains.mps.lang.generator.structure.TemplateSwitch;
 
 import java.util.List;
-
-import com.intellij.openapi.progress.ProgressIndicator;
 
 public interface ITemplateGenerator {
 

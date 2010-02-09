@@ -15,17 +15,10 @@
  */
 package jetbrains.mps.generator.generationTypes;
 
-import com.intellij.openapi.progress.ProgressIndicator;
-import jetbrains.mps.baseLanguage.structure.ClassConcept;
-import jetbrains.mps.baseLanguage.structure.Interface;
-import jetbrains.mps.compiler.JavaCompiler;
 import jetbrains.mps.debug.PositionInfo;
-import jetbrains.mps.generator.JavaNameUtil;
-import jetbrains.mps.reloading.CommonPaths;
-import jetbrains.mps.reloading.CompositeClassPathItem;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenManager;
-import org.eclipse.jdt.core.compiler.CategorizedProblem;
 
 import java.util.HashMap;
 import java.util.Map;

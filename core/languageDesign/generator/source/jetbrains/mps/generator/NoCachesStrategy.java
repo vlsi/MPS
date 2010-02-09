@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.generator;
 
-import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.DumbService;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-
-import org.jetbrains.annotations.Nullable;
 
 public abstract class NoCachesStrategy {
   protected NoCachesStrategy() {

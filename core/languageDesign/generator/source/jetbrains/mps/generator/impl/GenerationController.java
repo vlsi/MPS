@@ -143,17 +143,17 @@ public class GenerationController {
 
     //++ generation
     String wasLoggingThreshold = null;
-    GenerationSession generationSession = new GenerationSession(invocationContext, mySaveTransientModels, myProgress, myMessages, mySettings.isUseNewGenerator());
     try {
       if (mySettings.isShowErrorsOnly()) {
         wasLoggingThreshold = Logger.setThreshold("ERROR");
       }
-      Logger.addLoggingHandler(generationSession.getLoggingHandler());
 
       for (SModelDescriptor inputModel : inputModels) {
         TypeChecker.getInstance().setIsGeneration(true);
 
+        GenerationSession generationSession = new GenerationSession(inputModel, invocationContext, mySaveTransientModels, myProgress, myMessages, mySettings.isUseNewGenerator());
         try {
+          Logger.addLoggingHandler(generationSession.getLoggingHandler());
           if (!myGenerationHandler.canHandle(inputModel)) {
             LOG.error("Can't generate " + inputModel.getSModelFqName());
             continue;
@@ -164,7 +164,7 @@ public class GenerationController {
           progressHelper.setText2("model " + inputModel.getSModelFqName());
           progressHelper.startLeafTask(taskName);
 
-          GenerationStatus status = generationSession.generateModel(inputModel);
+          GenerationStatus status = generationSession.generateModel();
           status.setOriginalInputModel(inputModel);
           currentGenerationOK = currentGenerationOK && status.isOk();
 
@@ -173,6 +173,7 @@ public class GenerationController {
           currentGenerationOK = currentGenerationOK && myGenerationHandler.handleOutput(module, inputModel, status, invocationContext, progressHelper);
 
         } finally {
+          Logger.removeLoggingHandler(generationSession.getLoggingHandler());
           generationSession.discardTransients();
           CleanupManager.getInstance().cleanup();
 
@@ -189,7 +190,6 @@ public class GenerationController {
       if (wasLoggingThreshold != null) {
         Logger.setThreshold(wasLoggingThreshold);
       }
-      Logger.removeLoggingHandler(generationSession.getLoggingHandler());
     }
 
     checkMonitorCanceled();

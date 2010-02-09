@@ -20,7 +20,6 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.plan.AbstractGenerationStepController;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationPlan;
 import jetbrains.mps.ide.messages.IMessageHandler;
@@ -39,7 +38,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 
-import java.lang.reflect.InvocationTargetException;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -51,6 +49,12 @@ import java.util.List;
 public class GenerationSession {
   public static final Logger LOG = Logger.getLogger(GenerationSession.class);
 
+  private SModelDescriptor myOriginalInputModel;
+  private GenerationPlan myGenerationPlan;
+
+  /* temporary */
+  private boolean myReverseRoots;
+
   private IOperationContext myInvocationContext;
   private boolean myDiscardTransients;
   private ProgressIndicator myProgressMonitor;
@@ -59,12 +63,13 @@ public class GenerationSession {
 
   private GenerationSessionContext mySessionContext;
 
-  private int myInvocationCount = 0;
+  private int myMajorStep = 0;
   private int myTransientModelsCount = 0;
-  private boolean myReverseRoots;
 
-
-  public GenerationSession(IOperationContext invocationContext, boolean saveTransientModels, ProgressIndicator progressMonitor, final IMessageHandler messagesHandler, boolean reverseRoots) {
+  public GenerationSession(@NotNull SModelDescriptor inputModel, IOperationContext invocationContext,
+                           boolean saveTransientModels, ProgressIndicator progressMonitor,
+                           IMessageHandler messagesHandler, boolean reverseRoots) {
+    myOriginalInputModel = inputModel;
     myInvocationContext = invocationContext;
     myDiscardTransients = !saveTransientModels;
     myProgressMonitor = progressMonitor;
@@ -72,39 +77,34 @@ public class GenerationSession {
     myReverseRoots = reverseRoots;
   }
 
-  public GenerationStatus generateModel(@NotNull SModelDescriptor inputModel) throws Exception {
-    return generateModel(inputModel, new GenerationPlan(inputModel.getSModel()));
-  }
-
-  public GenerationStatus generateModel(SModelDescriptor inputModel,
-                                        GenerationPlan generationPlan) throws Exception {
-    if (!checkGenerationPlan(generationPlan)) {
+  public GenerationStatus generateModel() throws Exception {
+    myGenerationPlan = new GenerationPlan(myOriginalInputModel.getSModel());
+    if (!checkGenerationPlan(myGenerationPlan)) {
 //      throw new GenerationCanceledException();
     }
 
     GenerationStatus status;
     boolean wasErrors = false;
     boolean wasWarnings = false;
-    int stepCount = 0;
-    SModelDescriptor currInputModel = inputModel;
+    SModelDescriptor currInputModel = myOriginalInputModel;
     do {
-      addMessage(new Message(MessageKind.INFORMATION, "execute step " + (stepCount + 1)));
-      status = generateModel_step(currInputModel.getSModel(), generationPlan.getAdapter(stepCount));
+      addMessage(new Message(MessageKind.INFORMATION, "execute step " + (myMajorStep + 1)));
+      status = generateModel_step(currInputModel.getSModel());
       wasErrors |= status.isError();
       wasWarnings |= status.hasWarnings();
       if (status.isError() || status.isCanceled()) {
         break;
       }
-      if (generationPlan.getMappingConfigurations(stepCount).isEmpty()) {
+      if (myGenerationPlan.getMappingConfigurations(myMajorStep).isEmpty()) {
         break;
       }
       if (status.getOutputModel() == null) {
         break;
       }
       currInputModel = status.getOutputModel().getModelDescriptor();
-      stepCount++;
+      myMajorStep++;
 
-    } while (stepCount < generationPlan.getStepCount());
+    } while (myMajorStep < myGenerationPlan.getStepCount());
 
     //we need this in order to prevent memory leaks from nodes which are reported to message view
     //since session objects might include objects with disposed class loaders
@@ -116,26 +116,19 @@ public class GenerationSession {
   }
 
 
-  private GenerationStatus generateModel_step(SModel inputModel,
-                                              AbstractGenerationStepController stepController)
-    throws ClassNotFoundException,
-    NoSuchMethodException,
-    IllegalAccessException,
-    InvocationTargetException,
-    InstantiationException, GenerationCanceledException {
+  private GenerationStatus generateModel_step(SModel inputModel) throws GenerationCanceledException {
 
-    myInvocationCount++;
     myTransientModelsCount = 0;
     addProgressMessage(MessageKind.INFORMATION, "generating model \"" + inputModel.getSModelFqName() + "\"");
 
-    if (stepController.getCurrentMappings().isEmpty()) {
+    if (myGenerationPlan.getMappingConfigurations(myMajorStep).isEmpty()) {
       addProgressMessage(MessageKind.WARNING, "skip model \"" + inputModel.getSModelFqName() + "\" : no generator available");
       return new GenerationStatus(inputModel, null, null, false, false, false);
     }
-    printGenerationStepData(stepController, inputModel);
+    printGenerationStepData(inputModel);
 
     // -- replace context
-    mySessionContext = new GenerationSessionContext(myInvocationContext, inputModel, stepController, mySessionContext);
+    mySessionContext = new GenerationSessionContext(myInvocationContext, inputModel, myGenerationPlan, myMajorStep, mySessionContext);
 
     // -- replace generator
     AbstractTemplateGenerator generator = new TemplateGenerator(mySessionContext, myProgressMonitor);
@@ -150,12 +143,10 @@ public class GenerationSession {
       throw gce;
     } catch (GenerationFailureException gfe) {
       LOG.error(gfe.getMessage());
-      // myProgressMonitor.addText(gfe.toString());
       addMessage(MessageKind.ERROR, "model \"" + inputModel.getSModelFqName() + "\" generation failed : " + gfe);
       status = new GenerationStatus.ERROR(inputModel);
     } catch (Throwable e) {
       LOG.error(e);
-      // myProgressMonitor.addText(e.toString());
       addMessage(MessageKind.ERROR, "model \"" + inputModel.getSModelFqName() + "\" generation failed : " + e);
       status = new GenerationStatus.ERROR(inputModel);
     }
@@ -164,12 +155,11 @@ public class GenerationSession {
   }
 
   private SModel generateModel_stepIntern(SModel inputModel, AbstractTemplateGenerator generator) throws GenerationFailureException, GenerationCanceledException {
-    String modelsLongName = inputModel.getLongName();
     SModel currentInputModel = inputModel;
 
     // reverse roots order
     if (myReverseRoots && inputModel == mySessionContext.getOriginalInputModel()) {
-      SModel currentInputModel_clone = createTransientModel(modelsLongName);
+      SModel currentInputModel_clone = createTransientModel();
       addMessage(MessageKind.INFORMATION, "reversing roots '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
       List<SNode> rrr = currentInputModel.getRoots();
       SNode[] roots = rrr.toArray(new SNode[rrr.size()]);
@@ -204,7 +194,7 @@ public class GenerationSession {
         }
       }
       if (needToCloneInputMode) {
-        SModel currentInputModel_clone = createTransientModel(modelsLongName);
+        SModel currentInputModel_clone = createTransientModel();
         addMessage(MessageKind.INFORMATION, "clone model '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
 
         CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
@@ -228,7 +218,7 @@ public class GenerationSession {
       GeneratorUtil.executeMappingScript(preMappingScript, currentInputModel, generator);
     }
 
-    SModel currentOutputModel = createTransientModel(modelsLongName);
+    SModel currentOutputModel = createTransientModel();
     mySessionContext.getGenerationTracer().startTracing(currentInputModel, currentOutputModel);
 
     // -----------------------
@@ -252,7 +242,7 @@ public class GenerationSession {
       // apply mapping to the output model
       addMessage(MessageKind.INFORMATION, "generating model '" + currentOutputModel.getSModelFqName() + "'");
       mySessionContext.clearTransientObjects();
-      SModel transientModel = createTransientModel(modelsLongName);
+      SModel transientModel = createTransientModel();
       // probably we can forget about former input model here
       recycleWasteModel(currentInputModel);
       currentInputModel = currentOutputModel;
@@ -293,7 +283,7 @@ public class GenerationSession {
     List<MappingScript> postMappingScripts = mySessionContext.getPostMappingScripts();
     if (!postMappingScripts.isEmpty() &&
       !myDiscardTransients) {  // clone model - needed for tracing
-      SModel currentOutputModel_clone = createTransientModel(modelsLongName);
+      SModel currentOutputModel_clone = createTransientModel();
       addMessage(MessageKind.INFORMATION, "clone model '" + currentOutputModel.getSModelFqName() + "' --> '" + currentOutputModel_clone.getSModelFqName() + "'");
       CloneUtil.cloneModel(currentOutputModel, currentOutputModel_clone, false);
 
@@ -314,8 +304,9 @@ public class GenerationSession {
     return currentOutputModel;
   }
 
-  private SModel createTransientModel(String longName) {
-    String stereotype = "" + myInvocationCount + "_" + myTransientModelsCount;
+  private SModel createTransientModel() {
+    String longName = myOriginalInputModel.getLongName();
+    String stereotype = myMajorStep + "_" + myTransientModelsCount;
     while (SModelRepository.getInstance().getModelDescriptor(new SModelFqName(longName, stereotype)) != null) {
       stereotype += "_";
     }
@@ -373,7 +364,7 @@ public class GenerationSession {
     return true;
   }
 
-  private void printGenerationStepData(AbstractGenerationStepController stepController, SModel inputModel) {
+  private void printGenerationStepData(SModel inputModel) {
     List<ModuleReference> references = GenerationPartitioningUtil.getUsedLanguageNamespaces(inputModel, false);
     Collections.sort(references, new Comparator<ModuleReference>() {
       public int compare(ModuleReference o1, ModuleReference o2) {
@@ -397,7 +388,7 @@ public class GenerationSession {
 //    }
 
     addMessage(new Message(MessageKind.INFORMATION, "apply mapping configurations:"));
-    List<String> messages = GenerationPartitioningUtil.toStrings(stepController.getCurrentMappings());
+    List<String> messages = GenerationPartitioningUtil.toStrings(myGenerationPlan.getMappingConfigurations(myMajorStep));
     for (String message : messages) {
       addMessage(new Message(MessageKind.INFORMATION, "    " + message));
     }

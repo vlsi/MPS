@@ -17,10 +17,9 @@ package jetbrains.mps.generator;
 
 import jetbrains.mps.baseLanguage.BaseLanguageUtil;
 import jetbrains.mps.baseLanguage.structure.*;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Iterator;

@@ -15,17 +15,13 @@
  */
 package jetbrains.mps.generator.plan;
 
-import jetbrains.mps.lang.generator.structure.MappingConfiguration;
-
-import java.util.*;
-
 import jetbrains.mps.generator.plan.GenerationPartitioner.CoherentSetData;
 import jetbrains.mps.generator.plan.GenerationPartitioner.PriorityData;
-import jetbrains.mps.util.CollectionUtil;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import jetbrains.mps.runtime.BundleClassLoader;
-import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.util.CollectionUtil;
+
+import java.util.*;
 
 /**
  * Igor Alshannikov

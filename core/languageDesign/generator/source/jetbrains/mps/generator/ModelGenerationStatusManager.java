@@ -16,32 +16,30 @@
 package jetbrains.mps.generator;
 
 import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.openapi.module.Module;
 import com.intellij.openapi.components.ApplicationComponent;
-import com.intellij.openapi.project.Project;
-import com.intellij.openapi.project.IndexNotReadyException;
 import com.intellij.openapi.project.DumbService;
-import com.intellij.util.indexing.FileBasedIndex;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.search.GlobalSearchScope;
+import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.util.indexing.FileBasedIndex.ValueProcessor;
+import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
+import jetbrains.mps.generator.fileGenerator.CacheGenerator;
+import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
+import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.ReadUtil;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.generator.fileGenerator.FileGenerationManager;
-import jetbrains.mps.generator.fileGenerator.CacheGenerator;
-import jetbrains.mps.generator.fileGenerator.CacheGenerationContext;
-import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.vfs.IFile;
-
-import java.io.*;
-import java.util.*;
-
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.*;
 
 public class ModelGenerationStatusManager implements ApplicationComponent {
   public static final String HASH_PREFIX = ".hash.";

@@ -21,7 +21,6 @@ import jetbrains.mps.generator.dependencies.DynamicDependencies;
 import jetbrains.mps.ide.Status;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
 
 /**
  * Igor Alshannikov

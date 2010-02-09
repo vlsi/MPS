@@ -15,15 +15,14 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
-import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
+import com.intellij.openapi.components.ApplicationComponent;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Set;
-import java.util.HashSet;
 import java.util.Collections;
-
-import jetbrains.mps.vfs.IFile;
+import java.util.HashSet;
+import java.util.Set;
 
 public class AllCaches implements ApplicationComponent {
   private final Set<BaseModelCache> myCaches = new HashSet<BaseModelCache>();

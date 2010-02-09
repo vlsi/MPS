@@ -1,9 +1,6 @@
 package jetbrains.mps.generator.plan;
 
 import com.intellij.openapi.util.Pair;
-import jetbrains.mps.generator.plan.AbstractGenerationStepController;
-import jetbrains.mps.generator.plan.GenerationPartitioner;
-import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
@@ -85,34 +82,5 @@ public class GenerationPlan {
 
   public List<Pair<MappingPriorityRule, String>> getConflictingPriorityRulesAsStrings() {
     return GenerationPartitioningUtil.toStrings(myConflictingPriorityRules, true);
-  }
-
-  public AbstractGenerationStepController getAdapter(final int step) {
-    return new AbstractGenerationStepController() {
-      @Override
-      public List<MappingConfiguration> getCurrentMappings() {
-          return getMappingConfigurations(step);
-      }
-
-      @Override
-      public List<SModelDescriptor> getTemplateModels() {
-        return GenerationPlan.this.getTemplateModels();
-      }
-
-      @Override
-      public boolean hasConflictingPriorityRules() {
-        return GenerationPlan.this.hasConflictingPriorityRules();
-      }
-
-      @Override
-      public List<Pair<MappingPriorityRule, String>> getConflictingPriorityRulesAsStrings() {
-        return GenerationPlan.this.getConflictingPriorityRulesAsStrings();
-      }
-
-      @Override
-      public boolean isCountedLanguage(Language language) {
-        return GenerationPlan.this.isCountedLanguage(language);
-      }
-    };
   }
 }

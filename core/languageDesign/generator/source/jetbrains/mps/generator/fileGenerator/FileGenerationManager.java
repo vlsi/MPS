@@ -15,28 +15,28 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
-import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
+import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.smodel.SModel;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.generator.GenerationStatus;
-import jetbrains.mps.generator.template.TemplateQueryContext;
-import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
-import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
-import jetbrains.mps.vcs.MPSVCSManager;
-import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.vfs.VFileSystem;
 import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
 import jetbrains.mps.baseLanguage.textGen.RootDependencies;
-import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.DebugInfo;
 import jetbrains.mps.debug.PositionInfo;
+import jetbrains.mps.generator.GenerationStatus;
+import jetbrains.mps.generator.generationTypes.TextGenerationUtil;
+import jetbrains.mps.generator.generationTypes.TextGenerationUtil.TextGenerationResult;
+import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.ide.IdeMain;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.textGen.TextGenManager;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.vcs.MPSVCSManager;
+import jetbrains.mps.vfs.VFileSystem;
+import org.jetbrains.annotations.NotNull;
 
 import java.io.File;
 import java.io.IOException;

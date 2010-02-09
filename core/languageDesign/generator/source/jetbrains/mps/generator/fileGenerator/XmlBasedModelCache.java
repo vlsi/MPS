@@ -15,15 +15,14 @@
  */
 package jetbrains.mps.generator.fileGenerator;
 
-import org.jdom.Element;
+import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
+import org.jdom.Element;
 import org.jdom.JDOMException;
 
-import java.io.OutputStream;
-import java.io.InputStream;
 import java.io.IOException;
-
-import jetbrains.mps.util.JDOMUtil;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public abstract class XmlBasedModelCache<T> extends BaseModelCache<T> {
   protected XmlBasedModelCache(FileGenerationManager fileGeneratorManager, AllCaches allCaches) {

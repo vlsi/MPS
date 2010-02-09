@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.generator.template;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.AttributesRolesUtil;
-import jetbrains.mps.smodel.search.ISearchScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SearchScopeOperations;
+import jetbrains.mps.smodel.AttributesRolesUtil;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.search.ISearchScope;
 
 import java.util.List;
 

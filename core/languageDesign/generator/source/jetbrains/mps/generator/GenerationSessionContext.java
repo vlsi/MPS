@@ -15,20 +15,19 @@
  */
 package jetbrains.mps.generator;
 
-import jetbrains.mps.generator.plan.AbstractGenerationStepController;
-import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.project.StandaloneMPSContext;
-import jetbrains.mps.smodel.*;
+import com.intellij.openapi.project.Project;
+import jetbrains.mps.generator.plan.GenerationPlan;
+import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.lang.generator.structure.MappingConfiguration;
 import jetbrains.mps.lang.generator.structure.MappingScript;
 import jetbrains.mps.lang.generator.structure.MappingScriptReference;
-import jetbrains.mps.lang.core.structure.INamedConcept;
+import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.project.StandaloneMPSContext;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
-
-import com.intellij.openapi.project.Project;
 
 /**
  * Igor Alshannikov
@@ -40,7 +39,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   private List<SModelDescriptor> myTemplateModels;
   private IOperationContext myInvocationContext;
-  private AbstractGenerationStepController myGenerationStepController;
+  private GenerationPlan myGenerationPlan;
 
   private Map<Object, Object> myTransientObjects = new HashMap<Object, Object>();
   // objects survive between transient models but not between generation steps 
@@ -59,13 +58,14 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
   public GenerationSessionContext(IOperationContext invocationContext,
                                   SModel inputModel,
-                                  AbstractGenerationStepController generationStepController,
+                                  GenerationPlan generationPlan,
+                                  int majorStep,
                                   GenerationSessionContext prevContext) {
 
     myInvocationContext = invocationContext;
-    myGenerationStepController = generationStepController;
-    myTemplateModels = generationStepController.getTemplateModels();
-    myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(generationStepController.getCurrentMappings());
+    myGenerationPlan = generationPlan;
+    myTemplateModels = generationPlan.getTemplateModels();
+    myMappingConfigurations = new LinkedHashSet<MappingConfiguration>(generationPlan.getMappingConfigurations(majorStep));
 
     getModule().setInvocationContext(invocationContext.getModule());
 
@@ -228,8 +228,8 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
 
-  public AbstractGenerationStepController getGenerationStepController() {
-    return myGenerationStepController;
+  public GenerationPlan getGenerationStepController() {
+    return myGenerationPlan;
   }
 
   public void clearCopiedRootsSet() {

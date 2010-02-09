@@ -20,13 +20,10 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.textGen.TextGenManager;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
 
-import javax.swing.JTabbedPane;
 import java.rmi.RemoteException;
 import java.util.*;
 

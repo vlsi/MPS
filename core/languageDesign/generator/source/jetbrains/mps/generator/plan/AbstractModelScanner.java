@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.generator.plan;
 
-import jetbrains.mps.smodel.*;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.smodel.*;
 
-import java.util.Set;
-import java.util.List;
-import java.util.HashSet;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 /**
  * Igor Alshannikov
