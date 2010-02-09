@@ -85,6 +85,33 @@ public class RunContentBuilder implements LogConsoleManager, Disposable {
     return myExecutionResult;
   }
 
+  // MPS Patch Start
+  @Patch
+  public ProgramRunner getRunner() {
+    return myRunner;
+  }
+
+  @Patch
+  public ExecutionEnvironment getEnvironment() {
+    return myEnvironment;
+  }
+
+  @Patch
+  public RunnerLayoutUi getUi() {
+    return myUi;
+  }
+
+  @Patch
+  public Executor getExecutor() {
+    return myExecutor;
+  }
+
+  @Patch
+  public Project getProject() {
+    return myProject;
+  }
+  // MPS Patch End
+
   public void setExecutionResult(final ExecutionResult executionResult) {
     myExecutionResult = executionResult;
   }
@@ -192,9 +219,11 @@ public class RunContentBuilder implements LogConsoleManager, Disposable {
   /*
    * Patched by MPS in order to remove IDEA help button
    * see MPS-7153
+   * Modifier set to protected in order to override this method.
+   * Should be removed when debugger will have it's own decent ui.
    */
   @Patch
-  private ActionGroup createActionToolbar(final RunContentDescriptor contentDescriptor, final JComponent component) {
+  protected ActionGroup createActionToolbar(final RunContentDescriptor contentDescriptor, final JComponent component) {
     final DefaultActionGroup actionGroup = new DefaultActionGroup();
 
     final RestartAction restartAction = new RestartAction(myExecutor, myRunner, getProcessHandler(), myRerunIcon, contentDescriptor, myEnvironment);

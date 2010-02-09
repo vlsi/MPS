@@ -50,7 +50,7 @@ public class VMCreator {
 
   private Map<String, Argument> myArguments;
   private DebugConnectionSettings myConnectionSettings;
-  private DebugVMEventsProcessor myDebugVMEventsProcessor;
+  private final DebugVMEventsProcessor myDebugVMEventsProcessor;
   private final DebuggerManagerThread myDebuggerManagerThread;
   private boolean myIsFailed = false;
 
@@ -297,6 +297,10 @@ public class VMCreator {
 
   public IDebuggerManagerThread getManagerThread() {
     return myDebuggerManagerThread;
+  }
+
+  public DebuggerCommands createDebuggerCommands() {
+    return new DebuggerCommands(myDebugVMEventsProcessor);
   }
 
   private class RunsAfterProcessStarted extends ProcessAdapter {
