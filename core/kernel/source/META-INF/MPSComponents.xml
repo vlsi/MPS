@@ -610,6 +610,10 @@
         </component>
 
         <component>
+            <implementation-class>com.intellij.openapi.vcs.impl.VcsFileStatusProvider</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.changesmanager.EditorChangesHighlighter</implementation-class>
         </component>
     </project-components>
