@@ -606,6 +606,10 @@
         </component>
 
         <component>
+            <implementation-class>com.intellij.openapi.vcs.impl.VcsFileStatusProvider</implementation-class>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.changesmanager.ChangesManager</implementation-class>
         </component>
 
