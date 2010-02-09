@@ -1120,6 +1120,32 @@ public class SModel implements Iterable<SNode> {
     validateLanguagesAndImports(false, false);
   }
 
+  public List<ModuleReference> getUsedLanguages() {
+    List<ModuleReference> result = new ArrayList<ModuleReference>();
+    for (SNode node : allNodes()) {
+      Language lang = node.getLanguage(GlobalScope.getInstance());
+      ModuleReference ref = lang.getModuleReference();
+      result.add(ref);
+    }
+    return result;
+  }
+
+  public List<SModelReference> getUsedImportedModels() {
+    List<SModelReference> result = new ArrayList<SModelReference>();
+    for (SNode node : allNodes()) {
+      List<SReference> references = node.getReferences();
+      for (SReference reference : references) {
+        if (reference.isExternal()) {
+          SModelReference targetModelReference = reference.getTargetSModelReference();
+          if (targetModelReference != null && !result.contains(targetModelReference)) {
+            result.add(targetModelReference);
+          }
+        }
+      }
+    }
+    return result;
+  }
+
   public void validateLanguagesAndImports(boolean respectModulesScopes, boolean firstVersion) {
     GlobalScope scope = GlobalScope.getInstance();
     Set<ModuleReference> usedLanguages = new HashSet<ModuleReference>(getLanguageRefs(scope));
