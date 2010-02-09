@@ -19,6 +19,7 @@ import com.intellij.openapi.project.Project;
 import com.sun.jdi.*;
 import com.sun.jdi.event.*;
 import com.sun.tools.jdi.EventSetImpl;
+import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
@@ -48,10 +49,10 @@ public class DebugVMEventsProcessor {
 
   private DebuggerEventThread myEventThread;
 
-  protected static final int STATE_INITIAL   = 0;
-  protected static final int STATE_ATTACHED  = 1;
+  protected static final int STATE_INITIAL = 0;
+  protected static final int STATE_ATTACHED = 1;
   protected static final int STATE_DETACHING = 2;
-  protected static final int STATE_DETACHED  = 3;
+  protected static final int STATE_DETACHED = 3;
   protected final AtomicInteger myState = new AtomicInteger(STATE_INITIAL);
 
   public DebugVMEventsProcessor(Project p, VMCreator vmCreator) {
@@ -63,7 +64,7 @@ public class DebugVMEventsProcessor {
   }
 
   public void commitVM(VirtualMachine vm) {
-    if(vm != null) {
+    if (vm != null) {
       myVirtualMachine = vm;
       vmAttached();
       myEventThread = new DebuggerEventThread();
@@ -71,7 +72,9 @@ public class DebugVMEventsProcessor {
     }
   }
 
-  /* package */ DebugProcessMulticaster getMulticaster() {
+  /* package */
+
+  DebugProcessMulticaster getMulticaster() {
     return myMulticaster;
   }
 
@@ -92,7 +95,7 @@ public class DebugVMEventsProcessor {
   }
 
   private class DebuggerEventThread implements Runnable {
-    DebuggerEventThread () {
+    DebuggerEventThread() {
     }
 
     private boolean myIsStopped = false;
@@ -126,26 +129,24 @@ public class DebugVMEventsProcessor {
                     }
                     else */ if (event instanceof VMDeathEvent) {
                       processVMDeathEvent(suspendContext, event);
-                    }
-                    else if (event instanceof VMDisconnectEvent) {
+                    } else if (event instanceof VMDisconnectEvent) {
                       processVMDeathEvent(suspendContext, event);
-                    }
-                    else  if (event instanceof ClassPrepareEvent) {
+                    } else if (event instanceof ClassPrepareEvent) {
                       System.err.println("class prepare event happened");
-                      processClassPrepareEvent(suspendContext, (ClassPrepareEvent)event);
+                      processClassPrepareEvent(suspendContext, (ClassPrepareEvent) event);
                     }
                     //AccessWatchpointEvent, BreakpointEvent, ExceptionEvent, MethodEntryEvent, MethodExitEvent,
                     //ModificationWatchpointEvent, StepEvent, WatchpointEvent
-                  /*  else if (event instanceof StepEvent) {
+                    /*  else if (event instanceof StepEvent) {
                       processStepEvent(suspendContext, (StepEvent)event);
                     }*/
                     else if (event instanceof LocatableEvent) {
                       System.err.println("locatable event happened");
-                      processLocatableEvent(suspendContext, (LocatableEvent)event);
+                      processLocatableEvent(suspendContext, (LocatableEvent) event);
                     } else {
                       mySuspendManager.voteResume(suspendContext);
                     }
-                  /*  else if (event instanceof ClassUnloadEvent){
+                    /*  else if (event instanceof ClassUnloadEvent){
                       processDefaultEvent(suspendContext);
                     }*/
                   }
@@ -159,12 +160,12 @@ public class DebugVMEventsProcessor {
                     LOG.error(e);
                   }
                 }
-
-            }});
+              }
+            });
 
           }
           catch (InternalException e) {
-           // LOG.debug(e);
+            // LOG.debug(e);
           }
           catch (InterruptedException e) {
             throw e;
@@ -173,7 +174,7 @@ public class DebugVMEventsProcessor {
             throw e;
           }
           catch (Throwable e) {
-           // LOG.debug(e);
+            // LOG.debug(e);
           }
         }
       } catch (InterruptedException e) {
@@ -188,7 +189,7 @@ public class DebugVMEventsProcessor {
     private void invokeVMDeathEventInManagerThread() {
       getManagerThread().invokeAndWait(new DebuggerCommand() {
         protected void action() throws Exception {
-         // SuspendContext suspendContext = getSuspendManager().pushSuspendContext(EventRequest.SUSPEND_NONE, 1);
+          // SuspendContext suspendContext = getSuspendManager().pushSuspendContext(EventRequest.SUSPEND_NONE, 1);
           SuspendContext suspendContext = getSuspendManager().pushSuspendContext(null);
           processVMDeathEvent(suspendContext, null);
         }
@@ -209,14 +210,14 @@ public class DebugVMEventsProcessor {
   }
 
 
-   public boolean isAttached() {
-      return myState.get() == STATE_ATTACHED;
-   }
+  public boolean isAttached() {
+    return myState.get() == STATE_ATTACHED;
+  }
 
-   private void vmAttached() {
+  private void vmAttached() {
     // DebuggerManagerThreadImpl.assertIsManagerThread();
     LOG.assertLog(!isAttached());
-    if(myState.compareAndSet(STATE_INITIAL, STATE_ATTACHED)) { //here we change an atomic state from initial to attached
+    if (myState.compareAndSet(STATE_INITIAL, STATE_ATTACHED)) { //here we change an atomic state from initial to attached
       //DebuggerManagerEx.getInstanceEx(getProject()).getBreakpointManager().setInitialBreakpointsState();
       myMulticaster.processAttached(this);
       getDebugManager().addDebugProcess(this);
@@ -229,7 +230,7 @@ public class DebugVMEventsProcessor {
     ThreadReference oldThread = suspendContext.getThread();
     suspendContext.setThread(thread);
 
-    if(oldThread == null) {
+    if (oldThread == null) {
       //this is the first event in the eventSet that we process
       // fire some events
       //    suspendContext.getDebugProcess().beforeSuspend(suspendContext);
@@ -250,48 +251,48 @@ public class DebugVMEventsProcessor {
     SuspendContextCommand suspendCommand = new SuspendContextCommand(suspendContext);
     //getManagerThread().schedule(new SuspendContextCommandImpl(suspendContext) {
     //  public void contextAction() throws Exception {
-        final SuspendManager suspendManager = mySuspendManager;
+    final SuspendManager suspendManager = mySuspendManager;
 
 
     //todo - check if inside evaluation later; no evaluation currently implemented
     // SuspendContext evaluatingContext = SuspendManagerUtil.getEvaluatingContext(suspendManager, getSuspendContext().getThread());
     //if(evaluatingContext != null) {
-          // is inside evaluation, so ignore any breakpoints
+    // is inside evaluation, so ignore any breakpoints
     //      suspendManager.voteResume(suspendContext);
     //      return;
     //    }
 
 
-        //breakpoint found
-        final LocatableEventRequestor requestor =
-          (LocatableEventRequestor) getRequestManager().findRequestor(event.request());
+    //breakpoint found
+    final LocatableEventRequestor requestor =
+      (LocatableEventRequestor) getRequestManager().findRequestor(event.request());
 
-       // boolean resumePreferred = requestor != null && DebuggerSettings.SUSPEND_NONE.equals(requestor.getSuspendPolicy());
-        boolean requestHit = false;
+    // boolean resumePreferred = requestor != null && DebuggerSettings.SUSPEND_NONE.equals(requestor.getSuspendPolicy());
+    boolean requestHit = false;
 
-        try {
-          requestHit = (requestor != null) && requestor.processLocatableEvent(suspendCommand, event);
-       // } catch () {
-          // todo: catch a special exception here, show modal window like "error evaluation breakpoint condition, do you want to
-          // todo "stop at the breakpoint, Y/N etc.
-        }  catch (Throwable t) {
-          LOG.error(t);
-        }
+    try {
+      requestHit = (requestor != null) && requestor.processLocatableEvent(suspendCommand, event);
+      // } catch () {
+      // todo: catch a special exception here, show modal window like "error evaluation breakpoint condition, do you want to
+      // todo "stop at the breakpoint, Y/N etc.
+    } catch (Throwable t) {
+      LOG.error(t);
+    }
 
-        if (requestHit && requestor instanceof MPSBreakpoint) {
-          // if requestor is a breakpoint and this breakpoint was hit, no matter its suspend policy
-          myBreakpointManager.processBreakpointHit((MPSBreakpoint)requestor);
-        }
+    if (requestHit && requestor instanceof MPSBreakpoint) {
+      // if requestor is a breakpoint and this breakpoint was hit, no matter its suspend policy
+      myBreakpointManager.processBreakpointHit((MPSBreakpoint) requestor);
+    }
 
-        if(!requestHit /*|| resumePreferred*/) {
-          suspendManager.voteResume(suspendContext);
-        } else {
-          suspendManager.voteSuspend(suspendContext);
-        }
+    if (!requestHit /*|| resumePreferred*/) {
+      suspendManager.voteResume(suspendContext);
+    } else {
+      suspendManager.voteSuspend(suspendContext);
+    }
 
     // sheduled command parenthesis
-  //    }
-  //  });
+    //    }
+    //  });
   }
 
   // a class is prepared: let's set breakpoint requests from breakpoints

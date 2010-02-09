@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.debug.runtime;
 
+import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Set;
@@ -71,7 +72,7 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
 
   protected void resume(){
     assertNotResumed();
-    // DebuggerManagerThreadImpl.assertIsManagerThread();
+    DebuggerManagerThread.assertIsManagerThread();
     try {
       resumeImpl();
     } finally {
@@ -102,8 +103,7 @@ public abstract class SuspendContext { //todo: add evaluation and postponed comm
     assertNotResumed();
     try {
       return myThread != null && myThread.frameCount() > 0 ? myThread.frame(0) : null;
-    }
-    catch (IncompatibleThreadStateException e) {
+    } catch (IncompatibleThreadStateException e) {
       return null;
     }
   }

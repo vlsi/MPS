@@ -15,20 +15,22 @@
  */
 package jetbrains.mps.debug.runtime;
 
+import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debug.PositionInfo;
 import jetbrains.mps.debug.BLDebugInfoCache;
 import jetbrains.mps.debug.DebugInfo;
-import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
 import com.sun.jdi.*;
 import com.sun.jdi.event.LocatableEvent;
 import com.sun.jdi.request.BreakpointRequest;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.NotNull;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -41,10 +43,11 @@ import java.util.List;
 public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventRequestor {
   private static Logger LOG = Logger.getLogger(MPSBreakpoint.class);
 
-
-  private SNodePointer myNodePointer;
+  private final Project myProject;
+  private final SNodePointer myNodePointer;
+  private final List<IBreakpointListener> myListeners = new ArrayList<IBreakpointListener>();
   public boolean myIsEnabled = true; //todo add ability to disable breakpoints
-  private Project myProject;
+
 
   public MPSBreakpoint(SNode node, Project project) {
     myNodePointer = new SNodePointer(node);
@@ -208,6 +211,8 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
         return false;
       }
 
+      fireHit();
+
       //todo conditions - later
       /*  final EvaluationContextImpl evaluationContext = new EvaluationContextImpl(
         action.getSuspendContext(),
@@ -227,5 +232,33 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
     }
 
     return true;
+  }
+
+  public void addListener(@NotNull IBreakpointListener listener) {
+    synchronized (myListeners) {
+      myListeners.add(listener);
+    }
+  }
+
+  public void removeListener(@NotNull IBreakpointListener listener) {
+    synchronized (myListeners) {
+      myListeners.remove(listener);
+    }
+  }
+
+  private void fireHit() {
+    synchronized (myListeners) {
+      for (IBreakpointListener l : myListeners) {
+        l.hit();
+      }
+    }
+  }
+
+  private void fireResumed() {
+    synchronized (myListeners) {
+      for (IBreakpointListener l : myListeners) {
+        l.resumed();
+      }
+    }
   }
 }

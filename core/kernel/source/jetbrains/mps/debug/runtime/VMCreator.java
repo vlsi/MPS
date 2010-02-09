@@ -51,7 +51,7 @@ public class VMCreator {
   private Map<String, Argument> myArguments;
   private DebugConnectionSettings myConnectionSettings;
   private DebugVMEventsProcessor myDebugVMEventsProcessor;
-  private DebuggerManagerThread myDebuggerManagerThread;
+  private final DebuggerManagerThread myDebuggerManagerThread;
   private boolean myIsFailed = false;
 
   //holds listeners before process is executed; then adds them to process handler.

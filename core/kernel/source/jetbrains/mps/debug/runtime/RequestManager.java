@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Collections;
 import java.util.HashSet;
 
+import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
@@ -61,7 +62,7 @@ public class RequestManager implements DebugProcessListener {
 
   public Requestor findRequestor(EventRequest request) {
     DebuggerManagerThread.assertIsManagerThread();
-    return request != null? (Requestor)request.getProperty(REQUESTOR) : null;
+    return request != null ? (Requestor) request.getProperty(REQUESTOR) : null;
   }
 
   public Set<EventRequest> findRequests(Requestor requestor) {
@@ -79,7 +80,7 @@ public class RequestManager implements DebugProcessListener {
 
   private void registerRequest(Requestor requestor, EventRequest request) {
     Set<EventRequest> reqSet = myRequestorToBelongedRequests.get(requestor);
-    if(reqSet == null) {
+    if (reqSet == null) {
       reqSet = new HashSet<EventRequest>();
       myRequestorToBelongedRequests.put(requestor, reqSet);
     }
@@ -89,16 +90,16 @@ public class RequestManager implements DebugProcessListener {
   public void deleteRequest(Requestor requestor) {
     DebuggerManagerThread.assertIsManagerThread();
 
-    if(!myDebugEventsProcessor.isAttached()) {
+    if (!myDebugEventsProcessor.isAttached()) {
       return;
     }
     final Set<EventRequest> requests = myRequestorToBelongedRequests.remove(requestor);
-    if(requests == null) {
+    if (requests == null) {
       return;
     }
     for (final EventRequest request : requests) {
       try {
-        final Requestor targetRequestor = (Requestor)request.getProperty(REQUESTOR);
+        final Requestor targetRequestor = (Requestor) request.getProperty(REQUESTOR);
         if (targetRequestor != requestor) {
           // the same request may be assigned to more than one requestor, but
           // there is only one 'targetRequestor' for each request, so if target requestor and requestor being processed are different,
@@ -171,7 +172,6 @@ public class RequestManager implements DebugProcessListener {
   }
 
 
-
   //todo impl
   @Override
   public void connectorIsReady() {
@@ -215,7 +215,7 @@ public class RequestManager implements DebugProcessListener {
     final ReferenceType refType = event.referenceType();
 
     if (refType instanceof ClassType || refType instanceof InterfaceType) {
-      ClassPrepareRequestor requestor = (ClassPrepareRequestor)event.request().getProperty(REQUESTOR);
+      ClassPrepareRequestor requestor = (ClassPrepareRequestor) event.request().getProperty(REQUESTOR);
       if (requestor != null) {
         requestor.processClassPrepare(myDebugEventsProcessor, refType);
       }
