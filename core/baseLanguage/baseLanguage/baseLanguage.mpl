@@ -28,7 +28,6 @@
     <entry path="${mps_home}/lib/asm/asm.jar" include="false" />
   </classPath>
   <languageRuntimeClassPath>
-    <entry path="${language_descriptor}/runtime/classes" />
     <entry path="${mps_home}/lib/commons-lang/commons-lang-2.1.jar" />
   </languageRuntimeClassPath>
   <sourcePath />

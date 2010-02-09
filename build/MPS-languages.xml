@@ -21,9 +21,6 @@
       <zipfileset dir="core/baseLanguage/baseLanguage" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
       <zipfileset dir="core/baseLanguage/baseLanguage/classes" />
     </jar>
-    <jar destfile="${deploy.dir}/MPS/core/baseLanguage/jetbrains.mps.baseLanguage.runtime.jar" duplicate="preserve" filesonly="true">
-      <fileset dir="core/baseLanguage/baseLanguage/runtime/classes" />
-    </jar>
   </target>
   <target name="pack.jetbrains.mps.baseLanguageInternal0">
     <mkdir dir="core/baseLanguage/baseLanguageInternal/classes" />
