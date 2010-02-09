@@ -15,7 +15,6 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="workbench" />
-    <orderEntry type="module" module-name="baseLanguage-runtime" />
     <orderEntry type="module" module-name="smodel" />
     <orderEntry type="module" module-name="typesystem" />
     <orderEntry type="module" module-name="core" />
