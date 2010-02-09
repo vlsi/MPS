@@ -644,6 +644,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public final void delete() {
+    mySModel.removeModel();
     SModelRepository.getInstance().deleteModel(this);
   }
 

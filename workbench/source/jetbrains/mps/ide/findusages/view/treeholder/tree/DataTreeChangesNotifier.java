@@ -88,6 +88,7 @@ public class DataTreeChangesNotifier {
   private class MyModelCommandListener implements SModelCommandListener {
     public void eventsHappenedInCommand(List<SModelEvent> events) {
       for (SModelEvent event : events) {
+        if (event.getModelDescriptor() == null) continue;
         if (myModels.contains(event.getModelDescriptor().getSModelReference())) {
           if (event instanceof SModelRootEvent) {
             SModelRootEvent modelRootEvent = (SModelRootEvent) event;
