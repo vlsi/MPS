@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.generator;
 
+import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
+import jetbrains.mps.debug.DebugInfo;
+import jetbrains.mps.generator.dependencies.DynamicDependencies;
 import jetbrains.mps.ide.Status;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.baseLanguage.textGen.ModelDependencies;
-import jetbrains.mps.debug.DebugInfo;
+import jetbrains.mps.smodel.SNode;
 
 /**
  * Igor Alshannikov
@@ -32,6 +34,7 @@ public class GenerationStatus extends Status {
   private boolean myWarnings;
   private TraceMap myTraceMap;
   private DebugInfo myDebugInfo;
+  private DynamicDependencies myDependencies;
   private ModelDependencies myBLDependencies;
 
   private SModelDescriptor myOriginalInputModel;
@@ -79,6 +82,14 @@ public class GenerationStatus extends Status {
 
   public ModelDependencies getBLDependencies() {
     return myBLDependencies;
+  }
+
+  public DynamicDependencies getDependencies() {
+    return myDependencies;
+  }
+
+  public void setDependencies(DynamicDependencies dependencies) {
+    myDependencies = dependencies;
   }
 
   public void setBLDependencies(ModelDependencies dependencies) {

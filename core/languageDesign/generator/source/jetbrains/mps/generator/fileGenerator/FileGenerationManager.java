@@ -19,7 +19,6 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.generator2.GenerationStatus2;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.IOperationContext;
@@ -58,53 +57,23 @@ public class FileGenerationManager implements ApplicationComponent {
   }
 
   public void initComponent() {
-
   }
 
   public void disposeComponent() {
-
   }
 
-  public boolean handlePartialOutput(IOperationContext context, 
-                                     GenerationStatus status, File outputRoot, Set<File> result) {
-
-    if (outputRoot == null) throw new RuntimeException("unspecified output path for file generation.");
-
-    if (!status.isOk()) {
-      return false;
-    }
-
-    Map<SNode, String> outputNodeContents = new LinkedHashMap<SNode, String>();
-
-    boolean ok = true;
-    if (!generateText(context, status, outputNodeContents)) {
-      return false;
-    }
-
-    Set<File> generatedFiles = generateFiles(status, outputRoot, outputNodeContents);
-    processGeneratedFiles(status, outputRoot, context, generatedFiles, false);
-    result.addAll(generatedFiles);
-
-    return ok;
+  public void addCachesGenerator(CacheGenerator g) {
+    myCacheGenerators.add(g);
   }
 
-  public void handlePartialOutputDone(IOperationContext context, GenerationStatus status,
-                                      File outputRoot, Set<File> generatedFiles) {
-    cleanUp(status.getInputModel(), context, outputRoot, generatedFiles);
-    if(generatedFiles.isEmpty()) {
-      touchOutputDir(status, outputRoot);
-    } else {
-      File cachesOutput = FileGenerationUtil.getCachesOutputDir(outputRoot);
-      Set<File> generatedCaches = generateCaches(status, cachesOutput);
-      processGeneratedFiles(status, cachesOutput, context, generatedCaches, true);
-    }
+  public void removeCachesGenerator(CacheGenerator g) {
+    myCacheGenerators.remove(g);
   }
 
-  public boolean handleOutput(
-    IOperationContext context,
-    GenerationStatus status,
-    File outputRoot) {
-    if (outputRoot == null) throw new RuntimeException("unspecified output path for file generation.");
+  public boolean handleOutput(IOperationContext context, GenerationStatus status, File outputRoot) {
+    if (outputRoot == null) {
+      throw new RuntimeException("unspecified output path for file generation.");
+    }
 
     if (!status.isOk()) {
       return false;
@@ -132,26 +101,14 @@ public class FileGenerationManager implements ApplicationComponent {
     touchOutputDir(status, outputDir);
   }
 
-  public void addCachesGenerator(CacheGenerator g) {
-    myCacheGenerators.add(g);
-  }
-
-  public void removeCachesGenerator(CacheGenerator g) {
-    myCacheGenerators.remove(g);
-  }
-
-  private void processGeneratedFiles(
-    GenerationStatus status,
-    File outputRoot,
-    IOperationContext context,
-    Set<File> generatedFiles,
-    boolean cleanUp) {
+  private void processGeneratedFiles(GenerationStatus status, File outputRoot, IOperationContext context,
+                                     Set<File> generatedFiles, boolean cleanUp) {
 
     MPSVCSManager manager = context.getProject().getComponent(MPSVCSManager.class);
     manager.addFilesToVcs(new ArrayList<File>(generatedFiles), false, false);
 
     refreshGeneratedFiles(generatedFiles);
-    if(cleanUp) {
+    if (cleanUp) {
       cleanUp(status.getInputModel(), context, outputRoot, generatedFiles);
     }
   }
@@ -215,12 +172,9 @@ public class FileGenerationManager implements ApplicationComponent {
       try {
         TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
         String rootNodeId = null;
-        // FIXME temp hack
-        if(status instanceof GenerationStatus2) {
-          SNode node = ((GenerationStatus2)status).getDependencies().getOriginalRoot(outputNode);
-          if(node != null) {
-            rootNodeId = node.getId();
-          }
+        SNode node = status.getDependencies().getOriginalRoot(outputNode);
+        if (node != null) {
+          rootNodeId = node.getId();
         }
         fillDebugInfo(info, rootNodeId, outputNode, result);
         fillDependencies(dependRoot, outputNode, result);
@@ -269,7 +223,7 @@ public class FileGenerationManager implements ApplicationComponent {
       if (textGenResult.getDependencies().get(key).equals(value)) {
         result.add(key);
       }
-    }    
+    }
     Collections.sort(result);
     return result;
   }

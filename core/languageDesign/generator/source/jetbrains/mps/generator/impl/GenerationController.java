@@ -161,8 +161,6 @@ public class GenerationController {
 
           info("");
           String taskName = ModelsProgressUtil.generationModelTaskName(inputModel);
-
-          //  myProgress.startLeafTask(taskName, ModelsProgressUtil.TASK_KIND_GENERATION);
           progressHelper.setText2("model " + inputModel.getSModelFqName());
           progressHelper.startLeafTask(taskName);
 

@@ -57,11 +57,10 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   private SModel myOriginalInputModel;
 
 
-  public GenerationSessionContext(
-    IOperationContext invocationContext,
-    SModel inputModel,
-    AbstractGenerationStepController generationStepController,
-    GenerationSessionContext prevContext) {
+  public GenerationSessionContext(IOperationContext invocationContext,
+                                  SModel inputModel,
+                                  AbstractGenerationStepController generationStepController,
+                                  GenerationSessionContext prevContext) {
 
     myInvocationContext = invocationContext;
     myGenerationStepController = generationStepController;
