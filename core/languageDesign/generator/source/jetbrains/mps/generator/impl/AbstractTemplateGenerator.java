@@ -82,8 +82,4 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   public int getWarningCount() {
     return myLogger.getWarningCount();
   }
-
-  public abstract boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailureException, GenerationCanceledException;
-
-  public abstract boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailureException, GenerationCanceledException;
 }

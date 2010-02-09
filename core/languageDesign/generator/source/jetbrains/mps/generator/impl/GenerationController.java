@@ -44,7 +44,6 @@ import java.util.*;
 public class GenerationController {
   protected static Logger LOG = Logger.getLogger(GenerationController.class);
 
-  private GeneratorManager myManager;
   private GeneratorNotifierHelper myNotifierHelper;
   protected GenerationSettings mySettings;
   private List<Pair<SModelDescriptor, IOperationContext>> myInputModels;
@@ -56,8 +55,7 @@ public class GenerationController {
   protected List<Pair<IModule, List<SModelDescriptor>>> myModuleSequence = new ArrayList<Pair<IModule, List<SModelDescriptor>>>();
   protected Map<IModule, IOperationContext> myModulesToContexts = new HashMap<IModule, IOperationContext>();
 
-  public GenerationController(GeneratorManager generatorManager,
-                              GeneratorNotifierHelper notifierHelper,
+  public GenerationController(GeneratorNotifierHelper notifierHelper,
                               GenerationSettings settings,
                               List<Pair<SModelDescriptor, IOperationContext>> _inputModels,
                               IGenerationHandler generationHandler,
@@ -65,7 +63,6 @@ public class GenerationController {
                               IMessageHandler messages,
                               boolean saveTransientModels) {
 
-    myManager = generatorManager;
     myNotifierHelper = notifierHelper;
     mySettings = settings;
     myInputModels = _inputModels;

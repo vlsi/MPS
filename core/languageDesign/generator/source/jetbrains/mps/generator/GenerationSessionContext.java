@@ -228,7 +228,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
   }
 
 
-  public GenerationPlan getGenerationStepController() {
+  public GenerationPlan getGenerationPlan() {
     return myGenerationPlan;
   }
 

@@ -77,7 +77,7 @@ public class DelayedChanges {
           // check node languages : prevent 'mapping func' query from returnning node, which language was not counted when
           // planning the generation steps.
           Language childLang = child.getNodeLanguage();
-          if (!myGenerator.getGeneratorSessionContext().getGenerationStepController().isCountedLanguage(childLang)) {
+          if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(childLang)) {
             if (!childLang.getGenerators().isEmpty()) {
               LOG.error("language of output node is '" + childLang.getNamespace() + "' - this language did not show up when computing generation steps!", child);
               LOG.error(" -- was input: " + myInputNode.getDebugText(), myInputNode);

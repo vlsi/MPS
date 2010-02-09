@@ -267,7 +267,7 @@ public class TemplateProcessor {
           // planning the generation steps.
           for (SNode outputNode : _outputNodes) {
             Language outputNodeLang = outputNode.getNodeLanguage();
-            if (!myGenerator.getGeneratorSessionContext().getGenerationStepController().isCountedLanguage(outputNodeLang)) {
+            if (!myGenerator.getGeneratorSessionContext().getGenerationPlan().isCountedLanguage(outputNodeLang)) {
               if (!outputNodeLang.getGenerators().isEmpty()) {
                 LOG.error("language of output node is '" + outputNodeLang.getNamespace() + "' - this language did not show up when computing generation steps!", outputNode);
                 LOG.error(" -- was input: " + inputNode.getDebugText(), inputNode);
@@ -518,7 +518,7 @@ public class TemplateProcessor {
   }
 
   private List<SNode> copyNodeFromInputNode_internal(String mappingName, SNode templateNode, SNode inputNode) throws GenerationFailureException, GenerationCanceledException {
-    List<SNode> outputNodes = myGenerator.getRuleManager().tryToReduce(inputNode, mappingName);
+    List<SNode> outputNodes = myGenerator.getRuleProcessor().tryToReduce(inputNode, mappingName);
     if (outputNodes != null) {
       return outputNodes;
     }
@@ -526,7 +526,7 @@ public class TemplateProcessor {
     // no reduction found - do node copying
     myGenerator.getGeneratorSessionContext().getGenerationTracer().pushCopyOperation();
     SNode outputNode = new SNode(myOutputModel, inputNode.getConceptFqName(), false);
-    myGenerator.getRuleManager().blockReductionsForOutput(inputNode, outputNode); // prevent infinite applying of the same reduction to the 'same' node.    
+    myGenerator.getRuleProcessor().blockReductionsForOutput(inputNode, outputNode); // prevent infinite applying of the same reduction to the 'same' node.
 
     myGenerator.addOutputNodeByInputAndTemplateNode(inputNode, templateNode, outputNode);
     myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNode);

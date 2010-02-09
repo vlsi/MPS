@@ -45,6 +45,8 @@ import java.util.List;
 /**
  * Igor Alshannikov
  * Oct 26, 2005
+ *
+ * Created once per model generation.
  */
 public class GenerationSession {
   public static final Logger LOG = Logger.getLogger(GenerationSession.class);
@@ -78,9 +80,14 @@ public class GenerationSession {
   }
 
   public GenerationStatus generateModel() throws Exception {
+    if (myMajorStep != 0) {
+      throw new GenerationCanceledException();
+    }
+
+    // create a plan
     myGenerationPlan = new GenerationPlan(myOriginalInputModel.getSModel());
     if (!checkGenerationPlan(myGenerationPlan)) {
-//      throw new GenerationCanceledException();
+      // throw new GenerationCanceledException();
     }
 
     GenerationStatus status;
@@ -88,7 +95,7 @@ public class GenerationSession {
     boolean wasWarnings = false;
     SModelDescriptor currInputModel = myOriginalInputModel;
     do {
-      addMessage(new Message(MessageKind.INFORMATION, "execute step " + (myMajorStep + 1)));
+      info("execute step " + (myMajorStep + 1));
       status = generateModel_step(currInputModel.getSModel());
       wasErrors |= status.isError();
       wasWarnings |= status.hasWarnings();
@@ -106,23 +113,22 @@ public class GenerationSession {
 
     } while (myMajorStep < myGenerationPlan.getStepCount());
 
-    //we need this in order to prevent memory leaks from nodes which are reported to message view
-    //since session objects might include objects with disposed class loaders
+    // we need this in order to prevent memory leaks from nodes which are reported to message view
+    // since session objects might include objects with disposed class loaders
     if (mySessionContext != null) {
       mySessionContext.clearTransientObjects();
     }
 
-    return new GenerationStatus(status.getInputModel(), status.getOutputModel(), status.getTraceMap(), wasErrors, wasWarnings, status.isCanceled());
+    return new GenerationStatus(status.getInputModel(), status.getOutputModel(),
+      status.getTraceMap(), wasErrors, wasWarnings, status.isCanceled());
   }
 
-
   private GenerationStatus generateModel_step(SModel inputModel) throws GenerationCanceledException {
-
     myTransientModelsCount = 0;
-    addProgressMessage(MessageKind.INFORMATION, "generating model \"" + inputModel.getSModelFqName() + "\"");
+    info("generating model \"" + inputModel.getSModelFqName() + "\"");
 
     if (myGenerationPlan.getMappingConfigurations(myMajorStep).isEmpty()) {
-      addProgressMessage(MessageKind.WARNING, "skip model \"" + inputModel.getSModelFqName() + "\" : no generator available");
+      warning("skip model \"" + inputModel.getSModelFqName() + "\" : no generator available");
       return new GenerationStatus(inputModel, null, null, false, false, false);
     }
     printGenerationStepData(inputModel);
@@ -131,36 +137,42 @@ public class GenerationSession {
     mySessionContext = new GenerationSessionContext(myInvocationContext, inputModel, myGenerationPlan, myMajorStep, mySessionContext);
 
     // -- replace generator
-    AbstractTemplateGenerator generator = new TemplateGenerator(mySessionContext, myProgressMonitor);
+    TemplateGenerator generator = new TemplateGenerator(mySessionContext, myProgressMonitor, new RuleManager(myGenerationPlan, myMajorStep));
     GenerationStatus status;
     try {
       SModel outputModel = generateModel_stepIntern(inputModel, generator);
       boolean wasErrors = generator.getErrorCount() > 0;
       boolean wasWarnigns = generator.getWarningCount() > 0;
       status = new GenerationStatus(inputModel, outputModel, mySessionContext.getTraceMap(), wasErrors, wasWarnigns, false);
-      addMessage(status.isError() ? MessageKind.WARNING : MessageKind.INFORMATION, "model \"" + inputModel.getSModelFqName() + "\" has been generated " + (status.isError() ? "with errors" : "successfully"));
+      if(status.isError()) {
+        warning("model \"" + inputModel.getSModelFqName() + "\" has been generated with errors");
+      } else {
+        info("model \"" + inputModel.getSModelFqName() + "\" has been generated successfully");
+      }
     } catch (GenerationCanceledException gce) {
       throw gce;
     } catch (GenerationFailureException gfe) {
       LOG.error(gfe.getMessage());
-      addMessage(MessageKind.ERROR, "model \"" + inputModel.getSModelFqName() + "\" generation failed : " + gfe);
+      error("model \"" + inputModel.getSModelFqName() + "\" generation failed : " + gfe);
       status = new GenerationStatus.ERROR(inputModel);
     } catch (Throwable e) {
       LOG.error(e);
-      addMessage(MessageKind.ERROR, "model \"" + inputModel.getSModelFqName() + "\" generation failed : " + e);
+      error("model \"" + inputModel.getSModelFqName() + "\" generation failed : " + e);
       status = new GenerationStatus.ERROR(inputModel);
     }
 
     return status;
   }
 
-  private SModel generateModel_stepIntern(SModel inputModel, AbstractTemplateGenerator generator) throws GenerationFailureException, GenerationCanceledException {
+  private SModel generateModel_stepIntern(SModel inputModel, TemplateGenerator generator) throws GenerationFailureException, GenerationCanceledException {
     SModel currentInputModel = inputModel;
 
+    // -----------------------
     // reverse roots order
+    // -----------------------
     if (myReverseRoots && inputModel == mySessionContext.getOriginalInputModel()) {
       SModel currentInputModel_clone = createTransientModel();
-      addMessage(MessageKind.INFORMATION, "reversing roots '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
+      info("reversing roots '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
       List<SNode> rrr = currentInputModel.getRoots();
       SNode[] roots = rrr.toArray(new SNode[rrr.size()]);
       for (int i = 0; i < roots.length / 2; i++) {
@@ -179,44 +191,7 @@ public class GenerationSession {
     // -----------------------
     // run pre-processing scripts
     // -----------------------
-    List<MappingScript> preMappingScripts = mySessionContext.getPreMappingScripts();
-    if (!preMappingScripts.isEmpty()) {
-      // need to clone input model?
-      boolean needToCloneInputMode = !myDiscardTransients;  // clone model if save transients (needed for tracing)
-      if (!needToCloneInputMode) {
-        for (MappingScript preMappingScript : preMappingScripts) {
-          if (preMappingScript.getScriptKind() == MappingScriptKind.pre_process_input_model) {
-            if (preMappingScript.getModifiesModel()) {
-              needToCloneInputMode = true;
-              break;
-            }
-          }
-        }
-      }
-      if (needToCloneInputMode) {
-        SModel currentInputModel_clone = createTransientModel();
-        addMessage(MessageKind.INFORMATION, "clone model '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
-
-        CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
-
-        if (!myDiscardTransients) { // tracing
-          mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, preMappingScripts);
-        }
-
-        // probably we can forget about former input model here
-        recycleWasteModel(currentInputModel);
-        currentInputModel = currentInputModel_clone;
-      }
-    }
-
-    for (MappingScript preMappingScript : preMappingScripts) {
-      if (preMappingScript.getScriptKind() != MappingScriptKind.pre_process_input_model) {
-        addMessage(MessageKind.WARNING, "skip script '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ") - wrong script kind", preMappingScript.getNode());
-        continue;
-      }
-      addMessage(MessageKind.INFORMATION, "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ")", preMappingScript.getNode());
-      GeneratorUtil.executeMappingScript(preMappingScript, currentInputModel, generator);
-    }
+    currentInputModel = preProcessModel(generator, currentInputModel);
 
     SModel currentOutputModel = createTransientModel();
     mySessionContext.getGenerationTracer().startTracing(currentInputModel, currentOutputModel);
@@ -225,7 +200,7 @@ public class GenerationSession {
     // primary mapping
     // -----------------------
     currentInputModel.setLoading(false);
-    boolean somethingHasBeenGenerated = generator.doPrimaryMapping(currentInputModel, currentOutputModel);
+    boolean somethingHasBeenGenerated = generator.doMapping(true, currentInputModel, currentOutputModel);
     if (!somethingHasBeenGenerated) {
       currentOutputModel.validateLanguagesAndImports();
       recycleWasteModel(currentInputModel);
@@ -240,7 +215,7 @@ public class GenerationSession {
       currentOutputModel.validateLanguagesAndImports();
 
       // apply mapping to the output model
-      addMessage(MessageKind.INFORMATION, "generating model '" + currentOutputModel.getSModelFqName() + "'");
+      info("generating model '" + currentOutputModel.getSModelFqName() + "'");
       mySessionContext.clearTransientObjects();
       SModel transientModel = createTransientModel();
       // probably we can forget about former input model here
@@ -248,10 +223,10 @@ public class GenerationSession {
       currentInputModel = currentOutputModel;
       currentInputModel.setLoading(false);
       mySessionContext.getGenerationTracer().startTracing(currentInputModel, transientModel);
-      if (!generator.doSecondaryMapping(currentInputModel, transientModel)) {
+      if (!generator.doMapping(false, currentInputModel, transientModel)) {
         // nothing has been generated
         mySessionContext.getGenerationTracer().discardTracing(currentInputModel, transientModel);
-        addMessage(MessageKind.INFORMATION, "remove empty model '" + transientModel.getSModelFqName() + "'");
+        info("remove empty model '" + transientModel.getSModelFqName() + "'");
         SModelRepository.getInstance().removeModelDescriptor(transientModel.getModelDescriptor());
         myTransientModelsCount--;
         break;
@@ -280,11 +255,58 @@ public class GenerationSession {
     // -----------------------
     // run post-processing scripts
     // -----------------------
+    currentOutputModel = postProcessModel(generator, currentOutputModel);
+
+    return currentOutputModel;
+  }
+
+  private SModel preProcessModel(TemplateGenerator generator, SModel currentInputModel) throws GenerationFailureException {
+    List<MappingScript> preMappingScripts = mySessionContext.getPreMappingScripts();
+    if (!preMappingScripts.isEmpty()) {
+      // need to clone input model?
+      boolean needToCloneInputMode = !myDiscardTransients;  // clone model if save transients (needed for tracing)
+      if (!needToCloneInputMode) {
+        for (MappingScript preMappingScript : preMappingScripts) {
+          if (preMappingScript.getScriptKind() == MappingScriptKind.pre_process_input_model) {
+            if (preMappingScript.getModifiesModel()) {
+              needToCloneInputMode = true;
+              break;
+            }
+          }
+        }
+      }
+      if (needToCloneInputMode) {
+        SModel currentInputModel_clone = createTransientModel();
+        info("clone model '" + currentInputModel.getSModelFqName() + "' --> '" + currentInputModel_clone.getSModelFqName() + "'");
+
+        CloneUtil.cloneModel(currentInputModel, currentInputModel_clone, currentInputModel == mySessionContext.getOriginalInputModel());
+
+        if (!myDiscardTransients) { // tracing
+          mySessionContext.getGenerationTracer().registerPreMappingScripts(currentInputModel, currentInputModel_clone, preMappingScripts);
+        }
+
+        // probably we can forget about former input model here
+        recycleWasteModel(currentInputModel);
+        currentInputModel = currentInputModel_clone;
+      }
+    }
+
+    for (MappingScript preMappingScript : preMappingScripts) {
+      if (preMappingScript.getScriptKind() != MappingScriptKind.pre_process_input_model) {
+        addMessage(MessageKind.WARNING, "skip script '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ") - wrong script kind", preMappingScript.getNode());
+        continue;
+      }
+      addMessage(MessageKind.INFORMATION, "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ")", preMappingScript.getNode());
+      GeneratorUtil.executeMappingScript(preMappingScript, currentInputModel, generator);
+    }
+    return currentInputModel;
+  }
+
+  private SModel postProcessModel(TemplateGenerator generator, SModel currentOutputModel) throws GenerationFailureException {
     List<MappingScript> postMappingScripts = mySessionContext.getPostMappingScripts();
-    if (!postMappingScripts.isEmpty() &&
-      !myDiscardTransients) {  // clone model - needed for tracing
+    if (!postMappingScripts.isEmpty() && !myDiscardTransients) {  // clone model - needed for tracing
       SModel currentOutputModel_clone = createTransientModel();
-      addMessage(MessageKind.INFORMATION, "clone model '" + currentOutputModel.getSModelFqName() + "' --> '" + currentOutputModel_clone.getSModelFqName() + "'");
+      info("clone model '" + currentOutputModel.getSModelFqName() + "' --> '" + currentOutputModel_clone.getSModelFqName() + "'");
       CloneUtil.cloneModel(currentOutputModel, currentOutputModel_clone, false);
 
       mySessionContext.getGenerationTracer().registerPostMappingScripts(currentOutputModel, currentOutputModel_clone, postMappingScripts);
@@ -300,9 +322,9 @@ public class GenerationSession {
       addMessage(MessageKind.INFORMATION, "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")", postMappingScript.getNode());
       GeneratorUtil.executeMappingScript(postMappingScript, currentOutputModel, generator);
     }
-
     return currentOutputModel;
   }
+
 
   private SModel createTransientModel() {
     String longName = myOriginalInputModel.getLongName();
@@ -320,33 +342,33 @@ public class GenerationSession {
     SModelDescriptor md = model.getModelDescriptor();
     if (md != null && md.isTransient()) {
       if (myDiscardTransients && !mySessionContext.isTransientModelToKeep(model)) {
-        addMessage(MessageKind.INFORMATION, "remove spent model '" + model.getSModelFqName() + "'");
+        info("remove spent model '" + model.getSModelFqName() + "'");
         SModelRepository.getInstance().removeModelDescriptor(md);
       }
     }
   }
 
-  private void addMessage(Message message) {
-    myMessagesHandler.handle(message);
+  private void info(String text) {
+    myMessagesHandler.handle(new Message(MessageKind.INFORMATION, text));
   }
 
-  private void addMessage(MessageKind kind, String text) {
-    addMessage(new Message(kind, text));
+  private void warning(String text) {
+    myMessagesHandler.handle(new Message(MessageKind.WARNING, text));
+  }
+
+  private void error(String text) {
+    myMessagesHandler.handle(new Message(MessageKind.ERROR, text));
   }
 
   private void addMessage(MessageKind kind, String text, Object hintObject) {
     Message message = new Message(kind, text);
     message.setHintObject(hintObject);
-    addMessage(message);
-  }
-
-  private void addProgressMessage(MessageKind kind, String text) {
-    addMessage(new Message(kind, text));
+    myMessagesHandler.handle(message);
   }
 
   private boolean checkGenerationPlan(GenerationPlan generationPlan) {
     if (generationPlan.hasConflictingPriorityRules()) {
-      addMessage(MessageKind.ERROR, "Conflicting mapping priority rules encountered:");
+      error("Conflicting mapping priority rules encountered:");
       List<com.intellij.openapi.util.Pair<MappingPriorityRule, String>> errors = generationPlan.getConflictingPriorityRulesAsStrings();
       for (com.intellij.openapi.util.Pair<MappingPriorityRule, String> error : errors) {
         MappingPriorityRule rule = error.first;
@@ -358,7 +380,7 @@ public class GenerationSession {
         addMessage(MessageKind.ERROR, text, generatorModule);
           */
       }
-      addMessage(MessageKind.ERROR, "-----------------------------------------------");
+      error("-----------------------------------------------");
       return false;
     }
     return true;
@@ -371,9 +393,9 @@ public class GenerationSession {
         return ("" + o1.getModuleFqName()).compareTo("" + o2.getModuleFqName());
       }
     });
-    addMessage(new Message(MessageKind.INFORMATION, "languages used:"));
+    info("languages used:");
     for (ModuleReference reference : references) {
-      addMessage(new Message(MessageKind.INFORMATION, "    " + reference.getModuleFqName()));
+      info("    " + reference.getModuleFqName());
     }
 //    List<Generator> generators = stepController.getGenerators();
 //    Collections.sort(generators, new Comparator<Generator>() {
@@ -387,10 +409,10 @@ public class GenerationSession {
 //      addMessage(new Message(MessageKind.INFORMATION, "    " + generator.getAlias()));
 //    }
 
-    addMessage(new Message(MessageKind.INFORMATION, "apply mapping configurations:"));
+    info("apply mapping configurations:");
     List<String> messages = GenerationPartitioningUtil.toStrings(myGenerationPlan.getMappingConfigurations(myMajorStep));
     for (String message : messages) {
-      addMessage(new Message(MessageKind.INFORMATION, "    " + message));
+      info("    " + message);
     }
   }
 

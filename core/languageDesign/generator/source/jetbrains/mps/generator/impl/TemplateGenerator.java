@@ -19,6 +19,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.GenerationSessionContext;
+import jetbrains.mps.generator.impl.RuleManager.RuleProcessor;
 import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.lang.generator.structure.RuleConsequence;
 import jetbrains.mps.lang.generator.structure.TemplateSwitch;
@@ -46,37 +47,34 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private TemplateSwitchGraph myTemplateSwitchGraph;
   private Map<TemplateSwitch, List<TemplateSwitch>> myTemplateSwitchToListCache;
   private Map<String, SNode> myCurrentPreviousInputNodesByMappingName;
-  private Map<SNode,SNode> myNewToOldRoot = new HashMap<SNode,SNode>();
+  private Map<SNode, SNode> myNewToOldRoot = new HashMap<SNode, SNode>();
 
   private boolean myChanged = false;
-  private RuleManager myRuleManager;
+  private final RuleProcessor myRuleProcessor;
 
   public TemplateGenerator(GenerationSessionContext operationContext,
-                           ProgressIndicator progressMonitor) {
+                           ProgressIndicator progressMonitor,
+                           RuleManager ruleManager
+                           ) {
     super(operationContext, progressMonitor);
+    myRuleProcessor = ruleManager.createProcessor(this);
   }
 
   public GenerationSessionContext getGeneratorSessionContext() {
     return (GenerationSessionContext) getOperationContext();
   }
 
-  public RuleManager getRuleManager() {
-    return myRuleManager;
+  public RuleProcessor getRuleProcessor() {
+    return myRuleProcessor;
   }
 
-  public boolean doPrimaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailureException, GenerationCanceledException {
+  public boolean doMapping(boolean isPrimary, SModel inputModel, SModel outputModel) throws GenerationFailureException, GenerationCanceledException {
     reset(inputModel, outputModel);
-    doMapping(true);
+    doMapping(isPrimary);
     return isChanged();
   }
 
-  public boolean doSecondaryMapping(SModel inputModel, SModel outputModel) throws GenerationFailureException, GenerationCanceledException {
-    reset(inputModel, outputModel);
-    doMapping(false);
-    return isChanged();
-  }
-
-  public void reset(SModel inputModel, SModel outputModel) {
+  private void reset(SModel inputModel, SModel outputModel) {
     myRootsNotToCopy.clear();
     myTemplateNodeAndInputNodeToOutputNodeMap.clear();
     myInputNodesWithNotUniqueCopiedOutputNode.clear();
@@ -89,23 +87,21 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     myChanged = false;
     myInputModel = inputModel;
     myOutputModel = outputModel;
-    myRuleManager = null;
   }
 
   private void doMapping(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
     checkMonitorCanceled();
-    myRuleManager = new RuleManager(this);
     myNewToOldRoot.clear();
 
     // create all roots
     if (isPrimary) {
-      myRuleManager.applyCreateRootRules();
+      myRuleProcessor.applyCreateRootRules();
     }
-    myRuleManager.applyRoot_MappingRules();
+    myRuleProcessor.applyRoot_MappingRules();
 
     checkMonitorCanceled();
     getGeneratorSessionContext().clearCopiedRootsSet();
-    List<SNode> copiedOutputRoots = copyRootsFromInputModel(myRuleManager);
+    List<SNode> copiedOutputRoots = copyRootsFromInputModel();
     for (SNode copiedOutputRoot : copiedOutputRoots) {
       getGeneratorSessionContext().registerCopiedRoot(copiedOutputRoot);
       myOutputModel.addRoot(copiedOutputRoot);
@@ -115,11 +111,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     for (SNode outputRootNode : copiedOutputRoots) {
       checkMonitorCanceled();
       SNode inputRootNode = findInputNodeById(outputRootNode.getSNodeId());
-      myRuleManager.applyReductionRules(inputRootNode, outputRootNode);
+      myRuleProcessor.applyReductionRules(inputRootNode, outputRootNode);
     }
 
     // weaving
-    myRuleManager.applyWeaving_MappingRules();
+    myRuleProcessor.applyWeaving_MappingRules();
 
     // execute mapper in all $MAP_SRC$/$MAP_SRCL$
     myDelayedChanges.doAllChanges();
@@ -134,7 +130,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     checkMonitorCanceled();
   }
 
-  private List<SNode> copyRootsFromInputModel(RuleManager ruleManager) throws GenerationFailureException {
+  private List<SNode> copyRootsFromInputModel() throws GenerationFailureException {
     List<SNode> rootsToCopy = new ArrayList<SNode>(myInputModel.getRoots());
     for (SNode rootNode : myRootsNotToCopy) {
       rootsToCopy.remove(rootNode);
@@ -143,7 +139,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     Iterator<SNode> iterator = rootsToCopy.iterator();
     while (iterator.hasNext()) {
       SNode rootNode = iterator.next();
-      if (ruleManager.isRootToDrop(rootNode)) {
+      if (myRuleProcessor.isRootToDrop(rootNode)) {
         iterator.remove();
       }
     }
@@ -300,7 +296,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   @Override
   public SNode findOutputNodeByInputNodeAndOutputNodeAndMappingName(SNode inputNode, SNode outputNode, String mappingLabel) {
-     Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingLabel, inputNode));
+    Object o = myMappingNameAndInputNodeToOutputNodeMap.get(new Pair(mappingLabel, inputNode));
     if (o instanceof List) {
       List<SNode> list = (List<SNode>) o;
       showWarningMessage(inputNode, "" + list.size() + " output nodes found for mapping label '" + mappingLabel + "' and input " + inputNode.getDebugText());
@@ -336,7 +332,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return list;
   }
 
-  /*package*/ void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
+  /*package*/
+  void addOutputNodeByInputNodeAndMappingName(SNode inputNode, String mappingName, SNode outputNode) {
     if (mappingName == null) return;
     Pair key = new Pair(mappingName, inputNode);
     Object o = myMappingNameAndInputNodeToOutputNodeMap.get(key);
@@ -357,13 +354,15 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return findOutputNodeByInputAndTemplateNode(inputNode, inputNode);
   }
 
-  /*package*/ SNode findCopiedOutputNodeForInputNode_unique(SNode inputNode) {
+  /*package*/
+  SNode findCopiedOutputNodeForInputNode_unique(SNode inputNode) {
     SNode node = findOutputNodeByInputAndTemplateNode(inputNode, inputNode);
     if (!myInputNodesWithNotUniqueCopiedOutputNode.contains(inputNode)) return node;
     return null;
   }
 
-  /*package*/ void addCopiedOutputNodeForInputNode(SNode inputNode, SNode outputNode) {
+  /*package*/
+  void addCopiedOutputNodeForInputNode(SNode inputNode, SNode outputNode) {
     // todo: can be several copied output nodes for one input node
     Pair key = new Pair(inputNode, inputNode);
     if (!myTemplateNodeAndInputNodeToOutputNodeMap.containsKey(key)) {
@@ -384,14 +383,16 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return outputNode;
   }
 
-  /*package*/ void addOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode, SNode outputNode) {
+  /*package*/
+  void addOutputNodeByInputAndTemplateNode(SNode inputNode, SNode templateNode, SNode outputNode) {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
     // todo: generator should repotr error on attempt to obtain not unique output-node
     myTemplateNodeAndInputNodeToOutputNodeMap.put(new Pair(templateNode, inputNode), outputNode);
   }
 
-  /*package*/ void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, SNode templateNode, SNode outputNode) {
+  /*package*/
+  void addOutputNodeByIndirectInputAndTemplateNode(SNode inditectInputNode, SNode templateNode, SNode outputNode) {
     // todo: combination of (templateN, inputN) -> outputN
     // todo: is not unique
     // todo: generator should repotr error on attempt to obtain not unique output-node
@@ -466,7 +467,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   public void setChanged(boolean b) {
     myChanged = b;
   }
-  
+
   void registerRoot(SNode newroot, SNode old) {
     myNewToOldRoot.put(newroot, old);
   }

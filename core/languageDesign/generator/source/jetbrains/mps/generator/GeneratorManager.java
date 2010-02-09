@@ -301,7 +301,7 @@ public class GeneratorManager {
           project.getComponentSafe(GenerationTracer.class).startTracing();
         }
         fireBeforeGeneration(inputModels);
-        GenerationController gc = new GenerationController(GeneratorManager.this, new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, progress, messages, saveTransientModels);
+        GenerationController gc = new GenerationController(new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, progress, messages, saveTransientModels);
           //mySettings.isUseNewGenerator()
           //  ? new GenerationController2(GeneratorManager.this, new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, progress, messages, saveTransientModels)
           //  : new GenerationController(GeneratorManager.this, new GeneratorNotifierHelper(), mySettings, inputModels, generationHandler, progress, messages, saveTransientModels);
