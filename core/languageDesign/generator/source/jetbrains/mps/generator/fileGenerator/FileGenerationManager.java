@@ -172,9 +172,11 @@ public class FileGenerationManager implements ApplicationComponent {
       try {
         TextGenerationResult result = TextGenerationUtil.generateText(context, outputNode);
         String rootNodeId = null;
-        SNode node = status.getDependencies().getOriginalRoot(outputNode);
-        if (node != null) {
-          rootNodeId = node.getId();
+        if(status.getDependencies() != null) {
+          SNode node = status.getDependencies().getOriginalRoot(outputNode);
+          if (node != null) {
+            rootNodeId = node.getId();
+          }
         }
         fillDebugInfo(info, rootNodeId, outputNode, result);
         fillDependencies(dependRoot, outputNode, result);
