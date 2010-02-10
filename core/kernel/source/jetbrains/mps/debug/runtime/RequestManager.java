@@ -26,6 +26,7 @@ import java.util.Map;
 import java.util.Collections;
 import java.util.HashSet;
 
+import jetbrains.mps.debug.runtime.DebugManager.AllDebugProcessesAction;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
@@ -223,40 +224,21 @@ public class RequestManager implements DebugProcessListener {
   }
 
   //todo the code below should be called on EVERY debug session in a project
-
-  private interface AllDebugProcessesAction {
-    public void run(DebugVMEventsProcessor processor);
-  }
-
-  private static void performAllDebugProcessesAction(final AllDebugProcessesAction action, Project p) {
-    DebugManager debugManager = DebugManager.getInstance(p);
-    for (final DebugVMEventsProcessor processor : debugManager.getDebugProcesses()) {
-      processor.getManagerThread().invoke(new DebuggerCommand() {
-        @Override
-        protected void action() throws Exception {
-          action.run(processor);
-        }
-      });
-    }
-  }
-
   public static void createClassPrepareRequests(final MPSBreakpoint breakpoint) {
-    Project p = breakpoint.getProject();
-    performAllDebugProcessesAction(new AllDebugProcessesAction() {
+    DebugManager.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
       @Override
       public void run(DebugVMEventsProcessor processor) {
         breakpoint.createClassPrepareRequest(processor);
       }
-    }, p);
+    });
   }
 
   public static void removeClassPrepareRequests(final MPSBreakpoint breakpoint) {
-    Project p = breakpoint.getProject();
-    performAllDebugProcessesAction(new AllDebugProcessesAction() {
+    DebugManager.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
       @Override
       public void run(DebugVMEventsProcessor processor) {
         processor.getRequestManager().deleteRequest(breakpoint);
       }
-    }, p);
+    });
   }
 }
