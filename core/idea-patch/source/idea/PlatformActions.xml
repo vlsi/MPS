@@ -336,9 +336,7 @@
                         class="jetbrains.mps.workbench.actions.help.ShowMPSTrackerAction"
                         text="MPS Issue Tracker"/>
                 <separator/>
-                <action id="MPSShowDefaultKeymap"
-                        class="jetbrains.mps.ide.actions.ShowDefaultKeymap_Action"
-                        text="Default Keymap Reference"/>
+                <group id="HelpMenuAdditions"/>
                 <!--MPS Patch End-->
                 <separator/>
                 <action id="About" class="com.intellij.ide.actions.AboutAction"/>
