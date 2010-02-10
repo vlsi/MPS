@@ -46,7 +46,7 @@ public class ClassLoaderManager implements ApplicationComponent {
   private List<ReloadListener> myReloadHandlers = new CopyOnWriteArrayList<ReloadListener>();
 
   private final Object myLock = new Object();
-  private RuntimeEnvironment<ModuleReference> myRuntimeEnvironment;
+  private RuntimeEnvironmentExt myRuntimeEnvironment;
   private MPSModuleRepository myRepository;
 
   public ClassLoaderManager(MPSModuleRepository repository) {
@@ -68,7 +68,9 @@ public class ClassLoaderManager implements ApplicationComponent {
   }
 
   public void disposeComponent() {
-
+    if (myRuntimeEnvironment != null) {
+      myRuntimeEnvironment.dispose();
+    }
   }
 
   public void init(LibraryManager libraryManager) {
@@ -123,22 +125,17 @@ public class ClassLoaderManager implements ApplicationComponent {
     try {
       indicator.setIndeterminate(true);
       indicator.setText("Reloading classes...");
-      LOG.info("Reloading classes...");
 
       indicator.setText2("Disposing old classes...");
-      LOG.info("Disposing old classes...");
       callBeforeReloadHandlers();
 
       indicator.setText2("Updating classpath...");
-      LOG.info("Updating classpath...");
       updateClassPath();
 
       indicator.setText2("Refreshing models...");
-      LOG.info("Refreshing models...");
       SModelRepository.getInstance().refreshModels();
 
       indicator.setText2("Reloading classes...");
-      LOG.info("Reloading classes...");
       callReloadHandlers();
 
       indicator.setText2("Rebuilding ui...");
@@ -202,38 +199,14 @@ public class ClassLoaderManager implements ApplicationComponent {
     });
   }
 
-  private RuntimeEnvironment<ModuleReference> createRuntimeEnvironment(LibraryManager libraryManager) {
-    final Set<String> excludedPackages = new HashSet<String>();
-    final Set<String> generatorPrefixes = new HashSet<String>();
-    for (Language l : libraryManager.getBootstrapModules(Language.class)) {
-      for (LanguageAspect aspect : LanguageAspect.values()) {
-        if (aspect == LanguageAspect.STRUCTURE) continue;
-        excludedPackages.add(l.getNamespace() + "." + aspect.getName());
-      }
-      generatorPrefixes.add(l.getNamespace() + ".generator");
-    }
-
-    return new RuntimeEnvironment<ModuleReference>() {
-      public Class loadFromParent(String cls, RBundle<ModuleReference> bundle) {
-        IModule module = MPSModuleRepository.getInstance().getModule(bundle.getId());
-        if (module instanceof Solution) {
-          return null;
-        }
-
-        String pack = NameUtil.namespaceFromLongName(cls);
-        if (excludedPackages.contains(pack)) {
-          return null;
-        }
-
-        for (String prefix : generatorPrefixes) {
-          if (cls.startsWith(prefix)) {
-            return null;
-          }
-        }
-        return getFromParent(cls);
-      }
-    };
+  private RuntimeEnvironmentExt createRuntimeEnvironment(LibraryManager libraryManager) {
+    return new RuntimeEnvironmentExt(libraryManager);
   }
+
+
+//  private RuntimeEnvironmentExt createRuntimeEnvironment(LibraryManager libraryManager) {
+//    return new RuntimeEnvironmentExt(libraryManager);
+//  }
 
   public void addReloadHandler(ReloadListener handler) {
     myReloadHandlers.add(handler);
@@ -270,6 +243,154 @@ public class ClassLoaderManager implements ApplicationComponent {
       } catch (Throwable t) {
         LOG.error(t);
       }
+    }
+  }
+
+  private class RuntimeEnvironmentExt extends RuntimeEnvironment<ModuleReference> {
+
+    private LibraryManager myLibraryManager;
+    private Set<String> myExcludedPackages;
+    private ModuleRepositoryListener myModuleRepositoryListener = new ModuleRepositoryAdapter() {
+      @Override
+      public void moduleAdded(IModule module) {
+        if (isBootstrapLanguageModule(module) || isBootstrapGeneratorModule(module)) {
+          cleanExcludedPackages();
+        }
+      }
+
+      @Override
+      public void moduleRemoved(IModule module) {
+        if (isBootstrapLanguageModule(module) || isBootstrapGeneratorModule(module)) {
+          cleanExcludedPackages();
+        }
+      }
+
+      private boolean isBootstrapLanguageModule(IModule module) {
+        return module instanceof Language && isBootstrapLanguage((Language) module);
+      }
+
+      private boolean isBootstrapGeneratorModule(IModule module) {
+        return module instanceof Generator && isBootstrapLanguage(((Generator) module).getSourceLanguage());
+      }
+
+    };
+    private SModelRepositoryListener myModelRepositoryListener = new SModelRepositoryAdapter() {
+      @Override
+      public void modelAdded(SModelDescriptor modelDescriptor) {
+        if (isNotStubModel(modelDescriptor) && (isBootstrapLanguageModel(modelDescriptor) || isBootstrapGeneratorModel(modelDescriptor))) {
+          cleanExcludedPackages();
+        }
+      }
+
+      @Override
+      public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
+        // TODO: Check no classes loaded during model removing process
+        if (isNotStubModel(modelDescriptor) && (isBootstrapLanguageModel(modelDescriptor) || isBootstrapGeneratorModel(modelDescriptor))) {
+          cleanExcludedPackages();
+        }
+      }
+
+      @Override
+      public void modelRenamed(SModelDescriptor modelDescriptor) {
+        if (isNotStubModel(modelDescriptor) && (isBootstrapLanguageModel(modelDescriptor) || isBootstrapGeneratorModel(modelDescriptor))) {
+          cleanExcludedPackages();
+        }
+      }
+
+      private boolean isBootstrapLanguageModel(SModelDescriptor modelDescriptor) {
+        Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(modelDescriptor);
+        Language language = null;
+        for (ModelOwner nextOwner : owners) {
+          if (nextOwner instanceof Language) {
+            language = (Language) nextOwner;
+            break;
+          }
+        }
+        return language != null && isBootstrapLanguage(language);
+      }
+
+      private boolean isBootstrapGeneratorModel(SModelDescriptor modelDescriptor) {
+        Set<ModelOwner> owners = SModelRepository.getInstance().getOwners(modelDescriptor);
+        Generator generator = null;
+        for (ModelOwner nextOwner : owners) {
+          if (nextOwner instanceof Generator) {
+            generator = (Generator) nextOwner;
+            break;
+          }
+        }
+        return generator != null && isBootstrapLanguage(generator.getSourceLanguage());
+      }
+
+    };
+
+    RuntimeEnvironmentExt(LibraryManager libraryManager) {
+      myLibraryManager = libraryManager;
+      SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
+      MPSModuleRepository.getInstance().addModuleRepositoryListener(myModuleRepositoryListener);
+    }
+
+    private final synchronized void cleanExcludedPackages() {
+      myExcludedPackages = null;
+    }
+
+    private final synchronized Set<String> getExcludedPackages() {
+      if (myExcludedPackages == null) {
+        myExcludedPackages = new HashSet();
+        for (Language l : myLibraryManager.getBootstrapModules(Language.class)) {
+          for (LanguageAspect aspect : LanguageAspect.values()) {
+            if (aspect == LanguageAspect.STRUCTURE) {
+              continue;
+            }
+            SModelDescriptor modelDescriptor = aspect.get(l);
+            if (modelDescriptor != null) {
+              myExcludedPackages.add(modelDescriptor.getLongName());
+            }
+          }
+          for (Generator generator : l.getGenerators()) {
+            for (SModelDescriptor templateModel : generator.getOwnModelDescriptors()) {
+              if (isNotStubModel(templateModel)) {
+                myExcludedPackages.add(templateModel.getLongName());
+              }
+              if (SModelStereotype.isStubModelStereotype(templateModel.getStereotype())) {
+                continue;
+              }
+
+            }
+          }
+        }
+      }
+      return myExcludedPackages;
+    }
+
+    @Override
+    public Class loadFromParent(String cls, RBundle<ModuleReference> bundle) {
+      IModule module = MPSModuleRepository.getInstance().getModule(bundle.getId());
+      if (module instanceof Solution) {
+        return null;
+      }
+      Set<String> excludedPackages = getExcludedPackages();
+      String pack = NameUtil.namespaceFromLongName(cls);
+      if (excludedPackages.contains(pack)) {
+        return null;
+      }
+      return getFromParent(cls);
+    }
+
+    public void dispose() {
+      SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
+      MPSModuleRepository.getInstance().removeModuleRepositoryListener(myModuleRepositoryListener);
+      myLibraryManager = null;
+    }
+
+    private boolean isBootstrapLanguage(Language language) {
+      if (myLibraryManager == null) {
+        return false;
+      }
+      return myLibraryManager.getBootstrapModules(Language.class).contains(language);
+    }
+
+    private boolean isNotStubModel(SModelDescriptor modelDescriptor) {
+      return !SModelStereotype.isStubModelStereotype(modelDescriptor.getStereotype());
     }
   }
 }
