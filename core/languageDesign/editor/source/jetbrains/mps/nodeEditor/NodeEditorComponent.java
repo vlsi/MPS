@@ -111,7 +111,8 @@ public class NodeEditorComponent extends EditorComponent {
   }
 
   protected boolean isValidEditor() {
-    if (getEditedNode() == null) return false;
+    SNode node = getEditedNode();
+    if (node == null || node.isDisposed()) return false;
     SNode root = getEditedNode().getContainingRoot();
 
     return root != null;
