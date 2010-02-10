@@ -16,22 +16,19 @@
 package jetbrains.mps.debug.runtime;
 
 import com.intellij.util.containers.HashMap;
-import com.intellij.openapi.project.Project;
-import com.sun.jdi.request.*;
 import com.sun.jdi.*;
 import com.sun.jdi.event.ClassPrepareEvent;
-
-import java.util.Set;
-import java.util.Map;
-import java.util.Collections;
-import java.util.HashSet;
-
+import com.sun.jdi.request.*;
 import jetbrains.mps.debug.runtime.DebugManager.AllDebugProcessesAction;
-import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.Nullable;
+
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 
 /**
  * Created by IntelliJ IDEA.
@@ -165,13 +162,12 @@ public class RequestManager implements DebugProcessListener {
     DebuggerManagerThread.assertIsManagerThread();
     myInvalidRequestsAndWarnings.put(requestor, message);
   }
-
-  public @Nullable
-  String getWarning(Requestor requestor) {
+  
+  @Nullable
+  public String getWarning(Requestor requestor) {
     DebuggerManagerThread.assertIsManagerThread();
     return myInvalidRequestsAndWarnings.get(requestor);
   }
-
 
   //todo impl
   @Override
@@ -193,7 +189,6 @@ public class RequestManager implements DebugProcessListener {
   public void processDetached(DebugVMEventsProcessor process, boolean closedByUser) {
     myEventRequestManager = null;
     myRequestorToBelongedRequests.clear();
-
   }
 
   @Override
@@ -228,7 +223,9 @@ public class RequestManager implements DebugProcessListener {
     DebugManager.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
       @Override
       public void run(DebugVMEventsProcessor processor) {
-        breakpoint.createClassPrepareRequest(processor);
+        if (processor.isAttached()) {
+          breakpoint.createClassPrepareRequest(processor);
+        }
       }
     });
   }
@@ -237,7 +234,9 @@ public class RequestManager implements DebugProcessListener {
     DebugManager.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
       @Override
       public void run(DebugVMEventsProcessor processor) {
-        processor.getRequestManager().deleteRequest(breakpoint);
+        if (processor.isAttached()) {
+          processor.getRequestManager().deleteRequest(breakpoint);
+        }
       }
     });
   }
