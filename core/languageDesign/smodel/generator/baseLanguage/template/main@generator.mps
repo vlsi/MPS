@@ -42,7 +42,8 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895903fe(jetbrains.mps.baseLanguage.strings.constraints)" version="1" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590402(jetbrains.mps.baseLanguage.strings.structure)" version="9" />
-  <maxImportIndex value="66" />
+  <languageAspect modelUID="r:4a524d93-5ace-4cbb-aa75-ea8281811ef6(jetbrains.mps.lang.smodel.generator.smodelAdapter_old)" version="1" />
+  <maxImportIndex value="67" />
   <import index="1" modelUID="f:java_stub#jetbrains.mps.smodel(jetbrains.mps.smodel@java_stub)" version="-1" />
   <import index="2" modelUID="f:java_stub#jetbrains.mps.lang.smodel.generator.smodelAdapter(jetbrains.mps.lang.smodel.generator.smodelAdapter@java_stub)" version="-1" />
   <import index="3" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="3" />
@@ -62,9 +63,9 @@
   <import index="59" modelUID="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)" version="-1" />
   <import index="62" modelUID="f:java_stub#jetbrains.mps.lang.pattern.util(jetbrains.mps.lang.pattern.util@java_stub)" version="-1" />
   <import index="63" modelUID="r:2c4d9270-b6d6-44af-aecd-e01a223680db(jetbrains.mps.kernel.model)" version="-1" />
-  <import index="64" modelUID="r:4a524d93-5ace-4cbb-aa75-ea8281811ef6(jetbrains.mps.lang.smodel.generator.smodelAdapter)" version="-1" />
   <import index="65" modelUID="r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)" version="-1" />
   <import index="66" modelUID="f:java_stub#jetbrains.mps.internal.collections.runtime(jetbrains.mps.internal.collections.runtime@java_stub)" version="-1" />
+  <import index="67" modelUID="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" version="-1" />
   <node type="jetbrains.mps.lang.generator.structure.MappingConfiguration:2" id="1139186732963">
     <property name="name:2" value="mc_main" />
     <node role="reductionMappingRule:2" type="jetbrains.mps.lang.generator.structure.Reduction_MappingRule:2" id="1168910896903">
@@ -8770,8 +8771,8 @@
       <link role="applicableConcept:2" targetNodeId="6.1240930118027:16" resolveInfo="SEnumOperationInvocation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1240337006663">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1240337006664">
-          <link role="classConcept:3" targetNodeId="64.1240331601477" resolveInfo="SEnumOperations" />
-          <link role="baseMethodDeclaration:3" targetNodeId="64.1240335729796" resolveInfo="getEnumMembers" />
+          <link role="classConcept:3" targetNodeId="67.1101499704720825413" resolveInfo="SEnumOperations" />
+          <link role="baseMethodDeclaration:3" targetNodeId="67.1101499704720825456" resolveInfo="getEnumMembers" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1240337006665">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.IncludeMacro:2" id="1241008390643">
               <link role="includeTemplate:2" targetNodeId="1241008307357" resolveInfo="reduce_enumRef" />
@@ -8815,8 +8816,8 @@
       <link role="applicableConcept:2" targetNodeId="6.1240930118027:16" resolveInfo="SEnumOperationInvocation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1240336967543">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1240336978078">
-          <link role="baseMethodDeclaration:3" targetNodeId="64.1240335717179" resolveInfo="getEnumMember" />
-          <link role="classConcept:3" targetNodeId="64.1240331601477" resolveInfo="SEnumOperations" />
+          <link role="baseMethodDeclaration:3" targetNodeId="67.1101499704720825467" resolveInfo="getEnumMember" />
+          <link role="classConcept:3" targetNodeId="67.1101499704720825413" resolveInfo="SEnumOperations" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1240336985678">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.IncludeMacro:2" id="1241008433356">
               <link role="includeTemplate:2" targetNodeId="1241008307357" resolveInfo="reduce_enumRef" />
@@ -8890,8 +8891,8 @@
       <link role="applicableConcept:2" targetNodeId="6.1240930118027:16" resolveInfo="SEnumOperationInvocation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1240337068322">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1240337083536">
-          <link role="baseMethodDeclaration:3" targetNodeId="64.1240335687390" resolveInfo="enumMemberForValue" />
-          <link role="classConcept:3" targetNodeId="64.1240331601477" resolveInfo="SEnumOperations" />
+          <link role="baseMethodDeclaration:3" targetNodeId="67.1101499704720825539" resolveInfo="enumMemberForValue" />
+          <link role="classConcept:3" targetNodeId="67.1101499704720825413" resolveInfo="SEnumOperations" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1240337083537">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.IncludeMacro:2" id="1241008453161">
               <link role="includeTemplate:2" targetNodeId="1241008307357" resolveInfo="reduce_enumRef" />
@@ -8960,8 +8961,8 @@
       <link role="applicableConcept:2" targetNodeId="6.1240930118027:16" resolveInfo="SEnumOperationInvocation" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1240337070992">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1240337087720">
-          <link role="baseMethodDeclaration:3" targetNodeId="64.1240335621725" resolveInfo="enumMemberForName" />
-          <link role="classConcept:3" targetNodeId="64.1240331601477" resolveInfo="SEnumOperations" />
+          <link role="baseMethodDeclaration:3" targetNodeId="67.1101499704720825505" resolveInfo="enumMemberForName" />
+          <link role="classConcept:3" targetNodeId="67.1101499704720825413" resolveInfo="SEnumOperations" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1240337087721">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.IncludeMacro:2" id="1241008475402">
               <link role="includeTemplate:2" targetNodeId="1241008307357" resolveInfo="reduce_enumRef" />
@@ -9030,8 +9031,8 @@
       <link role="applicableConcept:2" targetNodeId="3.1197027756228:3" resolveInfo="DotExpression" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1241008270489">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1241008270490">
-          <link role="baseMethodDeclaration:3" targetNodeId="64.1240335535195" resolveInfo="getEnumMemberName" />
-          <link role="classConcept:3" targetNodeId="64.1240331601477" resolveInfo="SEnumOperations" />
+          <link role="baseMethodDeclaration:3" targetNodeId="67.1101499704720825479" resolveInfo="getEnumMemberName" />
+          <link role="classConcept:3" targetNodeId="67.1101499704720825413" resolveInfo="SEnumOperations" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1241008270491">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1241008270492">
               <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1241008270493">
@@ -9074,8 +9075,8 @@
       <link role="applicableConcept:2" targetNodeId="3.1197027756228:3" resolveInfo="DotExpression" />
       <node role="ruleConsequence:2" type="jetbrains.mps.lang.generator.structure.InlineTemplate_RuleConsequence:2" id="1241008270509">
         <node role="templateNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1241008270510">
-          <link role="baseMethodDeclaration:3" targetNodeId="64.1240335626182" resolveInfo="getEnumMemberValue" />
-          <link role="classConcept:3" targetNodeId="64.1240331601477" resolveInfo="SEnumOperations" />
+          <link role="baseMethodDeclaration:3" targetNodeId="67.1101499704720825492" resolveInfo="getEnumMemberValue" />
+          <link role="classConcept:3" targetNodeId="67.1101499704720825413" resolveInfo="SEnumOperations" />
           <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.NullLiteral:3" id="1241008270511">
             <node role="nodeMacro$attribute:3" type="jetbrains.mps.lang.generator.structure.CopySrcNodeMacro:2" id="1241008270512">
               <node role="sourceNodeQuery:2" type="jetbrains.mps.lang.generator.structure.SourceSubstituteMacro_SourceNodeQuery:2" id="1241008270513">
@@ -9132,8 +9133,8 @@
     <property name="name:2" value="reduce_EnumRef" />
     <link role="applicableConcept:2" targetNodeId="8.1082978164219:0" resolveInfo="EnumerationDataTypeDeclaration" />
     <node role="contentNode:2" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1241008498019">
-      <link role="classConcept:3" targetNodeId="64.1240331601477" resolveInfo="SEnumOperations" />
-      <link role="baseMethodDeclaration:3" targetNodeId="64.1240331601478" resolveInfo="getEnum" />
+      <link role="classConcept:3" targetNodeId="67.1101499704720825413" resolveInfo="SEnumOperations" />
+      <link role="baseMethodDeclaration:3" targetNodeId="67.1101499704720825414" resolveInfo="getEnum" />
       <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1241008498020">
         <property name="value:3" value="modelUID" />
         <node role="propertyMacro$property_attribute$value:3" type="jetbrains.mps.lang.generator.structure.PropertyMacro:2" id="1241008498021">
