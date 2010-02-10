@@ -860,6 +860,9 @@
         <action id="Rerun">
             <keyboard-shortcut first-keystroke="control F5"/>
         </action>
+        <action id="Resume">
+            <keyboard-shortcut first-keystroke="F9"/>
+        </action>
         <action id="CollapseSelection">
             <keyboard-shortcut first-keystroke="control PERIOD"/>
         </action>
