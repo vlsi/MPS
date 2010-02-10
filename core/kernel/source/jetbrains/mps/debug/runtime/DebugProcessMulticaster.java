@@ -1,7 +1,10 @@
 package jetbrains.mps.debug.runtime;
 
-import java.util.List;
+import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
+
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by IntelliJ IDEA.
@@ -11,7 +14,8 @@ import java.util.ArrayList;
  * To change this template use File | Settings | File Templates.
  */
 public class DebugProcessMulticaster {
-  private List<DebugProcessListener> myListeners = new ArrayList<DebugProcessListener>();
+  private static Logger LOG = Logger.getLogger(DebugProcessMulticaster.class);
+  private final List<DebugProcessListener> myListeners = new ArrayList<DebugProcessListener>();
 
   private List<DebugProcessListener> getListeners() {
     synchronized (myListeners) {
@@ -20,13 +24,13 @@ public class DebugProcessMulticaster {
     }
   }
 
-  public void addListener(DebugProcessListener listener) {
+  public void addListener(@NotNull DebugProcessListener listener) {
     synchronized (myListeners) {
       myListeners.add(listener);
     }
   }
 
-  public void removeListener(DebugProcessListener listener) {
+  public void removeListener(@NotNull DebugProcessListener listener) {
     synchronized (myListeners) {
       myListeners.remove(listener);
     }
@@ -34,31 +38,51 @@ public class DebugProcessMulticaster {
 
   public void connectorIsReady() {
     for (DebugProcessListener listener : getListeners()) {
-      listener.connectorIsReady();
+      try {
+        listener.connectorIsReady();
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   public void paused(SuspendContext suspendContext) {
     for (DebugProcessListener listener : getListeners()) {
-      listener.paused(suspendContext);
+      try {
+        listener.paused(suspendContext);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   public void resumed(SuspendContext suspendContext) {
     for (DebugProcessListener listener : getListeners()) {
-      listener.resumed(suspendContext);
+      try {
+        listener.resumed(suspendContext);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   public void processDetached(DebugVMEventsProcessor process, boolean closedByUser) {
     for (DebugProcessListener listener : getListeners()) {
-      listener.processDetached(process, closedByUser);
+      try {
+        listener.processDetached(process, closedByUser);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 
   public void processAttached(DebugVMEventsProcessor process) {
     for (DebugProcessListener listener : getListeners()) {
-      listener.processAttached(process);
+      try {
+        listener.processAttached(process);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
     }
   }
 }
