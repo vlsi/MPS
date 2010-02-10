@@ -47,7 +47,6 @@ public class MPSBreakpoint implements ClassPrepareRequestor, LocatableEventReque
   private final SNodePointer myNodePointer;
   public boolean myIsEnabled = true; //todo add ability to disable breakpoints
 
-
   public MPSBreakpoint(SNode node, Project project) {
     myNodePointer = new SNodePointer(node);
     myProject = project;
