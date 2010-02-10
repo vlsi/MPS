@@ -19,7 +19,7 @@ import com.intellij.util.containers.HashMap;
 import com.sun.jdi.*;
 import com.sun.jdi.event.ClassPrepareEvent;
 import com.sun.jdi.request.*;
-import jetbrains.mps.debug.runtime.DebugManager.AllDebugProcessesAction;
+import jetbrains.mps.debug.runtime.DebugManagerComponent.AllDebugProcessesAction;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
@@ -198,7 +198,7 @@ public class RequestManager implements DebugProcessListener {
     process.getManagerThread().schedule(new DebuggerCommand() {
       @Override
       protected void action() throws Exception {
-        BreakpointManager breakpointManager = myDebugEventsProcessor.getBreakpointManager();
+        BreakpointManagerComponent breakpointManager = myDebugEventsProcessor.getBreakpointManager();
         breakpointManager.createAllClassPrepareRequests(myDebugEventsProcessor);
       }
     });
@@ -220,7 +220,7 @@ public class RequestManager implements DebugProcessListener {
 
   //todo the code below should be called on EVERY debug session in a project
   public static void createClassPrepareRequests(final MPSBreakpoint breakpoint) {
-    DebugManager.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
+    DebugManagerComponent.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
       @Override
       public void run(DebugVMEventsProcessor processor) {
         if (processor.isAttached()) {
@@ -231,7 +231,7 @@ public class RequestManager implements DebugProcessListener {
   }
 
   public static void removeClassPrepareRequests(final MPSBreakpoint breakpoint) {
-    DebugManager.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
+    DebugManagerComponent.getInstance(breakpoint.getProject()).performAllDebugProcessesAction(new AllDebugProcessesAction() {
       @Override
       public void run(DebugVMEventsProcessor processor) {
         if (processor.isAttached()) {

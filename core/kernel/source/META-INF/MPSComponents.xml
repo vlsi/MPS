@@ -500,17 +500,17 @@
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.debug.runtime.BreakpointManager</implementation-class>
+            <implementation-class>jetbrains.mps.debug.runtime.BreakpointManagerComponent</implementation-class>
             <skipForDummyProject/>
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.debug.runtime.DebugManager</implementation-class>
+            <implementation-class>jetbrains.mps.debug.runtime.DebugManagerComponent</implementation-class>
             <skipForDummyProject/>
         </component>
 
         <component>
-            <implementation-class>jetbrains.mps.debug.runtime.CurrentLinePositionProjectComponent</implementation-class>
+            <implementation-class>jetbrains.mps.debug.runtime.CurrentLinePositionComponent</implementation-class>
             <skipForDummyProject/>
         </component>
 

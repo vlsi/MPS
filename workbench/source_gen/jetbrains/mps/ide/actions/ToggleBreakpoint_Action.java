@@ -12,7 +12,7 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.debug.runtime.BreakpointManager;
+import jetbrains.mps.debug.runtime.BreakpointManagerComponent;
 
 public class ToggleBreakpoint_Action extends GeneratedAction {
   private static final Icon ICON = null;
@@ -66,7 +66,7 @@ public class ToggleBreakpoint_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
-      ToggleBreakpoint_Action.this.project.getComponent(BreakpointManager.class).toggleBreakpoint(ToggleBreakpoint_Action.this.selectedCell);
+      ToggleBreakpoint_Action.this.project.getComponent(BreakpointManagerComponent.class).toggleBreakpoint(ToggleBreakpoint_Action.this.selectedCell);
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "ToggleBreakpoint", t);

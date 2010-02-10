@@ -39,7 +39,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class DebugVMEventsProcessor {
   private static final Logger LOG = Logger.getLogger(DebugVMEventsProcessor.class);
 
-  private BreakpointManager myBreakpointManager;
+  private BreakpointManagerComponent myBreakpointManager;
   private final RequestManager myRequestManager;
   private SuspendManager mySuspendManager;
   private VMCreator myVMCreator;
@@ -59,7 +59,7 @@ public class DebugVMEventsProcessor {
 
   public DebugVMEventsProcessor(Project p, VMCreator vmCreator) {
     myProject = p;
-    myBreakpointManager = p.getComponent(BreakpointManager.class);
+    myBreakpointManager = p.getComponent(BreakpointManagerComponent.class);
     myRequestManager = new RequestManager(this);
     mySuspendManager = new SuspendManager(this);
     myVMCreator = vmCreator;
@@ -92,7 +92,7 @@ public class DebugVMEventsProcessor {
     return mySuspendManager;
   }
 
-  public BreakpointManager getBreakpointManager() {
+  public BreakpointManagerComponent getBreakpointManager() {
     return myBreakpointManager;
   }
 
