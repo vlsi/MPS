@@ -58,12 +58,12 @@ public class VMCreator {
   private final List<ProcessListener> myProcessListeners = new ArrayList<ProcessListener>();
 
   private ExecutionResult myExecutionResult;
-  private final DebuggerSession myDebuggerSession;
+  private final DebugSession myDebuggerSession;
 
   public VMCreator(Project p) {
     myDebugVMEventsProcessor = new DebugVMEventsProcessor(p, this);
     myDebuggerManagerThread = new DebuggerManagerThread(); //thread started!
-    myDebuggerSession = new DebuggerSession(myDebugVMEventsProcessor);
+    myDebuggerSession = new DebugSession(myDebugVMEventsProcessor);
   }
 
   @Nullable
@@ -301,7 +301,7 @@ public class VMCreator {
     return myDebuggerManagerThread;
   }
 
-  public DebuggerSession getDebuggerSession() {
+  public DebugSession getDebugSession() {
     return myDebuggerSession;
   }
 

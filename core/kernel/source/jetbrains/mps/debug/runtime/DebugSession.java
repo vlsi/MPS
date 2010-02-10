@@ -2,12 +2,12 @@ package jetbrains.mps.debug.runtime;
 
 import jetbrains.mps.logging.Logger;
 
-public class DebuggerSession {
-  private static final Logger LOG = Logger.getLogger(DebuggerSession.class);
+public class DebugSession {
+  private static final Logger LOG = Logger.getLogger(DebugSession.class);
   private final DebugVMEventsProcessor myEventsProcessor;
   private DebuggerState myState = DebuggerState.WaitingAttach;
 
-  public DebuggerSession(DebugVMEventsProcessor eventsProcessor) {
+  public DebugSession(DebugVMEventsProcessor eventsProcessor) {
     myEventsProcessor = eventsProcessor;
     eventsProcessor.getMulticaster().addListener(new MyDebugProcessAdapter());
   }
@@ -34,6 +34,10 @@ public class DebuggerSession {
 
   public void stop() {
     myEventsProcessor.getManagerThread().invokeTerminalCommand(myEventsProcessor.createStopCommand());
+  }
+
+  DebugVMEventsProcessor getEventsProcessor() {
+    return myEventsProcessor;
   }
 
   public enum DebuggerState {

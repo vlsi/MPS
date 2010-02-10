@@ -223,7 +223,6 @@ public class DebugVMEventsProcessor {
     if (myState.compareAndSet(STATE_INITIAL, STATE_ATTACHED)) { //here we change an atomic state from initial to attached
       //DebuggerManagerEx.getInstanceEx(getProject()).getBreakpointManager().setInitialBreakpointsState();
       myMulticaster.processAttached(this);
-      getDebugManager().addDebugProcess(this);
       //show some info etc
     }
   }
@@ -319,7 +318,6 @@ public class DebugVMEventsProcessor {
         myEventThread.stopListening();
         myEventThread = null;
       }
-      getDebugManager().removeDebugProcess(this);
       closeProcess(false);
     }
   }
@@ -335,10 +333,6 @@ public class DebugVMEventsProcessor {
         getMulticaster().processDetached(this, closedByUser);
       }
     }
-  }
-
-  public DebugManager getDebugManager() {
-    return myProject.getComponent(DebugManager.class);
   }
 
   public DebuggerCommand createResumeCommand(){
