@@ -46,6 +46,10 @@ public interface IErrorReporter {
 
   public IntentionProvider getIntentionProvider();
 
+  public List<IntentionProvider> getIntentionProviders();
+
+  public void addIntentionProvider(IntentionProvider intentionProvider);
+
   public void setIntentionProvider(IntentionProvider intentionProvider);
 
   public IErrorTarget getErrorTarget();

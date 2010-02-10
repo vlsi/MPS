@@ -20,6 +20,7 @@ import jetbrains.mps.typesystem.inference.IWrapper;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.nodeEditor.IErrorReporter;
+import jetbrains.mps.nodeEditor.AbstractErrorReporter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
@@ -27,70 +28,26 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class EquationErrorReporter implements IErrorReporter {
+public class EquationErrorReporter extends AbstractErrorReporter implements IErrorReporter {
   private EquationManager myEquationManager;
   private String myBefore;
   private String myBetween;
   private String myAfter;
   private IWrapper myWrapper1;
   private IWrapper myWrapper2;
-  private List<Pair<String, String>> myAdditionalRuleIds = null;
-  private String myRuleId;
-  private String myRuleModel;
-  private IntentionProvider myIntentionProvider;
 
   private SNode mySNode;
 
   public EquationErrorReporter(SNode node, EquationManager equationManager, String before,
                                IWrapper wrapper1, String between, IWrapper wrapper2, String after, String ruleModel, String ruleId) {
+    super(ruleModel, ruleId);
     myEquationManager = equationManager;
     myBefore = before;
     myAfter = after;
     myBetween = between;
     myWrapper1 = wrapper1;
     myWrapper2 = wrapper2;
-    myRuleId = ruleId;
-    myRuleModel = ruleModel;
     mySNode = node;
-  }
-
-  public void setIntentionProvider(IntentionProvider intentionProvider) {
-    myIntentionProvider = intentionProvider;
-  }
-
-  public void addAdditionalRuleIdsFromInfo(EquationInfo equationInfo) {
-    if (myAdditionalRuleIds == null) {
-      myAdditionalRuleIds = new ArrayList<Pair<String, String>>(2);
-    }
-    myAdditionalRuleIds.addAll(equationInfo.getAdditionalRulesIds());
-    myAdditionalRuleIds.add(new Pair<String, String>(equationInfo.getRuleModel(), equationInfo.getRuleId()));
-  }
-
-  public void addAdditionalRuleId(String ruleModel, String ruleId) {
-    Pair<String, String> pair = new Pair<String, String>(ruleModel, ruleId);
-    if (myAdditionalRuleIds == null) {
-      myAdditionalRuleIds = new ArrayList<Pair<String, String>>(2);
-    }
-    myAdditionalRuleIds.add(pair);
-  }
-
-  public List<Pair<String, String>> getAdditionalRulesIds() {
-    if (myAdditionalRuleIds == null) return new ArrayList<Pair<String, String>>(0);
-    return new ArrayList<Pair<String, String>>(myAdditionalRuleIds);
-  }
-
-   public List<Pair<String, String>> getAdditionalRulesIdsInReverseOrder() {
-    ArrayList<Pair<String, String>> result = new ArrayList<Pair<String, String>>(myAdditionalRuleIds);
-    Collections.reverse(result);
-    return result;
-  }
-
-  public void setAdditionalRulesIds(List<Pair<String, String>> ids) {
-    if (ids != null && !ids.isEmpty()) {
-      myAdditionalRuleIds = new ArrayList<Pair<String, String>>(ids);
-    } else {
-      myAdditionalRuleIds = null;
-    }
   }
 
   public String reportError() {
@@ -106,20 +63,10 @@ public class EquationErrorReporter implements IErrorReporter {
       myBetween + PresentationManager.toString(representator2) + myAfter;
   }
 
-  public String getRuleId() {
-    return myRuleId;
-  }
 
-  public String getRuleModel() {
-    return myRuleModel;
-  }
 
   public MessageStatus getMessageStatus() {
     return MessageStatus.ERROR;
-  }
-
-  public IntentionProvider getIntentionProvider() {
-    return myIntentionProvider;
   }
 
   public IErrorTarget getErrorTarget() {

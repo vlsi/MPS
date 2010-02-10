@@ -28,20 +28,15 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class SimpleErrorReporter implements IErrorReporter {
+public class SimpleErrorReporter extends AbstractErrorReporter implements IErrorReporter {
   private String myErrorString;
-  private String myRuleModel;
-  private String myRuleId;
-  private List<Pair<String, String>> myAdditionalRuleIds = null;
-  private IntentionProvider myIntentionProvider;
   private MessageStatus myMessageStatus = MessageStatus.ERROR;
   private IErrorTarget myErrorTarget = new NodeErrorTarget();
   private SNode mySNode;
 
   public SimpleErrorReporter(SNode node, String s, String ruleModel, String ruleId) {
+    super(ruleModel, ruleId);
     myErrorString = s;
-    myRuleModel = ruleModel;
-    myRuleId = ruleId;
     mySNode = node;
   }
 
@@ -58,57 +53,6 @@ public class SimpleErrorReporter implements IErrorReporter {
 
   public String reportError() {
     return myErrorString;
-  }
-
-  public String getRuleId() {
-    return myRuleId;
-  }
-
-  public String getRuleModel() {
-    return myRuleModel;
-  }
-
-  public void addAdditionalRuleIdsFromInfo(EquationInfo equationInfo) {
-    if (myAdditionalRuleIds == null) {
-      myAdditionalRuleIds = new ArrayList<Pair<String, String>>(2);
-    }
-    myAdditionalRuleIds.addAll(equationInfo.getAdditionalRulesIds());
-    myAdditionalRuleIds.add(new Pair<String, String>(equationInfo.getRuleModel(), equationInfo.getRuleId()));
-  }
-
-  public void addAdditionalRuleId(String ruleModel, String ruleId) {
-    Pair<String, String> pair = new Pair<String, String>(ruleModel, ruleId);
-    if (myAdditionalRuleIds == null) {
-      myAdditionalRuleIds = new ArrayList<Pair<String, String>>(2);
-    }
-    myAdditionalRuleIds.add(pair);
-  }
-
-  public List<Pair<String, String>> getAdditionalRulesIds() {
-    if (myAdditionalRuleIds == null) return new ArrayList<Pair<String, String>>(0);
-    return new ArrayList<Pair<String, String>>(myAdditionalRuleIds);
-  }
-
-  public List<Pair<String, String>> getAdditionalRulesIdsInReverseOrder() {
-    ArrayList<Pair<String, String>> result = new ArrayList<Pair<String, String>>(myAdditionalRuleIds);
-    Collections.reverse(result);
-    return result;
-  }
-
-  public void setAdditionalRulesIds(List<Pair<String, String>> ids) {
-    if (ids != null && !ids.isEmpty()) {
-      myAdditionalRuleIds = new ArrayList<Pair<String, String>>(ids);
-    } else {
-      myAdditionalRuleIds = null;
-    }
-  }
-
-  public void setIntentionProvider(IntentionProvider intentionProvider) {
-    myIntentionProvider = intentionProvider;
-  }
-
-  public IntentionProvider getIntentionProvider() {
-    return myIntentionProvider;
   }
 
   public MessageStatus getMessageStatus() {
