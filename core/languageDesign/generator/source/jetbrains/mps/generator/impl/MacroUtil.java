@@ -16,14 +16,11 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationFailureException;
-import jetbrains.mps.generator.template.*;
-import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
+import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.lang.generator.structure.*;
-import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.BaseAdapter;
-import jetbrains.mps.smodel.INodeAdapter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -34,103 +31,6 @@ import java.util.List;
  * Date: Jan 24, 2007
  */
 public class MacroUtil {
-
-  public static void expandPropertyMacro(ITemplateGenerator generator, PropertyMacro propertyMacro, SNode inputNode, SNode templateNode, SNode outputNode) throws GenerationFailureException {
-    String attributeRole = propertyMacro.getRole_();
-    String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(attributeRole);
-
-    PropertyMacro_GetPropertyValue function = propertyMacro.getPropertyValueFunction();
-    if (function == null) {
-      throw new GenerationFailureException("couldn't evaluate property macro", inputNode, templateNode, BaseAdapter.fromAdapter(propertyMacro));
-    }
-
-    String templateValue = templateNode.getProperty(propertyName);
-    String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function.getNode());
-    try {
-      Object macroValue = QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new PropertyMacroContext(inputNode, templateValue, propertyMacro.getNode(), generator),
-        propertyMacro.getModel());
-      String propertyValue = macroValue == null ? null : String.valueOf(macroValue);
-      outputNode.setProperty(propertyName, propertyValue);
-    } catch (Throwable t) {
-      throw new GenerationFailureException("couldn't evaluate property macro", inputNode, templateNode, BaseAdapter.fromAdapter(propertyMacro), t);
-    }
-  }
-
-
-  public static SNode executeMapSrcNodeMacro(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode parentOutputNode, ITemplateGenerator generator) throws GenerationFailureException {
-    INodeAdapter adapter = mapSrcNodeOrListMacro.getAdapter();
-    MapSrcMacro_MapperFunction mapperFunction;
-    if (adapter instanceof MapSrcNodeMacro) {
-      mapperFunction = ((MapSrcNodeMacro) adapter).getMapperFunction();
-    } else {
-      mapperFunction = ((MapSrcListMacro) adapter).getMapperFunction();
-    }
-
-    String methodName = TemplateFunctionMethodName.mapSrcMacro_MapperFunction(mapperFunction.getNode());
-    try {
-      return (SNode) QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new MapSrcMacroContext(inputNode, mapSrcNodeOrListMacro, parentOutputNode, generator),
-        mapSrcNodeOrListMacro.getModel());
-    } catch (Throwable t) {
-      throw new GenerationFailureException("couldn't evaluate macro: mapping func failed", inputNode, null, mapSrcNodeOrListMacro, t);
-    }
-  }
-
-  public static void executeMapSrcNodeMacro_PostProc(SNode inputNode, SNode mapSrcNodeOrListMacro, SNode outputNode, ITemplateGenerator generator) throws GenerationFailureException {
-    INodeAdapter adapter = mapSrcNodeOrListMacro.getAdapter();
-    MapSrcMacro_PostMapperFunction postMapperFunction;
-    if (adapter instanceof MapSrcNodeMacro) {
-      postMapperFunction = ((MapSrcNodeMacro) adapter).getPostMapperFunction();
-    } else {
-      postMapperFunction = ((MapSrcListMacro) adapter).getPostMapperFunction();
-    }
-    // post-proc function is optional
-    if(postMapperFunction == null) return;
-
-    String methodName = TemplateFunctionMethodName.mapSrcMacro_PostMapperFunction(postMapperFunction.getNode());
-    try {
-      QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new MapSrcMacroPostProcContext(inputNode, mapSrcNodeOrListMacro, outputNode, generator),
-        mapSrcNodeOrListMacro.getModel());
-    } catch (Throwable t) {
-      throw new GenerationFailureException("couldn't evaluate macro: post-processing failed", inputNode, null, mapSrcNodeOrListMacro, t);
-    }
-  }
-
-  public static boolean checkConditionForIfMacro(SNode inputNode, IfMacro ifMacro, ITemplateGenerator generator) throws GenerationFailureException {
-    IfMacro_Condition function = ifMacro.getConditionFunction();
-    if (function == null) {
-      throw new GenerationFailureException("couldn't evaluate if-macro condition", inputNode, BaseAdapter.fromAdapter(ifMacro), null);
-    }
-
-    long startTime = System.currentTimeMillis();
-    Boolean res = false;
-    String methodName = TemplateFunctionMethodName.ifMacro_Condition(function.getNode());
-    try {
-      res = (Boolean) QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new IfMacroContext(inputNode, BaseAdapter.fromAdapter(ifMacro), generator),
-        ifMacro.getModel(),
-        true);
-      return res;
-    } catch (ClassNotFoundException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(ifMacro), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
-    } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(ifMacro), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
-    } catch (Throwable t) {
-      throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(ifMacro), t);
-    }
-
-    return false;
-  }
 
   public static List<SNode> getNewInputNodes(NodeMacro nodeMacro, SNode currentInputNode, ITemplateGenerator generator) throws GenerationFailureException {
     try {
@@ -199,13 +99,13 @@ public class MacroUtil {
       throw new GenerationFailureException("couldn't evaluate macro query", currentInputNode, BaseAdapter.fromAdapter(macro), null);
     }
 
-    SNode resultNode = GeneratorUtil.evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, generator);
+    SNode resultNode = QueryExecutor.evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, generator);
     return resultNode;
   }
 
   private static List<SNode> getNewInputNodes(SNode currentInputNode, SourceSubstituteMacro macro, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) throws GenerationFailureException {
     if (query != null) {
-      List<SNode> list = GeneratorUtil.evaluateSourceNodesQuery(currentInputNode, null, macro.getNode(), query, generator);
+      List<SNode> list = QueryExecutor.evaluateSourceNodesQuery(currentInputNode, null, macro.getNode(), query, generator);
       if (list != null) {
         return list;
       }
@@ -222,6 +122,6 @@ public class MacroUtil {
       // continue with current input node
       return currentInputNode;
     }
-    return GeneratorUtil.evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, generator);
+    return QueryExecutor.evaluateSourceNodeQuery(currentInputNode, macro.getNode(), query, generator);
   }
 }

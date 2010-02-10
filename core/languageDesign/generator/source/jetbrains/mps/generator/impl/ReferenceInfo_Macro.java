@@ -115,6 +115,8 @@ public class ReferenceInfo_Macro extends ReferenceInfo {
       return;
     }
 
+    // TODO extract into QueryExecutor
+
     String methodName = TemplateFunctionMethodName.referenceMacro_GetReferent(function.getNode());
     try {
       Object result;

@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.lang.generator.structure.Reduction_MappingRule;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SNode;
@@ -33,7 +34,7 @@ import java.util.Map.Entry;
 public class FastRuleFinder {
   private Map<String, Reduction_MappingRule[]> myApplicableRules = new HashMap<String, Reduction_MappingRule[]>();
 
-  public FastRuleFinder(List<Reduction_MappingRule> reductionRules) {
+  public FastRuleFinder(Iterable<Reduction_MappingRule> reductionRules) {
     Map<String, List<Reduction_MappingRule>> applicableRules = new HashMap<String, List<Reduction_MappingRule>>();
     for (Reduction_MappingRule rule : reductionRules) {
       Set<String> applicableTo = new LinkedHashSet<String>();
@@ -66,7 +67,7 @@ public class FastRuleFinder {
 
     for (Reduction_MappingRule rule : allRules) {
       if (!isDisabledReductionForNode(node, rule, generator)) {
-        if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, node, rule.getNode(), generator)) {
+        if (QueryExecutor.checkCondition(rule.getConditionFunction(), false, node, rule.getNode(), generator)) {
           registerReduction(node, rule, generator);
           return rule;
         }

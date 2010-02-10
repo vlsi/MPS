@@ -17,6 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
+import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.lang.generator.plugin.debug.GenerationTracer;
 import jetbrains.mps.lang.generator.structure.*;
@@ -31,6 +32,9 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * Applies template to input node.
+ */
 public class TemplateProcessor {
   private static final Logger LOG = Logger.getLogger(TemplateProcessor.class);
 
@@ -39,11 +43,10 @@ public class TemplateProcessor {
   private List<SNode> myInputHistory = new ArrayList<SNode>();
   private Map<String, SNode> myInputNodesByMappingName = new HashMap<String, SNode>();
 
-  public TemplateProcessor(TemplateGenerator generator) {
+  private TemplateProcessor(TemplateGenerator generator) {
     myGenerator = generator;
     myOutputModel = myGenerator.getOutputModel();
   }
-
 
   @NotNull
   public static List<SNode> createOutputNodesForTemplateNode(String mappingName,
@@ -90,7 +93,7 @@ public class TemplateProcessor {
 
   private static void logCurrentGenerationBranch(TemplateGenerator generator, boolean error) {
     List<Pair<SNode, String>> pairs = generator.getGeneratorSessionContext().getGenerationTracer().getNodesWithTextFromCurrentBranch();
-    StringBuilder indent = new StringBuilder("");
+    StringBuilder indent = new StringBuilder();
     boolean indentInc = true;
     for (Pair<SNode, String> pair : pairs) {
       String logMessage = indent + pair.o2 + (pair.o1 != null ? ": " + pair.o1.getDebugText() : "");
@@ -187,7 +190,7 @@ public class TemplateProcessor {
     List<INodeAdapter> templateChildNodes = new ArrayList<INodeAdapter>();
     for (INodeAdapter templateChildNode : templateNode.getAdapter().getChildren()) {
       if (templateChildNode instanceof PropertyMacro) {
-        MacroUtil.expandPropertyMacro(myGenerator, (PropertyMacro) templateChildNode, inputNode, templateNode, outputNode);
+        QueryExecutor.expandPropertyMacro(myGenerator, (PropertyMacro) templateChildNode, inputNode, templateNode, outputNode);
       } else if (templateChildNode instanceof ReferenceMacro) {
         ReferenceInfo_Macro refInfo = new ReferenceInfo_Macro(
           outputNode, (ReferenceMacro) templateChildNode,
@@ -284,7 +287,7 @@ public class TemplateProcessor {
     } else if (nodeMacro instanceof IfMacro) {
       // $IF$
       List<SNode> _outputNodes = null;
-      if (MacroUtil.checkConditionForIfMacro(inputNode, (IfMacro) nodeMacro, myGenerator)) {
+      if (QueryExecutor.checkConditionForIfMacro(inputNode, (IfMacro) nodeMacro, myGenerator)) {
         _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, inputNode, nodeMacrosToSkip + 1);
       } else {
         // alternative consequence
@@ -400,7 +403,7 @@ public class TemplateProcessor {
       try {
         List<SNode> _outputNodes = null;
         RuleConsequence consequenceForCase = (RuleConsequence) myGenerator.getConsequenceForSwitchCase(newInputNode, templateSwitch);
-        if(consequenceForCase == null) {
+        if (consequenceForCase == null) {
           // no switch-case found for the inputNode - continue with templateNode under the $switch$
           _outputNodes = createOutputNodesForTemplateNode(mappingName, templateNode, newInputNode, nodeMacrosToSkip + 1);
 
@@ -417,8 +420,8 @@ public class TemplateProcessor {
               mappingName = nodeAndMappingNamePair.o2;
             }
             List<SNode> __outputNodes = createOutputNodesForExternalTemplateNode(mappingName, templateNodeForCase, newInputNode);
-            if(__outputNodes != null) {
-              if(_outputNodes == null) _outputNodes = new ArrayList<SNode>();
+            if (__outputNodes != null) {
+              if (_outputNodes == null) _outputNodes = new ArrayList<SNode>();
               _outputNodes.addAll(__outputNodes);
             }
           }

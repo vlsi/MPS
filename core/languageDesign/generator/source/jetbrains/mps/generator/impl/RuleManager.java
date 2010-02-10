@@ -19,6 +19,7 @@ import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
 import jetbrains.mps.generator.plan.GenerationPlan;
 import jetbrains.mps.generator.template.TemplateQueryContext;
+import jetbrains.mps.generator.util.FlattenIterable;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
@@ -30,11 +31,11 @@ import java.util.List;
 public class RuleManager {
   private static final Logger LOG = Logger.getLogger(RuleManager.class);
 
-  private List<CreateRootRule> myCreateRootRules;
-  private List<Root_MappingRule> myRoot_MappingRules;
-  private List<Weaving_MappingRule> myWeaving_MappingRules;
-  private List<Reduction_MappingRule> myReduction_MappingRules;
-  private List<DropRootRule> myDropRootRules;
+  private FlattenIterable<CreateRootRule> myCreateRootRules;
+  private FlattenIterable<Root_MappingRule> myRoot_MappingRules;
+  private FlattenIterable<Weaving_MappingRule> myWeaving_MappingRules;
+  private FlattenIterable<Reduction_MappingRule> myReduction_MappingRules;
+  private FlattenIterable<DropRootRule> myDropRootRules;
   private List<MappingConfiguration> myMappings;
 
   private final FastRuleFinder myRuleFinder;
@@ -46,21 +47,18 @@ public class RuleManager {
   }
 
   protected void initialize(List<MappingConfiguration> list) {
-    myCreateRootRules = new ArrayList<CreateRootRule>();
-    myRoot_MappingRules = new ArrayList<Root_MappingRule>();
-    myWeaving_MappingRules = new ArrayList<Weaving_MappingRule>();
-    myReduction_MappingRules = new ArrayList<Reduction_MappingRule>();
-    myDropRootRules = new ArrayList<DropRootRule>();
-    initRules(list);
-  }
-
-  private void initRules(List<MappingConfiguration> list) {
+    myCreateRootRules = new FlattenIterable(new ArrayList<List<CreateRootRule>>(list.size()));
+    myRoot_MappingRules = new FlattenIterable(new ArrayList<List<Root_MappingRule>>(list.size()));
+    myWeaving_MappingRules = new FlattenIterable(new ArrayList<List<Weaving_MappingRule>>(list.size()));
+    myReduction_MappingRules = new FlattenIterable(new ArrayList<List<Reduction_MappingRule>>(list.size()));
+    myDropRootRules = new FlattenIterable(new ArrayList<List<DropRootRule>>(list.size()));
+    
     for (MappingConfiguration mappingConfig : list) {
-      myCreateRootRules.addAll(mappingConfig.getCreateRootRules());
-      myRoot_MappingRules.addAll(mappingConfig.getRootMappingRules());
-      myWeaving_MappingRules.addAll(mappingConfig.getWeavingMappingRules());
-      myReduction_MappingRules.addAll(mappingConfig.getReductionMappingRules());
-      myDropRootRules.addAll(mappingConfig.getDropRootRules());
+      myCreateRootRules.add(mappingConfig.getCreateRootRules());
+      myRoot_MappingRules.add(mappingConfig.getRootMappingRules());
+      myWeaving_MappingRules.add(mappingConfig.getWeavingMappingRules());
+      myReduction_MappingRules.add(mappingConfig.getReductionMappingRules());
+      myDropRootRules.add(mappingConfig.getDropRootRules());
     }
   }
 
@@ -158,16 +156,17 @@ public class RuleManager {
 
           List<SNode> outputNodes = GeneratorUtil.applyReductionRule(inputNode, reductionRule, myGenerator);
           if (outputNodes != null && outputNodes.size() == 1) {
+            SNode reducedNode = outputNodes.get(0);
             // register copied node
-            myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, outputNodes.get(0));
+            myGenerator.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, reducedNode);
             // output node should be accessible via 'findCopiedNode'
-            myGenerator.addCopiedOutputNodeForInputNode(inputNode, outputNodes.get(0));
+            myGenerator.addCopiedOutputNodeForInputNode(inputNode, reducedNode);
             // preserve user objects
-            outputNodes.get(0).putUserObjects(inputNode);
+            reducedNode.putUserObjects(inputNode);
             // keep track of 'original input node'
             if (inputNode.getModel() == myGenerator.getGeneratorSessionContext().getOriginalInputModel()) {
-              outputNodes.get(0).putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
-              outputNodes.get(0).putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
+              reducedNode.putUserObject(TemplateQueryContext.ORIGINAL_INPUT_NODE, inputNode);
+              reducedNode.putUserObject(TemplateQueryContext.ORIGINAL_DEBUG_NODE, inputNode);
             }
           }
           return outputNodes;

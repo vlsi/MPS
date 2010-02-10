@@ -54,8 +54,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public TemplateGenerator(GenerationSessionContext operationContext,
                            ProgressIndicator progressMonitor,
-                           RuleManager ruleManager
-                           ) {
+                           RuleManager ruleManager) {
     super(operationContext, progressMonitor);
     myRuleProcessor = ruleManager.createProcessor(this);
   }

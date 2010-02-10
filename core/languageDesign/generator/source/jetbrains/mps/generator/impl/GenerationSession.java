@@ -22,6 +22,7 @@ import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationPlan;
+import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
 import jetbrains.mps.ide.messages.MessageKind;
@@ -297,7 +298,7 @@ public class GenerationSession {
         continue;
       }
       addMessage(MessageKind.INFORMATION, "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ")", preMappingScript.getNode());
-      GeneratorUtil.executeMappingScript(preMappingScript, currentInputModel, generator);
+      QueryExecutor.executeMappingScript(preMappingScript, currentInputModel, generator);
     }
     return currentInputModel;
   }
@@ -320,7 +321,7 @@ public class GenerationSession {
         continue;
       }
       addMessage(MessageKind.INFORMATION, "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")", postMappingScript.getNode());
-      GeneratorUtil.executeMappingScript(postMappingScript, currentOutputModel, generator);
+      QueryExecutor.executeMappingScript(postMappingScript, currentOutputModel, generator);
     }
     return currentOutputModel;
   }

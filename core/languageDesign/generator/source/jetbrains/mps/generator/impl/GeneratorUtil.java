@@ -17,10 +17,10 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.GenerationCanceledException;
 import jetbrains.mps.generator.GenerationFailureException;
-import jetbrains.mps.generator.template.*;
+import jetbrains.mps.generator.template.ITemplateGenerator;
+import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.lang.core.structure.BaseConcept;
 import jetbrains.mps.lang.core.structure.INamedConcept;
-import jetbrains.mps.lang.generator.generator.baseLanguage.template.TemplateFunctionMethodName;
 import jetbrains.mps.lang.generator.structure.*;
 import jetbrains.mps.lang.sharedConcepts.structure.Options_DefaultTrue;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
@@ -29,13 +29,10 @@ import jetbrains.mps.lang.structure.structure.LinkDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
-import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 
@@ -91,146 +88,12 @@ public class GeneratorUtil {
         if (inputNodeConcept != applicableConcept) return false;
       }
     }
-    return checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), generator);
-  }
-
-  public static boolean checkCondition(BaseMappingRule_Condition condition, boolean required, SNode inputNode, SNode ruleNode, ITemplateGenerator generator) throws GenerationFailureException {
-    if (condition == null) {
-      if (required) {
-        generator.showErrorMessage(inputNode, null, ruleNode, "rule condition required");
-        return false;
-      }
-      return true;
-    }
-
-    String methodName = TemplateFunctionMethodName.baseMappingRule_Condition(condition.getNode());
-    long startTime = System.currentTimeMillis();
-    boolean res = false;
-    try {
-      res = (Boolean) QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new BaseMappingRuleContext(inputNode, ruleNode, generator),
-        ruleNode.getModel(),
-        true);
-      return res;
-    } catch (ClassNotFoundException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
-    } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
-    } catch (Throwable t) {
-      throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
-    }
-    return false;
-  }
-
-  public static boolean checkCondition(DropRootRule_Condition condition, SNode inputRootNode, SNode ruleNode, ITemplateGenerator generator) throws GenerationFailureException {
-    if (condition == null) {
-      // condition is not required
-      return true;
-    }
-
-    String methodName = TemplateFunctionMethodName.dropRootRule_Condition(condition.getNode());
-    long startTime = System.currentTimeMillis();
-    boolean res = false;
-    try {
-      res = (Boolean) QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new DropRootRuleContext(inputRootNode, ruleNode, generator),
-        ruleNode.getModel(),
-        true);
-      return res;
-    } catch (ClassNotFoundException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to TRUE");
-    } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(condition), "couldn't find condition method '" + methodName + "' : evaluate to TRUE");
-    } catch (Throwable t) {
-      throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(condition), t);
-    }
-    // in this case 'true' is better default
-    return true;
-  }
-
-  public static void executeMappingScript(MappingScript mappingScript, SModel model, ITemplateGenerator generator) throws GenerationFailureException {
-    MappingScript_CodeBlock codeBlock = mappingScript.getCodeBlock();
-    if (codeBlock == null) {
-      generator.showWarningMessage(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no code-block");
-      return;
-    }
-
-    String methodName = TemplateFunctionMethodName.mappingScript_CodeBlock(codeBlock.getNode());
-    long startTime = System.currentTimeMillis();
-    try {
-      QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new MappingScriptContext(model, mappingScript.getNode(), generator),
-        mappingScript.getModel(),
-        true);
-    } catch (ClassNotFoundException e) {
-      generator.showWarningMessage(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no generated code found");
-    } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(mappingScript.getNode(), "couldn't run script '" + mappingScript.getName() + "' : no generated code found");
-    } catch (Throwable t) {
-      throw new GenerationFailureException("error executing script '" + mappingScript.getName() + "'", codeBlock.getNode(), t);
-    }
-  }
-
-  /**
-   * used to evaluate 'sourceNodesQuery' in macros and in rules
-   */
-  public static List<SNode> evaluateSourceNodesQuery(SNode inputNode, SNode ruleNode, SNode macroNode, SourceSubstituteMacro_SourceNodesQuery query, ITemplateGenerator generator) {
-    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodesQuery(query.getNode());
-    try {
-      Object result = QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new SourceSubstituteMacroNodesContext(inputNode, ruleNode, macroNode, generator),
-        query.getModel());
-
-      List<SNode> resultList;
-      if (result instanceof List) {
-        resultList = (List<SNode>) result;
-      } else {
-        resultList = CollectionUtil.asList((Iterable<SNode>) result);
-      }
-
-      CollectionUtil.checkForNulls(resultList);
-
-      return resultList;
-    } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(macroNode, "couldn't find nodes query '" + methodName + "' : evaluate to empty list");
-      return new ArrayList<SNode>();
-    } catch (Exception e) {
-      generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
-      LOG.error(e);
-      return new LinkedList<SNode>();
-    }
-  }
-
-  public static SNode evaluateSourceNodeQuery(SNode inputNode, SNode macroNode, SourceSubstituteMacro_SourceNodeQuery query, ITemplateGenerator generator) {
-    String methodName = TemplateFunctionMethodName.sourceSubstituteMacro_SourceNodeQuery(query.getNode());
-    long startTime = System.currentTimeMillis();
-    try {
-      return (SNode) QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new SourceSubstituteMacroNodeContext(inputNode, macroNode, generator),
-        query.getModel());
-    } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(macroNode, "couldn't find nodes quer '" + methodName + "' : evaluate to null");
-      return null;
-    } catch (Exception e) {
-      generator.showErrorMessage(inputNode, query.getNode(), "couldn't evaluate query");
-      LOG.error(e);
-      return null;
-    }
+    return QueryExecutor.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), generator);
   }
 
 
   public static void applyCreateRootRule(CreateRootRule createRootRule, TemplateGenerator generator) throws GenerationFailureException, GenerationCanceledException {
-    if (checkCondition(createRootRule, generator)) {
+    if (QueryExecutor.checkCondition(createRootRule, generator)) {
       INamedConcept templateNode = createRootRule.getTemplateNode();
       if (templateNode == null) {
         generator.showErrorMessage(null, null, createRootRule.getNode(), "'create root' rule has no template");
@@ -251,29 +114,6 @@ public class GeneratorUtil {
     }
   }
 
-  private static boolean checkCondition(CreateRootRule createRootRule, ITemplateGenerator generator) throws GenerationFailureException {
-    CreateRootRule_Condition conditionFunction = createRootRule.getConditionFunction();
-    if (conditionFunction == null) {
-      return true;
-    }
-    String methodName = TemplateFunctionMethodName.createRootRule_Condition(conditionFunction.getNode());
-    try {
-      return (Boolean) QueryMethodGenerated.invoke(
-        methodName,
-        generator.getGeneratorSessionContext(),
-        new CreateRootRuleContext(createRootRule.getNode(), generator),
-        createRootRule.getModel(),
-        true);
-    } catch (ClassNotFoundException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(createRootRule), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
-    } catch (NoSuchMethodException e) {
-      generator.showWarningMessage(BaseAdapter.fromAdapter(createRootRule), "couldn't find condition method '" + methodName + "' : evaluate to FALSE");
-    } catch (Throwable t) {
-      throw new GenerationFailureException("error executing condition ", BaseAdapter.fromAdapter(createRootRule), t);
-    }
-    return false;
-  }
-
   public static void applyRoot_MappingRule(Root_MappingRule rule, TemplateGenerator generator) throws GenerationFailureException, GenerationCanceledException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
@@ -289,7 +129,7 @@ public class GeneratorUtil {
         continue;
       }
 
-      if (checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), generator)) {
+      if (QueryExecutor.checkCondition(rule.getConditionFunction(), false, inputNode, rule.getNode(), generator)) {
         generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputNode);
         generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
         boolean wasChanged = generator.isChanged();
@@ -322,7 +162,7 @@ public class GeneratorUtil {
     }
 
     if (inputRootNode.isInstanceOfConcept(applicableConcept)) {
-      if (checkCondition(rule.getConditionFunction(), inputRootNode, rule.getNode(), generator)) {
+      if (QueryExecutor.checkCondition(rule.getConditionFunction(), inputRootNode, rule.getNode(), generator)) {
         generator.getGeneratorSessionContext().getGenerationTracer().pushInputNode(inputRootNode);
         generator.getGeneratorSessionContext().getGenerationTracer().pushRule(rule.getNode());
         generator.getGeneratorSessionContext().getGenerationTracer().closeInputNode(inputRootNode);
@@ -349,27 +189,6 @@ public class GeneratorUtil {
     } catch (TemplateProcessingFailureException e) {
       generator.showErrorMessage(inputNode, templateNode, "couldn't create root node");
     }
-  }
-
-  private static SNode getContextNodeForWeavingingRule(SNode inputNode, Weaving_MappingRule rule, ITemplateGenerator generator) {
-    Weaving_MappingRule_ContextNodeQuery query = rule.getContextNodeQuery();
-    if (query != null) {
-      String methodName = TemplateFunctionMethodName.weaving_MappingRule_ContextNodeQuery(query.getNode());
-      try {
-        return (SNode) QueryMethodGenerated.invoke(
-          methodName,
-          generator.getGeneratorSessionContext(),
-          new WeavingMappingRuleContext(inputNode, rule.getNode(), generator),
-          query.getModel());
-      } catch (NoSuchMethodException e) {
-        generator.showWarningMessage(BaseAdapter.fromAdapter(rule), "couldn't find context node query '" + methodName + "' : evaluate to null");
-        return null;
-      } catch (Exception e) {
-        generator.showErrorMessage(inputNode, null, rule.getNode(), "couldn't evaluate rule context query");
-        LOG.error(e);
-      }
-    }
-    return null;
   }
 
   private static void weaveTemplateDeclaration(SNode inputNode, TemplateDeclaration template, SNode outputContextNode, Weaving_MappingRule rule, TemplateGenerator generator)
@@ -429,7 +248,7 @@ public class GeneratorUtil {
       SNode templateFragmentNode = BaseAdapter.fromAdapter(templateFragment.getParent());
       SNode contextParentNode = null;
       try {
-        contextParentNode = getContextNodeForTemplateFragment(inputNode, templateFragmentNode, outputContextNode, generator);
+        contextParentNode = QueryExecutor.getContextNodeForTemplateFragment(inputNode, templateFragmentNode, outputContextNode, generator);
       } catch (Exception e) {
         LOG.error(e);
       }
@@ -522,32 +341,6 @@ public class GeneratorUtil {
     return true;
   }
 
-  private static SNode getContextNodeForTemplateFragment(SNode inputNode, SNode templateFragmentNode, SNode mainContextNode, TemplateGenerator generator) {
-    TemplateFragment fragment = TemplateFragment_AnnotationLink.getTemplateFragment((BaseConcept) templateFragmentNode.getAdapter());
-    // has custom context builder provider?
-    TemplateFragment_ContextNodeQuery query = fragment.getContextNodeQuery();
-    if (query != null) {
-      String methodName = TemplateFunctionMethodName.templateFragment_ContextNodeQuery(query.getNode());
-      try {
-        return (SNode) QueryMethodGenerated.invoke(
-          methodName,
-          generator.getGeneratorSessionContext(),
-          new TemplateFragmentContext(inputNode, mainContextNode, templateFragmentNode, generator),
-          query.getModel());
-      } catch (NoSuchMethodException e) {
-        generator.showWarningMessage(templateFragmentNode, "couldn't find context node method for template fragment '" + methodName + "' : evaluate to null");
-        return null;
-      } catch (Exception e) {
-        generator.showErrorMessage(inputNode, null, templateFragmentNode, "couldn't evaluate template fragment context query");
-        LOG.error(e);
-        return null;
-      }
-    }
-
-    // ok, main context node by default
-    return mainContextNode;
-  }
-
   public static void applyWeaving_MappingRule(Weaving_MappingRule rule, TemplateGenerator generator) throws GenerationFailureException, GenerationCanceledException {
     AbstractConceptDeclaration applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
@@ -557,8 +350,8 @@ public class GeneratorUtil {
     boolean includeInheritors = rule.getApplyToConceptInheritors();
     List<SNode> nodes = generator.getInputModel().getModelDescriptor().getFastNodeFinder().getNodes(applicableConcept, includeInheritors);
     for (SNode applicableNode : nodes) {
-      if (GeneratorUtil.checkCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode(), generator)) {
-        SNode outputContextNode = getContextNodeForWeavingingRule(applicableNode, rule, generator);
+      if (QueryExecutor.checkCondition(rule.getConditionFunction(), false, applicableNode, rule.getNode(), generator)) {
+        SNode outputContextNode = QueryExecutor.getContextNodeForWeavingingRule(applicableNode, rule, generator);
         if (outputContextNode == null) {
           generator.showErrorMessage(applicableNode, rule.getNode(), "couldn't find context node");
           continue;
@@ -602,7 +395,7 @@ public class GeneratorUtil {
                 break;
               }
               TemplateDeclaration template = weaveEach.getTemplate();
-              List<SNode> queryNodes = evaluateSourceNodesQuery(applicableNode, rule.getNode(), null, query, generator);
+              List<SNode> queryNodes = QueryExecutor.evaluateSourceNodesQuery(applicableNode, rule.getNode(), null, query, generator);
               if (queryNodes.isEmpty()) {
                 someOutputGenerated = false;
               }
@@ -672,7 +465,7 @@ public class GeneratorUtil {
     } else if (ruleConsequence instanceof InlineSwitch_RuleConsequence) {
       InlineSwitch_RuleConsequence inlineSwitch = (InlineSwitch_RuleConsequence) ruleConsequence;
       for (InlineSwitch_Case switchCase : inlineSwitch.getCases()) {
-        if (GeneratorUtil.checkCondition(switchCase.getConditionFunction(), true, inputNode, switchCase.getNode(), generator)) {
+        if (QueryExecutor.checkCondition(switchCase.getConditionFunction(), true, inputNode, switchCase.getNode(), generator)) {
           return getTemplateNodesFromRuleConsequence(switchCase.getCaseConsequence(), inputNode, switchCase.getNode(), generator);
         }
       }
