@@ -216,6 +216,10 @@
       <property name="id" value="7866978e-a0f0-4cc7-81bc-4d213d9375e1" />
       <property name="name" value="jetbrains.mps.lang.smodel" />
     </node>
+    <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="6655458782220905881">
+      <property name="id" value="9a4afe51-f114-4595-b5df-048ce3c596be" />
+      <property name="name" value="runtime" />
+    </node>
     <node role="entry:7" type="jetbrains.mps.build.custommpsInternal.structure.MPSModule" id="4062013737453619209">
       <property name="id" value="0eddeefa-c2d6-4437-bc2c-de50fd4ce470" />
       <property name="name" value="jetbrains.mps.lang.script" />

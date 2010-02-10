@@ -1291,7 +1291,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.dates.runtime0" depends="compile.cycle.jetbrains.mps.editor.runtime0">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.dates.runtime0">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.dates.runtime.classes}.tmp" />
     <mkdir dir="core/baseLanguage/dates/runtime/source_gen" />
     <mkdir dir="core/baseLanguage/dates/runtime/src" />
@@ -1310,7 +1310,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples0" depends="compile.cycle.jetbrains.mps.xmlQuery0">
+  <target name="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples0" depends="compile.cycle.ypath.main0">
     <property name="classes.dump" value="${jetbrains.mps.baseLanguage.regexp.examples.classes}.tmp" />
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/source_gen" />
     <mkdir dir="platform/regexp/solutions/jetbrains.mps.regexp.examples/test_gen" />
@@ -1327,7 +1327,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.bash0" depends="compile.cycle.jetbrains.mps.xmlUnitTest0">
+  <target name="compile.cycle.jetbrains.mps.bash0" depends="compile.cycle.jetbrains.mps.baseLanguage.dates0">
     <property name="classes.dump" value="${jetbrains.mps.bash.classes}.tmp" />
     <mkdir dir="platform/bash/languages/bash/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -1359,7 +1359,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.editor.runtime0">
+  <target name="compile.cycle.jetbrains.mps.editor.runtime0" depends="compile.cycle.jetbrains.mps.xmlQuery0">
     <property name="classes.dump" value="${jetbrains.mps.editor.runtime.classes}.tmp" />
     <mkdir dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/source_gen" />
     <mkdir dir="core/languageDesign/editor/solutions/jetbrains.mps.editor.runtime/test_gen" />
@@ -1393,7 +1393,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.gtext.runtime0" depends="compile.cycle.ypath.test0">
+  <target name="compile.cycle.jetbrains.mps.gtext.runtime0" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples0">
     <property name="classes.dump" value="${jetbrains.mps.gtext.runtime.classes}.tmp" />
     <mkdir dir="platform/gtext/runtime/source" />
     <mkdir dir="platform/gtext/runtime/source_gen" />
@@ -1412,7 +1412,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.gwt.client0" depends="compile.cycle.jetbrains.mps.bash0">
+  <target name="compile.cycle.jetbrains.mps.gwt.client0" depends="compile.cycle.jetbrains.mps.editor.runtime0">
     <property name="classes.dump" value="${jetbrains.mps.gwt.client.classes}.tmp" />
     <mkdir dir="platform/gwtsupport/languages/client/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -1427,7 +1427,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.lang.test.runtime0" depends="compile.cycle.jetbrains.mps.gwt.client0">
+  <target name="compile.cycle.jetbrains.mps.lang.test.runtime0" depends="compile.cycle.jetbrains.mps.bash0">
     <property name="classes.dump" value="${jetbrains.mps.lang.test.runtime.classes}.tmp" />
     <mkdir dir="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/source_gen" />
     <mkdir dir="core/languageDesign/test/solutions/jetbrains.mps.transformationTest.runtime/test_gen" />
@@ -1505,7 +1505,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.xmlUnitTest0" depends="compile.cycle.jetbrains.mps.baseLanguage.regexp.examples0">
+  <target name="compile.cycle.jetbrains.mps.xmlUnitTest0" depends="compile.cycle.ypath.test0">
     <property name="classes.dump" value="${jetbrains.mps.xmlUnitTest.classes}.tmp" />
     <mkdir dir="platform/xmlUnitTest/languages/xmlUnitTest/source_gen" />
     <mkdir dir="${classes.dump}" />
@@ -1520,7 +1520,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.jetbrains.mps.ypath0" depends="compile.cycle.jetbrains.mps.baseLanguage.dates0">
+  <target name="compile.cycle.jetbrains.mps.ypath0" depends="compile.cycle.jetbrains.mps.lang.test.runtime0">
     <property name="classes.dump" value="${jetbrains.mps.ypath.classes}.tmp" />
     <mkdir dir="platform/ypath/source" />
     <mkdir dir="platform/ypath/source_gen" />
@@ -1554,7 +1554,7 @@
     </javac>
     <delete dir="${classes.dump}" />
   </target>
-  <target name="compile.cycle.ypath.test0" depends="compile.cycle.ypath.main0">
+  <target name="compile.cycle.ypath.test0" depends="compile.cycle.jetbrains.mps.gwt.client0">
     <property name="classes.dump" value="${ypath.test.classes}.tmp" />
     <mkdir dir="platform/ypath/solutions/test/source_gen" />
     <mkdir dir="platform/ypath/solutions/test/test_gen" />

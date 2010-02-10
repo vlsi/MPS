@@ -527,6 +527,16 @@
       <fileset dir="core/languageDesign/smodel/classes" />
     </jar>
   </target>
+  <target name="pack.runtime0">
+    <mkdir dir="core/languageDesign/smodel/solutions/runtime/source_gen.caches" />
+    <mkdir dir="core/languageDesign/smodel/solutions/runtime/test_gen.caches" />
+    <jar destfile="${deploy.dir}/MPS/core/languageDesign/runtime.mpsarch.jar" compress="true" duplicate="preserve" filesonly="true">
+      <zipfileset file="core/languageDesign/smodel/solutions/runtime/runtime.msd" prefix="module" />
+      <zipfileset dir="core/languageDesign/smodel/solutions/runtime/source_gen.caches" prefix="source_gen.caches" />
+      <zipfileset dir="core/languageDesign/smodel/solutions/runtime/test_gen.caches" prefix="test_gen.caches" />
+      <zipfileset dir="core/languageDesign/smodel/solutions/runtime" excludes="**/*.iml, **/*.java, **/*.class, **/*.mpr, **/*.mws, **/*.mpl, **/*.msd, **/*.devkit, **/*.ipr" prefix="module" />
+    </jar>
+  </target>
   <target name="pack.jetbrains.mps.lang.script0">
     <mkdir dir="core/languageDesign/script/classes" />
     <mkdir dir="core/languageDesign/script/source_gen.caches" />

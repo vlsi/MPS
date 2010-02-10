@@ -292,6 +292,7 @@
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.plugin0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.sharedConcepts0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.smodel0" />
+    <antcall target="MPS-languages.pack.runtime0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.script0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.structure0" />
     <antcall target="MPS-languages.pack.jetbrains.mps.lang.core0" />
