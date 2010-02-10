@@ -342,11 +342,13 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
   }
 
   @Override
+  @Patch
+  // mySelectedConfiguration was removed and replaced with a call to method getSelectedConfiguration()
   public void removeConfiguration(RunnerAndConfigurationSettingsImpl settings) {
     for (Iterator<RunnerAndConfigurationSettingsImpl> it = getSortedConfigurations().iterator(); it.hasNext();) {
       final RunnerAndConfigurationSettings configuration = it.next();
       if (configuration.equals(settings)) {
-        if (mySelectedConfiguration != null && settings.equals(mySelectedConfiguration)) {
+        if (getSelectedConfiguration()!= null && settings.equals(getSelectedConfiguration())) {
           setSelectedConfiguration(null);
         }
 
@@ -418,14 +420,17 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
     }
   }
 
+  @Patch
+  // mySelectedConfiguration was removed and replaced with a call to method getSelectedConfiguration()
   public void writeContext(Element parentNode) throws WriteExternalException {
     for (RunnerAndConfigurationSettingsImpl configurationSettings : myConfigurations.values()) {
       if (configurationSettings.isTemporary()) {
         addConfigurationElement(parentNode, configurationSettings, CONFIGURATION);
       }
     }
-    if (mySelectedConfiguration != null) {
-      parentNode.setAttribute(SELECTED_ATTR, getUniqueName(mySelectedConfiguration.getConfiguration()));
+    RunnerAndConfigurationSettingsImpl selected = getSelectedConfiguration();
+    if (selected != null) {
+      parentNode.setAttribute(SELECTED_ATTR, getUniqueName(selected.getConfiguration()));
     }
   }
 
@@ -507,6 +512,8 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
     mySelectedConfig = parentNode.getAttributeValue(SELECTED_ATTR);
   }
 
+  @Patch
+  // mySelectedConfiguration was removed and replaced with a call to method setSelectedConfiguration()
   public void readContext(Element parentNode) throws InvalidDataException {
     final List children = parentNode.getChildren();
     mySelectedConfig = parentNode.getAttributeValue(SELECTED_ATTR);
@@ -520,7 +527,7 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
     if (mySelectedConfig != null) {
       RunnerAndConfigurationSettingsImpl configurationSettings = myConfigurations.get(mySelectedConfig);
       if (configurationSettings != null) {
-        mySelectedConfiguration = null;
+        setSelectedConfiguration(null);
       }
     }
   }
@@ -533,6 +540,8 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
   }
 
   @Nullable
+  @Patch
+  // mySelectedConfiguration was removed and replaced with a call to method setSelectedConfiguration()
   public RunnerAndConfigurationSettingsImpl loadConfiguration(final Element element, boolean isShared) throws InvalidDataException {
     RunnerAndConfigurationSettingsImpl settings = new RunnerAndConfigurationSettingsImpl(this);
     settings.readExternal(element);
@@ -548,7 +557,7 @@ public class RunManagerImpl extends RunManagerEx implements JDOMExternalizable, 
       setBeforeRunTasks(settings.getConfiguration(), map);
     } else {
       if (Boolean.valueOf(element.getAttributeValue(SELECTED_ATTR)).booleanValue()) { //to support old style
-        mySelectedConfiguration = settings;
+        setSelectedConfiguration(settings);
       }
       addConfiguration(settings, isShared, map);
     }
