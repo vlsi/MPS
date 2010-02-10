@@ -54,6 +54,9 @@ public abstract class AbstractNodeInformationDialog extends JDialog {
     super(owner);
 
     prevFocusOwner = owner.getFocusOwner();
+    if (prevFocusOwner == null) {
+      prevFocusOwner = owner.getMostRecentFocusOwner();
+    }
 
     setUndecorated(true);
     setModal(false);
