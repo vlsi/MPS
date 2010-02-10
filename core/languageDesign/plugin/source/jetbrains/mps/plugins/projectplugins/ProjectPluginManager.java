@@ -26,7 +26,6 @@ import com.intellij.util.xmlb.annotations.MapAnnotation;
 import jetbrains.mps.MPSProjectHolder;
 import jetbrains.mps.ide.IEditor;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.actions.Ide_ProjectPlugin;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.plugins.PluginUtil;
 import jetbrains.mps.plugins.PluginUtil.ProjectPluginCreator;
