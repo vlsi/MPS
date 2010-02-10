@@ -236,12 +236,6 @@ public class SModel implements Iterable<SNode> {
     }
   }
 
-  public void removeModel() {
-    for (SNode root : getRoots()) {
-      removeRoot(root);
-    }
-  }
-
   public void addWeakSModelListener(@NotNull SModelListener listener) {
     synchronized (myListenersLock) {
       myWeakListeners.add(listener);

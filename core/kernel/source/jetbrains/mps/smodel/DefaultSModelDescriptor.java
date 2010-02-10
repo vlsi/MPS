@@ -24,10 +24,10 @@ import jetbrains.mps.lang.structure.structure.InterfaceConceptReference;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.refactoring.PlayRefactoringsFlag;
+import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
+import jetbrains.mps.refactoring.framework.IRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.RefactoringHistory;
-import jetbrains.mps.refactoring.framework.IRefactoring;
-import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.smodel.event.EventUtil;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -36,8 +36,8 @@ import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.WeakSet;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vcs.VcsHelper;
+import jetbrains.mps.vfs.IFile;
 
 import java.util.*;
 
@@ -644,7 +644,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptor {
   }
 
   public final void delete() {
-    mySModel.removeModel();
     SModelRepository.getInstance().deleteModel(this);
   }
 

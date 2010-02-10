@@ -15,52 +15,62 @@
  */
 package jetbrains.mps.ide.tabbedEditor.tabs;
 
-import com.intellij.openapi.wm.ToolWindowManager;
-import com.intellij.openapi.ui.popup.ListPopup;
-import com.intellij.openapi.ui.popup.JBPopupFactory;
-import com.intellij.openapi.ui.popup.PopupStep;
-import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
-import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.ui.popup.JBPopupFactory;
+import com.intellij.openapi.ui.popup.ListPopup;
+import com.intellij.openapi.ui.popup.PopupStep;
+import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
+import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.ide.tabbedEditor.ILazyTab;
-import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
-import jetbrains.mps.ide.tabbedEditor.LazyTabbedPane;
-import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
-import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.actions.EditorTabActions_ActionGroup;
+import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.tabbedEditor.ILazyTab;
+import jetbrains.mps.ide.tabbedEditor.LazyTabbedPane;
+import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
+import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.lang.core.structure.INamedConcept;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.NodeEditorComponent;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.action.BaseGroup;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.ActionUtils;
+import jetbrains.mps.workbench.action.BaseGroup;
+import org.jetbrains.annotations.NotNull;
 
 import javax.swing.*;
-import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
-import java.awt.Point;
 import java.awt.Component;
+import java.awt.Point;
 import java.awt.event.ActionEvent;
-import java.awt.event.MouseEvent;
 import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.*;
-
-import org.jetbrains.annotations.NotNull;
 
 public abstract class BaseMultitabbedTab implements ILazyTab {
   private Set<SNodePointer> myLoadableNodes = new HashSet<SNodePointer>();
   public SModelListener myListener = new MySModelAdapter();
+  private SModelRepositoryListener myWeakRepositoryListener = new SModelRepositoryAdapter() {
+    public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
+      for (SNode node : getLoadableNodes()) {
+        SModelDescriptor md = node.getModel().getModelDescriptor();
+        if (modelDescriptor.equals(md)) {
+          SNodePointer nodePointer = new SNodePointer(node);
+          int index = getIndexOfTabFor(nodePointer);
+          closeTab(nodePointer, index);
+        }
+      }
+    }
+  };
   private SNodePointer myBaseNode;
   private JTabbedPane myInnerTabbedPane;
   private JPanel myComponent;
@@ -74,6 +84,7 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
     myTabbedEditor = tabbedEditor;
     myBaseNode = new SNodePointer(baseNode);
     myClass = adapterClass;
+    SModelRepository.getInstance().addWeakModelRepositoryListener(myWeakRepositoryListener);
   }
 
   private void closeTab(SNodePointer nodePointer, int index) {
@@ -285,7 +296,9 @@ public abstract class BaseMultitabbedTab implements ILazyTab {
   public EditorComponent getCurrentEditorComponent() {
     JPanel panel = (JPanel) getComponent();
     if (panel == null) return null;
-    return myEditors.get(myInnerTabbedPane.getSelectedIndex());
+    int index = myInnerTabbedPane.getSelectedIndex();
+    if (index == -1) return null;
+    return myEditors.get(index);
   }
 
   private void setPackageAfterCreation(final Pair<SNode, IOperationContext> nodeAndContext) {

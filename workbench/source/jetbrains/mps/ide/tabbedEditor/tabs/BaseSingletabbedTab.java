@@ -15,11 +15,9 @@
  */
 package jetbrains.mps.ide.tabbedEditor.tabs;
 
-import com.intellij.ide.DataManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowManager;
 import jetbrains.mps.ide.IdeMain;
-import jetbrains.mps.ide.actions.TabHelper;
 import jetbrains.mps.ide.tabbedEditor.ILazyTab;
 import jetbrains.mps.ide.tabbedEditor.TabbedEditor;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
@@ -32,14 +30,12 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.workbench.MPSDataKeys;
 
 import javax.swing.JComponent;
 import javax.swing.SwingUtilities;
+import java.awt.event.MouseEvent;
 import java.util.Collections;
 import java.util.List;
-import java.awt.event.MouseEvent;
 
 public abstract class BaseSingletabbedTab implements ILazyTab {
   private static final Logger LOG = Logger.getLogger(BaseSingletabbedTab.class);
@@ -71,6 +67,15 @@ public abstract class BaseSingletabbedTab implements ILazyTab {
           if (listenCondition.met(modelDescriptor)) {
             modelDescriptor.addWeakModelListener(myListener);
             SModelRepository.getInstance().removeModelRepositoryListener(this);
+          }
+        }
+
+        public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
+          SNode node = getLoadableNode();
+          if (node == null) return;
+          SModelDescriptor md = node.getModel().getModelDescriptor();
+          if (modelDescriptor.equals(md)) {
+            reinit();
           }
         }
       };
