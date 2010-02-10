@@ -26,6 +26,7 @@ import com.intellij.execution.junit.RuntimeConfigurationProducer;
 import com.intellij.openapi.util.Computable;
 import com.intellij.psi.PsiElement;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.util.EqualUtil;
 
 public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer {
   private PsiElement mySourceElement;
@@ -70,5 +71,17 @@ public abstract class BaseConfigCreator<T> extends RuntimeConfigurationProducer 
 
   public int compareTo(Object o) {
     return PREFERED;
+  }
+
+  public int hashCode() {
+    return myContext.hashCode() + 10 * mySourceElement.hashCode() + 20 * getClass().getName().hashCode();
+  }
+
+  public boolean equals(Object obj) {
+    if (obj == null || !(obj instanceof BaseConfigCreator)) return false;
+    BaseConfigCreator configCreator = (BaseConfigCreator) obj;
+    return EqualUtil.equals(configCreator.myContext, myContext)
+      && EqualUtil.equals(configCreator.mySourceElement, mySourceElement)
+      && EqualUtil.equals(configCreator.getClass().getName(), getClass().getName());
   }
 }

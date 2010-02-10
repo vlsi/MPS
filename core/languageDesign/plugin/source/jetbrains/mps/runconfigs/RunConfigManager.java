@@ -52,6 +52,7 @@ import java.util.*;
 
 public class RunConfigManager implements ProjectComponent {
   private static final Logger LOG = Logger.getLogger(RunConfigManager.class);
+  private static List<BaseConfigCreator> myRegisteredCreators = new ArrayList<BaseConfigCreator>();
 
   private final Object myConfigsLock = new Object();
   private List<ConfigurationType> mySortedConfigs = new ArrayList<ConfigurationType>();
@@ -150,8 +151,9 @@ public class RunConfigManager implements ProjectComponent {
     synchronized (myConfigsLock) {
       final ExtensionPoint<RuntimeConfigurationProducer> epCreator = Extensions.getArea(null).getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
       RuntimeConfigurationProducer[] extensions = epCreator.getExtensions();
-      for (RuntimeConfigurationProducer producer: extensions){
+      for (RuntimeConfigurationProducer producer: extensions) {
         epCreator.unregisterExtension(producer);
+        myRegisteredCreators.remove(producer);
       }
 
       Collections.reverse(mySortedConfigs);
@@ -218,6 +220,14 @@ public class RunConfigManager implements ProjectComponent {
 
     return conTypes;
   }
+
+  private void register(BaseConfigCreator configCreator) {
+    if (myRegisteredCreators.contains(configCreator)) return;
+    final ExtensionPoint<RuntimeConfigurationProducer> epCreator =
+      Extensions.getArea(null).getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
+    epCreator.registerExtension(configCreator);
+    myRegisteredCreators.add(configCreator);
+  }
   
   private List<ConfigurationType> createCreators(MPSProject project) {
     final List<ConfigurationType> conTypes = new ArrayList<ConfigurationType>();
@@ -237,25 +247,18 @@ public class RunConfigManager implements ProjectComponent {
       if (language.getPluginModelDescriptor() != null) {
         SModel model = language.getPluginModelDescriptor().getSModel();
 
-        final ExtensionPoint<RuntimeConfigurationProducer> epCreator = Extensions.getArea(null).getExtensionPoint(RuntimeConfigurationProducer.RUNTIME_CONFIGURATION_PRODUCER);
         for (RunConfigCreator creator : model.getRootsAdapters(RunConfigCreator.class)) {
           String creatorClassName = language.getPluginModelDescriptor().getLongName() + "." + creator.getName();
           BaseConfigCreator configCreator = createCreator(language, creatorClassName);
           if (configCreator == null) continue;
-
-          epCreator.registerExtension(configCreator);
-          //todo
-          //conTypes.add(configurationType);
+          register(configCreator);
         }
 
         for (UniversalRunConfigCreator creator : model.getRootsAdapters(UniversalRunConfigCreator.class)) {
           String creatorClassName = language.getPluginModelDescriptor().getLongName() + "." + creator.getName();
           BaseConfigCreator configCreator = createCreator(language, creatorClassName);
           if (configCreator == null) continue;
-
-          epCreator.registerExtension(configCreator);
-          //todo
-          //conTypes.add(configurationType);
+          register(configCreator);
         }
       }
     }
