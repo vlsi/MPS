@@ -62,9 +62,8 @@ public class StacktraceUtil {
     });
   }
 
-  private static SNode getNodes(String method, final String position) {
+  public static SNode getNode(String method, final String file, final int position) {
     int lastDot = method.lastIndexOf(".");
-    lastDot = method.lastIndexOf(".", lastDot - 1);
     String pkg = (lastDot == -1 ?
       "" :
       method.substring(0, lastDot)
@@ -80,13 +79,10 @@ public class StacktraceUtil {
         continue;
       }
 
-      final Wrappers._T<SNode> nodeToShow = new Wrappers._T<SNode>(null);
+      final Wrappers._T<SNode> nodeToShow = new Wrappers._T<SNode>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          String[] str = position.split(":");
-          if (str.length >= 2) {
-            nodeToShow.value = result.getNodeForLine(str[0], Integer.parseInt(str[1]), descriptor.getSModel());
-          }
+          nodeToShow.value = result.getNodeForLine(file, position, descriptor.getSModel());
         }
       });
 
@@ -95,6 +91,19 @@ public class StacktraceUtil {
       }
     }
 
+    return null;
+  }
+
+  private static SNode getNodes(String stacktraceLine, String position) {
+    int lastDot = stacktraceLine.lastIndexOf(".");
+    String pkg = (lastDot == -1 ?
+      "" :
+      stacktraceLine.substring(0, lastDot)
+    );
+    String[] split = position.split(":");
+    if (split.length >= 2) {
+      return getNode(pkg, split[0], Integer.parseInt(split[1]));
+    }
     return null;
   }
 

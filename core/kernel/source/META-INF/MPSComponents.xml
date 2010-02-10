@@ -510,6 +510,11 @@
         </component>
 
         <component>
+            <implementation-class>jetbrains.mps.debug.runtime.CurrentLinePositionProjectComponent</implementation-class>
+            <skipForDummyProject/>
+        </component>
+
+        <component>
             <implementation-class>jetbrains.mps.generator.GeneratorManager</implementation-class>
         </component>
 
