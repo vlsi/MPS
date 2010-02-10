@@ -16,9 +16,8 @@ import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.ide.DataManager;
-import com.intellij.openapi.project.Project;
-import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.tree.TreeNode;
+import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -45,8 +44,10 @@ public class NamespaceInternalActions_ActionGroup extends GeneratedActionGroup {
     try {
       NamespaceInternalActions_ActionGroup.this.removeAll();
       DataContext dataContext = DataManager.getInstance().getDataContext();
-      Project project = MPSDataKeys.PROJECT.getData(dataContext);
       List<TreeNode> selectedNodes = MPSDataKeys.LOGICAL_VIEW_NODES.getData(dataContext);
+      if (selectedNodes == null) {
+        return;
+      }
       for (TreeNode selectedNode : selectedNodes) {
         if (!(selectedNode instanceof NamespaceTextNode)) {
           return;
