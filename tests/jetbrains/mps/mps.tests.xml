@@ -22,12 +22,13 @@
         <jvmargs refid="mps.args"/>
         <jvmargs refid="debug.args"/>
     </jvmargs>
-
+    
     <target name="test.test">
         <mps.test.generation fork="true" compile="true" showdiff="true" invoketests="${invoke.tests}" loglevel="info"
-                             useperrootgeneration="${per.root.generation}">
+                             useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
             <jvmargs refid="mps.debug.args"/>
-            <project file="${mps.home}/core/baseLanguage/baseLanguage/baseLanguage.mpr"/>
+            <model file="${mps.home}/core/languageDesign/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains/mps/smodel/test/smodelOperations.mps"/>
+            <!--<project file="${mps.home}/core/baseLanguage/baseLanguage/baseLanguage.mpr"/>-->
         </mps.test.generation>
     </target>
 
@@ -92,12 +93,10 @@
             <project file="${mps.home}/core/kernel/kernelSolution/kernel.mpr"/>
             <project file="${mps.home}/core/kernel/testMake/testMake.mpr"/>
             <project file="${mps.home}/core/languageDesign/mps-lite/mps-lite.mpr"/>
-            <project file="${mps.home}/core/mps.mpr"/>
             <project file="${mps.home}/platform/quickQueryLanguage/quickQueryLanguage.mpr"/>
             <project file="${mps.home}/platform/uiLanguage/uiLanguage.mpr"/>
             <project file="${mps.home}/platform/ypath/YPath.mpr"/>
             <project file="${mps.home}/workbench/ideSolution/ide.mpr"/>
-            <project file="${mps.home}/workbench/workbench.mpr"/>
 
             <!-- Samples -->
             <project file="${mps.home}/samples/complexLanguage/Complex.mpr"/>
@@ -111,6 +110,11 @@
             <project file="${mps.home}/samples/generator_demo/generator_demo.mpr"/>
             <project file="${mps.home}/samples/sampleXML/sampleXML.mpr"/>
             <project file="${mps.home}/samples/theSimplestLanguage/theSimplestLanguage.mpr"/>
+        </mps.test.generation>
+        <mps.test.generation fork="true" compile="false" showdiff="false" invoketests="false" loglevel="info"
+                             useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
+            <jvmargs refid="mps.args"/>
+            <model file="${mps.home}/platform/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains/mps/build/mpsautobuild.mps"/>
         </mps.test.generation>
     </target>
 
