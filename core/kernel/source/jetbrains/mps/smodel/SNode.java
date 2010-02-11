@@ -1423,6 +1423,11 @@ public final class SNode {
     }
 
     try {
+/*
+ Warning:
+ BaseConcept_Behavior class will be loaded using platform classloader here.
+ As a result this class will be loaded twice - once using own BundleClassLoader and one more time - here.
+ */
       return "" + BaseConcept_Behavior.call_getPresentation_1213877396640(this);
     } catch (Throwable t) {
       LOG.error(t);
