@@ -70,6 +70,8 @@ public class EquationManager {
 
   private boolean myUsesCheckOnly = true;
 
+  private EquationManager myMaster = null;
+
   public EquationManager(TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
     myTypeChecker = typeChecker;
     myTypeCheckingContext = typeCheckingContext;
@@ -84,95 +86,103 @@ public class EquationManager {
   }
 
   public IWrapper getParent(IWrapper type) {
-    IWrapper parent = myEquations.get(type);
-    return parent;
+    if (myMaster != null) {
+      return myMaster.getParent(type);
+    } else {
+      IWrapper parent = myEquations.get(type);
+      return parent;
+    }
   }
 
   public void setInferenceMode() {
     myUsesCheckOnly = false;
   }
 
-  public void fillWithEquations(EquationManager additionalEquations) {
-    myEquations.putAll(additionalEquations.myEquations);
+  public void fillWithEquations(EquationManager slave) {
+   //do not put equations and checking inequations
 
-    for (IWrapper key : additionalEquations.mySubtypesToSupertypesMap.keySet()) {
+    for (IWrapper key : slave.mySubtypesToSupertypesMap.keySet()) {
       Map<IWrapper, EquationInfo> map = mySubtypesToSupertypesMap.get(key);
       if (map == null) {
         map = new HashMap<IWrapper, EquationInfo>();
         mySubtypesToSupertypesMap.put(key, map);
       }
-      map.putAll(additionalEquations.mySubtypesToSupertypesMap.get(key));
+      map.putAll(slave.mySubtypesToSupertypesMap.get(key));
     }
 
-    for (IWrapper key : additionalEquations.mySupertypesToSubtypesMap.keySet()) {
+    for (IWrapper key : slave.mySupertypesToSubtypesMap.keySet()) {
       Map<IWrapper, EquationInfo> map = mySupertypesToSubtypesMap.get(key);
       if (map == null) {
         map = new HashMap<IWrapper, EquationInfo>();
         mySupertypesToSubtypesMap.put(key, map);
       }
-      map.putAll(additionalEquations.mySupertypesToSubtypesMap.get(key));
+      map.putAll(slave.mySupertypesToSubtypesMap.get(key));
     }
 
-    for (IWrapper key : additionalEquations.mySubtypesToSupertypesMapStrong.keySet()) {
+    for (IWrapper key : slave.mySubtypesToSupertypesMapStrong.keySet()) {
       Map<IWrapper, EquationInfo> map = mySubtypesToSupertypesMapStrong.get(key);
       if (map == null) {
         map = new HashMap<IWrapper, EquationInfo>();
         mySubtypesToSupertypesMapStrong.put(key, map);
       }
-      map.putAll(additionalEquations.mySubtypesToSupertypesMapStrong.get(key));
+      map.putAll(slave.mySubtypesToSupertypesMapStrong.get(key));
     }
 
-    for (IWrapper key : additionalEquations.mySupertypesToSubtypesMapStrong.keySet()) {
+    for (IWrapper key : slave.mySupertypesToSubtypesMapStrong.keySet()) {
       Map<IWrapper, EquationInfo> map = mySupertypesToSubtypesMapStrong.get(key);
       if (map == null) {
         map = new HashMap<IWrapper, EquationInfo>();
         mySupertypesToSubtypesMapStrong.put(key, map);
       }
-      map.putAll(additionalEquations.mySupertypesToSubtypesMapStrong.get(key));
+      map.putAll(slave.mySupertypesToSubtypesMapStrong.get(key));
     }
 
-    for (IWrapper key : additionalEquations.myComparableTypesMap.keySet()) {
+    for (IWrapper key : slave.myComparableTypesMap.keySet()) {
       Map<IWrapper, EquationInfo> map = myComparableTypesMap.get(key);
       if (map == null) {
         map = new HashMap<IWrapper, EquationInfo>();
         myComparableTypesMap.put(key, map);
       }
-      map.putAll(additionalEquations.myComparableTypesMap.get(key));
+      map.putAll(slave.myComparableTypesMap.get(key));
     }
 
-    for (IWrapper key : additionalEquations.myComparableTypesMapStrong.keySet()) {
+    for (IWrapper key : slave.myComparableTypesMapStrong.keySet()) {
       Map<IWrapper, EquationInfo> map = myComparableTypesMapStrong.get(key);
       if (map == null) {
         map = new HashMap<IWrapper, EquationInfo>();
         myComparableTypesMapStrong.put(key, map);
       }
-      map.putAll(additionalEquations.myComparableTypesMapStrong.get(key));
+      map.putAll(slave.myComparableTypesMapStrong.get(key));
     }
 
-    myWhenConcreteEntities.putAll(additionalEquations.myWhenConcreteEntities);
-    myShallowWhenConcreteEntities.putAll(additionalEquations.myShallowWhenConcreteEntities);
+    myWhenConcreteEntities.putAll(slave.myWhenConcreteEntities);
+    myShallowWhenConcreteEntities.putAll(slave.myShallowWhenConcreteEntities);
 
-    for (IWrapper key : additionalEquations.myNonConcreteVars.keySet()) {
+    for (IWrapper key : slave.myNonConcreteVars.keySet()) {
       Set<SNodePointer> nodePointers = myNonConcreteVars.get(key);
       if (nodePointers == null) {
         nodePointers = new HashSet<SNodePointer>();
         myNonConcreteVars.put(key, nodePointers);
       }
-      nodePointers.addAll(additionalEquations.myNonConcreteVars.get(key));
+      nodePointers.addAll(slave.myNonConcreteVars.get(key));
     }
 
-    for (IWrapper key : additionalEquations.myWrapperListeners.keySet()) {
+    for (IWrapper key : slave.myWrapperListeners.keySet()) {
       Set<IWrapperListener> wrapperListeners = myWrapperListeners.get(key);
       if (wrapperListeners == null) {
         wrapperListeners = new HashSet<IWrapperListener>();
         myWrapperListeners.put(key, wrapperListeners);
       }
-      wrapperListeners.addAll(additionalEquations.myWrapperListeners.get(key));
+      wrapperListeners.addAll(slave.myWrapperListeners.get(key));
     }
   }
 
   public void setParent(IWrapper type, IWrapper parent) {
-    myEquations.put(type, parent);
+    if (myMaster != null) {
+      myMaster.setParent(type, parent);
+    } else {
+      myEquations.put(type, parent);
+    }
   }
 
   public IWrapper getRepresentatorWrapper(IWrapper type_) {
