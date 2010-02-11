@@ -131,27 +131,29 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
         return index1 - index2;
       }
 
-      private int indexInEditor(SNode editorNode, String role) {
+      private int indexInEditor(SNode editorNode, String role, int index) {
+        index--;
         if (editorNode.toString().startsWith("%" + role + "%")) {
-          return editorNode.getParent().getIndexOfChild(editorNode);
+          return -index;
         }
         for (SNode childEditorNode : editorNode.getChildren()) {
-          int result = indexInEditor(childEditorNode, role);
-          if (result != -1) return result;
+          int result = indexInEditor(childEditorNode, role, index);
+          if (result >= 0) return result;
         }
-        return -1;
+        return index;
       }
 
       private int searchInEditors(SNode ancestor, SNode searchedNode) {
+        // todo: include editor components
         AbstractConceptDeclaration conceptDeclaration = ancestor.getConceptDeclarationAdapter();
         SModel structureModel = conceptDeclaration.getModel();
         Language language = (Language) structureModel.getModelDescriptor().getModule();
         SModel editorModel = language.getEditorModelDescriptor().getSModel();
         ConceptEditorDeclaration conceptEditorDeclaration = GoToEditorDeclarationHelper.findEditorDeclaration(editorModel, conceptDeclaration);
         SNode editorNode = conceptEditorDeclaration.getNode();
-        int index = indexInEditor(editorNode, searchedNode.getRole_());
-        if (index != -1 || ancestor.getParent() == null) {
-        //  check(index, searchedNode, searchedNode.getContainingRoot());
+        int index = indexInEditor(editorNode, searchedNode.getRole_(), -1);
+        if (index > -1 || ancestor.getParent() == null) {
+          check(index, searchedNode, searchedNode.getContainingRoot());
           return index;
         }
         return searchInEditors(ancestor.getParent(), searchedNode);
@@ -164,8 +166,10 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
       }
 
       public int compare(SNode o1, SNode o2) {
-        if (!EqualUtil.equals(o1.getContainingRoot(), o2.getContainingRoot())) {
-          return 0;
+        SNode root1 = o1.getContainingRoot();
+        SNode root2 = o2.getContainingRoot();
+        if (!EqualUtil.equals(root1, root2)) {
+          return root1.toString().compareTo(root2.toString()) * 10;
         }
         List<SNode> anc1 = o1.getAncestors(true);
         List<SNode> anc2 = o2.getAncestors(true);
