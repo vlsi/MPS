@@ -14,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.MPSDataKeys;
 import javax.swing.JOptionPane;
+import org.apache.commons.lang.StringUtils;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
@@ -78,6 +79,7 @@ public class GoToNodeById_Action extends GeneratedAction {
       if (value == null) {
         return;
       }
+      value = StringUtils.trim(value);
       SNode node = GoToNodeById_Action.this.model.getSModel().getNodeById(value);
       if (node == null) {
         JOptionPane.showMessageDialog(GoToNodeById_Action.this.frame, "Can't find node with id " + value);
