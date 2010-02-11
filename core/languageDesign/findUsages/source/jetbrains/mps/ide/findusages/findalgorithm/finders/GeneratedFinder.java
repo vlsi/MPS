@@ -23,14 +23,12 @@ import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.FindersManager;
-import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesDialog;
 import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
 import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationHelper;
-import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
 import java.util.*;
 
@@ -144,17 +142,24 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
         return -1;
       }
 
-      private int compareWithEditor(SNode root, SNode node1, SNode node2) {
-        AbstractConceptDeclaration conceptDeclaration = root.getConceptDeclarationAdapter();
+      private int searchInEditors(SNode ancestor, SNode searchedNode) {
+        AbstractConceptDeclaration conceptDeclaration = ancestor.getConceptDeclarationAdapter();
         SModel structureModel = conceptDeclaration.getModel();
         Language language = (Language) structureModel.getModelDescriptor().getModule();
         SModel editorModel = language.getEditorModelDescriptor().getSModel();
         ConceptEditorDeclaration conceptEditorDeclaration = GoToEditorDeclarationHelper.findEditorDeclaration(editorModel, conceptDeclaration);
         SNode editorNode = conceptEditorDeclaration.getNode();
-        int index1 = indexInEditor(editorNode, node1.getRole_());
-        check(index1, node1, editorNode);
-        int index2 = indexInEditor(editorNode, node2.getRole_());
-        check(index2, node2, editorNode);
+        int index = indexInEditor(editorNode, searchedNode.getRole_());
+        if (index != -1 || ancestor.getParent() == null) {
+        //  check(index, searchedNode, searchedNode.getContainingRoot());
+          return index;
+        }
+        return searchInEditors(ancestor.getParent(), searchedNode);
+      }
+
+      private int compareWithEditor(SNode ancestor, SNode node1, SNode node2) {       
+        int index1 = searchInEditors(ancestor, node1);
+        int index2 = searchInEditors(ancestor, node2);
         return index1 - index2;
       }
 
@@ -175,7 +180,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
               if (fromSameCollection(node1, node2)) {
                 return compareWithoutEditor(ancestor, node1, node2);
               } else {
-                return compareWithEditor(node1.getContainingRoot(), node1, node2);
+                return compareWithEditor(ancestor, node1, node2);
               }
             }
           }
