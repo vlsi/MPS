@@ -36,6 +36,10 @@ public class DebugSession {
     myEventsProcessor.getManagerThread().invokeTerminalCommand(myEventsProcessor.createStopCommand());
   }
 
+  public void stepOver() {
+    myEventsProcessor.getManagerThread().schedule(myEventsProcessor.createStepCommand());
+  }
+
   DebugVMEventsProcessor getEventsProcessor() {
     return myEventsProcessor;
   }

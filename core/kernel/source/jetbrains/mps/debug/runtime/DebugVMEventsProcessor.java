@@ -347,6 +347,10 @@ public class DebugVMEventsProcessor {
     return new StopCommand(true);
   }
 
+  public DebuggerCommand createStepCommand() {
+    return new StepCommand();
+  }
+
   private class ResumeCommand extends DebuggerCommand {
     @Override
     public CommandPriority getPriority() {
@@ -401,6 +405,13 @@ public class DebugVMEventsProcessor {
 // TODO       
 //        stopConnecting();
       }
+    }
+  }
+
+  private class StepCommand extends DebuggerCommand {
+    @Override
+    protected void action() throws Exception {
+      // TODO Step  
     }
   }
 }
