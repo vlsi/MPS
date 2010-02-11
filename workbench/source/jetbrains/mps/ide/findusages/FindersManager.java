@@ -121,6 +121,11 @@ public class FindersManager implements ApplicationComponent {
           if (findUsagesModelDescriptor != null) {
             SModel smodel = findUsagesModelDescriptor.getSModel();
             for (FinderDeclaration finderDeclaration : smodel.getRootsAdapters(FinderDeclaration.class)) {
+/*
+ Warning:
+ FinderDeclaration_Behavior class will be loaded using platform classloader here.
+ As a result this class will be loaded twice - once using own BundleClassLoader and one more time - here.
+ */
               String className = smodel.getSModelReference().getLongName() + "." + FinderDeclaration_Behavior.call_getGeneratedClassName_1213877240101(finderDeclaration.getNode());
               String conceptName = FinderDeclaration_Behavior.call_getConceptName_1213877240111(finderDeclaration.getNode());
               try {
