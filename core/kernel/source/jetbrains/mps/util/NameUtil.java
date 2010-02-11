@@ -195,8 +195,16 @@ public class NameUtil {
     return result.substring(0, result.length() - 1);
   }
 
+  private static boolean isConsonant(char ch) {
+    return "bcdfghjklmnpqrstvwxz".indexOf(ch) != -1;
+  }
+
   public static String pluralize(String singular) {
-    if (singular.endsWith("y")) {
+    // This condition may seem non-trivial
+    // It means that pluralized "berry" is "berries",
+    // but pluralized "array" is "arrays"
+    if (singular.endsWith("y") && singular.length() > 1
+        && isConsonant(singular.charAt(singular.length() - 2))) {
       return singular.substring(0, singular.length() - 1) + "ies";
     }
 
