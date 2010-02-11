@@ -308,7 +308,17 @@ public abstract class UsagesTree extends MPSTree {
 
   private void sortByCaption(List<UsagesTreeNode> children) {
     Collections.sort(children, new Comparator<UsagesTreeNode>() {
+      private boolean isIgnored(UsagesTreeNode node) {
+        Object idObject = node.getUserObject().getData().getIdObject();
+        if (idObject instanceof SNode) {
+          SNode nodeObject = (SNode) idObject;
+          return !nodeObject.isRoot();
+        }
+        return false;
+      }
+
       public int compare(UsagesTreeNode o1, UsagesTreeNode o2) {
+        if (isIgnored(o1) || isIgnored(o2)) return 0;
         String s1 = o1.getUserObject().getData().getPlainText();
         String s2 = o2.getUserObject().getData().getPlainText();
         return s1.compareTo(s2);
@@ -358,7 +368,7 @@ public abstract class UsagesTree extends MPSTree {
   private void mergeChildren(List<UsagesTreeNode> children) {
     List<UsagesTreeNode> mergedChildren = new ArrayList<UsagesTreeNode>();
 
-    Map<Object, UsagesTreeNode> childMap = new HashMap<Object, UsagesTreeNode>();
+    Map<Object, UsagesTreeNode> childMap = new LinkedHashMap<Object, UsagesTreeNode>();
     for (UsagesTreeNode child : children) {
       Object additionID = child.getUserObject().getData().getIdObject();
       if (additionID == null) {

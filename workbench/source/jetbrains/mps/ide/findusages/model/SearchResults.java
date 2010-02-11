@@ -92,6 +92,6 @@ public class SearchResults<T> {
   }
 
   public void removeDuplicates() {
-    mySearchResults = new ArrayList(new HashSet(mySearchResults));
+    mySearchResults = new ArrayList(new LinkedHashSet(mySearchResults));
   }
 }

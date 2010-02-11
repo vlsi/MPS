@@ -24,14 +24,15 @@ import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IInterfacedFinder;
 import jetbrains.mps.ide.findusages.FindersManager;
 import jetbrains.mps.ide.findusages.view.optionseditor.FindUsagesDialog;
+import jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration;
+import jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.workbench.actions.nodes.GoToEditorDeclarationHelper;
 import jetbrains.mps.workbench.editors.MPSEditorOpener;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public abstract class GeneratedFinder implements IInterfacedFinder {
   private static final Logger LOG = Logger.getLogger(GeneratedFinder.class);
@@ -105,6 +106,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
 
         List<SNode> res = new ArrayList<SNode>();
         doFind(node, query.getScope(), res, indicator);
+        Collections.sort(res, getComparator());
         for (SNode resnode : res) {
           results.getSearchResults().add(new SearchResult<SNode>(resnode, getNodeCategory(resnode)));
         }
@@ -112,4 +114,53 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
     }
     return results;
   }
+
+  private Comparator<SNode> getComparator() {
+    return new Comparator<SNode>() {
+      private boolean fromSameCollection(SNode node1, SNode node2) {
+        return EqualUtil.equals(node1.getRole_(), node2.getRole_());
+      }
+
+      private int compareWithoutEditor(SNode ancestor, SNode node1, SNode node2) {
+        Integer index1 = ancestor.getIndexOfChild(node1);
+        Integer index2 = ancestor.getIndexOfChild(node2);
+        return index1 - index2;
+      }
+
+      private int compareWithEditor(SNode root, SNode node1, SNode node2) {
+        AbstractConceptDeclaration conceptDeclaration = root.getConceptDeclarationAdapter();
+        SModel structureModel = conceptDeclaration.getModel();
+        Language language = (Language) structureModel.getModelDescriptor().getModule();
+        SModel editorModel = language.getEditorModelDescriptor().getSModel();
+        ConceptEditorDeclaration conceptEditorDeclaration = GoToEditorDeclarationHelper.findEditorDeclaration(editorModel, conceptDeclaration);
+        return 0;
+      }
+
+      public int compare(SNode o1, SNode o2) {
+        if (!EqualUtil.equals(o1.getContainingRoot(), o2.getContainingRoot())) {
+          return 0;
+        }
+        List<SNode> anc1 = o1.getAncestors(true);
+        List<SNode> anc2 = o2.getAncestors(true);
+        for (int i1 = 0; i1 < anc1.size(); i1++) {
+          if (i1 == 0) continue;
+          for (int i2 = 0; i2 < anc2.size(); i2++) {
+            if (i2 == 0) continue;
+            if (EqualUtil.equals(anc1.get(i1), anc2.get(i2))) {
+              SNode ancestor = anc1.get(i1);
+              SNode node1 = anc1.get(i1 - 1);
+              SNode node2 = anc2.get(i2 - 1);
+              if (fromSameCollection(node1, node2)) {
+                return compareWithoutEditor(ancestor, node1, node2);
+              } else {
+                return compareWithEditor(node1.getContainingRoot(), node1, node2);
+              }
+            }
+          }
+        }
+        return 0;
+      }
+    };
+  }
+
 }
