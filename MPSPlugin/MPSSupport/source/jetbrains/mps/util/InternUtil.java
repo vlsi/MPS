@@ -15,8 +15,6 @@
  */
 package jetbrains.mps.util;
 
-import jetbrains.mps.util.misc.ObjectCache;
-
 public class InternUtil {
   private static final Interner ourInterner = new Interner(20000);
 
