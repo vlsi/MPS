@@ -117,14 +117,31 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
 
   private Comparator<SNode> getComparator() {
     return new Comparator<SNode>() {
+      private void check(int index, SNode searchedNode, SNode editorNode) {
+        if (index == -1) {
+          System.err.println("\"" + searchedNode.getRole_() + "\" can't found in " + editorNode);
+        }
+      }
+
       private boolean fromSameCollection(SNode node1, SNode node2) {
         return EqualUtil.equals(node1.getRole_(), node2.getRole_());
       }
 
       private int compareWithoutEditor(SNode ancestor, SNode node1, SNode node2) {
-        Integer index1 = ancestor.getIndexOfChild(node1);
-        Integer index2 = ancestor.getIndexOfChild(node2);
+        int index1 = ancestor.getIndexOfChild(node1);
+        int index2 = ancestor.getIndexOfChild(node2);
         return index1 - index2;
+      }
+
+      private int indexInEditor(SNode editorNode, String role) {
+        if (editorNode.toString().startsWith("%" + role + "%")) {
+          return editorNode.getParent().getIndexOfChild(editorNode);
+        }
+        for (SNode childEditorNode : editorNode.getChildren()) {
+          int result = indexInEditor(childEditorNode, role);
+          if (result != -1) return result;
+        }
+        return -1;
       }
 
       private int compareWithEditor(SNode root, SNode node1, SNode node2) {
@@ -133,7 +150,12 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
         Language language = (Language) structureModel.getModelDescriptor().getModule();
         SModel editorModel = language.getEditorModelDescriptor().getSModel();
         ConceptEditorDeclaration conceptEditorDeclaration = GoToEditorDeclarationHelper.findEditorDeclaration(editorModel, conceptDeclaration);
-        return 0;
+        SNode editorNode = conceptEditorDeclaration.getNode();
+        int index1 = indexInEditor(editorNode, node1.getRole_());
+        check(index1, node1, editorNode);
+        int index2 = indexInEditor(editorNode, node2.getRole_());
+        check(index2, node2, editorNode);
+        return index1 - index2;
       }
 
       public int compare(SNode o1, SNode o2) {
