@@ -2335,7 +2335,7 @@ public class QueriesGenerated {
       }
       ListSequence.fromList(SNodeOperations.getDescendants(res, "jetbrains.mps.baseLanguage.structure.TypeVariableReference", false, new String[]{})).toListSequence().visitAll(new IVisitor<SNode>() {
         public void visit(SNode tvr) {
-          SNodeOperations.replaceWithAnother(tvr, ClassifierTypeUtil.getTypeCoercedToClassifierType(ListSequence.fromList(types).getElement(ListSequence.fromList(tvDecls).indexOf(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false)))));
+          SNodeOperations.replaceWithAnother(tvr, SNodeOperations.copyNode(ClassifierTypeUtil.getTypeCoercedToClassifierType(ListSequence.fromList(types).getElement(ListSequence.fromList(tvDecls).indexOf(SLinkOperations.getTarget(tvr, "typeVariableDeclaration", false))))));
         }
       });
     }
