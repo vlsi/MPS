@@ -2588,16 +2588,6 @@
       <link role="target:0" targetNodeId="2.1068431790191:3" resolveInfo="Expression" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="7204977815415955556">
-    <property name="name:0" value="CopiedTypeProvider" />
-    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="7204977815415955557">
-      <property name="metaClass:0" value="reference" />
-      <property name="role:0" value="copiedTypeSource" />
-      <property name="sourceCardinality:0" value="1" />
-      <link role="target:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8124453027370766044">
     <property name="name:0" value="OverloadedOpTypeRule_OneTypeSpecified" />
     <link role="extends:0" targetNodeId="8124453027370845339:3" resolveInfo="AbstractOverloadedOpsTypeRule" />

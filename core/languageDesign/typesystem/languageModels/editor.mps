@@ -4498,53 +4498,6 @@
       <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="1240322685587" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="7204977815415955558">
-    <link role="conceptDeclaration:32" targetNodeId="1.7204977815415955556:3" resolveInfo="CopiedTypeProvider" />
-    <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="7204977815415970907">
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Constant:32" id="7204977815415970910">
-        <property name="text:32" value="copied" />
-      </node>
-      <node role="childCellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_ModelAccess:32" id="7204977815415970912">
-        <property name="nullText:32" value="&lt;no source&gt;" />
-        <node role="modelAcessor:32" type="jetbrains.mps.lang.editor.structure.ModelAccessor:32" id="7204977815415970913">
-          <node role="getter:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Getter:32" id="7204977815415970914">
-            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7204977815415970915">
-              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7204977815415970920">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7204977815415970928">
-                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7204977815415970923">
-                    <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node:32" id="7204977815415970922" />
-                    <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7204977815415970927">
-                      <link role="link:16" targetNodeId="1.7204977815415955557:3" />
-                    </node>
-                  </node>
-                  <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="7204977815415970932">
-                    <link role="baseMethodDeclaration:16" targetNodeId="34.1213877396640" resolveInfo="getPresentation" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-          <node role="setter:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Setter:32" id="7204977815415970916">
-            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7204977815415970917" />
-          </node>
-          <node role="validator:32" type="jetbrains.mps.lang.editor.structure.QueryFunction_ModelAccess_Validator:32" id="7204977815415970918">
-            <node role="body:32" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7204977815415970919">
-              <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7204977815415970933">
-                <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7204977815415970936">
-                  <node role="operand:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_oldText:32" id="7204977815415970935" />
-                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="7204977815415971297">
-                    <link role="baseMethodDeclaration:3" targetNodeId="35.~String.equals(java.lang.Object):boolean" resolveInfo="equals" />
-                    <node role="actualArgument:3" type="jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_text:32" id="7204977815415971299" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="cellLayout:32" type="jetbrains.mps.lang.editor.structure.CellLayout_Horizontal:32" id="7204977815415970909" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration:32" id="8124453027370845380">
     <link role="conceptDeclaration:32" targetNodeId="1.8124453027370766044:3" resolveInfo="OverloadedOpTypeRule_OneTypeSpecified" />
     <node role="cellModel:32" type="jetbrains.mps.lang.editor.structure.CellModel_Collection:32" id="8124453027370845382">

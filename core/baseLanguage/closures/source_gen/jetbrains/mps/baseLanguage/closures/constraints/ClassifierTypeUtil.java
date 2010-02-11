@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.CopyUtil;
 public class ClassifierTypeUtil {
   public static SNode getTypeCoercedToClassifierType(SNode type) {
     // cast is such to avoid exception if MeetType 
-    SNode purified = (SNode) removeCopiedProviders(type);
+    SNode purified = (SNode) type;
     if (SNodeOperations.isInstanceOf(purified, "jetbrains.mps.baseLanguage.structure.TypeVariableReference") || SNodeOperations.isInstanceOf(purified, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
       return purified;
     }
@@ -54,18 +54,6 @@ public class ClassifierTypeUtil {
       return res;
     }
     return coerceToClassifierType(purified);
-  }
-
-  private static SNode removeCopiedProviders(SNode type) {
-    SNode result = SNodeOperations.copyNode(type);
-    if (SNodeOperations.isInstanceOf(result, "jetbrains.mps.lang.typesystem.structure.CopiedTypeProvider")) {
-      return SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(result, "jetbrains.mps.lang.typesystem.structure.CopiedTypeProvider"), "copiedTypeSource", false));
-    } else {
-      for (SNode descendant : SNodeOperations.getDescendants(result, "jetbrains.mps.lang.typesystem.structure.CopiedTypeProvider", false, new String[]{})) {
-        SNodeOperations.replaceWithAnother(descendant, SNodeOperations.copyNode(SLinkOperations.getTarget(descendant, "copiedTypeSource", false)));
-      }
-      return result;
-    }
   }
 
   private static SNode coerceToClassifierType(SNode type) {

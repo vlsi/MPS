@@ -33,7 +33,6 @@ import java.util.Stack;
 
 public class TypeCheckingContext {
   private static final Logger LOG = Logger.getLogger(TypeCheckingContext.class);
-  private static final boolean GREY_TYPEOF_ENABLED = false;
 
   private NodeTypesComponent myNodeTypesComponent;
   private SNode myRootNode;
@@ -190,22 +189,7 @@ public class TypeCheckingContext {
       getMainContext().put(node, type);
       representator = getRepresentatorIfNecessary(type);
     }
-    if (addDependency) {
-      return representator;
-    } else {
-      if (GREY_TYPEOF_ENABLED) {
-        return createCopiedTypeProviderNode(representator);
-      } else {
-        return representator;
-      }
-    }
-  }
-
-  public SNode createCopiedTypeProviderNode(SNode source) {
-    SNode result = SModelUtil_new.instantiateConceptDeclaration(CopiedTypeProvider.concept,
-      getRuntimeTypesModel(), GlobalScope.getInstance(), false);
-    result.setReferent(CopiedTypeProvider.COPIED_TYPE_SOURCE, source);
-    return result;
+    return representator;
   }
 
   public SNode[] getRegisteredTypeVariables(String varName) {

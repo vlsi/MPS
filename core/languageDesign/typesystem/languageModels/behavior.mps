@@ -737,38 +737,6 @@
       <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="1235492943488" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="7204977815415971300">
-    <link role="concept" targetNodeId="1.7204977815415955556:3" resolveInfo="CopiedTypeProvider" />
-    <node role="method" type="jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration" id="7204977815415971303">
-      <property name="name" value="getPresentation" />
-      <link role="overriddenMethod" targetNodeId="11.1213877396640" resolveInfo="getPresentation" />
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7204977815415971306">
-        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ReturnStatement:3" id="7204977815415971463">
-          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.PlusExpression:3" id="7204977815415971466">
-            <node role="rightExpression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7204977815415971475">
-              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="7204977815415971470">
-                <node role="operand:3" type="jetbrains.mps.lang.behavior.structure.ThisNodeExpression" id="7204977815415971469" />
-                <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="7204977815415971474">
-                  <link role="link:16" targetNodeId="1.7204977815415955557:3" />
-                </node>
-              </node>
-              <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall:16" id="7204977815415971479">
-                <link role="baseMethodDeclaration:16" targetNodeId="11.1213877396640" resolveInfo="getPresentation" />
-              </node>
-            </node>
-            <node role="leftExpression:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="7204977815415971465">
-              <property name="value:3" value="copied " />
-            </node>
-          </node>
-        </node>
-      </node>
-      <node role="returnType" type="jetbrains.mps.baseLanguage.structure.StringType:3" id="1303564268278398876" />
-      <node role="visibility" type="jetbrains.mps.baseLanguage.structure.PublicVisibility:3" id="7204977815415971308" />
-    </node>
-    <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="7204977815415971301">
-      <node role="body" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="7204977815415971302" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.behavior.structure.ConceptBehavior" id="919572754501605640">
     <link role="concept" targetNodeId="1.1227096774658:3" resolveInfo="MessageStatement" />
     <node role="constructor" type="jetbrains.mps.lang.behavior.structure.ConceptConstructorDeclaration" id="919572754501605641">

@@ -68,9 +68,6 @@ public class EquationManager {
   private Set<WhenConcreteEntity> myCollectedWhenConcreteEntities = new HashSet<WhenConcreteEntity>();
   private TypeCheckingContext myTypeCheckingContext;
 
-  private Map<IWrapper, Set<CopiedTypeWrapper>> myCopiedWrappers = new HashMap<IWrapper, Set<CopiedTypeWrapper>>();
-  private Map<VariableWrapper, Set<CopiedTypeWrapper>> myCopiedVars = new HashMap<VariableWrapper, Set<CopiedTypeWrapper>>();
-  private Set<CopiedTypeWrapper> myEquatedWithSource = new HashSet<CopiedTypeWrapper>();
   private boolean myUsesCheckOnly = true;
 
   public EquationManager(TypeChecker typeChecker, TypeCheckingContext typeCheckingContext) {
@@ -119,35 +116,14 @@ public class EquationManager {
           setParent(typeOnPath, type);
         }
       }
-      if (type instanceof CopiedTypeWrapper) {
-        CopiedTypeWrapper copiedTypeWrapper = (CopiedTypeWrapper) type;
-        for (IWrapper typeOnPath : path) {
-          if (typeOnPath instanceof VariableWrapper && typeOnPath.equals(copiedTypeWrapper.getRawSourceWrapper())) {
-            setEquatedWithSource(copiedTypeWrapper);
-            break;
-          }
-        }
-      }
     }
     LatticeUtil.processMeetsAndJoins(type);
     return type;
   }
 
-  public boolean isEquatedWithSource(CopiedTypeWrapper copiedTypeWrapper) {
-    return myEquatedWithSource.contains(copiedTypeWrapper);
-  }
-
-  private void setEquatedWithSource(CopiedTypeWrapper copiedTypeWrapper) {
-    myEquatedWithSource.add(copiedTypeWrapper);
-  }
-
   public SNode getRepresentator(SNode type_) {
     if (type_ == null) return null;
     IWrapper representatorWrapper = getRepresentatorWrapper(NodeWrapper.fromNode(type_, this));
-    if (representatorWrapper instanceof CopiedTypeWrapper
-      && representatorWrapper.getNode().getConceptFqName().equals(RuntimeTypeVariable.concept)) {
-      return representatorWrapper.fromWrapper();
-    }
     SNode representator = NodeWrapper.fromWrapper(representatorWrapper);
     if (representator == null) return type_;
     return representator;
@@ -806,22 +782,6 @@ public class EquationManager {
         addInequationComparable(subtype, type, comparables.get(subtype), false);
       }
     }
-
-    Set<CopiedTypeWrapper> typeWrappers = myCopiedWrappers.remove(var);
-    if (typeWrappers != null) {
-      for (CopiedTypeWrapper copiedTypeWrapper : typeWrappers) {
-        addCopiedTypeWrapper(type, copiedTypeWrapper);
-      }
-    }
-
-    if (var instanceof VariableWrapper) {
-      Set<CopiedTypeWrapper> typeVarCopies = myCopiedVars.remove((VariableWrapper) var);
-      if (typeVarCopies != null) {
-        for (CopiedTypeWrapper copiedTypeVar : typeVarCopies) {
-          keepInequationsAndEffects(copiedTypeVar, copiedTypeVar, avoidCheckonlyMaps);
-        }
-      }
-    }
   }
 
   private void processErrorEquation(IWrapper type, IWrapper error, IErrorReporter errorReporter, SNode nodeToCheck) {
@@ -1325,13 +1285,6 @@ public class EquationManager {
     if (wrapper instanceof ConceptWrapper) {
       return null; //todo
     }
-    while (wrapper instanceof CopiedTypeWrapper) {
-      if (isEquatedWithSource((CopiedTypeWrapper) wrapper)) {
-        wrapper = ((CopiedTypeWrapper) wrapper).getRawSourceWrapper();
-        break;
-      }
-      wrapper = ((CopiedTypeWrapper) wrapper).getSourceWrapper();
-    }
     if (wrapper.getNode().isRegistered() && expandChild) {
       wrapper = new NodeWrapper(CopyUtil.copy(wrapper.getNode()));
     }
@@ -1458,55 +1411,14 @@ public class EquationManager {
     }
   }
 
-  /*package*/ void addCopiedTypeWrapper(IWrapper source, CopiedTypeWrapper copiedTypeWrapper) {
-    Set<CopiedTypeWrapper> typeWrappers = myCopiedWrappers.get(source);
-    if (typeWrappers == null) {
-      typeWrappers = new HashSet<CopiedTypeWrapper>();
-      myCopiedWrappers.put(source, typeWrappers);
-    }
-    typeWrappers.add(copiedTypeWrapper);
-  }
-
-  public Set<CopiedTypeWrapper> getCopiedTypeWrappers(IWrapper wrapper) {
-    Set<CopiedTypeWrapper> typeWrappers = myCopiedWrappers.get(wrapper);
-    if (typeWrappers == null) {
-      return new HashSet<CopiedTypeWrapper>();
-    }
-    return typeWrappers;
-  }
-
-  /*package*/ void addCopiedVar(VariableWrapper source, CopiedTypeWrapper copiedTypeWrapper) {
-    Set<CopiedTypeWrapper> typeWrappers = myCopiedVars.get(source);
-    if (typeWrappers == null) {
-      typeWrappers = new HashSet<CopiedTypeWrapper>();
-      myCopiedVars.put(source, typeWrappers);
-    }
-    typeWrappers.add(copiedTypeWrapper);
-  }
-
-  public Set<CopiedTypeWrapper> getCopiedTypeVars(VariableWrapper variableWrapper) {
-    Set<CopiedTypeWrapper> typeWrappers = myCopiedVars.get(variableWrapper);
-    if (typeWrappers == null) {
-      return new HashSet<CopiedTypeWrapper>();
-    }
-    return typeWrappers;
-  }
-
-
   /*package*/ void checkConcrete(IWrapper representator) {
     if (representator == null) return;
     // NB: we assume that wrapper is a representator
     if (isConcrete(representator)) {
       isDeeplyConcrete(representator);
-      for (CopiedTypeWrapper copiedTypeWrapper : getCopiedTypeWrappers(representator)) {
-        isDeeplyConcrete(copiedTypeWrapper);
-      }
     }
     if (!representator.isVariable()) {
       isShallowConcrete(representator);
-      for (CopiedTypeWrapper copiedTypeWrapper : getCopiedTypeWrappers(representator)) {
-        isShallowConcrete(copiedTypeWrapper);
-      }
     }
   }
 

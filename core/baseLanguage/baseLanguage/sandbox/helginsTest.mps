@@ -52,7 +52,7 @@
               <link role="variableDeclaration:3" targetNodeId="2.~System.out" resolveInfo="out" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1204585149802">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.~PrintStream.print(java.lang.Object):void" resolveInfo="print" />
+              <link role="baseMethodDeclaration:3" targetNodeId="3.~PrintStream.print(java.lang.String):void" resolveInfo="print" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1185442641191">
                 <property name="value:3" value="" />
               </node>
@@ -66,7 +66,7 @@
               <link role="variableDeclaration:3" targetNodeId="2.~System.out" resolveInfo="out" />
             </node>
             <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1204585149800">
-              <link role="baseMethodDeclaration:3" targetNodeId="3.~PrintStream.print(java.lang.Object):void" resolveInfo="print" />
+              <link role="baseMethodDeclaration:3" targetNodeId="3.~PrintStream.print(java.lang.String):void" resolveInfo="print" />
               <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1185442664276">
                 <property name="value:3" value="" />
               </node>
