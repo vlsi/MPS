@@ -360,6 +360,11 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     if (intentionsModelDescriptor != null) {
       SModel smodel = intentionsModelDescriptor.getSModel();
       for (BaseIntentionDeclaration intentionDeclaration : smodel.getRootsAdapters(BaseIntentionDeclaration.class)) {
+/*
+ Warning:
+ BaseIntentionDeclaration_Behavior class will be loaded using platform classloader here.
+ As a result this class will be loaded twice - once using own BundleClassLoader and one more time - here.
+ */
         String className = smodel.getSModelReference().getLongName() + "." + BaseIntentionDeclaration_Behavior.call_getGeneratedName_6263518417926802289(intentionDeclaration.getNode());
         try {
           Class<?> cls = l.getClass(className);
