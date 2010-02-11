@@ -29,7 +29,7 @@ public class AddNodeChange extends NewNodeChange {
   private SNodeId myPreviousNode;
   private String myPreviousRole;
 
-  private boolean mySubstitution;
+  private boolean mySubstitution; // This field is used for ChangesManager
 
   public AddNodeChange(String conceptFqName, SNodeId nodeId, String role, SNodeId parentId,
                        SNodeId prevNode, String prevRole, boolean substitution) {
