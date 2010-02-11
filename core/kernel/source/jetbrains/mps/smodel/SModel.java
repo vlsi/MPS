@@ -1099,6 +1099,8 @@ public class SModel implements Iterable<SNode> {
 
   public void dispose() {
     fireBeforeModelDisposed();
+    clearAdapters();
+    clearUserObjects();
     myDisposed = true;
     synchronized (myListenersLock) {
       myCommandListeners.clear();
