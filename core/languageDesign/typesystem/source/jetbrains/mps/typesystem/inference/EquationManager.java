@@ -77,6 +77,11 @@ public class EquationManager {
     myTypeCheckingContext = typeCheckingContext;
   }
 
+  public EquationManager(TypeChecker typeChecker, TypeCheckingContext typeCheckingContext, EquationManager master) {
+    this(typeChecker, typeCheckingContext);
+    myMaster = master;
+  }
+
   public TypeChecker getTypeChecker() {
     return myTypeChecker;
   }

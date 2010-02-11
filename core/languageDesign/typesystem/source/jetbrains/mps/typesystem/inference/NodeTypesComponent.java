@@ -72,6 +72,11 @@ public class NodeTypesComponent implements EditorMessageOwner {
   private WeakSet<SNode> myNodesDependentOnCaches = new WeakSet<SNode>();
 
   private EquationManager myEquationManager;
+  private EquationManager myMasterEquationManager;
+  private SNode myCurrentSlaveComputedNode;
+  private Map<SNode, SNode> myBlockedOnSlaveComputation;
+  private Set<SNode> mySlaveComputed;
+
   private Map<String, Set<SNode>> myRegisteredVariables = new HashMap<String, Set<SNode>>();
 
   private MyModelListener myModelListener = new MyModelListener();
@@ -174,6 +179,38 @@ public class NodeTypesComponent implements EditorMessageOwner {
 
   private void clearEquationManager() {
     myEquationManager = new EquationManager(myTypeChecker, myTypeCheckingContext);
+  }
+
+  private void startSlaveComputation(SNode node) {
+    assert myCurrentSlaveComputedNode == null;
+    myCurrentSlaveComputedNode = node;
+    myMasterEquationManager = myEquationManager;
+    myEquationManager = new EquationManager(myTypeChecker, myTypeCheckingContext, myMasterEquationManager);
+  }
+
+  private SNode finishSlaveComputation() {
+    assert myCurrentSlaveComputedNode != null;
+    EquationManager slaveManager = myEquationManager;
+    myEquationManager = myMasterEquationManager;
+    myMasterEquationManager = null;
+    slaveManager.solveInequations();
+    myEquationManager.fillWithEquations(slaveManager);
+    SNode result = myCurrentSlaveComputedNode;
+    myCurrentSlaveComputedNode = null;
+    return result;
+  }
+
+  private void unblockNodesOnSlaveComputation() {
+    for (SNode node : mySlaveComputed) {
+      SNode blocked = myBlockedOnSlaveComputation.get(node);
+      if (blocked != null) {
+        unblockNodeOnSlaveComputation(blocked);
+      }
+    }
+  }
+
+  private void unblockNodeOnSlaveComputation(SNode node) {
+    myCurrentFrontier.add(node);
   }
 
   public SNode getNode() {
