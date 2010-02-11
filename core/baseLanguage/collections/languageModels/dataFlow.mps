@@ -1018,5 +1018,21 @@
       </node>
     </node>
   </node>
+  <node type="jetbrains.mps.lang.dataFlow.structure.DataFlowBuilderDeclaration:0" id="3602611744238064785">
+    <property name="package:0" value="stack" />
+    <link role="conceptDeclaration:0" targetNodeId="1.3358009230508699932:7" resolveInfo="PushOperation" />
+    <node role="builderBlock:0" type="jetbrains.mps.lang.dataFlow.structure.BuilderBlock:0" id="3602611744238064786">
+      <node role="body:0" type="jetbrains.mps.baseLanguage.structure.StatementList:3" id="3602611744238064787">
+        <node role="statement:3" type="jetbrains.mps.lang.dataFlow.structure.EmitCodeForStatement:0" id="3602611744238065332">
+          <node role="codeFor:0" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="3602611744238065335">
+            <node role="operand:3" type="jetbrains.mps.lang.dataFlow.structure.NodeParameter:0" id="3602611744238065334" />
+            <node role="operation:3" type="jetbrains.mps.lang.smodel.structure.SLinkAccess:16" id="3602611744238086699">
+              <link role="link:16" targetNodeId="1.3358009230508990571:7" />
+            </node>
+          </node>
+        </node>
+      </node>
+    </node>
+  </node>
 </model>
 

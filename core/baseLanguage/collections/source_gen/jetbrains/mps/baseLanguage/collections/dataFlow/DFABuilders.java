@@ -40,6 +40,7 @@ public class DFABuilders extends DataFlowBuilders {
     manager.register("jetbrains.mps.baseLanguage.collections.structure.MapOperationExpression", new MapOperationExpression_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.MapRemoveOperation", new MapRemoveOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.PageOperation", new PageOperation_DataFlow());
+    manager.register("jetbrains.mps.baseLanguage.collections.structure.PushOperation", new PushOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.PutAllOperation", new PutAllOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation", new RemoveAllElementsOperation_DataFlow());
     manager.register("jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation", new RemoveAllSetElementsOperation_DataFlow());
