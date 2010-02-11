@@ -29,10 +29,19 @@ public class AddNodeChange extends NewNodeChange {
   private SNodeId myPreviousNode;
   private String myPreviousRole;
 
-  public AddNodeChange(String conceptFqName, SNodeId nodeId, String role, SNodeId parentId, SNodeId prevNode, String prevRole) {
+  private boolean mySubstitution;
+
+  public AddNodeChange(String conceptFqName, SNodeId nodeId, String role, SNodeId parentId,
+                       SNodeId prevNode, String prevRole, boolean substitution) {
     super(conceptFqName, nodeId, role, parentId);
     myPreviousNode = prevNode;
     myPreviousRole = prevRole;
+    mySubstitution = substitution;
+  }
+
+  public AddNodeChange(String conceptFqName, SNodeId nodeId, String role, SNodeId parentId,
+                       SNodeId prevNode, String prevRole) {
+    this(conceptFqName, nodeId, role, parentId, prevNode, prevRole, false);
   }
 
   public SNodeId getPreviousNode() {
@@ -73,5 +82,9 @@ public class AddNodeChange extends NewNodeChange {
   @Override
   public List<SNodeId> getDependencies() {
     return Arrays.asList(getNodeParent(), getPreviousNode());
+  }
+
+  public boolean isSubstitution() {
+    return mySubstitution;
   }
 }
