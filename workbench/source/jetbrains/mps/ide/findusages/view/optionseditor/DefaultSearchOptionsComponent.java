@@ -55,6 +55,11 @@ public class DefaultSearchOptionsComponent implements ProjectComponent, Persiste
   private FindUsagesOptions createDefaultOptions() {
     FindUsagesOptions result = new FindUsagesOptions();
 
+/*
+ Warning:
+ Both NodeUsages_Finder/ConceptInstances_Finder classes will be loaded into platform classloader here.
+ As a result these two classes will be loaded twice - once using own BundleClassLoader and one more time - here.
+ */
     FindersOptions findersOptions = new FindersOptions(NodeUsages_Finder.class.getName(), ConceptInstances_Finder.class.getName());
     result.setOption(findersOptions);
 
