@@ -19,7 +19,6 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.intentions.IntentionProvider;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
-import jetbrains.mps.lang.typesystem.structure.CopiedTypeProvider;
 import jetbrains.mps.nodeEditor.MessageStatus;
 import jetbrains.mps.nodeEditor.IErrorReporter;
 import jetbrains.mps.nodeEditor.SimpleErrorReporter;
