@@ -33,8 +33,11 @@ import java.util.*;
 /**
  * Created by: Sergey Dmitriev
  * Date: Jan 23, 2007
+ *
+ * Created once per micro-step.
  */
 public class TemplateGenerator extends AbstractTemplateGenerator {
+
   private SModel myInputModel;
   private SModel myOutputModel;
   private ArrayList<SNode> myRootsNotToCopy = new ArrayList<SNode>();
@@ -54,9 +57,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
 
   public TemplateGenerator(GenerationSessionContext operationContext,
                            ProgressIndicator progressMonitor,
-                           RuleManager ruleManager) {
-    super(operationContext, progressMonitor);
+                           GeneratorLogger logger,
+                           RuleManager ruleManager,
+                           SModel inputModel,
+                           SModel outputModel) {
+    super(operationContext, progressMonitor, logger);
     myRuleProcessor = ruleManager.createProcessor(this);
+    myInputModel = inputModel;
+    myOutputModel = outputModel;
   }
 
   public GenerationSessionContext getGeneratorSessionContext() {
@@ -67,30 +75,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     return myRuleProcessor;
   }
 
-  public boolean doMapping(boolean isPrimary, SModel inputModel, SModel outputModel) throws GenerationFailureException, GenerationCanceledException {
-    reset(inputModel, outputModel);
-    doMapping(isPrimary);
-    return isChanged();
-  }
-
-  private void reset(SModel inputModel, SModel outputModel) {
-    myRootsNotToCopy.clear();
-    myTemplateNodeAndInputNodeToOutputNodeMap.clear();
-    myInputNodesWithNotUniqueCopiedOutputNode.clear();
-    myMappingNameAndInputNodeToOutputNodeMap.clear();
-    myOutputNodeToTemplateNodeMap.clear();
-    myTemplateNodeToOutputNodeMap.clear();
-    myDelayedChanges = new DelayedChanges();
-    myTemplateSwitchGraph = null;
-    myTemplateSwitchToListCache = null;
-    myChanged = false;
-    myInputModel = inputModel;
-    myOutputModel = outputModel;
-  }
-
-  private void doMapping(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
+  public boolean doMapping(boolean isPrimary) throws GenerationFailureException, GenerationCanceledException {
     checkMonitorCanceled();
-    myNewToOldRoot.clear();
 
     // create all roots
     if (isPrimary) {
@@ -127,6 +113,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     revalidateAllReferences();
 
     checkMonitorCanceled();
+    return isChanged();
   }
 
   private List<SNode> copyRootsFromInputModel() throws GenerationFailureException {
@@ -146,7 +133,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     List<SNode> copiedRoots = new ArrayList<SNode>();
     for (SNode rootToCopy : rootsToCopy) {
       SNode newroot = CloneUtil.clone(rootToCopy, myOutputModel, getGeneratorSessionContext().getOriginalInputModel() == myInputModel);
-      myNewToOldRoot.put(newroot, rootToCopy);
+      registerRoot(newroot, rootToCopy);
       copiedRoots.add(newroot);
     }
     return copiedRoots;

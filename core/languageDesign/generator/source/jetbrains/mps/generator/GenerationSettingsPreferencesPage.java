@@ -31,6 +31,7 @@ class GenerationSettingsPreferencesPage {
   private JCheckBox myGenerateRequirementsCheckBox = new JCheckBox("Checking if regeneration of other models is required");
   private JCheckBox myShowErrorsOnlyCheckBox = new JCheckBox("Log errors only (no info and warnings)");
   private JCheckBox myCheckModelsBeforeGenerationCheckBox = new JCheckBox("Check models for errors before generation");
+  private JCheckBox myStrictMode = new JCheckBox("Strict mode");
   private JCheckBox myUseNewGenerator = new JCheckBox("Use new generator (per-root)");
   private GenerationSettings myGenerationSettings;
 
@@ -43,6 +44,7 @@ class GenerationSettingsPreferencesPage {
     optionsPanel.add(myGenerateRequirementsCheckBox);
     optionsPanel.add(myShowErrorsOnlyCheckBox);
     optionsPanel.add(myCheckModelsBeforeGenerationCheckBox);
+    optionsPanel.add(myStrictMode);
     optionsPanel.add(myUseNewGenerator);
 
     myPage = new JPanel(new BorderLayout());
@@ -72,6 +74,7 @@ class GenerationSettingsPreferencesPage {
     myGenerationSettings.setGenerateRequirements(myGenerateRequirementsCheckBox.isSelected());
     myGenerationSettings.setCheckModelsBeforeGeneration(myCheckModelsBeforeGenerationCheckBox.isSelected());
     myGenerationSettings.setUseNewGenerator(myUseNewGenerator.isSelected());
+    myGenerationSettings.setStrictMode(myStrictMode.isSelected());
   }
 
   public boolean isModified() {
@@ -79,7 +82,8 @@ class GenerationSettingsPreferencesPage {
            myGenerationSettings.isShowErrorsOnly() == myShowErrorsOnlyCheckBox.isSelected() &&
            myGenerationSettings.isGenerateRequirements() == myGenerateRequirementsCheckBox.isSelected() &&
            myGenerationSettings.isCheckModelsBeforeGeneration() == myCheckModelsBeforeGenerationCheckBox.isSelected() &&
-           myGenerationSettings.isUseNewGenerator() == myUseNewGenerator.isSelected());
+           myGenerationSettings.isUseNewGenerator() == myUseNewGenerator.isSelected() &&
+           myGenerationSettings.isStrictMode() == myStrictMode.isSelected());
   }
 
   public void update() {
@@ -88,5 +92,6 @@ class GenerationSettingsPreferencesPage {
     myGenerateRequirementsCheckBox.setSelected(myGenerationSettings.isGenerateRequirements());
     myCheckModelsBeforeGenerationCheckBox.setSelected(myGenerationSettings.isCheckModelsBeforeGeneration());
     myUseNewGenerator.setSelected(myGenerationSettings.isUseNewGenerator());
+    myStrictMode.setSelected(myGenerationSettings.isStrictMode());
   }
 }

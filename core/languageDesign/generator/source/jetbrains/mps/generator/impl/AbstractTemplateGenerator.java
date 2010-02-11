@@ -28,10 +28,10 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
   private GeneratorLogger myLogger;
 
   protected AbstractTemplateGenerator(IOperationContext operationContext,
-                                      ProgressIndicator progressMonitor) {
+                                      ProgressIndicator progressMonitor, GeneratorLogger logger) {
     myOperationContext = operationContext;
     myProgressMonitor = progressMonitor;
-    myLogger = new GeneratorLogger(operationContext);
+    myLogger = logger;
   }
 
   public IOperationContext getOperationContext() {

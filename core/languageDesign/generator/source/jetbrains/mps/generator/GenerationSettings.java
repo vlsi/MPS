@@ -163,12 +163,21 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
     myState.myUseNewGenerator = useNewGenerator;
   }
 
+  public boolean isStrictMode() {
+    return myState.myStrictMode;
+  }
+
+  public void setStrictMode(boolean strictMode) {
+    myState.myStrictMode = strictMode;
+  }
+
   public static class MyState {
     private boolean mySaveTransientModels;
     private boolean myShowErrorsOnly;
     private boolean myGenerateRequirements = true;
     private boolean myCheckModelsBeforeGeneration = true;
     private boolean myUseNewGenerator = false;
+    private boolean myStrictMode = false;
 
     public boolean isSaveTransientModels() {
       return mySaveTransientModels;
@@ -208,6 +217,14 @@ public class GenerationSettings implements PersistentStateComponent<MyState>, Ap
 
     public void setUseNewGenerator(boolean useNewGenerator) {
       myUseNewGenerator = useNewGenerator;
+    }
+
+    public boolean isStrictMode() {
+      return myStrictMode;
+    }
+
+    public void setStrictMode(boolean strictMode) {
+      myStrictMode = strictMode;
     }
   }
 }

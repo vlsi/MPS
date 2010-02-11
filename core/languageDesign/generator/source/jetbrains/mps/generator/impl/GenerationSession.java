@@ -22,6 +22,7 @@ import jetbrains.mps.generator.GenerationSessionContext;
 import jetbrains.mps.generator.GenerationStatus;
 import jetbrains.mps.generator.plan.GenerationPartitioningUtil;
 import jetbrains.mps.generator.plan.GenerationPlan;
+import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.QueryExecutor;
 import jetbrains.mps.ide.messages.IMessageHandler;
 import jetbrains.mps.ide.messages.Message;
@@ -46,7 +47,7 @@ import java.util.List;
 /**
  * Igor Alshannikov
  * Oct 26, 2005
- *
+ * <p/>
  * Created once per model generation.
  */
 public class GenerationSession {
@@ -97,7 +98,7 @@ public class GenerationSession {
     SModelDescriptor currInputModel = myOriginalInputModel;
     do {
       info("execute step " + (myMajorStep + 1));
-      status = generateModel_step(currInputModel.getSModel());
+      status = executeMacroStep(currInputModel.getSModel());
       wasErrors |= status.isError();
       wasWarnings |= status.hasWarnings();
       if (status.isError() || status.isCanceled()) {
@@ -124,7 +125,7 @@ public class GenerationSession {
       status.getTraceMap(), wasErrors, wasWarnings, status.isCanceled());
   }
 
-  private GenerationStatus generateModel_step(SModel inputModel) throws GenerationCanceledException {
+  private GenerationStatus executeMacroStep(SModel inputModel) throws GenerationCanceledException {
     myTransientModelsCount = 0;
     info("generating model \"" + inputModel.getSModelFqName() + "\"");
 
@@ -137,15 +138,17 @@ public class GenerationSession {
     // -- replace context
     mySessionContext = new GenerationSessionContext(myInvocationContext, inputModel, myGenerationPlan, myMajorStep, mySessionContext);
 
-    // -- replace generator
-    TemplateGenerator generator = new TemplateGenerator(mySessionContext, myProgressMonitor, new RuleManager(myGenerationPlan, myMajorStep));
+    // -- prepare generator
+    GeneratorLogger logger = new GeneratorLogger(mySessionContext);
+    RuleManager ruleManager = new RuleManager(myGenerationPlan, myMajorStep);
+
     GenerationStatus status;
     try {
-      SModel outputModel = generateModel_stepIntern(inputModel, generator);
-      boolean wasErrors = generator.getErrorCount() > 0;
-      boolean wasWarnigns = generator.getWarningCount() > 0;
+      SModel outputModel = executeMacroStepInternal(inputModel, logger, ruleManager);
+      boolean wasErrors = logger.getErrorCount() > 0;
+      boolean wasWarnigns = logger.getWarningCount() > 0;
       status = new GenerationStatus(inputModel, outputModel, mySessionContext.getTraceMap(), wasErrors, wasWarnigns, false);
-      if(status.isError()) {
+      if (status.isError()) {
         warning("model \"" + inputModel.getSModelFqName() + "\" has been generated with errors");
       } else {
         info("model \"" + inputModel.getSModelFqName() + "\" has been generated successfully");
@@ -165,7 +168,7 @@ public class GenerationSession {
     return status;
   }
 
-  private SModel generateModel_stepIntern(SModel inputModel, TemplateGenerator generator) throws GenerationFailureException, GenerationCanceledException {
+  private SModel executeMacroStepInternal(SModel inputModel, GeneratorLogger logger, RuleManager ruleManager) throws GenerationFailureException, GenerationCanceledException {
     SModel currentInputModel = inputModel;
 
     // -----------------------
@@ -192,7 +195,7 @@ public class GenerationSession {
     // -----------------------
     // run pre-processing scripts
     // -----------------------
-    currentInputModel = preProcessModel(generator, currentInputModel);
+    currentInputModel = preProcessModel(logger, ruleManager, currentInputModel);
 
     SModel currentOutputModel = createTransientModel();
     mySessionContext.getGenerationTracer().startTracing(currentInputModel, currentOutputModel);
@@ -201,7 +204,7 @@ public class GenerationSession {
     // primary mapping
     // -----------------------
     currentInputModel.setLoading(false);
-    boolean somethingHasBeenGenerated = generator.doMapping(true, currentInputModel, currentOutputModel);
+    boolean somethingHasBeenGenerated = applyRules(currentInputModel, currentOutputModel, true, ruleManager, logger);
     if (!somethingHasBeenGenerated) {
       currentOutputModel.validateLanguagesAndImports();
       recycleWasteModel(currentInputModel);
@@ -224,7 +227,7 @@ public class GenerationSession {
       currentInputModel = currentOutputModel;
       currentInputModel.setLoading(false);
       mySessionContext.getGenerationTracer().startTracing(currentInputModel, transientModel);
-      if (!generator.doMapping(false, currentInputModel, transientModel)) {
+      if (!applyRules(currentInputModel, transientModel, false, ruleManager, logger)) {
         // nothing has been generated
         mySessionContext.getGenerationTracer().discardTracing(currentInputModel, transientModel);
         info("remove empty model '" + transientModel.getSModelFqName() + "'");
@@ -234,7 +237,7 @@ public class GenerationSession {
       }
 
       if (++secondaryMappingRepeatCount > 10) {
-        generator.showErrorMessage(null, "failed to generate output after 10 repeated mappings");
+        logger.showErrorMessage(null, "failed to generate output after 10 repeated mappings");
         if (mySessionContext.getGenerationTracer().isTracing()) {
           LOG.error("last rules applied:");
           List<Pair<SNode, SNode>> pairs = mySessionContext.getGenerationTracer().getAllAppiedRulesWithInputNodes(transientModel.getSModelReference());
@@ -256,12 +259,18 @@ public class GenerationSession {
     // -----------------------
     // run post-processing scripts
     // -----------------------
-    currentOutputModel = postProcessModel(generator, currentOutputModel);
+    currentOutputModel = postProcessModel(logger, ruleManager, currentOutputModel);
 
     return currentOutputModel;
   }
 
-  private SModel preProcessModel(TemplateGenerator generator, SModel currentInputModel) throws GenerationFailureException {
+  private boolean applyRules(SModel currentInputModel, SModel currentOutputModel, boolean isPrimary,
+                             RuleManager ruleManager, GeneratorLogger logger) throws GenerationFailureException, GenerationCanceledException {
+    TemplateGenerator tg = new TemplateGenerator(mySessionContext, myProgressMonitor, logger, ruleManager, currentInputModel, currentOutputModel);
+    return tg.doMapping(isPrimary);
+  }
+
+  private SModel preProcessModel(GeneratorLogger logger, RuleManager ruleManager, SModel currentInputModel) throws GenerationFailureException {
     List<MappingScript> preMappingScripts = mySessionContext.getPreMappingScripts();
     if (!preMappingScripts.isEmpty()) {
       // need to clone input model?
@@ -298,12 +307,13 @@ public class GenerationSession {
         continue;
       }
       addMessage(MessageKind.INFORMATION, "pre-process '" + preMappingScript + "' (" + preMappingScript.getModel().getSModelFqName() + ")", preMappingScript.getNode());
-      QueryExecutor.executeMappingScript(preMappingScript, currentInputModel, generator);
+      ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, logger, ruleManager, currentInputModel, currentInputModel);
+      QueryExecutor.executeMappingScript(preMappingScript, currentInputModel, templateGenerator);
     }
     return currentInputModel;
   }
 
-  private SModel postProcessModel(TemplateGenerator generator, SModel currentOutputModel) throws GenerationFailureException {
+  private SModel postProcessModel(GeneratorLogger logger, RuleManager ruleManager, SModel currentOutputModel) throws GenerationFailureException {
     List<MappingScript> postMappingScripts = mySessionContext.getPostMappingScripts();
     if (!postMappingScripts.isEmpty() && !myDiscardTransients) {  // clone model - needed for tracing
       SModel currentOutputModel_clone = createTransientModel();
@@ -321,7 +331,8 @@ public class GenerationSession {
         continue;
       }
       addMessage(MessageKind.INFORMATION, "post-process '" + postMappingScript + "' (" + postMappingScript.getModel().getLongName() + ")", postMappingScript.getNode());
-      QueryExecutor.executeMappingScript(postMappingScript, currentOutputModel, generator);
+      ITemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, logger, ruleManager, currentOutputModel, currentOutputModel);
+      QueryExecutor.executeMappingScript(postMappingScript, currentOutputModel, templateGenerator);
     }
     return currentOutputModel;
   }

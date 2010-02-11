@@ -54,8 +54,6 @@ public interface ITemplateGenerator {
 
   SNode getPreviousInputNodeByMappingName(String mappingName);
 
-  RuleConsequence getConsequenceForSwitchCase(SNode inputNode, TemplateSwitch templateSwitch) throws GenerationFailureException;
-
   void showInformationMessage(SNode node, String message);
 
   void showWarningMessage(SNode node, String message);
