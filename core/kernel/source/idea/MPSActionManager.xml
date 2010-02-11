@@ -57,6 +57,9 @@
             <action id="CreateRunConfiguration" class="com.intellij.execution.actions.CreateAction"/>
         </group>
 
+        <group id="DebugToolBar" popup="false">
+        </group>
+
 
         <group id="ToolbarRunGroup">
             <separator/>

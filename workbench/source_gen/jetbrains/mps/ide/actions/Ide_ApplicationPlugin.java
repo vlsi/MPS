@@ -25,6 +25,8 @@ public class Ide_ApplicationPlugin extends BaseApplicationPlugin {
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Breakpoints_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Build_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.CreateRootNode_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.DebugPlaybackActionGroup_ActionGroup");
+    this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.DebugSpecificPlaybackActionGroup_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.DevkitActions_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.Edit_ActionGroup");
     this.addGroup(groups, moduleName, "jetbrains.mps.ide.actions.EditorInternal_ActionGroup");
