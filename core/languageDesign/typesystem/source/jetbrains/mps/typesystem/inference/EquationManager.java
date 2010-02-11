@@ -92,6 +92,85 @@ public class EquationManager {
     myUsesCheckOnly = false;
   }
 
+  public void fillWithEquations(EquationManager additionalEquations) {
+    myEquations.putAll(additionalEquations.myEquations);
+
+    for (IWrapper key : additionalEquations.mySubtypesToSupertypesMap.keySet()) {
+      Map<IWrapper, EquationInfo> map = mySubtypesToSupertypesMap.get(key);
+      if (map == null) {
+        map = new HashMap<IWrapper, EquationInfo>();
+        mySubtypesToSupertypesMap.put(key, map);
+      }
+      map.putAll(additionalEquations.mySubtypesToSupertypesMap.get(key));
+    }
+
+    for (IWrapper key : additionalEquations.mySupertypesToSubtypesMap.keySet()) {
+      Map<IWrapper, EquationInfo> map = mySupertypesToSubtypesMap.get(key);
+      if (map == null) {
+        map = new HashMap<IWrapper, EquationInfo>();
+        mySupertypesToSubtypesMap.put(key, map);
+      }
+      map.putAll(additionalEquations.mySupertypesToSubtypesMap.get(key));
+    }
+
+    for (IWrapper key : additionalEquations.mySubtypesToSupertypesMapStrong.keySet()) {
+      Map<IWrapper, EquationInfo> map = mySubtypesToSupertypesMapStrong.get(key);
+      if (map == null) {
+        map = new HashMap<IWrapper, EquationInfo>();
+        mySubtypesToSupertypesMapStrong.put(key, map);
+      }
+      map.putAll(additionalEquations.mySubtypesToSupertypesMapStrong.get(key));
+    }
+
+    for (IWrapper key : additionalEquations.mySupertypesToSubtypesMapStrong.keySet()) {
+      Map<IWrapper, EquationInfo> map = mySupertypesToSubtypesMapStrong.get(key);
+      if (map == null) {
+        map = new HashMap<IWrapper, EquationInfo>();
+        mySupertypesToSubtypesMapStrong.put(key, map);
+      }
+      map.putAll(additionalEquations.mySupertypesToSubtypesMapStrong.get(key));
+    }
+
+    for (IWrapper key : additionalEquations.myComparableTypesMap.keySet()) {
+      Map<IWrapper, EquationInfo> map = myComparableTypesMap.get(key);
+      if (map == null) {
+        map = new HashMap<IWrapper, EquationInfo>();
+        myComparableTypesMap.put(key, map);
+      }
+      map.putAll(additionalEquations.myComparableTypesMap.get(key));
+    }
+
+    for (IWrapper key : additionalEquations.myComparableTypesMapStrong.keySet()) {
+      Map<IWrapper, EquationInfo> map = myComparableTypesMapStrong.get(key);
+      if (map == null) {
+        map = new HashMap<IWrapper, EquationInfo>();
+        myComparableTypesMapStrong.put(key, map);
+      }
+      map.putAll(additionalEquations.myComparableTypesMapStrong.get(key));
+    }
+
+    myWhenConcreteEntities.putAll(additionalEquations.myWhenConcreteEntities);
+    myShallowWhenConcreteEntities.putAll(additionalEquations.myShallowWhenConcreteEntities);
+
+    for (IWrapper key : additionalEquations.myNonConcreteVars.keySet()) {
+      Set<SNodePointer> nodePointers = myNonConcreteVars.get(key);
+      if (nodePointers == null) {
+        nodePointers = new HashSet<SNodePointer>();
+        myNonConcreteVars.put(key, nodePointers);
+      }
+      nodePointers.addAll(additionalEquations.myNonConcreteVars.get(key));
+    }
+
+    for (IWrapper key : additionalEquations.myWrapperListeners.keySet()) {
+      Set<IWrapperListener> wrapperListeners = myWrapperListeners.get(key);
+      if (wrapperListeners == null) {
+        wrapperListeners = new HashSet<IWrapperListener>();
+        myWrapperListeners.put(key, wrapperListeners);
+      }
+      wrapperListeners.addAll(additionalEquations.myWrapperListeners.get(key));
+    }
+  }
+
   public void setParent(IWrapper type, IWrapper parent) {
     myEquations.put(type, parent);
   }
