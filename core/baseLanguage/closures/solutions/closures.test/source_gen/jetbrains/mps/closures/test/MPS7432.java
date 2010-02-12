@@ -9,7 +9,7 @@ public class MPS7432 {
   public MPS7432() {
   }
 
-  public static <T>T aaaa(final _FunctionTypes._return_P0_E0<? extends T> t) {
+  public static <T> T aaaa(final _FunctionTypes._return_P0_E0<? extends T> t) {
     final Wrappers._T<T> result = new Wrappers._T<T>(null);
     bbb(new _FunctionTypes._void_P0_E0() {
       public void invoke() {

@@ -21,6 +21,6 @@ public class Child_Test extends Parent_Test {
     this.foo = foo;
   }
 
-  public static <T>void foo() {
+  public static <T> void foo() {
   }
 }
