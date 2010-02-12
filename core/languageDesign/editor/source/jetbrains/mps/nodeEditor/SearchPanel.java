@@ -282,6 +282,13 @@ public class SearchPanel extends AbstractSearchPanel {
 
   protected void exportToFindTool() {
     final List<SearchPanelEditorMessage> searchMessages = getMessages();
+    Collections.sort(searchMessages, new Comparator<SearchPanelEditorMessage>() {
+      public int compare(SearchPanelEditorMessage o1, SearchPanelEditorMessage o2) {
+        Integer i1 = allCellsAndContent().first.indexOf(o1.getCell(myEditor));
+        Integer i2 = allCellsAndContent().first.indexOf(o2.getCell(myEditor));
+        return i1.compareTo(i2);
+      }
+    });
     UsagesViewTool usagesViewTool = new UsagesViewTool(myEditor.getOperationContext().getProject());
     BaseNode baseNode = new BaseNode() {
       public SearchResults doGetResults(SearchQuery query, ProgressIndicator indicator) {
