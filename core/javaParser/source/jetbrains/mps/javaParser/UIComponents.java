@@ -15,43 +15,33 @@
  */
 package jetbrains.mps.javaParser;
 
-import jetbrains.mps.nodeEditor.MPSColors;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.workbench.dialogs.project.IBindedDialog;
-import jetbrains.mps.workbench.dialogs.project.BaseBindedDialog;
-import jetbrains.mps.workbench.dialogs.project.components.parts.UiListsFactory;
-import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.logging.Logger;
-import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.reloading.FileClassPathItem;
-import jetbrains.mps.reloading.JarFileClassPathItem;
-import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.vfs.FileSystemFile;
-import jetbrains.mps.vfs.IFile;
-
-import javax.swing.*;
-import java.util.*;
-import java.util.List;
-import java.io.File;
-import java.io.IOException;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-
-import com.intellij.openapi.util.Computable;
 import com.intellij.ide.DataManager;
 import com.intellij.util.containers.HashMap;
+import jetbrains.mps.ide.dialogs.DialogDimensionsSettings.DialogDimensions;
+import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.reloading.FileClassPathItem;
+import jetbrains.mps.reloading.IClassPathItem;
+import jetbrains.mps.reloading.JarFileClassPathItem;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.vfs.FileSystemFile;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.workbench.MPSDataKeys;
+import jetbrains.mps.workbench.dialogs.project.BaseBindedDialog;
+import jetbrains.mps.workbench.dialogs.project.components.parts.BoundListPanel;
 import org.jdesktop.observablecollections.ObservableCollections;
 import org.jdesktop.observablecollections.ObservableList;
-import org.jdesktop.observablecollections.ObservableListListener;
 
-/**
- * Created by IntelliJ IDEA.
- * User: Cyril.Konopko
- * Date: 18.11.2009
- * Time: 18:03:58
- * To change this template use File | Settings | File Templates.
- */
+import javax.swing.*;
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+import java.awt.Frame;
+import java.awt.HeadlessException;
+import java.awt.event.ActionEvent;
+import java.io.File;
+import java.io.IOException;
+import java.util.*;
+
 public class UIComponents {
   private static final Logger LOG = Logger.getLogger(UIComponents.class);
 
@@ -76,11 +66,9 @@ public class UIComponents {
       JScrollPane panel = new JScrollPane(ClasspathSelectionTree.createClasspathSelectionTree(this, mySourceDir));
 
       DefaultListCellRenderer renderer = new DefaultListCellRenderer();
-      JPanel classPathPanel = UiListsFactory.createBoundListPanel(this, "Added Classpaths",
-        myAdditionalClasspaths, renderer, null, null);
+      JPanel classPathPanel = createBoundListPanel("Added Classpaths", myAdditionalClasspaths, renderer);
 
-      JPanel classesList = UiListsFactory.createBoundListPanel(this, "Unresolved Names",
-        myUnresolvedFQNames, renderer, null, null);
+      JPanel classesList = createBoundListPanel("Unresolved Names", myUnresolvedFQNames, renderer);
 
       JSplitPane innerSplitPane = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, classPathPanel, classesList);
       innerSplitPane.setResizeWeight(0.5);
@@ -108,10 +96,19 @@ public class UIComponents {
       this.setModal(true);
     }
 
+    private JPanel createBoundListPanel(String caption,
+                                        List list,
+                                        DefaultListCellRenderer renderer) {
+      BoundListPanel result = new BoundListPanel(this, caption, list);
+      result.setCellRenderer(renderer);
+      result.init();
+      return result;
+    }
+
     @Override
     public DialogDimensions getDefaultDimensionSettings() {
       Frame mainFrame = getOperationContext().getMainFrame();
-      return new DialogDimensions(mainFrame.getX() + mainFrame.getWidth()/2, mainFrame.getY() + mainFrame.getHeight()/2, 600, 300);
+      return new DialogDimensions(mainFrame.getX() + mainFrame.getWidth() / 2, mainFrame.getY() + mainFrame.getHeight() / 2, 600, 300);
     }
 
     private IClassPathItem chooseClasspath(File sourceDir) {
