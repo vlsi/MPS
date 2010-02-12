@@ -38,4 +38,6 @@ public interface IHelginsDescriptor {
   public Set<IVariableConverter_Runtime> getVariableConverters();
 
   public Set<IOverloadedOpsTypesProvider> getOverloadedOperationsTypesProviders();
+
+  public Set<AbstractDependentComputation_Runtime> getDependentComputations();
 }

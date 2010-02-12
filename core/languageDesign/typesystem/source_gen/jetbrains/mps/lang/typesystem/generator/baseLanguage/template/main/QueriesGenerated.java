@@ -1077,6 +1077,14 @@ public class QueriesGenerated {
     return DefaultGroupReference_Behavior.call_createGeneratedNodeId_7342618720440051599(_context.getNode());
   }
 
+  public static Object propertyMacro_GetPropertyValue_6981684633700507644(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name") + "_DependentComputation";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6981684633700629175(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false));
+  }
+
   public static Object propertyMacro_GetPropertyValue_7342618720440051693(final IOperationContext operationContext, final PropertyMacroContext _context) {
     if (SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement")) {
       SNode groupReference = SLinkOperations.getTarget(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractInequationStatement"), "inequationGroup", true);
@@ -1448,6 +1456,10 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_5830155447076592195(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return PatternVarsUtil.getFieldTypeReference(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false));
+  }
+
+  public static Object referenceMacro_GetReferent_6438009189934260017(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return (SNode) _context.getOutputNodeByInputNodeAndMappingLabelAndOutputNode(_context.getNode(), _context.getOutputNode(), "classForRule").getChild("constructor");
   }
 
   public static Object referenceMacro_GetReferent_8417933508988548835(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1988,6 +2000,10 @@ public class QueriesGenerated {
 
   public static boolean ifMacro_Condition_5087829510150342592(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_5810001097649331299(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "applicableBlock", true) != null);
   }
 
   public static boolean ifMacro_Condition_5830155447076418547(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -2594,6 +2610,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "errorString", true);
   }
 
+  public static SNode sourceNodeQuery_6981684633700629198(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "applicableBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_6981684633700629223(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "findMasterBlock", true), "body", true);
+  }
+
   public static SNode sourceNodeQuery_7806648416361380843(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "leftOperandType", true);
   }
@@ -2768,6 +2792,11 @@ public class QueriesGenerated {
         return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(it, "concept", false));
       }
     }, true);
+  }
+
+  public static Iterable sourceNodesQuery_6438009189934221312(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    List<SNode> computations = SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.typesystem.structure.DependentComputationItem");
+    return computations;
   }
 
   public static Iterable sourceNodesQuery_6773347515165716595(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

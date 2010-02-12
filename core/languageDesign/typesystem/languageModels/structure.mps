@@ -2724,19 +2724,9 @@
       <link role="dataType:0" targetNodeId="1.1082983041843:0" resolveInfo="string" />
     </node>
   </node>
-  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8058965347377019117">
-    <property name="name:0" value="DependentComputations" />
-    <property name="rootable:0" value="true" />
-    <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
-    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8058965347377050353">
-      <property name="metaClass:0" value="aggregation" />
-      <property name="sourceCardinality:0" value="0..n" />
-      <property name="role:0" value="item" />
-      <link role="target:0" targetNodeId="8058965347377019242:3" resolveInfo="DependentComputationItem" />
-    </node>
-  </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8058965347377019242">
     <property name="name:0" value="DependentComputationItem" />
+    <property name="rootable:0" value="true" />
     <link role="extends:0" targetNodeId="1.1133920641626:0" resolveInfo="BaseConcept" />
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8058965347377049979">
       <property name="metaClass:0" value="aggregation" />
@@ -2754,6 +2744,9 @@
       <property name="role:0" value="applicableConcept" />
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="3.1071489090640:0" resolveInfo="ConceptDeclaration" />
+    </node>
+    <node role="implements:0" type="jetbrains.mps.lang.structure.structure.InterfaceConceptReference:0" id="6981684633700494233">
+      <link role="intfc:0" targetNodeId="1.1169194658468:0" resolveInfo="INamedConcept" />
     </node>
   </node>
   <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="8058965347377019244">
