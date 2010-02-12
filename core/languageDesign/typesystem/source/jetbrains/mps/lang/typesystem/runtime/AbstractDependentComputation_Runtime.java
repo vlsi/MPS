@@ -9,12 +9,39 @@ import jetbrains.mps.smodel.SNode;
  * Time: 16:45:44
  * To change this template use File | Settings | File Templates.
  */
-public abstract class AbstractDependentComputation_Runtime {
+public abstract class AbstractDependentComputation_Runtime implements IApplicableToConcept {
+  private DependentComputationWrapper myWrapper = null;
+
   public abstract String getConceptFQName();
 
-  public boolean isApplicable(SNode node) {
-    return true;
+  public abstract String getBlockingConceptFQName();
+
+  public abstract SNode getBlockingNode(SNode node);
+
+  @Override
+  public String getApplicableConceptFQName() {
+    return getConceptFQName();
   }
-  
-  public abstract SNode getMasterNode(SNode node);
+
+  public DependentComputationWrapper getWrapper() {
+    if (myWrapper == null) myWrapper = new DependentComputationWrapper(this);
+    return myWrapper;
+  }
+
+  public static class DependentComputationWrapper implements IApplicableToConcept {
+    private AbstractDependentComputation_Runtime myPeer;
+
+    public DependentComputationWrapper(AbstractDependentComputation_Runtime peer) {
+      myPeer = peer;
+    }
+
+    public AbstractDependentComputation_Runtime getPeer() {
+      return myPeer;
+    }
+
+    @Override
+    public String getApplicableConceptFQName() {
+      return myPeer.getBlockingConceptFQName();
+    }
+  }
 }

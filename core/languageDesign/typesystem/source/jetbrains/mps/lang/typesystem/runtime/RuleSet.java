@@ -36,16 +36,24 @@ public class RuleSet<T extends IApplicableToConcept> {
 
   public void addRuleSetItem(Set<T> rules) {
     for (T rule : rules) {
-      AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(rule.getApplicableConceptFQName(), GlobalScope.getInstance());
-      Set<T> existingRules = myRules.get(concept);
-      if (existingRules == null) {
-        existingRules = new HashSet<T>(2);
-        myRules.put(concept, existingRules);
-      }
-      existingRules.add(rule);
+      addRule(rule);
     }
-
     myRulesCache.clear();
+  }
+
+  public void addRule(T rule) {
+    addRule_internal(rule);
+    myRulesCache.clear();
+  }
+
+  private void addRule_internal(T rule) {
+    AbstractConceptDeclaration concept = SModelUtil_new.findConceptDeclaration(rule.getApplicableConceptFQName(), GlobalScope.getInstance());
+    Set<T> existingRules = myRules.get(concept);
+    if (existingRules == null) {
+      existingRules = new HashSet<T>(2);
+      myRules.put(concept, existingRules);
+    }
+    existingRules.add(rule);
   }
 
   public Set<T> getRules(SNode node) {

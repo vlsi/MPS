@@ -17,7 +17,7 @@ public class DependentComputationItem extends BaseConcept implements INamedConce
   public static final String ALIAS = "alias";
   public static final String VIRTUAL_PACKAGE = "virtualPackage";
   public static final String APPLICABLE_CONCEPT = "applicableConcept";
-  public static final String APPLICABLE_BLOCK = "applicableBlock";
+  public static final String BLOCKING_NODE_CONCEPT = "blockingNodeConcept";
   public static final String FIND_MASTER_BLOCK = "findMasterBlock";
 
   public DependentComputationItem(SNode node) {
@@ -64,12 +64,12 @@ public class DependentComputationItem extends BaseConcept implements INamedConce
     super.setReferent(DependentComputationItem.APPLICABLE_CONCEPT, node);
   }
 
-  public DependentComputationItem_ApplicableBlock getApplicableBlock() {
-    return (DependentComputationItem_ApplicableBlock) this.getChild(DependentComputationItem_ApplicableBlock.class, DependentComputationItem.APPLICABLE_BLOCK);
+  public ConceptDeclaration getBlockingNodeConcept() {
+    return (ConceptDeclaration) this.getReferent(ConceptDeclaration.class, DependentComputationItem.BLOCKING_NODE_CONCEPT);
   }
 
-  public void setApplicableBlock(DependentComputationItem_ApplicableBlock node) {
-    super.setChild(DependentComputationItem.APPLICABLE_BLOCK, node);
+  public void setBlockingNodeConcept(ConceptDeclaration node) {
+    super.setReferent(DependentComputationItem.BLOCKING_NODE_CONCEPT, node);
   }
 
   public DependentComputationItem_FindMasterBlock getFindMasterBlock() {

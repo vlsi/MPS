@@ -17,6 +17,7 @@ package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.lang.typesystem.runtime.*;
+import jetbrains.mps.lang.typesystem.runtime.AbstractDependentComputation_Runtime.DependentComputationWrapper;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
@@ -33,6 +34,8 @@ public class RulesManager {
   private RuleSet<SubtypingRule_Runtime> mySubtypingRules = new RuleSet<SubtypingRule_Runtime>();
   private DoubleRuleSet<ComparisonRule_Runtime> myComparisonRules = new DoubleRuleSet<ComparisonRule_Runtime>();
   private DoubleRuleSet<InequationReplacementRule_Runtime> myReplacementRules = new DoubleRuleSet<InequationReplacementRule_Runtime>();
+  private RuleSet<AbstractDependentComputation_Runtime> myDependentComputations = new RuleSet<AbstractDependentComputation_Runtime>();
+  private RuleSet<DependentComputationWrapper> myDependentComputationsBlockedNodes = new RuleSet<DependentComputationWrapper>();
 
   private Set<IVariableConverter_Runtime> myVariableConverters = new HashSet<IVariableConverter_Runtime>();
 
@@ -66,6 +69,8 @@ public class RulesManager {
     myDependenciesContainer.clear();
     myVariableConverters.clear();
     myOverloadedOperationsManager.clear();
+    myDependentComputations.clear();
+    myDependentComputationsBlockedNodes.clear();
   }
 
   public boolean hasModelLoadedRules(SModelDescriptor model) {
@@ -97,21 +102,26 @@ public class RulesManager {
     String oldClassname = "HelginsDescriptor";
     String classname = "TypesystemDescriptor";
     try {
-      IHelginsDescriptor helginsDescriptor;
+      IHelginsDescriptor typesystemDescriptor;
       Class<? extends IHelginsDescriptor> c = (Class<? extends IHelginsDescriptor>) l.getClass(packageName + "." + classname);
       if (c == null) {
         c = (Class<? extends IHelginsDescriptor>) l.getClass(packageName + "." + oldClassname);
       }
       if (c != null) {
-        helginsDescriptor = c.newInstance();
-        myInferenceRules.addRuleSetItem(helginsDescriptor.getInferenceRules());
-        myNonTypesystemRules.addRuleSetItem(helginsDescriptor.getNonTypesystemRules());
-        mySubtypingRules.addRuleSetItem(helginsDescriptor.getSubtypingRules());
-        myComparisonRules.addRuleSetItem(helginsDescriptor.getComparisonRules());
-        myReplacementRules.addRuleSetItem(helginsDescriptor.getEliminationRules());
-        myDependenciesContainer.addDependencies(helginsDescriptor.getDependencies());
-        myVariableConverters.addAll(helginsDescriptor.getVariableConverters());
-        myOverloadedOperationsManager.addOverloadedOperationsTypeProviders(helginsDescriptor.getOverloadedOperationsTypesProviders());
+        typesystemDescriptor = c.newInstance();
+        myInferenceRules.addRuleSetItem(typesystemDescriptor.getInferenceRules());
+        myNonTypesystemRules.addRuleSetItem(typesystemDescriptor.getNonTypesystemRules());
+        mySubtypingRules.addRuleSetItem(typesystemDescriptor.getSubtypingRules());
+        myComparisonRules.addRuleSetItem(typesystemDescriptor.getComparisonRules());
+        myReplacementRules.addRuleSetItem(typesystemDescriptor.getEliminationRules());
+        myDependenciesContainer.addDependencies(typesystemDescriptor.getDependencies());
+        myVariableConverters.addAll(typesystemDescriptor.getVariableConverters());
+        myOverloadedOperationsManager.addOverloadedOperationsTypeProviders(typesystemDescriptor.getOverloadedOperationsTypesProviders());
+        Set<AbstractDependentComputation_Runtime> dependentComputations = typesystemDescriptor.getDependentComputations();
+        myDependentComputations.addRuleSetItem(dependentComputations);
+        for (AbstractDependentComputation_Runtime dependentComputation : dependentComputations) {
+          myDependentComputationsBlockedNodes.addRule(dependentComputation.getWrapper());
+        }
         myComparisonRules.makeConsistent();
         myReplacementRules.makeConsistent();
         myDependenciesContainer.makeConsistent();
@@ -207,5 +217,14 @@ public class RulesManager {
 
   public TypeChecker getTypeChecker() {
     return myTypeChecker;
+  }
+
+  public Set<AbstractDependentComputation_Runtime> getDependentComputations(SNode node) {
+    return myDependentComputations.getRules(node);
+  }
+
+  public boolean isBlockingDependentComputationNode(SNode node) {
+    Set<DependentComputationWrapper> set = myDependentComputationsBlockedNodes.getRules(node);
+    return set != null && !(set.isEmpty());
   }
 }

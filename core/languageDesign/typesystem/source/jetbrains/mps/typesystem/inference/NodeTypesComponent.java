@@ -72,10 +72,12 @@ public class NodeTypesComponent implements EditorMessageOwner {
   private WeakSet<SNode> myNodesDependentOnCaches = new WeakSet<SNode>();
 
   private EquationManager myEquationManager;
-  private EquationManager myMasterEquationManager;
-  private SNode myCurrentSlaveComputedNode;
-  private Map<SNode, SNode> myBlockedOnSlaveComputation;
-  private Set<SNode> mySlaveComputed;
+  private Stack<EquationManager> myMasterEquationManagers = new Stack<EquationManager>();
+
+  private Stack<SNode> myCurrentSlaveComputedNodes = new Stack<SNode>();
+  //key is a blocking node
+  private Map<SNode, Set<SNode>> myBlockedOnSlaveComputation = new HashMap<SNode, Set<SNode>>();
+  private Set<SNode> myComputedBlockingTerms = new HashSet<SNode>();
 
   private Map<String, Set<SNode>> myRegisteredVariables = new HashMap<String, Set<SNode>>();
 
@@ -123,7 +125,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
   private Set<SNodePointer> myNotSkippedNodes = new HashSet<SNodePointer>(1);
 
   private static final Logger LOG = Logger.getLogger(NodeTypesComponent.class);
-  private Set<SNode> myCurrentFrontier;
+  private Stack<Set<SNode>> myCurrentFrontiers = new Stack<Set<SNode>>();
   private SNode myCurrentCheckedNode;
   private boolean myCurrentTypeAffected = false;
   private WeakHashMap<SNode, Set<Pair<String, String>>> myNodesToRules = new WeakHashMap<SNode, Set<Pair<String, String>>>();
@@ -158,14 +160,12 @@ public class NodeTypesComponent implements EditorMessageOwner {
 
   public NodeTypesComponent copy(TypeCheckingContext typeCheckingContext) {
     NodeTypesComponent result = new NodeTypesComponent(myRootNode, myTypeChecker, typeCheckingContext);
-
     result.myIsSpecial = myIsSpecial;
     result.mySlicer = mySlicer;
     result.myIsSmartCompletion = myIsSmartCompletion;
     result.myHole = myHole;
     result.myHoleTypeWrapper = myHoleTypeWrapper;
     result.myHoleIsAType = myHoleIsAType;
-
     return result;
   }
 
@@ -177,40 +177,76 @@ public class NodeTypesComponent implements EditorMessageOwner {
     myIsChecked = false;
   }
 
+  private boolean isForSlaveComputation(SNode node) {
+    return myTypeChecker.getRulesManager().isBlockingDependentComputationNode(node);
+  }
+
+  private boolean testAndBlockOnSlaveComputation(SNode node) {
+    boolean result = false;
+    Set<AbstractDependentComputation_Runtime> dependentComputations =
+      myTypeChecker.getRulesManager().getDependentComputations(node);
+    for (AbstractDependentComputation_Runtime dependentComputation : dependentComputations) {
+      SNode blockingNode = dependentComputation.getBlockingNode(node);
+      if (blockingNode != null) {
+        if (!myComputedBlockingTerms.contains(blockingNode)) {
+          result = true;
+          Set<SNode> nodes = myBlockedOnSlaveComputation.get(blockingNode);
+          if (nodes == null) {
+            nodes = new HashSet<SNode>();
+            myBlockedOnSlaveComputation.put(blockingNode, nodes);
+          }
+          nodes.add(node);
+        }
+      }
+    }
+    return result;
+  }
+
+  private void performSlaveComputation(SNode node) {
+    startSlaveComputation(node);
+    computeTypesForNode(node, true, new ArrayList<SNode>(0));
+    SNode newNode = finishSlaveComputation();
+    assert newNode == node;
+    unblockNodesOnSlaveComputation(node);
+  }
+
   private void clearEquationManager() {
     myEquationManager = new EquationManager(myTypeChecker, myTypeCheckingContext);
+    myMasterEquationManagers.clear();
+    myCurrentSlaveComputedNodes.clear();
+    myComputedBlockingTerms.clear();
+    myBlockedOnSlaveComputation.clear();
   }
 
   private void startSlaveComputation(SNode node) {
-    assert myCurrentSlaveComputedNode == null;
-    myCurrentSlaveComputedNode = node;
-    myMasterEquationManager = myEquationManager;
-    myEquationManager = new EquationManager(myTypeChecker, myTypeCheckingContext, myMasterEquationManager);
+    myCurrentSlaveComputedNodes.push(node);
+    myMasterEquationManagers.push(myEquationManager);
+    myEquationManager = new EquationManager(myTypeChecker, myTypeCheckingContext, myMasterEquationManagers.peek());
   }
 
   private SNode finishSlaveComputation() {
-    assert myCurrentSlaveComputedNode != null;
     EquationManager slaveManager = myEquationManager;
-    myEquationManager = myMasterEquationManager;
-    myMasterEquationManager = null;
+    myEquationManager = myMasterEquationManagers.pop();
+    myMasterEquationManagers = null;
     slaveManager.solveInequations();
     myEquationManager.fillWithEquations(slaveManager);
-    SNode result = myCurrentSlaveComputedNode;
-    myCurrentSlaveComputedNode = null;
+    SNode result = myCurrentSlaveComputedNodes.pop();
     return result;
   }
 
   private void unblockNodesOnSlaveComputation() {
-    for (SNode node : mySlaveComputed) {
-      SNode blocked = myBlockedOnSlaveComputation.get(node);
-      if (blocked != null) {
-        unblockNodeOnSlaveComputation(blocked);
+    for (SNode node : myComputedBlockingTerms) {
+      Set<SNode> blockedNodes = myBlockedOnSlaveComputation.get(node);
+      if (blockedNodes != null) {
+        for (SNode blocked : blockedNodes) {
+          unblockNodesOnSlaveComputation(blocked);
+        }
       }
     }
   }
 
-  private void unblockNodeOnSlaveComputation(SNode node) {
-    myCurrentFrontier.add(node);
+  private void unblockNodesOnSlaveComputation(SNode node) {
+    myCurrentFrontiers.peek().add(node);
   }
 
   public SNode getNode() {
@@ -351,11 +387,15 @@ public class NodeTypesComponent implements EditorMessageOwner {
       if (inferenceMode) {
         getEquationManager().setInferenceMode();
       }
+      if (myIsSmartCompletion) {
+        myHoleTypeWrapper = HoleWrapper.createHoleWrapper(myEquationManager, myHoleTypeWrapper);
+        if (!myHoleIsAType) {
+          myNodesToTypesMap.put(myHole, myHoleTypeWrapper.getNode());
+        }
+      }
       computeTypesForNode(nodeToCheck, forceChildrenCheck, additionalNodes);
       solveInequationsAndExpandTypes();
       performActionsAfterChecking();
-
-
     } finally {
       myNotSkippedNodes.clear();
       clearEquationManager();
@@ -503,27 +543,30 @@ public class NodeTypesComponent implements EditorMessageOwner {
     Set<SNode> newFrontier = new LinkedHashSet<SNode>();
     frontier.add(node);
     frontier.addAll(additionalNodes);
-    if (myIsSmartCompletion) {
-      myHoleTypeWrapper = HoleWrapper.createHoleWrapper(myEquationManager, myHoleTypeWrapper);
-      if (!myHoleIsAType) {
-        myNodesToTypesMap.put(myHole, myHoleTypeWrapper.getNode());
-      }
-    }
     while (!(frontier.isEmpty())) {
+      myCurrentFrontiers.push(newFrontier);
       for (SNode sNode : frontier) {
+        if (isForSlaveComputation(sNode)) {
+          performSlaveComputation(node);
+          continue;
+        }
         if (myFullyCheckedNodes.contains(sNode)) {
           continue;
         }
+        Set<SNode> candidatesForFrontier = new LinkedHashSet<SNode>();
         if (myIsSpecial) {
-          newFrontier.addAll(myTypeChecker.getRulesManager().getDependencies(sNode));
+          candidatesForFrontier.addAll(myTypeChecker.getRulesManager().getDependencies(sNode));
         }
         if (forceChildrenCheck) {
-          newFrontier.addAll(sNode.getChildren());
+          candidatesForFrontier.addAll(sNode.getChildren());
+        }
+        for (SNode candidate : candidatesForFrontier) {
+          if (!testAndBlockOnSlaveComputation(candidate)) {
+            newFrontier.add(candidate);
+          }
         }
         if (!myPartlyCheckedNodes.contains(sNode)) {
           myNotSkippedNodes.add(new SNodePointer(sNode));
-          myCurrentFrontier = newFrontier;
-
           MyLanguageCachesReadListener languageCachesReadListener = null;
           if (isIncrementalMode()) {
             languageCachesReadListener = new MyLanguageCachesReadListener();
@@ -539,7 +582,6 @@ public class NodeTypesComponent implements EditorMessageOwner {
               LanguageHierarchyCache.getInstance().removeReadAccessListener();
               NodeReadEventsCaster.removeNodesReadListener();
             }
-            myCurrentFrontier = null;
           }
           if (isIncrementalMode()) {
             synchronized (ACCESS_LOCK) {
@@ -561,6 +603,8 @@ public class NodeTypesComponent implements EditorMessageOwner {
         }
         myFullyCheckedNodes.add(sNode);
       }
+      Set<SNode> newFrontierPopped = myCurrentFrontiers.pop();
+      assert newFrontierPopped == newFrontier;
       frontier = newFrontier;
       newFrontier = new LinkedHashSet<SNode>();
     }
@@ -784,8 +828,8 @@ public class NodeTypesComponent implements EditorMessageOwner {
     if (myPartlyCheckedNodes.contains(node)) {
       return;
     }
-    if (myCurrentFrontier != null) {
-      myCurrentFrontier.add(node);
+    if (!myCurrentFrontiers.isEmpty()) {
+      myCurrentFrontiers.peek().add(node);
     }
   }
 
@@ -1122,7 +1166,7 @@ public class NodeTypesComponent implements EditorMessageOwner {
         myCurrentNodesToInvalidateNonTypesystem.add(eventNode);
         myInvalidationWasPerformedNT = false;
       } else {
-   /*     Set<SNode> nodes = myNodesToDependentNodes_A.get(eventNode);    // todo don't use here myNodesToDependentNodes
+        /*     Set<SNode> nodes = myNodesToDependentNodes_A.get(eventNode);    // todo don't use here myNodesToDependentNodes
         if (nodes != null) {
           myCurrentNodesToInvalidate.addAll(nodes);
         }*/

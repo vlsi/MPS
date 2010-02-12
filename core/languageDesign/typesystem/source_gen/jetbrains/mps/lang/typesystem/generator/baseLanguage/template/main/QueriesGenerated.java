@@ -889,6 +889,10 @@ public class QueriesGenerated {
     return LinkDeclaration_Behavior.call_getGenuineRole_1213877254542(SLinkOperations.getTarget(_context.getNode(), "linkDeclaration", false));
   }
 
+  public static Object propertyMacro_GetPropertyValue_160921426017522098(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return INamedConcept_Behavior.call_getFqName_1213877404258(SLinkOperations.getTarget(_context.getNode(), "blockingNodeConcept", false));
+  }
+
   public static Object propertyMacro_GetPropertyValue_1149547447656252123(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "modelId");
   }
@@ -2002,10 +2006,6 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "foreignMessageSource", true) != null);
   }
 
-  public static boolean ifMacro_Condition_5810001097649331299(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(_context.getNode(), "applicableBlock", true) != null);
-  }
-
   public static boolean ifMacro_Condition_5830155447076418547(final IOperationContext operationContext, final IfMacroContext _context) {
     return PatternVarsUtil.fieldTypeHasParameter(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false));
   }
@@ -2608,10 +2608,6 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_6663831120772346355(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "errorString", true);
-  }
-
-  public static SNode sourceNodeQuery_6981684633700629198(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "applicableBlock", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_6981684633700629223(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
