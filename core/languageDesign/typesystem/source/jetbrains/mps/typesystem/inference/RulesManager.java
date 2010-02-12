@@ -219,12 +219,23 @@ public class RulesManager {
     return myTypeChecker;
   }
 
-  public Set<AbstractDependentComputation_Runtime> getDependentComputations(SNode node) {
-    return myDependentComputations.getRules(node);
+  public Set<AbstractDependentComputation_Runtime> getDependentComputations(final SNode node) {
+    return CollectionUtil.filter(myDependentComputations.getRules(node), new Condition<AbstractDependentComputation_Runtime>() {
+      @Override
+      public boolean met(AbstractDependentComputation_Runtime dependentComputation) {
+        return dependentComputation.isApplicable(node);
+      }
+    });
   }
 
   public boolean isBlockingDependentComputationNode(SNode node) {
     Set<DependentComputationWrapper> set = myDependentComputationsBlockedNodes.getRules(node);
-    return set != null && !(set.isEmpty());
+    if (set == null) return false;
+    for (DependentComputationWrapper wrapper : set) {
+      if (wrapper.isBlocking(node)) {
+        return true;
+      }
+    }
+    return false;
   }
 }

@@ -2734,6 +2734,16 @@
       <property name="sourceCardinality:0" value="1" />
       <link role="target:0" targetNodeId="8058965347377049973:3" resolveInfo="DependentComputationItem_FindMasterBlock" />
     </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3000845361816457071">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="isApplicableBlock" />
+      <link role="target:0" targetNodeId="3000845361816456520:3" resolveInfo="DependentComputationItem_ApplicableBlock" />
+    </node>
+    <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="3000845361816457072">
+      <property name="metaClass:0" value="aggregation" />
+      <property name="role:0" value="isBlockingBlock" />
+      <link role="target:0" targetNodeId="3000845361816456520:3" resolveInfo="DependentComputationItem_ApplicableBlock" />
+    </node>
     <node role="linkDeclaration:0" type="jetbrains.mps.lang.structure.structure.LinkDeclaration:0" id="8058965347377019243">
       <property name="metaClass:0" value="reference" />
       <property name="role:0" value="applicableConcept" />
@@ -2779,6 +2789,18 @@
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="8058965347377049975">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
       <node role="target:0" type="jetbrains.mps.lang.smodel.structure.SNodeType:16" id="8058965347377049977" />
+    </node>
+  </node>
+  <node type="jetbrains.mps.lang.structure.structure.ConceptDeclaration:0" id="3000845361816456520">
+    <property name="name:0" value="DependentComputationItem_ApplicableBlock" />
+    <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="3000845361816456522">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
+      <link role="target:0" targetNodeId="1216383337216:3" resolveInfo="ConceptFunctionParameter_node" />
+    </node>
+    <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="3000845361816456524">
+      <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />
+      <node role="target:0" type="jetbrains.mps.baseLanguage.structure.BooleanType:3" id="3000845361816457070" />
     </node>
   </node>
 </model>

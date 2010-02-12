@@ -23,6 +23,14 @@ public abstract class AbstractDependentComputation_Runtime implements IApplicabl
     return getConceptFQName();
   }
 
+  public boolean isApplicable(SNode node) {
+    return true;
+  }
+
+  public boolean isBlocking(SNode node) {
+    return true;
+  }
+
   public DependentComputationWrapper getWrapper() {
     if (myWrapper == null) myWrapper = new DependentComputationWrapper(this);
     return myWrapper;
@@ -42,6 +50,10 @@ public abstract class AbstractDependentComputation_Runtime implements IApplicabl
     @Override
     public String getApplicableConceptFQName() {
       return myPeer.getBlockingConceptFQName();
+    }
+
+    public boolean isBlocking(SNode node) {
+      return myPeer.isBlocking(node);
     }
   }
 }

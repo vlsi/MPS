@@ -1930,6 +1930,14 @@ public class QueriesGenerated {
     return false;
   }
 
+  public static boolean ifMacro_Condition_3000845361816500841(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "isApplicableBlock", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_3000845361816500857(final IOperationContext operationContext, final IfMacroContext _context) {
+    return (SLinkOperations.getTarget(_context.getNode(), "isBlockingBlock", true) != null);
+  }
+
   public static boolean ifMacro_Condition_3018762098980868455(final IOperationContext operationContext, final IfMacroContext _context) {
     SNode method = SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration", false, false);
     if (method == null) {
@@ -2536,6 +2544,14 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_412500033819411522(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "applicableNode", true), "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true);
+  }
+
+  public static SNode sourceNodeQuery_3000845361816500877(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isApplicableBlock", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_3000845361816500881(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "isBlockingBlock", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_5087829510150333617(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
