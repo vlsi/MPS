@@ -116,12 +116,6 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
 
   private Comparator<SNode> getComparator() {
     return new Comparator<SNode>() {
-      private void check(int index, SNode searchedNode, SNode editorNode) {
-        if (index == -1) {
-          System.err.println("\"" + searchedNode.getRole_() + "\" can't found in " + editorNode);
-        }
-      }
-
       private boolean fromSameCollection(SNode node1, SNode node2) {
         return EqualUtil.equals(node1.getRole_(), node2.getRole_());
       }
@@ -154,7 +148,6 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
         SNode editorNode = conceptEditorDeclaration.getNode();
         int index = indexInEditor(editorNode, searchedNode.getRole_(), new Pair(-1, false)).o1;
         if (index != -1 || ancestor.getParent() == null) {
-          check(index, searchedNode, searchedNode.getContainingRoot());
           return index;
         }
         return searchInEditors(ancestor.getParent(), searchedNode);

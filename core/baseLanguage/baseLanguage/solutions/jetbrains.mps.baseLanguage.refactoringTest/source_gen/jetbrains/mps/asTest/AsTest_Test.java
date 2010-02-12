@@ -17,35 +17,35 @@ public class AsTest_Test extends TestCase {
     Assert.assertSame(str, as5363_4(str, Object.class));
   }
 
-  private static <T>T as5363_0(Object o, Class<T> type) {
+  private static <T> T as5363_0(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T>T as5363_1(Object o, Class<T> type) {
+  private static <T> T as5363_1(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T>T as5363_2(Object o, Class<T> type) {
+  private static <T> T as5363_2(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T>T as5363_3(Object o, Class<T> type) {
+  private static <T> T as5363_3(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T>T as5363_4(Object o, Class<T> type) {
+  private static <T> T as5363_4(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
