@@ -24,7 +24,6 @@ import com.sun.jdi.event.*;
 import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
-import jetbrains.mps.debug.runtime.execution.IDebuggerCommand.CommandPriority;
 import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
@@ -339,7 +338,7 @@ public class DebugVMEventsProcessor {
   }
 
   @Nullable
-  public DebuggerCommand createResumeCommand(){
+  public DebuggerCommand createResumeCommand() {
     // we need the last paused context
     SuspendContext suspendContext = mySuspendManager.getPausedContext();
     if (suspendContext != null) {
@@ -348,16 +347,21 @@ public class DebugVMEventsProcessor {
     return null;
   }
 
-  public DebuggerCommand createPauseCommand(){
+  public DebuggerCommand createPauseCommand() {
     return new PauseCommand();
   }
 
-  public DebuggerCommand createStopCommand(){
+  public DebuggerCommand createStopCommand() {
     return new StopCommand(true);
   }
 
+  @Nullable
   public DebuggerCommand createStepCommand() {
-    return new StepCommand();
+    SuspendContext suspendContext = mySuspendManager.getPausedContext();
+    if (suspendContext != null) {
+      return new StepCommand(suspendContext);
+    }
+    return null;
   }
 
   private class ResumeCommand extends SuspendContextCommand {
@@ -420,7 +424,11 @@ public class DebugVMEventsProcessor {
     }
   }
 
-  private class StepCommand extends DebuggerCommand {
+  private class StepCommand extends ResumeCommand {
+    public StepCommand(@NotNull SuspendContext suspendContext) {
+      super(suspendContext);
+    }
+
     @Override
     protected void action() throws Exception {
       // TODO Step  
