@@ -55,6 +55,7 @@ public class StepOver_Action extends GeneratedAction {
 
   public void doExecute(@NotNull final AnActionEvent event) {
     try {
+      StepOver_Action.this.getDebugSession().stepOver();
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "StepOver", t);

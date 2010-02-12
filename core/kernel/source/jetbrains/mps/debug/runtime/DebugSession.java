@@ -1,5 +1,6 @@
 package jetbrains.mps.debug.runtime;
 
+import jetbrains.mps.debug.runtime.DebugVMEventsProcessor.StepType;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.logging.Logger;
 
@@ -44,7 +45,7 @@ public class DebugSession {
     // it is only used for updating local variables (namely for highlighting new vars)
     // (but I may be wrong)
     // see DebuggerSession.mySteppingThroughThreads in idea
-    DebuggerCommand command = myEventsProcessor.createStepCommand();
+    DebuggerCommand command = myEventsProcessor.createStepCommand(StepType.Over);
     LOG.assertLog(command != null);
     myEventsProcessor.getManagerThread().schedule(command);
   }

@@ -22,6 +22,8 @@ import com.sun.jdi.VMDisconnectedException;
 import com.sun.jdi.VirtualMachine;
 import com.sun.jdi.event.*;
 import com.sun.jdi.request.EventRequest;
+import com.sun.jdi.request.EventRequestManager;
+import com.sun.jdi.request.StepRequest;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
 import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
@@ -29,6 +31,8 @@ import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 /**
@@ -356,10 +360,10 @@ public class DebugVMEventsProcessor {
   }
 
   @Nullable
-  public DebuggerCommand createStepCommand() {
+  public DebuggerCommand createStepCommand(StepType type) {
     SuspendContext suspendContext = mySuspendManager.getPausedContext();
     if (suspendContext != null) {
-      return new StepCommand(suspendContext);
+      return new StepCommand(suspendContext, type);
     }
     return null;
   }
@@ -425,13 +429,75 @@ public class DebugVMEventsProcessor {
   }
 
   private class StepCommand extends ResumeCommand {
-    public StepCommand(@NotNull SuspendContext suspendContext) {
+    private final StepType myStepType;
+
+    public StepCommand(@NotNull SuspendContext suspendContext, @NotNull StepType type) {
       super(suspendContext);
+      myStepType = type;
     }
 
     @Override
     protected void action() throws Exception {
-      // TODO Step  
+      SuspendContext suspendContext = getSuspendContext();
+      ThreadReference stepThread = suspendContext.getThread();
+
+      if (stepThread == null) {
+        return;
+      }
+
+//      try {
+      LOG.debug("DO_STEP: creating step request for " + stepThread);
+
+      EventRequestManager requestManager = getVirtualMachine().eventRequestManager();
+
+      // deleting existing step requests
+      List<StepRequest> stepRequests = requestManager.stepRequests();
+      if (stepRequests.size() > 0) {
+        List<StepRequest> toDelete = new ArrayList<StepRequest>(stepRequests.size());
+        for (StepRequest request : stepRequests) {
+          ThreadReference threadReference = request.thread();
+          // on attempt to delete a request assigned to a thread with unknown status, a JDWP error occures
+          if (threadReference.status() != ThreadReference.THREAD_STATUS_UNKNOWN) {
+            toDelete.add(request);
+          }
+        }
+        requestManager.deleteEventRequests(toDelete);
+      }
+
+      // creating new step request
+
+      StepRequest stepRequest = requestManager.createStepRequest(stepThread, StepRequest.STEP_LINE, getStepType());
+
+      // TODO add ignore filters to request
+
+      // suspend policy to match the suspend policy of the context:
+      // if all threads were suspended, then during stepping all the threads must be suspended
+      // if only event thread were suspended, then only this particular thread must be suspended during stepping
+      stepRequest.setSuspendPolicy(suspendContext.getSuspendPolicy() == EventRequest.SUSPEND_EVENT_THREAD ? EventRequest.SUSPEND_EVENT_THREAD : EventRequest.SUSPEND_ALL);
+      stepRequest.enable();
+//      } catch (ObjectCollectedException ignored) {
+//      }
+
+      super.action();
+    }
+
+    private int getStepType() {
+      return myStepType.getJdiType();
+    }
+  }
+
+  public enum StepType {
+    Over(StepRequest.STEP_OVER),
+    Into(StepRequest.STEP_INTO),
+    Out(StepRequest.STEP_OUT);
+
+    private final int myJdiType;
+    private StepType(int jdiType) {
+      myJdiType = jdiType;
+    }
+
+    public int getJdiType() {
+      return myJdiType;
     }
   }
 }
