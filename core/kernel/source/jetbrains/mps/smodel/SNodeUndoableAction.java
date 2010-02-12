@@ -34,6 +34,7 @@ public abstract class SNodeUndoableAction implements UndoableAction {
       myAffectedDocuments = new DocumentReference[0];
     } else {
       myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(containingRoot);
+      assert myFile.isValid() : "Invalid file was returned by VFS node is not available: " + myFile.getNode();
       myAffectedDocuments = new DocumentReference[]{DocumentReferenceManager.getInstance().create(myFile)};
       myModifcationStamp = myFile.getModificationStamp();
     }
