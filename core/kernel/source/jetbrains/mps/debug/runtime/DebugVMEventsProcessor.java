@@ -146,10 +146,9 @@ public class DebugVMEventsProcessor {
                     }
                     //AccessWatchpointEvent, BreakpointEvent, ExceptionEvent, MethodEntryEvent, MethodExitEvent,
                     //ModificationWatchpointEvent, StepEvent, WatchpointEvent
-                    /*  else if (event instanceof StepEvent) {
-                      processStepEvent(suspendContext, (StepEvent)event);
-                    }*/
-                    else if (event instanceof LocatableEvent) {
+                    else if (event instanceof StepEvent) {
+                      processStepEvent(suspendContext, (StepEvent) event);
+                    } else if (event instanceof LocatableEvent) {
                       System.err.println("locatable event happened");
                       processLocatableEvent(suspendContext, (LocatableEvent) event);
                     } else {
@@ -328,6 +327,52 @@ public class DebugVMEventsProcessor {
     }
   }
 
+  private void processStepEvent(SuspendContext suspendContext, StepEvent event) {
+    ThreadReference thread = event.thread();
+    preprocessEvent(suspendContext, thread);
+
+    //noinspection HardCodedStringLiteral
+//    RequestHint hint = (RequestHint) event.request().getProperty("hint");
+
+    deleteStepRequests(getVirtualMachine().eventRequestManager());
+
+    boolean shouldResume = false;
+
+//    if (hint != null) {
+//      final int nextStepDepth = hint.getNextStepDepth(suspendContext);
+//      if (nextStepDepth != RequestHint.STOP) {
+//        final ThreadReferenceProxyImpl threadProxy = suspendContext.getThread();
+//        doStep(suspendContext, threadProxy, nextStepDepth, hint);
+//        shouldResume = true;
+//      }
+//
+//      if (!shouldResume && hint.isRestoreBreakpoints()) {
+//        DebuggerManagerEx.getInstanceEx(getProject()).getBreakpointManager().enableBreakpoints(this);
+//      }
+//    }
+
+    if (shouldResume) {
+      getSuspendManager().voteResume(suspendContext);
+    } else {
+      getSuspendManager().voteSuspend(suspendContext);
+    }
+  }
+
+  private void deleteStepRequests(EventRequestManager requestManager) {
+    List<StepRequest> stepRequests = requestManager.stepRequests();
+    if (stepRequests.size() > 0) {
+      List<StepRequest> toDelete = new ArrayList<StepRequest>(stepRequests.size());
+      for (StepRequest request : stepRequests) {
+        ThreadReference threadReference = request.thread();
+        // on attempt to delete a request assigned to a thread with unknown status, a JDWP error occures
+        if (threadReference.status() != ThreadReference.THREAD_STATUS_UNKNOWN) {
+          toDelete.add(request);
+        }
+      }
+      requestManager.deleteEventRequests(toDelete);
+    }
+  }
+
   private void closeProcess(boolean closedByUser) {
     DebuggerManagerThread.assertIsManagerThread();
     if (myState.compareAndSet(STATE_INITIAL, STATE_DETACHING) || myState.compareAndSet(STATE_ATTACHED, STATE_DETACHING)) {
@@ -340,6 +385,8 @@ public class DebugVMEventsProcessor {
       }
     }
   }
+
+  //============================================ COMMANDS =============================================
 
   @Nullable
   public DebuggerCommand createResumeCommand() {
@@ -450,21 +497,7 @@ public class DebugVMEventsProcessor {
 
       EventRequestManager requestManager = getVirtualMachine().eventRequestManager();
 
-      // deleting existing step requests
-      List<StepRequest> stepRequests = requestManager.stepRequests();
-      if (stepRequests.size() > 0) {
-        List<StepRequest> toDelete = new ArrayList<StepRequest>(stepRequests.size());
-        for (StepRequest request : stepRequests) {
-          ThreadReference threadReference = request.thread();
-          // on attempt to delete a request assigned to a thread with unknown status, a JDWP error occures
-          if (threadReference.status() != ThreadReference.THREAD_STATUS_UNKNOWN) {
-            toDelete.add(request);
-          }
-        }
-        requestManager.deleteEventRequests(toDelete);
-      }
-
-      // creating new step request
+      deleteStepRequests(requestManager);
 
       StepRequest stepRequest = requestManager.createStepRequest(stepThread, StepRequest.STEP_LINE, getStepType());
 
@@ -492,6 +525,7 @@ public class DebugVMEventsProcessor {
     Out(StepRequest.STEP_OUT);
 
     private final int myJdiType;
+
     private StepType(int jdiType) {
       myJdiType = jdiType;
     }
