@@ -150,6 +150,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
         Language language = (Language) structureModel.getModelDescriptor().getModule();
         SModel editorModel = language.getEditorModelDescriptor().getSModel();
         ConceptEditorDeclaration conceptEditorDeclaration = GoToEditorDeclarationHelper.findEditorDeclaration(editorModel, conceptDeclaration);
+        if (conceptEditorDeclaration == null) return -1;
         SNode editorNode = conceptEditorDeclaration.getNode();
         int index = indexInEditor(editorNode, searchedNode.getRole_(), new Pair(-1, false)).o1;
         if (index != -1 || ancestor.getParent() == null) {
