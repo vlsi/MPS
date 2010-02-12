@@ -90,11 +90,11 @@ public class DependentComputationItem extends BaseConcept implements INamedConce
     super.setChild(DependentComputationItem.IS_APPLICABLE_BLOCK, node);
   }
 
-  public DependentComputationItem_ApplicableBlock getIsBlockingBlock() {
-    return (DependentComputationItem_ApplicableBlock) this.getChild(DependentComputationItem_ApplicableBlock.class, DependentComputationItem.IS_BLOCKING_BLOCK);
+  public DependentComputationItem_BlockingBlock getIsBlockingBlock() {
+    return (DependentComputationItem_BlockingBlock) this.getChild(DependentComputationItem_BlockingBlock.class, DependentComputationItem.IS_BLOCKING_BLOCK);
   }
 
-  public void setIsBlockingBlock(DependentComputationItem_ApplicableBlock node) {
+  public void setIsBlockingBlock(DependentComputationItem_BlockingBlock node) {
     super.setChild(DependentComputationItem.IS_BLOCKING_BLOCK, node);
   }
 

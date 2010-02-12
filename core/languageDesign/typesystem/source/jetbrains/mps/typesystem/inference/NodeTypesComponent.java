@@ -227,7 +227,6 @@ public class NodeTypesComponent implements EditorMessageOwner {
   private SNode finishSlaveComputation() {
     EquationManager slaveManager = myEquationManager;
     myEquationManager = myMasterEquationManagers.pop();
-    myMasterEquationManagers = null;
     slaveManager.solveInequations();
     myEquationManager.fillWithEquations(slaveManager);
     SNode result = myCurrentSlaveComputedNodes.pop();
