@@ -59,7 +59,7 @@
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c895902d5(jetbrains.mps.baseLanguage.unitTest.plugin)" version="0" />
   <languageAspect modelUID="r:00000000-0000-4000-0000-011c8959057f(jetbrains.mps.baseLanguage.logging.structure)" version="0" />
-  <maxImportIndex value="111" />
+  <maxImportIndex value="112" />
   <import index="1" modelUID="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" version="-1" />
   <import index="2" modelUID="f:java_stub#java.lang(java.lang@java_stub)" version="-1" />
   <import index="5" modelUID="f:java_stub#java.awt(java.awt@java_stub)" version="-1" />
@@ -116,6 +116,7 @@
   <import index="109" modelUID="f:java_stub#com.intellij.ide.util.treeView(com.intellij.ide.util.treeView@java_stub)" version="-1" />
   <import index="110" modelUID="f:java_stub#com.intellij.util(com.intellij.util@java_stub)" version="-1" />
   <import index="111" modelUID="f:java_stub#org.junit(org.junit@java_stub)" version="-1" />
+  <import index="112" modelUID="f:java_stub#jetbrains.mps.workbench.action(jetbrains.mps.workbench.action@java_stub)" version="-1" />
   <node type="jetbrains.mps.baseLanguage.structure.ClassConcept:3" id="1208270545572">
     <property name="name:3" value="UnitTestViewComponent" />
     <property name="package:3" value="tool.view" />
@@ -22737,6 +22738,134 @@
           </node>
         </node>
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="813722280257036400" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1853639028181769888">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1853639028181769889">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1853639028181769890">
+              <link role="baseMethodDeclaration:3" targetNodeId="7.~JComponent.setBorder(javax.swing.border.Border):void" resolveInfo="setBorder" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1853639028181769892">
+                <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1853639028181769894">
+                  <link role="baseMethodDeclaration:3" targetNodeId="49.~TitledBorder.&lt;init&gt;(java.lang.String)" resolveInfo="TitledBorder" />
+                  <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StringLiteral:3" id="1853639028181769895">
+                    <property name="value:3" value="Test" />
+                  </node>
+                </node>
+              </node>
+            </node>
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1853639028181769891" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="1853639028181773261" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1853639028181772164">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1853639028181772165">
+            <property name="name:3" value="group" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1853639028181772166">
+              <link role="classifier:3" targetNodeId="53.~DefaultActionGroup" resolveInfo="DefaultActionGroup" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1853639028181772504">
+              <link role="baseMethodDeclaration:3" targetNodeId="112.~ActionUtils.groupFromActions(com.intellij.openapi.actionSystem.AnAction...):com.intellij.openapi.actionSystem.DefaultActionGroup" resolveInfo="groupFromActions" />
+              <link role="classConcept:3" targetNodeId="112.~ActionUtils" resolveInfo="ActionUtils" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1853639028181772505">
+                <link role="variableDeclaration:3" targetNodeId="813722280256791080:0" resolveInfo="add" />
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1853639028181772507">
+                <link role="variableDeclaration:3" targetNodeId="813722280256835315:0" resolveInfo="remove" />
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1853639028181773265">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1853639028181773266">
+            <property name="name:3" value="toolbar" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1853639028181773267">
+              <link role="classifier:3" targetNodeId="53.~ActionToolbar" resolveInfo="ActionToolbar" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1853639028181773268">
+              <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="1853639028181773269">
+                <link role="baseMethodDeclaration:3" targetNodeId="53.~ActionManager.getInstance():com.intellij.openapi.actionSystem.ActionManager" resolveInfo="getInstance" />
+                <link role="classConcept:3" targetNodeId="53.~ActionManager" resolveInfo="ActionManager" />
+              </node>
+              <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1853639028181773270">
+                <link role="baseMethodDeclaration:3" targetNodeId="53.~ActionManager.createActionToolbar(java.lang.String,com.intellij.openapi.actionSystem.ActionGroup,boolean):com.intellij.openapi.actionSystem.ActionToolbar" resolveInfo="createActionToolbar" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1853639028181773271">
+                  <link role="classifier:3" targetNodeId="53.~ActionPlaces" resolveInfo="ActionPlaces" />
+                  <link role="variableDeclaration:3" targetNodeId="53.~ActionPlaces.UNKNOWN" resolveInfo="UNKNOWN" />
+                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1853639028181773272">
+                  <link role="variableDeclaration:3" targetNodeId="1853639028181772165:0" resolveInfo="group" />
+                </node>
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.BooleanConstant:3" id="1853639028181773273">
+                  <property name="value:3" value="false" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1853639028181773259">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1853639028181773262">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1853639028181773263">
+              <link role="baseMethodDeclaration:3" targetNodeId="5.~Container.add(java.awt.Component,java.lang.Object):void" resolveInfo="add" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1853639028181773275">
+                <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1853639028181773274">
+                  <link role="variableDeclaration:3" targetNodeId="1853639028181773266:0" resolveInfo="toolbar" />
+                </node>
+                <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1853639028181773279">
+                  <link role="baseMethodDeclaration:3" targetNodeId="53.~ActionToolbar.getComponent():javax.swing.JComponent" resolveInfo="getComponent" />
+                </node>
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1853639028181775557">
+                <link role="classifier:3" targetNodeId="5.~BorderLayout" resolveInfo="BorderLayout" />
+                <link role="variableDeclaration:3" targetNodeId="5.~BorderLayout.WEST" resolveInfo="WEST" />
+              </node>
+            </node>
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1853639028181773264" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="1853639028181772111" />
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement:3" id="1853639028181769904">
+          <node role="localVariableDeclaration:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration:3" id="1853639028181769905">
+            <property name="name:3" value="comp" />
+            <node role="type:3" type="jetbrains.mps.baseLanguage.structure.ClassifierType:3" id="1853639028181769906">
+              <link role="classifier:3" targetNodeId="7.~JScrollPane" resolveInfo="JScrollPane" />
+            </node>
+            <node role="initializer:3" type="jetbrains.mps.baseLanguage.structure.GenericNewExpression:3" id="1853639028181769908">
+              <node role="creator:3" type="jetbrains.mps.baseLanguage.structure.ClassCreator:3" id="1853639028181769909">
+                <link role="baseMethodDeclaration:3" targetNodeId="7.~JScrollPane.&lt;init&gt;(java.awt.Component)" resolveInfo="JScrollPane" />
+                <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1853639028181772107">
+                  <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.FieldReferenceOperation:3" id="1853639028181772108">
+                    <link role="fieldDeclaration:3" targetNodeId="813722280256835269:0" resolveInfo="list" />
+                  </node>
+                  <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1853639028181772109" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1853639028181769911">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1853639028181769913">
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1853639028181769912">
+              <link role="variableDeclaration:3" targetNodeId="1853639028181769905:0" resolveInfo="comp" />
+            </node>
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1853639028181771950">
+              <link role="baseMethodDeclaration:3" targetNodeId="5.~Container.doLayout():void" resolveInfo="doLayout" />
+            </node>
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="1853639028181771953">
+          <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.DotExpression:3" id="1853639028181771954">
+            <node role="operation:3" type="jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation:3" id="1853639028181771955">
+              <link role="baseMethodDeclaration:3" targetNodeId="5.~Container.add(java.awt.Component,java.lang.Object):void" resolveInfo="add" />
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.LocalVariableReference:3" id="1853639028181771957">
+                <link role="variableDeclaration:3" targetNodeId="1853639028181769905:0" resolveInfo="comp" />
+              </node>
+              <node role="actualArgument:3" type="jetbrains.mps.baseLanguage.structure.StaticFieldReference:3" id="1853639028181772008">
+                <link role="classifier:3" targetNodeId="5.~BorderLayout" resolveInfo="BorderLayout" />
+                <link role="variableDeclaration:3" targetNodeId="5.~BorderLayout.CENTER" resolveInfo="CENTER" />
+              </node>
+            </node>
+            <node role="operand:3" type="jetbrains.mps.baseLanguage.structure.ThisExpression:3" id="1853639028181771956" />
+          </node>
+        </node>
+        <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.Statement:3" id="1853639028181771952" />
         <node role="statement:3" type="jetbrains.mps.baseLanguage.structure.ExpressionStatement:3" id="8396772032863660229">
           <node role="expression:3" type="jetbrains.mps.baseLanguage.structure.StaticMethodCall:3" id="8396772032863660231">
             <link role="baseMethodDeclaration:3" targetNodeId="98.~UiListsFactory.addActionsComponentToPanel(java.lang.String,javax.swing.JComponent,javax.swing.JPanel,com.intellij.openapi.actionSystem.AnAction...):void" resolveInfo="addActionsComponentToPanel" />

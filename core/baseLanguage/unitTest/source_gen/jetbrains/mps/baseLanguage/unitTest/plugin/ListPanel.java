@@ -25,6 +25,13 @@ import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddA
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.dialogs.choosers.CommonChoosers;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListRemoveAction;
+import javax.swing.border.TitledBorder;
+import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.workbench.action.ActionUtils;
+import com.intellij.openapi.actionSystem.ActionToolbar;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import javax.swing.JScrollPane;
 import jetbrains.mps.workbench.dialogs.project.components.parts.UiListsFactory;
 import javax.swing.JLabel;
 
@@ -147,6 +154,16 @@ public class ListPanel extends JPanel {
         ListPanel.this.list.updateUI();
       }
     };
+
+    this.setBorder(new TitledBorder("Test"));
+
+    DefaultActionGroup group = ActionUtils.groupFromActions(add, remove);
+    ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, group, false);
+    this.add(toolbar.getComponent(), BorderLayout.WEST);
+
+    JScrollPane comp = new JScrollPane(this.list);
+    comp.doLayout();
+    this.add(comp, BorderLayout.CENTER);
 
     UiListsFactory.addActionsComponentToPanel("Test", this.list, this, add, remove);
     this.add(new JLabel((this.isTestMethods ?
