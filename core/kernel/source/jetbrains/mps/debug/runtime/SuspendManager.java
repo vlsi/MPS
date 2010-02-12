@@ -21,6 +21,7 @@ import com.sun.jdi.ThreadReference;
 import com.sun.jdi.event.EventSet;
 import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -156,6 +157,7 @@ public class SuspendManager {
     popContext(context);
   }
 
+  @Nullable
   public SuspendContext getPausedContext() {
     return !myPausedContexts.isEmpty() ? myPausedContexts.getFirst() : null;
   }

@@ -24,8 +24,11 @@ import com.sun.jdi.event.*;
 import com.sun.jdi.request.EventRequest;
 import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.debug.runtime.execution.DebuggerManagerThread;
+import jetbrains.mps.debug.runtime.execution.IDebuggerCommand.CommandPriority;
 import jetbrains.mps.debug.runtime.execution.IDebuggerManagerThread;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.atomic.AtomicInteger;
 
@@ -335,8 +338,14 @@ public class DebugVMEventsProcessor {
     }
   }
 
+  @Nullable
   public DebuggerCommand createResumeCommand(){
-    return new ResumeCommand();
+    // we need the last paused context
+    SuspendContext suspendContext = mySuspendManager.getPausedContext();
+    if (suspendContext != null) {
+      return new ResumeCommand(suspendContext);
+    }
+    return null;
   }
 
   public DebuggerCommand createPauseCommand(){
@@ -351,7 +360,11 @@ public class DebugVMEventsProcessor {
     return new StepCommand();
   }
 
-  private class ResumeCommand extends DebuggerCommand {
+  private class ResumeCommand extends SuspendContextCommand {
+    public ResumeCommand(@NotNull SuspendContext suspendContext) {
+      super(suspendContext);
+    }
+
     @Override
     public CommandPriority getPriority() {
       return CommandPriority.HIGH;
@@ -362,9 +375,8 @@ public class DebugVMEventsProcessor {
       System.err.println("Resuming execution!");
       // see DebugProcessImpl.ResumeCommand in idea
       SuspendManager suspendManager = getSuspendManager();
-      SuspendContext context = suspendManager.getPausedContext();
-      suspendManager.resume(context);
-      getMulticaster().resumed(context);
+      suspendManager.resume(getSuspendContext());
+      getMulticaster().resumed(getSuspendContext());
     }
   }
 

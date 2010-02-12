@@ -1,5 +1,6 @@
 package jetbrains.mps.debug.runtime;
 
+import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
 import jetbrains.mps.logging.Logger;
 
 public class DebugSession {
@@ -25,7 +26,9 @@ public class DebugSession {
   }
 
   public void resume() {
-    myEventsProcessor.getManagerThread().schedule(myEventsProcessor.createResumeCommand());
+    DebuggerCommand command = myEventsProcessor.createResumeCommand();
+    LOG.assertLog(command != null);
+    myEventsProcessor.getManagerThread().schedule(command);
   }
 
   public void pause() {

@@ -1,5 +1,8 @@
 package jetbrains.mps.debug.runtime;
 
+import jetbrains.mps.debug.runtime.execution.DebuggerCommand;
+import org.jetbrains.annotations.NotNull;
+
 /**
  * Created by IntelliJ IDEA.
  * User: Cyril.Konopko
@@ -7,14 +10,18 @@ package jetbrains.mps.debug.runtime;
  * Time: 13:44:02
  * To change this template use File | Settings | File Templates.
  */
-public class SuspendContextCommand {  //todo
-  SuspendContext mySuspendContext;
+public class SuspendContextCommand extends DebuggerCommand {  //todo
+  private final SuspendContext mySuspendContext;
 
-  public SuspendContextCommand(SuspendContext suspendContext) {
+  public SuspendContextCommand(@NotNull SuspendContext suspendContext) {
     mySuspendContext = suspendContext;
   }
 
   public SuspendContext getSuspendContext() {
     return mySuspendContext;
+  }
+
+  @Override
+  protected void action() throws Exception {
   }
 }
