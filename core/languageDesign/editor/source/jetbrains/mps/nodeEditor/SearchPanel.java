@@ -41,6 +41,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.search.AbstractSearchPanel;
 import jetbrains.mps.workbench.search.SearchHistoryComponent;
+import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;
 import java.util.*;
@@ -90,7 +91,7 @@ public class SearchPanel extends AbstractSearchPanel {
   }
 
   protected boolean canExportToFindTool() {
-    return true;
+    return !getMessages().isEmpty();
   }
 
   protected void goUp() {
@@ -268,13 +269,19 @@ public class SearchPanel extends AbstractSearchPanel {
     });
   }
 
-  protected void exportToFindTool() {
+  private List<SearchPanelEditorMessage> getMessages() {
     final List<SearchPanelEditorMessage> searchMessages = new ArrayList<SearchPanelEditorMessage>();
+    if (myEditor == null) return searchMessages;
     for (EditorMessage candidate : myEditor.getMessages()) {
       if (candidate instanceof SearchPanelEditorMessage) {
         searchMessages.add((SearchPanelEditorMessage) candidate);
       }
     }
+    return searchMessages;
+  }
+
+  protected void exportToFindTool() {
+    final List<SearchPanelEditorMessage> searchMessages = getMessages();
     UsagesViewTool usagesViewTool = new UsagesViewTool(myEditor.getOperationContext().getProject());
     BaseNode baseNode = new BaseNode() {
       public SearchResults doGetResults(SearchQuery query, ProgressIndicator indicator) {
@@ -288,7 +295,12 @@ public class SearchPanel extends AbstractSearchPanel {
         return searchResults;
       }
     };
-    SearchQuery searchQuery = new SearchQuery(null);
+    SearchQuery searchQuery = new SearchQuery(null) {
+      @NotNull
+      public String getCaption() {
+        return "Occurrences of '"+ myText.getText() + "'";
+      }
+    };
     usagesViewTool.findUsages(baseNode, searchQuery, false, false, false, null);
   }
 
