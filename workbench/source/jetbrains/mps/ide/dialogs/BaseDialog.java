@@ -125,9 +125,34 @@ public abstract class BaseDialog extends JDialog {
     return DialogDimensionsSettings.getInstance().getDimensionSettings(cls);
   }
 
+  private boolean isValidPosition(int x, int y) {
+    Point location = new Point(x, y);
+    GraphicsDevice devices[] = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices();
+    for (GraphicsDevice d : devices) {
+      Rectangle bounds = d.getDefaultConfiguration().getBounds();
+      if (bounds.contains(location)) return true;
+    }
+    return false;
+  }
+
   protected void updateDimensionSettings() {
     myDialogDimensions = getDimensionSettings(this.getClass());
-    if (myDialogDimensions == null) myDialogDimensions = getDefaultDimensionSettings();
+    if (myDialogDimensions == null)  {
+      myDialogDimensions = getDefaultDimensionSettings();
+      return;
+    }
+    int x = myDialogDimensions.getLeft();
+    int y = myDialogDimensions.getTop();
+    boolean isValid = isValidPosition(x, y);
+    x += myDialogDimensions.getWidth();
+    isValid = isValid && isValidPosition(x, y);
+    y += myDialogDimensions.getHeight();
+    isValid = isValid && isValidPosition(x, y);
+    x -= myDialogDimensions.getWidth();
+    isValid = isValid && isValidPosition(x, y);
+    if (!isValid) {
+      myDialogDimensions = getDefaultDimensionSettings();
+    }
   }
 
   public void showDialog() {
