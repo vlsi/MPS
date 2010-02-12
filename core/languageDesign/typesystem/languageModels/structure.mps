@@ -2796,7 +2796,7 @@
     <link role="extends:0" targetNodeId="2.1137021947720:3" resolveInfo="ConceptFunction" />
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.ReferenceConceptLink:0" id="3000845361816456522">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1161119487665:3" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target:0" targetNodeId="1216383337216:3" resolveInfo="ConceptFunctionParameter_node" />
+      <link role="target:0" targetNodeId="8058965347377019245:3" resolveInfo="ConceptFunctionParameter_DependentComputationNode" />
     </node>
     <node role="conceptLink:0" type="jetbrains.mps.lang.structure.structure.AggregationConceptLink:0" id="3000845361816456524">
       <link role="conceptLinkDeclaration:0" targetNodeId="2.1137545148427:3" resolveInfo="conceptFunctionReturnType" />

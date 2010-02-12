@@ -41,7 +41,7 @@ public class typeof_ConceptFunctionParameter_DependentComputationNode_InferenceR
   }
 
   public boolean overrides() {
-    return false;
+    return true;
   }
 
   public static class QuotationClass_1496_0 {
