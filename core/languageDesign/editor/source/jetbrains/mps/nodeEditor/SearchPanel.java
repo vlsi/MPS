@@ -16,7 +16,14 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.util.Pair;
+import jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes.BaseNode;
+import jetbrains.mps.ide.findusages.model.IResultProvider;
+import jetbrains.mps.ide.findusages.model.SearchQuery;
+import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.ide.findusages.model.SearchResults;
+import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
@@ -29,6 +36,7 @@ import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.workbench.search.AbstractSearchPanel;
@@ -40,7 +48,6 @@ import java.util.List;
 import java.util.regex.Matcher;
 
 public class SearchPanel extends AbstractSearchPanel {
-
   private EditorComponent myEditor;
   private ArrayList<EditorCell_Label> myCells = new ArrayList<EditorCell_Label>();
   private NodeHighlightManager myHighlightManager;
@@ -82,6 +89,10 @@ public class SearchPanel extends AbstractSearchPanel {
     return new Pair<List<EditorCell_Label>, String>(cells, sb.toString());
   }
 
+  protected boolean canExportToFindTool() {
+    return true;
+  }
+
   protected void goUp() {
     if (myCells.size() == 0) return;
     addToHistory();
@@ -90,7 +101,7 @@ public class SearchPanel extends AbstractSearchPanel {
     if (index <= 0) {
       index = myCells.size() - 1;
     } else {
-      while (myEditor.getSelectedCell().equals(myCells.get(index))) {
+      while (myCells.get(index).equals(myEditor.getSelectedCell())) {
         if (index <= 0) {
           index = myCells.size() - 1;
           break;
@@ -110,7 +121,7 @@ public class SearchPanel extends AbstractSearchPanel {
     if (index >= myCells.size() - 1) {
       index = 0;
     } else {
-      while (myEditor.getSelectedCell().equals(myCells.get(index))) {
+      while (myCells.get(index).equals(myEditor.getSelectedCell())) {
         if (index >= myCells.size() - 1) {
           index = 0;
           break;
@@ -163,7 +174,7 @@ public class SearchPanel extends AbstractSearchPanel {
   }
 
   private void changeSelection(int index) {
-    if (!myEditor.getSelectedCell().equals(myCells.get(index))) {
+    if (!myCells.get(index).equals(myEditor.getSelectedCell())) {
       myEditor.changeSelection(myCells.get(index));
     }
   }
@@ -255,6 +266,30 @@ public class SearchPanel extends AbstractSearchPanel {
         myHighlightManager.mark(messages);
       }
     });
+  }
+
+  protected void exportToFindTool() {
+    final List<SearchPanelEditorMessage> searchMessages = new ArrayList<SearchPanelEditorMessage>();
+    for (EditorMessage candidate : myEditor.getMessages()) {
+      if (candidate instanceof SearchPanelEditorMessage) {
+        searchMessages.add((SearchPanelEditorMessage) candidate);
+      }
+    }
+    UsagesViewTool usagesViewTool = new UsagesViewTool(myEditor.getOperationContext().getProject());
+    BaseNode baseNode = new BaseNode() {
+      public SearchResults doGetResults(SearchQuery query, ProgressIndicator indicator) {
+        SearchResults<SNode> searchResults = new SearchResults<SNode>();
+        for (SearchPanelEditorMessage message : searchMessages) {
+          EditorCell cell = message.getCell(myEditor);
+          if (cell == null) continue;
+          SNode node = cell.getSNode();
+          searchResults.getSearchResults().add(new SearchResult<SNode>(node, "Search Panel"));
+        }
+        return searchResults;
+      }
+    };
+    SearchQuery searchQuery = new SearchQuery(null);
+    usagesViewTool.findUsages(baseNode, searchQuery, false, false, false, null);
   }
 
   public void deactivate() {

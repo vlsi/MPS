@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.search;
 
 import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.util.IconLoader;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.components.panels.NonOpaquePanel;
@@ -35,7 +36,6 @@ import java.util.regex.Pattern;
 
 
 public abstract class AbstractSearchPanel extends JPanel {
-
   protected final Color myBadSequenceColor = Color.pink;
   protected HistoryCompletionTextField myText = new HistoryCompletionTextField();
   private JCheckBox myIsCaseSensitive = new JCheckBox("Case sensitive");
@@ -69,6 +69,7 @@ public abstract class AbstractSearchPanel extends JPanel {
     group.add(new ShowHistoryAction());
     group.add(new PrevOccurenceAction());
     group.add(new NextOccurenceAction());
+    group.add(new FindAllAction());
 
     final ActionToolbar tb = ActionManager.getInstance().createActionToolbar("SearchBar", group, true);
     tb.setLayoutPolicy(ActionToolbar.NOWRAP_LAYOUT_POLICY);
@@ -184,6 +185,13 @@ public abstract class AbstractSearchPanel extends JPanel {
     } else {
       return SearchConditions.containsString(myText.getText(), myIsCaseSensitive.isSelected());
     }
+  }
+
+  protected boolean canExportToFindTool() {
+    return false;
+  }
+
+  protected void exportToFindTool() {
   }
 
   protected void updateSearchReport(int matches) {
@@ -352,6 +360,24 @@ public abstract class AbstractSearchPanel extends JPanel {
 
     public void actionPerformed(final AnActionEvent e) {
       goDown();
+    }
+  }
+
+  private class FindAllAction extends AnAction {
+    private FindAllAction() {
+      getTemplatePresentation().setIcon(IconLoader.getIcon("/actions/export.png"));
+      getTemplatePresentation().setDescription("Export matches to Find tool window");
+      getTemplatePresentation().setText("Find All");
+      registerCustomShortcutSet(ActionManager.getInstance().getAction(IdeActions.ACTION_FIND_USAGES).getShortcutSet(), myText);
+    }
+
+    public void update(AnActionEvent e) {
+      super.update(e);
+      e.getPresentation().setEnabled(canExportToFindTool());
+    }
+
+    public void actionPerformed(AnActionEvent e) {
+      exportToFindTool();
     }
   }
 }
